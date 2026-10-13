@@ -1,0 +1,11 @@
+scenario,rice,soils,manure,total,delta
+Main case (EF1=0.005 dry; rice continuously flooded),16.55,28.53,21.23,223.45,0.0
+Soil EF1 = 0.010 (2006 aggregate),16.55,40.43,21.23,235.36,11.91
+Soil EF1 = 0.016 (2019 wet climate),16.55,54.72,21.23,249.65,26.2
+Soil EF1 = 0.0055 (Cui 2021 empirical),16.55,29.72,21.23,224.64,1.19
+Pasture EF3PRP wet climate (2019 Refinement),16.55,30.35,21.23,225.27,1.82
+Pasture EF3PRP = 2006 aggregate,16.55,42.81,21.23,237.74,14.28
+Both 2006 direct factors (EF1 0.010 + EF3PRP aggregate),16.55,54.72,21.23,249.64,26.19
+Rice intermittent SFw = 0.52 (AWD),8.6,28.53,21.23,215.51,-7.94
+Rice rainfed SFw = 0.28,4.63,28.53,21.23,211.54,-11.91
+Manure MMS = GLEAM 3.0 South-Asia split,16.55,27.6,32.07,233.37,9.92

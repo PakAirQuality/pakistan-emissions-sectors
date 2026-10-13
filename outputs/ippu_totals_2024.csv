@@ -1,0 +1,8 @@
+category,co2e_Mt_AR5,co2e_Mt_AR6,note
+Cement production,21.8156484,21.8156484,"FY2023-24 reference (rc30 re-base): the complete 16-company producer census's observed clinker production, 41.953170 Mt; process CO2 only. The PBS-QIM 0.75-fraction trade-corrected model is the named diagnostic beside it."
+Ammonia production,3.24330046,3.24330046,rc52: Tier 1 calibrated - NFDC production x NH3 stoichiometry x 1.815 t CO2/t NH3 net of urea recovery (44/60); method envelope in pakemis_ammonia_nitric_series.csv
+Iron and steel production,0.39312,0.39312,"rc52: Tier 1 EAF 0.08 t CO2/t on QIM billets and ingots; pig iron zero, so the electric route is the only one operating"
+Lubricant use,0.08329029,0.08329029,"rc52: Tier 1 ODU (0.2 oil, 0.05 grease) on OCAC non-energy sales x NCV 40.2 x 20.0 t C/TJ"
+IPPU reference total,25.53535915,25.53535915,sum of the four activated categories
+Legacy cement calculation without clinker trade,18.72429,18.72429,"Provenance only: combines omission of trade with a 48.011 Mt activity value that belongs to FY2021-22, not FY2023-24."
+IPPU categories not yet independently estimated,NE,NE,See ippu_completeness_2024.csv; activity controls are not converted without the process route or application data required by IPCC.

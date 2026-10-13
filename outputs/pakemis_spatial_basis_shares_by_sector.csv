@@ -1,0 +1,453 @@
+# Mass-weighted share of each period's emissions by spatial evidence class, per IPCC reporting sector.
+# From outputs/semantic/fact_spatial_basis_year.csv; every period x sector x class cell printed, zero included.
+period_id,reporting_sector,spatial_time_basis,plain_name,co2e_Mt_AR5,share_of_sector_period,n_streams,sector_period_total_Mt
+FY2015-16,agriculture,annual_observed_activity,that year's observed activity,36.558569,0.218829,19,167.064847
+FY2015-16,agriculture,static_structural,a timeless structural surface,130.506278,0.781171,15,167.064847
+FY2015-16,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,167.064847
+FY2015-16,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,167.064847
+FY2015-16,agriculture,unallocated,retained at province level,0.000000,0.000000,0,167.064847
+FY2015-16,aviation,annual_observed_activity,that year's observed activity,0.078446,0.163235,3,0.480574
+FY2015-16,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.480574
+FY2015-16,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.480574
+FY2015-16,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.480574
+FY2015-16,aviation,unallocated,retained at province level,0.402128,0.836765,3,0.480574
+FY2015-16,fugitives,annual_observed_activity,that year's observed activity,13.074227,0.536174,15,24.384302
+FY2015-16,fugitives,static_structural,a timeless structural surface,11.310075,0.463826,15,24.384302
+FY2015-16,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.384302
+FY2015-16,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.384302
+FY2015-16,fugitives,unallocated,retained at province level,0.000000,0.000000,0,24.384302
+FY2015-16,industry,annual_observed_activity,that year's observed activity,7.495662,0.179475,3,41.764361
+FY2015-16,industry,static_structural,a timeless structural surface,27.896059,0.667939,12,41.764361
+FY2015-16,industry,reference_shape_backcast,"the reference year's pattern, rescaled",6.372640,0.152586,18,41.764361
+FY2015-16,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,41.764361
+FY2015-16,industry,unallocated,retained at province level,0.000000,0.000000,0,41.764361
+FY2015-16,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,20.816383
+FY2015-16,ippu,static_structural,a timeless structural surface,20.816383,1.000000,5,20.816383
+FY2015-16,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,20.816383
+FY2015-16,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,20.816383
+FY2015-16,ippu,unallocated,retained at province level,0.000000,0.000000,0,20.816383
+FY2015-16,power,annual_observed_activity,that year's observed activity,43.831986,0.979496,9,44.749512
+FY2015-16,power,static_structural,a timeless structural surface,0.000000,0.000000,0,44.749512
+FY2015-16,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,44.749512
+FY2015-16,power,substituted_surface,a declared stand-in surface,0.917526,0.020504,3,44.749512
+FY2015-16,power,unallocated,retained at province level,0.000000,0.000000,0,44.749512
+FY2015-16,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.416881
+FY2015-16,railways,static_structural,a timeless structural surface,0.416881,1.000000,9,0.416881
+FY2015-16,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.416881
+FY2015-16,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.416881
+FY2015-16,railways,unallocated,retained at province level,0.000000,0.000000,0,0.416881
+FY2015-16,residential,annual_observed_activity,that year's observed activity,21.469525,1.000000,23,21.469525
+FY2015-16,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,21.469525
+FY2015-16,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,21.469525
+FY2015-16,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,21.469525
+FY2015-16,residential,unallocated,retained at province level,0.000000,0.000000,0,21.469525
+FY2015-16,transport,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,43.358265
+FY2015-16,transport,static_structural,a timeless structural surface,5.242830,0.120919,6,43.358265
+FY2015-16,transport,reference_shape_backcast,"the reference year's pattern, rescaled",38.115435,0.879081,33,43.358265
+FY2015-16,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,43.358265
+FY2015-16,transport,unallocated,retained at province level,0.000000,0.000000,0,43.358265
+FY2015-16,waste,annual_observed_activity,that year's observed activity,3.131612,0.106766,3,29.331622
+FY2015-16,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,29.331622
+FY2015-16,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,29.331622
+FY2015-16,waste,substituted_surface,a declared stand-in surface,26.200009,0.893234,3,29.331622
+FY2015-16,waste,unallocated,retained at province level,0.000000,0.000000,0,29.331622
+FY2016-17,agriculture,annual_observed_activity,that year's observed activity,41.751446,0.236541,19,176.508440
+FY2016-17,agriculture,static_structural,a timeless structural surface,134.756994,0.763459,15,176.508440
+FY2016-17,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,176.508440
+FY2016-17,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,176.508440
+FY2016-17,agriculture,unallocated,retained at province level,0.000000,0.000000,0,176.508440
+FY2016-17,aviation,annual_observed_activity,that year's observed activity,0.083911,0.163235,3,0.514054
+FY2016-17,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.514054
+FY2016-17,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.514054
+FY2016-17,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.514054
+FY2016-17,aviation,unallocated,retained at province level,0.430142,0.836765,3,0.514054
+FY2016-17,fugitives,annual_observed_activity,that year's observed activity,13.003769,0.519015,15,25.054699
+FY2016-17,fugitives,static_structural,a timeless structural surface,12.050930,0.480985,15,25.054699
+FY2016-17,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,25.054699
+FY2016-17,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,25.054699
+FY2016-17,fugitives,unallocated,retained at province level,0.000000,0.000000,0,25.054699
+FY2016-17,industry,annual_observed_activity,that year's observed activity,7.572738,0.166224,3,45.557375
+FY2016-17,industry,static_structural,a timeless structural surface,31.708779,0.696019,12,45.557375
+FY2016-17,industry,reference_shape_backcast,"the reference year's pattern, rescaled",6.275859,0.137757,18,45.557375
+FY2016-17,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,45.557375
+FY2016-17,industry,unallocated,retained at province level,0.000000,0.000000,0,45.557375
+FY2016-17,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,21.801862
+FY2016-17,ippu,static_structural,a timeless structural surface,21.801862,1.000000,5,21.801862
+FY2016-17,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,21.801862
+FY2016-17,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,21.801862
+FY2016-17,ippu,unallocated,retained at province level,0.000000,0.000000,0,21.801862
+FY2016-17,power,annual_observed_activity,that year's observed activity,47.284456,0.981150,9,48.192912
+FY2016-17,power,static_structural,a timeless structural surface,0.000000,0.000000,0,48.192912
+FY2016-17,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,48.192912
+FY2016-17,power,substituted_surface,a declared stand-in surface,0.908455,0.018850,3,48.192912
+FY2016-17,power,unallocated,retained at province level,0.000000,0.000000,0,48.192912
+FY2016-17,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.431844
+FY2016-17,railways,static_structural,a timeless structural surface,0.431844,1.000000,9,0.431844
+FY2016-17,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.431844
+FY2016-17,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.431844
+FY2016-17,railways,unallocated,retained at province level,0.000000,0.000000,0,0.431844
+FY2016-17,residential,annual_observed_activity,that year's observed activity,22.683078,1.000000,23,22.683078
+FY2016-17,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,22.683078
+FY2016-17,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,22.683078
+FY2016-17,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,22.683078
+FY2016-17,residential,unallocated,retained at province level,0.000000,0.000000,0,22.683078
+FY2016-17,transport,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,48.426202
+FY2016-17,transport,static_structural,a timeless structural surface,5.555770,0.114727,6,48.426202
+FY2016-17,transport,reference_shape_backcast,"the reference year's pattern, rescaled",42.870432,0.885273,33,48.426202
+FY2016-17,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,48.426202
+FY2016-17,transport,unallocated,retained at province level,0.000000,0.000000,0,48.426202
+FY2016-17,waste,annual_observed_activity,that year's observed activity,3.214324,0.106190,3,30.269505
+FY2016-17,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,30.269505
+FY2016-17,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,30.269505
+FY2016-17,waste,substituted_surface,a declared stand-in surface,27.055180,0.893810,3,30.269505
+FY2016-17,waste,unallocated,retained at province level,0.000000,0.000000,0,30.269505
+FY2017-18,agriculture,annual_observed_activity,that year's observed activity,41.663365,0.230381,19,180.845798
+FY2017-18,agriculture,static_structural,a timeless structural surface,139.182432,0.769619,15,180.845798
+FY2017-18,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,180.845798
+FY2017-18,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,180.845798
+FY2017-18,agriculture,unallocated,retained at province level,0.000000,0.000000,0,180.845798
+FY2017-18,aviation,annual_observed_activity,that year's observed activity,0.077509,0.163235,3,0.474832
+FY2017-18,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.474832
+FY2017-18,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.474832
+FY2017-18,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.474832
+FY2017-18,aviation,unallocated,retained at province level,0.397323,0.836765,3,0.474832
+FY2017-18,fugitives,annual_observed_activity,that year's observed activity,12.900106,0.492810,15,26.176627
+FY2017-18,fugitives,static_structural,a timeless structural surface,13.276521,0.507190,15,26.176627
+FY2017-18,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,26.176627
+FY2017-18,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,26.176627
+FY2017-18,fugitives,unallocated,retained at province level,0.000000,0.000000,0,26.176627
+FY2017-18,industry,annual_observed_activity,that year's observed activity,7.322240,0.136905,3,53.483976
+FY2017-18,industry,static_structural,a timeless structural surface,40.528655,0.757772,12,53.483976
+FY2017-18,industry,reference_shape_backcast,"the reference year's pattern, rescaled",5.633081,0.105323,18,53.483976
+FY2017-18,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,53.483976
+FY2017-18,industry,unallocated,retained at province level,0.000000,0.000000,0,53.483976
+FY2017-18,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,23.713647
+FY2017-18,ippu,static_structural,a timeless structural surface,23.713647,1.000000,5,23.713647
+FY2017-18,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,23.713647
+FY2017-18,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,23.713647
+FY2017-18,ippu,unallocated,retained at province level,0.000000,0.000000,0,23.713647
+FY2017-18,power,annual_observed_activity,that year's observed activity,56.914353,0.989499,9,57.518348
+FY2017-18,power,static_structural,a timeless structural surface,0.000000,0.000000,0,57.518348
+FY2017-18,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,57.518348
+FY2017-18,power,substituted_surface,a declared stand-in surface,0.603994,0.010501,3,57.518348
+FY2017-18,power,unallocated,retained at province level,0.000000,0.000000,0,57.518348
+FY2017-18,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.466350
+FY2017-18,railways,static_structural,a timeless structural surface,0.466350,1.000000,9,0.466350
+FY2017-18,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.466350
+FY2017-18,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.466350
+FY2017-18,railways,unallocated,retained at province level,0.000000,0.000000,0,0.466350
+FY2017-18,residential,annual_observed_activity,that year's observed activity,22.389935,1.000000,23,22.389935
+FY2017-18,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,22.389935
+FY2017-18,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,22.389935
+FY2017-18,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,22.389935
+FY2017-18,residential,unallocated,retained at province level,0.000000,0.000000,0,22.389935
+FY2017-18,transport,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,51.644898
+FY2017-18,transport,static_structural,a timeless structural surface,5.774137,0.111805,6,51.644898
+FY2017-18,transport,reference_shape_backcast,"the reference year's pattern, rescaled",45.870761,0.888195,33,51.644898
+FY2017-18,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,51.644898
+FY2017-18,transport,unallocated,retained at province level,0.000000,0.000000,0,51.644898
+FY2017-18,waste,annual_observed_activity,that year's observed activity,3.294431,0.105605,3,31.195647
+FY2017-18,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,31.195647
+FY2017-18,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,31.195647
+FY2017-18,waste,substituted_surface,a declared stand-in surface,27.901216,0.894395,3,31.195647
+FY2017-18,waste,unallocated,retained at province level,0.000000,0.000000,0,31.195647
+FY2018-19,agriculture,annual_observed_activity,that year's observed activity,41.470235,0.223958,19,185.169396
+FY2018-19,agriculture,static_structural,a timeless structural surface,143.699160,0.776042,15,185.169396
+FY2018-19,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,185.169396
+FY2018-19,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,185.169396
+FY2018-19,agriculture,unallocated,retained at province level,0.000000,0.000000,0,185.169396
+FY2018-19,aviation,annual_observed_activity,that year's observed activity,0.066392,0.165297,3,0.401655
+FY2018-19,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.401655
+FY2018-19,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.401655
+FY2018-19,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.401655
+FY2018-19,aviation,unallocated,retained at province level,0.335263,0.834703,3,0.401655
+FY2018-19,fugitives,annual_observed_activity,that year's observed activity,12.710165,0.483836,15,26.269590
+FY2018-19,fugitives,static_structural,a timeless structural surface,13.559425,0.516164,15,26.269590
+FY2018-19,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,26.269590
+FY2018-19,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,26.269590
+FY2018-19,fugitives,unallocated,retained at province level,0.000000,0.000000,0,26.269590
+FY2018-19,industry,annual_observed_activity,that year's observed activity,6.185366,0.111309,3,55.569328
+FY2018-19,industry,static_structural,a timeless structural surface,45.277817,0.814799,12,55.569328
+FY2018-19,industry,reference_shape_backcast,"the reference year's pattern, rescaled",4.106145,0.073892,18,55.569328
+FY2018-19,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,55.569328
+FY2018-19,industry,unallocated,retained at province level,0.000000,0.000000,0,55.569328
+FY2018-19,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,24.248439
+FY2018-19,ippu,static_structural,a timeless structural surface,24.248439,1.000000,5,24.248439
+FY2018-19,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.248439
+FY2018-19,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.248439
+FY2018-19,ippu,unallocated,retained at province level,0.000000,0.000000,0,24.248439
+FY2018-19,power,annual_observed_activity,that year's observed activity,46.839267,1.000000,12,46.839267
+FY2018-19,power,static_structural,a timeless structural surface,0.000000,0.000000,0,46.839267
+FY2018-19,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,46.839267
+FY2018-19,power,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,46.839267
+FY2018-19,power,unallocated,retained at province level,0.000000,0.000000,0,46.839267
+FY2018-19,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.476520
+FY2018-19,railways,static_structural,a timeless structural surface,0.476520,1.000000,9,0.476520
+FY2018-19,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.476520
+FY2018-19,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.476520
+FY2018-19,railways,unallocated,retained at province level,0.000000,0.000000,0,0.476520
+FY2018-19,residential,annual_observed_activity,that year's observed activity,24.009494,1.000000,23,24.009494
+FY2018-19,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,24.009494
+FY2018-19,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.009494
+FY2018-19,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.009494
+FY2018-19,residential,unallocated,retained at province level,0.000000,0.000000,0,24.009494
+FY2018-19,transport,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,48.912276
+FY2018-19,transport,static_structural,a timeless structural surface,5.243293,0.107198,6,48.912276
+FY2018-19,transport,reference_shape_backcast,"the reference year's pattern, rescaled",43.668982,0.892802,33,48.912276
+FY2018-19,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,48.912276
+FY2018-19,transport,unallocated,retained at province level,0.000000,0.000000,0,48.912276
+FY2018-19,waste,annual_observed_activity,that year's observed activity,3.376768,0.104919,3,32.184631
+FY2018-19,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,32.184631
+FY2018-19,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,32.184631
+FY2018-19,waste,substituted_surface,a declared stand-in surface,28.807863,0.895081,3,32.184631
+FY2018-19,waste,unallocated,retained at province level,0.000000,0.000000,0,32.184631
+FY2019-20,agriculture,annual_observed_activity,that year's observed activity,42.989888,0.224648,19,191.365177
+FY2019-20,agriculture,static_structural,a timeless structural surface,148.375290,0.775352,15,191.365177
+FY2019-20,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,191.365177
+FY2019-20,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,191.365177
+FY2019-20,agriculture,unallocated,retained at province level,0.000000,0.000000,0,191.365177
+FY2019-20,aviation,annual_observed_activity,that year's observed activity,0.047737,0.165296,3,0.288797
+FY2019-20,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.288797
+FY2019-20,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.288797
+FY2019-20,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.288797
+FY2019-20,aviation,unallocated,retained at province level,0.241060,0.834704,3,0.288797
+FY2019-20,fugitives,annual_observed_activity,that year's observed activity,11.618211,0.469558,15,24.742851
+FY2019-20,fugitives,static_structural,a timeless structural surface,13.124640,0.530442,15,24.742851
+FY2019-20,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.742851
+FY2019-20,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.742851
+FY2019-20,fugitives,unallocated,retained at province level,0.000000,0.000000,0,24.742851
+FY2019-20,industry,annual_observed_activity,that year's observed activity,5.588026,0.109998,3,50.801104
+FY2019-20,industry,static_structural,a timeless structural surface,41.359234,0.814140,9,50.801104
+FY2019-20,industry,reference_shape_backcast,"the reference year's pattern, rescaled",3.853844,0.075861,18,50.801104
+FY2019-20,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,50.801104
+FY2019-20,industry,unallocated,retained at province level,0.000000,0.000000,0,50.801104
+FY2019-20,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,24.424333
+FY2019-20,ippu,static_structural,a timeless structural surface,24.424333,1.000000,5,24.424333
+FY2019-20,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.424333
+FY2019-20,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.424333
+FY2019-20,ippu,unallocated,retained at province level,0.000000,0.000000,0,24.424333
+FY2019-20,power,annual_observed_activity,that year's observed activity,49.959959,0.999678,12,49.976046
+FY2019-20,power,static_structural,a timeless structural surface,0.000000,0.000000,0,49.976046
+FY2019-20,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,49.976046
+FY2019-20,power,substituted_surface,a declared stand-in surface,0.016087,0.000322,2,49.976046
+FY2019-20,power,unallocated,retained at province level,0.000000,0.000000,0,49.976046
+FY2019-20,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.415862
+FY2019-20,railways,static_structural,a timeless structural surface,0.415862,1.000000,9,0.415862
+FY2019-20,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.415862
+FY2019-20,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.415862
+FY2019-20,railways,unallocated,retained at province level,0.000000,0.000000,0,0.415862
+FY2019-20,residential,annual_observed_activity,that year's observed activity,24.859124,1.000000,23,24.859124
+FY2019-20,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,24.859124
+FY2019-20,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.859124
+FY2019-20,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.859124
+FY2019-20,residential,unallocated,retained at province level,0.000000,0.000000,0,24.859124
+FY2019-20,transport,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,45.461169
+FY2019-20,transport,static_structural,a timeless structural surface,4.228054,0.093004,6,45.461169
+FY2019-20,transport,reference_shape_backcast,"the reference year's pattern, rescaled",41.233116,0.906996,33,45.461169
+FY2019-20,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,45.461169
+FY2019-20,transport,unallocated,retained at province level,0.000000,0.000000,0,45.461169
+FY2019-20,waste,annual_observed_activity,that year's observed activity,3.461410,0.104323,3,33.179729
+FY2019-20,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,33.179729
+FY2019-20,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,33.179729
+FY2019-20,waste,substituted_surface,a declared stand-in surface,29.718319,0.895677,3,33.179729
+FY2019-20,waste,unallocated,retained at province level,0.000000,0.000000,0,33.179729
+FY2020-21,agriculture,annual_observed_activity,that year's observed activity,46.257025,0.231895,19,199.474203
+FY2020-21,agriculture,static_structural,a timeless structural surface,153.217178,0.768105,15,199.474203
+FY2020-21,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,199.474203
+FY2020-21,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,199.474203
+FY2020-21,agriculture,unallocated,retained at province level,0.000000,0.000000,0,199.474203
+FY2020-21,aviation,annual_observed_activity,that year's observed activity,0.049856,0.165297,3,0.301614
+FY2020-21,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.301614
+FY2020-21,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.301614
+FY2020-21,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.301614
+FY2020-21,aviation,unallocated,retained at province level,0.251758,0.834703,3,0.301614
+FY2020-21,fugitives,annual_observed_activity,that year's observed activity,11.291093,0.449064,15,25.143606
+FY2020-21,fugitives,static_structural,a timeless structural surface,13.852513,0.550936,15,25.143606
+FY2020-21,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,25.143606
+FY2020-21,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,25.143606
+FY2020-21,fugitives,unallocated,retained at province level,0.000000,0.000000,0,25.143606
+FY2020-21,industry,annual_observed_activity,that year's observed activity,3.911618,0.063124,3,61.967667
+FY2020-21,industry,static_structural,a timeless structural surface,53.408742,0.861881,9,61.967667
+FY2020-21,industry,reference_shape_backcast,"the reference year's pattern, rescaled",4.647307,0.074996,18,61.967667
+FY2020-21,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,61.967667
+FY2020-21,industry,unallocated,retained at province level,0.000000,0.000000,0,61.967667
+FY2020-21,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,30.314935
+FY2020-21,ippu,static_structural,a timeless structural surface,30.314935,1.000000,5,30.314935
+FY2020-21,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,30.314935
+FY2020-21,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,30.314935
+FY2020-21,ippu,unallocated,retained at province level,0.000000,0.000000,0,30.314935
+FY2020-21,power,annual_observed_activity,that year's observed activity,55.259218,0.999634,12,55.279469
+FY2020-21,power,static_structural,a timeless structural surface,0.000000,0.000000,0,55.279469
+FY2020-21,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,55.279469
+FY2020-21,power,substituted_surface,a declared stand-in surface,0.020251,0.000366,2,55.279469
+FY2020-21,power,unallocated,retained at province level,0.000000,0.000000,0,55.279469
+FY2020-21,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.417261
+FY2020-21,railways,static_structural,a timeless structural surface,0.417261,1.000000,9,0.417261
+FY2020-21,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.417261
+FY2020-21,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.417261
+FY2020-21,railways,unallocated,retained at province level,0.000000,0.000000,0,0.417261
+FY2020-21,residential,annual_observed_activity,that year's observed activity,24.697747,1.000000,23,24.697747
+FY2020-21,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,24.697747
+FY2020-21,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.697747
+FY2020-21,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.697747
+FY2020-21,residential,unallocated,retained at province level,0.000000,0.000000,0,24.697747
+FY2020-21,transport,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,51.577755
+FY2020-21,transport,static_structural,a timeless structural surface,4.151360,0.080487,6,51.577755
+FY2020-21,transport,reference_shape_backcast,"the reference year's pattern, rescaled",47.426396,0.919513,33,51.577755
+FY2020-21,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,51.577755
+FY2020-21,transport,unallocated,retained at province level,0.000000,0.000000,0,51.577755
+FY2020-21,waste,annual_observed_activity,that year's observed activity,3.548430,0.103538,3,34.271853
+FY2020-21,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,34.271853
+FY2020-21,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,34.271853
+FY2020-21,waste,substituted_surface,a declared stand-in surface,30.723423,0.896462,3,34.271853
+FY2020-21,waste,unallocated,retained at province level,0.000000,0.000000,0,34.271853
+FY2021-22,agriculture,annual_observed_activity,that year's observed activity,48.299350,0.233866,19,206.525312
+FY2021-22,agriculture,static_structural,a timeless structural surface,158.225962,0.766134,15,206.525312
+FY2021-22,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,206.525312
+FY2021-22,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,206.525312
+FY2021-22,agriculture,unallocated,retained at province level,0.000000,0.000000,0,206.525312
+FY2021-22,aviation,annual_observed_activity,that year's observed activity,0.058470,0.165297,3,0.353726
+FY2021-22,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.353726
+FY2021-22,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.353726
+FY2021-22,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.353726
+FY2021-22,aviation,unallocated,retained at province level,0.295256,0.834703,3,0.353726
+FY2021-22,fugitives,annual_observed_activity,that year's observed activity,11.545513,0.458393,15,25.186952
+FY2021-22,fugitives,static_structural,a timeless structural surface,13.641439,0.541607,15,25.186952
+FY2021-22,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,25.186952
+FY2021-22,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,25.186952
+FY2021-22,fugitives,unallocated,retained at province level,0.000000,0.000000,0,25.186952
+FY2021-22,industry,annual_observed_activity,that year's observed activity,8.892809,0.166599,21,53.378613
+FY2021-22,industry,static_structural,a timeless structural surface,44.485804,0.833401,12,53.378613
+FY2021-22,industry,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,53.378613
+FY2021-22,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,53.378613
+FY2021-22,industry,unallocated,retained at province level,0.000000,0.000000,0,53.378613
+FY2021-22,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,29.609086
+FY2021-22,ippu,static_structural,a timeless structural surface,29.609086,1.000000,5,29.609086
+FY2021-22,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,29.609086
+FY2021-22,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,29.609086
+FY2021-22,ippu,unallocated,retained at province level,0.000000,0.000000,0,29.609086
+FY2021-22,power,annual_observed_activity,that year's observed activity,52.489730,0.999552,12,52.513273
+FY2021-22,power,static_structural,a timeless structural surface,0.000000,0.000000,0,52.513273
+FY2021-22,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,52.513273
+FY2021-22,power,substituted_surface,a declared stand-in surface,0.023543,0.000448,2,52.513273
+FY2021-22,power,unallocated,retained at province level,0.000000,0.000000,0,52.513273
+FY2021-22,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.423172
+FY2021-22,railways,static_structural,a timeless structural surface,0.423172,1.000000,12,0.423172
+FY2021-22,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.423172
+FY2021-22,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.423172
+FY2021-22,railways,unallocated,retained at province level,0.000000,0.000000,0,0.423172
+FY2021-22,residential,annual_observed_activity,that year's observed activity,24.446267,1.000000,23,24.446267
+FY2021-22,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,24.446267
+FY2021-22,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.446267
+FY2021-22,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.446267
+FY2021-22,residential,unallocated,retained at province level,0.000000,0.000000,0,24.446267
+FY2021-22,transport,annual_observed_activity,that year's observed activity,52.108184,0.935745,33,55.686326
+FY2021-22,transport,static_structural,a timeless structural surface,3.578142,0.064255,6,55.686326
+FY2021-22,transport,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,55.686326
+FY2021-22,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,55.686326
+FY2021-22,transport,unallocated,retained at province level,0.000000,0.000000,0,55.686326
+FY2021-22,waste,annual_observed_activity,that year's observed activity,3.637907,0.102982,3,35.325811
+FY2021-22,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,35.325811
+FY2021-22,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,35.325811
+FY2021-22,waste,substituted_surface,a declared stand-in surface,31.687904,0.897018,3,35.325811
+FY2021-22,waste,unallocated,retained at province level,0.000000,0.000000,0,35.325811
+FY2022-23,agriculture,annual_observed_activity,that year's observed activity,45.151909,0.216489,19,208.564565
+FY2022-23,agriculture,static_structural,a timeless structural surface,163.412656,0.783511,15,208.564565
+FY2022-23,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,208.564565
+FY2022-23,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,208.564565
+FY2022-23,agriculture,unallocated,retained at province level,0.000000,0.000000,0,208.564565
+FY2022-23,aviation,annual_observed_activity,that year's observed activity,0.053260,0.165297,3,0.322211
+FY2022-23,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.322211
+FY2022-23,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.322211
+FY2022-23,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.322211
+FY2022-23,aviation,unallocated,retained at province level,0.268951,0.834703,3,0.322211
+FY2022-23,fugitives,annual_observed_activity,that year's observed activity,10.500219,0.441902,15,23.761422
+FY2022-23,fugitives,static_structural,a timeless structural surface,13.261203,0.558098,15,23.761422
+FY2022-23,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,23.761422
+FY2022-23,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,23.761422
+FY2022-23,fugitives,unallocated,retained at province level,0.000000,0.000000,0,23.761422
+FY2022-23,industry,annual_observed_activity,that year's observed activity,5.928821,0.184504,21,32.133778
+FY2022-23,industry,static_structural,a timeless structural surface,26.204958,0.815496,12,32.133778
+FY2022-23,industry,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,32.133778
+FY2022-23,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,32.133778
+FY2022-23,industry,unallocated,retained at province level,0.000000,0.000000,0,32.133778
+FY2022-23,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,25.170820
+FY2022-23,ippu,static_structural,a timeless structural surface,25.170820,1.000000,5,25.170820
+FY2022-23,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,25.170820
+FY2022-23,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,25.170820
+FY2022-23,ippu,unallocated,retained at province level,0.000000,0.000000,0,25.170820
+FY2022-23,power,annual_observed_activity,that year's observed activity,43.593126,0.999448,12,43.617219
+FY2022-23,power,static_structural,a timeless structural surface,0.000000,0.000000,0,43.617219
+FY2022-23,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,43.617219
+FY2022-23,power,substituted_surface,a declared stand-in surface,0.024093,0.000552,2,43.617219
+FY2022-23,power,unallocated,retained at province level,0.000000,0.000000,0,43.617219
+FY2022-23,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.312272
+FY2022-23,railways,static_structural,a timeless structural surface,0.312272,1.000000,11,0.312272
+FY2022-23,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.312272
+FY2022-23,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.312272
+FY2022-23,railways,unallocated,retained at province level,0.000000,0.000000,0,0.312272
+FY2022-23,residential,annual_observed_activity,that year's observed activity,24.759373,1.000000,23,24.759373
+FY2022-23,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,24.759373
+FY2022-23,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.759373
+FY2022-23,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.759373
+FY2022-23,residential,unallocated,retained at province level,0.000000,0.000000,0,24.759373
+FY2022-23,transport,annual_observed_activity,that year's observed activity,40.160674,0.928724,33,43.242856
+FY2022-23,transport,static_structural,a timeless structural surface,3.082182,0.071276,6,43.242856
+FY2022-23,transport,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,43.242856
+FY2022-23,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,43.242856
+FY2022-23,transport,unallocated,retained at province level,0.000000,0.000000,0,43.242856
+FY2022-23,waste,annual_observed_activity,that year's observed activity,3.731424,0.102353,3,36.456438
+FY2022-23,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,36.456438
+FY2022-23,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,36.456438
+FY2022-23,waste,substituted_surface,a declared stand-in surface,32.725014,0.897647,3,36.456438
+FY2022-23,waste,unallocated,retained at province level,0.000000,0.000000,0,36.456438
+FY2023-24,agriculture,annual_observed_activity,that year's observed activity,50.568335,0.226303,19,223.454472
+FY2023-24,agriculture,static_structural,a timeless structural surface,172.886137,0.773697,15,223.454472
+FY2023-24,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,223.454472
+FY2023-24,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,223.454472
+FY2023-24,agriculture,unallocated,retained at province level,0.000000,0.000000,0,223.454472
+FY2023-24,aviation,annual_observed_activity,that year's observed activity,0.049776,0.165297,3,0.301132
+FY2023-24,aviation,static_structural,a timeless structural surface,0.000000,0.000000,0,0.301132
+FY2023-24,aviation,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.301132
+FY2023-24,aviation,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.301132
+FY2023-24,aviation,unallocated,retained at province level,0.251356,0.834703,3,0.301132
+FY2023-24,fugitives,annual_observed_activity,that year's observed activity,10.095297,0.429599,15,23.499371
+FY2023-24,fugitives,static_structural,a timeless structural surface,13.404073,0.570401,15,23.499371
+FY2023-24,fugitives,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,23.499371
+FY2023-24,fugitives,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,23.499371
+FY2023-24,fugitives,unallocated,retained at province level,0.000000,0.000000,0,23.499371
+FY2023-24,industry,annual_observed_activity,that year's observed activity,5.549487,0.197272,3,28.131133
+FY2023-24,industry,static_structural,a timeless structural surface,22.581645,0.802728,30,28.131133
+FY2023-24,industry,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,28.131133
+FY2023-24,industry,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,28.131133
+FY2023-24,industry,unallocated,retained at province level,0.000000,0.000000,0,28.131133
+FY2023-24,ippu,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,25.535359
+FY2023-24,ippu,static_structural,a timeless structural surface,25.535359,1.000000,5,25.535359
+FY2023-24,ippu,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,25.535359
+FY2023-24,ippu,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,25.535359
+FY2023-24,ippu,unallocated,retained at province level,0.000000,0.000000,0,25.535359
+FY2023-24,power,annual_observed_activity,that year's observed activity,40.019365,0.999483,12,40.040080
+FY2023-24,power,static_structural,a timeless structural surface,0.000000,0.000000,0,40.040080
+FY2023-24,power,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,40.040080
+FY2023-24,power,substituted_surface,a declared stand-in surface,0.020715,0.000517,2,40.040080
+FY2023-24,power,unallocated,retained at province level,0.000000,0.000000,0,40.040080
+FY2023-24,railways,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,0.394370
+FY2023-24,railways,static_structural,a timeless structural surface,0.394370,1.000000,12,0.394370
+FY2023-24,railways,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,0.394370
+FY2023-24,railways,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,0.394370
+FY2023-24,railways,unallocated,retained at province level,0.000000,0.000000,0,0.394370
+FY2023-24,residential,annual_observed_activity,that year's observed activity,24.220421,1.000000,23,24.220421
+FY2023-24,residential,static_structural,a timeless structural surface,0.000000,0.000000,0,24.220421
+FY2023-24,residential,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,24.220421
+FY2023-24,residential,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,24.220421
+FY2023-24,residential,unallocated,retained at province level,0.000000,0.000000,0,24.220421
+FY2023-24,transport,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,41.926173
+FY2023-24,transport,static_structural,a timeless structural surface,41.926173,1.000000,39,41.926173
+FY2023-24,transport,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,41.926173
+FY2023-24,transport,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,41.926173
+FY2023-24,transport,unallocated,retained at province level,0.000000,0.000000,0,41.926173
+FY2023-24,waste,annual_observed_activity,that year's observed activity,3.826341,0.102164,3,37.452910
+FY2023-24,waste,static_structural,a timeless structural surface,0.000000,0.000000,0,37.452910
+FY2023-24,waste,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,37.452910
+FY2023-24,waste,substituted_surface,a declared stand-in surface,33.626570,0.897836,3,37.452910
+FY2023-24,waste,unallocated,retained at province level,0.000000,0.000000,0,37.452910

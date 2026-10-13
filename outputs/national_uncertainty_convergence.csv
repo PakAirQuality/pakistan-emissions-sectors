@@ -1,0 +1,13 @@
+series,n_draws,P2.5_Mt,P50_Mt,P97.5_Mt,p025_se_Mt,p50_se_Mt,p975_se_Mt
+national TOTAL (within_sector),10000,399.8146,446.2847,505.4105,0.8441,0.3147,0.9444
+national TOTAL (within_sector),25000,399.9185,446.5803,504.7544,0.3343,0.2165,0.4194
+national TOTAL (within_sector),50000,400.0328,446.6929,504.5654,0.2361,0.1344,0.2464
+national TOTAL (within_sector),100000,400.296,446.525,504.9672,0.1259,0.1278,0.225
+fugitives module (sector engine draws),10000,21.277,24.1408,30.5371,0.0308,0.0245,0.0606
+fugitives module (sector engine draws),25000,21.2378,24.1389,30.4673,0.0283,0.0126,0.0346
+fugitives module (sector engine draws),50000,21.247,24.1597,30.4812,0.0129,0.0118,0.032
+fugitives module (sector engine draws),100000,21.2517,24.1531,30.4333,0.0101,0.008,0.0275
+waste module (sector engine draws),10000,25.7004,38.2999,61.4222,0.1397,0.0782,0.319
+waste module (sector engine draws),25000,25.6618,38.3243,60.9682,0.0942,0.0421,0.2094
+waste module (sector engine draws),50000,25.4789,38.2267,60.8142,0.0679,0.0468,0.1616
+waste module (sector engine draws),100000,25.4724,38.2093,60.933,0.0419,0.024,0.1299

@@ -1,0 +1,47 @@
+# WHAT THE ENGINE BOOKS AS PUBLIC-POWER COAL ENERGY, AND WHY IT IS NOT TABLE 3.
+#
+# data/activity/power/fuel_consumed.csv stays exactly what it is: a faithful transcription of
+# NEPRA's State of Industry Report Table 3, with a source on every row. This file does not
+# correct that transcription. It declares which ACCOUNT the engine books, one row per fiscal
+# year, and carries the superseded figure beside it so the move is visible per year rather
+# than inferred from a total.
+#
+# WHY THE ACCOUNT MOVED. Table 3's coal energy is HDIP's tonnage times a CONVERSION, not a
+# measurement: 0.4474 TOE per tonne - 18.73 TJ/Gg - held constant across FY2015-16..FY2020-21
+# to 0.016 per cent while the fleet went from imported bituminous to 92 per cent Thar lignite,
+# then breaking UPWARD exactly as the fleet's physical calorific value fell. Divided into
+# NEPRA's own printed generation it implies net fleet efficiencies inside 28-47 per cent in
+# TWO of nine years. The booked account here - the stations' own metered coal at IPCC Vol.2
+# Ch.1 Table 1.2 rank defaults - is inside in NINE of nine, and in the four years whose mass
+# is reconstructed the WHOLE interval is inside. Neither test touches a heat rate, so neither
+# restates the regulator's own print. outputs/pakemis_power_coal_configurations.csv publishes
+# all four candidate accounts with their verdicts; docs/power_coal_energy_basis.md is the
+# report.
+#
+# THE RATIO CHANGES SIGN TWICE across the panel (0.473, 0.677, 1.532, 1.400, 1.301, 1.669,
+# 0.766, 0.652, 0.538). No constant correction is admissible and none is applied: every year
+# is booked from its own stations.
+#
+# THE FOUR RECONSTRUCTED YEARS carry booked_lo_toe and booked_hi_toe as well as a point. The
+# point is the MIDPOINT of the interval, and the interval is the activity uncertainty - it is
+# not decoration and it is not a confidence statement about the other five years, which carry
+# lo = hi = the booked value because every plant-year in them is printed.
+#
+# WHAT THIS FILE DOES NOT DO. It does not touch any other fuel: gas, furnace oil and diesel
+# are booked from Table 3 exactly as before, and a year absent from this file RAISES rather
+# than falling back silently. It does not move the industrial coal column either: HDIP's
+# consumption is its supply, so a residual exists, and that residual is published BESIDE the
+# total in outputs/pakemis_coal_sector_reallocation.csv rather than booked - which non-power
+# consumer took the coal is not resolved.
+fiscal_year,fuel,booked_toe,booked_lo_toe,booked_hi_toe,basis,mass_account,superseded_toe,superseded_source,ratio_to_superseded,evidence_grade,note
+2013,Coal,45678.1,45678.1,45678.1,C1_stations_rank_default,"coal used, as the stations report it",71902.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",0.635,printed-other-edition,"PRE-PANEL. FY2013-14 and FY2014-15 are outside the nine-year reporting panel and feed only the sector's own diagnostics, but the engine refuses to fall back to Table 3 for an unbooked year, so they are booked on the same account as the panel: GENCO Lakhra is the only coal station running, its mass is printed in SoIR 2018's GENCO block, and the rank default is lignite"
+2014,Coal,42918.2,42918.2,42918.2,C1_stations_rank_default,"coal used, as the stations report it",67638.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",0.635,printed-other-edition,"PRE-PANEL. FY2013-14 and FY2014-15 are outside the nine-year reporting panel and feed only the sector's own diagnostics, but the engine refuses to fall back to Table 3 for an unbooked year, so they are booked on the same account as the panel: GENCO Lakhra is the only coal station running, its mass is printed in SoIR 2018's GENCO block, and the rank default is lignite"
+2015,Coal,43255.0,43255.0,43255.0,C1_stations_rank_default,"coal used, as the stations report it",91463.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",0.473,printed,"every plant-year printed; no reconstruction, so the interval is a point"
+2016,Coal,260437.6,233041.9,287833.2,C1_stations_rank_default,"coal used, as the stations report it",384585.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",0.677,reconstructed_interval,at least one plant-year is printed in no edition; the booked value is the MIDPOINT of the reconstruction interval and the interval is carried as activity uncertainty
+2017,Coal,3040711.3,2670989.8,3410432.8,C1_stations_rank_default,"coal used, as the stations report it",1984722.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",1.532,reconstructed_interval,at least one plant-year is printed in no edition; the booked value is the MIDPOINT of the reconstruction interval and the interval is carried as activity uncertainty
+2018,Coal,3696641.8,3653936.2,3739347.5,C1_stations_rank_default,"coal used, as the stations report it",2640347.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",1.400,reconstructed_interval,at least one plant-year is printed in no edition; the booked value is the MIDPOINT of the reconstruction interval and the interval is carried as activity uncertainty
+2019,Coal,6340355.4,6340355.4,6340355.4,C1_stations_rank_default,"coal used, as the stations report it",4875302.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",1.301,printed,"every plant-year printed; no reconstruction, so the interval is a point"
+2020,Coal,6879669.4,6879669.4,6879669.4,C1_stations_rank_default,"coal used, as the stations report it",4123008.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",1.669,printed,"every plant-year printed; no reconstruction, so the interval is a point"
+2021,Coal,5921049.5,5914899.2,5927199.8,C1_stations_rank_default,"coal used, as the stations report it",7731514.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",0.766,reconstructed_interval,at least one plant-year is printed in no edition; the booked value is the MIDPOINT of the reconstruction interval and the interval is carried as activity uncertainty
+2022,Coal,5161006.0,5161006.0,5161006.0,C1_stations_rank_default,"coal used, as the stations report it",7919004.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",0.652,printed,"every plant-year printed; no reconstruction, so the interval is a point"
+2023,Coal,4934699.5,4934699.5,4934699.5,C1_stations_rank_default,"coal used, as the stations report it",9177934.0,"NEPRA SoIR Table 3 'Fuel consumed' (TOE), via data/activity/power/fuel_consumed.csv",0.538,printed,"every plant-year printed; no reconstruction, so the interval is a point"

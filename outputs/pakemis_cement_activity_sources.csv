@@ -1,0 +1,11 @@
+period_id,period_end_year,source_id,cement_kt,overlap_with,overlap_kt,difference_kt,difference_pct,note
+FY2015-16,2016,psyb_2020_table_13_2,35432.0,,,,,carried on the yearbook alone; the join is bounded at FY2019-20
+FY2016-17,2017,psyb_2020_table_13_2,37022.0,,,,,carried on the yearbook alone; the join is bounded at FY2019-20
+FY2017-18,2018,psyb_2020_table_13_2,41148.0,,,,,carried on the yearbook alone; the join is bounded at FY2019-20
+FY2018-19,2019,psyb_2020_table_13_2,39924.0,,,,,carried on the yearbook alone; the join is bounded at FY2019-20
+FY2019-20,2020,psyb_2020_table_13_2,39122.0,sbp_stat_supplement_fy2024,39121.0,1.0,0.0026,both publications carry this year; the difference is what bounds the join between them
+FY2019-20,2020,sbp_stat_supplement_fy2024,39121.0,psyb_2020_table_13_2,39122.0,-1.0,-0.0026,both publications carry this year; the difference is what bounds the join between them
+FY2020-21,2021,sbp_stat_supplement_fy2024,49797.0,,,,,carried on this source alone
+FY2021-22,2022,sbp_stat_supplement_fy2024,48011.0,,,,,carried on this source alone
+FY2022-23,2023,sbp_stat_supplement_fy2024,41448.0,,,,,carried on this source alone
+FY2023-24,2024,pbs_qim_fy2023_24,39566.0,,,,,carried on this source alone

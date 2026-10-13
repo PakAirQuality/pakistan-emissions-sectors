@@ -1,0 +1,5 @@
+comparison,inventory_year,official_mt_co2e,public_data_mt_co2e,ratio,role,note
+Pakistan CRT total IPPU,2022,49.11203071155898,,,official sector control,Category-wide comparator; the public-data platform does not yet estimate all IPPU.
+Cement process CO2,2022,27.905848245,17.984632119999997,0.6444753788561999,matched-calendar independent reconstruction,Calendar-2022 PBS monthly cement plus calendar-2022 HS 252310 trade; 0.75 clinker fraction.
+Cement process CO2 all-Portland sensitivity,2022,27.905848245,22.59505612,0.8096889197427798,matched-calendar structural sensitivity,Same matched data with a 0.95 clinker fraction.
+CRT cement activity and implied factor,2022,27.905848245,,,official method audit,CRT activity 50245.5000 kt and IEF 0.55539000 t/t reproduce the official row.

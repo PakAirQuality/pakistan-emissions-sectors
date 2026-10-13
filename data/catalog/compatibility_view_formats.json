@@ -1,0 +1,1273 @@
+{
+  "schema": "pkinv.compatibility-views/v1",
+  "description": "Formatting only: source quantities and annotations are maintained in the registered facts and evidence tables. Existing row order is part of the compatibility contract.",
+  "views": {
+    "aviation/fuel_controls_2023_24": {
+      "fields": [
+        "fiscal_year",
+        "fiscal_year_label",
+        "customer_category",
+        "fuel_type",
+        "tonnes",
+        "preliminary_ipcc_assignment",
+        "source",
+        "source_url",
+        "source_note"
+      ],
+      "records": [
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        }
+      ],
+      "after": ""
+    },
+    "fugitives/anchor_activity_2021_23": {
+      "fields": [
+        "fiscal_year",
+        "activity_id",
+        "ipcc_code",
+        "segment",
+        "subsegment",
+        "value",
+        "unit",
+        "uncertainty_low_pct",
+        "uncertainty_high_pct",
+        "source",
+        "source_reference",
+        "method_tier",
+        "status",
+        "note"
+      ],
+      "records": [
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            10,
+            13
+          ],
+          "newline": "\n"
+        }
+      ],
+      "after": ""
+    },
+    "fugitives/anchor_activity_2023_24": {
+      "fields": [
+        "activity_id",
+        "ipcc_code",
+        "segment",
+        "subsegment",
+        "value",
+        "unit",
+        "uncertainty_low_pct",
+        "uncertainty_high_pct",
+        "source",
+        "source_reference",
+        "method_tier",
+        "status",
+        "note"
+      ],
+      "records": [
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            8,
+            9,
+            12
+          ],
+          "newline": "\n"
+        }
+      ],
+      "after": ""
+    },
+    "residential/fuel_supply": {
+      "fields": [
+        "fiscal_year",
+        "fuel",
+        "quantity",
+        "unit",
+        "source",
+        "note"
+      ],
+      "records": [
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            4,
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            4,
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            4,
+            5
+          ],
+          "newline": "\n"
+        }
+      ],
+      "after": ""
+    },
+    "residential/fuel_supply_history": {
+      "fields": [
+        "fiscal_year",
+        "fuel",
+        "quantity",
+        "unit",
+        "basis",
+        "source",
+        "note"
+      ],
+      "records": [
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5,
+            6
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5,
+            6
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            5,
+            6
+          ],
+          "newline": "\n"
+        }
+      ],
+      "after": ""
+    },
+    "ippu/company_clinker_2023_24": {
+      "fields": [
+        "period_end_year",
+        "period_basis",
+        "company",
+        "clinker_production_t",
+        "cement_production_t",
+        "opening_clinker_stock_t",
+        "clinker_purchases_t",
+        "clinker_imports_t",
+        "clinker_ground_t",
+        "domestic_clinker_sales_t",
+        "clinker_exports_t",
+        "closing_clinker_stock_t",
+        "source_id",
+        "source_reference",
+        "page_or_table",
+        "coverage_status",
+        "note"
+      ],
+      "records": [
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            16
+          ],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\r\n"
+        }
+      ],
+      "after": ""
+    },
+    "ippu/company_clinker_series": {
+      "fields": [
+        "company",
+        "fiscal_year",
+        "period_end_year",
+        "clinker_production_t",
+        "cement_production_t",
+        "cement_despatch_t",
+        "unit_printed",
+        "source_file",
+        "page",
+        "table_label_printed",
+        "status",
+        "note"
+      ],
+      "records": [
+        {
+          "before": "# WHAT THIS IS -- a per-company, per-fiscal-year transcription of CLINKER and\n# CEMENT PRODUCTION (and, where separately printed, cement/clinker DESPATCHES)\n# read directly out of the sixteen cement-company annual reports held under\n# sources/IPPU/company/. One row per company x printed fiscal year. It extends\n# data/activity/ippu/company_clinker_2023_24.csv backwards in time; that file\n# stays the FY2023-24 ingest of record and is NOT modified by this one.\n#\n# HOW IT WAS EXTRACTED -- `pdftotext -layout` over each held PDF into a scratch\n# tree, then the multi-year \"Six Years at a Glance\" / \"Key Operating and\n# Financial Data\" / \"Production and Sales\" table and the financial-statement\n# capacity-and-production note were located by ligature-normalised search\n# (strip [\\s\\x00-\\x1f] before matching). Every cell that is a chart label, an\n# OCR reading, or a layout that pdftotext could plausibly mis-column was\n# re-read from a rendered page image before being written here.\n#\n# TRAPS ENCOUNTERED AND HOW THEY WERE HANDLED\n#  - Column order is NOT uniform. Pioneer/Power/Thatta/Gharibwal/Kohat/Fauji/\n#    Fecto/Maple Leaf/Dewan run NEWEST-FIRST; Lucky and Flying run OLDEST-FIRST\n#    in their six-year financial tables. Every value here was anchored on its\n#    own printed year header, never on column position.\n#  - Units differ per document and are recorded verbatim in unit_printed\n#    (\"Metric tons\", \"Metric Tonnes\", \"M. Tons\", \"M. Tones\", \"Tons\", \"Tonnes\",\n#    \"Tons in thousands\", \"Tons '000'\", \"In thousand metric tonnes\",\n#    \"Quantity in Ton\", \"In MT\"). Thousands were multiplied out to tonnes HERE,\n#    explicitly, and the note says so on every converted row.\n#  - CAPACITY IS NOT PRODUCTION. Every capacity-and-production note prints both\n#    side by side (e.g. Bestway note 42, Lucky note 40, Fauji note 43); only the\n#    \"Actual Production\" column was taken.\n#  - Pioneer's six-year table mis-labels its dispatch TOTAL row: the tonnage\n#    line carries the label \"Cement Capacity Utilization\" and the percentage\n#    line below it carries \"(based on installed capacity)\". Verified against a\n#    rendered page image; the tonnage equals Domestic + International.\n#  - Power Cement's quarterly page prints a \"'000'\" banner over a block whose\n#    tonnage rows are plainly absolute MT (2,285,325); the two-year directors'\n#    table on p62 was used instead.\n#  - Despatch rows are labelled as despatches and NEVER as production. Several\n#    companies print a COMBINED cement+clinker despatch figure (Pioneer, Power,\n#    Lucky, Bestway's \"cement and Xtreme Bond\"); those rows say so in note.\n#\n# WHAT THIS IS NOT -- it is not an emissions estimate, not a national total,\n# and not a complete census of Pakistani cement companies: only the sixteen\n# documents held in sources/IPPU/company/ were read (Cherat Cement, present in\n# company_clinker_2023_24.csv, has no held annual report and therefore no row).\n# Company-wide figures cover all of a company's plants, including plants outside\n# Pakistan where a company has them; no plant-level split is attempted.\n# An absence is TYPED: where a company does not print a quantity for a year the\n# cell is EMPTY with status=not_printed -- never zero.\n#\n# COLUMNS\n#  fiscal_year        Pakistani fiscal year, YYYY-YY, ending 30 June of period_end_year.\n#  page               1-based PDF page index of the held file (pdftotext page), NOT\n#                     the printed folio, which usually runs two pages behind.\n#  status             verified      = read from the PDF's own text layer\n#                     verified-ocr  = scanned page, read by OCR and confirmed against\n#                                     a rendered page image\n#                     not_printed   = the document does not print this quantity\n#  unit_printed       the unit string as printed above/beside the table.\n",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9,
+            11
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            9
+          ],
+          "newline": "\n"
+        }
+      ],
+      "after": ""
+    },
+    "ippu/cement_producer_census_2023_24": {
+      "fields": [
+        "period_end_year",
+        "company",
+        "apcma_member_or_market_evidence",
+        "clinker_production_status",
+        "clinker_production_t",
+        "source_reference",
+        "next_evidence_needed"
+      ],
+      "records": [
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [
+            6
+          ],
+          "newline": "\n"
+        },
+        {
+          "before": "",
+          "quoted": [],
+          "newline": "\n"
+        }
+      ],
+      "after": ""
+    }
+  }
+}

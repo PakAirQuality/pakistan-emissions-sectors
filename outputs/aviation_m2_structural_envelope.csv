@@ -1,0 +1,5 @@
+fiscal_year,model,interval_type,metric,structural_low_Mt,structural_high_Mt,low_configuration,high_configuration,interpretation
+2023,completed_M2,primary,CO2,0.2146117251841005,0.297265730739481,central_ipf/current_icao_route_m1_endpoint_m0,maximum/all_missing_stages_m0,scenario envelope across route graph and completion method; not a confidence interval
+2023,completed_M2,primary,CO2E,0.21620643256424033,0.29941484192210027,central_ipf/current_icao_route_m1_endpoint_m0,maximum/all_missing_stages_m0,scenario envelope across route graph and completion method; not a confidence interval
+2023,completed_M2,weather_augmented,CO2,0.2059031237679769,0.29304133162505486,central_ipf/current_icao_route_m1_endpoint_m0,maximum/all_missing_stages_m0,scenario envelope across route graph and completion method; not a confidence interval
+2023,completed_M2,weather_augmented,CO2E,0.20739745037241447,0.2953799960021143,central_ipf/current_icao_route_m1_endpoint_m0,maximum/all_missing_stages_m0,scenario envelope across route graph and completion method; not a confidence interval

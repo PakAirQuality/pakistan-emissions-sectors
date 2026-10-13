@@ -1,0 +1,63 @@
+# Which member of a select-rule dependency group a component row actually reads.
+#
+# The applies_to column in every sector's uncertainty-inputs table already SAYS this --
+# "Coal CO2/CH4/N2O", "all diesel streams", "GHG supplement" -- but it said it as free
+# text nothing read, and the resolver summarised the members with a median instead. These
+# are the same statements as machine-checkable patterns against the component row. Empty
+# pattern = no constraint on that field; a member may bind nothing in the GHG universe
+# (the firewood moisture term, which enters only the air layer) but a component matching
+# zero or several members of a select group is an error at decompose time.
+parameter_id,category_pattern,subitem_pattern,gas_pattern,note
+power:Coal TOE row,,^Coal,,NEPRA Table 3 coal row; metered mass + CRT agreement
+power:Gas TOE row,,^Gas,,NEPRA Table 3 gas row
+power:Furnace oil TOE row,,^Furnace,,NEPRA Table 3 furnace-oil row
+power:Diesel TOE row,,^Diesel,,NEPRA Table 3 diesel row
+railways:Diesel consumption FY2023-24,,^Diesel|^Non-traction diesel,,"the diesel account; all diesel streams across BOTH booking categories - the rc11 re-base split the booking, not the meter"
+railways:Furnace-oil consumption FY2023-24,,^Furnace|^Non-traction furnace,,the furnace-oil account across both booking categories
+aviation:Jet-fuel carbon conversion,,,^CO2$,all CO2 products per its own applies_to
+aviation:CH4 emission factor,,,^CH4$,Table 3.6.5 CH4 factor
+aviation:N2O emission factor,,,^N2O$,Table 3.6.5 N2O factor
+fugitives:activity:gas_onshore_production,,^Gas production,,its own stage
+fugitives:activity:gas_gathering,,^Gas gathering,,its own stage
+fugitives:activity:gas_processing,,^Gas processing,,its own stage
+fugitives:activity:sour_gas_processing_gross_32,,^Sour-gas,,its own stage
+fugitives:activity:oil_onshore_production,,^Oil production,,its own stage
+fugitives:activity:oil_pipeline_transport,,^Oil pipeline,,its own stage
+waste:fossil_c_per_wet_t,,,^CO2$,4C2 fossil CO2 per its own applies_to
+waste:total_c_per_wet_t,,,^(CH4|N2O)$,total carbon: the CH4 chain (4C2 CH4 and 4A DOC) and the N2O row's organic-mass basis
+residential:HIES firewood quantity,,,,the GHG activity for every firewood row
+residential:Firewood air-dry moisture,(?!),,,enters only the air layer's oven-dry basis; binds no GHG row by construction
+residential:Domestic gas volume FY2023-24,,^Natural gas,,OGRA Table 3.31 residential row (delivered_gas_ogra_3_31)
+transport:CNG metered volume FY2021-22,,^CNG,,OGRA Table 3.31 CNG row (delivered_gas_ogra_3_31)
+industry:Industrial gas volume (General Industry + Cement),,^(General Industry|Cement) gas,,OGRA Table 3.31 industrial rows (delivered_gas_ogra_3_31)
+power:Captive gas volume,,^Captive natural gas,,OGRA Table 3.31 captive row (delivered_gas_ogra_3_31)
+fugitives:factor:gas_distribution_high_km_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:gas_distribution_high_km_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:gas_gathering_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:gas_gathering_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:gas_gathering_n2o,,,^N2O$,rc41: the N2O member of its segment factor family
+fugitives:factor:gas_processing_high_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:gas_processing_high_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:gas_processing_high_n2o,,,^N2O$,rc41: the N2O member of its segment factor family
+fugitives:factor:gas_processing_sour_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:gas_processing_sour_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:gas_processing_sour_n2o,,,^N2O$,rc41: the N2O member of its segment factor family
+fugitives:factor:gas_prod_high_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:gas_prod_high_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:gas_prod_high_n2o,,,^N2O$,rc41: the N2O member of its segment factor family
+fugitives:factor:gas_transmission_high_km_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:gas_transmission_high_km_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:lng_import_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:lng_import_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:oil_prod_high_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:oil_prod_high_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:oil_prod_high_n2o,,,^N2O$,rc41: the N2O member of its segment factor family
+fugitives:factor:oil_refining_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:oil_refining_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:oil_refining_n2o,,,^N2O$,rc41: the N2O member of its segment factor family
+fugitives:factor:oil_transport_pipeline_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:oil_transport_pipeline_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:post_meter_appliance_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:post_meter_appliance_co2,,,^CO2$,rc41: the CO2 member of its segment factor family
+fugitives:factor:post_meter_industrial_ch4,,,^CH4$,rc41: the CH4 member of its segment factor family
+fugitives:factor:post_meter_industrial_co2,,,^CO2$,rc41: the CO2 member of its segment factor family

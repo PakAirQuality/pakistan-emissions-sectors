@@ -1,0 +1,34 @@
+# FAO/GIEWS crop calendar, Pakistan: the harvest sessions of the five crops the burning
+# ledger prices, transcribed by scripts/derive_fao_harvest_sessions.py from
+# data/raw/fao_crop_calendar/Pakistan_crop_calendar.json (hash in the raw-data manifest).
+# Read by pkinv.sectors.agriculture.burn_windows; the JSON itself is not redistributed.
+crop,crop_fao,session,early_month,early_day,late_month,late_day
+wheat,Pain de blé,0,4,30,5,31
+wheat,Pain de blé,0,4,30,5,31
+wheat,Pain de blé,0,4,15,4,30
+wheat,Pain de blé,0,4,15,4,30
+wheat,Pain de blé,0,3,15,4,30
+wheat,Pain de blé,0,3,15,4,30
+wheat,Pain de blé,0,5,1,5,31
+wheat,Pain de blé,1,5,1,5,15
+wheat,Pain de blé,0,5,15,6,1
+wheat,Pain de blé,1,5,15,6,1
+rice,Riz,0,10,25,11,7
+rice,Riz,0,10,7,10,30
+rice,Riz,0,10,7,10,30
+rice,Riz,0,9,30,10,31
+maize,"Maïs, sucré",0,9,15,10,15
+maize,"Maïs, sucré",1,9,30,10,15
+maize,"Maïs, sucré",0,9,1,9,30
+maize,"Maïs, sucré",1,9,1,9,30
+maize,"Maïs, sucré",0,9,1,9,30
+maize,"Maïs, sucré",0,9,1,9,30
+sugarcane,Canne à sucre,0,11,1,1,31
+sugarcane,Canne à sucre,0,2,1,3,31
+sugarcane,Canne à sucre,0,11,1,1,31
+sugarcane,Canne à sucre,1,2,1,4,30
+sugarcane,Canne à sucre,0,11,1,12,31
+sugarcane,Canne à sucre,1,2,1,3,31
+cotton,Coton,0,9,15,10,31
+cotton,Coton,0,9,15,10,31
+cotton,Coton,0,9,15,10,31

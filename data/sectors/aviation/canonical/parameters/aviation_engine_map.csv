@@ -1,0 +1,8 @@
+Aircraft,Representative engine,Engine count,Eedb uid,Fuel kg per lto,NOx kg per lto,Co kg per lto,Hc kg per lto,Source,Imputed,Note,Record ID,Source row
+A320,CFM56-5B4/P,2,3CM026,816,11.282,8.246,1.636,ICAO Aircraft Engine Emissions Databank v32 (March 2026),true,Representative engine rather than registration-specific fit,e05b7743bcd65829cfbcd53e,1
+B737-800,CFM56-7B26/3,2,8CM065,858,9.526,10.952,0.604,ICAO Aircraft Engine Emissions Databank v32 (March 2026),true,Representative engine rather than registration-specific fit,ca68ae0f8f029f5c17dab39e,2
+B777-200,GE90-94B,2,8GE100,2406,61.234,12.312,0.442,ICAO Aircraft Engine Emissions Databank v32 (March 2026),true,Representative engine rather than registration-specific fit,08decccb68356da254a42409,3
+A310,CF6-80C2A2,2,2GE037,1530,18.678,13.916,1.204,ICAO Aircraft Engine Emissions Databank v32 (March 2026),true,Representative engine rather than registration-specific fit,04cd84596c67b9f7433b30df,4
+B737-300,CFM56-3C-1,2,1CM007,896,9.620,11.182,0.574,ICAO Aircraft Engine Emissions Databank v32 (March 2026),true,Representative engine rather than registration-specific fit,a139128bd15946d08657f8a5,5
+B747-300,CF6-50E2,4,3GE077,3076,47.536,27.452,3.152,ICAO Aircraft Engine Emissions Databank v32 (March 2026),true,Representative engine rather than registration-specific fit,96a12a04f00aab2280c3f32e,6
+ATR72,PW127 family,2,,200,1.820,2.330,,IPCC 2006 Guidelines Volume 2 Chapter 3 Table 3.6.9 / FOI turboprop data,true,Turboprops are outside the ICAO certification databank threshold; HC unavailable,5457cf838237c7d34cdc31f9,7

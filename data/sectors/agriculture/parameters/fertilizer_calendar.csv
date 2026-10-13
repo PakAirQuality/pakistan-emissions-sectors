@@ -1,0 +1,7 @@
+crop,n_share,jan,feb,mar,apr,may,jun,jul,aug,sep,oct,nov,dec,source,note
+wheat,0.50,0.25,0.05,0,0,0,0,0,0,0,0,0.40,0.30,"NFDC / PARC wheat agronomy (Rabi)","Dominant N user; basal at Nov sowing + top-dress Dec-Jan at tillering/crown-root"
+rice,0.16,0,0,0,0,0,0.40,0.35,0.25,0,0,0,0,"PARC rice agronomy (Kharif); ties to rice_N_fraction=0.16","Nursery/transplant Jun-Jul basal + top-dress Aug"
+cotton,0.12,0,0,0,0,0.30,0.35,0.25,0.10,0,0,0,0,"PARC cotton agronomy (Kharif)","Sow Apr-May; split N May-Aug"
+maize,0.10,0,0.15,0.25,0,0,0,0.25,0.25,0.10,0,0,0,"PARC maize agronomy (spring + autumn)","Spring Feb-Mar and autumn Jul-Sep crops"
+sugarcane,0.08,0,0.25,0.30,0.25,0.20,0,0,0,0,0,0,0,"PARC sugarcane agronomy","Planted Feb-Mar; N Feb-May"
+other,0.04,0,0,0.20,0,0,0.20,0,0.20,0.20,0,0.20,0,"estimate (vegetables/fodder/minor crops)","Residual N spread across Rabi + Kharif"

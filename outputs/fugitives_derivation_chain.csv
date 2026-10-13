@@ -1,0 +1,90 @@
+# THE DERIVATION CHAIN: the published source, the corrections, what the engine used,
+# and the result - one walk, in the order a reader meets it. Every value is READ from
+# the file named in evidence_file; nothing here is recomputed. A stage a sector has no
+# artifact for is declared absent in a row rather than skipped.
+# Registry: data/verification_chain.csv. See pkinv.report.derivation_chain.
+stage,step,section,subject,item,kind,value,unit,evidence_file,note
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Oil,Onshore production,estimated,4103.772444,thousand_m3,data/activity/fugitives/anchor_activity_2023_24.csv,Table 3.11: 25.812 million barrels in FY2023-24; converted at 0.158987 m3/barrel
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Oil,Pipeline transport,estimated,4103.772444,thousand_m3,data/activity/fugitives/anchor_activity_2023_24.csv,Table 3.11 production; transported-volume proxy
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Oil,Refining,estimated,12552.941,thousand_m3,data/activity/fugitives/anchor_activity_2023_24.csv,Table 2.3: 10.67 million tonnes refinery output divided by 0.85 t/m3
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Onshore production,estimated,32309.4688,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,"Table 3.11: 1,141 thousand MMCFT in FY2023-24; converted at 0.0283168 million m3/MMCF"
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Gathering,estimated,32309.4688,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,Production-volume activity fallback permitted by IPCC Table 4.2.4g
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Processing,estimated,32309.4688,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,Production-volume fallback permitted by IPCC Table 4.2.4h
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Sour gas acid removal,estimated,10339.030016,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,Section 4.2.2.4 default 32% sour-gas share applied to gas production
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Transmission,estimated,13526.69,km,data/activity/fugitives/anchor_activity_2023_24.csv,"Tables 3.13 and 3.17: SNGPL 9,320.69 km plus SSGCL 4,206 km"
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Transmission,estimated,37519.74954127,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,"Table 3.31: categorized gas 3,437.13 plus T&D losses 193 MMCFD, annualised"
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,LNG import,estimated,2,station,data/activity/fugitives/anchor_activity_2023_24.csv,Section 3.3.9 identifies Engro and PGPC terminals
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Distribution,estimated,201230,km,data/activity/fugitives/anchor_activity_2023_24.csv,"Tables 3.22 and 3.23: SNGPL 151,419 km plus SSGCL 49,811 km"
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Distribution,estimated,35524.96928557,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,"Table 3.31: categorized gas 3,437.13 MMCFD annualised"
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Residential and commercial appliances,estimated,10748538,appliance,data/activity/fugitives/anchor_activity_2023_24.csv,Table 3.26 domestic customer connections as of 30 June 2024
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Natural gas,Industrial and power leakage,estimated,25210.98364336,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,"Table 3.31 commercial, general industry, fertilizer, captive power, cement and power consumption annualised"
+1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",Diagnostic,Unaccounted-for gas,memo,1994.78025977,million_m3,data/activity/fugitives/anchor_activity_2023_24.csv,Table 3.31: 193 MMCFD annualised
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil production,oil_onshore_production,higher,4103.772444,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil production,oil_onshore_production,higher,4103.772444,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil production,oil_onshore_production,higher,4103.772444,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil pipeline transport,oil_pipeline_transport,higher,4103.772444,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil pipeline transport,oil_pipeline_transport,higher,4103.772444,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil refining,oil_refining,higher,12552.941,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.iv
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil refining,oil_refining,higher,12552.941,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.iv
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Oil refining,oil_refining,higher,12552.941,thousand_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.a.iv
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas production,gas_onshore_production,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas production,gas_onshore_production,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas production,gas_onshore_production,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas gathering,gas_gathering,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas gathering,gas_gathering,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas gathering,gas_gathering,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.ii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas processing,gas_processing,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas processing,gas_processing,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas processing,gas_processing,higher,32309.4688,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Sour-gas processing,sour_gas_processing_gross_32,higher,10339.030016,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Sour-gas processing,sour_gas_processing_gross_32,higher,10339.030016,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Sour-gas processing,sour_gas_processing_gross_32,higher,10339.030016,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iii
+3_correction,20,the segment ledger: activity x factor x structural multiplier,LNG import terminals,lng_import_terminals,higher,2.0,station,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iv
+3_correction,20,the segment ledger: activity x factor x structural multiplier,LNG import terminals,lng_import_terminals,higher,2.0,station,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iv
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Post-meter appliances,post_meter_appliances,higher,10748538.0,appliance,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.vi
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Post-meter appliances,post_meter_appliances,higher,10748538.0,appliance,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.vi
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Post-meter industrial and power,post_meter_nonresidential,higher,18684.61599995502,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.vi
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Post-meter industrial and power,post_meter_nonresidential,higher,18684.61599995502,million_m3,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.vi
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas transmission,gas_transmission_pipeline,higher,13526.69,km,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iv
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas transmission,gas_transmission_pipeline,higher,13526.69,km,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.iv
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas distribution,gas_distribution_pipeline,higher,201230.0,km,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.v
+3_correction,20,the segment ledger: activity x factor x structural multiplier,Gas distribution,gas_distribution_pipeline,higher,201230.0,km,outputs/fugitives_segment_ledger_2024.csv,1.B.2.b.v
+2_used,50,the streams the engine prices,CH4,Oil production CH4,used,14.07593948292,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Oil production CO2,used,50.886778305600004,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Oil production N2O,used,0.0007797167643600001,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Oil pipeline transport CH4,used,0.022160371197600004,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Oil pipeline transport CO2,used,0.00201084849756,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Oil refining CH4,used,0.37658823,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Oil refining CO2,used,73.43470484999999,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Oil refining N2O,used,0.0011008929257000002,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Gas production CH4,used,132.145727392,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Gas production CO2,used,46.84872976,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Gas production N2O,used,0.0008077367199999999,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Gas gathering CH4,used,103.39030016,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Gas gathering CO2,used,11.308314079999999,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Gas gathering N2O,used,0.0001938568128,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Gas processing CH4,used,59.126327904,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Gas processing CO2,used,3.8771362559999996,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Gas processing N2O,used,4.2002309440000006e-05,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Sour-gas processing CH4,used,1.0339030016000001,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Sour-gas processing CO2,used,688.5793990656,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Sour-gas processing N2O,used,0.0005583076208639999,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,LNG import terminals CH4,used,3.32,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,LNG import terminals CO2,used,29.374,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Post-meter appliances CH4,used,34.3953216,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Post-meter appliances CO2,used,0.343953216,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Post-meter industrial and power CH4,used,113.9761575997256,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Post-meter industrial and power CO2,used,1.1397615759972561,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Gas transmission CH4,used,55.45942899999999,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Gas transmission CO2,used,3.7874732000000004,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Gas distribution CH4,used,235.43909999999997,Gg,outputs/fugitives_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Gas distribution CO2,used,6.036899999999999,Gg,outputs/fugitives_by_stream_2024.csv,
+4_final,80,"the sector's own totals, in its own words",,Fugitive emissions from oil and gas,final,23.499370669386575,Mt CO2e AR5,outputs/fugitives_totals_2024.csv,Reference configuration; higher/default factors where Pakistan-specific evidence is absent.
+4_final,80,"the sector's own totals, in its own words",,Legacy 2006 production-only benchmark,final,3.8052114089057443,Mt CO2e AR5,outputs/fugitives_totals_2024.csv,No uncertainty cap; published factor ranges sampled directly.
+4_final,90,"every category and gas, on the national table",CH4,Fugitive emissions from oil and natural gas,final,22.58283,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Fugitive emissions from oil and natural gas,final,0.91562,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Fugitive emissions from oil and natural gas,final,0.00092,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR5,reading,23.49937,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR6,reading,23.34885,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,uncert_pct_95,reading,37.7,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,share_pct,reading,5.28,Mt CO2e / pct,outputs/national_all_sectors.csv,

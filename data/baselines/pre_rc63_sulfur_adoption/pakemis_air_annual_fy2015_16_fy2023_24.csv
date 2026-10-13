@@ -1,0 +1,1477 @@
+period_id,fiscal_end_year,configuration_id,sector_id,category,pollutant,emissions_Gg,coverage_scope
+FY2015-16,2016,REF_2023_24,agriculture,Field burning of residues,BC,2.683641,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Field burning of residues,CO,493.789916,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Field burning of residues,NH3,6.977466,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Field burning of residues,NMVOC,37.570972,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Field burning of residues,NOx,13.418204,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Field burning of residues,PM2.5,40.791341,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Field burning of residues,SO2,2.146913,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Managed soils,NH3,1287.125439,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Managed soils,NOx,101.821767,covered_sources_only
+FY2015-16,2016,REF_2023_24,agriculture,Manure management,NH3,522.168395,covered_sources_only
+FY2015-16,2016,REF_2023_24,aviation,Domestic aviation,BC,0.004528,covered_sources_only
+FY2015-16,2016,REF_2023_24,aviation,Domestic aviation,CO,0.265587,covered_sources_only
+FY2015-16,2016,REF_2023_24,aviation,Domestic aviation,NOx,0.322301,covered_sources_only
+FY2015-16,2016,REF_2023_24,aviation,Domestic aviation,PM2.5,0.030187,covered_sources_only
+FY2015-16,2016,REF_2023_24,aviation,Domestic aviation,SO2,0.150933,covered_sources_only
+FY2015-16,2016,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.090773,covered_sources_only
+FY2015-16,2016,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.540007,covered_sources_only
+FY2015-16,2016,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,86.813136,covered_sources_only
+FY2015-16,2016,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.318330,covered_sources_only
+FY2015-16,2016,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.400846,covered_sources_only
+FY2015-16,2016,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.798434,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.009306,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Captive gas self-generation (1A2),CO,6.982787,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,9.038003,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,18.802982,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.308498,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.037884,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.133343,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,61.542897,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.615429,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,71.800046,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.444765,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,18.462869,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,12.399105,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,35.655152,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,6.084642,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,55.136886,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,17.234788,covered_sources_only
+FY2015-16,2016,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,318.167975,covered_sources_only
+FY2015-16,2016,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000241,covered_sources_only
+FY2015-16,2016,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,10.011531,covered_sources_only
+FY2015-16,2016,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.459999,covered_sources_only
+FY2015-16,2016,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.146430,covered_sources_only
+FY2015-16,2016,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,4.248119,covered_sources_only
+FY2015-16,2016,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.066848,covered_sources_only
+FY2015-16,2016,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.190995,covered_sources_only
+FY2015-16,2016,REF_2023_24,power,Electricity and heat production,SO2,103.565705,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001779,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021371,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009287,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104656,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002736,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.059753,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railways,BC,0.103772,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railways,CO,1.246895,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railways,NH3,0.000816,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railways,NMVOC,0.541875,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railways,NOx,6.106290,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railways,PM2.5,0.159649,covered_sources_only
+FY2015-16,2016,REF_2023_24,railways,Railways,SO2,1.165323,covered_sources_only
+FY2015-16,2016,REF_2023_24,residential,Residential fuel combustion,BC,33.086681,covered_sources_only
+FY2015-16,2016,REF_2023_24,residential,Residential fuel combustion,CO,5649.431101,covered_sources_only
+FY2015-16,2016,REF_2023_24,residential,Residential fuel combustion,NH3,77.663905,covered_sources_only
+FY2015-16,2016,REF_2023_24,residential,Residential fuel combustion,NMVOC,758.085520,covered_sources_only
+FY2015-16,2016,REF_2023_24,residential,Residential fuel combustion,NOx,269.682517,covered_sources_only
+FY2015-16,2016,REF_2023_24,residential,Residential fuel combustion,PM2.5,501.312684,covered_sources_only
+FY2015-16,2016,REF_2023_24,residential,Residential fuel combustion,SO2,42.069321,covered_sources_only
+FY2015-16,2016,REF_2023_24,transport,Road transport,BC,2.404830,covered_sources_only
+FY2015-16,2016,REF_2023_24,transport,Road transport,CO,1141.183905,covered_sources_only
+FY2015-16,2016,REF_2023_24,transport,Road transport,NH3,3.224909,covered_sources_only
+FY2015-16,2016,REF_2023_24,transport,Road transport,NMVOC,414.048605,covered_sources_only
+FY2015-16,2016,REF_2023_24,transport,Road transport,NOx,193.985111,covered_sources_only
+FY2015-16,2016,REF_2023_24,transport,Road transport,PM2.5,8.860723,covered_sources_only
+FY2015-16,2016,REF_2023_24,transport,Road transport,SO2,68.246900,covered_sources_only
+FY2015-16,2016,REF_2023_24,waste,Open burning of waste,BC,7.542394,covered_sources_only
+FY2015-16,2016,REF_2023_24,waste,Open burning of waste,CO,355.569997,covered_sources_only
+FY2015-16,2016,REF_2023_24,waste,Open burning of waste,NH3,4.848682,covered_sources_only
+FY2015-16,2016,REF_2023_24,waste,Open burning of waste,NMVOC,123.910757,covered_sources_only
+FY2015-16,2016,REF_2023_24,waste,Open burning of waste,NOx,12.391076,covered_sources_only
+FY2015-16,2016,REF_2023_24,waste,Open burning of waste,PM2.5,52.258015,covered_sources_only
+FY2015-16,2016,REF_2023_24,waste,Open burning of waste,SO2,2.693712,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Field burning of residues,BC,2.683641,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Field burning of residues,CO,493.789916,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Field burning of residues,NH3,6.977466,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Field burning of residues,NMVOC,37.570972,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Field burning of residues,NOx,13.418204,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Field burning of residues,PM2.5,40.791341,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Field burning of residues,SO2,2.146913,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Managed soils,NH3,1287.125439,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Managed soils,NOx,101.821767,covered_sources_only
+FY2015-16,2016,S_HIES1925,agriculture,Manure management,NH3,522.168395,covered_sources_only
+FY2015-16,2016,S_HIES1925,aviation,Domestic aviation,BC,0.004528,covered_sources_only
+FY2015-16,2016,S_HIES1925,aviation,Domestic aviation,CO,0.265587,covered_sources_only
+FY2015-16,2016,S_HIES1925,aviation,Domestic aviation,NOx,0.322301,covered_sources_only
+FY2015-16,2016,S_HIES1925,aviation,Domestic aviation,PM2.5,0.030187,covered_sources_only
+FY2015-16,2016,S_HIES1925,aviation,Domestic aviation,SO2,0.150933,covered_sources_only
+FY2015-16,2016,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.090773,covered_sources_only
+FY2015-16,2016,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.540007,covered_sources_only
+FY2015-16,2016,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,86.813136,covered_sources_only
+FY2015-16,2016,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.318330,covered_sources_only
+FY2015-16,2016,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.400846,covered_sources_only
+FY2015-16,2016,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.798434,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.009306,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Captive gas self-generation (1A2),CO,6.982787,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,9.038003,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,18.802982,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.308498,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.037884,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.133343,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,61.542897,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.615429,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,71.800046,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.444765,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,18.462869,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,12.399105,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,35.655152,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,6.084642,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,55.136886,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,17.234788,covered_sources_only
+FY2015-16,2016,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,318.167975,covered_sources_only
+FY2015-16,2016,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000241,covered_sources_only
+FY2015-16,2016,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,10.011531,covered_sources_only
+FY2015-16,2016,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.459999,covered_sources_only
+FY2015-16,2016,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.146430,covered_sources_only
+FY2015-16,2016,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,4.248119,covered_sources_only
+FY2015-16,2016,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.066848,covered_sources_only
+FY2015-16,2016,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.190995,covered_sources_only
+FY2015-16,2016,S_HIES1925,power,Electricity and heat production,SO2,103.565705,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001779,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021371,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009287,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104656,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002736,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.059753,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railways,BC,0.103772,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railways,CO,1.246895,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railways,NH3,0.000816,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railways,NMVOC,0.541875,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railways,NOx,6.106290,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railways,PM2.5,0.159649,covered_sources_only
+FY2015-16,2016,S_HIES1925,railways,Railways,SO2,1.165323,covered_sources_only
+FY2015-16,2016,S_HIES1925,residential,Residential fuel combustion,BC,15.820436,covered_sources_only
+FY2015-16,2016,S_HIES1925,residential,Residential fuel combustion,CO,2636.301902,covered_sources_only
+FY2015-16,2016,S_HIES1925,residential,Residential fuel combustion,NH3,32.636244,covered_sources_only
+FY2015-16,2016,S_HIES1925,residential,Residential fuel combustion,NMVOC,270.567987,covered_sources_only
+FY2015-16,2016,S_HIES1925,residential,Residential fuel combustion,NOx,124.442919,covered_sources_only
+FY2015-16,2016,S_HIES1925,residential,Residential fuel combustion,PM2.5,220.312995,covered_sources_only
+FY2015-16,2016,S_HIES1925,residential,Residential fuel combustion,SO2,16.000676,covered_sources_only
+FY2015-16,2016,S_HIES1925,transport,Road transport,BC,2.404830,covered_sources_only
+FY2015-16,2016,S_HIES1925,transport,Road transport,CO,1141.183905,covered_sources_only
+FY2015-16,2016,S_HIES1925,transport,Road transport,NH3,3.224909,covered_sources_only
+FY2015-16,2016,S_HIES1925,transport,Road transport,NMVOC,414.048605,covered_sources_only
+FY2015-16,2016,S_HIES1925,transport,Road transport,NOx,193.985111,covered_sources_only
+FY2015-16,2016,S_HIES1925,transport,Road transport,PM2.5,8.860723,covered_sources_only
+FY2015-16,2016,S_HIES1925,transport,Road transport,SO2,68.246900,covered_sources_only
+FY2015-16,2016,S_HIES1925,waste,Open burning of waste,BC,7.542394,covered_sources_only
+FY2015-16,2016,S_HIES1925,waste,Open burning of waste,CO,355.569997,covered_sources_only
+FY2015-16,2016,S_HIES1925,waste,Open burning of waste,NH3,4.848682,covered_sources_only
+FY2015-16,2016,S_HIES1925,waste,Open burning of waste,NMVOC,123.910757,covered_sources_only
+FY2015-16,2016,S_HIES1925,waste,Open burning of waste,NOx,12.391076,covered_sources_only
+FY2015-16,2016,S_HIES1925,waste,Open burning of waste,PM2.5,52.258015,covered_sources_only
+FY2015-16,2016,S_HIES1925,waste,Open burning of waste,SO2,2.693712,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Field burning of residues,BC,2.869824,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Field burning of residues,CO,528.047672,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Field burning of residues,NH3,7.461543,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Field burning of residues,NMVOC,40.177540,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Field burning of residues,NOx,14.349122,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Field burning of residues,PM2.5,43.621329,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Field burning of residues,SO2,2.295859,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Managed soils,NH3,1526.028126,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Managed soils,NOx,128.198244,covered_sources_only
+FY2016-17,2017,REF_2023_24,agriculture,Manure management,NH3,555.548748,covered_sources_only
+FY2016-17,2017,REF_2023_24,aviation,Domestic aviation,BC,0.004843,covered_sources_only
+FY2016-17,2017,REF_2023_24,aviation,Domestic aviation,CO,0.284089,covered_sources_only
+FY2016-17,2017,REF_2023_24,aviation,Domestic aviation,NOx,0.344754,covered_sources_only
+FY2016-17,2017,REF_2023_24,aviation,Domestic aviation,PM2.5,0.032289,covered_sources_only
+FY2016-17,2017,REF_2023_24,aviation,Domestic aviation,SO2,0.161447,covered_sources_only
+FY2016-17,2017,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.077435,covered_sources_only
+FY2016-17,2017,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.446954,covered_sources_only
+FY2016-17,2017,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,90.933532,covered_sources_only
+FY2016-17,2017,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.362785,covered_sources_only
+FY2016-17,2017,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.346781,covered_sources_only
+FY2016-17,2017,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,4.051492,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.009402,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Captive gas self-generation (1A2),CO,7.054590,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,9.130939,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,18.996329,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.311671,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.038274,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.139302,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,64.293059,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.642931,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,75.008568,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.643388,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,19.287918,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,11.457976,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,34.725526,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,7.332568,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,63.325151,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,15.940453,covered_sources_only
+FY2016-17,2017,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,277.099699,covered_sources_only
+FY2016-17,2017,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000310,covered_sources_only
+FY2016-17,2017,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,11.680114,covered_sources_only
+FY2016-17,2017,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.471181,covered_sources_only
+FY2016-17,2017,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.188554,covered_sources_only
+FY2016-17,2017,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,4.476387,covered_sources_only
+FY2016-17,2017,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.086079,covered_sources_only
+FY2016-17,2017,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.245940,covered_sources_only
+FY2016-17,2017,REF_2023_24,power,Electricity and heat production,SO2,152.640573,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.002029,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.024378,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000016,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010594,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.119382,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.003121,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.056863,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railways,BC,0.107308,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railways,CO,1.289381,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railways,NH3,0.000844,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railways,NMVOC,0.560339,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railways,NOx,6.314353,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railways,PM2.5,0.165089,covered_sources_only
+FY2016-17,2017,REF_2023_24,railways,Railways,SO2,1.205029,covered_sources_only
+FY2016-17,2017,REF_2023_24,residential,Residential fuel combustion,BC,34.185875,covered_sources_only
+FY2016-17,2017,REF_2023_24,residential,Residential fuel combustion,CO,5838.878841,covered_sources_only
+FY2016-17,2017,REF_2023_24,residential,Residential fuel combustion,NH3,80.301204,covered_sources_only
+FY2016-17,2017,REF_2023_24,residential,Residential fuel combustion,NMVOC,783.334640,covered_sources_only
+FY2016-17,2017,REF_2023_24,residential,Residential fuel combustion,NOx,279.000181,covered_sources_only
+FY2016-17,2017,REF_2023_24,residential,Residential fuel combustion,PM2.5,518.135421,covered_sources_only
+FY2016-17,2017,REF_2023_24,residential,Residential fuel combustion,SO2,43.456472,covered_sources_only
+FY2016-17,2017,REF_2023_24,transport,Road transport,BC,2.639998,covered_sources_only
+FY2016-17,2017,REF_2023_24,transport,Road transport,CO,1315.316683,covered_sources_only
+FY2016-17,2017,REF_2023_24,transport,Road transport,NH3,3.601475,covered_sources_only
+FY2016-17,2017,REF_2023_24,transport,Road transport,NMVOC,470.214941,covered_sources_only
+FY2016-17,2017,REF_2023_24,transport,Road transport,NOx,213.957412,covered_sources_only
+FY2016-17,2017,REF_2023_24,transport,Road transport,PM2.5,9.536272,covered_sources_only
+FY2016-17,2017,REF_2023_24,transport,Road transport,SO2,74.920840,covered_sources_only
+FY2016-17,2017,REF_2023_24,waste,Open burning of waste,BC,7.741603,covered_sources_only
+FY2016-17,2017,REF_2023_24,waste,Open burning of waste,CO,364.961292,covered_sources_only
+FY2016-17,2017,REF_2023_24,waste,Open burning of waste,NH3,4.976745,covered_sources_only
+FY2016-17,2017,REF_2023_24,waste,Open burning of waste,NMVOC,127.183480,covered_sources_only
+FY2016-17,2017,REF_2023_24,waste,Open burning of waste,NOx,12.718348,covered_sources_only
+FY2016-17,2017,REF_2023_24,waste,Open burning of waste,PM2.5,53.638250,covered_sources_only
+FY2016-17,2017,REF_2023_24,waste,Open burning of waste,SO2,2.764858,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Field burning of residues,BC,2.869824,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Field burning of residues,CO,528.047672,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Field burning of residues,NH3,7.461543,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Field burning of residues,NMVOC,40.177540,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Field burning of residues,NOx,14.349122,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Field burning of residues,PM2.5,43.621329,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Field burning of residues,SO2,2.295859,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Managed soils,NH3,1526.028126,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Managed soils,NOx,128.198244,covered_sources_only
+FY2016-17,2017,S_HIES1925,agriculture,Manure management,NH3,555.548748,covered_sources_only
+FY2016-17,2017,S_HIES1925,aviation,Domestic aviation,BC,0.004843,covered_sources_only
+FY2016-17,2017,S_HIES1925,aviation,Domestic aviation,CO,0.284089,covered_sources_only
+FY2016-17,2017,S_HIES1925,aviation,Domestic aviation,NOx,0.344754,covered_sources_only
+FY2016-17,2017,S_HIES1925,aviation,Domestic aviation,PM2.5,0.032289,covered_sources_only
+FY2016-17,2017,S_HIES1925,aviation,Domestic aviation,SO2,0.161447,covered_sources_only
+FY2016-17,2017,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.077435,covered_sources_only
+FY2016-17,2017,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.446954,covered_sources_only
+FY2016-17,2017,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,90.933532,covered_sources_only
+FY2016-17,2017,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.362785,covered_sources_only
+FY2016-17,2017,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.346781,covered_sources_only
+FY2016-17,2017,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,4.051492,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.009402,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Captive gas self-generation (1A2),CO,7.054590,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,9.130939,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,18.996329,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.311671,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.038274,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.139302,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,64.293059,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.642931,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,75.008568,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.643388,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,19.287918,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,11.457976,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,34.725526,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,7.332568,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,63.325151,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,15.940453,covered_sources_only
+FY2016-17,2017,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,277.099699,covered_sources_only
+FY2016-17,2017,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000310,covered_sources_only
+FY2016-17,2017,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,11.680114,covered_sources_only
+FY2016-17,2017,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.471181,covered_sources_only
+FY2016-17,2017,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.188554,covered_sources_only
+FY2016-17,2017,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,4.476387,covered_sources_only
+FY2016-17,2017,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.086079,covered_sources_only
+FY2016-17,2017,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.245940,covered_sources_only
+FY2016-17,2017,S_HIES1925,power,Electricity and heat production,SO2,152.640573,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.002029,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.024378,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000016,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010594,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.119382,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.003121,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.056863,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railways,BC,0.107308,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railways,CO,1.289381,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railways,NH3,0.000844,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railways,NMVOC,0.560339,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railways,NOx,6.314353,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railways,PM2.5,0.165089,covered_sources_only
+FY2016-17,2017,S_HIES1925,railways,Railways,SO2,1.205029,covered_sources_only
+FY2016-17,2017,S_HIES1925,residential,Residential fuel combustion,BC,16.318438,covered_sources_only
+FY2016-17,2017,S_HIES1925,residential,Residential fuel combustion,CO,2720.835886,covered_sources_only
+FY2016-17,2017,S_HIES1925,residential,Residential fuel combustion,NH3,33.705731,covered_sources_only
+FY2016-17,2017,S_HIES1925,residential,Residential fuel combustion,NMVOC,278.842297,covered_sources_only
+FY2016-17,2017,S_HIES1925,residential,Residential fuel combustion,NOx,128.703503,covered_sources_only
+FY2016-17,2017,S_HIES1925,residential,Residential fuel combustion,PM2.5,227.351640,covered_sources_only
+FY2016-17,2017,S_HIES1925,residential,Residential fuel combustion,SO2,16.480145,covered_sources_only
+FY2016-17,2017,S_HIES1925,transport,Road transport,BC,2.639998,covered_sources_only
+FY2016-17,2017,S_HIES1925,transport,Road transport,CO,1315.316683,covered_sources_only
+FY2016-17,2017,S_HIES1925,transport,Road transport,NH3,3.601475,covered_sources_only
+FY2016-17,2017,S_HIES1925,transport,Road transport,NMVOC,470.214941,covered_sources_only
+FY2016-17,2017,S_HIES1925,transport,Road transport,NOx,213.957412,covered_sources_only
+FY2016-17,2017,S_HIES1925,transport,Road transport,PM2.5,9.536272,covered_sources_only
+FY2016-17,2017,S_HIES1925,transport,Road transport,SO2,74.920840,covered_sources_only
+FY2016-17,2017,S_HIES1925,waste,Open burning of waste,BC,7.741603,covered_sources_only
+FY2016-17,2017,S_HIES1925,waste,Open burning of waste,CO,364.961292,covered_sources_only
+FY2016-17,2017,S_HIES1925,waste,Open burning of waste,NH3,4.976745,covered_sources_only
+FY2016-17,2017,S_HIES1925,waste,Open burning of waste,NMVOC,127.183480,covered_sources_only
+FY2016-17,2017,S_HIES1925,waste,Open burning of waste,NOx,12.718348,covered_sources_only
+FY2016-17,2017,S_HIES1925,waste,Open burning of waste,PM2.5,53.638250,covered_sources_only
+FY2016-17,2017,S_HIES1925,waste,Open burning of waste,SO2,2.764858,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Field burning of residues,BC,3.040245,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Field burning of residues,CO,559.405051,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Field burning of residues,NH3,7.904637,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Field burning of residues,NMVOC,42.563428,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Field burning of residues,NOx,15.201224,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Field burning of residues,PM2.5,46.211722,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Field burning of residues,SO2,2.432196,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Managed soils,NH3,1500.628187,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Managed soils,NOx,123.139848,covered_sources_only
+FY2017-18,2018,REF_2023_24,agriculture,Manure management,NH3,587.129370,covered_sources_only
+FY2017-18,2018,REF_2023_24,aviation,Domestic aviation,BC,0.004474,covered_sources_only
+FY2017-18,2018,REF_2023_24,aviation,Domestic aviation,CO,0.262414,covered_sources_only
+FY2017-18,2018,REF_2023_24,aviation,Domestic aviation,NOx,0.318450,covered_sources_only
+FY2017-18,2018,REF_2023_24,aviation,Domestic aviation,PM2.5,0.029826,covered_sources_only
+FY2017-18,2018,REF_2023_24,aviation,Domestic aviation,SO2,0.149129,covered_sources_only
+FY2017-18,2018,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.068577,covered_sources_only
+FY2017-18,2018,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.444054,covered_sources_only
+FY2017-18,2018,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,94.411426,covered_sources_only
+FY2017-18,2018,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.497602,covered_sources_only
+FY2017-18,2018,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.313012,covered_sources_only
+FY2017-18,2018,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,4.578181,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.009091,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Captive gas self-generation (1A2),CO,6.821232,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,8.828898,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,18.367951,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.301361,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.037008,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.155605,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,71.817848,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.718178,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,83.787489,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.186845,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,21.545354,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,13.993911,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,41.199937,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,5.400514,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,61.905791,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,19.124044,covered_sources_only
+FY2017-18,2018,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,336.780337,covered_sources_only
+FY2017-18,2018,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000392,covered_sources_only
+FY2017-18,2018,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,13.756553,covered_sources_only
+FY2017-18,2018,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.494035,covered_sources_only
+FY2017-18,2018,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.238556,covered_sources_only
+FY2017-18,2018,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,4.199942,covered_sources_only
+FY2017-18,2018,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.108906,covered_sources_only
+FY2017-18,2018,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.311160,covered_sources_only
+FY2017-18,2018,REF_2023_24,power,Electricity and heat production,SO2,115.560493,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001920,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.023070,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000015,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010026,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.112977,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002954,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.032040,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railways,BC,0.116149,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railways,CO,1.395619,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railways,NH3,0.000913,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railways,NMVOC,0.606507,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railways,NOx,6.834619,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railways,PM2.5,0.178691,covered_sources_only
+FY2017-18,2018,REF_2023_24,railways,Railways,SO2,0.130432,covered_sources_only
+FY2017-18,2018,REF_2023_24,residential,Residential fuel combustion,BC,34.908394,covered_sources_only
+FY2017-18,2018,REF_2023_24,residential,Residential fuel combustion,CO,5958.464988,covered_sources_only
+FY2017-18,2018,REF_2023_24,residential,Residential fuel combustion,NH3,81.967293,covered_sources_only
+FY2017-18,2018,REF_2023_24,residential,Residential fuel combustion,NMVOC,803.750404,covered_sources_only
+FY2017-18,2018,REF_2023_24,residential,Residential fuel combustion,NOx,285.273071,covered_sources_only
+FY2017-18,2018,REF_2023_24,residential,Residential fuel combustion,PM2.5,529.272878,covered_sources_only
+FY2017-18,2018,REF_2023_24,residential,Residential fuel combustion,SO2,44.559065,covered_sources_only
+FY2017-18,2018,REF_2023_24,transport,Road transport,BC,2.713370,covered_sources_only
+FY2017-18,2018,REF_2023_24,transport,Road transport,CO,1469.690575,covered_sources_only
+FY2017-18,2018,REF_2023_24,transport,Road transport,NH3,3.944110,covered_sources_only
+FY2017-18,2018,REF_2023_24,transport,Road transport,NMVOC,520.303619,covered_sources_only
+FY2017-18,2018,REF_2023_24,transport,Road transport,NOx,222.614095,covered_sources_only
+FY2017-18,2018,REF_2023_24,transport,Road transport,PM2.5,9.885824,covered_sources_only
+FY2017-18,2018,REF_2023_24,transport,Road transport,SO2,14.369326,covered_sources_only
+FY2017-18,2018,REF_2023_24,waste,Open burning of waste,BC,7.934539,covered_sources_only
+FY2017-18,2018,REF_2023_24,waste,Open burning of waste,CO,374.056835,covered_sources_only
+FY2017-18,2018,REF_2023_24,waste,Open burning of waste,NH3,5.100775,covered_sources_only
+FY2017-18,2018,REF_2023_24,waste,Open burning of waste,NMVOC,130.353140,covered_sources_only
+FY2017-18,2018,REF_2023_24,waste,Open burning of waste,NOx,13.035314,covered_sources_only
+FY2017-18,2018,REF_2023_24,waste,Open burning of waste,PM2.5,54.975020,covered_sources_only
+FY2017-18,2018,REF_2023_24,waste,Open burning of waste,SO2,2.833764,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Field burning of residues,BC,3.040245,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Field burning of residues,CO,559.405051,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Field burning of residues,NH3,7.904637,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Field burning of residues,NMVOC,42.563428,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Field burning of residues,NOx,15.201224,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Field burning of residues,PM2.5,46.211722,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Field burning of residues,SO2,2.432196,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Managed soils,NH3,1500.628187,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Managed soils,NOx,123.139848,covered_sources_only
+FY2017-18,2018,S_HIES1925,agriculture,Manure management,NH3,587.129370,covered_sources_only
+FY2017-18,2018,S_HIES1925,aviation,Domestic aviation,BC,0.004474,covered_sources_only
+FY2017-18,2018,S_HIES1925,aviation,Domestic aviation,CO,0.262414,covered_sources_only
+FY2017-18,2018,S_HIES1925,aviation,Domestic aviation,NOx,0.318450,covered_sources_only
+FY2017-18,2018,S_HIES1925,aviation,Domestic aviation,PM2.5,0.029826,covered_sources_only
+FY2017-18,2018,S_HIES1925,aviation,Domestic aviation,SO2,0.149129,covered_sources_only
+FY2017-18,2018,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.068577,covered_sources_only
+FY2017-18,2018,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.444054,covered_sources_only
+FY2017-18,2018,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,94.411426,covered_sources_only
+FY2017-18,2018,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.497602,covered_sources_only
+FY2017-18,2018,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.313012,covered_sources_only
+FY2017-18,2018,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,4.578181,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.009091,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Captive gas self-generation (1A2),CO,6.821232,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,8.828898,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,18.367951,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.301361,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.037008,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.155605,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,71.817848,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.718178,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,83.787489,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.186845,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,21.545354,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,13.993911,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,41.199937,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,5.400514,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,61.905791,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,19.124044,covered_sources_only
+FY2017-18,2018,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,336.780337,covered_sources_only
+FY2017-18,2018,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000392,covered_sources_only
+FY2017-18,2018,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,13.756553,covered_sources_only
+FY2017-18,2018,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.494035,covered_sources_only
+FY2017-18,2018,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.238556,covered_sources_only
+FY2017-18,2018,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,4.199942,covered_sources_only
+FY2017-18,2018,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.108906,covered_sources_only
+FY2017-18,2018,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.311160,covered_sources_only
+FY2017-18,2018,S_HIES1925,power,Electricity and heat production,SO2,115.560493,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001920,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.023070,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000015,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010026,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.112977,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002954,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.032040,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railways,BC,0.116149,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railways,CO,1.395619,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railways,NH3,0.000913,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railways,NMVOC,0.606507,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railways,NOx,6.834619,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railways,PM2.5,0.178691,covered_sources_only
+FY2017-18,2018,S_HIES1925,railways,Railways,SO2,0.130432,covered_sources_only
+FY2017-18,2018,S_HIES1925,residential,Residential fuel combustion,BC,16.405622,covered_sources_only
+FY2017-18,2018,S_HIES1925,residential,Residential fuel combustion,CO,2729.549736,covered_sources_only
+FY2017-18,2018,S_HIES1925,residential,Residential fuel combustion,NH3,33.714964,covered_sources_only
+FY2017-18,2018,S_HIES1925,residential,Residential fuel combustion,NMVOC,281.319173,covered_sources_only
+FY2017-18,2018,S_HIES1925,residential,Residential fuel combustion,NOx,129.632100,covered_sources_only
+FY2017-18,2018,S_HIES1925,residential,Residential fuel combustion,PM2.5,228.149321,covered_sources_only
+FY2017-18,2018,S_HIES1925,residential,Residential fuel combustion,SO2,16.623506,covered_sources_only
+FY2017-18,2018,S_HIES1925,transport,Road transport,BC,2.713370,covered_sources_only
+FY2017-18,2018,S_HIES1925,transport,Road transport,CO,1469.690575,covered_sources_only
+FY2017-18,2018,S_HIES1925,transport,Road transport,NH3,3.944110,covered_sources_only
+FY2017-18,2018,S_HIES1925,transport,Road transport,NMVOC,520.303619,covered_sources_only
+FY2017-18,2018,S_HIES1925,transport,Road transport,NOx,222.614095,covered_sources_only
+FY2017-18,2018,S_HIES1925,transport,Road transport,PM2.5,9.885824,covered_sources_only
+FY2017-18,2018,S_HIES1925,transport,Road transport,SO2,14.369326,covered_sources_only
+FY2017-18,2018,S_HIES1925,waste,Open burning of waste,BC,7.934539,covered_sources_only
+FY2017-18,2018,S_HIES1925,waste,Open burning of waste,CO,374.056835,covered_sources_only
+FY2017-18,2018,S_HIES1925,waste,Open burning of waste,NH3,5.100775,covered_sources_only
+FY2017-18,2018,S_HIES1925,waste,Open burning of waste,NMVOC,130.353140,covered_sources_only
+FY2017-18,2018,S_HIES1925,waste,Open burning of waste,NOx,13.035314,covered_sources_only
+FY2017-18,2018,S_HIES1925,waste,Open burning of waste,PM2.5,54.975020,covered_sources_only
+FY2017-18,2018,S_HIES1925,waste,Open burning of waste,SO2,2.833764,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Field burning of residues,BC,2.753463,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Field burning of residues,CO,506.637232,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Field burning of residues,NH3,7.159004,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Field burning of residues,NMVOC,38.548485,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Field burning of residues,NOx,13.767316,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Field burning of residues,PM2.5,41.852641,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Field burning of residues,SO2,2.202771,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Managed soils,NH3,1528.928562,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Managed soils,NOx,124.120426,covered_sources_only
+FY2018-19,2019,REF_2023_24,agriculture,Manure management,NH3,620.770421,covered_sources_only
+FY2018-19,2019,REF_2023_24,aviation,Domestic aviation,BC,0.003784,covered_sources_only
+FY2018-19,2019,REF_2023_24,aviation,Domestic aviation,CO,0.208737,covered_sources_only
+FY2018-19,2019,REF_2023_24,aviation,Domestic aviation,NOx,0.321282,covered_sources_only
+FY2018-19,2019,REF_2023_24,aviation,Domestic aviation,PM2.5,0.025229,covered_sources_only
+FY2018-19,2019,REF_2023_24,aviation,Domestic aviation,SO2,0.126147,covered_sources_only
+FY2018-19,2019,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.072195,covered_sources_only
+FY2018-19,2019,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.411747,covered_sources_only
+FY2018-19,2019,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,94.401562,covered_sources_only
+FY2018-19,2019,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.382658,covered_sources_only
+FY2018-19,2019,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.325592,covered_sources_only
+FY2018-19,2019,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,4.159110,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.007680,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Captive gas self-generation (1A2),CO,5.762146,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,7.458095,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,15.516085,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.254571,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.031262,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159505,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.617596,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.736176,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,85.887196,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.316826,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.085279,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,16.948446,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,49.073025,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,4.787390,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,54.968853,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,22.622543,covered_sources_only
+FY2018-19,2019,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,410.114799,covered_sources_only
+FY2018-19,2019,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000293,covered_sources_only
+FY2018-19,2019,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,12.116961,covered_sources_only
+FY2018-19,2019,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.553110,covered_sources_only
+FY2018-19,2019,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.178206,covered_sources_only
+FY2018-19,2019,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,4.328681,covered_sources_only
+FY2018-19,2019,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.081355,covered_sources_only
+FY2018-19,2019,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.232442,covered_sources_only
+FY2018-19,2019,REF_2023_24,power,Electricity and heat production,SO2,53.710342,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001767,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021237,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009229,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104000,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002719,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.025353,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railways,BC,0.118875,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railways,CO,1.428367,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railways,NH3,0.000934,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railways,NMVOC,0.620739,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railways,NOx,6.994994,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railways,PM2.5,0.182884,covered_sources_only
+FY2018-19,2019,REF_2023_24,railways,Railways,SO2,0.133492,covered_sources_only
+FY2018-19,2019,REF_2023_24,residential,Residential fuel combustion,BC,35.960398,covered_sources_only
+FY2018-19,2019,REF_2023_24,residential,Residential fuel combustion,CO,6138.819873,covered_sources_only
+FY2018-19,2019,REF_2023_24,residential,Residential fuel combustion,NH3,84.478460,covered_sources_only
+FY2018-19,2019,REF_2023_24,residential,Residential fuel combustion,NMVOC,829.011962,covered_sources_only
+FY2018-19,2019,REF_2023_24,residential,Residential fuel combustion,NOx,294.906323,covered_sources_only
+FY2018-19,2019,REF_2023_24,residential,Residential fuel combustion,PM2.5,545.423061,covered_sources_only
+FY2018-19,2019,REF_2023_24,residential,Residential fuel combustion,SO2,45.943681,covered_sources_only
+FY2018-19,2019,REF_2023_24,transport,Road transport,BC,2.416469,covered_sources_only
+FY2018-19,2019,REF_2023_24,transport,Road transport,CO,1492.412753,covered_sources_only
+FY2018-19,2019,REF_2023_24,transport,Road transport,NH3,3.890760,covered_sources_only
+FY2018-19,2019,REF_2023_24,transport,Road transport,NMVOC,529.692418,covered_sources_only
+FY2018-19,2019,REF_2023_24,transport,Road transport,NOx,202.479962,covered_sources_only
+FY2018-19,2019,REF_2023_24,transport,Road transport,PM2.5,9.376304,covered_sources_only
+FY2018-19,2019,REF_2023_24,transport,Road transport,SO2,13.693712,covered_sources_only
+FY2018-19,2019,REF_2023_24,waste,Open burning of waste,BC,8.132845,covered_sources_only
+FY2018-19,2019,REF_2023_24,waste,Open burning of waste,CO,383.405569,covered_sources_only
+FY2018-19,2019,REF_2023_24,waste,Open burning of waste,NH3,5.228258,covered_sources_only
+FY2018-19,2019,REF_2023_24,waste,Open burning of waste,NMVOC,133.611032,covered_sources_only
+FY2018-19,2019,REF_2023_24,waste,Open burning of waste,NOx,13.361103,covered_sources_only
+FY2018-19,2019,REF_2023_24,waste,Open burning of waste,PM2.5,56.349000,covered_sources_only
+FY2018-19,2019,REF_2023_24,waste,Open burning of waste,SO2,2.904588,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Field burning of residues,BC,2.753463,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Field burning of residues,CO,506.637232,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Field burning of residues,NH3,7.159004,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Field burning of residues,NMVOC,38.548485,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Field burning of residues,NOx,13.767316,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Field burning of residues,PM2.5,41.852641,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Field burning of residues,SO2,2.202771,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Managed soils,NH3,1528.928562,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Managed soils,NOx,124.120426,covered_sources_only
+FY2018-19,2019,S_HIES1925,agriculture,Manure management,NH3,620.770421,covered_sources_only
+FY2018-19,2019,S_HIES1925,aviation,Domestic aviation,BC,0.003784,covered_sources_only
+FY2018-19,2019,S_HIES1925,aviation,Domestic aviation,CO,0.208737,covered_sources_only
+FY2018-19,2019,S_HIES1925,aviation,Domestic aviation,NOx,0.321282,covered_sources_only
+FY2018-19,2019,S_HIES1925,aviation,Domestic aviation,PM2.5,0.025229,covered_sources_only
+FY2018-19,2019,S_HIES1925,aviation,Domestic aviation,SO2,0.126147,covered_sources_only
+FY2018-19,2019,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.072195,covered_sources_only
+FY2018-19,2019,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.411747,covered_sources_only
+FY2018-19,2019,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,94.401562,covered_sources_only
+FY2018-19,2019,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.382658,covered_sources_only
+FY2018-19,2019,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.325592,covered_sources_only
+FY2018-19,2019,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,4.159110,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.007680,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Captive gas self-generation (1A2),CO,5.762146,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,7.458095,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,15.516085,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.254571,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.031262,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159505,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.617596,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.736176,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,85.887196,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.316826,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.085279,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,16.948446,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,49.073025,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,4.787390,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,54.968853,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,22.622543,covered_sources_only
+FY2018-19,2019,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,410.114799,covered_sources_only
+FY2018-19,2019,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000293,covered_sources_only
+FY2018-19,2019,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,12.116961,covered_sources_only
+FY2018-19,2019,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.553110,covered_sources_only
+FY2018-19,2019,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.178206,covered_sources_only
+FY2018-19,2019,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,4.328681,covered_sources_only
+FY2018-19,2019,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.081355,covered_sources_only
+FY2018-19,2019,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.232442,covered_sources_only
+FY2018-19,2019,S_HIES1925,power,Electricity and heat production,SO2,53.710342,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001767,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021237,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009229,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104000,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002719,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.025353,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railways,BC,0.118875,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railways,CO,1.428367,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railways,NH3,0.000934,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railways,NMVOC,0.620739,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railways,NOx,6.994994,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railways,PM2.5,0.182884,covered_sources_only
+FY2018-19,2019,S_HIES1925,railways,Railways,SO2,0.133492,covered_sources_only
+FY2018-19,2019,S_HIES1925,residential,Residential fuel combustion,BC,16.810703,covered_sources_only
+FY2018-19,2019,S_HIES1925,residential,Residential fuel combustion,CO,2797.010324,covered_sources_only
+FY2018-19,2019,S_HIES1925,residential,Residential fuel combustion,NH3,34.539059,covered_sources_only
+FY2018-19,2019,S_HIES1925,residential,Residential fuel combustion,NMVOC,288.314687,covered_sources_only
+FY2018-19,2019,S_HIES1925,residential,Residential fuel combustion,NOx,133.823593,covered_sources_only
+FY2018-19,2019,S_HIES1925,residential,Residential fuel combustion,PM2.5,233.771159,covered_sources_only
+FY2018-19,2019,S_HIES1925,residential,Residential fuel combustion,SO2,17.031396,covered_sources_only
+FY2018-19,2019,S_HIES1925,transport,Road transport,BC,2.416469,covered_sources_only
+FY2018-19,2019,S_HIES1925,transport,Road transport,CO,1492.412753,covered_sources_only
+FY2018-19,2019,S_HIES1925,transport,Road transport,NH3,3.890760,covered_sources_only
+FY2018-19,2019,S_HIES1925,transport,Road transport,NMVOC,529.692418,covered_sources_only
+FY2018-19,2019,S_HIES1925,transport,Road transport,NOx,202.479962,covered_sources_only
+FY2018-19,2019,S_HIES1925,transport,Road transport,PM2.5,9.376304,covered_sources_only
+FY2018-19,2019,S_HIES1925,transport,Road transport,SO2,13.693712,covered_sources_only
+FY2018-19,2019,S_HIES1925,waste,Open burning of waste,BC,8.132845,covered_sources_only
+FY2018-19,2019,S_HIES1925,waste,Open burning of waste,CO,383.405569,covered_sources_only
+FY2018-19,2019,S_HIES1925,waste,Open burning of waste,NH3,5.228258,covered_sources_only
+FY2018-19,2019,S_HIES1925,waste,Open burning of waste,NMVOC,133.611032,covered_sources_only
+FY2018-19,2019,S_HIES1925,waste,Open burning of waste,NOx,13.361103,covered_sources_only
+FY2018-19,2019,S_HIES1925,waste,Open burning of waste,PM2.5,56.349000,covered_sources_only
+FY2018-19,2019,S_HIES1925,waste,Open burning of waste,SO2,2.904588,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Field burning of residues,BC,2.786084,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Field burning of residues,CO,512.639524,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Field burning of residues,NH3,7.243819,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Field burning of residues,NMVOC,39.005181,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Field burning of residues,NOx,13.930422,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Field burning of residues,PM2.5,42.348482,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Field burning of residues,SO2,2.228867,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Managed soils,NH3,1565.701666,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Managed soils,NOx,126.340863,covered_sources_only
+FY2019-20,2020,REF_2023_24,agriculture,Manure management,NH3,657.031374,covered_sources_only
+FY2019-20,2020,REF_2023_24,aviation,Domestic aviation,BC,0.002721,covered_sources_only
+FY2019-20,2020,REF_2023_24,aviation,Domestic aviation,CO,0.150085,covered_sources_only
+FY2019-20,2020,REF_2023_24,aviation,Domestic aviation,NOx,0.231008,covered_sources_only
+FY2019-20,2020,REF_2023_24,aviation,Domestic aviation,PM2.5,0.018140,covered_sources_only
+FY2019-20,2020,REF_2023_24,aviation,Domestic aviation,SO2,0.090702,covered_sources_only
+FY2019-20,2020,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.069190,covered_sources_only
+FY2019-20,2020,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.241460,covered_sources_only
+FY2019-20,2020,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,88.094139,covered_sources_only
+FY2019-20,2020,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.125748,covered_sources_only
+FY2019-20,2020,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.307991,covered_sources_only
+FY2019-20,2020,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.306986,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.006938,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Captive gas self-generation (1A2),CO,5.205677,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,6.737843,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,14.017647,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.229986,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.028243,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159978,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.836078,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.738361,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,86.142091,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.332606,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.150823,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,23.807075,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,65.226072,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,3.905560,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,48.928289,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,31.412691,covered_sources_only
+FY2019-20,2020,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,602.044156,covered_sources_only
+FY2019-20,2020,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000239,covered_sources_only
+FY2019-20,2020,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,10.736573,covered_sources_only
+FY2019-20,2020,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.535777,covered_sources_only
+FY2019-20,2020,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.145544,covered_sources_only
+FY2019-20,2020,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,4.433791,covered_sources_only
+FY2019-20,2020,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.066444,covered_sources_only
+FY2019-20,2020,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.189840,covered_sources_only
+FY2019-20,2020,REF_2023_24,power,Electricity and heat production,SO2,23.410472,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001466,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.017616,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000012,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007656,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.086269,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002256,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.020207,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railways,BC,0.103819,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railways,CO,1.247456,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railways,NH3,0.000816,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railways,NMVOC,0.542119,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railways,NOx,6.109035,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railways,PM2.5,0.159721,covered_sources_only
+FY2019-20,2020,REF_2023_24,railways,Railways,SO2,0.116585,covered_sources_only
+FY2019-20,2020,REF_2023_24,residential,Residential fuel combustion,BC,37.238095,covered_sources_only
+FY2019-20,2020,REF_2023_24,residential,Residential fuel combustion,CO,6364.432429,covered_sources_only
+FY2019-20,2020,REF_2023_24,residential,Residential fuel combustion,NH3,87.719983,covered_sources_only
+FY2019-20,2020,REF_2023_24,residential,Residential fuel combustion,NMVOC,857.664554,covered_sources_only
+FY2019-20,2020,REF_2023_24,residential,Residential fuel combustion,NOx,304.622792,covered_sources_only
+FY2019-20,2020,REF_2023_24,residential,Residential fuel combustion,PM2.5,565.418371,covered_sources_only
+FY2019-20,2020,REF_2023_24,residential,Residential fuel combustion,SO2,47.509485,covered_sources_only
+FY2019-20,2020,REF_2023_24,transport,Road transport,BC,2.185292,covered_sources_only
+FY2019-20,2020,REF_2023_24,transport,Road transport,CO,1448.168662,covered_sources_only
+FY2019-20,2020,REF_2023_24,transport,Road transport,NH3,3.411684,covered_sources_only
+FY2019-20,2020,REF_2023_24,transport,Road transport,NMVOC,526.008369,covered_sources_only
+FY2019-20,2020,REF_2023_24,transport,Road transport,NOx,185.754638,covered_sources_only
+FY2019-20,2020,REF_2023_24,transport,Road transport,PM2.5,8.832472,covered_sources_only
+FY2019-20,2020,REF_2023_24,transport,Road transport,SO2,12.936433,covered_sources_only
+FY2019-20,2020,REF_2023_24,waste,Open burning of waste,BC,8.336703,covered_sources_only
+FY2019-20,2020,REF_2023_24,waste,Open burning of waste,CO,393.015980,covered_sources_only
+FY2019-20,2020,REF_2023_24,waste,Open burning of waste,NH3,5.359309,covered_sources_only
+FY2019-20,2020,REF_2023_24,waste,Open burning of waste,NMVOC,136.960114,covered_sources_only
+FY2019-20,2020,REF_2023_24,waste,Open burning of waste,NOx,13.696011,covered_sources_only
+FY2019-20,2020,REF_2023_24,waste,Open burning of waste,PM2.5,57.761440,covered_sources_only
+FY2019-20,2020,REF_2023_24,waste,Open burning of waste,SO2,2.977394,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Field burning of residues,BC,2.786084,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Field burning of residues,CO,512.639524,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Field burning of residues,NH3,7.243819,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Field burning of residues,NMVOC,39.005181,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Field burning of residues,NOx,13.930422,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Field burning of residues,PM2.5,42.348482,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Field burning of residues,SO2,2.228867,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Managed soils,NH3,1565.701666,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Managed soils,NOx,126.340863,covered_sources_only
+FY2019-20,2020,S_HIES1925,agriculture,Manure management,NH3,657.031374,covered_sources_only
+FY2019-20,2020,S_HIES1925,aviation,Domestic aviation,BC,0.002721,covered_sources_only
+FY2019-20,2020,S_HIES1925,aviation,Domestic aviation,CO,0.150085,covered_sources_only
+FY2019-20,2020,S_HIES1925,aviation,Domestic aviation,NOx,0.231008,covered_sources_only
+FY2019-20,2020,S_HIES1925,aviation,Domestic aviation,PM2.5,0.018140,covered_sources_only
+FY2019-20,2020,S_HIES1925,aviation,Domestic aviation,SO2,0.090702,covered_sources_only
+FY2019-20,2020,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.069190,covered_sources_only
+FY2019-20,2020,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.241460,covered_sources_only
+FY2019-20,2020,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,88.094139,covered_sources_only
+FY2019-20,2020,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.125748,covered_sources_only
+FY2019-20,2020,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.307991,covered_sources_only
+FY2019-20,2020,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.306986,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.006938,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Captive gas self-generation (1A2),CO,5.205677,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,6.737843,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,14.017647,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.229986,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.028243,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159978,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.836078,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.738361,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,86.142091,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.332606,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.150823,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,23.807075,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,65.226072,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,3.905560,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,48.928289,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,31.412691,covered_sources_only
+FY2019-20,2020,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,602.044156,covered_sources_only
+FY2019-20,2020,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000239,covered_sources_only
+FY2019-20,2020,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,10.736573,covered_sources_only
+FY2019-20,2020,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.535777,covered_sources_only
+FY2019-20,2020,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.145544,covered_sources_only
+FY2019-20,2020,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,4.433791,covered_sources_only
+FY2019-20,2020,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.066444,covered_sources_only
+FY2019-20,2020,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.189840,covered_sources_only
+FY2019-20,2020,S_HIES1925,power,Electricity and heat production,SO2,23.410472,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001466,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.017616,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000012,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007656,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.086269,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002256,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.020207,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railways,BC,0.103819,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railways,CO,1.247456,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railways,NH3,0.000816,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railways,NMVOC,0.542119,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railways,NOx,6.109035,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railways,PM2.5,0.159721,covered_sources_only
+FY2019-20,2020,S_HIES1925,railways,Railways,SO2,0.116585,covered_sources_only
+FY2019-20,2020,S_HIES1925,residential,Residential fuel combustion,BC,17.727353,covered_sources_only
+FY2019-20,2020,S_HIES1925,residential,Residential fuel combustion,CO,2959.616634,covered_sources_only
+FY2019-20,2020,S_HIES1925,residential,Residential fuel combustion,NH3,36.839028,covered_sources_only
+FY2019-20,2020,S_HIES1925,residential,Residential fuel combustion,NMVOC,306.773009,covered_sources_only
+FY2019-20,2020,S_HIES1925,residential,Residential fuel combustion,NOx,140.503019,covered_sources_only
+FY2019-20,2020,S_HIES1925,residential,Residential fuel combustion,PM2.5,247.890606,covered_sources_only
+FY2019-20,2020,S_HIES1925,residential,Residential fuel combustion,SO2,18.052090,covered_sources_only
+FY2019-20,2020,S_HIES1925,transport,Road transport,BC,2.185292,covered_sources_only
+FY2019-20,2020,S_HIES1925,transport,Road transport,CO,1448.168662,covered_sources_only
+FY2019-20,2020,S_HIES1925,transport,Road transport,NH3,3.411684,covered_sources_only
+FY2019-20,2020,S_HIES1925,transport,Road transport,NMVOC,526.008369,covered_sources_only
+FY2019-20,2020,S_HIES1925,transport,Road transport,NOx,185.754638,covered_sources_only
+FY2019-20,2020,S_HIES1925,transport,Road transport,PM2.5,8.832472,covered_sources_only
+FY2019-20,2020,S_HIES1925,transport,Road transport,SO2,12.936433,covered_sources_only
+FY2019-20,2020,S_HIES1925,waste,Open burning of waste,BC,8.336703,covered_sources_only
+FY2019-20,2020,S_HIES1925,waste,Open burning of waste,CO,393.015980,covered_sources_only
+FY2019-20,2020,S_HIES1925,waste,Open burning of waste,NH3,5.359309,covered_sources_only
+FY2019-20,2020,S_HIES1925,waste,Open burning of waste,NMVOC,136.960114,covered_sources_only
+FY2019-20,2020,S_HIES1925,waste,Open burning of waste,NOx,13.696011,covered_sources_only
+FY2019-20,2020,S_HIES1925,waste,Open burning of waste,PM2.5,57.761440,covered_sources_only
+FY2019-20,2020,S_HIES1925,waste,Open burning of waste,SO2,2.977394,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Field burning of residues,BC,3.057970,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Field burning of residues,CO,562.666557,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Field burning of residues,NH3,7.950723,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Field burning of residues,NMVOC,42.811586,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Field burning of residues,NOx,15.289852,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Field burning of residues,PM2.5,46.481150,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Field burning of residues,SO2,2.446376,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Managed soils,NH3,1660.956101,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Managed soils,NOx,135.509370,covered_sources_only
+FY2020-21,2021,REF_2023_24,agriculture,Manure management,NH3,696.331355,covered_sources_only
+FY2020-21,2021,REF_2023_24,aviation,Domestic aviation,BC,0.002842,covered_sources_only
+FY2020-21,2021,REF_2023_24,aviation,Domestic aviation,CO,0.156746,covered_sources_only
+FY2020-21,2021,REF_2023_24,aviation,Domestic aviation,NOx,0.241260,covered_sources_only
+FY2020-21,2021,REF_2023_24,aviation,Domestic aviation,PM2.5,0.018945,covered_sources_only
+FY2020-21,2021,REF_2023_24,aviation,Domestic aviation,SO2,0.094727,covered_sources_only
+FY2020-21,2021,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.060297,covered_sources_only
+FY2020-21,2021,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.196319,covered_sources_only
+FY2020-21,2021,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,91.088569,covered_sources_only
+FY2020-21,2021,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.185605,covered_sources_only
+FY2020-21,2021,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.272556,covered_sources_only
+FY2020-21,2021,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.578627,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.004857,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Captive gas self-generation (1A2),CO,3.643974,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,4.716490,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,9.812353,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.160990,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.019770,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.200482,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,92.529999,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.925300,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,107.951666,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.682722,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,27.759000,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,25.669929,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,70.867882,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,5.060968,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,58.670826,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,33.942195,covered_sources_only
+FY2020-21,2021,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,643.987254,covered_sources_only
+FY2020-21,2021,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000361,covered_sources_only
+FY2020-21,2021,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,13.895197,covered_sources_only
+FY2020-21,2021,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.577430,covered_sources_only
+FY2020-21,2021,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.219742,covered_sources_only
+FY2020-21,2021,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,4.879045,covered_sources_only
+FY2020-21,2021,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.100317,covered_sources_only
+FY2020-21,2021,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.286620,covered_sources_only
+FY2020-21,2021,REF_2023_24,power,Electricity and heat production,SO2,35.720183,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001162,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.013958,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000009,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006066,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.068357,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001787,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.008757,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railways,BC,0.104474,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railways,CO,1.255331,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railways,NH3,0.000821,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railways,NMVOC,0.545541,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railways,NOx,6.147602,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railways,PM2.5,0.160729,covered_sources_only
+FY2020-21,2021,REF_2023_24,railways,Railways,SO2,0.117321,covered_sources_only
+FY2020-21,2021,REF_2023_24,residential,Residential fuel combustion,BC,38.456958,covered_sources_only
+FY2020-21,2021,REF_2023_24,residential,Residential fuel combustion,CO,6578.799351,covered_sources_only
+FY2020-21,2021,REF_2023_24,residential,Residential fuel combustion,NH3,90.814183,covered_sources_only
+FY2020-21,2021,REF_2023_24,residential,Residential fuel combustion,NMVOC,885.840947,covered_sources_only
+FY2020-21,2021,REF_2023_24,residential,Residential fuel combustion,NOx,313.231314,covered_sources_only
+FY2020-21,2021,REF_2023_24,residential,Residential fuel combustion,PM2.5,584.550145,covered_sources_only
+FY2020-21,2021,REF_2023_24,residential,Residential fuel combustion,SO2,49.041900,covered_sources_only
+FY2020-21,2021,REF_2023_24,transport,Road transport,BC,2.553798,covered_sources_only
+FY2020-21,2021,REF_2023_24,transport,Road transport,CO,1641.019586,covered_sources_only
+FY2020-21,2021,REF_2023_24,transport,Road transport,NH3,3.583503,covered_sources_only
+FY2020-21,2021,REF_2023_24,transport,Road transport,NMVOC,595.332741,covered_sources_only
+FY2020-21,2021,REF_2023_24,transport,Road transport,NOx,213.832044,covered_sources_only
+FY2020-21,2021,REF_2023_24,transport,Road transport,PM2.5,9.833972,covered_sources_only
+FY2020-21,2021,REF_2023_24,transport,Road transport,SO2,14.876584,covered_sources_only
+FY2020-21,2021,REF_2023_24,waste,Open burning of waste,BC,8.546287,covered_sources_only
+FY2020-21,2021,REF_2023_24,waste,Open burning of waste,CO,402.896409,covered_sources_only
+FY2020-21,2021,REF_2023_24,waste,Open burning of waste,NH3,5.494042,covered_sources_only
+FY2020-21,2021,REF_2023_24,waste,Open burning of waste,NMVOC,140.403294,covered_sources_only
+FY2020-21,2021,REF_2023_24,waste,Open burning of waste,NOx,14.040329,covered_sources_only
+FY2020-21,2021,REF_2023_24,waste,Open burning of waste,PM2.5,59.213563,covered_sources_only
+FY2020-21,2021,REF_2023_24,waste,Open burning of waste,SO2,3.052246,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Field burning of residues,BC,3.057970,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Field burning of residues,CO,562.666557,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Field burning of residues,NH3,7.950723,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Field burning of residues,NMVOC,42.811586,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Field burning of residues,NOx,15.289852,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Field burning of residues,PM2.5,46.481150,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Field burning of residues,SO2,2.446376,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Managed soils,NH3,1660.956101,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Managed soils,NOx,135.509370,covered_sources_only
+FY2020-21,2021,S_HIES1925,agriculture,Manure management,NH3,696.331355,covered_sources_only
+FY2020-21,2021,S_HIES1925,aviation,Domestic aviation,BC,0.002842,covered_sources_only
+FY2020-21,2021,S_HIES1925,aviation,Domestic aviation,CO,0.156746,covered_sources_only
+FY2020-21,2021,S_HIES1925,aviation,Domestic aviation,NOx,0.241260,covered_sources_only
+FY2020-21,2021,S_HIES1925,aviation,Domestic aviation,PM2.5,0.018945,covered_sources_only
+FY2020-21,2021,S_HIES1925,aviation,Domestic aviation,SO2,0.094727,covered_sources_only
+FY2020-21,2021,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.060297,covered_sources_only
+FY2020-21,2021,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.196319,covered_sources_only
+FY2020-21,2021,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,91.088569,covered_sources_only
+FY2020-21,2021,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.185605,covered_sources_only
+FY2020-21,2021,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.272556,covered_sources_only
+FY2020-21,2021,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.578627,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.004857,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Captive gas self-generation (1A2),CO,3.643974,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,4.716490,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,9.812353,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.160990,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.019770,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.200482,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,92.529999,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.925300,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,107.951666,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.682722,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,27.759000,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,25.669929,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,70.867882,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,5.060968,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,58.670826,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,33.942195,covered_sources_only
+FY2020-21,2021,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,643.987254,covered_sources_only
+FY2020-21,2021,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000361,covered_sources_only
+FY2020-21,2021,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,13.895197,covered_sources_only
+FY2020-21,2021,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.577430,covered_sources_only
+FY2020-21,2021,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.219742,covered_sources_only
+FY2020-21,2021,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,4.879045,covered_sources_only
+FY2020-21,2021,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.100317,covered_sources_only
+FY2020-21,2021,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.286620,covered_sources_only
+FY2020-21,2021,S_HIES1925,power,Electricity and heat production,SO2,35.720183,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001162,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.013958,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000009,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006066,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.068357,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001787,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.008757,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railways,BC,0.104474,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railways,CO,1.255331,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railways,NH3,0.000821,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railways,NMVOC,0.545541,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railways,NOx,6.147602,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railways,PM2.5,0.160729,covered_sources_only
+FY2020-21,2021,S_HIES1925,railways,Railways,SO2,0.117321,covered_sources_only
+FY2020-21,2021,S_HIES1925,residential,Residential fuel combustion,BC,18.580768,covered_sources_only
+FY2020-21,2021,S_HIES1925,residential,Residential fuel combustion,CO,3110.209201,covered_sources_only
+FY2020-21,2021,S_HIES1925,residential,Residential fuel combustion,NH3,38.980195,covered_sources_only
+FY2020-21,2021,S_HIES1925,residential,Residential fuel combustion,NMVOC,324.630855,covered_sources_only
+FY2020-21,2021,S_HIES1925,residential,Residential fuel combustion,NOx,146.037474,covered_sources_only
+FY2020-21,2021,S_HIES1925,residential,Residential fuel combustion,PM2.5,261.074884,covered_sources_only
+FY2020-21,2021,S_HIES1925,residential,Residential fuel combustion,SO2,19.032750,covered_sources_only
+FY2020-21,2021,S_HIES1925,transport,Road transport,BC,2.553798,covered_sources_only
+FY2020-21,2021,S_HIES1925,transport,Road transport,CO,1641.019586,covered_sources_only
+FY2020-21,2021,S_HIES1925,transport,Road transport,NH3,3.583503,covered_sources_only
+FY2020-21,2021,S_HIES1925,transport,Road transport,NMVOC,595.332741,covered_sources_only
+FY2020-21,2021,S_HIES1925,transport,Road transport,NOx,213.832044,covered_sources_only
+FY2020-21,2021,S_HIES1925,transport,Road transport,PM2.5,9.833972,covered_sources_only
+FY2020-21,2021,S_HIES1925,transport,Road transport,SO2,14.876584,covered_sources_only
+FY2020-21,2021,S_HIES1925,waste,Open burning of waste,BC,8.546287,covered_sources_only
+FY2020-21,2021,S_HIES1925,waste,Open burning of waste,CO,402.896409,covered_sources_only
+FY2020-21,2021,S_HIES1925,waste,Open burning of waste,NH3,5.494042,covered_sources_only
+FY2020-21,2021,S_HIES1925,waste,Open burning of waste,NMVOC,140.403294,covered_sources_only
+FY2020-21,2021,S_HIES1925,waste,Open burning of waste,NOx,14.040329,covered_sources_only
+FY2020-21,2021,S_HIES1925,waste,Open burning of waste,PM2.5,59.213563,covered_sources_only
+FY2020-21,2021,S_HIES1925,waste,Open burning of waste,SO2,3.052246,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Field burning of residues,BC,3.289641,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Field burning of residues,CO,605.293980,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Field burning of residues,NH3,8.553067,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Field burning of residues,NMVOC,46.054977,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Field burning of residues,NOx,16.448206,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Field burning of residues,PM2.5,50.002546,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Field burning of residues,SO2,2.631713,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Managed soils,NH3,1725.175994,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Managed soils,NOx,140.711391,covered_sources_only
+FY2021-22,2022,REF_2023_24,agriculture,Manure management,NH3,738.471857,covered_sources_only
+FY2021-22,2022,REF_2023_24,aviation,Domestic aviation,BC,0.003333,covered_sources_only
+FY2021-22,2022,REF_2023_24,aviation,Domestic aviation,CO,0.183828,covered_sources_only
+FY2021-22,2022,REF_2023_24,aviation,Domestic aviation,NOx,0.282944,covered_sources_only
+FY2021-22,2022,REF_2023_24,aviation,Domestic aviation,PM2.5,0.022219,covered_sources_only
+FY2021-22,2022,REF_2023_24,aviation,Domestic aviation,SO2,0.111094,covered_sources_only
+FY2021-22,2022,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.060367,covered_sources_only
+FY2021-22,2022,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.199784,covered_sources_only
+FY2021-22,2022,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,94.978644,covered_sources_only
+FY2021-22,2022,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.190689,covered_sources_only
+FY2021-22,2022,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.272949,covered_sources_only
+FY2021-22,2022,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.595408,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.005814,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Captive gas self-generation (1A2),CO,4.361998,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,5.645848,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,11.745822,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.192712,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.023666,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.193586,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,89.347474,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.893475,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,104.238720,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.452873,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,26.804242,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,17.643872,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,51.268437,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,4.768828,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,56.096592,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,23.604615,covered_sources_only
+FY2021-22,2022,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,430.539014,covered_sources_only
+FY2021-22,2022,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000481,covered_sources_only
+FY2021-22,2022,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,17.105780,covered_sources_only
+FY2021-22,2022,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.629718,covered_sources_only
+FY2021-22,2022,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.292468,covered_sources_only
+FY2021-22,2022,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,5.182328,covered_sources_only
+FY2021-22,2022,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.133518,covered_sources_only
+FY2021-22,2022,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.381480,covered_sources_only
+FY2021-22,2022,REF_2023_24,power,Electricity and heat production,SO2,73.769409,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001390,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016698,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007257,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.081773,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002138,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.015890,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railways,BC,0.105745,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railways,CO,1.270605,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railways,NH3,0.000831,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railways,NMVOC,0.552179,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railways,NOx,6.222404,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railways,PM2.5,0.162685,covered_sources_only
+FY2021-22,2022,REF_2023_24,railways,Railways,SO2,0.121396,covered_sources_only
+FY2021-22,2022,REF_2023_24,residential,Residential fuel combustion,BC,39.321313,covered_sources_only
+FY2021-22,2022,REF_2023_24,residential,Residential fuel combustion,CO,6727.771168,covered_sources_only
+FY2021-22,2022,REF_2023_24,residential,Residential fuel combustion,NH3,92.989574,covered_sources_only
+FY2021-22,2022,REF_2023_24,residential,Residential fuel combustion,NMVOC,909.421438,covered_sources_only
+FY2021-22,2022,REF_2023_24,residential,Residential fuel combustion,NOx,320.149255,covered_sources_only
+FY2021-22,2022,REF_2023_24,residential,Residential fuel combustion,PM2.5,598.328802,covered_sources_only
+FY2021-22,2022,REF_2023_24,residential,Residential fuel combustion,SO2,50.308869,covered_sources_only
+FY2021-22,2022,REF_2023_24,transport,Road transport,BC,2.863026,covered_sources_only
+FY2021-22,2022,REF_2023_24,transport,Road transport,CO,1740.131442,covered_sources_only
+FY2021-22,2022,REF_2023_24,transport,Road transport,NH3,3.581624,covered_sources_only
+FY2021-22,2022,REF_2023_24,transport,Road transport,NMVOC,626.967978,covered_sources_only
+FY2021-22,2022,REF_2023_24,transport,Road transport,NOx,235.521412,covered_sources_only
+FY2021-22,2022,REF_2023_24,transport,Road transport,PM2.5,10.471912,covered_sources_only
+FY2021-22,2022,REF_2023_24,transport,Road transport,SO2,16.340281,covered_sources_only
+FY2021-22,2022,REF_2023_24,waste,Open burning of waste,BC,8.761790,covered_sources_only
+FY2021-22,2022,REF_2023_24,waste,Open burning of waste,CO,413.055830,covered_sources_only
+FY2021-22,2022,REF_2023_24,waste,Open burning of waste,NH3,5.632580,covered_sources_only
+FY2021-22,2022,REF_2023_24,waste,Open burning of waste,NMVOC,143.943698,covered_sources_only
+FY2021-22,2022,REF_2023_24,waste,Open burning of waste,NOx,14.394370,covered_sources_only
+FY2021-22,2022,REF_2023_24,waste,Open burning of waste,PM2.5,60.706690,covered_sources_only
+FY2021-22,2022,REF_2023_24,waste,Open burning of waste,SO2,3.129211,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Field burning of residues,BC,3.289641,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Field burning of residues,CO,605.293980,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Field burning of residues,NH3,8.553067,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Field burning of residues,NMVOC,46.054977,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Field burning of residues,NOx,16.448206,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Field burning of residues,PM2.5,50.002546,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Field burning of residues,SO2,2.631713,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Managed soils,NH3,1725.175994,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Managed soils,NOx,140.711391,covered_sources_only
+FY2021-22,2022,S_HIES1925,agriculture,Manure management,NH3,738.471857,covered_sources_only
+FY2021-22,2022,S_HIES1925,aviation,Domestic aviation,BC,0.003333,covered_sources_only
+FY2021-22,2022,S_HIES1925,aviation,Domestic aviation,CO,0.183828,covered_sources_only
+FY2021-22,2022,S_HIES1925,aviation,Domestic aviation,NOx,0.282944,covered_sources_only
+FY2021-22,2022,S_HIES1925,aviation,Domestic aviation,PM2.5,0.022219,covered_sources_only
+FY2021-22,2022,S_HIES1925,aviation,Domestic aviation,SO2,0.111094,covered_sources_only
+FY2021-22,2022,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.060367,covered_sources_only
+FY2021-22,2022,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.199784,covered_sources_only
+FY2021-22,2022,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,94.978644,covered_sources_only
+FY2021-22,2022,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.190689,covered_sources_only
+FY2021-22,2022,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.272949,covered_sources_only
+FY2021-22,2022,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.595408,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.005814,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Captive gas self-generation (1A2),CO,4.361998,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,5.645848,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,11.745822,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.192712,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.023666,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.193586,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,89.347474,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.893475,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,104.238720,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.452873,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,26.804242,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,17.643872,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,51.268437,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,4.768828,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,56.096592,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,23.604615,covered_sources_only
+FY2021-22,2022,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,430.539014,covered_sources_only
+FY2021-22,2022,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000481,covered_sources_only
+FY2021-22,2022,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,17.105780,covered_sources_only
+FY2021-22,2022,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.629718,covered_sources_only
+FY2021-22,2022,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.292468,covered_sources_only
+FY2021-22,2022,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,5.182328,covered_sources_only
+FY2021-22,2022,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.133518,covered_sources_only
+FY2021-22,2022,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.381480,covered_sources_only
+FY2021-22,2022,S_HIES1925,power,Electricity and heat production,SO2,73.769409,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001390,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016698,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007257,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.081773,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002138,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.015890,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railways,BC,0.105745,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railways,CO,1.270605,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railways,NH3,0.000831,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railways,NMVOC,0.552179,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railways,NOx,6.222404,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railways,PM2.5,0.162685,covered_sources_only
+FY2021-22,2022,S_HIES1925,railways,Railways,SO2,0.121396,covered_sources_only
+FY2021-22,2022,S_HIES1925,residential,Residential fuel combustion,BC,19.076171,covered_sources_only
+FY2021-22,2022,S_HIES1925,residential,Residential fuel combustion,CO,3194.795516,covered_sources_only
+FY2021-22,2022,S_HIES1925,residential,Residential fuel combustion,NH3,40.193421,covered_sources_only
+FY2021-22,2022,S_HIES1925,residential,Residential fuel combustion,NMVOC,337.793917,covered_sources_only
+FY2021-22,2022,S_HIES1925,residential,Residential fuel combustion,NOx,149.851889,covered_sources_only
+FY2021-22,2022,S_HIES1925,residential,Residential fuel combustion,PM2.5,268.849050,covered_sources_only
+FY2021-22,2022,S_HIES1925,residential,Residential fuel combustion,SO2,19.742675,covered_sources_only
+FY2021-22,2022,S_HIES1925,transport,Road transport,BC,2.863026,covered_sources_only
+FY2021-22,2022,S_HIES1925,transport,Road transport,CO,1740.131442,covered_sources_only
+FY2021-22,2022,S_HIES1925,transport,Road transport,NH3,3.581624,covered_sources_only
+FY2021-22,2022,S_HIES1925,transport,Road transport,NMVOC,626.967978,covered_sources_only
+FY2021-22,2022,S_HIES1925,transport,Road transport,NOx,235.521412,covered_sources_only
+FY2021-22,2022,S_HIES1925,transport,Road transport,PM2.5,10.471912,covered_sources_only
+FY2021-22,2022,S_HIES1925,transport,Road transport,SO2,16.340281,covered_sources_only
+FY2021-22,2022,S_HIES1925,waste,Open burning of waste,BC,8.761790,covered_sources_only
+FY2021-22,2022,S_HIES1925,waste,Open burning of waste,CO,413.055830,covered_sources_only
+FY2021-22,2022,S_HIES1925,waste,Open burning of waste,NH3,5.632580,covered_sources_only
+FY2021-22,2022,S_HIES1925,waste,Open burning of waste,NMVOC,143.943698,covered_sources_only
+FY2021-22,2022,S_HIES1925,waste,Open burning of waste,NOx,14.394370,covered_sources_only
+FY2021-22,2022,S_HIES1925,waste,Open burning of waste,PM2.5,60.706690,covered_sources_only
+FY2021-22,2022,S_HIES1925,waste,Open burning of waste,SO2,3.129211,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Field burning of residues,BC,2.962838,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Field burning of residues,CO,545.162213,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Field burning of residues,NH3,7.703379,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Field burning of residues,NMVOC,41.479734,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Field burning of residues,NOx,14.814191,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Field burning of residues,PM2.5,45.035139,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Field burning of residues,SO2,2.370270,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Managed soils,NH3,1721.190140,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Managed soils,NOx,137.695827,covered_sources_only
+FY2022-23,2023,REF_2023_24,agriculture,Manure management,NH3,784.085607,covered_sources_only
+FY2022-23,2023,REF_2023_24,aviation,Domestic aviation,BC,0.003036,covered_sources_only
+FY2022-23,2023,REF_2023_24,aviation,Domestic aviation,CO,0.167450,covered_sources_only
+FY2022-23,2023,REF_2023_24,aviation,Domestic aviation,NOx,0.257735,covered_sources_only
+FY2022-23,2023,REF_2023_24,aviation,Domestic aviation,PM2.5,0.020239,covered_sources_only
+FY2022-23,2023,REF_2023_24,aviation,Domestic aviation,SO2,0.101196,covered_sources_only
+FY2022-23,2023,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.059237,covered_sources_only
+FY2022-23,2023,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.111762,covered_sources_only
+FY2022-23,2023,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,83.054284,covered_sources_only
+FY2022-23,2023,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.051198,covered_sources_only
+FY2022-23,2023,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.265461,covered_sources_only
+FY2022-23,2023,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.128916,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.002943,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Captive gas self-generation (1A2),CO,2.207925,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,2.857775,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,5.945416,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.097546,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.011979,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163192,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.319454,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.753195,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,87.872696,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.439738,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.595836,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,10.253575,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,30.653404,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,3.931296,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,43.459573,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,13.918987,covered_sources_only
+FY2022-23,2023,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,244.102333,covered_sources_only
+FY2022-23,2023,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000404,covered_sources_only
+FY2022-23,2023,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,16.108275,covered_sources_only
+FY2022-23,2023,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.703367,covered_sources_only
+FY2022-23,2023,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.245548,covered_sources_only
+FY2022-23,2023,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,4.731466,covered_sources_only
+FY2022-23,2023,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.112098,covered_sources_only
+FY2022-23,2023,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.320280,covered_sources_only
+FY2022-23,2023,REF_2023_24,power,Electricity and heat production,SO2,27.668316,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001346,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016169,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007027,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.079183,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002070,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.010334,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railways,BC,0.077711,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railways,CO,0.933758,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railways,NH3,0.000611,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railways,NMVOC,0.405792,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railways,NOx,4.572797,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railways,PM2.5,0.119556,covered_sources_only
+FY2022-23,2023,REF_2023_24,railways,Railways,SO2,0.087425,covered_sources_only
+FY2022-23,2023,REF_2023_24,residential,Residential fuel combustion,BC,40.342950,covered_sources_only
+FY2022-23,2023,REF_2023_24,residential,Residential fuel combustion,CO,6905.535744,covered_sources_only
+FY2022-23,2023,REF_2023_24,residential,Residential fuel combustion,NH3,95.571932,covered_sources_only
+FY2022-23,2023,REF_2023_24,residential,Residential fuel combustion,NMVOC,935.604936,covered_sources_only
+FY2022-23,2023,REF_2023_24,residential,Residential fuel combustion,NOx,328.423085,covered_sources_only
+FY2022-23,2023,REF_2023_24,residential,Residential fuel combustion,PM2.5,614.528011,covered_sources_only
+FY2022-23,2023,REF_2023_24,residential,Residential fuel combustion,SO2,51.723553,covered_sources_only
+FY2022-23,2023,REF_2023_24,transport,Road transport,BC,2.039548,covered_sources_only
+FY2022-23,2023,REF_2023_24,transport,Road transport,CO,1492.485390,covered_sources_only
+FY2022-23,2023,REF_2023_24,transport,Road transport,NH3,2.696266,covered_sources_only
+FY2022-23,2023,REF_2023_24,transport,Road transport,NMVOC,556.118936,covered_sources_only
+FY2022-23,2023,REF_2023_24,transport,Road transport,NOx,176.144349,covered_sources_only
+FY2022-23,2023,REF_2023_24,transport,Road transport,PM2.5,8.395402,covered_sources_only
+FY2022-23,2023,REF_2023_24,transport,Road transport,SO2,12.606202,covered_sources_only
+FY2022-23,2023,REF_2023_24,waste,Open burning of waste,BC,8.987022,covered_sources_only
+FY2022-23,2023,REF_2023_24,waste,Open burning of waste,CO,423.673894,covered_sources_only
+FY2022-23,2023,REF_2023_24,waste,Open burning of waste,NH3,5.777371,covered_sources_only
+FY2022-23,2023,REF_2023_24,waste,Open burning of waste,NMVOC,147.643933,covered_sources_only
+FY2022-23,2023,REF_2023_24,waste,Open burning of waste,NOx,14.764393,covered_sources_only
+FY2022-23,2023,REF_2023_24,waste,Open burning of waste,PM2.5,62.267224,covered_sources_only
+FY2022-23,2023,REF_2023_24,waste,Open burning of waste,SO2,3.209651,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Field burning of residues,BC,2.962838,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Field burning of residues,CO,545.162213,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Field burning of residues,NH3,7.703379,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Field burning of residues,NMVOC,41.479734,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Field burning of residues,NOx,14.814191,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Field burning of residues,PM2.5,45.035139,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Field burning of residues,SO2,2.370270,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Managed soils,NH3,1721.190140,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Managed soils,NOx,137.695827,covered_sources_only
+FY2022-23,2023,S_HIES1925,agriculture,Manure management,NH3,784.085607,covered_sources_only
+FY2022-23,2023,S_HIES1925,aviation,Domestic aviation,BC,0.003036,covered_sources_only
+FY2022-23,2023,S_HIES1925,aviation,Domestic aviation,CO,0.167450,covered_sources_only
+FY2022-23,2023,S_HIES1925,aviation,Domestic aviation,NOx,0.257735,covered_sources_only
+FY2022-23,2023,S_HIES1925,aviation,Domestic aviation,PM2.5,0.020239,covered_sources_only
+FY2022-23,2023,S_HIES1925,aviation,Domestic aviation,SO2,0.101196,covered_sources_only
+FY2022-23,2023,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.059237,covered_sources_only
+FY2022-23,2023,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.111762,covered_sources_only
+FY2022-23,2023,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,83.054284,covered_sources_only
+FY2022-23,2023,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.051198,covered_sources_only
+FY2022-23,2023,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.265461,covered_sources_only
+FY2022-23,2023,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.128916,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.002943,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Captive gas self-generation (1A2),CO,2.207925,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,2.857775,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,5.945416,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.097546,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.011979,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163192,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.319454,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.753195,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,87.872696,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.439738,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.595836,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,10.253575,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,30.653404,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,3.931296,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,43.459573,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,13.918987,covered_sources_only
+FY2022-23,2023,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,244.102333,covered_sources_only
+FY2022-23,2023,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000404,covered_sources_only
+FY2022-23,2023,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,16.108275,covered_sources_only
+FY2022-23,2023,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.703367,covered_sources_only
+FY2022-23,2023,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.245548,covered_sources_only
+FY2022-23,2023,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,4.731466,covered_sources_only
+FY2022-23,2023,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.112098,covered_sources_only
+FY2022-23,2023,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.320280,covered_sources_only
+FY2022-23,2023,S_HIES1925,power,Electricity and heat production,SO2,27.668316,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001346,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016169,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007027,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.079183,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002070,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.010334,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railways,BC,0.077711,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railways,CO,0.933758,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railways,NH3,0.000611,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railways,NMVOC,0.405792,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railways,NOx,4.572797,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railways,PM2.5,0.119556,covered_sources_only
+FY2022-23,2023,S_HIES1925,railways,Railways,SO2,0.087425,covered_sources_only
+FY2022-23,2023,S_HIES1925,residential,Residential fuel combustion,BC,19.726787,covered_sources_only
+FY2022-23,2023,S_HIES1925,residential,Residential fuel combustion,CO,3307.813263,covered_sources_only
+FY2022-23,2023,S_HIES1925,residential,Residential fuel combustion,NH3,41.808214,covered_sources_only
+FY2022-23,2023,S_HIES1925,residential,Residential fuel combustion,NMVOC,353.501523,covered_sources_only
+FY2022-23,2023,S_HIES1925,residential,Residential fuel combustion,NOx,155.004776,covered_sources_only
+FY2022-23,2023,S_HIES1925,residential,Residential fuel combustion,PM2.5,279.010072,covered_sources_only
+FY2022-23,2023,S_HIES1925,residential,Residential fuel combustion,SO2,20.597190,covered_sources_only
+FY2022-23,2023,S_HIES1925,transport,Road transport,BC,2.039548,covered_sources_only
+FY2022-23,2023,S_HIES1925,transport,Road transport,CO,1492.485390,covered_sources_only
+FY2022-23,2023,S_HIES1925,transport,Road transport,NH3,2.696266,covered_sources_only
+FY2022-23,2023,S_HIES1925,transport,Road transport,NMVOC,556.118936,covered_sources_only
+FY2022-23,2023,S_HIES1925,transport,Road transport,NOx,176.144349,covered_sources_only
+FY2022-23,2023,S_HIES1925,transport,Road transport,PM2.5,8.395402,covered_sources_only
+FY2022-23,2023,S_HIES1925,transport,Road transport,SO2,12.606202,covered_sources_only
+FY2022-23,2023,S_HIES1925,waste,Open burning of waste,BC,8.987022,covered_sources_only
+FY2022-23,2023,S_HIES1925,waste,Open burning of waste,CO,423.673894,covered_sources_only
+FY2022-23,2023,S_HIES1925,waste,Open burning of waste,NH3,5.777371,covered_sources_only
+FY2022-23,2023,S_HIES1925,waste,Open burning of waste,NMVOC,147.643933,covered_sources_only
+FY2022-23,2023,S_HIES1925,waste,Open burning of waste,NOx,14.764393,covered_sources_only
+FY2022-23,2023,S_HIES1925,waste,Open burning of waste,PM2.5,62.267224,covered_sources_only
+FY2022-23,2023,S_HIES1925,waste,Open burning of waste,SO2,3.209651,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Field burning of residues,BC,3.555758,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Field burning of residues,CO,654.259518,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Field burning of residues,NH3,9.244971,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Field burning of residues,NMVOC,49.780616,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Field burning of residues,NOx,17.778791,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Field burning of residues,PM2.5,54.047525,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Field burning of residues,SO2,2.844607,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Managed soils,NH3,1822.494447,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Managed soils,NOx,145.429759,covered_sources_only
+FY2023-24,2024,REF_2023_24,agriculture,Manure management,NH3,842.792654,covered_sources_only
+FY2023-24,2024,REF_2023_24,aviation,Domestic aviation,BC,0.002837,covered_sources_only
+FY2023-24,2024,REF_2023_24,aviation,Domestic aviation,CO,0.156496,covered_sources_only
+FY2023-24,2024,REF_2023_24,aviation,Domestic aviation,NOx,0.240874,covered_sources_only
+FY2023-24,2024,REF_2023_24,aviation,Domestic aviation,PM2.5,0.018915,covered_sources_only
+FY2023-24,2024,REF_2023_24,aviation,Domestic aviation,SO2,0.094576,covered_sources_only
+FY2023-24,2024,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.063918,covered_sources_only
+FY2023-24,2024,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.233431,covered_sources_only
+FY2023-24,2024,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,80.338157,covered_sources_only
+FY2023-24,2024,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.194715,covered_sources_only
+FY2023-24,2024,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.287665,covered_sources_only
+FY2023-24,2024,REF_2023_24,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.582058,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Captive gas self-generation (1A2),BC,0.006890,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Captive gas self-generation (1A2),CO,5.169776,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Captive gas self-generation (1A2),NMVOC,6.691375,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Captive gas self-generation (1A2),NOx,13.920974,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Captive gas self-generation (1A2),PM2.5,0.228400,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Captive gas self-generation (1A2),SO2,0.028048,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163617,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.515706,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.755157,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,88.101657,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.453912,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.654712,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Industrial fuel combustion (1A2),BC,5.321742,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Industrial fuel combustion (1A2),CO,18.490068,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Industrial fuel combustion (1A2),NMVOC,4.259941,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Industrial fuel combustion (1A2),NOx,41.011343,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Industrial fuel combustion (1A2),PM2.5,7.580588,covered_sources_only
+FY2023-24,2024,REF_2023_24,industry,Industrial fuel combustion (1A2),SO2,115.207831,covered_sources_only
+FY2023-24,2024,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",BC,0.000371,covered_sources_only
+FY2023-24,2024,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",CO,15.866364,covered_sources_only
+FY2023-24,2024,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NH3,0.751256,covered_sources_only
+FY2023-24,2024,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.226044,covered_sources_only
+FY2023-24,2024,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",NOx,5.088986,covered_sources_only
+FY2023-24,2024,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.103194,covered_sources_only
+FY2023-24,2024,REF_2023_24,ippu,"Industrial process emissions (2B, 2C)",SO2,0.294840,covered_sources_only
+FY2023-24,2024,REF_2023_24,power,Electricity and heat production,SO2,13.247924,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001261,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.015151,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000010,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006584,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.074198,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001940,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.005889,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railways,BC,0.098579,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railways,CO,1.184498,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railways,NH3,0.000775,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railways,NMVOC,0.514759,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railways,NOx,5.800721,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railways,PM2.5,0.151660,covered_sources_only
+FY2023-24,2024,REF_2023_24,railways,Railways,SO2,0.111742,covered_sources_only
+FY2023-24,2024,REF_2023_24,residential,Residential fuel combustion,BC,41.452478,covered_sources_only
+FY2023-24,2024,REF_2023_24,residential,Residential fuel combustion,CO,7097.106974,covered_sources_only
+FY2023-24,2024,REF_2023_24,residential,Residential fuel combustion,NH3,98.322594,covered_sources_only
+FY2023-24,2024,REF_2023_24,residential,Residential fuel combustion,NMVOC,963.456758,covered_sources_only
+FY2023-24,2024,REF_2023_24,residential,Residential fuel combustion,NOx,336.595365,covered_sources_only
+FY2023-24,2024,REF_2023_24,residential,Residential fuel combustion,PM2.5,631.915098,covered_sources_only
+FY2023-24,2024,REF_2023_24,residential,Residential fuel combustion,SO2,53.230781,covered_sources_only
+FY2023-24,2024,REF_2023_24,transport,Road transport,BC,2.000766,covered_sources_only
+FY2023-24,2024,REF_2023_24,transport,Road transport,CO,1430.394672,covered_sources_only
+FY2023-24,2024,REF_2023_24,transport,Road transport,NH3,2.589490,covered_sources_only
+FY2023-24,2024,REF_2023_24,transport,Road transport,NMVOC,535.064293,covered_sources_only
+FY2023-24,2024,REF_2023_24,transport,Road transport,NOx,172.117476,covered_sources_only
+FY2023-24,2024,REF_2023_24,transport,Road transport,PM2.5,8.233043,covered_sources_only
+FY2023-24,2024,REF_2023_24,transport,Road transport,SO2,12.212039,covered_sources_only
+FY2023-24,2024,REF_2023_24,waste,Open burning of waste,BC,9.215626,covered_sources_only
+FY2023-24,2024,REF_2023_24,waste,Open burning of waste,CO,434.450952,covered_sources_only
+FY2023-24,2024,REF_2023_24,waste,Open burning of waste,NH3,5.924331,covered_sources_only
+FY2023-24,2024,REF_2023_24,waste,Open burning of waste,NMVOC,151.399574,covered_sources_only
+FY2023-24,2024,REF_2023_24,waste,Open burning of waste,NOx,15.139957,covered_sources_only
+FY2023-24,2024,REF_2023_24,waste,Open burning of waste,PM2.5,63.851125,covered_sources_only
+FY2023-24,2024,REF_2023_24,waste,Open burning of waste,SO2,3.291295,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Field burning of residues,BC,3.555758,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Field burning of residues,CO,654.259518,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Field burning of residues,NH3,9.244971,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Field burning of residues,NMVOC,49.780616,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Field burning of residues,NOx,17.778791,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Field burning of residues,PM2.5,54.047525,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Field burning of residues,SO2,2.844607,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Managed soils,NH3,1822.494447,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Managed soils,NOx,145.429759,covered_sources_only
+FY2023-24,2024,S_HIES1925,agriculture,Manure management,NH3,842.792654,covered_sources_only
+FY2023-24,2024,S_HIES1925,aviation,Domestic aviation,BC,0.002837,covered_sources_only
+FY2023-24,2024,S_HIES1925,aviation,Domestic aviation,CO,0.156496,covered_sources_only
+FY2023-24,2024,S_HIES1925,aviation,Domestic aviation,NOx,0.240874,covered_sources_only
+FY2023-24,2024,S_HIES1925,aviation,Domestic aviation,PM2.5,0.018915,covered_sources_only
+FY2023-24,2024,S_HIES1925,aviation,Domestic aviation,SO2,0.094576,covered_sources_only
+FY2023-24,2024,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),BC,0.063918,covered_sources_only
+FY2023-24,2024,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),CO,1.233431,covered_sources_only
+FY2023-24,2024,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NMVOC,80.338157,covered_sources_only
+FY2023-24,2024,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),NOx,1.194715,covered_sources_only
+FY2023-24,2024,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),PM2.5,0.287665,covered_sources_only
+FY2023-24,2024,S_HIES1925,fugitives,Fugitive emissions from oil and gas (1B2),SO2,3.582058,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Captive gas self-generation (1A2),BC,0.006890,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Captive gas self-generation (1A2),CO,5.169776,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Captive gas self-generation (1A2),NMVOC,6.691375,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Captive gas self-generation (1A2),NOx,13.920974,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Captive gas self-generation (1A2),PM2.5,0.228400,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Captive gas self-generation (1A2),SO2,0.028048,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163617,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.515706,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.755157,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,88.101657,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.453912,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.654712,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Industrial fuel combustion (1A2),BC,5.321742,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Industrial fuel combustion (1A2),CO,18.490068,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Industrial fuel combustion (1A2),NMVOC,4.259941,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Industrial fuel combustion (1A2),NOx,41.011343,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Industrial fuel combustion (1A2),PM2.5,7.580588,covered_sources_only
+FY2023-24,2024,S_HIES1925,industry,Industrial fuel combustion (1A2),SO2,115.207831,covered_sources_only
+FY2023-24,2024,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",BC,0.000371,covered_sources_only
+FY2023-24,2024,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",CO,15.866364,covered_sources_only
+FY2023-24,2024,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NH3,0.751256,covered_sources_only
+FY2023-24,2024,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NMVOC,0.226044,covered_sources_only
+FY2023-24,2024,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",NOx,5.088986,covered_sources_only
+FY2023-24,2024,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",PM2.5,0.103194,covered_sources_only
+FY2023-24,2024,S_HIES1925,ippu,"Industrial process emissions (2B, 2C)",SO2,0.294840,covered_sources_only
+FY2023-24,2024,S_HIES1925,power,Electricity and heat production,SO2,13.247924,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001261,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),CO,0.015151,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000010,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006584,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.074198,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001940,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.005889,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railways,BC,0.098579,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railways,CO,1.184498,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railways,NH3,0.000775,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railways,NMVOC,0.514759,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railways,NOx,5.800721,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railways,PM2.5,0.151660,covered_sources_only
+FY2023-24,2024,S_HIES1925,railways,Railways,SO2,0.111742,covered_sources_only
+FY2023-24,2024,S_HIES1925,residential,Residential fuel combustion,BC,20.460283,covered_sources_only
+FY2023-24,2024,S_HIES1925,residential,Residential fuel combustion,CO,3433.763080,covered_sources_only
+FY2023-24,2024,S_HIES1925,residential,Residential fuel combustion,NH3,43.578242,covered_sources_only
+FY2023-24,2024,S_HIES1925,residential,Residential fuel combustion,NMVOC,370.735948,covered_sources_only
+FY2023-24,2024,S_HIES1925,residential,Residential fuel combustion,NOx,160.013957,covered_sources_only
+FY2023-24,2024,S_HIES1925,residential,Residential fuel combustion,PM2.5,290.277409,covered_sources_only
+FY2023-24,2024,S_HIES1925,residential,Residential fuel combustion,SO2,21.536682,covered_sources_only
+FY2023-24,2024,S_HIES1925,transport,Road transport,BC,2.000766,covered_sources_only
+FY2023-24,2024,S_HIES1925,transport,Road transport,CO,1430.394672,covered_sources_only
+FY2023-24,2024,S_HIES1925,transport,Road transport,NH3,2.589490,covered_sources_only
+FY2023-24,2024,S_HIES1925,transport,Road transport,NMVOC,535.064293,covered_sources_only
+FY2023-24,2024,S_HIES1925,transport,Road transport,NOx,172.117476,covered_sources_only
+FY2023-24,2024,S_HIES1925,transport,Road transport,PM2.5,8.233043,covered_sources_only
+FY2023-24,2024,S_HIES1925,transport,Road transport,SO2,12.212039,covered_sources_only
+FY2023-24,2024,S_HIES1925,waste,Open burning of waste,BC,9.215626,covered_sources_only
+FY2023-24,2024,S_HIES1925,waste,Open burning of waste,CO,434.450952,covered_sources_only
+FY2023-24,2024,S_HIES1925,waste,Open burning of waste,NH3,5.924331,covered_sources_only
+FY2023-24,2024,S_HIES1925,waste,Open burning of waste,NMVOC,151.399574,covered_sources_only
+FY2023-24,2024,S_HIES1925,waste,Open burning of waste,NOx,15.139957,covered_sources_only
+FY2023-24,2024,S_HIES1925,waste,Open burning of waste,PM2.5,63.851125,covered_sources_only
+FY2023-24,2024,S_HIES1925,waste,Open burning of waste,SO2,3.291295,covered_sources_only

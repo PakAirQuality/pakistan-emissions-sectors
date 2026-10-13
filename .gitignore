@@ -1,0 +1,161 @@
+.DS_Store
+__pycache__/
+*.pyc
+# setuptools editable-install metadata
+*.egg-info/
+build/
+dist/
+
+# ---------------------------------------------------------------------------
+# Bulk re-downloadable caches only. Anything the engine's published numbers depend on
+# must stay tracked, however small -- a clean checkout has to reproduce the manuscripts,
+# and silently falling back to an IPCC default when a cache is absent is not reproducible.
+# ---------------------------------------------------------------------------
+# SPATIAL INPUTS. The sector layout replaced the old "ignore data/gis/* and whitelist the
+# dozen files we actually version" arrangement with its inverse: the spatial assets live
+# under data/sectors/<sector>/gis/ and data/shared/gis/ and are TRACKED, because a clean
+# checkout has to reproduce the manuscripts and the grid cube has to be offline-
+# deterministic. Only the two bulk, re-fetchable items are excluded, by name.
+#
+# This inversion is the whole reason these three lines exist. Under the old block these
+# five files were ignored by falling outside a whitelist; relocating them silently made
+# them trackable, and the next `git add` would have put 41 MB of re-fetchable geometry
+# into plain git with no LFS rule - including the 28 MB COD-AB archive. The exclusion is
+# re-expressed here deliberately rather than left to be rediscovered.
+#
+# The COD-AB administrative bundle (28 MB archive + 9.7 MB extracted admin2 geometry, plus
+# its sidecar): a humanitarian-data download, re-fetchable, and not read by any published
+# number - PAK_ADM1/ADM2 are the versioned controls the manuscript spatial joins use.
+/data/shared/gis/cod_ab/
+# The exact-area ADM2 x grid partition (3.6 MB), re-derived by the GIS extra from the
+# versioned boundaries. scripts/raw_data_manifest.py skips it for this reason and
+# pkinv.report.data_provenance.universe() names it; keep those three in step.
+/data/shared/gis/adm2_intersections_267x340.csv
+/data/shared/gis/adm2_intersections_267x340.csv.txt
+data/faostat_cache/
+# Permissioned aviation observations.  The extraction query and aggregate coverage
+# products are published; OpenSky flight/state-vector rows are not redistributed.
+data/private/aviation/
+# data/cache/aviation/ is TRACKED now - see .gitattributes. Nothing raw is excluded.
+# ...except the licence that governs the ADS-B payloads. The bytes stay out of git because
+# ODbL is share-alike and this repository's data licence is CC-BY-4.0; the LICENCE saying so
+# must be tracked, or the carve-out exists only in a commit message.
+!data/cache/aviation/adsblol/LICENSE-ODbL
+
+# ---------------------------------------------------------------------------
+# ORIGINAL SOURCES ARE TRACKED. All of them, whatever they weigh.
+#
+# This block used to exclude 3.2 GB of government scans and survey archives, on the reasoning
+# that they "must be backed up separately (external drive / cloud)". There is no cloud copy
+# and there never was, so the exclusion was not deferring the storage problem - it was
+# guaranteeing that the only copy of documents that are in several cases no longer published
+# lived outside version control, unhashed and unnoticed.
+#
+# Large files now go to Git LFS by type; see .gitattributes for the rules and for why the
+# split is by file type rather than by a list of names. data/raw_manifest.csv records every
+# (since rc36, INCLUDING data/raw/ - it had claimed that coverage and held none of it)
+# raw file with its size, hash, origin and licence, scripts/verify_raw_data.py fails if any
+# is missing or altered, and scripts/mirror_raw_data.sh copies exactly those paths to a
+# second location - because tracking a file in git puts a second copy on the SAME disk and
+# is not a backup.
+#
+# The one raw tree deliberately outside this repository is data/cache/aviation/adsblol/:
+# 9.1 GB of ADS-B under ODbL, kept separate so that share-alike data is not relicensed by
+# inclusion into a CC-BY-4.0 core. It is hashed and verified like everything else.
+# ---------------------------------------------------------------------------
+# (nothing under sources/ is excluded)
+
+# ---------------------------------------------------------------------------
+# LaTeX build artefacts (regenerable; .tex/.bib/.bbl/.pdf are kept)
+# ---------------------------------------------------------------------------
+# Each paper compiles to paper.pdf beside its source; `make sector-papers` then copies it
+# to papers/pdf/<sector>_paper.pdf, which is the tracked artefact. Committing both would
+# version the same document twice under two names.
+papers/*/paper.pdf
+papers/*/supplement.pdf
+# rc36: three PDFs committed under other names slipped the two rules above and
+# went three weeks stale beside the papers/pdf/ copies. Any PDF under a paper's
+# own directory is a build artefact; only papers/pdf/ is tracked.
+papers/*/*.pdf
+!papers/pdf/*.pdf
+# The national supplement compiles beside its source and `make paper-national` copies it to
+# papers/pdf/national_supplement.pdf, which is the tracked artefact. paper_national.pdf itself
+# is tracked for historical reasons and is left alone; this stops the SECOND copy appearing.
+paper_national/versions/*/supplement.pdf
+# A zip of papers/pdf/, made by hand to send somewhere. Every file inside it is already
+# versioned, and an 8 MB archive of tracked files is a second vintage waiting to be quoted.
+papers/pdf.zip
+# Same reasoning, same shape: hand-made bundles of a sector's raw documents and parsed
+# activity files, for sending to someone who does not have the repository. Every file
+# inside is tracked, so the archive is a second vintage the moment it is quoted from.
+/agriculture.zip
+/*_bundle.zip
+/*_audit.zip
+/agriculture_*.zip
+*.aux
+*.log
+*.out
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.spl
+*.toc
+*.lof
+*.lot
+.venv/
+
+# The rail, kiln, landfill and road networks, and the FIRMS extraction, were whitelisted
+# back into the retired data/gis/* block. They are versioned by default now, under
+# data/sectors/{railways,industry,waste,transport}/gis/ and
+# data/sectors/agriculture/gis/manual/ (sources/OSM archives stay ignored).
+# The OSM extract, the ELK bundle, the UNFCCC national communication and the HIES microdata
+# payloads were all excluded here on size, each with a re-fetch URL beside it. They are
+# tracked now, for the reason at the top of this file: a re-fetch URL is a promise about
+# somebody else's server, and the HIES microdata in particular is a survey release that is
+# withdrawn and replaced rather than archived. The one file over GitHub's limit among them
+# goes to LFS by name; see .gitattributes.
+# rc39 A12: the assembled deposit capsule, 148 MB of copied tree. Built by
+# scripts/build_capsule.py on demand and never committed - it is a COPY of files
+# already tracked, so committing it would double the repository to no purpose.
+/dist/
+
+# run ledgers and reproduction logs (rc41); never products
+/logs/
+
+# Commit-message drafts and working notes: passed to scripts/gate_detached.sh by path,
+# never part of the release tree.
+scratch/
+
+# rc44: two more assembled copies, ignored for the reason /dist/ is. derived/ is a
+# byte-identical mirror of outputs/ (706 files), and pakemis_verification_external/ is
+# per-sector bundles of manifest + source PDFs, 7.9 GB of documents already tracked under
+# sources/. Both are built on demand; committing either would duplicate the repository to
+# no purpose, and the noise gate correctly refused a commit that would have swept them in.
+/derived/
+/pakemis_verification_external/
+# Obsolete layout only. Sector/shared canonical CSVs are versioned reviewer artifacts.
+/data/canonical/
+
+# LOCAL WORKING FILES at the repository root, untracked on purpose. The two workbooks are
+# byte-identical duplicates of documents already held under sources/Power Plants/ (the
+# copies the ingest scripts read); the Methods assets are design work from the /methods
+# round that lives in the Explorer repository. Nothing here is an input to a published
+# number. They are listed because scripts/release_fixpoint.py refuses to cut a manifest
+# from a tree carrying uncommitted CONTENT, and an untracked stray reads as content.
+/PakEmis_Methods_SVGs/
+/PakEmis_Methods_SVGs.zip
+/methods_frontend.png
+/power_plants_data_preparation.xlsx
+/power_plants_emissions.xlsx
+# A 13.2 GB hand-made archive of the whole data/ tree (6,534 files, 23 Sep 2026). Git already
+# versions that tree, so committing it would store every byte twice and blow past GitHub's
+# limits; left untracked it reads as uncommitted CONTENT and blocks the release fixpoint.
+/data.zip
+# A handoff prompt for a timed autonomous run, placed at the root because its own launch
+# instructions require that location. Local campaign scaffolding, not project documentation.
+/PakEmis_24h_Claude_Master_Prompt.md
+/PakEmis_24_hour_prompt.txt
+
+# Other authors' figures, kept locally for the design study only (see figure_design_study.md)
+/paper_national/figures/redesign/reference_board/

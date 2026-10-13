@@ -1,0 +1,16 @@
+priority_type,input_or_decision,scenario,effect_mt_co2e,absolute_effect_mt_co2e,conditional_sensitivity_pct,interpretation
+structural,distribution material/LDAR practice,lower_distribution_only,-5.678710599999999,5.678710599999999,,change from the deterministic reference configuration
+structural,transmission LDAR/compressor practice,lower_transmission_only,-0.820123214699997,0.820123214699997,,change from the deterministic reference configuration
+structural,post-meter factor transferability (half),post_meter_half_factor,-1.7102122447838788,1.7102122447838788,,change from the deterministic reference configuration
+structural,post-meter segment transferability (exclude),no_post_meter_industrial,-3.4204244895677647,3.4204244895677647,,change from the deterministic reference configuration
+structural,processing throughput coverage,no_processing_proxy,-2.4974225446211307,2.4974225446211307,,change from the deterministic reference configuration
+parametric,factor:gas_distribution_high_km,reference Monte Carlo,,,73.23582633261466,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,factor:post_meter_industrial,reference Monte Carlo,,,17.212238882338447,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,factor:gas_processing_sour,reference Monte Carlo,,,2.5309047233594115,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,factor:gas_prod_high,reference Monte Carlo,,,2.189893555797043,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,factor:post_meter_appliance,reference Monte Carlo,,,1.431305854778143,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,activity-source:gas-production-volume,reference Monte Carlo,,,1.0102420028432597,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,factor:gas_transmission_high_km,reference Monte Carlo,,,0.7081292026976588,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,activity-residual:gas_processing,reference Monte Carlo,,,0.39129470169872616,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,factor:gas_gathering,reference Monte Carlo,,,0.3579867262082024,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"
+parametric,activity-source:post_meter_nonresidential,reference Monte Carlo,,,0.3138464815384246,"rank-based sensitivity share; normalized squared correlations are diagnostic, not an exact Sobol decomposition"

@@ -1,0 +1,3 @@
+benchmark_id,period,cement_activity_kt,clinker_fraction,trade_included,clinker_production_kt,co2e_Mt_AR5,status,interpretation
+cement_no_trade_method_benchmark,FY2023-24,39566.0,0.75,False,29674.5,15.43074,screening_only,isolates the bias from omitting observed clinker trade
+original_misdated_no_trade_calculation,"superseded; 48,011 kt is FY2021-22, not FY2023-24",48011.0,0.75,False,36008.25,18.72429,screening_only,original paper result; combines a period-tagging error with trade omission

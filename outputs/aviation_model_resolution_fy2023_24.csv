@@ -1,0 +1,8 @@
+fiscal_year,model,domestic_stages_total,domestic_stages_modelled,coverage_share,fuel_t,co2_kt,method,inventory_status
+2023,aggregate_movement,20300.0,20300.0,1.0,94575.54819999999,298.85873231200003,PCAA movements; representative distance and fleet,provisional
+2023,route_resolved,20300.0,20097.500000000007,0.9900246305418723,85668.82899684284,270.71349963002336,annual route activity; representative fleet,provisional
+2023,route_aircraft_openap,20300.0,17491.2,0.8616354679802956,73438.56576555684,232.06586781915962,documented route-aircraft strata; unallocated activity excluded,provisional
+2023,ocac_constrained_literal_customer,20300.0,17491.2,0.8616354679802956,359932.0,1137.3851200000001,OCAC customer bridge; unresolved JP-1 12282.0 t,provisional
+2023,ocac_constrained_airline_flight_count,20300.0,17491.2,0.8616354679802956,190213.30557562067,601.0740456189613,OCAC customer bridge; unresolved JP-1 12282.0 t,provisional
+2023,ocac_constrained_modelled_fuel,20300.0,17491.2,0.8616354679802956,47080.16524127027,148.77332216241405,OCAC customer bridge; unresolved JP-1 296228.1 t,provisional
+2023,ocac_constrained_residual_constrained,20300.0,17491.2,0.8616354679802956,47080.16524127027,148.77332216241405,OCAC customer bridge; unresolved JP-1 296228.1 t,provisional

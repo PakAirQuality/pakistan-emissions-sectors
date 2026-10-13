@@ -1,0 +1,32 @@
+request_id,sector_id,component,source_order
+MON-OCAC-01,transport,Road transport,1
+MON-OCAC-01,industry,Industrial fuel combustion (1A2),2
+MON-OCAC-01,transport,Mixed off-road (1A4c/1A2),3
+MON-OCAC-01,railways,Railways,4
+MON-OCAC-01,aviation,Domestic aviation,5
+MON-NFDC-01,agriculture,Managed soils,6
+MON-NFDC-01,agriculture,Urea application,7
+MON-QIM-01,ippu,Cement production,8
+MON-GAS-01,fugitives,Gas distribution,9
+MON-GAS-01,fugitives,Post-meter industrial and power,10
+MON-GAS-01,fugitives,Post-meter appliances,11
+MON-GAS-01,fugitives,Gas transmission,12
+MON-GAS-01,fugitives,LNG import terminals,13
+MON-GAS-01,power,Captive gas self-generation (1A2),14
+MON-PETDIV-01,fugitives,Gas production,15
+MON-PETDIV-01,fugitives,Gas gathering,16
+MON-PETDIV-01,fugitives,Gas processing,17
+MON-PETDIV-01,fugitives,Sour-gas processing,18
+MON-PETDIV-01,fugitives,Oil production,19
+MON-PETDIV-01,fugitives,Oil refining,20
+MON-CPPAG-01,power,Electricity and heat production,21
+MON-MUNI-01,waste,Open burning of waste,22
+MON-CROP-01,agriculture,Field burning of residues,23
+MON-NHA-01,,,24
+REQ-NOU-01,,,25
+REQ-HDIP-01,,,26
+REQ-CMI-01,,,27
+REQ-NFDC-02,,,28
+REQ-IPPU-01,,,29
+MON-NFDC-02,ippu,Ammonia production,30
+MON-OCAC-03,ippu,Lubricant use,31

@@ -1,0 +1,24 @@
+task_id,category,record,record_year,candidate,role,n_districts,spearman_rho,p_value,top10_overlap,top15_overlap,wape_shares,status,note
+spatial_rice_mnfsr,Rice cultivation,district_rice_area_MNFSR_2022-23.csv,2022-23,uniform,baseline,66,,,,,1.0641,scored,baseline: equal mass per matched district
+spatial_rice_mnfsr,Rice cultivation,district_rice_area_MNFSR_2022-23.csv,2022-23,population,baseline,66,0.484,4e-05,0.3,0.267,1.01,scored,baseline: WorldPop mass per district (proxy raster bincount)
+spatial_rice_mnfsr,Rice cultivation,district_rice_area_MNFSR_2022-23.csv,2022-23,model,model,66,0.917,0.0,0.8,0.867,0.3021,scored,the engine's own district allocation (district_totals_2024.csv)
+spatial_rice_mnfsr,Rice cultivation,district_rice_area_MNFSR_2022-23.csv,2022-23,cropland,reference,66,0.641,0.0,0.2,0.267,0.8705,scored,reference (the model's own allocator; agreement is partly self-agreement) - never a baseline
+spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,uniform,baseline,85,,,,,0.8672,scored,baseline: equal mass per matched district
+spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,population,baseline,85,0.711,0.0,0.5,0.6,0.6231,scored,baseline: WorldPop mass per district (proxy raster bincount)
+spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,model,model,85,0.845,0.0,0.7,0.6,0.3715,scored,the engine's own district allocation (district_totals_2024.csv)
+spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,cropland,reference,85,0.845,0.0,0.6,0.6,0.378,scored,reference (the model's own allocator; agreement is partly self-agreement) - never a baseline
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2022-23,uniform,baseline,29,,,,,0.7713,scored,baseline: equal mass per matched district
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2022-23,population,baseline,29,0.234,0.22159,0.3,0.533,0.8618,scored,baseline: WorldPop mass per district (proxy raster bincount)
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2022-23,model,model,29,0.957,0.0,1.0,0.867,0.2187,scored,the engine's own district allocation (district_totals_2024.csv)
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2022-23,cropland,reference,29,-0.123,0.52595,0.2,0.533,0.829,scored,reference (the model's own allocator; agreement is partly self-agreement) - never a baseline
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2023-24,uniform,baseline,29,,,,,0.7057,scored,baseline: equal mass per matched district
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2023-24,population,baseline,29,0.304,0.10946,0.3,0.533,0.7919,scored,baseline: WorldPop mass per district (proxy raster bincount)
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2023-24,model,model,29,0.933,0.0,1.0,0.8,0.1965,scored,the engine's own district allocation (district_totals_2024.csv)
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2023-24,cropland,reference,29,-0.034,0.86002,0.2,0.6,0.7645,scored,reference (the model's own allocator; agreement is partly self-agreement) - never a baseline
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2024-25,uniform,baseline,29,,,,,0.6672,scored,baseline: equal mass per matched district
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2024-25,population,baseline,29,0.27,0.15671,0.3,0.533,0.7651,scored,baseline: WorldPop mass per district (proxy raster bincount)
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2024-25,model,model,29,0.903,0.0,1.0,0.8,0.2665,scored,the engine's own district allocation (district_totals_2024.csv)
+spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2024-25,cropland,reference,29,-0.003,0.98786,0.2,0.533,0.7275,scored,reference (the model's own allocator; agreement is partly self-agreement) - never a baseline
+,Enteric fermentation,,,,,,,,,,,NO_RECORD,"district-allocated category with no independent held record; declared absent, not implied - livestock district records are a named acquisition"
+,Manure management,,,,,,,,,,,NO_RECORD,"district-allocated category with no independent held record; declared absent, not implied - livestock district records are a named acquisition"
+,Manure on pasture,,,,,,,,,,,NO_RECORD,"district-allocated category with no independent held record; declared absent, not implied - livestock district records are a named acquisition"

@@ -1,0 +1,11 @@
+artefact_id,query_index,cell_index,group_json,exact,display,unit,extra_json
+fig_sectors,0,0,"{""sector_id"":""agriculture""}",223.454471460000000000,223.454,Mt CO2e AR5,"{""n_rows"":34}"
+fig_sectors,0,1,"{""sector_id"":""power""}",45.589567950000000000,45.590,Mt CO2e AR5,"{""n_rows"":17}"
+fig_sectors,0,2,"{""sector_id"":""transport""}",41.926173420000000000,41.926,Mt CO2e AR5,"{""n_rows"":39}"
+fig_sectors,0,3,"{""sector_id"":""waste""}",37.452910110000000000,37.453,Mt CO2e AR5,"{""n_rows"":6}"
+fig_sectors,0,4,"{""sector_id"":""ippu""}",25.535359150000000000,25.535,Mt CO2e AR5,"{""n_rows"":5}"
+fig_sectors,0,5,"{""sector_id"":""residential""}",24.220420830000000000,24.220,Mt CO2e AR5,"{""n_rows"":23}"
+fig_sectors,0,6,"{""sector_id"":""fugitives""}",23.499370650000000000,23.499,Mt CO2e AR5,"{""n_rows"":30}"
+fig_sectors,0,7,"{""sector_id"":""industry""}",22.581645600000000000,22.582,Mt CO2e AR5,"{""n_rows"":30}"
+fig_sectors,0,8,"{""sector_id"":""railways""}",0.394370060000000000,0.394,Mt CO2e AR5,"{""n_rows"":12}"
+fig_sectors,0,9,"{""sector_id"":""aviation""}",0.301131800000000000,0.301,Mt CO2e AR5,"{""n_rows"":6}"

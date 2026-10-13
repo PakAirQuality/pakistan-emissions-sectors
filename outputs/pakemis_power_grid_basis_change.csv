@@ -1,0 +1,17 @@
+# WHICH BASIS IS CLOSER TO THE ONE EMISSIONS ACTUALLY FOLLOW (rc44).
+# FY2019-20 is the only fiscal year covered by both the NEPRA generation panel
+# and the plant FUEL ledger, so it is the only year in which this question has
+# an answer rather than an opinion. Emissions follow fuel, so fuel_basis_share
+# is the control and the other two columns are candidates: the borrowed
+# reference-year vector this release ships for every period, and the panel's
+# own-year generation. rebased=yes marks the streams this release moved.
+stream,province,fuel_basis_share,generation_basis_share,borrowed_reference_share,generation_minus_fuel,tvd_generation_vs_fuel,tvd_borrowed_vs_fuel,unmatched_fuel_share,unmatched_generation_share,rebased,decision
+power_gas,Balochistan,0.157629,0.359319,0.173910,+0.201690,0.329889,0.066488,0.000000,0.048338,no,"the borrowed reference vector is closer to the fuel control; generation shares equal fuel shares only under a uniform heat rate, and the gas fleet is where that fails"
+power_gas,Punjab,0.547803,0.217913,0.598010,-0.329889,0.329889,0.066488,0.000000,0.048338,no,"the borrowed reference vector is closer to the fuel control; generation shares equal fuel shares only under a uniform heat rate, and the gas fleet is where that fails"
+power_gas,Sindh,0.294568,0.422768,0.228080,+0.128199,0.329889,0.066488,0.000000,0.048338,no,"the borrowed reference vector is closer to the fuel control; generation shares equal fuel shares only under a uniform heat rate, and the gas fleet is where that fails"
+power_rfo,Balochistan,0.010718,0.011222,0.000000,+0.000504,0.005117,0.066364,0.000000,0.000000,yes,own-year generation is closer to the fuel control
+power_rfo,Punjab,0.933636,0.938248,1.000000,+0.004612,0.005117,0.066364,0.000000,0.000000,yes,own-year generation is closer to the fuel control
+power_rfo,Sindh,0.055646,0.050530,0.000000,-0.005117,0.005117,0.066364,0.000000,0.000000,yes,own-year generation is closer to the fuel control
+power_hsd,Balochistan,0.000000,0.000000,0.000000,+0.000000,0.000000,0.000000,0.000000,0.000000,yes,"the borrowed reference vector is closer to the fuel control; generation shares equal fuel shares only under a uniform heat rate, and the gas fleet is where that fails"
+power_hsd,Punjab,1.000000,1.000000,1.000000,+0.000000,0.000000,0.000000,0.000000,0.000000,yes,"the borrowed reference vector is closer to the fuel control; generation shares equal fuel shares only under a uniform heat rate, and the gas fleet is where that fails"
+power_hsd,Sindh,0.000000,0.000000,0.000000,+0.000000,0.000000,0.000000,0.000000,0.000000,yes,"the borrowed reference vector is closer to the fuel control; generation shares equal fuel shares only under a uniform heat rate, and the gas fleet is where that fails"

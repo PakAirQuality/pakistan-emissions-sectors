@@ -1,0 +1,171 @@
+province,category,subitem,proxy,co2e_Mt_AR5
+Punjab,Enteric fermentation,dairy_cattle,livestock_cattle,12.9202
+Sindh,Enteric fermentation,dairy_cattle,livestock_cattle,5.3686
+Khyber Pakhtunkhwa,Enteric fermentation,dairy_cattle,livestock_cattle,6.4717
+Balochistan,Enteric fermentation,dairy_cattle,livestock_cattle,1.9521
+Other,Enteric fermentation,dairy_cattle,livestock_cattle,0.05
+Punjab,Enteric fermentation,other_cattle,livestock_cattle,14.3738
+Sindh,Enteric fermentation,other_cattle,livestock_cattle,5.9726
+Khyber Pakhtunkhwa,Enteric fermentation,other_cattle,livestock_cattle,7.1999
+Balochistan,Enteric fermentation,other_cattle,livestock_cattle,2.1717
+Other,Enteric fermentation,other_cattle,livestock_cattle,0.0557
+Punjab,Enteric fermentation,buffalo,livestock_buffalo,45.524
+Sindh,Enteric fermentation,buffalo,livestock_buffalo,20.7259
+Khyber Pakhtunkhwa,Enteric fermentation,buffalo,livestock_buffalo,6.0607
+Balochistan,Enteric fermentation,buffalo,livestock_buffalo,1.0219
+Other,Enteric fermentation,buffalo,livestock_buffalo,0.1845
+Punjab,Enteric fermentation,sheep,livestock_sheep,1.8739
+Sindh,Enteric fermentation,sheep,livestock_sheep,0.6638
+Khyber Pakhtunkhwa,Enteric fermentation,sheep,livestock_sheep,1.0695
+Balochistan,Enteric fermentation,sheep,livestock_sheep,2.634
+Other,Enteric fermentation,sheep,livestock_sheep,0.0007
+Punjab,Enteric fermentation,goats,livestock_goats,4.3833
+Sindh,Enteric fermentation,goats,livestock_goats,2.6618
+Khyber Pakhtunkhwa,Enteric fermentation,goats,livestock_goats,3.1488
+Balochistan,Enteric fermentation,goats,livestock_goats,3.2041
+Other,Enteric fermentation,goats,livestock_goats,0.0177
+Punjab,Enteric fermentation,camels,livestock_total,0.8075
+Sindh,Enteric fermentation,camels,livestock_total,0.3863
+Khyber Pakhtunkhwa,Enteric fermentation,camels,livestock_total,0.3795
+Balochistan,Enteric fermentation,camels,livestock_total,0.3705
+Other,Enteric fermentation,camels,livestock_total,0.0028
+Punjab,Manure management,dairy_cattle (CH4),livestock_cattle,1.2697
+Sindh,Manure management,dairy_cattle (CH4),livestock_cattle,0.5276
+Khyber Pakhtunkhwa,Manure management,dairy_cattle (CH4),livestock_cattle,0.636
+Balochistan,Manure management,dairy_cattle (CH4),livestock_cattle,0.1918
+Other,Manure management,dairy_cattle (CH4),livestock_cattle,0.0049
+Punjab,Manure management,other_cattle (CH4),livestock_cattle,1.0647
+Sindh,Manure management,other_cattle (CH4),livestock_cattle,0.4424
+Khyber Pakhtunkhwa,Manure management,other_cattle (CH4),livestock_cattle,0.5333
+Balochistan,Manure management,other_cattle (CH4),livestock_cattle,0.1609
+Other,Manure management,other_cattle (CH4),livestock_cattle,0.0041
+Punjab,Manure management,buffalo (CH4),livestock_buffalo,3.8902
+Sindh,Manure management,buffalo (CH4),livestock_buffalo,1.7711
+Khyber Pakhtunkhwa,Manure management,buffalo (CH4),livestock_buffalo,0.5179
+Balochistan,Manure management,buffalo (CH4),livestock_buffalo,0.0873
+Other,Manure management,buffalo (CH4),livestock_buffalo,0.0158
+Punjab,Manure management,sheep (CH4),livestock_sheep,0.075
+Sindh,Manure management,sheep (CH4),livestock_sheep,0.0266
+Khyber Pakhtunkhwa,Manure management,sheep (CH4),livestock_sheep,0.0428
+Balochistan,Manure management,sheep (CH4),livestock_sheep,0.1054
+Other,Manure management,sheep (CH4),livestock_sheep,0.0
+Punjab,Manure management,goats (CH4),livestock_goats,0.1929
+Sindh,Manure management,goats (CH4),livestock_goats,0.1171
+Khyber Pakhtunkhwa,Manure management,goats (CH4),livestock_goats,0.1385
+Balochistan,Manure management,goats (CH4),livestock_goats,0.141
+Other,Manure management,goats (CH4),livestock_goats,0.0008
+Punjab,Manure management,camels (CH4),livestock_total,0.0281
+Sindh,Manure management,camels (CH4),livestock_total,0.0134
+Khyber Pakhtunkhwa,Manure management,camels (CH4),livestock_total,0.0132
+Balochistan,Manure management,camels (CH4),livestock_total,0.0129
+Other,Manure management,camels (CH4),livestock_total,0.0001
+Punjab,Manure management,poultry (CH4),livestock_total,0.4797
+Sindh,Manure management,poultry (CH4),livestock_total,0.2295
+Khyber Pakhtunkhwa,Manure management,poultry (CH4),livestock_total,0.2255
+Balochistan,Manure management,poultry (CH4),livestock_total,0.2201
+Other,Manure management,poultry (CH4),livestock_total,0.0017
+Punjab,Manure management,Direct N2O,livestock_total,2.5504
+Sindh,Manure management,Direct N2O,livestock_total,1.2199
+Khyber Pakhtunkhwa,Manure management,Direct N2O,livestock_total,1.1987
+Balochistan,Manure management,Direct N2O,livestock_total,1.17
+Other,Manure management,Direct N2O,livestock_total,0.009
+Punjab,Manure management,Indirect N2O (volatilisation),livestock_total,0.7875
+Sindh,Manure management,Indirect N2O (volatilisation),livestock_total,0.3767
+Khyber Pakhtunkhwa,Manure management,Indirect N2O (volatilisation),livestock_total,0.3701
+Balochistan,Manure management,Indirect N2O (volatilisation),livestock_total,0.3613
+Other,Manure management,Indirect N2O (volatilisation),livestock_total,0.0028
+Punjab,Rice cultivation,Continuously flooded,rice_area,12.163
+Sindh,Rice cultivation,Continuously flooded,rice_area,3.3593
+Khyber Pakhtunkhwa,Rice cultivation,Continuously flooded,rice_area,0.3144
+Balochistan,Rice cultivation,Continuously flooded,rice_area,0.7116
+Other,Rice cultivation,Continuously flooded,rice_area,0.0
+Punjab,Managed soils,Direct N2O - synthetic fertiliser (upland),fertilizer_N,4.5821
+Sindh,Managed soils,Direct N2O - synthetic fertiliser (upland),fertilizer_N,1.5252
+Khyber Pakhtunkhwa,Managed soils,Direct N2O - synthetic fertiliser (upland),fertilizer_N,0.2773
+Balochistan,Managed soils,Direct N2O - synthetic fertiliser (upland),fertilizer_N,0.2047
+Other,Managed soils,Direct N2O - synthetic fertiliser (upland),fertilizer_N,0.0132
+Punjab,Managed soils,Direct N2O - synthetic fertiliser (rice EF1FR),rice_area,0.7395
+Sindh,Managed soils,Direct N2O - synthetic fertiliser (rice EF1FR),rice_area,0.2042
+Khyber Pakhtunkhwa,Managed soils,Direct N2O - synthetic fertiliser (rice EF1FR),rice_area,0.0191
+Balochistan,Managed soils,Direct N2O - synthetic fertiliser (rice EF1FR),rice_area,0.0433
+Other,Managed soils,Direct N2O - synthetic fertiliser (rice EF1FR),rice_area,0.0
+Punjab,Managed soils,Direct N2O - organic manure,manure_applied,3.288
+Sindh,Managed soils,Direct N2O - organic manure,manure_applied,1.2681
+Khyber Pakhtunkhwa,Managed soils,Direct N2O - organic manure,manure_applied,0.1989
+Balochistan,Managed soils,Direct N2O - organic manure,manure_applied,0.1
+Other,Managed soils,Direct N2O - organic manure,manure_applied,0.0069
+Punjab,Managed soils,Direct N2O - crop residues,crop_total,0.3353
+Sindh,Managed soils,Direct N2O - crop residues,crop_total,0.0754
+Khyber Pakhtunkhwa,Managed soils,Direct N2O - crop residues,crop_total,0.0213
+Balochistan,Managed soils,Direct N2O - crop residues,crop_total,0.0115
+Other,Managed soils,Direct N2O - crop residues,crop_total,0.0
+Punjab,Managed soils,Direct N2O - pasture deposition (cattle-type),livestock_total,0.3776
+Sindh,Managed soils,Direct N2O - pasture deposition (cattle-type),livestock_total,0.1806
+Khyber Pakhtunkhwa,Managed soils,Direct N2O - pasture deposition (cattle-type),livestock_total,0.1775
+Balochistan,Managed soils,Direct N2O - pasture deposition (cattle-type),livestock_total,0.1732
+Other,Managed soils,Direct N2O - pasture deposition (cattle-type),livestock_total,0.0013
+Punjab,Managed soils,Direct N2O - pasture deposition (sheep/goat/other),livestock_smallrum,0.8309
+Sindh,Managed soils,Direct N2O - pasture deposition (sheep/goat/other),livestock_smallrum,0.4416
+Khyber Pakhtunkhwa,Managed soils,Direct N2O - pasture deposition (sheep/goat/other),livestock_smallrum,0.5601
+Balochistan,Managed soils,Direct N2O - pasture deposition (sheep/goat/other),livestock_smallrum,0.7752
+Other,Managed soils,Direct N2O - pasture deposition (sheep/goat/other),livestock_smallrum,0.0025
+Punjab,Managed soils,Indirect N2O - volatilisation (synthetic fertiliser),fertilizer_N,0.9154
+Sindh,Managed soils,Indirect N2O - volatilisation (synthetic fertiliser),fertilizer_N,0.3047
+Khyber Pakhtunkhwa,Managed soils,Indirect N2O - volatilisation (synthetic fertiliser),fertilizer_N,0.0554
+Balochistan,Managed soils,Indirect N2O - volatilisation (synthetic fertiliser),fertilizer_N,0.0409
+Other,Managed soils,Indirect N2O - volatilisation (synthetic fertiliser),fertilizer_N,0.0026
+Punjab,Managed soils,Indirect N2O - volatilisation (organic manure),manure_applied,0.6905
+Sindh,Managed soils,Indirect N2O - volatilisation (organic manure),manure_applied,0.2663
+Khyber Pakhtunkhwa,Managed soils,Indirect N2O - volatilisation (organic manure),manure_applied,0.0418
+Balochistan,Managed soils,Indirect N2O - volatilisation (organic manure),manure_applied,0.021
+Other,Managed soils,Indirect N2O - volatilisation (organic manure),manure_applied,0.0014
+Punjab,Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",livestock_total,0.1982
+Sindh,Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",livestock_total,0.0948
+Khyber Pakhtunkhwa,Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",livestock_total,0.0932
+Balochistan,Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",livestock_total,0.0909
+Other,Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",livestock_total,0.0007
+Punjab,Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",livestock_smallrum,0.2908
+Sindh,Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",livestock_smallrum,0.1546
+Khyber Pakhtunkhwa,Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",livestock_smallrum,0.1961
+Balochistan,Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",livestock_smallrum,0.2713
+Other,Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",livestock_smallrum,0.0009
+Punjab,Managed soils,Indirect N2O - leaching/runoff (synthetic fertiliser),fertilizer_N,2.3042
+Sindh,Managed soils,Indirect N2O - leaching/runoff (synthetic fertiliser),fertilizer_N,0.7669
+Khyber Pakhtunkhwa,Managed soils,Indirect N2O - leaching/runoff (synthetic fertiliser),fertilizer_N,0.1394
+Balochistan,Managed soils,Indirect N2O - leaching/runoff (synthetic fertiliser),fertilizer_N,0.1029
+Other,Managed soils,Indirect N2O - leaching/runoff (synthetic fertiliser),fertilizer_N,0.0066
+Punjab,Managed soils,Indirect N2O - leaching/runoff (organic manure),manure_applied,1.3888
+Sindh,Managed soils,Indirect N2O - leaching/runoff (organic manure),manure_applied,0.5356
+Khyber Pakhtunkhwa,Managed soils,Indirect N2O - leaching/runoff (organic manure),manure_applied,0.084
+Balochistan,Managed soils,Indirect N2O - leaching/runoff (organic manure),manure_applied,0.0422
+Other,Managed soils,Indirect N2O - leaching/runoff (organic manure),manure_applied,0.0029
+Punjab,Managed soils,Indirect N2O - leaching/runoff (crop residues),crop_total,0.1416
+Sindh,Managed soils,Indirect N2O - leaching/runoff (crop residues),crop_total,0.0319
+Khyber Pakhtunkhwa,Managed soils,Indirect N2O - leaching/runoff (crop residues),crop_total,0.009
+Balochistan,Managed soils,Indirect N2O - leaching/runoff (crop residues),crop_total,0.0049
+Other,Managed soils,Indirect N2O - leaching/runoff (crop residues),crop_total,0.0
+Punjab,Managed soils,"Indirect N2O - leaching/runoff (pasture, cattle-type)",livestock_total,0.3987
+Sindh,Managed soils,"Indirect N2O - leaching/runoff (pasture, cattle-type)",livestock_total,0.1907
+Khyber Pakhtunkhwa,Managed soils,"Indirect N2O - leaching/runoff (pasture, cattle-type)",livestock_total,0.1874
+Balochistan,Managed soils,"Indirect N2O - leaching/runoff (pasture, cattle-type)",livestock_total,0.1829
+Other,Managed soils,"Indirect N2O - leaching/runoff (pasture, cattle-type)",livestock_total,0.0014
+Punjab,Managed soils,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",livestock_smallrum,0.5849
+Sindh,Managed soils,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",livestock_smallrum,0.3109
+Khyber Pakhtunkhwa,Managed soils,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",livestock_smallrum,0.3943
+Balochistan,Managed soils,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",livestock_smallrum,0.5458
+Other,Managed soils,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",livestock_smallrum,0.0017
+Punjab,Field burning of residues,Residue burning CH4,crop_total,0.4064
+Sindh,Field burning of residues,Residue burning CH4,crop_total,0.0914
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning CH4,crop_total,0.0258
+Balochistan,Field burning of residues,Residue burning CH4,crop_total,0.014
+Other,Field burning of residues,Residue burning CH4,crop_total,0.0
+Punjab,Field burning of residues,Residue burning N2O,crop_total,0.0997
+Sindh,Field burning of residues,Residue burning N2O,crop_total,0.0224
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning N2O,crop_total,0.0063
+Balochistan,Field burning of residues,Residue burning N2O,crop_total,0.0034
+Other,Field burning of residues,Residue burning N2O,crop_total,0.0
+Punjab,Urea application,Urea application CO2,fertilizer_N,3.3482
+Sindh,Urea application,Urea application CO2,fertilizer_N,1.1145
+Khyber Pakhtunkhwa,Urea application,Urea application CO2,fertilizer_N,0.2026
+Balochistan,Urea application,Urea application CO2,fertilizer_N,0.1496
+Other,Urea application,Urea application CO2,fertilizer_N,0.0096

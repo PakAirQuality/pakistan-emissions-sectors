@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pkinv.semantic_release/v1",
+  "title": "PakEmis semantic release",
+  "type": "object",
+  "required": ["schema", "release", "defaults", "dimensions", "facts", "rounding", "products",
+               "known_limitations", "query_contract"],
+  "properties": {
+    "schema": {"type": "string", "enum": ["pkinv.semantic_release/v1"]},
+    "release": {
+      "type": "object",
+      "required": ["product", "version", "release_id", "release_manifest", "baseline_configuration",
+                   "ledger_configuration", "gwp_bases", "lulucf"],
+      "properties": {
+        "product": {"type": "string"}, "version": {"type": "string"}, "release_id": {"type": "string"},
+        "release_manifest": {"type": "string"}, "baseline_configuration": {"type": "string"},
+        "ledger_configuration": {"type": "string"},
+        "gwp_bases": {"type": "object", "required": ["reported", "secondary", "factors"]},
+        "lulucf": {"type": "object", "required": ["status", "notation_key"],
+                   "properties": {"status": {"type": "string", "enum": ["excluded"]}}}
+      }
+    },
+    "defaults": {
+      "type": "object",
+      "required": ["configuration_id", "gwp_basis", "basis", "period_id", "geography_id", "spatial_view", "context_bar"],
+      "properties": {"basis": {"type": "string", "enum": ["fiscal", "calendar"]},
+                     "gwp_basis": {"type": "string", "enum": ["AR5", "AR6"]},
+                     "spatial_view": {"type": "string", "enum": ["all", "physical", "origin", "accounting"]},
+                     "context_bar": {"type": "array", "items": {"type": "string"}}}
+    },
+    "dimensions": {"type": "object", "additionalProperties": {"$ref": "#/$defs/table"}},
+    "facts": {"type": "object", "additionalProperties": {"$ref": "#/$defs/table"}},
+    "download_catalog": {"type": "object", "required": ["schema", "collections"], "properties": {"schema": {"const": "pakemis.download_catalog/v1"}, "collections": {"type": "array", "items": {"type": "object", "required": ["id", "title", "dek", "downloads"], "properties": {"downloads": {"type": "array", "items": {"type": "object", "required": ["id", "title", "dek", "coverage", "icon", "files"], "properties": {"files": {"type": "array", "items": {"type": "string"}}}}}}}}}},
+    "activity_inputs": {"type": "object", "required": ["schema_version", "tables"], "properties": {"tables": {"type": "array", "items": {"type": "object", "required": ["table_id", "path", "source_path", "columns", "row_count", "sha256"]}}}},
+    "asset_catalog": {"type": "object", "required": ["schema", "assets", "bindings"], "properties": {"schema": {"const": "pakemis.asset_catalog/v1"}, "assets": {"type": "array", "items": {"type": "object", "required": ["asset_id", "path", "publication", "license", "packaged", "downloadable"]}}, "bindings": {"type": "object"}}},
+    "rounding": {"type": "object", "required": ["co2e_Mt", "emissions_Gg", "rule"]},
+    "products": {"type": "array", "items": {"type": "object", "required": ["name", "path", "sha256"],
+                 "properties": {"sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}}}},
+    "known_limitations": {"type": "array", "items": {"type": "object",
+                          "required": ["id", "scope", "notation_key", "message"]}},
+    "query_contract": {"type": "object", "required": ["package", "version", "functions", "receipt_rule"]}
+  },
+  "$defs": {
+    "table": {
+      "type": "object",
+      "required": ["kind", "path", "parquet", "sha256_csv", "rows", "primary_key", "columns", "aggregation", "derived_from"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["dimension", "fact"]},
+        "path": {"type": "string"},
+        "parquet": {"type": "object", "required": ["path", "representation_of", "hashed"]},
+        "sha256_csv": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "rows": {"type": "integer"},
+        "primary_key": {"type": "array", "items": {"type": "string"}},
+        "columns": {"type": "array", "items": {"type": "string"}},
+        "aggregation": {"type": "object", "required": ["rule", "closure"]},
+        "derived_from": {"type": "array"}
+      }
+    }
+  }
+}

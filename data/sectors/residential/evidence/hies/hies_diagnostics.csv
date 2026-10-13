@@ -1,0 +1,23 @@
+survey,fuel,unit,kind,n_reporting_households,weighted_users,per_user_hh_day,design_se_pct_of_total,top1pct_hh_share_of_total,top5pct_hh_share_of_total,interview_quarters_covered,cluster_basis
+hies2019,lpg,kg,quantity,3865,5168065,0.296,3.91,0.049,0.16,not recorded in this round,published PSU
+hies2019,kerosene,litre,quantity,341,316386,0.139,8.86,0.108,0.374,not recorded in this round,published PSU
+hies2019,firewood,kg,quantity,10636,13018387,4.63,2.35,0.052,0.173,not recorded in this round,published PSU
+hies2019,charcoal,kg,quantity,178,203690,3.957,10.09,0.046,0.201,not recorded in this round,published PSU
+hies2019,coal,kg,quantity,54,65708,3.15,21.25,0.185,0.303,not recorded in this round,published PSU
+hies2019,dung_cake,kg,quantity,4328,5751540,3.098,4.07,0.068,0.196,not recorded in this round,published PSU
+hies2019,electricity,rupees,value,21486,29668447,60.458,1.85,0.098,0.253,not recorded in this round,published PSU
+hies2019,generator_fuel,rupees,value,445,604409,48.301,9.8,0.084,0.292,not recorded in this round,published PSU
+hies2019,natural_gas,rupees,value,9142,13373912,18.169,2.69,0.097,0.231,not recorded in this round,published PSU
+hies2019,agricultural_waste,rupees,value,3089,3847833,28.211,4.89,0.063,0.202,not recorded in this round,published PSU
+hies2019,cotton_sticks,rupees,value,2663,3774973,29.477,5.58,0.055,0.204,not recorded in this round,published PSU
+hies2025,lpg,kg,quantity,5540,8005421,0.307,11.76,0.219,0.324,4,hhcode/100 enumeration-block proxy
+hies2025,kerosene,litre,quantity,96,106571,2.004,18.91,0.123,0.263,4,hhcode/100 enumeration-block proxy
+hies2025,firewood,kg,quantity,11524,14022211,4.52,7.14,0.189,0.33,4,hhcode/100 enumeration-block proxy
+hies2025,charcoal,kg,quantity,45,35875,0.636,16.13,0.093,0.268,4,hhcode/100 enumeration-block proxy
+hies2025,coal,kg,quantity,23,21551,1.681,33.87,0.348,0.465,4,hhcode/100 enumeration-block proxy
+hies2025,dung_cake,kg,quantity,4680,5907932,5.55,6.61,0.179,0.447,4,hhcode/100 enumeration-block proxy
+hies2025,electricity,rupees,value,25245,35369544,165.199,1.97,0.121,0.284,4,hhcode/100 enumeration-block proxy
+hies2025,generator_fuel,rupees,value,119,153734,366.264,20.95,0.19,0.352,4,hhcode/100 enumeration-block proxy
+hies2025,natural_gas,rupees,value,10449,15367221,79.305,2.45,0.084,0.226,4,hhcode/100 enumeration-block proxy
+hies2025,agricultural_waste,rupees,value,5574,6600984,54.782,3.0,0.077,0.216,4,hhcode/100 enumeration-block proxy
+hies2025,cotton_sticks,rupees,value,2302,2823199,46.201,5.8,0.116,0.277,4,hhcode/100 enumeration-block proxy

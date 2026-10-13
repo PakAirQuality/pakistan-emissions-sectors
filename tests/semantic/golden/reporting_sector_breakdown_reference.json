@@ -1,0 +1,36 @@
+{
+ "expect": [
+  {
+   "exact": "40.04008",
+   "group": {
+    "reporting_sector": "power"
+   },
+   "note_rebase_2026_10_07": "2026-10-07 power coal re-base: grid 1.A.1.a 57.82049 -> 40.04008. The superseded account ships as the power_table3_legacy_control configuration.",
+   "tolerance": "5e-3"
+  },
+  {
+   "exact": "28.13100",
+   "group": {
+    "reporting_sector": "industry"
+   },
+   "tolerance": "5e-3"
+  }
+ ],
+ "expect_receipt": "bf8b05abc9c75d97a8898e5e6cf6ee8a",
+ "function": "query_emissions",
+ "golden_id": "reporting_sector_breakdown_reference",
+ "note": "rc67 (2026-10-13): renamed from reporting_sector_breakdown_L. The suffix named the reference configuration by its dung letter, and the reference is no longer L: it carries the household survey's dung (S) in every year, and L is the alternative. The request is unchanged - it asks for the reference by default. No value moved: neither reporting sector depends on the dung basis.",
+ "request": {
+  "group_by": [
+   "reporting_sector"
+  ],
+  "order_by": "value desc",
+  "periods": [
+   "FY2023-24"
+  ],
+  "reporting_sectors": [
+   "industry",
+   "power"
+  ]
+ }
+}

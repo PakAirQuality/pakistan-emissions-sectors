@@ -1,0 +1,4 @@
+# Rows whose products did not sum to the total the SAME ROW prints. Kept with their raw text, never repaired.
+month,area,sector,raw,products_sum,printed_total
+202212,Balochistan,Cement,Cement - - 5 - - - 396 - - 1 400,401.0,1.0
+202307,Balochistan,Road,"Road - 5 - 6,814 - - - 5,435 - - 12,118",12254.0,12118.0

@@ -1,0 +1,25 @@
+category,ipcc_code,sector,source_streams,level_Mt_co2e_AR5,level_pct,cum_level_pct,key_by_level,variance_share_pct_independent_approx,cum_variance_pct
+Enteric fermentation,3.A.1,agriculture,Enteric fermentation 151.66,151.658,34.08,34.08,YES,63.05,63.05
+Road transportation,1.A.3.b,transport,Road transport 40.19,40.194,9.03,43.12,YES,0.95,97.81
+Public electricity and heat production,1.A.1.a,power,Electricity and heat production 40.04,40.04,9.0,52.12,YES,0.8,98.61
+Manufacturing industries and construction,1.A.2,industry + power,Industrial fuel combustion (1A2) 22.58; Captive gas self-generation (1A2) 5.55,28.131,6.32,58.44,YES,0.79,99.4
+Domestic wastewater treatment and discharge,4.D.1,waste,Domestic wastewater 24.46,24.458,5.5,63.93,YES,13.03,76.08
+Residential,1.A.4.b,residential,Residential fuel combustion 24.22,24.22,5.44,69.38,YES,1.34,96.86
+Fugitive emissions from oil and natural gas,1.B.2,fugitives,Fugitive emissions from oil and gas 23.50,23.499,5.28,74.66,YES,3.33,91.36
+Cement production,2.A.1,ippu,Cement production 21.82,21.816,4.9,79.56,YES,0.18,99.79
+Manure management,3.A.2,agriculture,Manure management 19.33,19.33,4.34,83.91,YES,1.89,95.52
+Rice cultivation,3.C.7,agriculture,Rice cultivation 16.55,16.548,3.72,87.63,YES,4.31,80.39
+Direct N2O emissions from managed soils,3.C.4,agriculture,Managed soils 16.43,16.434,3.69,91.32,YES,3.95,84.34
+Indirect N2O emissions from managed soils,3.C.5,agriculture,Managed soils 12.09,12.091,2.72,94.04,YES,3.69,88.03
+Solid waste disposal,4.A,waste,Solid waste disposal 9.17,9.169,2.06,96.1,YES,2.27,93.63
+Urea application,3.C.3,agriculture,Urea application 4.82,4.824,1.08,97.18,no,0.01,99.98
+Open burning of waste,4.C.2,waste,Open burning of waste 3.83,3.826,0.86,98.04,no,0.22,99.61
+Ammonia production,2.B.1,ippu,Ammonia production 3.24,3.243,0.73,98.77,no,0.0,100.0
+Indirect N2O emissions from manure management,3.C.6,agriculture,Manure management 1.90,1.898,0.43,99.2,no,0.18,99.97
+Agriculture/forestry/fishing/fish farms,1.A.4.c,transport,Mixed off-road (1A4c/1A2) 1.73,1.732,0.39,99.59,no,0.01,99.99
+Biomass burning in croplands,3.C.1.b,agriculture,Field burning of residues 0.67,0.67,0.15,99.74,no,0.0,99.99
+Iron and steel production,2.C.1,ippu,Iron and steel production 0.39,0.393,0.09,99.82,no,0.0,100.0
+Railways,1.A.3.c,railways,Railways 0.39,0.389,0.09,99.91,no,0.0,100.0
+Civil aviation,1.A.3.a,aviation,Domestic aviation 0.30,0.301,0.07,99.98,no,0.0,100.0
+Lubricant use,2.D.1,ippu,Lubricant use 0.08,0.083,0.02,100.0,no,0.0,100.0
+Railway stationary and off-road energy (unresolved split),1.A.2/1.A.4.c,railways,Railway non-traction energy (1A2/1A4c unresolved) 0.00,0.005,0.0,100.0,no,0.0,100.0

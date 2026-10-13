@@ -1,0 +1,13 @@
+category,subitem,gas,fossil,emissions_Gg,co2e_Mt_AR5,co2e_Mt_AR6,uncert_pct
+Railways,Diesel CO2,CO2,False,352.6778,0.35268,0.35268,5.4
+Railway non-traction energy (1A2/1A4c unresolved),Non-traction diesel CO2,CO2,False,4.3052,0.00431,0.00431,5.4
+Railways,Diesel CH4,CH4,True,0.0198,0.00059,0.00059,130.1
+Railway non-traction energy (1A2/1A4c unresolved),Non-traction diesel CH4,CH4,True,0.0002,1e-05,1e-05,130.1
+Railways,Diesel N2O,N2O,False,0.1361,0.03607,0.03716,150.1
+Railway non-traction energy (1A2/1A4c unresolved),Non-traction diesel N2O,N2O,False,0.0017,0.00044,0.00045,150.1
+Railways,Furnace oil CO2,CO2,False,0.0472,5e-05,5e-05,30.1
+Railway non-traction energy (1A2/1A4c unresolved),Non-traction furnace oil CO2,CO2,False,0.2027,0.0002,0.0002,30.1
+Railways,Furnace oil CH4,CH4,True,0.0,0.0,0.0,133.4
+Railway non-traction energy (1A2/1A4c unresolved),Non-traction furnace oil CH4,CH4,True,0.0,0.0,0.0,133.4
+Railways,Furnace oil N2O,N2O,False,0.0,0.0,0.0,153.0
+Railway non-traction energy (1A2/1A4c unresolved),Non-traction furnace oil N2O,N2O,False,0.0001,2e-05,2e-05,153.0

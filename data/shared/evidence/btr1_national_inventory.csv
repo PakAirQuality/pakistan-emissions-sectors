@@ -1,0 +1,71 @@
+# PAKISTAN'S FIRST BIENNIAL TRANSPARENCY REPORT (2024), national inventory for 2020-21.
+# A verified transcription of the inventory table, Mt CO2e on AR5 GWPs, one row per printed
+# IPCC code, each with the line of sources/UNFCCC/btr1_2024.txt it was read from.
+#
+# THE PERIOD IS A FISCAL YEAR, by the document's own statement: "the fiscal year 1993-94
+# (referred to as 1994)" and "Pakistan's 2020-21 inventory (referred to as 2021)". So
+# inventory year 2021 IS FY2020-21 and faces this release's FY2020-21 directly, with no
+# calendar blend and no GWP conversion. Three of this project's ingests had recorded it as
+# calendar 2021 and one (aviation) as fiscal; the document settles it and they now agree.
+#
+# VERIFIED BY ITS OWN ARITHMETIC, not by eye: every parent closes over its printed children
+# and the four sector totals sum to the printed national total of 521.46 Mt. The gas columns
+# are recorded only where all four of CO2, CH4, N2O and the total are printed; a row that
+# prints a dash for a gas leaves them blank rather than having a zero guessed into place.
+# LULUCF (3.B Land, 34.82 Mt) is held here and excluded from every comparison by scope.
+btr_code,btr_category,co2_Mt_co2e,ch4_Mt_co2e,n2o_Mt_co2e,total_Mt_co2e,source_line,printed_columns
+1,Energy,206.68,5.34,1.26,213.28,761,4
+1.A,Fuel Combustion Activities,206.66,0.98,1.27,208.91,762,4
+1.A.1,Energy Industries,48.68,0.04,0.14,48.87,763,4
+1.A.2,Manufacturing Industries and Construction,71.84,0.16,0.23,72.23,764,4
+1.A.3,Transport,49.50,0.66,0.85,51.01,765,4
+1.A.4,Other Sectors,36.64,0.12,0.05,36.80,766,4
+1.A.5,Non-Specified,0,0,0,0,767,4
+1.B,Fugitive emissions from fuels,0.01,4.36,0.00001,4.37,768,4
+1.B.1,Solid Fuels,,,,0.73,769,3
+1.B.2,Oil and Natural Gas,0.009,3.63,0.00001,3.64,780,4
+1.B.3,Other emissions from Energy Production,,,,0,781,1
+1.C,Carbon dioxide Transport and Storage,,,,0,782,2
+1.C.1,Transport of CO2,,,,0,783,2
+1.C.2,Injection and Storage,,,,0,784,2
+1.C.3,Other,,,,0,785,2
+2,Industrial Processes and Product Use,,,,31.98,786,3
+2.A,Mineral Industry,27.39,0,0,27.39,787,4
+2.A.1,Cement production,,,,25.76,788,2
+2.A.2,Lime production,,,,1.33,789,2
+2.A.3,Glass Production,,,,0.03,790,2
+2.A.4,Other Process Uses of Carbonates,,,,0.27,791,3
+2.B,Chemical Industry,,,,3.02,792,3
+2.B.1,Ammonia Production,,,,3.02,793,2
+2.C,Metal Industry,,,,0,794,3
+2.D,Non-Energy Products from Fuels and Solvent Use (6),,,,0.22,795,3
+2.D.1,Lubricant Use,,,,0.22,796,2
+2.E,Electronics Industry,,,,0,797,3
+2.F,Product Uses as Substitutes for Ozone Depleting Substances,,,,0,798,3
+2.G,Other Product Manufacture and Use,,,,0,799,3
+2.H,Other,0.05,1.30,0.00,1.35,800,4
+2.H.1,Pulp and Paper Industry,,,,0.02,801,3
+2.H.2,Food and Beverages Industry,,,,1.33,802,3
+3,"Agriculture, Forestry, and Other Land Use",35.77,137.23,70.76,243.76,803,4
+3.A,Livestock,0,122.54,7.60,130.14,804,4
+3.A.1,Enteric Fermentation,0,112.83,0,112.83,805,4
+3.A.2,Manure Management (1),0,9.71,7.60,17.31,806,4
+3.B,Land,31.35,2.69,0.78,34.82,807,4
+3.B.1,Forest land,28.44,0.13,0.07,28.64,808,4
+3.B.2,Cropland,2.50,2.54,0.62,5.67,809,4
+3.B.3,Grasslands,,,,0.03,810,3
+3.B.4,Wetlands,0.41,0,0.08,0.48,811,4
+3.C,Managed Soils,,,,66.80,812,3
+3.C.2,Urea application,,,,4.43,813,2
+3.C.3,Direct N2O Emissions from managed soils (3),,,,40.50,814,2
+3.C.4,Indirect N2O Emissions from managed soils,,,,17.55,815,2
+3.C.5,Indirect N2O Emissions from manure management,,,,4.32,816,2
+3.D,Rice Cultivation,,,,12.00,827,2
+4,Waste,0.11,30.03,2.30,32.44,828,4
+4.A,Solid Waste Disposal,0,17.52,0,17.52,829,4
+4.C,Incineration and Open Burning of Waste,0.12,0.15,0.04,0.31,834,4
+4.C.1,Waste Incineration,0.08,0.01,0.02,0.11,835,4
+4.C.2,Open Burning of Waste,0.04,0.14,0.02,0.20,836,4
+4.D,Wastewater Treatment and Discharge,,,,14.61,837,3
+4.D.1,Domestic Wastewater Treatment and Discharge,,,,12.40,838,3
+4.D.2,Industrial Wastewater Treatment and Discharge,,,,2.22,839,2

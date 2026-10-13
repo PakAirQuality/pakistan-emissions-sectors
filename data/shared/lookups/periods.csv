@@ -1,0 +1,10 @@
+period_id,period_start,period_end,time_basis,days,fiscal_start_year,fiscal_end_year,is_reference,note
+FY2015-16,2015-07-01,2016-06-30,fiscal-july-june,366,2015,2016,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2016-17,2016-07-01,2017-06-30,fiscal-july-june,365,2016,2017,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2017-18,2017-07-01,2018-06-30,fiscal-july-june,365,2017,2018,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2018-19,2018-07-01,2019-06-30,fiscal-july-june,365,2018,2019,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2019-20,2019-07-01,2020-06-30,fiscal-july-june,366,2019,2020,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2020-21,2020-07-01,2021-06-30,fiscal-july-june,365,2020,2021,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2021-22,2021-07-01,2022-06-30,fiscal-july-june,365,2021,2022,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2022-23,2022-07-01,2023-06-30,fiscal-july-june,365,2022,2023,False,series period; sector coverage is declared per cell in the coverage matrix
+FY2023-24,2023-07-01,2024-06-30,fiscal-july-june,366,2023,2024,True,the reference period every sector reports

@@ -1,0 +1,276 @@
+# ERA5 against the NASA POWER series the residential profile rides. A CHECK, NOT A SOURCE: no profile reads this and
+# nothing was copied off the volume - the grid is read in place.
+# ERA5 and MERRA-2 are separate reanalyses from different institutions, which is why this claims LARGE independence.
+# LIMIT: the volume holds ERA5 from January 2020, so this covers 54 of the 108 months and says nothing about 2015-2019.
+# t2m is published in KELVIN and converted here; the degree-day file is already Celsius.
+month,province,city,lat,lon,era5_cell_lat,era5_cell_lon,era5_days,era5_t2m_C,nasa_power_t2m_C,delta_C,abs_delta_C,validates
+202001,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,-1.537,1.68,-3.217,3.217,seasonal-timing-only: the level differs by an undocumented aggregation
+202002,Balochistan,Quetta,30.18,66.99,30.2,67.0,29,3.306,6.59,-3.284,3.284,seasonal-timing-only: the level differs by an undocumented aggregation
+202003,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,6.333,8.68,-2.347,2.347,seasonal-timing-only: the level differs by an undocumented aggregation
+202004,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,12.95,14.83,-1.88,1.88,seasonal-timing-only: the level differs by an undocumented aggregation
+202005,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,17.866,20.04,-2.174,2.174,seasonal-timing-only: the level differs by an undocumented aggregation
+202006,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,20.406,25.46,-5.054,5.054,seasonal-timing-only: the level differs by an undocumented aggregation
+202007,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,20.227,27.41,-7.183,7.183,seasonal-timing-only: the level differs by an undocumented aggregation
+202008,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,20.884,25.01,-4.126,4.126,seasonal-timing-only: the level differs by an undocumented aggregation
+202009,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,17.543,20.0,-2.457,2.457,seasonal-timing-only: the level differs by an undocumented aggregation
+202010,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,11.082,13.73,-2.648,2.648,seasonal-timing-only: the level differs by an undocumented aggregation
+202011,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,6.76,9.38,-2.62,2.62,seasonal-timing-only: the level differs by an undocumented aggregation
+202012,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,2.354,4.27,-1.916,1.916,seasonal-timing-only: the level differs by an undocumented aggregation
+202101,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,1.744,4.36,-2.616,2.616,seasonal-timing-only: the level differs by an undocumented aggregation
+202102,Balochistan,Quetta,30.18,66.99,30.2,67.0,28,6.941,9.59,-2.649,2.649,seasonal-timing-only: the level differs by an undocumented aggregation
+202103,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,10.389,13.38,-2.991,2.991,seasonal-timing-only: the level differs by an undocumented aggregation
+202104,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,14.193,17.93,-3.737,3.737,seasonal-timing-only: the level differs by an undocumented aggregation
+202105,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,17.821,22.13,-4.309,4.309,seasonal-timing-only: the level differs by an undocumented aggregation
+202106,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,20.648,26.96,-6.312,6.312,seasonal-timing-only: the level differs by an undocumented aggregation
+202107,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,21.612,27.31,-5.698,5.698,seasonal-timing-only: the level differs by an undocumented aggregation
+202108,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,19.869,25.77,-5.901,5.901,seasonal-timing-only: the level differs by an undocumented aggregation
+202109,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,17.746,21.94,-4.194,4.194,seasonal-timing-only: the level differs by an undocumented aggregation
+202110,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,12.883,14.68,-1.797,1.797,seasonal-timing-only: the level differs by an undocumented aggregation
+202111,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,7.701,9.17,-1.469,1.469,seasonal-timing-only: the level differs by an undocumented aggregation
+202112,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,4.313,6.13,-1.817,1.817,seasonal-timing-only: the level differs by an undocumented aggregation
+202201,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,0.792,2.63,-1.838,1.838,seasonal-timing-only: the level differs by an undocumented aggregation
+202202,Balochistan,Quetta,30.18,66.99,30.2,67.0,28,4.369,5.66,-1.291,1.291,seasonal-timing-only: the level differs by an undocumented aggregation
+202203,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,12.054,14.04,-1.986,1.986,seasonal-timing-only: the level differs by an undocumented aggregation
+202204,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,17.106,19.05,-1.944,1.944,seasonal-timing-only: the level differs by an undocumented aggregation
+202205,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,20.009,23.41,-3.401,3.401,seasonal-timing-only: the level differs by an undocumented aggregation
+202206,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,20.213,25.88,-5.667,5.667,seasonal-timing-only: the level differs by an undocumented aggregation
+202207,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,20.713,24.53,-3.817,3.817,seasonal-timing-only: the level differs by an undocumented aggregation
+202208,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,18.444,22.19,-3.746,3.746,seasonal-timing-only: the level differs by an undocumented aggregation
+202209,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,16.923,20.26,-3.337,3.337,seasonal-timing-only: the level differs by an undocumented aggregation
+202210,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,13.376,15.47,-2.094,2.094,seasonal-timing-only: the level differs by an undocumented aggregation
+202211,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,8.717,10.45,-1.733,1.733,seasonal-timing-only: the level differs by an undocumented aggregation
+202212,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,3.57,5.32,-1.75,1.75,seasonal-timing-only: the level differs by an undocumented aggregation
+202301,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,-2.0,1.03,-3.03,3.03,seasonal-timing-only: the level differs by an undocumented aggregation
+202302,Balochistan,Quetta,30.18,66.99,30.2,67.0,28,6.882,8.84,-1.958,1.958,seasonal-timing-only: the level differs by an undocumented aggregation
+202303,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,8.611,11.67,-3.059,3.059,seasonal-timing-only: the level differs by an undocumented aggregation
+202304,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,11.856,15.55,-3.694,3.694,seasonal-timing-only: the level differs by an undocumented aggregation
+202305,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,17.301,20.91,-3.609,3.609,seasonal-timing-only: the level differs by an undocumented aggregation
+202306,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,18.86,26.84,-7.98,7.98,seasonal-timing-only: the level differs by an undocumented aggregation
+202307,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,19.882,26.48,-6.598,6.598,seasonal-timing-only: the level differs by an undocumented aggregation
+202308,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,21.37,25.76,-4.39,4.39,seasonal-timing-only: the level differs by an undocumented aggregation
+202309,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,18.151,23.27,-5.119,5.119,seasonal-timing-only: the level differs by an undocumented aggregation
+202310,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,14.935,17.15,-2.215,2.215,seasonal-timing-only: the level differs by an undocumented aggregation
+202311,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,9.344,11.58,-2.236,2.236,seasonal-timing-only: the level differs by an undocumented aggregation
+202312,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,5.396,7.93,-2.534,2.534,seasonal-timing-only: the level differs by an undocumented aggregation
+202401,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,4.502,6.61,-2.108,2.108,seasonal-timing-only: the level differs by an undocumented aggregation
+202402,Balochistan,Quetta,30.18,66.99,30.2,67.0,29,3.449,6.0,-2.551,2.551,seasonal-timing-only: the level differs by an undocumented aggregation
+202403,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,5.885,9.55,-3.665,3.665,seasonal-timing-only: the level differs by an undocumented aggregation
+202404,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,10.928,13.79,-2.862,2.862,seasonal-timing-only: the level differs by an undocumented aggregation
+202405,Balochistan,Quetta,30.18,66.99,30.2,67.0,31,17.851,21.11,-3.259,3.259,seasonal-timing-only: the level differs by an undocumented aggregation
+202406,Balochistan,Quetta,30.18,66.99,30.2,67.0,30,20.456,25.97,-5.514,5.514,seasonal-timing-only: the level differs by an undocumented aggregation
+202001,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,4.677,8.03,-3.353,3.353,seasonal-timing-only: the level differs by an undocumented aggregation
+202002,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,29,7.605,12.98,-5.375,5.375,seasonal-timing-only: the level differs by an undocumented aggregation
+202003,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,11.224,14.81,-3.586,3.586,seasonal-timing-only: the level differs by an undocumented aggregation
+202004,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,15.567,20.76,-5.193,5.193,seasonal-timing-only: the level differs by an undocumented aggregation
+202005,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,20.942,25.55,-4.608,4.608,seasonal-timing-only: the level differs by an undocumented aggregation
+202006,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,26.287,28.91,-2.623,2.623,seasonal-timing-only: the level differs by an undocumented aggregation
+202007,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,27.787,30.69,-2.903,2.903,seasonal-timing-only: the level differs by an undocumented aggregation
+202008,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,26.44,29.81,-3.37,3.37,seasonal-timing-only: the level differs by an undocumented aggregation
+202009,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,22.814,26.96,-4.146,4.146,seasonal-timing-only: the level differs by an undocumented aggregation
+202010,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,16.479,22.43,-5.951,5.951,seasonal-timing-only: the level differs by an undocumented aggregation
+202011,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,9.282,14.39,-5.108,5.108,seasonal-timing-only: the level differs by an undocumented aggregation
+202012,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,6.124,10.56,-4.436,4.436,seasonal-timing-only: the level differs by an undocumented aggregation
+202101,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,4.419,10.2,-5.781,5.781,seasonal-timing-only: the level differs by an undocumented aggregation
+202102,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,28,9.848,14.91,-5.062,5.062,seasonal-timing-only: the level differs by an undocumented aggregation
+202103,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,12.849,17.74,-4.891,4.891,seasonal-timing-only: the level differs by an undocumented aggregation
+202104,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,16.29,21.25,-4.96,4.96,seasonal-timing-only: the level differs by an undocumented aggregation
+202105,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,22.711,27.87,-5.159,5.159,seasonal-timing-only: the level differs by an undocumented aggregation
+202106,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,27.748,32.15,-4.402,4.402,seasonal-timing-only: the level differs by an undocumented aggregation
+202107,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,28.082,32.48,-4.398,4.398,seasonal-timing-only: the level differs by an undocumented aggregation
+202108,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,26.681,30.06,-3.379,3.379,seasonal-timing-only: the level differs by an undocumented aggregation
+202109,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,25.725,27.64,-1.915,1.915,seasonal-timing-only: the level differs by an undocumented aggregation
+202110,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,16.96,22.01,-5.05,5.05,seasonal-timing-only: the level differs by an undocumented aggregation
+202111,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,10.439,16.53,-6.091,6.091,seasonal-timing-only: the level differs by an undocumented aggregation
+202112,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,6.212,11.35,-5.138,5.138,seasonal-timing-only: the level differs by an undocumented aggregation
+202201,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,5.173,9.2,-4.027,4.027,seasonal-timing-only: the level differs by an undocumented aggregation
+202202,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,28,6.878,11.48,-4.602,4.602,seasonal-timing-only: the level differs by an undocumented aggregation
+202203,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,14.721,20.15,-5.429,5.429,seasonal-timing-only: the level differs by an undocumented aggregation
+202204,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,20.549,26.68,-6.131,6.131,seasonal-timing-only: the level differs by an undocumented aggregation
+202205,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,24.224,30.16,-5.936,5.936,seasonal-timing-only: the level differs by an undocumented aggregation
+202206,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,25.642,32.69,-7.048,7.048,seasonal-timing-only: the level differs by an undocumented aggregation
+202207,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,26.933,29.89,-2.957,2.957,seasonal-timing-only: the level differs by an undocumented aggregation
+202208,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,25.308,28.83,-3.522,3.522,seasonal-timing-only: the level differs by an undocumented aggregation
+202209,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,25.443,27.04,-1.597,1.597,seasonal-timing-only: the level differs by an undocumented aggregation
+202210,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,17.029,22.41,-5.381,5.381,seasonal-timing-only: the level differs by an undocumented aggregation
+202211,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,11.16,16.23,-5.07,5.07,seasonal-timing-only: the level differs by an undocumented aggregation
+202212,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,6.621,12.8,-6.179,6.179,seasonal-timing-only: the level differs by an undocumented aggregation
+202301,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,3.779,8.37,-4.591,4.591,seasonal-timing-only: the level differs by an undocumented aggregation
+202302,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,28,8.707,13.83,-5.123,5.123,seasonal-timing-only: the level differs by an undocumented aggregation
+202303,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,13.793,18.04,-4.247,4.247,seasonal-timing-only: the level differs by an undocumented aggregation
+202304,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,15.585,22.26,-6.675,6.675,seasonal-timing-only: the level differs by an undocumented aggregation
+202305,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,20.253,25.63,-5.377,5.377,seasonal-timing-only: the level differs by an undocumented aggregation
+202306,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,26.867,31.36,-4.493,4.493,seasonal-timing-only: the level differs by an undocumented aggregation
+202307,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,26.613,30.39,-3.777,3.777,seasonal-timing-only: the level differs by an undocumented aggregation
+202308,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,27.956,30.23,-2.274,2.274,seasonal-timing-only: the level differs by an undocumented aggregation
+202309,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,26.351,28.35,-1.999,1.999,seasonal-timing-only: the level differs by an undocumented aggregation
+202310,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,16.746,22.71,-5.964,5.964,seasonal-timing-only: the level differs by an undocumented aggregation
+202311,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,11.72,17.74,-6.02,6.02,seasonal-timing-only: the level differs by an undocumented aggregation
+202312,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,7.625,13.42,-5.795,5.795,seasonal-timing-only: the level differs by an undocumented aggregation
+202401,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,6.464,11.03,-4.566,4.566,seasonal-timing-only: the level differs by an undocumented aggregation
+202402,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,29,6.162,11.71,-5.548,5.548,seasonal-timing-only: the level differs by an undocumented aggregation
+202403,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,10.793,16.42,-5.627,5.627,seasonal-timing-only: the level differs by an undocumented aggregation
+202404,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,15.012,20.88,-5.868,5.868,seasonal-timing-only: the level differs by an undocumented aggregation
+202405,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,31,20.972,28.26,-7.288,7.288,seasonal-timing-only: the level differs by an undocumented aggregation
+202406,Khyber Pakhtunkhwa,Peshawar,34.01,71.58,34.0,71.6,30,25.95,33.45,-7.5,7.5,seasonal-timing-only: the level differs by an undocumented aggregation
+202001,Other,Islamabad,33.68,73.05,33.7,73.1,31,4.63,8.62,-3.99,3.99,seasonal-timing-only: the level differs by an undocumented aggregation
+202002,Other,Islamabad,33.68,73.05,33.7,73.1,29,6.898,13.22,-6.322,6.322,seasonal-timing-only: the level differs by an undocumented aggregation
+202003,Other,Islamabad,33.68,73.05,33.7,73.1,31,10.64,15.57,-4.93,4.93,seasonal-timing-only: the level differs by an undocumented aggregation
+202004,Other,Islamabad,33.68,73.05,33.7,73.1,30,14.583,21.03,-6.447,6.447,seasonal-timing-only: the level differs by an undocumented aggregation
+202005,Other,Islamabad,33.68,73.05,33.7,73.1,31,19.076,25.49,-6.414,6.414,seasonal-timing-only: the level differs by an undocumented aggregation
+202006,Other,Islamabad,33.68,73.05,33.7,73.1,30,22.982,28.04,-5.058,5.058,seasonal-timing-only: the level differs by an undocumented aggregation
+202007,Other,Islamabad,33.68,73.05,33.7,73.1,31,25.343,29.4,-4.057,4.057,seasonal-timing-only: the level differs by an undocumented aggregation
+202008,Other,Islamabad,33.68,73.05,33.7,73.1,31,24.47,28.72,-4.25,4.25,seasonal-timing-only: the level differs by an undocumented aggregation
+202009,Other,Islamabad,33.68,73.05,33.7,73.1,30,20.435,26.67,-6.235,6.235,seasonal-timing-only: the level differs by an undocumented aggregation
+202010,Other,Islamabad,33.68,73.05,33.7,73.1,31,15.132,21.79,-6.658,6.658,seasonal-timing-only: the level differs by an undocumented aggregation
+202011,Other,Islamabad,33.68,73.05,33.7,73.1,30,9.846,14.83,-4.984,4.984,seasonal-timing-only: the level differs by an undocumented aggregation
+202012,Other,Islamabad,33.68,73.05,33.7,73.1,31,6.197,11.13,-4.933,4.933,seasonal-timing-only: the level differs by an undocumented aggregation
+202101,Other,Islamabad,33.68,73.05,33.7,73.1,31,4.234,10.61,-6.376,6.376,seasonal-timing-only: the level differs by an undocumented aggregation
+202102,Other,Islamabad,33.68,73.05,33.7,73.1,28,8.433,15.15,-6.717,6.717,seasonal-timing-only: the level differs by an undocumented aggregation
+202103,Other,Islamabad,33.68,73.05,33.7,73.1,31,12.151,17.87,-5.719,5.719,seasonal-timing-only: the level differs by an undocumented aggregation
+202104,Other,Islamabad,33.68,73.05,33.7,73.1,30,14.559,21.12,-6.561,6.561,seasonal-timing-only: the level differs by an undocumented aggregation
+202105,Other,Islamabad,33.68,73.05,33.7,73.1,31,19.674,28.03,-8.356,8.356,seasonal-timing-only: the level differs by an undocumented aggregation
+202106,Other,Islamabad,33.68,73.05,33.7,73.1,30,24.051,31.94,-7.889,7.889,seasonal-timing-only: the level differs by an undocumented aggregation
+202107,Other,Islamabad,33.68,73.05,33.7,73.1,31,25.484,31.15,-5.666,5.666,seasonal-timing-only: the level differs by an undocumented aggregation
+202108,Other,Islamabad,33.68,73.05,33.7,73.1,31,23.8,29.0,-5.2,5.2,seasonal-timing-only: the level differs by an undocumented aggregation
+202109,Other,Islamabad,33.68,73.05,33.7,73.1,30,23.008,26.61,-3.602,3.602,seasonal-timing-only: the level differs by an undocumented aggregation
+202110,Other,Islamabad,33.68,73.05,33.7,73.1,31,16.721,21.63,-4.909,4.909,seasonal-timing-only: the level differs by an undocumented aggregation
+202111,Other,Islamabad,33.68,73.05,33.7,73.1,30,9.879,15.89,-6.011,6.011,seasonal-timing-only: the level differs by an undocumented aggregation
+202112,Other,Islamabad,33.68,73.05,33.7,73.1,31,5.672,11.37,-5.698,5.698,seasonal-timing-only: the level differs by an undocumented aggregation
+202201,Other,Islamabad,33.68,73.05,33.7,73.1,31,5.443,9.69,-4.247,4.247,seasonal-timing-only: the level differs by an undocumented aggregation
+202202,Other,Islamabad,33.68,73.05,33.7,73.1,28,6.427,11.81,-5.383,5.383,seasonal-timing-only: the level differs by an undocumented aggregation
+202203,Other,Islamabad,33.68,73.05,33.7,73.1,31,13.036,19.84,-6.804,6.804,seasonal-timing-only: the level differs by an undocumented aggregation
+202204,Other,Islamabad,33.68,73.05,33.7,73.1,30,18.822,26.45,-7.628,7.628,seasonal-timing-only: the level differs by an undocumented aggregation
+202205,Other,Islamabad,33.68,73.05,33.7,73.1,31,22.222,30.68,-8.458,8.458,seasonal-timing-only: the level differs by an undocumented aggregation
+202206,Other,Islamabad,33.68,73.05,33.7,73.1,30,24.198,31.95,-7.752,7.752,seasonal-timing-only: the level differs by an undocumented aggregation
+202207,Other,Islamabad,33.68,73.05,33.7,73.1,31,24.803,28.68,-3.877,3.877,seasonal-timing-only: the level differs by an undocumented aggregation
+202208,Other,Islamabad,33.68,73.05,33.7,73.1,31,24.151,27.88,-3.729,3.729,seasonal-timing-only: the level differs by an undocumented aggregation
+202209,Other,Islamabad,33.68,73.05,33.7,73.1,30,22.286,26.31,-4.024,4.024,seasonal-timing-only: the level differs by an undocumented aggregation
+202210,Other,Islamabad,33.68,73.05,33.7,73.1,31,16.384,21.6,-5.216,5.216,seasonal-timing-only: the level differs by an undocumented aggregation
+202211,Other,Islamabad,33.68,73.05,33.7,73.1,30,10.751,15.99,-5.239,5.239,seasonal-timing-only: the level differs by an undocumented aggregation
+202212,Other,Islamabad,33.68,73.05,33.7,73.1,31,6.742,12.9,-6.158,6.158,seasonal-timing-only: the level differs by an undocumented aggregation
+202301,Other,Islamabad,33.68,73.05,33.7,73.1,31,4.665,9.34,-4.675,4.675,seasonal-timing-only: the level differs by an undocumented aggregation
+202302,Other,Islamabad,33.68,73.05,33.7,73.1,28,8.646,14.22,-5.574,5.574,seasonal-timing-only: the level differs by an undocumented aggregation
+202303,Other,Islamabad,33.68,73.05,33.7,73.1,31,12.202,17.85,-5.648,5.648,seasonal-timing-only: the level differs by an undocumented aggregation
+202304,Other,Islamabad,33.68,73.05,33.7,73.1,30,14.963,22.32,-7.357,7.357,seasonal-timing-only: the level differs by an undocumented aggregation
+202305,Other,Islamabad,33.68,73.05,33.7,73.1,31,18.722,25.74,-7.018,7.018,seasonal-timing-only: the level differs by an undocumented aggregation
+202306,Other,Islamabad,33.68,73.05,33.7,73.1,30,23.883,30.73,-6.847,6.847,seasonal-timing-only: the level differs by an undocumented aggregation
+202307,Other,Islamabad,33.68,73.05,33.7,73.1,31,24.577,28.97,-4.393,4.393,seasonal-timing-only: the level differs by an undocumented aggregation
+202308,Other,Islamabad,33.68,73.05,33.7,73.1,31,24.951,29.19,-4.239,4.239,seasonal-timing-only: the level differs by an undocumented aggregation
+202309,Other,Islamabad,33.68,73.05,33.7,73.1,30,23.819,26.91,-3.091,3.091,seasonal-timing-only: the level differs by an undocumented aggregation
+202310,Other,Islamabad,33.68,73.05,33.7,73.1,31,16.262,21.71,-5.448,5.448,seasonal-timing-only: the level differs by an undocumented aggregation
+202311,Other,Islamabad,33.68,73.05,33.7,73.1,30,11.53,17.57,-6.04,6.04,seasonal-timing-only: the level differs by an undocumented aggregation
+202312,Other,Islamabad,33.68,73.05,33.7,73.1,31,6.974,13.48,-6.506,6.506,seasonal-timing-only: the level differs by an undocumented aggregation
+202401,Other,Islamabad,33.68,73.05,33.7,73.1,31,5.795,11.86,-6.065,6.065,seasonal-timing-only: the level differs by an undocumented aggregation
+202402,Other,Islamabad,33.68,73.05,33.7,73.1,29,5.82,11.95,-6.13,6.13,seasonal-timing-only: the level differs by an undocumented aggregation
+202403,Other,Islamabad,33.68,73.05,33.7,73.1,31,10.774,16.73,-5.956,5.956,seasonal-timing-only: the level differs by an undocumented aggregation
+202404,Other,Islamabad,33.68,73.05,33.7,73.1,30,14.889,21.67,-6.781,6.781,seasonal-timing-only: the level differs by an undocumented aggregation
+202405,Other,Islamabad,33.68,73.05,33.7,73.1,31,19.73,28.82,-9.09,9.09,seasonal-timing-only: the level differs by an undocumented aggregation
+202406,Other,Islamabad,33.68,73.05,33.7,73.1,30,24.788,34.5,-9.712,9.712,seasonal-timing-only: the level differs by an undocumented aggregation
+202001,Punjab,Lahore,31.55,74.35,31.5,74.3,31,7.093,10.77,-3.677,3.677,seasonal-timing-only: the level differs by an undocumented aggregation
+202002,Punjab,Lahore,31.55,74.35,31.5,74.3,29,9.731,15.5,-5.769,5.769,seasonal-timing-only: the level differs by an undocumented aggregation
+202003,Punjab,Lahore,31.55,74.35,31.5,74.3,31,13.633,18.49,-4.857,4.857,seasonal-timing-only: the level differs by an undocumented aggregation
+202004,Punjab,Lahore,31.55,74.35,31.5,74.3,30,18.028,24.87,-6.842,6.842,seasonal-timing-only: the level differs by an undocumented aggregation
+202005,Punjab,Lahore,31.55,74.35,31.5,74.3,31,23.136,31.69,-8.554,8.554,seasonal-timing-only: the level differs by an undocumented aggregation
+202006,Punjab,Lahore,31.55,74.35,31.5,74.3,30,27.418,34.87,-7.452,7.452,seasonal-timing-only: the level differs by an undocumented aggregation
+202007,Punjab,Lahore,31.55,74.35,31.5,74.3,31,27.584,34.6,-7.016,7.016,seasonal-timing-only: the level differs by an undocumented aggregation
+202008,Punjab,Lahore,31.55,74.35,31.5,74.3,31,26.777,31.51,-4.733,4.733,seasonal-timing-only: the level differs by an undocumented aggregation
+202009,Punjab,Lahore,31.55,74.35,31.5,74.3,30,25.346,28.94,-3.594,3.594,seasonal-timing-only: the level differs by an undocumented aggregation
+202010,Punjab,Lahore,31.55,74.35,31.5,74.3,31,18.806,24.96,-6.154,6.154,seasonal-timing-only: the level differs by an undocumented aggregation
+202011,Punjab,Lahore,31.55,74.35,31.5,74.3,30,12.472,17.23,-4.758,4.758,seasonal-timing-only: the level differs by an undocumented aggregation
+202012,Punjab,Lahore,31.55,74.35,31.5,74.3,31,8.101,12.95,-4.849,4.849,seasonal-timing-only: the level differs by an undocumented aggregation
+202101,Punjab,Lahore,31.55,74.35,31.5,74.3,31,7.519,11.49,-3.971,3.971,seasonal-timing-only: the level differs by an undocumented aggregation
+202102,Punjab,Lahore,31.55,74.35,31.5,74.3,28,11.243,17.46,-6.217,6.217,seasonal-timing-only: the level differs by an undocumented aggregation
+202103,Punjab,Lahore,31.55,74.35,31.5,74.3,31,15.644,23.0,-7.356,7.356,seasonal-timing-only: the level differs by an undocumented aggregation
+202104,Punjab,Lahore,31.55,74.35,31.5,74.3,30,18.376,26.56,-8.184,8.184,seasonal-timing-only: the level differs by an undocumented aggregation
+202105,Punjab,Lahore,31.55,74.35,31.5,74.3,31,23.589,33.03,-9.441,9.441,seasonal-timing-only: the level differs by an undocumented aggregation
+202106,Punjab,Lahore,31.55,74.35,31.5,74.3,30,27.424,36.19,-8.766,8.766,seasonal-timing-only: the level differs by an undocumented aggregation
+202107,Punjab,Lahore,31.55,74.35,31.5,74.3,31,27.919,34.86,-6.941,6.941,seasonal-timing-only: the level differs by an undocumented aggregation
+202108,Punjab,Lahore,31.55,74.35,31.5,74.3,31,27.352,32.53,-5.178,5.178,seasonal-timing-only: the level differs by an undocumented aggregation
+202109,Punjab,Lahore,31.55,74.35,31.5,74.3,30,25.565,29.2,-3.635,3.635,seasonal-timing-only: the level differs by an undocumented aggregation
+202110,Punjab,Lahore,31.55,74.35,31.5,74.3,31,20.329,24.38,-4.051,4.051,seasonal-timing-only: the level differs by an undocumented aggregation
+202111,Punjab,Lahore,31.55,74.35,31.5,74.3,30,13.242,18.17,-4.928,4.928,seasonal-timing-only: the level differs by an undocumented aggregation
+202112,Punjab,Lahore,31.55,74.35,31.5,74.3,31,8.331,13.26,-4.929,4.929,seasonal-timing-only: the level differs by an undocumented aggregation
+202201,Punjab,Lahore,31.55,74.35,31.5,74.3,31,8.668,11.98,-3.312,3.312,seasonal-timing-only: the level differs by an undocumented aggregation
+202202,Punjab,Lahore,31.55,74.35,31.5,74.3,28,9.088,14.42,-5.332,5.332,seasonal-timing-only: the level differs by an undocumented aggregation
+202203,Punjab,Lahore,31.55,74.35,31.5,74.3,31,16.28,23.62,-7.34,7.34,seasonal-timing-only: the level differs by an undocumented aggregation
+202204,Punjab,Lahore,31.55,74.35,31.5,74.3,30,21.591,31.8,-10.209,10.209,seasonal-timing-only: the level differs by an undocumented aggregation
+202205,Punjab,Lahore,31.55,74.35,31.5,74.3,31,25.475,35.47,-9.995,9.995,seasonal-timing-only: the level differs by an undocumented aggregation
+202206,Punjab,Lahore,31.55,74.35,31.5,74.3,30,26.862,36.18,-9.318,9.318,seasonal-timing-only: the level differs by an undocumented aggregation
+202207,Punjab,Lahore,31.55,74.35,31.5,74.3,31,26.727,31.98,-5.253,5.253,seasonal-timing-only: the level differs by an undocumented aggregation
+202208,Punjab,Lahore,31.55,74.35,31.5,74.3,31,26.565,29.57,-3.005,3.005,seasonal-timing-only: the level differs by an undocumented aggregation
+202209,Punjab,Lahore,31.55,74.35,31.5,74.3,30,25.625,28.98,-3.355,3.355,seasonal-timing-only: the level differs by an undocumented aggregation
+202210,Punjab,Lahore,31.55,74.35,31.5,74.3,31,19.931,24.89,-4.959,4.959,seasonal-timing-only: the level differs by an undocumented aggregation
+202211,Punjab,Lahore,31.55,74.35,31.5,74.3,30,13.433,18.96,-5.527,5.527,seasonal-timing-only: the level differs by an undocumented aggregation
+202212,Punjab,Lahore,31.55,74.35,31.5,74.3,31,9.074,15.1,-6.026,6.026,seasonal-timing-only: the level differs by an undocumented aggregation
+202301,Punjab,Lahore,31.55,74.35,31.5,74.3,31,6.862,11.44,-4.578,4.578,seasonal-timing-only: the level differs by an undocumented aggregation
+202302,Punjab,Lahore,31.55,74.35,31.5,74.3,28,11.005,18.1,-7.095,7.095,seasonal-timing-only: the level differs by an undocumented aggregation
+202303,Punjab,Lahore,31.55,74.35,31.5,74.3,31,15.588,22.26,-6.672,6.672,seasonal-timing-only: the level differs by an undocumented aggregation
+202304,Punjab,Lahore,31.55,74.35,31.5,74.3,30,18.266,26.4,-8.134,8.134,seasonal-timing-only: the level differs by an undocumented aggregation
+202305,Punjab,Lahore,31.55,74.35,31.5,74.3,31,22.558,30.21,-7.652,7.652,seasonal-timing-only: the level differs by an undocumented aggregation
+202306,Punjab,Lahore,31.55,74.35,31.5,74.3,30,26.39,33.78,-7.39,7.39,seasonal-timing-only: the level differs by an undocumented aggregation
+202307,Punjab,Lahore,31.55,74.35,31.5,74.3,31,26.624,30.29,-3.666,3.666,seasonal-timing-only: the level differs by an undocumented aggregation
+202308,Punjab,Lahore,31.55,74.35,31.5,74.3,31,27.758,30.57,-2.812,2.812,seasonal-timing-only: the level differs by an undocumented aggregation
+202309,Punjab,Lahore,31.55,74.35,31.5,74.3,30,25.767,29.01,-3.243,3.243,seasonal-timing-only: the level differs by an undocumented aggregation
+202310,Punjab,Lahore,31.55,74.35,31.5,74.3,31,19.232,23.45,-4.218,4.218,seasonal-timing-only: the level differs by an undocumented aggregation
+202311,Punjab,Lahore,31.55,74.35,31.5,74.3,30,14.578,19.0,-4.422,4.422,seasonal-timing-only: the level differs by an undocumented aggregation
+202312,Punjab,Lahore,31.55,74.35,31.5,74.3,31,9.497,14.2,-4.703,4.703,seasonal-timing-only: the level differs by an undocumented aggregation
+202401,Punjab,Lahore,31.55,74.35,31.5,74.3,31,5.633,12.25,-6.617,6.617,seasonal-timing-only: the level differs by an undocumented aggregation
+202402,Punjab,Lahore,31.55,74.35,31.5,74.3,29,9.166,14.36,-5.194,5.194,seasonal-timing-only: the level differs by an undocumented aggregation
+202403,Punjab,Lahore,31.55,74.35,31.5,74.3,31,14.196,20.49,-6.294,6.294,seasonal-timing-only: the level differs by an undocumented aggregation
+202404,Punjab,Lahore,31.55,74.35,31.5,74.3,30,18.258,26.82,-8.562,8.562,seasonal-timing-only: the level differs by an undocumented aggregation
+202405,Punjab,Lahore,31.55,74.35,31.5,74.3,31,24.344,34.76,-10.416,10.416,seasonal-timing-only: the level differs by an undocumented aggregation
+202406,Punjab,Lahore,31.55,74.35,31.5,74.3,30,28.102,38.44,-10.338,10.338,seasonal-timing-only: the level differs by an undocumented aggregation
+202001,Sindh,Karachi,24.86,67.01,24.9,67.0,31,13.8,17.85,-4.05,4.05,seasonal-timing-only: the level differs by an undocumented aggregation
+202002,Sindh,Karachi,24.86,67.01,24.9,67.0,29,17.367,21.66,-4.293,4.293,seasonal-timing-only: the level differs by an undocumented aggregation
+202003,Sindh,Karachi,24.86,67.01,24.9,67.0,31,20.324,23.47,-3.146,3.146,seasonal-timing-only: the level differs by an undocumented aggregation
+202004,Sindh,Karachi,24.86,67.01,24.9,67.0,30,24.209,27.97,-3.761,3.761,seasonal-timing-only: the level differs by an undocumented aggregation
+202005,Sindh,Karachi,24.86,67.01,24.9,67.0,31,27.007,29.22,-2.213,2.213,seasonal-timing-only: the level differs by an undocumented aggregation
+202006,Sindh,Karachi,24.86,67.01,24.9,67.0,30,28.859,30.63,-1.771,1.771,seasonal-timing-only: the level differs by an undocumented aggregation
+202007,Sindh,Karachi,24.86,67.01,24.9,67.0,31,29.409,31.04,-1.631,1.631,seasonal-timing-only: the level differs by an undocumented aggregation
+202008,Sindh,Karachi,24.86,67.01,24.9,67.0,31,28.502,29.75,-1.248,1.248,seasonal-timing-only: the level differs by an undocumented aggregation
+202009,Sindh,Karachi,24.86,67.01,24.9,67.0,30,27.08,28.27,-1.19,1.19,seasonal-timing-only: the level differs by an undocumented aggregation
+202010,Sindh,Karachi,24.86,67.01,24.9,67.0,31,24.555,27.12,-2.565,2.565,seasonal-timing-only: the level differs by an undocumented aggregation
+202011,Sindh,Karachi,24.86,67.01,24.9,67.0,30,19.203,23.06,-3.857,3.857,seasonal-timing-only: the level differs by an undocumented aggregation
+202012,Sindh,Karachi,24.86,67.01,24.9,67.0,31,15.569,20.37,-4.801,4.801,seasonal-timing-only: the level differs by an undocumented aggregation
+202101,Sindh,Karachi,24.86,67.01,24.9,67.0,31,12.761,18.95,-6.189,6.189,seasonal-timing-only: the level differs by an undocumented aggregation
+202102,Sindh,Karachi,24.86,67.01,24.9,67.0,28,18.11,22.43,-4.32,4.32,seasonal-timing-only: the level differs by an undocumented aggregation
+202103,Sindh,Karachi,24.86,67.01,24.9,67.0,31,21.707,25.76,-4.053,4.053,seasonal-timing-only: the level differs by an undocumented aggregation
+202104,Sindh,Karachi,24.86,67.01,24.9,67.0,30,24.769,28.42,-3.651,3.651,seasonal-timing-only: the level differs by an undocumented aggregation
+202105,Sindh,Karachi,24.86,67.01,24.9,67.0,31,27.561,30.33,-2.769,2.769,seasonal-timing-only: the level differs by an undocumented aggregation
+202106,Sindh,Karachi,24.86,67.01,24.9,67.0,30,28.247,30.49,-2.243,2.243,seasonal-timing-only: the level differs by an undocumented aggregation
+202107,Sindh,Karachi,24.86,67.01,24.9,67.0,31,28.011,29.81,-1.799,1.799,seasonal-timing-only: the level differs by an undocumented aggregation
+202108,Sindh,Karachi,24.86,67.01,24.9,67.0,31,26.067,28.09,-2.023,2.023,seasonal-timing-only: the level differs by an undocumented aggregation
+202109,Sindh,Karachi,24.86,67.01,24.9,67.0,30,27.763,29.54,-1.777,1.777,seasonal-timing-only: the level differs by an undocumented aggregation
+202110,Sindh,Karachi,24.86,67.01,24.9,67.0,31,23.833,26.76,-2.927,2.927,seasonal-timing-only: the level differs by an undocumented aggregation
+202111,Sindh,Karachi,24.86,67.01,24.9,67.0,30,20.04,25.12,-5.08,5.08,seasonal-timing-only: the level differs by an undocumented aggregation
+202112,Sindh,Karachi,24.86,67.01,24.9,67.0,31,16.608,21.13,-4.522,4.522,seasonal-timing-only: the level differs by an undocumented aggregation
+202201,Sindh,Karachi,24.86,67.01,24.9,67.0,31,14.459,18.69,-4.231,4.231,seasonal-timing-only: the level differs by an undocumented aggregation
+202202,Sindh,Karachi,24.86,67.01,24.9,67.0,28,17.904,21.57,-3.666,3.666,seasonal-timing-only: the level differs by an undocumented aggregation
+202203,Sindh,Karachi,24.86,67.01,24.9,67.0,31,21.652,25.55,-3.898,3.898,seasonal-timing-only: the level differs by an undocumented aggregation
+202204,Sindh,Karachi,24.86,67.01,24.9,67.0,30,24.83,28.37,-3.54,3.54,seasonal-timing-only: the level differs by an undocumented aggregation
+202205,Sindh,Karachi,24.86,67.01,24.9,67.0,31,26.679,29.56,-2.881,2.881,seasonal-timing-only: the level differs by an undocumented aggregation
+202206,Sindh,Karachi,24.86,67.01,24.9,67.0,30,27.315,29.74,-2.425,2.425,seasonal-timing-only: the level differs by an undocumented aggregation
+202207,Sindh,Karachi,24.86,67.01,24.9,67.0,31,27.479,29.29,-1.811,1.811,seasonal-timing-only: the level differs by an undocumented aggregation
+202208,Sindh,Karachi,24.86,67.01,24.9,67.0,31,26.804,28.05,-1.246,1.246,seasonal-timing-only: the level differs by an undocumented aggregation
+202209,Sindh,Karachi,24.86,67.01,24.9,67.0,30,26.177,27.51,-1.333,1.333,seasonal-timing-only: the level differs by an undocumented aggregation
+202210,Sindh,Karachi,24.86,67.01,24.9,67.0,31,23.925,26.61,-2.685,2.685,seasonal-timing-only: the level differs by an undocumented aggregation
+202211,Sindh,Karachi,24.86,67.01,24.9,67.0,30,21.536,24.97,-3.434,3.434,seasonal-timing-only: the level differs by an undocumented aggregation
+202212,Sindh,Karachi,24.86,67.01,24.9,67.0,31,16.605,21.62,-5.015,5.015,seasonal-timing-only: the level differs by an undocumented aggregation
+202301,Sindh,Karachi,24.86,67.01,24.9,67.0,31,13.258,18.46,-5.202,5.202,seasonal-timing-only: the level differs by an undocumented aggregation
+202302,Sindh,Karachi,24.86,67.01,24.9,67.0,28,18.028,22.19,-4.162,4.162,seasonal-timing-only: the level differs by an undocumented aggregation
+202303,Sindh,Karachi,24.86,67.01,24.9,67.0,31,21.563,25.46,-3.897,3.897,seasonal-timing-only: the level differs by an undocumented aggregation
+202304,Sindh,Karachi,24.86,67.01,24.9,67.0,30,23.731,27.11,-3.379,3.379,seasonal-timing-only: the level differs by an undocumented aggregation
+202305,Sindh,Karachi,24.86,67.01,24.9,67.0,31,26.631,29.45,-2.819,2.819,seasonal-timing-only: the level differs by an undocumented aggregation
+202306,Sindh,Karachi,24.86,67.01,24.9,67.0,30,28.437,30.96,-2.523,2.523,seasonal-timing-only: the level differs by an undocumented aggregation
+202307,Sindh,Karachi,24.86,67.01,24.9,67.0,31,28.266,30.23,-1.964,1.964,seasonal-timing-only: the level differs by an undocumented aggregation
+202308,Sindh,Karachi,24.86,67.01,24.9,67.0,31,25.848,27.59,-1.742,1.742,seasonal-timing-only: the level differs by an undocumented aggregation
+202309,Sindh,Karachi,24.86,67.01,24.9,67.0,30,26.054,28.59,-2.536,2.536,seasonal-timing-only: the level differs by an undocumented aggregation
+202310,Sindh,Karachi,24.86,67.01,24.9,67.0,31,25.584,28.62,-3.036,3.036,seasonal-timing-only: the level differs by an undocumented aggregation
+202311,Sindh,Karachi,24.86,67.01,24.9,67.0,30,21.322,25.93,-4.608,4.608,seasonal-timing-only: the level differs by an undocumented aggregation
+202312,Sindh,Karachi,24.86,67.01,24.9,67.0,31,17.027,21.99,-4.963,4.963,seasonal-timing-only: the level differs by an undocumented aggregation
+202401,Sindh,Karachi,24.86,67.01,24.9,67.0,31,15.989,20.63,-4.641,4.641,seasonal-timing-only: the level differs by an undocumented aggregation
+202402,Sindh,Karachi,24.86,67.01,24.9,67.0,29,18.42,21.65,-3.23,3.23,seasonal-timing-only: the level differs by an undocumented aggregation
+202403,Sindh,Karachi,24.86,67.01,24.9,67.0,31,20.113,23.48,-3.367,3.367,seasonal-timing-only: the level differs by an undocumented aggregation
+202404,Sindh,Karachi,24.86,67.01,24.9,67.0,30,24.254,27.27,-3.016,3.016,seasonal-timing-only: the level differs by an undocumented aggregation
+202405,Sindh,Karachi,24.86,67.01,24.9,67.0,31,26.963,30.3,-3.337,3.337,seasonal-timing-only: the level differs by an undocumented aggregation
+202406,Sindh,Karachi,24.86,67.01,24.9,67.0,30,28.727,31.38,-2.653,2.653,seasonal-timing-only: the level differs by an undocumented aggregation

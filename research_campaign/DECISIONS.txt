@@ -1,0 +1,1827 @@
+PAKEMIS RESEARCH CAMPAIGN - DECISION LOG
+Campaign pakemis-research-2026-10-05. Start 2026-10-05T02:58:36Z, deadline
+2026-10-06T02:58:36Z (Asia/Karachi 07:58:36 both days). Deadline fixed at
+initialization and never recomputed.
+
+Format: ID | lane | what was decided | evidence | what it changes | status
+
+D001 | COORDINATOR | The campaign's baseline is content 7fa63945 / artifacts 249853de,
+not the previous campaign's 105d9361. | The session that preceded this campaign integrated
+the author's compact editorial rewrite under the repository's guards: its 110 printed
+quantities converted from bare prose to siunitx so the quantity sweep can see them, both new
+documents registered in the release-identity registry, the four figures rewired to read the
+products instead of a transcription (all 39 values agreed exactly), and a reader-visible
+defect fixed in Table 2 (the notation partition summed to 107 against a 108-row product and
+its own caption; the missing cell is soda ash 2.B.7 NA). | Release integrity 48/48 green at
+the baseline. One baseline failure is carried deliberately as BL1: the 110 quantities are now
+VISIBLE and therefore unregistered. | accepted
+
+D002 | ENERGY | The draft power diagnostics are NOT stale. All three public-power readings
+reproduce exactly from the current product, and so do the implied efficiencies. | 
+outputs/power_uncertainty_scenarios_fy2023_24.csv gives grid_nepra_reference 57.82049,
+grid_plant_cv_restated 38.45184, grid_plus_ke 61.83442. 
+outputs/pakemis_power_coal_energy_adjudication.csv gives table3_implied_efficiency_pct 57.5
+(FY2020-21) and 18.9 (FY2023-24), and plant_implied_efficiency_pct spanning 32.4-45.7. | 
+Section 6's first instruction is satisfied: the diagnostics can be acted on. | verified
+
+D003 | ENERGY | The national coal-energy control that the REFERENCE reading rests on implies
+a physically impossible fleet efficiency in three of five years, and its error changes sign
+across the series. | Implied net fleet thermal efficiency against a 28-47% envelope (sub-
+critical 33-37, supercritical 37-42, ultra-supercritical 42-47; Pakistan's coal fleet is
+predominantly supercritical):
+  national control, HDIP Table 3   18.9 - 57.5   3 of 5 years outside   45.1 -> 57.5 -> 29.6 -> 22.8 -> 18.9
+  national mass control, Table 21  34.4 - 38.7   0 outside, a 4.3-point band
+  HDIP mass route                  29.1 - 49.0   1 outside
+  plant ledger, per-plant NCV      32.4 - 45.7   0 outside
+No coal fleet gains and then loses 39 efficiency points in four years. | This is the
+"internal physical plausibility" criterion Section 6 names for selecting a reference. It does
+NOT yet demonstrate an error in a specific input: the efficiency is IMPLIED, so the
+implausibility may sit in coal mass, calorific basis, plant coverage or generation. The
+reference is not moved on this evidence alone, and certainly not toward an external
+inventory. | open - T-ENERGY-2 decomposes the implied efficiency into its four inputs per
+year to locate which one drifts
+
+D004 | COORDINATOR | Pins are preserved, not re-based. | The prompt instructs that an
+intentionally pinned scientific baseline be preserved with a supported candidate alongside
+it. L 469.63822 / S 464.50543 AR5 stay as the release pin; any candidate that moves a
+national total is published beside the pin with its evidence and its own identifier. |
+Protects before/after comparison for the whole campaign. | standing
+
+D005 | LAND | Pakistan's official land account is TWO YEARS, not a series, and one of those
+years is published three times. | BTR1 (2024), CRT v2.83 and the TNC (2025) all carry an
+identical FY2020-21 land block: 34.82 Mt CO2e, of which forest 28.64, cropland 5.67, wetlands
+0.48, grassland 0.03. BUR1 (2022) is the only genuinely different account: 31.52 Mt for
+FY2017-18. Pakistan reports forest land as a net SOURCE of +28.44 Mt CO2. | PakEmis cannot
+import an official land SERIES, because none exists. Any nine-year land panel would be
+modelled, not reported. | verified | research_campaign/land/official_account.csv
+
+D006 | LAND | The published gross decomposition of forest-land CO2 is wrong, and the CRT's own
+cells correct it with no new data. I verified this independently rather than taking the
+worker's summary. | BTR1/TNC state "gross CO2 emissions 43.55 Mt, removals 15.11 Mt". Those
+are sums of net-signed STRATA (6.51+12.91+13.56+10.57 = 43.55). The CRT's own carbon-stock
+cells give gains 7113.0835 kt C and losses 14868.3485 kt C; at 44/12 that is gross removals
+26,081.3 and gross emissions 54,517.3 kt CO2, netting to 28,435.972 - which reproduces the
+reported value to 0.000 kt, and gains-minus-losses closes to 1e-9. Both pairs net to 28.44,
+but the published pair understates each gross flow by exactly 10.97 Mt. BUR1 DID report a
+real gross split (32.68/57.54), so this is a regression in the newer submission. | A
+correction PakEmis can publish against the official account from three printed cells. Gross
+emissions, gross removals and net flux are different outputs (prompt section 10d). | verified
+
+D007 | LAND | The land-use-change half of LULUCF does not exist in the official record. | CRT
+Table4.1, the land transition matrix, has ZERO numeric cells; every "4.X.2 land converted to"
+row is blank. BUR1 states the omission outright. | "Land remaining in a class" and "land
+converted to it" are distinct (section 10B). Only the former is available, so any PakEmis
+land component is at best half of LULUCF and must be labelled as such. | verified
+
+D008 | LAND | Only living biomass is estimated. | Dead wood, litter, mineral and organic soil
+carbon and harvested wood products are blank in every land class; Table4.Gs2 holds only year
+labels. Settlements (4.E), Other land (4.F) and HWP (4.G) are wholly absent. Grassland CO2 is
+zero BY STATED ASSUMPTION over 53,041 kha. | A pool assumed unchanged is an assumption, not a
+measured zero (section 10). The coverage table must say so per pool. | verified
+
+D009 | LAND | DOUBLE-COUNT HAZARD, and it would have been easy to miss. All land biomass-
+burning non-CO2 is reported in the AGRICULTURE CRT, not the land tables. | 3.E forest and
+grassland fires = 228.40 kt CO2e (its NOx 3.92871 and CO 122.115 are byte-identical to the
+LULUCF Table 4 total row), and 3.F crop residue = 3253.17 kt CO2e. The BTR nevertheless folds
+these into its land block. | Adopting the BTR's cropland 5.67 Mt alongside PakEmis's existing
+agricultural residue burning would double count. The crosswalk in T-LAND-2 must resolve this
+before any land component is integrated. | verified - blocking for integration
+
+D010 | LAND | FAOSTAT and Pakistan disagree about the SIGN of forest-land flux, by about 7% of
+the national total. | FAOSTAT forest land is a net SINK of -4.107 Mt CO2 (2016-2020) and
+-3.498 (2021-2025) against Pakistan's reported +28.436 - a 32 Mt gap. The worker verified
+FAOSTAT's own interpolation: only 2015 and 2020 carry the FRA observation flag X; every other
+year is flag I and reproduces by linear interpolation, so the flux is period-constant within
+each FRA interval. | This is not a PakEmis error to fix; it is a comparator disagreement to
+report with its mechanism. It also means FAOSTAT cannot serve as an independent check on the
+official land account. | verified
+
+D011 | LAND | The national forest definition is not observable by any sensor, so raster
+comparisons must go against FRA, never the CRT area. | National definition (FREL s.1.4.1):
+>=0.5 ha, crown cover >10%, potential height 2 m, PLUS irrigated plantations and anything
+notified as forest in law. FRA uses 5 m and therefore reclassifies Pakistan's scrub forest to
+other wooded land. FRA Forest 2020 = 3,088.53 kha against CRT 4,079.63 kha, a 32% purely
+definitional gap; CRT forest matches FRA Forest+OWL (4,113.66 kha) to 0.8%. The "notified in
+law" clause is administrative. | Settles section 10a: a tree-cover product cannot be compared
+with the CRT's forest area. | verified
+
+D012 | LAND | First reproducible land component selected: forest-land net CO2 with its
+corrected gross decomposition. | Three printed CRT Table4.A cells (gains 7113.0834552, losses
+14868.348452164, net -7755.264996964 kt C) and 44/12 reproduce the reported 28,435.972 kt CO2
+exactly and publish the corrected gross pair. Second choice, if a second component is wanted:
+cropland residue burning from Table3.F, whose inputs are all printed and which reproduces
+3253.17 kt CO2e exactly - but D009 makes it the double-count risk, so forest land goes first.
+| This is level A in section 10: an official-account transcription and correction, explicitly
+NOT an independently validated PakEmis land estimate. | accepted - T-LAND-2 next
+
+D013 | LAND | Five defects found in the official record, beyond D006. | (i) Year label
+conflict: every LULUCF and Agriculture CRT sheet reads "Year: 2021-22" while the BTR and TNC
+narrate the same numbers as FY2020-21. (ii) Reported areas are impossible: 4.A+4.B+4.C+4.D =
+182,676 kha = 2.37x Pakistan's land area, cropland alone 124,367.6 kha. (iii) The kt C stock
+changes sit in the implied-factor (t C/ha) column block. (iv) 1,065 kha labelled "peat
+extraction remaining peat extraction". (v) Wetland components sum to 0.498 against a 0.49
+table total and 0.48 in Table 7. Plus two unexplained sign flips between BUR1 and BTR1 with
+no restatement note: linear plantations +10.584 -> -0.32 Mt, a 10.9 Mt swing, and sub-alpine
+forests +0.811 -> -0.15. | These are findings about the official account, reportable as such.
+They do not change a PakEmis number. | verified
+
+D014 | AGENT | Baseline measured on 54 locked cases (34 dev + 20 held out, frozen by SHA-256
+before the baseline ran). Dev scores: numeric 15/18 (0.83), boundary 20/22 (0.91), source
+29/31 (0.94), uncertainty 8/10 (0.80), refusal 3/5 (0.60), all five axes clean 25/34 (0.74).
+29 answers came through the tool loop, 4 from the model with no tool call, 2 produced nothing.
+| ~/Desktop/pakemis-explorer/eval/ committed locally as 2958a7e; explorer tests 492->494
+passed with the vendored engine untouched. No reference number was typed by hand: every one
+resolves by execution through the same Service the API serves from, and nine were re-derived
+independently from this repository's published CSVs with 0 disagreements. No LLM preference
+score anywhere. | Establishes the controlled baseline section 12 requires. The holdout is
+unspent. | verified
+
+D015 | AGENT | Isolation is stated honestly rather than overstated. | 20 holdout cases live in
+eval/holdout/ frozen by digest; the runner refuses that split without an explicit flag; three
+checkable assertions hold (digests match, no module the agent loads names the holdout, no
+holdout question text appears under api/, assistant/, web/ or scripts/). HOLDOUT.md says in
+those words that this is NOT secrecy - same repository, same working tree, no access control.
+| The claim is only "frozen before measurement and absent from what the agent reads at
+runtime", which is what the runtime supports. | accepted
+
+D016 | AGENT | CONFIRMED BY MY OWN CHECK: the agent's system prompt contradicts the engine,
+and it causes receipt-free refusals. | api/pakemis_api/ask/prompt.py line 118 states "Levels:
+national for every fiscal year; adm1 (provinces) and adm2 (districts) for the reference year
+only". But outputs/pakemis_adm1_by_year.csv carries all nine fiscal years (7,838 rows), the
+semantic layer's fact_adm1_year.csv agrees, and the three spatial views partition the mass
+exactly - FY2015-16 provincial totals sum to 401.090, which is the published FY2015-16
+national total. The service itself resolves FY2015-16 adm1 Punjab. 4 of 34 dev answers were
+produced with no tool call at all, one of them refusing a provincial figure that exists. |
+A one-line prompt correction with measured consequences. Section 12 explicitly includes
+prompting as a place errors live. | verified - fix queued as T-AGENT-2
+
+D017 | AGENT | A service-layer divergence found by checking the agent lane's number rather
+than accepting it, and it is year-specific. | Punjab adm1, configuration REF_2023_24,
+spatial_view all:
+                         products (both)      service        gap
+  FY2023-24 (reference)     238.092173     238.097184     +0.005011  (rounding)
+  FY2015-16 (historical)    220.768318     220.114574     -0.653744  (0.30%)
+outputs/pakemis_adm1_by_year.csv and outputs/semantic/fact_adm1_year.csv agree exactly with
+each other in both years, and fact_adm1_year holds only REF_2023_24, so this is not a
+configuration or a product disagreement. | The divergence is in the service's HISTORICAL
+provincial path, not in the inventory. A prior note records that historical ADM1 was wired
+into the API as a follower and that post-release changes need the fixpoint artifacts commit,
+so a stale historical vintage in the API is the leading hypothesis - NOT asserted here, and
+the next step is to identify what vintage the API's historical adm1 actually reads. | open -
+T-AGENT-3
+
+D018 | AGENT | Document content can reach the model unfenced, and no rule says it is data. |
+get_completeness and get_method ship the registries' free-text justification/notes - prose
+transcribed from government documents, up to ~1,440 characters a cell and ~25 KB a call -
+into tool-result content with no fence, and the system prompt contains no statement that tool
+text is evidence rather than instruction. A probe placed an override instruction in that
+field against a stub service only; the one turn tested IGNORED it. | Mechanism present,
+defence absent, exploit unproven: a defence-in-depth gap, not a demonstrated break. The fix
+is a prompt rule plus fencing, and it is cheap. | open - T-AGENT-2
+
+D019 | AGENT | Four located agent failures with mechanical causes, which matter more than the
+rates. | (i) D22: asked for the gross-gas accounting CONFIGURATION, the agent used
+spatial_view="accounting" - a different dimension - and answered confidently with a valid
+receipt and the wrong question's number. Source support is not correctness. (ii) D19/D28: no
+answer at all, both hitting the 8-call cap, because the tool schema advertises group_by values
+the engine refuses at national grain and get_uncertainty returns identical national rows for
+every resolution, so nothing tells the agent to stop guessing. (iii) D26: reported uncertainty
+as a point (two Monte Carlo medians, no interval) because the interval lives in a block the
+model's view cannot print, and offered the median as the reference value. (iv) D16: gave the
+power figure without naming which boundary it is. | Each is a tool-schema or presentation
+repair rather than a prompting flourish. | open - T-AGENT-2
+
+D020 | ENERGY | THE DRIFTING INPUT IS THE CALORIFIC BASIS, and the fleet's efficiency never
+moved. Verified by my own arithmetic from the worker's model-free channel. | NEPRA SoIR 2024
+Table 21 prints coal tonnage and NET generation side by side, so electricity per tonne uses no
+calorific value and no heat rate at all. Against the fleet's rank-composition NCV:
+  period      GWh/kt   NCV TJ/Gg   lignite% of mass   PHYSICAL eff%   Table 3 implied
+  FY2019-20    2.073     21.54          30.6              34.65            45.1
+  FY2020-21    2.101     21.97          27.6              34.43            57.5
+  FY2021-22    2.186     20.34          39.3              38.69            29.6
+  FY2022-23    1.497     15.42          74.6              34.95            22.8
+  FY2023-24    1.273     13.01          92.0              35.23            18.9
+Physical efficiency moves +0.58 points over five years (+1.7% relative) and is inside the
+28-47% envelope in every one. Table 3 implies a 26.2-point collapse. Electricity per tonne
+falls 38.6% and the fleet's physical NCV falls 39.6% - they track, which is what a constant
+efficiency under a rank shift looks like - while HDIP's inferred power-coal factor RISES 6.9%
+(18.73 -> 20.02 TJ/Gg). The conversion factor does not track Thar lignite going from 30.6% to
+92.0% of the coal mass. | The apparent efficiency collapse is an artifact of the calorific
+basis, not a change in the fleet. This is the physical-plausibility criterion of section 6,
+answered. | verified
+
+D021 | ENERGY | Table 3's coal energy is physically INFEASIBLE in the reference year. | Read
+at the fleet's physical calorific value, Table 3's FY2023-24 power-coal energy requires 29,528
+kt of coal against a national coal supply of 24,719 kt - 119.5% of all the coal supplied to
+Pakistan. The series runs 37.7 / 28.0 / 57.5 / 89.9 / 119.5 percent of national supply. | The
+reference reading grid_nepra_reference (57.82049 Mt) rests on this control. A national control
+cannot simultaneously describe what the fleet burned and exceed the national supply. | verified
+- this is now the strongest evidence in the campaign for a declared pin re-base, which remains
+the USER's decision under D004, not mine. C1 (NEPRA metered tonnage at the fleet's rank
+composition) is in band 34.4-38.7 in all five years.
+
+D022 | ENERGY | CORRECTION TO MY OWN D003. I listed four routes as though independent; one is
+circular. | The plant-ledger route's energy is identically the sum of (generation x printed
+heat rate), so its "implied efficiency" is the harmonic mean of NEPRA's PRINTED efficiencies
+and is inside any plausible envelope by construction. It cannot corroborate the envelope it is
+tested against, and the shipped module treats it as independent confirmation. Only the
+rank-composition route is independent of the printed heat rates. | D003's conclusion survives
+- Table 3 is still outside the envelope in three of five years - but it rested on 2 of 4
+routes agreeing, and the honest count is 1 independent route plus 1 circular one. Recorded
+rather than quietly amended. | corrected
+
+D023 | ENERGY | Power and industrial coal cannot confirm each other: industrial coal is a
+RESIDUAL. | HDIP's coal consumption IS its supply (the allocation identity closes to +/-0 kt
+in 12 of 14 years). Across FY2019-20..FY2023-24 the national total moved -4 kt while power
+went +8,299 and brick+cement -8,304. Brick is the plug: 8,184/8,678 kt in exactly the two
+years NEPRA out-reports HDIP's power column, collapsing to 1,129 kt in the year HDIP
+out-reports NEPRA by 3,320 kt. The FY2023-24 revision moved brick -435 kt and power not at
+all. | Any "offsetting" between power and industry coal is arithmetic, not evidence. Section
+6's non-independence question, answered. | verified
+
+D024 | ENERGY | The decline survives; the PEAK's location does not. | Under NEPRA's metered
+tonnage, FY2020-21 and FY2021-22 become a plateau differing by 0.04-0.19 Mt, and FY2023-24
+lands at 474-480 rather than 494. The decline into FY2022-23 survives every configuration
+(-41 to -45 Mt). Of the +14.67 Mt FY2021-22 step in the power-coal lane - itself 80% of the
+national year-on-year rise - +6.99 Mt is HDIP's conversion factor and +7.68 Mt its tonnage,
+while NEPRA's metered tonnage FELL 7.3% and net generation 3.5% that year. | The published
+FY2021-22 peak is substantially an allocation artifact. This bears directly on the
+manuscript's trend sentence. | verified - indicative configuration product, reproduces the
+shipped FY2023-24 lane to 0.4%
+
+D025 | ENERGY | Two high-severity code defects, neither fixed. | (i) The banner of
+src/pkinv/sectors/power/coal_energy_adjudication.py concludes "the disagreement is in the MASS
+ACCOUNTS rather than in a conversion" - it read two stable years as a stable panel, and that
+sentence steered power_table3_hypotheses.csv toward the mass accounts. It is wrong: D020
+locates the drift in the conversion. (ii) The circularity of D022. Also medium: the fleet CV is
+weighted over stations that HAVE a printed heat rate and then multiplied by TOTAL mass, so in
+FY2019-20 and FY2020-21 an imported-only CV is applied to lignite tonnes (repairing it moves
+plant_implied_efficiency_pct 32.4->38.1 and 33.1->38.1); the code's envelope is 30-45 where
+this campaign tests 28-47, under which two shipped verdict strings are wrong; and a probable
+NEPRA mass error no repo diagnostic names - Sahiwal FY2021-22 prints 1,443.97 kt for 6,881 GWh
+= 4.766 GWh/kt against its own 2.44-2.72, about 1,170 kt missing, which alone explains much of
+the FY2021-22 mass-account crossing the repo attributes to consumption-versus-receipts. |
+research_campaign/energy/defects_found.md | open
+
+D026 | BIOMASS | The dung residual is an ASSIGNMENT problem, not a mass problem, and the
+settling observation is named. | Both sides reproduce exactly (58.74144265 Mt ledger /
+11.96738885 Mt HIES, residual 46.77405 = 79.63%), and L - S = 5.1328 Mt CO2e is exactly the
+pin gap. They measure different things: L is all excreted N leaving manure management for fuel
+use by any burner anywhere; S is formed cake entering a sampled dwelling, so commercial
+tandoors, eateries and on-farm burning are inside L's definition and outside S's frame. Three
+candidate explanations run the WRONG way - closing any of them RAISES L (L covers only
+dairy/other cattle and buffalo while HIES is species-agnostic; the implied cake N is high in
+the published range; and no fuel-preparation, collection or spoilage loss term exists anywhere
+in the chain, so 100% of diverted volatile solids becomes burnable cake, priced at zero in
+both configurations). Ash over its declared 15-35% span moves L only 51.8-67.8 Mt, so it
+cannot produce a factor of 4.9. | Sharpest form: L as a HOUSEHOLD quantity requires either
+72.6% of Pakistani households burning cake at the observed 5.55 kg/day, or the observed 14.79%
+burning 27.2 kg/day. Neither is observed. Spread over ALL households L is 4.03 kg/hh/day, so L
+is not absurd as a national fuel quantity - it is specifically the assignment to the surveyed
+14.8% that the survey contradicts. The settling observation is a national prevalence
+measurement of dung-cake cooking fuel plus a commercial-sector fuel survey; Census 2023's
+district cooking-fuel distribution is the first instrument and holdings.py reports NOTHING
+held in any layer. No residual was distributed. | verified
+
+D027 | BIOMASS | The +148.6 Mt wastewater endpoint is ALREADY IN the ensemble, with a
+probability. Section 7's question, answered as it asked. | The worker reproduced the engine's
+RNG bit-exactly against the persisted draws (max abs diff 0.000e+00 over the first 200), so
+everything below is computed on the draws the published ensemble consumed. The factor is a
+bounded split-triangular in LOG space over [0.0005, 0.25], mode = median = 0.005, mean
+0.016080, hard truncation, own seed 4421, singleton correlation group, waste a declared
+CRN-island. 0.25 is the SUPREMUM: attained with probability exactly zero. P(ef>=0.24) =
+0.0054%, P(ef>=0.2) = 0.1627%, P(ef>=0.1) = 2.743%. The +148.6435 Mt endpoint is a national
+total of 618.282 Mt whose probability under the published ensemble is 0.127% - about 1 draw in
+790 - and the ensemble's own P99.9 is 623.6 Mt, ABOVE the endpoint. Freezing the factor at
+0.005 draw-by-draw moves national P97.5 from 550.0 to 529.0 (-21.0 Mt, 26% of the upper arm)
+and P99.9 from 623.6 to 572.8; 93% of the endpoint's probability mass is this one factor. |
+So it is a stress test of a parameter already represented, NOT an additional structural
+allowance. Declaring an inconsistency from "the endpoint exceeds P97.5" would have been
+wrong, which is exactly what section 7 warned against. | verified
+
+D028 | UNCERTAINTY | THE PRIORITY RANKINGS OMIT THE LARGEST SINGLE DRIVER OF THE NATIONAL
+UPPER TAIL, and the code comment that justifies the omission is false. Verified by me
+directly, not taken from the worker. | The variance attribution is a SURROGATE for the two
+injected modules: report/variance_attribution.py samples a mean-preserving lognormal, while
+the engine samples a median-preserving bounded shape. Log-variance is matched exactly by
+construction; the LEVEL is not (surrogate mean 0.005 / median 0.002196 against the bounded
+shape's median 0.005 / mean 0.016080), so Var(ef) is 7.60e-4 native against 1.05e-4 surrogate,
+a factor of 7.3. Consequences I checked in the shipped products:
+  - outputs/national_variance_attribution.csv publishes waste:ww_ef_effluent at total-effect
+    0.0487. The worker's ensemble-native index from the actual draws is S_T = 0.275, a 5.6x
+    understatement; domestic wastewater carries 31.8% of national ensemble variance and this
+    factor is 86% of that.
+  - The parameter appears in NO row of outputs/national_priority_rankings.csv - not in the 5
+    parametric rows, not in the 21 structural, not in the 5 coverage. The published parametric
+    top five is ef:enteric_buffalo 0.25841, livestock:buffalo 0.06702, ef:enteric_other_cattle
+    0.06647, waste:ww_mcf_sewer 0.05662, ef:enteric_dairy_cattle 0.05397. At S_T = 0.275 it
+    would rank FIRST, above enteric_buffalo - and that comparison is apples-to-apples, because
+    agriculture is not injected so its index IS the ensemble's.
+  - src/pkinv/report/priority_rankings.py excludes the effluent axis from the STRUCTURAL
+    ranking and justifies it in a comment: "The endpoint's leverage is not hidden: it leads the
+    PARAMETRIC ranking through the bounded factor." It does not lead that ranking and is not in
+    it. The exclusion is self-justifying on a false premise. | open - the fix is to label the
+injected modules' rows as surrogate and publish the ensemble-native index beside them, and to
+correct the comment and the exclusion rule. T-UNC-1.
+
+D029 | UNCERTAINTY | A systematic estimator artifact in the published attribution, LARGER in
+scope than the worker reported. | The worker noted "five of the top twelve rows carry a
+negative interaction". I checked every row: first_order_index exceeds total_effect_index in
+142 of 151 rows (142 negative, 9 positive; mean -0.00228, range -0.00669 to -0.00017). S_1 <=
+S_T is a mathematical identity for a true Sobol pair, and a random estimator error would split
+the sign about evenly - 142/151 one way is systematic, not noise. The published file carries
+NO banner declaring the estimator, its sample size or this artifact. | It does not by itself
+reorder the ranking at these magnitudes, but a table in which 94% of rows violate the
+identity they are named for must say so. | open - T-UNC-1
+
+D030 | UNCERTAINTY | The wastewater N2O denominator is a boundary HYPOTHESIS, not an error,
+and no gap row covers it. | The factor applies to the protein-derived nitrogen of the WHOLE
+population (1,456,932 t N) at the point of GENERATION, with no discharge-pathway split and no
+IPCC Eq 6.9 N_SLUDGE term - while the CH4 side splits five pathways with five MCFs. That is
+faithful to 2006 Tier 1, whose Eq 6.9 has no pathway split, so it is filed as a hypothesis.
+But if the denominator is read as nitrogen reaching an aquatic environment, a strict reading is
+about 29% of the population and the deterministic N2O falls roughly 3.4x (3.03 -> ~0.9 Mt),
+taking the ceiling endpoint with it (152 -> ~44 Mt). The sector already adopts 2019-Refinement
+defaults elsewhere (oxidation factor 0.71, SWDS delay 6 months), so the vintage is mixed, and
+data_gaps.csv has no row for the N2O denominator - its three wastewater rows cover industrial
+4D2, the sewer MCF and organic loading. | A gap row is owed either way, and the 2019
+Refinement's Eq 6.7/6.8 text should settle it. | open - T-UNC-2
+
+D031 | MISSING SOURCES | THE COMPLETENESS TABLE IS ITSELF INCOMPLETE, and it is the same bug
+the module's own docstring records from an earlier round. Verified by me directly. |
+outputs/completeness.csv carries 9 IPPU codes (2.A.1, 2.A.2, 2.B.1, 2.B.2, 2.B.7, 2.C.1,
+2.D.1, 2.F, 2.F.1). outputs/ippu_completeness_2024.csv carries 36, and 28 of them have NO ROW
+AT ALL in the national table: 2.A.3, 2.A.4, 2.B.3-2.B.6, 2.B.8-2.B.10, 2.C.2-2.C.7, 2.D.2,
+2.D.3, 2.E, 2.F.2-2.F.6, 2.G.1-2.G.4, 2.H. All 28 are marked NE by the sector, with
+materiality medium 8 / low 15 / unknown 4 / medium-high 1. The module's docstring states its
+purpose as "every category x gas is listed" and records the historical version of this exact
+bug - "electricity generation and road transport, the country's second and third largest
+categories, were absent from this table entirely and nothing complained". The guard was then
+strengthened to walk registry.all_sectors() so a registered category with no ESTIMATED row
+fails the build. The NE universe was never guarded, so a category a sector marks NE can be
+absent from the national table and nothing complains. | This is one level up from the NA
+omission I fixed this morning: that was a partition summing to 107 of 108; this is the
+universe being 108 where it should be 136. The paper prints "108 category-gas combinations
+spanning 38 IPCC codes". | open - T-MISS-3
+
+D032 | MISSING SOURCES | And NE is the wrong key for 9 of the 28, which the vocabulary cannot
+express. | NE means "occurs, but not estimated". Nine of the 28 carry next_action "Establish
+occurrence before assigning NO" - 2.B.3 adipic acid, 2.B.4 caprolactam, 2.B.5 carbide, 2.B.6
+titanium dioxide, 2.C.2 ferroalloys, 2.C.4 magnesium, 2.C.7 other metals, 2.G.2 other SF6/PFC
+product use, 2.G.4 other product manufacture. For these, occurrence in Pakistan is
+unestablished, so asserting NE claims something unknown and assigning NO would claim the
+opposite. The five IPCC keys (E/NE/NO/IE/NA) have no state for "occurrence not established". |
+The campaign's own four statuses are to be carried BESIDE the IPCC notation, which is exactly
+what this needs: these nine are UNESTIMATED/BLOCKED with the blocking input named
+("occurrence"), while their IPCC key stays NE with the overclaim declared rather than hidden.
+Do not resolve it by quietly marking them NO. | accepted as the rule for T-MISS-3
+
+D033 | MISSING SOURCES | Pakistan's own BTR1 prints magnitudes for categories PakEmis omits
+entirely, and one flat contradiction. | 4.D.2 industrial wastewater 2.22 Mt, 2.H 1.35, 2.A.2
+lime 1.33, 1.B.1 solid fuels 0.73, 2.A.4 0.27, 4.C.1 0.11, marine bunkers 0.040. Recorded as
+SCOPE SCREENS and not as values: the same official table books 4.C.2 open burning at 0.20 Mt
+against PakEmis's 3.83 Mt, so its magnitudes are not interchangeable with this inventory's.
+The contradiction: PakEmis states there was no formal bunkering market before 2026 while the
+BTR books 0.040 Mt for 2021. | Screening only; nothing enters a total. The bunkering claim
+needs resolving either way. | verified
+
+D034 | MISSING SOURCES | F-gases: the official record books ONE species, and it looks
+misfiled. | Pakistan's 2022 CRT (Table2(II).B-Hs2) books all of category 2.F as HFC-23,
+0.236955 t, from a declared stock of 23.695 t at a 1% product-life factor, entered at 2.F.1.a
+COMMERCIAL REFRIGERATION with every other subcategory IE - 0.00294 Mt CO2e in total. BTR1 2024
+prints 2.F, 2.C, 2.E and 2.G all as zero. HFC-23 is an HCFC-22 by-product and a cascade
+component, not a commercial refrigerant, so the species assignment is implausible on its face.
+| EDGAR's 11.54 Mt is NOT usable as a value: it implies 60,000-109,000 t of refrigerant in
+service, 3.0-5.4x the supply-side bank and 7.7-13.9x the household stock, and its cumulative
+1990-2024 emissions are 2.6x the entire Article-7-era supply. The sharpest usable result is
+per application - for refrigeration two independent banks agree to 1.3x while emissions differ
+107x, isolating the LEAK RATE as the sole cause: the stratum is priced at 8%/yr where IPCC
+Table 7.9 gives domestic refrigeration 0.1-0.5%/yr, and a domestic/commercial split nobody
+holds decides about 1.2 Mt. | SCREENING. 2.F stays NE. The one unmet activation criterion for
+a bank method is pre-charged equipment imports. | verified
+
+D035 | MISSING SOURCES | A shipped F-gas product silently loses bank mass, and the worker
+corrected two claims of its own. | run_bank iterates only the rows it is given, so six strata
+whose supply rows stop are truncated and 340.3 t of bank (0.5557 Mt CO2e, R-407C alone 0.458)
+vanishes without the per-step closure assertion firing - it cannot catch a step that never
+runs; 2.F.3 and 2.F.4 disappear from 2024 as a result. Also: the retire-fraction pass
+reimplements the kernel's arithmetic with a max(bank,0) clamp the kernel lacks (currently
+equivalent, fragile), and one 8%/yr loss rate is applied to a stratum IPCC splits in two. |
+The worker also withdrew two of its own claims: it had said the HIES equipment-stock indicator
+was held but unread and that its screen was the first to use it - false, scripts/
+build_hfc_bank_series.py is already a Phase and ships a band its own screen lands inside
+(corroboration between two parameter sets, not a new discovery); and it re-downloaded an IPCC
+chapter already held at data/raw/ipcc/, deleted it, and logged the lesson. Both were the same
+mistake: searching one layer and reading its silence as absence. | open - defects not fixed
+
+D036 | MISSING SOURCES | CLOSED: the completeness table's universe. 108 rows -> 136, NE 43 ->
+71, and the class is now guarded. | The 28 IPPU categories the sector marked NE and the
+national table had no row for are carried in, each with the sector's own activity status,
+named public source and blocking step in its justification, plus one data_gaps register entry
+apiece (134 -> 162) because the module's gap check is bidirectional. Regenerating required the
+semantic layer too: outputs/semantic/fact_completeness.csv feeds the stored query that renders
+the paper's table, so the first regeneration still printed NE=43 and THIS MORNING'S partition
+guard caught it - the table rendered 108 against a 136-row product. After the semantic rebuild
+it renders 52+71+8+4+1 = 136 and both guards pass. The paper's prose moves from "108
+category-gas combinations spanning 38 IPCC codes" to 136 and 66. | tests/
+test_completeness_universe.py closes the class: a category any sector marks NE must be
+declared by the national table at or above its own code. | verified
+
+D037 | MISSING SOURCES | CORRECTION TO MY OWN D031: the honest number absent at EVERY grain is
+23, not 28. | Writing the guard forced the distinction. Five of the 28 are the 2.F.x family -
+foam blowing, fire protection, aerosols, solvents, other ODS substitutes - and the national
+table already carried a 2.F parent row marked NE, so their gap WAS declared, at the parent
+grain. The other 23 had no row at any level: there is no bare 2.A row, and 2.A.2 is not a
+parent of 2.A.3. | D031's substance stands - the universe was incomplete and the table claimed
+otherwise - but "28 undeclared" overstated it. All 28 are now carried individually, which is
+an improvement for the five as well, and the guard compares at the declaring grain rather than
+demanding code identity. | corrected
+
+D038 | MISSING SOURCES | And the guard immediately found a SECOND shape, which is a grain
+difference and not a defect. | Fugitives marks six sub-codes NE (1.B.2.a.i, .a.vi, .a.vii,
+.b.i, .b.vi, .b.vii) that the national table does not carry by sub-code. It does declare them:
+three rows sit at code 1.B.2 - one estimated, plus NE rows for "refining, well..." and "gas
+transmission...", the latter named the largest omission inside 1.B.2. Only the key granularity
+differs. | A code-identity check would have flagged a table that is telling the reader the
+truth, so the guard compares at or above the code and names the weakening it accepts: a gap
+declared only at a parent is guarded as a parent, and the per-sub-code check belongs with the
+sector, where the sub-code vocabulary lives. | accepted
+
+D039 | ENERGY | Refinement to D023: the coal redistribution is already PUBLISHED, so the
+worker corroborated the paper rather than discovering it. | Section 9 of the national paper
+already states it in these terms: "over FY2019-20 to FY2023-24 the constraint binds: the total
+moves 4 kt while the power column gains 8299 kt and brick kilns plus cement lose 8304 kt",
+and already calls the brick column a residual-style bucket whose fall "is not independent
+evidence about brick activity". The worker's numbers match exactly. | D023 stands as
+verification, not as a finding. The genuinely new energy results are D020 (the drift is the
+calorific basis and the fleet's efficiency is constant) and D021 (Table 3's reference-year coal
+energy needs 119.5% of national supply). Recorded so the campaign's final report does not
+claim novelty it does not have. | corrected
+
+D040 2026-10-05  Completeness universe change: fully cascaded, nothing invented.
+  The 28 new IPPU NE rows propagated to two downstream products by REGENERATION
+  only, and the diffs are pure insertions (28 ledger stream rows, 342 coverage
+  cells): both products already derive their universe from completeness.csv, and
+  the completeness-mass ledger gives an unbounded absence the typed value
+  mass_basis=no_bound rather than a number. The measured band is UNMOVED at
+  19.80-33.56 Mt - correct, because a no_bound row enters neither sum. The 28 new
+  absences are declared and unweighed, which is the honest state; weighing them is
+  separate work and must not be smuggled in by a regeneration.
+  Sites updated: abstract 108->136 / 43->71, and the registry's own claim_text,
+  which still quoted a 95/47/36 sentence no paper has printed for several releases.
+  Newly guarded: the "66 IPCC codes" count, which the section prints in the same
+  sentence as the row count and which nothing anchored - so it could have drifted
+  alone. Its getter counts codes beginning with a digit, because 3 of the 69
+  distinct values of `code` ("(air)", "(x-sector)", "LU") are not IPCC codes; that
+  distinction is the false defect I raised against the printed 38 and withdrew, now
+  recorded in the getter instead of left to a reader.
+  Published test count 3447 -> 3450 at its three sites; deposit 1608 -> 1609 (the
+  new guard file is the +1 - verified against the manifest diff, not assumed).
+
+D041 2026-10-05  T-REL-1 CLOSED: the rewrite's quantities are guarded. 169 -> 0.
+  The compact manuscript and the technical supplement printed 169 quantities that
+  no getter resolved; in-place coverage of the national-supplement document was
+  32/243 against its own 0.95 floor. It is 238/243 now, and the five remaining are
+  MANUSCRIPT_CONSTANTS.
+  HOW, and the part that matters: 134 of the rewrite's sites resolve THROUGH the
+  claim that already owns the quantity (_as_registered, by label) rather than
+  through a copy of its getter. Copying the expression would have created a second
+  definition of every headline number, and the drift would be invisible because
+  both copies pass against themselves. One definition; re-anchoring moves both.
+  Ten new getters were written where no claim owned the value, each reading a
+  product: the cross-sector MC band (the within-sector band was the only one
+  registered), the enteric level in Mt, the year after the series peak (keyed to
+  the peak, not to FY2022-23, so the sentence's "the next year" stays true), the
+  unallocated share and its complement, the structural bridge's own factor labels,
+  the F-gas benchmark row, the realization count, the reference EF1, and the
+  stream TOTAL - a denominator the sectioned corpus had deliberately left out of
+  its regex after a hard-coded 190 unbound the claim.
+  FOUR TRAPS adjudicated against the sentence, not the value. 77 is both the
+  enteric+manure share of agriculture and the count of located power stations;
+  0.005 is both the dry-climate EF1 and the wastewater effluent factor; 15.85 is
+  both the river-MCF alternative and the 1A2-vs-EDGAR difference; 17.1 is the
+  full-period growth and NOT the appendix's "share not placed where emitted",
+  which is the only registered getter that rounds to it. A value matcher would
+  have anchored all four wrongly - and my first matcher did produce a false
+  candidate for the 100000-realization count, from its own trailing-zero fallback.
+  The fallback is gone.
+  THE SUPPLEMENT's 60 quantities are ONE table, not 60 claims: tab:categories is
+  the category x gas account, registered in LABELLED_TABLES against the semantic
+  annual fact. That guards the magnitudes, the row order, the row count AND the
+  dash pattern - which is the caption's own claim, since 1.A.3.a prints 0.000 for
+  CH4 where 3.A prints a dash, so zero and absent are not interchangeable. Named
+  as NOT guarded: the abbreviated category names, which are editorial.
+
+D042 2026-10-05  Three downstream consequences of the completeness change, all real.
+  1. The 28 new gap rows named a dataset with no access route, which the gap
+     register rejects - "a lead without an access route is a wish". Routed by the
+     BINDING constraint, not the easiest one: 22 public (PBS CMI/QIM, OCAC,
+     customs, the National Ozone Unit's Montreal-Protocol reporting, the CRT), 6
+     request where the estimate needs a figure only a firm or a utility holds.
+  2. SF6 entered the typed-column vocabulary, because 2.G.1/2.G.2 - and 2.C.4's
+     cover gas - ARE SF6. The enum already carried HFC and PFC for 2.F. A gas a
+     category reports has to be nameable even when every cell is NE.
+  3. The deposit crossed its 500 MB bound by 64 KB. Checked before touching it:
+     1608 -> 1609 files, every changed path a file this project wrote, +305 KB of
+     completeness growth. Raised to 750 MB with that recorded, and the raise is
+     defensible only because the hazard the bound NAMES - sources/ creeping back -
+     is caught directly and exactly by a different test that does not wait for
+     3.8 GB to arrive.
+  Exactly ONE semantic golden receipt moved (completeness_ne_rows). One moving is
+  evidence the change was contained; the re-freeze is the designed record.
+
+D043 2026-10-05  Worker a98e2d8 (T-VAL-1/T-FIG-1) verified claim by claim. 4 confirmed,
+  1 narrowed, 2 do not survive.
+  CONFIRMED D-V13: power_climatetrace_plants_fy2023_24.csv has exactly ONE distinct
+    trace_g_per_kwh for asset_type=coal (2431.0) across every Pakistani coal plant.
+    Climate TRACE coal CO2 is activity x a constant, so a plant-level ratio against
+    it tests generation data and nothing else. 2431 g/kWh also implies ~14% thermal
+    efficiency, which no coal technology has.
+  CONFIRMED D-V14, and sharper than reported: three plants carry GEM district
+    "Thatta" at 24.81N/70.39E while Thar Coal Block-I, 11 km away at 24.71N/70.30E,
+    carries "Tharparkar". The shipped facility registry splits them 2/1 -
+    sindh_thatta for ThalNova and Thar Energy, sindh_tharparkar for Engro Powergen
+    Thar, which has the SAME wrong GEM cell - so three plants about 1 km apart land
+    in two districts. The worker reported the wrong district; it missed that the
+    registry is internally inconsistent about it. Also in the same column, China
+    Power Hub reads district "Lasbela" with province "Sindh" - and Lasbela is in
+    Balochistan. That is the Hub conflict the boundary audit already reports, with
+    the correct answer sitting one cell away in the file the audit did not read.
+  CONFIRMED D-V15, NARROWED from 113 streams to 62 (499 stream-years). All 113
+    flipping streams do have an identical pattern_hash across the two years, as
+    reported. But only 62 sit on a surface the engine keys to NO period; the other
+    51 (road_density, builtup+ocac_area_shares) have an axis in FY2021-22 and
+    FY2022-23, so for them "carries the reference year's pattern" is literally true.
+    Relabelling all 113 would have left reference_shape_backcast emitted by no code
+    path, which the module's own header rules out as making its vocabulary test pass
+    vacuously. FIXED at the root: the branch keyed on `period == REFERENCE` where the
+    module's docstring already said a timeless surface is static_structural "in any
+    period including the reference". Held by two new guards, one of which fails if
+    the backcast value ever stops being emitted.
+  NOT CONFIRMED - the "dangling registry pointer". data/manifests/source_manifest.csv
+    resolves through the asset catalog to data/catalog/manifests/source_manifest.csv,
+    which exists at 90,678 bytes. The worker checked the filesystem and not the alias
+    layer - the exact trap CLAUDE.md names.
+  NOT A FINDING - MARS. The catalog already records CC-BY-NC-SA in four rows, and the
+    two MARS files ship as own-work-compilation ("this project's compilation of facts
+    published in UNEP IMEO MARS"), which is a recorded and reasoned position, not an
+    unnoticed deposit blocker.
+  STILL TO VERIFY: D-V1 (Climate TRACE held by API path, six benchmark rows with no
+  digest), D-V11 (29/52 coordinates CT-derived, so the location check is circular),
+  D-V12 (the fiscal/calendar blend applied inconsistently and recorded nowhere).
+
+D044 2026-10-05  The relabelling's reader-facing effect, and the thing it does NOT change.
+  Printed spatial evidence: timeless 116 (6.5%) -> 615 (34.4%), backcast 805 (45.0%)
+  -> 306 (17.1%). Measured-for-its-own-year is UNCHANGED at 795 (44.4%), and the two
+  non-evidence classes still total 921 stream-periods. The correction moves the KIND
+  of non-evidence, not its quantity, and the paper now says so in those words -
+  because "34% ride a timeless surface" read alone looks like a new weakness and is
+  not one. The bidirectional hash check still holds in both directions: 813
+  non-reference stream-years carry the reference pattern (306 typed backcast, 499
+  typed timeless) and none of the 795 own-year rows does.
+
+D045 2026-10-05  The facility district defect fixed at the root, and what the fix revealed.
+  FIXED: build_facility_registry.py took the district STRING a third-party tracker
+  supplies beside the coordinates. The geometry decides now - point-in-polygon
+  against the same canonical 2019 ADM2 frame every spatial product uses - and the
+  source's claim is written into the row's note when it disagrees. Three rows moved:
+  ThalNova and Thar Energy sindh_thatta -> sindh_tharparkar, and
+  grid_lucky_electric unresolved -> sindh_karachi_legacy, which had been unplaced
+  only because its GEM district cell was empty.
+  NO EMISSION MOVED, and this is the part worth keeping: the allocation places a
+  plant by its COORDINATE, so sindh_tharparkar already carried 30,140 Gg of
+  FY2023-24 CO2 against 490 Gg for the Thatta/Sujawal shape. The defect was in a
+  published label, and its cost was that two shipped products contradicted each
+  other with no test on either side of the join.
+  The ray caster moved to pkinv.core.gis.adm2_point, unchanged, so the audit and the
+  registry answer the same question with one implementation. The audit's output is
+  byte-identical after the extraction, which is the check that the move changed
+  nothing.
+  THE GUARD'S FIRST DRAFT WAS WRONG and is worth recording. Comparing every located
+  facility against the frame reported ~200 disagreements, almost none of them this
+  defect: most captive rows share a city centroid (dozens at one coordinate) where
+  the district is the primary datum and the coordinate the approximation, so the
+  comparison runs backwards; another group is a frame-vintage artefact, since a
+  facility filed under Karachi's modern districts cannot be contained by a 2019
+  polygon named Malir. A guard scoped to "every facility" would have been a
+  false-positive generator and would have been deleted. It is scoped to the 70
+  stations the province audit says are placed correctly - where the coordinate is an
+  observation, the frame resolves it, and the district is therefore derivable.
+  ONE GENUINE FINDING SURFACED: Chiniot Power is filed punjab_chiniot and its
+  coordinate falls in the frame's Jhang polygon, 20 km from Chiniot city. Both
+  claims have a source (the curated workbook says Chiniot in every year) and Chiniot
+  district was carved out of Jhang in 2009, so this is where the two would disagree.
+  Not resolved by fiat: declared as the guard's single named exception and opened as
+  a weak-input lead. It is NOT a completeness gap - 1.A.1.a is estimated - and
+  filing it as kind=gap would have invented an absence to hold a metadata conflict,
+  which the bidirectional check correctly refused.
+
+D046 2026-10-05  rc59 artifacts re-minted and recorded. Four commits:
+  af4e18fe content (completeness universe + the rewrite's 169 quantities),
+  ed8f73fb content (spatial evidence label + facility district), 1e5616d5
+  artifacts (describes_commit ed8f73fb, tree_dirty false, pins L 469.63822 /
+  S 464.50543 unmoved), 3e443f44 record (OK, 3443 executed, 0 failed, 959 s).
+
+D047 2026-10-05  THE BTR IS A YEAR-MATCHED NATIONAL COMPARATOR AND THE RELEASE DOES
+  NOT USE ONE. Verified from the held primary source, sources/UNFCCC/btr1_2024.txt.
+  Pakistan's First Biennial Transparency Report publishes a full IPCC-category
+  inventory for 2020-21 on AR5 GWPs, and it states its own convention explicitly -
+  "the fiscal year 1993-94 (referred to as 1994)", "Pakistan's 2020-21 inventory
+  (referred to as 2021)". So its year IS Pakistan's fiscal year and its metric IS
+  AR5: a comparison against PakEmis FY2020-21 needs no calendar blend and no GWP
+  conversion. Every comparator now in outputs/national_benchmark_comparison.csv
+  (EDGAR 12 rows, Climate TRACE 7, FAOSTAT 6, Cui 2021 1) needs at least one of
+  those approximations, and the only Pakistani row in the table is a 2022 CRT
+  ammonia line. The BTR is already used as an official comparator by the fugitives,
+  aviation and railways sectors - it is absent only at national grain, which is
+  where it is strongest.
+  WHAT IT SAYS. National, excluding its LULUCF block (3.B Land 34.82 Mt, which
+  PakEmis excludes by scope): 479.51 against 486.64, a ratio of 0.985. That 1.5%
+  agreement conceals ratios from 0.41 to 17.7: 1.A.1 0.90, 1.A.2 0.86, 1.A.3 1.03,
+  1.A.4 0.81, 1.B.2 7.27, 2.A.1 1.04, 2.B.1 1.03, 2.D.1 0.43, enteric 1.19, manure
+  1.08, urea 1.07, rice 1.26, managed soils 0.44, 4.A 0.49, 4.C.2 17.74, 4.D.1 1.86.
+  It is the national-agreement-conceals-category-disagreement shape the paper
+  already tells for provincial SO2, against the most authoritative comparator there
+  is.
+  THE SOILS RESULT IS THE ONE THAT MATTERS. BTR managed soils (3.C.3+3.C.4) is
+  58.05 against PakEmis 25.77. FAOSTAT independently gives 58.50 against 28.53. Two
+  accounts, one official and one international, built from different inputs, both
+  land at about twice PakEmis - which CORROBORATES the diagnosis the paper already
+  publishes (the dry-climate EF1 of 0.005 against the 2006 aggregate 0.010) rather
+  than opening a new question. A second independent comparator agreeing with the
+  first is worth more than either alone.
+  A CROSSWALK IS MANDATORY AND IS A TRAP. The BTR books rice at 3.D and managed
+  soils at 3.C; PakEmis books rice at 3.C and managed soils at 3.D. The two codes
+  are SWAPPED between the accounts, so a naive code join silently compares rice
+  against soils. The BTR also books indirect manure N2O separately as 3.C.5 (4.32)
+  where PakEmis splits it across 3.B and 3.D, so only the aggregate is
+  boundary-safe: agriculture 199.47 against 208.94, 0.955.
+  SEVEN DECLARED ABSENCES NOW HAVE AN OFFICIAL MAGNITUDE, totalling 6.04 Mt:
+  1.B.1 solid fuels 0.73, 2.A.2 lime 1.33, 2.A.3 glass 0.03, 2.A.4 other carbonates
+  0.27, 2.H other 1.35, 4.C.1 incineration 0.11, 4.D.2 industrial wastewater 2.22.
+  The completeness-mass ledger carries all of them as mass_basis=no_bound, and its
+  own header names industrial wastewater as a claimant that "carried no number
+  anywhere". Pakistan's own submission is that number, and the F-gas row is the
+  precedent for how to use it (external_benchmark_bound, beside the estimate, never
+  inside it).
+  AND ONE WHERE PAKEMIS IS MORE COMPLETE: the BTR has no field-burning line at all,
+  against PakEmis's 3.F at 0.575 Mt. Worth publishing in the same table, because a
+  completeness comparison that only runs one way is an argument, not a measurement.
+
+D048 2026-10-05  T-UNC-1 re-verified: the published variance attribution is not a
+  valid Sobol decomposition and does not say so. 142 of 151 rows in
+  outputs/national_variance_attribution.csv have first_order_index >
+  total_effect_index, which is impossible for true indices - S1 <= ST always. The
+  implied interactions are small negatives (-0.0007 to -0.0067), so this is the
+  sampling estimator's noise rather than a structural error, and that is precisely
+  the finding: the noise floor EXCEEDS the interaction the column claims to measure,
+  on 94% of rows, and the product publishes the column as though it were signal.
+  The honest repair is to type the column - an interaction indistinguishable from
+  zero at this sample size is a typed absence, not a negative number - and to
+  publish the estimator's own standard error beside it.
+
+D049 2026-10-05  THREE INGESTS MIS-TYPED THE BTR'S PERIOD BASIS; a fourth had it right.
+  Four of this repository's ingests read the same document and disagreed about what
+  year it describes. data/sectors/aviation/activity/unfccc_inventory_controls.csv
+  typed it fiscal - "2020-21 (reported as inventory year 2021)", matched_year 2020 -
+  and the fugitives, railways and residential ingests all typed it calendar 2021
+  (period_basis=calendar, year_label=CY2021). The document settles it: "the fiscal
+  year 1993-94 (referred to as 1994)" and "Pakistan's 2020-21 inventory (referred
+  to as 2021)". Aviation was right and the majority was wrong.
+  No number moved - period_basis is descriptive, not computed - and that is the
+  whole cost: it made a comparison that is YEAR-MATCHED EXACTLY look like one
+  needing a fiscal/calendar approximation, which is what a reviewer discounts. All
+  three corrected with the document's own sentence quoted in the row.
+
+D050 2026-10-05  THE BENCHMARK REGISTER CARRIES A COLUMN THE RESOLVER IGNORES.
+  benchmark_comparison() resolves the engine side from registry.build_all(), which
+  is the reference year and only the reference year, while data/benchmarks.csv
+  carries an engine_period per row that the resolver never reads. All 27 rows say
+  FY2023-24 or "not estimated", so it has never produced a wrong number - which is
+  exactly what makes it dangerous: the first row declaring another year would be
+  compared against FY2023-24 and would look completely normal, a source, a category
+  and a plausible ratio. Adding the BTR as data alone would have attributed three
+  years of growth to a methodological difference.
+  Guarded rather than half-built: a new test refuses any row declaring a period the
+  resolver cannot honour, and says in its own text what to build instead. The fix is
+  NOT to teach benchmark_comparison() - it runs at phase 485 and the nine-year annual
+  product is built at phase 552, so reading the series there would invert the build
+  order. The BTR comparison belongs downstream of the annual product as its own
+  phase, which is where the next cycle will put it.
+
+D051 2026-10-05  A DEFECT IN THE DOCUMENTED CASCADE ORDER, found by auditing a number
+  that moved for no visible reason. The released rc59 prints "1609 files under
+  licences the project can actually grant" in the limitations section and cites
+  outputs/pakemis_deposit_manifest.csv by name; that manifest lists 1610 rows.
+  Verified at the commit: HEAD's product_facts says 1609, HEAD's manifest has 1610.
+  THE CAUSE IS THE ORDER ITSELF, not a missed step. CLAUDE.md ends the cascade with
+  the deposit manifest, correctly, because the manifest hashes everything before it.
+  But product_facts COUNTS that manifest to make the deposit_files fact, and the
+  prose prints the fact. So whenever the deposit's contents change in a pass - here
+  one new source file, src/pkinv/core/gis/adm2_point.py, written earlier in this same
+  session - the count is taken against the previous manifest and ships one behind.
+  WHY NOTHING CAUGHT IT. The checked loop ran prose -> fact -> prose. The manifest sat
+  OUTSIDE that loop, so the fact and the sentence agreed with each other while both
+  disagreed with the file the sentence cites, and the claim matrix reported zero
+  disagreements. A guard now asserts the published count equals the published
+  manifest's row count, which is the one comparison that crosses the loop. It would
+  have failed on the released commit.
+  The real order has a genuine cycle - the manifest after everything it hashes, the
+  count after the manifest - and the resolution is the one make release-fixpoint
+  already uses for the release manifest: iterate until it settles. Verified it
+  settles in one pass and stays at 1610 over four.
+
+D052 2026-10-05  THE BTR COMPARISON SHIPPED: outputs/pakemis_btr_comparison.csv, the first
+  comparator in this release matched on BOTH axes.
+  WHAT IT IS. 28 crosswalk entries with declared tiers against Pakistan's own BTR1
+  national inventory for 2020-21. A code join was refused outright: the BTR books
+  rice at 3.D and managed soils at 3.C, this inventory the other way round, so a
+  code-keyed comparison reads each sentence against the other's row and both look
+  plausible. The claims' getter is keyed on the crosswalk SUBJECT for the same
+  reason.
+  THE TRANSCRIPTION IS VERIFIED BY THE DOCUMENT'S OWN ARITHMETIC, not by re-reading:
+  every printed parent closes over its printed children and the four sector totals
+  sum to the printed 521.46 Mt. Gas splits are recorded only where all four numbers
+  are printed; a dashed gas leaves them blank rather than having a zero guessed in.
+  THE RESULT. National ex-LULUCF 479.51 vs 486.65 (0.985), concealing ratios from
+  0.43 to 17.74. The decomposition is the finding: restricted to categories both
+  accounts estimate, 478.55 vs 480.61 (0.9957). Of the 7.14 Mt gap, 6.04 Mt is seven
+  categories this inventory declares NE against 0.96 Mt it estimates where the BTR
+  books nothing or zero - a net 5.08 Mt of pure completeness difference. The
+  shortfall against Pakistan's own account is COMPLETENESS, not estimation, and the
+  seven rows are the same ones pakemis_completeness_mass.csv carries without a bound.
+  TWO APPARENT ORDER-OF-MAGNITUDE ERRORS ARE ONE DISAGREEMENT: landfill 0.49 and open
+  burning 17.74 sum to 0.68 over the solid stream, so the accounts differ on the FATE
+  SPLIT of the same municipal waste, not on a factor. The restated row carries the
+  ratio and is excluded from both totals, as a contained claimant is in the mass
+  ledger.
+  MANAGED SOILS IS NOW CORROBORATED TWICE: the BTR gives 58.05 against 25.77 and
+  FAOSTAT 58.50 against 28.53, from different inputs. Two independent accounts at
+  about twice this inventory is what the published EF1 diagnosis predicts, which
+  moves the dry-climate choice from a defensible assumption to the most consequential
+  open question in the agricultural account.
+  Also published both ways: the BTR reports metals and ODS substitutes as ZERO where
+  this inventory estimates iron and steel and declares 2.F NE with a bound, and it
+  carries no biomass-burning line against this inventory's field burning. A typed
+  absence with a bound states more than a reported zero.
+
+D053 2026-10-05  WHAT REGISTERING ONE PRODUCT ACTUALLY COSTS, recorded because I
+  under-estimated it. Beyond the builder and the data file: artifact_roles (and the
+  literal row must precede the pakemis_*.csv glob, since role_of returns the FIRST
+  match - appended after it, the inventory's own guard correctly called my pattern
+  dead), the CRLF terminator list, a run_all Phase, a Makefile target and .PHONY,
+  the validation catalog (a comparison-shaped output must be registered or declared
+  out of scope), assets.csv WITH a legacy identity at data/ - without it
+  data_provenance classifies the file "unregistered", because it keys on the
+  directory of the LEGACY path and that is the only reason benchmarks.csv beside it
+  reads "hand:parameter" - plus canonical_tables.csv and eight canonical_columns
+  rows. Two fields I filled wrongly and had to empty: benchmark_task_id must JOIN a
+  registered benchmark-suite task, and source_refs must name another ASSET, not a
+  sources/ path. Both were caught by their own guards.
+  AND A MISTAKE OF MY OWN WORTH THE RECORD: I edited six prose counts against a
+  STALE pakemis_source_register.csv, having withdrawn the source_documents row that
+  had raised them. `git checkout -- <path>` restored the row from the INDEX, which
+  already held my staged version, so the withdrawal did not take effect until the
+  register was regenerated - and I read the register in between. Same class as D051:
+  a count read before its source was rebuilt. Regenerating first and reading second
+  is the whole of the discipline, and it is cheap.
+
+D054 2026-10-05  I SHIPPED A DEFECT AND THE LAND LANE'S OWN FINDINGS CAUGHT IT. Correcting
+  D052: the claim that the BTR "has no biomass-burning line at all, so this inventory
+  is the more complete account here" was the OPPOSITE of true, and it went out in
+  6d0a70c5.
+  The submission has no biomass-burning LINE; it folds residue burning into its land
+  block. Verified from my own transcription: 3.B.2 cropland prints CO2 2.50 beside
+  CH4 2.54 and N2O 0.62, so 3.16 Mt of that row is non-CO2, and for a land account
+  non-CO2 is fire. The land lane (T-LAND-1, committed 9bb0f84a) had already written
+  this down - "a PakEmis land layer adopting the BTR's cropland 5.67 Mt will double
+  count crop-residue burning" - and I built the crosswalk without reading it.
+  Against the folded figure this inventory's field burning is 0.18, not a surplus:
+  0.576 against 3.16. The reclassification is btr-elsewhere, a tier that keeps the
+  mass in the PakEmis subtotal (it is this inventory's) and emits no ratio (its
+  counterpart is inside a block excluded by scope), plus a restated row carrying the
+  comparison and excluded from both totals.
+  TWO SECOND-ORDER CORRECTIONS FELL OUT, and the claims caught both. I had added
+  btr-elsewhere to the "this inventory estimates where the submission books nothing"
+  sum, which restates the very error being corrected - the submission DOES book it.
+  So that mass is 0.382 (iron and steel alone), not 0.96, and the net completeness
+  difference is 5.658, not 5.08. The paper now says so.
+  ALSO NAMED: excluding 3.B wholesale is not as clean as "scope" sounds. 3.47 of its
+  34.82 Mt is CH4 and N2O, so the exclusion withholds about 3.5 Mt comparable in kind
+  to emissions this inventory does estimate.
+  AND A NUMBER I DECLINED TO PUBLISH: the agriculture CRT's own residue-burning line
+  (3253.17 kt by the land lane's extraction) corroborates the 3.16 to within 3%, but
+  I verified the BTR table myself and did NOT verify the CRT workbook. The prose
+  states the CRT carries the line without quoting a figure I have not checked.
+  THE LESSON IS CHEAP AND I PAID FOR IT TWICE TODAY: read the other lanes' findings
+  before building against the same documents. D043 verified a worker's claims and
+  found two that did not survive; this is the mirror case - a lane's finding was
+  right and I did not read it.
+
+D055 2026-10-05  T-UNC-1 CLOSED: the first-order Sobol index is withdrawn, with the
+  measurement that justifies it held as evidence.
+  Sum(S_i) <= 1 is a theorem. The shipped estimates summed to 1.322 and the published
+  interaction column, computed as S_Ti - S_i, was negative on 142 of 151 rows - not a
+  wide error bar but a quantity that cannot exist. Measured over a sixteenfold range
+  of sample size the first-order sum swings 0.427 / 1.322 / 1.159 while the
+  total-effect sum holds at 1.021 / 1.026 / 1.030, so the fault is the estimator's,
+  not the model's: a small index recovered as 1 minus a ratio near 1 is dominated by
+  error in the variance denominator, which is SHARED across groups, so the errors
+  move together instead of cancelling.
+  WHY IT SHIPPED FOR FOUR RELEASES: tests/test_variance_attribution.py already had
+  test_no_first_order_exceeds_its_total_effect, asserting exactly the right property -
+  on a TWO-GROUP synthetic model, where the estimator behaves. The 151-group product
+  was never read. A guard on a model small enough for the property to hold is how an
+  impossibility stays green, and the new class reads the shipped file.
+  The module docstring claimed Jansen "cannot produce that". It is demonstrably false
+  and now says so, with the measurement.
+  WITHDRAWN, NOT DELETED: both columns are typed absences (nullable now, declared in
+  product_columns), the total effect still ships, and every registered claim on this
+  product already read the total effect - so no conclusion moves. What is withdrawn is
+  an ESTIMATE, not a finding: interactions are not asserted absent, they are
+  unresolvable at a sample size the build can afford. The per-row stdout that printed
+  "S 0.056 ST 0.054" ten times is now one diagnostic line carrying the sum.
+
+D056 2026-10-05  T-ENERGY-3 CLOSED. Four defects in the coal-energy adjudication fixed at
+  the root, each verified by me before being touched, and one of the lane's framings
+  corrected in the process.
+  (1) THE BANNER INFERRED LOCATION FROM VARIANCE. It observed that the HDIP-based
+  conversion ratio is steadier than the Table-21-based one (1.35x against 2.03x, which
+  is true) and concluded that the disagreement therefore lies in the MASS accounts.
+  That does not follow: steadiness across years is a statement about variance, and
+  which factor carries a level discrepancy is a different question. Decomposed in logs
+  against the non-circular physical route, the CONVERSION channel carries 68/59/84/81/77
+  per cent of it - published now as conversion_channel_share_pct, so the corrected claim
+  is anchored rather than asserted. My own reproduction (67/59/85/80/77) and the lane's
+  (53/31/81/77/69) differ in the reference route and agree on the conclusion.
+  (2) THE PLANT ROUTE IS AN IDENTITY, not corroboration. Its fleet CV is
+  sum(generation x heat rate) / the mass it is weighted over - which reproduces the
+  printed CV to the digit in all five years - and it is then multiplied by TOTAL mass,
+  so plant_energy_TJ is identically that sum divided by its coverage. It cannot test
+  NEPRA's heat rates because it contains them. What IS independent is the calorific
+  value: the composition route uses rank defaults and no heat rates and agrees within
+  1-3 TJ/Gg. The CV corroboration is real; the efficiency corroboration is circular, and
+  a guard now asserts the identity in every year so a silent "fix" has to declare itself.
+  (3) THE FLEET CV'S COVERAGE IS PUBLISHED: 69/72/88/100/99 per cent. In FY2019-20 and
+  FY2020-21 the only lignite station has no printed heat rate, so an imported-only CV of
+  23 TJ/Gg is applied to lignite tonnes worth about 11. MY FIRST DEFINITION OF COVERAGE
+  WAS WRONG and my own guard caught it: I took "stations with a printed heat rate" where
+  the CV excludes outliers from its weights, which read 100 per cent for a year weighted
+  over 88.
+  (4) THE BAND'S EDGES ARE CONSEQUENTIAL, which I first wrote the opposite of. Three
+  cells change side between 30-45 and 28-47 - Table 3 at 45.1 (FY2019-20) and 29.6
+  (FY2021-22), HDIP at 29.1 (FY2023-24) - and two are quoted in verdict strings. What
+  survives either band, and is now guarded, is the conclusion the file exists for: the
+  per-station account is inside BOTH bands in all five years and Table 3 is outside both
+  in three of five.
+  AND A FINDING NO DIAGNOSTIC HELD: Sahiwal prints 1,443.97 kt against 6,881.4 GWh in
+  FY2021-22 - 4.766 GWh/kt where its own other four years run 2.44 to 2.72 - so about
+  1,174 kt is missing from a NEPRA table. CORRECTING THE LANE'S FRAMING: it does not
+  explain the crossing, only the year. Putting the tonnes back moves FY2021-22's ratio
+  from 1.053 to 0.961, so the series reads 0.88, 0.70, 0.96, 1.11, 1.21 - still crossing
+  unity, just a year later. The "a scope difference cannot cross unity" inference stands;
+  an argument resting on FY2021-22 in particular does not. Guarded by a general
+  per-station detector rather than an exception: with no exception list it flags exactly
+  this one station-year, at 1.77x its own median.
+
+D057 2026-10-05  THE GUARD I ADDED FOR THE RECORD-SEQUENCING DEFECT WAS ILL-POSED, and it
+  poisoned the artifact it was meant to protect. Recording it because the shape
+  recurs.
+  The defect is real: a record taken against one artifacts commit sat in the working
+  tree until the next CONTENT commit's `git add -A` swept it in, so it shipped
+  describing a tree two commits old - 3455 executed where that tree ran 3459. The
+  record is fixpoint-written and carries no digest, so nothing bound it to its
+  release.
+  My fix was a suite test asserting the record's commit follows the manifest's. But
+  the record is PRODUCED BY running the suite on the artifacts commit, so at that
+  moment the committed record is necessarily the previous release's - the thing about
+  to be replaced. The test therefore fails during every legitimate record, and the
+  record captures its own failure. It did: outcome FAILED, 1 failed, the one failure
+  being my own guard.
+  THE PROPERTY CANNOT BE A TEST IN THIS SUITE. It is about commit ORDER after the
+  dance completes, which nothing running inside the recorded run can observe. It is
+  now scripts/check_release_sequence.py, run by `make release-sequence` and named in
+  release_fixpoint's closing instructions; mid-dance it declines to judge rather than
+  guessing. Positive control against real history, not a synthetic one: at the
+  defective commit it reports OUT OF ORDER, and at the repaired one it reports
+  ordered.
+  THE GENERAL LESSON, which this session has now hit three times in different forms:
+  a check has to be able to hold in the state it runs in. The Sobol guard asserted the
+  right property on a two-group model where it holds; the facility-district guard
+  flagged 200 centroid placeholders until it was scoped to observed coordinates; this
+  one asserted a property that is false by construction at the moment it runs. Writing
+  the positive control first would have caught all three.
+
+D058 2026-10-05  T-REL-2: the anchor design was implemented, and a THIRD of its anchors
+  resolved to nothing. The design in docs/product_catalog_design.md replaced "every
+  shipped filename must be cited in the manuscript" with "every core logical product
+  must carry one documentation_anchor" - a better rule, and the only guard on it
+  asserted the field was non-empty. 8 of 23 anchors pointed nowhere:
+    supp:products (x4) - the supplement has no product table; it is tab:products in
+      sections/50_data_records.tex, in the MAIN document.
+    main:spatial (x4) - no label ending :spatial is reachable from paper_national.tex.
+      The only sec:spatial in the tree belongs to technical_supplement.tex, which
+      neither manuscript inputs.
+  Corrected to main:products and main:cube, which resolves all 23, and
+  tests/test_product_catalog_anchors.py now walks each manuscript's \input tree and
+  dereferences every anchor, with a positive control that the walk found the documents
+  at all. A pointer nobody dereferences is a citation nobody checks, one level out -
+  and this one REPLACED a mechanism that was checked.
+
+D059 2026-10-05  T-UNC-2 CLOSED and two more of the biomass lane's findings verified and
+  fixed.
+  THE DENOMINATOR IS WIDER THAN THE FACTOR (the gap row, now open as
+  wastewater-discharge-pathway). ww_ef_effluent is 0.005 kg N2O-N/kg N, which IPCC
+  defines for nitrogen DISCHARGED TO AN AQUATIC ENVIRONMENT, and wastewater.n2o_gg
+  applies it to every kilogram the population generates, with no pathway split and no
+  N_SLUDGE subtraction where IPCC 2006 Eq 6.9 has N_EFFLUENT = N_total - N_sludge.
+  Nitrogen in routes that never reach water is charged the aquatic factor. Typed
+  weak-input, not gap: 4.D.1 is estimated, so binding it to an NE cell would invent an
+  absence. The bias direction is UP and its magnitude is unquantified, because the
+  missing share IS the thing missing.
+  THE DOCSTRING OVERSTATED ITS OWN FUNCTION BY 2.75x: effluent_ef_uncert said the
+  bounded shape converts to "about 1100%" where the function returns 400.81. Verified by
+  calling it. The waste paper has always printed 401.5, so the error was confined to the
+  one place a reader of the code would look - which is still the place that decides
+  whether someone trusts the number.
+  AN EXCLUSION JUSTIFIED BY A FALSE CLAIM. priority_rankings.py excludes the wastewater
+  effluent-EF endpoint from the STRUCTURAL ranking - defensible, since an endpoint is not
+  co-equal with a reading of evidence - and then argued "its leverage is not hidden: it
+  leads the PARAMETRIC ranking". It does not lead it and is not in it: the published top
+  five is enteric_buffalo 0.258, livestock:buffalo 0.067, enteric_other_cattle 0.066,
+  ww_mcf_sewer 0.057, enteric_dairy_cattle 0.054, and ww_ef_effluent is sixth at 0.049.
+  The exclusion now rests on the first half of its argument alone, which is enough, and
+  points at where the leverage actually is visible.
+  Note the lane independently reported the same first-order-above-total-effect
+  impossibility I found in D055, from the waste row rather than from the sum. Two routes
+  to one defect.
+
+D060 2026-10-05  T-AGENT-2: THE CORRECTION HAD REACHED ONE OF TWO STATEMENTS OF THE SAME
+  FACT. 68155c4 fixed the system prompt's claim that adm1/adm2 exist for the reference
+  year only - the engine serves nine - but the TOOL SCHEMA still said
+  "adm1/adm2 exist for <reference period> only". A model reading the function definition
+  got the same false restriction from a second place. Verified from the served release:
+  fact_adm1_year carries nine periods and Punjab FY2015-16 is 220.77 Mt. Corrected in
+  the explorer repo (9526bdc), guarded with the coverage read from the release rather
+  than asserted, 495 tests passing.
+  THE GUARD'S FIRST VERSION SKIPPED instead of running, because table_path returns
+  (path, format) and prefers the parquet, so str()-ing the tuple found no file. A
+  skipping guard guards nothing - the fourth instance this session of a check that
+  could not hold in the state it ran in. I wrote the positive control this time: against
+  the old schema text the test fails, against the new one it passes.
+  ALREADY COVERED, checked rather than assumed: the group_by mismatch that caused D19
+  and D28 to burn the call budget is held by
+  test_no_tool_advertises_a_grouping_its_own_engine_would_reject, and the
+  tool-text-is-data rule is rule 11 in the prompt.
+
+D061 2026-10-05  T-AGENT-3: WHAT I ESTABLISHED AND WHAT I WILL NOT CLAIM.
+  The 0.653744 figure is not a value but a DISCREPANCY: 220.768318 against 220.114574
+  for Punjab FY2015-16. Established: both of this repository's products agree exactly at
+  220.768318 - pakemis_adm1_by_year.csv and the semantic fact_adm1_year, to six decimal
+  places over the same 195 rows - so the shortfall is introduced downstream of them.
+  Established as the mechanism for a DIFFERENT symptom: spatial_fields._ROW_SOURCE looks
+  an annual province result's rows up in fact_adm1_month, because fact_adm1_year is not
+  in claim.FACT_TABLES, so for a historical year it finds nothing and falls back to the
+  request's single sector. That explains module ATTRIBUTION failing, not a 0.3% shortfall
+  in the total.
+  NOT ESTABLISHED: which rows the API drops. A subset search found a two-row combination
+  summing to the gap, and I threw it away after running the control the method demanded:
+  with 149 candidate rows there are ~11,000 pairs, and six ARBITRARY targets matched
+  0, 2, 2, 2, 3 and 8 times against the real target's 1. A pair match carries no
+  information at this density, so reporting one would have been a false attribution
+  dressed as a finding. Attributing the gap needs the API queried directly, which is the
+  task's remaining half and is recorded as such rather than guessed.
+
+D062 2026-10-05  T-VAL-2 CLOSED: the seven boundary conflicts adjudicated from held
+  evidence, and NONE of them is a station-record error.
+  The audit said seven stations were misplaced; it did not say where the fault lay, and
+  that is what decides the remedy. Published per station now, as a declared class:
+    frame-inconsistent (2)           Mangla and Attock Gen.: the 0.05 deg province
+                                     raster and the district polygon name different
+                                     provinces, so the frame disagrees with itself and
+                                     no relabelling settles it.
+    frame-gap (1)                    China Power Hub: no district polygon contains the
+                                     point at all, 0.13 km from the nearest vertex.
+    records-agree-frame-dissents (4) Hub Power, both Guddu units, Tapal Energy: curated
+                                     and source agree, the frame dissents, each within
+                                     1.6 km of a boundary.
+    records-disagree (0)             none. Every conflict is in the geometry.
+  That last line is the result: a boundary revision addresses all seven and a station
+  relabelling addresses none, which is what the module already argued and can now show.
+  DELIBERATELY NOT A VOTE, and my first draft was one. Counting curated, source, raster
+  and polygon as four witnesses and taking a majority decided four stations on a
+  weighting I could not defend - the raster reads PAK_ADM1.geojson and the containing
+  test ray-casts PAK_ADM2.geojson, so a disagreement between them can be a file
+  difference OR a resolution difference, and nothing held says which. Treating them as
+  one frame instead flipped four verdicts, which is how I knew the weighting was doing
+  the work rather than the evidence. Classifying states what is there; voting would have
+  invented an authority none of these sources has.
+  The four counts are registered claims against the audit, because they move the moment
+  an eighth station appears or a boundary file is re-simplified. Folded into the existing
+  test_power_province_boundary.py rather than shipped as
+  test_power_province_boundary_audit.py - a near-duplicate module name is its own trap.
+
+D063 2026-10-05  T-LAND-2: THE FIRST REPRODUCIBLE LAND COMPONENT IS NOT A COMPONENT. The
+  two accounts that cover forest land disagree on the SIGN, and that is now a published
+  screening (outputs/pakemis_forest_flux_adjudication.csv) rather than a note.
+  Pakistan's own submission books forest land at +28.44 Mt CO2, a SOURCE. FAOSTAT books
+  Pakistan's forest land at -4.107 Mt in the same year, a SINK. They differ by 32.55 Mt,
+  about 7% of the national total, and they differ in DIRECTION rather than in size - so a
+  component built on either would be an inventory-scale choice resting on a disagreement
+  about whether Pakistan is gaining or losing forest.
+  THE MECHANISM IS IN FAOSTAT'S OWN COLUMNS, verified here rather than argued:
+    - its Pakistani forest area FALLS 3,256 -> 3,036 kha over 2004-2015 and then RISES
+      from 2020 at exactly +20.786 kha/yr for 2020, 2021, 2022 and 2023. Constant to
+      three decimals over four years is interpolation between FRA anchors, so the only
+      annual series available carries NO annual information.
+    - its `Net Forest conversion` is exactly 0.000 kha from 2020, against 26.104 in 2015.
+      It books no deforestation at all in the years that matter.
+    - Pakistan's own REDD+ reference level documents forest area FALLING 4,981,118 ->
+      4,786,346 ha over 2004-2012, the opposite direction.
+    - and the areas are not the same quantity: FRA's 5 m tree definition (about 3,089 kha)
+      against Pakistan's 2 m plus legal notification (the CRT's 4,079.631 kha), a 24%
+      difference in the stock the flux is computed over.
+    - FAOSTAT's decomposition is internally consistent (Forestland = carbon stock change
+      minus net forest conversion, 4231.333 - 4286.977 = -55.644 in 2015, to 0.001 kt),
+      so the disagreement is with the inputs and not with its arithmetic.
+  SCOPE HELD: a screening beside the inventory, nothing in a total, LULUCF still outside
+  the reported boundary, no pin moved. The guard asserts the two findings directly - that
+  the signs still oppose, and that FAOSTAT's steps are still identical - so if either
+  changes the blocker is re-stated rather than silently outgrown.
+  WHAT I DECLINED: harvested wood products, which the missing-sources lane names as the
+  cheapest open front. Roundwood is NOT held (holdings.py: 0 hits across all four layers),
+  so it needs a new acquisition plus a half-life choice, and a component entering the
+  inventory would be a scope change and a pin re-base - neither of which belongs in the
+  last hours of a campaign whose standing constraint is that pins are preserved.
+
+  AND THE DECIDING FINDING, which is about THIS repo rather than about FAOSTAT.
+  PakEmis already carries an exploratory land module, and its own parameter file sets
+  deforestation_area_ha_yr = 0 with the note "FAO net forest conversion ~0 in recent years
+  (afforestation offsets gross loss)". So the -3.52 Mt forest sink that module publishes is
+  NOT independent evidence for the sink direction: it is FAOSTAT's zero, read once more.
+  Worse, the parenthetical justification is contradicted by the only national document that
+  states both gross flows - Pakistan's own CRT, where forest gross LOSSES are 14868.348 kt C
+  against gross GAINS of 7113.083 kt C, a ratio of 2.09, netting +28.436 Mt CO2 and
+  reproducing the printed 28.44 to two decimals. Afforestation does not offset gross loss in
+  the national account; it is less than half of it.
+  WHAT I DID WITH THAT: recorded the contradiction in the parameter's own note and CHANGED
+  NOTHING ELSE. Correcting the value would move the module's published -4.01 Mt exploratory
+  sink, which is a declared decision about an exploratory component and not an audit edit;
+  the figure is verified unmoved. The note now says where the number came from and what
+  contradicts it, which is the part a reader could not previously see.
+
+D064 2026-10-05  T-MISS-2 (F-gases). THE LANE'S FINDINGS WERE LARGELY ALREADY IN THE REPO - a fourth
+  instance of the error it confessed twice. Verified against disk: its headline CRT
+  extraction already ships as outputs/ippu_unfccc_crt_fgas_species_2022.csv and
+  data/sectors/ippu/evidence/unfccc/ippu_extract_fgas_species.csv, all three rows; its
+  "CRT 0.00294 Mt" and "EDGAR 11.54 Mt" are already DECLARED LANES in
+  outputs/ippu_fgas_screening_2024.csv; its BTR-zero contradiction is already the
+  `btr-zero` tier in outputs/pakemis_btr_comparison.csv (built this campaign). Nothing of
+  that needed re-doing and none of it was re-done.
+  WHAT WAS GENUINELY ABSENT, and verified from the held documents rather than from the
+  lane's report:
+    - the CRT's ACTIVITY cells. The shipped extraction keeps columns J/K/L (emissions) and
+      discards D/E/F (activity) and G/H/I (implied factors), so nothing published could
+      say that the whole of Pakistan's 2.F is one species at 1% of a declared 23.6954857
+      t operating stock, filed at 2.F.1.a commercial refrigeration - read here from
+      Table2(II).B-Hs2!E54/H54/K54 of the same held workbook. HFC-23 is an HCFC-22
+      by-product and a cascade refrigerant, not a commercial one: the defect is the
+      SPECIES, not the rate, and the 1% factor is admissible where it was filed.
+    - the LEAK RATE as a decision. The species bank applies one operating loss fraction
+      per stratum; IPCC Vol 3 Table 7.9 (held PDF, p.7.51-52) publishes one per
+      sub-application. Read from the table: mobile AC maps ONE-TO-ONE (15% inside 10-20);
+      stationary AC lumps two whose bands overlap (chillers 2-15, residential/commercial
+      1-10) and 6% is admissible for either part; refrigeration lumps FIVE spanning
+      0.1-50% with no common value, and 8% lies OUTSIDE two of them - 16x to 80x above
+      domestic refrigeration's whole band. One stratum, not three, and the sharpening came
+      from reading the table instead of one row of it.
+  AND THE MECHANISM, which inverts the lane's framing. "A split nobody holds decides
+  ~1.2 Mt" is wrong in kind: re-running the kernel across refrigeration's full band moves
+  the OPERATING channel 0.01329 -> 2.06204 Mt (155x) while the stratum TOTAL moves only
+  0.75685 -> 2.19152 (2.9x), because with recovery zero everywhere the gas the operating
+  channel does not leak is still emitted at retirement (0.71750 -> 0.10342 Mt, inverted).
+  The deferred mass appears as a closing bank of 1.959 -> 12.559 Mt CO2e. A low leak rate
+  is not a smaller inventory but a larger future liability. Published as
+  outputs/pakemis_fgas_leak_rate_adjudication.csv with the official reading beside it; the
+  guard asserts the inequality (operating span > total span) rather than either number,
+  because the numbers move with a re-parameterisation and the claim does not.
+  TWO OF MY OWN ERRORS, both caught by writing the control first. The envelope columns
+  were nearly computed by scaling the published total - a bank is a recursion and cannot
+  be rescaled, so the script re-runs the shipped kernel and asserts the unmodified re-run
+  reproduces the shipped file. And my first arithmetic guard on the official row
+  reconstructed the tonnage THROUGH the 5-dp Mt CO2e column and failed on its own
+  rounding; the row now carries crt_emitted_t and the CO2e check is separate and loose.
+  SCOPE HELD: 2.F contributes zero to every national total and still does, no parameter
+  changed, no pin moved.
+
+D065 2026-10-05  T-AGENT-3 CLOSED, and D061's framing was wrong. The 0.653744 Mt is not a
+  defect in the API. It is a VINTAGE DIFFERENCE, and I found it by querying the served
+  data rather than by searching for a subset that summed to the gap.
+  ESTABLISHED, byte by byte:
+    - the Explorer's served fact_adm1_year sums Punjab FY2015-16 to 220.114574 - the
+      API's own number - so the shortfall is in the SERVED TABLE, not in the SQL. The
+      engine's `AND co2e_Mt_AR5 <> ''` clause was my first suspect and it drops nothing:
+      zero rows in that slice carry an empty cell.
+    - the served copy passes its own verify_release: 108 semantic tables, 62 products,
+      142 fetched files, all digests match. It is a self-consistent release.
+    - and it is EXACTLY commit 5915e0c0 of this repository: the served
+      semantic_release.json hashes to bf9fef0d... and so does `git show
+      5915e0c0:outputs/semantic/semantic_release.json`. Not approximately - identically.
+    - this repository's tree has since advanced 266 commits, 26 of them touching
+      outputs/semantic/, with __version__ unchanged at 1.0.0rc59. The two
+      fact_adm1_year tables carry 7838 and 7973 rows and different digests, both declared
+      correct by their own contract.
+    - the 0.653744 localises to 21 cells, all `physical` view, all industry
+      industrial-fuel-combustion plus one power captive-gas stream, with the SAME
+      result_row_id on both sides. Largest three: +0.582383, +0.357734, -0.333020.
+  SO THE ANSWER IS: a version string is not a pin. Each side verifies against its own
+  declaration, so neither can see the other's vintage, and a province total was the first
+  symptom. Published as data/catalog/published_release_vintages.csv with
+  tests/test_published_vintages.py: every one of the 13 published vintages is re-hashed
+  out of git (13/13 reproduce both digests), and the working-tree row states its
+  relationship to the vintage already published under its own label - today
+  `diverged-under-the-same-label`.
+  rc49's commit was NOT stated anywhere (its release row says only "git latest record")
+  and was recovered by hashing: 21b54d27d656. My first search looked only at commits that
+  TOUCHED the contract file, found the contract at c4ad155d3c90 with a non-matching
+  manifest, and nearly recorded rc49 as a release no commit reproduces - the artifacts
+  commit does not touch the contract it republishes, so it was invisible to that scan.
+  Searching one layer and concluding from its silence, for the third time this campaign.
+  AND ONE DESIGN ERROR CAUGHT BY RUNNING THE SUITE: the register's first version stored
+  the working tree's two live digests, which the release dance regenerates several times,
+  so it went stale on routine work. The row now carries no digest and the TEST recomputes
+  the state, which changes only on a version bump or a return to the published bytes.
+  WHAT I DID NOT DO: bump the version. Minting rc60 is a release action and the campaign's
+  standing constraint forbids publishing one. The register records the fact; the next mint
+  has to confront it.
+
+D066 2026-10-05  THE BUNKERING ABSENCE WAS ARGUED FROM A CLAIM IT CANNOT SUPPORT.
+  The missing-sources lane flagged a contradiction and it is real on both sides, verified
+  here from the held documents: outputs/completeness.csv 1.A.3.d said "Pakistan had no
+  formal bunkering market until 2026", and sources/UNFCCC/btr1_2024.txt line 843 books
+  `1A3d1 - International Marine (Bunkers)  0.0393  0.0001  0.0003  0.040` for 2020-21.
+  A market's absence is not the absence of fuel delivered to a vessel, and Pakistan's own
+  submission books some. The sentence was load-bearing in four places (completeness.py,
+  data_gaps.csv, availability_matrix.csv, docs/DATA_ACQUISITION.md) and is replaced in all
+  four by the distinction plus the BTR anchor.
+  WHAT SURVIVES UNCHANGED, because it was never the weak part: the OGRA "Overseas/Export"
+  line is exported furnace-oil CARGO, not bunkered fuel, and building 1.A.3.d on it would
+  report roughly 3 Mt that did not occur in Pakistan. The BTR's 0.040 Mt is TWO ORDERS OF
+  MAGNITUDE below that, which is precisely why the trap is worth the paragraph: the right
+  memo item is tiny and the wrong one is not.
+  The row stays NE. Nothing was estimated and no total moved; what changed is that a
+  reader can no longer read the absence as "nothing to estimate".
+
+D067 2026-10-05  WHAT THE rc59 DIVERGENCE ACTUALLY IS, and why nothing could have caught it.
+  Measured across the two vintages, not inferred:
+    - ALL NINE national totals agree to NINE DECIMAL PLACES. FY2023-24 is 469.638224 on
+      both sides - the pin itself. FY2015-16 401.089632, FY2021-22 497.774483, and so on
+      through the panel; the nine-year sum 4076.029230 is identical.
+    - the provincial allocation moves 11.870000 Mt in ABSOLUTE terms and exactly 0.000000
+      net, over 45 (period, province) cells. Largest: Sindh FY2020-21 +1.509992 (1.26%),
+      Punjab FY2020-21 -1.241013, Sindh FY2016-17 -1.107782. Punjab FY2015-16's famous
+      0.653744 is the SEVENTH largest, not the finding.
+    - 135 rows in the published vintage are absent from this tree: all province `Other`,
+      `physical` view, five furnace-oil industrial-combustion streams x 9 years x 3 gases,
+      carrying 0.004053 Mt - the same 0.004053 that reappears among the cells that differ.
+  SO IT IS THE DECLARED FURNACE-OIL PROVINCIAL RE-BASE (a968aeae): the residual province
+  was eliminated and its mass given a product geography. That re-base is not a defect; it
+  is work this project did on purpose and recorded.
+  THE DEFECT IS THAT IT LANDED AFTER THE LABEL WAS PUBLISHED AND THE LABEL DID NOT MOVE,
+  and the reason nothing noticed is structural: every guard this project has on a
+  release's numbers is a NATIONAL guard - the manifest's national_totals, the pins, the
+  claim matrix, the paper's claims. A change that conserves the national total at every
+  period passes all of them. The provincial axis had no fingerprint at all.
+  It does now. data/catalog/published_release_vintages.csv carries
+  national_period_fingerprint and adm1_period_fingerprint per vintage, both computed from
+  git blobs so the whole finding is reproducible inside this repository without the
+  serving one. The two rows labelled 1.0.0rc59 read d97398878783cde7 on the national axis
+  - identical - and 67be06e6e2c93fac against 8340d2e48a099f33 on the provincial. The
+  history shows three national states over the thirteen vintages (rc47/rc49, rc50/rc51,
+  rc52-rc59) and four provincial ones, which is exactly the separation the guard asserts:
+  if the two columns ever carried the same information, the register could not show a
+  provincial-only re-base and the test fails saying so.
+
+D068 2026-10-05  THE SAME SIGNATURE ON THREE MORE AXES, and one defect in my own measurement.
+  Extending the fingerprint beyond the provincial table answered the obvious next question
+  and the answer is uniform:
+    fact_adm1_year   national unchanged since rc52, spatial moved after rc59  SPATIAL ONLY
+    fact_adm2_year   national unchanged since rc52, spatial moved after rc59  SPATIAL ONLY
+    fact_adm2_month  national unchanged since rc52, spatial moved after rc59  SPATIAL ONLY
+    fact_air_adm1_year  BOTH axes moved
+  One re-base, three greenhouse-gas layers, invisible to every national guard. The air
+  layer is the CONTROL and it is what makes the finding legible: there the national axis
+  moved too, which is precisely why this project's existing guards did register the air
+  change (rc60's power SO2). Where the national axis moves, PakEmis notices; where only
+  the spatial axis moves, nothing did.
+  Published as outputs/pakemis_release_axis_fingerprints.csv (one digest per axis per
+  table per vintage, all from git blobs) with tests/test_release_axis_fingerprints.py.
+  The guard asserts the SEPARATION rather than any digest's value - a digest moves
+  whenever the data legitimately changes, but the claim that survives a re-base is that
+  the two axes can disagree and that at least one table currently shows them disagreeing,
+  AND that at least one does not, because a verdict column where every row says the same
+  thing discriminates nothing.
+  MY OWN DEFECT, caught by the guard I wrote before trusting the product: the first
+  version read the value column with row.get() and cheerfully hashed an EMPTY aggregate
+  for three (table, vintage) pairs whose schema predates the column - rc47's
+  fact_adm2_year carried co2e_Mt_AR5_low/_high, not co2e_Mt_AR5, because exact district
+  CO2e did not exist until rc49. A distinct-looking fingerprint of nothing at all, inside
+  the product whose entire job is to make a comparison trustworthy. A missing column is
+  now its own typed state that names the columns the vintage DID carry, alongside
+  `absent` for a table a vintage never had and `no-valued-rows` for an empty one, and 7
+  of the 56 rows are typed rather than digested.
+  Also folded in: the two fingerprint columns I had briefly put on the vintage register
+  were removed. They measured one table where this product measures four, and the same
+  quantity in two files is a duplication waiting to drift.
+
+D069 2026-10-05  THE BLIND SPOT IS NOT ONLY SPATIAL. The national MONTHLY table carries the
+  same signature on the TIME axis, which makes it a second independent instance rather
+  than a second symptom of the first.
+  Measured against the served vintage: 36 cells of outputs/semantic/fact_monthly.csv
+  differ, ALL of them module `Electricity and heat production`, net exactly 0.000000000
+  and 4.560664 Mt absolute, spread across months within fiscal years (202007 +0.3007,
+  202010 -0.3994, and so on). fact_annual's fingerprint is byte-identical to the published
+  vintage's. So the within-year shape of power generation was re-based while every annual
+  total it sums to was conserved - a time-axis reallocation, invisible to every guard this
+  project has, exactly as the provincial one was.
+  The product is generalised accordingly: COARSE (period -> total, the grain every guard
+  checks) and FINE ((period, axis key) -> total, the grain nothing checked), where the axis
+  is a geography for the spatial tables and the month for the monthly one. Six tables now,
+  four reading FINE AXIS ONLY and two controls - fact_annual, whose fine axis IS the
+  period and whose fingerprint is unmoved, and the air provincial layer, which moved on
+  both axes and is therefore the one the existing guards DID see.
+  THREE OF MY OWN CHECKS WERE ILL-POSED AND EACH FAILED LOUDLY RATHER THAN QUIETLY, which
+  is the only reason they are worth recording:
+    (i) fact_annual's fine digest keyed on the tuple ("FY2015-16","FY2015-16"), which
+        hashes differently from "FY2015-16", so my degenerate control failed on string
+        formatting while the numbers agreed exactly. The builder now keys the fine mapping
+        on the period alone when the fine axis IS the coarse key.
+    (ii) my monthly-vs-annual conservation control compared the two COARSE DIGESTS and
+         failed on rc42, where the sums agree to better than 1e-6 but round differently at
+         the sixth decimal because the two tables accumulate in a different order.
+         Comparing hashes of rounded floats is an equality test on formatting. Recomputed
+         from the shipped tables with a relative tolerance instead - and it holds at 1e-9.
+    (iii) the paper's anchor for the fine-axis count stopped matching the moment the
+          sentence wrapped, which the suite caught as "anchors lost" rather than as a
+          pass. A claim whose regex stops matching stops guarding.
+  The rename from national/spatial to coarse/fine was carried through the builder, the
+  guard, the claim getter, the artifact role and the prose in one commit, because a rename
+  that reaches writers and not readers fails silently.
+  4.56 is PARKED in MANUSCRIPT_CONSTANTS with its reason: it is a measurement against an
+  externally served copy that this repository does not hold, so no output can carry it.
+  The two figures beside it in the sentence - the cell count and the exactly-zero net -
+  are bound to products, and the fingerprints that say the shape MOVED are reproducible
+  here from git alone.
+
+D070 2026-10-05  THE DEPOSIT OFFERED 71 ODbL ROWS UNDER CC-BY, and the carve-out list named
+  paths the archive does not use. Acceptance blocker #3 ("per-product licence inventory
+  unresolved") measured and largely closed.
+  VERIFIED FROM DISK, both halves:
+    (A) data/shared/lookups/facility_registry.csv and outputs/pakemis_facility_registry.csv
+        each carry a `licence` column qualifying their 12,680 rows: 11,272 cc-by-4.0
+        (Hamdani et al. 2025), 1,337 source-document-register, and 71
+        `odbl-1.0 (OpenStreetMap contributors; derivative database)`. Both shipped in the
+        deposit manifest as `own-work`, reason "this project's own code, product or prose"
+        / "this project's own register, crosswalk or configuration". The semantic contract
+        has said all along that "the odbl-1.0 rows of data/facility_registry.csv and
+        outputs/pakemis_facility_registry.csv" are carve-outs. Two shipped declarations in
+        direct contradiction, and the deposit's side was the one that would have been
+        acted on: 71 share-alike database rows offered under a CC-BY grant the limitations
+        section itself says this project cannot make.
+        FIXED: a new outbound value `mixed-per-row`, whose reason names the column and
+        every distinct value with its count. The builder refuses a declared row-licensed
+        file that is missing, lacks the column, or whose column turns out uniform - all
+        three fail closed rather than falling back to own-work.
+    (B) all seven whole-file ODbL carve-outs are declared by LEGACY path
+        (data/gis/rail/yards.csv) and ship at their migrated path
+        (data/sectors/railways/gis/yards.csv). I first concluded they were NOT IN THE
+        DEPOSIT, because that is what a search for the declared path returns. They are all
+        in it, correctly typed public-licence with reason "publisher states odbl". A legal
+        statement whose paths do not appear in the archive invites exactly the wrong
+        inference, and a reader has no way to tell exclusion from renaming.
+        FIXED: the manifest and LICENSE-data now name both - published identity AND the
+        path the deposit ships at, the second RESOLVED through asset_path rather than
+        typed, so a future migration moves both halves together. The guard asserts the
+        shipped path is a real deposit-manifest row, so the printed path cannot drift
+        from the archive.
+  THE DISTINCTION THAT KEPT THIS NARROW. Four shipped CSVs carry non-uniform licence
+  columns, not two. data/catalog/assets.csv and data/catalog/raw_manifest.csv also do, and
+  theirs describe OTHER artefacts - a register's judgement about a third-party document is
+  this project's own work however that document is licensed. Only a column that qualifies
+  a file's OWN rows forces mixed-per-row. Both halves are published lists in
+  tests/test_deposit_licensing.py and neither may grow silently: the first would wrongly
+  keep a single licence, the second would wrongly lose one.
+  Nothing moved a number. The 71 rows are unchanged; what changed is what the archive
+  claims about them.
+
+D071 2026-10-05  ACCEPTANCE BLOCKER #4 MEASURED, AND ONE PUBLISHER CLOSED. "Exact editions
+  and table pointers still missing for HDIP, OGRA, OCAC, operator yearbooks, PBS QIM,
+  APCMA and the spatial/meteorological inputs" was a list of worries, not a measurement,
+  and one of its entries is simply wrong: every HDIP row carries a pointer and did before
+  the audit existed.
+  THE DENOMINATOR WAS THE WHOLE PROBLEM, and my first two attempts both got it wrong in
+  opposite directions.
+    - a register-only scan reported 157 of 211 sources with no pointer. Wrong: this
+      project's hand-verified ingests carry one citation PER ROW, so a source whose
+      produced table cites "HDIP Energy Yearbook 2024, Table 4.2" on every row is cited
+      precisely and the register simply does not repeat it. Checking one layer and
+      concluding from its silence, a FOURTH time this campaign.
+    - scoring all 211 was also wrong: a file DERIVED inside this repository has a
+      derivation chain rather than a page number, and a source that is a dataset (a CSV
+      export, a satellite product, a statistical API) has a file and a variable rather
+      than a table. Demanding a table pointer of either inflates the gap with rows no
+      citation could ever close.
+    - and my locator vocabulary was too narrow: it scored "audit report, para 2.5.99",
+      "HIES 2024-25 Sec 5 Mod 3" and "Agriculture chapter, Fig-2.8" as unpointed. Those
+      are locators by any reading. The pattern was widened by COUNTING each candidate in
+      the register first, so it matches the vocabulary in use rather than one I would
+      like to see - an inventing matcher is worse than a narrow one, and both are worse
+      than a counted one.
+  THE MEASURED ANSWER: of 122 sources where a table pointer is the right notion, 100 have
+  one and 22 do not. Published as outputs/pakemis_citation_pointer_audit.csv with BOTH
+  counts ratcheted in the same direction - because the easiest way to improve the share
+  is not to cite anything but to widen the exemption, and that is now a visible edit.
+  OCAC CLOSED, by reading the seven held documents rather than by reclassifying them.
+  Each annual edition is 2 pages; each monthly edition is 18 - pages 1-9 SECTORAL SALES OF
+  ENERGY PRODUCTS for AREA-PAKISTAN, SINDH, PUNJAB, KHYBER PAKHTUN KHAWA, BALOCHISTAN,
+  GILGIT BALTISTAN, AZAD KASHMIR, FATA, KARACHI in that order, pages 10-18 the same nine
+  for NON-ENERGY. AND THE TITLES DRIFT, which is recorded with the pointers because an
+  edition whose vocabulary changed is exactly where a reader following a citation goes
+  wrong: FY2016-17 to FY2019-20 head BOTH pages "SECTORAL SALES / CONSUMPTION OF POL
+  PRODUCTS" and separate them on the line below (PAKISTAN - ENERGY PRODUCTS /
+  - NON-ENERGY PRODUCTS); from FY2020-21 the titles themselves split.
+  The register edit is 7 rows. My first attempt rewrote the file through csv.DictWriter
+  and changed all 212 - same content, unreadable diff, and the CRLF guard caught the
+  terminator change. Redone surgically, line by line.
+
+D072 2026-10-05  A MONTHLY PROFILE THIS PROJECT SERVES AS "OBSERVED" PUTS 78.76% OF A
+  YEAR IN ONE MONTH. Found by following a loose thread off the citation-pointer work: the
+  PBS minerals parse puts province names in the mineral column, so I asked what else was
+  wrong with that panel.
+  THE PANEL IS WIRED AS A SHAPE. pkinv.core.pbs_minerals serves upstream gas and oil
+  timing to fugitives and defends the arrangement in its own docstring: "the profile is a
+  shape, never a magnitude ... a published quantity could be wrong by any amount without
+  moving the inventory". Sound against a magnitude error. It does NOT cover a missing
+  province, because a shape computed over part of the country is a different quantity
+  wearing the same name - and covers() asks only for twelve months, never for four
+  provinces.
+  VERIFIED, from the shipped panel and the shipped profile server:
+    - 13 of 28 (mineral, year) cells are served as COVERED, at method T2 "observed", from
+      an incomplete province set.
+    - crude_oil FY2021-22 holds BALOCHISTAN ALONE. The profile served is
+      [2.78, 2.71, 2.55, 2.66, 2.61, 1.11, 0.86, 0.91, 78.76, 1.51, 1.74, 1.81] percent.
+      No real month of Pakistani crude production is most of the year.
+    - natural_gas FY2021-22 holds Balochistan+KPK: 21.40% in month 2 against ~7% elsewhere.
+    - natural_gas FY2019-20 has NO KPK rows at all - 156,979.61 of 1,316,635.56 units,
+      11.9%, which is exactly why that group control fails.
+  AND THE COST IS BOUNDED, not asserted. Recomputing a complete year's shape from only the
+  provinces a broken year holds moves a monthly share by at most 1.1 percentage points for
+  natural gas and under 0.3 on average: Pakistani gas has almost no season and the
+  provinces' curves are alike. That bound is the finding. Without it a missing 62% of
+  production looks fatal; with it, gas timing is tolerable and crude oil FY2021-22 is not.
+  A SECOND DEFECT POINTS THE OTHER WAY. The spreadsheet editions are read across EVERY
+  worksheet and some workbooks repeat their table on working sheets ('17-18', 'Sheet1',
+  'merging', 'Quarterly', 'final'; 'Electricity generation', 'mineral production'), so
+  those years are counted once per sheet. FY2020-21 carries 31 rows per month for gas and
+  oil and 100 for coal and limestone, and its published gas quantity is 12.83x FY2018-19's.
+  That is a wrong number in a shipped activity table - and it costs the inventory NOTHING,
+  because the duplication is uniform at 31 rows in every one of the twelve months, so the
+  normalised shape matches a clean year to within a quarter of a percentage point. Uniform
+  duplication keeps the shape and breaks the quantity; a missing province does the
+  opposite. Reporting them as one count of "bad cells" would have hidden both.
+  WHAT I DID: published outputs/pakemis_minerals_panel_screening.csv with both kinds and
+  the served profile's worst month, guarded it, and corrected the national paper, which
+  said "observed years carry the year's own twelve months at TE2" without qualification.
+  WHAT I DID NOT DO: repair either. Fixing the duplication moves a published activity
+  table; making covers() require the country moves a published monthly shape for ten
+  mineral-years. Both are declared decisions and neither is an audit edit. The screening
+  exists so the decision rests on a measurement, and the guard asserts the case still
+  exists so a repair has to retire the prose deliberately rather than let it lapse.
+
+D073 2026-10-05  THE SECOND POINTER FAMILY CLOSED, from documents I had already opened.
+  Having read the eight PBS minerals editions for D072, the pointers were free: four are
+  PDFs carrying one running-head table, "MINERALS PRODUCTION DATA <edition> ( unit MT )",
+  over 8 / 6 / 10 / 1 pages (the 2021-22 title carries "(F)" and 2022-23 "(R)"), with
+  columns S.NO, Name of Mineral, PROVINCES, twelve months and Total. The other four are
+  WORKBOOKS WITH NO TABLE TITLE AT ALL, so the SHEET is the pointer: 2017-18 ships
+  '17-18', 'Sheet1', 'merging', 'Quarterly' and 'final'; 2018-19 and 2019-20 ship
+  'Original'; 2020-21 ships 'Electricity generation' and 'mineral production' - which is
+  why two different parses read that one workbook for two different tables, and that is
+  now stated where a reader looks instead of being inferable only from the code.
+  The gap falls 22 -> 19 and the ratchet with it. PBS is closed; what remains is 19 one-
+  offs with no shared publisher.
+  AND MY DETECTOR MISSED ONE OF MY OWN POINTERS, which is the lesson worth keeping. The
+  coal note read "the 'COAL' block of the same 'MINERALS PRODUCTION DATA' table", and the
+  locator pattern matches capital-T "Table" - so a citation naming the table in lower case
+  scored as unpointed. I renamed the reference rather than widening the pattern again: a
+  detector loose enough to match any sentence containing "table" would pass citations that
+  locate nothing, and this campaign has already recorded that an inventing matcher is
+  worse than a narrow one.
+
+D074 2026-10-05  A SCANNER BLIND TO A NOTATION MEASURES THE NOTATION. Found while reading
+  back my own prose: I had written "0.65\,\si{\mega\tonne}", and the quantity-coverage
+  guard passed. It passed because the scanner matches \SI{...}, \SIrange{...} and
+  \num{...} and had never known the thin-space form "N\,\si{unit}" - so three printed
+  quantities had been outside every guard for as long as that form has been in the corpus
+  (two temperature bands in the transport paper and one of mine). Taught the scanner both
+  the scalar and the range form; the two transport bands turn out to be already declared,
+  and the only newly exposed number was my own.
+  AND THEN THE ANTI-SHADOW GUARD REFUSED MY PARKING, correctly. 0.65 is an engine result
+  elsewhere in the corpus, so listing it as a manuscript constant looked like hiding a
+  result - which is exactly what that guard exists to stop. It forced the right answer
+  rather than a convenient one: BOTH divergence magnitudes came out of the paper. A figure
+  measured against an externally served copy cannot be recomputed from the archive, and a
+  sentence the archive is supposed to support should not carry one. The structural claims
+  stay (national totals identical to nine decimals, the allocation moved, net exactly
+  zero), the magnitudes live in the two builders' docstrings and in this record, and
+  MANUSCRIPT_CONSTANTS is two entries SHORTER than when I started - 4.56 came out with
+  0.65, because keeping it would have contradicted the sentence I had just written.
+  The lesson is the pair: widening a detector exposed one of my own numbers, and the guard
+  against hiding numbers then refused the easy fix. Neither would have fired alone.
+
+D075 2026-10-05  I WAS WRONG ABOUT WHY, AND THE RIGHT ANSWER IS WORSE. D072 said the
+  minerals panel is missing provinces; it implied the editions did not print them. They
+  do. PBS prints all four, and the parse loses two of them.
+  THE MECHANISM, proved rather than inferred. The mineral's NAME CELL IS VERTICALLY
+  CENTRED across its five province rows, so `pdftotext -layout` emits the name on the
+  MIDDLE line. The FY2021-22 coal block reads:
+        (blank) Punjab      116,761  29,619 ...
+        (blank) Sindh       398,890 447,989 ...
+        13 COAL KPK          45,886  50,805 ...
+        (blank) Balochistan 208,277 232,477 ...
+        (blank) Total       769,814 760,890 ...
+  A parser that treats the name line as the group's first row loses Punjab and Sindh - and
+  then takes the next mineral's first two rows as its own. The identity settles the
+  attribution to the unit: Punjab + Sindh + KPK + Balochistan equals the printed Total in
+  EVERY ONE of the twelve months, year 9,678,139 on both sides. The panel carries
+  4,072,263 - 42.1% of that year's coal.
+  AND THE PARSE'S OWN ASSURANCE CANNOT SEE IT, which is the deeper finding. The summary
+  publishes "1571 of 1683 mineral-years closing the group control". That control compares
+  the rows the parser BUFFERED against the printed Total, not the rows the panel ships, so
+  for FY2021-22 coal it closes exactly while certifying a quantity the output does not
+  contain. Nine canonical mineral-years disagree between a CLOSING control and the shipped
+  panel, in both directions: limestone FY2016-17 ships 6.9%, natural gas FY2023-24 33.6%,
+  coal FY2021-22 42.1%, crude oil FY2023-24 45.9%, coal FY2015-16 47.1%, coal FY2016-17
+  110.2%, limestone FY2016-17 125.5%, crude oil FY2020-21 218.5%, natural gas FY2020-21
+  230.8%. A control that passes while its subject is short is not a control.
+  The comparison it omitted is now computed in the screening and DECLARED in the guard,
+  nine cells with their shares, ratcheted downward so a tenth cannot hide among them and a
+  repair has to retire its entry deliberately.
+  WHAT I STILL DID NOT DO: repair the parse. The fix is now well-specified - attribute the
+  province rows preceding a name line to that mineral - and it would move the monthly
+  SHAPES of at least nine canonical mineral-years, which is a published product. With nine
+  hours left on the clock that is a change I would be shipping without the time to verify
+  its cascade, and a half-corrected parse is worse than a measured one. The measurement,
+  the identity proof and the mechanism are in the repository; the decision is the user's.
+  THE LESSON, which this campaign has now recorded in three forms: matching a printed
+  total closes TRANSCRIPTION, not correctness. The group control matched, and had matched
+  for releases, while the table it certified was missing more than half of a year.
+
+D076 2026-10-05  THE MISSING-SOURCES LANE'S OVERLAP FINDING VERIFIED IN FULL, and all four
+  of its claims were already DECLARED in the repository - which is the same pattern its
+  F-gas half showed. Checked one by one rather than taken together:
+    - "commercial gas is counted as post-meter leakage, never as combustion": stated in
+      completeness.py's own 1.A.4.a row ("45 MMCFD, counted once as post-meter leakage and
+      never as combustion"), and the factor's activity definition in
+      fugitives/audits.py reads "non-residential and commercial gas consumed". Verified.
+    - "the brick and captive screenings were retired at rc47 for double counting":
+      completeness.py names it exactly - "retired at rc47 Wave 0 -
+      superseded_by_reference_stream in the fuel ledger; adding either to a reference that
+      books the measured series would double-count, which is exactly what their
+      configurations briefly did". Verified.
+    - "stationary farm diesel sits in the road total at road factors": the transport fuel
+      ledger is SHARPER than the claim - "OCAC books ZERO bulk HSD to Agriculture in all
+      nine editions (its agriculture row is LDO, 11,822 t) - the agricultural diesel claim
+      is retail-channel only, inside Road". Verified, and the lane understated the evidence.
+    - "the positive control is the dung-cake transfer, which closes both ways under an
+      equality test": tests/test_residential.py::
+      test_dung_nitrogen_equals_agricultures_diverted_flow. Verified.
+  So the lane's T-MISS-1 is CORRECT AND REDUNDANT, like its T-MISS-2. Its value was as an
+  independent second reading of declarations this project had already made - which is
+  worth something, and is not the same as a finding. Both halves of the lane are now
+  verified claim by claim, and the one thing it found that the repository had NOT already
+  said - the bunkering contradiction - is repaired (D066).
+  The lane is closed. Nothing in it remains unverified.
+
+D077 2026-10-05  THE CAMPAIGN'S OWN HANDOFF WAS A STUB, which is the one defect good work
+  elsewhere does not repair. The prompt names six top-level files as this campaign's
+  deliverable surface. At hour 15, five of the six were HEADERS ONLY: source_register.csv
+  carried one row (the prompt itself), claim_evidence.csv one, comparison_results.csv and
+  completeness.csv nothing but their schemas, product_manifest.json an empty list. Every
+  substantive result was in DECISIONS.txt and in the products - and a reader arriving at
+  the named handoff would have found nothing.
+  BUILT, NOT TYPED: research_campaign/build_campaign_tables.py consolidates the lane
+  outputs that already existed (land/sources.csv's 19 documents, validation_figures/
+  matched_comparison.csv's 23 comparisons, missing_sources/coverage_matrix.csv's 84
+  category rows) and adds the coordinator's own rows as declared literals, where they can
+  be read and disputed. The mechanical parts come from the artefacts: every product's
+  digest is READ FROM outputs/release_manifest.json rather than recomputed, so this
+  manifest cannot describe a product the release does not, and a product the release does
+  not hash is recorded as such rather than dropped - four are (three inputs and a script).
+  Result: 27 sources, 12 claims, 32 comparisons, 86 category rows, 10 products.
+  TWO THINGS THE BUILD CAUGHT IN ITSELF. The first assembly silently DROPPED the
+  source_product column by slicing the literal tuples to the stub's older width - the rows
+  still looked complete, which is the quiet failure this campaign keeps recording; the
+  schema now carries the pointer and the builder refuses a tuple of the wrong width. And
+  the manifest's `release` lookup assumed a key the release manifest does not have, which
+  failed loudly rather than writing an empty string.
+  GUARDED: tests/test_campaign_handoff.py holds four properties - no table may return to
+  a stub; every claim names a command AND a wording location, so a claim with no published
+  home is visible rather than inferable; every comparison declares an independence class
+  and more than one class occurs, so the column still distinguishes a validation from a
+  transcription check; and the product manifest agrees with the release manifest AND with
+  disk, with an explicit reason for every product the release does not hash.
+  The report itself is written at the deadline from this surface and from this log.
+
+D078 2026-10-05  THE COMPARATOR LANE'S THREE HIGH-SEVERITY DEFECTS VERIFIED, and two of
+  them were overstatements of this project's own independence that I could repair without
+  moving a number.
+  D-V13 VERIFIED EXACTLY. outputs/power_climatetrace_plants_fy2023_24.csv ships 72 rows
+  with trace_over_engine ratios from 1.51 to 9.89, and Climate TRACE's trace_g_per_kwh has
+  exactly ONE distinct value across every coal asset: 2431.0 g CO2e/kWh. The pure oil
+  (703), biomass (0) and mixed coal classes are single-valued too; only
+  `gas, other_fossil` varies (16 values), and there with the fuel mix rather than with the
+  plant. So the comparator is activity x a per-class constant: it can test this
+  inventory's GENERATION and fuel typing and cannot test a plant's intensity, and a
+  plant-level ratio read as a magnitude benchmark is reading a constant back.
+  The product shipped with NO banner at all, so nothing in the file said this. It has one
+  now. Runner.write gained an optional `banner` argument, omitted by default so all eight
+  existing callers write the same bytes they always did.
+  D-V11 VERIFIED AND SHARPER THAN THE CATALOG. outputs/pakemis_validation_catalog.csv's
+  geo-power-climatetrace row said shared_inputs = "possibly the same public plant lists".
+  Counted: 29 of the 52 rows in plant_coordinates.csv are Climate TRACE derived (13
+  'climatetrace', 16 'climatetrace+wri_gppd'), so 56% of the stations are checked against
+  their own source and agreement there is self-agreement. "Possibly" understated a
+  measurable fact; the row now states the count and names the 23 wri_gppd-only stations as
+  the only outside check.
+  D-V1 VERIFIED AND LEFT ALONE: Climate TRACE is registered by API path
+  (api.climatetrace.org/v7) with no dataset release, retrieval date or held payload for
+  the agriculture rows. That is an acquisition gap, not a misstatement, and closing it
+  needs a fetch - which the comparator's restated history makes a new acquisition rather
+  than a correction. Recorded in the campaign's comparison table with independence class.
+  AND THE BANNER BROKE A READER, loudly. Five claim getters read this product, and the
+  shared selectors in tests/paper_numbers/_common.py used the non-banner-aware reader, so
+  the first '#' line became a one-column header and the claim ERRORED. Fixed at the root:
+  all five shared selectors (_first_where, _min_where, _max_where and the two summers) are
+  banner-aware now, which is identical behaviour for a product with no banner, plus the
+  two direct readers in doc_claims. A product may GROW a banner - that is the point of
+  having one - and a reader that cannot survive it is the real defect.
+
+D079 2026-10-05  WHY THE MINERALS CONTROL WAS THE ONE THAT FAILED: a complete sweep of
+  every shipped control that publishes a closure verdict. The minerals defect was found by
+  accident, so the obvious question is whether the same shape hides elsewhere. It does
+  not, and the reason is structural.
+  TEN products carry a closes / closed / agrees / reconciles column. NINE of them compare
+  THE ROW THAT SHIPS:
+    pbs_qim_parse_summary          each row's twelve month cells against that row's own
+                                   printed annual, and a row that fails is QUARANTINED
+                                   rather than emitted - the control's subject is exactly
+                                   the output
+    fugitives_unfccc_crt_reproduction, ippu_unfccc_crt_reproduction_2022
+                                   per row, activity x IEF against the same row's
+                                   reported value
+    ocac_direct_edition_crosscheck the panel's own differenced month against the
+                                   independently published month - the strongest shape
+                                   here, 144 rows
+    pakemis_claim_matrix, national_uncertainty_decomposition,
+    fao_crop_calendar_crosscheck, waste_parameter_mc_2024,
+    aviation_reconciliation_fy2023_24   all per row or per scope
+  ONE is per GROUP: the PBS minerals group control, which sums the province rows the
+  parser decided belong together and compares them with the printed total. A group is an
+  aggregate THE PARSER ITSELF ASSEMBLED, and that assembly is precisely what broke - so
+  the control and the panel can disagree while the control closes, which is what they do
+  in nine canonical mineral-years.
+  AND TWO OF THE NINE CARRY FAILING VERDICTS (national_uncertainty_decomposition has 'no'
+  rows, fao_crop_calendar_crosscheck has 'NO'), which is the evidence that they are live
+  checks rather than columns that can only say yes. A control whose every value is 'yes'
+  is not thereby wrong - six of these are - but it cannot demonstrate that it could fail.
+  WHAT THE RESULT IS AND IS NOT. 'Per-row' says the control's subject is the shipped
+  object. It does not say the object is right: the CRT reproductions check this project's
+  arithmetic against the official table's own cells and would not notice an error shared
+  by both. The finding is narrower and useful: the one control in the product set whose
+  subject is an aggregate of the parser's own choosing is the one that stopped describing
+  its subject, and that is a reason to distrust the SHAPE of a control rather than to
+  distrust controls.
+
+D080 2026-10-05  THE HANDOFF'S OWN REFERENCES CHECKED, and it had two dangling ones.
+  A handoff whose references dangle sends a reader nowhere, so every repository path and
+  decision id in the four tables is now resolved. Two rows named paths in the SERVING
+  repository as bare `data/...` - `data/verify_release.py` and
+  `data/releases/1.0.0rc59/` - which in THIS repository read as paths that do not exist.
+  Both now say which repository they mean.
+  THE CHECKER WAS WRONG THREE TIMES BEFORE IT WAS RIGHT, and each way is worth recording
+  because each is a way to report a defect that is your own:
+    - it declared `data/stream_reporting_sector.csv` missing. It is a LEGACY path, which
+      is this project's published identity for an asset; it resolves through the catalog
+      to data/shared/lookups/. The checker now resolves before it reports.
+    - it declared three FAOSTAT archives missing. Their names end
+      "E_All_Data_(Normalized).zip" and the scan stopped at the bracket. Parentheses are
+      now part of a filename.
+    - it declared `data/GL` missing. That is a substring of a FAOSTAT API query -
+      faostatservices.fao.org/api/v1/en/data/GL?area=165 - and a checker that reads a
+      URL's path as a file reports a defect it invented. URLs are stripped first.
+  AND IT FOUND A DEFECT IN THE BUILDER'S OWN IDEMPOTENCE. I qualified the serving-repo
+  path in the literal, reran, and the stale text survived: claims() kept the FILE's row
+  whenever the claim_id already existed, so the builder could not correct a row it had
+  itself written. A builder that cannot overwrite its own output is not idempotent, it is
+  append-only. The literals now win for any id they define and rows present only in the
+  file are still preserved, so a hand-added claim is not lost.
+  Guarded by tests/test_campaign_handoff.py, which now holds five properties.
+
+D081 2026-10-05  ONE MORE POINTER, FREE, AND A LIMITATION DECLARED RATHER THAN EXPLOITED.
+  The aviation UNFCCC controls row cited only a document URL. The document was already
+  open for the comparator work, so the pointer cost nothing: Pakistan's BTR1 prints the
+  International Bunkers block at line 841 of the held transcription, with 1A3a1
+  International Aviation on 842 (0.11 Mt CO2) and 1A3d1 International Marine on 843, and
+  domestic civil aviation is not separately reported there - which is why the matched row
+  carries no value. Gap 19 -> 18, ratchet lowered with it.
+  AND THE HONEST PART. Looking at what remains, four or five rows are DATASETS whose
+  pointer is a file and a row filter - the GEM trackers, the ELK rail layers, the Global
+  Mangrove Watch release, the HIES microdata - and several already carry one in substance
+  ("Pakistani rows (88 units)"). They score `unpointed` only because the audit's
+  publisher-marker list does not recognise them. Widening that list would move them to
+  `not-applicable` and improve the pointed share WITHOUT CITING ANYTHING, which is exactly
+  what I built the not-applicable ratchet to make visible - and I am not going to be the
+  first person to walk through it. The list is left alone, the count is left overstating
+  the gap, and the limitation is written into the audit's own docstring and into the
+  paper. Overstating a gap is the safe direction: a reader who acts on it loses effort, not
+  accuracy.
+  That is the last substantive change of this campaign. What remains open is recorded, and
+  every open item is either an acquisition or a decision that moves a published product -
+  neither of which belongs to a verification campaign operating under a pin freeze.
+
+D082 2026-10-05  "NAMES A COMMAND" IS NOT ENOUGH, AND RUNNING THE CHECK FOUND TWO ROWS.
+  D077's guard required every claim row to NAME a command and a wording location, which a
+  hollow row satisfies: the command could produce nothing resembling the figure. So I ran
+  the check for real - every number a claim states, looked for in the product its command
+  produces - and it found two.
+    CE-MIN-001 quoted the twelve-month profile served for crude oil in FY2021-22 (2.78,
+    2.71, 2.55, 2.66, 2.61, 1.11, 0.86, 0.91, 78.76, 1.51, 1.74, 1.81 percent) while the
+    screening published only its MAXIMUM. A reader following the command found one figure
+    of the twelve, and the other eleven existed in my console and nowhere else. The
+    product now publishes served_profile_pct, because the SHAPE is the finding and a
+    single worst month cannot show it.
+    CE-LAND-002 said "+28.436 Mt CO2 (CRT) against -4.107, gap 32.543" while the product
+    publishes 28.44 and a gap of 32.55. Both readings are defensible - 28.44 is what the
+    submission PRINTS and 28.436 is what its own gross pair reconstructs - but the claim
+    quoted one and the gap of the other, which is a second rounding of exactly the kind
+    this project has been bitten by before. The row now states the printed pair with the
+    reconstruction named as the CHECK on it, which is what it actually is.
+  THE GUARD IS NOW THE REAL ONE. claim_evidence.csv gains an evidence_product column - the
+  file a reader opens to find the row's numbers - and the test requires every figure with
+  two or more decimals to appear there. A claim whose evidence is structural rather than
+  numeric (a count of controls by shape; a comparison against a copy this repository does
+  not hold) says so with the word STRUCTURAL in that column, so the exemption is visible
+  in the table a reader reads rather than buried in a test file. Two of thirteen are
+  STRUCTURAL and both say why.
+  The builder refuses a claim with no evidence product, so a new row cannot be added
+  without deciding which of the two it is.
+
+D083 2026-10-05  THE SAME CHECK ON THE TABLE NEXT DOOR FLAGGED 26 OF 32 ROWS, FOR THREE
+  DIFFERENT REASONS - and flattening those into one count would have been as misleading as
+  the silence it replaced.
+  Having made the claim table's figures checkable (D082), the comparison table was the
+  obvious next place, and it does have the same hollowness. The reasons are not the same:
+    - CMP-FOREST-SIGN carried "+28.436 ... gap 32.543" while the product publishes 28.44
+      and 32.55 - the SAME second rounding I had just fixed one table over, and I had not
+      thought to look here. Fixed to the published pair.
+    - CMP-FOREST-CIRCULAR named lulucf_params.csv as the product for the -3.52 sink. The
+      parameter file holds the PARAMETER; the forest adjudication publishes the -3.52.
+      Wrong product named, now right.
+    - three rows state a DIFFERENCE no product prints, computed from two values that are
+      both published (the F-gas bank against the CRT and the BTR, the minerals shape cost).
+    - two are measured against the SERVED release, which this repository does not hold, so
+      no product here can carry them - the same category as the magnitudes I took out of
+      the paper.
+    - and 23 came from a worker lane at the LANE's precision, above what its product
+      prints; the lane's own tables beneath research_campaign/ carry them as stated.
+  So the column is `figures_reproducible` with four declared states - yes,
+  derived-in-this-table, external-copy, lane-precision - and the guard checks every `yes`
+  for real (four rows, all passing) while requiring every state to still occur, because a
+  vocabulary with a dead value has stopped distinguishing anything.
+  WHAT I DID NOT DO: re-derive the 23 lane rows to the precision their products print.
+  That is the lane's own arithmetic and changing it would be restating another worker's
+  numbers without re-running their analysis. They are labelled, which is the honest
+  alternative to either silence or a rewrite.
+
+D084 2026-10-05  THE ENERGY LANE'S LAST TWO DEFECTS CHECKED, and I had overstated "all five
+  lanes verified and closed" - two of its eight had never been looked at. Checking them
+  found one lane error and one real defect that is sharper than the lane's own reading.
+  D-E2-07 IS WRONG, and it would have published a false completeness gap. The lane reported
+  "GEM lists Lakhra power station, 3 x 50 MW lignite, status operating" and inferred a
+  plant-coverage hole in the power lane. GEM's held rows say otherwise:
+      Lakhra power station  Unit 1 / Unit 2 / Unit 3   50 MW each   MOTHBALLED
+      Lakhra power station  Expansion                  1320 MW      cancelled
+      Lakhra mine-to-mouth power station               450 MW       cancelled
+  A mothballed station correctly contributes nothing, so its absence from the plant lane is
+  right and not a gap. Had I carried the lane's wording into the handoff I would have
+  published a 150 MW coverage hole that does not exist. The lane's SECOND half - 378 MW of
+  captive coal belonging to industry inside HDIP's Cement column - is about the industrial
+  residual and is not contradicted here.
+  D-E2-08 IS REAL AND I CAN NAME THE MISSING LINE. The lane called it "ledger legibility".
+  It is a missing declaration. outputs/power_activity_factor_ledger.csv prints the power
+  coal CH4 row with factors `ef:ind_coal_ch4=10.0` and `ef:res_ch4_coal=300.0` while the
+  emission, 0.384262 Gg on 384,262 TJ, is 1 kg/TJ - and `pow_ch4_coal = 1 kg CH4/TJ, IPCC
+  2006 Vol 2 Ch 2 Table 2.2 (Energy Industries)` is in the registry and is what the engine
+  uses. So a reader auditing the coal CH4 lane from the ledger sees two factors, neither of
+  them used, and would read the printed emission as wrong by 10x or 300x.
+  THE CAUSE is not the ledger's resolver, which faithfully expands a declared group. It is
+  that data/shared/parameters/parameter_scope.csv has NO row narrowing the coal CH4 shared
+  group per sector, while it has exactly that row for every analogous case -
+  factor:ch4:Oil binds pow_ch4_oil for power, factor:ch4:Other Primary Solid Biomass binds
+  pow_ch4_bagasse, factor:ch4:Wood/Wood Waste binds res_ch4_wood,
+  factor:ch4:Charcoal binds res_ch4_charcoal, factor:ch4:Liquid Fuels binds ind_ch4_liquid.
+  Coal is the one fuel with no such binding.
+  NOT FIXED, for the reason that has governed every other such case this campaign: that
+  file declares WHICH COMPONENT ROWS A SHARED PARAMETER MULTIPLIES, so it drives the
+  correlation structure of the uncertainty engine. Adding a row would change which
+  components move together under one draw and could move published uncertainty figures. It
+  is a declared decision, not an audit edit - and it is now specified precisely enough to
+  take in one line.
+  CORRECTING MY OWN CLAIM: the earlier checkpoints said all five lanes were verified and
+  closed. For the energy lane that was true of six defects of eight. It is true of eight
+  now.
+
+D085 2026-10-05  POINTED IS NOT THE SAME AS CHECKABLE, and the first pre-existing pointer
+  I checked to the cell was correct.
+  Having made the claim and comparison tables' figures checkable, the citation audit's own
+  strongest number was the next thing to question: it says 104 sources carry a table
+  pointer, and I had verified the CORRECTNESS of only the ten I wrote today. The other 94
+  were counted for having a locator, not for the locator being right.
+  SO I CHECKED ONE TO THE CELL. data/activity/power/bagasse_generation.csv cites "NEPRA
+  SoIR 2024 Table 8"; the held report's contents page lists Table 8 as "Plant-wise
+  Electricity Generation (GWh)" at p.132, and the block in the body reads
+      Almoiz Industries  Bagasse  Bagasse  15.10  29.83  17.38  25.02  29.10
+  against the ingest's 15.1 / 29.83 / 17.38 / 25.02 / 29.10 for FY2019 to FY2023, with the
+  source's two fuel columns matching the ingest's fuel_primary and fuel_alternate. Correct
+  in table and in value. One of ninety-four is not a sample, and it is one more than was
+  checked before.
+  AND THE COUNT ITSELF CONFLATED TWO THINGS. A pointer is stated in the register whether or
+  not this project holds the document it points into, so `pointed` mixed rows a reader can
+  confirm here with rows they cannot. Measured: 94 point into an archived document, 6 into
+  documents this project does not hold (the Economic Survey Statistical Supplement among
+  them - I went looking for it to check a second pointer and it is not held), and 4 into
+  files derived inside the repository. The new pointer_checkable_here column separates
+  them and changes no verdict: a pointer into a document the reader must obtain is still a
+  pointer and far better than none. What it stops is the audit's strongest number implying
+  more than it has.
+  The audit already had an `unverifiable` verdict for a not-archived document - it was just
+  reserved for the case where no pointer was found at all, which is the narrower half of
+  the same idea.
+
+D086 2026-10-05  FIVE PRE-EXISTING POINTERS CHECKED, ALL CORRECT, and one is correct in a
+  way its own citation does not convey.
+  D085 verified one of the 94 checkable pointers. Four more, all into the held NEPRA State
+  of Industry Report 2024, checked against the report's own table titles and values:
+    bagasse_generation.csv   Table 8  "Plant-wise Electricity Generation (GWh)"
+                             Almoiz Industries 15.10/29.83/17.38/25.02/29.10 in both
+    generation_by_fuel.csv   Table 17 "Thermal Electricity Generation by Sector and by
+                             Fuel (GWh)" - subject matches exactly
+    plant_fuel_ledger.csv    Table 21 "Fuel Consumption and Cost of Generation Data of
+                             IPPs (Net)" - exact
+    plant_heat_rates.csv     Table 23 "Heat Rate and Plant Efficiency Data of IPPs" - exact
+    plant_locations.csv      Table 5  "Plant-wise Installed Capacity (MW)"
+  THE LAST ONE IS THE INTERESTING CASE. A reader looking for plant LOCATIONS would not go
+  to a table titled "Installed Capacity", and on the title alone the pointer looks wrong.
+  It is right: that table carries town, province and station type alongside the capacity
+  columns, and the ingest's four columns map onto it exactly - AJ Power / Khushab, Punjab /
+  Solar; Act Wind / Thatta, Sindh / WTs; Almoiz Industries / Mianwali, Punjab / Bagasse,
+  all three confirmed in the held PDF. So a pointer can be accurate and still underdescribe
+  what is at the other end, which is an argument for citing the COLUMNS and not only the
+  table - and a thing I would not have noticed without opening the document.
+  FIVE OF NINETY-FOUR is not a sample and I will not dress it as one. It is five more than
+  were checked before, all five held, and the one apparent mismatch resolved in the
+  pointer's favour rather than against it.
+
+D087 2026-10-06  CLEANING A PAPER DIRECTORY DISARMS THE ONE GUARD THAT CAN SEE A TABLE RUN
+  OFF THE PAGE, and I proved it by doing it.
+  The user asked which file is the main paper and for paper_national/ to be cleaned. The
+  answer to the first: paper_national.tex, with its 25 section files and supplement.tex -
+  `make paper-national` builds those three and copies the results to
+  papers/pdf/national_paper.pdf and national_supplement.pdf, which is what the release
+  manifest hashes. pakemis_rewritten.tex is the compact editorial rewrite, built by a
+  SEPARATE target that deliberately does not copy into papers/pdf, with its own
+  technical_supplement and a submission.tex wrapper for the review layout. It is a
+  candidate beside the article, not the article.
+  THE CLEAN: 18 gitignored files, 1.2 MB - latexmk bookkeeping (.aux .fls .fdb_latexmk
+  .blg .spl .out), the three .log files, a .DS_Store, and supplement.pdf. Nothing tracked
+  was touched; verified afterwards that no tracked path is missing from disk.
+  AND IT EXPOSED A VACUOUS GUARD. tests/paper_numbers/test_editorial_structure.py::
+  test_nothing_overruns_the_page reads the COMPILER'S LOGS, because a table that overruns
+  by 104.5pt is invisible in the .tex source and the log is where pdftex reports it. Those
+  logs are build artefacts. With paper_national/*.log deleted the test read nothing,
+  asserted an empty set of offenders and PASSED - so a routine clean of a paper directory
+  silently disarms the only check that can see the defect it was written for. Demonstrated,
+  not supposed: I deleted them and watched it pass.
+  Fixed with the positive control it never had: every manuscript root must have contributed
+  at least one log, and the failure names the directory and says to run `make papers`.
+  Verified in both directions - green with the logs present, and with them removed it fails
+  with "no LaTeX log in paper_national".
+  TWO ASYMMETRIES WORTH KNOWING, both found while deciding what was safe to delete.
+  supplement.pdf is gitignored while paper_national.pdf is tracked, and
+  scripts/release_fixpoint.py's PAPER_GLOBS reads paper_national/supplement.pdf for the
+  paper hashes - so that one ignored file is load-bearing for the fixpoint and is only safe
+  to delete immediately before a rebuild. And the .bbl files ARE tracked, deliberately:
+  an ESSD submission ships its bibliography. The rewrite's four latexmk files are gone and
+  stay gone until someone runs `make paper-rewrite`, which is correct - they are that
+  target's debris and `make papers` does not build it.

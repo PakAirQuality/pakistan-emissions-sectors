@@ -1,0 +1,22 @@
+{
+  "columns": [
+    "Open burning of waste",
+    "Solid waste disposal",
+    "Domestic wastewater",
+    "MODULE_TOTAL"
+  ],
+  "deterministic": {
+    "Domestic wastewater": 24.91925740036953,
+    "MODULE_TOTAL": 37.91431807754454,
+    "Open burning of waste": 3.8263405627488893,
+    "Solid waste disposal": 9.168720114426124
+  },
+  "distribution_id": "parameter_rerun_ledger_true_n2o_ipcc2006",
+  "engine": "pkinv.sectors.waste.uncertainty.parameter_rerun_mc(n2o_method='ipcc2006')",
+  "file": "mc_draws/waste_parameter_rerun_ipcc2006.csv",
+  "n_iter": 10000,
+  "note": "the ALTERNATIVE wastewater N2O method (IPCC 2006 equation, effluent factor drawn to 0.25) on the reference draw file's own streams; not injected into the national pool",
+  "rng": "Mersenne Twister (CPython random module); gauss via Box-Muller with paired-variate cache; python 3.11",
+  "seed": 4421,
+  "sha256": "757a008f2c9f42d8f5d8404d92b419a702340533cb084c1e9f24879acb935dc9"
+}

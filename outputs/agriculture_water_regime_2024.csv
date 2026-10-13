@@ -1,0 +1,6 @@
+# The rice water-regime readings: linear SFw re-weightings of the reference rice total
+# on the held SPAM technology split; one configuration, nothing averaged. See water_regime.py.
+configuration,co2e_Mt_AR5,weighted_SFw,irrigated_share,rainfed_share,status,note
+reference,16.548,1.0,0.9822,0.0178,reference,every hectare at the continuously-flooded SFw 1.0 - the declared convention for Pakistani irrigated rice; the SPAM split is printed for context and moves nothing here
+rainfed_corrected,16.33632,0.9872,0.9822,0.0178,reading_never_selected,"irrigated area stays continuous, the SPAM rainfed share takes its own regime factor (0.28); published so the two moving parts of the weighted alternative are separable, never selected - the split is a 2020-vintage model surface"
+rice_water_regime_weighted,9.83472,0.5943,0.9822,0.0178,priced_configuration,"the named alternative, priced at last (registered unpriced since rc5): irrigated area at intermittent-single-aeration SFw 0.60 - the conservative member; the 0.52 AWD value is named and never blended - and rainfed at 0.28, on the SPAM V2r2 technology split. No Pakistani water-management observation decides between this and the continuous reference, which is exactly why it ships as a configuration and is never averaged in (rule 8)"

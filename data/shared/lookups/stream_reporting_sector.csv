@@ -1,0 +1,36 @@
+# THE REPORTING-SECTOR AXIS: where each engine category is REPORTED under IPCC 2006, declared per
+# stream beside the module that COMPUTES it. sector_id / module names the engine; reporting_sector
+# names the sector the Guidelines file the stream under, in the same module vocabulary
+# (pkinv.core.registry.all_sectors() NAMEs). The two coincide for every category but one: captive
+# gas self-generation is autoproducer generation for an establishment's own use, which IPCC 2006
+# Vol 2 Ch 2 books under 1.A.2 Manufacturing industries - it is computed in the power module
+# because it shares the plant register and the factor table, and reports under industry.
+# Resolution is pkinv.core.declared.match_prefix (longest matching subitem_prefix wins; an empty
+# prefix is the category default; a stream matching nothing RAISES). rationale is REQUIRED when
+# reporting_sector differs from module and must be EMPTY when it does not - a reason for the
+# obvious would hide the one row that needs one. Additive with sector_id at every grain: the
+# same atoms regrouped, no mass moved. Consumed by pkinv.report.reporting_sectors.
+module,category,subitem_prefix,reporting_sector,rationale
+agriculture,Enteric fermentation,,agriculture,
+agriculture,Field burning of residues,,agriculture,
+agriculture,Managed soils,,agriculture,
+agriculture,Manure management,,agriculture,
+agriculture,Rice cultivation,,agriculture,
+agriculture,Urea application,,agriculture,
+aviation,Domestic aviation,,aviation,
+fugitives,Fugitive emissions from oil and gas,,fugitives,
+industry,Industrial fuel combustion (1A2),,industry,
+ippu,Ammonia production,,ippu,
+ippu,Cement production,,ippu,
+ippu,Iron and steel production,,ippu,
+ippu,Lubricant use,,ippu,
+power,Captive gas self-generation (1A2),,industry,"IPCC 2006 Vol 2 Ch 2: autoproducer generation for an establishment's own use is 1.A.2 Manufacturing industries; computed in the power module because it shares the plant register and factor table"
+power,Electricity and heat production,,power,
+railways,Railway non-traction energy (1A2/1A4c unresolved),,railways,
+railways,Railways,,railways,
+residential,Residential fuel combustion,,residential,
+transport,Mixed off-road (1A4c/1A2),,transport,
+transport,Road transport,,transport,
+waste,Domestic wastewater,,waste,
+waste,Open burning of waste,,waste,
+waste,Solid waste disposal,,waste,

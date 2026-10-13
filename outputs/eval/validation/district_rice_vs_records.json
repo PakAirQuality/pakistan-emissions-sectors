@@ -1,0 +1,24 @@
+{
+  "n_model_districts": 102,
+  "n_record_districts": 82,
+  "n_matched": 66,
+  "records_source": "district_rice_area_MNFSR_2022-23.csv",
+  "note": "model per-district rice (Mt CO2e) vs official rice AREA (ha); rank comparison",
+  "spearman_rho": 0.917,
+  "p_value": 0.0,
+  "top10_overlap": 0.8,
+  "top15_overlap": 0.867,
+  "top20_overlap": 0.85,
+  "per_province": {
+    "Punjab": {
+      "n": 29,
+      "spearman_rho": 0.959,
+      "p": 0.0
+    },
+    "Sindh": {
+      "n": 12,
+      "spearman_rho": 0.734,
+      "p": 0.00654
+    }
+  }
+}

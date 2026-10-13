@@ -1,0 +1,9 @@
+ICAO type,Inventory aircraft,Openap type,Source,Record ID,Source row
+A320,A320,A320,ICAO Doc 8643 type designator,1fe7b9d72d8414f2c3e751ec,1
+A321,A320,A321,ICAO Doc 8643 type designator; A320 used as nearest ICAO calculator narrowbody proxy,5ecc8578eeb20fbe499c4df6,2
+B738,B737-800,B738,ICAO Doc 8643 type designator,bb0aa5117af55c3bc04d64e7,3
+B772,B777-200,B772,ICAO Doc 8643 type designator,d2d6e7b32a024b09f38153a1,4
+A310,A310,A310,ICAO Doc 8643 type designator,a56722f62bbfff56d199473a,5
+B733,B737-300,B737,ICAO Doc 8643 type designator; OpenAP B737 synonym,182d334fa745a96be878bb03,6
+B743,B747-300,B744,ICAO Doc 8643 type designator; nearest OpenAP 747 variant,4fd473adb55d6fe398e965e0,7
+AT72,ATR72,,ICAO Doc 8643 type designator; outside current OpenAP coverage,824e332e2d2607d888de0a2e,8

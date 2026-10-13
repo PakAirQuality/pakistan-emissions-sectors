@@ -1,0 +1,110 @@
+{
+  "days": [
+    {
+      "aircraft_type_counts": {},
+      "airport_endpoint_counts": {},
+      "archive": "2023-08-15.tar",
+      "canonical_stages": 0,
+      "control_name": "pakistan",
+      "minimum_candidate_point_to_pakistan_airport_km": 321.6935499575329,
+      "parse_failures": 1,
+      "regional_candidate_aircraft_traces": 439,
+      "regional_candidate_legs": 1180,
+      "regional_candidate_legs_without_airport_link": 1180,
+      "source_license": "Open Database License 1.0 (ODbL)",
+      "top_routes": [],
+      "trace_members": 50855
+    },
+    {
+      "aircraft_type_counts": {},
+      "airport_endpoint_counts": {},
+      "archive": "2023-11-15.tar",
+      "canonical_stages": 0,
+      "control_name": "pakistan",
+      "minimum_candidate_point_to_pakistan_airport_km": 326.60062625860843,
+      "parse_failures": 1,
+      "regional_candidate_aircraft_traces": 510,
+      "regional_candidate_legs": 1432,
+      "regional_candidate_legs_without_airport_link": 1432,
+      "source_license": "Open Database License 1.0 (ODbL)",
+      "top_routes": [],
+      "trace_members": 53301
+    },
+    {
+      "aircraft_type_counts": {},
+      "airport_endpoint_counts": {},
+      "archive": "2024-02-15.tar",
+      "canonical_stages": 0,
+      "control_name": "pakistan",
+      "minimum_candidate_point_to_pakistan_airport_km": 0.24966320488121527,
+      "parse_failures": 1,
+      "regional_candidate_aircraft_traces": 594,
+      "regional_candidate_legs": 1669,
+      "regional_candidate_legs_without_airport_link": 1669,
+      "source_license": "Open Database License 1.0 (ODbL)",
+      "top_routes": [],
+      "trace_members": 54824
+    },
+    {
+      "aircraft_type_counts": {},
+      "airport_endpoint_counts": {},
+      "archive": "2024-05-15.tar",
+      "canonical_stages": 0,
+      "control_name": "pakistan",
+      "minimum_candidate_point_to_pakistan_airport_km": "",
+      "parse_failures": 1,
+      "source_license": "Open Database License 1.0 (ODbL)",
+      "top_routes": [],
+      "trace_members": 60616
+    }
+  ],
+  "positive_controls": [
+    {
+      "boundary": "domestic",
+      "canonical_stages": 1,
+      "control": "synthetic_OPKC_OPLA",
+      "destination_icao": "OPLA",
+      "origin_icao": "OPKC",
+      "status": "PASS",
+      "trajectory_distance_nm": 551.924707598454
+    },
+    {
+      "aircraft_type_identified": 697,
+      "airport_linked_legs": 700,
+      "callsign_identified": 686,
+      "canonical_stages": 700,
+      "control": "OMDB_archive_positive",
+      "interpretation": "parser/gate positive control; not Pakistan coverage",
+      "status": "PASS"
+    }
+  ],
+  "provenance": "aggregates only; raw ODbL archives are not redistributed",
+  "summary": {
+    "aircraft_type_coverage": 0.0,
+    "archives_processed": 4,
+    "callsign_coverage": 0.0,
+    "canonical_stages": 0,
+    "coverage_interpretation": "screening ratio; pilot dates need not equal annual mean",
+    "endpoint_pair_coverage": 0.0,
+    "expected_pcaa_domestic_stages_for_sample_days": 221.85792349726776,
+    "minimum_candidate_point_to_pakistan_airport_km": 0.24966320488121527,
+    "observed_domestic_over_pcaa_daily_rate": 0.0,
+    "omdb_archive_airport_linked_legs": 700,
+    "omdb_archive_positive_control_status": "PASS",
+    "parse_failures": 4,
+    "pilot_dates": [
+      "2023-08-15",
+      "2023-11-15",
+      "2024-02-15",
+      "2024-05-15"
+    ],
+    "raw_redistribution": "not included; review ODbL derivative-database obligations",
+    "regional_candidate_aircraft_traces": 1543,
+    "regional_candidate_legs": 4281,
+    "regional_candidate_legs_without_airport_link": 4281,
+    "source": "ADSB.lol globe history",
+    "source_license": "Open Database License 1.0 (ODbL)",
+    "synthetic_positive_control_status": "PASS",
+    "trace_members": 219596
+  }
+}

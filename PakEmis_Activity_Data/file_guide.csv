@@ -1,0 +1,18 @@
+﻿File,Contents,Records,Measures,Period types
+activity_aviation.csv,Aviation traffic,5680,Aircraft movements; Freight; Passengers,Fiscal year
+activity_crops.csv,Crop area and production,9336,Crop area; Crop production,Calendar year; Fiscal year
+activity_fertiliser.csv,Fertiliser offtake,3641,Fertiliser offtake,Calendar month; Calendar year; Fiscal year
+activity_fuel_sales_area.csv,Fuel sales by area,43770,Petroleum sales,Report month
+activity_fuel_sales_national.csv,National fuel sales,4071,Petroleum sales,Report fiscal year
+activity_gas_network.csv,Gas network and infrastructure,35,Asset or connection count; Gas flow; Pipeline length,Fiscal year
+activity_gas_supply.csv,Oil production and gas supply,124,Gas supplied; Production,Fiscal year
+activity_household_fuel.csv,Household fuel use,570,Annual consumption; Annual consumption value; Annual consumption value (value-only item); Households using this item (survey-weighted); Monthly consumption value per household using this item; Monthly mean per household using this item,Survey round
+activity_industry_fuel.csv,Industrial fuel use and supply,1529,Coal energy content; Coal imports; Coal production; Coal production (PBS extraction series); Coal production (Petroleum Division); Coal use; Gas burned as fuel; Gas use; Gas use from independent suppliers; Gas use supplied by SNGPL; Gas use supplied by SSGCL; Gas used as feedstock; Total gas use,Fiscal year; Month (year not supplied)
+activity_industry_production.csv,Industrial production and trade,1081,Cement dispatches; Cement production; Clinker production; Clinker trade; Production,Calendar month; Calendar year; Fiscal year
+activity_livestock.csv,Livestock populations,1106,Number of animals,Calendar year; Fiscal year
+activity_power_monthly.csv,Monthly electricity generation,15564,Net electricity generation,Calendar month
+activity_power_plants.csv,Annual power generation and fuel use,1618,Fuel energy content; Fuel quantity; Implied heat rate; Net electricity generation,Fiscal year
+activity_railways.csv,Railway fuel and traffic,44,Fuel consumption; Railway traffic,Fiscal year
+activity_vehicles.csv,Vehicle registrations and activity assumptions,13439,Annual distance per vehicle; CNG gas consumption; Registered vehicles; Share of vehicles by fuel,Fiscal year; Fiscal year code; Snapshot date
+activity_waste_flows.csv,Modelled waste flows,10,Share of total waste generated; Waste mass,Fiscal year
+activity_waste_services.csv,Waste and sanitation services,190,Households using this disposal service; Share of households,Calendar year; Survey round

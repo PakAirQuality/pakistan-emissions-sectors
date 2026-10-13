@@ -1,0 +1,26 @@
+Inventory year,Worksheet,Row,Category,Activity type,Activity unit,Activity value,Co2 ief kg per unit,Ch4 ief kg per unit,N2o ief kg per unit,Co2 kt,Ch4 kt,N2o kt,Notation key,Source reference,Record ID,Source row
+2022,Table1.B.2,11,1.B.2.a.i.   Exploration,Unspecified,NE,NE,NE,NE,NE,NE,NE,NE,NE,Table1.B.2!B11:L11,ba7f18e586fcf51f4192b949,1
+2022,Table1.B.2,12,1.B.2.a.ii.   Production and upgrading (8),Unspecified,10^3m^3,5176.57,2000,30000,,10.35314,155.2971,,NE,Table1.B.2!B12:L12,57966fa13ff2fe5c1d833712,2
+2022,Table1.B.2,13,1.B.2.a.iii.  Transport,Unspecified,10^3m^3,45680,0.49,5.4,,0.0223832,0.246672,,NE,Table1.B.2!B13:L13,39a4d142822e66cd586ed2b0,3
+2022,Table1.B.2,14,1.B.2.a.iv.  Refining/storage,Unspecified,10^3m^3,22960,21.8,21.8,NE,0.500528,0.500528,NE,NE,Table1.B.2!B14:L14,2b457180bf16277fe845afdc,4
+2022,Table1.B.2,15,1.B.2.a.v.   Distribution of oil products,Unspecified,NE,NE,NE,NE,,NE,NE,,NE,Table1.B.2!B15:L15,15d3f08ce92fbf23749d2289,5
+2022,Table1.B.2,16,1.B.2.a.vi.  Other,,,,,,,"NE,NO","NE,NO",,"NE,NO",Table1.B.2!B16:L16,5e1bbc9798a67d8ec1445dc3,6
+2022,Table1.B.2,17,1.B.2.a.vi.1.  Abandoned wells,Unspecified,NE,NE,NE,NE,,NE,NE,,NE,Table1.B.2!B17:L17,add15d3e6624dd9264aaa782,7
+2022,Table1.B.2,18,1.B.2.a.vi.2.  Other  (please specify),,,,,,,NO,NO,,NO,Table1.B.2!B18:L18,3b6deda231559f3293d5e85d,8
+2022,Table1.B.2,21,1.B.2.b.i.   Exploration,Unspecified,NE,NE,NE,NE,,NE,NE,,NE,Table1.B.2!B21:L21,18d800babf80716b7bc27e80,9
+2022,Table1.B.2,22,1.B.2.b.ii.   Production and gathering (8),Unspecified,10^6m^3,112.46,97.00000000000001,12190,,0.01090862,1.3708874,,NE,Table1.B.2!B22:L22,5712ee17e7cb6577d84ce28d,10
+2022,Table1.B.2,23,1.B.2.b.iii.  Processing,Unspecified,10^6m^3,138.8811734,250,790,,0.03472029335,0.109716126986,,NE,Table1.B.2!B23:L23,4e1668570b10b90dc7bb6d65,11
+2022,Table1.B.2,24,1.B.2.b.iv.  Transmission and storage,Unspecified,10^6m^3,163.69,1.4400000000000002,633,,0.0002357136,0.10361577,,NE,Table1.B.2!B24:L24,6489692835febcf638ba8784,12
+2022,Table1.B.2,25,1.B.2.b.v.  Distribution,Unspecified,10^6m^3,153.68,95.5,1800,,0.01467644,0.276624,,NE,Table1.B.2!B25:L25,4bcd25e8dfe3e93178edfac9,13
+2022,Table1.B.2,26,1.B.2.b.vi.   Other,,,,,,,"NE,NO","NE,NO",,"NE,NO",Table1.B.2!B26:L26,7d4e37312d2cdc314c651521,14
+2022,Table1.B.2,27,1.B.2.b.vi.1.  Gas post-meter,Unspecified,NE,NE,NE,NE,,NE,NE,,NE,Table1.B.2!B27:L27,482aaa1cab9318d9453f8010,15
+2022,Table1.B.2,28,1.B.2.b.vi.2.  Abandoned wells,Unspecified,NE,NE,NE,NE,,NE,NE,,NE,Table1.B.2!B28:L28,aeb04ca06dd20b2057967f7e,16
+2022,Table1.B.2,29,1.B.2.b.vi.3.  Other  (please specify),,,,,,,NO,NO,,NO,Table1.B.2!B29:L29,b7f59d7109b0ec76bc00c96a,17
+2022,Table1.B.2,32,1.B.2.c.i. Venting,,,,,,,0.07875,8.5e-07,,"IE,NE",Table1.B.2!B32:L32,9d37aafe3c12c6be82237859,18
+2022,Table1.B.2,33,1.B.2.c.i.1.    Oil,Oil production,10^3m^3,NE,NE,NE,,NE,NE,,NE,Table1.B.2!B33:L33,c134a788ba464a9f77839dd8,19
+2022,Table1.B.2,34,1.B.2.c.i.2.   Gas,Unspecified,10^6m^3,1.25,63000,0.6799999999999999,,0.07875,8.5e-07,,NE,Table1.B.2!B34:L34,86d9488f21d9564893f7b1d9,20
+2022,Table1.B.2,35,1.B.2.c.i.3.  Combined,(please specify),IE,IE,IE,IE,,IE,IE,,IE,Table1.B.2!B35:L35,f0b9ff5d907e543f8570b4d9,21
+2022,Table1.B.2,36,1.B.2.c.ii. Flaring (9),,,,,,,0.45144869904,0.00030096579936,6.7717304856e-06,"IE,NE",Table1.B.2!B36:L36,188ee93b10fc1bc536a204af,22
+2022,Table1.B.2,37,1.B.2.c.ii.1.    Oil,Oil production,10^3m^3,NE,NE,NE,NE,NE,NE,NE,NE,Table1.B.2!B37:L37,b39c7a1d2119b5508b843730,23
+2022,Table1.B.2,38,1.B.2.c.ii.2.   Gas,Unspecified,10^6m^3,125.4024164,3600,2.4,0.054,0.45144869904,0.00030096579936,6.7717304856e-06,NE,Table1.B.2!B38:L38,6e8f093962cb7a5530a42454,24
+2022,Table1.B.2,39,1.B.2.c.ii.3.  Combined,(please specify),IE,IE,IE,IE,IE,IE,IE,IE,IE,Table1.B.2!B39:L39,4ef366f894583e5551e2885a,25

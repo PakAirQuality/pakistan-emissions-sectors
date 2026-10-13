@@ -1,0 +1,1336 @@
+district,province,category,proxy,pollutant,emissions_kt
+Sheikhpura,Punjab,Field burning of residues,firms_fire,BC,0.30941
+Jhang,Punjab,Field burning of residues,firms_fire,BC,0.22569
+Hafizabad,Punjab,Field burning of residues,firms_fire,BC,0.16098
+Sialkot,Punjab,Field burning of residues,firms_fire,BC,0.15368
+Gujranwala,Punjab,Field burning of residues,firms_fire,BC,0.14945
+Narowal,Punjab,Field burning of residues,firms_fire,BC,0.14816
+Muzaffargarh,Punjab,Field burning of residues,firms_fire,BC,0.13991
+Kasur,Punjab,Field burning of residues,firms_fire,BC,0.12209
+Okara,Punjab,Field burning of residues,firms_fire,BC,0.11961
+Rajanpur,Punjab,Field burning of residues,firms_fire,BC,0.11239
+Qambar Shahdadkot,Sindh,Field burning of residues,firms_fire,BC,0.11028
+Mandi Bahauddin,Punjab,Field burning of residues,firms_fire,BC,0.10179
+Rahim Yar Khan,Punjab,Field burning of residues,firms_fire,BC,0.09402
+Sargodha,Punjab,Field burning of residues,firms_fire,BC,0.08981
+Dera Ismail Khan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.08446
+Kashmore,Sindh,Field burning of residues,firms_fire,BC,0.0677
+Layyah,Punjab,Field burning of residues,firms_fire,BC,0.06708
+Khanewal,Punjab,Field burning of residues,firms_fire,BC,0.06438
+Bahawalpur,Punjab,Field burning of residues,firms_fire,BC,0.06334
+Sanghar,Sindh,Field burning of residues,firms_fire,BC,0.05767
+Bahawalnagar,Punjab,Field burning of residues,firms_fire,BC,0.0533
+Thatta,Sindh,Field burning of residues,firms_fire,BC,0.05261
+Dera Ghazi Khan,Punjab,Field burning of residues,firms_fire,BC,0.05257
+Rawalpindi,Punjab,Field burning of residues,firms_fire,BC,0.0491
+Pakpattan,Punjab,Field burning of residues,firms_fire,BC,0.04629
+Gujrat,Punjab,Field burning of residues,firms_fire,BC,0.04267
+Nawabshah,Sindh,Field burning of residues,firms_fire,BC,0.04202
+Vihari,Punjab,Field burning of residues,firms_fire,BC,0.03561
+Toba Tek Singh,Punjab,Field burning of residues,firms_fire,BC,0.0348
+Naushehro Feroze,Sindh,Field burning of residues,firms_fire,BC,0.03449
+Ghotki,Sindh,Field burning of residues,firms_fire,BC,0.03389
+Bhakkar,Punjab,Field burning of residues,firms_fire,BC,0.03307
+Chakwal,Punjab,Field burning of residues,firms_fire,BC,0.03219
+Shikarpur,Sindh,Field burning of residues,firms_fire,BC,0.03011
+Mianwali,Punjab,Field burning of residues,firms_fire,BC,0.02858
+Lodhran,Punjab,Field burning of residues,firms_fire,BC,0.02832
+Kachhi,Balochistan,Field burning of residues,firms_fire,BC,0.02735
+Faisalabad,Punjab,Field burning of residues,firms_fire,BC,0.02653
+Sukkur,Sindh,Field burning of residues,firms_fire,BC,0.02627
+Attock,Punjab,Field burning of residues,firms_fire,BC,0.02469
+Tando Allahyar,Sindh,Field burning of residues,firms_fire,BC,0.02371
+Jhal Magsi,Balochistan,Field burning of residues,firms_fire,BC,0.02218
+Nasirabad,Balochistan,Field burning of residues,firms_fire,BC,0.02015
+Multan,Punjab,Field burning of residues,firms_fire,BC,0.01836
+Hyderabad,Sindh,Field burning of residues,firms_fire,BC,0.01819
+Badin,Sindh,Field burning of residues,firms_fire,BC,0.0178
+Jhelum,Punjab,Field burning of residues,firms_fire,BC,0.01726
+Khushab,Punjab,Field burning of residues,firms_fire,BC,0.01696
+Lahore,Punjab,Field burning of residues,firms_fire,BC,0.01663
+Khairpur,Sindh,Field burning of residues,firms_fire,BC,0.0148
+Mansehra,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.01392
+Mirpurkhas,Sindh,Field burning of residues,firms_fire,BC,0.01322
+Jamshoro,Sindh,Field burning of residues,firms_fire,BC,0.01245
+Tando Muhammad Khan,Sindh,Field burning of residues,firms_fire,BC,0.01159
+Kurram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.01112
+Dadu,Sindh,Field burning of residues,firms_fire,BC,0.01007
+Sahiwal,Punjab,Field burning of residues,firms_fire,BC,0.00943
+Haripur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00933
+Umerkot,Sindh,Field burning of residues,firms_fire,BC,0.00929
+Tank,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00746
+Orakzai,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00659
+Jacobabad,Sindh,Field burning of residues,firms_fire,BC,0.0064
+Jafarabad,Balochistan,Field burning of residues,firms_fire,BC,0.00542
+Mardan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00502
+Kohat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00495
+Sibi,Balochistan,Field burning of residues,firms_fire,BC,0.00462
+Matiari,Sindh,Field burning of residues,firms_fire,BC,0.00455
+Tharparkar,Sindh,Field burning of residues,firms_fire,BC,0.00431
+Swabi,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00415
+Lasbela,Balochistan,Field burning of residues,firms_fire,BC,0.00391
+Karachi,Sindh,Field burning of residues,firms_fire,BC,0.00308
+Abbottabad,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00245
+Buner,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00236
+Swat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00231
+Hangu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00207
+Khuzdar,Balochistan,Field burning of residues,firms_fire,BC,0.00191
+North Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00174
+Khyber,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00164
+Loralai,Balochistan,Field burning of residues,firms_fire,BC,0.0016
+Lakki Marwat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00146
+Malakand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00143
+Shangla,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00124
+Nowshera,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00123
+South Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00122
+Musakhel,Balochistan,Field burning of residues,firms_fire,BC,0.00111
+Karak,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.001
+Mohmand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00099
+Barkhan,Balochistan,Field burning of residues,firms_fire,BC,0.00091
+Lower Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.0008
+Zhob,Balochistan,Field burning of residues,firms_fire,BC,0.00075
+Dera Bugti,Balochistan,Field burning of residues,firms_fire,BC,0.00074
+Kech,Balochistan,Field burning of residues,firms_fire,BC,0.00066
+Peshawar,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.0006
+Kalat,Balochistan,Field burning of residues,firms_fire,BC,0.00045
+Bajaur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.0004
+Kohlu,Balochistan,Field burning of residues,firms_fire,BC,0.00027
+Charsadda,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00026
+Awaran,Balochistan,Field burning of residues,firms_fire,BC,0.00018
+Bannu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00016
+Upper Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.00014
+Kohistan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,0.0001
+Battagram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,9e-05
+Ziarat,Balochistan,Field burning of residues,firms_fire,BC,8e-05
+Panjgur,Balochistan,Field burning of residues,firms_fire,BC,8e-05
+Qilla Saifullah,Balochistan,Field burning of residues,firms_fire,BC,4e-05
+Kharan,Balochistan,Field burning of residues,firms_fire,BC,2e-05
+Quetta,Balochistan,Field burning of residues,firms_fire,BC,2e-05
+Chitral,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,BC,1e-05
+Sheikhpura,Punjab,Field burning of residues,firms_fire,CO,56.93233
+Jhang,Punjab,Field burning of residues,firms_fire,CO,41.52637
+Hafizabad,Punjab,Field burning of residues,firms_fire,CO,29.61979
+Sialkot,Punjab,Field burning of residues,firms_fire,CO,28.27769
+Gujranwala,Punjab,Field burning of residues,firms_fire,CO,27.49868
+Narowal,Punjab,Field burning of residues,firms_fire,CO,27.2621
+Muzaffargarh,Punjab,Field burning of residues,firms_fire,CO,25.74294
+Kasur,Punjab,Field burning of residues,firms_fire,CO,22.46431
+Okara,Punjab,Field burning of residues,firms_fire,CO,22.00808
+Rajanpur,Punjab,Field burning of residues,firms_fire,CO,20.67928
+Qambar Shahdadkot,Sindh,Field burning of residues,firms_fire,CO,20.29185
+Mandi Bahauddin,Punjab,Field burning of residues,firms_fire,CO,18.73024
+Rahim Yar Khan,Punjab,Field burning of residues,firms_fire,CO,17.30029
+Sargodha,Punjab,Field burning of residues,firms_fire,CO,16.52581
+Dera Ismail Khan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,15.53996
+Kashmore,Sindh,Field burning of residues,firms_fire,CO,12.4575
+Layyah,Punjab,Field burning of residues,firms_fire,CO,12.3426
+Khanewal,Punjab,Field burning of residues,firms_fire,CO,11.84508
+Bahawalpur,Punjab,Field burning of residues,firms_fire,CO,11.65405
+Sanghar,Sindh,Field burning of residues,firms_fire,CO,10.61094
+Bahawalnagar,Punjab,Field burning of residues,firms_fire,CO,9.80697
+Thatta,Sindh,Field burning of residues,firms_fire,CO,9.67941
+Dera Ghazi Khan,Punjab,Field burning of residues,firms_fire,CO,9.67283
+Rawalpindi,Punjab,Field burning of residues,firms_fire,CO,9.03394
+Pakpattan,Punjab,Field burning of residues,firms_fire,CO,8.51802
+Gujrat,Punjab,Field burning of residues,firms_fire,CO,7.85151
+Nawabshah,Sindh,Field burning of residues,firms_fire,CO,7.73112
+Vihari,Punjab,Field burning of residues,firms_fire,CO,6.552
+Toba Tek Singh,Punjab,Field burning of residues,firms_fire,CO,6.40352
+Naushehro Feroze,Sindh,Field burning of residues,firms_fire,CO,6.3463
+Ghotki,Sindh,Field burning of residues,firms_fire,CO,6.23569
+Bhakkar,Punjab,Field burning of residues,firms_fire,CO,6.0856
+Chakwal,Punjab,Field burning of residues,firms_fire,CO,5.92277
+Shikarpur,Sindh,Field burning of residues,firms_fire,CO,5.54024
+Mianwali,Punjab,Field burning of residues,firms_fire,CO,5.258
+Lodhran,Punjab,Field burning of residues,firms_fire,CO,5.21096
+Kachhi,Balochistan,Field burning of residues,firms_fire,CO,5.03216
+Faisalabad,Punjab,Field burning of residues,firms_fire,CO,4.88155
+Sukkur,Sindh,Field burning of residues,firms_fire,CO,4.83323
+Attock,Punjab,Field burning of residues,firms_fire,CO,4.54239
+Tando Allahyar,Sindh,Field burning of residues,firms_fire,CO,4.36276
+Jhal Magsi,Balochistan,Field burning of residues,firms_fire,CO,4.08141
+Nasirabad,Balochistan,Field burning of residues,firms_fire,CO,3.70684
+Multan,Punjab,Field burning of residues,firms_fire,CO,3.37848
+Hyderabad,Sindh,Field burning of residues,firms_fire,CO,3.34637
+Badin,Sindh,Field burning of residues,firms_fire,CO,3.27536
+Jhelum,Punjab,Field burning of residues,firms_fire,CO,3.17649
+Khushab,Punjab,Field burning of residues,firms_fire,CO,3.12136
+Lahore,Punjab,Field burning of residues,firms_fire,CO,3.05903
+Khairpur,Sindh,Field burning of residues,firms_fire,CO,2.72291
+Mansehra,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,2.56092
+Mirpurkhas,Sindh,Field burning of residues,firms_fire,CO,2.43281
+Jamshoro,Sindh,Field burning of residues,firms_fire,CO,2.29024
+Tando Muhammad Khan,Sindh,Field burning of residues,firms_fire,CO,2.13173
+Kurram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,2.04529
+Dadu,Sindh,Field burning of residues,firms_fire,CO,1.85372
+Sahiwal,Punjab,Field burning of residues,firms_fire,CO,1.73514
+Haripur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,1.7158
+Umerkot,Sindh,Field burning of residues,firms_fire,CO,1.70922
+Tank,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,1.3732
+Orakzai,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,1.21212
+Jacobabad,Sindh,Field burning of residues,firms_fire,CO,1.1772
+Jafarabad,Balochistan,Field burning of residues,firms_fire,CO,0.99722
+Mardan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.92445
+Kohat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.91103
+Sibi,Balochistan,Field burning of residues,firms_fire,CO,0.85074
+Matiari,Sindh,Field burning of residues,firms_fire,CO,0.83675
+Tharparkar,Sindh,Field burning of residues,firms_fire,CO,0.79288
+Swabi,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.76447
+Lasbela,Balochistan,Field burning of residues,firms_fire,CO,0.71952
+Karachi,Sindh,Field burning of residues,firms_fire,CO,0.56591
+Abbottabad,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.45139
+Buner,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.43395
+Swat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.42524
+Hangu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.38111
+Khuzdar,Balochistan,Field burning of residues,firms_fire,CO,0.35137
+North Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.31999
+Khyber,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.30205
+Loralai,Balochistan,Field burning of residues,firms_fire,CO,0.29366
+Lakki Marwat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.26866
+Malakand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.2628
+Shangla,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.22743
+Nowshera,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.22712
+South Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.22416
+Musakhel,Balochistan,Field burning of residues,firms_fire,CO,0.20501
+Karak,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.18444
+Mohmand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.18146
+Barkhan,Balochistan,Field burning of residues,firms_fire,CO,0.16741
+Lower Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.14642
+Zhob,Balochistan,Field burning of residues,firms_fire,CO,0.13785
+Dera Bugti,Balochistan,Field burning of residues,firms_fire,CO,0.13614
+Kech,Balochistan,Field burning of residues,firms_fire,CO,0.12109
+Peshawar,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.10995
+Kalat,Balochistan,Field burning of residues,firms_fire,CO,0.08354
+Bajaur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.07278
+Kohlu,Balochistan,Field burning of residues,firms_fire,CO,0.04898
+Charsadda,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.04751
+Awaran,Balochistan,Field burning of residues,firms_fire,CO,0.03346
+Bannu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.02884
+Upper Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.02576
+Kohistan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.01781
+Battagram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.01704
+Ziarat,Balochistan,Field burning of residues,firms_fire,CO,0.0145
+Panjgur,Balochistan,Field burning of residues,firms_fire,CO,0.01425
+Qilla Saifullah,Balochistan,Field burning of residues,firms_fire,CO,0.00754
+Kharan,Balochistan,Field burning of residues,firms_fire,CO,0.00431
+Quetta,Balochistan,Field burning of residues,firms_fire,CO,0.00376
+Chitral,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,CO,0.00132
+Karachi,Sindh,Manure management,glw_livestock,NH3,41.90709
+Ghotki,Sindh,Managed soils,manure_applied,NH3,37.69173
+Muzaffargarh,Punjab,Managed soils,manure_applied,NH3,37.51963
+Sargodha,Punjab,Managed soils,manure_applied,NH3,37.10585
+Sheikhpura,Punjab,Managed soils,manure_applied,NH3,36.85908
+Jhang,Punjab,Managed soils,manure_applied,NH3,34.8591
+Sheikhpura,Punjab,Managed soils,cropland,NH3,28.15366
+Jhang,Punjab,Manure management,glw_livestock,NH3,26.86131
+Rahim Yar Khan,Punjab,Managed soils,manure_applied,NH3,26.5898
+Bahawalpur,Punjab,Managed soils,cropland,NH3,26.45294
+Muzaffargarh,Punjab,Managed soils,cropland,NH3,26.24452
+Okara,Punjab,Managed soils,manure_applied,NH3,25.20744
+Rahim Yar Khan,Punjab,Managed soils,cropland,NH3,24.91895
+Jhang,Punjab,Managed soils,cropland,NH3,24.55213
+Vihari,Punjab,Managed soils,manure_applied,NH3,24.4478
+Kashmore,Sindh,Managed soils,manure_applied,NH3,23.78039
+Sargodha,Punjab,Managed soils,cropland,NH3,23.30576
+Bahawalnagar,Punjab,Managed soils,cropland,NH3,21.71342
+Kasur,Punjab,Managed soils,manure_applied,NH3,21.52818
+Faisalabad,Punjab,Manure management,glw_livestock,NH3,21.49859
+Bahawalnagar,Punjab,Managed soils,manure_applied,NH3,20.82379
+Layyah,Punjab,Managed soils,manure_applied,NH3,20.51565
+Rajanpur,Punjab,Managed soils,cropland,NH3,20.25447
+Qambar Shahdadkot,Sindh,Managed soils,manure_applied,NH3,20.00071
+Kohistan,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,19.6654
+Naushehro Feroze,Sindh,Managed soils,manure_applied,NH3,19.47378
+Sahiwal,Punjab,Managed soils,manure_applied,NH3,19.36931
+Faisalabad,Punjab,Managed soils,manure_applied,NH3,18.8441
+Khanewal,Punjab,Managed soils,manure_applied,NH3,18.25454
+Toba Tek Singh,Punjab,Managed soils,manure_applied,NH3,18.21951
+Vihari,Punjab,Managed soils,cropland,NH3,17.8326
+Qambar Shahdadkot,Sindh,Managed soils,cropland,NH3,17.73109
+Lodhran,Punjab,Managed soils,manure_applied,NH3,17.72184
+Layyah,Punjab,Managed soils,cropland,NH3,17.64085
+Muzaffargarh,Punjab,Manure management,glw_livestock,NH3,17.32154
+Matiari,Sindh,Manure management,glw_livestock,NH3,17.3032
+Mandi Bahauddin,Punjab,Managed soils,manure_applied,NH3,17.13971
+Dera Ismail Khan,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,16.62143
+Bahawalpur,Punjab,Managed soils,manure_applied,NH3,16.47694
+Dera Ghazi Khan,Punjab,Manure management,glw_livestock,NH3,16.18575
+Sanghar,Sindh,Managed soils,cropland,NH3,15.7648
+Pakpattan,Punjab,Managed soils,manure_applied,NH3,15.709
+Faisalabad,Punjab,Managed soils,cropland,NH3,15.40656
+Thatta,Sindh,Managed soils,cropland,NH3,15.15184
+Mianwali,Punjab,Managed soils,cropland,NH3,14.99389
+Nawabshah,Sindh,Managed soils,manure_applied,NH3,14.9364
+Okara,Punjab,Managed soils,cropland,NH3,14.81465
+Sialkot,Punjab,Managed soils,manure_applied,NH3,14.70691
+Khairpur,Sindh,Managed soils,manure_applied,NH3,14.38203
+Sanghar,Sindh,Managed soils,manure_applied,NH3,14.32431
+Khanewal,Punjab,Managed soils,cropland,NH3,14.29776
+Toba Tek Singh,Punjab,Managed soils,cropland,NH3,14.07266
+Jafarabad,Balochistan,Manure management,glw_livestock,NH3,14.02961
+Multan,Punjab,Managed soils,manure_applied,NH3,13.94326
+Gujranwala,Punjab,Managed soils,manure_applied,NH3,13.73092
+Dera Ghazi Khan,Punjab,Managed soils,cropland,NH3,13.68083
+Sheikhpura,Punjab,Manure management,glw_livestock,NH3,13.6607
+Rajanpur,Punjab,Managed soils,manure_applied,NH3,13.42409
+Kasur,Punjab,Managed soils,cropland,NH3,13.40571
+Sialkot,Punjab,Managed soils,cropland,NH3,13.35569
+Badin,Sindh,Managed soils,cropland,NH3,12.95138
+Rawalpindi,Punjab,Managed soils,cropland,NH3,12.87632
+Sahiwal,Punjab,Managed soils,cropland,NH3,12.55535
+Lahore,Punjab,Managed soils,manure_applied,NH3,12.5431
+Dera Ghazi Khan,Punjab,Managed soils,manure_applied,NH3,12.47646
+Nasirabad,Balochistan,Manure management,glw_livestock,NH3,12.19641
+Bhakkar,Punjab,Managed soils,cropland,NH3,12.16352
+Bahawalnagar,Punjab,Manure management,glw_livestock,NH3,12.0267
+Sargodha,Punjab,Manure management,glw_livestock,NH3,12.00951
+Multan,Punjab,Managed soils,cropland,NH3,11.83004
+Rahim Yar Khan,Punjab,Manure management,glw_livestock,NH3,11.62177
+Khuzdar,Balochistan,Manure management,glw_livestock,NH3,11.52876
+Mandi Bahauddin,Punjab,Managed soils,cropland,NH3,11.44654
+Lodhran,Punjab,Managed soils,cropland,NH3,11.31315
+Lahore,Punjab,Manure management,glw_livestock,NH3,11.19925
+Chakwal,Punjab,Managed soils,cropland,NH3,11.09223
+Narowal,Punjab,Managed soils,cropland,NH3,11.09223
+Bhakkar,Punjab,Manure management,glw_livestock,NH3,11.039
+Attock,Punjab,Managed soils,cropland,NH3,10.97551
+Gujrat,Punjab,Managed soils,cropland,NH3,10.91715
+Bhakkar,Punjab,Managed soils,manure_applied,NH3,10.90705
+Khushab,Punjab,Managed soils,cropland,NH3,10.90048
+Pakpattan,Punjab,Managed soils,cropland,NH3,10.70873
+Kasur,Punjab,Manure management,glw_livestock,NH3,10.56481
+Thatta,Sindh,Managed soils,manure_applied,NH3,10.55267
+South Waziristan,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,10.5375
+Mianwali,Punjab,Managed soils,manure_applied,NH3,10.52388
+Okara,Punjab,Manure management,glw_livestock,NH3,10.18447
+Nawabshah,Sindh,Managed soils,cropland,NH3,10.13451
+Kalat,Balochistan,Manure management,glw_livestock,NH3,10.11729
+Bahawalpur,Punjab,Manure management,glw_livestock,NH3,10.06072
+Karachi,Sindh,Managed soils,glw_livestock,NH3,10.02516
+Vihari,Punjab,Manure management,glw_livestock,NH3,9.89438
+Narowal,Punjab,Managed soils,manure_applied,NH3,9.78701
+Gujranwala,Punjab,Managed soils,cropland,NH3,9.74165
+Layyah,Punjab,Manure management,glw_livestock,NH3,9.72323
+Mansehra,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,9.66248
+Zhob,Balochistan,Manure management,glw_livestock,NH3,9.47817
+Khushab,Punjab,Managed soils,manure_applied,NH3,9.41793
+Sahiwal,Punjab,Manure management,glw_livestock,NH3,9.41298
+Naushehro Feroze,Sindh,Managed soils,cropland,NH3,9.37348
+Shikarpur,Sindh,Managed soils,manure_applied,NH3,9.36089
+Swat,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,9.34779
+Gujrat,Punjab,Managed soils,manure_applied,NH3,9.22174
+Musakhel,Balochistan,Manure management,glw_livestock,NH3,9.06443
+Hafizabad,Punjab,Managed soils,manure_applied,NH3,8.97012
+Khairpur,Sindh,Manure management,glw_livestock,NH3,8.91808
+Khanewal,Punjab,Manure management,glw_livestock,NH3,8.9147
+Kohlu,Balochistan,Manure management,glw_livestock,NH3,8.90076
+Pakpattan,Punjab,Manure management,glw_livestock,NH3,8.87885
+Kashmore,Sindh,Managed soils,cropland,NH3,8.87071
+Rawalpindi,Punjab,Manure management,glw_livestock,NH3,8.67806
+Dadu,Sindh,Managed soils,cropland,NH3,8.66754
+Gujranwala,Punjab,Manure management,glw_livestock,NH3,8.59771
+Toba Tek Singh,Punjab,Manure management,glw_livestock,NH3,8.48007
+Sialkot,Punjab,Manure management,glw_livestock,NH3,8.41602
+Thatta,Sindh,Manure management,glw_livestock,NH3,8.41482
+Multan,Punjab,Manure management,glw_livestock,NH3,8.32422
+Tharparkar,Sindh,Managed soils,cropland,NH3,8.24398
+Attock,Punjab,Manure management,glw_livestock,NH3,8.22584
+Dadu,Sindh,Managed soils,manure_applied,NH3,8.1416
+Sukkur,Sindh,Managed soils,manure_applied,NH3,8.06102
+Hafizabad,Punjab,Managed soils,cropland,NH3,7.74497
+Dera Ismail Khan,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,7.73836
+Mandi Bahauddin,Punjab,Manure management,glw_livestock,NH3,7.70893
+Jacobabad,Sindh,Managed soils,manure_applied,NH3,7.64583
+Gujrat,Punjab,Manure management,glw_livestock,NH3,7.52173
+Rajanpur,Punjab,Manure management,glw_livestock,NH3,7.30629
+Loralai,Balochistan,Manure management,glw_livestock,NH3,7.29804
+Kech,Balochistan,Manure management,glw_livestock,NH3,7.21722
+Umerkot,Sindh,Managed soils,cropland,NH3,7.07315
+Shikarpur,Sindh,Managed soils,cropland,NH3,7.06627
+Sukkur,Sindh,Manure management,glw_livestock,NH3,7.06312
+Jhelum,Punjab,Managed soils,cropland,NH3,6.95713
+Shikarpur,Sindh,Manure management,glw_livestock,NH3,6.9499
+Mianwali,Punjab,Manure management,glw_livestock,NH3,6.92558
+Dera Ismail Khan,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,6.90494
+Khushab,Punjab,Manure management,glw_livestock,NH3,6.87665
+Jafarabad,Balochistan,Managed soils,manure_applied,NH3,6.87464
+Badin,Sindh,Managed soils,manure_applied,NH3,6.83432
+Rawalpindi,Punjab,Managed soils,manure_applied,NH3,6.83117
+Upper Dir,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,6.74134
+Hafizabad,Punjab,Manure management,glw_livestock,NH3,6.66342
+Ghotki,Sindh,Managed soils,cropland,NH3,6.63237
+Tharparkar,Sindh,Manure management,glw_livestock,NH3,6.62518
+Khairpur,Sindh,Managed soils,cropland,NH3,6.60827
+Jacobabad,Sindh,Manure management,glw_livestock,NH3,6.57844
+Naushehro Feroze,Sindh,Manure management,glw_livestock,NH3,6.54985
+Sukkur,Sindh,Managed soils,cropland,NH3,6.45675
+Mohmand,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,6.29686
+Dadu,Sindh,Manure management,glw_livestock,NH3,6.15333
+Jhang,Punjab,Managed soils,glw_livestock,NH3,6.11549
+Chakwal,Punjab,Manure management,glw_livestock,NH3,6.06839
+Dera Bugti,Balochistan,Manure management,glw_livestock,NH3,6.03049
+Jhal Magsi,Balochistan,Manure management,glw_livestock,NH3,5.97708
+Tando Allahyar,Sindh,Managed soils,manure_applied,NH3,5.94445
+Abbottabad,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,5.92809
+Mirpurkhas,Sindh,Managed soils,cropland,NH3,5.92643
+Ghotki,Sindh,Manure management,glw_livestock,NH3,5.84191
+Mirpurkhas,Sindh,Managed soils,manure_applied,NH3,5.79851
+Lasbela,Balochistan,Manure management,glw_livestock,NH3,5.79123
+Badin,Sindh,Manure management,glw_livestock,NH3,5.75618
+Nowshera,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,5.70368
+Jhelum,Punjab,Manure management,glw_livestock,NH3,5.58332
+Barkhan,Balochistan,Manure management,glw_livestock,NH3,5.57237
+Nawabshah,Sindh,Manure management,glw_livestock,NH3,5.55313
+Peshawar,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,5.50678
+Attock,Punjab,Managed soils,manure_applied,NH3,5.48355
+Chitral,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,5.46872
+Quetta,Balochistan,Manure management,glw_livestock,NH3,5.42053
+Umerkot,Sindh,Managed soils,manure_applied,NH3,5.37571
+Kohistan,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,5.36521
+Larkana District,Sindh,Manure management,glw_livestock,NH3,5.16047
+Lodhran,Punjab,Manure management,glw_livestock,NH3,5.07604
+Qilla Saifullah,Balochistan,Manure management,glw_livestock,NH3,5.05959
+Kharan,Balochistan,Manure management,glw_livestock,NH3,5.04943
+Jacobabad,Sindh,Managed soils,cropland,NH3,5.0311
+Sanghar,Sindh,Manure management,glw_livestock,NH3,5.00913
+Tando Allahyar,Sindh,Managed soils,cropland,NH3,4.95534
+Narowal,Punjab,Manure management,glw_livestock,NH3,4.92137
+Lower Dir,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,4.89757
+Faisalabad,Punjab,Managed soils,glw_livestock,NH3,4.89456
+Mardan,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,4.86369
+Jafarabad,Balochistan,Managed soils,glw_livestock,NH3,4.70176
+Charsadda,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,4.68265
+Nasirabad,Balochistan,Managed soils,manure_applied,NH3,4.54664
+Dera Ismail Khan,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,4.53474
+Sibi,Balochistan,Manure management,glw_livestock,NH3,4.44498
+Pishin,Balochistan,Manure management,glw_livestock,NH3,4.35297
+Chakwal,Punjab,Managed soils,manure_applied,NH3,4.34796
+Swabi,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,4.28071
+Tando Muhammad Khan,Sindh,Managed soils,cropland,NH3,4.19775
+Lahore,Punjab,Managed soils,cropland,NH3,4.19345
+Qambar Shahdadkot,Sindh,Manure management,glw_livestock,NH3,4.18293
+Matiari,Sindh,Managed soils,glw_livestock,NH3,4.13933
+Nasirabad,Balochistan,Managed soils,cropland,NH3,4.09347
+Nasirabad,Balochistan,Managed soils,glw_livestock,NH3,4.0874
+Kurram,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,4.06272
+Lakki Marwat,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.98423
+Mirpurkhas,Sindh,Manure management,glw_livestock,NH3,3.95001
+Muzaffargarh,Punjab,Managed soils,glw_livestock,NH3,3.94358
+Shangla,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.91426
+Khuzdar,Balochistan,Managed soils,glw_livestock,NH3,3.86364
+Swabi,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.8288
+Jamshoro,Sindh,Manure management,glw_livestock,NH3,3.80348
+North Waziristan,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.78695
+Bajaur,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.73428
+Jamshoro,Sindh,Managed soils,cropland,NH3,3.7122
+Dera Ghazi Khan,Punjab,Managed soils,glw_livestock,NH3,3.685
+Awaran,Balochistan,Manure management,glw_livestock,NH3,3.66662
+Tando Muhammad Khan,Sindh,Managed soils,manure_applied,NH3,3.66171
+Kohat,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.62134
+Haripur,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.56893
+Qilla Abdullah,Balochistan,Manure management,glw_livestock,NH3,3.52108
+Karak,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.47992
+Kachhi,Balochistan,Managed soils,cropland,NH3,3.43797
+Gwadar,Balochistan,Manure management,glw_livestock,NH3,3.42002
+Peshawar,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,3.41453
+Kalat,Balochistan,Managed soils,glw_livestock,NH3,3.39062
+Hyderabad,Sindh,Managed soils,manure_applied,NH3,3.34957
+Hyderabad,Sindh,Manure management,glw_livestock,NH3,3.25497
+Hyderabad,Sindh,Managed soils,cropland,NH3,3.20255
+Cholistan Area,Punjab,Manure management,glw_livestock,NH3,3.18375
+Zhob,Balochistan,Managed soils,glw_livestock,NH3,3.17643
+Kachhi,Balochistan,Manure management,glw_livestock,NH3,3.15988
+Sheikhpura,Punjab,Managed soils,glw_livestock,NH3,3.11012
+Bannu,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,3.10394
+Nushki,Balochistan,Manure management,glw_livestock,NH3,3.05619
+Kashmore,Sindh,Manure management,glw_livestock,NH3,3.05577
+Musakhel,Balochistan,Managed soils,glw_livestock,NH3,3.03777
+Kohlu,Balochistan,Managed soils,glw_livestock,NH3,2.98292
+Jafarabad,Balochistan,Managed soils,cropland,NH3,2.95926
+Mardan,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,2.95918
+South Waziristan,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,2.87489
+Tharparkar,Sindh,Managed soils,manure_applied,NH3,2.81783
+Buner,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,2.74843
+Jhelum,Punjab,Managed soils,manure_applied,NH3,2.74062
+Bahawalnagar,Punjab,Managed soils,glw_livestock,NH3,2.73811
+Sargodha,Punjab,Managed soils,glw_livestock,NH3,2.73419
+Rahim Yar Khan,Punjab,Managed soils,glw_livestock,NH3,2.64592
+Mansehra,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,2.63616
+Swat,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,2.55031
+Lahore,Punjab,Managed soils,glw_livestock,NH3,2.54972
+Bhakkar,Punjab,Managed soils,glw_livestock,NH3,2.51324
+Battagram,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,2.48364
+Loralai,Balochistan,Managed soils,glw_livestock,NH3,2.4458
+Mastung,Balochistan,Manure management,glw_livestock,NH3,2.43107
+Kech,Balochistan,Managed soils,glw_livestock,NH3,2.41871
+Kasur,Punjab,Managed soils,glw_livestock,NH3,2.40528
+Okara,Punjab,Managed soils,glw_livestock,NH3,2.31869
+Swabi,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,2.29768
+Bahawalpur,Punjab,Managed soils,glw_livestock,NH3,2.29052
+Vihari,Punjab,Managed soils,glw_livestock,NH3,2.25265
+Layyah,Punjab,Managed soils,glw_livestock,NH3,2.21368
+Umerkot,Sindh,Manure management,glw_livestock,NH3,2.1746
+Sahiwal,Punjab,Managed soils,glw_livestock,NH3,2.14305
+Khairpur,Sindh,Managed soils,glw_livestock,NH3,2.13341
+Matiari,Sindh,Managed soils,manure_applied,NH3,2.08829
+Lakki Marwat,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,2.07185
+Khyber,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,2.04506
+Khanewal,Punjab,Managed soils,glw_livestock,NH3,2.0296
+Pakpattan,Punjab,Managed soils,glw_livestock,NH3,2.02144
+Dera Bugti,Balochistan,Managed soils,glw_livestock,NH3,2.02101
+Thatta,Sindh,Managed soils,glw_livestock,NH3,2.01302
+Jhal Magsi,Balochistan,Managed soils,glw_livestock,NH3,2.00311
+Rawalpindi,Punjab,Managed soils,glw_livestock,NH3,1.97573
+Lakki Marwat,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.96772
+Gujranwala,Punjab,Managed soils,glw_livestock,NH3,1.95743
+Lasbela,Balochistan,Managed soils,glw_livestock,NH3,1.94082
+Toba Tek Singh,Punjab,Managed soils,glw_livestock,NH3,1.93065
+Matiari,Sindh,Managed soils,cropland,NH3,1.92842
+Sialkot,Punjab,Managed soils,glw_livestock,NH3,1.91607
+Panjgur,Balochistan,Manure management,glw_livestock,NH3,1.9108
+Multan,Punjab,Managed soils,glw_livestock,NH3,1.89517
+Jhal Magsi,Balochistan,Managed soils,cropland,NH3,1.89442
+Attock,Punjab,Managed soils,glw_livestock,NH3,1.87277
+Barkhan,Balochistan,Managed soils,glw_livestock,NH3,1.86747
+Kachhi,Balochistan,Managed soils,manure_applied,NH3,1.86549
+Upper Dir,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.83921
+Tank,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,1.82944
+Quetta,Balochistan,Managed soils,glw_livestock,NH3,1.81659
+Jhal Magsi,Balochistan,Managed soils,manure_applied,NH3,1.7861
+Jamshoro,Sindh,Managed soils,manure_applied,NH3,1.78412
+Mandi Bahauddin,Punjab,Managed soils,glw_livestock,NH3,1.75509
+Mohmand,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.71794
+Mardan,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,1.71342
+Gujrat,Punjab,Managed soils,glw_livestock,NH3,1.71247
+Tank,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,1.6997
+Qilla Saifullah,Balochistan,Managed soils,glw_livestock,NH3,1.69562
+Kharan,Balochistan,Managed soils,glw_livestock,NH3,1.69222
+Sukkur,Sindh,Managed soils,glw_livestock,NH3,1.68966
+Rajanpur,Punjab,Managed soils,glw_livestock,NH3,1.66342
+Shikarpur,Sindh,Managed soils,glw_livestock,NH3,1.66258
+Abbottabad,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.61733
+Tharparkar,Sindh,Managed soils,glw_livestock,NH3,1.5849
+Mohmand,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.57698
+Mianwali,Punjab,Managed soils,glw_livestock,NH3,1.57674
+Jacobabad,Sindh,Managed soils,glw_livestock,NH3,1.57372
+Naushehro Feroze,Sindh,Managed soils,glw_livestock,NH3,1.56688
+Khushab,Punjab,Managed soils,glw_livestock,NH3,1.5656
+Nowshera,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.55611
+Tando Allahyar,Sindh,Manure management,glw_livestock,NH3,1.51722
+Hafizabad,Punjab,Managed soils,glw_livestock,NH3,1.51706
+Tando Muhammad Khan,Sindh,Manure management,glw_livestock,NH3,1.51253
+Peshawar,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.50239
+Chitral,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.492
+Sibi,Balochistan,Managed soils,glw_livestock,NH3,1.48965
+Other (GB/AJK/ICT residual),Other,Managed soils,cropland,NH3,1.47437
+Dadu,Sindh,Managed soils,glw_livestock,NH3,1.47202
+Pishin,Balochistan,Managed soils,glw_livestock,NH3,1.45881
+Haripur,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.4115
+Ghotki,Sindh,Managed soils,glw_livestock,NH3,1.39752
+Chakwal,Punjab,Managed soils,glw_livestock,NH3,1.38159
+Badin,Sindh,Managed soils,glw_livestock,NH3,1.37701
+Lower Dir,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.33618
+Peshawar,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,1.33427
+Charsadda,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.33399
+Nawabshah,Sindh,Managed soils,glw_livestock,NH3,1.32844
+Mardan,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.32693
+Bannu,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.31246
+Khuzdar,Balochistan,Managed soils,cropland,NH3,1.30012
+Charsadda,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.27754
+Jhelum,Punjab,Managed soils,glw_livestock,NH3,1.27115
+Lower Dir,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.25008
+Mohmand,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,1.23897
+Larkana District,Sindh,Managed soils,glw_livestock,NH3,1.23451
+Other (GB/AJK/ICT residual),Other,Manure management,glw_livestock,NH3,1.23048
+Awaran,Balochistan,Managed soils,glw_livestock,NH3,1.2288
+Other (GB/AJK/ICT residual),Other,Managed soils,manure_applied,NH3,1.22315
+Sanghar,Sindh,Managed soils,glw_livestock,NH3,1.1983
+Qilla Abdullah,Balochistan,Managed soils,glw_livestock,NH3,1.18002
+Lasbela,Balochistan,Managed soils,cropland,NH3,1.17228
+Lodhran,Punjab,Managed soils,glw_livestock,NH3,1.15566
+Gwadar,Balochistan,Managed soils,glw_livestock,NH3,1.14616
+Bajaur,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.13663
+Narowal,Punjab,Managed soils,glw_livestock,NH3,1.12044
+Kurram,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.10841
+Haripur,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,1.1043
+Chagai,Balochistan,Manure management,glw_livestock,NH3,1.10385
+Tank,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.1025
+North Waziristan,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.09979
+Lakki Marwat,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.087
+Sibi,Balochistan,Managed soils,cropland,NH3,1.07573
+Shangla,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.06791
+Buner,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.06272
+Kachhi,Balochistan,Managed soils,glw_livestock,NH3,1.05897
+Nowshera,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,1.05672
+Swabi,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.04459
+Kohat,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,1.04007
+North Waziristan,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.03317
+Nushki,Balochistan,Managed soils,glw_livestock,NH3,1.02422
+Bajaur,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,1.01881
+Nowshera,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,1.00692
+Qambar Shahdadkot,Sindh,Managed soils,glw_livestock,NH3,1.00065
+Malakand,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,0.9998
+Kohat,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.98799
+Haripur,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.97369
+Karak,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.94941
+Mirpurkhas,Sindh,Managed soils,glw_livestock,NH3,0.94493
+North Waziristan,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.9199
+Jamshoro,Sindh,Managed soils,glw_livestock,NH3,0.90988
+Lower Dir,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.87225
+Bannu,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.84683
+Bajaur,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.82874
+Loralai,Balochistan,Managed soils,cropland,NH3,0.82685
+Orakzai,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.82667
+Qilla Saifullah,Balochistan,Managed soils,cropland,NH3,0.82277
+Mastung,Balochistan,Managed soils,glw_livestock,NH3,0.81473
+Sheikhpura,Punjab,Field burning of residues,firms_fire,NH3,0.80448
+Bannu,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.79973
+Hyderabad,Sindh,Managed soils,glw_livestock,NH3,0.77867
+Buner,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.74984
+Kashmore,Sindh,Managed soils,glw_livestock,NH3,0.73101
+Mansehra,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.72868
+Cholistan Area,Punjab,Managed soils,glw_livestock,NH3,0.72484
+Karak,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.71686
+Hangu,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,0.71576
+Battagram,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.6776
+Kurram,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.64227
+Kharan,Balochistan,Managed soils,cropland,NH3,0.6419
+Panjgur,Balochistan,Managed soils,glw_livestock,NH3,0.64037
+Buner,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.61948
+Orakzai,Khyber Pakhtunkhwa,Manure management,glw_livestock,NH3,0.61757
+Mansehra,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.61741
+Karachi,Sindh,Managed soils,cropland,NH3,0.60952
+Ziarat,Balochistan,Manure management,glw_livestock,NH3,0.59299
+Jhang,Punjab,Field burning of residues,firms_fire,NH3,0.58679
+Dera Bugti,Balochistan,Managed soils,manure_applied,NH3,0.56583
+Khyber,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.55794
+Kalat,Balochistan,Managed soils,cropland,NH3,0.54534
+Mastung,Balochistan,Managed soils,cropland,NH3,0.52902
+Umerkot,Sindh,Managed soils,glw_livestock,NH3,0.52021
+Charsadda,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.52003
+Malakand,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.49251
+Swat,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.48688
+Dera Bugti,Balochistan,Managed soils,cropland,NH3,0.48006
+Karak,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.4785
+Barkhan,Balochistan,Managed soils,cropland,NH3,0.47734
+Tank,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.46372
+Swat,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.42942
+Malakand,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.42059
+South Waziristan,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.42059
+Sibi,Balochistan,Managed soils,manure_applied,NH3,0.41861
+Hafizabad,Punjab,Field burning of residues,firms_fire,NH3,0.41854
+Sialkot,Punjab,Field burning of residues,firms_fire,NH3,0.39958
+Gujranwala,Punjab,Field burning of residues,firms_fire,NH3,0.38857
+Narowal,Punjab,Field burning of residues,firms_fire,NH3,0.38523
+Chagai,Balochistan,Managed soils,glw_livestock,NH3,0.36994
+Muzaffargarh,Punjab,Field burning of residues,firms_fire,NH3,0.36376
+Qilla Abdullah,Balochistan,Managed soils,cropland,NH3,0.36311
+Tando Allahyar,Sindh,Managed soils,glw_livestock,NH3,0.36296
+Tando Muhammad Khan,Sindh,Managed soils,glw_livestock,NH3,0.36183
+Kasur,Punjab,Field burning of residues,firms_fire,NH3,0.31743
+Kohlu,Balochistan,Managed soils,cropland,NH3,0.31415
+Okara,Punjab,Field burning of residues,firms_fire,NH3,0.31098
+Orakzai,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.3037
+Rajanpur,Punjab,Field burning of residues,firms_fire,NH3,0.29221
+Kurram,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.2901
+Qambar Shahdadkot,Sindh,Field burning of residues,firms_fire,NH3,0.28673
+Musakhel,Balochistan,Managed soils,cropland,NH3,0.28559
+Pishin,Balochistan,Managed soils,cropland,NH3,0.27471
+Malakand,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.27277
+Khyber,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.27141
+Mandi Bahauddin,Punjab,Field burning of residues,firms_fire,NH3,0.26467
+Other (GB/AJK/ICT residual),Other,Managed soils,glw_livestock,NH3,0.25956
+Chagai,Balochistan,Managed soils,cropland,NH3,0.24751
+Rahim Yar Khan,Punjab,Field burning of residues,firms_fire,NH3,0.24446
+Zhob,Balochistan,Managed soils,cropland,NH3,0.23663
+Sargodha,Punjab,Field burning of residues,firms_fire,NH3,0.23352
+Dera Ismail Khan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.21959
+Nushki,Balochistan,Managed soils,cropland,NH3,0.20399
+Quetta,Balochistan,Managed soils,cropland,NH3,0.20263
+Loralai,Balochistan,Managed soils,manure_applied,NH3,0.20201
+Ziarat,Balochistan,Managed soils,glw_livestock,NH3,0.19873
+Hangu,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.19683
+Hangu,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.19528
+Awaran,Balochistan,Managed soils,cropland,NH3,0.18767
+Kech,Balochistan,Managed soils,cropland,NH3,0.18767
+Khuzdar,Balochistan,Managed soils,manure_applied,NH3,0.18081
+Kalat,Balochistan,Managed soils,manure_applied,NH3,0.17933
+Kashmore,Sindh,Field burning of residues,firms_fire,NH3,0.17603
+Layyah,Punjab,Field burning of residues,firms_fire,NH3,0.17441
+Orakzai,Khyber Pakhtunkhwa,Managed soils,glw_livestock,NH3,0.16849
+Kohat,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.16836
+Khanewal,Punjab,Field burning of residues,firms_fire,NH3,0.16738
+Bahawalpur,Punjab,Field burning of residues,firms_fire,NH3,0.16468
+Upper Dir,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.15124
+Qilla Abdullah,Balochistan,Managed soils,manure_applied,NH3,0.15008
+Sanghar,Sindh,Field burning of residues,firms_fire,NH3,0.14994
+Abbottabad,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.14296
+Upper Dir,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.14177
+Qilla Saifullah,Balochistan,Managed soils,manure_applied,NH3,0.1404
+Bahawalnagar,Punjab,Field burning of residues,firms_fire,NH3,0.13858
+Lasbela,Balochistan,Managed soils,manure_applied,NH3,0.13778
+Thatta,Sindh,Field burning of residues,firms_fire,NH3,0.13677
+Dera Ghazi Khan,Punjab,Field burning of residues,firms_fire,NH3,0.13668
+Pishin,Balochistan,Managed soils,manure_applied,NH3,0.13023
+Barkhan,Balochistan,Managed soils,manure_applied,NH3,0.13005
+Rawalpindi,Punjab,Field burning of residues,firms_fire,NH3,0.12765
+Kohlu,Balochistan,Managed soils,manure_applied,NH3,0.12374
+Abbottabad,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.12194
+Pakpattan,Punjab,Field burning of residues,firms_fire,NH3,0.12036
+Musakhel,Balochistan,Managed soils,manure_applied,NH3,0.12008
+Khyber,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.1188
+South Waziristan,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.11752
+Gujrat,Punjab,Field burning of residues,firms_fire,NH3,0.11095
+Nawabshah,Sindh,Field burning of residues,firms_fire,NH3,0.10924
+Karachi,Sindh,Managed soils,manure_applied,NH3,0.09599
+Vihari,Punjab,Field burning of residues,firms_fire,NH3,0.09258
+Toba Tek Singh,Punjab,Field burning of residues,firms_fire,NH3,0.09048
+Naushehro Feroze,Sindh,Field burning of residues,firms_fire,NH3,0.08968
+Ghotki,Sindh,Field burning of residues,firms_fire,NH3,0.08811
+Bhakkar,Punjab,Field burning of residues,firms_fire,NH3,0.08599
+Hangu,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.0856
+Chakwal,Punjab,Field burning of residues,firms_fire,NH3,0.08369
+Mastung,Balochistan,Managed soils,manure_applied,NH3,0.08246
+Shikarpur,Sindh,Field burning of residues,firms_fire,NH3,0.07829
+Panjgur,Balochistan,Managed soils,cropland,NH3,0.0748
+Mianwali,Punjab,Field burning of residues,firms_fire,NH3,0.0743
+Lodhran,Punjab,Field burning of residues,firms_fire,NH3,0.07363
+Chitral,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.07251
+Kachhi,Balochistan,Field burning of residues,firms_fire,NH3,0.07111
+Faisalabad,Punjab,Field burning of residues,firms_fire,NH3,0.06898
+Sukkur,Sindh,Field burning of residues,firms_fire,NH3,0.0683
+Zhob,Balochistan,Managed soils,manure_applied,NH3,0.06685
+Attock,Punjab,Field burning of residues,firms_fire,NH3,0.06419
+Tando Allahyar,Sindh,Field burning of residues,firms_fire,NH3,0.06165
+Kharan,Balochistan,Managed soils,manure_applied,NH3,0.0595
+Jhal Magsi,Balochistan,Field burning of residues,firms_fire,NH3,0.05767
+Nasirabad,Balochistan,Field burning of residues,firms_fire,NH3,0.05238
+Multan,Punjab,Field burning of residues,firms_fire,NH3,0.04774
+Hyderabad,Sindh,Field burning of residues,firms_fire,NH3,0.04729
+Battagram,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.04681
+Badin,Sindh,Field burning of residues,firms_fire,NH3,0.04628
+Jhelum,Punjab,Field burning of residues,firms_fire,NH3,0.04489
+Khushab,Punjab,Field burning of residues,firms_fire,NH3,0.04411
+Lahore,Punjab,Field burning of residues,firms_fire,NH3,0.04323
+Khairpur,Sindh,Field burning of residues,firms_fire,NH3,0.03848
+Mansehra,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.03619
+Mirpurkhas,Sindh,Field burning of residues,firms_fire,NH3,0.03438
+Jamshoro,Sindh,Field burning of residues,firms_fire,NH3,0.03236
+Kohistan,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.03132
+Tando Muhammad Khan,Sindh,Field burning of residues,firms_fire,NH3,0.03012
+Kurram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.0289
+Battagram,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.02693
+Dadu,Sindh,Field burning of residues,firms_fire,NH3,0.02619
+Sahiwal,Punjab,Field burning of residues,firms_fire,NH3,0.02452
+Haripur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.02425
+Umerkot,Sindh,Field burning of residues,firms_fire,NH3,0.02415
+Chitral,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.02303
+Quetta,Balochistan,Managed soils,manure_applied,NH3,0.0228
+Kohistan,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.02279
+Shangla,Khyber Pakhtunkhwa,Managed soils,manure_applied,NH3,0.02102
+Tank,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.0194
+Orakzai,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.01713
+Jacobabad,Sindh,Field burning of residues,firms_fire,NH3,0.01663
+Ziarat,Balochistan,Managed soils,cropland,NH3,0.01496
+Jafarabad,Balochistan,Field burning of residues,firms_fire,NH3,0.01409
+Mardan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.01306
+Kohat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.01287
+Sibi,Balochistan,Field burning of residues,firms_fire,NH3,0.01202
+Matiari,Sindh,Field burning of residues,firms_fire,NH3,0.01182
+Tharparkar,Sindh,Field burning of residues,firms_fire,NH3,0.0112
+Swabi,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.0108
+Shangla,Khyber Pakhtunkhwa,Managed soils,cropland,NH3,0.01036
+Lasbela,Balochistan,Field burning of residues,firms_fire,NH3,0.01017
+Nushki,Balochistan,Managed soils,manure_applied,NH3,0.00952
+Awaran,Balochistan,Managed soils,manure_applied,NH3,0.0085
+Chagai,Balochistan,Managed soils,manure_applied,NH3,0.00848
+Karachi,Sindh,Field burning of residues,firms_fire,NH3,0.008
+Kech,Balochistan,Managed soils,manure_applied,NH3,0.00715
+Abbottabad,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00638
+Buner,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00613
+Swat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00601
+Hangu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00539
+Khuzdar,Balochistan,Field burning of residues,firms_fire,NH3,0.00496
+North Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00452
+Khyber,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00427
+Loralai,Balochistan,Field burning of residues,firms_fire,NH3,0.00415
+Ziarat,Balochistan,Managed soils,manure_applied,NH3,0.00384
+Lakki Marwat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.0038
+Malakand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00371
+Shangla,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00321
+Nowshera,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00321
+South Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00317
+Musakhel,Balochistan,Field burning of residues,firms_fire,NH3,0.0029
+Gwadar,Balochistan,Managed soils,cropland,NH3,0.00272
+Karak,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00261
+Mohmand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00256
+Panjgur,Balochistan,Managed soils,manure_applied,NH3,0.00239
+Barkhan,Balochistan,Field burning of residues,firms_fire,NH3,0.00237
+Lower Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00207
+Zhob,Balochistan,Field burning of residues,firms_fire,NH3,0.00195
+Dera Bugti,Balochistan,Field burning of residues,firms_fire,NH3,0.00192
+Kech,Balochistan,Field burning of residues,firms_fire,NH3,0.00171
+Peshawar,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00155
+Kalat,Balochistan,Field burning of residues,firms_fire,NH3,0.00118
+Bajaur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00103
+Kohlu,Balochistan,Field burning of residues,firms_fire,NH3,0.00069
+Charsadda,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00067
+Awaran,Balochistan,Field burning of residues,firms_fire,NH3,0.00047
+Bannu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00041
+Upper Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00036
+Gwadar,Balochistan,Managed soils,manure_applied,NH3,0.00029
+Kohistan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00025
+Battagram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,0.00024
+Ziarat,Balochistan,Field burning of residues,firms_fire,NH3,0.0002
+Panjgur,Balochistan,Field burning of residues,firms_fire,NH3,0.0002
+Qilla Saifullah,Balochistan,Field burning of residues,firms_fire,NH3,0.00011
+Kharan,Balochistan,Field burning of residues,firms_fire,NH3,6e-05
+Quetta,Balochistan,Field burning of residues,firms_fire,NH3,5e-05
+Chitral,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NH3,2e-05
+Sheikhpura,Punjab,Field burning of residues,firms_fire,NMVOC,4.33181
+Jhang,Punjab,Field burning of residues,firms_fire,NMVOC,3.15961
+Hafizabad,Punjab,Field burning of residues,firms_fire,NMVOC,2.25368
+Sialkot,Punjab,Field burning of residues,firms_fire,NMVOC,2.15156
+Gujranwala,Punjab,Field burning of residues,firms_fire,NMVOC,2.09229
+Narowal,Punjab,Field burning of residues,firms_fire,NMVOC,2.07429
+Muzaffargarh,Punjab,Field burning of residues,firms_fire,NMVOC,1.9587
+Kasur,Punjab,Field burning of residues,firms_fire,NMVOC,1.70924
+Okara,Punjab,Field burning of residues,firms_fire,NMVOC,1.67453
+Rajanpur,Punjab,Field burning of residues,firms_fire,NMVOC,1.57342
+Qambar Shahdadkot,Sindh,Field burning of residues,firms_fire,NMVOC,1.54394
+Mandi Bahauddin,Punjab,Field burning of residues,firms_fire,NMVOC,1.42513
+Rahim Yar Khan,Punjab,Field burning of residues,firms_fire,NMVOC,1.31633
+Sargodha,Punjab,Field burning of residues,firms_fire,NMVOC,1.2574
+Dera Ismail Khan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,1.18239
+Kashmore,Sindh,Field burning of residues,firms_fire,NMVOC,0.94785
+Layyah,Punjab,Field burning of residues,firms_fire,NMVOC,0.93911
+Khanewal,Punjab,Field burning of residues,firms_fire,NMVOC,0.90126
+Bahawalpur,Punjab,Field burning of residues,firms_fire,NMVOC,0.88672
+Sanghar,Sindh,Field burning of residues,firms_fire,NMVOC,0.80735
+Bahawalnagar,Punjab,Field burning of residues,firms_fire,NMVOC,0.74618
+Thatta,Sindh,Field burning of residues,firms_fire,NMVOC,0.73648
+Dera Ghazi Khan,Punjab,Field burning of residues,firms_fire,NMVOC,0.73598
+Rawalpindi,Punjab,Field burning of residues,firms_fire,NMVOC,0.68736
+Pakpattan,Punjab,Field burning of residues,firms_fire,NMVOC,0.64811
+Gujrat,Punjab,Field burning of residues,firms_fire,NMVOC,0.5974
+Nawabshah,Sindh,Field burning of residues,firms_fire,NMVOC,0.58824
+Vihari,Punjab,Field burning of residues,firms_fire,NMVOC,0.49852
+Toba Tek Singh,Punjab,Field burning of residues,firms_fire,NMVOC,0.48722
+Naushehro Feroze,Sindh,Field burning of residues,firms_fire,NMVOC,0.48287
+Ghotki,Sindh,Field burning of residues,firms_fire,NMVOC,0.47445
+Bhakkar,Punjab,Field burning of residues,firms_fire,NMVOC,0.46303
+Chakwal,Punjab,Field burning of residues,firms_fire,NMVOC,0.45065
+Shikarpur,Sindh,Field burning of residues,firms_fire,NMVOC,0.42154
+Mianwali,Punjab,Field burning of residues,firms_fire,NMVOC,0.40007
+Lodhran,Punjab,Field burning of residues,firms_fire,NMVOC,0.39649
+Kachhi,Balochistan,Field burning of residues,firms_fire,NMVOC,0.38288
+Faisalabad,Punjab,Field burning of residues,firms_fire,NMVOC,0.37142
+Sukkur,Sindh,Field burning of residues,firms_fire,NMVOC,0.36775
+Attock,Punjab,Field burning of residues,firms_fire,NMVOC,0.34562
+Tando Allahyar,Sindh,Field burning of residues,firms_fire,NMVOC,0.33195
+Jhal Magsi,Balochistan,Field burning of residues,firms_fire,NMVOC,0.31054
+Nasirabad,Balochistan,Field burning of residues,firms_fire,NMVOC,0.28204
+Multan,Punjab,Field burning of residues,firms_fire,NMVOC,0.25706
+Hyderabad,Sindh,Field burning of residues,firms_fire,NMVOC,0.25462
+Badin,Sindh,Field burning of residues,firms_fire,NMVOC,0.24921
+Jhelum,Punjab,Field burning of residues,firms_fire,NMVOC,0.24169
+Khushab,Punjab,Field burning of residues,firms_fire,NMVOC,0.2375
+Lahore,Punjab,Field burning of residues,firms_fire,NMVOC,0.23275
+Khairpur,Sindh,Field burning of residues,firms_fire,NMVOC,0.20718
+Mansehra,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.19485
+Mirpurkhas,Sindh,Field burning of residues,firms_fire,NMVOC,0.18511
+Jamshoro,Sindh,Field burning of residues,firms_fire,NMVOC,0.17426
+Tando Muhammad Khan,Sindh,Field burning of residues,firms_fire,NMVOC,0.1622
+Kurram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.15562
+Dadu,Sindh,Field burning of residues,firms_fire,NMVOC,0.14104
+Sahiwal,Punjab,Field burning of residues,firms_fire,NMVOC,0.13202
+Haripur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.13055
+Umerkot,Sindh,Field burning of residues,firms_fire,NMVOC,0.13005
+Tank,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.10448
+Orakzai,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.09223
+Jacobabad,Sindh,Field burning of residues,firms_fire,NMVOC,0.08957
+Jafarabad,Balochistan,Field burning of residues,firms_fire,NMVOC,0.07588
+Mardan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.07034
+Kohat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.06932
+Sibi,Balochistan,Field burning of residues,firms_fire,NMVOC,0.06473
+Matiari,Sindh,Field burning of residues,firms_fire,NMVOC,0.06367
+Tharparkar,Sindh,Field burning of residues,firms_fire,NMVOC,0.06033
+Swabi,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.05817
+Lasbela,Balochistan,Field burning of residues,firms_fire,NMVOC,0.05475
+Karachi,Sindh,Field burning of residues,firms_fire,NMVOC,0.04306
+Abbottabad,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.03434
+Buner,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.03302
+Swat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.03235
+Hangu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.029
+Khuzdar,Balochistan,Field burning of residues,firms_fire,NMVOC,0.02673
+North Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.02435
+Khyber,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.02298
+Loralai,Balochistan,Field burning of residues,firms_fire,NMVOC,0.02234
+Lakki Marwat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.02044
+Malakand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.02
+Shangla,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.0173
+Nowshera,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.01728
+South Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.01706
+Musakhel,Balochistan,Field burning of residues,firms_fire,NMVOC,0.0156
+Karak,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.01403
+Mohmand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.01381
+Barkhan,Balochistan,Field burning of residues,firms_fire,NMVOC,0.01274
+Lower Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.01114
+Zhob,Balochistan,Field burning of residues,firms_fire,NMVOC,0.01049
+Dera Bugti,Balochistan,Field burning of residues,firms_fire,NMVOC,0.01036
+Kech,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00921
+Peshawar,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.00837
+Kalat,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00636
+Bajaur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.00554
+Kohlu,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00373
+Charsadda,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.00361
+Awaran,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00255
+Bannu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.00219
+Upper Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.00196
+Kohistan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.00135
+Battagram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.0013
+Ziarat,Balochistan,Field burning of residues,firms_fire,NMVOC,0.0011
+Panjgur,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00108
+Qilla Saifullah,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00057
+Kharan,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00033
+Quetta,Balochistan,Field burning of residues,firms_fire,NMVOC,0.00029
+Chitral,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NMVOC,0.0001
+Sheikhpura,Punjab,Managed soils,cropland,NOx,5.55408
+Bahawalpur,Punjab,Managed soils,cropland,NOx,5.21857
+Muzaffargarh,Punjab,Managed soils,cropland,NOx,5.17745
+Rahim Yar Khan,Punjab,Managed soils,cropland,NOx,4.91595
+Jhang,Punjab,Managed soils,cropland,NOx,4.84358
+Sargodha,Punjab,Managed soils,cropland,NOx,4.5977
+Bahawalnagar,Punjab,Managed soils,cropland,NOx,4.28357
+Rajanpur,Punjab,Managed soils,cropland,NOx,3.99575
+Vihari,Punjab,Managed soils,cropland,NOx,3.51797
+Qambar Shahdadkot,Sindh,Managed soils,cropland,NOx,3.49795
+Layyah,Punjab,Managed soils,cropland,NOx,3.48014
+Sanghar,Sindh,Managed soils,cropland,NOx,3.11004
+Faisalabad,Punjab,Managed soils,cropland,NOx,3.03937
+Thatta,Sindh,Managed soils,cropland,NOx,2.98912
+Mianwali,Punjab,Managed soils,cropland,NOx,2.95796
+Okara,Punjab,Managed soils,cropland,NOx,2.9226
+Khanewal,Punjab,Managed soils,cropland,NOx,2.82063
+Toba Tek Singh,Punjab,Managed soils,cropland,NOx,2.77622
+Dera Ghazi Khan,Punjab,Managed soils,cropland,NOx,2.69892
+Kasur,Punjab,Managed soils,cropland,NOx,2.64465
+Sialkot,Punjab,Managed soils,cropland,NOx,2.63478
+Badin,Sindh,Managed soils,cropland,NOx,2.55502
+Rawalpindi,Punjab,Managed soils,cropland,NOx,2.54021
+Sahiwal,Punjab,Managed soils,cropland,NOx,2.47689
+Bhakkar,Punjab,Managed soils,cropland,NOx,2.39959
+Multan,Punjab,Managed soils,cropland,NOx,2.3338
+Mandi Bahauddin,Punjab,Managed soils,cropland,NOx,2.25815
+Lodhran,Punjab,Managed soils,cropland,NOx,2.23183
+Chakwal,Punjab,Managed soils,cropland,NOx,2.18825
+Narowal,Punjab,Managed soils,cropland,NOx,2.18825
+Attock,Punjab,Managed soils,cropland,NOx,2.16522
+Gujrat,Punjab,Managed soils,cropland,NOx,2.15371
+Khushab,Punjab,Managed soils,cropland,NOx,2.15042
+Pakpattan,Punjab,Managed soils,cropland,NOx,2.11259
+Nawabshah,Sindh,Managed soils,cropland,NOx,1.99931
+Gujranwala,Punjab,Managed soils,cropland,NOx,1.92181
+Naushehro Feroze,Sindh,Managed soils,cropland,NOx,1.84918
+Kashmore,Sindh,Managed soils,cropland,NOx,1.74999
+Dadu,Sindh,Managed soils,cropland,NOx,1.70991
+Tharparkar,Sindh,Managed soils,cropland,NOx,1.62635
+Sheikhpura,Punjab,Field burning of residues,firms_fire,NOx,1.54707
+Hafizabad,Punjab,Managed soils,cropland,NOx,1.52791
+Dera Ismail Khan,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,1.5266
+Umerkot,Sindh,Managed soils,cropland,NOx,1.39537
+Shikarpur,Sindh,Managed soils,cropland,NOx,1.39402
+Jhelum,Punjab,Managed soils,cropland,NOx,1.37249
+Ghotki,Sindh,Managed soils,cropland,NOx,1.30842
+Khairpur,Sindh,Managed soils,cropland,NOx,1.30366
+Sukkur,Sindh,Managed soils,cropland,NOx,1.27377
+Mirpurkhas,Sindh,Managed soils,cropland,NOx,1.16915
+Jhang,Punjab,Field burning of residues,firms_fire,NOx,1.12843
+Jacobabad,Sindh,Managed soils,cropland,NOx,0.99252
+Tando Allahyar,Sindh,Managed soils,cropland,NOx,0.97758
+Tando Muhammad Khan,Sindh,Managed soils,cropland,NOx,0.82812
+Lahore,Punjab,Managed soils,cropland,NOx,0.82727
+Nasirabad,Balochistan,Managed soils,cropland,NOx,0.80755
+Hafizabad,Punjab,Field burning of residues,firms_fire,NOx,0.80489
+Sialkot,Punjab,Field burning of residues,firms_fire,NOx,0.76842
+Gujranwala,Punjab,Field burning of residues,firms_fire,NOx,0.74725
+Narowal,Punjab,Field burning of residues,firms_fire,NOx,0.74082
+Jamshoro,Sindh,Managed soils,cropland,NOx,0.73233
+Muzaffargarh,Punjab,Field burning of residues,firms_fire,NOx,0.69954
+Kachhi,Balochistan,Managed soils,cropland,NOx,0.67823
+Hyderabad,Sindh,Managed soils,cropland,NOx,0.63179
+Kasur,Punjab,Field burning of residues,firms_fire,NOx,0.61044
+Okara,Punjab,Field burning of residues,firms_fire,NOx,0.59805
+Jafarabad,Balochistan,Managed soils,cropland,NOx,0.5838
+Rajanpur,Punjab,Field burning of residues,firms_fire,NOx,0.56194
+Qambar Shahdadkot,Sindh,Field burning of residues,firms_fire,NOx,0.55141
+Mandi Bahauddin,Punjab,Field burning of residues,firms_fire,NOx,0.50897
+Rahim Yar Khan,Punjab,Field burning of residues,firms_fire,NOx,0.47012
+Swabi,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.45328
+Sargodha,Punjab,Field burning of residues,firms_fire,NOx,0.44907
+Dera Ismail Khan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.42228
+Lakki Marwat,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.40873
+Matiari,Sindh,Managed soils,cropland,NOx,0.38043
+Jhal Magsi,Balochistan,Managed soils,cropland,NOx,0.37373
+Tank,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.36091
+Kashmore,Sindh,Field burning of residues,firms_fire,NOx,0.33852
+Mardan,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.33802
+Layyah,Punjab,Field burning of residues,firms_fire,NOx,0.3354
+Khanewal,Punjab,Field burning of residues,firms_fire,NOx,0.32188
+Bahawalpur,Punjab,Field burning of residues,firms_fire,NOx,0.31669
+Other (GB/AJK/ICT residual),Other,Managed soils,cropland,NOx,0.29086
+Sanghar,Sindh,Field burning of residues,firms_fire,NOx,0.28834
+Bahawalnagar,Punjab,Field burning of residues,firms_fire,NOx,0.26649
+Peshawar,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.26322
+Thatta,Sindh,Field burning of residues,firms_fire,NOx,0.26303
+Dera Ghazi Khan,Punjab,Field burning of residues,firms_fire,NOx,0.26285
+Khuzdar,Balochistan,Managed soils,cropland,NOx,0.25648
+Rawalpindi,Punjab,Field burning of residues,firms_fire,NOx,0.24549
+Mohmand,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.24442
+Pakpattan,Punjab,Field burning of residues,firms_fire,NOx,0.23147
+Lasbela,Balochistan,Managed soils,cropland,NOx,0.23126
+Haripur,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.21785
+Gujrat,Punjab,Field burning of residues,firms_fire,NOx,0.21336
+Sibi,Balochistan,Managed soils,cropland,NOx,0.21222
+Nawabshah,Sindh,Field burning of residues,firms_fire,NOx,0.21008
+Kohat,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.20518
+Nowshera,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.19864
+North Waziristan,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.18148
+Vihari,Punjab,Field burning of residues,firms_fire,NOx,0.17804
+Toba Tek Singh,Punjab,Field burning of residues,firms_fire,NOx,0.17401
+Naushehro Feroze,Sindh,Field burning of residues,firms_fire,NOx,0.17245
+Lower Dir,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.17208
+Ghotki,Sindh,Field burning of residues,firms_fire,NOx,0.16945
+Bhakkar,Punjab,Field burning of residues,firms_fire,NOx,0.16537
+Bajaur,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.16349
+Loralai,Balochistan,Managed soils,cropland,NOx,0.16312
+Orakzai,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.16308
+Qilla Saifullah,Balochistan,Managed soils,cropland,NOx,0.16231
+Chakwal,Punjab,Field burning of residues,firms_fire,NOx,0.16094
+Bannu,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.15777
+Shikarpur,Sindh,Field burning of residues,firms_fire,NOx,0.15055
+Mianwali,Punjab,Field burning of residues,firms_fire,NOx,0.14288
+Lodhran,Punjab,Field burning of residues,firms_fire,NOx,0.1416
+Karak,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.14142
+Kachhi,Balochistan,Field burning of residues,firms_fire,NOx,0.13674
+Faisalabad,Punjab,Field burning of residues,firms_fire,NOx,0.13265
+Sukkur,Sindh,Field burning of residues,firms_fire,NOx,0.13134
+Kurram,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.12671
+Kharan,Balochistan,Managed soils,cropland,NOx,0.12663
+Attock,Punjab,Field burning of residues,firms_fire,NOx,0.12343
+Buner,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.12221
+Mansehra,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.1218
+Karachi,Sindh,Managed soils,cropland,NOx,0.12024
+Tando Allahyar,Sindh,Field burning of residues,firms_fire,NOx,0.11855
+Jhal Magsi,Balochistan,Field burning of residues,firms_fire,NOx,0.11091
+Kalat,Balochistan,Managed soils,cropland,NOx,0.10758
+Mastung,Balochistan,Managed soils,cropland,NOx,0.10436
+Charsadda,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.10259
+Nasirabad,Balochistan,Field burning of residues,firms_fire,NOx,0.10073
+Swat,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.09605
+Dera Bugti,Balochistan,Managed soils,cropland,NOx,0.09471
+Barkhan,Balochistan,Managed soils,cropland,NOx,0.09417
+Multan,Punjab,Field burning of residues,firms_fire,NOx,0.09181
+Hyderabad,Sindh,Field burning of residues,firms_fire,NOx,0.09093
+Badin,Sindh,Field burning of residues,firms_fire,NOx,0.089
+Jhelum,Punjab,Field burning of residues,firms_fire,NOx,0.08632
+Khushab,Punjab,Field burning of residues,firms_fire,NOx,0.08482
+Lahore,Punjab,Field burning of residues,firms_fire,NOx,0.08313
+Malakand,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.08297
+South Waziristan,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.08297
+Khairpur,Sindh,Field burning of residues,firms_fire,NOx,0.07399
+Qilla Abdullah,Balochistan,Managed soils,cropland,NOx,0.07163
+Mansehra,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.06959
+Mirpurkhas,Sindh,Field burning of residues,firms_fire,NOx,0.06611
+Jamshoro,Sindh,Field burning of residues,firms_fire,NOx,0.06223
+Kohlu,Balochistan,Managed soils,cropland,NOx,0.06197
+Tando Muhammad Khan,Sindh,Field burning of residues,firms_fire,NOx,0.05793
+Musakhel,Balochistan,Managed soils,cropland,NOx,0.05634
+Kurram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.05558
+Pishin,Balochistan,Managed soils,cropland,NOx,0.05419
+Khyber,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.05354
+Dadu,Sindh,Field burning of residues,firms_fire,NOx,0.05037
+Chagai,Balochistan,Managed soils,cropland,NOx,0.04883
+Sahiwal,Punjab,Field burning of residues,firms_fire,NOx,0.04715
+Zhob,Balochistan,Managed soils,cropland,NOx,0.04668
+Haripur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.04663
+Umerkot,Sindh,Field burning of residues,firms_fire,NOx,0.04645
+Nushki,Balochistan,Managed soils,cropland,NOx,0.04024
+Quetta,Balochistan,Managed soils,cropland,NOx,0.03998
+Hangu,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.03883
+Tank,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.03732
+Awaran,Balochistan,Managed soils,cropland,NOx,0.03702
+Kech,Balochistan,Managed soils,cropland,NOx,0.03702
+Orakzai,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.03294
+Jacobabad,Sindh,Field burning of residues,firms_fire,NOx,0.03199
+Upper Dir,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.02984
+Abbottabad,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.0282
+Jafarabad,Balochistan,Field burning of residues,firms_fire,NOx,0.0271
+Mardan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.02512
+Kohat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.02476
+Sibi,Balochistan,Field burning of residues,firms_fire,NOx,0.02312
+Matiari,Sindh,Field burning of residues,firms_fire,NOx,0.02274
+Tharparkar,Sindh,Field burning of residues,firms_fire,NOx,0.02155
+Swabi,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.02077
+Lasbela,Balochistan,Field burning of residues,firms_fire,NOx,0.01955
+Karachi,Sindh,Field burning of residues,firms_fire,NOx,0.01538
+Panjgur,Balochistan,Managed soils,cropland,NOx,0.01476
+Chitral,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.01431
+Abbottabad,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.01227
+Buner,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.01179
+Swat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.01156
+Hangu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.01036
+Khuzdar,Balochistan,Field burning of residues,firms_fire,NOx,0.00955
+North Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.0087
+Khyber,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00821
+Loralai,Balochistan,Field burning of residues,firms_fire,NOx,0.00798
+Lakki Marwat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.0073
+Malakand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00714
+Shangla,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00618
+Nowshera,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00617
+South Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00609
+Musakhel,Balochistan,Field burning of residues,firms_fire,NOx,0.00557
+Battagram,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.00531
+Karak,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00501
+Mohmand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00493
+Barkhan,Balochistan,Field burning of residues,firms_fire,NOx,0.00455
+Kohistan,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.0045
+Lower Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00398
+Zhob,Balochistan,Field burning of residues,firms_fire,NOx,0.00375
+Dera Bugti,Balochistan,Field burning of residues,firms_fire,NOx,0.0037
+Kech,Balochistan,Field burning of residues,firms_fire,NOx,0.00329
+Peshawar,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00299
+Ziarat,Balochistan,Managed soils,cropland,NOx,0.00295
+Kalat,Balochistan,Field burning of residues,firms_fire,NOx,0.00227
+Shangla,Khyber Pakhtunkhwa,Managed soils,cropland,NOx,0.00204
+Bajaur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00198
+Kohlu,Balochistan,Field burning of residues,firms_fire,NOx,0.00133
+Charsadda,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00129
+Awaran,Balochistan,Field burning of residues,firms_fire,NOx,0.00091
+Bannu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00078
+Upper Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.0007
+Gwadar,Balochistan,Managed soils,cropland,NOx,0.00054
+Kohistan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00048
+Battagram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,0.00046
+Ziarat,Balochistan,Field burning of residues,firms_fire,NOx,0.00039
+Panjgur,Balochistan,Field burning of residues,firms_fire,NOx,0.00039
+Qilla Saifullah,Balochistan,Field burning of residues,firms_fire,NOx,0.0002
+Kharan,Balochistan,Field burning of residues,firms_fire,NOx,0.00012
+Quetta,Balochistan,Field burning of residues,firms_fire,NOx,0.0001
+Chitral,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,NOx,4e-05
+Sheikhpura,Punjab,Field burning of residues,firms_fire,PM2.5,4.70311
+Jhang,Punjab,Field burning of residues,firms_fire,PM2.5,3.43044
+Hafizabad,Punjab,Field burning of residues,firms_fire,PM2.5,2.44685
+Sialkot,Punjab,Field burning of residues,firms_fire,PM2.5,2.33598
+Gujranwala,Punjab,Field burning of residues,firms_fire,PM2.5,2.27163
+Narowal,Punjab,Field burning of residues,firms_fire,PM2.5,2.25209
+Muzaffargarh,Punjab,Field burning of residues,firms_fire,PM2.5,2.12659
+Kasur,Punjab,Field burning of residues,firms_fire,PM2.5,1.85575
+Okara,Punjab,Field burning of residues,firms_fire,PM2.5,1.81806
+Rajanpur,Punjab,Field burning of residues,firms_fire,PM2.5,1.70829
+Qambar Shahdadkot,Sindh,Field burning of residues,firms_fire,PM2.5,1.67628
+Mandi Bahauddin,Punjab,Field burning of residues,firms_fire,PM2.5,1.54728
+Rahim Yar Khan,Punjab,Field burning of residues,firms_fire,PM2.5,1.42915
+Sargodha,Punjab,Field burning of residues,firms_fire,PM2.5,1.36518
+Dera Ismail Khan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,1.28374
+Kashmore,Sindh,Field burning of residues,firms_fire,PM2.5,1.0291
+Layyah,Punjab,Field burning of residues,firms_fire,PM2.5,1.01961
+Khanewal,Punjab,Field burning of residues,firms_fire,PM2.5,0.97851
+Bahawalpur,Punjab,Field burning of residues,firms_fire,PM2.5,0.96273
+Sanghar,Sindh,Field burning of residues,firms_fire,PM2.5,0.87656
+Bahawalnagar,Punjab,Field burning of residues,firms_fire,PM2.5,0.81014
+Thatta,Sindh,Field burning of residues,firms_fire,PM2.5,0.7996
+Dera Ghazi Khan,Punjab,Field burning of residues,firms_fire,PM2.5,0.79906
+Rawalpindi,Punjab,Field burning of residues,firms_fire,PM2.5,0.74628
+Pakpattan,Punjab,Field burning of residues,firms_fire,PM2.5,0.70366
+Gujrat,Punjab,Field burning of residues,firms_fire,PM2.5,0.6486
+Nawabshah,Sindh,Field burning of residues,firms_fire,PM2.5,0.63866
+Vihari,Punjab,Field burning of residues,firms_fire,PM2.5,0.54125
+Toba Tek Singh,Punjab,Field burning of residues,firms_fire,PM2.5,0.52899
+Naushehro Feroze,Sindh,Field burning of residues,firms_fire,PM2.5,0.52426
+Ghotki,Sindh,Field burning of residues,firms_fire,PM2.5,0.51512
+Bhakkar,Punjab,Field burning of residues,firms_fire,PM2.5,0.50272
+Chakwal,Punjab,Field burning of residues,firms_fire,PM2.5,0.48927
+Shikarpur,Sindh,Field burning of residues,firms_fire,PM2.5,0.45767
+Mianwali,Punjab,Field burning of residues,firms_fire,PM2.5,0.43436
+Lodhran,Punjab,Field burning of residues,firms_fire,PM2.5,0.43047
+Kachhi,Balochistan,Field burning of residues,firms_fire,PM2.5,0.4157
+Faisalabad,Punjab,Field burning of residues,firms_fire,PM2.5,0.40326
+Sukkur,Sindh,Field burning of residues,firms_fire,PM2.5,0.39927
+Attock,Punjab,Field burning of residues,firms_fire,PM2.5,0.37524
+Tando Allahyar,Sindh,Field burning of residues,firms_fire,PM2.5,0.3604
+Jhal Magsi,Balochistan,Field burning of residues,firms_fire,PM2.5,0.33716
+Nasirabad,Balochistan,Field burning of residues,firms_fire,PM2.5,0.30622
+Multan,Punjab,Field burning of residues,firms_fire,PM2.5,0.27909
+Hyderabad,Sindh,Field burning of residues,firms_fire,PM2.5,0.27644
+Badin,Sindh,Field burning of residues,firms_fire,PM2.5,0.27057
+Jhelum,Punjab,Field burning of residues,firms_fire,PM2.5,0.26241
+Khushab,Punjab,Field burning of residues,firms_fire,PM2.5,0.25785
+Lahore,Punjab,Field burning of residues,firms_fire,PM2.5,0.2527
+Khairpur,Sindh,Field burning of residues,firms_fire,PM2.5,0.22494
+Mansehra,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.21155
+Mirpurkhas,Sindh,Field burning of residues,firms_fire,PM2.5,0.20097
+Jamshoro,Sindh,Field burning of residues,firms_fire,PM2.5,0.18919
+Tando Muhammad Khan,Sindh,Field burning of residues,firms_fire,PM2.5,0.1761
+Kurram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.16896
+Dadu,Sindh,Field burning of residues,firms_fire,PM2.5,0.15313
+Sahiwal,Punjab,Field burning of residues,firms_fire,PM2.5,0.14334
+Haripur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.14174
+Umerkot,Sindh,Field burning of residues,firms_fire,PM2.5,0.1412
+Tank,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.11344
+Orakzai,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.10013
+Jacobabad,Sindh,Field burning of residues,firms_fire,PM2.5,0.09725
+Jafarabad,Balochistan,Field burning of residues,firms_fire,PM2.5,0.08238
+Mardan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.07637
+Kohat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.07526
+Sibi,Balochistan,Field burning of residues,firms_fire,PM2.5,0.07028
+Matiari,Sindh,Field burning of residues,firms_fire,PM2.5,0.06912
+Tharparkar,Sindh,Field burning of residues,firms_fire,PM2.5,0.0655
+Swabi,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.06315
+Lasbela,Balochistan,Field burning of residues,firms_fire,PM2.5,0.05944
+Karachi,Sindh,Field burning of residues,firms_fire,PM2.5,0.04675
+Abbottabad,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.03729
+Buner,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.03585
+Swat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.03513
+Hangu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.03148
+Khuzdar,Balochistan,Field burning of residues,firms_fire,PM2.5,0.02903
+North Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.02643
+Khyber,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.02495
+Loralai,Balochistan,Field burning of residues,firms_fire,PM2.5,0.02426
+Lakki Marwat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.02219
+Malakand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.02171
+Shangla,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.01879
+Nowshera,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.01876
+South Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.01852
+Musakhel,Balochistan,Field burning of residues,firms_fire,PM2.5,0.01694
+Karak,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.01524
+Mohmand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.01499
+Barkhan,Balochistan,Field burning of residues,firms_fire,PM2.5,0.01383
+Lower Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.0121
+Zhob,Balochistan,Field burning of residues,firms_fire,PM2.5,0.01139
+Dera Bugti,Balochistan,Field burning of residues,firms_fire,PM2.5,0.01125
+Kech,Balochistan,Field burning of residues,firms_fire,PM2.5,0.01
+Peshawar,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00908
+Kalat,Balochistan,Field burning of residues,firms_fire,PM2.5,0.0069
+Bajaur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00601
+Kohlu,Balochistan,Field burning of residues,firms_fire,PM2.5,0.00405
+Charsadda,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00392
+Awaran,Balochistan,Field burning of residues,firms_fire,PM2.5,0.00276
+Bannu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00238
+Upper Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00213
+Kohistan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00147
+Battagram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00141
+Ziarat,Balochistan,Field burning of residues,firms_fire,PM2.5,0.0012
+Panjgur,Balochistan,Field burning of residues,firms_fire,PM2.5,0.00118
+Qilla Saifullah,Balochistan,Field burning of residues,firms_fire,PM2.5,0.00062
+Kharan,Balochistan,Field burning of residues,firms_fire,PM2.5,0.00036
+Quetta,Balochistan,Field burning of residues,firms_fire,PM2.5,0.00031
+Chitral,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,PM2.5,0.00011
+Sheikhpura,Punjab,Field burning of residues,firms_fire,SO2,0.24753
+Jhang,Punjab,Field burning of residues,firms_fire,SO2,0.18055
+Hafizabad,Punjab,Field burning of residues,firms_fire,SO2,0.12878
+Sialkot,Punjab,Field burning of residues,firms_fire,SO2,0.12295
+Gujranwala,Punjab,Field burning of residues,firms_fire,SO2,0.11956
+Narowal,Punjab,Field burning of residues,firms_fire,SO2,0.11853
+Muzaffargarh,Punjab,Field burning of residues,firms_fire,SO2,0.11193
+Kasur,Punjab,Field burning of residues,firms_fire,SO2,0.09767
+Okara,Punjab,Field burning of residues,firms_fire,SO2,0.09569
+Rajanpur,Punjab,Field burning of residues,firms_fire,SO2,0.08991
+Qambar Shahdadkot,Sindh,Field burning of residues,firms_fire,SO2,0.08823
+Mandi Bahauddin,Punjab,Field burning of residues,firms_fire,SO2,0.08144
+Rahim Yar Khan,Punjab,Field burning of residues,firms_fire,SO2,0.07522
+Sargodha,Punjab,Field burning of residues,firms_fire,SO2,0.07185
+Dera Ismail Khan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.06757
+Kashmore,Sindh,Field burning of residues,firms_fire,SO2,0.05416
+Layyah,Punjab,Field burning of residues,firms_fire,SO2,0.05366
+Khanewal,Punjab,Field burning of residues,firms_fire,SO2,0.0515
+Bahawalpur,Punjab,Field burning of residues,firms_fire,SO2,0.05067
+Sanghar,Sindh,Field burning of residues,firms_fire,SO2,0.04613
+Bahawalnagar,Punjab,Field burning of residues,firms_fire,SO2,0.04264
+Thatta,Sindh,Field burning of residues,firms_fire,SO2,0.04208
+Dera Ghazi Khan,Punjab,Field burning of residues,firms_fire,SO2,0.04206
+Rawalpindi,Punjab,Field burning of residues,firms_fire,SO2,0.03928
+Pakpattan,Punjab,Field burning of residues,firms_fire,SO2,0.03703
+Gujrat,Punjab,Field burning of residues,firms_fire,SO2,0.03414
+Nawabshah,Sindh,Field burning of residues,firms_fire,SO2,0.03361
+Vihari,Punjab,Field burning of residues,firms_fire,SO2,0.02849
+Toba Tek Singh,Punjab,Field burning of residues,firms_fire,SO2,0.02784
+Naushehro Feroze,Sindh,Field burning of residues,firms_fire,SO2,0.02759
+Ghotki,Sindh,Field burning of residues,firms_fire,SO2,0.02711
+Bhakkar,Punjab,Field burning of residues,firms_fire,SO2,0.02646
+Chakwal,Punjab,Field burning of residues,firms_fire,SO2,0.02575
+Shikarpur,Sindh,Field burning of residues,firms_fire,SO2,0.02409
+Mianwali,Punjab,Field burning of residues,firms_fire,SO2,0.02286
+Lodhran,Punjab,Field burning of residues,firms_fire,SO2,0.02266
+Kachhi,Balochistan,Field burning of residues,firms_fire,SO2,0.02188
+Faisalabad,Punjab,Field burning of residues,firms_fire,SO2,0.02122
+Sukkur,Sindh,Field burning of residues,firms_fire,SO2,0.02101
+Attock,Punjab,Field burning of residues,firms_fire,SO2,0.01975
+Tando Allahyar,Sindh,Field burning of residues,firms_fire,SO2,0.01897
+Jhal Magsi,Balochistan,Field burning of residues,firms_fire,SO2,0.01775
+Nasirabad,Balochistan,Field burning of residues,firms_fire,SO2,0.01612
+Multan,Punjab,Field burning of residues,firms_fire,SO2,0.01469
+Hyderabad,Sindh,Field burning of residues,firms_fire,SO2,0.01455
+Badin,Sindh,Field burning of residues,firms_fire,SO2,0.01424
+Jhelum,Punjab,Field burning of residues,firms_fire,SO2,0.01381
+Khushab,Punjab,Field burning of residues,firms_fire,SO2,0.01357
+Lahore,Punjab,Field burning of residues,firms_fire,SO2,0.0133
+Khairpur,Sindh,Field burning of residues,firms_fire,SO2,0.01184
+Mansehra,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.01113
+Mirpurkhas,Sindh,Field burning of residues,firms_fire,SO2,0.01058
+Jamshoro,Sindh,Field burning of residues,firms_fire,SO2,0.00996
+Tando Muhammad Khan,Sindh,Field burning of residues,firms_fire,SO2,0.00927
+Kurram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00889
+Dadu,Sindh,Field burning of residues,firms_fire,SO2,0.00806
+Sahiwal,Punjab,Field burning of residues,firms_fire,SO2,0.00754
+Haripur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00746
+Umerkot,Sindh,Field burning of residues,firms_fire,SO2,0.00743
+Tank,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00597
+Orakzai,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00527
+Jacobabad,Sindh,Field burning of residues,firms_fire,SO2,0.00512
+Jafarabad,Balochistan,Field burning of residues,firms_fire,SO2,0.00434
+Mardan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00402
+Kohat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00396
+Sibi,Balochistan,Field burning of residues,firms_fire,SO2,0.0037
+Matiari,Sindh,Field burning of residues,firms_fire,SO2,0.00364
+Tharparkar,Sindh,Field burning of residues,firms_fire,SO2,0.00345
+Swabi,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00332
+Lasbela,Balochistan,Field burning of residues,firms_fire,SO2,0.00313
+Karachi,Sindh,Field burning of residues,firms_fire,SO2,0.00246
+Abbottabad,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00196
+Buner,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00189
+Swat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00185
+Hangu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00166
+Khuzdar,Balochistan,Field burning of residues,firms_fire,SO2,0.00153
+North Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00139
+Khyber,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00131
+Loralai,Balochistan,Field burning of residues,firms_fire,SO2,0.00128
+Lakki Marwat,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00117
+Malakand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00114
+Shangla,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00099
+Nowshera,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00099
+South Waziristan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00097
+Musakhel,Balochistan,Field burning of residues,firms_fire,SO2,0.00089
+Karak,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.0008
+Mohmand,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00079
+Barkhan,Balochistan,Field burning of residues,firms_fire,SO2,0.00073
+Lower Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00064
+Zhob,Balochistan,Field burning of residues,firms_fire,SO2,0.0006
+Dera Bugti,Balochistan,Field burning of residues,firms_fire,SO2,0.00059
+Kech,Balochistan,Field burning of residues,firms_fire,SO2,0.00053
+Peshawar,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00048
+Kalat,Balochistan,Field burning of residues,firms_fire,SO2,0.00036
+Bajaur,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00032
+Kohlu,Balochistan,Field burning of residues,firms_fire,SO2,0.00021
+Charsadda,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00021
+Awaran,Balochistan,Field burning of residues,firms_fire,SO2,0.00015
+Bannu,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00013
+Upper Dir,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,0.00011
+Kohistan,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,8e-05
+Battagram,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,7e-05
+Ziarat,Balochistan,Field burning of residues,firms_fire,SO2,6e-05
+Panjgur,Balochistan,Field burning of residues,firms_fire,SO2,6e-05
+Qilla Saifullah,Balochistan,Field burning of residues,firms_fire,SO2,3e-05
+Kharan,Balochistan,Field burning of residues,firms_fire,SO2,2e-05
+Quetta,Balochistan,Field burning of residues,firms_fire,SO2,2e-05
+Chitral,Khyber Pakhtunkhwa,Field burning of residues,firms_fire,SO2,1e-05

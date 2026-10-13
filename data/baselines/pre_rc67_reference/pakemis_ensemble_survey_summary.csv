@@ -1,0 +1,2 @@
+configuration_id,deterministic_Mt,mean_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,n_draws,dung_scale,draw_identity
+S_2023_24,446.72502,454.5184,402.3066,451.1995,525.5897,10000,0.20373,"same draw_id as the reference ensemble: the dung components scale deterministically per draw, no RNG consumed"

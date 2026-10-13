@@ -1,0 +1,25 @@
+check,passed,actual,expected,note
+registered anchor year,True,2024,2024,no FY2020 production is mixed into the registered estimate
+transmission length closure,True,13526.69,13526.69,OGRA utility systems
+distribution length closure,True,201230.0,201230,OGRA utility systems
+component-to-ledger closure,True,1668.3835984122911,1668.3835984122911,gas-mass closure before GWP
+structural ordering,True,23.499370669386575,> central > lower-practices,technology scenarios stay structural; the geometric-mean central reading sits strictly inside the practice bounds
+factorial structural configurations,True,280,280,"all permissible joint configurations are retained without probability weights; 280 since rc67 gave the post-meter base three memberships (feedstock out, the reference; feedstock in; the whole fertiliser class out) beside the two factor states - 224 before, 168 before that"
+joint envelope below OAT envelope,True,9.601488974504125,< one-at-a-time minimum,coexisting structural choices are evaluated jointly
+flare archive Pakistan coverage,True,14,14,2012-2025 inclusive
+MARS oil-and-gas coverage,True,20,>0,detections are evaluation only
+CRT workbook total,True,4432.821048632558,4432.821048632558,official 2022 cell audit
+UFG mass conversion,True,1220.80551897924,>1000 Gg CH4 at 100%,guards the former factor-1000 bug
+gas supply identity closure,True,0.0,0,indigenous marketable supply plus RLNG equals reported supply
+UFG compatibility computed,True,6,>=1,network estimate is compared only with pre-meter UFG
+quantitative observation evaluation,True,3,3,VIIRS volume and MARS sources/plumes are tested by province
+field supply reconciliation,True,2637.75,2637.75,canonical fields aggregate Table 3.34 source rows; 0.03 MMCFD is rounding
+field observation statistics,True,3,3,field-level tests replace province correlations as the principal spatial evaluation
+observation match audit,True,20,20,every MARS source has an auditable nearest-flare and canonical-field decision; unmatched records remain explicit
+field permutation tests,True,6,6,three observation metrics are tested under national and within-province nulls
+CRT activity-factor reproduction,True,2.7755575615628914e-17,0,official activity multiplied by IEF reproduces reported native-gas rows
+CRT waterfall closure,True,-3.4106051316484808e-15,0,segment replacements and additions close to the reconstructed native-gas ledger
+nine-year infrastructure reconstruction,True,9,9,FY2015-16 through FY2023-24 with no interpolation
+annual segment history closure,True,108,108,segment-resolved annual rows close exactly to every reference annual total
+post-meter end-use control,True,0.04165664000174729,<0.1 million m3,published sector rows reconcile to the registered transferred-factor activity
+declared outputs written,True,48,48,every output this runner declares was written by this run

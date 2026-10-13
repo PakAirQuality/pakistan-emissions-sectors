@@ -1,0 +1,24 @@
+# WHAT WENT IN AND WHAT CAME OUT, per source stream: the activity quantities, the
+# conversions, the emission factors and the published emission on ONE row.
+# 
+# Outside fugitives - whose segment ledger has always carried activity x factor x
+# structural multiplier - nothing in this release put those numbers beside each other.
+# fact_annual carries the emission and the method_id but neither of the two numbers that
+# were multiplied, and every *_by_stream_*.csv carries only the output. This closes that.
+# 
+# IT IS NOT AN IDENTITY. `reproduces` is yes ONLY where one activity times one factor
+# lands on the published emission within tolerance. Most streams are no or not_attempted,
+# because the engines apply steps the parameter ids do not carry - a partition, a share, a
+# survival curve, a first-order decay. That is the honest state of the join and the reason
+# is on the row; a yes that had not been checked would be worth less than nothing.
+# 
+# Written by pkinv.report.derivation_chain; parameter values resolve through
+# core.parameters.registry() by dependency_group, and factor ids through
+# data/emission_factors.csv.
+source_stream_id,category,subitem,gas,method_id,equation,activity,conversion,factor,unresolved_ids,emissions_Gg,native_unit,co2e_Mt_AR5,reproduces,reproduction_note
+waste|domestic-wastewater|domestic-wastewater-ch4|ch4,Domestic wastewater,Domestic wastewater CH4,CH4,ipcc2006_v5_ch6_eq6.1_wastewater_ch4,2006 V5 Ch6 Eq 6.1,waste:ww_bod_g_per_cap_day=40.0,,waste:ww_bo=0.6; waste:ww_mcf_latrine=0.1; waste:ww_mcf_septic=0.5; waste:ww_mcf_sewer=0.5,,781.632781,Gg,21.88571786,not_attempted,"1 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+waste|domestic-wastewater|domestic-wastewater-n2o|n2o,Domestic wastewater,Domestic wastewater N2O,N2O,ipcc2006_v5_ch6_eq6.7_wastewater_n2o,2006 V5 Ch6 Eq 6.7,waste:protein supply (FAOSTAT)=73.39 g protein per capita per day,waste:ww_f_npr=0.16,waste:ww_ef_effluent=0.005,,9.706157,Gg,2.57213158,no,one activity value and one factor value resolve and their product is not the published mass: the engine applies a step the parameter ids do not carry
+waste|open-burning-of-waste|open-waste-burning-ch4|ch4,Open burning of waste,Open waste burning CH4,CH4,ipcc2006_v5_ch5_eq5.4_open_burning_ch4,2006 V5 Ch5 Eq 5.4 (activity Eq 5.7),waste:burned_fraction=0.6; waste:fossil_c_per_wet_t=0.0757; waste:total_c_per_wet_t=0.2195; waste:gen_rate_rural=0.283; waste:gen_rate_urban=0.453; waste:uncollected_rural=0.7; waste:uncollected_urban=0.3,waste:dry_matter=0.7,ef:waste_ch4=6.5 g CH4/kg wet waste,,61.124052,Gg,1.71147345,not_attempted,"7 distinct activity and 1 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+waste|open-burning-of-waste|open-waste-burning-co2-(fossil)|co2,Open burning of waste,Open waste burning CO2 (fossil),CO2,ipcc2006_v5_ch5_eq5.2_open_burning_co2,2006 V5 Ch5 Eq 5.2 (activity Eq 5.7),waste:burned_fraction=0.6; waste:fossil_c_per_wet_t=0.0757; waste:total_c_per_wet_t=0.2195; waste:gen_rate_rural=0.283; waste:gen_rate_urban=0.453; waste:uncollected_rural=0.7; waste:uncollected_urban=0.3,waste:dry_matter=0.7,waste:oxidation_factor=0.71,,1853.209154,Gg,1.85320915,not_attempted,"7 distinct activity and 1 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+waste|open-burning-of-waste|open-waste-burning-n2o|n2o,Open burning of waste,Open waste burning N2O,N2O,ipcc2006_v5_ch5_eq5.5_open_burning_n2o,2006 V5 Ch5 Eq 5.5 (activity Eq 5.7),waste:burned_fraction=0.6; waste:fossil_c_per_wet_t=0.0757; waste:total_c_per_wet_t=0.2195; waste:gen_rate_rural=0.283; waste:gen_rate_urban=0.453; waste:uncollected_rural=0.7; waste:uncollected_urban=0.3,waste:dry_matter=0.7,ef:waste_n2o=0.15 g N2O/kg dry waste,,0.987389,Gg,0.26165796,not_attempted,"7 distinct activity and 1 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+waste|solid-waste-disposal|managed-and-unmanaged-disposal-sites-ch4|ch4,Solid waste disposal,Managed and unmanaged disposal sites CH4,CH4,ipcc2006_v5_ch3_eq3.1_swds_fod_ch4,2006 V5 Ch3 Eq 3.4-3.5 (FOD),waste:fossil_c_per_wet_t=0.0757; waste:total_c_per_wet_t=0.2195; waste:gen_rate_rural=0.283; waste:gen_rate_urban=0.453; waste:uncollected_rural=0.7; waste:uncollected_urban=0.3,,waste:swds_docf=0.5; waste:swds_f=0.5; waste:swds_k=0.065; waste:swds_mcf=0.6,,327.45429,Gg,9.16872011,not_attempted,"6 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"

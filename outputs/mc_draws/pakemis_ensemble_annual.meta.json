@@ -1,0 +1,10 @@
+{
+  "engine": "pkinv.report.common_ensemble",
+  "file": "mc_draws/pakemis_ensemble_annual.parquet",
+  "n_iter": 10000,
+  "note": "draw_id x category annual draws; bit-identical prefix of the published 100k within_sector national run",
+  "rng": "prefix of the published national pool (identity-seeded parameter streams + injected sector draw files); profile noise on dedicated blake2b-keyed streams",
+  "scenario": "within_sector",
+  "seed": 42,
+  "sha256": "ed1c96647a85aed68fd2aa40fd94a30b74c2d40d57fdd05cf66c76bfde51ef6b"
+}

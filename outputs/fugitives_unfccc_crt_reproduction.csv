@@ -1,0 +1,20 @@
+inventory_year,worksheet,row,category,gas,activity_value,activity_unit,ief_kg_per_unit,calculated_kt,reported_kt,difference_kt,closes,formula
+2022,Table1.B.2,12,1.B.2.a.ii.   Production and upgrading (8),CO2,5176.57,10^3m^3,2000,10.35314,10.35314,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,12,1.B.2.a.ii.   Production and upgrading (8),CH4,5176.57,10^3m^3,30000,155.2971,155.2971,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,13,1.B.2.a.iii.  Transport,CO2,45680,10^3m^3,0.49,0.022383200000000002,0.0223832,3.469446951953614e-18,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,13,1.B.2.a.iii.  Transport,CH4,45680,10^3m^3,5.4,0.24667200000000003,0.246672,2.7755575615628914e-17,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,14,1.B.2.a.iv.  Refining/storage,CO2,22960,10^3m^3,21.8,0.500528,0.500528,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,14,1.B.2.a.iv.  Refining/storage,CH4,22960,10^3m^3,21.8,0.500528,0.500528,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,22,1.B.2.b.ii.   Production and gathering (8),CO2,112.46,10^6m^3,97.00000000000001,0.01090862,0.01090862,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,22,1.B.2.b.ii.   Production and gathering (8),CH4,112.46,10^6m^3,12190,1.3708874,1.3708874,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,23,1.B.2.b.iii.  Processing,CO2,138.8811734,10^6m^3,250,0.03472029335,0.03472029335,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,23,1.B.2.b.iii.  Processing,CH4,138.8811734,10^6m^3,790,0.10971612698599999,0.109716126986,-1.3877787807814457e-17,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,24,1.B.2.b.iv.  Transmission and storage,CO2,163.69,10^6m^3,1.4400000000000002,0.0002357136,0.0002357136,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,24,1.B.2.b.iv.  Transmission and storage,CH4,163.69,10^6m^3,633,0.10361577000000001,0.10361577,1.3877787807814457e-17,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,25,1.B.2.b.v.  Distribution,CO2,153.68,10^6m^3,95.5,0.01467644,0.01467644,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,25,1.B.2.b.v.  Distribution,CH4,153.68,10^6m^3,1800,0.276624,0.276624,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,34,1.B.2.c.i.2.   Gas,CO2,1.25,10^6m^3,63000,0.07875,0.07875,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,34,1.B.2.c.i.2.   Gas,CH4,1.25,10^6m^3,0.6799999999999999,8.499999999999999e-07,8.5e-07,-1.0587911840678754e-22,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,38,1.B.2.c.ii.2.   Gas,CO2,125.4024164,10^6m^3,3600,0.45144869904,0.45144869904,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,38,1.B.2.c.ii.2.   Gas,CH4,125.4024164,10^6m^3,2.4,0.00030096579936,0.00030096579936,0.0,True,activity_value * IEF_kg_per_unit / 1e6
+2022,Table1.B.2,38,1.B.2.c.ii.2.   Gas,N2O,125.4024164,10^6m^3,0.054,6.7717304856e-06,6.7717304856e-06,0.0,True,activity_value * IEF_kg_per_unit / 1e6

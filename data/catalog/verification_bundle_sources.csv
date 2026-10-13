@@ -1,0 +1,148 @@
+# THE SOURCE SIDE OF THE EXTERNAL VERIFICATION BUNDLE, declared per sector.
+#
+# pakemis_verification_external/<sector>.zip hands an outside reviewer the held documents that
+# sector rests on. The selection was made by hand and, until this file existed, was recoverable
+# only by unzipping the bundle itself - the bundle was its own registry, so nothing could say
+# whether it still matched the tree, and no test could fail when it stopped.
+#
+# This file is that selection, recovered from the 1.0.0rc47 bundle and collapsed to rules:
+#   tree       <dir>/**  every file under the directory, recursively
+#   directory  <dir>/*   every file directly in the directory, not its subdirectories
+#   file       <path>    one named file
+# files_at_freeze is what the rule covered when it was written; the builder reports drift and
+# tests/test_verification_bundle.py fails when a rule resolves to nothing.
+#
+# Written by hand; consumed by scripts/build_verification_bundle.py.
+# FREEZE COUNTS RE-TAKEN 2026-10-08. The counts below were frozen out of the
+# 1.0.0rc47 bundle. Documents have been acquired since - IPCC 2006 Volume 4 chapters
+# in this review's Stage 0, and APCMA, NEPRA and OGRA editions in the rounds before
+# it - so the builder was reporting drift on rules whose trees had legitimately
+# grown. Re-taking the counts is NOT the same as suppressing the report: the point
+# of the column is that a change has to be noticed and accounted for, and these are.
+# A count that FALLS is the case to be suspicious of, and none did.
+# FREEZE COUNTS RE-TAKEN 2026-10-08, and one of them was NOT an acquisition.
+# Thirteen rules grew because documents were acquired - IPCC 2006 Volume 4 chapters
+# in this review's Stage 0, and APCMA, NEPRA and OGRA editions in the rounds before
+# it - so the builder was reporting drift on trees that had legitimately gained
+# files. Re-taking those counts is not suppressing the report: the column exists so
+# a change has to be noticed and accounted for, and each of those is.
+#
+# ONE COUNT FELL, 10 to 8, on agriculture's data/pbs_census/** - and a fall is the
+# case to be suspicious of. It was not a loss. The data layout migration fanned that
+# tree out, and the asset shim cannot resolve a legacy DIRECTORY, only a legacy file,
+# which is its documented blind spot: a glob over one finds nothing that moved.
+# livestock_by_district_2024.csv and livestock_province_2024.csv are both held under
+# data/shared/activity/pbs_census/, which is now a rule of its own. Without it the
+# bundle would have shipped two fewer agriculture documents than rc47 did and the
+# count would have agreed with itself about it.
+sector,rule,kind,files_at_freeze
+agriculture,data/pbs_census/**,tree,8
+agriculture,data/raw/fao_crop_calendar/**,tree,2
+agriculture,data/raw/ipcc/**,tree,11
+agriculture,data/raw/nfdc/**,tree,2
+agriculture,data/shared/activity/pbs_census/**,tree,2
+agriculture,sources/Agriculture/**,tree,16
+agriculture,sources/EMEP/emep_1a3c.txt,file,1
+agriculture,sources/EMEP/emep_1a4.txt,file,1
+agriculture,sources/EMEP/emep_eea_2023_1a3c_railways.pdf,file,1
+agriculture,sources/EMEP/emep_eea_2023_1a4_small_combustion.pdf,file,1
+agriculture,sources/IPCC/**,tree,5
+agriculture,sources/Papers/agriculture_paper.pdf,file,1
+agriculture,sources/Papers/andreae_2019_biomass_burning_ef.pdf,file,1
+aviation,data/raw/ipcc/**,tree,11
+aviation,data/raw/ocac/**,tree,55
+aviation,sources/Aviation/**,tree,92
+aviation,sources/ClimateTRACE/**,tree,3
+aviation,sources/EMEP/emep_1a3c.txt,file,1
+aviation,sources/EMEP/emep_1a4.txt,file,1
+aviation,sources/EMEP/emep_eea_2023_1a3c_railways.pdf,file,1
+aviation,sources/EMEP/emep_eea_2023_1a4_small_combustion.pdf,file,1
+aviation,sources/IPCC/**,tree,5
+aviation,sources/UNFCCC/**,tree,6
+fugitives,data/raw/ipcc/**,tree,11
+fugitives,sources/Fugitives/**,tree,4
+fugitives,sources/IPCC/**,tree,5
+fugitives,sources/OGRA/**,tree,10
+fugitives,sources/UNFCCC/**,tree,6
+industry,data/raw/ipcc/**,tree,11
+industry,data/raw/ocac/**,tree,55
+industry,data/raw/pbs/minerals/**,tree,8
+industry,sources/IPCC/**,tree,5
+industry,sources/Industries/**,tree,1
+industry,sources/OGRA/**,tree,10
+industry,sources/Papers/Punjab Industry.pdf,file,1
+industry,sources/Provincial Statistics/**,tree,6
+ippu,data/raw/apcma/**,tree,6
+ippu,data/raw/ipcc/**,tree,11
+ippu,data/raw/nfdc/**,tree,2
+ippu,data/raw/pbs/qim/**,tree,9
+ippu,sources/GEM/**,tree,1
+ippu,sources/IPCC/**,tree,5
+ippu,sources/IPPU/**,tree,17
+ippu,sources/OGRA/**,tree,10
+ippu,sources/OSM/**,tree,12
+ippu,sources/Provincial Statistics/**,tree,6
+power,data/raw/ipcc/**,tree,11
+power,data/raw/nepra/**,tree,4767
+power,data/raw/ocac/**,tree,55
+power,data/raw/pbs/electricity/**,tree,1
+power,sources/AP42/**,tree,4
+power,sources/ClimateTRACE/**,tree,3
+power,sources/GEM/**,tree,1
+power,sources/IPCC/**,tree,5
+power,sources/NEPRA HSE/**,tree,6
+power,sources/OGRA/**,tree,10
+power,sources/Power Plants/**,tree,17
+railways,data/raw/ipcc/**,tree,11
+railways,data/raw/ocac/**,tree,55
+railways,sources/AGP/**,tree,4
+railways,sources/AP42/**,tree,4
+railways,sources/ELK/**,tree,4
+railways,sources/EMEP/emep_1a3c.txt,file,1
+railways,sources/EMEP/emep_1a4.txt,file,1
+railways,sources/EMEP/emep_eea_2023_1a3c_railways.pdf,file,1
+railways,sources/EMEP/emep_eea_2023_1a4_small_combustion.pdf,file,1
+railways,sources/IPCC/**,tree,5
+railways,sources/OSM/**,tree,12
+railways,sources/Papers/tno_2024_rail_emissions.pdf,file,1
+railways,sources/Railways/**,tree,10
+railways,sources/UNFCCC/**,tree,6
+residential,data/raw/ipcc/**,tree,11
+residential,data/raw/ogra/**,tree,74
+residential,data/raw/pbs/hies/**,tree,3
+residential,sources/EMEP/emep_1a3c.txt,file,1
+residential,sources/EMEP/emep_1a4.txt,file,1
+residential,sources/EMEP/emep_eea_2023_1a3c_railways.pdf,file,1
+residential,sources/EMEP/emep_eea_2023_1a4_small_combustion.pdf,file,1
+residential,sources/HIES/**,tree,64
+residential,sources/IPCC/**,tree,5
+residential,sources/OGRA/**,tree,10
+residential,sources/Papers/ccac_sei_pakistan_assessment.pdf,file,1
+residential,sources/Papers/dung_fuel_proximate_2025.pdf,file,1
+residential,sources/Papers/worldbank_2024_pakistan_energy_survey.pdf,file,1
+residential,sources/UNFCCC/**,tree,6
+transport,data/raw/ipcc/**,tree,11
+transport,data/raw/ocac/**,tree,55
+transport,sources/EDGAR/**,tree,3
+transport,sources/EMEP/emep_1a3c.txt,file,1
+transport,sources/EMEP/emep_1a4.txt,file,1
+transport,sources/EMEP/emep_eea_2023_1a3c_railways.pdf,file,1
+transport,sources/EMEP/emep_eea_2023_1a4_small_combustion.pdf,file,1
+transport,sources/IPCC/**,tree,5
+transport,sources/OGRA/**,tree,10
+transport,sources/OSM/**,tree,12
+transport,sources/Papers/Punjab Transport.pdf,file,1
+transport,sources/Punjab Transport/**,tree,3
+transport,sources/Shipping/**,tree,1
+transport,sources/Transport/**,tree,57
+waste,data/raw/ipcc/**,tree,11
+waste,sources/ClimateTRACE/**,tree,3
+waste,sources/Domestic.xlsx,file,1
+waste,sources/EMEP/emep_1a3c.txt,file,1
+waste,sources/EMEP/emep_1a4.txt,file,1
+waste,sources/EMEP/emep_eea_2023_1a3c_railways.pdf,file,1
+waste,sources/EMEP/emep_eea_2023_1a4_small_combustion.pdf,file,1
+waste,sources/HydroWASTE/**,tree,1
+waste,sources/IPCC/**,tree,5
+waste,sources/OGRA/**,tree,10
+waste,sources/OSM/**,tree,12

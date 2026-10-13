@@ -1,0 +1,14 @@
+# Arbitration outcomes for the FY2021-22 SIR listing rows whose printed annual Sum
+# disagrees with their own twelve months (data/activity/power/sir_row_discrepancies.csv).
+# Each row is decided by the plant's own daily generation report from the same NEPRA
+# archive (held under data/raw/nepra/sir_detail/daily_reports/, per-document outcomes in
+# outputs/power_sir_verification_sample.csv). kind=month_cell replaces one sheet cell and
+# the corrected row must then close on the printed Sum, or the ingest refuses it;
+# kind=sum_typo_confirmed changes nothing - every month was independently corroborated
+# and the printed Sum itself is the error, which the discrepancy ledger keeps on record.
+fiscal_year,plant,kind,month,sheet_gwh,corrected_gwh,basis_document,basis_sha256,reason
+FY2021-22,UCH-II Power (Pvt) Ltd.,month_cell,202201,244.12,277.90,daily_reports/FY2021-22/UCH-II/Jan 22.pdf,8ffeb21066f4cc7e2cb211425872dfd4d40a1fa60c3c3be351871b85148ec80b,the sheet's January repeats February's 244.12; the daily report totals 277.90 and the delta equals the row's misclosure exactly
+FY2021-22,FFC Energy Ltd.,month_cell,202205,5.80,15.80,daily_reports/FY2021-22/FFCEL/May 22.pdf,737c642e5659a98a12234a7f0bf297b06b9b3efe3f019bde5c1169edb41855e9,the sheet's May drops the leading digit of 15.80; the daily report restores it and the row closes
+FY2021-22,Foundation Wind Energy-I Ltd. (FWEL-II),month_cell,202203,6.43,6.60,daily_reports/FY2021-22/FWEL-II/Mar 22.pdf,a6d184c2dba1f13b91ce9741154a5964340518b4a2d1969279749ba031aca221,the daily report totals 6.60 against the sheet's 6.43 and the delta equals the row's misclosure
+FY2021-22,Daral Khwar (Behren) Hydropower Project,month_cell,202109,4.47,6.04,daily_reports/FY2021-22/Daral Khwar/Daral Khwar Sep 2021.pdf,4ee5d92eabd497567e6bcaf3dd95f28d8e601e6811edd132f77f047243ee7706,the sheet's September repeats October's 4.47; the daily report totals 6.04 and the row closes
+FY2021-22,Jamshoro Power Generation Company Limited.,sum_typo_confirmed,,,,daily_reports/FY2021-22/Jamshoro'/Jul 21.pdf,d723dcc8ce977fe8e74d59acb1014a005a04a6b3526ac0595ce233f79ef92ac0,all twelve months agree with the plant's daily reports individually; the printed Sum 279.18 is the error and the months are kept

@@ -1,0 +1,41 @@
+block,label,row,field,cell,value
+category,1.A.4.b.  Residential (14),37,activity_TJ,C37,311723.8076
+category,1.A.4.b.  Residential (14),37,basis,D37,NCV
+category,1.A.4.b.  Residential (14),37,ief_co2_t_per_TJ,E37,None
+category,1.A.4.b.  Residential (14),37,ief_ch4_kg_per_TJ,F37,None
+category,1.A.4.b.  Residential (14),37,ief_n2o_kg_per_TJ,G37,None
+category,1.A.4.b.  Residential (14),37,co2_kt,H37,17680.99162656
+category,1.A.4.b.  Residential (14),37,ch4_kt,I37,1.580119888
+category,1.A.4.b.  Residential (14),37,n2o_kt,J37,0.03249278516
+liquid,Liquid fuels,38,activity_TJ,C38,23201.514
+liquid,Liquid fuels,38,basis,D38,NCV
+liquid,Liquid fuels,38,ief_co2_t_per_TJ,E38,64.37361105831283
+liquid,Liquid fuels,38,ief_ch4_kg_per_TJ,F38,5.551286437600581
+liquid,Liquid fuels,38,ief_n2o_kg_per_TJ,G38,0.15512864376005808
+liquid,Liquid fuels,38,co2_kt,H38,1493.5652382
+liquid,Liquid fuels,38,ch4_kt,I38,0.12879825
+liquid,Liquid fuels,38,n2o_kt,J38,0.0035992194
+solid,Solid fuels,39,activity_TJ,C39,29.526
+solid,Solid fuels,39,basis,D39,NCV
+solid,Solid fuels,39,ief_co2_t_per_TJ,E39,101.00000000000001
+solid,Solid fuels,39,ief_ch4_kg_per_TJ,F39,300.00000000000006
+solid,Solid fuels,39,ief_n2o_kg_per_TJ,G39,1.5
+solid,Solid fuels,39,co2_kt,H39,2.982126
+solid,Solid fuels,39,ch4_kt,I39,0.0088578
+solid,Solid fuels,39,n2o_kt,J39,4.4289e-05
+gaseous,Gaseous fuels (6),40,activity_TJ,C40,288492.7676
+gaseous,Gaseous fuels (6),40,basis,D40,NCV
+gaseous,Gaseous fuels (6),40,ief_co2_t_per_TJ,E40,56.1
+gaseous,Gaseous fuels (6),40,ief_ch4_kg_per_TJ,F40,5
+gaseous,Gaseous fuels (6),40,ief_n2o_kg_per_TJ,G40,0.09999999999999999
+gaseous,Gaseous fuels (6),40,co2_kt,H40,16184.44426236
+gaseous,Gaseous fuels (6),40,ch4_kt,I40,1.442463838
+gaseous,Gaseous fuels (6),40,n2o_kt,J40,0.02884927676
+biomass,Biomass (3),43,activity_TJ,C43,NE
+biomass,Biomass (3),43,basis,D43,NCV
+biomass,Biomass (3),43,ief_co2_t_per_TJ,E43,NE
+biomass,Biomass (3),43,ief_ch4_kg_per_TJ,F43,NE
+biomass,Biomass (3),43,ief_n2o_kg_per_TJ,G43,NE
+biomass,Biomass (3),43,co2_kt,H43,NE
+biomass,Biomass (3),43,ch4_kt,I43,NE
+biomass,Biomass (3),43,n2o_kt,J43,NE

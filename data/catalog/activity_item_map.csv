@@ -1,0 +1,28 @@
+# Long-format files whose single `item` column encodes several things at once, split into the
+# published columns. Declared here rather than parsed in code, because `cotton_bales_000` is not a
+# pattern - it is a unit the source chose, and guessing at it is how a bale becomes a tonne.
+#
+# ⚠ fertilizer_2024.csv holds FIVE nutrients and only two are nitrogen. Publishing all five as
+# `t N` - which an earlier draft of this registry did - would have restated 996,000 t of phosphate
+# and 6,579,000 t of urea product as nitrogen, overstating it by a factor of three.
+#
+# ⚠ nitrogen_N_offtake_t belongs to the FERTILISER collection, not crops: the Economic Survey prints
+# it in the same table, and publishing it under `crops` would put tonnes of nitrogen beside tonnes of
+# grain with nothing but the unit to tell them apart.
+path,item,collection,category,variable,unit
+data/activity/agriculture/es_fiscal_series.csv,wheat_area_ha,crops,wheat,area,ha
+data/activity/agriculture/es_fiscal_series.csv,wheat_production_t,crops,wheat,production,t
+data/activity/agriculture/es_fiscal_series.csv,rice_area_ha,crops,rice,area,ha
+data/activity/agriculture/es_fiscal_series.csv,rice_production_t,crops,rice,production,t
+data/activity/agriculture/es_fiscal_series.csv,maize_area_ha,crops,maize,area,ha
+data/activity/agriculture/es_fiscal_series.csv,maize_production_t,crops,maize,production,t
+data/activity/agriculture/es_fiscal_series.csv,sugarcane_area_ha,crops,sugarcane,area,ha
+data/activity/agriculture/es_fiscal_series.csv,sugarcane_production_t,crops,sugarcane,production,t
+data/activity/agriculture/es_fiscal_series.csv,cotton_area_ha,crops,cotton,area,ha
+data/activity/agriculture/es_fiscal_series.csv,cotton_bales_000,crops,cotton,production,000 bales
+data/activity/agriculture/es_fiscal_series.csv,nitrogen_N_offtake_t,fertiliser,nitrogen,offtake,t N
+data/activity/fertilizer_2024.csv,nitrogen_N_offtake,fertiliser,nitrogen,offtake,t N
+data/activity/fertilizer_2024.csv,phosphate_P2O5_offtake,fertiliser,phosphate,offtake,t P2O5
+data/activity/fertilizer_2024.csv,potash_K2O_offtake,fertiliser,potash,offtake,t K2O
+data/activity/fertilizer_2024.csv,urea_product_offtake,fertiliser,urea,offtake,t product
+data/activity/fertilizer_2024.csv,nitrogen_N_from_urea,fertiliser,nitrogen_from_urea,offtake,t N

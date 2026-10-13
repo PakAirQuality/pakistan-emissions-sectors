@@ -1,0 +1,18 @@
+# THE FALLBACK ALLOW-LIST (rc8 fail-closed gate).
+#
+# The cube's declared-fallback design records every substitution as data
+# (outputs/pakemis_grid_fallbacks.csv) instead of failing silently. This file is the
+# other half the sixth review asked for: a release may ship only fallback CLASSES that
+# are listed here with a justification. A class that appears in the fallbacks CSV and
+# not here - a deleted proxy cache, a renamed raster, a new stream with no registry
+# row - REFUSES the release fixpoint. Match is on (scope, declared, used); the reason
+# string carries computed values and is not matched.
+scope,declared,used,justification
+district,panel share for a unit with no polygon,within-province proxy spread,"the Larkana geoBoundaries distributor defect (adm2_canonical shape_missing); the mass is spread within its province rather than dropped, and the ADM2 view carries the declared-hole row"
+shape,residential,uniform,a shape whose within-province proxy raster is empty falls back to uniform within that shape; declared per event with the panel mass fraction in the reason string
+shape,agriculture,uniform,"a district shape carrying field-burning panel mass in which the FIRMS fire raster has no detections falls back to uniform within that shape - the honest cost of a REAL observation layer (the cropland proxy it replaced was dense everywhere and could never say a district had no observed fires); declared per event. The firms_fire absent-raster class that stood here until the rc13 fetch landed is deliberately GONE: the layer is committed, so a checkout without it should refuse the fixpoint, not ship on cropland"
+province,grid station points,builtup,Wave 5: a province share of a grid fuel stream with no corroborated-and-fuelled station of that fuel spreads on built-up with this event - the captive pattern; the bagasse profile rides it wholly (no plant-ledger bagasse row)
+province,ippu register points,builtup,Wave 5: a province share of the cement clinker stream with no located cement works spreads on built-up with this event - the captive pattern at the IPPU register's grain
+province,captive register points,builtup,"rc44: the captive register geocodes 1,068 of 1,105 rows, and the 37 without a coordinate carry no province either - so the located fraction is national and the remainder of each province's share rides built-up with this event, the same treatment as the grid fleet and the IPPU register"
+province,waste disposal site points,population raster,"rc47 Wave 3: the SWDS coverage remainder, PRICED at last - 58 mapped sites cover 21 of ~134 districts and the uncovered ~71% of each province's mass keeps the population raster. Until this row the re-seat emitted no event and the ledger read located_mass 1.0 for a construction whose sites carry a quarter of the mass"
+province,WWTP points at served share,population raster,"rc47 Wave 3: wastewater outside the HydroWASTE plants' served populations - the dominantly untreated share, ~95% - keeps the population raster. The served-for-treated stand-in is a declared upper bound on the plant share; the MCF difference lives in the magnitude engine"

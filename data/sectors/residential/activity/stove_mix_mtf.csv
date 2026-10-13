@@ -1,0 +1,8 @@
+locality,stove_class,share_pct,source,note
+national,clean_fuel_main_stove,44.3,"World Bank 2024 Pakistan Energy Survey (MTF 2021-22), Executive Summary, access-to-clean-cooking section","Piped natural gas 38.6 + LPG 5.7 as the primary cooking method; sha256 a61c7bd8c847b6ee2d4bc0052f90fc9c96e3559ee3eb90135fe8b42f222e5aaa"
+national,png_main_stove,38.6,"World Bank 2024 Pakistan Energy Survey, Executive Summary",
+national,lpg_main_stove,5.7,"World Bank 2024 Pakistan Energy Survey, Executive Summary",
+urban,png_main_stove,80.0,"World Bank 2024 Pakistan Energy Survey, Executive Summary","'In urban areas, PNG stoves are predominantly used, with a penetration rate of 80 percent'"
+rural,png_main_stove,21.3,"World Bank 2024 Pakistan Energy Survey, Executive Summary",
+rural,traditional_or_three_stone_open_fire,71.8,"World Bank 2024 Pakistan Energy Survey, Executive Summary","'71.8 percent of households use traditional/locally built stoves or three-stone/open-fire stoves'"
+national,single_stove_households,93.8,"World Bank 2024 Pakistan Energy Survey, Cooking Solutions chapter (Stove Stacking, p.57)","Stacking - households using more than one stove - is therefore 6.2 percent nationwide; the stacked stove is commonly an LPG backup"

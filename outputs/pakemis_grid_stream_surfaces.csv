@@ -1,0 +1,207 @@
+# The surface the cube placed each stream on, recorded at the dispatch (rc41).
+# surface: a proxy raster (cropland, builtup, population, glw_livestock, manure_applied,
+# spam_rice, firms_fire), a point set or network, or none (retained at ADM1).
+# district_panel: the ADM2 panel whose shares factor the within-province placement, if any.
+source_stream_id,module,spatial_profile_id,geometry_id,within_province_placement,surface,district_panel,pattern_hash
+agriculture|enteric-fermentation|buffalo|ch4,agriculture,livestock_buffalo,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Enteric fermentation,bd9ec3eeef351558
+agriculture|enteric-fermentation|camels|ch4,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Enteric fermentation,9b2bcf4cead118f9
+agriculture|enteric-fermentation|dairy_cattle|ch4,agriculture,livestock_cattle,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Enteric fermentation,e9479be038d34231
+agriculture|enteric-fermentation|goats|ch4,agriculture,livestock_goats,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Enteric fermentation,3655d7e9f5fdf828
+agriculture|enteric-fermentation|other_cattle|ch4,agriculture,livestock_cattle,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Enteric fermentation,e9479be038d34231
+agriculture|enteric-fermentation|sheep|ch4,agriculture,livestock_sheep,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Enteric fermentation,9c254a3609aa8b3a
+agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,firms_fire,,93015186e43fc1f0
+agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,firms_fire,,93015186e43fc1f0
+agriculture|managed-soils|direct-n2o---crop-residues|n2o,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Managed soils,2aba2ad90474c1e8
+agriculture|managed-soils|direct-n2o---organic-manure|n2o,agriculture,manure_applied,diffuse:adm2_pbs2023,raster_or_administrative,manure_applied,agri:Managed soils,e52249a7a39ece2d
+agriculture|managed-soils|direct-n2o---pasture-deposition-(cattle-type)|n2o,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,106e68cf1814fd98
+agriculture|managed-soils|direct-n2o---pasture-deposition-(sheep/goat/other)|n2o,agriculture,livestock_smallrum,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,f87b4182752f711d
+agriculture|managed-soils|direct-n2o---synthetic-fertiliser-(rice-ef1fr)|n2o,agriculture,rice_area,diffuse:adm2_pbs2023,raster_or_administrative,spam_rice,agri:Managed soils,7632ae43f8543fd4
+agriculture|managed-soils|direct-n2o---synthetic-fertiliser-(upland)|n2o,agriculture,fertilizer_N,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Managed soils,bee76246dbc0e43c
+agriculture|managed-soils|indirect-n2o---leaching/runoff-(crop-residues)|n2o,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Managed soils,2aba2ad90474c1e8
+agriculture|managed-soils|indirect-n2o---leaching/runoff-(organic-manure)|n2o,agriculture,manure_applied,diffuse:adm2_pbs2023,raster_or_administrative,manure_applied,agri:Managed soils,e52249a7a39ece2d
+agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-cattle-type)|n2o,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,106e68cf1814fd98
+agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,livestock_smallrum,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,f87b4182752f711d
+agriculture|managed-soils|indirect-n2o---leaching/runoff-(synthetic-fertiliser)|n2o,agriculture,fertilizer_N,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Managed soils,bee76246dbc0e43c
+agriculture|managed-soils|indirect-n2o---volatilisation-(organic-manure)|n2o,agriculture,manure_applied,diffuse:adm2_pbs2023,raster_or_administrative,manure_applied,agri:Managed soils,e52249a7a39ece2d
+agriculture|managed-soils|indirect-n2o---volatilisation-(pasture-cattle-type)|n2o,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,106e68cf1814fd98
+agriculture|managed-soils|indirect-n2o---volatilisation-(pasture-sheep/goat/other)|n2o,agriculture,livestock_smallrum,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,f87b4182752f711d
+agriculture|managed-soils|indirect-n2o---volatilisation-(synthetic-fertiliser)|n2o,agriculture,fertilizer_N,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Managed soils,bee76246dbc0e43c
+agriculture|manure-management|buffalo-(ch4)|ch4,agriculture,livestock_buffalo,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,38b56d4788d18038
+agriculture|manure-management|camels-(ch4)|ch4,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,756c20a61ed937da
+agriculture|manure-management|dairy_cattle-(ch4)|ch4,agriculture,livestock_cattle,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,c5f5e91634838a03
+agriculture|manure-management|direct-n2o|n2o,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,756c20a61ed937da
+agriculture|manure-management|goats-(ch4)|ch4,agriculture,livestock_goats,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,d7127ea0f42fa073
+agriculture|manure-management|indirect-n2o-(volatilisation)|n2o,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,756c20a61ed937da
+agriculture|manure-management|other_cattle-(ch4)|ch4,agriculture,livestock_cattle,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,c5f5e91634838a03
+agriculture|manure-management|poultry-(ch4)|ch4,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,756c20a61ed937da
+agriculture|manure-management|sheep-(ch4)|ch4,agriculture,livestock_sheep,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Manure management,dd5f11ce6c76c50e
+agriculture|rice-cultivation|continuously-flooded|ch4,agriculture,rice_area,diffuse:adm2_pbs2023,raster_or_administrative,spam_rice,agri:Rice cultivation,a3112e60d3581dde
+agriculture|urea-application|urea-application-co2|co2,agriculture,fertilizer_N,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Urea application,bee76246dbc0e43c
+aviation|domestic-aviation|domestic-aviation-cruise-ch4|ch4,aviation,aviation_lto_domestic,S4:no-native-geometry,not_placed,none,,
+aviation|domestic-aviation|domestic-aviation-cruise-co2|co2,aviation,aviation_lto_domestic,S4:no-native-geometry,not_placed,none,,
+aviation|domestic-aviation|domestic-aviation-cruise-n2o|n2o,aviation,aviation_lto_domestic,S4:no-native-geometry,not_placed,none,,
+aviation|domestic-aviation|domestic-aviation-lto-ch4|ch4,aviation,aviation_lto_domestic,facilities:airports_domestic,per_object_activity,airport_points,,afa42dc64a8c2f15
+aviation|domestic-aviation|domestic-aviation-lto-co2|co2,aviation,aviation_lto_domestic,facilities:airports_domestic,per_object_activity,airport_points,,afa42dc64a8c2f15
+aviation|domestic-aviation|domestic-aviation-lto-n2o|n2o,aviation,aviation_lto_domestic,facilities:airports_domestic,per_object_activity,airport_points,,afa42dc64a8c2f15
+fugitives|fugitive-emissions-from-oil-and-gas|gas-distribution-ch4|ch4,fugitives,fugitive_gas_distribution,diffuse:adm1_provinces,raster_or_administrative,builtup,,09e3e4867d5e9ccd
+fugitives|fugitive-emissions-from-oil-and-gas|gas-distribution-co2|co2,fugitives,fugitive_gas_distribution,diffuse:adm1_provinces,raster_or_administrative,builtup,,09e3e4867d5e9ccd
+fugitives|fugitive-emissions-from-oil-and-gas|gas-gathering-ch4|ch4,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-gathering-co2|co2,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-gathering-n2o|n2o,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-processing-ch4|ch4,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-processing-co2|co2,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-processing-n2o|n2o,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-production-ch4|ch4,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-production-co2|co2,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-production-n2o|n2o,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|gas-transmission-ch4|ch4,fugitives,fugitive_gas_transmission,diffuse:adm1_provinces,raster_or_administrative,uniform,,ff9d95d11513be27
+fugitives|fugitive-emissions-from-oil-and-gas|gas-transmission-co2|co2,fugitives,fugitive_gas_transmission,diffuse:adm1_provinces,raster_or_administrative,uniform,,ff9d95d11513be27
+fugitives|fugitive-emissions-from-oil-and-gas|lng-import-terminals-ch4|ch4,fugitives,fugitive_lng_terminal,facilities:lng_terminals,object_uniform,lng_terminal_points,,d44b34b9f4dca2b4
+fugitives|fugitive-emissions-from-oil-and-gas|lng-import-terminals-co2|co2,fugitives,fugitive_lng_terminal,facilities:lng_terminals,object_uniform,lng_terminal_points,,d44b34b9f4dca2b4
+fugitives|fugitive-emissions-from-oil-and-gas|oil-pipeline-transport-ch4|ch4,fugitives,fugitive_oil_prod,diffuse:adm1_provinces,raster_or_administrative,uniform,,c5e6fc61c8b8bbc6
+fugitives|fugitive-emissions-from-oil-and-gas|oil-pipeline-transport-co2|co2,fugitives,fugitive_oil_prod,diffuse:adm1_provinces,raster_or_administrative,uniform,,c5e6fc61c8b8bbc6
+fugitives|fugitive-emissions-from-oil-and-gas|oil-production-ch4|ch4,fugitives,fugitive_oil_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,a409ef6767f2b249
+fugitives|fugitive-emissions-from-oil-and-gas|oil-production-co2|co2,fugitives,fugitive_oil_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,a409ef6767f2b249
+fugitives|fugitive-emissions-from-oil-and-gas|oil-production-n2o|n2o,fugitives,fugitive_oil_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,a409ef6767f2b249
+fugitives|fugitive-emissions-from-oil-and-gas|oil-refining-ch4|ch4,fugitives,fugitive_oil_refining,diffuse:adm1_provinces,raster_or_administrative,builtup,,3acec3337853a8d0
+fugitives|fugitive-emissions-from-oil-and-gas|oil-refining-co2|co2,fugitives,fugitive_oil_refining,diffuse:adm1_provinces,raster_or_administrative,builtup,,3acec3337853a8d0
+fugitives|fugitive-emissions-from-oil-and-gas|oil-refining-n2o|n2o,fugitives,fugitive_oil_refining,diffuse:adm1_provinces,raster_or_administrative,builtup,,3acec3337853a8d0
+fugitives|fugitive-emissions-from-oil-and-gas|post-meter-appliances-ch4|ch4,fugitives,fugitive_gas_distribution,diffuse:adm1_provinces,raster_or_administrative,builtup,,09e3e4867d5e9ccd
+fugitives|fugitive-emissions-from-oil-and-gas|post-meter-appliances-co2|co2,fugitives,fugitive_gas_distribution,diffuse:adm1_provinces,raster_or_administrative,builtup,,09e3e4867d5e9ccd
+fugitives|fugitive-emissions-from-oil-and-gas|post-meter-industrial-and-power-ch4|ch4,fugitives,fugitive_gas_consumption,diffuse:adm1_provinces,raster_or_administrative,builtup,,928da59698ad0f52
+fugitives|fugitive-emissions-from-oil-and-gas|post-meter-industrial-and-power-co2|co2,fugitives,fugitive_gas_consumption,diffuse:adm1_provinces,raster_or_administrative,builtup,,928da59698ad0f52
+fugitives|fugitive-emissions-from-oil-and-gas|sour-gas-processing-ch4|ch4,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|sour-gas-processing-co2|co2,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+fugitives|fugitive-emissions-from-oil-and-gas|sour-gas-processing-n2o|n2o,fugitives,fugitive_gas_prod,points:wb_flares,per_object_activity,flare_points+uniform_fallback,,353076ac87ec84e0
+industry|industrial-fuel-combustion-(1a2)|brick-kiln-coal-ch4|ch4,industry,brick_coal,points:pak_brick_kilns,object_uniform,brick_kiln_points+builtup_fallback,,75aad047f6b70f28
+industry|industrial-fuel-combustion-(1a2)|brick-kiln-coal-co2|co2,industry,brick_coal,points:pak_brick_kilns,object_uniform,brick_kiln_points+builtup_fallback,,75aad047f6b70f28
+industry|industrial-fuel-combustion-(1a2)|brick-kiln-coal-n2o|n2o,industry,brick_coal,points:pak_brick_kilns,object_uniform,brick_kiln_points+builtup_fallback,,75aad047f6b70f28
+industry|industrial-fuel-combustion-(1a2)|cement-gas-ch4|ch4,industry,industry_gas,diffuse:adm1_provinces,raster_or_administrative,builtup,,12e3c545b4d3a86f
+industry|industrial-fuel-combustion-(1a2)|cement-gas-co2|co2,industry,industry_gas,diffuse:adm1_provinces,raster_or_administrative,builtup,,12e3c545b4d3a86f
+industry|industrial-fuel-combustion-(1a2)|cement-gas-n2o|n2o,industry,industry_gas,diffuse:adm1_provinces,raster_or_administrative,builtup,,12e3c545b4d3a86f
+industry|industrial-fuel-combustion-(1a2)|cement-sector-coal-ch4|ch4,industry,cement_coal,facilities:ippu_register,object_partial_activity,ippu_register_points+builtup_fallback,,b83aae12ccd67e01
+industry|industrial-fuel-combustion-(1a2)|cement-sector-coal-co2|co2,industry,cement_coal,facilities:ippu_register,object_partial_activity,ippu_register_points+builtup_fallback,,b83aae12ccd67e01
+industry|industrial-fuel-combustion-(1a2)|cement-sector-coal-n2o|n2o,industry,cement_coal,facilities:ippu_register,object_partial_activity,ippu_register_points+builtup_fallback,,b83aae12ccd67e01
+industry|industrial-fuel-combustion-(1a2)|general-industry-gas-ch4|ch4,industry,industry_gas,diffuse:adm1_provinces,raster_or_administrative,builtup,,12e3c545b4d3a86f
+industry|industrial-fuel-combustion-(1a2)|general-industry-gas-co2|co2,industry,industry_gas,diffuse:adm1_provinces,raster_or_administrative,builtup,,12e3c545b4d3a86f
+industry|industrial-fuel-combustion-(1a2)|general-industry-gas-n2o|n2o,industry,industry_gas,diffuse:adm1_provinces,raster_or_administrative,builtup,,12e3c545b4d3a86f
+industry|industrial-fuel-combustion-(1a2)|industrial-diesel-ch4|ch4,industry,industry_diesel,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,a1e8d6e5d1969a54
+industry|industrial-fuel-combustion-(1a2)|industrial-diesel-co2|co2,industry,industry_diesel,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,a1e8d6e5d1969a54
+industry|industrial-fuel-combustion-(1a2)|industrial-diesel-n2o|n2o,industry,industry_diesel,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,a1e8d6e5d1969a54
+industry|industrial-fuel-combustion-(1a2)|industrial-furnace-oil-ch4|ch4,industry,industry_furnace_oil,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,9d5322cebf575c6d
+industry|industrial-fuel-combustion-(1a2)|industrial-furnace-oil-co2|co2,industry,industry_furnace_oil,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,9d5322cebf575c6d
+industry|industrial-fuel-combustion-(1a2)|industrial-furnace-oil-n2o|n2o,industry,industry_furnace_oil,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,9d5322cebf575c6d
+industry|industrial-fuel-combustion-(1a2)|industrial-gasoline-ch4|ch4,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-gasoline-co2|co2,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-gasoline-n2o|n2o,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-hobc-ch4|ch4,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-hobc-co2|co2,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-hobc-n2o|n2o,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-kerosene-ch4|ch4,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-kerosene-co2|co2,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-kerosene-n2o|n2o,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-light-diesel-oil-ch4|ch4,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-light-diesel-oil-co2|co2,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+industry|industrial-fuel-combustion-(1a2)|industrial-light-diesel-oil-n2o|n2o,industry,industry_minor_liquids,diffuse:adm1_provinces,raster_or_administrative,builtup+ocac_area_shares,,984d913bfa2d6d07
+ippu|ammonia-production|ammonia-process-co2-net-of-urea-recovery|co2,ippu,ippu_ammonia_capacity,diffuse:adm1_provinces,raster_or_administrative,builtup,,649dcf9837773212
+ippu|cement-production|clinker-calcination-co2|co2,ippu,ippu_cement_prod,facilities:ippu_register,object_partial_activity,ippu_register_points+builtup_fallback,,31ddc7ec83fc2cca
+ippu|iron-and-steel-production|crude-steel-(electric-route)-process-co2|co2,ippu,ippu_steel_establishments,diffuse:adm1_provinces,raster_or_administrative,builtup,,c3acf5ed3a3e4573
+ippu|lubricant-use|grease-oxidised-in-use|co2,ippu,transport_vkt,diffuse:adm1_provinces,raster_or_administrative,builtup,,1cbb9ecd71f8204d
+ippu|lubricant-use|lubricating-oil-oxidised-in-use|co2,ippu,transport_vkt,diffuse:adm1_provinces,raster_or_administrative,builtup,,1cbb9ecd71f8204d
+power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,captive_gas,facilities:power_captive,object_partial_activity,captive_register_points+builtup_fallback,,71ad8ad257f0d863
+power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,captive_gas,facilities:power_captive,object_partial_activity,captive_register_points+builtup_fallback,,71ad8ad257f0d863
+power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,captive_gas,facilities:power_captive,object_partial_activity,captive_register_points+builtup_fallback,,71ad8ad257f0d863
+power|electricity-and-heat-production|bagasse-ch4|ch4,power,bagasse_grid,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,4da4bac2346b5399
+power|electricity-and-heat-production|bagasse-n2o|n2o,power,bagasse_grid,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,4da4bac2346b5399
+power|electricity-and-heat-production|coal-ch4|ch4,power,power_coal,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,dae80863b009a7ab
+power|electricity-and-heat-production|coal-co2|co2,power,power_coal,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,dae80863b009a7ab
+power|electricity-and-heat-production|coal-n2o|n2o,power,power_coal,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,dae80863b009a7ab
+power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power_hsd,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,367d178ab1ba66e2
+power|electricity-and-heat-production|diesel-oil-co2|co2,power,power_hsd,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,367d178ab1ba66e2
+power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power_hsd,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,367d178ab1ba66e2
+power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power_rfo,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,c2fc2e95fb243246
+power|electricity-and-heat-production|furnace-oil-co2|co2,power,power_rfo,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,c2fc2e95fb243246
+power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power_rfo,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,c2fc2e95fb243246
+power|electricity-and-heat-production|gas-ch4|ch4,power,power_gas,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,bf389fac137edd1d
+power|electricity-and-heat-production|gas-co2|co2,power,power_gas,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,bf389fac137edd1d
+power|electricity-and-heat-production|gas-n2o|n2o,power,power_gas,facilities:power_grid,per_object_activity,grid_station_points+builtup_fallback,,bf389fac137edd1d
+railways|railway-non-traction-energy-(1a2/1a4c-unresolved)|non-traction-diesel-ch4|ch4,railways,railways_freight_div,points:pak_rail_yards,object_uniform,rail_yard_points,,f73f5ceda2952775
+railways|railway-non-traction-energy-(1a2/1a4c-unresolved)|non-traction-diesel-co2|co2,railways,railways_freight_div,points:pak_rail_yards,object_uniform,rail_yard_points,,f73f5ceda2952775
+railways|railway-non-traction-energy-(1a2/1a4c-unresolved)|non-traction-diesel-n2o|n2o,railways,railways_freight_div,points:pak_rail_yards,object_uniform,rail_yard_points,,f73f5ceda2952775
+railways|railway-non-traction-energy-(1a2/1a4c-unresolved)|non-traction-furnace-oil-ch4|ch4,railways,railways_freight_div,points:pak_rail_yards,object_uniform,rail_yard_points,,f73f5ceda2952775
+railways|railway-non-traction-energy-(1a2/1a4c-unresolved)|non-traction-furnace-oil-co2|co2,railways,railways_freight_div,points:pak_rail_yards,object_uniform,rail_yard_points,,f73f5ceda2952775
+railways|railway-non-traction-energy-(1a2/1a4c-unresolved)|non-traction-furnace-oil-n2o|n2o,railways,railways_freight_div,points:pak_rail_yards,object_uniform,rail_yard_points,,f73f5ceda2952775
+railways|railways|diesel-ch4|ch4,railways,railways_route_model,network:pak_rail,declared_judgement,rail_network_line_density,,6c7a8ebdb2497961
+railways|railways|diesel-co2|co2,railways,railways_route_model,network:pak_rail,declared_judgement,rail_network_line_density,,6c7a8ebdb2497961
+railways|railways|diesel-n2o|n2o,railways,railways_route_model,network:pak_rail,declared_judgement,rail_network_line_density,,6c7a8ebdb2497961
+railways|railways|furnace-oil-ch4|ch4,railways,railways_route_model,network:pak_rail,declared_judgement,rail_network_line_density,,6c7a8ebdb2497961
+railways|railways|furnace-oil-co2|co2,railways,railways_route_model,network:pak_rail,declared_judgement,rail_network_line_density,,6c7a8ebdb2497961
+railways|railways|furnace-oil-n2o|n2o,railways,railways_route_model,network:pak_rail,declared_judgement,rail_network_line_density,,6c7a8ebdb2497961
+residential|residential-fuel-combustion|charcoal-ch4|ch4,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Charcoal,a88a4588b3a4309c
+residential|residential-fuel-combustion|charcoal-n2o|n2o,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Charcoal,a88a4588b3a4309c
+residential|residential-fuel-combustion|coal-ch4|ch4,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Coal,8375b13ebb8d7368
+residential|residential-fuel-combustion|coal-co2|co2,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Coal,8375b13ebb8d7368
+residential|residential-fuel-combustion|coal-n2o|n2o,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Coal,8375b13ebb8d7368
+residential|residential-fuel-combustion|crop-residues-ch4|ch4,residential,residential_hies_residue,diffuse:adm2_pbs2023,raster_or_administrative,cropland,resi:Crop,88f69e130ba33e31
+residential|residential-fuel-combustion|crop-residues-n2o|n2o,residential,residential_hies_residue,diffuse:adm2_pbs2023,raster_or_administrative,cropland,resi:Crop,88f69e130ba33e31
+residential|residential-fuel-combustion|dung-cake-ch4|ch4,residential,residential_hies_dung_cake,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,resi:Dung,0d62c324e9ba430b
+residential|residential-fuel-combustion|dung-cake-n2o|n2o,residential,residential_hies_dung_cake,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,resi:Dung,0d62c324e9ba430b
+residential|residential-fuel-combustion|firewood-ch4|ch4,residential,residential_hies_firewood,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Firewood,6239470ad3437cad
+residential|residential-fuel-combustion|firewood-n2o|n2o,residential,residential_hies_firewood,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Firewood,6239470ad3437cad
+residential|residential-fuel-combustion|generators-ch4|ch4,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,builtup,resi:Generators,e112fcea96784b3b
+residential|residential-fuel-combustion|generators-co2|co2,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,builtup,resi:Generators,e112fcea96784b3b
+residential|residential-fuel-combustion|generators-n2o|n2o,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,builtup,resi:Generators,e112fcea96784b3b
+residential|residential-fuel-combustion|kerosene-ch4|ch4,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Kerosene,e8354e28bb612def
+residential|residential-fuel-combustion|kerosene-co2|co2,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Kerosene,e8354e28bb612def
+residential|residential-fuel-combustion|kerosene-n2o|n2o,residential,residential_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:Kerosene,e8354e28bb612def
+residential|residential-fuel-combustion|lpg-ch4|ch4,residential,residential_hies_lpg,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:LPG,f4ef65da764eafcd
+residential|residential-fuel-combustion|lpg-co2|co2,residential,residential_hies_lpg,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:LPG,f4ef65da764eafcd
+residential|residential-fuel-combustion|lpg-n2o|n2o,residential,residential_hies_lpg,diffuse:adm2_pbs2023,raster_or_administrative,population,resi:LPG,f4ef65da764eafcd
+residential|residential-fuel-combustion|natural-gas-ch4|ch4,residential,residential_gas_conn,diffuse:adm2_pbs2023,raster_or_administrative,builtup,resi:Natural,52d94e8f357c0e9b
+residential|residential-fuel-combustion|natural-gas-co2|co2,residential,residential_gas_conn,diffuse:adm2_pbs2023,raster_or_administrative,builtup,resi:Natural,52d94e8f357c0e9b
+residential|residential-fuel-combustion|natural-gas-n2o|n2o,residential,residential_gas_conn,diffuse:adm2_pbs2023,raster_or_administrative,builtup,resi:Natural,52d94e8f357c0e9b
+transport|mixed-off-road-(1a4c/1a2)|off-road-machinery-diesel-ch4|ch4,transport,transport_offroad,diffuse:adm1_provinces,raster_or_administrative,cropland,,c953c850ed32bfa1
+transport|mixed-off-road-(1a4c/1a2)|off-road-machinery-diesel-co2|co2,transport,transport_offroad,diffuse:adm1_provinces,raster_or_administrative,cropland,,c953c850ed32bfa1
+transport|mixed-off-road-(1a4c/1a2)|off-road-machinery-diesel-n2o|n2o,transport,transport_offroad,diffuse:adm1_provinces,raster_or_administrative,cropland,,c953c850ed32bfa1
+transport|road-transport|2w-petrol-ch4|ch4,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|2w-petrol-co2|co2,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|2w-petrol-n2o|n2o,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|3w-petrol-ch4|ch4,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|3w-petrol-co2|co2,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|3w-petrol-n2o|n2o,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4w1-petrol-ch4|ch4,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4w1-petrol-co2|co2,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4w1-petrol-n2o|n2o,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4w2-diesel-ch4|ch4,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|4w2-diesel-co2|co2,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|4w2-diesel-n2o|n2o,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|4w2-petrol-ch4|ch4,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4w2-petrol-co2|co2,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4w2-petrol-n2o|n2o,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4wt-petrol-ch4|ch4,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4wt-petrol-co2|co2,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|4wt-petrol-n2o|n2o,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|bus-diesel-ch4|ch4,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|bus-diesel-co2|co2,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|bus-diesel-n2o|n2o,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|bus-petrol-ch4|ch4,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|bus-petrol-co2|co2,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|bus-petrol-n2o|n2o,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|cng-ch4|ch4,transport,transport_cng_vkt,diffuse:adm1_provinces,raster_or_administrative,builtup,,ca1c05e1ac9e0b75
+transport|road-transport|cng-co2|co2,transport,transport_cng_vkt,diffuse:adm1_provinces,raster_or_administrative,builtup,,ca1c05e1ac9e0b75
+transport|road-transport|cng-n2o|n2o,transport,transport_cng_vkt,diffuse:adm1_provinces,raster_or_administrative,builtup,,ca1c05e1ac9e0b75
+transport|road-transport|hdv-diesel-ch4|ch4,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|hdv-diesel-co2|co2,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|hdv-diesel-n2o|n2o,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|ldv-diesel-ch4|ch4,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|ldv-diesel-co2|co2,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|ldv-diesel-n2o|n2o,transport,transport_fuel_diesel,diffuse:adm1_provinces,raster_or_administrative,road_density,,5fc8b915ddbeeb11
+transport|road-transport|ldv-petrol-ch4|ch4,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|ldv-petrol-co2|co2,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+transport|road-transport|ldv-petrol-n2o|n2o,transport,transport_fuel_petrol,diffuse:adm1_provinces,raster_or_administrative,road_density,,6eecc74becfb32b2
+waste|domestic-wastewater|domestic-wastewater-ch4|ch4,waste,wastewater_load,points:wwtp_hydrowaste,object_partial_activity,wwtp_points+population_fallback,waste:population,71ed2926709ed73f
+waste|domestic-wastewater|domestic-wastewater-n2o|n2o,waste,wastewater_load,points:wwtp_hydrowaste,object_partial_activity,wwtp_points+population_fallback,waste:population,71ed2926709ed73f
+waste|open-burning-of-waste|open-waste-burning-ch4|ch4,waste,waste_burned_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,waste:population,56f165afc734dfab
+waste|open-burning-of-waste|open-waste-burning-co2-(fossil)|co2,waste,waste_burned_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,waste:population,56f165afc734dfab
+waste|open-burning-of-waste|open-waste-burning-n2o|n2o,waste,waste_burned_pop,diffuse:adm2_pbs2023,raster_or_administrative,population,waste:population,56f165afc734dfab
+waste|solid-waste-disposal|managed-and-unmanaged-disposal-sites-ch4|ch4,waste,waste_disposed_pop,points:waste_disposal_sites,object_partial_activity,waste_site_points+population_fallback,waste:population,29ebb8e09e118a14

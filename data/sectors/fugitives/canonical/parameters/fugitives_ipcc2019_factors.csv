@@ -1,0 +1,52 @@
+Factor ID,IPCC code,Segment,Subsegment,Practice,Gas,Value,Unit,Uncertainty low pct,Uncertainty high pct,Source reference,Note,Record ID,Source row
+oil_prod_high_ch4,1.B.2.a.ii,Oil production,Onshore,higher,CH4,3.43,t_per_thousand_m3,30,30,IPCC 2019 Table 4.2.4a,"Inclusive of leaks, venting and flaring; uncontrolled tanks and associated-gas venting are examples of higher practices.",f9df6df386e0a4e4b3d7d4f1,1
+oil_prod_high_co2,1.B.2.a.ii,Oil production,Onshore,higher,CO2,12.40,t_per_thousand_m3,30,30,IPCC 2019 Table 4.2.4a,Technology/practice-specific Tier 1.,002b95cff222908f3e76256e,2
+oil_prod_high_n2o,1.B.2.a.ii,Oil production,Onshore,higher,N2O,0.00019,t_per_thousand_m3,10,1000,IPCC 2019 Table 4.2.4a,Asymmetric table uncertainty.,f2e62206e3796ac899de2a0b,3
+oil_prod_low_ch4,1.B.2.a.ii,Oil production,Onshore,lower,CH4,2.91,t_per_thousand_m3,30,30,IPCC 2019 Table 4.2.4a,Limited associated-gas venting/flaring and controlled tanks are examples of lower practices.,d31b2e87495d7641d22d3596,4
+oil_prod_low_co2,1.B.2.a.ii,Oil production,Onshore,lower,CO2,44.99,t_per_thousand_m3,30,30,IPCC 2019 Table 4.2.4a,The lower-methane practice does not imply lower CO2.,4422dc5a865ee3fd9355d514,5
+oil_prod_low_n2o,1.B.2.a.ii,Oil production,Onshore,lower,N2O,0.00067,t_per_thousand_m3,10,1000,IPCC 2019 Table 4.2.4a,Asymmetric table uncertainty.,6d7f8eb885495561d0782989,6
+oil_transport_pipeline_ch4,1.B.2.a.iii,Oil transport,Pipeline,all,CH4,0.0054,t_per_thousand_m3,100,100,IPCC 2019 Table 4.2.4b,Pipeline transport only; other modes are a completeness gap.,15436260665a9d9360f1e3b8,7
+oil_transport_pipeline_co2,1.B.2.a.iii,Oil transport,Pipeline,all,CO2,0.00049,t_per_thousand_m3,100,100,IPCC 2019 Table 4.2.4b,Pipeline transport only.,34196cc624aa7449c6d03669,8
+oil_refining_ch4,1.B.2.a.iv,Oil refining,All,all,CH4,0.03,t_per_thousand_m3,50,130,IPCC 2019 Table 4.2.4c,"Includes equipment leaks, flaring, storage, handling and calcination.",141bfc9cd188f4ba81ad44c2,9
+oil_refining_co2,1.B.2.a.iv,Oil refining,All,all,CO2,5.85,t_per_thousand_m3,50,130,IPCC 2019 Table 4.2.4c,"Includes equipment leaks, flaring, storage, handling and calcination.",7769e86bbabbc903ca24140d,10
+oil_refining_n2o,1.B.2.a.iv,Oil refining,All,all,N2O,0.0000877,t_per_thousand_m3,100,100,IPCC 2019 Table 4.2.4c,Tier 1 default.,a0044e3a9745a4c15dcdc1c8,11
+gas_prod_high_ch4,1.B.2.b.ii,Gas production,Onshore,higher,CH4,4.09,t_per_million_m3,20,20,IPCC 2019 Table 4.2.4g,Selected centrally because Pakistan-specific technology/practice evidence is absent.,36cd187393047da827b4589c,12
+gas_prod_high_co2,1.B.2.b.ii,Gas production,Onshore,higher,CO2,1.45,t_per_million_m3,20,20,IPCC 2019 Table 4.2.4g,Technology/practice-specific Tier 1.,e37dacd593a75ea1a4248481,13
+gas_prod_high_n2o,1.B.2.b.ii,Gas production,Onshore,higher,N2O,0.000025,t_per_million_m3,10,1000,IPCC 2019 Table 4.2.4g,Asymmetric table uncertainty.,5328469dc55c0645aa558976,14
+gas_prod_low_ch4,1.B.2.b.ii,Gas production,Onshore,lower,CH4,2.54,t_per_million_m3,20,20,IPCC 2019 Table 4.2.4g,Lower-emitting practice scenario.,8ab90459530f4b916f11f921,15
+gas_prod_low_co2,1.B.2.b.ii,Gas production,Onshore,lower,CO2,3.60,t_per_million_m3,20,20,IPCC 2019 Table 4.2.4g,Lower methane does not imply lower CO2.,90130ba765c5b217e59173f6,16
+gas_prod_low_n2o,1.B.2.b.ii,Gas production,Onshore,lower,N2O,0.000061,t_per_million_m3,10,1000,IPCC 2019 Table 4.2.4g,Asymmetric table uncertainty.,d6e0ecf3ddd08b1468fc62dc,17
+gas_gathering_ch4,1.B.2.b.ii,Gas production,Gathering,all,CH4,3.20,t_per_million_m3,10,10,IPCC 2019 Table 4.2.4g,Additive gathering subsegment.,bfa9f6b39a8dbfd947225e43,18
+gas_gathering_co2,1.B.2.b.ii,Gas production,Gathering,all,CO2,0.35,t_per_million_m3,10,10,IPCC 2019 Table 4.2.4g,Additive gathering subsegment.,55ef1ed0ae93188b84748209,19
+gas_gathering_n2o,1.B.2.b.ii,Gas production,Gathering,all,N2O,0.000006,t_per_million_m3,10,1000,IPCC 2019 Table 4.2.4g,Asymmetric table uncertainty.,ca4fffffe39d051692b59b72,20
+gas_processing_high_ch4,1.B.2.b.iii,Gas processing,Dry gas,higher,CH4,1.83,t_per_million_m3,10,10,IPCC 2019 Table 4.2.4h,No/limited LDAR or less than half of centrifugal compressors with dry seals.,97f78fc93171092899a5b208,21
+gas_processing_high_co2,1.B.2.b.iii,Gas processing,Dry gas,higher,CO2,0.12,t_per_million_m3,10,10,IPCC 2019 Table 4.2.4h,Processed-gas activity basis.,7ce91764e49911be2578e0a5,22
+gas_processing_high_n2o,1.B.2.b.iii,Gas processing,Dry gas,higher,N2O,0.0000013,t_per_million_m3,10,1000,IPCC 2019 Table 4.2.4h,Asymmetric table uncertainty.,2790dbc4d8b0ed181b3503b0,23
+gas_processing_low_ch4,1.B.2.b.iii,Gas processing,Dry gas,lower,CH4,0.75,t_per_million_m3,10,10,IPCC 2019 Table 4.2.4h,Extensive LDAR and at least half of centrifugal compressors with dry seals.,95478791ea0ac73aadc59aad,24
+gas_processing_low_co2,1.B.2.b.iii,Gas processing,Dry gas,lower,CO2,9.45,t_per_million_m3,10,10,IPCC 2019 Table 4.2.4h,The table's low-methane practice has materially higher CO2; retained exactly.,5af704e0f1023ac5664500f9,25
+gas_processing_low_n2o,1.B.2.b.iii,Gas processing,Dry gas,lower,N2O,0.0001,t_per_million_m3,10,1000,IPCC 2019 Table 4.2.4h,Asymmetric table uncertainty.,11fe6c1766e52df51f6b64bf,26
+gas_processing_sour_ch4,1.B.2.b.iii,Gas processing,Sour gas,all,CH4,0.1,t_per_million_m3,100,100,IPCC 2019 Table 4.2.4h,Acid-gas removal subsegment.,471abed6a9a6a6e6117724b8,27
+gas_processing_sour_co2,1.B.2.b.iii,Gas processing,Sour gas,all,CO2,66.6,t_per_million_m3,100,100,IPCC 2019 Table 4.2.4h,Acid-gas removal subsegment.,5546b6f0367d73d074758d66,28
+gas_processing_sour_n2o,1.B.2.b.iii,Gas processing,Sour gas,all,N2O,0.000054,t_per_million_m3,10,1000,IPCC 2019 Table 4.2.4h,Asymmetric table uncertainty.,869979a68324c18969009802,29
+gas_transmission_high_km_ch4,1.B.2.b.iv,Gas transmission,Pipeline,higher,CH4,4.10,t_per_km,20,30,IPCC 2019 Table 4.2.4i,Limited LDAR or less than half of centrifugal compressors with dry seals.,1f76b8d4fa4226bb5d7c3b5f,30
+gas_transmission_high_km_co2,1.B.2.b.iv,Gas transmission,Pipeline,higher,CO2,0.28,t_per_km,20,30,IPCC 2019 Table 4.2.4i,Pipeline-length activity basis.,db80f0335f1180f89a3fc584,31
+gas_transmission_low_km_ch4,1.B.2.b.iv,Gas transmission,Pipeline,lower,CH4,2.08,t_per_km,20,30,IPCC 2019 Table 4.2.4i,Extensive LDAR and at least half of centrifugal compressors with dry seals.,47dbb32412fab7f9571e6c3c,32
+gas_transmission_low_km_co2,1.B.2.b.iv,Gas transmission,Pipeline,lower,CO2,0.25,t_per_km,20,30,IPCC 2019 Table 4.2.4i,Pipeline-length activity basis.,5a2054eea77c5095b433b493,33
+gas_transmission_high_volume_ch4,1.B.2.b.iv,Gas transmission,Pipeline,higher,CH4,3.36,t_per_million_m3,20,30,IPCC 2019 Table 4.2.4i,Alternative throughput activity basis.,ed460b1362fc0f7effc33aa1,34
+gas_transmission_high_volume_co2,1.B.2.b.iv,Gas transmission,Pipeline,higher,CO2,0.23,t_per_million_m3,20,30,IPCC 2019 Table 4.2.4i,Alternative throughput activity basis.,94322e0a0942718ed4940c91,35
+gas_transmission_low_volume_ch4,1.B.2.b.iv,Gas transmission,Pipeline,lower,CH4,1.29,t_per_million_m3,20,30,IPCC 2019 Table 4.2.4i,Alternative throughput activity basis.,7a566cfccf5e4c9021b79142,36
+gas_transmission_low_volume_co2,1.B.2.b.iv,Gas transmission,Pipeline,lower,CO2,0.15,t_per_million_m3,20,30,IPCC 2019 Table 4.2.4i,Alternative throughput activity basis.,9985226a71757b6752cada1b,37
+lng_import_ch4,1.B.2.b.iv,Gas transmission,LNG import,all,CH4,1660,t_per_station,20,30,IPCC 2019 Table 4.2.4i,Two operating import terminals are counted.,3fc0a9c96ca55d752a35e250,38
+lng_import_co2,1.B.2.b.iv,Gas transmission,LNG import,all,CO2,14687,t_per_station,20,30,IPCC 2019 Table 4.2.4i,Two operating import terminals are counted.,c2c7a02efbf52d875dd5c643,39
+gas_distribution_high_km_ch4,1.B.2.b.v,Gas distribution,Pipeline,higher,CH4,1.17,t_per_km,20,120,IPCC 2019 Table 4.2.4j,Composite practice class: less than half plastic and/or limited/no LDAR; the table does not identify separate material and LDAR effects.,7746ec5fa0d9d419629ac26d,40
+gas_distribution_high_km_co2,1.B.2.b.v,Gas distribution,Pipeline,higher,CO2,0.03,t_per_km,20,120,IPCC 2019 Table 4.2.4j,Pipeline-length activity basis.,fc2bc24f7f03cd73c08a095c,41
+gas_distribution_low_km_ch4,1.B.2.b.v,Gas distribution,Pipeline,lower,CH4,0.23,t_per_km,20,120,IPCC 2019 Table 4.2.4j,Composite practice class: more than half plastic and LDAR in use; separate effects cannot be inferred from Tier 1.,0af45cc07dd35749036b27f6,42
+gas_distribution_low_km_co2,1.B.2.b.v,Gas distribution,Pipeline,lower,CO2,0.01,t_per_km,20,120,IPCC 2019 Table 4.2.4j,Pipeline-length activity basis.,3d3e4babff02aac44abd83d2,43
+gas_distribution_high_volume_ch4,1.B.2.b.v,Gas distribution,Pipeline,higher,CH4,2.92,t_per_million_m3,20,120,IPCC 2019 Table 4.2.4j,Alternative throughput activity basis.,4802047afa49472aa27e885b,44
+gas_distribution_high_volume_co2,1.B.2.b.v,Gas distribution,Pipeline,higher,CO2,0.09,t_per_million_m3,20,120,IPCC 2019 Table 4.2.4j,Alternative throughput activity basis.,a72ba9fbd136d1aef8b9610d,45
+gas_distribution_low_volume_ch4,1.B.2.b.v,Gas distribution,Pipeline,lower,CH4,0.62,t_per_million_m3,20,120,IPCC 2019 Table 4.2.4j,Alternative throughput activity basis.,fe73d0bcdb14273f22921f81,46
+gas_distribution_low_volume_co2,1.B.2.b.v,Gas distribution,Pipeline,lower,CO2,0.02,t_per_million_m3,20,120,IPCC 2019 Table 4.2.4j,Alternative throughput activity basis.,1710f571ae416394014a37f6,47
+post_meter_appliance_ch4,1.B.2.b.vi,Gas post-meter,Appliances,all,CH4,0.0032,t_per_appliance,60,60,IPCC 2019 Table 4.2.4k,One appliance per domestic connection is the warm-country fallback.,118681587b683735d7714c13,48
+post_meter_appliance_co2,1.B.2.b.vi,Gas post-meter,Appliances,all,CO2,0.000032,t_per_appliance,60,60,IPCC 2019 Table 4.2.4k,"Post-meter leakage, not combustion.",53f29c21dc4d2e2b990b8ee8,49
+post_meter_industrial_ch4,1.B.2.b.vi,Gas post-meter,Industrial and power,all,CH4,6.1,t_per_million_m3,60,60,IPCC 2019 Table 4.2.4k,"Revised 1996 Guidelines Volume 3 Table 1-58 value of 175,000 kg/PJ, converted with 35 MJ/m3 and 90% CH4; applied to non-residential and commercial gas consumed. Transferability to Pakistan is structural.",516d3b0a73e47d3a3c1b1533,50
+post_meter_industrial_co2,1.B.2.b.vi,Gas post-meter,Industrial and power,all,CO2,0.061,t_per_million_m3,60,60,IPCC 2019 Table 4.2.4k,"Derived with the same Revised 1996 basis and assumed 0.9% CO2; post-meter leakage, not combustion.",82617bb2a37957bb82670d14,51

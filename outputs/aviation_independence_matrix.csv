@@ -1,0 +1,9 @@
+comparison,purpose,shared_inputs,independence,calibration
+Movement model vs OECD domestic,external territory comparison,possible ICAO performance conventions,partial,no
+Fuel bridge vs OECD domestic,partition consistency,OECD resident share directly used,none,yes
+OCAC total vs OECD combined,gross-boundary closure,carbon conversion only,large,no
+Pakistan CRT vs OECD,official-boundary diagnostic,inventory year only,large,no
+PCAA airports vs Climate TRACE,spatial corroboration,possible surveillance and performance inputs,partial,no
+ADSB.lol vs PCAA daily rate,observed-data coverage pilot,airport coordinates only,large but incomplete,no
+ERA5 duration vs OpenAP still air,weather sensitivity,same OpenAP fuel and synthetic route,not validation,no
+PCAA movements vs passenger load,movement divisor check,PCAA reporting system,limited targeted,no

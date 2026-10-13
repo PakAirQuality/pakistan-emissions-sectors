@@ -1,0 +1,4 @@
+comparison,n_provinces,pearson_r,spearman_r,top2_overlap_count,top2_overlap_fraction,inventory_top2,observation_top2,interpretation
+VIIRS 2024 flare-volume share,4,0.9242922463748,0.4,1,0.5,Balochistan;Sindh,Khyber Pakhtunkhwa;Sindh,upstream-geography evaluation only; four provinces give low statistical power and do not test diffuse downstream leakage
+MARS source-count share,4,0.9976119553327912,1.0,2,1.0,Balochistan;Sindh,Balochistan;Sindh,upstream-geography evaluation only; four provinces give low statistical power and do not test diffuse downstream leakage
+MARS plume-count share,4,0.9852913274601174,1.0,2,1.0,Balochistan;Sindh,Balochistan;Sindh,upstream-geography evaluation only; four provinces give low statistical power and do not test diffuse downstream leakage

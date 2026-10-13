@@ -1,0 +1,18 @@
+Plant,Latitude,Longitude,Gem plant,Gem tracker,Gem accuracy,Gem city,Corroboration,Agreement km,Province,Note,Record ID,Source row
+Attock Gen.,33.556331,73.073259,Attock Gen Limited power station (AGL),GOGPT,exact,Morgah,gem_exact+trace(Attock Gen Limited power station (AGL)),0.03,Punjab,boundary cell: the point's 0.05 degree cell is Other-classified; the declared province Punjab adjoins it,81f9874ee8882914dea53725,1
+Engro Power Gen. Qadirpur,28.026070,69.364931,Engro power station,GOGPT,exact,Qadirpur,gem_exact+trace(Engro power station),0.00,Sindh,,8abfd0c915c207f3dde71fb9,2
+GTPS Faisalabad,31.444352,73.133493,GTPS Faisalabad power station,GOGPT,exact,Faisalabad,gem_exact+trace(SPS Faisalabad power station),0.24,Punjab,,ac732b3d60e9a634014f2b74,3
+Hub Power,24.906247,66.694615,Hub power plant,GOGPT,exact,Las Bela,gem_exact+trace(Hub power plant),0.02,Balochistan,boundary cell: the point's 0.05 degree cell is Sindh-classified; the declared province Balochistan adjoins it,2f281d351eac43cc9a97aa71,4
+KAPCO,30.445841,70.982274,KAPCO power station,GOGPT,exact,Kot Addu,gem_exact+trace(KAPCO power station),0.01,Punjab,,07a6ec01bd10efda8afd6ff4,5
+Lal Pir Power,30.172245,70.993563,Lalpir Power Limited power station,GOGPT,exact,Muzaffargarh,gem_exact+trace(Lalpir Power Limited power station),0.07,Punjab,,e7796648b07b9361ac7a7091,6
+NPPMCL (HBS),31.127192,72.189402,Haveli Bahadur Shah (HBS) power station,GOGPT,exact,Pattoki,gem_exact+trace(Haveli Bahadur Shah (HBS) power station),0.21,Punjab,,3ac856d2f5fc8f8bbb913d86,7
+Orient Power,31.188005,73.887917,Orient power station,GOGPT,exact,Phool Nagur,gem_exact+trace(Orient power station),0.19,Punjab,,fce4474a6489c3ffbc91da4b,8
+Pak Gen. Power,30.172871,70.993445,Pakgen Power Limited power plant,GOGPT,exact,Muzaffargarh,gem_exact+trace(Lalpir Power Limited power station),0.06,Punjab,,05b39187ef668a2ac7fba882,9
+Punjab Thermal Power,31.116943,72.188502,Trimmu power station,GOGPT,exact,Jhang,gem_exact+trace(Trimmu power station),0.42,Punjab,,9fcf43575219269a23091236,10
+RYK Mills,28.993260,70.783931,RYK Sugar Mill power station,GBPT,exact,,gem_exact+trace(RYK Sugar Mill power station),0.01,Punjab,,dc1ff4dc637548d99406d744,11
+Rousch Power,30.568648,72.139604,Rousch power station,GOGPT,exact,Abdul Hakeem,gem_exact+trace(Rousch power station),0.01,Punjab,,8b3a299d285efda1f137e588,12
+Sapphire Electric,31.761001,74.035548,Sapphire Electric power station,GOGPT,exact,Muridke,gem_exact+trace(Sapphire Electric power station),0.00,Punjab,,7bbabb021355ac6e7b20e830,13
+TPS Guddu (Units 14-16),28.424884,69.700893,Guddu power station,GOGPT,exact,Kashmore,gem_exact+trace(Guddu power station),0.00,Sindh,both Guddu unit groups share the one GEM site; boundary cell: the point's 0.05 degree cell is Punjab-classified; the declared province Sindh adjoins it,a139d3e5a84456da5ad2a421,14
+TPS Guddu (Units 5-10),28.424884,69.700893,Guddu power station,GOGPT,exact,Kashmore,gem_exact+trace(Guddu power station),0.00,Sindh,both Guddu unit groups share the one GEM site; boundary cell: the point's 0.05 degree cell is Punjab-classified; the declared province Sindh adjoins it,c470dc8d6442943b31f2ce59,15
+TPS Nandipur,32.242593,74.266934,Nandipur power station,GOGPT,exact,Nandipur,gem_exact+trace(Nandipur power station),0.21,Punjab,,2e5afc73ca539b15d6c8e535,16
+Tapal Energy,25.000136,66.907712,Tapal Energy Power Project power plant,GOGPT,exact,Keamari,gem_exact+trace(Tapal Energy Power Project power plant),0.00,Sindh,boundary cell: the point's 0.05 degree cell is Balochistan-classified; the declared province Sindh adjoins it,353e705202986026d70907ab,17

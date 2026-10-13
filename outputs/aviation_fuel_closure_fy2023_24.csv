@@ -1,0 +1,5 @@
+scenario,reported_fuel_t,assigned_plus_residual_t,closure_difference_t,unresolved_residual_t,inventory_status
+literal_customer,780661.0,780661.0,0.0,12282.0,provisional
+airline_flight_count,780661.0,780661.0,0.0,12282.0,provisional
+modelled_fuel,780661.0,780661.0,0.0,296228.11997590103,provisional
+residual_constrained,780661.0,780661.0,0.0,296228.11997590103,provisional

@@ -1,0 +1,44 @@
+cff-version: 1.2.0
+message: "If you use this inventory, its data products or its calculation engine, please cite it as below."
+title: "PakEmis-GHG: a reproducible ten-module national greenhouse-gas inventory for Pakistan, excluding LULUCF"
+abstract: >-
+  A reproducible national emissions inventory for Pakistan covering ten sectors, with
+  national, provincial, district and gridded products. Sector modules satisfy a common
+  software contract; cross-sector fuel and material transfers close by construction;
+  structural choices are reported as named scenarios rather than folded into parametric
+  uncertainty; and every figure and table in the accompanying manuscripts is generated
+  from the calculation engine. Excludes LULUCF, which is carried as an exploratory module
+  outside all totals.
+type: software
+version: 1.0.0rc67
+license: MIT
+license-url: "https://github.com/RehanAhmad13/pakistan-emissions-sectors/blob/main/LICENSE"
+repository-code: "https://github.com/RehanAhmad13/pakistan-emissions-sectors"
+authors:
+  - family-names: Ahmad
+    given-names: Rehan
+    email: rehan@pakairquality.com
+    affiliation: "Pakistan Air Quality Initiative (PAQI), Karachi, Pakistan"
+keywords:
+  - greenhouse gas inventory
+  - air pollutant inventory
+  - IPCC 2006 Guidelines
+  - Pakistan
+  - reproducible research
+  - emissions accounting
+# The data products carry CC-BY-4.0 (LICENSE-data); the code carries MIT (LICENSE).
+#
+# DOIs are minted at archival, and are deliberately ABSENT rather than present-and-empty:
+# the CFF schema requires a doi identifier's value to match ^10\..+, so a placeholder
+# would make this file invalid and GitHub would show it as broken. When the Zenodo
+# release exists, add:
+#
+#   identifiers:
+#     - type: doi
+#       value: 10.5281/zenodo.XXXXXXX    # concept DOI, all versions
+#       description: "Zenodo concept DOI (resolves to the latest version)"
+#     - type: doi
+#       value: 10.5281/zenodo.YYYYYYY    # this version
+#       description: "Zenodo DOI for v1.0.0-rc67"
+#
+# and set the same values in .zenodo.json and pkinv.report.release_manifest.DOI.

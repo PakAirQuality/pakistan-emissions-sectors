@@ -1,0 +1,6 @@
+service,fuel_kt,share_pct,basis
+line_haul_passenger,86.3929,77.11,published train-km split of the remainder
+line_haul_freight,20.0421,17.89,published train-km split of the remainder
+shunting,5.6018,5.0,declared 5 percent assumption; see rail-service-split
+railcar,0.0,0.0,NO - workings Nil in the inventory years
+CONTROL (traction.diesel_kt),112.0369,100.0,the split reconciles to this exactly; asserted in-function

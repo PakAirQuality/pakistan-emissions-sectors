@@ -1,0 +1,72 @@
+{
+  "generated": "2026-08-09",
+  "archive": "/Volumes/Extreme SSD/grid/pakistan/tropomi",
+  "days": 2275,
+  "first_day": "2020-01-01",
+  "last_day": "2026-03-26",
+  "species": [
+    "no2",
+    "so2"
+  ],
+  "method": {
+    "r_src_deg": 0.15,
+    "annulus_deg": [
+      0.3,
+      0.7
+    ],
+    "qa_min": 0.5,
+    "zero_fill_filtered": true,
+    "source_stat": "mean",
+    "background_stat": "median"
+  },
+  "sources": {
+    "sahiwal": {
+      "lat": 30.7142,
+      "lon": 73.238,
+      "note": "Huaneng Shandong Ruyi (Sahiwal), isolated"
+    },
+    "thar_cluster": {
+      "lat": 24.77,
+      "lon": 70.35,
+      "note": "Engro + Thar Coal Block-I + Thar Energy + ThalNova, mine-mouth cluster, mixed"
+    },
+    "hub_complex": {
+      "lat": 24.9147,
+      "lon": 66.6888,
+      "note": "Hubco RFO + China Power Hub coal, mixed"
+    },
+    "port_qasim_complex": {
+      "lat": 24.8,
+      "lon": 67.32,
+      "note": "Port Qasim EPC + Lucky + Bin Qasim (K-E), mixed AND Karachi-confounded"
+    },
+    "uch": {
+      "lat": 28.5827,
+      "lon": 68.1762,
+      "note": "Uch + Uch-II, isolated gas"
+    },
+    "guddu": {
+      "lat": 28.4249,
+      "lon": 69.7009,
+      "note": "TPS Guddu blocks, isolated gas"
+    },
+    "balloki": {
+      "lat": 31.037,
+      "lon": 73.9267,
+      "note": "NPPMCL Balloki, RLNG"
+    },
+    "bhikki": {
+      "lat": 31.6037,
+      "lon": 73.9046,
+      "note": "QATPL Bhikki, RLNG"
+    },
+    "hbs": {
+      "lat": 31.1262,
+      "lon": 72.1913,
+      "note": "NPPMCL Haveli Bahadur Shah, RLNG"
+    }
+  },
+  "provenance": "GEE COPERNICUS/S5P/OFFL/L3 daily composites, 0.1 deg feature grid built by the user's Estimation pipeline (qa 0.75 upstream)",
+  "csv_rows": 20475,
+  "csv_sha256": "d56b4a8e1c58a63b511b8af8bfc6fafb174a7f615e56a4f57856f9fc9001b944"
+}

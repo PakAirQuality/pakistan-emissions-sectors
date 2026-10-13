@@ -1,0 +1,23 @@
+Survey,Fuel,Unit,Kind,Users weighted,Users share,Annual total,Value annual rs,N obs,Source,Record ID,Source row
+hies2019,lpg,kg,quantity,5168065,0.1558,557698486,81335271773,3865,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",47ecac96c4bca347dfec3130,1
+hies2019,kerosene,litre,quantity,316386,0.0095,16054714,2011490042,341,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",21edb5f740339dd4c3d7f55f,2
+hies2019,firewood,kg,quantity,13018387,0.3923,22002643443,223835877551,10636,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",f2316f12c932d619e09c98ea,3
+hies2019,charcoal,kg,quantity,203690,0.0061,294193184,3643535715,178,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",1df1ebedcd09a34b4e65a1ea,4
+hies2019,coal,kg,quantity,65708,0.002,75556625,456899020,54,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",a0810bba654d62d3c9273a0a,5
+hies2019,dung_cake,kg,quantity,5751540,0.1733,6504098369,38277406728,4328,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",c7d1f2e725b8ed346387b555,6
+hies2019,electricity,rupees,value,29668447,0.8941,654703692948,654703692948,21486,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",8070ca6edaa8d96c24458506,7
+hies2019,generator_fuel,rupees,value,604409,0.0182,10655571040,10655571040,445,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",b812162c96a4a69c4c312314,8
+hies2019,natural_gas,rupees,value,13373912,0.4031,88692432931,88692432931,9142,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",681048a37f87f8e051fa6062,9
+hies2019,agricultural_waste,rupees,value,3847833,0.116,39621375003,39621375003,3089,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",4a1057c357f7f6d76cefca6a,10
+hies2019,cotton_sticks,rupees,value,3774973,0.1138,40615468297,40615468297,2663,"HIES 2018-19 (PBS microdata, sources/HIES/MANIFEST.csv)",be05bc6fd28af8ab9f898737,11
+hies2025,lpg,kg,quantity,8005421,0.2005,896018325,233459130200,5540,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",c62bf84c6494c20b46e8ba9c,12
+hies2025,kerosene,litre,quantity,106571,0.0027,77960761,2770113017,96,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",dd2c9858603d59301eeeaca0,13
+hies2025,firewood,kg,quantity,14022211,0.3511,23132908755,530128336556,11524,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",56285883670e28d7dd88e5dc,14
+hies2025,charcoal,kg,quantity,35875,0.0009,8332921,1321234908,45,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",1e2d1e72c4b90eb742b487b6,15
+hies2025,coal,kg,quantity,21551,0.0005,13222520,1261712280,23,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",56205a7e56423945265a53a8,16
+hies2025,dung_cake,kg,quantity,5907932,0.1479,11967388847,86920055147,4680,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",eb14995ee89f74bfeb103d52,17
+hies2025,electricity,rupees,value,35369544,0.8857,2132696227114,2132696227114,25245,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",005666caffd75ab6555321b5,18
+hies2025,generator_fuel,rupees,value,153734,0.0038,20552181360,20552181360,119,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",6ab47556ce418d2b5f0befdd,19
+hies2025,natural_gas,rupees,value,15367221,0.3848,444823667339,444823667339,10449,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",f2478b505ccc5e63b7d555e8,20
+hies2025,agricultural_waste,rupees,value,6600984,0.1653,131990554102,131990554102,5574,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",146ed38dfe20098a81ff4eb1,21
+hies2025,cotton_sticks,rupees,value,2823199,0.0707,47608483670,47608483670,2302,"HIES 2024-25 (PBS microdata, first digital round, sources/HIES/MANIFEST.csv)",6cfb6e52d8f8dbf36fbf1ce1,22

@@ -1,0 +1,9 @@
+# PUBLIC DOCUMENTS the validation package SHIPS (rc41): held under sources/ and read by
+# build phases, and published by their author under terms the repository already records
+# for that publisher (licence_status vocabulary of data/source_documents.csv; the deposit's
+# OUTBOUND_OF_LICENCE maps each to public-licence). One fact, one place: the packager copies
+# exactly these paths from sources/, and nothing else under sources/ unless the source
+# register types it public-licence. A document whose publisher states no terms does NOT
+# belong here - it stays registered and unshipped.
+path,sha256,licence_status,publisher,source_url,statement,read_by
+sources/Aviation/PAK_CRT_2024.zip,afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38,unfccc-public,UNFCCC,https://unfccc.int/documents/645241,"Pakistan's first Biennial Transparency Report CRT tables (2024), a Party submission published by the UNFCCC secretariat on unfccc.int; the same class as sources/UNFCCC (data/source_documents.csv row 21, unfccc-public)","power,residential,ippu,railways,fugitives,aviation official_reporting modules"

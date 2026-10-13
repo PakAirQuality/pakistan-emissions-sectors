@@ -1,0 +1,30 @@
+{
+ "expect": [
+  {
+   "exact": "0.837851955212000000",
+   "group": {
+    "shape_id": "60131773B12131197496886"
+   },
+   "note_district_rebase_2026_10_07": "2026-10-07, the curated station-district re-base: 0.852628644001 -> 0.827728237620. This cell is a power district-year, and FY2018-19 is one of the periods the re-base moves most (109 ADM2 units, 11.59 Mt gross). Two changes compose here and only the second is a correction of the first: pooling stations under their CURATED province made the grid raster disagree with its own provincial control - a leak of 0.0083 Mt of coal and 0.0767 Mt of furnace oil across provincial lines, which pakemis_grid_provincial_check.csv caught as 18 rows breaching 2e-6 - and placing the mass in the curated district's cells INTERSECTED with the province mask closed it. After the fix 0 of 920 rows breach and the worst difference is 0.000000000. The provincial marginal and the national total are unchanged; this is a reallocation inside Punjab.",
+   "note_provincial_split_2026_10_12": "2026-10-12, the per-year provincial split of grid power (rc66): 0.827728237620 -> 0.837851955212. This district-year's province is Punjab, and Punjab's share of each grid fuel in FY2018-19 is now that year's own stations' rather than the FY2023-24 vector: coal 0.490 instead of 0.097 (Sahiwal's first full year), gas 0.497 instead of 0.598, furnace oil 0.845 from the station fuel record instead of 0.834 from generation. A DECLARED provincial re-base, unlike the two notes below: the provincial marginal moves, on purpose; the national total of every fuel does not (outputs/pakemis_power_provincial_basis_by_year.csv, and the rig's row in outputs/pakemis_spatial_rebase_rc44.csv, net 0.000000000 Mt).",
+   "note_rebase_2026_10_07": "2026-10-07 power coal re-base: this ADM2 cell is a power-sector district-year, so it moves with the booked coal account. FY2018-19 is one of the years the re-base moves UPWARD (+4.20 Mt nationally, ratio 1.400), which is why the cell rises slightly.",
+   "tolerance": "5e-6"
+  }
+ ],
+ "expect_receipt": "3a9d42fe12c1f478c8a72aa5570aebd2",
+ "function": "query_emissions",
+ "golden_id": "adm2_power_fy2018_19",
+ "note": "rc66: moved by the per-year provincial split of grid power (see note_provincial_split_2026_10_12 on the cell). PREVIOUS NOTE | rc63: moved by the curated station-district re-base. A power station whose coordinate falls in a cell outside the province it is allocated to is now placed in the cells of the district its curated record names (grid_plant_district.csv, 107 thermal stations over ten fiscal years, which the spatial allocation had never read), intersected with that province. FY2018-19 is one of the periods where this moves most - 109 ADM2 units and 11.59 Mt of gross mass - so this cell moves 0.827728 -> 0.852629. The provincial marginal and the national total are unchanged: the re-base is a reallocation inside each province, measured in outputs/pakemis_spatial_rebase_rc44.csv and asserted there. PREVIOUS NOTE | rc60: moved by the captive year-keying. The captive gas province mix now rides OGRA's published per-year franchise split instead of one FY2023-24 vector, so subnational captive mass re-seats between Punjab and Sindh in eight periods. National totals and both pins are unchanged; only cells in the provinces that re-seat move, and they move by less than a per cent.",
+ "request": {
+  "geography_ids": [
+   "60131773B12131197496886"
+  ],
+  "geography_level": "adm2",
+  "periods": [
+   "FY2018-19"
+  ],
+  "sectors": [
+   "power"
+  ]
+ }
+}

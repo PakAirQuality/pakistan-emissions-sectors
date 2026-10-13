@@ -1,0 +1,8 @@
+item,value,unit,note
+"Thar-named plants, share of coal generation",75.2,percent,"eight plants, FY2023-24, from the plant fuel ledger"
+"Lucky Electric, share of coal generation",8.4,percent,"THE RESIDUAL: its name states no coal origin, so it is carried as bounds rather than assigned"
+"Lignite share, Lucky as imported",0.752,fraction,lower bound of coal_lignite_share
+"Lignite share, Lucky as Thar",0.835,fraction,upper bound; 0.79 is the midpoint
+Corroboration: mass x IPCC rank NCVs,0.698-0.841,fraction,"independent route resting on default calorific values; overlaps the generation route, which is what makes the range defensible"
+Implied fleet NCV from Table 3,24.2,TJ/Gg,national coal TOE over ledger coal mass
+Default-blend NCV for the same fleet,13.0,TJ/Gg,"a fleet 92 percent lignite by mass at IPCC rank defaults. THE RATIO IS 1.86: either the TOE conversion treats all coal alike, or Thar coal far exceeds the lignite default, or the sources differ in scope. A control-total question, reported not resolved - it is also the shape of the coal heat-rate instability."

@@ -1,0 +1,47 @@
+# DOES THE FY2021-22 PEAK SURVIVE? THE NATIONAL HISTORY UNDER NAMED CONFIGURATIONS
+# (T-ENERGY-2 item 4). INDICATIVE, NOT A RESTATEMENT. The pins are pinned:
+# L 469.63822 / S 464.50543 AR5, and nothing here moves them.
+#
+# HOW IT IS BUILT. Only the power-coal lane is substituted: national = shipped national
+# - shipped power coal + this configuration's power coal. Every other stream is untouched.
+# The power-coal CO2e is rebuilt as energy x a composition-blended IPCC factor (other
+# bituminous 94,600 and lignite 101,000 kg CO2/TJ - the repo's own pow_co2_coal_bit and
+# pow_co2_coal_lig), uplifted 1.00429 for CH4 and N2O. Against the shipped FY2023-24 lane
+# this reproduces 38.59 Mt where the engine publishes 38.458 Mt, so read the levels at
+# about +-0.4 per cent and the DIFFERENCES between configurations, which is what the file
+# is for. The lignite factor is 6.8 per cent HIGHER per TJ than the bituminous one, so
+# correcting the calorific basis downward and the rank upward push in OPPOSITE directions
+# and the net move is smaller than the energy move.
+#
+# row_kind=configuration  a named, conditional reading. NOT additive with any other.
+# row_kind=yoy_attribution  the shipped lane's year-on-year change split into the part
+#                           carried by HDIP's tonnage (activity) and the part carried by
+#                           HDIP's inferred calorific factor (allocation), by log shares.
+# National figures come from outputs/pakemis_annual_fy2015_16_fy2023_24.csv summed over
+# grain=category_gas ONLY - the file carries one residual_no_pathway row which is excluded,
+# and no total row is ever added to the parts.
+period_id,row_kind,configuration_id,configuration_label,coal_mass_kt,mass_account,calorific_basis_TJ_per_Gg,coal_energy_TJ,blended_EF_kg_CO2_per_TJ,power_coal_co2e_Mt_AR5_indicative,power_sector_co2e_Mt_AR5,national_co2e_Mt_AR5,delta_vs_shipped_national_Mt,yoy_power_coal_change_Mt,yoy_national_change_Mt,activity_part_of_yoy_Mt,allocation_part_of_yoy_Mt,note
+FY2019-20,configuration,C0_shipped_table3,as shipped: Table 3's published coal energy (the reference),10897.00,HDIP apparent consumption from supply,18.73,204119,95.68,19.615,49.669,446.733,0.000,,,,,
+FY2019-20,configuration,C1_metered_mass_rank_cv,NEPRA's metered coal USED at the fleet's IPCC rank composition (the only non-circular route),12323.92,NEPRA Table 21 coal used (consumed),21.54,265458,95.68,25.509,55.564,452.627,5.894,,,,,
+FY2019-20,configuration,C2_hdip_mass_rank_cv,"HDIP's tonnage at the fleet's rank composition (calorific basis swapped, mass held)",10897.00,HDIP apparent consumption from supply,21.54,234722,95.68,22.555,52.610,449.674,2.941,,,,,
+FY2019-20,configuration,C3_plant_heat_rate_repaired,"per-plant generation x its own printed heat rate, rank default where none is printed",12323.92,NEPRA Table 21 coal used (consumed),19.62,241748,95.68,23.231,53.285,450.349,3.616,,,,,
+FY2020-21,configuration,C0_shipped_table3,as shipped: Table 3's published coal energy (the reference),9215.00,HDIP apparent consumption from supply,18.73,172622,95.56,16.566,48.119,479.511,0.000,-3.049,,,,
+FY2020-21,configuration,C1_metered_mass_rank_cv,NEPRA's metered coal USED at the fleet's IPCC rank composition (the only non-circular route),13110.78,NEPRA Table 21 coal used (consumed),21.97,288038,95.56,27.642,59.195,490.586,11.076,2.133,,,,
+FY2020-21,configuration,C2_hdip_mass_rank_cv,"HDIP's tonnage at the fleet's rank composition (calorific basis swapped, mass held)",9215.00,HDIP apparent consumption from supply,21.97,202450,95.56,19.428,50.981,482.373,2.862,-3.127,,,,
+FY2020-21,configuration,C3_plant_heat_rate_repaired,"per-plant generation x its own printed heat rate, rank default where none is printed",13110.78,NEPRA Table 21 coal used (consumed),19.84,260172,95.56,24.967,56.520,487.912,8.402,1.737,,,,
+FY2021-22,configuration,C0_shipped_table3,as shipped: Table 3's published coal energy (the reference),12808.00,HDIP apparent consumption from supply,25.27,323703,96.07,31.232,64.482,497.774,0.000,14.666,,,,
+FY2021-22,configuration,C1_metered_mass_rank_cv,NEPRA's metered coal USED at the fleet's IPCC rank composition (the only non-circular route),12158.92,NEPRA Table 21 coal used (consumed),20.34,247305,96.07,23.861,57.111,490.403,-7.371,-3.781,,,,
+FY2021-22,configuration,C2_hdip_mass_rank_cv,"HDIP's tonnage at the fleet's rank composition (calorific basis swapped, mass held)",12808.00,HDIP apparent consumption from supply,20.34,260507,96.07,25.135,58.385,491.677,-6.097,5.706,,,,
+FY2021-22,configuration,C3_plant_heat_rate_repaired,"per-plant generation x its own printed heat rate, rank default where none is printed",12158.92,NEPRA Table 21 coal used (consumed),18.25,221886,96.07,21.408,54.658,487.951,-9.824,-3.559,,,,
+FY2022-23,configuration,C0_shipped_table3,as shipped: Table 3's published coal energy (the reference),15493.00,HDIP apparent consumption from supply,21.40,331553,98.29,32.727,57.372,456.621,0.000,1.495,,,,
+FY2022-23,configuration,C1_metered_mass_rank_cv,NEPRA's metered coal USED at the fleet's IPCC rank composition (the only non-circular route),14009.04,NEPRA Table 21 coal used (consumed),15.42,216081,98.29,21.329,45.974,445.223,-11.398,-2.532,,,,
+FY2022-23,configuration,C2_hdip_mass_rank_cv,"HDIP's tonnage at the fleet's rank composition (calorific basis swapped, mass held)",15493.00,HDIP apparent consumption from supply,15.42,238970,98.29,23.588,48.234,447.482,-9.139,-1.546,,,,
+FY2022-23,configuration,C3_plant_heat_rate_repaired,"per-plant generation x its own printed heat rate, rank default where none is printed",14009.04,NEPRA Table 21 coal used (consumed),14.62,204854,98.29,20.221,44.866,444.115,-12.506,-1.188,,,,
+FY2023-24,configuration,C0_shipped_table3,as shipped: Table 3's published coal energy (the reference),19196.00,HDIP apparent consumption from supply,20.02,384262,99.98,38.585,63.370,493.972,0.000,5.858,,,,
+FY2023-24,configuration,C1_metered_mass_rank_cv,NEPRA's metered coal USED at the fleet's IPCC rank composition (the only non-circular route),15876.22,NEPRA Table 21 coal used (consumed),13.01,206606,99.98,20.746,45.531,476.133,-17.839,-0.583,,,,
+FY2023-24,configuration,C2_hdip_mass_rank_cv,"HDIP's tonnage at the fleet's rank composition (calorific basis swapped, mass held)",19196.00,HDIP apparent consumption from supply,13.01,249808,99.98,25.084,49.869,480.471,-13.501,1.496,,,,
+FY2023-24,configuration,C3_plant_heat_rate_repaired,"per-plant generation x its own printed heat rate, rank default where none is printed",15876.22,NEPRA Table 21 coal used (consumed),12.18,193446,99.98,19.424,44.210,474.812,-19.160,-0.796,,,,
+FY2019-20 -> FY2020-21,yoy_attribution,C0_shipped_table3,"year-on-year change in the shipped power-coal lane, split into activity and allocation",,,,,,,,,,-3.049,32.777,-3.050,0.001,"ACTIVITY = HDIP's power tonnage -15.4%; ALLOCATION = HDIP's inferred calorific factor +0.0%. NEPRA's metered tonnage moved +6.4% and its net generation +7.8% over the same year, so the activity part is not corroborated by the metered account either."
+FY2020-21 -> FY2021-22,yoy_attribution,C0_shipped_table3,"year-on-year change in the shipped power-coal lane, split into activity and allocation",,,,,,,,,,14.666,18.264,7.680,6.986,"ACTIVITY = HDIP's power tonnage +39.0%; ALLOCATION = HDIP's inferred calorific factor +34.9%. NEPRA's metered tonnage moved -7.3% and its net generation -3.5% over the same year, so the activity part is not corroborated by the metered account either."
+FY2021-22 -> FY2022-23,yoy_attribution,C0_shipped_table3,"year-on-year change in the shipped power-coal lane, split into activity and allocation",,,,,,,,,,1.495,-41.154,11.873,-10.378,"ACTIVITY = HDIP's power tonnage +21.0%; ALLOCATION = HDIP's inferred calorific factor -15.3%. NEPRA's metered tonnage moved +15.2% and its net generation -21.1% over the same year, so the activity part is not corroborated by the metered account either."
+FY2022-23 -> FY2023-24,yoy_attribution,C0_shipped_table3,"year-on-year change in the shipped power-coal lane, split into activity and allocation",,,,,,,,,,5.858,37.351,8.509,-2.651,"ACTIVITY = HDIP's power tonnage +23.9%; ALLOCATION = HDIP's inferred calorific factor -6.5%. NEPRA's metered tonnage moved +13.3% and its net generation -3.6% over the same year, so the activity part is not corroborated by the metered account either."

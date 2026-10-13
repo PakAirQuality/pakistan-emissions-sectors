@@ -1,0 +1,23 @@
+# UNSD energy balances - Pakistan PRIMARY COAL AND PEAT supply block, TJ, per edition x calendar year.
+# The independent supply-side control for the industrial-coal reconstruction (Wave 1): exports, stock
+# changes ('..' = not available, typed EMPTY here, never zero), statistical difference and final
+# consumption BY BRANCH, which the Finance Division Supplement does not print. A control, never an
+# estimate; calendar years straddle two fiscal years; '*' = UNSD's own estimate (estimated_flags).
+# See scripts/build_unsd_coal_supply.py.
+edition,calendar_year,primary_production_TJ,imports_TJ,exports_TJ,stock_changes_TJ,total_energy_supply_TJ,statistical_difference_TJ,transformation_TJ,transformation_electricity_plants_TJ,final_consumption_TJ,final_manufacturing_TJ,final_iron_and_steel_TJ,final_chemical_TJ,final_non_metallic_minerals_TJ,final_industries_nes_TJ,estimated_flags,note
+2016,2015,77911,135007,,,212918,-9375,-5024,-5024,217268,217268,,,,217268,,stock changes not published ('..')
+2016,2016,78344,194096,,,272439,3684,-20662,-20662,248092,248092,,,,248092,,stock changes not published ('..')
+2017,2016,78344,194096,,,272439,3684,-20662,-20662,248092,248092,,,,248092,,stock changes not published ('..')
+2017,2017,84081,378294,,,462375,27921,-115611,-115611,318843,318843,,,,318843,,stock changes not published ('..')
+2018,2017,74375,378294,,,452669,-15952,-115611,-115611,353010,353010,,,,353010,,stock changes not published ('..')
+2018,2018,84231,433639,,,517871,21911,-122361,-122361,373599,373599,,,,373599,,stock changes not published ('..')
+2019,2018,84231,433639,,,517871,-11735,-122361,-122361,407245,407245,,,,407245,,stock changes not published ('..')
+2019,2019,101706,453986,,,555692,-4374,-153542,-153542,406524,406524,,,,406524,,stock changes not published ('..')
+2020,2019,101706,453986,,,555692,-4374,-153542,-153542,406524,406524,,,,406524,,stock changes not published ('..')
+2020,2020,163540,451863,,,615403,-30942,-279971,-279971,366374,366339,,,366339,0,,stock changes not published ('..'); Industries n.e.s zero/absent: all final coal booked to Non-metallic minerals
+2021,2020,158531,521805,-8,,680328,-24489,-237867,-237867,466950,466950,,,466950,0,final_consumption_TJ;final_manufacturing_TJ;final_non_metallic_minerals_TJ,stock changes not published ('..'); Industries n.e.s zero/absent: all final coal booked to Non-metallic minerals
+2021,2021,173597,521232,-19,,694810,-36878,-253477,-253477,478211,478211,,,478211,0,final_non_metallic_minerals_TJ,stock changes not published ('..'); Industries n.e.s zero/absent: all final coal booked to Non-metallic minerals
+2022,2021,173597,509284,-23,,682858,-40001,-333149,-333149,389710,389710,,,389710,0,,stock changes not published ('..'); Industries n.e.s zero/absent: all final coal booked to Non-metallic minerals
+2022,2022,182024,470060,-20,,652064,-42190,-351257,-351257,342998,342998,,,342998,0,,stock changes not published ('..'); Industries n.e.s zero/absent: all final coal booked to Non-metallic minerals
+2023,2022,283448,207279,-17,,490710,-191264,-351257,-351257,330718,330684,,,330684,0,,stock changes not published ('..'); Industries n.e.s zero/absent: all final coal booked to Non-metallic minerals
+2023,2023,362299,162563,-19,,524843,-103220,-386611,-386611,241452,241417,,,241417,0,transformation_TJ;transformation_electricity_plants_TJ,stock changes not published ('..'); Industries n.e.s zero/absent: all final coal booked to Non-metallic minerals

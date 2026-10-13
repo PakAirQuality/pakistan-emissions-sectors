@@ -1,0 +1,9 @@
+{
+ "expect": [],
+ "expect_receipt": "350c944017d12e7243b979675050be6c",
+ "function": "get_cross_sector_transfer",
+ "golden_id": "transfers_dung",
+ "request": {
+  "ledger_id": "residential_dung_ledger"
+ }
+}

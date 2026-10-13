@@ -1,0 +1,26 @@
+{
+ "expect": [
+  {
+   "claims_pointer": "national_all_sectors.csv#row_kind=national_total#co2e_Mt_AR5",
+   "display": "444.95542",
+   "exact": "444.955421030000000000",
+   "note_rc52": "rc52 re-base: 465.918513140000000000 -> 469.638223890000000000 (ammonia, iron and steel, lubricant use entered the reference)",
+   "note_rebase_2026_10_07": "2026-10-07 power coal re-base: public-power coal energy is booked on the generating stations' own metered coal at IPCC rank defaults instead of NEPRA SoIR Table 3's published energy; grid 1.A.1.a 57.82049 -> 40.04008. The superseded account is retained as the power_table3_legacy_control configuration, which reproduces the previous value.",
+   "note_rebase_rc67": "rc67 re-base (review Priorities 2, 3 and 5): 451.857815430000000000 -> 444.955421030000000000. Three declared reference changes: chemical feedstock out of the post-meter gas leakage base (-1.19473), household dung from the household survey in every year (-5.24626), domestic wastewater N2O on the 2019 Refinement (-0.46141). The reference is now the survey reading of household dung; this golden was national_total_L_fy2023_24 through rc66, when configuration L was the reference.",
+   "tolerance": "5e-6"
+  }
+ ],
+ "expect_context": {
+  "basis": "fiscal",
+  "configuration_id": "REF_2023_24",
+  "gwp_basis": "AR5"
+ },
+ "expect_receipt": "def79b402c1dd0894119e9e2054be050",
+ "function": "query_emissions",
+ "golden_id": "national_total_reference_fy2023_24",
+ "request": {
+  "periods": [
+   "FY2023-24"
+  ]
+ }
+}

@@ -1,0 +1,10 @@
+# FAO's published rice windows against the calendar that shapes rice methane. HARVEST ONLY: FAO publishes sowing and
+# this calendar publishes TRANSPLANT, which for rice are different operations three to four weeks apart.
+# A DISAGREEMENT DOES NOT OVERWRITE. FAO is climatological and zone-based; this calendar is provincial. Where they agree the
+# row gains a retrievable source; where they do not, it keeps its values and its working-pointer provenance.
+# FAO is a CLIMATOLOGY: it can shape a season and can never date one, so nothing here is a year-specific input.
+province,fao_zone,fao_sowing_window,fao_harvest_window,fao_harvest_end_week,calendar_harvest_end_week,difference_weeks,agrees,calendar_transplant_week,compared,provenance_outcome
+Sindh,Basse Sindh,04-25 to 06-10,10-07 to 10-30,43,42,1,yes,23,"harvest only - FAO publishes SOWING and this calendar publishes TRANSPLANT, which are different operations","harvest end corroborated by FAO; class unchanged because the profile rides the flooded window, not the harvest"
+Khyber Pakhtunkhwa,Les zones irriguées de la NWFP (Plaines de NWFP),05-01 to 05-31,09-30 to 10-31,43,47,-4,NO,27,"harvest only - FAO publishes SOWING and this calendar publishes TRANSPLANT, which are different operations",no agreement; the calendar keeps its values and its class
+Punjab,Punjab central,06-01 to 06-30,10-25 to 11-07,44,46,-2,yes,26,"harvest only - FAO publishes SOWING and this calendar publishes TRANSPLANT, which are different operations","harvest end corroborated by FAO; class unchanged because the profile rides the flooded window, not the harvest"
+Sindh,Upper Sindh,05-15 to 06-30,10-07 to 10-30,43,42,1,yes,23,"harvest only - FAO publishes SOWING and this calendar publishes TRANSPLANT, which are different operations","harvest end corroborated by FAO; class unchanged because the profile rides the flooded window, not the harvest"

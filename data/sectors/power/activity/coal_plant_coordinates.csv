@@ -1,0 +1,14 @@
+# COAL GRID STATION COORDINATES (rc42): the FY2023-24 plant-fuel ledger's coal stations,
+# located by the Global Energy Monitor coal tracker (accuracy exact) and corroborated by
+# Climate TRACE within 5 km; the ledger name -> GEM name map is explicit in
+# scripts/ingest_coal_plant_coordinates.py (no token join). Read by pkinv.report.grid_cube
+# for ledger keys data/activity/power/plant_coordinates.csv does not locate.
+plant,latitude,longitude,gem_plant,gem_location_id,gem_accuracy,gem_district,climatetrace_name,agreement_km,raster_province,sources,note
+China Power Hub,24.914675,66.688760,Hubco power station,L100000103114,exact,Lasbela,Hubco power station,0.00,Sindh,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.00 km, inside Sindh"
+Engro Powergen Thar,24.812481,70.394069,Thar Block II power station,L100000103151,exact,Thatta,Thar Block II power station,0.00,Sindh,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.00 km, inside Sindh"
+Huaneng Shandong Ruyi (Sahiwal Imported Coal),30.714220,73.238020,Sahiwal power station,L100000103133,exact,Sahiwal,Sahiwal power station,0.00,Punjab,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.00 km, inside Punjab"
+Lucky Electric,24.812805,67.274560,Port Qasim Lucky power station,L100000103148,exact,,Port Qasim Lucky power station,0.00,Sindh,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.00 km, inside Sindh"
+Port Qasim Electric Power,24.784500,67.369390,Port Qasim EPC power station,L100000103147,exact,,Port Qasim EPC power station,0.00,Sindh,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.00 km, inside Sindh"
+ThalNova,24.815456,70.388369,ThalNova power station,L100000104594,exact,Thatta,ThalNova power station,0.38,Sindh,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.38 km, inside Sindh"
+Thar Coal Block-I,24.710803,70.302493,Thar Block I power station,L100000103156,exact,Tharparkar,Thar Block I power station,0.00,Sindh,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.00 km, inside Sindh"
+Thar Energy,24.806214,70.400501,Thar Energy Limited power station,L100000103141,exact,Thatta,Thar Energy Limited power station,0.00,Sindh,data/activity/power/gem_coal_pak.csv; data/activity/power/climatetrace_power_assets_pak.csv,"GEM exact location, Climate TRACE within 0.00 km, inside Sindh"

@@ -1,0 +1,11 @@
+{
+  "licence": "ODbL",
+  "named": 13,
+  "note": "a SEED, never an allocation surface: 56 polygons over a sector that spreads across 134 districts, coverage tracking OSM mapping effort. The named metro sites (Lakho Der, Mehmood Booti, LFS Gondpass, GTS Imtiaz, Losar) are the anchor value; the waste sector's allocation remains an origin allocation and says so.",
+  "polygons": 56,
+  "snapshot_timestamp": "2026-08-06T20:21:21Z",
+  "snapshot_zip_sha256": "ab445f8f0a4b6df1ca75f8da5f97f0cf2ecb1144287953d19054a82741010d2d",
+  "source": "gis_osm_landuse_a_free_1 (fclass=landfill), Geofabrik Pakistan shapefile extract",
+  "suspect_remote": 1,
+  "unnamed_fragments": 42
+}

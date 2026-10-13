@@ -1,0 +1,248 @@
+﻿File,Column,Meaning
+activity_aviation.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_aviation.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_aviation.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_aviation.csv,Traffic category,Readable original category.
+activity_aviation.csv,Service,Readable original subcategory; compound details may retain several classifications.
+activity_aviation.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_aviation.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_aviation.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_aviation.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_aviation.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_aviation.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_aviation.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_aviation.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_aviation.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_crops.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_crops.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_crops.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_crops.csv,Crop,Readable original category.
+activity_crops.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_crops.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_crops.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_crops.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_crops.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_crops.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_crops.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_crops.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_crops.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_crops.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_fertiliser.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_fertiliser.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_fertiliser.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_fertiliser.csv,Product or nutrient,Readable original category.
+activity_fertiliser.csv,Producer or origin,Readable original subcategory; compound details may retain several classifications.
+activity_fertiliser.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_fertiliser.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_fertiliser.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_fertiliser.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_fertiliser.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_fertiliser.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_fertiliser.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_fertiliser.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_fertiliser.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_fertiliser.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_fuel_sales_area.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_fuel_sales_area.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_fuel_sales_area.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_fuel_sales_area.csv,Fuel product,Readable original category.
+activity_fuel_sales_area.csv,Customer group,Readable original subcategory; compound details may retain several classifications.
+activity_fuel_sales_area.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_fuel_sales_area.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_fuel_sales_area.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_fuel_sales_area.csv,Reporting interval,Original monthly/cumulative reporting description. Check before adding fuel-sales records.
+activity_fuel_sales_area.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_fuel_sales_area.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_fuel_sales_area.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_fuel_sales_area.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_fuel_sales_area.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_fuel_sales_area.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_fuel_sales_national.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_fuel_sales_national.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_fuel_sales_national.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_fuel_sales_national.csv,Fuel product,Readable original category.
+activity_fuel_sales_national.csv,Customer group,Readable original subcategory; compound details may retain several classifications.
+activity_fuel_sales_national.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_fuel_sales_national.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_fuel_sales_national.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_fuel_sales_national.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_fuel_sales_national.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_fuel_sales_national.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_fuel_sales_national.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_fuel_sales_national.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_fuel_sales_national.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_fuel_sales_national.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_gas_network.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_gas_network.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_gas_network.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_gas_network.csv,Network measure or asset,Readable original category.
+activity_gas_network.csv,Operator or customer group,Readable original subcategory; compound details may retain several classifications.
+activity_gas_network.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_gas_network.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_gas_network.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_gas_network.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_gas_network.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_gas_network.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_gas_network.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_gas_network.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_gas_network.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_gas_supply.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_gas_supply.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_gas_supply.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_gas_supply.csv,Product or field,Readable original category.
+activity_gas_supply.csv,Supply network,Readable original subcategory; compound details may retain several classifications.
+activity_gas_supply.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_gas_supply.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_gas_supply.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_gas_supply.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_gas_supply.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_gas_supply.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_gas_supply.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_gas_supply.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_gas_supply.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_household_fuel.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_household_fuel.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_household_fuel.csv,Locality,Urban or rural scope explicitly supplied in the original record.
+activity_household_fuel.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_household_fuel.csv,Fuel or energy source,Readable original category.
+activity_household_fuel.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_household_fuel.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_household_fuel.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_household_fuel.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_household_fuel.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_household_fuel.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_household_fuel.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_household_fuel.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_household_fuel.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_industry_fuel.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_industry_fuel.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_industry_fuel.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_industry_fuel.csv,Consumer or plant,Readable original category.
+activity_industry_fuel.csv,Supplier or detail,Readable original subcategory; compound details may retain several classifications.
+activity_industry_fuel.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_industry_fuel.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_industry_fuel.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_industry_fuel.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_industry_fuel.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_industry_fuel.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_industry_fuel.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_industry_fuel.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_industry_fuel.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_industry_fuel.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_industry_production.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_industry_production.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_industry_production.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_industry_production.csv,Product or company,Readable original category.
+activity_industry_production.csv,Classification or detail,Readable original subcategory; compound details may retain several classifications.
+activity_industry_production.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_industry_production.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_industry_production.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_industry_production.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_industry_production.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_industry_production.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_industry_production.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_industry_production.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_industry_production.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_industry_production.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_livestock.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_livestock.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_livestock.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_livestock.csv,Animal type,Readable original category.
+activity_livestock.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_livestock.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_livestock.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_livestock.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_livestock.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_livestock.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_livestock.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_livestock.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_livestock.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_livestock.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_power_monthly.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_power_monthly.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_power_monthly.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_power_monthly.csv,Power plant,Readable original category.
+activity_power_monthly.csv,Fuel,Readable original subcategory; compound details may retain several classifications.
+activity_power_monthly.csv,Fuel classification basis,"How the fuel label was assigned, separately from the reported electricity generation."
+activity_power_monthly.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_power_monthly.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_power_monthly.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_power_monthly.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_power_monthly.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_power_monthly.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_power_monthly.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_power_monthly.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_power_monthly.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_power_plants.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_power_plants.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_power_plants.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_power_plants.csv,Plant or fuel,Readable original category.
+activity_power_plants.csv,Fuel or electricity system,Readable original subcategory; compound details may retain several classifications.
+activity_power_plants.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_power_plants.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_power_plants.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_power_plants.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_power_plants.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_power_plants.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_power_plants.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_power_plants.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_power_plants.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_railways.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_railways.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_railways.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_railways.csv,Fuel or traffic category,Readable original category.
+activity_railways.csv,Detail,Readable original subcategory; compound details may retain several classifications.
+activity_railways.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_railways.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_railways.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_railways.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_railways.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_railways.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_railways.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_railways.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_railways.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_railways.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_vehicles.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_vehicles.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_vehicles.csv,Province,Province explicitly supplied alongside the district in the original location.
+activity_vehicles.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_vehicles.csv,Vehicle class,Readable original category.
+activity_vehicles.csv,Fuel,Readable original subcategory; compound details may retain several classifications.
+activity_vehicles.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_vehicles.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_vehicles.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_vehicles.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_vehicles.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_vehicles.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_vehicles.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_vehicles.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_vehicles.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_waste_flows.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_waste_flows.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_waste_flows.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_waste_flows.csv,Waste flow,Readable original category.
+activity_waste_flows.csv,Flow level,Readable original subcategory; compound details may retain several classifications.
+activity_waste_flows.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_waste_flows.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_waste_flows.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_waste_flows.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_waste_flows.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_waste_flows.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_waste_flows.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_waste_flows.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_waste_flows.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."
+activity_waste_services.csv,Period,Reporting period or snapshot date. Fuel-sales periods are report periods and can accompany cumulative or prior-year comparisons. Unresolved year codes are identified in Period type and Use note.
+activity_waste_services.csv,Location,Reported location. Explicit province/locality composites are separated. Waste-service scope is taken from the original subcategory.
+activity_waste_services.csv,Locality,Urban or rural scope explicitly supplied in the original record.
+activity_waste_services.csv,Measure,Quantity represented by Value. Monetary household consumption is distinguished from physical consumption.
+activity_waste_services.csv,Service,Readable original category.
+activity_waste_services.csv,Value,"Numeric value, with no unit or thousands separator. Exact source quantity is preserved; blanks remain missing, never zero."
+activity_waste_services.csv,Unit,Expanded original unit. Quantities have not been rescaled. Fractions remain 0 to 1 and percentages 0 to 100.
+activity_waste_services.csv,Period type,"Calendar year, fiscal year, calendar month, survey round, snapshot date, report period or an explicitly unresolved period type."
+activity_waste_services.csv,Location level,Reported geographic level; waste-service scopes are reconciled with their explicit province/locality labels.
+activity_waste_services.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate or not printed in source."
+activity_waste_services.csv,Source status,"Additional source qualifier. Describes the supplied record, not an independent verification by this cleanup."
+activity_waste_services.csv,Source series,Readable name of the underlying source dataset. Separate series may overlap; this field is not a summation key.
+activity_waste_services.csv,Use note,Limitations that affect interpreting or adding these records. Full original notes are preserved in source_details.csv.
+activity_waste_services.csv,Source reference,"Readable supplied citation. Full original paths, hashes and row references are preserved in source_details.csv."
+activity_waste_services.csv,Record ID,"Unique key linking this row to source_details.csv. It identifies this supplied export, not a permanent upstream record identifier."

@@ -1,0 +1,445 @@
+period_label,fiscal_end_year,sector,category,gas,grain,configuration_id,co2e_Mt_AR5,co2e_Mt_AR6,activity_basis,completeness_state,harmonized_common_scope,gap_id,source_series
+FY2015-16,2016,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,115.038812,110.930283,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.405766,0.391275,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.099563,0.102569,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,agriculture,Managed soils,N2O,category_gas,REF_2023_24,20.183021,20.79232,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,agriculture,Manure management,CH4,category_gas,REF_2023_24,9.725214,9.377885,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,agriculture,Manure management,N2O,category_gas,REF_2023_24,5.742252,5.915603,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,12.46245,12.017362,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,agriculture,Urea application,CO2,category_gas,REF_2023_24,3.407768,3.407768,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,0.0001,9.9e-05,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.476947,0.476947,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.003528,0.003634,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,23.244401,23.089438,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,1.138788,1.138788,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.001114,0.001148,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.079097,0.07857,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,34.082951,34.082951,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.106651,0.109871,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,ippu,Ammonia production,CO2,category_gas,REF_2023_24,2.728082,2.728082,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,ippu,Cement production,CO2,category_gas,REF_2023_24,17.779059,17.779059,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.254661,0.254661,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.054582,0.054582,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.004004,0.003978,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,7.48812,7.48812,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.003537,0.003644,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.039294,0.039032,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,power,Electricity and heat production,CO2,category_gas,REF_2023_24,44.649595,44.649595,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.060623,0.062453,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,1e-05,1e-05,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.006325,0.006325,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.000638,0.000657,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,railways,Railways,CH4,category_gas,REF_2023_24,0.000624,0.00062,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,railways,Railways,CO2,category_gas,REF_2023_24,0.371307,0.371307,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,railways,Railways,N2O,category_gas,REF_2023_24,0.037978,0.039124,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,4.115135,3.969553,reconstructed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,16.832824,16.832824,reconstructed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.521565,0.53731,reconstructed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.002441,0.002425,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.452885,1.452885,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.148602,0.153088,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,transport,Road transport,CH4,category_gas,REF_2023_24,0.448486,0.445496,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,transport,Road transport,CO2,category_gas,REF_2023_24,40.766279,40.766279,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,transport,Road transport,N2O,category_gas,REF_2023_24,0.539573,0.555862,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,16.545101,15.954204,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.062137,2.12439,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.40073,1.350704,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.516732,1.516732,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.21415,0.220615,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,7.592772,7.321602,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,118.68612,114.44733,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.433917,0.41842,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.10647,0.109685,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Managed soils,N2O,category_gas,REF_2023_24,24.059756,24.786089,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Manure management,CH4,category_gas,REF_2023_24,10.086143,9.725923,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Manure management,N2O,category_gas,REF_2023_24,5.984731,6.165402,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,12.3942,11.95155,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.757101,4.757101,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,0.000107,0.000106,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.510174,0.510174,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.003774,0.003887,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,23.914029,23.754602,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,1.139534,1.139534,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.001136,0.00117,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.090708,0.090104,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,37.77196,37.77196,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.121969,0.125651,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,ippu,Ammonia production,CO2,category_gas,REF_2023_24,2.819385,2.819385,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,ippu,Cement production,CO2,category_gas,REF_2023_24,18.57355,18.57355,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.32792,0.32792,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.081007,0.081007,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.004046,0.004019,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,7.565119,7.565119,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.003574,0.003681,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.04246,0.042177,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,power,Electricity and heat production,CO2,category_gas,REF_2023_24,48.081177,48.081177,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.069275,0.071366,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,1.2e-05,1.2e-05,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.007226,0.007226,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.000731,0.000753,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,railways,Railways,CH4,category_gas,REF_2023_24,0.000645,0.000641,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,railways,Railways,CO2,category_gas,REF_2023_24,0.383958,0.383958,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,railways,Railways,N2O,category_gas,REF_2023_24,0.039272,0.040457,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,4.242997,4.092932,reconstructed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,17.902237,17.902237,reconstructed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.537844,0.554081,reconstructed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.002666,0.002648,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.586527,1.586527,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.162271,0.16717,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,transport,Road transport,CH4,category_gas,REF_2023_24,0.499287,0.495959,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,transport,Road transport,CO2,category_gas,REF_2023_24,45.573614,45.573614,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,transport,Road transport,N2O,category_gas,REF_2023_24,0.601837,0.620006,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,17.170028,16.556813,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.117777,2.18171,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.437726,1.386379,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.556792,1.556792,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.219806,0.226442,observed,E,yes,,pakemis_national_series.csv
+FY2016-17,2017,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,7.767375,7.489969,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,122.500061,118.125059,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.459685,0.443268,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.112793,0.116198,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Managed soils,N2O,category_gas,REF_2023_24,23.510467,24.220217,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Manure management,CH4,category_gas,REF_2023_24,10.454779,10.081394,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Manure management,N2O,category_gas,REF_2023_24,6.227592,6.415595,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,13.19955,12.728137,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.38087,4.38087,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,9.9e-05,9.8e-05,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.471248,0.471248,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.003486,0.003591,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,25.017642,24.850857,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,1.157809,1.157809,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.001176,0.001212,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.115336,0.114567,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,45.892352,45.892352,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.154047,0.158698,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,ippu,Ammonia production,CO2,category_gas,REF_2023_24,2.465153,2.465153,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,ippu,Cement production,CO2,category_gas,REF_2023_24,20.747378,20.747378,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.41488,0.41488,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.086235,0.086235,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.003912,0.003886,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,7.314873,7.314873,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.003455,0.00356,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.040741,0.04047,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,power,Electricity and heat production,CO2,category_gas,REF_2023_24,57.37367,57.37367,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.103936,0.107074,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,1.1e-05,1.1e-05,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.006844,0.006844,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.000694,0.000715,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,railways,Railways,CH4,category_gas,REF_2023_24,0.000698,0.000694,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,railways,Railways,CO2,category_gas,REF_2023_24,0.415594,0.415594,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,railways,Railways,N2O,category_gas,REF_2023_24,0.042507,0.043791,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,4.276249,4.12497,reconstructed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,17.571691,17.571691,reconstructed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.541996,0.558358,reconstructed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.002715,0.002697,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.615773,1.615773,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.165262,0.170251,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,transport,Road transport,CH4,category_gas,REF_2023_24,0.544612,0.540981,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,transport,Road transport,CO2,category_gas,REF_2023_24,48.675714,48.675714,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,transport,Road transport,N2O,category_gas,REF_2023_24,0.640821,0.660167,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,17.783077,17.147967,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.170178,2.235693,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.473557,1.42093,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.59559,1.59559,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.225284,0.232085,observed,E,yes,,pakemis_national_series.csv
+FY2017-18,2018,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,7.947961,7.664105,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,126.385001,121.871251,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.416324,0.401455,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.102153,0.105237,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Managed soils,N2O,category_gas,REF_2023_24,23.819823,24.538912,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Manure management,CH4,category_gas,REF_2023_24,10.834188,10.447253,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Manure management,N2O,category_gas,REF_2023_24,6.479971,6.675593,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,12.7855,12.328875,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.346435,4.346435,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,8.3e-05,8.3e-05,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.398623,0.398623,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.002948,0.003037,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,25.133818,24.966259,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,1.134639,1.134639,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.001133,0.001168,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.12946,0.128597,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,49.082441,49.082441,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.17206,0.177254,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,ippu,Ammonia production,CO2,category_gas,REF_2023_24,2.591332,2.591332,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,ippu,Cement production,CO2,category_gas,REF_2023_24,21.267306,21.267306,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.309923,0.309923,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.079878,0.079878,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.003304,0.003282,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,6.179143,6.179143,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.002919,0.003007,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.027273,0.027091,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,power,Electricity and heat production,CO2,category_gas,REF_2023_24,46.721533,46.721533,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.090461,0.093192,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,1.1e-05,1e-05,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.006304,0.006304,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.00064,0.000659,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,railways,Railways,CH4,category_gas,REF_2023_24,0.000715,0.00071,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,railways,Railways,CO2,category_gas,REF_2023_24,0.425346,0.425346,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,railways,Railways,N2O,category_gas,REF_2023_24,0.043505,0.044818,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,4.384737,4.2297,reconstructed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,19.068869,19.068869,reconstructed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.555888,0.572669,reconstructed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.002379,0.002363,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.415848,1.415848,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.144814,0.149186,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,transport,Road transport,CH4,category_gas,REF_2023_24,0.534066,0.530506,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,transport,Road transport,CO2,category_gas,REF_2023_24,46.20978,46.20978,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,transport,Road transport,N2O,category_gas,REF_2023_24,0.605389,0.623664,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,18.446044,17.787257,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.226987,2.294217,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.510386,1.456443,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.635468,1.635468,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.230915,0.237886,observed,E,yes,,pakemis_national_series.csv
+FY2018-19,2019,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,8.134831,7.844302,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,130.399037,125.741929,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.421256,0.406211,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.103364,0.106484,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Managed soils,N2O,category_gas,REF_2023_24,24.305206,25.038948,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Manure management,CH4,category_gas,REF_2023_24,11.230443,10.829355,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Manure management,N2O,category_gas,REF_2023_24,6.74581,6.949457,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,13.8047,13.311675,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.355362,4.355362,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,6e-05,6e-05,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.286617,0.286617,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.00212,0.002184,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,23.712228,23.554146,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,1.02964,1.02964,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.000984,0.001014,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.118269,0.11748,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,44.937586,44.937586,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.157223,0.16197,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,ippu,Ammonia production,CO2,category_gas,REF_2023_24,2.771361,2.771361,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,ippu,Cement production,CO2,category_gas,REF_2023_24,21.330422,21.330422,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.25312,0.25312,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.069429,0.069429,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.002985,0.002965,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,5.582403,5.582403,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.002637,0.002717,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.03116,0.030746,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,power,Electricity and heat production,CO2,category_gas,REF_2023_24,49.811232,49.811232,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.133654,0.137689,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,9e-06,9e-06,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.00523,0.00523,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.000531,0.000547,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,railways,Railways,CH4,category_gas,REF_2023_24,0.000624,0.00062,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,railways,Railways,CO2,category_gas,REF_2023_24,0.371474,0.371474,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,railways,Railways,N2O,category_gas,REF_2023_24,0.037995,0.039142,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,4.586606,4.424407,reconstructed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,19.691073,19.691073,reconstructed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.581446,0.598999,reconstructed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.002439,0.002422,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.45137,1.45137,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.148447,0.152929,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,transport,Road transport,CH4,category_gas,REF_2023_24,0.47479,0.471624,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,transport,Road transport,CO2,category_gas,REF_2023_24,42.825259,42.825259,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,transport,Road transport,N2O,category_gas,REF_2023_24,0.558865,0.575737,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,19.106511,18.424135,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.283688,2.35263,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.548245,1.49295,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.676463,1.676463,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.236703,0.243849,observed,E,yes,,pakemis_national_series.csv
+FY2019-20,2020,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,8.32812,8.030687,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,134.545594,129.740394,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.462365,0.445852,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.113451,0.116876,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Managed soils,N2O,category_gas,REF_2023_24,25.77409,26.552176,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Manure management,CH4,category_gas,REF_2023_24,11.644962,11.229071,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Manure management,N2O,category_gas,REF_2023_24,7.026622,7.238746,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,15.17425,14.632312,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.73287,4.73287,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,6.3e-05,6.2e-05,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.299337,0.299337,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.002214,0.002281,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,24.132808,23.971923,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,1.009809,1.009809,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.000988,0.001018,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.155228,0.154193,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,57.694384,57.694384,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.206437,0.212669,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,ippu,Ammonia production,CO2,category_gas,REF_2023_24,3.107315,3.107315,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,ippu,Cement production,CO2,category_gas,REF_2023_24,26.730889,26.730889,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.38216,0.38216,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.094572,0.094572,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.00209,0.002076,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,3.907682,3.907682,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.001846,0.001902,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.037053,0.036546,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,power,Electricity and heat production,CO2,category_gas,REF_2023_24,55.091746,55.091746,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.15067,0.155219,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,7e-06,7e-06,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.00415,0.00415,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.000423,0.000436,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,railways,Railways,CH4,category_gas,REF_2023_24,0.000628,0.000624,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,railways,Railways,CO2,category_gas,REF_2023_24,0.373819,0.373819,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,railways,Railways,N2O,category_gas,REF_2023_24,0.038234,0.039389,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,4.771393,4.602567,reconstructed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,19.321639,19.321639,reconstructed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.604714,0.62297,reconstructed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.00292,0.0029,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.73774,1.73774,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.177737,0.183103,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,transport,Road transport,CH4,category_gas,REF_2023_24,0.505316,0.501947,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,transport,Road transport,CO2,category_gas,REF_2023_24,48.521085,48.521085,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,transport,Road transport,N2O,category_gas,REF_2023_24,0.632957,0.652065,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,19.793436,19.086527,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.402016,2.47453,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.587168,1.530483,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.718609,1.718609,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.242654,0.249979,observed,E,yes,,pakemis_national_series.csv
+FY2020-21,2021,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,8.527971,8.223401,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,138.826862,133.86876,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.497394,0.47963,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.122046,0.12573,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Managed soils,N2O,category_gas,REF_2023_24,26.69172,27.497507,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Manure management,CH4,category_gas,REF_2023_24,12.077292,11.64596,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Manure management,N2O,category_gas,REF_2023_24,7.321808,7.542843,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,16.09335,15.518587,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.894841,4.894841,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,7.3e-05,7.3e-05,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.351056,0.351056,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.002597,0.002675,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,24.155791,23.994752,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,1.030157,1.030157,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.001004,0.001035,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.124412,0.123583,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,48.406639,48.406639,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.165181,0.170168,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,ippu,Ammonia production,CO2,category_gas,REF_2023_24,3.193208,3.193208,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,ippu,Cement production,CO2,category_gas,REF_2023_24,25.811492,25.811492,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.50864,0.50864,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.095746,0.095746,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.002501,0.002485,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,4.677669,4.677669,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.00221,0.002276,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.040499,0.039927,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,power,Electricity and heat production,CO2,category_gas,REF_2023_24,52.329086,52.329086,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.143688,0.148025,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,8e-06,8e-06,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.00496,0.00496,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.000504,0.00052,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,railways,Railways,CH4,category_gas,REF_2023_24,0.000636,0.000631,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,railways,Railways,CO2,category_gas,REF_2023_24,0.378365,0.378365,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,railways,Railways,N2O,category_gas,REF_2023_24,0.038699,0.039867,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,4.876175,4.703577,reconstructed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,18.952206,18.952206,reconstructed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.617887,0.63654,reconstructed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.003306,0.003284,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.967645,1.967645,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.201252,0.207328,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,transport,Road transport,CH4,category_gas,REF_2023_24,0.499455,0.496125,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,transport,Road transport,CO2,category_gas,REF_2023_24,52.332118,52.332118,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,transport,Road transport,N2O,category_gas,REF_2023_24,0.68255,0.703155,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,20.528488,19.795327,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.424878,2.498082,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.62719,1.569076,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.761945,1.761945,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.248772,0.256282,observed,E,yes,,pakemis_national_series.csv
+FY2021-22,2022,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,8.734538,8.422591,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,143.249211,138.133168,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.447981,0.431982,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.109921,0.11324,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Managed soils,N2O,category_gas,REF_2023_24,26.456801,27.255497,observed_fiscal_mixed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Manure management,CH4,category_gas,REF_2023_24,12.529721,12.082231,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Manure management,N2O,category_gas,REF_2023_24,7.633724,7.864176,calendar_projection,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,13.5408,13.0572,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.596406,4.596406,observed_fiscal,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,6.7e-05,6.6e-05,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.319779,0.319779,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.002365,0.002437,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,22.822967,22.670814,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,0.937555,0.937555,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.000901,0.000928,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.072331,0.071848,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,29.594957,29.594957,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.096397,0.099307,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,ippu,Ammonia production,CO2,category_gas,REF_2023_24,2.90413,2.90413,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,ippu,Cement production,CO2,category_gas,REF_2023_24,21.758953,21.758953,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.42704,0.42704,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.080696,0.080696,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.001266,0.001258,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,2.367709,2.367709,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.001118,0.001152,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.032349,0.031824,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,power,Electricity and heat production,CO2,category_gas,REF_2023_24,43.466685,43.466685,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.118185,0.121753,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,8e-06,8e-06,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.004807,0.004807,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.00049,0.000505,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,railways,Railways,CH4,category_gas,REF_2023_24,0.000467,0.000464,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,railways,Railways,CO2,category_gas,REF_2023_24,0.278059,0.278059,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,railways,Railways,N2O,category_gas,REF_2023_24,0.02844,0.029299,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,5.016057,4.838476,reconstructed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,19.107757,19.107757,reconstructed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.63556,0.654746,reconstructed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.002677,0.002659,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.593304,1.593304,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.162964,0.167884,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,transport,Road transport,CH4,category_gas,REF_2023_24,0.414656,0.411891,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,transport,Road transport,CO2,category_gas,REF_2023_24,40.542741,40.542741,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,transport,Road transport,N2O,category_gas,REF_2023_24,0.526514,0.542409,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,21.268706,20.509109,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.508322,2.584045,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.669018,1.609411,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.807238,1.807238,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.255167,0.26287,observed,E,yes,,pakemis_national_series.csv
+FY2022-23,2023,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,8.947986,8.628415,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Enteric fermentation,CH4,category_gas,REF_2023_24,151.65765,146.241305,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Field burning of residues,CH4,category_gas,REF_2023_24,0.537631,0.51843,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Field burning of residues,N2O,category_gas,REF_2023_24,0.131919,0.135901,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Managed soils,N2O,category_gas,REF_2023_24,28.525954,29.387115,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Manure management,CH4,category_gas,REF_2023_24,13.182023,12.711237,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Manure management,N2O,category_gas,REF_2023_24,8.046464,8.289376,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Rice cultivation,CH4,category_gas,REF_2023_24,16.54835,15.957337,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,agriculture,Urea application,CO2,category_gas,REF_2023_24,4.824481,4.824481,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,aviation,Domestic aviation,CH4,category_gas,REF_2023_24,6.3e-05,6.2e-05,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,aviation,Domestic aviation,CO2,category_gas,REF_2023_24,0.298859,0.298859,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,aviation,Domestic aviation,N2O,category_gas,REF_2023_24,0.002211,0.002277,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,fugitives,Fugitive emissions from oil and gas,CH4,category_gas,REF_2023_24,22.582829,22.432276,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,fugitives,Fugitive emissions from oil and gas,CO2,category_gas,REF_2023_24,0.915619,0.915619,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,fugitives,Fugitive emissions from oil and gas,N2O,category_gas,REF_2023_24,0.000923,0.000951,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,industry,Industrial fuel combustion (1A2),CH4,category_gas,REF_2023_24,0.049742,0.04941,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,industry,Industrial fuel combustion (1A2),CO2,category_gas,REF_2023_24,22.465544,22.465544,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,industry,Industrial fuel combustion (1A2),N2O,category_gas,REF_2023_24,0.06636,0.068363,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,ippu,Ammonia production,CO2,category_gas,REF_2023_24,3.2433,3.2433,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,ippu,Cement production,CO2,category_gas,REF_2023_24,21.815648,21.815648,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,ippu,Iron and steel production,CO2,category_gas,REF_2023_24,0.39312,0.39312,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,ippu,Lubricant use,CO2,category_gas,REF_2023_24,0.08329,0.08329,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,power,Captive gas self-generation (1A2),CH4,category_gas,REF_2023_24,0.002965,0.002945,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,power,Captive gas self-generation (1A2),CO2,category_gas,REF_2023_24,5.543904,5.543904,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,power,Captive gas self-generation (1A2),N2O,category_gas,REF_2023_24,0.002619,0.002698,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,power,Electricity and heat production,CH4,category_gas,REF_2023_24,0.0269,0.026454,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,power,Electricity and heat production,CO2,category_gas,REF_2023_24,39.907323,39.907323,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,power,Electricity and heat production,N2O,category_gas,REF_2023_24,0.105857,0.109053,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,railways,Railway non-traction energy (1A2/1A4c unresolved),CH4,category_gas,REF_2023_24,8e-06,8e-06,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,railways,Railway non-traction energy (1A2/1A4c unresolved),CO2,category_gas,REF_2023_24,0.004508,0.004508,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,railways,Railway non-traction energy (1A2/1A4c unresolved),N2O,category_gas,REF_2023_24,0.00046,0.000474,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,railways,Railways,CH4,category_gas,REF_2023_24,0.000593,0.000589,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,railways,Railways,CO2,category_gas,REF_2023_24,0.352725,0.352725,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,railways,Railways,N2O,category_gas,REF_2023_24,0.036077,0.037166,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,residential,Residential fuel combustion,CH4,category_gas,REF_2023_24,5.176392,4.993029,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,residential,Residential fuel combustion,CO2,category_gas,REF_2023_24,18.388334,18.388334,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,residential,Residential fuel combustion,N2O,category_gas,REF_2023_24,0.655695,0.67549,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,transport,Mixed off-road (1A4c/1A2),CH4,category_gas,REF_2023_24,0.002637,0.002619,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,transport,Mixed off-road (1A4c/1A2),CO2,category_gas,REF_2023_24,1.569204,1.569204,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,transport,Mixed off-road (1A4c/1A2),N2O,category_gas,REF_2023_24,0.160499,0.165345,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,transport,Road transport,CH4,category_gas,REF_2023_24,0.398472,0.395816,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,transport,Road transport,CO2,category_gas,REF_2023_24,39.28474,39.28474,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,transport,Road transport,N2O,category_gas,REF_2023_24,0.510621,0.526036,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,waste,Domestic wastewater,CH4,category_gas,REF_2023_24,21.885718,21.104085,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,waste,Domestic wastewater,N2O,category_gas,REF_2023_24,2.572132,2.649781,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,waste,Open burning of waste,CH4,category_gas,REF_2023_24,1.711473,1.650349,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,waste,Open burning of waste,CO2,category_gas,REF_2023_24,1.853209,1.853209,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,waste,Open burning of waste,N2O,category_gas,REF_2023_24,0.261658,0.269557,observed,E,yes,,pakemis_national_series.csv
+FY2023-24,2024,waste,Solid waste disposal,CH4,category_gas,REF_2023_24,9.16872,8.841266,observed,E,yes,,pakemis_national_series.csv
+FY2015-16,2016,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (38.99 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2016-17,2017,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (40.34 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2017-18,2018,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (41.76 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2018-19,2019,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (43.21 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2019-20,2020,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (44.08 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2020-21,2021,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (44.96 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2021-22,2022,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (45.86 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2022-23,2023,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (46.76 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2023-24,2024,residential,"Diverted dung, unresolved fate",,residual_no_pathway,REF_2023_24,,,survey dung basis (the reference since rc67),NA,yes,"declared unresolved stock, no emissions pathway; quantified for every year in pakemis_dung_fate_by_year.csv (47.81 Mt air-dry mass, not CO2e)",pakemis_national_series.csv
+FY2023-24,2024,residential,Residential fuel combustion,CH4,category_gas,L_2023_24,9.834807,9.485072,ledger dung basis (configuration L),E,yes,,pakemis_national_series.csv
+FY2023-24,2024,residential,Residential fuel combustion,CO2,category_gas,L_2023_24,18.388334,18.388334,ledger dung basis (configuration L),E,yes,,pakemis_national_series.csv
+FY2023-24,2024,residential,Residential fuel combustion,N2O,category_gas,L_2023_24,1.243543,1.281084,ledger dung basis (configuration L),E,yes,,pakemis_national_series.csv

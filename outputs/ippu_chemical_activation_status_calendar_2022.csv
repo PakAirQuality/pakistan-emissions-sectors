@@ -1,0 +1,3 @@
+period_end_year,period_basis,ipcc_code,category,target_year_evidence_rows,all_year_evidence_rows,reported_target_year_production_t,identified_target_year_facilities,national_estimate_activated,gate_status,remaining_evidence
+2022,calendar,2.B.1,Ammonia production,1,9,604995.0,1,False,NE,"complete plant NH3, feedstock and CO2 recovery"
+2022,calendar,2.B.2,Nitric acid production,1,3,563701.0,1,False,NE,"complete 100%-acid output, technology and annual abatement operation"

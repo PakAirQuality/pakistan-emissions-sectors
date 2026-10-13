@@ -1,0 +1,4 @@
+configuration,cement_source,clinker_fraction,trade_included,deterministic_mt_co2,mean_mt_co2,p025_mt_co2,p50_mt_co2,p975_mt_co2,n_iter,seed,distribution,interpretation
+reference (producer census),16-company producer census,,not applicable,21.815648399999997,21.819110222926575,20.227256963252454,21.809297317924553,23.451555227485468,10000,43,bounded triangular,conditional parametric interval; no structural probability
+diagnostic model f=0.75,pbs_qim_fy2023_24,0.75,True,17.38903036,17.3846359257122,16.128401409374884,17.38052926271469,18.647236621003163,10000,42,bounded triangular,conditional parametric interval; no structural probability
+diagnostic model f=0.95 (all-Portland),pbs_qim_fy2023_24,0.95,True,21.503894359999997,21.49815221040058,19.937009033319587,21.492548294486415,23.061928752397964,10000,42,bounded triangular,conditional parametric interval; no structural probability

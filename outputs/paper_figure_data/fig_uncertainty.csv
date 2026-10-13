@@ -1,0 +1,3 @@
+artefact_id,query_index,cell_index,group_json,exact,display,unit,extra_json
+fig_uncertainty,0,0,{},446.553,446.553,Mt CO2e AR5,"{""key"":""national|TOTAL"",""kind"":""parametric_reference"",""quantiles"":{""P2.5"":""400.267"",""P97.5"":""505.218""},""scenario"":""cross_sector""}"
+fig_uncertainty,0,1,{},446.525,446.525,Mt CO2e AR5,"{""key"":""national|TOTAL"",""kind"":""parametric_reference"",""quantiles"":{""P2.5"":""400.296"",""P97.5"":""504.967""},""scenario"":""within_sector""}"

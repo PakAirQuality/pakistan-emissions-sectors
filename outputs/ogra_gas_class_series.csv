@@ -1,0 +1,92 @@
+# OGRA's sector-wise gas classes per fiscal year (MMCFD, average daily),
+# from the combined whole-country table of each State of the Regulated
+# Petroleum Industry edition. THE CLASSES ARE THE POINT: fertilizer
+# feedstock, captive power and general industry stay apart, which is the
+# misclassification the 1.A.2 balance closure must avoid (roadmap step 1).
+# FY2020-21 is a typed gap (scanned edition) and FY2022-23's reclassified
+# table is marked class_comparable=no. This product VALIDATES and extends
+# the held ingests (data/activity/industry/gas_consumption.csv and
+# data/activity/power/captive_gas.csv): its new content is the fertilizer
+# (feedstock), residential, commercial, power and transport classes and the
+# FY2024-25 edition. Values are OGRA's own prints.
+period_id,gas_class,mmcfd_sngpl,mmcfd_ssgcl,mmcfd_independent,mmcfd_total,share_pct,status,class_comparable,edition_source,note
+FY2015-16,residential,510,231,0,741,21,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: Residenal
+FY2015-16,commercial,64,28,0,92,3,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: Commercial
+FY2015-16,general_industry,137,183,0,320,9,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: General Industry
+FY2015-16,fertilizer,136,51,533,720,21,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: Ferlizer
+FY2015-16,cement,1,1,0,2,0,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: Cement
+FY2015-16,captive_power,138,186,65,389,11,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: Capve Power
+FY2015-16,power,379,293,390,1062,30,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: Power
+FY2015-16,transport_cng,97,79,0,176,5,extracted,yes,sources/OGRA/ogra_state_of_industry_2015-16.pdf,printed label: Transport (CNG)
+FY2016-17,residential,527,269,0,796,21,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: Residential
+FY2016-17,commercial,62,28,0,90,2,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: Commercial
+FY2016-17,general_industry,172,154,0,326,9,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: General Industry
+FY2016-17,fertilizer,181,59,531,771,21,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: Fertilizer
+FY2016-17,cement,1,1,0,2,0,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: Cement
+FY2016-17,captive_power,204,189,0,393,11,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: Captive Power
+FY2016-17,power,424,222,534,1180,32,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: Power
+FY2016-17,transport_cng,114,70,0,184,5,extracted,yes,sources/OGRA/ogra_state_of_industry_2016-17.pdf,printed label: Transport
+FY2017-18,residential,507,272,0,779,20,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: Residential
+FY2017-18,commercial,60,28,0,88,2,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: Commercial
+FY2017-18,general_industry,210,163,0,373,9,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: General Industry
+FY2017-18,fertilizer,114,52,521,687,17,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: Fertilizer
+FY2017-18,cement,1,1,0,2,0,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: Cement
+FY2017-18,captive_power,169,211,0,380,10,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: Captive Power
+FY2017-18,power,650,197,623,1470,37,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: Power
+FY2017-18,transport_cng,126,67,0,193,5,extracted,yes,sources/OGRA/ogra_state_of_industry_2017-18.pdf,printed label: Transport
+FY2018-19,residential,593,263,0,856,22,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: Residential
+FY2018-19,commercial,58,29,0,87,2,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: Commercial
+FY2018-19,general_industry,190,165,0,355,9,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: General Industry
+FY2018-19,fertilizer,156,51,445,652,16,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: Fertilizer
+FY2018-19,cement,0,1,0,1,0,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: Cement
+FY2018-19,captive_power,117,204,0,321,8,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: Captive Power
+FY2018-19,power,704,220,595,1519,38,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: Power
+FY2018-19,transport_cng,116,62,0,178,4,extracted,yes,sources/OGRA/ogra_state_of_industry_2018-19.pdf,printed label: Transport
+FY2019-20,residential,604,284,0,888,24,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: Residential
+FY2019-20,commercial,48,26,0,74,2,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: Commercial
+FY2019-20,general_industry,180,147,0,327,9,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: General Industry
+FY2019-20,fertilizer,143,53,583,779,21,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: Fertilizer
+FY2019-20,cement,0,0,0,0,0,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: Cement
+FY2019-20,captive_power,110,180,0,290,8,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: Captive Power
+FY2019-20,power,530,194,474,1198,33,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: Power
+FY2019-20,transport_cng,88,39,0,127,3,extracted,yes,sources/OGRA/ogra_state_of_industry_2019-20.pdf,printed label: Transport
+FY2020-21,residential,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2020-21,commercial,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2020-21,general_industry,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2020-21,fertilizer,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2020-21,cement,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2020-21,captive_power,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2020-21,power,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2020-21,transport_cng,,,,,,typed_gap_scanned_edition,gap,sources/OGRA/ogra_state_of_industry_2020-21.pdf,"the FY2020-21 edition is a page scan with no text layer; empty cells are a typed gap, never zeros - the held ingest carries OCR-verified values for general industry and captive power"
+FY2021-22,residential,589,261,0,850,20.87,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: Residential
+FY2021-22,commercial,45,23,0,68,1.67,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: Commercial
+FY2021-22,general_industry,245,161,0,406,9.97,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: General Industry
+FY2021-22,fertilizer,160,54,620,834,20.48,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: Fertilizer
+FY2021-22,cement,0,3,0,3,0.08,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: Cement
+FY2021-22,captive_power,51,192,0,243,5.97,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: Captive Power
+FY2021-22,power,584,133,491,1208,29.67,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: Power
+FY2021-22,transport_cng,58,10,0,68,1.67,extracted,yes,sources/OGRA/ogra_state_of_industry_2021-22.pdf,printed label: Transport
+FY2022-23,residential,603,255,0,858,23.2,extracted_drifted_vocabulary,no,sources/OGRA/ogra_state_of_industry_2022-23.pdf,"printed label: Domestic; the edition reclassifies its table, so this is the edition's own print, NOT the class series - the held ingest restates the class-comparable value from the next edition's comparison columns"
+FY2022-23,commercial,38,20,0,58,1.57,extracted_drifted_vocabulary,no,sources/OGRA/ogra_state_of_industry_2022-23.pdf,"printed label: Commercial; the edition reclassifies its table, so this is the edition's own print, NOT the class series - the held ingest restates the class-comparable value from the next edition's comparison columns"
+FY2022-23,general_industry,301,270,7,578,15.63,extracted_drifted_vocabulary,no,sources/OGRA/ogra_state_of_industry_2022-23.pdf,"printed label: Industry; the edition reclassifies its table, so this is the edition's own print, NOT the class series - the held ingest restates the class-comparable value from the next edition's comparison columns"
+FY2022-23,fertilizer,0,43,586,629,17.02,extracted_drifted_vocabulary,no,sources/OGRA/ogra_state_of_industry_2022-23.pdf,"printed label: Fertilizer Feed; the edition reclassifies its table, so this is the edition's own print, NOT the class series - the held ingest restates the class-comparable value from the next edition's comparison columns"
+FY2022-23,cement,,,,,,not_reported_separately,gap,sources/OGRA/ogra_state_of_industry_2022-23.pdf,this edition prints no separate row for the class
+FY2022-23,captive_power,78,45,0,123,3.33,extracted_drifted_vocabulary,no,sources/OGRA/ogra_state_of_industry_2022-23.pdf,"printed label: Captive Power; the edition reclassifies its table, so this is the edition's own print, NOT the class series - the held ingest restates the class-comparable value from the next edition's comparison columns"
+FY2022-23,power,514,60,489,1063,28.73,extracted_drifted_vocabulary,no,sources/OGRA/ogra_state_of_industry_2022-23.pdf,"printed label: Power; the edition reclassifies its table, so this is the edition's own print, NOT the class series - the held ingest restates the class-comparable value from the next edition's comparison columns"
+FY2022-23,transport_cng,61,3,0,64,1.73,extracted_drifted_vocabulary,no,sources/OGRA/ogra_state_of_industry_2022-23.pdf,"printed label: Transport; the edition reclassifies its table, so this is the edition's own print, NOT the class series - the held ingest restates the class-comparable value from the next edition's comparison columns"
+FY2023-24,residential,559,262,0,821,23.89,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: Residen al
+FY2023-24,commercial,30,15,0,45,1.31,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: Commercial
+FY2023-24,general_industry,155,136,0,291,8.47,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: General Industry
+FY2023-24,fertilizer,171,43,542,756,22,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: Fer lizer
+FY2023-24,cement,0.1,0,0,0.1,0,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: Cement
+FY2023-24,captive_power,107,180,0,287,8.35,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: Cap ve Power
+FY2023-24,power,499,49,512.13,1060.13,30.84,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: Power
+FY2023-24,transport_cng,59,3,0,62,1.8,extracted,yes,sources/OGRA/ogra_state_of_industry_2023-24.pdf,printed label: Transport (CNG)
+FY2024-25,residential,492,258,0,750,22.49,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: Residential
+FY2024-25,commercial,24,10,0,34,1.02,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: Commercial
+FY2024-25,general_industry,85,128,0,213,6.39,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: General Industry
+FY2024-25,fertilizer,186,50,543.03,779.03,23.36,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: Fertilizer
+FY2024-25,cement,0.16,0,0,0.16,0,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: Cement
+FY2024-25,captive_power,108,158,0,266,7.98,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: Captive Power
+FY2024-25,power,465,45,497.97,1007.97,30.22,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: Power
+FY2024-25,transport_cng,52,2,0,54,1.62,extracted,yes,data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,printed label: Transport (CNG)

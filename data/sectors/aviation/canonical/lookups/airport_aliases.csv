@@ -1,0 +1,84 @@
+Source name,ICAO,IATA,Airport,Province,Note,Record ID,Source row
+BAHAWALPUR,OPBW,BHV,Bahawalpur,Punjab,pre-2016 name,64f3eb540093f9d9f0c347a8,1
+BAHAWALPUR AIRPORT,OPBW,BHV,Bahawalpur,Punjab,,674b3da3939f561acc1d39ad,2
+BANNU,OPBN,BNP,Bannu,Khyber Pakhtunkhwa,ICAO from the standard register; this airfield appears in no coded PDF,669a6b34be759acd73ed0c75,3
+BHIT/DADU,OPDD,DDU,Bhit,Sindh,pre-2016 name; oil/gas airstrip,f85e2ba659c5731a060e1b3c,4
+BHIT AIRSTRIP,OPDD,DDU,Bhit,Sindh,oil/gas airstrip,9a51687b4600a83fab1cab2f,5
+CHITRAL,OPCH,CJL,Chitral,Khyber Pakhtunkhwa,pre-2016 name,18cf3773e4a2342e0700fe7a,6
+CHITRAL AIRPORT,OPCH,CJL,Chitral,Khyber Pakhtunkhwa,,eefa0e77f3a500553723b872,7
+D.G KHAN,OPDG,DEA,Dera Ghazi Khan,Punjab,pre-2016 name,08957e088667940c3248eafd,8
+D.G. KHAN AIRPORT,OPDG,DEA,Dera Ghazi Khan,Punjab,,8e47bf6f109d67b2fea988b5,9
+D.I.KHAN,OPDI,DSK,Dera Ismail Khan,Khyber Pakhtunkhwa,pre-2016 name,bf867d3fc086c86b9c4158e3,10
+D.I. KHAN AIRPORT,OPDI,DSK,Dera Ismail Khan,Khyber Pakhtunkhwa,,130b7f58074140306d127fb5,11
+DALBANDIN,OPDB,DBA,Dalbandin,Balochistan,pre-2016 name,4f7751721f4c527cd84d1b3f,12
+DALBANDIN AIRPORT,OPDB,DBA,Dalbandin,Balochistan,,7bceeddc54cde7482722e6a4,13
+FAISALABAD,OPFA,LYP,Faisalabad,Punjab,pre-2016 name,9409498ad72fbe2559d43862,14
+"FAISALABAD INT,L",OPFA,LYP,Faisalabad,Punjab,,10eee4318fc22f0f16bab22b,15
+GILGIT,OPGT,GIL,Gilgit,Other,pre-2016 name; Gilgit-Baltistan maps to Other,36a7e40a15c570c277b4381b,16
+GILGIT AIRPORT,OPGT,GIL,Gilgit,Other,Gilgit-Baltistan maps to Other,471967098e7f206e01dfe699,17
+GWADAR,OPGD,GWD,Gwadar,Balochistan,pre-2016 name,20ac8f83af9b7419ebdeb427,18
+"GWADAR INT,L",OPGD,GWD,Gwadar,Balochistan,,be1c094e14ccc4a4ac649a1a,19
+HYDERABAD,OPKD,HDD,Hyderabad,Sindh,pre-2016 name,e0328d1487764f3d36c43d92,20
+HYDERABAD AIRPORT,OPKD,HDD,Hyderabad,Sindh,,ce0cca83bd54a0ad922ecb77,21
+ISLAMABAD,OPRN,ISB,Islamabad BBIAP Chaklala,Other,pre-2016 name; the only Islamabad airport before OPIS opened in 2018,a5e76cfdbcae971082d794c4,22
+ISLAMABAD BBIAP CHAKLALA,OPRN,ISB,Islamabad BBIAP Chaklala,Other,the old airport; overlaps OPIS in FY2017 and must not be merged with it,b89b59b148ed0f1d1f1b34fd,23
+ISLAMABAD IIAP,OPIS,ISD,Islamabad International,Other,"opened 2018. Administratively Islamabad Capital Territory, hence Other, consistent with every other sector. Physically in Fateh Jang tehsil, Attock district, Punjab - assigning it to Punjab instead would move roughly 25 percentage points of the aviation province split.",637e7fb9894624bca1159713,24
+RAWALPINDI,OPRN,ISB,Islamabad BBIAP Chaklala,Other,"two near-empty rows (FY2006, FY2009) for the Rawalpindi airfield, which is OPRN Chaklala; merged rather than treated as a separate airport",b13961e3f8cf8d6406eebb4a,25
+ISLAMKOT AIRPORT,OPZZ,ZZ1,Islamkot,Sindh,,0410f299beaa778f886ced15,26
+JACOBABAD,OPJA,JAG,Jacobabad,Sindh,pre-2016 name,1250c45141331addbad6ab42,27
+JACOBABAD AIRPORT,OPJA,JAG,Jacobabad,Sindh,,1c9d2af3814a968aa5746e44,28
+JUZZAK AIRSTRIP,OPJZ,JZK,Juzzak,Balochistan,,82291163cac23d6e14adabe8,29
+KADANWARI,OPKW,KCF,Kadanwari,Sindh,pre-2016 name; oil/gas airstrip,a176f96f7430ae81faac36d0,30
+KADANWARI AIRSTRIP,OPKW,KCF,Kadanwari,Sindh,oil/gas airstrip,731952a09bcde5e1ed6ef238,31
+KARACHI JIAP,OPKC,KHI,Karachi Jinnah,Sindh,,a776094eb70d121e8e10af5d,32
+KHUZDAR,OPKH,KDD,Khuzdar,Balochistan,ICAO from the standard register; appears in no coded PDF,e456c869554c1f5e698ad8a7,33
+LAHORE AIIAP,OPLA,LHE,Lahore Allama Iqbal,Punjab,,f2e2aabf9d106e232a71e150,34
+MIANWALI AIRPORT,OPMI,MWD,Mianwali,Punjab,,93b114d52c13c27892dcc0d6,35
+MOHENJODARO,OPMJ,MJD,Mohenjodaro,Sindh,pre-2016 name,79f939f505def555c7502391,36
+MOHENJODARO AIRPORT,OPMJ,MJD,Mohenjodaro,Sindh,,a036b0f5a4d5e684d1e3de59,37
+MULTAN,OPMT,MUX,Multan,Punjab,pre-2016 name,a8bf6ec20ff783da7d3c2e1e,38
+"MULTAN INT,L",OPMT,MUX,Multan,Punjab,,22a64f35908a0a28fe7e6814,39
+MUZAFFARABA,OPMF,MFG,Muzaffarabad,Other,name truncated in the source PDF; Azad Jammu and Kashmir maps to Other,63b961c0b624acf0270b94c1,40
+MUZAFFARABAD AIRPORT,OPMF,MFG,Muzaffarabad,Other,Azad Jammu and Kashmir maps to Other,4688db21fd34ce0dd60c1fe7,41
+NAWABSHAH,OPNH,WNS,Nawabshah,Sindh,pre-2016 name,adaa9ca2d4c72f8024838769,42
+NAWABSHAH AIRPORT,OPNH,WNS,Nawabshah,Sindh,,336aead162545a7a8b597cb5,43
+ORMARA AIRPORT,OPOR,ORW,Ormara,Balochistan,,5f082cf6885d813be3982ee7,44
+FAISAL AIR BASE KARACHI,OPSF,SFF,Faisal Air Base Karachi,Sindh,military airfield appearing in the civil digest; its movements are almost entirely non-commercial,55269473de28c2ee576390a4,45
+PAF RISALPUR,OPRS,RSP,PAF Risalpur,Khyber Pakhtunkhwa,military airfield appearing in the civil digest,73c56e19bb7cdb0401b14026,46
+PAF SHOREKOTE/RAFIQUI,OPRQ,RQR,PAF Shorkot Rafiqui,Punjab,military airfield appearing in the civil digest,174f86bf522eea9dcda47fe8,47
+PANJGUR,OPPG,PJG,Panjgur,Balochistan,pre-2016 name,e7f7bfd8854e49bd2c8063d9,48
+PANJGUR AIRPORT,OPPG,PJG,Panjgur,Balochistan,,28bcf908031ba225a91da3e5,49
+PARACHINAR AIRPORT,OPPC,PAJ,Parachinar,Khyber Pakhtunkhwa,,5ffa5d8d44e1dc73328e4d76,50
+PASNI,OPPI,PSI,Pasni,Balochistan,pre-2016 name,2a736f4d2169a362c0f83da0,51
+PASNI AIRPORT,OPPI,PSI,Pasni,Balochistan,,ea1e8d24bb03a14676fd33ed,52
+PESHAWAR,OPPS,PEW,Peshawar Bacha Khan,Khyber Pakhtunkhwa,pre-2016 name,5bf6c329e7b2f1ac03e4dec8,53
+PESHAWAR BKIAP,OPPS,PEW,Peshawar Bacha Khan,Khyber Pakhtunkhwa,,eb68509389b2c6ff64868bcd,54
+QUETTA,OPQT,UET,Quetta,Balochistan,pre-2016 name,6af3565ed896ca0d77931fa8,55
+"QUETTA INT,L",OPQT,UET,Quetta,Balochistan,,151383992f552aa7e6ee47a0,56
+RAHIM YAR,OPRK,RYK,Rahim Yar Khan,Punjab,name truncated in the source PDF (Rahim Yar Khan),e7ddbfd0510e6265de330f4c,57
+R.Y. KHAN (S.Z) AIRPORT,OPRK,RYK,Rahim Yar Khan,Punjab,,14905b42fe108ac28359fec8,58
+RAWALAKOT AIRPORT,OPRT,RAZ,Rawalakot,Other,Azad Jammu and Kashmir maps to Other,2faa184ab4f47e54c989c890,59
+REKODIQ AIRPORT,REQ,REQ,Reko Diq,Balochistan,"new mining airstrip, first appears FY2023; the PDF repeats the IATA code in the ICAO slot",8a83cda80747f567356a6731,60
+SAIDU SHARIF,OPSS,SDT,Saidu Sharif,Khyber Pakhtunkhwa,pre-2016 name,4c887b93284e536a9b0878f8,61
+SAIDU SHARIF AIRPORT,OPSS,SDT,Saidu Sharif,Khyber Pakhtunkhwa,,c783da69fa98f3f57d7a755f,62
+SAWAN,OPSW,RZS,Sawan,Sindh,pre-2016 name; oil/gas airstrip,48a6093f585f1c6a369ab67d,63
+SAWAN AIRSTRIP,OPSW,RZS,Sawan,Sindh,oil/gas airstrip,536a00917115c8f1803470dd,64
+SEHWAN,OPSN,SYW,Sehwan Sharif,Sindh,pre-2016 name,d7b6b010e383ac64f47fc221,65
+SEHWAN SHARIF AIRPORT,OPSN,SYW,Sehwan Sharif,Sindh,,564140440ab0d94b80690471,66
+SIALKOT,OPST,SKT,Sialkot,Punjab,pre-2016 name,d255530d345c2bc13a355ef7,67
+"SIALKOT INT,L",OPST,SKT,Sialkot,Punjab,,71a489c3286fbf273ce7e76a,68
+SKARDU,OPSD,KDU,Skardu,Other,pre-2016 name; Gilgit-Baltistan maps to Other,f6af81f02078ca39321b8211,69
+SKARDU AIRPORT,OPSD,KDU,Skardu,Other,Gilgit-Baltistan maps to Other,f73b8fe22154aebf04a247e4,70
+SUI,OPSU,SUL,Sui,Balochistan,pre-2016 name,a8724dca68deb41642ed3f25,71
+SUI AIRPORT,OPSU,SUL,Sui,Balochistan,,b5d86016be881574132270f8,72
+SUKKUR,OPSK,SKZ,Sukkur,Sindh,pre-2016 name,4b58b29037d583d796d18a61,73
+SUKKUR (B.N.B) AIRPORT,OPSK,SKZ,Sukkur,Sindh,,e306ff40a291d68af5baf61b,74
+TURBAT,OPTU,TUK,Turbat,Balochistan,pre-2016 name,bdcfd19c0b9b302a32572055,75
+"TURBAT INT,L",OPTU,TUK,Turbat,Balochistan,,adea8f3bf4c1a6787e23e0a8,76
+WALTON,OPLH,WAL,Lahore Walton,Punjab,"pre-2016 name; general-aviation and training field, closed to traffic after 2020",b9ee7c318437fd673f96729a,77
+WALTON AIRPORT,OPLH,WAL,Lahore Walton,Punjab,general-aviation and training field,8fc201984f4f78a7310d558a,78
+ZAMZAMA OIL,ZIZ,ZIZ,Zamzama,Sindh,name truncated in the source PDF; oil/gas airstrip with no ICAO code assigned,22d458a2220317cea0bab82a,79
+ZAMZAMA AIRSTRIP,ZIZ,ZIZ,Zamzama,Sindh,oil/gas airstrip with no ICAO code assigned,d58242e36acfd26bf18492c1,80
+BADIN AIRSTRIP,BDN,BDN,Badin,Sindh,oil/gas airstrip; the PDF repeats the IATA code in the ICAO slot,5a4738586840bf7b65f05850,81
+ZHOB,OPZB,PZH,Zhob,Balochistan,pre-2016 name,6281077c130fece0a6002ba2,82
+ZHOB AIRPORT,OPZB,PZH,Zhob,Balochistan,,92cbe08c2fac8c0bd47d68c7,83

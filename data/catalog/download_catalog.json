@@ -1,0 +1,831 @@
+{
+  "schema": "pakemis.download_catalog/v1",
+  "collections": [
+    {
+      "id": "emissions",
+      "title": "Emissions estimates",
+      "dek": "Ready-to-use tables for analysis and comparison.",
+      "downloads": [
+        {
+          "id": "annual",
+          "title": "Annual emissions",
+          "icon": "BarChart3",
+          "dek": "By sector, source category and greenhouse gas, with the evidence grade on every row.",
+          "coverage": "Nine fiscal years",
+          "files": [
+            "fact_annual.csv"
+          ],
+          "finds": [
+            "national",
+            "totals",
+            "sector",
+            "category",
+            "CO2",
+            "CH4",
+            "N2O",
+            "yearly"
+          ]
+        },
+        {
+          "id": "provincial",
+          "title": "Provincial emissions",
+          "icon": "MapPin",
+          "dek": "Annual estimates for each province. Emissions are not measured provincially, so these are allocations — but the road-fuel split rides OCAC's own provincial sales, not a proxy.",
+          "coverage": "Nine fiscal years · five provinces",
+          "files": [
+            "fact_adm1_year.csv"
+          ],
+          "finds": [
+            "province",
+            "adm1",
+            "Punjab",
+            "Sindh",
+            "Balochistan",
+            "allocation"
+          ]
+        },
+        {
+          "id": "district",
+          "title": "District emissions",
+          "icon": "LayoutGrid",
+          "dek": "Annual estimates by district, with the allocation status and boundary each rests on.",
+          "coverage": "Nine fiscal years · districts",
+          "files": [
+            "fact_adm2_year.csv",
+            "fact_spatial_basis_year.csv"
+          ],
+          "finds": [
+            "district",
+            "adm2",
+            "shape",
+            "boundary",
+            "local"
+          ]
+        },
+        {
+          "id": "monthly",
+          "title": "Monthly emissions",
+          "icon": "CalendarDays",
+          "dek": "Every month of the record, saying for each whether the timing is observed, modelled or evenly spread.",
+          "coverage": "108 months",
+          "files": [
+            "fact_monthly.csv"
+          ],
+          "finds": [
+            "month",
+            "seasonal",
+            "timing",
+            "profile"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "activity",
+      "title": "The activity behind the estimates",
+      "dek": "The fuel, agriculture and household data the emissions are calculated from — usable on their own, without the emissions.",
+      "downloads": [
+        {
+          "id": "fuel",
+          "title": "Petroleum sales by fuel and customer group",
+          "icon": "Fuel",
+          "dek": "Petrol, diesel, furnace oil, kerosene and aviation fuel as OCAC publishes them, by customer class. Sales into a class, not fuel burned in it.",
+          "coverage": "Nine fiscal years · OCAC",
+          "files": [
+            "fact_activity_fuel_sales_national.csv"
+          ],
+          "finds": [
+            "petrol",
+            "diesel",
+            "petroleum",
+            "furnace",
+            "kerosene",
+            "OCAC",
+            "MS",
+            "HSD"
+          ]
+        },
+        {
+          "id": "fuel-area",
+          "title": "Petroleum sales by area",
+          "icon": "MapPin",
+          "dek": "The same publication's monthly area pages, province by province. Fuel sold in a province is not fuel burned there — freight crosses boundaries.",
+          "coverage": "Monthly · by province",
+          "files": [
+            "fact_activity_fuel_sales_area.csv"
+          ],
+          "finds": [
+            "provincial",
+            "area",
+            "province",
+            "monthly",
+            "OCAC",
+            "diesel",
+            "petrol"
+          ]
+        },
+        {
+          "id": "livestock",
+          "title": "Livestock populations",
+          "icon": "Beef",
+          "dek": "Census counts by animal type, province and district, with the Economic Survey's forward estimate labelled a projection and never summed with them.",
+          "coverage": "Census 2024 · plus a long series",
+          "files": [
+            "fact_activity_livestock.csv"
+          ],
+          "finds": [
+            "cattle",
+            "buffalo",
+            "goats",
+            "sheep",
+            "camels",
+            "poultry",
+            "herd",
+            "census"
+          ]
+        },
+        {
+          "id": "crops",
+          "title": "Crop area & production",
+          "icon": "Wheat",
+          "dek": "Area and production by crop, year and district. A district figure split from a pooled parent is marked an allocation, not an observation.",
+          "coverage": "Nine fiscal years · districts",
+          "files": [
+            "fact_activity_crops.csv"
+          ],
+          "finds": [
+            "rice",
+            "wheat",
+            "maize",
+            "cotton",
+            "sugarcane",
+            "hectares",
+            "tonnes",
+            "area"
+          ]
+        },
+        {
+          "id": "fertiliser",
+          "title": "Fertiliser offtake",
+          "icon": "FlaskConical",
+          "dek": "Monthly product offtake and nutrient totals. Offtake is distribution, not application to fields, and tonnes of product are never tonnes of nitrogen.",
+          "coverage": "Monthly · NFDC",
+          "files": [
+            "fact_activity_fertiliser.csv"
+          ],
+          "finds": [
+            "nitrogen",
+            "urea",
+            "DAP",
+            "offtake",
+            "NFDC",
+            "phosphate",
+            "potash"
+          ]
+        },
+        {
+          "id": "power",
+          "title": "Power plant fuel & generation",
+          "icon": "Zap",
+          "dek": "Plant-level fuel quantity and net generation from the regulator's own tables, with the implied heat rate marked as derived.",
+          "coverage": "Nine fiscal years · NEPRA",
+          "files": [
+            "fact_activity_power_plants.csv"
+          ],
+          "finds": [
+            "plant",
+            "generation",
+            "GWh",
+            "electricity",
+            "NEPRA",
+            "heat rate",
+            "fuel"
+          ]
+        },
+        {
+          "id": "power-monthly",
+          "title": "Monthly plant generation",
+          "icon": "CalendarDays",
+          "dek": "Electricity generated, plant by plant, month by month. Generation only — the fuel behind it was never measured monthly.",
+          "coverage": "Monthly · by plant",
+          "files": [
+            "fact_activity_power_monthly.csv"
+          ],
+          "finds": [
+            "monthly",
+            "plant",
+            "generation",
+            "GWh",
+            "electricity"
+          ]
+        },
+        {
+          "id": "household",
+          "title": "Household fuel use",
+          "icon": "Home",
+          "dek": "Design-weighted survey aggregates by province and urban/rural, with quantities, expenditure and the sample behind each.",
+          "coverage": "Two survey rounds · HIES",
+          "files": [
+            "fact_activity_household_fuel.csv"
+          ],
+          "finds": [
+            "firewood",
+            "dung",
+            "charcoal",
+            "cooking",
+            "LPG",
+            "HIES",
+            "household"
+          ]
+        },
+        {
+          "id": "industry",
+          "title": "Industrial fuel use",
+          "icon": "Factory",
+          "dek": "Coal and gas by published customer group, and the gas a fertiliser plant turns into ammonia kept apart from the gas it burns.",
+          "coverage": "Nine fiscal years · HDIP · OGRA · NFDC",
+          "files": [
+            "fact_activity_industry_fuel.csv"
+          ],
+          "finds": [
+            "coal",
+            "gas",
+            "cement",
+            "brick kiln",
+            "consumer",
+            "feedstock",
+            "industry"
+          ]
+        },
+        {
+          "id": "industry-production",
+          "title": "Industrial production",
+          "icon": "Boxes",
+          "dek": "Clinker and cement as each company reported it, with national output controls and clinker trade. Company figures are never split across plants.",
+          "coverage": "Company reports · PBS · UN Comtrade",
+          "files": [
+            "fact_activity_industry_production.csv"
+          ],
+          "finds": [
+            "clinker",
+            "cement",
+            "company",
+            "APCMA",
+            "production",
+            "trade",
+            "steel"
+          ]
+        },
+        {
+          "id": "gas",
+          "title": "Gas and oil production",
+          "icon": "Flame",
+          "dek": "National and provincial output, and the gas each field supplies to each utility system.",
+          "coverage": "Fifteen years · OGRA · PBS",
+          "files": [
+            "fact_activity_gas_supply.csv"
+          ],
+          "finds": [
+            "gas",
+            "crude oil",
+            "field",
+            "production",
+            "SNGPL",
+            "SSGCL",
+            "MMCFD"
+          ]
+        },
+        {
+          "id": "gas-network",
+          "title": "Gas network and unaccounted-for gas",
+          "icon": "Layers",
+          "dek": "Utility sales, pipeline lengths and customer counts. Unaccounted-for gas is here too — and it is not a leakage measurement.",
+          "coverage": "OGRA",
+          "files": [
+            "fact_activity_gas_network.csv"
+          ],
+          "finds": [
+            "pipeline",
+            "unaccounted",
+            "UFG",
+            "network",
+            "utility",
+            "sales",
+            "losses"
+          ]
+        },
+        {
+          "id": "waste",
+          "title": "Waste services and sanitation",
+          "icon": "Trash2",
+          "dek": "How households say their waste is collected, and JMP's sanitation shares. Reported services, not measured tonnage.",
+          "coverage": "HIES 2024–25 · WHO/UNICEF JMP",
+          "files": [
+            "fact_activity_waste_services.csv"
+          ],
+          "finds": [
+            "waste",
+            "sanitation",
+            "disposal",
+            "collected",
+            "sewer",
+            "latrine",
+            "HIES"
+          ]
+        },
+        {
+          "id": "waste-flows",
+          "title": "Waste flows (modelled)",
+          "icon": "Sigma",
+          "dek": "Generation, collection, open burning and the unresolved remainder. An estimate from a per-capita rate and a fate partition — not measured municipal tonnage.",
+          "coverage": "Reference year · modelled",
+          "files": [
+            "fact_activity_waste_flows.csv"
+          ],
+          "finds": [
+            "waste",
+            "burning",
+            "generation",
+            "collection",
+            "modelled",
+            "landfill"
+          ]
+        },
+        {
+          "id": "railways",
+          "title": "Railway fuel and traffic",
+          "icon": "Ruler",
+          "dek": "Pakistan Railways' own metered diesel and furnace oil, with train-, passenger- and tonne-kilometres beside it.",
+          "coverage": "Year Books · fiscal years",
+          "files": [
+            "fact_activity_railways.csv"
+          ],
+          "finds": [
+            "railway",
+            "rail",
+            "diesel",
+            "train",
+            "passenger",
+            "freight",
+            "tonne-km"
+          ]
+        },
+        {
+          "id": "aviation",
+          "title": "Airport movements and passengers",
+          "icon": "Globe",
+          "dek": "Aircraft movements, passengers, cargo and mail by airport across eighteen fiscal years, and the same year cut by airline.",
+          "coverage": "Eighteen fiscal years · PCAA",
+          "files": [
+            "fact_activity_aviation.csv"
+          ],
+          "finds": [
+            "airport",
+            "airline",
+            "movements",
+            "passengers",
+            "cargo",
+            "aviation",
+            "flights"
+          ]
+        },
+        {
+          "id": "activity-details",
+          "title": "Source details for the activity tables",
+          "icon": "Table2",
+          "dek": "The twenty technical fields behind every activity row — source file, row, column, transformation and combinability — joined to the tables above on Record ID.",
+          "coverage": "Every activity row · 101,808 records",
+          "files": [
+            "fact_activity_source_details.csv"
+          ],
+          "finds": [
+            "technical",
+            "provenance",
+            "record id",
+            "source",
+            "join",
+            "details",
+            "transform"
+          ]
+        },
+        {
+          "id": "activity-columns",
+          "title": "Column guide for the activity tables",
+          "icon": "BookOpen",
+          "dek": "What every column of every activity table means, one line per column.",
+          "coverage": "Seventeen tables",
+          "files": [
+            "dim_activity_columns.csv"
+          ],
+          "finds": [
+            "dictionary",
+            "columns",
+            "guide",
+            "meaning",
+            "definitions"
+          ]
+        },
+        {
+          "id": "vehicles",
+          "title": "Registered vehicles by district",
+          "icon": "LayoutGrid",
+          "dek": "Cumulative registered stock as at 30 June, by district and class. Not observed traffic, and not an active fleet.",
+          "coverage": "2003–2024 · districts",
+          "files": [
+            "fact_activity_vehicles.csv"
+          ],
+          "finds": [
+            "vehicles",
+            "registered",
+            "motorcycle",
+            "district",
+            "fleet",
+            "transport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "air",
+      "title": "Air pollutants",
+      "dek": "Emissions from the sources this release covers. Emitted mass, not ambient concentrations.",
+      "downloads": [
+        {
+          "id": "air-annual",
+          "title": "Annual estimates",
+          "icon": "Wind",
+          "dek": "Seven pollutants by sector and year, each in its own mass unit and never converted to CO₂-equivalent.",
+          "coverage": "Nine fiscal years",
+          "files": [
+            "fact_air_panel.csv"
+          ],
+          "finds": [
+            "NOx",
+            "SO2",
+            "PM2.5",
+            "black carbon",
+            "NH3",
+            "NMVOC",
+            "CO"
+          ]
+        },
+        {
+          "id": "air-provincial",
+          "title": "Provincial estimates",
+          "icon": "MapPin",
+          "dek": "The same seven pollutants allocated to each province, for every year of the record.",
+          "coverage": "Nine fiscal years · five provinces",
+          "files": [
+            "fact_air_adm1_year.csv"
+          ],
+          "finds": [
+            "province",
+            "adm1",
+            "air",
+            "spatial"
+          ]
+        },
+        {
+          "id": "air-district",
+          "title": "District estimates",
+          "icon": "LayoutGrid",
+          "dek": "The same allocation carried down to districts, with the status each district's share rests on.",
+          "coverage": "Nine fiscal years · districts",
+          "files": [
+            "fact_air_adm2_year.csv"
+          ],
+          "finds": [
+            "district",
+            "adm2",
+            "air",
+            "spatial"
+          ]
+        },
+        {
+          "id": "air-source-classes",
+          "title": "Air pollutants by source class",
+          "icon": "Factory",
+          "dek": "Boilers, furnaces, engines, kilns and captive generators; ammonia, steel and soda ash processes; oil and gas segments, refineries and flares — each with its factor rows, activity and uncertainty, and the typed absences beside them.",
+          "coverage": "Nine fiscal years · provisional",
+          "files": [
+            "fact_air_source_classes.csv"
+          ],
+          "finds": [
+            "industry",
+            "brick",
+            "cement",
+            "captive",
+            "kiln",
+            "boiler",
+            "ammonia",
+            "steel",
+            "soda ash",
+            "flaring",
+            "fugitive",
+            "refinery",
+            "petrol"
+          ]
+        },
+        {
+          "id": "air-lahore",
+          "title": "Lahore District by sector",
+          "icon": "MapPin",
+          "dek": "The district's share of each sector's allocation, year by year, beside the national mass no geometry could place below a province.",
+          "coverage": "Nine fiscal years · one district",
+          "files": [
+            "fact_air_lahore.csv"
+          ],
+          "finds": [
+            "Lahore",
+            "district",
+            "air",
+            "unplaced"
+          ]
+        },
+        {
+          "id": "air-coverage",
+          "title": "Coverage & screening",
+          "icon": "ListChecks",
+          "dek": "What is covered, what is not, and the screening scenarios — which are kept apart from the estimates.",
+          "coverage": "Nine fiscal years",
+          "files": [
+            "fact_air_absence_screening.csv"
+          ],
+          "finds": [
+            "screening",
+            "coverage",
+            "absent",
+            "uncontrolled"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "methods",
+      "title": "Methods & uncertainty",
+      "dek": "The choices behind each estimate, and how certain it is.",
+      "downloads": [
+        {
+          "id": "factors",
+          "title": "Emission factors",
+          "icon": "Ruler",
+          "dek": "Every factor the inventory applies, with its value, unit, applicability and the publication it comes from.",
+          "coverage": "424 factors",
+          "files": [
+            "emission_factors.csv"
+          ],
+          "finds": [
+            "factor",
+            "tier",
+            "IPCC",
+            "default",
+            "emission factor"
+          ]
+        },
+        {
+          "id": "parameters",
+          "title": "Conversion parameters",
+          "icon": "SlidersHorizontal",
+          "dek": "The calorific values, densities and conversion assumptions the calculations rest on, each marked default or country-specific.",
+          "coverage": "28 parameters",
+          "files": [
+            "parameters.csv"
+          ],
+          "finds": [
+            "calorific",
+            "density",
+            "conversion",
+            "assumption",
+            "country-specific"
+          ]
+        },
+        {
+          "id": "uncertainty-series",
+          "title": "Uncertainty intervals",
+          "icon": "Gauge",
+          "dek": "The interval around each year's total, and around the change from one year to the next.",
+          "coverage": "Nine fiscal years",
+          "files": [
+            "fact_uncertainty_series.csv"
+          ],
+          "finds": [
+            "interval",
+            "confidence",
+            "Monte Carlo",
+            "trend",
+            "change"
+          ]
+        },
+        {
+          "id": "uncertainty",
+          "title": "Uncertainty by category",
+          "icon": "Sigma",
+          "dek": "Where the uncertainty comes from: by source category and by the resolution the estimate was made at.",
+          "coverage": "By category and resolution",
+          "files": [
+            "fact_uncertainty.csv"
+          ],
+          "finds": [
+            "variance",
+            "attribution",
+            "category",
+            "resolution",
+            "envelope"
+          ]
+        },
+        {
+          "id": "configurations",
+          "title": "Alternative assumptions",
+          "icon": "Scale",
+          "dek": "The named alternatives whose effects are ranges rather than probabilities, and what each one changes.",
+          "coverage": "Named configurations",
+          "files": [
+            "dim_configuration.csv"
+          ],
+          "finds": [
+            "scenario",
+            "sensitivity",
+            "configuration",
+            "alternative",
+            "boundary"
+          ]
+        },
+        {
+          "id": "coverage",
+          "title": "Coverage & missing estimates",
+          "icon": "ListChecks",
+          "dek": "What is estimated, not estimated, counted elsewhere or out of scope — and, where something is missing, whether the data exists at all.",
+          "coverage": "91 categories",
+          "files": [
+            "fact_completeness.csv"
+          ],
+          "finds": [
+            "missing",
+            "gap",
+            "not estimated",
+            "notation",
+            "NE",
+            "completeness"
+          ]
+        },
+        {
+          "id": "coverage-mass",
+          "title": "Mass behind the gaps",
+          "icon": "Boxes",
+          "dek": "How much is likely to sit in each gap, given as a bracket rather than a single figure.",
+          "coverage": "36 gaps",
+          "files": [
+            "fact_completeness_mass.csv"
+          ],
+          "finds": [
+            "gap",
+            "bracket",
+            "unestimated",
+            "magnitude"
+          ]
+        },
+        {
+          "id": "sources",
+          "title": "Source register",
+          "icon": "BookOpen",
+          "dek": "Every publication the inventory reads, with its publisher, edition and how to obtain a copy.",
+          "coverage": "196 documents",
+          "files": [
+            "pakemis_source_register.csv"
+          ],
+          "finds": [
+            "source",
+            "citation",
+            "provenance",
+            "document",
+            "register",
+            "publication"
+          ]
+        },
+        {
+          "id": "streams",
+          "title": "Source streams",
+          "icon": "Layers",
+          "dek": "Each series the inventory draws on, traced to the document and table the numbers were read from.",
+          "coverage": "202 streams",
+          "files": [
+            "pakemis_source_streams.csv"
+          ],
+          "finds": [
+            "stream",
+            "series",
+            "lineage",
+            "table",
+            "provenance"
+          ]
+        },
+        {
+          "id": "dictionary",
+          "title": "Data dictionary",
+          "icon": "Table2",
+          "dek": "What every stream is and which sector it feeds, in the vocabulary the tables themselves use.",
+          "coverage": "202 streams",
+          "files": [
+            "dim_stream.csv"
+          ],
+          "finds": [
+            "dictionary",
+            "columns",
+            "definitions",
+            "schema",
+            "vocabulary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "maps",
+      "title": "Maps & grids",
+      "dek": "Spatial data for GIS and modelling.",
+      "downloads": [
+        {
+          "id": "grid-annual",
+          "title": "Annual emissions grid",
+          "icon": "Globe",
+          "dek": "The three greenhouse gases on a 0.05° grid, one layer per year.",
+          "coverage": "Nine fiscal years · NetCDF",
+          "files": [
+            "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc"
+          ],
+          "finds": [
+            "grid",
+            "raster",
+            "NetCDF",
+            "0.05",
+            "gridded"
+          ]
+        },
+        {
+          "id": "grid-monthly",
+          "title": "Monthly grid",
+          "icon": "CalendarDays",
+          "dek": "The reference year month by month, on the same grid.",
+          "coverage": "12 months · NetCDF",
+          "files": [
+            "pakemis_grid_0p05_monthly.nc"
+          ],
+          "finds": [
+            "monthly",
+            "grid",
+            "NetCDF",
+            "seasonal"
+          ]
+        },
+        {
+          "id": "grid-monthly-ledger",
+          "title": "Monthly grid, all diverted dung burned",
+          "icon": "CalendarDays",
+          "dek": "The same twelve months rebuilt with all the dung agriculture diverts burned in households (configuration L), for comparison with the reference above.",
+          "coverage": "12 months · NetCDF",
+          "files": [
+            "pakemis_grid_0p05_monthly_ledger.nc"
+          ],
+          "finds": [
+            "monthly",
+            "grid",
+            "survey",
+            "configuration",
+            "NetCDF"
+          ]
+        },
+        {
+          "id": "grid-air",
+          "title": "Air pollutant grid",
+          "icon": "Wind",
+          "dek": "Seven pollutants on the same grid, for every year.",
+          "coverage": "Nine fiscal years · NetCDF",
+          "files": [
+            "pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc"
+          ],
+          "finds": [
+            "air",
+            "grid",
+            "pollutant",
+            "NetCDF"
+          ]
+        },
+        {
+          "id": "grid-edgar",
+          "title": "EDGAR-aligned grid",
+          "icon": "Grid3x3",
+          "dek": "The same emissions on EDGAR's 0.1° lattice, so the two can be compared cell for cell.",
+          "coverage": "Nine fiscal years · NetCDF",
+          "files": [
+            "pakemis_grid_0p1_edgar_aligned.nc"
+          ],
+          "finds": [
+            "EDGAR",
+            "comparison",
+            "0.1",
+            "grid"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+step,activity_mt,factor_t_co2_per_t,co2_mt,interpretation
+Independent trade-corrected f=0.75,34.585831,0.52,17.984632119999997,independent reconstructed clinker activity
+Independent trade-corrected f=0.95,43.452031,0.52,22.59505612,independent high-clinker sensitivity
+CRT reported activity with default clinker EF,50.2455,0.52,26.127660000000002,counterfactual only because the CRT activity basis is undocumented
+CRT submitted activity and implied factor,50.2455,0.55539,27.905848245,official arithmetic; institutional activity and factor derivation requested

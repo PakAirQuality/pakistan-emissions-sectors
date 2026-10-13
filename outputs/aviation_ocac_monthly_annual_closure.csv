@@ -1,0 +1,21 @@
+fiscal_year,customer_category,fuel_type,sum_public_monthly_t,final_annual_report_t,monthly_minus_annual_t,closure_status
+2021,Domestic Avi-PIA,JP-1,159024.0,159024.0,0.0,exact
+2021,Domestic Avi-Others,JP-1,110464.0,110464.0,0.0,exact
+2021,Government Aviation,JP-1,5663.0,5663.0,0.0,exact
+2021,Government Other,JP-1,16850.0,16850.0,0.0,exact
+2021,Overseas/Foreign Aviation,JP-1,240208.0,240208.0,0.0,exact
+2022,Domestic Avi-PIA,JP-1,216414.0,216414.0,0.0,exact
+2022,Domestic Avi-Others,JP-1,129559.0,129559.0,0.0,exact
+2022,Government Aviation,JP-1,4960.0,4960.0,0.0,exact
+2022,Government Other,JP-1,14724.0,14724.0,0.0,exact
+2022,Overseas/Foreign Aviation,JP-1,268222.0,268222.0,0.0,exact
+2023,Domestic Avi-PIA,JP-1,193813.0,193813.0,0.0,exact
+2023,Domestic Avi-Others,JP-1,166119.0,166119.0,0.0,exact
+2023,Government Aviation,JP-1,2973.0,2973.0,0.0,exact
+2023,Government Other,JP-1,12282.0,12282.0,0.0,exact
+2023,Overseas/Foreign Aviation,JP-1,283147.0,283147.0,0.0,exact
+2024,Domestic Avi-PIA,JP-1,169238.0,169238.0,0.0,exact
+2024,Domestic Avi-Others,JP-1,194064.0,194084.0,-20.0,annual_revision_or_rounding
+2024,Government Aviation,JP-1,10195.0,10195.0,0.0,exact
+2024,Government Other,JP-1,6681.0,6681.0,0.0,exact
+2024,Overseas/Foreign Aviation,JP-1,278013.0,278013.0,0.0,exact

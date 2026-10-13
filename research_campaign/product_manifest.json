@@ -1,0 +1,97 @@
+{
+  "generated_by": "research_campaign/build_campaign_tables.py",
+  "note": "digests are read from outputs/release_manifest.json, never recomputed here, so this manifest cannot describe a product the release does not. A product the manifest does not carry is recorded explicitly.",
+  "products": [
+    {
+      "bytes": 5817,
+      "guard": "tests/test_forest_flux_adjudication.py",
+      "hashed_in": "outputs/release_manifest.json",
+      "on_disk": true,
+      "path": "outputs/pakemis_forest_flux_adjudication.csv",
+      "sha256": "7226180a716709f57734ee597d4811394e2f01bd4cc3a077b515ddfb0a61bddc",
+      "task": "T-LAND-2",
+      "what": "the forest-flux sign screening; outside every total"
+    },
+    {
+      "bytes": 4732,
+      "guard": "tests/test_fgas_leak_rate_adjudication.py",
+      "hashed_in": "outputs/release_manifest.json",
+      "on_disk": true,
+      "path": "outputs/pakemis_fgas_leak_rate_adjudication.csv",
+      "sha256": "eb2c8fc8025349c456ba700a98a0c87a5c2a062b25462c439627e887d4671165",
+      "task": "T-MISS-2",
+      "what": "the bank's one leak rate per stratum against IPCC Table 7.9's per sub-application, with the official 2.F reading beside it"
+    },
+    {
+      "bytes": 12738,
+      "guard": "tests/test_btr_comparison.py",
+      "hashed_in": "outputs/release_manifest.json",
+      "on_disk": true,
+      "path": "outputs/pakemis_btr_comparison.csv",
+      "sha256": "20246434cec7431f8a150ea590ee50798fdabaec6db2c21de09652c29cf39eb6",
+      "task": "T-VAL-BTR",
+      "what": "year-matched comparison with Pakistan's first BTR, tiered"
+    },
+    {
+      "bytes": 16743,
+      "guard": "tests/test_release_axis_fingerprints.py",
+      "hashed_in": "outputs/release_manifest.json",
+      "on_disk": true,
+      "path": "outputs/pakemis_release_axis_fingerprints.csv",
+      "sha256": "ea490c9c084bb63479e825fd6a1638eda799624c296c4d325f2d0d6d89a60a8f",
+      "task": "T-VINTAGE-AXES, T-AXIS-TIME",
+      "what": "coarse and fine digests per disaggregated table per published vintage"
+    },
+    {
+      "bytes": 55826,
+      "guard": "tests/test_citation_pointer_audit.py",
+      "hashed_in": "outputs/release_manifest.json",
+      "on_disk": true,
+      "path": "outputs/pakemis_citation_pointer_audit.csv",
+      "sha256": "df964f7f46a2ff06d86f3216103aa05b57bcb5c0c38c47f77433fa5de3bc4572",
+      "task": "T-CITATION-POINTERS, T-POINTERS-PBS",
+      "what": "whether a reader can find the figure in the document, per registered source"
+    },
+    {
+      "bytes": 17855,
+      "guard": "tests/test_minerals_panel_screening.py",
+      "hashed_in": "outputs/release_manifest.json",
+      "on_disk": true,
+      "path": "outputs/pakemis_minerals_panel_screening.csv",
+      "sha256": "b55396e32f170ad2e4c702ae08bf6867e0609863007fea7ea7d3d002a9ae6256",
+      "task": "T-MINERALS-PANEL, T-MINERALS-MECHANISM",
+      "what": "which province-years of the minerals panel are whole, what a hole costs the served shape, and where a closing control does not describe the panel"
+    },
+    {
+      "bytes": 4588,
+      "guard": "tests/test_published_vintages.py",
+      "hashed_in": "not a release-manifest product - recorded here so the absence is visible rather than inferred",
+      "on_disk": true,
+      "path": "data/catalog/published_release_vintages.csv",
+      "sha256": null,
+      "task": "T-AGENT-3",
+      "what": "every published release as a commit and two digests, re-hashed out of git"
+    },
+    {
+      "bytes": 3886,
+      "guard": "tests/test_btr_comparison.py",
+      "hashed_in": "not a release-manifest product - recorded here so the absence is visible rather than inferred",
+      "on_disk": true,
+      "path": "data/shared/evidence/btr1_national_inventory.csv",
+      "sha256": null,
+      "task": "T-VAL-BTR",
+      "what": "55 rows of Pakistan's BTR1 national inventory, transcribed with line citations"
+    },
+    {
+      "bytes": 2969,
+      "guard": "(it is itself the check)",
+      "hashed_in": "not a release-manifest product - recorded here so the absence is visible rather than inferred",
+      "on_disk": true,
+      "path": "scripts/check_release_sequence.py",
+      "sha256": null,
+      "task": "T-RECORD-SEQUENCE",
+      "what": "proves the three release commits are in order; cannot live in the suite because the record is produced BY the suite"
+    }
+  ],
+  "release": "1.0.0rc67"
+}

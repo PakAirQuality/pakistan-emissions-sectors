@@ -1,0 +1,61 @@
+{
+  "calibration": {
+    "class_weight": {
+      "motorway": 3.0,
+      "primary": 1.5,
+      "secondary": 1.0,
+      "trunk": 2.0
+    },
+    "fuel_stations_gridded": 3775,
+    "station_cap": 4,
+    "station_k": 0.25,
+    "status": "DECLARED constants, unfitted: benchmark task spatial_road_transport is pending_record - no Pakistani traffic record exists to calibrate or score against",
+    "urban_factor": 1.5
+  },
+  "cell_attribution": "segment midpoint, 0.05 degree grid, rasterised ADM2 labels",
+  "class_km": {
+    "motorway": 5319.1,
+    "primary": 18563.6,
+    "secondary": 27361.3,
+    "trunk": 20809.2
+  },
+  "download_date": "2026-08-09",
+  "dual_carriageway_oneway_km": {
+    "motorway": 5314.4,
+    "primary": 4812.3,
+    "secondary": 3085.8,
+    "trunk": 9533.5
+  },
+  "dual_carriageway_statement": "OSM maps each carriageway of a dual carriageway as its own way; the oneway-km per class above bounds the way-km inflation (DECLARED, not de-duplicated - the rail corridor-normalisation precedent)",
+  "extracted_km_off_grid": 15.4,
+  "fclass_filter": [
+    "motorway",
+    "trunk",
+    "primary",
+    "secondary",
+    "motorway_link",
+    "trunk_link",
+    "primary_link",
+    "secondary_link"
+  ],
+  "graph": {
+    "components": 5462,
+    "disconnected_links": 13237,
+    "main_component_links": 32540,
+    "node_bucketing": "endpoints rounded to 3 decimal places (~100 m), the rail builder's healing rule",
+    "nodes": 32136,
+    "urban_builtup_threshold": 0.1,
+    "urban_links": 23205
+  },
+  "layer": "gis_osm_roads_free_1",
+  "licence": "ODbL",
+  "link_count": 45777,
+  "maxspeed_coverage_pct": 36.5,
+  "no_lanes_statement": "the Geofabrik free schema carries no lanes, surface or access columns; the link table cannot state capacity under any framing",
+  "note": "rc47 Wave 5: PROMOTED - the road-density raster is the declared within-province basis for road-transport petrol and diesel (stream_grid_proxy.csv points at it); builtup remains the priced comparator and the ADM2 bracket keeps the decision reversible, the road-transport magnitude is set by fuel controls, and since rc13 the calibrated weight surface ships as a spatial-bracket alternate beside the builtup reference. Road length is not traffic - the calibration constants are declared, not fitted, and the benchmark task that would score them is pending_record. OSM maps each carriageway of a dual carriageway as its own way; the per-class oneway-km bound above declares the inflation.",
+  "segment_deg": 0.01,
+  "snapshot_timestamp": "2026-08-06T20:21:21Z",
+  "snapshot_zip_sha256": "ab445f8f0a4b6df1ca75f8da5f97f0cf2ecb1144287953d19054a82741010d2d",
+  "source_url": "https://download.geofabrik.de/asia/pakistan-latest-free.shp.zip",
+  "total_km": 72053.2
+}

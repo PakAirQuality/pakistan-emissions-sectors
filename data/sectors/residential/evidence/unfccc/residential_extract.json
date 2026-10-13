@@ -1,0 +1,50 @@
+{
+  "name": "residential_extract",
+  "producer": "pkinv.sectors.residential.official_reporting.extract",
+  "producer_sha256": "b1cea92c4817b20fc4ac80b36e723f352ae5b3d87a872fbdc58145cd687377ac",
+  "result": {
+    "columns": [
+      "source_key",
+      "activity_TJ",
+      "basis",
+      "ief_co2_t_per_TJ",
+      "ief_ch4_kg_per_TJ",
+      "ief_n2o_kg_per_TJ",
+      "co2_kt",
+      "ch4_kt",
+      "n2o_kt",
+      "raw.activity_TJ",
+      "raw.basis",
+      "raw.ief_co2_t_per_TJ",
+      "raw.ief_ch4_kg_per_TJ",
+      "raw.ief_n2o_kg_per_TJ",
+      "raw.co2_kt",
+      "raw.ch4_kt",
+      "raw.n2o_kt",
+      "label",
+      "row",
+      "cells.activity_TJ",
+      "cells.basis",
+      "cells.ief_co2_t_per_TJ",
+      "cells.ief_ch4_kg_per_TJ",
+      "cells.ief_n2o_kg_per_TJ",
+      "cells.co2_kt",
+      "cells.ch4_kt",
+      "cells.n2o_kt"
+    ],
+    "key_column": "source_key",
+    "kind": "mapping",
+    "path": "residential_extract.csv",
+    "sha256": "d2859b4c35452c8c8f72db5994d325578f90f6fcbe8faf00615eebfad0164a23",
+    "types": [
+      "sfsnnnfffsssssssssissssssss",
+      "sfsffffffsssssssssissssssss",
+      "sfsffffffsssssssssissssssss",
+      "sfsffffffsssssssssissssssss",
+      "snsnnnnnnsssssssssissssssss"
+    ]
+  },
+  "schema": "pkinv.source_extract/v1",
+  "source": "sources/Aviation/PAK_CRT_2024.zip",
+  "source_sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+}

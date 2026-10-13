@@ -1,0 +1,9 @@
+item,value,unit,note
+Metered gas (OGRA),21488.3,TJ net,sets the emissions
+Modelled CNG travel (fleet),23563698945.0,vehicle-km,sets the geography and the air-pollutant layer; 8.55% of all road vehicle-km
+Implied energy intensity,0.912,MJ/vehicle-km,"FLEET-MODEL-HIGH - plausible band 1.2-6.0 MJ/km for a fleet 74% three-wheeler by distance; bounds are judgement, not a Pakistani measurement"
+CNG travel 3W,17462435490.0,vehicle-km,74.11% of CNG vehicle-km
+CNG travel 4W1,2624620193.0,vehicle-km,11.14% of CNG vehicle-km
+CNG travel BUS,1692668876.0,vehicle-km,7.18% of CNG vehicle-km
+CNG travel 4WT,1671819963.0,vehicle-km,7.09% of CNG vehicle-km
+CNG travel HDV,112154422.0,vehicle-km,0.48% of CNG vehicle-km

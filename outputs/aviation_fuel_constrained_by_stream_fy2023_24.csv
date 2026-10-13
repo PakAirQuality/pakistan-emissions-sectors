@@ -1,0 +1,4 @@
+category,subitem,gas,fossil,emissions_Gg,co2e_Mt_AR5,co2e_Mt_AR6,uncert_pct
+Domestic aviation,Fuel-constrained domestic aviation CO2,CO2,False,292.012589,0.292013,0.292013,5.0
+Domestic aviation,Fuel-constrained domestic aviation CH4,CH4,True,0.002038,6.1e-05,6.1e-05,80.3
+Domestic aviation,Fuel-constrained domestic aviation N2O,N2O,False,0.00815,0.00216,0.002225,110.2

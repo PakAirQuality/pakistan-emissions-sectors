@@ -1,0 +1,22 @@
+# The public shape of each activity table: its title, what its category columns are called, how a
+# composite geography splits into columns (location_locality: `Punjab · rural`; province_location:
+# `Punjab · Attock`; location_province: `Bahawalpur · Punjab`), which optional columns it carries,
+# and the sentence every row's Use note begins with.
+collection,title,category_header,subcategory_header,geography_split,extra_columns,base_note
+aviation,Aviation traffic,Traffic category,Airline and scope,location_province,,Airport and airline series overlap for FY 2023-24; compare within one series.
+crops,Crop area and production,Crop,,province_location,Source status,"National, district and historical series overlap; compare within one series, crop, measure and unit."
+fertiliser,Fertiliser offtake,Product or nutrient,Producer or origin,,Source status,"Offtake is distribution, not measured field application. Product mass and nutrient mass are different measures."
+fuel_sales_area,Fuel sales by area,Fuel product,Customer group,,Reporting interval,Fuel sold in an area is not fuel burned there. Totals and component rows overlap; sum only rows whose Combinable column permits it.
+fuel_sales_national,National fuel sales,Fuel product,Customer group,,Source status,"Sales into a customer class, not fuel burned in it. Customer and product totals overlap their components; compare within one series."
+gas_network,Gas network and infrastructure,Network measure or asset,Operator or customer group,,,Combine only matching units and non-overlapping records within an asset class.
+gas_supply,Oil production and gas supply,Product or field,Supply network,,,National and provincial production are printed in different units; compare like measures and units. A field can supply more than one network.
+household_fuel,Household fuel use,Fuel or energy source,,location_locality,,Design-weighted survey estimates; national and province/locality totals overlap. Annual totals and monthly means are different measures.
+industry_fuel,Industrial fuel use and supply,Consumer or plant,Supplier or detail,,Source status,Combine only matching units within one source edition. Rates (per day) are not quantities.
+industry_production,Industrial production and trade,Product or company,Classification or detail,,Source status,"Company, monthly and national series overlap; compare one measure, unit and source series. Company figures are never split across plants."
+livestock,Livestock populations,Animal type,,location_province,Source status,"National, provincial and district counts overlap; do not sum geography levels or source series."
+power_monthly,Monthly electricity generation,Power plant,Fuel,,Fuel classification basis,Generation is reported; the fuel label may be inferred or carried from another year and its basis is stated.
+power_plants,Annual power generation and fuel use,Plant or fuel,Fuel or electricity system,,,"Plant, system and fuel summary series overlap; keep source series, measures and fuel units separate."
+railways,Railway fuel and traffic,Fuel or traffic category,Detail,,Source status,Combine only matching units and non-overlapping categories. Total train distance is the sum of the passenger and freight rows beside it.
+vehicles,Vehicle registrations and activity assumptions,Vehicle class,Fuel,province_location,,Registered stock at 30 June is not traffic and not an active fleet. Distance and fuel-share rows are declared assumptions.
+waste_flows,Modelled waste flows,Waste flow,Flow level,,,"Modelled estimates, not measured tonnage. The overall balance and the uncollected breakdown overlap."
+waste_services,Waste and sanitation services,Service,,location_locality,Source status,"Household shares are not waste-mass shares. National and provincial scopes overlap, and the subtotal rows are sums of the routes beside them."

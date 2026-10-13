@@ -1,0 +1,3 @@
+fiscal_year,model,structural_scenario,mean_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,parametric_inputs
+2023,flight_ledger,completed_ledger,0.23210034006170163,0.20250296504681564,0.2314913880356078,0.26445040419556004,"carbon, aircraft-mass, route-detour, taxi"
+2023,flight_ledger,observed_only,0.0,0.0,0.0,0.0,"carbon, aircraft-mass, route-detour, taxi"

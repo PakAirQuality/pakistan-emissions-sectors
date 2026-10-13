@@ -1,0 +1,21 @@
+source_name,lon,lat,country,sector,source_type,persistency,persistency_std,persistency_category,n_plumes_detected,id_last_plume,last_plume_date,notified,feedback,feedback_operator,feedback_government,province
+PAK_S_002,67.4888,26.16847,Pakistan,Oil and Gas,Transmission Compressor Station,0.0,0.0,absent,3,1c62832b-ae17-49df-b133-0041b7795cef,2024-06-23T06:53:29,Yes,Not Applicable,Not Applicable,Not Applicable,Sindh
+PAK_S_003,68.69789,25.79827,Pakistan,Oil and Gas,Transmission Compressor Station,,,Undetermined,10,d1c27ae0-f5c7-4324-aa9c-4baa0ac5c9e7,2026-02-10T10:23:45,Yes,No,No,No,Sindh
+PAK_S_013,69.04775,28.94211,Pakistan,Oil and Gas,Gas disposal facility,,,Undetermined,2,ecdf1f43-b7fe-4aae-bdef-8cac2e6a6a57,2023-02-26T05:47:14,No,Not Applicable,Not Applicable,Not Applicable,Balochistan
+PAK_S_011,68.63438,25.88904,Pakistan,Oil and Gas,Gathering and boosting facilities,,,Undetermined,4,c840574a-c3d1-41ac-bf1e-cbba09813bd4,2025-04-20T07:35:38,Yes,No,No,No,Sindh
+PAK_S_014,67.44443,26.32126,Pakistan,Oil and Gas,Gathering and boosting facilities,0.0,0.0,absent,1,863341b5-ea1e-452d-bdf9-c574b7e70c15,2023-06-06T05:34:48,No,Not Applicable,Not Applicable,Not Applicable,Sindh
+PAK_S_015,69.67334,27.9807,Pakistan,Oil and Gas,O&G facility (generic),0.0,0.0,absent,1,a453b7be-5269-4b1f-bb32-a350f22ece01,2024-02-24T06:09:41,No,Not Applicable,Not Applicable,Not Applicable,Sindh
+PAK_S_016,68.5656,25.41881,Pakistan,Oil and Gas,O&G facility (generic),0.0,0.0,absent,1,26ef9ea1-e483-4ec0-ac8a-9b67356201c6,2023-05-02T04:23:10,No,Not Applicable,Not Applicable,Not Applicable,Sindh
+PAK_S_005,69.11387,28.92013,Pakistan,Oil and Gas,Gas disposal facility,,,Undetermined,1,3d0cfbb0-120b-44b7-8e38-947426ec2443,2024-04-18T08:40:09,No,Not Applicable,Not Applicable,Not Applicable,Balochistan
+PAK_S_006,69.1016,28.91747,Pakistan,Oil and Gas,Gas disposal facility,0.0,0.0,absent,1,820ad348-c168-4113-979f-138ae04b84f6,2023-10-06T05:21:52,No,Not Applicable,Not Applicable,Not Applicable,Balochistan
+PAK_S_001,69.80955,27.96851,Pakistan,Oil and Gas,Gathering and boosting facilities,1.0,0.0,persistent,49,3ec3241d-af0b-4995-8c31-3852d33b1618,2026-06-30T06:04:25,Yes,No,No,No,Sindh
+PAK_S_010,68.471,25.75134,Pakistan,Oil and Gas,Gas Processing Unit,0.0,0.0,absent,1,89dc3e1a-c494-4165-bf65-53afb2e29c4b,2025-01-27T07:25:43,Yes,No,No,No,Sindh
+PAK_S_009,68.62921,25.89411,Pakistan,Oil and Gas,Flare,,,Undetermined,4,fe736741-b393-49e3-9b57-f9fea55763e3,2025-08-16T08:50:28,Yes,No,No,No,Sindh
+PAK_S_008,69.36555,28.05525,Pakistan,Oil and Gas,Gathering and boosting facilities,1.0,0.0,persistent,15,342a2e40-acf4-440a-a0a2-001b4a19f3a8,2026-05-26T07:57:40,Yes,No,No,No,Sindh
+PAK_S_020,69.30903,27.16491,Pakistan,Oil and Gas,O&G source (generic),,,Undetermined,3,f86ff54c-d8b8-4ad5-a746-9b85f6814065,2026-03-06T09:06:00,Yes,No,No,No,Sindh
+PAK_S_022,69.35921,28.07475,Pakistan,Oil and Gas,Transmission Stations,0.0,0.0,absent,1,cf9830f7-29fd-4fc3-8c3d-2bf7a442234e,2025-01-25T06:45:44,No,Not Applicable,Not Applicable,Not Applicable,Sindh
+PAK_S_023,68.63084,28.6119,Pakistan,Oil and Gas,Gathering and boosting facilities,1.0,0.0,persistent,5,619c21bb-fa84-4734-8e1a-cb6761489a6c,2026-04-24T05:24:43,No,Not Applicable,Not Applicable,Not Applicable,Balochistan
+PAK_S_027,67.62895,26.1614,Pakistan,Oil and Gas,O&G facility (generic),,,Undetermined,2,95c3644b-6298-46e0-b53f-6df9f0714cf5,2026-05-26T07:57:05,No,Not Applicable,Not Applicable,Not Applicable,Sindh
+PAK_S_024,71.51912,33.24518,Pakistan,Oil and Gas,Gathering and boosting facilities,1.0,0.0,persistent,5,25ddce41-43d6-45d1-a667-eacb41d36a54,2026-06-23T05:06:00,Yes,No,No,No,Khyber Pakhtunkhwa
+PAK_S_026,71.30576,33.26564,Pakistan,Oil and Gas,Gathering and boosting facilities,0.33,0.27,frequent,1,f26e7fbc-2701-4ed3-a933-5c7221852eff,2026-06-23T05:06:00,No,Not Applicable,Not Applicable,Not Applicable,Khyber Pakhtunkhwa
+PAK_S_025,71.18876,33.29506,Pakistan,Oil and Gas,Gathering and boosting facilities,0.33,0.27,frequent,1,3548ef84-af01-49e4-bba0-302b9bb3bc90,2026-06-23T05:06:00,No,Not Applicable,Not Applicable,Not Applicable,Khyber Pakhtunkhwa

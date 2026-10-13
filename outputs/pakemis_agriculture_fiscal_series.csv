@@ -1,0 +1,77 @@
+# Agriculture on a PAKISTANI FISCAL basis, FY2015-16 to FY2023-24.
+# Crops and nitrogen from the Economic Survey's fiscal tables; livestock stocks remain the FAOSTAT calendar projection, which has no fiscal enumeration to move to.
+# activity_basis is a property of each category's DRIVER, not of the sector.
+# The method is untouched: run_inventory.build_components, as the reference year calls it. Only the activity varies.
+fiscal_end_year,fiscal_label,category,gas,emissions_Gg,co2e_Mt_AR5,co2e_Mt_AR6,activity_basis,driver,driver_source
+2016,FY2015-16,Enteric fermentation,CH4,4108.529,115.038812,110.930283,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2016,FY2015-16,Manure management,CH4,347.32908,9.725214,9.377885,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2016,FY2015-16,Manure management,N2O,21.668874,5.742252,5.915603,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2016,FY2015-16,Rice cultivation,CH4,445.0875,12.46245,12.017362,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2016,FY2015-16,Managed soils,N2O,76.162345,20.183021,20.79232,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2016,FY2015-16,Field burning of residues,CH4,14.491661,0.405766,0.391275,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2016,FY2015-16,Field burning of residues,N2O,0.37571,0.099563,0.102569,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2016,FY2015-16,Urea application,CO2,3407.768116,3.407768,3.407768,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2017,FY2016-17,Enteric fermentation,CH4,4238.79,118.68612,114.44733,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2017,FY2016-17,Manure management,CH4,360.21938,10.086143,9.725923,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2017,FY2016-17,Manure management,N2O,22.583891,5.984731,6.165402,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2017,FY2016-17,Rice cultivation,CH4,442.65,12.3942,11.95155,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2017,FY2016-17,Managed soils,N2O,90.791534,24.059756,24.786089,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2017,FY2016-17,Field burning of residues,CH4,15.497051,0.433917,0.41842,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2017,FY2016-17,Field burning of residues,N2O,0.401775,0.10647,0.109685,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2017,FY2016-17,Urea application,CO2,4757.101449,4.757101,4.757101,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2018,FY2017-18,Enteric fermentation,CH4,4375.00218,122.500061,118.125059,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2018,FY2017-18,Manure management,CH4,373.384966,10.454779,10.081394,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2018,FY2017-18,Manure management,N2O,23.500348,6.227592,6.415595,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2018,FY2017-18,Rice cultivation,CH4,471.4125,13.19955,12.728137,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2018,FY2017-18,Managed soils,N2O,88.718744,23.510467,24.220217,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2018,FY2017-18,Field burning of residues,CH4,16.417322,0.459685,0.443268,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2018,FY2017-18,Field burning of residues,N2O,0.425634,0.112793,0.116198,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2018,FY2017-18,Urea application,CO2,4380.869565,4.38087,4.38087,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2019,FY2018-19,Enteric fermentation,CH4,4513.750045,126.385001,121.871251,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2019,FY2018-19,Manure management,CH4,386.935282,10.834188,10.447253,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2019,FY2018-19,Manure management,N2O,24.452723,6.479971,6.675593,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2019,FY2018-19,Rice cultivation,CH4,456.625,12.7855,12.328875,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2019,FY2018-19,Managed soils,N2O,89.886126,23.819823,24.538912,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2019,FY2018-19,Field burning of residues,CH4,14.868701,0.416324,0.401455,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2019,FY2018-19,Field burning of residues,N2O,0.385485,0.102153,0.105237,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2019,FY2018-19,Urea application,CO2,4346.434783,4.346435,4.346435,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2020,FY2019-20,Enteric fermentation,CH4,4657.10848,130.399037,125.741929,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2020,FY2019-20,Manure management,CH4,401.087236,11.230443,10.829355,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2020,FY2019-20,Manure management,N2O,25.455885,6.74581,6.949457,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2020,FY2019-20,Rice cultivation,CH4,493.025,13.8047,13.311675,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2020,FY2019-20,Managed soils,N2O,91.717757,24.305206,25.038948,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2020,FY2019-20,Field burning of residues,CH4,15.044856,0.421256,0.406211,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2020,FY2019-20,Field burning of residues,N2O,0.390052,0.103364,0.106484,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2020,FY2019-20,Urea application,CO2,4355.362319,4.355362,4.355362,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2021,FY2020-21,Enteric fermentation,CH4,4805.199775,134.545594,129.740394,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2021,FY2020-21,Manure management,CH4,415.891512,11.644962,11.229071,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2021,FY2020-21,Manure management,N2O,26.515554,7.026622,7.238746,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2021,FY2020-21,Rice cultivation,CH4,541.9375,15.17425,14.632312,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2021,FY2020-21,Managed soils,N2O,97.260717,25.77409,26.552176,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2021,FY2020-21,Field burning of residues,CH4,16.51304,0.462365,0.445852,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2021,FY2020-21,Field burning of residues,N2O,0.428116,0.113451,0.116876,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2021,FY2020-21,Urea application,CO2,4732.869565,4.73287,4.73287,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2022,FY2021-22,Enteric fermentation,CH4,4958.10222,138.826862,133.86876,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2022,FY2021-22,Manure management,CH4,431.331854,12.077292,11.64596,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2022,FY2021-22,Manure management,N2O,27.629463,7.321808,7.542843,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2022,FY2021-22,Rice cultivation,CH4,574.7625,16.09335,15.518587,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2022,FY2021-22,Managed soils,N2O,100.723471,26.69172,27.497507,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2022,FY2021-22,Field burning of residues,CH4,17.764062,0.497394,0.47963,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2022,FY2021-22,Field burning of residues,N2O,0.46055,0.122046,0.12573,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2022,FY2021-22,Urea application,CO2,4894.84058,4.894841,4.894841,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2023,FY2022-23,Enteric fermentation,CH4,5116.04325,143.249211,138.133168,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2023,FY2022-23,Manure management,CH4,447.490035,12.529721,12.082231,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2023,FY2022-23,Manure management,N2O,28.806507,7.633724,7.864176,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2023,FY2022-23,Rice cultivation,CH4,483.6,13.5408,13.0572,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2023,FY2022-23,Managed soils,N2O,99.836985,26.456801,27.255497,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2023,FY2022-23,Field burning of residues,CH4,15.999326,0.447981,0.431982,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2023,FY2022-23,Field burning of residues,N2O,0.414797,0.109921,0.11324,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2023,FY2022-23,Urea application,CO2,4596.405797,4.596406,4.596406,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2024,FY2023-24,Enteric fermentation,CH4,5416.344626,151.65765,146.241305,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2024,FY2023-24,Manure management,CH4,470.786542,13.182023,12.711237,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2024,FY2023-24,Manure management,N2O,30.364014,8.046464,8.289376,calendar_projection,livestock stocks,FAOSTAT livestock stocks (calendar year)
+2024,FY2023-24,Rice cultivation,CH4,591.0125,16.54835,15.957337,observed_fiscal,rice area,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2024,FY2023-24,Managed soils,N2O,107.645111,28.525954,29.387115,observed_fiscal_mixed,"N offtake, crop residues, manure N","Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2024,FY2023-24,Field burning of residues,CH4,19.201095,0.537631,0.51843,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2024,FY2023-24,Field burning of residues,N2O,0.497806,0.131919,0.135901,observed_fiscal,crop production,"Economic Survey Tables 2.3/2.4/2.9, NFDC"
+2024,FY2023-24,Urea application,CO2,4824.4812,4.824481,4.824481,observed_fiscal,N offtake,"Economic Survey Tables 2.3/2.4/2.9, NFDC"

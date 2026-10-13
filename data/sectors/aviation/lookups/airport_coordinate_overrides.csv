@@ -1,0 +1,7 @@
+# Hand-resolved airport coordinates the OurAirports snapshot cannot supply.
+# The controls builder (scripts/build_aviation_anchor_controls.py) consults this
+# file BEFORE writing UNRESOLVED: a held row wins over an absent snapshot match,
+# the way data/activity/ippu/facility_geocoding_overrides.csv holds the IPPU
+# facility resolutions. One row per airport_icao; every row names its source.
+airport_icao,latitude_deg,longitude_deg,elevation_ft,coordinate_source,coordinate_source_sha256,note
+OPZZ,24.846208,70.094152,,"OpenStreetMap snapshot 2026-08-09 (Geofabrik extract, gis_osm_transport_a_free_1 fclass=airport polygon centroid); the centroid falls in Sindh/Tharparkar, the province this register declares",ab445f8f0a4b6df1ca75f8da5f97f0cf2ecb1144287953d19054a82741010d2d,"Islamkot (Mai Bakhtawar): the OurAirports row carries ident 601075 / local code PK-0092, matching none of the four code columns the builder keys on, so the snapshot resolves it to nothing"

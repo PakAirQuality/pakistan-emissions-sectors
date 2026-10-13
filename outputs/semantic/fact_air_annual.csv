@@ -1,0 +1,417 @@
+result_row_id,sector_id,period_id,category,subitem,pollutant,emissions_kt,uncert_pct,assurance
+bfbe9ef7b3e53a1d1cd251c1,agriculture,CY2024,Field burning of residues,Residue burning BC (cotton),BC,0.422,70.0,estimated
+f7061bba62be1b30a0a086e3,agriculture,CY2024,Field burning of residues,Residue burning BC (maize),BC,0.209,70.0,estimated
+d4b46f4b91cd78313dd45536,agriculture,CY2024,Field burning of residues,Residue burning BC (rice),BC,1.258,70.0,estimated
+e6923b403a56c891dc673d45,agriculture,CY2024,Field burning of residues,Residue burning BC (sugarcane),BC,0.931,70.0,estimated
+4ca0206cea0f8c21e5980370,agriculture,CY2024,Field burning of residues,Residue burning BC (wheat),BC,0.735,70.0,estimated
+1757e3ebb0d6b9a8c94624ac,agriculture,CY2024,Field burning of residues,Residue burning CO (cotton),CO,77.684,53.9,estimated
+bad8b6b7d5585fc3e3ce939f,agriculture,CY2024,Field burning of residues,Residue burning CO (maize),CO,38.502,53.9,estimated
+be4206b480e37b4f5970ef4c,agriculture,CY2024,Field burning of residues,Residue burning CO (rice),CO,231.527,53.9,estimated
+96c6bf345b1ba947761fd3d0,agriculture,CY2024,Field burning of residues,Residue burning CO (sugarcane),CO,171.332,53.9,estimated
+7eae425142b85003393083d5,agriculture,CY2024,Field burning of residues,Residue burning CO (wheat),CO,135.215,53.9,estimated
+ff2832ed71e270851c51f2e0,agriculture,CY2024,Field burning of residues,Residue burning NH3 (cotton),NH3,1.098,70.0,estimated
+e7d3ec10124bad3d1f74494d,agriculture,CY2024,Field burning of residues,Residue burning NH3 (maize),NH3,0.544,70.0,estimated
+ca65508230aa83ce5c8e8015,agriculture,CY2024,Field burning of residues,Residue burning NH3 (rice),NH3,3.272,70.0,estimated
+89ba9a00cf56d2512db0fbc1,agriculture,CY2024,Field burning of residues,Residue burning NH3 (sugarcane),NH3,2.421,70.0,estimated
+58c87824f17a47b2c5c4dcaf,agriculture,CY2024,Field burning of residues,Residue burning NH3 (wheat),NH3,1.911,70.0,estimated
+907062fc55e59a4eeaa0c3d6,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (cotton),NMVOC,5.911,70.0,estimated
+b467d4f56714f6049dd0c322,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (maize),NMVOC,2.929,70.0,estimated
+6b13ffbe58450de30b78ac4c,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (rice),NMVOC,17.616,70.0,estimated
+06e2190cb1a41bf70993cd84,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (sugarcane),NMVOC,13.036,70.0,estimated
+7702b4a82eaa2ecb82a84e2b,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (wheat),NMVOC,10.288,70.0,estimated
+2a4ae9df30f9c9da0494ba30,agriculture,CY2024,Field burning of residues,Residue burning NOx (cotton),NOx,2.111,61.6,estimated
+54559b76426b73e1102dc8bc,agriculture,CY2024,Field burning of residues,Residue burning NOx (maize),NOx,1.046,61.6,estimated
+9c796ad930cb70c6eeb951dd,agriculture,CY2024,Field burning of residues,Residue burning NOx (rice),NOx,6.291,61.6,estimated
+69e3d675d7f411e5a086fa4d,agriculture,CY2024,Field burning of residues,Residue burning NOx (sugarcane),NOx,4.656,61.6,estimated
+c0464edb827dd0d0ba2c09c1,agriculture,CY2024,Field burning of residues,Residue burning NOx (wheat),NOx,3.674,61.6,estimated
+9e471db388274619f15a2b16,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (cotton),PM2.5,6.417,61.6,estimated
+ea64413a8c3a36bc9ad1df1b,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (maize),PM2.5,3.181,61.6,estimated
+3949708315661255e6b26cf8,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (rice),PM2.5,19.126,61.6,estimated
+2e457363298362b780562670,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (sugarcane),PM2.5,14.154,61.6,estimated
+2cfcc98847c6f4ee655a3904,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (wheat),PM2.5,11.17,61.6,estimated
+c96a4142a84086aab3898475,agriculture,CY2024,Field burning of residues,Residue burning SO2 (cotton),SO2,0.338,78.7,estimated
+1928cfa98ace8f9d93fe3d22,agriculture,CY2024,Field burning of residues,Residue burning SO2 (maize),SO2,0.167,78.7,estimated
+f110a5507332d71b6d1b1c1b,agriculture,CY2024,Field burning of residues,Residue burning SO2 (rice),SO2,1.007,78.7,estimated
+13407db0f4346912236debe6,agriculture,CY2024,Field burning of residues,Residue burning SO2 (sugarcane),SO2,0.745,78.7,estimated
+bf154d9ec2fb0c446cf61230,agriculture,CY2024,Field burning of residues,Residue burning SO2 (wheat),SO2,0.588,78.7,estimated
+8afea5938eb1fc991d9b726d,agriculture,CY2024,Managed soils,NH3 - crop residues left in field,NH3,0.0,53.9,estimated
+6e439c648b0b50997deb38eb,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (buffalo),NH3,256.693,47.2,estimated
+7b3bd1dd57851a6607da8318,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (camels),NH3,3.738,47.2,estimated
+a1bf9d029206695ac390d8a5,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (dairy cattle),NH3,179.411,47.2,estimated
+e5bdbc9a1a0c962a80e3e382,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (goats),NH3,47.056,47.2,estimated
+25cfb7aadaebcc7a3d6ee69d,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (other cattle),NH3,161.939,47.2,estimated
+9539bcbf8e88308287fe9c96,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (poultry),NH3,198.713,47.2,estimated
+9c4dffc639ce5afd901784c5,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (sheep),NH3,19.314,47.2,estimated
+eea4c043a2ed52bb1aed9160,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (buffalo),NH3,36.02,53.9,estimated
+6c91e9732646ff3a52298de5,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (dairy cattle),NH3,34.603,53.9,estimated
+944c07e714127f6bf7f43d09,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (other cattle),NH3,33.65,53.9,estimated
+a27e0bdedb9572eb521118a1,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (camels),NH3,5.99,53.9,estimated
+ea88ca72a589cd71e2888959,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (goats),NH3,75.41,53.9,estimated
+c2bbd19d966ced52337f4c40,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (sheep),NH3,32.773,53.9,estimated
+6f3d63f63f259f9d86796a8b,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (AS),NH3,2.75,30.4,estimated
+b9577578296557218bf5543e,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (CAN),NH3,10.841,30.4,estimated
+5c5219932b3832c8bcfc8a4c,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (DAP),NH3,54.79,30.4,estimated
+e92276dec6655645235a2aa7,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (MAP),NH3,0.027,30.4,estimated
+4c4fcffa5f510a9338daa0f1,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (NP),NH3,38.146,30.4,estimated
+59f5e39095321716b44b1f77,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (NPKs),NH3,1.161,30.4,estimated
+11fa5b4c94cd4e692cdad0ff,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (Urea),NH3,629.469,30.4,estimated
+0cbe1befc7deda49ef9e3dac,agriculture,CY2024,Managed soils,Soil NOx - crop residues,NOx,4.9,102.0,estimated
+bcb144043b51936e909158ca,agriculture,CY2024,Managed soils,Soil NOx - organic manure,NOx,53.705,102.0,estimated
+61d47cf7e3f8e6ac00d51894,agriculture,CY2024,Managed soils,Soil NOx - synthetic fertiliser,NOx,86.825,100.1,estimated
+09d69d341a789719cca5ec06,agriculture,CY2024,Manure management,NH3 - housing (buffalo),NH3,102.914,47.2,estimated
+9cea85cf0784d53ece619738,agriculture,CY2024,Manure management,NH3 - housing (camels),NH3,1.627,47.2,estimated
+f83cafe8ff49e6301c14ac35,agriculture,CY2024,Manure management,NH3 - housing (dairy cattle),NH3,21.091,47.2,estimated
+84535d6e5dea8b2d96ac3f99,agriculture,CY2024,Manure management,NH3 - housing (goats),NH3,20.482,47.2,estimated
+97083b11d5f0d7543bf52bbe,agriculture,CY2024,Manure management,NH3 - housing (other cattle),NH3,20.511,47.2,estimated
+4b9fb7e588fb6e8da329381a,agriculture,CY2024,Manure management,NH3 - housing (poultry),NH3,198.581,47.2,estimated
+40c29f5920f581a41e3e8996,agriculture,CY2024,Manure management,NH3 - housing (sheep),NH3,8.901,47.2,estimated
+cb6fb1adf4aafb77dba0e5c9,agriculture,CY2024,Manure management,NH3 - storage (buffalo),NH3,34.991,47.2,estimated
+95a62de3f123a82c7381f8e9,agriculture,CY2024,Manure management,NH3 - storage (camels),NH3,1.615,47.2,estimated
+1e929df5f3f72bdf97150a33,agriculture,CY2024,Manure management,NH3 - storage (dairy cattle),NH3,36.383,47.2,estimated
+fa0ed4b619b5c6c0f23598ab,agriculture,CY2024,Manure management,NH3 - storage (goats),NH3,20.333,47.2,estimated
+bf51e4c0513a1fab6db9d067,agriculture,CY2024,Manure management,NH3 - storage (other cattle),NH3,35.381,47.2,estimated
+6f7b62eece6f8109a5be1c19,agriculture,CY2024,Manure management,NH3 - storage (poultry),NH3,224.113,47.2,estimated
+f3229091cb31c949a7750bb6,agriculture,CY2024,Manure management,NH3 - storage (sheep),NH3,10.099,47.2,estimated
+b1ec67a26e8ccdf8c7edbb12,agriculture,CY2024,Manure management,NH3 - yard (buffalo),NH3,38.593,47.2,estimated
+e63a1c228fc1035c08ed8448,agriculture,CY2024,Manure management,NH3 - yard (dairy cattle),NH3,24.716,47.2,estimated
+9b61883f8375b56b893d26bb,agriculture,CY2024,Manure management,NH3 - yard (other cattle),NH3,42.463,47.2,estimated
+d491e82b63a62ec2e8e4f4ff,aviation,FY2023-24,Domestic aviation,Domestic aviation CO,CO,0.1565,80.2,LTO screening
+1b666e35e6748dec392d7e50,aviation,FY2023-24,Domestic aviation,Domestic aviation HC,HC,0.0287,91.8,LTO screening
+3b2bc7d992c34cbec7c4bb6b,aviation,FY2023-24,Domestic aviation,Domestic aviation LTO BC,BC,0.0005,91.8,LTO screening
+1dec810f204dc6495b3bf80b,aviation,FY2023-24,Domestic aviation,Domestic aviation LTO PM2.5,PM2.5,0.0031,98.6,LTO screening
+7d490d6c3c2fe1d6332686ac,aviation,FY2023-24,Domestic aviation,Domestic aviation LTO SO2,SO2,0.0156,85.6,LTO screening
+6aa7b06240ba7f8d65ccee47,aviation,FY2023-24,Domestic aviation,Domestic aviation NOx,NOx,0.2409,80.2,LTO screening
+4615e8a877c0d78420cd8900,aviation,FY2023-24,Domestic aviation,Domestic aviation cruise BC,BC,0.0024,91.8,LTO screening
+ab4af16981d0ac5bb810a10b,aviation,FY2023-24,Domestic aviation,Domestic aviation cruise PM2.5,PM2.5,0.0158,98.6,LTO screening
+555ef72862ed227af8b5aecf,aviation,FY2023-24,Domestic aviation,Domestic aviation cruise SO2,SO2,0.0789,85.6,LTO screening
+1a34bc7d764b96aa944be640,power,FY2023-24,Electricity and heat production,"Bagasse|wet as-fired basis, Section 1.8's own 7.0 MMBtu/ton",NOx,0.804,22.4,uncontrolled bound
+5cafa87536913b69e68f3b83,power,FY2023-24,Electricity and heat production,"Bagasse|wet as-fired basis, Section 1.8's own 7.0 MMBtu/ton",PM,10.446,22.4,uncontrolled bound
+2678a00fd11277bcc2ae42c0,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",NOx,48.691,15.6,uncontrolled bound
+ee3de54706c575ce93cd250a,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",PM,295.178,15.9,uncontrolled bound
+4f94d968ad738817a2885aea,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",PM10,104.448,15.9,uncontrolled bound
+82aaf1558848991e0e747052,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",PM2.5,29.972,15.9,uncontrolled bound
+599734f5e9ef36e315ce96c3,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",SO2,178.649,152.8,uncontrolled bound
+ab349355132391874ef2cf04,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),CO,0.42,15.6,uncontrolled bound
+4c64e9b2658d560ac5d3482f,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),NOx,18.498,15.6,uncontrolled bound
+6cdce755b229b6530fcc0fe9,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),PM,55.679,15.9,uncontrolled bound
+26c5243b464906c44be94886,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),PM10,12.806,15.9,uncontrolled bound
+123d780aef0ca860a8071d0d,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),PM2.5,3.341,15.9,uncontrolled bound
+e7abd13d36f984b7c00a0d0d,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),SO2,27.745,152.8,uncontrolled bound
+1798077381aea6f5470cd4ec,power,FY2023-24,Electricity and heat production,Diesel Oil,CO,0.027,10.0,uncontrolled bound
+2465fb29212639902acd2e5b,power,FY2023-24,Electricity and heat production,Diesel Oil,NOx,0.255,10.0,uncontrolled bound
+1848d35b7ac8443ff18b6396,power,FY2023-24,Electricity and heat production,Diesel Oil,SO2,0.68,113.8,uncontrolled bound
+34b4686066a18a6d2417b28c,power,FY2023-24,Electricity and heat production,Furnace Oil,CO,0.345,10.0,uncontrolled bound
+f6823a2cf25aba932c051981,power,FY2023-24,Electricity and heat production,Furnace Oil,NOx,3.247,10.0,uncontrolled bound
+71492ba27c4cc8bd144f2d34,power,FY2023-24,Electricity and heat production,Furnace Oil,SO2,1.584,113.8,uncontrolled bound
+344563a925966700778839c3,power,FY2023-24,Electricity and heat production,Gas,CO,11.091,10.0,uncontrolled bound
+e6fa283cf1ad460d141ccac7,power,FY2023-24,Electricity and heat production,Gas,NOx,41.881,10.0,uncontrolled bound
+72ab6a0852b1635e0aad696b,power,FY2023-24,Electricity and heat production,Gas,PM,1.003,10.0,uncontrolled bound
+94fbb235f29de7c7e4da77d8,power,FY2023-24,Electricity and heat production,Gas,PM10,1.003,10.0,uncontrolled bound
+7750e15c5e9a26d01996f088,power,FY2023-24,Electricity and heat production,Gas,PM2.5,1.003,10.0,uncontrolled bound
+5e46e992b96c5f67e4266851,power,FY2023-24,Electricity and heat production,Gas,SO2,0.079,10.0,uncontrolled bound
+b30d09c3ba788c5ae9bbb798,power,FY2023-24,Electricity and heat production,Gas,VOC,0.726,10.0,uncontrolled bound
+cd04137b3cca8c61087c0556,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,BC,0.001203,104.4,estimated
+347a5f234e0767c36b0099b4,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,CO,0.014457,61.2,estimated
+8ead5d465628eb0c816ef212,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,NH3,9e-06,57.2,estimated
+3a158a01cce5243677dd43c7,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,NMVOC,0.006283,65.2,estimated
+f841b512dfaf2cc5931d5802,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,NOx,0.070801,65.2,estimated
+272771d99822928ef2697b82,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,PM10,0.001946,100.1,estimated
+03143c5882defeb4f5543bc2,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,PM2.5,0.001851,100.1,estimated
+adc120f93cd98f1e216fdb84,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,SO2,0.001351,100.1,estimated
+5e79c88ea79d72fa5d957ec3,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,TSP,0.002054,100.1,estimated
+955474bf9984fc459440bd59,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,BC,5.8e-05,104.4,estimated
+72548150af289bc572e896a3,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,CO,0.000694,68.0,estimated
+83463a25e7102f4117315ebd,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,NH3,0.0,64.4,estimated
+bda43a49abb7b10a5f845adc,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,NMVOC,0.000301,71.6,estimated
+f5c8b18fb17a4544a6c97dcd,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,NOx,0.003397,71.6,estimated
+48d2b9aa41aceaeb81ebcd35,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,PM10,9.3e-05,104.4,estimated
+944284384b69c8f78114ac68,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,PM2.5,8.9e-05,104.4,estimated
+d0d787a15d5c644d079461cd,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,SO2,0.004538,42.4,estimated
+ceeb1d7f3ca1623de7170c44,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,TSP,9.9e-05,104.4,estimated
+08f7d5017462bde02eedb8bb,railways,CY2024,Railways,Diesel,BC,0.098566,104.4,estimated
+9cb6016f22665bb7e031797c,railways,CY2024,Railways,Diesel,CO,1.184337,61.2,estimated
+5c3b1f75353599fed8305f24,railways,CY2024,Railways,Diesel,NH3,0.000775,57.2,estimated
+f4d3134c7dcbb97884df2d1c,railways,CY2024,Railways,Diesel,NMVOC,0.514688,65.2,estimated
+512e2da45816ff68feb1df10,railways,CY2024,Railways,Diesel,NOx,5.79993,65.2,estimated
+4b68aeff07daec28370df297,railways,CY2024,Railways,Diesel,PM10,0.159387,100.1,estimated
+2d43c9ef33ae4a45cbeccc4c,railways,CY2024,Railways,Diesel,PM2.5,0.151639,100.1,estimated
+0a50e190f77e599227d5b186,railways,CY2024,Railways,Diesel,SO2,0.110686,100.1,estimated
+4a47815aed591883354a387b,railways,CY2024,Railways,Diesel,TSP,0.168242,100.1,estimated
+5ccc097f03c6d1b12896a864,railways,CY2024,Railways,Furnace oil,BC,1.3e-05,104.4,estimated
+9d3287a473604c46dcb7aa46,railways,CY2024,Railways,Furnace oil,CO,0.000161,68.0,estimated
+8cfb43ee087dd83e027b36ad,railways,CY2024,Railways,Furnace oil,NH3,0.0,64.4,estimated
+cb7f317522bf48ee9566d46e,railways,CY2024,Railways,Furnace oil,NMVOC,7e-05,71.6,estimated
+ab75c3c7cd87c26f0bedf00f,railways,CY2024,Railways,Furnace oil,NOx,0.00079,71.6,estimated
+ffc82d67ffcf0a7948d2976b,railways,CY2024,Railways,Furnace oil,PM10,2.2e-05,104.4,estimated
+a33c168ebd3031bc575f839d,railways,CY2024,Railways,Furnace oil,PM2.5,2.1e-05,104.4,estimated
+36f76301f124ab1774923e32,railways,CY2024,Railways,Furnace oil,SO2,0.001056,42.4,estimated
+1ea7dbc32569380e7e742046,railways,CY2024,Railways,Furnace oil,TSP,2.3e-05,104.4,estimated
+9c46a7c835cf2cee4418f6d0,residential,CY2024,Residential fuel combustion,Charcoal BC,BC,0.004,63.3,estimated
+2fd7c49cd6ed6d2a64bf5fdd,residential,CY2024,Residential fuel combustion,Charcoal CO,CO,1.725,50.0,estimated
+4d21d126f59a9a0490446075,residential,CY2024,Residential fuel combustion,Charcoal NH3,NH3,0.021,80.6,estimated
+4d0f6c3b800da6cee78fcf8b,residential,CY2024,Residential fuel combustion,Charcoal NMVOC,NMVOC,0.055,84.1,estimated
+c5c4cd037e70c7e8bd3026b5,residential,CY2024,Residential fuel combustion,Charcoal NOx,NOx,0.015,83.2,estimated
+905dbb707afdc6863a248e3d,residential,CY2024,Residential fuel combustion,Charcoal OC,OC,0.049,58.0,estimated
+453d77abe2bd1dd9b2dffd62,residential,CY2024,Residential fuel combustion,Charcoal PM2.5,PM2.5,0.156,93.9,estimated
+00312a29b1970e964007c140,residential,CY2024,Residential fuel combustion,Coal BC,BC,0.009,112.3,estimated
+65f9ea027c18e29dc2d92283,residential,CY2024,Residential fuel combustion,Coal CO,CO,1.569,58.7,estimated
+3a214809be850597ec75d1ed,residential,CY2024,Residential fuel combustion,Coal NH3,NH3,0.0,107.7,estimated
+979423ae5505108e2d11ef53,residential,CY2024,Residential fuel combustion,Coal NMVOC,NMVOC,0.165,72.9,estimated
+8ff3f02a7101832bf6ca50a6,residential,CY2024,Residential fuel combustion,Coal NOx,NOx,0.038,85.0,estimated
+a67e8a7548b00caa228002ed,residential,CY2024,Residential fuel combustion,Coal PM10,PM10,0.138,64.0,estimated
+c3656584dd9270e64ab32e33,residential,CY2024,Residential fuel combustion,Coal PM2.5,PM2.5,0.136,64.8,estimated
+1501fcb9d6cacc97756d0c02,residential,CY2024,Residential fuel combustion,Coal SO2,SO2,0.307,55.9,estimated
+bacd4a307d4ae21b81b1fa47,residential,CY2024,Residential fuel combustion,Coal TSP,TSP,0.151,71.3,estimated
+f5dcbadc0acc1a72f9bab91a,residential,CY2024,Residential fuel combustion,Crop residues BC,BC,4.635,84.9,estimated
+6dae7e49e4ce73016cd28489,residential,CY2024,Residential fuel combustion,Crop residues CO,CO,852.814,72.1,estimated
+01d96bb25cbd55a6acdf94bc,residential,CY2024,Residential fuel combustion,Crop residues NH3,NH3,12.051,84.9,estimated
+1b49452a56c79441d01d05a3,residential,CY2024,Residential fuel combustion,Crop residues NMVOC,NMVOC,64.888,84.9,estimated
+211f61aa3690c69d2739baaa,residential,CY2024,Residential fuel combustion,Crop residues NOx,NOx,23.174,78.1,estimated
+6437f7d06ac7c8e9bef9f408,residential,CY2024,Residential fuel combustion,Crop residues OC,OC,30.59,84.9,estimated
+19001f80e25823165a572b11,residential,CY2024,Residential fuel combustion,Crop residues PM2.5,PM2.5,70.45,78.1,estimated
+11af4b4fae7f8a4a9dcbe18f,residential,CY2024,Residential fuel combustion,Crop residues SO2,SO2,3.708,92.2,estimated
+93c9f313874443330f43758f,residential,CY2024,Residential fuel combustion,Dung cake BC,BC,4.907,83.6,estimated
+676bb08d00da35b7806d6943,residential,CY2024,Residential fuel combustion,Dung cake CO,CO,856.304,68.6,estimated
+42636a17622f51d50c8f2851,residential,CY2024,Residential fuel combustion,Dung cake NH3,NH3,12.796,77.3,estimated
+a95daa4b08195bfc9e9d73de,residential,CY2024,Residential fuel combustion,Dung cake NMVOC,NMVOC,138.548,86.0,estimated
+c590aa2210d1d20e6e326251,residential,CY2024,Residential fuel combustion,Dung cake NOx,NOx,41.276,67.9,estimated
+996586db3854f59819829a1b,residential,CY2024,Residential fuel combustion,Dung cake OC,OC,42.334,65.9,estimated
+141d4485b2eb3b0e49392db8,residential,CY2024,Residential fuel combustion,Dung cake PM2.5,PM2.5,79.858,64.0,estimated
+b37554054005bdb50d5bbc67,residential,CY2024,Residential fuel combustion,Dung cake SO2,SO2,7.408,69.3,estimated
+4cd1d3ca00dd8eba20c6c8c2,residential,CY2024,Residential fuel combustion,Firewood BC,BC,10.421,74.7,estimated
+a72383b48f2183a9027fabfe,residential,CY2024,Residential fuel combustion,Firewood CO,CO,1632.027,49.5,estimated
+ea219aa13e0a499bcd34d4d8,residential,CY2024,Residential fuel combustion,Firewood NH3,NH3,17.5,65.2,estimated
+db55bd76401758fd3a57a9e2,residential,CY2024,Residential fuel combustion,Firewood NMVOC,NMVOC,153.371,72.9,estimated
+abd30bafbeba511ae4d9bb16,residential,CY2024,Residential fuel combustion,Firewood NOx,NOx,75.309,62.7,estimated
+58f8f032e8001bbd7148178b,residential,CY2024,Residential fuel combustion,Firewood OC,OC,58.989,61.0,estimated
+89e389ecc18eec176c61ddd5,residential,CY2024,Residential fuel combustion,Firewood PM2.5,PM2.5,131.742,60.2,estimated
+9645699a9f965aaaad66dbdb,residential,CY2024,Residential fuel combustion,Firewood SO2,SO2,9.242,100.3,estimated
+b46c1cfd8f6819a2210acdab,residential,CY2024,Residential fuel combustion,Kerosene BC,BC,0.0,81.9,estimated
+e6c5a00e20038a4e71ec4edb,residential,CY2024,Residential fuel combustion,Kerosene CO,CO,0.061,44.7,estimated
+4eb79feac5f7a8bc6260eabe,residential,CY2024,Residential fuel combustion,Kerosene NMVOC,NMVOC,0.001,47.4,estimated
+6d13f85ef6932ea1445b97df,residential,CY2024,Residential fuel combustion,Kerosene NOx,NOx,0.055,44.7,estimated
+08caadb7159559bc15300091,residential,CY2024,Residential fuel combustion,Kerosene PM2.5,PM2.5,0.002,43.8,estimated
+1b548a0383d220699c8a0317,residential,CY2024,Residential fuel combustion,Kerosene SO2,SO2,0.076,102.0,estimated
+72a6b7e83e00747dc8f299a1,residential,CY2024,Residential fuel combustion,LPG BC,BC,0.002,87.7,estimated
+e0464851c72ea9df72a00742,residential,CY2024,Residential fuel combustion,LPG CO,CO,0.883,50.2,estimated
+3dee1e0f2810c13526d1f116,residential,CY2024,Residential fuel combustion,LPG NMVOC,NMVOC,0.065,43.8,estimated
+79c5c0313c1830d904f89164,residential,CY2024,Residential fuel combustion,LPG NOx,NOx,1.731,43.8,estimated
+b7a6f6e87e4304c39ee54b10,residential,CY2024,Residential fuel combustion,LPG PM2.5,PM2.5,0.041,46.5,estimated
+8a87dedceacaccbce95bc272,residential,CY2024,Residential fuel combustion,LPG SO2,SO2,0.01,38.6,estimated
+d06111f554e60dc2591d8a0e,residential,CY2024,Residential fuel combustion,Natural gas BC,BC,0.018,87.7,estimated
+b17eb2f455bf558ed01d6359,residential,CY2024,Residential fuel combustion,Natural gas CO,CO,7.398,47.1,estimated
+227a2911e81dbce08f491fa1,residential,CY2024,Residential fuel combustion,Natural gas NMVOC,NMVOC,0.541,40.3,estimated
+b3df57f1ed7f0459861eec1e,residential,CY2024,Residential fuel combustion,Natural gas NOx,NOx,14.512,40.3,estimated
+d650cdca6eeb9bbdf771521a,residential,CY2024,Residential fuel combustion,Natural gas PM2.5,PM2.5,0.341,43.2,estimated
+b8d77710f218b1c4cc2ee7f4,residential,CY2024,Residential fuel combustion,Natural gas SO2,SO2,0.085,34.5,estimated
+f527d2eb56a22f9e4960b61e,transport,CY2024,Road transport,Road transport 2W petrol evaporative,NMVOC,42.750409,34.8,Tier 1
+4f651c9c76037be18dd9ef81,transport,CY2024,Road transport,Road transport 2W petrol exhaust,BC,0.244783,641.8,Tier 1
+d2148de8d4003e63d407ce90,transport,CY2024,Road transport,Road transport 2W petrol exhaust,CO,1068.491050,121.4,Tier 1
+ba1c56a6600cef1667f8aa58,transport,CY2024,Road transport,Road transport 2W petrol exhaust,NH3,0.218166,75.0,Tier 1
+d240c10c50b81ad357407480,transport,CY2024,Road transport,Road transport 2W petrol exhaust,NMVOC,404.654770,173.1,Tier 1
+213b5b7a116d9b2beed8f065,transport,CY2024,Road transport,Road transport 2W petrol exhaust,NOx,31.546840,148.9,Tier 1
+1a1126620f4c4507ddacc3ff,transport,CY2024,Road transport,Road transport 2W petrol exhaust,PM2.5,2.225296,641.8,Tier 1
+8670cb7e35bb9f2094f13024,transport,CY2024,Road transport,Road transport 2W petrol exhaust,SO2,4.363325,102.6,Tier 1
+2cd91ca3ffc1e43d605e2518,transport,CY2024,Road transport,Road transport 2W petrol road_wear,PM10,0.576252,46.8,Tier 1
+1b63f89a4e3bee70551194ac,transport,CY2024,Road transport,Road transport 2W petrol road_wear,PM2.5,0.307334,46.2,Tier 1
+a23bd71e2c5c396e8aa5870d,transport,CY2024,Road transport,Road transport 2W petrol road_wear,TSP,1.152504,46.2,Tier 1
+bb4b78e182b1439e7f04d4d6,transport,CY2024,Road transport,Road transport 2W petrol tyre_brake_wear,PM10,1.229338,37.8,Tier 1
+b4d508582d5d6e4582395c62,transport,CY2024,Road transport,Road transport 2W petrol tyre_brake_wear,PM2.5,0.653086,35.8,Tier 1
+82fa95bb3bce46c296348d14,transport,CY2024,Road transport,Road transport 2W petrol tyre_brake_wear,TSP,1.594297,35.7,Tier 1
+28c4528f43538d063d3ec5d0,transport,CY2024,Road transport,Road transport 3W cng exhaust,CO,19.315005,111.0,Tier 1
+f608cbb9bd03dd25f9e10b7c,transport,CY2024,Road transport,Road transport 3W cng exhaust,NH3,0.338394,93.2,Tier 1
+09701373df3bcd3c93c8e03d,transport,CY2024,Road transport,Road transport 3W cng exhaust,NMVOC,3.128487,106.2,Tier 1
+90e9dc4999cdd2f20aae1be0,transport,CY2024,Road transport,Road transport 3W cng exhaust,NOx,1.818039,371.0,Tier 1
+e800c06554ceb81031391eb9,transport,CY2024,Road transport,Road transport 3W cng exhaust,PM2.5,0.009953,56.8,Tier 1
+78f6855b9a883235fa445ff8,transport,CY2024,Road transport,Road transport 3W cng road_wear,PM10,0.130968,46.0,Tier 1
+8e8acb6c21498e0cf6b38bcf,transport,CY2024,Road transport,Road transport 3W cng road_wear,PM2.5,0.071596,46.4,Tier 1
+2e1ae3790434f7fb7b94ded4,transport,CY2024,Road transport,Road transport 3W cng road_wear,TSP,0.261937,46.3,Tier 1
+c786c3f7da75e1bb2b639558,transport,CY2024,Road transport,Road transport 3W cng tyre_brake_wear,PM10,0.321309,68.1,Tier 1
+817611abcd59a4443b77a50a,transport,CY2024,Road transport,Road transport 3W cng tyre_brake_wear,PM2.5,0.162401,67.9,Tier 1
+430f9be7e23663b0be793ba6,transport,CY2024,Road transport,Road transport 3W cng tyre_brake_wear,TSP,0.399890,68.0,Tier 1
+f89250466c52e206dba5d317,transport,CY2024,Road transport,Road transport 3W petrol evaporative,NMVOC,0.686173,34.8,Tier 1
+94e823cae1789a714a95b9af,transport,CY2024,Road transport,Road transport 3W petrol exhaust,BC,0.029988,641.8,Tier 1
+ddc84dbde932d049e857dab1,transport,CY2024,Road transport,Road transport 3W petrol exhaust,CO,130.901125,121.4,Tier 1
+5d0e9292fb200446b430588c,transport,CY2024,Road transport,Road transport 3W petrol exhaust,NH3,0.026728,75.0,Tier 1
+4cdf7012d1caf7e253c66692,transport,CY2024,Road transport,Road transport 3W petrol exhaust,NMVOC,49.574364,173.1,Tier 1
+9dabf7f11f14c11c14b234c9,transport,CY2024,Road transport,Road transport 3W petrol exhaust,NOx,3.864812,148.9,Tier 1
+43c82826220c8a8803ad8f9a,transport,CY2024,Road transport,Road transport 3W petrol exhaust,PM2.5,0.272622,641.8,Tier 1
+7753ae52379e2c51fc8d917e,transport,CY2024,Road transport,Road transport 3W petrol exhaust,SO2,0.534552,102.6,Tier 1
+8a40b02bc1f81536d6e2680f,transport,CY2024,Road transport,Road transport 3W petrol road_wear,PM10,0.042862,46.8,Tier 1
+77e1431be0fd531274875c1c,transport,CY2024,Road transport,Road transport 3W petrol road_wear,PM2.5,0.022860,46.2,Tier 1
+78637eab43903e39f90e3484,transport,CY2024,Road transport,Road transport 3W petrol road_wear,TSP,0.085725,46.2,Tier 1
+8cb9f78380ac94a770a52c82,transport,CY2024,Road transport,Road transport 3W petrol tyre_brake_wear,PM10,0.091440,37.8,Tier 1
+695145bf394daf18cb927c40,transport,CY2024,Road transport,Road transport 3W petrol tyre_brake_wear,PM2.5,0.048577,35.8,Tier 1
+6de0dafc3a62e2cbff252ba2,transport,CY2024,Road transport,Road transport 3W petrol tyre_brake_wear,TSP,0.118586,35.7,Tier 1
+1a4465c8d61aebf6e7ee63bc,transport,CY2024,Road transport,Road transport 4W1 cng exhaust,CO,2.903063,111.0,Tier 1
+728215f2471626ad42a70315,transport,CY2024,Road transport,Road transport 4W1 cng exhaust,NH3,0.050861,93.2,Tier 1
+b8a3f6f72bf11b16b3e03d11,transport,CY2024,Road transport,Road transport 4W1 cng exhaust,NMVOC,0.470214,106.2,Tier 1
+bcb616956ebe3dc40b0557f8,transport,CY2024,Road transport,Road transport 4W1 cng exhaust,NOx,0.273253,371.0,Tier 1
+65f71cb5b314f1915d28f3ee,transport,CY2024,Road transport,Road transport 4W1 cng exhaust,PM2.5,0.001496,56.8,Tier 1
+2f4573a515e053b56749df30,transport,CY2024,Road transport,Road transport 4W1 cng road_wear,PM10,0.019685,46.0,Tier 1
+6f6a4aa9219eabbd3f31a301,transport,CY2024,Road transport,Road transport 4W1 cng road_wear,PM2.5,0.010761,46.4,Tier 1
+d4953dab9c349e1f2e3bc87e,transport,CY2024,Road transport,Road transport 4W1 cng road_wear,TSP,0.039369,46.3,Tier 1
+554a2d81175c40d083afaf28,transport,CY2024,Road transport,Road transport 4W1 cng tyre_brake_wear,PM10,0.048293,68.1,Tier 1
+a41c74dd401ae2a763d62bc6,transport,CY2024,Road transport,Road transport 4W1 cng tyre_brake_wear,PM2.5,0.024409,67.9,Tier 1
+c32c0aea49b348fc3c424734,transport,CY2024,Road transport,Road transport 4W1 cng tyre_brake_wear,TSP,0.060104,68.0,Tier 1
+3f2af023b833aa86c9d5a0ec,transport,CY2024,Road transport,Road transport 4W1 petrol evaporative,NMVOC,9.076850,40.2,Tier 1
+608e841b7cf6a5f1ca8cfab4,transport,CY2024,Road transport,Road transport 4W1 petrol exhaust,BC,0.002901,98.7,Tier 1
+384a9a858cc1ae16047e0fab,transport,CY2024,Road transport,Road transport 4W1 petrol exhaust,CO,58.456046,342.3,Tier 1
+072326e6fe44d550b6661512,transport,CY2024,Road transport,Road transport 4W1 petrol exhaust,NH3,1.015366,116.8,Tier 1
+a1b484644708f2d2189a4836,transport,CY2024,Road transport,Road transport 4W1 petrol exhaust,NMVOC,9.367956,1134.1,Tier 1
+2507f8bb1231c4d52577236a,transport,CY2024,Road transport,Road transport 4W1 petrol exhaust,NOx,4.810899,378.5,Tier 1
+b4d086c9cb7859d7d2d56613,transport,CY2024,Road transport,Road transport 4W1 petrol exhaust,PM2.5,0.024175,98.7,Tier 1
+856fca67b5aea781702cdad2,transport,CY2024,Road transport,Road transport 4W1 petrol exhaust,SO2,1.208769,102.6,Tier 1
+f776d0b31f2012156c835462,transport,CY2024,Road transport,Road transport 4W1 petrol road_wear,PM10,0.144354,46.0,Tier 1
+c911d8e6d01503b24f57f165,transport,CY2024,Road transport,Road transport 4W1 petrol road_wear,PM2.5,0.078914,46.4,Tier 1
+c68f37d4c8a41975eefef15b,transport,CY2024,Road transport,Road transport 4W1 petrol road_wear,TSP,0.288708,46.3,Tier 1
+e8a3436e70b5faa2202a4b63,transport,CY2024,Road transport,Road transport 4W1 petrol tyre_brake_wear,PM10,0.354149,68.1,Tier 1
+e9542c12637a1fc03e8e6a73,transport,CY2024,Road transport,Road transport 4W1 petrol tyre_brake_wear,PM2.5,0.178999,67.9,Tier 1
+33bd8b01cd25b04486af0786,transport,CY2024,Road transport,Road transport 4W1 petrol tyre_brake_wear,TSP,0.440761,68.0,Tier 1
+a20c775ab0bf4a65edc982e6,transport,CY2024,Road transport,Road transport 4W2 diesel exhaust,BC,0.005868,307.0,Tier 1
+a574ef2f5af89877d59064de,transport,CY2024,Road transport,Road transport 4W2 diesel exhaust,CO,0.031809,223.8,Tier 1
+8277b8cf9e17aa7c390d9586,transport,CY2024,Road transport,Road transport 4W2 diesel exhaust,NH3,0.000264,79.7,Tier 1
+7767516d95750434f5a3f166,transport,CY2024,Road transport,Road transport 4W2 diesel exhaust,NMVOC,0.006731,318.8,Tier 1
+0cda109be3508b05cb15d468,transport,CY2024,Road transport,Road transport 4W2 diesel exhaust,NOx,0.155348,40.3,Tier 1
+19c39d2c8ac4b3a725109dc7,transport,CY2024,Road transport,Road transport 4W2 diesel exhaust,PM2.5,0.010295,307.0,Tier 1
+a4dc77a75e293c412e5b39a8,transport,CY2024,Road transport,Road transport 4W2 diesel exhaust,SO2,0.013199,102.6,Tier 1
+8bdda13ab6361ebabd037f2f,transport,CY2024,Road transport,Road transport 4W2 diesel road_wear,PM10,0.000662,46.0,Tier 1
+e12e11c4b3489494ab4ad01d,transport,CY2024,Road transport,Road transport 4W2 diesel road_wear,PM2.5,0.000362,46.4,Tier 1
+939efb43f4a2e5e3567c06f2,transport,CY2024,Road transport,Road transport 4W2 diesel road_wear,TSP,0.001324,46.3,Tier 1
+eadf1563657c7e2505ce0c31,transport,CY2024,Road transport,Road transport 4W2 diesel tyre_brake_wear,PM10,0.001625,68.1,Tier 1
+e24a1270d87ecc47ce2ee509,transport,CY2024,Road transport,Road transport 4W2 diesel tyre_brake_wear,PM2.5,0.000821,67.9,Tier 1
+f6273774b2a7fc27452f4edf,transport,CY2024,Road transport,Road transport 4W2 diesel tyre_brake_wear,TSP,0.002022,68.0,Tier 1
+39879a1eebbd3a8e06149b6f,transport,CY2024,Road transport,Road transport 4W2 petrol evaporative,NMVOC,0.022420,40.2,Tier 1
+93fba2b7eba63ad9189058db,transport,CY2024,Road transport,Road transport 4W2 petrol exhaust,BC,0.000011,98.7,Tier 1
+f5ea8bbea189bfa6e596d366,transport,CY2024,Road transport,Road transport 4W2 petrol exhaust,CO,0.221187,342.3,Tier 1
+4497da5d07cea0b76912519d,transport,CY2024,Road transport,Road transport 4W2 petrol exhaust,NH3,0.003842,116.8,Tier 1
+838e6d3488bad45092510208,transport,CY2024,Road transport,Road transport 4W2 petrol exhaust,NMVOC,0.035447,1134.1,Tier 1
+63518e0621cb1510d7d333bd,transport,CY2024,Road transport,Road transport 4W2 petrol exhaust,NOx,0.018204,378.5,Tier 1
+f5ec33882f7d6b085c139536,transport,CY2024,Road transport,Road transport 4W2 petrol exhaust,PM2.5,0.000091,98.7,Tier 1
+d36e1590ee644262a693ba06,transport,CY2024,Road transport,Road transport 4W2 petrol exhaust,SO2,0.004574,102.6,Tier 1
+7dbc58d5cf032a7b4cf72102,transport,CY2024,Road transport,Road transport 4W2 petrol road_wear,PM10,0.000357,46.0,Tier 1
+5d256500b83e99cc9895868c,transport,CY2024,Road transport,Road transport 4W2 petrol road_wear,PM2.5,0.000195,46.4,Tier 1
+984fcccac1ae5bf5c94f2199,transport,CY2024,Road transport,Road transport 4W2 petrol road_wear,TSP,0.000713,46.3,Tier 1
+df135458ecb66eb73aaff188,transport,CY2024,Road transport,Road transport 4W2 petrol tyre_brake_wear,PM10,0.000875,68.1,Tier 1
+847a81daf97fef89e579672f,transport,CY2024,Road transport,Road transport 4W2 petrol tyre_brake_wear,PM2.5,0.000442,67.9,Tier 1
+e211500e4eb2f43b0a20b154,transport,CY2024,Road transport,Road transport 4W2 petrol tyre_brake_wear,TSP,0.001089,68.0,Tier 1
+9b0a675c557c732e2fea8e24,transport,CY2024,Road transport,Road transport 4WT cng exhaust,CO,1.849181,111.0,Tier 1
+a6d35258e59c29dc136b71a1,transport,CY2024,Road transport,Road transport 4WT cng exhaust,NH3,0.032397,93.2,Tier 1
+ede4d682f83f2974f7f678a3,transport,CY2024,Road transport,Road transport 4WT cng exhaust,NMVOC,0.299515,106.2,Tier 1
+7b3a301c1e7fb01c37589979,transport,CY2024,Road transport,Road transport 4WT cng exhaust,NOx,0.174056,371.0,Tier 1
+199e80d6d63bcf84d7985226,transport,CY2024,Road transport,Road transport 4WT cng exhaust,PM2.5,0.000953,56.8,Tier 1
+3c4cf5dd1112efebcafdbafa,transport,CY2024,Road transport,Road transport 4WT cng road_wear,PM10,0.012539,46.0,Tier 1
+8fbc375265258f84e95a609d,transport,CY2024,Road transport,Road transport 4WT cng road_wear,PM2.5,0.006854,46.4,Tier 1
+1d5088ba963f543892a6e609,transport,CY2024,Road transport,Road transport 4WT cng road_wear,TSP,0.025077,46.3,Tier 1
+12281305b0801df9a2baaab5,transport,CY2024,Road transport,Road transport 4WT cng tyre_brake_wear,PM10,0.030761,68.1,Tier 1
+90783af46cf4421a2e613a7f,transport,CY2024,Road transport,Road transport 4WT cng tyre_brake_wear,PM2.5,0.015548,67.9,Tier 1
+d3c7fc783ef5f2dc4c177a94,transport,CY2024,Road transport,Road transport 4WT cng tyre_brake_wear,TSP,0.038285,68.0,Tier 1
+cf0536b23001dcae5b3ed979,transport,CY2024,Road transport,Road transport 4WT petrol evaporative,NMVOC,0.144277,40.2,Tier 1
+e7585db169d4e118acaeb15d,transport,CY2024,Road transport,Road transport 4WT petrol exhaust,BC,0.000233,98.7,Tier 1
+a9f1cca9083a26a58af820cb,transport,CY2024,Road transport,Road transport 4WT petrol exhaust,CO,4.686935,342.3,Tier 1
+58daf7059ac7214745a9564f,transport,CY2024,Road transport,Road transport 4WT petrol exhaust,NH3,0.081411,116.8,Tier 1
+31dc400a6491bec41d44ac83,transport,CY2024,Road transport,Road transport 4WT petrol exhaust,NMVOC,0.751111,1134.1,Tier 1
+a7fb3052ed71ac25e9cf52b0,transport,CY2024,Road transport,Road transport 4WT petrol exhaust,NOx,0.385732,378.5,Tier 1
+bcbeb8277f3305071f5aeb4a,transport,CY2024,Road transport,Road transport 4WT petrol exhaust,PM2.5,0.001938,98.7,Tier 1
+9996c5b887aaade02b75699e,transport,CY2024,Road transport,Road transport 4WT petrol exhaust,SO2,0.096918,102.6,Tier 1
+d0e5f1afd0931c8aa03a92b1,transport,CY2024,Road transport,Road transport 4WT petrol road_wear,PM10,0.011574,46.0,Tier 1
+cc431fa5f71a325e04b079ab,transport,CY2024,Road transport,Road transport 4WT petrol road_wear,PM2.5,0.006327,46.4,Tier 1
+5ba316b7b88247735a6fc170,transport,CY2024,Road transport,Road transport 4WT petrol road_wear,TSP,0.023148,46.3,Tier 1
+b9b3e6ab1f08b71b78598800,transport,CY2024,Road transport,Road transport 4WT petrol tyre_brake_wear,PM10,0.028395,68.1,Tier 1
+f22f426ba2666b7650007c52,transport,CY2024,Road transport,Road transport 4WT petrol tyre_brake_wear,PM2.5,0.014352,67.9,Tier 1
+44a5ab82ddbd0be9988cfcbf,transport,CY2024,Road transport,Road transport 4WT petrol tyre_brake_wear,TSP,0.035340,68.0,Tier 1
+63f6837f14a98ab37835ec03,transport,CY2024,Road transport,Road transport BUS cng exhaust,CO,0.127989,164.5,Tier 1
+25a2c48f64bfd523cce3eb4c,transport,CY2024,Road transport,Road transport BUS cng exhaust,NMVOC,0.004502,120.9,Tier 1
+285b2ff1755ae93f3031d587,transport,CY2024,Road transport,Road transport BUS cng exhaust,NOx,0.549903,64.5,Tier 1
+21600bf0e8c16554851cf56a,transport,CY2024,Road transport,Road transport BUS cng exhaust,PM2.5,0.000643,50.3,Tier 1
+35a3389e3b69b84d621482d0,transport,CY2024,Road transport,Road transport BUS cng road_wear,PM10,0.064321,46.2,Tier 1
+e95a6f91bb82962b2a6c7030,transport,CY2024,Road transport,Road transport BUS cng road_wear,PM2.5,0.034700,46.2,Tier 1
+259e255c25feb1650a5cfad5,transport,CY2024,Road transport,Road transport BUS cng road_wear,TSP,0.128643,46.2,Tier 1
+bb1359edf4c131ef069ed627,transport,CY2024,Road transport,Road transport BUS cng tyre_brake_wear,PM10,0.099867,46.7,Tier 1
+18ea23893199d0ded30fbbf4,transport,CY2024,Road transport,Road transport BUS cng tyre_brake_wear,PM2.5,0.053488,49.2,Tier 1
+a2a7de83cf9e5cf1ea3fe5db,transport,CY2024,Road transport,Road transport BUS cng tyre_brake_wear,TSP,0.131520,61.3,Tier 1
+42bde18d1fc362b744ec31ad,transport,CY2024,Road transport,Road transport BUS diesel exhaust,BC,0.589262,222.8,Tier 1
+ad4ef4e11a251195e6c8aa3d,transport,CY2024,Road transport,Road transport BUS diesel exhaust,CO,12.331040,94.2,Tier 1
+447a37aa034309cd4471383f,transport,CY2024,Road transport,Road transport BUS diesel exhaust,NH3,0.040430,251.4,Tier 1
+ffbd52f60625558ffde4c604,transport,CY2024,Road transport,Road transport BUS diesel exhaust,NMVOC,1.819334,383.2,Tier 1
+54b891c4cbee441246fcab74,transport,CY2024,Road transport,Road transport BUS diesel exhaust,NOx,52.457457,75.7,Tier 1
+cdc027f377282679db19d3eb,transport,CY2024,Road transport,Road transport BUS diesel exhaust,PM2.5,1.111815,222.8,Tier 1
+d08207d21ddd1cdf151169c0,transport,CY2024,Road transport,Road transport BUS diesel exhaust,SO2,2.021482,102.6,Tier 1
+6ea55d952425549974587f38,transport,CY2024,Road transport,Road transport BUS diesel road_wear,PM10,0.156209,46.2,Tier 1
+2ea62b7ac3bf1eebd8982ad0,transport,CY2024,Road transport,Road transport BUS diesel road_wear,PM2.5,0.084271,46.2,Tier 1
+01d32c88c724c5ecf2c2dd06,transport,CY2024,Road transport,Road transport BUS diesel road_wear,TSP,0.312418,46.2,Tier 1
+eb2945dbc03bdac9a4b32579,transport,CY2024,Road transport,Road transport BUS diesel tyre_brake_wear,PM10,0.242535,46.7,Tier 1
+64374949f3d76940a6b12cce,transport,CY2024,Road transport,Road transport BUS diesel tyre_brake_wear,PM2.5,0.129900,49.2,Tier 1
+dfba8299cf2b206e47428f42,transport,CY2024,Road transport,Road transport BUS diesel tyre_brake_wear,TSP,0.319407,61.3,Tier 1
+2ba33ced174fee876be2529c,transport,CY2024,Road transport,Road transport BUS petrol evaporative,NMVOC,0.042969,48.7,Tier 1
+2acb2fe49c2f90d669cf75e5,transport,CY2024,Road transport,Road transport BUS petrol exhaust,BC,0.000055,77.3,Tier 1
+a5efd1bd07fb745f12c0ab3e,transport,CY2024,Road transport,Road transport BUS petrol exhaust,CO,6.520051,147.9,Tier 1
+5bccfe214e579db587435ebf,transport,CY2024,Road transport,Road transport BUS petrol exhaust,NH3,0.042295,133.9,Tier 1
+663fa0a69da5b8db8432da16,transport,CY2024,Road transport,Road transport BUS petrol exhaust,NMVOC,0.407572,360.3,Tier 1
+088e8706ba690b532cc80101,transport,CY2024,Road transport,Road transport BUS petrol exhaust,NOx,0.325728,313.0,Tier 1
+a09374fe38211f260da6abd3,transport,CY2024,Road transport,Road transport BUS petrol exhaust,PM2.5,0.001099,77.3,Tier 1
+0042b404a80f68604e690fd7,transport,CY2024,Road transport,Road transport BUS petrol exhaust,SO2,0.054929,102.6,Tier 1
+579d4fb5ddc48021621fa8b4,transport,CY2024,Road transport,Road transport BUS petrol road_wear,PM10,0.002539,45.9,Tier 1
+913919262e5e02926cfe1f76,transport,CY2024,Road transport,Road transport BUS petrol road_wear,PM2.5,0.001378,48.5,Tier 1
+642379086b0548e005fcaf4a,transport,CY2024,Road transport,Road transport BUS petrol road_wear,TSP,0.005078,47.2,Tier 1
+f419ba279e7ddc58c0ea6d8f,transport,CY2024,Road transport,Road transport BUS petrol tyre_brake_wear,PM10,0.006553,46.1,Tier 1
+9fca5cc70110591e9db6cce0,transport,CY2024,Road transport,Road transport BUS petrol tyre_brake_wear,PM2.5,0.003361,46.1,Tier 1
+4a7002d94b354b5b9dad291b,transport,CY2024,Road transport,Road transport BUS petrol tyre_brake_wear,TSP,0.008287,46.5,Tier 1
+8a7ec1ba8544eb96630ec2f5,transport,CY2024,Road transport,Road transport HDV cng exhaust,CO,0.008480,164.5,Tier 1
+586249dff2beb96fc71f9ea0,transport,CY2024,Road transport,Road transport HDV cng exhaust,NMVOC,0.000298,120.9,Tier 1
+0bb9042aa7ed09c1fe624820,transport,CY2024,Road transport,Road transport HDV cng exhaust,NOx,0.036436,64.5,Tier 1
+55117769dd1623d2fc7771e2,transport,CY2024,Road transport,Road transport HDV cng exhaust,PM2.5,0.000043,50.3,Tier 1
+631edd252a5b7e582221d96f,transport,CY2024,Road transport,Road transport HDV cng road_wear,PM10,0.004262,46.2,Tier 1
+f54fb97289ca28f1f85216f0,transport,CY2024,Road transport,Road transport HDV cng road_wear,PM2.5,0.002299,46.2,Tier 1
+3aa00309b2a50f4d6aa8b0c6,transport,CY2024,Road transport,Road transport HDV cng road_wear,TSP,0.008524,46.2,Tier 1
+00dbff09509fea4c5dc7bf5d,transport,CY2024,Road transport,Road transport HDV cng tyre_brake_wear,PM10,0.006617,46.7,Tier 1
+f89425d37e140d0dd1b95369,transport,CY2024,Road transport,Road transport HDV cng tyre_brake_wear,PM2.5,0.003544,49.2,Tier 1
+60c19ab3874a734f55ea6086,transport,CY2024,Road transport,Road transport HDV cng tyre_brake_wear,TSP,0.008714,61.3,Tier 1
+205b7822c85c187f1470a0e4,transport,CY2024,Road transport,Road transport HDV diesel exhaust,BC,0.693235,222.8,Tier 1
+d4dd62f4b2296d31575bdac1,transport,CY2024,Road transport,Road transport HDV diesel exhaust,CO,14.506812,94.2,Tier 1
+6552a384e3ef0715e457b4db,transport,CY2024,Road transport,Road transport HDV diesel exhaust,NH3,0.047563,251.4,Tier 1
+11e089c18511c29177d492c4,transport,CY2024,Road transport,Road transport HDV diesel exhaust,NMVOC,2.140349,383.2,Tier 1
+aee6b9bcdf7c8c40900d35e1,transport,CY2024,Road transport,Road transport HDV diesel exhaust,NOx,61.713403,75.7,Tier 1
+2dc0b2a8d61d88dc65ae7b51,transport,CY2024,Road transport,Road transport HDV diesel exhaust,PM2.5,1.307991,222.8,Tier 1
+83c9b88d17221110f37cc8fb,transport,CY2024,Road transport,Road transport HDV diesel exhaust,SO2,2.378166,102.6,Tier 1
+bce4edd89f1dc53758028ce8,transport,CY2024,Road transport,Road transport HDV diesel road_wear,PM10,0.208832,46.2,Tier 1
+e711e1ff34254ec85522a0ba,transport,CY2024,Road transport,Road transport HDV diesel road_wear,PM2.5,0.112659,46.2,Tier 1
+e107a4fea79f18ee4f4bab9e,transport,CY2024,Road transport,Road transport HDV diesel road_wear,TSP,0.417663,46.2,Tier 1
+a29f75ebdf0011ea564fc1b6,transport,CY2024,Road transport,Road transport HDV diesel tyre_brake_wear,PM10,0.324238,46.7,Tier 1
+8d78b5cc085b430246993ab8,transport,CY2024,Road transport,Road transport HDV diesel tyre_brake_wear,PM2.5,0.173660,49.2,Tier 1
+0ed32df815aeb6c92bffca2b,transport,CY2024,Road transport,Road transport HDV diesel tyre_brake_wear,TSP,0.427006,61.3,Tier 1
+a384ec96cf1d1b1b2ea3bdb4,transport,CY2024,Road transport,Road transport LDV diesel exhaust,BC,0.433540,197.3,Tier 1
+32f90bea82a41e54bcc56235,transport,CY2024,Road transport,Road transport LDV diesel exhaust,CO,4.400014,127.3,Tier 1
+0d314e5872c30ece0062e830,transport,CY2024,Road transport,Road transport LDV diesel exhaust,NH3,0.006461,103.6,Tier 1
+500e498749b2c28dc43e5ff2,transport,CY2024,Road transport,Road transport LDV diesel exhaust,NMVOC,0.794716,100.4,Tier 1
+d9ce46eb105493362768babc,transport,CY2024,Road transport,Road transport LDV diesel exhaust,NOx,8.709573,70.0,Tier 1
+1d881c08957f74cb65587d9e,transport,CY2024,Road transport,Road transport LDV diesel exhaust,PM2.5,0.788255,197.3,Tier 1
+e0c3815b907a7dcef08f7ce6,transport,CY2024,Road transport,Road transport LDV diesel exhaust,SO2,0.646111,102.6,Tier 1
+74ffbe84c859196f4d6e6bf1,transport,CY2024,Road transport,Road transport LDV diesel road_wear,PM10,0.041059,45.9,Tier 1
+8ec7c8222f6bbc1b6b43fd3f,transport,CY2024,Road transport,Road transport LDV diesel road_wear,PM2.5,0.022289,48.5,Tier 1
+1edefd1b4cda42d4260ab9d5,transport,CY2024,Road transport,Road transport LDV diesel road_wear,TSP,0.082118,47.2,Tier 1
+defd9ee085ef97052cafa5ab,transport,CY2024,Road transport,Road transport LDV diesel tyre_brake_wear,PM10,0.105972,46.1,Tier 1
+54a5019057bf1259a1d307bd,transport,CY2024,Road transport,Road transport LDV diesel tyre_brake_wear,PM2.5,0.054355,46.1,Tier 1
+d46b627c34fc0644cc31b1f5,transport,CY2024,Road transport,Road transport LDV diesel tyre_brake_wear,TSP,0.134009,46.5,Tier 1
+3d7b78a65d7de4f0d7a7a0ed,transport,CY2024,Road transport,Road transport LDV petrol evaporative,NMVOC,2.281909,48.7,Tier 1
+152eed7ce075cf6f62b2f80e,transport,CY2024,Road transport,Road transport LDV petrol exhaust,BC,0.000890,77.3,Tier 1
+1b93f259c96bd50231a36d3f,transport,CY2024,Road transport,Road transport LDV petrol exhaust,CO,105.644885,147.9,Tier 1
+ed9de2240a337835d01cee90,transport,CY2024,Road transport,Road transport LDV petrol exhaust,NH3,0.685312,133.9,Tier 1
+8a0e437f57f6111d79cbad43,transport,CY2024,Road transport,Road transport LDV petrol exhaust,NMVOC,6.603918,360.3,Tier 1
+4040b79f83e99c9e33eecd85,transport,CY2024,Road transport,Road transport LDV petrol exhaust,NOx,5.277794,313.0,Tier 1
+971530be497c502516a1a22e,transport,CY2024,Road transport,Road transport LDV petrol exhaust,PM2.5,0.017800,77.3,Tier 1
+55e2a55d857c83c104326882,transport,CY2024,Road transport,Road transport LDV petrol exhaust,SO2,0.890016,102.6,Tier 1
+e182424697f12fc8d5bba21c,transport,CY2024,Road transport,Road transport LDV petrol road_wear,PM10,0.095805,45.9,Tier 1
+dcb01f920aff323db68a19fd,transport,CY2024,Road transport,Road transport LDV petrol road_wear,PM2.5,0.052008,48.5,Tier 1
+bf475482db46a87b7955c6c7,transport,CY2024,Road transport,Road transport LDV petrol road_wear,TSP,0.191609,47.2,Tier 1
+c277fd46708dfae3f1af50e6,transport,CY2024,Road transport,Road transport LDV petrol tyre_brake_wear,PM10,0.247267,46.1,Tier 1
+0adadad1ba815fc219c6c5f9,transport,CY2024,Road transport,Road transport LDV petrol tyre_brake_wear,PM2.5,0.126827,46.1,Tier 1
+8cc9298a6ffef87f62488723,transport,CY2024,Road transport,Road transport LDV petrol tyre_brake_wear,TSP,0.312688,46.5,Tier 1
+f3d0a0232082b10a1f2cc86a,waste,CY2024,Open burning of waste,Open waste burning BC,BC,9.216,140.8,estimated
+9664aa9cb4709fdd5ad1f03c,waste,CY2024,Open burning of waste,Open waste burning CO,CO,434.451,89.0,estimated
+0a727f6813509f4ea102a663,waste,CY2024,Open burning of waste,Open waste burning HCl,HCl,18.431,98.2,estimated
+23c4a49734f9e1cb10653ca3,waste,CY2024,Open burning of waste,Open waste burning NH3,NH3,5.924,108.7,estimated
+a45a8625b6655b61b55b1e01,waste,CY2024,Open burning of waste,Open waste burning NMVOC,NMVOC,151.4,101.6,estimated
+244984b23012eec1035ca1fe,waste,CY2024,Open burning of waste,Open waste burning NOx,NOx,15.14,116.3,estimated
+3938714d99154b9df0d61f15,waste,CY2024,Open burning of waste,Open waste burning PM2.5,PM2.5,63.851,86.3,estimated
+0f0a1a2b834a80dc26cfa0ff,waste,CY2024,Open burning of waste,Open waste burning SO2,SO2,3.291,108.7,estimated

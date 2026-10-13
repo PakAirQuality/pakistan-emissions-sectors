@@ -1,0 +1,28 @@
+# AGRICULTURE'S FACTOR PARAMETERS, NAMED (rc18): the same values and widths the engine composes into each component's uncert_pct, read from data/emission_factors.csv and given registry-visible names.
+# No new numbers. Scope rows in data/parameter_scope.csv bind each group to the components that carry it; the ef: prefix types every group `persists` in the longitudinal ensemble.
+variable,input_type,central_value,uncert_pct_95,unit,distribution,correlation_group,applies_to,source,note
+enteric_ef_dairy_cattle,emission_factor,58,50.0,kg CH4/head/yr,lognormal,ef:enteric_dairy_cattle,Enteric fermentation / dairy_cattle,IPCC 2006 V4 Ch10 Table 10.11 Indian Subcontinent,
+enteric_ef_other_cattle,emission_factor,27,50.0,kg CH4/head/yr,lognormal,ef:enteric_other_cattle,Enteric fermentation / other_cattle,IPCC 2006 V4 Ch10 Table 10.11 Indian Subcontinent,
+enteric_ef_buffalo,emission_factor,55,40.0,kg CH4/head/yr,lognormal,ef:enteric_buffalo,Enteric fermentation / buffalo,IPCC 2006 V4 Ch10 Table 10.10,
+enteric_ef_sheep,emission_factor,5,50.0,kg CH4/head/yr,lognormal,ef:enteric_sheep,Enteric fermentation / sheep,IPCC 2006 V4 Ch10 Table 10.10 developing,
+enteric_ef_goats,emission_factor,5,50.0,kg CH4/head/yr,lognormal,ef:enteric_goats,Enteric fermentation / goats,IPCC 2006 V4 Ch10 Table 10.10 developing,
+enteric_ef_camels,emission_factor,46,50.0,kg CH4/head/yr,lognormal,ef:enteric_camels,Enteric fermentation / camels,IPCC 2006 V4 Ch10 Table 10.10,
+manure_ch4_ef_dairy_cattle,emission_factor,6,30.0,kg CH4/head/yr,lognormal,ef:manure_ch4_dairy_cattle,Manure management / dairy_cattle (CH4),IPCC 2006 V4 Ch10 Table 10.14 Indian Subcontinent,
+manure_ch4_ef_other_cattle,emission_factor,2,30.0,kg CH4/head/yr,lognormal,ef:manure_ch4_other_cattle,Manure management / other_cattle (CH4),IPCC 2006 V4 Ch10 Table 10.14,
+manure_ch4_ef_buffalo,emission_factor,5,30.0,kg CH4/head/yr,lognormal,ef:manure_ch4_buffalo,Manure management / buffalo (CH4),IPCC 2006 V4 Ch10 Table 10.14,
+manure_ch4_ef_sheep,emission_factor,0.20,30.0,kg CH4/head/yr,lognormal,ef:manure_ch4_sheep,Manure management / sheep (CH4),IPCC 2006 V4 Ch10 Table 10.15,
+manure_ch4_ef_goats,emission_factor,0.22,30.0,kg CH4/head/yr,lognormal,ef:manure_ch4_goats,Manure management / goats (CH4),IPCC 2006 V4 Ch10 Table 10.15,
+manure_ch4_ef_camels,emission_factor,1.6,30.0,kg CH4/head/yr,lognormal,ef:manure_ch4_camels,"Manure management / camels (CH4) - the engine applies the sheep row's 30, not this row's own 40 (manure.py:93)",IPCC 2006 V4 Ch10 Table 10.15,engine width 30.0 differs from the table row's 40 - the engine's composition is what the declared component variance holds (see module docstring)
+manure_ch4_ef_poultry,emission_factor,0.02,30.0,kg CH4/head/yr,lognormal,ef:manure_ch4_poultry,Manure management / poultry (CH4),IPCC 2006 V4 Ch10 Table 10.16,
+manure_n2o_ef3,emission_factor,0.005,100.0,kg N2O-N/kg N,lognormal,ef:manure_n2o_ef3,Manure management / Direct N2O - every system row carries 100,IPCC 2006 V4 Ch10 Table 10.21,
+soils_EF1_dry,emission_factor,0.005,110.0,kg N2O-N/kg N,lognormal,ef:soils_EF1_dry,"Managed soils direct N2O: synthetic upland, organic manure, crop residues - ONE parameter across all three",IPCC 2019 Refinement V4 Ch11 Table 11.1 dry climate (best-supported for irrigated arid cropland; derived largely from irrigated dry fields PMC9293294),
+soils_EF1FR_rice,emission_factor,0.004,120.0,kg N2O-N/kg N,lognormal,ef:soils_EF1FR_rice,Managed soils / Direct N2O - synthetic fertiliser (rice),IPCC 2019 Refinement V4 Ch11 Table 11.1 flooded rice,
+soils_EF3PRP_cattle,emission_factor,0.002,100.0,kg N2O-N/kg N,lognormal,ef:soils_EF3PRP_cattle,Managed soils / pasture deposition (cattle-type),IPCC 2019 Refinement V4 Ch11 Table 11.1 dry,
+soils_EF3PRP_sheepgoat,emission_factor,0.003,100.0,kg N2O-N/kg N,lognormal,ef:soils_EF3PRP_sheepgoat,Managed soils / pasture deposition (sheep/goat),IPCC 2019 Refinement V4 Ch11 Table 11.1,
+soils_EF4_dry,emission_factor,0.005,100.0,kg N2O-N/kg NH3-NOx,lognormal,ef:soils_EF4_dry,"EVERY volatilisation row: the four managed-soils indirect rows and manure management's indirect N2O, which harmonises on this same factor (manure.py)",IPCC 2019 Refinement V4 Ch11 Table 11.3 dry,
+soils_EF5,emission_factor,0.011,100.0,kg N2O-N/kg N,lognormal,ef:soils_EF5,every managed-soils leaching/runoff row,IPCC 2019 Refinement V4 Ch11 Table 11.3,
+rice_EFc,emission_factor,1.30,53.0,kg CH4/ha/day,lognormal,ef:rice_EFc,Rice cultivation / Continuously flooded,IPCC 2006 V4 Ch5 Table 5.11,
+rice_SFw_continuous,emission_factor,1.0,26.0,factor,lognormal,ef:rice_SFw_continuous,Rice cultivation / Continuously flooded (water-regime scaling),IPCC 2006 V4 Ch5 Table 5.12,
+burning_Gef_CH4,emission_factor,2.7,40.0,g/kg dry matter,lognormal,ef:burning_Gef_CH4,Field burning / Residue burning CH4,IPCC 2006 V4 Ch2 Table 2.5 agricultural residues,
+burning_Gef_N2O,emission_factor,0.07,50.0,g/kg dry matter,lognormal,ef:burning_Gef_N2O,Field burning / Residue burning N2O,IPCC 2006 V4 Ch2 Table 2.5 agricultural residues,
+liming_EF_urea,emission_factor,0.20,10.0,t C/t urea,lognormal,ef:liming_EF_urea,Urea application / Urea application CO2,IPCC 2006 V4 Ch11 Eq 11.13,

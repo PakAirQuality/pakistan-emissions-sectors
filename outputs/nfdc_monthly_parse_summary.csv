@@ -1,0 +1,4 @@
+# THE NFDC PARSE'S OWN ACCOUNTING, one row. window_years_from_elsewhere is a declared literal: the table stops at
+# FY2022-23 and the reference year comes from the Annex-7 file already held, which is a seam and not a silence.
+table_pages,pages_without_a_readable_year,fiscal_years_parsed,fiscal_years_in_window,window_years_from_this_table,window_years_from_elsewhere,month_rows,rows_quarantined,product_years,product_years_closing_group_control,pages_with_a_grand_total,pages_closing_the_grand_total,rotation_detectable_series,rotation_flat_series,series_total
+11,0,11,8,FY2015-16;FY2016-17;FY2017-18;FY2018-19;FY2019-20;FY2020-21;FY2021-22;FY2022-23,FY2023-24,3228,1,58,58,10,9,256,13,269

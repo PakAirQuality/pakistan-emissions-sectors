@@ -1,0 +1,13 @@
+ipcc_code_2006,mode,pollutant,year,value_Gg,present,source_file,note
+1.A.3.a,civil aviation,NOx,2022,0.712515,yes,EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.b_noRES,road (no resuspension),NOx,2022,235.516,yes,EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.b_RES,road resuspension (PM only),NOx,2022,,ABSENT,EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.c,railways,NOx,2022,13.656143,yes,EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.d,water-borne navigation,NOx,2022,,ABSENT,EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.e,other transportation,NOx,2022,0.000278,yes,EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.a,civil aviation,PM2.5,2022,0.012967,yes,EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.b_noRES,road (no resuspension),PM2.5,2022,5.571715,yes,EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.b_RES,road resuspension (PM only),PM2.5,2022,3.007259,yes,EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.c,railways,PM2.5,2022,4.324158,yes,EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.d,water-borne navigation,PM2.5,2022,,ABSENT,EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"
+1.A.3.e,other transportation,PM2.5,2022,6e-06,yes,EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx,"EDGAR v8.1 AP release (1970-2022), not the 2025 GHG booklet - structural evidence of category coverage, stated as such"

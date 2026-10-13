@@ -1,0 +1,15 @@
+result_row_id,pollutant,kind,contained_in,core,note
+8b9dfeee02d666a46f260c61,BC,particulate,PM2.5,core7,"black carbon, a component of PM2.5"
+f992e3f5c21bfad911a540d9,CO,gas,,core7,carbon monoxide
+0b4ac9378360bced4b2ae19f,HC,gas,,supplemental,unspeciated hydrocarbons (aviation EEDB label)
+57b7144857a30a55a561fbfd,HCl,gas,,supplemental,hydrogen chloride (open waste burning)
+2fd3e2ca5f915f10c5020dd0,NH3,gas,,core7,ammonia
+60a0e0e1e077c18df253c333,NMVOC,gas,,core7,non-methane volatile organic compounds
+b2f33eccf30d9a8e1860d94d,NOx,gas,,core7,nitrogen oxides as NO2
+f9111694eed9b343fa54fb9a,OC,particulate,PM2.5,supplemental,"organic carbon, a component of PM2.5"
+ff22b8a3161270c9f5fecf8f,PM,particulate,TSP,supplemental,"AP-42 filterable PM (power); a stratum, not a species"
+7faa302c12540e0d0f6bc65f,PM10,particulate,TSP,supplemental,particulate matter under 10 um
+95069f653f07af68ca4392d1,PM2.5,particulate,PM10,core7,particulate matter under 2.5 um
+3f83fb501ae0063537f931c5,SO2,gas,,core7,sulfur dioxide
+40284d4e7061fe632612ffa5,TSP,particulate,,supplemental,total suspended particulate
+9f74f6c68b3b812a1ea6d578,VOC,gas,,supplemental,AP-42's VOC label (power); not harmonised with NMVOC

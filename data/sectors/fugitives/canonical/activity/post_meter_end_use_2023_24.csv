@@ -1,0 +1,11 @@
+Fiscal year (ending year),End use,Throughput mmcfd,Include in IPCC post meter,Annual million m3,Source,Source reference,Note,Record ID,Source row
+2024,Residential,821,no,8485.5678,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Covered separately by the appliance-count fallback; not multiplied by the industrial/power factor.,e6b62d9fc0cede9f595768fe,1
+2024,Commercial,45,yes,465.1042,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,IPCC Table 4.2.4k activity definition includes non-residential and commercial gas consumed.,75de6f2792de493125652c95,2
+2024,General industry,291,yes,3007.6739,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Transferred Tier-1 post-meter factor; no Pakistan-specific measurement.,0fa2c99d90a906eae553e8cd,3
+2024,Fertilizer,756,yes,7813.7507,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,"Industrial use. One of the six classes whose sum is the registered base. Since rc67 the fugitives engine withholds the chemical feedstock (83.5 per cent of this row, NFDC Annex-28) from that base and charges the factor on the process fuel only; see fertilizer_gas_class.csv.",f9b444db79296536e7f0d0b1,4
+2024,Captive power,287,yes,2966.3313,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Power generation at industrial premises.,b2a0d838129fd3d542de8b7c,5
+2024,Cement,0.1,yes,1.0336,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Industrial use; immaterial in this year.,6dd81d8e99ae3a554be1ecd0,6
+2024,Power,1060.13,yes,10957.1316,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Power stations.,067b7afff482400835ffb1df,7
+2024,CNG,62,no,640.8102,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Natural-gas vehicles require a vehicle-count factor and remain NE.,b77fb612eafb8a1ad2a13d28,8
+2024,Other and independent systems,113,no,1167.9283,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Excluded because the public aggregate does not establish the eligible end use.,4db78852e6519fdf765a4818,9
+2024,Total categorized,3437.13,no,35524.9693,OGRA State of the Regulated Petroleum Industry 2023-24,Table 3.31,Control total; rounding residual is retained.,7057b899e6565b76066f3e29,10

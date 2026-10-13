@@ -1,0 +1,16 @@
+{
+ "expect": [],
+ "expect_error": "grain_unavailable",
+ "expect_receipt": "",
+ "function": "query_emissions",
+ "golden_id": "refuse_adm2_monthly_history",
+ "request": {
+  "geography_level": "adm2",
+  "months": [
+   "201807"
+  ],
+  "periods": [
+   "FY2018-19"
+  ]
+ }
+}

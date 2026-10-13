@@ -1,0 +1,31 @@
+category,subitem,gas,fossil,emissions_Gg,co2e_Mt_AR5,co2e_Mt_AR6,uncert_pct
+Industrial fuel combustion (1A2),Cement gas CO2,CO2,False,1.925,0.00192,0.00192,15.3
+Industrial fuel combustion (1A2),Cement gas CH4,CH4,True,0.0,0.0,0.0,150.7
+Industrial fuel combustion (1A2),Cement gas N2O,N2O,False,0.0,0.0,0.0,150.7
+Industrial fuel combustion (1A2),General Industry gas CO2,CO2,False,5601.653,5.60165,5.60165,15.3
+Industrial fuel combustion (1A2),General Industry gas CH4,CH4,True,0.0999,0.003,0.00298,150.7
+Industrial fuel combustion (1A2),General Industry gas N2O,N2O,False,0.01,0.00265,0.00273,150.7
+Industrial fuel combustion (1A2),Industrial furnace oil CO2,CO2,False,2007.574,2.00757,2.00757,10.4
+Industrial fuel combustion (1A2),Industrial furnace oil CH4,CH4,True,0.0778,0.00233,0.00232,150.3
+Industrial fuel combustion (1A2),Industrial furnace oil N2O,N2O,False,0.0156,0.00412,0.00425,150.3
+Industrial fuel combustion (1A2),Industrial HOBC CO2,CO2,False,2.9441,0.00294,0.00294,10.8
+Industrial fuel combustion (1A2),Industrial HOBC CH4,CH4,True,0.0001,0.0,0.0,150.3
+Industrial fuel combustion (1A2),Industrial HOBC N2O,N2O,False,0.0,1e-05,1e-05,150.3
+Industrial fuel combustion (1A2),Industrial diesel CO2,CO2,False,1275.7945,1.27579,1.27579,10.2
+Industrial fuel combustion (1A2),Industrial diesel CH4,CH4,True,0.0517,0.00155,0.00154,150.3
+Industrial fuel combustion (1A2),Industrial diesel N2O,N2O,False,0.0103,0.00274,0.00282,150.3
+Industrial fuel combustion (1A2),Industrial kerosene CO2,CO2,False,21.9595,0.02196,0.02196,10.2
+Industrial fuel combustion (1A2),Industrial kerosene CH4,CH4,True,0.0009,3e-05,3e-05,150.3
+Industrial fuel combustion (1A2),Industrial kerosene N2O,N2O,False,0.0002,5e-05,5e-05,150.3
+Industrial fuel combustion (1A2),Industrial light diesel oil CO2,CO2,False,5.3211,0.00532,0.00532,10.2
+Industrial fuel combustion (1A2),Industrial light diesel oil CH4,CH4,True,0.0002,1e-05,1e-05,150.3
+Industrial fuel combustion (1A2),Industrial light diesel oil N2O,N2O,False,0.0,1e-05,1e-05,150.3
+Industrial fuel combustion (1A2),Industrial gasoline CO2,CO2,False,75.8195,0.07582,0.07582,10.8
+Industrial fuel combustion (1A2),Industrial gasoline CH4,CH4,True,0.0033,0.0001,0.0001,150.3
+Industrial fuel combustion (1A2),Industrial gasoline N2O,N2O,False,0.0007,0.00017,0.00018,150.3
+Industrial fuel combustion (1A2),Brick-kiln coal CO2,CO2,False,2755.5277,2.75553,2.75553,37.3
+Industrial fuel combustion (1A2),Brick-kiln coal CH4,CH4,True,0.2913,0.00874,0.00868,154.4
+Industrial fuel combustion (1A2),Brick-kiln coal N2O,N2O,False,0.0437,0.01158,0.01193,154.4
+Industrial fuel combustion (1A2),Cement-sector coal CO2,CO2,False,10717.0259,10.71703,10.71703,37.3
+Industrial fuel combustion (1A2),Cement-sector coal CH4,CH4,True,1.1329,0.03399,0.03376,154.4
+Industrial fuel combustion (1A2),Cement-sector coal N2O,N2O,False,0.1699,0.04503,0.04639,154.4

@@ -1,0 +1,150 @@
+"""rc39 A5: the agriculture reference year, pinned against an EXTERNAL control.
+
+An external audit of the rc38 capsule supplied expected values for every agriculture category
+after four corrections: the reference herd re-based to the census's exact enumeration (A1), the
+fertiliser composition re-weighted onto the fiscal year's own product mix (A2), urea taken from
+NFDC's printed offtake instead of reconstructed (A3), and 3.G split from 3.H (A4).
+
+Those values were NOT used as inputs anywhere. Each pass changed an input or a method and the
+engine produced what it produced; this module compares the result to the audit afterwards. All
+six categories and the total land on the expected figures to six decimal places.
+
+WHY THIS IS WORTH A TEST OF ITS OWN. The per-pass tests each check one mechanism, and the pins
+in test_national_configurations check the national total - but nothing held the SECTOR to a
+figure computed outside this repository. That is the only kind of check that can catch a set of
+changes which are each internally consistent and collectively wrong: four passes that agree
+with each other will pass every test that only asks whether they agree with each other.
+
+The values are therefore deliberately hard-coded here rather than read from an output. This is
+the one place in the suite where that is the right thing to do: reading them from the engine
+would make the test compare the engine to itself, which is what the rest of the suite already
+does. If a later pass moves one of these, it is a re-base and must be named as one - the same
+rule the pins live under.
+"""
+
+from pkinv.assets import asset_path
+import collections
+import csv
+import os
+import unittest
+
+from _support import OUTPUTS, read_rows
+
+# The external audit's expected values, FY2023-24, Mt CO2e on AR5.
+#
+# THESE KEYS ARE THE AUDITOR'S CODES, AND THEY ARE UNFCCC CRT. They are left exactly as the
+# audit supplied them, because the point of this file is a comparison against a figure computed
+# outside the repository; rewriting the control's own codes to match ours would make it one
+# step less external. What changed on 2026-10-06 is OUR side: the inventory adopted IPCC 2006
+# as canonical, under which the auditor's 3.B splits into 3.A.2 and 3.C.6 and its 3.D into
+# 3.C.4 and 3.C.5. The product is therefore folded back to the control's scheme through
+# data/shared/lookups/category_crosswalk.csv before comparing - which is what a crosswalk is
+# for, and which exercises it in the CRT direction. NO VALUE MOVED: the two split pairs sum to
+# the auditor's figures to six decimal places, and the test below asserts that.
+CONTROL = {
+    "3.A": ("Enteric fermentation", 151.657650),
+    "3.B": ("Manure management", 21.228487),
+    "3.C": ("Rice cultivation", 16.548350),
+    "3.D": ("Managed soils", 28.525954),
+    "3.F": ("Field burning of residues", 0.669549),
+    "3.H": ("Urea application", 4.824481),
+}
+CONTROL_TOTAL = 223.454471
+
+
+def _agriculture_by_code():
+    agg = collections.defaultdict(float)
+    for row in read_rows(os.path.join(OUTPUTS, "pakemis_atomic_annual.csv")):
+        if row["period_id"] != "FY2023-24" or row["sector_id"] != "agriculture":
+            continue
+        value = row["co2e_Mt_AR5"]
+        if value in ("", None):
+            continue
+        agg[row["ipcc_code"]] += float(value)
+    return dict(agg)
+
+
+def _folded_to_control_scheme():
+    """Our IPCC 2006 codes, folded back to the auditor's CRT codes via the crosswalk."""
+    import sys
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(
+        os.path.abspath(__file__))), "src"))
+    from pkinv.report import category_crosswalk
+    crt = {}
+    for rule in category_crosswalk.rules():
+        if rule["ipcc2006_code"] and rule["crt_code"]:
+            crt.setdefault(rule["ipcc2006_code"], rule["crt_code"])
+    folded = collections.defaultdict(float)
+    for code, value in _agriculture_by_code().items():
+        if code not in crt:
+            raise AssertionError(
+                "%s has no CRT counterpart in the crosswalk, so the external control cannot "
+                "be compared against it" % code)
+        folded[crt[code]] += value
+    return dict(folded)
+
+
+class TestTheSectorReproducesTheExternalControl(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.by_code = _folded_to_control_scheme()
+        cls.native = _agriculture_by_code()
+
+    def test_the_sweep_found_the_sector(self):
+        """A closure test over an empty read passes; this is what stops that."""
+        self.assertTrue(self.by_code, "no agriculture atoms in the annual product")
+
+    def test_every_category_matches_the_audit(self):
+        for code, (name, expected) in sorted(CONTROL.items()):
+            self.assertIn(code, self.by_code, "%s (%s) is absent from the product" % (code, name))
+            self.assertAlmostEqual(
+                self.by_code[code], expected, places=6,
+                msg="%s %s: %.6f against the audit's %.6f. If this move is intended it is a "
+                    "RE-BASE and belongs in a commit that says so."
+                    % (code, name, self.by_code[code], expected))
+
+    def test_the_sector_total_matches_the_audit(self):
+        self.assertAlmostEqual(sum(self.by_code.values()), CONTROL_TOTAL, places=6)
+
+    def test_the_sector_carries_no_category_the_control_does_not_name(self):
+        """A new agriculture category would pass the six checks above and still break the
+        total, so the vocabulary is closed here too. 3.G is absent BY DESIGN - it is Not
+        Estimated and publishes no row (rc39 A4)."""
+        self.assertEqual(sorted(self.by_code), sorted(CONTROL))
+        self.assertNotIn("3.G", self.by_code)
+
+    def test_the_split_categories_sum_to_the_controls_own(self):
+        """The migration re-coded; it must not have re-estimated. The auditor reported one
+        figure where IPCC 2006 reports two, so the pair has to add back to it exactly."""
+        for crt_code, parts in (("3.B", ("3.A.2", "3.C.6")), ("3.D", ("3.C.4", "3.C.5"))):
+            for part in parts:
+                self.assertIn(part, self.native,
+                              "%s is absent: the split did not reach the product" % part)
+            self.assertAlmostEqual(
+                sum(self.native[p] for p in parts), CONTROL[crt_code][1], places=5,
+                msg="%s splits into %s, which must sum to the audit's %.6f"
+                    % (crt_code, " + ".join(parts), CONTROL[crt_code][1]))
+
+
+class TestTheControlIsNotSelfReferential(unittest.TestCase):
+    """The check that this file is worth having: the numbers above must not be reachable
+    from the engine, or the comparison is the engine against itself."""
+
+    def test_the_expected_values_appear_in_no_input(self):
+        import subprocess
+        from pkinv.paths import ROOT
+        needles = ["151.657650", "21.228487", "16.548350",
+                   "28.525954", "0.669549", "4.824481", "223.454471"]
+        hits = []
+        for needle in needles:
+            out = subprocess.run(
+                ["grep", "-rl", "--include=*.csv", "--include=*.json", needle,
+                 asset_path(ROOT, "data")], capture_output=True, text=True)
+            if out.stdout.strip():
+                hits.append((needle, out.stdout.split()))
+        self.assertFalse(hits, "an audit control value is present in the INPUTS, so the "
+                               "engine could be reproducing it by construction: %s" % hits)
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,49 @@
+check,fiscal_year,product,sector_row,panel_value,printed_value,abs_diff,rel_pct,independent,verdict,note
+annual vs monthly panel,2021,MS,Road,8959374.0,8976577.0,-17203.0,-0.1916,yes,CONSISTENT,12 direct monthly editions summed
+annual vs monthly panel,2021,HOBC,Road,150583.0,150986.0,-403.0,-0.2669,yes,CONSISTENT,12 direct monthly editions summed
+annual vs monthly panel,2021,HSD,Road,7872354.0,7886579.0,-14225.0,-0.1804,yes,CONSISTENT,12 direct monthly editions summed
+annual vs monthly panel,2022,MS,Road,8091732.0,7439862.0,651870.0,8.7619,no,DISCREPANT,"cumulative panel: the final year-to-date edition IS the annual figure restated, so this row is an identity, not evidence"
+annual vs monthly panel,2022,HOBC,Road,93154.0,86017.0,7137.0,8.2972,no,DISCREPANT,"cumulative panel: the final year-to-date edition IS the annual figure restated, so this row is an identity, not evidence"
+annual vs monthly panel,2022,HSD,Road,6119149.0,5636700.0,482449.0,8.5591,no,DISCREPANT,"cumulative panel: the final year-to-date edition IS the annual figure restated, so this row is an identity, not evidence"
+annual vs monthly panel,2023,MS,Road,7803973.0,7104484.0,699489.0,9.8457,no,DISCREPANT,"cumulative panel: the final year-to-date edition IS the annual figure restated, so this row is an identity, not evidence"
+annual vs monthly panel,2023,HOBC,Road,116074.0,104926.0,11148.0,10.6246,no,DISCREPANT,"cumulative panel: the final year-to-date edition IS the annual figure restated, so this row is an identity, not evidence"
+annual vs monthly panel,2023,HSD,Road,6049128.0,5551442.0,497686.0,8.965,no,DISCREPANT,"cumulative panel: the final year-to-date edition IS the annual figure restated, so this row is an identity, not evidence"
+annual vs monthly panel,2024,MS,Road,7562312.0,7562311.0,1.0,0.0,yes,CONSISTENT,12 direct monthly editions summed
+annual vs monthly panel,2024,HOBC,Road,285948.0,285948.0,0.0,0.0,yes,CONSISTENT,12 direct monthly editions summed
+annual vs monthly panel,2024,HSD,Road,6224248.0,6224248.0,0.0,0.0,yes,CONSISTENT,12 direct monthly editions summed
+classes vs printed total,2015,MS,TOTAL_INTERNAL,5759763.0,5759763.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2015,HOBC,TOTAL_INTERNAL,40588.0,40588.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2015,HSD,TOTAL_INTERNAL,7745864.0,7745864.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2016,MS,TOTAL_INTERNAL,6646965.0,6646965.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2016,HOBC,TOTAL_INTERNAL,90595.0,90595.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2016,HSD,TOTAL_INTERNAL,8484280.0,8484280.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2017,MS,TOTAL_INTERNAL,7386362.0,7386362.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2017,HOBC,TOTAL_INTERNAL,124918.0,124918.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2017,HSD,TOTAL_INTERNAL,8516476.0,9038298.0,-521822.0,-5.7735,yes,NON-ADDITIVE,"the edition's own customer classes do not sum to the total it prints; this is a source inconsistency, carried rather than corrected"
+classes vs printed total,2018,MS,TOTAL_INTERNAL,7599364.0,7599364.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2018,HOBC,TOTAL_INTERNAL,86621.0,86621.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2018,HSD,TOTAL_INTERNAL,7354409.0,7354409.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2019,MS,TOTAL_INTERNAL,7454021.0,7454021.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2019,HOBC,TOTAL_INTERNAL,56343.0,56343.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2019,HSD,TOTAL_INTERNAL,6626726.0,6626725.0,1.0,0.0,yes,ADDITIVE,
+classes vs printed total,2020,MS,TOTAL_INTERNAL,8351259.0,8351259.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2020,HOBC,TOTAL_INTERNAL,164000.0,164000.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2020,HSD,TOTAL_INTERNAL,7791067.0,7791066.0,1.0,0.0,yes,ADDITIVE,
+classes vs printed total,2021,MS,TOTAL_INTERNAL,9006833.0,9006833.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2021,HOBC,TOTAL_INTERNAL,152101.0,152101.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2021,HSD,TOTAL_INTERNAL,8915873.0,8915873.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2022,MS,TOTAL_INTERNAL,7477152.0,7477152.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2022,HOBC,TOTAL_INTERNAL,87193.0,87193.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2022,HSD,TOTAL_INTERNAL,6363390.0,6363390.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2023,MS,TOTAL_INTERNAL,7145004.0,7145004.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2023,HOBC,TOTAL_INTERNAL,106970.0,106970.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2023,HSD,TOTAL_INTERNAL,6234221.0,6234221.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2024,MS,TOTAL_INTERNAL,7603245.0,7603246.0,-1.0,-0.0,yes,ADDITIVE,
+classes vs printed total,2024,HOBC,TOTAL_INTERNAL,288971.0,288971.0,0.0,0.0,yes,ADDITIVE,
+classes vs printed total,2024,HSD,TOTAL_INTERNAL,6858461.0,6858461.0,0.0,0.0,yes,ADDITIVE,
+provincial additivity,all monthly editions,all,all,1677,1688,-11,-0.6517,yes,REVIEW,"1677 of 1688 non-zero (month, product, sector) cells reconcile to < 0.01%; KARACHI excluded as a sub-area of SINDH"
+provincial additivity (exception),2025-02,HSD,Total Power,148.0,1055.0,-907.0,-85.9716,yes,DISCREPANT,"the largest residuals in the panel: Power and Industry rows of a few hundred tonnes. No Road row fails, which is what matters here - the Road rows are the controls"
+provincial additivity (exception),2022-12,LDO,TOTAL_INTERNAL,1118.0,1153.0,-35.0,-3.0356,yes,DISCREPANT,"the largest residuals in the panel: Power and Industry rows of a few hundred tonnes. No Road row fails, which is what matters here - the Road rows are the controls"
+provincial additivity (exception),2022-12,HSD,Total Industry,42027.0,43059.0,-1032.0,-2.3967,yes,DISCREPANT,"the largest residuals in the panel: Power and Industry rows of a few hundred tonnes. No Road row fails, which is what matters here - the Road rows are the controls"
+external cross-source (rail),FY2023-24,HSD,RAILWAYS,112036.9,107932.0,4104.9,3.8032,yes,CONSISTENT,"Year Book metered purchases against OCAC's Railways customer-class row, both FY2023-24 - unrelated reporting chains on the same twelve months. Year-matched without contrivance since the harmonisation round; it previously required the Year Book's own historical row to meet a transport sector reporting FY2021-22"
+external cross-source (rail),FY2021-22 offset,HSD,RAILWAYS,120062.7,107932.0,12130.7,11.2392,yes,CONSISTENT,"the same OCAC row against the Year Book two years earlier - retained to show what a two-year offset costs, not as a comparison"

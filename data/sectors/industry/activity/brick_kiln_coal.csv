@@ -1,0 +1,24 @@
+# The national coal-to-brick-kiln series, formalized at rc13 from the transcription in
+# Code_files_punjab_industry/build_raw_workbook.py (Table 4.4 sheet). The PRIMARY source
+# is the Pakistan Energy Yearbook's Table 4.4 "Consumption of Coal by Sector (National)",
+# three editions combined into one series: 2018 edition (FY2013..FY2018), 2021 edition
+# (FY2016..FY2021), 2022 edition (FY2018..FY2023). THE YEARBOOK'S OWN CAVEAT TRAVELS WITH
+# EVERY ROW: sectoral coal is mostly not directly metered or reported (Power excepted) -
+# the Brick-Kiln row is the Yearbook's OWN ESTIMATE, per its footnotes. The PEY PDFs
+# themselves are not held (gap pey-coal-table); the archived witness documenting the
+# tables and extraction method is sources/Papers/Punjab Industry.pdf (section 3.1).
+# The series is a SCREENING control at a declared prior vintage - FY2023-24 is not
+# published - and it swings threefold across the decade (2.7 to 8.7 Mt), which is the
+# leading uncertainty on anything built from it.
+fiscal_year,coal_tonnes,coal_toe,edition_provenance,source,note
+2013,2696022,1206200,PEY 2018 edition,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2014,2727587,1220322,PEY 2018 edition,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2015,3010381,1346844,PEY 2018 edition,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2016,3337102,1493019,PEY 2018 edition,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2017,2855326,1277473,PEY 2018/2021 editions,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2018,3941689,1763512,PEY 2018/2021/2022 editions,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2019,5391194,2412020,PEY 2021/2022 editions,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2020,8183755,3661412,PEY 2021/2022 editions,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2021,8678056,3882562,PEY 2021/2022 editions,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2022,5642989,2524673,PEY 2022 edition,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row",
+2023,2990790,1338080,PEY 2022 edition,"Pakistan Energy Yearbook Table 4.4, Consumption of Coal by Sector (National), Brick-Kiln Industry row","FY2022-23, the latest published year; the screening anchor at rc13"

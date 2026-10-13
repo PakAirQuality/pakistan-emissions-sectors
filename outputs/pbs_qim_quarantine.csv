@@ -1,0 +1,11 @@
+# Rows whose twelve months did not sum to the annual total the SAME ROW prints. Kept with raw text, never repaired.
+fiscal_year_start,item_no,item,months_sum,months_mean,annual_printed,raw
+2015,16,Liquors,948.0,79.0,954.0,16 Liquors 000 L 0.00 79 79 79 79 79 79 79 79 79 79 79 79 954
+2016,16,Liquors,948.0,79.0,954.0,16 Liquors 000 L 0.00 79 79 79 79 79 79 79 79 79 79 79 79 954
+2017,16,Liquors,948.0,79.0,954.0,16 Liquors 000 L 0.00 79 79 79 79 79 79 79 79 79 79 79 79 954
+2018,16,Liquors,948.0,79.0,954.0,16 Liquors 000 L 0.00 79 79 79 79 79 79 79 79 79 79 79 79 954
+2019,16,Liquors,948.0,79.0,954.0,16 Liquors 000 L 0.00 79 79 79 79 79 79 79 79 79 79 79 79 954
+2020,16,Liquors,950.5,79.208,953.7,16 Liquors 000 L 0.00 79 79 79 79 79 79 79 79. 5 79. 5 79. 5 79. 5 79. 5 953. 7
+2021,16,Liquors,948.0,79.0,954.0,16 Liquors 000 L 79 79 79 79 79 79 79 79 79 79 79 79 954
+2021,80,Motor tyres,7903.0,658.583,7906.0,"80 Motor tyres `000' Nos. 646 672 701 660 697 605 640 648 669 649 618 698 7,906"
+2023,16,Liquors,950.5,79.208,954.0,16 Liquors 000 L 0.00 79 79 79 79 79 79 79 79. 5 79. 5 79. 5 79. 5 79. 5 954

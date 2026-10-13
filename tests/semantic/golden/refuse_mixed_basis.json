@@ -1,0 +1,14 @@
+{
+ "expect": [],
+ "expect_error": "mixed_basis",
+ "expect_receipt": "",
+ "function": "query_emissions",
+ "golden_id": "refuse_mixed_basis",
+ "request": {
+  "basis": "fiscal",
+  "periods": [
+   "FY2023-24",
+   "CY2023"
+  ]
+ }
+}

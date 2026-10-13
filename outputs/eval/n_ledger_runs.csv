@@ -1,0 +1,6 @@
+run,livestock_NH3_kt_implied,MMS_direct_N2O_Gg,MMS_indirect_N2O_Gg,manure_N_applied_Mt_N,soil_direct_N2O_manure_Gg,soil_indirect_volat_N2O_Gg,soil_indirect_leach_N2O_Gg,managed_soils_Mt,national_total_Mt,prefield_volat_pct_of_managed,closing_N_residual_kg
+"A. Legacy GHG (FracGASM at pre-field, applied twice)",2219.617854,23.199964,5.512443,2.639291,20.737287,0,0,29.560208,224.051049,21.0,0.0
+"A2. Correct fraction only (FracGasMS, Eq 10.34a incomplete)",2411.181765,23.199964,7.164051,2.429087,19.08568,0,0,28.845746,223.774263,27.291901,0.0
+"B. Stage-aligned IPCC, full Eq 10.34a  [SHIPPED]",2388.389189,23.199964,7.164051,2.335,18.346425,0,0,28.525954,223.454471,27.291901,0.0
+C. EMEP-linked pre-field volatilisation,2189.972894,23.199964,5.453364,2.552723,20.057112,0,0,29.265973,223.741159,20.774934,0.0
+D. Buffalo as Other Cattle (structural alternative),2446.316964,23.199964,7.663487,2.271435,17.846989,0,0,28.309905,223.370773,29.194535,0.0

@@ -1,0 +1,200 @@
+{
+ "clone": {
+  "commit": "2f4a997f5445ab969e8a8c5b8522773c2d439f2a",
+  "tracked_files": "7355",
+  "transport": "git clone file:// (full object walk)"
+ },
+ "environment": {
+  "git": "git version 2.49.0",
+  "git_lfs": "git-lfs/3.7.0",
+  "latexmk": "Latexmk, John Collins, 27 Dec. 2024. Version 4.86a",
+  "offline_proxy": "http(s)_proxy=http://127.0.0.1:9 exported for build and tests",
+  "os": "Darwin 24.6.0 (arm64)",
+  "python": "3.11.10 (fresh venv from requirements.lock, 32 pins)"
+ },
+ "headline": "the rebuild reproduced every committed data output byte-for-byte in an empty environment, offline - figures included; the only differences are the two declared artifact classes (the in-place national PDF, and the manifest's describes_commit block with zero substantive lines)",
+ "reacquisition_sweep": {
+  "attempts": [
+   {
+    "dataset": "OurAirports airports.csv (re-verification)",
+    "detail": "rc29 reacquisition sweep: current snapshot fetched to scratch (sha256 4bc8232ba1f4...); all 195 held Pakistani airports present with byte-identical coordinates against sources/Aviation/ourairports_airports_2026-08-06.csv",
+    "outcome": "fetched",
+    "url_tried": "https://davidmegginson.github.io/ourairports-data/airports.csv"
+   },
+   {
+    "dataset": "PIA privatisation investment teaser",
+    "detail": "rc29 sweep: 18-page PDF re-fetched (host's TLS chain is broken; curl -k required) and ARCHIVED as sources/Aviation/InvestmentTeaser_2342025.pdf, sha256 5e9937f8aa20...",
+    "outcome": "fetched",
+    "url_tried": "https://www.privatisation.gov.pk/SiteImage/Misc/files/InvestmentTeaser_2342025.pdf"
+   },
+   {
+    "dataset": "Fatima Fertilizer annual report 2024 (PSX document 250354)",
+    "detail": "rc29 sweep: the recorded direct URL now serves the PSX portal SPA shell, not the PDF - document IDs appear to have churned",
+    "outcome": "discovery_failed",
+    "url_tried": "https://dps.psx.com.pk/download/document/250354.pdf"
+   },
+   {
+    "dataset": "CDM nitric-acid project pages (TUEV-SUED1155134039.49, RWTUV1322686352.38)",
+    "detail": "rc29 sweep: both project pages answer with an Incapsula bot challenge (212 bytes) to unattended clients; the pages remain public to browsers",
+    "outcome": "blocked",
+    "url_tried": "https://cdm.unfccc.int/Projects/DB/TUEV-SUED1155134039.49/view?cp=1"
+   },
+   {
+    "dataset": "UNEP Ozone Secretariat Pakistan profile",
+    "detail": "rc29 sweep: live page fetched to scratch (85 KB, HFC content present; snapshot sha256 0bd2dd05e737...); a churning dynamic page, verified live rather than archived",
+    "outcome": "fetched",
+    "url_tried": "https://ozone.unep.org/countries/profile/pak"
+   },
+   {
+    "dataset": "UN Comtrade clinker (HS 2523, reporter 586)",
+    "detail": "rc29 sweep: public API live, returns clinker rows (count 4 for 2023-12 imports); scripts/fetch_comtrade_clinker.py's route stands",
+    "outcome": "fetched",
+    "url_tried": "https://comtradeapi.un.org/public/v1/preview/C/M/HS?reporterCode=586&period=202312&cmdCode=2523&flowCode=M"
+   },
+   {
+    "dataset": "World Bank WDI rail indicators",
+    "detail": "rc29 sweep: API live (source lastupdated 2026-07-13); scripts/fetch_wdi_rail.py's route stands",
+    "outcome": "fetched",
+    "url_tried": "https://api.worldbank.org/v2/country/PAK/indicator/IS.RRS.TOTL.KM?format=json"
+   },
+   {
+    "dataset": "NASA POWER monthly T2M",
+    "detail": "rc29 sweep: API live (Lahore point probe returned a T2M series); scripts/fetch_hdd.py's route stands",
+    "outcome": "fetched",
+    "url_tried": "https://power.larc.nasa.gov/api/temporal/monthly/point"
+   },
+   {
+    "dataset": "FAOSTAT QCL normalized bulk",
+    "detail": "rc29 sweep: ranged GET returns a valid zip header - the bulk route in src/pkinv/sectors/agriculture/fetch_history.py stands (the short name QCL.zip 403s; only the full filename serves)",
+    "outcome": "fetched",
+    "url_tried": "https://bulks-faostat.fao.org/production/Production_Crops_Livestock_E_All_Data_(Normalized).zip"
+   },
+   {
+    "dataset": "Zenodo brick-kiln record 14718244 Main.csv",
+    "detail": "rc29 sweep: re-fetched and IDENTITY-VERIFIED - all 11,272 (lat, lon, type) keys match data/ml/brick_kilns_pk.csv exactly at the held file's 5-decimal precision",
+    "outcome": "fetched",
+    "url_tried": "https://zenodo.org/records/14718244/files/Brick_Kilns_IGP_PK-Main.csv?download=1"
+   },
+   {
+    "dataset": "HydroWASTE_v10.zip (figshare 31910714)",
+    "detail": "rc29 sweep: re-fetched and HASH-VERIFIED byte-identical - sha256 6e19d8f31d95... matches sources/HydroWASTE/HYDROWASTE_SOURCES.json exactly",
+    "outcome": "fetched",
+    "url_tried": "https://ndownloader.figshare.com/files/31910714"
+   },
+   {
+    "dataset": "GEM cement tracker July 2026 xlsx",
+    "detail": "rc29 sweep, deliberate: scripts/fetch_gem_trackers.py writes the pinned extract in place, and GEM serves its CURRENT tracker - a re-fetch is an upgrade, not a reproduction; the July 2026 xlsx sha256 is pinned in sources/GEM/GEM_SOURCES.json",
+    "outcome": "not_attempted",
+    "url_tried": "(not attempted this pass)"
+   },
+   {
+    "dataset": "PIA fleet page",
+    "detail": "rc29 sweep: the server answers unattended clients with an empty body (0 bytes, twice, with and without TLS verification)",
+    "outcome": "discovery_failed",
+    "url_tried": "https://www.piac.com.pk/corporate/about-us/fleet"
+   },
+   {
+    "dataset": "PBS 7th Agricultural Census 2024 tables",
+    "detail": "rc29 sweep: pbs.gov.pk root serves (398 KB) but the census content path returns an empty body unauthenticated; no stable document URL discovered",
+    "outcome": "discovery_failed",
+    "url_tried": "https://www.pbs.gov.pk/content/agriculture-census"
+   },
+   {
+    "dataset": "State Bank Statistical Supplement FY2023-24",
+    "detail": "rc29 sweep: the ecodata page serves a 5 KB shell; the supplement PDF path was not discoverable unauthenticated",
+    "outcome": "discovery_failed",
+    "url_tried": "https://www.sbp.org.pk/ecodata/index2.asp"
+   }
+  ],
+  "date": "2026-08-23",
+  "register": "data/not_retained_register.csv holds URL, access date, page/table coordinates, retrieval script and hash-or-reason for every not-retained source"
+ },
+ "steps": [
+  {
+   "detail": "file:// transport, 2f4a997f, 7355 tracked files",
+   "status": "OK",
+   "step": "clone"
+  },
+  {
+   "detail": "19 objects copied from the invoking repository (no remote holds them until the branch is pushed)",
+   "status": "OK",
+   "step": "lfs_materialise"
+  },
+  {
+   "detail": "no tracked file is an unsmudged LFS pointer",
+   "status": "OK",
+   "step": "lfs_preflight"
+  },
+  {
+   "detail": "Python 3.11.10 + requirements.lock (32 pins)",
+   "status": "OK",
+   "step": "venv"
+  },
+  {
+   "detail": "unroutable proxy exported; any network attempt in build or tests fails loudly",
+   "status": "OK",
+   "step": "offline_proof"
+  },
+  {
+   "detail": "every offline phase (the full product set; the one declared NETWORK phase is the only skip); log: /private/tmp/claude-501/-Users-rehanahmad-Desktop-emissions/500c4ae4-3141-4e4b-a076-4fd9fa3fe064/scratchpad/cleanroom/run_all.log",
+   "status": "OK",
+   "step": "run_all"
+  },
+  {
+   "detail": "make papers succeeded; 16 PDFs built; combined sha256 0cd0f81bfc3b91b1ba55ab8c6b0fefe7715a97d5091870cb013408de9b570cbe (declared non-byte-stable: embedded CreationDate)",
+   "status": "OK",
+   "step": "pdfs"
+  },
+  {
+   "detail": "Ran 2192 tests in 325.081s, all green, inside the clone, offline",
+   "status": "OK",
+   "step": "tests"
+  },
+  {
+   "detail": "every committed data output reproduced byte-for-byte, the shipped figures included; the only differences are the two declared artifact classes - the in-place national PDF the build rewrites, and the manifest describes_commit block (zero substantive lines) - the first filter missed the national PDF and the corrected exclusion mirrors release_fixpoint.py ARTIFACT_PATTERNS exactly",
+   "status": "OK",
+   "step": "comparison"
+  },
+  {
+   "detail": "a deliberate one-line mutation of data/months.csv in the finished clone is detected by the comparison (and the first two runs were organic gate-bites: the LFS pointer preflight caught its own materialisation defect, and the clone suite caught a stale committed deposit manifest)",
+   "status": "OK",
+   "step": "sabotage_check"
+  }
+ ],
+ "unresolved_failures": [
+  {
+   "item": "papers/pdf/*.pdf",
+   "reason": "declared non-byte-stable: LaTeX embeds a CreationDate; the run records build success and hashes, and outputs/pakemis_paper_hashes.csv is the sidecar a holder verifies against"
+  },
+  {
+   "item": "outputs/pakemis_grid_0p05_monthly.nc",
+   "reason": "declared byte-churn: the NetCDF byte stream varies per code path while its content is deterministic (docs/spatial_products_contract.md); the conservation gates test content, not bytes"
+  },
+  {
+   "item": "git-lfs objects (19, ~3 GB, 7 manifest-hashed source documents)",
+   "reason": "no remote holds them until the branch is pushed (user-only action), so a stranger's clone cannot yet materialise them; this run copied them from the local object store and asserted no pointer survived"
+  },
+  {
+   "item": "reacquisition:Fatima Fertilizer annual report 2024 (PSX document 250354)",
+   "reason": "discovery_failed - rc29 sweep: the recorded direct URL now serves the PSX portal SPA shell, not the PDF - document IDs appear to have churned"
+  },
+  {
+   "item": "reacquisition:CDM nitric-acid project pages (TUEV-SUED1155134039.49, RWTUV1322686352.38)",
+   "reason": "blocked - rc29 sweep: both project pages answer with an Incapsula bot challenge (212 bytes) to unattended clients; the pages remain public to browsers"
+  },
+  {
+   "item": "reacquisition:PIA fleet page",
+   "reason": "discovery_failed - rc29 sweep: the server answers unattended clients with an empty body (0 bytes, twice, with and without TLS verification)"
+  },
+  {
+   "item": "reacquisition:PBS 7th Agricultural Census 2024 tables",
+   "reason": "discovery_failed - rc29 sweep: pbs.gov.pk root serves (398 KB) but the census content path returns an empty body unauthenticated; no stable document URL discovered"
+  },
+  {
+   "item": "reacquisition:State Bank Statistical Supplement FY2023-24",
+   "reason": "discovery_failed - rc29 sweep: the ecodata page serves a 5 KB shell; the supplement PDF path was not discoverable unauthenticated"
+  }
+ ],
+ "verdict": "PASS_WITH_NOTE",
+ "what_this_is": "the rc29 clean-room reconstruction record: fresh file:// clone, fresh venv from requirements.lock, offline proof by unroutable proxy, full offline build, full test suite, PDF build, manifest comparison (scripts/clean_room_full.sh)"
+}

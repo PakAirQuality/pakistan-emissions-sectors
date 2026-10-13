@@ -1,0 +1,39 @@
+source_type,ei_class,note
+"Motor cycles, scooters",2W,
+Motor cycles,2W,Balochistan reports motorcycles and scooters separately
+Auto rickshaws,3W,
+Rickshaws,3W,Balochistan variant
+"Motor cars, jeeps, station wagons",4W1,"Split 4W1/4W2 by a time-varying SUV share; see transport_params.csv"
+Motor cars,4W1,Balochistan variant
+Jeeps,4W2,Balochistan reports jeeps separately - these are the SUV class directly
+Station wagons,4W1,
+Station wagons double cabin,4W2,
+Taxis,4WT,
+"Pickups, delivery Vanss",LDV,"double-s typo in the source; a naive join drops 1,506 rows"
+"Pickups, delivery Vanss, others",LDV,same typo
+Pickups,LDV,
+Pickups double cabin,LDV,
+Delivery vans,LDV,
+Vans,LDV,
+Mini trucks,LDV,
+Trucks,HDV,
+Open trucks,HDV,
+Dumper trucks,HDV,
+Loading trucks,HDV,
+Mixture trucks,HDV,
+Transit mixer truck,HDV,
+Oil tankers,HDV,
+Water tankers,HDV,
+Truck trailers,HDV,
+Oil tanker trailers,HDV,
+Truck cranes,HDV,
+"Mini buses, buses, flying coaches, luxury coaches",BUS,
+Buses,BUS,
+Mini buses,BUS,
+Ambulances,LDV,"light commercial; grouped with vans rather than buses"
+Tractors,NRV,"agricultural machinery - IPCC 1A4c ii, NOT 1A3b road transport"
+Tractor trailers,NRV,
+Cranes,NRV,off-road plant
+Excavators,NRV,off-road plant
+Road rollers,NRV,off-road plant
+Other vehicles,NRV,"RESIDUAL BUCKET. The source's own catch-all, assigned wholesale to off-road. Inherited from the Punjab workbook's classification and carried here for comparability, but it is a methodological choice rather than an observation: 'Other vehicles' is 1,163 rows and a large share of NRV, and NRV is modelled as 100% diesel. Sensitivity-tested."

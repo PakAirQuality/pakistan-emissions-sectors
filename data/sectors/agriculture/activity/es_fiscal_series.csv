@@ -1,0 +1,147 @@
+# PAKISTANI FISCAL-YEAR AGRICULTURAL ACTIVITY, FY2015-16 .. FY2023-24.
+#
+# WHY THIS EXISTS. The engine's nine-year agriculture history rode FAOSTAT, which is a
+# CALENDAR-year series: the eleventh review called the resulting calendar-to-fiscal join a
+# method break the trend claim could not carry. This file is the fiscal replacement for the
+# two-thirds of the activity that a Pakistani source can supply, transcribed from ONE
+# document already archived in this repository:
+#
+#   sources/Agriculture/Pakistan_Economic_Survey_2023-24_Agriculture.pdf
+#     TABLE 2.3  Area under important crops        (000 hectares)
+#     TABLE 2.4  Production of important crops     (000 tonnes; cotton also in 000 bales)
+#     TABLE 2.9  Fertilizer offtake                (000 nutrient tonnes)
+#
+# Its statistical appendix carries fourteen fiscal years, so the nine this inventory needs
+# are a transcription rather than an acquisition. The FY2023-24 rows reproduce
+# data/activity/crops_2024.csv exactly, which is the check that the anchor and the history
+# are now the same basis rather than two.
+#
+# WHAT IS NOT HERE, AND WHY. Livestock. Economic Survey Table 2.14 does publish fiscal-year
+# head counts, but its own footnote says they are "Estimated figures based on inter-census
+# growth rate of Livestock Census 1996 & 2006" - a deterministic projection, numerically
+# identical to the FAOSTAT series this file replaces. Transcribing it would buy a fiscal
+# label and an honest citation and ZERO new observation, so the livestock basis stays what
+# it is and is declared per row in the fiscal ledger instead. Only two real enumerations
+# exist for Pakistan (Livestock Census 2006, PBS 7th Agricultural Census 2024); the 2006
+# national counts are not held, so no two-enumeration interpolation can be built here.
+#
+# COTTON is published as lint tonnes AND bales; the engine wants SEED cotton, so bales are
+# converted at 0.4859 Mt per million bales - the same factor, and the same reasoning, as the
+# anchor row in data/activity/crops_2024.csv (a 170 kg lint bale at ~35 percent ginning
+# outturn). That conversion is why cotton carries the widest activity uncertainty.
+#
+# NITROGEN at FY2023-24 is NOT the Survey's 3,086: that cell is footnoted "Provisional
+# (Jul-Mar)" and is nine months of a twelve-month series. The full-year NFDC figure (3,775)
+# is used instead, from NFDC_Fertilizer_Review_2023-24.pdf Table 3 - the same value the
+# anchor already carries. For FY2020-21 onward the Survey and the NFDC annual review agree
+# exactly, which is what licenses reading the earlier Survey years as the NFDC series.
+#
+# ONE CELL DISAGREES WITH THE ANCHOR, AND THE APPENDIX IS THE BETTER SOURCE. Every
+# FY2023-24 value here reproduces data/activity/crops_2024.csv except maize AREA: this
+# file carries the appendix's published 1,641 thousand ha, the anchor carries 1,642 -
+# the one cell that file documents as DERIVED (the narrative's 4.5 percent decrease
+# applied to the prior year). Maize area is not consumed by any engine equation - only
+# maize production is, through the residue term - so the difference moves nothing, and
+# the anchor is left alone rather than edited for tidiness. It is recorded here because
+# a derived cell that a published table can replace is a fact about the source, not a
+# rounding.
+fiscal_end_year,fiscal_label,item,value,unit,source_table,basis
+2016,FY2015-16,wheat_area_ha,9224000,ha,ES Table 2.3,observed_fiscal
+2016,FY2015-16,rice_area_ha,2739000,ha,ES Table 2.3,observed_fiscal
+2016,FY2015-16,maize_area_ha,1191000,ha,ES Table 2.3,observed_fiscal
+2016,FY2015-16,sugarcane_area_ha,1131000,ha,ES Table 2.3,observed_fiscal
+2016,FY2015-16,cotton_area_ha,2902000,ha,ES Table 2.3,observed_fiscal
+2016,FY2015-16,wheat_production_t,25633000,t,ES Table 2.4,observed_fiscal
+2016,FY2015-16,rice_production_t,6801000,t,ES Table 2.4,observed_fiscal
+2016,FY2015-16,maize_production_t,5271000,t,ES Table 2.4,observed_fiscal
+2016,FY2015-16,sugarcane_production_t,65482000,t,ES Table 2.4,observed_fiscal
+2016,FY2015-16,cotton_bales_000,9917,000 bales,ES Table 2.4,observed_fiscal
+2016,FY2015-16,nitrogen_N_offtake_t,2672000,t N,ES Table 2.9,observed_fiscal
+2017,FY2016-17,wheat_area_ha,8972000,ha,ES Table 2.3,observed_fiscal
+2017,FY2016-17,rice_area_ha,2724000,ha,ES Table 2.3,observed_fiscal
+2017,FY2016-17,maize_area_ha,1348000,ha,ES Table 2.3,observed_fiscal
+2017,FY2016-17,sugarcane_area_ha,1218000,ha,ES Table 2.3,observed_fiscal
+2017,FY2016-17,cotton_area_ha,2489000,ha,ES Table 2.3,observed_fiscal
+2017,FY2016-17,wheat_production_t,26674000,t,ES Table 2.4,observed_fiscal
+2017,FY2016-17,rice_production_t,6849000,t,ES Table 2.4,observed_fiscal
+2017,FY2016-17,maize_production_t,6134000,t,ES Table 2.4,observed_fiscal
+2017,FY2016-17,sugarcane_production_t,75482000,t,ES Table 2.4,observed_fiscal
+2017,FY2016-17,cotton_bales_000,10671,000 bales,ES Table 2.4,observed_fiscal
+2017,FY2016-17,nitrogen_N_offtake_t,3730000,t N,ES Table 2.9,observed_fiscal
+2018,FY2017-18,wheat_area_ha,8797000,ha,ES Table 2.3,observed_fiscal
+2018,FY2017-18,rice_area_ha,2901000,ha,ES Table 2.3,observed_fiscal
+2018,FY2017-18,maize_area_ha,1251000,ha,ES Table 2.3,observed_fiscal
+2018,FY2017-18,sugarcane_area_ha,1342000,ha,ES Table 2.3,observed_fiscal
+2018,FY2017-18,cotton_area_ha,2700000,ha,ES Table 2.3,observed_fiscal
+2018,FY2017-18,wheat_production_t,25076000,t,ES Table 2.4,observed_fiscal
+2018,FY2017-18,rice_production_t,7450000,t,ES Table 2.4,observed_fiscal
+2018,FY2017-18,maize_production_t,5902000,t,ES Table 2.4,observed_fiscal
+2018,FY2017-18,sugarcane_production_t,83333000,t,ES Table 2.4,observed_fiscal
+2018,FY2017-18,cotton_bales_000,11946,000 bales,ES Table 2.4,observed_fiscal
+2018,FY2017-18,nitrogen_N_offtake_t,3435000,t N,ES Table 2.9,observed_fiscal
+2019,FY2018-19,wheat_area_ha,8678000,ha,ES Table 2.3,observed_fiscal
+2019,FY2018-19,rice_area_ha,2810000,ha,ES Table 2.3,observed_fiscal
+2019,FY2018-19,maize_area_ha,1374000,ha,ES Table 2.3,observed_fiscal
+2019,FY2018-19,sugarcane_area_ha,1102000,ha,ES Table 2.3,observed_fiscal
+2019,FY2018-19,cotton_area_ha,2373000,ha,ES Table 2.3,observed_fiscal
+2019,FY2018-19,wheat_production_t,24349000,t,ES Table 2.4,observed_fiscal
+2019,FY2018-19,rice_production_t,7202000,t,ES Table 2.4,observed_fiscal
+2019,FY2018-19,maize_production_t,6826000,t,ES Table 2.4,observed_fiscal
+2019,FY2018-19,sugarcane_production_t,67174000,t,ES Table 2.4,observed_fiscal
+2019,FY2018-19,cotton_bales_000,9861,000 bales,ES Table 2.4,observed_fiscal
+2019,FY2018-19,nitrogen_N_offtake_t,3408000,t N,ES Table 2.9,observed_fiscal
+2020,FY2019-20,wheat_area_ha,8805000,ha,ES Table 2.3,observed_fiscal
+2020,FY2019-20,rice_area_ha,3034000,ha,ES Table 2.3,observed_fiscal
+2020,FY2019-20,maize_area_ha,1404000,ha,ES Table 2.3,observed_fiscal
+2020,FY2019-20,sugarcane_area_ha,1040000,ha,ES Table 2.3,observed_fiscal
+2020,FY2019-20,cotton_area_ha,2517000,ha,ES Table 2.3,observed_fiscal
+2020,FY2019-20,wheat_production_t,25248000,t,ES Table 2.4,observed_fiscal
+2020,FY2019-20,rice_production_t,7414000,t,ES Table 2.4,observed_fiscal
+2020,FY2019-20,maize_production_t,7883000,t,ES Table 2.4,observed_fiscal
+2020,FY2019-20,sugarcane_production_t,66380000,t,ES Table 2.4,observed_fiscal
+2020,FY2019-20,cotton_bales_000,9148,000 bales,ES Table 2.4,observed_fiscal
+2020,FY2019-20,nitrogen_N_offtake_t,3415000,t N,ES Table 2.9,observed_fiscal
+2021,FY2020-21,wheat_area_ha,9168000,ha,ES Table 2.3,observed_fiscal
+2021,FY2020-21,rice_area_ha,3335000,ha,ES Table 2.3,observed_fiscal
+2021,FY2020-21,maize_area_ha,1418000,ha,ES Table 2.3,observed_fiscal
+2021,FY2020-21,sugarcane_area_ha,1165000,ha,ES Table 2.3,observed_fiscal
+2021,FY2020-21,cotton_area_ha,2079000,ha,ES Table 2.3,observed_fiscal
+2021,FY2020-21,wheat_production_t,27464000,t,ES Table 2.4,observed_fiscal
+2021,FY2020-21,rice_production_t,8420000,t,ES Table 2.4,observed_fiscal
+2021,FY2020-21,maize_production_t,8940000,t,ES Table 2.4,observed_fiscal
+2021,FY2020-21,sugarcane_production_t,81009000,t,ES Table 2.4,observed_fiscal
+2021,FY2020-21,cotton_bales_000,7064,000 bales,ES Table 2.4,observed_fiscal
+2021,FY2020-21,nitrogen_N_offtake_t,3711000,t N,ES Table 2.9 (NFDC AFR Table 3 agrees),observed_fiscal
+2022,FY2021-22,wheat_area_ha,8977000,ha,ES Table 2.3,observed_fiscal
+2022,FY2021-22,rice_area_ha,3537000,ha,ES Table 2.3,observed_fiscal
+2022,FY2021-22,maize_area_ha,1653000,ha,ES Table 2.3,observed_fiscal
+2022,FY2021-22,sugarcane_area_ha,1260000,ha,ES Table 2.3,observed_fiscal
+2022,FY2021-22,cotton_area_ha,1937000,ha,ES Table 2.3,observed_fiscal
+2022,FY2021-22,wheat_production_t,26209000,t,ES Table 2.4,observed_fiscal
+2022,FY2021-22,rice_production_t,9323000,t,ES Table 2.4,observed_fiscal
+2022,FY2021-22,maize_production_t,9525000,t,ES Table 2.4,observed_fiscal
+2022,FY2021-22,sugarcane_production_t,88651000,t,ES Table 2.4,observed_fiscal
+2022,FY2021-22,cotton_bales_000,8329,000 bales,ES Table 2.4,observed_fiscal
+2022,FY2021-22,nitrogen_N_offtake_t,3838000,t N,ES Table 2.9 (NFDC AFR Table 3 agrees),observed_fiscal
+2023,FY2022-23,wheat_area_ha,9033000,ha,ES Table 2.3,observed_fiscal
+2023,FY2022-23,rice_area_ha,2976000,ha,ES Table 2.3,observed_fiscal
+2023,FY2022-23,maize_area_ha,1719000,ha,ES Table 2.3,observed_fiscal
+2023,FY2022-23,sugarcane_area_ha,1319000,ha,ES Table 2.3,observed_fiscal
+2023,FY2022-23,cotton_area_ha,2144000,ha,ES Table 2.3,observed_fiscal
+2023,FY2022-23,wheat_production_t,28161000,t,ES Table 2.4,observed_fiscal
+2023,FY2022-23,rice_production_t,7322000,t,ES Table 2.4,observed_fiscal
+2023,FY2022-23,maize_production_t,10985000,t,ES Table 2.4,observed_fiscal
+2023,FY2022-23,sugarcane_production_t,87981000,t,ES Table 2.4,observed_fiscal
+2023,FY2022-23,cotton_bales_000,4910,000 bales,ES Table 2.4,observed_fiscal
+2023,FY2022-23,nitrogen_N_offtake_t,3604000,t N,ES Table 2.9 (NFDC AFR Table 3 agrees),observed_fiscal
+2024,FY2023-24,wheat_area_ha,9632000,ha,ES Table 2.3,observed_fiscal
+2024,FY2023-24,rice_area_ha,3637000,ha,ES Table 2.3,observed_fiscal
+2024,FY2023-24,maize_area_ha,1641000,ha,ES Table 2.3,observed_fiscal
+2024,FY2023-24,sugarcane_area_ha,1180000,ha,ES Table 2.3,observed_fiscal
+2024,FY2023-24,cotton_area_ha,2424000,ha,ES Table 2.3,observed_fiscal
+2024,FY2023-24,wheat_production_t,31438000,t,ES Table 2.4,observed_fiscal
+2024,FY2023-24,rice_production_t,9869000,t,ES Table 2.4,observed_fiscal
+2024,FY2023-24,maize_production_t,9847000,t,ES Table 2.4,observed_fiscal
+2024,FY2023-24,sugarcane_production_t,87638000,t,ES Table 2.4,observed_fiscal
+2024,FY2023-24,cotton_bales_000,10223,000 bales,ES Table 2.4,observed_fiscal
+2024,FY2023-24,nitrogen_N_offtake_t,3775000,t N,NFDC Fertilizer Review 2023-24 Table 3,observed_fiscal_full_year

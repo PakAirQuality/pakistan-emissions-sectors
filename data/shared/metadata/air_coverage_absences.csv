@@ -1,0 +1,9 @@
+# TYPED ABSENCES OF THE AIR COVERAGE MATRIX, AS DATA (rc58 W0). pkinv.report.air_annual.coverage_rows() writes E where
+# the panel carries mass and reads THIS register for every (module, species) cell it does not; a cell matching no row
+# and no code branch (power, aviation) fails the build - an absence must be typed by someone. pollutant=ALL applies to
+# every core species the module has no atom for (no ALL row remains since rc59: ippu and fugitives are register modules
+# whose typed absences are per species, like industry's). Flipping a module from NE to E is therefore an edit here and an atom in
+# the panel, never a prose edit in code. gap_id must exist in data/data_gaps.csv.
+sector_id,pollutant,state,state_basis,gap_id,note
+industry,NH3,NE,no-published-factor,air-industry-nh3,"EMEP/EEA 2023 lists NH3 as not estimated for gas, liquid and solid fuel combustion in 1.A.2 (Tables 3-2, 3-3, 3-4); AP-42's combustion chapters carry no NH3 row; the one South Asian kiln measurement (Stockwell et al. 2016) is not held - absent, not zero"
+fugitives,NH3,NE,no-published-factor,air-fugitives-species,"EMEP/EEA 2023 lists NH3 as not estimated for venting and flaring and included elsewhere (1.A.1.b) for refining; the oil and gas segment chapters list it not applicable - absent, not zero"

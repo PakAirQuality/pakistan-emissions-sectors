@@ -1,0 +1,16 @@
+variable,central_value,range_95,uncert_pct_95,distribution,source,applicable_model,correlation_group,uncertainty_class
+Official domestic commercial movements,40600,reported control (conditional),,not sampled,PCAA airport controls FY2023-24,M0--M2,fiscal-year activity,parametric
+Aggregate activity/fleet representation,1.0,+/- 60.0%,60.0,lognormal,IPCC 2006 GL Vol 2 Ch 3 s3.6.1.7,M0,fiscal-year aggregate model,parametric
+Constrained route-matrix mean distance,486.5161752626706,485.2--503.0,3.384832171558805,bounded structural envelope,PCAA airport/airline margins and documented route graph,M1--M2,route matrix,structural
+Aggregate representative stage length,550.0,+/- 35.0%,35.0,lognormal,"Derived: passenger-weighted mean of Pakistan's trunk domestic sectors using ICAO great-circle distances with the ICEC correction (Karachi-Islamabad 675, Karachi-Lahore 610, Islamabad-Skardu 216, Lahore-Islamabad 173)",M0,all domestic stages,parametric
+Airline-aircraft family assignment,documented family shares,documented aircraft-family support,,categorical draw by operator and unordered route,FY2023-24 fleet histories and route suitability,M2,operator-route,parametric
+PCAA-constrained passenger/cargo/mail payload,operator embarked load per departure,"min(62.5%, observed); observed; max(87.5%, observed)",,triangular interpolation over modelled payload cases,"PCAA airline passengers, loaded cargo and loaded mail",M2,operator-route,parametric
+Synthetic-route detour multiplier,1.08,+/- 10.0%,10.0,lognormal,Initial structural fallback pending anchor-year ADS-B calibration,M2,origin-destination,parametric
+Taxi-in/out time,420/900 s,+/- 50.0%,50.0,lognormal,ICAO-style fallback pending airport-specific ADS-B ground-time calibration,M2/airport LTO,airport-month,parametric
+Unsupported-aircraft fuel imputation,ICAO stage factor,OpenAP/ICAO assignment scenarios,,discrete,ICAO Carbon Emissions Calculator stage factors,coverage completion,aircraft family,structural
+Jet-fuel carbon conversion,3.16,+/- 5.0%,5.0,lognormal,IPCC 2006 GL Vol 2 Ch 3 Table 3.6.9 note; ICAO Carbon Emissions Calculator Methodology v13.1 eq. 7,all CO2 products,all jet fuel,parametric
+CH4 emission factor,0.5,+/- 80.0%,80.0,lognormal,IPCC 2006 GL Vol 2 Ch 3 Table 3.6.5,GHG supplement,all jet fuel,parametric
+N2O emission factor,2.0,+/- 110.0%,110.0,lognormal,IPCC 2006 GL Vol 2 Ch 3 Table 3.6.5,GHG supplement,all jet fuel,parametric
+Customer class to flight geography,OECD-calibrated resident share,"literal, movement, common-share, carrier-specific",,discrete,OCAC ledger; PCAA/OECD bridge,fuel bridge,source row,structural
+Incomplete international flight-stage coverage,27.9% departures reconstructed,partial model versus aggregate residual,,discrete,PCAA airline controls and reconstruction coverage,M2 carrier fuel share,operator-route,structural
+ERA5 duration adjustment,still-air primary interval,bootstrap of six-route audit,,empirical bootstrap,ERA5 representative-route audit,M2 weather-augmented interval,all native non-taxi fuel,parametric

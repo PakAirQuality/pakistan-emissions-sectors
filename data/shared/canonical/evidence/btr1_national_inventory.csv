@@ -1,0 +1,56 @@
+BTR code,BTR category,CO2 Mt CO2e,CH4 Mt CO2e,N2O Mt CO2e,Total Mt CO2e,Source line,Printed columns,Record ID,Source row
+1,Energy,206.68,5.34,1.26,213.28,761,4,b1c4dbf630d49990b7e874a2,1
+1.A,Fuel Combustion Activities,206.66,0.98,1.27,208.91,762,4,4e6299912db64e594b17409d,2
+1.A.1,Energy Industries,48.68,0.04,0.14,48.87,763,4,dfabc027da7a144797836ca5,3
+1.A.2,Manufacturing Industries and Construction,71.84,0.16,0.23,72.23,764,4,7a750c5a29d1de93ce299624,4
+1.A.3,Transport,49.50,0.66,0.85,51.01,765,4,da4eb0ee0746489c763cdbd9,5
+1.A.4,Other Sectors,36.64,0.12,0.05,36.80,766,4,d6c99a134405a20ca8dc9c94,6
+1.A.5,Non-Specified,0,0,0,0,767,4,9a8bcb5a8f2701b81824eff9,7
+1.B,Fugitive emissions from fuels,0.01,4.36,0.00001,4.37,768,4,d3063367a0581fd81af3cbb4,8
+1.B.1,Solid Fuels,,,,0.73,769,3,c45124736c1d2ce8f3ade8c8,9
+1.B.2,Oil and Natural Gas,0.009,3.63,0.00001,3.64,780,4,58d20a72ac0159006114def9,10
+1.B.3,Other emissions from Energy Production,,,,0,781,1,fbf1f4ac7356a4303bad1720,11
+1.C,Carbon dioxide Transport and Storage,,,,0,782,2,1b65046a4c07f69bd89a4739,12
+1.C.1,Transport of CO2,,,,0,783,2,d725c12c0bd3325546e97a69,13
+1.C.2,Injection and Storage,,,,0,784,2,402ecfce470299ddd5892324,14
+1.C.3,Other,,,,0,785,2,7da55baf5a3537691e3c33b4,15
+2,Industrial Processes and Product Use,,,,31.98,786,3,819f385cfbea482cfcf3cbdb,16
+2.A,Mineral Industry,27.39,0,0,27.39,787,4,cc87af4239c7c9177feaeeee,17
+2.A.1,Cement production,,,,25.76,788,2,5b539ab6b1dcfe1c4e33bc89,18
+2.A.2,Lime production,,,,1.33,789,2,c208cae10d40a20f0a40e4f0,19
+2.A.3,Glass Production,,,,0.03,790,2,43874364db6790d6afdfd1de,20
+2.A.4,Other Process Uses of Carbonates,,,,0.27,791,3,d4ca5fe7cd6bd9f0087f84e5,21
+2.B,Chemical Industry,,,,3.02,792,3,b6a32bdcce563b2a5b3b30a2,22
+2.B.1,Ammonia Production,,,,3.02,793,2,220343b2b0cb55c2d90fb805,23
+2.C,Metal Industry,,,,0,794,3,839625a9380e8772007b152f,24
+2.D,Non-Energy Products from Fuels and Solvent Use (6),,,,0.22,795,3,4f83dc5f45d2a6a6d7f4e784,25
+2.D.1,Lubricant Use,,,,0.22,796,2,76f28475892b1eae5c8d3f06,26
+2.E,Electronics Industry,,,,0,797,3,ca78ad41145933c0d657edb9,27
+2.F,Product Uses as Substitutes for Ozone Depleting Substances,,,,0,798,3,1a407a3879180d945a168da9,28
+2.G,Other Product Manufacture and Use,,,,0,799,3,0e591dc5a3acb66d53efb9bb,29
+2.H,Other,0.05,1.30,0.00,1.35,800,4,614febd8717f01b76a5f45d5,30
+2.H.1,Pulp and Paper Industry,,,,0.02,801,3,3fd59f468e63a60150c2f8aa,31
+2.H.2,Food and Beverages Industry,,,,1.33,802,3,bf34a306a4f06eefb83a6fb3,32
+3,"Agriculture, Forestry, and Other Land Use",35.77,137.23,70.76,243.76,803,4,8e44ff651377c0e6dcd57ada,33
+3.A,Livestock,0,122.54,7.60,130.14,804,4,7f4b849ee6cef71899e2e18f,34
+3.A.1,Enteric Fermentation,0,112.83,0,112.83,805,4,0176422a5cedd69cf0656869,35
+3.A.2,Manure Management (1),0,9.71,7.60,17.31,806,4,9d1ba07a310bb357dba2168a,36
+3.B,Land,31.35,2.69,0.78,34.82,807,4,029f3e2e4fa35e0fb57ed967,37
+3.B.1,Forest land,28.44,0.13,0.07,28.64,808,4,a08b69f77893d21a7a95f827,38
+3.B.2,Cropland,2.50,2.54,0.62,5.67,809,4,0747d3b55e892b1130622a98,39
+3.B.3,Grasslands,,,,0.03,810,3,f4ac8f614270214931aecaac,40
+3.B.4,Wetlands,0.41,0,0.08,0.48,811,4,327929b7b54ea262602ef952,41
+3.C,Managed Soils,,,,66.80,812,3,0698c64957a0562a739ae116,42
+3.C.2,Urea application,,,,4.43,813,2,f5e88ae6bc8dd1847ee038b4,43
+3.C.3,Direct N2O Emissions from managed soils (3),,,,40.50,814,2,4f7e7495ad3659b947e8c609,44
+3.C.4,Indirect N2O Emissions from managed soils,,,,17.55,815,2,7ff04c1dbdf92b176c0bea45,45
+3.C.5,Indirect N2O Emissions from manure management,,,,4.32,816,2,6ca0534c30be277195a62b76,46
+3.D,Rice Cultivation,,,,12.00,827,2,14480e1692f8f817fda5a88a,47
+4,Waste,0.11,30.03,2.30,32.44,828,4,45c6624085c8f67fe23de30c,48
+4.A,Solid Waste Disposal,0,17.52,0,17.52,829,4,47e825a342b9acd88b48408e,49
+4.C,Incineration and Open Burning of Waste,0.12,0.15,0.04,0.31,834,4,038887e9a8b225f422a496bc,50
+4.C.1,Waste Incineration,0.08,0.01,0.02,0.11,835,4,6ba52a52f52228ad93fe57bb,51
+4.C.2,Open Burning of Waste,0.04,0.14,0.02,0.20,836,4,9d896cf6aacaca6469a9bf02,52
+4.D,Wastewater Treatment and Discharge,,,,14.61,837,3,d5fdb3c1947f276cdc93d62d,53
+4.D.1,Domestic Wastewater Treatment and Discharge,,,,12.40,838,3,70a905561156c12e3bb273d4,54
+4.D.2,Industrial Wastewater Treatment and Discharge,,,,2.22,839,2,7c0e7d3c8b8e807313bb0308,55

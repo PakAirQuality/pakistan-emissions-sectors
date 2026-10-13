@@ -1,0 +1,39 @@
+{
+  "name": "railways_extract",
+  "producer": "pkinv.sectors.railways.official_reporting.extract",
+  "producer_sha256": "25857bced8a4bb35662ce9b1b35e7d78662d9627b86f63075bbc1c544e8b9c70",
+  "result": {
+    "columns": [
+      "source_key",
+      "activity_TJ",
+      "basis",
+      "ief_co2_t_per_TJ",
+      "ief_ch4_kg_per_TJ",
+      "ief_n2o_kg_per_TJ",
+      "co2_kt",
+      "ch4_kt",
+      "n2o_kt",
+      "label",
+      "row",
+      "cells.activity_TJ",
+      "cells.basis",
+      "cells.ief_co2_t_per_TJ",
+      "cells.ief_ch4_kg_per_TJ",
+      "cells.ief_n2o_kg_per_TJ",
+      "cells.co2_kt",
+      "cells.ch4_kt",
+      "cells.n2o_kt"
+    ],
+    "key_column": "source_key",
+    "kind": "mapping",
+    "path": "railways_extract.csv",
+    "sha256": "6e6ae8b102219b45af8c45e4a63a5c66a473b24c7ea4bfb35e0b4c033bed42c3",
+    "types": [
+      "sfsnnnfffsissssssss",
+      "sfsffffffsissssssss"
+    ]
+  },
+  "schema": "pkinv.source_extract/v1",
+  "source": "sources/Aviation/PAK_CRT_2024.zip",
+  "source_sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+}

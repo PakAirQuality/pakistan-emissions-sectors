@@ -1,0 +1,11 @@
+module,native_geometry_kinds,s4_no_geometry_share_pct,dominant_spatial_class,cube_allocation_bases,own_spatial_products,dominant_temporal_class
+agriculture,diffuse,0.0,S3,crop_total;fertilizer_N;livestock_buffalo;livestock_cattle;livestock_goats;livestock_sheep;livestock_smallrum;livestock_total;manure_applied;rice_area,district+grid,TE4
+power,facilities,0.0,S1,bagasse_grid;captive_gas;power_coal;power_gas;power_hsd;power_rfo,provincial,TE2
+transport,diffuse,0.0,S3,transport_cng_vkt;transport_fuel_diesel;transport_fuel_petrol;transport_offroad,provincial,TE2
+residential,diffuse,0.0,S3,residential_gas_conn;residential_hies_dung_cake;residential_hies_firewood;residential_hies_lpg;residential_hies_residue;residential_pop,provincial+district+grid,TE3
+industry,diffuse;facilities;points,0.0,S2,brick_coal;cement_coal;industry_diesel;industry_furnace_oil;industry_gas;industry_minor_liquids,provincial,TE3
+ippu,diffuse;facilities,0.0,S2,ippu_ammonia_capacity;ippu_cement_prod;ippu_steel_establishments;transport_vkt,provincial,TE2
+waste,diffuse;points,0.0,S2,waste_burned_pop;waste_disposed_pop;wastewater_load,provincial+district,TE4
+fugitives,diffuse;facilities;points,0.0,S3,fugitive_gas_consumption;fugitive_gas_distribution;fugitive_gas_prod;fugitive_gas_transmission;fugitive_lng_terminal;fugitive_oil_prod;fugitive_oil_refining,provincial,TE4
+railways,network;points,0.0,S2,railways_freight_div;railways_route_model,provincial+district+grid,TE2
+aviation,S4;facilities,83.47,NA,aviation_lto_domestic,provincial,TE2

@@ -1,0 +1,31 @@
+# THE INTERVAL ON A CHANGE, which this release has never published and which is the one a trend reader actually needs.
+# Differenced draw by draw so that shared error cancels the way the real quantity does. Combining two published intervals in quadrature instead would reproduce exactly the overstatement this product exists to correct.
+# significant_at_95 is stated PER SCENARIO. A change significant under both ends of the bracket is resolved by this inventory; one significant under neither is not; one that differs between them is resolved only if you are willing to assert a correlation structure nobody has measured.
+from_period,to_period,pair_kind,scenario,difference_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,half_width_Mt,significant_at_95,comparable_sectors,sectors_dropped,scope_note,n_iter
+FY2015-16,FY2016-17,consecutive,time_correlated,25.6037,22.6472,25.4426,29.2866,3.3197,yes,10,none,both years report the same sectors,20000
+FY2016-17,FY2017-18,consecutive,time_correlated,28.47009,25.794,28.4092,31.5082,2.8571,yes,10,none,both years report the same sectors,20000
+FY2017-18,FY2018-19,consecutive,time_correlated,-3.82946,-6.14,-3.8608,-1.3555,2.3923,yes,10,none,both years report the same sectors,20000
+FY2018-19,FY2019-20,consecutive,time_correlated,1.4336,-3.5588,1.533,6.0925,4.8256,no,10,none,both years report the same sectors,20000
+FY2019-20,FY2020-21,consecutive,time_correlated,37.93192,34.0298,37.7722,42.6229,4.2965,yes,10,none,both years report the same sectors,20000
+FY2020-21,FY2021-22,consecutive,time_correlated,0.00243,-3.5891,0.0852,3.0911,3.3401,no,10,none,both years report the same sectors,20000
+FY2021-22,FY2022-23,consecutive,time_correlated,-45.10758,-50.5708,-44.9531,-40.3169,5.127,yes,10,none,both years report the same sectors,20000
+FY2022-23,FY2023-24,consecutive,time_correlated,6.61447,2.9083,6.5617,10.6167,3.8542,yes,10,none,both years report the same sectors,20000
+FY2015-16,FY2023-24,window_full_panel,time_correlated,51.11915,40.0826,50.7639,64.0143,11.9658,yes,10,none,both years report the same sectors,20000
+FY2015-16,FY2016-17,consecutive,parameter_typed,25.6037,-4.9584,25.7192,56.9327,30.9455,no,10,none,both years report the same sectors,20000
+FY2016-17,FY2017-18,consecutive,parameter_typed,28.47009,-4.8506,28.3128,60.8111,32.8309,no,10,none,both years report the same sectors,20000
+FY2017-18,FY2018-19,consecutive,parameter_typed,-3.82946,-37.3169,-3.8759,29.93,33.6234,no,10,none,both years report the same sectors,20000
+FY2018-19,FY2019-20,consecutive,parameter_typed,1.4336,-32.6977,1.5449,36.1081,34.4029,no,10,none,both years report the same sectors,20000
+FY2019-20,FY2020-21,consecutive,parameter_typed,37.93192,1.8257,37.6085,73.7882,35.9813,yes,10,none,both years report the same sectors,20000
+FY2020-21,FY2021-22,consecutive,parameter_typed,0.00243,-36.9539,0.1933,37.1056,37.0297,no,10,none,both years report the same sectors,20000
+FY2021-22,FY2022-23,consecutive,parameter_typed,-45.10758,-82.9708,-45.3032,-8.055,37.4579,yes,10,none,both years report the same sectors,20000
+FY2022-23,FY2023-24,consecutive,parameter_typed,6.61447,-30.5271,6.8026,43.9228,37.2249,no,10,none,both years report the same sectors,20000
+FY2015-16,FY2023-24,window_full_panel,parameter_typed,51.11915,15.939,50.7144,89.5657,36.8134,yes,10,none,both years report the same sectors,20000
+FY2015-16,FY2016-17,consecutive,time_independent,25.6037,-28.2509,26.1725,80.8114,54.5312,no,10,none,both years report the same sectors,20000
+FY2016-17,FY2017-18,consecutive,time_independent,28.47009,-29.7293,27.8182,84.8901,57.3097,no,10,none,both years report the same sectors,20000
+FY2017-18,FY2018-19,consecutive,time_independent,-3.82946,-62.412,-4.2064,56.9432,59.6776,no,10,none,both years report the same sectors,20000
+FY2018-19,FY2019-20,consecutive,time_independent,1.4336,-58.6262,2.0497,62.1619,60.3941,no,10,none,both years report the same sectors,20000
+FY2019-20,FY2020-21,consecutive,time_independent,37.93192,-25.0199,37.9506,100.7077,62.8638,no,10,none,both years report the same sectors,20000
+FY2020-21,FY2021-22,consecutive,time_independent,0.00243,-65.496,-0.2042,65.4044,65.4502,no,10,none,both years report the same sectors,20000
+FY2021-22,FY2022-23,consecutive,time_independent,-45.10758,-111.6409,-45.1037,21.2969,66.4689,no,10,none,both years report the same sectors,20000
+FY2022-23,FY2023-24,consecutive,time_independent,6.61447,-60.7936,6.3321,74.6324,67.713,no,10,none,both years report the same sectors,20000
+FY2015-16,FY2023-24,window_full_panel,time_independent,51.11915,-10.0122,50.8435,114.0712,62.0417,no,10,none,both years report the same sectors,20000

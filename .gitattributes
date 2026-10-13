@@ -1,0 +1,68 @@
+# WHAT GOES TO GIT LFS, AND WHY IT IS NOT A STYLE CHOICE.
+#
+# There is no cloud backup of this project's raw data. sources/ is not a convenience copy of
+# documents that could be fetched again - several of these government scans are no longer
+# published anywhere - so every raw byte the inventory was digitised from is tracked. The only
+# obstacle is mechanical: GitHub refuses any single file over 100 MB, and twelve raw files
+# exceed it, up to an 868 MB provincial statistics archive.
+#
+# So the large formats go to LFS and everything else goes to git normally. The split is by
+# FILE TYPE rather than by a list of names, because the next 300 MB yearbook should be caught
+# by a rule that already exists rather than by someone remembering to add it.
+#
+# LFS QUOTA IS REAL. GitHub's free tier is 1 GB and sources/ needs roughly 3 GB, so pushing
+# these objects requires a paid data pack. The LOCAL repository is complete either way, which
+# is the point that matters when the alternative is one uncopied disk; a push that fails for
+# quota is a billing problem, not a data-loss one.
+#
+# HERE BUT LICENSED SEPARATELY: data/cache/aviation/adsblol/ (9.76 GB of raw ADS-B, under the
+# LFS rules below). That is ODbL share-alike and this repository ships MIT plus CC-BY-4.0 for
+# data, so it is recorded as a separate package (package=odbl-external in data/raw_manifest.csv,
+# data/cache/aviation/adsblol/LICENSE-ODbL) and must not be folded into the CC-BY core on
+# publication. Until rc36 this header said the tree was NOT here; it has been since the
+# raw-data round, and the presence audit that found the stale sentence verified all six tars.
+
+# --- ONLY the files that cannot go into plain git ---------------------------------------
+# The rule is "over GitHub's 100 MB limit", and the members are listed rather than matched by
+# type. A type rule (`sources/**/*.zip`, `sources/**/*.pdf`) reads better and was the first
+# attempt here - it also swept up 85 files already committed happily in plain git, mostly 2 to
+# 40 MB, and would have converted every one of them into an LFS object. That is churn on
+# healthy files and, since LFS storage is billed, it is churn that costs money.
+#
+# So: these eight, and a test - tests/test_raw_data.py - that FAILS if any file over 100 MB is
+# not LFS-tracked. The list is the current membership; the test is the rule, and it is what
+# will catch the next 300 MB yearbook rather than someone's memory.
+#
+# Patterns avoid literal spaces: .gitattributes splits on whitespace, so
+# `sources/Power Plants/*.pdf` parses as pattern `sources/Power` plus an attribute named
+# `Plants/*.pdf`, matches nothing, and says so only as a quiet "filter: unspecified".
+sources/Provincial*/Sindh-*.zip                   filter=lfs diff=lfs merge=lfs -text
+sources/Provincial*/Punjab-*.zip                  filter=lfs diff=lfs merge=lfs -text
+sources/OSM/pakistan-*/pakistan-latest-free.shp.zip filter=lfs diff=lfs merge=lfs -text
+sources/Power*/NEPRA*2025.pdf                     filter=lfs diff=lfs merge=lfs -text
+sources/Power*/NEPRA*2019.pdf                     filter=lfs diff=lfs merge=lfs -text
+data/raw/nepra/sir_editions/*2016.pdf                 filter=lfs diff=lfs merge=lfs -text
+sources/Transport/Sindh/SINDH?STATISTIC?2023.pdf  filter=lfs diff=lfs merge=lfs -text
+sources/HIES/HIES_2024-25/SPSS*/Sec*6a-consum-Exp.sav filter=lfs diff=lfs merge=lfs -text
+
+# --- the ADS-B and ERA5 payloads under data/cache -----------------------------------------
+# These are ODbL (ADS-B) and Copernicus (ERA5) rather than CC-BY, and they were held outside
+# git on that reasoning. They are tracked now because there is no backup anywhere else and a
+# licence is a REDISTRIBUTION question, not a local-storage one: keeping the only copy of 9 GB
+# untracked protected nobody and risked everything. The licence still governs what may be
+# pushed or published - see data/cache/aviation/adsblol/LICENSE-ODbL and the licence column in
+# data/raw_manifest.csv - and that question becomes live at push time, not now.
+data/cache/**/*.tar    filter=lfs diff=lfs merge=lfs -text
+data/cache/**/*.part?? filter=lfs diff=lfs merge=lfs -text
+data/cache/**/*.nc     filter=lfs diff=lfs merge=lfs -text
+
+# Raw acquisitions (August 2026). The HIES microdata archives are 27 and 25 MB and would sit
+# in every clone's history forever; LFS keeps the pointer in git and the bytes out of it.
+# NOTE: an LFS pattern cannot contain a space, which is why data/raw/ uses underscored names
+# rather than the folder names the files arrived with.
+data/raw/pbs/hies/*.zip filter=lfs diff=lfs merge=lfs -text
+# EDGAR's MONTHLY bulk groupings: one archive per grouping covering 2000-2022, and the
+# industrial-combustion one is 317 MB. The annual sector gridmaps beside them are each
+# under 20 MB and stay in plain git; the rule is on the monthly directory because that
+# is where the whole-archive downloads land.
+data/raw/edgar/gridmaps_monthly/*.zip filter=lfs diff=lfs merge=lfs -text

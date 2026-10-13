@@ -1,0 +1,53 @@
+# THE DERIVATION CHAIN: the published source, the corrections, what the engine used,
+# and the result - one walk, in the order a reader meets it. Every value is READ from
+# the file named in evidence_file; nothing here is recomputed. A stage a sector has no
+# artifact for is declared absent in a row rather than skipped.
+# Registry: data/verification_chain.csv. See pkinv.report.derivation_chain.
+stage,step,section,subject,item,kind,value,unit,evidence_file,note
+1_source,10,how households say their waste is disposed of,rural,Collected by Municipality van from door step,source,0.019,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,Collected by Private van/cart from door step,source,0.0265,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,Public Bin/Collection point,source,0.0204,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,Road/street,source,0.0385,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,Lake/River/Nullah,source,0.0068,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,Open space,source,0.8849,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,Other (unclassified),source,0.0037,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,derived: routes 1-3 door-step and public-bin,source,0.066,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,rural,derived: routes 4-7,source,0.934,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,Collected by Municipality van from door step,source,0.2528,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,Collected by Private van/cart from door step,source,0.1809,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,Public Bin/Collection point,source,0.1458,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,Road/street,source,0.0847,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,Lake/River/Nullah,source,0.0036,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,Open space,source,0.3296,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,Other (unclassified),source,0.0027,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,derived: routes 1-3 door-step and public-bin,source,0.5795,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+1_source,10,how households say their waste is disposed of,urban,derived: routes 4-7,source,0.4205,share of region,data/activity/waste/hies_disposal_routes.csv,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)"
+3_correction,20,the fate ledger: where every tonne generated goes,national,Generated,control,31.5576,Mt wet,outputs/waste_ledger_2024.csv,district population panel x Pak-EPA per-capita rates (swds.waste_generated)
+3_correction,20,the fate ledger: where every tonne generated goes,national,Collected to disposal sites,First Order Decay over the deposit series,15.8847,Mt wet,outputs/waste_ledger_2024.csv,the collected complement of the uncollected fractions; decays over decades at the uncategorised-site MCF
+3_correction,20,the fate ledger: where every tonne generated goes,national,Uncollected,partitioned below,15.6728,Mt wet,outputs/waste_ledger_2024.csv,urban 0.30 / rural 0.70 of stratum generation (What a Waste); HIES 2024-25 household routes read 0.42 / 0.93 - a named structural scenario
+3_correction,20,the fate ledger: where every tonne generated goes,uncollected,Openly burned,IPCC Eq 5.7 x Eq 5.2; air-pollutant layer on the identical mass,9.4037,Mt wet,outputs/waste_ledger_2024.csv,"0.60 of uncollected waste (IPCC Box 5.1); emits immediately, mostly as biogenic CO2 with a fossil third"
+3_correction,20,the fate ledger: where every tonne generated goes,uncollected,"UNRESOLVED - dumped to land and waterways, unburned",no GHG pathway applied,6.2691,Mt wet,outputs/waste_ledger_2024.csv,"not landfilled (no site conditions), not burned; the honest remainder. Only evidence on its composition: HIES 2024-25 routes (rural open space 0.88, waterways under 0.01). A tonne moved here from collection is a tonne removed from slow landfill decay"
+2_used,50,the streams the engine prices,CO2,Open waste burning CO2 (fossil),used,1853.2092,Gg,outputs/waste_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Open waste burning CH4,used,61.1241,Gg,outputs/waste_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Open waste burning N2O,used,0.9874,Gg,outputs/waste_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Managed and unmanaged disposal sites CH4,used,327.4543,Gg,outputs/waste_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CH4,Domestic wastewater CH4,used,781.6328,Gg,outputs/waste_by_stream_2024.csv,
+2_used,50,the streams the engine prices,N2O,Domestic wastewater N2O,used,9.7062,Gg,outputs/waste_by_stream_2024.csv,
+4_final,80,"the sector's own totals, in its own words",,Open burning of waste,final,3.82634,Mt CO2e AR5,outputs/waste_totals_2024.csv,IPCC 4C2
+4_final,80,"the sector's own totals, in its own words",,Solid waste disposal,final,9.16872,Mt CO2e AR5,outputs/waste_totals_2024.csv,"IPCC 4A, First Order Decay over a 1960-2024 deposit series (pre-2000 back-projected)"
+4_final,80,"the sector's own totals, in its own words",,Domestic wastewater,final,24.45785,Mt CO2e AR5,outputs/waste_totals_2024.csv,IPCC 4D1: methane by sanitation pathway; nitrous oxide on the 2019 Refinement since rc67
+4_final,80,"the sector's own totals, in its own words",,TOTAL,final,37.45291,Mt CO2e AR5,outputs/waste_totals_2024.csv,
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: disposal without spin-up,final,8.06999,Mt CO2e AR5,outputs/waste_totals_2024.csv,"What 4A would report if the model started at the panel's first year with an empty site, i.e. ignoring every deposit before 2000"
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: wastewater on the river-discharge MCF (category total),final,15.38758,Mt CO2e AR5,outputs/waste_totals_2024.csv,"IPCC gives stagnant open sewers 0.5 and river discharge 0.1. Pakistani urban drains are open, warm and untreated, which is why 0.5 is central - but EDGAR's waste total sits closer to this reading, and that tension is worth seeing rather than resolving by assertion."
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: wastewater on India's BOD rate (category total),final,21.17499,Mt CO2e AR5,outputs/waste_totals_2024.csv,"34 g/person/day (IPCC Table 6.4, India) instead of the 40 regional default that covers Pakistan"
+4_final,80,"the sector's own totals, in its own words",,"Biogenic CO2 (memo, excluded from the national total)",final,,Mt CO2e AR5,outputs/waste_totals_2024.csv,3520.3630 Gg CO2 - IPCC 2006 GL Vol 5 Ch 5 s5.1: CO2 from the biomass content of waste is not included in national totals.
+4_final,90,"every category and gas, on the national table",CH4,Solid waste disposal,final,9.16872,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CH4,Open burning of waste,final,1.71147,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Open burning of waste,final,1.85321,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Open burning of waste,final,0.26166,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CH4,Domestic wastewater treatment and discharge,final,21.88572,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Domestic wastewater treatment and discharge,final,2.57213,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR5,reading,37.45291,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR6,reading,36.36825,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,uncert_pct_95,reading,51.1,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,share_pct,reading,8.42,Mt CO2e / pct,outputs/national_all_sectors.csv,

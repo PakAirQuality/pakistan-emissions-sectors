@@ -1,0 +1,211 @@
+result_row_id,period_id,basis,year_basis,sector_id,category,CO2_kt,CH4_kt,N2O_kt,co2e_Mt_AR5
+7bddb563f748f9e96a08bbf4,CY1990,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,1947.78,0.0,54.54
+2ee303a424ab16a16536df82,CY1990,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,7.35,0.19,0.26
+7bde09cfcf6f7f4992cf02e7,CY1990,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,38.755,10.27
+e113f05c51dbade513ea438a,CY1990,calendar,calendar_faostat,agriculture,Manure management,0.0,152.48,8.97,6.65
+2699bad2a557ffae0977dc44,CY1990,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,343.31,0.0,9.61
+d65bbe336493f54ab3dc265c,CY1990,calendar,calendar_faostat,agriculture,Urea application,1876.9,0.0,0.0,1.88
+d415b0c68aa7d9873bbe5839,CY1991,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,1985.28,0.0,55.59
+8966134e08f60ced19f7d6fc,CY1991,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,7.39,0.192,0.26
+791e9174a27ad1d888ba3f42,CY1991,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,39.437,10.45
+89fc8db6da35ff0de9752d8e,CY1991,calendar,calendar_faostat,agriculture,Manure management,0.0,156.59,9.298,6.85
+b917a3b4dafe3be36dd75b24,CY1991,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,340.75,0.0,9.54
+e6121276102f73becfe0196d,CY1991,calendar,calendar_faostat,agriculture,Urea application,1865.7,0.0,0.0,1.87
+52092655e0cb6bb3d1022973,CY1992,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2023.7,0.0,56.66
+301fdb029f103bf16a3db53b,CY1992,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,7.56,0.196,0.26
+40a714b098493d8bb28ff923,CY1992,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,42.152,11.17
+c5f19110b6fe01047d7e9854,CY1992,calendar,calendar_faostat,agriculture,Manure management,0.0,159.53,9.473,6.98
+d1c895d105ec8516234054c5,CY1992,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,320.68,0.0,8.98
+d2aa58f5d55ad5381fd77dd0,CY1992,calendar,calendar_faostat,agriculture,Urea application,2086.9,0.0,0.0,2.09
+96937cb737a08e2c5689773b,CY1993,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2063.25,0.0,57.77
+12296bebcd26634d8ae3228d,CY1993,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,8.49,0.22,0.3
+b1af8a13ed337d1655cbea7f,CY1993,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,43.101,11.42
+be033725850e047ee50d1a0f,CY1993,calendar,calendar_faostat,agriculture,Manure management,0.0,162.91,9.696,7.13
+478329ba93351026456e12e6,CY1993,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,355.4,0.0,9.95
+d5cc09b7484d8a3000a40e57,CY1993,calendar,calendar_faostat,agriculture,Urea application,2116.3,0.0,0.0,2.12
+87b643f8eaffc135d0b171d8,CY1994,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2103.98,0.0,58.91
+b90b5dea015f8667f470cc38,CY1994,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,8.18,0.212,0.29
+37ae5f5c203a2d17b0f92413,CY1994,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,44.858,11.89
+2029f458842956eb649dbe92,CY1994,calendar,calendar_faostat,agriculture,Manure management,0.0,167.2,10.031,7.34
+7f9cab4b65edd5345926b8dd,CY1994,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,345.25,0.0,9.67
+2f69a6c452853e49244f90a6,CY1994,calendar,calendar_faostat,agriculture,Urea application,2216.7,0.0,0.0,2.22
+9492f36171eff2d76680639f,CY1995,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2145.85,0.0,60.08
+cf2c6bb5c8fb2295efed2bb3,CY1995,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,9.12,0.236,0.32
+ec26cef95f99b46066d57633,CY1995,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,48.899,12.96
+33dbc86ba1d982a88939f1c5,CY1995,calendar,calendar_faostat,agriculture,Manure management,0.0,171.59,10.373,7.55
+7c2711e93ec2cee1391d37cf,CY1995,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,351.29,0.0,9.84
+f358b1b8896cf8cd60db7189,CY1995,calendar,calendar_faostat,agriculture,Urea application,2539.3,0.0,0.0,2.54
+899a8e81cc5fb530e2bcea07,CY1996,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2214.34,0.0,62.0
+7fa3ae44522159594add3837,CY1996,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,9.35,0.242,0.33
+902949364e652f10703ff5da,CY1996,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,48.296,12.8
+042a6936474d5117f8b9ac1e,CY1996,calendar,calendar_faostat,agriculture,Manure management,0.0,180.64,10.983,7.97
+be1f97d97ddc1300f516952e,CY1996,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,365.8,0.0,10.24
+3589cab1ef6f5106cafafd41,CY1996,calendar,calendar_faostat,agriculture,Urea application,2531.7,0.0,0.0,2.53
+2065aa7541df97a4b36002b3,CY1997,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2266.51,0.0,63.46
+7244336ad05bbe6fbe44cf8a,CY1997,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,9.16,0.237,0.32
+adf1d2a7e4abb7264f8d0bb6,CY1997,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,50.164,13.29
+254be34995a20e271c7f0a53,CY1997,calendar,calendar_faostat,agriculture,Manure management,0.0,185.45,11.304,8.19
+719979ea9af55b5cd34a6479,CY1997,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,376.56,0.0,10.54
+52679767a2b49683049f16d2,CY1997,calendar,calendar_faostat,agriculture,Urea application,2662.5,0.0,0.0,2.66
+451f1ceb91ad40d7e42ca001,CY1998,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2320.63,0.0,64.98
+380078b5ed7efc5cb975a4ce,CY1998,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,10.42,0.27,0.36
+da16a41b722b4318f8a95927,CY1998,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,50.424,13.36
+f0218f160dff4f5c1e0decbf,CY1998,calendar,calendar_faostat,agriculture,Manure management,0.0,187.58,11.274,8.24
+56168cb6e46b49d85f7c317c,CY1998,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,393.83,0.0,11.03
+4464bbda34de569efdae8d20,CY1998,calendar,calendar_faostat,agriculture,Urea application,2667.9,0.0,0.0,2.67
+36ae91723f50db2e20e09051,CY1999,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2376.83,0.0,66.55
+3b660ec9ad1c7b88a002003c,CY1999,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,10.93,0.283,0.38
+4b5ea4cd520dbd9adb9e2bfe,CY1999,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,52.499,13.91
+d925faba7f21a2879e8f74fc,CY1999,calendar,calendar_faostat,agriculture,Manure management,0.0,192.09,11.534,8.43
+57a3bc5c1f1b26c1e5f10478,CY1999,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,408.75,0.0,11.45
+7bec25634466a8d76e763a7a,CY1999,calendar,calendar_faostat,agriculture,Urea application,2828.9,0.0,0.0,2.83
+628da5bb53e257298b29b2e9,CY2000,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2435.33,0.0,68.19
+79d86abd23d66a85163f7de7,CY2000,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,10.47,0.271,0.37
+522ae92de55e6dcb95455d7e,CY2000,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,53.739,14.24
+4f697f44b1a288efda808115,CY2000,calendar,calendar_faostat,agriculture,Manure management,0.0,196.82,11.809,8.64
+5f5b9095e9427d3c8b97ac65,CY2000,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,386.2,0.0,10.81
+14ee7a7418ac86d839a3e8e1,CY2000,calendar,calendar_faostat,agriculture,Urea application,2888.2,0.0,0.0,2.89
+6fd4913fae6adf1b8301932e,CY2001,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2496.1,0.0,69.89
+c76dac78d0eddc1867b3f8ec,CY2001,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,9.1,0.236,0.32
+afe2d65b9f2b04af449920fb,CY2001,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,54.58,14.46
+00c46a7277939b061a0e1324,CY2001,calendar,calendar_faostat,agriculture,Manure management,0.0,201.85,12.11,8.86
+bed13e06b3a95f88aa10ae2d,CY2001,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,343.56,0.0,9.62
+be65a4f44a70b71f72cbd9a3,CY2001,calendar,calendar_faostat,agriculture,Urea application,2922.6,0.0,0.0,2.92
+d3d0157855adefb6e22f7f8e,CY2002,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2559.3,0.0,71.66
+5013426d81139582e5613296,CY2002,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,9.88,0.256,0.34
+45a4286663fdf86d3f8b52e2,CY2002,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,56.484,14.97
+042c6164645d3d9346fd41c2,CY2002,calendar,calendar_faostat,agriculture,Manure management,0.0,207.63,12.493,9.12
+40b9392f08757bde63c11824,CY2002,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,361.56,0.0,10.12
+e550049f8a839d63160633a4,CY2002,calendar,calendar_faostat,agriculture,Urea application,3041.7,0.0,0.0,3.04
+2cb874cb364e2fd44fd23140,CY2003,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2627.48,0.0,73.57
+f3475cc6019e18a08dcd2c09,CY2003,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,10.63,0.276,0.37
+01f88fab1fe7a07f765d2f25,CY2003,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,58.13,15.4
+3edb6332b9801b085fd68f72,CY2003,calendar,calendar_faostat,agriculture,Manure management,0.0,213.39,12.842,9.38
+c33730f427d1bda05cb7b510,CY2003,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,399.85,0.0,11.2
+dd112a37bcc0460be7684a0b,CY2003,calendar,calendar_faostat,agriculture,Urea application,3132.3,0.0,0.0,3.13
+7bbda0127dce6e2b9e2654ee,CY2004,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2692.49,0.0,75.39
+55c4994dfd3e315a08eda358,CY2004,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,11.06,0.287,0.39
+acf89af09ee25f490978d83a,CY2004,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,60.248,15.97
+11941ffe679387bd204548e2,CY2004,calendar,calendar_faostat,agriculture,Manure management,0.0,218.66,13.152,9.61
+abc11bbb5bc302ead11ca930,CY2004,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,409.44,0.0,11.46
+5204f209b7372cf10626d3b7,CY2004,calendar,calendar_faostat,agriculture,Urea application,3278.0,0.0,0.0,3.28
+bc2282914fcd786aa507112f,CY2005,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,2763.66,0.0,77.38
+a3b741eab09f87c4bae28e4d,CY2005,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,11.52,0.299,0.4
+9c276fab8ce057748bc4f12c,CY2005,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,64.089,16.98
+f9ffa34c4868543c8efa4dce,CY2005,calendar,calendar_faostat,agriculture,Manure management,0.0,224.45,13.491,9.86
+1d46916da63fda5c829b33bd,CY2005,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,425.98,0.0,11.93
+e6cdd2cc4319ccba7a94ca97,CY2005,calendar,calendar_faostat,agriculture,Urea application,3595.0,0.0,0.0,3.59
+e74cddf714ea87b307df2404,CY2006,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3015.58,0.0,84.44
+f427d15205e9fc595c575ba2,CY2006,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,11.22,0.291,0.39
+28b3275fa2aafcd7d2eb7748,CY2006,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,66.591,17.65
+e51dc981064b5c2a3588d898,CY2006,calendar,calendar_faostat,agriculture,Manure management,0.0,247.46,15.034,10.91
+7a94420b4c1d142bf6bb0398,CY2006,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,419.44,0.0,11.74
+d436b087dad1d24249e9d8e2,CY2006,calendar,calendar_faostat,agriculture,Urea application,3659.0,0.0,0.0,3.66
+140f32de429d61e071835ef6,CY2007,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3109.87,0.0,87.08
+b3c6692290d9f74dafb7e3e2,CY2007,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,12.24,0.317,0.43
+16f4ae3fa7cfabca5dcfce1e,CY2007,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,65.781,17.43
+01737d4e26b468e0af3a1a4a,CY2007,calendar,calendar_faostat,agriculture,Manure management,0.0,255.86,15.578,11.29
+69d77c6824d359d5fee5ffa5,CY2007,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,408.75,0.0,11.45
+28da64cdaed3fe3b82a4a4ca,CY2007,calendar,calendar_faostat,agriculture,Urea application,3461.4,0.0,0.0,3.46
+595e93ca0f9bcfbeac316d70,CY2008,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3208.34,0.0,89.83
+b8bd551f52b4f31fded7e5ef,CY2008,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,13.9,0.36,0.48
+72515db436797fbc3277b546,CY2008,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,69.368,18.38
+6459851261e48f2cd3239462,CY2008,calendar,calendar_faostat,agriculture,Manure management,0.0,264.7,16.156,11.69
+21c307531826ff432b47b7b1,CY2008,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,481.42,0.0,13.48
+bebc77837a21bf942a15e25f,CY2008,calendar,calendar_faostat,agriculture,Urea application,3734.3,0.0,0.0,3.73
+71d64a1415807e86acb5c8f9,CY2009,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3310.02,0.0,92.68
+95fd2637e0d8dc4b49f9c7d9,CY2009,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,13.39,0.347,0.47
+8613b27da7659cf486f04b23,CY2009,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,76.887,20.38
+681450e33e7e1f4a77ca892e,CY2009,calendar,calendar_faostat,agriculture,Manure management,0.0,273.87,16.757,12.11
+c39e1baa2e4e2b96a75e7c51,CY2009,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,468.5,0.0,13.12
+64c1ecea16c554db4e090bef,CY2009,calendar,calendar_faostat,agriculture,Urea application,4402.4,0.0,0.0,4.4
+f6e9371bd9b28404b4a3e248,CY2010,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3339.64,0.0,93.51
+0371874e50dc8e0ab6a95275,CY2010,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,11.18,0.29,0.39
+b72773bf9d29a41ab400dd18,CY2010,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,75.292,19.95
+e0c25001679c456bdaad7ae5,CY2010,calendar,calendar_faostat,agriculture,Manure management,0.0,276.95,17.048,12.27
+3a4ca4df704789b32ec5f762,CY2010,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,384.36,0.0,10.76
+4ab817c1c718817d65516c7a,CY2010,calendar,calendar_faostat,agriculture,Urea application,4171.1,0.0,0.0,4.17
+e2000ced3109748ed39c0b77,CY2011,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3523.49,0.0,98.66
+eb8486b8ce4cf60fa1a7aecc,CY2011,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,13.22,0.343,0.46
+c5b7d1ddf317e6295580e92f,CY2011,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,75.949,20.13
+5e402ad36bd3faaba4100803,CY2011,calendar,calendar_faostat,agriculture,Manure management,0.0,293.31,18.042,12.99
+f69be127c69f1b545515ee3a,CY2011,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,417.82,0.0,11.7
+8fdfc1f4176e17b3e3c9a698,CY2011,calendar,calendar_faostat,agriculture,Urea application,4065.0,0.0,0.0,4.07
+12e89e9cd46049a885b8cd1c,CY2012,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3635.41,0.0,101.79
+ae1121f7d985b198a9ad2e58,CY2012,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,12.51,0.324,0.44
+f003361668b587dfc06d00b6,CY2012,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,72.925,19.33
+445b4ae69320f8f32d5a6bc4,CY2012,calendar,calendar_faostat,agriculture,Manure management,0.0,303.61,18.73,13.46
+3d4a4e461a33c2825eccc2c8,CY2012,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,375.18,0.0,10.51
+3d4e0902f4d614b152d96ce7,CY2012,calendar,calendar_faostat,agriculture,Urea application,3635.8,0.0,0.0,3.64
+5dfa5fd90016258a7d93a3d4,CY2013,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3744.28,0.0,104.84
+9e1ec98975063df1e2c5bb7f,CY2013,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,14.7,0.381,0.51
+fe8bb70d7f41208589749dd7,CY2013,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,78.938,20.92
+2bfd2b7c5d5f5a94a8e79148,CY2013,calendar,calendar_faostat,agriculture,Manure management,0.0,313.44,19.38,13.91
+7a792ed877242886ed65a24a,CY2013,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,453.24,0.0,12.69
+bbb9216ad46c13a552b82fe2,CY2013,calendar,calendar_faostat,agriculture,Urea application,4131.6,0.0,0.0,4.13
+5d13eb55aa9f956bbf28fbdf,CY2014,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3862.49,0.0,108.15
+702e48fa6472147d4ee81669,CY2014,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,14.68,0.381,0.51
+23a09708079d634b2d2c6fef,CY2014,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,79.044,20.95
+b7e435c9dcb2297994c8d7c8,CY2014,calendar,calendar_faostat,agriculture,Manure management,0.0,324.47,20.127,14.42
+154703d8078c050b390a0a34,CY2014,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,469.73,0.0,13.15
+c6102f5e25496d02767c0b06,CY2014,calendar,calendar_faostat,agriculture,Urea application,4003.7,0.0,0.0,4.0
+9b521cb8f699dd363edbf002,CY2015,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,3984.47,0.0,111.57
+6b40d39d080025f8c4fdc139,CY2015,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,14.55,0.377,0.51
+7088cac8615f8b8d2a884202,CY2015,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,80.614,21.36
+38adfecf8be974f86e8d0b16,CY2015,calendar,calendar_faostat,agriculture,Manure management,0.0,335.94,20.908,14.95
+d762be363ce4b198ab8b8088,CY2015,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,445.17,0.0,12.46
+e49f4cc444a246b881680a26,CY2015,calendar,calendar_faostat,agriculture,Urea application,4030.8,0.0,0.0,4.03
+56c93ffb1dbcebff41538835,CY2016,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,4108.53,0.0,115.04
+5f9f2e8c6a17fcef8dff6813,CY2016,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,15.34,0.398,0.54
+f523c63d34c7b300afc8e565,CY2016,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,83.001,22.0
+7ba99354b7f82add8edc0812,CY2016,calendar,calendar_faostat,agriculture,Manure management,0.0,347.33,21.669,15.47
+4b6019a33fbf3272fed80be0,CY2016,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,442.65,0.0,12.39
+3f950f895f5a1b739d98949b,CY2016,calendar,calendar_faostat,agriculture,Urea application,4134.6,0.0,0.0,4.13
+167d27987b56c51f341dafb8,CY2017,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,4238.79,0.0,118.69
+66a79de226da722700273f4f,CY2017,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,16.52,0.428,0.58
+8eb45d665f268073b71a860e,CY2017,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,87.133,23.09
+362d28ff1c400386d685d81d,CY2017,calendar,calendar_faostat,agriculture,Manure management,0.0,360.22,22.584,16.07
+b7debd68aedbd8666d6b5731,CY2017,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,471.35,0.0,13.2
+ff15b72cd155943c1bc9b150,CY2017,calendar,calendar_faostat,agriculture,Urea application,4396.1,0.0,0.0,4.4
+77968dbb31ae42f455922261,CY2018,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,4375.0,0.0,122.5
+a99f4d3dfa30877f7c517474,CY2018,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,15.24,0.395,0.53
+9451c8a14539752cd03122ea,CY2018,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,88.586,23.48
+df515db16e6ebe42cd5d041d,CY2018,calendar,calendar_faostat,agriculture,Manure management,0.0,373.38,23.5,16.68
+08ba694eeb9a41eef5f8c79e,CY2018,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,456.63,0.0,12.79
+de6c1fc045a91cada137b046,CY2018,calendar,calendar_faostat,agriculture,Urea application,4396.1,0.0,0.0,4.4
+b52ce9269140916e3ccca40f,CY2019,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,4513.75,0.0,126.39
+01d6f0f138b37ec7aae41fed,CY2019,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,15.44,0.4,0.54
+d082a813f1c740ab5839a675,CY2019,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,90.919,24.09
+0ffff44008e5cdb9e25cb9aa,CY2019,calendar,calendar_faostat,agriculture,Manure management,0.0,386.94,24.453,17.31
+cb38ecd93a349c0bed611fe7,CY2019,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,493.02,0.0,13.8
+2e291818a21aac3e8c7c37a1,CY2019,calendar,calendar_faostat,agriculture,Urea application,4470.6,0.0,0.0,4.47
+ec6b9eaad1553a6c549df5ee,CY2020,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,4657.11,0.0,130.4
+aa4fbe09ac6d00ba9fc73100,CY2020,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,17.56,0.455,0.61
+de448e3476d8a651dfb3e412,CY2020,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,93.104,24.67
+177e8ecb926ad052a3b11ba3,CY2020,calendar,calendar_faostat,agriculture,Manure management,0.0,401.09,25.456,17.98
+3d87f98bc1e5676fd5827feb,CY2020,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,542.03,0.0,15.18
+1ddd8ce47178c391b9bc43e2,CY2020,calendar,calendar_faostat,agriculture,Urea application,4506.9,0.0,0.0,4.51
+d95ea44c233397814ace849f,CY2021,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,4805.2,0.0,134.55
+71957d99a2f3f34ddf26fc4f,CY2021,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,19.27,0.5,0.67
+7d43a11ff526f2cd503a5b3b,CY2021,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,97.26,25.77
+f6f814f75bb4e3ca3dd73e6b,CY2021,calendar,calendar_faostat,agriculture,Manure management,0.0,415.89,26.516,18.67
+f9d2be95a7e681c968536aa4,CY2021,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,574.82,0.0,16.1
+80cf81afaf0a15119fd980f5,CY2021,calendar,calendar_faostat,agriculture,Urea application,4738.0,0.0,0.0,4.74
+48fd70c2dac75628b550732a,CY2022,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,4958.1,0.0,138.83
+d79afa1387dedd430918dcbb,CY2022,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,17.18,0.445,0.6
+38e527545b0ed36ff6a13ef2,CY2022,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,98.489,26.1
+26ff4604963abda2f082f6de,CY2022,calendar,calendar_faostat,agriculture,Manure management,0.0,431.33,27.629,19.4
+4213c0a3b0e56a9444e29170,CY2022,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,483.64,0.0,13.54
+7ac707a1609a54c8c602c680,CY2022,calendar,calendar_faostat,agriculture,Urea application,4676.5,0.0,0.0,4.68
+f11d85ccaa34ad814b59bb2f,CY2023,calendar,calendar_faostat,agriculture,Enteric fermentation,0.0,5116.04,0.0,143.25
+d4bdc3314917b27bd0001c30,CY2023,calendar,calendar_faostat,agriculture,Field burning of residues,0.0,19.88,0.515,0.69
+1c438f87fef2896ee122d361,CY2023,calendar,calendar_faostat,agriculture,Managed soils,0.0,0.0,102.285,27.11
+a8782bea2c4f24ec330ad8d4,CY2023,calendar,calendar_faostat,agriculture,Manure management,0.0,447.49,28.807,20.16
+dcdd65ed981e6d0e23c8bca5,CY2023,calendar,calendar_faostat,agriculture,Rice cultivation,0.0,591.01,0.0,16.55
+c4c820f5ab21757314f5bb24,CY2023,calendar,calendar_faostat,agriculture,Urea application,4857.6,0.0,0.0,4.86
+8cd83d25d65386df46482868,CY2024,calendar,fiscal_census_anchor,agriculture,Enteric fermentation,0.0,5416.34,0.0,151.66
+02ce0b1e1c1923585068f277,CY2024,calendar,fiscal_census_anchor,agriculture,Field burning of residues,0.0,19.2,0.498,0.67
+97c359cd1e29b8f53d7640e1,CY2024,calendar,fiscal_census_anchor,agriculture,Managed soils,0.0,0.0,107.645,28.53
+767a3a076d1bb7bef63a5125,CY2024,calendar,fiscal_census_anchor,agriculture,Manure management,0.0,470.79,30.364,21.23
+cb7847a8228d952734b44861,CY2024,calendar,fiscal_census_anchor,agriculture,Rice cultivation,0.0,591.01,0.0,16.55
+5fa5f8b4820bdf61b1f0af9f,CY2024,calendar,fiscal_census_anchor,agriculture,Urea application,4824.5,0.0,0.0,4.82

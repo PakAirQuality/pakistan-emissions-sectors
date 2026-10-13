@@ -1,0 +1,8 @@
+calendar_year,value_t_co2e,status,is_emissions,time_basis,source_id,source_reference,retrieved_utc,role,note
+2019,7435247,reported,false,calendar_year,unep_ozone_pakistan,"Ozone Secretariat Pakistan country data, Annex F consumption",2026-08-21T12:00:00Z,control,Consumption is production plus imports minus exports; not annual emissions.
+2020,9456060,reported,false,calendar_year,unep_ozone_pakistan,"Ozone Secretariat Pakistan country data, Annex F consumption",2026-08-21T12:00:00Z,control,Consumption is production plus imports minus exports; not annual emissions.
+2021,,missing,false,calendar_year,unep_ozone_pakistan,"Ozone Secretariat Pakistan country data, Annex F consumption",2026-08-21T12:00:00Z,control,"Not publicly reported; missing is a status, never a zero."
+2022,,missing,false,calendar_year,unep_ozone_pakistan,"Ozone Secretariat Pakistan country data, Annex F consumption",2026-08-21T12:00:00Z,control,"Not publicly reported; missing is a status, never a zero."
+2023,,missing,false,calendar_year,unep_ozone_pakistan,"Ozone Secretariat Pakistan country data, Annex F consumption",2026-08-21T12:00:00Z,control,"Not publicly reported; missing is a status, never a zero. The reference inventory period FY2023-24 spans calendar 2023 H2 and 2024 H1."
+2024,9815266,reported,false,calendar_year,unep_ozone_pakistan,"Ozone Secretariat Pakistan country data, Annex F consumption",2026-08-21T12:00:00Z,control,Chemical and application detail are not exposed in the public aggregate.
+2025,12486840,reported,false,calendar_year,unep_ozone_pakistan,"Ozone Secretariat Pakistan country data, Annex F consumption",2026-08-21T12:00:00Z,control,Outside the reference inventory year; retained for trend control.

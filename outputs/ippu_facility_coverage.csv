@@ -1,0 +1,21 @@
+province,district,facilities_declared,facilities_geocoded,facilities_ungeocoded,note
+Balochistan,Lasbela,2,2,0,
+Islamabad Capital Territory,Islamabad,1,1,0,
+Khyber Pakhtunkhwa,Haripur,3,3,0,
+Khyber Pakhtunkhwa,Kohat,1,1,0,
+Khyber Pakhtunkhwa,Lakki Marwat,1,1,0,
+Khyber Pakhtunkhwa,Nowshera,2,2,0,
+Punjab,Attock,1,1,0,
+Punjab,Chakwal,5,5,0,
+Punjab,Dera Ghazi Khan,2,2,0,
+Punjab,Khushab,2,1,1,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+Punjab,Mianwali,2,1,1,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+Punjab,Multan,1,0,1,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+Punjab,Rahim Yar Khan,2,0,2,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+Punjab,Rawalpindi,1,1,0,
+Punjab,Sheikhupura,1,0,1,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+Sindh,Ghotki,2,0,2,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+Sindh,Jamshoro,2,2,0,
+Sindh,Karachi,1,0,1,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+Sindh,Thatta,2,1,1,"declared in the producer census without a resolved coordinate; the census row, not the map, carries the tonnage"
+TOTAL,,34,24,10,geocoding covers 24 of 34 declared facilities; the remainder are district-declared only

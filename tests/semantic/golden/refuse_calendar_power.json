@@ -1,0 +1,17 @@
+{
+ "expect": [],
+ "expect_error": "not_estimated",
+ "expect_limitation": "calendar_basis_ne",
+ "expect_receipt": "",
+ "function": "query_emissions",
+ "golden_id": "refuse_calendar_power",
+ "request": {
+  "basis": "calendar",
+  "periods": [
+   "CY2020"
+  ],
+  "sectors": [
+   "power"
+  ]
+ }
+}

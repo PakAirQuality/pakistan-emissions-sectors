@@ -1,0 +1,181 @@
+{
+  "fiscal_years": [
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "matched_months": 42,
+  "products": {
+    "aviation_adsblol_pilot_days.csv": {
+      "rows": 4,
+      "sha256": "6dcffbe6df534a322a53c79ae1dd059de534801ad3538896b900802834390f58"
+    },
+    "aviation_adsblol_pilot_summary.csv": {
+      "rows": 1,
+      "sha256": "4feb40dd9a4342930be382dfbc76896159a47fd6bbc684f4228a6d2b7eab655a"
+    },
+    "aviation_adsblol_positive_controls.csv": {
+      "rows": 2,
+      "sha256": "6a825923b5b5972002c337a16f5b6df1ad71ce8b223b5543aa9184ebd12a240a"
+    },
+    "aviation_annual_component_comparison.csv": {
+      "rows": 6,
+      "sha256": "348cf6779eddcb6cedd518609b193ff235c166b5bc02a113cc83489932675073"
+    },
+    "aviation_bridge_source_rows_all_scenarios.csv": {
+      "rows": 69,
+      "sha256": "05faf771bacce61ec569cb2039750ed969a2bbe76b7c38506d4fdd5926362dba"
+    },
+    "aviation_carrier_share_scenarios.csv": {
+      "rows": 6,
+      "sha256": "91de3b842bb823521b68a1ebd9dbd9a4c422dd35363623a8dd5714434d9bdffa"
+    },
+    "aviation_climatetrace_airport_comparison.csv": {
+      "rows": 25,
+      "sha256": "098fc86c772533a56a4189c956a6226a07a0fc764bb86981635c7cfa2e6393e9"
+    },
+    "aviation_climatetrace_airport_monthly.csv": {
+      "rows": 1968,
+      "sha256": "f7af82b45756262a03a16d1800feb54d64af324060543eefc758557d9f3eabc8"
+    },
+    "aviation_climatetrace_national_monthly.csv": {
+      "rows": 240,
+      "sha256": "e46f71556c4d36e6327e4a1a2b48f19ddd95d5360128308a5eee2b958ea8fead"
+    },
+    "aviation_climatetrace_periods.csv": {
+      "rows": 21,
+      "sha256": "da2509a85762c3b32f35b32a9c57080a95b90dce0aacdece5e85f24963d5f7e8"
+    },
+    "aviation_climatetrace_spatial_diagnostics.csv": {
+      "rows": 2,
+      "sha256": "11acdb2935acc20056d199e2e29a66796867bfb5e79537470bb9ec5b3d153c7c"
+    },
+    "aviation_common_support_ladder.csv": {
+      "rows": 8,
+      "sha256": "41f20d0ff862e93789cde56739d38934c402708145098e509b397e0a4d460957"
+    },
+    "aviation_departure_control_comparison.csv": {
+      "rows": 2,
+      "sha256": "83ce7bd6d5b6fe30ba79193ac1d3150c46cea12506a5c1a6158098fd800ac327"
+    },
+    "aviation_era5_openap_audit.csv": {
+      "rows": 54,
+      "sha256": "01266f1ce6bafd7018e902da427c0b8915d5f6489a81097266920f7cfb0dc27b"
+    },
+    "aviation_era5_openap_diagnostics.csv": {
+      "rows": 1,
+      "sha256": "9f815dfcce7a447e359ee437f3b98dcf870c0603919324a356e062ec3850696d"
+    },
+    "aviation_era5_route_weather.csv": {
+      "rows": 6,
+      "sha256": "c0183efe952042e8049ac5a5528e285c2ddb5072559087a462b2c58143a837dc"
+    },
+    "aviation_independence_matrix.csv": {
+      "rows": 8,
+      "sha256": "c439e3727ed9a536118fbcdfdccc5f3f8bd5075d77acb564f7d732384bf7d77e"
+    },
+    "aviation_m2_structural_envelope.csv": {
+      "rows": 4,
+      "sha256": "6c71b53983146a393992915faf5b5f86fe2a2b0f1c47f3faafb9fb44e1a3ce96"
+    },
+    "aviation_m2_uncertainty_contributions.csv": {
+      "rows": 5,
+      "sha256": "42ae38bf694d08c8e07ee4addae830b85f40f21cab084b2664fed04f5884d4dd"
+    },
+    "aviation_m2_uncertainty_intervals.csv": {
+      "rows": 36,
+      "sha256": "96ba51b794d35ca82eb5b693b6d652ceebefdf2c17180df2dfc3bafb5aadca54"
+    },
+    "aviation_monthly_reconciliation.csv": {
+      "rows": 42,
+      "sha256": "79903998f8a5f1bc902613d255453494b6ceb5de3f8b77ede45aac0d5ddc59f6"
+    },
+    "aviation_monthly_summary.csv": {
+      "rows": 12,
+      "sha256": "61e20f1d04584d814fc8e78307822484d7fda3e66577b0aad2f398abe9571b5b"
+    },
+    "aviation_ocac_annual_source_rows.csv": {
+      "rows": 135,
+      "sha256": "9d695c9028903c70589cf17ab46947f6d19125ed5fb3b4164e5fcb36aa77c6d6"
+    },
+    "aviation_ocac_annual_summary.csv": {
+      "rows": 9,
+      "sha256": "c6ff607c5949c8bd4295fd33e60dfd7eae08bc427bf53583250582205355a3c9"
+    },
+    "aviation_ocac_cumulative_monthly.csv": {
+      "rows": 240,
+      "sha256": "9fe374194ddee36f8dc2ec6dedfff3732cc6bffa9eb459e08e2aea599234c715"
+    },
+    "aviation_ocac_monthly.csv": {
+      "rows": 240,
+      "sha256": "08442755c1d20d52d0ec872218188b85e882f549175730d7307f24ecd4167b3d"
+    },
+    "aviation_ocac_monthly_annual_closure.csv": {
+      "rows": 20,
+      "sha256": "de08a6a94bb6aaf5f1cdf7a166d4771158efc1a633c6c19ea7fc6beaf2183697"
+    },
+    "aviation_ocac_oecd_annual_comparison.csv": {
+      "rows": 7,
+      "sha256": "aebcc140e60f054f2a8210885c6783763e84ca632d9e5d1791fb7a33c1b8ea99"
+    },
+    "aviation_oecd_monthly.csv": {
+      "rows": 72,
+      "sha256": "36683df464afbcd75378a0a4c109ce3bcf53e3e8f88df8e83e2fdff41d941831"
+    },
+    "aviation_payload_capacity_airlines.csv": {
+      "rows": 10,
+      "sha256": "61f80cf21cc9b5077c5cd5f4a7aeaa66508d5f65090141fd6b4c0f3253bb614e"
+    },
+    "aviation_payload_capacity_airports.csv": {
+      "rows": 37,
+      "sha256": "32cae37d65f6a04f5e5f37144bed3515b63f42ed772e711c9ac8e0b9436503ab"
+    },
+    "aviation_reconciliation_qa.csv": {
+      "rows": 30,
+      "sha256": "45d8caa589efe95d0a7d761d07277cc5fcf36661a9fb23c86afab63147f7a12e"
+    },
+    "aviation_route_activity_scenarios.csv": {
+      "rows": 114,
+      "sha256": "f0c3ea156765b0b772e319d554cc66589673202e7cf043bbb9dbb5e41c9cbb9f"
+    },
+    "aviation_route_distance_bounds.csv": {
+      "rows": 3,
+      "sha256": "821429c87c3c53e9d525fa3d8a4fc792f75875899a39c6c2248db04f51e45c52"
+    },
+    "aviation_two_year_replication.csv": {
+      "rows": 2,
+      "sha256": "cadc96c7ff98f5f652ca84de9d7ac003a0c175ef117440877dea77ca4c0e9931"
+    },
+    "aviation_uncertainty_inputs_complete.csv": {
+      "rows": 15,
+      "sha256": "fe0a4f70137c121614cf18ce489297f8e767acd16a63a9e20c0c9a8ab66ae0dd"
+    },
+    "aviation_uncertainty_sensitivity.csv": {
+      "rows": 5,
+      "sha256": "59dd1cada1abeb9f52b445fbff6bac6fbffe1efe0434df9d120116dcd9ea6307"
+    },
+    "aviation_unfccc_crt_cell_audit.csv": {
+      "rows": 21,
+      "sha256": "116a4b68770ffc30a9d42a07488b5f5ebc965290bd9f0f107da8938be148f452"
+    },
+    "aviation_unfccc_crt_extracted.csv": {
+      "rows": 2,
+      "sha256": "765a1e7a3ae56aafea4f53abf3c4f53ff58c10648ec470838cd42071cfd6ae89"
+    },
+    "aviation_unfccc_official_comparison.csv": {
+      "rows": 6,
+      "sha256": "0c311a358bdfc6300f3f439f569ed2908158c72a0a78b4aef7798c14cc4288ae"
+    }
+  },
+  "qa_checks": 30,
+  "qa_passed": 30,
+  "schema": "pkinv.aviation.reconciliation_study/v1",
+  "source_contract": "Tier A/B observed stages can replace Tier C/D without changing accounting",
+  "status": "complete_public-data_reconciliation; flight-stage products provisional"
+}

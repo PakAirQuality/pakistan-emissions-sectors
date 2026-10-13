@@ -1,0 +1,509 @@
+adm2_id,province,fclass,road_km
+ajk_azad_kashmir,Other,motorway,0.0
+ajk_azad_kashmir,Other,primary,405.68
+ajk_azad_kashmir,Other,secondary,904.293
+ajk_azad_kashmir,Other,trunk,338.309
+balochistan_awaran,Balochistan,motorway,0.0
+balochistan_awaran,Balochistan,primary,201.496
+balochistan_awaran,Balochistan,secondary,2.858
+balochistan_awaran,Balochistan,trunk,17.029
+balochistan_barkhan,Balochistan,motorway,0.0
+balochistan_barkhan,Balochistan,primary,0.0
+balochistan_barkhan,Balochistan,secondary,53.158
+balochistan_barkhan,Balochistan,trunk,18.443
+balochistan_chagai,Balochistan,motorway,0.0
+balochistan_chagai,Balochistan,primary,6.703
+balochistan_chagai,Balochistan,secondary,9.283
+balochistan_chagai,Balochistan,trunk,471.981
+balochistan_chaman;balochistan_killa_abdullah,Balochistan,motorway,0.0
+balochistan_chaman;balochistan_killa_abdullah,Balochistan,primary,54.525
+balochistan_chaman;balochistan_killa_abdullah,Balochistan,secondary,142.116
+balochistan_chaman;balochistan_killa_abdullah,Balochistan,trunk,103.79
+balochistan_dera_bugti,Balochistan,motorway,0.0
+balochistan_dera_bugti,Balochistan,primary,0.0
+balochistan_dera_bugti,Balochistan,secondary,80.688
+balochistan_dera_bugti,Balochistan,trunk,0.0
+balochistan_duki;balochistan_loralai,Balochistan,motorway,0.0
+balochistan_duki;balochistan_loralai,Balochistan,primary,85.376
+balochistan_duki;balochistan_loralai,Balochistan,secondary,203.336
+balochistan_duki;balochistan_loralai,Balochistan,trunk,84.005
+balochistan_gwadar,Balochistan,motorway,0.0
+balochistan_gwadar,Balochistan,primary,126.267
+balochistan_gwadar,Balochistan,secondary,284.279
+balochistan_gwadar,Balochistan,trunk,425.92
+balochistan_harnai;balochistan_sibi,Balochistan,motorway,0.0
+balochistan_harnai;balochistan_sibi,Balochistan,primary,0.822
+balochistan_harnai;balochistan_sibi,Balochistan,secondary,114.31
+balochistan_harnai;balochistan_sibi,Balochistan,trunk,14.979
+balochistan_jaffarabad;balochistan_sohbatpur,Balochistan,motorway,0.0
+balochistan_jaffarabad;balochistan_sohbatpur,Balochistan,primary,66.327
+balochistan_jaffarabad;balochistan_sohbatpur,Balochistan,secondary,106.223
+balochistan_jaffarabad;balochistan_sohbatpur,Balochistan,trunk,16.613
+balochistan_jhal_magsi,Balochistan,motorway,0.0
+balochistan_jhal_magsi,Balochistan,primary,0.0
+balochistan_jhal_magsi,Balochistan,secondary,191.859
+balochistan_jhal_magsi,Balochistan,trunk,27.462
+balochistan_kachhi,Balochistan,motorway,0.0
+balochistan_kachhi,Balochistan,primary,5.484
+balochistan_kachhi,Balochistan,secondary,47.725
+balochistan_kachhi,Balochistan,trunk,172.716
+balochistan_kalat;balochistan_surab,Balochistan,motorway,0.0
+balochistan_kalat;balochistan_surab,Balochistan,primary,15.558
+balochistan_kalat;balochistan_surab,Balochistan,secondary,71.379
+balochistan_kalat;balochistan_surab,Balochistan,trunk,209.552
+balochistan_kech,Balochistan,motorway,0.0
+balochistan_kech,Balochistan,primary,377.817
+balochistan_kech,Balochistan,secondary,146.938
+balochistan_kech,Balochistan,trunk,222.368
+balochistan_kharan;balochistan_washuk,Balochistan,motorway,0.0
+balochistan_kharan;balochistan_washuk,Balochistan,primary,56.565
+balochistan_kharan;balochistan_washuk,Balochistan,secondary,20.532
+balochistan_kharan;balochistan_washuk,Balochistan,trunk,476.062
+balochistan_khuzdar,Balochistan,motorway,0.0
+balochistan_khuzdar,Balochistan,primary,0.0
+balochistan_khuzdar,Balochistan,secondary,164.394
+balochistan_khuzdar,Balochistan,trunk,445.18
+balochistan_killa_saifullah,Balochistan,motorway,0.0
+balochistan_killa_saifullah,Balochistan,primary,8.831
+balochistan_killa_saifullah,Balochistan,secondary,276.452
+balochistan_killa_saifullah,Balochistan,trunk,248.873
+balochistan_kohlu,Balochistan,motorway,0.0
+balochistan_kohlu,Balochistan,primary,0.0
+balochistan_kohlu,Balochistan,secondary,170.17
+balochistan_kohlu,Balochistan,trunk,0.0
+balochistan_lasbela,Balochistan,motorway,0.0
+balochistan_lasbela,Balochistan,primary,67.345
+balochistan_lasbela,Balochistan,secondary,343.932
+balochistan_lasbela,Balochistan,trunk,388.189
+balochistan_mastung,Balochistan,motorway,0.0
+balochistan_mastung,Balochistan,primary,85.78
+balochistan_mastung,Balochistan,secondary,117.519
+balochistan_mastung,Balochistan,trunk,140.113
+balochistan_musakhel,Balochistan,motorway,0.0
+balochistan_musakhel,Balochistan,primary,0.0
+balochistan_musakhel,Balochistan,secondary,12.775
+balochistan_musakhel,Balochistan,trunk,55.279
+balochistan_nasirabad,Balochistan,motorway,0.0
+balochistan_nasirabad,Balochistan,primary,7.72
+balochistan_nasirabad,Balochistan,secondary,60.878
+balochistan_nasirabad,Balochistan,trunk,53.352
+balochistan_nushki,Balochistan,motorway,0.0
+balochistan_nushki,Balochistan,primary,23.539
+balochistan_nushki,Balochistan,secondary,49.177
+balochistan_nushki,Balochistan,trunk,128.814
+balochistan_panjgur,Balochistan,motorway,0.0
+balochistan_panjgur,Balochistan,primary,120.987
+balochistan_panjgur,Balochistan,secondary,11.706
+balochistan_panjgur,Balochistan,trunk,172.079
+balochistan_pishin,Balochistan,motorway,0.0
+balochistan_pishin,Balochistan,primary,59.435
+balochistan_pishin,Balochistan,secondary,293.102
+balochistan_pishin,Balochistan,trunk,70.741
+balochistan_quetta,Balochistan,motorway,0.0
+balochistan_quetta,Balochistan,primary,264.277
+balochistan_quetta,Balochistan,secondary,214.343
+balochistan_quetta,Balochistan,trunk,163.06
+balochistan_sherani;balochistan_zhob,Balochistan,motorway,0.0
+balochistan_sherani;balochistan_zhob,Balochistan,primary,79.553
+balochistan_sherani;balochistan_zhob,Balochistan,secondary,219.179
+balochistan_sherani;balochistan_zhob,Balochistan,trunk,152.836
+balochistan_ziarat,Balochistan,motorway,0.0
+balochistan_ziarat,Balochistan,primary,70.222
+balochistan_ziarat,Balochistan,secondary,62.248
+balochistan_ziarat,Balochistan,trunk,0.0
+gb_astore,Other,motorway,0.0
+gb_astore,Other,primary,90.538
+gb_astore,Other,secondary,32.255
+gb_astore,Other,trunk,5.294
+gb_diamer,Other,motorway,0.0
+gb_diamer,Other,primary,29.951
+gb_diamer,Other,secondary,62.388
+gb_diamer,Other,trunk,164.697
+gb_ghanche,Other,motorway,0.0
+gb_ghanche,Other,primary,23.614
+gb_ghanche,Other,secondary,138.231
+gb_ghanche,Other,trunk,0.0
+gb_ghizer,Other,motorway,0.0
+gb_ghizer,Other,primary,0.0
+gb_ghizer,Other,secondary,99.513
+gb_ghizer,Other,trunk,181.78
+gb_gilgit,Other,motorway,0.0
+gb_gilgit,Other,primary,62.221
+gb_gilgit,Other,secondary,51.885
+gb_gilgit,Other,trunk,184.187
+gb_hunza,Other,motorway,0.0
+gb_hunza,Other,primary,0.0
+gb_hunza,Other,secondary,139.261
+gb_hunza,Other,trunk,165.221
+gb_kharmang,Other,motorway,0.0
+gb_kharmang,Other,primary,107.447
+gb_kharmang,Other,secondary,1.407
+gb_kharmang,Other,trunk,0.0
+gb_nagar,Other,motorway,0.0
+gb_nagar,Other,primary,0.0
+gb_nagar,Other,secondary,30.194
+gb_nagar,Other,trunk,76.094
+gb_shigar,Other,motorway,0.0
+gb_shigar,Other,primary,8.188
+gb_shigar,Other,secondary,60.963
+gb_shigar,Other,trunk,0.0
+gb_skardu,Other,motorway,0.0
+gb_skardu,Other,primary,147.552
+gb_skardu,Other,secondary,147.556
+gb_skardu,Other,trunk,128.607
+ict_islamabad,Other,motorway,0.0
+ict_islamabad,Other,primary,215.353
+ict_islamabad,Other,secondary,230.25
+ict_islamabad,Other,trunk,198.512
+kp_abbottabad,Khyber Pakhtunkhwa,motorway,70.783
+kp_abbottabad,Khyber Pakhtunkhwa,primary,40.663
+kp_abbottabad,Khyber Pakhtunkhwa,secondary,89.097
+kp_abbottabad,Khyber Pakhtunkhwa,trunk,43.679
+kp_bajaur,Khyber Pakhtunkhwa,motorway,0.0
+kp_bajaur,Khyber Pakhtunkhwa,primary,0.0
+kp_bajaur,Khyber Pakhtunkhwa,secondary,76.272
+kp_bajaur,Khyber Pakhtunkhwa,trunk,31.298
+kp_bannu,Khyber Pakhtunkhwa,motorway,0.0
+kp_bannu,Khyber Pakhtunkhwa,primary,3.561
+kp_bannu,Khyber Pakhtunkhwa,secondary,25.944
+kp_bannu,Khyber Pakhtunkhwa,trunk,45.174
+kp_batagram,Khyber Pakhtunkhwa,motorway,0.0
+kp_batagram,Khyber Pakhtunkhwa,primary,3.56
+kp_batagram,Khyber Pakhtunkhwa,secondary,81.036
+kp_batagram,Khyber Pakhtunkhwa,trunk,41.59
+kp_buner,Khyber Pakhtunkhwa,motorway,0.0
+kp_buner,Khyber Pakhtunkhwa,primary,10.221
+kp_buner,Khyber Pakhtunkhwa,secondary,179.045
+kp_buner,Khyber Pakhtunkhwa,trunk,0.0
+kp_charsadda,Khyber Pakhtunkhwa,motorway,36.038
+kp_charsadda,Khyber Pakhtunkhwa,primary,35.86
+kp_charsadda,Khyber Pakhtunkhwa,secondary,123.529
+kp_charsadda,Khyber Pakhtunkhwa,trunk,117.474
+kp_chitral_legacy;kp_lower_chitral;kp_upper_chitral,Khyber Pakhtunkhwa,motorway,0.0
+kp_chitral_legacy;kp_lower_chitral;kp_upper_chitral,Khyber Pakhtunkhwa,primary,0.0
+kp_chitral_legacy;kp_lower_chitral;kp_upper_chitral,Khyber Pakhtunkhwa,secondary,78.607
+kp_chitral_legacy;kp_lower_chitral;kp_upper_chitral,Khyber Pakhtunkhwa,trunk,235.981
+kp_dera_ismail_khan,Khyber Pakhtunkhwa,motorway,26.459
+kp_dera_ismail_khan,Khyber Pakhtunkhwa,primary,69.156
+kp_dera_ismail_khan,Khyber Pakhtunkhwa,secondary,47.586
+kp_dera_ismail_khan,Khyber Pakhtunkhwa,trunk,322.499
+kp_hangu,Khyber Pakhtunkhwa,motorway,0.0
+kp_hangu,Khyber Pakhtunkhwa,primary,0.0
+kp_hangu,Khyber Pakhtunkhwa,secondary,29.659
+kp_hangu,Khyber Pakhtunkhwa,trunk,10.817
+kp_haripur,Khyber Pakhtunkhwa,motorway,133.67
+kp_haripur,Khyber Pakhtunkhwa,primary,90.952
+kp_haripur,Khyber Pakhtunkhwa,secondary,268.003
+kp_haripur,Khyber Pakhtunkhwa,trunk,78.318
+kp_karak,Khyber Pakhtunkhwa,motorway,0.0
+kp_karak,Khyber Pakhtunkhwa,primary,64.623
+kp_karak,Khyber Pakhtunkhwa,secondary,174.854
+kp_karak,Khyber Pakhtunkhwa,trunk,117.42
+kp_khyber,Khyber Pakhtunkhwa,motorway,0.0
+kp_khyber,Khyber Pakhtunkhwa,primary,0.0
+kp_khyber,Khyber Pakhtunkhwa,secondary,206.306
+kp_khyber,Khyber Pakhtunkhwa,trunk,57.441
+kp_kohat,Khyber Pakhtunkhwa,motorway,0.0
+kp_kohat,Khyber Pakhtunkhwa,primary,37.847
+kp_kohat,Khyber Pakhtunkhwa,secondary,115.821
+kp_kohat,Khyber Pakhtunkhwa,trunk,140.635
+kp_kohistan_legacy;kp_kolai_palas;kp_lower_kohistan;kp_upper_kohistan,Khyber Pakhtunkhwa,motorway,0.0
+kp_kohistan_legacy;kp_kolai_palas;kp_lower_kohistan;kp_upper_kohistan,Khyber Pakhtunkhwa,primary,0.0
+kp_kohistan_legacy;kp_kolai_palas;kp_lower_kohistan;kp_upper_kohistan,Khyber Pakhtunkhwa,secondary,34.83
+kp_kohistan_legacy;kp_kolai_palas;kp_lower_kohistan;kp_upper_kohistan,Khyber Pakhtunkhwa,trunk,145.803
+kp_kurram,Khyber Pakhtunkhwa,motorway,0.0
+kp_kurram,Khyber Pakhtunkhwa,primary,30.155
+kp_kurram,Khyber Pakhtunkhwa,secondary,91.252
+kp_kurram,Khyber Pakhtunkhwa,trunk,137.985
+kp_lakki_marwat,Khyber Pakhtunkhwa,motorway,93.389
+kp_lakki_marwat,Khyber Pakhtunkhwa,primary,63.427
+kp_lakki_marwat,Khyber Pakhtunkhwa,secondary,123.505
+kp_lakki_marwat,Khyber Pakhtunkhwa,trunk,175.88
+kp_lower_dir,Khyber Pakhtunkhwa,motorway,0.0
+kp_lower_dir,Khyber Pakhtunkhwa,primary,26.406
+kp_lower_dir,Khyber Pakhtunkhwa,secondary,94.25
+kp_lower_dir,Khyber Pakhtunkhwa,trunk,101.207
+kp_malakand_protected_area,Khyber Pakhtunkhwa,motorway,46.823
+kp_malakand_protected_area,Khyber Pakhtunkhwa,primary,6.779
+kp_malakand_protected_area,Khyber Pakhtunkhwa,secondary,124.829
+kp_malakand_protected_area,Khyber Pakhtunkhwa,trunk,73.404
+kp_mansehra;kp_torghar,Khyber Pakhtunkhwa,motorway,21.509
+kp_mansehra;kp_torghar,Khyber Pakhtunkhwa,primary,91.525
+kp_mansehra;kp_torghar,Khyber Pakhtunkhwa,secondary,343.926
+kp_mansehra;kp_torghar,Khyber Pakhtunkhwa,trunk,332.549
+kp_mardan,Khyber Pakhtunkhwa,motorway,87.814
+kp_mardan,Khyber Pakhtunkhwa,primary,114.856
+kp_mardan,Khyber Pakhtunkhwa,secondary,250.848
+kp_mardan,Khyber Pakhtunkhwa,trunk,171.217
+kp_mohmand,Khyber Pakhtunkhwa,motorway,0.0
+kp_mohmand,Khyber Pakhtunkhwa,primary,16.455
+kp_mohmand,Khyber Pakhtunkhwa,secondary,205.062
+kp_mohmand,Khyber Pakhtunkhwa,trunk,72.647
+kp_north_waziristan,Khyber Pakhtunkhwa,motorway,0.0
+kp_north_waziristan,Khyber Pakhtunkhwa,primary,115.232
+kp_north_waziristan,Khyber Pakhtunkhwa,secondary,155.671
+kp_north_waziristan,Khyber Pakhtunkhwa,trunk,100.101
+kp_nowshera,Khyber Pakhtunkhwa,motorway,56.072
+kp_nowshera,Khyber Pakhtunkhwa,primary,125.267
+kp_nowshera,Khyber Pakhtunkhwa,secondary,71.01
+kp_nowshera,Khyber Pakhtunkhwa,trunk,145.587
+kp_orakzai,Khyber Pakhtunkhwa,motorway,0.0
+kp_orakzai,Khyber Pakhtunkhwa,primary,44.415
+kp_orakzai,Khyber Pakhtunkhwa,secondary,99.779
+kp_orakzai,Khyber Pakhtunkhwa,trunk,154.644
+kp_peshawar,Khyber Pakhtunkhwa,motorway,35.79
+kp_peshawar,Khyber Pakhtunkhwa,primary,171.79
+kp_peshawar,Khyber Pakhtunkhwa,secondary,270.02
+kp_peshawar,Khyber Pakhtunkhwa,trunk,235.208
+kp_shangla,Khyber Pakhtunkhwa,motorway,0.0
+kp_shangla,Khyber Pakhtunkhwa,primary,0.0
+kp_shangla,Khyber Pakhtunkhwa,secondary,99.875
+kp_shangla,Khyber Pakhtunkhwa,trunk,68.305
+kp_south_waziristan,Khyber Pakhtunkhwa,motorway,0.0
+kp_south_waziristan,Khyber Pakhtunkhwa,primary,261.019
+kp_south_waziristan,Khyber Pakhtunkhwa,secondary,142.721
+kp_south_waziristan,Khyber Pakhtunkhwa,trunk,194.512
+kp_swabi,Khyber Pakhtunkhwa,motorway,130.711
+kp_swabi,Khyber Pakhtunkhwa,primary,74.298
+kp_swabi,Khyber Pakhtunkhwa,secondary,178.456
+kp_swabi,Khyber Pakhtunkhwa,trunk,144.71
+kp_swat,Khyber Pakhtunkhwa,motorway,0.0
+kp_swat,Khyber Pakhtunkhwa,primary,124.747
+kp_swat,Khyber Pakhtunkhwa,secondary,198.228
+kp_swat,Khyber Pakhtunkhwa,trunk,142.294
+kp_tank,Khyber Pakhtunkhwa,motorway,0.0
+kp_tank,Khyber Pakhtunkhwa,primary,49.32
+kp_tank,Khyber Pakhtunkhwa,secondary,19.5
+kp_tank,Khyber Pakhtunkhwa,trunk,57.047
+kp_upper_dir,Khyber Pakhtunkhwa,motorway,0.0
+kp_upper_dir,Khyber Pakhtunkhwa,primary,60.239
+kp_upper_dir,Khyber Pakhtunkhwa,secondary,146.224
+kp_upper_dir,Khyber Pakhtunkhwa,trunk,87.389
+outside_every_polygon,,motorway,0.0
+outside_every_polygon,,primary,71.861
+outside_every_polygon,,secondary,224.643
+outside_every_polygon,,trunk,160.139
+punjab_attock,Punjab,motorway,292.172
+punjab_attock,Punjab,primary,296.605
+punjab_attock,Punjab,secondary,172.878
+punjab_attock,Punjab,trunk,297.293
+punjab_bahawalnagar,Punjab,motorway,0.0
+punjab_bahawalnagar,Punjab,primary,396.89
+punjab_bahawalnagar,Punjab,secondary,203.026
+punjab_bahawalnagar,Punjab,trunk,1.553
+punjab_bahawalpur,Punjab,motorway,99.823
+punjab_bahawalpur,Punjab,primary,438.388
+punjab_bahawalpur,Punjab,secondary,529.781
+punjab_bahawalpur,Punjab,trunk,412.236
+punjab_bhakkar,Punjab,motorway,0.0
+punjab_bhakkar,Punjab,primary,166.432
+punjab_bhakkar,Punjab,secondary,272.84
+punjab_bhakkar,Punjab,trunk,141.512
+punjab_chakwal,Punjab,motorway,156.842
+punjab_chakwal,Punjab,primary,264.887
+punjab_chakwal,Punjab,secondary,129.347
+punjab_chakwal,Punjab,trunk,269.981
+punjab_chiniot;punjab_jhang,Punjab,motorway,42.221
+punjab_chiniot;punjab_jhang,Punjab,primary,449.302
+punjab_chiniot;punjab_jhang,Punjab,secondary,345.85
+punjab_chiniot;punjab_jhang,Punjab,trunk,279.651
+punjab_dera_ghazi_khan,Punjab,motorway,0.0
+punjab_dera_ghazi_khan,Punjab,primary,37.602
+punjab_dera_ghazi_khan,Punjab,secondary,491.975
+punjab_dera_ghazi_khan,Punjab,trunk,305.201
+punjab_faisalabad,Punjab,motorway,308.569
+punjab_faisalabad,Punjab,primary,727.865
+punjab_faisalabad,Punjab,secondary,489.663
+punjab_faisalabad,Punjab,trunk,245.513
+punjab_gujranwala,Punjab,motorway,89.325
+punjab_gujranwala,Punjab,primary,175.562
+punjab_gujranwala,Punjab,secondary,399.166
+punjab_gujranwala,Punjab,trunk,375.774
+punjab_gujrat,Punjab,motorway,0.0
+punjab_gujrat,Punjab,primary,306.699
+punjab_gujrat,Punjab,secondary,395.611
+punjab_gujrat,Punjab,trunk,195.935
+punjab_hafizabad,Punjab,motorway,155.378
+punjab_hafizabad,Punjab,primary,138.297
+punjab_hafizabad,Punjab,secondary,105.832
+punjab_hafizabad,Punjab,trunk,216.787
+punjab_jhelum,Punjab,motorway,28.107
+punjab_jhelum,Punjab,primary,155.04
+punjab_jhelum,Punjab,secondary,309.09
+punjab_jhelum,Punjab,trunk,289.182
+punjab_kasur,Punjab,motorway,0.0
+punjab_kasur,Punjab,primary,164.987
+punjab_kasur,Punjab,secondary,204.382
+punjab_kasur,Punjab,trunk,275.839
+punjab_khanewal,Punjab,motorway,120.299
+punjab_khanewal,Punjab,primary,153.018
+punjab_khanewal,Punjab,secondary,292.693
+punjab_khanewal,Punjab,trunk,332.967
+punjab_khushab,Punjab,motorway,0.0
+punjab_khushab,Punjab,primary,304.656
+punjab_khushab,Punjab,secondary,297.14
+punjab_khushab,Punjab,trunk,164.365
+punjab_lahore,Punjab,motorway,186.103
+punjab_lahore,Punjab,primary,492.404
+punjab_lahore,Punjab,secondary,802.547
+punjab_lahore,Punjab,trunk,210.71
+punjab_layyah,Punjab,motorway,0.0
+punjab_layyah,Punjab,primary,196.027
+punjab_layyah,Punjab,secondary,217.364
+punjab_layyah,Punjab,trunk,61.582
+punjab_lodhran,Punjab,motorway,0.0
+punjab_lodhran,Punjab,primary,162.447
+punjab_lodhran,Punjab,secondary,153.281
+punjab_lodhran,Punjab,trunk,187.121
+punjab_mandi_bahauddin,Punjab,motorway,0.0
+punjab_mandi_bahauddin,Punjab,primary,287.53
+punjab_mandi_bahauddin,Punjab,secondary,267.094
+punjab_mandi_bahauddin,Punjab,trunk,205.811
+punjab_mianwali,Punjab,motorway,226.556
+punjab_mianwali,Punjab,primary,289.607
+punjab_mianwali,Punjab,secondary,155.383
+punjab_mianwali,Punjab,trunk,171.184
+punjab_multan,Punjab,motorway,278.848
+punjab_multan,Punjab,primary,353.479
+punjab_multan,Punjab,secondary,550.08
+punjab_multan,Punjab,trunk,214.815
+punjab_muzaffargarh,Punjab,motorway,0.0
+punjab_muzaffargarh,Punjab,primary,517.073
+punjab_muzaffargarh,Punjab,secondary,337.3
+punjab_muzaffargarh,Punjab,trunk,199.186
+punjab_nankana_sahib;punjab_sheikhupura,Punjab,motorway,550.583
+punjab_nankana_sahib;punjab_sheikhupura,Punjab,primary,682.879
+punjab_nankana_sahib;punjab_sheikhupura,Punjab,secondary,718.611
+punjab_nankana_sahib;punjab_sheikhupura,Punjab,trunk,382.326
+punjab_narowal,Punjab,motorway,0.0
+punjab_narowal,Punjab,primary,175.042
+punjab_narowal,Punjab,secondary,193.164
+punjab_narowal,Punjab,trunk,0.0
+punjab_okara,Punjab,motorway,0.0
+punjab_okara,Punjab,primary,218.524
+punjab_okara,Punjab,secondary,416.051
+punjab_okara,Punjab,trunk,214.824
+punjab_pakpattan,Punjab,motorway,0.0
+punjab_pakpattan,Punjab,primary,175.597
+punjab_pakpattan,Punjab,secondary,257.142
+punjab_pakpattan,Punjab,trunk,79.01
+punjab_rahim_yar_khan,Punjab,motorway,305.911
+punjab_rahim_yar_khan,Punjab,primary,378.128
+punjab_rahim_yar_khan,Punjab,secondary,769.652
+punjab_rahim_yar_khan,Punjab,trunk,353.07
+punjab_rajanpur,Punjab,motorway,24.526
+punjab_rajanpur,Punjab,primary,22.944
+punjab_rajanpur,Punjab,secondary,269.646
+punjab_rajanpur,Punjab,trunk,211.475
+punjab_rawalpindi,Punjab,motorway,349.894
+punjab_rawalpindi,Punjab,primary,593.24
+punjab_rawalpindi,Punjab,secondary,1069.565
+punjab_rawalpindi,Punjab,trunk,741.864
+punjab_sahiwal,Punjab,motorway,0.0
+punjab_sahiwal,Punjab,primary,205.237
+punjab_sahiwal,Punjab,secondary,451.544
+punjab_sahiwal,Punjab,trunk,199.25
+punjab_sargodha,Punjab,motorway,174.7
+punjab_sargodha,Punjab,primary,500.746
+punjab_sargodha,Punjab,secondary,658.919
+punjab_sargodha,Punjab,trunk,241.399
+punjab_sialkot,Punjab,motorway,86.965
+punjab_sialkot,Punjab,primary,360.442
+punjab_sialkot,Punjab,secondary,309.461
+punjab_sialkot,Punjab,trunk,144.203
+punjab_toba_tek_singh,Punjab,motorway,387.577
+punjab_toba_tek_singh,Punjab,primary,327.87
+punjab_toba_tek_singh,Punjab,secondary,388.333
+punjab_toba_tek_singh,Punjab,trunk,13.106
+punjab_vehari,Punjab,motorway,0.0
+punjab_vehari,Punjab,primary,218.832
+punjab_vehari,Punjab,secondary,452.677
+punjab_vehari,Punjab,trunk,195.033
+sindh_badin,Sindh,motorway,0.0
+sindh_badin,Sindh,primary,160.105
+sindh_badin,Sindh,secondary,157.928
+sindh_badin,Sindh,trunk,76.656
+sindh_dadu,Sindh,motorway,0.0
+sindh_dadu,Sindh,primary,108.899
+sindh_dadu,Sindh,secondary,210.957
+sindh_dadu,Sindh,trunk,153.942
+sindh_ghotki,Sindh,motorway,31.89
+sindh_ghotki,Sindh,primary,16.382
+sindh_ghotki,Sindh,secondary,136.193
+sindh_ghotki,Sindh,trunk,140.628
+sindh_hyderabad,Sindh,motorway,0.0
+sindh_hyderabad,Sindh,primary,59.886
+sindh_hyderabad,Sindh,secondary,194.821
+sindh_hyderabad,Sindh,trunk,134.525
+sindh_jacobabad,Sindh,motorway,0.0
+sindh_jacobabad,Sindh,primary,121.833
+sindh_jacobabad,Sindh,secondary,2.137
+sindh_jacobabad,Sindh,trunk,28.476
+sindh_jamshoro,Sindh,motorway,130.313
+sindh_jamshoro,Sindh,primary,80.512
+sindh_jamshoro,Sindh,secondary,305.961
+sindh_jamshoro,Sindh,trunk,327.412
+sindh_kambar_shahdad_kot,Sindh,motorway,0.0
+sindh_kambar_shahdad_kot,Sindh,primary,193.029
+sindh_kambar_shahdad_kot,Sindh,secondary,404.439
+sindh_kambar_shahdad_kot,Sindh,trunk,337.883
+sindh_karachi_central;sindh_karachi_east;sindh_karachi_legacy;sindh_karachi_south;sindh_karachi_west;sindh_keamari;sindh_korangi;sindh_malir,Sindh,motorway,241.187
+sindh_karachi_central;sindh_karachi_east;sindh_karachi_legacy;sindh_karachi_south;sindh_karachi_west;sindh_keamari;sindh_korangi;sindh_malir,Sindh,primary,753.702
+sindh_karachi_central;sindh_karachi_east;sindh_karachi_legacy;sindh_karachi_south;sindh_karachi_west;sindh_keamari;sindh_korangi;sindh_malir,Sindh,secondary,986.166
+sindh_karachi_central;sindh_karachi_east;sindh_karachi_legacy;sindh_karachi_south;sindh_karachi_west;sindh_keamari;sindh_korangi;sindh_malir,Sindh,trunk,347.019
+sindh_kashmore,Sindh,motorway,121.792
+sindh_kashmore,Sindh,primary,37.524
+sindh_kashmore,Sindh,secondary,42.467
+sindh_kashmore,Sindh,trunk,122.56
+sindh_khairpur,Sindh,motorway,0.0
+sindh_khairpur,Sindh,primary,205.121
+sindh_khairpur,Sindh,secondary,89.141
+sindh_khairpur,Sindh,trunk,132.803
+sindh_matiari,Sindh,motorway,0.0
+sindh_matiari,Sindh,primary,3.664
+sindh_matiari,Sindh,secondary,5.957
+sindh_matiari,Sindh,trunk,90.744
+sindh_mirpur_khas,Sindh,motorway,0.0
+sindh_mirpur_khas,Sindh,primary,189.331
+sindh_mirpur_khas,Sindh,secondary,77.977
+sindh_mirpur_khas,Sindh,trunk,27.504
+sindh_naushahro_feroze,Sindh,motorway,0.0
+sindh_naushahro_feroze,Sindh,primary,138.166
+sindh_naushahro_feroze,Sindh,secondary,140.483
+sindh_naushahro_feroze,Sindh,trunk,173.055
+sindh_sanghar,Sindh,motorway,0.0
+sindh_sanghar,Sindh,primary,402.282
+sindh_sanghar,Sindh,secondary,311.923
+sindh_sanghar,Sindh,trunk,13.037
+sindh_shaheed_benazirabad,Sindh,motorway,0.0
+sindh_shaheed_benazirabad,Sindh,primary,197.344
+sindh_shaheed_benazirabad,Sindh,secondary,206.386
+sindh_shaheed_benazirabad,Sindh,trunk,298.189
+sindh_shikarpur,Sindh,motorway,0.0
+sindh_shikarpur,Sindh,primary,27.54
+sindh_shikarpur,Sindh,secondary,84.969
+sindh_shikarpur,Sindh,trunk,205.538
+sindh_sujawal;sindh_thatta,Sindh,motorway,79.886
+sindh_sujawal;sindh_thatta,Sindh,primary,167.103
+sindh_sujawal;sindh_thatta,Sindh,secondary,353.009
+sindh_sujawal;sindh_thatta,Sindh,trunk,321.014
+sindh_sukkur,Sindh,motorway,110.577
+sindh_sukkur,Sindh,primary,46.466
+sindh_sukkur,Sindh,secondary,147.447
+sindh_sukkur,Sindh,trunk,159.956
+sindh_tando_allahyar,Sindh,motorway,0.0
+sindh_tando_allahyar,Sindh,primary,89.814
+sindh_tando_allahyar,Sindh,secondary,157.966
+sindh_tando_allahyar,Sindh,trunk,69.114
+sindh_tando_muhammad_khan,Sindh,motorway,0.0
+sindh_tando_muhammad_khan,Sindh,primary,43.743
+sindh_tando_muhammad_khan,Sindh,secondary,68.377
+sindh_tando_muhammad_khan,Sindh,trunk,24.054
+sindh_tharparkar,Sindh,motorway,0.0
+sindh_tharparkar,Sindh,primary,378.409
+sindh_tharparkar,Sindh,secondary,228.416
+sindh_tharparkar,Sindh,trunk,1.173
+sindh_umer_kot,Sindh,motorway,0.0
+sindh_umer_kot,Sindh,primary,129.061
+sindh_umer_kot,Sindh,secondary,231.948
+sindh_umer_kot,Sindh,trunk,129.059

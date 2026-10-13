@@ -1,0 +1,4 @@
+method,coverage,clinker_activity_mt,process_co2_mt,clinker_fraction,status
+Reference: producer census (rc30),16 of 16 census entities,41.95317,21.815648399999997,,"reference activity; observed production, no fraction, no trade term"
+Diagnostic model f=0.75,national model,33.440443,17.389030360000003,0.75,named structural diagnostic (superseded as reference at rc30); residual vs census published in the coverage table
+Diagnostic model f=0.95 (all-Portland),national model,41.353643,21.503894359999997,0.95,named structural diagnostic; residual vs census published

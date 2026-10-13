@@ -1,0 +1,425 @@
+{
+  "inventory": "Pakistan road transport (1.A.3.b) and off-road machinery (1.A.4.c ii)",
+  "reference_year": "2024 = FY2023-24, the common reference period; petrol/diesel controls OCAC FY2023-24 Road rows. Two SHAPES are borrowed because the reference period does not carry them: the class split rides the 2023 registration panel (2024 reports 30 percent of the best-covered year) and the provincial split rides the FY2024-25 monthly area pages (FY2023-24 has one month, not twelve). Neither moves a tonne - see outputs/transport_provincial_shape_brackets.csv. Generator carve-out HIES 2024-25; rail cross-check now year-matched.",
+  "control_totals": "petrol 7209.4 kt/yr (Road MS+HOBC) and HSD 5551.4 kt/yr (Road row), OCAC Sectoral Sales FY2023-24; CNG 62 MMCFD FY2023-24 (OGRA Tables 3.31/6.1)",
+  "methods": {
+    "ghg": "IPCC 2006 Vol 2 Ch 3 Tier 1, fuel-anchored: Table 3.2.1/3.2.2 road, Table 3.3.1 off-road; CNG on OGRA metered gas",
+    "air": "per-kilometre factors inherited from the Punjab workbook, no primary citation located (air_pollutants.py); exhaust only",
+    "spatial": "province proxies in data/province_shares.csv (transport_vkt, transport_offroad, transport_cng_vkt)",
+    "ledger": "fuel-claimant ledger over both petroleum controls, unresolved claimants carried as status (fuel_ledger.py)"
+  },
+  "monte_carlo": {
+    "iterations": 10000,
+    "national_seed": 42,
+    "scenario_seed": 1811,
+    "distribution": "lognormal",
+    "structural_scenarios": [
+      "reference",
+      "legacy_pes_control",
+      "pes_corrected_12_9",
+      "national_hsd_minus_bulk",
+      "road_share_low",
+      "road_share_high",
+      "cng_hhv_900",
+      "offroad_n2o_road_factor",
+      "cng_excluded",
+      "cng_fleet_energy_low",
+      "cng_fleet_energy_high",
+      "calendar_2022_controls",
+      "retail_nonroad_2p5pct",
+      "retail_nonroad_5pct",
+      "retail_nonroad_10pct",
+      "offroad_share_5pct",
+      "offroad_share_15pct",
+      "offroad_factor_mix_construction",
+      "offroad_reallocated_1a2",
+      "class_intensity_low",
+      "class_intensity_high",
+      "intensity_ratio_light_low",
+      "intensity_ratio_light_high",
+      "class_split_declaration",
+      "air_factor_provenance"
+    ]
+  },
+  "sources": [
+    {
+      "path": "sources/Transport/Transport Data.xlsx",
+      "sha256": "40c21eee498adaa41f6faa5f0344633b18233c177401516b0c82a4bfef12e3ce"
+    },
+    {
+      "path": "sources/Transport/Transport_Emissions_Inventory_Cleaned_v2.xlsx",
+      "sha256": "5078c3aad7ef0b0e0439c481d876dc3a709e70154a32ebbfef2bff39fbd18c53"
+    },
+    {
+      "path": "sources/Transport/pama_raw.xlsx",
+      "sha256": "32741dfb709b61182f2659a9f508c20558c925c5b0aab761dcaf4848df86d8e2"
+    },
+    {
+      "path": "sources/Transport/transport_pbs_raw.xlsx",
+      "sha256": "6a0ebb8a645c531abef5447580808b5c9d9df2b5fa7626a141dce90ace14525c"
+    },
+    {
+      "path": "sources/Punjab Transport/Punjab Transport.xlsx",
+      "sha256": "8e96eb2488d9f590f48099e3d92f6df8e6d21497e8f8dfa6b0b6b879ea842643"
+    },
+    {
+      "path": "sources/Punjab Transport/pama.xlsx",
+      "sha256": "fa8284f391cdbf931eaca2f42be6ade4d84e02432f689e4c33d004c6a23043f4"
+    },
+    {
+      "path": "sources/Punjab Transport/Punjab Transport.pdf",
+      "sha256": "a263a6030acb4b53a545203b10c76ca6266607d30bf29bde04e0d611c7ef875b"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2015-16.pdf",
+      "sha256": "593e7616e58651aa5dad9ce192ac1fa8bcd1f419b7f3ecc83f1297cfdad326b4"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2016-17.pdf",
+      "sha256": "674c17b2772b7d404f3f9d949bd17cb7e62959ed33050e56a8aed5849d0efa93"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2017-18.pdf",
+      "sha256": "c18d8ccbc771731a5c9f9ba00c2677a413bf450c27f84e839bb76fbd1991877c"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2018-19.pdf",
+      "sha256": "8dc93d105f7c34378b6485087758b1ce254d700452148b9e27f48a668953310b"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2019-20.pdf",
+      "sha256": "12470af76b075e082b1ffa7af68f9876944e5d4ee588a66054c55cc367666c59"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2020-21.pdf",
+      "sha256": "6f05d88dd95bbf9893efebeb643a0f073ca2544f31860c9c0418e9a4125306ed"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2021-22.pdf",
+      "sha256": "1d5cfbfd1327ecbf2da49c068b334b0b6faf9fc7e4f9a17709b1529a5ebf787c"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2022-23.pdf",
+      "sha256": "16d0e9845d6749095e3edd345e7c997856a0116ee843b7b9552b2a4c54377135"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2023-24.pdf",
+      "sha256": "9de0ae7e48deefb9cdc907e829d52eefd1b3bed66b3269c6be6c1997cec8634d"
+    },
+    {
+      "path": "sources/Railways/ipcc_2006_v2_ch3_mobile.pdf",
+      "sha256": "b0b7d96d5ac90ecf359cdb74e932448cfba041c6cec0e1dc24f2def444508c30"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2016_17.pdf",
+      "sha256": "d0f4a1c1c0d726788874bd71bf4ca31f8f7112d0d101cc69c265201762c04abf"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2017_18.pdf",
+      "sha256": "522c67a1c94673e68c4931cc3229b006554568b4a3a284315e113008aa184c17"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2018_19.pdf",
+      "sha256": "4c5c7bcd4294bbc62f67fc3b6003a8ac6ac2c0d7b1c11dd047ce31b24d8f479f"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2019_20.pdf",
+      "sha256": "8f6ef5bf8450a50f94069c66832ef665d5de9abdab78e8cf2d17ede92c6c7756"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2020_21.pdf",
+      "sha256": "1ae792d90b46d7f1f57cfe3d7f57668c850d444e95c5373499005edd88c11506"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2021_22.pdf",
+      "sha256": "74e86de578bdb91362843a859624dbde112c3e256a454f11c4b74ab208094778"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2022_23.pdf",
+      "sha256": "4a53b7cbdfd8e82d0e1409912801ecbf8c3e014870f4607ca80fad30cde53b68"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2023_24.pdf",
+      "sha256": "eb6840030f26db8a65eda29311170cf213cd44a5a5f36161550dbc10d736f514"
+    },
+    {
+      "path": "sources/Aviation/ocac_annual/OCAC_FY2024_25.pdf",
+      "sha256": "62ab4263f4cf088f67b97918abc37361c09544bf551fdffd4df3f6534d967fff"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2021_07.pdf",
+      "sha256": "52d109fd789f0565868388cbd09182f9500f6402736a95583d9295aa1ab0e527"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2021_08.pdf",
+      "sha256": "0e883337717b8dd50d5bfcba1b88754fa5a3331359779277317e68519a0a7605"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2021_09.pdf",
+      "sha256": "3d757d9dc4f5c3ed3364e3b4dec868fcd44d99fa33ad855412d7af6b314eae31"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2021_10.pdf",
+      "sha256": "0ffce45b704336123e38baea6e2704ff059ce2ef63ef78b61d8b12ca22e562a2"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2021_11.pdf",
+      "sha256": "a86fcf223afd11ea2bc3dcfd88a9de9ac3398892f09ee3cf032692ea837f4bb7"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2021_12.pdf",
+      "sha256": "680ca9e0b7ac33a4c6edb6fff6190ae3d28ce9cebe8e0e57f63711f031b94443"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_01.pdf",
+      "sha256": "aea4841386bf6a127331a099aced97b0185c0728bfb7ef058ecbf0560133dcf1"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_02.pdf",
+      "sha256": "b2d12be7ffeb9655c4f02d676cfabf82f52b5b37bb167b77880b23a4629b8157"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_03.pdf",
+      "sha256": "56a402f1d0bde97f0724d547392beb2dae047e72521e57e9629091785125d51f"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_04.pdf",
+      "sha256": "81c7a411bab7e1db238c8f188c7189cc2dd3b10fc83662e056e527c8572fbe93"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_05.pdf",
+      "sha256": "f8220176e50e8718507910222ad1e04c812cf94650a2fe795c77784bfdc20ceb"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_06.pdf",
+      "sha256": "48cbf212e847ecd7d226307c3ea06cd925692b885a6f552b9c0ab7e167588e6f"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_07.pdf",
+      "sha256": "adbe2959b79fc9ae3e8dd50f02c4c42dfdffa4b5f7b78c9141f9e2952903cb76"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_08.pdf",
+      "sha256": "b71971e3b247cb67e43171601b76e46608e7877650c80c5ced40476a39978531"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_09.pdf",
+      "sha256": "918dce379e5337aebc9e32a91bbb55e30b39e248cc661666c697c8011c7a88bb"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_10.pdf",
+      "sha256": "9111a0aa5dc40c78d370024f51c6c4f1dd18e573206555142bbddc6272e1ccbb"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_11.pdf",
+      "sha256": "8c2ae7ed484c47c298fd4606c72f0443d3fc81331a3fef4a3ac81452498fe41a"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2022_12.pdf",
+      "sha256": "194576de7b8b3ed57bb2ebdd1fb157c64e44bb3fe0c1ab5556c1c38ebdc87c53"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_01.pdf",
+      "sha256": "49ecdd1ae0283b8773722020da3abcf630fe0035ef017b363d69c30c324bca75"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_02.pdf",
+      "sha256": "ced983d315d68b11d6bf72b9c1c20515d1313fc5a0f2a4e85e9f6ed2da597d50"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_03.pdf",
+      "sha256": "5de543481a1dda8fe00e0211344258883eb86ad2661c29a18f6952dff48155c6"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_04.pdf",
+      "sha256": "50d040707c74a653a865980413eba0406dfd01967a84f0573ffe8e3d863ccea2"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_05.pdf",
+      "sha256": "15f1f1e584ce3021583088a10a63ed123d136405c805ee413e1e4e072edea61a"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_06.pdf",
+      "sha256": "4a53b7cbdfd8e82d0e1409912801ecbf8c3e014870f4607ca80fad30cde53b68"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_07.pdf",
+      "sha256": "699317b7e3b54b05324f548fcd9a45f41b0562453a847b0980c625a3c5df5544"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_08.pdf",
+      "sha256": "f838609054e6b84fac468032f2aa391bce6f6855b92e8b798b125c7781d94a54"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_09.pdf",
+      "sha256": "9adcaf31c3ea43284097e7575d4f0babd8a2a2cb67534e1c50add9c7a6237985"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_10.pdf",
+      "sha256": "f28ef7698929b189d64410de5e5cb809f14fc7688ea3abe41fca7c4df86ec1ad"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_11.pdf",
+      "sha256": "3161e4858c9e9a8ed9ae31e9b7d4e90fa42a0d73c3e451e2996769654808d04e"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2023_12.pdf",
+      "sha256": "9441e0cea2af8aa16e50f6f2edc316e225147bf4e478e60c3d60bb080067d9fd"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_01.pdf",
+      "sha256": "3a3766ae658d059bdbdc131908ffbf2d1eb357f434e1bda2dc96e09869888050"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_02.pdf",
+      "sha256": "6cde5a5e7f8834398c2dce6dba55074ba63b9f42092cc928c04cccdd387e578e"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_03.pdf",
+      "sha256": "231a6dc10c13c49f49a3b526ae763793746315909abfd506bfa11171528efcf2"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_04.pdf",
+      "sha256": "58b9c66cb8bc0e382cbedd9699e301597c42aa14bf0f57bacc58fcb5f1038b35"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_05.pdf",
+      "sha256": "63bb1e320ba4706653863ae843e0e8b5ad25a5735211d011866537b3e2a5078a"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_06.pdf",
+      "sha256": "eb6840030f26db8a65eda29311170cf213cd44a5a5f36161550dbc10d736f514"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_07.pdf",
+      "sha256": "9ebcd1ecf7ead055a8eca8aca753813699b60c7d3c16b9136dbc60674593cf6b"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_08.pdf",
+      "sha256": "c4f3a9efc6a2de8076201264ad5f684f56fde2873c65ce50e60ff146d9e95260"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_09.pdf",
+      "sha256": "2a2fce56091abab94b43635655de11177a8572d2ad8d7e7c8af5bca4b9101a47"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_10.pdf",
+      "sha256": "00327fb72eb05050268450a59c3961d1f51578b74b9b5555805b6e9e7c161ffd"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_11.pdf",
+      "sha256": "c932a5a9541429ddaa0f874f82750defd535ee04d73d4bd49f200638bdeeeb55"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2024_12.pdf",
+      "sha256": "6cf9b8d6083650de82d413f5a83290c91c711b49a1577edfe28b5aa2310553c5"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2025_01.pdf",
+      "sha256": "70eddce01bbd7f9c1250edf0aee9295f20bd840053373e6c1fc71c8746da876a"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2025_02.pdf",
+      "sha256": "84c71bc6e06148dffb1b71e6b0f0bab45ac76703042c80e862318b88fdfb19f6"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2025_03.pdf",
+      "sha256": "373f8d35e91a101adde3d886ee5e238ebf84d5e378610a13e8f2d98d7fdb604b"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2025_04.pdf",
+      "sha256": "b4eb598a0a0acfc19ce55c155a8e8fec3817e26883fc52e7611f0e99b7582632"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2025_05.pdf",
+      "sha256": "beeba1b6a51285e78250bda3feeba991e1ab9492ea028bd1ae35c9d8a926609f"
+    },
+    {
+      "path": "sources/Aviation/ocac_monthly/OCAC_2025_06.pdf",
+      "sha256": "447781ecf90bf2ffbae51c4b1ea4c592178b7ca3eac4e249aa7d1a5c3ce15a1c"
+    },
+    {
+      "path": "data/activity/transport/cng_gas.csv",
+      "sha256": "37309034d113c68b97ae90943033606b81d2e6374ec2c7d8b76a3be48f2bd3d3"
+    },
+    {
+      "path": "data/activity/transport/edgar_pak_transport_categories.csv",
+      "sha256": "1d76d17398477a452ad74a4b467a9dc222bc32b307dbd6baabc00dda2ed8e8fc"
+    },
+    {
+      "path": "data/activity/transport/edgar_pak_transport_series.csv",
+      "sha256": "3990c8e884e0382ed5a3af24ff89b8a3ceea7ad28434aadb0d5b019c9e8d22ce"
+    },
+    {
+      "path": "data/activity/transport/emep_class_map.csv",
+      "sha256": "b73961a96e08c0b62672314f6f20ac65f45f9fb945c55a7b9ef9394f930c2753"
+    },
+    {
+      "path": "data/activity/transport/emep_tier1_road_air.csv",
+      "sha256": "84f757f315f33648af16a5c943558090a79071203ffb8b3b1f6d20a5b7bccbae"
+    },
+    {
+      "path": "data/activity/transport/emission_factors_gkm.csv",
+      "sha256": "fa24ae8e21bb2fea42bdf65bb042b88c2a59dffbeda0954a6c2a5a4dc93701da"
+    },
+    {
+      "path": "data/activity/transport/fuel_split.csv",
+      "sha256": "d0b31726f0fcede0f4a8de1fc44762862054fc02fd36e6974328a8802b694c0d"
+    },
+    {
+      "path": "data/activity/transport/fuel_sulfur_by_year.csv",
+      "sha256": "9a42cb8753606a3052076975014900892f9e9203380ec5f978fceebbec408a75"
+    },
+    {
+      "path": "data/activity/transport/ocac_fy2015_16_transcription.csv",
+      "sha256": "d948064cdc93c0c88888944994b462619531bb85f073085a898183c73f3e7e0e"
+    },
+    {
+      "path": "data/activity/transport/ocac_sectoral_annual.csv",
+      "sha256": "2d2c72be51af642020e1013f9ca80a605e29bb51d815f8cb7d385407600708d4"
+    },
+    {
+      "path": "data/activity/transport/ocac_sectoral_provincial.csv",
+      "sha256": "5618654d7964f44d360b72b89ff49639c41b7db538da615eefdb37dd0edc89ce"
+    },
+    {
+      "path": "data/activity/transport/vehicle_classes.csv",
+      "sha256": "218cc357aedc485ba718d3a9f5d4f1b0b30f363e731e62e286fa3b4bb8ee117e"
+    },
+    {
+      "path": "data/activity/transport/vehicles_district.csv",
+      "sha256": "8f3f2e0dfbe6821c95412414cc48118739f1b07dd9b5837a96146783cc647e3a"
+    },
+    {
+      "path": "data/activity/transport/vkt.csv",
+      "sha256": "21fd08567538c4fca82c59851607174b4222a7a8807f2287fc244aa7a523d2ec"
+    },
+    {
+      "path": "data/transport_params.csv",
+      "sha256": "727bd07aadbd5e0aa19710dd2bb7a10bb86625d0a063ac84551f719eb869f49d"
+    }
+  ],
+  "generated_outputs": [
+    "transport_air_pollutants_2024.csv",
+    "transport_by_stream_2024.csv",
+    "transport_calendar_year_controls_2024.csv",
+    "transport_cng_2024.csv",
+    "transport_cng_crosscheck_2024.csv",
+    "transport_fleet_fuel_diagnostic_2024.csv",
+    "transport_fuel_2024.csv",
+    "transport_fuel_bridge_2024.csv",
+    "transport_fuel_ledger_2024.csv",
+    "transport_fuel_series.csv",
+    "transport_monthly_2024.csv",
+    "transport_navigation_screen_2024.csv",
+    "transport_ocac_control_diagnostic.csv",
+    "transport_provincial_2024.csv",
+    "transport_provincial_proxy_comparison_2024.csv",
+    "transport_qa_2024.csv",
+    "transport_totals_2024.csv",
+    "transport_uncertainty_2024.csv",
+    "transport_uncertainty_inputs_2024.csv",
+    "transport_uncertainty_scenarios_2024.csv",
+    "transport_variance_decomposition_2024.csv"
+  ]
+}

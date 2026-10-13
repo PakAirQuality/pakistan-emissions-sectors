@@ -1,0 +1,171 @@
+# GLW-4 (EF-weighted) vs PBS 2024 census at DISTRICT grain, shares of
+# each panel's own total; the GLW side summed through the fractional
+# intersection table. Validates the PROXY (the fallback and the
+# within-district placement), never the shipped allocation, whose
+# district masses come from the census itself. Matched Spearman rho
+# 0.5859 over 99 districts.
+district,glw_ef_weighted_share,census_heads_share,share_gap_pp,status
+Abbottabad,0.002222,0.005592,-0.3369,both
+Astore,0.000482,,,glw_only
+Attock,0.010050,0.012746,-0.2696,both
+Awaran,0.000632,0.006766,-0.6134,both
+Azad Kashmir,0.005407,,,glw_only
+Badin,0.007735,0.007305,0.0430,both
+Bahawalnagar,0.020719,0.013896,0.6823,both
+Bahawalpur,0.020913,0.012350,0.8563,both
+Bajaur,0.003538,0.004909,-0.1371,both
+Bannu,0.002433,0.003868,-0.1435,both
+Barkhan,0.000932,0.004325,-0.3393,both
+Batagram,,0.001746,,census_only
+Battagram,0.003052,,,glw_only
+Bhakkar,0.017640,0.016507,0.1133,both
+Buner,0.004528,0.002060,0.2468,both
+Chagai,0.000590,0.002171,-0.1581,both
+Chakwal,0.008281,0.009638,-0.1356,both
+Chaman,,0.001459,,census_only
+Charsadda,0.004200,0.003072,0.1129,both
+Chiniot,,0.007673,,census_only
+Chitral,0.003475,,,glw_only
+Cholistan Area,,0.004913,,census_only
+Dadu,0.011172,0.008381,0.2791,both
+Dera Bugti,0.006311,0.006861,-0.0550,both
+Dera Ghazi Khan,0.019965,0.054048,-3.4083,both
+Dera Ismail Khan,0.008554,0.024831,-1.6277,both
+Diamer,0.001188,,,glw_only
+Duki,,0.001705,,census_only
+Faisalabad,0.021389,0.018879,0.2511,both
+Ghanche,0.000459,,,glw_only
+Ghizer,0.000835,,,glw_only
+Ghotki,0.042081,0.006379,3.5702,both
+Gilgit,0.000413,,,glw_only
+Gujranwala,0.014441,0.006766,0.7676,both
+Gujrat,0.009209,0.006404,0.2805,both
+Gwadar,0.001315,0.006720,-0.5405,both
+Hafizabad,0.009038,0.004933,0.4105,both
+Hangu,0.001164,0.000743,0.0421,both
+Haripur,0.004281,0.002958,0.1323,both
+Harnai,,0.000704,,census_only
+Hunza,0.000218,,,glw_only
+Hyderabad,0.005275,0.003211,0.2064,both
+Islamabad,,0.001453,,census_only
+Islamabad Capital Territory,0.001497,,,glw_only
+Jacobabad,0.009754,0.008020,0.1733,both
+Jafarabad,0.006207,,,glw_only
+Jaffarabad,,0.004482,,census_only
+Jamshoro,0.006168,0.005891,0.0277,both
+Jhal Magsi,0.003213,0.003778,-0.0564,both
+Jhang,0.034912,0.017256,1.7656,both
+Jhelum,0.004685,0.006395,-0.1711,both
+Kachhi,0.004061,0.003141,0.0919,both
+Kalat,0.004424,0.010031,-0.5607,both
+Kambar Shahdad Kot,,0.004743,,census_only
+Karachi,0.000755,,,glw_only
+Karachi Central,,0.004087,,census_only
+Karachi East,,0.004760,,census_only
+Karachi South,,0.004295,,census_only
+Karachi West,,0.005661,,census_only
+Karak,0.002364,0.005156,-0.2792,both
+Kashmore,0.017450,0.003510,1.3940,both
+Kasur,0.021562,0.009329,1.2234,both
+Keamari,,0.004643,,census_only
+Kech,0.001214,0.011359,-1.0145,both
+Khairpur,0.027202,0.012277,1.4925,both
+Khanewal,0.018004,0.010425,0.7579,both
+Kharan,0.001525,0.006068,-0.4543,both
+Kharmang,0.000244,,,glw_only
+Khushab,0.014911,0.010329,0.4582,both
+Khuzdar,0.003837,0.018006,-1.4169,both
+Khyber,0.002522,0.004168,-0.1646,both
+Killa Abdullah,,0.002622,,census_only
+Killa Saifullah,,0.008254,,census_only
+Kohat,0.000788,0.006105,-0.5317,both
+Kohistan,0.010967,,,glw_only
+Kohlu,0.003650,0.011900,-0.8250,both
+Kolai Palas Kohistan,,0.019601,,census_only
+Korangi,,0.005432,,census_only
+Kurram,0.002831,0.004063,-0.1232,both
+Lahore,0.012086,0.008844,0.3241,both
+Lakki Marwat,0.003889,0.005636,-0.1747,both
+Larkana,,0.004525,,census_only
+Lasbela,0.001600,0.006187,-0.4588,both
+Layyah,0.019186,0.014695,0.4491,both
+Lodhran,0.014975,0.005811,0.9164,both
+Loralai,0.002567,0.005623,-0.3056,both
+Lower Chitral,,0.004897,,census_only
+Lower Dir,0.003879,0.004337,-0.0459,both
+Lower Kohistan,,0.004982,,census_only
+Malakand,0.001453,,,glw_only
+Malakand Protected Area,,0.000732,,census_only
+Malir,,0.012578,,census_only
+Mandi Bahauddin,0.014121,0.005843,0.8277,both
+Mansehra,0.005808,0.007552,-0.1744,both
+Mardan,0.004416,0.003382,0.1034,both
+Mastung,0.000910,0.004190,-0.3280,both
+Matiari,0.002109,0.011791,-0.9681,both
+Mianwali,0.010570,0.010825,-0.0255,both
+Mirpur Khas,,0.007745,,census_only
+Mirpurkhas,0.007221,,,glw_only
+Mohmand,0.003739,0.006954,-0.3216,both
+Multan,0.011930,0.009372,0.2557,both
+Musakhel,0.002400,0.009711,-0.7311,both
+Muzaffargarh,0.033826,0.020745,1.3081,both
+Nagar,0.000221,,,glw_only
+Nankana Sahib,,0.004760,,census_only
+Narowal,0.008680,0.004082,0.4599,both
+Nasirabad,0.003773,0.005584,-0.1812,both
+Naushahro Feroze,,0.007867,,census_only
+Naushehro Feroze,0.015468,,,glw_only
+Nawabshah,0.014869,,,glw_only
+North Waziristan,0.005223,0.006265,-0.1041,both
+Nowshera,0.002626,0.004376,-0.1750,both
+Nushki,0.000299,0.006333,-0.6034,both
+Okara,0.021087,0.009315,1.1772,both
+Orakzai,0.002104,0.000918,0.1186,both
+Pakpattan,0.012143,0.007614,0.4529,both
+Panjgur,0.000591,0.002454,-0.1863,both
+Peshawar,0.005162,0.004210,0.0953,both
+Pishin,0.001838,0.006213,-0.4375,both
+Qambar Shahdadkot,0.015805,,,glw_only
+Qilla Abdullah,0.001707,,,glw_only
+Qilla Saifullah,0.001917,,,glw_only
+Quetta,0.000294,0.002619,-0.2325,both
+Rahim Yar Khan,0.021672,0.014514,0.7158,both
+Rajanpur,0.010043,0.011038,-0.0994,both
+Rawalpindi,0.009196,0.010762,-0.1566,both
+Sahiwal,0.014721,0.008818,0.5904,both
+Sanghar,0.016004,0.006898,0.9107,both
+Sargodha,0.029369,0.011285,1.8084,both
+Shaheed Benazirabad,,0.007540,,census_only
+Shangla,0.003688,0.003132,0.0556,both
+Sheikhpura,0.025110,,,glw_only
+Sheikhupura,,0.007210,,census_only
+Sherani,,0.003853,,census_only
+Shigar,0.000445,,,glw_only
+Shikarpur,0.007756,0.007303,0.0453,both
+Sialkot,0.010497,0.006849,0.3647,both
+Sibi,0.002237,0.003440,-0.1203,both
+Skardu,0.000630,,,glw_only
+Sohbatpur,,0.001942,,census_only
+South Waziristan,0.003184,0.019526,-1.6343,both
+Sujawal,,0.002934,,census_only
+Sukkur,0.007397,0.006064,0.1334,both
+Surab,,0.009452,,census_only
+Swabi,0.004457,0.002609,0.1848,both
+Swat,0.003955,0.007503,-0.3548,both
+Tando Allahyar,0.004366,0.002301,0.2065,both
+Tando Muhammad Khan,0.002662,0.001552,0.1110,both
+Tank,0.001590,0.002776,-0.1186,both
+Tharparkar,0.015853,0.019572,-0.3719,both
+Thatta,0.012785,0.007212,0.5574,both
+Toba Tek Singh,0.011752,0.008091,0.3661,both
+Torghar,,0.000882,,census_only
+Umer Kot,,0.004217,,census_only
+Umerkot,0.006840,,,glw_only
+Upper Chitral,,0.003035,,census_only
+Upper Dir,0.004491,0.006676,-0.2185,both
+Upper Kohistan,,0.005018,,census_only
+Vehari,,0.010338,,census_only
+Vihari,0.015278,,,glw_only
+Washuk,,0.003984,,census_only
+Zhob,0.004257,0.009243,-0.4986,both
+Ziarat,0.000383,0.001103,-0.0720,both

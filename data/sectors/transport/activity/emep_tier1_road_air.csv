@@ -1,0 +1,88 @@
+# EMEP/EEA air pollutant emission inventory guidebook 2023 - Tier 1 road transport
+# air-pollutant factors, transcribed by hand from the held chapter PDFs (sources/
+# Transport/): 1.A.3.b.i-iv Road transport (Update 2025) Tables 3-5 (CO, NMVOC),
+# 3-6 (NOx, PM), 3-7 (NH3), 3-11 (f-BC of PM); 1.A.3.b.v Gasoline evaporation
+# (2023) Table 3-1 (NMVOC g/vehicle/day, 20-35 C daily range - Pakistan's); and
+# 1.A.3.b.vi-vii Road tyre-and-brake / road-surface wear (2023) Tables 3-1, 3-2.
+# Exhaust PM is PM2.5 by the chapter's own statement: "Coarse exhaust PM (i.e.
+# > 2.5 um diameter) is considered to be negligible, hence PM=PM2.5". The exhaust
+# means are a typical 2010 EU-27 fleet applied to countries with older fleets -
+# min is the latest 2010 technology, max is uncontrolled technology; the chapter
+# itself says Tier 1 overstates fleets NEWER than Euro 5, which Pakistan's is not.
+# f-BC rows are fractions of PM2.5, dimensionless. Wear rows carry no BC: tyre,
+# brake and road abrasion are low-temperature processes and the chapter proposes
+# no Tier 1 BC for them. NOx is as NO2. SO2 is NOT here - it is fuel-sulfur
+# stoichiometry under data/activity/transport/fuel_sulfur_by_year.csv.
+process,emep_category,fuel,pollutant,value,lo,hi,unit,table
+exhaust,PC,Petrol,CO,48.36,8.60,338.69,g_per_kg_fuel,3-5
+exhaust,PC,Petrol,NMVOC,7.75,1.15,176.89,g_per_kg_fuel,3-5
+exhaust,PC,Petrol,NOx,3.98,0.44,30.49,g_per_kg_fuel,3-6
+exhaust,PC,Petrol,PM2.5,0.02,0.004,0.042,g_per_kg_fuel,3-6
+exhaust,PC,Petrol,NH3,0.84,0.02,1.93,g_per_kg_fuel,3-7
+exhaust,PC,Diesel,CO,2.41,0.52,11.23,g_per_kg_fuel,3-5
+exhaust,PC,Diesel,NMVOC,0.51,0.02,3.26,g_per_kg_fuel,3-5
+exhaust,PC,Diesel,NOx,11.77,7.79,14.84,g_per_kg_fuel,3-6
+exhaust,PC,Diesel,PM2.5,0.78,0.002,4.772,g_per_kg_fuel,3-6
+exhaust,PC,Diesel,NH3,0.02,0.01,0.04,g_per_kg_fuel,3-7
+exhaust,PC,LPG,CO,58.22,14.56,139.93,g_per_kg_fuel,3-5
+exhaust,PC,LPG,NMVOC,9.43,1.48,20.85,g_per_kg_fuel,3-5
+exhaust,PC,LPG,NOx,5.48,0.90,41.45,g_per_kg_fuel,3-6
+exhaust,PC,LPG,PM2.5,0.03,0.012,0.042,g_per_kg_fuel,3-6
+exhaust,PC,LPG,NH3,1.02,0.03,1.85,g_per_kg_fuel,3-7
+exhaust,LCV,Petrol,CO,118.70,11.75,356.95,g_per_kg_fuel,3-5
+exhaust,LCV,Petrol,NMVOC,7.42,0.67,53.99,g_per_kg_fuel,3-5
+exhaust,LCV,Petrol,NOx,5.93,0.33,37.31,g_per_kg_fuel,3-6
+exhaust,LCV,Petrol,PM2.5,0.02,0.005,0.034,g_per_kg_fuel,3-6
+exhaust,LCV,Petrol,NH3,0.77,0.02,2.04,g_per_kg_fuel,3-7
+exhaust,LCV,Diesel,CO,6.81,4.82,21.77,g_per_kg_fuel,3-5
+exhaust,LCV,Diesel,NMVOC,1.23,0.48,2.86,g_per_kg_fuel,3-5
+exhaust,LCV,Diesel,NOx,13.48,10.43,27.86,g_per_kg_fuel,3-6
+exhaust,LCV,Diesel,PM2.5,1.22,0.002,4.772,g_per_kg_fuel,3-6
+exhaust,LCV,Diesel,NH3,0.01,0.01,0.03,g_per_kg_fuel,3-7
+exhaust,HDV,Diesel,CO,6.10,2.79,13.80,g_per_kg_fuel,3-5
+exhaust,HDV,Diesel,NMVOC,0.90,0.13,7.01,g_per_kg_fuel,3-5
+exhaust,HDV,Diesel,NOx,25.95,10.48,47.22,g_per_kg_fuel,3-6
+exhaust,HDV,Diesel,PM2.5,0.55,0.015,2.448,g_per_kg_fuel,3-6
+exhaust,HDV,Diesel,NH3,0.02,0.01,0.11,g_per_kg_fuel,3-7
+exhaust,HDV,CNG,CO,3.98,2.20,15.12,g_per_kg_fuel,3-5
+exhaust,HDV,CNG,NMVOC,0.14,0.06,0.39,g_per_kg_fuel,3-5
+exhaust,HDV,CNG,NOx,17.10,9.67,29.73,g_per_kg_fuel,3-6
+exhaust,HDV,CNG,PM2.5,0.02,0.019,0.036,g_per_kg_fuel,3-6
+exhaust,L,Petrol,CO,244.88,8.46,588.11,g_per_kg_fuel,3-5
+exhaust,L,Petrol,NMVOC,92.74,6.47,323.68,g_per_kg_fuel,3-5
+exhaust,L,Petrol,NOx,7.23,0.89,22.06,g_per_kg_fuel,3-6
+exhaust,L,Petrol,PM2.5,0.51,0.058,6.599,g_per_kg_fuel,3-6
+exhaust,L,Petrol,NH3,0.05,0.04,0.11,g_per_kg_fuel,3-7
+bc_fraction,PC,Petrol,BC,0.12,,,fraction_of_PM2.5,3-11
+bc_fraction,LCV,Petrol,BC,0.05,,,fraction_of_PM2.5,3-11
+bc_fraction,PC,Diesel,BC,0.57,,,fraction_of_PM2.5,3-11
+bc_fraction,LCV,Diesel,BC,0.55,,,fraction_of_PM2.5,3-11
+bc_fraction,HDV,Diesel,BC,0.53,,,fraction_of_PM2.5,3-11
+bc_fraction,L,Petrol,BC,0.11,,,fraction_of_PM2.5,3-11
+evaporative,PC,Petrol,NMVOC,14.6,10.5,19.2,g_per_vehicle_day,v/3-1
+evaporative,LCV,Petrol,NMVOC,22.2,9.9,27.9,g_per_vehicle_day,v/3-1
+evaporative,L,Petrol,NMVOC,7.5,5.8,9.1,g_per_vehicle_day,v/3-1
+tyre_brake_wear,L,,TSP,0.0083,0.0064,0.0103,g_per_vkm,vi/3-1
+tyre_brake_wear,L,,PM10,0.0064,0.0047,0.0081,g_per_vkm,vi/3-1
+tyre_brake_wear,L,,PM2.5,0.0034,0.0026,0.0042,g_per_vkm,vi/3-1
+tyre_brake_wear,PC,,TSP,0.0229,0.0083,0.0369,g_per_vkm,vi/3-1
+tyre_brake_wear,PC,,PM10,0.0184,0.0067,0.0297,g_per_vkm,vi/3-1
+tyre_brake_wear,PC,,PM2.5,0.0093,0.0034,0.0150,g_per_vkm,vi/3-1
+tyre_brake_wear,LCV,,TSP,0.03427,0.0190,0.0450,g_per_vkm,vi/3-1
+tyre_brake_wear,LCV,,PM10,0.0271,0.0148,0.0351,g_per_vkm,vi/3-1
+tyre_brake_wear,LCV,,PM2.5,0.0139,0.0076,0.0180,g_per_vkm,vi/3-1
+tyre_brake_wear,HDV,,TSP,0.0777,0.0462,0.1318,g_per_vkm,vi/3-1
+tyre_brake_wear,HDV,,PM10,0.0590,0.0500,0.0950,g_per_vkm,vi/3-1
+tyre_brake_wear,HDV,,PM2.5,0.0316,0.0281,0.0541,g_per_vkm,vi/3-1
+road_wear,L,,TSP,0.0060,0.0036,0.0081,g_per_vkm,vii/3-2
+road_wear,L,,PM10,0.0030,0.0018,0.0041,g_per_vkm,vii/3-2
+road_wear,L,,PM2.5,0.0016,0.0010,0.0022,g_per_vkm,vii/3-2
+road_wear,PC,,TSP,0.0150,0.0090,0.0203,g_per_vkm,vii/3-2
+road_wear,PC,,PM10,0.0075,0.0045,0.0101,g_per_vkm,vii/3-2
+road_wear,PC,,PM2.5,0.0041,0.0024,0.0055,g_per_vkm,vii/3-2
+road_wear,LCV,,TSP,0.0210,0.0090,0.0253,g_per_vkm,vii/3-2
+road_wear,LCV,,PM10,0.0105,0.0045,0.0123,g_per_vkm,vii/3-2
+road_wear,LCV,,PM2.5,0.0057,0.0024,0.0070,g_per_vkm,vii/3-2
+road_wear,HDV,,TSP,0.0760,0.0456,0.1026,g_per_vkm,vii/3-2
+road_wear,HDV,,PM10,0.0380,0.0228,0.0513,g_per_vkm,vii/3-2
+road_wear,HDV,,PM2.5,0.0205,0.0123,0.0277,g_per_vkm,vii/3-2

@@ -1,0 +1,105 @@
+# HDIP'S COAL CONSUMPTION IS ITS COAL SUPPLY, AND THE CONSUMER SPLIT IS A REDISTRIBUTION
+#
+# row_kind=balance       supply (imports + production) against the consumer columns summed.
+#                        It closes to 0 kt, which is the point: consumption is APPARENT
+#                        consumption, constructed from supply, carrying no stock change.
+# row_kind=allocation    one row per consumer per year, with its share of the fixed total.
+# row_kind=redistribution  what each consumer gained or lost over the whole panel, beside
+#                        how little the total moved.
+# row_kind=brick_bound   the booked brick column against the brick fleet's own coal bounds
+#                        (counted once in late 2020, two declared firing seasons), and the
+#                        firing kiln-years the booked column implies at the survey's own
+#                        328.2 t per kiln-year.
+#
+# The industrial module BOOKS the brick and cement columns. This corrects nothing: the fleet
+# evidence has no time axis, which is why it was declared unbooked, and an apparent-
+# consumption series is the only national coal statistic published. See the module docstring.
+period_id,row_kind,subject,coal_imports_kt,coal_production_kt,supply_kt,consumption_kt,supply_minus_consumption_kt,value_kt,share_of_total_pct,fleet_low_kt,fleet_high_kt,fleet_kilns,implied_firing_kiln_years,implied_over_counted_fleet,verdict
+FY2010-11,balance,HDIP supply against HDIP consumption,4267,3450,7717,7717,-0,,,,,,,,"closes to -0 kt (-0.00%): consumption is constructed from supply, not measured against it"
+FY2011-12,balance,HDIP supply against HDIP consumption,4057,3613,7670,7670,0,,,,,,,,"closes to +0 kt (+0.00%): consumption is constructed from supply, not measured against it"
+FY2012-13,balance,HDIP supply against HDIP consumption,3710,3179,6889,6889,0,,,,,,,,"closes to +0 kt (+0.00%): consumption is constructed from supply, not measured against it"
+FY2013-14,balance,HDIP supply against HDIP consumption,3119,3438,6557,6558,-0,,,,,,,,"closes to -0 kt (-0.01%): consumption is constructed from supply, not measured against it"
+FY2014-15,balance,HDIP supply against HDIP consumption,5004,3712,8716,8715,1,,,,,,,,"closes to +1 kt (+0.01%): consumption is constructed from supply, not measured against it"
+FY2015-16,balance,HDIP supply against HDIP consumption,4885,4142,9027,9231,-204,,,,,,,,"closes to -204 kt (-2.26%): consumption is constructed from supply, not measured against it"
+FY2016-17,balance,HDIP supply against HDIP consumption,7021,4165,11186,11186,0,,,,,,,,"closes to +0 kt (+0.00%): consumption is constructed from supply, not measured against it"
+FY2017-18,balance,HDIP supply against HDIP consumption,13684,4297,17981,17981,-0,,,,,,,,"closes to -0 kt (-0.00%): consumption is constructed from supply, not measured against it"
+FY2018-19,balance,HDIP supply against HDIP consumption,15686,5841,21527,21527,-0,,,,,,,,"closes to -0 kt (-0.00%): consumption is constructed from supply, not measured against it"
+FY2019-20,balance,HDIP supply against HDIP consumption,16422,8735,25157,25157,0,,,,,,,,"closes to +0 kt (+0.00%): consumption is constructed from supply, not measured against it"
+FY2020-21,balance,HDIP supply against HDIP consumption,18850,9230,28080,28079,1,,,,,,,,"closes to +1 kt (+0.00%): consumption is constructed from supply, not measured against it"
+FY2021-22,balance,HDIP supply against HDIP consumption,18103,9595,27698,27698,0,,,,,,,,"closes to +0 kt (+0.00%): consumption is constructed from supply, not measured against it"
+FY2022-23,balance,HDIP supply against HDIP consumption,8903,15013,23916,23916,-0,,,,,,,,"closes to -0 kt (-0.00%): consumption is constructed from supply, not measured against it"
+FY2023-24,balance,HDIP supply against HDIP consumption,5460,19259,24719,24718,1,,,,,,,,"closes to +1 kt (+0.00%): consumption is constructed from supply, not measured against it"
+FY2010-11,allocation,power,,,,,,96,1.3,,,,,,
+FY2010-11,allocation,brick_kilns,,,,,,3004,38.9,,,,,,
+FY2010-11,allocation,cement,,,,,,4617,59.8,,,,,,
+FY2011-12,allocation,power,,,,,,105,1.4,,,,,,
+FY2011-12,allocation,brick_kilns,,,,,,3108,40.5,,,,,,
+FY2011-12,allocation,cement,,,,,,4457,58.1,,,,,,
+FY2012-13,allocation,power,,,,,,63,0.9,,,,,,
+FY2012-13,allocation,brick_kilns,,,,,,2696,39.1,,,,,,
+FY2012-13,allocation,cement,,,,,,4130,59.9,,,,,,
+FY2013-14,allocation,power,,,,,,161,2.5,,,,,,
+FY2013-14,allocation,brick_kilns,,,,,,2728,41.6,,,,,,
+FY2013-14,allocation,cement,,,,,,3669,56.0,,,,,,
+FY2014-15,allocation,power,,,,,,151,1.7,,,,,,
+FY2014-15,allocation,brick_kilns,,,,,,3010,34.5,,,,,,
+FY2014-15,allocation,cement,,,,,,5554,63.7,,,,,,
+FY2015-16,allocation,power,,,,,,204,2.2,,,,,,
+FY2015-16,allocation,brick_kilns,,,,,,3541,38.4,,,,,,
+FY2015-16,allocation,cement,,,,,,5485,59.4,,,,,,
+FY2016-17,allocation,power,,,,,,860,7.7,,,,,,
+FY2016-17,allocation,brick_kilns,,,,,,2855,25.5,,,,,,
+FY2016-17,allocation,cement,,,,,,7471,66.8,,,,,,
+FY2017-18,allocation,power,,,,,,4436,24.7,,,,,,
+FY2017-18,allocation,brick_kilns,,,,,,3942,21.9,,,,,,
+FY2017-18,allocation,cement,,,,,,9603,53.4,,,,,,
+FY2018-19,allocation,power,,,,,,5902,27.4,,,,,,
+FY2018-19,allocation,brick_kilns,,,,,,5391,25.0,,,,,,
+FY2018-19,allocation,cement,,,,,,10234,47.5,,,,,,
+FY2019-20,allocation,power,,,,,,10897,43.3,,,,,,
+FY2019-20,allocation,brick_kilns,,,,,,8184,32.5,,,,,,
+FY2019-20,allocation,cement,,,,,,6075,24.1,,,,,,
+FY2019-20,allocation,household,,,,,,1,0.0,,,,,,
+FY2020-21,allocation,power,,,,,,9215,32.8,,,,,,
+FY2020-21,allocation,brick_kilns,,,,,,8678,30.9,,,,,,
+FY2020-21,allocation,cement,,,,,,10184,36.3,,,,,,
+FY2020-21,allocation,household,,,,,,2,0.0,,,,,,
+FY2021-22,allocation,power,,,,,,12808,46.2,,,,,,
+FY2021-22,allocation,brick_kilns,,,,,,5643,20.4,,,,,,
+FY2021-22,allocation,cement,,,,,,9245,33.4,,,,,,
+FY2021-22,allocation,household,,,,,,2,0.0,,,,,,
+FY2022-23,allocation,power,,,,,,15493,64.8,,,,,,
+FY2022-23,allocation,brick_kilns,,,,,,2991,12.5,,,,,,
+FY2022-23,allocation,cement,,,,,,5432,22.7,,,,,,
+FY2022-23,allocation,household,,,,,,2,0.0,,,,,,
+FY2023-24,allocation,power,,,,,,19196,77.7,,,,,,
+FY2023-24,allocation,brick_kilns,,,,,,1129,4.6,,,,,,
+FY2023-24,allocation,cement,,,,,,4391,17.8,,,,,,
+FY2023-24,allocation,household,,,,,,2,0.0,,,,,,
+FY2010-11..FY2023-24,redistribution,power,,,,,+17001,+19100,+19792.2,,,,,,"+19100 kt; the total moved +17001 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2010-11..FY2023-24,redistribution,brick_kilns,,,,,+17001,-1875,-62.4,,,,,,"-1875 kt; the total moved +17001 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2010-11..FY2023-24,redistribution,cement,,,,,+17001,-226,-4.9,,,,,,"-226 kt; the total moved +17001 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2010-11..FY2023-24,redistribution,total,,,,,+17001,+17001,+220.3,,,,,,"+17001 kt; the total moved +17001 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2019-20..FY2023-24,redistribution,power,,,,,-438,+8299,+76.2,,,,,,"+8299 kt; the total moved -438 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2019-20..FY2023-24,redistribution,brick_kilns,,,,,-438,-7055,-86.2,,,,,,"-7055 kt; the total moved -438 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2019-20..FY2023-24,redistribution,cement,,,,,-438,-1684,-27.7,,,,,,"-1684 kt; the total moved -438 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2019-20..FY2023-24,redistribution,household,,,,,-438,+1,+100.0,,,,,,"+1 kt; the total moved -438 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2019-20..FY2023-24,redistribution,total,,,,,-438,-438,-1.7,,,,,,"-438 kt; the total moved -438 kt over this window, which is not flat, so the columns are not constrained to trade"
+FY2015-16,brick_bound,bkoap,,,,,,3541,,3301,9603,10394,10789,1.04,inside the fleet's bounds
+FY2015-16,brick_bound,hamdani,,,,,,3541,,3095,9005,9486,10789,1.14,inside the fleet's bounds
+FY2016-17,brick_bound,bkoap,,,,,,2855,,3301,9603,10394,8700,0.84,BELOW the fleet's low bound by 446 kt (87% of it)
+FY2016-17,brick_bound,hamdani,,,,,,2855,,3095,9005,9486,8700,0.92,BELOW the fleet's low bound by 240 kt (92% of it)
+FY2017-18,brick_bound,bkoap,,,,,,3942,,3301,9603,10394,12010,1.16,inside the fleet's bounds
+FY2017-18,brick_bound,hamdani,,,,,,3942,,3095,9005,9486,12010,1.27,inside the fleet's bounds
+FY2018-19,brick_bound,bkoap,,,,,,5391,,3301,9603,10394,16427,1.58,inside the fleet's bounds
+FY2018-19,brick_bound,hamdani,,,,,,5391,,3095,9005,9486,16427,1.73,inside the fleet's bounds
+FY2019-20,brick_bound,bkoap,,,,,,8184,,3301,9603,10394,24936,2.40,inside the fleet's bounds
+FY2019-20,brick_bound,hamdani,,,,,,8184,,3095,9005,9486,24936,2.63,inside the fleet's bounds
+FY2020-21,brick_bound,bkoap,,,,,,8678,,3301,9603,10394,26441,2.54,inside the fleet's bounds
+FY2020-21,brick_bound,hamdani,,,,,,8678,,3095,9005,9486,26441,2.79,inside the fleet's bounds
+FY2021-22,brick_bound,bkoap,,,,,,5643,,3301,9603,10394,17194,1.65,inside the fleet's bounds
+FY2021-22,brick_bound,hamdani,,,,,,5643,,3095,9005,9486,17194,1.81,inside the fleet's bounds
+FY2022-23,brick_bound,bkoap,,,,,,2991,,3301,9603,10394,9113,0.88,BELOW the fleet's low bound by 310 kt (91% of it)
+FY2022-23,brick_bound,hamdani,,,,,,2991,,3095,9005,9486,9113,0.96,BELOW the fleet's low bound by 104 kt (97% of it)
+FY2023-24,brick_bound,bkoap,,,,,,1129,,3301,9603,10394,3440,0.33,BELOW the fleet's low bound by 2172 kt (34% of it)
+FY2023-24,brick_bound,hamdani,,,,,,1129,,3095,9005,9486,3440,0.36,BELOW the fleet's low bound by 1966 kt (36% of it)

@@ -1,0 +1,5 @@
+Species,Subsector,Elk pak kt 2019,Cells,Document,Record ID,Source row
+CO2-rep,rail-passenger,6.9312063899290965,5,sources/ELK/ELK_CO2-rep_land_rail-passenger_2019_v2.1_global_annual.nc,ddfabe6d62dd386be9000800,1
+CO2-rep,rail-freight,165.23903744111132,1024,sources/ELK/ELK_CO2-rep_land_rail-freight_2019_v2.1_global_annual.nc,6fbc9b94a99ff5983685fa6d,2
+NOx,rail-passenger,0.10286352070585772,5,sources/ELK/ELK_NOx_land_rail-passenger_2019_v2.1_global_annual.nc,49336ac1aae78a6c3e3b50e8,3
+NOx,rail-freight,3.0227990894028394,1024,sources/ELK/ELK_NOx_land_rail-freight_2019_v2.1_global_annual.nc,4176dbe4f1dc636ce9e0da36,4

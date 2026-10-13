@@ -1,0 +1,3 @@
+fiscal_year,scope,airports_compared,spearman_rank_correlation,spearman_p_value,interpretation
+2023,domestic,16,0.9705882352941176,4.723401127287032e-10,spatial corroboration; not independent observation
+2023,international,11,0.9476106589626668,9.356372175999983e-06,spatial corroboration; not independent observation

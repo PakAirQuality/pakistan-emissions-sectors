@@ -1,0 +1,30 @@
+# The cross-tree duplicate files present at 2026-09-10: documents byte-identical
+# under BOTH sources/ and data/raw/ (chiefly the OCAC dual-tracking a prior sweep
+# left). This is the redundancy the two-tree structure invites; the physical merge
+# at the v1.0.0 boundary resolves it. Until then this baseline is FROZEN: the guard
+# in tests/test_holdings_discipline.py fails on any NEW cross-tree duplicate, so the
+# 2026-09-10 OGRA mistake cannot recur silently, while the legacy set is grandfathered.
+sha_group,paths
+nfdc_annual_fertilizer_review_2023_24.pdf,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf | sources/Agriculture/NFDC_Fertilizer_Review_2023-24.pdf
+Sectoral-Sales-Consumption-April-2022-Pakistan-Provinces.pdf,data/raw/ocac/alternate_uploads/Sectoral-Sales-Consumption-April-2022-Pakistan-Provinces.pdf | sources/Aviation/ocac_monthly/OCAC_2022_04.pdf
+ocac_annual_2016_17.pdf,data/raw/ocac/annual_controls/ocac_annual_2016_17.pdf | sources/Aviation/ocac_annual/OCAC_FY2016_17.pdf
+ocac_annual_2017_18.pdf,data/raw/ocac/annual_controls/ocac_annual_2017_18.pdf | sources/Aviation/ocac_annual/OCAC_FY2017_18.pdf
+ocac_annual_2018_19.pdf,data/raw/ocac/annual_controls/ocac_annual_2018_19.pdf | sources/Aviation/ocac_annual/OCAC_FY2018_19.pdf
+ocac_annual_2019_20.pdf,data/raw/ocac/annual_controls/ocac_annual_2019_20.pdf | sources/Aviation/ocac_annual/OCAC_FY2019_20.pdf
+ocac_annual_fy2020_21.pdf,data/raw/ocac/annual_controls/ocac_annual_fy2020_21.pdf | sources/Aviation/ocac_annual/OCAC_FY2020_21.pdf
+ocac_annual_fy2021_22.pdf,data/raw/ocac/annual_controls/ocac_annual_fy2021_22.pdf | sources/Aviation/ocac_annual/OCAC_FY2021_22.pdf
+ocac_annual_fy2022_23.pdf,data/raw/ocac/annual_controls/ocac_annual_fy2022_23.pdf | sources/Aviation/ocac_annual/OCAC_FY2022_23.pdf | sources/Aviation/ocac_monthly/OCAC_2023_06.pdf
+ocac_annual_fy2023_24.pdf,data/raw/ocac/annual_controls/ocac_annual_fy2023_24.pdf | sources/Aviation/OCAC_sectoral_sales_FY2023-24.pdf | sources/Aviation/ocac_annual/OCAC_FY2023_24.pdf | sources/Aviation/ocac_monthly/OCAC_2024_06.pdf
+ocac_sector_province_2021_07.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2021_07.pdf | sources/Aviation/ocac_monthly/OCAC_2021_07.pdf
+ocac_sector_province_2021_08.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2021_08.pdf | sources/Aviation/ocac_monthly/OCAC_2021_08.pdf
+ocac_sector_province_2021_09.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2021_09.pdf | sources/Aviation/ocac_monthly/OCAC_2021_09.pdf
+ocac_sector_province_2021_10.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2021_10.pdf | sources/Aviation/ocac_monthly/OCAC_2021_10.pdf
+ocac_sector_province_2021_11.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2021_11.pdf | sources/Aviation/ocac_monthly/OCAC_2021_11.pdf
+ocac_sector_province_2021_12.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2021_12.pdf | sources/Aviation/ocac_monthly/OCAC_2021_12.pdf
+ocac_sector_province_2022_01.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2022_01.pdf | sources/Aviation/ocac_monthly/OCAC_2022_01.pdf
+ocac_sector_province_2022_02.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2022_02.pdf | sources/Aviation/ocac_monthly/OCAC_2022_02.pdf
+ocac_sector_province_2022_03.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2022_03.pdf | sources/Aviation/ocac_monthly/OCAC_2022_03.pdf
+ocac_sector_province_2022_05.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2022_05.pdf | sources/Aviation/ocac_monthly/OCAC_2022_05.pdf
+ocac_sector_province_2022_06.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2022_06.pdf | sources/Aviation/ocac_monthly/OCAC_2022_06.pdf
+ocac_sector_province_2022_07.pdf,data/raw/ocac/monthly_sector_province/ocac_sector_province_2022_07.pdf | sources/Aviation/ocac_monthly/OCAC_2022_07.pdf
+pbs_electricity_detail_tables.pdf,data/raw/pbs/electricity/pbs_electricity_detail_tables.pdf | sources/Power Plants/pbs_generation/pbs_electricity_generation_1999_2021.pdf

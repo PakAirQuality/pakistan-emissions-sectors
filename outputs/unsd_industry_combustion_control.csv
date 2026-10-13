@@ -1,0 +1,56 @@
+# INDEPENDENT 1.A.2 industrial-combustion control total from the UNSD
+# energy balances (the public stand-in for HDIP), the release's own IPCC
+# 2006 CO2 factors applied to Pakistan's Manufacturing/const/mining fuel
+# use. A BENCHMARK beside EDGAR, boundary stated: UNSD excludes captive
+# generation, includes cement kiln coal, and biofuels are a biogenic memo.
+year,fuel,tj,co2_ef_kg_per_tj,ef_source,co2_Mt,in_total,source_edition,note
+2015,primary_coal,217268,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),20.5536,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2016_countries_M_Q.pdf,
+2015,coal_products,0,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),0.0000,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2016_countries_M_Q.pdf,
+2015,oil_products,80746,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),6.2497,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2016_countries_M_Q.pdf,
+2015,natural_gas,291121,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),16.3319,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2016_countries_M_Q.pdf,
+2015,biofuels_waste,126411,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),12.6411,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2016_countries_M_Q.pdf,
+2015,FOSSIL_COMBUSTION_TOTAL,,,,43.1352,total,data/raw/unsd/energy_balances/unsd_energy_balances_2016_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2016,primary_coal,248092,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),23.4695,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2017_countries_M_Q.pdf,
+2016,oil_products,88743,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),6.8687,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2017_countries_M_Q.pdf,
+2016,natural_gas,332335,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),18.6440,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2017_countries_M_Q.pdf,
+2016,biofuels_waste,117708,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),11.7708,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2017_countries_M_Q.pdf,
+2016,FOSSIL_COMBUSTION_TOTAL,,,,48.9822,total,data/raw/unsd/energy_balances/unsd_energy_balances_2017_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2017,primary_coal,353010,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),33.3947,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2018_countries_M_Q.pdf,
+2017,oil_products,72741,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),5.6302,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2018_countries_M_Q.pdf,
+2017,natural_gas,303886,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),17.0480,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2018_countries_M_Q.pdf,
+2017,biofuels_waste,117708,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),11.7708,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2018_countries_M_Q.pdf,
+2017,FOSSIL_COMBUSTION_TOTAL,,,,56.0729,total,data/raw/unsd/energy_balances/unsd_energy_balances_2018_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2018,primary_coal,407245,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),38.5254,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2019_countries_M_Q.pdf,
+2018,oil_products,57764,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),4.4709,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2019_countries_M_Q.pdf,
+2018,natural_gas,321602,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),18.0419,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2019_countries_M_Q.pdf,
+2018,biofuels_waste,151380,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),15.1380,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2019_countries_M_Q.pdf,
+2018,FOSSIL_COMBUSTION_TOTAL,,,,61.0382,total,data/raw/unsd/energy_balances/unsd_energy_balances_2019_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2019,primary_coal,406524,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),38.4572,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2020_countries_M_Q.pdf,
+2019,oil_products,53657,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),4.1531,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2020_countries_M_Q.pdf,
+2019,natural_gas,260231,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),14.5990,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2020_countries_M_Q.pdf,
+2019,biofuels_waste,151391,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),15.1391,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2020_countries_M_Q.pdf,
+2019,FOSSIL_COMBUSTION_TOTAL,,,,57.2092,total,data/raw/unsd/energy_balances/unsd_energy_balances_2020_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2020,primary_coal,466950,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),44.1735,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2021_countries_M_Q.pdf,
+2020,coal_products,2623,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),0.2481,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2021_countries_M_Q.pdf,
+2020,oil_products,68440,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),5.2973,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2021_countries_M_Q.pdf,
+2020,natural_gas,310714,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),17.4311,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2021_countries_M_Q.pdf,
+2020,biofuels_waste,159085,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),15.9085,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2021_countries_M_Q.pdf,
+2020,FOSSIL_COMBUSTION_TOTAL,,,,67.1499,total,data/raw/unsd/energy_balances/unsd_energy_balances_2021_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2021,primary_coal,389710,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),36.8666,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2022_countries_M_Q.pdf,
+2021,coal_products,2647,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),0.2504,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2022_countries_M_Q.pdf,
+2021,oil_products,61953,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),4.7952,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2022_countries_M_Q.pdf,
+2021,natural_gas,284397,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),15.9547,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2022_countries_M_Q.pdf,
+2021,biofuels_waste,156982,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),15.6982,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2022_countries_M_Q.pdf,
+2021,FOSSIL_COMBUSTION_TOTAL,,,,57.8668,total,data/raw/unsd/energy_balances/unsd_energy_balances_2022_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2022,primary_coal,330684,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),31.2827,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2022,coal_products,3068,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),0.2902,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2022,oil_products,59330,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),4.5921,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2022,natural_gas,233748,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),13.1133,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2022,biofuels_waste,156269,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),15.6269,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2022,FOSSIL_COMBUSTION_TOTAL,,,,49.2783,total,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"
+2023,primary_coal,241417,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),22.8380,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2023,coal_products,2271,94600,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_coal_bit),0.2148,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2023,oil_products,49003,77400,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_rfo),3.7928,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2023,natural_gas,233266,56100,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_gas),13.0862,yes,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2023,biofuels_waste,152887,100000,IPCC 2006 GL Vol 2 Ch 2 Table 2.2 (Energy Industries) (pow_co2_bagasse),15.2887,biogenic_memo,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,
+2023,FOSSIL_COMBUSTION_TOTAL,,,,39.9319,total,data/raw/unsd/energy_balances/unsd_energy_balances_2023_countries_M_Q.pdf,"coal + coal products + oil products + natural gas; biofuels excluded (biogenic); a BENCHMARK for 1.A.2, not a like-for-like (UNSD manufacturing excludes captive generation and includes cement kiln coal)"

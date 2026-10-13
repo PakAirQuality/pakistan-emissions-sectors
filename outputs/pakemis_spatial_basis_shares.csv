@@ -1,0 +1,48 @@
+# Mass-weighted share of each period's emissions by spatial evidence class, national.
+# From outputs/semantic/fact_spatial_basis_year.csv; every period x class cell printed, zero included.
+period_id,spatial_time_basis,plain_name,co2e_Mt_AR5,share_of_period,n_streams,period_total_Mt
+FY2015-16,annual_observed_activity,that year's observed activity,125.640028,0.319016,75,393.836273
+FY2015-16,static_structural,a timeless structural surface,196.188506,0.498147,62,393.836273
+FY2015-16,reference_shape_backcast,"the reference year's pattern, rescaled",44.488076,0.112961,51,393.836273
+FY2015-16,substituted_surface,a declared stand-in surface,27.117536,0.068855,6,393.836273
+FY2015-16,unallocated,retained at province level,0.402128,0.001021,3,393.836273
+FY2016-17,annual_observed_activity,that year's observed activity,135.593722,0.323273,75,419.439970
+FY2016-17,static_structural,a timeless structural surface,206.306179,0.491861,62,419.439970
+FY2016-17,reference_shape_backcast,"the reference year's pattern, rescaled",49.146290,0.117171,51,419.439970
+FY2016-17,substituted_surface,a declared stand-in surface,27.963636,0.066669,6,419.439970
+FY2016-17,unallocated,retained at province level,0.430142,0.001026,3,419.439970
+FY2017-18,annual_observed_activity,that year's observed activity,144.561941,0.322748,75,447.910057
+FY2017-18,static_structural,a timeless structural surface,222.941742,0.497738,62,447.910057
+FY2017-18,reference_shape_backcast,"the reference year's pattern, rescaled",51.503842,0.114987,51,447.910057
+FY2017-18,substituted_surface,a declared stand-in surface,28.505210,0.063640,6,447.910057
+FY2017-18,unallocated,retained at province level,0.397323,0.000887,3,447.910057
+FY2018-19,annual_observed_activity,that year's observed activity,134.657688,0.303228,78,444.080595
+FY2018-19,static_structural,a timeless structural surface,232.504655,0.523564,62,444.080595
+FY2018-19,reference_shape_backcast,"the reference year's pattern, rescaled",47.775127,0.107582,51,444.080595
+FY2018-19,substituted_surface,a declared stand-in surface,28.807863,0.064871,3,444.080595
+FY2018-19,unallocated,retained at province level,0.335263,0.000755,3,444.080595
+FY2019-20,annual_observed_activity,that year's observed activity,138.524355,0.310931,78,445.514194
+FY2019-20,static_structural,a timeless structural surface,231.927413,0.520584,59,445.514194
+FY2019-20,reference_shape_backcast,"the reference year's pattern, rescaled",45.086959,0.101202,51,445.514194
+FY2019-20,substituted_surface,a declared stand-in surface,29.734407,0.066742,5,445.514194
+FY2019-20,unallocated,retained at province level,0.241060,0.000541,3,445.514194
+FY2020-21,annual_observed_activity,that year's observed activity,145.014987,0.299961,78,483.446111
+FY2020-21,static_structural,a timeless structural surface,255.361988,0.528212,59,483.446111
+FY2020-21,reference_shape_backcast,"the reference year's pattern, rescaled",52.073703,0.107714,51,483.446111
+FY2020-21,substituted_surface,a declared stand-in surface,30.743674,0.063593,5,483.446111
+FY2020-21,unallocated,retained at province level,0.251758,0.000521,3,483.446111
+FY2021-22,annual_observed_activity,that year's observed activity,201.478231,0.416752,129,483.448538
+FY2021-22,static_structural,a timeless structural surface,249.963605,0.517043,65,483.448538
+FY2021-22,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,483.448538
+FY2021-22,substituted_surface,a declared stand-in surface,31.711447,0.065594,5,483.448538
+FY2021-22,unallocated,retained at province level,0.295256,0.000611,3,483.448538
+FY2022-23,annual_observed_activity,that year's observed activity,173.878806,0.396675,129,438.340954
+FY2022-23,static_structural,a timeless structural surface,231.444091,0.528000,64,438.340954
+FY2022-23,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,438.340954
+FY2022-23,substituted_surface,a declared stand-in surface,32.749107,0.074711,5,438.340954
+FY2022-23,unallocated,retained at province level,0.268951,0.000614,3,438.340954
+FY2023-24,annual_observed_activity,that year's observed activity,134.329023,0.301893,78,444.955421
+FY2023-24,static_structural,a timeless structural surface,276.727758,0.621922,116,444.955421
+FY2023-24,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,444.955421
+FY2023-24,substituted_surface,a declared stand-in surface,33.647285,0.075619,5,444.955421
+FY2023-24,unallocated,retained at province level,0.251356,0.000565,3,444.955421

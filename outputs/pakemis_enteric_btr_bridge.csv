@@ -1,0 +1,13 @@
+# Enteric CH4 by species, this inventory (FY2020-21, REF_2023_24, AR5) against Pakistan's
+# First BTR as printed in its Figure 1 (PDF p.15). Transcription declared in
+# pkinv/report/enteric_btr_bridge.py. COMPARATOR ONLY; nothing reads this file.
+species,btr_label,pakemis_Mt_co2e_AR5,btr_Mt_co2e,difference_Mt,ratio_pakemis_over_btr,verdict,note
+buffalo,Buffalo,65.321,48.43,16.891,1.349,inventory higher,
+dairy_cattle,Dairy Cows,24.670,24.67,0.000,1.000,agree to the printed precision,
+other_cattle,Other Cattle,27.446,20.80,6.646,1.320,inventory higher,
+goats,Goats,11.246,11.25,-0.004,1.000,agree to the printed precision,
+sheep,Sheep,4.423,4.42,0.003,1.001,agree to the printed precision,
+camels,Camels,1.440,1.44,-0.000,1.000,agree to the printed precision,
+mules_and_asses,Mules & Asses,NE,1.63,-1.630,,not estimated here,the BTR carries this species; this inventory does not estimate it
+horses,Horses,NE,0.19,-0.190,,not estimated here,the BTR carries this species; this inventory does not estimate it
+TOTAL,Enteric fermentation,134.546,112.83,21.716,1.192,sum of the rows above,the BTR total as printed is 112.83; pakemis_btr_comparison.csv carries the same pair

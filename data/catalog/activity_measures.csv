@@ -1,0 +1,64 @@
+# What each technical `variable` is called for a reader. `*` matches anything; a row naming a
+# unit or a source wins over a wildcard. Seeded 2026-09-17 from the reader tables the user made by hand
+# and kept here as the source of truth.
+source_id,variable,unit,label
+*,annual_consumption,kg,Annual consumption
+*,annual_consumption,litre,Annual consumption
+*,annual_consumption,rupees,Annual consumption value (value-only item)
+*,annual_expenditure,*,Annual consumption value
+*,area,*,Crop area
+*,asset_count,*,Asset or connection count
+*,cement_despatch,*,Cement dispatches
+*,cement_production,*,Cement production
+*,clinker_production,*,Clinker production
+*,clinker_trade,*,Clinker trade
+*,coal_energy,*,Coal energy content
+*,coal_imports,*,Coal imports
+*,coal_production,*,Coal production
+*,coal_production_pbs_extraction,*,Coal production (PBS extraction series)
+*,coal_production_petroleum_division,*,Coal production (Petroleum Division)
+*,coal_use,*,Coal use
+*,distance_per_vehicle,*,Annual distance per vehicle
+*,freight,*,Freight
+*,fuel_energy,*,Fuel energy content
+*,fuel_quantity,*,Fuel quantity
+*,fuel_share,*,Share of vehicles by fuel
+*,fuel_use,*,Fuel consumption
+*,gas_feedstock,*,Gas used as feedstock
+*,gas_flow,*,Gas flow
+*,gas_fuel,*,Gas burned as fuel
+*,gas_supply,*,Gas supplied
+*,gas_use,MMCF,Gas use
+*,gas_use,MMCFD,CNG gas consumption
+*,gas_use_independent,*,Gas use from independent suppliers
+*,gas_use_sngpl,*,Gas use supplied by SNGPL
+*,gas_use_ssgcl,*,Gas use supplied by SSGCL
+*,gas_use_total,*,Total gas use
+*,head_count,*,Number of animals
+*,implied_heat_rate,*,Implied heat rate
+*,mean_monthly_per_using_household,kg,Monthly mean per household using this item
+*,mean_monthly_per_using_household,litre,Monthly mean per household using this item
+*,mean_monthly_per_using_household,rupees,Monthly consumption value per household using this item
+*,movements,*,Aircraft movements
+*,net_generation,*,Net electricity generation
+*,offtake,*,Fertiliser offtake
+*,passengers,*,Passengers
+*,pipeline_length,*,Pipeline length
+data/activity/agriculture/crop_district_panel.csv,production,*,Crop production
+data/activity/agriculture/es_fiscal_series.csv,production,*,Crop production
+data/activity/crops_2024.csv,production,*,Crop production
+data/activity/fugitives/production.csv,production,*,Production
+data/activity/fugitives/production_province.csv,production,*,Production
+data/activity/historical/crops.csv,production,*,Crop production
+data/activity/ippu/chemical_plant_activity.csv,production,*,Production
+data/activity/ippu/national_activity.csv,production,*,Production
+data/activity/monthly/pbs_qim_month_item.csv,production,*,Production
+*,registered_vehicles,*,Registered vehicles
+*,sales,*,Petroleum sales
+*,share_of_generated,*,Share of total waste generated
+*,share_of_households,*,Share of households
+*,traffic,*,Railway traffic
+data/activity/residential/hies/hies_fuel_quantities.csv,using_households,*,Households using this item (survey-weighted)
+data/activity/residential/hies/hies_national_totals.csv,using_households,*,Households using this item (survey-weighted)
+data/activity/waste/hies_disposal_routes.csv,using_households,*,Households using this disposal service
+*,waste_mass,*,Waste mass

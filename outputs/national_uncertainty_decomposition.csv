@@ -1,0 +1,203 @@
+module,category,subitem,gas,declared_uncert_pct,derived_uncert_pct,divergence_pct,declared_sigma,named_sigma,residual_sigma,named_var_over_declared_var,reconciles,disposition,dependency_groups
+agriculture,Enteric fermentation,dairy_cattle,CH4,52.202,52.342,0.14,0.26179,0.26247,0.0,1.0052,yes,,ef:enteric_dairy_cattle=0.2511; livestock:cattle=0.0764
+agriculture,Enteric fermentation,other_cattle,CH4,52.202,52.342,0.14,0.26179,0.26247,0.0,1.0052,yes,,ef:enteric_other_cattle=0.2511; livestock:cattle=0.0764
+agriculture,Enteric fermentation,buffalo,CH4,42.72,42.83,0.11,0.21544,0.21598,0.0,1.005,yes,,ef:enteric_buffalo=0.2020; livestock:buffalo=0.0764
+agriculture,Enteric fermentation,sheep,CH4,53.852,54.093,0.241,0.26977,0.27094,0.0,1.0087,yes,,ef:enteric_sheep=0.2511; livestock:sheep=0.1018
+agriculture,Enteric fermentation,goats,CH4,53.852,54.093,0.241,0.26977,0.27094,0.0,1.0087,yes,,ef:enteric_goats=0.2511; livestock:goats=0.1018
+agriculture,Enteric fermentation,camels,CH4,55.902,56.264,0.363,0.27966,0.2814,0.0,1.0125,yes,,ef:enteric_camels=0.2511; livestock:camels=0.1270
+agriculture,Manure management,dairy_cattle (CH4),CH4,33.541,33.62,0.078,0.1699,0.17029,0.0,1.0046,yes,,ef:manure_ch4_dairy_cattle=0.1522; livestock:cattle=0.0764
+agriculture,Manure management,other_cattle (CH4),CH4,33.541,33.62,0.078,0.1699,0.17029,0.0,1.0046,yes,,ef:manure_ch4_other_cattle=0.1522; livestock:cattle=0.0764
+agriculture,Manure management,buffalo (CH4),CH4,33.541,33.62,0.078,0.1699,0.17029,0.0,1.0046,yes,,ef:manure_ch4_buffalo=0.1522; livestock:buffalo=0.0764
+agriculture,Manure management,sheep (CH4),CH4,36.056,36.185,0.13,0.18243,0.18308,0.0,1.0071,yes,,ef:manure_ch4_sheep=0.1522; livestock:sheep=0.1018
+agriculture,Manure management,goats (CH4),CH4,36.056,36.185,0.13,0.18243,0.18308,0.0,1.0071,yes,,ef:manure_ch4_goats=0.1522; livestock:goats=0.1018
+agriculture,Manure management,camels (CH4),CH4,39.051,39.238,0.187,0.19731,0.19824,0.0,1.0094,yes,,ef:manure_ch4_camels=0.1522; livestock:camels=0.1270
+agriculture,Manure management,poultry (CH4),CH4,39.051,39.238,0.187,0.19731,0.19824,0.0,1.0094,yes,,ef:manure_ch4_poultry=0.1522; livestock:poultry=0.1270
+agriculture,Manure management,Direct N2O,N2O,101.119,115.042,13.924,0.4858,0.5441,0.0,1.2544,no,derive_row_from_parameters,ef:manure_n2o_ef3=0.4810; livestock:camels=0.1270; livestock:poultry=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Manure management,Indirect N2O (volatilisation),N2O,107.061,115.042,7.981,0.511,0.5441,0.0,1.1337,no,derive_row_from_parameters,ef:soils_EF4_dry=0.4810; livestock:camels=0.1270; livestock:poultry=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Rice cultivation,Continuously flooded,CH4,60.91,61.483,0.573,0.30364,0.30636,0.0,1.018,yes,,ef:rice_EFc=0.2657; ef:rice_SFw_continuous=0.1321; crop:rice=0.0764
+agriculture,Managed soils,Direct N2O - synthetic fertiliser (upland),N2O,110.114,110.149,0.036,0.52376,0.5239,0.0,1.0006,yes,,ef:soils_EF1_dry=0.5233; fertiliser:nitrogen_N_offtake=0.0255
+agriculture,Managed soils,Direct N2O - synthetic fertiliser (rice EF1FR),N2O,120.104,120.143,0.039,0.56464,0.5648,0.0,1.0006,yes,,ef:soils_EF1FR_rice=0.5642; fertiliser:nitrogen_N_offtake=0.0255
+agriculture,Managed soils,Direct N2O - organic manure,N2O,114.018,124.399,10.381,0.53989,0.58181,0.0,1.1613,no,derive_row_from_parameters,ef:soils_EF1_dry=0.5233; livestock:camels=0.1270; livestock:poultry=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Managed soils,Direct N2O - crop residues,N2O,114.018,116.734,2.717,0.53989,0.551,0.0,1.0416,yes,,ef:soils_EF1_dry=0.5233; crop:cotton=0.1270; crop:rice=0.0764; crop:maize=0.0510; crop:sugarcane=0.0510; crop:wheat=0.0510
+agriculture,Managed soils,Direct N2O - pasture deposition (cattle-type),N2O,101.98,106.61,4.63,0.48948,0.5091,0.0,1.0818,no,derive_row_from_parameters,ef:soils_EF3PRP_cattle=0.4810; livestock:poultry=0.1270; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Managed soils,Direct N2O - pasture deposition (sheep/goat/other),N2O,101.98,108.709,6.729,0.48948,0.5179,0.0,1.1195,no,derive_row_from_parameters,ef:soils_EF3PRP_sheepgoat=0.4810; livestock:camels=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018
+agriculture,Managed soils,Indirect N2O - volatilisation (synthetic fertiliser),N2O,101.98,101.98,0.0,0.48948,0.48168,0.08705,0.9684,yes,,ef:soils_EF4_dry=0.4810; fertiliser:nitrogen_N_offtake=0.0255
+agriculture,Managed soils,Indirect N2O - volatilisation (organic manure),N2O,101.98,115.042,13.062,0.48948,0.5441,0.0,1.2356,no,derive_row_from_parameters,ef:soils_EF4_dry=0.4810; livestock:camels=0.1270; livestock:poultry=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",N2O,101.98,106.61,4.63,0.48948,0.5091,0.0,1.0818,no,derive_row_from_parameters,ef:soils_EF4_dry=0.4810; livestock:poultry=0.1270; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",N2O,101.98,108.709,6.729,0.48948,0.5179,0.0,1.1195,no,derive_row_from_parameters,ef:soils_EF4_dry=0.4810; livestock:camels=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018
+agriculture,Managed soils,Indirect N2O - leaching/runoff (synthetic fertiliser),N2O,101.98,101.98,0.0,0.48948,0.48168,0.08705,0.9684,yes,,ef:soils_EF5=0.4810; fertiliser:nitrogen_N_offtake=0.0255
+agriculture,Managed soils,Indirect N2O - leaching/runoff (organic manure),N2O,101.98,115.042,13.062,0.48948,0.5441,0.0,1.2356,no,derive_row_from_parameters,ef:soils_EF5=0.4810; livestock:camels=0.1270; livestock:poultry=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Managed soils,Indirect N2O - leaching/runoff (crop residues),N2O,101.98,107.067,5.087,0.48948,0.51102,0.0,1.0899,no,derive_row_from_parameters,ef:soils_EF5=0.4810; crop:cotton=0.1270; crop:rice=0.0764; crop:maize=0.0510; crop:sugarcane=0.0510; crop:wheat=0.0510
+agriculture,Managed soils,"Indirect N2O - leaching/runoff (pasture, cattle-type)",N2O,101.98,106.61,4.63,0.48948,0.5091,0.0,1.0818,no,derive_row_from_parameters,ef:soils_EF5=0.4810; livestock:poultry=0.1270; livestock:buffalo=0.0764; livestock:cattle=0.0764
+agriculture,Managed soils,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,101.98,108.709,6.729,0.48948,0.5179,0.0,1.1195,no,derive_row_from_parameters,ef:soils_EF5=0.4810; livestock:camels=0.1270; livestock:goats=0.1018; livestock:sheep=0.1018
+agriculture,Field burning of residues,Residue burning CH4,CH4,53.852,53.852,0.0,0.26977,0.26568,0.04683,0.9699,yes,,ef:burning_Gef_CH4=0.2020; crop:cotton=0.1270; crop:rice=0.0764; crop:maize=0.0510; crop:sugarcane=0.0510; crop:wheat=0.0510
+agriculture,Field burning of residues,Residue burning N2O,N2O,61.644,61.644,-0.0,0.30713,0.30468,0.03874,0.9841,yes,,ef:burning_Gef_N2O=0.2511; crop:cotton=0.1270; crop:rice=0.0764; crop:maize=0.0510; crop:sugarcane=0.0510; crop:wheat=0.0510
+agriculture,Urea application,Urea application CO2,CO2,11.18,11.183,0.003,0.057,0.05701,0.0,1.0005,yes,,ef:liming_EF_urea=0.0510; fertiliser:nitrogen_N_offtake=0.0255
+waste,Open burning of waste,Open waste burning CO2 (fossil),CO2,84.345,101.882,17.538,0.41219,0.48906,0.0,1.4078,no,derive_row_from_parameters,waste_generation=0.2993; waste:burned_fraction=0.2511; waste_composition=0.2267; waste_partition=0.1522; waste:dry_matter=0.1018; waste:oxidation_factor=0.0408
+waste,Open burning of waste,Open waste burning CH4,CH4,92.871,117.516,24.645,0.45006,0.55418,0.0,1.5162,no,derive_row_from_parameters,ef:waste_ch4=0.2993; waste_generation=0.2993; waste:burned_fraction=0.2511; waste_composition=0.1772; waste_partition=0.1522; waste:dry_matter=0.1018
+waste,Open burning of waste,Open waste burning N2O,N2O,124.197,147.531,23.333,0.58101,0.67,0.0,1.3298,no,derive_row_from_parameters,ef:waste_n2o=0.4810; waste_generation=0.2993; waste:burned_fraction=0.2511; waste_composition=0.1772; waste_partition=0.1522; waste:dry_matter=0.1018
+waste,Solid waste disposal,Managed and unmanaged disposal sites CH4,CH4,79.844,85.238,5.395,0.39184,0.4162,0.0,1.1282,no,derive_row_from_parameters,waste_generation=0.2993; waste_composition=0.1772; waste:swds_k=0.1270; waste:swds_docf=0.1018; waste:swds_f=0.0510; waste_partition=-0.1522
+waste,Domestic wastewater,Domestic wastewater CH4,CH4,73.655,91.955,18.3,0.36346,0.44603,0.0,1.506,no,derive_row_from_parameters,waste:ww_mcf_sewer=0.2993; waste:ww_mcf_latrine=0.2511; waste:ww_bo=0.1522; waste:ww_bod_g_per_cap_day=0.1522
+waste,Domestic wastewater,Domestic wastewater N2O,N2O,267.972,267.972,-0.0,1.02668,1.02517,0.05569,0.9971,yes,,waste:ww_ef_effluent=1.0239; waste:ww_f_npr=0.0510
+aviation,Domestic aviation,Domestic aviation LTO CO2,CO2,69.642,69.642,0.0,0.34481,0.179,0.29471,0.2695,yes,,all domestic stages=0.1772; all jet fuel=0.0255
+aviation,Domestic aviation,Domestic aviation LTO CH4,CH4,105.948,105.948,0.0,0.50631,0.43068,0.2662,0.7236,yes,,all jet fuel=0.3926; all domestic stages=0.1772
+aviation,Domestic aviation,Domestic aviation LTO N2O,N2O,130.096,130.096,-0.0,0.60419,0.55246,0.24461,0.8361,yes,,all jet fuel=0.5233; all domestic stages=0.1772
+aviation,Domestic aviation,Domestic aviation cruise CO2,CO2,69.642,69.642,0.0,0.34481,0.179,0.29471,0.2695,yes,,all domestic stages=0.1772; all jet fuel=0.0255
+aviation,Domestic aviation,Domestic aviation cruise CH4,CH4,105.948,105.948,0.0,0.50631,0.43068,0.2662,0.7236,yes,,all jet fuel=0.3926; all domestic stages=0.1772
+aviation,Domestic aviation,Domestic aviation cruise N2O,N2O,130.096,130.096,-0.0,0.60419,0.55246,0.24461,0.8361,yes,,all jet fuel=0.5233; all domestic stages=0.1772
+power,Electricity and heat production,Coal CO2,CO2,10.914,10.914,0.0,0.05564,0.03984,0.03884,0.5127,yes,,factor:co2:Other Bituminous Coal=0.0306; 1a1a_toe_activity=0.0255
+power,Electricity and heat production,Coal CH4,CH4,150.083,150.132,0.049,0.6793,0.67947,0.0,1.0005,yes,,factor:ch4:Other Bituminous Coal=0.6790; 1a1a_toe_activity=0.0255
+power,Electricity and heat production,Coal N2O,N2O,150.083,150.132,0.049,0.6793,0.67947,0.0,1.0005,yes,,factor:n2o:Other Bituminous Coal=0.6790; 1a1a_toe_activity=0.0255
+power,Electricity and heat production,Diesel Oil CO2,CO2,10.198,10.199,0.001,0.052,0.052,0.0,1.0001,yes,,1a1a_toe_activity=0.0510; factor:co2:Gas/Diesel Oil=0.0102
+power,Electricity and heat production,Diesel Oil CH4,CH4,150.333,150.528,0.195,0.6802,0.68091,0.0,1.0021,yes,,factor:ch4:Oil=0.6790; 1a1a_toe_activity=0.0510
+power,Electricity and heat production,Diesel Oil N2O,N2O,150.333,150.528,0.195,0.6802,0.68091,0.0,1.0021,yes,,factor:n2o:Oil=0.6790; 1a1a_toe_activity=0.0510
+power,Electricity and heat production,Furnace Oil CO2,CO2,12.369,12.371,0.001,0.06305,0.06305,0.0,1.0002,yes,,1a1a_toe_activity=0.0612; factor:co2:Residual Fuel Oil=0.0153
+power,Electricity and heat production,Furnace Oil CH4,CH4,150.479,150.759,0.28,0.68073,0.68175,0.0,1.003,yes,,factor:ch4:Oil=0.6790; 1a1a_toe_activity=0.0612
+power,Electricity and heat production,Furnace Oil N2O,N2O,150.479,150.759,0.28,0.68073,0.68175,0.0,1.003,yes,,factor:n2o:Oil=0.6790; 1a1a_toe_activity=0.0612
+power,Electricity and heat production,Gas CO2,CO2,10.77,10.772,0.002,0.05491,0.05492,0.0,1.0004,yes,,1a1a_toe_activity=0.0510; factor:co2:Natural Gas=0.0204
+power,Electricity and heat production,Gas CH4,CH4,150.333,150.528,0.195,0.6802,0.68091,0.0,1.0021,yes,,factor:ch4:Natural Gas=0.6790; 1a1a_toe_activity=0.0510
+power,Electricity and heat production,Gas N2O,N2O,150.333,150.528,0.195,0.6802,0.68091,0.0,1.0021,yes,,factor:n2o:Natural Gas=0.6790; 1a1a_toe_activity=0.0510
+power,Captive gas self-generation (1A2),Captive natural gas CO2,CO2,15.264,15.264,-0.0,0.07776,0.06448,0.04346,0.6876,yes,,delivered_gas_ogra_3_31=0.0612; factor:co2:Natural Gas=0.0204
+power,Captive gas self-generation (1A2),Captive natural gas CH4,CH4,150.722,150.759,0.038,0.68161,0.68175,0.0,1.0004,yes,,factor:ch4:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0612
+power,Captive gas self-generation (1A2),Captive natural gas N2O,N2O,150.722,150.759,0.038,0.68161,0.68175,0.0,1.0004,yes,,factor:n2o:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0612
+power,Electricity and heat production,Bagasse CH4,CH4,151.658,152.1,0.442,0.68499,0.68658,0.0,1.0047,yes,,factor:ch4:Other Primary Solid Biomass=0.6790; power:Bagasse heat rate=0.1018
+power,Electricity and heat production,Bagasse N2O,N2O,151.658,152.1,0.442,0.68499,0.68658,0.0,1.0047,yes,,factor:n2o:Other Primary Solid Biomass=0.6790; power:Bagasse heat rate=0.1018
+transport,Road transport,2W Petrol CO2,CO2,27.0,27.0,-0.0,0.13711,0.05586,0.12522,0.166,yes,,1a3b_petrol_control=0.0549; factor:co2:Motor Gasoline=0.0102
+transport,Road transport,2W Petrol CH4,CH4,65.765,65.765,-0.0,0.32663,0.3043,0.11871,0.8679,yes,,factor:ch4:Motor Gasoline=0.2993; 1a3b_petrol_control=0.0549
+transport,Road transport,2W Petrol N2O,N2O,75.0,75.0,-0.0,0.36966,0.35081,0.11655,0.9006,yes,,factor:n2o:Motor Gasoline=0.3465; 1a3b_petrol_control=0.0549
+transport,Road transport,3W Petrol CO2,CO2,27.0,27.0,-0.0,0.13711,0.05586,0.12522,0.166,yes,,1a3b_petrol_control=0.0549; factor:co2:Motor Gasoline=0.0102
+transport,Road transport,3W Petrol CH4,CH4,65.765,65.765,-0.0,0.32663,0.3043,0.11871,0.8679,yes,,factor:ch4:Motor Gasoline=0.2993; 1a3b_petrol_control=0.0549
+transport,Road transport,3W Petrol N2O,N2O,75.0,75.0,-0.0,0.36966,0.35081,0.11655,0.9006,yes,,factor:n2o:Motor Gasoline=0.3465; 1a3b_petrol_control=0.0549
+transport,Road transport,4W1 Petrol CO2,CO2,27.0,27.0,-0.0,0.13711,0.05586,0.12522,0.166,yes,,1a3b_petrol_control=0.0549; factor:co2:Motor Gasoline=0.0102
+transport,Road transport,4W1 Petrol CH4,CH4,65.765,65.765,-0.0,0.32663,0.3043,0.11871,0.8679,yes,,factor:ch4:Motor Gasoline=0.2993; 1a3b_petrol_control=0.0549
+transport,Road transport,4W1 Petrol N2O,N2O,75.0,75.0,-0.0,0.36966,0.35081,0.11655,0.9006,yes,,factor:n2o:Motor Gasoline=0.3465; 1a3b_petrol_control=0.0549
+transport,Road transport,4W2 Petrol CO2,CO2,27.0,27.0,-0.0,0.13711,0.05586,0.12522,0.166,yes,,1a3b_petrol_control=0.0549; factor:co2:Motor Gasoline=0.0102
+transport,Road transport,4W2 Petrol CH4,CH4,65.765,65.765,-0.0,0.32663,0.3043,0.11871,0.8679,yes,,factor:ch4:Motor Gasoline=0.2993; 1a3b_petrol_control=0.0549
+transport,Road transport,4W2 Petrol N2O,N2O,75.0,75.0,-0.0,0.36966,0.35081,0.11655,0.9006,yes,,factor:n2o:Motor Gasoline=0.3465; 1a3b_petrol_control=0.0549
+transport,Road transport,4WT Petrol CO2,CO2,27.0,27.0,-0.0,0.13711,0.05586,0.12522,0.166,yes,,1a3b_petrol_control=0.0549; factor:co2:Motor Gasoline=0.0102
+transport,Road transport,4WT Petrol CH4,CH4,65.765,65.765,-0.0,0.32663,0.3043,0.11871,0.8679,yes,,factor:ch4:Motor Gasoline=0.2993; 1a3b_petrol_control=0.0549
+transport,Road transport,4WT Petrol N2O,N2O,75.0,75.0,-0.0,0.36966,0.35081,0.11655,0.9006,yes,,factor:n2o:Motor Gasoline=0.3465; 1a3b_petrol_control=0.0549
+transport,Road transport,LDV Petrol CO2,CO2,27.0,27.0,-0.0,0.13711,0.05586,0.12522,0.166,yes,,1a3b_petrol_control=0.0549; factor:co2:Motor Gasoline=0.0102
+transport,Road transport,LDV Petrol CH4,CH4,65.765,65.765,-0.0,0.32663,0.3043,0.11871,0.8679,yes,,factor:ch4:Motor Gasoline=0.2993; 1a3b_petrol_control=0.0549
+transport,Road transport,LDV Petrol N2O,N2O,75.0,75.0,-0.0,0.36966,0.35081,0.11655,0.9006,yes,,factor:n2o:Motor Gasoline=0.3465; 1a3b_petrol_control=0.0549
+transport,Road transport,BUS Petrol CO2,CO2,27.0,27.0,-0.0,0.13711,0.05586,0.12522,0.166,yes,,1a3b_petrol_control=0.0549; factor:co2:Motor Gasoline=0.0102
+transport,Road transport,BUS Petrol CH4,CH4,65.765,65.765,-0.0,0.32663,0.3043,0.11871,0.8679,yes,,factor:ch4:Motor Gasoline=0.2993; 1a3b_petrol_control=0.0549
+transport,Road transport,BUS Petrol N2O,N2O,75.0,75.0,-0.0,0.36966,0.35081,0.11655,0.9006,yes,,factor:n2o:Motor Gasoline=0.3465; 1a3b_petrol_control=0.0549
+transport,Road transport,4W2 Diesel CO2,CO2,27.0,27.0,-0.0,0.13711,0.0542,0.12594,0.1563,yes,,1a3b_diesel_control=0.0532; factor:co2:Gas/Diesel Oil=0.0102
+transport,Road transport,4W2 Diesel CH4,CH4,65.765,65.765,-0.0,0.32663,0.304,0.11948,0.8662,yes,,factor:ch4:Gas/Diesel Oil=0.2993; 1a3b_diesel_control=0.0532
+transport,Road transport,4W2 Diesel N2O,N2O,75.0,75.0,-0.0,0.36966,0.35055,0.11733,0.8993,yes,,factor:n2o:Gas/Diesel Oil=0.3465; 1a3b_diesel_control=0.0532
+transport,Road transport,LDV Diesel CO2,CO2,27.0,27.0,-0.0,0.13711,0.0542,0.12594,0.1563,yes,,1a3b_diesel_control=0.0532; factor:co2:Gas/Diesel Oil=0.0102
+transport,Road transport,LDV Diesel CH4,CH4,65.765,65.765,-0.0,0.32663,0.304,0.11948,0.8662,yes,,factor:ch4:Gas/Diesel Oil=0.2993; 1a3b_diesel_control=0.0532
+transport,Road transport,LDV Diesel N2O,N2O,75.0,75.0,-0.0,0.36966,0.35055,0.11733,0.8993,yes,,factor:n2o:Gas/Diesel Oil=0.3465; 1a3b_diesel_control=0.0532
+transport,Road transport,BUS Diesel CO2,CO2,27.0,27.0,-0.0,0.13711,0.0542,0.12594,0.1563,yes,,1a3b_diesel_control=0.0532; factor:co2:Gas/Diesel Oil=0.0102
+transport,Road transport,BUS Diesel CH4,CH4,65.765,65.765,-0.0,0.32663,0.304,0.11948,0.8662,yes,,factor:ch4:Gas/Diesel Oil=0.2993; 1a3b_diesel_control=0.0532
+transport,Road transport,BUS Diesel N2O,N2O,75.0,75.0,-0.0,0.36966,0.35055,0.11733,0.8993,yes,,factor:n2o:Gas/Diesel Oil=0.3465; 1a3b_diesel_control=0.0532
+transport,Road transport,HDV Diesel CO2,CO2,27.0,27.0,-0.0,0.13711,0.0542,0.12594,0.1563,yes,,1a3b_diesel_control=0.0532; factor:co2:Gas/Diesel Oil=0.0102
+transport,Road transport,HDV Diesel CH4,CH4,65.765,65.765,-0.0,0.32663,0.304,0.11948,0.8662,yes,,factor:ch4:Gas/Diesel Oil=0.2993; 1a3b_diesel_control=0.0532
+transport,Road transport,HDV Diesel N2O,N2O,75.0,75.0,-0.0,0.36966,0.35055,0.11733,0.8993,yes,,factor:n2o:Gas/Diesel Oil=0.3465; 1a3b_diesel_control=0.0532
+transport,Mixed off-road (1A4c/1A2),Off-road machinery diesel CO2,CO2,27.0,27.0,-0.0,0.13711,0.0542,0.12594,0.1563,yes,,1a3b_diesel_control=0.0532; factor:co2:Gas/Diesel Oil=0.0102
+transport,Mixed off-road (1A4c/1A2),Off-road machinery diesel CH4,CH4,132.759,132.759,-0.0,0.61451,0.60616,0.10093,0.973,yes,,factor:ch4:Gas/Diesel Oil=0.6038; 1a3b_diesel_control=0.0532
+transport,Mixed off-road (1A4c/1A2),Off-road machinery diesel N2O,N2O,152.398,152.398,0.0,0.68765,0.68108,0.09486,0.981,yes,,factor:n2o:Gas/Diesel Oil=0.6790; 1a3b_diesel_control=0.0532
+transport,Road transport,CNG CO2,CO2,13.748,13.758,0.01,0.07006,0.07011,0.0,1.0015,yes,,delivered_gas_ogra_3_31=0.0510; 1a3b_cng_chain=0.0436; factor:co2:Natural Gas=0.0204
+transport,Road transport,CNG CH4,CH4,81.074,81.253,0.179,0.39743,0.39824,0.0,1.0041,yes,,factor:ch4:Natural Gas=0.3926; delivered_gas_ogra_3_31=0.0510; 1a3b_cng_chain=0.0436
+transport,Road transport,CNG N2O,N2O,71.225,71.381,0.156,0.35219,0.35292,0.0,1.0041,yes,,factor:n2o:Natural Gas=0.3465; delivered_gas_ogra_3_31=0.0510; 1a3b_cng_chain=0.0436
+railways,Railways,Diesel CO2,CO2,5.385,6.482,1.097,0.02747,0.03306,0.0,1.4485,no,derive_row_from_parameters,1a3c_fuel_account=0.0255; 1a3c_ncv=0.0153; 1a3c_hsd_density=0.0102; factor:co2:Gas/Diesel Oil=0.0102
+railways,Railway non-traction energy (1A2/1A4c unresolved),Non-traction diesel CO2,CO2,5.385,5.385,0.0,0.02747,0.02747,0.0,1.0001,yes,,1a3c_fuel_account=0.0255; factor:co2:Gas/Diesel Oil=0.0102
+railways,Railways,Diesel CH4,CH4,130.096,130.21,0.114,0.60419,0.60464,0.0,1.0015,yes,,factor:ch4:Gas/Diesel Oil=0.6038; 1a3c_fuel_account=0.0255; 1a3c_ncv=0.0153; 1a3c_hsd_density=0.0102
+railways,Railway non-traction energy (1A2/1A4c unresolved),Non-traction diesel CH4,CH4,130.096,130.138,0.042,0.60419,0.60436,0.0,1.0005,yes,,factor:ch4:Gas/Diesel Oil=0.6038; 1a3c_fuel_account=0.0255
+railways,Railways,Diesel N2O,N2O,150.083,150.201,0.117,0.6793,0.67972,0.0,1.0013,yes,,factor:n2o:Gas/Diesel Oil=0.6790; 1a3c_fuel_account=0.0255; 1a3c_ncv=0.0153; 1a3c_hsd_density=0.0102
+railways,Railway non-traction energy (1A2/1A4c unresolved),Non-traction diesel N2O,N2O,150.083,150.132,0.049,0.6793,0.67947,0.0,1.0005,yes,,factor:n2o:Gas/Diesel Oil=0.6790; 1a3c_fuel_account=0.0255
+railways,Railways,Furnace oil CO2,CO2,30.15,30.424,0.274,0.15293,0.1543,0.0,1.018,yes,,1a3c_fuel_account=0.1522; factor:ncv:Residual Fuel Oil=0.0204; factor:co2:Residual Fuel Oil=0.0153
+railways,Railway non-traction energy (1A2/1A4c unresolved),Non-traction furnace oil CO2,CO2,30.15,30.424,0.274,0.15293,0.1543,0.0,1.018,yes,,1a3c_fuel_account=0.1522; factor:ncv:Residual Fuel Oil=0.0204; factor:co2:Residual Fuel Oil=0.0153
+railways,Railways,Furnace oil CH4,CH4,133.417,133.417,0.0,0.61704,0.15354,0.59763,0.0619,yes,,1a3c_fuel_account=0.1522; factor:ncv:Residual Fuel Oil=0.0204
+railways,Railway non-traction energy (1A2/1A4c unresolved),Non-traction furnace oil CH4,CH4,133.417,133.417,0.0,0.61704,0.15354,0.59763,0.0619,yes,,1a3c_fuel_account=0.1522; factor:ncv:Residual Fuel Oil=0.0204
+railways,Railways,Furnace oil N2O,N2O,152.971,152.971,0.0,0.68971,0.15354,0.6724,0.0496,yes,,1a3c_fuel_account=0.1522; factor:ncv:Residual Fuel Oil=0.0204
+railways,Railway non-traction energy (1A2/1A4c unresolved),Non-traction furnace oil N2O,N2O,152.971,152.971,0.0,0.68971,0.15354,0.6724,0.0496,yes,,1a3c_fuel_account=0.1522; factor:ncv:Residual Fuel Oil=0.0204
+fugitives,Fugitive emissions from oil and gas,Oil production CH4,CH4,30.414,30.423,0.01,0.15425,0.1543,0.0,1.0006,yes,,factor:oil_prod_high=0.1522; oil-production-volume=0.0255
+fugitives,Fugitive emissions from oil and gas,Oil production CO2,CO2,30.414,30.423,0.01,0.15425,0.1543,0.0,1.0006,yes,,factor:oil_prod_high=0.1522; oil-production-volume=0.0255
+fugitives,Fugitive emissions from oil and gas,Oil production N2O,N2O,1000.012,1000.012,0.0,1.81577,1.42614,1.1239,0.6169,yes,,factor:oil_prod_high=1.4259; oil-production-volume=0.0255
+fugitives,Fugitive emissions from oil and gas,Oil pipeline transport CH4,CH4,100.499,100.628,0.129,0.48314,0.4837,0.0,1.0023,yes,,factor:oil_transport_pipeline=0.4810; oil-production-volume=0.0510
+fugitives,Fugitive emissions from oil and gas,Oil pipeline transport CO2,CO2,100.499,100.628,0.129,0.48314,0.4837,0.0,1.0023,yes,,factor:oil_transport_pipeline=0.4810; oil-production-volume=0.0510
+fugitives,Fugitive emissions from oil and gas,Oil refining CH4,CH4,131.529,131.529,0.0,0.60976,0.4491,0.41245,0.5425,yes,,factor:oil_refining=0.4374; oil_refining=0.1018
+fugitives,Fugitive emissions from oil and gas,Oil refining CO2,CO2,131.529,131.529,0.0,0.60976,0.4491,0.41245,0.5425,yes,,factor:oil_refining=0.4374; oil_refining=0.1018
+fugitives,Fugitive emissions from oil and gas,Oil refining N2O,N2O,101.98,102.49,0.509,0.48948,0.49165,0.0,1.0089,yes,,factor:oil_refining=0.4810; oil_refining=0.1018
+fugitives,Fugitive emissions from oil and gas,Gas production CH4,CH4,20.616,20.622,0.006,0.10489,0.10493,0.0,1.0006,yes,,factor:gas_prod_high=0.1018; gas-production-volume=0.0255
+fugitives,Fugitive emissions from oil and gas,Gas production CO2,CO2,20.616,20.622,0.006,0.10489,0.10493,0.0,1.0006,yes,,factor:gas_prod_high=0.1018; gas-production-volume=0.0255
+fugitives,Fugitive emissions from oil and gas,Gas production N2O,N2O,1000.012,1000.012,0.0,1.81577,1.42614,1.1239,0.6169,yes,,factor:gas_prod_high=1.4259; gas-production-volume=0.0255
+fugitives,Fugitive emissions from oil and gas,Gas gathering CH4,CH4,14.142,14.151,0.009,0.07206,0.07211,0.0,1.0013,yes,,factor:gas_gathering=0.0510; gas-production-volume=0.0510
+fugitives,Fugitive emissions from oil and gas,Gas gathering CO2,CO2,14.142,14.151,0.009,0.07206,0.07211,0.0,1.0013,yes,,factor:gas_gathering=0.0510; gas-production-volume=0.0510
+fugitives,Fugitive emissions from oil and gas,Gas gathering N2O,N2O,1000.05,1000.05,0.0,1.81579,1.42683,1.12307,0.6175,yes,,factor:gas_gathering=1.4259; gas-production-volume=0.0510
+fugitives,Fugitive emissions from oil and gas,Gas processing CH4,CH4,22.361,22.384,0.023,0.11372,0.11384,0.0,1.0021,yes,,gas-production-volume=0.1018; factor:gas_processing_high=0.0510
+fugitives,Fugitive emissions from oil and gas,Gas processing CO2,CO2,22.361,22.384,0.023,0.11372,0.11384,0.0,1.0021,yes,,gas-production-volume=0.1018; factor:gas_processing_high=0.0510
+fugitives,Fugitive emissions from oil and gas,Gas processing N2O,N2O,1000.2,1000.2,-0.0,1.81587,1.42954,1.11973,0.6198,yes,,factor:gas_processing_high=1.4259; gas-production-volume=0.1018
+fugitives,Fugitive emissions from oil and gas,Sour-gas processing CH4,CH4,101.98,102.49,0.509,0.48948,0.49165,0.0,1.0089,yes,,factor:gas_processing_sour=0.4810; gas-production-volume=0.1018
+fugitives,Fugitive emissions from oil and gas,Sour-gas processing CO2,CO2,101.98,102.49,0.509,0.48948,0.49165,0.0,1.0089,yes,,factor:gas_processing_sour=0.4810; gas-production-volume=0.1018
+fugitives,Fugitive emissions from oil and gas,Sour-gas processing N2O,N2O,1000.2,1000.2,-0.0,1.81587,1.42954,1.11973,0.6198,yes,,factor:gas_processing_sour=1.4259; gas-production-volume=0.1018
+fugitives,Fugitive emissions from oil and gas,LNG import terminals CH4,CH4,30.0,30.0,-0.0,0.15218,0.12704,0.08378,0.6969,yes,,factor:lng_import=0.1270
+fugitives,Fugitive emissions from oil and gas,LNG import terminals CO2,CO2,30.0,30.0,-0.0,0.15218,0.12704,0.08378,0.6969,yes,,factor:lng_import=0.1270
+fugitives,Fugitive emissions from oil and gas,Post-meter appliances CH4,CH4,60.208,60.227,0.019,0.30029,0.30038,0.0,1.0006,yes,,factor:post_meter_appliance=0.2993; post_meter_appliances=0.0255
+fugitives,Fugitive emissions from oil and gas,Post-meter appliances CO2,CO2,60.208,60.227,0.019,0.30029,0.30038,0.0,1.0006,yes,,factor:post_meter_appliance=0.2993; post_meter_appliances=0.0255
+fugitives,Fugitive emissions from oil and gas,Post-meter industrial and power CH4,CH4,60.208,60.227,0.019,0.30029,0.30038,0.0,1.0006,yes,,factor:post_meter_industrial=0.2993; post_meter_nonresidential=0.0255
+fugitives,Fugitive emissions from oil and gas,Post-meter industrial and power CO2,CO2,60.208,60.227,0.019,0.30029,0.30038,0.0,1.0006,yes,,factor:post_meter_industrial=0.2993; post_meter_nonresidential=0.0255
+fugitives,Fugitive emissions from oil and gas,Gas transmission CH4,CH4,30.067,30.067,-0.0,0.15251,0.12745,0.08377,0.6983,yes,,factor:gas_transmission_high_km=0.1270; gas_transmission_pipeline=0.0102
+fugitives,Fugitive emissions from oil and gas,Gas transmission CO2,CO2,30.067,30.067,-0.0,0.15251,0.12745,0.08377,0.6983,yes,,factor:gas_transmission_high_km=0.1270; gas_transmission_pipeline=0.0102
+fugitives,Fugitive emissions from oil and gas,Gas distribution CH4,CH4,120.017,120.017,0.0,0.56429,0.34664,0.44527,0.3773,yes,,factor:gas_distribution_high_km=0.3465; gas_distribution_pipeline=0.0102
+fugitives,Fugitive emissions from oil and gas,Gas distribution CO2,CO2,120.017,120.017,0.0,0.56429,0.34664,0.44527,0.3773,yes,,factor:gas_distribution_high_km=0.3465; gas_distribution_pipeline=0.0102
+residential,Residential fuel combustion,Natural gas CO2,CO2,10.77,13.425,2.655,0.05491,0.06842,0.0,1.5525,no,derive_row_from_parameters,delivered_gas_ogra_3_31=0.0510; 1a4b_gas=0.0408; factor:co2:Natural Gas=0.0204
+residential,Residential fuel combustion,Natural gas CH4,CH4,150.333,150.865,0.532,0.6802,0.68213,0.0,1.0057,yes,,factor:ch4:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0510; 1a4b_gas=0.0408
+residential,Residential fuel combustion,Natural gas N2O,N2O,150.333,150.865,0.532,0.6802,0.68213,0.0,1.0057,yes,,factor:n2o:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0510; 1a4b_gas=0.0408
+residential,Residential fuel combustion,LPG CO2,CO2,20.881,26.957,6.077,0.10624,0.1369,0.0,1.6605,no,derive_row_from_parameters,1a4b_lpg=0.1270; factor:ncv:Liquefied Petroleum Gases=0.0408; factor:co2:Liquefied Petroleum Gases=0.0306
+residential,Residential fuel combustion,LPG CH4,CH4,151.327,153.604,2.277,0.6838,0.69198,0.0,1.0241,yes,,factor:ch4:Liquefied Petroleum Gases=0.6790; 1a4b_lpg=0.1270; factor:ncv:Liquefied Petroleum Gases=0.0408
+residential,Residential fuel combustion,LPG N2O,N2O,151.327,153.604,2.277,0.6838,0.69198,0.0,1.0241,yes,,factor:n2o:Liquefied Petroleum Gases=0.6790; 1a4b_lpg=0.1270; factor:ncv:Liquefied Petroleum Gases=0.0408
+residential,Residential fuel combustion,Kerosene CO2,CO2,20.224,20.45,0.226,0.10291,0.10405,0.0,1.0223,yes,,1a4b_kerosene=0.1018; factor:co2:Other Kerosene=0.0153; factor:ncv:Other Kerosene=0.0153
+residential,Residential fuel combustion,Kerosene CH4,CH4,151.327,152.147,0.82,0.6838,0.68675,0.0,1.0087,yes,,factor:ch4:Other Kerosene=0.6790; 1a4b_kerosene=0.1018; factor:ncv:Other Kerosene=0.0153
+residential,Residential fuel combustion,Kerosene N2O,N2O,151.327,152.147,0.82,0.6838,0.68675,0.0,1.0087,yes,,factor:n2o:Other Kerosene=0.6790; 1a4b_kerosene=0.1018; factor:ncv:Other Kerosene=0.0153
+residential,Residential fuel combustion,Coal CO2,CO2,40.311,45.67,5.358,0.20355,0.22994,0.0,1.2761,no,derive_row_from_parameters,1a4b_coal=0.2020; factor:ncv:Other Bituminous Coal=0.1068; factor:co2:Other Bituminous Coal=0.0255
+residential,Residential fuel combustion,Coal CH4,CH4,155.242,160.517,5.275,0.69783,0.71642,0.0,1.054,no,derive_row_from_parameters,factor:ch4:Other Bituminous Coal=0.6790; 1a4b_coal=0.2020; factor:ncv:Other Bituminous Coal=0.1068
+residential,Residential fuel combustion,Coal N2O,N2O,155.242,160.517,5.275,0.69783,0.71642,0.0,1.054,no,derive_row_from_parameters,factor:n2o:Other Bituminous Coal=0.6790; 1a4b_coal=0.2020; factor:ncv:Other Bituminous Coal=0.1068
+residential,Residential fuel combustion,Generators CO2,CO2,40.2,40.324,0.125,0.20299,0.20361,0.0,1.0061,yes,,1a4b_generators=0.2020; factor:co2:Motor Gasoline=0.0204; factor:ncv:Motor Gasoline=0.0153
+residential,Residential fuel combustion,Generators CH4,CH4,155.242,158.278,3.037,0.69783,0.70857,0.0,1.031,yes,,factor:ch4:Motor Gasoline=0.6790; 1a4b_generators=0.2020; factor:ncv:Motor Gasoline=0.0153
+residential,Residential fuel combustion,Generators N2O,N2O,155.242,158.278,3.037,0.69783,0.70857,0.0,1.031,yes,,factor:n2o:Motor Gasoline=0.6790; 1a4b_generators=0.2020; factor:ncv:Motor Gasoline=0.0153
+residential,Residential fuel combustion,Dung cake CH4,CH4,154.029,198.771,44.742,0.6935,0.84101,0.0,1.4706,no,derive_row_from_parameters,factor:ch4:Other Primary Solid Biomass=0.6790; factor:ncv:Other Primary Solid Biomass=0.3651; 1a4b_dung_chain=0.3362
+residential,Residential fuel combustion,Dung cake N2O,N2O,154.029,198.771,44.742,0.6935,0.84101,0.0,1.4706,no,derive_row_from_parameters,factor:n2o:Other Primary Solid Biomass=0.6790; factor:ncv:Other Primary Solid Biomass=0.3651; 1a4b_dung_chain=0.3362
+residential,Residential fuel combustion,Firewood CH4,CH4,154.029,182.764,28.735,0.6935,0.79101,0.0,1.301,no,derive_row_from_parameters,factor:ch4:Wood/Wood Waste=0.6790; factor:ncv:Wood/Wood Waste=0.3651; 1a4b_firewood=0.1772
+residential,Residential fuel combustion,Firewood N2O,N2O,154.029,182.764,28.735,0.6935,0.79101,0.0,1.301,no,derive_row_from_parameters,factor:n2o:Wood/Wood Waste=0.6790; factor:ncv:Wood/Wood Waste=0.3651; 1a4b_firewood=0.1772
+residential,Residential fuel combustion,Charcoal CH4,CH4,155.242,184.614,29.372,0.69783,0.79693,0.0,1.3042,no,derive_row_from_parameters,factor:ch4:Charcoal=0.6790; factor:ncv:Charcoal=0.3651; 1a4b_charcoal=0.2020
+residential,Residential fuel combustion,Charcoal N2O,N2O,155.242,184.614,29.372,0.69783,0.79693,0.0,1.3042,no,derive_row_from_parameters,factor:n2o:Charcoal=0.6790; factor:ncv:Charcoal=0.3651; 1a4b_charcoal=0.2020
+residential,Residential fuel combustion,Crop residues CH4,CH4,161.555,194.18,32.625,0.72004,0.82697,0.0,1.3191,no,derive_row_from_parameters,factor:ch4:Other Primary Solid Biomass=0.6790; factor:ncv:Other Primary Solid Biomass=0.3651; 1a4b_residue=0.2993
+residential,Residential fuel combustion,Crop residues N2O,N2O,161.555,194.18,32.625,0.72004,0.82697,0.0,1.3191,no,derive_row_from_parameters,factor:n2o:Other Primary Solid Biomass=0.6790; factor:ncv:Other Primary Solid Biomass=0.3651; 1a4b_residue=0.2993
+ippu,Cement production,Clinker calcination CO2,CO2,9.434,9.436,0.002,0.04811,0.04812,0.0,1.0005,yes,,clinker_factor=0.0408; cement_activity=0.0255
+ippu,Ammonia production,Ammonia process CO2 net of urea recovery,CO2,8.602,8.604,0.002,0.04387,0.04388,0.0,1.0004,yes,,ammonia_factor=0.0357; ammonia_activity=0.0255
+ippu,Iron and steel production,Crude steel (electric route) process CO2,CO2,26.926,26.956,0.03,0.13674,0.13689,0.0,1.0022,yes,,steel_factor=0.1270; steel_activity=0.0510
+ippu,Lubricant use,Lubricating oil oxidised in use,CO2,50.99,51.054,0.064,0.25591,0.25622,0.0,1.0024,yes,,lubricant_odu=0.2511; lubricant_activity=0.0510
+ippu,Lubricant use,Grease oxidised in use,CO2,50.99,51.054,0.064,0.25591,0.25622,0.0,1.0024,yes,,lubricant_odu=0.2511; lubricant_activity=0.0510
+industry,Industrial fuel combustion (1A2),Cement gas CO2,CO2,15.264,15.264,-0.0,0.07776,0.06934,0.03519,0.7952,yes,,delivered_gas_ogra_3_31=0.0612; factor:ncv:Natural Gas=0.0255; factor:co2:Natural Gas=0.0204
+industry,Industrial fuel combustion (1A2),Cement gas CH4,CH4,150.722,150.891,0.17,0.68161,0.68222,0.0,1.0018,yes,,factor:ch4:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0612; factor:ncv:Natural Gas=0.0255
+industry,Industrial fuel combustion (1A2),Cement gas N2O,N2O,150.722,150.891,0.17,0.68161,0.68222,0.0,1.0018,yes,,factor:n2o:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0612; factor:ncv:Natural Gas=0.0255
+industry,Industrial fuel combustion (1A2),General Industry gas CO2,CO2,15.264,15.264,-0.0,0.07776,0.06934,0.03519,0.7952,yes,,delivered_gas_ogra_3_31=0.0612; factor:ncv:Natural Gas=0.0255; factor:co2:Natural Gas=0.0204
+industry,Industrial fuel combustion (1A2),General Industry gas CH4,CH4,150.722,150.891,0.17,0.68161,0.68222,0.0,1.0018,yes,,factor:ch4:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0612; factor:ncv:Natural Gas=0.0255
+industry,Industrial fuel combustion (1A2),General Industry gas N2O,N2O,150.722,150.891,0.17,0.68161,0.68222,0.0,1.0018,yes,,factor:n2o:Natural Gas=0.6790; delivered_gas_ogra_3_31=0.0612; factor:ncv:Natural Gas=0.0255
+industry,Industrial fuel combustion (1A2),Industrial furnace oil CO2,CO2,10.44,11.183,0.743,0.05323,0.05701,0.0,1.1472,no,derive_row_from_parameters,industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Residual Fuel Oil=0.0204; factor:co2:Residual Fuel Oil=0.0153
+industry,Industrial fuel combustion (1A2),Industrial furnace oil CH4,CH4,150.333,150.612,0.279,0.6802,0.68121,0.0,1.003,yes,,factor:ch4:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Residual Fuel Oil=0.0204
+industry,Industrial fuel combustion (1A2),Industrial furnace oil N2O,N2O,150.333,150.612,0.279,0.6802,0.68121,0.0,1.003,yes,,factor:n2o:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Residual Fuel Oil=0.0204
+industry,Industrial fuel combustion (1A2),Industrial HOBC CO2,CO2,10.77,11.493,0.723,0.05491,0.05859,0.0,1.1385,no,derive_row_from_parameters,industry:OCAC Total Industry liquid fuels=0.0510; factor:co2:Motor Gasoline=0.0204; factor:ncv:Motor Gasoline=0.0204
+industry,Industrial fuel combustion (1A2),Industrial HOBC CH4,CH4,150.333,150.612,0.279,0.6802,0.68121,0.0,1.003,yes,,factor:ch4:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Motor Gasoline=0.0204
+industry,Industrial fuel combustion (1A2),Industrial HOBC N2O,N2O,150.333,150.612,0.279,0.6802,0.68121,0.0,1.003,yes,,factor:n2o:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Motor Gasoline=0.0204
+industry,Industrial fuel combustion (1A2),Industrial diesel CO2,CO2,10.198,10.632,0.434,0.052,0.0542,0.0,1.0867,no,derive_row_from_parameters,industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Gas/Diesel Oil=0.0153; factor:co2:Gas/Diesel Oil=0.0102
+industry,Industrial fuel combustion (1A2),Industrial diesel CH4,CH4,150.333,150.575,0.242,0.6802,0.68108,0.0,1.0026,yes,,factor:ch4:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Gas/Diesel Oil=0.0153
+industry,Industrial fuel combustion (1A2),Industrial diesel N2O,N2O,150.333,150.575,0.242,0.6802,0.68108,0.0,1.0026,yes,,factor:n2o:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Gas/Diesel Oil=0.0153
+industry,Industrial fuel combustion (1A2),Industrial kerosene CO2,CO2,10.198,10.632,0.434,0.052,0.0542,0.0,1.0867,no,derive_row_from_parameters,industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Other Kerosene=0.0153; factor:co2:Other Kerosene=0.0102
+industry,Industrial fuel combustion (1A2),Industrial kerosene CH4,CH4,150.333,150.575,0.242,0.6802,0.68108,0.0,1.0026,yes,,factor:ch4:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Other Kerosene=0.0153
+industry,Industrial fuel combustion (1A2),Industrial kerosene N2O,N2O,150.333,150.575,0.242,0.6802,0.68108,0.0,1.0026,yes,,factor:n2o:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Other Kerosene=0.0153
+industry,Industrial fuel combustion (1A2),Industrial light diesel oil CO2,CO2,10.198,10.632,0.434,0.052,0.0542,0.0,1.0867,no,derive_row_from_parameters,industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Gas/Diesel Oil=0.0153; factor:co2:Gas/Diesel Oil=0.0102
+industry,Industrial fuel combustion (1A2),Industrial light diesel oil CH4,CH4,150.333,150.575,0.242,0.6802,0.68108,0.0,1.0026,yes,,factor:ch4:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Gas/Diesel Oil=0.0153
+industry,Industrial fuel combustion (1A2),Industrial light diesel oil N2O,N2O,150.333,150.575,0.242,0.6802,0.68108,0.0,1.0026,yes,,factor:n2o:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Gas/Diesel Oil=0.0153
+industry,Industrial fuel combustion (1A2),Industrial gasoline CO2,CO2,10.77,11.493,0.723,0.05491,0.05859,0.0,1.1385,no,derive_row_from_parameters,industry:OCAC Total Industry liquid fuels=0.0510; factor:co2:Motor Gasoline=0.0204; factor:ncv:Motor Gasoline=0.0204
+industry,Industrial fuel combustion (1A2),Industrial gasoline CH4,CH4,150.333,150.612,0.279,0.6802,0.68121,0.0,1.003,yes,,factor:ch4:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Motor Gasoline=0.0204
+industry,Industrial fuel combustion (1A2),Industrial gasoline N2O,N2O,150.333,150.612,0.279,0.6802,0.68121,0.0,1.003,yes,,factor:n2o:Liquid Fuels=0.6790; industry:OCAC Total Industry liquid fuels=0.0510; factor:ncv:Motor Gasoline=0.0204
+industry,Industrial fuel combustion (1A2),Brick-kiln coal CO2,CO2,37.283,37.283,0.0,0.18853,0.11265,0.15118,0.357,yes,,factor:ncv:Other Bituminous Coal=0.1068; factor:co2:Other Bituminous Coal=0.0357
+industry,Industrial fuel combustion (1A2),Brick-kiln coal CH4,CH4,154.405,154.405,-0.0,0.69485,0.68735,0.10179,0.9785,yes,,factor:ch4:Other Bituminous Coal=0.6790; factor:ncv:Other Bituminous Coal=0.1068
+industry,Industrial fuel combustion (1A2),Brick-kiln coal N2O,N2O,154.405,154.405,-0.0,0.69485,0.68735,0.10179,0.9785,yes,,factor:n2o:Other Bituminous Coal=0.6790; factor:ncv:Other Bituminous Coal=0.1068
+industry,Industrial fuel combustion (1A2),Cement-sector coal CO2,CO2,37.283,37.283,0.0,0.18853,0.11265,0.15118,0.357,yes,,factor:ncv:Other Bituminous Coal=0.1068; factor:co2:Other Bituminous Coal=0.0357
+industry,Industrial fuel combustion (1A2),Cement-sector coal CH4,CH4,154.405,154.405,-0.0,0.69485,0.68735,0.10179,0.9785,yes,,factor:ch4:Other Bituminous Coal=0.6790; factor:ncv:Other Bituminous Coal=0.1068
+industry,Industrial fuel combustion (1A2),Cement-sector coal N2O,N2O,154.405,154.405,-0.0,0.69485,0.68735,0.10179,0.9785,yes,,factor:n2o:Other Bituminous Coal=0.6790; factor:ncv:Other Bituminous Coal=0.1068

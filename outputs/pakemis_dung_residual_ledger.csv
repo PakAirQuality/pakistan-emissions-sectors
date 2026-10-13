@@ -1,0 +1,8 @@
+# The unresolved dung residual (configuration S) by species: nitrogen, volatile solids,
+# dry solids and air-dry cake through the engine's own chain. pkinv.report.dung_residual_ledger.
+# The species split of the residual is an ASSUMPTION (equal to the diversion's); see the note column.
+species,diverted_N_kt,diverted_VS_kt,diverted_dry_solids_kt,diverted_air_dry_Mt,unresolved_share,unresolved_N_kt,unresolved_VS_kt,unresolved_dry_solids_kt,unresolved_air_dry_Mt,chain,note
+buffalo,635.646,20874.016,27832.021,31.62730,0.8139,517.335,16988.784,22651.712,25.74058,N x (vs_rate_buffalo / nex_rate_buffalo) = VS; VS / (1 - 0.250 ash) = dry solids; / (1 - 0.120 moisture) = air-dry,species share of the residual assumed equal to its share of the diversion
+dairy_cattle,316.630,6369.309,8492.412,9.65047,0.8139,257.696,5183.804,6911.739,7.85425,N x (vs_rate_dairy_cattle / nex_rate_dairy_cattle) = VS; VS / (1 - 0.250 ash) = dry solids; / (1 - 0.120 moisture) = air-dry,species share of the residual assumed equal to its share of the diversion
+other_cattle,307.909,11526.027,15368.036,17.46368,0.8139,250.599,9380.715,12507.620,14.21320,N x (vs_rate_other_cattle / nex_rate_other_cattle) = VS; VS / (1 - 0.250 ash) = dry solids; / (1 - 0.120 moisture) = air-dry,species share of the residual assumed equal to its share of the diversion
+ALL,1260.185,38769.352,51692.470,58.74144,0.8139,1025.629,31553.303,42071.071,47.80803,sum over species,closes on residential_dung_ledger_2024.csv's UNRESOLVED row to 0.001 Mt

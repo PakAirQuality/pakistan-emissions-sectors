@@ -1,0 +1,43 @@
+# THE ACTIVITY VIEWS EACH SECTOR'S VERIFICATION BUNDLE CARRIES.
+# 
+# results/01..08 answer what the sector CONCLUDED, through the query core. These answer what
+# it was told - the activity data, at the grain a reader actually asks about, which is almost
+# never the grain the engine consumes. "The ten highest-fleet districts of Punjab, by vehicle
+# class" is one pivot away from a 12,670-row long table, and nobody was doing that pivot.
+# 
+# recipe:
+#   table        copy the whole (small) table
+#   top_n_wide   the file is already wide; rank groups by the sum of value_columns within
+#                each partition and keep the top N
+#   top_n_pivot  the file is long; pivot class_column into columns, summing value_columns,
+#                then rank and keep the top N per partition
+# 
+# filter_value MAX takes the largest value of filter_column (the latest year) rather than
+# naming a year that would go stale silently. value_columns is ';'-separated for top_n_wide
+# and a single column for top_n_pivot. note is printed into the view's banner, so a reader
+# sees what the numbers may and may not be used for without leaving the file.
+# 
+# rank_by names the column the top-N is taken on, or "sum" when the value columns are
+# commensurate and adding them means something. It is declared because assuming the sum was
+# wrong twice in the first build of these views: gas_mmcfd + capacity_mw adds MMCFD to
+# megawatts, and pop_total + pop_rural + pop_urban counts every person twice because
+# pop_total IS rural plus urban.
+# 
+# top_n_wide AGGREGATES to (partition, group) before ranking - the captive register holds up
+# to 266 connection records for one district, and ranking rows answered "the ten largest
+# districts" with ten records from the same one.
+# 
+# Written by hand; consumed by scripts/build_verification_bundle.py.
+sector,view_id,title,recipe,source_path,filter_column,filter_value,partition_by,group_by,class_column,value_columns,rank_by,top_n,note
+transport,registered_fleet_by_class_top_districts,"registered vehicle fleet by class, the ten highest-fleet districts of each province",top_n_pivot,data/activity/transport/vehicles_district.csv,year,MAX,province,district,ei_class,vehicles,sum,10,"CUMULATIVE REGISTERED STOCK from the provincial bureaux, not vehicles in use; the engine uses it as a district SHAPE, never as an activity level"
+agriculture,livestock_heads_top_districts,"livestock head counts by species, the ten largest herds of each province",top_n_wide,data/activity/livestock_district_2024.csv,,,province,district,,cattle;buffalo;sheep;goats;camels,sum,10,"PBS 7th Agricultural Census 2024 Table 4/6, the district transcription the herd re-base rests on"
+waste,population_top_districts,"population, the ten largest districts of each province",top_n_wide,data/activity/waste/population_district.csv,year,MAX,province,district,,pop_total;pop_rural;pop_urban,pop_total,10,"the 6th and 7th census interpolated; urban share drives the collection route split. RANKED ON pop_total, which IS rural plus urban - summing all three would count every person twice"
+power,generation_by_fuel_and_system,"net generation by fuel and system, every published year",table,data/activity/power/generation_by_fuel.csv,,,,,,,,,CPPA-G and K-Electric are reported separately and never summed without saying so - the boundary question the sector's configurations exist for
+power,captive_gas_top_districts,"captive self-generation gas, the ten largest districts of each province",top_n_wide,data/activity/power/captive_register.csv,,,province_region,district,,gas_mmcfd;capacity_mw,gas_mmcfd,10,"the OGRA connection register, summed to the district (up to 266 connections in one); RANKED ON gas_mmcfd because adding megawatts to MMCFD means nothing; 37 of 1,105 rows carry no district and are labelled, not dropped"
+ippu,clinker_and_cement_by_company,"clinker and cement production by company, FY2023-24",table,data/activity/ippu/company_clinker_2023_24.csv,,,,,,,,,"company annual reports, read one by one; coverage_status says what each edition did and did not publish"
+industry,coal_by_consumer,"national coal consumption by consumer, every published year",table,data/activity/industry/coal_by_consumer.csv,,,,,,,,,the Finance Division's republication of the HDIP sectoral series; revision_status distinguishes editions
+industry,brick_kiln_coal,"brick-kiln coal, every published year",table,data/activity/industry/brick_kiln_coal.csv,,,,,,,,,the kiln stream's activity basis; the 7.35 Mt screening rests on this row
+railways,metered_diesel_series,"metered diesel purchases, every published year",table,data/activity/railways/fuel_consumption.csv,,,,,,,,,"Pakistan Railways Year Book principal statistics - the metered figure the sector runs +10% above, against UNFCCC filings implying 9.6x-12.6x more"
+aviation,movements_top_airports,"aircraft movements, the ten busiest airports of each province",top_n_wide,data/activity/aviation/movements_airport.csv,year,MAX,province,airport,,com_dom_mv;com_intl_mv;noncom_mv,sum,10,"CAA Statistics Branch major traffic flows; movements, not fuel - the fuel control is OCAC jet-fuel sales"
+residential,fuel_supply_control_totals,"the residential fuel control totals, FY2023-24",table,data/activity/residential/fuel_supply.csv,,,,,,,,,"two rows, and both are national supply: the LPG domestic share is a parameter, not embedded here"
+fugitives,production_by_province,crude oil and natural gas production by province,table,data/activity/fugitives/production_province.csv,,,,,,,,,Pakistan Statistical Year Book Table 7.3 provincial break-up; the upstream fugitive streams are allocated on it

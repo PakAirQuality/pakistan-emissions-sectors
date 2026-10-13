@@ -1,0 +1,54 @@
+# National coal SUPPLY by fiscal year - the two published lanes, kept apart, with the
+# publisher's own partial-period footnotes carried as columns. Wave 1 of the industrial-coal
+# reconstruction (2026-09-10): the reference's brick-kiln and cement-sector coal come from
+# HDIP's coal-by-consumer ALLOCATION (coal_by_consumer.csv); this file is the SUPPLY side that
+# allocation exhausts, transcribed so the balance can be tested rather than assumed.
+#
+# LANE 1 - Ministry of Energy (Petroleum Division) / HDIP: Finance Division Statistical
+#   Supplement 2024-25 Table 14.3 "COMMERCIAL ENERGY SUPPLIES" (data/raw/finance_division/
+#   supplement_2024_25/supplement_2024-25.pdf p.212, coal Imports / Production 000 tons),
+#   CROSS-VALIDATED cell-for-cell against the Pakistan Economic Survey 2025-26 ch.14 energy-
+#   supply table (data/raw/finance_division/survey_2025_26/14_Energy.pdf): identical on all
+#   ten overlapping fiscal years FY2015-16..FY2024-25P. FY2010-11..FY2014-15 are from the
+#   Survey table alone (the Supplement's 14.3 print begins at FY2015-16 in the held extract).
+# LANE 2 - Pakistan Bureau of Statistics mining statistics: the same Supplement's Table 3.1A
+#   "EXTRACTION OF PRINCIPAL MINERALS", Coal column (000 tons, p.56). It DISAGREES with lane 1
+#   by 300-500 kt in FY2015-16..FY2019-20 (lane 1 higher), agrees to a few kt FY2020-21..
+#   FY2023-24, and prints LOWER for FY2024-25P (18,516 vs 18,746). Two ministries, one volume;
+#   neither is averaged with the other.
+#
+# PARTIAL-PERIOD FOOTNOTES (the publisher's own words, carried per row, never multiplied up):
+#   T14.3 (2024-25 edition, reprinted unchanged from 2023-24): "Coal Production Data from
+#     Balochistan for the FY 2023-24 is available upto March 2024."
+#   Survey 2025-26 ch.14 footnote #: "Data on Coal Production for Punjab and Sindh is
+#     available till February 2024, while data on coal import is available up to January 2024."
+#   FY2023-24 supply is therefore publisher-flagged PARTIAL on both production and imports.
+# INTER-EDITION REVISION: FY2023-24 production printed 19,693 in the 2023-24 edition
+#   (Supl-14_E.pdf Energy Highlights) and 19,259 in the 2024-25 edition (-434 kt); Table 14.1's
+#   consumption total moved by an identical -434.8 kt - the two tables balance BY CONSTRUCTION.
+#   The superseded print is retained with revision_status=superseded_provisional.
+# CLOSURE: imports + production (lane 1) reproduces coal_by_consumer.csv's total to <1 kt in
+#   every year except FY2015-16 (9,027 vs 9,230.8: -203.8 kt, the vintage diagnosis in
+#   solid_fuels.py). That closure verifies the transcription, not the sectoral split.
+# JULY-MARCH ROWS (Survey 2025-26): nine-month partial years, period_coverage=july_march;
+#   never compared to a full-year row without saying so.
+# UNITS: thousand metric tonnes (kt), as printed. Empty = not printed.
+fiscal_year,period_coverage,coal_imports_kt,coal_production_kt_petroleum_division,coal_production_kt_pbs_extraction,source_lane1,source_lane2,reporting_period_note,revision_status
+2010-11,full_year,4267,3450,3292,ES 2025-26 ch.14 energy-supply table,Supplement 2024-25 T3.1A,,final
+2011-12,full_year,4057,3613,3179,ES 2025-26 ch.14 energy-supply table,Supplement 2024-25 T3.1A,,final
+2012-13,full_year,3710,3179,2813,ES 2025-26 ch.14 energy-supply table,Supplement 2024-25 T3.1A,,final
+2013-14,full_year,3119,3438,3340,ES 2025-26 ch.14 energy-supply table,Supplement 2024-25 T3.1A,,final
+2014-15,full_year,5004,3712,3408,ES 2025-26 ch.14 energy-supply table,Supplement 2024-25 T3.1A,,final
+2015-16,full_year,4885,4142,3749,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,"supply 9,027 vs consumption 9,230.8: the one non-closing year (-203.8 kt)",final
+2016-17,full_year,7021,4165,3954,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,,final
+2017-18,full_year,13684,4297,4478,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,,final
+2018-19,full_year,15686,5841,5407,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,,final
+2019-20,full_year,16422,8735,8428,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,,final
+2020-21,full_year,18850,9230,9229,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,,final
+2021-22,full_year,18103,9595,9678,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,,final
+2022-23,full_year,8903,15013,15070,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,,final
+2023-24,full_year,5460,19259,19260,Supplement 2024-25 T14.3 (= ES 2025-26),Supplement 2024-25 T3.1A,PARTIAL per publisher: Balochistan production upto March 2024 (T14.3); Punjab+Sindh production till February 2024 and imports up to January 2024 (ES 2025-26 fn #),final
+2023-24,full_year,,19693,,Supplement 2023-24 ch.14 Energy Highlights (Supl-14_E.pdf),,"the 2023-24 edition's print; revised to 19,259 in the 2024-25 edition (-434); consumption total moved -434.8 in step",superseded_provisional
+2024-25,full_year,6981,18746,18516,Supplement 2024-25 T14.3 P (= ES 2025-26),Supplement 2024-25 T3.1A P,"lane 2 prints LOWER than lane 1 (18,516 vs 18,746)",provisional
+2024-25,july_march,4460,11711,,ES 2025-26 ch.14 energy-supply table (July-March row),,nine months,final
+2025-26,july_march,7127,14284,,"ES 2025-26 ch.14 energy-supply table (July-March row, P)",,nine months; provisional,provisional

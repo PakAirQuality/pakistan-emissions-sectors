@@ -1,0 +1,10 @@
+category,subitem,ghg_subitem,pollutant,emissions_kt,uncert_pct,method,engine_coverage_share,imputed
+Domestic aviation,Domestic aviation NOx,Domestic aviation LTO CO2,NOx,0.2409,80.2,ICAO EEDB representative engine,1.0,True
+Domestic aviation,Domestic aviation CO,Domestic aviation LTO CO2,CO,0.1565,80.2,ICAO EEDB representative engine,1.0,True
+Domestic aviation,Domestic aviation HC,Domestic aviation LTO CO2,HC,0.0287,91.8,ICAO EEDB representative engine,0.8200000000000001,True
+Domestic aviation,Domestic aviation LTO SO2,Domestic aviation LTO CO2,SO2,0.0156,85.6,fuel-based aviation factor,,True
+Domestic aviation,Domestic aviation cruise SO2,Domestic aviation cruise CO2,SO2,0.0789,85.6,fuel-based aviation factor,,True
+Domestic aviation,Domestic aviation LTO PM2.5,Domestic aviation LTO CO2,PM2.5,0.0031,98.6,fuel-based aviation factor,,True
+Domestic aviation,Domestic aviation cruise PM2.5,Domestic aviation cruise CO2,PM2.5,0.0158,98.6,fuel-based aviation factor,,True
+Domestic aviation,Domestic aviation LTO BC,Domestic aviation LTO CO2,BC,0.0005,91.8,fraction of PM2.5,,True
+Domestic aviation,Domestic aviation cruise BC,Domestic aviation cruise CO2,BC,0.0024,91.8,fraction of PM2.5,,True

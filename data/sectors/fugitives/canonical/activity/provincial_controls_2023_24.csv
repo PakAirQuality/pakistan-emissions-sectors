@@ -1,0 +1,6 @@
+Province,Gas consumption mmcfd,Transmission km,Distribution km,Source,Note,Record ID,Source row
+Punjab,1401,7039.06,124097,"OGRA Tables 3.13, 3.22 and 3.32",Consumption includes utility and independent-system allocation in OGRA's province control.,9134e767cb7bb1f2373bd609,1
+Khyber Pakhtunkhwa,185,1578.95,27322,"OGRA Tables 3.13, 3.22 and 3.32",Transmission and distribution are SNGPL.,c017fc79a24ce6607b5e990c,2
+Sindh,1398.7,3430,41356,"OGRA Tables 3.17, 3.23 and 3.32",Includes Karachi distribution.,47b862e33763cd58d1b4eccb,3
+Balochistan,339,776,8455,"OGRA Tables 3.17, 3.23 and 3.32",SSGCL territory.,34dc45270e9765b68b2edb81,4
+Other territories,0,702.68,0,OGRA Table 3.13,SNGPL reports 702.68 km as Other; no consumption is assigned without evidence.,6626cd7ab18881dced736338,5

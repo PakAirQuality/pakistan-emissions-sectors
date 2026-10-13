@@ -1,0 +1,6 @@
+order,method,fiscal_year,coverage,mt_co2e_ar5,interpretation
+0,Legacy 2006 published benchmark,2020,production only,3.8052114089057443,geometric midpoint of 2006 developing-country ranges
+1,Legacy 2006 on common anchor activity,2024,production only,3.317086090078068,isolates activity-year change from method change
+2,2019 Refinement on common production support,2024,oil and gas production only,4.484806189486555,isolates factor-framework change
+3,2019 upstream completion,2024,"production, gathering and processing",10.095297425043077,adds separately defined upstream segments
+4,2019 reference configuration,2024,all publicly supported 1.B.2 segments,23.499370669386575,registered result conditional on high/default practices where unknown

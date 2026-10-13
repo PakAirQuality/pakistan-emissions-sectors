@@ -1,0 +1,11 @@
+Control table,Field,Published national total,Published row sum,Source table difference,Status,Record ID,Source row
+airport,domestic_commercial_movements,40600.0,40600.0,0.0,exact,0dd2bdf6495b48d7edf5f74e,1
+airport,international_commercial_movements,95267.0,95267.0,0.0,exact,342327e182fdfb773e5098e9,2
+airport,noncommercial_movements,21223.0,21223.0,0.0,exact,22bf598570d3bfa42151ede4,3
+airport,domestic_passengers,5679830.0,5679830.0,0.0,exact,c9d44354bf27cbae301157bf,4
+airport,international_passengers,17234994.0,17234994.0,0.0,exact,938bfc7af417c4e53539debd,5
+airport,domestic_cargo_t,33995.0,33992.0,3.0,published_rounding_or_source_discrepancy,e78439f3b38b006578c1e8be,6
+airport,international_cargo_t,275172.0,275173.0,-1.0,published_rounding_or_source_discrepancy,611548739e8ee930c4669947,7
+airport,domestic_mail_t,46.0,46.0,0.0,exact,4525c967398071c303afbdfb,8
+airport,international_mail_t,1132.0,1131.0,1.0,published_rounding_or_source_discrepancy,25ffacd494274b6cd9ddd05f,9
+airline_vs_airport,domestic_commercial_movements,40600,39504,1096,explicit_scope_residual,2dcf8a22e6d58407a494d4af,10

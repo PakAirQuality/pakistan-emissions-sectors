@@ -1,0 +1,131 @@
+observation_id,company,period_end_year,period_basis,measure,value,unit,publication_id
+company-period-001,Attock Cement Pakistan Limited,2024,fiscal,clinker_production,2375379,tonne,sources/IPPU/company/Attock_Annual_Report_2024.pdf
+company-period-001,Attock Cement Pakistan Limited,2024,fiscal,cement_production,1361223,tonne,sources/IPPU/company/Attock_Annual_Report_2024.pdf
+company-period-002,Attock Cement Pakistan Limited,2023,fiscal,clinker_production,1971426,tonne,sources/IPPU/company/Attock_Annual_Report_2024.pdf
+company-period-002,Attock Cement Pakistan Limited,2023,fiscal,cement_production,1503714,tonne,sources/IPPU/company/Attock_Annual_Report_2024.pdf
+company-period-003,Bestway Cement Limited,2024,fiscal,clinker_production,6098513,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-003,Bestway Cement Limited,2024,fiscal,cement_production,6868432,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-003,Bestway Cement Limited,2024,fiscal,cement_despatch,6961540,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-004,Bestway Cement Limited,2023,fiscal,clinker_production,5857206,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-004,Bestway Cement Limited,2023,fiscal,cement_production,6510228,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-004,Bestway Cement Limited,2023,fiscal,cement_despatch,6572693,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-005,Bestway Cement Limited,2022,fiscal,cement_despatch,7839000,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-006,Bestway Cement Limited,2021,fiscal,cement_despatch,8664000,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-007,Bestway Cement Limited,2020,fiscal,cement_despatch,7311000,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-008,Bestway Cement Limited,2019,fiscal,cement_despatch,8126000,tonne,sources/IPPU/company/Bestway_Annual_Report_2024.pdf
+company-period-009,D.G. Khan Cement Company Limited,2024,fiscal,clinker_production,4341467,tonne,sources/IPPU/company/DGKC_Annual_Report_2024.pdf
+company-period-009,D.G. Khan Cement Company Limited,2024,fiscal,cement_production,3762813,tonne,sources/IPPU/company/DGKC_Annual_Report_2024.pdf
+company-period-009,D.G. Khan Cement Company Limited,2024,fiscal,cement_despatch,3770701,tonne,sources/IPPU/company/DGKC_Annual_Report_2024.pdf
+company-period-010,D.G. Khan Cement Company Limited,2023,fiscal,clinker_production,4628354,tonne,sources/IPPU/company/DGKC_Annual_Report_2024.pdf
+company-period-010,D.G. Khan Cement Company Limited,2023,fiscal,cement_production,4325760,tonne,sources/IPPU/company/DGKC_Annual_Report_2024.pdf
+company-period-010,D.G. Khan Cement Company Limited,2023,fiscal,cement_despatch,4273516,tonne,sources/IPPU/company/DGKC_Annual_Report_2024.pdf
+company-period-011,Dandot Cement Company Limited,2024,fiscal,clinker_production,182701,tonne,sources/IPPU/company/Dandot_Annual_Report_2024.pdf
+company-period-011,Dandot Cement Company Limited,2024,fiscal,cement_production,173740,tonne,sources/IPPU/company/Dandot_Annual_Report_2024.pdf
+company-period-013,Dewan Cement Limited,2025,fiscal,clinker_production,1223000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-013,Dewan Cement Limited,2025,fiscal,cement_production,1436000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-013,Dewan Cement Limited,2025,fiscal,cement_despatch,1428000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-014,Dewan Cement Limited,2024,fiscal,clinker_production,1254000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-014,Dewan Cement Limited,2024,fiscal,cement_production,1556000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-014,Dewan Cement Limited,2024,fiscal,cement_despatch,1578000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-015,Dewan Cement Limited,2023,fiscal,clinker_production,1348000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-015,Dewan Cement Limited,2023,fiscal,cement_production,1575000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-015,Dewan Cement Limited,2023,fiscal,cement_despatch,1564000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-016,Dewan Cement Limited,2022,fiscal,clinker_production,1582000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-016,Dewan Cement Limited,2022,fiscal,cement_production,1788000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-016,Dewan Cement Limited,2022,fiscal,cement_despatch,1791000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-017,Dewan Cement Limited,2021,fiscal,clinker_production,874000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-017,Dewan Cement Limited,2021,fiscal,cement_production,880000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-017,Dewan Cement Limited,2021,fiscal,cement_despatch,863000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-018,Dewan Cement Limited,2020,fiscal,clinker_production,945000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-018,Dewan Cement Limited,2020,fiscal,cement_production,990000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-018,Dewan Cement Limited,2020,fiscal,cement_despatch,1008000,tonne,sources/IPPU/company/Dewan_Annual_Report_2025_with_FY2024.pdf
+company-period-019,Fauji Cement Company Limited,2024,fiscal,clinker_production,4522575,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-019,Fauji Cement Company Limited,2024,fiscal,cement_production,5060431,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-020,Fauji Cement Company Limited,2023,fiscal,clinker_production,4593342,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-020,Fauji Cement Company Limited,2023,fiscal,cement_production,4915536,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-021,Fauji Cement Company Limited,2022,fiscal,cement_production,5657076,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-022,Fauji Cement Company Limited,2021,fiscal,cement_production,3483466,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-023,Fauji Cement Company Limited,2020,fiscal,cement_production,3066737,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-024,Fauji Cement Company Limited,2019,fiscal,cement_production,3041178,tonne,sources/IPPU/company/Fauji_Annual_Report_2024.pdf
+company-period-025,Fecto Cement Limited,2025,fiscal,clinker_production,612026,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-025,Fecto Cement Limited,2025,fiscal,cement_production,713739,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-025,Fecto Cement Limited,2025,fiscal,cement_despatch,713644,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-026,Fecto Cement Limited,2024,fiscal,clinker_production,651048,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-026,Fecto Cement Limited,2024,fiscal,cement_production,724209,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-026,Fecto Cement Limited,2024,fiscal,cement_despatch,725054,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-027,Fecto Cement Limited,2023,fiscal,clinker_production,632116,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-027,Fecto Cement Limited,2023,fiscal,cement_production,646530,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-027,Fecto Cement Limited,2023,fiscal,cement_despatch,641956,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-028,Fecto Cement Limited,2022,fiscal,clinker_production,618559,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-028,Fecto Cement Limited,2022,fiscal,cement_production,712757,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-028,Fecto Cement Limited,2022,fiscal,cement_despatch,712644,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-029,Fecto Cement Limited,2021,fiscal,clinker_production,734323,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-029,Fecto Cement Limited,2021,fiscal,cement_production,729167,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-029,Fecto Cement Limited,2021,fiscal,cement_despatch,731069,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-030,Fecto Cement Limited,2020,fiscal,clinker_production,599016,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-030,Fecto Cement Limited,2020,fiscal,cement_production,640576,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-030,Fecto Cement Limited,2020,fiscal,cement_despatch,641450,tonne,sources/IPPU/company/Fecto_Annual_Report_2025.pdf
+company-period-031,Flying Cement Company Limited,2024,fiscal,clinker_production,322624,tonne,sources/IPPU/company/Flying_Annual_Report_2024.pdf
+company-period-031,Flying Cement Company Limited,2024,fiscal,cement_production,321500,tonne,sources/IPPU/company/Flying_Annual_Report_2024.pdf
+company-period-032,Flying Cement Company Limited,2023,fiscal,clinker_production,302000,tonne,sources/IPPU/company/Flying_Annual_Report_2024.pdf
+company-period-032,Flying Cement Company Limited,2023,fiscal,cement_production,302460,tonne,sources/IPPU/company/Flying_Annual_Report_2024.pdf
+company-period-033,Gharibwal Cement Limited,2024,fiscal,clinker_production,1140650,tonne,sources/IPPU/company/Gharibwal_Annual_Report_2024.pdf
+company-period-034,Gharibwal Cement Limited,2023,fiscal,clinker_production,1296800,tonne,sources/IPPU/company/Gharibwal_Annual_Report_2024.pdf
+company-period-035,Kohat Cement Company Limited,2024,fiscal,clinker_production,2195590,tonne,sources/IPPU/company/Kohat_Annual_Report_2024.pdf
+company-period-035,Kohat Cement Company Limited,2024,fiscal,cement_production,2559397,tonne,sources/IPPU/company/Kohat_Annual_Report_2024.pdf
+company-period-035,Kohat Cement Company Limited,2024,fiscal,cement_despatch,2585786,tonne,sources/IPPU/company/Kohat_Annual_Report_2024.pdf
+company-period-036,Kohat Cement Company Limited,2023,fiscal,clinker_production,2796089,tonne,sources/IPPU/company/Kohat_Annual_Report_2024.pdf
+company-period-036,Kohat Cement Company Limited,2023,fiscal,cement_production,3037220,tonne,sources/IPPU/company/Kohat_Annual_Report_2024.pdf
+company-period-036,Kohat Cement Company Limited,2023,fiscal,cement_despatch,3000545,tonne,sources/IPPU/company/Kohat_Annual_Report_2024.pdf
+company-period-037,Lucky Cement Limited,2024,fiscal,clinker_production,8158114,tonne,sources/IPPU/company/Lucky_Annual_Report_2024.pdf
+company-period-037,Lucky Cement Limited,2024,fiscal,cement_production,7476465,tonne,sources/IPPU/company/Lucky_Annual_Report_2024.pdf
+company-period-037,Lucky Cement Limited,2024,fiscal,cement_despatch,8590000,tonne,sources/IPPU/company/Lucky_Annual_Report_2024.pdf
+company-period-038,Lucky Cement Limited,2023,fiscal,clinker_production,6235310,tonne,sources/IPPU/company/Lucky_Annual_Report_2024.pdf
+company-period-038,Lucky Cement Limited,2023,fiscal,cement_production,7059899,tonne,sources/IPPU/company/Lucky_Annual_Report_2024.pdf
+company-period-038,Lucky Cement Limited,2023,fiscal,cement_despatch,7374000,tonne,sources/IPPU/company/Lucky_Annual_Report_2024.pdf
+company-period-039,Maple Leaf Cement Factory Limited,2024,fiscal,clinker_production,3625857,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-039,Maple Leaf Cement Factory Limited,2024,fiscal,cement_production,4051726,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-039,Maple Leaf Cement Factory Limited,2024,fiscal,cement_despatch,4068218,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-040,Maple Leaf Cement Factory Limited,2023,fiscal,clinker_production,3928830,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-040,Maple Leaf Cement Factory Limited,2023,fiscal,cement_production,4253451,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-040,Maple Leaf Cement Factory Limited,2023,fiscal,cement_despatch,4273444,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-041,Maple Leaf Cement Factory Limited,2022,fiscal,cement_production,4741944,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-041,Maple Leaf Cement Factory Limited,2022,fiscal,cement_despatch,4759428,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-042,Maple Leaf Cement Factory Limited,2021,fiscal,cement_production,4994594,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-042,Maple Leaf Cement Factory Limited,2021,fiscal,cement_despatch,5023444,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-043,Maple Leaf Cement Factory Limited,2020,fiscal,cement_production,5196304,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-043,Maple Leaf Cement Factory Limited,2020,fiscal,cement_despatch,5201820,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-044,Maple Leaf Cement Factory Limited,2019,fiscal,cement_production,3638313,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-044,Maple Leaf Cement Factory Limited,2019,fiscal,cement_despatch,3673278,tonne,sources/IPPU/company/Maple_Leaf_Annual_Report_2024.pdf
+company-period-045,Pioneer Cement Limited,2024,fiscal,clinker_production,2021000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-045,Pioneer Cement Limited,2024,fiscal,cement_production,2315000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-045,Pioneer Cement Limited,2024,fiscal,cement_despatch,2362000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-046,Pioneer Cement Limited,2023,fiscal,clinker_production,2409000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-046,Pioneer Cement Limited,2023,fiscal,cement_production,2741000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-046,Pioneer Cement Limited,2023,fiscal,cement_despatch,2704000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-047,Pioneer Cement Limited,2022,fiscal,clinker_production,2893000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-047,Pioneer Cement Limited,2022,fiscal,cement_production,3373000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-047,Pioneer Cement Limited,2022,fiscal,cement_despatch,3388000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-048,Pioneer Cement Limited,2021,fiscal,clinker_production,2955000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-048,Pioneer Cement Limited,2021,fiscal,cement_production,3408000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-048,Pioneer Cement Limited,2021,fiscal,cement_despatch,3381000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-049,Pioneer Cement Limited,2020,fiscal,clinker_production,1540000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-049,Pioneer Cement Limited,2020,fiscal,cement_production,1737000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-049,Pioneer Cement Limited,2020,fiscal,cement_despatch,1735000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-050,Pioneer Cement Limited,2019,fiscal,clinker_production,1257000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-050,Pioneer Cement Limited,2019,fiscal,cement_production,1443000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-050,Pioneer Cement Limited,2019,fiscal,cement_despatch,1446000,tonne,sources/IPPU/company/Pioneer_Annual_Report_2024.pdf
+company-period-051,Power Cement Limited,2024,fiscal,clinker_production,2285325,tonne,sources/IPPU/company/Power_Annual_Report_2024.pdf
+company-period-051,Power Cement Limited,2024,fiscal,cement_production,1691795,tonne,sources/IPPU/company/Power_Annual_Report_2024.pdf
+company-period-051,Power Cement Limited,2024,fiscal,cement_despatch,2529153,tonne,sources/IPPU/company/Power_Annual_Report_2024.pdf
+company-period-052,Power Cement Limited,2023,fiscal,clinker_production,2297890,tonne,sources/IPPU/company/Power_Annual_Report_2024.pdf
+company-period-052,Power Cement Limited,2023,fiscal,cement_production,1924996,tonne,sources/IPPU/company/Power_Annual_Report_2024.pdf
+company-period-052,Power Cement Limited,2023,fiscal,cement_despatch,2401439,tonne,sources/IPPU/company/Power_Annual_Report_2024.pdf
+company-period-053,Thatta Cement Company Limited,2024,fiscal,clinker_production,423491,tonne,sources/IPPU/company/Thatta_Annual_Report_2024.pdf
+company-period-053,Thatta Cement Company Limited,2024,fiscal,cement_production,529700,tonne,sources/IPPU/company/Thatta_Annual_Report_2024.pdf
+company-period-053,Thatta Cement Company Limited,2024,fiscal,cement_despatch,533880,tonne,sources/IPPU/company/Thatta_Annual_Report_2024.pdf
+company-period-054,Thatta Cement Company Limited,2023,fiscal,clinker_production,444087,tonne,sources/IPPU/company/Thatta_Annual_Report_2024.pdf
+company-period-054,Thatta Cement Company Limited,2023,fiscal,cement_production,441480,tonne,sources/IPPU/company/Thatta_Annual_Report_2024.pdf
+company-period-054,Thatta Cement Company Limited,2023,fiscal,cement_despatch,438739,tonne,sources/IPPU/company/Thatta_Annual_Report_2024.pdf
+company-period-055,Cherat Cement Company Limited,2024,fiscal,clinker_production,2354836,tonne,cherat_annual_2024
+company-period-055,Cherat Cement Company Limited,2024,fiscal,cement_production,2616907,tonne,cherat_annual_2024

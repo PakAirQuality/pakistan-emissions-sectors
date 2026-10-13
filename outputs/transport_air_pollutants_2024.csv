@@ -1,0 +1,204 @@
+category,subitem,ghg_subitem,ei_class,fuel,process,pollutant,emissions_kt,uncert_pct,factor_basis
+Road transport,Road transport 2W petrol exhaust,2W Petrol CO2,2W,Petrol,exhaust,CO,1068.491050,121.4,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 2W petrol exhaust,2W Petrol CO2,2W,Petrol,exhaust,NMVOC,404.654770,173.1,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 2W petrol exhaust,2W Petrol CO2,2W,Petrol,exhaust,NOx,31.546840,148.9,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 2W petrol exhaust,2W Petrol CO2,2W,Petrol,exhaust,PM2.5,2.225296,641.8,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 2W petrol exhaust,2W Petrol CO2,2W,Petrol,exhaust,NH3,0.218166,75.0,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 2W petrol exhaust,2W Petrol CO2,2W,Petrol,exhaust,BC,0.244783,641.8,"f-BC 0.11 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport 2W petrol exhaust,2W Petrol CO2,2W,Petrol,exhaust,SO2,4.363325,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport 3W cng exhaust,CNG CO2,3W,CNG,exhaust,CO,19.315005,111.0,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 3W cng exhaust,CNG CO2,3W,CNG,exhaust,NMVOC,3.128487,106.2,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 3W cng exhaust,CNG CO2,3W,CNG,exhaust,NOx,1.818039,371.0,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 3W cng exhaust,CNG CO2,3W,CNG,exhaust,PM2.5,0.009953,56.8,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 3W cng exhaust,CNG CO2,3W,CNG,exhaust,NH3,0.338394,93.2,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 3W petrol exhaust,3W Petrol CO2,3W,Petrol,exhaust,CO,130.901125,121.4,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 3W petrol exhaust,3W Petrol CO2,3W,Petrol,exhaust,NMVOC,49.574364,173.1,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 3W petrol exhaust,3W Petrol CO2,3W,Petrol,exhaust,NOx,3.864812,148.9,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 3W petrol exhaust,3W Petrol CO2,3W,Petrol,exhaust,PM2.5,0.272622,641.8,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 3W petrol exhaust,3W Petrol CO2,3W,Petrol,exhaust,NH3,0.026728,75.0,Tier 1 L Petrol g/kg fuel
+Road transport,Road transport 3W petrol exhaust,3W Petrol CO2,3W,Petrol,exhaust,BC,0.029988,641.8,"f-BC 0.11 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport 3W petrol exhaust,3W Petrol CO2,3W,Petrol,exhaust,SO2,0.534552,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport 4W1 cng exhaust,CNG CO2,4W1,CNG,exhaust,CO,2.903063,111.0,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4W1 cng exhaust,CNG CO2,4W1,CNG,exhaust,NMVOC,0.470214,106.2,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4W1 cng exhaust,CNG CO2,4W1,CNG,exhaust,NOx,0.273253,371.0,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4W1 cng exhaust,CNG CO2,4W1,CNG,exhaust,PM2.5,0.001496,56.8,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4W1 cng exhaust,CNG CO2,4W1,CNG,exhaust,NH3,0.050861,93.2,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4W1 petrol exhaust,4W1 Petrol CO2,4W1,Petrol,exhaust,CO,58.456046,342.3,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W1 petrol exhaust,4W1 Petrol CO2,4W1,Petrol,exhaust,NMVOC,9.367956,1134.1,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W1 petrol exhaust,4W1 Petrol CO2,4W1,Petrol,exhaust,NOx,4.810899,378.5,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W1 petrol exhaust,4W1 Petrol CO2,4W1,Petrol,exhaust,PM2.5,0.024175,98.7,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W1 petrol exhaust,4W1 Petrol CO2,4W1,Petrol,exhaust,NH3,1.015366,116.8,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W1 petrol exhaust,4W1 Petrol CO2,4W1,Petrol,exhaust,BC,0.002901,98.7,"f-BC 0.12 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport 4W1 petrol exhaust,4W1 Petrol CO2,4W1,Petrol,exhaust,SO2,1.208769,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport 4W2 diesel exhaust,4W2 Diesel CO2,4W2,Diesel,exhaust,CO,0.031809,223.8,Tier 1 PC Diesel g/kg fuel
+Road transport,Road transport 4W2 diesel exhaust,4W2 Diesel CO2,4W2,Diesel,exhaust,NMVOC,0.006731,318.8,Tier 1 PC Diesel g/kg fuel
+Road transport,Road transport 4W2 diesel exhaust,4W2 Diesel CO2,4W2,Diesel,exhaust,NOx,0.155348,40.3,Tier 1 PC Diesel g/kg fuel
+Road transport,Road transport 4W2 diesel exhaust,4W2 Diesel CO2,4W2,Diesel,exhaust,PM2.5,0.010295,307.0,Tier 1 PC Diesel g/kg fuel
+Road transport,Road transport 4W2 diesel exhaust,4W2 Diesel CO2,4W2,Diesel,exhaust,NH3,0.000264,79.7,Tier 1 PC Diesel g/kg fuel
+Road transport,Road transport 4W2 diesel exhaust,4W2 Diesel CO2,4W2,Diesel,exhaust,BC,0.005868,307.0,"f-BC 0.57 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport 4W2 diesel exhaust,4W2 Diesel CO2,4W2,Diesel,exhaust,SO2,0.013199,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport 4W2 petrol exhaust,4W2 Petrol CO2,4W2,Petrol,exhaust,CO,0.221187,342.3,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W2 petrol exhaust,4W2 Petrol CO2,4W2,Petrol,exhaust,NMVOC,0.035447,1134.1,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W2 petrol exhaust,4W2 Petrol CO2,4W2,Petrol,exhaust,NOx,0.018204,378.5,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W2 petrol exhaust,4W2 Petrol CO2,4W2,Petrol,exhaust,PM2.5,0.000091,98.7,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W2 petrol exhaust,4W2 Petrol CO2,4W2,Petrol,exhaust,NH3,0.003842,116.8,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4W2 petrol exhaust,4W2 Petrol CO2,4W2,Petrol,exhaust,BC,0.000011,98.7,"f-BC 0.12 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport 4W2 petrol exhaust,4W2 Petrol CO2,4W2,Petrol,exhaust,SO2,0.004574,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport 4WT cng exhaust,CNG CO2,4WT,CNG,exhaust,CO,1.849181,111.0,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4WT cng exhaust,CNG CO2,4WT,CNG,exhaust,NMVOC,0.299515,106.2,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4WT cng exhaust,CNG CO2,4WT,CNG,exhaust,NOx,0.174056,371.0,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4WT cng exhaust,CNG CO2,4WT,CNG,exhaust,PM2.5,0.000953,56.8,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4WT cng exhaust,CNG CO2,4WT,CNG,exhaust,NH3,0.032397,93.2,Tier 1 PC LPG g/kg fuel; declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+Road transport,Road transport 4WT petrol exhaust,4WT Petrol CO2,4WT,Petrol,exhaust,CO,4.686935,342.3,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4WT petrol exhaust,4WT Petrol CO2,4WT,Petrol,exhaust,NMVOC,0.751111,1134.1,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4WT petrol exhaust,4WT Petrol CO2,4WT,Petrol,exhaust,NOx,0.385732,378.5,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4WT petrol exhaust,4WT Petrol CO2,4WT,Petrol,exhaust,PM2.5,0.001938,98.7,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4WT petrol exhaust,4WT Petrol CO2,4WT,Petrol,exhaust,NH3,0.081411,116.8,Tier 1 PC Petrol g/kg fuel
+Road transport,Road transport 4WT petrol exhaust,4WT Petrol CO2,4WT,Petrol,exhaust,BC,0.000233,98.7,"f-BC 0.12 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport 4WT petrol exhaust,4WT Petrol CO2,4WT,Petrol,exhaust,SO2,0.096918,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport BUS cng exhaust,CNG CO2,BUS,CNG,exhaust,CO,0.127989,164.5,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row
+Road transport,Road transport BUS cng exhaust,CNG CO2,BUS,CNG,exhaust,NMVOC,0.004502,120.9,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row
+Road transport,Road transport BUS cng exhaust,CNG CO2,BUS,CNG,exhaust,NOx,0.549903,64.5,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row
+Road transport,Road transport BUS cng exhaust,CNG CO2,BUS,CNG,exhaust,PM2.5,0.000643,50.3,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row
+Road transport,Road transport BUS diesel exhaust,BUS Diesel CO2,BUS,Diesel,exhaust,CO,12.331040,94.2,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport BUS diesel exhaust,BUS Diesel CO2,BUS,Diesel,exhaust,NMVOC,1.819334,383.2,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport BUS diesel exhaust,BUS Diesel CO2,BUS,Diesel,exhaust,NOx,52.457457,75.7,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport BUS diesel exhaust,BUS Diesel CO2,BUS,Diesel,exhaust,PM2.5,1.111815,222.8,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport BUS diesel exhaust,BUS Diesel CO2,BUS,Diesel,exhaust,NH3,0.040430,251.4,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport BUS diesel exhaust,BUS Diesel CO2,BUS,Diesel,exhaust,BC,0.589262,222.8,"f-BC 0.53 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport BUS diesel exhaust,BUS Diesel CO2,BUS,Diesel,exhaust,SO2,2.021482,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport BUS petrol exhaust,BUS Petrol CO2,BUS,Petrol,exhaust,CO,6.520051,147.9,Tier 1 LCV Petrol g/kg fuel; declared proxy: no Tier 1 petrol bus/HDV factor exists; nearest larger spark engine
+Road transport,Road transport BUS petrol exhaust,BUS Petrol CO2,BUS,Petrol,exhaust,NMVOC,0.407572,360.3,Tier 1 LCV Petrol g/kg fuel; declared proxy: no Tier 1 petrol bus/HDV factor exists; nearest larger spark engine
+Road transport,Road transport BUS petrol exhaust,BUS Petrol CO2,BUS,Petrol,exhaust,NOx,0.325728,313.0,Tier 1 LCV Petrol g/kg fuel; declared proxy: no Tier 1 petrol bus/HDV factor exists; nearest larger spark engine
+Road transport,Road transport BUS petrol exhaust,BUS Petrol CO2,BUS,Petrol,exhaust,PM2.5,0.001099,77.3,Tier 1 LCV Petrol g/kg fuel; declared proxy: no Tier 1 petrol bus/HDV factor exists; nearest larger spark engine
+Road transport,Road transport BUS petrol exhaust,BUS Petrol CO2,BUS,Petrol,exhaust,NH3,0.042295,133.9,Tier 1 LCV Petrol g/kg fuel; declared proxy: no Tier 1 petrol bus/HDV factor exists; nearest larger spark engine
+Road transport,Road transport BUS petrol exhaust,BUS Petrol CO2,BUS,Petrol,exhaust,BC,0.000055,77.3,"f-BC 0.05 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport BUS petrol exhaust,BUS Petrol CO2,BUS,Petrol,exhaust,SO2,0.054929,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport HDV cng exhaust,CNG CO2,HDV,CNG,exhaust,CO,0.008480,164.5,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row - the nearest heavy-duty gas engine
+Road transport,Road transport HDV cng exhaust,CNG CO2,HDV,CNG,exhaust,NMVOC,0.000298,120.9,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row - the nearest heavy-duty gas engine
+Road transport,Road transport HDV cng exhaust,CNG CO2,HDV,CNG,exhaust,NOx,0.036436,64.5,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row - the nearest heavy-duty gas engine
+Road transport,Road transport HDV cng exhaust,CNG CO2,HDV,CNG,exhaust,PM2.5,0.000043,50.3,Tier 1 HDV CNG g/kg fuel; the guidebook's own CNG (Buses) row - the nearest heavy-duty gas engine
+Road transport,Road transport HDV diesel exhaust,HDV Diesel CO2,HDV,Diesel,exhaust,CO,14.506812,94.2,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport HDV diesel exhaust,HDV Diesel CO2,HDV,Diesel,exhaust,NMVOC,2.140349,383.2,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport HDV diesel exhaust,HDV Diesel CO2,HDV,Diesel,exhaust,NOx,61.713403,75.7,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport HDV diesel exhaust,HDV Diesel CO2,HDV,Diesel,exhaust,PM2.5,1.307991,222.8,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport HDV diesel exhaust,HDV Diesel CO2,HDV,Diesel,exhaust,NH3,0.047563,251.4,Tier 1 HDV Diesel g/kg fuel
+Road transport,Road transport HDV diesel exhaust,HDV Diesel CO2,HDV,Diesel,exhaust,BC,0.693235,222.8,"f-BC 0.53 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport HDV diesel exhaust,HDV Diesel CO2,HDV,Diesel,exhaust,SO2,2.378166,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport LDV diesel exhaust,LDV Diesel CO2,LDV,Diesel,exhaust,CO,4.400014,127.3,Tier 1 LCV Diesel g/kg fuel
+Road transport,Road transport LDV diesel exhaust,LDV Diesel CO2,LDV,Diesel,exhaust,NMVOC,0.794716,100.4,Tier 1 LCV Diesel g/kg fuel
+Road transport,Road transport LDV diesel exhaust,LDV Diesel CO2,LDV,Diesel,exhaust,NOx,8.709573,70.0,Tier 1 LCV Diesel g/kg fuel
+Road transport,Road transport LDV diesel exhaust,LDV Diesel CO2,LDV,Diesel,exhaust,PM2.5,0.788255,197.3,Tier 1 LCV Diesel g/kg fuel
+Road transport,Road transport LDV diesel exhaust,LDV Diesel CO2,LDV,Diesel,exhaust,NH3,0.006461,103.6,Tier 1 LCV Diesel g/kg fuel
+Road transport,Road transport LDV diesel exhaust,LDV Diesel CO2,LDV,Diesel,exhaust,BC,0.433540,197.3,"f-BC 0.55 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport LDV diesel exhaust,LDV Diesel CO2,LDV,Diesel,exhaust,SO2,0.646111,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport LDV petrol exhaust,LDV Petrol CO2,LDV,Petrol,exhaust,CO,105.644885,147.9,Tier 1 LCV Petrol g/kg fuel
+Road transport,Road transport LDV petrol exhaust,LDV Petrol CO2,LDV,Petrol,exhaust,NMVOC,6.603918,360.3,Tier 1 LCV Petrol g/kg fuel
+Road transport,Road transport LDV petrol exhaust,LDV Petrol CO2,LDV,Petrol,exhaust,NOx,5.277794,313.0,Tier 1 LCV Petrol g/kg fuel
+Road transport,Road transport LDV petrol exhaust,LDV Petrol CO2,LDV,Petrol,exhaust,PM2.5,0.017800,77.3,Tier 1 LCV Petrol g/kg fuel
+Road transport,Road transport LDV petrol exhaust,LDV Petrol CO2,LDV,Petrol,exhaust,NH3,0.685312,133.9,Tier 1 LCV Petrol g/kg fuel
+Road transport,Road transport LDV petrol exhaust,LDV Petrol CO2,LDV,Petrol,exhaust,BC,0.000890,77.3,"f-BC 0.05 of exhaust PM2.5 (Table 3-11); component, not additive"
+Road transport,Road transport LDV petrol exhaust,LDV Petrol CO2,LDV,Petrol,exhaust,SO2,0.890016,102.6,stoichiometric at 500 ppm declared sulfur (fuel_sulfur_by_year)
+Road transport,Road transport 2W petrol evaporative,2W Petrol CO2,2W,Petrol,evaporative,NMVOC,42.750409,34.8,"Tier 1 L g/vehicle/day, 20-35 C daily range"
+Road transport,Road transport 3W petrol evaporative,3W Petrol CO2,3W,Petrol,evaporative,NMVOC,0.686173,34.8,"Tier 1 L g/vehicle/day, 20-35 C daily range"
+Road transport,Road transport 4W1 petrol evaporative,4W1 Petrol CO2,4W1,Petrol,evaporative,NMVOC,9.076850,40.2,"Tier 1 PC g/vehicle/day, 20-35 C daily range"
+Road transport,Road transport 4W2 petrol evaporative,4W2 Petrol CO2,4W2,Petrol,evaporative,NMVOC,0.022420,40.2,"Tier 1 PC g/vehicle/day, 20-35 C daily range"
+Road transport,Road transport 4WT petrol evaporative,4WT Petrol CO2,4WT,Petrol,evaporative,NMVOC,0.144277,40.2,"Tier 1 PC g/vehicle/day, 20-35 C daily range"
+Road transport,Road transport BUS petrol evaporative,BUS Petrol CO2,BUS,Petrol,evaporative,NMVOC,0.042969,48.7,"Tier 1 LCV g/vehicle/day, 20-35 C daily range"
+Road transport,Road transport LDV petrol evaporative,LDV Petrol CO2,LDV,Petrol,evaporative,NMVOC,2.281909,48.7,"Tier 1 LCV g/vehicle/day, 20-35 C daily range"
+Road transport,Road transport 2W petrol tyre_brake_wear,2W Petrol CO2,2W,Petrol,tyre_brake_wear,TSP,1.594297,35.7,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 2W petrol tyre_brake_wear,2W Petrol CO2,2W,Petrol,tyre_brake_wear,PM10,1.229338,37.8,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 2W petrol tyre_brake_wear,2W Petrol CO2,2W,Petrol,tyre_brake_wear,PM2.5,0.653086,35.8,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 2W petrol road_wear,2W Petrol CO2,2W,Petrol,road_wear,TSP,1.152504,46.2,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 2W petrol road_wear,2W Petrol CO2,2W,Petrol,road_wear,PM10,0.576252,46.8,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 2W petrol road_wear,2W Petrol CO2,2W,Petrol,road_wear,PM2.5,0.307334,46.2,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W cng tyre_brake_wear,CNG CO2,3W,CNG,tyre_brake_wear,TSP,0.399890,68.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W cng tyre_brake_wear,CNG CO2,3W,CNG,tyre_brake_wear,PM10,0.321309,68.1,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W cng tyre_brake_wear,CNG CO2,3W,CNG,tyre_brake_wear,PM2.5,0.162401,67.9,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W cng road_wear,CNG CO2,3W,CNG,road_wear,TSP,0.261937,46.3,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W cng road_wear,CNG CO2,3W,CNG,road_wear,PM10,0.130968,46.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W cng road_wear,CNG CO2,3W,CNG,road_wear,PM2.5,0.071596,46.4,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W petrol tyre_brake_wear,3W Petrol CO2,3W,Petrol,tyre_brake_wear,TSP,0.118586,35.7,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W petrol tyre_brake_wear,3W Petrol CO2,3W,Petrol,tyre_brake_wear,PM10,0.091440,37.8,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W petrol tyre_brake_wear,3W Petrol CO2,3W,Petrol,tyre_brake_wear,PM2.5,0.048577,35.8,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W petrol road_wear,3W Petrol CO2,3W,Petrol,road_wear,TSP,0.085725,46.2,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W petrol road_wear,3W Petrol CO2,3W,Petrol,road_wear,PM10,0.042862,46.8,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 3W petrol road_wear,3W Petrol CO2,3W,Petrol,road_wear,PM2.5,0.022860,46.2,Tier 1 L g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 cng tyre_brake_wear,CNG CO2,4W1,CNG,tyre_brake_wear,TSP,0.060104,68.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 cng tyre_brake_wear,CNG CO2,4W1,CNG,tyre_brake_wear,PM10,0.048293,68.1,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 cng tyre_brake_wear,CNG CO2,4W1,CNG,tyre_brake_wear,PM2.5,0.024409,67.9,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 cng road_wear,CNG CO2,4W1,CNG,road_wear,TSP,0.039369,46.3,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 cng road_wear,CNG CO2,4W1,CNG,road_wear,PM10,0.019685,46.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 cng road_wear,CNG CO2,4W1,CNG,road_wear,PM2.5,0.010761,46.4,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 petrol tyre_brake_wear,4W1 Petrol CO2,4W1,Petrol,tyre_brake_wear,TSP,0.440761,68.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 petrol tyre_brake_wear,4W1 Petrol CO2,4W1,Petrol,tyre_brake_wear,PM10,0.354149,68.1,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 petrol tyre_brake_wear,4W1 Petrol CO2,4W1,Petrol,tyre_brake_wear,PM2.5,0.178999,67.9,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 petrol road_wear,4W1 Petrol CO2,4W1,Petrol,road_wear,TSP,0.288708,46.3,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 petrol road_wear,4W1 Petrol CO2,4W1,Petrol,road_wear,PM10,0.144354,46.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W1 petrol road_wear,4W1 Petrol CO2,4W1,Petrol,road_wear,PM2.5,0.078914,46.4,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 diesel tyre_brake_wear,4W2 Diesel CO2,4W2,Diesel,tyre_brake_wear,TSP,0.002022,68.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 diesel tyre_brake_wear,4W2 Diesel CO2,4W2,Diesel,tyre_brake_wear,PM10,0.001625,68.1,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 diesel tyre_brake_wear,4W2 Diesel CO2,4W2,Diesel,tyre_brake_wear,PM2.5,0.000821,67.9,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 diesel road_wear,4W2 Diesel CO2,4W2,Diesel,road_wear,TSP,0.001324,46.3,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 diesel road_wear,4W2 Diesel CO2,4W2,Diesel,road_wear,PM10,0.000662,46.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 diesel road_wear,4W2 Diesel CO2,4W2,Diesel,road_wear,PM2.5,0.000362,46.4,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 petrol tyre_brake_wear,4W2 Petrol CO2,4W2,Petrol,tyre_brake_wear,TSP,0.001089,68.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 petrol tyre_brake_wear,4W2 Petrol CO2,4W2,Petrol,tyre_brake_wear,PM10,0.000875,68.1,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 petrol tyre_brake_wear,4W2 Petrol CO2,4W2,Petrol,tyre_brake_wear,PM2.5,0.000442,67.9,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 petrol road_wear,4W2 Petrol CO2,4W2,Petrol,road_wear,TSP,0.000713,46.3,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 petrol road_wear,4W2 Petrol CO2,4W2,Petrol,road_wear,PM10,0.000357,46.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4W2 petrol road_wear,4W2 Petrol CO2,4W2,Petrol,road_wear,PM2.5,0.000195,46.4,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT cng tyre_brake_wear,CNG CO2,4WT,CNG,tyre_brake_wear,TSP,0.038285,68.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT cng tyre_brake_wear,CNG CO2,4WT,CNG,tyre_brake_wear,PM10,0.030761,68.1,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT cng tyre_brake_wear,CNG CO2,4WT,CNG,tyre_brake_wear,PM2.5,0.015548,67.9,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT cng road_wear,CNG CO2,4WT,CNG,road_wear,TSP,0.025077,46.3,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT cng road_wear,CNG CO2,4WT,CNG,road_wear,PM10,0.012539,46.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT cng road_wear,CNG CO2,4WT,CNG,road_wear,PM2.5,0.006854,46.4,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT petrol tyre_brake_wear,4WT Petrol CO2,4WT,Petrol,tyre_brake_wear,TSP,0.035340,68.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT petrol tyre_brake_wear,4WT Petrol CO2,4WT,Petrol,tyre_brake_wear,PM10,0.028395,68.1,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT petrol tyre_brake_wear,4WT Petrol CO2,4WT,Petrol,tyre_brake_wear,PM2.5,0.014352,67.9,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT petrol road_wear,4WT Petrol CO2,4WT,Petrol,road_wear,TSP,0.023148,46.3,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT petrol road_wear,4WT Petrol CO2,4WT,Petrol,road_wear,PM10,0.011574,46.0,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport 4WT petrol road_wear,4WT Petrol CO2,4WT,Petrol,road_wear,PM2.5,0.006327,46.4,Tier 1 PC g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS cng tyre_brake_wear,CNG CO2,BUS,CNG,tyre_brake_wear,TSP,0.131520,61.3,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS cng tyre_brake_wear,CNG CO2,BUS,CNG,tyre_brake_wear,PM10,0.099867,46.7,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS cng tyre_brake_wear,CNG CO2,BUS,CNG,tyre_brake_wear,PM2.5,0.053488,49.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS cng road_wear,CNG CO2,BUS,CNG,road_wear,TSP,0.128643,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS cng road_wear,CNG CO2,BUS,CNG,road_wear,PM10,0.064321,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS cng road_wear,CNG CO2,BUS,CNG,road_wear,PM2.5,0.034700,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS diesel tyre_brake_wear,BUS Diesel CO2,BUS,Diesel,tyre_brake_wear,TSP,0.319407,61.3,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS diesel tyre_brake_wear,BUS Diesel CO2,BUS,Diesel,tyre_brake_wear,PM10,0.242535,46.7,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS diesel tyre_brake_wear,BUS Diesel CO2,BUS,Diesel,tyre_brake_wear,PM2.5,0.129900,49.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS diesel road_wear,BUS Diesel CO2,BUS,Diesel,road_wear,TSP,0.312418,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS diesel road_wear,BUS Diesel CO2,BUS,Diesel,road_wear,PM10,0.156209,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS diesel road_wear,BUS Diesel CO2,BUS,Diesel,road_wear,PM2.5,0.084271,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS petrol tyre_brake_wear,BUS Petrol CO2,BUS,Petrol,tyre_brake_wear,TSP,0.008287,46.5,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS petrol tyre_brake_wear,BUS Petrol CO2,BUS,Petrol,tyre_brake_wear,PM10,0.006553,46.1,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS petrol tyre_brake_wear,BUS Petrol CO2,BUS,Petrol,tyre_brake_wear,PM2.5,0.003361,46.1,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS petrol road_wear,BUS Petrol CO2,BUS,Petrol,road_wear,TSP,0.005078,47.2,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS petrol road_wear,BUS Petrol CO2,BUS,Petrol,road_wear,PM10,0.002539,45.9,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport BUS petrol road_wear,BUS Petrol CO2,BUS,Petrol,road_wear,PM2.5,0.001378,48.5,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV cng tyre_brake_wear,CNG CO2,HDV,CNG,tyre_brake_wear,TSP,0.008714,61.3,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV cng tyre_brake_wear,CNG CO2,HDV,CNG,tyre_brake_wear,PM10,0.006617,46.7,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV cng tyre_brake_wear,CNG CO2,HDV,CNG,tyre_brake_wear,PM2.5,0.003544,49.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV cng road_wear,CNG CO2,HDV,CNG,road_wear,TSP,0.008524,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV cng road_wear,CNG CO2,HDV,CNG,road_wear,PM10,0.004262,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV cng road_wear,CNG CO2,HDV,CNG,road_wear,PM2.5,0.002299,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV diesel tyre_brake_wear,HDV Diesel CO2,HDV,Diesel,tyre_brake_wear,TSP,0.427006,61.3,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV diesel tyre_brake_wear,HDV Diesel CO2,HDV,Diesel,tyre_brake_wear,PM10,0.324238,46.7,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV diesel tyre_brake_wear,HDV Diesel CO2,HDV,Diesel,tyre_brake_wear,PM2.5,0.173660,49.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV diesel road_wear,HDV Diesel CO2,HDV,Diesel,road_wear,TSP,0.417663,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV diesel road_wear,HDV Diesel CO2,HDV,Diesel,road_wear,PM10,0.208832,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport HDV diesel road_wear,HDV Diesel CO2,HDV,Diesel,road_wear,PM2.5,0.112659,46.2,Tier 1 HDV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV diesel tyre_brake_wear,LDV Diesel CO2,LDV,Diesel,tyre_brake_wear,TSP,0.134009,46.5,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV diesel tyre_brake_wear,LDV Diesel CO2,LDV,Diesel,tyre_brake_wear,PM10,0.105972,46.1,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV diesel tyre_brake_wear,LDV Diesel CO2,LDV,Diesel,tyre_brake_wear,PM2.5,0.054355,46.1,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV diesel road_wear,LDV Diesel CO2,LDV,Diesel,road_wear,TSP,0.082118,47.2,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV diesel road_wear,LDV Diesel CO2,LDV,Diesel,road_wear,PM10,0.041059,45.9,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV diesel road_wear,LDV Diesel CO2,LDV,Diesel,road_wear,PM2.5,0.022289,48.5,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV petrol tyre_brake_wear,LDV Petrol CO2,LDV,Petrol,tyre_brake_wear,TSP,0.312688,46.5,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV petrol tyre_brake_wear,LDV Petrol CO2,LDV,Petrol,tyre_brake_wear,PM10,0.247267,46.1,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV petrol tyre_brake_wear,LDV Petrol CO2,LDV,Petrol,tyre_brake_wear,PM2.5,0.126827,46.1,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV petrol road_wear,LDV Petrol CO2,LDV,Petrol,road_wear,TSP,0.191609,47.2,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV petrol road_wear,LDV Petrol CO2,LDV,Petrol,road_wear,PM10,0.095805,45.9,Tier 1 LCV g/vkm (wear factors are fuel-blind)
+Road transport,Road transport LDV petrol road_wear,LDV Petrol CO2,LDV,Petrol,road_wear,PM2.5,0.052008,48.5,Tier 1 LCV g/vkm (wear factors are fuel-blind)

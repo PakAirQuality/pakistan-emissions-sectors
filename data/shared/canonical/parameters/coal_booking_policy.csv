@@ -1,0 +1,19 @@
+Reference fiscal year,Consumer,Booked estimate ID,Rule,Reason,Record ID,Source row
+2015-16,brick_kilns,comp2020:A-45:2015-16:brick_kilns,older_vintage_closes_balance,"3,337.102 kt (PEY 2018 / Compendium 2020, identical); the Supplement's 3,541.1 breaks the supply balance by 203.8 kt - see the module docstring and outputs/pakemis_coal_balance.csv",e7dcb9883c986915d029f259,1
+2015-16,cement,sup25:Table14.1sec.4:2015-16:cement_other,supplement_vintage,,991fe61c489f97568cfebe99,2
+2016-17,brick_kilns,sup25:Table14.1sec.4:2016-17:brick_kilns,supplement_vintage,,fa51e63631e972a8a5d41e33,3
+2016-17,cement,sup25:Table14.1sec.4:2016-17:cement_other,supplement_vintage,,39133f70554ba465c3213b6b,4
+2017-18,brick_kilns,sup25:Table14.1sec.4:2017-18:brick_kilns,supplement_vintage,,5cc6ce82d368b7c12d453a23,5
+2017-18,cement,sup25:Table14.1sec.4:2017-18:cement_other,supplement_vintage,,d8c7646fcff371c03de2b14f,6
+2018-19,brick_kilns,sup25:Table14.1sec.4:2018-19:brick_kilns,supplement_vintage,,45767785b15a1fd2b5b1f87a,7
+2018-19,cement,sup25:Table14.1sec.4:2018-19:cement_other,supplement_vintage,,845cdfba53aad90af3831824,8
+2019-20,brick_kilns,sup25:Table14.1sec.4:2019-20:brick_kilns,supplement_vintage,"the Survey 2025-26 annex reprints this year to one decimal (8,183.8); the Supplement's integer print is what the series holds",977487298c42a55959fa1d8b,9
+2019-20,cement,sup25:Table14.1sec.4:2019-20:cement_other,supplement_vintage,"annex reprint 6,074.8",61e7c7cb25872971e4ef8d2f,10
+2020-21,brick_kilns,sup25:Table14.1sec.4:2020-21:brick_kilns,supplement_vintage,"annex reprint 8,678.1",f673c1536f2c26d8c27e7fc3,11
+2020-21,cement,sup25:Table14.1sec.4:2020-21:cement_other,supplement_vintage,"annex reprint 10,184.2",76fde1561151418883851ea1,12
+2021-22,brick_kilns,sup25:Table14.1sec.4:2021-22:brick_kilns,supplement_vintage,,13b62af05b9901028ec89468,13
+2021-22,cement,sup25:Table14.1sec.4:2021-22:cement_other,supplement_vintage,,6c7b28152e33d88b37a22f8e,14
+2022-23,brick_kilns,sup25:Table14.1sec.4:2022-23:brick_kilns,supplement_vintage,,4341b41f107ce8337c889f63,15
+2022-23,cement,sup25:Table14.1sec.4:2022-23:cement_other,supplement_vintage,,0945a1420957032b54826f8c,16
+2023-24,brick_kilns,sup25:Table14.1sec.4:2023-24:brick_kilns,supplement_vintage,"1,129 final; the 2023-24 edition's provisional 1,564 is superseded (-435 kt)",0c3d2ce013c71db3fd41ba53,17
+2023-24,cement,sup25:Table14.1sec.4:2023-24:cement_other,supplement_vintage,"4,391 in every edition that prints it",d1cd69e46f046a24563097d2,18

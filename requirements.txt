@@ -1,0 +1,11 @@
+# Phases 1-3 (national inventory + provincial downscaling) need NO external packages -
+# they run on the Python 3 standard library alone.
+#
+# Phase 4 (gridded emission surfaces, src/pkinv/gis/) needs the geospatial stack below.
+numpy>=1.24
+rasterio>=1.3
+geopandas>=0.13
+shapely>=2.0
+matplotlib>=3.6
+xarray>=2023.1
+# pyproj and fiona are pulled in by geopandas

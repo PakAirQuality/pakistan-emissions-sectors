@@ -1,0 +1,4 @@
+# Rows that did not close on the total the SAME ROW prints, or whose product and agency could not be separated.
+# Kept with raw text, never repaired.
+fiscal_year_start,product,source_agency,reason,months_sum,annual_printed,raw
+2013,NP,TOTAL,row does not close on its own total,478221.0,478236.0,"NP TOTAL 27,800 32,326 40,563 43,540 61,879 43,766 31,464 33,679 43,814 27,248 56,739 35,403 478,236"

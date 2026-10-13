@@ -1,0 +1,38 @@
+airport_icao,airport_iata,airport,latitude_deg,longitude_deg,elevation_ft,province_territory,commercial_service_fy2023_24,domestic_service_fy2023_24,international_service_fy2023_24,coordinate_source,coordinate_source_sha256
+BDN,BDN,Badin,24.84149932861328,68.8384017944336,28,Sindh,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPBW,BHV,Bahawalpur,29.348100662231445,71.71800231933594,392,Punjab,yes,yes,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPCH,CJL,Chitral,35.886213,71.799922,4920,Khyber Pakhtunkhwa,yes,yes,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPDB,DBA,Dalbandin,28.878299713100002,64.3998031616,2800,Balochistan,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPDG,DEA,Dera Ghazi Khan,29.961000442504883,70.48590087890625,492,Punjab,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPDI,DSK,Dera Ismail Khan,31.909401,70.896599,594,Khyber Pakhtunkhwa,yes,yes,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPFA,LYP,Faisalabad,31.364923,72.995319,591,Punjab,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPGD,GWD,Gwadar,25.296733,62.498822,61,Balochistan,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPGT,GIL,Gilgit,35.918800354003906,74.33360290527344,4796,Other,yes,yes,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPIS,ISD,Islamabad International,33.549,72.82566,1761,Other,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPJA,JAG,Jacobabad,28.28420066833496,68.44969940185547,185,Sindh,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPJZ,JZK,Juzzak,,,,Balochistan,yes,yes,no,UNRESOLVED,
+OPKC,KHI,Karachi Jinnah,24.9065,67.160797,100,Sindh,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPKD,HDD,Hyderabad,25.3181,68.366096,130,Sindh,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPKW,KCF,Kadanwari,27.203205,69.14884,167,Sindh,yes,no,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPLA,LHE,Lahore Allama Iqbal,31.521601,74.403603,712,Punjab,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPMJ,MJD,Mohenjodaro,27.335199,68.143097,154,Sindh,yes,no,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPMT,MUX,Multan,30.203199,71.419098,403,Punjab,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPNH,WNS,Nawabshah,26.2194,68.390099,95,Sindh,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPOR,ORW,Ormara,25.276625,64.588343,10,Balochistan,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPPG,PJG,Panjgur,26.9545,64.1325,3289,Balochistan,yes,no,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPPI,PSI,Pasni,25.290501,63.3451,33,Balochistan,yes,no,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPPS,PEW,Peshawar Bacha Khan,33.9939,71.514603,1158,Khyber Pakhtunkhwa,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPQT,UET,Quetta,30.2514,66.937798,5267,Balochistan,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPRK,RYK,Rahim Yar Khan,28.383899688720703,70.27960205078125,271,Punjab,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPRN,ISB,Islamabad BBIAP Chaklala,33.616699,73.099197,1668,Other,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPRT,RAZ,Rawalakot,33.849701,73.798103,5479,Other,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPSD,KDU,Skardu,35.33866,75.538648,7316,Other,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPSF,SFF,Faisal Air Base Karachi,24.87420082092285,67.11849975585938,29,Sindh,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPSK,SKZ,Sukkur,27.722,68.791702,196,Sindh,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPSN,SYW,Sehwan Sharif,26.473101,67.717201,121,Sindh,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPST,SKT,Sialkot,32.535941,74.364623,837,Punjab,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPSU,SUL,Sui,28.645099639892578,69.1769027709961,763,Balochistan,yes,yes,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPTU,TUK,Turbat,25.984767,63.028856,498,Balochistan,yes,yes,yes,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPZB,PZH,Zhob,31.358400344848633,69.4636001586914,4728,Balochistan,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510
+OPZZ,ZZ1,Islamkot,24.846208,70.094152,,Sindh,yes,yes,no,"OpenStreetMap snapshot 2026-08-09 (Geofabrik extract, gis_osm_transport_a_free_1 fclass=airport polygon centroid); the centroid falls in Sindh/Tharparkar, the province this register declares",ab445f8f0a4b6df1ca75f8da5f97f0cf2ecb1144287953d19054a82741010d2d
+REQ,REQ,Reko Diq,29.04692,62.196819,2784,Balochistan,no,no,no,ourairports_airports_2026-08-06.csv,da85fed59c29860359478c75f9cca4682a0c37fe547e70df7c7c29a9cb350510

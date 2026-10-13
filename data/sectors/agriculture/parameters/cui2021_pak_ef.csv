@@ -1,0 +1,6 @@
+crop,ef_direct_fraction,ef_pct_of_N,basis,source,note
+wheat,0.0020,0.198,gridded model-predicted,Cui et al. 2021 Nature Food (figshare 14844069),Dominant crop; arid Indus basin very low
+rice,0.0021,0.211,gridded model-predicted,Cui et al. 2021 Nature Food,Flooded but arid -> low direct N2O
+maize,0.0081,0.806,gridded model-predicted,Cui et al. 2021 Nature Food,
+other_crops,0.0112,1.118,gridded model-predicted,Cui et al. 2021 Nature Food,Lumped surface (incl. cotton/sugarcane) - cannot separate
+national_weighted,0.0055,0.549,harvested-area-weighted,Cui et al. 2021 (PAK sample; 0 in-country obs -> model-predicted; wide 95% CI),"Central estimate ~= engine EF1_dry 0.005; half of FAOSTAT/IPCC-2006 0.010"

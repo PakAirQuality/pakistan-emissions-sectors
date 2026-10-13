@@ -1,0 +1,101 @@
+{
+  "inventory": "Pakistan railways, IPCC 1.A.3.c",
+  "reference_year": "FY2023-24 (series year 2024); FY2025 provisional in the series",
+  "control_total": "Year Book fuel consumption: 132,588 thousand litres diesel + 79.907 t furnace oil",
+  "methods": {
+    "ghg": "IPCC 2006 Vol 2 Ch 3 Table 3.4.1 Tier 1",
+    "air": "EMEP/EEA 2023 ch 1.A.3.c Table 3-1 Tier 1; SO2 stoichiometric under declared sulfur cases",
+    "spatial": "route-constrained network model (gis extra), shares transcribed to data/province_shares.csv"
+  },
+  "monte_carlo": {
+    "iterations": 10000,
+    "national_seed": 42,
+    "scenario_seed": 1435,
+    "distribution": "lognormal",
+    "structural_scenarios": [
+      "reference",
+      "road_n2o_factor",
+      "stock_timing_prior_year_mean",
+      "tier2_service_split",
+      "ie_summary",
+      "provincial_wagons_proxy",
+      "sulfur_euro5_import_spec",
+      "sulfur_reference_pre_euro5_spec",
+      "sulfur_historical_0.5pct",
+      "sulfur_historical_1.0pct"
+    ]
+  },
+  "sources": [
+    {
+      "path": "sources/Railways/YearBook2016-2017.pdf",
+      "sha256": "597efbc66370044df5bd9be8896b42d0e0c8933e04eeff90d6b305a9a8afb804"
+    },
+    {
+      "path": "sources/Railways/ipcc_2006_v2_ch3_mobile.pdf",
+      "sha256": "b0b7d96d5ac90ecf359cdb74e932448cfba041c6cec0e1dc24f2def444508c30"
+    },
+    {
+      "path": "sources/Railways/yearbook2020_21.pdf",
+      "sha256": "b57f6f1591bf88d83232ac2f1e1425dc94b0f9ce5005d81bdd945287be3b32fe"
+    },
+    {
+      "path": "sources/Railways/yearbook2022_23.pdf",
+      "sha256": "10491e990f58e6d4a4d2f6e666fe55bc2b9714313a667d9a1a4b0d4feff0aaac"
+    },
+    {
+      "path": "sources/Railways/yearbook2023_24.pdf",
+      "sha256": "0332497a3762156edd859742061a5c035ad04b152437529b6a308ce574bd6347"
+    },
+    {
+      "path": "sources/Aviation/PAK_CRT_2024.zip",
+      "sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+    },
+    {
+      "path": "sources/EMEP/emep_eea_2023_1a3c_railways.pdf",
+      "sha256": "530759a3491462e426550eee95daa0279021e72427f753e80d0a30204c1d7768"
+    },
+    {
+      "path": "sources/UNFCCC/pakistan_btr1_2024.pdf",
+      "sha256": "1d2e5970736b5e9d6f1596bd1e994adff9883430dbc02cebd711380752afe904"
+    },
+    {
+      "path": "sources/UNFCCC/pakistan_inc_2003.pdf",
+      "sha256": "37242ca41585d3c353873143ace8f4cafefda06a125754e18fe2fe38fc80076e"
+    },
+    {
+      "path": "sources/UNFCCC/pakistan_tnc_2025.pdf",
+      "sha256": "57d85ee215a535f980a115ad69bc7bbe0abc707ddecd2e7f611a1ca35f857d6f"
+    },
+    {
+      "path": "data/gis/rail/pak_rail_network.geojson",
+      "sha256": "dc87167e5764fc12747e56a4237eddba88afe03a3f77eb849681f56f48acccac"
+    },
+    {
+      "path": "data/gis/rail/RAIL_SOURCES.json",
+      "sha256": "f9d0e7fb4cd3c7f147e443a803ab7a2277a7bcd9c0e2783b000712a4db05c134"
+    }
+  ],
+  "generated_outputs": [
+    "railways_air_pollutants_2024.csv",
+    "railways_air_sulfur_cases_2024.csv",
+    "railways_by_stream_2024.csv",
+    "railways_efficiency_2024.csv",
+    "railways_fuel_2024.csv",
+    "railways_fuel_claimants_2024.csv",
+    "railways_fuel_history.csv",
+    "railways_fuel_reconciliation_2024.csv",
+    "railways_monthly_2024.csv",
+    "railways_official_comparison_2024.csv",
+    "railways_provincial_2024.csv",
+    "railways_qa_2024.csv",
+    "railways_tier2_air_diagnostic_2024.csv",
+    "railways_tier2_split_2024.csv",
+    "railways_timeseries_2024.csv",
+    "railways_totals_2024.csv",
+    "railways_uncertainty_2024.csv",
+    "railways_uncertainty_inputs_2024.csv",
+    "railways_uncertainty_scenarios_2024.csv",
+    "railways_unfccc_crt_cell_audit_2024.csv",
+    "railways_wear_pm_2024.csv"
+  ]
+}

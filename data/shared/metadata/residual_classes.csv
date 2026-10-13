@@ -1,0 +1,24 @@
+# What KIND of uncertainty each module's residual bundles (the rc2 review's 3.4).
+#
+# The attribution names parameters; what remains per module is a residual, and "78 percent
+# has no named parameter" invites the reader to guess what it is. The rc2 paper guessed --
+# "it is one module's activity data" -- and the guess was backwards: agriculture's activity
+# terms (the livestock counts) are precisely the parameters the registry ALREADY names, so
+# what remains in its residual is the emission factors, the manure-system structure and the
+# model form. Classes are declared here with the reasoning, and residual_unclassified is a
+# published value, not an omission: it says the decomposition has not been done, which is
+# more honest than a guessed class.
+#
+# Vocabulary: residual_activity | residual_factor | residual_model | residual_boundary |
+# residual_unclassified.
+module,residual_class,note
+agriculture,residual_factor,the livestock counts are named parameters; what remains is EFU emission factors and manure-system and soil-process structure - factor and model terms - with the largest single block the soils N2O factors
+transport,residual_activity,the controls and fuel factors are named; what remains is the intensity-weighted class split of each control across vehicle classes - an activity partition
+fugitives,residual_factor,the activity volumes are named; the sector's own bounded factor groups (505 percent N2O rows among them) are not yet scoped into the registry and sit here
+waste,residual_unclassified,generation and composition are named and the sewer MCF is structural; the remainder mixes factor and model terms and has not been decomposed
+residential,residual_unclassified,fuel quantities and Table 2.5 factors are largely named; the dung-chain and air-layer remainders have not been decomposed
+power,residual_unclassified,its named groups carry the TOE conversion and fuel factors; the trace-gas widths and captive terms remain undecomposed
+industry,residual_unclassified,the sector publishes no input table; its whole width is residual
+railways,residual_unclassified,small after the audit; the derived CO2 row's terms are all named
+aviation,residual_unclassified,the movement model's operator-route terms are not yet in the registry
+ippu,residual_unclassified,cement's clinker-fraction and trade terms have not been separated into named parameters

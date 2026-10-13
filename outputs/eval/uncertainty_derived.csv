@@ -1,0 +1,8 @@
+category,point_Mt,combined_uncert_pct_95,lognormal_mu,lognormal_sigma,implied_median_Mt,distribution,correlation
+Enteric fermentation,151.66,25.4,5.013,0.1291,150.4,lognormal,independent
+Manure management,21.23,32.9,3.042,0.1667,20.94,lognormal,independent
+Rice cultivation,16.55,60.9,2.76,0.3036,15.8,lognormal,independent
+Managed soils,28.53,47.1,3.323,0.2369,27.74,lognormal,independent
+Field burning of residues,0.67,44.9,-0.426,0.2262,0.65,lognormal,independent
+Urea application,4.82,11.2,1.571,0.0571,4.81,lognormal,independent
+TOTAL,223.45,19.1,5.404,0.0972,222.4,lognormal,independent

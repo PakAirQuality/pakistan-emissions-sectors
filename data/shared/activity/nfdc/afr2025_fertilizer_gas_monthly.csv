@@ -1,0 +1,673 @@
+fiscal_year,gas_supplier,plant,consumption,month,calendar_year,mmcf,source,note
+2023-24,SNGPL,Pak-Arab,Feed,Jul,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Aug,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Sep,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Oct,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Nov,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Dec,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Jan,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Feb,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SNGPL,Pak-Arab,Feed,Mar,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Apr,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Feed,Jun,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Jul,2023,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Aug,2023,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Sep,2023,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Oct,2023,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Nov,2023,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Dec,2023,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Jan,2024,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Feb,2024,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SNGPL,Pak-Arab,Fuel,Mar,2024,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Apr,2024,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,May,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Pak-Arab,Fuel,Jun,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Fatimafert,Feed,Jul,2023,1166,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Aug,2023,1185,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Sep,2023,1139,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Oct,2023,1153,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Nov,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Dec,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Jan,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Feb,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Mar,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Apr,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Feed,Jun,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Jul,2023,241,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Aug,2023,231,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Sep,2023,218,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Oct,2023,247,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Nov,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Dec,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Jan,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Feb,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Mar,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Apr,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Fatimafert,Fuel,Jun,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SNGPL,Agritech,Feed,Jul,2023,764,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Aug,2023,755,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Sep,2023,738,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Oct,2023,757,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Nov,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Dec,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Jan,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Feb,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SNGPL,Agritech,Feed,Mar,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Apr,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Feed,Jun,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Jul,2023,183,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Aug,2023,194,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Sep,2023,188,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Oct,2023,189,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Nov,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Dec,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Jan,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Feb,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SNGPL,Agritech,Fuel,Mar,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Apr,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Agritech,Fuel,Jun,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Jul,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Aug,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Sep,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Oct,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Nov,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Dec,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Jan,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Feb,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SNGPL,Hazara Phosphate,Feed,Mar,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Apr,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Feed,Jun,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Jul,2023,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Aug,2023,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Sep,2023,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Oct,2023,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Nov,2023,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Dec,2023,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Jan,2024,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Feb,2024,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SNGPL,Hazara Phosphate,Fuel,Mar,2024,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Apr,2024,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,May,2024,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,Hazara Phosphate,Fuel,Jun,2024,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SNGPL,EFERT,Feed,Jul,2023,3228,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Aug,2023,3295,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Sep,2023,3143,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Oct,2023,3269,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Nov,2023,3172,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Dec,2023,3270,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Jan,2024,3241,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Feb,2024,3055,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Mar,2024,3194,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Apr,2024,2302,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Feed,Jun,2024,1556,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Jul,2023,274,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Aug,2023,280,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Sep,2023,268,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Oct,2023,282,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Nov,2023,268,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Dec,2023,269,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Jan,2024,288,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Feb,2024,266,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Mar,2024,273,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Apr,2024,197,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,SNGPL,EFERT,Fuel,Jun,2024,190,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2023-24,OGDCL,EFERT,Feed,Jul,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Aug,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Sep,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Oct,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Nov,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Dec,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Jan,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Feb,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,OGDCL,EFERT,Feed,Mar,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Apr,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,May,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Feed,Jun,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Jul,2023,237,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Aug,2023,230,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Sep,2023,233,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Oct,2023,248,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Nov,2023,246,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Dec,2023,242,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Jan,2024,241,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Feb,2024,221,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,OGDCL,EFERT,Fuel,Mar,2024,231,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Apr,2024,178,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,May,2024,31,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,OGDCL,EFERT,Fuel,Jun,2024,231,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,LNG,Agritech,Feed,Jul,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Aug,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Sep,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Oct,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Nov,2023,732,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Dec,2023,770,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Jan,2024,788,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Feb,2024,750,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Mar,2024,789,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Apr,2024,445,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,May,2024,771,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Feed,Jun,2024,752,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Jul,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Aug,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Sep,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Oct,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Nov,2023,162,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Dec,2023,188,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Jan,2024,194,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Feb,2024,169,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Mar,2024,188,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Apr,2024,140,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,May,2024,202,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Agritech,Fuel,Jun,2024,189,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2023-24,LNG,Fatimafert,Feed,Jul,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Aug,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Sep,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Oct,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Nov,2023,1170,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Dec,2023,1193,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Jan,2024,1209,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Feb,2024,1141,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Mar,2024,1202,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Apr,2024,1122,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,May,2024,648,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Feed,Jun,2024,1110,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Jul,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Aug,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Sep,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Oct,2023,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Nov,2023,261,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Dec,2023,215,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Jan,2024,218,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Feb,2024,207,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Mar,2024,216,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Apr,2024,215,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,May,2024,171,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,LNG,Fatimafert,Fuel,Jun,2024,224,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2023-24,SSGCL,FFC,Feed,Jul,2023,1435,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Aug,2023,976,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Sep,2023,972,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Oct,2023,1278,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Nov,2023,1256,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Dec,2023,1291,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Jan,2024,968,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Feb,2024,914,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SSGCL,FFC,Feed,Mar,2024,1210,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Apr,2024,1623,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,May,2024,1837,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Feed,Jun,2024,1824,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Jul,2023,103,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Aug,2023,41,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Sep,2023,6,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Oct,2023,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Nov,2023,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Dec,2023,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Jan,2024,5,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Feb,2024,14,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,SSGCL,FFC,Fuel,Mar,2024,5,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Apr,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,May,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,SSGCL,FFC,Fuel,Jun,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Jul,2023,2456,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Aug,2023,2456,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Sep,2023,2300,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Oct,2023,2456,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Nov,2023,2364,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Dec,2023,2345,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Jan,2024,2462,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Feb,2024,2305,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,Mari,EFERT,Feed,Mar,2024,2464,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Apr,2024,2328,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,May,2024,2390,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Feed,Jun,2024,2363,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Jul,2023,897,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Aug,2023,919,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Sep,2023,899,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Oct,2023,865,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Nov,2023,841,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Dec,2023,846,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Jan,2024,852,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Feb,2024,725,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,Mari,EFERT,Fuel,Mar,2024,929,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Apr,2024,849,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,May,2024,991,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,EFERT,Fuel,Jun,2024,821,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,FFC I & II,Feed,Jul,2023,4427,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Aug,2023,4425,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Sep,2023,4132,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Oct,2023,4467,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Nov,2023,4384,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Dec,2023,4538,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Jan,2024,4554,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Feb,2024,4207,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Mar,2024,4498,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Apr,2024,4316,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,May,2024,4430,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Feed,Jun,2024,4099,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Jul,2023,988,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Aug,2023,1014,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Sep,2023,1081,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Oct,2023,1023,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Nov,2023,877,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Dec,2023,868,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Jan,2024,918,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Feb,2024,948,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Mar,2024,992,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Apr,2024,964,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,May,2024,968,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC I & II,Fuel,Jun,2024,851,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2023-24,Mari,FFC III,Feed,Jul,2023,2467,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Aug,2023,2461,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Sep,2023,2391,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Oct,2023,1114,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Nov,2023,2417,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Dec,2023,2468,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Jan,2024,2514,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Feb,2024,2344,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Mar,2024,2513,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Apr,2024,2407,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,May,2024,2521,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Feed,Jun,2024,2442,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Jul,2023,423,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Aug,2023,416,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Sep,2023,387,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Oct,2023,218,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Nov,2023,362,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Dec,2023,340,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Jan,2024,332,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Feb,2024,351,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year; printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Mar,2024,378,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Apr,2024,409,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,May,2024,451,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,FFC III,Fuel,Jun,2024,421,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2023-24,Mari,Fatima Fertilizer,Feed,Jul,2023,2885,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Aug,2023,2904,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Sep,2023,2804,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Oct,2023,2941,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Nov,2023,2856,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Dec,2023,2877,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Jan,2024,2838,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Feb,2024,2732,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,Mari,Fatima Fertilizer,Feed,Mar,2024,2915,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Apr,2024,2759,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,May,2024,2906,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Feed,Jun,2024,2600,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Jul,2023,413,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Aug,2023,420,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Sep,2023,406,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Oct,2023,401,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Nov,2023,387,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Dec,2023,413,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Jan,2024,393,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Feb,2024,363,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,Mari,Fatima Fertilizer,Fuel,Mar,2024,396,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Apr,2024,389,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,May,2024,412,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Fatima Fertilizer,Fuel,Jun,2024,405,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Jul,2023,1213,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Aug,2023,1258,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Sep,2023,1327,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Oct,2023,1307,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Nov,2023,1261,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Dec,2023,1324,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Jan,2024,1373,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Feb,2024,1261,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,Mari,Pak-Arab,Feed,Mar,2024,1364,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Apr,2024,1309,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,May,2024,1298,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Feed,Jun,2024,1142,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Jul,2023,322,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Aug,2023,303,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Sep,2023,293,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Oct,2023,292,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Nov,2023,247,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Dec,2023,281,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Jan,2024,284,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Feb,2024,293,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,the FY2023-24 header prints FEB ' 23; the column is February 2024 and calendar_year records the corrected year
+2023-24,Mari,Pak-Arab,Fuel,Mar,2024,300,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Apr,2024,263,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,May,2024,302,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2023-24,Mari,Pak-Arab,Fuel,Jun,2024,303,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Jul,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Aug,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Sep,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Oct,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Nov,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Dec,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Jan,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Feb,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Mar,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Apr,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,May,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Feed,Jun,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Jul,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Aug,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Sep,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Oct,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Nov,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Dec,2024,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Jan,2025,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Feb,2025,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Mar,2025,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Apr,2025,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,May,2025,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Pak-Arab,Fuel,Jun,2025,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Fatimafert,Feed,Jul,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Aug,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Sep,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Oct,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Nov,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Dec,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Jan,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Feb,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Mar,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Apr,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,May,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Feed,Jun,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Jul,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Aug,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Sep,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Oct,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Nov,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Dec,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Jan,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Feb,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Mar,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Apr,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,May,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Fatimafert,Fuel,Jun,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SNGPL,Agritech,Feed,Jul,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Aug,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Sep,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Oct,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Nov,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Dec,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Jan,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Feb,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Mar,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Apr,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,May,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Feed,Jun,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Jul,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Aug,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Sep,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Oct,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Nov,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Dec,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Jan,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Feb,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Mar,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Apr,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,May,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Agritech,Fuel,Jun,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Jul,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Aug,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Sep,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Oct,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Nov,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Dec,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Jan,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Feb,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Mar,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Apr,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,May,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Feed,Jun,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Jul,2024,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Aug,2024,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Sep,2024,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Oct,2024,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Nov,2024,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Dec,2024,5,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Jan,2025,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Feb,2025,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Mar,2025,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Apr,2025,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,May,2025,4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,Hazara Phosphate,Fuel,Jun,2025,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SNGPL,EFERT,Feed,Jul,2024,3252,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Aug,2024,3198,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Sep,2024,3134,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Oct,2024,3241,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Nov,2024,3171,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Dec,2024,3163,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Jan,2025,3218,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Feb,2025,2946,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Mar,2025,3147,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Apr,2025,2946,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,May,2025,3129,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Feed,Jun,2025,2972,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Jul,2024,274,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Aug,2024,280,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Sep,2024,271,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Oct,2024,280,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Nov,2024,272,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Dec,2024,280,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Jan,2025,293,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Feb,2025,264,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Mar,2025,275,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Apr,2025,267,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,May,2025,274,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,SNGPL,EFERT,Fuel,Jun,2025,272,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,"printed as EFERT, Mari through SNGPL - Mari gas carried on the SNGPL network, which is why the same plant appears under two suppliers"
+2024-25,OGDCL,EFERT,Feed,Jul,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Aug,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Sep,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Oct,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Nov,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Dec,2024,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Jan,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Feb,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Mar,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Apr,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,May,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Feed,Jun,2025,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Jul,2024,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Aug,2024,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Sep,2024,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Oct,2024,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Nov,2024,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Dec,2024,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Jan,2025,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Feb,2025,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Mar,2025,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Apr,2025,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,May,2025,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,OGDCL,EFERT,Fuel,Jun,2025,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,LNG,Agritech,Feed,Jul,2024,758,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Aug,2024,760,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Sep,2024,719,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Oct,2024,762,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Nov,2024,751,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Dec,2024,793,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Jan,2025,220,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Feb,2025,662,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Mar,2025,796,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Apr,2025,780,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,May,2025,842,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Feed,Jun,2025,793,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Jul,2024,180,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Aug,2024,189,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Sep,2024,183,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Oct,2024,186,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Nov,2024,183,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Dec,2024,177,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Jan,2025,64,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Feb,2025,156,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Mar,2025,175,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Apr,2025,177,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,May,2025,188,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Agritech,Fuel,Jun,2025,175,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Agritech Limited
+2024-25,LNG,Fatimafert,Feed,Jul,2024,1121,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Aug,2024,1135,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Sep,2024,1110,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Oct,2024,1159,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Nov,2024,1192,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Dec,2024,1169,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Jan,2025,1203,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Feb,2025,1071,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Mar,2025,1227,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Apr,2025,1125,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,May,2025,1100,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Feed,Jun,2025,1016,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Jul,2024,228,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Aug,2024,233,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Sep,2024,222,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Oct,2024,234,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Nov,2024,225,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Dec,2024,204,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Jan,2025,218,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Feb,2025,204,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Mar,2025,238,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Apr,2025,242,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,May,2025,258,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,LNG,Fatimafert,Fuel,Jun,2025,239,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as Fatimafert (DHCL)
+2024-25,SSGCL,FFC,Feed,Jul,2024,1794,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Aug,2024,1835,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Sep,2024,1576,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Oct,2024,1516,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Nov,2024,1776,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Dec,2024,1531,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Jan,2025,475,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Feb,2025,886,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Mar,2025,1370,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Apr,2025,1868,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,May,2025,1804,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Feed,Jun,2025,1767,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Jul,2024,25,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Aug,2024,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Sep,2024,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Oct,2024,3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Nov,2024,2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Dec,2024,5,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Jan,2025,49,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Feb,2025,21,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Mar,2025,9,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Apr,2025,7,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,May,2025,8,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,SSGCL,FFC,Fuel,Jun,2025,8,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Jul,2024,2458,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Aug,2024,2168,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Sep,2024,2398,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Oct,2024,2468,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Nov,2024,2331,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Dec,2024,2462,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Jan,2025,2454,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Feb,2025,2218,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Mar,2025,2427,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Apr,2025,2103,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,May,2025,2391,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Feed,Jun,2025,2381,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Jul,2024,907,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Aug,2024,918,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Sep,2024,903,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Oct,2024,967,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Nov,2024,948,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Dec,2024,951,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Jan,2025,827,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Feb,2025,733,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Mar,2025,1086,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Apr,2025,1062,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,May,2025,1138,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,EFERT,Fuel,Jun,2025,1095,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,FFC I & II,Feed,Jul,2024,4424,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Aug,2024,4429,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Sep,2024,4295,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Oct,2024,4458,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Nov,2024,4332,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Dec,2024,4464,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Jan,2025,4438,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Feb,2025,2857,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Mar,2025,4438,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Apr,2025,4283,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,May,2025,4436,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Feed,Jun,2025,4269,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Jul,2024,994,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Aug,2024,962,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Sep,2024,959,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Oct,2024,985,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Nov,2024,950,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Dec,2024,986,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Jan,2025,1028,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Feb,2025,684,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Mar,2025,1083,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Apr,2025,1064,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,May,2025,1118,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC I & II,Fuel,Jun,2025,1082,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-1& 2
+2024-25,Mari,FFC III,Feed,Jul,2024,2080,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Aug,2024,2433,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Sep,2024,2436,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Oct,2024,2526,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Nov,2024,2449,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Dec,2024,2533,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Jan,2025,2511,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Feb,2025,2286,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Mar,2025,2519,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Apr,2025,2451,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,May,2025,2535,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Feed,Jun,2025,2454,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Jul,2024,443,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Aug,2024,354,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Sep,2024,370,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Oct,2024,351,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Nov,2024,330,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Dec,2024,258,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Jan,2025,347,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Feb,2025,286,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Mar,2025,359,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Apr,2025,361,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,May,2025,363,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,FFC III,Fuel,Jun,2025,311,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,printed as FFC-III (MM)
+2024-25,Mari,Fatima Fertilizer,Feed,Jul,2024,2844,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Aug,2024,2731,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Sep,2024,2764,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Oct,2024,2198,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Nov,2024,1877,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Dec,2024,2857,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Jan,2025,2860,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Feb,2025,2647,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Mar,2025,2900,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Apr,2025,2790,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,May,2025,2913,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Feed,Jun,2025,2845,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Jul,2024,415,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Aug,2024,417,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Sep,2024,399,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Oct,2024,365,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Nov,2024,315,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Dec,2024,388,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Jan,2025,395,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Feb,2025,368,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Mar,2025,424,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Apr,2025,403,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,May,2025,438,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Fatima Fertilizer,Fuel,Jun,2025,423,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Jul,2024,1294,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Aug,2024,1312,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Sep,2024,1268,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Oct,2024,1306,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Nov,2024,1244,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Dec,2024,1308,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Jan,2025,1279,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Feb,2025,1238,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Mar,2025,1387,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Apr,2025,843,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,May,2025,1393,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Feed,Jun,2025,1330,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Jul,2024,308,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Aug,2024,330,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Sep,2024,308,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Oct,2024,317,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Nov,2024,313,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Dec,2024,294,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Jan,2025,336,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Feb,2025,282,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Mar,2025,401,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Apr,2025,288,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,May,2025,350,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,
+2024-25,Mari,Pak-Arab,Fuel,Jun,2025,333,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Annex-28,

@@ -1,0 +1,181 @@
+# WHICH COMPONENT ROWS A SHARED PARAMETER MULTIPLIES.
+#
+# A parameter's uncertainty is only shared if something says which rows share it. The eight
+# sector uncertainty tables declare correlation GROUPS and an `applies_to` written for a human
+# ("all petrol rows", "4A + 4C2 activity"); this is the machine-readable half.
+#
+# ONLY GROUPS THAT SPAN MORE THAN ONE COMPONENT NEED AN ENTRY. A parameter confined to a single
+# row contributes nothing that the row's own residual does not already carry, so leaving it
+# unscoped is not a gap - it is the correct treatment, and it keeps this file to the sharing
+# that actually changes the answer.
+#
+# THE FUEL FACTORS ARE NOT HERE, deliberately. `factor:<gas>:<fuel>` groups scope themselves
+# through core.factors.fuel_of(), which maps a component's stream to its IPCC fuel whatever gas
+# the row reports. Declaring them here as well would be a second copy of a mapping that is
+# already tested, and the two would drift.
+#
+# Patterns are Python regular expressions, matched with re.search. An empty pattern matches
+# anything; module "*" matches any module. tests/test_parameters.py asserts both directions:
+# no multi-component group without a scope, and no scope matching zero components.
+#
+# --- the cross-sector and cross-category links -----------------------------------------------
+# These are the reason the independent-category variance ranking was wrong, and each is a
+# physical quantity that two categories genuinely share.
+# --- within-sector shared controls ------------------------------------------------------------
+dependency_group,module,category_pattern,subitem_pattern,sign,role,note
+delivered_gas_ogra_3_31,residential,,^Natural gas,,,"THE CROSS-MODULE DELIVERED-GAS GROUP (rc19, the fourteenth review's per-draw identity): the residential, CNG, industrial and captive delivered volumes are one OGRA Table 3.31 publication read four times, so their activity errors share ONE draw direction; each module's row keeps its own declared width through the select rule. The GRID gas volume is deliberately outside (NEPRA TOE, a different meter, reconciled in the gas closure), and the FUGITIVES module is deliberately outside (an injected CRN-island for its OWN draws; the LEAK-FACTOR decorrelation the rc12 licence declared was CLOSED at Wave 6 - the draw file persists the post-meter factor multiplier as a parameter channel and the net-of-leak combustion components scale by their draw's own combusted fraction (uncertainty_all.gas_coupling_scalers); the channel consumes no randomness, so the island's draws and every other stream are untouched)"
+delivered_gas_ogra_3_31,transport,,^CNG,,,the same publication; the CNG chain's conversions stay in 1a3b_cng_chain
+delivered_gas_ogra_3_31,industry,,^(General Industry|Cement) gas,,,the same publication; the industrial gas streams' conversions stay module-local
+delivered_gas_ogra_3_31,power,,^Captive natural gas,,,the same publication (288 MMCFD module read vs the ledger's 287 print - reconciled in the gas closure); the grid Gas rows stay in 1a1a_toe_activity
+livestock:cattle,agriculture,Enteric fermentation|Manure management,^(dairy_cattle|other_cattle),,,one herd count drives both enteric fermentation and manure management
+livestock:buffalo,agriculture,Enteric fermentation|Manure management,^buffalo,,,the same
+livestock:sheep,agriculture,Enteric fermentation|Manure management,^sheep,,,the same
+livestock:goats,agriculture,Enteric fermentation|Manure management,^goats,,,the same
+livestock:camels,agriculture,Enteric fermentation|Manure management,^camels,,,the same
+livestock:poultry,agriculture,Manure management,^poultry,,,poultry has no enteric row
+fertiliser:nitrogen_N_offtake,agriculture,Managed soils|Urea application,synthetic|^Urea application,,,"ONE audited national nitrogen offtake, and it drives BOTH categories: the direct and indirect synthetic soil pathways, and the urea CO2 that liming_urea.py derives from the same series. Two ids here until rc16 meant a draw moved soils and urea independently, which no physical reading supports"
+crop:rice,agriculture,Rice cultivation|Field burning,^(Continuously|Residue burning),,,rice area drives cultivation and part of the burned residue
+crop:wheat,agriculture,Field burning of residues,^Residue burning,,,wheat residue
+crop:maize,agriculture,Field burning of residues,^Residue burning,,,maize residue
+crop:cotton,agriculture,Field burning of residues,^Residue burning,,,cotton sticks
+crop:sugarcane,agriculture,Field burning of residues,^Residue burning,,,cane trash
+1a3b_diesel_control,transport,,Diesel|Off-road machinery,,,one OCAC Road diesel control drives the road classes AND mixed off-road
+1a3b_petrol_control,transport,,Petrol,,,one OCAC Road petrol control drives every petrol class
+1a3b_cng_chain,transport,,^CNG,,,the CNG conversion chain (heating value and gross-to-net); the metered volume moved to delivered_gas_ogra_3_31 at rc19
+1a4b_dung_chain,residential,,^Dung cake,,,the dung mass relayed from agriculture's manure balance - the same nitrogen that drives managed soils
+1a1a_toe_activity,power,Electricity and heat production,^(Gas|Coal|Furnace Oil|Diesel Oil),,,one TOE-to-terajoule convention over the four grid fuel rows
+1a3c_fuel_account,railways,,,,,the operator's single metered fuel account drives every railway row
+1a3c_ncv,railways,,^Diesel,,,one calorific value for the traction diesel
+1a3c_hsd_density,railways,,^Diesel,,,one density converting litres to mass
+1a4b_gas,residential,,^Natural gas,,,the domestic gas gross-to-net conversion; the metered volume moved to delivered_gas_ogra_3_31 at rc19
+1a4b_lpg,residential,,^LPG,,,national LPG supply and the domestic share of it
+1a4b_kerosene,residential,,^Kerosene,,,household kerosene supply
+1a4b_firewood,residential,,^Firewood,,,the HIES firewood quantity and its moisture basis
+1a4b_residue,residential,,^Crop residues,,,household crop-residue fuel
+1a4b_coal,residential,,^Coal,,,household coal
+1a4b_generators,residential,,^Generators,,,generator petrol reconstructed from expenditure
+1a4b_charcoal,residential,,^Charcoal,,,charcoal
+waste_generation,waste,Solid waste disposal|Open burning of waste,,,,one generation figure drives disposal and open burning
+waste_partition,waste,Open burning of waste,,1,,"the collected/uncollected split, signed member: burning rises with the uncollected fraction"
+waste_partition,waste,Solid waste disposal,,-1,,"the collected/uncollected split, signed member: disposal falls as the uncollected fraction rises - the anticorrelation the sector's Approach 1 states and unsigned sharing used to invert"
+waste_composition,waste,Solid waste disposal|Open burning of waste,,,,one waste composition drives the carbon in both
+waste:burned_fraction,waste,Open burning of waste,,,,the burned fraction of uncollected waste
+waste:swds_k,waste,Solid waste disposal,,,,the first-order-decay rate over the whole deposit stock
+waste:swds_docf,waste,Solid waste disposal,,,,the degradable fraction actually decomposing
+waste:ww_bod_g_per_cap_day,waste,Domestic wastewater,CH4,,,"the per-capita organic load behind the wastewater CH4 row; N2O derives from protein, not BOD - the rc11 scope repair"
+waste:ww_bo,waste,Domestic wastewater,CH4,,,"the maximum methane-producing capacity; N2O derives from protein, not BOD - the rc11 scope repair"
+cement_activity,ippu,Cement production,,,,cement production drives the whole category
+trade_export,ippu,Cement production,,,,matched clinker exports
+trade_import,ippu,Cement production,,,,matched clinker imports
+all jet fuel,aviation,Domestic aviation,,,factor,"one jet-fuel boundary over every aviation row | rc41 role: the jet-fuel carbon conversion and the Table 3.6.5 CH4/N2O factors (select rule, one member per gas) - a factor, filed as one"
+all domestic stages,aviation,Domestic aviation,,,,the domestic stage set
+gas-production-volume,fugitives,,^(Gas production|Gas gathering|Gas processing|Sour-gas),,,one national gas production volume across the segments whose activity IS that volume; refining and pipeline rows carry their own throughput groups
+oil-production-volume,fugitives,,^(Oil production|Oil pipeline),,,one national oil production volume across the segments whose activity is that volume; refining carries its own OGRA throughput
+gas_transmission_pipeline,fugitives,,^Gas transmission,,,transmission pipeline length
+gas_distribution_pipeline,fugitives,,^Gas distribution,,,distribution pipeline length
+post_meter_appliances,fugitives,,^Post-meter appliances,,,post-meter appliance leakage
+post_meter_nonresidential,fugitives,,^Post-meter industrial,,,post-meter industrial and power leakage
+oil_refining,fugitives,,^Oil refining,,,refinery throughput
+waste:ww_ef_effluent,waste,Domestic wastewater,N2O,,,"the effluent N2O factor - the softest number in the sector (bounded 500-fold published range), previously invisible in the national ranking inside residual:waste"
+ef:enteric_dairy_cattle,agriculture,Enteric fermentation,^dairy_cattle$,,,rc18 - the factor half of the row whose activity half livestock:cattle already carries
+ef:enteric_other_cattle,agriculture,Enteric fermentation,^other_cattle$,,,rc18
+ef:enteric_buffalo,agriculture,Enteric fermentation,^buffalo$,,,rc18
+ef:enteric_sheep,agriculture,Enteric fermentation,^sheep$,,,rc18
+ef:enteric_goats,agriculture,Enteric fermentation,^goats$,,,rc18
+ef:enteric_camels,agriculture,Enteric fermentation,^camels$,,,rc18
+ef:manure_ch4_dairy_cattle,agriculture,Manure management,^dairy_cattle \(CH4\)$,,,rc18
+ef:manure_ch4_other_cattle,agriculture,Manure management,^other_cattle \(CH4\)$,,,rc18
+ef:manure_ch4_buffalo,agriculture,Manure management,^buffalo \(CH4\)$,,,rc18
+ef:manure_ch4_sheep,agriculture,Manure management,^sheep \(CH4\)$,,,rc18
+ef:manure_ch4_goats,agriculture,Manure management,^goats \(CH4\)$,,,rc18
+ef:manure_ch4_camels,agriculture,Manure management,^camels \(CH4\)$,,,rc18 - the engine applies the sheep row's 30 to camels too (manure.py:93)
+ef:manure_ch4_poultry,agriculture,Manure management,^poultry \(CH4\)$,,,rc18
+ef:manure_n2o_ef3,agriculture,Manure management,^Direct N2O$,,,rc18 - every system row of the EF3 family carries 100
+ef:soils_EF1_dry,agriculture,Managed soils,^Direct N2O - (synthetic fertiliser \(upland\)|organic manure|crop residues),,,rc18 - ONE EF1 across the three direct rows that multiply it
+ef:soils_EF1FR_rice,agriculture,Managed soils,^Direct N2O - synthetic fertiliser \(rice,,,rc18
+ef:soils_EF3PRP_cattle,agriculture,Managed soils,^Direct N2O - pasture deposition \(cattle,,,rc18
+ef:soils_EF3PRP_sheepgoat,agriculture,Managed soils,^Direct N2O - pasture deposition \(sheep,,,rc18
+ef:soils_EF4_dry,agriculture,Managed soils|Manure management,Indirect N2O.*volatilisation|^Indirect N2O \(volatilisation\)$,,,rc18 - one EF4 across every volatilisation row; manure.py harmonises on the managed-soils factor explicitly
+ef:soils_EF5,agriculture,Managed soils,Indirect N2O - leaching,,,rc18 - one EF5 across every leaching row
+ef:rice_EFc,agriculture,Rice cultivation,^Continuously flooded$,,,rc18
+ef:rice_SFw_continuous,agriculture,Rice cultivation,^Continuously flooded$,,,rc18 - the water-regime scaling the engine multiplies beside EFc
+ef:burning_Gef_CH4,agriculture,Field burning of residues,^Residue burning CH4$,,,rc18
+ef:burning_Gef_N2O,agriculture,Field burning of residues,^Residue burning N2O$,,,rc18
+ef:liming_EF_urea,agriculture,Urea application,^Urea application CO2$,,,rc18
+livestock:cattle,agriculture,Manure management,^(Direct N2O|Indirect N2O \(volatilisation\))$,,,rc40 G3b: manure N2O is nitrogen excreted by every species (manure.py sums nex over all of them); the herd draw now reaches it
+livestock:cattle,agriculture,Managed soils,organic manure,,,rc40 G3b: FON is the managed-manure N of the whole herd
+livestock:buffalo,agriculture,Manure management,^(Direct N2O|Indirect N2O \(volatilisation\))$,,,rc40 G3b: manure N2O is nitrogen excreted by every species (manure.py sums nex over all of them); the herd draw now reaches it
+livestock:buffalo,agriculture,Managed soils,organic manure,,,rc40 G3b: FON is the managed-manure N of the whole herd
+livestock:sheep,agriculture,Manure management,^(Direct N2O|Indirect N2O \(volatilisation\))$,,,rc40 G3b: manure N2O is nitrogen excreted by every species (manure.py sums nex over all of them); the herd draw now reaches it
+livestock:sheep,agriculture,Managed soils,organic manure,,,rc40 G3b: FON is the managed-manure N of the whole herd
+livestock:goats,agriculture,Manure management,^(Direct N2O|Indirect N2O \(volatilisation\))$,,,rc40 G3b: manure N2O is nitrogen excreted by every species (manure.py sums nex over all of them); the herd draw now reaches it
+livestock:goats,agriculture,Managed soils,organic manure,,,rc40 G3b: FON is the managed-manure N of the whole herd
+livestock:camels,agriculture,Manure management,^(Direct N2O|Indirect N2O \(volatilisation\))$,,,rc40 G3b: manure N2O is nitrogen excreted by every species (manure.py sums nex over all of them); the herd draw now reaches it
+livestock:camels,agriculture,Managed soils,organic manure,,,rc40 G3b: FON is the managed-manure N of the whole herd
+livestock:poultry,agriculture,Manure management,^(Direct N2O|Indirect N2O \(volatilisation\))$,,,rc40 G3b: manure N2O is nitrogen excreted by every species (manure.py sums nex over all of them); the herd draw now reaches it
+livestock:poultry,agriculture,Managed soils,organic manure,,,rc40 G3b: FON is the managed-manure N of the whole herd
+livestock:cattle,agriculture,Managed soils,"pasture(, | deposition \()cattle-type",,,"rc40 G3b: PRP_CATTLE_TYPE = dairy cattle, other cattle, buffalo, poultry (manure.py:52) - the engine's grouping, recorded not judged"
+livestock:buffalo,agriculture,Managed soils,"pasture(, | deposition \()cattle-type",,,"rc40 G3b: PRP_CATTLE_TYPE = dairy cattle, other cattle, buffalo, poultry (manure.py:52) - the engine's grouping, recorded not judged"
+livestock:poultry,agriculture,Managed soils,"pasture(, | deposition \()cattle-type",,,"rc40 G3b: PRP_CATTLE_TYPE = dairy cattle, other cattle, buffalo, poultry (manure.py:52) - the engine's grouping, recorded not judged"
+livestock:sheep,agriculture,Managed soils,"pasture(, | deposition \()sheep/goat",,,rc40 G3b: the sheep/goat/other pasture pool
+livestock:goats,agriculture,Managed soils,"pasture(, | deposition \()sheep/goat",,,rc40 G3b: the sheep/goat/other pasture pool
+livestock:camels,agriculture,Managed soils,"pasture(, | deposition \()sheep/goat",,,rc40 G3b: the sheep/goat/other pasture pool
+crop:rice,agriculture,Managed soils,crop residues,,,rc40 G3b: FCR loops over every crop with a residue ratio (soils.residue_N)
+crop:wheat,agriculture,Managed soils,crop residues,,,rc40 G3b: FCR loops over every crop with a residue ratio (soils.residue_N)
+crop:maize,agriculture,Managed soils,crop residues,,,rc40 G3b: FCR loops over every crop with a residue ratio (soils.residue_N)
+crop:cotton,agriculture,Managed soils,crop residues,,,rc40 G3b: FCR loops over every crop with a residue ratio (soils.residue_N)
+crop:sugarcane,agriculture,Managed soils,crop residues,,,rc40 G3b: FCR loops over every crop with a residue ratio (soils.residue_N)
+factor:gas_prod_high,fugitives,,^Gas production,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:gas_gathering,fugitives,,^Gas gathering,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:gas_processing_high,fugitives,,^Gas processing,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:gas_processing_sour,fugitives,,^Sour-gas processing,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:gas_transmission_high_km,fugitives,,^Gas transmission,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:gas_distribution_high_km,fugitives,,^Gas distribution,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:lng_import,fugitives,,^LNG import,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:oil_prod_high,fugitives,,^Oil production,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:oil_transport_pipeline,fugitives,,^Oil pipeline,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:oil_refining,fugitives,,^Oil refining,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:post_meter_appliance,fugitives,,^Post-meter appliances,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+factor:post_meter_industrial,fugitives,,^Post-meter industrial,,factor,rc41 (P-1): the segment's 2019 Refinement factor family (one member per gas; select rule + gas bindings); the stream's factor field was unresolved because nothing scoped it
+lng_import_terminals,fugitives,,^LNG import,,activity,rc41: the LNG terminal throughput the two LNG streams multiply
+industry:OCAC Total Industry liquid fuels,industry,,^Industrial,,activity,rc41: the OCAC Total Industry liquid-product control every liquid stream draws its activity from
+factor:ch4:Liquid Fuels,industry,,^Industrial .* CH4$,,factor,rc41: the engine's one Table 2.3 CH4 factor for liquid fuels (ind_ch4_liquid); the shared per-fuel groups fuel_of names are excluded for industry (parameter_scope_exclusions)
+factor:n2o:Liquid Fuels,industry,,^Industrial .* N2O$,,factor,rc41: the engine's one Table 2.3 N2O factor for liquid fuels (ind_n2o_liquid)
+factor:ch4:Oil,power,Electricity,^(Diesel Oil|Furnace Oil) CH4$,,factor,rc41: the engine's Table 2.2 oil CH4 factor (pow_ch4_oil) - one row for both oils; the per-fuel shared groups are excluded for power
+factor:n2o:Oil,power,Electricity,^(Diesel Oil|Furnace Oil) N2O$,,factor,rc41: the engine's Table 2.2 oil N2O factor (pow_n2o_oil)
+power:Bagasse heat rate,power,Electricity,^Bagasse,,activity,rc41: bagasse cogeneration fuel = generation x the declared heat rate; the NEPRA TOE rows carry no bagasse row
+factor:ch4:Other Primary Solid Biomass,power,Electricity,^Bagasse CH4$,,factor,rc41: pow_ch4_bagasse (Table 2.2 biomass CH4); the ef prefix binds the power member
+factor:n2o:Other Primary Solid Biomass,power,Electricity,^Bagasse N2O$,,factor,rc41: pow_n2o_bagasse
+factor:ch4:Wood/Wood Waste,residential,,^Firewood CH4$,,factor,rc41: res_ch4_wood (Table 2.5)
+factor:n2o:Wood/Wood Waste,residential,,^Firewood N2O$,,factor,rc41: res_n2o_wood
+factor:ncv:Wood/Wood Waste,residential,,^Firewood,,conversion,rc41: firewood mass to energy (res_ncv_wood)
+factor:ch4:Charcoal,residential,,^Charcoal CH4$,,factor,rc41: res_ch4_charcoal
+factor:n2o:Charcoal,residential,,^Charcoal N2O$,,factor,rc41: res_n2o_charcoal
+factor:ncv:Charcoal,residential,,^Charcoal,,conversion,rc41: res_ncv_charcoal
+factor:ch4:Other Primary Solid Biomass,residential,,^(Dung cake|Crop residues) CH4$,,factor,rc41: res_ch4_dung - the engine's one biomass CH4 factor for dung cake and crop residues (combustion.BIOMASS_FUELS)
+factor:n2o:Other Primary Solid Biomass,residential,,^(Dung cake|Crop residues) N2O$,,factor,rc41: res_n2o_dung
+factor:ncv:Other Primary Solid Biomass,residential,,^(Dung cake|Crop residues),,conversion,"rc41: res_ncv_dung, the biomass calorific value both streams convert with"
+clinker_factor,ippu,,^Clinker,,factor,rc41: the clinker CO2 emission factor the census route multiplies
+waste:swds_docf,waste,,^Managed and unmanaged,,factor,"rc41 role: DOCf is a decomposition factor, filed as one (it sat in the activity column by name)"
+waste:swds_k,waste,,^Managed and unmanaged,,factor,rc41 role: the FOD rate constant
+waste:swds_f,waste,,^Managed and unmanaged,,factor,rc41: the methane fraction of landfill gas
+waste:swds_mcf,waste,,^Managed and unmanaged,,factor,"rc41: the methane correction factor by disposal class (structural, not sampled - named here as the factor it is)"
+ef:waste_ch4,waste,,^Open waste burning CH4$,,factor,rc41: the open-burning CH4 factor (Eq 5.4)
+ef:waste_n2o,waste,,^Open waste burning N2O$,,factor,rc41: the open-burning N2O factor (Eq 5.5)
+waste:oxidation_factor,waste,,^Open waste burning CO2,,factor,rc41: the oxidation factor of Eq 5.2
+waste:dry_matter,waste,,^Open waste burning,,conversion,rc41: wet mass to dry matter
+waste:ww_bo,waste,,^Domestic wastewater CH4$,,factor,"rc41 role: Bo, the maximum methane producing capacity (Eq 6.2)"
+waste:ww_bod_g_per_cap_day,waste,,^Domestic wastewater CH4$,,activity,rc41 role: the organic load (TOW = population x BOD) is the activity of Eq 6.1
+waste:ww_mcf_sewer,waste,,^Domestic wastewater CH4$,,factor,rc41: the sewer MCF (the sewer-regime mixture is a structural configuration beside it)
+waste:ww_mcf_septic,waste,,^Domestic wastewater CH4$,,factor,rc41: the septic MCF
+waste:ww_mcf_latrine,waste,,^Domestic wastewater CH4$,,factor,rc41: the latrine MCF
+waste:ww_ef_effluent,waste,,^Domestic wastewater N2O$,,factor,rc41 role: the effluent N2O factor (Eq 6.7); it sat in the activity column by name
+waste:ww_f_npr,waste,,^Domestic wastewater N2O$,,conversion,rc41 role: protein to nitrogen
+waste:protein supply (FAOSTAT),waste,,^Domestic wastewater N2O$,,activity,rc41: the per-capita protein supply the N2O load rests on (Eq 6.10)
+clinker_fraction_census_implied,ippu,Cement production,^Clinker,,conversion,"rc50: the census-implied clinker-in-cement fraction every back-year's clinker balance multiplies - one quantity, one draw across the nine years"
+ammonia_activity,ippu,^Ammonia production$,,,activity,rc52: NFDC production x NH3 stoichiometry - a statistic per year (resamples)
+ammonia_factor,ippu,^Ammonia production$,,,factor,rc52: the calibrated 1.815 t CO2/t NH3 - one quantity every year multiplies (persists); with ammonia_activity it is exactly the component's declared width
+steel_activity,ippu,^Iron and steel production$,,,activity,rc52: QIM billets and ingots per year (resamples)
+steel_factor,ippu,^Iron and steel production$,,,factor,rc52: the IPCC Tier 1 EAF factor (persists)
+lubricant_activity,ippu,^Lubricant use$,,,activity,rc52: OCAC lubes and greases sold per year (resamples)
+lubricant_odu,ippu,^Lubricant use$,,,factor,rc52: the ODU fraction (persists); the grease row shares the oil row's declared +-50 percent

@@ -1,0 +1,4 @@
+pollutant,emissions_kt,uncert_pct,source,label
+TSP,0.020391,150.0,TNO 2024 R10284 s4.3.3: total wear (TSP) 182 mg/kg diesel for diesel trains,"EXPLORATORY - wear PM, not exhaust; never added to the EMEP layer"
+PM10,0.014585,150.0,"TNO 2024 R10284, Rail emissions (update of the Dutch national emission factors), s4.3.3: brake, wheel and rail wear anchored on the Austrian 0.23 mg/tonne-km measurement, translated to 110 mg/litre","EXPLORATORY - wear PM, not exhaust; never added to the EMEP layer"
+PM2.5,0.003646,100.0,TNO 2024 R10284 s4.3.3: 'about half of the total wear is expected to be less than 10 micron and 25% thereof below PM2.5',"EXPLORATORY - wear PM, not exhaust; never added to the EMEP layer"

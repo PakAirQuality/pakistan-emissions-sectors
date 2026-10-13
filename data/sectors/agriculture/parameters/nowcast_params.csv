@@ -1,0 +1,32 @@
+param,value,unit,source,note
+pm25_ef_g_per_kg,7.6,g PM2.5/kg dry matter,Akagi et al. 2011 ACP / Andreae 2019 crop-residue mean (same value as burning Gef_PM25 in emission_factors.csv),
+dm_kg_per_frp_mw,1325,kg dry matter combusted per MW FRP per detection,Wooster 2005 combustion coeff 0.368 kg/MJ x 3600 s nominal 1-h burn,"Rough FRP->biomass-combusted conversion for the bottom-up cross-check only; absorbs per-detection burn-duration and observation-density assumptions (order-of-magnitude)"
+cropland_frac_min,0.15,fraction,project heuristic (ESA WorldCover class-40 fraction),Minimum cropland fraction at a detection cell to treat it as an agricultural fire
+cropland_frac_high,0.40,fraction,project heuristic,At/above this cropland fraction crop attribution confidence is 'high'
+cropland_frac_industrial_max,0.05,fraction,project heuristic,"Below this cropland fraction an off-calendar fire is flagged brick-kiln/industrial (Pakistan kilns sit on low-vegetation peri-urban land)"
+calendar_rice_start_month,10,month,IGC / provincial crop calendar,Rice (basmati) residue-burning season start (Oct)
+calendar_rice_end_month,12,month,IGC / provincial crop calendar,Rice residue-burning season end (Dec)
+calendar_wheat_start_month,4,month,IGC / provincial crop calendar,Wheat residue-burning season start (Apr)
+calendar_wheat_end_month,5,month,IGC / provincial crop calendar,Wheat residue-burning season end (May)
+rice_s1_vv_flood_threshold_db,-16,dB,"Sentinel-1 GRD VV; standing water is specular (Torres 2012; common paddy-flood threshold -14 to -17 dB)",Below this weekly-mean VV a rice pixel is flagged flooded/standing-water
+rice_temp_ref_c,30,degC,project heuristic (rice-belt peak-season mean),Reference temperature for the CH4-temperature modifier
+rice_temp_response_per_c,0.05,per degC,"van der Gon 2000 / Yan 2005 rice CH4 temperature sensitivity (~Q10 1.6)",Exponential CH4-flux response per degC used to build the weekly temperature modifier
+rice_awd_sfw,0.52,factor,IPCC 2006 V4 Ch5 Table 5.12 (multiple aeration),AWD water regime SFw used in the mitigation scenario (vs continuous 1.0)
+n2o_temp_ref_c,25,degC,project heuristic (soil-microbial reference),Reference soil temperature for the N2O Q10 response
+n2o_temp_response_per_c,0.08,per degC,"Q10~2.2 soil N2O microbial response (Smith 2003; Butterbach-Bahl 2013)",Exponential N2O response per degC soil temperature
+n2o_wfps_ref,0.30,m3/m3,"SMAP sm_surface reference (WFPS proxy)",Soil-moisture scale for the water-filled-pore-space response
+n2o_wfps_shape,2.0,exponent,"denitrification rises steeply with moisture (Davidson 2000 hole-in-pipe)",Shape exponent for the moisture response saturating curve
+n2o_rain_pulse_mm,10,mm/day,"birch-effect wetting threshold (Jarvis 2007; Leitner 2017)",Daily rainfall scale that triggers a rewetting N2O pulse
+n2o_rain_pulse_gain,1.5,factor,"observed rewetting pulse amplification (Birch 1964; Kim 2012)",Maximum multiplicative amplification from a rain-wetting pulse
+n2o_pulse_decay_days,21,days,"applied-N reactive residence (~3 weeks; Bouwman 2002)",Exponential decay time for fertilizer-N availability after application
+n2o_alert_percentile,95,percentile,project heuristic,Province-days above this risk percentile are flagged as pulse alerts
+manure_mcf_temp_ref_c,20,degC,"IPCC 2019 V4 Ch10 MCF-temperature (annual-mean reference)",Reference temperature for the manure-CH4 MCF seasonal multiplier
+manure_mcf_response_per_c,0.05,per degC,"IPCC 2019 MCF rises with temperature (van der Weerden 2021; ~Q10 1.6 solid/drylot systems)",Monthly manure-CH4 temperature response per degC
+enteric_ndvi_ref,0.35,NDVI,"MODIS annual-mean rangeland/cropland NDVI (Indus)",Reference NDVI for the mild enteric fodder-quality modulation
+enteric_ndvi_gain,0.15,factor,"project heuristic (enteric is near-aseasonal; small fodder-quality effect)",Max fractional enteric modulation from fodder availability (keeps enteric ~flat)
+forest_treecover_min_pct,10,percent,"Hansen GFC / IPCC forest definition (>=10% canopy)",Minimum tree-cover-2000 to count a Hansen loss pixel as forest
+land_change_alert_ha,500,ha/yr,project heuristic,Province-year forest loss above this is flagged a deforestation hotspot alert
+mangrove_divergence_pct,50,percent,project heuristic,Observed vs backbone-assumed mangrove rate differing by more than this is flagged 'diverging'
+
+
+

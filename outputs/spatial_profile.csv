@@ -1,0 +1,22 @@
+scope,spatial_method,meaning,co2e_Mt_AR5,share_of_scope_pct
+NATIONAL,NA,"no sub-provincial placement: controlled at ADM1 and retained there, not spread",0.2514,0.06
+NATIONAL,S1,"native source geometry (facility coordinate, network segment, trajectory)",50.1644,11.27
+NATIONAL,S2,facility or network proxy without per-object activity,75.1077,16.88
+NATIONAL,S3,"administrative statistic (provincial sales, registrations, census counts)",319.432,71.79
+agriculture,S3,"administrative statistic (provincial sales, registrations, census counts)",223.4545,100.0
+aviation,NA,"no sub-provincial placement: controlled at ADM1 and retained there, not spread",0.2514,83.47
+aviation,S1,"native source geometry (facility coordinate, network segment, trajectory)",0.0498,16.53
+fugitives,S1,"native source geometry (facility coordinate, network segment, trajectory)",10.0953,42.96
+fugitives,S2,facility or network proxy without per-object activity,0.129,0.55
+fugitives,S3,"administrative statistic (provincial sales, registrations, census counts)",13.2751,56.49
+industry,S2,facility or network proxy without per-object activity,13.5719,60.1
+industry,S3,"administrative statistic (provincial sales, registrations, census counts)",9.0098,39.9
+ippu,S2,facility or network proxy without per-object activity,21.8156,85.43
+ippu,S3,"administrative statistic (provincial sales, registrations, census counts)",3.7197,14.57
+power,S1,"native source geometry (facility coordinate, network segment, trajectory)",40.0194,87.78
+power,S2,facility or network proxy without per-object activity,5.5702,12.22
+railways,S2,facility or network proxy without per-object activity,0.3944,100.0
+residential,S3,"administrative statistic (provincial sales, registrations, census counts)",24.2204,100.0
+transport,S3,"administrative statistic (provincial sales, registrations, census counts)",41.9262,100.0
+waste,S2,facility or network proxy without per-object activity,33.6266,89.78
+waste,S3,"administrative statistic (provincial sales, registrations, census counts)",3.8263,10.22

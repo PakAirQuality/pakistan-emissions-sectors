@@ -1,0 +1,12 @@
+product,offtake_product_tonnes,n_content_frac,nitrogen_t,share_of_N,ef_nh3n_per_kg_n_highpH,contribution,note
+Urea,6578838.0,0.46,3026265.48,0.8077692794,0.17,0.137320777493,
+DAP,1615430.0,0.18,290777.4,0.0776141592,0.154,0.011952580522,
+CAN,792532.0,0.26,206058.32,0.0550009845,0.043,0.002365042332,
+NP,1012222.0,0.2,202444.4,0.0540363587,0.154,0.008321599245,
+AS,69499.0,0.21,14594.79,0.0038956341,0.154,0.000599927651,
+NPKs,41081.0,0.15,6162.15,0.001644798,0.154,0.000253298895,
+MAP,1321.0,0.11,145.31,3.87861e-05,0.154,5.973055e-06,
+SSP,91916.0,0.0,0.0,0.0,,,carries no nitrogen; tonnage shown for the offtake it represents
+SOP,57953.0,0.0,0.0,0.0,,,carries no nitrogen; tonnage shown for the offtake it represents
+MOP,14375.0,0.0,0.0,0.0,,,carries no nitrogen; tonnage shown for the offtake it represents
+TOTAL,10275167.0,,3746447.85,1.0,,0.160819199194,weighted FracGASF over 2023-24; annexe nitrogen 3746448 t N vs the audited activity datum 3775000 t N (0.756% lower) - the annexe supplies COMPOSITION only

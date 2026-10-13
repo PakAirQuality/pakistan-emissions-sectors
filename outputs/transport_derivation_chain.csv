@@ -1,0 +1,81 @@
+# THE DERIVATION CHAIN: the published source, the corrections, what the engine used,
+# and the result - one walk, in the order a reader meets it. Every value is READ from
+# the file named in evidence_file; nothing here is recomputed. A stage a sector has no
+# artifact for is declared absent in a row rather than skipped.
+# Registry: data/verification_chain.csv. See pkinv.report.derivation_chain.
+stage,step,section,subject,item,kind,value,unit,evidence_file,note
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,National internal HSD sales,opening,6234.221,kt,outputs/transport_fuel_ledger_2024.csv,The printed total the customer classes sum to exactly.
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Domestic,claim,0.0,kt,outputs/transport_fuel_ledger_2024.csv,household HSD; nil in FY2023-24
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Agriculture (bulk),claim,0.0,kt,outputs/transport_fuel_ledger_2024.csv,"OCAC books ZERO bulk HSD to Agriculture in all nine editions (its agriculture row is LDO, 11,822 t) - the agricultural diesel claim is retail-channel only, inside Road"
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Industry,claim,400.4,kt,outputs/transport_fuel_ledger_2024.csv,"bulk industrial deliveries, incl. whatever captive generation buys in bulk; excluded from the road control by construction"
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Railways,claim,107.932,kt,outputs/transport_fuel_ledger_2024.csv,"cross-checked against the Year Book on two bases: the matched FY2023-24 pair (112.0 kt metered vs 107.9 kt sold, 3.8% apart) and the FY2021-22 historical bracket (120.1 kt, 11.2%) - two unrelated reporting chains, the boundary's one independent check"
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Domestic bunkers,claim,3.054,kt,outputs/transport_fuel_ledger_2024.csv,"domestic navigation - a visible quantity, not an absent mode. The screening conversion on IPCC water-borne factors is computed per edition in outputs/transport_navigation_screen_2024.csv rather than quoted here: a hard-coded Mt figure in this note sat at the FY2021-22 value for two editions while the row underneath it halved"
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Power,claim,41.141,kt,outputs/transport_fuel_ledger_2024.csv,utility liquid fuel; NEPRA's independent series bounds it
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Government,claim,130.252,kt,outputs/transport_fuel_ledger_2024.csv,government fuel incl. military and government aviation/bunkers rows
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Diesel,Road (retail pump sales),closing,5551.442,kt,outputs/transport_fuel_ledger_2024.csv,"A customer class, not an end use: the road tier below partitions it."
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Petrol,National internal MS+HOBC sales,opening,7251.974,kt,outputs/transport_fuel_ledger_2024.csv,
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Petrol,Industry,claim,25.656,kt,outputs/transport_fuel_ledger_2024.csv,bulk industrial petrol
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Petrol,Government,claim,16.908,kt,outputs/transport_fuel_ledger_2024.csv,government fleets and aviation ground use
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Petrol,Domestic,claim,0.0,kt,outputs/transport_fuel_ledger_2024.csv,household petrol delivered outside the retail pump channel; nil in FY2023-24
+1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",Petrol,Road (retail pump sales),closing,7209.41,kt,outputs/transport_fuel_ledger_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Two-wheelers,source,20313397.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Three-wheelers,source,710090.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Cars (small),source,2287560.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Cars (large/SUV),source,12257.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Taxis,source,70878.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Light duty,source,420121.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Buses,source,166282.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Heavy duty,source,246354.0,vehicles,outputs/transport_class_parameters_2024.csv,
+1_source,20,"the registered vehicle fleet, by class",,Off-road (mixed),source,959174.0,vehicles,outputs/transport_class_parameters_2024.csv,
+3_correction,30,"the fuel bridge: what came off the published row, and why",Petrol,OCAC Road row (MS + HOBC),opening,7209.41,kt,outputs/transport_fuel_bridge_2024.csv,"the customer-class row as published, before any carve-out"
+3_correction,30,"the fuel bridge: what came off the published row, and why",Petrol,less household generators,deduction,-56.3282,kt,outputs/transport_fuel_bridge_2024.csv,"relayed from the residential sector; subtracted in MASS, before the calorific conversion"
+3_correction,30,"the fuel bridge: what came off the published row, and why",Petrol,operative petrol control,closing,7153.0818,kt,outputs/transport_fuel_bridge_2024.csv,what the engine distributes - and what the fuel table prints
+3_correction,30,"the fuel bridge: what came off the published row, and why",Diesel,OCAC Road row (HSD),opening,5551.442,kt,outputs/transport_fuel_bridge_2024.csv,"no deduction applies at this stage: Railways is its own OCAC row, so the printed diesel energy IS the gross row - unlike petrol"
+3_correction,30,"the fuel bridge: what came off the published row, and why",Diesel,less off-road partition,partition,-492.4848,kt,outputs/transport_fuel_bridge_2024.csv,"energy-weighted share of the same normalisation that splits the on-road classes; a partition, not a deduction - the fuel stays in the inventory"
+3_correction,30,"the fuel bridge: what came off the published row, and why",Diesel,operative on-road control,closing,5058.9572,kt,outputs/transport_fuel_bridge_2024.csv,the 1A3b diesel energy
+3_correction,30,"the fuel bridge: what came off the published row, and why",Diesel,off-road partition (memo),memo,492.4848,kt,outputs/transport_fuel_bridge_2024.csv,"reported as its own category, not excluded"
+3_correction,30,"the fuel bridge: what came off the published row, and why",CNG,OGRA metered sector gas,opening,23875.9,TJ,outputs/transport_fuel_bridge_2024.csv,"a third control on its own activity basis; no share of either petroleum control, which is why it cannot appear in the claimant ledger"
+3_correction,30,"the fuel bridge: what came off the published row, and why",CNG,x gross-to-net 0.90,conversion,-2387.6,TJ,outputs/transport_fuel_bridge_2024.csv,IPCC net calorific convention
+3_correction,30,"the fuel bridge: what came off the published row, and why",CNG,operative CNG control,closing,21488.3,TJ,outputs/transport_fuel_bridge_2024.csv,what the CNG stream burns
+3_correction,30,"the fuel bridge: what came off the published row, and why",--,"Table asymmetry, stated",note,0.0,TJ,outputs/transport_fuel_bridge_2024.csv,the published fuel table prints petrol NET of the generator carve-out (316882 TJ) beside diesel GROSS of the off-road partition (238712 TJ). Gross petrol is 319377 TJ. Both printed numbers are correct; this row is the label they were missing.
+3_correction,40,"every claimant on the Road control, the unresolved included",Diesel,Off-road machinery,claim,492.4848,kt,outputs/transport_fuel_ledger_2024.csv,"The class absorbs the source workbook's 'Other vehicles' residual, so construction machinery that IPCC books to 1A2 gvii is inside it - declared, and priced by the offroad_reallocated_1a2 scenario."
+3_correction,40,"every claimant on the Road control, the unresolved included",Diesel,On-road transport,closing,5058.9572,kt,outputs/transport_fuel_ledger_2024.csv,"Biased high by the unresolved claimants below, conditional on the other deductions."
+3_correction,40,"every claimant on the Road control, the unresolved included",Diesel,Stationary agricultural plant (retail),unresolved,,kt,outputs/transport_fuel_ledger_2024.csv,"Tube wells and stationary engines fuelled at retail stations. Bounded: the nine-year Road share of national HSD spans 0.826-0.908, and bulk agricultural HSD is zero."
+3_correction,40,"every claimant on the Road control, the unresolved included",Diesel,Captive generation (retail),unresolved,,kt,outputs/transport_fuel_ledger_2024.csv,Captive gensets fuelled at retail stations; the bulk captive channel is inside the Industry row above.
+3_correction,40,"every claimant on the Road control, the unresolved included",Diesel,Other retail stationary/non-road uses,unresolved,,kt,outputs/transport_fuel_ledger_2024.csv,Whatever other stationary or non-road engines buy diesel at retail pumps. Listed so the ledger does not silently assert that agriculture and captive generation are the only possibilities; the retail_nonroad_* scenarios price the whole within-channel claim at 2.5/5/10 percent of the Road row.
+3_correction,40,"every claimant on the Road control, the unresolved included",Petrol,Household generators,claim,56.3282,kt,outputs/transport_fuel_ledger_2024.csv,HIES 2024-25 generator-fuel expenditure over the administered price; exact-equality tested in tests/test_residential.py.
+3_correction,40,"every claimant on the Road control, the unresolved included",Petrol,On-road transport,closing,7153.0818,kt,outputs/transport_fuel_ledger_2024.csv,No off-road petrol claim: the fleet model's off-road class is modelled 100% diesel.
+3_correction,45,the vehicle-class split the fleet is turned into,Petrol,2W,weight,0.609992,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,CNG,3W,weight,0.45304,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Petrol,3W,weight,0.07473,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,CNG,4W1,weight,0.100136,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Petrol,4W1,weight,0.168986,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Diesel,4W2,weight,0.002378,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Petrol,4W2,weight,0.000639,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,CNG,4WT,weight,0.063784,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Petrol,4WT,weight,0.013549,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,CNG,BUS,weight,0.361645,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Diesel,BUS,weight,0.364136,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Petrol,BUS,weight,0.007679,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,CNG,HDV,weight,0.021395,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Diesel,HDV,weight,0.428387,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Diesel,LDV,weight,0.116386,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Petrol,LDV,weight,0.124424,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+3_correction,45,the vehicle-class split the fleet is turned into,Diesel,NRV,weight,0.088713,share of fuel,outputs/transport_class_fuel_weights_2024.csv,
+2_used,50,the energy the engine finally integrates,,Diesel,used,238712.0,TJ,outputs/transport_fuel_2024.csv,
+2_used,50,the energy the engine finally integrates,,Petrol,used,316882.0,TJ,outputs/transport_fuel_2024.csv,
+4_final,80,"the sector's own totals, in its own words",,Road transport,final,40.19383,Mt CO2e AR5,outputs/transport_totals_2024.csv,"1A3b, on TWO activity bases: petrol and diesel from OCAC's FY2023-24 Road customer-class rows (rail excluded by construction; generator petrol carved out by relay), and CNG from OGRA's metered sector gas. They are different fuels from different statistics and cannot double-count."
+4_final,80,"the sector's own totals, in its own words",,Mixed off-road (1A4c/1A2),final,1.73234,Mt CO2e AR5,outputs/transport_totals_2024.csv,"Reported under 1A4c ii; the class mixes agricultural machinery with the source workbook's residual bucket, incl. construction machinery IPCC books to 1A2 gvii - hence the mixed name. Carved from the same diesel control by vehicle-km share; IPCC Vol 2 Ch 3 Table 3.3.1 factors, not the road table"
+4_final,80,"the sector's own totals, in its own words",,TOTAL,final,41.92617,Mt CO2e AR5,outputs/transport_totals_2024.csv,
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: CNG at 900 Btu/scf,final,41.79798,Mt CO2e AR5,outputs/transport_totals_2024.csv,"The CNG heating value is the assumption in that stream, as it is for captive gas: OGRA reports a volume and IPCC works in net terajoules. Pakistani pipeline gas runs 900-1,000 Btu/scf and nothing read here pins it. This is the whole-sector total with CNG at 900 instead of 1,000."
+4_final,80,"the sector's own totals, in its own words",,Diagnostic: off-road N2O on the road factor,final,0.02189,Mt CO2e AR5,outputs/transport_totals_2024.csv,What 1A4c would report for N2O using Table 3.2.2 (3.9 kg/TJ) instead of Table 3.3.1 (28.6). The gap is why the table choice is pinned by a test.
+4_final,90,"every category and gas, on the national table",CH4,Road transportation,final,0.39847,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Road transportation,final,39.28474,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Road transportation,final,0.51062,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CH4,Agriculture/forestry/fishing/fish farms,final,0.00264,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Agriculture/forestry/fishing/fish farms,final,1.5692,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Agriculture/forestry/fishing/fish farms,final,0.1605,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR5,reading,41.92617,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR6,reading,41.94376,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,uncert_pct_95,reading,11.4,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,share_pct,reading,9.42,Mt CO2e / pct,outputs/national_all_sectors.csv,

@@ -1,0 +1,83 @@
+{
+  "name": "fugitives_extract_crt",
+  "producer": "pkinv.sectors.fugitives.official_reporting.extract_crt",
+  "producer_sha256": "14383289bda4823c1ff2cc2e85336cfa09dea0761e8588aa00c28b43383423a3",
+  "result": {
+    "items": [
+      {
+        "columns": [
+          "inventory_year",
+          "category",
+          "co2_kt",
+          "ch4_kt",
+          "n2o_kt",
+          "total_co2e_kt",
+          "source_reference",
+          "source_zip_file",
+          "source_zip_sha256",
+          "workbook_file",
+          "workbook_sha256"
+        ],
+        "kind": "record",
+        "path": "fugitives_extract_crt_0.csv",
+        "sha256": "8af0dea0fa195b26263b82de13dee95b101ec92276c0cf8550b6e2b9581f8bcc",
+        "types": [
+          "isffffsssss"
+        ]
+      },
+      {
+        "columns": [
+          "inventory_year",
+          "worksheet",
+          "row",
+          "category",
+          "activity_type",
+          "activity_unit",
+          "activity_value",
+          "co2_ief_kg_per_unit",
+          "ch4_ief_kg_per_unit",
+          "n2o_ief_kg_per_unit",
+          "co2_kt",
+          "ch4_kt",
+          "n2o_kt",
+          "notation_key",
+          "source_reference"
+        ],
+        "kind": "records",
+        "path": "fugitives_extract_crt_1.csv",
+        "sha256": "93bbc530ecd2780abaa8723648d1ef0805c0dd04319105fdc4d9ffca366dc1dd",
+        "types": [
+          "isissssssssssss",
+          "isisssfiinffnss",
+          "isisssiffnffnss",
+          "isisssiffsffsss",
+          "isissssssnssnss",
+          "isisnnnnnnssnss",
+          "isissssssnssnss",
+          "isisnnnnnnssnss",
+          "isissssssnssnss",
+          "isisssffinffnss",
+          "isisssfiinffnss",
+          "isisssffinffnss",
+          "isisssffinffnss",
+          "isisnnnnnnssnss",
+          "isissssssnssnss",
+          "isissssssnssnss",
+          "isisnnnnnnssnss",
+          "isisnnnnnnffnss",
+          "isissssssnssnss",
+          "isisssfifnffnss",
+          "isissssssnssnss",
+          "isisnnnnnnfffss",
+          "isissssssssssss",
+          "isisssfifffffss",
+          "isissssssssssss"
+        ]
+      }
+    ],
+    "kind": "tuple"
+  },
+  "schema": "pkinv.source_extract/v1",
+  "source": "sources/Aviation/PAK_CRT_2024.zip",
+  "source_sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+}

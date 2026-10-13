@@ -1,0 +1,47 @@
+fiscal_year,product,manufacturer,capacity_000t,production_000t,share_pct,capacity_utilization_pct,source,note
+2023-24,Urea,Fatima Fert (DHCL),,525,5.6,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,Urea,Fatima Fert (DHCL),445,543,5.7,122,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,Urea,EFERT,,2164,23.1,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,Urea,EFERT,2275,2344,24.7,103,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,Urea,PAK ARAB,,100,1.1,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (PFL)
+2024-25,Urea,PAK ARAB,99,92,1,93,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (PFL)
+2023-24,Urea,Agri Tech (Pvt.) Ltd.,,374,4.0,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (PAFL)
+2024-25,Urea,Agri Tech (Pvt.) Ltd.,430,362,3.8,84,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (PAFL)
+2023-24,Urea,FFC,,1697,18.1,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (prilled)
+2024-25,Urea,FFC,1640,1640,17.3,100,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (prilled)
+2023-24,Urea,FFC,,383,4.1,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (granular)
+2024-25,Urea,FFC,551,479,5.0,87,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (granular)
+2023-24,Urea,FFC,,825,8.8,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (PSFL)
+2024-25,Urea,FFC,718,864,9.1,120,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as Urea (PSFL)
+2023-24,Urea,Fatima Fertilizer Co.,,523,5.6,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,Urea,Fatima Fertilizer Co.,500,456,4.8,91,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,CAN,PAK ARAB,,402,4.3,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as CAN (PAR)
+2024-25,CAN,PAK ARAB,450,373,3.9,83,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as CAN (PAR)
+2023-24,CAN,Fatima Fertilizer Co.,,486,5.2,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,CAN,Fatima Fertilizer Co.,470,482,5.1,103,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,NP,PAK ARAB,,391,4.2,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as NP(PAR)
+2024-25,NP,PAK ARAB,330,400,4.2,121,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as NP(PAR)
+2023-24,NP,EFERT,,108,1.2,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,NP,EFERT,40,16,0.2,39,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,NP,Fatima Fertilizer Co.,,432,4.6,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,NP,Fatima Fertilizer Co.,490,450,4.7,92,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,DAP,FFC,,816,8.7,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as DAP-SONA
+2024-25,DAP,FFC,736,844,8.9,115,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as DAP-SONA
+2023-24,SSP,LCFL (Al Hamd),,,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,plant shut down since May 2016
+2024-25,SSP,LCFL (Al Hamd),108,,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,plant shut down since May 2016
+2023-24,SSP,Agritech Limited,,79,0.8,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,SSP,Agritech Limited,90,79,0.8,88,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,SSP,Suraj Fertilizer,,7,0.1,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,SSP,Suraj Fertilizer,150,0.1,0.0,0.04,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,SSP,Safi Chemicals,,0.1,0.0,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,SSP,Safi Chemicals,40,0.3,0.0,0.7,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,SOP,Pacific Exim Pvt. Ltd.,,18,0.2,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,SOP,Pacific Exim Pvt. Ltd.,35,25,0.3,70,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,SOP,Agven,,4,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,SOP,Agven,20,12,0.1,59,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,SOP,Akbari Group,,0,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,SOP,Akbari Group,10,4,0.0,38,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2023-24,NPK,EFERT,,27,0.3,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as NPK (Various Grades)
+2024-25,NPK,EFERT,60,41,0.44,69,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,printed as NPK (Various Grades)
+2023-24,NPK,Safi Chemicals,,,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,
+2024-25,NPK,Safi Chemicals,40,,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 1,

@@ -1,0 +1,14 @@
+result_row_id,class_id,axis,definition
+c6e6d90c907253690fa57838,E1,E,measured or metered quantity for this source and period
+897302e7d9a9461488a420a6,E2,E,"published statistic for this source and period, not independently verified"
+387fec72428e809b0b540b69,E3,E,"derived from a related published quantity (a share, a ratio, a balance)"
+69816b6118dbe4dc29ca9e46,E4,E,"declared judgement or default, with no quantity specific to this source"
+4e29f01af46593553efd1bb3,NA,S,"no sub-provincial placement: controlled at ADM1 and retained there, not spread"
+000d0c35fcdafd73041aef95,S1,S,"native source geometry (facility coordinate, network segment, trajectory)"
+0ac13047c6ae16e4ef332d98,S2,S,facility or network proxy without per-object activity
+b98bf07d9a354a6369a16a99,S3,S,"administrative statistic (provincial sales, registrations, census counts)"
+c4c77120c34a58efc74c4af2,S4,S,population or area fallback with no source-specific basis
+fb59f05fca5b832bacb908aa,T1,TE,observed monthly activity for this source and year
+cbf8c867bc41104da7af501b,T2,TE,reconstructed from cumulative or related monthly administrative records
+c1803a66076d79c99916df4b,T3,TE,"process-based seasonal profile (degree days, crop calendar, fire counts)"
+65807c9eb7ade8246bb40921,T4,TE,flat or weakly-informed profile; no monthly evidence for this source

@@ -1,0 +1,6 @@
+material,flow,amount_kt,sign_in_production_balance,source_reference
+clinker,clinker in cement,29674.5,1,pbs_qim_fy2023_24
+clinker,imports for consumption,26.131,-1,"UN Comtrade public API; reporter 586, partner World, flow M; UN Comtrade public API; reporter 586, partner World, flow X"
+clinker,exports,3792.074,1,"UN Comtrade public API; reporter 586, partner World, flow M; UN Comtrade public API; reporter 586, partner World, flow X"
+clinker,stock increase,0.0,1,no public FY2023-24 stock control; zero reference assumption
+clinker,inferred domestic production,33440.443,0,IPCC Equation 2.1/worksheet balance

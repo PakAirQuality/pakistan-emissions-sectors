@@ -1,0 +1,6 @@
+benchmark_id,source,year_label,official_Mt_co2e,own_Mt_co2e,ratio_official_over_own,implied_diesel_kt,metered_diesel_kt,implied_over_metered,match_basis
+bur1,Pakistan's First Biennial Update Report to the UNFCCC (2022),FY2017-18,4.06,0.46635,8.70591,1274.20519,132.15462,9.64178,"matched fiscal year, identical method and GWP basis"
+crt2022,"Pakistan's first UNFCCC Common Reporting Tables (filed 2024): sources/Aviation/PAK_CRT_2024.zip, ENERGY-PAK-CRT.xlsx, Table1.A(a)s3",CY2022,4.25943,0.36772,11.58328,1316.48906,104.35539,12.61544,calendar 2022 straddles FY2021-22 and FY2022-23; own value is their mean
+inc1994,"Pakistan's Initial National Communication on Climate Change (2003), National GHG Inventory chapter",FY1993-94,0.5575,0.6331,0.88059,,,,"point year against the 1990-95 quinquennial indicative value (fuel history incl. furnace-oil traction); a magnitude check, not a point match"
+tnc2021,"Pakistan's Third National Communication (June 2025), Chapter 2: National greenhouse gas inventory (2020-21)",CY2021,,,,,,,railways not separately reported - 1.A.3 aggregate only
+btr2024,"Pakistan's First Biennial Transparency Report (2024), national inventory chapter",FY2020-21,,,,,,,railways not separately reported - 1.A.3 aggregate only

@@ -1,0 +1,6 @@
+# THE PARSE'S OWN ACCOUNTING, one row. Denominators live here so that a count published in the paper - two quarantined
+# rows, 144 comparisons - is read against the size of what was parsed rather than on its own. shift_mutation_caught is
+# the positive control: comparisons that break when a one-month shift is injected, without which a clean result is
+# indistinguishable from a check that tests nothing.
+months_parsed,product_cells,rows_quarantined,months_closing_internal_control,months_closing_overseas_control,comparisons,comparisons_disagreeing,comparisons_exact,max_relative_delta_pct,shift_mutation_caught,shift_mutation_comparisons,editions_superseded
+36,6055,2,36,36,144,0,132,0.1411,141,144,1

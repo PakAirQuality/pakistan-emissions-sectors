@@ -1,0 +1,5 @@
+fiscal_year,model,structural_scenario,mean_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,parametric_inputs
+2023,aggregate_movement,representative_stage,0.30121213417679393,0.16454110749206788,0.2878007370177562,0.5136742268155684,"activity, stage length, emission factors"
+2023,fuel_bridge,literal_customer,1.1371571136776664,1.081147568909646,1.1366680740427888,1.195282588188233,fuel-carbon conversion only; mapping is structural
+2023,fuel_bridge,movement_count,0.33991065792996367,0.3229149153733361,0.3398520184650176,0.3574078354164327,fuel-carbon conversion only; mapping is structural
+2023,fuel_bridge,flight_fuel_weighted,0.29196314968938664,0.27764801680987305,0.29185212367958446,0.3069550202663087,fuel-carbon conversion only; mapping is structural

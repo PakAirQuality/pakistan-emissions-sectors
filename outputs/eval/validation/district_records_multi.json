@@ -1,0 +1,90 @@
+{
+  "checks": [
+    {
+      "category": "Rice cultivation",
+      "record": "district rice area (MNFSR Table 2)",
+      "record_source": "district_rice_area_MNFSR_2022-23.csv",
+      "n_model_districts": 102,
+      "n_record_districts": 82,
+      "n_matched": 66,
+      "note": "model per-district Rice cultivation (Mt CO2e) vs official district rice area (MNFSR Table 2); rank comparison",
+      "spearman_rho": 0.917,
+      "p_value": 0.0,
+      "top10_overlap": 0.8,
+      "top15_overlap": 0.867,
+      "top20_overlap": 0.85,
+      "per_province": {
+        "Punjab": {
+          "n": 29,
+          "spearman_rho": 0.959,
+          "p": 0.0
+        },
+        "Sindh": {
+          "n": 12,
+          "spearman_rho": 0.734,
+          "p": 0.00654
+        },
+        "Balochistan": {
+          "n": 5,
+          "spearman_rho": 0.2,
+          "p": 0.74706
+        }
+      }
+    },
+    {
+      "category": "Managed soils",
+      "record": "district wheat area (MNFSR Table 1)",
+      "record_source": "district_wheat_area_MNFSR_2022-23.csv",
+      "n_model_districts": 115,
+      "n_record_districts": 130,
+      "n_matched": 85,
+      "note": "model per-district Managed soils (Mt CO2e) vs official district wheat area (MNFSR Table 1); rank comparison",
+      "spearman_rho": 0.845,
+      "p_value": 0.0,
+      "top10_overlap": 0.7,
+      "top15_overlap": 0.6,
+      "top20_overlap": 0.7,
+      "per_province": {
+        "Punjab": {
+          "n": 28,
+          "spearman_rho": 0.763,
+          "p": 0.0
+        },
+        "Sindh": {
+          "n": 17,
+          "spearman_rho": 0.289,
+          "p": 0.2602
+        },
+        "Khyber Pakhtunkhwa": {
+          "n": 20,
+          "spearman_rho": 0.484,
+          "p": 0.03051
+        },
+        "Balochistan": {
+          "n": 20,
+          "spearman_rho": 0.795,
+          "p": 3e-05
+        }
+      }
+    }
+  ],
+  "no_independent_record": [
+    {
+      "category": "Enteric fermentation",
+      "reason": "district split uses PBS 2024 census head-counts; the census is the only district livestock statistic, so an independent records check would be circular"
+    },
+    {
+      "category": "Manure management",
+      "reason": "same PBS 2024 census basis as enteric -- no independent district record"
+    },
+    {
+      "category": "Field burning of residues",
+      "reason": "district split is satellite FIRMS active fire; no official district crop-residue-burning record is published"
+    },
+    {
+      "category": "Urea application",
+      "reason": "district split is fertiliser/cropland proxy; no district-wise urea/lime offtake record is published"
+    }
+  ],
+  "summary": "Independent government crop-area records validate the district geography of the two crop-driven categories; livestock/fire/liming have no independent district record and are reported as gaps."
+}

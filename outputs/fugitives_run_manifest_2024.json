@@ -1,0 +1,144 @@
+{
+  "anchor_fiscal_year": 2024,
+  "field_observation_permutation": {
+    "base_seed": 42,
+    "iterations": 10000,
+    "null_models": [
+      "national",
+      "within_province"
+    ]
+  },
+  "generated_outputs": [
+    "fugitives_assumption_audit_2024.csv",
+    "fugitives_benchmark_crosswalk.csv",
+    "fugitives_by_stream_2024.csv",
+    "fugitives_completeness_2024.csv",
+    "fugitives_conditional_intervals_2024.csv",
+    "fugitives_data_priorities_2024.csv",
+    "fugitives_distribution_practice_evidence_2024.csv",
+    "fugitives_distribution_shape_sensitivity_2024.csv",
+    "fugitives_gas_flow_balance_2022_2024.csv",
+    "fugitives_infrastructure_segment_timeseries_2016_2024.csv",
+    "fugitives_infrastructure_timeseries_2016_2024.csv",
+    "fugitives_mars_flare_matches_2024.csv",
+    "fugitives_mars_plumes.csv",
+    "fugitives_mars_sources.csv",
+    "fugitives_mars_summary.csv",
+    "fugitives_method_ladder_2024.csv",
+    "fugitives_monthly_2024.csv",
+    "fugitives_observation_field_evaluation_2024.csv",
+    "fugitives_observation_field_statistics_2024.csv",
+    "fugitives_observation_match_audit_2024.csv",
+    "fugitives_observation_permutation_2024.csv",
+    "fugitives_observation_provincial_evaluation_2024.csv",
+    "fugitives_observation_statistics_2024.csv",
+    "fugitives_official_matched_2022.csv",
+    "fugitives_post_meter_end_use_2024.csv",
+    "fugitives_post_meter_factor_lineage_2024.csv",
+    "fugitives_provincial_2024.csv",
+    "fugitives_qa_2024.csv",
+    "fugitives_segment_ledger_2024.csv",
+    "fugitives_segment_native_gases_2024.csv",
+    "fugitives_structural_factorial_2024.csv",
+    "fugitives_structural_scenarios_2024.csv",
+    "fugitives_timeseries_2011_2025.csv",
+    "fugitives_totals_2024.csv",
+    "fugitives_ufg_diagnostic_2024.csv",
+    "fugitives_ufg_network_compatibility_2024.csv",
+    "fugitives_uncertainty_2024.csv",
+    "fugitives_uncertainty_attribution_2024.csv",
+    "fugitives_uncertainty_inputs_2024.csv",
+    "fugitives_unfccc_crt_cell_audit.csv",
+    "fugitives_unfccc_crt_common_metric.csv",
+    "fugitives_unfccc_crt_fiscal_bracket_2022.csv",
+    "fugitives_unfccc_crt_reproduction.csv",
+    "fugitives_unfccc_crt_rows.csv",
+    "fugitives_unfccc_crt_total.csv",
+    "fugitives_unfccc_crt_waterfall_2022.csv",
+    "fugitives_upstream_gas_disposition_2022_2024.csv",
+    "fugitives_viirs_flare_memo_2024.csv",
+    "fugitives_viirs_flare_sites.csv",
+    "fugitives_viirs_flaring_2012_2025.csv"
+  ],
+  "infrastructure_history": "FY2015-16 through FY2023-24; no interpolation",
+  "inventory": "Pakistan oil and gas fugitives",
+  "method": "IPCC 2019 Refinement used with the 2006 Guidelines",
+  "monte_carlo": {
+    "conditional_configurations": [
+      "reference",
+      "central",
+      "lower_practices",
+      "no_post_meter_industrial",
+      "minimum_coverage_combined"
+    ],
+    "iterations": 10000,
+    "legacy_distribution": "bounded log-uniform",
+    "refinement_distribution": "bounded split triangular",
+    "seed": 42,
+    "structural_configurations": 280
+  },
+  "qa_passed": true,
+  "reference_configuration": "higher/default technologies and pipeline-length T&D",
+  "sources": [
+    {
+      "path": "sources/IPCC/19R_V2_4_Ch04_Fugitive_Emissions.pdf",
+      "sha256": "167b86c53575063facbd3a1814489ed0278894a4e238d50d7d75646b8e8c618e"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2023-24.pdf",
+      "sha256": "9de0ae7e48deefb9cdc907e829d52eefd1b3bed66b3269c6be6c1997cec8634d"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2021-22.pdf",
+      "sha256": "1d5cfbfd1327ecbf2da49c068b334b0b6faf9fc7e4f9a17709b1529a5ebf787c"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2022-23.pdf",
+      "sha256": "16d0e9845d6749095e3edd345e7c997856a0116ee843b7b9552b2a4c54377135"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2015-16.pdf",
+      "sha256": "593e7616e58651aa5dad9ce192ac1fa8bcd1f419b7f3ecc83f1297cfdad326b4"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2016-17.pdf",
+      "sha256": "674c17b2772b7d404f3f9d949bd17cb7e62959ed33050e56a8aed5849d0efa93"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2017-18.pdf",
+      "sha256": "c18d8ccbc771731a5c9f9ba00c2677a413bf450c27f84e839bb76fbd1991877c"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2018-19.pdf",
+      "sha256": "8dc93d105f7c34378b6485087758b1ce254d700452148b9e27f48a668953310b"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2019-20.pdf",
+      "sha256": "12470af76b075e082b1ffa7af68f9876944e5d4ee588a66054c55cc367666c59"
+    },
+    {
+      "path": "sources/OGRA/ogra_state_of_industry_2020-21.pdf",
+      "sha256": "6f05d88dd95bbf9893efebeb643a0f073ca2544f31860c9c0418e9a4125306ed"
+    },
+    {
+      "path": "data/gis/PAK_ADM1.geojson",
+      "sha256": "c7ff4e70bcf740cfba47b871a7c2b2b2b243b59e4c0656e6e1bc2a64e295d93a"
+    },
+    {
+      "path": "data/gis/BOUNDARY_SOURCES.json",
+      "sha256": "ee5567b95bee85dd6d700a6bbbcec2b1f34cce2710ee6c27d28b0970c6dfdd49"
+    },
+    {
+      "path": "sources/Fugitives/world_bank_flare_sites_2012_2025.xlsx",
+      "sha256": "8f00b83a29fbc9e08fd08575c09425ebca39c9b17de209f140db4238692c9104"
+    },
+    {
+      "path": "sources/Fugitives/unep_mars_plumes.zip",
+      "sha256": "296730705ca379cd04025ccdfe3b4ad2f47701d66cd88c2fb5cad0f6154f09a6"
+    },
+    {
+      "path": "sources/Aviation/PAK_CRT_2024.zip",
+      "sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+    }
+  ]
+}
