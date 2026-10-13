@@ -1,0 +1,11 @@
+category,co2e_Mt_AR5,co2e_Mt_AR6,note
+Residential fuel combustion,24.22042,24.05685,"1A4b, anchored on fuel supplied to households; household dung is what the HIES rounds report burning (the reference since rc67). Configuration L, all the dung agriculture diverts burned in households, is reported alongside - see residential_configurations_2024.csv. Fossil streams are FY2023-24 (OGRA); the dung-cake stream is the household survey's per-household quantity interpolated between the HIES 2018-19 and 2024-25 rounds; firewood rides the 2024-25 round as measured. Mixed vintages inside one sector, stated rather than smoothed over."
+Sensitivity: dung configuration L (all diverted dung),29.46668,,"A destination assumption for the diverted dung, the reference through rc66; not a reading of household use"
+Sensitivity: dung legacy VS basis,27.27503,,"Configuration L on the superseded three-bases conflation, kept visible"
+Sensitivity: firewood excluded,20.80656,,What the sector would report if the HIES firewood quantity were dropped
+Sensitivity: firewood low,23.02557,,HIES quantity less 35%
+Sensitivity: firewood high,25.41527,,HIES quantity plus 35%
+Biogenic CO2 from dung cake (IPCC memo item),,,"12682.7 Gg CO2 - Reported outside the national total: the carbon was fixed by the crop the animal ate within the same year. Its CH4 and N2O are counted as components, because incomplete combustion is a net source whatever the carbon's origin. Pakistan's BUR-1 states the same convention."
+Biogenic CO2 from firewood (IPCC memo item),,,"40417.8 Gg CO2 - Memo under IPCC's biomass convention. Any net carbon loss from the forest and tree stock that supplies this wood belongs in LULUCF, not here - counting it in both places is the double-count the memo convention exists to prevent."
+Biogenic CO2 from crop residues (IPCC memo item),,,"12219.2 Gg CO2 - Memo: the carbon was fixed by the crop within the year. The mass comes from the agriculture residue ledger's frac_fuel destination, so it cannot overlap the field-burning category or the soils return."
+Biogenic CO2 from charcoal (IPCC memo item),,,"27.5 Gg CO2 - Memo, like wood. The 4-6 kg of wood consumed per kg of charcoal MADE is a separate upstream loss this inventory does not estimate - see the completeness table."

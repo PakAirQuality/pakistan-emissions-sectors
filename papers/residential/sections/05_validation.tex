@@ -1,0 +1,105 @@
+% ===========================================================================
+\section{Validation}
+\label{sec:validation}
+% ===========================================================================
+
+\subsection{Against EDGAR, at unmatched scope}
+
+EDGAR reports Pakistani "buildings" at \SI{31.42}{\mega\tonne} \COe{} for 2024
+\citep{edgar2025booklet}. This inventory reports \SI{24.22}{\mega\tonne} under the reference
+(\SI{77}{\percent} of EDGAR) or \SI{29.47}{} under configuration~L (\SI{94}{\percent}).
+
+The scopes differ in a known direction. EDGAR's buildings category covers residential
+\emph{plus} commercial and institutional buildings and stationary agriculture; this sector
+covers households only. A households-only estimate should therefore sit below a buildings
+estimate, and it does. The remaining \SI{7.20}{\mega\tonne} difference is consistent with
+EDGAR's broader non-household scope together with methodological and activity-data
+differences; the direction of the comparison is the check, not its magnitude, and the gap
+must not be read as a measurement of the commercial sector.
+
+That is a weaker form of validation than a like-for-like ratio, and it is worth being explicit
+that the comparison cannot detect an error in either direction of comparable size to the scope
+difference. If this sector were \SI{20}{\percent} too low, the ratio would read
+\SI{64}{\percent} and would read as a larger scope difference rather than an error.
+
+\subsection{Against Pakistan's own submission}
+
+BUR-1 reports 1A4 for FY2017--18 with a residential component of \SI{19.0}{\mega\tonne},
+alongside agriculture at \SI{11.3}{} and commercial at \SI{3.8}{} \citep{pakbur1}. The time
+series makes the comparison matched-year: this inventory's FY2017--18 value is
+\SI{22.4}{\mega\tonne}, putting the BUR at \num{0.85} of it---consistent with a filing that,
+like the CRT below, carries less than the full biomass scope, though the BUR does not publish
+its fuel list and the attribution stays a reading, not a finding.
+
+What it does confirm is the convention. Pakistan's own submission states the biomass memo
+treatment for the same fuels, so this sector's decision to hold \SI{65347}{\giga\gram} of
+biogenic \COtwo{} outside the total follows national practice as well as IPCC's.
+
+\subsection{An executable cross-sector consistency check}
+
+The dung nitrogen equality is asserted, not compared: the quantity this sector's ledger
+receives equals the quantity agriculture's manure balance diverts, by construction and
+with exact equality, and a test fails if that ever ceases to hold. The equality concerns
+what was \emph{diverted}---which both configurations accept---not where it was burned;
+under the reference the residual's destination is an open question,
+never a conservation failure.
+
+This is a stronger check than any external comparison because it can fail: a change to
+agriculture's manure-management shares, its herd, or its volatile-solids rates
+propagates here immediately, where two independently computed dung quantities would
+drift apart silently and look like two plausible numbers.
+
+\subsection{Against the CRT filing, cell by cell}
+
+Pakistan's first Common Reporting Tables (filed 2024, inventory year 2022) are extracted from
+the workbook's own cells on every run, rows found by label, the archive hash pinned by a test.
+The headline is a notation key: every Biomass cell in the 1.A.4.b block reads NE. The
+country's two largest household biomass fuels---\SI{487700}{\tera\joule} in this inventory,
+\num{1.6} times the filing's whole residential activity (more
+than three times under configuration~L)---are not estimated in the national
+submission at all.
+
+Where the filing and this inventory can meet, they agree. The filing's gaseous row carries
+\SI{288493}{\tera\joule} against this inventory's \SI{284553}{} from OGRA's domestic
+table---\SI{1.4}{\percent} apart, two derivations of one metered quantity that have never
+seen each other. On the filing's own scope and GWPs at the matched straddle-mean year, the
+filing reports \SI{17.73}{\mega\tonne} against this inventory's \SI{19.09}{}---within
+\SI{8}{\percent}. The biomass NE is therefore a scope statement, not a magnitude dispute:
+the two inventories describe the same metered core, and this one adds the fuels the filing
+leaves out. Two smaller readings off the same block: the liquid IEFs are a proper
+Table~2.5 LPG/kerosene blend (unlike the road-table substitution the railway block of the
+same filing carries), and the solid row books \SI{29.5}{\tera\joule} on the lignite factor
+set where this inventory carries \SI{341}{} as other-bituminous---both rounding errors on
+the sector, recorded rather than smoothed.
+
+\subsection{Against the CCAC assessment, as a closing bridge with a residual}
+
+The CCAC/SEI integrated assessment \citep{ccacsei2023} implies about \SI{224}{\kilo\tonne}
+of residential \PM{} for 2021 (\SI{35}{\percent} of a \SI{641}{\kilo\tonne} national
+total). The published bridge steps from this inventory's \SI{283}{\kilo\tonne}
+(FY2023--24, reference) to that figure through named, quantified wedges: the
+inventory year (\SI{24}{\kilo\tonne}, from the time series) and the
+residue fuel set (\SI{68}{}), leaving a signed unexplained residual of
+\SI{-33}{\kilo\tonne}, \num{-15}~percent of the endpoint: PM definition
+(filterable-versus-condensable scope unresolved on both sides), the GAINS factor family
+against Andreae field measurements, and remaining activity shares. The bridge closes
+exactly by construction; the discipline a test enforces is that the residual exists and
+is never redistributed into the named wedges. The bridge has no dung-configuration wedge:
+configuration~L at the matched year, \SI{591}{\kilo\tonne}, is a memo row beside it and
+not a step of it.
+
+Read as evidence on the configuration choice: after the year wedge alone, configuration~L
+stands \num{2.6} times above the assessment, while the reference lands within
+\SI{15}{\percent} of it. That is not an adjudication---the CCAC estimate is itself a
+model, its household activity is not a measurement, and agreement with one model is weak
+evidence---but it is the only independent number that prefers either configuration, and
+it prefers S.
+
+\subsection{What is not validated}
+
+The within-province geography: HIES is representative at province and urban/rural level,
+so the district layer's within-region split rides census population, and no district fuel
+observation tests it. And the air layer's absolute level has no independent Pakistani
+emissions measurement---the CCAC comparison above is a model-to-model bridge, ambient
+monitoring exists only as concentrations, and translating those to emitted mass requires
+dispersion modelling this paper does not attempt.

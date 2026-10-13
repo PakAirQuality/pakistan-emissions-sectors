@@ -1,0 +1,76 @@
+% ===========================================================================
+\section{Limitations}
+\label{sec:limitations}
+% ===========================================================================
+
+\textbf{The sewer methane correction factor is unresolved, and it is the sector.} A factor of
+\num{1.59} on two-thirds of the emissions, argued in Section~\ref{sec:discussion}. Both
+readings are published; neither is measured.
+
+\textbf{Industrial solid waste and industrial wastewater are not estimated at all.} No national
+quantity for either has been compiled here. The categories reported here are municipal and
+domestic only, and both gaps carry the notation key NE with that justification, in the
+complete sector-4 matrix of \ref{app:completeness}---which also declares biological
+treatment (4B) and incineration (4C1) as NE rather than leaving them silently absent.
+Industrial wastewater is the more consequential omission: given that domestic wastewater
+alone is \SI{5.5}{\percent} of the national inventory, an industrial stream from a textile
+and tanning sector of Pakistan's size is unlikely to be negligible.
+
+\textbf{Generation rates are single national values.} The urban and rural per-capita rates do
+not vary by province or city size, which is a real simplification for a country whose largest
+city and smallest districts differ substantially in consumption and in what they discard. The
+rates are regional literature values rather than Pakistani measurements.
+
+\textbf{The collection rate is the softest number in the partition.} The mass balance
+closes by construction, but \SI{50.3}{\percent} is an assumption, and it governs how much
+waste decays slowly in a landfill versus burns immediately in the street. It is a single
+national figure applied through an urban/rural split, when collection in practice varies
+between municipalities far more than between those two categories. The one Pakistani survey
+that asks the question directly, HIES 2024--25, reports materially less collection than the
+assumption (Section~\ref{sec:validation}); its household-route shares are priced as a
+structural scenario rather than adopted, because route shares are not mass shares.
+
+\textbf{The burned fraction is a literature value.} That \SI{60}{\percent} of uncollected
+waste burns is the least evidenced parameter in the sector and has no Pakistani measurement
+behind it at all. It scales open burning linearly, and with it the entire air-pollutant layer
+in Section~\ref{sec:air}. Its complement is the fate ledger's unresolved row:
+\SI{6.27}{\mega\tonne} of uncollected, unburned waste---dumped to land and
+waterways---to which no emissions pathway is applied at all. That choice is now bounded
+rather than silent: the scenario table prices the unresolved mass as unmanaged shallow
+disposal (sector total \SI{39.87}{\mega\tonne}) and unmanaged deep disposal
+(\SI{42.28}{\mega\tonne}) against the reference reading (\SI{37.45}{\mega\tonne}),
+on the declared assumption that the dumped stream shares the collected stream's deposit
+history and composition. Waterway decay lies between inert and shallow. No probability
+attaches to any point in the bound---a disposal-site census, not a better default, is
+what would close it.
+
+\textbf{Waste composition is regional, not Pakistani.} The fossil carbon fraction governs how
+much of the burning \COtwo{} is reportable, and the plastics and textiles content governs the
+chlorine and much of the particulate. A Pakistani waste-characterisation survey would replace
+both.
+
+\textbf{No methane recovery is credited and no landfill oxidation applied.} Both are set to
+zero because neither is documented at national scale, and both choices bias the disposal
+category high if any large Pakistani site does in fact manage its gas or maintain a cover. The
+direction of that bias is stated rather than hedged.
+
+\textbf{The spin-up back-projection is an assumption, not data.} Extending the deposit series
+to 1960 at \SI{40}{\percent} of the panel's first year is a judgement about Pakistan's waste
+history. Its effect is reported---\SI{12}{\percent} of current landfill methane---so a reader
+can remove it, but the shape of the back-projection is not evidenced.
+
+\textbf{Uncertainties are large, and honestly so---and honestly asymmetric.}
+Five of the six streams carry between
+\SI{74}{\percent} and \SI{124}{\percent}; wastewater N$_2$O carries the bounded 150-fold
+factor range, and the sector reads $\pm\SI{51.1}{\percent}$ by quadrature with a
+parameter-rerun 95\% interval of \SIrange{25.7}{61.4}{\mega\tonne}
+(Supplementary Note~S1).
+These follow IPCC's own Tier~1 guidance for waste parameters and reflect that the underlying
+activity is modelled from population rather than measured at facilities. They are not an
+artefact of conservative parameter choice; they are what Tier~1 can say about a country with
+no facility-level waste data.
+
+\textbf{Dioxins and furans are not estimated.} Open burning of chlorinated plastics produces
+them, and the hydrogen chloride reported in Section~\ref{sec:air} is a marker for the
+conditions that do. Estimating them needs a dedicated study rather than a factor applied to
+the same tonnage.

@@ -1,0 +1,16 @@
+# The crosswalk between the TE-class flat share and the physical flatness decomposition,
+# over the same 4000.972 Mt of nine-year monthly mass. See pkinv/report/flatness_crosswalk.py.
+row_kind,te_class,flatness_bucket,co2e_Mt_AR5,share_of_monthly_mass_pct,note
+cell,TE1,flat_physically_appropriate,0.006,0.0,
+cell,TE1,variable_timed,79.87,2.0,
+cell,TE2,flat_physically_appropriate,0.009,0.0,
+cell,TE2,variable_timed,671.729,16.79,
+cell,TE3,flat_physically_appropriate,75.15,1.88,
+cell,TE3,variable_timed,740.187,18.5,
+cell,TE4,flat_physically_appropriate,1563.427,39.08,
+cell,TE4,variable_unobserved,870.592,21.76,
+bucket_total,any,flat_physically_appropriate,1638.593,40.95,the 'correctly flat' headline: flat (days-weighted) is the physical answer and a monthly series would not change the shape
+bucket_total,any,variable_timed,1491.786,37.29,should vary and an observed or modeled series carries it (the decomposition's 'observed' column)
+bucket_total,any,variable_unobserved,870.592,21.76,"should vary, nothing observes it - the Pass-2 reduction target"
+te_total,TE4,any,2434.02,60.84,"TE4 at the atom (month-row) grain, equal to the coverage summary's: contains BOTH physically appropriate flatness and unobserved variability, which is why the flat share and the correctly-flat share are different statements"
+grain_difference,TE4,any,-0.0,-0.0,"coverage-summary TE4 (month x sector x category grain, the published 60.84%) minus this table's TE4: zero since rc42, when the join moved to the atom grain; a non-zero value here is a defect"

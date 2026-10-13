@@ -1,0 +1,251 @@
+file,column,meaning
+activity_aviation.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_aviation.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_aviation.csv,Province,The province a district or airport lies in.
+activity_aviation.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_aviation.csv,Traffic category,Readable original category.
+activity_aviation.csv,Airline and scope,Readable original subcategory.
+activity_aviation.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_aviation.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_aviation.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_aviation.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_aviation.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_aviation.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_aviation.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_aviation.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_aviation.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_crops.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_crops.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_crops.csv,Province,The province a district or airport lies in.
+activity_crops.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_crops.csv,Crop,Readable original category.
+activity_crops.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_crops.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_crops.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_crops.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_crops.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_crops.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_crops.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_crops.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_crops.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_crops.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_fertiliser.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_fertiliser.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_fertiliser.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_fertiliser.csv,Product or nutrient,Readable original category.
+activity_fertiliser.csv,Producer or origin,Readable original subcategory.
+activity_fertiliser.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_fertiliser.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_fertiliser.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_fertiliser.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_fertiliser.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_fertiliser.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_fertiliser.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_fertiliser.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_fertiliser.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_fertiliser.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_fuel_sales_area.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_fuel_sales_area.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_fuel_sales_area.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_fuel_sales_area.csv,Fuel product,Readable original category.
+activity_fuel_sales_area.csv,Customer group,Readable original subcategory.
+activity_fuel_sales_area.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_fuel_sales_area.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_fuel_sales_area.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_fuel_sales_area.csv,Reporting interval,Single-month report or cumulative report; cumulative editions overlap the months they cover.
+activity_fuel_sales_area.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_fuel_sales_area.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_fuel_sales_area.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_fuel_sales_area.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_fuel_sales_area.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_fuel_sales_area.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_fuel_sales_national.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_fuel_sales_national.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_fuel_sales_national.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_fuel_sales_national.csv,Fuel product,Readable original category.
+activity_fuel_sales_national.csv,Customer group,Readable original subcategory.
+activity_fuel_sales_national.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_fuel_sales_national.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_fuel_sales_national.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_fuel_sales_national.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_fuel_sales_national.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_fuel_sales_national.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_fuel_sales_national.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_fuel_sales_national.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_fuel_sales_national.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_fuel_sales_national.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_gas_network.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_gas_network.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_gas_network.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_gas_network.csv,Network measure or asset,Readable original category.
+activity_gas_network.csv,Operator or customer group,Readable original subcategory.
+activity_gas_network.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_gas_network.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_gas_network.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_gas_network.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_gas_network.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_gas_network.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_gas_network.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_gas_network.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_gas_network.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_gas_supply.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_gas_supply.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_gas_supply.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_gas_supply.csv,Product or field,Readable original category.
+activity_gas_supply.csv,Supply network,Readable original subcategory.
+activity_gas_supply.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_gas_supply.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_gas_supply.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_gas_supply.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_gas_supply.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_gas_supply.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_gas_supply.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_gas_supply.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_gas_supply.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_household_fuel.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_household_fuel.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_household_fuel.csv,Locality,"Urban or rural, where the source reports by locality."
+activity_household_fuel.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_household_fuel.csv,Fuel or energy source,Readable original category.
+activity_household_fuel.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_household_fuel.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_household_fuel.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_household_fuel.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_household_fuel.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_household_fuel.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_household_fuel.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_household_fuel.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_household_fuel.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_industry_fuel.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_industry_fuel.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_industry_fuel.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_industry_fuel.csv,Consumer or plant,Readable original category.
+activity_industry_fuel.csv,Supplier or detail,Readable original subcategory.
+activity_industry_fuel.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_industry_fuel.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_industry_fuel.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_industry_fuel.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_industry_fuel.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_industry_fuel.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_industry_fuel.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_industry_fuel.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_industry_fuel.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_industry_fuel.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_industry_production.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_industry_production.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_industry_production.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_industry_production.csv,Product or company,Readable original category.
+activity_industry_production.csv,Classification or detail,Readable original subcategory.
+activity_industry_production.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_industry_production.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_industry_production.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_industry_production.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_industry_production.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_industry_production.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_industry_production.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_industry_production.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_industry_production.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_industry_production.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_livestock.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_livestock.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_livestock.csv,Province,The province a district or airport lies in.
+activity_livestock.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_livestock.csv,Animal type,Readable original category.
+activity_livestock.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_livestock.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_livestock.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_livestock.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_livestock.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_livestock.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_livestock.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_livestock.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_livestock.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_livestock.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_power_monthly.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_power_monthly.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_power_monthly.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_power_monthly.csv,Power plant,Readable original category.
+activity_power_monthly.csv,Fuel,Readable original subcategory.
+activity_power_monthly.csv,Fuel classification basis,"How the fuel label was attributed - reported by PBS or NEPRA, carried from another year, inferred, or not assigned. Generation is reported regardless."
+activity_power_monthly.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_power_monthly.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_power_monthly.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_power_monthly.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_power_monthly.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_power_monthly.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_power_monthly.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_power_monthly.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_power_monthly.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_power_plants.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_power_plants.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_power_plants.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_power_plants.csv,Plant or fuel,Readable original category.
+activity_power_plants.csv,Fuel or electricity system,Readable original subcategory.
+activity_power_plants.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_power_plants.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_power_plants.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_power_plants.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_power_plants.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_power_plants.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_power_plants.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_power_plants.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_power_plants.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_railways.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_railways.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_railways.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_railways.csv,Fuel or traffic category,Readable original category.
+activity_railways.csv,Detail,Readable original subcategory.
+activity_railways.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_railways.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_railways.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_railways.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_railways.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_railways.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_railways.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_railways.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_railways.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_railways.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_vehicles.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_vehicles.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_vehicles.csv,Province,The province a district or airport lies in.
+activity_vehicles.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_vehicles.csv,Vehicle class,Readable original category.
+activity_vehicles.csv,Fuel,Readable original subcategory.
+activity_vehicles.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_vehicles.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_vehicles.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_vehicles.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_vehicles.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_vehicles.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_vehicles.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_vehicles.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_vehicles.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_waste_flows.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_waste_flows.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_waste_flows.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_waste_flows.csv,Waste flow,Readable original category.
+activity_waste_flows.csv,Flow level,Readable original subcategory.
+activity_waste_flows.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_waste_flows.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_waste_flows.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_waste_flows.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_waste_flows.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_waste_flows.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_waste_flows.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_waste_flows.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_waste_flows.csv,Record ID,Joins this row to its twenty technical fields in the source details table.
+activity_waste_services.csv,Period,"Reporting period: FY yyyy-yy for a fiscal year, yyyy-mm for a month, yyyy for a calendar year, a survey round by its name, or the date a stock was counted. Set this column to Text when importing into Excel."
+activity_waste_services.csv,Location,Reported place. A composite place is split into this column and Locality or Province.
+activity_waste_services.csv,Locality,"Urban or rural, where the source reports by locality."
+activity_waste_services.csv,Measure,"The quantity Value represents. Monetary values are named as values, not quantities."
+activity_waste_services.csv,Service,Readable original category.
+activity_waste_services.csv,Value,"The source's own figure, with no unit or thousands separator. Blank means the source printed nothing; it is never zero."
+activity_waste_services.csv,Unit,"The unit, spelt out. Quantities are never rescaled: thousand tonnes stays thousand tonnes."
+activity_waste_services.csv,Period type,"Fiscal year, calendar year, calendar month, survey round or snapshot date."
+activity_waste_services.csv,Location level,"The geographic level of Location: national, province, district, sales area, airport or plant."
+activity_waste_services.csv,Evidence,"Reported, survey estimate, allocated estimate, calculated, projection, assumption, modelled estimate, or not printed in source."
+activity_waste_services.csv,Source status,"The source's own status word for this cell, as it printed or as PakEmis transcribed it."
+activity_waste_services.csv,Source series,The source dataset this row comes from. Series overlap; it is not a summation key.
+activity_waste_services.csv,Use note,"What this row may and may not be added to, and the caveats its source carries."
+activity_waste_services.csv,Source reference,"The citation, without file paths or digests. The full reference is in the source details table."
+activity_waste_services.csv,Record ID,Joins this row to its twenty technical fields in the source details table.

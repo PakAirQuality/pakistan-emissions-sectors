@@ -1,0 +1,85 @@
+\begin{thebibliography}{6}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Unpublished
+\bibitem[{Ahmad(2026)}]{ahmad2026national}
+\bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Pakemis v1.0: an evidence-graded public-data
+  reconstruction of pakistan's non-lulucf greenhouse-gas emissions, fy2015--16
+  to fy2023--24}.
+\newblock \bibinfo{note}{Manuscript in preparation for Earth System Science
+  Data; it describes release 1.0.0rc67, whose data, software and technical
+  documentation DOIs are reserved and not yet assigned (see CITATION.cff). No
+  submission has been made}.
+%Type = Misc
+\bibitem[{{Copernicus Sentinel-5P (processed by ESA)}(2018)}]{copernicuss5p}
+\bibinfo{author}{{Copernicus Sentinel-5P (processed by ESA)}},
+  \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{{TROPOMI} level-2 nitrogen dioxide products
+  ({S5P/OFFL})}.
+\newblock \bibinfo{howpublished}{European Space Agency / European Commission
+  Copernicus}.
+\newblock \bibinfo{note}{Used here as the {GEE} \texttt{S5P/OFFL/L3} 0.1-degree
+  composites (quality-filtered qa>0.75); Copernicus Sentinel data terms: free,
+  full and open access with attribution; \doi{10.5270/S5P-9bnp8q8}}.
+%Type = Misc
+\bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{GHG} emissions of all world countries --- 2025
+  report ({EDGAR} {GHG} booklet)}.
+\newblock \bibinfo{howpublished}{European Commission, Joint Research Centre}.
+\newblock \bibinfo{note}{Sheet GHG\_by\_sector\_and\_country; annual series
+  1970--2024; CC BY 4.0. Snapshot archived at
+  \texttt{sources/EDGAR/EDGAR\_2025\_GHG\_booklet\_2025.xlsx}, sha256
+  \texttt{8bd6b8a4\ldots} pinned per benchmark row in
+  \texttt{data/benchmarks.csv}. \url{https://edgar.jrc.ec.europa.eu/}}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006stationary}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 2: Energy, Chapter 2: Stationary Combustion}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Hayama, Japan.
+\newblock \URLprefix
+  \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html}.
+%Type = Techreport
+\bibitem[{{US Environmental Protection Agency}(1995)}]{epaap42}
+\bibinfo{author}{{US Environmental Protection Agency}}, \bibinfo{year}{1995}.
+\newblock \bibinfo{title}{{AP-42}: Compilation of Air Emissions Factors, Fifth
+  Edition, Volume~I, Chapter~1: External Combustion Sources}.
+\newblock \bibinfo{type}{Technical Report}. Office of Air Quality Planning and
+  Standards, Research Triangle Park, NC.
+\newblock \URLprefix
+  \url{https://www.epa.gov/air-emissions-factors-and-quantification/ap-42-compilation-air-emissions-factors}.
+  \bibinfo{note}{sections 1.1 bituminous and subbituminous coal, 1.3 fuel oil
+  and 1.4 natural gas. Individual sections carry their own revision dates and
+  are revised independently of the edition; the sections used here should be
+  version-locked before final submission}.
+%Type = Article
+\bibitem[{Veefkind et~al.(2012)Veefkind, Aben, McMullan, F{\"o}rster, de~Vries,
+  Otter, Claas, Eskes, de~Haan, Kleipool et~al.}]{veefkind2012}
+\bibinfo{author}{Veefkind, J.P.}, \bibinfo{author}{Aben, I.},
+  \bibinfo{author}{McMullan, K.}, \bibinfo{author}{F{\"o}rster, H.},
+  \bibinfo{author}{de~Vries, J.}, \bibinfo{author}{Otter, G.},
+  \bibinfo{author}{Claas, J.}, \bibinfo{author}{Eskes, H.J.},
+  \bibinfo{author}{de~Haan, J.F.}, \bibinfo{author}{Kleipool, Q.}, et~al.,
+  \bibinfo{year}{2012}.
+\newblock \bibinfo{title}{{TROPOMI} on the {ESA} {Sentinel-5} precursor: A
+  {GMES} mission for global observations of the atmospheric composition for
+  climate, air quality and ozone layer applications}.
+\newblock \bibinfo{journal}{Remote Sensing of Environment}
+  \bibinfo{volume}{120}, \bibinfo{pages}{70--83}.
+\newblock \DOIprefix\doi{10.1016/j.rse.2011.09.027}.
+
+\end{thebibliography}

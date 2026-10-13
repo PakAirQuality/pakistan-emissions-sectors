@@ -1,0 +1,27 @@
+# Shared factor groups a module must NOT receive, because the module's own input table
+# declares the same physical quantity under its own dependency group.
+#
+# groups_for() adds factor:ncv:<fuel> to every non-energy-based fuel row, which is right
+# in general and double-counts where a sector already carries its own conversion term:
+# railways' Diesel Diesel-CO2 row carried BOTH 1a3c_ncv (its declared Table 1.2 NCV) and
+# factor:ncv:Gas/Diesel Oil (the same Table 1.2 number through the shared registry) at
+# 0.0153 sigma each -- one physical quantity, twice. Each exclusion names the substitute
+# group the sector declares, and a test asserts the substitute actually reaches the rows.
+module,dependency_group,substitute_group,reason
+railways,factor:ncv:Gas/Diesel Oil,1a3c_ncv,the sector declares its own Diesel NCV parameter over all diesel streams
+transport,factor:ncv:Gas/Diesel Oil,1a3b_diesel_control,the Diesel NCV member of the control group is the same Table 1.2 quantity
+transport,factor:ncv:Motor Gasoline,1a3b_petrol_control,the Petrol NCV member of the control group is the same quantity
+transport,factor:ncv:Natural Gas,1a3b_cng_chain,the CNG gross heating value and gross-to-net members carry the conversion
+residential,factor:ncv:Natural Gas,1a4b_gas,the declared gross-to-net conversion is the sector's own volume-to-energy term
+power,factor:ch4:Gas/Diesel Oil,power:CH4 and N2O factors,no power member exists in the shared table and the sector declares its own 150 percent Table 2.2 stationary width; borrowing another module's table copy is the median defect in another form - the furnace-oil rows already keep this variance in the residual
+power,factor:n2o:Gas/Diesel Oil,power:CH4 and N2O factors,same as the CH4 row
+industry,factor:ch4:Motor Gasoline,declared-row-residual,no industry member exists in the shared table and the sector publishes no input table; the stationary petrol trace-factor width lives in the row's declared uncertainty - borrowing the road or residential copy is the median defect in another form
+industry,factor:n2o:Motor Gasoline,declared-row-residual,same as the CH4 row
+industry,factor:ch4:Gas/Diesel Oil,factor:ch4:Liquid Fuels,"rc41: the engine applies one Table 2.3 CH4 factor to every liquid fuel (ind_ch4_liquid); fuel_of named a per-fuel factor the engine does not read"
+industry,factor:n2o:Gas/Diesel Oil,factor:n2o:Liquid Fuels,"rc41: the engine applies one Table 2.3 N2O factor to every liquid fuel (ind_n2o_liquid); fuel_of named a per-fuel factor the engine does not read"
+industry,factor:ch4:Other Kerosene,factor:ch4:Liquid Fuels,"rc41: the engine applies one Table 2.3 CH4 factor to every liquid fuel (ind_ch4_liquid); fuel_of named a per-fuel factor the engine does not read"
+industry,factor:n2o:Other Kerosene,factor:n2o:Liquid Fuels,"rc41: the engine applies one Table 2.3 N2O factor to every liquid fuel (ind_n2o_liquid); fuel_of named a per-fuel factor the engine does not read"
+industry,factor:ch4:Motor Gasoline,factor:ch4:Liquid Fuels,"rc41: the engine applies one Table 2.3 CH4 factor to every liquid fuel (ind_ch4_liquid); fuel_of named a per-fuel factor the engine does not read"
+industry,factor:n2o:Motor Gasoline,factor:n2o:Liquid Fuels,"rc41: the engine applies one Table 2.3 N2O factor to every liquid fuel (ind_n2o_liquid); fuel_of named a per-fuel factor the engine does not read"
+power,factor:ch4:Gas/Diesel Oil,factor:ch4:Oil,"rc41: as above, for diesel oil"
+power,factor:n2o:Gas/Diesel Oil,factor:n2o:Oil,"rc41: as above, for diesel oil"

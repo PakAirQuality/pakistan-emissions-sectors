@@ -1,0 +1,76 @@
+% ===========================================================================
+\section{Introduction}
+\label{sec:introduction}
+% ===========================================================================
+
+Waste is the category of a national greenhouse-gas inventory where the arithmetic is easiest
+and the activity data hardest. The emission factors are few and well characterised; what is
+difficult is knowing how much waste a country generates, what fraction of it reaches a
+disposal site, what happens to the fraction that does not, and how the sewage of a large
+population is actually handled. None of those quantities is metered anywhere in Pakistan.
+
+That difficulty has a specific consequence for how the sector is usually compiled. Because the
+activity data must be modelled rather than read, each category tends to be estimated on its
+own terms: landfill methane from a tonnage assumption, open burning from a per-capita burning
+rate in the literature, wastewater from a population and a default organic load. The three
+estimates are then reported together. Nothing in that procedure requires the waste sent to
+landfill and the waste openly burned to sum to a quantity of waste the country plausibly
+produces, and in general they do not.
+
+\subsection{What this paper does}
+
+We report Pakistan's waste sector for FY2023--24 from Pakistani activity data, with the three
+categories constructed so that the constraint the conventional procedure lacks is enforced by
+construction. A single national waste-generation figure is partitioned: what is collected
+goes to the first-order-decay model for solid-waste disposal, what is not collected is what
+can burn, and the two sum to the generated quantity exactly. The partition is asserted in code
+with equality rather than checked afterwards with a tolerance, because a tolerance permits
+precisely the drift the constraint exists to remove.
+
+The result is a sector total of \SI{37.45}{\mega\tonne} \COe{}, of which domestic wastewater
+is two-thirds. It is the second most uncertain sector in the national inventory that contains
+it, and this paper is as much about where that uncertainty lives and what would reduce it as
+about the central estimate.
+
+\subsection{Why Pakistan, and why this sector now}
+
+Pakistan is the fifth most populous country in the world, urbanising rapidly, and its most
+recent full national inventory submission reports for FY2017--18 \citep{pakbur1}. In the
+interim the international gridded products---EDGAR \citep{edgar2025booklet,crippa2020} and Climate
+TRACE \citep{climatetrace}---supply the numbers that inform policy. They are global models
+applying globally consistent assumptions to nationally reported activity, which is their
+strength for cross-country comparison and their limitation for any one country: where a
+national compiler can consult a sanitation survey or a district population panel, a global
+product must choose a default.
+
+The waste sector is where that difference bites hardest, for two reasons. Its activity data
+are the least standardised internationally, so the defaults do the most work. And it is
+dominated by methane, whose short atmospheric lifetime makes it the gas where near-term
+mitigation is most effective and therefore where the estimate most directly changes what a
+government should do.
+
+\subsection{Contributions}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=3pt]
+\item \textbf{A current national waste-sector inventory for Pakistan} covering solid-waste
+  disposal, open burning and domestic wastewater, from a district population panel and
+  national sanitation statistics rather than from a global model's Pakistani slice.
+\item \textbf{One waste stream, mass-balanced across its fates}: collected and uncollected
+  shares sum to generation exactly, two fates carry emissions pathways (4A, 4C2) and the
+  unburned remainder ships as an explicit unresolved row rather than a silent omission. The
+  closed balance removes a class of inconsistency that independent estimation cannot
+  detect (Section~\ref{sec:methods}).
+\item \textbf{Both readings of the sewer methane correction factor}, with the evidence for
+  each stated and neither resolved by fiat, together with the measurement that would settle
+  it (Section~\ref{sec:discussion}).
+\item \textbf{A spin-up sensitivity for the decay model}, quantifying how much of today's
+  landfill methane comes from waste deposited before the activity panel begins---a question
+  most first-order-decay implementations answer implicitly and do not report.
+\item \textbf{An air-pollutant layer on the same activity basis} as the greenhouse gases, so
+  that open burning's particulate can be compared with other Pakistani sources without the
+  usual mismatched-activity problem.
+\end{enumerate}
+
+Method that this sector shares with the other nine of the national inventory---the module
+contract, the uncertainty treatment, the notation keys, the accounting closures---is
+documented in the national manuscript \citep{ahmad2026national} and not repeated here.

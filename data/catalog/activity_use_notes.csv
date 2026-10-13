@@ -1,0 +1,25 @@
+# Sentences appended to a row's Use note when a condition holds. Conditions are `column=value`
+# (exact) or `column~prefix` on the technical row; `*` applies to every collection. Applied in file order.
+collection,condition,note
+*,evidence=not_printed,Value not supplied; blank does not mean zero.
+*,evidence=projection,Following-year projection; not a count and not summed with counts.
+*,evidence=allocation,Allocated by a declared rule from a pooled parent; not an observed local figure.
+*,evidence=assumption,Declared assumption; not a directly observed measurement.
+*,evidence=derived,Calculated from other rows in the same table; not a reported figure.
+*,evidence=modelled,Modelled by PakEmis from activity and a method; not a measured quantity.
+fuel_sales_area,source_period=cumulative,Cumulative report: overlaps the single-month reports of the same year.
+fuel_sales_area,combinable~no:,Not additive in the source: a cumulative edition or a subtotal row.
+fuel_sales_national,category=TOTAL,A printed product total; overlaps the product rows beside it.
+industry_fuel,unit=MMCFD,"A rate (million cubic feet per day), not a quantity."
+industry_fuel,variable=gas_feedstock,"Chemical feedstock: gas that becomes ammonia, not gas burned."
+industry_production,variable=cement_despatch,"Despatches are sales, not production."
+industry_production,variable=clinker_trade,"Trade, not production."
+gas_network,category=T&D losses (UFG),"NOT AN EMISSION FIGURE AND MUST NEVER BE USED AS ONE: unaccounted-for gas includes theft, meter error and accounting differences alongside physical leakage."
+livestock,evidence=projection,The source note identifies the projection year as FY 2024-25.
+power_monthly,evidence_note=unassigned,No source labels this plant's fuel; generation is retained.
+power_plants,variable=implied_heat_rate,A ratio computed from this row's fuel energy and generation; not additive.
+railways,variable=traffic,Provisional figures in the source where the source says so.
+vehicles,variable=registered_vehicles,Cumulative registered stock at 30 June: a scrapped vehicle stays in the total until deregistered.
+vehicles,variable=distance_per_vehicle,"Per-vehicle rate; multiplied by a fleet, never added to one."
+waste_services,evidence=derived,Subtotal of the routes beside it; do not add to them.
+household_fuel,unit=rupees,"Monetary consumption value, not a physical quantity."

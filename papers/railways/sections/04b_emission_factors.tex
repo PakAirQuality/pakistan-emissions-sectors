@@ -1,0 +1,65 @@
+\section{Emission Factors}
+\label{sec:factors}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Gas} & \textbf{Rail (3.4.1)} & \textbf{Road (3.2.1/3.2.2)} & \textbf{Ratio} \\
+\midrule
+\COtwo{}  & 74\,100 & 74\,100 & 1.00 \\
+\CHfour{} &    4.15 &     3.9 & 1.06 \\
+\NtwoO{}  &    28.6 &     3.9 & 7.33 \\
+\bottomrule
+\end{tabular}
+\caption{IPCC 2006 defaults for diesel, kg per TJ, from Volume~2 Chapter~3
+\citep{ipcc2006energy}. The \COtwo{} rows are identical because \COtwo{} depends only on the
+carbon in the fuel; the \NtwoO{} rows are not.}
+\label{tab:factors}
+\end{table}
+
+\subsection{Why rail \NtwoO{} is \num{7.3} times road}
+
+Large slow-speed locomotive engines run lean at high load, which is the \NtwoO{}-forming
+regime. IPCC derives the rail values in Table~3.4.1 from EEA measurements at
+\SI{0.35}{\litre} per brake-horsepower-hour for a \SI{4000}{HP} locomotive, and the
+\SI{28.6}{\kilo\gram\per\tera\joule} value carries a 95\% interval of
+\SIrange{14.3}{85.8}{\kilo\gram\per\tera\joule}. The road value of
+\SI{3.9}{\kilo\gram\per\tera\joule} describes a different engine population running a different
+duty cycle.
+
+\subsection{What the wrong table would do}
+
+Substituting the road \NtwoO{} factor would understate railway \NtwoO{} by \SI{86}{\percent}
+and the sector total by about \SI{8}{\percent}, from \SI{0.394}{} to
+\SI{0.363}{\mega\tonne}. That figure is not left as a claim in a docstring: the runner computes
+it and publishes it as a diagnostic row in the sector's totals file, so a reader can see the
+size of the choice rather than take it on trust.
+
+\subsection{The trap, caught in the current filing}
+
+This is no longer only a hypothesis about how the BUR went wrong. Pakistan's current
+Common Reporting Tables carry, in the implied-emission-factor cells of the railway
+category's own liquid-fuels row, \COtwo{} at \num{74.10} t/TJ, \CHfour{} at \num{3.90} and
+\NtwoO{} at \num{3.90} kg/TJ---the road table's non-\COtwo{} pair, on rail, in the
+official submission of record. The cell-audited extraction behind that statement
+reproduces the filing's arithmetic from its own workbook before comparing anything to it,
+and a test pins the finding so that a corrected future submission fails the pin and forces
+this paragraph to be rewritten rather than left standing.
+
+\subsection{Why this is a trap and not a mistake}
+
+The failure is silent in every direction a compiler would normally look. Both tables are in the
+same chapter of the same volume. Both are labelled for transport. The \COtwo{} row---which is
+\SI{90}{\percent} of the category---is byte-identical, so a total computed with the wrong table
+still reconciles against fuel, still matches a carbon-balance check, and still passes any
+comparison run on \COtwo{} alone. Only the \NtwoO{} row moves, and only by an amount that looks
+like ordinary uncertainty in a category this small.
+
+Four tests hold the choice in place. One asserts that the cited source contains ``Rail.'' One
+asserts that rail \NtwoO{} exceeds five times the road value, so a silent substitution of the
+transport rows fails immediately. One asserts that rail \CHfour{} exceeds road \CHfour{}. And
+one asserts that \NtwoO{} is more than \SI{5}{\percent} of the sector total---because a pinned
+factor that nothing depends on is decoration, and the guard is only worth having while the
+choice still moves the answer.

@@ -1,0 +1,43 @@
+# WHICH PRINT THE ENGINE BOOKS, AND WHY (rc53 Wave A1).
+#
+# HDIP's coal-by-sector allocation is published more than once per reference year and the prints
+# differ (data/activity/industry/coal_by_sector_vintages.csv holds every one;
+# outputs/pakemis_coal_vintage_ledger.csv classifies what moved between them). Before rc53 the
+# choice was a rule buried in code - "the first row whose revision_status is final or provisional",
+# plus one hard-coded override - so the release could not say which edition it had booked without
+# reading the module. It says so here instead, one row per (reference year, consumer), naming the
+# estimate_id and the reason. THIS FILE MOVES NO NUMBER: it reproduces exactly what rc52 booked, and
+# tests/test_coal_booking_policy.py holds it to data/activity/industry/coal_by_consumer.csv to the
+# gram. Changing a booked_estimate_id here is a re-base and needs the four-site declaration.
+#
+# rules:
+#   supplement_vintage           the Statistical Supplement 2024-25 print - the settled full-year
+#                                series; the ingest's own declared provenance
+#   older_vintage_closes_balance the PEY/Compendium print, deliberately preferred: the Supplement's
+#                                revised FY2015-16 brick figure (3,541.1) exceeds the older one by
+#                                204.0 kt and breaks the supply balance by 203.8 kt; the older one
+#                                closes it. The revision is a level revision of brick alone (the
+#                                printed total moved with it), not a reallocation.
+#
+# Not booked and not bookable here: July-March prints (nine months; period_coverage july_march) and
+# FY2024-25 (outside the nine reporting periods). The FY2023-24 provisional print (brick 1,564,
+# Supplement 2023-24) is superseded by the final 1,129 and is retained in the vintages table only.
+reference_fiscal_year,consumer,booked_estimate_id,rule,reason
+2015-16,brick_kilns,comp2020:A-45:2015-16:brick_kilns,older_vintage_closes_balance,"3,337.102 kt (PEY 2018 / Compendium 2020, identical); the Supplement's 3,541.1 breaks the supply balance by 203.8 kt - see the module docstring and outputs/pakemis_coal_balance.csv"
+2015-16,cement,sup25:Table14.1sec.4:2015-16:cement_other,supplement_vintage,
+2016-17,brick_kilns,sup25:Table14.1sec.4:2016-17:brick_kilns,supplement_vintage,
+2016-17,cement,sup25:Table14.1sec.4:2016-17:cement_other,supplement_vintage,
+2017-18,brick_kilns,sup25:Table14.1sec.4:2017-18:brick_kilns,supplement_vintage,
+2017-18,cement,sup25:Table14.1sec.4:2017-18:cement_other,supplement_vintage,
+2018-19,brick_kilns,sup25:Table14.1sec.4:2018-19:brick_kilns,supplement_vintage,
+2018-19,cement,sup25:Table14.1sec.4:2018-19:cement_other,supplement_vintage,
+2019-20,brick_kilns,sup25:Table14.1sec.4:2019-20:brick_kilns,supplement_vintage,"the Survey 2025-26 annex reprints this year to one decimal (8,183.8); the Supplement's integer print is what the series holds"
+2019-20,cement,sup25:Table14.1sec.4:2019-20:cement_other,supplement_vintage,"annex reprint 6,074.8"
+2020-21,brick_kilns,sup25:Table14.1sec.4:2020-21:brick_kilns,supplement_vintage,"annex reprint 8,678.1"
+2020-21,cement,sup25:Table14.1sec.4:2020-21:cement_other,supplement_vintage,"annex reprint 10,184.2"
+2021-22,brick_kilns,sup25:Table14.1sec.4:2021-22:brick_kilns,supplement_vintage,
+2021-22,cement,sup25:Table14.1sec.4:2021-22:cement_other,supplement_vintage,
+2022-23,brick_kilns,sup25:Table14.1sec.4:2022-23:brick_kilns,supplement_vintage,
+2022-23,cement,sup25:Table14.1sec.4:2022-23:cement_other,supplement_vintage,
+2023-24,brick_kilns,sup25:Table14.1sec.4:2023-24:brick_kilns,supplement_vintage,"1,129 final; the 2023-24 edition's provisional 1,564 is superseded (-435 kt)"
+2023-24,cement,sup25:Table14.1sec.4:2023-24:cement_other,supplement_vintage,"4,391 in every edition that prints it"

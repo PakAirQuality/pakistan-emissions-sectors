@@ -1,0 +1,7 @@
+scenario,network_ch4_Gg,network_co2e_Mt_AR5,ufg_100pct_ch4_Gg,ufg_physical_fraction_required_pct,compatible_with_10pct_ufg,compatible_with_25pct_ufg,interpretation
+reference,290.89852899999994,8.726955869999998,1220.80551897924,23.828408741404672,False,True,fraction of reported UFG that would need to be physical methane loss to equal IPCC transmission plus distribution CH4
+lower_practices,74.4184152,2.232552456,1220.80551897924,6.0958452466879365,True,True,fraction of reported UFG that would need to be physical methane loss to equal IPCC transmission plus distribution CH4
+throughput,229.79926877253158,6.893978063175948,1220.80551897924,18.82357715458848,False,True,fraction of reported UFG that would need to be physical methane loss to equal IPCC transmission plus distribution CH4
+lower_throughput,70.42595786529169,2.112778735958751,1220.80551897924,5.768810573872356,True,True,fraction of reported UFG that would need to be physical methane loss to equal IPCC transmission plus distribution CH4
+lower_distribution_only,101.74232899999998,3.0522698699999995,1220.80551897924,8.334032523466183,True,True,fraction of reported UFG that would need to be physical methane loss to equal IPCC transmission plus distribution CH4
+lower_transmission_only,263.5746152,7.907238455999999,1220.80551897924,21.590221464626428,False,True,fraction of reported UFG that would need to be physical methane loss to equal IPCC transmission plus distribution CH4

@@ -1,0 +1,15 @@
+{
+  "article_doi": "10.1038/s41597-025-05148-9",
+  "data_record": "Zenodo record 14038648",
+  "dataset": "Hamdani et al. 2025, Brick Kiln Dataset for Pakistan's IGP Region Using AI",
+  "held_rows": 11272,
+  "held_snapshot": "data/ml/brick_kilns_pk.csv",
+  "held_snapshot_sha256": "439aa3f28f483fc15fced557ad411d344cc41c3a21c1c40156e57798dd330b85",
+  "licence": "CC-BY-4.0",
+  "note": "the held snapshot's 11,272 kiln locations match Zenodo version 14718244's Main.csv EXACTLY under (lat, lon, type) keys - the version pin above, established by fetching every published version. The concept record's 14038648 file carries 11,277 rows: four coordinate-duplicate keys and one kiln the held set lacks, which is the previously unversioned 11,272-vs-11,277 discrepancy. The id column in the snapshot is blank throughout; kiln_id here is a content hash of (lat, lon, type), stable under re-sorting.",
+  "outside_boundary_points": 5,
+  "version_doi": "10.5281/zenodo.14718244",
+  "version_file": "Brick_Kilns_IGP_PK-Main.csv",
+  "version_file_md5": "e96975b1749e1f453d8a4f898ebe88bc",
+  "version_record": "Zenodo version 14718244"
+}

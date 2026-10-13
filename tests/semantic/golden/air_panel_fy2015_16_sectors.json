@@ -1,0 +1,29 @@
+{
+ "expect": [
+  {
+   "cell": 0,
+   "display": "216.149",
+   "note_dung_reference_2026_10_13": "2026-10-13, rc67: household dung follows the survey in every year. The reference burned in households all the dung agriculture diverts (configuration L) through rc66; it now burns what the two HIES rounds report, a per-household quantity interpolated between 2018-19 and 2024-25 and held at the first round's rate before it. Residential PM2.5 in FY2015-16: 501.313 -> 216.149 Gg (6.03 Mt of cake on the survey series, held at the 2018-19 round's per-household rate, where the ledger had 45.07). Residential is still the largest covered sector, so the cell keeps its position."
+  },
+  {
+   "cell": 5,
+   "display": "0.401"
+  }
+ ],
+ "expect_receipt": "8cd3d6c447100f703a1cc07f5e2d5bd4",
+ "function": "query_air",
+ "golden_id": "air_panel_fy2015_16_sectors",
+ "note": "rc67: cell 0 moved by the dung reference (see its note_dung_reference_2026_10_13). Cell 5 (fugitives, 0.401) did not move.",
+ "request": {
+  "group_by": [
+   "sector_id"
+  ],
+  "order_by": "value desc",
+  "periods": [
+   "FY2015-16"
+  ],
+  "pollutants": [
+   "PM2.5"
+  ]
+ }
+}

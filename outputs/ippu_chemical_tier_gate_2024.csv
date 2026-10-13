@@ -1,0 +1,7 @@
+period_end_year,period_basis,ipcc_code,tier,requirement,evidence_held,evidence_missing,tier_ready,activation_status
+2024,calendar,2.B.1,1,"national ammonia production, or documented plant capacity times utilization, plus urea production for the recovery term",urea production,"national ammonia production, or documented plant capacity times utilization, plus urea production for the recovery term",False,not ready
+2024,calendar,2.B.1,2,complete plant NH3 output and CO2 recovery for every census plant,"1 of 8 census plants with production, 0 with recovery",complete plant NH3 output and CO2 recovery for every census plant,False,not ready
+2024,calendar,2.B.1,3,actual plant fuel and feedstock inputs and their carbon content,0 of 8 census plants with feedstock and gross CO2,actual plant fuel and feedstock inputs and their carbon content,False,not ready
+2024,calendar,2.B.2,1,national 100%-acid output,,national 100%-acid output,False,not ready
+2024,calendar,2.B.2,2,complete plant acid output and process technology,0 of 2 census plants with acid output,complete plant acid output and process technology,False,not ready
+2024,calendar,2.B.2,3,plant-measured emission factor and annual abatement operation,CDM monitoring proves historical abatement only,plant-measured emission factor and annual abatement operation,False,not ready

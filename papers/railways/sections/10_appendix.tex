@@ -1,0 +1,76 @@
+\section{Reproduction}
+\label{app:repro}
+
+\begin{verbatim}
+pip install -e .
+python3 -m pkinv.sectors.railways.run_railways
+\end{verbatim}
+
+runs the whole stdlib pipeline and writes the \num{21} files its run manifest records as
+generated, closing with \texttt{railways\_run\_manifest\_2024.json}, which lists them and
+hashes every primary source the run read. They are, by what each contains:
+
+\begin{itemize}\itemsep2pt
+\item the sector's own reported numbers: \texttt{railways\_\allowbreak totals\_\allowbreak 2024.csv} (the sector total); \texttt{railways\_\allowbreak by\_\allowbreak stream\_\allowbreak 2024.csv} (the same by stream); \texttt{railways\_\allowbreak provincial\_\allowbreak 2024.csv} (the provincial split); \texttt{railways\_\allowbreak monthly\_\allowbreak 2024.csv} (the monthly profile); \texttt{railways\_\allowbreak timeseries\_\allowbreak 2024.csv} (the twelve-year series in both GWP vintages); \texttt{railways\_\allowbreak fuel\_\allowbreak 2024.csv} (fuel by stream in TJ and share).
+\item the air-pollutant layer: \texttt{railways\_\allowbreak air\_\allowbreak pollutants\_\allowbreak 2024.csv} (the pollutant totals); \texttt{railways\_\allowbreak air\_\allowbreak sulfur\_\allowbreak cases\_\allowbreak 2024.csv} (the declared sulfur cases); \texttt{railways\_\allowbreak wear\_\allowbreak pm\_\allowbreak 2024.csv} (wear particulates by pollutant).
+\item the Tier~2 diagnostic: \texttt{railways\_\allowbreak tier2\_\allowbreak split\_\allowbreak 2024.csv} (the split itself); \texttt{railways\_\allowbreak tier2\_\allowbreak air\_\allowbreak diagnostic\_\allowbreak 2024.csv} (its air-side diagnostic).
+\item the official comparison: \texttt{railways\_\allowbreak unfccc\_\allowbreak crt\_\allowbreak cell\_\allowbreak audit\_\allowbreak 2024.csv} (the CRT cell extraction); \texttt{railways\_\allowbreak official\_\allowbreak comparison\_\allowbreak 2024.csv} (this inventory against each official filing for that filing's own year).
+\item the uncertainty system: \texttt{railways\_\allowbreak uncertainty\_\allowbreak 2024.csv} (the interval); \texttt{railways\_\allowbreak uncertainty\_\allowbreak inputs\_\allowbreak 2024.csv} (the input register behind it); \texttt{railways\_\allowbreak uncertainty\_\allowbreak scenarios\_\allowbreak 2024.csv} (the structural scenarios with their national delta).
+\item the reconciliations and quotients: \texttt{railways\_\allowbreak fuel\_\allowbreak reconciliation\_\allowbreak 2024.csv} (the summary fuel account against the locomotive and other-than-locomotive detail, with a verdict per year); \texttt{railways\_\allowbreak fuel\_\allowbreak claimants\_\allowbreak 2024.csv} (who else claims the same fuel); \texttt{railways\_\allowbreak efficiency\_\allowbreak 2024.csv} (litres and MJ per train-kilometre, and grams of \COtwo{} per passenger- and tonne-kilometre); \texttt{railways\_\allowbreak qa\_\allowbreak 2024.csv} (the quality-control report); \texttt{railways\_\allowbreak fuel\_\allowbreak history.csv} (the quinquennial history to 1950).
+\end{itemize}
+
+Three further tables come from phases outside the runner and so are absent from its manifest:
+\texttt{railways\_\allowbreak route\_\allowbreak province\_\allowbreak shares\_\allowbreak 2024.csv},
+the route-based provincial shares;
+\texttt{railways\_\allowbreak elk\_\allowbreak crosscheck\_\allowbreak 2024.csv}, which
+sets the ELK inventory's 2019 Pakistan cells against this one by species and subsector; and
+\texttt{railways\_\allowbreak gis\_\allowbreak provincial\_\allowbreak 2024.csv}, the provincial split computed
+from the rail network itself rather than from the route shares, carrying NO\textsubscript{x},
+PM\textsubscript{2.5} and SO\textsubscript{2} in kilotonnes beside the AR5 total. It comes from
+the spatial entry point behind the \texttt{[gis]} extra, so it is a held product with its
+release digest recorded rather than one the default build rewrites.
+
+The spatial products need the gis extra:
+
+\begin{verbatim}
+pip install -e ".[gis]"
+# from the Geofabrik archive; railways-gis then
+# writes GeoTIFFs and the district tables
+python3 scripts/build_rail_network.py
+make railways-gis
+\end{verbatim}
+
+Figures are regenerated with \texttt{python3 -m pkinv.report.figures} and synced by
+\texttt{python3 scripts/sync\_figures.py}. The sector's invariants run with
+
+\begin{verbatim}
+python3 -m unittest discover tests \
+  -p "test_railways*.py"
+\end{verbatim}
+
+---about a hundred sector tests across six files---and the nineteen generic contract
+tests run over this sector as over every other. The manuscript itself is under test:
+every registered table is reconciled row by row against the CSV it was set from, and
+each headline number carries an anchored claim.
+
+\section{Sources}
+\label{app:sources}
+
+Fuel consumption, traffic and the detail tables are the Pakistan Railways Year Books
+(five editions held with cached text extracts; the scanned 2024--25 edition
+hand-transcribed from page images with page-cited provenance). Diesel density is Pakistan
+State Oil's high-speed-diesel material safety data sheet. Greenhouse-gas factors are IPCC
+2006 Guidelines Volume~2 Chapter~3 Table~3.4.1 (rail) with net calorific values from
+Volume~2 Chapter~1 Table~1.2 \citep{ipcc2006energy}; air-pollutant factors are the
+EMEP/EEA Guidebook 2023 railway chapter \citep{emep2023rail}, with the Tier~2 factors
+tracing to the UIC Rail Diesel Study \citep{halder2005}. The Railways customer-class row
+behind the two-source diesel comparison is the OCAC sectoral sales report, the same
+publication that anchors the road sector's controls. The
+official comparators are Pakistan's First Biennial Update Report and its Common Reporting
+Tables (extracted cell-by-cell from the archived workbook, SHA-256 pinned). The railway
+network derives from the OpenStreetMap Geofabrik extract \citep{osm2026} (ODbL~1.0;
+the extracted network and yard tables are derivative databases, attribution and audit
+in \texttt{data/gis/rail/}); the global comparator is the ELK land-transport inventory
+\citep{elk2026}; traffic corroboration is the World Bank WDI railway series (UIC Railisa,
+CC~BY~4.0); and the independent operational evidence is the Auditor-General of Pakistan's
+railway audit reports, para-cited in a versioned evidence register.

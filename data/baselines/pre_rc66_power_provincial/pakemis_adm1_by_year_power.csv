@@ -1,0 +1,404 @@
+period_id,source_stream_id,module,reporting_sector,sub_category,gas,spatial_view,province,emissions_Gg,co2e_Mt_AR5
+FY2015-16,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,1.4219612456,0.0014219612456
+FY2015-16,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,16.6763503189,0.0166763503189
+FY2015-16,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,153.222320435,0.153222320435
+FY2015-16,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,1.50313e-05,4.50939e-07
+FY2015-16,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.00017628274,5.2884822e-06
+FY2015-16,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.00161968596,4.85905788e-05
+FY2015-16,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,2.25510999917e-05,5.9760414978e-06
+FY2015-16,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.000264472779903,7.00852866742e-05
+FY2015-16,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.00242997611911,0.000643943671563
+FY2015-16,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Balochistan,14.2893344263,0.0142893344263
+FY2015-16,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,900.007795673,0.900007795673
+FY2015-16,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Sindh,0.156322902724,0.000156322902724
+FY2015-16,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Balochistan,0.000578509203885,1.73552761165e-05
+FY2015-16,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.0364371620002,0.00109311486001
+FY2015-16,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Sindh,6.32879288188e-06,1.89863786457e-07
+FY2015-16,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Balochistan,0.000115695590349,3.06593314426e-05
+FY2015-16,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.00728703871945,0.00193106526066
+FY2015-16,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Sindh,1.26569019775e-06,3.35407902405e-07
+FY2015-16,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Balochistan,7368.17427871,7.36817427871
+FY2015-16,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,15437.4927275,15.4374927275
+FY2015-16,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Sindh,812.999588857,0.812999588857
+FY2015-16,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Balochistan,0.28558808994,0.00856764269821
+FY2015-16,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.598352304756,0.0179505691427
+FY2015-16,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Sindh,0.031511605307,0.00094534815921
+FY2015-16,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Balochistan,0.0571174932026,0.0151361356987
+FY2015-16,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.119670199506,0.031712602869
+FY2015-16,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Sindh,0.00630230729265,0.00167011143255
+FY2015-16,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,3468.66185893,3.46866185893
+FY2015-16,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,11927.4019795,11.9274019795
+FY2015-16,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,4549.0908906,4.5490908906
+FY2015-16,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.0618300483905,0.00185490145172
+FY2015-16,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.212609897292,0.00637829691875
+FY2015-16,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.0810890543207,0.00243267162962
+FY2015-16,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.00618302223,0.00163850089095
+FY2015-16,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.02126104953,0.00563417812545
+FY2015-16,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.00810892824,0.0021488659836
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,45.0734221848,0.0450734221848
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,412.738137489,0.412738137489
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,17.5847768744,0.0175847768744
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,2903.5604554,2.9035604554
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,4109.16359207,4.10916359207
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.00080344731892,2.41034195676e-05
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.00735718154753,0.000220715446426
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,0.000313453941342,9.40361824025e-06
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0517568391778,0.00155270517533
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0732470780124,0.00219741234037
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,8.0345935764e-05,2.12916729775e-05
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000735729178631,0.000194968232337
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,3.13458638083e-05,8.3066539092e-06
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00517576146936,0.00137157678938
+FY2015-16,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00732481755344,0.00194107665166
+FY2016-17,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,8.56160384881,0.00856160384881
+FY2016-17,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,100.408014294,0.100408014294
+FY2016-17,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,922.548917858,0.922548917858
+FY2016-17,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,9.05031999917e-05,2.71509599975e-06
+FY2016-17,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.0010613953599,3.18418607971e-05
+FY2016-17,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.00975210143911,0.000292563043173
+FY2016-17,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.0001357548,3.5975022e-05
+FY2016-17,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.00159209304,0.0004219046556
+FY2016-17,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.01462815216,0.0038764603224
+FY2016-17,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Balochistan,5.72474935904,0.00572474935904
+FY2016-17,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,899.564610945,0.899564610945
+FY2016-17,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Sindh,0.12364469458,0.00012364469458
+FY2016-17,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Balochistan,0.000231768719188,6.95306157565e-06
+FY2016-17,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.0364192254769,0.00109257676431
+FY2016-17,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Sindh,5.00580387016e-06,1.50174116105e-07
+FY2016-17,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Balochistan,4.63524792831e-05,1.228340701e-05
+FY2016-17,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.00728364638826,0.00193016629289
+FY2016-17,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Sindh,1.00113346184e-06,2.65300367387e-07
+FY2016-17,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Balochistan,6758.2426343,6.7582426343
+FY2016-17,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,17185.4263374,17.1854263374
+FY2016-17,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Sindh,2101.34864734,2.10134864734
+FY2016-17,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Balochistan,0.261947439023,0.00785842317069
+FY2016-17,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.666101923412,0.0199830577024
+FY2016-17,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Sindh,0.0814476375666,0.002443429127
+FY2016-17,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Balochistan,0.052389384011,0.0138831867629
+FY2016-17,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.133220120747,0.0353033319981
+FY2016-17,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Sindh,0.0162894952406,0.00431671623877
+FY2016-17,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,3495.45668426,3.49545668426
+FY2016-17,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,12019.5391395,12.0195391395
+FY2016-17,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,4584.23184719,4.58423184719
+FY2016-17,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.0623076052495,0.00186922815748
+FY2016-17,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.214252032748,0.00642756098245
+FY2016-17,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.0817153619993,0.00245146085998
+FY2016-17,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.0062308474793,0.00165117458202
+FY2016-17,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.0214255022776,0.00567775810357
+FY2016-17,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.00817165023909,0.00216548731336
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,37.8985913566,0.0378985913566
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,504.869757117,0.504869757117
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,21.5100598252,0.0215100598252
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,3545.77767554,3.54577767554
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,3455.06296715,3.45506296715
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.00067555618208,2.02666854624e-05
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.00899948714074,0.000269984614222
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,0.000383424643811,1.15027393143e-05
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0632047773611,0.00189614332083
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0615877546733,0.0018476326402
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,6.75551172376e-05,1.7902106068e-05
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000899942040348,0.000238484640692
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,3.83421800459e-05,1.01606777122e-05
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00632043086551,0.00167491417936
+FY2016-17,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00615872979586,0.0016320633959
+FY2017-18,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,99.9600885861,0.0999600885861
+FY2017-18,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,1172.30301482,1.17230301482
+FY2017-18,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,10771.1210636,10.7711210636
+FY2017-18,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,0.0010566647,3.1699941e-05
+FY2017-18,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.01239225806,0.0003717677418
+FY2017-18,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.11386007724,0.0034158023172
+FY2017-18,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.0015849929,0.0004200231185
+FY2017-18,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.01858833842,0.0049259096813
+FY2017-18,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.17078966868,0.0452592622002
+FY2017-18,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,601.971626999,0.601971626999
+FY2017-18,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.024370999995,0.00073112999985
+FY2017-18,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.004873999998,0.00129160999947
+FY2017-18,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Balochistan,5529.24677544,5.52924677544
+FY2017-18,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,12853.3973284,12.8533973284
+FY2017-18,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Sindh,1157.90084111,1.15790084111
+FY2017-18,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Balochistan,0.214311759513,0.0064293527854
+FY2017-18,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.498193390358,0.0149458017107
+FY2017-18,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Sindh,0.0448798501276,0.00134639550383
+FY2017-18,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Balochistan,0.042862351903,0.0113585232543
+FY2017-18,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.0996386780724,0.0264042496892
+FY2017-18,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Sindh,0.00897597002559,0.00237863205678
+FY2017-18,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,4380.40495617,4.38040495617
+FY2017-18,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,15062.5379095,15.0625379095
+FY2017-18,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,5744.82641828,5.74482641828
+FY2017-18,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.0780821117995,0.00234246335398
+FY2017-18,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.268494529798,0.00805483589395
+FY2017-18,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.102403358399,0.00307210075198
+FY2017-18,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.00780821118035,0.00206917596279
+FY2017-18,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.0268494529812,0.00711510504002
+FY2017-18,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.0102403358405,0.00271368899772
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,42.531444831,0.042531444831
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,420.438337889,0.420438337889
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,17.9128451909,0.0179128451909
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,2956.5690696,2.9565690696
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,3877.42168548,3.87742168548
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.000758136853651,2.27441056095e-05
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.00749445028045,0.000224833508413
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,0.000319302298498,9.57906895494e-06
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0527018064148,0.00158105419244
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0691163041506,0.00207348912452
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,7.58136853721e-05,2.00906266236e-05
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000749445028114,0.00019860293245
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,3.19302298528e-05,8.46151091098e-06
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00527018064197,0.00139659787012
+FY2017-18,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00691163041569,0.00183158206016
+FY2018-19,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,121.5230929,0.1215230929
+FY2018-19,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,1425.18769432,1.42518769432
+FY2018-19,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,13094.6257068,13.0946257068
+FY2018-19,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,0.00128459930001,3.85379790002e-05
+FY2018-19,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.0150654091401,0.000451962274203
+FY2018-19,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.138420991561,0.00415262974683
+FY2018-19,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.00192689480001,0.000510627122002
+FY2018-19,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.0225980650401,0.00598848723563
+FY2018-19,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.207631040161,0.0550222256426
+FY2018-19,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,84.953534,0.084953534
+FY2018-19,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.003439,0.00010317
+FY2018-19,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.000688,0.00018232
+FY2018-19,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Balochistan,1003.74808879,1.00374808879
+FY2018-19,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,7189.42594958,7.18942594958
+FY2018-19,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Sindh,431.728884623,0.431728884623
+FY2018-19,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Balochistan,0.0389050155497,0.00116715046649
+FY2018-19,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.278660284872,0.00835980854615
+FY2018-19,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Sindh,0.0167336995777,0.000502010987331
+FY2018-19,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Balochistan,0.00778102638566,0.0020619719922
+FY2018-19,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.0557322236885,0.0147690392775
+FY2018-19,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Sindh,0.00334674992682,0.000886888730606
+FY2018-19,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,4064.33585444,4.06433585444
+FY2018-19,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,13975.6971095,13.9756971095
+FY2018-19,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,5330.30718004,5.33030718004
+FY2018-19,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.0724481234402,0.00217344370321
+FY2018-19,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.249121397841,0.00747364193522
+FY2018-19,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.0950144787202,0.00285043436161
+FY2018-19,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.00724474278,0.0019198568367
+FY2018-19,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.02491190058,0.0066016536537
+FY2018-19,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.00950135664,0.0025178595096
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,41.3540057255,0.0413540057255
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,292.725935595,0.292725935595
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,12.4716370872,0.0124716370872
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,2062.51219121,2.06251219121
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,3770.07927237,3.77007927237
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.000737147033135,2.21144109941e-05
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.00521792390265,0.00015653771708
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,0.000222310514202,6.66931542605e-06
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0367648723717,0.00110294617115
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0672027461803,0.00201608238541
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,7.37180495762e-05,1.95352831377e-05
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000521816076916,0.000138281260383
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,2.22320605939e-05,5.89149605737e-06
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00367665413049,0.000974313344581
+FY2018-19,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00672057968342,0.00178095361611
+FY2019-20,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,210.79425145,0.21079425145
+FY2019-20,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,2472.13402845,2.47213402845
+FY2019-20,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,22713.9694851,22.7139694851
+FY2019-20,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,0.0022033014,6.6099042e-05
+FY2019-20,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.02583968172,0.0007751904516
+FY2019-20,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.23741501688,0.0071224505064
+FY2019-20,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.00330495210001,0.000875812306502
+FY2019-20,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.0387595225801,0.0102712734837
+FY2019-20,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.356122525321,0.09437246921
+FY2019-20,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,39.3479780001,0.0393479780001
+FY2019-20,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.001593000001,4.779000003e-05
+FY2019-20,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.000319000002,8.453500053e-05
+FY2019-20,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Balochistan,53.6352835704,0.0536352835704
+FY2019-20,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,4484.37682044,4.48437682044
+FY2019-20,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Sindh,241.50785499,0.24150785499
+FY2019-20,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Balochistan,0.00207889019661,6.23667058983e-05
+FY2019-20,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.173813325657,0.00521439976971
+FY2019-20,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Sindh,0.00936078414656,0.000280823524397
+FY2019-20,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Balochistan,0.000415782528092,0.000110182369944
+FY2019-20,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.0347630404317,0.00921220571439
+FY2019-20,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Sindh,0.00187217704125,0.000496126915932
+FY2019-20,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,3407.84746893,3.40784746893
+FY2019-20,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,11718.2845431,11.7182845431
+FY2019-20,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,4469.33385495,4.46933385495
+FY2019-20,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.06074589345,0.0018223768035
+FY2019-20,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.20888190295,0.0062664570885
+FY2019-20,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.0796672036,0.002390016108
+FY2019-20,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.0060746763,0.0016097892195
+FY2019-20,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.0208884893,0.0055354496645
+FY2019-20,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.0079668344,0.002111211116
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,36.4505844023,0.0364505844023
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,274.923966152,0.274923966152
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,11.7131812234,0.0117131812234
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,1936.2616736,1.9362616736
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,3323.05396563,3.32305396563
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.000649742505455,1.94922751637e-05
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.00490060144457,0.000147018043337
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,0.00020879093819,6.2637281457e-06
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0345144400742,0.00103543320223
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0592344250386,0.00177703275116
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,6.49755564484e-05,1.72185224588e-05
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000490069994066,0.000129868548427
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,2.08795134632e-05,5.53307106776e-06
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00345151337722,0.000914651044963
+FY2019-20,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00592356155781,0.00156974381282
+FY2019-20,power|electricity-and-heat-production|bagasse-ch4|ch4,power,power,Bagasse CH4,CH4,physical,Punjab,0.254011000002,0.00711230800006
+FY2019-20,power|electricity-and-heat-production|bagasse-n2o|n2o,power,power,Bagasse N2O,N2O,physical,Punjab,0.033867999998,0.00897501999947
+FY2020-21,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,228.3328277,0.2283328277
+FY2020-21,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,2677.82137932,2.67782137932
+FY2020-21,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,24603.825034,24.603825034
+FY2020-21,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,0.00239071539999,7.17214619998e-05
+FY2020-21,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.0280376189199,0.000841128567597
+FY2020-21,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.257609665679,0.00772828997037
+FY2020-21,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.0035860731,0.0009503093715
+FY2020-21,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.04205642838,0.0111449535207
+FY2020-21,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.38641449852,0.102399842108
+FY2020-21,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,320.873869,0.320873869
+FY2020-21,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.012991000002,0.00038973000006
+FY2020-21,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.002598000001,0.000688470000265
+FY2020-21,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,7150.68709201,7.15068709201
+FY2020-21,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.277158,0.00831474
+FY2020-21,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.055432,0.01468948
+FY2020-21,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,3497.3658919,3.4973658919
+FY2020-21,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,12026.1041746,12.0261041746
+FY2020-21,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,4586.73574046,4.58673574046
+FY2020-21,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.0623416916102,0.00187025074831
+FY2020-21,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.214369242711,0.00643107728132
+FY2020-21,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.0817600656802,0.00245280197041
+FY2020-21,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.00623415177017,0.0016520502191
+FY2020-21,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.0214368644706,0.00568076908471
+FY2020-21,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.00817598376023,0.00216663569646
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,42.0178502987,0.0420178502987
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,2.56726313694,0.00256726313694
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,0.10937867219,0.00010937867219
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,32.3885413767,0.0323885413767
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,3830.59932651,3.83059932651
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.000748984976458,2.24695492937e-05
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,4.57624915723e-05,1.37287474717e-06
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,1.94971855136e-06,5.84915565408e-08
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.000577338696009,1.73201608803e-05
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0682819641174,0.00204845892352
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,7.49027987073e-05,1.98492416574e-05
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,4.57651194927e-06,1.21277566656e-06
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,1.94983051435e-07,5.16705086302e-08
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,5.77371849801e-05,1.53003540197e-05
+FY2020-21,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00682858852231,0.00180957595841
+FY2020-21,power|electricity-and-heat-production|bagasse-ch4|ch4,power,power,Bagasse CH4,CH4,physical,Punjab,0.319751999999,0.00895305599997
+FY2020-21,power|electricity-and-heat-production|bagasse-n2o|n2o,power,power,Bagasse N2O,N2O,physical,Punjab,0.042634,0.01129801
+FY2021-22,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,196.909130645,0.196909130645
+FY2021-22,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,2309.29334662,2.30929334662
+FY2021-22,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,21217.7891667,21.2177891667
+FY2021-22,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,0.00205759489999,6.17278469998e-05
+FY2021-22,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.0241308780199,0.000723926340597
+FY2021-22,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.221714527079,0.00665143581237
+FY2021-22,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.00308638819998,0.000817892872996
+FY2021-22,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.0361962683598,0.00959201111535
+FY2021-22,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.332571343438,0.0881314060111
+FY2021-22,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,802.446826999,0.802446826999
+FY2021-22,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.032488,0.00097464
+FY2021-22,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.006497999999,0.00172196999974
+FY2021-22,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,10845.875506,10.845875506
+FY2021-22,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.420383000001,0.01261149
+FY2021-22,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.084077,0.022280405
+FY2021-22,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,2948.95216565,2.94895216565
+FY2021-22,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,10140.3190419,10.1403190419
+FY2021-22,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,3867.50048842,3.86750048842
+FY2021-22,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.0525660365995,0.00157698109798
+FY2021-22,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.180754502598,0.00542263507795
+FY2021-22,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.0689394607993,0.00206818382398
+FY2021-22,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.00525660365983,0.00139299996985
+FY2021-22,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.0180754502594,0.00478999431874
+FY2021-22,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.00689394607977,0.00182689571114
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,39.3520309361,0.0393520309361
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,129.010192495,0.129010192495
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,5.49650067076,0.00549650067076
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,916.243068508,0.916243068508
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,3587.56723938,3.58756723938
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.000701462987057,2.10438896117e-05
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.00229964941671,6.89894825012e-05
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,9.79769452084e-05,2.93930835625e-06
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0163323362077,0.000489970086232
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0639495744473,0.00191848723342
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,7.01454574027e-05,1.85885462117e-05
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000229962183575,6.09399786474e-05
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,9.79757701172e-06,2.59635790811e-06
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00163321403251,0.000432801718614
+FY2021-22,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.0063948807465,0.00169464339782
+FY2021-22,power|electricity-and-heat-production|bagasse-ch4|ch4,power,power,Bagasse CH4,CH4,physical,Punjab,0.371726999999,0.010408356
+FY2021-22,power|electricity-and-heat-production|bagasse-n2o|n2o,power,power,Bagasse N2O,N2O,physical,Punjab,0.049563999999,0.0131344599997
+FY2022-23,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,176.05929246,0.17605929246
+FY2022-23,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,2064.77247326,2.06477247326
+FY2022-23,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,18971.1311813,18.9711311813
+FY2022-23,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,0.00179347229999,5.38041689998e-05
+FY2022-23,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.0210333245399,0.000630999736197
+FY2022-23,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.193254203159,0.00579762609477
+FY2022-23,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.0026902043,0.0007129041395
+FY2022-23,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.03154993814,0.0083607336071
+FY2022-23,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.28988085756,0.0768184272534
+FY2022-23,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,200.909539,0.200909539
+FY2022-23,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.008134,0.00024402
+FY2022-23,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.001627000002,0.00043115500053
+FY2022-23,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,5058.82582499,5.05882582499
+FY2022-23,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.196079,0.00588237
+FY2022-23,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.039216000001,0.0103922400003
+FY2022-23,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,2955.59819804,2.95559819804
+FY2022-23,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,10163.1722064,10.1631722064
+FY2022-23,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,3876.21664659,3.87621664659
+FY2022-23,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.05268446931,0.0015805340793
+FY2022-23,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.18116174741,0.0054348524223
+FY2022-23,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.06909478328,0.0020728434984
+FY2022-23,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.00526842953983,0.00139613382805
+FY2022-23,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.0181161149394,0.00480077045894
+FY2022-23,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.00690945551977,0.00183100571274
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,8.95136649281,0.00895136649281
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,191.495843766,0.191495843766
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,8.15871221762,0.00815871221762
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,1343.04281878,1.34304281878
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,816.060274739,0.816060274739
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.000159560326172,4.78680978517e-06
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.003413460874,0.00010240382622
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,0.000145431067272,4.36293201816e-06
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0239400710942,0.000718202132826
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0145464766434,0.000436394299301
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,1.5957922909e-05,4.22884957089e-06
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000341386526256,9.04674294578e-05
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,1.45448296314e-05,3.85437985231e-06
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00239429072453,0.000634487042
+FY2022-23,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00145481999467,0.000385527298589
+FY2022-23,power|electricity-and-heat-production|bagasse-ch4|ch4,power,power,Bagasse CH4,CH4,physical,Punjab,0.380416999998,0.0106516759999
+FY2022-23,power|electricity-and-heat-production|bagasse-n2o|n2o,power,power,Bagasse N2O,N2O,physical,Punjab,0.050722,0.01344133
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Balochistan,0.000653713618113,1.96114085434e-05
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Khyber Pakhtunkhwa,0.0047695857367,0.000143087572101
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Other,0.000203208992204,6.09626976612e-06
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Punjab,0.0335990361591,0.00100797108477
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-ch4|ch4,power,industry,Captive natural gas CH4,CH4,physical,Sindh,0.0595964554939,0.00178789366482
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Balochistan,36.6732667473,0.0366732667473
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Khyber Pakhtunkhwa,267.573269318,0.267573269318
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Other,11.4000035643,0.0114000035643
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Punjab,1884.90247315,1.88490247315
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-co2|co2,power,industry,Captive natural gas CO2,CO2,physical,Sindh,3343.35502422,3.34335502422
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Balochistan,6.5370038799e-05,1.73230602817e-05
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Khyber Pakhtunkhwa,0.000476948920788,0.000126391464009
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Other,2.03204879578e-05,5.3849293088e-06
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Punjab,0.00335983561681,0.000890356438455
+FY2023-24,power|captive-gas-self-generation-(1a2)|captive-natural-gas-n2o|n2o,power,industry,Captive natural gas N2O,N2O,physical,Sindh,0.00595952493564,0.00157927410795
+FY2023-24,power|electricity-and-heat-production|bagasse-ch4|ch4,power,power,Bagasse CH4,CH4,physical,Punjab,0.327082,0.009158296
+FY2023-24,power|electricity-and-heat-production|bagasse-n2o|n2o,power,power,Bagasse N2O,N2O,physical,Punjab,0.043611,0.011556915
+FY2023-24,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Balochistan,0.0017148298,5.1444894e-05
+FY2023-24,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Punjab,0.02011102804,0.0006033308412
+FY2023-24,power|electricity-and-heat-production|coal-ch4|ch4,power,power,Coal CH4,CH4,physical,Sindh,0.18478014216,0.0055434042648
+FY2023-24,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Balochistan,170.893077445,0.170893077445
+FY2023-24,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Punjab,2004.18459741,2.00418459741
+FY2023-24,power|electricity-and-heat-production|coal-co2|co2,power,power,Coal CO2,CO2,physical,Sindh,18414.4497281,18.4144497281
+FY2023-24,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Balochistan,0.0025722447,0.0006816448455
+FY2023-24,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Punjab,0.03016654206,0.0079941336459
+FY2023-24,power|electricity-and-heat-production|coal-n2o|n2o,power,power,Coal N2O,N2O,physical,Sindh,0.27717021324,0.0734501065086
+FY2023-24,power|electricity-and-heat-production|diesel-oil-ch4|ch4,power,power,Diesel Oil CH4,CH4,physical,Punjab,0.005433,0.00016299
+FY2023-24,power|electricity-and-heat-production|diesel-oil-co2|co2,power,power,Diesel Oil CO2,CO2,physical,Punjab,134.185818,0.134185818
+FY2023-24,power|electricity-and-heat-production|diesel-oil-n2o|n2o,power,power,Diesel Oil N2O,N2O,physical,Punjab,0.001087,0.000288055
+FY2023-24,power|electricity-and-heat-production|furnace-oil-ch4|ch4,power,power,Furnace Oil CH4,CH4,physical,Punjab,0.069217,0.00207651
+FY2023-24,power|electricity-and-heat-production|furnace-oil-co2|co2,power,power,Furnace Oil CO2,CO2,physical,Punjab,1785.810868,1.785810868
+FY2023-24,power|electricity-and-heat-production|furnace-oil-n2o|n2o,power,power,Furnace Oil N2O,N2O,physical,Punjab,0.013843,0.003668395
+FY2023-24,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Balochistan,0.05393314311,0.0016179942933
+FY2023-24,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Punjab,0.18545545921,0.0055636637763
+FY2023-24,power|electricity-and-heat-production|gas-ch4|ch4,power,power,Gas CH4,CH4,physical,Sindh,0.07073239768,0.0021219719304
+FY2023-24,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Balochistan,3025.65127644,3.02565127644
+FY2023-24,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Punjab,10404.05796,10.40405796
+FY2023-24,power|electricity-and-heat-production|gas-co2|co2,power,power,Gas CO2,CO2,physical,Sindh,3968.09006457,3.96809006457
+FY2023-24,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Balochistan,0.00539329692,0.0014292236838
+FY2023-24,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Punjab,0.01854548612,0.0049145538218
+FY2023-24,power|electricity-and-heat-production|gas-n2o|n2o,power,power,Gas N2O,N2O,physical,Sindh,0.00707321696,0.0018744024944

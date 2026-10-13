@@ -1,0 +1,107 @@
+% ===========================================================================
+\section{Limitations}
+\label{sec:limitations}
+% ===========================================================================
+
+\textbf{The class split has no independent validation and should be read as the sector's
+weakest output.} No nationally representative Pakistani vehicle-kilometre survey has been
+identified for this study, and no on-road fuel-economy measurement either. The shares rest
+on three inputs, none of them measured in the country: registration counts, assumed annual
+kilometres, and the declared per-kilometre energy intensities that weight them. The largest
+single result---two-wheelers at \SI{34.1}{\percent} of on-road \COtwo{} under the
+reference allocation---rests on the least surveyed class in the fleet and on a judgement about how
+much fuel a motorcycle burns.
+
+This edition changed that result, which is itself a limitation worth stating: the previous
+allocation weighted kilometres alone and put two-wheelers at \SI{42.3}{\percent}, above
+heavy goods vehicles and buses combined. Correcting the weighting reversed that ordering.
+A reader should conclude that the composition is not yet settled, not that it is now
+settled differently. Anchoring confines the consequence to composition rather than total,
+which is the reason the method was chosen, but it does not make the composition reliable.
+
+\textbf{The off-road class is a residual as well as a category, and part of it belongs to a
+different IPCC code.} The source workbook maps its catch-all "other vehicles" entry into
+off-road wholesale, and the whole class is then modelled as \SI{100}{\percent} diesel. The
+magnitude of the carve-out is therefore a genuine partition of the fuel total, while what
+is inside it is soft. Whatever construction and industrial machinery the residual contains
+belongs under 1A2\,gvii, not 1A4c; this inventory reports the whole class under the
+mixture-declaring name \emph{Mixed off-road (1A4c/1A2)}, declares the misassignment in the
+completeness table, and prices the reporting recode as a scenario, because splitting the
+residual needs equipment stock data no source here provides. The cropland proxy that
+allocates it provincially is right for tractors and wrong for whatever else the residual
+contains.
+
+\textbf{Retail-bought agricultural and captive diesel remain inside the road residual.}
+Tube wells, threshers and captive generators fuelled at retail pumps draw on the Road
+customer class, this inventory has not separated them, and they bias the road residual
+high---conditional on the other deductions, since errors in the generator carve-out or
+the off-road partition could run either way. The claim is framed rather than open-ended:
+bulk agricultural HSD is observed zero in all ten OCAC editions; the ten-year road
+share of national diesel (0.83--0.91) is a customer-class boundary sensitivity that
+bounds the sales channel, not the contamination within it; and the retail non-road
+scenarios price the within-channel claim at 2.5--10\% of the Road row
+(Table~\ref{tab:boundary}). Resolving it needs a retail-channel end-use survey, which no
+identified source provides. The ledger carries three claimants as \textsc{unresolved}
+status rows---the third, "other retail stationary/non-road uses", because the named two
+are not proven exhaustive.
+
+\textbf{The provincial allocation now rides fuel sales, whose residual blur is transit.}
+Fuel sold in a province is not fuel consumed there---freight crosses provincial
+boundaries, so Sindh's \SI{19.45}{\percent} of road diesel partly reflects fuel bought at
+Karachi and burned en route north. The shape is the reference year's own twelve area
+pages---an earlier edition borrowed FY2024--25's here on the false premise that none were
+published for the reference period, a borrowing since measured at no more than \num{0.45}
+percentage points of error on any share. This is a far smaller distortion than the superseded
+registration proxy's (which understated Sindh threefold; the comparison is published as a
+diagnostic), but it is a real one. The release now ships the road geometry that a finer
+allocation would start from---\texttt{outputs/pakemis\_road\_length\_adm2.csv} and a
+\SI{0.05}{\degree} major-road density raster, extracted from a dated, hashed OSM
+snapshot---as a diagnostic only: road length is not traffic, and moving fuel onto the
+network would need traffic observations this inventory does not hold. CNG's provincial split still rides the fleet
+model and the off-road class rides cropland (Table~\ref{tab:allocwalk}); only the
+petroleum streams ride fuel sales.
+
+\textbf{The CNG heating value is unpinned.} CNG is estimated from OGRA's metered sector
+gas, but OGRA reports a volume and IPCC works in net terajoules: the conversion applies a
+gross heating value and then the \num{0.90} gross-to-net factor for natural gas. The
+gross-to-net step is a documented convention; the gross value is not---Pakistani pipeline gas
+runs \SIrange{900}{1000}{} Btu/scf depending on field and RLNG share and nothing read here
+pins it. Both ends are reported; the span is \SI{0.13}{\mega\tonne}, a tenth of the CNG
+stream. This is the same unresolved quantity as the captive-power category's heating value,
+and the two sectors are pinned to the same values by test so that one inventory cannot
+assume the same gas two ways.
+
+\textbf{The fleet model overstates CNG travel, and this sector has evidence rather than a
+suspicion.} Section~\ref{sec:validation} divides the metered gas by the modelled CNG
+vehicle-kilometres and gets \SI{0.91}{\mega\joule\per\kilo\metre}, below any plausible
+value for a fleet seven-tenths three-wheelers by distance. The consequence is confined to
+what rides vehicle-kilometres---the air diagnostic and the CNG streams' provincial
+split---because the CNG emissions come from metered gas. It is nonetheless the clearest
+evidence in this paper for the sector's central methodological choice.
+
+\textbf{The air layer is an exploratory diagnostic, on factors without provenance.} The
+per-kilometre factors are transcriptions of the Punjab emissions workbook, for which no
+primary citation has been located---an earlier draft attributed them to the EMEP/EEA
+guidebook, whose road-transport chapter has not in fact been acquired here. Evaporative
+NMVOC and non-exhaust particulate are not estimated at all (both are named process
+families in the gap register with the public chapters that would supply them), and
+\SOtwo{} scales with an unreported fuel sulphur content. The layer is accordingly
+reported in an appendix with no policy claims built on it.
+
+\textbf{The time series is fuel-only, by design.} The ten-year fuel series
+(Section~\ref{sec:series}) carries no generator back-cast, no off-road partition and no
+class composition, because the inputs those refinements need exist only for the reference
+year. The declared whole-Road-class basis keeps the series honest; it also means the
+series is a magnitude record, not a structural one.
+
+\textbf{Emission factors are Tier~1 defaults throughout.} They carry assumptions about
+technology mix and combustion conditions derived largely from countries whose vehicle fleets
+differ substantially from Pakistan's---most consequentially for the two-wheeler class, which
+dominates here and is marginal in the fleets the defaults were derived from.
+
+\textbf{The controls are member-supplied.} OCAC's own disclaimer states its data are
+provided by members and not independently verified. The declared \SI{10}{\percent}
+control uncertainty is anchored on the independent cross-check available---the railway
+figures, \SI{3.8}{\percent} apart year-matched and \SI{11.2}{\percent} on the
+conservative cross-year pairing---and the panel's internal closures, and it is a
+judgement, not a fit.

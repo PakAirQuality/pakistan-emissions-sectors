@@ -1,0 +1,7 @@
+item,value,unit,evidence,note
+MMBTU-metered plant energy,238740.0,TJ,exact,MMBTU to TJ is a definition; no calorific assumption enters
+MMCFT-metered plant energy,101175.0,TJ,assumed,"a volume needs a heating value; 900-1,000 Btu/scf is unpinned here"
+Mass-metered plant energy,438584.0,TJ,IPCC default,"coal and RFO at Vol 2 Ch 1 Table 1.2 net calorific values, not Pakistani fuel"
+"Implied net efficiency, MMBTU plants",48.7,percent,exact,"THE ASSUMPTION-FREE TEST OF THE TOE CONVENTION. A modern combined cycle runs about 50 percent net; read as gross the same fuel would imply 54.1 percent, at the ceiling of any fleet average. Consistent with net."
+Plant gas energy over national TOE gas,1.085,ratio,mixed,"plant sum exceeds the national row; the residual is reported, not absorbed"
+Heating value that would reconcile them,736.0,Btu/scf,derived,"below the plausible 900-1,000 range, so the two sources do not fully reconcile - a statement about NEPRA's tables, not an adjustment to make"

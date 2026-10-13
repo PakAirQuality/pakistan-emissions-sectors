@@ -1,0 +1,283 @@
+% ===========================================================================
+\section{Methods}
+\label{sec:methods}
+% ===========================================================================
+
+The framework consists of four main stages: calculation of the national agricultural
+inventory; allocation of national totals to provinces; allocation to a \SI{0.05}{\degree}
+grid and to administrative districts; and uncertainty, key-category, completeness and
+quality-control analysis.
+
+The inventory is predominantly Tier~1. Each category uses the equations in the 2006 IPCC
+Guidelines, together with relevant updates from the 2019 Refinement, and applies them to
+country-specific activity data. Selected livestock parameters provide partial Tier~2
+characterisation where nationally appropriate values are available. These include typical
+animal masses, the dairy-cattle share and manure-management-system shares.
+
+Tier status is reported by category in Table~\ref{tab:tierstatus}. This is more informative
+than assigning one tier to the entire inventory, because the level of country-specific
+detail differs among categories.
+
+All activity values, emission factors and parameters are stored in version-controlled data
+files; values are not embedded directly in the calculation code. Greenhouse gases are
+converted to carbon-dioxide equivalents using AR5 100-year global-warming potentials ---
+28 for \CHfour{} and 265 for \NtwoO{} --- to match the Common Reporting Table convention.
+AR6-equivalent totals are reported separately.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lp{0.26\linewidth}p{0.34\linewidth}@{}}
+\toprule
+\textbf{Category} & \textbf{Method / data} & \textbf{Country-specific elements} \\
+\midrule
+Enteric fermentation & T1 method, CS data & species census, dairy split \\
+Manure management & T1/2, CS data & animal mass, Nex, MMS, temp.\ zone \\
+Managed soils & T1 method, CS data & fertiliser data, dry-climate EFs \\
+Rice cultivation & T1 method, CS data & area, cultivation period \\
+Field burning & T1 method, CS data & crop production, residue params \\
+Urea application & T1 method, CS data & urea offtake; N series before 2024 \\
+\bottomrule
+\end{tabular}
+\caption{Method-tier status by category. All categories use the Tier-1 (T1)
+method equations on country-specific (CS) activity data; manure management is
+partly Tier~2 through country-specific animal mass and management-system shares.
+No emission factor is Tier~3 (Pakistani field measurement).}
+\label{tab:tierstatus}
+\end{table}
+
+\subsection{National inventory}
+
+\paragraph{Enteric fermentation and manure management}
+Enteric methane is calculated using the Tier~1 form of IPCC Eq.~10.19,
+\begin{equation}
+\mathrm{CH_4^{ent}} \;=\; \sum_t N_t\, EF_t \times 10^{-6},
+\end{equation}
+where $N_t$ is the population of livestock category $t$ and $EF_t$ its annual per-head
+methane emission factor.
+
+Methane from manure management is calculated using IPCC Eq.~10.22 with temperature-dependent
+factors, and direct nitrous oxide from manure management follows Eq.~10.25. Nitrogen
+excretion is calculated as $N_{\mathrm{rate},t} \times TAM_t \times 365/1000$, where
+$N_{\mathrm{rate},t}$ is the daily nitrogen-excretion rate and $TAM_t$ is typical animal
+mass.
+
+The calculation then distributes excreted nitrogen among manure-management systems. Dung
+burned as household fuel is assigned to the energy sector and excluded from the agricultural
+inventory to prevent double counting. Nitrogen deposited directly on pasture is assigned to
+managed soils rather than to manure management.
+
+\paragraph{Managed soils}
+Direct soil nitrous oxide follows IPCC Eq.~11.1,
+\begin{equation}
+\mathrm{N_2O^{direct}} \;=\;
+\left[(F_{\mathrm{SN}}+F_{\mathrm{ON}}+F_{\mathrm{CR}})\,EF_1
++ F_{\mathrm{PRP}}\,EF_{3,\mathrm{PRP}}\right]\frac{44}{28},
+\end{equation}
+where $F_{\mathrm{SN}}$, $F_{\mathrm{ON}}$, $F_{\mathrm{CR}}$ and $F_{\mathrm{PRP}}$ are
+nitrogen inputs from synthetic fertiliser, organic amendments, crop residues and pasture
+deposition respectively.
+
+Nitrogen applied to rice is assigned the flooded-rice emission factor
+$EF_{1,\mathrm{FR}}$. Indirect \NtwoO{} from volatilisation and leaching follows IPCC
+Eqs.~11.9 and~11.10.
+
+For direct \NtwoO{} from non-rice cropland, the main inventory uses the 2019 dry-climate
+value $EF_1=0.005$. This value is appropriate for the arid but irrigated Indus basin and is
+close to the crop-weighted empirical estimate reported for Pakistan by \citet{cui2021}. The
+older aggregate value and the wet-climate value are examined in the sensitivity analysis in
+Section~\ref{sec:sensitivity}.
+
+\paragraph{Rice cultivation, residue burning and urea application}
+Rice methane is calculated using IPCC Eqs.~5.1 and~5.2,
+\begin{equation}
+\mathrm{CH_4^{rice}} \;=\; \sum_i EF_c\, SF_{w,i}\, SF_{p,i}\, SF_{o,i}\, t_i\, A_i
+\times 10^{-6},
+\end{equation}
+where $EF_c$ is the baseline daily emission factor, $SF_w$ represents the water regime,
+$SF_p$ the pre-season water regime, $SF_o$ the effect of organic amendments, $t_i$ the
+cultivation period and $A_i$ the harvested area.
+
+Emissions from field burning follow the generic biomass-burning equation in the IPCC
+Guidelines. Urea-application \COtwo{} follows Eq.~11.13. The urea mass has two bases, and
+each year states which it used in \texttt{outputs/agriculture\_urea\_basis.csv}. For the
+reference year it is the national urea offtake NFDC prints for the fiscal year itself. For
+every earlier year, which has a total-nitrogen figure and no published product split, it is
+reconstructed from that series by a constant chemical relation. The reconstruction was
+formerly applied to the reference year as well, where it fell short of the printed offtake by
+\SI{0.207}{\percent}; a measurement is preferred to an approximation of it wherever one
+exists, and the approximation is retained, and labelled, where none does.
+
+Liming emissions under category 3.G are not estimated: no national lime-use activity figure
+has been sought. Liming is recorded as ``not estimated'' in the completeness
+assessment.
+
+\subsection{Provincial allocation}
+
+National emission streams are allocated to the four provinces and a small residual region
+using activity-specific administrative shares.
+
+Enteric fermentation, manure-management emissions and pasture-deposited nitrogen use
+provincial livestock-census shares. Rice methane and rice-specific fertiliser nitrogen use
+provincial rice area. Residue-related emissions use cropland shares. Synthetic-fertiliser
+\NtwoO{} and urea \COtwo{} use provincial fertiliser-offtake shares.
+
+Applied manure requires a different treatment, because it is generated near livestock but
+applied to cropland. Its provincial distribution is therefore derived by intersecting
+cropland with livestock density at the grid-cell level and then aggregating the resulting
+surface to provinces.
+
+All provincial shares are normalised to sum to one. Provincial estimates therefore reproduce
+the national control total exactly.
+
+\subsection{Gridded allocation and mass-balance reconciliation}
+
+Each provincial emission stream is allocated to a \SI{0.05}{\degree} grid using dasymetric
+weighting. Let $E_{p,s}$ be the control total for emission stream $s$ in province $p$, let
+$\Omega_p$ be the set of grid cells within that province, and let $w_{i,s}$ be the
+spatial-proxy value for cell $i$. Emissions in each cell are calculated as
+\begin{equation}
+e_{i,s} \;=\; E_{p,s}\,\frac{w_{i,s}}{\sum_{j\in\Omega_p} w_{j,s}},
+\qquad i\in\Omega_p .
+\label{eq:reconcile}
+\end{equation}
+This construction guarantees that $\sum_{i\in\Omega_p} e_{i,s}=E_{p,s}$. The grid therefore
+reconciles to the provincial total, and provincial totals reconcile to the national
+inventory.
+
+Spatial proxies are assigned by emission stream rather than by broad inventory category.
+This distinction matters because a single category can contain several nitrogen or activity
+streams with different geographies.
+
+\GLW{} livestock density is used for enteric methane, manure-management emissions and
+pasture-deposited nitrogen. Species densities are weighted by their per-head emission
+factors, so that the resulting proxy represents the spatial distribution of emissions rather
+than unweighted animal numbers.
+
+MapSPAM paddy area is the declared proxy for rice methane and the rice-specific
+fertiliser stream; the raster (2020 V2r2, hash-pinned) is held and consumed since
+the spatial facility program, its cropland-fallback class deleted fail-closed,
+and the own-year GCD-Rice 2023 classification ships beside it as a published
+crosscheck and a priced district-level bracket (Section~\ref{sec:data}). FIRMS
+active-fire detections are used for crop-residue burning. WorldCover cropland fraction is
+used for synthetic fertiliser, crop-residue inputs to soils and urea application.
+
+Managed soils are constructed by allocating each nitrogen input separately and then summing
+the resulting stream-level surfaces. This prevents the geography of synthetic fertiliser
+from being imposed on manure-derived or pasture-derived nitrogen.
+
+Applied manure is allocated using cropland weighted by livestock density. This proxy
+represents two physical constraints: manure is applied on agricultural land, but transport
+costs generally keep it close to the herd that produces it.
+
+Where a proxy has no positive values within a province, the corresponding emission stream is
+distributed uniformly across that province. This fallback preserves the provincial control
+total.
+
+\subsection{District allocation and historical district panel}
+\label{sec:methods-district}
+
+The same proportional-allocation rule is used to distribute provincial totals among
+administrative districts. The main output contains 116 districts across the four provinces.
+Gilgit-Baltistan, Azad Jammu and Kashmir, and Islamabad Capital Territory are represented
+together as a residual unit, producing 115 reporting units in total.
+
+For most emission streams, district shares are obtained by summing the relevant spatial
+proxy within each district and normalising those sums within the province.
+
+Livestock categories receive a more direct treatment: livestock emissions are distributed
+using district head-counts from the 2024 PBS Agricultural Census, every census district
+resolved through the inventory's canonical district crosswalk (several census districts
+sum onto one boundary polygon where the boundary file predates a split). The two census
+units the boundary file does not draw, Cholistan Area and Larkana District, keep their own
+share as named rows of the district panel and fall to the province surface in the grid; a
+polygon the census does not reach is a build failure, not a proxy.
+
+The gridded and district products are parallel allocations of the same provincial controls.
+They are not nested representations of one another. The \SI{0.05}{\degree} grid uses
+continuous gridded proxies, whereas the district table substitutes census head-counts for
+livestock where possible. Both products reconcile to the same provincial and national
+totals, but summing grid cells within a district will not necessarily reproduce the
+census-controlled district estimate. Formally,
+$\sum_{i\in\Omega_p}e_{i,s}=E_{p,s}$ for the grid and $\sum_{d\in p}E_{d,s}=E_{p,s}$ for the
+district product, and both satisfy $\sum_p E_{p,s}=E_s$.
+
+No consistent multi-year district activity dataset is available. The historical district
+panel therefore holds the audited 2024 district shares fixed and rescales them to each year's
+national category total for 1990--2024.
+
+The district values consequently follow the national time series. They do not represent
+observed changes in the geographic distribution of activity over time. This assumption is
+evaluated in Section~\ref{sec:limitations}.
+
+The exploratory land-sector extension in Supplementary Note~S1 is excluded from the
+agricultural totals, benchmarking, key-category assessment and uncertainty analysis.
+
+\subsection{Uncertainty analysis}
+
+Uncertainty is estimated using two propagation approaches applied to the same set of
+activity-data and emission-factor uncertainties.
+
+IPCC Approach~1 propagates uncertainty analytically. Uncertainties in multiplicative terms
+are combined in quadrature, while uncertainties in additive components are combined using
+their contributions to the total.
+
+The Monte-Carlo analysis samples the \emph{components}: each engine row is drawn from a
+mean-preserving lognormal at its own declared width---appropriate for non-negative
+emissions with potentially right-skewed uncertainty---with one shared deviate per
+declared correlation group, so rows split apart for allocation reasons cannot average
+their common error away. The simulation uses $10^4$ iterations, and the category and
+sector totals are the \emph{sums of the sampled rows} in every realisation rather than
+sampled quantities in their own right.
+
+The two approaches test the sensitivity of the reported interval to the form of propagation.
+They do not provide independent estimates, because both use the same underlying uncertainty
+assumptions. Agreement between them therefore indicates consistency between analytical
+quadrature and lognormal aggregation.
+
+Managed-soils components that share an emission factor are treated as perfectly correlated.
+This applies to separate volatilisation and leaching streams that appear as distinct rows
+because they use different spatial proxies. Treating them as independent would artificially
+reduce uncertainty when one physical stream is divided into several reporting components.
+
+Other within-category and cross-category correlations are not modelled \emph{by this
+sector-scoped stream}, and the qualifier matters because a second engine treats two of them
+differently. This sector's Monte Carlo samples component totals, which cannot express
+covariance between the categories its stages couple; the NATIONAL run instead samples a
+parameter graph, and there two physical couplings are carried explicitly---fertiliser N as
+one audited series driving both the soils components and the urea term, and each species'
+head-count shared between its enteric and manure components. Their effect at national scale
+is about a hundredth of a percentage point, in the widening direction. Supplementary
+Note~S3 gives that treatment; the limitation of the sector-scoped stream is the one stated
+here. The reported
+national interval therefore reflects the documented parameter uncertainties under this
+correlation structure. Factor-level uncertainties are reported in
+Table~\ref{tab:ef-full}, category distributions in \ref{app:unc}, and full input
+provenance in Supplementary Note~S3.
+
+\subsection{Key categories, completeness and quality control}
+
+Key categories are identified using the IPCC Approach~1 level and trend assessments.
+
+The level assessment ranks categories by their contribution to the absolute national total
+in the reference year. The trend assessment uses
+$T_x = L_{x,0}\,\lvert g_x - g_{\mathrm{tot}}\rvert$, where $L_{x,0}$ is category $x$'s
+share in the base year, $g_x$ is its growth since 1990 and $g_{\mathrm{tot}}$ is the growth
+of the total agricultural inventory. The metric therefore identifies categories that are
+both important in the base year and whose trajectory differs from the sector average. It
+should not be interpreted simply as a category growth rate.
+
+Categories are accumulated until the \SI{95}{\percent} threshold is reached. A category is
+classified as key if it qualifies under either the level or the trend assessment.
+
+Inventory coverage is documented through a completeness table. Every \AFOLU{}
+category-and-gas combination receives an IPCC notation key: estimated, not estimated, not
+occurring, or included elsewhere. This makes known gaps, exclusions and cross-sector
+transfers explicit.
+
+Quality control is implemented through automated tests covering units, source traceability,
+mass-balance reconciliation, benchmark ranges, and consistency among national, provincial,
+grid, district and historical outputs. Quality assurance is supported through comparison
+with FAOSTAT, EDGAR, Climate TRACE and independent district statistics. Changes to activity
+data, emission factors or methods trigger recalculation of the complete time series.

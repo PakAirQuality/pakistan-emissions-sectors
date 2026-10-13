@@ -1,0 +1,1477 @@
+result_row_id,sector_id,period_id,configuration_id,category,pollutant,emissions_kt,coverage_scope
+a666775901a8868c885d22d1,agriculture,FY2015-16,L_HERD1624,Field burning of residues,BC,2.683641,covered_sources_only
+35fb4e5d54501203a5178f01,agriculture,FY2015-16,L_HERD1624,Field burning of residues,CO,493.789916,covered_sources_only
+f5450e29135a54c3d783b630,agriculture,FY2015-16,L_HERD1624,Field burning of residues,NH3,6.977466,covered_sources_only
+b6448c63a003c842c49026d6,agriculture,FY2015-16,L_HERD1624,Field burning of residues,NMVOC,37.570972,covered_sources_only
+44d303bb4e2dca666c8b9f15,agriculture,FY2015-16,L_HERD1624,Field burning of residues,NOx,13.418204,covered_sources_only
+8c574d8f5094e78e94f3177f,agriculture,FY2015-16,L_HERD1624,Field burning of residues,PM2.5,40.791341,covered_sources_only
+80042a602e640b7ed42daefd,agriculture,FY2015-16,L_HERD1624,Field burning of residues,SO2,2.146913,covered_sources_only
+e6fbd6513fd55a3a6fe1bbcf,agriculture,FY2015-16,L_HERD1624,Managed soils,NH3,1287.125439,covered_sources_only
+3ac2c6f67b23939a1c99b813,agriculture,FY2015-16,L_HERD1624,Managed soils,NOx,101.821767,covered_sources_only
+7081d2829bae84a7b756c214,agriculture,FY2015-16,L_HERD1624,Manure management,NH3,522.168395,covered_sources_only
+793c43cf532c8b24901bd92a,agriculture,FY2015-16,REF_2023_24,Field burning of residues,BC,2.683641,covered_sources_only
+54cf39966e3d1adba1395424,agriculture,FY2015-16,REF_2023_24,Field burning of residues,CO,493.789916,covered_sources_only
+ef3a9c8ac76c07964e0a249f,agriculture,FY2015-16,REF_2023_24,Field burning of residues,NH3,6.977466,covered_sources_only
+12213f434704a0dd48f7d115,agriculture,FY2015-16,REF_2023_24,Field burning of residues,NMVOC,37.570972,covered_sources_only
+f45c9951f4606392f3138113,agriculture,FY2015-16,REF_2023_24,Field burning of residues,NOx,13.418204,covered_sources_only
+7ffa949156d4e9b539eb4a20,agriculture,FY2015-16,REF_2023_24,Field burning of residues,PM2.5,40.791341,covered_sources_only
+7975f05c7cc74e908797e204,agriculture,FY2015-16,REF_2023_24,Field burning of residues,SO2,2.146913,covered_sources_only
+35442d7ccee49f37afbc112a,agriculture,FY2015-16,REF_2023_24,Managed soils,NH3,1287.125439,covered_sources_only
+4e1951f69b0ff71de859e556,agriculture,FY2015-16,REF_2023_24,Managed soils,NOx,101.821767,covered_sources_only
+e63ea0311dc81c221274559a,agriculture,FY2015-16,REF_2023_24,Manure management,NH3,522.168395,covered_sources_only
+db23a64ea414149aea9eee7c,agriculture,FY2016-17,L_HERD1624,Field burning of residues,BC,2.869824,covered_sources_only
+4cdf1443d28191fd49b54a8e,agriculture,FY2016-17,L_HERD1624,Field burning of residues,CO,528.047672,covered_sources_only
+622db7a6568ef93aaceb19fa,agriculture,FY2016-17,L_HERD1624,Field burning of residues,NH3,7.461543,covered_sources_only
+f2379c1c598ce26a81e955f7,agriculture,FY2016-17,L_HERD1624,Field burning of residues,NMVOC,40.177540,covered_sources_only
+a0e9b0987ae16eaec2e1f986,agriculture,FY2016-17,L_HERD1624,Field burning of residues,NOx,14.349122,covered_sources_only
+a1ccbef2d18fdaec1610d90f,agriculture,FY2016-17,L_HERD1624,Field burning of residues,PM2.5,43.621329,covered_sources_only
+e2667d2b4bee78779130a18b,agriculture,FY2016-17,L_HERD1624,Field burning of residues,SO2,2.295859,covered_sources_only
+852f5e0d3da6eaf4c7f31a8a,agriculture,FY2016-17,L_HERD1624,Managed soils,NH3,1526.028126,covered_sources_only
+c26119ad5097045f220bd674,agriculture,FY2016-17,L_HERD1624,Managed soils,NOx,128.198244,covered_sources_only
+69d8a7aaaef5b7f4067dff4d,agriculture,FY2016-17,L_HERD1624,Manure management,NH3,555.548748,covered_sources_only
+c170f057d60f5d1f02604f32,agriculture,FY2016-17,REF_2023_24,Field burning of residues,BC,2.869824,covered_sources_only
+d7ab4a8d1aa24995c289d4bc,agriculture,FY2016-17,REF_2023_24,Field burning of residues,CO,528.047672,covered_sources_only
+e92e10ec5326fbe672ab1f55,agriculture,FY2016-17,REF_2023_24,Field burning of residues,NH3,7.461543,covered_sources_only
+95d6b4782526660218462640,agriculture,FY2016-17,REF_2023_24,Field burning of residues,NMVOC,40.177540,covered_sources_only
+b343488d4261f3eb04978a6e,agriculture,FY2016-17,REF_2023_24,Field burning of residues,NOx,14.349122,covered_sources_only
+9516be92c216dfc5a10b2f5a,agriculture,FY2016-17,REF_2023_24,Field burning of residues,PM2.5,43.621329,covered_sources_only
+b171e5985302891380c89204,agriculture,FY2016-17,REF_2023_24,Field burning of residues,SO2,2.295859,covered_sources_only
+d2f2141b8d55a1071faa29fc,agriculture,FY2016-17,REF_2023_24,Managed soils,NH3,1526.028126,covered_sources_only
+f71bd2434959e87615cf00a7,agriculture,FY2016-17,REF_2023_24,Managed soils,NOx,128.198244,covered_sources_only
+6e2e13e14fc690f4ebb82e13,agriculture,FY2016-17,REF_2023_24,Manure management,NH3,555.548748,covered_sources_only
+2869ef338d4099c35a5cce93,agriculture,FY2017-18,L_HERD1624,Field burning of residues,BC,3.040245,covered_sources_only
+0885ad5f0e020530e69c9348,agriculture,FY2017-18,L_HERD1624,Field burning of residues,CO,559.405051,covered_sources_only
+571a52ef97e8dbd7f30c160a,agriculture,FY2017-18,L_HERD1624,Field burning of residues,NH3,7.904637,covered_sources_only
+456e17a93dcf1ff032f15a46,agriculture,FY2017-18,L_HERD1624,Field burning of residues,NMVOC,42.563428,covered_sources_only
+0433c98dbfae233270ca3739,agriculture,FY2017-18,L_HERD1624,Field burning of residues,NOx,15.201224,covered_sources_only
+c78a25446a8047b925154535,agriculture,FY2017-18,L_HERD1624,Field burning of residues,PM2.5,46.211722,covered_sources_only
+ed10fb9d3d3a6f2227dc634b,agriculture,FY2017-18,L_HERD1624,Field burning of residues,SO2,2.432196,covered_sources_only
+f2fdebad698a29bd954b4c0e,agriculture,FY2017-18,L_HERD1624,Managed soils,NH3,1500.628187,covered_sources_only
+8b858ec3e96e94c5b483baca,agriculture,FY2017-18,L_HERD1624,Managed soils,NOx,123.139848,covered_sources_only
+1d2e6fb66b5320e37cf78dde,agriculture,FY2017-18,L_HERD1624,Manure management,NH3,587.129370,covered_sources_only
+da0d86cb826678228377ef75,agriculture,FY2017-18,REF_2023_24,Field burning of residues,BC,3.040245,covered_sources_only
+65db5298c40ddc024581bb85,agriculture,FY2017-18,REF_2023_24,Field burning of residues,CO,559.405051,covered_sources_only
+6b3594373e41857ed6f7d49a,agriculture,FY2017-18,REF_2023_24,Field burning of residues,NH3,7.904637,covered_sources_only
+aae71cb5ce92acd5377547aa,agriculture,FY2017-18,REF_2023_24,Field burning of residues,NMVOC,42.563428,covered_sources_only
+785b134ba98084a1c62ba89a,agriculture,FY2017-18,REF_2023_24,Field burning of residues,NOx,15.201224,covered_sources_only
+d19bf7e5a2d3f1567c072287,agriculture,FY2017-18,REF_2023_24,Field burning of residues,PM2.5,46.211722,covered_sources_only
+33995358e4169f588774fd99,agriculture,FY2017-18,REF_2023_24,Field burning of residues,SO2,2.432196,covered_sources_only
+245e4c59c69c41e6d1562e5d,agriculture,FY2017-18,REF_2023_24,Managed soils,NH3,1500.628187,covered_sources_only
+aff8813c042741c8cbb607a3,agriculture,FY2017-18,REF_2023_24,Managed soils,NOx,123.139848,covered_sources_only
+0b535274aabcd6046e5db199,agriculture,FY2017-18,REF_2023_24,Manure management,NH3,587.129370,covered_sources_only
+69e6e360394c4cca9cc934c8,agriculture,FY2018-19,L_HERD1624,Field burning of residues,BC,2.753463,covered_sources_only
+b493b8ecfb97ba0254284bfd,agriculture,FY2018-19,L_HERD1624,Field burning of residues,CO,506.637232,covered_sources_only
+ab0939e8497c79066fa6e891,agriculture,FY2018-19,L_HERD1624,Field burning of residues,NH3,7.159004,covered_sources_only
+46999139e01771693b010a0e,agriculture,FY2018-19,L_HERD1624,Field burning of residues,NMVOC,38.548485,covered_sources_only
+8f58f7ade6825e5141823305,agriculture,FY2018-19,L_HERD1624,Field burning of residues,NOx,13.767316,covered_sources_only
+b5f8cbb9f6f8c89b238c48ed,agriculture,FY2018-19,L_HERD1624,Field burning of residues,PM2.5,41.852641,covered_sources_only
+7f834cdee10200849a2dc79c,agriculture,FY2018-19,L_HERD1624,Field burning of residues,SO2,2.202771,covered_sources_only
+61d7275f97a8f0c10adae3ed,agriculture,FY2018-19,L_HERD1624,Managed soils,NH3,1528.928562,covered_sources_only
+7ea82bceb90dff6c30501c50,agriculture,FY2018-19,L_HERD1624,Managed soils,NOx,124.120426,covered_sources_only
+223fa158e36f7b7356fe21bf,agriculture,FY2018-19,L_HERD1624,Manure management,NH3,620.770421,covered_sources_only
+2088ab304afdf14312af26e2,agriculture,FY2018-19,REF_2023_24,Field burning of residues,BC,2.753463,covered_sources_only
+b60f477ec3a755e18b6bd234,agriculture,FY2018-19,REF_2023_24,Field burning of residues,CO,506.637232,covered_sources_only
+8f8a6284b487aceadbf8ee4a,agriculture,FY2018-19,REF_2023_24,Field burning of residues,NH3,7.159004,covered_sources_only
+25b604e967983228a3f07aeb,agriculture,FY2018-19,REF_2023_24,Field burning of residues,NMVOC,38.548485,covered_sources_only
+e3ab36c200ec5ebd8737ddcc,agriculture,FY2018-19,REF_2023_24,Field burning of residues,NOx,13.767316,covered_sources_only
+3f488034bc1fbffe84f734e3,agriculture,FY2018-19,REF_2023_24,Field burning of residues,PM2.5,41.852641,covered_sources_only
+fba964dc589275573bd7f69c,agriculture,FY2018-19,REF_2023_24,Field burning of residues,SO2,2.202771,covered_sources_only
+2536ac53751d84e5b3a53ecf,agriculture,FY2018-19,REF_2023_24,Managed soils,NH3,1528.928562,covered_sources_only
+2f1a87a9d04451e99d042168,agriculture,FY2018-19,REF_2023_24,Managed soils,NOx,124.120426,covered_sources_only
+bd4f7c3dfd33d33bab8c24a6,agriculture,FY2018-19,REF_2023_24,Manure management,NH3,620.770421,covered_sources_only
+f1eef91cc8ee685ef48e03fe,agriculture,FY2019-20,L_HERD1624,Field burning of residues,BC,2.786084,covered_sources_only
+73a02786c17d0ddef3546463,agriculture,FY2019-20,L_HERD1624,Field burning of residues,CO,512.639524,covered_sources_only
+1ef64e689214d784d80a0e0c,agriculture,FY2019-20,L_HERD1624,Field burning of residues,NH3,7.243819,covered_sources_only
+0ebbd57245d6d1b49d323f25,agriculture,FY2019-20,L_HERD1624,Field burning of residues,NMVOC,39.005181,covered_sources_only
+a9c510fffb47cbc4fbb9b909,agriculture,FY2019-20,L_HERD1624,Field burning of residues,NOx,13.930422,covered_sources_only
+6c24d59da8d2208803817a3d,agriculture,FY2019-20,L_HERD1624,Field burning of residues,PM2.5,42.348482,covered_sources_only
+18334a808d9d011d12ae02cc,agriculture,FY2019-20,L_HERD1624,Field burning of residues,SO2,2.228867,covered_sources_only
+f46f52f5b06b77d08c94847c,agriculture,FY2019-20,L_HERD1624,Managed soils,NH3,1565.701666,covered_sources_only
+6b5152237206c6918a11bc46,agriculture,FY2019-20,L_HERD1624,Managed soils,NOx,126.340863,covered_sources_only
+25e573eee171ba2461510c3d,agriculture,FY2019-20,L_HERD1624,Manure management,NH3,657.031374,covered_sources_only
+93b3563eb227787b8203f2f1,agriculture,FY2019-20,REF_2023_24,Field burning of residues,BC,2.786084,covered_sources_only
+2dd6b520e898c86e9d20060e,agriculture,FY2019-20,REF_2023_24,Field burning of residues,CO,512.639524,covered_sources_only
+81f1fa94c91819db49b80b70,agriculture,FY2019-20,REF_2023_24,Field burning of residues,NH3,7.243819,covered_sources_only
+03a835d921bd98a4a8e94914,agriculture,FY2019-20,REF_2023_24,Field burning of residues,NMVOC,39.005181,covered_sources_only
+0e31b0c59229ffbb9ad9aca4,agriculture,FY2019-20,REF_2023_24,Field burning of residues,NOx,13.930422,covered_sources_only
+a02d06b71c74e8ac910ceb2f,agriculture,FY2019-20,REF_2023_24,Field burning of residues,PM2.5,42.348482,covered_sources_only
+43e41b140c9ffb343c174b5e,agriculture,FY2019-20,REF_2023_24,Field burning of residues,SO2,2.228867,covered_sources_only
+fc6ad846ec9a053e1933bb41,agriculture,FY2019-20,REF_2023_24,Managed soils,NH3,1565.701666,covered_sources_only
+ac58b6048f1a364113100509,agriculture,FY2019-20,REF_2023_24,Managed soils,NOx,126.340863,covered_sources_only
+5a382aa98f9a65dcffcf8b69,agriculture,FY2019-20,REF_2023_24,Manure management,NH3,657.031374,covered_sources_only
+e08b566387a0f8089edab9a0,agriculture,FY2020-21,L_HERD1624,Field burning of residues,BC,3.057970,covered_sources_only
+4ae34d936f1f7d2035d2e4c8,agriculture,FY2020-21,L_HERD1624,Field burning of residues,CO,562.666557,covered_sources_only
+402d86f98dd541acaf65b58b,agriculture,FY2020-21,L_HERD1624,Field burning of residues,NH3,7.950723,covered_sources_only
+7bef593ff8fa3a4519b9d0e4,agriculture,FY2020-21,L_HERD1624,Field burning of residues,NMVOC,42.811586,covered_sources_only
+cf6a2dfcec89d7d427a6d758,agriculture,FY2020-21,L_HERD1624,Field burning of residues,NOx,15.289852,covered_sources_only
+9bbc4c35fb57e04b683e3ef9,agriculture,FY2020-21,L_HERD1624,Field burning of residues,PM2.5,46.481150,covered_sources_only
+a1d9a6716d7e7dc2dccb6bc8,agriculture,FY2020-21,L_HERD1624,Field burning of residues,SO2,2.446376,covered_sources_only
+6c7c650adc0062e6a882b520,agriculture,FY2020-21,L_HERD1624,Managed soils,NH3,1660.956101,covered_sources_only
+4bc3a30ccf22efede2b6dfbb,agriculture,FY2020-21,L_HERD1624,Managed soils,NOx,135.509370,covered_sources_only
+808d21a132fd9053fdd5e87a,agriculture,FY2020-21,L_HERD1624,Manure management,NH3,696.331355,covered_sources_only
+f2db2fefbbdef41492b8d36d,agriculture,FY2020-21,REF_2023_24,Field burning of residues,BC,3.057970,covered_sources_only
+dd1aa6ed3463b7a92ac74b10,agriculture,FY2020-21,REF_2023_24,Field burning of residues,CO,562.666557,covered_sources_only
+93e468e7a1eb241fc8ef1e1f,agriculture,FY2020-21,REF_2023_24,Field burning of residues,NH3,7.950723,covered_sources_only
+407c9cf68b06415e32ba7c18,agriculture,FY2020-21,REF_2023_24,Field burning of residues,NMVOC,42.811586,covered_sources_only
+6eadf855b7cf92a41e62a379,agriculture,FY2020-21,REF_2023_24,Field burning of residues,NOx,15.289852,covered_sources_only
+375b0ef2f4dda8da19be6168,agriculture,FY2020-21,REF_2023_24,Field burning of residues,PM2.5,46.481150,covered_sources_only
+e3e9ad5cb67b784853c9e0eb,agriculture,FY2020-21,REF_2023_24,Field burning of residues,SO2,2.446376,covered_sources_only
+72a1f9f5064eb3446fed204a,agriculture,FY2020-21,REF_2023_24,Managed soils,NH3,1660.956101,covered_sources_only
+31183beb7f8027a9dd6c9e9a,agriculture,FY2020-21,REF_2023_24,Managed soils,NOx,135.509370,covered_sources_only
+23e0fdeb059fd29377b8bc72,agriculture,FY2020-21,REF_2023_24,Manure management,NH3,696.331355,covered_sources_only
+d5856ffa41c0c50cb2125a2c,agriculture,FY2021-22,L_HERD1624,Field burning of residues,BC,3.289641,covered_sources_only
+07723b9cb13a86bcfb5f5834,agriculture,FY2021-22,L_HERD1624,Field burning of residues,CO,605.293980,covered_sources_only
+749b01c7cbeedb05ec738533,agriculture,FY2021-22,L_HERD1624,Field burning of residues,NH3,8.553067,covered_sources_only
+7f4d5329698e40fa98104c68,agriculture,FY2021-22,L_HERD1624,Field burning of residues,NMVOC,46.054977,covered_sources_only
+860a5c1e3ce77951fed101d7,agriculture,FY2021-22,L_HERD1624,Field burning of residues,NOx,16.448206,covered_sources_only
+67afb3afd92799a71b8b21d3,agriculture,FY2021-22,L_HERD1624,Field burning of residues,PM2.5,50.002546,covered_sources_only
+b487608fb7907a1ce48baf09,agriculture,FY2021-22,L_HERD1624,Field burning of residues,SO2,2.631713,covered_sources_only
+87b9a5ded067f5ac7154a20a,agriculture,FY2021-22,L_HERD1624,Managed soils,NH3,1725.175994,covered_sources_only
+59d8e09480cf1e71b2b4c676,agriculture,FY2021-22,L_HERD1624,Managed soils,NOx,140.711391,covered_sources_only
+9fe9d06ff4635041f0239993,agriculture,FY2021-22,L_HERD1624,Manure management,NH3,738.471857,covered_sources_only
+4b5fdee84ac662d036acbda8,agriculture,FY2021-22,REF_2023_24,Field burning of residues,BC,3.289641,covered_sources_only
+1b40f56d5960dd4c71be34b3,agriculture,FY2021-22,REF_2023_24,Field burning of residues,CO,605.293980,covered_sources_only
+2e7339f2125ab43c17934dc3,agriculture,FY2021-22,REF_2023_24,Field burning of residues,NH3,8.553067,covered_sources_only
+9d3b0c3b0a230259417db47f,agriculture,FY2021-22,REF_2023_24,Field burning of residues,NMVOC,46.054977,covered_sources_only
+3580300bee3e4f693d77c629,agriculture,FY2021-22,REF_2023_24,Field burning of residues,NOx,16.448206,covered_sources_only
+f6217ba5161ba0c8cc483e06,agriculture,FY2021-22,REF_2023_24,Field burning of residues,PM2.5,50.002546,covered_sources_only
+c3e24e3fb29793f6ad747a0e,agriculture,FY2021-22,REF_2023_24,Field burning of residues,SO2,2.631713,covered_sources_only
+bf7349677bb0734c35b47b88,agriculture,FY2021-22,REF_2023_24,Managed soils,NH3,1725.175994,covered_sources_only
+209d88eb062f1181a25f7ec8,agriculture,FY2021-22,REF_2023_24,Managed soils,NOx,140.711391,covered_sources_only
+6816d3637d3d28054ef16a20,agriculture,FY2021-22,REF_2023_24,Manure management,NH3,738.471857,covered_sources_only
+3aa298680a95b924bb5229bb,agriculture,FY2022-23,L_HERD1624,Field burning of residues,BC,2.962838,covered_sources_only
+abb863b5db6787e97a7d2e2e,agriculture,FY2022-23,L_HERD1624,Field burning of residues,CO,545.162213,covered_sources_only
+8d1e1e3c61a09733fa082c72,agriculture,FY2022-23,L_HERD1624,Field burning of residues,NH3,7.703379,covered_sources_only
+3e815ba63661dac5391db86e,agriculture,FY2022-23,L_HERD1624,Field burning of residues,NMVOC,41.479734,covered_sources_only
+eecfb72b1b2ce61b4116e9cd,agriculture,FY2022-23,L_HERD1624,Field burning of residues,NOx,14.814191,covered_sources_only
+c775fc95e4dddbe81a6b989f,agriculture,FY2022-23,L_HERD1624,Field burning of residues,PM2.5,45.035139,covered_sources_only
+cc8570ea8187b1aba355ddc6,agriculture,FY2022-23,L_HERD1624,Field burning of residues,SO2,2.370270,covered_sources_only
+148230d7c5eb1f5cb1cec741,agriculture,FY2022-23,L_HERD1624,Managed soils,NH3,1721.190140,covered_sources_only
+514544f9bfa4677fad603fe3,agriculture,FY2022-23,L_HERD1624,Managed soils,NOx,137.695827,covered_sources_only
+24be7b0679b711567791ed6c,agriculture,FY2022-23,L_HERD1624,Manure management,NH3,784.085607,covered_sources_only
+d8ff962de3e81121b9441dc4,agriculture,FY2022-23,REF_2023_24,Field burning of residues,BC,2.962838,covered_sources_only
+e50067907d5c34db74cb6cdd,agriculture,FY2022-23,REF_2023_24,Field burning of residues,CO,545.162213,covered_sources_only
+ad26247bfc858044801a413e,agriculture,FY2022-23,REF_2023_24,Field burning of residues,NH3,7.703379,covered_sources_only
+d40daad392358104133305ee,agriculture,FY2022-23,REF_2023_24,Field burning of residues,NMVOC,41.479734,covered_sources_only
+971a58d69324e3158c10c438,agriculture,FY2022-23,REF_2023_24,Field burning of residues,NOx,14.814191,covered_sources_only
+23dc3bb6a3d5e130dfae5719,agriculture,FY2022-23,REF_2023_24,Field burning of residues,PM2.5,45.035139,covered_sources_only
+f1c06ca0709588018eda08ef,agriculture,FY2022-23,REF_2023_24,Field burning of residues,SO2,2.370270,covered_sources_only
+310b790a2a3df69530bf4f38,agriculture,FY2022-23,REF_2023_24,Managed soils,NH3,1721.190140,covered_sources_only
+abbe012aa5973f3ffee78e38,agriculture,FY2022-23,REF_2023_24,Managed soils,NOx,137.695827,covered_sources_only
+71a898f66e0f29fa791e33d6,agriculture,FY2022-23,REF_2023_24,Manure management,NH3,784.085607,covered_sources_only
+4d8fce36cad03283cbb4e489,agriculture,FY2023-24,L_HERD1624,Field burning of residues,BC,3.555758,covered_sources_only
+67e6c3d326b71d4c460ae1f5,agriculture,FY2023-24,L_HERD1624,Field burning of residues,CO,654.259518,covered_sources_only
+748aee5ad2ccdddfdba43e8b,agriculture,FY2023-24,L_HERD1624,Field burning of residues,NH3,9.244971,covered_sources_only
+ed34bd3a488514cabed74b71,agriculture,FY2023-24,L_HERD1624,Field burning of residues,NMVOC,49.780616,covered_sources_only
+61c3899a89d68f95bfd0aed8,agriculture,FY2023-24,L_HERD1624,Field burning of residues,NOx,17.778791,covered_sources_only
+b43771770c35cfc6afa2883a,agriculture,FY2023-24,L_HERD1624,Field burning of residues,PM2.5,54.047525,covered_sources_only
+71738c0903025a9ff8830991,agriculture,FY2023-24,L_HERD1624,Field burning of residues,SO2,2.844607,covered_sources_only
+5ba23c1625e056c85f3405ec,agriculture,FY2023-24,L_HERD1624,Managed soils,NH3,1822.494447,covered_sources_only
+7ccdf165cb72cd7991b9595b,agriculture,FY2023-24,L_HERD1624,Managed soils,NOx,145.429759,covered_sources_only
+fce44f3281a4764fe99c956f,agriculture,FY2023-24,L_HERD1624,Manure management,NH3,842.792654,covered_sources_only
+c4d34204980c67b31bf2c553,agriculture,FY2023-24,REF_2023_24,Field burning of residues,BC,3.555758,covered_sources_only
+274d54646732e2fe30b4409d,agriculture,FY2023-24,REF_2023_24,Field burning of residues,CO,654.259518,covered_sources_only
+9f300933c1f13d2e61747409,agriculture,FY2023-24,REF_2023_24,Field burning of residues,NH3,9.244971,covered_sources_only
+96d4efe6d4d0ec6cd5d58a7f,agriculture,FY2023-24,REF_2023_24,Field burning of residues,NMVOC,49.780616,covered_sources_only
+ae50ef30fcb91cef802b8dc8,agriculture,FY2023-24,REF_2023_24,Field burning of residues,NOx,17.778791,covered_sources_only
+adf744f2722c8106218ea9dd,agriculture,FY2023-24,REF_2023_24,Field burning of residues,PM2.5,54.047525,covered_sources_only
+f4edfa83d5cd5821ce171686,agriculture,FY2023-24,REF_2023_24,Field burning of residues,SO2,2.844607,covered_sources_only
+fc9b853e98e5e9814b0744df,agriculture,FY2023-24,REF_2023_24,Managed soils,NH3,1822.494447,covered_sources_only
+9847af6f1c294d3d53f73828,agriculture,FY2023-24,REF_2023_24,Managed soils,NOx,145.429759,covered_sources_only
+6e78d9889bb7e6daf6a9d7a7,agriculture,FY2023-24,REF_2023_24,Manure management,NH3,842.792654,covered_sources_only
+3eb15b3446c9ae7d08715d98,aviation,FY2015-16,L_HERD1624,Domestic aviation,BC,0.004528,covered_sources_only
+aaa344a6f2b69a3f69c6f91e,aviation,FY2015-16,L_HERD1624,Domestic aviation,CO,0.265587,covered_sources_only
+bf84338c0bfddda6ca1f7a6d,aviation,FY2015-16,L_HERD1624,Domestic aviation,NOx,0.322301,covered_sources_only
+82a7ed7ff3ab009bf4b1482c,aviation,FY2015-16,L_HERD1624,Domestic aviation,PM2.5,0.030187,covered_sources_only
+ca61486c9ab899b19e0202ad,aviation,FY2015-16,L_HERD1624,Domestic aviation,SO2,0.150933,covered_sources_only
+e2822c853607796db9c33afa,aviation,FY2015-16,REF_2023_24,Domestic aviation,BC,0.004528,covered_sources_only
+52bf3016e73db1274f9b6050,aviation,FY2015-16,REF_2023_24,Domestic aviation,CO,0.265587,covered_sources_only
+f1aa44f9d2f44866550ff0fd,aviation,FY2015-16,REF_2023_24,Domestic aviation,NOx,0.322301,covered_sources_only
+db22237eedb44ff6da035313,aviation,FY2015-16,REF_2023_24,Domestic aviation,PM2.5,0.030187,covered_sources_only
+1bbc27ed80ac8a328981d9d5,aviation,FY2015-16,REF_2023_24,Domestic aviation,SO2,0.150933,covered_sources_only
+e31f34e5e3060f2c723b94eb,aviation,FY2016-17,L_HERD1624,Domestic aviation,BC,0.004843,covered_sources_only
+685ee4fcc9004b39f4698557,aviation,FY2016-17,L_HERD1624,Domestic aviation,CO,0.284089,covered_sources_only
+963eb03dfcf21fe47af76381,aviation,FY2016-17,L_HERD1624,Domestic aviation,NOx,0.344754,covered_sources_only
+20afa35050820cc5447c3786,aviation,FY2016-17,L_HERD1624,Domestic aviation,PM2.5,0.032289,covered_sources_only
+8223216efa1150e29e39564f,aviation,FY2016-17,L_HERD1624,Domestic aviation,SO2,0.161447,covered_sources_only
+ef85413c6089d0147c3e2771,aviation,FY2016-17,REF_2023_24,Domestic aviation,BC,0.004843,covered_sources_only
+d521aa1de1389a0c4362e7ce,aviation,FY2016-17,REF_2023_24,Domestic aviation,CO,0.284089,covered_sources_only
+af3fcb4016571049af004ea8,aviation,FY2016-17,REF_2023_24,Domestic aviation,NOx,0.344754,covered_sources_only
+959335f97985010341c6aa3d,aviation,FY2016-17,REF_2023_24,Domestic aviation,PM2.5,0.032289,covered_sources_only
+06d6d7a0ce874b8fbaa8a3d1,aviation,FY2016-17,REF_2023_24,Domestic aviation,SO2,0.161447,covered_sources_only
+b5eeafb2eda7de661f994e9a,aviation,FY2017-18,L_HERD1624,Domestic aviation,BC,0.004474,covered_sources_only
+90e1b0e6d2a2f5d2a0ff3323,aviation,FY2017-18,L_HERD1624,Domestic aviation,CO,0.262414,covered_sources_only
+91296ebec66d6f2750ae9eec,aviation,FY2017-18,L_HERD1624,Domestic aviation,NOx,0.318450,covered_sources_only
+8e0f6339153e46f53a657485,aviation,FY2017-18,L_HERD1624,Domestic aviation,PM2.5,0.029826,covered_sources_only
+0bdb0ea28754371b2d7b01b2,aviation,FY2017-18,L_HERD1624,Domestic aviation,SO2,0.149129,covered_sources_only
+32b0774598af830dd8264046,aviation,FY2017-18,REF_2023_24,Domestic aviation,BC,0.004474,covered_sources_only
+aceb3a81e8a9047566245921,aviation,FY2017-18,REF_2023_24,Domestic aviation,CO,0.262414,covered_sources_only
+4d8d896f4acfaf96a1f21a2c,aviation,FY2017-18,REF_2023_24,Domestic aviation,NOx,0.318450,covered_sources_only
+09bf547291324d512084b6ee,aviation,FY2017-18,REF_2023_24,Domestic aviation,PM2.5,0.029826,covered_sources_only
+7b3c160fc1e603bf368ae592,aviation,FY2017-18,REF_2023_24,Domestic aviation,SO2,0.149129,covered_sources_only
+8f0215aa917077366c03e85c,aviation,FY2018-19,L_HERD1624,Domestic aviation,BC,0.003784,covered_sources_only
+838701db835e5f453efd858e,aviation,FY2018-19,L_HERD1624,Domestic aviation,CO,0.208737,covered_sources_only
+4c69d9ed6271b7b6bef78fdd,aviation,FY2018-19,L_HERD1624,Domestic aviation,NOx,0.321282,covered_sources_only
+ca648d4ce95022d46fcac718,aviation,FY2018-19,L_HERD1624,Domestic aviation,PM2.5,0.025229,covered_sources_only
+8caafe369bf2a969db47f129,aviation,FY2018-19,L_HERD1624,Domestic aviation,SO2,0.126147,covered_sources_only
+461ec67fab6ee6a59e5061b8,aviation,FY2018-19,REF_2023_24,Domestic aviation,BC,0.003784,covered_sources_only
+1d0631ab618646eacaa8dce2,aviation,FY2018-19,REF_2023_24,Domestic aviation,CO,0.208737,covered_sources_only
+deeb26852af59fb465a22283,aviation,FY2018-19,REF_2023_24,Domestic aviation,NOx,0.321282,covered_sources_only
+5f4ad57b4157b74d677582f8,aviation,FY2018-19,REF_2023_24,Domestic aviation,PM2.5,0.025229,covered_sources_only
+a4aea19a193a8ede5aeb768b,aviation,FY2018-19,REF_2023_24,Domestic aviation,SO2,0.126147,covered_sources_only
+71d1c38d10310466f681212e,aviation,FY2019-20,L_HERD1624,Domestic aviation,BC,0.002721,covered_sources_only
+d4da68275947039732f9261e,aviation,FY2019-20,L_HERD1624,Domestic aviation,CO,0.150085,covered_sources_only
+e3d9083d9e3d855e500ba063,aviation,FY2019-20,L_HERD1624,Domestic aviation,NOx,0.231008,covered_sources_only
+e58e22814609b3f202217ef3,aviation,FY2019-20,L_HERD1624,Domestic aviation,PM2.5,0.018140,covered_sources_only
+aef4a98f3b64c1a4b9b2f7e0,aviation,FY2019-20,L_HERD1624,Domestic aviation,SO2,0.090702,covered_sources_only
+7c541aa9a0053c88875e20a2,aviation,FY2019-20,REF_2023_24,Domestic aviation,BC,0.002721,covered_sources_only
+c9f29487606d7079dbdc1cba,aviation,FY2019-20,REF_2023_24,Domestic aviation,CO,0.150085,covered_sources_only
+e536d5621aad4c0986c1150e,aviation,FY2019-20,REF_2023_24,Domestic aviation,NOx,0.231008,covered_sources_only
+fae5d8ab71dcbc30a19d238a,aviation,FY2019-20,REF_2023_24,Domestic aviation,PM2.5,0.018140,covered_sources_only
+142b90b6327bc3fbb11a6a9a,aviation,FY2019-20,REF_2023_24,Domestic aviation,SO2,0.090702,covered_sources_only
+f1e8ddc5b4a393d1e0bf8b63,aviation,FY2020-21,L_HERD1624,Domestic aviation,BC,0.002842,covered_sources_only
+17ad1876a56ea44627d74f0d,aviation,FY2020-21,L_HERD1624,Domestic aviation,CO,0.156746,covered_sources_only
+ab1787c4a0a2598175428f84,aviation,FY2020-21,L_HERD1624,Domestic aviation,NOx,0.241260,covered_sources_only
+6fec0248bc18315671755780,aviation,FY2020-21,L_HERD1624,Domestic aviation,PM2.5,0.018945,covered_sources_only
+f8dca87e7eec4f5258e288b7,aviation,FY2020-21,L_HERD1624,Domestic aviation,SO2,0.094727,covered_sources_only
+b0c6df47a9ff5d721b8ad3b4,aviation,FY2020-21,REF_2023_24,Domestic aviation,BC,0.002842,covered_sources_only
+d6c2d64fbde183e3aa5b659f,aviation,FY2020-21,REF_2023_24,Domestic aviation,CO,0.156746,covered_sources_only
+c262361c650e439f98068bf9,aviation,FY2020-21,REF_2023_24,Domestic aviation,NOx,0.241260,covered_sources_only
+2b9edb29c42bd9d5c77c5426,aviation,FY2020-21,REF_2023_24,Domestic aviation,PM2.5,0.018945,covered_sources_only
+7627a3c3255f7950585c3c14,aviation,FY2020-21,REF_2023_24,Domestic aviation,SO2,0.094727,covered_sources_only
+5ea550eb1d5db37ff442b76a,aviation,FY2021-22,L_HERD1624,Domestic aviation,BC,0.003333,covered_sources_only
+297de21cd723a28808a12387,aviation,FY2021-22,L_HERD1624,Domestic aviation,CO,0.183828,covered_sources_only
+fb477cc8ca3e7930ec8998b1,aviation,FY2021-22,L_HERD1624,Domestic aviation,NOx,0.282944,covered_sources_only
+f7ecedf42ca9669038cb40f0,aviation,FY2021-22,L_HERD1624,Domestic aviation,PM2.5,0.022219,covered_sources_only
+51126bad0dbfd269843e356e,aviation,FY2021-22,L_HERD1624,Domestic aviation,SO2,0.111094,covered_sources_only
+380ddd489fdf4aff976fff37,aviation,FY2021-22,REF_2023_24,Domestic aviation,BC,0.003333,covered_sources_only
+6715a0d259b8c57a28998d4a,aviation,FY2021-22,REF_2023_24,Domestic aviation,CO,0.183828,covered_sources_only
+9b47a47c3f9682e53ed70869,aviation,FY2021-22,REF_2023_24,Domestic aviation,NOx,0.282944,covered_sources_only
+aeb8c4e0eeb3836bc51db9cc,aviation,FY2021-22,REF_2023_24,Domestic aviation,PM2.5,0.022219,covered_sources_only
+800ce91f90e176a7d6fe7eb4,aviation,FY2021-22,REF_2023_24,Domestic aviation,SO2,0.111094,covered_sources_only
+aca1dae3b3851ab4fc0f32ed,aviation,FY2022-23,L_HERD1624,Domestic aviation,BC,0.003036,covered_sources_only
+f725c2a0418996655ea8f1b9,aviation,FY2022-23,L_HERD1624,Domestic aviation,CO,0.167450,covered_sources_only
+bb43b48fd1c562ae9f1b1050,aviation,FY2022-23,L_HERD1624,Domestic aviation,NOx,0.257735,covered_sources_only
+63d1824a14712ac74f375779,aviation,FY2022-23,L_HERD1624,Domestic aviation,PM2.5,0.020239,covered_sources_only
+f6fab7f435e60b508727aeb7,aviation,FY2022-23,L_HERD1624,Domestic aviation,SO2,0.101196,covered_sources_only
+6497574d7813d238f649c2e2,aviation,FY2022-23,REF_2023_24,Domestic aviation,BC,0.003036,covered_sources_only
+d93bb6267da21a7370f3ba6f,aviation,FY2022-23,REF_2023_24,Domestic aviation,CO,0.167450,covered_sources_only
+2e3f86857e87de2a9bd7a242,aviation,FY2022-23,REF_2023_24,Domestic aviation,NOx,0.257735,covered_sources_only
+d5afb21e5069a7d6f704b032,aviation,FY2022-23,REF_2023_24,Domestic aviation,PM2.5,0.020239,covered_sources_only
+8eb4fe10a04db9984a809712,aviation,FY2022-23,REF_2023_24,Domestic aviation,SO2,0.101196,covered_sources_only
+927ee17509c76cbcb8144afd,aviation,FY2023-24,L_HERD1624,Domestic aviation,BC,0.002837,covered_sources_only
+2390466a9a14c651e0057102,aviation,FY2023-24,L_HERD1624,Domestic aviation,CO,0.156496,covered_sources_only
+c6b49cf6da23d1a1cccf15a6,aviation,FY2023-24,L_HERD1624,Domestic aviation,NOx,0.240874,covered_sources_only
+40804dd4a7e303a669c1ae28,aviation,FY2023-24,L_HERD1624,Domestic aviation,PM2.5,0.018915,covered_sources_only
+79227f7baa63f5bd16f29640,aviation,FY2023-24,L_HERD1624,Domestic aviation,SO2,0.094576,covered_sources_only
+f96bfae928c17b1fbba25313,aviation,FY2023-24,REF_2023_24,Domestic aviation,BC,0.002837,covered_sources_only
+b2f3dc6e2a5235480d5e9d5a,aviation,FY2023-24,REF_2023_24,Domestic aviation,CO,0.156496,covered_sources_only
+191e1fc9d1b1cd267a625a1d,aviation,FY2023-24,REF_2023_24,Domestic aviation,NOx,0.240874,covered_sources_only
+4d2c98e21032896f0d6bb2d1,aviation,FY2023-24,REF_2023_24,Domestic aviation,PM2.5,0.018915,covered_sources_only
+94a830163e6f307664d1570b,aviation,FY2023-24,REF_2023_24,Domestic aviation,SO2,0.094576,covered_sources_only
+14f3bcc6f8a35eb949e1e59d,fugitives,FY2015-16,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.090773,covered_sources_only
+a2c79101077220d7c35eccc9,fugitives,FY2015-16,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.540007,covered_sources_only
+f3c7eedbaa7fb1349eb353d6,fugitives,FY2015-16,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,86.813136,covered_sources_only
+aa256bcad33e49168d678f75,fugitives,FY2015-16,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.318330,covered_sources_only
+15e9682284b3a0f0a17a0fdb,fugitives,FY2015-16,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.400846,covered_sources_only
+57635b31a984921ed8622fb8,fugitives,FY2015-16,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,3.798434,covered_sources_only
+d29be9734f3e90bdd580acc4,fugitives,FY2015-16,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.090773,covered_sources_only
+4472787b0bb7e85c1cee26e8,fugitives,FY2015-16,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.540007,covered_sources_only
+0304bb135103cc951655f8a6,fugitives,FY2015-16,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,86.813136,covered_sources_only
+287201f0e7e33c9bae5cbca1,fugitives,FY2015-16,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.318330,covered_sources_only
+91be039e17cd58fa87a90ca0,fugitives,FY2015-16,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.400846,covered_sources_only
+c449459ab2c7b9fbb2e7d21a,fugitives,FY2015-16,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,3.798434,covered_sources_only
+1561fcfd7be667c71503a4c4,fugitives,FY2016-17,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.077435,covered_sources_only
+f1dd65e752d9505bc12b0852,fugitives,FY2016-17,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.446954,covered_sources_only
+3f7bc26fd04732cc4c6b3efc,fugitives,FY2016-17,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,90.933532,covered_sources_only
+b6d4b1595891452167a0acbd,fugitives,FY2016-17,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.362785,covered_sources_only
+922c9a67938e3085aba90dbd,fugitives,FY2016-17,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.346781,covered_sources_only
+065113aa25f62377be3016dc,fugitives,FY2016-17,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,4.051492,covered_sources_only
+0ba7bf15dffd57cdb549ba25,fugitives,FY2016-17,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.077435,covered_sources_only
+0d5442fed994ce3cd70ddce4,fugitives,FY2016-17,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.446954,covered_sources_only
+a6940e9aba7b1ba9ec067de6,fugitives,FY2016-17,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,90.933532,covered_sources_only
+a2729d7738f5fc58101b1fa5,fugitives,FY2016-17,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.362785,covered_sources_only
+ff88d3a94082bfb52f7888d9,fugitives,FY2016-17,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.346781,covered_sources_only
+607ee65407a78f13acd49d6d,fugitives,FY2016-17,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,4.051492,covered_sources_only
+351f30c100b41e7eaf673c07,fugitives,FY2017-18,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.068577,covered_sources_only
+dc4fccaa8d4be642ecf1c85f,fugitives,FY2017-18,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.444054,covered_sources_only
+a46f088edc15704895eb51e3,fugitives,FY2017-18,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,94.411426,covered_sources_only
+ab86c0b8759c73175dde3306,fugitives,FY2017-18,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.497602,covered_sources_only
+884353961febf0ef066da772,fugitives,FY2017-18,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.313012,covered_sources_only
+9c92dae00afe5c9dc89ce2a2,fugitives,FY2017-18,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,4.578181,covered_sources_only
+840c35d543d39cb94b01ac27,fugitives,FY2017-18,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.068577,covered_sources_only
+026701fe81f9d94b0447aa4d,fugitives,FY2017-18,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.444054,covered_sources_only
+3f0ea0a023c8f0eefc095efc,fugitives,FY2017-18,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,94.411426,covered_sources_only
+b1efe9d82e6ea203af5c43b2,fugitives,FY2017-18,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.497602,covered_sources_only
+d96d4724626db58f1f8d6d03,fugitives,FY2017-18,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.313012,covered_sources_only
+5c6187d9e86387088db91691,fugitives,FY2017-18,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,4.578181,covered_sources_only
+ba04454a5d036e589cfb248d,fugitives,FY2018-19,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.072195,covered_sources_only
+8696782794981d8f7d5f2f8d,fugitives,FY2018-19,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.411747,covered_sources_only
+813a3be6e67a64c33c485484,fugitives,FY2018-19,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,94.401562,covered_sources_only
+97ffff6f53314e5cd0ac75e1,fugitives,FY2018-19,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.382658,covered_sources_only
+15fc8d8db587202c7acc338e,fugitives,FY2018-19,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.325592,covered_sources_only
+81aa699bd1e0510fd0553969,fugitives,FY2018-19,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,4.159110,covered_sources_only
+595b9792e70fec2921346e13,fugitives,FY2018-19,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.072195,covered_sources_only
+95554ed4a0c0496c9cc2a5b5,fugitives,FY2018-19,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.411747,covered_sources_only
+bd0463fc42fb00418c761e7c,fugitives,FY2018-19,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,94.401562,covered_sources_only
+30ccff4253c4593fbe0de282,fugitives,FY2018-19,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.382658,covered_sources_only
+32862db3bd89d6dd8b83f4d1,fugitives,FY2018-19,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.325592,covered_sources_only
+4df401896c95fa2f364bb09b,fugitives,FY2018-19,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,4.159110,covered_sources_only
+9b53f73afa065fa3bf1f5ef5,fugitives,FY2019-20,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.069190,covered_sources_only
+28e4644612734631e8a0e636,fugitives,FY2019-20,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.241460,covered_sources_only
+a810049221fc81d7f8571bc9,fugitives,FY2019-20,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,88.094139,covered_sources_only
+9f3004d9f625d9bd51c76dbe,fugitives,FY2019-20,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.125748,covered_sources_only
+812ef941b9ebb9a80b656941,fugitives,FY2019-20,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.307991,covered_sources_only
+70bef04c25de0fa0792a2718,fugitives,FY2019-20,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,3.306986,covered_sources_only
+db843dccab041d9516f7f406,fugitives,FY2019-20,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.069190,covered_sources_only
+06c06ebe4bd22eb592045962,fugitives,FY2019-20,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.241460,covered_sources_only
+7a03b4db97a5a923eac93ec5,fugitives,FY2019-20,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,88.094139,covered_sources_only
+8f8dac491ff5cb73fa20a0a4,fugitives,FY2019-20,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.125748,covered_sources_only
+42412d5d3a208477cf584518,fugitives,FY2019-20,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.307991,covered_sources_only
+769c5d21448697576c3389d8,fugitives,FY2019-20,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,3.306986,covered_sources_only
+de2e8383a89df44b30a1ec1f,fugitives,FY2020-21,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.060297,covered_sources_only
+1845b3be2bf7b0103f65e404,fugitives,FY2020-21,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.196319,covered_sources_only
+ec539c376e6de68578a3bac5,fugitives,FY2020-21,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,91.088569,covered_sources_only
+b0f77a32fb9d747db6ff6cd4,fugitives,FY2020-21,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.185605,covered_sources_only
+962fb23fec8724fb3a96daa7,fugitives,FY2020-21,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.272556,covered_sources_only
+396ccede97379bd26e1b2c8c,fugitives,FY2020-21,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,3.578627,covered_sources_only
+5656369420a0ee3c1c1c0fa6,fugitives,FY2020-21,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.060297,covered_sources_only
+6a7b7d307802167f4be3f25c,fugitives,FY2020-21,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.196319,covered_sources_only
+e1283054f24a662101bd5c5c,fugitives,FY2020-21,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,91.088569,covered_sources_only
+df9cf391ff6da7c55479ba01,fugitives,FY2020-21,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.185605,covered_sources_only
+86d7ab677a7e3a953fa9f78b,fugitives,FY2020-21,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.272556,covered_sources_only
+589db4562ddc6305d7162f79,fugitives,FY2020-21,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,3.578627,covered_sources_only
+b86ebb61b6458e8b6cbd0ac1,fugitives,FY2021-22,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.060367,covered_sources_only
+29319dae0f526b858235c914,fugitives,FY2021-22,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.199784,covered_sources_only
+eb75c6ed9ea2b0fbfbc8febd,fugitives,FY2021-22,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,94.978644,covered_sources_only
+7a7b3002e765cd2940ff1e5e,fugitives,FY2021-22,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.190689,covered_sources_only
+1315d032e4f86f7ecacbb48d,fugitives,FY2021-22,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.272949,covered_sources_only
+1b6db1e19af7f10bcbc3da2f,fugitives,FY2021-22,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,3.595408,covered_sources_only
+d3ca425da74b90db67d9466b,fugitives,FY2021-22,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.060367,covered_sources_only
+f5abc24907cd8541180e768b,fugitives,FY2021-22,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.199784,covered_sources_only
+f1abbd8577b3290bf5dbbae9,fugitives,FY2021-22,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,94.978644,covered_sources_only
+fdd1f4beff120cb980af06ea,fugitives,FY2021-22,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.190689,covered_sources_only
+e95e0d837ab170214a9adca7,fugitives,FY2021-22,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.272949,covered_sources_only
+fe67bcd5141c07a717d01d5a,fugitives,FY2021-22,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,3.595408,covered_sources_only
+2006627b656616778e8844d4,fugitives,FY2022-23,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.059237,covered_sources_only
+ccc090f6be95057852b434e6,fugitives,FY2022-23,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.111762,covered_sources_only
+4b57bd85db4ba8235e51508f,fugitives,FY2022-23,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,83.054284,covered_sources_only
+735b324f31e027d72d8710f4,fugitives,FY2022-23,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.051198,covered_sources_only
+c0b9c652d4d86d9265a802d3,fugitives,FY2022-23,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.265461,covered_sources_only
+8b82342f8626ce6342c77961,fugitives,FY2022-23,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,3.128916,covered_sources_only
+95ac8ae197327dc411cdf176,fugitives,FY2022-23,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.059237,covered_sources_only
+c2d63baa72b63698a7a089d1,fugitives,FY2022-23,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.111762,covered_sources_only
+4c0f17c1673401fcc29af803,fugitives,FY2022-23,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,83.054284,covered_sources_only
+d2c296af15d5585ab0e3048a,fugitives,FY2022-23,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.051198,covered_sources_only
+29a819005515a3890be76a43,fugitives,FY2022-23,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.265461,covered_sources_only
+76d738e3761686b84165752e,fugitives,FY2022-23,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,3.128916,covered_sources_only
+f692f7264df9bfe79de5827f,fugitives,FY2023-24,L_HERD1624,Fugitive emissions from oil and gas (1B2),BC,0.063918,covered_sources_only
+9cca949d603f03979eb77fa1,fugitives,FY2023-24,L_HERD1624,Fugitive emissions from oil and gas (1B2),CO,1.233431,covered_sources_only
+6c0d800fe1e54d17bde025ec,fugitives,FY2023-24,L_HERD1624,Fugitive emissions from oil and gas (1B2),NMVOC,80.338157,covered_sources_only
+9b8e8026b3f1f8da869c5303,fugitives,FY2023-24,L_HERD1624,Fugitive emissions from oil and gas (1B2),NOx,1.194715,covered_sources_only
+9429e2554a03a875ae7ba82a,fugitives,FY2023-24,L_HERD1624,Fugitive emissions from oil and gas (1B2),PM2.5,0.287665,covered_sources_only
+4b9ed8da315308b488036864,fugitives,FY2023-24,L_HERD1624,Fugitive emissions from oil and gas (1B2),SO2,3.582058,covered_sources_only
+394ad04160fecae21399b67d,fugitives,FY2023-24,REF_2023_24,Fugitive emissions from oil and gas (1B2),BC,0.063918,covered_sources_only
+079ce504e04eb03f0f950029,fugitives,FY2023-24,REF_2023_24,Fugitive emissions from oil and gas (1B2),CO,1.233431,covered_sources_only
+dfbebb580f4a1a711a05946b,fugitives,FY2023-24,REF_2023_24,Fugitive emissions from oil and gas (1B2),NMVOC,80.338157,covered_sources_only
+8dd7baad25a1d19e065bec83,fugitives,FY2023-24,REF_2023_24,Fugitive emissions from oil and gas (1B2),NOx,1.194715,covered_sources_only
+19414063c75f70a28d11c480,fugitives,FY2023-24,REF_2023_24,Fugitive emissions from oil and gas (1B2),PM2.5,0.287665,covered_sources_only
+a145ab3022ee0a1d7d934158,fugitives,FY2023-24,REF_2023_24,Fugitive emissions from oil and gas (1B2),SO2,3.582058,covered_sources_only
+2f6af344f7d0023bc2279c5a,industry,FY2015-16,L_HERD1624,Captive gas self-generation (1A2),BC,0.009306,covered_sources_only
+260d0c7997f5dee1307228e1,industry,FY2015-16,L_HERD1624,Captive gas self-generation (1A2),CO,6.982787,covered_sources_only
+ebe9c0578686c7b2e32d65df,industry,FY2015-16,L_HERD1624,Captive gas self-generation (1A2),NMVOC,9.038003,covered_sources_only
+1bf9a8288971d690b65ae497,industry,FY2015-16,L_HERD1624,Captive gas self-generation (1A2),NOx,18.802982,covered_sources_only
+616ead55fb6e9d9f4492fb70,industry,FY2015-16,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.308498,covered_sources_only
+bc8a77dcb12db6779f3f734a,industry,FY2015-16,L_HERD1624,Captive gas self-generation (1A2),SO2,0.037884,covered_sources_only
+2e3a4ff851fc18c10ce0c3a2,industry,FY2015-16,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.133343,covered_sources_only
+2455dd5b73a443911e6bbd98,industry,FY2015-16,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,61.542897,covered_sources_only
+05b780b0bb84bb7aef0de105,industry,FY2015-16,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.615429,covered_sources_only
+0c1d4d5a8c37a2369297d8db,industry,FY2015-16,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,71.800046,covered_sources_only
+40ecd62e8e71e018662353d6,industry,FY2015-16,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.444765,covered_sources_only
+3deeff0c524a2eca5001d494,industry,FY2015-16,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,18.462869,covered_sources_only
+aac1fc90ba9cbe20631c4ced,industry,FY2015-16,L_HERD1624,Industrial fuel combustion (1A2),BC,12.399105,covered_sources_only
+86815aa4698c0b30155b260e,industry,FY2015-16,L_HERD1624,Industrial fuel combustion (1A2),CO,35.655152,covered_sources_only
+33624a558a70eb5b22c81cee,industry,FY2015-16,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,6.084642,covered_sources_only
+eb367f616d09d4dfe3686767,industry,FY2015-16,L_HERD1624,Industrial fuel combustion (1A2),NOx,55.136886,covered_sources_only
+b1a8b775cacfac17c30f8474,industry,FY2015-16,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,17.234788,covered_sources_only
+68e36f2f728ae5b0537b2d18,industry,FY2015-16,L_HERD1624,Industrial fuel combustion (1A2),SO2,325.326059,covered_sources_only
+c5d925b239a25bd794cd27a1,industry,FY2015-16,REF_2023_24,Captive gas self-generation (1A2),BC,0.009306,covered_sources_only
+cbd368ba6fcaf984c36cb4b9,industry,FY2015-16,REF_2023_24,Captive gas self-generation (1A2),CO,6.982787,covered_sources_only
+0e9a968de7868a65da1479ad,industry,FY2015-16,REF_2023_24,Captive gas self-generation (1A2),NMVOC,9.038003,covered_sources_only
+e038034730d52918131933ea,industry,FY2015-16,REF_2023_24,Captive gas self-generation (1A2),NOx,18.802982,covered_sources_only
+f9d21580bd19ca89061a23d0,industry,FY2015-16,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.308498,covered_sources_only
+6cee5006d3d98caa124b862f,industry,FY2015-16,REF_2023_24,Captive gas self-generation (1A2),SO2,0.037884,covered_sources_only
+65900edce71ba3c495d51000,industry,FY2015-16,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.133343,covered_sources_only
+8c62e810aa808a1f21bad136,industry,FY2015-16,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,61.542897,covered_sources_only
+25dbd53e409c0b04b931a81b,industry,FY2015-16,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.615429,covered_sources_only
+51399b7d7b689b55f740114f,industry,FY2015-16,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,71.800046,covered_sources_only
+fc3c3d35e00bd32211098f89,industry,FY2015-16,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.444765,covered_sources_only
+42fbe99249896274a69e94e1,industry,FY2015-16,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,18.462869,covered_sources_only
+6f978523f17ac6a9cb5cc26a,industry,FY2015-16,REF_2023_24,Industrial fuel combustion (1A2),BC,12.399105,covered_sources_only
+b539cac28d451699dff053f3,industry,FY2015-16,REF_2023_24,Industrial fuel combustion (1A2),CO,35.655152,covered_sources_only
+deba92d8105337fda6fe1448,industry,FY2015-16,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,6.084642,covered_sources_only
+a5ee152b5f59d273f69697ba,industry,FY2015-16,REF_2023_24,Industrial fuel combustion (1A2),NOx,55.136886,covered_sources_only
+65fb5ca8b0f301d5f38913c1,industry,FY2015-16,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,17.234788,covered_sources_only
+b0f24df6dbd87df791ea0c58,industry,FY2015-16,REF_2023_24,Industrial fuel combustion (1A2),SO2,325.326059,covered_sources_only
+452182f7a4abe15276c51293,industry,FY2016-17,L_HERD1624,Captive gas self-generation (1A2),BC,0.009402,covered_sources_only
+3d8caace440dfc0c41df8f2d,industry,FY2016-17,L_HERD1624,Captive gas self-generation (1A2),CO,7.054590,covered_sources_only
+128f6d8490de4bcffab654b2,industry,FY2016-17,L_HERD1624,Captive gas self-generation (1A2),NMVOC,9.130939,covered_sources_only
+9b69d79328bf56cd15b57067,industry,FY2016-17,L_HERD1624,Captive gas self-generation (1A2),NOx,18.996329,covered_sources_only
+7fe81c6b2ed4bd6a9c73ec17,industry,FY2016-17,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.311671,covered_sources_only
+04d6cafee863b604c5e89f96,industry,FY2016-17,L_HERD1624,Captive gas self-generation (1A2),SO2,0.038274,covered_sources_only
+6135316c3a9e1b40f817974d,industry,FY2016-17,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.139302,covered_sources_only
+2a8c88b6278c56679f8f2655,industry,FY2016-17,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,64.293059,covered_sources_only
+d6d0314d9d23ea2b2edb538e,industry,FY2016-17,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.642931,covered_sources_only
+9b0390d19c31e89db87bcc6a,industry,FY2016-17,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,75.008568,covered_sources_only
+ac76fe1109ecab72c54882f4,industry,FY2016-17,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.643388,covered_sources_only
+d6764ca045acd7bea6505ff8,industry,FY2016-17,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,19.287918,covered_sources_only
+4d56309e1bf17060ad7390a4,industry,FY2016-17,L_HERD1624,Industrial fuel combustion (1A2),BC,11.457976,covered_sources_only
+72e4f4e55d5e98abc5ff079a,industry,FY2016-17,L_HERD1624,Industrial fuel combustion (1A2),CO,34.725526,covered_sources_only
+14294373ac47ab54b601cdab,industry,FY2016-17,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,7.332568,covered_sources_only
+a4e895bce10a57bbebd29a99,industry,FY2016-17,L_HERD1624,Industrial fuel combustion (1A2),NOx,63.325151,covered_sources_only
+e575aeb5db34b06fd7f0e4e1,industry,FY2016-17,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,15.940453,covered_sources_only
+40bf6a38a365187f163a4148,industry,FY2016-17,L_HERD1624,Industrial fuel combustion (1A2),SO2,283.224317,covered_sources_only
+32deed27b30c6ea0738e564a,industry,FY2016-17,REF_2023_24,Captive gas self-generation (1A2),BC,0.009402,covered_sources_only
+9a4b8fa9a3eea6600d8bee49,industry,FY2016-17,REF_2023_24,Captive gas self-generation (1A2),CO,7.054590,covered_sources_only
+d8622238d9b4a3cec0619e7c,industry,FY2016-17,REF_2023_24,Captive gas self-generation (1A2),NMVOC,9.130939,covered_sources_only
+59f5cd589005b6436ab0cb37,industry,FY2016-17,REF_2023_24,Captive gas self-generation (1A2),NOx,18.996329,covered_sources_only
+6dc5c7599993a45ca67a50b7,industry,FY2016-17,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.311671,covered_sources_only
+022a70e0fe64b05cadbed95e,industry,FY2016-17,REF_2023_24,Captive gas self-generation (1A2),SO2,0.038274,covered_sources_only
+fa09a257c3d64f6a25e7eb0f,industry,FY2016-17,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.139302,covered_sources_only
+f8af1518ba0d289cfadbea58,industry,FY2016-17,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,64.293059,covered_sources_only
+3100a5d8f85c501ba90feca3,industry,FY2016-17,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.642931,covered_sources_only
+d40a706626ff3e50060c467e,industry,FY2016-17,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,75.008568,covered_sources_only
+ac6b22a5ff25652393c2c33e,industry,FY2016-17,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,4.643388,covered_sources_only
+8540d51934710f2ae810b6d9,industry,FY2016-17,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,19.287918,covered_sources_only
+22c6c94d7dc3de45b969645c,industry,FY2016-17,REF_2023_24,Industrial fuel combustion (1A2),BC,11.457976,covered_sources_only
+7e5b3ed1da1af167d9c6c3cc,industry,FY2016-17,REF_2023_24,Industrial fuel combustion (1A2),CO,34.725526,covered_sources_only
+6b59810d2428f02ce9477ffb,industry,FY2016-17,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,7.332568,covered_sources_only
+7365977211853b2c22755ac6,industry,FY2016-17,REF_2023_24,Industrial fuel combustion (1A2),NOx,63.325151,covered_sources_only
+1459d47fabfbba20a44c3771,industry,FY2016-17,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,15.940453,covered_sources_only
+2a10a0c0774a9f4281a16ec3,industry,FY2016-17,REF_2023_24,Industrial fuel combustion (1A2),SO2,283.224317,covered_sources_only
+2b78767ff0d9e9b3d460966f,industry,FY2017-18,L_HERD1624,Captive gas self-generation (1A2),BC,0.009091,covered_sources_only
+a23e0c9f5775da014efd5f95,industry,FY2017-18,L_HERD1624,Captive gas self-generation (1A2),CO,6.821232,covered_sources_only
+17c6d0acf72a356d8ebf2abe,industry,FY2017-18,L_HERD1624,Captive gas self-generation (1A2),NMVOC,8.828898,covered_sources_only
+56ad1f5bc7241fd34b1fa632,industry,FY2017-18,L_HERD1624,Captive gas self-generation (1A2),NOx,18.367951,covered_sources_only
+01e254c994aec012baf0a094,industry,FY2017-18,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.301361,covered_sources_only
+0aae6a6cd76e397df88de724,industry,FY2017-18,L_HERD1624,Captive gas self-generation (1A2),SO2,0.037008,covered_sources_only
+d6a48556eafbbb1f6ed27402,industry,FY2017-18,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.155605,covered_sources_only
+ae8f5bdfe8ecfbb7f1406664,industry,FY2017-18,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,71.817848,covered_sources_only
+ed78c09ab01920938bc9c403,industry,FY2017-18,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.718178,covered_sources_only
+606fdd5b4ec5513dfc7bdf5f,industry,FY2017-18,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,83.787489,covered_sources_only
+1cdf8077eaaba3b9356ea50c,industry,FY2017-18,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.186845,covered_sources_only
+80c2c289a9517373e75bc60f,industry,FY2017-18,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,21.545354,covered_sources_only
+6ef4bbb4b3901661394cbff5,industry,FY2017-18,L_HERD1624,Industrial fuel combustion (1A2),BC,13.993911,covered_sources_only
+deeb29a5761f10d28ea1253d,industry,FY2017-18,L_HERD1624,Industrial fuel combustion (1A2),CO,41.199937,covered_sources_only
+804e8c685ffffc0496a1cd4c,industry,FY2017-18,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,5.400514,covered_sources_only
+5c2c9ef0064eae56ec3ba382,industry,FY2017-18,L_HERD1624,Industrial fuel combustion (1A2),NOx,61.905791,covered_sources_only
+eb6675ce1ef40d73fe037885,industry,FY2017-18,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,19.124044,covered_sources_only
+5f1f277400091468351cb931,industry,FY2017-18,L_HERD1624,Industrial fuel combustion (1A2),SO2,345.235284,covered_sources_only
+b10700a55785fef737b7d08b,industry,FY2017-18,REF_2023_24,Captive gas self-generation (1A2),BC,0.009091,covered_sources_only
+2eb6e66807d006e2b6e750bd,industry,FY2017-18,REF_2023_24,Captive gas self-generation (1A2),CO,6.821232,covered_sources_only
+4bfd7145aa6d7d61149b02e6,industry,FY2017-18,REF_2023_24,Captive gas self-generation (1A2),NMVOC,8.828898,covered_sources_only
+595a460ad0b4eb785eb6c0e5,industry,FY2017-18,REF_2023_24,Captive gas self-generation (1A2),NOx,18.367951,covered_sources_only
+b40dadcb4b3d376cb9bdfabc,industry,FY2017-18,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.301361,covered_sources_only
+a6c7d02d832015540505e00d,industry,FY2017-18,REF_2023_24,Captive gas self-generation (1A2),SO2,0.037008,covered_sources_only
+3b0e099efba754b0a31daa63,industry,FY2017-18,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.155605,covered_sources_only
+2a81750c2420f51fda2bed73,industry,FY2017-18,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,71.817848,covered_sources_only
+28d973c5029d0c27afcf1601,industry,FY2017-18,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.718178,covered_sources_only
+c407c8f956a1579814a4a168,industry,FY2017-18,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,83.787489,covered_sources_only
+fae0ae44a9af614c976efc65,industry,FY2017-18,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.186845,covered_sources_only
+a2cdd5d98759fe0f1b1cd83b,industry,FY2017-18,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,21.545354,covered_sources_only
+f41c32aaba466f88940c0570,industry,FY2017-18,REF_2023_24,Industrial fuel combustion (1A2),BC,13.993911,covered_sources_only
+f9645e81d5783f1031434d85,industry,FY2017-18,REF_2023_24,Industrial fuel combustion (1A2),CO,41.199937,covered_sources_only
+0a606955bffb5959d764fac8,industry,FY2017-18,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,5.400514,covered_sources_only
+b479dab03e8fe66288d2dfb5,industry,FY2017-18,REF_2023_24,Industrial fuel combustion (1A2),NOx,61.905791,covered_sources_only
+37fff111a185ab7cb5ca15e6,industry,FY2017-18,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,19.124044,covered_sources_only
+b70a4328ef57e9ee7c890431,industry,FY2017-18,REF_2023_24,Industrial fuel combustion (1A2),SO2,345.235284,covered_sources_only
+e6149bdab546e7bfd895a978,industry,FY2018-19,L_HERD1624,Captive gas self-generation (1A2),BC,0.007680,covered_sources_only
+9fac551434b05567689070d2,industry,FY2018-19,L_HERD1624,Captive gas self-generation (1A2),CO,5.762146,covered_sources_only
+980a0d5e9fc977ef0b87a337,industry,FY2018-19,L_HERD1624,Captive gas self-generation (1A2),NMVOC,7.458095,covered_sources_only
+00316a66cc59552d365882d6,industry,FY2018-19,L_HERD1624,Captive gas self-generation (1A2),NOx,15.516085,covered_sources_only
+edb0f85ab6ba695117b67b03,industry,FY2018-19,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.254571,covered_sources_only
+9dea75a88b01b8820a4d7e16,industry,FY2018-19,L_HERD1624,Captive gas self-generation (1A2),SO2,0.031262,covered_sources_only
+bdc79aa38ac67beb4fb4198e,industry,FY2018-19,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159505,covered_sources_only
+21671542eca353c7cc4f9394,industry,FY2018-19,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.617596,covered_sources_only
+e8c95949d1a2a9d44dab60f3,industry,FY2018-19,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.736176,covered_sources_only
+c7baa4202a167f76600a611a,industry,FY2018-19,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,85.887196,covered_sources_only
+aa5d7f8d837b400756bd795c,industry,FY2018-19,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.316826,covered_sources_only
+033170f985a4af49abb9d420,industry,FY2018-19,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.085279,covered_sources_only
+26a3380a8dc00bfa99811215,industry,FY2018-19,L_HERD1624,Industrial fuel combustion (1A2),BC,16.948446,covered_sources_only
+fdcd502ae6f02cbcb907b2ee,industry,FY2018-19,L_HERD1624,Industrial fuel combustion (1A2),CO,49.073025,covered_sources_only
+0ab865c9269dd1503c470cca,industry,FY2018-19,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,4.787390,covered_sources_only
+865821f258d1beaa85640edc,industry,FY2018-19,L_HERD1624,Industrial fuel combustion (1A2),NOx,54.968853,covered_sources_only
+0486bc932c602fca12d3c6f3,industry,FY2018-19,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,22.622543,covered_sources_only
+6dec20213de4ea8910447e16,industry,FY2018-19,L_HERD1624,Industrial fuel combustion (1A2),SO2,421.678923,covered_sources_only
+50edd08dcaf6ec61ef426b9b,industry,FY2018-19,REF_2023_24,Captive gas self-generation (1A2),BC,0.007680,covered_sources_only
+4bc6b8d246d348de0d8f4195,industry,FY2018-19,REF_2023_24,Captive gas self-generation (1A2),CO,5.762146,covered_sources_only
+5d382b74bcb08674d40d6f3c,industry,FY2018-19,REF_2023_24,Captive gas self-generation (1A2),NMVOC,7.458095,covered_sources_only
+5d05fce1f8037a35424f61f3,industry,FY2018-19,REF_2023_24,Captive gas self-generation (1A2),NOx,15.516085,covered_sources_only
+f9c2a53954c80dd756a0eb5f,industry,FY2018-19,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.254571,covered_sources_only
+15394dfcacf1fcc1aebaa994,industry,FY2018-19,REF_2023_24,Captive gas self-generation (1A2),SO2,0.031262,covered_sources_only
+2631bf42ce6d6a7236829672,industry,FY2018-19,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159505,covered_sources_only
+00182d37264b419168c5c79d,industry,FY2018-19,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.617596,covered_sources_only
+98e11a283761990cdea74959,industry,FY2018-19,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.736176,covered_sources_only
+03db5ebc22b5ead4fb9ad0ef,industry,FY2018-19,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,85.887196,covered_sources_only
+62e56decddf11c3ee4a905b6,industry,FY2018-19,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.316826,covered_sources_only
+037d8a3bc829ca3eb4e6f0a9,industry,FY2018-19,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.085279,covered_sources_only
+eac1dcd57f6293a748fa402c,industry,FY2018-19,REF_2023_24,Industrial fuel combustion (1A2),BC,16.948446,covered_sources_only
+a23341eac0923d84e5d6f1b2,industry,FY2018-19,REF_2023_24,Industrial fuel combustion (1A2),CO,49.073025,covered_sources_only
+334f0c63b79a21913306f2ac,industry,FY2018-19,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,4.787390,covered_sources_only
+26393551c6c4e8e2e56198ce,industry,FY2018-19,REF_2023_24,Industrial fuel combustion (1A2),NOx,54.968853,covered_sources_only
+18b1f0c7e0db6fa694998aee,industry,FY2018-19,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,22.622543,covered_sources_only
+e384188d4156dbc31a200855,industry,FY2018-19,REF_2023_24,Industrial fuel combustion (1A2),SO2,421.678923,covered_sources_only
+47cdd424d47ffc028890cad7,industry,FY2019-20,L_HERD1624,Captive gas self-generation (1A2),BC,0.006938,covered_sources_only
+c21f86620d0c000a93bc2c8b,industry,FY2019-20,L_HERD1624,Captive gas self-generation (1A2),CO,5.205677,covered_sources_only
+e7e91018c468ea569da07ca9,industry,FY2019-20,L_HERD1624,Captive gas self-generation (1A2),NMVOC,6.737843,covered_sources_only
+576339cd288a1d7e712587c0,industry,FY2019-20,L_HERD1624,Captive gas self-generation (1A2),NOx,14.017647,covered_sources_only
+b8c9f26e7a7656e6a9966ef5,industry,FY2019-20,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.229986,covered_sources_only
+4effdd09cdb358271658147e,industry,FY2019-20,L_HERD1624,Captive gas self-generation (1A2),SO2,0.028243,covered_sources_only
+7bc7f147711182069c753287,industry,FY2019-20,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159978,covered_sources_only
+fef228f8093ec4fcceac1aff,industry,FY2019-20,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.836078,covered_sources_only
+64e4a71366df146883986d78,industry,FY2019-20,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.738361,covered_sources_only
+2f42f1bbfe5816cec20cab64,industry,FY2019-20,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,86.142091,covered_sources_only
+a0194667f03ecfc4f3f6636f,industry,FY2019-20,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.332606,covered_sources_only
+cf1afd6c5ab9951dcd0cf41f,industry,FY2019-20,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.150823,covered_sources_only
+676bafc5f4359728ff2f0cbe,industry,FY2019-20,L_HERD1624,Industrial fuel combustion (1A2),BC,23.807075,covered_sources_only
+df311e2ee57dcd160f5a97b6,industry,FY2019-20,L_HERD1624,Industrial fuel combustion (1A2),CO,65.226072,covered_sources_only
+84daa697db0e989c630ee531,industry,FY2019-20,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,3.905560,covered_sources_only
+8806258827af8f8a6a2f8136,industry,FY2019-20,L_HERD1624,Industrial fuel combustion (1A2),NOx,48.928289,covered_sources_only
+e01ae9ccb67458865b46f33e,industry,FY2019-20,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,31.412691,covered_sources_only
+9a9ef03063b24907f7ac6a77,industry,FY2019-20,L_HERD1624,Industrial fuel combustion (1A2),SO2,619.598836,covered_sources_only
+1441e19ae44b2772cd1d4e8c,industry,FY2019-20,REF_2023_24,Captive gas self-generation (1A2),BC,0.006938,covered_sources_only
+3dd40500ba9aefda8962c793,industry,FY2019-20,REF_2023_24,Captive gas self-generation (1A2),CO,5.205677,covered_sources_only
+e8a2d6771c412ff0ec0adc85,industry,FY2019-20,REF_2023_24,Captive gas self-generation (1A2),NMVOC,6.737843,covered_sources_only
+0a48d04f8dc64f0a02039526,industry,FY2019-20,REF_2023_24,Captive gas self-generation (1A2),NOx,14.017647,covered_sources_only
+d8efc293df818a6b0846aaa3,industry,FY2019-20,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.229986,covered_sources_only
+654f95fb8915edad1ce3f5a0,industry,FY2019-20,REF_2023_24,Captive gas self-generation (1A2),SO2,0.028243,covered_sources_only
+ca4410fe96a588bf2bffc28b,industry,FY2019-20,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.159978,covered_sources_only
+24c3dbe269fb3342818cb207,industry,FY2019-20,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,73.836078,covered_sources_only
+eb54212af1059662503d73ea,industry,FY2019-20,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.738361,covered_sources_only
+d4fdf7a9e5829cbd776b8ce7,industry,FY2019-20,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,86.142091,covered_sources_only
+1bb687c808d36848ff9c5b9a,industry,FY2019-20,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.332606,covered_sources_only
+79ddae253611d9fe42de816f,industry,FY2019-20,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.150823,covered_sources_only
+b7d001616ada62f1b4595bb7,industry,FY2019-20,REF_2023_24,Industrial fuel combustion (1A2),BC,23.807075,covered_sources_only
+e15f1cb5f6b5c60a80e131e7,industry,FY2019-20,REF_2023_24,Industrial fuel combustion (1A2),CO,65.226072,covered_sources_only
+eebddcaee147de127d78cb53,industry,FY2019-20,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,3.905560,covered_sources_only
+4130d4b6314b1d36101e1c4c,industry,FY2019-20,REF_2023_24,Industrial fuel combustion (1A2),NOx,48.928289,covered_sources_only
+b4037685cf2e98c1efd5e597,industry,FY2019-20,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,31.412691,covered_sources_only
+7ef5e67303e27f7fb27bb539,industry,FY2019-20,REF_2023_24,Industrial fuel combustion (1A2),SO2,619.598836,covered_sources_only
+865221b87a32ad6795cfaed5,industry,FY2020-21,L_HERD1624,Captive gas self-generation (1A2),BC,0.004857,covered_sources_only
+56b212b452be680d7bfe0d17,industry,FY2020-21,L_HERD1624,Captive gas self-generation (1A2),CO,3.643974,covered_sources_only
+db3212a1947a47a78a58b90d,industry,FY2020-21,L_HERD1624,Captive gas self-generation (1A2),NMVOC,4.716490,covered_sources_only
+d09edd85e95b6b98a6a0d430,industry,FY2020-21,L_HERD1624,Captive gas self-generation (1A2),NOx,9.812353,covered_sources_only
+c70063365b0918fbb4ce654e,industry,FY2020-21,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.160990,covered_sources_only
+201365dc4bfb2d725c06955c,industry,FY2020-21,L_HERD1624,Captive gas self-generation (1A2),SO2,0.019770,covered_sources_only
+1dc43263a598ca8cebc00ce6,industry,FY2020-21,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.200482,covered_sources_only
+545ad072d0c2ce5bcd26e7a0,industry,FY2020-21,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,92.529999,covered_sources_only
+84a0f3fc789afcdd236ef751,industry,FY2020-21,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.925300,covered_sources_only
+c41d8559ebecc8b1bbd639fe,industry,FY2020-21,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,107.951666,covered_sources_only
+853dfc927ae8fd9cee43f163,industry,FY2020-21,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.682722,covered_sources_only
+c1857de7e3fa2367b3c278ca,industry,FY2020-21,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,27.759000,covered_sources_only
+71ed2dc357c572bfb8288309,industry,FY2020-21,L_HERD1624,Industrial fuel combustion (1A2),BC,25.669929,covered_sources_only
+277b077dda80a84e479aa8ae,industry,FY2020-21,L_HERD1624,Industrial fuel combustion (1A2),CO,70.867882,covered_sources_only
+b23cb524666d3db753f4c846,industry,FY2020-21,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,5.060968,covered_sources_only
+dd7549ab498442f0314a7c27,industry,FY2020-21,L_HERD1624,Industrial fuel combustion (1A2),NOx,58.670826,covered_sources_only
+b098886a5920e036bf2be085,industry,FY2020-21,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,33.942195,covered_sources_only
+1a0c24cbabf79c5ffde55013,industry,FY2020-21,L_HERD1624,Industrial fuel combustion (1A2),SO2,662.601564,covered_sources_only
+f432cf6dcaa1adc2335944f8,industry,FY2020-21,REF_2023_24,Captive gas self-generation (1A2),BC,0.004857,covered_sources_only
+640553ae0a510b565cae58d0,industry,FY2020-21,REF_2023_24,Captive gas self-generation (1A2),CO,3.643974,covered_sources_only
+5afa034b1d43471a5de3022f,industry,FY2020-21,REF_2023_24,Captive gas self-generation (1A2),NMVOC,4.716490,covered_sources_only
+9acf53f688e41963fc02bde7,industry,FY2020-21,REF_2023_24,Captive gas self-generation (1A2),NOx,9.812353,covered_sources_only
+4e2d8bb07b35312ab8dbb355,industry,FY2020-21,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.160990,covered_sources_only
+bac87abacd1d84537314f588,industry,FY2020-21,REF_2023_24,Captive gas self-generation (1A2),SO2,0.019770,covered_sources_only
+0b8d6666d3e71ac2702acf26,industry,FY2020-21,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.200482,covered_sources_only
+7b5deb533eecb167559d5202,industry,FY2020-21,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,92.529999,covered_sources_only
+cc79b218084a2be5ac8b40bf,industry,FY2020-21,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.925300,covered_sources_only
+40e0a91c8a9484b12ab71270,industry,FY2020-21,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,107.951666,covered_sources_only
+0ecf4438dc63b15ac419d9d1,industry,FY2020-21,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.682722,covered_sources_only
+3421218e99836fc067d58233,industry,FY2020-21,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,27.759000,covered_sources_only
+19fc5c7f39b36a17fdc07933,industry,FY2020-21,REF_2023_24,Industrial fuel combustion (1A2),BC,25.669929,covered_sources_only
+4b654aee1fe328260002c36c,industry,FY2020-21,REF_2023_24,Industrial fuel combustion (1A2),CO,70.867882,covered_sources_only
+acc2920950fa2399f25bf3b7,industry,FY2020-21,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,5.060968,covered_sources_only
+d77590f6663e955bb83f11ec,industry,FY2020-21,REF_2023_24,Industrial fuel combustion (1A2),NOx,58.670826,covered_sources_only
+5afe50a7b98502502ac3116a,industry,FY2020-21,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,33.942195,covered_sources_only
+7ca83bc2d90255a7d7a8b169,industry,FY2020-21,REF_2023_24,Industrial fuel combustion (1A2),SO2,662.601564,covered_sources_only
+3faf3fc22b59a008a188abc6,industry,FY2021-22,L_HERD1624,Captive gas self-generation (1A2),BC,0.005814,covered_sources_only
+1fc2709c5c6fd9686ae2f361,industry,FY2021-22,L_HERD1624,Captive gas self-generation (1A2),CO,4.361998,covered_sources_only
+473a18dcd673261d8d49140b,industry,FY2021-22,L_HERD1624,Captive gas self-generation (1A2),NMVOC,5.645848,covered_sources_only
+84f4c4f1a26601e702dcc81c,industry,FY2021-22,L_HERD1624,Captive gas self-generation (1A2),NOx,11.745822,covered_sources_only
+75901b8b7e110e4140c83b9c,industry,FY2021-22,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.192712,covered_sources_only
+6a570693f4b6358575e86ba9,industry,FY2021-22,L_HERD1624,Captive gas self-generation (1A2),SO2,0.023666,covered_sources_only
+c8412e0b372beb657006f632,industry,FY2021-22,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.193586,covered_sources_only
+4ea3e16b3d595d54c7d773c9,industry,FY2021-22,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,89.347474,covered_sources_only
+f2ddf00a5ec4f5722a040a5b,industry,FY2021-22,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.893475,covered_sources_only
+6999ff1b29d4a15b67510108,industry,FY2021-22,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,104.238720,covered_sources_only
+f43cd58e77916a8d94f17bb6,industry,FY2021-22,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.452873,covered_sources_only
+2ce6e6ade9ea3ce12d2409eb,industry,FY2021-22,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,26.804242,covered_sources_only
+2697ec24fdf677039634af95,industry,FY2021-22,L_HERD1624,Industrial fuel combustion (1A2),BC,17.643872,covered_sources_only
+967cc75d47e166e2d2cb0446,industry,FY2021-22,L_HERD1624,Industrial fuel combustion (1A2),CO,51.268437,covered_sources_only
+91860d0e0c8cb20c5f02aae4,industry,FY2021-22,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,4.768828,covered_sources_only
+5e6979d3b5a93058d04d6a5c,industry,FY2021-22,L_HERD1624,Industrial fuel combustion (1A2),NOx,56.096592,covered_sources_only
+5bf394e036a36a2ec48af431,industry,FY2021-22,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,23.604615,covered_sources_only
+bd5bbc2097b5fee87233c3f0,industry,FY2021-22,L_HERD1624,Industrial fuel combustion (1A2),SO2,442.643249,covered_sources_only
+593ebe06d79ee2a8e180dd8a,industry,FY2021-22,REF_2023_24,Captive gas self-generation (1A2),BC,0.005814,covered_sources_only
+02da51870e76b9633937fcb1,industry,FY2021-22,REF_2023_24,Captive gas self-generation (1A2),CO,4.361998,covered_sources_only
+0f625928b81b4c9909f4c05c,industry,FY2021-22,REF_2023_24,Captive gas self-generation (1A2),NMVOC,5.645848,covered_sources_only
+a49d5acfb6e7d6cc77bfbd0e,industry,FY2021-22,REF_2023_24,Captive gas self-generation (1A2),NOx,11.745822,covered_sources_only
+7044eb7eb9dbb0a20ba2a406,industry,FY2021-22,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.192712,covered_sources_only
+3408956fe154b19ac86e9617,industry,FY2021-22,REF_2023_24,Captive gas self-generation (1A2),SO2,0.023666,covered_sources_only
+041dad14c434c276cd84106c,industry,FY2021-22,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.193586,covered_sources_only
+7f87001bef414ad47ee79d59,industry,FY2021-22,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,89.347474,covered_sources_only
+3cf64dcd436d1e284cc3e6b8,industry,FY2021-22,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.893475,covered_sources_only
+c7d4adb589818c42c891f8d9,industry,FY2021-22,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,104.238720,covered_sources_only
+cf3d7f657b1f0ebf3157ff29,industry,FY2021-22,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,6.452873,covered_sources_only
+c8d2fa5522fa228ba1778077,industry,FY2021-22,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,26.804242,covered_sources_only
+ddd971b8b632f990a75505f4,industry,FY2021-22,REF_2023_24,Industrial fuel combustion (1A2),BC,17.643872,covered_sources_only
+b93dbd9af4d63c39acce3db2,industry,FY2021-22,REF_2023_24,Industrial fuel combustion (1A2),CO,51.268437,covered_sources_only
+1ac5404ef7fadeb8405449ef,industry,FY2021-22,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,4.768828,covered_sources_only
+c677cf3694fb99ba75adfa57,industry,FY2021-22,REF_2023_24,Industrial fuel combustion (1A2),NOx,56.096592,covered_sources_only
+5f3072a4258b8dd0e12fb569,industry,FY2021-22,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,23.604615,covered_sources_only
+d8fb5bd843d16b4055b7b51f,industry,FY2021-22,REF_2023_24,Industrial fuel combustion (1A2),SO2,442.643249,covered_sources_only
+4d0c7b1379c33bf7b53fe06d,industry,FY2022-23,L_HERD1624,Captive gas self-generation (1A2),BC,0.002943,covered_sources_only
+32193e09d70481a9be10ad6c,industry,FY2022-23,L_HERD1624,Captive gas self-generation (1A2),CO,2.207925,covered_sources_only
+add4c4334fb7e8ae58506f79,industry,FY2022-23,L_HERD1624,Captive gas self-generation (1A2),NMVOC,2.857775,covered_sources_only
+21545d2a20ea3884c382c0b9,industry,FY2022-23,L_HERD1624,Captive gas self-generation (1A2),NOx,5.945416,covered_sources_only
+ae94303358681eb906263e44,industry,FY2022-23,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.097546,covered_sources_only
+dc73173b935f35b2c9e278f7,industry,FY2022-23,L_HERD1624,Captive gas self-generation (1A2),SO2,0.011979,covered_sources_only
+1023fda803eb7585b3e81042,industry,FY2022-23,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163192,covered_sources_only
+5d99e8e97b488da8d89928a9,industry,FY2022-23,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.319454,covered_sources_only
+c44bf823b615f25c7df70a0d,industry,FY2022-23,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.753195,covered_sources_only
+2a232de5bd74d2c2d69c6f32,industry,FY2022-23,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,87.872696,covered_sources_only
+4c56473d9eb14f756cffa79b,industry,FY2022-23,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.439738,covered_sources_only
+b9518fb3c18c9e681faa29c9,industry,FY2022-23,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.595836,covered_sources_only
+e8958dfd44b0c0d0eeffcd63,industry,FY2022-23,L_HERD1624,Industrial fuel combustion (1A2),BC,10.253575,covered_sources_only
+68f7be8549bda9d3903d4987,industry,FY2022-23,L_HERD1624,Industrial fuel combustion (1A2),CO,30.653404,covered_sources_only
+bc79cfe76cacc8bbd3f84fc6,industry,FY2022-23,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,3.931296,covered_sources_only
+9efdaab9e28d42004751f1b8,industry,FY2022-23,L_HERD1624,Industrial fuel combustion (1A2),NOx,43.459573,covered_sources_only
+2618fd31fde71e978c2ff9a6,industry,FY2022-23,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,13.918987,covered_sources_only
+fea81113a1dec5b23d682637,industry,FY2022-23,L_HERD1624,Industrial fuel combustion (1A2),SO2,250.518028,covered_sources_only
+2775ce0d3b79471053d0f3f0,industry,FY2022-23,REF_2023_24,Captive gas self-generation (1A2),BC,0.002943,covered_sources_only
+f23cf423b0b612196c22ac93,industry,FY2022-23,REF_2023_24,Captive gas self-generation (1A2),CO,2.207925,covered_sources_only
+d8037c228f02cccb3fa56f6a,industry,FY2022-23,REF_2023_24,Captive gas self-generation (1A2),NMVOC,2.857775,covered_sources_only
+e7325ba420c23bfe87474f23,industry,FY2022-23,REF_2023_24,Captive gas self-generation (1A2),NOx,5.945416,covered_sources_only
+98e98b9ff19736fab1d53460,industry,FY2022-23,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.097546,covered_sources_only
+559daa4e4f3d079a4aa8dd41,industry,FY2022-23,REF_2023_24,Captive gas self-generation (1A2),SO2,0.011979,covered_sources_only
+7964b9412e6be9e334c4b151,industry,FY2022-23,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163192,covered_sources_only
+1af711eb9e4094d78f1f28a8,industry,FY2022-23,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.319454,covered_sources_only
+1d089d9860bc43567cd971ec,industry,FY2022-23,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.753195,covered_sources_only
+bd97894d870e9e6247367bb1,industry,FY2022-23,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,87.872696,covered_sources_only
+387d2cfccd1b2009ca156d9b,industry,FY2022-23,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.439738,covered_sources_only
+2e8e5a3fd3c7be4cf12300e2,industry,FY2022-23,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.595836,covered_sources_only
+e7bc1f57c6585d121e10680d,industry,FY2022-23,REF_2023_24,Industrial fuel combustion (1A2),BC,10.253575,covered_sources_only
+925e81342c1b282f4d1c415a,industry,FY2022-23,REF_2023_24,Industrial fuel combustion (1A2),CO,30.653404,covered_sources_only
+3841856b0cc9da2c503e15b6,industry,FY2022-23,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,3.931296,covered_sources_only
+4ee5cb243f654fa2ee593844,industry,FY2022-23,REF_2023_24,Industrial fuel combustion (1A2),NOx,43.459573,covered_sources_only
+41b8afb74fd74d358b9813b5,industry,FY2022-23,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,13.918987,covered_sources_only
+824173a817baf38980fe1a08,industry,FY2022-23,REF_2023_24,Industrial fuel combustion (1A2),SO2,250.518028,covered_sources_only
+3d42b191bc9f231d2f1652ac,industry,FY2023-24,L_HERD1624,Captive gas self-generation (1A2),BC,0.006890,covered_sources_only
+e3352af4d6e2115113239adc,industry,FY2023-24,L_HERD1624,Captive gas self-generation (1A2),CO,5.169776,covered_sources_only
+25ff364b4d898bbcacfa0d3b,industry,FY2023-24,L_HERD1624,Captive gas self-generation (1A2),NMVOC,6.691375,covered_sources_only
+677b1b0e0b2988d0b187d412,industry,FY2023-24,L_HERD1624,Captive gas self-generation (1A2),NOx,13.920974,covered_sources_only
+f63cbac52faa58f6185f8994,industry,FY2023-24,L_HERD1624,Captive gas self-generation (1A2),PM2.5,0.228400,covered_sources_only
+b0215c137bc11b27746f39ac,industry,FY2023-24,L_HERD1624,Captive gas self-generation (1A2),SO2,0.028048,covered_sources_only
+00fa72da7bbe8f98a5f63593,industry,FY2023-24,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163617,covered_sources_only
+1ecd5b443327d46a305a18d3,industry,FY2023-24,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.515706,covered_sources_only
+aad7c527379ea78cbb1d4cb7,industry,FY2023-24,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.755157,covered_sources_only
+3266aa981bd5eee19f71f444,industry,FY2023-24,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,88.101657,covered_sources_only
+6ff9e484bc555bf152ddc05b,industry,FY2023-24,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.453912,covered_sources_only
+a5e4d9f95770e98d0401b1a6,industry,FY2023-24,L_HERD1624,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.654712,covered_sources_only
+5e50981c6dbb4e6ddcd1c2f9,industry,FY2023-24,L_HERD1624,Industrial fuel combustion (1A2),BC,5.321742,covered_sources_only
+6bf7cd0fbd696746732be772,industry,FY2023-24,L_HERD1624,Industrial fuel combustion (1A2),CO,18.490068,covered_sources_only
+3dfb9185ba5eab8412eaf5a1,industry,FY2023-24,L_HERD1624,Industrial fuel combustion (1A2),NMVOC,4.259941,covered_sources_only
+0ff3c4b6f6c59e38c0e4f42f,industry,FY2023-24,L_HERD1624,Industrial fuel combustion (1A2),NOx,41.011343,covered_sources_only
+382c513ed1d83f57618dfd92,industry,FY2023-24,L_HERD1624,Industrial fuel combustion (1A2),PM2.5,7.580588,covered_sources_only
+7ca21626acec44cc9a8223d1,industry,FY2023-24,L_HERD1624,Industrial fuel combustion (1A2),SO2,117.629536,covered_sources_only
+92a115a0a6fecdd435040e7b,industry,FY2023-24,REF_2023_24,Captive gas self-generation (1A2),BC,0.006890,covered_sources_only
+1a044611b92a5c3b9db27a25,industry,FY2023-24,REF_2023_24,Captive gas self-generation (1A2),CO,5.169776,covered_sources_only
+9436c5bde4417ee2ce36d9d1,industry,FY2023-24,REF_2023_24,Captive gas self-generation (1A2),NMVOC,6.691375,covered_sources_only
+9877adb5155e911f0789516f,industry,FY2023-24,REF_2023_24,Captive gas self-generation (1A2),NOx,13.920974,covered_sources_only
+3a282827314dc47472388b5a,industry,FY2023-24,REF_2023_24,Captive gas self-generation (1A2),PM2.5,0.228400,covered_sources_only
+66c0c3f417a79079d849a796,industry,FY2023-24,REF_2023_24,Captive gas self-generation (1A2),SO2,0.028048,covered_sources_only
+59cba221a2b5bb32897c4731,industry,FY2023-24,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",BC,0.163617,covered_sources_only
+384216a5fe947debea5744ce,industry,FY2023-24,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",CO,75.515706,covered_sources_only
+be4612408a89412d3a72ecc5,industry,FY2023-24,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NMVOC,0.755157,covered_sources_only
+459aceab395b411629cfd330,industry,FY2023-24,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",NOx,88.101657,covered_sources_only
+badf2fe1d7a0ac3701054223,industry,FY2023-24,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",PM2.5,5.453912,covered_sources_only
+9b15536f2cb2ea1b4a4bdb2c,industry,FY2023-24,REF_2023_24,"Cement kilns, integrated (1A2f gases, 2A1 particulate)",SO2,22.654712,covered_sources_only
+b394c832900ab7e36b81d431,industry,FY2023-24,REF_2023_24,Industrial fuel combustion (1A2),BC,5.321742,covered_sources_only
+dddaf88e7d5bdc6f8018585a,industry,FY2023-24,REF_2023_24,Industrial fuel combustion (1A2),CO,18.490068,covered_sources_only
+ff0bc5e6456443762109dbe1,industry,FY2023-24,REF_2023_24,Industrial fuel combustion (1A2),NMVOC,4.259941,covered_sources_only
+d49ae24f6f4ab30973931e90,industry,FY2023-24,REF_2023_24,Industrial fuel combustion (1A2),NOx,41.011343,covered_sources_only
+1d338eb7624608999134d901,industry,FY2023-24,REF_2023_24,Industrial fuel combustion (1A2),PM2.5,7.580588,covered_sources_only
+0d1482e24e45a5e5e993c082,industry,FY2023-24,REF_2023_24,Industrial fuel combustion (1A2),SO2,117.629536,covered_sources_only
+fecdcaeb2affb68592fc1b24,ippu,FY2015-16,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000241,covered_sources_only
+8e368d775d5c27063db19e3f,ippu,FY2015-16,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,10.011531,covered_sources_only
+6480e57397a89d0ff4101d5a,ippu,FY2015-16,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.459999,covered_sources_only
+4ed87e540cd1d140919601f6,ippu,FY2015-16,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.146430,covered_sources_only
+2abd1cfaa93daf464c018f84,ippu,FY2015-16,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,4.248119,covered_sources_only
+b4cee04ed7b708c8a9b771f5,ippu,FY2015-16,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.066848,covered_sources_only
+f87ebdb847d3d0e32fe39f15,ippu,FY2015-16,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.190995,covered_sources_only
+f87ede45171edf138242ef2c,ippu,FY2015-16,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000241,covered_sources_only
+1e19cf0fa1931102a735a92f,ippu,FY2015-16,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,10.011531,covered_sources_only
+e35f30f74581b75e6a5c30eb,ippu,FY2015-16,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.459999,covered_sources_only
+0745d2957820f98611684cfe,ippu,FY2015-16,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.146430,covered_sources_only
+280bf0135c4a0579667d8621,ippu,FY2015-16,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,4.248119,covered_sources_only
+73b8eb0d9bea3977740a15ae,ippu,FY2015-16,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.066848,covered_sources_only
+b10b6fd1cb85ae23371e65a8,ippu,FY2015-16,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.190995,covered_sources_only
+032cc7c6f2527d3bfade2f52,ippu,FY2016-17,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000310,covered_sources_only
+2c68d6f25c28f6217de9cb83,ippu,FY2016-17,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,11.680114,covered_sources_only
+871435dc44068be7acd34e6f,ippu,FY2016-17,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.471181,covered_sources_only
+b2dec34cb24f508c8f330ba0,ippu,FY2016-17,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.188554,covered_sources_only
+99625b9417471400ea778832,ippu,FY2016-17,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,4.476387,covered_sources_only
+5c9c6c530382da937b53771c,ippu,FY2016-17,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.086079,covered_sources_only
+771dc1875dc7087842867c9d,ippu,FY2016-17,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.245940,covered_sources_only
+0d5540ec9c2caa073458ae86,ippu,FY2016-17,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000310,covered_sources_only
+e863e120f70cd84a39fb0dec,ippu,FY2016-17,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,11.680114,covered_sources_only
+6cdd76a455d5a5bc733a571e,ippu,FY2016-17,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.471181,covered_sources_only
+7b235ee9359ebb058bbae7fe,ippu,FY2016-17,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.188554,covered_sources_only
+f7a9175c1dd15d38781678a2,ippu,FY2016-17,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,4.476387,covered_sources_only
+fe395ee2bbdf7475a3de9636,ippu,FY2016-17,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.086079,covered_sources_only
+c51bfac0c2c6b7074c546260,ippu,FY2016-17,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.245940,covered_sources_only
+e4681ce02570c6dbe409a1dd,ippu,FY2017-18,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000392,covered_sources_only
+110f8bdb14504fa207e91bf1,ippu,FY2017-18,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,13.756553,covered_sources_only
+1f62f6d1fb4b81a7c1a0e311,ippu,FY2017-18,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.494035,covered_sources_only
+6211c9f654ea0c57f8367658,ippu,FY2017-18,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.238556,covered_sources_only
+2bd40f755a89cd1ee178409e,ippu,FY2017-18,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,4.199942,covered_sources_only
+06cf91bc2fa0900690862d02,ippu,FY2017-18,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.108906,covered_sources_only
+d3b6314400ef3cd0e886cad7,ippu,FY2017-18,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.311160,covered_sources_only
+e477ddcc872b8678160d4a13,ippu,FY2017-18,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000392,covered_sources_only
+93aea2bbe13918d816364865,ippu,FY2017-18,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,13.756553,covered_sources_only
+645472d07754c0c827239e5c,ippu,FY2017-18,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.494035,covered_sources_only
+ee16a9aad6f26b6bfc6a5054,ippu,FY2017-18,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.238556,covered_sources_only
+1c01fad0090fb60fbc87c155,ippu,FY2017-18,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,4.199942,covered_sources_only
+b08b0b45f49e98deb6622b9a,ippu,FY2017-18,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.108906,covered_sources_only
+f629266a2d51df613a88311b,ippu,FY2017-18,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.311160,covered_sources_only
+2540a6d316126046e3f983ae,ippu,FY2018-19,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000293,covered_sources_only
+76b495bd466c7bfb0969385c,ippu,FY2018-19,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,12.116961,covered_sources_only
+2182019f2256e2173b585e13,ippu,FY2018-19,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.553110,covered_sources_only
+a17be6e5af02a07578980252,ippu,FY2018-19,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.178206,covered_sources_only
+9a926ab2dfb27981879bd50f,ippu,FY2018-19,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,4.328681,covered_sources_only
+90052edcbfb8500680b8be39,ippu,FY2018-19,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.081355,covered_sources_only
+d80d03df5753055d1d6d3a59,ippu,FY2018-19,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.232442,covered_sources_only
+5ae01053904afd54ba031437,ippu,FY2018-19,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000293,covered_sources_only
+b132f52c2f658f6d45e6ebdb,ippu,FY2018-19,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,12.116961,covered_sources_only
+10ac80eade36626e0246a47f,ippu,FY2018-19,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.553110,covered_sources_only
+726f70dd90bb545bdb471bec,ippu,FY2018-19,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.178206,covered_sources_only
+3a41e63dfbc92bbed7a1ab29,ippu,FY2018-19,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,4.328681,covered_sources_only
+e20693111175aac653eb0ebd,ippu,FY2018-19,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.081355,covered_sources_only
+815777267aeabe3ce4b992ae,ippu,FY2018-19,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.232442,covered_sources_only
+3538857aba0b93c65788962d,ippu,FY2019-20,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000239,covered_sources_only
+6af753ba1a90ed1821cdd51d,ippu,FY2019-20,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,10.736573,covered_sources_only
+22761ffc55e1f0e9343fea9b,ippu,FY2019-20,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.535777,covered_sources_only
+7a3dac77aa5c3f3472859ce8,ippu,FY2019-20,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.145544,covered_sources_only
+3d76dddf982ca2d10c5060f8,ippu,FY2019-20,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,4.433791,covered_sources_only
+53840a1a0ed9dc0be1655dde,ippu,FY2019-20,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.066444,covered_sources_only
+71a55386485478909703a106,ippu,FY2019-20,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.189840,covered_sources_only
+2a1972b9a66e425b1953ace6,ippu,FY2019-20,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000239,covered_sources_only
+580a35b497e68610cdc2bfa0,ippu,FY2019-20,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,10.736573,covered_sources_only
+85047bcf53d8e892d037ae7a,ippu,FY2019-20,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.535777,covered_sources_only
+e6901c531938fb976d9aac66,ippu,FY2019-20,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.145544,covered_sources_only
+70fe9282528c1807498a59d1,ippu,FY2019-20,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,4.433791,covered_sources_only
+2b57ead99591eaf9384e0378,ippu,FY2019-20,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.066444,covered_sources_only
+00e741941523171a10c18008,ippu,FY2019-20,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.189840,covered_sources_only
+e9aa15e538b9b5e06e9e0253,ippu,FY2020-21,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000361,covered_sources_only
+427091a8692c9b81d918d510,ippu,FY2020-21,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,13.895197,covered_sources_only
+fb3ca2477c3baa1d688f7cc6,ippu,FY2020-21,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.577430,covered_sources_only
+bbcbea8b2cf13abc79a1a243,ippu,FY2020-21,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.219742,covered_sources_only
+579b8a42004d2134c6358f60,ippu,FY2020-21,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,4.879045,covered_sources_only
+cf88e4c92337e2e3e28c1db7,ippu,FY2020-21,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.100317,covered_sources_only
+472449a6b027b6c6af74b9e0,ippu,FY2020-21,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.286620,covered_sources_only
+1eb2ecbccceeaf8f147c84e5,ippu,FY2020-21,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000361,covered_sources_only
+d5469c8ee56b5980c74b20d5,ippu,FY2020-21,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,13.895197,covered_sources_only
+af42849dec4e8341b261f46e,ippu,FY2020-21,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.577430,covered_sources_only
+86a8a393beb2e1010e5a082c,ippu,FY2020-21,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.219742,covered_sources_only
+1d0412edafab3631958bf2e0,ippu,FY2020-21,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,4.879045,covered_sources_only
+f01517446cd009526b79c19c,ippu,FY2020-21,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.100317,covered_sources_only
+341884872000cba047a6113b,ippu,FY2020-21,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.286620,covered_sources_only
+25624de082a9cf760b6f19ad,ippu,FY2021-22,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000481,covered_sources_only
+a9ee8b85369e09737822eb56,ippu,FY2021-22,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,17.105780,covered_sources_only
+65ba047e2a94ccbb4739b8a3,ippu,FY2021-22,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.629718,covered_sources_only
+d7955ffa7570b11f7789b21f,ippu,FY2021-22,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.292468,covered_sources_only
+364ec05c3fd6b1499b2ded2e,ippu,FY2021-22,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,5.182328,covered_sources_only
+e68c940371ed6ca72590ee84,ippu,FY2021-22,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.133518,covered_sources_only
+39f0f0b9b239f9ddf414ea02,ippu,FY2021-22,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.381480,covered_sources_only
+c649b028c414eecc09887bf5,ippu,FY2021-22,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000481,covered_sources_only
+eeb092b05f4bd9da4b6c7f32,ippu,FY2021-22,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,17.105780,covered_sources_only
+8ee7925e3e464942c1a4a4cb,ippu,FY2021-22,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.629718,covered_sources_only
+15cbed35c2dd74d55624dfc2,ippu,FY2021-22,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.292468,covered_sources_only
+47538acc70f3a3b1c4b213db,ippu,FY2021-22,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,5.182328,covered_sources_only
+bb40cb6ceb29de9ac6a3ec70,ippu,FY2021-22,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.133518,covered_sources_only
+ce2d569e3e4944e67729fa6f,ippu,FY2021-22,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.381480,covered_sources_only
+83d3c501b3508e632ebc3fcc,ippu,FY2022-23,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000404,covered_sources_only
+cbca32721fcf954d43877150,ippu,FY2022-23,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,16.108275,covered_sources_only
+0e7205f3e22d6b9e131a71d8,ippu,FY2022-23,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.703367,covered_sources_only
+bc5169cc134482ef112024aa,ippu,FY2022-23,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.245548,covered_sources_only
+d0c4c5cc5d5bb29742e42ae5,ippu,FY2022-23,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,4.731466,covered_sources_only
+bf3c185ab4e6ddd8474cdf46,ippu,FY2022-23,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.112098,covered_sources_only
+b9cee93259aba440bc8855dc,ippu,FY2022-23,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.320280,covered_sources_only
+3a931787d37dbaadee805068,ippu,FY2022-23,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000404,covered_sources_only
+b54c862c73a1e2bc376d34ef,ippu,FY2022-23,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,16.108275,covered_sources_only
+30766fed74670003e830dad6,ippu,FY2022-23,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.703367,covered_sources_only
+472205a6f5b35f5a757d87ad,ippu,FY2022-23,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.245548,covered_sources_only
+683f04b2cdd2950ea657da8a,ippu,FY2022-23,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,4.731466,covered_sources_only
+1a8b6e1ffd2d4c0537067f73,ippu,FY2022-23,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.112098,covered_sources_only
+41717e8405d00fc75adb577e,ippu,FY2022-23,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.320280,covered_sources_only
+181978f8e6cf9c115e8f4f3f,ippu,FY2023-24,L_HERD1624,"Industrial process emissions (2B, 2C)",BC,0.000371,covered_sources_only
+37a87a5862d378b559889a38,ippu,FY2023-24,L_HERD1624,"Industrial process emissions (2B, 2C)",CO,15.866364,covered_sources_only
+304a5364a00e66b541a37046,ippu,FY2023-24,L_HERD1624,"Industrial process emissions (2B, 2C)",NH3,0.751256,covered_sources_only
+7684f7a6f2ac6e29572e6c0b,ippu,FY2023-24,L_HERD1624,"Industrial process emissions (2B, 2C)",NMVOC,0.226044,covered_sources_only
+5d29ee43cabe560ae0c19a80,ippu,FY2023-24,L_HERD1624,"Industrial process emissions (2B, 2C)",NOx,5.088986,covered_sources_only
+c2775f12f682864db5a2ab10,ippu,FY2023-24,L_HERD1624,"Industrial process emissions (2B, 2C)",PM2.5,0.103194,covered_sources_only
+af4438060e93ad4d80e9741f,ippu,FY2023-24,L_HERD1624,"Industrial process emissions (2B, 2C)",SO2,0.294840,covered_sources_only
+52954f2d8c7c3ad3203098ec,ippu,FY2023-24,REF_2023_24,"Industrial process emissions (2B, 2C)",BC,0.000371,covered_sources_only
+0d1c8b350598be7d48c42657,ippu,FY2023-24,REF_2023_24,"Industrial process emissions (2B, 2C)",CO,15.866364,covered_sources_only
+ec090172e61596d7b518bb9b,ippu,FY2023-24,REF_2023_24,"Industrial process emissions (2B, 2C)",NH3,0.751256,covered_sources_only
+bc8d91e1607422a16e6066b9,ippu,FY2023-24,REF_2023_24,"Industrial process emissions (2B, 2C)",NMVOC,0.226044,covered_sources_only
+e1bf4367703bf9e6a7d5c0d0,ippu,FY2023-24,REF_2023_24,"Industrial process emissions (2B, 2C)",NOx,5.088986,covered_sources_only
+84e9876ceb1d7e8db6404b76,ippu,FY2023-24,REF_2023_24,"Industrial process emissions (2B, 2C)",PM2.5,0.103194,covered_sources_only
+71118120c333690451fb228f,ippu,FY2023-24,REF_2023_24,"Industrial process emissions (2B, 2C)",SO2,0.294840,covered_sources_only
+5dafdc7dcb96a4e9311bc2fc,power,FY2015-16,L_HERD1624,Electricity and heat production,SO2,234.860620,covered_sources_only
+910126f8a0d516999c5f842a,power,FY2015-16,REF_2023_24,Electricity and heat production,SO2,234.860620,covered_sources_only
+b1fbd32cb183a9bf56ab4066,power,FY2016-17,L_HERD1624,Electricity and heat production,SO2,346.149912,covered_sources_only
+8938332539790fafc78c3b06,power,FY2016-17,REF_2023_24,Electricity and heat production,SO2,346.149912,covered_sources_only
+c1d76185f4f123ce2d78766f,power,FY2017-18,L_HERD1624,Electricity and heat production,SO2,262.061743,covered_sources_only
+7f4f58e18455c9b9082c205c,power,FY2017-18,REF_2023_24,Electricity and heat production,SO2,262.061743,covered_sources_only
+1efba1fa8d7750260d9951cc,power,FY2018-19,L_HERD1624,Electricity and heat production,SO2,121.796940,covered_sources_only
+757d82544a3a14726b59b24b,power,FY2018-19,REF_2023_24,Electricity and heat production,SO2,121.796940,covered_sources_only
+0f410b54a8e5fcf660fc21b5,power,FY2019-20,L_HERD1624,Electricity and heat production,SO2,53.084625,covered_sources_only
+a1212555db1ebd5b3414b9d7,power,FY2019-20,REF_2023_24,Electricity and heat production,SO2,53.084625,covered_sources_only
+00f7afc90e857755f63c01ba,power,FY2020-21,L_HERD1624,Electricity and heat production,SO2,80.892130,covered_sources_only
+f3664edd72772cd3128f8ca9,power,FY2020-21,REF_2023_24,Electricity and heat production,SO2,80.892130,covered_sources_only
+224204b6cee567c77748d48e,power,FY2021-22,L_HERD1624,Electricity and heat production,SO2,167.030034,covered_sources_only
+0e6a4a140679964ffc1ed1d1,power,FY2021-22,REF_2023_24,Electricity and heat production,SO2,167.030034,covered_sources_only
+be07265cd33cefe73d53ad6a,power,FY2022-23,L_HERD1624,Electricity and heat production,SO2,62.698130,covered_sources_only
+46aba46d1aad2de3158f67e0,power,FY2022-23,REF_2023_24,Electricity and heat production,SO2,62.698130,covered_sources_only
+f34a12c070dd00b324fc654f,power,FY2023-24,L_HERD1624,Electricity and heat production,SO2,30.021747,covered_sources_only
+79b18f9fc9e29935b79760cb,power,FY2023-24,REF_2023_24,Electricity and heat production,SO2,30.021747,covered_sources_only
+8e5c3c3f529674d519a1a648,railways,FY2015-16,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001779,covered_sources_only
+a62a00b157b574867ae60022,railways,FY2015-16,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021371,covered_sources_only
+1042c8680bc81a4280428fd3,railways,FY2015-16,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+8eac796cdd470d035fde9c41,railways,FY2015-16,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009287,covered_sources_only
+c3d8ef6710716ce9f5f9717d,railways,FY2015-16,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104656,covered_sources_only
+ae04e3a65a5835d5f0e2acc3,railways,FY2015-16,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002736,covered_sources_only
+a2baa6f9cecc04e07157c199,railways,FY2015-16,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.059753,covered_sources_only
+c5f999ee93c5d9ea5dd01ec0,railways,FY2015-16,L_HERD1624,Railways,BC,0.103772,covered_sources_only
+ac8408d4e6f73c3fca5403fc,railways,FY2015-16,L_HERD1624,Railways,CO,1.246895,covered_sources_only
+54d82a8bc9c606bbcdb2fa36,railways,FY2015-16,L_HERD1624,Railways,NH3,0.000816,covered_sources_only
+1be75f4a300e9b69b6d636ed,railways,FY2015-16,L_HERD1624,Railways,NMVOC,0.541875,covered_sources_only
+2b1c2e82bf8353e50c629c4e,railways,FY2015-16,L_HERD1624,Railways,NOx,6.106290,covered_sources_only
+a4e2bd65d490d2684d107f63,railways,FY2015-16,L_HERD1624,Railways,PM2.5,0.159649,covered_sources_only
+d4d56d6deaa4d1b9922d8f55,railways,FY2015-16,L_HERD1624,Railways,SO2,1.165323,covered_sources_only
+648c71222ac90eb5578139de,railways,FY2015-16,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001779,covered_sources_only
+9386bfbf8a5d341c51d17975,railways,FY2015-16,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021371,covered_sources_only
+37dc087a14c67bd9b446c1bd,railways,FY2015-16,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+1a4d8c81bcde5ef1867fc180,railways,FY2015-16,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009287,covered_sources_only
+309fda51e16447dcc4337eea,railways,FY2015-16,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104656,covered_sources_only
+78c8014b2271ee0e9ff3efdd,railways,FY2015-16,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002736,covered_sources_only
+64b5681ef0b077ee0054d06b,railways,FY2015-16,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.059753,covered_sources_only
+dea675c25e873d54b6aad096,railways,FY2015-16,REF_2023_24,Railways,BC,0.103772,covered_sources_only
+8dfffb2324e3ff18a20a9aab,railways,FY2015-16,REF_2023_24,Railways,CO,1.246895,covered_sources_only
+5db6c209c1799a97435e2fdd,railways,FY2015-16,REF_2023_24,Railways,NH3,0.000816,covered_sources_only
+7b0e1e8199793f0868df3656,railways,FY2015-16,REF_2023_24,Railways,NMVOC,0.541875,covered_sources_only
+ecfe299aebf180d4b5fd4188,railways,FY2015-16,REF_2023_24,Railways,NOx,6.106290,covered_sources_only
+1f36e35984822e91a4abd711,railways,FY2015-16,REF_2023_24,Railways,PM2.5,0.159649,covered_sources_only
+1c11a163c12418bfb3e5fb19,railways,FY2015-16,REF_2023_24,Railways,SO2,1.165323,covered_sources_only
+23377b004a24ecbf292e2630,railways,FY2016-17,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.002029,covered_sources_only
+6a2a822ae54a28fee2d6946b,railways,FY2016-17,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.024378,covered_sources_only
+9948cf02e58736807f1826bc,railways,FY2016-17,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000016,covered_sources_only
+317ea4299a5c7c5ff7cca4a3,railways,FY2016-17,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010594,covered_sources_only
+d672762dde312a0c2f9685ac,railways,FY2016-17,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.119382,covered_sources_only
+81bbd0a7b2c18211c6c6e518,railways,FY2016-17,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.003121,covered_sources_only
+17084a100ae3be24fcb2bbd0,railways,FY2016-17,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.056863,covered_sources_only
+4bea906c06d6514a3dce81d4,railways,FY2016-17,L_HERD1624,Railways,BC,0.107308,covered_sources_only
+c1214a153947134373a1c26c,railways,FY2016-17,L_HERD1624,Railways,CO,1.289381,covered_sources_only
+0cb51deba7aab83d602c9dec,railways,FY2016-17,L_HERD1624,Railways,NH3,0.000844,covered_sources_only
+bd39d0a7eacdd1bcf27f53d7,railways,FY2016-17,L_HERD1624,Railways,NMVOC,0.560339,covered_sources_only
+b687068750c512a4ab41245c,railways,FY2016-17,L_HERD1624,Railways,NOx,6.314353,covered_sources_only
+2b54443e21ba05d8d6292d98,railways,FY2016-17,L_HERD1624,Railways,PM2.5,0.165089,covered_sources_only
+de4a8bcaa12870fe1b3891ec,railways,FY2016-17,L_HERD1624,Railways,SO2,1.205029,covered_sources_only
+e52dfc5736319b6943107e1b,railways,FY2016-17,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.002029,covered_sources_only
+38d1e0ebcf6f94cfe6c90aaf,railways,FY2016-17,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.024378,covered_sources_only
+c9a8dcec7b11c37b2d8aa0af,railways,FY2016-17,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000016,covered_sources_only
+fec0007357381ff1d127cc51,railways,FY2016-17,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010594,covered_sources_only
+eaf4864f836eb806e938c865,railways,FY2016-17,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.119382,covered_sources_only
+659cba6ee16a8e2c37084a03,railways,FY2016-17,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.003121,covered_sources_only
+0fcb583a89e494e83a446574,railways,FY2016-17,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.056863,covered_sources_only
+812d5f2d5b9e17870fc73351,railways,FY2016-17,REF_2023_24,Railways,BC,0.107308,covered_sources_only
+f93a907ffc7adaae9086adc4,railways,FY2016-17,REF_2023_24,Railways,CO,1.289381,covered_sources_only
+52a6fd6e68397ed098907241,railways,FY2016-17,REF_2023_24,Railways,NH3,0.000844,covered_sources_only
+ae24ec589af861d9918ab6e8,railways,FY2016-17,REF_2023_24,Railways,NMVOC,0.560339,covered_sources_only
+17b78f8881aacfde4829a328,railways,FY2016-17,REF_2023_24,Railways,NOx,6.314353,covered_sources_only
+34cf14e3d6807c9c0cca9cc1,railways,FY2016-17,REF_2023_24,Railways,PM2.5,0.165089,covered_sources_only
+ef71a6ad59fc04f6df67b5f8,railways,FY2016-17,REF_2023_24,Railways,SO2,1.205029,covered_sources_only
+22ccb491b562ed014a6fa97d,railways,FY2017-18,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001920,covered_sources_only
+9fbb9c1a2aee249e33eac1a5,railways,FY2017-18,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.023070,covered_sources_only
+cd558139e680401516a123bf,railways,FY2017-18,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000015,covered_sources_only
+db28d904ede8eec43632105e,railways,FY2017-18,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010026,covered_sources_only
+4cf1cbd99e8f8ceecd1e81f7,railways,FY2017-18,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.112977,covered_sources_only
+7631bf7b5737aef979afc074,railways,FY2017-18,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002954,covered_sources_only
+991d8a4bfac588523a9347eb,railways,FY2017-18,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.032040,covered_sources_only
+9127a78fd6898f74f70ebc66,railways,FY2017-18,L_HERD1624,Railways,BC,0.116149,covered_sources_only
+5d1ad8667493f32a6662edc0,railways,FY2017-18,L_HERD1624,Railways,CO,1.395619,covered_sources_only
+3c1fc0f6873334fda5f0e111,railways,FY2017-18,L_HERD1624,Railways,NH3,0.000913,covered_sources_only
+ed0e6b85f810de744083de8c,railways,FY2017-18,L_HERD1624,Railways,NMVOC,0.606507,covered_sources_only
+7cbaec3fcfd1a7a362eeafd0,railways,FY2017-18,L_HERD1624,Railways,NOx,6.834619,covered_sources_only
+29dc01ffc985330c18e03199,railways,FY2017-18,L_HERD1624,Railways,PM2.5,0.178691,covered_sources_only
+bf5f65d9183d929819e4da0a,railways,FY2017-18,L_HERD1624,Railways,SO2,0.130432,covered_sources_only
+0eb5656052b4b87aa0a45c7e,railways,FY2017-18,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001920,covered_sources_only
+809a3ed939f09815eeb3af77,railways,FY2017-18,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.023070,covered_sources_only
+0bbd2b2c4138cc4308feb596,railways,FY2017-18,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000015,covered_sources_only
+e2f315a3859ab742fe00549a,railways,FY2017-18,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.010026,covered_sources_only
+2ea76569d9403b753b5a7021,railways,FY2017-18,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.112977,covered_sources_only
+3f69dda4f8cdcda76d1b348d,railways,FY2017-18,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002954,covered_sources_only
+eb8a06a8361da24da62ec497,railways,FY2017-18,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.032040,covered_sources_only
+71cc0f85a89785e3e11f258c,railways,FY2017-18,REF_2023_24,Railways,BC,0.116149,covered_sources_only
+d53cb2c3800f0bf0e73bc916,railways,FY2017-18,REF_2023_24,Railways,CO,1.395619,covered_sources_only
+c84cd826ca7f713f9b20f164,railways,FY2017-18,REF_2023_24,Railways,NH3,0.000913,covered_sources_only
+1b2fd4f434d52e5cc5e7231b,railways,FY2017-18,REF_2023_24,Railways,NMVOC,0.606507,covered_sources_only
+3b6a5234c624f8019f1fc9ba,railways,FY2017-18,REF_2023_24,Railways,NOx,6.834619,covered_sources_only
+a4f1267b07a227eab093673c,railways,FY2017-18,REF_2023_24,Railways,PM2.5,0.178691,covered_sources_only
+75b1d6ca53a4b67efd1b283b,railways,FY2017-18,REF_2023_24,Railways,SO2,0.130432,covered_sources_only
+3f8c8f0fadae489dfd764f7f,railways,FY2018-19,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001767,covered_sources_only
+042c4d50188f31591006900b,railways,FY2018-19,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021237,covered_sources_only
+61e8f1c0930696ed3ca84c60,railways,FY2018-19,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+fdb3e8c5758c153abdd5e75b,railways,FY2018-19,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009229,covered_sources_only
+e3e89d003e09b5d2f4857fec,railways,FY2018-19,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104000,covered_sources_only
+e76afc9989cd3882db96e823,railways,FY2018-19,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002719,covered_sources_only
+54202d06ce70005eecd5577b,railways,FY2018-19,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.025353,covered_sources_only
+ebfcfa862c53d5bdf9fef854,railways,FY2018-19,L_HERD1624,Railways,BC,0.118875,covered_sources_only
+58a549f64db920c0e6f82eff,railways,FY2018-19,L_HERD1624,Railways,CO,1.428367,covered_sources_only
+896793bd58d79abdc475a345,railways,FY2018-19,L_HERD1624,Railways,NH3,0.000934,covered_sources_only
+9e8ce20c9c69bea8791a4fb4,railways,FY2018-19,L_HERD1624,Railways,NMVOC,0.620739,covered_sources_only
+ca34ea7862a7dbaca31a8e37,railways,FY2018-19,L_HERD1624,Railways,NOx,6.994994,covered_sources_only
+a4dbec72d8e20c89f8d92f33,railways,FY2018-19,L_HERD1624,Railways,PM2.5,0.182884,covered_sources_only
+ccfa1042601896fec2e4a739,railways,FY2018-19,L_HERD1624,Railways,SO2,0.133492,covered_sources_only
+d82350d0f0d1b37c9c6db8e4,railways,FY2018-19,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001767,covered_sources_only
+499e2ccd58900878119c38ee,railways,FY2018-19,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.021237,covered_sources_only
+4f8f9200bad3cf16ac29dfb9,railways,FY2018-19,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000014,covered_sources_only
+194eb4ec6b45a42870366f72,railways,FY2018-19,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.009229,covered_sources_only
+f286e1bff0b1f34d3280aef6,railways,FY2018-19,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.104000,covered_sources_only
+7e8e38915866bae45d7086c5,railways,FY2018-19,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002719,covered_sources_only
+af12ed022d0a55e3ebc48ff4,railways,FY2018-19,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.025353,covered_sources_only
+8944aefb99533edb70205b84,railways,FY2018-19,REF_2023_24,Railways,BC,0.118875,covered_sources_only
+6ebe98ec84b975dcb8b36df6,railways,FY2018-19,REF_2023_24,Railways,CO,1.428367,covered_sources_only
+5c569d0fa6e7246e2e0ba8c4,railways,FY2018-19,REF_2023_24,Railways,NH3,0.000934,covered_sources_only
+eee4de24c9fd2d00c4f514f9,railways,FY2018-19,REF_2023_24,Railways,NMVOC,0.620739,covered_sources_only
+c623ae1b363bde9a7749c043,railways,FY2018-19,REF_2023_24,Railways,NOx,6.994994,covered_sources_only
+e010f201a3d83ade234d7b65,railways,FY2018-19,REF_2023_24,Railways,PM2.5,0.182884,covered_sources_only
+726ccd729b1f2371a8ed5c95,railways,FY2018-19,REF_2023_24,Railways,SO2,0.133492,covered_sources_only
+6d1ee33b8451fce47e07fca8,railways,FY2019-20,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001466,covered_sources_only
+b21593bc35a0857c64eaf92d,railways,FY2019-20,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.017616,covered_sources_only
+61fd4c792479080978031383,railways,FY2019-20,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000012,covered_sources_only
+d829d16be37b391e81095f8c,railways,FY2019-20,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007656,covered_sources_only
+6b24055a9d038654e94bd462,railways,FY2019-20,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.086269,covered_sources_only
+26082c0a73f9986c180dfa9a,railways,FY2019-20,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002256,covered_sources_only
+f0e4108c6f84679148ab3e6d,railways,FY2019-20,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.020207,covered_sources_only
+2a5e70f335489db2b452cbce,railways,FY2019-20,L_HERD1624,Railways,BC,0.103819,covered_sources_only
+8a63757912cc2fc5489c9467,railways,FY2019-20,L_HERD1624,Railways,CO,1.247456,covered_sources_only
+555de1c4f1f92aa9ed83a0ca,railways,FY2019-20,L_HERD1624,Railways,NH3,0.000816,covered_sources_only
+3e306e736fcaabdaa873be5f,railways,FY2019-20,L_HERD1624,Railways,NMVOC,0.542119,covered_sources_only
+9532e0969b4c1e1431438da8,railways,FY2019-20,L_HERD1624,Railways,NOx,6.109035,covered_sources_only
+93fe42e70c4647aa54796cdb,railways,FY2019-20,L_HERD1624,Railways,PM2.5,0.159721,covered_sources_only
+cda057ecff958cabdce62388,railways,FY2019-20,L_HERD1624,Railways,SO2,0.116585,covered_sources_only
+0b2221e74f6957d0eea0f006,railways,FY2019-20,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001466,covered_sources_only
+58dd995da461bf699d5ebf25,railways,FY2019-20,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.017616,covered_sources_only
+2b01ef228d8a2fecf5844fd5,railways,FY2019-20,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000012,covered_sources_only
+9c1351ce4a9baddd223ad6e1,railways,FY2019-20,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007656,covered_sources_only
+5418de6d87722861029c26b1,railways,FY2019-20,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.086269,covered_sources_only
+e83d531e943dd65ac7c7b0f7,railways,FY2019-20,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002256,covered_sources_only
+861ec9c8106aad8806e3ed76,railways,FY2019-20,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.020207,covered_sources_only
+7c413c7206847d2d42417f36,railways,FY2019-20,REF_2023_24,Railways,BC,0.103819,covered_sources_only
+0177519b1acd3e00a88c9a65,railways,FY2019-20,REF_2023_24,Railways,CO,1.247456,covered_sources_only
+45ec9ffeef74df0b6f97937b,railways,FY2019-20,REF_2023_24,Railways,NH3,0.000816,covered_sources_only
+167a0aeb6324f78633926374,railways,FY2019-20,REF_2023_24,Railways,NMVOC,0.542119,covered_sources_only
+5609c9ed444496cedd68e741,railways,FY2019-20,REF_2023_24,Railways,NOx,6.109035,covered_sources_only
+cccedb04fbca7bc08136fd3c,railways,FY2019-20,REF_2023_24,Railways,PM2.5,0.159721,covered_sources_only
+3604747bfc346f0cf1a299d6,railways,FY2019-20,REF_2023_24,Railways,SO2,0.116585,covered_sources_only
+d59cd3e9d630d7e604db4140,railways,FY2020-21,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001162,covered_sources_only
+461eab14edf65fd38043ebba,railways,FY2020-21,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.013958,covered_sources_only
+4ae9ddf0d7a5281cb7160d6f,railways,FY2020-21,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000009,covered_sources_only
+b9597fe7835f833f15babbbb,railways,FY2020-21,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006066,covered_sources_only
+1dcdc028e4ed5fa8dbc50434,railways,FY2020-21,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.068357,covered_sources_only
+c3dd3dbf1fb01b08ada5b909,railways,FY2020-21,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001787,covered_sources_only
+6ec9099525f6e60f50baae15,railways,FY2020-21,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.008757,covered_sources_only
+3cc85c146edb35f54568242c,railways,FY2020-21,L_HERD1624,Railways,BC,0.104474,covered_sources_only
+649c09fd4089d2de8f3173c2,railways,FY2020-21,L_HERD1624,Railways,CO,1.255331,covered_sources_only
+eb4d463030ede4107ed94cd9,railways,FY2020-21,L_HERD1624,Railways,NH3,0.000821,covered_sources_only
+4d626c5f314aef764dbe05ee,railways,FY2020-21,L_HERD1624,Railways,NMVOC,0.545541,covered_sources_only
+96c6331706f09b556da19fd4,railways,FY2020-21,L_HERD1624,Railways,NOx,6.147602,covered_sources_only
+6f1d15334e61c1933befb794,railways,FY2020-21,L_HERD1624,Railways,PM2.5,0.160729,covered_sources_only
+47b0b50e59dc01ca05629303,railways,FY2020-21,L_HERD1624,Railways,SO2,0.117321,covered_sources_only
+bf8b186893f571a97670390c,railways,FY2020-21,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001162,covered_sources_only
+f220b053a851c204393b0546,railways,FY2020-21,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.013958,covered_sources_only
+6ac7a4fda6ae67f1e10622c5,railways,FY2020-21,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000009,covered_sources_only
+f1e1c46908d56d4b7f988a0f,railways,FY2020-21,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006066,covered_sources_only
+8db1ccd9149efb7e8de2da79,railways,FY2020-21,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.068357,covered_sources_only
+cabcb93fb7d8bca188aa07a4,railways,FY2020-21,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001787,covered_sources_only
+b0a9701171edba4c7ca2ac3f,railways,FY2020-21,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.008757,covered_sources_only
+d1ece9ec4980470cf3e0207e,railways,FY2020-21,REF_2023_24,Railways,BC,0.104474,covered_sources_only
+70a514113905e01ac72cc50c,railways,FY2020-21,REF_2023_24,Railways,CO,1.255331,covered_sources_only
+ac95f1ebb16ecae870e2aeae,railways,FY2020-21,REF_2023_24,Railways,NH3,0.000821,covered_sources_only
+631070c1b140fad2e2ca5f41,railways,FY2020-21,REF_2023_24,Railways,NMVOC,0.545541,covered_sources_only
+8a838d23ddf5990e6df2cb53,railways,FY2020-21,REF_2023_24,Railways,NOx,6.147602,covered_sources_only
+6097f943949ecabfb10afdaa,railways,FY2020-21,REF_2023_24,Railways,PM2.5,0.160729,covered_sources_only
+bfc641915efcc7cd58d8311e,railways,FY2020-21,REF_2023_24,Railways,SO2,0.117321,covered_sources_only
+dd248532e473a2fbe1562a20,railways,FY2021-22,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001390,covered_sources_only
+b9f14204e601a3570b0211e0,railways,FY2021-22,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016698,covered_sources_only
+4632387cb791c3b0c21efe07,railways,FY2021-22,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+f5081e0126ba2bb59d2be684,railways,FY2021-22,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007257,covered_sources_only
+033192c2b96c883295297c25,railways,FY2021-22,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.081773,covered_sources_only
+c0cc3ec4e1b45df32e638a27,railways,FY2021-22,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002138,covered_sources_only
+f9a8fd8d987de11b634474bc,railways,FY2021-22,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.015890,covered_sources_only
+477cb8a16d1fad8f972a0b53,railways,FY2021-22,L_HERD1624,Railways,BC,0.105745,covered_sources_only
+5dc02063a5eec1310021ce20,railways,FY2021-22,L_HERD1624,Railways,CO,1.270605,covered_sources_only
+b7897d05c557cfee8a50c73c,railways,FY2021-22,L_HERD1624,Railways,NH3,0.000831,covered_sources_only
+2ad59164e3c4232025ffc5df,railways,FY2021-22,L_HERD1624,Railways,NMVOC,0.552179,covered_sources_only
+d6e409d9fbcb7a9f16455cb4,railways,FY2021-22,L_HERD1624,Railways,NOx,6.222404,covered_sources_only
+a3ee7eca162d910618f86800,railways,FY2021-22,L_HERD1624,Railways,PM2.5,0.162685,covered_sources_only
+1613903eb9902fc1e2902094,railways,FY2021-22,L_HERD1624,Railways,SO2,0.121396,covered_sources_only
+7c0cee21f8409a4567331a04,railways,FY2021-22,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001390,covered_sources_only
+01939a4f8b1644858a964b87,railways,FY2021-22,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016698,covered_sources_only
+def05a8b4890879e1d4af9f5,railways,FY2021-22,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+3e1b6ffc43624dc7257c84a7,railways,FY2021-22,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007257,covered_sources_only
+41b0a573138272e033be690e,railways,FY2021-22,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.081773,covered_sources_only
+cffd8121c565444dfb457c73,railways,FY2021-22,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002138,covered_sources_only
+87a42e68170e65442b1eba0f,railways,FY2021-22,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.015890,covered_sources_only
+4d92de2894047e396698b945,railways,FY2021-22,REF_2023_24,Railways,BC,0.105745,covered_sources_only
+6f55bfd51a5a95c348e29d5f,railways,FY2021-22,REF_2023_24,Railways,CO,1.270605,covered_sources_only
+a917707cc2b29f175dfb5931,railways,FY2021-22,REF_2023_24,Railways,NH3,0.000831,covered_sources_only
+e348ecac69919b0ded07cfa6,railways,FY2021-22,REF_2023_24,Railways,NMVOC,0.552179,covered_sources_only
+4041c9a438b33207d0a87491,railways,FY2021-22,REF_2023_24,Railways,NOx,6.222404,covered_sources_only
+7cf2fea9d12df40a7d520411,railways,FY2021-22,REF_2023_24,Railways,PM2.5,0.162685,covered_sources_only
+a52e07b60a751bcedb3142a9,railways,FY2021-22,REF_2023_24,Railways,SO2,0.121396,covered_sources_only
+b32654442d95c977fada0611,railways,FY2022-23,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001346,covered_sources_only
+ac19ff6bacd78c6c3714cc6e,railways,FY2022-23,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016169,covered_sources_only
+3a2cc43e70ae64262586b6a5,railways,FY2022-23,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+5a10b3800b2f573d8a010842,railways,FY2022-23,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007027,covered_sources_only
+742bd833a3f47a5fa0e0910a,railways,FY2022-23,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.079183,covered_sources_only
+5dba40d66b80f18700c4b340,railways,FY2022-23,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002070,covered_sources_only
+928d1a7ec47729bcee393cff,railways,FY2022-23,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.010334,covered_sources_only
+6f29dcb067f14e31d367b3f3,railways,FY2022-23,L_HERD1624,Railways,BC,0.077711,covered_sources_only
+c7c1d8b682f7ff38556c0038,railways,FY2022-23,L_HERD1624,Railways,CO,0.933758,covered_sources_only
+fe301b83520d4f8f39c71333,railways,FY2022-23,L_HERD1624,Railways,NH3,0.000611,covered_sources_only
+cbc9a0d331c21fdb97dd3ef4,railways,FY2022-23,L_HERD1624,Railways,NMVOC,0.405792,covered_sources_only
+1e6a358de345251d52ff7c24,railways,FY2022-23,L_HERD1624,Railways,NOx,4.572797,covered_sources_only
+9750747f28f11a321e9f5dc8,railways,FY2022-23,L_HERD1624,Railways,PM2.5,0.119556,covered_sources_only
+a9c4ac74fa4b6b6d19bcd7d5,railways,FY2022-23,L_HERD1624,Railways,SO2,0.087425,covered_sources_only
+8135f9dd6f42d95443bc96be,railways,FY2022-23,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001346,covered_sources_only
+f1f81b5c9271ec117b0a5c8b,railways,FY2022-23,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.016169,covered_sources_only
+bda5b2625611dc5ea60564f0,railways,FY2022-23,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000011,covered_sources_only
+f82cdeadc50c6f75041d87b9,railways,FY2022-23,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.007027,covered_sources_only
+3654d80203680d5e6bf58e1e,railways,FY2022-23,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.079183,covered_sources_only
+7af04d95f8c98c27d28f1a68,railways,FY2022-23,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.002070,covered_sources_only
+dbe21b9a8a091b0ddb40c5f7,railways,FY2022-23,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.010334,covered_sources_only
+71dd4fe784f3fa9e85f316c3,railways,FY2022-23,REF_2023_24,Railways,BC,0.077711,covered_sources_only
+f133bb7a432da2342d866fc6,railways,FY2022-23,REF_2023_24,Railways,CO,0.933758,covered_sources_only
+75dd72ba32ead06e41a135a0,railways,FY2022-23,REF_2023_24,Railways,NH3,0.000611,covered_sources_only
+af71881ee5b3134660c7d99a,railways,FY2022-23,REF_2023_24,Railways,NMVOC,0.405792,covered_sources_only
+59db085c61e4e2151bffbe6f,railways,FY2022-23,REF_2023_24,Railways,NOx,4.572797,covered_sources_only
+5b332f6466425cbfdc0598aa,railways,FY2022-23,REF_2023_24,Railways,PM2.5,0.119556,covered_sources_only
+496cfd7a46657d28a76d7736,railways,FY2022-23,REF_2023_24,Railways,SO2,0.087425,covered_sources_only
+bc6c83877ae59a0f901f038e,railways,FY2023-24,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001261,covered_sources_only
+49a256a106f2626775a47855,railways,FY2023-24,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),CO,0.015151,covered_sources_only
+22d83e983bcb509a6777bfd7,railways,FY2023-24,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000010,covered_sources_only
+426a34cf4d177b1fd12b099f,railways,FY2023-24,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006584,covered_sources_only
+15b58c68490e025e4e97ff48,railways,FY2023-24,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.074198,covered_sources_only
+8efaf38e6a2290d134f3bf25,railways,FY2023-24,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001940,covered_sources_only
+f05d95aa70bad7a77d1a55bf,railways,FY2023-24,L_HERD1624,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.005889,covered_sources_only
+4438ae77299e2f83b18a161f,railways,FY2023-24,L_HERD1624,Railways,BC,0.098579,covered_sources_only
+5ddd2aad360a233f17f83790,railways,FY2023-24,L_HERD1624,Railways,CO,1.184498,covered_sources_only
+9c6ed61cb5094fdd4e4740f7,railways,FY2023-24,L_HERD1624,Railways,NH3,0.000775,covered_sources_only
+207eb6ee6bb86a040231032a,railways,FY2023-24,L_HERD1624,Railways,NMVOC,0.514759,covered_sources_only
+59b8bcc04258467b47b9a931,railways,FY2023-24,L_HERD1624,Railways,NOx,5.800721,covered_sources_only
+be5379486c8056f8ccc0ae16,railways,FY2023-24,L_HERD1624,Railways,PM2.5,0.151660,covered_sources_only
+e22cf4c90045b3039c912d9a,railways,FY2023-24,L_HERD1624,Railways,SO2,0.111742,covered_sources_only
+ba5252cb244b45f5d12e58a1,railways,FY2023-24,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),BC,0.001261,covered_sources_only
+3615a91b5ed98157b952453c,railways,FY2023-24,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),CO,0.015151,covered_sources_only
+6965226530674b2f5ff104b6,railways,FY2023-24,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NH3,0.000010,covered_sources_only
+9ef119066736d72f301103d9,railways,FY2023-24,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NMVOC,0.006584,covered_sources_only
+71122b05f314e7cc99947712,railways,FY2023-24,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),NOx,0.074198,covered_sources_only
+82194c2b616f9422cce24501,railways,FY2023-24,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),PM2.5,0.001940,covered_sources_only
+a034a8bef42d95e4f12de9a0,railways,FY2023-24,REF_2023_24,Railway non-traction energy (1A2/1A4c unresolved),SO2,0.005889,covered_sources_only
+6925a2ed49ae60371781cd38,railways,FY2023-24,REF_2023_24,Railways,BC,0.098579,covered_sources_only
+0c75ec1c45420768b28dcbcf,railways,FY2023-24,REF_2023_24,Railways,CO,1.184498,covered_sources_only
+9fb50cbae4cbdb5245760640,railways,FY2023-24,REF_2023_24,Railways,NH3,0.000775,covered_sources_only
+3ca23f594c561c0a19dec465,railways,FY2023-24,REF_2023_24,Railways,NMVOC,0.514759,covered_sources_only
+04357297fc76d6ce2e0578ca,railways,FY2023-24,REF_2023_24,Railways,NOx,5.800721,covered_sources_only
+29b1e0264ab3adb8c5dc05a1,railways,FY2023-24,REF_2023_24,Railways,PM2.5,0.151660,covered_sources_only
+5a2eb5f195718715e7f5a06a,railways,FY2023-24,REF_2023_24,Railways,SO2,0.111742,covered_sources_only
+4d0442f4fb312aa8eb9f97c8,residential,FY2015-16,L_HERD1624,Residential fuel combustion,BC,33.064681,covered_sources_only
+e96b7fa0afe697675793ca36,residential,FY2015-16,L_HERD1624,Residential fuel combustion,CO,5645.591808,covered_sources_only
+a48a5ed6b00086ff2ebebee9,residential,FY2015-16,L_HERD1624,Residential fuel combustion,NH3,77.606532,covered_sources_only
+11a5d99453d2d8135baeb431,residential,FY2015-16,L_HERD1624,Residential fuel combustion,NMVOC,757.464331,covered_sources_only
+2e3500472069bf9fd7f730e8,residential,FY2015-16,L_HERD1624,Residential fuel combustion,NOx,269.497455,covered_sources_only
+38efb8996f21a5ba35cac702,residential,FY2015-16,L_HERD1624,Residential fuel combustion,PM2.5,500.954638,covered_sources_only
+0d083a165437c552c1b10023,residential,FY2015-16,L_HERD1624,Residential fuel combustion,SO2,42.036105,covered_sources_only
+f0cee1f5d09f3a59691c4356,residential,FY2015-16,REF_2023_24,Residential fuel combustion,BC,15.564553,covered_sources_only
+5f96d3b94b336bf65a52d2c9,residential,FY2015-16,REF_2023_24,Residential fuel combustion,CO,2591.647899,covered_sources_only
+157ba8e000ce0e46922f118e,residential,FY2015-16,REF_2023_24,Residential fuel combustion,NH3,31.968943,covered_sources_only
+892d67cb5cc86f54956d0bf0,residential,FY2015-16,REF_2023_24,Residential fuel combustion,NMVOC,263.343070,covered_sources_only
+3c6b906bbef334f05a0c4ef1,residential,FY2015-16,REF_2023_24,Residential fuel combustion,NOx,122.290495,covered_sources_only
+455607c00cefc6c2e0d52ace,residential,FY2015-16,REF_2023_24,Residential fuel combustion,PM2.5,216.148633,covered_sources_only
+7fdfb99e29fcb5f1fb5dd67a,residential,FY2015-16,REF_2023_24,Residential fuel combustion,SO2,15.614343,covered_sources_only
+a67b52cf261cbf8f7b06aecb,residential,FY2016-17,L_HERD1624,Residential fuel combustion,BC,34.160319,covered_sources_only
+8daded6fe720bfee0d87b8f4,residential,FY2016-17,L_HERD1624,Residential fuel combustion,CO,5834.419088,covered_sources_only
+03480930c609a7077bb03611,residential,FY2016-17,L_HERD1624,Residential fuel combustion,NH3,80.234558,covered_sources_only
+115013a973918c080f9dc8d2,residential,FY2016-17,L_HERD1624,Residential fuel combustion,NMVOC,782.613062,covered_sources_only
+e80f34836eaf13a9765fc7ff,residential,FY2016-17,L_HERD1624,Residential fuel combustion,NOx,278.785211,covered_sources_only
+240317043f4058f69da49578,residential,FY2016-17,L_HERD1624,Residential fuel combustion,PM2.5,517.719511,covered_sources_only
+dd0c0364278e9a53601221f5,residential,FY2016-17,L_HERD1624,Residential fuel combustion,SO2,43.417888,covered_sources_only
+f339d7fe03af7e898171b686,residential,FY2016-17,REF_2023_24,Residential fuel combustion,BC,16.055819,covered_sources_only
+19a1d15f6d19f59cc41bc0d5,residential,FY2016-17,REF_2023_24,Residential fuel combustion,CO,2675.006276,covered_sources_only
+d9ca88e8ccf3c248c64d4b05,residential,FY2016-17,REF_2023_24,Residential fuel combustion,NH3,33.020861,covered_sources_only
+0da3786b872d7c5c2669d9c0,residential,FY2016-17,REF_2023_24,Residential fuel combustion,NMVOC,271.427169,covered_sources_only
+b9b58dd8bf0ae0eaf8a486c6,residential,FY2016-17,REF_2023_24,Residential fuel combustion,NOx,126.494413,covered_sources_only
+3c30d2e9099682efabbe34e3,residential,FY2016-17,REF_2023_24,Residential fuel combustion,PM2.5,223.077642,covered_sources_only
+6221c3aaadfe6a171c8146d3,residential,FY2016-17,REF_2023_24,Residential fuel combustion,SO2,16.083642,covered_sources_only
+ed1623b72836724b15713574,residential,FY2017-18,L_HERD1624,Residential fuel combustion,BC,34.878997,covered_sources_only
+c741a9a56896b5794ae56e50,residential,FY2017-18,L_HERD1624,Residential fuel combustion,CO,5953.334864,covered_sources_only
+0a597633b795ca227661a3d0,residential,FY2017-18,L_HERD1624,Residential fuel combustion,NH3,81.890629,covered_sources_only
+4ebb1a24b78b803e3dff689c,residential,FY2017-18,L_HERD1624,Residential fuel combustion,NMVOC,802.920362,covered_sources_only
+367a1dba0f013633812ae10a,residential,FY2017-18,L_HERD1624,Residential fuel combustion,NOx,285.025788,covered_sources_only
+a6dff83561a7c40d1fa24e35,residential,FY2017-18,L_HERD1624,Residential fuel combustion,PM2.5,528.794451,covered_sources_only
+fc87e5ce74bac0040db8f615,residential,FY2017-18,L_HERD1624,Residential fuel combustion,SO2,44.514681,covered_sources_only
+371ec754e9f06317db7dd30c,residential,FY2017-18,REF_2023_24,Residential fuel combustion,BC,16.136377,covered_sources_only
+aa9c8b47ce68e959dfb37d15,residential,FY2017-18,REF_2023_24,Residential fuel combustion,CO,2682.563940,covered_sources_only
+3b49b247b1a77385f9964214,residential,FY2017-18,REF_2023_24,Residential fuel combustion,NH3,33.012816,covered_sources_only
+90c461cd6dffdebfd46aa9a4,residential,FY2017-18,REF_2023_24,Residential fuel combustion,NMVOC,273.716976,covered_sources_only
+aa9da3e58546b7f13ec6d440,residential,FY2017-18,REF_2023_24,Residential fuel combustion,NOx,127.367279,covered_sources_only
+eba0764283e0d46c6e254c51,residential,FY2017-18,REF_2023_24,Residential fuel combustion,PM2.5,223.767500,covered_sources_only
+185dbc7a1bc77f2f6f5f213b,residential,FY2017-18,REF_2023_24,Residential fuel combustion,SO2,16.217000,covered_sources_only
+4bd9b80a70fe97f98de7df77,residential,FY2018-19,L_HERD1624,Residential fuel combustion,BC,35.926732,covered_sources_only
+3f7cfc026122c25459225380,residential,FY2018-19,L_HERD1624,Residential fuel combustion,CO,6132.944705,covered_sources_only
+de2b457a64d8dfd53e35667b,residential,FY2018-19,L_HERD1624,Residential fuel combustion,NH3,84.390663,covered_sources_only
+1e0e030c761d6a10c25143dc,residential,FY2018-19,L_HERD1624,Residential fuel combustion,NMVOC,828.061373,covered_sources_only
+5acd40d396d1a9ef52bc1af1,residential,FY2018-19,L_HERD1624,Residential fuel combustion,NOx,294.623127,covered_sources_only
+55ee194b184404ce9ebba200,residential,FY2018-19,L_HERD1624,Residential fuel combustion,PM2.5,544.875152,covered_sources_only
+3de168da54ce948fbf042c6d,residential,FY2018-19,L_HERD1624,Residential fuel combustion,SO2,45.892850,covered_sources_only
+dcffe8727a6298ec90d50018,residential,FY2018-19,REF_2023_24,Residential fuel combustion,BC,16.534646,covered_sources_only
+11707f04a57c0d4061ae9ae4,residential,FY2018-19,REF_2023_24,Residential fuel combustion,CO,2748.835618,covered_sources_only
+e3c3ae1e4c116b2ccaf2b832,residential,FY2018-19,REF_2023_24,Residential fuel combustion,NH3,33.819145,covered_sources_only
+d5d51ed8b7ee3691e8931700,residential,FY2018-19,REF_2023_24,Residential fuel combustion,NMVOC,280.520128,covered_sources_only
+747b7a3b82fb3ad4fdad95b0,residential,FY2018-19,REF_2023_24,Residential fuel combustion,NOx,131.501464,covered_sources_only
+4a5930a3cc8ed89941b12dba,residential,FY2018-19,REF_2023_24,Residential fuel combustion,PM2.5,229.278462,covered_sources_only
+442029b501c39d92eae02a61,residential,FY2018-19,REF_2023_24,Residential fuel combustion,SO2,16.614603,covered_sources_only
+a277afa2d0ca499ed23ff957,residential,FY2019-20,L_HERD1624,Residential fuel combustion,BC,37.199907,covered_sources_only
+bace8c12d2d0bf6f626aa091,residential,FY2019-20,L_HERD1624,Residential fuel combustion,CO,6357.768174,covered_sources_only
+733f49c0ec75556e4fba6092,residential,FY2019-20,L_HERD1624,Residential fuel combustion,NH3,87.620394,covered_sources_only
+85f7a78de08a794168effeeb,residential,FY2019-20,L_HERD1624,Residential fuel combustion,NMVOC,856.586292,covered_sources_only
+879e0cd8b3a151a3e92b2cbb,residential,FY2019-20,L_HERD1624,Residential fuel combustion,NOx,304.301560,covered_sources_only
+ef8a0d871b1e3b6fd77ae089,residential,FY2019-20,L_HERD1624,Residential fuel combustion,PM2.5,564.796873,covered_sources_only
+19e0486503e72cd6f04d425a,residential,FY2019-20,L_HERD1624,Residential fuel combustion,SO2,47.451828,covered_sources_only
+bcd91cc89205b19478dc1ff0,residential,FY2019-20,REF_2023_24,Residential fuel combustion,BC,17.417620,covered_sources_only
+cfa8ad2442c386fd7975d854,residential,FY2019-20,REF_2023_24,Residential fuel combustion,CO,2905.565186,covered_sources_only
+bb5db91bd1359e43e764b67a,residential,FY2019-20,REF_2023_24,Residential fuel combustion,NH3,36.031293,covered_sources_only
+ef1b624b9876e0a7bdd9e900,residential,FY2019-20,REF_2023_24,Residential fuel combustion,NMVOC,298.027607,covered_sources_only
+f69402d81e903bd65bbe359b,residential,FY2019-20,REF_2023_24,Residential fuel combustion,NOx,137.897618,covered_sources_only
+bfbcc31021fe015b36ea5582,residential,FY2019-20,REF_2023_24,Residential fuel combustion,PM2.5,242.849853,covered_sources_only
+965520f85cf8c09e80fd5843,residential,FY2019-20,REF_2023_24,Residential fuel combustion,SO2,17.584454,covered_sources_only
+8d9b2206b57e273b19278603,residential,FY2020-21,L_HERD1624,Residential fuel combustion,BC,38.413987,covered_sources_only
+1f4d5e34a385639b9e5b346c,residential,FY2020-21,L_HERD1624,Residential fuel combustion,CO,6571.300524,covered_sources_only
+b009d425385ad5bce34d1f30,residential,FY2020-21,L_HERD1624,Residential fuel combustion,NH3,90.702121,covered_sources_only
+d5d859ecc5d3c8f220d64966,residential,FY2020-21,L_HERD1624,Residential fuel combustion,NMVOC,884.627653,covered_sources_only
+bc1d6e887e38f583f486d8de,residential,FY2020-21,L_HERD1624,Residential fuel combustion,NOx,312.869854,covered_sources_only
+1da6620553629c33c29eadef,residential,FY2020-21,L_HERD1624,Residential fuel combustion,PM2.5,583.850816,covered_sources_only
+c847934dab06707e90542615,residential,FY2020-21,L_HERD1624,Residential fuel combustion,SO2,48.977023,covered_sources_only
+8e45bef9864be84746378dc6,residential,FY2020-21,REF_2023_24,Residential fuel combustion,BC,18.235512,covered_sources_only
+359a93202b758a0c74d0d84f,residential,FY2020-21,REF_2023_24,Residential fuel combustion,CO,3049.958710,covered_sources_only
+80caba0c0a0a1c705fe9824e,residential,FY2020-21,REF_2023_24,Residential fuel combustion,NH3,38.079822,covered_sources_only
+31b6c98055c3e7190a750858,residential,FY2020-21,REF_2023_24,Residential fuel combustion,NMVOC,314.882461,covered_sources_only
+aa6343403c36b6009e69e272,residential,FY2020-21,REF_2023_24,Residential fuel combustion,NOx,143.133265,covered_sources_only
+22b7162f7421573bfcc9d1ab,residential,FY2020-21,REF_2023_24,Residential fuel combustion,PM2.5,255.456018,covered_sources_only
+f41a5602019fc8f3b4073c4a,residential,FY2020-21,REF_2023_24,Residential fuel combustion,SO2,18.511481,covered_sources_only
+9c6c39fef40c445b16a80f8f,residential,FY2021-22,L_HERD1624,Residential fuel combustion,BC,39.273270,covered_sources_only
+16e9d1ae74bf85ef496bf871,residential,FY2021-22,L_HERD1624,Residential fuel combustion,CO,6719.387288,covered_sources_only
+5d005bca8ce768147cdf8f24,residential,FY2021-22,L_HERD1624,Residential fuel combustion,NH3,92.864287,covered_sources_only
+7f3c411328989dfc3cab3017,residential,FY2021-22,L_HERD1624,Residential fuel combustion,NMVOC,908.064945,covered_sources_only
+779fd53f98a664722c7d1882,residential,FY2021-22,L_HERD1624,Residential fuel combustion,NOx,319.745133,covered_sources_only
+808cd882340eb108851b81e1,residential,FY2021-22,L_HERD1624,Residential fuel combustion,PM2.5,597.546935,covered_sources_only
+c08b46eae2c3c3ac87a38ec5,residential,FY2021-22,L_HERD1624,Residential fuel combustion,SO2,50.236334,covered_sources_only
+d95725503c17138d427f5d55,residential,FY2021-22,REF_2023_24,Residential fuel combustion,BC,18.693454,covered_sources_only
+b9198fbc9ca7ff9e35ebf58f,residential,FY2021-22,REF_2023_24,Residential fuel combustion,CO,3128.007601,covered_sources_only
+4e529e0eb63d28d86351b0f0,residential,FY2021-22,REF_2023_24,Residential fuel combustion,NH3,39.195355,covered_sources_only
+2b8e8064cdef33e33da228dd,residential,FY2021-22,REF_2023_24,Residential fuel combustion,NMVOC,326.987782,covered_sources_only
+372f36617ac9095d470d751c,residential,FY2021-22,REF_2023_24,Residential fuel combustion,NOx,146.632562,covered_sources_only
+0a1968edd0205d156d99c713,residential,FY2021-22,REF_2023_24,Residential fuel combustion,PM2.5,262.620514,covered_sources_only
+84bc8f9fe1e139c3b641e8a7,residential,FY2021-22,REF_2023_24,Residential fuel combustion,SO2,19.164847,covered_sources_only
+9d3d5b9b70067ff6cd37453c,residential,FY2022-23,L_HERD1624,Residential fuel combustion,BC,40.289549,covered_sources_only
+7b5d8c1b886a3d3bc2ff3855,residential,FY2022-23,L_HERD1624,Residential fuel combustion,CO,6896.216830,covered_sources_only
+535e1d4ac5cca708687982a9,residential,FY2022-23,L_HERD1624,Residential fuel combustion,NH3,95.432671,covered_sources_only
+6ba2a128e8ee0b3527422de9,residential,FY2022-23,L_HERD1624,Residential fuel combustion,NMVOC,934.097156,covered_sources_only
+474edfec3ef2b66b4f650243,residential,FY2022-23,L_HERD1624,Residential fuel combustion,NOx,327.973892,covered_sources_only
+cc586335d3daac5a5609025b,residential,FY2022-23,L_HERD1624,Residential fuel combustion,PM2.5,613.658944,covered_sources_only
+68110eb6dbbf2bab02347e66,residential,FY2022-23,L_HERD1624,Residential fuel combustion,SO2,51.642929,covered_sources_only
+817245c6ea027da39b39bdd7,residential,FY2022-23,REF_2023_24,Residential fuel combustion,BC,19.304412,covered_sources_only
+cf742d77077028748a82d2a0,residential,FY2022-23,REF_2023_24,Residential fuel combustion,CO,3234.104702,covered_sources_only
+f5b3fc71ec87191889c1ba62,residential,FY2022-23,REF_2023_24,Residential fuel combustion,NH3,40.706726,covered_sources_only
+120c1e5cfc7c3b9a06f4cea4,residential,FY2022-23,REF_2023_24,Residential fuel combustion,NMVOC,341.575643,covered_sources_only
+6e1b64df705efb9fd6d71c86,residential,FY2022-23,REF_2023_24,Residential fuel combustion,NOx,151.451858,covered_sources_only
+7c3fba25b7e4c5d0722a4450,residential,FY2022-23,REF_2023_24,Residential fuel combustion,PM2.5,272.136127,covered_sources_only
+58d9d0efa31ec0e331f8e842,residential,FY2022-23,REF_2023_24,Residential fuel combustion,SO2,19.959487,covered_sources_only
+af6d18c4878b388f7d7d7bf7,residential,FY2023-24,L_HERD1624,Residential fuel combustion,BC,41.452478,covered_sources_only
+43cb30e7bf0257d47b0bdd43,residential,FY2023-24,L_HERD1624,Residential fuel combustion,CO,7097.106974,covered_sources_only
+70a74cdaa211bf3202df74a3,residential,FY2023-24,L_HERD1624,Residential fuel combustion,NH3,98.322594,covered_sources_only
+3ab19a1d6d4fd3562b3be715,residential,FY2023-24,L_HERD1624,Residential fuel combustion,NMVOC,963.456758,covered_sources_only
+e66c2ba907f8fdf1fe14b2a6,residential,FY2023-24,L_HERD1624,Residential fuel combustion,NOx,336.595365,covered_sources_only
+1f7babe2207b9303465da928,residential,FY2023-24,L_HERD1624,Residential fuel combustion,PM2.5,631.915098,covered_sources_only
+a70f20ae8c9f8ddedd3d1d73,residential,FY2023-24,L_HERD1624,Residential fuel combustion,SO2,53.230781,covered_sources_only
+a2e0695d3475455c17ceb38e,residential,FY2023-24,REF_2023_24,Residential fuel combustion,BC,19.996230,covered_sources_only
+34940ebcfbb0c6653da13b77,residential,FY2023-24,REF_2023_24,Residential fuel combustion,CO,3352.781299,covered_sources_only
+40d294b230e796ba1132cdbc,residential,FY2023-24,REF_2023_24,Residential fuel combustion,NH3,42.368064,covered_sources_only
+acbe091fc581f2f1ebcb3ba0,residential,FY2023-24,REF_2023_24,Residential fuel combustion,NMVOC,357.633278,covered_sources_only
+68ea959654a291ef47502b85,residential,FY2023-24,REF_2023_24,Residential fuel combustion,NOx,156.110453,covered_sources_only
+08e1a4188fc536b8b501bae0,residential,FY2023-24,REF_2023_24,Residential fuel combustion,PM2.5,282.725175,covered_sources_only
+0c19b4f8e068eaf51fdf6aac,residential,FY2023-24,REF_2023_24,Residential fuel combustion,SO2,20.836053,covered_sources_only
+6e35ebc5b6a71784c04db5b9,transport,FY2015-16,L_HERD1624,Road transport,BC,2.404830,covered_sources_only
+ce9ff78134fe289bea1153da,transport,FY2015-16,L_HERD1624,Road transport,CO,1141.183905,covered_sources_only
+7f3e4d06dac152144fc2078d,transport,FY2015-16,L_HERD1624,Road transport,NH3,3.224909,covered_sources_only
+2b7d51d5fe98c46ddd0fd62d,transport,FY2015-16,L_HERD1624,Road transport,NMVOC,414.048605,covered_sources_only
+3e4cdfd66cb00015bbdc1a93,transport,FY2015-16,L_HERD1624,Road transport,NOx,193.985111,covered_sources_only
+e6f99a352589754e514fb2f8,transport,FY2015-16,L_HERD1624,Road transport,PM2.5,8.860723,covered_sources_only
+0b386e211f375239508e9419,transport,FY2015-16,L_HERD1624,Road transport,SO2,68.246900,covered_sources_only
+92bef43bad5828850cdc7737,transport,FY2015-16,REF_2023_24,Road transport,BC,2.404830,covered_sources_only
+b8ead19426cc07de16e890e5,transport,FY2015-16,REF_2023_24,Road transport,CO,1141.183905,covered_sources_only
+d040c582a60479284b66841d,transport,FY2015-16,REF_2023_24,Road transport,NH3,3.224909,covered_sources_only
+df1e1616262b4ffa3fa26b66,transport,FY2015-16,REF_2023_24,Road transport,NMVOC,414.048605,covered_sources_only
+e2d8bfa6434d9321a6e9d3f4,transport,FY2015-16,REF_2023_24,Road transport,NOx,193.985111,covered_sources_only
+fc34e497f563382e1451935c,transport,FY2015-16,REF_2023_24,Road transport,PM2.5,8.860723,covered_sources_only
+5052a9fdc28e9681b49856af,transport,FY2015-16,REF_2023_24,Road transport,SO2,68.246900,covered_sources_only
+40150dd135dfea5113a6e3df,transport,FY2016-17,L_HERD1624,Road transport,BC,2.639998,covered_sources_only
+527a16bd036ed0f7d2f4631a,transport,FY2016-17,L_HERD1624,Road transport,CO,1315.316683,covered_sources_only
+790934494a4b9f0c975ec00a,transport,FY2016-17,L_HERD1624,Road transport,NH3,3.601475,covered_sources_only
+ee21c65dd38e22d4f705e6d7,transport,FY2016-17,L_HERD1624,Road transport,NMVOC,470.214941,covered_sources_only
+4ec0e69d81df61cb03ca5ed2,transport,FY2016-17,L_HERD1624,Road transport,NOx,213.957412,covered_sources_only
+b37a22a8cf02b65e66fbb4b3,transport,FY2016-17,L_HERD1624,Road transport,PM2.5,9.536272,covered_sources_only
+df989a5be8a814e7f9c38cc7,transport,FY2016-17,L_HERD1624,Road transport,SO2,74.920840,covered_sources_only
+3c8e0289f3a5fd265841fcdf,transport,FY2016-17,REF_2023_24,Road transport,BC,2.639998,covered_sources_only
+4ebfb4c6e8fb4ce2bab3df73,transport,FY2016-17,REF_2023_24,Road transport,CO,1315.316683,covered_sources_only
+27b395e1c15d7cc1ff89f55f,transport,FY2016-17,REF_2023_24,Road transport,NH3,3.601475,covered_sources_only
+56880aa763a18c0bb721f2c0,transport,FY2016-17,REF_2023_24,Road transport,NMVOC,470.214941,covered_sources_only
+68b50965cafd7f33aa836634,transport,FY2016-17,REF_2023_24,Road transport,NOx,213.957412,covered_sources_only
+842558c4f875259befbe7852,transport,FY2016-17,REF_2023_24,Road transport,PM2.5,9.536272,covered_sources_only
+4fb7442131234939018e6bfc,transport,FY2016-17,REF_2023_24,Road transport,SO2,74.920840,covered_sources_only
+8d7036c8709a88569eb69753,transport,FY2017-18,L_HERD1624,Road transport,BC,2.713370,covered_sources_only
+8d771fe6cec1a0371a2a8fc1,transport,FY2017-18,L_HERD1624,Road transport,CO,1469.690575,covered_sources_only
+eb499ad9a6f762fda507b572,transport,FY2017-18,L_HERD1624,Road transport,NH3,3.944110,covered_sources_only
+c335393728ea2ca1eacbc5b8,transport,FY2017-18,L_HERD1624,Road transport,NMVOC,520.303619,covered_sources_only
+f1e93e50293884982d439e24,transport,FY2017-18,L_HERD1624,Road transport,NOx,222.614095,covered_sources_only
+8e2d48ed8885b1edca8badfe,transport,FY2017-18,L_HERD1624,Road transport,PM2.5,9.885824,covered_sources_only
+1b6885c2b71a8140cf1517bb,transport,FY2017-18,L_HERD1624,Road transport,SO2,14.369326,covered_sources_only
+0074bf6340039df8ad5fa3f4,transport,FY2017-18,REF_2023_24,Road transport,BC,2.713370,covered_sources_only
+152dc1d01fd299d1bbbbdbf6,transport,FY2017-18,REF_2023_24,Road transport,CO,1469.690575,covered_sources_only
+b11c699e18ece9397ad3388b,transport,FY2017-18,REF_2023_24,Road transport,NH3,3.944110,covered_sources_only
+75ee0e5289b48b24086c81dc,transport,FY2017-18,REF_2023_24,Road transport,NMVOC,520.303619,covered_sources_only
+7fe90f77180442900c19139b,transport,FY2017-18,REF_2023_24,Road transport,NOx,222.614095,covered_sources_only
+9c682eb92afac8717fa11aa0,transport,FY2017-18,REF_2023_24,Road transport,PM2.5,9.885824,covered_sources_only
+f565eab87443508473db5304,transport,FY2017-18,REF_2023_24,Road transport,SO2,14.369326,covered_sources_only
+d2b441bd208bef739bb21fed,transport,FY2018-19,L_HERD1624,Road transport,BC,2.416469,covered_sources_only
+fb0e2c8756372d15e28acfce,transport,FY2018-19,L_HERD1624,Road transport,CO,1492.412753,covered_sources_only
+937087f2e5eb9d57976e18ef,transport,FY2018-19,L_HERD1624,Road transport,NH3,3.890760,covered_sources_only
+818206535721e0c8caa8fe48,transport,FY2018-19,L_HERD1624,Road transport,NMVOC,529.692418,covered_sources_only
+2dcad3875cc66e95e0cb67d5,transport,FY2018-19,L_HERD1624,Road transport,NOx,202.479962,covered_sources_only
+52ff21328b419e50bf6ec733,transport,FY2018-19,L_HERD1624,Road transport,PM2.5,9.376304,covered_sources_only
+468822e59fa9cfa19eb48e6d,transport,FY2018-19,L_HERD1624,Road transport,SO2,13.693712,covered_sources_only
+0a1f68e38b5f95ec0138cad6,transport,FY2018-19,REF_2023_24,Road transport,BC,2.416469,covered_sources_only
+53c4b53fe665f9921946ce2f,transport,FY2018-19,REF_2023_24,Road transport,CO,1492.412753,covered_sources_only
+8264285d7e77228699b90c22,transport,FY2018-19,REF_2023_24,Road transport,NH3,3.890760,covered_sources_only
+b5d80ed972a55e36f2e9e336,transport,FY2018-19,REF_2023_24,Road transport,NMVOC,529.692418,covered_sources_only
+dff203233bc18f4cebb55059,transport,FY2018-19,REF_2023_24,Road transport,NOx,202.479962,covered_sources_only
+6f794ec13cd4ed27c9d6d6bb,transport,FY2018-19,REF_2023_24,Road transport,PM2.5,9.376304,covered_sources_only
+7641bec15d4e2f7609402694,transport,FY2018-19,REF_2023_24,Road transport,SO2,13.693712,covered_sources_only
+02f47476cf52b5f65e818575,transport,FY2019-20,L_HERD1624,Road transport,BC,2.185292,covered_sources_only
+7f8390d690153488ac1df46d,transport,FY2019-20,L_HERD1624,Road transport,CO,1448.168662,covered_sources_only
+db13906a0aabb51560e06cf3,transport,FY2019-20,L_HERD1624,Road transport,NH3,3.411684,covered_sources_only
+65f16b4b1f95030fd1ad763c,transport,FY2019-20,L_HERD1624,Road transport,NMVOC,526.008369,covered_sources_only
+fe9a644dd48d95f247842f8c,transport,FY2019-20,L_HERD1624,Road transport,NOx,185.754638,covered_sources_only
+10aa76a99818c3093b38c933,transport,FY2019-20,L_HERD1624,Road transport,PM2.5,8.832472,covered_sources_only
+1128e0c8871874c1b93689ab,transport,FY2019-20,L_HERD1624,Road transport,SO2,12.936433,covered_sources_only
+ee17ff4c4cd5d4763ee173ac,transport,FY2019-20,REF_2023_24,Road transport,BC,2.185292,covered_sources_only
+2857d098249f56e02a14b1f9,transport,FY2019-20,REF_2023_24,Road transport,CO,1448.168662,covered_sources_only
+a6d294fe7c41eb0e9395c205,transport,FY2019-20,REF_2023_24,Road transport,NH3,3.411684,covered_sources_only
+4218768e87e46c876a1d6dfa,transport,FY2019-20,REF_2023_24,Road transport,NMVOC,526.008369,covered_sources_only
+812859be6d524c08a2ab3b92,transport,FY2019-20,REF_2023_24,Road transport,NOx,185.754638,covered_sources_only
+9c33fe6f9e7c367f52c4ab8b,transport,FY2019-20,REF_2023_24,Road transport,PM2.5,8.832472,covered_sources_only
+f0b9e6fe67cf27bf4cd33497,transport,FY2019-20,REF_2023_24,Road transport,SO2,12.936433,covered_sources_only
+94e37c75f3e71f989be73bc9,transport,FY2020-21,L_HERD1624,Road transport,BC,2.553798,covered_sources_only
+8a107e864bf5f45f941b19bd,transport,FY2020-21,L_HERD1624,Road transport,CO,1641.019586,covered_sources_only
+9bc0d626d840ed4dfdbba7b2,transport,FY2020-21,L_HERD1624,Road transport,NH3,3.583503,covered_sources_only
+24e6943d81cd54e6e555a479,transport,FY2020-21,L_HERD1624,Road transport,NMVOC,595.332741,covered_sources_only
+aa3c41459db3055d32ae2f57,transport,FY2020-21,L_HERD1624,Road transport,NOx,213.832044,covered_sources_only
+99bfa4032957598bf99a1170,transport,FY2020-21,L_HERD1624,Road transport,PM2.5,9.833972,covered_sources_only
+593391de5b94c2b5376c2bea,transport,FY2020-21,L_HERD1624,Road transport,SO2,14.876584,covered_sources_only
+234719b305a08ffebf526154,transport,FY2020-21,REF_2023_24,Road transport,BC,2.553798,covered_sources_only
+9b0094f1bb85012130698619,transport,FY2020-21,REF_2023_24,Road transport,CO,1641.019586,covered_sources_only
+14b2fd65f5bf9fb9fc98df96,transport,FY2020-21,REF_2023_24,Road transport,NH3,3.583503,covered_sources_only
+3d834ac8800c62fc9eb2cbd7,transport,FY2020-21,REF_2023_24,Road transport,NMVOC,595.332741,covered_sources_only
+dd86051e31d4caa14f256d7c,transport,FY2020-21,REF_2023_24,Road transport,NOx,213.832044,covered_sources_only
+ff77ef31799305715e1753b1,transport,FY2020-21,REF_2023_24,Road transport,PM2.5,9.833972,covered_sources_only
+228a62ed5e6c99e5911e1074,transport,FY2020-21,REF_2023_24,Road transport,SO2,14.876584,covered_sources_only
+12ea5190a7070f7fd91136df,transport,FY2021-22,L_HERD1624,Road transport,BC,2.863026,covered_sources_only
+29d5101ff989bdc910e83be1,transport,FY2021-22,L_HERD1624,Road transport,CO,1740.131442,covered_sources_only
+7a4f488354a9a2fb2f8b96aa,transport,FY2021-22,L_HERD1624,Road transport,NH3,3.581624,covered_sources_only
+9d93c6608866ccfdfe6944fd,transport,FY2021-22,L_HERD1624,Road transport,NMVOC,626.967978,covered_sources_only
+145727b39364d852ababb117,transport,FY2021-22,L_HERD1624,Road transport,NOx,235.521412,covered_sources_only
+daea8ac45d2f8f014ec8b59f,transport,FY2021-22,L_HERD1624,Road transport,PM2.5,10.471912,covered_sources_only
+e731e21b044fc3e34767d6a7,transport,FY2021-22,L_HERD1624,Road transport,SO2,16.340281,covered_sources_only
+a4a4761aa173b9518d9b08c0,transport,FY2021-22,REF_2023_24,Road transport,BC,2.863026,covered_sources_only
+a381c806e6e93e379fdbd4a8,transport,FY2021-22,REF_2023_24,Road transport,CO,1740.131442,covered_sources_only
+29374e38fd132290ec05d05c,transport,FY2021-22,REF_2023_24,Road transport,NH3,3.581624,covered_sources_only
+32ef13f171573420a3f74497,transport,FY2021-22,REF_2023_24,Road transport,NMVOC,626.967978,covered_sources_only
+5cc1ec1cae3d88367e83f2a7,transport,FY2021-22,REF_2023_24,Road transport,NOx,235.521412,covered_sources_only
+a9d572780b213c77b14e6816,transport,FY2021-22,REF_2023_24,Road transport,PM2.5,10.471912,covered_sources_only
+cc5661f339d4a01f4426565e,transport,FY2021-22,REF_2023_24,Road transport,SO2,16.340281,covered_sources_only
+6e8d42e8a4b014269d1ff53f,transport,FY2022-23,L_HERD1624,Road transport,BC,2.039548,covered_sources_only
+40da8f383fe8ff2cab544631,transport,FY2022-23,L_HERD1624,Road transport,CO,1492.485390,covered_sources_only
+3361e12d880e6bc4848f4b74,transport,FY2022-23,L_HERD1624,Road transport,NH3,2.696266,covered_sources_only
+5364a53f338c62a33bc14f87,transport,FY2022-23,L_HERD1624,Road transport,NMVOC,556.118936,covered_sources_only
+a1088911755742abb7393df9,transport,FY2022-23,L_HERD1624,Road transport,NOx,176.144349,covered_sources_only
+a6735b6f6267d1c5907de637,transport,FY2022-23,L_HERD1624,Road transport,PM2.5,8.395402,covered_sources_only
+68480dd64abba7f801e90ef3,transport,FY2022-23,L_HERD1624,Road transport,SO2,12.606202,covered_sources_only
+de65f024cb0508de02441619,transport,FY2022-23,REF_2023_24,Road transport,BC,2.039548,covered_sources_only
+e5e9aaca51a4a799b0dbf189,transport,FY2022-23,REF_2023_24,Road transport,CO,1492.485390,covered_sources_only
+85f4371cb5c0cbe23033b918,transport,FY2022-23,REF_2023_24,Road transport,NH3,2.696266,covered_sources_only
+0b4c3c25040fb7339f3738dd,transport,FY2022-23,REF_2023_24,Road transport,NMVOC,556.118936,covered_sources_only
+e7fd3322b01b99c4842eabcc,transport,FY2022-23,REF_2023_24,Road transport,NOx,176.144349,covered_sources_only
+f96d9bcb957c3c8c21747b56,transport,FY2022-23,REF_2023_24,Road transport,PM2.5,8.395402,covered_sources_only
+7d7b1c241044dd24e9e8732a,transport,FY2022-23,REF_2023_24,Road transport,SO2,12.606202,covered_sources_only
+bfb65e2a913d3902dfb51319,transport,FY2023-24,L_HERD1624,Road transport,BC,2.000766,covered_sources_only
+d47e97a6ae22765c08a593fc,transport,FY2023-24,L_HERD1624,Road transport,CO,1430.394672,covered_sources_only
+a04a5407cf466bebdf1be436,transport,FY2023-24,L_HERD1624,Road transport,NH3,2.589490,covered_sources_only
+1bd382da8a3ec361c67179ab,transport,FY2023-24,L_HERD1624,Road transport,NMVOC,535.064293,covered_sources_only
+a702115c3c532e6b59d42e7b,transport,FY2023-24,L_HERD1624,Road transport,NOx,172.117476,covered_sources_only
+c5d22366dcac8c6b321b3786,transport,FY2023-24,L_HERD1624,Road transport,PM2.5,8.233043,covered_sources_only
+a8f471932aff7abc3b1e6de6,transport,FY2023-24,L_HERD1624,Road transport,SO2,12.212039,covered_sources_only
+326fd0aec9c5186a9dd8cd63,transport,FY2023-24,REF_2023_24,Road transport,BC,2.000766,covered_sources_only
+b57f54b160a2cc93399971d7,transport,FY2023-24,REF_2023_24,Road transport,CO,1430.394672,covered_sources_only
+dc284c84e8c8e786b7e63c6b,transport,FY2023-24,REF_2023_24,Road transport,NH3,2.589490,covered_sources_only
+d9250f56ebf1c52d276cf81e,transport,FY2023-24,REF_2023_24,Road transport,NMVOC,535.064293,covered_sources_only
+b978c3e3df366334a7f02c48,transport,FY2023-24,REF_2023_24,Road transport,NOx,172.117476,covered_sources_only
+eb16fe64a55da997a33387be,transport,FY2023-24,REF_2023_24,Road transport,PM2.5,8.233043,covered_sources_only
+77ca68a1dd60ca7c6cd5bf17,transport,FY2023-24,REF_2023_24,Road transport,SO2,12.212039,covered_sources_only
+468066fac15e8eb7f54e2367,waste,FY2015-16,L_HERD1624,Open burning of waste,BC,7.542394,covered_sources_only
+8534f5db2d1aaf238484d8b0,waste,FY2015-16,L_HERD1624,Open burning of waste,CO,355.569997,covered_sources_only
+5b9bdb984094eb364b254cd1,waste,FY2015-16,L_HERD1624,Open burning of waste,NH3,4.848682,covered_sources_only
+d206efff06eef767ede17274,waste,FY2015-16,L_HERD1624,Open burning of waste,NMVOC,123.910757,covered_sources_only
+d66bc081094842bc3d3162d7,waste,FY2015-16,L_HERD1624,Open burning of waste,NOx,12.391076,covered_sources_only
+21d72f920c9238d62eafa8cc,waste,FY2015-16,L_HERD1624,Open burning of waste,PM2.5,52.258015,covered_sources_only
+3ee529b21c418f336143242d,waste,FY2015-16,L_HERD1624,Open burning of waste,SO2,2.693712,covered_sources_only
+75ab5e0c1b2e9dc1349a8591,waste,FY2015-16,REF_2023_24,Open burning of waste,BC,7.542394,covered_sources_only
+b78be9c856a57956c15a9316,waste,FY2015-16,REF_2023_24,Open burning of waste,CO,355.569997,covered_sources_only
+f29a30b03e8638207a942298,waste,FY2015-16,REF_2023_24,Open burning of waste,NH3,4.848682,covered_sources_only
+a23636bf963af0612c54f57d,waste,FY2015-16,REF_2023_24,Open burning of waste,NMVOC,123.910757,covered_sources_only
+0dcac3253cd7ce08d9e3ebfd,waste,FY2015-16,REF_2023_24,Open burning of waste,NOx,12.391076,covered_sources_only
+65bd33cafdad0bb23ff77cda,waste,FY2015-16,REF_2023_24,Open burning of waste,PM2.5,52.258015,covered_sources_only
+cce5bcc4d480692654c4bc9c,waste,FY2015-16,REF_2023_24,Open burning of waste,SO2,2.693712,covered_sources_only
+105713d2f930127d7f676945,waste,FY2016-17,L_HERD1624,Open burning of waste,BC,7.741603,covered_sources_only
+a68bf5d220edb5ac596362e7,waste,FY2016-17,L_HERD1624,Open burning of waste,CO,364.961292,covered_sources_only
+7efd4ad48557cd3cfb96dae9,waste,FY2016-17,L_HERD1624,Open burning of waste,NH3,4.976745,covered_sources_only
+31b4823c83f61be0f3b9846f,waste,FY2016-17,L_HERD1624,Open burning of waste,NMVOC,127.183480,covered_sources_only
+9f2c660ee69182e8e97477b8,waste,FY2016-17,L_HERD1624,Open burning of waste,NOx,12.718348,covered_sources_only
+0fc30746227c30e2fe045d03,waste,FY2016-17,L_HERD1624,Open burning of waste,PM2.5,53.638250,covered_sources_only
+08c3cbab5643fdcb397734df,waste,FY2016-17,L_HERD1624,Open burning of waste,SO2,2.764858,covered_sources_only
+dce0cbd7afb4061c14fbd3d9,waste,FY2016-17,REF_2023_24,Open burning of waste,BC,7.741603,covered_sources_only
+8173e31707c7757fa6917241,waste,FY2016-17,REF_2023_24,Open burning of waste,CO,364.961292,covered_sources_only
+55c4df4e4ed48dd1608586ab,waste,FY2016-17,REF_2023_24,Open burning of waste,NH3,4.976745,covered_sources_only
+768a3a5ae0ee677e83424f30,waste,FY2016-17,REF_2023_24,Open burning of waste,NMVOC,127.183480,covered_sources_only
+6b66baac3d213e6ab687d934,waste,FY2016-17,REF_2023_24,Open burning of waste,NOx,12.718348,covered_sources_only
+1406d966a1a9f58ca544d243,waste,FY2016-17,REF_2023_24,Open burning of waste,PM2.5,53.638250,covered_sources_only
+f3d529070faadf48ff9b4a5c,waste,FY2016-17,REF_2023_24,Open burning of waste,SO2,2.764858,covered_sources_only
+ddb2bb68d890820a880b56d3,waste,FY2017-18,L_HERD1624,Open burning of waste,BC,7.934539,covered_sources_only
+ec1da3965167e2b5f7867251,waste,FY2017-18,L_HERD1624,Open burning of waste,CO,374.056835,covered_sources_only
+44d50a0b1da39545c241a5ae,waste,FY2017-18,L_HERD1624,Open burning of waste,NH3,5.100775,covered_sources_only
+0a1f36dd472ce751e1c33648,waste,FY2017-18,L_HERD1624,Open burning of waste,NMVOC,130.353140,covered_sources_only
+d5ec06915ae6033a24af75a6,waste,FY2017-18,L_HERD1624,Open burning of waste,NOx,13.035314,covered_sources_only
+b51ba1dc1f0c93be095623f2,waste,FY2017-18,L_HERD1624,Open burning of waste,PM2.5,54.975020,covered_sources_only
+5f2eac933fbb8279b4579274,waste,FY2017-18,L_HERD1624,Open burning of waste,SO2,2.833764,covered_sources_only
+bc045216493d16d6fb91d6e8,waste,FY2017-18,REF_2023_24,Open burning of waste,BC,7.934539,covered_sources_only
+3d5f97ceff07218e3399ca03,waste,FY2017-18,REF_2023_24,Open burning of waste,CO,374.056835,covered_sources_only
+75a39ad4f026d024a360c1ab,waste,FY2017-18,REF_2023_24,Open burning of waste,NH3,5.100775,covered_sources_only
+6dfe8ac382ed1e11ed9469a6,waste,FY2017-18,REF_2023_24,Open burning of waste,NMVOC,130.353140,covered_sources_only
+49117ab27d5e364cd864c3c9,waste,FY2017-18,REF_2023_24,Open burning of waste,NOx,13.035314,covered_sources_only
+ec98ee5e68bb291eab08bb84,waste,FY2017-18,REF_2023_24,Open burning of waste,PM2.5,54.975020,covered_sources_only
+b98e7dc6b6f35277c2daf1e6,waste,FY2017-18,REF_2023_24,Open burning of waste,SO2,2.833764,covered_sources_only
+0ce7fb3e1a1b85c4e10e58d5,waste,FY2018-19,L_HERD1624,Open burning of waste,BC,8.132845,covered_sources_only
+5a10a5c6b3986d515277fce6,waste,FY2018-19,L_HERD1624,Open burning of waste,CO,383.405569,covered_sources_only
+09dab7f1ad2a9e5c45b0be4c,waste,FY2018-19,L_HERD1624,Open burning of waste,NH3,5.228258,covered_sources_only
+45c82bf1d935aef468609029,waste,FY2018-19,L_HERD1624,Open burning of waste,NMVOC,133.611032,covered_sources_only
+451c6bc9679414fff94a2555,waste,FY2018-19,L_HERD1624,Open burning of waste,NOx,13.361103,covered_sources_only
+a3b94013894ecd43b43be4a7,waste,FY2018-19,L_HERD1624,Open burning of waste,PM2.5,56.349000,covered_sources_only
+f4b8916a3b5f75bc7f1ea71f,waste,FY2018-19,L_HERD1624,Open burning of waste,SO2,2.904588,covered_sources_only
+1e4a8ca1f67e5b0f7271460a,waste,FY2018-19,REF_2023_24,Open burning of waste,BC,8.132845,covered_sources_only
+9640843f2f9d2482f4c714e4,waste,FY2018-19,REF_2023_24,Open burning of waste,CO,383.405569,covered_sources_only
+6ff125757bd2b245f48d9580,waste,FY2018-19,REF_2023_24,Open burning of waste,NH3,5.228258,covered_sources_only
+0da8f8c937c6e7a52c7dabc5,waste,FY2018-19,REF_2023_24,Open burning of waste,NMVOC,133.611032,covered_sources_only
+e66b6ac60d553ea403d9e5c1,waste,FY2018-19,REF_2023_24,Open burning of waste,NOx,13.361103,covered_sources_only
+cb13bbfd602ff30a76d93c66,waste,FY2018-19,REF_2023_24,Open burning of waste,PM2.5,56.349000,covered_sources_only
+1a8a51f86428fea6ffe1dfbd,waste,FY2018-19,REF_2023_24,Open burning of waste,SO2,2.904588,covered_sources_only
+7574c8cad7b6ef181209ba14,waste,FY2019-20,L_HERD1624,Open burning of waste,BC,8.336703,covered_sources_only
+70d15dfae3f02c8d7cdb4138,waste,FY2019-20,L_HERD1624,Open burning of waste,CO,393.015980,covered_sources_only
+98952b5c985c33fe8251c253,waste,FY2019-20,L_HERD1624,Open burning of waste,NH3,5.359309,covered_sources_only
+e2e59f8968939e285493b046,waste,FY2019-20,L_HERD1624,Open burning of waste,NMVOC,136.960114,covered_sources_only
+4427ea5a4394cda1bb060758,waste,FY2019-20,L_HERD1624,Open burning of waste,NOx,13.696011,covered_sources_only
+8ad275ec301ed0147cb205f8,waste,FY2019-20,L_HERD1624,Open burning of waste,PM2.5,57.761440,covered_sources_only
+092a3a03b068c7ed1a44ade6,waste,FY2019-20,L_HERD1624,Open burning of waste,SO2,2.977394,covered_sources_only
+95c3c8b909fdf34df6504694,waste,FY2019-20,REF_2023_24,Open burning of waste,BC,8.336703,covered_sources_only
+a148818f8c4253f9bc961b25,waste,FY2019-20,REF_2023_24,Open burning of waste,CO,393.015980,covered_sources_only
+35fb1a541209c89adb29d002,waste,FY2019-20,REF_2023_24,Open burning of waste,NH3,5.359309,covered_sources_only
+dedc71aab0c79c8323ca779d,waste,FY2019-20,REF_2023_24,Open burning of waste,NMVOC,136.960114,covered_sources_only
+667d347208e53d7e66d79f3b,waste,FY2019-20,REF_2023_24,Open burning of waste,NOx,13.696011,covered_sources_only
+b8c59fe4323f84c3bf4825b7,waste,FY2019-20,REF_2023_24,Open burning of waste,PM2.5,57.761440,covered_sources_only
+89b96b671b0ce4f4af22e3cd,waste,FY2019-20,REF_2023_24,Open burning of waste,SO2,2.977394,covered_sources_only
+fa461a4539ee4f15e3431bde,waste,FY2020-21,L_HERD1624,Open burning of waste,BC,8.546287,covered_sources_only
+8114a78a3adebdc2c0c9fd39,waste,FY2020-21,L_HERD1624,Open burning of waste,CO,402.896409,covered_sources_only
+97d89237bca25d9c6b842211,waste,FY2020-21,L_HERD1624,Open burning of waste,NH3,5.494042,covered_sources_only
+1f094c3a3023aaae43e99610,waste,FY2020-21,L_HERD1624,Open burning of waste,NMVOC,140.403294,covered_sources_only
+66efa867a8aa243bc47c07f1,waste,FY2020-21,L_HERD1624,Open burning of waste,NOx,14.040329,covered_sources_only
+74f1db5f6190abfe2d810f00,waste,FY2020-21,L_HERD1624,Open burning of waste,PM2.5,59.213563,covered_sources_only
+aa57e4746d1bcba58db97044,waste,FY2020-21,L_HERD1624,Open burning of waste,SO2,3.052246,covered_sources_only
+053f7ee14a805b429f2d4df0,waste,FY2020-21,REF_2023_24,Open burning of waste,BC,8.546287,covered_sources_only
+04f0ea54f615ed208009598a,waste,FY2020-21,REF_2023_24,Open burning of waste,CO,402.896409,covered_sources_only
+6f84df28de43004bfd0495af,waste,FY2020-21,REF_2023_24,Open burning of waste,NH3,5.494042,covered_sources_only
+63cacfc039ed4b44408e5331,waste,FY2020-21,REF_2023_24,Open burning of waste,NMVOC,140.403294,covered_sources_only
+759edb013650c1991ac6608b,waste,FY2020-21,REF_2023_24,Open burning of waste,NOx,14.040329,covered_sources_only
+7f5af3d0a9762e8bf22fb99c,waste,FY2020-21,REF_2023_24,Open burning of waste,PM2.5,59.213563,covered_sources_only
+46ac8f0a490f72f7a2eb30cc,waste,FY2020-21,REF_2023_24,Open burning of waste,SO2,3.052246,covered_sources_only
+1d9ce778dc17a3c737f07151,waste,FY2021-22,L_HERD1624,Open burning of waste,BC,8.761790,covered_sources_only
+7bef82cc06fde4ffd7f0978f,waste,FY2021-22,L_HERD1624,Open burning of waste,CO,413.055830,covered_sources_only
+78067b39517a770e096ec183,waste,FY2021-22,L_HERD1624,Open burning of waste,NH3,5.632580,covered_sources_only
+5b6dfc5c854cb8389b47d314,waste,FY2021-22,L_HERD1624,Open burning of waste,NMVOC,143.943698,covered_sources_only
+9867e6e93e53aa420762f476,waste,FY2021-22,L_HERD1624,Open burning of waste,NOx,14.394370,covered_sources_only
+c64f90a74022163737aea6f6,waste,FY2021-22,L_HERD1624,Open burning of waste,PM2.5,60.706690,covered_sources_only
+b0ba0b8f87786b5727d0b42c,waste,FY2021-22,L_HERD1624,Open burning of waste,SO2,3.129211,covered_sources_only
+22aa1c44b29feead3904e5f6,waste,FY2021-22,REF_2023_24,Open burning of waste,BC,8.761790,covered_sources_only
+bee56477686413c79f2e5dca,waste,FY2021-22,REF_2023_24,Open burning of waste,CO,413.055830,covered_sources_only
+ea820f08b60f2ba5d00aed7e,waste,FY2021-22,REF_2023_24,Open burning of waste,NH3,5.632580,covered_sources_only
+746f5f911be2da488680a514,waste,FY2021-22,REF_2023_24,Open burning of waste,NMVOC,143.943698,covered_sources_only
+db96d2559f10acaf1ac074a8,waste,FY2021-22,REF_2023_24,Open burning of waste,NOx,14.394370,covered_sources_only
+cfbd9d9cf7d5547a90df202a,waste,FY2021-22,REF_2023_24,Open burning of waste,PM2.5,60.706690,covered_sources_only
+6782d583746aa46a0fae3bee,waste,FY2021-22,REF_2023_24,Open burning of waste,SO2,3.129211,covered_sources_only
+148ae9376b6ecd1d78a53c31,waste,FY2022-23,L_HERD1624,Open burning of waste,BC,8.987022,covered_sources_only
+408b89bb097da3cc9958aaf7,waste,FY2022-23,L_HERD1624,Open burning of waste,CO,423.673894,covered_sources_only
+4e5297d8f2e429ca0ae95736,waste,FY2022-23,L_HERD1624,Open burning of waste,NH3,5.777371,covered_sources_only
+546531265ab074aa63fc2ac4,waste,FY2022-23,L_HERD1624,Open burning of waste,NMVOC,147.643933,covered_sources_only
+7c8cbcb9dec98c965d8a56c0,waste,FY2022-23,L_HERD1624,Open burning of waste,NOx,14.764393,covered_sources_only
+22c434dccd06379796076239,waste,FY2022-23,L_HERD1624,Open burning of waste,PM2.5,62.267224,covered_sources_only
+6813fe0529890b8c3cde469c,waste,FY2022-23,L_HERD1624,Open burning of waste,SO2,3.209651,covered_sources_only
+fbcf354fba3d825f23f8ea38,waste,FY2022-23,REF_2023_24,Open burning of waste,BC,8.987022,covered_sources_only
+9cedbc89b3315c5f6c5aa4f1,waste,FY2022-23,REF_2023_24,Open burning of waste,CO,423.673894,covered_sources_only
+73981df70773173c1c190df3,waste,FY2022-23,REF_2023_24,Open burning of waste,NH3,5.777371,covered_sources_only
+253dd468ed13e407efb88b34,waste,FY2022-23,REF_2023_24,Open burning of waste,NMVOC,147.643933,covered_sources_only
+f1a150906e7c1f988e7c4f71,waste,FY2022-23,REF_2023_24,Open burning of waste,NOx,14.764393,covered_sources_only
+8e85914e0efc6a9cfba8acd0,waste,FY2022-23,REF_2023_24,Open burning of waste,PM2.5,62.267224,covered_sources_only
+0876b5241fd3884126beea06,waste,FY2022-23,REF_2023_24,Open burning of waste,SO2,3.209651,covered_sources_only
+880a3ddebbffdf3c7a59838a,waste,FY2023-24,L_HERD1624,Open burning of waste,BC,9.215626,covered_sources_only
+9017a83ec557a1136175f3f0,waste,FY2023-24,L_HERD1624,Open burning of waste,CO,434.450952,covered_sources_only
+23a5b6adc06c0e4f797b3915,waste,FY2023-24,L_HERD1624,Open burning of waste,NH3,5.924331,covered_sources_only
+aea20f4338d94ec2c3ecc9b7,waste,FY2023-24,L_HERD1624,Open burning of waste,NMVOC,151.399574,covered_sources_only
+c26aaf15798451707ba66d1b,waste,FY2023-24,L_HERD1624,Open burning of waste,NOx,15.139957,covered_sources_only
+837ceb5203116d5c49911b6d,waste,FY2023-24,L_HERD1624,Open burning of waste,PM2.5,63.851125,covered_sources_only
+771b6c169ac4888fdded2215,waste,FY2023-24,L_HERD1624,Open burning of waste,SO2,3.291295,covered_sources_only
+f73d12c7477e550344b0a64e,waste,FY2023-24,REF_2023_24,Open burning of waste,BC,9.215626,covered_sources_only
+a7e548ecaf4f24d56c2d67b1,waste,FY2023-24,REF_2023_24,Open burning of waste,CO,434.450952,covered_sources_only
+65d10782cfb1c4790c78e3d2,waste,FY2023-24,REF_2023_24,Open burning of waste,NH3,5.924331,covered_sources_only
+eec247e080af1e0dde3c6cec,waste,FY2023-24,REF_2023_24,Open burning of waste,NMVOC,151.399574,covered_sources_only
+cf229862660b85d01ffd7632,waste,FY2023-24,REF_2023_24,Open burning of waste,NOx,15.139957,covered_sources_only
+371f6760149d583b00ff85cc,waste,FY2023-24,REF_2023_24,Open burning of waste,PM2.5,63.851125,covered_sources_only
+233e7824662408bf785511be,waste,FY2023-24,REF_2023_24,Open burning of waste,SO2,3.291295,covered_sources_only

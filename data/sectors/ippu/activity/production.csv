@@ -1,0 +1,5 @@
+fiscal_year,product,pakistan_000_tons,punjab_000_tons,punjab_share_pct,source,note
+2024,Cement,39566,20380,51.5,"PBS QIM June 2024 and SBP FY2023-24 Statistical Supplement; Punjab value retained from Punjab Statistical Pocket Book 2025","National FY2023-24 cement output. The earlier 48,011 kt entry is the FY2021-22 value and is retained only in national_activity.csv for source-history audit. Punjab share is provisional because source definitions are not yet reconciled."
+2024,Soda Ash,651,303,46.5,"Punjab Statistical Pocket Book 2025, Table 16.3","Carried for 2B7, not yet estimated. SUPERSEDED for magnitude by PBS QIM 785,283 t - see the soda-ash-production gap; retained for its Pocket Book provenance and Punjab share only."
+2024,Caustic Soda,405,293,72.3,"Punjab Statistical Pocket Book 2025, Table 16.3","Carried for reference; caustic soda has no direct process-CO2 category."
+2024,Fertilizers,9100,5355,58.8,"Punjab Statistical Pocket Book 2025, Table 16.3","Carried for 2B1 ammonia/urea, not yet estimated. Note this is total fertiliser product, not ammonia."

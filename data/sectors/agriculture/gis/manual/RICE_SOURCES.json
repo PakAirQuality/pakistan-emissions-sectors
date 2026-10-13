@@ -1,0 +1,35 @@
+{
+ "note": "manual raster acquisitions, hashed like FIRMS_SOURCES.json; the raw manifest walks sources/ and data/cache/ only, so manual drop-ins carry their provenance here",
+ "spam_rice.tif": {
+  "sha256": "9b0c0b9ec21cbc73909daf314efb027209a107be7748724484baf4b3655f1240",
+  "bytes": 37890590,
+  "product": "SPAM 2020 V2r2 global physical area, RICE, all technologies (RICE_A)",
+  "source": "Harvard Dataverse doi:10.7910/DVN/SWPENT (docs/DATA_ACQUISITION.md section 2 named the v1r0 release; the held file is the newer V2r2 of the same product line)",
+  "units": "hectares per 5-arc-min pixel; consumed as a relative weight surface",
+  "licence": "CC-BY-4.0"
+ },
+ "spam2020_V2r2_global_A_RICE_I.tif": {
+  "sha256": "370ebfccc51dc5614699f3ff3857b53a2c955ed314c420dd66f39cdd18ea4bbc",
+  "bytes": 37890590,
+  "product": "SPAM 2020 V2r2 RICE irrigated share",
+  "source": "as spam_rice.tif",
+  "licence": "CC-BY-4.0 (the same Harvard Dataverse release as spam_rice.tif)",
+  "status": "consumed by the rice water-regime axis since rc26; the agriculture phase refuses to run without it (found by the rc40 validation package's reproduce.sh)"
+ },
+ "spam2020_V2r2_global_A_RICE_R.tif": {
+  "sha256": "12da6f236a8975d7ca95ac8a322e393915d6bdb5f081f348a8ace4380a2e5d70",
+  "bytes": 37890590,
+  "product": "SPAM 2020 V2r2 RICE rainfed share",
+  "source": "as spam_rice.tif",
+  "licence": "CC-BY-4.0 (the same Harvard Dataverse release as spam_rice.tif)",
+  "status": "consumed by the rice water-regime axis since rc26; the agriculture phase refuses to run without it (found by the rc40 validation package's reproduce.sh)"
+ },
+ "gcd_rice_2023.tif": {
+  "sha256": "ebbaf0607145256bc11b6a4af84f9a697915ca1424ea522ff1ce9e350c98f00c",
+  "bytes": 30429942,
+  "product": "GCD-Rice (Global Crop Dataset - Rice) Pakistan 2023, 30 m classified paddy extent, Int16 0/1",
+  "source": "ScienceDB doi:10.57760/sciencedb.21665 (Nature Scientific Data 2025; ~88.9% overall accuracy, 258k validation samples); file Classified-Rice-PAK-2023-v1.tif",
+  "role": "OWN-YEAR crosscheck instrument for the rice surface (pakemis_rice_geography_crosscheck.csv) and the priced ADM2 bracket - geography only, never magnitude",
+  "licence": "per ScienceDB record"
+ }
+}

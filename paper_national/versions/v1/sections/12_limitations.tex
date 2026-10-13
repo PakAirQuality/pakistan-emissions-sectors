@@ -1,0 +1,590 @@
+% ===========================================================================
+\section{Limitations}
+\label{sec:limitations}
+% ===========================================================================
+
+\textbf{The total is a single-year national total, and two of its ten modules pay for that
+with a borrowed shape.}\label{lim:single-year} All ten sectors report FY2023--24, stated as explicit dates on every
+generated output. Getting there cost two declared compromises rather than a caveat: transport
+takes its magnitude and its provincial shares from the reference period's own direct OCAC
+editions but borrows its fleet/class composition from the registration panel's last year
+(FY2022--23), and waste's district
+population is projected one year past its census anchor to the fiscal midpoint. Neither moves
+a national tonne---a share set sums to one---but both are weaker evidence than the quantity
+they sit beside, and the component rows say so.
+
+\textbf{Roughly \SI{47}{\mega\tonne} of this inventory's incompleteness can be given a
+number, and that figure is neither a floor nor a total.}\label{lim:incomplete-floor}
+Industrial fuel combustion is the largest residual, and it halved in this release: EDGAR
+puts the category near \SI{44}{\mega\tonne}, and beside the \SI{5.55}{\mega\tonne} of
+captive self-generation, \SI{5.61}{\mega\tonne} of industrial process gas and
+\SI{3.40}{\mega\tonne} of industrial liquid fuels, the inventory now estimates
+\SI{2.78}{\mega\tonne} of brick-kiln and \SI{10.80}{\mega\tonne} of cement-sector coal
+from the HDIP coal-by-consumer series, leaving about \SI{15.85}{\mega\tonne} outstanding
+rather than the whole category.
+
+That \SI{15.85}{\mega\tonne} is a coverage difference against one comparator and is not a
+lower bound on absent mass. Run over all nine years, the same comparison puts this
+inventory \emph{above} EDGAR in four of them, by as much as \SI{6.63}{\mega\tonne} in
+FY2020--21, and a quantity that changes sign cannot bound what is missing. The gap opens in
+FY2022--23 and FY2023--24 alone, the two years in which this inventory's own 1.A.2 falls
+\SI{25.25}{\mega\tonne} below its FY2021--22 level---brick-kiln coal, cement-sector coal and
+industrial furnace oil together---while EDGAR's stays flat, so the difference prices a discontinuity in our activity
+series at least as much as it prices categories nobody estimated. EDGAR is in any case
+IEA-balance-derived and fed upstream by the same HDIP record this inventory reads, which
+makes it a diagnostic rather than an independent measurement of what we are missing.
+
+F-gases (\SI{11.54}{\mega\tonne}) are absent entirely. Both figures come from an external
+estimate, which is what lets them be written down at all, but they are not the same kind of
+quantity: the F-gas figure prices a category this inventory does not estimate, while the
+\SI{15.85}{\mega\tonne} is a difference between two estimates of a category both inventories
+estimate. The rest cannot be valued even that far. Chemical IPPU---ammonia, nitric acid, soda ash, lime, iron
+and steel---has no independent estimate here at all, and Pakistan's own filing puts the
+chemical industries near \SI{19.4}{\mega\tonne}; industrial wastewater, waste incineration and
+biological treatment are likewise unquantified, as is mobile air-conditioning. Commercial and
+institutional combustion (1.A.4.a)---absent from this register altogether until an audit of
+the commercial-class rows the repository already held---is now declared and screened at
+roughly \SI{2.4}{\mega\tonne} across its two quantifiable streams; domestic navigation and
+the coal-mining surface share carry published screening estimates outside the total.
+\emph{The \SI{47}{\mega\tonne} is therefore what can be counted, not what is
+missing.} Section~\ref{sec:completeness} names all of them. This is a statement about coverage, not accuracy,
+and it means the national figure should be read as ``ten sectors totalling
+\SI{445}{\mega\tonne} under reference scenario \texttt{REF\_2023\_24}'' rather than as Pakistan's emissions. One named
+structural case crosses sectors: the residential dung stream is reported there under two
+configurations, the household-survey reading and the agriculture-ledger supply
+derivation, which diverts \num{4.9} times what the 2024--25 survey round measured. This rollup carries the survey reading, which is
+the reference. The diverted dung it does not burn in households, \SI{47.81}{\mega\tonne} of
+air-dry cake, is unresolved and outside the total, and configuration~L, the destination
+assumption that households burn all of it, would raise the \texttt{REF\_2023\_24} total by
+\SI{5.25}{\mega\tonne}.
+
+\textbf{LULUCF enters no total, on either side.}\label{lim:lulucf} No land-use, land-use-change or forestry
+flux enters the inventory total or any benchmark comparison. An exploratory Tier~1 land
+module ships with the release and publishes, outside every total, a provisional net sink
+of \SI{-4.01}{\mega\tonne} \COe{} (forest land \SI{-3.52}{} and Indus-delta mangrove
+blue carbon \SI{-0.49}{}; cropland and grassland soil carbon not estimated) in
+\texttt{outputs/lulucf\_totals.csv}, discussed in Supplement~S1 of the agriculture paper.
+For a country with substantial mangrove and rangeland carbon the gap in the reported
+inventory is real, and it is a different kind of gap from the others: LULUCF can be a sink,
+so its absence does not simply bias the total low.
+
+That provisional sink rests on an assumption Pakistan's own submission contradicts, and the
+disagreement is now priced in
+\texttt{outputs/pakemis\_forest\_flux\_adjudication.csv}. The module sets deforestation to
+\num{0}~ha a year, justified by FAO's net forest conversion being about zero in recent years;
+Pakistan's Common Reporting Tables put forest-land gross losses at \SI{14868.348}{} against
+gross gains of \SI{7113.083}{} kilotonnes of carbon, a ratio of \num{2.09} that nets to
+\SI{28.436}{\mega\tonne} of CO\textsubscript{2} and reproduces the submission's own printed
+figure. So the two accounts that read forest land as a \emph{sink} are not two: the
+exploratory module takes the decisive quantity from FAOSTAT, whose net forest conversion is
+exactly \num{0.000}~kha from 2020 against \num{26.104}~kha in 2015 while its
+Pakistani forest area rises at exactly \SI{20.786}{} kha a year---a step constant to three
+decimals over four years, which is interpolation between Forest Resources Assessment anchors
+and not an annual observation. The gap between the submission and FAOSTAT is
+\SI{32.55}{\mega\tonne} of CO\textsubscript{2} and it is a disagreement about direction, so
+no forest component can be built from either until the area trend is settled. The parameter
+is left at zero rather than changed, because moving it moves this printed figure and that is
+a declared decision rather than an audit edit.
+
+\textbf{The fugitive estimate is conditional on technology and coverage, and the
+reference sits high in its own envelope.}\label{lim:fugitive-envelope} The 2019 segment
+ledger replaces the capped 2006 range treatment and gives a parametric interval conditional
+on higher/default practices. Lower-practice, throughput-basis, incomplete-coverage and
+leak-base membership
+configurations form a separate structural envelope of \SIrange{9.601}{24.694}{\mega\tonne},
+and the reference (\SI{23.499}{\mega\tonne}) sits one membership step below the envelope's
+\emph{top}---conservative default-practice factors with full coverage, and fertiliser
+feedstock outside the post-meter leakage base---not at an
+evidential centre. The top is the feedstock-inside membership of every release through
+rc66, retained and not defended. The envelope now ships as a named configuration family
+(\texttt{fugitives\_structural\_envelope}: the reference, the lower-practice member at
+\SI{14.894}{\mega\tonne}, and the joint floor at \SI{9.601}{\mega\tonne}) with its
+selection rule declared, so a national quote of the reference never travels without the
+envelope beside it. No Pakistani component-measurement
+campaign yet selects among those configurations.
+
+\textbf{The series is complete, and its residual weaknesses are in basis rather than
+coverage.}\label{lim:series-basis} All ten sectors are reconstructed consistently across FY2015--16 to
+FY2023--24: the trend-safe \textsc{harmonized common scope} view and the full-scope view
+coincide since the FY2015--16 product splits were recovered from the public record
+(Section~\ref{sec:series}). The scope caveat that used to sit here---differencing across
+the first year measured sectors entering the record---is retired with its premise. What
+the completeness of the RECTANGLE does not change is the basis beneath it. Agriculture
+sits inside the constant scope on a \emph{fiscal} reconstruction, and what remains outside
+that reconstruction is narrower than what used to. Earlier releases ran every pre-anchor
+year on FAOSTAT calendar-year activity---crops, fertiliser and livestock stocks alike---and
+called the result a hybrid diagnostic series rather than a trend-safe one. That description
+is superseded: crop and nitrogen activity now comes from the Economic Survey's own
+fiscal-year tables in all nine years, the series marks agriculture
+\texttt{reconstructed-fiscal}, and rebuilding it corrected a misalignment of a full calendar
+year in three of the four crops the old history carried (Section~\ref{sec:agri-basis}).
+\textbf{One half of the sector is still not on a fiscal basis, and it is the larger half.}
+Enteric fermentation and manure management---\SI{77.37}{\percent} of agriculture's
+reference-year mass---are driven by livestock stocks, and Pakistan publishes no fiscal-year
+\emph{enumeration} of the national herd: the Economic Survey's fiscal head counts are, by
+their own footnote, the inter-census projection FAOSTAT already carries, so adopting them
+would buy a label and no observation. Those two categories keep a calendar driver and an
+inter-census projection rather than an enumeration, and the six-month phase error that
+leaves is measured at under \SI{2}{\percent} of each category in every year rather than
+asserted. The step is priced rather than smoothed. The nine-year ten-sector panel is complete:
+the FY2015--16 product splits for road transport and industrial combustion---its last
+absent cells---were recovered at rc20, and no sector-year in the panel is NE. It never
+did require more clinker trade returns: the monthly HS~252310 panel now runs July 2014 to June 2024 for both flows, and
+every year of the series resolves to an observed trade term---which is what opened
+FY2021--22 and FY2022--23, the two years that also held activity; the consequence for
+key-category analysis is in Section~\ref{sec:keycat}. The
+underlying cause is partly source availability and partly source \emph{format}: five Pakistan
+Railways Year Book editions are scanned images with no extractable text layer. FY2018 and
+FY2019 were missing from the railway series for that reason and are not any more---both were
+recovered from the historical tables a later readable edition reprints, and the series is
+unbroken from FY2014 to FY2025.
+
+\textbf{Several partitions are exhaustive but soft at the split point.}\label{lim:soft-partitions} Section~\ref{sec:closures}
+guarantees that the parts sum to the whole; it does not guarantee the split. The waste
+collection rate of \SI{50.3}{\percent} moves emissions between two categories with different
+methane yields. The off-road machinery class inherits its source workbook's residual
+bucket---the catch-all ``Other vehicles'' class maps into it wholesale and is then modelled
+as \SI{100}{\percent} diesel---so the carve-out's magnitude is sound while its composition is
+not, and the cropland proxy that allocates it provincially is right for the tractors and
+wrong for the remainder. The transport sector's vehicle-class split is declared wrong for the
+same reason and is not used for any reported number that depends on it.
+
+\textbf{Household firewood is no longer the largest single activity uncertainty, and the
+reason is worth recording.}\label{lim:firewood} It is the largest household fuel by energy---
+\SI{38.7}{\percent} of household input, against dung cake's \SI{13.6}{\percent}---and this
+inventory used to carry it at \SI{60}{\percent} activity uncertainty because the only
+national quantity available was FAOSTAT's, which carries FAO's own estimate flag in every
+year since 2009 and does not move.
+
+It is now a measurement. The HIES 2024--25 round gives a design-weighted national household
+firewood quantity, and two independent anchors bracket it: the 2018--19 round reproduces the
+2024--25 total to within six percent, and FAOSTAT's own series, converted on a
+moisture-matched basis rather than the oven-dry-with-as-received pairing that had been
+compared against it, sits seven percent above. The stream is therefore reported at
+\SI{35}{\percent}, which carries the survey's stratum-clustered sampling error plus the
+systematic risks a household survey cannot see---one-month consumption recall, out-of-home
+and informal-enterprise use booked to households, and seasonal enumeration.
+
+FAOSTAT has not been discarded; it has been demoted from anchor to named structural case,
+\texttt{firewood\_faostat}, which puts the sector at \SI{23.89}{\mega\tonne} against the
+reported \SI{24.22}{\mega\tonne}. Dropping firewood entirely gives \SI{20.81}{\mega\tonne}.
+Both are published on every run, because an excluded number is invisible in a way that a
+flagged one is not, and because a reader is entitled to see what the re-anchoring did rather
+than only its result.
+
+\textbf{Air pollutants are partial, but less partial than this section used to claim.}\label{lim:air-pollutants} Seven
+sectors---agriculture, residential, transport, waste, power, railways and aviation---now build
+an air-pollutant layer and write machine-readable outputs. A previous edition recorded
+power-sector and residential-gas pollutants as not estimated, blocked on EMEP/EEA factors the
+agency no longer serves in a retrievable form, and that diagnosis was wrong in both cases:
+the residential sector holds the small-combustion chapter and reports gas, LPG, kerosene and
+coal, and the power sector reads AP-42 directly, including a fuel sulphur content that
+published Thar analyses do bound. What remains genuinely not estimated is narrower and
+sharper: what the power fleet \emph{actually} emits, since no national control-device
+inventory has been obtained here and the reported figures are uncontrolled upper bounds; the
+equipment mix behind industrial combustion, whose boiler, furnace, engine and turbine shares
+are declared rather than surveyed and are worth a factor of thirty on diesel \NOx{}; within
+the IPPU and fugitive layers, the classes no admissible factor or series can price---urea
+finishing, nitric acid, lime, glass, venting, post-meter losses---each typed absent with its
+activity written beside it; and the transport
+processes---cold start, evaporative NMVOC, non-exhaust particulate---named in that sector's
+own register. The completeness table is the authority on which is which.
+
+\textbf{Emission factors are overwhelmingly Tier~1 defaults.}\label{lim:tier1} Apart from the agriculture
+sector's Tier~2 elements, documented separately \citep{ahmad2026ag}, this inventory applies
+IPCC defaults to Pakistani activity data. That is the appropriate tier given the available
+information, and it means the estimates carry the defaults' assumptions about technology
+mix, combustion conditions and management practice---assumptions derived largely from
+countries whose infrastructure differs from Pakistan's.
+
+\textbf{The monthly layer rests on physics more than on observation, and on neither for a
+third of it.}\label{lim:monthly-physics} Every source stream is resolved into twelve months and every month row declares
+how. Stating that as one number---\SI{54.65}{\percent} of the reference year on a flat
+profile---is true and misleading, because it does not distinguish a flat month that is the
+physical answer from a flat month that is nobody having read the records. Across the nine-year
+product the honest statement is three figures, generated from the released rows in
+\texttt{outputs/pakemis\_temporal\_decomposition.csv}: \SI{37.3}{\percent} of monthly mass has
+its within-year variation carried by an observed monthly series; \SI{41.0}{\percent} is
+continuous or stock-driven, where flat---properly, days-weighted---is the correct answer and
+acquiring a monthly series would not change the shape; and \SI{21.8}{\percent} genuinely
+varies within the year and is carried flat because no monthly evidence was obtained.
+These three figures and the TE-class flat share are different classifications of the same
+mass---TE4 contains both physically appropriate flatness and unobserved variability---and
+the exact bridge between them is published as
+\texttt{outputs/pakemis\_flatness\_crosswalk.csv}, joined at the month-row grain the
+coverage summary grades, so it reproduces the TE-class flat share exactly and carries no
+grain difference.
+
+\textbf{The historical monthly product is graded below A$-$, explicitly.}\label{lim:monthly-grade} The release sets
+itself a gate for the monthly layer---no more than \SI{15}{\percent} of nine-year monthly mass
+may be time-variable and carried flat for an A$-$---and the nine-year product does not meet
+it: \SI{21.76}{\percent} of its mass varies within the year and is carried on the calendar
+alone. The reference-year product is a different object and is stated separately: FY2023--24
+alone carries \SI{9.57}{\percent}, inside the gate. So the grade is a statement about the
+eight historical years, not about the reference year, and it is a row of the exit scorecard
+(\texttt{outputs/pakemis\_pass2\_scorecard.csv}, \texttt{2b-historical-temporal-grade})
+rather than a sentence alone. One acquisition decides it: road transport's months before July
+2021 are flat because OCAC's monthly editions before that date are not held, and the
+pre-July-2021 editions requested under \texttt{MON-OCAC-01} carry \SI{283.2}{\mega\tonne} of
+nine-year mass; with them the figure would be \SI{14.68}{\percent}, inside the gate.
+
+That gap is a property of the source rather than of the effort spent on it, which is worth
+stating plainly because the sentence above would otherwise read as a download nobody has got
+round to. OCAC's own archive lists monthly sectoral-sales editions from the current month back
+to July 2021 and stops; before that date it publishes fiscal-year compilations only, back to
+FY2016-17, and this inventory already holds those as its annual controls. The monthly series
+does not exist in public form for the six years at issue, so no acquisition of a published
+file closes the gap---only a request to the compiler does. That request is drafted and unsent,
+and an arrival is an ingest for a later release, not a promise made by this one.
+
+The largest acquisition of this release moves less than it should, and where it stops is the
+finding. NFDC's consolidated volume publishes fertiliser offtake by product and month for
+FY2012-13 to FY2022-23 on this inventory's own July--June fiscal year, so the eight years before
+the reference period need no borrowed months at all; the parse is gated on the three controls
+the table prints for itself---each row's total, each product's \texttt{TOTAL} row, and the page
+grand total---and validated against the independently transcribed Annex-7 at their three-month
+overlap, where the two agree to two tonnes on four hundred thousand
+(\texttt{outputs/nfdc\_monthly\_parse\_summary.csv},
+\texttt{nfdc\_monthly\_quarantine.csv}). Urea application reaches \SI{100}{\percent} observed.
+Managed soils then moved for a reason that had nothing to do with acquisition. The offtake
+shape may only ride the synthetic-fertiliser share, and the atomic annual table appeared to
+split managed soils into subitems for the reference year alone. It never lacked the split:
+\texttt{fiscal\_series} had been computing all thirty-five components for every year and
+discarding them on the way out, while the annual product returned nothing for those years and
+recorded in its own documentation that agriculture's history was ``carried by category
+and gas, not by stream''---a sentence true of the FAOSTAT reconstruction that preceded the
+fiscal seam and false of the engine that replaced it. Removing that declared absence let the
+offtake shape reach the synthetic share in all nine years: \SI{95.09}{\mega\tonne} moved from
+unobserved to observed, no annual number changed, and the re-aggregated subitems reproduce the
+published category totals across all \num{72} year-category-gas cells to
+\SI{5e-7}{\mega\tonne}, which is the series' own rounding. \textbf{The deposited and applied
+census nitrogen---pasture, organic manure, crop residues---stayed flat}, because it rides a
+livestock count and a harvest rather than a dealer's depot, and a test asserts it did not come
+along.
+
+The PBS minerals panel, parsed two releases ago and deliberately left unread because each
+canonical mineral resolves in only five or six of the eight held editions, is now spent---per
+source-year, as review ruled it should be: observed years carry the year's own twelve months at
+TE2, missing years are days-weighted TE4, and no year wears another's shape. The upstream
+fugitive streams---gas production, gathering, processing and sour-gas processing on the
+monthly gas series, oil production on crude---moved \SI{93.66}{\mega\tonne} of cumulative
+nine-year mass from unobserved to observed timing, \SI{43.0}{\percent} of the sector in the
+reference year, without any annual figure moving; eight of nine years now carry their own
+months for both streams, three of them recovered from parse defects inside editions the
+repository already held. The demand-side streams---distribution,
+transmission, post-meter, LNG---deliberately did not: deliveries and send-out have their own
+season that field output does not observe, and a production shape on them would be the
+wrong-driver overclaim; they stay flat with the acquisition named
+(\texttt{outputs/pbs\_minerals\_parse\_summary.csv} carries the per-mineral coverage,
+\texttt{pbs\_minerals\_quarantine.csv} the rows the source's own totals reject, and a test
+holds the production shape to the upstream streams alone).
+
+``Observed'' in that sentence means the panel's own twelve months, and for part of the
+panel it does not mean the country. \texttt{outputs/pakemis\_minerals\_panel\_screening.csv}
+reports which province-years are whole: of \num{28} mineral-years, \num{13} are served as
+covered from an incomplete set of provinces, because the coverage test asks for twelve
+months rather than for four provinces. The consequence is bounded and it is not uniform.
+For natural gas it is small---Pakistani production has almost no season and the provinces'
+curves are alike, so recomputing a complete year's shape from only the provinces a broken
+year holds moves a monthly share by about a percentage point. For crude oil in FY2021--22
+it is not small: the panel holds Balochistan alone, and the profile served for that year
+puts \SI{78.76}{\percent} of the year in a single month and labels it observed. No real
+month of Pakistani crude production is most of the year.
+
+The provinces are not missing from the source, and that is the part worth stating
+plainly. PBS prints all four. The mineral's name cell is vertically centred across its
+five province rows, so a layout-preserving text extraction places the name on the
+\emph{middle} line, and a parser that treats the name line as the start of the group loses
+the rows printed above it. The arithmetic identifies them beyond argument: for coal in
+FY2021--22 the Punjab and Sindh rows printed above the name line, taken with the KPK and
+Balochistan rows on and below it, equal the edition's printed total in every one of the
+twelve months exactly. The panel carries \SI{42.1}{\percent} of that year's coal.
+
+Worse, the parse's own assurance cannot see this. It reports how many mineral-years close
+their group control, and that control compares the rows the parser held in hand against
+the printed total---not the rows the panel ships. For coal in FY2021--22 it closes to the
+unit while certifying a quantity the panel does not contain. \num{9} canonical mineral-years
+disagree between a closing control and the shipped panel, in both directions: limestone
+FY2016--17 ships \SI{6.9}{\percent} of what its control counted, and natural gas
+FY2020--21 ships \SI{230.8}{\percent} of it, that one being the worksheet duplication
+described next. A control that passes while its subject is short is not a control, and the
+comparison it omitted is now computed and declared.
+
+The same screening separates a second defect that points the other way. The spreadsheet
+editions are read across every worksheet, and some workbooks repeat their table on working
+sheets, so those years are counted once per sheet---FY2020--21 carries \num{31} rows in
+every month for gas and oil and \num{100} for coal and limestone, and its published gas
+quantity is \num{12.83} times the last year the panel records correctly. That is a wrong number in a
+shipped activity table and it costs the inventory nothing, because the duplication is
+uniform across the twelve months and every consumer normalises; the missing provinces cost
+the inventory something and leave the quantity looking plausible. Neither is repaired here:
+the first would move a published activity table and the second a published monthly shape,
+and both are decisions rather than audit edits. They are counted so the decision can be
+taken on a measurement.
+
+\textbf{Only that last third is a gap}\label{lim:monthly-gap}, and it is the only one of the three that acquiring
+data would close. A livestock census counts a stock once and carries no month, so equal
+twelfths---days-weighted---is the complete statement the activity data supports, and the layer
+is built so that such a row can never receive a shaped profile. The rest is a gap with a name. Road CNG is rationed by season and by load-shedding and is spread flat because
+no monthly metered series was obtained. Sugar-mill bagasse burns in a crushing season this
+release does not assemble. Crop-residue burning rode that same sentence for three
+releases and no longer belongs in it: the nine-year VIIRS fire record now times it
+(TE3, every month observed within the attribution ladder's terms). Waste's disposal
+stream likewise left the flat set---the continuous FOD state engine computes its
+months from the deposit history---while the sector's other streams stay flat with
+their reasons named. Fugitives
+is flat only on its demand side: the upstream production, gathering and processing streams
+ride PBS's monthly gas and crude series where a year holds them (\SI{43.0}{\percent} of
+the sector's reference year at TE2), while distribution, transmission, LNG and post-meter
+streams stay deliberately flat, because field production is not a defensible timing proxy
+for downstream deliveries.
+None of this moves the annual total by construction, and all of it would move the months.
+The single largest improvement available to the temporal dimension is acquisition---OGRA's
+monthly gas system reports, a crushing-season series, provincial harvest dates---rather than
+a better model of what is already held.
+
+\textbf{The archive deposit contains products, not the source documents.}\label{lim:deposit} The inventory reads
+\num{217} registered sources, of which \num{153} are third-party publications archived in the
+repository---OGRA, NEPRA, PBS, NFDC and PCAA reports, and PBS household survey microdata.
+\emph{None of them is in the deposit.} For \num{126} of those \num{217} registered sources the
+publisher states no redistribution terms at all, which is the ordinary condition of a
+government statistical publication and not a defect in the record; but a deposit is a
+publication, and this project cannot license what it does not own. Depositing the repository
+whole would have offered the \num{60} distinct third-party documents it holds under a
+CC~BY grant it had no right to make.
+
+What ships instead is \texttt{outputs/pakemis\_source\_register.csv}: every source named, its
+publisher and edition recorded, its archive hashed, and the instruction for obtaining it from
+that publisher. The two questions the register keeps apart are the reason this works---whether
+a document may be \emph{read and derived from} is not the question of whether it may be
+\emph{republished}, and only the second is at issue here. The derived quantities are facts and
+this project's compilations of them, and those are deposited: \num{1761} files under
+licences the project can actually grant, each hashed in
+\texttt{outputs/pakemis\_deposit\_manifest.csv} with the licence it ships under.
+
+One file cannot have a single licence, and saying that it did was a real error rather than
+an imprecision. The facility registry carries a licence column qualifying each of its
+\num{12680} rows, and \num{71} of them are OpenStreetMap derivatives under ODbL~1.0---a
+share-alike position this project cannot waive, and the same position the paragraph above
+asserts it cannot assume for anything it does not own. Both the register and its published
+twin were nevertheless typed \texttt{own-work} in the deposit manifest, with the reason
+``this project's own code, product or prose'', so the archive would have offered those
+\num{71} database rows under a CC~BY grant. They now ship as \texttt{mixed-per-row} with
+the per-row licence counts in the reason, which is the only honest whole-file statement
+about a file whose rows disagree. The distinction that keeps this a narrow repair rather
+than a sweeping rule is that two other shipped registers also carry non-uniform licence
+columns, and theirs describe \emph{other} artefacts: a register's judgement about a
+third-party document is this project's own work however that document is licensed. Which
+of the two a file is, is now a declared list on both sides rather than a default.
+
+The ODbL carve-outs are also named twice now, by published identity and by the path the
+archive actually ships them at, because the two differ after the data-layout migration and
+a reader searching the deposit for the published identity alone found nothing---from which
+they could reasonably have concluded the files were excluded. They are not excluded; they
+ship, correctly typed, under ODbL.
+
+A citation names a document; a reader needs the table. The standing objection to this
+release is the finer one---given the report, where exactly is the number?---and until now
+nothing counted the answer.
+\texttt{outputs/pakemis\_citation\_pointer\_audit.csv} does, and the denominator is most
+of the work. A registered source that was \emph{derived} inside this repository has a
+derivation chain rather than a page number, and a source that is a dataset rather than a
+document has a file and a variable rather than a table; scoring either against a table
+pointer would inflate the gap with rows no citation could close. Of the \num{131} sources
+where a table pointer is the right notion, \num{115} have one. A pointer counts whether it
+is in the register row or in the produced table's own per-row source column, which is
+where this project's hand-verified ingests put it---checking only the first is how the
+same gap previously read as \num{157} rather than \num{16}. And \emph{pointed} is not the
+same as \emph{checkable}: \num{103} of the \num{112} point into a document this repository
+archives, where a reader can open it and confirm the figure, while \num{7} point into
+documents the project does not hold and \num{5} into files derived inside it. The
+distinction changes no verdict---a pointer into a document the reader must obtain is still
+a pointer---but the audit's strongest number should not imply more than it has. One pointer
+was checked to the cell while that column was added: the bagasse generation ingest against
+NEPRA's held State of Industry Report, where a plant reads
+\SIlist{15.10;29.83;17.38;25.02;29.10}{\giga\watt\hour} in the source and the same five
+values in the ingest.
+
+Both halves are ratcheted, in the same direction, because the easiest way to improve this
+share is not to cite anything but to widen the exemption. The \num{16} that remain are a
+long tail of one-offs rather than a systematic failure, and the count is deliberately
+conservative: a handful of dataset sources whose honest pointer is a file and a row filter
+are scored as unpointed because the audit's publisher markers do not recognise them, and
+widening those markers would improve the share by exemption rather than by citation. Three
+named groups were closed
+while measuring. The seven OCAC extractions had no pointer anywhere, and the documents
+were held all along---each annual edition is two pages and each monthly edition eighteen,
+nine areas of energy products followed by the same nine of non-energy. Their table titles
+also drift, from ``Sectoral Sales / Consumption of POL Products'' through FY2019--20 to a
+split pair from FY2020--21 onward, which is recorded with the pointers because an edition
+whose vocabulary changed is exactly where a reader following a citation would go wrong.
+The Pakistani BTR row was a third and cost nothing at all, since the document was
+already open for the comparator work. The PBS minerals family was the other: four of its eight editions are PDFs carrying one
+running-head table over one to ten pages, and four are workbooks with no table title at
+all, where the \emph{sheet} is the pointer---and one of those, FY2020--21, carries an
+``Electricity generation'' sheet beside ``mineral production'', which is why two different
+parses read the same workbook for two different tables.
+The acceptance note that prompted this named HDIP among the publishers lacking pointers;
+every HDIP row carries one, and did before the audit was written.
+
+``Deposited'' is not the same set as ``cited'', and this release measures the difference
+rather than asserting it away.
+\texttt{outputs/pakemis\_citation\_deposit\_audit.csv} takes every output file the
+manuscripts name---\num{352} of them---and asks whether the archive contains it.
+\num{181} are deposited and \num{171} are not.
+
+That denominator was \num{111} before the notation repair described below, and the
+correction is a lesson about measurement rather than about the archive. The manuscripts name a file in two notations: the
+national sections and agriculture's appendix write the full path, under \texttt{outputs/},
+while eight sector appendices write the bare filename alone in an itemised list---the same
+file, typeset two ways. The audit matched the first notation alone, which reaches \num{132}
+of the \num{352} files the manuscripts name; the other \num{220} are named only as a bare
+filename, and of those \num{102} are in the archive and \num{118} are not. The register's two halves had been disagreeing about the word
+\emph{cited} without either being wrong: the artifact inventory counts a bare filename,
+because it searches for basenames, which is why those files carry the evidence role at all,
+and this audit did not count it as a citation. A reader cannot obtain a file any better for
+its name having been typeset with a directory in front of it. The ratchet is re-based on the
+wider set and the pre-repair subset keeps its own ceiling, so widening the measurement cannot
+hide a regression in the part that was already measured.
+
+The repair also settled a question the blindness had been answering by default. When the
+bare notation came into view it exposed \num{22} \emph{sector headline} products---a sector's
+own totals, stream split, provincial table, monthly layer and uncertainty summary---named in
+that sector's own paper and absent from the archive, which this project's own test calls
+indefensible at that tier. A further \num{22} were the same gap seen from the other side:
+fugitives' and ippu's appendices described their headline tables by function and named none of
+them; aviation's five appeared in neither of its appendix's lists at all; and industry, the one
+covered sector with no paper of its own, has its four named in this paper. All \num{44} are
+named and deposited in this release, and that tier now measures zero. What remains undeposited is \num{168} files typed
+\emph{diagnostic}, two typed \emph{intermediate} and one evaluation-lane table, where the
+choice per file is a real one. The deposit ships a curated list and the
+papers cite whichever table actually carries the number, and until the round that built this
+audit nothing compared the two. Every absent file exists in the repository, so no citation points at
+nothing; what they point at is something a reader holding only the archive cannot open.
+Most are typed \emph{intermediate} or \emph{diagnostic}---working files no reader-facing
+claim was supposed to rest on---which is the interesting part, because a results section
+citing a table is a reader-facing claim resting on it. For those the role and the citation
+disagree about what the file is, and the fix is one of two things per file: ship it, or cite
+the deposited product carrying the same numbers. Seen from the register's own side the
+disagreement is wider than the deposit question, and tracing it changed the register itself.
+\num{11} files are now typed as working files on which \emph{no reader-facing claim rests}
+while being named in a manuscript, \num{8} of them in this one. That count was \num{84}
+before this release, and the way it fell is the substance.
+
+The register has always required a canonical product to be cited; it never required a cited
+file not to be called a working file, and that asymmetry is what let the set grow. Asking the
+question in the other direction needed two repairs.
+
+The first was to the measurement, not the tree. The scan that decides whether a manuscript
+names a file read the national paper's sections, every sector paper's sections, the README and
+the documentation---and not the sector \emph{supplements}' own bodies, four of which are only
+partly assembled from section files. \num{17} artifacts were recorded as named by nobody while
+a supplement named them, among them every figure in the aviation supplement and two regulatory
+cell audits that exist precisely to be the evidence behind a claim. Repairing the scan
+\emph{raised} this count, from \num{77} to \num{84}, without a single citation being added:
+the figure earlier releases printed was an under-count of a set that was always larger.
+Run again against the present tree, the same reconstruction finds \num{12} rather than
+\num{17}, and the difference is instructive: a long filename in a monospace label needs
+typesetting break hints to stay inside the page, and the scan that reads a printed name has to
+strip them or it does not recognise the name it is looking for. Five of the seventeen have
+since been named in a section as well, with break hints, and one normalisation was silently
+blind to them---so the printed \num{17} is what the repair found in the tree of the day, and
+the \num{12} is what the instrument reports now that every reader of a printed name shares
+one normalisation.
+
+The second repair was to what the register does when it has no answer. Every one of the files
+in this set acquired its role from the register's final catch-all pattern rather than from a
+decision, and that pattern declares a working file on which no reader-facing claim rests---so
+the role a file received when nobody had classified it carried a substantive claim about it.
+More patterns were the obvious fix and the wrong one: these files fall through precisely
+because their names share no structure a pattern can reach, and a cover validated against the
+whole inventory needed \num{61} patterns for \num{74} files. The catch-all now defers to the
+evidence instead. A file nothing else classifies, which a manuscript names, is evidence behind
+a claim; one nothing names is a working file. \num{74} files moved on that one change, with no
+new pattern to go stale.
+
+The part no re-typing could reach closed last, and it closed completely. A claim in the
+verification registry reads a product by name and this paper prints the figure computed from
+it, so a file a claim reads is a file a reader-facing claim rests on, by construction---which
+is the one thing the working-file role promises is not true of it. That contradiction stood at
+\num{83} products when it was first measured. The count of products a registered claim reads
+while the register types them a working file is now \num{0}, and the subset named in no
+manuscript at all is \num{0} with it. None of the residue was closed by re-typing, because
+the evidence role requires the file to be named somewhere: each was instead named in the
+sentence that already discussed it---the livestock nitrogen stage-flow ledger, its
+IPCC-against-EMEP stage comparison and the air-pollutant Monte Carlo intervals in the
+agriculture appendix, the national uncertainty decomposition beside its component-row count,
+the waste release assignment beside the candidate list it was always printed with, the two
+compressed-gas cross-check tables inside the clause that invoked their epistemic class, the
+industry captive screening beside the captive figure it produced, and the delivered-gas
+closure variant beside the ledger it prices. Both gates are exact now rather than ratchets, so
+a single new printed figure whose evidence a reader cannot reach fails the build.
+
+Following the same thread into the archive found the sharper version of it. A deposit-manifest
+product row whose release tier is \emph{build} was skipped from the data archive under the
+rule that no build artifact is deposited, while the builder's own description promised every
+product row---two selections with no criterion in common, since the manifest chooses products
+by name pattern and never consults the role. \num{13} hashed products sat in that gap,
+essentially the whole air-pollutant family including the district panel and the
+1990--2024 series. Nine are resolved by the two repairs above and by typing three
+of them from the manifest's own literal naming; the remaining four are declared exclusions
+with their reasons, because for those the manifest's claim may be the incidental one and which
+register is right is a question about what the archive is for. The test that should have caught
+all of this was named for a partition and asserted one inclusion of the two. Four were closed here in both ways---three
+tables with no deposited equivalent added to the shipped set, and one monthly table
+re-pointed at the nine-year product of which it is a single year's slice---and the remainder
+is held under a ratchet that may only fall.
+
+The cost is real and belongs here rather than in a footnote. A reader who wants to rebuild
+this inventory from nothing must re-acquire those publications themselves. The hashes
+are what make that a procedure rather than a guess: obtain the document, compare the digest,
+and you can be certain you are reading what this release read. Everything else needed---the
+engine, the derived activity tables, the products, the manuscripts---is in the deposit.
+
+\subsection{A version string is not a pin, and the spatial axis had no fingerprint}
+
+The release machinery described above protects a release's \emph{identity}: the manifest
+hashes every product and the release cover prints the digest, so a reader can tell whether
+the artefacts in hand are the artefacts that were built. What it did not protect is the
+claim that a version \emph{label} identifies a particular content, and one case shows why
+that distinction matters.
+
+The API that serves these products fetches a release directory and verifies it against
+that directory's own semantic contract, so a served copy is always internally consistent.
+A provincial query answered below this repository's own figure for the same province and
+year, and the cause was neither side's arithmetic: the served
+release was byte-identical to the commit it was fetched from, and this repository's tree,
+still carrying the same version string, had moved past it. The two trees agree on
+\emph{every} national total to nine decimal places---the reported figure for the reference
+year is identical on both sides---while the provincial allocation differs. The change was
+a deliberate re-base giving furnace oil its own product geography, which eliminated a
+residual province and redistributed its mass; it conserved the national total at every
+period, exactly as intended.
+
+That is the structural point, and it generalises beyond this one release and beyond
+geography. Every guard this project has on a release's numbers is a guard on a
+\emph{period total}: the manifest's national figures, the pinned configurations, the
+claim matrix, the registered manuscript claims, the query goldens. A change that conserves
+the period total passes all of them, so an allocation \emph{within} those totals could
+move without any check noticing---and two did. The provincial case above is one. The other
+is temporal: a set of cells in the national monthly table, all of them electricity and
+heat production, moved within fiscal years at exactly zero net, so the annual table's
+fingerprint is identical to the published vintage's while the within-year shape of power
+generation is not.
+
+It is now measured.
+\texttt{data/catalog/published\_release\_vintages.csv} records each published release as a
+commit and two digests, every row re-hashed out of this repository's history, and
+\texttt{outputs/pakemis\_release\_axis\_fingerprints.csv} carries, for each disaggregated
+table and each vintage, a coarse digest over period totals and a fine digest over
+period-by-axis totals---the axis being a geography for the spatial tables and the month
+for the monthly one. Of the \num{6} disaggregated tables fingerprinted, \num{0} currently
+show a moved fine fingerprint under an unmoved coarse one. The other two are controls: the
+air-pollutant provincial layer moved on both axes, which is precisely why the existing
+guards did register that change, and the national annual table---the grain those guards
+actually watch---is unmoved. Neither file alters a number, and a label whose content has
+moved is now a row rather than a discovery. The magnitudes of both divergences are in
+those two builders' own documentation rather than here, because each is measured against
+an externally served copy this repository does not hold---and a figure a reader cannot
+recompute from the archive does not belong in a sentence that the archive is supposed to
+support.

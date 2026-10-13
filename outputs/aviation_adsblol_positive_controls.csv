@@ -1,0 +1,3 @@
+boundary,canonical_stages,control,destination_icao,origin_icao,status,trajectory_distance_nm,aircraft_type_identified,airport_linked_legs,callsign_identified,interpretation
+domestic,1,synthetic_OPKC_OPLA,OPLA,OPKC,PASS,551.924707598454,,,,
+,700,OMDB_archive_positive,,,PASS,,697,700,686,parser/gate positive control; not Pakistan coverage

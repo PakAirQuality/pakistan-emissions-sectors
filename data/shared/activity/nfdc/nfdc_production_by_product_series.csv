@@ -1,0 +1,117 @@
+# NFDC domestic fertilizer PRODUCTION by product and fiscal year (thousand tonnes of product), FY2012-13..FY2024-25.
+# Built by scripts/ingest_nfdc_production_series.py from HELD documents only:
+#   (a) data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf - NFDC 'Pakistan Fertilizer Statistics 2012-13 to 2022-23', Table 2.5 fiscal-year block (tonnes);
+#   (b) data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf - NFDC 'Annual Fertilizer Review 2023-24', ANNEX-1 TOTAL column (tonnes), FY2022-23 and FY2023-24;
+#   (c) data/nfdc/AFR_2024-25.txt - NFDC 'Annual Fertilizer Review 2024-25' (held text), ANNEX-1 TOTAL column (tonnes), FY2023-24 and FY2024-25.
+# One row per (fiscal_year, product, source_file). Years printed by two editions carry BOTH rows; nothing is averaged.
+# product is the mapped class; printed_label is the label(s) as printed. production_000t = printed tonnes / 1000, 3 dp.
+# An absence (printed '-') is an EMPTY cell, never 0. AS (ammonium sulphate) is not domestically produced and is not printed.
+# CLOSURE RULE: status=verified when the year's product rows sum to the printed grand total within 1 tonne (the printed unit);
+#   otherwise verified-open-residual with closure_residual_000t = (printed grand total - sum of product rows)/1000.
+# Sub-closures (printed product Total vs manufacturer sum) that fail by more than 1 tonne are named in note.
+fiscal_year,product,printed_label,production_000t,unit_as_printed,source_file,table_or_page,status,closure_residual_000t,note
+2012-13,Urea,Urea,4215.978,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2012-13,CAN,CAN,401.396,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2012-13,NP,NP,340.802,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2012-13,DAP,DAP,727.376,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2012-13,NPK,NPKs,41.911,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,printed '-' for Safi Chemicals
+2012-13,SSP,SSP,100.825,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2012-13,SOP,SOP,,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,"all manufacturer columns printed '-' (no production; empty, not zero)"
+2013-14,Urea,Urea,4931.514,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2013-14,CAN,CAN,518.874,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2013-14,NP,NP,471.645,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2013-14,DAP,DAP,694.167,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2013-14,NPK,NPKs,63.893,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,printed '-' for Safi Chemicals
+2013-14,SSP,SSP,85.204,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2013-14,SOP,SOP,,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,"all manufacturer columns printed '-' (no production; empty, not zero)"
+2014-15,Urea,Urea,5066.737,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2014-15,CAN,CAN,570.139,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2014-15,NP,NP,578.529,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2014-15,DAP,DAP,754.854,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2014-15,NPK,NPKs,67.559,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,printed '-' for Safi Chemicals
+2014-15,SSP,SSP,77.923,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2014-15,SOP,SOP,,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,"all manufacturer columns printed '-' (no production; empty, not zero)"
+2015-16,Urea,Urea,5769.770,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2015-16,CAN,CAN,646.797,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2015-16,NP,NP,646.997,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2015-16,DAP,DAP,787.608,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2015-16,NPK,NPKs,73.410,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,
+2015-16,SSP,SSP,90.114,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2015-16,SOP,SOP,,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,"all manufacturer columns printed '-' (no production; empty, not zero)"
+2016-17,Urea,Urea,5915.588,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2016-17,CAN,CAN,674.314,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2016-17,NP,NP,702.724,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2016-17,DAP,DAP,802.485,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2016-17,NPK,NPKs,71.797,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,
+2016-17,SSP,SSP,77.978,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2016-17,SOP,SOP,,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,"all manufacturer columns printed '-' (no production; empty, not zero)"
+2017-18,Urea,Urea,5364.689,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2017-18,CAN,CAN,518.947,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2017-18,NP,NP,534.000,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2017-18,DAP,DAP,758.379,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2017-18,NPK,NPKs,62.962,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,
+2017-18,SSP,SSP,65.638,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2017-18,SOP,SOP,,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,"all manufacturer columns printed '-' (no production; empty, not zero)"
+2018-19,Urea,Urea,5933.379,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2018-19,CAN,CAN,453.299,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2018-19,NP,NP,495.194,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2018-19,DAP,DAP,782.636,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2018-19,NPK,NPKs,77.631,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,printed '-' for Safi Chemicals
+2018-19,SSP,SSP,76.059,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2018-19,SOP,SOP,5.774,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,
+2019-20,Urea,Urea,6176.486,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2019-20,CAN,CAN,545.665,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2019-20,NP,NP,650.037,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2019-20,DAP,DAP,737.050,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2019-20,NPK,NPKs,72.217,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,printed '-' for Safi Chemicals
+2019-20,SSP,SSP,57.787,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2019-20,SOP,SOP,7.341,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,
+2020-21,Urea,Urea,6301.390,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified-open-residual,-0.010,"year does not close: product rows sum 9,008,601 t vs printed Grand Total 9,008,591 t (Table 2.7 G. TOTAL also prints 9,008,591 t)"
+2020-21,CAN,CAN,792.917,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified-open-residual,-0.010,"year does not close: product rows sum 9,008,601 t vs printed Grand Total 9,008,591 t (Table 2.7 G. TOTAL also prints 9,008,591 t)"
+2020-21,NP,NP,921.351,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified-open-residual,-0.010,"year does not close: product rows sum 9,008,601 t vs printed Grand Total 9,008,591 t (Table 2.7 G. TOTAL also prints 9,008,591 t)"
+2020-21,DAP,DAP,789.446,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified-open-residual,-0.010,"year does not close: product rows sum 9,008,601 t vs printed Grand Total 9,008,591 t (Table 2.7 G. TOTAL also prints 9,008,591 t)"
+2020-21,NPK,NPKs,87.200,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified-open-residual,-0.010,"printed '-' for Safi Chemicals; year does not close: product rows sum 9,008,601 t vs printed Grand Total 9,008,591 t (Table 2.7 G. TOTAL also prints 9,008,591 t)"
+2020-21,SSP,SSP,105.693,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified-open-residual,-0.010,"year does not close: product rows sum 9,008,601 t vs printed Grand Total 9,008,591 t (Table 2.7 G. TOTAL also prints 9,008,591 t)"
+2020-21,SOP,SOP,10.604,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified-open-residual,-0.010,"year does not close: product rows sum 9,008,601 t vs printed Grand Total 9,008,591 t (Table 2.7 G. TOTAL also prints 9,008,591 t)"
+2021-22,Urea,Urea,6426.200,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,-0.001,
+2021-22,CAN,CAN,825.694,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,-0.001,
+2021-22,NP,NP,901.747,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,-0.001,
+2021-22,DAP,DAP,896.553,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,-0.001,
+2021-22,NPK,NPKs,78.341,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,-0.001,printed '-' for Safi Chemicals
+2021-22,SSP,SSP,101.326,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,-0.001,
+2021-22,SOP,SOP,14.657,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,-0.001,
+2022-23,Urea,Urea,6032.699,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 30",verified,0.000,
+2022-23,CAN,CAN,819.940,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2022-23,NP,NP,792.228,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2022-23,DAP,DAP,635.326,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2022-23,NPK,NPKs,40.129,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,printed '-' for Safi Chemicals
+2022-23,SSP,SSP,76.335,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 31",verified,0.000,
+2022-23,SOP,SOP,12.225,tonnes,data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf,"Table 2.5 (Domestic Production of Fertilizer by Products), fiscal-year block, pdf-page 32",verified,0.000,
+2022-23,Urea,UREA (P)|UREA (P.)|UREA (G.)|UREA,6032.699,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 76",verified,0.000,
+2022-23,CAN,CAN,819.940,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 76",verified,0.000,
+2022-23,NP,NP,792.228,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 76",verified,0.000,
+2022-23,DAP,DAP,635.326,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 76",verified,0.000,
+2022-23,NPK,NPKs,40.129,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 76",verified,0.000,printed '-' for Safi Group
+2022-23,SSP,SSP,76.335,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 76",verified,0.000,printed '-' for LCFL (AL HAMD)
+2022-23,SOP,SOP,12.225,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 76",verified,0.000,
+2023-24,Urea,UREA (P)|UREA (P.)|UREA (G.)|UREA,6591.479,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 77",verified,-0.001,
+2023-24,CAN,CAN,888.002,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 77",verified,-0.001,
+2023-24,NP,NP,931.325,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 77",verified,-0.001,
+2023-24,DAP,DAP,815.680,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 77",verified,-0.001,
+2023-24,NPK,NPKs,27.174,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 77",verified,-0.001,printed '-' for Safi Group
+2023-24,SSP,SSP,86.432,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 77",verified,-0.001,printed '-' for LCFL (AL HAMD)
+2023-24,SOP,SOP,21.567,Tonnes,data/raw/nfdc/nfdc_annual_fertilizer_review_2023_24.pdf,"ANNEX-1, page 77",verified,-0.001,
+2023-24,Urea,UREA (P)|UREA (G)|UREA,6591.479,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 78",verified,-0.001,
+2023-24,CAN,CAN,888.002,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 78",verified,-0.001,
+2023-24,NP,NP,931.325,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 78",verified,-0.001,
+2023-24,DAP,DAP,815.680,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 78",verified,-0.001,
+2023-24,NPK,NPKs,27.174,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 78",verified,-0.001,printed '-' for Safi Group
+2023-24,SSP,SSP,86.432,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 78",verified,-0.001,printed '-' for LCFL (AL HAMD)
+2023-24,SOP,SOP,21.567,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 78",verified,-0.001,
+2024-25,Urea,UREA (P)|UREA (P.)|UREA (G.)|UREA,6779.665,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 79",verified,-0.001,
+2024-25,CAN,CAN,855.369,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 79",verified,-0.001,
+2024-25,NP,NP,865.193,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 79",verified,-0.001,
+2024-25,DAP,DAP,844.133,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 79",verified,-0.001,
+2024-25,NPK,NPKs,41.383,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 79",verified,-0.001,printed '-' for Safi Group
+2024-25,SSP,SSP,79.501,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 79",verified,-0.001,printed '-' for LCFL (AL HAMD)
+2024-25,SOP,SOP,40.188,Tonnes,data/nfdc/AFR_2024-25.txt,"ANNEX-1, page 79",verified,-0.001,

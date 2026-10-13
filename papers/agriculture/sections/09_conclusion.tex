@@ -1,0 +1,76 @@
+% ===========================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ===========================================================================
+
+We have presented a reproducible system that computes agricultural greenhouse gases
+and air pollutants for Pakistan from one shared activity and nitrogen accounting, and
+distributes both to provinces, a \SI{0.05}{\degree} grid and 116 districts under a
+reconciliation invariant. For 2024 it estimates \SI{223}{}~Mt~\COe{} and, in native
+mass, \SI{2.7}{}~Mt \NHthree{} with \SI{0.65}{}~Mt CO and \SI{54}{}~kt PM$_{2.5}$ from
+crop-residue burning. The ammonia figure is the estimate under the
+manure-management configuration the greenhouse-gas inventory also uses; across
+defensible alternative configurations it spans \SI{1.67}{}--\SI{2.67}{}~Mt, and that
+structural range, rather than the parametric interval, is the honest measure of how
+well the national total is constrained.
+
+Two results seem to us to generalise beyond Pakistan.
+
+The first is that \emph{agreement in aggregate does not imply agreement in the
+components}, and this recurred at two scales. Putting the IPCC and EMEP/EEA nitrogen
+chains on common boundaries made their livestock totals differ by only
+\num{1.24}$\times$, but no individual stage agreed: field application and grazing
+disagreed by factors of roughly two and three in opposite directions and partly
+cancelled. The same pattern appeared in the spatial allocation, where two large proxy
+errors had offset almost exactly. An inventory that checks only its totals will not
+see either.
+
+The second is that \emph{spatial pattern and emission magnitude can be separately
+right or wrong}. Compared against an independent gridded ammonia inventory at its own
+year, our surface agrees well on pattern while sitting \num{1.8} times higher in
+level, by a near-constant factor across provinces. Reported per stream, and setting
+aside the livestock comparison where both inventories distribute on the same livestock
+product, the synthetic-fertiliser stream agrees on pattern \emph{and} level, while the
+burning stream agrees on neither. A single national ratio would have hidden all of
+this, and so would a single correlation coefficient.
+
+What remains open is specific rather than diffuse. The manure-management partition is
+not measured for Pakistan, the two external parameterisations that bear on it disagree
+by a factor of three, and it dominates both the ammonia estimate and the manure
+nitrous oxide. A national manure-management survey is the single highest-value data
+collection this work points to. Beyond it, the burning geography needs an evaluation
+against something other than the fire product used to allocate it. A monthly layer for
+the sector now ships with the national release
+(\texttt{outputs/agriculture\_monthly\_2024.csv}, and as this sector's slice of the
+nine-year \texttt{outputs/pakemis\_monthly\_fy2015\_16\_fy2023\_24.csv}), and by the
+release's own
+declaration---\SI{84}{\percent} of the sector's emissions ride a
+flat, declared profile. That figure is true and, read alone, misleading: most of the
+flatness is correct rather than missing, because enteric fermentation and manure management
+are continuous processes riding a census stock and no monthly acquisition could improve a
+flat month there. Separating the two readings
+(\texttt{outputs/agriculture\_timing\_classes.csv}) leaves
+\SI{6.67}{\percent} of the nine-year panel, and \SI{7.00}{\percent} of the reference
+year, whose timing this inventory should resolve and has not---almost all of it managed
+soils. That, rather than the flat share, is the remaining temporal work. An exploratory land-sector extension is
+provided only as Supplementary Note~S1 and is excluded from all agricultural results.
+
+The design choice underlying all of it --- treating the national inventory as a control
+value to which every spatial product must reconcile, while keeping emission factors and
+spatial proxies as separable, auditable components --- resolves the usual tension
+between spatial detail and reported figures. The result is a backbone a national team
+can run, audit and update from a documented pipeline, and one that states plainly which
+of its numbers are settled and which are not.
+
+That design generalises past agriculture. The same control-total discipline now carries
+nine further sectors on the same engine, and the reconciliation it enforces within this
+sector is enforced between sectors too: the dung-cake nitrogen this inventory removes from
+the manure-management balance is accounted for on the receiving side through
+the same herd and the same volatile-solids rates---the part the household survey observes
+as household fuel in the residential sector, the remainder as an unresolved row outside the
+total---and the crop residue diverted to household
+fuel (\SI{9.27}{}~Mt dry, \SI{122192}{}~TJ) is received by the same fuel ledger from the
+residue balance, so neither pair can drift apart
+\citep{ahmad2026national}. Agriculture is \SI{50.2}{\percent} of that national total and the
+largest contributor to its uncertainty, which is why the manure-management survey named above
+is a national priority and not only an agricultural one.

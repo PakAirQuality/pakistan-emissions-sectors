@@ -1,0 +1,111 @@
+% ===========================================================================
+\section{Data and accounting boundaries}
+\label{sec:data}
+% ===========================================================================
+
+\subsection{FY2015--16 to FY2023--24 infrastructure controls}
+
+Oil and gas production come from the Pakistan Economic Survey 2025--26, which reports
+\num{25.812} million barrels of crude oil and \num{1.141} million MMCF of natural gas in
+FY2023--24 \citep{peseconomic2026}. Converted to IPCC activity units, these are
+\num{4103.77} thousand m$^3$ of oil and
+\num{32309.47} million m$^3$ of gas.
+
+The Oil and Gas Regulatory Authority (OGRA) archive supplies annual refinery, network, customer,
+consumption and UFG controls from FY2015--16 to FY2023--24
+\citep{ograarchive,ogra2022,ogra2023,ogra2024}. Values are transcribed from the reported annual tables with
+no interpolation. The image-based FY2020--21 report was independently OCR-audited against the
+page images, and the FY2016--17 refinery total is retained as the regulator's restated value.
+In FY2023--24, SNGPL reports
+\SI{9320.69}{\kilo\metre} of transmission and
+\SI{151419}{\kilo\metre} of distribution pipeline; SSGCL reports \SI{4206}{} and
+\SI{49811}{\kilo\metre}, respectively. The combined systems serve \num{10748538} domestic,
+\num{91925} commercial and \num{11318} industrial customers. Seventeen named compressor sites,
+two LNG import terminals and \num{3437.13} MMCF d$^{-1}$ of utility and independent-system sales are
+reported. The reference T\&D estimate uses measured pipeline length; throughput is an alternative
+IPCC basis. Across the nine-year record, transmission length rises from
+\SI{11555.08}{\kilo\metre} to \SI{13526.69}{\kilo\metre}, distribution length from
+\SI{148278}{\kilo\metre} to \SI{201230}{\kilo\metre}, and domestic customers from \num{7997096} to
+\num{10748538}. This supports a nine-year segment-resolved reconstruction rather than a
+production-only historical extrapolation.
+
+The FY2021--22 report identifies \SI{8200}{\kilo\metre} of polythene distribution pipe in the
+SSGCL system. This is only \SI{4.2}{\percent} of the reported national distribution network and
+does not classify the SNGPL network. Utility reports document active loss-control work---SNGPL
+surveyed \SI{50250}{\kilo\metre} of underground network in FY2023--24 and both utilities report
+rehabilitation and leak surveys---but do not establish national annual LDAR coverage
+\citep{sngpl2024,ssgc2024}. Because the
+2019 lower distribution factor requires both more than half plastic pipe and LDAR in use, the
+public evidence does not resolve either national criterion sufficiently to select it.
+
+OGRA reports \num{10.67} million tonnes of refinery product output. IPCC calls for crude feed,
+so output converted at \SI{0.85}{\tonne\per\cubic\metre} is a provisional activity proxy with
+\SI{20}{\percent} uncertainty. Produced gas is similarly used as provisional gas-processing
+throughput. Neither proxy is hidden: both can be excluded by a coverage scenario.
+
+Post-meter industrial activity is reconstructed directly from OGRA end-use controls rather than
+one undifferentiated non-residential total. The included FY2023--24 classes are commercial,
+general industry, fertilizer, captive power, cement and power stations, together
+\num{2439.23} MMCF d$^{-1}$, which converts to \num{25211.03} million m$^3$ yr$^{-1}$;
+the registered activity the leak factor rides is \num{25210.98} million m$^3$ yr$^{-1}$
+before the fertilizer feedstock is withheld and \num{18684.62} after. The factor is defined
+on gas consumed in combustion equipment, and \SI{83.5}{\percent} of the fertilizer class is
+chemical feedstock, reformed and not burned, on the producers' metered feed and fuel gas
+\citep{nfdc2025}; that feedstock, \num{6526.4} million m$^3$, is outside the base and the
+process fuel stays in. Residential gas is
+represented by the separate appliance fallback; CNG and unclassified other-system gas remain
+outside the industrial/power row. The included class sum differs from the registered six-class
+activity by only \num{0.042} million m$^3$ because published daily flows are rounded.
+
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llrlp{6.0cm}@{}}
+\toprule
+\textbf{Segment} & \textbf{Activity} & \textbf{Value} & \textbf{Status} & \textbf{Principal structural issue} \\
+\midrule
+Oil production & onshore oil & 4,103.77 thousand m$^3$ & official & offshore split unavailable \\
+Oil refining & converted product output & 12,552.94 thousand m$^3$ & proxy & crude-feed throughput unavailable \\
+Gas production/gathering & produced gas & 32,309.47 million m$^3$ & official/proxy & well and field split unavailable \\
+Gas processing & produced gas & 32,309.47 million m$^3$ & proxy & plant throughput and sour share \\
+Transmission & pipeline length & 13,526.69 km & official & LDAR and seal practice \\
+Distribution & pipeline length & 201,230 km & official & material share and LDAR \\
+Post-meter appliances & domestic connections & 10,748,538 & official/proxy & one appliance per meter \\
+Post-meter industry/power & non-residential gas & 25,210.98 million m$^3$ & official & factor transferability; fertilizer feedstock withheld from this base (see text) \\
+\bottomrule
+\end{tabular}
+\caption{FY2023--24 reference activities. A proxy is estimated with an explicit fallback and
+structural exclusion case; it is not described as observed.}
+\label{tab:activity}
+\end{table*}
+
+\subsection{Observational and official comparison layers}
+
+The current World Bank individual-flare workbook \citep{worldbankflaring2026}---built on
+VIIRS Nightfire satellite pyrometry \citep{viirsnightfire}---contains annual volumes for
+2012--2025 and \num{130} sites labelled Pakistan. The UNEP MARS snapshot contains plume and source tables under
+a CC BY-NC-SA licence \citep{unepmars2026}; after filtering country and sector, it contains
+\num{20} oil-and-gas sources and \num{174} plume detections. A public-domain geoBoundaries ADM1
+layer assigns both products to provinces \citep{runfola2020}. Field-level evaluation uses
+OGRA Table~3.34: its 84 published rows reconcile to \num{2637.75} MMCF d$^{-1}$, within
+\num{0.03} MMCF d$^{-1}$ of the official total, and are canonicalized to 73 named fields.
+
+The official comparison is extracted programmatically from Pakistan's 2022 CRT workbook. The
+pipeline stores the package and workbook SHA-256 hashes, worksheet names, cell coordinates, raw
+values, units, formulas and notation keys. The BTR's 2021 1.B.2 value is retained as a second
+official-year comparator.
+
+\subsection{Boundary and completeness}
+
+The reference account covers oil and natural-gas systems under 1.B.2. Coal mining fugitives
+(1.B.1) are outside the paper's stated boundary and are retained as NE in the completeness
+matrix, now with a partial Tier-1 screen beside the key: the Thar mine-mouth deliveries the
+power ledger holds bound the surface share (see
+\texttt{outputs/fugitives\_coal\_screen\_2024.csv}), while underground production---whose
+per-tonne factors run thirty times the surface low---remains unquantified. Oil and gas exploration, abandoned wells, natural-gas vehicles and anomalous events
+also remain NE; storage is NO because the regulator describes facilities as planned rather
+than operating. Venting and flaring are included elsewhere (IE) in the inclusive segment
+factors and reported separately only as observation memos.
+For every NE row, the completeness matrix records whether it is potentially material, probably
+minor, unknown or outside scope and identifies the activity needed to estimate it. No numerical
+upper bound is invented where public activity is unavailable.

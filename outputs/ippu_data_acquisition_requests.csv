@@ -1,0 +1,32 @@
+ipcc_code,category,materiality,request_recipient,requested_information,current_public_evidence
+2.A.2,Lime production,high,PBS and major industrial users,Compile marketed and captive lime by type,PBS CMI/mineral statistics; industrial users
+2.A.3,Glass production,medium,PBS and glass producers,Convert output to tonnes and obtain glass type/cullet/carbonates,PBS QIM; glass producers
+2.A.4,Other carbonate uses,medium,PBS and provincial industry departments,"Screen ceramics, refractories and carbonate fluxes",PBS CMI; ceramics and mineral statistics
+2.B.2,Nitric acid production,critical,Nitric-acid producers,Compile FY2024 100%-acid output plus abatement utilisation and destruction,Company reports; CDM monitoring; CRT
+2.B.3,Adipic acid production,low,PBS and Ministry of Industries,Establish occurrence before assigning NO,PBS CMI; customs
+2.B.4,Caprolactam glyoxal and glyoxylic acid,low,PBS and Ministry of Industries,Establish occurrence before assigning NO,PBS CMI; customs
+2.B.5,Carbide production,low,PBS and Ministry of Industries,Establish occurrence and production route,PBS CMI; customs
+2.B.6,Titanium dioxide production,low,PBS and Ministry of Industries,Establish occurrence and process route,PBS CMI; customs
+2.B.8,Petrochemical and carbon black production,medium,PBS and chemical producers,Compile products and process routes,PBS CMI/QIM; company reports
+2.B.9,Fluorochemical production,medium,National Ozone Unit,Separate domestic production from imports,National Ozone Unit; customs
+2.B.10,Other chemical production,unknown,PBS and Ministry of Industries,Screen hydrogen and remaining processes,PBS CMI
+2.C.2,Ferroalloys production,medium,PBS and producers,Establish occurrence and reductant inputs,PBS CMI; customs
+2.C.3,Aluminium production,medium,PBS and producers,Separate primary aluminium from remelting/fabrication,PBS CMI; customs
+2.C.4,Magnesium production,low,PBS and producers,Establish occurrence and cover-gas use,PBS CMI; customs
+2.C.5,Lead production,low,PBS and producers,Separate primary and secondary production,PBS CMI; company reports
+2.C.6,Zinc production,low,PBS and producers,Separate primary and secondary production,PBS CMI; company reports
+2.C.7,Other metal production,unknown,PBS,Complete occurrence screen,PBS CMI
+2.D.2,Paraffin wax use,low,OCAC and PBS,Compile apparent consumption and oxidation assumptions,OCAC; customs
+2.D.3,Other non-energy products,low,PBS and OCAC,Screen solvent/asphalt/urea-catalyst uses,PBS QIM/CMI; OCAC
+2.E,Electronics industry,low,Ministry of Industries,Determine whether semiconductor/PV/flat-panel process gases occur,PBS QIM/CMI; customs
+2.F.1,Refrigeration and air conditioning,critical,National Ozone Unit and customs,Acquire chemical/application imports and equipment-bank activity,Ozone Secretariat; National Ozone Unit; customs; CRT
+2.F.2,Foam blowing agents,medium,National Ozone Unit,Acquire chemical/application consumption,National Ozone Unit; customs
+2.F.3,Fire protection,low,National Ozone Unit,Acquire agent imports and installed banks,National Ozone Unit; customs
+2.F.4,Aerosols,medium,National Ozone Unit,Acquire chemical/application consumption,National Ozone Unit; customs
+2.F.5,Solvents,low,National Ozone Unit,Acquire chemical/application consumption,National Ozone Unit; customs
+2.F.6,Other ODS-substitute applications,unknown,National Ozone Unit,Complete application screen,National Ozone Unit; customs
+2.G.1,Electrical equipment,medium-high,NTDC DISCOs and K-Electric,"Acquire equipment banks, purchases, refills and recovery",NTDC; DISCOs; K-Electric; customs
+2.G.2,Other SF6 and PFC product use,low,Ministry of Industries,Complete occurrence screen,customs; industry survey
+2.G.3,N2O product uses,low,Ministry of Health and customs,Compile medical/aerosol N2O sales,medical and customs statistics
+2.G.4,Other product manufacture and use,unknown,PBS and customs,Complete occurrence screen,PBS CMI; customs
+2.H,Other industrial processes,low,PBS and inventory compiler,Audit pulp/paper and food/beverage boundary,Pakistan CRT; PBS CMI

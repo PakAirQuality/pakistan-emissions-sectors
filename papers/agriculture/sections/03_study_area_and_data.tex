@@ -1,0 +1,132 @@
+% ===========================================================================
+\section{Study Area and Data}
+\label{sec:data}
+% ===========================================================================
+
+\subsection{Study area}
+
+Agriculture in Pakistan is concentrated in the irrigated Indus basin, which extends through
+Punjab and Sindh and supports most of the country's crop and livestock production.
+Approximately four-fifths of Pakistan's cropland is irrigated through canals and tube wells.
+The country also has a large livestock population, with buffalo accounting for a substantial
+share, and is among the world's largest consumers of urea fertiliser.
+
+These characteristics shape both the composition and the geography of agricultural
+emissions. Enteric fermentation and soil nitrous oxide dominate the greenhouse-gas
+inventory, while emissions are spatially concentrated in the irrigated canal belt.
+
+\subsection{Activity data}
+
+National activity data are drawn primarily from official Pakistani sources. Livestock
+populations are taken from the 2024 PBS 7th Agricultural Census \citep{pbscensus2024}. The
+Pakistan Economic Survey \citep{econsurvey2024ag} is used as a cross-check. The two sources are
+not expected to match exactly because the census is based on enumeration, whereas the
+Economic Survey includes projections derived from earlier census rounds.
+Within the census itself the national summary table and the district tables are separate
+transcriptions, and they differ by a handful of head in two species. Neither is edited to force
+agreement: the national table is the emissions control, the district tables drive the spatial
+allocation, and the residual per species is published with the normalisation factor it implies in
+\texttt{outputs/agriculture\_livestock\_reconciliation\_2024.csv}.
+
+Crop area and production data are taken from the Pakistan Economic Survey's Agriculture
+chapter for FY2023--24 \citep{econsurvey2024ag} and PBS agricultural statistics.
+Synthetic-nitrogen offtake is the audited full-year figure from the National Fertilizer
+Development Centre's Fertilizer Review for the same year \citep{nfdc2024}. Both documents are
+archived in this repository; the citations name the editions the engine reads, not the most
+recent editions published. FAOSTAT activity series are used to reconstruct emissions
+for 1990--2023, while the 2024 inventory is anchored to the latest Pakistani census and
+administrative data \citep{faostat}.
+
+\subsection{Geospatial data}
+
+Spatial allocation uses the open global datasets listed in Table~\ref{tab:data}.
+
+Livestock emissions are allocated using species-specific densities from Gridded Livestock of
+the World~4 \citep{glw4}. Rice-related emissions ride MapSPAM~2020 physical rice
+area \citep{mapspam2020}: the raster (V2r2) is held and hash-pinned since the
+spatial facility program, its former cropland-fallback class deleted from the
+allow-list so a checkout without it refuses the build, and the own-year GCD-Rice
+2023 classification is published beside it as a crosscheck and a priced
+district-level bracket. Crop-residue
+burning is allocated using NASA FIRMS VIIRS
+active-fire detections from the reporting period's own burning windows
+\citep{firms}. The held record spans all nine fiscal years---\num{1664876} unique
+detections fetched over per-crop burning windows derived from the FAO crop calendar's
+own harvest dates (rice, wheat, cotton, maize and sugarcane, each harvest followed by a
+45-day residue-clearing tail, clipped to its fiscal year)---but the spatial surface
+consumes only the reporting period's own dates, \num{166393} in-grid detections inside
+FY2023--24. Period-matching is a correction this series already made once (an earlier
+extraction spanned October 2024--May 2025, one season after the period, and that offset
+was declared until the period-matched extraction replaced it), so the nine-year record
+is deliberately not pooled into a climatology here: each year's fires allocate only
+that year. The window shapes only the within-province fire geography, never a
+magnitude.
+
+The fire layer's construction is stated in full so its declared choices are reviewable.
+The product is the science-quality \texttt{VIIRS\_SNPP\_SP} archive, requested in
+five-day spans (the area API's maximum) over the national bounding box; detections
+are deduplicated on (latitude, longitude, acquisition date).
+Each detection is weighted by fire radiative power plus one---FRP approximates biomass
+burned, and the offset keeps zero-FRP detections from vanishing. Two filters are
+deliberately \emph{not} applied to this spatial surface, and their absence is a
+declared choice rather than an
+omission: no confidence filter (every detection at any confidence enters the surface)
+and no crop mask (the only mask is the national boundary, so non-agricultural fires
+inside Pakistan contribute weight where they burn). The monthly timing layer is
+stricter: there an attribution ladder masks the bounding box's Indian-Punjab
+detections, excludes persistent detections within \num{0.01}\si{\degree} of the kiln
+registry's coordinates, and keeps cropland detections only---of the \num{169657}
+detections in FY2023--24, \num{103747} fall outside Pakistan, \num{4102} sit near
+kilns, \num{9380} off cropland, and \num{52428} are attributed to residue burning; the
+unattributed counts are published in the burning crosscheck, never forced into the
+profile. A district shape carrying
+residue-burning mass in which the layer records no fire falls back to a uniform spread
+within that shape, declared per event in the grid fallback ledger; a fetch returning
+zero detections refuses to write at all, so an empty fire layer can never look
+fetched. Other
+cropland-related streams are allocated using the cropland fraction from ESA WorldCover~2021
+\citep{worldcover2021}.
+
+Provincial boundaries are obtained from geoBoundaries \citep{runfola2020}, while district
+boundaries are based on GADM or GAUL ADM2 polygons. District allocations are evaluated
+against crop-area statistics published by the Ministry of National Food Security and
+Research \citep{mnfsrcrops}. National emission totals are compared with FAOSTAT, EDGAR and
+Climate TRACE.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\begin{tabularx}{\linewidth}{@{}llX@{}}
+\toprule
+\textbf{Dataset} & \textbf{Use} & \textbf{Role} \\
+\midrule
+PBS 7th Ag.\ Census & activity & livestock, crop area \\
+Economic Survey & activity & crops, livestock cross-check \\
+NFDC & activity & synthetic nitrogen \\
+FAOSTAT (QCL/RFN/GT) & activity/bench. & time series, benchmark \\
+EDGAR 2024/2025 & benchmark & independent national totals \\
+Climate TRACE v7.1.9 & benchmark & independent national totals \\
+MNFSR district crops & records & district validation (rice, wheat) \\
+\GLW{} (2020) & proxy & livestock density \\
+MapSPAM 2020 & proxy (held, hash-pinned) & rice area \\
+ESA WorldCover 2021 & proxy & cropland fraction \\
+NASA FIRMS (VIIRS) & proxy & fire occurrence \\
+geoBoundaries / GADM & boundary & province / ADM2 district polygons \\
+\bottomrule
+\end{tabularx}
+\caption{Principal datasets used in the inventory. Pakistani official statistics provide
+the national and administrative activity data. Open global products provide spatial proxies
+and external benchmarks. Inputs used only in the exploratory land-sector extension are
+listed in Supplementary Note~S1.}
+\label{tab:data}
+\end{table}
+
+\subsection{Status of the estimates}
+
+The estimates remain provisional wherever this inventory holds no nationally measured
+parameter. The
+livestock population is anchored to the 2024 agricultural census, but the dairy-cattle share
+is derived from FAOSTAT milk-animal counts. Rice harvested area and several agronomic
+fractions are based on published literature or default assumptions pending national survey
+data. Each such parameter is identified in the input files and carried through the resulting
+outputs and uncertainty analysis.

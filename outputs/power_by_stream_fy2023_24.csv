@@ -1,0 +1,18 @@
+category,subitem,gas,fossil,emissions_Gg,co2e_Mt_AR5,co2e_Mt_AR6,uncert_pct
+Electricity and heat production,Coal CO2,CO2,False,20589.5274,20.58953,20.58953,10.9
+Electricity and heat production,Coal CH4,CH4,True,0.2066,0.0062,0.00616,150.1
+Electricity and heat production,Coal N2O,N2O,False,0.3099,0.08213,0.08461,150.1
+Electricity and heat production,Diesel Oil CO2,CO2,False,134.1858,0.13419,0.13419,10.2
+Electricity and heat production,Diesel Oil CH4,CH4,True,0.0054,0.00016,0.00016,150.3
+Electricity and heat production,Diesel Oil N2O,N2O,False,0.0011,0.00029,0.0003,150.3
+Electricity and heat production,Furnace Oil CO2,CO2,False,1785.8109,1.78581,1.78581,12.4
+Electricity and heat production,Furnace Oil CH4,CH4,True,0.0692,0.00208,0.00206,150.5
+Electricity and heat production,Furnace Oil N2O,N2O,False,0.0138,0.00367,0.00378,150.5
+Electricity and heat production,Gas CO2,CO2,False,17397.7993,17.3978,17.3978,10.8
+Electricity and heat production,Gas CH4,CH4,True,0.3101,0.0093,0.00924,150.3
+Electricity and heat production,Gas N2O,N2O,False,0.031,0.00822,0.00847,150.3
+Captive gas self-generation (1A2),Captive natural gas CO2,CO2,False,5543.904,5.5439,5.5439,15.3
+Captive gas self-generation (1A2),Captive natural gas CH4,CH4,True,0.0988,0.00296,0.00294,150.7
+Captive gas self-generation (1A2),Captive natural gas N2O,N2O,False,0.0099,0.00262,0.0027,150.7
+Electricity and heat production,Bagasse CH4,CH4,False,0.3271,0.00916,0.00883,151.7
+Electricity and heat production,Bagasse N2O,N2O,False,0.0436,0.01156,0.01191,151.7

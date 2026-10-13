@@ -1,0 +1,123 @@
+\section{Methods}
+\label{sec:methods}
+
+\subsection{The calculation}
+
+Litres to tonnes to energy to emissions, once per fuel and per gas:
+\begin{equation}
+E_{f,g} \;=\; Q_f \cdot \rho_f \cdot \mathrm{NCV}_f \cdot \mathrm{EF}_{g},
+\label{eq:main}
+\end{equation}
+where $Q_f$ is the published quantity, $\rho_f$ the density needed to reach a mass basis,
+$\mathrm{NCV}_f$ the net calorific value, and $\mathrm{EF}_{g}$ the IPCC rail factor for gas
+$g$. There is nothing else in the sector.
+
+The density matters more than it looks. Pakistan Railways reports litres and every IPCC factor
+is per unit of energy, so a density is unavoidable, and it is taken from Pakistan State Oil's
+own high-speed-diesel material safety data sheet---specific gravity \numrange{0.83}{0.86} at
+\SI{16}{\celsius}, midpoint \SI{0.845}{\kilo\gram\per\litre}---rather than from a generic
+international default. That spread is the entire uncertainty in the step, and at
+\SI{2}{\percent} it is the smallest term in the sector.
+
+\subsection{The furnace-oil rows}
+
+Furnace oil takes its \COtwo{} factor from the fuel's own carbon content in Volume~2 Chapter~2
+Table~2.2, because Table~3.4.1 tabulates only diesel and sub-bituminous coal. Its \CHfour{} and
+\NtwoO{} factors are the diesel rail values, following §3.4.1.4, which directs that other
+traction fuels burnt in the same engines be treated with the same emission properties. Both
+choices are recorded on the factor rows rather than inferred from the code.
+
+\subsection{Fossil methane}
+
+Diesel and furnace oil are fossil fuels, so their \CHfour{} takes AR5's fossil value of
+\num{30} rather than the biogenic \num{28}---the same treatment as road transport, power and
+aviation, and the opposite of waste. A test asserts the \COe{} of every \CHfour{} row against
+\num{30} exactly, because the two values differ by seven percent and nothing in the output
+distinguishes them.
+
+\subsection{The air-pollutant layer}
+\label{sec:air}
+
+Air pollutants take the EMEP/EEA Guidebook's railway chapter \citep{emep2023rail} at
+Tier~1: factors per tonne of fuel, on the identical fuel-mass chain as the greenhouse
+gases, in kilotonnes of native mass that never enter a \COe{} total. Black carbon is the
+chapter's declared fraction (\num{0.65}) of PM\textsubscript{2.5}---a component of the
+particulate mass, never an addition to it---and the chapter's one defect is recorded
+rather than repaired: its printed 95\% intervals for the three particulate rows do not
+bracket their own central values, so those rows carry the printed bounds verbatim and a
+conservative $\pm$\SI{100}{\percent}.
+
+\SOtwo{} is stoichiometry, not a factor: twice the fuel's sulfur mass. The chapter says
+operator sulfur values are preferable to defaults; Pakistan Railways publishes none, and
+Pakistani diesel spans three orders of magnitude---\SI{10}{ppm} Euro-V imports, mandatory
+since January 2021, against the \SI{500}{ppm} pre-Euro-V specification and the older
+specification's \SI{1}{\percent} ceiling that covers most of the historical series. So
+\SOtwo{} ships as an explicit case ladder with the \SI{500}{ppm} specification as the
+declared reference, not as one number pretending to precision the fuel supply does not
+have.
+
+A Tier~2 diagnostic accompanies the reported Tier~1 layer: fuel split among line-haul
+passenger, line-haul freight and shunting (railcars are not occurring---workings are Nil
+in every recent year), rescaled to the metered control exactly, as the chapter itself
+instructs. Published train-kilometres divide the line-haul fuel; the shunting share is a
+declared five-percent assumption, derived from the chapter's own duty rates and
+gap-registered, because no shunting activity is published in any form. What the diagnostic
+shows is the duty-cycle sensitivity: a nearly-all-line-haul fleet implies Tier~1
+understates NO\textsubscript{x} by roughly a fifth and overstates fine particulate mass by
+about a sixth, and neither layer is silently swapped for the other.
+
+\subsection{The diesel closure against road transport}
+\label{sec:closure}
+
+Pakistan's national high-speed-diesel supply figure covers road, rail, agriculture and
+captive generation together. While the road transport sector anchored on that single national
+figure, every litre Pakistan Railways burns was at risk of being counted twice---once here and
+once as road diesel---and the road sector deducted this module's diesel, litre for litre, by
+calling it rather than by holding a copy of the number.
+
+\textbf{That deduction has been retired, and this section records why rather than describing a
+mechanism that no longer runs.} Road transport is now anchored on the petroleum industry's own
+customer classes, in which Railways is a separate row from Road. The double-count is excluded
+by construction at the source, so subtracting the railway account from the road control would
+now remove the same fuel twice.
+
+What the railway fuel account does instead is better. Freed from being an internal correction,
+it is an \emph{independent cross-source check}: the operator's own metered purchases, from the
+Year Book, against the petroleum industry's Railways customer-class total, two organisations
+counting the same physical fuel by different routes. The quantity itself is unchanged---
+the module's metered diesel is \SI{112.04}{\kilo\tonne}, traction and non-traction
+together---and only what the inventory does with it has moved. An internal deduction can only be
+arithmetically consistent; an independent comparison can be wrong, which is what makes it
+worth reporting. Section~\ref{sec:validation} gives the comparison.
+
+The general point outlives this instance. A closure that becomes structurally impossible has
+been superseded by better source data rather than broken, and the right response is to delete
+the correction and say so---not to keep a compensating adjustment running against a control
+that no longer needs it.
+
+One deduction from road transport's controls does survive, and it is not this sector's:
+household generator petrol, owned by the residential module. A test asserts that the railway
+account contributes nothing to it---Pakistan Railways burns no petrol, and deducting from a
+fuel the operator does not use would be a second error correcting the first.
+
+\subsection{Provincial allocation: the route-constrained model}
+\label{sec:spatial}
+
+Railway emissions can occur only along a railway, so the allocation is constrained to one.
+Line-haul fuel runs along the OpenStreetMap-derived network---\num{7574} active
+line-kilometres, \SI{97}{\percent} of the Year Book's \num{7791} route-kilometres---divided
+into corridors; shunting fuel sits at the seven divisional yards, weighted by their
+published wagon loadings; and each of the three service streams takes its fuel share from
+the Tier~2 split, on a surface that reconciles to the national control exactly at national,
+provincial and district level on every run.
+
+The honest split of that construction: the network geometry, the yard locations and the
+route-kilometre audit are data; the corridor service weights are \emph{declared judgment},
+stated basis-by-basis on their data rows, because the operator's public timetable interface
+refuses unauthenticated access and no service-frequency statistics are published. The
+previous proxy---freight wagons loaded by division, which credited Sindh with fuel burnt
+hauling Karachi-origin freight up-country and allocated passenger operations (four times the
+freight train-kilometres) by freight geography---is retained as a structural alternative,
+and both splits are published. The national total is identical under either; the engine
+reads the transcribed share row, and a test pins that row against a fresh spatial
+computation so the two cannot drift apart.

@@ -1,0 +1,23 @@
+# WHAT WENT IN AND WHAT CAME OUT, per source stream: the activity quantities, the
+# conversions, the emission factors and the published emission on ONE row.
+# 
+# Outside fugitives - whose segment ledger has always carried activity x factor x
+# structural multiplier - nothing in this release put those numbers beside each other.
+# fact_annual carries the emission and the method_id but neither of the two numbers that
+# were multiplied, and every *_by_stream_*.csv carries only the output. This closes that.
+# 
+# IT IS NOT AN IDENTITY. `reproduces` is yes ONLY where one activity times one factor
+# lands on the published emission within tolerance. Most streams are no or not_attempted,
+# because the engines apply steps the parameter ids do not carry - a partition, a share, a
+# survival curve, a first-order decay. That is the honest state of the join and the reason
+# is on the row; a yes that had not been checked would be worth less than nothing.
+# 
+# Written by pkinv.report.derivation_chain; parameter values resolve through
+# core.parameters.registry() by dependency_group, and factor ids through
+# data/emission_factors.csv.
+source_stream_id,category,subitem,gas,method_id,equation,activity,conversion,factor,unresolved_ids,emissions_Gg,native_unit,co2e_Mt_AR5,reproduces,reproduction_note
+ippu|ammonia-production|ammonia-process-co2-net-of-urea-recovery|co2,Ammonia production,Ammonia process CO2 net of urea recovery,CO2,ipcc2006_v3_ch3_eq3.9_ammonia_co2_tier1_calibrated,"2006 V3 Ch3 Eq 3.9-3.10 (Tier 1, urea recovery deducted)",ippu:ammonia embodied in NFDC production=4450.16624 kt NH3,,ippu:ammonia CO2 factor (calibrated)=1.815 t CO2/t NH3,,3243.300459,Gg,3.24330046,no,one activity value and one factor value resolve and their product is not the published mass: the engine applies a step the parameter ids do not carry
+ippu|cement-production|clinker-calcination-co2|co2,Cement production,Clinker calcination CO2,CO2,ipcc2006_v3_ch2_eq2.2_clinker_co2,2006 V3 Ch2 Eq 2.2 (Tier 2 clinker route),ippu:census clinker production=41953.17 kt clinker; ippu:diagnostic model clinker exports=3792.074 kt clinker; ippu:diagnostic model clinker imports=26.131 kt clinker,,ippu:clinker CO2 emission factor=0.52 t CO2/t clinker,clinker_fraction_census_implied,21815.6484,Gg,21.8156484,not_attempted,"3 distinct activity and 1 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+ippu|iron-and-steel-production|crude-steel-(electric-route)-process-co2|co2,Iron and steel production,Crude steel (electric route) process CO2,CO2,ipcc2006_v3_ch4_eq4.1_steel_co2_tier1_eaf,"2006 V3 Ch4 Table 4.1 (Tier 1, EAF route)",ippu:crude steel (QIM billets and ingots)=4914.0 kt steel,,"ippu:steel CO2 factor (EAF, Tier 1)=0.08 t CO2/t steel",,393.12,Gg,0.39312,yes,4914.0 x 0.08 x1 reproduces the published mass
+ippu|lubricant-use|grease-oxidised-in-use|co2,Lubricant use,Grease oxidised in use,CO2,ipcc2006_v3_ch5_eq5.2_lubricant_odu_tier1,2006 V3 Ch5 Eq 5.2 (Tier 1 ODU),ippu:lubricants sold (OCAC lubes + greases)=143020.0 t,,ippu:lubricant oxidised-during-use fraction=0.2 fraction,,0.344769,Gg,0.00034477,no,one activity value and one factor value resolve and their product is not the published mass: the engine applies a step the parameter ids do not carry
+ippu|lubricant-use|lubricating-oil-oxidised-in-use|co2,Lubricant use,Lubricating oil oxidised in use,CO2,ipcc2006_v3_ch5_eq5.2_lubricant_odu_tier1,2006 V3 Ch5 Eq 5.2 (Tier 1 ODU),ippu:lubricants sold (OCAC lubes + greases)=143020.0 t,,ippu:lubricant oxidised-during-use fraction=0.2 fraction,,82.945518,Gg,0.08294552,no,one activity value and one factor value resolve and their product is not the published mass: the engine applies a step the parameter ids do not carry

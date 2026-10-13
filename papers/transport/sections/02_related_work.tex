@@ -1,0 +1,62 @@
+% ===========================================================================
+\section{Related Work}
+\label{sec:related}
+% ===========================================================================
+
+\subsection{Fuel-based and fleet-based transport inventories}
+
+The IPCC 2006 Guidelines describe both approaches for 1A3b and are explicit that the fuel-based
+Tier~1 is preferred where national fuel statistics are reliable and fleet data are not
+\citep{ipcc2006energy}. That guidance is often inverted in practice, because a fleet-based estimate
+produces the disaggregation that transport policy wants and a fuel-based one does not.
+
+The position taken here is that the two are not alternatives at the same level. The fuel
+figure determines the total; the fleet model determines the split. Running the fleet model
+\emph{inside} the fuel constraint gives the policy-relevant disaggregation without letting it
+set the magnitude, which is the arrangement the guidelines' preference implies but which is
+rarely stated as such.
+
+\subsection{Global products and their transport scope}
+
+EDGAR \citep{edgar2025booklet,crippa2020} reports Pakistani transport across all modes---road, rail,
+domestic aviation and navigation together. Comparing that against a road-only estimate is a
+scope error that will make any road inventory look low; Section~\ref{sec:validation} walks
+the scope component by component instead, and labels the result honestly as fiscal-year blended
+and partially scope-harmonized.
+
+Climate TRACE \citep{climatetrace} constructs road transport from asset and activity
+inference. Both are global models applying globally consistent assumptions, which is their
+strength across countries and their limitation within one: neither can know that Pakistan's
+national diesel figure includes agricultural and captive-generation fuel, which is the single
+largest scope question in this sector.
+
+\subsection{Off-road machinery, and where it belongs}
+
+IPCC reports off-road mobile machinery outside road transport, and not all under one
+category: agricultural tractors and plant go to 1A4c\,ii, while construction and industrial
+machinery belongs under 1A2 (manufacturing and construction, gvii). This is easy to state
+and easy to get wrong in a country where the diesel that runs all of it comes from the same
+retail pumps as the diesel that runs the trucks and is not separately reported---and this
+inventory gets it only partly right: its off-road class inherits a residual bucket that
+mixes both, and is reported under the mixture-declaring name \emph{Mixed off-road
+(1A4c/1A2)} with the misassignment declared in the completeness table and priced as a
+reporting-recode scenario rather than resolved (Section~\ref{sec:limitations}).
+
+The usual treatments are to leave it inside road transport, which overstates 1A3b and leaves
+1A4c empty, or to estimate it separately from a machinery population, which double-counts the
+fuel unless the road control total is reduced correspondingly. Section~\ref{sec:methods}
+describes a third: carve it out of the same control total by vehicle-kilometre share, so the
+two categories partition one quantity of diesel.
+
+\subsection{The parallel-table problem}
+
+Chapter~3 of Volume~2 publishes separate default tables for road, rail and off-road mobile
+sources, and the same diesel appears in all of them with identical \COtwo{} and sharply
+different \NtwoO{}. The distinction reflects real combustion differences---catalyst-equipped
+road engines against uncontrolled off-road ones---but the tables are easy to conflate because
+the fuel is bought from the same pump.
+
+The national manuscript documents four instances of this trap across the inventory
+\citep{ahmad2026national}. Section~\ref{sec:factors} treats the one that arises here, and
+reports the diagnostic the engine emits on every run so the consequence is a number rather
+than a caution.

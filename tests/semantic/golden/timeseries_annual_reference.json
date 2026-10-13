@@ -1,0 +1,19 @@
+{
+ "expect": [
+  {
+   "cell": 0,
+   "group": {
+    "period_id": "FY2015-16"
+   },
+   "note_rc55": "rc55 receipt re-base: 88cd8573aaf0c4dcc00f3a85798f8305 -> e8d553fac8783563a266edc6f61dc6c3. NO NUMBER MOVED. get_timeseries minted its receipt over the EXPANDED QueryEmissions and then overwrote `request` with the TimeseriesRequest, so the stored request did not reproduce the stored receipt and a replay of a timeseries download link failed receipt_not_reproduced. The receipt is now minted over the request the envelope actually carries, which is what compare_emissions always did."
+  }
+ ],
+ "expect_receipt": "5a2949e02798866e565ba4cf9ec2bf04",
+ "function": "get_timeseries",
+ "golden_id": "timeseries_annual_reference",
+ "note": "rc67 (2026-10-13): renamed from timeseries_annual_L. The suffix named the reference configuration by its dung letter, and the reference is no longer L: it carries the household survey's dung (S) in every year, and L is the alternative. The request is unchanged - it asks for the reference by default. The receipt moved because every year's total now carries the survey series' dung in place of the ledger's.",
+ "request": {
+  "query": {},
+  "step": "annual"
+ }
+}

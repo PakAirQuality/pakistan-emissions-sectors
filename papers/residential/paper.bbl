@@ -1,0 +1,188 @@
+\begin{thebibliography}{20}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Unpublished
+\bibitem[{Ahmad(2026)}]{ahmad2026national}
+\bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Pakemis v1.0: an evidence-graded public-data
+  reconstruction of pakistan's non-lulucf greenhouse-gas emissions, fy2015--16
+  to fy2023--24}.
+\newblock \bibinfo{note}{Manuscript in preparation for Earth System Science
+  Data; it describes release 1.0.0rc67, whose data, software and technical
+  documentation DOIs are reserved and not yet assigned (see CITATION.cff). No
+  submission has been made}.
+%Type = Article
+\bibitem[{Akagi et~al.(2011)Akagi, Yokelson, Wiedinmyer, Alvarado, Reid, Karl,
+  Crounse and Wennberg}]{akagi2011}
+\bibinfo{author}{Akagi, S.K.}, \bibinfo{author}{Yokelson, R.J.},
+  \bibinfo{author}{Wiedinmyer, C.}, \bibinfo{author}{Alvarado, M.J.},
+  \bibinfo{author}{Reid, J.S.}, \bibinfo{author}{Karl, T.},
+  \bibinfo{author}{Crounse, J.D.}, \bibinfo{author}{Wennberg, P.O.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Emission factors for open and domestic biomass
+  burning for use in atmospheric models}.
+\newblock \bibinfo{journal}{Atmospheric Chemistry and Physics}
+  \bibinfo{volume}{11}, \bibinfo{pages}{4039--4072}.
+\newblock \DOIprefix\doi{10.5194/acp-11-4039-2011}.
+%Type = Article
+\bibitem[{Andreae(2019)}]{andreae2019}
+\bibinfo{author}{Andreae, M.O.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Emission of trace gases and aerosols from biomass
+  burning -- an updated assessment}.
+\newblock \bibinfo{journal}{Atmospheric Chemistry and Physics}
+  \bibinfo{volume}{19}, \bibinfo{pages}{8523--8546}.
+\newblock \DOIprefix\doi{10.5194/acp-19-8523-2019}.
+%Type = Techreport
+\bibitem[{{CCAC/SEI}(2023)}]{ccacsei2023}
+\bibinfo{author}{{CCAC/SEI}}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Integrated Assessment of Air Pollution and Climate
+  Change Mitigation in Pakistan}.
+\newblock \bibinfo{type}{Technical Report}. Climate and Clean Air Coalition /
+  Stockholm Environment Institute.
+\newblock \bibinfo{note}{Section 3.1, national results. Available from the CCAC
+  resource library, \url{https://www.ccacoalition.org/}}.
+%Type = Misc
+\bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{GHG} emissions of all world countries --- 2025
+  report ({EDGAR} {GHG} booklet)}.
+\newblock \bibinfo{howpublished}{European Commission, Joint Research Centre}.
+\newblock \bibinfo{note}{Sheet GHG\_by\_sector\_and\_country; annual series
+  1970--2024; CC BY 4.0. Snapshot archived at
+  \texttt{sources/EDGAR/EDGAR\_2025\_GHG\_booklet\_2025.xlsx}, sha256
+  \texttt{8bd6b8a4\ldots} pinned per benchmark row in
+  \texttt{data/benchmarks.csv}. \url{https://edgar.jrc.ec.europa.eu/}}.
+%Type = Techreport
+\bibitem[{{EMEP/EEA}(2019)}]{emep2019}
+\bibinfo{author}{{EMEP/EEA}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{EMEP/EEA air pollutant emission inventory guidebook
+  2019 --- 3.F Field burning of agricultural wastes}.
+\newblock \bibinfo{type}{Technical Report}. European Environment Agency.
+%Type = Techreport
+\bibitem[{{EMEP/EEA}(2023)}]{emep2023smallcombustion}
+\bibinfo{author}{{EMEP/EEA}}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Air Pollutant Emission Inventory Guidebook 2023,
+  chapter 1.A.4 Small Combustion}.
+\newblock \bibinfo{type}{Technical Report}. European Environment Agency.
+\newblock \URLprefix
+  \url{https://www.eea.europa.eu/publications/emep-eea-guidebook-2023}.
+  \bibinfo{note}{tier 1 Tables 3-3 to 3-5}.
+%Type = Misc
+\bibitem[{{FAO}(2025)}]{faostat}
+\bibinfo{author}{{FAO}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{FAOSTAT}: Emissions totals, crops and livestock,
+  fertilizers by nutrient, and forestry production and trade (wood fuel)}.
+\newblock \bibinfo{howpublished}{Food and Agriculture Organization, Rome}.
+\newblock \bibinfo{note}{\url{https://www.fao.org/faostat/}}.
+%Type = Misc
+\bibitem[{{Government of Pakistan}(2025)}]{goppetrol}
+\bibinfo{author}{{Government of Pakistan}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Fortnightly administered retail prices of petroleum
+  products (motor spirit), gazette notifications with {OGRA} computations}.
+\newblock \bibinfo{note}{Band over July 2024--June 2025 approximately Rs
+  249--293 per litre; no annual average is published}.
+%Type = Misc
+\bibitem[{{Government of Pakistan}(2026)}]{pakcrt2026}
+\bibinfo{author}{{Government of Pakistan}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Common reporting tables for the electronic reporting
+  of pakistan's national greenhouse gas inventory}.
+\newblock \bibinfo{howpublished}{Submission to the UNFCCC}.
+\newblock \URLprefix \url{https://unfccc.int/documents/655653}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006stationary}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 2: Energy, Chapter 2: Stationary Combustion}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Hayama, Japan.
+\newblock \URLprefix
+  \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html}.
+%Type = Techreport
+\bibitem[{{Ministry of Climate Change, Government of Pakistan}(2022)}]{pakbur1}
+\bibinfo{author}{{Ministry of Climate Change, Government of Pakistan}},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Pakistan's First Biennial Update Report to the United
+  Nations Framework Convention on Climate Change}.
+\newblock \bibinfo{type}{Technical Report}. Ministry of Climate Change,
+  Islamabad.
+\newblock \URLprefix \url{https://unfccc.int/documents/}.
+  \bibinfo{note}{national greenhouse-gas inventory for FY2017--18; submitted to
+  the UNFCCC}.
+%Type = Misc
+\bibitem[{{NASA}(2024)}]{nasapower}
+\bibinfo{author}{{NASA}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{{POWER}: Prediction of worldwide energy resources,
+  monthly 2-metre air temperature}.
+\newblock \bibinfo{howpublished}{NASA Langley Research Center}.
+\newblock \bibinfo{note}{\url{https://power.larc.nasa.gov/}; MERRA-2-family
+  reanalysis, monthly point API}.
+%Type = Techreport
+\bibitem[{{Oil and Gas Regulatory Authority}(2024)}]{ogra2024}
+\bibinfo{author}{{Oil and Gas Regulatory Authority}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{State of the Regulated Petroleum Industry 2023--24}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+  \bibinfo{address}{Islamabad}.
+\newblock \URLprefix \url{https://www.ogra.org.pk/annual-reports}.
+%Type = Misc
+\bibitem[{{Oil and Gas Regulatory Authority}(2026)}]{ograarchive}
+\bibinfo{author}{{Oil and Gas Regulatory Authority}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Petroleum industry reports archive}.
+\newblock \bibinfo{howpublished}{Official report archive}.
+\newblock \URLprefix \url{https://www.ogra.org.pk/ogra-annual-reports}.
+  \bibinfo{note}{accessed 7 August 2026}.
+%Type = Misc
+\bibitem[{{Oil Companies Advisory Council}(2024)}]{ocacaviation}
+\bibinfo{author}{{Oil Companies Advisory Council}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Sectoral sales of energy products, pakistan,
+  july--june 2023--24}.
+\newblock \URLprefix \url{https://www.ocac.org.pk/oil-industry-statistics/}.
+%Type = Techreport
+\bibitem[{{Pakistan Bureau of Statistics}(2019)}]{hies2019}
+\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Household Integrated Economic Survey ({HIES})
+  2018--19: Microdata}.
+\newblock \bibinfo{type}{Technical Report}. Pakistan Bureau of Statistics,
+  Government of Pakistan.
+\newblock \URLprefix \url{https://www.pbs.gov.pk/content/microdata}.
+  \bibinfo{note}{sPSS microdata files; consumption module Section 6A}.
+%Type = Techreport
+\bibitem[{{Pakistan Bureau of Statistics}(2025)}]{hies2025}
+\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Household Integrated Economic Survey ({HIES})
+  2024--25: Microdata and Key Findings Report}.
+\newblock \bibinfo{type}{Technical Report}. Pakistan Bureau of Statistics,
+  Government of Pakistan.
+\newblock \URLprefix \url{https://www.pbs.gov.pk/content/microdata}.
+  \bibinfo{note}{first digitally enumerated round; 32,814 sampled households,
+  30,123 completed. SPSS microdata files; consumption module Section 6A}.
+%Type = Inproceedings
+\bibitem[{Szymajda and {\L}aska(2019)}]{szymajda2019}
+\bibinfo{author}{Szymajda, A.}, \bibinfo{author}{{\L}aska, G.},
+  \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{The effect of moisture and ash on the calorific value
+  of cow dung biomass}, in: \bibinfo{booktitle}{Proceedings of the
+  Innovations-Sustainability-Modernity-Openness Conference (ISMO'19)},
+  p.~\bibinfo{pages}{4}.
+\newblock \DOIprefix\doi{10.3390/proceedings2019016004}.
+%Type = Techreport
+\bibitem[{{World Bank}(2024)}]{worldbank2024mtf}
+\bibinfo{author}{{World Bank}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Pakistan Energy Survey: Insights into the True Energy
+  Access Situation in {Pakistan} Based on the Multi-Tier Framework}.
+\newblock \bibinfo{type}{Technical Report}. World Bank, Washington, DC.
+\newblock \URLprefix \url{https://openknowledge.worldbank.org/}.
+  \bibinfo{note}{nationwide 2021--22 Multi-Tier Framework survey; stove
+  typology, main-stove shares by locality and province, stove stacking}.
+
+\end{thebibliography}

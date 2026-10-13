@@ -1,0 +1,93 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pakistan-emissions"
+dynamic = ["version"]
+description = "Reproducible IPCC emissions inventory for Pakistan: ten sectors, national, provincial, district and gridded products, with executable cross-sector closure and a generated manuscript set."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+# The core inventory (Phases 1-3, 5-6 tabular) runs on the standard library alone.
+dependencies = [
+  # Pure Python, so the "no compiled dependencies" property of this package still holds.
+  # Required at RUNTIME, not just for ingestion: the fugitives, IPPU and aviation evidence
+  # layers read their primary sources directly - the World Bank flare register, Pakistan's
+  # UNFCCC CRT workbooks - and run_fugitives imports it on every run. It was previously
+  # needed only by scripts that CI does not execute, which is why its absence surfaced as a
+  # sector-runner crash rather than an import error.
+  "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+# Phase 4 gridded surfaces + Phase 6 chart + dashboard images
+gis = [
+  "numpy>=1.24",
+  "netCDF4>=1.6",
+  "rasterio>=1.3",
+  "geopandas>=0.13",
+  "shapely>=2.0",
+  "matplotlib>=3.6",
+  # Spearman rank correlation for the TROPOMI cross-check and the district-record
+  # validation. Both import it lazily, so its absence surfaces only under test.
+  "scipy>=1.10",
+  # the gridded manuscript figures read the annual cube with it (scripts/make_fig_ghg_grid.py,
+  # a build phase); it was imported there and declared nowhere until rc63
+  "xarray>=2023.1",
+]
+# rc42: what the BUILD needs beyond the standard library and [gis] - the aviation fallback
+# study (a core phase under --quick --strict) imports openap unconditionally, and the packager
+# validates its manifest against its schema. requirements.lock pins the same versions.
+build = [
+  "openap>=2.6,<2.7",
+  "jsonschema>=4.25",
+]
+# Sentinel-1 rice-flood driver for the Module 2 nowcaster (src/pkinv/nowcast/fetch_s1_flood.py)
+gee = [
+  "earthengine-api>=0.1.370",
+]
+# Trained activity-weight models for the nowcast layer (src/pkinv/ml/); optional - the nowcast
+# falls back to the transparent rule classifiers when this extra or the models are absent.
+ml = [
+  "lightgbm>=4.0",
+  "scikit-learn>=1.3",
+  "pandas>=2.0",
+  "joblib>=1.3",
+]
+# The semantic query core (src/pakemis_query): DuckDB over the semantic release's Parquet.
+semantic = [
+  "duckdb>=1.3",
+  "pyarrow>=14",
+]
+# Flight-stage aviation inventory.  Kept optional because the published aggregate
+# inventory deliberately remains runnable with the standard library alone.
+aviation = [
+  "numpy>=1.24",
+  "pandas>=2.0",
+  "pyarrow>=14",
+  "trino>=0.330",
+  "openap>=2.0",
+]
+
+[project.scripts]
+pakistan-ghg = "pkinv.run_all:main"
+
+# SYSTEM DEPENDENCY, DECLARED LOUDLY BECAUSE PIP CANNOT INSTALL IT: the source-ingestion
+# scripts (scripts/ingest_* and scripts/build_aviation_anchor_controls.py) shell out to
+# pdftotext from poppler-utils (macOS: `brew install poppler`; Debian: `apt install
+# poppler-utils`).
+# The inventory BUILD does not need it - every ingested table is committed under data/ -
+# so scripts/clean_rebuild.sh treats its absence as a warning, not a failure.
+# requirements.lock pins the exact [gis] closure the shipped outputs were built with.
+
+[tool.setuptools.dynamic]
+# Single source of truth: src/pkinv/__init__.py
+version = { attr = "pkinv.__version__" }
+
+[tool.setuptools.packages.find]
+# Discovers pkinv and its subpackages. Before the packaging change this found nothing:
+# src/ held no __init__.py, so `pip install -e .` installed the dependency list and
+# run_all.py, never the code -- everything ran off sys.path surgery instead.
+where = ["src"]
+include = ["pkinv*", "pakemis_query*"]

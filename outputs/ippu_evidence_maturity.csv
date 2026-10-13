@@ -1,0 +1,37 @@
+ipcc_code,category,maturity_level,maturity_label,evidence_basis,next_transition_requirement,rationale
+2.A.1,Cement production,4,model-ready national activity,matched national cement and trade controls; 15-producer clinker subset; estimator active,complete common-boundary clinker movements stocks and chemistry,National Tier 1 is active but national Tier 2 is not yet closed
+2.A.2,Lime production,1,occurrence identified,known marketed and captive lime activity without compiled production,compile lime output by type and captive producer,Occurrence is clear but no national activity control is model-ready
+2.A.3,Glass production,2,national control available,QIM area output,convert output to tonnes and obtain type cullet and carbonate inputs,Output control cannot yet drive the IPCC calculation
+2.A.4,Other carbonate uses,1,occurrence identified,known ceramics and mineral processes,compile carbonate inputs by process,Occurrence screening has not produced national activity
+2.B.1,Ammonia production,4,model-ready national activity,"NFDC national production by product, nine fiscal years, closing on printed totals; one current plant NH3 observation; CDM and BTR controls",plant-level production and recovered CO2 for every plant (Tier 2),rc52: a national Tier 1 activity series with a factor calibrated to the official inventory is model-ready; plant disaggregation is the Tier 2 step
+2.B.2,Nitric acid production,3,partial facility activity,plant technology; historical output; period-specific CDM monitoring and abatement evidence,compile current national 100-percent-acid output and annual abatement operation,Historical measurements support method selection but not current national emissions
+2.B.3,Adipic acid production,0,no evidence,occurrence not established,establish occurrence before assigning NO,No model-relevant Pakistan evidence has been compiled
+2.B.4,Caprolactam glyoxal and glyoxylic acid,0,no evidence,occurrence not established,establish occurrence before assigning NO,No model-relevant Pakistan evidence has been compiled
+2.B.5,Carbide production,0,no evidence,occurrence not established,establish occurrence and route,No model-relevant Pakistan evidence has been compiled
+2.B.6,Titanium dioxide production,0,no evidence,occurrence not established,establish occurrence and route,No model-relevant Pakistan evidence has been compiled
+2.B.7,Soda ash production,2,national control available,QIM national output,determine production route and carbonate flows,Output is known but the process route remains unresolved
+2.B.8,Petrochemical and carbon black production,1,occurrence identified,industrial sector occurrence without normalized process activity,compile products routes and feedstocks,Activity has not reached a national control
+2.B.9,Fluorochemical production,1,occurrence identified,ozone and customs systems identify fluorochemical flows,separate domestic production from imports,Supply controls do not establish domestic production
+2.B.10,Other chemical production,1,occurrence identified,official sector rows and manufacturing system available,screen remaining IPCC products and processes,Occurrence screen is incomplete
+2.C.1,Iron and steel production,4,model-ready national activity,"PBS QIM billets and ingots, nine fiscal years; zero pig iron identifies the electric route",producer-level route and carbon inputs (Tier 2),rc52: a national Tier 1 activity series on the IPCC default for the only operating route is model-ready
+2.C.2,Ferroalloys production,0,no evidence,occurrence not established,establish occurrence and reductant inputs,No model-relevant Pakistan evidence has been compiled
+2.C.3,Aluminium production,0,no evidence,primary production not established,separate primary production from remelting and fabrication,Manufacturing occurrence does not establish the emissive primary route
+2.C.4,Magnesium production,0,no evidence,occurrence not established,establish production and cover-gas use,No model-relevant Pakistan evidence has been compiled
+2.C.5,Lead production,0,no evidence,occurrence not established,separate primary and secondary production,No model-relevant Pakistan evidence has been compiled
+2.C.6,Zinc production,0,no evidence,occurrence not established,separate primary and secondary production,No model-relevant Pakistan evidence has been compiled
+2.C.7,Other metal production,1,occurrence identified,manufacturing system available,complete occurrence and route screen,No national model activity is compiled
+2.D.1,Lubricant use,4,model-ready national activity,"OCAC non-energy sectoral sales (lubes, greases), nine fiscal years, closing on printed totals",two-stroke separation; paraffin wax and other products,"rc52: the IPCC activity basis (sales, first use) is held nationally for nine years"
+2.D.2,Paraffin wax use,1,occurrence identified,petroleum and customs systems available,compile apparent consumption and use,No national consumption control is compiled
+2.D.3,Other non-energy products,1,occurrence identified,manufacturing and petroleum systems available,screen solvent asphalt and urea-catalyst uses,No national model activity is compiled
+2.E,Electronics industry,1,occurrence identified,electronics manufacturing output controls,establish whether emissive semiconductor photovoltaic or display gases occur,Product manufacture alone does not establish process-gas use
+2.F.1,Refrigeration and air conditioning,2,national control available,aggregate HFC consumption control,obtain species application and equipment-bank flows,Supply control is not annual emissions
+2.F.2,Foam blowing agents,1,occurrence identified,aggregate HFC consumption contains unresolved applications,disaggregate chemical supply by application,Application activity is not compiled
+2.F.3,Fire protection,1,occurrence identified,aggregate HFC consumption contains unresolved applications,compile agent imports banks and retirement,Application activity is not compiled
+2.F.4,Aerosols,1,occurrence identified,aggregate HFC consumption contains unresolved applications,disaggregate chemical supply by application,Application activity is not compiled
+2.F.5,Solvents,1,occurrence identified,aggregate HFC consumption contains unresolved applications,disaggregate chemical supply by application,Application activity is not compiled
+2.F.6,Other ODS-substitute applications,1,occurrence identified,aggregate HFC consumption contains unresolved applications,complete application screen,Application activity is not compiled
+2.G.1,Electrical equipment,2,national control available,equipment-count evidence without an SF6 gas balance,compile banks purchases refills recovery and retirement,Equipment counts do not quantify gas loss
+2.G.2,Other SF6 and PFC product use,1,occurrence identified,customs and industry systems available,complete occurrence and gas-use screen,No national model activity is compiled
+2.G.3,N2O product uses,1,occurrence identified,medical and customs systems available,compile medical and aerosol N2O sales,No national model activity is compiled
+2.G.4,Other product manufacture and use,1,occurrence identified,manufacturing and customs systems available,complete occurrence screen,No national model activity is compiled
+2.H,Other industrial processes,1,occurrence identified,official inventory rows only,audit pulp paper food and beverage boundary,Official rows do not provide an independent public-data estimate

@@ -1,0 +1,20 @@
+Ei class,Fuel,Emep category,Emep fuel,Proxy note,Record ID,Source row
+2W,Petrol,L,Petrol,,18d736863d08ddd1da4a9abc,1
+3W,Petrol,L,Petrol,,3c767bbd03fb6f295be0c527,2
+4W1,Petrol,PC,Petrol,,9f1299da303190db8ea0dabb,3
+4W2,Petrol,PC,Petrol,,937ab50c3c8dc13b5d0bde3c,4
+4WT,Petrol,PC,Petrol,,e47759c2e6c80b507526f8a4,5
+BUS,Petrol,LCV,Petrol,declared proxy: no Tier 1 petrol bus/HDV factor exists; nearest larger spark engine,7178461ff42ec660820e7de3,6
+LDV,Petrol,LCV,Petrol,,c804963a616d21ce5360d859,7
+4W2,Diesel,PC,Diesel,,c7ea3f6fad270739be6c372a,8
+BUS,Diesel,HDV,Diesel,,0811b9ca0909943399b962b9,9
+HDV,Diesel,HDV,Diesel,,b7f0e173db7507bfeadf3eac,10
+LDV,Diesel,LCV,Diesel,,e88598cfa023bdff1c39654a,11
+2W,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses,7f8a27b83f8f3aad8628996a,12
+3W,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses,915168f86f038f8b920daf6b,13
+4W1,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses,270a69a29563b4a7cf988858,14
+4W2,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses,9f552f284d531cbb6cd36a1a,15
+4WT,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses,c947a791770518633ddad336,16
+LDV,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses,b3f1619c300959d10f01cd56,17
+BUS,CNG,HDV,CNG,the guidebook's own CNG (Buses) row,2ad1dabef2f6ec00af942c30,18
+HDV,CNG,HDV,CNG,the guidebook's own CNG (Buses) row - the nearest heavy-duty gas engine,d1f6d73ef038eaa959ad34ac,19

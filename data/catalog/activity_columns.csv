@@ -1,0 +1,99 @@
+# One row per VALUE column published from an ingest file: what the quantity is called, its unit, what
+# PakEmis changed to get it there, and whether the row may be added to its neighbours.
+#
+# ⚠ THE UNIT COMES OFF THE COLUMN NAME. The tree bakes units into names - `area_kha`, `production_kt`,
+# `gwh`, `tonnes`, `value_t` - and a reader who is not studying emissions cannot be asked to decode
+# them. Every published row carries a real `unit`, and where the name disagreed with the file's own
+# `unit` column the file's column wins and this registry says so.
+#
+# `category` and `unit` may be `;`-lists parallel to `column` when a melt's members differ - crude
+# oil and natural gas are printed in the same row under different units, and calling them both
+# blank was the first thing this file got wrong.
+#
+# `combinable` answers "can I add this to other rows?": `yes` within its own (variable, unit, period),
+# `no` never, or a named condition.
+# `period_override` replaces the file's period for ONE column - a following-year projection printed in the base year's row.
+path,column,variable,category,unit,evidence_override,transform,period_override,combinable,note
+data/activity/transport/ocac_sectoral_annual.csv,tonnes,sales,,t,,,,"yes, within a fiscal year and product","sales into a customer class, not fuel burned in it"
+data/activity/aviation/ocac_annual_extract.csv,reported_t,sales,,t,,,,"yes, within a fiscal year and fuel type",
+data/activity/industry/ocac_non_energy_sectoral.csv,quantity,sales,,t,,unit_as_printed is 'M. Tons' throughout; published as t,,"yes, within a fiscal year and product","non-energy products; a blank is `not_printed`, never zero"
+data/activity/transport/ocac_sectoral_provincial.csv,tonnes,sales,,t,,,,only where additive=1; the cumulative editions double-count otherwise,FUEL SOLD IN AN AREA IS NOT FUEL BURNED IN IT. Freight crosses provincial boundaries.
+data/activity/livestock_2024.csv,head_value,head_count,,head,,,,"yes, within a period",census enumeration
+data/activity/livestock_2024.csv,head_following_year,head_count,,head,projection,"the Economic Survey's following-year figure, carried in the census file's own row",FY2024-25,no,"A PROJECTION, not a count. Published beside the census figure and never summed with it."
+data/activity/livestock_province_2024.csv,cattle;buffalo;sheep;goats;camels,head_count,,head,,wide census columns melted to one row per species,,yes,
+data/activity/livestock_district_2024.csv,cattle;buffalo;sheep;goats;camels,head_count,,head,,wide census columns melted to one row per species,,yes,
+data/activity/historical/livestock_stocks.csv,cattle;buffalo;sheep;goats;camels;poultry,head_count,,head,,wide series columns melted to one row per species,,yes,calendar years
+data/activity/crops_2024.csv,area_ha,area,,ha,,,,yes,
+data/activity/crops_2024.csv,production_t,production,,t,,,,yes,cotton is converted from bales where flag=bales_converted; the transform says so on that row
+data/activity/agriculture/es_fiscal_series.csv,value,item:,,item:,,the file's own `unit` column is authoritative; `item` carries the variable and crop,,"yes, within an item","the variable and unit are read from the row, not from this registry"
+data/activity/agriculture/crop_district_panel.csv,area_kha,area,,kha,,,,"yes, within a period and crop","a row with a split_rule is an allocation of a pooled parent, not an observed district figure"
+data/activity/agriculture/crop_district_panel.csv,production_kt,production,,kt,,,,"yes, within a period and crop",as above
+data/activity/historical/crops.csv,area_ha,area,,ha,,,,yes,calendar years
+data/activity/historical/crops.csv,production_t,production,,t,,,,yes,calendar years
+data/activity/monthly/nfdc_month_product_offtake.csv,tonnes,offtake,,t product,,,,"yes, within a month and product",TONNES OF PRODUCT. Never added to tonnes of nitrogen.
+data/activity/fertilizer_2024.csv,value_t,item:,,item:,,,,no,"FIVE NUTRIENTS, NOT ONE. item_map.csv carries the unit of each; publishing them all as tonnes of nitrogen would treble it."
+data/activity/historical/fertilizer_n.csv,n_tonnes,offtake,,t N,,,,yes,tonnes of nitrogen; calendar years
+data/activity/power/plant_fuel_generation.csv,generation_gwh,net_generation,,GWh,,,,"yes, within a fiscal year and scope",
+data/activity/power/plant_fuel_ledger.csv,quantity,fuel_quantity,,col:quantity_unit,,"the file's own `quantity_unit` column is authoritative (000 t, MMBTU, MMCFT, 000 L)",,only within one quantity_unit,mixed units by fuel; adding across them means nothing
+data/activity/power/plant_fuel_ledger.csv,net_generation_GWh,net_generation,,GWh,,,,"yes, within a fiscal year",
+data/activity/power/plant_fuel_ledger.csv,energy_TJ,fuel_energy,,TJ,derived,energy content of the reported quantity,,no,published only where the ingest carries it
+data/activity/power/plant_fuel_ledger.csv,implied_heat_rate_kJ_per_kWh,implied_heat_rate,,kJ/kWh,derived,computed by PakEmis from this row's fuel energy and net generation,,no,A RATIO. Not a reported figure and not additive.
+data/activity/power/generation_by_fuel.csv,gwh_net,net_generation,,GWh,,,,"yes, within a fiscal year and system",
+data/activity/power/fuel_consumed.csv,toe,fuel_quantity,,toe,,,,"yes, within a fiscal year",
+data/activity/power/generation_monthly.csv,gwh,net_generation,,GWh,,unit_basis carries the source's own restatement and travels verbatim,,"yes, within a month",GENERATION. This file holds no fuel quantity.
+data/activity/residential/hies/hies_national_totals.csv,annual_total,annual_consumption,,col:unit,,"the file's own `unit` column is authoritative (kg, litre, rupees)",,"yes, within a survey round and unit",design-weighted survey estimate
+data/activity/residential/hies/hies_national_totals.csv,users_weighted,using_households,,households,,,,"yes, within a survey round",
+data/activity/residential/hies/hies_national_totals.csv,value_annual_rs,annual_expenditure,,rupees,,,,"yes, within a survey round",
+data/activity/residential/hies/hies_fuel_quantities.csv,annual_total,annual_consumption,,col:unit,,the file's own `unit` column is authoritative,,"yes, within a survey round, unit, province and locality",
+data/activity/residential/hies/hies_fuel_quantities.csv,users_weighted,using_households,,households,,,,"yes, within a survey round, province and locality",
+data/activity/residential/hies/hies_fuel_quantities.csv,mean_monthly_per_using_hh,mean_monthly_per_using_household,,col:unit,,the file's own `unit` column is authoritative,,no,A MEAN PER HOUSEHOLD. Not additive across strata.
+data/activity/waste/hies_disposal_routes.csv,households_weighted,using_households,,households,,,,"yes, within a survey round and scope",design-weighted household count on this disposal route
+data/activity/waste/hies_disposal_routes.csv,share_of_region,share_of_households,,share,,,,no,a share of its own region; shares are not added across regions
+data/activity/wastewater/sanitation_shares.csv,open_defecation_pct;latrines_and_other_pct;septic_tanks_pct;sewer_connection_pct;unimproved_pct,share_of_households,,percent,,the five wide share columns melted to one row each,,no,shares of the same setting; they sum to 100 within a setting and are never added across settings
+outputs/waste_ledger_2024.csv,Mt_wet,waste_mass,,Mt wet,,,,only within a tier - the national rows and the uncollected partition are two levels of the same ledger,⚠ AN ESTIMATE. Generated is a per-capita rate over a district population panel; the rest is a modelled fate partition.
+outputs/waste_ledger_2024.csv,share_of_generated,share_of_generated,,share,,,,no,"a share of the generated control, not an independent quantity"
+data/activity/fugitives/production.csv,crude_oil_000_barrels;natural_gas_MMCFT,production,crude_oil;natural_gas,000 barrels;MMCFT,,the two wide columns melted; each keeps the unit its own column name carried,,yes,"crude in thousand barrels, gas in million cubic feet - never added to each other"
+data/activity/fugitives/production_province.csv,crude_oil_barrels;natural_gas_MMCFT,production,crude_oil;natural_gas,barrels;MMCFT,,"as above, at provincial break-up",,yes,"⚠ NOTE THE UNIT DIFFERENCE FROM THE NATIONAL TABLE: barrels here, THOUSAND barrels there."
+data/activity/fugitives/field_gas_supply_2023_24.csv,gas_supply_mmcfd,gas_supply,,MMCFD,,,,"yes, within a system",marketable supply from the field to the system
+data/activity/fugitives/gas_network.csv,mmcfd,gas_flow,,MMCFD,,,,no,"⚠ THE THREE ROWS ARE NOT ADDITIVE: marketable gas IS utility sales plus unaccounted-for gas, so summing them double-counts."
+data/activity/fugitives/infrastructure_2023_24.csv,length_km,pipeline_length,,km,,,,"yes, within an asset class",
+data/activity/fugitives/infrastructure_2023_24.csv,asset_count,asset_count,,count,,,,"yes, within an asset class",
+data/activity/industry/coal_by_consumer.csv,coal_kt,coal_use,,kt,,,,"yes, within a fiscal year and revision status","⚠ FY2023-24 APPEARS TWICE, once per edition; `evidence_note` carries the revision status that tells them apart."
+data/activity/industry/coal_by_sector_vintages.csv,value,coal_use,,col:unit,,,,only within one edition_year,"⚠ ONE YEAR, MANY EDITIONS. Summing across editions counts the same coal several times; the unit column carries three spellings of one magnitude, as the source printed them."
+data/activity/industry/coal_by_sector_pey_compendium.csv,power_wapda_t;brick_kiln_t;domestic_t;cement_other_industry_t;pak_steel_t,coal_use,power;brick_kilns;domestic;cement_and_other_industry;pak_steel,t,,the five wide sector columns melted,,only within one compendium edition,the printed total and the row sum are controls and are not published
+data/activity/industry/gas_consumption.csv,sngpl_mmcfd,gas_use_sngpl,,MMCFD,,,,"yes, within a stream",a RATE: million cubic feet per day
+data/activity/industry/gas_consumption.csv,ssgcl_mmcfd,gas_use_ssgcl,,MMCFD,,,,"yes, within a stream",
+data/activity/industry/gas_consumption.csv,independent_mmcfd,gas_use_independent,,MMCFD,,,,"yes, within a stream",
+data/activity/industry/gas_consumption.csv,total_mmcfd,gas_use_total,,MMCFD,,,,no,the row control: the three suppliers sum to this
+data/activity/industry/brick_kiln_coal.csv,coal_tonnes,coal_use,,t,,,,yes,
+data/activity/industry/brick_kiln_coal.csv,coal_toe,coal_energy,,toe,,,,yes,the same coal in energy terms; never added to the mass row
+data/activity/industry/coal_supply.csv,coal_imports_kt,coal_imports,,kt,,,,yes,
+data/activity/industry/coal_supply.csv,coal_production_kt_petroleum_division,coal_production_petroleum_division,,kt,,,,no,⚠ ONE OF TWO RIVAL SERIES for the same quantity; never added to the other.
+data/activity/industry/coal_supply.csv,coal_production_kt_pbs_extraction,coal_production_pbs_extraction,,kt,,,,no,the other rival series
+data/activity/industry/coal_production_by_province.csv,production_tonnes,coal_production,,t,,,,"yes, within a fiscal year",mining output; the printed value and the month sum in the source are controls and are not published
+data/nfdc/afr2025_fertilizer_gas_by_plant.csv,feed_mmcf,gas_feedstock,,MMCF,,,,"yes, within a fiscal year",⚠ CHEMICAL FEEDSTOCK. This gas becomes ammonia; it is not burned.
+data/nfdc/afr2025_fertilizer_gas_by_plant.csv,fuel_mmcf,gas_fuel,,MMCF,,,,"yes, within a fiscal year",gas burned for process heat
+data/nfdc/afr2025_fertilizer_gas_monthly.csv,mmcf,gas_use,,MMCF,,,,"yes, within a month and consumption type",the `consumption` axis says Feed or Fuel; they are never added together
+data/activity/ippu/company_clinker_series.csv,clinker_production_t,clinker_production,,t,,,,"yes, within a fiscal year",
+data/activity/ippu/company_clinker_series.csv,cement_production_t,cement_production,,t,,,,"yes, within a fiscal year",
+data/activity/ippu/company_clinker_series.csv,cement_despatch_t,cement_despatch,,t,,,,no,"⚠ DESPATCH IS SALES, not production, and several companies print cement and clinker despatch combined."
+data/activity/ippu/cement_producer_census_2023_24.csv,clinker_production_t,clinker_production,,t,,,,"yes, across the census",
+data/activity/ippu/national_activity.csv,quantity,production,,col:unit,,,,only within one unit,"⚠ ONE ROW IS IN t CO2e, not a physical unit: the unit column is the only thing that says so."
+data/activity/ippu/clinker_trade_monthly.csv,quantity_t,clinker_trade,,t,,,,"yes, within a flow and month",
+data/activity/ippu/clinker_trade_annual_controls.csv,quantity_t,clinker_trade,,t,,,,no,"an annual control, not a thirteenth month"
+data/activity/monthly/apcma_month_region_dispatch.csv,tonnes,cement_despatch,,t,,,,"yes, within a month",the printed row total is a control repeated on every row and is not published
+data/activity/monthly/pbs_qim_month_item.csv,quantity,production,,col:unit,,,,"yes, within an item and unit",
+data/activity/ippu/cement_monthly_2022.csv,cement_kt,cement_production,,kt,,,,"yes, within a month",
+data/activity/ippu/chemical_plant_activity.csv,production_t,production,,t,,,,"yes, within a period",ammonia production as the plant's own report printed it
+data/activity/railways/fuel_consumption.csv,quantity,fuel_use,,col:unit,,,,only within one unit,thousand litres and tonnes both appear; adding across them means nothing
+data/activity/railways/traffic.csv,value,traffic,,col:unit,,,,"yes, within a metric",⚠ total_train_km is the sum of the passenger and freight split published beside it
+data/activity/railways/service_statistics.csv,value,traffic,,col:unit,,,,"yes, within a metric",
+data/activity/aviation/movements_airport.csv,com_dom_mv;com_intl_mv;noncom_mv,movements,commercial_domestic;commercial_international;non_commercial,movements,,the three wide movement columns melted,,"yes, within a year and airport",
+data/activity/aviation/movements_airport.csv,pax_dom;pax_intl,passengers,domestic;international,passengers,,the two wide passenger columns melted,,"yes, within a year and airport",
+data/activity/aviation/movements_airport.csv,cargo_dom_t;cargo_intl_t;mail_dom_t;mail_intl_t,freight,cargo_domestic;cargo_international;mail_domestic;mail_international,t,,the four wide freight columns melted,,"yes, within a year and airport",
+data/activity/aviation/airline_controls_2023_24.csv,departures;arrivals,movements,departures;arrivals,movements,,melted; the file's `movements` column is their sum and is not published,,"yes, within an airline",
+data/activity/aviation/airline_controls_2023_24.csv,passengers_embarked;passengers_disembarked;passengers_transit,passengers,embarked;disembarked;transit,passengers,,melted; the printed terminal and total columns are sums and are not published,,"yes, within an airline",
+data/activity/transport/vehicles_district.csv,vehicles,registered_vehicles,,vehicles,,,,"yes, within a year and class - but it is a STOCK at 30 June, never a flow over the year","⚠ REGISTERED, NOT IN USE."
+data/activity/transport/vkt.csv,vkt_km_per_vehicle,distance_per_vehicle,,km per vehicle per year,,,,no,"a per-vehicle rate; it is multiplied by a fleet, never added to one"
+data/activity/transport/fuel_split.csv,share,fuel_share,,share,,,,no,shares within a class and year; they sum to one
+data/activity/transport/cng_gas.csv,mmcfd,gas_use,,MMCFD,,,,"yes, within a fiscal year",a rate: million cubic feet per day

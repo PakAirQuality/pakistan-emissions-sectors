@@ -1,0 +1,4 @@
+case,point_type,point_Mt_CO2e,p025_Mt_CO2e,p975_Mt_CO2e,period,source,provenance
+Deterministic reference,accounting_reference,444.96,,,FY2023-24,outputs/national_all_sectors.csv (sum over the ten modules),"read from the product; an accounting reference, not a draw"
+Within-module parameter sharing,Monte_Carlo_median,446.52,400.30,504.97,FY2023-24,"outputs/national_uncertainty_montecarlo.csv (scenario=within_sector, national TOTAL)",read from the product; a conditional parameter interval under the stated dependence setting
+Cross-module fuel-factor sharing,Monte_Carlo_median,446.55,400.27,505.22,FY2023-24,"outputs/national_uncertainty_montecarlo.csv (scenario=cross_sector, national TOTAL)",read from the product; a conditional parameter interval under the stated dependence setting

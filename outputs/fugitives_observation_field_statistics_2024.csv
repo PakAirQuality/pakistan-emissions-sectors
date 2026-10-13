@@ -1,0 +1,4 @@
+comparison,n_official_fields,n_fields_with_nonzero_observation,spearman_rho_with_ties,kendall_tau_b,top10_overlap_count,top10_observed_fields_available,supply_coverage_by_any_named_observation_pct,interpretation
+VIIRS named-field flare volume,73,25,0.23021888947021468,0.17639001301804605,4,10,71.0852051938205,field-level ranking diagnostic with zero-observation official fields retained; observations are not annualized emissions
+MARS sources assigned by nearest flare,73,8,0.3815498586652963,0.3134940989627213,4,8,71.0852051938205,field-level ranking diagnostic with zero-observation official fields retained; observations are not annualized emissions
+MARS plume count assigned by nearest flare,73,8,0.38232757474300527,0.31342725962152107,4,8,71.0852051938205,field-level ranking diagnostic with zero-observation official fields retained; observations are not annualized emissions

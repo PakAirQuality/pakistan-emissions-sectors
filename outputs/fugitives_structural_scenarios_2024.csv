@@ -1,0 +1,15 @@
+scenario,mt_co2e_ar5,experiment_type,activity_basis,practice,coverage
+reference,23.499370669386575,one-at-a-time diagnostic,pipeline length,higher/default,reference coverage
+central,17.678465582918673,one-at-a-time diagnostic,pipeline length,geometric mean of published bounds,reference coverage
+lower_practices,14.893630864512566,one-at-a-time diagnostic,pipeline length,lower,reference coverage
+throughput,21.668395278992715,one-at-a-time diagnostic,throughput,higher/default,reference coverage
+lower_throughput,14.77480163378822,one-at-a-time diagnostic,throughput,lower,reference coverage
+lower_distribution_only,17.820660069386577,one-at-a-time diagnostic,pipeline length,lower,reference coverage
+lower_transmission_only,22.67924745468658,one-at-a-time diagnostic,pipeline length,lower,reference coverage
+post_meter_half_factor,21.789158424602697,one-at-a-time diagnostic,pipeline length,higher/default,post-meter industrial factor halved
+post_meter_including_feedstock,24.694094056555937,one-at-a-time diagnostic,pipeline length,higher/default,post-meter base with fertiliser feedstock inside (the membership through rc66)
+post_meter_excluding_fertilizer,23.263701048669105,one-at-a-time diagnostic,pipeline length,higher/default,"post-meter base minus the whole fertiliser class, process fuel with the feed"
+no_post_meter_industrial,20.07894617981881,one-at-a-time diagnostic,pipeline length,higher/default,post-meter industrial excluded
+no_processing_proxy,21.001948124765445,one-at-a-time diagnostic,pipeline length,higher/default,processing proxy excluded
+core_network_only,16.334655123621946,one-at-a-time diagnostic,pipeline length,higher/default,network core only
+coal_screen_upper,24.045770669386574,"scope screen (1.B.1, PARTIAL)",pipeline length,higher/default,"reference coverage plus the Thar surface-mining screen's high bound (underground unquantified - a PARTIAL band, not the category bound)"

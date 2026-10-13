@@ -1,0 +1,19 @@
+{
+ "expect": [],
+ "expect_context": {
+  "configuration_id": ""
+ },
+ "expect_receipt": "04ffa6c3b8eba8eb865b4afaf624810b",
+ "function": "query_air",
+ "golden_id": "air_default_period_so2_sectors",
+ "note": "rc67 (2026-10-13): receipt re-frozen, 65b8fd7e5233fa3032fc21e400fa59da -> the value below. This golden pins no cell; its answer moved because residential SO2 in FY2023-24 fell 53.231 -> 20.836 Gg when household dung went onto the survey series, and residential drops from second to third among the sectors, behind power (30.022). No other sector's row moved.",
+ "request": {
+  "group_by": [
+   "sector_id"
+  ],
+  "order_by": "value desc",
+  "pollutants": [
+   "SO2"
+  ]
+ }
+}

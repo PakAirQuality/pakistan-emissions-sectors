@@ -1,0 +1,5 @@
+item,value,note
+Generation (GWh),726.85,"NEPRA SoIR 2024 Table 8 (E3), eight plants, reconciled against the printed total"
+Fuel energy (TJ),10903.0,"generation x assumed 15,000 kJ/kWh - the sector's one generation-derived activity, labelled structurally weaker"
+"CH4+N2O (Mt CO2e, AR5)",0.02072,counted in 1A1a; the CH4 is non-fossil and takes AR5 28
+Biogenic CO2 memo (Gg),1090.3,"outside every total, IPCC biomass convention"

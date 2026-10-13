@@ -1,0 +1,98 @@
+% ===========================================================================
+\section{Supplementary Note: Road-Transport Air Pollutants (EMEP/EEA Tier~1)}
+\label{sec:air}
+% ===========================================================================
+
+This appendix reports the sector's air-pollutant layer on the EMEP/EEA guidebook
+2023's Tier~1 road-transport factors, replacing the exploratory per-kilometre
+diagnostic earlier editions carried (its factors were inherited transcriptions with no
+located provenance; the comparison below records what the replacement moved). The
+quantities are reported in mass, never converted to \COe{}, and never enter a
+greenhouse-gas total.
+
+\textbf{Fuel is the activity, and it reconciles to the controls by construction.}
+Tier~1 exhaust factors are grams per kilogram of fuel; the fuel each vehicle class
+burns is the OCAC Road control total for the year---the same panel the greenhouse-gas
+side burns, net of the same household-generator carve-out---split between classes by
+the fleet model's energy-weighted class shares. Modelled fuel therefore equals sold
+fuel for every fuel in every year, the anchor the superseded diagnostic explicitly
+lacked; the class \emph{split} still rides the fleet model, so composition remains the
+sector's weakest axis while the magnitude no longer does. Four process families are
+estimated as separate atoms: hot-plus-cold exhaust (fuel-based), evaporative petrol
+NMVOC (per-vehicle-day, at the guidebook's 20--35\,\si{\celsius} daily temperature
+range, on the fleet model's own active vehicle counts), and tyre-and-brake and
+road-surface wear (per vehicle-kilometre). Black carbon is the guidebook's f-BC
+fraction of exhaust \PM{}---a component of particulate mass, never additional---and
+\SOtwo{} is sulfur stoichiometry under the declared per-year fuel-sulfur regime of
+\texttt{data/activity/transport/fuel\_sulfur\_by\_year.csv} (diesel on the same cited
+Euro-II/Euro-V mandate boundaries the railways layer burns). Where the guidebook
+publishes no Tier~1 factor for a Pakistani cell, the bridge table
+(\texttt{data/activity/transport/emep\_class\_map.csv}) declares a named proxy---light
+CNG vehicles take the passenger-car LPG chemistry, petrol buses the light-commercial
+petrol row---never a silent one.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Pollutant} & \textbf{Tier~1 (kt/yr)} & \textbf{superseded diagnostic} \\
+\midrule
+CO                   & 1430.4 & 3588.2 \\
+NMVOC                &  535.1 &  679.8 \\
+\NOx{}               &  172.1 &  112.7 \\
+\SOtwo{}             &   12.2 &   29.9 \\
+\PM{}                &    8.2 &   21.6 \\
+Black carbon         &    2.0 & \emph{absent} \\
+\NHthree{}           &    2.6 &    5.9 \\
+\bottomrule
+\end{tabular}
+\caption{Road transport, FY2023--24, EMEP/EEA Tier~1 on OCAC-reconciled fuel, all
+processes, against the superseded per-kilometre diagnostic. NMVOC is non-methane VOC;
+\NOx{} is NO$_2$-equivalent mass, the inventory-wide basis. \PM{} here is the PM$_{2.5}$
+core (exhaust \PM{} is PM$_{2.5}$ by the chapter's own statement, plus the wear
+processes' PM$_{2.5}$); the wear processes' coarser TSP and PM$_{10}$ strata are
+supplemental beside it, contained not additive, and appear in the factor appendix. The
+two columns share the same vehicle-kilometre model but different factor bases and, for
+the first, a fuel anchor; the differences are dominated by the factor replacement.}
+\label{tab:air}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{transport_air.png}
+\caption{The Tier~1 layer, log axis: carbon monoxide exceeds black carbon by nearly
+three orders of magnitude, which a linear axis cannot show. Wear TSP and PM$_{10}$
+are excluded from the bars for the same containment reason the residential figure
+excludes them.}
+\label{fig:air}
+\end{figure}
+
+\subsection{Where the layer places transport, and what a claim may ride on it}
+
+Within this inventory's own layers, road transport's \PM{} of \SI{8.2}{\kilo\tonne}
+sits far below residential solid fuel's \SI{282.7}{\kilo\tonne}, and its
+carbon monoxide of \SI{1430}{\kilo\tonne} below residential biomass's
+\SI{3353}{\kilo\tonne}; transport leads no primary pollutant outright in this
+accounting. Unlike its predecessor this layer may carry that placement as an estimate
+rather than an order of magnitude: its factors are cited, its fuel is anchored, and
+evaporative and wear processes are inside it. What it still may not carry is a
+technology claim: Tier~1 factors are fleet averages (the guidebook's typical 2010
+EU-27 fleet, offered for countries with older fleets---Pakistan's qualifies), and the
+published min--max spans uncontrolled to then-current technology, which for diesel
+particulate is more than three orders of magnitude. Those spans are carried as each
+row's uncertainty, and they dominate every parametric interval built on this layer,
+including the residential-to-road particulate ratio, whose width is the honest print
+of an unmeasured fleet. A technology-resolved Tier~2/3 estimate (COPERT classes on
+Pakistani registration vintages) is the named successor.
+
+\subsection{Limitations of this layer}
+
+Tier~1 resolves fuel and broad vehicle category, not technology vintage, catalyst
+penetration or after-treatment; the class split rides the fleet model's declared
+intensity weights; the fuel-sulfur regime is declared from the import-mandate record,
+not measured at the pump, and domestic-refinery waivers mean the post-2021 central
+deliberately stays at the conservative pre-Euro-V specification; evaporative factors
+assume the guidebook's hottest daily temperature band year-round; road-dust
+resuspension stays out until a defensible local silt basis exists---a different claim,
+recorded in the gap register to stop it riding in.

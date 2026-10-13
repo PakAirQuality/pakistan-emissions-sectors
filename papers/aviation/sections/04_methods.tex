@@ -1,0 +1,112 @@
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Conserved customer-to-geography fuel ledger}
+
+Every OCAC record retains its period, customer category, fuel type, reported tonnes, source
+file and revision status. It is assigned across six non-overlapping destinations: IPCC
+domestic civil aviation ($d$), international bunkers ($i$), military/government 1A5b ($m$),
+general aviation ($g$), export/other ($o$) and unresolved residual ($u$). For each source row
+$r$,
+\begin{equation}
+F_r=F_{r,d}+F_{r,i}+F_{r,m}+F_{r,g}+F_{r,o}+F_{r,u}.
+\label{eq:rowclosure}
+\end{equation}
+Closure is asserted before aggregation. Missing evidence increases $F_{r,u}$; it never triggers
+a national rescaling.
+
+Three structural mappings test the customer-to-geography boundary. A literal mapping assigns
+resident-airline JP-1 to domestic aviation. A movement-share mapping divides it according to
+domestic and international flight stages. The central calibrated mapping uses the OECD
+resident-carrier share
+\begin{equation}
+s_d=\frac{E^{\rm OECD}_{\rm resident,domestic}}
+{E^{\rm OECD}_{\rm resident,domestic}+E^{\rm OECD}_{\rm resident,intl.from}},
+\label{eq:share}
+\end{equation}
+which is 25.674\% in FY2023--24. Foreign-customer JP-1 is assigned principally to international
+bunkers; government aviation JP-1 and JP-8 are military/government candidates; 100LL is a
+general-aviation candidate; and government-other JP-1 remains unresolved. Alternative
+carrier-specific movement and modelled-fuel shares preserve separate PIA and other-airline
+networks while remaining constrained to the same aggregate OECD share. These mappings are
+reported as scenarios, not pooled into a confidence interval.
+
+Three definitions are fixed as accounting invariants. PCAA movements are divided by two to
+obtain domestic stages because each flight generates a departure and an arrival. Domestic
+status requires both endpoints in Pakistan, irrespective of customer or carrier residence.
+Domestic greenhouse gases use full-flight fuel; international airport LTO emissions remain a
+separate local-air-quality product \citep{ipcc2006energy}.
+
+\subsection{Domestic activity and fuel models}
+
+The aggregate movement model (M0) multiplies domestic stages by a representative distance and
+year-varying fleet intensity:
+\begin{equation}
+E_y=N_y\,\bar d_y\,I_y,
+\end{equation}
+where $N_y$ is flight stages, $\bar d_y$ mean distance and $I_y$ fuel and emission intensity.
+The route-resolved model (M1) replaces the representative stage with an annual origin--
+destination matrix constrained to PCAA airport margins, airline departures and routes
+documented for FY2023--24. Unsupported movements remain an unallocated residual. Minimum and
+maximum feasible distance are solved over the same route graph and control margins.
+
+The route--aircraft model (M2) assigns probabilistic aircraft-family shares by operator and
+route and generates phase-resolved synthetic profiles with OpenAP \citep{sun2020openap}.
+Operator passengers, cargo and mail constrain central payload; route detour, taxi time and
+aircraft assignment remain uncertain. Unsupported aircraft use a separately identified ICAO
+factor, while route, operator and endpoint residuals are completed through explicit lower-tier
+methods. A common-support comparison applies all three models to the same 17,491 stages before
+those residuals are added, preventing model resolution from being confused with coverage.
+Synthetic route strata are never labelled as observed flights.
+
+The flight-stage ledger is source-neutral: observed records may replace reconstructed strata
+without changing accounting or emissions code. The detailed route optimiser, source tiers,
+OpenAP range checks, ADS-B endpoint rules, payload construction and coverage activation gate
+are provided in the supplement.
+
+\subsection{Evaluation and comparison design}
+
+OCAC cumulative monthly values are first-differenced and required to reproduce each final
+annual source row. OECD records are aggregated to identical July--June windows. For component
+$j$ and month or year $t$,
+\begin{equation}
+R_{t,j}=\frac{F^{\rm OCAC}_{t,j}\,3.16}{E^{\rm OECD}_{t,j}}.
+\end{equation}
+We compare resident, foreign and combined commercial accounts and calculate the fraction of
+opposite component differences that cancels in their total:
+\begin{equation}
+C=1-\frac{|\Delta_{\rm resident}+\Delta_{\rm foreign}|}
+{|\Delta_{\rm resident}|+|\Delta_{\rm foreign}|}.
+\end{equation}
+Five complete fiscal years support annual comparison and 42 matched months test whether annual
+closure is temporally stable.
+
+The central fuel bridge uses OECD's resident share and therefore tests consistency, not
+independent accuracy. The strongest gross closure compares OCAC commercial JP-1 with OECD
+combined territory aviation. Aggregate movement, route-resolved and route--aircraft models are
+compared externally with OECD domestic territory emissions. Pakistan's CRT tests the official
+boundary implementation; Climate TRACE tests fiscal-year magnitude and airport ordering but
+may share surveillance or performance inputs. PCAA movement, passenger and route constraints
+target specific internal failure modes.
+
+Public ADSB.lol and ERA5 experiments remain supporting diagnostics. The former tests whether a
+small public trace sample can replace reconstructed stages; the latter tests the sensitivity of
+representative OpenAP flight duration to route winds. Neither is expanded into an observed
+annual inventory or counted as fuel validation.
+
+\subsection{Parametric and structural uncertainty}
+
+Parametric and structural uncertainty are evaluated separately. The aggregate movement model
+retains its legacy activity/fleet representation term. The completed route--aircraft model uses
+20,000 flight-stage Monte Carlo draws within each structural configuration. Aircraft family is
+shared within operator--route strata, detour across reciprocal routes, taxi time by airport and
+carbon conversion globally. Payload is sampled around PCAA passenger, cargo and mail controls.
+CH4, N2O and net calorific value enter only the secondary \COe{} result.
+
+Alternative feasible route matrices and unsupported-activity completion methods define a
+structural envelope; customer-to-geography mappings remain a separate accounting scenario.
+The route--aircraft model does not inherit the aggregate model's $\pm60$\% representation term.
+A drop-one variance screen identifies which named variables drive its interval. Automated QA/QC
+asserts source-row and monthly closure, route-bound ordering, common support, coverage
+completion, phase-fuel closure, movement balance and agreement between generated outputs and
+the manuscript. The complete uncertainty register and assertion catalogue are supplementary.

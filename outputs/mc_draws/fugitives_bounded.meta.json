@@ -1,0 +1,20 @@
+{
+  "columns": [
+    "Fugitive emissions from oil and gas",
+    "MODULE_TOTAL",
+    "POST_METER_INDUSTRIAL_MULTIPLIER"
+  ],
+  "deterministic": {
+    "Fugitive emissions from oil and gas": 23.499370669386575,
+    "MODULE_TOTAL": 23.499370669386575,
+    "POST_METER_INDUSTRIAL_MULTIPLIER": 1.0
+  },
+  "distribution_id": "bounded_split_triangular",
+  "engine": "pkinv.sectors.fugitives.uncertainty.refinement_analysis",
+  "file": "mc_draws/fugitives_bounded.csv",
+  "n_iter": 100000,
+  "note": "reference configuration; first 10000 draws bit-identical to the published sector analysis (sequential seed-42 stream)",
+  "rng": "Mersenne Twister (CPython random module); gauss via Box-Muller with paired-variate cache; python 3.11",
+  "seed": 42,
+  "sha256": "8dec7c21a2c383af024f298079a4cd3fe7c2e62d424a73759a6e591fb671ba08"
+}

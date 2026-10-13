@@ -1,0 +1,168 @@
+{
+  "cement_mt_co2": 21.815648399999997,
+  "inputs": [
+    {
+      "path": "data/nfdc/afr2025_production_by_manufacturer.csv",
+      "sha256": "a2b452ce404a16487e833b3e3681abde196a36c5e5222f25c3bc8af3d1e178a7"
+    },
+    {
+      "path": "data/nfdc/afr2025_fertilizer_gas_by_plant.csv",
+      "sha256": "a83e5e05fa92d240a4292b93276486a898b54293a06aeaf66b8c184223a84517"
+    },
+    {
+      "path": "data/nfdc/afr2025_offtake_by_product.csv",
+      "sha256": "5ea0d97ae17f094ca6f5fb08d248d90333091d10531ca53f4e701fee109a424f"
+    },
+    {
+      "path": "data/nfdc/afr2025_fertilizer_gas_monthly.csv",
+      "sha256": "95c9a43c0d36fe060bb1c00b36e4b50a41062e594bd612b773822c216ac12834"
+    },
+    {
+      "path": "data/activity/ippu/national_activity.csv",
+      "sha256": "a787d28ec4e39edb9c47e9d7070adf70cfeb51f8d1e6270d7d9cfd64fc260a5f"
+    },
+    {
+      "path": "data/activity/ippu/clinker_trade_monthly.csv",
+      "sha256": "411d0bfa0f2e8469300b9e0f0df87450bab8ebf437a3d3d71012fd04d5ca17d2"
+    },
+    {
+      "path": "data/activity/ippu/company_clinker_2023_24.csv",
+      "sha256": "3b5a870cb771c9df496a7fe36e42137af33ef99c3b5ad3a4086683a32a946138"
+    },
+    {
+      "path": "data/activity/ippu/cement_producer_census_2023_24.csv",
+      "sha256": "b8471717e975158e0849afc9d6a0042f65426195d91e2efa66e22805aef9f70e"
+    },
+    {
+      "path": "data/activity/ippu/cement_monthly_2022.csv",
+      "sha256": "0eb4a11d04ec1e5602401d9be51492d14193ef12d047cc4ae118f5e4a9c21c81"
+    },
+    {
+      "path": "data/activity/ippu/clinker_trade_annual.csv",
+      "sha256": "25dc06b5a758ca76caa229be1f52448d60c4cde4e3b52d179cf527e881a6b216"
+    },
+    {
+      "path": "data/activity/ippu/master_data_gap_matrix.csv",
+      "sha256": "e73e7e2bea79b03c41292f192231aafe9e6f6c5caa55ab564b8c6931274e8e17"
+    },
+    {
+      "path": "data/activity/ippu/hfc_consumption_controls.csv",
+      "sha256": "11462038112a2cab17b082817f67571d9e3961f169c88c1b5801fa5772bb657a"
+    },
+    {
+      "path": "data/activity/ippu/hfc_inventory_import_contract.csv",
+      "sha256": "398bfb2f31923c63d99be6cd881e03481c0ee9253ad28de53e30bc8df7cb72ba"
+    },
+    {
+      "path": "data/activity/ippu/chemical_plant_evidence.csv",
+      "sha256": "2841f10cb6c32d8d3bc4511f39061be44636a12d2bce206989924331bac93fe5"
+    },
+    {
+      "path": "data/activity/ippu/chemical_plant_activity.csv",
+      "sha256": "e460e10e74958bc55a9927b85cf6aa59dadfb50a7c9c7c3d4fff8b74bb340284"
+    },
+    {
+      "path": "data/activity/ippu/nitric_acid_monitoring.csv",
+      "sha256": "4c3154a22eb514d86d088825d9f5c54d60c50d0189a797f5f1922306d1ed0711"
+    },
+    {
+      "path": "data/activity/ippu/nitric_acid_monitoring_detail.csv",
+      "sha256": "311635cf42c785af0cfc1138ee499dee9bdabae4b5e65cd02827c000a8e42665"
+    },
+    {
+      "path": "data/activity/ippu/cdm_access_manifest.csv",
+      "sha256": "52198528eb3d18d65a97fac48ef2a3a7e71ff6347baa989810f21f34b5c13879"
+    },
+    {
+      "path": "data/activity/ippu/company_boundary_audit.csv",
+      "sha256": "36f8a084a8a381287202390d930ebdb5ba820a0c0530b53f41b42d85e5f01739"
+    },
+    {
+      "path": "data/activity/ippu/evidence_maturity.csv",
+      "sha256": "1c4b522f018b6601166b010d70a7337d0bfc476bf6d76a0f197843083aaee0c8"
+    },
+    {
+      "path": "data/activity/ippu/facility_geocoding_overrides.csv",
+      "sha256": "0d8dd89c0f916d687602a50c2e848d13ee34fad43550a8185ebbc7a2bf5a0cd3"
+    },
+    {
+      "path": "data/activity/ippu/data_request_packets.csv",
+      "sha256": "120a417729b66deabc4945c1ff4becf314920bf0072a526ff668b1c814cecc67"
+    },
+    {
+      "path": "data/activity/ippu/facilities.csv",
+      "sha256": "a6b569db30062f89af562d9b4083ca121a1d3e090b459d988b7f7eca51824b7c"
+    },
+    {
+      "path": "data/activity/ippu/source_manifest.csv",
+      "sha256": "a2289eb393d33007d4b716f18a0140871f774d7f5ab3bc0ca94dee83e1e3b9fc"
+    }
+  ],
+  "inventory_year": 2024,
+  "limitations": [
+    "Only 2.A.1 is independently estimated for FY2023-24",
+    "fifteen producer disclosures exceed the low-clinker inference and nearly match the high-clinker inference; Fecto and national stocks and movements remain unresolved",
+    "ammonia stays NE: four independent activity pathways (ippu_ammonia_activity_reconciliation.csv) disagree, and the official CRT activity is red-flagged by the sector's own gas consumption, which two institutions now measure within half a percent of each other for the reference year",
+    "F-gas consumption is a control, not an emission estimate"
+  ],
+  "outputs": [
+    "outputs/ippu_by_stream_2024.csv",
+    "outputs/ippu_totals_2024.csv",
+    "outputs/ippu_cement_material_balance_2024.csv",
+    "outputs/ippu_company_clinker_2024.csv",
+    "outputs/ippu_company_clinker_coverage_2024.csv",
+    "outputs/ippu_cement_tier_comparison_2024.csv",
+    "outputs/ippu_cement_producer_census_2024.csv",
+    "outputs/ippu_company_clinker_flow_audit_2024.csv",
+    "outputs/ippu_company_boundary_audit_2024.csv",
+    "outputs/ippu_cement_valid_structural_2024.csv",
+    "outputs/ippu_cement_method_benchmarks_2024.csv",
+    "outputs/ippu_cement_method_ladder_2024.csv",
+    "outputs/ippu_cement_structural_oat_2024.csv",
+    "outputs/ippu_cement_uncertainty_inputs_2024.csv",
+    "outputs/ippu_cement_conditional_intervals_2024.csv",
+    "outputs/ippu_completeness_2024.csv",
+    "outputs/ippu_evidence_maturity.csv",
+    "outputs/ippu_data_acquisition_requests.csv",
+    "outputs/ippu_historical_coverage_1990_2024.csv",
+    "outputs/ippu_activity_controls_2024.csv",
+    "outputs/ippu_cement_activity_reconciliation.csv",
+    "outputs/ippu_hfc_consumption_controls.csv",
+    "outputs/ippu_unfccc_crt_summary_2022.csv",
+    "outputs/ippu_fgas_screening_2024.csv",
+    "outputs/ippu_chemicals_screening_2024.csv",
+    "outputs/ippu_hfc_inventory_import_contract.csv",
+    "outputs/ippu_chemical_plant_evidence.csv",
+    "outputs/ippu_chemical_plant_activity.csv",
+    "outputs/ippu_nitric_acid_monitoring.csv",
+    "outputs/ippu_nitric_acid_monitoring_detail.csv",
+    "outputs/ippu_cdm_access_manifest.csv",
+    "outputs/ippu_period_product_register.csv",
+    "outputs/ippu_chemical_activation_status_2024.csv",
+    "outputs/ippu_chemical_activation_status_calendar_2022.csv",
+    "outputs/ippu_chemical_tier_gate_2024.csv",
+    "outputs/ippu_data_request_packets.csv",
+    "outputs/ippu_facility_registry.csv",
+    "outputs/ippu_facility_coverage.csv",
+    "outputs/ippu_source_manifest.csv",
+    "outputs/ippu_unfccc_crt_background_2022.csv",
+    "outputs/ippu_unfccc_crt_reproduction_2022.csv",
+    "outputs/ippu_unfccc_crt_fgas_species_2022.csv",
+    "outputs/ippu_unfccc_crt_cell_audit.csv",
+    "outputs/ippu_ammonia_activity_reconciliation.csv",
+    "outputs/ippu_urea_co2_bridge_2025.csv",
+    "outputs/ippu_fertilizer_gas_monthly_2024.csv",
+    "outputs/ippu_fertilizer_gas_cross_source_2024.csv",
+    "outputs/ippu_cement_matched_calendar_2022.csv",
+    "outputs/ippu_cement_crt_bridge_2022.csv",
+    "outputs/ippu_official_comparison.csv",
+    "outputs/ippu_provincial_2024.csv",
+    "outputs/ippu_monthly_2024.csv",
+    "outputs/ippu_qa_2024.csv"
+  ],
+  "period": "FY2023-24",
+  "reference_mt_co2": 25.535359145353045,
+  "registered_scope": "2.A.1;2.B.1;2.C.1;2.D.1",
+  "structural_max_mt_co2": 21.815648399999997,
+  "structural_min_mt_co2": 17.38903036
+}

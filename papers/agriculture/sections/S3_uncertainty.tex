@@ -1,0 +1,72 @@
+% ===========================================================================
+% Supplementary Note S3 — underlying uncertainty inputs
+% ===========================================================================
+
+\section*{S3.1 Two-stage combination}
+
+Each category's combined uncertainty (main paper, Appendix~E) is a two-stage
+quadrature. \emph{Stage 1 (IPCC Eq.~3.1, product rule):} every emission component
+combines its activity-data uncertainty and its emission-factor uncertainty,
+$u = \sqrt{\sum_i u_i^2}$. \emph{Stage 2 (Eq.~3.2, sum rule):} the components are
+aggregated to the category, emission-magnitude-weighted. Table~\ref{tab:s3} lists the
+Stage-1 inputs. Activity-data uncertainties for measured activities (livestock heads,
+crop production/area, fertiliser N) are stored in the activity CSVs; those for derived
+nitrogen pools (organic-manure and residue N, pasture-deposited N, volatilised and
+leached N) are inventory assumptions set in the calculation modules. All are treated
+as 95\% relative half-widths.
+
+The Monte-Carlo samples the \emph{components} themselves---each engine row is
+drawn from a mean-preserving lognormal at its declared width---and correlation is
+modelled in exactly one declared place: managed-soils components that share an
+emission factor (the volatilised-N and leached-N groups) receive one shared deviate
+per draw, so they move together, matching the linear-within-group Approach-1
+treatment. Two further couplings are physical and are carried in the NATIONAL run's
+parameter graph rather than by this sector-scoped stream: fertiliser N (5\%) is one
+audited series driving the soils synthetic and indirect components \emph{and} the urea
+term---scoped as a single parameter across both categories---and each species'
+head-count is shared between its enteric and manure components. Their effect at
+national scale is about a hundredth of a percentage point, in the widening direction:
+small, real, and reported rather than assumed away. The main text (Section~4) states the
+complementary half: that this sector-scoped stream does not model them, because it samples
+component totals rather than parameters.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lllr@{}}
+\toprule
+\textbf{Category / component} & \textbf{AD unc.\ (source)} & \textbf{EF unc.\ (source)} & \textbf{$u$\%} \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{Enteric \CHfour{}} (heads: livestock census; EF: IPCC T10.10--10.11)} \\
+\quad buffalo            & 15 (census) & 40 (T10.10) & 43 \\
+\quad dairy/other cattle & 15 (census) & 50 (T10.11) & 52 \\
+\quad sheep, goats       & 20 (census) & 50 (T10.10) & 54 \\
+\quad camels             & 25 (census) & 50 (T10.10) & 56 \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Manure management} (T10.14--10.21)} \\
+\quad \CHfour{} (by species) & 15--25 (census) & 30 (T10.14--16) & 34--39 \\
+\quad Direct \NtwoO{}    & 15 (assumption) & 100 ($EF_3$) & 101 \\
+\quad Indirect \NtwoO{}  & 20 (assumption) & 100 ($EF_4$) & 102 \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Managed soils} (2019 T11.1--11.3)} \\
+\quad synthetic (upland) & 5 (NFDC N)  & 110 ($EF_1$) & 110 \\
+\quad synthetic (rice)   & 5 (NFDC N)  & 120 ($EF_{1FR}$) & 120 \\
+\quad organic manure     & 30 (assumption) & 110 ($EF_1$) & 114 \\
+\quad crop residues      & 30 (assumption) & 110 ($EF_1$) & 114 \\
+\quad pasture deposition & 20 (assumption) & 100 ($EF_3$) & 102 \\
+\quad indirect (vol., leach) & 20 (assumption) & 100 ($EF_4/EF_5$) & 102 \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Rice, burning, urea}} \\
+\quad Rice \CHfour{}     & 20 (area) & 53 ($EF_c$), 26 ($SF_w$) & 62 \\
+\quad Field burning      & 20 (production) & 30 ($C_f$), 40--50 ($G_{ef}$) & 54--62 \\
+\quad Urea \COtwo{}      & 5 (NFDC N) & 10 (C content) & 11 \\
+\bottomrule
+\end{tabular}
+\caption{Stage-1 (Eq.~3.1) uncertainty inputs by emission component: activity-data
+(AD) and emission-factor (EF) 95\% relative half-widths, with sources, and the
+combined component uncertainty $u$. ``census'' = \texttt{livestock\_2024.csv}
+\texttt{ad\_uncert\_pct}; ``NFDC N''/``area''/``production'' = the crop/fertiliser
+activity CSVs; ``assumption'' = a module-level value for a derived nitrogen pool.
+Stage-2 aggregation of these gives the per-category values in Appendix~E.}
+\label{tab:s3}
+\end{table}

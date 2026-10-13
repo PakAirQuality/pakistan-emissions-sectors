@@ -1,0 +1,14 @@
+{
+  "audit_note": "OSM line-km exceed route-km because double-track sections and yard trackage map as parallel ways; the corridor normalisation makes parallels share their corridor's weight.",
+  "download_date": "2026-08-09",
+  "filter": "fclass == 'rail' (subway/urban electric excluded)",
+  "km_active_incl_parallel_tracks": 7575,
+  "km_disconnected_fragments": 1246,
+  "licence": "OpenStreetMap contributors, Open Database License (ODbL) 1.0; this derived file inherits ODbL share-alike",
+  "segments": 5957,
+  "snapshot_timestamp": "2026-08-06T20:21:21Z",
+  "snapshot_zip_sha256": "ab445f8f0a4b6df1ca75f8da5f97f0cf2ecb1144287953d19054a82741010d2d",
+  "source": "Geofabrik pakistan-latest-free.shp.zip, layer gis_osm_railways_free_1",
+  "source_url": "https://download.geofabrik.de/asia/pakistan-latest-free.shp.zip",
+  "year_book_route_km": 7791
+}

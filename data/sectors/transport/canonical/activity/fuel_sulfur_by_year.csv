@@ -1,0 +1,19 @@
+Fiscal year (ending year),Fuel,Ppm central,Ppm lo,Ppm hi,Basis,Record ID,Source row
+2016,Diesel,5000,500,10000,pre-Euro-II circulation at 0.5 percent sulfur,bd5b78205030220a33dc6ff6,1
+2017,Diesel,5000,500,10000,transition year - the January 2017 Euro-II import mandate falls mid-fiscal,05bd6646622f32e2e0f60f85,2
+2018,Diesel,500,500,5000,Euro-II 500 ppm import specification,b69bcd07f3994cd5cdc045a9,3
+2019,Diesel,500,500,5000,Euro-II 500 ppm import specification,aabab61bfac5aa7f83304da5,4
+2020,Diesel,500,500,5000,Euro-II 500 ppm import specification,806b154d1ccc0ea138e3361b,5
+2021,Diesel,500,10,5000,Euro-V import mandate January 2021 falls mid-fiscal; domestic output unchanged,155b77e9202b429840c18bd5,6
+2022,Diesel,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central,e7187054c4ece04695dbcbec,7
+2023,Diesel,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central,9caed008bb3cad5a3474a8c9,8
+2024,Diesel,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central,5fc8f936f4cd6dfe45d6141d,9
+2016,Petrol,500,150,1000,Euro-2-era petrol specification ceiling,fd7f7cfa859603df989d8cde,10
+2017,Petrol,500,150,1000,Euro-2-era petrol specification ceiling,0d4d531b4d640b3f92a98ed8,11
+2018,Petrol,500,150,1000,Euro-2-era petrol specification ceiling,70d925bf733c06da2e2690eb,12
+2019,Petrol,500,150,1000,Euro-2-era petrol specification ceiling,3271fdb4110de590d9b05e1c,13
+2020,Petrol,500,150,1000,Euro-2-era petrol specification ceiling,0e8fdc16968a53d7fc24b2b8,14
+2021,Petrol,500,10,1000,Euro-V petrol import mandate August 2020; domestic output unchanged; conservative central,daed6aed8557f0c948fd7a46,15
+2022,Petrol,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central,c34a3ae369e8201eec289c2b,16
+2023,Petrol,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central,6581f5b3a02c687c9a190d61,17
+2024,Petrol,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central,a95ba2b01adce2658ebe3350,18

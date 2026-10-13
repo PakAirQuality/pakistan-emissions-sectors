@@ -1,0 +1,101 @@
+\section{Reproduction and generated outputs}
+\label{app:repro}
+
+\begin{verbatim}
+pip install -e .
+python3 -m pkinv.sectors.ippu.run_ippu
+python3 -m unittest discover tests
+python3 -m pkinv.report.figures
+python3 scripts/sync_figures.py
+\end{verbatim}
+
+The run generates the sector's headline tables---\texttt{ippu\_totals\_2024.csv} (the result by
+category in both common-GWP vintages), \texttt{ippu\_by\_stream\_2024.csv} (category, subitem
+and gas in gigagrams with each row's uncertainty, activity year and period kind,
+evidence class, temporal and spatial method and source), \texttt{ippu\_provincial\_2024.csv}
+(the province-level AR5 total, each row carrying the allocation status that produced it) and
+\texttt{ippu\_monthly\_2024.csv} (the twelve-month layer with each month's share, the emissions
+it implies and the basis of the shape)---together with the evidence tables below. Each is
+named, because a reader reproducing the run is otherwise told what it produces without being
+able to tell which file is which; every quantity this paper prints from one of them is checked
+against it by the verification registry.
+
+\begin{description}\itemsep2pt
+\item[\texttt{ippu\_cement\_material\_balance\_2024.csv}] the clinker material balance:
+  domestic production, trade and stock terms against inferred clinker.
+\item[\texttt{ippu\_cement\_producer\_census\_2024.csv}] the \num{16}-company producer
+  census, each entity's reported clinker quantity (Section~\ref{sec:data}).
+\item[\texttt{ippu\_company\_clinker\_2024.csv}] company-level clinker flows for the same
+  \num{16} entities.
+\item[\texttt{ippu\_company\_clinker\_coverage\_2024.csv}] the company-against-census
+  coverage reconciliation---identical universe and period, zero stock change.
+\item[\texttt{ippu\_cement\_valid\_structural\_2024.csv}] the valid trade-corrected
+  structural models: scenario, cement source, clinker fraction and resulting \COtwo{}.
+\item[\texttt{ippu\_cement\_tier\_comparison\_2024.csv}] the same estimate by method and
+  coverage, the producer census as reference.
+\item[\texttt{ippu\_cement\_method\_benchmarks\_2024.csv}] the two retained no-trade
+  benchmarks, marked screening-only, isolating the bias from omitting observed clinker trade.
+\item[\texttt{ippu\_cement\_conditional\_intervals\_2024.csv}] conditional Monte Carlo
+  intervals per configuration, with the deterministic value, the quantiles, the draw count and
+  the seed.
+\item[\texttt{ippu\_cement\_matched\_calendar\_2022.csv}] the matched calendar-2022
+  reconstruction, inferring clinker production from that year's own activity and trade.
+\item[\texttt{ippu\_cement\_activity\_reconciliation.csv}] a reported cement quantity
+  against the period it actually belongs to, retained so a superseded period tag cannot
+  re-enter as a structural alternative.
+\item[\texttt{ippu\_ammonia\_activity\_reconciliation.csv}] ammonia activity by pathway
+  against the official filing, with each pathway's independence from it recorded.
+\item[\texttt{ippu\_fertilizer\_gas\_cross\_source\_2024.csv}] the fertiliser gas
+  cross-source check: NFDC plant meters against the gas ledger, with the feed and fuel shares
+  and their agreement.
+\item[\texttt{ippu\_chemical\_plant\_activity.csv}] the chemical-plant evidence table
+  (Section~\ref{sec:limitations} states what it does not cover).
+\item[\texttt{ippu\_activity\_controls\_2024.csv}] the activity controls, one row per IPCC
+  code and product, each with its source reference, coverage and data tier.
+\item[\texttt{ippu\_facility\_registry.csv}] the facility registry and
+  \texttt{ippu\_facility\_coverage.csv} its geocoding coverage by district---declared,
+  geocoded and ungeocoded counts (Section~\ref{sec:data}).
+\end{description}
+
+The run also writes the CRT activity--factor bridge, the full completeness matrix, nitric-acid
+evidence, HFC data specifications, the source manifest, the CRT cell extraction, the
+quality-control report and the run manifest.
+
+The run manifest records every input hash, output name, reference result and structural range.
+The CRT cell audit additionally records the source ZIP and workbook hashes, worksheet, cell,
+raw value, formula and cell-value hash. The generated national total contains only the
+independently estimated 2.A.1 process \COtwo{} component.
+
+\section{Completeness and data requirements}
+
+Each detailed category is documented in \texttt{ippu\_completeness\_2024.csv} by IPCC code,
+gas, notation key, activity and method status, public source, available years, source role,
+materiality and remaining data requirement---the table this section has always described and
+never named. The gas split behind the fertiliser feedstock is published beside it in
+\texttt{ippu\_\allowbreak fertilizer\_\allowbreak gas\_\allowbreak monthly\_\allowbreak 2024.csv}, which carries feed and fuel
+volumes in million cubic feet by month with each month's share of the year and the feedstock share it
+implies. The highest-priority data needs are:
+
+\begin{enumerate}[leftmargin=*]
+\item APCMA and cement producers: clinker production, purchases, sales, trade and stocks;
+\item NFDC and fertiliser producers: ammonia and 100\%-nitric-acid output, feedstock, recovered
+      \COtwo{}, process technology and \NtwoO{} abatement;
+\item National Ozone Unit and Customs: annual chemical/application imports, exports,
+      destruction and equipment charge for HFCs;
+\item PBS and industrial producers: marketed and captive lime, glass tonnes/type/cullet,
+      carbonate inputs, steel route and carbon inputs, and lubricant consumption;
+\item NTDC, distribution companies and major equipment owners: SF$_6$ equipment, purchases,
+      refills, recovery and retirement.
+\end{enumerate}
+
+\section{Source hierarchy}
+
+Methods and cement factors are from IPCC Volume~3 \citep{ipcc2006ippu}. FY2023--24 cement
+activity is from PBS QIM \citep{pbsqim2024} and is corroborated by the SBP fiscal series
+\citep{sbpstatsupp2024}; that cross-check corrects the former Pocket Book period tag.
+FY2023--24 clinker trade is from UN Comtrade \citep{uncomtrade2024clinker}, and calendar-2022
+trade is cross-checked through WITS/UN Comtrade \citep{witsclinker2022}; company clinker
+sources are recorded row by row in the producer ledger.
+The official comparison is Pakistan's 2022 CRT
+\citep{pakcrt2026}, and HFC consumption data are from the Ozone Secretariat country profile
+\citep{pakistanozoneprofile}.

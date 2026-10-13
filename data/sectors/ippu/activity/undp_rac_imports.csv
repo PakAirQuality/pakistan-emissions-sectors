@@ -1,0 +1,25 @@
+# HFC and hydrocarbon refrigerant imports by species, 2012-2019, in KILOGRAMS, from the
+# UNDP RAC inventory's Table 13 ("HFC and HC refrigerant imports (2012-2019)",
+# data/raw/undp/undp_pakistan_rac_ghg_inventory.pdf p.31, sha256 8acd7ddd...). The National
+# Ozone Unit's own compilation as the report prints it - including its quirks, carried
+# rather than smoothed: R-152a's row ends at 2015 in the source (the remaining cells are
+# genuinely absent, not zero), and the species spellings are the report's own (R404A
+# without a hyphen beside R-410A with one). Machine-extracted by pdftotext and re-verified
+# cell-by-cell by scripts/check_transcriptions.py.
+# CONSUMED BY scripts/build_hfc_contract.py (rc46 Wave 4); hydrocarbons (R-600a, R-290)
+# are carried and flagged downstream, not silently dropped.
+species,2012,2013,2014,2015,2016,2017,2018,2019
+R-32,0,0,0,200,108000,354135,327420,423500
+R-134a,1743780,1329250,1640300,2066110,2117657,2416634,2458191,1987714
+R-600a,73600,25050,95970,98800,950,1430,0,0
+R-125,0,0,0,60,108283,367140,339360,424005
+R-410A,3620,21640,37050,173960,383728,1334028,1120484,1030808
+R-407C,11150,16780,23350,63280,30712,26037,52074,72732
+R-23,600,0,0,4200,64,150,0,120
+R404A,48710,53300,71480,105890,110341,107103,113085,123982
+R507A,0,0,0,0,678,0,680,3904
+R417A,0,0,0,0,114,0,0,2200
+R-508B,0,0,0,0,0,300,0,80
+R-290,2280,20,30,500,0,550,0,0
+R-143A,0,0,0,0,0,0,0,5200
+R-152a,2000,13000,36010,79000,,,,

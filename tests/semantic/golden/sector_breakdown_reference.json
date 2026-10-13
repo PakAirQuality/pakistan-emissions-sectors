@@ -1,0 +1,25 @@
+{
+ "expect": [
+  {
+   "claims_pointer": "national_all_sectors.csv#row_kind=sector,sector=agriculture#co2e_Mt_AR5",
+   "exact": "223.45447",
+   "group": {
+    "sector_id": "agriculture"
+   },
+   "tolerance": "5e-4"
+  }
+ ],
+ "expect_receipt": "dee922f6ca5d0a6dac613c7bbf6bd51f",
+ "function": "query_emissions",
+ "golden_id": "sector_breakdown_reference",
+ "note": "rc67 (2026-10-13): renamed from sector_breakdown_L. The suffix named the reference configuration by its dung letter, and the reference is no longer L: it carries the household survey's dung (S) in every year, and L is the alternative. The request is unchanged - it asks for the reference by default. The pinned cell (agriculture) did not move; the receipt did, because the answer's residential row is 24.22042 where it was 29.46668.",
+ "request": {
+  "group_by": [
+   "sector_id"
+  ],
+  "order_by": "value desc",
+  "periods": [
+   "FY2023-24"
+  ]
+ }
+}

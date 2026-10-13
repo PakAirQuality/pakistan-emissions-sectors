@@ -1,0 +1,3 @@
+Calendar year,Flow,Quantity t,Source ID,Source reference,Coverage status,Note,Record ID,Source row
+2022,export,1341580,wits_un_comtrade_2022,https://wits.worldbank.org/trade/comtrade/en/country/PAK/year/2022/tradeflow/Exports/partner/ALL/product/252310,complete_calendar_year,"HS 252310 Pakistan to World; WITS reports 1,341,580,000 kg, converted here to tonnes",5b542a488835220049916a98,1
+2022,import,3999,wits_un_comtrade_2022,https://wits.worldbank.org/trade/comtrade/en/country/ALL/year/2022/tradeflow/Imports/partner/WLD/product/252310,complete_calendar_year,"HS 252310 World to Pakistan; WITS reports 3,999,000 kg, converted here to tonnes",5c4f92a6bc796cdb9576c8b8,2

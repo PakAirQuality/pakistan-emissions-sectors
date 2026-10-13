@@ -1,0 +1,5 @@
+check,passed,actual,expected,note
+published categories add to the published total (AR5),True,223.454471,223.454471,the six IPCC categories partition the sector
+the published total is the sum of its components (AR5),True,223.454471,223.454471,combine_sum may only combine UNCERTAINTY; the central value is additive
+published categories add to the published total (AR6),True,218.065182,218.065182,"the same identity on the second metric, which no test covered"
+declared outputs written,True,6,6,every output this runner declares was written by this run

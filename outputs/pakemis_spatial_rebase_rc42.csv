@@ -1,0 +1,12 @@
+# SPATIAL RE-BASE MEASUREMENTS (rc42): what each named re-base moved between shapes,
+# against the committed baseline named in baseline_ref; ADM1 marginals and category
+# totals are asserted unchanged by scripts/measure_spatial_rebase.py, which exits 1 otherwise.
+# CO2e Mt AR5 with the module's methane origin (biogenic for agriculture, residential, waste).
+rebase,product,scope,units_moved,gross_Mt_AR5,net_Mt_AR5,max_unit_delta_Mt_AR5,max_unit,fallback_before_Mt_AR5,fallback_after_Mt_AR5,baseline_ref,note
+rc42_spatial,pakemis_adm2_monthly_sector.csv,agriculture,228,28.023527,-0.000000064,7.915154,agriculture|60131773B89354468833127|CH4,,,063b43d1,shapes (module|shape_id|gas) whose physical-view mass moved; provincial marginals asserted unchanged
+rc42_spatial,pakemis_adm2_monthly_sector.csv,power,66,59.489296,0.000000058,29.617596,power|60131773B67519654827672|CO2,,,063b43d1,shapes (module|shape_id|gas) whose physical-view mass moved; provincial marginals asserted unchanged
+rc42_spatial,pakemis_grid_fallbacks.csv,agriculture/district,,,,,,0.402506,2.473927,063b43d1,"mass on a declared fallback surface, before and after"
+rc42_spatial,pakemis_grid_fallbacks.csv,power/province,,,,,,34.735448,0.339919,063b43d1,"mass on a declared fallback surface, before and after"
+rc42_spatial,district_totals_2024.csv,Enteric fermentation,116,29.206200,0.000000000,8.862590,Enteric fermentation|Karachi,,,063b43d1,districts whose category mass moved; the category total asserted unchanged
+rc42_spatial,district_totals_2024.csv,Field burning of residues,109,0.075090,0.000030000,0.007350,Field burning of residues|Dera Ismail Khan,,,063b43d1,districts whose category mass moved; the category total asserted unchanged
+rc42_spatial,district_totals_2024.csv,Manure management,116,3.991750,-0.000010000,1.170240,Manure management|Karachi,,,063b43d1,districts whose category mass moved; the category total asserted unchanged

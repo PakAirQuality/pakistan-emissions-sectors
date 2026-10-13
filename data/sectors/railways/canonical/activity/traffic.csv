@@ -1,0 +1,15 @@
+Fiscal year (ending year),Metric,Value,Unit,Source,Note,Record ID,Source row
+2022,total_train_km,29742,thousand km,Year Book 2024-25 comparative statements p.159 (item 19),,3f9be1893592b640742e9fbc,1
+2023,total_train_km,25498,thousand km,Year Book 2024-25 comparative statements p.159,,5d10e32d89b7252af920bc50,2
+2024,total_train_km,33122,thousand km,Year Book 2023-24 Principal Statistics; reproduced in 2024-25 comparative statements,,475a0e7e44a46193482e6cdc,3
+2025,total_train_km,27277,thousand km,Year Book 2024-25 comparative statements p.159,"PROVISIONAL. Corroborates the Principal Statistics split (20,124 passenger + 7,152 freight = 27,276).",9c2eb4d34eeb3044b88c8b86,4
+2024,passenger_km,29864878,thousand km,Year Book 2023-24 Principal Statistics; 2024-25 comparative statements p.161,,a8f9b27ccffbaf312bca169d,5
+2025,passenger_km,27716034,thousand km,Year Book 2024-25 comparative statements p.161 (item 28),PROVISIONAL. The scan's Principal Statistics page garbles several traffic cells; the comparative statement is the clean print and is carried.,231a6affa64a74f49ac936bd,6
+2023,passenger_km,23684221,thousand km,Year Book 2024-25 comparative statements p.161,,8aa18350179a1a6790674c88,7
+2024,tonne_km,7814953,thousand km,Year Book 2023-24 Principal Statistics; 2024-25 comparative statements p.161,,57faca6238f0191cd1f750cd,8
+2025,tonne_km,7723607,thousand km,Year Book 2024-25 comparative statements p.161 (item 33),PROVISIONAL.,284d3af163230c7ac0cedec0,9
+2023,tonne_km,5723154,thousand km,Year Book 2024-25 comparative statements p.161,,fa8afba4cc1427ece745474a,10
+2024,passengers_carried,42130,thousand,Year Book 2023-24 Principal Statistics,,49c98e85006ac6a5d095e47f,11
+2025,passengers_carried,39173,thousand,Year Book 2024-25 comparative statements p.161 (item 27),PROVISIONAL.,308b561f054f96ec67b998b1,12
+2024,freight_tonnes,7854,thousand t,Year Book 2023-24 Principal Statistics,,db8262fe1b44e478420b1b5e,13
+2025,freight_tonnes,7752,thousand t,Year Book 2024-25 comparative statements p.161 (item 32),PROVISIONAL.,082fdca479ecd655e128757d,14

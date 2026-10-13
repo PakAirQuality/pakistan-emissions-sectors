@@ -1,0 +1,14 @@
+param,value,unit,source,note
+forest_area_ha,3720000,ha,FAO FRA 2020 / World Bank (4.83% of land),Total forest area; context/stock reporting
+forest_c_density_tC_ha,60,t C/ha,IPCC 2006 V4 Ch4 (AGB ~100 t dm/ha x 1.27 root-shoot x 0.47 CF),Mean biomass carbon density across PK forest types (dry forest/scrub/montane)
+afforestation_growing_area_ha,640000,ha,Billion Tree (350k) + Ten Billion Tree (~290k planted/seeded) actively growing,IUCN 2017; TBTTP impact report 2018-2023
+forest_seq_rate_tC_ha_yr,1.5,t C/ha/yr,Young dry/subtropical forest accumulation (conservative); calibrated to FAOSTAT Forestland -3.5 Mt,IPCC 2006 increment range; arid Pakistan low end
+deforestation_area_ha_yr,0,ha/yr,FAO net forest conversion ~0 in recent years (afforestation offsets gross loss),"Gross loss small and offset; documented as ~net 0 | CONTRADICTED BY PAKISTAN'S OWN SUBMISSION (2026-10-05): the CRT's forest-land living-biomass block has gross losses of 14868.348 kt C against gross gains of 7113.083 kt C, a ratio of 2.09, which at 44/12 net to +28.436 Mt CO2 and reproduce the BTR's printed +28.44. So afforestation does NOT offset gross loss on the submission's own numbers, and this zero is taken from FAOSTAT, whose net forest conversion is exactly 0.000 kha from 2020 against 26.104 in 2015 while its Pakistani forest AREA rises at exactly +20.786 kha/yr - interpolation, not observation. The value is left at 0 rather than changed here because moving it moves a PUBLISHED exploratory figure (the -4.01 Mt provisional net sink the limitations section prints) and that is a declared decision, not an audit edit. outputs/pakemis_forest_flux_adjudication.csv prices the disagreement"
+mangrove_area_ha,140000,ha,"Hussain & Rahman 2022 (Indus delta, satellite); ~100-144k range",Global Mangrove Watch / Mongabay 2024
+mangrove_gain_ha_yr,2811,ha/yr,Derived from 1986-2020 expansion (Hussain & Rahman 2022),CROSS-CHECK BASELINE ONLY (unused in the net); GMW v3 contradicts it - Indus delta -717 ha/yr LOSS 1996-2020 - surfaced by the land-change cross-check not overwritten
+mangrove_restored_area_ha,75000,ha,Delta Blue Carbon restored area to date (Sindh),Mongabay/Verra 2021-2023
+mangrove_seq_rate_tCO2_ha_yr,6.5,t CO2/ha/yr,Delta Blue Carbon project (142 Mt / 350k ha / 60 yr),Verra VM0033; humid IPCC default likely overstates arid PK (flag)
+mangrove_agb_c_tC_ha,86,t C/ha,IPCC 2013 Wetlands Supplement Ch4 (tropical mangrove),Above-ground biomass C; stock reporting (humid default - flag)
+mangrove_soil_c_tC_ha,471,t C/ha,IPCC 2013 Wetlands Supplement Ch4 (tropical mangrove top 1m),Soil/blue carbon; humid default likely high for arid Indus delta (flag)
+cropland_soc_change_MtCO2,0,Mt CO2,Tier 1 (no land-use/management change modelled; matches FAOSTAT),Cropland-remaining-cropland SOC ~0
+grassland_soc_change_MtCO2,0,Mt CO2,Tier 1 (matches FAOSTAT),Grassland SOC ~0

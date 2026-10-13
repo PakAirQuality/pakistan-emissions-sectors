@@ -1,0 +1,370 @@
+# WHAT THE MANUSCRIPTS CITE, AND WHETHER THE DEPOSIT CONTAINS IT
+#
+# One row per distinct output file NAMED in any manuscript section (row_kind=citation), in
+# either notation - `	exttt{outputs/x.csv}` or the bare `	exttt{x.csv}` the sector
+# appendices use - plus summary rows by role. `named_as` records which notation each file was
+# found in, because the two were once measured as different things. `in_deposit` is membership of
+# outputs/pakemis_deposit_manifest.csv, which ships what release_manifest.PRODUCT_PATTERNS
+# names. A file marked absent still EXISTS in the repository - what it is absent from is the
+# archive a reader downloads.
+#
+# This audit decides nothing. Where a cited file is absent, the fix is one of two things and
+# the row carries what is needed to choose: ship it (add a literal entry to PRODUCT_PATTERNS)
+# or re-cite the deposited product that already carries the same numbers.
+row_kind,artifact,role,release_tier,in_deposit,named_as,rows,bytes,cited_in,verdict
+citation,outputs/agri_reference_panel_divergence.csv,diagnostic,audit,no,bare,435,63785,paper_national/versions/v1/sections/generated_products.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/agriculture_crop_residue_ledger_2024.csv,diagnostic,audit,no,path,6,1237,papers/agriculture/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/agriculture_fertiliser_composition_2024.csv,diagnostic,audit,no,path,11,1027,papers/agriculture/sections/04c_shared_ledger.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/agriculture_livestock_reconciliation_2024.csv,diagnostic,audit,no,path,5,639,papers/agriculture/sections/03_study_area_and_data.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/agriculture_monthly_2024.csv,sector_headline,supporting,yes,path,408,93852,papers/agriculture/sections/09_conclusion.tex,deposited
+citation,outputs/agriculture_nfdc_province_residual.csv,diagnostic,audit,no,path,121,7564,papers/agriculture/sections/04c_shared_ledger.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/agriculture_timing_classes.csv,diagnostic,audit,no,path,7,3374,papers/agriculture/sections/09_conclusion.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/agriculture_uncertainty_inputs_2024.csv,diagnostic,audit,no,path,25,5205,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/agriculture_urea_basis.csv,diagnostic,audit,no,path,9,2186,papers/agriculture/sections/04_methods.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/air_key_categories.csv,diagnostic,audit,no,path,16,2164,papers/agriculture/sections/06b_air_pollutants.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/air_pollutants_2024.csv,diagnostic,audit,yes,bare,76,5259,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/air_pollutants_adm1.csv,canonical,core,yes,bare,2080,292734,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/air_pollutants_adm2.csv,canonical,core,yes,bare,44249,7929617,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/air_pollutants_district_2024.csv,diagnostic,audit,yes,bare,1335,88431,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/air_pollutants_provincial_2024.csv,sector_headline,supporting,yes,bare,380,32759,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/air_pollutants_timeseries_1990_2024.csv,diagnostic,audit,yes,bare,595,20346,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/air_uncertainty_montecarlo.csv,diagnostic,audit,yes,path,7,360,papers/agriculture/sections/10_appendix.tex,deposited
+citation,outputs/apcma_dispatch_parse_summary.csv,diagnostic,audit,no,bare,1,408,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/apcma_dispatch_quarantine.csv,diagnostic,audit,no,bare,50,6572,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/apcma_qim_cement_crosscheck.csv,diagnostic,audit,no,bare,60,6037,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_annual_component_comparison.csv,diagnostic,audit,no,bare,6,975,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_bridge_source_rows_all_scenarios.csv,diagnostic,audit,no,bare,69,12164,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_by_stream_fy2023_24.csv,sector_headline,supporting,yes,bare,6,577,papers/aviation/sections/10_appendix.tex,deposited
+citation,outputs/aviation_common_support_ladder.csv,diagnostic,audit,no,bare,8,1209,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_completeness_fy2023_24.csv,sector_headline,supporting,yes,bare,10,717,papers/aviation/sections/10_appendix.tex,deposited
+citation,outputs/aviation_fuel_bridge_fy2023_24.csv,diagnostic,audit,no,bare,24,4027,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_fuel_constrained_by_stream_fy2023_24.csv,sector_headline,supporting,yes,bare,3,370,papers/aviation/sections/10_appendix.tex,deposited
+citation,outputs/aviation_m2_uncertainty_contributions.csv,diagnostic,audit,no,bare,5,808,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_m2_uncertainty_intervals.csv,diagnostic,audit,no,bare,36,11130,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_model_resolution_fy2023_24.csv,diagnostic,audit,no,bare,7,1277,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_monthly_fy2023_24.csv,sector_headline,supporting,yes,bare,72,12478,papers/aviation/sections/10_appendix.tex,deposited
+citation,outputs/aviation_monthly_reconciliation.csv,diagnostic,audit,no,bare,42,11095,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_ocac_annual_summary.csv,diagnostic,audit,no,bare,9,874,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_ocac_cumulative_monthly.csv,diagnostic,audit,no,bare,240,58095,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_ocac_monthly.csv,diagnostic,audit,no,bare,240,59159,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_ocac_oecd_annual_comparison.csv,diagnostic,audit,no,bare,7,1799,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_provincial_fy2023_24.csv,sector_headline,supporting,yes,bare,5,111,papers/aviation/sections/10_appendix.tex,deposited
+citation,outputs/aviation_reconciliation_fy2023_24.csv,diagnostic,audit,no,bare,3,648,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_timeseries_2006_fy2023_24.csv,diagnostic,audit,no,bare,18,395,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_two_year_replication.csv,diagnostic,audit,no,bare,2,737,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_unallocated_fuel_fy2023_24.csv,diagnostic,audit,no,path,4,972,papers/aviation/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_uncertainty_inputs_complete.csv,diagnostic,audit,no,bare,15,3032,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/aviation_uncertainty_sensitivity.csv,diagnostic,audit,no,bare,5,997,papers/aviation/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/benchmark_spatial_allocation.csv,diagnostic,audit,no,path,23,4715,papers/agriculture/sections/05_validation.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/completeness.csv,canonical,core,yes,path,138,69538,papers/residential/sections/S3_completeness.tex; papers/transport/sections/S3_completeness.tex; papers/waste/sections/S4_completeness.tex,deposited
+citation,outputs/era5_degree_day_crosscheck.csv,diagnostic,audit,no,path,270,40458,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fao_crop_calendar_crosscheck.csv,diagnostic,audit,no,bare,4,1893,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_benchmark_crosswalk.csv,diagnostic,audit,no,bare,3,1342,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_by_stream_2024.csv,sector_headline,supporting,yes,bare,30,6652,papers/fugitives/sections/10_appendix.tex,deposited
+citation,outputs/fugitives_coal_screen_2024.csv,diagnostic,audit,no,path,4,1058,papers/fugitives/sections/03_study_area_and_data.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_completeness_2024.csv,sector_headline,supporting,yes,bare,19,5658,papers/fugitives/sections/10_appendix.tex,deposited
+citation,outputs/fugitives_conditional_intervals_2024.csv,diagnostic,audit,no,bare,5,1562,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_data_priorities_2024.csv,diagnostic,audit,no,bare,15,2938,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_distribution_practice_evidence_2024.csv,diagnostic,audit,no,bare,6,2550,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_gas_flow_balance_2022_2024.csv,diagnostic,audit,no,bare,3,1831,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_infrastructure_segment_timeseries_2016_2024.csv,diagnostic,audit,no,bare,108,17963,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_infrastructure_timeseries_2016_2024.csv,diagnostic,audit,no,bare,9,1500,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_mars_summary.csv,diagnostic,audit,no,bare,1,336,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_method_ladder_2024.csv,diagnostic,audit,no,bare,5,748,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_monthly_2024.csv,sector_headline,supporting,yes,bare,360,102913,papers/fugitives/sections/10_appendix.tex,deposited
+citation,outputs/fugitives_observation_field_statistics_2024.csv,diagnostic,audit,no,bare,3,890,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_observation_permutation_2024.csv,diagnostic,audit,no,bare,6,1676,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_observation_provincial_evaluation_2024.csv,sector_headline,supporting,yes,bare,4,722,papers/fugitives/sections/10_appendix.tex,deposited
+citation,outputs/fugitives_post_meter_end_use_2024.csv,diagnostic,audit,no,bare,10,3019,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_post_meter_factor_lineage_2024.csv,diagnostic,audit,no,bare,1,475,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_provincial_2024.csv,sector_headline,supporting,yes,bare,5,169,papers/fugitives/sections/10_appendix.tex,deposited
+citation,outputs/fugitives_segment_native_gases_2024.csv,diagnostic,audit,no,bare,12,1450,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_structural_factorial_2024.csv,diagnostic,audit,no,bare,280,64166,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_structural_scenarios_2024.csv,diagnostic,audit,no,bare,14,1930,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_totals_2024.csv,sector_headline,supporting,yes,bare,2,516,papers/fugitives/sections/10_appendix.tex,deposited
+citation,outputs/fugitives_ufg_network_compatibility_2024.csv,diagnostic,audit,no,bare,6,1458,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_uncertainty_2024.csv,sector_headline,supporting,yes,bare,14,2710,papers/fugitives/sections/10_appendix.tex,deposited
+citation,outputs/fugitives_uncertainty_attribution_2024.csv,diagnostic,audit,no,bare,24,5086,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_viirs_flare_sites.csv,diagnostic,audit,no,bare,130,34522,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/fugitives_viirs_flaring_2012_2025.csv,diagnostic,audit,no,bare,14,2626,papers/fugitives/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/industry_by_stream_2024.csv,sector_headline,supporting,yes,path,30,2898,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/industry_captive_screening_2024.csv,diagnostic,audit,yes,path,8,2710,paper_national/versions/v1/sections/09_completeness.tex,deposited
+citation,outputs/industry_monthly_2024.csv,sector_headline,supporting,yes,path,360,89224,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/industry_provincial_2024.csv,sector_headline,supporting,yes,path,5,118,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/industry_totals_2024.csv,sector_headline,supporting,yes,path,8,4251,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/ippu_activity_controls_2024.csv,diagnostic,audit,no,bare,16,6709,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_ammonia_activity_reconciliation.csv,diagnostic,audit,no,bare,7,4699,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_by_stream_2024.csv,sector_headline,supporting,yes,bare,5,1005,papers/ippu/sections/10_appendix.tex,deposited
+citation,outputs/ippu_cement_activity_reconciliation.csv,diagnostic,audit,no,bare,2,293,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_cement_conditional_intervals_2024.csv,diagnostic,audit,no,bare,3,897,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_cement_matched_calendar_2022.csv,diagnostic,audit,no,bare,2,913,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_cement_material_balance_2024.csv,diagnostic,audit,no,bare,5,618,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_cement_method_benchmarks_2024.csv,diagnostic,audit,no,bare,2,497,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_cement_producer_census_2024.csv,diagnostic,audit,no,bare,16,3096,papers/ippu/sections/03_study_area_and_data.tex; papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_cement_tier_comparison_2024.csv,diagnostic,audit,no,bare,3,570,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_cement_valid_structural_2024.csv,diagnostic,audit,no,bare,3,854,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_chemical_activation_status_2024.csv,diagnostic,audit,no,path,2,470,paper_national/versions/v1/sections/09_completeness.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_chemical_plant_activity.csv,diagnostic,audit,no,bare,10,3810,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_chemical_tier_gate_2024.csv,diagnostic,audit,no,path,6,1340,paper_national/versions/v1/sections/09_completeness.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_company_clinker_2024.csv,diagnostic,audit,no,bare,16,6187,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_company_clinker_coverage_2024.csv,diagnostic,audit,no,bare,1,775,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_completeness_2024.csv,sector_headline,supporting,yes,bare,36,8143,papers/ippu/sections/10_appendix.tex,deposited
+citation,outputs/ippu_facility_coordinate_agreement.csv,diagnostic,audit,no,path,19,6341,papers/ippu/sections/04_methods.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_facility_coverage.csv,diagnostic,audit,no,bare,20,1628,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_facility_registry.csv,diagnostic,audit,no,bare,34,21831,papers/ippu/sections/03_study_area_and_data.tex; papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_fertilizer_gas_cross_source_2024.csv,diagnostic,audit,no,bare,3,1633,papers/ippu/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ippu_fertilizer_gas_monthly_2024.csv,sector_headline,supporting,yes,bare,24,8660,papers/ippu/sections/10_appendix.tex,deposited
+citation,outputs/ippu_monthly_2024.csv,sector_headline,supporting,yes,bare,60,16602,papers/ippu/sections/10_appendix.tex,deposited
+citation,outputs/ippu_provincial_2024.csv,sector_headline,supporting,yes,bare,5,385,papers/ippu/sections/10_appendix.tex,deposited
+citation,outputs/ippu_totals_2024.csv,sector_headline,supporting,yes,bare,7,1262,papers/ippu/sections/10_appendix.tex,deposited
+citation,outputs/limestone_qim_cement_crosscheck.csv,diagnostic,audit,no,bare,72,9369,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/lulucf_totals.csv,eval_lane,research,no,both,5,237,paper_national/versions/v1/sections/12_limitations.tex; papers/agriculture/sections/S1_land_supplement.tex,CITED BUT NOT DEPOSITED (role: eval_lane)
+citation,outputs/n_ledger_2024.csv,diagnostic,audit,yes,path,26,2281,papers/agriculture/sections/10_appendix.tex,deposited
+citation,outputs/n_ledger_stage_comparison.csv,diagnostic,audit,yes,path,4,169,papers/agriculture/sections/10_appendix.tex,deposited
+citation,outputs/national_all_sectors.csv,canonical,core,yes,bare,11,2468,paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/national_axis_register.csv,diagnostic,audit,no,path,23,16376,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_benchmark_scope_coverage.csv,diagnostic,audit,no,path,12,1239,paper_national/versions/v1/sections/10_benchmarks.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_category_gas.csv,diagnostic,audit,no,path,52,5928,paper_national/versions/v1/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_configurations.csv,diagnostic,audit,no,path,28,23656,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/07_uncertainty.tex; papers/ippu/sections/06_results.tex; papers/railways/sections/08_limitations.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_dung_variants.csv,diagnostic,audit,no,both,5,2418,paper_national/versions/v1/sections/07_uncertainty.tex; papers/residential/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_edgar_transport_comparison.csv,diagnostic,audit,no,path,7,2832,papers/transport/sections/05_validation.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_gas_closure.csv,diagnostic,audit,no,path,15,6762,paper_national/versions/v1/sections/04_closures.tex; papers/fugitives/sections/08_limitations.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_gas_closure_variant.csv,diagnostic,audit,yes,path,2,930,paper_national/versions/v1/sections/04_closures.tex,deposited
+citation,outputs/national_key_categories.csv,diagnostic,audit,no,path,24,2698,paper_national/versions/v1/sections/08_key_categories.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_priority_rankings.csv,diagnostic,audit,no,path,26,12270,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_structural_bridge.csv,diagnostic,audit,no,path,23,12066,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_uncertainty_decomposition.csv,diagnostic,audit,yes,path,202,39908,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/national_uncertainty_montecarlo.csv,diagnostic,audit,no,both,68,20554,paper_national/versions/v1/sections/generated_products.tex; papers/transport/sections/S1_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_uncertainty_reconciliation.csv,diagnostic,audit,no,path,10,2435,papers/fugitives/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/national_uncertainty_sources.csv,diagnostic,audit,no,path,4,1798,paper_national/versions/v1/sections/07_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/nfdc_monthly_parse_summary.csv,diagnostic,audit,no,path,1,693,paper_national/versions/v1/sections/12_limitations.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/nfdc_monthly_quarantine.csv,diagnostic,audit,no,bare,1,400,paper_national/versions/v1/sections/12_limitations.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ocac_direct_edition_crosscheck.csv,diagnostic,audit,no,path,144,8916,paper_national/versions/v1/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ocac_direct_edition_quarantine.csv,diagnostic,audit,no,bare,2,313,paper_national/versions/v1/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ocac_edition_currency.csv,diagnostic,audit,no,bare,36,5565,paper_national/versions/v1/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ocac_edition_inventory.csv,diagnostic,audit,no,path,4,876,papers/transport/sections/03_study_area_and_data.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/ocac_parse_summary.csv,diagnostic,audit,no,bare,1,706,paper_national/versions/v1/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/pakemis_adm1_by_year.csv,canonical,core,yes,bare,7864,1311062,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_adm1_ledger_2024.csv,canonical,core,yes,bare,1380,210592,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_adm2_by_year.csv,canonical,core,yes,bare,10350,1044058,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_adm2_frame_2022.csv,canonical,core,yes,bare,179,21864,paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_adm2_ledger_2024.csv,canonical,core,yes,bare,35075,7002547,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_adm2_monthly.csv,canonical,core,yes,bare,13624,1332164,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/14_appendix.tex,deposited
+citation,outputs/pakemis_adm2_monthly_by_year.csv,canonical,core,yes,bare,122616,13209928,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_adm2_monthly_sector.csv,canonical,core,yes,both,48410,6067287,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/generated_coverage.tex,deposited
+citation,outputs/pakemis_adm2_nesting_check.csv,canonical,core,yes,path,6,1047,papers/agriculture/sections/06_results.tex,deposited
+citation,outputs/pakemis_adm2_sector_by_year.csv,canonical,core,yes,bare,36522,4675474,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_adm2_stream_reference.csv,canonical,core,yes,bare,25273,5180454,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_agriculture_basis_change.csv,canonical,core,yes,path,54,6837,paper_national/versions/v1/sections/06_results.tex; papers/agriculture/sections/01_introduction.tex,deposited
+citation,outputs/pakemis_agriculture_crop_calendar.csv,canonical,core,yes,path,10,1245,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_agriculture_fiscal_series.csv,canonical,core,yes,path,72,11081,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_air_absence_screening_by_year.csv,canonical,core,yes,bare,81,31079,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_adm1_by_year.csv,canonical,core,yes,bare,22622,2674445,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_adm2_by_year.csv,canonical,core,yes,bare,136080,15246687,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv,canonical,core,yes,bare,1476,149112,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_atomic_annual.csv,canonical,core,yes,bare,5276,1468563,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_coverage_matrix.csv,canonical,core,yes,bare,630,58935,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc,canonical,core,yes,bare,,8731209,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_annual_ledger_fy2015_16_fy2023_24.nc,canonical,core,yes,bare,,8679075,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_lahore_by_year.csv,canonical,core,yes,bare,1224,381843,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_lahore_power_register.csv,diagnostic,audit,yes,bare,36,18466,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_provincial_external_comparison.csv,diagnostic,audit,yes,path,116,31770,paper_national/versions/v1/sections/10_benchmarks.tex,deposited
+citation,outputs/pakemis_air_spatial_support_by_year.csv,canonical,core,yes,bare,5140,1159412,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_unallocated_by_year.csv,canonical,core,yes,bare,144,46570,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_air_uncertainty_split_by_year.csv,canonical,core,yes,bare,126,13170,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_annual_fy2015_16_fy2023_24.csv,canonical,core,yes,both,444,65157,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_atomic_annual.csv,canonical,core,yes,bare,1789,666329,paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_btr_comparison.csv,canonical,core,yes,path,32,12738,paper_national/versions/v1/sections/10_benchmarks.tex,deposited
+citation,outputs/pakemis_category_crosswalk.csv,diagnostic,audit,yes,path,29,8733,paper_national/versions/v1/sections/09_completeness.tex,deposited
+citation,outputs/pakemis_citation_deposit_audit.csv,diagnostic,audit,yes,path,,,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_citation_pointer_audit.csv,diagnostic,audit,yes,path,217,55826,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_claim_matrix.csv,canonical,core,yes,path,,,paper_national/versions/v1/generated/claim_matrix.tex,deposited
+citation,outputs/pakemis_coal_allocation_identity.csv,diagnostic,audit,yes,path,88,9860,paper_national/versions/v1/sections/09_completeness.tex,deposited
+citation,outputs/pakemis_coal_sector_reallocation.csv,diagnostic,audit,yes,path,9,5536,paper_national/versions/v1/sections/09_completeness.tex,deposited
+citation,outputs/pakemis_completeness_mass.csv,canonical,core,yes,both,74,22575,paper_national/versions/v1/sections/10_benchmarks.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_deposit_manifest.csv,canonical,core,yes,path,,,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_ensemble_ledger_summary.csv,canonical,core,yes,bare,1,283,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_ensemble_spatial_conditionals.csv,canonical,core,yes,path,185,66945,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_ensemble_summary.csv,canonical,core,yes,both,24,3702,paper_national/versions/v1/sections/07_uncertainty.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_faostat_nitrogen_flows.csv,diagnostic,audit,yes,path,24,5592,paper_national/versions/v1/sections/10_benchmarks.tex,deposited
+citation,outputs/pakemis_fgas_leak_rate_adjudication.csv,diagnostic,audit,yes,path,6,4732,papers/ippu/sections/07_discussion.tex,deposited
+citation,outputs/pakemis_flatness_crosswalk.csv,canonical,core,yes,path,13,1557,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_forest_flux_adjudication.csv,diagnostic,audit,yes,path,18,5817,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_fuel_sulfur_decision.csv,canonical,core,yes,bare,13,12285,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_gas_flow_crosswalk.csv,diagnostic,audit,yes,path,113,60138,paper_national/versions/v1/sections/04_closures.tex,deposited
+citation,outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc,canonical,core,yes,bare,,9503449,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_grid_0p05_monthly.nc,canonical,core,yes,both,,6525769,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_grid_0p05_monthly_ledger.nc,canonical,core,yes,bare,,3951092,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_grid_0p1_edgar_aligned.nc,canonical,core,yes,bare,,3036069,paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_grid_fallbacks.csv,canonical,core,yes,bare,220,70826,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_grid_fallbacks_by_year.csv,canonical,core,yes,bare,2046,684710,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_grid_provincial_check.csv,canonical,core,yes,bare,1010,173589,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_grid_stream_surfaces_by_year.csv,canonical,core,yes,bare,1789,331923,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_joint_uncertainty.csv,canonical,core,yes,path,92,67681,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_longitudinal_prefix.csv,canonical,core,yes,path,5400,238974,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_longitudinal_uncertainty.csv,canonical,core,yes,both,27,5164,paper_national/versions/v1/sections/07_uncertainty.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_minerals_panel_screening.csv,diagnostic,audit,yes,path,28,17855,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_monthly_coverage.csv,canonical,core,yes,bare,3134,422502,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_monthly_coverage_summary.csv,canonical,core,yes,both,108,9779,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_monthly_fy2015_16_fy2023_24.csv,canonical,core,yes,both,21468,7517819,paper_national/versions/v1/sections/generated_products.tex; papers/agriculture/sections/09_conclusion.tex,deposited
+citation,outputs/pakemis_national_series.csv,canonical,core,yes,path,99,25491,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_pass2_scorecard.csv,canonical,core,yes,both,5,3826,paper_national/versions/v1/sections/12_limitations.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_power_coal_configurations.csv,diagnostic,audit,yes,path,32,18279,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_power_coal_energy_adjudication.csv,diagnostic,audit,yes,path,5,6129,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_power_coal_rebase_ledger.csv,diagnostic,audit,yes,path,9,6808,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_power_fuel_reconciliation.csv,diagnostic,audit,yes,path,58,63827,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_power_grid_basis_change.csv,canonical,core,yes,path,9,2759,papers/power/sections/05_validation.tex,deposited
+citation,outputs/pakemis_power_province_boundary_audit.csv,diagnostic,audit,yes,path,82,22003,paper_national/versions/v1/sections/10_benchmarks.tex,deposited
+citation,outputs/pakemis_power_provincial_basis_by_year.csv,diagnostic,audit,yes,path,205,49798,papers/power/sections/05_validation.tex,deposited
+citation,outputs/pakemis_power_reference_audit.csv,diagnostic,audit,yes,path,35,24896,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_product_catalog.csv,canonical,core,yes,path,23,9791,paper_national/versions/v1/sections/50_data_records.tex,deposited
+citation,outputs/pakemis_product_coverage.csv,canonical,core,yes,path,,,paper_national/versions/v1/sections/generated_coverage.tex,deposited
+citation,outputs/pakemis_product_facts.csv,canonical,core,yes,path,,,papers/ippu/sections/03_study_area_and_data.tex,deposited
+citation,outputs/pakemis_release_axis_fingerprints.csv,diagnostic,audit,yes,path,84,16743,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_rice_geography_crosscheck.csv,canonical,core,yes,bare,131,19008,paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_road_length_adm2.csv,canonical,core,yes,path,508,22766,papers/transport/sections/08_limitations.tex,deposited
+citation,outputs/pakemis_series_splice_agriculture.csv,canonical,core,yes,path,6,1314,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_source_register.csv,canonical,core,yes,path,,,paper_national/versions/v1/sections/12_limitations.tex; paper_national/versions/v1/sections/30_sources.tex,deposited
+citation,outputs/pakemis_source_streams.csv,canonical,core,yes,path,202,137785,paper_national/versions/v1/sections/30_sources.tex,deposited
+citation,outputs/pakemis_spatial_brackets.csv,canonical,core,yes,path,71,54763,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_spatial_brackets_adm2.csv,canonical,core,yes,path,905,429816,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_spatial_exceptions.csv,canonical,core,yes,path,39,39151,papers/agriculture/sections/06_results.tex,deposited
+citation,outputs/pakemis_spatial_rebase_rc42.csv,canonical,core,yes,bare,7,1927,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_spatial_rebase_rc44.csv,canonical,core,yes,bare,191,54396,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_spatial_unallocated.csv,canonical,core,yes,bare,180,47145,paper_national/versions/v1/sections/06_results.tex; paper_national/versions/v1/sections/14_appendix.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_spatial_unallocated_by_year.csv,canonical,core,yes,bare,1620,453980,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_spatial_weights_by_year.csv,canonical,core,yes,bare,1818,1453963,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_stream_support_ledger.csv,canonical,core,yes,bare,1818,1432580,paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_structural_trajectories.csv,canonical,core,yes,path,207,31465,paper_national/versions/v1/sections/07_uncertainty.tex; papers/power/sections/05_validation.tex,deposited
+citation,outputs/pakemis_sulfur_adoption_effect.csv,canonical,core,yes,bare,141,58526,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/pakemis_temporal_decomposition.csv,canonical,core,yes,path,38,17080,paper_national/versions/v1/sections/12_limitations.tex,deposited
+citation,outputs/pakemis_test_run.json,intermediate,build,yes,path,,,paper_national/versions/v1/sections/14_appendix.tex,deposited
+citation,outputs/pakemis_trend_uncertainty.csv,canonical,core,yes,both,27,4637,paper_national/versions/v1/sections/07_uncertainty.tex; paper_national/versions/v1/sections/generated_products.tex,deposited
+citation,outputs/pakemis_unallocated_activity_controls.csv,canonical,core,yes,path,2,2307,paper_national/versions/v1/sections/06_results.tex,deposited
+citation,outputs/pakemis_uncertainty_drivers.csv,diagnostic,audit,yes,path,34,6625,paper_national/versions/v1/sections/07_uncertainty.tex; papers/waste/sections/S1_uncertainty.tex,deposited
+citation,outputs/pakemis_validation_catalog.csv,canonical,core,yes,path,102,90527,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_validation_scorecard.csv,canonical,core,yes,path,36,4295,paper_national/versions/v1/sections/07_uncertainty.tex,deposited
+citation,outputs/pakemis_wastewater_method_comparison.csv,diagnostic,audit,yes,path,22,7383,papers/waste/sections/S1_uncertainty.tex,deposited
+citation,outputs/pbs_minerals_parse_summary.csv,diagnostic,audit,no,path,1,624,paper_national/versions/v1/sections/12_limitations.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/pbs_minerals_quarantine.csv,diagnostic,audit,no,bare,146,9787,paper_national/versions/v1/sections/12_limitations.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/pbs_qim_parse_summary.csv,diagnostic,audit,no,bare,1,518,paper_national/versions/v1/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/pbs_qim_quarantine.csv,diagnostic,audit,no,path,9,1115,paper_national/versions/v1/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_air_pollutants_fy2023_24.csv,diagnostic,audit,yes,bare,26,7652,papers/power/sections/10_appendix.tex,deposited
+citation,outputs/power_air_screening_fy2015_16_fy2023_24.csv,canonical,core,yes,bare,443,63189,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/power_bagasse_fy2023_24.csv,diagnostic,audit,no,bare,4,433,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_boundary_audit_fy2023_24.csv,diagnostic,audit,no,bare,5,2169,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_by_stream_fy2023_24.csv,sector_headline,supporting,yes,bare,17,1547,papers/power/sections/10_appendix.tex,deposited
+citation,outputs/power_climatetrace_plants_fy2023_24.csv,diagnostic,audit,no,bare,72,7307,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_coal_blend_fy2023_24.csv,diagnostic,audit,no,bare,7,1086,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_energy_closure_fy2023_24.csv,diagnostic,audit,no,bare,6,999,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_fuel_fy2023_24.csv,diagnostic,audit,no,bare,4,109,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_gas_technology_fy2023_24.csv,diagnostic,audit,no,bare,3,830,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_heat_rate_fy2023_24.csv,diagnostic,audit,no,bare,36,4530,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_heat_rate_stability_fy2023_24.csv,diagnostic,audit,no,bare,4,219,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_hr_circularity_fy2023_24.csv,diagnostic,audit,no,bare,82,6167,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_ke_leg_fy2023_24.csv,diagnostic,audit,no,bare,5,529,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_lmdi_fy2023_24.csv,diagnostic,audit,no,bare,11,983,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_monthly_fy2023_24.csv,sector_headline,supporting,yes,bare,204,52743,papers/power/sections/10_appendix.tex,deposited
+citation,outputs/power_point_sources_fy2023_24.csv,diagnostic,audit,no,bare,56,4680,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_provincial_fy2023_24.csv,sector_headline,supporting,yes,bare,5,119,papers/power/sections/10_appendix.tex,deposited
+citation,outputs/power_table3_hypotheses.csv,diagnostic,audit,no,path,8,6297,papers/power/sections/05_validation.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_timeseries_fy2023_24.csv,diagnostic,audit,no,bare,11,178,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_toe_reconciliation.csv,diagnostic,audit,no,path,15,3867,papers/power/sections/05_validation.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_totals_fy2023_24.csv,sector_headline,supporting,yes,bare,10,3096,papers/power/sections/10_appendix.tex,deposited
+citation,outputs/power_tropomi_crosscheck.csv,diagnostic,audit,no,bare,59,3276,papers/power/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/power_uncertainty_fy2023_24.csv,sector_headline,supporting,yes,bare,3,203,papers/power/sections/10_appendix.tex,deposited
+citation,outputs/railways_air_pollutants_2024.csv,diagnostic,audit,yes,bare,36,8675,papers/railways/sections/10_appendix.tex,deposited
+citation,outputs/railways_air_sulfur_cases_2024.csv,diagnostic,audit,no,bare,4,252,papers/railways/sections/10_appendix.tex; papers/railways/supplement.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_by_stream_2024.csv,sector_headline,supporting,yes,bare,12,1096,papers/railways/sections/10_appendix.tex,deposited
+citation,outputs/railways_efficiency_2024.csv,diagnostic,audit,no,bare,4,274,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_elk_crosscheck_2024.csv,diagnostic,audit,no,bare,6,483,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_fuel_2024.csv,diagnostic,audit,no,bare,2,66,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_fuel_claimants_2024.csv,diagnostic,audit,no,both,4,1924,papers/railways/sections/08_limitations.tex; papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_fuel_history.csv,diagnostic,audit,no,bare,14,2378,papers/railways/sections/10_appendix.tex; papers/railways/supplement.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_fuel_reconciliation_2024.csv,diagnostic,audit,no,bare,10,695,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_gis_provincial_2024.csv,sector_headline,supporting,yes,bare,5,270,papers/railways/sections/10_appendix.tex,deposited
+citation,outputs/railways_monthly_2024.csv,sector_headline,supporting,yes,bare,144,34147,papers/railways/sections/10_appendix.tex,deposited
+citation,outputs/railways_network_audit_2024.csv,diagnostic,audit,no,bare,12,398,papers/railways/supplement.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_official_comparison_2024.csv,diagnostic,audit,no,bare,5,1253,paper_national/versions/v1/sections/10_benchmarks.tex; papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_provincial_2024.csv,sector_headline,supporting,yes,bare,5,116,papers/railways/sections/10_appendix.tex,deposited
+citation,outputs/railways_qa_2024.csv,diagnostic,audit,no,bare,1,128,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_route_province_shares_2024.csv,diagnostic,audit,no,bare,5,168,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_run_manifest_2024.json,intermediate,build,no,bare,,3668,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: intermediate)
+citation,outputs/railways_tier2_air_diagnostic_2024.csv,diagnostic,audit,no,bare,7,271,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_tier2_split_2024.csv,diagnostic,audit,no,bare,5,422,papers/railways/sections/10_appendix.tex; papers/railways/supplement.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_timeseries_2024.csv,diagnostic,audit,no,bare,12,944,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_totals_2024.csv,sector_headline,supporting,yes,bare,7,2833,papers/railways/sections/10_appendix.tex,deposited
+citation,outputs/railways_uncertainty_2024.csv,sector_headline,supporting,yes,bare,1,106,papers/railways/sections/10_appendix.tex,deposited
+citation,outputs/railways_uncertainty_inputs_2024.csv,diagnostic,audit,no,bare,15,3616,papers/railways/sections/10_appendix.tex; papers/railways/supplement.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_uncertainty_scenarios_2024.csv,diagnostic,audit,no,bare,10,2883,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_unfccc_crt_cell_audit_2024.csv,diagnostic,audit,no,bare,17,1376,papers/railways/sections/10_appendix.tex; papers/railways/supplement.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/railways_wear_pm_2024.csv,diagnostic,audit,no,bare,3,712,papers/railways/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/release_manifest.json,intermediate,build,yes,path,,,paper_national/versions/v1/generated/availability.tex; paper_national/versions/v1/paper_national.tex,deposited
+citation,outputs/residential_air_pollutants_2024.csv,diagnostic,audit,yes,bare,58,4172,papers/residential/sections/10_appendix.tex,deposited
+citation,outputs/residential_by_stream_2024.csv,sector_headline,supporting,yes,bare,23,1935,papers/residential/sections/10_appendix.tex,deposited
+citation,outputs/residential_ccac_bridge_2024.csv,diagnostic,audit,no,bare,6,1177,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_configurations_2024.csv,diagnostic,audit,no,bare,2,640,papers/residential/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_configurations_by_year.csv,sector_headline,supporting,yes,bare,18,1186,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/residential_district_2024.csv,diagnostic,audit,no,bare,1201,145444,papers/residential/sections/06_results.tex; papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_district_map_audit_2024.csv,diagnostic,audit,no,path,126,14487,papers/residential/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_dung_ledger_2024.csv,diagnostic,audit,no,bare,4,1252,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_emissions_monthly_2024.csv,sector_headline,supporting,yes,bare,276,40829,papers/residential/sections/10_appendix.tex,deposited
+citation,outputs/residential_fuel_2024.csv,diagnostic,audit,no,bare,9,229,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_hies_comparison_2024.csv,diagnostic,audit,no,bare,11,2400,papers/residential/sections/06_results.tex; papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_monthly_2024.csv,sector_headline,supporting,yes,bare,108,10907,papers/residential/sections/10_appendix.tex,deposited
+citation,outputs/residential_official_comparison_2024.csv,diagnostic,audit,no,bare,5,1769,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_pm_ratio_2024.csv,diagnostic,audit,no,bare,3,816,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_provincial_2024.csv,sector_headline,supporting,yes,bare,5,118,papers/residential/sections/10_appendix.tex,deposited
+citation,outputs/residential_qa_2024.csv,diagnostic,audit,no,bare,1,128,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_strata_2024.csv,diagnostic,audit,no,bare,73,6776,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_timeseries.csv,diagnostic,audit,no,bare,9,2419,papers/residential/sections/06_results.tex; papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_totals_2024.csv,sector_headline,supporting,yes,bare,10,2288,papers/residential/sections/10_appendix.tex,deposited
+citation,outputs/residential_uncertainty_2024.csv,sector_headline,supporting,yes,bare,1,126,papers/residential/sections/10_appendix.tex,deposited
+citation,outputs/residential_uncertainty_inputs_2024.csv,diagnostic,audit,no,bare,25,6637,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_uncertainty_scenarios_2024.csv,diagnostic,audit,no,bare,13,5463,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_unfccc_crt_cell_audit_2024.csv,diagnostic,audit,no,bare,40,2145,papers/residential/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/residential_variance_decomposition_2024.csv,diagnostic,audit,no,bare,18,536,papers/residential/sections/04_methods.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/semantic/fact_air_adm1_year.csv,canonical,core,yes,bare,22622,3240009,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/semantic/fact_air_adm2_year.csv,canonical,core,yes,bare,136080,18648701,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/semantic/fact_air_panel.csv,canonical,core,yes,bare,1476,178630,paper_national/versions/v1/supplement.tex,deposited
+citation,outputs/spatial_profile.csv,diagnostic,audit,no,path,21,2057,paper_national/versions/v1/sections/14_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/spatial_view_profile.csv,diagnostic,audit,no,bare,15,1472,paper_national/versions/v1/sections/14_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/temporal_profile.csv,diagnostic,audit,no,path,29,805,paper_national/versions/v1/sections/14_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_air_pollutants_2024.csv,diagnostic,audit,yes,bare,203,31642,papers/transport/sections/10_appendix.tex,deposited
+citation,outputs/transport_by_stream_2024.csv,sector_headline,supporting,yes,bare,39,2828,papers/transport/sections/10_appendix.tex,deposited
+citation,outputs/transport_calendar_year_controls_2024.csv,diagnostic,audit,no,path,5,488,papers/transport/sections/05_validation.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_class_parameters_2024.csv,diagnostic,audit,no,path,9,923,papers/transport/sections/S5_classes.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_cng_2024.csv,diagnostic,audit,yes,path,13,398,papers/transport/sections/05_validation.tex,deposited
+citation,outputs/transport_cng_crosscheck_2024.csv,diagnostic,audit,yes,path,8,717,papers/transport/sections/05_validation.tex,deposited
+citation,outputs/transport_fleet_fuel_diagnostic_2024.csv,diagnostic,audit,no,path,3,821,papers/transport/sections/05_validation.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_fuel_2024.csv,diagnostic,audit,no,bare,2,65,papers/transport/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_fuel_bridge_2024.csv,diagnostic,audit,no,both,11,1867,papers/transport/sections/04_methods.tex; papers/transport/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_fuel_ledger_2024.csv,diagnostic,audit,no,both,21,5128,papers/transport/sections/04_methods.tex; papers/transport/sections/10_appendix.tex; papers/transport/sections/S2_factors.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_fuel_series.csv,diagnostic,audit,no,both,10,983,papers/transport/sections/06_results.tex; papers/transport/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_monthly_2024.csv,sector_headline,supporting,yes,bare,468,73548,papers/transport/sections/10_appendix.tex,deposited
+citation,outputs/transport_navigation_screen_2024.csv,diagnostic,audit,no,path,10,1867,papers/transport/sections/04_methods.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_ocac_control_diagnostic.csv,diagnostic,audit,no,bare,48,6634,papers/transport/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_provincial_2024.csv,sector_headline,supporting,yes,bare,5,118,papers/transport/sections/10_appendix.tex,deposited
+citation,outputs/transport_provincial_proxy_comparison_2024.csv,sector_headline,supporting,yes,both,5,356,papers/transport/sections/06_results.tex; papers/transport/sections/10_appendix.tex,deposited
+citation,outputs/transport_provincial_shape_brackets.csv,sector_headline,supporting,yes,path,20,1355,papers/transport/sections/06_results.tex,deposited
+citation,outputs/transport_run_manifest_2024.json,intermediate,build,no,bare,,17331,papers/transport/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: intermediate)
+citation,outputs/transport_totals_2024.csv,sector_headline,supporting,yes,bare,5,1247,papers/transport/sections/10_appendix.tex,deposited
+citation,outputs/transport_uncertainty_2024.csv,sector_headline,supporting,yes,bare,1,142,papers/transport/sections/10_appendix.tex,deposited
+citation,outputs/transport_uncertainty_inputs_2024.csv,diagnostic,audit,no,path,20,5650,papers/transport/sections/S1_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/transport_uncertainty_scenarios_2024.csv,diagnostic,audit,no,path,25,14850,papers/transport/sections/06_results.tex; papers/transport/sections/S1_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/waste_air_pollutants_2024.csv,diagnostic,audit,yes,bare,8,749,papers/waste/sections/10_appendix.tex,deposited
+citation,outputs/waste_by_stream_2024.csv,sector_headline,supporting,yes,bare,6,562,papers/waste/sections/10_appendix.tex,deposited
+citation,outputs/waste_district_2024.csv,diagnostic,audit,no,bare,402,102009,papers/waste/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/waste_ledger_2024.csv,diagnostic,audit,no,both,5,1160,papers/waste/sections/04_methods.tex; papers/waste/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/waste_monthly_2024.csv,sector_headline,supporting,yes,bare,72,19357,papers/waste/sections/10_appendix.tex,deposited
+citation,outputs/waste_parameter_mc_2024.csv,diagnostic,audit,no,path,4,1219,papers/waste/sections/S1_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/waste_provincial_2024.csv,sector_headline,supporting,yes,bare,5,113,papers/waste/sections/10_appendix.tex,deposited
+citation,outputs/waste_release_assignment_2024.csv,diagnostic,audit,yes,path,134,43470,papers/waste/sections/06_results.tex,deposited
+citation,outputs/waste_release_candidates_2024.csv,diagnostic,audit,no,path,108,87674,papers/waste/sections/06_results.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+citation,outputs/waste_totals_2024.csv,sector_headline,supporting,yes,bare,8,1243,papers/waste/sections/10_appendix.tex,deposited
+citation,outputs/waste_uncertainty_2024.csv,sector_headline,supporting,yes,path,4,553,papers/waste/sections/S1_uncertainty.tex,deposited
+citation,outputs/waste_uncertainty_scenarios_2024.csv,diagnostic,audit,no,path,19,7162,papers/waste/sections/S1_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
+summary_by_role,,diagnostic,,no,,,,,168 cited file(s) typed diagnostic are not in the deposit
+summary_by_role,,intermediate,,no,,,,,2 cited file(s) typed intermediate are not in the deposit
+summary_by_role,,eval_lane,,no,,,,,1 cited file(s) typed eval_lane are not in the deposit
+summary_total,,,,,,352,,,"352 distinct output files named; 181 deposited, 171 not"

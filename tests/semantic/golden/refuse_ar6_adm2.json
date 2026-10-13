@@ -1,0 +1,15 @@
+{
+ "expect": [],
+ "expect_error": "not_estimated",
+ "expect_limitation": "ar6_adm2_ne",
+ "expect_receipt": "",
+ "function": "query_emissions",
+ "golden_id": "refuse_ar6_adm2",
+ "request": {
+  "geography_level": "adm2",
+  "gwp_basis": "AR6",
+  "periods": [
+   "FY2023-24"
+  ]
+ }
+}

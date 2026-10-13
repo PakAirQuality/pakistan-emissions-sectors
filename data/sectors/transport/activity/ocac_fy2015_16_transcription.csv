@@ -1,0 +1,140 @@
+# The OCAC Pakistan Oil Report 2015-2016, page 50: "SECTORAL SALES / CONSUMPTION OF
+# POL PRODUCTS 2015-2016, PAKISTAN - ENERGY PRODUCTS", unit metric tonnes.
+#
+# WHY A TRANSCRIPTION AND NOT A PARSE. The edition is served by ocac.org.pk only as
+# 602x781-pixel JPEG page images (data/raw/ocac/oil_report_2015_16/, hashes in its
+# pages_manifest.csv) - there is no text layer for pdftotext, and OCR at that
+# resolution fails outright. The cells below were therefore transcribed from the
+# page image and are accepted ONLY because the table's own arithmetic closes over
+# them EXACTLY, the same identity-gated pattern as scripts/ocr_ogra_2020_21.py:
+#   1. every row's product cells sum to its printed TOTAL, exactly;
+#   2. every block's member rows sum to its class total per product, exactly
+#      (Cement+Others = Total Industry; the five transport rows = Total Transport;
+#      the five power rows = Total Power; the three government rows = Total
+#      Government);
+#   3. the six class totals sum to TOTAL_INTERNAL per product, exactly;
+#   4. TWO-DOCUMENT GATE: the Road TOTAL and Total Industry TOTAL equal the
+#      FY2016-17 edition's independently held prior-year column (12,440,195 and
+#      2,023,377 t - the two numbers this repository has carried as unallocated
+#      controls since the twelfth review).
+# src/pkinv/sectors/transport/ocac_image_edition.py re-runs all four gates on
+# every load and refuses the transcription if any identity breaks - an edit that
+# corrupts a digit is a build failure, not a silent change.
+#
+# read_basis vocabulary:
+#   glyph            the printed digits are legible in the page image directly
+#   glyph_identity   legible read, additionally confirmed by the closing arithmetic
+#   identity         the digit sits below the 602-px glyph floor; the value is the
+#                    UNIQUE solution of the closing identities given the legible
+#                    cells (the same epistemic status as the others once the gates
+#                    hold - recorded so a reader knows how each cell was obtained)
+#
+# THE FY2014-15 COMPARISON COLUMN IS DELIBERATELY NOT COMMITTED: several of its
+# cells sit below the glyph floor, its closing system leaves a residual +/-1-digit
+# ambiguity web, and no consumer reads it. An uncertain digit is not committed.
+# Zero cells (printed as dashes) are omitted; the loader treats absence as zero.
+section,sector_row,product,tonnes,read_basis,note
+DOMESTIC,DOMESTIC,KERO,74343,glyph_identity,
+DOMESTIC,DOMESTIC,FO,14,glyph_identity,
+DOMESTIC,DOMESTIC,TOTAL,74357,glyph_identity,74343+14
+INDUSTRY,Cement,MS,196,glyph_identity,
+INDUSTRY,Cement,HSD,40394,glyph_identity,
+INDUSTRY,Cement,FO,126821,glyph_identity,
+INDUSTRY,Cement,TOTAL,167411,glyph_identity,196+40394+126821 exactly
+INDUSTRY,Others,HOBC,752,glyph_identity,
+INDUSTRY,Others,MS,60367,glyph_identity,
+INDUSTRY,Others,KERO,31976,glyph_identity,
+INDUSTRY,Others,HSD,421169,glyph_identity,
+INDUSTRY,Others,LDO,4568,glyph_identity,
+INDUSTRY,Others,FO,1337134,glyph_identity,
+INDUSTRY,Others,TOTAL,1855966,identity,row sums to 1855966; the last printed digit is at the glyph floor and the Cement+Others=Total Industry closure fixes it
+INDUSTRY,Total Industry,HOBC,752,glyph_identity,
+INDUSTRY,Total Industry,MS,60563,glyph_identity,196+60367
+INDUSTRY,Total Industry,KERO,31976,glyph_identity,
+INDUSTRY,Total Industry,HSD,461563,glyph_identity,40394+421169
+INDUSTRY,Total Industry,LDO,4568,glyph_identity,
+INDUSTRY,Total Industry,FO,1463955,glyph_identity,126821+1337134
+INDUSTRY,Total Industry,TOTAL,2023377,glyph_identity,row sums exactly; equals the FY2016-17 edition's prior-year column
+AGRICULTURE,AGRICULTURE,LDO,14512,glyph_identity,
+AGRICULTURE,AGRICULTURE,TOTAL,14512,glyph_identity,
+TRANSPORT,Road,HOBC,38449,identity,glyph floor 38-44x; fixed by Road TOTAL minus MS/HSD/LDO with the internal-HOBC column consistent
+TRANSPORT,Road,MS,5687337,glyph_identity,confirmed by the internal MS column: 5687337+60563+347+11516=5759763 printed
+TRANSPORT,Road,HSD,6713723,glyph_identity,confirmed by the transport HSD column: 6831145-117214-208
+TRANSPORT,Road,LDO,686,glyph_identity,confirmed by the internal LDO column: 24106-4568-14512-44-4296
+TRANSPORT,Road,TOTAL,12440195,glyph_identity,equals the FY2016-17 edition's prior-year column exactly
+TRANSPORT,Railways,KERO,57,glyph_identity,
+TRANSPORT,Railways,HSD,117214,glyph_identity,
+TRANSPORT,Railways,FO,507,glyph_identity,
+TRANSPORT,Railways,TOTAL,117778,glyph_identity,57+117214+507 exactly
+TRANSPORT,Domestic Bunkers,HSD,208,glyph_identity,
+TRANSPORT,Domestic Bunkers,FO,1003,glyph_identity,
+TRANSPORT,Domestic Bunkers,TOTAL,1211,glyph_identity,208+1003 exactly
+TRANSPORT,Domestic Avi-PIA,JP-1,287090,glyph_identity,
+TRANSPORT,Domestic Avi-PIA,TOTAL,287090,glyph_identity,
+TRANSPORT,Domestic Avi-Others,JP-1,176260,identity,463350-287090; the tens digit is at the glyph floor
+TRANSPORT,Domestic Avi-Others,TOTAL,176260,identity,
+TRANSPORT,Total Transport,HOBC,38449,identity,= Road (only road carries HOBC)
+TRANSPORT,Total Transport,MS,5687337,glyph_identity,
+TRANSPORT,Total Transport,JP-1,463350,glyph_identity,confirmed by internal JP-1: 463350+20765=484115 printed
+TRANSPORT,Total Transport,KERO,57,glyph_identity,
+TRANSPORT,Total Transport,HSD,6831145,glyph_identity,
+TRANSPORT,Total Transport,LDO,686,identity,= Road
+TRANSPORT,Total Transport,FO,1510,glyph_identity,507+1003
+TRANSPORT,Total Transport,TOTAL,13022534,glyph_identity,the five member TOTALs sum exactly
+POWER,K-Electric,MS,347,glyph_identity,
+POWER,K-Electric,HSD,603,glyph_identity,
+POWER,K-Electric,FO,602587,identity,tens digit at the glyph floor; fixed by the power FO column 7485262
+POWER,K-Electric,TOTAL,603537,glyph_identity,347+603+602587 exactly
+POWER,PEPCO,HSD,11683,identity,fixed by the power HSD column 279976
+POWER,PEPCO,FO,1753978,glyph_identity,
+POWER,PEPCO,TOTAL,1765661,identity,11683+1753978
+POWER,HUBCO/Hub Narowal,HSD,60,glyph_identity,
+POWER,HUBCO/Hub Narowal,FO,2044284,glyph_identity,
+POWER,HUBCO/Hub Narowal,TOTAL,2044344,glyph_identity,60+2044284 exactly
+POWER,Private Power,HSD,213853,glyph_identity,confirmed by row TOTAL 2204175
+POWER,Private Power,LDO,44,glyph_identity,
+POWER,Private Power,FO,1990278,glyph_identity,
+POWER,Private Power,TOTAL,2204175,glyph_identity,213853+44+1990278 exactly
+POWER,KAPCO (LSFO),HSD,53777,glyph_identity,
+POWER,KAPCO (LSFO),FO,1094135,glyph_identity,
+POWER,KAPCO (LSFO),TOTAL,1147912,glyph_identity,53777+1094135 exactly
+POWER,Total Power,MS,347,glyph_identity,
+POWER,Total Power,HSD,279976,glyph_identity,
+POWER,Total Power,LDO,44,glyph_identity,
+POWER,Total Power,FO,7485262,glyph_identity,
+POWER,Total Power,TOTAL,7765629,glyph_identity,members and products both sum exactly
+GOVERNMENT,Aviation,100 LL,1115,glyph_identity,
+GOVERNMENT,Aviation,JP-1,6846,glyph_identity,
+GOVERNMENT,Aviation,TOTAL,7961,glyph_identity,1115+6846 exactly
+GOVERNMENT,Bunkers,HSD,41849,glyph_identity,confirmed by row TOTAL 43024
+GOVERNMENT,Bunkers,FO,1175,glyph_identity,
+GOVERNMENT,Bunkers,TOTAL,43024,glyph_identity,
+GOVERNMENT,Others,HOBC,1387,glyph_identity,
+GOVERNMENT,Others,MS,11516,glyph_identity,
+GOVERNMENT,Others,JP-8,136036,glyph_identity,
+GOVERNMENT,Others,JP-1,13919,glyph_identity,confirmed by the govt JP-1 column: 6846+13919=20765
+GOVERNMENT,Others,KERO,35203,glyph_identity,
+GOVERNMENT,Others,HSD,131331,glyph_identity,confirmed by the govt HSD column: 41849+131331=173180
+GOVERNMENT,Others,LDO,4296,glyph_identity,
+GOVERNMENT,Others,FO,1559,glyph_identity,confirmed by the govt FO column: 1175+1559=2734
+GOVERNMENT,Others,TOTAL,335247,glyph_identity,the eight product cells sum exactly
+GOVERNMENT,Total Government,100 LL,1115,glyph_identity,
+GOVERNMENT,Total Government,HOBC,1387,glyph_identity,
+GOVERNMENT,Total Government,MS,11516,glyph_identity,
+GOVERNMENT,Total Government,JP-8,136036,glyph_identity,
+GOVERNMENT,Total Government,JP-1,20765,glyph_identity,
+GOVERNMENT,Total Government,KERO,35203,glyph_identity,
+GOVERNMENT,Total Government,HSD,173180,glyph_identity,
+GOVERNMENT,Total Government,LDO,4296,glyph_identity,
+GOVERNMENT,Total Government,FO,2734,glyph_identity,
+GOVERNMENT,Total Government,TOTAL,386232,glyph_identity,members and products both sum exactly
+TOTAL_INTERNAL,TOTAL_INTERNAL,100 LL,1115,glyph_identity,
+TOTAL_INTERNAL,TOTAL_INTERNAL,HOBC,40588,identity,38449+752+1387; last digit at the glyph floor
+TOTAL_INTERNAL,TOTAL_INTERNAL,MS,5759763,glyph_identity,
+TOTAL_INTERNAL,TOTAL_INTERNAL,JP-8,136036,glyph_identity,
+TOTAL_INTERNAL,TOTAL_INTERNAL,JP-1,484115,glyph_identity,
+TOTAL_INTERNAL,TOTAL_INTERNAL,KERO,141579,glyph_identity,
+TOTAL_INTERNAL,TOTAL_INTERNAL,HSD,7745864,identity,461563+6831145+279976+173180; the hundreds digit at the glyph floor
+TOTAL_INTERNAL,TOTAL_INTERNAL,LDO,24106,glyph_identity,
+TOTAL_INTERNAL,TOTAL_INTERNAL,FO,8953475,identity,14+1463955+1510+7485262+2734; two digits at the glyph floor
+TOTAL_INTERNAL,TOTAL_INTERNAL,TOTAL,23286641,identity,both routes agree: the nine product cells and the six class TOTALs each sum to 23286641

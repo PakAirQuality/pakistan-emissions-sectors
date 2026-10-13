@@ -1,0 +1,13 @@
+edgar_domain,edgar_Mt_co2e,share_of_edgar_pct,coverage_class,categories_estimated,not_estimated_here
+Agriculture,261.24,50.8,partial,"8 of 11 codes estimated, 1 only in part, 1 not applicable (3.C.1.c)",(crt-only); 3.C.2; 3.C.4
+Power industry,56.8,11.0,represented,1 of 1 codes estimated,
+Transport,48.76,9.5,partial,3 of 4 codes estimated,1.A.3.d
+Industrial combustion (1A2),43.98,8.6,partial,"1 of 1 codes estimated, 1 only in part",1.A.2
+Buildings,31.42,6.1,partial,"2 of 3 codes estimated, 1 only in part",1.A.4.a; 1.A.4.b
+Processes (IPPU),27.38,5.3,partial,"4 of 6 codes estimated, 1 not applicable (2.B.7)",2.A.2
+Waste,27.21,5.3,partial,"3 of 6 codes estimated, 1 only in part",4.A; 4.B; 4.C.1; 4.D
+Fuel exploitation (1B),17.54,3.4,partial,"1 of 2 codes estimated, 1 only in part",1.B.1; 1.B.2
+SUMMARY: magnitude ratio,444.96,86.5,magnitude,,this inventory over EDGAR's total; not a completeness measure
+SUMMARY: scope fully represented,,11.0,scope,,"share of EDGAR's magnitude in domains where every mapped IPCC category is E, IE or NO"
+SUMMARY: scope partially represented,,89.0,scope,,"share in domains carrying at least one NE category, named per row"
+SUMMARY: scope absent,,0.0,scope,,share with no estimate at all

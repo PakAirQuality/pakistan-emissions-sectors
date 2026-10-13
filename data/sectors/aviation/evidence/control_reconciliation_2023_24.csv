@@ -1,0 +1,11 @@
+control_table,field,published_national_total,published_row_sum,source_table_difference,status
+airport,domestic_commercial_movements,40600.0,40600.0,0.0,exact
+airport,international_commercial_movements,95267.0,95267.0,0.0,exact
+airport,noncommercial_movements,21223.0,21223.0,0.0,exact
+airport,domestic_passengers,5679830.0,5679830.0,0.0,exact
+airport,international_passengers,17234994.0,17234994.0,0.0,exact
+airport,domestic_cargo_t,33995.0,33992.0,3.0,published_rounding_or_source_discrepancy
+airport,international_cargo_t,275172.0,275173.0,-1.0,published_rounding_or_source_discrepancy
+airport,domestic_mail_t,46.0,46.0,0.0,exact
+airport,international_mail_t,1132.0,1131.0,1.0,published_rounding_or_source_discrepancy
+airline_vs_airport,domestic_commercial_movements,40600,39504,1096,explicit_scope_residual

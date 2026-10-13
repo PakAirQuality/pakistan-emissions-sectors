@@ -1,0 +1,123 @@
+% ===========================================================================
+\section{Air Pollutants: Where This Sector Actually Matters}
+\label{sec:air}
+% ===========================================================================
+
+Household solid fuel is a minor greenhouse-gas sector and Pakistan's dominant source of primary
+particulate. This section reports the second inventory on the same fuel quantities as the
+first.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Pollutant} & \textbf{Residential (kt)} & \textbf{Road transport (kt)} \\
+\midrule
+CO                   & 3352.8 & 1430.4 \\
+NMVOC                &  357.6 &  535.1 \\
+\PM{}                &  282.7 &    8.2 \\
+\NOx{} (as NO$_2$)   &  156.1 &  172.1 \\
+Organic carbon       &  132.0 &  --- \\
+\NHthree{}           &   42.4 &    2.6 \\
+\SOtwo{}             &   20.8 &   12.2 \\
+Black carbon         &   20.0 &    2.0 \\
+\bottomrule
+\end{tabular}
+\caption{Residential air pollutants (biomass and fossil streams, reference)
+against road transport's, a sector more than twice its size in \COe{}; configuration L
+scales the dung rows by 5.37 (Table~\ref{tab:configs}). Both layers derive from their
+own sector's fuel quantities, so the comparison does not rest on reconciling two
+activity datasets. \NOx{} is NO$_2$-equivalent on both sides; sources publishing as NO
+are converted on their factor rows. OC and BC are components of \PM{},
+never additional to it; coal-only PM$_{10}$/TSP rows live in the factor appendix and
+the air completeness matrix (\ref{app:airmatrix}), not here, because a
+coal-only coarse fraction beside all-stream \PM{} would mislead.}
+\label{tab:air}
+\end{table}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{residential_air.png}
+\caption{The same figures on a log axis. Carbon monoxide exceeds black carbon by more than two
+orders of magnitude within one sector.}
+\label{fig:air}
+\end{figure}
+
+\subsection{The particulate ratio, sampled rather than asserted}
+
+Residential fuel burning emits \SI{282.7}{\kilo\tonne} of primary \PM{} against road
+transport's exhaust \PM{} of \SI{5.8}{\kilo\tonne} under the reference---49 times as much
+(parametric 95 percent interval 14--199)---and \SI{631.9}{\kilo\tonne}, \num{109} times
+(31--445), under configuration L, from a sector less than half road transport's size in
+\COe{} either way. The interval's width is the honest print of the road layer's EMEP/EEA
+Tier~1 factor spans, which cover uncontrolled to modern technology for an unmeasured fleet;
+the superseded per-kilometre diagnostic put the ratio near thirty on factors with no located
+provenance. Within the national inventory this sector belongs to, household biomass is roughly
+the largest single source of primary \PM{} under either configuration---roughly
+two-thirds of the inventory's total under the reference---ahead of open waste burning at
+\SI{63.9}{\kilo\tonne}, crop-residue field burning at \SI{54.0}{} and transport.
+
+The reason this comparison can be asserted rather than hedged is structural. Cross-source
+particulate comparisons in developing countries usually assemble estimates from separate
+studies with separate activity bases, so the ratio between two sources is partly an artefact
+of which datasets each author had. Every air layer in this inventory is computed from its own
+sector's greenhouse-gas activity data---the same fuel, the same tonnage, the same population
+panel---which removes that mismatched-activity confounder. What survives in the ratio is
+everything else: the activity configuration (Section~\ref{sec:results}), the factor
+families, and the pollutant and boundary definitions, all stated rather than assumed away.
+Under matched years and those stated choices, the reference configuration gives the ratio
+above; it is conditional on them, not a physical constant.
+
+\subsection{Black carbon}
+
+At \SI{20.0}{\kilo\tonne} (\SI{41.5}{} under configuration~L), household biomass is the dominant Pakistani source of black carbon
+in this inventory. It is reported as mass and deliberately not converted to \COe{}: its
+metrics remain contested, its lifetime is days, and a \COe{} figure would imply a comparability
+with long-lived gases that the science does not support.
+
+That said, the conventional \COe{} total does not capture the sector's short-lived
+climate-forcing emissions: it is simultaneously the country's largest source of black
+carbon and of organic carbon, whose forcing effects oppose each other, and no net
+forcing calculation is presented here. The limitation is that the greenhouse-gas
+number describes only part of the sector's climate relevance, not that its direction
+of error is known.
+
+\subsection{The policy inversion}
+
+The greenhouse-gas and primary-emission rankings of Pakistani sources are close to
+inverted. A
+mitigation programme selected on \COe{} would target agriculture, transport and electricity; a
+programme selected on population exposure would target household cooking and heating first by a
+wide margin, followed by two open-burning categories that are together \SI{1.0}{\percent} of
+the national inventory.
+
+This is not an argument that greenhouse-gas accounting is the wrong lens. It is an argument
+that a single inventory cannot rank interventions for both objectives, and that a country
+choosing air-quality interventions from a greenhouse-gas ranking will systematically
+under-prioritise the sources that matter most for health.
+
+\subsection{Limitations of this layer}
+
+The factors are literature values, not Pakistani measurements: Andreae's field
+compilation for the biomass streams, whose cookstove emissions vary by a factor of several
+with stove design, fuel moisture and operator behaviour, and the EMEP/EEA small-combustion
+Tier~1 factors \citep{emep2023smallcombustion} for gas, LPG, kerosene and coal---the
+chapter now held---contributing \SI{16.4}{\kilo\tonne} of \NOx{} and under one percent
+of the biomass \PM{}. Generators carry no air rows: no household-genset factor class
+exists, a declared omission bounded by that stream's 56 kt of fuel. Two factor
+sensitivities are published in the scenarios table: the technology mix (the reference
+assumes the traditional/open stove class throughout, consistent with the MTF typology's
+rural dominance; up to ten percent improved-class adoption would lower \PM{} to
+\SI{260}{\kilo\tonne}), and the residue factor family (the crop-residue rows apply
+field-burning factors as the nearest available class for stove combustion---a
+provisional assignment; the domestic-biofuel family would give \SI{274}{}).
+
+And the layer reports \emph{gross emitted mass} at the appliance, not mass reaching outdoor air
+and not exposure. Some indoor particulate deposits before reaching the ambient atmosphere,
+while personal exposure depends on ventilation, stove placement and behaviour; separating
+gross emission, outdoor release and exposure requires release fractions and an exposure
+model this paper does not attempt (the deferred exposure layer in the gap register). The
+direction of the exposure difference against transport---household emissions released
+inside and around dwellings, transport emissions dispersing from roadways---is plausible
+but is not quantified here.

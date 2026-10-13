@@ -1,0 +1,93 @@
+{
+  "year": 2015,
+  "resolution_deg": 0.1,
+  "benchmark_sector_totals_kt": {
+    "SFA": 519.3670247794539,
+    "GRM": 361.8832970697213,
+    "MNM": 137.34273418662048,
+    "CRB": 31.90537441470547,
+    "CRR": 1.3800234842669856
+  },
+  "all_sectors": {
+    "cells": 8322,
+    "pearson": 0.9040050669751973,
+    "pearson_log10": 0.7415047784009198,
+    "spearman": 0.9039132434458081,
+    "hotspot_overlap_top10pct": 0.7824519230769231,
+    "ours_kt": 1854.0722528560382,
+    "benchmark_kt": 1051.8784539347682,
+    "ratio": 1.7626297467359453
+  },
+  "provincial": {
+    "Punjab": {
+      "ours_kt": 1078.5115059756292,
+      "benchmark_kt": 627.0160075754218,
+      "ratio": 1.7200701304996564
+    },
+    "Sindh": {
+      "ours_kt": 416.63455977580554,
+      "benchmark_kt": 242.07497659418704,
+      "ratio": 1.7210971808715656
+    },
+    "Khyber Pakhtunkhwa": {
+      "ours_kt": 176.66432231506428,
+      "benchmark_kt": 99.93215227855833,
+      "ratio": 1.7678426641169198
+    },
+    "Balochistan": {
+      "ours_kt": 159.37108574767063,
+      "benchmark_kt": 57.39487772747719,
+      "ratio": 2.7767475436466245
+    },
+    "Other": {
+      "ours_kt": 3.4044909819781797,
+      "benchmark_kt": 17.437804347001506,
+      "ratio": 0.195236218633431
+    }
+  },
+  "by_stream": {
+    "synthetic": {
+      "cells": 8322,
+      "pearson": 0.8940183334915863,
+      "pearson_log10": 0.7240747518982669,
+      "spearman": 0.7994079630694003,
+      "hotspot_overlap_top10pct": 0.7151442307692307,
+      "ours_kt": 615.4665231029139,
+      "benchmark_kt": 519.3670247794539,
+      "ratio": 1.185031959555515,
+      "benchmark_sectors": [
+        "SFA"
+      ],
+      "shared_spatial_input": null
+    },
+    "livestock": {
+      "cells": 8322,
+      "pearson": 0.9115298765836107,
+      "pearson_log10": 0.737359518040817,
+      "spearman": 0.8944841991510948,
+      "hotspot_overlap_top10pct": 0.7836538461538461,
+      "ours_kt": 1231.788753064368,
+      "benchmark_kt": 499.22603125634174,
+      "ratio": 2.467396882258872,
+      "benchmark_sectors": [
+        "GRM",
+        "MNM"
+      ],
+      "shared_spatial_input": "GLWv4 livestock density (both inventories)"
+    },
+    "burning": {
+      "cells": 8322,
+      "pearson": 0.3803267996822914,
+      "pearson_log10": 0.5172882312972548,
+      "spearman": 0.6261731709771735,
+      "hotspot_overlap_top10pct": 0.39302884615384615,
+      "ours_kt": 6.816976688756031,
+      "benchmark_kt": 31.90537441470547,
+      "ratio": 0.2136623316231646,
+      "benchmark_sectors": [
+        "CRB"
+      ],
+      "shared_spatial_input": null
+    }
+  }
+}

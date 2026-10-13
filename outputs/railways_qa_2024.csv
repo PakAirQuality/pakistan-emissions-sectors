@@ -1,0 +1,2 @@
+check,passed,actual,expected,note
+declared outputs written,True,6,6,every output this runner declares was written by this run

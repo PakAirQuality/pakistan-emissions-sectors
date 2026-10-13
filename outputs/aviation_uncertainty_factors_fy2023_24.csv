@@ -1,0 +1,6 @@
+factor,value,unit,uncert_pct_95,uncertainty_type,distribution,note
+Aircraft movements,1.0,multiplier,60.0,parametric,lognormal,Aggregate activity and fleet assignment
+Representative domestic stage length,550.0,nautical miles,35.0,parametric,lognormal,One stage length represents the route network
+Jet-fuel carbon conversion,3.16,t CO2/t fuel,5.0,parametric,lognormal,Shared by movement and fuel-control estimates
+Customer class to flight geography,three scenarios,configuration,,structural,discrete,"Literal label, movement share, and OECD flight-fuel share"
+Non-commercial classification,unresolved,configuration,,structural,not sampled,"Government, military, training, and general aviation remain separate"

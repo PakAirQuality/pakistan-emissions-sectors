@@ -1,0 +1,28 @@
+# The declared bridge from the fleet model's ei_class x fuel cells to the EMEP/EEA
+# Tier 1 categories. Where the guidebook publishes no factor for a Pakistani cell the
+# proxy is DECLARED here, never silent: light CNG vehicles (cars, rickshaws, vans -
+# Pakistan's CNG fleet, which the guidebook does not model at Tier 1) take the PC LPG
+# row as the nearest spark-ignition gaseous-fuel chemistry, and the rare petrol buses
+# take LCV Petrol as the nearest larger spark engine. Wear factors are fuel-blind and
+# map on the class alone (buses ride HDV wear). Off-road (NRV) is 1A4c, outside the
+# road air layer, exactly as the GHG boundary draws it.
+ei_class,fuel,emep_category,emep_fuel,proxy_note
+2W,Petrol,L,Petrol,
+3W,Petrol,L,Petrol,
+4W1,Petrol,PC,Petrol,
+4W2,Petrol,PC,Petrol,
+4WT,Petrol,PC,Petrol,
+BUS,Petrol,LCV,Petrol,declared proxy: no Tier 1 petrol bus/HDV factor exists; nearest larger spark engine
+LDV,Petrol,LCV,Petrol,
+4W2,Diesel,PC,Diesel,
+BUS,Diesel,HDV,Diesel,
+HDV,Diesel,HDV,Diesel,
+LDV,Diesel,LCV,Diesel,
+2W,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+3W,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+4W1,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+4W2,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+4WT,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+LDV,CNG,PC,LPG,declared proxy: spark-ignition gaseous fuel; the guidebook has no Tier 1 CNG row outside buses
+BUS,CNG,HDV,CNG,the guidebook's own CNG (Buses) row
+HDV,CNG,HDV,CNG,the guidebook's own CNG (Buses) row - the nearest heavy-duty gas engine

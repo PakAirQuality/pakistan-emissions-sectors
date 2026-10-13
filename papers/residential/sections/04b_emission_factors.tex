@@ -1,0 +1,71 @@
+% ===========================================================================
+\section{Emission Factors: Table 2.5, Not Table 2.2}
+\label{sec:factors}
+% ===========================================================================
+
+\subsection{Which of the four tables}
+
+IPCC Volume~2 Chapter~2 publishes four parallel default tables for stationary combustion---
+energy industries, manufacturing, commercial, and residential---and this sector must use
+Table~2.5, Residential and Agriculture/Forestry/Fishing.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Natural gas} & \textbf{\COtwo{}} & \textbf{\CHfour{}} & \textbf{\NtwoO{}} \\
+ & \multicolumn{3}{c}{kg/TJ} \\
+\midrule
+Table 2.5, residential        & 56\,100 & 5 & 0.1 \\
+Table 2.2, energy industries  & 56\,100 & 1 & 0.1 \\
+\midrule
+\textbf{Kerosene} & & & \\
+Table 2.5, residential        & 71\,900 & 10 & 0.6 \\
+Table 2.2, energy industries  & 71\,900 &  3 & 0.6 \\
+\bottomrule
+\end{tabular}
+\caption{\COtwo{} is identical because it depends only on the carbon in the fuel. \CHfour{} is
+not: residential natural gas is five times the utility value and residential kerosene more than
+three times, because a small appliance burns less completely than a power-station boiler.}
+\label{tab:tables}
+\end{table}
+
+Taking Table~2.2 here would understate household methane by \SI{80}{\percent} while leaving
+\COtwo{} exactly correct---and \COtwo{} is \SI{76}{\percent} of the sector's reported
+emissions, so every obvious check would still pass. This is one of four instances of the same
+trap documented across this inventory \citep{ahmad2026national}; the power sector's module
+carries the mirror-image warning, and a test pins the direction in both.
+
+\subsection{Biomass factors, and why their bands are wide}
+
+The dung and firewood streams carry uncertainties above \SI{150}{\percent} on their methane and
+nitrous oxide. That is not conservatism: cookstove emission factors genuinely span that range,
+because combustion completeness depends on stove design, fuel moisture, feeding rate and
+operator behaviour, and measurement campaigns disagree substantially.
+
+The consequence is that the biomass streams that supply most of the sector's energy are also its most
+uncertain emission streams, which is why the sector's primary band---the grouped Approach-1
+figure of $\pm\SI{23.1}{\percent}$ (Section~\ref{sec:results})---is wide despite three of
+the nine streams being metered: the metered gas, LPG and kerosene core is
+power-station-grade, and everything around it is not.
+
+\subsection{Fossil and biogenic methane in one category}
+
+This sector is the only one in the inventory that emits both. Dung and firewood methane is
+biogenic and takes the AR5 GWP of \num{28}; natural gas, LPG and kerosene methane is fossil and
+takes \num{30}. Every methane-emitting component declares which it is, and a contract test
+asserts both that the declaration is present and that the \COe{} conversion used the
+corresponding value.
+
+The difference is small in this sector---methane totals \SI{5.18}{\mega\tonne} \COe{} of which
+\SI{0.05}{} is fossil---but the same field distinguishes landfill methane from combustion
+methane elsewhere in the inventory, and a category emitting both is exactly where a missing
+flag would be least visible.
+
+\subsection{No separate oxidation factor}
+
+The 2006 Guidelines fold complete oxidation into the emission factor; Table~1.4 carries an
+explicit oxidation column of \num{1.0} for every fuel. Applying the 1996-vintage \num{0.98} on
+top would double-discount. The waste sector in this inventory \emph{does} carry an oxidation
+factor, because open burning genuinely is incomplete, and tests pin both conventions.

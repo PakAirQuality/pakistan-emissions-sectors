@@ -1,0 +1,68 @@
+% ===========================================================================
+\section{Limitations}
+\label{sec:limitations}
+% ===========================================================================
+
+\textbf{The TOE convention is unverified, and it is the sector's largest unresolved risk.}
+The conversion is applied on a net calorific basis to match the IPCC factors, but NEPRA does
+not state its own convention. If the regulator reports on a gross basis, this sector
+overstates \COtwo{} by roughly \SI{5}{\percent} for coal and oil and \SI{10}{\percent} for
+gas---larger than the coal blend, and one-sided, so it cannot be expressed as a symmetric
+sensitivity. Resolving it needs the conversion-factors page of the HDIP Pakistan Energy
+Yearbook.
+
+\textbf{The coal blend is plant-resolved but not fuel-analysed.} The \SI{79}{\percent}
+lignite share is read from the plant ledger's origin split, with Lucky Electric carried as
+bounds (\numrange{0.752}{0.835}) rather than assigned---though the heat-rate channel now
+puts Lucky's implied calorific value in the lignite band. What no Pakistani source in this
+inventory provides is a laboratory fuel analysis: Table~3's own coal energy implies
+\SI{24.2}{} TJ/Gg over a fleet that is \SI{92}{\percent} lignite by mass---a ratio of
+\num{1.86} against rank defaults, and a factor of \num{2.01} against the per-plant implied
+calorific values of Section~\ref{sec:impliedcv}. Two channels against one (the CRT's
+solid-fuel agreement), published as a control-total finding with a labelled sensitivity
+rather than resolved. The energy basis keeps the blend's consequence to \SI{3.3}{\percent}
+of the grid category; the conversion question itself is worth \SI{17.78}{\mega\tonne} on the
+grid category---the distance between the booked station account and the aggregate conversion
+retained beside it---and is this sector's largest number at stake.
+
+\textbf{Captive gas self-generation is one fuel in one use.} It covers gas burned for industrial
+self-generation. Captive plants burning furnace oil, diesel, coal or bagasse are in the
+register but have no metered fuel series; the liquid fuels are now estimated from OCAC's
+Total Industry customer class, but solid-fuel process heat, boilers and kilns are not
+estimated at all. With industrial process gas and the metered industrial liquids now
+estimated separately, roughly
+\SI{16}{\mega\tonne} of EDGAR's \SI{43.98}{\mega\tonne} for 1A2 remains outstanding, and
+this category is a floor rather than an estimate.
+
+\textbf{The captive gas heating value is unpinned.} Nothing read here states it; the
+\SIrange{900}{1000}{} Btu/scf range moves the category by \SI{0.55}{\mega\tonne}. Both are
+reported.
+
+\textbf{Air pollutants are an uncontrolled bound, not an estimate.} No national control-device
+inventory exists, so the removal efficiency---the largest single term for particulate and
+sulphur---is not applied rather than guessed. Every pollutant here is therefore what the
+fleet would emit with no abatement, which is an upper bound and is labelled as one; what the
+fleet \emph{actually} emits remains not estimated, and the completeness table says so.
+
+\textbf{Fuel sulphur and ash are literature ranges, not Pakistani measurements.} Thar sulphur
+spans a factor of eleven in the published analyses, and the imported bituminous fraction is a
+different coal that NEPRA's combined figure does not separate.
+
+\textbf{Gas \NOx{} uses boiler factors for a partly combined-cycle fleet.} AP-42 Chapter~1.4
+covers external combustion; turbine factors are in Chapter~3.1 and differ. NEPRA reports fuel
+without plant type.
+
+\textbf{The anchor year rests on one edition's OCR-repaired column.} The FY2023--24
+national fuel figures come from the 2025 report, whose text layer renders some thousands
+separators as decimal points; the repair is validated against the overlapping years of the
+2024 edition and the column's own printed total, but it is a repair.
+
+\textbf{The grid series starts at FY2013--14.} Five earlier report editions were parsed to
+extend it backward in this revision, each reconciling against its own printed totals, but
+editions before FY2013--14 do not carry the fuel table in extractable form, so the sector
+still cannot contribute to a national trend assessment reaching a 1990 base.
+
+\textbf{Captive self-generation before FY2016 is not covered}, and two years within the series
+carry quality flags: FY2021 is provisional, read by OCR from a chart label in an image-scan
+edition, and FY2023's SSGCL figure was restated upward in the following edition. Neither is
+the reported year, and both are carried with their flags rather than smoothed.

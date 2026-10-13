@@ -1,0 +1,15 @@
+# WHICH FAOSTAT CALENDAR YEAR EACH FISCAL CROP CELL ACTUALLY IS.
+# The published history read FAOSTAT at the fiscal-END year for every crop. That is right for wheat (rabi, harvested inside the fiscal year it is labelled with) and wrong by a full year for rice, maize, sugarcane and cotton (kharif, harvested in the preceding calendar year).
+# The evidence is not an argument about growing seasons: the cells agree to 0.01-0.02 percent at the other offset and disagree by 7-9 percent at the one that was used.
+# Rice production is compared after the 0.667 paddy-to-milled outturn, which holds to three figures in all nine years - a unit, not a disagreement.
+crop,field,season,mean_abs_pct_at_fiscal_end_year,mean_abs_pct_at_fiscal_start_year,best_offset,offset_the_published_history_used
+wheat,area_ha,rabi,0.1194,2.3552,0,0
+wheat,production_t,rabi,0.1323,5.6955,0,0
+rice,area_ha,kharif,8.4178,0.0079,-1,0
+rice,production_t,kharif,10.1448,0.0186,-1,0
+maize,area_ha,kharif,7.0766,0.0197,-1,0
+maize,production_t,kharif,10.6696,0.1259,-1,0
+sugarcane,area_ha,kharif,8.8561,0.0209,-1,0
+sugarcane,production_t,kharif,8.8659,0.0003,-1,0
+cotton,area_ha,kharif,,,not-in-calendar-history,0
+cotton,production_t,kharif,,,not-in-calendar-history,0

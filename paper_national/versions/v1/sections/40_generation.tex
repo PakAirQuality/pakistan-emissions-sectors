@@ -1,0 +1,34 @@
+% ===========================================================================
+% ESSD section 4: Dataset generation (container).
+% Inputs 06_results (lead: the annual, monthly and gridded products as generated),
+% 04_closures (the cross-boundary ledgers) and 07_uncertainty (parametric and structural
+% uncertainty), the latter two demoted to subsections. No printed quantity lives here.
+% ===========================================================================
+\section{Dataset generation}
+\label{sec:generation}
+
+The dataset is generated in four stages that this section follows in order. The annual
+reconstruction computes every category--gas cell for the reference configuration and for
+each fiscal year of the panel, and closes it exactly to the national total. The monthly
+estimate resolves each annual cell into twelve months on a declared temporal profile, and
+records for every stream whether that profile was observed, borrowed or flat. The spatial
+allocation places the national mass on administrative units and on a regular grid, and
+keeps the part it cannot place as an explicit unallocated remainder, so that the closure
+identity is raster plus unallocated rather than raster alone. The uncertainty stage carries
+parameter-level draws through the same engine and prices the structural alternatives that a
+parametric interval cannot contain. The ledgers between sectors---the quantities estimated
+once and consumed twice across an accounting boundary---are part of the generation rather
+than of its validation, because they are what makes the total a single sum instead of a
+collection of sector totals.
+
+\pkinvLeadFragment
+\input{sections/06_results}
+\pkinvEndFragment
+
+\pkinvDemoteFragment
+\input{sections/04_closures}
+\pkinvEndFragment
+
+\pkinvDemoteFragment
+\input{sections/07_uncertainty}
+\pkinvEndFragment

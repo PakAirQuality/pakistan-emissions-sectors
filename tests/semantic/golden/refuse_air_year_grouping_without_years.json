@@ -1,0 +1,16 @@
+{
+ "expect": [],
+ "expect_error": "grain_unavailable",
+ "expect_limitation": "air_history_national_only",
+ "expect_receipt": "",
+ "function": "query_air",
+ "golden_id": "refuse_air_year_grouping_without_years",
+ "request": {
+  "group_by": [
+   "year"
+  ],
+  "pollutants": [
+   "NH3"
+  ]
+ }
+}

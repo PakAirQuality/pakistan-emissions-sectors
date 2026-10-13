@@ -1,0 +1,36 @@
+# THE SECTOR SCORECARD (rc37): the (module x property) projection of the
+# catalog, one row per cell carrying its BEST row and what that row may
+# claim - validated (an independent or partially independent record scored
+# the property), corroborated, calibrated_only, declared_absent, or
+# unregistered_absence (no row at all). The sector passes turn these rows.
+module,property_tested,rows,best_row,best_class,best_independence,status,limit
+agriculture,magnitude,4,mag-agriculture-benchmarks,validation/partial,partial,validated,"IT TESTS THE METHOD, NOT THE ACTIVITY, and the manuscript says so in as many words (05_validation: 'not an independent test of the underlying activity data'). FAOSTAT, EDGAR and the CRT read the same "
+agriculture,timing,4,tim-rice-fao-calendar,corroboration,partial,corroborated,"HARVEST ONLY, and the profile does not read harvest. Rice methane rides the FLOODED window - transplant to drain - and FAO publishes SOWING, which for rice is a different operation. No provenance clas"
+agriculture,geography,8,geo-agriculture-gcd-rice,validation/large,large,validated,"the two surfaces DISAGREE (25-62% of each province's rice mass placed in different districts) and neither is ground truth: the own-year 30 m product argues for itself on vintage and resolution, the de"
+power,magnitude,5,mag-power-coal-reference-audit,validation/partial,partial,validated,"This REFUTES the published control; it does not select a replacement and it moves no pin. Two of the four candidate accounts sit inside the band, so the audit narrows the field without choosing one. T"
+power,timing,1,tim-power-hindcast,validation/partial,partial,validated,"it scores the LIQUID streams only, which are a few per cent of the module; the grid's coal and gas generation is T4 and remains unvalidated in time. It also tests reconstruction skill against the sour"
+power,geography,5,geo-power-tropomi,validation/large,large,validated,"an enhancement locates a plume, not a tonnage; it validates placement and activity presence only"
+transport,magnitude,1,mag-transport-edgar,calibration-or-shared,none,calibrated_only,EDGAR's Pakistani road fuel is the same national statistic; agreement is near-tautological
+transport,timing,1,tim-transport-hindcast,validation/partial,partial,validated,"reconstruction skill, not truth: the reference profile and the score read the same OCAC returns, so a low WAPE says the shape is recoverable rather than correct"
+transport,geography,2,geo-transport-proxy,validation/partial,partial,validated,"proxy spread is allocation uncertainty, not error against an observation; no independent provincial fuel record exists"
+waste,magnitude,1,mag-waste-edgar,validation/partial,partial,validated,both model-based; cannot resolve the sewer MCF structural axis
+waste,timing,1,abs-waste-timing,declared-absence,,declared_absent,satellite burn detections and temperature-driven FOD alternatives are the named candidates
+waste,geography,1,abs-waste-geography,declared-absence,,declared_absent,a landfill and dumpsite register is the Stage 5 prerequisite named in the ledger
+residential,magnitude,3,mag-residential-hies,validation/large,large,validated,"the demand reading IS the S configuration; the comparison is the published L/S fork, not a resolution of it"
+residential,timing,2,tim-residential-era5,corroboration,large,corroborated,"RECLASSIFIED corroboration in rc37 on its own terms: IT VALIDATES SEASONAL TIMING AND NOT LEVEL. One row per grid cell per day means the volume's t2m is a single daily value, and the files carry no me"
+residential,geography,1,abs-residential-geography,declared-absence,,declared_absent,Census 2023 household-fuel tables are the named independent candidate
+fugitives,magnitude,2,mag-fugitives-crt,validation/partial,partial,validated,"both sides are models; agreement cannot select the practice factor, which stays a structural axis"
+fugitives,timing,2,tim-fugitives-pbs-production,calibration-or-shared,partial,calibrated_only,"PRODUCTION-SIDE ONLY. Field output does not observe deliveries or send-out, so distribution, transmission, post-meter and LNG stay flat T4 with their acquisition named. This row is a calibration (the "
+fugitives,geography,4,geo-fugitives-field-evaluation,validation/large,large,validated,observation opportunity is uneven across fields
+ippu,magnitude,7,mag-fertiliser-gas-two-sources,validation/large,large,validated,agreement on the sector's gas VOLUME is not agreement on how much of that gas became ammonia; both records remain upper bounds on 2.B.1 activity and neither activates the category
+ippu,timing,3,tim-cement-apcma,validation/partial,partial,validated,"SHAPE ONLY. Despatches are sales and QIM is production; cement moves into and out of stock between kiln and gate and exports follow a shipping schedule, so the magnitudes are different quantities. Not"
+ippu,geography,1,geo-ippu-two-registers,validation/large,large,validated,"the file carries nineteen rows and only EIGHT are evidence. The other eleven coordinates came from GEM in the first place, so their distance to GEM is exactly zero and is a register compared with itse"
+industry,magnitude,15,mag-industry-air-edgar,validation/partial,partial,validated,EDGAR applies global default factors to balance fuel; the engine applies source-class factors and Punjab coalfield sulfur; a divergence locates where the compilations part and ranks neither
+industry,timing,1,tim-industry-hindcast,validation/partial,partial,validated,"diesel is one of the module's fuels and the gas streams - its largest - are T4; a hindcast against the profile's own source tests reconstruction, not truth rc37: the industrial gas streams - the modul"
+industry,geography,3,geo-air-lahore-edgar,validation/large,large,validated,"PARTIAL on magnitude (EDGAR's Pakistani fuel is IEA-balance derived and the IEA balance is HDIP-fed) but LARGE on geography, which is the axis under test, and the class here is the geographic one. CAN"
+railways,magnitude,2,mag-railways-fuel-audit,validation/large,large,validated,"the strongest magnitude check in the release because the bound is physical, not another model"
+railways,timing,1,tim-railways-hindcast,validation/partial,partial,validated,the operator's own monthly fuel account would be the independent series and is not held; this scores how well a candidate reproduces the OCAC panel the profile reads
+railways,geography,1,geo-railways-elk,validation/partial,partial,validated,"validates the route-constrained allocation shape; the magnitude side is the matched-year fuel audit, not this"
+aviation,magnitude,3,mag-aviation-oecd,validation/large,large,validated,"the OECD resident share is elsewhere a calibration input; THIS comparison is the gross boundary, where it is not"
+aviation,timing,1,tim-aviation-climatetrace,corroboration,partial,corroborated,"TRACE's Pakistani coverage is thin; ordering agreement is partial corroboration, not validation"
+aviation,geography,1,geo-aviation-airports,corroboration,partial,corroborated,spatial ordering is strongly consistent; magnitudes are not independent enough to validate

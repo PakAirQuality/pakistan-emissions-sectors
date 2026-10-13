@@ -1,0 +1,26 @@
+{
+ "expect": [
+  {
+   "exact": "123.305",
+   "group": {
+    "province": "Punjab"
+   },
+   "tolerance": "5e-3"
+  }
+ ],
+ "expect_receipt": "63c7f7e0f3a3bc03a405b0319df3bf3e",
+ "function": "query_emissions",
+ "golden_id": "adm1_punjab_agriculture",
+ "request": {
+  "geography_ids": [
+   "Punjab"
+  ],
+  "geography_level": "adm1",
+  "periods": [
+   "FY2023-24"
+  ],
+  "sectors": [
+   "agriculture"
+  ]
+ }
+}

@@ -1,0 +1,56 @@
+# Cells failing one of the three controls. Kept with their raw text, never repaired.
+# scope=row: the four regional columns do not reach the row's own printed Total.
+# scope=column: the twelve months do not reach the block's printed annual Total - this is where APCMA's own
+#              digit-grouping error in FY2015-16 South Export surfaces.
+# scope=duplicate-year: two pages of the publication disagree about one cell.
+fiscal_year_start,scope,column,months_sum,printed,raw,source_file
+2015,column,South local,5946838.0,5947655.0,twelve months sum to 5946838 against a printed 5947655,apcma_dispatches_2015_16.html
+2015,column,South export,2020569.0,202989.0,twelve months sum to 2020569 against a printed 202989,apcma_dispatches_2015_16.html
+2014,row,April,3294609.0,3294238.0,"April: [2197634.0, 405616.0, 456616.0, 234743.0] vs printed 3294238.0",apcma_dispatches_2015_16.html
+2014,column,North local,21247240.0,23442721.0,twelve months sum to 21247240 against a printed 23442721,apcma_dispatches_2015_16.html
+2014,column,North export,4062289.0,4467535.0,twelve months sum to 4062289 against a printed 4467535,apcma_dispatches_2015_16.html
+2014,column,South local,4304665.0,4761281.0,twelve months sum to 4304665 against a printed 4761281,apcma_dispatches_2015_16.html
+2014,column,South export,2492791.0,2727534.0,twelve months sum to 2492791 against a printed 2727534,apcma_dispatches_2015_16.html
+2015,row,January,3087174.0,3047174.0,"January: [2141742.0, 256714.0, 558870.0, 129848.0] vs printed 3047174.0",apcma_dispatches_2016_17.html
+2015,column,North local,24911899.0,27053641.0,twelve months sum to 24911899 against a printed 27053641,apcma_dispatches_2016_17.html
+2015,column,North export,3594901.0,3851615.0,twelve months sum to 3594901 against a printed 3851615,apcma_dispatches_2016_17.html
+2015,column,South local,5388785.0,5947655.0,twelve months sum to 5388785 against a printed 5947655,apcma_dispatches_2016_17.html
+2015,column,South export,1891141.0,2020989.0,twelve months sum to 1891141 against a printed 2020989,apcma_dispatches_2016_17.html
+2017,column,North local,33967695.0,33968691.0,twelve months sum to 33967695 against a printed 33968691,apcma_dispatches_2017_18.html
+2017,column,North export,3081437.0,3080437.0,twelve months sum to 3081437 against a printed 3080437,apcma_dispatches_2017_18.html
+2017,column,South local,7178831.0,7178700.0,twelve months sum to 7178831 against a printed 7178700,apcma_dispatches_2017_18.html
+2016,row,October,3150616.0,3526556.0,"October: [2112870.0, 324388.0, 519333.0, 194025.0] vs printed 3526556.0",apcma_dispatches_2017_18.html
+2016,row,November,3749020.0,3748570.0,"November: [2692839.0, 349589.0, 577619.0, 128973.0] vs printed 3748570.0",apcma_dispatches_2017_18.html
+2016,column,North local,23959782.0,29140981.0,twelve months sum to 23959782 against a printed 29140981,apcma_dispatches_2017_18.html
+2016,column,North export,2475858.0,3149835.0,twelve months sum to 2475858 against a printed 3149835,apcma_dispatches_2017_18.html
+2016,column,South local,5413665.0,6510617.0,twelve months sum to 5413665 against a printed 6510617,apcma_dispatches_2017_18.html
+2016,column,South export,1190736.0,1513734.0,twelve months sum to 1190736 against a printed 1513734,apcma_dispatches_2017_18.html
+2018,column,North local,32356402.0,32364342.0,twelve months sum to 32356402 against a printed 32364342,apcma_dispatches_2018_19.html
+2018,column,South local,7976695.0,7981648.0,twelve months sum to 7976695 against a printed 7981648,apcma_dispatches_2018_19.html
+2018,row,January,3661509.0,3661518.0,"January: [2370689.0, 215370.0, 710959.0, 364491.0] vs printed 3661518.0",apcma_dispatches_2019_20.html
+2018,column,North local,29992046.0,32362744.0,twelve months sum to 29992046 against a printed 32362744,apcma_dispatches_2019_20.html
+2018,column,North export,2312906.0,2528276.0,twelve months sum to 2312906 against a printed 2528276,apcma_dispatches_2019_20.html
+2018,column,South local,7270689.0,7981648.0,twelve months sum to 7270689 against a printed 7981648,apcma_dispatches_2019_20.html
+2018,column,South export,3647837.0,4012328.0,twelve months sum to 3647837 against a printed 4012328,apcma_dispatches_2019_20.html
+2015,duplicate-year,South local,399581.0,399826.0,201509 published twice as 399581 and 399826,two pages
+2015,duplicate-year,South export,160698.0,160838.0,201509 published twice as 160698 and 160838,two pages
+2015,duplicate-year,South local,418550.0,418964.0,201510 published twice as 418550 and 418964,two pages
+2015,duplicate-year,South local,478744.0,478789.0,201511 published twice as 478744 and 478789,two pages
+2015,duplicate-year,South local,515768.0,515891.0,201512 published twice as 515768 and 515891,two pages
+2015,duplicate-year,South local,553307.0,553304.0,201602 published twice as 553307 and 553304,two pages
+2015,duplicate-year,South export,169809.0,170089.0,201602 published twice as 169809 and 170089,two pages
+2017,duplicate-year,North local,2730835.0,2730805.0,201708 published twice as 2730835 and 2730805,two pages
+2017,duplicate-year,North local,2367478.0,2368578.0,201709 published twice as 2367478 and 2368578,two pages
+2017,duplicate-year,North local,3147840.0,3147665.0,201710 published twice as 3147840 and 3147665,two pages
+2017,duplicate-year,South local,626125.0,625953.0,201711 published twice as 626125 and 625953,two pages
+2017,duplicate-year,North export,232447.0,231447.0,201712 published twice as 232447 and 231447,two pages
+2017,duplicate-year,North local,3018145.0,3018246.0,201801 published twice as 3018145 and 3018246,two pages
+2017,duplicate-year,South local,718767.0,718808.0,201801 published twice as 718767 and 718808,two pages
+2018,duplicate-year,North local,2471803.0,2472989.0,201809 published twice as 2471803 and 2472989,two pages
+2018,duplicate-year,North local,3111126.0,3111480.0,201810 published twice as 3111126 and 3111480,two pages
+2018,duplicate-year,South local,831873.0,836826.0,201810 published twice as 831873 and 836826,two pages
+2018,duplicate-year,North local,2659817.0,2661112.0,201811 published twice as 2659817 and 2661112,two pages
+2018,duplicate-year,North local,2620295.0,2625400.0,201812 published twice as 2620295 and 2625400,two pages
+2018,duplicate-year,North local,2751891.0,2750293.0,201906 published twice as 2751891 and 2750293,two pages
+2018,duplicate-year,North export,141233.0,145316.0,201906 published twice as 141233 and 145316,two pages
+2018,duplicate-year,South export,206197.0,206578.0,201906 published twice as 206197 and 206578,two pages

@@ -1,0 +1,53 @@
+{
+  "name": "aviation_extract_crt_audit",
+  "producer": "pkinv.sectors.aviation.official_reporting.extract_crt_audit",
+  "producer_sha256": "cc694ceaa53b226603ceeb1db7bcda5f20551c24575776f174e8c6b9f6e7e8b7",
+  "result": {
+    "columns": [
+      "source_zip_file",
+      "source_zip_sha256",
+      "workbook_file",
+      "workbook_sha256",
+      "worksheet",
+      "cell",
+      "source_reference",
+      "field",
+      "raw_value",
+      "raw_data_type",
+      "unit",
+      "transformation",
+      "transformed_value",
+      "formula",
+      "notation_key"
+    ],
+    "kind": "records",
+    "path": "aviation_extract_crt_audit.csv",
+    "sha256": "116a4b68770ffc30a9d42a07488b5f5ebc965290bd9f0f107da8938be148f452",
+    "types": [
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "sssssssssssssss",
+      "sssssssssssssss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "sssssssssssssss",
+      "sssssssssssssss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss",
+      "ssssssssfsssfss"
+    ]
+  },
+  "schema": "pkinv.source_extract/v1",
+  "source": "sources/Aviation/PAK_CRT_2024.zip",
+  "source_sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+}

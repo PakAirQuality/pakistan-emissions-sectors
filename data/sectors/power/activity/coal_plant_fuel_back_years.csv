@@ -1,0 +1,66 @@
+# COAL PLANT FUEL FROM THE NEPRA EDITIONS THE 2024 INGEST DOES NOT READ.
+#
+# WHY THIS EXISTS. scripts/ingest_nepra_plants.py re-derives plant_fuel_ledger.csv from ONE
+# document, NEPRA SoIR 2024, and must keep doing so - a producer that cannot reproduce its own
+# output byte for byte is how a hand edit ships as evidence. But the coal panel does not start
+# in FY2019-20, and the ESSD review asks for a plant/fuel/year reconciliation over the whole
+# nine years. The earlier years are printed, in two OTHER editions, in two DIFFERENT tables:
+#
+#   SoIR 2020 REPRODUCES SoIR 2018's FY2015-16, FY2016-17 and FY2017-18 Lakhra cells
+#     EXACTLY (148.16/152.22/1.03, 123.97/123.90/0.99, 3.39/5.30/1.01), so three editions
+#     agree on them and the transcription is not in doubt.
+#   SoIR 2018, GENCO block "FBC Lakhara (GENCO-IV)" - columns "Generation on Coal (GWh)",
+#     "Coal Consumption (000 M. Tons)" and "Coal Consumption (kg/kWh)", FY2013-14..FY2017-18.
+#     Lakhra is the ONLY GENCO that burns coal, and in FY2015-16 it is the only coal station in
+#     the country: its 148.16 GWh is the whole PEPCO coal figure for that year.
+#   SoIR 2023, IPP table "Quantity of Coal used (000 M. Tons)" per station,
+#     FY2018-19..FY2022-23. This is where FY2018-19 comes from - NOT SoIR 2019, which prints
+#     Quantity of RFO and Quantity of Gas and no coal column at all.
+#
+# THE SEARCH TERM MATTERS, and getting it wrong cost a day. The IPP table heads the quantity
+# "Quantity of Coal"; the GENCO table heads the same quantity "Coal Consumption". A sweep for
+# the first alone reports that seven of the ten held editions carry no coal table. They all do.
+# Match on ligature-normalised text: pdftotext renders "ti" as a control byte in these
+# documents, so "Quantity" can arrive as "Quan\x19ty".
+#
+# VALIDATED BEFORE IT WAS TRUSTED. Of the 12 cells where SoIR 2023's table overlaps the
+# committed SoIR 2024 ledger, 10 agree exactly. The two that do not are recorded here with
+# edition=2023 beside the 2024 reading rather than reconciled away:
+#   China Power Hub FY2022-23   1546.92 against 1546.82 GWh - 0.10 GWh, at the limit of a
+#                               layout read, and not treated as a revision
+#   Sahiwal FY2022-23           1025.24 against 1180.0 kt - 155 kt, 15 per cent, a REAL
+#                               inter-edition revision of the one column the campaign had
+#                               already flagged as anomalous (its FY2021-22 cell implies
+#                               4.77 GWh/kt against its own 2.44-2.72)
+#
+# WHAT IS NOT HERE. FY2016-17 and FY2017-18 carry coal generation that is NOT Lakhra's -
+# 873.17 and 11,783.11 GWh - from Sahiwal and Port Qasim while they were commissioning. No
+# edition prints a mass for it. That lane is RECONSTRUCTED in
+# outputs/pakemis_power_fuel_reconciliation.csv with an explicit interval, and is not
+# transcribed here, because this file holds printed figures only.
+#
+# UNITS: quantity_kt is thousand metric tonnes as printed. intensity_kg_per_kWh_printed is the
+# publisher's own column where it exists, carried verbatim and NOT recomputed - in three of
+# Lakhra's five years it disagrees with the table's own mass over generation, which is a
+# property of the document and is flagged per row.
+fiscal_year,system,plant,fuel,fuel_origin,quantity_kt,net_generation_GWh,intensity_kg_per_kWh_printed,edition,source_table,note
+2013,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,160.71,112.00,1.03,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.435); reads as a gross-vs-net generation mix"
+2014,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,151.00,102.27,1.04,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.476)"
+2015,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,152.22,148.16,1.03,2018,NEPRA SoIR 2018 GENCO coal block,"internally consistent: mass/generation 1.027 against 1.03 printed. The whole national coal fleet in FY2015-16"
+2016,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,123.90,123.97,0.99,2018,NEPRA SoIR 2018 GENCO coal block,"internally consistent: 0.999 against 0.99 printed"
+2017,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,5.30,3.39,1.01,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.563); Lakhra is nearly shut by this year"
+2018,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,0.26,0.06,4.04,2020,NEPRA SoIR 2020 GENCO coal block,"Lakhra is effectively shut by FY2018-19 and zero from FY2019-20. Its printed intensity of 4.04 is meaningless at 0.06 GWh and is carried only because the column exists"
+2018,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,2936.97,8220.07,,2023,NEPRA SoIR 2023 Table 21,"the year the committed ledger does not reach; no edition before 2023 prints a per-station coal mass"
+2018,IPP,Port Qasim Electric Power,Coal,imported,2901.23,7553.64,,2023,NEPRA SoIR 2023 Table 21,"as above"
+2019,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,2270.37,6167.19,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2020,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,2750.14,7342.70,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2021,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,1443.97,6881.38,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger. This is the cell whose 4.77 GWh/kt the campaign flagged"
+2022,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,1025.24,2876.85,,2023,NEPRA SoIR 2023 Table 21,"REVISED between editions: SoIR 2024 prints 1180.0 kt for the same cell, 155 kt more"
+2019,IPP,Port Qasim Electric Power,Coal,imported,4023.93,8969.74,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2020,IPP,Port Qasim Electric Power,Coal,imported,3618.00,8372.34,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2021,IPP,Port Qasim Electric Power,Coal,imported,3318.74,7478.64,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2022,IPP,Port Qasim Electric Power,Coal,imported,1751.77,3203.00,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2019,IPP,China Power Hub,Coal,imported,2252.72,6136.20,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2020,IPP,China Power Hub,Coal,imported,3129.71,7923.41,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2021,IPP,China Power Hub,Coal,imported,2619.61,6764.89,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"
+2022,IPP,China Power Hub,Coal,imported,620.28,1546.92,,2023,NEPRA SoIR 2023 Table 21,"generation differs from the SoIR 2024 ledger by 0.10 GWh (1546.82); at the limit of a layout read, not treated as a revision"

@@ -1,0 +1,18 @@
+species,system,share,source,note
+cattle,burned_fuel,0.2002,GLEAM Ref Doc v1.0 T3.2-3.3,GLEAM SA dairy+nondairy Nex-blended (fdair=0.507)
+cattle,solid_storage,0.01706,GLEAM Ref Doc v1.0 T3.2-3.3,GLEAM SA dairy+nondairy Nex-blended (fdair=0.507)
+cattle,drylot,0.5633,GLEAM Ref Doc v1.0 T3.2-3.3,GLEAM SA dairy+nondairy Nex-blended (fdair=0.507)
+cattle,pasture_range_paddock,0.21944,GLEAM Ref Doc v1.0 T3.2-3.3,GLEAM SA dairy+nondairy Nex-blended (fdair=0.507)
+buffalo,daily_spread,0.01308,GLEAM Ref Doc v1.0 T3.4,GLEAM SA buffalo (no pasture; 40%% liquid/slurry)
+buffalo,solid_storage,0.2002,GLEAM Ref Doc v1.0 T3.4,GLEAM SA buffalo (no pasture; 40%% liquid/slurry)
+buffalo,liquid_slurry,0.40644,GLEAM Ref Doc v1.0 T3.4,GLEAM SA buffalo (no pasture; 40%% liquid/slurry)
+buffalo,burned_fuel,0.38028,GLEAM Ref Doc v1.0 T3.4,GLEAM SA buffalo (no pasture; 40%% liquid/slurry)
+sheep,pasture_range_paddock,0.8517,GLEAM Ref Doc v1.0 T3.5,GLEAM SA small ruminants
+sheep,drylot,0.12826,GLEAM Ref Doc v1.0 T3.5,GLEAM SA small ruminants
+sheep,solid_storage,0.02004,GLEAM Ref Doc v1.0 T3.5,GLEAM SA small ruminants
+goats,pasture_range_paddock,0.8517,GLEAM Ref Doc v1.0 T3.5,GLEAM SA small ruminants (=sheep)
+goats,drylot,0.12826,GLEAM Ref Doc v1.0 T3.5,GLEAM SA small ruminants (=sheep)
+goats,solid_storage,0.02004,GLEAM Ref Doc v1.0 T3.5,GLEAM SA small ruminants (=sheep)
+camels,pasture_range_paddock,0.9,current (not in GLEAM),not in GLEAM - extensive default kept
+camels,solid_storage,0.1,current (not in GLEAM),not in GLEAM - extensive default kept
+poultry,poultry_litter,1.0,current (not in GLEAM),not in GLEAM - litter default kept

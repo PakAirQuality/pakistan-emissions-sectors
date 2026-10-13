@@ -1,0 +1,254 @@
+figure,quantity,product,product_value,plotted_value,tolerance,agrees
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,223.45447,223.45,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,45.58957,45.59,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,41.92617,41.93,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,37.45291,37.45,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,25.53536,25.54,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,24.22042,24.22,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,23.49937,23.5,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,22.58165,22.58,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,0.39437,0.39,0.005,yes
+2a,"module total, rank order",national_all_sectors.csv row_kind=sector,0.30113,0.3,0.005,yes
+2a,sum of the ten modules = reference total,national_all_sectors.csv row_kind=national_total,444.95542,444.95542,5e-05,yes
+2b,annual estimate FY2015-16,pakemis_national_series.csv row_kind=covered_total,393.83626,393.836,0.0005,yes
+2b,annual estimate FY2016-17,pakemis_national_series.csv row_kind=covered_total,419.43996,419.44,0.0005,yes
+2b,annual estimate FY2017-18,pakemis_national_series.csv row_kind=covered_total,447.91008,447.91,0.0005,yes
+2b,annual estimate FY2018-19,pakemis_national_series.csv row_kind=covered_total,444.08059,444.081,0.0005,yes
+2b,annual estimate FY2019-20,pakemis_national_series.csv row_kind=covered_total,445.51419,445.514,0.0005,yes
+2b,annual estimate FY2020-21,pakemis_national_series.csv row_kind=covered_total,483.44611,483.446,0.0005,yes
+2b,annual estimate FY2021-22,pakemis_national_series.csv row_kind=covered_total,483.44854,483.449,0.0005,yes
+2b,annual estimate FY2022-23,pakemis_national_series.csv row_kind=covered_total,438.34095,438.341,0.0005,yes
+2b,annual estimate FY2023-24,pakemis_national_series.csv row_kind=covered_total,444.95542,444.955,0.0005,yes
+2b,reference year of the series = reference total,national_all_sectors.csv,444.95542,444.95542,5e-05,yes
+2c,time_correlated difference_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,51.11915,51.12,0.005,yes
+2c,time_correlated P2.5_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,40.0826,40.08,0.005,yes
+2c,time_correlated P97.5_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,64.0143,64.01,0.005,yes
+2c,parameter_typed difference_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,51.11915,51.12,0.005,yes
+2c,parameter_typed P2.5_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,15.939,15.94,0.005,yes
+2c,parameter_typed P97.5_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,89.5657,89.57,0.005,yes
+2c,time_independent difference_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,51.11915,51.12,0.005,yes
+2c,time_independent P2.5_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,-10.0122,-10.01,0.005,yes
+2c,time_independent P97.5_Mt,pakemis_trend_uncertainty.csv pair_kind=window_full_panel,114.0712,114.07,0.005,yes
+2c,deterministic difference = last estimate less first,pakemis_national_series.csv,51.11916000000002,51.11915,5e-05,yes
+3a,share of emissions in TE1,temporal_profile.csv scope=NATIONAL,0.9505669668090403,0.95,0.005,yes
+3a,share of emissions in TE2,temporal_profile.csv scope=NATIONAL,25.286079169714725,25.29,0.005,yes
+3a,share of emissions in TE3,temporal_profile.csv scope=NATIONAL,19.116203755206982,19.12,0.005,yes
+3a,share of emissions in TE4,temporal_profile.csv scope=NATIONAL,54.64715010826925,54.65,0.005,yes
+3a,temporal classes cover the reference total,temporal_profile.csv,444.95542,444.95550000000003,0.0005,yes
+3b,deterministic reference,national_all_sectors.csv,444.95542,444.96,0.005,yes
+3b,"ensemble P2.5_Mt, within-module sharing",national_uncertainty_montecarlo.csv scenario=within_sector,400.296,400.3,0.005,yes
+3b,"ensemble P50_Mt, within-module sharing",national_uncertainty_montecarlo.csv scenario=within_sector,446.525,446.52,0.005,yes
+3b,"ensemble P97.5_Mt, within-module sharing",national_uncertainty_montecarlo.csv scenario=within_sector,504.967,504.97,0.005,yes
+4,CO2 placed mass (Gg),"annual cube, three views summed over valid cells",160694.35203770973,160694.35203770973,0.16069435203770974,yes
+4,CO2 placed + unallocated = national (Gg),cube + pakemis_spatial_unallocated.csv vs stream ledger,160943.809956,160943.81039321513,0.160943809956,yes
+4,CO2 valid cells,annual cube,33674.0,33674.0,0,yes
+5,CO2 FY2015-16 share: That year's observed activity,pakemis_stream_support_ledger.csv,42.8280526302137,42.8280526302137,1e-06,yes
+5,CO2 FY2015-16 share: Timeless structural surface,pakemis_stream_support_ledger.csv,31.155833523875135,31.155833523875135,1e-06,yes
+5,"CO2 FY2015-16 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,25.256869055240553,25.256869055240553,1e-06,yes
+5,CO2 FY2015-16 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.528564718534239,0.528564718534239,1e-06,yes
+5,CO2 FY2015-16 share: Retained at province level,pakemis_stream_support_ledger.csv,0.23068007213636693,0.2306800721363669,1e-06,yes
+5,CO2 FY2016-17 share: That year's observed activity,pakemis_stream_support_ledger.csv,42.44769367300801,42.44769367300801,1e-06,yes
+5,CO2 FY2016-17 share: Timeless structural surface,pakemis_stream_support_ledger.csv,31.267105586720525,31.267105586720525,1e-06,yes
+5,"CO2 FY2016-17 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,25.578920200185944,25.578920200185944,1e-06,yes
+5,CO2 FY2016-17 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.47997564438685814,0.4799756443868581,1e-06,yes
+5,CO2 FY2016-17 share: Retained at province level,pakemis_stream_support_ledger.csv,0.22630489569866166,0.2263048956986616,1e-06,yes
+5,CO2 FY2017-18 share: That year's observed activity,pakemis_stream_support_ledger.csv,42.217719852018796,42.2177198520188,1e-06,yes
+5,CO2 FY2017-18 share: Timeless structural surface,pakemis_stream_support_ledger.csv,33.26389330273266,33.26389330273266,1e-06,yes
+5,"CO2 FY2017-18 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,24.04437950484084,24.04437950484084,1e-06,yes
+5,CO2 FY2017-18 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.28639992986334595,0.2863999298633459,1e-06,yes
+5,CO2 FY2017-18 share: Retained at province level,pakemis_stream_support_ledger.csv,0.18760741054435248,0.1876074105443524,1e-06,yes
+5,CO2 FY2018-19 share: That year's observed activity,pakemis_stream_support_ledger.csv,39.34152094726617,39.34152094726617,1e-06,yes
+5,CO2 FY2018-19 share: Timeless structural surface,pakemis_stream_support_ledger.csv,37.173829251976194,37.173829251976194,1e-06,yes
+5,"CO2 FY2018-19 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,23.319006733048838,23.31900673304884,1e-06,yes
+5,CO2 FY2018-19 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2018-19 share: Retained at province level,pakemis_stream_support_ledger.csv,0.16564306770881523,0.1656430677088152,1e-06,yes
+5,CO2 FY2019-20 share: That year's observed activity,pakemis_stream_support_ledger.csv,41.78481274925663,41.78481274925663,1e-06,yes
+5,CO2 FY2019-20 share: Timeless structural surface,pakemis_stream_support_ledger.csv,35.595227034685934,35.595227034685934,1e-06,yes
+5,"CO2 FY2019-20 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,22.498177176533282,22.49817717653328,1e-06,yes
+5,CO2 FY2019-20 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2019-20 share: Retained at province level,pakemis_stream_support_ledger.csv,0.12178303952414643,0.1217830395241464,1e-06,yes
+5,CO2 FY2020-21 share: That year's observed activity,pakemis_stream_support_ledger.csv,38.14292405142842,38.14292405142842,1e-06,yes
+5,CO2 FY2020-21 share: Timeless structural surface,pakemis_stream_support_ledger.csv,39.02803706788941,39.02803706788941,1e-06,yes
+5,"CO2 FY2020-21 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,22.71785649458313,22.71785649458313,1e-06,yes
+5,CO2 FY2020-21 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2020-21 share: Retained at province level,pakemis_stream_support_ledger.csv,0.1111823860990525,0.1111823860990525,1e-06,yes
+5,CO2 FY2021-22 share: That year's observed activity,pakemis_stream_support_ledger.csv,64.05122104773243,64.05122104773243,1e-06,yes
+5,CO2 FY2021-22 share: Timeless structural surface,pakemis_stream_support_ledger.csv,35.81355363276895,35.81355363276895,1e-06,yes
+5,"CO2 FY2021-22 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2021-22 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2021-22 share: Retained at province level,pakemis_stream_support_ledger.csv,0.1352253194986403,0.1352253194986403,1e-06,yes
+5,CO2 FY2022-23 share: That year's observed activity,pakemis_stream_support_ledger.csv,67.77692503420205,67.77692503420205,1e-06,yes
+5,CO2 FY2022-23 share: Timeless structural surface,pakemis_stream_support_ledger.csv,32.0658667243516,32.0658667243516,1e-06,yes
+5,"CO2 FY2022-23 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2022-23 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2022-23 share: Retained at province level,pakemis_stream_support_ledger.csv,0.15720824144635928,0.1572082414463592,1e-06,yes
+5,CO2 FY2023-24 share: That year's observed activity,pakemis_stream_support_ledger.csv,44.34352102047985,44.34352102047985,1e-06,yes
+5,CO2 FY2023-24 share: Timeless structural surface,pakemis_stream_support_ledger.csv,55.50148180499806,55.50148180499806,1e-06,yes
+5,"CO2 FY2023-24 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2023-24 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CO2 FY2023-24 share: Retained at province level,pakemis_stream_support_ledger.csv,0.15499717452208864,0.1549971745220886,1e-06,yes
+4,CH4 placed mass (Gg),"annual cube, three views summed over valid cells",8621.130038785086,8621.130038785086,0.008621130038785086,yes
+4,CH4 placed + unallocated = national (Gg),cube + pakemis_spatial_unallocated.csv vs stream ledger,8621.13207,8621.131779785068,0.008621132069999999,yes
+4,CH4 valid cells,annual cube,33674.0,33674.0,0,yes
+5,CH4 FY2015-16 share: That year's observed activity,pakemis_stream_support_ledger.csv,15.647572095744074,15.647572095744074,1e-06,yes
+5,CH4 FY2015-16 share: Timeless structural surface,pakemis_stream_support_ledger.csv,71.47342146401306,71.47342146401306,1e-06,yes
+5,"CH4 FY2015-16 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.14165253550372997,0.1416525355037299,1e-06,yes
+5,CH4 FY2015-16 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.737312757243759,12.73731275724376,1e-06,yes
+5,CH4 FY2015-16 share: Retained at province level,pakemis_stream_support_ledger.csv,4.114749537110475e-05,4.114749537110475e-05,1e-06,yes
+5,CH4 FY2016-17 share: That year's observed activity,pakemis_stream_support_ledger.csv,15.23114778945968,15.23114778945968,1e-06,yes
+5,CH4 FY2016-17 share: Timeless structural surface,pakemis_stream_support_ledger.csv,71.83036341171741,71.83036341171741,1e-06,yes
+5,"CH4 FY2016-17 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.15816944895032592,0.1581694489503259,1e-06,yes
+5,CH4 FY2016-17 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.780276603459342,12.780276603459342,1e-06,yes
+5,CH4 FY2016-17 share: Retained at province level,pakemis_stream_support_ledger.csv,4.274641325791243e-05,4.274641325791243e-05,1e-06,yes
+5,CH4 FY2017-18 share: That year's observed activity,pakemis_stream_support_ledger.csv,15.106404337973927,15.106404337973927,1e-06,yes
+5,CH4 FY2017-18 share: Timeless structural surface,pakemis_stream_support_ledger.csv,71.99221687842667,71.99221687842667,1e-06,yes
+5,"CH4 FY2017-18 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.16931451515437745,0.1693145151543774,1e-06,yes
+5,CH4 FY2017-18 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.732026141222814,12.732026141222814,1e-06,yes
+5,CH4 FY2017-18 share: Retained at province level,pakemis_stream_support_ledger.csv,3.812722225353095e-05,3.812722225353095e-05,1e-06,yes
+5,CH4 FY2018-19 share: That year's observed activity,pakemis_stream_support_ledger.csv,14.512950539499311,14.512950539499313,1e-06,yes
+5,CH4 FY2018-19 share: Timeless structural surface,pakemis_stream_support_ledger.csv,72.47995112133619,72.47995112133619,1e-06,yes
+5,"CH4 FY2018-19 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.16621697813178524,0.1662169781317852,1e-06,yes
+5,CH4 FY2018-19 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.840849952710917,12.840849952710917,1e-06,yes
+5,CH4 FY2018-19 share: Retained at province level,pakemis_stream_support_ledger.csv,3.140832181606494e-05,3.140832181606494e-05,1e-06,yes
+5,CH4 FY2019-20 share: That year's observed activity,pakemis_stream_support_ledger.csv,14.31368225875047,14.31368225875047,1e-06,yes
+5,CH4 FY2019-20 share: Timeless structural surface,pakemis_stream_support_ledger.csv,72.59327092778294,72.59327092778294,1e-06,yes
+5,"CH4 FY2019-20 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.1574355103225355,0.1574355103225355,1e-06,yes
+5,CH4 FY2019-20 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.935589274442947,12.935589274442949,1e-06,yes
+5,CH4 FY2019-20 share: Retained at province level,pakemis_stream_support_ledger.csv,2.2028701102274957e-05,2.2028701102274957e-05,1e-06,yes
+5,CH4 FY2020-21 share: That year's observed activity,pakemis_stream_support_ledger.csv,14.439537541954637,14.439537541954635,1e-06,yes
+5,CH4 FY2020-21 share: Timeless structural surface,pakemis_stream_support_ledger.csv,72.49138819745797,72.49138819745797,1e-06,yes
+5,"CH4 FY2020-21 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.17312042647017323,0.1731204264701732,1e-06,yes
+5,CH4 FY2020-21 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.895931618619748,12.895931618619748,1e-06,yes
+5,CH4 FY2020-21 share: Retained at province level,pakemis_stream_support_ledger.csv,2.2215497464958614e-05,2.2215497464958617e-05,1e-06,yes
+5,CH4 FY2021-22 share: That year's observed activity,pakemis_stream_support_ledger.csv,14.7733960113185,14.7733960113185,1e-06,yes
+5,CH4 FY2021-22 share: Timeless structural surface,pakemis_stream_support_ledger.csv,72.29832907567283,72.29832907567283,1e-06,yes
+5,"CH4 FY2021-22 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CH4 FY2021-22 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.928249624839058,12.928249624839058,1e-06,yes
+5,CH4 FY2021-22 share: Retained at province level,pakemis_stream_support_ledger.csv,2.5288169611774464e-05,2.5288169611774464e-05,1e-06,yes
+5,CH4 FY2022-23 share: That year's observed activity,pakemis_stream_support_ledger.csv,13.152493288581072,13.152493288581072,1e-06,yes
+5,CH4 FY2022-23 share: Timeless structural surface,pakemis_stream_support_ledger.csv,73.6163934519537,73.6163934519537,1e-06,yes
+5,"CH4 FY2022-23 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CH4 FY2022-23 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,13.23109042627791,13.23109042627791,1e-06,yes
+5,CH4 FY2022-23 share: Retained at province level,pakemis_stream_support_ledger.csv,2.283318732962389e-05,2.283318732962389e-05,1e-06,yes
+5,CH4 FY2023-24 share: That year's observed activity,pakemis_stream_support_ledger.csv,13.531261272047766,13.531261272047766,1e-06,yes
+5,CH4 FY2023-24 share: Timeless structural surface,pakemis_stream_support_ledger.csv,73.60017477379859,73.60017477379859,1e-06,yes
+5,"CH4 FY2023-24 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,CH4 FY2023-24 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,12.868543759590036,12.868543759590036,1e-06,yes
+5,CH4 FY2023-24 share: Retained at province level,pakemis_stream_support_ledger.csv,2.0194563612572056e-05,2.0194563612572056e-05,1e-06,yes
+4,N2O placed mass (Gg),"annual cube, three views summed over valid cells",155.00982100608968,155.00982100608968,0.00015500982100608967,yes
+4,N2O placed + unallocated = national (Gg),cube + pakemis_spatial_unallocated.csv vs stream ledger,155.01678800000002,155.01678400602006,0.000155016788,yes
+4,N2O valid cells,annual cube,33674.0,33674.0,0,yes
+5,N2O FY2015-16 share: That year's observed activity,pakemis_stream_support_ledger.csv,70.92322025005895,70.92322025005895,1e-06,yes
+5,N2O FY2015-16 share: Timeless structural surface,pakemis_stream_support_ledger.csv,20.426216384036486,20.426216384036486,1e-06,yes
+5,"N2O FY2015-16 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,1.6966333554872957,1.6966333554872957,1e-06,yes
+5,N2O FY2015-16 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.943999507887835,6.943999507887835,1e-06,yes
+5,N2O FY2015-16 share: Retained at province level,pakemis_stream_support_ledger.csv,0.009930502529429777,0.0099305025294297,1e-06,yes
+5,N2O FY2016-17 share: That year's observed activity,pakemis_stream_support_ledger.csv,73.45295696290272,73.45295696290272,1e-06,yes
+5,N2O FY2016-17 share: Timeless structural surface,pakemis_stream_support_ledger.csv,18.650818820122574,18.650818820122577,1e-06,yes
+5,"N2O FY2016-17 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,1.658013106520045,1.658013106520045,1e-06,yes
+5,N2O FY2016-17 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.228932666789874,6.228932666789874,1e-06,yes
+5,N2O FY2016-17 share: Retained at province level,pakemis_stream_support_ledger.csv,0.009278443664774837,0.0092784436647748,1e-06,yes
+5,N2O FY2017-18 share: That year's observed activity,pakemis_stream_support_ledger.csv,72.25764502015065,72.25764502015065,1e-06,yes
+5,N2O FY2017-18 share: Timeless structural surface,pakemis_stream_support_ledger.csv,19.56107669530759,19.56107669530759,1e-06,yes
+5,"N2O FY2017-18 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,1.7678590660750315,1.7678590660750315,1e-06,yes
+5,N2O FY2017-18 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.4048166462882525,6.4048166462882525,1e-06,yes
+5,N2O FY2017-18 share: Retained at province level,pakemis_stream_support_ledger.csv,0.008602572178460869,0.0086025721784608,1e-06,yes
+5,N2O FY2018-19 share: That year's observed activity,pakemis_stream_support_ledger.csv,71.93655563226996,71.93655563226996,1e-06,yes
+5,N2O FY2018-19 share: Timeless structural surface,pakemis_stream_support_ledger.csv,19.959038587168656,19.959038587168656,1e-06,yes
+5,"N2O FY2018-19 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,1.6384157790301492,1.6384157790301492,1e-06,yes
+5,N2O FY2018-19 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.458852289581931,6.458852289581931,1e-06,yes
+5,N2O FY2018-19 share: Retained at province level,pakemis_stream_support_ledger.csv,0.007137711949291455,0.0071377119492914,1e-06,yes
+5,N2O FY2019-20 share: That year's observed activity,pakemis_stream_support_ledger.csv,71.83017767897321,71.83017767897321,1e-06,yes
+5,N2O FY2019-20 share: Timeless structural surface,pakemis_stream_support_ledger.csv,20.162943292889388,20.162943292889388,1e-06,yes
+5,"N2O FY2019-20 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,1.5068241530564843,1.5068241530564843,1e-06,yes
+5,N2O FY2019-20 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.495041457055732,6.495041457055732,1e-06,yes
+5,N2O FY2019-20 share: Retained at province level,pakemis_stream_support_ledger.csv,0.0050134180252137395,0.0050134180252137,1e-06,yes
+5,N2O FY2020-21 share: That year's observed activity,pakemis_stream_support_ledger.csv,71.91210940766796,71.91210940766796,1e-06,yes
+5,N2O FY2020-21 share: Timeless structural surface,pakemis_stream_support_ledger.csv,19.98612302467069,19.98612302467069,1e-06,yes
+5,"N2O FY2020-21 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,1.639804875481058,1.639804875481058,1e-06,yes
+5,N2O FY2020-21 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.457017923383012,6.457017923383012,1e-06,yes
+5,N2O FY2020-21 share: Retained at province level,pakemis_stream_support_ledger.csv,0.004944768797280851,0.0049447687972808,1e-06,yes
+5,N2O FY2021-22 share: That year's observed activity,pakemis_stream_support_ledger.csv,73.67663637814582,73.67663637814582,1e-06,yes
+5,N2O FY2021-22 share: Timeless structural surface,pakemis_stream_support_ledger.csv,20.012248938248412,20.012248938248412,1e-06,yes
+5,"N2O FY2021-22 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,N2O FY2021-22 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.3055089770774035,6.3055089770774035,1e-06,yes
+5,N2O FY2021-22 share: Retained at province level,pakemis_stream_support_ledger.csv,0.005605706528371281,0.0056057065283712,1e-06,yes
+5,N2O FY2022-23 share: That year's observed activity,pakemis_stream_support_ledger.csv,72.86696934224902,72.86696934224902,1e-06,yes
+5,N2O FY2022-23 share: Timeless structural surface,pakemis_stream_support_ledger.csv,20.584139631880554,20.584139631880554,1e-06,yes
+5,"N2O FY2022-23 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,N2O FY2022-23 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.543768009808243,6.543768009808243,1e-06,yes
+5,N2O FY2022-23 share: Retained at province level,pakemis_stream_support_ledger.csv,0.005123016062175067,0.005123016062175,1e-06,yes
+5,N2O FY2023-24 share: That year's observed activity,pakemis_stream_support_ledger.csv,72.23354608534399,72.23354608534399,1e-06,yes
+5,N2O FY2023-24 share: Timeless structural surface,pakemis_stream_support_ledger.csv,21.47247045268412,21.47247045268412,1e-06,yes
+5,"N2O FY2023-24 share: Reference year's pattern, rescaled",pakemis_stream_support_ledger.csv,0.0,0.0,1e-06,yes
+5,N2O FY2023-24 share: Declared stand-in surface,pakemis_stream_support_ledger.csv,6.289491690409685,6.289491690409685,1e-06,yes
+5,N2O FY2023-24 share: Retained at province level,pakemis_stream_support_ledger.csv,0.004491771562187186,0.0044917715621871,1e-06,yes
+6a,CO2 share at facility and site locations,pakemis_stream_support_ledger.csv emissions_Gg x located_share,50.04402801933182,50.044028019331826,1e-06,yes
+6a,CO2 share retained at province level,pakemis_stream_support_ledger.csv spatial_time_basis=unallocated,0.15499717452208864,0.1549971745220886,1e-06,yes
+6a,CH4 share at facility and site locations,pakemis_stream_support_ledger.csv emissions_Gg x located_share,5.202173128322044,5.202173128322044,1e-06,yes
+6a,CH4 share retained at province level,pakemis_stream_support_ledger.csv spatial_time_basis=unallocated,2.0194563612572056e-05,2.0194563612572056e-05,1e-06,yes
+6a,N2O share at facility and site locations,pakemis_stream_support_ledger.csv emissions_Gg x located_share,0.6894556516304544,0.6894556516304544,1e-06,yes
+6a,N2O share retained at province level,pakemis_stream_support_ledger.csv spatial_time_basis=unallocated,0.004491771562187186,0.0044917715621871,1e-06,yes
+7,ratio: Open burning of waste,pakemis_btr_comparison.csv,17.74,17.74,0.005,yes
+7,ratio = PakEmis / BTR: Open burning of waste,pakemis_btr_comparison.csv,17.74,17.74,0.006,yes
+7,ratio at uniform CH4 28: Open burning of waste,pakemis_btr_comparison.csv,17.74,17.74,0.005,yes
+7,ratio: Oil and natural gas fugitives,pakemis_btr_comparison.csv,6.91,6.91,0.005,yes
+7,ratio = PakEmis / BTR: Oil and natural gas fugitives,pakemis_btr_comparison.csv,6.907692307692307,6.91,0.006,yes
+7,ratio at uniform CH4 28: Oil and natural gas fugitives,pakemis_btr_comparison.csv,6.47,6.47,0.005,yes
+7,ratio: Domestic wastewater,pakemis_btr_comparison.csv,1.79,1.79,0.005,yes
+7,ratio = PakEmis / BTR: Domestic wastewater,pakemis_btr_comparison.csv,1.7899193548387096,1.79,0.006,yes
+7,ratio at uniform CH4 28: Domestic wastewater,pakemis_btr_comparison.csv,1.79,1.79,0.005,yes
+7,ratio: Rice cultivation,pakemis_btr_comparison.csv,1.26,1.26,0.005,yes
+7,ratio = PakEmis / BTR: Rice cultivation,pakemis_btr_comparison.csv,1.2645,1.26,0.006,yes
+7,ratio at uniform CH4 28: Rice cultivation,pakemis_btr_comparison.csv,1.26,1.26,0.005,yes
+7,ratio: Enteric fermentation,pakemis_btr_comparison.csv,1.19,1.19,0.005,yes
+7,ratio = PakEmis / BTR: Enteric fermentation,pakemis_btr_comparison.csv,1.1924665425861916,1.19,0.006,yes
+7,ratio at uniform CH4 28: Enteric fermentation,pakemis_btr_comparison.csv,1.19,1.19,0.005,yes
+7,ratio: Public electricity and heat,pakemis_btr_comparison.csv,1.13,1.13,0.005,yes
+7,ratio = PakEmis / BTR: Public electricity and heat,pakemis_btr_comparison.csv,1.131143851033354,1.13,0.006,yes
+7,ratio at uniform CH4 28: Public electricity and heat,pakemis_btr_comparison.csv,1.13,1.13,0.005,yes
+7,ratio: Urea application,pakemis_btr_comparison.csv,1.07,1.07,0.005,yes
+7,ratio = PakEmis / BTR: Urea application,pakemis_btr_comparison.csv,1.0683972911963882,1.07,0.006,yes
+7,ratio at uniform CH4 28: Urea application,pakemis_btr_comparison.csv,1.07,1.07,0.005,yes
+7,ratio: Cement production,pakemis_btr_comparison.csv,1.04,1.04,0.005,yes
+7,ratio = PakEmis / BTR: Cement production,pakemis_btr_comparison.csv,1.037694099378882,1.04,0.006,yes
+7,ratio at uniform CH4 28: Cement production,pakemis_btr_comparison.csv,1.04,1.04,0.005,yes
+7,ratio: Transport,pakemis_btr_comparison.csv,1.03,1.03,0.005,yes
+7,ratio = PakEmis / BTR: Transport,pakemis_btr_comparison.csv,1.0252303469907862,1.03,0.006,yes
+7,ratio at uniform CH4 28: Transport,pakemis_btr_comparison.csv,1.02,1.02,0.005,yes
+7,ratio: Ammonia production,pakemis_btr_comparison.csv,1.03,1.03,0.005,yes
+7,ratio = PakEmis / BTR: Ammonia production,pakemis_btr_comparison.csv,1.0288079470198677,1.03,0.006,yes
+7,ratio at uniform CH4 28: Ammonia production,pakemis_btr_comparison.csv,1.03,1.03,0.005,yes
+7,ratio: total of the 16 like-for-like categories,"pakemis_btr_comparison.csv tiers exact, aggregate",1.0314999662017528,1.03,0.005,yes
+7,ratio at uniform CH4 28: total of the like-for-like categories,pakemis_btr_comparison.csv,1.0277708929496856,1.03,0.005,yes
+7,ratio: TOTAL on categories both accounts estimate,pakemis_btr_comparison.csv,1.0039,1.0,0.005,yes
+7,ratio = PakEmis / BTR: TOTAL on categories both accounts estimate,pakemis_btr_comparison.csv,1.0039075341753187,1.0039,0.006,yes
+7,ratio at uniform CH4 28: TOTAL on categories both accounts estimate,pakemis_btr_comparison.csv,1.0005,1.0,0.005,yes
+7,ratio: Manure management (CH4 and direct N2O),pakemis_btr_comparison.csv,0.99,0.99,0.005,yes
+7,ratio = PakEmis / BTR: Manure management (CH4 and direct N2O),pakemis_btr_comparison.csv,0.9872905834777586,0.99,0.006,yes
+7,ratio at uniform CH4 28: Manure management (CH4 and direct N2O),pakemis_btr_comparison.csv,0.99,0.99,0.005,yes
+7,ratio: TOTAL (excluding LULUCF),pakemis_btr_comparison.csv,0.993,0.99,0.005,yes
+7,ratio = PakEmis / BTR: TOTAL (excluding LULUCF),pakemis_btr_comparison.csv,0.993416212884003,0.993,0.006,yes
+7,ratio at uniform CH4 28: TOTAL (excluding LULUCF),pakemis_btr_comparison.csv,0.99,0.99,0.005,yes
+7,ratio: Manufacturing and construction,pakemis_btr_comparison.csv,0.86,0.86,0.005,yes
+7,ratio = PakEmis / BTR: Manufacturing and construction,pakemis_btr_comparison.csv,0.8579260695002077,0.86,0.006,yes
+7,ratio at uniform CH4 28: Manufacturing and construction,pakemis_btr_comparison.csv,0.86,0.86,0.005,yes
+7,ratio: Solid waste disposal,pakemis_btr_comparison.csv,0.49,0.49,0.005,yes
+7,ratio = PakEmis / BTR: Solid waste disposal,pakemis_btr_comparison.csv,0.4867579908675799,0.49,0.006,yes
+7,ratio at uniform CH4 28: Solid waste disposal,pakemis_btr_comparison.csv,0.49,0.49,0.005,yes
+7,ratio: Managed soils,pakemis_btr_comparison.csv,0.44,0.44,0.005,yes
+7,ratio = PakEmis / BTR: Managed soils,pakemis_btr_comparison.csv,0.44399655469422916,0.44,0.006,yes
+7,ratio at uniform CH4 28: Managed soils,pakemis_btr_comparison.csv,0.44,0.44,0.005,yes
+7,ratio: Lubricant use,pakemis_btr_comparison.csv,0.43,0.43,0.005,yes
+7,ratio = PakEmis / BTR: Lubricant use,pakemis_btr_comparison.csv,0.4318181818181818,0.43,0.006,yes
+7,ratio at uniform CH4 28: Lubricant use,pakemis_btr_comparison.csv,0.43,0.43,0.005,yes
+7,ratio: Indirect N2O from manure management,pakemis_btr_comparison.csv,0.37,0.37,0.005,yes
+7,ratio = PakEmis / BTR: Indirect N2O from manure management,pakemis_btr_comparison.csv,0.3659722222222222,0.37,0.006,yes
+7,ratio at uniform CH4 28: Indirect N2O from manure management,pakemis_btr_comparison.csv,0.37,0.37,0.005,yes
+7,"every like-for-like subject is plotted, and nothing else","pakemis_btr_comparison.csv tiers exact, aggregate, total",18.0,18.0,0,yes
+8,reference,"pakemis_faostat_nitrogen_flows.csv 'managed soils, as reported' pakemis",28.53,28.53,0.005,yes
+8,2006 direct soil factor,"pakemis_faostat_nitrogen_flows.csv ""managed soils, at FAOSTAT's EF1 vintage"" pakemis",40.43,40.43,0.005,yes
+8,2006 pasture factors,eval/sensitivity.csv scenario 'Pasture EF3PRP = 2006 aggregate' soils,42.81,42.81,0.005,yes
+8,the two substitutions are additive on disjoint pathways,eval/sensitivity.csv,26.189999999999998,26.18,0.02,yes
+8,2006 direct soil and pasture factors,eval/sensitivity.csv scenario 'Both 2006 direct factors ...' soils,54.72,54.72,0.005,yes
+8,FAOSTAT,"pakemis_faostat_nitrogen_flows.csv 'managed soils, as reported' faostat",58.5,58.5,0.005,yes

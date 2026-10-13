@@ -1,0 +1,12 @@
+{
+ "expect": [],
+ "expect_error": "unknown_dimension_value",
+ "expect_receipt": "",
+ "function": "query_emissions",
+ "golden_id": "refuse_bare_year",
+ "request": {
+  "periods": [
+   "2024"
+  ]
+ }
+}

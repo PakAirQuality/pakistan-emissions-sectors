@@ -1,0 +1,212 @@
+% ===========================================================================
+\section{Methods}
+\label{sec:methods}
+% ===========================================================================
+
+\subsection{Nine streams, four provenance classes, no household model}
+
+For each stream $s$ and gas $g$,
+\begin{equation}
+E_{g,s} \;=\; A_s \cdot EF_{g,s},
+\end{equation}
+where $A_s$ is the national quantity of fuel entering households in terajoules and
+$EF_{g,s}$ the IPCC Table~2.5 residential default \citep{ipcc2006stationary}. The nine
+streams divide into four provenance classes, and everything else in this section
+documents how each class produces its $A_s$: metered-regulatory (natural gas, LPG,
+kerosene), survey-primary (firewood, dung cake, charcoal, coal), cross-sector ledger (crop
+residues, and dung cake under configuration L), and expenditure-derived (generators).
+
+With one exception there is no household-count model and no per-capita intensity anywhere
+in the magnitude
+chain: a household model would give structure the supply statistics do not, and would
+introduce a quantity that can drift from the fuel actually supplied. The exception is the
+reference dung quantity, which is the survey's per-household quantity, interpolated
+between the two rounds, times the year's households
+(Section~\ref{sec:dungmethod}). Regional and
+temporal structure enters only downstream of the national totals---the provincial,
+district, grid and monthly layers distribute each stream's fixed national quantity and
+reconcile exactly back to it. The transport sector in this inventory makes the same
+choice for the same reason \citep{ahmad2026national}.
+
+\subsection{Household-survey processing}
+\label{sec:hiesmethod}
+
+Both HIES rounds are processed from the PBS SPSS microdata \citep{hies2019,hies2025}:
+the Section~6A consumption module, item codes 045202 (LPG, kg), 045301 (kerosene,
+litres), 045401 (firewood, kg), 045402/045403 (charcoal and coal, kg), 045404 (dung
+cake, kg), and the value-only items 045102 (generator expenses), 045201 (piped gas),
+045405/045406 (agricultural wastes and cotton sticks). Each item carries quantity and
+rupee value over four acquisition routes---purchased, wages-in-kind, own-produced, and
+gifts or assistance---against a one-month recall; quantities are summed over routes and
+annualised $\times 12$ (the 2024--25 round's interviews cover all four quarters, so the
+annualisation averages over season). Design weights are the household weight on the
+2024--25 person roster and the published PSU weights for 2018--19; weighted household
+totals (33.2 and 39.9~million) land on the frame. Own-produced and gifted consumption
+carries PBS's imputed rupee value, so item values are consumption values, not purchase
+spending. National totals, province~$\times$~urban/rural strata, unit values, and the
+diagnostics of Table~\ref{tab:hiesdiag} (design SEs stratum-clustered on the published
+PSU or, for 2024--25, an enumeration-block proxy; top-percentile concentration;
+per-user-day rates) are all committed as derived tables; the microdata itself is
+fetched and hash-pinned, never redistributed.
+
+The outlier policy is diagnosis before exclusion, and kerosene is the worked example:
+its 2024--25 item rides 96 reporting households whose implied unit value is a fifth of
+the retail price, so the survey figure is published as unusable on the comparison table
+and the stream keeps its OCAC sectoral control. No survey observation is trimmed or
+winsorised anywhere; concentration is reported (Table~\ref{tab:hiesdiag}) rather than
+removed.
+
+\subsection{Mass bases}
+
+Section~\ref{sec:massbases} (Table~\ref{tab:massbases}) states, for every solid fuel,
+the reported mass and its basis, the moisture and ash fractions, the energy pairing and
+the pollutant-factor mass. The rule: as-received NCVs pair with air-dry mass, per-kg-dry
+pollutant factors pair with the dry mass, and no conversion is applied twice.
+
+\subsection{The biomass memo convention, and what it does to the arithmetic}
+
+Biogenic \COtwo{} from dung and firewood is reported outside the national total:
+\SI{12683}{\giga\gram} from dung cake, \SI{40418}{\giga\gram} from firewood and
+\SI{12247}{\giga\gram} from crop residues and charcoal,
+\SI{65347}{\giga\gram} together (\SI{120805}{} under configuration~L). Their \CHfour{} and \NtwoO{}
+are counted in full.
+
+The consequence is worth following through, because it produces a result that looks
+wrong without the convention. Biomass is \SI{65.4}{\percent} of household energy and
+contributes \SI{5.77}{\mega\tonne} of the sector's
+\SI{24.22}{\mega\tonne}---\SI{24}{\percent}---entirely as methane and nitrous oxide.
+Natural gas is \SI{30.5}{\percent} of the energy and \SI{66}{\percent} of the
+emissions, because its \COtwo{} is reportable.
+
+An inventory that reported biomass \COtwo{} inside the total would show this sector at
+roughly \SI{90}{\mega\tonne} and would be wrong by IPCC's conventions and by
+Pakistan's own stated practice \citep{pakbur1}. An inventory that excluded biomass
+\CHfour{} and \NtwoO{} along with its \COtwo{}---a more common error---would show
+\SI{18.45}{\mega\tonne} and would miss the incomplete-combustion products that are the
+sector's real climate contribution.
+
+\subsection{The dung-cake transfer, and the two configurations}
+\label{sec:dungmethod}
+
+The agriculture sector removes \SI{28}{\percent} of cattle and \SI{30}{\percent} of
+buffalo excreted nitrogen from its manure-management balance, because that dung is
+burned as fuel, and books it IE against Energy. The diverted quantity is that nitrogen
+as mass:
+\begin{equation}
+M_{\mathrm{VS}} \;=\; \sum_{a} N_a \cdot f_a \cdot \frac{\mathrm{VS}_a}{\mathrm{Nex}_a},
+\end{equation}
+over animal categories $a$, converted to total solids and air-dry cake through the
+declared ash and moisture fractions. Configuration~L burns all of it in households. The
+reference (configuration~S) instead takes the HIES-reported cake quantity directly---the
+per-household quantity interpolated between the two rounds and held at the first round's
+rate before it, times each year's households---and removes the same moisture fraction
+for its dry mass. The nitrogen equality against
+agriculture is asserted with \texttt{==} in either case---it concerns what was
+\emph{diverted}, which neither configuration disputes---and the destination identity is
+$D_{\text{diverted}} = D_{\text{residential}} + D_{\text{other/unresolved}}$
+(Section~\ref{sec:results}; \ref{app:dung}).
+
+\subsection{The crop-residue transfer}
+
+Every crop's above-ground residue mass closes over four destinations in the agriculture
+sector's residue ledger,
+\begin{equation}
+R_{\text{produced}} \;=\; R_{\text{returned}} + R_{\text{field-burned}} +
+R_{\text{fuel}} + R_{\text{other}},
+\end{equation}
+with the fractions summing to one exactly and $R_{\text{other}} \geq 0$ asserted per
+crop, so the soils return, the field-burning category and this sector cannot claim the
+same tonne twice. The residential stream is $R_{\text{fuel}}$ (\SI{9.27}{\mega\tonne}
+dry; half cotton sticks)---an upper-bound residential allocation of the ledger's
+fuel destination. Two caveats are declared: the fuel fraction covers all fuel use, not
+household fuel specifically ($R_{\text{fuel}} = R_{\text{household}} +
+R_{\text{commercial/industrial}} + R_{\text{unresolved}}$; conservative for this
+sector), and its values are Tier~2 judgement---so the survey's price bracket, from the residue expenditure items
+priced at the survey's own firewood and dung unit values, is published as the
+demand-side check (\SIrange{7.8}{24.7}{\mega\tonne} air-dry; the ledger's \SI{10.53}{}
+falls inside, asserted by test). The bracket's two ends are priced as named scenarios:
+\SI{23.92}{\mega\tonne} for the sector at the low end and \SI{25.78}{} at the high end.
+
+\subsection{The generator stream and its road carve-out}
+
+Generator fuel is the one expenditure-derived stream: the HIES generator-expenses item
+(\SI{20.6e9}{} rupees, \SI{0.38}{\percent} of households) over the administered petrol
+price \citep{goppetrol}, at standard density, gives \SI{56.3}{\kilo\tonne} of petrol
+(\SI{2495}{\tera\joule}), on stationary Table~2.5 factors. Because that petrol is
+bought at the same stations the road-transport control counts, it is deducted from the
+road petrol control through the same executable closure the railway diesel carve-out
+uses (the deduction reads this sector's accessor directly), and a test asserts the
+equality---the same litre cannot burn in two
+sectors. Declared limits: the expenditure item may sweep in oil and minor maintenance,
+the split is assumed all-petrol, and no air-pollutant rows are published (no
+household-genset factor class exists).
+
+\subsection{Air-pollutant factors}
+
+Every factor the air layer can burn is a row in the factor file and is rendered,
+generated rather than transcribed, in \ref{app:factors}: Andreae field measurements for
+the biomass streams \citep{andreae2019}, the EMEP/EEA small-combustion chapter for the
+fossil streams \citep{emep2023smallcombustion}, agriculture-mirror rows for residues,
+and black carbon as declared fractions of PM$_{2.5}$. The basis rules (mass versus
+energy, filterable-condensable caveats, deliberate omissions) are stated there once,
+and the source-by-pollutant coverage - every E derived from the layer itself, every
+NE with its declared reason - is the air completeness matrix of \ref{app:airmatrix}.
+All pollutant masses are gross emission at the appliance (Section~\ref{sec:air}).
+
+\subsection{Uncertainty}
+
+Parametric uncertainty is IPCC Approach~1 with the activity term of each stream treated
+as perfectly shared across its gas rows (grouped; the independent treatment is
+published alongside), and a Monte Carlo counterpart of \num{10000} mean-preserving
+lognormal draws per case ($\sigma = \ln(1 + u/100)/1.96$ from each row's 95~percent
+half-width; the dung chain shares one correlation group; seed 1404, disjoint from the
+national inventory's published stream). The dung activity term carries
+\SI{35}{\percent} under the reference, the survey width firewood carries; the ledger
+chain's \SI{50}{\percent} applies to configuration~L only. Structural choices are never
+sampled: the two
+dung configurations, the construction of the survey dung series (the 2018--19
+per-household rate held to the reference year, \SI{23.85}{\mega\tonne} for the sector;
+the 2024--25 round taken as measured, \SI{24.33}{}), the two firewood anchors, the ends
+of the residue price bracket and the
+superseded bases are named cases
+with conditional intervals and no probability attached. The residential-to-road
+particulate ratio is sampled with numerator and denominator rows drawn independently,
+per configuration, and the structural span across configurations is published beside
+the parametric intervals. The per-input variance decomposition
+(\texttt{residential\_variance\_decomposition\_2024.csv}) attributes the grouped band:
+firewood factor terms alone carry \SI{67}{\percent} of the sector variance.
+
+\subsection{Spatial hierarchy}
+
+National totals distribute down four levels, reconciling exactly at each:
+province~$\times$~urban/rural strata from the HIES quantities; provinces on per-stream
+geographies (metered gas connections for piped gas; HIES strata quantities for
+firewood, dung, LPG and residues; population for the four thin-sample streams, with
+the herd geography retained as dung's structural alternative); districts by the
+survey's urban/rural rates on census district populations; and a \SI{0.05}{\degree}
+grid on per-stream surfaces (built-up fraction for gas and generators, livestock
+density for dung, cropland for residues, population for the rest---declared judgement
+of the same class as the railway corridor weights). HIES is representative at
+province~$\times$~region, so the within-region district split is population-shaped
+until the Census~2023 cooking-fuel tables are processed; the gap register carries them.
+
+\subsection{Time series and monthly profiles}
+
+The FY2015--16 to FY2023--24 series moves gas on a transcribed nine-edition OGRA
+archive \citep{ograarchive} (one interpolated year, labelled), dung and firewood on
+per-household quantities interpolated
+between the two survey rounds on census-shaped household counts (configuration~L moves
+dung on the herd through the fixed nitrogen arithmetic), and residues on crop
+production through the fixed ledger; the five minor streams are held at reference
+values with basis flags. The reference year is the engine's own output, byte-identical
+by construction. Below the year, monthly profiles are synthetic and labelled so:
+\begin{equation}
+E_{m,f} \;=\; (1 - h_f)\,\frac{E_f}{12} \;+\; h_f\,E_f\,
+\frac{\mathrm{HDD}_m}{\sum_{m'} \mathrm{HDD}_{m'}},
+\end{equation}
+with declared heating fractions $h_f$ per fuel, degree-days from NASA POWER monthly
+temperature \citep{nasapower} weighted by each province's share of the sector, and the
+generator stream on the cooling-degree shape instead (load-shedding season). Cooking
+and other base load is the flat term---the degree-day shape is never applied to it.
+Twelve months close to every annual total exactly, asserted on every run; the
+base-versus-climate decomposition is a column in the monthly output.

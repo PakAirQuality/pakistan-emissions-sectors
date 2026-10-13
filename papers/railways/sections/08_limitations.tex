@@ -1,0 +1,133 @@
+\section{Limitations}
+\label{sec:limitations}
+
+\textbf{The spatial model's geometry is measured; its corridor weights are not.} The
+network, the yards and the route-kilometre audit are data. The service intensity assigned
+to each corridor is declared judgment, because Pakistan Railways publishes no
+service-frequency statistics and its public timetable interface refuses unauthenticated
+access; the basis of every weight is stated on its data row, the freight-wagons proxy is
+retained as the structural alternative, and the split's real uncertainty is the distance
+between the two published alternatives. A timetable extraction, or divisional train-km if
+any edition ever carries them, would replace the judgment with measurement. The national
+total is unaffected throughout.
+
+\textbf{Workshop and stationary fuel is inside the module's metered total, measured, and
+booked at its own category.} Fuel burnt by railway workshops, power houses, pumps and track
+machines is part of the same consumption total this sector reads---the source says so
+itself: ``these quantities comprise the entire fuel consumed on the Railways, i.e.\ on
+locomotives, power houses, water pumps, workshops etc.''---and IPCC §3.4.1.4 flags the
+overlap explicitly. That fuel belongs outside 1A3c, but not in any single category. This
+paper previously assigned the whole quantity to 1A4c~ii, which was a classification by
+purchaser rather than by source: under the IPCC definitions, track-maintenance machinery is
+off-road transport, workshop generators and power houses are stationary combustion, and
+pumps follow their end use. What remains unresolved is only that FINAL split: the measured
+non-traction quantity books at its own category (1A2/1A4c unresolved) rather than inside
+1A3c, and no published record yet decomposes it across those end uses.
+
+This paper previously also called that fuel inseparable. It is not. The same edition carries a
+detailed fuel table on p.163 splitting locomotive from other-than-locomotive consumption, for
+diesel and furnace oil, back to 1950---annually from 2015--16, in five-year averages before
+that---one page from the summary this sector was built on. Non-traction diesel is
+\SI{1599}{} thousand litres, \SI{1.21}{\percent} of the total (since the 2024--25
+restatement below, the two tables' denominators agree). The
+overlap is small, which is what the sector had assumed; the difference is that it is now
+measured---and published as a ledger:
+\texttt{outputs/railways\_fuel\_claimants\_2024.csv} carries each claimant with its
+volume, share and emissions at the sector's own factors, closing to the headline exactly.
+The recode IS the reference: the engine books
+\SI{0.00498}{\mega\tonne} at its own non-traction category and 1.A.3.c at locomotive
+traction, with the older summary booking preserved as the configuration
+\emph{rail\_ie\_summary} in
+\texttt{outputs/national\_configurations.csv}. Either booking conserves the national
+total at \num{444.95542} exactly---the same fuel at the same
+factors under a different code, never a deletion. (An earlier edition priced this axis
+as a subtraction; the conserving recode replaced it, and the reference itself now
+carries the split.)
+
+\textbf{The Year Book disagreed with itself about the reference year, and its next edition
+settled it.} Checking the summary against the detail across every year both tables cover
+produced exactly one failure: the 2023--24 edition printed the FY2023--24 locomotive cell as
+``136.988''---a decimal point where every other row in its column uses a comma---making the
+detail sum \num{138587} against the summary's twice-stated \num{132588}, a
+\SI{4.52}{\percent} gap. This paper reported the summary, on the strength of two statements
+against one typographically anomalous row, and published the detail reading as a labelled
+sensitivity of \SI{0.412}{\mega\tonne} against \SI{0.394}{}.
+
+The 2024--25 edition resolved it. Its historical run restates the cell as
+\num{130988}---printed with the same decimal-point quirk on the same row---and
+$\num{130988}+\num{1599}=\num{132587}$, within one part in \num{132588} of the summary. The
+misprint hypothesis was right, the reported number never moved, and the sensitivity is
+retired. The reconciliation now closes in every year:
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{FY} & \textbf{Summary} & \textbf{Loco} & \textbf{Other} & \textbf{Detail} \\
+\midrule
+2015--16 & 139\,487 & 137\,908 & 1\,579 & 139\,487 \\
+2016--17 & 144\,631 & 142\,607 & 2\,024 & 144\,631 \\
+2017--18 & 156\,396 & 154\,357 & 2\,039 & 156\,396 \\
+2018--19 & 159\,927 & 157\,979 & 1\,948 & 159\,927 \\
+2019--20 & 139\,600 & 137\,969 & 1\,630 & 139\,599 \\
+2020--21 & 140\,257 & 138\,841 & 1\,416 & 140\,257 \\
+2021--22 & 142\,086 & 140\,482 & 1\,601 & 142\,083 \\
+2022--23 & 104\,909 & 103\,272 & 1\,637 & 104\,909 \\
+2023--24 & 132\,588 & 130\,988 & 1\,599 & 132\,587 \\
+2024--25 & 138\,673 & 137\,096 & 1\,577 & 138\,673 \\
+\bottomrule
+\end{tabular}
+\caption{Thousand litres of diesel, across every year the two tables both cover. Eight
+reconcile to the digit and two to within three parts in \num{140000}; the FY2023--24 row
+carries the 2024--25 edition's restatement of the cell its predecessor misprinted as
+``136.988.''}
+\label{tab:yearbook}
+\end{table}
+
+The check that found this ran late, and the honest reflection stands: this paper's argument
+is that a national submission can be refuted on a fuel account, and an inventory making that
+argument has to hold its own fuel account to the same standard. It now does, on every
+build---and the one anomaly the check ever surfaced was a misprint in a national statistical
+publication, identified here from the document's own internal evidence before the publisher
+restated it.
+
+\textbf{The furnace-oil basis is settled, and it was not what the summary said.} Editions
+changed the published unit label without announcement, and this paper recorded the ambiguity as
+unresolved. The 2023--24 edition resolves it against itself: the p.163 column is headed
+``Furnace Oil (M.~Tonnes)'', the narrative on the same page states \SI{79.907}{} M.T, and that
+is exactly the detail table's \num{15.083} locomotive plus \num{64.824} other. The Principal
+Statistics table calls the same quantity ``Liters/thousand''---and its unit column is
+demonstrably unreliable, labelling Persons Employed ``Tonne'' and Cost of Employees ``No.'' The
+basis is tonnes. The stream is under \SI{0.001}{\mega\tonne} either way, as this paper already
+argued, so nothing material moves; the data now say the right thing.
+
+\textbf{\NtwoO{} is a tenth of the sector and carries $\pm\SI{150}{\percent}$.} The rail
+default's 95\% interval spans \SIrange{14.3}{85.8}{\kilo\gram\per\tera\joule}, which is the
+whole of the sector's uncertainty in practice. Nothing short of measurement on Pakistani
+locomotives would narrow it, and the sector is too small for that to be worth doing.
+
+\textbf{The air-pollutant layer rests on European fleet-average factors and a declared
+sulfur assumption.} The EMEP/EEA Tier~1 locomotive factors describe an average European
+fleet, not Pakistan's; the chapter's own confidence intervals are carried on every factor
+row, and its printed intervals for the particulate rows do not bracket their central
+values---a defect of the source recorded on the rows rather than silently repaired. \SOtwo{}
+depends entirely on fuel sulfur, for which no operator certificate is published: it is
+reported as explicit sulfur cases spanning \SIrange{10}{10000}{ppm} rather than as one
+number, with the pre-Euro-V \SI{500}{ppm} specification as the declared reference.
+
+\textbf{Wear PM is exploratory and European-anchored.} The wheel, rail and brake-wear
+layer (\citet{tno2024rail}'s fuel-based factors on the metered diesel: roughly
+\SI{15}{\tonne} of PM\textsubscript{10} a year, a tenth of exhaust PM\textsubscript{10},
+alongside it and never summed) rests on Dutch and Austrian measurements. Pakistani
+conditions---tread brakes throughout, heavy axle loads, track condition---plausibly sit
+higher, the source's own PM\textsubscript{2.5} bullet contradicts its stated size
+fractions (recorded on the factor rows, the fraction-consistent reading adopted), and
+$\pm$\SI{150}{\percent} is carried until a tread-brake-specific or Pakistani measurement
+exists.
+
+\textbf{One operator, one figure, no redundancy.} The estimate has no second source. The only
+independent check the publication offers on itself is that the FY2023 figure is republished
+identically in two consecutive editions, and the traffic-based intensity check of
+Section~\ref{sec:validation}. If the published fuel figure were wrong, nothing here would
+detect it.

@@ -1,0 +1,152 @@
+\section{Validation}
+\label{sec:validation}
+
+\subsection{A national submission, refuted twice}
+
+Pakistan's First Biennial Update Report reports railways at \SI{4.06}{\mega\tonne} \COe{} for
+FY2017--18. That fiscal year is inside this inventory's series, so the primary comparison is
+matched-year: the identical method, GWP basis and scope, applied to the \num{156396} thousand
+litres the operator reports for FY2017--18, gives \SI{0.466}{\mega\tonne}---a factor of
+\num{8.7} below the submission in its own inventory year. The reference-year result is
+reported separately: \SI{0.394}{\mega\tonne} module total for FY2023--24
+(\SI{0.389}{\mega\tonne} strict 1A3c). A year effect is ruled out by
+the fuel itself: FY2017--18 diesel is \SI{18.0}{\percent} above FY2023--24, not a factor of ten
+in either direction.
+
+\textbf{The carbon route.} \SI{4.06}{\mega\tonne} of \COtwo{} requires the combustion of
+roughly \SI{1280}{\kilo\tonne} of diesel. Pakistan Railways reports consuming
+\SI{132}{\kilo\tonne} in FY2017--18, and \SI{112}{\kilo\tonne} in the reference year. The
+submitted figure needs nearly ten times the fuel the operator's own accounts record for the
+same year, and no accounting treatment of a fuel account produces carbon that was not in the
+fuel. A test bounds the sector total between \SI{0.2}{} and \SI{1.0}{\mega\tonne} for this
+reason, so a future revision that drifted toward the submitted value would fail rather than
+pass quietly.
+
+\textbf{The traffic route.} The second check is independent of the fuel account, because it
+uses a different table in the same publication. Pakistan Railways ran \num{33.1} million
+train-kilometres in FY2023--24. The metered consumption works out at
+\SI{4.0}{\litre} per train-kilometre, which is where a diesel locomotive hauling mixed
+passenger and freight traffic belongs. The fuel implied by the submitted figure, spread over
+the same traffic, would be \SI{46}{\litre} per train-kilometre---an order of magnitude above
+what any locomotive consumes. A test pins the intensity between \num{2} and \num{10} litres
+per train-kilometre.
+
+Two routes, two published tables, one conclusion. The metered consumption, the traffic
+statistics and the carbon content of diesel all support the lower figure, so it is the one
+reported here.
+
+\subsection{Why this is recorded rather than reconciled}
+
+The alternative to publishing this disagreement is to adopt the submitted value, or to split
+the difference, or to say nothing. All three would be worse.
+
+Adopting it would require inventing ten times the fuel Pakistan Railways reports consuming in
+the submission's own year.
+Splitting the difference would produce a number supported by no source at all. Saying nothing
+would leave a reader who compares this inventory with Pakistan's UNFCCC submission to discover
+a factor of ten unexplained, and to have no way of telling which figure to trust.
+
+What is defensible is to state the disagreement, show the arithmetic on both routes, put the
+checks in the test suite so they run on every build, and let the reader see the evidence. This
+is the same standard applied in this inventory's fugitives sector to a disagreement with EDGAR
+that could \emph{not} be resolved---and the contrast is the point. There, two models chose
+differently within one published range and the comparison settled nothing. Here, one figure is
+outside what the fuel can produce.
+
+\subsection{Every official statement of this category, matched by year}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llrrr@{}}
+\toprule
+\textbf{Source} & \textbf{Year} & \textbf{Official} & \textbf{This work} & \textbf{Ratio} \\
+\midrule
+INC (derived)  & FY1993--94 & 0.557 & 0.633 & 0.88 \\
+BUR-1          & FY2017--18 & 4.060 & 0.466 & 8.7  \\
+TNC            & CY2021 & \multicolumn{3}{l}{\emph{railways not separately reported}} \\
+BTR-1 (narrative) & CY2021 & \multicolumn{3}{l}{\emph{railways not separately reported}} \\
+CRT (= BTR-1 annex) & CY2022 & 4.259 & 0.368 & 11.6 \\
+\bottomrule
+\end{tabular}
+\caption{Every official statement of this category, Mt \COe{}, each compared in its own
+inventory year by the identical method. The INC row is derived from its stated share
+(3\% of \num{18584.4} Gg) and compared against the quinquennial history layer's
+1990--95 indicative value---a magnitude check, not a point match. The TNC and the BTR-1
+narrative report 1.A.3 as one aggregate line; the BTR-1's railway statement exists only
+in its CTF annex, which is the CRT row. The CRT total is stated on the filing's own GWP
+basis, its calendar year straddling two fiscal years (own value: their mean).}
+\label{tab:official}
+\end{table}
+
+The table's arc is the paper's history of the category in five rows. The INC-era
+inventory was \emph{sane}: its derived railway figure sits within \SI{11.9}{\percent} of this
+inventory's independent reconstruction from the Year Book's own fuel history,
+furnace-oil traction included. The order-of-magnitude error entered the record with
+BUR-1, persists in the current CRT, and the two documents in between decline to state a
+railway figure at all---which is the procedural gap made visible: a submission that
+published subsector activity alongside its estimate would be auditable, and the one time
+it was (the CRT), the audit takes one worksheet.
+
+The CRT comparison adds what the BUR comparison could not: mechanism. The filing's
+implied-factor cells show the road table on rail (Section~\ref{sec:factors}), and its
+activity---\num{56609} TJ, about \num{1316} kt of diesel---implies eleven to thirteen
+times the fuel the operator metered in the overlapping years. The order-of-magnitude
+error and the factor-table error are distinct, visible separately in the filing's own
+arithmetic, and both are pinned by tests against the extracted cells.
+
+\subsection{An independent global inventory, and what it misses}
+
+ELK, the one open global inventory with separate passenger- and freight-rail layers,
+carries a non-zero Pakistan rail signal: \SI{172}{\kilo\tonne} of \COtwo{} for 2019,
+country-masked, against this inventory's \SI{404}{\kilo\tonne} for the same calendar
+year---\num{0.43} times, a factor-of-two disagreement rather than the officials' factor of
+ten, and evidence that the global model did not ingest the BUR. Its composition, however,
+is inverted: \SI{165}{\kilo\tonne} on freight across a thousand grid cells against
+\SI{7}{\kilo\tonne} of passenger rail on five cells, for an operator whose traffic is
+four-to-one \emph{passenger} by train-kilometre. A fleet model without national activity
+data reconstructs the wrong railway; the operator's two published numbers---fuel and
+train-km---are what it lacks. The comparison is a benchmark, never a calibration target,
+and the extraction states its hypotheses before computing.
+
+\subsection{The auditor's litre-level corroboration}
+
+The one-operator limitation is real: the Year Book supplies both the fuel account and the
+traffic that checks it. The Auditor-General's railway audits are the independent
+institution, and their findings corroborate the meters precisely by documenting control
+failures: \num{710143} litres consumed against a \num{316664}-litre quota across six
+formations in FY2023--24; \num{393554} litres above per-class trip rations in an earlier
+year; \num{23250} litres pilfered from stabled locomotives and detected against the tank
+record. Quota breaches resolved at the litre level per formation are only possible where
+fuel issue is metered. The audited excesses are fractions of a percent of the national
+figure: fuel \emph{control} is weak, fuel \emph{measurement} is not, and it is the
+measurement this inventory rests on.
+
+\subsection{Intensity, over time and against the world}
+
+The EMEP chapter's verification guidance is fuel against distance and traffic. Pakistani
+rail runs at \numrange{4.0}{5.1} litres per train-kilometre across FY2022--FY2025, with
+FY2023--24 at \num{4.0}; freight moves at roughly \SI{8}{\gram} \COtwo{} per
+tonne-kilometre and passengers at under \SI{10}{\gram} per passenger-kilometre---the
+heavy-load end of world rail, consistent with long, full trains. The World Bank's
+UIC-sourced series, institutionally independent of the Year Book, corroborates the
+passenger-kilometre magnitude. Every quotient is diagnostic; none feeds the inventory.
+
+\subsection{Internal checks}
+
+Three further properties are asserted on every run. Diesel exceeds \SI{99}{\percent} of
+traction energy, so a corruption of the furnace-oil row cannot move the sector. The sector
+total is indifferent to the furnace-oil unit ambiguity, recomputed both ways and agreeing to
+better than \SI{0.001}{\mega\tonne}. And the provincial allocation reconciles exactly against
+the national figure.
+
+The road-transport comparison of Section~\ref{sec:closure} is enforced by test on every run:
+the two rail figures---the Year Book's metered \SI{112.04}{\kilo\tonne} and the OCAC Railways
+customer-class row at \SI{107.93}{\kilo\tonne}, two unrelated reporting chains
+\SI{3.8}{\percent} apart---must agree within \SI{5}{\percent} and must \emph{not} be equal,
+because equality would mean one had been copied from the other; the matched-year pair must
+beat the two-year bracket; the road diesel control must equal the OCAC Road row exactly, with
+no rail subtraction anywhere; petrol carries no rail contribution; and rail's share of
+national high-speed diesel stays between \num{0.2} and \SI{5}{\percent}---because if that
+ratio ever left the range, one of the two national figures for the same fuel would have
+broken.

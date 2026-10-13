@@ -1,0 +1,16 @@
+{
+ "expect": [
+  {
+   "cell": 0,
+   "display": "NE"
+  }
+ ],
+ "expect_receipt": "3ab57119942a0a3098c298917f15f83a",
+ "function": "get_completeness",
+ "golden_id": "completeness_ne_rows",
+ "request": {
+  "notation_keys": [
+   "NE"
+  ]
+ }
+}

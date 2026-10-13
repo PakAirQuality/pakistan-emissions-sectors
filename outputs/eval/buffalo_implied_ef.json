@@ -1,0 +1,41 @@
+{
+  "year": 2015,
+  "benchmark_livestock_kt": 495.7,
+  "benchmark_components": {
+    "GRM": 359.4,
+    "MNM": 136.3
+  },
+  "attributed_by_table_A8_kt": {
+    "Cattle, dairy": 77.01138135,
+    "Cattle, non-dairy": 60.185053350000004,
+    "Sheep": 42.3936,
+    "Goats": 75.9462,
+    "Chickens, broilers": 102.41
+  },
+  "attributed_total_kt": 357.9462347,
+  "residual_kt": 137.7537653,
+  "unattributed_head": {
+    "buffalo": 35580000.0,
+    "camels": 1035000.0
+  },
+  "implied_EF_kg_NH3_per_head": 3.7622221848969004,
+  "implied_EF_buffalo_only_upper_bound": 3.8716628808319284,
+  "table_A8_dairy_cattle_EF": 6.33,
+  "ours": {
+    "livestock_NH3_kt": 1237.9532775043933,
+    "ratio_to_benchmark": 2.497384057906785
+  },
+  "management_comparison": {
+    "ours": {
+      "kg_NH3_per_head_yr": 9.82880509714286,
+      "managed_share": 0.5,
+      "grazing_share": 0.2
+    },
+    "GLEAM 3.0 South Asia": {
+      "kg_NH3_per_head_yr": 11.688370827739432,
+      "managed_share": 0.61972,
+      "grazing_share": 0.0
+    }
+  },
+  "caveat": "Our derivation, not a published value. Table A8 omits buffalo, so the residual is inferred and also absorbs camels and any species the table does not tabulate."
+}

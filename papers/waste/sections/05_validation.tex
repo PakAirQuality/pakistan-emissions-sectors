@@ -1,0 +1,93 @@
+% ===========================================================================
+\section{Validation}
+\label{sec:validation}
+% ===========================================================================
+
+There is nothing to validate this sector against directly. No Pakistani facility reports
+landfill gas, no drain is monitored for dissolved methane, and no survey measures how much
+uncollected waste burns. What exists is other people's models, and comparing a model against a
+model establishes consistency rather than accuracy. This section says what that comparison
+does and does not show.
+
+\subsection{Against EDGAR}
+
+EDGAR reports Pakistani waste---disposal, burning and wastewater together---at
+\SI{26.57}{\mega\tonne} \COe{} for 2023, year-matched to this inventory's reference year
+\citep{edgar2025booklet}. This inventory reports \SI{37.45}{\mega\tonne}, or
+\SI{141}{\percent} of it. (EDGAR's 2024 value, \SI{27.21}{\mega\tonne}, is carried in the
+benchmark file for release-vintage context and is not the comparison basis.)
+
+That row has changed sides during this work, which is what makes it informative. Before
+domestic wastewater was built, this sector covered disposal and burning only and read
+\SI{49}{\percent} of EDGAR; the gap was then a measure of what the missing category would add.
+With 4D1 in, the sector overshoots. The same comparison has therefore diagnosed an omission
+and then a possible overestimate, which is more than a single ratio usually earns.
+
+The likeliest single cause is the sewer methane correction factor. At IPCC's stagnant-sewer
+\num{0.5} the wastewater category is \SI{24.46}{\mega\tonne} and the sector overshoots; at the
+river-discharge \num{0.1} it is \SI{15.39}{\mega\tonne}, the sector is
+\SI{28.38}{\mega\tonne}, and the comparison lands at \num{1.07} times EDGAR. No other single
+parameter in the sector can move it that far.
+
+It would be easy to treat that as confirmation and adopt \num{0.1}. We do not, and
+Section~\ref{sec:discussion} argues why: EDGAR is itself a model making its own assumption
+about the same unmeasured quantity, so agreement between the two would demonstrate that two
+models had made the same choice rather than that the choice is right.
+
+\subsection{Against Climate TRACE}
+
+Climate TRACE's Pakistani waste subsectors are built from a different evidence base again,
+including facility detection. Its solid-waste figures are broadly consistent with the disposal
+category reported here; its coverage of open burning and domestic wastewater is not
+constructed on a comparable scope, so a total-to-total comparison would mislead rather than
+inform and is not reported as one.
+
+\subsection{Against household survey evidence}
+
+The 2024--25 Household Integrated Economic Survey asks every sampled household how its
+waste is collected or disposed of \citep{hies2025}, and its design-weighted answers are the
+first Pakistani survey evidence bearing on the partition's load-bearing parameters. They
+disagree with the What a Waste collection coverage the partition is built on, in one
+direction: \SI{42.0}{\percent} of urban households report no collection of any kind against
+the \SI{30}{\percent} assumed, and \SI{93.4}{\percent} of rural households against
+\SI{70}{\percent}. The route detail supports the open-dumping reading of the uncollected
+stream---\SI{88.5}{\percent} of rural households report disposal to open space, and under
+\SI{1}{\percent} to waterways.
+
+Two caveats keep this a comparison rather than a correction. Household route shares are not
+waste-mass shares: the survey weights households, not tonnes, and converting one to the
+other needs stratum generation rates it does not carry. And counting public-bin use as
+collected overstates collection where bins are cleared infrequently, which the same module
+records. The configuration is therefore priced as a named structural scenario in the
+supplement rather than adopted; because the partition conserves generated waste, moving the
+uncollected fractions to the survey values moves emissions from slow landfill decay to
+immediate burning without changing the waste the country produces.
+
+\subsection{Internal checks that do have teeth}
+
+Three checks are enforced on every run and, unlike the external comparisons, can fail.
+
+\textbf{The mass balance closes.} Disposed plus uncollected equals generated, exactly.
+This cannot detect a wrong collection rate, but it can and does detect the class of error
+where a change to one category silently fails to appear in the other.
+
+\textbf{The burned quantity is exactly the burned fraction of the uncollected remainder.}
+Asserted with equality against an independently recomputed value, so a future refactor that
+accidentally applies the burned fraction to total generation rather than to the uncollected
+part fails immediately. That specific error would inflate open burning by a factor of two and
+is entirely plausible.
+
+\textbf{Provincial allocation reconciles exactly.} The four provinces and the territories sum
+to the national figure for each category, not merely for the sector.
+
+\subsection{What would constitute real validation}
+
+Three measurements, in order of what they would settle. Dissolved-methane and flux sampling on
+urban drains across a seasonal cycle would resolve the correction factor that dominates the
+sector. Landfill gas monitoring at two or three large sites would test the first-order-decay
+parameters directly. A waste-characterisation survey at the same sites would replace the
+regional composition figures with Pakistani ones and firm up the fossil carbon fraction that
+governs reportable \COtwo{} from burning.
+
+None is expensive relative to what the sector contributes to national uncertainty. That
+argument is made quantitatively in Section~\ref{sec:discussion}.

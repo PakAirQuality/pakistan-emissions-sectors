@@ -1,0 +1,40 @@
+category,subitem,gas,fossil,emissions_Gg,co2e_Mt_AR5,co2e_Mt_AR6,uncert_pct
+Road transport,2W Petrol CO2,CO2,False,13395.3644,13.39536,13.39536,27.0
+Road transport,2W Petrol CH4,CH4,True,6.3787,0.19136,0.19009,65.8
+Road transport,2W Petrol N2O,N2O,False,0.6185,0.16391,0.16886,75.0
+Road transport,3W Petrol CO2,CO2,False,1641.0697,1.64107,1.64107,27.0
+Road transport,3W Petrol CH4,CH4,True,0.7815,0.02344,0.02329,65.8
+Road transport,3W Petrol N2O,N2O,False,0.0758,0.02008,0.02069,75.0
+Road transport,4W1 Petrol CO2,CO2,False,3710.9073,3.71091,3.71091,27.0
+Road transport,4W1 Petrol CH4,CH4,True,1.7671,0.05301,0.05266,65.8
+Road transport,4W1 Petrol N2O,N2O,False,0.1714,0.04541,0.04678,75.0
+Road transport,4W2 Petrol CO2,CO2,False,14.0414,0.01404,0.01404,27.0
+Road transport,4W2 Petrol CH4,CH4,True,0.0067,0.0002,0.0002,65.8
+Road transport,4W2 Petrol N2O,N2O,False,0.0006,0.00017,0.00018,75.0
+Road transport,4WT Petrol CO2,CO2,False,297.5361,0.29754,0.29754,27.0
+Road transport,4WT Petrol CH4,CH4,True,0.1417,0.00425,0.00422,65.8
+Road transport,4WT Petrol N2O,N2O,False,0.0137,0.00364,0.00375,75.0
+Road transport,LDV Petrol CO2,CO2,False,2732.3398,2.73234,2.73234,27.0
+Road transport,LDV Petrol CH4,CH4,True,1.3011,0.03903,0.03877,65.8
+Road transport,LDV Petrol N2O,N2O,False,0.1262,0.03343,0.03444,75.0
+Road transport,BUS Petrol CO2,CO2,False,168.6309,0.16863,0.16863,27.0
+Road transport,BUS Petrol CH4,CH4,True,0.0803,0.00241,0.00239,65.8
+Road transport,BUS Petrol N2O,N2O,False,0.0078,0.00206,0.00213,75.0
+Road transport,4W2 Diesel CO2,CO2,False,42.0548,0.04205,0.04205,27.0
+Road transport,4W2 Diesel CH4,CH4,True,0.0022,7e-05,7e-05,65.8
+Road transport,4W2 Diesel N2O,N2O,False,0.0022,0.00059,0.0006,75.0
+Road transport,LDV Diesel CO2,CO2,False,2058.7027,2.0587,2.0587,27.0
+Road transport,LDV Diesel CH4,CH4,True,0.1084,0.00325,0.00323,65.8
+Road transport,LDV Diesel N2O,N2O,False,0.1084,0.02871,0.02958,75.0
+Road transport,BUS Diesel CO2,CO2,False,6441.0479,6.44105,6.44105,27.0
+Road transport,BUS Diesel CH4,CH4,True,0.339,0.01017,0.0101,65.8
+Road transport,BUS Diesel N2O,N2O,False,0.339,0.08984,0.09255,75.0
+Road transport,HDV Diesel CO2,CO2,False,7577.5498,7.57755,7.57755,27.0
+Road transport,HDV Diesel CH4,CH4,True,0.3988,0.01196,0.01188,65.8
+Road transport,HDV Diesel N2O,N2O,False,0.3988,0.10569,0.10888,75.0
+Mixed off-road (1A4c/1A2),Off-road machinery diesel CO2,CO2,False,1569.2044,1.5692,1.5692,27.0
+Mixed off-road (1A4c/1A2),Off-road machinery diesel CH4,CH4,True,0.0879,0.00264,0.00262,132.8
+Mixed off-road (1A4c/1A2),Off-road machinery diesel N2O,N2O,False,0.6057,0.1605,0.16534,152.4
+Road transport,CNG CO2,CO2,False,1205.4949,1.20549,1.20549,13.7
+Road transport,CNG CH4,CH4,True,1.9769,0.05931,0.05891,81.1
+Road transport,CNG N2O,N2O,False,0.0645,0.01708,0.0176,71.2

@@ -1,0 +1,211 @@
+% ===========================================================================
+\section{Emission Factors and Calculated Emissions}
+\label{sec:ef}
+% ===========================================================================
+
+The spatial allocation described in Section~\ref{sec:methods} determines where emissions are
+placed but does not change their national magnitude. National totals are determined only by
+the activity data and the emission factors.
+
+Table~\ref{tab:ef-full} reports the principal emission factors, their uncertainty, and their
+IPCC or literature source. Table~\ref{tab:tier2} reports the country-specific and
+inventory-specific parameters that replace or refine selected Tier~1 defaults. Full source
+details and derivations are provided in Supplementary Note~S2.
+
+Each factor is stored in a version-controlled data file together with its units, source and
+uncertainty. This structure allows every calculated value to be traced to a documented
+input.
+
+\subsection{Emission factors}
+
+Enteric-fermentation and manure-management factors are drawn mainly from the 2006 IPCC
+defaults for the Indian Subcontinent. Managed-soils factors use the climate-specific values
+in the 2019 Refinement.
+
+The direct soil \NtwoO{} factor is the most consequential individual methodological choice.
+The main inventory uses the dry-climate value $\EFone{}=0.005$. The older 2006 aggregate
+value of $0.010$ and the 2019 wet-climate value of $0.016$ are retained as sensitivity
+cases.
+
+The dry-climate value is also close to the crop-weighted empirical estimate of approximately
+$0.0055$ reported by \citet{cui2021} for Pakistan. That empirical value is used as a
+sensitivity anchor, not as the operative emission factor.
+
+Rice methane uses the IPCC baseline factor together with water-regime scaling. The main case
+assumes continuously flooded conditions, $SF_w=1$. Intermittent irrigation and rainfed
+conditions are evaluated as alternatives.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llrl@{}}
+\toprule
+\textbf{Factor (unit)} & \textbf{Value} & \textbf{$\pm$\%} & \textbf{Source} \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{Enteric \CHfour{} (kg/head/yr; 2006 T10.10--10.11)}} \\
+\quad Buffalo            & 55  & 40 & 2006 T10.10 \\
+\quad Dairy cattle       & 58  & 50 & 2006 T10.11 \\
+\quad Other cattle       & 27  & 50 & 2006 T10.11 \\
+\quad Camels             & 46  & 50 & 2006 T10.10 \\
+\quad Sheep, goats       & 5   & 50 & 2006 T10.10 \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Manure management (2006 T10.14--10.21)}} \\
+\quad \CHfour{} buffalo, warm (kg/hd/yr) & 5 & 30 & 2006 T10.14 \\
+\quad \CHfour{} dairy cattle, warm & 6 & 30 & 2006 T10.14 \\
+\quad \NtwoO{} $EF_3$ solid/liquid (kg N/kg N) & 0.005 & 100 & 2006 T10.21 \\
+\quad \NtwoO{} $EF_3$ drylot & 0.02 & 100 & 2006 T10.21 \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Rice \CHfour{} (2006 T5.11--5.13)}} \\
+\quad Baseline $EF_c$ (kg/ha/day) & 1.30 & 53 & 2006 T5.11 \\
+\quad $SF_w$ continuous (default) & 1.00 & 26 & 2006 T5.12 \\
+\quad $SF_w$ intermittent (AWD) & 0.52 & 30 & 2006 T5.12 \\
+\quad $SF_w$ rainfed     & 0.28 & 40 & 2006 T5.12 \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Managed soils (kg N\textsubscript{2}O-N/kg N; 2019 Refinement)}} \\
+\quad \EFone{} dry (default) & 0.005 & 110 & 2019 T11.1 \\
+\quad \EFone{} flooded rice  & 0.004 & 120 & 2019 T11.1 \\
+\quad \EFone{} aggregate (sens.) & 0.010 & 90 & 2006 default \\
+\quad \EFone{} empirical anchor & 0.0055 & 100 & \citet{cui2021} \\
+\quad $EF_4$ volatilisation (dry) & 0.005 & 100 & 2019 T11.3 \\
+\quad $EF_5$ leaching     & 0.011 & 100 & 2019 T11.3 \\
+\addlinespace
+\multicolumn{4}{@{}l}{\emph{Carbon amendments, burning}} \\
+\quad Urea carbon (t\,C/t urea) & 0.20 & 10 & 2006 Eq.11.13 \\
+\quad Residue burning \CHfour{} (g/kg d.m.) & 2.7 & 40 & 2006 T2.5 \\
+\bottomrule
+\end{tabular}
+\caption{Principal emission and carbon factors, with factor-level uncertainty
+($\pm$\%, 95\% relative half-width) and provenance. These factor uncertainties are
+combined with activity-data uncertainty into the per-category values propagated in
+the uncertainty analysis (Section~\ref{sec:methods}, \ref{app:unc}).
+Values marked \emph{(sens.)} are used only in the sensitivity analysis
+(Table~\ref{tab:sensitivity}); the empirical anchor adjudicates the soil-nitrogen
+choice and is not the operative factor.}
+\label{tab:ef-full}
+\end{table}
+
+\subsection{Country-specific and inventory-specific parameters}
+
+The largest departures from global Tier~1 defaults occur in the livestock characterisation.
+
+Population-average typical animal masses are used for dairy cattle, other cattle, buffalo
+and camels---declared judgements resting on working pointers rather than cited
+measurements, as Supplement~S2's provenance classes record (10 cited, 3 derived, 25
+working pointers and 21 declared judgements across the 59 parameter rows). These values are generally higher than the corresponding IPCC defaults and affect
+both nitrogen excretion and the division of enteric emissions among livestock groups. The
+dairy-cattle share is derived from FAOSTAT counts of animals reported as being in milk.
+
+Other national parameters determine how fertiliser and soil nitrogen are represented. These
+include the proportion of synthetic nitrogen supplied as urea, the share applied to rice,
+and the irrigated fraction used in the leaching calculation.
+
+Table~\ref{tab:tier2} distinguishes among four types of parameter: national activity data,
+Tier~2 characterisation, regional IPCC defaults, and inventory assumptions. This
+category-by-category classification defines the methodological basis more accurately than
+assigning one tier to the whole inventory.
+
+\begin{table*}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Parameter} & \textbf{Value (unit)} & \textbf{Status} & \textbf{Source} \\
+\midrule
+Dairy (in-milk) cattle share & 0.295 & national activity datum & FAOSTAT QCL 2024 (16.98/57.54 M) \\
+Typical mass, dairy cattle & 400 kg & Tier-2 characterisation & Sahiwal/crossbred; LRRD 2006 \\
+Typical mass, other cattle & 225 kg & Tier-2 characterisation & Pak.\ adult zebu population avg. \\
+Typical mass, buffalo & 380 kg & Tier-2 characterisation & Nili-Ravi herd avg.\ (LRRD) \\
+Typical mass, camels  & 480 kg & Tier-2 characterisation & dromedary herd avg.; Khan 2025 \\
+Nex, buffalo & 0.32 kg N/1000\,kg/d & regional IPCC default & IPCC 2006 T10.19 Asia \\
+Nex, dairy cattle & 0.47 kg N/1000\,kg/d & regional IPCC default & IPCC 2006 T10.19 Asia \\
+Warm-zone share (manure) & 0.70 & inventory assumption & Indus-plain climate zone \\
+Irrigated cropland fraction & 0.80 & national activity datum & FAO AQUASTAT (19/22 Mha) \\
+Rice share of synthetic N & 0.16 & national activity datum & rice 3.5/22 Mha cropped \\
+Urea share of applied N & 0.80 & national activity datum & NFDC offtake \\
+Rice cultivation period & 125 days & Tier-2 characterisation & PARC calendar (area-weighted) \\
+\bottomrule
+\end{tabular}
+\caption{Country-specific and inventory-specific parameters that override IPCC
+defaults. \emph{Status} distinguishes national activity data, genuine Tier-2
+characterisation, regional IPCC defaults, and inventory assumptions --- so the
+paper does not over-claim a uniform Tier-2 basis. Full provenance (source,
+table/page, derivation, and uncertainty) for these and all other
+parameters and factors --- management-system shares, dung-cake fraction, residue
+ratios, water/amendment factors, volatilisation and leaching fractions, and the
+soil \NtwoO{} factor set --- is given in Supplementary Note~S2.}
+\label{tab:tier2}
+\end{table*}
+
+\subsection{Calculated emissions}
+
+Applying the factors in Table~\ref{tab:ef-full} and the parameters in
+Table~\ref{tab:tier2} to the national activity data produces the 2024 estimates reported in
+Section~\ref{sec:results}.
+
+The same emission-factor set is held constant throughout the 1990--2024 reconstruction.
+Changes in the historical series therefore reflect changes in activity, including livestock
+growth and increasing fertiliser use, rather than changes in the selected factors.
+
+\ref{app:crt} presents the activity data, implied factors and emissions by gas for
+the 1990 base year and the 2024 reporting year in a Common Reporting Table structure.
+
+\subsection{Sensitivity to major methodological choices}
+\label{sec:sensitivity}
+
+Three assumptions account for most of the methodological sensitivity: the direct soil factor
+$\EFone{}$, the rice water-regime factor $SF_w$, and the distribution of livestock manure
+among management systems.
+
+Increasing $\EFone{}$ from the main-case value of $0.005$ to the 2006 aggregate value of
+$0.010$ raises the national total by \SI{11.9}{}~Mt~\COe{}. Using the empirical value of
+$0.0055$ produces little change and gives a managed-soils estimate of \SI{29.7}{}~Mt, close
+to that of \citet{cui2021}.
+
+Changing the rice water regime from continuously flooded to intermittent irrigation reduces
+the national total by \SI{7.9}{}~Mt~\COe{}. A fully rainfed assumption reduces it by
+\SI{11.9}{}~Mt~\COe{}.
+
+Using the GLEAM~3.0 South-Asia manure-management distribution \citep{gleam2022} raises the
+national total by \SI{9.9}{}~Mt~\COe{}. Unlike the soil and rice cases, this scenario
+requires a complete model run because manure management is coupled to the quantity of manure
+nitrogen later applied to soils. It therefore changes both manure-management and
+managed-soils emissions.
+
+All tested scenarios remain within the main Monte-Carlo interval and do not change the
+ranking of the leading emission categories.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Scenario} & \textbf{Rice} & \textbf{Soils} & \textbf{Total} \\
+\midrule
+Main case ($\EFone{}=0.005$; rice flooded) & 16.5 & 28.5 & 223.5 \\
+\quad $\EFone{}=0.010$ (2006 aggregate) & 16.5 & 40.4 & 235.4 \\
+\quad $\EFone{}=0.016$ (2019 wet)       & 16.5 & 54.7 & 249.7 \\
+\quad $\EFone{}=0.0055$ (Cui 2021)      & 16.5 & 29.7 & 224.6 \\
+\quad $EF_3PRP$ wet (2019)$^{b}$        & 16.5 & 30.3 & 225.3 \\
+\quad $EF_3PRP$ aggregate (2006)        & 16.5 & 42.8 & 237.7 \\
+\quad Both 2006 direct factors          & 16.5 & 54.7 & 249.6 \\
+\quad Rice intermittent $SF_w=0.52$ (AWD) &  8.6 & 28.5 & 215.5 \\
+\quad Rice rainfed $SF_w=0.28$          &  4.6 & 28.5 & 211.5 \\
+\quad Manure GLEAM 3.0 split$^{a}$      & 16.5 & 27.6 & 233.4 \\
+\bottomrule
+\end{tabular}
+\caption{Sensitivity of the 2024 national agricultural total (Mt~\COe, AR5) to the
+principal methodological choices. $^{a}$Soil and rice alternatives can be recalculated directly because each touches a
+single category and the affected terms scale linearly. The GLEAM manure-management case
+requires a complete model run: the nitrogen ledger is coupled, so a different split changes how much manure nitrogen
+reaches the field and moves managed soils (\SI{28.5}{} to \SI{27.6}{}~Mt) as well as manure
+management (\SI{21.2}{} to \SI{32.1}{}~Mt). It is the same scenario as
+Table~\ref{tab:apstruct} and reports the same total. $^{b}$The pasture factor had no
+scenario beside it before this release, which was an asymmetry rather than a judgement: it is
+the larger lever of the two soils factors---the 2019 Refinement cut the cattle value tenfold
+from the 2006 default where it halved \EFone{}---and it carries two-thirds of the difference
+against FAOSTAT's managed soils. The two factor scenarios are disjoint, so the combined 2006
+case is their sum rather than a separate run. Raised via the GLEAM 3.0 South-Asia management-system split (a hidden
+uncertainty surfaced by the cross-check, not adopted). Generated by
+\texttt{src/pkinv/eval/sensitivity\_table.py}.}
+\label{tab:sensitivity}
+\end{table}

@@ -1,0 +1,325 @@
+profile_variant,fiscal_year_start,month,reference_share,variant_share,worst_month_gap_pp,assumption
+lag_0_reference,2015,201507,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201508,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201509,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201510,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201511,0.001593,0.001593,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201512,0.179199,0.179199,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201601,0.281867,0.281867,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201602,0.226321,0.226321,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201603,0.278714,0.278714,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201604,0.025896,0.025896,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201605,0.006411,0.006411,0.0,sugar reported the month it was crushed
+lag_0_reference,2015,201606,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_+1_month,2015,201507,0.0,0.0,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201508,0.0,0.0,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201509,0.0,0.0,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201510,0.0,0.0,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201511,0.001593,0.0,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201512,0.179199,0.001593,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201601,0.281867,0.179199,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201602,0.226321,0.281867,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201603,0.278714,0.226321,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201604,0.025896,0.278714,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201605,0.006411,0.025896,25.282,reporting lags crushing by one month
+lag_+1_month,2015,201606,0.0,0.006411,25.282,reporting lags crushing by one month
+lag_-1_month,2015,201507,0.0,0.0,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201508,0.0,0.0,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201509,0.0,0.0,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201510,0.0,0.001593,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201511,0.001593,0.179199,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201512,0.179199,0.281867,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201601,0.281867,0.226321,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201602,0.226321,0.278714,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201603,0.278714,0.025896,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201604,0.025896,0.006411,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201605,0.006411,0.0,25.282,crushing lags reporting by one month
+lag_-1_month,2015,201606,0.0,0.0,25.282,crushing lags reporting by one month
+lag_0_reference,2016,201607,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201608,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201609,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201610,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201611,0.029833,0.029833,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201612,0.170145,0.170145,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201701,0.210462,0.210462,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201702,0.213804,0.213804,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201703,0.283942,0.283942,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201704,0.080616,0.080616,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201705,0.010596,0.010596,0.0,sugar reported the month it was crushed
+lag_0_reference,2016,201706,0.000603,0.000603,0.0,sugar reported the month it was crushed
+lag_+1_month,2016,201607,0.0,0.000603,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201608,0.0,0.0,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201609,0.0,0.0,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201610,0.0,0.0,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201611,0.029833,0.0,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201612,0.170145,0.029833,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201701,0.210462,0.170145,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201702,0.213804,0.210462,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201703,0.283942,0.213804,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201704,0.080616,0.283942,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201705,0.010596,0.080616,20.333,reporting lags crushing by one month
+lag_+1_month,2016,201706,0.000603,0.010596,20.333,reporting lags crushing by one month
+lag_-1_month,2016,201607,0.0,0.0,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201608,0.0,0.0,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201609,0.0,0.0,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201610,0.0,0.029833,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201611,0.029833,0.170145,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201612,0.170145,0.210462,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201701,0.210462,0.213804,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201702,0.213804,0.283942,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201703,0.283942,0.080616,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201704,0.080616,0.010596,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201705,0.010596,0.000603,20.333,crushing lags reporting by one month
+lag_-1_month,2016,201706,0.000603,0.0,20.333,crushing lags reporting by one month
+lag_0_reference,2017,201707,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201708,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201709,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201710,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201711,0.006092,0.006092,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201712,0.128417,0.128417,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201801,0.26583,0.26583,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201802,0.218254,0.218254,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201803,0.24247,0.24247,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201804,0.123488,0.123488,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201805,0.01394,0.01394,0.0,sugar reported the month it was crushed
+lag_0_reference,2017,201806,0.001508,0.001508,0.0,sugar reported the month it was crushed
+lag_+1_month,2017,201707,0.0,0.001508,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201708,0.0,0.0,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201709,0.0,0.0,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201710,0.0,0.0,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201711,0.006092,0.0,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201712,0.128417,0.006092,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201801,0.26583,0.128417,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201802,0.218254,0.26583,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201803,0.24247,0.218254,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201804,0.123488,0.24247,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201805,0.01394,0.123488,13.741,reporting lags crushing by one month
+lag_+1_month,2017,201806,0.001508,0.01394,13.741,reporting lags crushing by one month
+lag_-1_month,2017,201707,0.0,0.0,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201708,0.0,0.0,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201709,0.0,0.0,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201710,0.0,0.006092,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201711,0.006092,0.128417,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201712,0.128417,0.26583,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201801,0.26583,0.218254,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201802,0.218254,0.24247,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201803,0.24247,0.123488,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201804,0.123488,0.01394,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201805,0.01394,0.001508,13.741,crushing lags reporting by one month
+lag_-1_month,2017,201806,0.001508,0.0,13.741,crushing lags reporting by one month
+lag_0_reference,2018,201807,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201808,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201809,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201810,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201811,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201812,0.105429,0.105429,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201901,0.298723,0.298723,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201902,0.304716,0.304716,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201903,0.222494,0.222494,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201904,0.059918,0.059918,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201905,0.005938,0.005938,0.0,sugar reported the month it was crushed
+lag_0_reference,2018,201906,0.002783,0.002783,0.0,sugar reported the month it was crushed
+lag_+1_month,2018,201807,0.0,0.002783,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201808,0.0,0.0,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201809,0.0,0.0,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201810,0.0,0.0,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201811,0.0,0.0,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201812,0.105429,0.0,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201901,0.298723,0.105429,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201902,0.304716,0.298723,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201903,0.222494,0.304716,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201904,0.059918,0.222494,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201905,0.005938,0.059918,19.329,reporting lags crushing by one month
+lag_+1_month,2018,201906,0.002783,0.005938,19.329,reporting lags crushing by one month
+lag_-1_month,2018,201807,0.0,0.0,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201808,0.0,0.0,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201809,0.0,0.0,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201810,0.0,0.0,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201811,0.0,0.105429,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201812,0.105429,0.298723,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201901,0.298723,0.304716,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201902,0.304716,0.222494,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201903,0.222494,0.059918,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201904,0.059918,0.005938,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201905,0.005938,0.002783,19.329,crushing lags reporting by one month
+lag_-1_month,2018,201906,0.002783,0.0,19.329,crushing lags reporting by one month
+lag_0_reference,2019,201907,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,201908,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,201909,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,201910,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,201911,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,201912,0.223967,0.223967,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,202001,0.315831,0.315831,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,202002,0.302952,0.302952,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,202003,0.143979,0.143979,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,202004,0.006225,0.006225,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,202005,0.006162,0.006162,0.0,sugar reported the month it was crushed
+lag_0_reference,2019,202006,0.000883,0.000883,0.0,sugar reported the month it was crushed
+lag_+1_month,2019,201907,0.0,0.000883,22.397,reporting lags crushing by one month
+lag_+1_month,2019,201908,0.0,0.0,22.397,reporting lags crushing by one month
+lag_+1_month,2019,201909,0.0,0.0,22.397,reporting lags crushing by one month
+lag_+1_month,2019,201910,0.0,0.0,22.397,reporting lags crushing by one month
+lag_+1_month,2019,201911,0.0,0.0,22.397,reporting lags crushing by one month
+lag_+1_month,2019,201912,0.223967,0.0,22.397,reporting lags crushing by one month
+lag_+1_month,2019,202001,0.315831,0.223967,22.397,reporting lags crushing by one month
+lag_+1_month,2019,202002,0.302952,0.315831,22.397,reporting lags crushing by one month
+lag_+1_month,2019,202003,0.143979,0.302952,22.397,reporting lags crushing by one month
+lag_+1_month,2019,202004,0.006225,0.143979,22.397,reporting lags crushing by one month
+lag_+1_month,2019,202005,0.006162,0.006225,22.397,reporting lags crushing by one month
+lag_+1_month,2019,202006,0.000883,0.006162,22.397,reporting lags crushing by one month
+lag_-1_month,2019,201907,0.0,0.0,22.397,crushing lags reporting by one month
+lag_-1_month,2019,201908,0.0,0.0,22.397,crushing lags reporting by one month
+lag_-1_month,2019,201909,0.0,0.0,22.397,crushing lags reporting by one month
+lag_-1_month,2019,201910,0.0,0.0,22.397,crushing lags reporting by one month
+lag_-1_month,2019,201911,0.0,0.223967,22.397,crushing lags reporting by one month
+lag_-1_month,2019,201912,0.223967,0.315831,22.397,crushing lags reporting by one month
+lag_-1_month,2019,202001,0.315831,0.302952,22.397,crushing lags reporting by one month
+lag_-1_month,2019,202002,0.302952,0.143979,22.397,crushing lags reporting by one month
+lag_-1_month,2019,202003,0.143979,0.006225,22.397,crushing lags reporting by one month
+lag_-1_month,2019,202004,0.006225,0.006162,22.397,crushing lags reporting by one month
+lag_-1_month,2019,202005,0.006162,0.000883,22.397,crushing lags reporting by one month
+lag_-1_month,2019,202006,0.000883,0.0,22.397,crushing lags reporting by one month
+lag_0_reference,2020,202007,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202008,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202009,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202010,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202011,0.080506,0.080506,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202012,0.249927,0.249927,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202101,0.338298,0.338298,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202102,0.262554,0.262554,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202103,0.055467,0.055467,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202104,0.004443,0.004443,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202105,0.006959,0.006959,0.0,sugar reported the month it was crushed
+lag_0_reference,2020,202106,0.001844,0.001844,0.0,sugar reported the month it was crushed
+lag_+1_month,2020,202007,0.0,0.001844,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202008,0.0,0.0,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202009,0.0,0.0,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202010,0.0,0.0,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202011,0.080506,0.0,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202012,0.249927,0.080506,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202101,0.338298,0.249927,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202102,0.262554,0.338298,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202103,0.055467,0.262554,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202104,0.004443,0.055467,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202105,0.006959,0.004443,20.709,reporting lags crushing by one month
+lag_+1_month,2020,202106,0.001844,0.006959,20.709,reporting lags crushing by one month
+lag_-1_month,2020,202007,0.0,0.0,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202008,0.0,0.0,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202009,0.0,0.0,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202010,0.0,0.080506,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202011,0.080506,0.249927,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202012,0.249927,0.338298,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202101,0.338298,0.262554,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202102,0.262554,0.055467,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202103,0.055467,0.004443,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202104,0.004443,0.006959,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202105,0.006959,0.001844,20.709,crushing lags reporting by one month
+lag_-1_month,2020,202106,0.001844,0.0,20.709,crushing lags reporting by one month
+lag_0_reference,2021,202107,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202108,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202109,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202110,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202111,0.041929,0.041929,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202112,0.186103,0.186103,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202201,0.27295,0.27295,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202202,0.228501,0.228501,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202203,0.250143,0.250143,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202204,0.013807,0.013807,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202205,0.004776,0.004776,0.0,sugar reported the month it was crushed
+lag_0_reference,2021,202206,0.001792,0.001792,0.0,sugar reported the month it was crushed
+lag_+1_month,2021,202107,0.0,0.001792,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202108,0.0,0.0,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202109,0.0,0.0,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202110,0.0,0.0,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202111,0.041929,0.0,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202112,0.186103,0.041929,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202201,0.27295,0.186103,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202202,0.228501,0.27295,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202203,0.250143,0.228501,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202204,0.013807,0.250143,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202205,0.004776,0.013807,23.634,reporting lags crushing by one month
+lag_+1_month,2021,202206,0.001792,0.004776,23.634,reporting lags crushing by one month
+lag_-1_month,2021,202107,0.0,0.0,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202108,0.0,0.0,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202109,0.0,0.0,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202110,0.0,0.041929,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202111,0.041929,0.186103,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202112,0.186103,0.27295,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202201,0.27295,0.228501,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202202,0.228501,0.250143,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202203,0.250143,0.013807,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202204,0.013807,0.004776,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202205,0.004776,0.001792,23.634,crushing lags reporting by one month
+lag_-1_month,2021,202206,0.001792,0.0,23.634,crushing lags reporting by one month
+lag_0_reference,2022,202207,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202208,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202209,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202210,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202211,0.027837,0.027837,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202212,0.281119,0.281119,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202301,0.325846,0.325846,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202302,0.275492,0.275492,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202303,0.080441,0.080441,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202304,0.001219,0.001219,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202305,0.006805,0.006805,0.0,sugar reported the month it was crushed
+lag_0_reference,2022,202306,0.001242,0.001242,0.0,sugar reported the month it was crushed
+lag_+1_month,2022,202207,0.0,0.001242,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202208,0.0,0.0,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202209,0.0,0.0,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202210,0.0,0.0,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202211,0.027837,0.0,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202212,0.281119,0.027837,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202301,0.325846,0.281119,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202302,0.275492,0.325846,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202303,0.080441,0.275492,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202304,0.001219,0.080441,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202305,0.006805,0.001219,25.328,reporting lags crushing by one month
+lag_+1_month,2022,202306,0.001242,0.006805,25.328,reporting lags crushing by one month
+lag_-1_month,2022,202207,0.0,0.0,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202208,0.0,0.0,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202209,0.0,0.0,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202210,0.0,0.027837,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202211,0.027837,0.281119,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202212,0.281119,0.325846,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202301,0.325846,0.275492,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202302,0.275492,0.080441,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202303,0.080441,0.001219,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202304,0.001219,0.006805,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202305,0.006805,0.001242,25.328,crushing lags reporting by one month
+lag_-1_month,2022,202306,0.001242,0.0,25.328,crushing lags reporting by one month
+lag_0_reference,2023,202307,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202308,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202309,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202310,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202311,0.032377,0.032377,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202312,0.303598,0.303598,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202401,0.314645,0.314645,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202402,0.27568,0.27568,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202403,0.068735,0.068735,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202404,0.000579,0.000579,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202405,0.004386,0.004386,0.0,sugar reported the month it was crushed
+lag_0_reference,2023,202406,0.0,0.0,0.0,sugar reported the month it was crushed
+lag_+1_month,2023,202307,0.0,0.0,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202308,0.0,0.0,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202309,0.0,0.0,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202310,0.0,0.0,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202311,0.032377,0.0,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202312,0.303598,0.032377,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202401,0.314645,0.303598,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202402,0.27568,0.314645,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202403,0.068735,0.27568,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202404,0.000579,0.068735,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202405,0.004386,0.000579,27.122,reporting lags crushing by one month
+lag_+1_month,2023,202406,0.0,0.004386,27.122,reporting lags crushing by one month
+lag_-1_month,2023,202307,0.0,0.0,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202308,0.0,0.0,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202309,0.0,0.0,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202310,0.0,0.032377,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202311,0.032377,0.303598,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202312,0.303598,0.314645,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202401,0.314645,0.27568,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202402,0.27568,0.068735,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202403,0.068735,0.000579,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202404,0.000579,0.004386,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202405,0.004386,0.0,27.122,crushing lags reporting by one month
+lag_-1_month,2023,202406,0.0,0.0,27.122,crushing lags reporting by one month

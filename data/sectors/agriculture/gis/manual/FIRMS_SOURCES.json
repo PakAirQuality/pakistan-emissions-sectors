@@ -1,0 +1,54 @@
+{
+  "bbox": "60.5,23.5,77.5,37.5",
+  "csv_sha256": "2d26b95ad76bccc049ccba9ec9fc277143df631728cf08063127966d88079a59",
+  "detections": 1664876,
+  "note": "science-quality VIIRS SP archive; the MAP_KEY is an env var, never committed; windows derive from the FAO calendar (burn_windows.py) since Wave 3; a window is recorded fetched only when every span in it succeeded",
+  "product": "VIIRS_SNPP_SP",
+  "windows_fetched": [
+    [
+      "fy2015",
+      "2015-09-01",
+      "2016-06-30"
+    ],
+    [
+      "fy2016",
+      "2016-09-01",
+      "2017-06-30"
+    ],
+    [
+      "fy2017",
+      "2017-09-01",
+      "2018-06-30"
+    ],
+    [
+      "fy2018",
+      "2018-09-01",
+      "2019-06-30"
+    ],
+    [
+      "fy2019",
+      "2019-09-01",
+      "2020-06-30"
+    ],
+    [
+      "fy2020",
+      "2020-09-01",
+      "2021-06-30"
+    ],
+    [
+      "fy2021",
+      "2021-09-01",
+      "2022-06-30"
+    ],
+    [
+      "fy2022",
+      "2022-09-01",
+      "2023-06-30"
+    ],
+    [
+      "fy2023",
+      "2023-09-01",
+      "2024-06-30"
+    ]
+  ]
+}

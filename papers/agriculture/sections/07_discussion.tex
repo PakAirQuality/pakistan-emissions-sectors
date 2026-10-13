@@ -1,0 +1,70 @@
+% ===========================================================================
+\section{Discussion}
+\label{sec:discussion}
+% ===========================================================================
+
+\subsection{The managed-soils difference is methodological}
+
+The engine's managed-soils estimate is about half of FAOSTAT's. The difference
+primarily reflects the selected direct emission factor. The 2019 Refinement's
+dry-climate $\EFone{}=0.005$ was derived largely from \emph{irrigated} dry-climate
+fields, making it the best-supported value for the irrigated Indus belt; the
+wet-climate value is not supported there, and the empirical crop-weighted estimate
+of \citet{cui2021} for Pakistan ($\approx 0.0055$) is close to it. FAOSTAT still
+uses the older 2006 aggregate default $\EFone{}=0.010$. At that aggregate value the
+engine's managed soils rises to \SI{40.4}{} Mt~\COe{} and the national total to
+\SI{235.4}{} (Table~\ref{tab:sensitivity}), closing most of the gap. We therefore
+report the disaggregated value as the default and the aggregate value as a
+sensitivity, rather than tuning to match the benchmark.
+
+\subsection{Effect of country-specific livestock parameters}
+
+The principal country-specific refinements occur in livestock characterisation
+rather than soil factors: the country animal live weights that set nitrogen
+excretion (particularly for buffalo) and the FAOSTAT-derived dairy split. This
+indicates where survey effort would most improve the inventory --- livestock
+characterisation and manure-management shares --- the categories that also carry
+the Tier-2 parameters in Table~\ref{tab:tierstatus}.
+
+\subsection{Value of the reconciliation invariant}
+
+Enforcing Eq.~\ref{eq:reconcile} on every run is what makes the maps usable
+alongside the reported totals. It also decouples the two design choices that are
+often conflated: activity data and emission factors determine the national
+magnitude, while the spatial proxies determine only its geographic distribution and
+cannot alter the national total. This separation makes
+the system auditable --- a reviewer can check the totals and the proxies
+independently.
+
+\subsection{What the district resolution adds}
+
+Resolving to districts changes what the inventory can support. The category
+decomposition distinguishes two district profiles that a single activity proxy
+would blur: the crop-and-livestock canal-belt districts of central Punjab, and a
+livestock-dominated outlier such as Karachi, whose ranking comes from the peri-urban
+dairy colonies of Malir rather than cropping. This is the same lesson the source-specific-proxy
+literature reaches from the opposite direction --- that where different sources
+dominate, one generic proxy misplaces emissions --- and it is why the livestock
+split is put on real census head-counts rather than a gridded surface. The
+independent crop-record check (Section~\ref{sec:validation-district}) then tells us
+where the district geography is trustworthy: strong for rice and, via wheat area,
+for managed soils in Punjab and Balochistan; weak in Sindh, where the wheat
+footprint is the wrong reference; and simply unvalidated for the categories with no
+independent district statistic. Reporting that unevenness, rather than a single
+headline correlation, is what keeps the district layer honest.
+
+\subsection{Implications for inventories in data-scarce settings}
+
+The approach generalises beyond Pakistan. Combining coarse but reliable
+national/provincial control totals with independent, stream-specific spatial
+proxies --- and substituting a dedicated enumeration (here, the livestock census)
+for the one category where a generic proxy is weakest --- addresses a structural
+problem common to most low- and middle-income inventories, where activity data are
+published only at a coarse administrative resolution. The reconciliation invariant
+keeps the resulting maps mass-conserving and consistent with the reported totals,
+so spatial detail cannot alter the reported national figure. Where the method still
+falls short
+--- the Tier-1/2 factor basis, the constant multi-year district shares, and the
+categories lacking an independent district record --- is exactly where
+country-specific measurement, not more sophisticated disaggregation, would have the
+largest effect.

@@ -1,0 +1,123 @@
+% ===========================================================================
+\section{Reproduction}
+\label{app:repro}
+% ===========================================================================
+
+The sector runs on Python 3.11 with no compiled dependencies:
+
+{\footnotesize
+\begin{verbatim}
+pip install -e .
+python3 -m pkinv.sectors.transport.run_transport
+python3 -m pkinv.sectors.transport.air_pollutants
+\end{verbatim}
+}
+
+which writes \texttt{transport\_totals\_2024.csv},
+\texttt{transport\_by\_stream\_2024.csv}, \texttt{transport\_fuel\_2024.csv},
+\texttt{transport\_provincial\_2024.csv},
+\texttt{transport\_air\_pollutants\_2024.csv}, the twelve-month layer
+(\texttt{transport\_\allowbreak monthly\_\allowbreak 2024.csv}, each month's share with the emissions it implies
+and the basis of the shape), the two-tier fuel-claimant ledger
+(\texttt{transport\_fuel\_ledger\_2024.csv}), the uncertainty system
+(\texttt{transport\_uncertainty\_2024.csv} and its variance-decomposition, inputs-register
+and structural-scenario companions), the ten-year fuel series
+(\texttt{transport\_fuel\_series.csv}), the provincial proxy comparison
+(\texttt{transport\_provincial\_proxy\_comparison\_2024.csv}), the mass-to-energy fuel
+bridge (\texttt{transport\_fuel\_bridge\_2024.csv}), the OCAC consistency diagnostic
+(\texttt{transport\_ocac\_control\_diagnostic.csv}) and a run manifest
+(\texttt{transport\_run\_manifest\_2024.json}) that hashes every primary source---
+including all 57 OCAC sectoral PDFs---to \texttt{outputs/}.
+
+The OCAC sectoral CSVs the controls read are committed data; regenerating them from the
+PDFs is a separate, deterministic step
+(\texttt{python3 scripts/ingest\_ocac\_sectoral.py}, requiring \texttt{pdftotext}), and
+an ingest test pins the committed cells to independently verified values.
+
+The relays are not constants in this sector. Household-generator petrol is read from the
+residential module (a carve-out) and railway diesel from the railways module (a
+cross-check), so reproducing the boundary requires both to be importable:
+
+\begin{verbatim}
+python3 -c "\
+from pkinv.sectors.residential import combustion
+print(combustion.generator_petrol_kt())"
+python3 -c "\
+from pkinv.sectors.railways import traction
+from pkinv.sectors.railways import data as rw
+print(traction.diesel_kt(rw.RailwaysData()))"
+\end{verbatim}
+
+Figures are regenerated with \texttt{python3 -m pkinv.report.figures} and copied into this
+manuscript by \texttt{python3 scripts/sync\_figures.py}; a test fails if any shipped figure
+differs from the output it plots. The full suite runs with
+\texttt{python3 -m unittest discover tests}.
+
+% ===========================================================================
+\section{Sources}
+\label{app:sources}
+% ===========================================================================
+
+Fuel controls are the Road customer-class rows of OCAC's Sectoral Sales of Energy
+Products, annual and monthly-provincial editions \citep{ocacarchive}, with the superseded
+Economic Survey-derived pair \citep{econsurvey2025energy} retained as a scenario;
+transport CNG is OGRA's sectoral gas statistics \citep{ogra2024,ograarchive}, with the
+billing heating-value basis from the two gas utilities \citep{sngpl2024,ssgc2024}.
+Vehicle counts by class and province come from the provincial registration tables
+\citep{provregstats}. The Weibull survival parameters and the per-class MJ/km intensity
+bands are in \texttt{data/transport\_params.csv} with a source string on every row---the
+survival parameters from the Punjab district-level transport manuscript
+\citep{naveedpunjab}, which adopts \citet{guttikunda2024}; the intensity bands are this
+inventory's own declared engineering judgement and say so. The annual kilometres and fuel
+splits are separate tables (\texttt{data/activity/transport/vkt.csv},
+\texttt{fuel\_split.csv}), transcribed from the same manuscript's workbook, which carries
+no per-row citation for them; they are declared without primary provenance in their own
+source columns and registered as a gap
+(\texttt{transport-class-activity-provenance}). A previous edition of this appendix said
+all three lived in the parameter table with sources recorded per row, which was not true
+of two of them. The rail cross-check reads the
+Pakistan Railways Year Book \citep{pakrailyearbook2024} through the railways module; the
+generator carve-out reads HIES \citep{hies2025} over the administered petrol price
+\citep{goppetrol} through the residential module. Emission factors are
+IPCC 2006 Guidelines Volume~2 Chapter~3 defaults \citep{ipcc2006energy}: Table~3.2.2 for
+road, Table~3.3.1 for off-road machinery. Air-pollutant factors are per-kilometre values
+inherited from the Punjab emissions workbook without a located primary citation
+(Section~\ref{sec:data}); Supplementary Note~S2 renders them with that label. External
+comparison is EDGAR's series \citep{edgar2025booklet}, read at this sector's fiscal
+year as a blend of the 2023 and 2024 columns (\SI{48.13}{\mega\tonne}); the
+CY2021/CY2022 blend survives only as the superseded rc4 construction in the
+comparison table.
+
+Every factor in the repository carries a source string, and a provenance test asserts that
+none is empty and that any informally sourced value is declared as such. Two populations sit
+inside that rule rather than outside it: the per-kilometre air-pollutant factors, whose source
+file records no primary citation and which are labelled accordingly wherever they appear, and
+the declared MJ/km intensity bands, which are this inventory's own engineering judgement and
+say so on every row. A source string is not the same thing as a citation, and the distinction
+is made explicit rather than averaged away.
+
+% ===========================================================================
+\section{Supplementary Note: why the shares are normalised over all classes}
+\label{app:shares}
+% ===========================================================================
+
+The off-road class is included in the denominator that normalises the vehicle-kilometre
+shares, and removing it is a mistake worth documenting because it is the natural thing to try.
+
+Suppose off-road were dropped from the fleet before normalising, on the reasoning that this
+sector reports road transport. The remaining classes' shares would then sum to one over the
+\emph{whole} diesel supply, so on-road vehicles would be assigned \SI{100}{\percent} of the
+national diesel. Any separate estimate of off-road machinery---whether made here, in another
+sector, or by another author---would then claim its fuel a second time. The national diesel
+figure would support more emissions than there is diesel.
+
+Keeping off-road inside the normalisation makes the two categories an exhaustive partition of
+one fuel quantity: their shares sum to one, so their emissions sum to the control total times
+the factor. The memo item that formerly carried off-road as a \COtwo{}-only note outside all
+totals is asserted to be empty, which is the test that catches a future edit reintroducing the
+double count.
+
+The same structure appears in this inventory's waste sector, where one municipal waste
+generation figure is partitioned between disposal and open burning
+\citep{ahmad2026national}. In both cases the useful property is not that the split is right,
+but that an argument about the split cannot change how much of the underlying quantity exists.

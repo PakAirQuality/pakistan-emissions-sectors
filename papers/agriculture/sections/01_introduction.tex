@@ -1,0 +1,228 @@
+% ===========================================================================
+\section{Introduction}
+\label{sec:introduction}
+% ===========================================================================
+
+National greenhouse-gas inventories provide the accounting basis for reporting under the
+Paris Agreement. Under the Enhanced Transparency Framework, countries regularly report
+sectoral emissions using Common Reporting Tables. In many developing countries,
+agriculture, forestry and other land use (\AFOLU{}) accounts for a substantial share of
+national emissions but is also among the sectors with the weakest activity data.
+
+Pakistan illustrates this problem clearly. Agriculture is one of the country's largest
+emitting sectors, yet its national inventory provides limited spatial detail. Some
+livestock estimates also continue to rely partly on projections from older censuses.
+National totals are necessary for international reporting, but they provide little
+information about where emissions occur or where mitigation and improved data collection
+should be targeted.
+
+Agricultural activity also produces pollutants that affect air quality. Ammonia released
+from fertiliser and manure is the principal alkaline precursor of secondary inorganic
+particulate matter. Agricultural \NHthree{} can therefore contribute to PM$_{2.5}$
+concentrations far from the fields and livestock systems where it originates.
+Crop-residue burning in the Punjab rice--wheat belt also releases primary PM$_{2.5}$,
+carbon monoxide and ozone precursors during the post-monsoon period, when particulate
+pollution in Lahore is particularly severe.
+
+Despite this importance, Pakistan has no gridded agricultural air-pollutant inventory
+derived from national activity data. Air-quality modelling instead relies largely on global
+emissions products. These products provide valuable regional coverage, but their activity
+data and spatial assumptions cannot reliably distinguish, for example, an intensively
+cultivated canal-belt district from an extensive rangeland district.
+
+A useful national system must therefore meet three requirements. First, it must be
+reproducible and updateable as new official statistics become available. Second, it must
+provide provincial, district and gridded estimates that support subnational planning and
+air-quality modelling. Third, its greenhouse-gas and air-pollutant calculations must use
+consistent activity data and nitrogen flows.
+
+The third requirement is physically important. A unit of manure nitrogen may be lost as
+ammonia during housing, storage, grazing or field application, or it may remain in the
+system and contribute to direct or indirect nitrous-oxide emissions. Calculating these
+pathways in separate workbooks creates a risk of double counting, omission, or inconsistent
+system boundaries. Similar inconsistencies arise when a national inventory, a
+spatial-allocation exercise, and an emissions input for a chemistry model are developed
+independently. The resulting products may appear detailed while failing to reproduce the
+same national total or physical flow.
+
+The same argument applies one level up. An agricultural inventory that is internally
+consistent may still be inconsistent with the sectors around it, because several quantities
+are genuinely shared: nitrogen leaving the manure-management balance as household fuel has to
+arrive somewhere, and crop-residue burning has to be distinguishable from other open burning.
+The framework described here is the agriculture module of a ten-sector national inventory
+\citep{ahmad2026national}, in which agriculture is \SI{50.2}{\percent} of the national total
+and those transfers are executable assertions rather than statements in a methods document.
+This paper documents the sector; the companion documents what holds between sectors, and
+neither repeats the other.
+
+Many of the required inputs already exist. Pakistan publishes national and subnational
+agricultural statistics, while open global datasets provide spatial information on
+livestock, crops, land cover and fire occurrence. The remaining need is an integrated
+framework that calculates emissions, allocates them spatially under an explicit
+mass-balance constraint, evaluates the resulting products, and propagates uncertainty from
+a common set of parameters.
+
+This study develops such a framework for Pakistan. We construct a \emph{hybrid
+Tier~1/Tier~2} agricultural inventory using the 2006 IPCC Guidelines and the 2019
+Refinement. We then allocate individual emission streams to provinces, a
+\SI{0.05}{\degree} grid, and administrative districts using process-specific spatial
+proxies. Uncertainty is quantified using analytical propagation and Monte-Carlo simulation.
+
+The central design principle is that the calculated inventory total serves as the control
+value. Every provincial, gridded and district product is constrained to reconcile with that
+control. Emission factors and activity data therefore determine the quantity emitted, while
+spatial proxies determine only where those emissions are allocated.
+
+\subsection{Contributions}
+\label{sec:contributions}
+
+This paper makes five main contributions.
+
+First, it provides a reproducible national agricultural inventory implemented in a single
+codebase that runs on the Python standard library alone. Emission factors, activity values
+and other parameters are stored in versioned data files rather than embedded in the
+calculation code. The inventory covers six IPCC categories: enteric fermentation (3.A),
+manure management (3.B), rice cultivation (3.C), managed soils (3.D), field burning of
+agricultural residues (3.F), and urea application (3.H). Liming emissions under category
+3.G are not estimated: no national lime-use activity figure has been sought. All six
+categories use Tier~1 equations with country-specific activity data. Selected livestock
+parameters, including animal mass and manure-management-system shares, provide partial
+Tier~2 characterisation. Tier status is therefore reported separately for each category.
+
+Second, the framework allocates emissions to provinces, a national grid and administrative
+districts under an explicit reconciliation constraint. Within each control area, every
+emission stream is distributed in proportion to a process-matched proxy and then rescaled
+so that the allocated values sum exactly to the control total. Livestock emissions are
+allocated using gridded livestock density and, where available at district level, census
+head-counts. Rice emissions are allocated using mapped paddy area, while residue-burning
+emissions are allocated using satellite fire detections.
+
+Third, the inventory is evaluated at several scales. National category totals are compared
+with FAOSTAT, EDGAR and Climate TRACE using matched years and category definitions.
+District patterns are evaluated against independent government crop-area records. The rice
+allocation has a Spearman rank correlation of \num{0.92} with official district rice area,
+while the managed-soils allocation reaches \num{0.84} against district wheat area.
+Parametric uncertainty is estimated using both IPCC Approach~1 propagation and Monte-Carlo
+aggregation. These methods apply different propagation formulations to the same underlying
+uncertainty assumptions.
+
+Fourth, the framework produces a national reconstruction for 1990--2024 and a
+district-level historical panel based on fixed spatial shares. The national series reflects
+changes in activity over time, while the district panel distributes each year's national
+total according to the audited 2024 district pattern.
+
+These are two different products on two different bases and are not interchangeable. The
+canonical panel is the nine fiscal years FY2015--16 to FY2023--24, computed on Pakistani
+fiscal activity with the reference year anchored to the 2024 census; it is what the release
+reports, reconciles and prices uncertainty for. The 1990--2024 series is a contextual
+reconstruction on FAOSTAT calendar-year activity, provided for long-run trend and for the
+Common Reporting Table, and it is not the inventory's reporting basis. Where the two overlap
+they do not agree exactly, and what that change of basis costs is published per year and
+category in \texttt{outputs/pakemis\_agriculture\_basis\_change.csv} rather than being
+reconciled away.
+
+Fifth, the framework calculates agricultural air-pollutant co-emissions, including
+\NHthree{}, \NOx{} and the pollutants released by crop-residue burning. These estimates use
+the same activity data and process-specific spatial proxies as the greenhouse-gas
+inventory. A shared, stage-resolved nitrogen ledger aligns the system boundaries used by
+the IPCC and EMEP/EEA methods and helps diagnose differences between the resulting
+estimates. The ammonia inventory is also compared with an independent gridded inventory for
+South Asia. An exploratory Tier-1 land-sector extension is presented separately in
+Supplementary Note~S1 and is excluded from all agricultural results.
+
+Figure~\ref{fig:overview} summarises the framework. Section~\ref{sec:related_work} reviews
+relevant inventory and spatial-allocation methods. Section~\ref{sec:data} describes the
+study area and data. Sections~\ref{sec:methods}--\ref{sec:methods-shared} present the
+greenhouse-gas inventory, spatial allocation, uncertainty analysis and shared nitrogen
+accounting. Section~\ref{sec:validation} describes the evaluation framework.
+Sections~\ref{sec:results} and~\ref{sec:airpollutants} report the greenhouse-gas and
+air-pollutant results. Sections~\ref{sec:discussion}--\ref{sec:conclusion} discuss the
+findings, limitations and conclusions.
+
+\begin{figure*}[t]
+\centering
+\resizebox{0.96\textwidth}{!}{%
+\begin{tikzpicture}[
+  font=\footnotesize,
+  band/.style={font=\scriptsize\bfseries\itshape, anchor=east, text=black!55},
+  data/.style={draw,rounded corners,align=center,inner sep=5pt,fill=green!6,minimum height=11mm,
+               text width=38mm},
+  ledger/.style={draw,rounded corners,align=center,inner sep=6pt,fill=yellow!14,thick,
+                 draw=black!55,text width=124mm,minimum height=11mm},
+  calc/.style={draw,rounded corners,align=center,inner sep=5pt,minimum height=11mm,text width=52mm},
+  ctrl/.style={draw,rounded corners,align=center,inner sep=5pt,fill=gray!10,minimum height=10mm,
+               text width=62mm},
+  prod/.style={draw,rounded corners,align=center,inner sep=5pt,fill=blue!7,minimum height=10mm,
+              text width=32mm},
+  cross/.style={draw,rounded corners,align=center,inner sep=5pt,fill=orange!8,text width=124mm,
+                minimum height=8mm},
+  arr/.style={-{Latex[length=2mm]},thick},
+  ev/.style={-{Latex[length=2mm]},thick,dashed,black!55}
+]
+% ---- band 1: data, separated by function ----
+\node[band] at (-3.6,7.4) {DATA};
+\node[data] (act)  at (0,7.4)   {Inventory activity\\\scriptsize PBS census, NFDC,\\FAOSTAT history};
+\node[data] (prox) at (4.3,7.4) {Spatial proxies\\\scriptsize GLW, WorldCover, FIRMS,\\MapSPAM (all held)};
+\node[data] (eval) at (8.6,7.4) {Evaluation data\\\scriptsize MNFSR records, FAOSTAT/\\EDGAR/CT, \NHthree{} grid};
+
+% ---- band 2: shared accounting ----
+\node[band] at (-3.6,5.2) {SHARED ACCOUNTING};
+\node[ledger] (led) at (4.3,5.2)
+  {Livestock-N ledger \quad$|$\quad Fertiliser product mix \quad$|$\quad Crop-residue flows};
+
+% ---- band 3: two calculations ----
+\node[band] at (-3.6,3.2) {CALCULATION};
+\node[calc,fill=blue!6]  (ghg) at (0.9,3.2) {Greenhouse gases\\\scriptsize IPCC 2006 + 2019 Refinement};
+\node[calc,fill=red!6]   (air) at (7.7,3.2) {Air pollutants\\\scriptsize EMEP/EEA + IPCC};
+
+% ---- band 4: controls and products ----
+\node[band] at (-3.6,1.4) {CONTROLS};
+\node[ctrl] (ctrl) at (4.3,1.4) {Stream-specific national totals\\$\rightarrow$ provincial controls};
+\node[band] at (-3.6,-0.7) {PRODUCTS};
+\node[prod] (grid) at (-0.4,-0.7) {\SI{0.05}{\degree} grid};
+\node[prod] (dist) at (4.3,-0.7)  {ADM2 districts};
+\node[prod] (ts)   at (9.0,-0.7)  {1990--2024 series};
+
+% ---- cross-cutting ----
+\node[band] at (-3.6,-2.6) {CROSS-CUTTING};
+\node[cross] (cc) at (4.3,-2.6)
+  {Mass balance \quad$|$\quad Parametric uncertainty \quad$|$\quad Structural scenarios};
+
+\draw[arr] (act) -- (led);
+\draw[arr] (led) -- (ghg);
+\draw[arr] (led) -- (air);
+\draw[arr] (ghg) -- (ctrl);
+\draw[arr] (air) -- (ctrl);
+\draw[arr] (ctrl) -- (grid);
+\draw[arr] (ctrl) -- (dist);
+\draw[arr] (ctrl) -- (ts);
+% proxies drive the allocation, not the accounting: route down the left margin so the
+% arrow does not cut through the shared-ledger or calculation boxes
+\draw[arr] (prox.south) -- ++(0,-0.45) -| (-2.4,1.4) -- (ctrl.west);
+\draw[arr,black!55,<->] (-3.05,-2.6) -- (-3.05,5.2)
+  node[midway,rotate=90,anchor=south,font=\scriptsize\itshape,text=black!55]
+  {structural scenarios feed back into the accounting};
+
+% evaluation: short dashed arrows onto the products they evaluate
+\draw[ev] (eval.east) -| (11.4,-0.7) -- (ts.east);
+\draw[ev] (11.4,1.4) -- (ctrl.east);
+\node[rotate=90,font=\scriptsize\itshape,text=black!55,anchor=south] at (11.75,3.4)
+  {external evaluation};
+
+\node[font=\scriptsize,align=center] at (4.3,-4.0)
+  {$\sum_{p} E_{p,s} = E_{s}$ \qquad $\sum_{i\in p} e_{i,s} = E_{p,s}$
+   \qquad $\sum_{d\in p} E_{d,s} = E_{p,s}$\\[1mm]
+   \emph{grid and district products are parallel, not nested}};
+\end{tikzpicture}%
+}
+\caption{%
+Official activity data feed a shared livestock-nitrogen, fertiliser-nitrogen and crop-residue
+accounting system. Separate greenhouse-gas (\CHfour{}, \NtwoO{}, \COtwo{}) and air-pollutant
+(\NHthree{}, \NOx{}, PM$_{2.5}$, CO, NMVOC, BC, SO$_2$) calculations produce stream-specific
+national totals, which become provincial controls and are allocated independently to a
+\SI{0.05}{\degree} grid and to ADM2 districts on process-matched proxies; every product reconciles to
+its control. Dashed arrows denote external evaluation, which is applied to the products rather than
+to the calculations. Evaluation data are never used as inventory inputs.
+}
+\label{fig:overview}
+\end{figure*}

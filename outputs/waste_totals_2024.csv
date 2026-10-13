@@ -1,0 +1,9 @@
+category,co2e_Mt_AR5,co2e_Mt_AR6,note
+Open burning of waste,3.82634,3.77312,IPCC 4C2
+Solid waste disposal,9.16872,8.84127,"IPCC 4A, First Order Decay over a 1960-2024 deposit series (pre-2000 back-projected)"
+Domestic wastewater,24.45785,23.75387,IPCC 4D1: methane by sanitation pathway; nitrous oxide on the 2019 Refinement since rc67
+TOTAL,37.45291,36.36825,
+Sensitivity: disposal without spin-up,8.06999,,"What 4A would report if the model started at the panel's first year with an empty site, i.e. ignoring every deposit before 2000"
+Sensitivity: wastewater on the river-discharge MCF (category total),15.38758,,"IPCC gives stagnant open sewers 0.5 and river discharge 0.1. Pakistani urban drains are open, warm and untreated, which is why 0.5 is central - but EDGAR's waste total sits closer to this reading, and that tension is worth seeing rather than resolving by assertion."
+Sensitivity: wastewater on India's BOD rate (category total),21.17499,,"34 g/person/day (IPCC Table 6.4, India) instead of the 40 regional default that covers Pakistan"
+"Biogenic CO2 (memo, excluded from the national total)",,,3520.3630 Gg CO2 - IPCC 2006 GL Vol 5 Ch 5 s5.1: CO2 from the biomass content of waste is not included in national totals.

@@ -1,0 +1,596 @@
+year,pollutant,category,emissions_kt
+1990,NH3,Field burning of residues,3.5374
+1990,NH3,Managed soils,613.1068
+1990,NH3,Manure management,165.8018
+1990,NH3,TOTAL,782.446
+1990,NOx,Field burning of residues,6.8027
+1990,NOx,Managed soils,49.761
+1990,NOx,TOTAL,56.5638
+1990,CO,Field burning of residues,250.3399
+1990,CO,TOTAL,250.3399
+1990,PM2.5,Field burning of residues,20.6803
+1990,PM2.5,TOTAL,20.6803
+1990,NMVOC,Field burning of residues,19.0476
+1990,NMVOC,TOTAL,19.0476
+1990,BC,Field burning of residues,1.3605
+1990,BC,TOTAL,1.3605
+1990,SO2,Field burning of residues,1.0884
+1990,SO2,TOTAL,1.0884
+1991,NH3,Field burning of residues,3.5585
+1991,NH3,Managed soils,624.0354
+1991,NH3,Manure management,183.058
+1991,NH3,TOTAL,810.6518
+1991,NOx,Field burning of residues,6.8432
+1991,NOx,Managed soils,50.3581
+1991,NOx,TOTAL,57.2013
+1991,CO,Field burning of residues,251.8308
+1991,CO,TOTAL,251.8308
+1991,PM2.5,Field burning of residues,20.8034
+1991,PM2.5,TOTAL,20.8034
+1991,NMVOC,Field burning of residues,19.161
+1991,NMVOC,TOTAL,19.161
+1991,BC,Field burning of residues,1.3686
+1991,BC,TOTAL,1.3686
+1991,SO2,Field burning of residues,1.0949
+1991,SO2,TOTAL,1.0949
+1992,NH3,Field burning of residues,3.6417
+1992,NH3,Managed soils,664.7836
+1992,NH3,Manure management,187.7752
+1992,NH3,TOTAL,856.2005
+1992,NOx,Field burning of residues,7.0033
+1992,NOx,Managed soils,54.7802
+1992,NOx,TOTAL,61.7835
+1992,CO,Field burning of residues,257.7221
+1992,CO,TOTAL,257.7221
+1992,PM2.5,Field burning of residues,21.2901
+1992,PM2.5,TOTAL,21.2901
+1992,NMVOC,Field burning of residues,19.6093
+1992,NMVOC,TOTAL,19.6093
+1992,BC,Field burning of residues,1.4007
+1992,BC,TOTAL,1.4007
+1992,SO2,Field burning of residues,1.1205
+1992,SO2,TOTAL,1.1205
+1993,NH3,Field burning of residues,4.0867
+1993,NH3,Managed soils,678.0257
+1993,NH3,Manure management,196.1572
+1993,NH3,TOTAL,878.2696
+1993,NOx,Field burning of residues,7.859
+1993,NOx,Managed soils,55.8508
+1993,NOx,TOTAL,63.7098
+1993,CO,Field burning of residues,289.2106
+1993,CO,TOTAL,289.2106
+1993,PM2.5,Field burning of residues,23.8913
+1993,PM2.5,TOTAL,23.8913
+1993,NMVOC,Field burning of residues,22.0052
+1993,NMVOC,TOTAL,22.0052
+1993,BC,Field burning of residues,1.5718
+1993,BC,TOTAL,1.5718
+1993,SO2,Field burning of residues,1.2574
+1993,SO2,TOTAL,1.2574
+1994,NH3,Field burning of residues,3.9385
+1994,NH3,Managed soils,706.3827
+1994,NH3,Manure management,213.2031
+1994,NH3,TOTAL,923.5243
+1994,NOx,Field burning of residues,7.574
+1994,NOx,Managed soils,58.3866
+1994,NOx,TOTAL,65.9606
+1994,CO,Field burning of residues,278.722
+1994,CO,TOTAL,278.722
+1994,PM2.5,Field burning of residues,23.0249
+1994,PM2.5,TOTAL,23.0249
+1994,NMVOC,Field burning of residues,21.2071
+1994,NMVOC,TOTAL,21.2071
+1994,BC,Field burning of residues,1.5148
+1994,BC,TOTAL,1.5148
+1994,SO2,Field burning of residues,1.2118
+1994,SO2,TOTAL,1.2118
+1995,NH3,Field burning of residues,4.3918
+1995,NH3,Managed soils,769.0652
+1995,NH3,Manure management,230.6197
+1995,NH3,TOTAL,1004.0767
+1995,NOx,Field burning of residues,8.4457
+1995,NOx,Managed soils,65.2102
+1995,NOx,TOTAL,73.656
+1995,CO,Field burning of residues,310.8033
+1995,CO,TOTAL,310.8033
+1995,PM2.5,Field burning of residues,25.6751
+1995,PM2.5,TOTAL,25.6751
+1995,NMVOC,Field burning of residues,23.6481
+1995,NMVOC,TOTAL,23.6481
+1995,BC,Field burning of residues,1.6891
+1995,BC,TOTAL,1.6891
+1995,SO2,Field burning of residues,1.3513
+1995,SO2,TOTAL,1.3513
+1996,NH3,Field burning of residues,4.5
+1996,NH3,Managed soils,781.444
+1996,NH3,Manure management,243.377
+1996,NH3,TOTAL,1029.321
+1996,NOx,Field burning of residues,8.6538
+1996,NOx,Managed soils,65.9488
+1996,NOx,TOTAL,74.6025
+1996,CO,Field burning of residues,318.4585
+1996,CO,TOTAL,318.4585
+1996,PM2.5,Field burning of residues,26.3074
+1996,PM2.5,TOTAL,26.3074
+1996,NMVOC,Field burning of residues,24.2305
+1996,NMVOC,TOTAL,24.2305
+1996,BC,Field burning of residues,1.7308
+1996,BC,TOTAL,1.7308
+1996,SO2,Field burning of residues,1.3846
+1996,SO2,TOTAL,1.3846
+1997,NH3,Field burning of residues,4.4105
+1997,NH3,Managed soils,812.8021
+1997,NH3,Manure management,254.0369
+1997,NH3,TOTAL,1071.2495
+1997,NOx,Field burning of residues,8.4818
+1997,NOx,Managed soils,68.8778
+1997,NOx,TOTAL,77.3596
+1997,CO,Field burning of residues,312.1304
+1997,CO,TOTAL,312.1304
+1997,PM2.5,Field burning of residues,25.7847
+1997,PM2.5,TOTAL,25.7847
+1997,NMVOC,Field burning of residues,23.7491
+1997,NMVOC,TOTAL,23.7491
+1997,BC,Field burning of residues,1.6964
+1997,BC,TOTAL,1.6964
+1997,SO2,Field burning of residues,1.3571
+1997,SO2,TOTAL,1.3571
+1998,NH3,Field burning of residues,5.0194
+1998,NH3,Managed soils,811.715
+1998,NH3,Manure management,235.9985
+1998,NH3,TOTAL,1052.7328
+1998,NOx,Field burning of residues,9.6527
+1998,NOx,Managed soils,68.8379
+1998,NOx,TOTAL,78.4906
+1998,CO,Field burning of residues,355.2192
+1998,CO,TOTAL,355.2192
+1998,PM2.5,Field burning of residues,29.3442
+1998,PM2.5,TOTAL,29.3442
+1998,NMVOC,Field burning of residues,27.0275
+1998,NMVOC,TOTAL,27.0275
+1998,BC,Field burning of residues,1.9305
+1998,BC,TOTAL,1.9305
+1998,SO2,Field burning of residues,1.5444
+1998,SO2,TOTAL,1.5444
+1999,NH3,Field burning of residues,5.2649
+1999,NH3,Managed soils,845.3754
+1999,NH3,Manure management,240.6918
+1999,NH3,TOTAL,1091.3321
+1999,NOx,Field burning of residues,10.1247
+1999,NOx,Managed soils,72.1206
+1999,NOx,TOTAL,82.2453
+1999,CO,Field burning of residues,372.5894
+1999,CO,TOTAL,372.5894
+1999,PM2.5,Field burning of residues,30.7791
+1999,PM2.5,TOTAL,30.7791
+1999,NMVOC,Field burning of residues,28.3492
+1999,NMVOC,TOTAL,28.3492
+1999,BC,Field burning of residues,2.0249
+1999,BC,TOTAL,2.0249
+1999,SO2,Field burning of residues,1.62
+1999,SO2,TOTAL,1.62
+2000,NH3,Field burning of residues,5.0399
+2000,NH3,Managed soils,863.9999
+2000,NH3,Manure management,245.9638
+2000,NH3,TOTAL,1115.0036
+2000,NOx,Field burning of residues,9.6921
+2000,NOx,Managed soils,73.8292
+2000,NOx,TOTAL,83.5213
+2000,CO,Field burning of residues,356.6677
+2000,CO,TOTAL,356.6677
+2000,PM2.5,Field burning of residues,29.4639
+2000,PM2.5,TOTAL,29.4639
+2000,NMVOC,Field burning of residues,27.1378
+2000,NMVOC,TOTAL,27.1378
+2000,BC,Field burning of residues,1.9384
+2000,BC,TOTAL,1.9384
+2000,SO2,Field burning of residues,1.5507
+2000,SO2,TOTAL,1.5507
+2001,NH3,Field burning of residues,4.3831
+2001,NH3,Managed soils,879.7742
+2001,NH3,Manure management,252.7309
+2001,NH3,TOTAL,1136.8882
+2001,NOx,Field burning of residues,8.429
+2001,NOx,Managed soils,74.722
+2001,NOx,TOTAL,83.151
+2001,CO,Field burning of residues,310.1866
+2001,CO,TOTAL,310.1866
+2001,PM2.5,Field burning of residues,25.6241
+2001,PM2.5,TOTAL,25.6241
+2001,NMVOC,Field burning of residues,23.6012
+2001,NMVOC,TOTAL,23.6012
+2001,BC,Field burning of residues,1.6858
+2001,BC,TOTAL,1.6858
+2001,SO2,Field burning of residues,1.3486
+2001,SO2,TOTAL,1.3486
+2002,NH3,Field burning of residues,4.7578
+2002,NH3,Managed soils,911.5392
+2002,NH3,Manure management,265.3495
+2002,NH3,TOTAL,1181.6465
+2002,NOx,Field burning of residues,9.1496
+2002,NOx,Managed soils,77.5963
+2002,NOx,TOTAL,86.7458
+2002,CO,Field burning of residues,336.704
+2002,CO,TOTAL,336.704
+2002,PM2.5,Field burning of residues,27.8147
+2002,PM2.5,TOTAL,27.8147
+2002,NMVOC,Field burning of residues,25.6188
+2002,NMVOC,TOTAL,25.6188
+2002,BC,Field burning of residues,1.8299
+2002,BC,TOTAL,1.8299
+2002,SO2,Field burning of residues,1.4639
+2002,SO2,TOTAL,1.4639
+2003,NH3,Field burning of residues,5.1192
+2003,NH3,Managed soils,937.4921
+2003,NH3,Manure management,273.8549
+2003,NH3,TOTAL,1216.4662
+2003,NOx,Field burning of residues,9.8446
+2003,NOx,Managed soils,79.9722
+2003,NOx,TOTAL,89.8168
+2003,CO,Field burning of residues,362.2823
+2003,CO,TOTAL,362.2823
+2003,PM2.5,Field burning of residues,29.9277
+2003,PM2.5,TOTAL,29.9277
+2003,NMVOC,Field burning of residues,27.565
+2003,NMVOC,TOTAL,27.565
+2003,BC,Field burning of residues,1.9689
+2003,BC,TOTAL,1.9689
+2003,SO2,Field burning of residues,1.5751
+2003,SO2,TOTAL,1.5751
+2004,NH3,Field burning of residues,5.325
+2004,NH3,Managed soils,970.6585
+2004,NH3,Manure management,280.1359
+2004,NH3,TOTAL,1256.1194
+2004,NOx,Field burning of residues,10.2404
+2004,NOx,Managed soils,83.2239
+2004,NOx,TOTAL,93.4643
+2004,CO,Field burning of residues,376.8457
+2004,CO,TOTAL,376.8457
+2004,PM2.5,Field burning of residues,31.1307
+2004,PM2.5,TOTAL,31.1307
+2004,NMVOC,Field burning of residues,28.673
+2004,NMVOC,TOTAL,28.673
+2004,BC,Field burning of residues,2.0481
+2004,BC,TOTAL,2.0481
+2004,SO2,Field burning of residues,1.6385
+2004,SO2,TOTAL,1.6385
+2005,NH3,Field burning of residues,5.5488
+2005,NH3,Managed soils,1030.9046
+2005,NH3,Manure management,287.0259
+2005,NH3,TOTAL,1323.4793
+2005,NOx,Field burning of residues,10.6707
+2005,NOx,Managed soils,89.6812
+2005,NOx,TOTAL,100.3519
+2005,CO,Field burning of residues,392.6812
+2005,CO,TOTAL,392.6812
+2005,PM2.5,Field burning of residues,32.4389
+2005,PM2.5,TOTAL,32.4389
+2005,NMVOC,Field burning of residues,29.8779
+2005,NMVOC,TOTAL,29.8779
+2005,BC,Field burning of residues,2.1341
+2005,BC,TOTAL,2.1341
+2005,SO2,Field burning of residues,1.7073
+2005,SO2,TOTAL,1.7073
+2006,NH3,Field burning of residues,5.4019
+2006,NH3,Managed soils,1093.5173
+2006,NH3,Manure management,324.8808
+2006,NH3,TOTAL,1423.7999
+2006,NOx,Field burning of residues,10.3882
+2006,NOx,Managed soils,93.2699
+2006,NOx,TOTAL,103.6581
+2006,CO,Field burning of residues,382.2859
+2006,CO,TOTAL,382.2859
+2006,PM2.5,Field burning of residues,31.5801
+2006,PM2.5,TOTAL,31.5801
+2006,NMVOC,Field burning of residues,29.087
+2006,NMVOC,TOTAL,29.087
+2006,BC,Field burning of residues,2.0776
+2006,BC,TOTAL,2.0776
+2006,SO2,Field burning of residues,1.6621
+2006,SO2,TOTAL,1.6621
+2007,NH3,Field burning of residues,5.8935
+2007,NH3,Managed soils,1082.2379
+2007,NH3,Manure management,339.7725
+2007,NH3,TOTAL,1427.9039
+2007,NOx,Field burning of residues,11.3337
+2007,NOx,Managed soils,90.9436
+2007,NOx,TOTAL,102.2773
+2007,CO,Field burning of residues,417.0803
+2007,CO,TOTAL,417.0803
+2007,PM2.5,Field burning of residues,34.4545
+2007,PM2.5,TOTAL,34.4545
+2007,NMVOC,Field burning of residues,31.7344
+2007,NMVOC,TOTAL,31.7344
+2007,BC,Field burning of residues,2.2667
+2007,BC,TOTAL,2.2667
+2007,SO2,Field burning of residues,1.8134
+2007,SO2,TOTAL,1.8134
+2008,NH3,Field burning of residues,6.695
+2008,NH3,Managed soils,1144.1475
+2008,NH3,Manure management,356.0481
+2008,NH3,TOTAL,1506.8905
+2008,NOx,Field burning of residues,12.8749
+2008,NOx,Managed soils,96.8156
+2008,NOx,TOTAL,109.6905
+2008,CO,Field burning of residues,473.7969
+2008,CO,TOTAL,473.7969
+2008,PM2.5,Field burning of residues,39.1397
+2008,PM2.5,TOTAL,39.1397
+2008,NMVOC,Field burning of residues,36.0498
+2008,NMVOC,TOTAL,36.0498
+2008,BC,Field burning of residues,2.575
+2008,BC,TOTAL,2.575
+2008,SO2,Field burning of residues,2.06
+2008,SO2,TOTAL,2.06
+2009,NH3,Field burning of residues,6.4457
+2009,NH3,Managed soils,1267.3809
+2009,NH3,Manure management,373.1905
+2009,NH3,TOTAL,1647.0171
+2009,NOx,Field burning of residues,12.3956
+2009,NOx,Managed soils,110.065
+2009,NOx,TOTAL,122.4607
+2009,CO,Field burning of residues,456.1594
+2009,CO,TOTAL,456.1594
+2009,PM2.5,Field burning of residues,37.6827
+2009,PM2.5,TOTAL,37.6827
+2009,NMVOC,Field burning of residues,34.7078
+2009,NMVOC,TOTAL,34.7078
+2009,BC,Field burning of residues,2.4791
+2009,BC,TOTAL,2.4791
+2009,SO2,Field burning of residues,1.9833
+2009,SO2,TOTAL,1.9833
+2010,NH3,Field burning of residues,5.3838
+2010,NH3,Managed soils,1245.4711
+2010,NH3,Manure management,386.3584
+2010,NH3,TOTAL,1637.2134
+2010,NOx,Field burning of residues,10.3535
+2010,NOx,Managed soils,106.3541
+2010,NOx,TOTAL,116.7076
+2010,CO,Field burning of residues,381.0097
+2010,CO,TOTAL,381.0097
+2010,PM2.5,Field burning of residues,31.4747
+2010,PM2.5,TOTAL,31.4747
+2010,NMVOC,Field burning of residues,28.9899
+2010,NMVOC,TOTAL,28.9899
+2010,BC,Field burning of residues,2.0707
+2010,BC,TOTAL,2.0707
+2010,SO2,Field burning of residues,1.6566
+2010,SO2,TOTAL,1.6566
+2011,NH3,Field burning of residues,6.3632
+2011,NH3,Managed soils,1260.5486
+2011,NH3,Manure management,410.9826
+2011,NH3,TOTAL,1677.8945
+2011,NOx,Field burning of residues,12.237
+2011,NOx,Managed soils,106.4648
+2011,NOx,TOTAL,118.7017
+2011,CO,Field burning of residues,450.3202
+2011,CO,TOTAL,450.3202
+2011,PM2.5,Field burning of residues,37.2004
+2011,PM2.5,TOTAL,37.2004
+2011,NMVOC,Field burning of residues,34.2635
+2011,NMVOC,TOTAL,34.2635
+2011,BC,Field burning of residues,2.4474
+2011,BC,TOTAL,2.4474
+2011,SO2,Field burning of residues,1.9579
+2011,SO2,TOTAL,1.9579
+2012,NH3,Field burning of residues,6.0257
+2012,NH3,Managed soils,1218.8458
+2012,NH3,Manure management,431.868
+2012,NH3,TOTAL,1656.7395
+2012,NOx,Field burning of residues,11.5879
+2012,NOx,Managed soils,99.8027
+2012,NOx,TOTAL,111.3906
+2012,CO,Field burning of residues,426.4341
+2012,CO,TOTAL,426.4341
+2012,PM2.5,Field burning of residues,35.2272
+2012,PM2.5,TOTAL,35.2272
+2012,NMVOC,Field burning of residues,32.4461
+2012,NMVOC,TOTAL,32.4461
+2012,BC,Field burning of residues,2.3176
+2012,BC,TOTAL,2.3176
+2012,SO2,Field burning of residues,1.8541
+2012,SO2,TOTAL,1.8541
+2013,NH3,Field burning of residues,7.0781
+2013,NH3,Managed soils,1317.699
+2013,NH3,Manure management,450.5649
+2013,NH3,TOTAL,1775.342
+2013,NOx,Field burning of residues,13.6117
+2013,NOx,Managed soils,110.1467
+2013,NOx,TOTAL,123.7583
+2013,CO,Field burning of residues,500.9087
+2013,CO,TOTAL,500.9087
+2013,PM2.5,Field burning of residues,41.3794
+2013,PM2.5,TOTAL,41.3794
+2013,NMVOC,Field burning of residues,38.1126
+2013,NMVOC,TOTAL,38.1126
+2013,BC,Field burning of residues,2.7223
+2013,BC,TOTAL,2.7223
+2013,SO2,Field burning of residues,2.1779
+2013,SO2,TOTAL,2.1779
+2014,NH3,Field burning of residues,7.0694
+2014,NH3,Managed soils,1324.2896
+2014,NH3,Manure management,474.1735
+2014,NH3,TOTAL,1805.5325
+2014,NOx,Field burning of residues,13.595
+2014,NOx,Managed soils,109.3295
+2014,NOx,TOTAL,122.9245
+2014,CO,Field burning of residues,500.2943
+2014,CO,TOTAL,500.2943
+2014,PM2.5,Field burning of residues,41.3287
+2014,PM2.5,TOTAL,41.3287
+2014,NMVOC,Field burning of residues,38.0659
+2014,NMVOC,TOTAL,38.0659
+2014,BC,Field burning of residues,2.719
+2014,BC,TOTAL,2.719
+2014,SO2,Field burning of residues,2.1752
+2014,SO2,TOTAL,2.1752
+2015,NH3,Field burning of residues,7.0067
+2015,NH3,Managed soils,1355.8261
+2015,NH3,Manure management,499.3124
+2015,NH3,TOTAL,1862.1452
+2015,NOx,Field burning of residues,13.4744
+2015,NOx,Managed soils,111.2191
+2015,NOx,TOTAL,124.6935
+2015,CO,Field burning of residues,495.858
+2015,CO,TOTAL,495.858
+2015,PM2.5,Field burning of residues,40.9622
+2015,PM2.5,TOTAL,40.9622
+2015,NMVOC,Field burning of residues,37.7283
+2015,NMVOC,TOTAL,37.7283
+2015,BC,Field burning of residues,2.6949
+2015,BC,TOTAL,2.6949
+2015,SO2,Field burning of residues,2.1559
+2015,SO2,TOTAL,2.1559
+2016,NH3,Field burning of residues,7.3878
+2016,NH3,Managed soils,1398.4171
+2016,NH3,Manure management,522.1684
+2016,NH3,TOTAL,1927.9733
+2016,NOx,Field burning of residues,14.2073
+2016,NOx,Managed soils,114.6448
+2016,NOx,TOTAL,128.8521
+2016,CO,Field burning of residues,522.8278
+2016,CO,TOTAL,522.8278
+2016,PM2.5,Field burning of residues,43.1901
+2016,PM2.5,TOTAL,43.1901
+2016,NMVOC,Field burning of residues,39.7804
+2016,NMVOC,TOTAL,39.7804
+2016,BC,Field burning of residues,2.8415
+2016,BC,TOTAL,2.8415
+2016,SO2,Field burning of residues,2.2732
+2016,SO2,TOTAL,2.2732
+2017,NH3,Field burning of residues,7.9537
+2017,NH3,Managed soils,1470.7485
+2017,NH3,Manure management,555.5487
+2017,NH3,TOTAL,2034.251
+2017,NOx,Field burning of residues,15.2955
+2017,NOx,Managed soils,121.2906
+2017,NOx,TOTAL,136.5861
+2017,CO,Field burning of residues,562.8756
+2017,CO,TOTAL,562.8756
+2017,PM2.5,Field burning of residues,46.4984
+2017,PM2.5,TOTAL,46.4984
+2017,NMVOC,Field burning of residues,42.8275
+2017,NMVOC,TOTAL,42.8275
+2017,BC,Field burning of residues,3.0591
+2017,BC,TOTAL,3.0591
+2017,SO2,Field burning of residues,2.4473
+2017,SO2,TOTAL,2.4473
+2018,NH3,Field burning of residues,7.3364
+2018,NH3,Managed soils,1502.9563
+2018,NH3,Manure management,587.1294
+2018,NH3,TOTAL,2097.4221
+2018,NOx,Field burning of residues,14.1084
+2018,NOx,Managed soils,122.8406
+2018,NOx,TOTAL,136.949
+2018,CO,Field burning of residues,519.1899
+2018,CO,TOTAL,519.1899
+2018,PM2.5,Field burning of residues,42.8896
+2018,PM2.5,TOTAL,42.8896
+2018,NMVOC,Field burning of residues,39.5036
+2018,NMVOC,TOTAL,39.5036
+2018,BC,Field burning of residues,2.8217
+2018,BC,TOTAL,2.8217
+2018,SO2,Field burning of residues,2.2573
+2018,SO2,TOTAL,2.2573
+2019,NH3,Field burning of residues,7.4355
+2019,NH3,Managed soils,1547.9403
+2019,NH3,Manure management,620.7704
+2019,NH3,TOTAL,2176.1462
+2019,NOx,Field burning of residues,14.2991
+2019,NOx,Managed soils,126.0325
+2019,NOx,TOTAL,140.3316
+2019,CO,Field burning of residues,526.2061
+2019,CO,TOTAL,526.2061
+2019,PM2.5,Field burning of residues,43.4692
+2019,PM2.5,TOTAL,43.4692
+2019,NMVOC,Field burning of residues,40.0374
+2019,NMVOC,TOTAL,40.0374
+2019,BC,Field burning of residues,2.8598
+2019,BC,TOTAL,2.8598
+2019,SO2,Field burning of residues,2.2879
+2019,SO2,TOTAL,2.2879
+2020,NH3,Field burning of residues,8.4529
+2020,NH3,Managed soils,1588.8979
+2020,NH3,Manure management,657.0314
+2020,NH3,TOTAL,2254.3821
+2020,NOx,Field burning of residues,16.2556
+2020,NOx,Managed soils,128.9322
+2020,NOx,TOTAL,145.1878
+2020,CO,Field burning of residues,598.2056
+2020,CO,TOTAL,598.2056
+2020,PM2.5,Field burning of residues,49.417
+2020,PM2.5,TOTAL,49.417
+2020,NMVOC,Field burning of residues,45.5156
+2020,NMVOC,TOTAL,45.5156
+2020,BC,Field burning of residues,3.2511
+2020,BC,TOTAL,3.2511
+2020,SO2,Field burning of residues,2.6009
+2020,SO2,TOTAL,2.6009
+2021,NH3,Field burning of residues,9.28
+2021,NH3,Managed soils,1661.7366
+2021,NH3,Manure management,696.3314
+2021,NH3,TOTAL,2367.348
+2021,NOx,Field burning of residues,17.8462
+2021,NOx,Managed soils,135.4992
+2021,NOx,TOTAL,153.3454
+2021,CO,Field burning of residues,656.7407
+2021,CO,TOTAL,656.7407
+2021,PM2.5,Field burning of residues,54.2525
+2021,PM2.5,TOTAL,54.2525
+2021,NMVOC,Field burning of residues,49.9694
+2021,NMVOC,TOTAL,49.9694
+2021,BC,Field burning of residues,3.5692
+2021,BC,TOTAL,3.5692
+2021,SO2,Field burning of residues,2.8554
+2021,SO2,TOTAL,2.8554
+2022,NH3,Field burning of residues,8.2711
+2022,NH3,Managed soils,1691.745
+2022,NH3,Manure management,738.4719
+2022,NH3,TOTAL,2438.4879
+2022,NOx,Field burning of residues,15.906
+2022,NOx,Managed soils,136.488
+2022,NOx,TOTAL,152.394
+2022,CO,Field burning of residues,585.3391
+2022,CO,TOTAL,585.3391
+2022,PM2.5,Field burning of residues,48.3541
+2022,PM2.5,TOTAL,48.3541
+2022,NMVOC,Field burning of residues,44.5367
+2022,NMVOC,TOTAL,44.5367
+2022,BC,Field burning of residues,3.1812
+2022,BC,TOTAL,3.1812
+2022,SO2,Field burning of residues,2.545
+2022,SO2,TOTAL,2.545
+2023,NH3,Field burning of residues,9.5731
+2023,NH3,Managed soils,1761.1787
+2023,NH3,Manure management,784.0856
+2023,NH3,TOTAL,2554.8374
+2023,NOx,Field burning of residues,18.4097
+2023,NOx,Managed soils,142.2846
+2023,NOx,TOTAL,160.6943
+2023,CO,Field burning of residues,677.4781
+2023,CO,TOTAL,677.4781
+2023,PM2.5,Field burning of residues,55.9656
+2023,PM2.5,TOTAL,55.9656
+2023,NMVOC,Field burning of residues,51.5472
+2023,NMVOC,TOTAL,51.5472
+2023,BC,Field burning of residues,3.6819
+2023,BC,TOTAL,3.6819
+2023,SO2,Field burning of residues,2.9456
+2023,SO2,TOTAL,2.9456
+2024,NH3,Field burning of residues,9.245
+2024,NH3,Managed soils,1822.4944
+2024,NH3,Manure management,842.7927
+2024,NH3,TOTAL,2674.5321
+2024,NOx,Field burning of residues,17.7788
+2024,NOx,Managed soils,145.4298
+2024,NOx,TOTAL,163.2086
+2024,CO,Field burning of residues,654.2595
+2024,CO,TOTAL,654.2595
+2024,PM2.5,Field burning of residues,54.0475
+2024,PM2.5,TOTAL,54.0475
+2024,NMVOC,Field burning of residues,49.7806
+2024,NMVOC,TOTAL,49.7806
+2024,BC,Field burning of residues,3.5558
+2024,BC,TOTAL,3.5558
+2024,SO2,Field burning of residues,2.8446
+2024,SO2,TOTAL,2.8446

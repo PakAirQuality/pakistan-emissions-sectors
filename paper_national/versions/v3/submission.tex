@@ -1,0 +1,11 @@
+% One-column review layout for the compact editorial rewrite (author's wrapper).
+%
+% pakemis_rewritten.tex chooses its own class: with \reviewversion defined it takes
+% [essd,manuscript] (one column, the layout a reviewer reads), and without it [essd]
+% (the two-column reading copy). This file exists only to define the macro first, and
+% must stay contentless - two files carrying prose about the same inventory is the
+% situation tests/test_release_identity.py was written to catch.
+%
+% Build:  make paper-rewrite-review
+\def\reviewversion{1}
+\input{paper.tex}

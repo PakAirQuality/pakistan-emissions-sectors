@@ -1,0 +1,42 @@
+% ===========================================================================
+% paper_common/macros.tex - the shorthand every manuscript shares.
+%
+% Split from preamble.tex in the ESSD re-targeting: the national article now compiles
+% under the Copernicus class, which loads its own packages and forbids most of what
+% preamble.tex sets (geometry-like options, a second hyperref, placeins), but it needs
+% exactly the same shorthand as the sector reports. The macros therefore live here, on
+% their own, and preamble.tex inputs this file so that every other manuscript keeps
+% compiling unchanged. A macro that renders differently in two documents is the defect
+% this file exists to prevent; define it once.
+%
+% Requires: siunitx (for \DeclareSIUnit and \si) - the caller loads it.
+% ===========================================================================
+
+% Gas and pollutant names.
+\newcommand{\COtwo}{CO\textsubscript{2}}
+\newcommand{\COe}{CO\textsubscript{2}e}
+\newcommand{\CHfour}{CH\textsubscript{4}}
+\newcommand{\NtwoO}{N\textsubscript{2}O}
+\newcommand{\NHthree}{NH\textsubscript{3}}
+\newcommand{\NOx}{NO\textsubscript{x}}
+\newcommand{\SOtwo}{SO\textsubscript{2}}
+\newcommand{\PM}{PM\textsubscript{2.5}}
+\newcommand{\MCF}{MCF}
+\newcommand{\Mt}{\text{Mt~\COe}}
+\newcommand{\tCha}{\si{\tonne\per\hectare}}
+\newcommand{\AFOLU}{AFOLU}
+\newcommand{\GLW}{GLW\,4}
+\newcommand{\EFone}{EF\textsubscript{1}}
+
+% siunitx: allow Mt, Tg, ha, head, yr, dB
+\DeclareSIUnit{\head}{head}
+\DeclareSIUnit{\yr}{yr}
+\DeclareSIUnit{\dB}{dB}
+
+% A file name is the one long unbreakable token these documents are full of -
+% \texttt{waste\_air\_pollutants\_2024.csv} is wider than a two-column measure and TeX prints
+% it past the margin rather than breaking it. Allowing a break AFTER each escaped underscore
+% costs nothing and inserts no hyphen, which matters: a hyphenated file name is a wrong file
+% name. This is one line because every such name in every document is written with \_.
+\let\pkinvunderscore\_
+\renewcommand{\_}{\pkinvunderscore\allowbreak}

@@ -1,0 +1,58 @@
+% ===========================================================================
+\section{Related Work}
+\label{sec:related}
+% ===========================================================================
+
+\subsection{Fuel-based and generation-based power inventories}
+
+Power-sector emissions can be built from fuel consumed or from electricity generated with an
+assumed heat rate. The IPCC 2006 Guidelines describe the fuel route as Tier~1 and treat
+generation-based estimates as a fallback where fuel data are unavailable \citep{ipcc2006stationary},
+because the heat rate is an efficiency assumption that varies by plant, by load and by year,
+and because it is precisely the quantity a compiler is least able to verify.
+
+Pakistan's regulator publishes fuel directly, so the fallback is unnecessary here. This is
+worth stating because a workbook consolidating Pakistani plant-level data---which supplied the
+captive register used in this paper---computes its \COtwo{} as kilograms per megawatt-hour
+derived from IPCC factors through an assumed plant-efficiency range. That is the generation
+route, and its output is not used here for that reason, while its plant register is.
+
+\subsection{Coal quality and why the unit matters}
+
+The two coals in Pakistan's fleet are imported bituminous, burned at Sahiwal, Port Qasim and
+Hub, and domestic Thar lignite. Published proximate analyses of Thar coal report moisture near
+\SI{46}{\percent}, ash around \SI{6.4}{\percent} and calorific values near
+\SI{3030}{} kcal/kg---roughly half that of imported steam coal.
+
+That difference is the whole issue. Emission factors expressed per tonne carry it in full;
+factors expressed per terajoule do not, because the calorific value is exactly what the
+differing energy content describes. The methodological literature on coal inventories treats
+blend uncertainty as a major term, and it is---on a mass basis. Section~\ref{sec:methods}
+shows it is a \SI{6.8}{\percent} term on an energy basis, which changes what a compiler should
+worry about.
+
+\subsection{Captive gas self-generation and the industrial-combustion gap}
+
+Industrial self-generation sits awkwardly in inventory practice. IPCC assigns it to 1A2 with
+manufacturing-industry factors, but the data that would support it are usually collected---if
+at all---by an electricity regulator whose remit stops at plants selling into the grid.
+
+For Pakistan the consequence is visible in the international comparisons: EDGAR
+\citep{edgar2025booklet} reports Pakistani industrial combustion near \SI{44}{\mega\tonne} while most
+national compilations report nothing, and the difference between a regulator's scope and an
+inventory's scope is a substantial part of that. The activity data that do exist come from a
+different regulator entirely---the oil and gas authority, which reports gas delivered to
+captive power because it regulates the pipeline rather than the plant.
+
+\subsection{Uncontrolled factors and control-device inventories}
+
+US EPA's AP-42 compilation \citep{epaap42} publishes emission factors for coal, oil and gas
+combustion predominantly as \emph{uncontrolled} values, with separate treatment of control
+efficiencies, because what leaves a furnace and what leaves a stack differ by up to two orders
+of magnitude for particulate and by most of the mass for sulphur.
+
+Applying uncontrolled factors to a fleet with precipitators and desulphurisation, without
+saying so, is a well-known way to overstate a power sector's air pollutants by an order of
+magnitude. Section~\ref{sec:air} takes the position that where the control inventory does not
+exist, the honest output is the uncontrolled bound explicitly labelled as one---not a
+plausible-looking estimate resting on an invented removal efficiency.

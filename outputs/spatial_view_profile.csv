@@ -1,0 +1,16 @@
+scope,spatial_view,meaning,co2e_Mt_AR5,share_of_scope_pct
+NATIONAL,accounting,"placed where the statistic is booked; the emission occurs wherever the vehicle, boiler or process is",42.2608,9.5
+NATIONAL,origin,placed where the generating activity originates; the release is elsewhere and its geography is not held,37.4529,8.42
+NATIONAL,physical,placed where the emission happens,365.2417,82.09
+agriculture,physical,placed where the emission happens,223.4545,100.0
+aviation,accounting,"placed where the statistic is booked; the emission occurs wherever the vehicle, boiler or process is",0.2514,83.47
+aviation,physical,placed where the emission happens,0.0498,16.53
+fugitives,physical,placed where the emission happens,23.4994,100.0
+industry,physical,placed where the emission happens,22.5816,100.0
+ippu,accounting,"placed where the statistic is booked; the emission occurs wherever the vehicle, boiler or process is",0.0833,0.33
+ippu,physical,placed where the emission happens,25.4521,99.67
+power,physical,placed where the emission happens,45.5896,100.0
+railways,physical,placed where the emission happens,0.3944,100.0
+residential,physical,placed where the emission happens,24.2204,100.0
+transport,accounting,"placed where the statistic is booked; the emission occurs wherever the vehicle, boiler or process is",41.9262,100.0
+waste,origin,placed where the generating activity originates; the release is elsewhere and its geography is not held,37.4529,100.0

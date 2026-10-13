@@ -1,0 +1,16 @@
+# POWER COAL, TWO LANES RECONCILED (rc46 Wave 2): HDIP's coal-by-consumer power
+# column against the NEPRA plant-fuel ledger's named-station coal, per fiscal year.
+# The unmatched tonnage is typed and published, never spread across plants; its sign
+# FLIPS across the window, and the negative years are the brick-column spike years -
+# see scripts/build_coal_reconciliation.py for the exhaustive-categories argument.
+fiscal_year,hdip_power_kt,nepra_named_plant_kt,unmatched_kt,unmatched_direction,hdip_brick_kt,note
+2015-16,204.4,,,no_nepra_lane,3541.1,"the plant-fuel ledger begins FY2019-20; before it HDIP is the only power-coal lane; brick shown as the supplement PRINTS it (3,541.1) - the solid-fuel stream itself adopts the balance-consistent PEY vintage 3,337.1, see solid_fuels.py"
+2016-17,859.6,,,no_nepra_lane,2855.3,the plant-fuel ledger begins FY2019-20; before it HDIP is the only power-coal lane
+2017-18,4436.1,,,no_nepra_lane,3941.7,the plant-fuel ledger begins FY2019-20; before it HDIP is the only power-coal lane
+2018-19,5901.5,,,no_nepra_lane,5391.2,the plant-fuel ledger begins FY2019-20; before it HDIP is the only power-coal lane
+2019-20,10897.0,12323.9,-1426.9,named_plants_exceed_hdip,8184.0,"NEPRA's named stations report more coal than HDIP books to power; HDIP's exhaustive categories put the difference somewhere, and the brick column's spike this year is where"
+2020-21,9215.0,13110.8,-3895.8,named_plants_exceed_hdip,8678.0,"NEPRA's named stations report more coal than HDIP books to power; HDIP's exhaustive categories put the difference somewhere, and the brick column's spike this year is where"
+2021-22,12808.0,12158.9,649.1,hdip_exceeds_named_plants,5643.0,"published, never spread: no station receives a share of a national residual"
+2022-23,15493.0,14009.0,1484.0,hdip_exceeds_named_plants,2991.0,"published, never spread: no station receives a share of a national residual"
+2023-24,19196.0,15876.2,3319.8,hdip_exceeds_named_plants,1129.0,"published, never spread: no station receives a share of a national residual"
+2024-25,17087.0,,,no_nepra_lane,3483.0,beyond the plant-fuel ledger's last ingested year

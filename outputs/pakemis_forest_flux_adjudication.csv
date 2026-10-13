@@ -1,0 +1,30 @@
+# CAN A FOREST-LAND COMPONENT BE BUILT? The two available accounts disagree on the SIGN.
+# A SCREENING, beside the inventory and never inside it: LULUCF stays outside the reported
+# boundary and no pin moves. Pakistan's own submission books forest land as a SOURCE and
+# FAOSTAT books it as a SINK in the same year, a gap of about 7 per cent of the national
+# total. FAOSTAT's own columns carry the mechanism: its Pakistani forest area RISES from
+# 2020 at exactly +20.786 kha a year - constant to three decimals over four years, so
+# interpolation rather than observation - and its net forest conversion is exactly 0.000
+# kha from 2020, against 26.104 kha in 2015. Pakistan's REDD+ reference level documents
+# forest area FALLING from 4,981,118 ha in 2004 to 4,786,346 ha in 2012. The areas are
+# also not the same quantity: FRA's 5 m tree definition against Pakistan's 2 m plus legal
+# notification. See scripts/build_forest_flux_adjudication.py for what each row cites.
+account,quantity,period,value,unit,sign_meaning,source,note
+Pakistan BTR1 / CRT,forest land flux,FY2020-21,28.44,Mt CO2,positive is a SOURCE,data/btr1_national_inventory.csv (3.B.1),"the submission's own figure; its CH4 and N2O carry the rest of the 28.64 Mt CO2e block, which is biomass burning folded into land"
+FAOSTAT,forest land flux,CY2015,-0.056,Mt CO2,negative is a SINK,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,"Forestland = carbon stock change minus net forest conversion, in FAOSTAT's own decomposition"
+FAOSTAT,forest land flux,CY2020,-4.107,Mt CO2,negative is a SINK,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,"Forestland = carbon stock change minus net forest conversion, in FAOSTAT's own decomposition"
+FAOSTAT,forest land flux,CY2021,-3.498,Mt CO2,negative is a SINK,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,"Forestland = carbon stock change minus net forest conversion, in FAOSTAT's own decomposition"
+FAOSTAT,forest land flux,CY2022,-3.498,Mt CO2,negative is a SINK,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,"Forestland = carbon stock change minus net forest conversion, in FAOSTAT's own decomposition"
+FAOSTAT,forest land flux,CY2023,-3.498,Mt CO2,negative is a SINK,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,"Forestland = carbon stock change minus net forest conversion, in FAOSTAT's own decomposition"
+FAOSTAT,forest area,CY2015,3036.050,1000 ha,n.a.,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,net forest conversion in the same year: 26.104 kha
+FAOSTAT,forest area,CY2020,3088.530,1000 ha,n.a.,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,net forest conversion in the same year: 0.000 kha
+FAOSTAT,forest area,CY2021,3109.316,1000 ha,n.a.,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,net forest conversion in the same year: 0.000 kha
+FAOSTAT,forest area,CY2022,3130.102,1000 ha,n.a.,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,net forest conversion in the same year: 0.000 kha
+FAOSTAT,forest area,CY2023,3150.888,1000 ha,n.a.,data/raw/land/faostat_Emissions_Land_Use_Forests_E_All_Data_(Normalized).zip,net forest conversion in the same year: 0.000 kha
+PakEmis exploratory land module,forest land flux,FY2023-24,-3.52,Mt CO2,negative is a SINK,outputs/lulucf_totals.csv (3.B.1),"NOT independent of FAOSTAT on the decisive quantity: its deforestation_area_ha_yr is 0 ha/yr, justified in data/sectors/lulucf/parameters/lulucf_params.csv as ""FAO net forest conversion ~0 in recent years"". Its agreement with FAOSTAT is that assumption counted twice"
+Pakistan BTR1 / CRT,CRT forest gross gains,FY2020-21,7113.083,kt C,"gains are removals, losses are emissions",Pakistan CRT 2.83 LULUCF 4.A living biomass,"printed in the implied-factor column block, which the land lane records as a column defect in the submission; the pair nets to the BTR's own printed forest figure"
+Pakistan BTR1 / CRT,CRT forest gross losses,FY2020-21,14868.348,kt C,"gains are removals, losses are emissions",Pakistan CRT 2.83 LULUCF 4.A living biomass,"printed in the implied-factor column block, which the land lane records as a column defect in the submission; the pair nets to the BTR's own printed forest figure"
+diagnostic,CRT forest net from the gross pair,FY2020-21,28.436,Mt CO2,positive is a SOURCE,derived from the two gross rows above,"reproduces the submission's printed 28.44 Mt, which is the check that the gross pair was read correctly"
+diagnostic,CRT gross loss over gross gain,FY2020-21,2.09,ratio,above 1 means forest is being LOST,"Pakistan CRT 2.83 LULUCF 4.A living biomass, via the land lane extraction","gross losses 14868.348 kt C against gains 7113.083 kt C, which at 44/12 net to +28.436 Mt CO2 and reproduce the submission's printed figure. The exploratory module's zero-deforestation justification says afforestation offsets gross loss; the submission says loss is twice gain"
+diagnostic,"FAOSTAT area step, 2020-2023",CY2020-CY2023,20.786/20.786/20.786,1000 ha per year,positive is forest GAIN,derived from the FAOSTAT rows above,"identical to three decimals across every step, which is interpolation between FRA anchors and not an annual observation"
+diagnostic,"sign disagreement, matched year",FY2020-21 against CY2020,32.55,Mt CO2,the submission minus FAOSTAT,derived from the two accounts above,"the two INDEPENDENT accounts disagree on the DIRECTION of the flux, not its size, so no forest component can be built from them until the area trend is settled; Pakistan's national forest definition (2 m plus legal notification, the CRT's 4079.631 kha) is also not FAOSTAT's FRA 5 m definition"

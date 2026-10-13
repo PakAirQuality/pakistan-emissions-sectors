@@ -1,0 +1,33 @@
+{
+  "name": "power_extract",
+  "producer": "pkinv.sectors.power.official_reporting.extract",
+  "producer_sha256": "69bec702a4cde73f65341f2de926774aadaf1c39b8ac16c96d3fa8643b75bb15",
+  "result": {
+    "columns": [
+      "source_key",
+      "activity_TJ",
+      "ief_co2_t_per_TJ",
+      "ief_ch4_kg_per_TJ",
+      "ief_n2o_kg_per_TJ",
+      "co2_kt",
+      "ch4_kt",
+      "n2o_kt",
+      "basis",
+      "notation"
+    ],
+    "key_column": "source_key",
+    "kind": "mapping",
+    "path": "power_extract.csv",
+    "sha256": "1b2d632d7332112b473a7c73219b87cab91dd2c989e42f4098fb2bc25b2f7480",
+    "types": [
+      "sfnnnfffsn",
+      "sfffffffsn",
+      "sfffffffsn",
+      "snnnnnnnss",
+      "snnnnnnnss"
+    ]
+  },
+  "schema": "pkinv.source_extract/v1",
+  "source": "sources/Aviation/PAK_CRT_2024.zip",
+  "source_sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+}

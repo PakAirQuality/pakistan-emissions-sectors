@@ -1,0 +1,186 @@
+% ===========================================================================
+\section{Discussion}
+\label{sec:discussion}
+% ===========================================================================
+
+\subsection{What the architecture actually bought}
+
+The claim in Section~\ref{sec:architecture} is testable against the project's own history,
+and it is worth being honest about which parts of it paid off.
+
+The clearest return was on \emph{late additions}. Fugitives and cement were built last, after
+the analysis layer was mature. Neither required any change to the uncertainty analysis, the
+key-category screen, the benchmark comparison, the provincial allocation or the figure
+generation; both appeared in every national output on first registration. In a spreadsheet
+inventory, adding a sector means extending every downstream sheet by hand, and the cost of a
+new sector rises with the number of sectors already present. Here it is flat.
+
+The second return was on \emph{invariants catching real errors}. Several of the \num{27}
+contract tests exist because they failed, and Table~\ref{tab:qa} is the audit rather than the
+anecdote: each row is a defect this project shipped, what it would have cost, how it was
+found, and the guard that now makes it a build failure. The pattern across them is worth more
+than any single row. \textbf{Every one was invisible to review}, because nothing about the
+resulting numbers looked wrong---and the later ones were invisible to the numeric tests too,
+because they were claims about words, boundaries or layout rather than about digits.
+
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.19\linewidth}p{0.17\linewidth}p{0.16\linewidth}p{0.18\linewidth}p{0.20\linewidth}@{}}
+\toprule
+\textbf{Defect} & \textbf{Consequence} & \textbf{Detection} & \textbf{Correction} &
+\textbf{Regression guard} \\
+\midrule
+Two sectors proposing one category name & silent double-count & contract test on
+registration & globally unique names & category-name invariant \\
+Correlation group spanning two categories & variance apportionment ill-defined & contract
+test & groups within one category & correlation-group invariant \\
+Wrong parallel factor table & category trace gases 8\% out, \COtwo{} exact & factor audit &
+category-specific factor identity & factor-identity test \\
+Ambiguous integer year labels & mixed-period national total & period audit & explicit
+start/end dates & period-schema test \\
+Unread public activity table & \SI{3.40}{\mega\tonne} coverage gap & repository audit & OCAC
+liquid customer class read & completeness test \\
+Retired provincial power proxy & \SI{8.8}{\mega\tonne} in the wrong province & spatial
+diagnostic & plant-wise generation & allocation test \\
+Source documents never archived & provenance unverifiable & archive audit & source-document
+registry & document-manifest test \\
+Figure sources named by year & two manuscripts shipped pre-harmonisation figures & external
+review & year resolved at read time, absence raises & figure-source test \\
+Stale gas decomposition & a decomposition summing to \SI{455.14}{\mega\tonne} against a
+printed \SI{448.00}{} & external review & generated category~$\times$~gas ledger &
+gas-total invariant \\
+Declared-debt list & printed quantities tracked but unverified & external review & the list
+deleted; no exemption without a reason & unconditional coverage test \\
+Two category hierarchies & \num{20} categories screened against \num{24} reported & external
+review & IPCC category made canonical & one-hierarchy test \\
+Stale comparative language & ``doubles'' surviving a ratio of \num{1.61} & external review &
+claims registry binding phrase to relation & semantic-claims test \\
+One correlation group per row & a factor correlation reported as widening a category by more
+than half when it moves it by nothing & external review & uncertainty carried per parameter &
+decomposition-identity test \\
+Content printed off the page & \SI{104}{pt} of a table outside the margin & external review &
+tables narrowed & log-derived layout test \\
+\addlinespace
+Superseded output vintage & a retired FY2019--20 fugitives file quoting
+\SI{3.81}{\mega\tonne} beside the then-current \SI{24.69}{} (the envelope's top) & rebuild
+audit & vintage retired &
+orphan and twin sweep over \texttt{outputs/} \\
+Staleness guard reading it & the shipped-versus-engine check ran on three sectors of nine and
+reported passing & rebuild audit & the check reads each sector's declared categories &
+per-sector coverage asserted, not assumed \\
+Orchestrator declaring outputs it did not write & four phases named files that existed
+nowhere and printed OK beside them & rebuild audit & the declared artefact must be written
+during the run & orchestrator output check \\
+Run manifest listing a directory scrape & a sector's manifest claimed any leftover file as
+its own product & rebuild audit & the manifest records what the run wrote & write-tracked
+manifest \\
+The build defined three times & the branch that gates merges built a smaller inventory than
+either local command & rebuild audit & the three lists reconciled & build-definition test \\
+The release record & it printed \SI{455.14}{\mega\tonne} and described a mixed-year
+inventory three rounds after both stopped being true & rebuild audit & repaired and anchored
+& the release record is a claims document \\
+\bottomrule
+\end{tabular}
+\caption{Defects this inventory shipped, and what now prevents each. The right-hand column is
+the deliverable: a defect without a regression guard has been corrected, not closed. The
+detection column is the uncomfortable one---the middle entries were found by an external
+reader rather than by the suite, and each of those had passed a suite of more than a thousand
+tests, because the property that was wrong had never been made checkable. The last six were
+found by rebuilding the whole release from one commit and asking a narrower question than the
+suite asks: not whether each artefact is correct, but whether anything still writes it. Four
+of the six are the same defect wearing different clothes---a check that reports passing while
+testing nothing---which is the failure mode a growing test suite is least able to see in
+itself.}
+\label{tab:qa}
+\end{table*}
+
+The third, and least anticipated, was that \emph{closures turned prose caveats into
+arithmetic}. The four enforced closures in Section~\ref{sec:closures} existed first as written
+warnings---``this biases the sector high'', ``there is no national figure to remove them
+by''---in the documentation of sectors that had done the honest thing and declared a known
+defect. Building the counterpart sector converted each warning into a number. That is a
+general pattern worth naming: a well-documented known defect is a specification for the work
+that fixes it.
+
+What the architecture did \emph{not} buy is accuracy. The engine's activity data are still
+national statistics of variable quality, its factors are still mostly IPCC Tier~1 defaults,
+and the largest sector rests on a livestock census. Structure prevents inconsistency; it does
+not manufacture information.
+
+\subsection{Two undeclared assumptions worth a table apiece}
+
+Two results in this paper share a shape, and the shape is the point.
+
+Sharing parameters by physical identity across modules, rather than confining them within
+one, leaves the national uncertainty at $\pm\SI{11.72}{\percent}$ and the
+road-transport category unmoved---a result that reverses
+what the previous edition reported, for reasons Section~\ref{sec:uncertainty} sets out. The sewer methane correction factor
+moves domestic wastewater from \SI{15.39}{\mega\tonne} to \SI{24.46}{\mega\tonne}---a factor of \num{1.6} on a category that is \SI{5.5}{\percent} of the national inventory. In both
+cases the assumption is defensible in either direction, the evidence does not settle it, and
+the conventional treatment is to pick one and not mention it.
+
+We publish both endpoints in both cases. That is not fence-sitting; it is the recognition
+that a single number carries a false claim about the state of knowledge, and that the correct
+output of an analysis whose answer depends on an unsettled assumption is the dependence
+itself. In both cases we also state what would settle it: for correlation, a Pakistani fuel
+carbon-content measurement programme; for the MCF, dissolved-methane sampling on urban drains
+in two or three cities.
+
+\subsection{Implications for Pakistani inventory work}
+
+Three practical conclusions follow, in descending order of confidence.
+
+\textbf{Resolve gas-system practices before refining the vehicle fleet.} The 2019 segment
+ledger now includes utility throughput and pipeline length, making fugitives
+\SI{5.3}{\percent} of national emissions and \SI{3.3}{\percent} of variance. Road transport
+is \SI{9.0}{\percent} and \SI{0.9}{\percent}. The binding fugitive evidence is therefore
+pipeline material and pressure, LDAR, compressor configuration, processing throughput and
+well status rather than another aggregate production factor.
+
+\textbf{Industrial fuel combustion is the binding constraint on completeness.} At roughly
+\SI{16}{\mega\tonne} still missing, the unestimated remainder alone would rank sixth among
+this inventory's modules---just below residential fuel---while the complete \SI{43.98}{\mega\tonne}
+category EDGAR reports would rank third, above road transport. Its absence is
+most of why this inventory reports \SI{87}{\percent} of EDGAR's aggregate magnitude. No amount of
+refinement elsewhere compensates for the unmeasured fuels within this partially estimated
+industrial category.
+
+\textbf{Methane is the metric-sensitive majority.} At \SI{54.6}{\percent} of the national
+total on AR5, Pakistan's inventory is dominated by a short-lived gas, and mitigation
+assessments will be unusually sensitive to the metric and time horizon chosen. Reporting both
+AR5 and AR6 at every level of aggregation, as here, is a minimum; a country in this position
+has a stronger case than most for also reporting on a short-horizon metric.
+
+\subsection{Co-emitted air pollutants: a companion product, not a result of this paper}
+
+Seven of the ten modules also compute an air-pollutant layer from the same activity
+quantities, through EMEP/EEA factors \citep{emep2019,emep2023soils} rather than from a
+separate study. That shared activity basis is the methodologically interesting part, and it
+supports one robust statement: on primary \PM{}, household solid fuel is the largest estimated
+source in this inventory by a wide margin, while being a minor greenhouse-gas category---the
+two inventories rank sources close to inversely.
+
+\textbf{It is reported in the supplement rather than here, deliberately.} The seven layers are
+not of comparable assurance: two are bounds or screening estimates, transport is exhaust-only,
+and industrial combustion and IPPU have no layer at all. A ranking drawn across evidence that
+uneven is easy to over-read, and it should not carry weight the greenhouse-gas product has
+earned and it has not. Supplementary Note~S1 gives the layer-by-layer assurance matrix, the
+magnitudes and the figure, released as \textbf{PakEmis-Air beta}.
+
+\subsection{Generalisability}
+
+The architecture is not Pakistan-specific. The contract in Section~\ref{sec:architecture}
+encodes properties of IPCC inventories generally---categories, gases, notation keys,
+allocation proxies, correlation groups---and the accounting closures are instances of a
+pattern (one national quantity consumed by two sectors) that recurs in every national
+inventory: refinery fuel between 1A1b and 1A2, waste between disposal and incineration, land
+between cropland and grassland.
+
+The parallel-table trap of Section~\ref{sec:factors} is entirely general and, we would
+expect, common. Any inventory compiled by a small team under time pressure, using the 2006
+Guidelines, is exposed to it, and the exposure is invisible to \COtwo{}-based validation.
+Checking which of the four Chapter~2 tables and which of the Chapter~3 tables each fuel-using
+category actually drew from would be a cheap and, we suspect, productive audit of many
+published national inventories.

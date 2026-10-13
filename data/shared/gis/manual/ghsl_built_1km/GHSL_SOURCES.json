@@ -1,0 +1,43 @@
+{
+ "dataset": "GHS-BUILT-S R2023A, epoch 2020, 1 km (Mollweide 54009), total and NRES surfaces",
+ "licence": "CC-BY 4.0 (JRC GHSL open data)",
+ "note": "1 km deliberately: the national grid is 0.05 deg (~5 km), so the 100 m product adds nothing but transfer fragility (the mirror truncated four 100 m tile downloads before the 1 km product was chosen).",
+ "retrieved": "2026-08-23",
+ "role": "the residential built-surface member the spatial-alternatives register named as the acquisition: residential built = total built minus NRES. HELD, NOT YET WIRED - wiring into the allocation is the rc32 fractional-intersection round's work, and until then the register row says exactly that.",
+ "source": "https://jeodpp.jrc.ec.europa.eu/ftp/jrc-opendata/GHSL/GHS_BUILT_S_GLOBE_R2023A/",
+ "tiles": {
+  "GHS_BUILT_S_E2020_GLOBE_R2023A_54009_1000_V1_0_R6_C25.tif": {
+   "bytes": 1508437,
+   "sha256": "c578762757afe571cc1fecd019898ecfb4be36125ada6521b2b063cb63d3ea72"
+  },
+  "GHS_BUILT_S_E2020_GLOBE_R2023A_54009_1000_V1_0_R6_C26.tif": {
+   "bytes": 1579623,
+   "sha256": "9b65361f1e1a8b8103f3a381f64672de0c89122233fb985e47d40e880cf8d70c"
+  },
+  "GHS_BUILT_S_E2020_GLOBE_R2023A_54009_1000_V1_0_R7_C25.tif": {
+   "bytes": 342320,
+   "sha256": "ea1017ceeccbe29b2d88a4131831dbd440bff52eccd4f0fde63b7aad18ea8525"
+  },
+  "GHS_BUILT_S_E2020_GLOBE_R2023A_54009_1000_V1_0_R7_C26.tif": {
+   "bytes": 2085136,
+   "sha256": "c0706be3c524e0d216175741a54054095f9afedeef19af1fae8fbb01ddd769e4"
+  },
+  "GHS_BUILT_S_NRES_E2020_GLOBE_R2023A_54009_1000_V1_0_R6_C25.tif": {
+   "bytes": 40959,
+   "sha256": "4a315679685bfc25718d21d779a991bf734ab7084d25829bd7b7fbb9b9b08528"
+  },
+  "GHS_BUILT_S_NRES_E2020_GLOBE_R2023A_54009_1000_V1_0_R6_C26.tif": {
+   "bytes": 57179,
+   "sha256": "379919baac7aa1063a65d2a97bafa5f0999a4e3cf1c0ecfb2c9d1591b948b6ed"
+  },
+  "GHS_BUILT_S_NRES_E2020_GLOBE_R2023A_54009_1000_V1_0_R7_C25.tif": {
+   "bytes": 22564,
+   "sha256": "8d4007cd9ef5c2b9ed18ca67c15bc3f5ce28baca108113c71acfbf29bcf3b7e1"
+  },
+  "GHS_BUILT_S_NRES_E2020_GLOBE_R2023A_54009_1000_V1_0_R7_C26.tif": {
+   "bytes": 61309,
+   "sha256": "1d53b513de8f863b978e15e8e3b22eb7261d119b859b61f1cba8b6780f4c3683"
+  }
+ },
+ "tiling": "R6-R7 x C25-C26 (covers Pakistan)"
+}

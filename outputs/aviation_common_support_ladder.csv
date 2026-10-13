@@ -1,0 +1,9 @@
+experiment,step,stage_count,stage_coverage,fuel_t,fuel_coverage,activity_definition
+common_support,aggregate_factor,17491.2,0.8616354679802956,81489.64673279999,1.0,identical native-OpenAP-supported strata
+common_support,route_distance,17491.2,0.8616354679802956,76102.22866175316,1.0,identical native-OpenAP-supported strata
+common_support,route_aircraft_openap,17491.2,0.8616354679802956,73438.56576555684,1.0,identical native-OpenAP-supported strata
+coverage_completion,native_openap,17491.2,0.8616354679802956,73438.56576555684,0.9398436473580466,mutually exclusive completion component
+coverage_completion,unsupported_aircraft_icao_imputation,2260.8,0.11136945812807883,2683.503291500194,0.034342630399840056,mutually exclusive completion component
+coverage_completion,supported_route_operator_residual,345.5000002645933,0.01701970444653169,1073.6357857190553,0.013740052821913496,mutually exclusive completion component
+coverage_completion,endpoint_residual_aggregate_imputation,202.5,0.009975369458128078,943.426035,0.012073669420199863,mutually exclusive completion component
+coverage_completion,completed_total,20300.000000264594,1.0000000000130342,78139.13087777609,1.0,sum of completion components

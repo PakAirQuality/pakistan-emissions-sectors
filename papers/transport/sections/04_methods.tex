@@ -1,0 +1,274 @@
+% ===========================================================================
+\section{Methods}
+\label{sec:methods}
+% ===========================================================================
+
+\subsection{Anchoring: the fleet distributes, it does not size}
+
+Emissions for gas $g$ from class $c$ burning fuel $f$ are
+\begin{equation}
+E_{g,c,f} \;=\; A_f \cdot s_{c,f} \cdot EF_{g,f},
+\end{equation}
+where $A_f$ is the road-class supply of fuel $f$ in terajoules, $EF_{g,f}$ the IPCC default
+factor, and $s_{c,f}$ the share of that fuel attributed to class $c$. The shares are
+normalised energy products,
+\begin{equation}
+s_{c,f} \;=\; \frac{N_c \, k_c \, q_{c,f} \, e_{c,f}}
+                   {\sum_{c'} N_{c'} k_{c'} q_{c',f} e_{c',f}},
+\end{equation}
+over vehicle counts $N$, annual kilometres $k$, the fraction $q$ of a class's travel on
+fuel $f$, and the per-kilometre energy intensity $e$ in megajoules. The intensities are
+\emph{declared engineering judgement}---generic band midpoints recorded per class and
+fuel in the parameter table, not Pakistani measurements, and the same values the
+fleet-implied fuel diagnostic of Section~\ref{sec:fuelgap} uses.
+
+Because the shares are normalised, $\sum_c s_{c,f} = 1$ by construction, and therefore
+$\sum_c E_{g,c,f} = A_f \cdot EF_{g,f}$ regardless of what the fleet model says. The sector
+total is a function of the fuel controls and the IPCC factors alone.
+
+That normalisation is also what bounds the declared intensities. No choice of $e$ can
+move a control total or the sector magnitude; it moves \emph{composition}, and---through
+the off-road partition, which is one cell of the same normalisation---which IPCC
+category carries a fixed quantity of diesel. Both consequences are priced as scenarios
+in Section~\ref{sec:results} rather than folded into an interval. Admitting a judgement
+into the calculation at all is a real cost, and it is paid where it does least damage:
+a quantity nobody has measured determines which class is said to have burnt the fuel,
+never how much fuel there was.
+
+The previous edition of this paper printed the equation above with $e$ in it while the
+code applied $e \equiv 1$---normalising distance alone, which asserts that a
+motorcycle-kilometre burns as much petrol as a car-kilometre and a van-kilometre as much
+diesel as a truck-kilometre. Neither is true, and the correction is not small: the
+two-wheeler share of the petrol control falls from 0.8119 on distance alone to 0.6100 and the class that
+dominates on-road \COtwo{} changes (Section~\ref{sec:results}). The equation and the
+engine now agree, and a test recomputes both normalisations from the parameter files to
+assert which one the published weights came from.
+
+This is the property that makes the fleet model's weaknesses tolerable. An error in
+two-wheeler annual kilometres moves fuel between two-wheelers and everything else; it does not
+change how much fuel the road class bought. The estimate that policy uses for the national
+total is therefore insulated from the input that a bottom-up inventory would rest it on.
+
+Unless stated otherwise, every $\pm$ figure in this paper and its supplement is an
+approximate \SI{95}{\percent} relative half-width: IPCC Approach~1 propagation where a
+value is quoted for a category or the sector, and the 2.5th--97.5th percentile band of
+the Monte Carlo where a result is labelled as such.
+
+\subsection{The fuel ledger: two carve-outs' worth of structure, mostly observed}
+\label{sec:ledger}
+
+The previous edition partitioned a national supply figure by argument---carve this out,
+declare that unresolved. Anchoring on the OCAC customer-class rows turns most of that
+argument into observation: the national tier of the ledger is OCAC's own partition, whose
+classes sum to the printed national total exactly, and only the road tier still needs
+carve-outs and status rows. Table~\ref{tab:ledger} is the complete structure; the engine
+writes it on every run and aborts if any of the four (fuel, tier) ledgers fails to close.
+
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\begin{tabular}{@{}llllrr@{}}
+\toprule
+\textbf{Fuel} & \textbf{Tier} & \textbf{Claimant} & \textbf{IPCC} & \textbf{kt} &
+\textbf{Share} \\
+\midrule
+Diesel & national & National internal HSD sales (opening) &  & 6\,234.2 & 1.000 \\
+Diesel & national & Domestic & 1A4b & 0.0 & 0.000 \\
+Diesel & national & Agriculture (bulk) & 1A4c\,i & 0.0 & 0.000 \\
+Diesel & national & Industry (incl.\ bulk captive) & 1A2 & 400.4 & 0.064 \\
+Diesel & national & Railways & 1A3c & 107.9 & 0.017 \\
+Diesel & national & Domestic bunkers (navigation) & 1A3d & 3.1 & 0.000 \\
+Diesel & national & Power (utility) & 1A1a &  41.1 & 0.007 \\
+Diesel & national & Government & various & 130.3 & 0.021 \\
+Diesel & national & \textbf{Road (retail pump sales)} & 1A3b & \textbf{5\,551.4} & 0.890 \\
+\midrule
+Diesel & road & Off-road machinery partition & 1A4c\,ii/1A2\,gvii & 492.5 & 0.089 \\
+Diesel & road & \textbf{On-road residual} & 1A3b & \textbf{5\,059.0} & 0.911 \\
+Diesel & road & Stationary agricultural plant (retail) & 1A4c\,i &
+  \multicolumn{2}{c}{unresolved here} \\
+Diesel & road & Captive generation (retail) & 1A2 &
+  \multicolumn{2}{c}{unresolved here} \\
+Diesel & road & Other retail stationary/non-road uses & various &
+  \multicolumn{2}{c}{unresolved here} \\
+\midrule
+Petrol & national & National internal MS+HOBC sales (opening) &  & 7\,252.0 & 1.000 \\
+Petrol & national & Industry & 1A2 & 25.7 & 0.004 \\
+Petrol & national & Government & various & 16.9 & 0.002 \\
+Petrol & national & \textbf{Road (retail pump sales)} & 1A3b & \textbf{7\,209.4} & 0.994 \\
+\midrule
+Petrol & road & Household generators (carve-out) & 1A4b & 56.3 & 0.008 \\
+Petrol & road & \textbf{On-road residual} & 1A3b & \textbf{7\,153.1} & 0.992 \\
+\bottomrule
+\end{tabular}
+\caption{The two-tier fuel-claimant ledger, FY2023--24
+(\texttt{outputs/transport\_fuel\_ledger\_2024.csv}). National-tier rows are OCAC's own
+customer classes---observed, not argued---and close to the printed national totals
+exactly. Road-tier unresolved rows carry no quantity by design: the on-road residual is
+biased high by them, conditional on the other deductions. The third unresolved row exists
+because the named claimants are not proven exhaustive within pump sales; the retail
+non-road scenarios of Table~\ref{tab:boundary} price the whole within-channel claim at
+2.5--10\%. The ten-year road share of national diesel (0.83--0.91) is a customer-class
+boundary sensitivity---it bounds the sales channel, not the contamination within it.
+Closure is an arithmetic property of the ledger, not evidence that the residual is road;
+the evidence for the residual's composition is the customer-class semantics of the Road
+row, and its remaining contamination is these rows, never silence.}
+\label{tab:ledger}
+\end{table*}
+
+The ledger closes in mass. What it does not show is the step from mass to the energy
+the engine actually distributes, and that step is not symmetric between the two fuels:
+Table~\ref{tab:fuelbridge} makes it explicit.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llrr@{}}
+\toprule
+\textbf{Fuel} & \textbf{Step} & \textbf{kt} & \textbf{TJ} \\
+\midrule
+Petrol & OCAC Road row (MS+HOBC)   & 7\,209.4 & 319\,377 \\
+Petrol & less household generators & $-$56.3  & $-$2\,495 \\
+Petrol & \textbf{operative control} & \textbf{7\,153.1} & \textbf{316\,882} \\
+\midrule
+Diesel & OCAC Road row (HSD)       & 5\,551.4 & 238\,712 \\
+Diesel & less off-road partition   & $-$492.5 & $-$21\,177 \\
+Diesel & \textbf{operative on-road control} & \textbf{5\,059.0} & \textbf{217\,535} \\
+\midrule
+CNG    & OGRA metered gas (gross)  & ---      & 23\,876 \\
+CNG    & $\times$ gross-to-net 0.90 & ---     & $-$2\,388 \\
+CNG    & \textbf{operative control} & ---     & \textbf{21\,488} \\
+\bottomrule
+\end{tabular}
+\caption{The mass-to-energy bridge
+(\texttt{outputs/transport\_fuel\_bridge\_2024.csv}). The two petroleum figures in
+Table~\ref{tab:fuel} are not the same kind of number, and this table is the label they
+were missing: the petrol energy is \emph{net} of the generator carve-out, which is
+subtracted in mass before the calorific conversion, while the diesel energy is
+\emph{gross} of the off-road partition applied downstream of it. A reader multiplying
+the printed \SI{7209}{\kilo\tonne} by \SI{44.3}{\tera\joule\per\giga\gram} gets
+\num{319377}, not \num{316882}; both are correct, for different quantities. CNG appears
+here and not in the claimant ledger because it claims no share of either petroleum
+control, yet \num{21488} TJ of it sits outside a fuel table whose two rows sum to
+\SI{100}{\percent}.}
+\label{tab:fuelbridge}
+\end{table}
+
+The claimant list is exhaustive by the structure of the source, not by enumeration:
+OCAC's TOTAL INTERNAL row closes over its sector rows, so every tonne sold domestically
+sits in exactly one class. Modes and users a reviewer might ask after are visible rows,
+not omissions---domestic navigation is the Domestic Bunkers row (\SI{3.1}{\kilo\tonne},
+implying about \SI{0.010}{\mega\tonne} \COe{} on IPCC water-borne factors, screened per
+held edition in \texttt{outputs/transport\_navigation\_screen\_2024.csv}, where the
+FY2023--24 row is less than half this size), military and government fuel is the
+Government class, mining and bulk
+captive diesel are inside Industry.
+
+\subsection{Two relayed carve-outs, one partition, and a rail cross-check}
+
+\subsubsection{Household generator petrol, closed against the residential module}
+
+The petrol Road row counts every litre sold at the pump, including fuel carried home in
+cans for small household generators---stationary combustion that IPCC books to 1A4b, not
+road transport. The residential sector derives that mass from HIES 2024--25 generator-fuel
+expenditure \citep{hies2025} (119 responding households) over a declared administered
+petrol price of \SI{270}{} Rs/litre \citep{goppetrol}---the mid-band value for the survey
+field year, whose gazette-notified range ran roughly Rs 249--293: \SI{56}{\kilo\tonne},
+\SI{0.6}{\percent} of the petrol control. Because the survey year is 2024--25 and the
+control year FY2023--24, the carve-out is a \emph{cross-year proxy}, declared as such and
+small enough that the mismatch is immaterial. It is subtracted through a relayed
+accessor---computed once, in the sector that reports it---and a test asserts the equality
+with \texttt{==}.
+
+\subsubsection{Off-road machinery, carved by share rather than estimated}
+
+Tractors, agricultural plant and---because the source class is also a residual
+bucket---construction machinery burn diesel from the same retail pumps, so their fuel is
+inside the Road row and must be partitioned out. The fleet model normalises its shares
+over \emph{all} classes including the off-road class, deliberately: renormalising after
+dropping off-road would give the on-road classes \SI{100}{\percent} of the diesel, and any
+separate off-road estimate would then claim its share a second time. Keeping off-road
+inside the normalisation means the two categories partition one quantity of diesel
+exactly, and the memo item that previously carried off-road as a \COtwo{}-only note is
+asserted to be empty, so the fuel cannot appear in both places. The category is reported
+under the mixture-declaring name \emph{Mixed off-road (1A4c/1A2)}
+(Section~\ref{sec:limitations}).
+
+The partition share is one cell of that normalisation---the off-road class's energy
+weight within diesel---read from it rather than recomputed, so conservation of the
+diesel control is structural rather than a property two calculations happen to share.
+On the energy weighting the share is \num{0.0887}, against \num{0.0999} on distance
+alone: off-road machinery burns \emph{less} per kilometre than the on-road diesel fleet
+average---\SI{7}{\mega\joule\per\kilo\metre} against roughly \SI{9.5}{}, because buses
+and heavy goods vehicles dominate that average---so weighting by energy shrinks the
+off-road share and moves diesel back to the road category. That is a
+\SI{62}{\kilo\tonne} reclassification between two IPCC categories, not a change in how
+much diesel Pakistan burned.
+
+\subsubsection{The survival model, and where it stops operating}
+
+Registration tables report cumulative stock, so the fleet model differences them into
+entering cohorts, $d(y_0,c) = \max\{0,\, N(y_0,c) - N(y_0-1,c)\}$, and survives each
+cohort with a Weibull function $S(t) = \exp\!\left[-(t/\lambda)^{\beta}\right]$ whose
+scale is set from the class's median service life, $\lambda = L/(\ln 2)^{1/\beta}$, so
+that $S(L) = 0.5$ exactly. The active fleet in year $y$ is $F(y,c) = \sum_{y_0 \le y}
+d(y_0,c)\, S(y-y_0)$, evaluated per district and class.
+
+The $\max\{0,\cdot\}$ discards reported \emph{decreases}, which the source series
+contain---deregistrations, boundary changes, and a documented change of reporting basis
+in one province---so the survived cohorts can exceed the stock the same table reports.
+At district-and-class level the uncapped ratio reaches 402. The model therefore caps the
+active fleet at reported stock cell by cell and counts how often the cap binds, rather
+than inheriting the defect.
+
+It binds often: 60 of 115 four-wheeler cells, 69 of 116 light-duty, 68 of 114
+heavy-duty, 59 of 114 off-road, and 34 of 115 two-wheeler cells. The consequence is
+worth stating plainly rather than leaving in a column of the supplement---for the
+capped-heavy classes the ratio of active to registered vehicles sits at 0.97--0.99, so
+the Weibull is largely inoperative there and the class split is closer to a
+registration proxy than the survival machinery suggests. Under anchoring that is a
+distributional weakness, not a level error, but it is a weakness, and it is one more
+reason the class results are reported as a bracketed range rather than a number.
+
+\subsubsection{Railways: from deduction to independent cross-check}
+
+The previous edition subtracted the railway operator's metered purchase
+\citep{pakrailyearbook2024} from a national diesel figure. Under the customer-class
+controls no subtraction is needed---Railways is its own OCAC row---and the relay becomes
+something better: an \emph{independent cross-check} on the boundary. Year-matched, the
+Year Book's FY2023--24 figure (132,588 thousand litres = \SI{112.0}{\kilo\tonne} at
+0.845 kg/l) and OCAC's sold
+\SI{107.9}{\kilo\tonne} agree to \SI{3.8}{\percent}; the FY2021--22 historical row
+(142,086 thousand litres = \SI{120.1}{\kilo\tonne}; Year Book 2022--23 Principal
+Statistics) gives the conservative cross-year comparison at
+\SI{11.2}{\percent}. A regression test confirms the two independently sourced figures have
+not accidentally collapsed to one stored value; their independence rests on their separate
+reporting chains---metered purchases against member-supplied sales. Those observed
+discrepancies anchor the controls' declared \SI{10}{\percent} uncertainty.
+
+\subsection{CNG: a third control on its own activity basis}
+
+Compressed natural gas never touches the petroleum controls. Its activity is the
+FY2023--24 row of the transport series in OGRA's State of the Regulated Petroleum Industry
+2023--24, Tables 3.31 and 6.1 \citep{ogra2024}---\SI{62}{} MMCFD as an annual average,
+metered utility gas reported in two tables of the same edition that agree---converted from
+volume at a gross
+heating value of \SI{1000}{} Btu/scf \citep{sngpl2024,ssgc2024} and a gross-to-net factor
+of \num{0.90} (IPCC factors are defined on a net basis; the utilities bill gross), then
+run through the same IPCC road factors. The heating value is the declared assumption in
+the stream and Section~\ref{sec:results} publishes the \SI{900}{} Btu/scf case beside it.
+The fleet model's CNG vehicle-kilometres are \emph{not} used to size the stream; they set
+its geography and its air-pollutant share, and Section~\ref{sec:cngcheck} reads the two
+bases against each other as a diagnostic.
+
+\subsection{What remains inside, and in which direction}
+
+Retail-bought diesel for stationary agricultural plant---tube wells and threshers---and
+for captive generation stays inside the Road row, and this inventory has not separated
+it. It biases the road residual high, conditional on the other deductions being right;
+we state the direction rather than apply a correction, because a guessed subtraction
+would move the sector total on the basis of a number nobody has measured. The residual
+is bounded rather than merely declared: bulk agricultural HSD is observed zero in all
+ten OCAC editions, and the boundary scenarios of Section~\ref{sec:results} span the
+ten-year road-share envelope. Captive gas self-generation is estimated elsewhere in
+this inventory from metered captive \emph{gas} \citep{ahmad2026national}; its retail
+diesel component is not, and the two are not interchangeable.

@@ -1,0 +1,20 @@
+IPCC code,Source,Subsegment,Notation key,Central inventory,Treatment,Principal gap,Record ID,Source row
+1.B.1,Coal,Coal mining,NE,no,Out of scope for an oil-and-gas paper; retained in the sector-wide gap matrix,"Mine type, underground/surface output and gas content",531cb2dcce22679843c72b76,1
+1.B.2.a.i,Oil,Exploration,NE,no,No drilling-event activity incorporated,Exploration wells and testing events,d0f3dcc7f74aeba4abe25e1c,2
+1.B.2.a.ii,Oil,Production and upgrading,IE,yes,2019 onshore production factor inclusive of leaks venting and flaring,"Onshore/offshore split, active wells and practice classification",edd677d31b28f7a5765ef513,3
+1.B.2.a.iii,Oil,Transport,E/partial,yes,Pipeline factor with production as transported-volume proxy,"Mode-specific pipeline, truck, rail and tanker throughput",97a6c7f56b1e28289517d06f,4
+1.B.2.a.iv,Oil,Refining,E/proxy,yes,OGRA refinery product output converted to volume,Crude feed by refinery,2d778270978344d29e11761e,5
+1.B.2.a.v,Oil,Distribution of oil products,NA,no,2019 Tier 1 table provides NMVOC but no GHG factors,NMVOC may be added to the air-pollutant inventory,4d883514fb3922a3e8c43a57,6
+1.B.2.a.vi,Oil,Other,NE,no,No Tier 1 method for accidents and waste-oil events,Incident and spill records,be7dae096e1a682e0a6fe326,7
+1.B.2.a.vii,Oil,Abandoned wells,NE,no,Explicit 2019 category retained as a gap,Plugged and unplugged abandoned-well census,c4930bcbb35c2443188226b3,8
+1.B.2.b.i,Natural gas,Exploration,NE,no,No drilling-event activity incorporated,Exploration wells and testing events,d60ce37b093b807aeecf1817,9
+1.B.2.b.ii,Natural gas,Production and gathering,IE,yes,Production and gathering calculated separately,"Well counts, field throughput and practices",0312dce9ceae53908d0de13a,10
+1.B.2.b.iii,Natural gas,Processing,E/proxy,yes,Produced gas is provisional processed-gas throughput; sour share is IPCC default,"Plant throughput, acid-gas removal and compressor seals",d681d860930c610860a9f206,11
+1.B.2.b.iv,Natural gas,Transmission,E,yes,Measured utility pipeline length plus two LNG import terminals,"Independent pipelines, LDAR and dry/wet seal shares",417a37c08de6f98aae855ee3,12
+1.B.2.b.iv,Natural gas,Underground and surface storage,NO,no,OGRA describes storage as planned rather than operating,Reassess when facilities enter service,d7c3de1a5d1a9ccbd1204b03,13
+1.B.2.b.v,Natural gas,Distribution,E,yes,Measured utility pipeline length,Pipeline material share and LDAR coverage,96e37b5a2a994e8aa095022b,14
+1.B.2.b.vi,Natural gas,Post-meter appliances,E/proxy,yes,One appliance per domestic meter warm-country fallback,Appliance census and commercial appliance multiplier,3cc7c949e2765d8c38ddc97f,15
+1.B.2.b.vi,Natural gas,Natural-gas vehicles,NE,no,No reliable active CNG-vehicle count incorporated,Active CNG vehicle census,d611a13b6b79d0d82c9fdd09,16
+1.B.2.b.vi,Natural gas,Industrial and power post-meter,E,yes,Official non-residential gas consumption,Facility-specific post-meter measurements,06026ac0814e322dd62d34bb,17
+1.B.2.b.vii,Natural gas,Other and accidents,NE,no,No Tier 1 method for anomalous events,"Blowout, rupture, blowdown and third-party damage records",76d106a8d4098ba0e2e9fb12,18
+1.B.2.c,Oil and gas,Venting and flaring,IE/memo,yes,Included in segment factors; VIIRS flare volume reported separately without double counting,Operator vented/flared gas and Annex 4A.2 disaggregation,760f93fabe2467e839ee240c,19

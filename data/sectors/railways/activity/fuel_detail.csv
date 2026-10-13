@@ -1,0 +1,21 @@
+fiscal_year,fuel,locomotive,other_than_locomotive,unit,source,note
+2016,Gas/Diesel Oil,137908,1579,thousand litres,"Pakistan Railways Year Book 2020-21 p.154",""
+2017,Gas/Diesel Oil,142607,2024,thousand litres,"Pakistan Railways Year Book 2020-21 p.154",""
+2018,Gas/Diesel Oil,154357,2039,thousand litres,"Pakistan Railways Year Book 2020-21 p.154","The year its own edition could not supply: 2017-18 and 2018-19 are page-image scans. Recovered from a text-layer edition's historical table instead."
+2019,Gas/Diesel Oil,157979,1948,thousand litres,"Pakistan Railways Year Book 2020-21 p.154","The year its own edition could not supply: 2017-18 and 2018-19 are page-image scans. Recovered from a text-layer edition's historical table instead."
+2020,Gas/Diesel Oil,137969,1630,thousand litres,"Pakistan Railways Year Book 2020-21 p.154","Detail sums to 139,599 against the summary's 139,600 - one part in 140,000, a rounding step rather than a disagreement."
+2016,Residual Fuel Oil,,662.9,tonnes,"Pakistan Railways Year Book 2020-21 p.154","Locomotive furnace oil is Nil."
+2017,Residual Fuel Oil,,568.5,tonnes,"Pakistan Railways Year Book 2020-21 p.154","Locomotive furnace oil is Nil."
+2018,Residual Fuel Oil,,433.1,tonnes,"Pakistan Railways Year Book 2020-21 p.154","Locomotive furnace oil is Nil."
+2019,Residual Fuel Oil,,338.67,tonnes,"Pakistan Railways Year Book 2020-21 p.154","Locomotive furnace oil is Nil."
+2020,Residual Fuel Oil,,268.74,tonnes,"Pakistan Railways Year Book 2020-21 p.154","Locomotive furnace oil is Nil."
+2021,Gas/Diesel Oil,138841,1416,thousand litres,"Pakistan Railways Year Book 2023-24 p.163, Fuel Consumption table",
+2022,Gas/Diesel Oil,140482,1601,thousand litres,"Pakistan Railways Year Book 2023-24 p.163",
+2023,Gas/Diesel Oil,103272,1637,thousand litres,"Pakistan Railways Year Book 2023-24 p.163",
+2024,Gas/Diesel Oil,130988,1599,thousand litres,"Pakistan Railways Year Book 2024-25 p.151, restating 2023-24 p.163","THE DISPUTED YEAR, SETTLED BY THE SOURCE'S NEXT EDITION. The 2023-24 edition printed this cell as '136.988' (read 136,988), making the detail sum 138,587 against the summary's twice-stated 132,588 - a 4.52 percent gap, the only year that failed to reconcile, in a cell that already carried a typesetting anomaly (a decimal point where every other row uses a comma). The 2024-25 edition's historical run restates the cell as 130,988 (printed '130.988', the same decimal-point quirk on the same row), and 130,988 + 1,599 = 132,587 - within one part in 132,588 of the summary. The restated figure is carried; the superseded print is recorded here. The sector's reported total was the summary throughout, so nothing this file feeds ever moved."
+2021,Residual Fuel Oil,,107.85,tonnes,"Pakistan Railways Year Book 2023-24 p.163","Locomotive furnace oil is Nil; all of it is non-traction."
+2022,Residual Fuel Oil,40.374,218.511,tonnes,"Pakistan Railways Year Book 2023-24 p.163",
+2023,Residual Fuel Oil,2.394,134.181,tonnes,"Pakistan Railways Year Book 2023-24 p.163",
+2024,Residual Fuel Oil,15.083,64.824,tonnes,"Pakistan Railways Year Book 2023-24 p.163","THE BASIS QUESTION, ANSWERED. The detail table heads this column 'Furnace Oil (M. Tonnes)' and the narrative on the same page says '79.907 M.T of furnace oil' - which is 15.083 + 64.824. The Principal Statistics summary labels the same quantity 'Liters/thousand'. That summary's unit column is demonstrably unreliable in the same table: it labels Persons Employed as 'Tonne' and Cost of Employees as 'No.'. Tonnes is the basis."
+2025,Gas/Diesel Oil,137096,1577,thousand litres,"Pakistan Railways Year Book 2024-25 p.151","PROVISIONAL: the 2024-25 edition carries a Legal Opinion page declaring its data provisional pending the Auditor-General's report. Detail sums to 138,673, reconciling with the Principal Statistics summary to the digit. Scan edition; hand-transcribed from page images (PDF p.152)."
+2025,Residual Fuel Oil,1.360,43.923,tonnes,"Pakistan Railways Year Book 2024-25 p.151","PROVISIONAL; see the diesel row. Narrative says 45.283 M.T, which is exactly 1.360 + 43.923; the Principal Statistics label 'Liters/thousand' (printed 46) is wrong again, which is by now the expected behaviour of that unit column."

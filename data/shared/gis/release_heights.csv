@@ -1,0 +1,38 @@
+# Where each source stream puts its gas into the atmosphere, as a CLASS rather than a height.
+#
+# An atmospheric model cannot use a national inventory that treats a cement kiln, a cooking
+# fire and an aircraft at cruise as the same surface release. It also cannot use invented
+# stack heights. So this declares the class only; the vocabulary is core.evidence.RELEASE_HEIGHT
+# and tests/test_source_streams.py validates every value against it.
+#
+# Assignment is per (module, category), which is the resolution the evidence actually supports:
+# no sector holds a per-stream release geometry today. Where a category genuinely mixes
+# heights - aviation spans the airport and the cruise altitude, industry spans small boilers
+# and large kilns - the class is the one carrying most of the mass, and the note says so. That
+# is a declared approximation, not a measurement, and it is written down here rather than
+# implied by a default.
+module,category,subitem_prefix,release_height_class,note
+agriculture,Enteric fermentation,,surface,animals at ground level
+agriculture,Manure management,,surface,yards lagoons and heaps at ground level
+agriculture,Managed soils,,surface,diffuse soil flux
+agriculture,Rice cultivation,,surface,flooded paddy surface
+agriculture,Field burning of residues,,surface,open field burning; plume rise not modelled
+agriculture,Urea application,,surface,applied to the soil surface
+aviation,Domestic aviation,Domestic aviation LTO,airport_LTO,the LTO share of the split stream - fuel within the airport boundary (rc47 Wave 3)
+aviation,Domestic aviation,Domestic aviation cruise,aviation_cruise,"the class that sat waiting 'until observed stages exist': the ICAO stage tables are that observation, and the split stream finally uses it (rc47 Wave 3)"
+fugitives,Fugitive emissions from oil and gas,,low_stack,"mixed: wellheads, processing, compressor and distribution leaks; venting and flaring sit higher than post-meter leakage and no per-segment geometry is held"
+industry,Industrial fuel combustion (1A2),,low_stack,"boilers and process heat; the estimated part of 1A2 is gas and liquid fuel - brick kilns are SCREENED since rc13 (7.35 Mt at the FY2022-23 vintage, configuration-priced, still outside the reference) and their short stacks would also class low_stack the day they graduate"
+ippu,Cement production,,high_stack,cement kiln stacks
+power,Electricity and heat production,,high_stack,grid thermal plant
+power,Captive gas self-generation (1A2),,low_stack,industrial self-generation sets
+railways,Railways,,traffic_surface,diesel traction along the track
+residential,Residential fuel combustion,,household_low,domestic stoves flues and standby generators
+transport,Road transport,,traffic_surface,vehicle exhaust at street level
+transport,Mixed off-road (1A4c/1A2),,surface,agricultural and construction machinery in the open
+waste,Solid waste disposal,,surface,landfill and dumpsite surface emission
+waste,Open burning of waste,,surface,open burning; plume rise not modelled
+waste,Domestic wastewater,,surface,open drains and septic systems at or below ground level
+railways,Railway non-traction energy (1A2/1A4c unresolved),,low_stack,"workshops and power houses at the divisional yards: small stationary plant, not traction along the track - the reason this category left the traffic_surface class when the rc11 re-base created it"
+ippu,Ammonia production,,high_stack,rc52: reformer and process vents at eight fertilizer complexes - tall industrial stacks
+ippu,Iron and steel production,,low_stack,"rc52: electric arc and induction melt shops - baghouse and roof vents, low industrial stacks"
+ippu,Lubricant use,,surface,rc52: oxidation in engines and machinery wherever they run - a diffuse surface release

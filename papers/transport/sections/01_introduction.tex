@@ -1,0 +1,98 @@
+% ===========================================================================
+\section{Introduction}
+\label{sec:introduction}
+% ===========================================================================
+
+There are two ways to build a road transport inventory and they fail differently.
+
+The bottom-up approach estimates the vehicle fleet, assigns annual kilometres and fuel economy
+by class, and sums. It produces a rich result---emissions by vehicle type, useful for
+projecting the effect of a fleet policy---and a fuel demand that will not match the national
+petroleum supply. The compiler then adjusts something until it does.
+
+The fuel-anchored approach starts from the supply figure and distributes it across classes.
+It produces a total that matches national statistics by construction and a composition that is
+only as good as the fleet model. Nothing needs reconciling because nothing was independently
+estimated.
+
+Which is better depends on which number is more trustworthy. In Pakistan that is not close:
+the petroleum supply figure is a metered, taxed, nationally reported quantity, while the
+vehicle fleet is a registration database that counts vehicles administratively rather than
+by where they operate, includes a residual catch-all class, and says nothing about how far
+each is driven. This paper quantifies the gap directly: the bottom-up fuel demand the same
+fleet data imply, under declared engineering intensity bands, misses the observed diesel
+control by half and overstates metered CNG threefold
+(Section~\ref{sec:validation})---errors in both directions, which is the strongest form
+of the case for letting fuel set the magnitude.
+
+\subsection{What this paper does}
+
+We report Pakistan's road transport and off-road mobile machinery for FY2023--24 on the
+fuel-anchored basis, and treat the consequences of that choice as the subject rather than as
+an implementation detail.
+
+The consequence that matters most is that anchoring makes a boundary problem explicit.
+Pakistan's petroleum statistics do publish a sectoral split---OCAC's customer-class sales
+tables, which this edition anchors on directly---but a customer class is a sales channel,
+not an end use: the retail Road row still contains diesel bought at pumps for stationary
+agricultural plant and captive generators. This paper reads the observed customer-class
+partition into a two-tier fuel-claimant ledger, carves out what a sibling sector measures
+(household-generator petrol), partitions off-road machinery, cross-checks the rail
+boundary against an independent source, and states plainly what remains inside the road
+residual and in which direction it biases the result.
+
+\subsection{Why Pakistan, and why anchoring in particular}
+
+Pakistan's most recent full national inventory submission reports for FY2017--18
+\citep{pakbur1}, and the international products that fill the gap must be compared with the
+years matched, because Pakistan's fuel demand moved sharply after 2022. On a scope
+inferred from EDGAR's category-resolved Pakistani source files---road, rail and civil
+aviation---this inventory's corresponding construction is \num{0.85} of EDGAR's
+fiscal-year blend of \SI{48.13}{\mega\tonne} \citep{edgar2025booklet}
+(Section~\ref{sec:validation}), sitting \emph{under} the benchmark for the reasons the
+customer-class boundary predicts. The blend is half of EDGAR's 2023 column and half of
+its 2024 one, because this sector's July--June reference period falls across both; the
+comparison is a scope-approximate diagnostic rather than a validation, because EDGAR's
+transport boundary is inferred rather than published.
+
+Anchoring is particularly appropriate here for a reason specific to the country's fleet.
+Two-wheelers are the largest single class in Pakistan's road transport---under the
+reference allocation they receive \SI{13.40}{\mega\tonne}, \SI{34.1}{\percent} of
+on-road \COtwo{}---and their annual kilometres are among the least well-constrained
+inputs in this Pakistani fleet model. A bottom-up estimate would rest a very large term on
+one of its weakest inputs. Anchored, that same uncertainty affects only how the fuel is
+split between classes, which is exactly what happened when this edition corrected the
+split: two-wheelers fell by six megatonnes, heavy diesel rose past them, and the sector
+total moved by \SI{0.05}{\mega\tonne} (Section~\ref{sec:results}).
+
+\subsection{Contributions}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=3pt]
+\item \textbf{A fuel-anchored road transport inventory for Pakistan} anchored on the
+  customer-class rows of the national sectoral sales table, so the sector total
+  reconciles with petroleum statistics by construction and the bulk non-road claimants
+  are excluded by the source's own structure (Section~\ref{sec:methods}).
+\item \textbf{A two-tier fuel-claimant ledger, mostly observed}: the national tier is
+  OCAC's own exhaustive customer-class partition; the road tier carries one relayed
+  carve-out (generator petrol, closed against the residential module), one partition
+  (off-road machinery), an independent rail cross-check between two unrelated sources,
+  and the unresolved retail claimants as bounded status rows instead of silence
+  (Table~\ref{tab:ledger}).
+\item \textbf{A quantified instance of the IPCC parallel-table trap}, in which the plausible
+  wrong table leaves \COtwo{} exactly right and moves the category by \SI{8}{\percent} through
+  \NtwoO{} alone---invisible to every \COtwo{}-dominated comparison available
+  (Section~\ref{sec:factors}).
+\item \textbf{An exploratory exhaust-emission diagnostic} on the same vehicle-kilometre
+  activity that distributes the fuel, reported in an appendix and carrying no policy
+  weight: its factors have no located primary citation and its magnitude rides the fleet
+  model, and the paper says so rather than ranking sources with it
+  (\ref{sec:air}).
+\item \textbf{A provincial petroleum allocation from OCAC's monthly area editions},
+  allocated per fuel, with a published diagnostic demonstrating the failure of the
+  registration proxy it replaces and an allocation crosswalk stating which streams ride
+  which proxy (Section~\ref{sec:results}).
+\end{enumerate}
+
+Method shared with the other nine sectors of the national inventory---the module contract,
+the accounting closures, the parameter-uncertainty treatment---is documented separately
+\citep{ahmad2026national} and not repeated here.

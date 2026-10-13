@@ -1,0 +1,10 @@
+fiscal_year,sngpl_mmcfd,ssgcl_mmcfd,independent_mmcfd,total_mmcfd,pct_national_gas,status,source,note
+2016,138,186,65,389,11,verified,OGRA State of the Regulated Petroleum Industry,
+2017,204,189,0,393,11,verified,OGRA State of the Regulated Petroleum Industry,
+2018,169,211,0,380,10,verified,OGRA State of the Regulated Petroleum Industry,
+2019,117,204,0,321,8,verified,OGRA State of the Regulated Petroleum Industry,utility split extracted from a table that renders poorly; narrative confirms 8%
+2020,110,180,0,290,8,verified,OGRA State of the Regulated Petroleum Industry,
+2021,1,202,0,203,4.72,verified,"OGRA State of the Regulated Petroleum Industry 2020-21 Table 3.28 (Sector-wise Gas Consumption during FY 2020-21, Captive Power row), page 53","Was provisional: the total alone, read off a chart data label because this edition is an image scan. The scan OCRs cleanly (scripts/ocr_ogra_2020_21.py) and its Table 3.28 gives 1 + 202 + 0 = 203, so the chart-label reading is confirmed EXACTLY by a different element of the same document and the utility split is no longer missing. The chart label is retained here as the corroboration."
+2022,51,192,,243,5.97,verified,OGRA State of the Regulated Petroleum Industry,
+2023,78,45,,123,3.33,verified,OGRA State of the Regulated Petroleum Industry,SSGCL captive restated upward in the following edition; see OGRA_RESTATEMENT
+2024,107,181,,288,8.35,verified,OGRA State of the Regulated Petroleum Industry,

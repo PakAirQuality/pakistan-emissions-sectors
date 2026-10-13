@@ -1,0 +1,225 @@
+% ===========================================================================
+\section{Validation}
+\label{sec:validation}
+% ===========================================================================
+
+\subsection{Against EDGAR: fiscal-year blended, category-mapped}
+
+Matching the period comes first, because it moves the comparison more than anything else
+in this section---and it cannot be done exactly. EDGAR reports calendar years; this
+sector reports July 2023 to June 2024, so half of its reference period falls in each of
+EDGAR's 2023 and 2024 columns. The closest annual approximation EDGAR's own data
+supports is the half-and-half blend,
+$0.5 \times \SI{47.50}{} + 0.5 \times \SI{48.76}{} = \SI{48.13}{\mega\tonne}$, and that
+is what this paper compares against. The single-year comparisons are kept beside it,
+because the spread between them \emph{is} the temporal uncertainty and should be visible
+rather than chosen. Getting the period right has history here: one earlier edition
+compared a fiscal year against a single calendar column and called it year-matched, and
+the rc4 edition led with a \num{0.70} ratio whose engine side mixed the harmonised
+FY2023--24 road figure with pre-harmonisation FY2021--22 rail and aviation rows against
+a CY2021/CY2022 EDGAR blend---three vintages in one number, labelled ``all FY2021--22''.
+That construction is reproduced at rank \emph{superseded} in the comparison table so it
+remains checkable, and it must not be quoted as current.
+
+Matching the scope comes second, and this revision does it from EDGAR's own source
+categories rather than by assertion---though the evidence is inferred rather than
+published. The GHG booklet defines Transport only as "mobile combustion (road \& rail \&
+ship \& aviation)", with no IPCC split at all. EDGAR's category-resolved
+\emph{air-pollutant} files do carry the Pakistani rows explicitly: road (1.A.3.b),
+railways (1.A.3.c) and civil aviation (1.A.3.a) are present, there is \emph{no}
+water-borne navigation row (1.A.3.d) for Pakistan at all, and other transportation
+(1.A.3.e) is nil
+(\texttt{data/activity/transport/edgar\_pak\_transport\_categories.csv}). Those files are
+the v8.1 air-pollutant release, not the 2025 GHG booklet the benchmark value comes from,
+so the scope is \emph{inferred from EDGAR's category-resolved Pakistani source files}
+rather than documented by the product being compared against. The distinction is not
+pedantry---it is the same class of claim this paper elsewhere insists on labelling---and
+it would be retired by EDGAR's per-category GHG product, which this study attempted to
+fetch and could not obtain. On that inference EDGAR's Pakistani transport is road + rail
++ aviation, and the matched construction on this side is the same three components.
+
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}p{0.17\linewidth}p{0.20\linewidth}p{0.18\linewidth}lp{0.24\linewidth}@{}}
+\toprule
+\textbf{Component} & \textbf{This paper} & \textbf{EDGAR ``transport''} &
+\textbf{Period} & \textbf{Treatment in the comparison} \\
+\midrule
+Road (1A3b) & conditional residual, 40.19 Mt & 1.A.3.b present & FY2023--24 & compared \\
+Railways (1A3c) & separate sector, 0.39 Mt & 1.A.3.c present & FY2023--24 & added \\
+Domestic aviation (1A3a) & separate sector, 0.30 Mt & 1.A.3.a present & FY2023--24 &
+  added, on the same fiscal year \\
+Domestic navigation (1A3d) & OCAC Bunkers row, 3.1 kt $\approx$ 0.010 Mt (screened) &
+  NO 1.A.3.d row for Pakistan & FY2023--24 & on neither side of the headline;
+  all ten held editions converted in the navigation screen \\
+Mixed off-road & 1.73 Mt, reported 1A4c & outside EDGAR transport (1A4/1A2) &
+  FY2023--24 & excluded from headline; secondary line includes it \\
+Bulk captive/industrial diesel & excluded by construction (Industry row, 400 kt) &
+  in EDGAR Industrial Combustion & FY2023--24 & outside both transport totals \\
+Retail agri-stationary + captive & inside road residual, unresolved & likely 1A4/1A2 &
+  FY2023--24 & pushes this paper up; priced by the retail non-road transfers \\
+Calendar convention & FY2023--24 (July--June) & calendar 2023 and 2024, blended &
+  --- & primary comparison; single years and superseded rebuilds shown below \\
+\bottomrule
+\end{tabular}
+\caption{The scope-and-period crosswalk, on EDGAR's own category evidence. Both sides
+are AR5 \COe{}, all components on the FY2023--24 reference period against the blended
+CY2023/CY2024 EDGAR columns. Because EDGAR's transport boundary is inferred from a
+different release rather than published with the benchmark, every row here is a
+scope-approximate diagnostic, not a validation.}
+\label{tab:crosswalk}
+\end{table*}
+
+The headline: road residual (\SI{40.19}{\mega\tonne}) plus railways
+(\SI{0.39}{\mega\tonne} strict 1A3c traction, FY2023--24---the non-traction
+\SI{0.005}{\mega\tonne} is excluded because EDGAR's inferred scope has no such
+category) plus domestic aviation (\SI{0.30}{\mega\tonne},
+FY2023--24) gives \SI{40.88}{\mega\tonne}, or \num{0.85} of EDGAR's fiscal-year
+blend of \SI{48.13}{\mega\tonne}. Against the 2024 column alone it is \num{0.84} and
+against 2023 alone \num{0.86}---the width of that spread is what "fiscal year against
+calendar year" costs, and it is smaller than the scope choices around it. Including the
+mixed off-road class---which EDGAR books outside its transport aggregate---gives
+\SI{42.62}{\mega\tonne}, \num{0.89}. Every construction is tabulated with its rank in
+\texttt{outputs/national\_edgar\_transport\_comparison.csv}, including the superseded
+rc4 construction above. The engine sits \emph{under} the benchmark in all of them, and
+the retail-channel contamination that pushes this paper's residual the other way is
+priced by the retail non-road transfers rather than asserted away. The gap between
+\num{0.70} and \num{0.85} is not an engine change: it is what moving both sides of the
+ratio onto the same period does, because the CY2021/CY2022 EDGAR window straddled the
+demand peak that preceded the mid-2022 contraction.
+
+One property of that comparison is worth naming because it is reassuring rather than
+convenient: the off-road-inclusive construction is almost unmoved by the class-split
+reweighting. Energy weighting moves diesel \emph{between} 1A3b and 1A4c, so a total
+spanning both barely notices, which is what a partition should look like from outside.
+
+One further construction is retained as history. On calendar-year 2022 controls,
+rebuilt from the monthly panel (January--June direct editions plus the December
+cumulative, which is July--December year-to-date by the panel's own tested identity), the
+construction is about \num{0.82} of EDGAR's 2022 column: calendar 2022 straddles the
+mid-2022 demand collapse, so that comparison is honest and wide at once
+(\texttt{outputs/transport\_calendar\_year\_controls\_2024.csv}; provincial detail is
+structurally unavailable for the calendar year's second half). It is ranked superseded
+beside the rc4 blend, for the same reason. And the previous edition
+sat \emph{above} EDGAR on a wrong-provenance control (Section~\ref{sec:data}); that
+reversal, produced by reading the controls from their primary table, is itself evidence
+that the earlier agreement was coincidence rather than validation.
+
+\subsection{Internal closure checks}
+
+Four properties are asserted on every run and can fail. Closure is an arithmetic property
+of the ledger, not evidence that the residual is road; the evidence for the residual's
+composition is the customer-class semantics of the control row, and its remaining
+contamination is stated in Table~\ref{tab:ledger} rather than hidden by the arithmetic.
+
+\textbf{The shares sum to one.} $\sum_c s_{c,f} = 1$ for each fuel, so the class emissions sum
+to the control total times the factor. This is what makes the anchoring claim true rather than
+approximately true.
+
+\textbf{The off-road memo is empty.} The previous treatment carried off-road as a \COtwo{}-only
+memo item outside all totals. Now that it is a reported category, a test asserts the memo
+contains nothing, so the same diesel cannot appear as both.
+
+\textbf{All four ledgers close.} Opening equals claims plus closing residual for each
+(fuel, tier) ledger, to $10^{-9}$ relative; the run aborts otherwise. The unresolved
+claimants carry no quantity by construction, so nothing can be invented into the closure.
+
+\textbf{The rail figures agree without being equal.} The year-matched Year Book row and
+the OCAC Railways row must sit within tolerance of each other and must \emph{not}
+coincide. The inequality is a regression guard against the two independently sourced
+fields accidentally collapsing to one stored value; their independence is established by
+their separate reporting chains, not by the test.
+
+\subsection{The fleet-implied fuel demand, against the observed controls}
+\label{sec:fuelgap}
+
+The comparison the anchoring argument rests on can now be shown rather than asserted. A
+conventional bottom-up inventory would compute each fuel's demand from the fleet:
+$F_f = \sum_c \mathrm{vkt}_{c,f} \times e_{c,f}$. Using this paper's own
+vehicle-kilometres and \emph{declared engineering bands} for the per-class energy
+intensities $e_{c,f}$ (judgement values, not Pakistani measurements---the same epistemic
+class as the CNG check's plausibility band,
+\texttt{outputs/transport\_\allowbreak cng\_\allowbreak crosscheck\_\allowbreak 2024.csv},
+against the metered series in
+\texttt{outputs/transport\_\allowbreak cng\_\allowbreak 2024.csv}), the bottom-up build
+misses the observed controls in both directions:
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrrr@{}}
+\toprule
+\textbf{Fuel} & \textbf{Fleet-implied (TJ)} & \textbf{Observed (TJ)} &
+\textbf{Ratio} & \textbf{Verdict} \\
+\midrule
+Petrol & 208,714--374,877 & 316,882 & 0.84 & fleet-model low \\
+Diesel & 112,392--205,316 & 238,712 & 0.59 & fleet-model low \\
+CNG    & 54,459--98,535   & 21,488  & 3.05 & fleet-model high \\
+\bottomrule
+\end{tabular}
+\caption{Fleet-implied fuel demand at the declared intensity bands (low--high; the ratio
+is band-midpoint over control) against the observed controls
+(\texttt{outputs/transport\_fleet\_fuel\_diagnostic\_2024.csv}). Even the high band
+undershoots the diesel control, while even the low band overshoots metered CNG: a
+bottom-up build on this fleet data would err by a factor of two in one direction and
+three in the other. The diagnostic flags and never adjusts.}
+\label{tab:fuelgap}
+\end{table}
+
+This is the demonstration behind the paper's central design choice. Fuel observed at the
+point of sale sets the magnitude; the fleet model, which cannot even reproduce the fuel,
+is confined to distributing it.
+
+One caveat on this diagnostic is owed to the reader, because this edition created it.
+The intensity bands used here are now also the weights of the class split
+(Section~\ref{sec:methods}), so the diagnostic is no longer independent of the
+composition it is quoted beside---both read one parameter set, deliberately, so the two
+cannot silently diverge. What the diagnostic still tests independently is the
+\emph{magnitude}: the class split is normalised and therefore cannot reproduce a fuel
+total at all, whatever intensities it is given. That is the comparison in the table, and
+the reweighting did not change it by a tonne.
+
+\subsection{What is not validated}
+
+The class split has no independent check at all. No nationally representative Pakistani
+vehicle-kilometre survey has been identified for this study, and no Pakistani on-road
+fuel-economy measurement either, so the composition in Section~\ref{sec:results} rests on
+registration counts, assumed annual kilometres and declared energy intensities---three
+inputs, none of them measured in the country. This is stated here rather than in the
+limitations alone because a reader may reasonably want the class table and should know
+that it is the least supported thing in the paper. It is also why the class results are
+reported as a bracketed range: the composition scenarios of
+Section~\ref{sec:results} move the two-wheeler share of on-road \COtwo{} across roughly a
+quarter of its own value without moving the sector total at all.
+
+\subsection{CNG on two activity bases}
+\label{sec:cngcheck}
+
+CNG is the one fuel in this sector for which two independent descriptions of the same vehicles
+exist. The emissions come from OGRA's metered gas. The geography and the air-pollutant layer
+come from the fleet model, which reports CNG vehicle-kilometres by class. Neither is derived
+from the other, so dividing one by the other tests whether they describe the same fleet---the
+same move the power sector makes with its implied heat rate.
+
+The metered gas is \SI{21488}{} net terajoules---the reported volume converted at a gross
+heating value of \SI{1000}{} Btu/scf and then to a net basis at \num{0.90}, the IPCC
+convention, with both parameters pinned equal to the captive-power category's by test. The
+fleet model puts \SI{8.55}{\percent} of road vehicle-kilometres on CNG, \SI{2.36e10}{} of
+them. Together, implying \SI{0.912}{\mega\joule\per\kilo\metre}.
+
+That is low. Published consumption rates put a CNG three-wheeler nearer
+\SI{1.6}{\mega\joule\per\kilo\metre} and a CNG car nearer \SI{3}{}, and
+\SI{74}{\percent} of this modelled travel is three-wheelers, so the metered gas is well short
+of what the modelled distance would require. The two bases disagree, and the direction says the
+fleet model overstates CNG travel.
+
+Three qualifications. The per-vehicle consumption rates behind that comparison are generic
+engineering figures rather than Pakistani measurements, so the check flags a disagreement and
+never adjusts anything. The disagreement is confined to what rides vehicle-kilometres---the
+provincial split and the air-pollutant layer---because the emissions come from the gas. And it
+is not a new weakness: this sector already records that its class split rides vehicle-kilometres
+and over-weights small vehicles, and already argues that magnitude must therefore come from
+metered fuel. CNG is simply the first category where an independent fuel quantity exists to test
+that argument, and the test agrees with it.

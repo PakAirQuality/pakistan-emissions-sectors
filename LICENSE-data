@@ -1,0 +1,77 @@
+Data, figures, model cards, and the paper text in this repository are licensed
+under the Creative Commons Attribution 4.0 International License (CC-BY-4.0),
+EXCEPT the OpenStreetMap-derived databases listed below, which CC-BY cannot
+cover.
+
+You are free to share and adapt the material for any purpose, even commercially,
+provided you give appropriate credit, link to the license, and indicate if
+changes were made.
+
+Full text: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: Rehan Ahmad (Pakistan Air Quality Initiative), "PakEmis-GHG: a
+reproducible ten-module national greenhouse-gas inventory for Pakistan,
+excluding LULUCF" (2026).
+
+SCOPE OF THIS GRANT. It covers what this project MADE: the derived data products,
+the code, the figures and the manuscript text, and this project's transcriptions
+of figures published by others (the numbers in those tables are facts, and the
+transcription is ours). It does NOT and cannot cover the third-party publications
+under sources/ — OGRA, NEPRA, PBS, NFDC, PCAA and others — whose redistribution
+terms are, for most of them, not established. Those documents are therefore not
+part of the archive deposit; outputs/pakemis_source_register.csv names every one
+of them, records its hash, and says where to obtain it from its publisher.
+
+NOTE ON UPSTREAM DATA: derived Earth-observation inputs remain subject to their
+providers' terms — NASA FIRMS/VIIRS, Harmonized Landsat-Sentinel, Copernicus
+Sentinel-1, GPM IMERG, SMAP, ERA5, MODIS, ESA WorldCover, Google Dynamic World,
+FAO GAUL, MapSPAM, GLW, Global Mangrove Watch, Hansen Global Forest Change,
+FAOSTAT, and EDGAR (JRC). Cite the original sources when reusing.
+
+OPENSTREETMAP-DERIVED DATABASES (ODbL 1.0, NOT CC-BY): the following files are
+extracted from OpenStreetMap (© OpenStreetMap contributors) and are DERIVATIVE
+DATABASES under the Open Database License 1.0 — reusing or redistributing them
+carries ODbL's attribution and share-alike obligations, which this repository's
+CC-BY grant cannot waive:
+
+Each file is named by its PUBLISHED IDENTITY, which is this repository's
+convention, and then by the path the deposit archive actually ships it at. Both
+are given because they differ: searching an archive for the published identity
+alone finds nothing, and a reader could reasonably conclude from that silence
+that these files were excluded. They are not excluded — they ship, under ODbL.
+
+  data/gis/landfills/pak_landfill_assets.csv        (landuse=landfill polygons)
+      ships at data/sectors/waste/gis/pak_landfill_assets.csv
+  data/gis/landfills/pak_landfill_coverage.csv      (per-district coverage of the above)
+      ships at data/sectors/waste/gis/pak_landfill_coverage.csv
+  data/activity/ippu/facility_geocoding_overrides.csv  (OSM-sourced plant coordinates)
+      ships at data/sectors/ippu/lookups/facility_geocoding_overrides.csv
+  data/gis/rail/pak_rail_network.geojson            (rail network extract)
+      ships at data/sectors/railways/gis/pak_rail_network.geojson
+  data/gis/rail/yards.csv                           (yard coordinates)
+      ships at data/sectors/railways/gis/yards.csv
+  data/gis/roads/pak_road_density_267x340.npy       (way-km density raster)
+      ships at data/sectors/transport/gis/pak_road_density_267x340.npy
+  data/gis/osm_building_fraction_267x340.npy        (building-footprint raster)
+      ships at data/shared/gis/osm_building_fraction_267x340.npy
+  the 71 rows of data/facility_registry.csv (and outputs/
+  pakemis_facility_registry.csv) whose licence column says odbl-1.0 — both files
+  ship as mixed-per-row in the deposit manifest, with the per-row licence counts
+  in their reason, so the share-alike rows are visible without opening the file
+
+The distinction is ODbL's own: a PRODUCED WORK (a rendered map, a paper figure)
+needs only attribution, but an extracted coordinate or geometry TABLE remains a
+database and stays under ODbL. Each file's licence is also declared beside it
+(its SOURCES.json, the registry's licence column, data/source_documents.csv).
+
+Full ODbL text: https://opendatacommons.org/licenses/odbl/1-0/
+
+THIRD-PARTY TYPESETTING FILES (NOT THIS PROJECT'S WORK, NOT CC-BY): the directory
+paper_common/copernicus/ is a verbatim copy of the Copernicus Publications LaTeX
+package (version 7.15; copernicus.cls, copernicus.cfg, copernicus.bst,
+pdfscreen.sty, pdfscreencop.sty, the publisher's README and template), kept so
+that the ESSD manuscript compiles reproducibly. Each file carries its own
+copyright and licence header (the class and styles under the LaTeX Project
+Public License, the bibliography style Patrick W. Daly's LPPL-licensed work);
+paper_common/copernicus/VENDORED.md records the source URL, version, archive
+digest and date. The grant above does not cover these files.

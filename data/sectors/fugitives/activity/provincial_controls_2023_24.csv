@@ -1,0 +1,6 @@
+province,gas_consumption_mmcfd,transmission_km,distribution_km,source,note
+Punjab,1401,7039.06,124097,"OGRA Tables 3.13, 3.22 and 3.32","Consumption includes utility and independent-system allocation in OGRA's province control."
+Khyber Pakhtunkhwa,185,1578.95,27322,"OGRA Tables 3.13, 3.22 and 3.32","Transmission and distribution are SNGPL."
+Sindh,1398.7,3430,41356,"OGRA Tables 3.17, 3.23 and 3.32","Includes Karachi distribution."
+Balochistan,339,776,8455,"OGRA Tables 3.17, 3.23 and 3.32","SSGCL territory."
+Other territories,0,702.68,0,"OGRA Table 3.13","SNGPL reports 702.68 km as Other; no consumption is assigned without evidence."

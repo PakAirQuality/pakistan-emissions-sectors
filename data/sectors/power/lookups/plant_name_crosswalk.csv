@@ -1,0 +1,552 @@
+# Panel spelling -> canonical station, or a typed class (rc46 Wave 1). See
+# scripts/build_plant_name_crosswalk.py for the two-layer design and the refusal
+# of token joins. 547 spellings; grid_station rows carry 54.2% of panel GWh,
+# unmapped 0.18%.
+panel_name,normalized_stem,canonical_plant,row_class,gwh_nine_years,note
+(NPPCL) - Haveli Bahadar Shah,(NPPCL) - Haveli Bahadar Shah,NPPMCL (HBS),grid_station,14500.660,
+(NPPMCL) - Balloki,(NPPMCL) - Balloki,NPPMCL (Balloki),grid_station,20747.560,
+(NPPMCL) - Haveli Bahadar Shah,(NPPMCL) - Haveli Bahadar Shah,NPPMCL (HBS),grid_station,7513.390,
+AEP Wind,AEP Wind,,non_emitting,419.467,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+AEP Wind Wi,AEP Wind Wi,,non_emitting,166.065,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+AES Lal Pir,AES Lal Pir,Lal Pir Power,grid_station,5514.546,
+AES Lal Pir RF,AES Lal Pir,Lal Pir Power,grid_station,620.783,
+AES Lalpir power limited.,AES Lalpir power limited.,Lal Pir Power,grid_station,1771.910,
+AES Pak. Gen.,AES Pak. Gen.,Pak Gen. Power,grid_station,4574.807,
+AES Pak. Gen. RF,AES Pak. Gen.,Pak Gen. Power,grid_station,445.543,
+AES Pakgen Power Limited.,AES Pakgen Power Limited.,Pak Gen. Power,grid_station,1955.960,
+AKHP,AKHP,,non_emitting,2171.661,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+AKHP Hy,AKHP Hy,,non_emitting,439.086,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Agar Textile,Agar Textile,,unmapped,138.952,"no stem alias; typed, never guessed"
+Aj Solar,Aj Solar,,non_emitting,48.248,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Aj Solar So,Aj Solar So,,non_emitting,18.496,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Al Abbas Sugar Mill,Al Abbas Sugar Mill,,unmapped,21.477,"no stem alias; typed, never guessed"
+Al Abbas sugar mill,Al Abbas sugar mill,,unmapped,23.926,"no stem alias; typed, never guessed"
+Al Moiz Industries,Al Moiz Industries,,unmapped,64.014,"no stem alias; typed, never guessed"
+Al Moiz Industries Ba,Al Moiz Industries,,unmapped,29.832,"no stem alias; typed, never guessed"
+Al Noor Sugar Mills,Al Noor Sugar Mills,,unmapped,122.524,"no stem alias; typed, never guessed"
+Al-Moiz Industries Limited. (AMIL),Al-Moiz Industries Limited. (AMIL),,unmapped,71.760,"no stem alias; typed, never guessed"
+Allai Khwar Hydropower Project (WAPDA),Allai Khwar Hydropower Project (WAPDA),,non_emitting,1326.960,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Altern Energy Limited. (AEL),Altern Energy Limited. (AEL),,unmapped,0.000,"no stem alias; typed, never guessed"
+Altern Power,Altern Power,Altern Energy,grid_station,533.792,
+Altern Power Ga,Altern Power,Altern Energy,grid_station,12.403,
+Anoud Power,Anoud Power,,captive_lane,289.897,captive/IGC plant
+Anoud Textile,Anoud Textile,,unmapped,4.446,"no stem alias; typed, never guessed"
+Apollo Solar Development Pakistan Limited.,Apollo Solar Development Pakistan Limited.,,non_emitting,496.540,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Appolo Solar,Appolo Solar,,non_emitting,190.818,solar
+Artistic Wind - II,Artistic Wind - II,,non_emitting,242.580,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Artistic Wind Power (Pvt.) Limited.,Artistic Wind Power (Pvt.) Limited.,,non_emitting,488.310,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Artistic Wind Power (Pvt.) Limited. - II,Artistic Wind Power (Pvt.) Limited. - II,,non_emitting,84.740,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Atlas Power,Atlas Power,Atlas Power,grid_station,4952.818,
+Atlas Power Ltd (APL),Atlas Power Ltd (APL),Atlas Power,grid_station,1781.190,
+Atlas Power RF,Atlas Power,Atlas Power,grid_station,517.082,
+Atlas Solar Limited (Formerly Zhenfa Pakistan New Energy Company Private Limited),Atlas Solar Limited (Formerly Zhenfa Pakistan New Energy Company Private Limited),,non_emitting,388.600,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Attock Gen Limited,Attock Gen Limited,Attock Gen.,grid_station,4208.606,
+Attock Gen Limited RF,Attock Gen Limited,Attock Gen.,grid_station,384.031,
+Attock Gen Ltd (AGL),Attock Gen Ltd (AGL),Attock Gen.,grid_station,1412.340,
+Balloki,Balloki,NPPMCL (Balloki),grid_station,2148.792,
+Balloki Unit-1,Balloki,NPPMCL (Balloki),grid_station,11183.089,
+Balloki Unit-1 RL,Balloki,NPPMCL (Balloki),grid_station,5979.854,
+Balloki Unit-2,Balloki,NPPMCL (Balloki),grid_station,12.936,
+Balloki Unit-2 HS,Balloki,NPPMCL (Balloki),grid_station,52.958,
+Bandhi Sugar Mill,Bandhi Sugar Mill,,unmapped,9.665,"no stem alias; typed, never guessed"
+Best Green,Best Green,,non_emitting,672.879,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Best Green Energy Pakistan Limited. (BGEPL),Best Green Energy Pakistan Limited. (BGEPL),,non_emitting,492.530,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Best Green So,Best Green So,,non_emitting,164.250,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Bestway Cement Chakwal,Bestway Cement Chakwal,,captive_lane,512.623,captive plant
+Block-3 (unit 3&4),Block-3 (unit 3&4),,unmapped,10.024,"no stem alias; typed, never guessed"
+Block-3 (unit 3&4) Ga,Block-3 (unit 3&4),,unmapped,138.938,"no stem alias; typed, never guessed"
+CCPP Nandipur,CCPP Nandipur,TPS Nandipur,grid_station,8329.867,
+CCPP Nandipur RL,CCPP Nandipur,TPS Nandipur,grid_station,1481.980,
+CHASMA,CHASMA,,non_emitting,4052.415,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+CHASMA Hy,CHASMA Hy,,non_emitting,772.321,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+CHICHOKI,CHICHOKI,,non_emitting,157.712,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+CHICHOKI Hy,CHICHOKI Hy,,non_emitting,27.445,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+CHITRAL,CHITRAL,,non_emitting,17.805,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+CHITRAL Hy,CHITRAL Hy,,non_emitting,2.652,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Central Block-2,Central,,station_not_in_locations,4110.625,same block-label family as Central Block-2
+Central Block-2 Ga,Central,,station_not_in_locations,1020.905,same block-label family as Central Block-2
+Chamber Sugar Mill,Chamber Sugar Mill,,unmapped,0.278,"no stem alias; typed, never guessed"
+Chanaar Energy,Chanaar Energy,,unmapped,35.945,"no stem alias; typed, never guessed"
+Chanaar Energy Ba,Chanaar Energy,,unmapped,38.263,"no stem alias; typed, never guessed"
+Chanar Energy Limited. (CEL),Chanar Energy Limited. (CEL),,unmapped,105.250,"no stem alias; typed, never guessed"
+Chashma Hydropower Project (WAPDA),Chashma Hydropower Project (WAPDA),,non_emitting,2658.440,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Chashma Nuclear Power Plant 1 (CHASHNUPP-I),Chashma Nuclear Power Plant 1 (CHASHNUPP-I),,non_emitting,6832.310,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chashma Nuclear Power Plant 2 (CHASHNUPP-II),Chashma Nuclear Power Plant 2 (CHASHNUPP-II),,non_emitting,7437.490,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chashma Nuclear Power Plant 3 (CHASHNUPP-III),Chashma Nuclear Power Plant 3 (CHASHNUPP-III),,non_emitting,7191.620,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chashma Nuclear Power Plant 4 (CHASHNUPP-IV),Chashma Nuclear Power Plant 4 (CHASHNUPP-IV),,non_emitting,7180.250,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp - I,Chasnupp - I,,non_emitting,10721.564,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp - I Nu,Chasnupp - I Nu,,non_emitting,2244.332,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp -II,Chasnupp -II,,non_emitting,12440.649,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp -II Nu,Chasnupp -II Nu,,non_emitting,2067.983,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp -III,Chasnupp -III,,non_emitting,8820.688,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp -III Nu,Chasnupp -III Nu,,non_emitting,2403.623,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp -IV,Chasnupp -IV,,non_emitting,6705.783,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Chasnupp -IV Nu,Chasnupp -IV Nu,,non_emitting,2456.153,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+China Hub Power,China Hub Power,China Power Hub,grid_station,6397.017,
+China Hub Power Co,China Hub Power Co,China Power Hub,grid_station,7923.409,
+China Power Hub Generation Company (Private) Limited. (CPHGCL),China Power Hub Generation Company (Private) Limited. (CPHGCL),China Power Hub,grid_station,8790.220,
+Chiniot Power,Chiniot Power,Chiniot Power,grid_station,1062.141,
+Chiniot Power Ba,Chiniot Power,Chiniot Power,grid_station,160.558,
+Chiniot Power Limited. (CPL),Chiniot Power Limited. (CPL),Chiniot Power,grid_station,553.830,
+Coal Fire,Coal Fire,Huaneng Shandong Ruyi (Sahiwal Imported Coal),grid_station,8061.681,the PBS lane's bare rows are Sahiwal
+Coal Fire/Huaneng Shandong,Coal Fire/Huaneng Shandong,Huaneng Shandong Ruyi (Sahiwal Imported Coal),grid_station,14387.256,
+Coal Fire/Huaneng Shandong Ru Co,Coal Fire/Huaneng Shandong Ru Co,Huaneng Shandong Ruyi (Sahiwal Imported Coal),grid_station,7342.700,
+Coal Power,Coal Power,Huaneng Shandong Ruyi (Sahiwal Imported Coal),grid_station,873.168,same bare-row family
+Crest Energy,Crest Energy,,non_emitting,682.576,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Crest Energy Pakistan Limited.,Crest Energy Pakistan Limited.,,non_emitting,502.160,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Crest Energy So,Crest Energy So,,non_emitting,166.967,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+DARGAI,DARGAI,,non_emitting,501.442,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+DARGAI Hy,DARGAI Hy,,non_emitting,108.725,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+DKHP,DKHP,,non_emitting,2948.701,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+DKHP Hy,DKHP Hy,,non_emitting,640.783,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Dadu Energy,Dadu Energy,,unmapped,112.633,"no stem alias; typed, never guessed"
+Daral Khwar,Daral Khwar,,non_emitting,0.000,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Daral Khwar (Behren) Hydropower Project,Daral Khwar (Behren) Hydropower Project,,non_emitting,383.150,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Daral Khwar Hy,Daral Khwar Hy,,non_emitting,91.845,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Davis Energen Power Limited.,Davis Energen Power Limited.,,unmapped,0.000,"no stem alias; typed, never guessed"
+Davis Energy Pvt,Davis Energy Pvt,Davis Energen.,grid_station,145.933,
+Dawood Wind Power,Dawood Wind Power,,non_emitting,362.613,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Dawood Wind Power Wi,Dawood Wind Power Wi,,non_emitting,101.590,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Din Energy Limited,Din Energy Limited,,non_emitting,239.980,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Din Wind Energy Ltd.,Din Wind Energy Ltd.,,non_emitting,73.230,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Dubair Khwar Hydropower Project (WAPDA),Dubair Khwar Hydropower Project (WAPDA),,non_emitting,1570.080,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Engro Powergen Qadirpur Ltd (EPQL),Engro Powergen Qadirpur Ltd (EPQL),Engro Power Gen. Qadirpur,grid_station,2540.590,
+Engro Powergen Thar (Private) Limited. (EPTPL),Engro Powergen Thar (Private) Limited. (EPTPL),Engro Powergen Thar,grid_station,11092.080,
+FBC LAKHRA,FBC LAKHRA,FBC Lakhra,grid_station,277.394,
+FBC LAKHRA Co,FBC LAKHRA Co,,unmapped,0.000,"no stem alias; typed, never guessed"
+FFC Energy Ltd.,FFC Energy Ltd.,,non_emitting,287.810,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+FFCL Wind Energy,FFCL Wind Energy,,non_emitting,612.880,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+FFCL Wind Energy Wi,FFCL Wind Energy Wi,,non_emitting,90.890,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+FKPCL,FKPCL,Fauji Kabirwala,grid_station,4192.822,
+FKPCL Ga,FKPCL,Fauji Kabirwala,grid_station,389.955,
+FPCL/FFBL,FPCL/FFBL,,captive_lane,1780.374,Fauji power/fertilizer complex captive
+Faran Sugar Mill,Faran Sugar Mill,,unmapped,2.533,"no stem alias; typed, never guessed"
+Fatima Energy Limited. (FEL),Fatima Energy Limited. (FEL),Fatima Energy,grid_station,831.610,
+Fatima Sugar Mill,Fatima Sugar Mill,,captive_lane,180.064,sugar-mill captive
+Fauji Kabirwala Power Company Limited. (FKPCL),Fauji Kabirwala Power Company Limited. (FKPCL),Fauji Kabirwala,grid_station,516.140,
+Foundation Power,Foundation Power,Foundation Power,grid_station,5980.410,
+Foundation Power Company (Daharki) Ltd.,Foundation Power Company (Daharki) Ltd.,Foundation Power,grid_station,3561.420,
+Foundation Power Ga,Foundation Power,Foundation Power,grid_station,1000.366,
+Foundation Power-I,Foundation Power-I,Foundation Power,grid_station,321.961,
+Foundation Power-II,Foundation Power-II,Foundation Power,grid_station,353.226,
+Foundation Wind Energy-I Ltd. (FWEL-I),Foundation Wind Energy-I Ltd. (FWEL-I),,non_emitting,300.110,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Foundation Wind Energy-I Ltd. (FWEL-II),Foundation Wind Energy-I Ltd. (FWEL-II),,non_emitting,379.780,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Foundation Wind Power,Foundation Wind Power,,non_emitting,468.503,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Foundation Wind Power Wi,Foundation Wind Power Wi,,non_emitting,123.221,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Foundation Wind Power-II,Foundation Wind Power-II,,non_emitting,0.000,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Foundation Wind Power-II Wi,Foundation Wind Power-II Wi,,non_emitting,73.178,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+GHAZI BAROTHA,GHAZI BAROTHA,,non_emitting,32586.869,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+GHAZI BAROTHA Hy,GHAZI BAROTHA Hy,,non_emitting,6810.917,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+GOLEN GOL,GOLEN GOL,,non_emitting,156.334,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+GOLEN GOL Hy,GOLEN GOL Hy,,non_emitting,82.403,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+GOMAL ZAM,GOMAL ZAM,,non_emitting,104.455,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+GOMAL ZAM Hy,GOMAL ZAM Hy,,non_emitting,62.094,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+GTPS FAISALABAD,GTPS FAISALABAD,GTPS Faisalabad,grid_station,830.264,
+GTPS Faisalabad,GTPS Faisalabad,GTPS Faisalabad,grid_station,107.410,
+GTPS KOTRI,GTPS KOTRI,,station_not_in_locations,1087.267,"GENCO-era gas turbine station, PBS years only; absent from the SIR locations register - Wave 1 adds coordinates directly if wired"
+GTPS KOTRI Ga,GTPS KOTRI,,station_not_in_locations,0.000,"GENCO-era gas turbine station, PBS years only; absent from the SIR locations register - Wave 1 adds coordinates directly if wired"
+GTPS PANJGUR,GTPS PANJGUR,,unmapped,0.000,"no stem alias; typed, never guessed"
+Gadoon Textile Mills,Gadoon Textile Mills,,captive_lane,1302.401,captive plant
+Garam Chasma,Garam Chasma,,non_emitting,0.000,"hydel, nuclear, solar or wind by name marker; carries no combustion mass and needs no point in the emission map"
+Garam Chasma HS,Garam Chasma,,non_emitting,0.038,"hydel, nuclear, solar or wind by name marker; carries no combustion mass and needs no point in the emission map"
+Gharo Solar,Gharo Solar,,non_emitting,64.679,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Gharo Solar So,Gharo Solar So,,non_emitting,108.626,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Ghazi Brotha Hydropower Project (WAPDA),Ghazi Brotha Hydropower Project (WAPDA),,non_emitting,20246.020,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Golen Gol Hydropower Project (WAPDA),Golen Gol Hydropower Project (WAPDA),,non_emitting,453.180,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Guddu 747,Guddu 747,TPS Guddu (Units 14-16),grid_station,9386.129,the 747 MW CCPP
+Guddu 747 Ga,Guddu 747,TPS Guddu (Units 14-16),grid_station,3123.820,the 747 MW CCPP
+Guddu Block-2,Guddu,TPS Guddu (Units 5-10),grid_station,650.514,bare-name rows; same site
+Guddu Block-2 Ga,Guddu,TPS Guddu (Units 5-10),grid_station,317.263,bare-name rows; same site
+Guddu block-1,Guddu,TPS Guddu (Units 5-10),grid_station,1148.765,bare-name rows; same site
+Guddu block-1 Ga,Guddu,TPS Guddu (Units 5-10),grid_station,223.964,bare-name rows; same site
+Gul Ahmed,Gul Ahmed,Gul Ahmed,grid_station,4106.451,
+Gul Ahmed Electric Limited,Gul Ahmed Electric Limited,,non_emitting,262.600,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Gul Ahmed Wind,Gul Ahmed Wind,,non_emitting,387.337,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Gul Ahmed Wind Power Ltd.,Gul Ahmed Wind Power Ltd.,,non_emitting,311.530,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Gul Ahmed Wind Power Ltd. - II,Gul Ahmed Wind Power Ltd. - II,,non_emitting,77.490,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Gul Ahmed Wind Wi,Gul Ahmed Wind Wi,,non_emitting,110.374,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Gulf Power,Gulf Power,,unmapped,2.920,"no stem alias; typed, never guessed"
+Gulf Power RF,Gulf Power,,unmapped,0.000,"no stem alias; typed, never guessed"
+Gulf Powergen (Private) Limited. (GPPL),Gulf Powergen (Private) Limited. (GPPL),,unmapped,0.000,"no stem alias; typed, never guessed"
+Gulpur Hydropower Project,Gulpur Hydropower Project,,non_emitting,817.820,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+HNDS Energy (Private) Limited (HEPL),HNDS Energy (Private) Limited (HEPL),,non_emitting,41.200,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+HUBCO,HUBCO,Hub Power,grid_station,20673.412,the RFO station; distinct from China Power Hub coal
+HUBCO NORWAL,HUBCO NORWAL,Narowal Energy,grid_station,1185.660,
+HUBCO Narowal plant,HUBCO Narowal plant,Narowal Energy,grid_station,3519.269,
+HUBCO Narowal plant RF,HUBCO Narowal plant,Narowal Energy,grid_station,496.058,
+HUBCO RF,HUBCO,Hub Power,grid_station,112.919,the RFO station; distinct from China Power Hub coal
+Habib Sugar Mill,Habib Sugar Mill,,unmapped,3.780,"no stem alias; typed, never guessed"
+Habibullah Coastal Power Company (PVT) Limited. (HCPC),Habibullah Coastal Power Company (PVT) Limited. (HCPC),,unmapped,0.000,"no stem alias; typed, never guessed"
+Habibullah Power,Habibullah Power,Habibullah Coastal,grid_station,3044.906,
+Habibullah Power Ga,Habibullah Power,Habibullah Coastal,grid_station,0.000,
+Halmore Power,Halmore Power,Halmore Power,grid_station,2339.244,
+Halmore Power Generation Company (Pvt) Ltd. (HPGCL),Halmore Power Generation Company (Pvt) Ltd. (HPGCL),Halmore Power,grid_station,1172.170,
+Halmore Power Unit-1,Halmore Power,Halmore Power,grid_station,957.356,
+Halmore Power Unit-1 RL,Halmore Power,Halmore Power,grid_station,471.669,
+Halmore Power Unit-2,Halmore Power,Halmore Power,grid_station,3.249,
+Halmore Power Unit-2 HS,Halmore Power,Halmore Power,grid_station,38.124,
+Hamza Sugar Mills Limited. (HSML),Hamza Sugar Mills Limited. (HSML),Hamza Sugar Mills,grid_station,173.700,
+Hamza sugar mill,Hamza sugar mill,,unmapped,134.086,"no stem alias; typed, never guessed"
+Hamza sugar mill Ba,Hamza sugar mill,,unmapped,39.987,"no stem alias; typed, never guessed"
+Hamza sugar mills,Hamza sugar mills,,unmapped,20.791,"no stem alias; typed, never guessed"
+Harappa Solar (Pvt)Ltd,Harappa Solar (Pvt)Ltd,,non_emitting,83.839,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Harappa Solar (Pvt)Ltd So,Harappa Solar (Pvt)Ltd So,,non_emitting,31.448,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Havali Bahadar Shah,Havali Bahadar Shah,NPPMCL (HBS),grid_station,16915.919,
+Havali Bahadar Shah HS,Havali Bahadar Shah,NPPMCL (HBS),grid_station,0.232,
+Havali Bahadar Shah RL,Havali Bahadar Shah,NPPMCL (HBS),grid_station,7682.230,
+Hawa,Hawa,,unmapped,68.312,"no stem alias; typed, never guessed"
+Hawa Energy (Private) Ltd. (HEPL),Hawa Energy (Private) Ltd. (HEPL),,non_emitting,386.800,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Hawali Bahadur Shah,Hawali Bahadur Shah,NPPMCL (HBS),grid_station,155.108,spelling variant
+Hawwa,Hawwa,,non_emitting,282.860,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Hawwa Wi,Hawwa Wi,,non_emitting,140.960,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Head Marala,Head Marala,,non_emitting,50.826,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Head Marala Hy,Head Marala Hy,,non_emitting,36.593,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Helios Power (Private) Limited (HPPL),Helios Power (Private) Limited (HPPL),,non_emitting,48.280,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Hi-Tech,Hi-Tech,,unmapped,15.154,"no stem alias; typed, never guessed"
+Huaneng Shandong Ruyi (Pakistan) Energy (Private) Limited. (HSRPEL),Huaneng Shandong Ruyi (Pakistan) Energy (Private) Limited. (HSRPEL),Huaneng Shandong Ruyi (Sahiwal Imported Coal),grid_station,11844.010,
+Hub Power Company (HUBCO),Hub Power Company (HUBCO),Hub Power,grid_station,1422.450,
+Hydrochina Dawood Power (Pvt.) Ltd. (HDPPL),Hydrochina Dawood Power (Pvt.) Ltd. (HDPPL),,non_emitting,250.260,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+ICI Pakistan,ICI Pakistan,,unmapped,142.808,"no stem alias; typed, never guessed"
+Indus Sugar Mill,Indus Sugar Mill,,unmapped,80.060,"no stem alias; typed, never guessed"
+Indus Sugar Mill Ba,Indus Sugar Mill,,unmapped,0.000,"no stem alias; typed, never guessed"
+Indus Wind Energy Limited,Indus Wind Energy Limited,,non_emitting,255.350,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Indus Wind Energy Ltd.,Indus Wind Energy Ltd.,,non_emitting,85.500,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+International Industries,International Industries,,captive_lane,268.044,captive plant
+International Steel,International Steel,,captive_lane,408.706,captive plant
+JABBAN,JABBAN,,non_emitting,486.128,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+JABBAN Hy,JABBAN Hy,,non_emitting,134.458,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+JAMSHORO Block 1 Unit 1,JAMSHORO,TPS Jamshoro,grid_station,118.599,
+JAMSHORO Block 1 Unit 1 Gas,JAMSHORO,TPS Jamshoro,grid_station,0.000,
+JAMSHORO Block 1 Unit 1gENCO RF,JAMSHORO Block 1 Unit 1gENCO,,unmapped,87.524,"no stem alias; typed, never guessed"
+JAMSHORO Block 2 Unit 2,JAMSHORO,TPS Jamshoro,grid_station,212.918,
+JAMSHORO Block 2 Unit 2 GAS,JAMSHORO Block 2 Unit 2 GAS,,unmapped,0.000,"no stem alias; typed, never guessed"
+JAMSHORO Block 2 Unit 2 RFO,JAMSHORO,TPS Jamshoro,grid_station,2.907,
+JAMSHORO Block 2 Unit 2 RLNG,JAMSHORO,TPS Jamshoro,grid_station,0.000,
+JAMSHORO Block 2 Unit 3,JAMSHORO,TPS Jamshoro,grid_station,319.237,
+JAMSHORO Block 2 Unit 3 Gas,JAMSHORO,TPS Jamshoro,grid_station,0.000,
+JAMSHORO Block 2 Unit 3 RFO,JAMSHORO,TPS Jamshoro,grid_station,6.007,
+JAMSHORO Block 2 Unit 3 RLNG,JAMSHORO,TPS Jamshoro,grid_station,0.000,
+JAMSHORO Block 2 Unit 4,JAMSHORO,TPS Jamshoro,grid_station,456.254,
+JAMSHORO Block 2 Unit 4 Gas,JAMSHORO,TPS Jamshoro,grid_station,0.000,
+JAMSHORO Block 2 Unit 4 RFO,JAMSHORO,TPS Jamshoro,grid_station,45.374,
+JAMSHORO Block 2 Unit 4 RLNG,JAMSHORO,TPS Jamshoro,grid_station,0.000,
+JAMSHORO Block 4,JAMSHORO,TPS Jamshoro,grid_station,0.000,
+JAMSHORO Block 4 Ga,JAMSHORO,TPS Jamshoro,grid_station,60.281,
+JDW (Unit II &III),JDW (Unit II &III),Jamal Din Wali-II,grid_station,685.408,pooled II+III; adjacent RYK mills
+JDW - II,JDW - II,Jamal Din Wali-II,grid_station,349.678,
+JDW - II Ba,JDW - II,Jamal Din Wali-II,grid_station,177.172,
+JDW Sugar Mills Limited. (Unit-II) Rahim Yar Khan,JDW Sugar Mills Limited. (Unit-II) Rahim Yar Khan,Jamal Din Wali-II,grid_station,527.600,
+JDW Sugar Mills Limited. (Unit-III) Ghotki,JDW Sugar Mills Limited. (Unit-III) Ghotki,Jamal Din Wali-III,grid_station,504.770,
+JDW- III,JDW- III,Jamal Din Wali-III,grid_station,310.383,
+JDW- III Ba,JDW- III,Jamal Din Wali-III,grid_station,144.435,
+JDW-II,JDW-II,Jamal Din Wali-II,grid_station,159.000,
+JDW-III,JDW-III,Jamal Din Wali-III,grid_station,151.000,
+JINNAH,JINNAH,,non_emitting,1215.199,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+JINNAH Hy,JINNAH Hy,,non_emitting,235.015,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Jagran,Jagran,,non_emitting,478.864,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Jagran Hy,Jagran Hy,,non_emitting,113.229,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Jagran Hydropower Project,Jagran Hydropower Project,,non_emitting,359.410,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Jamshoro Power Generation Company Limited.,Jamshoro Power Generation Company Limited.,TPS Jamshoro,grid_station,308.060,
+Japan Power Generation Limited.,Japan Power Generation Limited.,,unmapped,0.000,"no stem alias; typed, never guessed"
+Jhampir,Jhampir,,non_emitting,356.634,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Jhampir Wi,Jhampir Wi,,non_emitting,143.905,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Jhimpir Power (Private) Limited. (JPPL),Jhimpir Power (Private) Limited. (JPPL),,non_emitting,383.930,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Jinnah Hydel Power Project (WAPDA),Jinnah Hydel Power Project (WAPDA),,non_emitting,686.710,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+K Electric,K Electric,,system_total,20470.400,K-Electric utility total in the SIR lane
+K-GARHI,K-GARHI,,non_emitting,88.283,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+K-GARHI Hy,K-GARHI Hy,,non_emitting,19.712,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+KAPCO,KAPCO,KAPCO,grid_station,21889.001,
+"KAPCO Block-1, Unit-1",KAPCO,KAPCO,grid_station,1273.832,
+"KAPCO Block-1, Unit-1 RF",KAPCO,KAPCO,grid_station,651.194,
+"KAPCO Block-1, Unit-2",KAPCO,KAPCO,grid_station,1825.004,
+"KAPCO Block-1, Unit-2 RL",KAPCO,KAPCO,grid_station,774.741,
+"KAPCO Block-1, Unit-3",KAPCO,KAPCO,grid_station,0.247,
+"KAPCO Block-1, Unit-3 HS",KAPCO,KAPCO,grid_station,109.894,
+"KAPCO Block-2, Unit-1",KAPCO,KAPCO,grid_station,1121.271,
+"KAPCO Block-2, Unit-1 RF",KAPCO,KAPCO,grid_station,487.727,
+"KAPCO Block-2, Unit-2",KAPCO,KAPCO,grid_station,3646.667,
+"KAPCO Block-2, Unit-2 RL",KAPCO,KAPCO,grid_station,1403.234,
+"KAPCO Block-2, Unit-3",KAPCO,KAPCO,grid_station,0.016,
+"KAPCO Block-2, Unit-3 HS",KAPCO,KAPCO,grid_station,0.220,
+"KAPCO Block-3, Unit-1",KAPCO,KAPCO,grid_station,566.377,
+"KAPCO Block-3, Unit-1 RL",KAPCO,KAPCO,grid_station,135.235,
+"KAPCO Block-3, Unit-2",KAPCO,KAPCO,grid_station,2.659,
+"KAPCO Block-3, Unit-2 HS",KAPCO,KAPCO,grid_station,0.000,
+KE(Formly KESCL),KE(Formly KESCL),,system_total,40122.094,K-Electric utility total in the PBS lane
+KKHP,KKHP,,non_emitting,914.713,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+KKHP Hy,KKHP Hy,,non_emitting,231.193,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Kanupp,Kanupp,,non_emitting,1661.771,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Kanupp Nu,Kanupp Nu,,non_emitting,219.029,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Kanupp-II,Kanupp-II,,non_emitting,0.000,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Kanupp-II Nu,Kanupp-II Nu,,non_emitting,1698.919,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Karachi Nuclear Power Plant-II (K-2),Karachi Nuclear Power Plant-II (K-2),,non_emitting,20235.200,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Karachi Nuclear Power Plant-III (K-3),Karachi Nuclear Power Plant-III (K-3),,non_emitting,16699.230,every panel fuel label is Nuclear - the panel's own fuel column is the typing evidence
+Karot HydroPower Project,Karot HydroPower Project,,non_emitting,545.160,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Karot Power Company (Pvt.) Ltd. (KPCL),Karot Power Company (Pvt.) Ltd. (KPCL),,non_emitting,6275.000,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Khan Khwar Hydropower Project (WAPDA),Khan Khwar Hydropower Project (WAPDA),,non_emitting,688.750,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Kohinoor Energy,Kohinoor Energy,Kohinoor Energy,grid_station,3087.757,
+Kohinoor Energy Limited. (KEL),Kohinoor Energy Limited. (KEL),Kohinoor Energy,grid_station,1052.060,
+Kohinoor Energy RF,Kohinoor Energy,Kohinoor Energy,grid_station,337.072,
+Kot Addu Power Company (KAPCO),Kot Addu Power Company (KAPCO),KAPCO,grid_station,5543.370,
+Kotri Power Station,Kotri Power Station,,unmapped,0.000,"no stem alias; typed, never guessed"
+Kumhar wala power,Kumhar wala power,,unmapped,30.811,"no stem alias; typed, never guessed"
+Lake Side Energy Pvt Ltd.,Lake Side Energy Pvt Ltd.,,non_emitting,71.920,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Lakeside Energy (Pvt.) Limited.,Lakeside Energy (Pvt.) Limited.,,non_emitting,254.400,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Lakhra Power Generation Company Limited.,Lakhra Power Generation Company Limited.,,unmapped,0.000,"no stem alias; typed, never guessed"
+Laraib,Laraib,,non_emitting,2128.049,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Laraib Hy,Laraib Hy,,non_emitting,465.286,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Laraib Hydropower Project / New Bong Escape,Laraib Hydropower Project / New Bong Escape,,non_emitting,412.430,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Layyah Sugar Mill,Layyah Sugar Mill,,captive_lane,190.422,sugar-mill captive
+Layyah Sugar Mill Ba,Layyah Sugar Mill,,captive_lane,46.369,sugar-mill captive
+Liberty Power Limited.,Liberty Power Limited.,Liberty Daharki Power,grid_station,2955.270,
+Liberty Power Tech,Liberty Power Tech,Liberty Power Tech.,grid_station,3755.978,
+Liberty Power Tech Ltd. (LPTL),Liberty Power Tech Ltd. (LPTL),Liberty Power Tech.,grid_station,1704.620,
+Liberty Power Tech RF,Liberty Power Tech,Liberty Power Tech.,grid_station,606.656,
+Liberty Power Tech.,Liberty Power Tech.,Liberty Power Tech.,grid_station,1250.000,
+Liberty Wind Power - 1 (Pvt.) Limited,Liberty Wind Power - 1 (Pvt.) Limited,,non_emitting,123.690,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Liberty Wind Power - 2 (Pvt.) Limited,Liberty Wind Power - 2 (Pvt.) Limited,,non_emitting,125.010,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Liberty Wind Power - I,Liberty Wind Power - I,,non_emitting,67.600,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Liberty Wind Power - II,Liberty Wind Power - II,,non_emitting,41.500,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Liberty Wind Power 2 (Pvt.) Limited,Liberty Wind Power 2 (Pvt.) Limited,,non_emitting,110.790,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Liberty Wind Power I (Pvt.) Limited,Liberty Wind Power I (Pvt.) Limited,,non_emitting,109.180,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Lotte Powergen,Lotte Powergen,,captive_lane,719.114,captive plant
+Lucky Cement Karachi,Lucky Cement Karachi,,captive_lane,1742.169,captive plant
+Lucky Cement Pezo,Lucky Cement Pezo,,captive_lane,2295.456,"captive plant; the 1,105-row captive register is the coordinate lane"
+Lucky Electric Power Company Limited (LEPCL),Lucky Electric Power Company Limited (LEPCL),Lucky Electric,grid_station,5019.520,
+Lucky Electric Power Limited.,Lucky Electric Power Limited.,Lucky Electric,grid_station,1783.360,
+Lucky Renewables (Pvt.) Limited (Tricom Wind Power (Pvt.) Limited),Lucky Renewables (Pvt.) Limited (Tricom Wind Power (Pvt.) Limited),,non_emitting,110.580,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+MANGLA,MANGLA,,non_emitting,24745.933,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+MANGLA Hy,MANGLA Hy,,non_emitting,5313.831,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Malakand - III Hydropower Project,Malakand - III Hydropower Project,,non_emitting,842.500,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Malakand-III,Malakand-III,,non_emitting,2041.137,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Malakand-III Hy,Malakand-III Hy,,non_emitting,321.566,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Mangla Hydropower Project (WAPDA),Mangla Hydropower Project (WAPDA),,non_emitting,13424.340,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Master,Master,,non_emitting,472.566,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Master Green Energy Limited.,Master Green Energy Limited.,,non_emitting,362.030,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Master Wi,Master Wi,,non_emitting,110.135,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Master Wind Energy Limited. (MWEL),Master Wind Energy Limited. (MWEL),,non_emitting,312.280,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Mehran Sugar Mill,Mehran Sugar Mill,,unmapped,0.585,"no stem alias; typed, never guessed"
+Mehran Sugar Mill Ba,Mehran Sugar Mill,,unmapped,0.000,"no stem alias; typed, never guessed"
+Meridian Energy (Private) Limited (MEPL),Meridian Energy (Private) Limited (MEPL),,non_emitting,43.560,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Metro,Metro,,non_emitting,293.148,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Metro Power Company Ltd. (MPCL),Metro Power Company Ltd. (MPCL),,non_emitting,379.780,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Metro Power Company Ltd. (MPCL) - II,Metro Power Company Ltd. (MPCL) - II,,non_emitting,47.340,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Metro Wi,Metro Wi,,non_emitting,120.120,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Metro Wind,Metro Wind,,non_emitting,218.222,wind
+Metro Wind Power Limited - II (MWPL - II),Metro Wind Power Limited - II (MWPL - II),,non_emitting,264.770,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Mira Power,Mira Power,,non_emitting,34.333,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Mira Power Hy,Mira Power Hy,,non_emitting,256.883,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+NANDIPUR,NANDIPUR,,non_emitting,198.611,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+NANDIPUR Hy,NANDIPUR Hy,,non_emitting,32.524,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+NASDA Green Energy (Pvt.) Limited,NASDA Green Energy (Pvt.) Limited,,non_emitting,258.970,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+NASDA Green Energy Pvt Ltd.,NASDA Green Energy Pvt Ltd.,,non_emitting,59.200,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+NEWJABBAN,NEWJABBAN,,non_emitting,135.146,"hydel, nuclear, solar or wind by name marker; carries no combustion mass and needs no point in the emission map"
+NGPS MULTAN,NGPS MULTAN,,unmapped,0.000,"no stem alias; typed, never guessed"
+Nandipur Power Plant,Nandipur Power Plant,TPS Nandipur,grid_station,3971.350,
+Narowal Energy Ltd.,Narowal Energy Ltd.,Narowal Energy,grid_station,671.100,
+Narowal Energy Ltd. (HUBCO),Narowal Energy Ltd. (HUBCO),Narowal Energy,grid_station,866.500,
+Neelum Jhelum,Neelum Jhelum,,non_emitting,8806.977,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Neelum Jhelum Hy,Neelum Jhelum Hy,,non_emitting,4787.155,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Neelum Jhelum Hydropower Project (WAPDA),Neelum Jhelum Hydropower Project (WAPDA),,non_emitting,6155.070,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+New Bong Escape Hydropower Project,New Bong Escape Hydropower Project,,non_emitting,761.000,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Nishat Chunian Ltd.,Nishat Chunian Ltd.,Nishat Chunian,grid_station,4607.644,
+Nishat Chunian Ltd. RF,Nishat Chunian Ltd.,Nishat Chunian,grid_station,537.568,
+Nishat Chunian Power Ltd (NCPL),Nishat Chunian Power Ltd (NCPL),Nishat Chunian,grid_station,1507.390,
+Nishat Power,Nishat Power,Nishat Power,grid_station,4896.957,
+Nishat Power Ltd (NPL),Nishat Power Ltd (NPL),Nishat Power,grid_station,1781.600,
+Nishat Power RF,Nishat Power,Nishat Power,grid_station,523.403,
+Noon Sugar Mill,Noon Sugar Mill,,unmapped,2.045,"no stem alias; typed, never guessed"
+Noon Sugar Mill Ba,Noon Sugar Mill,,unmapped,0.000,"no stem alias; typed, never guessed"
+Omni Power,Omni Power,,unmapped,104.858,"no stem alias; typed, never guessed"
+Opollo Solar,Opollo Solar,,non_emitting,505.584,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Opollo Solar So,Opollo Solar So,,non_emitting,164.909,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Orient Power Company (Pvt) Ltd. (OPCL),Orient Power Company (Pvt) Ltd. (OPCL),Orient Power,grid_station,1988.290,
+Orient Power company,Orient Power company,Orient Power,grid_station,856.047,
+Orient Power company Unit- HS 2,Orient Power company Unit- HS 2,Orient Power,grid_station,57.181,"HSD fuel-column bleed, mid-name; the unit number sits AFTER the bleed so no suffix rule reaches it"
+Orient Power company Unit- RL 1,Orient Power company,Orient Power,grid_station,540.736,
+Orient Power company Unit-1,Orient Power company,Orient Power,grid_station,1212.106,
+Orient Power company Unit-2,Orient Power company,Orient Power,grid_station,3.699,
+Orient company,Orient company,Orient Power,grid_station,2152.769,
+Oursun,Oursun,,non_emitting,146.218,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Oursun So,Oursun So,,non_emitting,90.872,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+PASMIC,PASMIC,,unmapped,5.357,"no stem alias; typed, never guessed"
+Patrind Hydropower Project,Patrind Hydropower Project,,non_emitting,1672.550,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Pehur Hydro Power,Pehur Hydro Power,,non_emitting,213.190,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Pehur Hydro Power Hy,Pehur Hydro Power Hy,,non_emitting,0.000,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Port Qasim,Port Qasim,Port Qasim Electric Power,grid_station,20121.479,
+Port Qasim Co,Port Qasim Co,Port Qasim Electric Power,grid_station,8372.375,
+Port Qasim Electric Power Company (Private) Limited. (PQEPCL),Port Qasim Electric Power Company (Private) Limited. (PQEPCL),Port Qasim Electric Power,grid_station,11457.680,
+Power Pvt. Ltd Reshman,Power Pvt. Ltd Reshman,,unmapped,55.963,"no stem alias; typed, never guessed"
+Punjab Thermal Power (Pvt) Ltd,Punjab Thermal Power (Pvt) Ltd,Punjab Thermal Power,grid_station,4081.710,
+Punjab Thermal Power Pvt Ltd,Punjab Thermal Power Pvt Ltd,,unmapped,76.340,"no stem alias; typed, never guessed"
+Quaid-e-Azam Solar Powe,Quaid-e-Azam Solar Powe,,non_emitting,163.197,solar; grid-parse truncation
+Quaid-e-Azam Solar Power,Quaid-e-Azam Solar Power,,non_emitting,317.690,solar
+Quaid-e-Azam Solar Power (Private) Limited. (QASPL),Quaid-e-Azam Solar Power (Private) Limited. (QASPL),,non_emitting,480.720,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Quaid-e-Azam Solar Power So,Quaid-e-Azam Solar Power So,,non_emitting,329.338,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Quaid-e-Azam Solar Power Solar,Quaid-e-Azam Solar Power Solar,,non_emitting,165.566,solar
+Quaid-e-Azam Thermal,Quaid-e-Azam Thermal,QATPL (Bhikki),grid_station,3666.626,
+Quaid-e-Azam Thermal HS Power Pvt. Ltd Unit-2,Quaid-e-Azam Thermal HS Power Pvt. Ltd,QATPL (Bhikki),grid_station,8.776,"HSD fuel-column bleed, mid-name"
+Quaid-e-Azam Thermal Power (Pvt) Ltd. (QATPL),Quaid-e-Azam Thermal Power (Pvt) Ltd. (QATPL),QATPL (Bhikki),grid_station,14450.070,
+Quaid-e-Azam Thermal Power P,Quaid-e-Azam Thermal Power,QATPL (Bhikki),grid_station,502.771,
+Quaid-e-Azam Thermal PowerH,Quaid-e-Azam Thermal PowerH,,unmapped,1.087,"no stem alias; typed, never guessed"
+Quaid-e-Azam Thermal PowerR,Quaid-e-Azam Thermal PowerR,QATPL (Bhikki),grid_station,11341.157,
+Quaid-e-Azam Thermal RL Power Pvt. Ltd Unit-1,Quaid-e-Azam Thermal RL Power Pvt. Ltd,QATPL (Bhikki),grid_station,7110.028,
+RASUL,RASUL,,non_emitting,391.254,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+RASUL Hy,RASUL Hy,,non_emitting,76.804,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+RENALA,RENALA,,non_emitting,10.724,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+RENALA Hy,RENALA Hy,,non_emitting,1.963,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+ROUSCH Power Plant,ROUSCH Power Plant,Rousch Power,grid_station,686.930,
+RYK,RYK,RYK Mills,grid_station,533.282,
+RYK Ba,RYK,RYK Mills,grid_station,73.940,
+RYK Mills Limited. (RYKML),RYK Mills Limited. (RYKML),RYK Mills,grid_station,274.540,
+Ranolia,Ranolia,,non_emitting,0.000,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Ranolia Hy,Ranolia Hy,,non_emitting,33.822,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Reshma Power Generation (Private) Limited. (RPGPL),Reshma Power Generation (Private) Limited. (RPGPL),,unmapped,0.000,"no stem alias; typed, never guessed"
+Reshman,Reshman,,unmapped,17.171,"no stem alias; typed, never guessed"
+Reshman RF,Reshman,,unmapped,0.000,"no stem alias; typed, never guessed"
+Roush Power,Roush Power,Rousch Power,grid_station,9387.141,
+Roush Power RL,Roush Power,Rousch Power,grid_station,284.358,
+SHADIWAL,SHADIWAL,,non_emitting,123.873,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+SHADIWAL Hy,SHADIWAL Hy,,non_emitting,31.901,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+SNPC,SNPC,SNPCL-I (IPP-2002),grid_station,2650.937,pooled SNPC rows; both IPP-2002 units share the Jamshoro site
+SPS FAISALABAD,SPS FAISALABAD,,station_not_in_locations,225.600,"GENCO-era steam station, PBS years only; absent from the SIR locations register"
+SPS Faisalabad,SPS Faisalabad,,unmapped,0.000,"no stem alias; typed, never guessed"
+Saba Power,Saba Power,Saba Power,grid_station,1288.562,
+Saba Power Company (Pvt) Ltd.,Saba Power Company (Pvt) Ltd.,Saba Power,grid_station,532.120,
+Saba Power RF,Saba Power,Saba Power,grid_station,121.653,
+Sachal Energy Development (Pvt) Ltd. (SEDPL),Sachal Energy Development (Pvt) Ltd. (SEDPL),,non_emitting,341.310,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Sachal Wind Power,Sachal Wind Power,,non_emitting,431.053,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Sachal Wind Power(SEDL) Wi,Sachal Wind Power(SEDL) Wi,,non_emitting,107.775,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Saif Power Limited,Saif Power Limited,Saif Power,grid_station,2728.127,
+Saif Power Limited Unit-1,Saif Power Limited,Saif Power,grid_station,1301.590,
+Saif Power Limited Unit-1 RL,Saif Power Limited,Saif Power,grid_station,612.998,
+Saif Power Limited Unit-2,Saif Power Limited,Saif Power,grid_station,2.888,
+Saif Power Limited Unit-2 HS,Saif Power Limited,Saif Power,grid_station,26.405,
+Saif Power Ltd (SPL),Saif Power Ltd (SPL),Saif Power,grid_station,1497.940,
+Sanghar Sugar Mill,Sanghar Sugar Mill,,unmapped,7.078,"no stem alias; typed, never guessed"
+Sanghar Sugar Mill Ba,Sanghar Sugar Mill,,unmapped,0.000,"no stem alias; typed, never guessed"
+Sapphir Wind,Sapphir Wind,,non_emitting,648.501,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Sapphir Wind Wi,Sapphir Wind Wi,,non_emitting,104.006,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Sapphire Electric Company Ltd (SECL),Sapphire Electric Company Ltd (SECL),Sapphire Electric,grid_station,1714.430,
+Sapphire Wind Power Company Ltd. (SWPCL),Sapphire Wind Power Company Ltd. (SWPCL),,non_emitting,290.620,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Sapphire electric company,Sapphire electric company,Sapphire Electric,grid_station,2820.512,
+Sapphire electric company U,Sapphire electric company,Sapphire Electric,grid_station,1105.269,
+Sapphire electric company Unit HS,Sapphire electric company Unit,Sapphire Electric,grid_station,115.970,
+Sapphire electric company Unit RL,Sapphire electric company Unit,Sapphire Electric,grid_station,452.072,
+Shikarpur Power,Shikarpur Power,,unmapped,106.636,"no stem alias; typed, never guessed"
+Sitara Energy Ltd,Sitara Energy Ltd,,captive_lane,852.648,captive plant
+Southern Electric Power Company Limited. (SEPCOL),Southern Electric Power Company Limited. (SEPCOL),,unmapped,0.000,"no stem alias; typed, never guessed"
+Star Hydro,Star Hydro,,non_emitting,1339.906,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Star Hydro Hy,Star Hydro Hy,,non_emitting,624.453,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Sukkur IBA Uni. plant,Sukkur IBA Uni. plant,,non_emitting,0.075,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Sukkur IBA Uni. plant So,Sukkur IBA Uni. plant So,,non_emitting,0.000,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+TARBELA,TARBELA,,non_emitting,66671.654,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+TARBELA Hy,TARBELA Hy,,non_emitting,12565.738,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+TARBELA- 4TH,TARBELA- 4TH,,non_emitting,7797.805,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+TARBELA- 4TH Hy,TARBELA- 4TH Hy,,non_emitting,3550.595,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+TGS Wind,TGS Wind,,non_emitting,240.370,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+TGS Wind Wi,TGS Wind Wi,,non_emitting,108.434,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+TGT Wind,TGT Wind,,non_emitting,260.759,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+TGT Wind Wi,TGT Wind Wi,,non_emitting,112.533,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+TNB Liberty Power,TNB Liberty Power,Liberty Daharki Power,grid_station,6182.760,the Daharki station
+TNB Liberty Power Ga,TNB Liberty Power,Liberty Daharki Power,grid_station,983.334,the Daharki station
+TPS GUDDU(1-4),TPS GUDDU(1-4),TPS Guddu (Units 5-10),grid_station,594.802,retired 1-4 units; same site
+TPS GUDDU(5-13),TPS GUDDU(5-13),TPS Guddu (Units 5-10),grid_station,11224.785,pooled 5-13; same site as 11-13
+TPS GUDDU(5-16),TPS GUDDU(5-16),TPS Guddu (Units 5-10),grid_station,7809.596,pooled all units; same site
+TPS JAMSHORO,TPS JAMSHORO,TPS Jamshoro,grid_station,9217.716,
+TPS M GARH,TPS M GARH,TPS Muzaffargarh,grid_station,14261.991,
+TPS M GARH Block 1 Unit 1,TPS M GARH,TPS Muzaffargarh,grid_station,209.243,
+TPS M GARH Block 1 Unit 1 RFO,TPS M GARH,TPS Muzaffargarh,grid_station,68.420,
+TPS M GARH Block 1 Unit 1 RLN,TPS M GARH Block 1 Unit 1 RLN,,unmapped,0.000,"no stem alias; typed, never guessed"
+TPS M GARH Block 1 Unit 2,TPS M GARH,TPS Muzaffargarh,grid_station,198.011,
+TPS M GARH Block 1 Unit 2 RFO,TPS M GARH,TPS Muzaffargarh,grid_station,54.424,
+TPS M GARH Block 1 Unit 2 RLN,TPS M GARH Block 1 Unit 2 RLN,,unmapped,0.000,"no stem alias; typed, never guessed"
+TPS M GARH Block 1 Unit 3,TPS M GARH,TPS Muzaffargarh,grid_station,326.839,
+TPS M GARH Block 1 Unit 3 Gas,TPS M GARH,TPS Muzaffargarh,grid_station,0.000,
+TPS M GARH Block 1 Unit 3 RFO,TPS M GARH,TPS Muzaffargarh,grid_station,143.764,
+TPS M GARH Block 1 Unit 3 RLN,TPS M GARH Block 1 Unit 3 RLN,,unmapped,0.000,"no stem alias; typed, never guessed"
+TPS M GARH Block 2 Unit 4,TPS M GARH,TPS Muzaffargarh,grid_station,263.572,
+TPS M GARH Block 2 Unit 4 Gas,TPS M GARH,TPS Muzaffargarh,grid_station,0.000,
+TPS M GARH Block 2 Unit 4 RFO,TPS M GARH,TPS Muzaffargarh,grid_station,0.000,
+TPS M GARH Block 2 Unit 4 RLN,TPS M GARH Block 2 Unit 4 RLN,,unmapped,0.000,"no stem alias; typed, never guessed"
+TPS M GARH Block 3 Unit 5,TPS M GARH,TPS Muzaffargarh,grid_station,99.962,
+TPS M GARH Block 3 Unit 5 Gas,TPS M GARH,TPS Muzaffargarh,grid_station,0.000,
+TPS M GARH Block 3 Unit 5 RFO,TPS M GARH,TPS Muzaffargarh,grid_station,20.921,
+TPS M GARH Block 3 Unit 5 RLN,TPS M GARH Block 3 Unit 5 RLN,,unmapped,0.035,"no stem alias; typed, never guessed"
+TPS M GARH Block 3 Unit 6,TPS M GARH,TPS Muzaffargarh,grid_station,49.387,
+TPS M GARH Block 3 Unit 6 Gas,TPS M GARH,TPS Muzaffargarh,grid_station,0.000,
+TPS M GARH Block 3 Unit 6 R,TPS M GARH Block 3 Unit 6 R,,unmapped,0.000,"no stem alias; typed, never guessed"
+TPS M GARH Block 3 Unit 6 RFO,TPS M GARH,TPS Muzaffargarh,grid_station,2.315,
+TPS M GARH Block 3 Unit 6 RLN,TPS M GARH Block 3 Unit 6 RLN,,unmapped,12.926,"no stem alias; typed, never guessed"
+TPS PASNI,TPS PASNI,,unmapped,0.000,"no stem alias; typed, never guessed"
+TPS QUETTA,TPS QUETTA,TPS Quetta,grid_station,164.615,
+TPS QUETTA Ga,TPS QUETTA,TPS Quetta,grid_station,0.000,
+Tando Allah Yar Sugar Mill,Tando Allah Yar Sugar Mill,,unmapped,3.939,"no stem alias; typed, never guessed"
+Tando Allah Yar Sugar Mill Ba,Tando Allah Yar Sugar Mill,,unmapped,0.000,"no stem alias; typed, never guessed"
+Tapal Power,Tapal Power,Tapal Energy,grid_station,4274.268,
+Tapal Wind,Tapal Wind,,non_emitting,306.554,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tapal Wind - II,Tapal Wind - II,,non_emitting,253.850,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tapal Wind Power Energy Private Ltd. (TWEPL),Tapal Wind Power Energy Private Ltd. (TWEPL),,non_emitting,214.490,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tapal Wind Power Energy Private Ltd. - 2 (TWEPL-II),Tapal Wind Power Energy Private Ltd. - 2 (TWEPL-II),,non_emitting,87.080,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tapal Wind Wi,Tapal Wind Wi,,non_emitting,74.700,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tarbela Ext. 04 Hydropower Project (WAPDA),Tarbela Ext. 04 Hydropower Project (WAPDA),,non_emitting,12374.830,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Tarbela Hydropower Project (WAPDA),Tarbela Hydropower Project (WAPDA),,non_emitting,36830.890,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Tenaga Generasi,Tenaga Generasi,,non_emitting,397.853,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tenaga Generasi Ltd.,Tenaga Generasi Ltd.,,non_emitting,261.240,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tenaga Generasi Wi,Tenaga Generasi Wi,,non_emitting,104.085,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Thal Industries Corporation Limited. (TICL) - Layyah Sugar Mills,Thal Industries Corporation Limited. (TICL) - Layyah Sugar Mills,,captive_lane,192.120,sugar-mill captive
+ThalNova Power Thar (Pvt.) Limited (TPTPL),ThalNova Power Thar (Pvt.) Limited (TPTPL),ThalNova,grid_station,2923.980,
+Thar Coal Block-I Power Generation Company (Private) Limited (TCB-I),Thar Coal Block-I Power Generation Company (Private) Limited (TCB-I),Thar Coal Block-I,grid_station,11490.580,
+Thar Energy Limited (TEL),Thar Energy Limited (TEL),Thar Energy,grid_station,3185.000,
+Thatta Power,Thatta Power,,unmapped,110.207,"no stem alias; typed, never guessed"
+Thermal Power Station Guddu 1-4,Thermal Power Station Guddu 1-4,,unmapped,73.490,"no stem alias; typed, never guessed"
+Thermal Power Station Guddu 5-13,Thermal Power Station Guddu 5-13,TPS Guddu (Units 5-10),grid_station,3889.340,pooled; same site
+Thermal Power Station Guddu 747,Thermal Power Station Guddu 747,TPS Guddu (Units 14-16),grid_station,8083.550,
+Thermal Power Station Muzaffargarh,Thermal Power Station Muzaffargarh,TPS Muzaffargarh,grid_station,307.850,
+Thermal Power Station Quetta,Thermal Power Station Quetta,,unmapped,0.000,"no stem alias; typed, never guessed"
+Three Gorges,Three Gorges,,non_emitting,694.025,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Three Gorges First Wind Farm Pakistan (Pvt.) Ltd. (TGF),Three Gorges First Wind Farm Pakistan (Pvt.) Ltd. (TGF),,non_emitting,319.470,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Three Gorges Second Wind Farm (Private) Ltd. (TGS),Three Gorges Second Wind Farm (Private) Ltd. (TGS),,non_emitting,318.910,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Three Gorges Third Wind Farm (Private) Ltd. (TGT),Three Gorges Third Wind Farm (Private) Ltd. (TGT),,non_emitting,328.340,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Three Gorges Wi,Three Gorges Wi,,non_emitting,99.143,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricom Wind Power (Pvt.) Limited,Tricom Wind Power (Pvt.) Limited,,non_emitting,140.020,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricom Wind Power (Pvt.) Ltd.,Tricom Wind Power (Pvt.) Ltd.,,non_emitting,133.750,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Bostan-A,Tricon Bostan-A,,non_emitting,272.301,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Bostan-A Wi,Tricon Bostan-A Wi,,non_emitting,149.898,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Bostan-B,Tricon Bostan-B,,non_emitting,244.885,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Bostan-B Wi,Tricon Bostan-B Wi,,non_emitting,144.138,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Bostan-C,Tricon Bostan-C,,non_emitting,248.705,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Bostan-C Wi,Tricon Bostan-C Wi,,non_emitting,143.545,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Boston Consulting Corporation (Private) Ltd-A (TBCCPL-A),Tricon Boston Consulting Corporation (Private) Ltd-A (TBCCPL-A),,non_emitting,417.580,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Boston Consulting Corporation (Private) Ltd-B (TBCCPL-B),Tricon Boston Consulting Corporation (Private) Ltd-B (TBCCPL-B),,non_emitting,406.270,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Tricon Boston Consulting Corporation (Private) Ltd-C (TBCCPL-C),Tricon Boston Consulting Corporation (Private) Ltd-C (TBCCPL-C),,non_emitting,407.620,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+UCH Power I,UCH Power I,Uch Power,grid_station,21111.577,
+UCH Power I Ga,UCH Power I,Uch Power,grid_station,4090.541,
+UCH Power II,UCH Power II,Uch-II Power,grid_station,12919.466,
+UCH Power II Ga,UCH Power II,Uch-II Power,grid_station,2339.368,
+UCH Power Plant,UCH Power Plant,Uch Power,grid_station,12171.070,
+UCH-II Power (Pvt) Ltd.,UCH-II Power (Pvt) Ltd.,Uch-II Power,grid_station,7639.460,
+UEP Wind Power (Pvt) Ltd.,UEP Wind Power (Pvt) Ltd.,,non_emitting,595.930,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+UEPL,UEPL,,unmapped,8.146,"no stem alias; typed, never guessed"
+UEPL Wind,UEPL Wind,,non_emitting,647.758,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+UEPL Wind Wi,UEPL Wind Wi,,non_emitting,203.617,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+WARSAK,WARSAK,,non_emitting,4921.414,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+WARSAK Hy,WARSAK Hy,,non_emitting,1064.986,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Warsak Hydropower Project (WAPDA),Warsak Hydropower Project (WAPDA),,non_emitting,2629.030,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence
+Yunus Energy Limited,Yunus Energy Limited,,non_emitting,446.941,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Yunus Energy Limited Wi,Yunus Energy Limited Wi,,non_emitting,108.852,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Yunus Energy Ltd.,Yunus Energy Ltd.,,non_emitting,307.770,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+ZEPHYR Wind,ZEPHYR Wind,,non_emitting,241.488,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+ZEPHYR Wind Wi,ZEPHYR Wind Wi,,non_emitting,149.068,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Zephyr Power (Pvt.) Ltd.,Zephyr Power (Pvt.) Ltd.,,non_emitting,371.140,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Zhenfa Pakistan New Energy Limited,Zhenfa Pakistan New Energy Limited,,non_emitting,56.740,every panel fuel label is Solar - the panel's own fuel column is the typing evidence
+Zorlu Energi,Zorlu Energi,,non_emitting,751.691,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Zorlu Energi Wi,Zorlu Energi Wi,,non_emitting,109.652,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+Zorlu Enerji Pakistan Ltd. (ZEPL),Zorlu Enerji Pakistan Ltd. (ZEPL),,non_emitting,340.910,every panel fuel label is Wind - the panel's own fuel column is the typing evidence
+engro Powergen Thar,engro Powergen Thar,Engro Powergen Thar,grid_station,4557.642,
+engro Powergen Thar Co,engro Powergen Thar Co,Engro Powergen Thar,grid_station,3909.298,
+engro powergen Unit-1,engro powergen,Engro Power Gen. Qadirpur,grid_station,2085.873,
+engro powergen Unit-1 Ga,engro powergen,Engro Power Gen. Qadirpur,grid_station,648.503,
+engro powergen Unit-2,engro powergen,Engro Power Gen. Qadirpur,grid_station,0.000,
+engro powergen Unit-2 HS,engro powergen,Engro Power Gen. Qadirpur,grid_station,0.000,
+engro powrgen,engro powrgen,Engro Power Gen. Qadirpur,grid_station,4622.165,

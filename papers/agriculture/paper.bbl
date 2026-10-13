@@ -1,0 +1,308 @@
+\begin{thebibliography}{33}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Unpublished
+\bibitem[{Ahmad(2026)}]{ahmad2026national}
+\bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Pakemis v1.0: an evidence-graded public-data
+  reconstruction of pakistan's non-lulucf greenhouse-gas emissions, fy2015--16
+  to fy2023--24}.
+\newblock \bibinfo{note}{Manuscript in preparation for Earth System Science
+  Data; it describes release 1.0.0rc67, whose data, software and technical
+  documentation DOIs are reserved and not yet assigned (see CITATION.cff). No
+  submission has been made}.
+%Type = Article
+\bibitem[{Akagi et~al.(2011)Akagi, Yokelson, Wiedinmyer, Alvarado, Reid, Karl,
+  Crounse and Wennberg}]{akagi2011}
+\bibinfo{author}{Akagi, S.K.}, \bibinfo{author}{Yokelson, R.J.},
+  \bibinfo{author}{Wiedinmyer, C.}, \bibinfo{author}{Alvarado, M.J.},
+  \bibinfo{author}{Reid, J.S.}, \bibinfo{author}{Karl, T.},
+  \bibinfo{author}{Crounse, J.D.}, \bibinfo{author}{Wennberg, P.O.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Emission factors for open and domestic biomass
+  burning for use in atmospheric models}.
+\newblock \bibinfo{journal}{Atmospheric Chemistry and Physics}
+  \bibinfo{volume}{11}, \bibinfo{pages}{4039--4072}.
+\newblock \DOIprefix\doi{10.5194/acp-11-4039-2011}.
+%Type = Misc
+\bibitem[{{Climate TRACE}(2026)}]{climatetrace}
+\bibinfo{author}{{Climate TRACE}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Climate {TRACE} emissions inventory and data
+  downloads}.
+\newblock \bibinfo{howpublished}{\url{https://climatetrace.org/data}}.
+\newblock \bibinfo{note}{Version 7 country- and source-level API records; CC BY
+  4.0; accessed 6 August 2026}.
+%Type = Misc
+\bibitem[{Crippa et~al.(2024)Crippa, Guizzardi et~al.}]{edgar2024}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
+  \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{{GHG} emissions of all world countries --- 2024
+  report ({EDGAR} {GHG} booklet, prior vintage)}.
+\newblock \bibinfo{howpublished}{European Commission, Joint Research Centre}.
+\newblock \bibinfo{note}{Prior-vintage booklet, retained only for the
+  agriculture {CY2023} comparison row (\texttt{data/benchmarks.csv} row 8);
+  source file not held, no hash pinned. Superseded for every other comparison
+  by \emph{edgar2025booklet}. \url{https://edgar.jrc.ec.europa.eu/}}.
+%Type = Misc
+\bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{GHG} emissions of all world countries --- 2025
+  report ({EDGAR} {GHG} booklet)}.
+\newblock \bibinfo{howpublished}{European Commission, Joint Research Centre}.
+\newblock \bibinfo{note}{Sheet GHG\_by\_sector\_and\_country; annual series
+  1970--2024; CC BY 4.0. Snapshot archived at
+  \texttt{sources/EDGAR/EDGAR\_2025\_GHG\_booklet\_2025.xlsx}, sha256
+  \texttt{8bd6b8a4\ldots} pinned per benchmark row in
+  \texttt{data/benchmarks.csv}. \url{https://edgar.jrc.ec.europa.eu/}}.
+%Type = Article
+\bibitem[{Crippa et~al.(2020)Crippa, Solazzo, Huang, Guizzardi, Koffi, Muntean,
+  Schieberle, Friedrich and Janssens-Maenhout}]{crippa2020}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Solazzo, E.},
+  \bibinfo{author}{Huang, G.}, \bibinfo{author}{Guizzardi, D.},
+  \bibinfo{author}{Koffi, E.}, \bibinfo{author}{Muntean, M.},
+  \bibinfo{author}{Schieberle, C.}, \bibinfo{author}{Friedrich, R.},
+  \bibinfo{author}{Janssens-Maenhout, G.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{High resolution temporal profiles in the {Emissions
+  Database for Global Atmospheric Research}}.
+\newblock \bibinfo{journal}{Scientific Data} \bibinfo{volume}{7},
+  \bibinfo{pages}{121}.
+\newblock \DOIprefix\doi{10.1038/s41597-020-0462-2}.
+%Type = Article
+\bibitem[{Cui et~al.(2021)Cui, Zhou, Ciais, Davidson et~al.}]{cui2021}
+\bibinfo{author}{Cui, X.}, \bibinfo{author}{Zhou, F.}, \bibinfo{author}{Ciais,
+  P.}, \bibinfo{author}{Davidson, E.A.}, et~al., \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Global mapping of crop-specific emission factors
+  highlights hotspots of nitrous oxide mitigation}.
+\newblock \bibinfo{journal}{Nature Food} \bibinfo{volume}{2},
+  \bibinfo{pages}{886--893}.
+\newblock \DOIprefix\doi{10.1038/s43016-021-00384-9}.
+%Type = Techreport
+\bibitem[{{EMEP/EEA}(2019)}]{emep2019}
+\bibinfo{author}{{EMEP/EEA}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{EMEP/EEA air pollutant emission inventory guidebook
+  2019 --- 3.F Field burning of agricultural wastes}.
+\newblock \bibinfo{type}{Technical Report}. European Environment Agency.
+%Type = Techreport
+\bibitem[{{EMEP/EEA}(2023a)}]{emep2023manure}
+\bibinfo{author}{{EMEP/EEA}}, \bibinfo{year}{2023}a.
+\newblock \bibinfo{title}{EMEP/EEA air pollutant emission inventory guidebook
+  2023 --- 3.B Manure management}.
+\newblock \bibinfo{type}{Technical Report}. European Environment Agency.
+  \bibinfo{address}{Copenhagen}.
+\newblock \URLprefix
+  \url{https://www.eea.europa.eu/publications/emep-eea-guidebook-2023}.
+%Type = Techreport
+\bibitem[{{EMEP/EEA}(2023b)}]{emep2023soils}
+\bibinfo{author}{{EMEP/EEA}}, \bibinfo{year}{2023}b.
+\newblock \bibinfo{title}{EMEP/EEA air pollutant emission inventory guidebook
+  2023 --- 3.D Crop production and agricultural soils}.
+\newblock \bibinfo{type}{Technical Report}. European Environment Agency.
+  \bibinfo{address}{Copenhagen}.
+\newblock \URLprefix
+  \url{https://www.eea.europa.eu/publications/emep-eea-guidebook-2023}.
+%Type = Techreport
+\bibitem[{{FAO}(2022)}]{gleam2022}
+\bibinfo{author}{{FAO}}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Global Livestock Environmental Assessment Model
+  (GLEAM) 3.0 --- Model description, revision 9}.
+\newblock \bibinfo{type}{Technical Report}. Food and Agriculture Organization
+  of the United Nations. \bibinfo{address}{Rome}.
+%Type = Misc
+\bibitem[{{FAO}(2025)}]{faostat}
+\bibinfo{author}{{FAO}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{FAOSTAT}: Emissions totals, crops and livestock,
+  fertilizers by nutrient, and forestry production and trade (wood fuel)}.
+\newblock \bibinfo{howpublished}{Food and Agriculture Organization, Rome}.
+\newblock \bibinfo{note}{\url{https://www.fao.org/faostat/}}.
+%Type = Article
+\bibitem[{Giglio et~al.(2016)Giglio, Schroeder and Justice}]{giglio2016}
+\bibinfo{author}{Giglio, L.}, \bibinfo{author}{Schroeder, W.},
+  \bibinfo{author}{Justice, C.O.}, \bibinfo{year}{2016}.
+\newblock \bibinfo{title}{The collection 6 {MODIS} active fire detection
+  algorithm and fire products}.
+\newblock \bibinfo{journal}{Remote Sensing of Environment}
+  \bibinfo{volume}{178}, \bibinfo{pages}{31--41}.
+\newblock \DOIprefix\doi{10.1016/j.rse.2016.02.054}.
+%Type = Article
+\bibitem[{Gilbert et~al.(2018)Gilbert, Nicolas, Cinardi, Van~Boeckel,
+  Vanwambeke, Wint and Robinson}]{gilbert2018}
+\bibinfo{author}{Gilbert, M.}, \bibinfo{author}{Nicolas, G.},
+  \bibinfo{author}{Cinardi, G.}, \bibinfo{author}{Van~Boeckel, T.P.},
+  \bibinfo{author}{Vanwambeke, S.O.}, \bibinfo{author}{Wint, G.R.W.},
+  \bibinfo{author}{Robinson, T.P.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{Global distribution data for cattle, buffaloes,
+  horses, sheep, goats, pigs, chickens and ducks in 2010}.
+\newblock \bibinfo{journal}{Scientific Data} \bibinfo{volume}{5},
+  \bibinfo{pages}{180227}.
+\newblock \DOIprefix\doi{10.1038/sdata.2018.227}.
+%Type = Misc
+\bibitem[{Gilbert et~al.(2024)Gilbert, Nicolas, Cinardi et~al.}]{glw4}
+\bibinfo{author}{Gilbert, M.}, \bibinfo{author}{Nicolas, G.},
+  \bibinfo{author}{Cinardi, G.}, et~al., \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Gridded livestock of the world (glw 4), reference
+  year 2020}.
+\newblock \bibinfo{howpublished}{Food and Agriculture Organization}.
+\newblock \bibinfo{note}{\url{https://data.apps.fao.org/catalog/}}.
+%Type = Techreport
+\bibitem[{{Global Change Impact Studies Centre}(2019)}]{gcisc}
+\bibinfo{author}{{Global Change Impact Studies Centre}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Greenhouse Gas Inventory of Pakistan}.
+\newblock \bibinfo{type}{Technical Report}. GCISC, Ministry of Climate Change,
+  Islamabad.
+%Type = Misc
+\bibitem[{{International Food Policy Research Institute}(2024)}]{mapspam2020}
+\bibinfo{author}{{International Food Policy Research Institute}},
+  \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{{MapSPAM} spatial production allocation model, {SPAM}
+  2020 v2r2}.
+\newblock \bibinfo{howpublished}{Harvard Dataverse}.
+\newblock \DOIprefix\doi{10.7910/DVN/SWPENT}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 4: Agriculture, Forestry and Other Land Use}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Japan.
+%Type = Techreport
+\bibitem[{{IPCC}(2019)}]{ipcc2019}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{2019 Refinement to the 2006 {IPCC} Guidelines for
+  National Greenhouse Gas Inventories}.
+\newblock \bibinfo{type}{Technical Report}. IPCC, Switzerland.
+%Type = Techreport
+\bibitem[{{Ministry of Finance}(2024)}]{econsurvey2024ag}
+\bibinfo{author}{{Ministry of Finance}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Pakistan Economic Survey 2023--24, Chapter 2:
+  Agriculture}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+%Type = Techreport
+\bibitem[{{Ministry of National Food Security and Research}(2023)}]{mnfsrcrops}
+\bibinfo{author}{{Ministry of National Food Security and Research}},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Crops Area and Production (District-wise) 2022--23}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan, Economic
+  Wing. \bibinfo{address}{Islamabad}.
+%Type = Article
+\bibitem[{Mir et~al.(2021)Mir, Purohit, Cai and Kim}]{mir2022}
+\bibinfo{author}{Mir, K.A.}, \bibinfo{author}{Purohit, P.},
+  \bibinfo{author}{Cai, S.}, \bibinfo{author}{Kim, S.}, \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Comparative analysis of greenhouse gas emission
+  inventory for pakistan: {AFOLU} sector}.
+\newblock \bibinfo{journal}{Advances in Climate Change Research}
+  \bibinfo{volume}{12}, \bibinfo{pages}{132--144}.
+\newblock \DOIprefix\doi{10.1016/j.accre.2021.01.003}.
+%Type = Misc
+\bibitem[{{NASA}(2025)}]{firms}
+\bibinfo{author}{{NASA}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Fire information for resource management system
+  ({FIRMS}): {VIIRS} active fire}.
+\newblock \bibinfo{howpublished}{NASA Earth Science Data Systems}.
+\newblock \bibinfo{note}{\url{https://firms.modaps.eosdis.nasa.gov/}}.
+%Type = Techreport
+\bibitem[{{National Fertilizer Development Centre}(2024)}]{nfdc2024}
+\bibinfo{author}{{National Fertilizer Development Centre}},
+  \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Fertilizer Review 2023--24}.
+\newblock \bibinfo{type}{Technical Report} \bibinfo{number}{NFDC Publication
+  No. 2/2024}. Ministry of National Food Security and Research, Government of
+  Pakistan. \bibinfo{address}{Islamabad}.
+%Type = Article
+\bibitem[{Oda et~al.(2018)Oda, Maksyutov and Andres}]{oda2018}
+\bibinfo{author}{Oda, T.}, \bibinfo{author}{Maksyutov, S.},
+  \bibinfo{author}{Andres, R.J.}, \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{The open-source data inventory for anthropogenic
+  {CO2}, version 2016 ({ODIAC2016}): a global monthly fossil fuel {CO2} gridded
+  emissions data product for tracer transport simulations and surface flux
+  inversions}.
+\newblock \bibinfo{journal}{Earth System Science Data} \bibinfo{volume}{10},
+  \bibinfo{pages}{87--107}.
+\newblock \DOIprefix\doi{10.5194/essd-10-87-2018}.
+%Type = Techreport
+\bibitem[{{Pakistan Bureau of Statistics}(2025)}]{pbscensus2024}
+\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{7th Agricultural Census 2024}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+%Type = Article
+\bibitem[{Runfola et~al.(2020)Runfola, Anderson, Baier et~al.}]{runfola2020}
+\bibinfo{author}{Runfola, D.}, \bibinfo{author}{Anderson, A.},
+  \bibinfo{author}{Baier, H.}, et~al., \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{geoBoundaries}: A global database of political
+  administrative boundaries}.
+\newblock \bibinfo{journal}{PLOS ONE} \bibinfo{volume}{15},
+  \bibinfo{pages}{e0231866}.
+\newblock \DOIprefix\doi{10.1371/journal.pone.0231866}.
+%Type = Article
+\bibitem[{Sommer et~al.(2019)Sommer, Webb and Hutchings}]{sommer2019}
+\bibinfo{author}{Sommer, S.G.}, \bibinfo{author}{Webb, J.},
+  \bibinfo{author}{Hutchings, N.D.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{New emission factors for calculation of ammonia
+  volatilization from european livestock manure management systems}.
+\newblock \bibinfo{journal}{Frontiers in Sustainable Food Systems}
+  \bibinfo{volume}{3}, \bibinfo{pages}{101}.
+\newblock \DOIprefix\doi{10.3389/fsufs.2019.00101}.
+%Type = Article
+\bibitem[{Stehfest and Bouwman(2006)}]{stehfest2006}
+\bibinfo{author}{Stehfest, E.}, \bibinfo{author}{Bouwman, L.},
+  \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{N\textsubscript{2}o and no emission from agricultural
+  fields and soils under natural vegetation: summarizing available measurement
+  data and modeling of global annual emissions}.
+\newblock \bibinfo{journal}{Nutrient Cycling in Agroecosystems}
+  \bibinfo{volume}{74}, \bibinfo{pages}{207--228}.
+\newblock \DOIprefix\doi{10.1007/s10705-006-9000-7}.
+%Type = Misc
+\bibitem[{Tomlinson et~al.(2025)Tomlinson, Carnell, Pearson, Sutton, Jain and
+  Dragosits}]{sanh2026data}
+\bibinfo{author}{Tomlinson, S.J.}, \bibinfo{author}{Carnell, E.J.},
+  \bibinfo{author}{Pearson, C.}, \bibinfo{author}{Sutton, M.A.},
+  \bibinfo{author}{Jain, N.}, \bibinfo{author}{Dragosits, U.},
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Gridded emissions of ammonia ({NH3}) from
+  agricultural sources in {South} {Asia} at 0.1 degrees resolution, 2015}.
+\newblock \DOIprefix\doi{10.5285/e0114a4f-32c2-41d9-9c2a-c46f365d4c30}.
+%Type = Article
+\bibitem[{Tomlinson et~al.(2026)Tomlinson, Carnell, Pearson, Sutton, Jain and
+  Dragosits}]{sanh2026}
+\bibinfo{author}{Tomlinson, S.J.}, \bibinfo{author}{Carnell, E.J.},
+  \bibinfo{author}{Pearson, C.}, \bibinfo{author}{Sutton, M.A.},
+  \bibinfo{author}{Jain, N.}, \bibinfo{author}{Dragosits, U.},
+  \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{A framework for gridded estimates of ammonia
+  emissions from agriculture in south asia}.
+\newblock \bibinfo{journal}{Earth System Science Data} \bibinfo{volume}{18},
+  \bibinfo{pages}{2349--2370}.
+\newblock \DOIprefix\doi{10.5194/essd-18-2349-2026}. \bibinfo{note}{south Asian
+  Nitrogen Hub; country totals in Table 3}.
+%Type = Article
+\bibitem[{Tubiello et~al.(2013)Tubiello, Salvatore, Rossi, Ferrara, Fitton and
+  Smith}]{tubiello2013}
+\bibinfo{author}{Tubiello, F.N.}, \bibinfo{author}{Salvatore, M.},
+  \bibinfo{author}{Rossi, S.}, \bibinfo{author}{Ferrara, A.},
+  \bibinfo{author}{Fitton, N.}, \bibinfo{author}{Smith, P.},
+  \bibinfo{year}{2013}.
+\newblock \bibinfo{title}{The {FAOSTAT} database of greenhouse gas emissions
+  from agriculture}.
+\newblock \bibinfo{journal}{Environmental Research Letters}
+  \bibinfo{volume}{8}, \bibinfo{pages}{015009}.
+\newblock \DOIprefix\doi{10.1088/1748-9326/8/1/015009}.
+%Type = Article
+\bibitem[{Zanaga et~al.(2022)Zanaga, Van De~Kerchove, Daems
+  et~al.}]{worldcover2021}
+\bibinfo{author}{Zanaga, D.}, \bibinfo{author}{Van De~Kerchove, R.},
+  \bibinfo{author}{Daems, D.}, et~al., \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{{ESA WorldCover} 10 m 2021 v200}.
+\newblock \bibinfo{journal}{Zenodo} \DOIprefix\doi{10.5281/zenodo.7254221}.
+
+\end{thebibliography}

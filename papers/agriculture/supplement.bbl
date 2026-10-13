@@ -1,0 +1,101 @@
+\begin{thebibliography}{9}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Article
+\bibitem[{Akagi et~al.(2011)Akagi, Yokelson, Wiedinmyer, Alvarado, Reid, Karl,
+  Crounse and Wennberg}]{akagi2011}
+\bibinfo{author}{Akagi, S.K.}, \bibinfo{author}{Yokelson, R.J.},
+  \bibinfo{author}{Wiedinmyer, C.}, \bibinfo{author}{Alvarado, M.J.},
+  \bibinfo{author}{Reid, J.S.}, \bibinfo{author}{Karl, T.},
+  \bibinfo{author}{Crounse, J.D.}, \bibinfo{author}{Wennberg, P.O.},
+  \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Emission factors for open and domestic biomass
+  burning for use in atmospheric models}.
+\newblock \bibinfo{journal}{Atmospheric Chemistry and Physics}
+  \bibinfo{volume}{11}, \bibinfo{pages}{4039--4072}.
+\newblock \DOIprefix\doi{10.5194/acp-11-4039-2011}.
+%Type = Article
+\bibitem[{Bunting et~al.(2022)Bunting, Rosenqvist, Hilarides, Lucas, Thomas,
+  Tadono, Worthington, Spalding, Murray and Rebelo}]{gmw}
+\bibinfo{author}{Bunting, P.}, \bibinfo{author}{Rosenqvist, A.},
+  \bibinfo{author}{Hilarides, L.}, \bibinfo{author}{Lucas, R.M.},
+  \bibinfo{author}{Thomas, N.}, \bibinfo{author}{Tadono, T.},
+  \bibinfo{author}{Worthington, T.A.}, \bibinfo{author}{Spalding, M.},
+  \bibinfo{author}{Murray, N.J.}, \bibinfo{author}{Rebelo, L.M.},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Global mangrove watch: updated 2010 mangrove forest
+  extent}.
+\newblock \bibinfo{journal}{Remote Sensing} \bibinfo{volume}{14},
+  \bibinfo{pages}{3657}.
+\newblock \DOIprefix\doi{10.3390/rs14153657}.
+%Type = Article
+\bibitem[{Cui et~al.(2021)Cui, Zhou, Ciais, Davidson et~al.}]{cui2021}
+\bibinfo{author}{Cui, X.}, \bibinfo{author}{Zhou, F.}, \bibinfo{author}{Ciais,
+  P.}, \bibinfo{author}{Davidson, E.A.}, et~al., \bibinfo{year}{2021}.
+\newblock \bibinfo{title}{Global mapping of crop-specific emission factors
+  highlights hotspots of nitrous oxide mitigation}.
+\newblock \bibinfo{journal}{Nature Food} \bibinfo{volume}{2},
+  \bibinfo{pages}{886--893}.
+\newblock \DOIprefix\doi{10.1038/s43016-021-00384-9}.
+%Type = Techreport
+\bibitem[{{EMEP/EEA}(2019)}]{emep2019}
+\bibinfo{author}{{EMEP/EEA}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{EMEP/EEA air pollutant emission inventory guidebook
+  2019 --- 3.F Field burning of agricultural wastes}.
+\newblock \bibinfo{type}{Technical Report}. European Environment Agency.
+%Type = Techreport
+\bibitem[{{FAO}(2020)}]{fra2020}
+\bibinfo{author}{{FAO}}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Global Forest Resources Assessment 2020: Pakistan}.
+\newblock \bibinfo{type}{Technical Report}. Food and Agriculture Organization,
+  Rome.
+%Type = Techreport
+\bibitem[{{IPCC}(2014)}]{ipcc2013wetlands}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2014}.
+\newblock \bibinfo{title}{2013 Supplement to the 2006 {IPCC} Guidelines for
+  National Greenhouse Gas Inventories: Wetlands}.
+\newblock \bibinfo{type}{Technical Report}. IPCC, Switzerland.
+%Type = Article
+\bibitem[{Sommer et~al.(2019)Sommer, Webb and Hutchings}]{sommer2019}
+\bibinfo{author}{Sommer, S.G.}, \bibinfo{author}{Webb, J.},
+  \bibinfo{author}{Hutchings, N.D.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{New emission factors for calculation of ammonia
+  volatilization from european livestock manure management systems}.
+\newblock \bibinfo{journal}{Frontiers in Sustainable Food Systems}
+  \bibinfo{volume}{3}, \bibinfo{pages}{101}.
+\newblock \DOIprefix\doi{10.3389/fsufs.2019.00101}.
+%Type = Misc
+\bibitem[{Tomlinson et~al.(2025)Tomlinson, Carnell, Pearson, Sutton, Jain and
+  Dragosits}]{sanh2026data}
+\bibinfo{author}{Tomlinson, S.J.}, \bibinfo{author}{Carnell, E.J.},
+  \bibinfo{author}{Pearson, C.}, \bibinfo{author}{Sutton, M.A.},
+  \bibinfo{author}{Jain, N.}, \bibinfo{author}{Dragosits, U.},
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Gridded emissions of ammonia ({NH3}) from
+  agricultural sources in {South} {Asia} at 0.1 degrees resolution, 2015}.
+\newblock \DOIprefix\doi{10.5285/e0114a4f-32c2-41d9-9c2a-c46f365d4c30}.
+%Type = Article
+\bibitem[{Tomlinson et~al.(2026)Tomlinson, Carnell, Pearson, Sutton, Jain and
+  Dragosits}]{sanh2026}
+\bibinfo{author}{Tomlinson, S.J.}, \bibinfo{author}{Carnell, E.J.},
+  \bibinfo{author}{Pearson, C.}, \bibinfo{author}{Sutton, M.A.},
+  \bibinfo{author}{Jain, N.}, \bibinfo{author}{Dragosits, U.},
+  \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{A framework for gridded estimates of ammonia
+  emissions from agriculture in south asia}.
+\newblock \bibinfo{journal}{Earth System Science Data} \bibinfo{volume}{18},
+  \bibinfo{pages}{2349--2370}.
+\newblock \DOIprefix\doi{10.5194/essd-18-2349-2026}. \bibinfo{note}{south Asian
+  Nitrogen Hub; country totals in Table 3}.
+
+\end{thebibliography}

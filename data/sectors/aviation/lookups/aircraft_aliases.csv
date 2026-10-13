@@ -1,0 +1,9 @@
+icao_type,inventory_aircraft,openap_type,source
+A320,A320,A320,ICAO Doc 8643 type designator
+A321,A320,A321,ICAO Doc 8643 type designator; A320 used as nearest ICAO calculator narrowbody proxy
+B738,B737-800,B738,ICAO Doc 8643 type designator
+B772,B777-200,B772,ICAO Doc 8643 type designator
+A310,A310,A310,ICAO Doc 8643 type designator
+B733,B737-300,B737,ICAO Doc 8643 type designator; OpenAP B737 synonym
+B743,B747-300,B744,ICAO Doc 8643 type designator; nearest OpenAP 747 variant
+AT72,ATR72,,ICAO Doc 8643 type designator; outside current OpenAP coverage

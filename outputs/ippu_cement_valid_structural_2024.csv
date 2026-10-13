@@ -1,0 +1,4 @@
+scenario_id,cement_source,cement_activity_kt,clinker_fraction,trade_included,clinker_imports_kt,clinker_exports_kt,clinker_production_kt,co2_Gg,co2e_Mt_AR5,probability_weight,interpretation
+producer_census_observed,16-company producer census,,,not applicable: production observed directly,,,41953.17,21815.6484,21.815648399999997,,"REFERENCE (rc30): observed 16-company census production; no fraction, no trade term"
+pbs_qim_fy2023_24_f0.75_trade,pbs_qim_fy2023_24,39566.0,0.75,True,26.131,3792.074,33440.443,17389.03036,17.38903036,,named structural diagnostic: the Tier-1 PBS-QIM+trade model this census superseded as reference
+pbs_qim_fy2023_24_f0.95_trade,pbs_qim_fy2023_24,39566.0,0.95,True,26.131,3792.074,41353.643,21503.89436,21.503894359999997,,named structural diagnostic: the Tier-1 PBS-QIM+trade model this census superseded as reference

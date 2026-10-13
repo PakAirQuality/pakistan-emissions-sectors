@@ -1,0 +1,57 @@
+fiscal_year,system,plant,fuel,energy_TJ,energy_evidence,town,province,located_by
+2023,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,32209.7,assumed heating value,Guddu,Sindh,Table 5
+2023,GENCO,TPS Guddu (Units 5-10) (GENCO-II),Gas,6282.7,assumed heating value,Guddu,Sindh,Table 5
+2023,GENCO,TPS Muzaffargarh (GENCO-III),RFO,206.0,IPCC default NCV,Muzaffargarh,Punjab,Table 5
+2023,GENCO,TPS Nandipur (GENCO-III),RLNG,8418.7,assumed heating value,Gujranwala,Punjab,Table 5
+2023,IPP,China Power Hub,Coal,1583.1,fleet CV (outlier or no heat rate),Lasbella,Balochistan,Table 5
+2023,IPP,Engro Powergen Thar,Coal,38955.7,implied CV,Tharparkar,Sindh,Table 5
+2023,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,18566.6,implied CV,Sahiwal,Punjab,Table 5
+2023,IPP,Lucky Electric,Coal,16501.3,implied CV,Bin Qasim Town,Sindh,Table 5
+2023,IPP,Port Qasim Electric Power,Coal,7648.9,implied CV,Port Qasim,Sindh,Table 5
+2023,IPP,ThalNova,Coal,19708.4,implied CV,Tharparkar,Sindh,mine-mouth rule (Table 5 location blank)
+2023,IPP,Thar Coal Block-I,Coal,68444.0,implied CV,Tharparkar,Sindh,mine-mouth rule (Table 5 location blank)
+2023,IPP,Thar Energy,Coal,19328.8,implied CV,Tharparkar,Sindh,mine-mouth rule (Table 5 location blank)
+2023,IPP,Engro Powergen. Qadirpur,Gas,7752.2,exact (MMBTU),Qadirpur,Sindh,Table 5
+2023,IPP,Foundation,Gas,9587.7,exact (MMBTU),Daharki,Sindh,Table 5
+2023,IPP,Liberty Daharki,Gas,8116.7,exact (MMBTU),Daharki,Sindh,Table 5
+2023,IPP,Uch,Gas,32796.7,exact (MMBTU),Murad Jamali,Balochistan,Table 5
+2023,IPP,Uch-II,Gas,15961.9,exact (MMBTU),Murad Jamali,Balochistan,Table 5
+2023,IPP,NPPMCL (Balloki),HSD,43.8,IPCC default NCV x 0.84 kg/L,Balloki,Punjab,Table 5
+2023,IPP,QATPL (Bhikki),HSD,674.2,IPCC default NCV x 0.84 kg/L,Bhikki,Punjab,Table 5
+2023,IPP,Atlas,RFO,2004.2,IPCC default NCV,Sheikhupura,Punjab,Table 5
+2023,IPP,Attock Gen.,RFO,1573.6,IPCC default NCV,Attock Morgah,Punjab,Table 5
+2023,IPP,Hub,RFO,0.0,IPCC default NCV,Hub,Balochistan,Table 5
+2023,IPP,Kohinoor Energy,RFO,1604.3,IPCC default NCV,Raiwind,Punjab,Table 5
+2023,IPP,Lal Pir,RFO,3491.0,IPCC default NCV,Mehmood Kot,Punjab,Table 5
+2023,IPP,Liberty Power Tech.,RFO,1870.5,IPCC default NCV,Faisalabad,Punjab,Table 5
+2023,IPP,Narowal Energy,RFO,1597.4,IPCC default NCV,Narowal,Punjab,Table 5
+2023,IPP,Nishat,RFO,3605.3,IPCC default NCV,Qasur,Punjab,Table 5
+2023,IPP,Nishat Chunian,RFO,1887.1,IPCC default NCV,Qasur,Punjab,Table 5
+2023,IPP,Pak Gen.,RFO,2065.2,IPCC default NCV,Mehmood Kot,Punjab,Table 5
+2023,IPP,Saba,RFO,620.9,IPCC default NCV,Farooqabad,Punjab,Table 5
+2023,IPP,Fauji Kabirwala,RLNG,867.6,exact (MMBTU),Kabirwala,Punjab,Table 5
+2023,IPP,Halmore,RLNG,1841.2,exact (MMBTU),Bhikki,Punjab,Table 5
+2023,IPP,NPPMCL (Balloki),RLNG,45823.5,exact (MMBTU),Balloki,Punjab,Table 5
+2023,IPP,NPPMCL (HBS),RLNG,53328.8,exact (MMBTU),HBS,Punjab,Table 5
+2023,IPP,Orient,RLNG,4601.6,exact (MMBTU),Balloki,Punjab,Table 5
+2023,IPP,Punjab Thermal,RLNG,21981.9,exact (MMBTU),Trimmu,Punjab,Table 5
+2023,IPP,QATPL (Bhikki),RLNG,24680.7,exact (MMBTU),Bhikki,Punjab,Table 5
+2023,IPP,Rousch,RLNG,84.1,exact (MMBTU),Sidhnai,Punjab,Table 5
+2023,IPP,Saif,RLNG,1936.8,exact (MMBTU),Sahiwal,Punjab,Table 5
+2023,IPP,Sapphire Electric,RLNG,4101.7,exact (MMBTU),Muridke,Punjab,Table 5
+2023,K-Electric,Bin Qasim TPS-I,Gas,199.6,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Bin Qasim TPS-II,Gas,1287.0,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Korangi CCPP,Gas,19.2,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Sindh Nooriabad-I,Gas,2664.8,exact (MMBTU),Jamshoro,Sindh,Table 5
+2023,K-Electric,Sindh Nooriabad-II,Gas,2612.3,exact (MMBTU),Jamshoro,Sindh,Table 5
+2023,K-Electric,Bin Qasim TPS-III,HSD,155.6,IPCC default NCV x 0.84 kg/L,Karachi,Sindh,Table 5
+2023,K-Electric,Korangi CCPP,HSD,107.7,IPCC default NCV x 0.84 kg/L,Karachi,Sindh,Table 5
+2023,K-Electric,Bin Qasim TPS-I,RFO,3523.3,IPCC default NCV,Karachi,Sindh,Table 5
+2023,K-Electric,Gul Ahmed,RFO,2367.0,IPCC default NCV,Karachi,Sindh,Table 5
+2023,K-Electric,Tapal Energy,RFO,2561.8,IPCC default NCV,Karachi,Sindh,Table 5
+2023,K-Electric,Bin Qasim TPS-I,RLNG,3479.2,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Bin Qasim TPS-II,RLNG,20926.2,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Bin Qasim TPS-III,RLNG,27368.6,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Korangi CCPP,RLNG,963.9,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Korangi Town GTPS-II,RLNG,18.0,assumed heating value,Karachi,Sindh,Table 5
+2023,K-Electric,Site GTPS-II,RLNG,1.8,assumed heating value,Karachi,Sindh,Table 5

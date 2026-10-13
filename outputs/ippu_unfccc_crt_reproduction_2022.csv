@@ -1,0 +1,8 @@
+inventory_year,worksheet,row,category,gas,activity_kt,ief_t_per_t,recovery_kt,calculated_final_kt,reported_final_kt,difference_kt,closes,formula
+2022,Table2(I).A-H,11,2.A.1. Cement production,CO2,50245.5,0.55539,0,27905.848245,27905.848245,0.0,True,activity_kt * IEF_t_per_t + reported_recovery_kt
+2022,Table2(I).A-H,12,2.A.2. Lime production,CO2,1385.5068399,0.7514610430058549,0,1041.154415003,1041.154415003,0.0,True,activity_kt * IEF_t_per_t + reported_recovery_kt
+2022,Table2(I).A-H,13,2.A.3. Glass production,CO2,301.76715,0.17639999999999997,0,53.23172526,53.23172526,0.0,True,activity_kt * IEF_t_per_t + reported_recovery_kt
+2022,Table2(I).A-H,15,2.A.4.a. Ceramics,CO2,8.73548,0.43971,0,3.8410779108,3.8410779108,0.0,True,activity_kt * IEF_t_per_t + reported_recovery_kt
+2022,Table2(I).A-H,16,2.A.4.b. Other uses of soda ash,CO2,713.161,0.41492,0,295.90476212,295.90476212,0.0,True,activity_kt * IEF_t_per_t + reported_recovery_kt
+2022,Table2(I).A-H,21,2.B.1. Ammonia production (7),CO2,11467.472,2.103749999999997,-4724.42666666667,19400.267553333295,19400.2675533333,-3.637978807091713e-12,True,activity_kt * IEF_t_per_t + reported_recovery_kt
+2022,Table2(I).A-H,67,2.D.1. Lubricant use,CO2,368.03028358209,0.5895999999999992,0,216.9906552,216.9906552,0.0,True,activity_kt * IEF_t_per_t + reported_recovery_kt

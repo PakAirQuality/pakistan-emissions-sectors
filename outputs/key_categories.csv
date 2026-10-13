@@ -1,0 +1,7 @@
+category,level_pct,cum_level_pct,key_by_level,trend_pct,cum_trend_pct,key_by_trend,key,basis
+Enteric fermentation,67.87,67.87,YES,27.29,75.94,YES,YES,level+trend
+Managed soils,12.77,80.64,YES,4.99,98.65,YES,YES,level+trend
+Manure management,9.5,90.14,YES,17.72,93.66,YES,YES,level+trend
+Rice cultivation,7.41,97.54,YES,48.65,48.65,YES,YES,level+trend
+Urea application,2.16,99.7,no,1.2,99.85,no,no,level+trend
+Field burning of residues,0.3,100.0,no,0.15,100.0,no,no,level+trend

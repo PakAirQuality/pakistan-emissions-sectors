@@ -1,0 +1,28 @@
+\section{Limitations}
+\label{sec:limitations}
+
+The central domestic fuel partition is calibrated with OECD's resident-carrier share. It is
+therefore not independently validated by its subsequent proximity to OECD or to the aggregate
+movement estimate. The route reconstruction covers domestic activity well but only 27.9\% of
+resident international departures, so it cannot yet replace that share. OCAC customer rows
+also lack airport- and operator-specific uplift detail, and the meaning of government-other
+JP-1 remains unresolved.
+
+The flight-stage layer is predominantly reconstructed. Route evidence and PCAA margins bound
+distance, while passengers, cargo and mail constrain payload, but aircraft registrations,
+flight-specific mass, detour, taxi time, weather and block fuel are not observed. The public
+ADSB.lol pilot covers only four days and should not be generalised to all ADS-B providers. The
+nine-year fuel ledger is likewise not a nine-year route--aircraft inventory: detailed route
+and fleet reconstruction is anchored to FY2023--24.
+
+OECD and Climate TRACE are modelled products rather than direct fuel measurements, and their
+surveillance or performance inputs may overlap. The CRT is an official comparator, not ground
+truth; the public workbook does not reveal the institutional derivation of its 80/20 split.
+Monthly OCAC values are differences of cumulative reports, so revisions can shift apparent
+fuel between adjacent months even when annual closure is exact.
+
+Finally, general aviation, training and military activity are not separated operationally.
+The spatial product is limited to airport LTO: no province, district or route--altitude cruise
+allocation is inferred from synthetic trajectories. The supplementary pollutant screen uses
+representative engines and omits observed taxi times, APU, ground support, non-exhaust sources
+and near-airport measurements; it is not a complete airport micro-inventory.

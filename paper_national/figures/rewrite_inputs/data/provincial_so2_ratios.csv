@@ -1,0 +1,6 @@
+region,pakemis_to_edgar_ratio,period,pollutant,comparator,period_harmonization,source_location,provenance
+Pakistan,0.92,FY2021-22,SO2,EDGAR v8.1,Approximate fiscal blend of calendar-year estimates,outputs/pakemis_air_provincial_external_comparison.csv,"read from the product; a comparison of covered-source estimates, not an observational validation"
+Punjab,1.25,FY2021-22,SO2,EDGAR v8.1,Approximate fiscal blend of calendar-year estimates,outputs/pakemis_air_provincial_external_comparison.csv,"read from the product; a comparison of covered-source estimates, not an observational validation"
+Khyber Pakhtunkhwa,1.67,FY2021-22,SO2,EDGAR v8.1,Approximate fiscal blend of calendar-year estimates,outputs/pakemis_air_provincial_external_comparison.csv,"read from the product; a comparison of covered-source estimates, not an observational validation"
+Balochistan,2.05,FY2021-22,SO2,EDGAR v8.1,Approximate fiscal blend of calendar-year estimates,outputs/pakemis_air_provincial_external_comparison.csv,"read from the product; a comparison of covered-source estimates, not an observational validation"
+Sindh,0.18,FY2021-22,SO2,EDGAR v8.1,Approximate fiscal blend of calendar-year estimates,outputs/pakemis_air_provincial_external_comparison.csv,"read from the product; a comparison of covered-source estimates, not an observational validation"

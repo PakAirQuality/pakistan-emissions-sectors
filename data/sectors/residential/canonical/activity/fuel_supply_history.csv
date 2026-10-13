@@ -1,0 +1,10 @@
+Fiscal year (ending year),Fuel,Quantity,Unit,Basis,Source,Note,Record ID,Source row
+2016,Natural Gas,741,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2015-16 Table 2.27 (Residential: SNGPL 510 + SSGCL 231),,6b1103627ff1e168727ddf2b,1
+2017,Natural Gas,796,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2016-17 Table 2.27 (Residential: SNGPL 527 + SSGCL 269),,9a5fbbd5cadec5596c7a0062,2
+2018,Natural Gas,779,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2017-18 Table 2.29 (Residential: SNGPL 507 + SSGCL 272),,e3306eaca9ef6d2a4a9763a4,3
+2019,Natural Gas,856,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2018-19 Table 3.30 (Residential: SNGPL 593 + SSGCL 263),,4da9ecdff3eb4906d4e97a84,4
+2020,Natural Gas,888,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2019-20 Table 3.29 (Residential: SNGPL 604 + SSGCL 284),,be104d3d2cbbb109a0e99faa,5
+2021,Natural Gas,869,MMCFD,interpolated,Mean of FY2019-20 (888) and FY2021-22 (850),"THE ONE HOLE IN THE MEASURED SERIES, honestly labelled: the 2020-21 edition's PDF carries no extractable text layer (a 32 MB image scan; pdftotext returns one line). The neighbouring years bracket it within 4.5 percent, so the interpolation risk is small; re-keying the scanned table is the upgrade.",50346120133a463d1145e718,6
+2022,Natural Gas,850,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2021-22 Table 3.22 (Residential: SNGPL 589 + SSGCL 261),,48988cb4d8c3e3e7dfa40ac4,7
+2023,Natural Gas,858,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2022-23 Table 3.25 (Domestic: SNGPL 603 + SSGCL 255),This edition labels the row Domestic rather than Residential; same category.,5dbe48dcba3dbaa4b81219b7,8
+2024,Natural Gas,821,MMCFD,reported,OGRA State of the Regulated Petroleum Industry 2023-24 Table 3.31 (Residential: SNGPL 559 + SSGCL 262),"The reference-year control total, identical to fuel_supply.csv.",34d1e0742c0b4aee129077a3,9

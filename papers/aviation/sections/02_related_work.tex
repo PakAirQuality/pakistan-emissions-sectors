@@ -1,0 +1,32 @@
+\section{Related Work}
+\label{sec:related}
+
+IPCC Volume~2 Chapter~3 describes fuel- and movement-based aviation methods and requires the
+domestic/international split to follow departure and landing locations, not airline nationality
+\citep{ipcc2006energy}. International aviation is excluded from the national total and reported
+as a memo item. These rules make fuel uplift a control, not a ready-made inventory, whenever
+sales categories describe customers rather than flight stages.
+
+The OECD air-transport database estimates monthly domestic, international, territory- and
+residence-based \COtwo{} from ICAO flight data \citep{oecdaviation}. It supplies precisely the
+accounting bridge needed here, but is not independent once its resident-carrier split is used
+to allocate fuel. Climate TRACE supplies a second observation-informed estimate
+\citep{climatetrace}; possible shared flight-surveillance inputs are reported rather than
+ignored.
+
+Aircraft-performance detail does not by itself resolve an accounting boundary. ICAO's Carbon
+Emissions Calculator provides route- and aircraft-class fuel relationships intended for
+passenger carbon estimation \citep{icaoicec2024}. OpenAP provides open aircraft properties,
+kinematic and dynamic performance, fuel-flow models and reusable software
+\citep{sun2020openap}. OpenSky provides research access to large-scale ADS-B observations but
+coverage is spatially and temporally uneven \citep{schaefer2014opensky}. ADSB.lol also publishes
+free daily readsb trace archives under the ODbL \citep{adsblolhistory,readsbjson}. We use the
+first two for a provisional resolution experiment, execute a four-day public-data coverage
+pilot with the latter and retain a common import contract for all observed providers; no
+synthetic stage is presented as an observation.
+
+For airport pollutants, ICAO Doc~9889 recommends actual aircraft--engine combinations and
+operation-specific times in mode where available \citep{icao9889}. The ICAO Aircraft Engine
+Emissions Databank supplies certified engine fuel flow and gaseous-emission measurements
+\citep{icaoeedb}. This study uses representative engine fits as an explicit intermediate tier;
+registration-level matching remains outside the central reconciliation study.

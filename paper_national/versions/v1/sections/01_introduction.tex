@@ -1,0 +1,139 @@
+% ===========================================================================
+\section{Introduction}
+\label{sec:intro}
+% ===========================================================================
+
+A national greenhouse-gas inventory is a large arithmetic object whose correctness depends
+almost entirely on properties that span its parts. Fuel supplied to a country must be
+allocated among the sectors that burn it without any of it being counted twice or dropped.
+Nitrogen removed from one balance must arrive in another. A category reported under one IPCC
+code must not also appear under a second. Each of these is a statement about the relationship
+between two sectors, and in the conventional production model each is enforced by a compiler
+reading two spreadsheets side by side and satisfying themselves that the numbers agree.
+
+That model has a failure mode that is difficult to detect from the outside and easy to
+introduce from the inside: a change to one sector silently invalidates a property that was
+true when a different sector was written. Nothing breaks. The total still sums. The
+inconsistency is discoverable only by repeating the original reading, which nobody does,
+because the reading was tedious the first time and there is no signal that it needs repeating.
+
+\subsection{The argument of this paper}
+
+We built Pakistan's inventory so that those cross-cutting properties are executable. Each
+sector is a Python module satisfying a common contract; the contract is enforced by
+\num{32} tests that run against every registered sector; the properties that span sectors
+are assertions with \texttt{==} in the sector code and in the test suite, not sentences in a
+methods document. When a change to the agriculture sector's manure-management shares alters
+how much dung is diverted from the manure balance as fuel, the residential sector's dung ledger
+changes with it, because it is derived from the same herd through the same volatile-solids
+rates rather than estimated separately. The two cannot drift apart, because there is only one
+number.
+
+This is a software-engineering claim about inventory compilation, and it is testable in the
+ordinary way: the repository is public, the test suite runs in continuous integration, and
+every figure in this paper is regenerated from the engine's own output files by a build step
+that fails if a figure is stale.
+
+\subsection{Why Pakistan, and why now}
+
+Pakistan is the fifth most populous country in the world and among the most exposed to
+climate impacts, yet its inventory infrastructure is thin. Four official filings are in
+circulation and they are not interchangeable, so this paper distinguishes them throughout.
+The First Biennial Update Report \citep{pakbur1} carries the most recent full narrative
+inventory with a published sectoral breakdown, for FY2017--18, and is the comparator for
+categories where only a narrative figure exists. The First Biennial Transparency Report
+\citep{pakbtr2024} supersedes it as the current submission and carries Pakistan's first
+Common Reporting Tables \citep{pakcrt2026}, for inventory year 2022; those tables are
+machine-readable at cell level and are the comparator used wherever a category cell exists,
+because a cell can be audited and a narrative total cannot. The Third National Communication
+\citep{paknc32025} and the Initial National Communication complete the set; the latter is
+used once, as a labelled magnitude check in the railway benchmark register
+(Section~\ref{sec:benchmarks}), and nowhere else. Where this paper says a category is compared against
+Pakistan's own reporting, it names which of these it means, and Section~\ref{sec:benchmarks}
+prefers the CRT cells over the BUR-1 narrative wherever both exist.
+
+That distinction is not bookkeeping. The CRT's own notation keys record that residential
+biomass---dung cake and firewood, the country's two largest household fuels---is NE in the
+national filing, so a comparison against its residential total is a comparison against the
+metered-fossil sliver of the sector rather than against the sector.
+
+International datasets fill the remaining gap---EDGAR \citep{edgar2025booklet}, FAOSTAT
+\citep{faostat}, Climate TRACE \citep{climatetrace}---but each is a global product
+applying globally uniform assumptions to nationally reported activity, and their Pakistani
+sector estimates disagree with each other by amounts that are large relative to the
+mitigation decisions they inform.
+
+There is also a specific structural reason a national inventory for Pakistan is worth
+building as a modular system rather than a document. Its emissions are unusually
+concentrated in agriculture---enteric fermentation alone is \SI{34.1}{\percent} of the
+national total, larger than every energy category combined except road transport and
+electricity---which means an inventory dominated by one sector must nevertheless get the
+other nine right to be useful for anything except a headline. Sectors that are small in
+\COe{} can be large in policy: residential biomass is \SI{5.4}{\percent} of national
+emissions and the largest estimated source of gross primary \PM{} emissions
+among the sectors quantified here. Whether it is also the dominant source of \emph{exposure}
+is a separate question this inventory cannot answer: exposure depends on ventilation,
+proximity and time-activity patterns that are outside its scope.
+
+\subsection{Contributions}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=3pt]
+\item \textbf{A ten-module national inventory covering the principal currently
+  reconstructable anthropogenic sources} for Pakistan at
+  \SI{444.96}{\mega\tonne} \COe{} under reference scenario \texttt{REF\_2023\_24}---\SI{87}{\percent} of the
+  corresponding EDGAR aggregate magnitude, with every mapped IPCC category estimated over
+  \SI{11}{\percent} of that scope and the unestimated categories named over the rest---in
+  which every
+  input carries an explicit provenance and evidence-status record, Pakistani official sources
+  are used where available and proxy, survey-derived or assumed values are identified
+  separately, every sector is allocated to provinces, and IPCC notation keys are reported
+  over all \num{138} category--gas combinations considered.
+\item \textbf{A sector-as-module architecture} in which \num{32} contract invariants are
+  enforced on every sector, so that adding a sector cannot silently weaken the inventory
+  (Section~\ref{sec:architecture}).
+\item \textbf{Four enforced accounting closures} asserted by construction rather than
+  described, each of which corrects a double-count or an orphaned flow that the prose version
+  of the same inventory had already documented as a known defect. \emph{Two of the four cross
+  a module}---dung nitrogen from agriculture into residential, and generator petrol carved out
+  of transport's control by residential---and two are between categories inside one module,
+  which is why they are called accounting closures here rather than cross-sector ones
+  (Section~\ref{sec:closures}).
+\item \textbf{A methodological finding about the IPCC default tables}: four instances in
+  which the plausible wrong table leaves \COtwo{} exactly correct and is therefore invisible
+  to every external comparator, moving the affected category by \SI{8}{\percent} where the
+  category is small enough for a trace gas to matter and by less than
+  \SI{0.5}{\percent} where it is \COtwo{}-dominated (Section~\ref{sec:factors}).
+\item \textbf{Uncertainty carried at the level of parameters rather than of emission rows},
+  so that one row may depend on an activity, a conversion and a factor at once, each shared
+  with a different set of other rows (Section~\ref{sec:uncertainty}). \emph{This overturns a
+  finding of the previous edition.} Under the earlier model, in which a row carried a single
+  correlation group, sharing the fuel-carbon factors widened the road-transport category by
+  more than half; at parameter level it does not move it at all, because the carbon content of
+  diesel carries about \SI{2}{\percent} and the road rows carry thirty to sixty, and
+  correlating a small part of a large variance cannot widen the sum. What the parameter graph now
+  finds is that \SI{2.5}{\percent} of the national variance has no named parameter, after
+  agriculture's IPCC factor
+  uncertainties (composed inside each row's declared width, invisible to the registry) were
+  given names and the remaining sectors' factor,
+  conversion and activity groups were scoped to their source streams the same way, with no
+  central number changed in either step. Where the variance sits is read from the released
+  ensemble: enteric fermentation carries \SI{59.8}{\percent} of it. Parameter-level
+  importance is not claimed.
+\item \textbf{A national key-category analysis ranked by variance as well as by level},
+  identifying where measurement effort reduces national uncertainty rather than where the
+  emissions are (Section~\ref{sec:keycat}).
+\end{enumerate}
+
+The agriculture sector's methods, its geospatial allocation and its air-pollutant layer are
+documented separately \citep{ahmad2026ag}, as is the nowcasting system that extends it beyond
+the census year \citep{ahmad2026nowcast}. This paper treats agriculture as one of ten
+sectors and does not repeat that material. Eight of the nine non-agricultural sectors also
+have a full technical report---data provenance, methods, factors, validation, uncertainty,
+air pollutants and limitations---maintained in the repository, compiled on every release
+and held to the same generated-from-the-engine discipline as this manuscript; industrial
+fuel combustion was added after those reports were written and is documented in
+Section~\ref{sec:completeness} and the completeness table rather than in a standalone
+report. Those reports
+are versioned documentation of the release rather than companion submissions: this is the
+one article, and it carries what a reader needs in order to judge the dataset, while they
+carry what a reader needs in order to audit and maintain it.

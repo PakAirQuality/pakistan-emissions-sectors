@@ -1,0 +1,7 @@
+stream,term,variance_share_pct,sd_contribution_pct_of_total
+Petrol,control+NCV,60.64,5.79
+Diesel,control+NCV,36.74,4.51
+Petrol,emission factors,1.14,0.8
+Diesel,emission factors,1.13,0.79
+CNG,control+NCV,0.29,0.4
+CNG,emission factors,0.05,0.16

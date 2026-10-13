@@ -1,0 +1,33 @@
+{
+  "name": "ippu_extract_fgas_species",
+  "producer": "pkinv.sectors.ippu.official_reporting.extract_fgas_species",
+  "producer_sha256": "6d2648d16e170d3a688be16710b3a941856873c85bbb8bd5dbae08f77a56907c",
+  "result": {
+    "columns": [
+      "inventory_year",
+      "worksheet",
+      "row",
+      "parent_category",
+      "species",
+      "manufacturing_emissions_t",
+      "stock_emissions_t",
+      "disposal_emissions_t",
+      "numeric_emissions_t",
+      "aggregation_level",
+      "source_reference",
+      "source_zip_sha256",
+      "workbook_sha256"
+    ],
+    "kind": "records",
+    "path": "ippu_extract_fgas_species.csv",
+    "sha256": "b4a8578ab4f8205fa2f71bf3ae4cecb3d84f8ac1fed57d3da4f3fb2f2025c34b",
+    "types": [
+      "isisssfsfisss",
+      "isisssfsfisss",
+      "isisssfsfisss"
+    ]
+  },
+  "schema": "pkinv.source_extract/v1",
+  "source": "sources/Aviation/PAK_CRT_2024.zip",
+  "source_sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+}

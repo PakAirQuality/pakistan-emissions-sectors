@@ -1,0 +1,33 @@
+Module,Category,Subitem prefix,Raster proxy,Rationale,Record ID,Source row
+residential,Residential fuel combustion,Natural,builtup,piped gas reaches the built grid,361dd682687f278b3db20193,1
+residential,Residential fuel combustion,Generators,builtup,standby generators follow grid customers,2e03c3cfe550e9cf7fd7dde7,2
+residential,Residential fuel combustion,Dung,glw_livestock,dung cake is made where the herd is,4a652e366ba25093d8dc334f,3
+residential,Residential fuel combustion,Crop,cropland,residues are burned near where they grow,0097472043013bc15fe23a83,4
+residential,Residential fuel combustion,,population,"firewood, LPG, kerosene, coal, charcoal follow households",b875399ae2c7642ebe243a2f,5
+waste,Solid waste disposal,,population,within-district spread by people; the district factor is the census panel,26000ff2928bec7ce154c26f,6
+waste,Open burning of waste,,population,burning follows uncollected waste follows people,85cde7985335906207f67dc0,7
+waste,Domestic wastewater,,population,wastewater follows people,23a0e73ac0a7867203acaa3a,8
+transport,Road transport,,road_density,"rc47 Wave 5: the held OSM road raster (sha-pinned, bracket priced <=3.95pp against builtup for two releases) becomes the declared basis - combustion happens on roads, and the old builtup basis's own declared limit was 'inter-city highway fuel is under-represented'. Builtup stays as the priced comparator; the decision is reversible by the same bracket",125f843106465fa479878de6,9
+transport,Road transport,CNG,builtup,"rc47 Wave 5: CNG keeps built-up while petrol/diesel move to the road raster - stations are urban infrastructure and the fleet is city-bound, so built-up is the better basis; it also keeps the CNG streams (whose provincial shares are the static vkt proxy) off the road surface's year-keyed window, which their evidence does not earn",0e805dfb6d8862880af4f01f,10
+transport,Mixed off-road (1A4c/1A2),,cropland,tractors dominate the class and follow crop area,194419f5ca5a4bf25b10451f,11
+power,Electricity and heat production,,builtup,"S2 since Wave 5: the primary allocation is corroborated station points weighted by each plant's own ledger fuel; built-up is the DECLARED FALLBACK surface for provinces with no located-and-fuelled station of a stream's fuel, every use a ledger event. No faked points: a station the ladder cannot corroborate stays in the fallback pool by name",1763e50e4c8dbe32c50a25d6,12
+power,Captive gas self-generation (1A2),,builtup,fallback surface for provinces with no geocoded captive plant; the primary allocation is registry points,cd24ac386f58a132d3bb6a8e,13
+industry,Industrial fuel combustion (1A2),,builtup,rc47 Wave 4: no longer an S4 residual note - built-up IS the executed within-province basis for the gas and liquid streams,20bb8c59d4b9e7af79604593,14
+ippu,Cement production,,builtup,"S2 since Wave 5: the primary allocation is located cement works at their company's census clinker; built-up is the DECLARED FALLBACK for provinces with no located works, every use a ledger event",1c726c0ead76c04c9f3a2da4,15
+fugitives,Fugitive emissions from oil and gas,Gas production,uniform,no field or wellhead raster is held; uniform-within-province is the honest statement of ignorance - field coordinates from the Stage 7 technology register are the upgrade,bd8807eb0672f7a0f974fd12,16
+fugitives,Fugitive emissions from oil and gas,Gas gathering,uniform,follows production; same ignorance declared,bff6cc02a44aa6d3b0b624c7,17
+fugitives,Fugitive emissions from oil and gas,Gas processing,uniform,plant locations not held,223837669a691af52ef10c82,18
+fugitives,Fugitive emissions from oil and gas,Sour-gas processing,uniform,plant locations not held,1148c8fbae03b05b0d8d6f77,19
+fugitives,Fugitive emissions from oil and gas,Oil production,uniform,field locations not held,89f9414818ff6e0e71229c61,20
+fugitives,Fugitive emissions from oil and gas,Oil pipeline transport,uniform,pipeline topology not held,717af39795a804a95f4f4d5c,21
+fugitives,Fugitive emissions from oil and gas,Gas transmission,uniform,transmission topology not held,4bc0a0a2f63a0fcdc5fc60d9,22
+fugitives,Fugitive emissions from oil and gas,,builtup,"distribution, post-meter and refining sit with the built environment",9eb48cf283fb10643656ed04,23
+fugitives,Fugitive emissions from oil and gas,LNG import terminals,builtup,terminal coordinates not held; Sindh-share x built-up until they land,ec4591860bfc3b3c9cb251f7,24
+aviation,Domestic aviation,,builtup,unused: allocation is airport points; row present so every stream resolves,105f330bceeef0713183a5c9,25
+railways,Railways,,builtup,unused: allocation is the network surface; row present so every stream resolves,a52fd65c1c35166da1ac16d7,26
+railways,Railway non-traction energy (1A2/1A4c unresolved),,builtup,unused: allocation is the yard-point geometry; row present so every stream resolves,e6c100ecdd644ba6dfdcef2f,27
+industry,Industrial fuel combustion (1A2),Brick-kiln coal,builtup,"rc47 Wave 4: fallback only, and now genuinely reachable - the stream rides its register points and built-up serves a province with share and no located object, priced per event",a27864361a1b4fd252137920,28
+industry,Industrial fuel combustion (1A2),Cement-sector coal,builtup,"rc47 Wave 4: fallback only, and now genuinely reachable - the stream rides its register points and built-up serves a province with share and no located object, priced per event",c10caa0c9bd68d13733f269a,29
+ippu,Ammonia production,,builtup,rc52: declared fallback only - the stream is retained at ADM1 on plant capacity; the eight plant points (facility_registry fert_*) are the closer,bfc81974cb8979b014219507,30
+ippu,Iron and steel production,,builtup,rc52: melt shops are industrial-estate point sources; built-up is the declared fallback within each province's CMI share until a producer register is held,10766592116c06babb6f3dbf,31
+ippu,Lubricant use,,builtup,rc52: accounting placement of a nationally sold product; built-up stands for where vehicles and machines run,d9c88ae57624507b7831bc22,32

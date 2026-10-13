@@ -1,0 +1,6 @@
+fiscal_year,gas_TJ,rlng_TJ,rfo_TJ,hsd_TJ,total_TJ,co2_Mt,net_GWh,implied_net_efficiency_pct,note
+2019,46460.0,26201.0,39459.0,0.0,112120.0,7.13,11492.6,36.9,"MMCFT at the sector heating value, oil at IPCC default NCVs; only the two Nooriabad MMBTU rows are exact. CO2 only."
+2020,30926.0,45256.0,44124.0,287.0,120593.0,7.71,12370.6,36.9,
+2021,12322.0,40805.0,40604.0,2270.0,96002.0,6.291,10020.4,37.6,
+2022,8368.0,38298.0,28628.0,305.0,75599.0,4.856,8699.9,41.4,
+2023,6783.0,52758.0,8452.0,263.0,68256.0,4.014,8627.6,45.5,

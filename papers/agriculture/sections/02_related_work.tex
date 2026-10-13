@@ -1,0 +1,128 @@
+% ===========================================================================
+\section{Related Work}
+\label{sec:related_work}
+% ===========================================================================
+
+\subsection{National inventory methods}
+
+National agricultural inventories generally follow the 2006 IPCC Guidelines
+\citep{ipcc2006} and, increasingly, the 2019 Refinement \citep{ipcc2019}, which updated
+several agricultural emission factors and introduced climate-specific disaggregation for
+soil nitrous oxide.
+
+The IPCC framework defines several methodological tiers. Tier~1 combines default emission
+factors with national activity data. Tier~2 replaces selected defaults with
+country-specific parameters or more detailed activity characterisation. Tier~3 uses
+higher-order models or direct national measurement systems.
+
+Pakistan's national agricultural inventories have been prepared mainly with Tier~1 methods
+and national activity totals \citep{gcisc,mir2022}. This approach supports comprehensive
+national reporting but provides limited information about subnational patterns or
+individual processes.
+
+\subsection{Global gridded inventories}
+
+Several international datasets provide independent estimates of agricultural emissions for
+Pakistan. FAOSTAT calculates national agricultural and land-use emissions from FAO activity
+data using mainly IPCC Tier~1 methods and reports results by category and gas
+\citep{faostat,tubiello2013}.
+
+EDGAR provides national totals and gridded emissions at approximately \SI{0.1}{\degree}
+resolution using a globally consistent methodology \citep{edgar2025booklet,crippa2020};
+this paper's comparison table keeps one row from the prior 2024-vintage booklet
+\citep{edgar2024} because the 2025 release revised Pakistan's agricultural
+\CHfour{} history and the revision itself is informative. Climate
+TRACE reports country- and subsector-level agricultural emissions using a combination of
+inventories, models and observation-informed methods \citep{climatetrace}.
+
+These products provide useful external reference points, but they are not substitutes for a
+nationally compiled inventory. They generally use globally harmonised or model-derived
+assumptions and may not incorporate the most appropriate national activity data or system
+definitions. In this study, they are used as external benchmarks rather than as reported
+national values.
+
+\subsection{Spatial allocation of emissions}
+
+Allocating national or subnational emissions to a grid is a dasymetric-mapping problem. An
+emission total is distributed according to a spatial proxy that represents the location or
+intensity of the underlying activity. Similar approaches are widely used in fossil-CO$_2$
+inventories and global emissions gridmaps \citep{oda2018,crippa2020}.
+
+Several open datasets provide relevant agricultural proxies. The Gridded Livestock of the
+World (\GLW{}) dataset provides modelled species-specific livestock densities
+\citep{glw4,gilbert2018}. The Spatial Production Allocation Model (MapSPAM) provides
+crop-specific physical areas \citep{mapspam2020}. ESA WorldCover provides a
+\SI{10}{\metre} land-cover classification \citep{worldcover2021}, while NASA FIRMS and
+other satellite products identify active fires and burned areas \citep{firms,giglio2016}.
+
+The quality of a spatial inventory depends on whether each proxy represents the process
+being allocated. Livestock density is appropriate for emissions produced directly by
+animals, paddy area for rice methane, cropland for fertiliser-related emissions, and
+satellite fire occurrence for the location of residue burning. A single proxy applied to an
+entire inventory category may misallocate emissions when that category contains several
+distinct activity streams.
+
+A further requirement is mass conservation. Some spatial inventories distribute emissions
+without subsequently rescaling the mapped values to the original control total. In such
+cases, the gridded product may no longer reproduce the national or provincial inventory.
+The framework developed here treats reconciliation as an invariant: every mapped emission
+stream must sum to its corresponding control total.
+
+\subsection{Agricultural ammonia inventories}
+
+Agricultural ammonia inventories have largely developed within the air-quality community,
+separately from greenhouse-gas inventories used for climate reporting. The EMEP/EEA
+Guidebook represents livestock ammonia through a stage-resolved mass flow. Total ammoniacal
+nitrogen is tracked through grazing, housing, yards, storage and field application, with
+emission factors varying by animal category and manure-management system
+\citep{emep2023manure}.
+
+This process resolution is needed because ammonia losses occur at specific stages of manure
+handling. By contrast, Tier~1 greenhouse-gas methods often represent manure nitrogen using
+annual fractions that aggregate across several stages. Combining the two frameworks
+therefore requires careful alignment of their system boundaries and nitrogen pools.
+
+\citet{sanh2026} provide a regional reference for South Asia. Their framework estimates
+agricultural \NHthree{} emissions for the SAARC countries across five sectors using an
+explicit nitrogen-flow model and provides an openly available \SI{0.1}{\degree} grid
+\citep{sanh2026data}. We use this inventory to compare both the national magnitude and the
+spatial pattern of our ammonia estimates.
+
+Other global products, including EDGAR and HTAP, also cover Pakistan. However, they are
+built without national activity data and rely partly on the same underlying FAO statistics
+used by many national and regional inventories. They therefore provide useful bounds and
+methodological comparisons, but agreement with them does not constitute fully independent
+confirmation.
+
+\subsection{Crop-residue burning inventories}
+
+Crop-residue burning can be estimated using two broad approaches. Bottom-up inventories
+calculate the mass burned from crop production, residue-to-product ratios, dry-matter
+fractions, combustion factors, and the proportion of residues burned. National
+greenhouse-gas inventories generally use this approach, and the burned fraction is its
+dominant uncertainty.
+
+Top-down or observation-based approaches use satellite fire detections, fire radiative
+power, or burned-area products. These datasets provide much stronger information about the
+location and timing of fires, but conversion to burned mass depends on additional
+assumptions and also carries substantial uncertainty.
+
+This study uses the two types of information for separate purposes. The national quantity
+burned is calculated using a bottom-up inventory, while satellite fire detections are used
+only to allocate that quantity spatially. Satellite detections therefore determine the
+mapped distribution but do not provide an independent estimate of the national total, a
+distinction that matters because the two are sometimes conflated.
+
+\subsection{Contribution relative to previous work}
+
+Compared with conventional national inventory workbooks, this framework integrates
+calculation, uncertainty analysis, spatial allocation, external evaluation and historical
+reconstruction in a reproducible codebase. Compared with global gridded products, it uses
+nationally grounded activity data and province-level control totals within a hybrid
+Tier~1/Tier~2 agricultural inventory.
+
+Its main contribution is the combination of these elements. The national inventory
+establishes the emission totals, process-specific proxies determine their spatial
+distribution, and exact reconciliation keeps the provincial, gridded and district products
+consistent with the reported figures. To our knowledge, this combination has not previously
+been implemented for Pakistan's agricultural sector.

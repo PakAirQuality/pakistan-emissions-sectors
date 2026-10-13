@@ -1,0 +1,18 @@
+# The diesel sulfur case each fiscal year's SO2 central estimate is computed under.
+# The ladder itself (railways_params.csv rows diesel_sulfur_ppm_*) is unchanged and is
+# still published in full for every year; this table only selects the central case, so
+# a flat 500 ppm no longer understates the pre-Euro-II years by an order of magnitude.
+# The reference-year decision is UNCHANGED from the shipped one: from FY2021-22 the
+# supply mixes 10 ppm Euro-V imports (mandatory January 2021) with domestic refinery
+# output at or above the older spec, and the conservative pre-Euro-V 500 ppm stays the
+# declared central with the euro5_import_spec endpoint spanning the mix.
+fiscal_end_year,sulfur_case,basis
+2016,historical_0.5pct,"Pre-Euro-II Pakistani HSD in common circulation at 0.5 percent sulfur; diesel imports moved to Euro-II 500 ppm only in January 2017 (Dawn, 'Oil industry wants govt to delay launch of high-quality Euro-V diesel', dawn.com/news/1434195)"
+2017,historical_0.5pct,"Transition year: the Euro-II 500 ppm import mandate of January 2017 falls mid-fiscal and domestic refinery output was unchanged; the pre-mandate case is retained for the whole year and the ladder spans the mix"
+2018,reference_pre_euro5_spec,"Euro-II era: 500 ppm import specification in force from January 2017, domestic refineries at the same spec"
+2019,reference_pre_euro5_spec,"Euro-II era: 500 ppm import specification in force from January 2017, domestic refineries at the same spec"
+2020,reference_pre_euro5_spec,"Euro-II era: 500 ppm import specification in force from January 2017, domestic refineries at the same spec"
+2021,reference_pre_euro5_spec,"Euro-V import mandate takes effect January 2021, mid-fiscal (Dawn, dawn.com/news/1567870); domestic refinery output unchanged, so the pre-Euro-V spec remains the central case"
+2022,reference_pre_euro5_spec,"Supply mixes Euro-V imports with domestic refinery output at or above the older spec; the conservative pre-Euro-V central is the shipped reference decision, euro5_import_spec spans the mix"
+2023,reference_pre_euro5_spec,"Supply mixes Euro-V imports with domestic refinery output at or above the older spec; the conservative pre-Euro-V central is the shipped reference decision, euro5_import_spec spans the mix"
+2024,reference_pre_euro5_spec,"Supply mixes Euro-V imports with domestic refinery output at or above the older spec; the conservative pre-Euro-V central is the shipped reference decision, euro5_import_spec spans the mix"

@@ -1,0 +1,25 @@
+fiscal_year,scenario,customer_category,fuel_type,reported_t,ipcc_domestic,international_bunker,military_1a5b,general_aviation,export_other,residual,bridge_method,source
+2023,literal_customer,Domestic Avi-PIA,JP-1,193813.0,193813.0,0.0,0.0,0.0,0.0,0.0,literal_customer,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,literal_customer,Domestic Avi-Others,JP-1,166119.0,166119.0,0.0,0.0,0.0,0.0,0.0,literal_customer,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,literal_customer,Domestic Avi-Others,100LL,23.0,0.0,0.0,0.0,23.0,0.0,0.0,100ll_general_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,literal_customer,Overseas/Foreign Aviation,JP-1,283147.0,0.0,283147.0,0.0,0.0,0.0,0.0,foreign_customer_international,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,literal_customer,Government Aviation,JP-1,2973.0,0.0,0.0,2973.0,0.0,0.0,0.0,government_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,literal_customer,Government Other,JP-1,12282.0,0.0,0.0,0.0,0.0,0.0,12282.0,unresolved,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,literal_customer,Government Other,JP-8,117785.0,0.0,0.0,117785.0,0.0,0.0,0.0,jp8_military_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,literal_customer,Government Aviation,100LL,4519.0,0.0,0.0,0.0,4519.0,0.0,0.0,100ll_general_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Domestic Avi-PIA,JP-1,193813.0,57915.51885299594,135897.48114700406,0.0,0.0,0.0,0.0,movement_count,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Domestic Avi-Others,JP-1,166119.0,49639.95230629954,116479.04769370046,0.0,0.0,0.0,0.0,movement_count,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Domestic Avi-Others,100LL,23.0,0.0,0.0,0.0,23.0,0.0,0.0,100ll_general_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Overseas/Foreign Aviation,JP-1,283147.0,0.0,283147.0,0.0,0.0,0.0,0.0,foreign_customer_international,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Government Aviation,JP-1,2973.0,0.0,0.0,2973.0,0.0,0.0,0.0,government_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Government Other,JP-1,12282.0,0.0,0.0,0.0,0.0,0.0,12282.0,unresolved,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Government Other,JP-8,117785.0,0.0,0.0,117785.0,0.0,0.0,0.0,jp8_military_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,movement_count,Government Aviation,100LL,4519.0,0.0,0.0,0.0,4519.0,0.0,0.0,100ll_general_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Domestic Avi-PIA,JP-1,193813.0,49759.6063707366,144053.3936292634,0.0,0.0,0.0,0.0,flight_fuel_weighted,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Domestic Avi-Others,JP-1,166119.0,42649.44070160615,123469.55929839385,0.0,0.0,0.0,0.0,flight_fuel_weighted,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Domestic Avi-Others,100LL,23.0,0.0,0.0,0.0,23.0,0.0,0.0,100ll_general_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Overseas/Foreign Aviation,JP-1,283147.0,0.0,283147.0,0.0,0.0,0.0,0.0,foreign_customer_international,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Government Aviation,JP-1,2973.0,0.0,0.0,2973.0,0.0,0.0,0.0,government_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Government Other,JP-1,12282.0,0.0,0.0,0.0,0.0,0.0,12282.0,unresolved,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Government Other,JP-8,117785.0,0.0,0.0,117785.0,0.0,0.0,0.0,jp8_military_candidate,OCAC Sectoral Sales of Energy Products FY2023-24
+2023,flight_fuel_weighted,Government Aviation,100LL,4519.0,0.0,0.0,0.0,4519.0,0.0,0.0,100ll_general_aviation_candidate,OCAC Sectoral Sales of Energy Products FY2023-24

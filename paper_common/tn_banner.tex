@@ -1,0 +1,14 @@
+% The Sector Technical Note banner (v1.0.0). Each sector manuscript is a PakEmis Sector
+% Technical Note, numbered TN01-TN10 in src/pkinv/release.py (TECHNICAL_NOTES), and says
+% so on its first page: it documents ONE sector module of the release named in the block
+% that follows, and the national totals are stated only in the data-description article
+% (the cover block below reproduces them as release identity, not as a claim of this note).
+% Usage, in the document body before the release cover:  \TNBanner{TN01}
+\providecommand{\TNBanner}[1]{%
+  \noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule}{%
+    \textbf{PakEmis Sector Technical Note #1.} Technical documentation of one sector
+    module of the PakEmis release identified below, deposited with the data as part of the
+    documentation record. The national data-description article (\texttt{paper\_national/})
+    is the only document that states the national totals as its own result.%
+    \InputIfFileExists{../../paper_common/generated_availability_tn}{}{}%
+  }}\par\medskip}

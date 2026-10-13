@@ -1,0 +1,150 @@
+\begin{thebibliography}{14}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Unpublished
+\bibitem[{Ahmad(2026)}]{ahmad2026national}
+\bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Pakemis v1.0: an evidence-graded public-data
+  reconstruction of pakistan's non-lulucf greenhouse-gas emissions, fy2015--16
+  to fy2023--24}.
+\newblock \bibinfo{note}{Manuscript in preparation for Earth System Science
+  Data; it describes release 1.0.0rc67, whose data, software and technical
+  documentation DOIs are reserved and not yet assigned (see CITATION.cff). No
+  submission has been made}.
+%Type = Article
+\bibitem[{Andreae(2019)}]{andreae2019}
+\bibinfo{author}{Andreae, M.O.}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{Emission of trace gases and aerosols from biomass
+  burning -- an updated assessment}.
+\newblock \bibinfo{journal}{Atmospheric Chemistry and Physics}
+  \bibinfo{volume}{19}, \bibinfo{pages}{8523--8546}.
+\newblock \DOIprefix\doi{10.5194/acp-19-8523-2019}.
+%Type = Misc
+\bibitem[{{Climate TRACE}(2026)}]{climatetrace}
+\bibinfo{author}{{Climate TRACE}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Climate {TRACE} emissions inventory and data
+  downloads}.
+\newblock \bibinfo{howpublished}{\url{https://climatetrace.org/data}}.
+\newblock \bibinfo{note}{Version 7 country- and source-level API records; CC BY
+  4.0; accessed 6 August 2026}.
+%Type = Misc
+\bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{GHG} emissions of all world countries --- 2025
+  report ({EDGAR} {GHG} booklet)}.
+\newblock \bibinfo{howpublished}{European Commission, Joint Research Centre}.
+\newblock \bibinfo{note}{Sheet GHG\_by\_sector\_and\_country; annual series
+  1970--2024; CC BY 4.0. Snapshot archived at
+  \texttt{sources/EDGAR/EDGAR\_2025\_GHG\_booklet\_2025.xlsx}, sha256
+  \texttt{8bd6b8a4\ldots} pinned per benchmark row in
+  \texttt{data/benchmarks.csv}. \url{https://edgar.jrc.ec.europa.eu/}}.
+%Type = Article
+\bibitem[{Crippa et~al.(2020)Crippa, Solazzo, Huang, Guizzardi, Koffi, Muntean,
+  Schieberle, Friedrich and Janssens-Maenhout}]{crippa2020}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Solazzo, E.},
+  \bibinfo{author}{Huang, G.}, \bibinfo{author}{Guizzardi, D.},
+  \bibinfo{author}{Koffi, E.}, \bibinfo{author}{Muntean, M.},
+  \bibinfo{author}{Schieberle, C.}, \bibinfo{author}{Friedrich, R.},
+  \bibinfo{author}{Janssens-Maenhout, G.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{High resolution temporal profiles in the {Emissions
+  Database for Global Atmospheric Research}}.
+\newblock \bibinfo{journal}{Scientific Data} \bibinfo{volume}{7},
+  \bibinfo{pages}{121}.
+\newblock \DOIprefix\doi{10.1038/s41597-020-0462-2}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006waste}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 5: Waste}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Japan.
+\newblock \URLprefix
+  \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol5.html}.
+%Type = Techreport
+\bibitem[{{IPCC}(2019)}]{ipcc2019}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{2019 Refinement to the 2006 {IPCC} Guidelines for
+  National Greenhouse Gas Inventories}.
+\newblock \bibinfo{type}{Technical Report}. IPCC, Switzerland.
+%Type = Book
+\bibitem[{Kaza et~al.(2018)Kaza, Yao, Bhada-Tata and Van~Woerden}]{kaza2018}
+\bibinfo{author}{Kaza, S.}, \bibinfo{author}{Yao, L.C.},
+  \bibinfo{author}{Bhada-Tata, P.}, \bibinfo{author}{Van~Woerden, F.},
+  \bibinfo{year}{2018}.
+\newblock \bibinfo{title}{What a Waste 2.0: A Global Snapshot of Solid Waste
+  Management to 2050}.
+\newblock Urban Development Series, \bibinfo{publisher}{World Bank},
+  \bibinfo{address}{Washington, DC}.
+\newblock \DOIprefix\doi{10.1596/978-1-4648-1329-0}.
+%Type = Techreport
+\bibitem[{{Ministry of Climate Change, Government of Pakistan}(2022)}]{pakbur1}
+\bibinfo{author}{{Ministry of Climate Change, Government of Pakistan}},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Pakistan's First Biennial Update Report to the United
+  Nations Framework Convention on Climate Change}.
+\newblock \bibinfo{type}{Technical Report}. Ministry of Climate Change,
+  Islamabad.
+\newblock \URLprefix \url{https://unfccc.int/documents/}.
+  \bibinfo{note}{national greenhouse-gas inventory for FY2017--18; submitted to
+  the UNFCCC}.
+%Type = Misc
+\bibitem[{{OpenStreetMap contributors}(2026)}]{osm2026}
+\bibinfo{author}{{OpenStreetMap contributors}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{{OpenStreetMap} --- pakistan extract ({Geofabrik})}.
+\newblock \bibinfo{howpublished}{Geofabrik GmbH country extract, snapshot
+  2026-08-06}.
+\newblock \bibinfo{note}{Open Database License (ODbL) 1.0. Snapshot zip sha256
+  \texttt{ab445f8f\ldots}, recorded with per-product provenance in
+  \texttt{data/gis/rail/RAIL\_SOURCES.json},
+  \texttt{data/gis/roads/ROAD\_SOURCES.json} and
+  \texttt{data/gis/landfills/LANDFILL\_SOURCES.json}. Extracted geometry tables
+  are ODbL derivative databases (see \texttt{LICENSE-data}); rendered figures
+  are produced works. \url{https://download.geofabrik.de/asia/pakistan.html}}.
+%Type = Techreport
+\bibitem[{{Pakistan Bureau of Statistics}(2023)}]{pbscensus2023}
+\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{7th Population and Housing Census 2023}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+\newblock \URLprefix \url{https://www.pbs.gov.pk/digital-census}.
+%Type = Techreport
+\bibitem[{{Pakistan Bureau of Statistics}(2025)}]{hies2025}
+\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Household Integrated Economic Survey ({HIES})
+  2024--25: Microdata and Key Findings Report}.
+\newblock \bibinfo{type}{Technical Report}. Pakistan Bureau of Statistics,
+  Government of Pakistan.
+\newblock \URLprefix \url{https://www.pbs.gov.pk/content/microdata}.
+  \bibinfo{note}{first digitally enumerated round; 32,814 sampled households,
+  30,123 completed. SPSS microdata files; consumption module Section 6A}.
+%Type = Techreport
+\bibitem[{{Pakistan Environmental Protection Agency and Environmental
+  Protection and Management Consultants}(1996)}]{pakepa1996}
+\bibinfo{author}{{Pakistan Environmental Protection Agency and Environmental
+  Protection and Management Consultants}}, \bibinfo{year}{1996}.
+\newblock \bibinfo{title}{National Study on Privatization of Solid Waste
+  Management in Eight Cities of Pakistan}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+\newblock \bibinfo{note}{Table 3; the primary Pakistani waste-generation
+  survey, whose rates the World Bank What a Waste Pakistan row re-bins}.
+%Type = Misc
+\bibitem[{{WHO/UNICEF Joint Monitoring Programme}(2023)}]{jmp2023}
+\bibinfo{author}{{WHO/UNICEF Joint Monitoring Programme}},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Estimates for drinking water, sanitation and hygiene:
+  Pakistan household country file}.
+\newblock \bibinfo{howpublished}{WHO/UNICEF JMP}.
+\newblock \bibinfo{note}{Estimates sheet.
+  \url{https://washdata.org/data/country/PAK/household/download}}.
+
+\end{thebibliography}

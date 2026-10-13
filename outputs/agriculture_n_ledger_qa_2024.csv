@@ -1,0 +1,6 @@
+check,passed,actual,expected,note
+excretion splits into its named pools (partition_residual),True,0.000e+00,< 1e-09,residual relative to excreted N (7.7834 Mt N)
+the manure-management systems account for all managed N (mms_residual),True,6.126e-17,< 1e-09,residual relative to excreted N (7.7834 Mt N)
+the TAN pool closes (tan_residual),True,0.000e+00,< 1e-09,residual relative to excreted N (7.7834 Mt N)
+the ledger closes end to end (closing_residual),True,0.000e+00,< 1e-09,residual relative to excreted N (7.7834 Mt N)
+declared outputs written,True,3,3,every output this runner declares was written by this run

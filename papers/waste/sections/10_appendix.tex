@@ -1,0 +1,74 @@
+% ===========================================================================
+\section{Reproduction}
+\label{app:repro}
+% ===========================================================================
+
+The sector runs on Python 3.11 with no compiled dependencies:
+
+\begin{verbatim}
+pip install -e .
+python3 -m pkinv.sectors.waste.run_waste
+python3 -m pkinv.sectors.waste.air_pollutants
+python3 -m pkinv.sectors.waste.uncertainty
+\end{verbatim}
+
+which writes \texttt{waste\_totals\_2024.csv}, \texttt{waste\_by\_stream\_2024.csv},
+\texttt{waste\_provincial\_2024.csv}, \texttt{waste\_air\_pollutants\_2024.csv},
+\texttt{waste\_ledger\_2024.csv}, the twelve-month layer
+(\texttt{waste\_\allowbreak monthly\_\allowbreak 2024.csv}, each month's share with the emissions it implies and
+the basis of the shape), the three \texttt{waste\_uncertainty\_*.csv} files and
+\texttt{waste\_report.md} to \texttt{outputs/}. The generated appendix tables are rendered
+by the three \texttt{scripts/make\_waste\_*\_table.py} generators, and a test asserts each
+committed table matches a fresh regeneration. The cross-sector layer that places this sector
+in the national inventory is:
+
+\begin{verbatim}
+python3 -m pkinv.report.national_rollup
+python3 -m pkinv.report.key_categories_all
+python3 -m pkinv.report.uncertainty_all
+\end{verbatim}
+
+Figures are regenerated with \texttt{python3 -m pkinv.report.figures} and copied into this
+manuscript by \texttt{python3 scripts/sync\_figures.py}; a test fails if any shipped figure
+differs from the output it plots. The full suite, including the sector's own arithmetic tests
+and the checks that every number printed above matches its source CSV, runs with
+\texttt{python3 -m unittest discover tests}.
+
+% ===========================================================================
+\section{Sources}
+\label{app:sources}
+% ===========================================================================
+
+Population is the 2023 Population and Housing Census \citep{pbscensus2023}, interpolated to a
+district panel. Waste generation rates and composition derive from the Pak-EPA eight-city
+survey \citep{pakepa1996}, which \citet{kaza2018} re-bins; collection coverage is the Pakistan
+row of \citet{kaza2018}. Sanitation shares are the WHO/UNICEF Joint Monitoring Programme's
+Pakistani series \citep{jmp2023}. Emission factors and model parameters are IPCC 2006
+Guidelines Volume~5 defaults \citep{ipcc2006waste}, with the wastewater nitrous oxide method
+and its factors from the 2019 Refinement \citep{ipcc2019}; air-pollutant factors are the
+\citet{andreae2019} garbage-burning assessment. External comparisons are EDGAR's year-matched
+series \citep{edgar2025booklet} and Climate TRACE \citep{climatetrace}.
+
+Every factor in the repository cites its source table, and a provenance test asserts that none
+lacks a citation and that any informally sourced value is explicitly declared as such.
+
+% ===========================================================================
+\section{Supplementary Note: the two sensitivity conventions}
+\label{app:sens}
+% ===========================================================================
+
+Both wastewater sensitivities move methane only. Nitrous oxide in 4D1 is computed from protein
+consumption rather than from BOD, so it is invariant under a change to either the sewer
+correction factor or the BOD rate.
+
+This is worth an appendix because getting it wrong is easy and was in fact got wrong here. The
+sector's output file originally wrote the two sensitivity rows as \emph{methane only} into a
+column whose every other row was a category total. A reader comparing the reported
+\SI{24.46}{\mega\tonne} against the river-discharge row's \SI{12.82}{\mega\tonne} would have
+computed a lever of \num{1.91} where the real one is \num{1.59}, and the file disagreed with
+the module's own printed summary, which had always added the nitrous oxide back.
+
+The rows now carry category totals and are labelled as such. The general point is that a
+sensitivity is only interpretable against a stated basis, and a sensitivity table mixing bases
+within one column is worse than no sensitivity table, because it invites a subtraction that
+looks valid.

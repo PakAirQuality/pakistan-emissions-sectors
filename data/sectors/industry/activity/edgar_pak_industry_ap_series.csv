@@ -1,0 +1,359 @@
+# EDGAR v8.1 air pollutants for PAKISTAN, industrial categories, calendar 2015-2022, Gg -
+# extracted from the JRC country x sector workbooks (IPCC 2006 sheet), fuel (fossil) and
+# biomass (bio) rows kept apart as EDGAR keeps them. A comparison input, never an activity
+# and never a residual to insert; the engine's industry layer is fiscal and fossil-only.
+# Users of the data are obliged to acknowledge the source with a reference to the EDGARv8.1
+# air pollutant website (edgar.jrc.ec.europa.eu/dataset_ap81). scripts/extract_edgar_industry_ap_series.py
+species,ipcc_code_2006,ipcc_name,fossil_bio,calendar_year,emissions_Gg,edgar_release,source_file
+BC,1.A.2,Manufacturing Industries and Construction,bio,2015,19.923744,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,bio,2016,21.455231,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,bio,2017,21.689609,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,bio,2018,22.641534,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,bio,2019,22.879311,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,bio,2020,23.116540,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,bio,2021,23.116540,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,bio,2022,23.259533,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2015,2.364729,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2016,2.693978,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2017,3.364068,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2018,3.712406,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2019,3.083944,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2020,3.064048,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2021,3.408796,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.A.2,Manufacturing Industries and Construction,fossil,2022,3.057145,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2015,0.003881,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2016,0.003531,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2017,0.002952,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2018,0.002489,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2019,0.002003,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2020,0.001966,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2021,0.001913,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,1.B.2,Oil and Natural Gas,fossil,2022,0.001956,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2015,0.338966,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2016,0.377604,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2017,0.396780,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2018,0.416160,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2019,0.413100,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2020,0.409020,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2021,0.458113,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.1,Cement production,fossil,2022,0.458113,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2015,0.000278,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2016,0.000282,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2017,0.000287,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2018,0.000291,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2019,0.000296,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2020,0.000294,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2021,0.000329,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.A.3,Glass Production,fossil,2022,0.000329,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2015,0.058140,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2016,0.060801,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2017,0.058705,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2018,0.058860,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2019,0.061073,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2020,0.063231,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2021,0.062173,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.B,Chemical Industry,fossil,2022,0.057145,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2015,0.000499,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2016,0.000602,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2017,0.000433,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2018,0.000413,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2019,0.000291,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2020,0.000334,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2021,0.000472,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+BC,2.C,Metal Industry,fossil,2022,0.000522,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_BC_1970_2022.zip::EDGAR_BC_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2015,260.570336,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2016,267.867928,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2017,273.140778,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2018,279.632267,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2019,284.981592,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2020,290.318567,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2021,290.318567,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,bio,2022,290.550700,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2015,524.944402,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2016,607.620875,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2017,795.497819,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2018,914.372603,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2019,734.873244,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2020,731.420537,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2021,810.142825,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.A.2,Manufacturing Industries and Construction,fossil,2022,719.905684,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2015,2.453237,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2016,2.232079,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2017,1.866193,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2018,1.573489,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2019,1.266379,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2020,1.242615,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2021,1.209232,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,1.B.2,Oil and Natural Gas,fossil,2022,1.236434,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2015,0.048353,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2016,0.053864,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2017,0.056599,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2018,0.059364,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2019,0.058928,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2020,0.058346,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2021,0.065348,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.1,Cement production,fossil,2022,0.065348,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2015,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2016,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2017,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2018,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2019,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2020,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2021,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.A.3,Glass Production,fossil,2022,0.000001,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2015,0.022586,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2016,0.024043,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2017,0.022586,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2018,0.022586,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2019,0.024043,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2020,0.025500,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2021,0.024771,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.B,Chemical Industry,fossil,2022,0.024771,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2015,14.266704,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2016,16.042759,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2017,,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2018,,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2019,,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2020,,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2021,,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+CO,2.C,Metal Industry,fossil,2022,,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_CO_1970_2022.zip::EDGAR_CO_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2015,16.724607,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2016,17.244230,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2017,17.573783,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2018,18.014411,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2019,18.348744,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2020,18.682305,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2021,18.682305,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,bio,2022,18.703795,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2015,0.326306,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2016,0.318723,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2017,0.296080,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2018,0.220770,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2019,0.208840,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2020,0.204245,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2021,0.235901,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,1.A.2,Manufacturing Industries and Construction,fossil,2022,0.227343,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2015,7.047155,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2016,7.330948,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2017,7.128988,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2018,7.151306,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2019,7.370264,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2020,7.578833,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2021,7.499812,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NH3,2.B,Chemical Industry,fossil,2022,6.748223,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NH3_1970_2022.zip::EDGAR_NH3_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2015,80.126502,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2016,83.168946,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2017,84.651935,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2018,87.021728,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2019,88.526225,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2020,90.027249,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2021,90.027249,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,bio,2022,90.201349,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2015,30.543779,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2016,34.891837,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2017,42.206056,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2018,45.441930,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2019,40.421342,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2020,40.208625,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2021,44.522905,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.A.2,Manufacturing Industries and Construction,fossil,2022,39.445289,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2015,64.241993,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2016,63.866064,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2017,63.419951,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2018,68.100770,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2019,65.534376,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2020,65.249314,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2021,65.988892,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,1.B.2,Oil and Natural Gas,fossil,2022,64.556509,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2015,0.041647,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2016,0.042324,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2017,0.043012,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2018,0.043712,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2019,0.044473,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2020,0.044033,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2021,0.049319,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.A.3,Glass Production,fossil,2022,0.049319,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2015,1.799824,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2016,1.974462,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2017,2.010746,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2018,2.116110,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2019,2.061702,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2020,2.063895,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2021,2.251753,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.B,Chemical Industry,fossil,2022,2.057999,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2015,0.555590,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2016,0.689937,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2017,0.645580,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2018,0.613470,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2019,0.429525,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2020,0.494390,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2021,0.706897,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NMVOC,2.C,Metal Industry,fossil,2022,0.781690,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NMVOC_1970_2022.zip::EDGAR_NMVOC_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2015,98.112597,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2016,108.300412,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2017,108.995769,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2018,114.921760,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2019,115.627202,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2020,116.331015,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2021,116.331015,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,bio,2022,117.375613,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2015,110.915999,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2016,125.010459,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2017,147.290049,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2018,154.695490,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2019,144.344051,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2020,143.450175,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2021,159.215675,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.A.2,Manufacturing Industries and Construction,fossil,2022,141.761102,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2015,0.446295,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2016,0.406062,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2017,0.339499,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2018,0.286251,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2019,0.230381,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2020,0.226058,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2021,0.219985,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,1.B.2,Oil and Natural Gas,fossil,2022,0.224933,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2015,0.041241,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2016,0.045942,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2017,0.048275,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2018,0.050633,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2019,0.050260,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2020,0.049764,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2021,0.055737,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.1,Cement production,fossil,2022,0.055737,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2015,0.000271,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2016,0.000276,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2017,0.000280,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2018,0.000285,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2019,0.000290,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2020,0.000287,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2021,0.000321,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.A.3,Glass Production,fossil,2022,0.000321,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2015,3.764286,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2016,4.007143,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2017,3.764286,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2018,3.764286,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2019,4.007143,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2020,4.250000,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2021,4.128571,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.B,Chemical Industry,fossil,2022,4.128571,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2015,0.000108,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2016,0.000099,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2017,0.000071,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2018,0.000092,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2019,0.000098,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2020,0.000099,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2021,0.000048,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+NOx,2.C,Metal Industry,fossil,2022,0.000048,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_NOx_1970_2022.zip::EDGAR_NOx_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2015,66.960358,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2016,71.822756,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2017,72.659821,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2018,75.725860,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2019,76.575065,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2020,77.422310,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2021,77.422310,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,bio,2022,77.866264,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2015,31.728009,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2016,36.488944,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2017,47.285511,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2018,53.857988,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2019,44.637611,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2020,44.410484,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2021,49.241718,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.A.2,Manufacturing Industries and Construction,fossil,2022,43.857081,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2015,0.006930,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2016,0.006305,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2017,0.005272,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2018,0.004445,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2019,0.003577,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2020,0.003510,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2021,0.003416,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,1.B.2,Oil and Natural Gas,fossil,2022,0.003493,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2015,11.298880,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2016,12.586800,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2017,13.226000,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2018,13.872000,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2019,13.770000,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2020,13.634000,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2021,15.270434,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.1,Cement production,fossil,2022,15.270434,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2015,0.009255,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2016,0.009405,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2017,0.009558,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2018,0.009714,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2019,0.009883,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2020,0.009785,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2021,0.010960,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.A.3,Glass Production,fossil,2022,0.010960,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2015,2.842180,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2016,2.973379,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2017,2.868565,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2018,2.875772,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2019,2.986074,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2020,3.093545,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2021,3.043066,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.B,Chemical Industry,fossil,2022,2.806057,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2015,0.151919,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2016,0.171505,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2017,0.124355,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2018,0.136811,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2019,0.117476,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2020,0.129512,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2021,0.165864,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+PM2.5,2.C,Metal Industry,fossil,2022,0.179260,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_PM25_1970_2022.zip::EDGAR_PM2.5_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2015,26.431931,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2016,28.793480,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2017,29.047236,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2018,30.464446,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2019,30.721882,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2020,30.978724,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2021,30.978724,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,bio,2022,31.210857,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2015,161.113921,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2016,174.857793,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2017,207.071187,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2018,215.959412,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2019,184.647377,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2020,183.103639,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2021,204.662841,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.A.2,Manufacturing Industries and Construction,fossil,2022,185.311241,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2015,0.004158,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2016,0.003783,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2017,0.003163,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2018,0.002667,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2019,0.002146,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2020,0.002106,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2021,0.002050,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,1.B.2,Oil and Natural Gas,fossil,2022,0.002096,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2015,12.428768,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2016,13.845480,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2017,14.548600,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2018,15.259200,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2019,15.147000,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2020,14.997400,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2021,16.797477,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.1,Cement production,fossil,2022,16.797477,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2015,0.000181,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2016,0.000184,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2017,0.000187,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2018,0.000190,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2019,0.000194,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2020,0.000192,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2021,0.000215,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.A.3,Glass Production,fossil,2022,0.000215,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2015,1.236927,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2016,1.304315,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2017,1.327408,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2018,1.372034,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2019,1.338397,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2020,1.322925,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2021,1.479331,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.B,Chemical Industry,fossil,2022,1.326885,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2015,3.259500,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2016,2.971850,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2017,2.289524,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2018,3.351056,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2019,3.998388,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2020,4.030400,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2021,2.504000,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx
+SO2,2.C,Metal Industry,fossil,2022,2.488600,"EDGAR v8.1 (1970-2022), August 2024",EDGAR_SO2_1970_2022_v2.zip::EDGAR_SO2_1970_2022.xlsx

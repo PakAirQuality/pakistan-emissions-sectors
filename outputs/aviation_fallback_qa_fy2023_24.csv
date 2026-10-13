@@ -1,0 +1,8 @@
+check,passed,actual,expected,note
+movement_endpoint_closure,True,1.7691490938887e-07,1e-06,every route endpoint's movements close against the airport controls
+fuel_source_row_closure,True,2.9103830456733704e-11,1e-06,each OCAC fuel row's accounts sum back to its reported tonnage
+fictional_tier_c_timestamps,True,0,0,no Tier C reconstruction carries an invented observation timestamp
+route_activity_coverage,True,0.9900246305418723,0.8,"share of the 20,300 control movements the route ledger allocates"
+openap_fuel_activity_coverage,True,0.8616354679802956,0.8,share of movements with an OpenAP-modelled fuel burn (M2)
+airport_coordinate_coverage,False,0.972972972972973,1.0,share of control airports with a held coordinate; one aerodrome (Juzzak) has none in any source and the search is logged negative
+declared outputs written,True,9,9,every output this runner declares was written by this run

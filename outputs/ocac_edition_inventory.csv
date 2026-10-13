@@ -1,0 +1,6 @@
+# EVERY held OCAC edition population, counted from the holdings at build time. Two true counts of two different populations (48 cumulative vs 36 direct) read as a contradiction until this file distinguished them.
+kind,count,holding_dir,note
+cumulative_monthly,48,sources/Aviation/ocac_monthly,"OCAC monthly reports with CUMULATIVE national tables, fetched by the aviation sector for their jet-fuel columns; months are recovered by differencing"
+direct_monthly,36,data/raw/ocac/monthly_sector_province,OCAC direct single-month editions whose area pages carry the provincial split; the source of the reference year's own provincial shape
+annual_control,8,data/raw/ocac/annual_controls,OCAC annual editions used as the panel's yearly controls
+alternate_upload,2,data/raw/ocac/alternate_uploads,"alternate uploads of months also held above, kept for the revision diagnostic"

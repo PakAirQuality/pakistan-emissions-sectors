@@ -1,0 +1,20 @@
+# Residual-destination variants of a scenario axis (the rc2 review's section 4).
+#
+# data/scenarios.csv registers each axis with its ONE published alternative; this file
+# registers the finer question an alternative can leave open. Configuration S observes
+# 11.97 Mt of dung cake in households against a 58.69 Mt supply-side diversion, and mass
+# conservation cannot say where the other 46.72 Mt went -- but each candidate destination
+# has DIFFERENT CH4, N2O and biogenic-CO2 consequences, so "S" alone under-describes the
+# national reading. Each variant prices exactly one destination, no probabilities are
+# assigned (a schema test enforces that no such column exists), and the national
+# consequences are published in outputs/national_dung_variants.csv by report/dung_variants.py.
+#
+# pricing_method is the machinery contract: every variant is priced by REUSING the sector
+# engines on copies or by arithmetic over already-published outputs -- never by a second
+# estimator of anything.
+scenario_id,parent_axis,variant_id,description,pricing_method,machinery,note
+REF_2023_24,residential dung basis,S_household_only_unallocated,the reference since rc67: households burn what HIES observes and the residual is a declared unresolved stock,identity: the published reference rollup total,outputs/national_all_sectors.csv,the ledger's UNRESOLVED row is this variant's destination statement; no emissions pathway applied to the residual
+REF_2023_24,residential dung basis,S_residual_nonhousehold_combustion,the residual burns outside households (commercial tandoors and eateries) on the same fuel chain,scale the L dung stream by the unresolved share and book it as non-household combustion,outputs/residential_by_stream_2024.csv + residential engine memo,same Table 2.5 chemistry as L so the national total equals L reclassified from 1.A.4.b toward 1.A.4.a
+REF_2023_24,residential dung basis,S_residual_return_to_manure,the burned_fuel MMS shares are over-stated and the residual's nitrogen never left manure management,rerun agriculture manure+soils on a copy with burned_fuel scaled to the survey share and the freed share redistributed over each herd's existing systems,sectors/agriculture manure.compute + soils.compute on an in-memory copy,raises MMS N2O and the FON application to soils; manure CH4 is per-head in this implementation and does not move
+REF_2023_24,residential dung basis,S_residual_field_application,the residual cake is applied to fields as organic amendment without passing managed storage,add the residual nitrogen to FON and rerun soils on the same npools,sectors/agriculture soils.compute with FON_N raised,direct and indirect soils N2O on the added nitrogen
+REF_2023_24,residential dung basis,S_revised_diversion_fraction,the diversion assumption itself is revised down so supply equals the observed demand,same recomputation as return_to_manure presented as a repair of L,sectors/agriculture manure.compute + soils.compute on an in-memory copy,identical arithmetic to return_to_manure; the difference is WHICH reading of evidence is being revised - the destination of a real diversion there. the size of the diversion here

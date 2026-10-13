@@ -1,0 +1,166 @@
+% ===========================================================================
+\section{Reproduction and generated products}
+\label{app:repro}
+% ===========================================================================
+
+The inventory is regenerated from the repository root with:
+
+\begin{verbatim}
+pip install -e .
+python3 -m pkinv.sectors.fugitives.run_fugitives
+python3 -m pkinv.report.figures
+python3 scripts/sync_figures.py
+python3 -m unittest discover -s tests
+\end{verbatim}
+
+The runner writes the evidence tables below. Each is named: the registered filenames use the
+FY2023--24 anchor suffix \texttt{2024}, and stating the convention without stating the names
+left a reader unable to tell which file was which. Every quantity this paper prints from one of
+them is checked against it by the verification registry.
+
+\begin{itemize}\itemsep2pt
+\item \texttt{fugitives\_\allowbreak segment\_\allowbreak native\_\allowbreak gases\_\allowbreak 2024.csv}: the segment ledger in native
+  gases: \CHfour{}, \COtwo{} and \NtwoO{} for each of \num{12} segments, with each segment's
+  share of the sector.
+\item \texttt{fugitives\_method\_ladder\_2024.csv}: the method ladder, ordered, each rung
+  with its coverage and result.
+\item \texttt{fugitives\_\allowbreak structural\_\allowbreak factorial\_\allowbreak 2024.csv}: all \num{280} factorial
+  configurations of the practice, basis and sour-fraction choices.
+\item \texttt{fugitives\_\allowbreak structural\_\allowbreak scenarios\_\allowbreak 2024.csv}: the named structural
+  experiments, each with its activity basis and practice.
+\item \texttt{fugitives\_\allowbreak conditional\_\allowbreak intervals\_\allowbreak 2024.csv}: \num{5} conditional Monte
+  Carlo intervals, one per configuration, beside that configuration's deterministic value.
+\item \texttt{fugitives\_\allowbreak uncertainty\_\allowbreak attribution\_\allowbreak 2024.csv}: rank attribution by input
+  group, as normalised squared Spearman correlation.
+\item \texttt{fugitives\_\allowbreak infrastructure\_\allowbreak timeseries\_\allowbreak 2016\_\allowbreak 2024.csv}: the \num{9}-year
+  infrastructure reconstruction.
+\item \texttt{fugitives\_\allowbreak infrastructure\_\allowbreak segment\_\allowbreak timeseries\_\allowbreak 2016\_\allowbreak 2024.csv}: the same
+  years decomposed by segment.
+\item \texttt{fugitives\_\allowbreak gas\_\allowbreak flow\_\allowbreak balance\_\allowbreak 2022\_\allowbreak 2024.csv}: the gas-flow balance: gross
+  domestic production, indigenous marketable supply and the upstream statistical difference
+  between them.
+\item \texttt{fugitives\_\allowbreak ufg\_\allowbreak network\_\allowbreak compatibility\_\allowbreak 2024.csv}: the UFG test---the
+  physical fraction each scenario would require, and whether it is compatible with a
+  \SI{10}{\percent} and a \SI{25}{\percent} unaccounted-for-gas figure.
+\item \texttt{fugitives\_\allowbreak post\_\allowbreak meter\_\allowbreak end\_\allowbreak use\_\allowbreak 2024.csv}: post-meter throughput by end
+  use, with the IPCC inclusion decision for each.
+\item \texttt{fugitives\_\allowbreak post\_\allowbreak meter\_\allowbreak factor\_\allowbreak lineage\_\allowbreak 2024.csv}: that factor's lineage
+  from its published value to the registered one, rounding difference included.
+\item \texttt{fugitives\_\allowbreak distribution\_\allowbreak practice\_\allowbreak evidence\_\allowbreak 2024.csv}: the evidence that
+  classifies the distribution network, each item with its criterion, coverage and effect on the
+  classification.
+\item \texttt{fugitives\_\allowbreak observation\_\allowbreak field\_\allowbreak statistics\_\allowbreak 2024.csv}: field-level agreement
+  with the satellite observations.
+\item \texttt{fugitives\_\allowbreak observation\_\allowbreak permutation\_\allowbreak 2024.csv}: the permutation tests that
+  give that agreement an empirical \emph{p}.
+\item \texttt{fugitives\_data\_priorities\_2024.csv}: which input or decision would move
+  the answer most, ranked by effect.
+\item \texttt{fugitives\_benchmark\_crosswalk.csv}: the external comparators on a common
+  GWP basis, each with its independence from this inventory recorded.
+\item \texttt{fugitives\_mars\_summary.csv}: the MARS plume summary---sources, plumes,
+  persistent and notified counts and the maximum observed flux.
+\item \texttt{fugitives\_viirs\_flare\_sites.csv}: the flare-site register, with each
+  site's volume per year.
+\item \texttt{fugitives\_\allowbreak viirs\_\allowbreak flaring\_\allowbreak 2012\_\allowbreak 2025.csv}: the national series of flared
+  volume and active site count.
+\end{itemize}
+
+The sector's headline tables are the seven below. They were described in this appendix by
+function---``the process-matched provincial allocation'', ``the completeness matrix''---and
+named nowhere, which tells a reader that the evidence exists without telling them where it is.
+
+\begin{itemize}\itemsep2pt
+\item \texttt{fugitives\_totals\_2024.csv}: the registered sector result, by category and
+  method, with the fiscal year, the AR5 total and the Monte Carlo 2.5th, 50th and 97.5th
+  percentiles beside it.
+\item \texttt{fugitives\_\allowbreak by\_\allowbreak stream\_\allowbreak 2024.csv}: the stream ledger---category,
+  subitem and gas in gigagrams, each row with its uncertainty, correlation group,
+  fossil flag, activity year and period kind, evidence class, and temporal and spatial method.
+\item \texttt{fugitives\_provincial\_2024.csv}: the province-level AR5 total.
+\item \texttt{fugitives\_monthly\_2024.csv}: the twelve-month layer, each month's share with
+  the emissions it implies in both common-GWP vintages, and the temporal method and basis that
+  produced the shape.
+\item \texttt{fugitives\_\allowbreak completeness\_\allowbreak 2024.csv}: one row per IPCC code and subsegment
+  with its notation key, treatment, principal gap, materiality class and screening bracket.
+\item \texttt{fugitives\_\allowbreak uncertainty\_\allowbreak 2024.csv}: per segment, the mean and the 2.5th,
+  50th and 97.5th percentiles with the observed minimum and maximum, and the method,
+  scenario, distribution, iteration count and seed that generated them.
+\item \texttt{fugitives\_\allowbreak observation\_\allowbreak provincial\_\allowbreak evaluation\_\allowbreak 2024.csv}: the
+  provincial confrontation of the upstream inventory with the observations---flared volume,
+  active and total flare sites, and MARS source and plume counts, persistent ones separately.
+\end{itemize}
+
+The runner also writes the reference component table, the auditable site matches, the CRT
+extraction, the common-GWP waterfall, the row reproduction and cell audit, the QA table and the
+run manifest. The legacy FY2019--20 calculation remains a labelled row rather than the
+registered sector result.
+
+The run manifest records each input path and SHA-256 hash. Tests assert the registered year,
+matched-year activity conversion, IPCC factor identity, alternative activity bases, gas-flow
+identities, no duplicate segment--gas rows, uncapped bounded legacy sampling, shared uncertainty
+groups, UFG exclusion and compatibility, quantitative observation coverage, CRT row closure,
+provincial reconciliation and source-status notation.
+
+% ===========================================================================
+\section{Factor and activity audit}
+\label{app:factors}
+% ===========================================================================
+
+The machine-readable factor registry is
+\path{data/fugitives_ipcc2019_factors.csv}. Each row stores its 2019 Refinement table,
+activity unit, reported factor, lower and upper uncertainty, practice class and correlation group.
+The legacy factors remain in \texttt{data/emission\_factors.csv} only for the method benchmark.
+
+Reference activities are stored in
+\path{data/activity/fugitives/anchor_activity_2023_24.csv} and the matched-year extension in
+\path{data/activity/fugitives/anchor_activity_2021_23.csv}. Historical controls are in
+\path{data/activity/fugitives/infrastructure_history_2015_21.csv}; field, distribution-practice
+and post-meter audits have separate source tables in the same directory. Official quantities and
+fallbacks are distinguished in the \texttt{method\_tier}, \texttt{status} and \texttt{note}
+fields. The factor engine accepts this generic schema; it does not read OGRA or satellite files
+directly.
+
+The official-inventory audit exports the workbook filename and package hash, worksheet, cell or
+range, raw value, unit, formula where present, notation key and extraction transformation. This
+is intended to make the reported oil--gas allocation independently checkable rather than to
+infer unpublished institutional reasoning.
+
+The complete uncertainty-input register, including distributions, bounds and shared deviates,
+is reproduced as Table~S5 in the supplementary material. The machine-readable source remains
+\path{outputs/fugitives_uncertainty_inputs_2024.csv}.
+
+% ===========================================================================
+\section{Notation keys and import contract}
+\label{app:completeness}
+% ===========================================================================
+
+Completeness follows the UNFCCC notation convention: \emph{estimated} identifies ledger rows,
+IE identifies quantities included elsewhere in an inclusive factor, NE identifies categories
+for which evidence is not yet sufficient, and NO identifies activities documented as not
+occurring. Venting and flaring are IE in the reference Tier~1 production factors; the VIIRS result
+is consequently a memo, not an additional stream.
+
+Table~S4 in the supplementary material reproduces the complete notation-key and materiality
+matrix, including the activity evidence required to replace every NE entry. The observation
+join audit and its 10,000-draw permutation diagnostics are given in Tables~S1--S3.
+
+The permanent import contract for future PPIS, OGRA or operator records requires a source
+identifier, reporting period, IPCC segment, facility or network identifier, operator, location,
+activity value and unit, technology/practice class, source reference, imputation method and
+quality flag. Missing records remain explicit residuals. Facility observations may replace an
+aggregate activity row or evaluate its geography, but they cannot silently change the inventory
+boundary or force closure.
+
+% ===========================================================================
+\section{Legacy uncertainty experiment}
+\label{app:legacy}
+% ===========================================================================
+
+For the 2006 benchmark, a published factor range $[L,U]$ is sampled directly as
+\begin{equation}
+EF=\exp\left[\ln L+q(\ln U-\ln L)\right],\qquad q\sim\mathcal{U}(0,1).
+\end{equation}
+All gases in one physical stream share $q$. The geometric midpoint is therefore the median of
+the factor distribution, every draw remains within the published bounds, and no display or
+computational cap is applied. This bounded log-uniform experiment is retained only to diagnose
+the legacy method; it is not the uncertainty model used for the 2019 segment inventory.

@@ -1,0 +1,53 @@
+% ===========================================================================
+\section{Supplementary Note: the dung-cake closure}
+\label{app:dung}
+% ===========================================================================
+
+The design decision worth recording is what the ledger conserves and what it leaves
+open. It conserves the DIVERTED quantity: agriculture removes \SI{28}{\percent} of
+cattle and \SI{30}{\percent} of buffalo excreted nitrogen from its manure-management
+balance and books it IE to Energy, and this sector receives exactly that quantity---not
+an independent estimate that would then need ongoing reconciliation, whose failure mode
+is silent (both sectors' totals stay internally consistent while the flow between them
+does not balance). What the ledger does NOT settle is the destination of the diverted
+mass. The household survey observes \SI{11.97}{\mega\tonne} of cake consumed in
+dwellings in its 2024--25 round, a factor of \num{4.9} below the diverted total, and the
+series interpolated between its two rounds puts \SI{10.93}{} there in FY2023--24. The
+paper reads the
+destination two ways: the reference books the observed household
+consumption and carries the remainder as
+$D_{\text{other/unresolved}}$, outside the total with no emission applied, and
+configuration L, the reference of earlier releases, books it all to
+household combustion (Section~\ref{sec:results}).
+
+The diverted quantity itself is derived from agriculture's nitrogen flow:
+\begin{equation}
+M_{\mathrm{VS}} \;=\; \sum_{a} N_a \, f_a \, \frac{\mathrm{VS}_a}{\mathrm{Nex}_a},
+\end{equation}
+using the same herd, the same species categories, the same burned-fuel shares $f_a$, and
+IPCC's volatile-solids and nitrogen-excretion rates for the same animal categories and region.
+The result is \SI{1.259}{\mega\tonne} of nitrogen corresponding to
+\SI{38.77}{\mega\tonne} of ash-free volatile solids---the ledger intermediate, not a
+burnable fuel mass---and a test asserts the correspondence with \texttt{==} rather than
+a tolerance.
+
+Three masses follow from that one intermediate, and each pairs with its own factor basis:
+total dry solids restore the mineral ash a hand-formed cake carries
+($\mathrm{TS} = \mathrm{VS}/(1-\text{ash})$, \SI{51.69}{\mega\tonne}) and are the basis
+Andreae's per-kilogram-dry-fuel pollutant factors describe; air-dry cake mass restores the
+equilibrium moisture ($\mathrm{TS}/(1-\text{moisture})$, \SI{58.74}{\mega\tonne}) and
+pairs with IPCC's as-received net calorific value for the energy calculation. These are
+the masses of the diverted supply, and of the stream configuration L burns; the reference
+reads air-dry cake from the survey and removes the same moisture fraction for its dry
+mass (Table~\ref{tab:massbases}). The
+superseded pairing---ash-free volatile solids on the as-received NCV, a three-bases
+conflation that understated the stream---is retained only as the structural scenario
+\texttt{dung\_basis\_legacy\_vs}.
+
+The property this buys is not accuracy but the impossibility of a particular error. If
+agriculture's manure-management shares change, the diverted quantity changes with them,
+in the same commit, and neither sector can be updated into inconsistency with the other
+about what was diverted. Where the part of that quantity households do not report
+burning goes
+remains the sector's dominant open question, carried explicitly rather than resolved by
+construction.

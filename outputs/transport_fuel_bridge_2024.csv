@@ -1,0 +1,12 @@
+fuel,step,kind,kt,ncv_TJ_per_Gg,TJ,basis,ipcc_code,note
+Petrol,OCAC Road row (MS + HOBC),opening,7209.41,44.3,319376.9,GROSS,1.A.3.b,"the customer-class row as published, before any carve-out"
+Petrol,less household generators,deduction,-56.3282,44.3,-2495.3,carve-out,1.A.4.b,"relayed from the residential sector; subtracted in MASS, before the calorific conversion"
+Petrol,operative petrol control,closing,7153.0818,44.3,316881.5,NET,1.A.3.b,what the engine distributes - and what the fuel table prints
+Diesel,OCAC Road row (HSD),opening,5551.442,43.0,238712.0,GROSS,1.A.3.b,"no deduction applies at this stage: Railways is its own OCAC row, so the printed diesel energy IS the gross row - unlike petrol"
+Diesel,less off-road partition,partition,-492.4848,43.0,-21176.8,partition,1.A.4.c ii / 1.A.2 g vii,"energy-weighted share of the same normalisation that splits the on-road classes; a partition, not a deduction - the fuel stays in the inventory"
+Diesel,operative on-road control,closing,5058.9572,43.0,217535.2,NET of partition,1.A.3.b,the 1A3b diesel energy
+Diesel,off-road partition (memo),memo,492.4848,43.0,21176.8,partition,1.A.4.c ii / 1.A.2 g vii,"reported as its own category, not excluded"
+CNG,OGRA metered sector gas,opening,,,23875.9,GROSS,1.A.3.b,"a third control on its own activity basis; no share of either petroleum control, which is why it cannot appear in the claimant ledger"
+CNG,x gross-to-net 0.90,conversion,,,-2387.6,conversion,,IPCC net calorific convention
+CNG,operative CNG control,closing,,,21488.3,NET,1.A.3.b,what the CNG stream burns
+--,"Table asymmetry, stated",note,,,0.0,,,the published fuel table prints petrol NET of the generator carve-out (316882 TJ) beside diesel GROSS of the off-road partition (238712 TJ). Gross petrol is 319377 TJ. Both printed numbers are correct; this row is the label they were missing.

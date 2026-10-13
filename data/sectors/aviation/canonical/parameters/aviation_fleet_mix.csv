@@ -1,0 +1,20 @@
+Year from,Year to,Aircraft,Share,Segment,Source,Note,Record ID,Source row
+2006,2013,A310,0.20,commercial,"PIA fleet history (introduced 1991, retired 2016)",Widebody on trunk domestic before the A320 fleet arrived,59b4e83dd903a6090fdc694e,1
+2006,2013,B737-300,0.25,commercial,"PIA fleet history (introduced 1985, retired 2014)",,5fee1ab58995ed884c922376,2
+2006,2013,A320,0.30,commercial,"PIA, Airblue (A320/A321 from 2004)",,b42da0d867a3fdbb6867ff04,3
+2006,2013,ATR72,0.20,commercial,PIA ATR-42/72 on northern and secondary routes,Turboprop; ATR-42 approximated by the ATR-72 factor,2bf73fc76ec8303b593a03f0,4
+2006,2013,B747-300,0.05,commercial,PIA fleet history (retired 2015),Occasional trunk domestic use,4f094aff2aa03966e859f626,5
+2014,2017,A310,0.10,commercial,PIA fleet history (retired 2016),,0d7e10a52801425d55ea7af4,6
+2014,2017,A320,0.50,commercial,"PIA, Airblue, SereneAir from 2017",,86613eb53293877bceb17a21,7
+2014,2017,B737-800,0.15,commercial,SereneAir (from 2017); PIA leased B737-800 2014-15,Only Pakistani B737-800 operator,e4f09c8211fa3b8a1b7232f6,8
+2014,2017,ATR72,0.25,commercial,PIA northern and secondary routes,,11b2f138b493af6fada7c633,9
+2018,2023,A320,0.65,commercial,"PIA, Airblue, AirSial (2020), Fly Jinnah (2022)",The dominant domestic type across all four carriers,3ed744db88d8cdcc7a99fd33,10
+2018,2023,B737-800,0.12,commercial,SereneAir,,3058df57437a33a7eff5a0e6,11
+2018,2023,ATR72,0.18,commercial,PIA ATR-42 fleet on Gilgit/Skardu/Chitral,Turboprop; ATR-42 approximated by the ATR-72 factor,6cdcd8efb4fdbe0dddcbabb3,12
+2018,2023,B777-200,0.05,commercial,PIA widebody on Karachi-Islamabad,,22d95d95f8c949bdff567ad2,13
+2006,2023,Cessna 525/560,0.60,noncommercial,IPCC 2006 GL Vol 2 Ch 3 Table 3.6.9 low-thrust jet,"The CAA's non-commercial column mixes general aviation, training circuits, positioning flights and probably military movements at the joint-use fields. Light-aircraft factors are used because a jet factor on a training circuit would be a tenfold error on this line.",2f382e6a6b36ad28cb5bc478,14
+2006,2023,Beech King Air,0.40,noncommercial,IPCC 2006 GL Vol 2 Ch 3 Table 3.6.9 turboprop,See note above,9e2ddd624d84f124457ee5b8,15
+2006,2023,A320,0.45,international,"PIA, Airblue, AirSial, Fly Jinnah Gulf services",Gulf routes dominate Pakistani international movements by count,268b0e326b72f667cbdc5581,16
+2006,2023,B777-200,0.30,international,PIA long-haul,,c777456b93df70f4cbb3fc2f,17
+2006,2023,A310,0.10,international,PIA (retired 2016); approximates other widebodies,,2d68eaa06edc01b7b0c51974,18
+2006,2023,B737-800,0.15,international,SereneAir and foreign narrowbody operators,,fe962f11c62dfb38fb764708,19

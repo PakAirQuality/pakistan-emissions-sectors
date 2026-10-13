@@ -1,0 +1,53 @@
+# WHAT THIS JOINS. Every component row now carries a source_id - a stable key naming the
+# activity evidence behind it. data/source_documents.csv is keyed by activity FILE and says
+# whether the document behind that file is archived. Neither answers the other's question:
+# a file does not know which emission streams read it, and a stream's key did not resolve
+# anywhere at all until this file existed.
+#
+# So this is the join, and it is the reason the schema's source_id is worth carrying. With it,
+# "which streams rest on a document this project never kept?" is a query rather than an
+# afternoon. Without it, source_id is a label.
+#
+# One row per (source_id, data_file); a key may read several files. Every data_file here must
+# appear in source_documents.csv, and every source_id a component carries must appear here -
+# tests/test_sector_contract.py asserts both directions.
+# retrieved_at (added rc46 Wave 0): the UTC retrieval timestamp of the DOCUMENT this key's
+# evidence was read from, copied from data/manifests/source_manifest.csv where that document
+# is manifested. The two registries use different id vocabularies (semantic keys here,
+# path-keys there), so the value is DECLARED per row when a wave touches it, never joined
+# mechanically - a blank means the document entered the tree before the manifest discipline
+# or the row has not been revisited since the column was added, not that nothing was fetched.
+source_id,data_file,what_it_supports,cited_by,retrieved_at
+agriculture_manure_nitrogen_ledger,data/activity/livestock_2024.csv,dung-cake mass relayed from agriculture's manure balance into residential,components,
+economic_survey_2023_24_rice_area,data/activity/crops_2024.csv,flooded rice area and cultivation period,components,
+hies_2024_25_firewood,data/activity/residential/woodfuel.csv,household firewood consumption,components,
+hies_2024_25_residues,data/activity/residential/hies/hies_fuel_quantities.csv,household crop-residue and cotton-stick fuel,components,
+hies_generator_fuel_expenditure,data/activity/residential/hies/hies_fuel_quantities.csv,generator petrol reconstructed from expenditure and the administered price,components,
+nepra_state_of_industry_plant_fuel,data/activity/power/plant_fuel_ledger.csv,plant-wise grid fuel consumed,components,
+nfdc_fertilizer_review_annex7,data/activity/fertilizer_2024.csv,audited nutrient offtake - the MAGNITUDE only; the composition moved to Annex-5's Jul-Jun window in rc39 A2 and Annex-7 now supplies the PROVINCIAL factors alone,components,
+nfdc_annex5_national_offtake,data/nfdc/annex5_national_month_product.csv,rc39: the printed national monthly offtake by product over the Jul-Jun window - the urea mass Eq 11.13 is applied to (A3) and the composition that weights FracGASF (A2),components,
+no_national_quantity,data/activity/residential/fuel_supply.csv,charcoal - declared judgement; no national quantity exists,components,
+ocac_sectoral_road_customer_class,data/activity/transport/ocac_sectoral_annual.csv,the Road customer-class petrol and diesel control totals,components,
+ocac_sectoral_road_residual,data/activity/transport/ocac_sectoral_annual.csv,mixed off-road machinery carved out of the same control,components,
+ocac_sectoral_total_industry,data/activity/transport/ocac_sectoral_annual.csv,the Total Industry customer class - industrial liquid fuels,components,
+ogra_sorpi_captive_gas,data/activity/power/captive_gas.csv,metered captive self-generation gas,components,
+ogra_sorpi_cng_metered,data/activity/transport/cng_gas.csv,metered gas to the CNG sector,components,
+ogra_sorpi_domestic_and_hies,data/activity/residential/fuel_supply.csv,"domestic piped gas, LPG, kerosene and coal",components,
+ogra_sorpi_sector_gas,data/activity/industry/gas_consumption.csv,sector-wise industrial gas,components,
+ogra_sorpi_segment_infrastructure,data/activity/fugitives/anchor_activity_2023_24.csv,"segment-resolved pipeline, well and throughput activity",components,
+pakistan_railways_year_book,data/activity/railways/fuel_consumption.csv,metered traction fuel purchases,components,
+pbs_agricultural_census_and_economic_survey,data/activity/livestock_2024.csv,livestock enumeration,components,
+pbs_agricultural_census_and_economic_survey,data/activity/crops_2024.csv,crop area and production,components,
+pbs_census_population_district,data/activity/waste/population_district.csv,district population driving waste generation,components,
+pbs_sugar_crushing,data/activity/power/bagasse_generation.csv,bagasse generation reconstructed from crushing,components,
+producer_census_16_annual_reports,data/activity/ippu/company_clinker_2023_24.csv,the 16-company audited census summed as the reference clinker activity (rc30),components,
+pcaa_movements_ocac_jet_fuel,data/activity/aviation/airline_controls_2023_24.csv,domestic movements and the jet-fuel boundary they reconcile against,components,
+nfdc_afr_2024_25,data/nfdc/afr2025_production_by_manufacturer.csv,fertilizer production by product and manufacturer; the ammonia product-stoichiometry pathway,reconciliation:ippu_ammonia_activity_reconciliation.csv,
+nfdc_afr_2024_25,data/nfdc/afr2025_fertilizer_gas_by_plant.csv,plant gas feed/fuel split; the 2.B.1/1.A.2 boundary and the gas-balance pathway,reconciliation:ippu_ammonia_activity_reconciliation.csv,
+cpp_master_register,data/activity/power/captive_register.csv,captive plant coordinates and gas activity; the facility registry's largest point source,reconciliation:pakemis_facility_registry.csv,
+nfdc_afr_2024_25,data/nfdc/afr2025_offtake_by_product.csv,"product-wise offtake, domestic and imported; the urea bridge's application leg",reconciliation:ippu_urea_co2_bridge_2025.csv,
+nfdc_afr_2024_25,data/nfdc/afr2025_fertilizer_gas_monthly.csv,monthly plant-wise gas for BOTH fiscal years; the reference year's observed feed/fuel split and the cross-source check against OGRA,reconciliation:ippu_fertilizer_gas_cross_source_2024.csv,
+finance_division_supplement_coal,data/activity/industry/coal_by_consumer.csv,"the brick-kiln and cement-sector coal reference streams (rc46 Wave 2): national coal-by-consumer, Statistical Supplement Table 14.1(4), the HDIP series republished",sectors/industry/solid_fuels.py; outputs/industry_coal_reconciliation.csv,2026-09-04T02:53:00Z
+nfdc_fertilizer_production_series,data/nfdc/nfdc_production_by_product_series.csv,"NFDC production by product and fiscal year, the ammonia 2.B.1 activity (rc52; every year closes on its printed total)",components,
+pbs_qim_billets_ingots,data/activity/monthly/pbs_qim_month_item.csv,"PBS QIM billets and ingots, the year's own twelve months: the crude-steel 2.C.1 activity (rc52)",components,
+ocac_non_energy_sectoral_sales,data/activity/industry/ocac_non_energy_sectoral.csv,"OCAC sectoral sales of non-energy products, LUBES and GREASES grand totals: the 2.D.1 activity (rc52)",components,

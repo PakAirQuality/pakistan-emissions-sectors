@@ -1,0 +1,7 @@
+fiscal_year,service,metric,value,unit,source,note
+2024,line_haul_passenger,train_km,26885,thousand km,"Year Book 2023-24 Principal Statistics","Passenger, mixed and other coaching trains."
+2024,line_haul_freight,train_km,6237,thousand km,"Year Book 2023-24 Principal Statistics",""
+2025,line_haul_passenger,train_km,20124,thousand km,"Year Book 2024-25 Principal Statistics p.ii","PROVISIONAL (the edition's own declaration). INTERNAL TENSION recorded, not resolved: passenger train-km fall 25 percent while the same table's coaching vehicle-kilometres RISE 2 percent (151,250 to 154,298) and trains run fall only 2 percent. One of those movements is likely a misprint; the comparative statement corroborates the total (27,277) so the split is carried as printed."
+2025,line_haul_freight,train_km,7152,thousand km,"Year Book 2024-25 Principal Statistics p.ii","PROVISIONAL. Freight train-km up 15 percent on FY2024."
+2024,railcar,train_km,0,thousand km,"Year Book 2024-25 comparative statements (p.158): 'Railcar and Trailer Coach kilometer - Nil'","NOT OCCURRING: railcar workings are Nil in every recent year; the historical trains-run table shows railcar services ending by the mid-1990s. The EMEP railcar category is NO for the inventory years."
+2024,shunting,train_km,,thousand km,"","NOT PUBLISHED: no Year Book table reports shunting hours, engine-hours or shunting engine-kilometres. The shunting fuel share is a declared assumption (railways_params.csv shunting_fuel_share); see rail-service-split in data/data_gaps.csv."

@@ -1,0 +1,20 @@
+{
+  "module": "livestock",
+  "reference": "PBS Livestock Census province shares (independent of the model)",
+  "validation_scope": "PROVINCE ORDERING ONLY - no pixel validation claimed",
+  "spearman_vs_cattle": 0.8,
+  "spearman_vs_buffalo_circular": 0.8,
+  "model_order": [
+    "Punjab",
+    "Khyber Pakhtunkhwa",
+    "Sindh",
+    "Balochistan"
+  ],
+  "census_cattle_order": [
+    "Punjab",
+    "Sindh",
+    "Khyber Pakhtunkhwa",
+    "Balochistan"
+  ],
+  "note": "Plausibility check on the province ordering only (no pixel validation). The model now uses buffalo-share as a feature, so the buffalo-census comparison is CIRCULAR and shown for reference only; the independent check is vs CATTLE census province shares."
+}

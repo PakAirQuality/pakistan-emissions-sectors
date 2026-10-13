@@ -1,0 +1,245 @@
+# Station fuel quantities, FY2015-16 to FY2019-20, from NEPRA State of Industry Report 2020
+# Tables 16 (GENCOs) and 19 (IPPs): the columns beside the generation that
+# plant_fuel_generation.csv holds. Written by scripts/ingest_nepra_plant_fuel_quantity.py.
+# quantity_basis: `printed` (the table's own figure, physically possible for its GWh);
+# `printed, decimal point restored` (a power-of-ten misprint, placed by the station's own
+# ratio in its other years);
+# `generation x printed specific consumption` (the printed quantity is a misprint and the
+# table prints the station's rate beside it); `generation only` (no usable quantity: the
+# consumer weights this station-year by generation and says so).
+# fiscal_year is the report's label (2015-16); K-Electric is not read.
+fiscal_year,system,plant,fuel,quantity,quantity_unit,generation_gwh,printed_quantity,printed_specific_consumption,quantity_basis,source_table,note
+2015-16,GENCO,GTPS Faisalabad (GENCO-III),Gas,3631.00,MMCFT,275.16,3631.00,12.54,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,GTPS Faisalabad (GENCO-III),Gas,2718.97,MMCFT,214.62,2718.97,12.04,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,GTPS Faisalabad (GENCO-III),Gas,1297.21,MMCFT,14.68,1297.21,11.71,printed,NEPRA SoIR 2020 Table 16,under 25 GWh: the ratio of a start-up is not tested
+2017-18,GENCO,GTPS Faisalabad (GENCO-III),RLNG,,MMCFT,90.61,,,generation only,NEPRA SoIR 2020 Table 16,"the printed quantity (none) implies nothing per kWh, outside 5.0 to 22.0, and no usable specific consumption is printed"
+2018-19,GENCO,GTPS Faisalabad (GENCO-III),RLNG,1801.87,MMCFT,149.53,1801.87,11.47,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,GTPS Kotri (GENCO-I),Gas,7139.00,MMCFT,582.02,7139.00,12.27,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,GTPS Kotri (GENCO-I),Gas,4203.28,MMCFT,338.67,4203.28,12.41,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,GTPS Kotri (GENCO-I),Gas,1258.87,MMCFT,94.92,1258.87,13.26,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,GTPS Kotri (GENCO-I),Gas,552.03,MMCFT,37.19,552.03,14.89,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,SPS Faisalabad (GENCO- III),Gas,1328.00,MMCFT,85.84,1328.00,13.79,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,SPS Faisalabad (GENCO- III),Gas,971.18,MMCFT,62.25,971.18,13.77,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,SPS Faisalabad (GENCO- III),Gas,85.13,MMCFT,6.26,85.13,11.86,printed,NEPRA SoIR 2020 Table 16,under 25 GWh: the ratio of a start-up is not tested
+2016-17,GENCO,SPS Faisalabad (GENCO- III),RFO,15.55,000 t,45.43,15.55,0.3,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,TPS Guddu (Units 1-4) (GENCO-II),Gas,2501.43,MMCFT,148.64,2501.43,16.34,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Guddu (Units 1-4) (GENCO-II),Gas,3395.32,MMCFT,227.08,3395.32,14.95,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Guddu (Units 1-4) (GENCO-II),Gas,4209.89,MMCFT,258.11,4209.89,14.81,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Guddu (Units 1-4) (GENCO-II),Gas,171.43,MMCFT,10.02,171.43,14.63,printed,NEPRA SoIR 2020 Table 16,under 25 GWh: the ratio of a start-up is not tested
+2015-16,GENCO,TPS Guddu (Units 11-13) (GENCO-II),Gas,4460.30,MMCFT,272.26,4460.30,16.38,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Guddu (Units 11-13) (GENCO-II),Gas,11919.67,MMCFT,820.54,11919.67,14.53,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Guddu (Units 11-13) (GENCO-II),Gas,16311.50,MMCFT,1043.97,16311.50,15.56,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Guddu (Units 11-13) (GENCO-II),Gas,13445.69,MMCFT,837.20,13445.69,15.95,printed,NEPRA SoIR 2020 Table 16,
+2019-20,GENCO,TPS Guddu (Units 11-13) (GENCO-II),Gas,6182.73,MMCFT,311.56,6182.73,19.67,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,32113.09,MMCFT,3551.47,32113.09,9.04,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,40375.55,MMCFT,4543.55,40375.55,17.53,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,39464.48,MMCFT,3855.08,39464.48,10.04,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,44942.71,MMCFT,5069.78,44942.71,8.67,printed,NEPRA SoIR 2020 Table 16,
+2019-20,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,41643.01,MMCFT,4315.35,41643.01,9.43,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,TPS Guddu (Units 5-10) (GENCO-II),Gas,24331.59,MMCFT,2058.19,24331.59,11.82,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Guddu (Units 5-10) (GENCO-II),Gas,29803.46,MMCFT,2487.81,29803.46,11.98,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Guddu (Units 5-10) (GENCO-II),Gas,43758.57,MMCFT,3617.95,43758.57,11.89,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Guddu (Units 5-10) (GENCO-II),Gas,43384.35,MMCFT,3467.30,43384.35,12.28,printed,NEPRA SoIR 2020 Table 16,
+2019-20,GENCO,TPS Guddu (Units 5-10) (GENCO-II),Gas,20020.65,MMCFT,1294.84,20020.65,15.16,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,TPS Jamshoro (GENCO-I),Gas,31095.57,MMCFT,2413.73,31095.57,12.88,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Jamshoro (GENCO-I),Gas,14085.16,MMCFT,1141.37,14085.16,12.34,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Jamshoro (GENCO-I),Gas,8782.00,MMCFT,525.80,8782.00,12.33,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Jamshoro (GENCO-I),Gas,6474.85,MMCFT,373.65,6474.85,12.2,printed,NEPRA SoIR 2020 Table 16,
+2019-20,GENCO,TPS Jamshoro (GENCO-I),Gas,886.91,MMCFT,64.10,886.91,13.72,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,TPS Jamshoro (GENCO-I),RFO,252.68,000 t,832.73,252.68,0.3,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Jamshoro (GENCO-I),RFO,619.53,000 t,2112.19,619.53,0.29,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Jamshoro (GENCO-I),RFO,328.59,000 t,1088.24,328.59,0.3,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Jamshoro (GENCO-I),RFO,109.42,000 t,350.30,109.42,0.32,printed,NEPRA SoIR 2020 Table 16,
+2019-20,GENCO,TPS Jamshoro (GENCO-I),RFO,42.37,000 t,145.80,42.37,0.33,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Jamshoro (GENCO-I),RLNG,,MMCFT,178.01,0.00,0,generation only,NEPRA SoIR 2020 Table 16,"the printed quantity (0) implies nothing per kWh, outside 5.0 to 22.0, and no usable specific consumption is printed"
+2018-19,GENCO,TPS Jamshoro (GENCO-I),RLNG,,MMCFT,156.14,0.00,0,generation only,NEPRA SoIR 2020 Table 16,"the printed quantity (0) implies nothing per kWh, outside 5.0 to 22.0, and no usable specific consumption is printed"
+2015-16,GENCO,TPS Muzaffargarh (GENCO-III),Gas,4641.00,MMCFT,344.38,4641.00,12.23,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Muzaffargarh (GENCO-III),Gas,11.00,MMCFT,0.00,11.00,0,printed,NEPRA SoIR 2020 Table 16,no generation on this fuel
+2017-18,GENCO,TPS Muzaffargarh (GENCO-III),Gas,384.13,MMCFT,28.56,384.13,10.62,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Muzaffargarh (GENCO-III),Gas,0.00,MMCFT,-0.37,0.00,0,printed,NEPRA SoIR 2020 Table 16,no generation on this fuel
+2019-20,GENCO,TPS Muzaffargarh (GENCO-III),Gas,7.46,MMCFT,10.90,7.46,12.97,printed,NEPRA SoIR 2020 Table 16,under 25 GWh: the ratio of a start-up is not tested
+2015-16,GENCO,TPS Muzaffargarh (GENCO-III),RFO,1285.00,000 t,4300.27,1285.00,0.27,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Muzaffargarh (GENCO-III),RFO,1552.16,000 t,5160.13,1552.16,0.27,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Muzaffargarh (GENCO-III),RFO,879.96,000 t,2892.01,8799.58,0.27,"printed, decimal point restored",NEPRA SoIR 2020 Table 16,"printed 8799.58, which is 3.04 per kWh; divided by 10 it is 0.304, against this station's 0.301 in its other years"
+2018-19,GENCO,TPS Muzaffargarh (GENCO-III),RFO,262.18,000 t,836.63,262.18,0.28,printed,NEPRA SoIR 2020 Table 16,
+2019-20,GENCO,TPS Muzaffargarh (GENCO-III),RFO,92.80,000 t,288.96,92801.55,0.28,"printed, decimal point restored",NEPRA SoIR 2020 Table 16,"printed 92801.6, which is 321 per kWh; divided by 1000 it is 0.321, against this station's 0.301 in its other years"
+2017-18,GENCO,TPS Muzaffargarh (GENCO-III),RLNG,1575.75,MMCFT,119.79,1575.75,12.44,printed,NEPRA SoIR 2020 Table 16,
+2018-19,GENCO,TPS Muzaffargarh (GENCO-III),RLNG,7.15,MMCFT,0.47,7.15,13.14,printed,NEPRA SoIR 2020 Table 16,under 25 GWh: the ratio of a start-up is not tested
+2016-17,GENCO,TPS Nandipur (GENCO-III),Gas,4822.60,MMCFT,550.59,4822.60,8.47,printed,NEPRA SoIR 2020 Table 16,
+2017-18,GENCO,TPS Nandipur (GENCO-III),Gas,21336.10,MMCFT,2381.70,2133.61,8.57,"printed, decimal point restored",NEPRA SoIR 2020 Table 16,"printed 2133.61, which is 0.896 per kWh; divided by 0.1 it is 8.96, against this station's 8.27 in its other years"
+2018-19,GENCO,TPS Nandipur (GENCO-III),Gas,14299.31,MMCFT,1729.09,14299.31,8.01,printed,NEPRA SoIR 2020 Table 16,
+2019-20,GENCO,TPS Nandipur (GENCO-III),Gas,12030.47,MMCFT,1476.33,12030.47,7.88,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,TPS Nandipur (GENCO-III),HSD,711.00,000 L,2.26,711.00,,printed,NEPRA SoIR 2020 Table 16,under 25 GWh: the ratio of a start-up is not tested
+2016-17,GENCO,TPS Nandipur (GENCO-III),HSD,0.00,000 L,0.09,0.00,0.39,printed,NEPRA SoIR 2020 Table 16,under 25 GWh: the ratio of a start-up is not tested
+2015-16,GENCO,TPS Nandipur (GENCO-III),RFO,296.00,000 t,1265.52,296.00,0.22,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Nandipur (GENCO-III),RFO,181.92,000 t,828.37,181.92,0.21,printed,NEPRA SoIR 2020 Table 16,
+2015-16,GENCO,TPS Quetta (Isolated Generation) (GENCO-II),Gas,1914.49,MMCFT,111.29,1914.49,17.2,printed,NEPRA SoIR 2020 Table 16,
+2016-17,GENCO,TPS Quetta (Isolated Generation) (GENCO-II),Gas,934.52,MMCFT,53.32,934.52,17.53,printed,NEPRA SoIR 2020 Table 16,
+2015-16,IPP,Altern Energy,Gas,1736978.00,MMBTU,184.60,1736978.00,,printed,NEPRA SoIR 2020 Table 19,"the report prints this station under its RFO sub-table; the quantity is physically a Gas figure, and Table 5 and the later editions agree"
+2016-17,IPP,Altern Energy,Gas,1868543.00,MMBTU,198.30,1868543.00,,printed,NEPRA SoIR 2020 Table 19,"the report prints this station under its RFO sub-table; the quantity is physically a Gas figure, and Table 5 and the later editions agree"
+2017-18,IPP,Altern Energy,Gas,,MMBTU,145.12,,,generation only,NEPRA SoIR 2020 Table 19,"the report prints this station under its RFO sub-table; the quantity is physically a Gas figure, and Table 5 and the later editions agree; the printed quantity (none) implies nothing per kWh, outside 5500.0 to 22000.0, and no usable specific consumption is printed"
+2015-16,IPP,Atlas Power,RFO,261.81,000 t,1320.46,261.81,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Atlas Power,RFO,262.56,000 t,1336.90,262.56,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Atlas Power,RFO,245.18,000 t,1246.45,245.18,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Atlas Power,RFO,132.07,000 t,691.30,132.07,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Atlas Power,RFO,48.96,000 t,259.33,48.96,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Attock Gen.,RFO,216.41,000 t,1179.30,216.41,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Attock Gen.,RFO,209.54,000 t,1135.41,209.54,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Attock Gen.,RFO,174.29,000 t,912.45,174.29,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Attock Gen.,RFO,97.21,000 t,532.18,97.21,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Attock Gen.,RFO,58.53,000 t,320.96,58.53,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Davis Energen.,Gas,691918.00,MMBTU,74.00,691918.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Davis Energen.,Gas,516629.00,MMBTU,61.05,516629.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Davis Energen.,Gas,85456.00,MMBTU,8.82,85456.00,,printed,NEPRA SoIR 2020 Table 19,under 25 GWh: the ratio of a start-up is not tested
+2015-16,IPP,Engro Power Gen. Qadirpur,Gas,10196067.00,MMBTU,1222.00,10196067.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Engro Power Gen. Qadirpur,Gas,13923051.00,MMBTU,1731.00,13923051.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Engro Power Gen. Qadirpur,Gas,13221041.00,MMBTU,1668.42,13221041.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Engro Power Gen. Qadirpur,Gas,11258742.00,MMBTU,1385.13,11258742.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Engro Power Gen. Qadirpur,Gas,6077764.00,MMBTU,700.74,6077764.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Fauji Kabirwala,Gas,,MMBTU,1138.06,1419944.00,,generation only,NEPRA SoIR 2020 Table 19,"the printed quantity (1.41994e+06) implies 1.25e+03 per kWh, outside 5500.0 to 22000.0, and no usable specific consumption is printed"
+2016-17,IPP,Fauji Kabirwala,Gas,,MMBTU,1122.84,709502.00,,generation only,NEPRA SoIR 2020 Table 19,"the printed quantity (709502) implies 632 per kWh, outside 5500.0 to 22000.0, and no usable specific consumption is printed"
+2017-18,IPP,Fauji Kabirwala,Gas,,MMBTU,1017.26,404931.00,,generation only,NEPRA SoIR 2020 Table 19,"the printed quantity (404931) implies 398 per kWh, outside 5500.0 to 22000.0, and no usable specific consumption is printed"
+2018-19,IPP,Fauji Kabirwala,Gas,,MMBTU,563.13,259336.00,,generation only,NEPRA SoIR 2020 Table 19,"the printed quantity (259336) implies 461 per kWh, outside 5500.0 to 22000.0, and no usable specific consumption is printed"
+2019-20,IPP,Fauji Kabirwala,Gas,,MMBTU,346.32,59271.00,,generation only,NEPRA SoIR 2020 Table 19,"the printed quantity (59271) implies 171 per kWh, outside 5500.0 to 22000.0, and no usable specific consumption is printed"
+2015-16,IPP,Foundation Power,Gas,9539800.00,MMBTU,1211.26,9539800.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Foundation Power,Gas,9830259.00,MMBTU,1382.65,9830259.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Foundation Power,Gas,10818257.00,MMBTU,1392.39,10818257.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Foundation Power,Gas,10526917.00,MMBTU,1330.60,10526917.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Foundation Power,Gas,6578836.00,MMBTU,777.30,6578836.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Foundation Power,HSD,,,0.22,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2016-17,IPP,Foundation Power,HSD,,,0.20,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2015-16,IPP,Habibullah Coastal,Gas,4889875.00,MMBTU,563.03,4889875.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Habibullah Coastal,Gas,6533436.00,MMBTU,785.90,6533436.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Habibullah Coastal,Gas,7416480.00,MMBTU,880.33,7416480.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Habibullah Coastal,Gas,6231700.00,MMBTU,716.78,6231700.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Habibullah Coastal,Gas,1006228.00,MMBTU,108.37,1006228.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Halmore Power,Gas,4087127.00,MMBTU,540.00,4087127.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Halmore Power,Gas,2172844.00,MMBTU,274.00,2172844.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Halmore Power,Gas,4953062.00,MMBTU,624.87,4953062.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Halmore Power,Gas,4849884.00,MMBTU,609.66,4849884.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Halmore Power,Gas,2846605.00,MMBTU,347.69,2846605.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Halmore Power,HSD,,,376.00,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2016-17,IPP,Halmore Power,HSD,,,279.00,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2017-18,IPP,Halmore Power,HSD,,,246.14,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2018-19,IPP,Halmore Power,HSD,,,3.25,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2015-16,IPP,Hub Power,RFO,1803.39,000 t,7546.99,1803.39,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Hub Power,RFO,1635.36,000 t,6793.11,1635.36,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Hub Power,RFO,1245.89,000 t,5196.60,1245.89,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Hub Power,RFO,204.13,000 t,814.43,204.13,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Hub Power,RFO,9.62,000 t,32.38,9.62,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,KAPCO (Dual Fuel),Gas,9322082.00,MMBTU,1069.33,9322082.00,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2016-17,IPP,KAPCO (Dual Fuel),Gas,22502701.00,MMBTU,2571.00,22502701.00,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2017-18,IPP,KAPCO (Dual Fuel),Gas,36631183.00,MMBTU,4101.22,36631183.00,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2018-19,IPP,KAPCO (Dual Fuel),Gas,30440566.00,MMBTU,3514.06,30440566.00,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2019-20,IPP,KAPCO (Dual Fuel),Gas,21678499.00,MMBTU,2523.98,21678499.00,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2015-16,IPP,KAPCO (Dual Fuel),HSD,,,225.33,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity; not in the generation ingest (its sub-table was refused there); read here from the same table
+2016-17,IPP,KAPCO (Dual Fuel),HSD,,,240.00,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity; not in the generation ingest (its sub-table was refused there); read here from the same table
+2017-18,IPP,KAPCO (Dual Fuel),HSD,,,62.81,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity; not in the generation ingest (its sub-table was refused there); read here from the same table
+2018-19,IPP,KAPCO (Dual Fuel),HSD,,,2.92,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity; not in the generation ingest (its sub-table was refused there); read here from the same table
+2015-16,IPP,KAPCO (Dual Fuel),RFO,1073.38,000 t,5462.31,1073.38,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2016-17,IPP,KAPCO (Dual Fuel),RFO,917.99,000 t,4713.00,917.99,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2017-18,IPP,KAPCO (Dual Fuel),RFO,631.95,000 t,3272.72,631.95,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2018-19,IPP,KAPCO (Dual Fuel),RFO,285.93,000 t,1442.41,285.93,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2019-20,IPP,KAPCO (Dual Fuel),RFO,187.51,000 t,952.69,187.51,,printed,NEPRA SoIR 2020 Table 19,not in the generation ingest (its sub-table was refused there); read here from the same table
+2015-16,IPP,Kohinoor Energy,RFO,164.44,000 t,877.41,164.44,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Kohinoor Energy,RFO,153.15,000 t,816.83,153.15,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Kohinoor Energy,RFO,124.92,000 t,645.40,124.92,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Kohinoor Energy,RFO,75.05,000 t,387.44,75.05,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Kohinoor Energy,RFO,70.11,000 t,363.86,70.11,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Lal Pir Power,RFO,438.43,000 t,1946.10,438.43,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Lal Pir Power,RFO,364.37,000 t,1601.09,364.37,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Lal Pir Power,RFO,269.53,000 t,1089.06,269.53,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Lal Pir Power,RFO,153.27,000 t,613.80,153.27,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Lal Pir Power,RFO,48.24,000 t,186.32,48.24,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Liberty Power Tech.,RFO,235.39,000 t,1277.44,235.39,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Liberty Power Tech.,RFO,255.20,000 t,1369.33,255.20,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Liberty Power Tech.,RFO,224.14,000 t,1175.61,224.14,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Liberty Power Tech.,RFO,148.78,000 t,776.26,148.78,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Liberty Power Tech.,RFO,88.12,000 t,458.54,88.12,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,NPPMCL (Balloki),RLNG,,MMBTU,2050.62,,,generation only,"NEPRA SoIR 2021 station-wise generation table, section B2 (PDF p. 106), transcribed",commissioning generation of a public-sector RLNG plant; no held edition prints its fuel for this year
+2018-19,IPP,NPPMCL (Balloki),RLNG,31594264.00,MMBTU,5284.19,31594264.00,,printed,"NEPRA SoIR 2023 Table 21 (IPPs, Net), transcribed","public-sector RLNG plant, absent from the 2020 report's IPP table"
+2016-17,IPP,NPPMCL (HBS),RLNG,,MMBTU,155.11,,,generation only,"NEPRA SoIR 2021 station-wise generation table, section B2 (PDF p. 106), transcribed",commissioning generation of a public-sector RLNG plant; no held edition prints its fuel for this year
+2017-18,IPP,NPPMCL (HBS),RLNG,,MMBTU,2856.73,,,generation only,"NEPRA SoIR 2021 station-wise generation table, section B2 (PDF p. 106), transcribed",commissioning generation of a public-sector RLNG plant; no held edition prints its fuel for this year
+2018-19,IPP,NPPMCL (HBS),RLNG,44670837.00,MMBTU,7027.24,44670837.00,,printed,"NEPRA SoIR 2023 Table 21 (IPPs, Net), transcribed","public-sector RLNG plant, absent from the 2020 report's IPP table"
+2015-16,IPP,Narowal Energy,RFO,229.65,000 t,1161.91,229.65,,printed,NEPRA SoIR 2020 Table 19,"the report prints this station under its Gas sub-table; the quantity is physically a RFO figure, and Table 5 and the later editions agree"
+2016-17,IPP,Narowal Energy,RFO,262.33,000 t,1334.18,262.33,,printed,NEPRA SoIR 2020 Table 19,"the report prints this station under its Gas sub-table; the quantity is physically a RFO figure, and Table 5 and the later editions agree"
+2017-18,IPP,Narowal Energy,RFO,234.04,000 t,1199.68,234.04,,printed,NEPRA SoIR 2020 Table 19,"the report prints this station under its Gas sub-table; the quantity is physically a RFO figure, and Table 5 and the later editions agree"
+2018-19,IPP,Narowal Energy,RFO,125.03,000 t,636.13,125.03,,printed,NEPRA SoIR 2020 Table 19,"the report prints this station under its Gas sub-table; the quantity is physically a RFO figure, and Table 5 and the later editions agree"
+2019-20,IPP,Narowal Energy,RFO,67.32,000 t,338.08,67.32,,printed,NEPRA SoIR 2020 Table 19,"the report prints this station under its Gas sub-table; the quantity is physically a RFO figure, and Table 5 and the later editions agree"
+2015-16,IPP,Nishat Chunian,RFO,243.94,000 t,1240.16,243.94,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Nishat Chunian,RFO,265.61,000 t,1350.33,265.61,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Nishat Chunian,RFO,221.80,000 t,1099.67,221.80,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Nishat Chunian,RFO,117.97,000 t,599.74,117.97,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Nishat Chunian,RFO,69.09,000 t,351.23,69.09,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Nishat Power,RFO,250.24,000 t,1272.16,250.24,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Nishat Power,RFO,243.87,000 t,1239.76,243.87,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Nishat Power,RFO,230.38,000 t,1171.19,230.38,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Nishat Power,RFO,132.80,000 t,675.10,132.80,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Nishat Power,RFO,54.59,000 t,277.46,54.59,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Orient Power,Gas,6421294.00,MMBTU,840.14,6421294.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Orient Power,Gas,4366253.00,MMBTU,568.57,4366253.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Orient Power,Gas,5270563.00,MMBTU,697.51,5270563.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Orient Power,Gas,6795121.00,MMBTU,874.43,6795121.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Orient Power,Gas,2735769.00,MMBTU,337.67,2735769.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Orient Power,HSD,,,315.48,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2016-17,IPP,Orient Power,HSD,,,376.11,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2017-18,IPP,Orient Power,HSD,,,143.88,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2018-19,IPP,Orient Power,HSD,,,3.37,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2019-20,IPP,Orient Power,HSD,,,0.33,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2015-16,IPP,Pak Gen. Power,RFO,199.26,000 t,878.13,199.26,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Pak Gen. Power,RFO,394.61,000 t,1727.18,394.61,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Pak Gen. Power,RFO,305.85,000 t,1237.28,305.85,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Pak Gen. Power,RFO,125.04,000 t,495.56,125.04,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Pak Gen. Power,RFO,38.39,000 t,149.76,38.39,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,QATPL (Bhikki),RLNG,,MMBTU,502.77,,,generation only,"NEPRA SoIR 2021 station-wise generation table, section B2 (PDF p. 106), transcribed",commissioning generation of a public-sector RLNG plant; no held edition prints its fuel for this year
+2017-18,IPP,QATPL (Bhikki),RLNG,,MMBTU,3655.62,,,generation only,"NEPRA SoIR 2021 station-wise generation table, section B2 (PDF p. 106), transcribed",commissioning generation of a public-sector RLNG plant; no held edition prints its fuel for this year
+2018-19,IPP,QATPL (Bhikki),RLNG,39877621.00,MMBTU,6149.75,39877621.00,,printed,"NEPRA SoIR 2023 Table 21 (IPPs, Net), transcribed","public-sector RLNG plant, absent from the 2020 report's IPP table"
+2015-16,IPP,Rousch Power,Gas,23833821.00,MMBTU,2970.66,23833821.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Rousch Power,Gas,19781549.00,MMBTU,2459.69,19781549.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Rousch Power,Gas,21012425.00,MMBTU,2591.64,21012425.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Rousch Power,Gas,8699965.00,MMBTU,1035.85,8699965.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Rousch Power,Gas,1901263.00,MMBTU,217.53,1901263.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Saba Power,RFO,17.16,000 t,70.59,17.16,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Saba Power,RFO,123.88,000 t,510.46,123.88,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Saba Power,RFO,120.21,000 t,465.88,120.21,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Saba Power,RFO,59.82,000 t,225.41,59.82,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Saba Power,RFO,14.25,000 t,50.83,14.25,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Saif Power,Gas,6392115.00,MMBTU,845.07,6392115.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Saif Power,Gas,3805865.00,MMBTU,499.64,3805865.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Saif Power,Gas,5146932.00,MMBTU,681.27,5146932.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Saif Power,Gas,6403632.00,MMBTU,825.43,6403632.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Saif Power,Gas,3738827.00,MMBTU,476.16,3738827.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Saif Power,HSD,,,243.71,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2016-17,IPP,Saif Power,HSD,,,405.81,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2017-18,IPP,Saif Power,HSD,,,160.28,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2018-19,IPP,Saif Power,HSD,,,2.77,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2019-20,IPP,Saif Power,HSD,,,0.12,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2015-16,IPP,Sapphire Electric,Gas,5409221.00,MMBTU,727.26,5409221.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Sapphire Electric,Gas,4414191.00,MMBTU,595.64,4414191.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Sapphire Electric,Gas,4883647.00,MMBTU,643.89,4883647.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Sapphire Electric,Gas,6252321.00,MMBTU,806.02,6252321.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Sapphire Electric,Gas,2337975.00,MMBTU,296.54,2337975.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Sapphire Electric,HSD,,,329.17,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2016-17,IPP,Sapphire Electric,HSD,,,394.07,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2017-18,IPP,Sapphire Electric,HSD,,,171.07,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2018-19,IPP,Sapphire Electric,HSD,,,2.49,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2019-20,IPP,Sapphire Electric,HSD,,,0.22,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2015-16,IPP,TNB Liberty Power,Gas,12003012.00,MMBTU,1491.36,12003012.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,TNB Liberty Power,Gas,11611024.00,MMBTU,1430.23,11611024.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,TNB Liberty Power,Gas,8776938.00,MMBTU,1041.56,8776938.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,TNB Liberty Power,Gas,10910993.00,MMBTU,1307.61,10910993.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,TNB Liberty Power,Gas,7946696.00,MMBTU,896.74,7946696.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Uch Power,Gas,32101860.00,MMBTU,4210.83,32101860.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Uch Power,Gas,33657865.00,MMBTU,4404.46,33657865.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Uch Power,Gas,33721523.00,MMBTU,4442.99,33721523.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Uch Power,Gas,29954223.00,MMBTU,3895.85,29954223.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Uch Power,Gas,31456577.00,MMBTU,4087.33,31456577.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Uch Power,HSD,,,3.13,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2016-17,IPP,Uch Power,HSD,,,1.98,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2015-16,IPP,Uch-II Power,Gas,17423515.00,MMBTU,2315.84,17423515.00,,printed,NEPRA SoIR 2020 Table 19,
+2016-17,IPP,Uch-II Power,Gas,20340852.00,MMBTU,2724.06,20340852.00,,printed,NEPRA SoIR 2020 Table 19,
+2017-18,IPP,Uch-II Power,Gas,19524716.00,MMBTU,2593.04,19524716.00,,printed,NEPRA SoIR 2020 Table 19,
+2018-19,IPP,Uch-II Power,Gas,22553022.00,MMBTU,3018.37,22553022.00,,printed,NEPRA SoIR 2020 Table 19,
+2019-20,IPP,Uch-II Power,Gas,16349080.00,MMBTU,2148.02,16349080.00,,printed,NEPRA SoIR 2020 Table 19,
+2015-16,IPP,Uch-II Power,HSD,,,16.98,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity
+2016-17,IPP,Uch-II Power,HSD,,,7.28,,,generation only,NEPRA SoIR 2020 Table 19,the table prints generation for this fuel and no quantity

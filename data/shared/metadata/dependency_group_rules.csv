@@ -1,0 +1,48 @@
+# How a multi-member dependency group contributes ONE sigma-set to a component row.
+#
+# WHY THIS FILE EXISTS. _group_sigma() summarised every unresolved multi-member group as
+# the MEDIAN of its members, and a two-member median in Python takes the LARGER one. That
+# single line priced the railways diesel rows with the furnace-oil account's +/-30 percent
+# (declared +/-5), made "all jet fuel" hand the CO2 row the CH4 factor's +/-80, and gave
+# every power fuel the 10 percent median instead of its own metered width. Eleven of the
+# 23 rows the rc2 review flagged as over-decomposed were this one mechanism.
+#
+# Three rules, declared per group:
+#   select   the members are ALTERNATIVE copies or per-stream quantities; a component reads
+#            exactly ONE, resolved through data/member_bindings.csv. Zero or two matches is
+#            an error, never a summary.
+#   product  the members are DISTINCT quantities that ALL multiply into every row the group
+#            scopes (a volume and its conversion); the group contributes their quadrature.
+#   blend    the members mix into the quantity the rows actually use (urban and rural
+#            generation rates blending into a national rate) and no weights are declared;
+#            the median member stands as the declared summary, which for two members is the
+#            LARGER -- a conservative, documented choice rather than a silent one.
+#
+# A multi-member group with heterogeneous widths and NO row here raises at decompose time.
+# factor:* groups resolve by table identity (EF_PREFIX_BINDING) and are deliberately absent.
+dependency_group,rule,note
+1a1a_toe_activity,select,one NEPRA Table 3 row per fuel; the coal row is metered at 5 while the median said 10
+1a3c_fuel_account,select,the diesel account and the furnace-oil account are different meters with different widths
+all jet fuel,select,carbon conversion for CO2 rows; the Table 3.6.5 CH4/N2O factors for their own gases
+gas-production-volume,select,each process stage carries its own bounds around the shared PES volume
+oil-production-volume,select,production and pipeline transport carry different coverage residuals
+waste_composition,select,fossil carbon for the fossil-CO2 row; total carbon for the CH4 chain
+1a4b_firewood,select,the HIES quantity is the GHG activity; the moisture term enters only the air layer's oven-dry basis
+1a3b_diesel_control,product,the control total and the NCV both multiply into every diesel row
+1a3b_petrol_control,product,the control total and the NCV both multiply into every petrol row
+1a3b_cng_chain,product,gross heating value x gross-to-net both enter every CNG row; the metered volume moved to delivered_gas_ogra_3_31 at rc19
+1a4b_dung_chain,product,nitrogen supply x ash x moisture all enter the dung mass chain
+delivered_gas_ogra_3_31,select,each module's delivered volume binds its own rows with its own declared width; the group exists so the four OGRA Table 3.31 readings share one draw direction (rc19)
+waste_generation,blend,urban and rural rates blend by population; no declared weights - the median (rural 60) stands
+factor:gas_prod_high,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:gas_gathering,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:gas_processing_high,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:gas_processing_sour,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:gas_transmission_high_km,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:gas_distribution_high_km,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:lng_import,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:oil_prod_high,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:oil_transport_pipeline,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:oil_refining,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:post_meter_appliance,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"
+factor:post_meter_industrial,select,"rc41: one 2019 Refinement factor per gas; the CH4, CO2 and N2O members bind their own rows (member_bindings) and carry different widths"

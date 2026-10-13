@@ -1,0 +1,91 @@
+Survey,Scope,Region,Route,Route label,Households weighted,Share of region,Source,Record ID,Source row
+hies2025,national,rural,1,Collected by Municipality van from door step,452480,0.019,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",9fd2ff70884d90e66804f9ba,1
+hies2025,national,rural,2,Collected by Private van/cart from door step,630455,0.0265,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",14f5a4ecd22a9fdde8fe4acd,2
+hies2025,national,rural,3,Public Bin/Collection point,485898,0.0204,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",ddf7fb966f725b4f9e078efa,3
+hies2025,national,rural,4,Road/street,916566,0.0385,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",de285ffe4a494ac4cb0feb3b,4
+hies2025,national,rural,5,Lake/River/Nullah,162569,0.0068,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",ef466374fd53f55857e80f9c,5
+hies2025,national,rural,6,Open space,21042181,0.8849,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",a21081ca6b11e68fd7595d3a,6
+hies2025,national,rural,7,Other (unclassified),88826,0.0037,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",b6edf21a601cb29039f9930c,7
+hies2025,national,rural,collected,derived: routes 1-3 door-step and public-bin,1568833,0.066,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",495e0afbc037db42c6ba9195,8
+hies2025,national,rural,uncollected,derived: routes 4-7,22210141,0.934,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",c4ece431c0cf6a9edef8ff73,9
+hies2025,national,urban,1,Collected by Municipality van from door step,4129430,0.2528,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",3a79dfba637cfa9331091c18,10
+hies2025,national,urban,2,Collected by Private van/cart from door step,2955272,0.1809,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",fab3168aa125d5259283d950,11
+hies2025,national,urban,3,Public Bin/Collection point,2381512,0.1458,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",0b301d9c48e7f0fbbe0f1a6f,12
+hies2025,national,urban,4,Road/street,1383151,0.0847,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",073d1d6e3cda3c8e227bccd7,13
+hies2025,national,urban,5,Lake/River/Nullah,58309,0.0036,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",65eb6aaeda71f70ef127334f,14
+hies2025,national,urban,6,Open space,5385295,0.3296,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",59e5f5f185794be5cbe3532b,15
+hies2025,national,urban,7,Other (unclassified),43482,0.0027,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",0cfb1feb3b1fcb84303dccca,16
+hies2025,national,urban,collected,derived: routes 1-3 door-step and public-bin,9466214,0.5795,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",759b5f2ce2ed4fa07a9a7394,17
+hies2025,national,urban,uncollected,derived: routes 4-7,6870238,0.4205,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",206fdf97c8a81bb2a0b73a89,18
+hies2025,Balochistan,rural,1,Collected by Municipality van from door step,766,0.0005,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",6e4988ea0d7ec4f92e13727d,19
+hies2025,Balochistan,rural,2,Collected by Private van/cart from door step,30644,0.0211,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",be6571ae6e5b59f31987accf,20
+hies2025,Balochistan,rural,3,Public Bin/Collection point,7137,0.0049,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",6d8360db9ec793b41ac00593,21
+hies2025,Balochistan,rural,4,Road/street,88903,0.0611,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",2529d73e6058da93cd0a45c3,22
+hies2025,Balochistan,rural,5,Lake/River/Nullah,17383,0.0119,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",15f57f2b3433377ec18f6a86,23
+hies2025,Balochistan,rural,6,Open space,1306249,0.8978,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",7191915040809cc9264d82ec,24
+hies2025,Balochistan,rural,7,Other (unclassified),3791,0.0026,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",19170a66e5fe09b30fbc2b7a,25
+hies2025,Balochistan,rural,collected,derived: routes 1-3 door-step and public-bin,38547,0.0265,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",bcdf42ab7ec7640268f6c3c0,26
+hies2025,Balochistan,rural,uncollected,derived: routes 4-7,1416326,0.9735,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",03ebfbc09843d3811210d847,27
+hies2025,Balochistan,urban,1,Collected by Municipality van from door step,22382,0.0357,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",8f3cb18341fec6b9a32dfcef,28
+hies2025,Balochistan,urban,2,Collected by Private van/cart from door step,95302,0.1518,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",6d62e31942ee36b55b3e5587,29
+hies2025,Balochistan,urban,3,Public Bin/Collection point,27604,0.044,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",36ea8f0713bee619a674d630,30
+hies2025,Balochistan,urban,4,Road/street,124356,0.1981,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",01105e3b6c6cb076c5c1bf0d,31
+hies2025,Balochistan,urban,5,Lake/River/Nullah,18525,0.0295,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",3cb78f29ae3f55a77effc2b6,32
+hies2025,Balochistan,urban,6,Open space,338698,0.5396,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",3b802c9b0a970d0d26806fc4,33
+hies2025,Balochistan,urban,7,Other (unclassified),861,0.0014,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",3b6cb1c624eb29bdb1605a05,34
+hies2025,Balochistan,urban,collected,derived: routes 1-3 door-step and public-bin,145287,0.2314,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",1e6cb3ac140d0d9e7b268d62,35
+hies2025,Balochistan,urban,uncollected,derived: routes 4-7,482440,0.7686,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",326d7d4dfe1af92645166657,36
+hies2025,Khyber Pakhtunkhwa,rural,1,Collected by Municipality van from door step,65182,0.0129,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",09b24941da2f38b8cefc60f1,37
+hies2025,Khyber Pakhtunkhwa,rural,2,Collected by Private van/cart from door step,27361,0.0054,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",744345de56520b52da96a35f,38
+hies2025,Khyber Pakhtunkhwa,rural,3,Public Bin/Collection point,62585,0.0124,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",575eab0aff3db189bde70145,39
+hies2025,Khyber Pakhtunkhwa,rural,4,Road/street,117184,0.0232,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",696abe5eb6bc8f21ac6b1ba0,40
+hies2025,Khyber Pakhtunkhwa,rural,5,Lake/River/Nullah,68075,0.0135,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",d2607225a277c0729e41b66f,41
+hies2025,Khyber Pakhtunkhwa,rural,6,Open space,4684515,0.9291,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",731441c5075ec987b7ac62c5,42
+hies2025,Khyber Pakhtunkhwa,rural,7,Other (unclassified),17250,0.0034,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",dc0917420194be5786ef6a93,43
+hies2025,Khyber Pakhtunkhwa,rural,collected,derived: routes 1-3 door-step and public-bin,155128,0.0308,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",72bd92a3e2408c845ce74b46,44
+hies2025,Khyber Pakhtunkhwa,rural,uncollected,derived: routes 4-7,4887024,0.9692,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",c85cf6ba71ed7a77ab7b7942,45
+hies2025,Khyber Pakhtunkhwa,urban,1,Collected by Municipality van from door step,278594,0.3088,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",48f3871327101699d224de69,46
+hies2025,Khyber Pakhtunkhwa,urban,2,Collected by Private van/cart from door step,34572,0.0383,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",5aad0481552f48f1e5bc8970,47
+hies2025,Khyber Pakhtunkhwa,urban,3,Public Bin/Collection point,200729,0.2225,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",654b2b4c69c98b11ac86e438,48
+hies2025,Khyber Pakhtunkhwa,urban,4,Road/street,15460,0.0171,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",519732ee6e8f290eca900443,49
+hies2025,Khyber Pakhtunkhwa,urban,5,Lake/River/Nullah,18291,0.0203,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",bbd7b0133c640f5ba8014dfa,50
+hies2025,Khyber Pakhtunkhwa,urban,6,Open space,348484,0.3862,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",5e9d17f8aecefce83ec2bf7b,51
+hies2025,Khyber Pakhtunkhwa,urban,7,Other (unclassified),6190,0.0069,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",2697be1eda2a44ffc79c126d,52
+hies2025,Khyber Pakhtunkhwa,urban,collected,derived: routes 1-3 door-step and public-bin,513895,0.5695,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",c0532170bd6ee091d8c0b47d,53
+hies2025,Khyber Pakhtunkhwa,urban,uncollected,derived: routes 4-7,388426,0.4305,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",f8732d1e5b85fd1022cfc119,54
+hies2025,Punjab,rural,1,Collected by Municipality van from door step,334578,0.0258,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",09d52b9cb665bfe2bdb8720a,55
+hies2025,Punjab,rural,2,Collected by Private van/cart from door step,502467,0.0388,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",b6d0cc3adc4790288b8252de,56
+hies2025,Punjab,rural,3,Public Bin/Collection point,328483,0.0254,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",ac751aea0603daa81d00ab90,57
+hies2025,Punjab,rural,4,Road/street,413739,0.0319,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",c623bcb0fff054a18203e561,58
+hies2025,Punjab,rural,5,Lake/River/Nullah,47020,0.0036,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",eb7ab74001d38d4303677025,59
+hies2025,Punjab,rural,6,Open space,11274933,0.8706,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",5b9687e9a084eadf88380e21,60
+hies2025,Punjab,rural,7,Other (unclassified),49695,0.0038,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",5711333e515a5ea2f1cbd14b,61
+hies2025,Punjab,rural,collected,derived: routes 1-3 door-step and public-bin,1165528,0.09,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",a61ef66b94fe745a4c8c048c,62
+hies2025,Punjab,rural,uncollected,derived: routes 4-7,11785388,0.91,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",caf1151c83f4caa724c680ee,63
+hies2025,Punjab,urban,1,Collected by Municipality van from door step,2305501,0.245,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",2044e87bb5ae5b93ae3b119f,64
+hies2025,Punjab,urban,2,Collected by Private van/cart from door step,1623182,0.1725,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",afabe92b8fbf17e2868770b4,65
+hies2025,Punjab,urban,3,Public Bin/Collection point,1276204,0.1356,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",42bee109782c40b0c4f3ec9b,66
+hies2025,Punjab,urban,4,Road/street,477600,0.0508,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",b1d590a1624ca4df3e1c5264,67
+hies2025,Punjab,urban,5,Lake/River/Nullah,11699,0.0012,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",0f81e7e0f78ba0378dbe06f2,68
+hies2025,Punjab,urban,6,Open space,3696475,0.3929,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",9c05da6bf7113a95f5cf1f91,69
+hies2025,Punjab,urban,7,Other (unclassified),18642,0.002,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",4d742b9ff2b797f5c144e5a3,70
+hies2025,Punjab,urban,collected,derived: routes 1-3 door-step and public-bin,5204887,0.5532,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",f013104199e53c4dc1a9f0b0,71
+hies2025,Punjab,urban,uncollected,derived: routes 4-7,4204416,0.4468,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",c99c0e3ec0f94e9cdbbb2751,72
+hies2025,Sindh,rural,1,Collected by Municipality van from door step,51954,0.012,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",aa99400dbf06316dfe9a8a67,73
+hies2025,Sindh,rural,2,Collected by Private van/cart from door step,69984,0.0162,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",5009c030fcb4d848d17b4295,74
+hies2025,Sindh,rural,3,Public Bin/Collection point,87693,0.0202,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",d4a170f00ce20d07c63cea36,75
+hies2025,Sindh,rural,4,Road/street,296740,0.0685,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",100c92a42fae8cc1c77d4a52,76
+hies2025,Sindh,rural,5,Lake/River/Nullah,30090,0.0069,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",a8926558e632bebfec68a7a5,77
+hies2025,Sindh,rural,6,Open space,3776484,0.872,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",e896ae7d657dee17f361f705,78
+hies2025,Sindh,rural,7,Other (unclassified),18090,0.0042,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",1329b600878b2b5cc7a52dba,79
+hies2025,Sindh,rural,collected,derived: routes 1-3 door-step and public-bin,209631,0.0484,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",7c041cadf84e924e4a83a30d,80
+hies2025,Sindh,rural,uncollected,derived: routes 4-7,4121404,0.9516,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",61bf76ae2ad830842b6cf537,81
+hies2025,Sindh,urban,1,Collected by Municipality van from door step,1522953,0.2822,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",c78814d94cb2ccf40bbffc04,82
+hies2025,Sindh,urban,2,Collected by Private van/cart from door step,1202216,0.2228,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",2be8878e1950fb00ce35c69b,83
+hies2025,Sindh,urban,3,Public Bin/Collection point,876976,0.1625,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",f14f66497f05ba09d4cd0bae,84
+hies2025,Sindh,urban,4,Road/street,765735,0.1419,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",9aaf05de3c042ac530649919,85
+hies2025,Sindh,urban,5,Lake/River/Nullah,9794,0.0018,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",0eb1ecb1b3d2b114c3e19ab5,86
+hies2025,Sindh,urban,6,Open space,1001638,0.1856,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",ea9ed1939168a2e2900db3ea,87
+hies2025,Sindh,urban,7,Other (unclassified),17788,0.0033,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",ff4fe8966414e5b6445a459a,88
+hies2025,Sindh,urban,collected,derived: routes 1-3 door-step and public-bin,3602145,0.6674,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",5c4fa13d1b33b422cef2a3fc,89
+hies2025,Sindh,urban,uncollected,derived: routes 4-7,1794956,0.3326,"HIES 2024-25 Sec 5 Mod 3 (PBS microdata, sources/HIES/MANIFEST.csv)",1047626d0bcf3a3a63825271,90

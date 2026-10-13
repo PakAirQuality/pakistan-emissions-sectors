@@ -1,0 +1,57 @@
+\section{Validation}
+\label{sec:validation}
+
+Validation is performed at matched scope and period. PCAA printed totals constrain movement
+ingestion, passenger throughput guards the movement-to-cycle divisor, and each OCAC product
+total is reproduced from normalized source rows. The fuel bridge then closes each record across
+the six accounting destinations. High-level study assertions and lower-level flight-ledger
+tests run automatically. In the released run, all 240 customer--period records and 240 derived
+customer--month records are present, every monthly difference is non-negative, and monthly
+sums agree with final annual reports except one explicitly retained 20-t published revision.
+
+Figure~\ref{fig:reconciliation} compares three FY2023--24 domestic estimates. OECD is a
+calibration input for the central bridge, not an independent validation of it. It remains an
+external comparison for the movement and route-resolved estimates. Climate TRACE is now
+matched to the exact fiscal window, but may share flight-surveillance or performance inputs,
+so it remains corroboration rather than a control. Pakistan's UNFCCC submission is an official
+national reporting comparison, not presumed truth. Table~\ref{tab:independence} registers
+these roles explicitly.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{aviation_reconciliation.png}
+\caption{Domestic aviation \COtwo{} from the aggregate movement model, the central OCAC fuel
+bridge and the matched OECD territory estimate. Agreement between the first two is a calibrated
+consistency check because OECD supplies the bridge split.}
+\label{fig:reconciliation}
+\end{figure}
+
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}p{0.22\textwidth}p{0.19\textwidth}p{0.25\textwidth}p{0.13\textwidth}p{0.10\textwidth}@{}}
+\toprule
+\textbf{Comparison} & \textbf{Purpose} & \textbf{Shared input} & \textbf{Independence} & \textbf{Calibration} \\
+\midrule
+Movement vs OECD domestic & External territory comparison & Possible ICAO performance conventions & Partial & No \\
+Fuel bridge vs OECD domestic & Partition consistency & OECD resident share used directly & None & Yes \\
+OCAC total vs OECD combined & Gross-boundary closure & Carbon conversion only & Large & No \\
+Pakistan CRT vs OECD & Official-boundary diagnostic & Inventory year only & Large & No \\
+PCAA airports vs Climate TRACE & Spatial corroboration & Possible surveillance/performance inputs & Partial & No \\
+ADSB.lol vs PCAA daily rate & Coverage pilot & Airport coordinates only & Large but incomplete & No \\
+ERA5 vs OpenAP still air & Weather sensitivity & Same synthetic route/fuel & Not validation & No \\
+PCAA movements vs passengers & Movement-divisor check & PCAA reporting system & Targeted & No \\
+\bottomrule
+\end{tabular}
+\caption{Independence and shared-input matrix. ``External'' does not automatically mean
+independent, and calibration is never counted as validation.}
+\label{tab:independence}
+\end{table*}
+
+The key external closure is therefore OCAC commercial JP-1 against OECD combined territory
+aviation. It shares only the carbon conversion used to express fuel as \COtwo{}. Carrier-group
+decomposition then tests whether near-closure of that total is internally coherent. The
+official CRT comparison tests whether reported categories implement flight geography; Climate
+TRACE tests temporal magnitude and airport ordering. Movement balance, passenger intensity,
+route constraints and fuel closure target different failure modes; none is promoted to a
+universal truth benchmark.

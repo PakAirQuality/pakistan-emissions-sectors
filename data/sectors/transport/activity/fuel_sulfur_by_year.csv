@@ -1,0 +1,31 @@
+# Road-fuel sulfur content by fiscal-end year, for the SO2 stoichiometry
+# (E_SO2 = 2 x kS x fuel mass, EMEP/EEA 1.A.3.b.i-iv eq (2)). DECLARED, NOT
+# MEASURED: no pump-survey of Pakistani fuel sulfur exists in this repo. Diesel
+# follows the same regime the railways layer burns (imports moved to Euro-II
+# 500 ppm in January 2017, Dawn dawn.com/news/1434195; Euro-V 10 ppm mandatory
+# January 2021, Dawn dawn.com/news/1567870; domestic refinery output at or above
+# the older spec keeps the conservative 500 ppm central after the mandate, the
+# lo bound carrying the all-import endpoint). Petrol carries the Euro-2-era
+# 500 ppm specification ceiling as central for the whole window (PSO Premier
+# Euro 5 page, psopk.com: the Euro-5 import switch of August 2020 took petrol
+# "from 500 ppm to 10 ppm"), same conservative-central treatment. lo/hi are the
+# regime endpoints, not confidence bounds.
+fiscal_end_year,fuel,ppm_central,ppm_lo,ppm_hi,basis
+2016,Diesel,5000,500,10000,pre-Euro-II circulation at 0.5 percent sulfur
+2017,Diesel,5000,500,10000,transition year - the January 2017 Euro-II import mandate falls mid-fiscal
+2018,Diesel,500,500,5000,Euro-II 500 ppm import specification
+2019,Diesel,500,500,5000,Euro-II 500 ppm import specification
+2020,Diesel,500,500,5000,Euro-II 500 ppm import specification
+2021,Diesel,500,10,5000,Euro-V import mandate January 2021 falls mid-fiscal; domestic output unchanged
+2022,Diesel,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central
+2023,Diesel,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central
+2024,Diesel,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central
+2016,Petrol,500,150,1000,Euro-2-era petrol specification ceiling
+2017,Petrol,500,150,1000,Euro-2-era petrol specification ceiling
+2018,Petrol,500,150,1000,Euro-2-era petrol specification ceiling
+2019,Petrol,500,150,1000,Euro-2-era petrol specification ceiling
+2020,Petrol,500,150,1000,Euro-2-era petrol specification ceiling
+2021,Petrol,500,10,1000,Euro-V petrol import mandate August 2020; domestic output unchanged; conservative central
+2022,Petrol,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central
+2023,Petrol,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central
+2024,Petrol,500,10,1000,supply mixes Euro-V imports with domestic refinery output; conservative central

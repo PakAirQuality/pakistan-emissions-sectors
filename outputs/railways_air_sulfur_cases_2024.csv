@@ -1,0 +1,5 @@
+sulfur_case,diesel_sulfur_ppm,so2_kt,note
+euro5_import_spec,10,0.007834,scenario
+reference_pre_euro5_spec,500,0.11763,"reference case, reported in the main output"
+historical_0.5pct,5000,1.125962,scenario
+historical_1.0pct,10000,2.246331,scenario

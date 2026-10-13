@@ -1,0 +1,189 @@
+% ===========================================================================
+% PakEmis v1.0: an evidence-graded public-data reconstruction of Pakistan's non-LULUCF
+% greenhouse-gas emissions, FY2015-16 to FY2023-24
+%
+% Target journal: Earth System Science Data (Copernicus), regular data-description article.
+% Document class: copernicus (essd, manuscript = one column with line numbers), vendored in
+% paper_common/copernicus/ (VENDORED.md records the version and digest). latexmk finds it
+% through the TEXINPUTS/BSTINPUTS the Makefile exports; CI copies it beside this file.
+%
+% FILE-PRESERVING RE-TARGETING (Wave 4, part A). Every section fragment under sections/
+% keeps its path: the claims tests key on those paths. The ESSD sections are CONTAINERS
+% (sections/20_scope.tex ... 70_usage_notes.tex) that own the \section heading and input
+% the fragments; the two structure macros below decide what a fragment's own \section
+% line becomes. The prose itself is rewritten in the next pass, not here.
+%
+% Section map (docs/essd_outline.md):
+%   1 Introduction                     01_introduction (lead) + 02_related_work
+%   2 Dataset scope and architecture   20_scope: 03_architecture (lead) + 09_completeness
+%   3 Source data and processing       30_sources (pointer to the source register products)
+%   4 Dataset generation               40_generation: 06_results (lead) + 04_closures + 07_uncertainty
+%   5 Data records                     50_data_records: generated_products + generated_coverage
+%   6 Technical validation             60_validation: 10_benchmarks (lead) + 08_key_categories
+%   7 Usage notes and limitations      70_usage_notes: 12_limitations (lead) + 11_discussion
+%   8 Conclusions                      13_conclusion (lead)
+%   Data availability / Code availability   generated/availability.tex (from the manifest)
+% Supplement (supplement.tex, article class): S1 air beta, S2 key categories (pointer),
+%   S3 05_factor_tables, S4 14_appendix, S5 generated/claim_matrix.
+% ===========================================================================
+
+\documentclass[essd, manuscript]{copernicus}
+
+% The shared shorthand (gas names, units, the \_ break). NOT preamble.tex: the class loads
+% its own fontenc/inputenc, graphicx, amsmath, natbib, hyperref, tabularx, multirow, float
+% and caption, and loading them twice with other options is what breaks a Copernicus build.
+% siunitx must be loaded before the macros (\DeclareSIUnit). The class defines a robust
+% \unit of its own; siunitx v3 refuses to define \unit over it, so the class's copy is
+% released first - no fragment uses the class's \unit.
+\let\unit\relax
+\usepackage{siunitx}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\input{../../../paper_common/macros}
+% Cross-document references. Two fragments moved to the supplement (05_factor_tables,
+% 14_appendix) still carry labels this article's fragments \ref, and vice versa; xr
+% resolves them from the companion's .aux until the next pass replaces every such \ref
+% with a textual pointer (the transport precedent). The Makefile compiles this file,
+% then the supplement, then this file again, so both sides resolve.
+\usepackage{xr}
+\externaldocument[][nocite]{supplement}   % nocite: labels only, not the companion's \bibcite
+\graphicspath{{../../figures/}}
+\setlength{\emergencystretch}{3em}
+% The manuscript option sets 1.4 line spacing for review; two of the fragments' tables
+% (the generated product table, the discussion's assumptions table) were laid out for
+% single spacing and overflow a page at 1.4. Floats keep single spacing - the tables are
+% read, not line-numbered - so they fit as designed. etoolbox is loaded by the class.
+\AtBeginEnvironment{table}{\linespread{1}\selectfont}
+\AtBeginEnvironment{table*}{\linespread{1}\selectfont}
+
+% ---------------------------------------------------------------------------
+% Structure macros for the file-preserving pass. Each fragment still opens with its own
+% \section{...}; under ESSD numbering the container owns the section, so:
+%   \pkinvLeadFragment   swallows the fragment's \section line (its \label then points at
+%                        the container's section, which is the correct target);
+%   \pkinvDemoteFragment turns the fragment's \section into a \subsection and its
+%                        \subsection into a \subsubsection (a \subsubsection stays where
+%                        it is - 06_results has a few, which flatten by one level).
+% Both are \begingroup ... \endgroup around a literal \input line, so that every tool that
+% reads the \input graph (tests/paper_numbers/_common._inputs_of) still sees the fragment.
+% They are removed when the fragments drop their own headings in the prose pass.
+% ---------------------------------------------------------------------------
+\newcommand{\pkinvLeadFragment}{\begingroup\renewcommand{\section}[1]{}}
+\newcommand{\pkinvDemoteFragment}{\begingroup
+  \let\section\subsection
+  \let\subsection\subsubsection}
+\newcommand{\pkinvEndFragment}{\endgroup}
+
+% ---------------------------------------------------------------------------
+% Text the generated availability statements append. generated/availability.tex is
+% written from outputs/release_manifest.json (version, identifiers, licences) by
+% scripts/make_availability.py; the custody counts and the repository entry points below
+% are manuscript prose whose numbers the claims registry checks against the source register,
+% so they stay in this file and the generated statement calls them in.
+% ---------------------------------------------------------------------------
+\newcommand{\pkinvDataTerms}{%
+Redistribution rights are a property of each source document rather than of this
+project---and the OpenStreetMap-derived geometry tables and rasters (landfill polygons, the
+rail network and yards, the road-density and building-fraction diagnostics, and \num{71} rows of the
+facility registry, each flagged in its \texttt{licence} column) are \emph{derivative
+databases} under ODbL~1.0 rather than CC-BY: ODbL's own distinction, under which a rendered
+map is a produced work needing only attribution but an extracted coordinate table remains a
+database and keeps ODbL's share-alike terms. \texttt{LICENSE-data} lists every such file.
+\texttt{data/catalog/source\_documents.csv} classifies all \num{217} activity files as archived
+(\num{153}), derived from an archived source (\num{52}) or citing at least one document this
+project has not kept (\num{12}), and a not-archived file must carry a gap-register row saying
+so; \texttt{data/catalog/cited\_documents.csv} names, for each cited document, the file that
+holds it. The
+source documents themselves are not redistributed: the source register names each one,
+records its hash and says where its publisher provides it.}
+
+\newcommand{\pkinvCodeTerms}{%
+The inventory engine, the activity data, the emission-factor tables and every output file
+quoted in this paper are in a single repository
+(\url{https://github.com/RehanAhmad13/pakistan-emissions-sectors}); the reproduction
+procedure is Supplement~S4. Every number printed here is read from a generated CSV rather
+than transcribed, and a test suite asserts that the manuscript and the engine agree.
+This paper describes release \texttt{1.0.0rc67} of PakEmis, schema
+\texttt{pkinv.release/v1}. The release is identified by
+\texttt{outputs/release\_manifest.json}, which records the commit, the reporting period, the
+baseline configuration, both national totals, and a SHA-256 for every activity file the run
+read; each technical note reproduces that block on its first page, so a printed document
+always says which release it documents. Reproduction is
+\texttt{pip install -e .} followed by \texttt{make sectors}, \texttt{make national} and
+\texttt{make papers}, and continuous integration runs exactly that sequence and then diffs
+the regenerated outputs against the committed ones.}
+
+\begin{document}
+
+\title{PakEmis v1.0: an evidence-graded public-data reconstruction of Pakistan's non-LULUCF
+greenhouse-gas emissions, FY2015--16 to FY2023--24}
+
+\Author[1][rehan@pakairquality.com]{Rehan}{Ahmad}
+
+\affil[1]{Pakistan Air Quality Initiative (PAQI), Karachi, Pakistan}
+
+\correspondence{Rehan Ahmad (rehan@pakairquality.com)}
+
+\runningtitle{PakEmis v1.0}
+\runningauthor{Ahmad}
+
+\received{}
+\pubdiscuss{}
+\revised{}
+\accepted{}
+\published{}
+
+\firstpage{1}
+
+\maketitle
+
+\begin{abstract}
+\input{sections/00_abstract}
+\input{generated/abstract_doi}
+\end{abstract}
+
+% ---------------------------------------------------------------------------
+% 1 Introduction: the class supplies the heading; the fragment's own is swallowed.
+% ---------------------------------------------------------------------------
+\introduction
+\label{sec:essd-introduction}
+\pkinvLeadFragment
+\input{sections/01_introduction}
+\pkinvEndFragment
+\pkinvDemoteFragment
+\input{sections/02_related_work}
+\pkinvEndFragment
+
+% ---------------------------------------------------------------------------
+% 2-7: one container per ESSD section.
+% ---------------------------------------------------------------------------
+\input{sections/20_scope}
+\input{sections/30_sources}
+\input{sections/40_generation}
+\input{sections/50_data_records}
+\input{sections/60_validation}
+\input{sections/70_usage_notes}
+
+% ---------------------------------------------------------------------------
+% 8 Conclusions
+% ---------------------------------------------------------------------------
+\conclusions
+\label{sec:essd-conclusions}
+\pkinvLeadFragment
+\input{sections/13_conclusion}
+\pkinvEndFragment
+
+% ---------------------------------------------------------------------------
+% Data availability and Code availability: GENERATED from the release manifest.
+% ---------------------------------------------------------------------------
+\input{generated/availability}
+
+\authorcontribution{RA designed the inventory system, acquired and transcribed the source
+documents, wrote the engine and its tests, produced the data records and wrote the paper.}
+
+\competinginterests{The author declares no competing interests.}
+
+\bibliographystyle{copernicus}
+\bibliography{../../../paper_common/references}
+
+\end{document}

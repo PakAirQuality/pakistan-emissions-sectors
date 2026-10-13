@@ -1,0 +1,318 @@
+"""Every CSV under outputs/ keeps the line terminator it shipped with.
+
+WHY. 32 writer sites pin lineterminator="\\n" and the rest take csv's default
+"\\r\\n"; the rc35 writer sweep moved 68 sites onto core.io.write_table, which
+takes the terminator as a keyword, and a dropped keyword flips a whole file
+from LF to CRLF. SHA256SUMS would notice that as an unexplained hash change;
+this names the file and the property. The set is FROZEN: a new LF file joins
+the tuple deliberately, with the writer that pins it.
+"""
+import glob
+import os
+import unittest
+
+from _support import OUTPUTS
+
+LF_TERMINATED = (
+    "agriculture_uncertainty_inputs_2024.csv",
+    "agriculture_water_regime_2024.csv",
+    "apcma_dispatch_parse_summary.csv",
+    "apcma_dispatch_quarantine.csv",
+    "apcma_qim_cement_crosscheck.csv",
+    "aviation_activity_decomposition_2006_fy2023_24.csv",
+    "aviation_adsblol_pilot_days.csv",
+    "aviation_adsblol_pilot_summary.csv",
+    "aviation_adsblol_positive_controls.csv",
+    "aviation_adsblol_route_pilot.csv",
+    "aviation_air_pollutants_fy2023_24.csv",
+    "transport_air_pollutants_2024.csv",
+    "pakemis_forest_flux_adjudication.csv",
+    "pakemis_fgas_leak_rate_adjudication.csv",
+    "pakemis_release_axis_fingerprints.csv",
+    "pakemis_citation_pointer_audit.csv",
+    "pakemis_minerals_panel_screening.csv",
+    "pakemis_btr_comparison.csv",
+    "pakemis_air_atomic_annual.csv",
+    "pakemis_air_annual_fy2015_16_fy2023_24.csv",
+    "pakemis_air_coverage_matrix.csv",
+    "power_air_screening_fy2015_16_fy2023_24.csv",
+    "residential_configurations_by_year.csv",
+    "pakemis_air_adm1_by_year.csv",
+    "pakemis_air_adm2_by_year.csv",
+    "pakemis_air_unallocated_by_year.csv",
+    "pakemis_air_spatial_support_by_year.csv",
+    "pakemis_air_uncertainty_split_by_year.csv",
+    "pakemis_air_source_classes_fy2015_16_fy2023_24.csv",
+    "pakemis_air_source_class_uncertainty_by_year.csv",
+    "pakemis_kiln_frame_adm2_by_type.csv",
+    "pakemis_brick_kiln_fleet_by_year.csv",
+    "pakemis_power_admission_adm2_by_class.csv",
+    "pakemis_air_lahore_by_year.csv",
+    "pakemis_air_industry_cy2023.csv",
+    "pakemis_industry_air_edgar_comparison.csv",
+    "pakemis_air_lahore_so2_attribution.csv",
+    "pakemis_air_lahore_external_comparison.csv",
+    # the provincial sibling of the row above, written by the same core.io.write_table
+    # call and carrying the same shape: LF banner lines, CRLF data rows
+    "pakemis_air_provincial_external_comparison.csv",
+    "pakemis_power_province_boundary_audit.csv",
+    "pakemis_uncertainty_drivers.csv",
+    "pakemis_citation_deposit_audit.csv",
+    "pakemis_power_coal_energy_adjudication.csv",
+    "pakemis_power_reference_audit.csv",
+    "pakemis_power_fuel_reconciliation.csv",
+    "pakemis_dung_balance.csv",
+    "pakemis_power_coal_configurations.csv",
+    "pakemis_power_coal_rebase_ledger.csv",
+    # v3: the commissioning check and the spatial evidence taxonomy (write_table banners)
+    "pakemis_power_station_status.csv",
+    "pakemis_power_provincial_basis_by_year.csv",
+    "pakemis_gas_flow_crosswalk.csv",
+    "pakemis_dung_fate_by_year.csv",
+    "pakemis_wastewater_method_comparison.csv",
+    "pakemis_spatial_basis_classes.csv",
+    "pakemis_spatial_basis_shares.csv",
+    "pakemis_spatial_basis_shares_by_sector.csv",
+    "pakemis_comparison_crosswalk.csv",
+    "pakemis_dung_residual_ledger.csv",
+    "pakemis_enteric_btr_bridge.csv",
+    "pakemis_validation_five_classes.csv",
+    "pakemis_validation_five_classes_summary.csv",
+    "pakemis_coal_sector_reallocation.csv",
+    "pakemis_category_crosswalk.csv",
+    "pakemis_coal_allocation_identity.csv",
+    "pakemis_faostat_nitrogen_flows.csv",
+    "pakemis_air_lahore_power_register.csv",
+    "pakemis_air_power_admission_bridge.csv",
+    "pakemis_air_absence_screening_by_year.csv",
+    "pakemis_industry_boundary_ledger.csv",
+    "ogra_gas_class_series.csv",
+    "unsd_industry_combustion_control.csv",
+    "unsd_coal_supply_control.csv",
+    "pakemis_coal_source_reconciliation.csv",
+    "pakemis_coal_balance.csv",
+    "pakemis_cement_kiln_coal_reconstruction.csv",
+    "pakemis_industrial_coal_bridge.csv",
+    "pakemis_industry_edgar_divergence.csv",
+    "pakemis_brick_coal_alternatives.csv",
+    "pakemis_coal_vintage_ledger.csv",
+    "pakemis_industrial_change_attribution.csv",
+    "pakemis_brick_activity_reconstruction.csv",
+    "pakemis_industrial_coal_decision.csv",
+    "pakemis_fuel_sulfur_decision.csv",   # the same writer, item 3's verdicts
+    "pakemis_industrial_coal_scenarios.csv",
+    "pakemis_ammonia_nitric_series.csv",
+    "pakemis_industrial_screening_series.csv",
+    "pakemis_hfc_bank_series.csv",
+    "aviation_aircraft_assignment_fy2023_24.csv",
+    "aviation_aircraft_ledger_fy2023_24.csv",
+    "aviation_annual_component_comparison.csv",
+    "aviation_benchmark_summary_fy2023_24.csv",
+    "aviation_bridge_source_rows_all_scenarios.csv",
+    "aviation_by_stream_fy2023_24.csv",
+    "aviation_carrier_share_scenarios.csv",
+    "aviation_climatetrace_airport_comparison.csv",
+    "aviation_climatetrace_airport_monthly.csv",
+    "aviation_climatetrace_national_monthly.csv",
+    "aviation_climatetrace_periods.csv",
+    "aviation_climatetrace_spatial_diagnostics.csv",
+    "aviation_common_support_ladder.csv",
+    "aviation_completeness_fy2023_24.csv",
+    "aviation_departure_control_comparison.csv",
+    "aviation_era5_openap_audit.csv",
+    "aviation_era5_openap_diagnostics.csv",
+    "aviation_era5_route_weather.csv",
+    "aviation_fallback_qa_fy2023_24.csv",
+    "aviation_fuel_bridge_anchor_fy2023_24.csv",
+    "aviation_fuel_bridge_fy2023_24.csv",
+    "aviation_fuel_closure_fy2023_24.csv",
+    "aviation_fuel_constrained_by_stream_fy2023_24.csv",
+    "aviation_independence_matrix.csv",
+    "aviation_m2_structural_envelope.csv",
+    "aviation_m2_uncertainty_contributions.csv",
+    "aviation_m2_uncertainty_intervals.csv",
+    "aviation_model_resolution_fy2023_24.csv",
+    "aviation_monthly_reconciliation.csv",
+    "aviation_monthly_summary.csv",
+    "aviation_movement_balance_fy2023_24.csv",
+    "aviation_ocac_annual_source_rows.csv",
+    "aviation_ocac_annual_summary.csv",
+    "aviation_ocac_cumulative_monthly.csv",
+    "aviation_ocac_monthly.csv",
+    "aviation_ocac_monthly_annual_closure.csv",
+    "aviation_ocac_oecd_annual_comparison.csv",
+    "aviation_oecd_monthly.csv",
+    "aviation_openap_lookup_fy2023_24.csv",
+    "aviation_openap_unsupported_fy2023_24.csv",
+    "aviation_payload_capacity_airlines.csv",
+    "aviation_payload_capacity_airports.csv",
+    "aviation_provincial_fy2023_24.csv",
+    "aviation_qa_fy2023_24.csv",
+    "aviation_reconciliation_fy2023_24.csv",
+    "aviation_reconciliation_qa.csv",
+    "aviation_resident_international_ledger_fy2023_24.csv",
+    "aviation_route_activity_scenarios.csv",
+    "aviation_route_distance_bounds.csv",
+    "aviation_route_evidence_manifest_fy2023_24.csv",
+    "aviation_route_ledger_fy2023_24.csv",
+    "aviation_run_manifest_fy2023_24.csv",
+    "aviation_source_tiers_fy2023_24.csv",
+    "aviation_timeseries_2006_fy2023_24.csv",
+    "aviation_totals_fy2023_24.csv",
+    "aviation_two_year_replication.csv",
+    "aviation_unallocated_fuel_fy2023_24.csv",
+    "aviation_uncertainty_factors_fy2023_24.csv",
+    "aviation_uncertainty_fallback_fy2023_24.csv",
+    "aviation_uncertainty_inputs_complete.csv",
+    "aviation_uncertainty_scenarios_fy2023_24.csv",
+    "aviation_uncertainty_sensitivity.csv",
+    "aviation_unfccc_crt_cell_audit.csv",
+    "aviation_unfccc_crt_extracted.csv",
+    "aviation_unfccc_official_comparison.csv",
+    "benchmark_spatial_allocation.csv",
+    "benchmark_temporal_hindcast.csv",
+    "commercial_institutional_audit_2024.csv",
+    "commercial_scope_configuration_2024.csv",
+    "era5_degree_day_crosscheck.csv",
+    "fao_crop_calendar_crosscheck.csv",
+    "fugitives_coal_screen_2024.csv",
+    "industry_captive_screening_2024.csv",
+    "ippu_chemicals_screening_2024.csv",
+    "ippu_fgas_bounded_bank_2024.csv",
+    "ippu_fgas_screening_2024.csv",
+    "limestone_qim_cement_crosscheck.csv",
+    "national_dung_variants.csv",
+    "national_priority_rankings.csv",
+    "nfdc_monthly_parse_summary.csv",
+    "nfdc_monthly_quarantine.csv",
+    "ocac_direct_edition_crosscheck.csv",
+    "ocac_direct_edition_quarantine.csv",
+    "ocac_edition_currency.csv",
+    "ocac_edition_inventory.csv",
+    "ocac_parse_summary.csv",
+    "pakemis_adm2_monthly.csv",
+    "pakemis_adm2_monthly_sector.csv",
+    "pakemis_adm2_stream_reference.csv",
+    "air_pollutants_adm1.csv",
+    "air_pollutants_adm2.csv",
+    "pakemis_adm2_ledger_2024.csv",
+    # rc41: the cube's configuration-S ADM1 view and its per-stream surface record, both
+    # through core.io.write_table (LF banner, CRLF rows - the adm2 views' shape)
+    "pakemis_adm1_ledger_2024.csv",
+    "pakemis_grid_stream_surfaces.csv",
+    # rc39 A3. Written by fiscal_series._write, the same writer as the two siblings below:
+    # its banner lines go through handle.write("# ...\n") while csv.DictWriter puts CRLF on
+    # the data rows. Declared rather than "fixed" - changing the writer would move the
+    # terminators of the two files already frozen here, for no reader's benefit.
+    # rc39 A8: written by pkinv.report.agriculture_timing through core.io.write_table, whose
+    # banner lines are LF while csv.DictWriter puts CRLF on the data rows - the same shape as
+    # the siblings around it. Declared rather than "fixed": changing the writer would move the
+    # terminators of every banner-carrying product already frozen in this list.
+    # rc39 A9: same write_table banner shape as the products above.
+    "pakemis_adm2_nesting_check.csv",
+    "pakemis_spatial_exceptions.csv",
+    "pakemis_spatial_rebase_rc42.csv",       # scripts/measure_spatial_rebase.py (rc42)
+    "pakemis_spatial_rebase_rc44.csv",
+    "pakemis_sulfur_adoption_effect.csv",   # the same writer, rc64's measurement       # the same writer, this release's re-bases
+    "pakemis_power_grid_basis_change.csv",   # pkinv.sectors.power.generation_panel (rc44)
+    "agriculture_nfdc_province_residual.csv",
+    "agriculture_timing_classes.csv",
+    "agriculture_urea_basis.csv",
+    "pakemis_agriculture_basis_change.csv",
+    "pakemis_agriculture_crop_calendar.csv",
+    "pakemis_agriculture_fiscal_series.csv",
+    "pakemis_artifact_inventory.csv",
+    "pakemis_builtup_comparison_adm2.csv",
+    "pakemis_completeness_mass.csv",
+    "pakemis_deposit_manifest.csv",
+    "pakemis_ensemble_spatial_conditionals.csv",
+    "pakemis_ensemble_summary.csv",
+    "pakemis_flatness_crosswalk.csv",
+    "pakemis_joint_uncertainty.csv",
+    "pakemis_longitudinal_uncertainty.csv",
+    "pakemis_longitudinal_prefix.csv",
+    "pakemis_monthly_controls.csv",
+    "pakemis_monthly_coverage.csv",
+    "pakemis_monthly_coverage_summary.csv",
+    "pakemis_monthly_ledger_2024.csv",
+    "pakemis_paper_artefact_hashes.csv",
+    "pakemis_pass2_scorecard.csv",
+    "pakemis_product_catalog.csv",
+    "pakemis_product_facts.csv",
+    "pakemis_rice_geography_crosscheck.csv",
+    "pakemis_road_length_adm2.csv",
+    "pakemis_road_links.csv",
+    "pakemis_road_weights_adm2.csv",
+    "pakemis_source_register.csv",
+    "pakemis_structural_trajectories.csv",
+    "pakemis_trend_uncertainty.csv",
+    "pakemis_validation_catalog.csv",
+    "pakemis_validation_scorecard.csv",
+    "pakemis_validation_sector_scorecard.csv",   # rc37, the same writer as its siblings
+    "pakemis_data_provenance.csv",               # rc37, pkinv.report.data_provenance
+    "pbs_minerals_parse_summary.csv",
+    "pbs_minerals_quarantine.csv",
+    "pbs_qim_parse_summary.csv",
+    "pbs_qim_quarantine.csv",
+    "power_gem_audit.csv",
+    "power_sir_pbs_overlap.csv",
+    "power_table3_hypotheses.csv",
+    "power_toe_reconciliation.csv",
+    "residential_dung_ledger_2024.csv",
+    "transport_navigation_screen_2024.csv",
+    # rc46 Wave 2: the coal-lane reconciliation, written by write_or_check with
+    # lineterminator="\n" like the other script-built comparison tables.
+    "industry_coal_reconciliation.csv",
+    "agri_reference_panel_divergence.csv",
+    "pakemis_adm2_frame_2022.csv",
+    "pakemis_stream_support_ledger.csv",
+    # rc46 Wave 4: the species-resolved HFC bank, same write_or_check lineterminator family.
+    "ippu_hfc_species_bank.csv",
+    # The external verification bundle's contents record. Same family as every banner-first
+    # file above: core.io.table_text writes the '#' banner with "\n" and the rows with the
+    # CRLF default, and this guard reads the FIRST line - which is the banner.
+    "verification_bundle_contents.csv",
+    # The derivation chains and their activity-factor ledgers: banner-first, same
+    # family as every entry above (core.io.table_text writes the banner with "\n").
+    "agriculture_activity_factor_ledger.csv",
+    "agriculture_derivation_chain.csv",
+    "aviation_activity_factor_ledger.csv",
+    "aviation_derivation_chain.csv",
+    "fugitives_activity_factor_ledger.csv",
+    "fugitives_derivation_chain.csv",
+    "industry_activity_factor_ledger.csv",
+    "industry_derivation_chain.csv",
+    "ippu_activity_factor_ledger.csv",
+    "ippu_derivation_chain.csv",
+    "power_activity_factor_ledger.csv",
+    "power_derivation_chain.csv",
+    "railways_activity_factor_ledger.csv",
+    "railways_derivation_chain.csv",
+    "residential_activity_factor_ledger.csv",
+    "residential_derivation_chain.csv",
+    "transport_activity_factor_ledger.csv",
+    "transport_derivation_chain.csv",
+    "waste_activity_factor_ledger.csv",
+    "waste_derivation_chain.csv",
+)
+
+
+class TestTheTerminatorSetIsFrozen(unittest.TestCase):
+    def test_the_lf_set_matches_the_shipped_files(self):
+        live = set()
+        for path in sorted(glob.glob(os.path.join(OUTPUTS, "*.csv"))):
+            with open(path, "rb") as handle:
+                first = handle.readline()
+            if first and not first.endswith(b"\r\n"):
+                live.add(os.path.basename(path))
+        frozen = set(LF_TERMINATED)
+        self.assertEqual(live - frozen, set(),
+                         "files now LF-terminated that were not: a writer lost its "
+                         "CRLF default (or a new LF file needs declaring)")
+        self.assertEqual(frozen - live, set(),
+                         "files now CRLF-terminated that shipped LF: a writer lost its "
+                         "lineterminator pin")
+
+
+if __name__ == "__main__":
+    unittest.main()

@@ -1,0 +1,64 @@
+% ===========================================================================
+\section{Uncertainty and physical controls}
+\label{sec:uncertainty-controls}
+% ===========================================================================
+
+\subsection{Parametric uncertainty}
+
+The legacy experiment samples each published 2006 factor from a bounded log-uniform
+distribution and reports the median, P2.5, P97.5 and full methodological bounds. Rows in the
+same physical stream share their range quantile.
+
+For the 2019 inventory, published IPCC limits are interpreted as bounded expert ranges. A
+split-triangular distribution places the reported value at the mode and median while preserving
+the stated lower and upper limits. One production-volume deviate is shared across gas
+production, gathering and processing; oil production and its transport fallback share the oil
+deviate; and gases within a physical factor group share a quantile. Additional processing and
+coverage residuals remain independent. The simulation uses \num{10000} iterations and seed 42.
+The exact transformation, correlation groups and material inputs are reported in the supplement.
+
+Input importance is measured by Spearman rank correlation with the national total. Normalized
+squared correlations provide a screening measure of the parameters controlling the conditional
+interval. A distribution-shape sensitivity reruns the reference model with bounded uniform and
+bounded log-uniform inputs.
+
+\subsection{Structural configurations}
+
+The factorial experiment crosses upstream practice (higher/lower), network practice
+(higher/lower), T\&D activity basis (pipeline length/throughput), post-meter industrial coverage
+(fertilizer feedstock excluded, the reference/feedstock included/whole fertilizer class
+excluded/half/excluded), processing activity (gross
+production/marketable supply/excluded) and
+sour-gas share (32\%/16\%/excluded). Removing invalid combinations leaves 280 deterministic,
+unweighted configurations. No probability weights are assigned. We report one envelope for
+models retaining every public-data
+segment and a wider envelope that permits proxy-supported processing and post-meter coverage to
+be excluded. A separate named \emph{central} configuration takes every stream with published
+high/low practice bounds at their geometric mean; it is priced, never selected, and is not a
+factorial leg because the practice bounds are readings of one control, not coverage choices.
+
+Parametric intervals are calculated separately for five interpretable configurations:
+reference, central, lower practices, no post-meter industrial/power, and the
+minimum-coverage combined
+case. This keeps uncertainty in measured activities and factors conditional on the selected
+infrastructure model.
+
+\subsection{Gas-flow balance and UFG diagnostic}
+
+For each matched year, the physical account separates upstream and downstream identities:
+\begin{align}
+F_{gross}&=F_{indigenous,marketable}+R_{upstream},\\
+F_{indigenous,marketable}+F_{RLNG}&=F_{use}+F_{UFG}+R_{downstream}.
+\end{align}
+The residuals preserve differences among published boundaries. The upstream disposition table
+also records reinjection, own use, processing shrinkage, venting and flaring where public
+quantities are available. Calendar-2024 VIIRS flare volume is shown as a volume-equivalent memo
+against the adjacent gross-to-marketable difference.
+
+UFG includes physical losses, theft, metering error and accounting effects. It is therefore used
+only as a plausibility bound. If fraction $q$ were physical loss, the available methane would be
+\begin{equation}
+M_{\mathrm{CH_4}}=q V_{\mathrm{UFG}}\rho_{gas}x_{\mathrm{CH_4}}.
+\end{equation}
+Reference and lower-practice transmission-plus-distribution methane are expressed as the implied
+fraction $q$; post-meter emissions are outside this utility balance.

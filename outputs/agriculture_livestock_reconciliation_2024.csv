@@ -1,0 +1,6 @@
+species,national_control_head,district_sum_head,residual_head,residual_pct_of_national,spatial_normalisation_factor,districts,source_document_id
+buffalo,47738368,47738369,-1,-2.09e-06,0.999999979052,137,pbs_agricultural_census_2024_table6_national
+camels,1511340,1511332,8,0.00052933,1.000005293344,137,pbs_agricultural_census_2024_table6_national
+cattle,55862560,55862559,1,1.79e-06,1.000000017901,137,pbs_agricultural_census_2024_table6_national
+goats,95827177,95827177,0,0.0,1.0,137,pbs_agricultural_census_2024_table6_national
+sheep,44584926,44584934,-8,-1.794e-05,0.999999820567,137,pbs_agricultural_census_2024_table6_national

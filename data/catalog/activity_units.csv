@@ -1,0 +1,57 @@
+# What each technical `unit` is called for a reader: expanded, never rescaled. `thousand km` is three
+# different things depending on what was measured, so a row may name the category it applies to.
+unit,category,label
+000 L,*,thousand litres
+000 MT,*,thousand tonnes
+000 Sq M,*,thousand square metres
+000 bales,*,thousand bales
+000 barrels,*,thousand barrels
+000 m2,*,thousand square metres
+000 metric ton,*,thousand tonnes
+000 metric ton (printed in tonnes),*,thousand tonnes (source also says tonnes; verify)
+000 metric tonnes,*,thousand tonnes
+000 t,*,thousand tonnes
+GWh,*,gigawatt-hours
+MMBTU,*,million British thermal units
+MMCF,*,million cubic feet
+MMCFD,*,million cubic feet per day
+MMCFT,*,million cubic feet
+MT,*,tonnes
+Mt wet,*,million tonnes (wet weight)
+TJ,*,terajoules
+barrels,*,barrels
+count,*,count
+ha,*,hectares
+head,*,animals
+households,*,households
+kJ/kWh,*,kilojoules per kilowatt-hour
+kg,*,kilograms
+kha,*,thousand hectares
+km,*,kilometres
+km per vehicle per year,*,kilometres per vehicle per year
+kt,*,thousand tonnes
+litre,*,litres
+movements,*,movements
+passengers,*,passengers
+percent,*,percent (0 to 100)
+rupees,*,Pakistani rupees
+share,*,fraction (0 to 1)
+t,*,tonnes
+t CO2e,*,tonnes CO2 equivalent
+t K2O,*,tonnes of K2O
+t N,*,tonnes of nitrogen
+t P2O5,*,tonnes of P2O5
+t product,*,tonnes of fertiliser product
+thousand,*,thousand passengers
+thousand km,line_haul_freight,thousand train-kilometres
+thousand km,line_haul_passenger,thousand train-kilometres
+thousand km,passenger_km,thousand passenger-kilometres
+thousand km,railcar,thousand train-kilometres
+thousand km,shunting,thousand train-kilometres
+thousand km,tonne_km,thousand tonne-kilometres
+thousand km,total_train_km,thousand train-kilometres
+thousand litres,*,thousand litres
+thousand t,*,thousand tonnes
+toe,*,tonnes of oil equivalent
+tonnes,*,tonnes
+vehicles,*,vehicles

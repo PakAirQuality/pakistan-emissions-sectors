@@ -1,0 +1,165 @@
+% ===========================================================================
+\section{Architecture: The Sector Contract}
+\label{sec:architecture}
+% ===========================================================================
+
+The inventory is a Python package in which each of the ten sectors is a module registered in
+a single list. Registration is not a formality: it is the point at which a sector becomes
+subject to \num{32} invariants that are checked against every registered sector on every
+commit. A sector that cannot satisfy them does not enter the inventory.
+
+\subsection{What a sector must provide}
+
+The contract is deliberately small. A sector module declares a name, a reference year and the
+set of IPCC categories it emits, and exposes two functions: one that loads its activity data
+and emission factors, and one that turns that data into a list of component rows. A component
+row is the atomic unit of the whole inventory---one gas, from one sub-item, within one
+category---carrying the emission in gigagrammes, its \COe{} value on both AR5 and AR6
+metrics, a relative uncertainty, and its evidence, temporal and spatial classes. The
+uncertainty is resolved to \emph{parameters} rather than carried on the row: a separate
+registry (\texttt{data/parameter\_scope.csv}) names the physical quantities behind each row
+and which other rows share them, so one component may depend on an activity, a conversion and
+a factor with three different dependency structures. That resolution is used by the
+Approach-2 simulation; the Approach-1 quadrature remains row-level, which is one reason the
+two are worth running against each other. Everything downstream in
+the system---the national rollup, the uncertainty analysis, the key-category screen, the
+completeness report, the provincial allocation, the figures---consumes component rows and
+nothing else. No downstream module knows what a buffalo or a locomotive is.
+
+The cross-sector GWP contract is explicit. On the AR5 basis used for headline totals,
+CO$_2=1$, biogenic CH$_4=28$, fossil CH$_4=30$ and N$_2$O$=265$. Each component row carries
+its gas origin, so agriculture and waste methane use the biogenic value while fossil-fuel
+sectors use the fossil value; the national aggregator never infers origin from the sector name.
+The corresponding AR6 values are stored alongside AR5 rather than substituted silently.
+
+The consequence is that adding a sector requires no change to any analysis. Fugitive
+emissions and cement were added late in the project's life; neither required a line of change
+in the uncertainty, key-category or benchmark code, and both appeared in the national outputs
+on first registration.
+
+\subsection{The invariants}
+
+Table~\ref{tab:contract} groups the \num{32} contract tests by what they protect. They are
+not unit tests of any sector's arithmetic---each sector has those separately---but properties
+that must hold of every sector, present and future.
+
+Several deserve comment because they encode a mistake that was actually made or narrowly
+avoided. \emph{Category names are globally unique} exists because two sectors independently
+wanted the category name ``Other''; had both been allowed, the national rollup would have
+summed them into one row and the key-category screen would have ranked a chimera.
+\emph{Correlation groups stay within one category} exists because a correlation group that
+spans categories makes the Approach-1 quadrature in the key-category analysis ill-defined:
+the analysis apportions variance to categories, and a group straddling two of them has no
+category to be apportioned to. \emph{\COe{} is exactly the GWP conversion} pins the
+relationship between the gigagramme figure and the two \COe{} figures to an exact
+multiplication, so that a sector cannot report a \COe{} value that its own gas mass does not
+support---the single most common transcription error in spreadsheet inventories.
+\emph{Intermediates are not cached} asserts that two consecutive builds of a sector return
+equal but distinct objects, which is what makes the sensitivity analyses in several sectors
+safe: they rebuild a sector under a changed assumption, and a cached intermediate would leak
+the changed assumption into the baseline.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{@{}p{0.26\linewidth}p{0.66\linewidth}@{}}
+\toprule
+\textbf{What it protects} & \textbf{Invariants} \\
+\midrule
+Shape and declaration &
+Declared attributes present; row shape complete; every declared category is actually
+emitted; category--sub-item pairs unique within a sector \\[2pt]
+Global namespace &
+Sector names unique; category names globally unique across all sectors \\[2pt]
+Metric integrity &
+Every gas known to the GWP table; \COe{} exactly equals mass $\times$ GWP on both AR5 and
+AR6; all methane correctly flagged fossil or biogenic \\[2pt]
+Sinks and signs &
+Signs match the declared sink flag; sinks keep their sign through aggregation; an
+unflagged sink is dropped rather than silently summed; the sign helper is a no-op on
+positive values \\[2pt]
+Uncertainty structure &
+Correlation groups do not span categories \\[2pt]
+Spatial allocation &
+An allocation proxy resolves for every emitted category; an unknown category raises rather
+than falling back to a default proxy \\[2pt]
+Provenance metadata &
+Evidence, temporal and spatial classes are drawn from the shared vocabulary where present;
+a sector adopts them for all of its rows or none, so a partially classified sector cannot
+be read as a fully classified one \\[2pt]
+Reference year &
+Every sector either returns a value for a requested year or raises; no sector may return a
+plausible wrong number for a year its sources do not cover, and a sector whose magnitude is
+pinned to one year is declared to be so \\[2pt]
+Reproducibility &
+Building a sector twice is deterministic; intermediates are not cached between builds \\[2pt]
+Cross-sector flow &
+Managed soils receives manure nitrogen (the agriculture-internal case of the closures in
+Section~\ref{sec:closures}) \\[2pt]
+Declared accessors &
+Every optional accessor a sector exports is callable; the three gas-consuming sectors export
+their live gas throughput by one name; power's plant-side closure channel stays off the
+emissions path and behind the registry's diagnostics hook; no report module imports sector
+code at import time \\
+\bottomrule
+\end{tabular}
+\caption{The \num{32} contract invariants enforced against every registered sector.
+A sector is admitted to the national inventory only if all of them hold. Grouped by the
+failure each is designed to catch; several encode an error that was made in an earlier
+version of this inventory and is now unrepeatable.}
+\label{tab:contract}
+\end{table}
+
+\subsection{Why a registry rather than a spreadsheet}
+
+The proximate argument is the one above: a registry gives cross-cutting checks somewhere to
+live. The deeper argument concerns what happens when the inventory is revised.
+
+A spreadsheet inventory is revised by editing cells. The provenance of a cell---which source,
+which year, which conversion---lives in the compiler's memory or in a note beside it, and the
+previous value is gone. In this system every activity figure is a row in a version-controlled
+CSV with a source column, every emission factor cites its IPCC table, and every revision is a
+commit with a message. When the residential sector's dung-cake stream changed because
+agriculture's manure-management shares changed, the resulting \SI{0.4}{\mega\tonne} movement
+in the national total is attributable to a specific commit rather than being a difference
+between two spreadsheet files.
+
+That is also what makes the \emph{sensitivity} results in this paper cheap to produce. A
+sensitivity analysis in a spreadsheet means copying the workbook. Here it means calling the
+sector's build function with one parameter changed, which is why the residential sector can
+report its total with firewood excluded, at $-\SI{35}{\percent}$ and at $+\SI{35}{\percent}$
+on every run, and why the waste sector can publish both readings of the disputed sewer
+methane correction factor rather than choosing one (Section~\ref{sec:benchmarks}).
+
+\subsection{Verification and reproducibility}
+
+The engine ships \num{3882} defined test functions. Beyond the \num{32} contract invariants
+and the per-sector
+arithmetic tests, three categories are worth naming because they guard the manuscript rather
+than the code. \emph{Provenance tests} assert that every emission factor used anywhere in the
+inventory cites a document in the bibliography, and that any source declared informal is
+explicitly listed as such. \emph{Number tests} parse this paper's \LaTeX{} source and check
+each quoted figure against the generated CSV it came from, so a number cannot drift between
+the engine and the text. \emph{Figure-currency tests} assert that every image in a manuscript
+directory is byte-identical to the file the engine most recently produced.
+
+Continuous integration runs the full suite, regenerates every output a build phase writes,
+rebuilds every figure and compiles all manuscripts with \texttt{tectonic} on every push. A
+manuscript that does not compile, or that quotes a number the engine does not produce, is a
+build failure.
+
+That qualification is load-bearing and this release states it rather than leaving it implied.
+\num{96} of the shipped products are \emph{held}: no build phase writes them, because their
+producers need network access, a GIS extra, an archive too large to commit, or simply hours.
+Each is pinned by the digest it carried at release, so a reader can prove the file they have
+is the file that was published --- but that digest was taken from the file itself, so it
+cannot detect a producer whose output has since moved. Only \num{12} of the \num{96} are
+re-derived and compared against the file on disk by a mode that writes nothing; for
+\num{3} the only recorded instruction is the producer itself, which would rewrite the
+product rather than check it, and the remaining \num{81} record no verification at all.
+Those counts are a declared property of each row, not an inference from its command, and the
+twelve are re-derived on every test run --- each announcing which products it compared, so a
+product added to a producer cannot inherit a verification that does not read it. The first
+run found a held provenance record whose generator disagreed with it, and the file, not the
+generator, was the correct one: the stale-file warning had been inviting a regeneration that
+would have replaced a true provenance claim with a false one.

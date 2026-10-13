@@ -1,0 +1,38 @@
+fiscal_year,fiscal_year_label,airport_icao,airport_iata,airport,province_territory,domestic_commercial_movements,international_commercial_movements,noncommercial_movements,domestic_passengers,international_passengers,domestic_cargo_t,international_cargo_t,domestic_mail_t,international_mail_t,source_reference,source_sha256
+2023,2023-24,BDN,BDN,Badin,Sindh,0,0,6,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPBW,BHV,Bahawalpur,Punjab,48,0,54,1568,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPCH,CJL,Chitral,Khyber Pakhtunkhwa,18,0,44,376,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPDB,DBA,Dalbandin,Balochistan,0,0,4,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPDG,DEA,Dera Ghazi Khan,Punjab,0,0,6,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPDI,DSK,Dera Ismail Khan,Khyber Pakhtunkhwa,1,0,0,94,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPFA,LYP,Faisalabad,Punjab,103,2949,168,15037,411868,35.0,11.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPGD,GWD,Gwadar,Balochistan,171,24,35,6016,1029,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPGT,GIL,Gilgit,Other,895,0,159,35550,0,5.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPIS,ISD,Islamabad International,Other,10344,23366,5694,1456239,4717182,7239.0,56255.0,7.0,415.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPJA,JAG,Jacobabad,Sindh,0,0,2,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPJZ,JZK,Juzzak,Balochistan,76,0,0,2462,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPKC,KHI,Karachi Jinnah,Sindh,16495,25259,5504,2471125,3989422,16150.0,88839.0,20.0,492.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPKD,HDD,Hyderabad,Sindh,0,0,6,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPKW,KCF,Kadanwari,Sindh,0,59,111,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPLA,LHE,Lahore Allama Iqbal,Punjab,6497,22506,4984,988008,4432205,8947.0,101434.0,16.0,217.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPMJ,MJD,Mohenjodaro,Sindh,0,4,138,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPMT,MUX,Multan,Punjab,436,7732,2355,51893,1400283,79.0,7694.0,0.0,3.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPNH,WNS,Nawabshah,Sindh,0,0,141,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPOR,ORW,Ormara,Balochistan,0,0,2,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPPG,PJG,Panjgur,Balochistan,0,4,0,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPPI,PSI,Pasni,Balochistan,0,12,16,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPPS,PEW,Peshawar Bacha Khan,Khyber Pakhtunkhwa,993,6462,108,146501,1122619,432.0,10509.0,0.0,4.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPQT,UET,Quetta,Balochistan,2255,933,229,315074,111829,963.0,0.0,3.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPRK,RYK,Rahim Yar Khan,Punjab,52,12,92,2004,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPRN,ISB,Islamabad BBIAP Chaklala,Other,0,0,651,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPRT,RAZ,Rawalakot,Other,0,0,2,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPSD,KDU,Skardu,Other,1022,24,8,143265,3184,125.0,6.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPSF,SFF,Faisal Air Base Karachi,Sindh,0,0,19,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPSK,SKZ,Sukkur,Sindh,725,39,357,28041,0,3.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPSN,SYW,Sehwan Sharif,Sindh,0,0,18,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPST,SKT,Sialkot,Punjab,43,5798,116,2433,1042314,3.0,10424.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPSU,SUL,Sui,Balochistan,68,0,22,2092,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPTU,TUK,Turbat,Balochistan,262,84,18,9161,3059,11.0,1.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPZB,PZH,Zhob,Balochistan,0,0,4,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,OPZZ,ZZ1,Islamkot,Sindh,96,0,0,2891,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8
+2023,2023-24,REQ,REQ,Reko Diq,Balochistan,0,0,150,0,0,0.0,0.0,0.0,0.0,major-traffic-flow-airports-2023-24.pdf,e767693999138356460275fb2a6966074ee9fc038218bad8326034df2a03faa8

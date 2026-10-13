@@ -1,0 +1,63 @@
+% ===========================================================================
+\section{Reproduction}
+\label{app:repro}
+% ===========================================================================
+
+The sector runs on Python 3.11 with no compiled dependencies:
+
+\begin{verbatim}
+pip install -e .
+python3 -m pkinv.sectors.power.run_power
+python3 -m pkinv.sectors.power.air_pollutants
+\end{verbatim}
+
+which writes \texttt{power\_totals\_fy2023\_24.csv}, \texttt{power\_by\_stream\_fy2023\_24.csv},
+\texttt{power\_fuel\_fy2023\_24.csv}, \texttt{power\_provincial\_fy2023\_24.csv},
+\texttt{power\_timeseries\_fy2023\_24.csv} and \texttt{power\_air\_pollutants\_fy2023\_24.csv} to
+\texttt{outputs/}.
+
+The run also writes the evidence tables that Section~\ref{sec:validation} and
+Section~\ref{sec:results} draw on. They were not listed here before, which left every figure
+this paper computes from one of them without a file a reader could open:
+
+\begin{itemize}\itemsep2pt
+\item \texttt{power\_\allowbreak energy\_\allowbreak closure\_\allowbreak fy2023\_\allowbreak 24.csv}: the energy closure, each item with the evidence it rests on.
+\item \texttt{power\_\allowbreak fuel\_\allowbreak fy2023\_\allowbreak 24.csv}: fuel by stream, and \texttt{power\_\allowbreak coal\_\allowbreak blend\_\allowbreak fy2023\_\allowbreak 24.csv} the blend within coal.
+\item \texttt{power\_\allowbreak gas\_\allowbreak technology\_\allowbreak fy2023\_\allowbreak 24.csv}: the gas fleet by technology bucket, with each bucket's energy, share and plant count.
+\item \texttt{power\_\allowbreak bagasse\_\allowbreak fy2023\_\allowbreak 24.csv}: the bagasse sub-ledger.
+\item \texttt{power\_\allowbreak heat\_\allowbreak rate\_\allowbreak fy2023\_\allowbreak 24.csv}: the heat-rate series by fiscal year and fuel---generation fuels, TOE, net GWh, implied heat rate and efficiency---with a verdict on each row.
+\item \texttt{power\_\allowbreak heat\_\allowbreak rate\_\allowbreak stability\_\allowbreak fy2023\_\allowbreak 24.csv}: whether each fuel's efficiency is stable across the material years, as a low--high spread.
+\item \texttt{power\_\allowbreak hr\_\allowbreak circularity\_\allowbreak fy2023\_\allowbreak 24.csv}: the circularity check: the ledger's own Btu/kWh against each plant's reported gross and net heat rates, so a heat rate derived from the ledger cannot be offered as evidence for it.
+\item \texttt{power\_\allowbreak boundary\_\allowbreak audit\_\allowbreak fy2023\_\allowbreak 24.csv}: the boundary audit---gas and furnace oil with and without Karachi Electric, and K-E's own energy---and \texttt{power\_\allowbreak ke\_\allowbreak leg\_\allowbreak fy2023\_\allowbreak 24.csv} that utility's leg by year with its implied net efficiency.
+\item \texttt{power\_\allowbreak lmdi\_\allowbreak fy2023\_\allowbreak 24.csv}: the decomposition of each year-on-year change into activity, mix and factor terms, with the coal, furnace-oil and gas mix contributions separated.
+\item \texttt{power\_\allowbreak point\_\allowbreak sources\_\allowbreak fy2023\_\allowbreak 24.csv}: the point-source register: plant, fuel and energy with the town and province, and how each was located.
+\item \texttt{power\_\allowbreak climatetrace\_\allowbreak plants\_\allowbreak fy2023\_\allowbreak 24.csv}: the Climate TRACE plant crosswalk, that inventory's asset against this one's ledger plant with the ratio and any flag raised.
+\item \texttt{power\_\allowbreak tropomi\_\allowbreak crosscheck.csv}: the satellite crosscheck: observed NO\textsubscript{2} and SO\textsubscript{2} enhancement against the ledger's net generation, with the days and months behind each.
+\item \texttt{power\_\allowbreak monthly\_\allowbreak fy2023\_\allowbreak 24.csv}: the twelve-month layer---category, subitem and gas by month with each month's share, the emissions it implies in both common-GWP vintages, and the temporal method and basis behind the shape.
+\item \texttt{power\_\allowbreak uncertainty\_\allowbreak fy2023\_\allowbreak 24.csv}: the sector interval by category---the AR5 total with its Approach-1 percentage computed both ways, grouped and independent, so the correlation assumption is visible rather than chosen silently.
+\end{itemize}
+
+Figures are regenerated with \texttt{python3 -m pkinv.report.figures} and copied into this
+manuscript by \texttt{python3 scripts/sync\_figures.py}; a test fails if any shipped figure
+differs from the output it plots. The full suite runs with
+\texttt{python3 -m unittest discover tests}.
+
+% ===========================================================================
+\section{Sources}
+\label{app:sources}
+% ===========================================================================
+
+Grid fuel is the NEPRA State of Industry Report, Table~3. Captive gas is the OGRA State of the
+Regulated Petroleum Industry annual reports, FY2016--24. The captive plant register combines
+the SNGPL captive fleet, the SSGC geocoded captive list and the NEPRA generation-CPP licence
+register, deduplicated; plant-wise generation for the provincial proxy comes from the same
+consolidated workbook. All are archived under \texttt{sources/Power Plants/} and described in
+\texttt{docs/sources.md}.
+
+Emission factors are IPCC 2006 Guidelines Volume~2 Chapter~2 defaults \citep{ipcc2006stationary}:
+Table~2.2 for grid generation, Table~2.3 for captive. Air-pollutant factors are US EPA AP-42
+Sections 1.1 (bituminous coal), 1.3 (fuel oil), 1.4 (natural gas), 1.7 (lignite---79\% of
+the fleet's coal energy since the rank split), 1.8 (bagasse) and 3.1 (stationary gas
+turbines), transcribed with their table numbers and quality ratings; the fetched section
+PDFs are hashed in \texttt{sources/AP42/}. External
+comparison is EDGAR \citep{edgar2025booklet}.

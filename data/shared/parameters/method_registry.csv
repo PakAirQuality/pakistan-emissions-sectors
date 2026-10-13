@@ -1,0 +1,89 @@
+# THE METHOD AND UNCERTAINTY MODEL BEHIND EVERY ESTIMATED AGRICULTURE ATOM (rc39 A7).
+#
+# Every atom in the annual product carried method_id=unresolved and
+# uncertainty_model_id=unresolved - 1,672 of 1,672 rows, repo-wide - because atomic_annual
+# stamped the literal on every row and nothing ever supplied a value. The equations were not
+# unknown: each module's docstring names the IPCC equation it implements. They were simply
+# never carried onto the published atom, so a reader of the product could not tell Eq 10.19
+# from Eq 11.13 without opening the source.
+#
+# This registry is a REPORT-LAYER JOIN, keyed on (category, subitem prefix), for the same
+# reason A3's urea basis became a table: core.components v3 is a closed schema and an
+# agriculture-only provenance key on the component row would be the "rows that bothered"
+# defect its own comment warns about. The join happens where the IPCC code join already
+# happens.
+#
+# tier is the IPCC method tier, and it is the manuscript's claim (04_methods.tex) checked
+# against each module's docstring rather than asserted here independently.
+#
+# An EMPTY subitem_prefix is the category's default, and manure management uses one on
+# purpose: its CH4 rows are named for the animal (buffalo (CH4)), not for the process, so
+# there is no prefix to match. The two N2O rules carry prefixes and win by being longer,
+# which leaves the default meaning "anything in this category that is not one of those" -
+# the CH4 stream. Keying on the gas instead would be tidier and wrong: 3.B's direct and
+# indirect N2O are two equations on one gas.
+#
+# uncertainty_model_id names the SHAPE the Monte Carlo draws, not a width: widths live in
+# uncert_pct on the row. A model of "product_lognormal" means activity x factor with both
+# drawn lognormal and multiplied, which is what core.uncertainty.product does.
+# rc41 (the nineteenth review's P-1): EVERY sector, with two more columns. `sector` scopes a
+# rule to one engine (the same category name can recur across sectors); `gas` scopes it
+# to one gas where the equation differs by gas (combustion CO2 is the carbon in the fuel,
+# CH4 and N2O are technology factors), empty for a rule that covers every gas. The most
+# specific rule wins: longest subitem prefix, then a gas-specific over a gas-agnostic row.
+# The rows name the equation each engine's own docstring and manifest cite; the
+# uncertainty_model_id names the shape of that sector's Monte Carlo as its uncertainty
+# module states it (lognormal grouped Approach 1; transport's normal activity with
+# lognormal factors; fugitives' bounded split-triangular; ippu's bounded triangular; waste's
+# lognormal/triangular parameter MC with bounded draws; aviation's lognormal fuel x factor).
+sector,category,subitem_prefix,gas,method_id,tier,uncertainty_model_id,equation,notes
+agriculture,Enteric fermentation,,,ipcc2006_v4_ch10_eq10.19_enteric_ch4,T1,product_lognormal_activity_x_ef,2006 V4 Ch10 Eq 10.19/10.20,Country-specific head counts from the agricultural census; IPCC default emission factors by species and a dairy/other cattle split
+agriculture,Manure management,,,ipcc2006_v4_ch10_eq10.23_manure_ch4,T1/T2,product_lognormal_activity_x_ef,2006 V4 Ch10 Eq 10.23,Tier 2 where the manure-management system split resolves the factor; volatile solids and MCF by climate zone
+agriculture,Manure management,Direct N2O,,ipcc2006_v4_ch10_eq10.25_manure_direct_n2o,T1,product_lognormal_activity_x_ef,2006 V4 Ch10 Eq 10.25,Nex by species onto the MMS shares; EF3 by system
+agriculture,Manure management,Indirect N2O,,ipcc2006_v4_ch10_eq10.26_manure_indirect_n2o,T1,product_lognormal_activity_x_ef,2006 V4 Ch10 Eq 10.26/10.27,Volatilisation and leaching from the manure-management system only; the post-application pathway belongs to 3.D
+agriculture,Rice cultivation,,,ipcc2006_v4_ch5_eq5.1_rice_ch4,T1,product_lognormal_activity_x_ef,2006 V4 Ch5 Eq 5.1-5.2,Harvested area and a declared cultivation period; baseline daily factor scaled by water regime and organic amendment
+agriculture,Managed soils,Direct N2O,,ipcc2019r_v4_ch11_eq11.1_soils_direct_n2o,T1,product_lognormal_activity_x_ef,2019 Refinement V4 Ch11 Eq 11.1,2019 Refinement disaggregated EF1 for dry climates; FSN FON FPRP and FCR summed on one nitrogen ledger
+agriculture,Managed soils,Indirect N2O - volatilisation,,ipcc2019r_v4_ch11_eq11.9_soils_indirect_volatilisation,T1,product_lognormal_activity_x_ef,2019 Refinement V4 Ch11 Eq 11.9,Applied to the COMBINED volatilised pool - FracGASF is the sum of the ammonia and NOx terms because Eq 11.9 is defined on that pool
+agriculture,Managed soils,Indirect N2O - leaching,,ipcc2019r_v4_ch11_eq11.10_soils_indirect_leaching,T1,product_lognormal_activity_x_ef,2019 Refinement V4 Ch11 Eq 11.10,FracLEACH applied on the dry-climate premise the completeness table already uses
+agriculture,Field burning of residues,,,ipcc2006_v4_ch2_eq2.27_residue_burning,T1,product_lognormal_activity_x_ef,2006 V4 Ch2 Eq 2.27,Mass burnt is production x residue ratio x burned fraction x combustion factor; the residue ledger publishes each step
+agriculture,Urea application,,,ipcc2006_v4_ch11_eq11.13_urea_co2,T1,product_lognormal_activity_x_ef,2006 V4 Ch11 Eq 11.13,Applied to NFDC's printed national urea offtake for the reference year; earlier years reconstruct from the total-N series and say so per year
+power,Electricity and heat production,,CO2,ipcc2006_v2_ch2_eq2.1_stationary_co2,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,fuel delivered to the grid fleet x net calorific value (V2 Ch1 Table 1.2) x default CO2 factor (V2 Ch2 Table 2.2); no efficiency assumption anywhere - the plant ledger's fuel is the activity
+power,Electricity and heat production,,CH4,ipcc2006_v2_ch2_eq2.1_stationary_ch4,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,fuel x NCV x Table 2.2 CH4 factor; bagasse CH4 counted (its CO2 is biogenic and outside every total)
+power,Electricity and heat production,,N2O,ipcc2006_v2_ch2_eq2.1_stationary_n2o,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,fuel x NCV x Table 2.2 N2O factor
+power,Captive gas self-generation (1A2),,CO2,ipcc2006_v2_ch2_eq2.1_stationary_co2,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,OGRA captive-power gas row x NCV x Table 2.2 CO2 factor; the industry ledger asserts this row and General Industry are distinct controls
+power,Captive gas self-generation (1A2),,CH4,ipcc2006_v2_ch2_eq2.1_stationary_ch4,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,as the CO2 row with the Table 2.2 CH4 factor
+power,Captive gas self-generation (1A2),,N2O,ipcc2006_v2_ch2_eq2.1_stationary_n2o,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,as the CO2 row with the Table 2.2 N2O factor
+industry,Industrial fuel combustion (1A2),,CO2,ipcc2006_v2_ch2_eq2.1_stationary_co2,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,OGRA sector-wise gas (Cement and General Industry rows) and OCAC Total Industry liquids x NCV x Table 2.3 manufacturing factors; solid fuels are NE and priced as screenings outside every total (fuel_ledger)
+industry,Industrial fuel combustion (1A2),,CH4,ipcc2006_v2_ch2_eq2.1_stationary_ch4,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,as the CO2 row with the Table 2.3 CH4 factor
+industry,Industrial fuel combustion (1A2),,N2O,ipcc2006_v2_ch2_eq2.1_stationary_n2o,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,as the CO2 row with the Table 2.3 N2O factor
+residential,Residential fuel combustion,,CO2,ipcc2006_v2_ch2_eq2.1_stationary_co2,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,fuel quantities (piped gas from the SNGPL/SSGC domestic rows; LPG and kerosene from OCAC; HIES-anchored biomass) x NCV x Table 2.5 residential factors; biomass CO2 is biogenic and outside every total
+residential,Residential fuel combustion,,CH4,ipcc2006_v2_ch2_eq2.1_stationary_ch4,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,fuel x NCV x Table 2.5 CH4 factor; the dung-cake activity carries the L/S configuration axis (ledger supply vs survey demand)
+residential,Residential fuel combustion,,N2O,ipcc2006_v2_ch2_eq2.1_stationary_n2o,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,fuel x NCV x Table 2.5 N2O factor
+transport,Road transport,,CO2,ipcc2006_v2_ch3_eq3.2.1_road_co2,T1,lognormal_ef_normal_activity_uniform_split,2006 V2 Ch3 Eq 3.2.1,fuel sold (OCAC Road rows; OGRA metered CNG) x NCV x Table 3.2.1 CO2 factor; the vehicle-class split is an intensity-weighted allocation of the fuel control and moves no tonne
+transport,Road transport,,CH4,ipcc2006_v2_ch3_eq3.2.3_road_ch4_n2o,T1,lognormal_ef_normal_activity_uniform_split,2006 V2 Ch3 Eq 3.2.3,fuel-based Tier 1 with Table 3.2.2 default CH4 factors by fuel
+transport,Road transport,,N2O,ipcc2006_v2_ch3_eq3.2.3_road_ch4_n2o,T1,lognormal_ef_normal_activity_uniform_split,2006 V2 Ch3 Eq 3.2.3,fuel-based Tier 1 with Table 3.2.2 default N2O factors by fuel
+transport,Mixed off-road (1A4c/1A2),,CO2,ipcc2006_v2_ch3_eq3.3.1_offroad_co2,T1,lognormal_ef_normal_activity_uniform_split,2006 V2 Ch3 Eq 3.3.1,the diesel partition the fuel ledger carves out of the Road control x Table 3.3.1 factors
+transport,Mixed off-road (1A4c/1A2),,CH4,ipcc2006_v2_ch3_eq3.3.1_offroad_ch4_n2o,T1,lognormal_ef_normal_activity_uniform_split,2006 V2 Ch3 Eq 3.3.1,Table 3.3.1 CH4 factor on the off-road diesel partition
+transport,Mixed off-road (1A4c/1A2),,N2O,ipcc2006_v2_ch3_eq3.3.1_offroad_ch4_n2o,T1,lognormal_ef_normal_activity_uniform_split,2006 V2 Ch3 Eq 3.3.1,Table 3.3.1 N2O factor on the off-road diesel partition
+railways,Railways,,CO2,ipcc2006_v2_ch3_eq3.4.1_rail_co2,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch3 Eq 3.4.1,Year Book traction fuel (diesel and furnace oil) x NCV x Table 3.4.1 CO2 factor
+railways,Railways,,CH4,ipcc2006_v2_ch3_eq3.4.1_rail_ch4_n2o,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch3 Eq 3.4.1,Table 3.4.1 default CH4 factor on traction fuel
+railways,Railways,,N2O,ipcc2006_v2_ch3_eq3.4.1_rail_ch4_n2o,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch3 Eq 3.4.1,Table 3.4.1 default N2O factor on traction fuel
+railways,Railway non-traction energy (1A2/1A4c unresolved),,CO2,ipcc2006_v2_ch2_eq2.1_stationary_co2,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,the Year Book's non-traction fuel (workshops and power houses at the divisional yards) under stationary factors; the 1A2/1A4c code is declared unresolved
+railways,Railway non-traction energy (1A2/1A4c unresolved),,CH4,ipcc2006_v2_ch2_eq2.1_stationary_ch4,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,as the CO2 row with the stationary CH4 factor
+railways,Railway non-traction energy (1A2/1A4c unresolved),,N2O,ipcc2006_v2_ch2_eq2.1_stationary_n2o,T1,lognormal_activity_x_ef_grouped_approach1,2006 V2 Ch2 Eq 2.1,as the CO2 row with the stationary N2O factor
+aviation,Domestic aviation,,CO2,ipcc2006_v2_ch3_eq3.6.1_aviation_co2,T1,lognormal_fuel_x_ef,2006 V2 Ch3 s3.6 (Tier 1 fuel-based),domestic jet fuel from the OCAC customer classes (the fuel bridge) x 3.16 t CO2/t (Table 3.6.9 note; ICAO CEC v13.1 eq. 7); the route-resolved ladder is a configuration priced beside it
+aviation,Domestic aviation,,CH4,ipcc2006_v2_ch3_eq3.6.1_aviation_ch4_n2o,T1,lognormal_fuel_x_ef,2006 V2 Ch3 Eq 3.6.1,Tier 1 default CH4 factor on domestic fuel
+aviation,Domestic aviation,,N2O,ipcc2006_v2_ch3_eq3.6.1_aviation_ch4_n2o,T1,lognormal_fuel_x_ef,2006 V2 Ch3 Eq 3.6.1,Tier 1 default N2O factor on domestic fuel
+fugitives,Fugitive emissions from oil and gas,,CH4,ipcc2019r_v2_ch4_tier1_segment_ch4,T1,bounded_split_triangular_ef_2019r,2019 Refinement V2 Ch4 Tier 1 (Tables 4.2.4a-k),segment activity (OGRA production and throughput; pipeline length for T&D) x the 2019 Refinement default factor for the declared practice (higher/default where unknown); every segment a separate stream
+fugitives,Fugitive emissions from oil and gas,,CO2,ipcc2019r_v2_ch4_tier1_segment_co2,T1,bounded_split_triangular_ef_2019r,2019 Refinement V2 Ch4 Tier 1 (Tables 4.2.4a-k),segment activity x the 2019 Refinement default CO2 factor (venting and flaring components)
+fugitives,Fugitive emissions from oil and gas,,N2O,ipcc2019r_v2_ch4_tier1_segment_n2o,T1,bounded_split_triangular_ef_2019r,2019 Refinement V2 Ch4 Tier 1 (Tables 4.2.4a-k),segment activity x the 2019 Refinement default N2O factor (flaring)
+ippu,Cement production,,CO2,ipcc2006_v3_ch2_eq2.2_clinker_co2,T2,triangular_bounded_clinker_ef,2006 V3 Ch2 Eq 2.2 (Tier 2 clinker route),clinker production OBSERVED at the company grain (the sixteen-company producer census) x the clinker emission factor; the Tier-1 cement-times-clinker-fraction route with its trade correction (Eq 2.1) is the priced alternative
+waste,Solid waste disposal,,CH4,ipcc2006_v5_ch3_eq3.1_swds_fod_ch4,T1,lognormal_triangular_parameter_mc_bounded,2006 V5 Ch3 Eq 3.4-3.5 (FOD),first-order decay over the waste-fate ledger's disposed stream; DOC and MCF by disposal class from the fate ledger; the sewer-MCF mixture is a structural configuration
+waste,Domestic wastewater,,CH4,ipcc2006_v5_ch6_eq6.1_wastewater_ch4,T1,lognormal_triangular_parameter_mc_bounded,2006 V5 Ch6 Eq 6.1,population x BOD x MCF by treatment pathway (Table 6.3); the MCF pathway weights are named structural scenarios
+waste,Domestic wastewater,,N2O,ipcc2006_v5_ch6_eq6.7_wastewater_n2o,T1,lognormal_triangular_parameter_mc_bounded,2006 V5 Ch6 Eq 6.7,protein intake x Fnpr x EF (effluent N2O)
+waste,Open burning of waste,,CO2,ipcc2006_v5_ch5_eq5.2_open_burning_co2,T1,lognormal_triangular_parameter_mc_bounded,2006 V5 Ch5 Eq 5.2 (activity Eq 5.7),mass burnt from the fate ledger x fossil carbon fraction x oxidation factor; the biogenic fraction is outside every total
+waste,Open burning of waste,,CH4,ipcc2006_v5_ch5_eq5.4_open_burning_ch4,T1,lognormal_triangular_parameter_mc_bounded,2006 V5 Ch5 Eq 5.4 (activity Eq 5.7),mass burnt x default CH4 factor
+waste,Open burning of waste,,N2O,ipcc2006_v5_ch5_eq5.5_open_burning_n2o,T1,lognormal_triangular_parameter_mc_bounded,2006 V5 Ch5 Eq 5.5 (activity Eq 5.7),mass burnt x default N2O factor
+ippu,Ammonia production,,CO2,ipcc2006_v3_ch3_eq3.9_ammonia_co2_tier1_calibrated,T1,product_lognormal_activity_x_ef,"2006 V3 Ch3 Eq 3.9-3.10 (Tier 1, urea recovery deducted)","rc52: ammonia embodied in NFDC production by nitrogen stoichiometry x the Pakistan-calibrated total-energy factor (1.815 t CO2/t NH3, reproducing the BTR 2020-21 filing) minus urea produced x 44/60; activity and factor as shared groups (ammonia_activity, ammonia_factor)"
+ippu,Iron and steel production,,CO2,ipcc2006_v3_ch4_eq4.1_steel_co2_tier1_eaf,T1,product_lognormal_activity_x_ef,"2006 V3 Ch4 Table 4.1 (Tier 1, EAF route)","rc52: QIM billets and ingots (crude steel, twelve own months) x 0.08 t CO2/t; pig iron zero so the electric route is the only one; shared groups steel_activity, steel_factor"
+ippu,Lubricant use,,CO2,ipcc2006_v3_ch5_eq5.2_lubricant_odu_tier1,T1,product_lognormal_activity_x_ef,2006 V3 Ch5 Eq 5.2 (Tier 1 ODU),"rc52: OCAC lubes and greases sold x NCV 40.2 TJ/Gg x 20.0 t C/TJ x ODU (0.2 oil, 0.05 grease) x 44/12; shared groups lubricant_activity, lubricant_odu"

@@ -1,0 +1,4 @@
+scenario,distribution,mean_mt_co2e_ar5,p025_mt_co2e_ar5,p50_mt_co2e_ar5,p975_mt_co2e_ar5,n_iter,seed,zero_bound_treatment
+reference,bounded_split_triangular,24.72220962531781,21.27695424841441,24.140837385817616,30.537069991701458,10000,42,not applicable
+reference,bounded_uniform,27.154232852979487,21.351085793432077,27.140407065032605,33.14045505967315,10000,42,not applicable
+reference,bounded_loguniform_positive,25.542324294823512,20.299677979122958,25.23870300182907,31.908816566428467,10000,42,bounded uniform for inputs whose lower bound is zero

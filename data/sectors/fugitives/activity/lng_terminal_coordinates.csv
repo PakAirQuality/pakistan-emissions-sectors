@@ -1,0 +1,11 @@
+# The two LNG import terminals, located - retiring the geometry_sets.csv typed refusal
+# ("facilities:lng_terminals 0 of 2 located") the day Wave 5 wires them. Coordinates are
+# Global Energy Monitor wiki pages (CC-BY), the same GEM lane the cement and coal plant
+# registers already use; each page prints its coordinate with an exactness tag and the
+# "(exact)"-tagged pair is what is recorded here. The Engro page also prints an
+# "(approximate)" second pair (24.769704, 67.334731) that is NOT used. Both terminals are
+# FSRUs in the Port Qasim channel, Karachi - the two points sit ~8 km apart.
+# WAVE 0 STATUS: inert; no engine reads this file yet. Wave 5 is the consumer.
+terminal_id,name,latitude,longitude,coordinate_quality,source_page,source_sha256,retrieved
+lng_engro_elengy,Engro Elengy FSRU (Port Qasim),24.7907232,67.3688752,gem_exact,data/raw/gem/Engro_Elengy_FSRU.html,977e605b2722a3d872e21deee99df9de25ab41460e5fdf0c11d0f5d9569a0009,2026-09-04
+lng_gasport,GasPort FSRU (Port Qasim),24.7749916,67.288333,gem_exact,data/raw/gem/GasPort_FSRU.html,da5aeaadf34c01283d659c104888d93e738a244959cad87be09a8504935a1320,2026-09-04

@@ -1,0 +1,28 @@
+% ===========================================================================
+\section{Supplementary Note: replacement of the provincial allocation proxy}
+\label{app:provincial}
+% ===========================================================================
+
+Earlier revisions allocated grid emissions to provinces by installed capacity from a global
+power-plant database. That proxy predated most of the coal build-out (\SI{21.5}{} GW listed
+against roughly \SI{45}{} installed) and assigned provinces by plant coordinates, which
+substantially overallocated to Khyber Pakhtunkhwa---a province whose electricity is almost
+entirely hydro, which burns nothing and belongs nowhere in a combustion sector.
+
+The first replacement used contemporaneous plant-wise thermal generation: Punjab
+\SI{49.67}{\percent}, Sindh \SI{34.22}{\percent}, Balochistan \SI{16.09}{\percent},
+Khyber Pakhtunkhwa \SI{0.02}{\percent} on FY2022 output, against the capacity proxy's
+\SI{32.95}{}, \SI{43.61}{}, \SI{9.20}{} and \SI{14.24}{\percent}.
+
+That share was still one geography for every fuel. The current allocation is per fuel,
+from the FY2023--24 plant fuel ledger joined to the report's own plant-location table
+(Table~5), energy-weighted with each row's evidence class carried: coal Punjab
+\SI{9.7}{}\,/\,Sindh \SI{89.4}{}\,/\,Balochistan \SI{0.8}{\percent}; gas and RLNG
+\SI{59.8}{}\,/\,\SI{22.8}{}\,/\,\SI{17.4}{\percent}; furnace oil and diesel wholly Punjab
+in the year's data (Hub reports zero fuel). K-Electric plants are excluded from the
+shares; whether the national fuel rows already contain their fuel is not established
+(Section~\ref{sec:keleg}), and the coverage alternative prices it beside the reference.
+Bagasse rides its own all-Punjab row. The aggregate FY2022 share
+remains in the parameter file as the documented fallback, and both replaced proxies'
+provenance and caveats are preserved in its history. Each committed per-fuel share is
+recomputed from the ledger by a test and fails on drift.

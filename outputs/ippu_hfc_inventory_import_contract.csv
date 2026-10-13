@@ -1,0 +1,17 @@
+field,required,unit_or_domain,role,validation_rule,preferred_source
+year,yes,calendar year,time index,integer and consecutive within each species/application,National Ozone Unit
+species,yes,IPCC-recognized chemical or resolved blend,gas identity,must map to a supported GWP and blend composition,National Ozone Unit/customs
+application,yes,refrigeration; stationary AC; mobile AC; foam; aerosol; fire protection; solvent,bank stratum,controlled vocabulary,National Ozone Unit
+imports_t,yes,tonnes chemical,supply flow,non-negative,customs/National Ozone Unit
+exports_t,yes,tonnes chemical,supply flow,non-negative,customs/National Ozone Unit
+domestic_production_t,yes,tonnes chemical,supply flow,non-negative or documented NO,National Ozone Unit
+destruction_t,yes,tonnes chemical,supply flow,non-negative,National Ozone Unit
+new_equipment_charge_t,yes,tonnes chemical,bank inflow,non-negative and no larger than explained supply plus stock draw,equipment/import survey
+servicing_charge_t,yes,tonnes chemical,bank inflow,non-negative,service-sector survey
+manufacturing_loss_fraction,yes,0-1,emission parameter,bounded fraction,IPCC/application study
+operating_loss_fraction,yes,0-1,emission parameter,bounded fraction,IPCC/application study
+retired_charge_t,yes,tonnes chemical,bank outflow,non-negative and no larger than available bank,equipment-stock model
+recovery_fraction,yes,0-1,recovery parameter,bounded fraction,National Ozone Unit/industry survey
+destruction_fraction_of_recovered,yes,0-1,destruction parameter,bounded fraction,licensed destruction records
+source_reference,yes,text,provenance,non-empty and versioned,reporting institution
+data_status,yes,observed; reported; modelled; imputed; missing,coverage flag,controlled vocabulary,compiler

@@ -1,0 +1,40 @@
+\section{Evaluation Design}
+\label{sec:validation}
+
+Each evidence layer addresses a distinct question (Table~\ref{tab:evidence}).
+
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}p{0.30\linewidth}p{0.29\linewidth}p{0.30\linewidth}@{}}
+\toprule
+\textbf{Comparison} & \textbf{Purpose} & \textbf{Independence/limit} \\
+\midrule
+Clinker material closure & Physical accounting & Depends on cement fraction and zero stock change \\
+QIM versus SBP fiscal series & Period and source audit & Independent official publications agree on FY2023--24 \\
+Calendar-2022 cement versus CRT & Official method comparison & Matched year and category; clinker fraction remains assumed \\
+Producer clinker versus Tier~1 & Independent activity/boundary evaluation & All sixteen producers report clinker; movements and stocks incomplete \\
+CRT arithmetic reproduction & Spreadsheet QA & Tests arithmetic, not methodological validity \\
+Ozone HFC consumption versus CRT & Completeness diagnostic & Consumption and annual emissions have different boundaries \\
+Provincial proxy closure & Allocation QA & Reconciles exactly but is not spatial validation \\
+\bottomrule
+\end{tabular}
+\caption{Evaluation roles. Agreement is interpreted only at the boundary supported by each
+comparison.}
+\label{tab:evidence}
+\end{table*}
+
+Automated quality-control tests verify clinker-balance closure, completeness of monthly trade
+records, correct trade signs, inclusion of observed trade in current estimates, reproduction
+of reported CRT activity--factor calculations and full 2.A--2.G coverage in the completeness
+matrix. Provincial allocations must also reconcile exactly to the national total. Detailed
+test definitions are provided in \ref{app:repro}.
+
+The official comparison is category-specific. Pakistan's 2022 cement row is compared with an
+independent calendar-2022 QIM/trade reconstruction under both clinker-fraction choices. The
+official whole-IPPU total is not compared with the independently estimated cement component;
+its category composition instead establishes the materiality of categories still missing from
+the public-data estimate. Company clinker is an independent activity test, but not yet a
+national Tier~2 result: every one of the sixteen producers now reports an exact clinker
+quantity, but producer coverage, transfers and stocks have not been reconciled with QIM
+cement production.

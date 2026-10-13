@@ -1,0 +1,32 @@
+check,passed,actual,expected,note
+cement_material_closure,True,,,clinker production + imports - exports - stock = clinker in cement
+clinker_export_months,True,,,twelve fiscal months of the reference year carry an export figure
+clinker_import_months,True,,,twelve fiscal months of the reference year carry an import figure
+trade_changes_diagnostic,True,,,net clinker exports raise the DIAGNOSTIC model's inferred production (the reference no longer consumes a trade term)
+component_contract,True,,,"registered public-data estimate is CO2 only: 2.A.1 clinker, 2.B.1 ammonia, 2.C.1 steel, 2.D.1 lubricants (rc52)"
+valid_structural_count,True,,,census reference plus 2 diagnostic clinker-fraction models; observed trade included in both models
+company_clinker_subset,True,,,"all sixteen FY2023-24 producers report positive actual clinker production (Fecto's 651,048 t closed the census at rc30)"
+producer_census,True,,,"the census is COMPLETE: sixteen entities, sixteen reported values - the reference activity, not a floor"
+census_total_is_the_reference,True,,,the published reference equals the audited census sum times the factor
+company_boundary_audit,True,,,all census entities have an explicit common-boundary audit and no missing flow is imputed
+evidence_maturity,True,,,every completeness row has a validated 0-6 maturity state
+nitric_monitoring_detail,True,,,period-specific CDM detail remains historical and cannot activate FY2023-24
+facility_geocoding_provenance,True,,,all 34 facilities retain coordinate provenance; 24 carry an exact point from the override register and 10 remain locality-only
+calendar_2022_activity,True,,,twelve PBS monthly values sum independently to calendar 2022
+crt_arithmetic,True,,,every numeric CRT activity-factor-recovery row reproduces
+ammonia_reconciliation_pathways,True,,,"four independent activity pathways, every row diagnostic, nothing averaged"
+activated_categories_are_the_declared_four,True,,,"rc52: cement, ammonia, iron and steel and lubricant use enter components and totals; nitric acid stays a configuration pair, soda ash is NA (Solvay), F-gases and wastewater stay bands"
+fertilizer_gas_split_closes,True,,,"NFDC Table 40 printed feed, fuel and total are the extracted values"
+annex28_matches_table40,True,,,"Annex-28's monthly cells and Table 40's annual row are the same FY2024-25 gas reached two ways in one document, and they agree"
+fertilizer_gas_fy2024_split_observed,True,,,"the reference year's feed/fuel split is OBSERVED in Annex-28, not borrowed from FY2024-25 as it was for one round"
+fertilizer_gas_two_sources_agree,True,,,NFDC's plant meters and OGRA's utility table land within one percent on the same fiscal year with no shared upstream input
+urea_bridge_reads_extracted_offtake,True,,,every bridge leg reads a registered CSV; no quantity is a Python literal
+fertilizer_gas_profile_claims_nothing,True,,,"the observed monthly profile is applied to no reported category, because 2.B.1 is NE"
+completeness_2.A,True,,,master matrix covers 2.A
+completeness_2.B,True,,,master matrix covers 2.B
+completeness_2.C,True,,,master matrix covers 2.C
+completeness_2.D,True,,,master matrix covers 2.D
+completeness_2.E,True,,,master matrix covers 2.E
+completeness_2.F,True,,,master matrix covers 2.F
+completeness_2.G,True,,,master matrix covers 2.G
+declared outputs written,True,49,49,every output this runner declares was written by this run

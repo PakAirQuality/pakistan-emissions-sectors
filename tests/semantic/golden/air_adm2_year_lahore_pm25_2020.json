@@ -1,0 +1,26 @@
+{
+ "expect": [
+  {
+   "cell": 0,
+   "display": "11.367",
+   "note_dung_reference_2026_10_13": "2026-10-13, rc67: household dung follows the survey in every year. The reference burned in households all the dung agriculture diverts (configuration L) through rc66; it now burns what the two HIES rounds report, a per-household quantity interpolated between 2018-19 and 2024-25 and held at the first round's rate before it. Lahore district PM2.5 in FY2019-20: 21.372 -> 11.367 Gg. The whole of the step is residential (16.767 -> 6.762): Lahore's share of a provincial dung stream that is now 7.30 Mt of cake nationally where the ledger had 51.46."
+  }
+ ],
+ "expect_receipt": "4efeea22c1a1c655b2d2f55f52064141",
+ "function": "query_air",
+ "golden_id": "air_adm2_year_lahore_pm25_2020",
+ "note": "rc67: moved by the dung reference (see note_dung_reference_2026_10_13 on the cell). PREVIOUS NOTE | rc62: the industrial liquid province vectors were split by product and re-based on OCAC's own Total Industry area pages. One blended row had given furnace oil the retail geography of fuels it does not burn (Punjab 0.657 against furnace oil's own 0.784) and diesel the reverse (0.657 against 0.431 - industrial diesel is very nearly half Sindh). Punjab NOx falls because diesel carries NOx and diesel left Punjab; Lahore PM2.5 rises slightly because furnace oil arrived. No national number moved and no pin moved - this is a provincial re-base, sized per province and period in the round's record.",
+ "request": {
+  "geography_ids": [
+   "60131773B12131197496886"
+  ],
+  "geography_level": "adm2",
+  "order_by": "",
+  "periods": [
+   "FY2019-20"
+  ],
+  "pollutants": [
+   "PM2.5"
+  ]
+ }
+}

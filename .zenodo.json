@@ -1,0 +1,25 @@
+{
+  "title": "PakEmis-GHG: a reproducible ten-module national greenhouse-gas inventory for Pakistan, excluding LULUCF",
+  "version": "1.0.0rc67",
+  "upload_type": "software",
+  "license": "mit",
+  "creators": [
+    {
+      "name": "Ahmad, Rehan",
+      "affiliation": "Pakistan Air Quality Initiative (PAQI), Karachi, Pakistan"
+    }
+  ],
+  "description": "<p>A reproducible national emissions inventory for Pakistan covering ten sectors, with national, provincial, district and gridded products.</p><p>Sector modules satisfy a common software contract; cross-sector fuel and material transfers close by construction; structural choices are reported as named scenarios rather than folded into parametric uncertainty; and every figure and table in the accompanying manuscripts is generated from the calculation engine. The release carries a machine-readable manifest recording the version, the baseline configuration, each sector's reference year, the completeness counts and the hash of every primary source.</p><p>The baseline configuration is L (ledger-closed residential dung). The survey-demand configuration S is published as a co-equal second national result, not as a sensitivity. LULUCF is excluded from all totals and carried as an exploratory module.</p><p>Code is MIT licensed; data products, figures and manuscript text are CC-BY-4.0. Geometry tables extracted from OpenStreetMap are derivative databases under ODbL 1.0 and carry share-alike; LICENSE-data lists them.</p><p><strong>What this deposit does not contain.</strong> The third-party source documents the inventory was read from &mdash; OGRA, NEPRA, PBS, NFDC and PCAA publications, and PBS HIES microdata &mdash; are not included. Their redistribution terms are, for most of them, not established, and this project cannot license what it does not own. What ships instead is a source document register naming every publication, recording its SHA-256, and stating where to obtain it from its publisher, so a reader can confirm they hold the same document this release read. Reproducing the build end to end therefore requires re-acquiring those publications; everything else needed is here.</p>",
+  "keywords": [
+    "greenhouse gas inventory",
+    "air pollutant inventory",
+    "IPCC 2006 Guidelines",
+    "Pakistan",
+    "reproducible research",
+    "emissions accounting",
+    "methane",
+    "spatial allocation"
+  ],
+  "access_right": "open",
+  "language": "eng"
+}

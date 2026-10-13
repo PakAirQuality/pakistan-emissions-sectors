@@ -1,0 +1,7 @@
+species,subsector,elk_pak_kt_2019,cells,own_kt_cy2019,ratio_elk_over_own,note
+CO2-rep,rail-freight,165.239,1024,,,
+CO2-rep,rail-passenger,6.931,5,,,
+NOx,rail-freight,3.023,1024,,,
+NOx,rail-passenger,0.103,5,,,
+CO2-rep,rail-total,172.17,,404.177,0.426,"own value: mean of FY2018-19 and FY2019-20, CO2 only; ELK is a fleet model, this inventory a fuel meter"
+NOx,rail-total,3.126,,,,compare outputs/railways_air_pollutants (5.9 kt on FY2024 fuel; scale by ~1.2 for FY2019 fuel)

@@ -1,0 +1,695 @@
+district,adm2_id,province,category,co2e_Mt_AR5
+Attock,punjab_attock,Punjab,Enteric fermentation,1.8795
+Bahawalnagar,punjab_bahawalnagar,Punjab,Enteric fermentation,2.74795
+Bahawalpur,punjab_bahawalpur,Punjab,Enteric fermentation,2.29875
+Bhakkar,punjab_bhakkar,Punjab,Enteric fermentation,2.52227
+Chakwal,punjab_chakwal,Punjab,Enteric fermentation,1.38655
+Dera Ghazi Khan,punjab_dera_ghazi_khan,Punjab,Enteric fermentation,3.69824
+Faisalabad,punjab_faisalabad,Punjab,Enteric fermentation,4.91215
+Gujranwala,punjab_gujranwala,Punjab,Enteric fermentation,1.96447
+Gujrat,punjab_gujrat,Punjab,Enteric fermentation,1.71862
+Hafizabad,punjab_hafizabad,Punjab,Enteric fermentation,1.52251
+Jhang,punjab_jhang,Punjab,Enteric fermentation,6.13747
+Jhelum,punjab_jhelum,Punjab,Enteric fermentation,1.27572
+Kasur,punjab_kasur,Punjab,Enteric fermentation,2.41393
+Khanewal,punjab_khanewal,Punjab,Enteric fermentation,2.0369
+Khushab,punjab_khushab,Punjab,Enteric fermentation,1.57123
+Lahore,punjab_lahore,Punjab,Enteric fermentation,2.55889
+Layyah,punjab_layyah,Punjab,Enteric fermentation,2.22164
+Lodhran,punjab_lodhran,Punjab,Enteric fermentation,1.15981
+Mandi Bahauddin,punjab_mandi_bahauddin,Punjab,Enteric fermentation,1.76139
+Mianwali,punjab_mianwali,Punjab,Enteric fermentation,1.58241
+Multan,punjab_multan,Punjab,Enteric fermentation,1.90198
+Muzaffargarh,punjab_muzaffargarh,Punjab,Enteric fermentation,3.95775
+Narowal,punjab_narowal,Punjab,Enteric fermentation,1.12447
+Okara,punjab_okara,Punjab,Enteric fermentation,2.32702
+Pakpattan,punjab_pakpattan,Punjab,Enteric fermentation,2.0287
+Rahim Yar Khan,punjab_rahim_yar_khan,Punjab,Enteric fermentation,2.65543
+Rajanpur,punjab_rajanpur,Punjab,Enteric fermentation,1.66939
+Rawalpindi,punjab_rawalpindi,Punjab,Enteric fermentation,1.98283
+Sahiwal,punjab_sahiwal,Punjab,Enteric fermentation,2.15075
+Sargodha,punjab_sargodha,Punjab,Enteric fermentation,2.74402
+Sheikhpura,punjab_sheikhupura,Punjab,Enteric fermentation,3.1213
+Sialkot,punjab_sialkot,Punjab,Enteric fermentation,1.92295
+Toba Tek Singh,punjab_toba_tek_singh,Punjab,Enteric fermentation,1.93759
+Vihari,punjab_vehari,Punjab,Enteric fermentation,2.26074
+Cholistan Area,punjab_cholistan_area,Punjab,Enteric fermentation,0.72745
+Badin,sindh_badin,Sindh,Enteric fermentation,1.2315
+Dadu,sindh_dadu,Sindh,Enteric fermentation,1.31647
+Ghotki,sindh_ghotki,Sindh,Enteric fermentation,1.24984
+Hyderabad,sindh_hyderabad,Sindh,Enteric fermentation,0.69638
+Jacobabad,sindh_jacobabad,Sindh,Enteric fermentation,1.40742
+Jamshoro,sindh_jamshoro,Sindh,Enteric fermentation,0.81373
+Karachi,sindh_karachi_legacy,Sindh,Enteric fermentation,8.96578
+Kashmore,sindh_kashmore,Sindh,Enteric fermentation,0.65377
+Khairpur,sindh_khairpur,Sindh,Enteric fermentation,1.90797
+Matiari,sindh_matiari,Sindh,Enteric fermentation,3.70192
+Mirpurkhas,sindh_mirpur_khas,Sindh,Enteric fermentation,0.84508
+Naushehro Feroze,sindh_naushahro_feroze,Sindh,Enteric fermentation,1.4013
+Nawabshah,sindh_shaheed_benazirabad,Sindh,Enteric fermentation,1.18806
+Qambar Shahdadkot,sindh_kambar_shahdad_kot,Sindh,Enteric fermentation,0.89491
+Sanghar,sindh_sanghar,Sindh,Enteric fermentation,1.07167
+Shikarpur,sindh_shikarpur,Sindh,Enteric fermentation,1.48689
+Sukkur,sindh_sukkur,Sindh,Enteric fermentation,1.51111
+Tando Allahyar,sindh_tando_allahyar,Sindh,Enteric fermentation,0.3246
+Tando Muhammad Khan,sindh_tando_muhammad_khan,Sindh,Enteric fermentation,0.3236
+Tharparkar,sindh_tharparkar,Sindh,Enteric fermentation,1.41742
+Thatta,sindh_thatta,Sindh,Enteric fermentation,1.8003
+Umerkot,sindh_umer_kot,Sindh,Enteric fermentation,0.46524
+Larkana District,sindh_larkana,Sindh,Enteric fermentation,1.10405
+Abbottabad,kp_abbottabad,Khyber Pakhtunkhwa,Enteric fermentation,0.87775
+Bajaur,kp_bajaur,Khyber Pakhtunkhwa,Enteric fermentation,0.55292
+Bannu,kp_bannu,Khyber Pakhtunkhwa,Enteric fermentation,0.45959
+Battagram,kp_batagram,Khyber Pakhtunkhwa,Enteric fermentation,0.36774
+Buner,kp_buner,Khyber Pakhtunkhwa,Enteric fermentation,0.40695
+Charsadda,kp_charsadda,Khyber Pakhtunkhwa,Enteric fermentation,0.69334
+Chitral,kp_chitral_legacy,Khyber Pakhtunkhwa,Enteric fermentation,0.80973
+Dera Ismail Khan,kp_dera_ismail_khan,Khyber Pakhtunkhwa,Enteric fermentation,2.46108
+Hangu,kp_hangu,Khyber Pakhtunkhwa,Enteric fermentation,0.10598
+Haripur,kp_haripur,Khyber Pakhtunkhwa,Enteric fermentation,0.52844
+Karak,kp_karak,Khyber Pakhtunkhwa,Enteric fermentation,0.51526
+Khyber,kp_khyber,Khyber Pakhtunkhwa,Enteric fermentation,0.30281
+Kohat,kp_kohat,Khyber Pakhtunkhwa,Enteric fermentation,0.5362
+Kohistan,kp_kohistan_legacy,Khyber Pakhtunkhwa,Enteric fermentation,2.91179
+Kurram,kp_kurram,Khyber Pakhtunkhwa,Enteric fermentation,0.60155
+Lakki Marwat,kp_lakki_marwat,Khyber Pakhtunkhwa,Enteric fermentation,0.58993
+Lower Dir,kp_lower_dir,Khyber Pakhtunkhwa,Enteric fermentation,0.72517
+Malakand,kp_malakand_protected_area,Khyber Pakhtunkhwa,Enteric fermentation,0.14804
+Mansehra,kp_mansehra,Khyber Pakhtunkhwa,Enteric fermentation,1.43069
+Mardan,kp_mardan,Khyber Pakhtunkhwa,Enteric fermentation,0.72015
+Mohmand,kp_mohmand,Khyber Pakhtunkhwa,Enteric fermentation,0.93235
+North Waziristan,kp_north_waziristan,Khyber Pakhtunkhwa,Enteric fermentation,0.56072
+Nowshera,kp_nowshera,Khyber Pakhtunkhwa,Enteric fermentation,0.84452
+Orakzai,kp_orakzai,Khyber Pakhtunkhwa,Enteric fermentation,0.09144
+Peshawar,kp_peshawar,Khyber Pakhtunkhwa,Enteric fermentation,0.81537
+Shangla,kp_shangla,Khyber Pakhtunkhwa,Enteric fermentation,0.57957
+South Waziristan,kp_south_waziristan,Khyber Pakhtunkhwa,Enteric fermentation,1.56025
+Swabi,kp_swabi,Khyber Pakhtunkhwa,Enteric fermentation,0.56692
+Swat,kp_swat,Khyber Pakhtunkhwa,Enteric fermentation,1.38409
+Tank,kp_tank,Khyber Pakhtunkhwa,Enteric fermentation,0.25167
+Upper Dir,kp_upper_dir,Khyber Pakhtunkhwa,Enteric fermentation,0.99817
+Awaran,balochistan_awaran,Balochistan,Enteric fermentation,0.25956
+Barkhan,balochistan_barkhan,Balochistan,Enteric fermentation,0.39447
+Chagai,balochistan_chagai,Balochistan,Enteric fermentation,0.07814
+Dera Bugti,balochistan_dera_bugti,Balochistan,Enteric fermentation,0.4269
+Gwadar,balochistan_gwadar,Balochistan,Enteric fermentation,0.2421
+Jafarabad,balochistan_jaffarabad,Balochistan,Enteric fermentation,0.99316
+Jhal Magsi,balochistan_jhal_magsi,Balochistan,Enteric fermentation,0.42312
+Kachhi,balochistan_kachhi,Balochistan,Enteric fermentation,0.22369
+Kalat,balochistan_kalat,Balochistan,Enteric fermentation,0.7162
+Kech,balochistan_kech,Balochistan,Enteric fermentation,0.51091
+Kharan,balochistan_kharan,Balochistan,Enteric fermentation,0.35745
+Khuzdar,balochistan_khuzdar,Balochistan,Enteric fermentation,0.81612
+Kohlu,balochistan_kohlu,Balochistan,Enteric fermentation,0.63009
+Lasbela,balochistan_lasbela,Balochistan,Enteric fermentation,0.40996
+Loralai,balochistan_loralai,Balochistan,Enteric fermentation,0.51663
+Mastung,balochistan_mastung,Balochistan,Enteric fermentation,0.1721
+Musakhel,balochistan_musakhel,Balochistan,Enteric fermentation,0.64167
+Nasirabad,balochistan_nasirabad,Balochistan,Enteric fermentation,0.86338
+Nushki,balochistan_nushki,Balochistan,Enteric fermentation,0.21635
+Panjgur,balochistan_panjgur,Balochistan,Enteric fermentation,0.13527
+Pishin,balochistan_pishin,Balochistan,Enteric fermentation,0.30815
+Qilla Abdullah,balochistan_killa_abdullah,Balochistan,Enteric fermentation,0.24926
+Qilla Saifullah,balochistan_killa_saifullah,Balochistan,Enteric fermentation,0.35817
+Quetta,balochistan_quetta,Balochistan,Enteric fermentation,0.38372
+Sibi,balochistan_sibi,Balochistan,Enteric fermentation,0.31466
+Zhob,balochistan_zhob,Balochistan,Enteric fermentation,0.67096
+Ziarat,balochistan_ziarat,Balochistan,Enteric fermentation,0.04198
+Other (GB/AJK/ICT residual),other_residual,Other,Enteric fermentation,0.31155
+Attock,punjab_attock,Punjab,Manure management,0.24324
+Bahawalnagar,punjab_bahawalnagar,Punjab,Manure management,0.35563
+Bahawalpur,punjab_bahawalpur,Punjab,Manure management,0.2975
+Bhakkar,punjab_bhakkar,Punjab,Manure management,0.32643
+Chakwal,punjab_chakwal,Punjab,Manure management,0.17944
+Dera Ghazi Khan,punjab_dera_ghazi_khan,Punjab,Manure management,0.47862
+Faisalabad,punjab_faisalabad,Punjab,Manure management,0.63572
+Gujranwala,punjab_gujranwala,Punjab,Manure management,0.25424
+Gujrat,punjab_gujrat,Punjab,Manure management,0.22242
+Hafizabad,punjab_hafizabad,Punjab,Manure management,0.19704
+Jhang,punjab_jhang,Punjab,Manure management,0.7943
+Jhelum,punjab_jhelum,Punjab,Manure management,0.1651
+Kasur,punjab_kasur,Punjab,Manure management,0.3124
+Khanewal,punjab_khanewal,Punjab,Manure management,0.26361
+Khushab,punjab_khushab,Punjab,Manure management,0.20334
+Lahore,punjab_lahore,Punjab,Manure management,0.33117
+Layyah,punjab_layyah,Punjab,Manure management,0.28752
+Lodhran,punjab_lodhran,Punjab,Manure management,0.1501
+Mandi Bahauddin,punjab_mandi_bahauddin,Punjab,Manure management,0.22796
+Mianwali,punjab_mianwali,Punjab,Manure management,0.20479
+Multan,punjab_multan,Punjab,Manure management,0.24615
+Muzaffargarh,punjab_muzaffargarh,Punjab,Manure management,0.5122
+Narowal,punjab_narowal,Punjab,Manure management,0.14553
+Okara,punjab_okara,Punjab,Manure management,0.30116
+Pakpattan,punjab_pakpattan,Punjab,Manure management,0.26255
+Rahim Yar Khan,punjab_rahim_yar_khan,Punjab,Manure management,0.34366
+Rajanpur,punjab_rajanpur,Punjab,Manure management,0.21605
+Rawalpindi,punjab_rawalpindi,Punjab,Manure management,0.25661
+Sahiwal,punjab_sahiwal,Punjab,Manure management,0.27834
+Sargodha,punjab_sargodha,Punjab,Manure management,0.35512
+Sheikhpura,punjab_sheikhupura,Punjab,Manure management,0.40395
+Sialkot,punjab_sialkot,Punjab,Manure management,0.24886
+Toba Tek Singh,punjab_toba_tek_singh,Punjab,Manure management,0.25076
+Vihari,punjab_vehari,Punjab,Manure management,0.29258
+Cholistan Area,punjab_cholistan_area,Punjab,Manure management,0.09414
+Badin,sindh_badin,Sindh,Manure management,0.16261
+Dadu,sindh_dadu,Sindh,Manure management,0.17383
+Ghotki,sindh_ghotki,Sindh,Manure management,0.16503
+Hyderabad,sindh_hyderabad,Sindh,Manure management,0.09195
+Jacobabad,sindh_jacobabad,Sindh,Manure management,0.18584
+Jamshoro,sindh_jamshoro,Sindh,Manure management,0.10745
+Karachi,sindh_karachi_legacy,Sindh,Manure management,1.18387
+Kashmore,sindh_kashmore,Sindh,Manure management,0.08633
+Khairpur,sindh_khairpur,Sindh,Manure management,0.25193
+Matiari,sindh_matiari,Sindh,Manure management,0.48881
+Mirpurkhas,sindh_mirpur_khas,Sindh,Manure management,0.11159
+Naushehro Feroze,sindh_naushahro_feroze,Sindh,Manure management,0.18503
+Nawabshah,sindh_shaheed_benazirabad,Sindh,Manure management,0.15688
+Qambar Shahdadkot,sindh_kambar_shahdad_kot,Sindh,Manure management,0.11817
+Sanghar,sindh_sanghar,Sindh,Manure management,0.14151
+Shikarpur,sindh_shikarpur,Sindh,Manure management,0.19633
+Sukkur,sindh_sukkur,Sindh,Manure management,0.19953
+Tando Allahyar,sindh_tando_allahyar,Sindh,Manure management,0.04286
+Tando Muhammad Khan,sindh_tando_muhammad_khan,Sindh,Manure management,0.04273
+Tharparkar,sindh_tharparkar,Sindh,Manure management,0.18716
+Thatta,sindh_thatta,Sindh,Manure management,0.23772
+Umerkot,sindh_umer_kot,Sindh,Manure management,0.06143
+Larkana District,sindh_larkana,Sindh,Manure management,0.14578
+Abbottabad,kp_abbottabad,Khyber Pakhtunkhwa,Manure management,0.13262
+Bajaur,kp_bajaur,Khyber Pakhtunkhwa,Manure management,0.08354
+Bannu,kp_bannu,Khyber Pakhtunkhwa,Manure management,0.06944
+Battagram,kp_batagram,Khyber Pakhtunkhwa,Manure management,0.05556
+Buner,kp_buner,Khyber Pakhtunkhwa,Manure management,0.06149
+Charsadda,kp_charsadda,Khyber Pakhtunkhwa,Manure management,0.10476
+Chitral,kp_chitral_legacy,Khyber Pakhtunkhwa,Manure management,0.12234
+Dera Ismail Khan,kp_dera_ismail_khan,Khyber Pakhtunkhwa,Manure management,0.37185
+Hangu,kp_hangu,Khyber Pakhtunkhwa,Manure management,0.01601
+Haripur,kp_haripur,Khyber Pakhtunkhwa,Manure management,0.07984
+Karak,kp_karak,Khyber Pakhtunkhwa,Manure management,0.07785
+Khyber,kp_khyber,Khyber Pakhtunkhwa,Manure management,0.04575
+Kohat,kp_kohat,Khyber Pakhtunkhwa,Manure management,0.08101
+Kohistan,kp_kohistan_legacy,Khyber Pakhtunkhwa,Manure management,0.43994
+Kurram,kp_kurram,Khyber Pakhtunkhwa,Manure management,0.09089
+Lakki Marwat,kp_lakki_marwat,Khyber Pakhtunkhwa,Manure management,0.08913
+Lower Dir,kp_lower_dir,Khyber Pakhtunkhwa,Manure management,0.10957
+Malakand,kp_malakand_protected_area,Khyber Pakhtunkhwa,Manure management,0.02237
+Mansehra,kp_mansehra,Khyber Pakhtunkhwa,Manure management,0.21616
+Mardan,kp_mardan,Khyber Pakhtunkhwa,Manure management,0.10881
+Mohmand,kp_mohmand,Khyber Pakhtunkhwa,Manure management,0.14087
+North Waziristan,kp_north_waziristan,Khyber Pakhtunkhwa,Manure management,0.08472
+Nowshera,kp_nowshera,Khyber Pakhtunkhwa,Manure management,0.1276
+Orakzai,kp_orakzai,Khyber Pakhtunkhwa,Manure management,0.01382
+Peshawar,kp_peshawar,Khyber Pakhtunkhwa,Manure management,0.12319
+Shangla,kp_shangla,Khyber Pakhtunkhwa,Manure management,0.08757
+South Waziristan,kp_south_waziristan,Khyber Pakhtunkhwa,Manure management,0.23574
+Swabi,kp_swabi,Khyber Pakhtunkhwa,Manure management,0.08566
+Swat,kp_swat,Khyber Pakhtunkhwa,Manure management,0.20912
+Tank,kp_tank,Khyber Pakhtunkhwa,Manure management,0.03802
+Upper Dir,kp_upper_dir,Khyber Pakhtunkhwa,Manure management,0.15081
+Awaran,balochistan_awaran,Balochistan,Manure management,0.05602
+Barkhan,balochistan_barkhan,Balochistan,Manure management,0.08514
+Chagai,balochistan_chagai,Balochistan,Manure management,0.01687
+Dera Bugti,balochistan_dera_bugti,Balochistan,Manure management,0.09214
+Gwadar,balochistan_gwadar,Balochistan,Manure management,0.05226
+Jafarabad,balochistan_jaffarabad,Balochistan,Manure management,0.21436
+Jhal Magsi,balochistan_jhal_magsi,Balochistan,Manure management,0.09132
+Kachhi,balochistan_kachhi,Balochistan,Manure management,0.04828
+Kalat,balochistan_kalat,Balochistan,Manure management,0.15458
+Kech,balochistan_kech,Balochistan,Manure management,0.11027
+Kharan,balochistan_kharan,Balochistan,Manure management,0.07715
+Khuzdar,balochistan_khuzdar,Balochistan,Manure management,0.17615
+Kohlu,balochistan_kohlu,Balochistan,Manure management,0.136
+Lasbela,balochistan_lasbela,Balochistan,Manure management,0.08849
+Loralai,balochistan_loralai,Balochistan,Manure management,0.11151
+Mastung,balochistan_mastung,Balochistan,Manure management,0.03714
+Musakhel,balochistan_musakhel,Balochistan,Manure management,0.1385
+Nasirabad,balochistan_nasirabad,Balochistan,Manure management,0.18635
+Nushki,balochistan_nushki,Balochistan,Manure management,0.0467
+Panjgur,balochistan_panjgur,Balochistan,Manure management,0.0292
+Pishin,balochistan_pishin,Balochistan,Manure management,0.06651
+Qilla Abdullah,balochistan_killa_abdullah,Balochistan,Manure management,0.0538
+Qilla Saifullah,balochistan_killa_saifullah,Balochistan,Manure management,0.07731
+Quetta,balochistan_quetta,Balochistan,Manure management,0.08282
+Sibi,balochistan_sibi,Balochistan,Manure management,0.06792
+Zhob,balochistan_zhob,Balochistan,Manure management,0.14482
+Ziarat,balochistan_ziarat,Balochistan,Manure management,0.00906
+Other (GB/AJK/ICT residual),other_residual,Other,Manure management,0.03916
+Attock,punjab_attock,Punjab,Rice cultivation,0.00036
+Bahawalnagar,punjab_bahawalnagar,Punjab,Rice cultivation,0.4879
+Bahawalpur,punjab_bahawalpur,Punjab,Rice cultivation,0.14487
+Bhakkar,punjab_bhakkar,Punjab,Rice cultivation,0.00788
+Chakwal,punjab_chakwal,Punjab,Rice cultivation,0.0
+Dera Ghazi Khan,punjab_dera_ghazi_khan,Punjab,Rice cultivation,0.22889
+Faisalabad,punjab_faisalabad,Punjab,Rice cultivation,0.15554
+Gujranwala,punjab_gujranwala,Punjab,Rice cultivation,1.0155
+Gujrat,punjab_gujrat,Punjab,Rice cultivation,0.29528
+Hafizabad,punjab_hafizabad,Punjab,Rice cultivation,0.70227
+Jhang,punjab_jhang,Punjab,Rice cultivation,0.65321
+Jhelum,punjab_jhelum,Punjab,Rice cultivation,0.01184
+Kasur,punjab_kasur,Punjab,Rice cultivation,0.43513
+Khanewal,punjab_khanewal,Punjab,Rice cultivation,0.21827
+Khushab,punjab_khushab,Punjab,Rice cultivation,0.09773
+Lahore,punjab_lahore,Punjab,Rice cultivation,0.19589
+Layyah,punjab_layyah,Punjab,Rice cultivation,0.0808
+Lodhran,punjab_lodhran,Punjab,Rice cultivation,0.12019
+Mandi Bahauddin,punjab_mandi_bahauddin,Punjab,Rice cultivation,0.61119
+Mianwali,punjab_mianwali,Punjab,Rice cultivation,0.03884
+Multan,punjab_multan,Punjab,Rice cultivation,0.18817
+Muzaffargarh,punjab_muzaffargarh,Punjab,Rice cultivation,0.29463
+Narowal,punjab_narowal,Punjab,Rice cultivation,0.4918
+Okara,punjab_okara,Punjab,Rice cultivation,0.73746
+Pakpattan,punjab_pakpattan,Punjab,Rice cultivation,0.46358
+Rahim Yar Khan,punjab_rahim_yar_khan,Punjab,Rice cultivation,0.12514
+Rajanpur,punjab_rajanpur,Punjab,Rice cultivation,0.09661
+Rawalpindi,punjab_rawalpindi,Punjab,Rice cultivation,0.00193
+Sahiwal,punjab_sahiwal,Punjab,Rice cultivation,0.2322
+Sargodha,punjab_sargodha,Punjab,Rice cultivation,0.37917
+Sheikhpura,punjab_sheikhupura,Punjab,Rice cultivation,2.02138
+Sialkot,punjab_sialkot,Punjab,Rice cultivation,1.0063
+Toba Tek Singh,punjab_toba_tek_singh,Punjab,Rice cultivation,0.3323
+Vihari,punjab_vehari,Punjab,Rice cultivation,0.29081
+Badin,sindh_badin,Sindh,Rice cultivation,0.51098
+Dadu,sindh_dadu,Sindh,Rice cultivation,0.158
+Ghotki,sindh_ghotki,Sindh,Rice cultivation,0.0
+Hyderabad,sindh_hyderabad,Sindh,Rice cultivation,0.04572
+Jacobabad,sindh_jacobabad,Sindh,Rice cultivation,0.33982
+Jamshoro,sindh_jamshoro,Sindh,Rice cultivation,0.00214
+Karachi,sindh_karachi_legacy,Sindh,Rice cultivation,0.0
+Kashmore,sindh_kashmore,Sindh,Rice cultivation,0.34432
+Khairpur,sindh_khairpur,Sindh,Rice cultivation,0.00047
+Matiari,sindh_matiari,Sindh,Rice cultivation,1e-05
+Mirpurkhas,sindh_mirpur_khas,Sindh,Rice cultivation,0.05101
+Naushehro Feroze,sindh_naushahro_feroze,Sindh,Rice cultivation,0.02383
+Nawabshah,sindh_shaheed_benazirabad,Sindh,Rice cultivation,0.00808
+Qambar Shahdadkot,sindh_kambar_shahdad_kot,Sindh,Rice cultivation,0.8538
+Sanghar,sindh_sanghar,Sindh,Rice cultivation,0.05791
+Shikarpur,sindh_shikarpur,Sindh,Rice cultivation,0.51929
+Sukkur,sindh_sukkur,Sindh,Rice cultivation,4e-05
+Tando Allahyar,sindh_tando_allahyar,Sindh,Rice cultivation,0.06429
+Tando Muhammad Khan,sindh_tando_muhammad_khan,Sindh,Rice cultivation,0.12143
+Tharparkar,sindh_tharparkar,Sindh,Rice cultivation,0.13795
+Thatta,sindh_thatta,Sindh,Rice cultivation,0.01355
+Umerkot,sindh_umer_kot,Sindh,Rice cultivation,0.10669
+Abbottabad,kp_abbottabad,Khyber Pakhtunkhwa,Rice cultivation,0.01132
+Bajaur,kp_bajaur,Khyber Pakhtunkhwa,Rice cultivation,0.02167
+Bannu,kp_bannu,Khyber Pakhtunkhwa,Rice cultivation,0.00562
+Battagram,kp_batagram,Khyber Pakhtunkhwa,Rice cultivation,0.0
+Buner,kp_buner,Khyber Pakhtunkhwa,Rice cultivation,0.00093
+Charsadda,kp_charsadda,Khyber Pakhtunkhwa,Rice cultivation,0.00034
+Chitral,kp_chitral_legacy,Khyber Pakhtunkhwa,Rice cultivation,0.0
+Dera Ismail Khan,kp_dera_ismail_khan,Khyber Pakhtunkhwa,Rice cultivation,0.05357
+Hangu,kp_hangu,Khyber Pakhtunkhwa,Rice cultivation,0.00019
+Haripur,kp_haripur,Khyber Pakhtunkhwa,Rice cultivation,0.04164
+Karak,kp_karak,Khyber Pakhtunkhwa,Rice cultivation,0.0
+Khyber,kp_khyber,Khyber Pakhtunkhwa,Rice cultivation,0.0
+Kohat,kp_kohat,Khyber Pakhtunkhwa,Rice cultivation,0.00012
+Kohistan,kp_kohistan_legacy,Khyber Pakhtunkhwa,Rice cultivation,0.00037
+Kurram,kp_kurram,Khyber Pakhtunkhwa,Rice cultivation,0.02987
+Lakki Marwat,kp_lakki_marwat,Khyber Pakhtunkhwa,Rice cultivation,0.00181
+Lower Dir,kp_lower_dir,Khyber Pakhtunkhwa,Rice cultivation,0.03582
+Malakand,kp_malakand_protected_area,Khyber Pakhtunkhwa,Rice cultivation,0.02234
+Mansehra,kp_mansehra,Khyber Pakhtunkhwa,Rice cultivation,2e-05
+Mardan,kp_mardan,Khyber Pakhtunkhwa,Rice cultivation,0.01096
+Mohmand,kp_mohmand,Khyber Pakhtunkhwa,Rice cultivation,0.01053
+North Waziristan,kp_north_waziristan,Khyber Pakhtunkhwa,Rice cultivation,0.00796
+Nowshera,kp_nowshera,Khyber Pakhtunkhwa,Rice cultivation,0.00068
+Orakzai,kp_orakzai,Khyber Pakhtunkhwa,Rice cultivation,0.00033
+Peshawar,kp_peshawar,Khyber Pakhtunkhwa,Rice cultivation,0.0016
+Shangla,kp_shangla,Khyber Pakhtunkhwa,Rice cultivation,0.0
+South Waziristan,kp_south_waziristan,Khyber Pakhtunkhwa,Rice cultivation,1e-05
+Swabi,kp_swabi,Khyber Pakhtunkhwa,Rice cultivation,0.00308
+Swat,kp_swat,Khyber Pakhtunkhwa,Rice cultivation,0.00247
+Tank,kp_tank,Khyber Pakhtunkhwa,Rice cultivation,0.00128
+Upper Dir,kp_upper_dir,Khyber Pakhtunkhwa,Rice cultivation,0.04988
+Awaran,balochistan_awaran,Balochistan,Rice cultivation,0.00102
+Barkhan,balochistan_barkhan,Balochistan,Rice cultivation,0.01135
+Chagai,balochistan_chagai,Balochistan,Rice cultivation,0.00729
+Dera Bugti,balochistan_dera_bugti,Balochistan,Rice cultivation,0.00729
+Gwadar,balochistan_gwadar,Balochistan,Rice cultivation,0.0
+Jafarabad,balochistan_jaffarabad,Balochistan,Rice cultivation,0.24652
+Jhal Magsi,balochistan_jhal_magsi,Balochistan,Rice cultivation,0.02941
+Kachhi,balochistan_kachhi,Balochistan,Rice cultivation,0.02416
+Kalat,balochistan_kalat,Balochistan,Rice cultivation,0.00111
+Kech,balochistan_kech,Balochistan,Rice cultivation,0.00317
+Kharan,balochistan_kharan,Balochistan,Rice cultivation,9e-05
+Khuzdar,balochistan_khuzdar,Balochistan,Rice cultivation,0.00389
+Kohlu,balochistan_kohlu,Balochistan,Rice cultivation,0.02078
+Lasbela,balochistan_lasbela,Balochistan,Rice cultivation,0.012
+Loralai,balochistan_loralai,Balochistan,Rice cultivation,0.01315
+Mastung,balochistan_mastung,Balochistan,Rice cultivation,0.00042
+Musakhel,balochistan_musakhel,Balochistan,Rice cultivation,0.0067
+Nasirabad,balochistan_nasirabad,Balochistan,Rice cultivation,0.30757
+Nushki,balochistan_nushki,Balochistan,Rice cultivation,2e-05
+Panjgur,balochistan_panjgur,Balochistan,Rice cultivation,0.0
+Pishin,balochistan_pishin,Balochistan,Rice cultivation,0.0
+Qilla Abdullah,balochistan_killa_abdullah,Balochistan,Rice cultivation,4e-05
+Qilla Saifullah,balochistan_killa_saifullah,Balochistan,Rice cultivation,0.0
+Quetta,balochistan_quetta,Balochistan,Rice cultivation,4e-05
+Sibi,balochistan_sibi,Balochistan,Rice cultivation,0.01523
+Zhob,balochistan_zhob,Balochistan,Rice cultivation,0.0003
+Ziarat,balochistan_ziarat,Balochistan,Rice cultivation,3e-05
+Other (GB/AJK/ICT residual),other_residual,Other,Rice cultivation,0.0
+Attock,punjab_attock,Punjab,Managed soils,0.36613
+Bahawalnagar,punjab_bahawalnagar,Punjab,Managed soils,0.72434
+Bahawalpur,punjab_bahawalpur,Punjab,Managed soils,0.88244
+Bhakkar,punjab_bhakkar,Punjab,Managed soils,0.40576
+Chakwal,punjab_chakwal,Punjab,Managed soils,0.37002
+Dera Ghazi Khan,punjab_dera_ghazi_khan,Punjab,Managed soils,0.45638
+Faisalabad,punjab_faisalabad,Punjab,Managed soils,0.51395
+Gujranwala,punjab_gujranwala,Punjab,Managed soils,0.32497
+Gujrat,punjab_gujrat,Punjab,Managed soils,0.36418
+Hafizabad,punjab_hafizabad,Punjab,Managed soils,0.25836
+Jhang,punjab_jhang,Punjab,Managed soils,0.81903
+Jhelum,punjab_jhelum,Punjab,Managed soils,0.23208
+Kasur,punjab_kasur,Punjab,Managed soils,0.4472
+Khanewal,punjab_khanewal,Punjab,Managed soils,0.47696
+Khushab,punjab_khushab,Punjab,Managed soils,0.36363
+Lahore,punjab_lahore,Punjab,Managed soils,0.13989
+Layyah,punjab_layyah,Punjab,Managed soils,0.58848
+Lodhran,punjab_lodhran,Punjab,Managed soils,0.37739
+Mandi Bahauddin,punjab_mandi_bahauddin,Punjab,Managed soils,0.38184
+Mianwali,punjab_mianwali,Punjab,Managed soils,0.50018
+Multan,punjab_multan,Punjab,Managed soils,0.39464
+Muzaffargarh,punjab_muzaffargarh,Punjab,Managed soils,0.87549
+Narowal,punjab_narowal,Punjab,Managed soils,0.37002
+Okara,punjab_okara,Punjab,Managed soils,0.4942
+Pakpattan,punjab_pakpattan,Punjab,Managed soils,0.35723
+Rahim Yar Khan,punjab_rahim_yar_khan,Punjab,Managed soils,0.83127
+Rajanpur,punjab_rajanpur,Punjab,Managed soils,0.67567
+Rawalpindi,punjab_rawalpindi,Punjab,Managed soils,0.42954
+Sahiwal,punjab_sahiwal,Punjab,Managed soils,0.41883
+Sargodha,punjab_sargodha,Punjab,Managed soils,0.77745
+Sheikhpura,punjab_sheikhupura,Punjab,Managed soils,0.93917
+Sialkot,punjab_sialkot,Punjab,Managed soils,0.44553
+Toba Tek Singh,punjab_toba_tek_singh,Punjab,Managed soils,0.46945
+Vihari,punjab_vehari,Punjab,Managed soils,0.59488
+Badin,sindh_badin,Sindh,Managed soils,0.48307
+Dadu,sindh_dadu,Sindh,Managed soils,0.32329
+Ghotki,sindh_ghotki,Sindh,Managed soils,0.24738
+Hyderabad,sindh_hyderabad,Sindh,Managed soils,0.11945
+Jacobabad,sindh_jacobabad,Sindh,Managed soils,0.18765
+Jamshoro,sindh_jamshoro,Sindh,Managed soils,0.13846
+Karachi,sindh_karachi_legacy,Sindh,Managed soils,0.02273
+Kashmore,sindh_kashmore,Sindh,Managed soils,0.33087
+Khairpur,sindh_khairpur,Sindh,Managed soils,0.24648
+Matiari,sindh_matiari,Sindh,Managed soils,0.07193
+Mirpurkhas,sindh_mirpur_khas,Sindh,Managed soils,0.22105
+Naushehro Feroze,sindh_naushahro_feroze,Sindh,Managed soils,0.34962
+Nawabshah,sindh_shaheed_benazirabad,Sindh,Managed soils,0.378
+Qambar Shahdadkot,sindh_kambar_shahdad_kot,Sindh,Managed soils,0.66135
+Sanghar,sindh_sanghar,Sindh,Managed soils,0.58801
+Shikarpur,sindh_shikarpur,Sindh,Managed soils,0.26356
+Sukkur,sindh_sukkur,Sindh,Managed soils,0.24083
+Tando Allahyar,sindh_tando_allahyar,Sindh,Managed soils,0.18483
+Tando Muhammad Khan,sindh_tando_muhammad_khan,Sindh,Managed soils,0.15657
+Tharparkar,sindh_tharparkar,Sindh,Managed soils,0.30749
+Thatta,sindh_thatta,Sindh,Managed soils,0.56515
+Umerkot,sindh_umer_kot,Sindh,Managed soils,0.26382
+Abbottabad,kp_abbottabad,Khyber Pakhtunkhwa,Managed soils,0.01133
+Bajaur,kp_bajaur,Khyber Pakhtunkhwa,Managed soils,0.06571
+Bannu,kp_bannu,Khyber Pakhtunkhwa,Managed soils,0.06341
+Battagram,kp_batagram,Khyber Pakhtunkhwa,Managed soils,0.00214
+Buner,kp_buner,Khyber Pakhtunkhwa,Managed soils,0.04912
+Charsadda,kp_charsadda,Khyber Pakhtunkhwa,Managed soils,0.04123
+Chitral,kp_chitral_legacy,Khyber Pakhtunkhwa,Managed soils,0.00575
+Dera Ismail Khan,kp_dera_ismail_khan,Khyber Pakhtunkhwa,Managed soils,0.61355
+Hangu,kp_hangu,Khyber Pakhtunkhwa,Managed soils,0.01561
+Haripur,kp_haripur,Khyber Pakhtunkhwa,Managed soils,0.08756
+Karak,kp_karak,Khyber Pakhtunkhwa,Managed soils,0.05684
+Khyber,kp_khyber,Khyber Pakhtunkhwa,Managed soils,0.02152
+Kohat,kp_kohat,Khyber Pakhtunkhwa,Managed soils,0.08246
+Kohistan,kp_kohistan_legacy,Khyber Pakhtunkhwa,Managed soils,0.00181
+Kurram,kp_kurram,Khyber Pakhtunkhwa,Managed soils,0.05092
+Lakki Marwat,kp_lakki_marwat,Khyber Pakhtunkhwa,Managed soils,0.16427
+Lower Dir,kp_lower_dir,Khyber Pakhtunkhwa,Managed soils,0.06916
+Malakand,kp_malakand_protected_area,Khyber Pakhtunkhwa,Managed soils,0.03335
+Mansehra,kp_mansehra,Khyber Pakhtunkhwa,Managed soils,0.04895
+Mardan,kp_mardan,Khyber Pakhtunkhwa,Managed soils,0.13585
+Mohmand,kp_mohmand,Khyber Pakhtunkhwa,Managed soils,0.09823
+North Waziristan,kp_north_waziristan,Khyber Pakhtunkhwa,Managed soils,0.07294
+Nowshera,kp_nowshera,Khyber Pakhtunkhwa,Managed soils,0.07984
+Orakzai,kp_orakzai,Khyber Pakhtunkhwa,Managed soils,0.06554
+Peshawar,kp_peshawar,Khyber Pakhtunkhwa,Managed soils,0.10579
+Shangla,kp_shangla,Khyber Pakhtunkhwa,Managed soils,0.00082
+South Waziristan,kp_south_waziristan,Khyber Pakhtunkhwa,Managed soils,0.03335
+Swabi,kp_swabi,Khyber Pakhtunkhwa,Managed soils,0.18218
+Swat,kp_swat,Khyber Pakhtunkhwa,Managed soils,0.0386
+Tank,kp_tank,Khyber Pakhtunkhwa,Managed soils,0.14505
+Upper Dir,kp_upper_dir,Khyber Pakhtunkhwa,Managed soils,0.01199
+Awaran,balochistan_awaran,Balochistan,Managed soils,0.02144
+Barkhan,balochistan_barkhan,Balochistan,Managed soils,0.05453
+Chagai,balochistan_chagai,Balochistan,Managed soils,0.02828
+Dera Bugti,balochistan_dera_bugti,Balochistan,Managed soils,0.05484
+Gwadar,balochistan_gwadar,Balochistan,Managed soils,0.00031
+Jafarabad,balochistan_jaffarabad,Balochistan,Managed soils,0.33808
+Jhal Magsi,balochistan_jhal_magsi,Balochistan,Managed soils,0.21642
+Kachhi,balochistan_kachhi,Balochistan,Managed soils,0.39276
+Kalat,balochistan_kalat,Balochistan,Managed soils,0.0623
+Kech,balochistan_kech,Balochistan,Managed soils,0.02144
+Kharan,balochistan_kharan,Balochistan,Managed soils,0.07333
+Khuzdar,balochistan_khuzdar,Balochistan,Managed soils,0.14853
+Kohlu,balochistan_kohlu,Balochistan,Managed soils,0.03589
+Lasbela,balochistan_lasbela,Balochistan,Managed soils,0.13393
+Loralai,balochistan_loralai,Balochistan,Managed soils,0.09446
+Mastung,balochistan_mastung,Balochistan,Managed soils,0.06044
+Musakhel,balochistan_musakhel,Balochistan,Managed soils,0.03263
+Nasirabad,balochistan_nasirabad,Balochistan,Managed soils,0.46765
+Nushki,balochistan_nushki,Balochistan,Managed soils,0.0233
+Panjgur,balochistan_panjgur,Balochistan,Managed soils,0.00855
+Pishin,balochistan_pishin,Balochistan,Managed soils,0.03138
+Qilla Abdullah,balochistan_killa_abdullah,Balochistan,Managed soils,0.04148
+Qilla Saifullah,balochistan_killa_saifullah,Balochistan,Managed soils,0.094
+Quetta,balochistan_quetta,Balochistan,Managed soils,0.02315
+Sibi,balochistan_sibi,Balochistan,Managed soils,0.12289
+Zhob,balochistan_zhob,Balochistan,Managed soils,0.02703
+Ziarat,balochistan_ziarat,Balochistan,Managed soils,0.00171
+Other (GB/AJK/ICT residual),other_residual,Other,Managed soils,0.04215
+Attock,punjab_attock,Punjab,Field burning of residues,0.00465
+Bahawalnagar,punjab_bahawalnagar,Punjab,Field burning of residues,0.01004
+Bahawalpur,punjab_bahawalpur,Punjab,Field burning of residues,0.01193
+Bhakkar,punjab_bhakkar,Punjab,Field burning of residues,0.00623
+Chakwal,punjab_chakwal,Punjab,Field burning of residues,0.00606
+Dera Ghazi Khan,punjab_dera_ghazi_khan,Punjab,Field burning of residues,0.0099
+Faisalabad,punjab_faisalabad,Punjab,Field burning of residues,0.005
+Gujranwala,punjab_gujranwala,Punjab,Field burning of residues,0.02814
+Gujrat,punjab_gujrat,Punjab,Field burning of residues,0.00803
+Hafizabad,punjab_hafizabad,Punjab,Field burning of residues,0.03031
+Jhang,punjab_jhang,Punjab,Field burning of residues,0.0425
+Jhelum,punjab_jhelum,Punjab,Field burning of residues,0.00325
+Kasur,punjab_kasur,Punjab,Field burning of residues,0.02299
+Khanewal,punjab_khanewal,Punjab,Field burning of residues,0.01212
+Khushab,punjab_khushab,Punjab,Field burning of residues,0.00319
+Lahore,punjab_lahore,Punjab,Field burning of residues,0.00313
+Layyah,punjab_layyah,Punjab,Field burning of residues,0.01263
+Lodhran,punjab_lodhran,Punjab,Field burning of residues,0.00533
+Mandi Bahauddin,punjab_mandi_bahauddin,Punjab,Field burning of residues,0.01917
+Mianwali,punjab_mianwali,Punjab,Field burning of residues,0.00538
+Multan,punjab_multan,Punjab,Field burning of residues,0.00346
+Muzaffargarh,punjab_muzaffargarh,Punjab,Field burning of residues,0.02634
+Narowal,punjab_narowal,Punjab,Field burning of residues,0.0279
+Okara,punjab_okara,Punjab,Field burning of residues,0.02252
+Pakpattan,punjab_pakpattan,Punjab,Field burning of residues,0.00872
+Rahim Yar Khan,punjab_rahim_yar_khan,Punjab,Field burning of residues,0.0177
+Rajanpur,punjab_rajanpur,Punjab,Field burning of residues,0.02116
+Rawalpindi,punjab_rawalpindi,Punjab,Field burning of residues,0.00925
+Sahiwal,punjab_sahiwal,Punjab,Field burning of residues,0.00178
+Sargodha,punjab_sargodha,Punjab,Field burning of residues,0.01691
+Sheikhpura,punjab_sheikhupura,Punjab,Field burning of residues,0.05826
+Sialkot,punjab_sialkot,Punjab,Field burning of residues,0.02894
+Toba Tek Singh,punjab_toba_tek_singh,Punjab,Field burning of residues,0.00655
+Vihari,punjab_vehari,Punjab,Field burning of residues,0.00671
+Badin,sindh_badin,Sindh,Field burning of residues,0.00335
+Dadu,sindh_dadu,Sindh,Field burning of residues,0.0019
+Ghotki,sindh_ghotki,Sindh,Field burning of residues,0.00638
+Hyderabad,sindh_hyderabad,Sindh,Field burning of residues,0.00342
+Jacobabad,sindh_jacobabad,Sindh,Field burning of residues,0.0012
+Jamshoro,sindh_jamshoro,Sindh,Field burning of residues,0.00234
+Karachi,sindh_karachi_legacy,Sindh,Field burning of residues,0.00058
+Kashmore,sindh_kashmore,Sindh,Field burning of residues,0.01275
+Khairpur,sindh_khairpur,Sindh,Field burning of residues,0.00279
+Matiari,sindh_matiari,Sindh,Field burning of residues,0.00086
+Mirpurkhas,sindh_mirpur_khas,Sindh,Field burning of residues,0.00249
+Naushehro Feroze,sindh_naushahro_feroze,Sindh,Field burning of residues,0.00649
+Nawabshah,sindh_shaheed_benazirabad,Sindh,Field burning of residues,0.00791
+Qambar Shahdadkot,sindh_kambar_shahdad_kot,Sindh,Field burning of residues,0.02077
+Sanghar,sindh_sanghar,Sindh,Field burning of residues,0.01086
+Shikarpur,sindh_shikarpur,Sindh,Field burning of residues,0.00567
+Sukkur,sindh_sukkur,Sindh,Field burning of residues,0.00495
+Tando Allahyar,sindh_tando_allahyar,Sindh,Field burning of residues,0.00446
+Tando Muhammad Khan,sindh_tando_muhammad_khan,Sindh,Field burning of residues,0.00218
+Tharparkar,sindh_tharparkar,Sindh,Field burning of residues,0.00081
+Thatta,sindh_thatta,Sindh,Field burning of residues,0.00991
+Umerkot,sindh_umer_kot,Sindh,Field burning of residues,0.00175
+Abbottabad,kp_abbottabad,Khyber Pakhtunkhwa,Field burning of residues,0.00046
+Bajaur,kp_bajaur,Khyber Pakhtunkhwa,Field burning of residues,7e-05
+Bannu,kp_bannu,Khyber Pakhtunkhwa,Field burning of residues,3e-05
+Battagram,kp_batagram,Khyber Pakhtunkhwa,Field burning of residues,2e-05
+Buner,kp_buner,Khyber Pakhtunkhwa,Field burning of residues,0.00044
+Charsadda,kp_charsadda,Khyber Pakhtunkhwa,Field burning of residues,5e-05
+Chitral,kp_chitral_legacy,Khyber Pakhtunkhwa,Field burning of residues,0.0
+Dera Ismail Khan,kp_dera_ismail_khan,Khyber Pakhtunkhwa,Field burning of residues,0.0159
+Hangu,kp_hangu,Khyber Pakhtunkhwa,Field burning of residues,0.00039
+Haripur,kp_haripur,Khyber Pakhtunkhwa,Field burning of residues,0.00176
+Karak,kp_karak,Khyber Pakhtunkhwa,Field burning of residues,0.00019
+Khyber,kp_khyber,Khyber Pakhtunkhwa,Field burning of residues,0.00031
+Kohat,kp_kohat,Khyber Pakhtunkhwa,Field burning of residues,0.00093
+Kohistan,kp_kohistan_legacy,Khyber Pakhtunkhwa,Field burning of residues,2e-05
+Kurram,kp_kurram,Khyber Pakhtunkhwa,Field burning of residues,0.00209
+Lakki Marwat,kp_lakki_marwat,Khyber Pakhtunkhwa,Field burning of residues,0.00027
+Lower Dir,kp_lower_dir,Khyber Pakhtunkhwa,Field burning of residues,0.00015
+Malakand,kp_malakand_protected_area,Khyber Pakhtunkhwa,Field burning of residues,0.00027
+Mansehra,kp_mansehra,Khyber Pakhtunkhwa,Field burning of residues,0.00262
+Mardan,kp_mardan,Khyber Pakhtunkhwa,Field burning of residues,0.00095
+Mohmand,kp_mohmand,Khyber Pakhtunkhwa,Field burning of residues,0.00019
+North Waziristan,kp_north_waziristan,Khyber Pakhtunkhwa,Field burning of residues,0.00033
+Nowshera,kp_nowshera,Khyber Pakhtunkhwa,Field burning of residues,0.00023
+Orakzai,kp_orakzai,Khyber Pakhtunkhwa,Field burning of residues,0.00124
+Peshawar,kp_peshawar,Khyber Pakhtunkhwa,Field burning of residues,0.00011
+Shangla,kp_shangla,Khyber Pakhtunkhwa,Field burning of residues,0.00023
+South Waziristan,kp_south_waziristan,Khyber Pakhtunkhwa,Field burning of residues,0.00023
+Swabi,kp_swabi,Khyber Pakhtunkhwa,Field burning of residues,0.00078
+Swat,kp_swat,Khyber Pakhtunkhwa,Field burning of residues,0.00044
+Tank,kp_tank,Khyber Pakhtunkhwa,Field burning of residues,0.00141
+Upper Dir,kp_upper_dir,Khyber Pakhtunkhwa,Field burning of residues,3e-05
+Awaran,balochistan_awaran,Balochistan,Field burning of residues,3e-05
+Barkhan,balochistan_barkhan,Balochistan,Field burning of residues,0.00017
+Chagai,balochistan_chagai,Balochistan,Field burning of residues,0.0
+Dera Bugti,balochistan_dera_bugti,Balochistan,Field burning of residues,0.00014
+Gwadar,balochistan_gwadar,Balochistan,Field burning of residues,0.0
+Jafarabad,balochistan_jaffarabad,Balochistan,Field burning of residues,0.00102
+Jhal Magsi,balochistan_jhal_magsi,Balochistan,Field burning of residues,0.00418
+Kachhi,balochistan_kachhi,Balochistan,Field burning of residues,0.00515
+Kalat,balochistan_kalat,Balochistan,Field burning of residues,9e-05
+Kech,balochistan_kech,Balochistan,Field burning of residues,0.00012
+Kharan,balochistan_kharan,Balochistan,Field burning of residues,0.0
+Khuzdar,balochistan_khuzdar,Balochistan,Field burning of residues,0.00036
+Kohlu,balochistan_kohlu,Balochistan,Field burning of residues,5e-05
+Lasbela,balochistan_lasbela,Balochistan,Field burning of residues,0.00074
+Loralai,balochistan_loralai,Balochistan,Field burning of residues,0.0003
+Mastung,balochistan_mastung,Balochistan,Field burning of residues,0.0
+Musakhel,balochistan_musakhel,Balochistan,Field burning of residues,0.00021
+Nasirabad,balochistan_nasirabad,Balochistan,Field burning of residues,0.00379
+Nushki,balochistan_nushki,Balochistan,Field burning of residues,0.0
+Panjgur,balochistan_panjgur,Balochistan,Field burning of residues,1e-05
+Pishin,balochistan_pishin,Balochistan,Field burning of residues,0.0
+Qilla Abdullah,balochistan_killa_abdullah,Balochistan,Field burning of residues,0.0
+Qilla Saifullah,balochistan_killa_saifullah,Balochistan,Field burning of residues,1e-05
+Quetta,balochistan_quetta,Balochistan,Field burning of residues,0.0
+Sibi,balochistan_sibi,Balochistan,Field burning of residues,0.00087
+Zhob,balochistan_zhob,Balochistan,Field burning of residues,0.00014
+Ziarat,balochistan_ziarat,Balochistan,Field burning of residues,1e-05
+Other (GB/AJK/ICT residual),other_residual,Other,Field burning of residues,0.0
+Attock,punjab_attock,Punjab,Urea application,0.07183
+Bahawalnagar,punjab_bahawalnagar,Punjab,Urea application,0.1421
+Bahawalpur,punjab_bahawalpur,Punjab,Urea application,0.17312
+Bhakkar,punjab_bhakkar,Punjab,Urea application,0.0796
+Chakwal,punjab_chakwal,Punjab,Urea application,0.07259
+Dera Ghazi Khan,punjab_dera_ghazi_khan,Punjab,Urea application,0.08953
+Faisalabad,punjab_faisalabad,Punjab,Urea application,0.10083
+Gujranwala,punjab_gujranwala,Punjab,Urea application,0.06375
+Gujrat,punjab_gujrat,Punjab,Urea application,0.07145
+Hafizabad,punjab_hafizabad,Punjab,Urea application,0.05069
+Jhang,punjab_jhang,Punjab,Urea application,0.16068
+Jhelum,punjab_jhelum,Punjab,Urea application,0.04553
+Kasur,punjab_kasur,Punjab,Urea application,0.08773
+Khanewal,punjab_khanewal,Punjab,Urea application,0.09357
+Khushab,punjab_khushab,Punjab,Urea application,0.07134
+Lahore,punjab_lahore,Punjab,Urea application,0.02744
+Layyah,punjab_layyah,Punjab,Urea application,0.11545
+Lodhran,punjab_lodhran,Punjab,Urea application,0.07404
+Mandi Bahauddin,punjab_mandi_bahauddin,Punjab,Urea application,0.07491
+Mianwali,punjab_mianwali,Punjab,Urea application,0.09813
+Multan,punjab_multan,Punjab,Urea application,0.07742
+Muzaffargarh,punjab_muzaffargarh,Punjab,Urea application,0.17176
+Narowal,punjab_narowal,Punjab,Urea application,0.07259
+Okara,punjab_okara,Punjab,Urea application,0.09695
+Pakpattan,punjab_pakpattan,Punjab,Urea application,0.07008
+Rahim Yar Khan,punjab_rahim_yar_khan,Punjab,Urea application,0.16308
+Rajanpur,punjab_rajanpur,Punjab,Urea application,0.13255
+Rawalpindi,punjab_rawalpindi,Punjab,Urea application,0.08427
+Sahiwal,punjab_sahiwal,Punjab,Urea application,0.08217
+Sargodha,punjab_sargodha,Punjab,Urea application,0.15252
+Sheikhpura,punjab_sheikhupura,Punjab,Urea application,0.18425
+Sialkot,punjab_sialkot,Punjab,Urea application,0.08741
+Toba Tek Singh,punjab_toba_tek_singh,Punjab,Urea application,0.0921
+Vihari,punjab_vehari,Punjab,Urea application,0.11671
+Badin,sindh_badin,Sindh,Urea application,0.08476
+Dadu,sindh_dadu,Sindh,Urea application,0.05672
+Ghotki,sindh_ghotki,Sindh,Urea application,0.04341
+Hyderabad,sindh_hyderabad,Sindh,Urea application,0.02096
+Jacobabad,sindh_jacobabad,Sindh,Urea application,0.03293
+Jamshoro,sindh_jamshoro,Sindh,Urea application,0.02429
+Karachi,sindh_karachi_legacy,Sindh,Urea application,0.00399
+Kashmore,sindh_kashmore,Sindh,Urea application,0.05805
+Khairpur,sindh_khairpur,Sindh,Urea application,0.04325
+Matiari,sindh_matiari,Sindh,Urea application,0.01262
+Mirpurkhas,sindh_mirpur_khas,Sindh,Urea application,0.03879
+Naushehro Feroze,sindh_naushahro_feroze,Sindh,Urea application,0.06134
+Nawabshah,sindh_shaheed_benazirabad,Sindh,Urea application,0.06633
+Qambar Shahdadkot,sindh_kambar_shahdad_kot,Sindh,Urea application,0.11604
+Sanghar,sindh_sanghar,Sindh,Urea application,0.10317
+Shikarpur,sindh_shikarpur,Sindh,Urea application,0.04625
+Sukkur,sindh_sukkur,Sindh,Urea application,0.04226
+Tando Allahyar,sindh_tando_allahyar,Sindh,Urea application,0.03243
+Tando Muhammad Khan,sindh_tando_muhammad_khan,Sindh,Urea application,0.02747
+Tharparkar,sindh_tharparkar,Sindh,Urea application,0.05395
+Thatta,sindh_thatta,Sindh,Urea application,0.09916
+Umerkot,sindh_umer_kot,Sindh,Urea application,0.04629
+Abbottabad,kp_abbottabad,Khyber Pakhtunkhwa,Urea application,0.00094
+Bajaur,kp_bajaur,Khyber Pakhtunkhwa,Urea application,0.00542
+Bannu,kp_bannu,Khyber Pakhtunkhwa,Urea application,0.00523
+Battagram,kp_batagram,Khyber Pakhtunkhwa,Urea application,0.00018
+Buner,kp_buner,Khyber Pakhtunkhwa,Urea application,0.00405
+Charsadda,kp_charsadda,Khyber Pakhtunkhwa,Urea application,0.0034
+Chitral,kp_chitral_legacy,Khyber Pakhtunkhwa,Urea application,0.00047
+Dera Ismail Khan,kp_dera_ismail_khan,Khyber Pakhtunkhwa,Urea application,0.05064
+Hangu,kp_hangu,Khyber Pakhtunkhwa,Urea application,0.00129
+Haripur,kp_haripur,Khyber Pakhtunkhwa,Urea application,0.00723
+Karak,kp_karak,Khyber Pakhtunkhwa,Urea application,0.00469
+Khyber,kp_khyber,Khyber Pakhtunkhwa,Urea application,0.00178
+Kohat,kp_kohat,Khyber Pakhtunkhwa,Urea application,0.00681
+Kohistan,kp_kohistan_legacy,Khyber Pakhtunkhwa,Urea application,0.00015
+Kurram,kp_kurram,Khyber Pakhtunkhwa,Urea application,0.0042
+Lakki Marwat,kp_lakki_marwat,Khyber Pakhtunkhwa,Urea application,0.01356
+Lower Dir,kp_lower_dir,Khyber Pakhtunkhwa,Urea application,0.00571
+Malakand,kp_malakand_protected_area,Khyber Pakhtunkhwa,Urea application,0.00275
+Mansehra,kp_mansehra,Khyber Pakhtunkhwa,Urea application,0.00404
+Mardan,kp_mardan,Khyber Pakhtunkhwa,Urea application,0.01121
+Mohmand,kp_mohmand,Khyber Pakhtunkhwa,Urea application,0.00811
+North Waziristan,kp_north_waziristan,Khyber Pakhtunkhwa,Urea application,0.00602
+Nowshera,kp_nowshera,Khyber Pakhtunkhwa,Urea application,0.00659
+Orakzai,kp_orakzai,Khyber Pakhtunkhwa,Urea application,0.00541
+Peshawar,kp_peshawar,Khyber Pakhtunkhwa,Urea application,0.00873
+Shangla,kp_shangla,Khyber Pakhtunkhwa,Urea application,7e-05
+South Waziristan,kp_south_waziristan,Khyber Pakhtunkhwa,Urea application,0.00275
+Swabi,kp_swabi,Khyber Pakhtunkhwa,Urea application,0.01504
+Swat,kp_swat,Khyber Pakhtunkhwa,Urea application,0.00319
+Tank,kp_tank,Khyber Pakhtunkhwa,Urea application,0.01197
+Upper Dir,kp_upper_dir,Khyber Pakhtunkhwa,Urea application,0.00099
+Awaran,balochistan_awaran,Balochistan,Urea application,0.00123
+Barkhan,balochistan_barkhan,Balochistan,Urea application,0.00312
+Chagai,balochistan_chagai,Balochistan,Urea application,0.00162
+Dera Bugti,balochistan_dera_bugti,Balochistan,Urea application,0.00314
+Gwadar,balochistan_gwadar,Balochistan,Urea application,2e-05
+Jafarabad,balochistan_jaffarabad,Balochistan,Urea application,0.01937
+Jhal Magsi,balochistan_jhal_magsi,Balochistan,Urea application,0.0124
+Kachhi,balochistan_kachhi,Balochistan,Urea application,0.0225
+Kalat,balochistan_kalat,Balochistan,Urea application,0.00357
+Kech,balochistan_kech,Balochistan,Urea application,0.00123
+Kharan,balochistan_kharan,Balochistan,Urea application,0.0042
+Khuzdar,balochistan_khuzdar,Balochistan,Urea application,0.00851
+Kohlu,balochistan_kohlu,Balochistan,Urea application,0.00206
+Lasbela,balochistan_lasbela,Balochistan,Urea application,0.00767
+Loralai,balochistan_loralai,Balochistan,Urea application,0.00541
+Mastung,balochistan_mastung,Balochistan,Urea application,0.00346
+Musakhel,balochistan_musakhel,Balochistan,Urea application,0.00187
+Nasirabad,balochistan_nasirabad,Balochistan,Urea application,0.02679
+Nushki,balochistan_nushki,Balochistan,Urea application,0.00134
+Panjgur,balochistan_panjgur,Balochistan,Urea application,0.00049
+Pishin,balochistan_pishin,Balochistan,Urea application,0.0018
+Qilla Abdullah,balochistan_killa_abdullah,Balochistan,Urea application,0.00238
+Qilla Saifullah,balochistan_killa_saifullah,Balochistan,Urea application,0.00538
+Quetta,balochistan_quetta,Balochistan,Urea application,0.00133
+Sibi,balochistan_sibi,Balochistan,Urea application,0.00704
+Zhob,balochistan_zhob,Balochistan,Urea application,0.00155
+Ziarat,balochistan_ziarat,Balochistan,Urea application,0.0001
+Other (GB/AJK/ICT residual),other_residual,Other,Urea application,0.00965

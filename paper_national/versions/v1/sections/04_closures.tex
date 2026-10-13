@@ -1,0 +1,242 @@
+% ===========================================================================
+\section{Four Enforced Accounting Closures}
+\label{sec:closures}
+% ===========================================================================
+
+Four quantities in this inventory are estimated once and consumed twice across an accounting
+boundary. In each case the conventional treatment is for each side to estimate its own share
+and for a methods document to assert that the two agree. Here each is a single number computed
+once and consumed twice, and the equality is asserted with \texttt{==} rather than with a
+tolerance, because a tolerance would permit exactly the drift the closure exists to prevent.
+
+The boundary is not the same kind of boundary in all four cases, and the distinction matters
+for what the technique transfers to. Two are \emph{transfers between modules}: a quantity
+leaves one sector's books and must arrive on another's. Two are \emph{partitions within one
+module}: a single total is divided between categories that are reported separately, and the
+parts must exhaust the whole. Calling all four cross-sector, as an earlier edition of this
+paper did, described the architecture more grandly than it works.
+
+The four are the closures enforced with \texttt{==}; they are not the whole of the
+inventory's cross-boundary accounting. The release publishes \num{8} ledgers in one schema
+(\texttt{data/cross\_sector\_ledger\_map.csv}, projected into the validation package's
+cross-sector registry with every value read from the sector ledger it points to), each with
+its control, its transfers and its unresolved rows: the four here, and the delivered-gas
+ledger across the metered modules---whose net-of-leakage alternative is priced in
+\texttt{outputs/national\_\allowbreak gas\_\allowbreak closure\_\allowbreak variant.csv},
+one row per configuration with the burned-and-leaked volume and the leaked share behind
+it---the fertiliser feedstock-to-urea ledger, the livestock
+nitrogen-excretion ledger and the crop-residue ledger, whose closures are asserted in their
+own modules' tests. An earlier edition counted only the four.
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{@{}p{0.40\linewidth}p{0.23\linewidth}p{0.27\linewidth}@{}}
+\toprule
+\textbf{Closure} & \textbf{Kind} & \textbf{Physical transfer} \\
+\midrule
+Dung-cake nitrogen, agriculture to residential &
+Cross-module transfer & Agriculture $\rightarrow$ Residential \\[2pt]
+Household-generator petrol, carved out of the road control &
+Cross-module transfer & Transport $\rightarrow$ Residential \\[2pt]
+Waste generation into disposal, uncollected and burned &
+Within-module fate closure & Waste categories \\[2pt]
+Road-class diesel into on-road and mixed off-road &
+Within-module category partition & Transport categories \\
+\bottomrule
+\end{tabular}
+\caption{The four closures by the kind of boundary each crosses. The enforcement is identical
+in all four cases---one computation, two consumers, exact equality---which is why the broader
+name \emph{cross-boundary accounting} is the transferable one. Arrows give the direction of
+the \emph{physical} transfer: the module whose books the quantity leaves to the module on
+whose books it arrives. For the generator-petrol row the software dependency runs the other
+way---the residential module computes the estimate and the transport module subtracts it
+from its road control (Section~\ref{sec:closure-generator}); for the dung row the two
+directions coincide.}
+\label{tab:closurekinds}
+\end{table}
+
+All four were known defects before they were closures. Each is documented as a limitation in
+an earlier version of this inventory---an orphaned flow, a double-counted fuel, an
+unpartitioned total---which is the point: the closures are not new physics but the conversion
+of four written-down warnings into four enforced properties.
+
+\subsection{Dung-cake nitrogen: agriculture to residential}
+\label{sec:closure-dung}
+
+Pakistani households burn cattle and buffalo dung as fuel. The agriculture sector has always
+accounted for this on the supply side, removing \SI{28}{\percent} of cattle and
+\SI{30}{\percent} of buffalo excreted nitrogen from the manure-management balance and
+reporting it with the notation key IE---included elsewhere---against the Energy sector. Until
+the residential sector existed, nothing was elsewhere. The nitrogen left agriculture's books
+and arrived nowhere: \SI{1.260}{\mega\tonne} of excreted nitrogen a year, correctly removed
+from one balance and never entered in another.
+
+The residential sector now receives it, and receives it as mass rather than as an estimate.
+The transfer runs through the same herd, the same species categories and the same
+burned-fuel shares that drive the agricultural removal, converted from nitrogen to volatile
+solids using IPCC's VS rates for the same animal categories and region that supply the
+nitrogen rates. The result is \SI{38.77}{\mega\tonne} of \emph{volatile solids}, which corresponds to
+\SI{58.74}{\mega\tonne} of air-dry dung cake under the declared moisture and ash basis.
+Volatile solids rather than total dung mass is the quantity the closure runs on, because VS is
+the organic fraction and dung ash carries no energy---but the two are not interchangeable, and
+an earlier edition called the VS figure ``dry matter burned as household fuel'', which reads
+as the mass a household actually handles and is \num{1.5} times smaller than it.
+
+The transfer fixes the diverted mass and not its destination. Of what the residential
+ledger receives, the reference burns in
+households the dung the household survey observes, \SI{10.93}{\mega\tonne} of air-dry cake,
+and the other \SI{47.81}{\mega\tonne} of the diversion has no observed destination: it is a
+typed unresolved row outside the total, with no emission applied, and
+Section~\ref{sec:bridge} prices its candidate destinations. Every release through rc66
+burned the whole diversion in households; that reading is retained beside
+\texttt{REF\_2023\_24} as configuration~L, a
+destination assumption for the diverted dung rather than a reading of household use.
+
+The identity is exact by construction: the diverted mass is a derivation from
+agriculture's own flow, and household combustion plus the unresolved remainder equals it.
+A change to the manure-management shares moves the diversion and the remainder together.
+
+The biogenic \COtwo{} from this fuel is reported as a memo item outside the national total,
+following IPCC's biomass convention and Pakistan's own stated practice in BUR-1
+\citep{pakbur1}. Its \CHfour{} and \NtwoO{} are counted: incomplete combustion is a real net
+source regardless of the carbon's origin.
+
+\subsection{Household generator petrol: carved out of the road control total}
+\label{sec:closure-generator}
+
+Pakistan's petroleum statistics report motor gasoline sold to a Road customer class. Not all
+of it moves a vehicle. Households running standby generators against load-shedding buy their
+petrol from the same forecourts and it is booked to the same class, so a road inventory
+anchored on that control silently includes stationary domestic generation, and a residential
+inventory that also estimates generator fuel counts it twice.
+
+The residential sector derives the quantity---\SI{56.33}{\kilo\tonne} of petrol in
+FY2023--24---from HIES generator-fuel expenditure divided by the administered pump price,
+and the transport sector subtracts exactly that figure from its road petrol control by
+calling the residential module rather than by holding a copy of the number. The two cannot
+drift apart, and the direction is the one that matters: the fuel is not deleted, it is
+reassigned from 1A3b to 1A4b, so the national total is unchanged and only the attribution
+moves.
+
+This closure replaced an earlier one. Until the transport sector was re-anchored on the
+petroleum statistics' own customer classes, it took a single national diesel supply figure as
+its control and subtracted the railway fuel account from it. That subtraction is now
+unnecessary---Railways is its own customer-class row, outside the Road row by
+construction---so the railway account was freed to do something better, and appears in
+Section~\ref{sec:benchmarks} as an independent cross-source check rather than as an internal
+correction. A closure that becomes structurally impossible is a closure that has been
+superseded by better source data, which is the outcome to want.
+
+\subsection{One waste stream, partitioned twice}
+\label{sec:closure-waste}
+
+Municipal solid waste generation is a single national quantity---\SI{31.56}{\mega\tonne} a
+year---that must be divided between the waste that reaches a disposal site and the waste that
+does not. Collection is \SI{50.3}{\percent}, so \SI{15.88}{\mega\tonne} enters the solid-waste
+disposal model as the current year's addition to the first-order-decay stock, and
+\SI{15.67}{\mega\tonne} remains uncollected, of which \SI{60}{\percent} is openly burned.
+
+\textbf{The partition is two-stage, and the second stage does not close into two parts.}
+Generation splits into collected and uncollected, $G = D + U$; the uncollected splits again
+into what is burned and what is not, $U = B + O$, and $O$---\SI{6.27}{\mega\tonne} dumped to
+land and waterways---is a declared unresolved fate rather than a category. Reporting disposal
+and burning as though they exhausted the stream would imply an inventory of \emph{everything}
+generated, which this is not.
+
+The two categories are computed from one generation figure and the partition is asserted to
+be exhaustive: disposed plus uncollected equals generated, exactly. The failure this prevents
+is the natural one. Open burning and solid-waste disposal are usually estimated from separate
+literature---a per-capita burning rate here, a landfill tonnage there---and nothing then
+forces their sum to be a quantity of waste the country actually generates. Under this
+construction, an argument about the collection rate moves emissions between two categories
+without changing how much waste exists.
+
+\subsection{One diesel total, partitioned between on-road and off-road}
+\label{sec:closure-offroad}
+
+The same road-class diesel row supports tractors, agricultural plant and---through the
+source data's residual bucket---construction machinery, which IPCC reports under 1A4c~ii
+and 1A2\,gvii and not under road transport. The transport sector's fleet model normalises
+vehicle-kilometre shares over all vehicle classes \emph{including} the off-road class,
+deliberately: renormalising after dropping off-road would hand the on-road classes
+\SI{100}{\percent} of the diesel while off-road separately claimed its own share,
+counting the same tonne twice.
+
+Mixed off-road machinery is therefore a reported category of \SI{1.73}{\mega\tonne}
+rather than the memo item it was, its name declaring the 1A4c/1A2 mixture, and the memo is
+asserted to be empty so that the same diesel cannot appear in both places. Since the
+August 2026 re-anchor the road control is OCAC's Road customer-class row, so the bulk
+non-road diesel claimants (industry, utilities, government, railways) are excluded by the
+source's own partition, and only the retail-channel agricultural and captive claims remain
+inside---carried as unresolved status rows of the transport fuel ledger.
+
+\subsection{The gas ledger, and the double-claim it prices}
+
+The natural-gas closure is the sharpest of the four, because its finding is a
+double-claim rather than a partition: the post-meter leakage factor rides delivered
+gas that four combustion claims burn \emph{in full}. OGRA's Table~3.31 partitions
+every delivered molecule by end use, and
+\texttt{outputs/national\_gas\_closure.csv} joins each class to the quantity the
+consuming module actually burns---the same publication's number for residential,
+general industry, cement, captive power and CNG (the build aborts if any pair
+drifts past rounding), and a printed different-meter reconciliation for grid power,
+whose NEPRA TOE activity is another publication's meter. On the
+\num{18685} million m$^3$ leak base, about \SI{114}{\kilo\tonne} of methane is
+claimed as leakage against delivered gas---about \SI{1.0}{\percent} of the same
+whole-gas mass. Until this release the reference booked that gas as combusted
+\emph{in full}, keeping both claims and saying so; the physical-atmosphere
+identity is now enforced in the booking itself: the four combustion claims book
+their gas rows net of the leaked whole-gas share, all three gases, because gas
+that leaves upstream of the burner tip produces none of them. The leaked
+molecules stay in the inventory where they physically go, as 1.B.2 fugitive
+methane---the netting removes a double-claim, not emissions. The administrative
+fuel-accounting view, in which the full metered delivery is booked as
+combusted for reconciliation against fuel-sales statistics, survives as the
+named joint configuration
+\emph{gross\_delivered\_gas\_accounting} (\SI{+0.288}{\mega\tonne}), applied to
+the gas rows the four modules book net. Two defects in the share's earlier
+derivation nearly cancelled and are corrected in the variant file: the leaked
+share divided methane mass by whole-gas mass, and the \COtwo{} base was
+imputed from delivered volumes rather than read from the modules. The
+sharpest inconsistency the ledger surfaced is removed from the reference in this
+release: through rc66 fertilizer feedstock leaked at a combustion-derived
+factor while being deliberately outside every combustion module. The factor is
+defined on gas consumed in combustion equipment, so the ledger now carries the
+fertilizer class as two rows. Feedstock---\SI{83.5}{\percent} of the class on
+NFDC's metered feed and fuel gas, and \SI{25.9}{\percent} of the leak base as it
+stood---is outside the base; process fuel, which is burned, stays inside it, its
+carbon booked by 2.B.1 on production. The earlier membership is retained and not
+defended as the fugitives scenario \emph{post\_meter\_including\_feedstock},
+which adds \SI{1.195}{\mega\tonne}; the \SI{+0.288}{\mega\tonne} above contains
+no fertilizer term and is not the size of this correction. The ledger does not
+close the fertilizer stream's carbon: a gas-carbon potential of
+\SIrange{13.2}{14.7}{\mega\tonne} \COtwo{} at the utility heating-value band
+stands against \SI{8.08}{\mega\tonne} gross booked by 2.B.1 on ammonia,
+published in \texttt{outputs/pakemis\_gas\_flow\_crosswalk.csv} as an open difference and assigned to no cause. The identity
+also holds per draw on the combustion side: the residential, CNG, industrial
+and captive delivered volumes share one activity draw through the cross-module
+dependency group \texttt{delivered\_gas\_ogra\_3\_31}, while the leak side's
+draws are separately injected and that decorrelation is declared rather than
+hidden---the grid volume rides its own NEPRA meter, reconciled in the ledger,
+never the shared draw.
+
+\subsection{What closure does and does not buy}
+
+None of these four operations makes the inventory more accurate in the sense of moving it
+closer to a measured truth; there is no measurement to move towards. What they buy is that a
+particular class of error becomes impossible rather than merely unobserved. A tonne of diesel
+cannot be burnt twice. A kilogram of excreted nitrogen cannot both leave the manure balance
+and fail to arrive in the dung ledger, as household fuel or as its typed unresolved
+remainder. A tonne of municipal waste cannot be both landfilled and openly
+burned, nor can it be neither.
+
+It is worth being precise about the residual risk, because closure invites overconfidence.
+An exhaustive partition guarantees that the parts sum to the whole; it says nothing about
+whether the split point is right. The waste collection rate of \SI{50.3}{\percent} carries
+real uncertainty, and moving it moves emissions between two categories with quite different
+methane yields. The off-road class inherits its source workbook's residual bucket---the
+catch-all ``Other vehicles'' class maps into it wholesale---so its magnitude is a genuine
+carve-out of the fuel total while its composition is soft. These are stated as limitations in
+Section~\ref{sec:limitations}, and the closures are what make them visible as questions about
+a split rather than invisible as disagreements between two independent estimates.

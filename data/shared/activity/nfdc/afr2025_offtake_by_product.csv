@@ -1,0 +1,33 @@
+fiscal_year,product,supply_basis,offtake_kt,share_pct,source,note
+2023-24,Urea,domestic,6358,61.9,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,Urea,domestic,5890,63.7,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,Urea,imported,221,2.1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,Urea,imported,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,CAN,domestic,793,7.7,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,CAN,domestic,711,7.7,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,NP,imported,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,NP,imported,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,NP,domestic,1012,9.9,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,NP,domestic,854,9.2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,SSP,domestic,92,0.9,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,SSP,domestic,71,0.8,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,SSP,imported,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,SSP,imported,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,DAP,domestic,898,8.7,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,DAP,domestic,775,8.4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,DAP,imported,717,7.0,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,DAP,imported,767,8.3,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,UP,imported,,,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,UP,imported,0.3,0.0,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,SOP,domestic,21,0.2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,SOP,domestic,36,0.4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,SOP,imported,37,0.4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,SOP,imported,20,0.2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,NPK's,unclassified,41,0.4,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,"the review prints no domestic/imported split for this product; its own Total domestic and Total Imported lines imply about 42 and 68 thousand tonnes spread across NPK's and AS together, an allocation the review never attributes and this extraction does not invent"
+2024-25,NPK's,unclassified,43,0.5,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,"the review prints no domestic/imported split for this product; its own Total domestic and Total Imported lines imply about 42 and 68 thousand tonnes spread across NPK's and AS together, an allocation the review never attributes and this extraction does not invent"
+2023-24,MOP,imported,14,0.1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,MOP,imported,15,0.2,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,MAP,imported,1,0.0,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2024-25,MAP,imported,1,0.0,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,
+2023-24,AS,unclassified,69,1,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,"the review prints no domestic/imported split for this product; its own Total domestic and Total Imported lines imply about 42 and 68 thousand tonnes spread across NPK's and AS together, an allocation the review never attributes and this extraction does not invent"
+2024-25,AS,unclassified,69,0.7,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 5,"the review prints no domestic/imported split for this product; its own Total domestic and Total Imported lines imply about 42 and 68 thousand tonnes spread across NPK's and AS together, an allocation the review never attributes and this extraction does not invent"

@@ -1,0 +1,149 @@
+# SPECIES-RESOLVED HFC BANK (rc46 Wave 4): per (species, application, year) bank and
+# emissions from the fgases.py kernel over the populated import contract. Supersedes
+# the rc30 one-stratum bounded bank IN THE CONFIGURATION LANE ONLY - 2.F contributes
+# zero to every national total pending the rc47 activation review (Rule 3).
+# Latest-year total: 5.854 Mt CO2e AR5 (2024).
+year,species,application,gwp_ar5,bank_end_t,emissions_t,emissions_Mt_co2e_AR5,data_status
+2012,HFC-125,stationary AC,3170.0,0.000,0.000,0.000000,reported
+2013,HFC-125,stationary AC,3170.0,0.000,0.000,0.000000,reported
+2014,HFC-125,stationary AC,3170.0,0.000,0.000,0.000000,reported
+2015,HFC-125,stationary AC,3170.0,0.056,0.004,0.000013,reported
+2016,HFC-125,stationary AC,3170.0,100.817,7.522,0.023845,reported
+2017,HFC-125,stationary AC,3170.0,429.674,38.283,0.121358,reported
+2018,HFC-125,stationary AC,3170.0,690.914,78.120,0.247641,reported
+2019,HFC-125,stationary AC,3170.0,997.747,117.172,0.371435,reported
+2020,HFC-125,stationary AC,3170.0,1172.865,149.223,0.473037,modelled
+2021,HFC-125,stationary AC,3170.0,1254.797,166.172,0.526766,modelled
+2022,HFC-125,stationary AC,3170.0,1272.054,172.530,0.546922,reported
+2023,HFC-125,stationary AC,3170.0,1655.555,202.198,0.640969,reported
+2024,HFC-125,stationary AC,3170.0,2484.835,287.779,0.912261,reported
+2012,HFC-134a,mobile AC,1300.0,1032.361,188.285,0.244770,reported
+2013,HFC-134a,mobile AC,1300.0,1578.770,384.066,0.499286,reported
+2014,HFC-134a,mobile AC,1300.0,2182.015,544.965,0.708454,reported
+2015,HFC-134a,mobile AC,1300.0,2896.795,731.498,0.950947,reported
+2016,HFC-134a,mobile AC,1300.0,3475.547,903.607,1.174689,reported
+2017,HFC-134a,mobile AC,1300.0,4096.453,1070.739,1.391960,reported
+2018,HFC-134a,mobile AC,1300.0,4597.290,1219.897,1.585866,reported
+2019,HFC-134a,mobile AC,1300.0,4702.898,1285.792,1.671530,reported
+2020,HFC-134a,mobile AC,1300.0,4572.424,1271.829,1.653378,modelled
+2021,HFC-134a,mobile AC,1300.0,4298.879,1209.791,1.572728,modelled
+2022,HFC-134a,mobile AC,1300.0,3946.773,1120.102,1.456133,reported
+2023,HFC-134a,mobile AC,1300.0,4218.377,1136.853,1.477908,reported
+2024,HFC-134a,mobile AC,1300.0,4542.455,1221.248,1.587623,reported
+2012,HFC-134a,refrigeration,1300.0,476.470,46.664,0.060663,reported
+2013,HFC-134a,refrigeration,1300.0,769.634,105.612,0.137295,reported
+2014,HFC-134a,refrigeration,1300.0,1104.693,157.031,0.204140,reported
+2015,HFC-134a,refrigeration,1300.0,1506.847,217.679,0.282983,reported
+2016,HFC-134a,refrigeration,1300.0,1863.969,278.175,0.361628,reported
+2017,HFC-134a,refrigeration,1300.0,2250.286,338.673,0.440274,reported
+2018,HFC-134a,refrigeration,1300.0,2591.170,396.573,0.515545,reported
+2019,HFC-134a,refrigeration,1300.0,2753.391,434.093,0.564321,reported
+2020,HFC-134a,refrigeration,1300.0,2794.162,448.381,0.582895,modelled
+2021,HFC-134a,refrigeration,1300.0,2748.877,446.533,0.580493,modelled
+2022,HFC-134a,refrigeration,1300.0,2644.574,433.444,0.563478,reported
+2023,HFC-134a,refrigeration,1300.0,2805.602,442.596,0.575374,reported
+2024,HFC-134a,refrigeration,1300.0,2996.385,471.499,0.612949,reported
+2012,HFC-143a,refrigeration,4800.0,0.000,0.000,0.000000,reported
+2013,HFC-143a,refrigeration,4800.0,0.000,0.000,0.000000,reported
+2014,HFC-143a,refrigeration,4800.0,0.000,0.000,0.000000,reported
+2015,HFC-143a,refrigeration,4800.0,0.000,0.000,0.000000,reported
+2016,HFC-143a,refrigeration,4800.0,0.000,0.000,0.000000,reported
+2017,HFC-143a,refrigeration,4800.0,0.000,0.000,0.000000,reported
+2018,HFC-143a,refrigeration,4800.0,0.000,0.000,0.000000,reported
+2019,HFC-143a,refrigeration,4800.0,4.736,0.464,0.002226,reported
+2020,HFC-143a,refrigeration,4800.0,8.776,1.160,0.005568,modelled
+2021,HFC-143a,refrigeration,4800.0,12.222,1.754,0.008419,modelled
+2023,HFC-143a,refrigeration,4800.0,70.924,7.722,0.037064,reported
+2024,HFC-143a,refrigeration,4800.0,181.544,22.281,0.106947,reported
+2012,HFC-152a,aerosol,138.0,1.000,1.000,0.000138,reported
+2013,HFC-152a,aerosol,138.0,6.500,7.500,0.001035,reported
+2014,HFC-152a,aerosol,138.0,18.005,24.505,0.003382,reported
+2015,HFC-152a,aerosol,138.0,39.500,57.505,0.007936,reported
+2012,HFC-23,fire protection,12400.0,0.579,0.021,0.000259,reported
+2013,HFC-23,fire protection,12400.0,0.533,0.046,0.000574,reported
+2014,HFC-23,fire protection,12400.0,0.490,0.043,0.000528,reported
+2015,HFC-23,fire protection,12400.0,4.505,0.186,0.002301,reported
+2016,HFC-23,fire protection,12400.0,4.206,0.363,0.004496,reported
+2017,HFC-23,fire protection,12400.0,4.014,0.342,0.004237,reported
+2018,HFC-23,fire protection,12400.0,3.693,0.321,0.003982,reported
+2019,HFC-23,fire protection,12400.0,3.513,0.300,0.003715,reported
+2020,HFC-23,fire protection,12400.0,3.348,0.285,0.003537,modelled
+2021,HFC-23,fire protection,12400.0,3.196,0.272,0.003373,modelled
+2012,HFC-32,stationary AC,677.0,0.000,0.000,0.000000,reported
+2013,HFC-32,stationary AC,677.0,0.000,0.000,0.000000,reported
+2014,HFC-32,stationary AC,677.0,0.000,0.000,0.000000,reported
+2015,HFC-32,stationary AC,677.0,0.186,0.014,0.000009,reported
+2016,HFC-32,stationary AC,677.0,100.667,7.519,0.005090,reported
+2017,HFC-32,stationary AC,677.0,417.441,37.362,0.025294,reported
+2018,HFC-32,stationary AC,677.0,669.123,75.738,0.051275,reported
+2019,HFC-32,stationary AC,677.0,978.253,114.369,0.077428,reported
+2020,HFC-32,stationary AC,677.0,1248.124,153.629,0.104007,modelled
+2021,HFC-32,stationary AC,677.0,1483.721,187.903,0.127210,modelled
+2023,HFC-32,stationary AC,677.0,1318.502,190.164,0.128741,reported
+2024,HFC-32,stationary AC,677.0,1151.764,167.503,0.113399,reported
+2012,R-404A,refrigeration,3942.8,44.365,4.345,0.017131,reported
+2013,R-404A,refrigeration,3942.8,86.389,11.276,0.044459,reported
+2014,R-404A,refrigeration,3942.8,138.794,19.075,0.075210,reported
+2015,R-404A,refrigeration,3942.8,214.836,29.848,0.117685,reported
+2016,R-404A,refrigeration,3942.8,283.753,41.423,0.163324,reported
+2017,R-404A,refrigeration,3942.8,339.591,51.265,0.202129,reported
+2018,R-404A,refrigeration,3942.8,392.669,60.007,0.236596,reported
+2019,R-404A,refrigeration,3942.8,447.870,68.782,0.271192,reported
+2020,R-404A,refrigeration,3942.8,508.386,78.211,0.308372,modelled
+2021,R-404A,refrigeration,3942.8,575.035,88.579,0.349250,modelled
+2022,R-404A,refrigeration,3942.8,648.702,100.023,0.394372,reported
+2023,R-404A,refrigeration,3942.8,813.514,120.839,0.476445,reported
+2024,R-404A,refrigeration,3942.8,949.800,144.646,0.570309,reported
+2012,R-407C,stationary AC,1624.2,10.376,0.774,0.001257,reported
+2013,R-407C,stationary AC,1624.2,24.674,2.482,0.004032,reported
+2014,R-407C,stationary AC,1624.2,43.270,4.754,0.007722,reported
+2015,R-407C,stationary AC,1624.2,96.663,9.887,0.016058,reported
+2016,R-407C,stationary AC,1624.2,112.967,14.408,0.023401,reported
+2017,R-407C,stationary AC,1624.2,122.850,16.154,0.026237,reported
+2018,R-407C,stationary AC,1624.2,155.709,19.216,0.031211,reported
+2019,R-407C,stationary AC,1624.2,203.618,24.823,0.040317,reported
+2020,R-407C,stationary AC,1624.2,245.443,30.907,0.050200,modelled
+2021,R-407C,stationary AC,1624.2,281.956,36.219,0.058827,modelled
+2012,R-410A,stationary AC,1923.5,3.369,0.251,0.000483,reported
+2013,R-410A,stationary AC,1923.5,23.079,1.930,0.003712,reported
+2014,R-410A,stationary AC,1923.5,54.627,5.502,0.010584,reported
+2015,R-410A,stationary AC,1923.5,209.576,19.010,0.036567,reported
+2016,R-410A,stationary AC,1923.5,540.057,53.247,0.102420,reported
+2017,R-410A,stationary AC,1923.5,1712.917,161.169,0.310008,reported
+2018,R-410A,stationary AC,1923.5,2538.099,295.302,0.568013,reported
+2019,R-410A,stationary AC,1923.5,3175.030,393.877,0.757622,reported
+2020,R-410A,stationary AC,1923.5,3835.468,482.552,0.928189,modelled
+2021,R-410A,stationary AC,1923.5,4527.787,575.061,1.106129,modelled
+2022,R-410A,stationary AC,1923.5,5260.537,672.557,1.293664,reported
+2023,R-410A,stationary AC,1923.5,6743.237,828.484,1.593590,reported
+2024,R-410A,stationary AC,1923.5,8002.090,1014.137,1.950692,reported
+2012,R-417A,stationary AC,2127.2,0.000,0.000,0.000000,reported
+2013,R-417A,stationary AC,2127.2,0.000,0.000,0.000000,reported
+2014,R-417A,stationary AC,2127.2,0.000,0.000,0.000000,reported
+2015,R-417A,stationary AC,2127.2,0.000,0.000,0.000000,reported
+2016,R-417A,stationary AC,2127.2,0.106,0.008,0.000017,reported
+2017,R-417A,stationary AC,2127.2,0.093,0.013,0.000029,reported
+2018,R-417A,stationary AC,2127.2,0.081,0.012,0.000025,reported
+2019,R-417A,stationary AC,2127.2,2.118,0.163,0.000347,reported
+2020,R-417A,stationary AC,2127.2,3.896,0.422,0.000897,modelled
+2021,R-417A,stationary AC,2127.2,5.449,0.648,0.001377,modelled
+2012,R-507A,refrigeration,3985.0,0.000,0.000,0.000000,reported
+2013,R-507A,refrigeration,3985.0,0.000,0.000,0.000000,reported
+2014,R-507A,refrigeration,3985.0,0.000,0.000,0.000000,reported
+2015,R-507A,refrigeration,3985.0,0.000,0.000,0.000000,reported
+2016,R-507A,refrigeration,3985.0,0.618,0.060,0.000241,reported
+2017,R-507A,refrigeration,3985.0,0.527,0.091,0.000362,reported
+2018,R-507A,refrigeration,3985.0,1.069,0.138,0.000550,reported
+2019,R-507A,refrigeration,3985.0,4.467,0.505,0.002014,reported
+2020,R-507A,refrigeration,3985.0,7.366,1.005,0.004005,modelled
+2021,R-507A,refrigeration,3985.0,9.839,1.431,0.005703,modelled
+2012,R-508B,refrigeration,5704.0,0.000,0.000,0.000000,reported
+2013,R-508B,refrigeration,5704.0,0.000,0.000,0.000000,reported
+2014,R-508B,refrigeration,5704.0,0.000,0.000,0.000000,reported
+2015,R-508B,refrigeration,5704.0,0.000,0.000,0.000000,reported
+2016,R-508B,refrigeration,5704.0,0.000,0.000,0.000000,reported
+2017,R-508B,refrigeration,5704.0,0.273,0.027,0.000153,reported
+2018,R-508B,refrigeration,5704.0,0.233,0.040,0.000229,reported
+2019,R-508B,refrigeration,5704.0,0.272,0.041,0.000236,reported
+2020,R-508B,refrigeration,5704.0,0.305,0.047,0.000268,modelled
+2021,R-508B,refrigeration,5704.0,0.333,0.052,0.000296,modelled

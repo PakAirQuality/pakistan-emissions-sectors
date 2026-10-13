@@ -1,0 +1,117 @@
+\begin{thebibliography}{18}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\urlprefix}{}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{https://doi.org/\discretionary{}{}{}#1}\else
+  \providecommand{\doi}{https://doi.org/\discretionary{}{}{}\begingroup
+  \urlstyle{rm}\Url}\fi
+
+\bibitem[{Ahmad(2026{\natexlab{a}})}]{ahmad2026ag}
+Ahmad, R.: {PakEmis} Technical Documentation: Agriculture Module, Tech. rep.,
+  Pakistan Air Quality Initiative, versioned technical documentation of release
+  1.0.0rc67; DOI to be assigned, 2026{\natexlab{a}}.
+
+\bibitem[{Ahmad(2026{\natexlab{b}})}]{ahmad2026nowcast}
+Ahmad, R.: Satellite-Assisted Nowcasting of Agricultural Greenhouse-Gas
+  Emissions between Census Years, Tech. rep., Pakistan Air Quality Initiative,
+  research note accompanying release 1.0.0rc67; DOI to be assigned,
+  2026{\natexlab{b}}.
+
+\bibitem[{{Climate TRACE}(2026)}]{climatetrace}
+{Climate TRACE}: Climate {TRACE} Emissions Inventory and Data Downloads,
+  \url{https://climatetrace.org/data}, version 7 country- and source-level API
+  records; CC BY 4.0; accessed 6 August 2026, 2026.
+
+\bibitem[{Crippa et~al.(2020)Crippa, Solazzo, Huang, Guizzardi, Koffi, Muntean,
+  Schieberle, Friedrich, and Janssens-Maenhout}]{crippa2020}
+Crippa, M., Solazzo, E., Huang, G., Guizzardi, D., Koffi, E., Muntean, M.,
+  Schieberle, C., Friedrich, R., and Janssens-Maenhout, G.: High resolution
+  temporal profiles in the {Emissions Database for Global Atmospheric
+  Research}, Scientific Data, 7, 121, \doi{10.1038/s41597-020-0462-2}, 2020.
+
+\bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
+Crippa, M., Guizzardi, D., et~al.: {GHG} emissions of all world countries ---
+  2025 report ({EDGAR} {GHG} booklet), European Commission, Joint Research
+  Centre, sheet GHG\_by\_sector\_and\_country; annual series 1970--2024; CC BY
+  4.0. Snapshot archived at
+  \texttt{sources/EDGAR/EDGAR\_2025\_GHG\_booklet\_2025.xlsx}, sha256
+  \texttt{8bd6b8a4\ldots} pinned per benchmark row in
+  \texttt{data/benchmarks.csv}. \url{https://edgar.jrc.ec.europa.eu/}, 2025.
+
+\bibitem[{{EMEP/EEA}(2019)}]{emep2019}
+{EMEP/EEA}: EMEP/EEA air pollutant emission inventory guidebook 2019 --- 3.F
+  Field burning of agricultural wastes, Tech. rep., European Environment
+  Agency, 2019.
+
+\bibitem[{{EMEP/EEA}(2023)}]{emep2023soils}
+{EMEP/EEA}: EMEP/EEA air pollutant emission inventory guidebook 2023 --- 3.D
+  Crop production and agricultural soils, Tech. rep., European Environment
+  Agency, Copenhagen,
+  \urlprefix\url{https://www.eea.europa.eu/publications/emep-eea-guidebook-2023},
+  2023.
+
+\bibitem[{{FAO}(2025)}]{faostat}
+{FAO}: {FAOSTAT}: Emissions Totals, Crops and Livestock, Fertilizers by
+  Nutrient, and Forestry Production and Trade (Wood Fuel), Food and Agriculture
+  Organization, Rome, \url{https://www.fao.org/faostat/}, 2025.
+
+\bibitem[{{Global Change Impact Studies Centre}(2019)}]{gcisc}
+{Global Change Impact Studies Centre}: Greenhouse Gas Inventory of Pakistan,
+  Tech. rep., GCISC, Ministry of Climate Change, Islamabad, 2019.
+
+\bibitem[{{Government of Pakistan}(2024)}]{pakbtr2024}
+{Government of Pakistan}: Pakistan's First Biennial Transparency Report to the
+  {UNFCCC}, Tech. rep., Ministry of Climate Change and Environmental
+  Coordination, \urlprefix\url{https://unfccc.int/documents/645241}, 2024.
+
+\bibitem[{{Government of Pakistan}(2025)}]{paknc32025}
+{Government of Pakistan}: Pakistan's Third National Communication on Climate
+  Change, Tech. rep., Ministry of Climate Change and Environmental
+  Coordination, \urlprefix\url{https://unfccc.int/documents/648622}, 2025.
+
+\bibitem[{{Government of Pakistan}(2026)}]{pakcrt2026}
+{Government of Pakistan}: Common Reporting Tables for the Electronic Reporting
+  of Pakistan's National Greenhouse Gas Inventory, Submission to the UNFCCC,
+  \urlprefix\url{https://unfccc.int/documents/655653}, 2026.
+
+\bibitem[{Hamdani et~al.(2025)Hamdani, Zakir, Kushwaha, Fatima, and
+  Sheikh}]{brickkilns}
+Hamdani, M. S.~A., Zakir, K., Kushwaha, N., Fatima, S.~E., and Sheikh, H.~A.:
+  Brick Kiln Dataset for {Pakistan}'s {IGP} Region Using {AI}, Scientific Data,
+  12, 830, \doi{10.1038/s41597-025-05148-9}, data: Zenodo record 14038648,
+  CC~BY~4.0. The snapshot held in this repository
+  (\texttt{data/ml/brick\_kilns\_pk.csv}) carries 11{,}272 kiln locations, a
+  count computed from the file; the published descriptor reports approximately
+  11{,}277 in its current version, 2025.
+
+\bibitem[{Hussain and Rahman(2022)}]{hussain2022mangrove}
+Hussain, S.~A. and Rahman, M. Z.-u.: Spatiotemporal dynamics of mangrove
+  forests in the {Indus} delta, {Pakistan}, 1986--2020, Regional Studies in
+  Marine Science, 56, 102\,703, \doi{10.1016/j.rsma.2022.102703}, 2022.
+
+\bibitem[{{IPCC}(2019)}]{ipcc2019}
+{IPCC}: 2019 Refinement to the 2006 {IPCC} Guidelines for National Greenhouse
+  Gas Inventories, Tech. rep., IPCC, Switzerland, 2019.
+
+\bibitem[{{Ministry of Climate Change, Government of Pakistan}(2022)}]{pakbur1}
+{Ministry of Climate Change, Government of Pakistan}: Pakistan's First Biennial
+  Update Report to the United Nations Framework Convention on Climate Change,
+  Tech. rep., Ministry of Climate Change, Islamabad,
+  \urlprefix\url{https://unfccc.int/documents/}, national greenhouse-gas
+  inventory for FY2017--18; submitted to the UNFCCC, 2022.
+
+\bibitem[{Mir et~al.(2021)Mir, Purohit, Cai, and Kim}]{mir2022}
+Mir, K.~A., Purohit, P., Cai, S., and Kim, S.: Comparative analysis of
+  greenhouse gas emission inventory for Pakistan: {AFOLU} sector, Advances in
+  Climate Change Research, 12, 132--144, \doi{10.1016/j.accre.2021.01.003},
+  2021.
+
+\bibitem[{Tubiello et~al.(2013)Tubiello, Salvatore, Rossi, Ferrara, Fitton, and
+  Smith}]{tubiello2013}
+Tubiello, F.~N., Salvatore, M., Rossi, S., Ferrara, A., Fitton, N., and Smith,
+  P.: The {FAOSTAT} database of greenhouse gas emissions from agriculture,
+  Environmental Research Letters, 8, 015\,009,
+  \doi{10.1088/1748-9326/8/1/015009}, 2013.
+
+\end{thebibliography}

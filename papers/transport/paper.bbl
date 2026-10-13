@@ -1,0 +1,175 @@
+\begin{thebibliography}{18}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Unpublished
+\bibitem[{Ahmad(2026)}]{ahmad2026national}
+\bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Pakemis v1.0: an evidence-graded public-data
+  reconstruction of pakistan's non-lulucf greenhouse-gas emissions, fy2015--16
+  to fy2023--24}.
+\newblock \bibinfo{note}{Manuscript in preparation for Earth System Science
+  Data; it describes release 1.0.0rc67, whose data, software and technical
+  documentation DOIs are reserved and not yet assigned (see CITATION.cff). No
+  submission has been made}.
+%Type = Misc
+\bibitem[{{Climate TRACE}(2026)}]{climatetrace}
+\bibinfo{author}{{Climate TRACE}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Climate {TRACE} emissions inventory and data
+  downloads}.
+\newblock \bibinfo{howpublished}{\url{https://climatetrace.org/data}}.
+\newblock \bibinfo{note}{Version 7 country- and source-level API records; CC BY
+  4.0; accessed 6 August 2026}.
+%Type = Misc
+\bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{GHG} emissions of all world countries --- 2025
+  report ({EDGAR} {GHG} booklet)}.
+\newblock \bibinfo{howpublished}{European Commission, Joint Research Centre}.
+\newblock \bibinfo{note}{Sheet GHG\_by\_sector\_and\_country; annual series
+  1970--2024; CC BY 4.0. Snapshot archived at
+  \texttt{sources/EDGAR/EDGAR\_2025\_GHG\_booklet\_2025.xlsx}, sha256
+  \texttt{8bd6b8a4\ldots} pinned per benchmark row in
+  \texttt{data/benchmarks.csv}. \url{https://edgar.jrc.ec.europa.eu/}}.
+%Type = Article
+\bibitem[{Crippa et~al.(2020)Crippa, Solazzo, Huang, Guizzardi, Koffi, Muntean,
+  Schieberle, Friedrich and Janssens-Maenhout}]{crippa2020}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Solazzo, E.},
+  \bibinfo{author}{Huang, G.}, \bibinfo{author}{Guizzardi, D.},
+  \bibinfo{author}{Koffi, E.}, \bibinfo{author}{Muntean, M.},
+  \bibinfo{author}{Schieberle, C.}, \bibinfo{author}{Friedrich, R.},
+  \bibinfo{author}{Janssens-Maenhout, G.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{High resolution temporal profiles in the {Emissions
+  Database for Global Atmospheric Research}}.
+\newblock \bibinfo{journal}{Scientific Data} \bibinfo{volume}{7},
+  \bibinfo{pages}{121}.
+\newblock \DOIprefix\doi{10.1038/s41597-020-0462-2}.
+%Type = Misc
+\bibitem[{{Government of Pakistan}(2025)}]{goppetrol}
+\bibinfo{author}{{Government of Pakistan}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Fortnightly administered retail prices of petroleum
+  products (motor spirit), gazette notifications with {OGRA} computations}.
+\newblock \bibinfo{note}{Band over July 2024--June 2025 approximately Rs
+  249--293 per litre; no annual average is published}.
+%Type = Article
+\bibitem[{Guttikunda(2024)}]{guttikunda2024}
+\bibinfo{author}{Guttikunda, S.K.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Vehicle stock numbers and survival functions for
+  on-road exhaust emissions analysis in {India}: 1993--2018}.
+\newblock \bibinfo{journal}{Sustainability} \bibinfo{volume}{16},
+  \bibinfo{pages}{6298}.
+\newblock \DOIprefix\doi{10.3390/su16156298}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006energy}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 2: Energy, Chapter 3: Mobile Combustion}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Japan.
+\newblock \URLprefix
+  \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html}.
+%Type = Techreport
+\bibitem[{{Ministry of Climate Change, Government of Pakistan}(2022)}]{pakbur1}
+\bibinfo{author}{{Ministry of Climate Change, Government of Pakistan}},
+  \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{Pakistan's First Biennial Update Report to the United
+  Nations Framework Convention on Climate Change}.
+\newblock \bibinfo{type}{Technical Report}. Ministry of Climate Change,
+  Islamabad.
+\newblock \URLprefix \url{https://unfccc.int/documents/}.
+  \bibinfo{note}{national greenhouse-gas inventory for FY2017--18; submitted to
+  the UNFCCC}.
+%Type = Techreport
+\bibitem[{{Ministry of Finance}(2025)}]{econsurvey2025energy}
+\bibinfo{author}{{Ministry of Finance}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Pakistan Economic Survey 2024--25, Chapter 14:
+  Energy}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+\newblock \bibinfo{note}{Figure 14.4, petroleum product sales by product
+  (source: Oil Companies Advisory Council)}.
+%Type = Unpublished
+\bibitem[{Naveed(2024)}]{naveedpunjab}
+\bibinfo{author}{Naveed, M.}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{District-level road transport emission inventory for
+  punjab province, pakistan: A 2015--2023 multi-year assessment}.
+\newblock \bibinfo{note}{Internal manuscript, Pakistan Air Quality Initiative,
+  Lahore (undated; year inferred from its 2015--2023 coverage and 2022--23
+  source citations). Distributed with the archived input package as
+  sources/Punjab Transport/Punjab Transport.pdf}.
+%Type = Techreport
+\bibitem[{{Oil and Gas Regulatory Authority}(2024)}]{ogra2024}
+\bibinfo{author}{{Oil and Gas Regulatory Authority}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{State of the Regulated Petroleum Industry 2023--24}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+  \bibinfo{address}{Islamabad}.
+\newblock \URLprefix \url{https://www.ogra.org.pk/annual-reports}.
+%Type = Misc
+\bibitem[{{Oil and Gas Regulatory Authority}(2026)}]{ograarchive}
+\bibinfo{author}{{Oil and Gas Regulatory Authority}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Petroleum industry reports archive}.
+\newblock \bibinfo{howpublished}{Official report archive}.
+\newblock \URLprefix \url{https://www.ogra.org.pk/ogra-annual-reports}.
+  \bibinfo{note}{accessed 7 August 2026}.
+%Type = Misc
+\bibitem[{{Oil Companies Advisory Council}(2026)}]{ocacarchive}
+\bibinfo{author}{{Oil Companies Advisory Council}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Oil industry statistics archive}.
+\newblock
+  \bibinfo{howpublished}{\url{https://www.ocac.org.pk/oil-industry-statistics/archives/}}.
+\newblock \bibinfo{note}{Annual sectoral-sales reports from FY2016--17 and
+  monthly reports; accessed 6 August 2026}.
+%Type = Techreport
+\bibitem[{{Pakistan Bureau of Statistics}(2025)}]{hies2025}
+\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Household Integrated Economic Survey ({HIES})
+  2024--25: Microdata and Key Findings Report}.
+\newblock \bibinfo{type}{Technical Report}. Pakistan Bureau of Statistics,
+  Government of Pakistan.
+\newblock \URLprefix \url{https://www.pbs.gov.pk/content/microdata}.
+  \bibinfo{note}{first digitally enumerated round; 32,814 sampled households,
+  30,123 completed. SPSS microdata files; consumption module Section 6A}.
+%Type = Techreport
+\bibitem[{{Pakistan Railways}(2024)}]{pakrailyearbook2024}
+\bibinfo{author}{{Pakistan Railways}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Year Book 2023--24}.
+\newblock \bibinfo{type}{Technical Report}. Ministry of Railways, Government of
+  Pakistan.
+\newblock \bibinfo{note}{Fuel consumption tables; cached text extracts ship
+  with the repository under sources/Railways/}.
+%Type = Misc
+\bibitem[{{Provincial Bureaux of Statistics}(2024)}]{provregstats}
+\bibinfo{author}{{Provincial Bureaux of Statistics}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Registered motor vehicles by type and district,
+  provincial statistical tables (punjab, sindh, khyber pakhtunkhwa,
+  balochistan)}.
+\newblock \bibinfo{howpublished}{Provincial development statistics editions,
+  various years}.
+\newblock \bibinfo{note}{Cumulative registered stock; transcribed to
+  data/activity/transport/vehicles\_district.csv with the source workbook's
+  citation sheet}.
+%Type = Techreport
+\bibitem[{{Sui Northern Gas Pipelines Limited}(2024)}]{sngpl2024}
+\bibinfo{author}{{Sui Northern Gas Pipelines Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024: Financial Year 2023--24}.
+\newblock \bibinfo{type}{Technical Report}. Sui Northern Gas Pipelines Limited.
+\newblock \URLprefix
+  \url{https://www.sngpl.com.pk/download/AnnualReport-2024/SNGPLAR2024.pdf}.
+%Type = Techreport
+\bibitem[{{Sui Southern Gas Company Limited}(2024)}]{ssgc2024}
+\bibinfo{author}{{Sui Southern Gas Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Sui Southern Gas Company Limited.
+\newblock \URLprefix
+  \url{https://www.ssgc.com.pk/web/wp-content/uploads/pdfs/2024_annual_report.pdf}.
+
+\end{thebibliography}

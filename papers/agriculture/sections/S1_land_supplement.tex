@@ -1,0 +1,60 @@
+% ===========================================================================
+% Supplementary Note S1 — exploratory Tier-1 land sector (LULUCF)
+% Excluded from all agricultural totals/benchmarks/key-category/uncertainty in the main paper.
+% ===========================================================================
+
+\section*{S1.1 Overview and scope}
+
+This Supplementary Note documents an exploratory Tier-1 land-use, land-use change and forestry (LULUCF)
+extension of the agricultural inventory. It is \emph{excluded from every agricultural total, benchmark
+comparison, key-category analysis, and uncertainty estimate} in the main paper; we report it here for
+completeness because Pakistan's land sector is frequently cited in national climate discussion, but its
+data basis is weaker than the agricultural inventory and its result should be read as indicative only.
+
+\section*{S1.2 Method}
+
+The land sector is computed separately from agriculture and is dominated by removals. Forest carbon is
+estimated as a net afforestation sink consistent with the FAO Forest Resources Assessment forest-land
+series \citep{fra2020}; Indus-delta mangrove blue carbon uses Global Mangrove Watch (GMW) area
+\citep{gmw} and 2013 Wetlands Supplement carbon densities \citep{ipcc2013wetlands}; cropland and
+grassland soil-carbon change are not estimated at Tier~1 (notation key NE, contributing nothing
+to the net rather than a zero). The estimate is single-year.
+
+\section*{S1.3 Result and its uncertainty}
+
+A first-order Tier~1 calculation gives a small net sink of order \SI{-4}{}~Mt~\COe{} (forest plus
+Indus-delta mangrove blue carbon). Both its magnitude and its \emph{sign} are uncertain: the
+humid-tropical default carbon densities likely overstate storage in the arid delta, and although Pakistan
+is often cited for mangrove afforestation, GMW\,v3 indicates a \emph{recent decline} in delta mangrove
+extent, which would shrink or reverse the mangrove sink relative to the afforestation baseline. The land
+factors used are summarised in Table~\ref{tab:s1land}; a properly developed land sector --- with
+forest-area time series, stock-change factors, separated biomass and soil pools, and its own uncertainty
+analysis --- is future work and is not attempted here.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llc@{}}
+\toprule
+\textbf{Land category} & \textbf{Basis} & \textbf{Notation} \\
+\midrule
+Forest land            & FAO FRA forest-land series & E \\
+Cropland / grassland (SOC) & zero at Tier~1 & NE \\
+Wetlands (mangrove)    & restored area $\times$ 6.5 t\COtwo{}/ha/yr (flux) & E \\
+\bottomrule
+\end{tabular}
+\caption{Land-sector factors and notation keys (E~estimated, NE~not estimated). The
+mangrove row is an annual FLUX---restored area at a sequestration rate---never area
+$\times$ carbon density, which is a standing STOCK (the 471~\tCha{} humid-tropical
+soil-carbon default puts the stock near 240~Mt~\COe{}, reported in the engine's
+separate stock column and not as a removal). The stock--flux distinction is the reason
+the note's sink is of order $-0.5$~Mt/yr for mangroves, not hundreds.}
+\label{tab:s1land}
+\end{table}
+
+\section*{S1.4 Reproducibility}
+
+The land sector is an optional module (\texttt{src/pkinv/lulucf/}) and is \emph{not} part of the default
+agricultural reproduction run; it is skipped under \texttt{run\_all.py --quick} and its outputs
+(\texttt{lulucf\_totals.csv}) feed only this note, never the agricultural totals or analyses of the main
+paper.

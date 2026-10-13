@@ -1,0 +1,194 @@
+% ===========================================================================
+\section{Shared Nitrogen Accounting and Air-Pollutant Methods}
+\label{sec:methods-shared}
+% ===========================================================================
+
+The greenhouse-gas and air-pollutant calculations use a common nitrogen ledger. This ledger
+tracks how excreted and applied nitrogen moves through manure management, grazing,
+fertiliser application, volatilisation and soil processes.
+
+The two inventories therefore represent different emissions from the same underlying
+nitrogen flows. Aligning their system boundaries is necessary to prevent the same nitrogen
+from being removed twice, retained twice, or assigned inconsistently between \NHthree{} and
+\NtwoO{}.
+
+\subsection{Alignment of the nitrogen boundaries}
+\label{sec:methods-ledger}
+
+Two IPCC volatilisation fractions apply at different stages of the manure chain.
+
+$\mathrm{Frac_{GasMS}}$ (Table~10.22) represents nitrogen lost as \NHthree{} and \NOx{}
+within the manure-management system, principally during housing and storage before manure
+reaches agricultural land. This loss reduces the quantity of manure nitrogen available for
+later application.
+
+$\mathrm{Frac_{GASM}}$ (Table~11.3) represents volatilisation after organic nitrogen has
+been applied to soil or deposited during grazing. Under the Tier~1 soil-\NtwoO{} method this
+fraction contributes to indirect \NtwoO{}. It does \emph{not} reduce the organic nitrogen
+input before direct soil \NtwoO{} is calculated.
+
+Pre-field losses are therefore calculated as
+\begin{equation}
+\mathrm{Frac_{LossMS}} \;=\; \mathrm{Frac_{GasMS}} + \mathrm{Frac_{leachMS}} +
+\mathrm{Frac_{N_2MS}} + EF_3 ,
+\end{equation}
+evaluated separately by livestock species and manure-management system using the factors in
+IPCC Table~10.22. The post-application factor $\mathrm{Frac_{GASM}}$ is then applied once,
+after manure reaches the field or is deposited during grazing.
+
+This implementation replaces an earlier version of the nitrogen chain. Supplementary
+Note~S5 documents the previous errors, their quantitative effects, and the regression tests
+used to prevent their recurrence.
+
+\subsection{Synthetic-fertiliser ammonia}
+\label{sec:methods-air}
+
+Synthetic-fertiliser \NHthree{} is calculated from Pakistan's reported fertiliser-product
+mix rather than from one generic fertiliser composition.
+
+EMEP/EEA factors vary substantially among products because urea and ammonium-based
+fertilisers have greater volatilisation potential than nitrate-dominant products,
+particularly on high-pH soils. Pakistan's alkaline cropland and urea-heavy fertiliser mix
+make product weighting important.
+
+Let $w_j$ be product $j$'s share of applied nitrogen and $EF^{\NHthree{}\text{-}N}_j$ its
+ammonia-nitrogen emission factor \citep{emep2023soils}. Taking the NFDC offtake by product
+\citep{nfdc2024} over one fiscal year, the product-weighted factor is
+\begin{equation}
+f_{\NHthree{},SF} \;=\; \sum_j w_j\, EF^{\NHthree{}\text{-}N}_j \;=\; 0.1608 .
+\end{equation}
+Urea supplies approximately \SI{81}{\percent} of the nitrogen in the product mix and
+therefore dominates the weighted result (Table~\ref{tab:fertmix}). The remaining products
+change the factor by less than 0.01.
+
+The value 0.1608 is already expressed as kilograms of \NHthree{}-N per kilogram of nitrogen
+applied. It is converted to \NHthree{} mass by the ratio $17/14$ and used directly in the
+ammonia calculation. It is not multiplied by an additional \NHthree{} share.
+
+Soil \NOx{} is calculated separately, using $f_{NO,SF}=0.007$ kg NO-N per kilogram of
+nitrogen applied. For the IPCC indirect-\NtwoO{} pathway, which Eq.~11.9 defines on the
+combined volatilised pool, the two are summed:
+\begin{equation}
+\mathrm{Frac_{GASF}} \;=\; f_{\NHthree{},SF} + f_{NO,SF} \;=\; 0.1678 ,
+\end{equation}
+against the IPCC ``urea-dominant'' default of 0.15. Keeping these three quantities separate
+preserves the nitrogen balance and avoids applying an additional ammonia fraction to a
+factor already expressed as \NHthree{}-N. Because $f_{\NHthree{},SF}$ also drives the
+greenhouse-gas layer's synthetic indirect \NtwoO{}, it is resolved in one place and both
+layers necessarily use it.
+
+\begin{table*}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrrrr@{}}
+\toprule
+\textbf{Product} & \textbf{t N} & \textbf{N content} & \textbf{Share of N}
+& \textbf{$EF^{\NHthree{}\text{-}N}$} & \textbf{Contribution} \\
+\midrule
+Urea             & 3\,026\,265 & 0.46 & 0.8078 & 0.170 & 0.1373 \\
+DAP              &   290\,777 & 0.18 & 0.0776 & 0.154 & 0.0120 \\
+CAN              &   206\,058 & 0.26 & 0.0550 & 0.043 & 0.0024 \\
+Other NP         &   202\,590 & 0.20 & 0.0541 & 0.154 & 0.0083 \\
+Ammonium sulphate &   14\,595 & 0.21 & 0.0039 & 0.154 & 0.0006 \\
+NPK              &     6\,162 & 0.15 & 0.0016 & 0.154 & 0.0003 \\
+\midrule
+\textbf{Total}   & \textbf{3\,746\,448} & & \textbf{1.0000} & & \textbf{0.1608} \\
+\bottomrule
+\end{tabular}
+\caption{Derivation of the product-weighted synthetic-fertiliser ammonia factor. The table is
+generated from \texttt{outputs/agriculture\_fertiliser\_composition\_2024.csv}, whose window is
+exactly the twelve months July~2023 to June~2024; the annexe supplies the normalised composition
+only, and the nitrogen magnitude remains the audited national offtake. NFDC's national and
+provincial tables do not sum to each other over the same twelve months: the difference is
+\SI{15918}{\tonne} of product, \SI{0.154917}{\percent} of the national total and mostly
+urea. It is published by month and product in
+\texttt{outputs/agriculture\_nfdc\_province\_residual.csv} and assigned to
+Other/unallocated rather than distributed across the provinces, which would make every
+residual zero and the shares look exact. Product tonnages are
+NFDC offtake over one fiscal year \citep{nfdc2024}; nitrogen contents and emission factors are
+EMEP/EEA values for high-pH soils, appropriate to Pakistan's alkaline cropland
+\citep{emep2023soils}. \emph{All emission factors in this table are kg \NHthree{}-N per kg N
+applied.} Urea carries \SI{81}{\percent} of the nitrogen and therefore dominates the weighting; the
+audited national nitrogen total (\SI{3.775}{}~Mt~N) rather than this window's sum is used as the
+activity datum, with the mix supplying only the composition.}
+\label{tab:fertmix}
+\end{table*}
+
+\subsection{Livestock ammonia}
+
+Livestock \NHthree{} is calculated using the EMEP/EEA total-ammoniacal-nitrogen (TAN)
+mass-flow method \citep{emep2023manure,sommer2019}. The IPCC post-application fraction
+$\mathrm{Frac_{GASM}}$ is not used as a livestock ammonia emission factor, because it was
+developed for indirect-\NtwoO{} accounting rather than stage-resolved \NHthree{} estimation.
+
+Excreta deposited during grazing lose a species-specific proportion of TAN directly. Manure
+entering a managed system can lose ammonia during housing or yard exposure, storage and
+field application. Each stage acts on the TAN remaining after the preceding stage.
+
+The calculation distinguishes among manure systems. Solid storage passes through housing,
+storage and field-application stages. Daily-spread manure reaches the field without a
+storage stage. Dry lots are represented as uncovered yards.
+
+Factors also differ among livestock categories, and are taken from Table~3-9 of the
+Guidebook. Buffalo manure is assigned a TAN fraction of \num{0.50}, compared with
+\num{0.61} for cattle, and a storage factor of \num{0.17} against \num{0.32}. Grazing
+factors are applied to TAN rather than to total excreted nitrogen (\num{0.14} for cattle and
+buffalo, \num{0.09} for small ruminants).
+
+EMEP/EEA does not provide a separate camel category. Camels therefore use the
+small-ruminant factors as the closest available published analogue, with a wider uncertainty
+assigned to reflect the approximation.
+
+\subsection{Other agricultural air pollutants}
+
+Soil \NOx{} is estimated as approximately \SI{0.7}{\percent} of applied synthetic, organic
+and crop-residue nitrogen, following \citet{stehfest2006}. The value is initially calculated
+as NO-N and converted to reported \NOx{} mass using the conventional NO$_2$-equivalent
+conversion.
+
+Pollutants from crop-residue burning are calculated from the same dry-matter-burned estimate
+used in the greenhouse-gas inventory. The burned mass is multiplied by the combustion factor
+and by pollutant-specific emission factors for CO, PM$_{2.5}$, NMVOC, \NOx{}, \NHthree{},
+black carbon and SO$_2$ (Table~\ref{tab:apef}). The PM$_{2.5}$ factor is also used by the
+related satellite-nowcasting layer so that the two products report a consistent crop-burning
+PM$_{2.5}$ quantity.
+
+All air-pollutant factors are stored with their units, sources and uncertainty in
+\texttt{data/emission\_factors.csv}. Their uncertainties are combined with activity-data
+uncertainty using the same IPCC Approach-1 product rule applied in the greenhouse-gas
+inventory.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.26\linewidth}p{0.40\linewidth}rr@{}}
+\toprule
+\textbf{Pollutant / stage} & \textbf{Basis} & \textbf{Factor} & \textbf{$\pm$\%} \\
+\midrule
+\NHthree{}, synthetic fert.\ & $f_{\NHthree{},SF}$, kg \NHthree{}-N per kg N & 0.1608$^{b}$ & 30 \\
+\NHthree{}, grazing & of TAN; cattle/buffalo \textbar{} small rum. & 0.14 \textbar{} 0.09 & 50 \\
+\NHthree{}, housing & of TAN; cattle \textbar{} buffalo \textbar{} small rum. & 0.08 \textbar{} 0.20 \textbar{} 0.22 & 40 \\
+\NHthree{}, yard (dry lot) & of TAN; dairy \textbar{} other cattle & 0.30 \textbar{} 0.53 & 50 \\
+\NHthree{}, storage & of TAN surviving; cattle \textbar{} buffalo & 0.32 \textbar{} 0.17 & 40 \\
+\NHthree{}, field application & of TAN surviving; cattle \textbar{} buffalo & 0.68 \textbar{} 0.55 & 40 \\
+TAN fraction & of N excreted; cattle \textbar{} buffalo \textbar{} poultry & 0.60 \textbar{} 0.50 \textbar{} 0.70 & 20 \\
+Soil \NOx{} & $f_{NO,SF}$, kg NO-N per kg N applied$^{a}$ & 0.007 & 100 \\
+\multicolumn{4}{@{}l}{\emph{Crop-residue burning (g/kg dry matter; on $M_{burnt}\!\cdot\!C_f$)}} \\
+\quad CO       & IPCC 2006 T2.5      & 92 & 40 \\
+\quad PM$_{2.5}$ & \citet{akagi2011}  & 7.6 & 50 \\
+\quad NMVOC    & \citet{akagi2011} / EMEP & 7.0 & 60 \\
+\quad \NOx{}   & IPCC 2006 T2.5      & 2.5 & 50 \\
+\quad \NHthree{} & \citet{akagi2011} & 1.3 & 60 \\
+\quad BC       & \citet{akagi2011}   & 0.5 & 60 \\
+\quad SO$_2$   & \citet{emep2019}    & 0.40 & 70 \\
+\bottomrule
+\end{tabular}
+\caption{Air-pollutant factors, calculation basis, and 95\% relative uncertainty. Livestock
+\NHthree{} follows the species-resolved EMEP/EEA TAN mass-flow method. Crop-burning factors are
+applied to the same dry matter used in the greenhouse-gas calculation. The synthetic-fertiliser
+\NHthree{} factor is already expressed as \NHthree{}-N and receives no additional
+ammonia-share adjustment. Soil \NOx{} is calculated as NO-N and reported as
+NO$_2$-equivalent mass.}
+\label{tab:apef}
+\end{table}

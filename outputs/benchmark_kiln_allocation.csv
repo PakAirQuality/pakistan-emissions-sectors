@@ -1,0 +1,19 @@
+task_id,candidate,role,block,n_districts,spearman_rho,wape_shares,status,note
+spatial_kiln_allocation,uniform,baseline,pooled,62,0.0,0.7794,scored,truth = coverage-mask observed_kilns over the surveyed frame; 3 split districts unresolvable on the grid (balochistan_sohbatpur;punjab_chiniot;punjab_nankana_sahib)
+spatial_kiln_allocation,uniform,baseline,Balochistan,2,,,declared_unscorable,block too small to score; declared
+spatial_kiln_allocation,uniform,baseline,Khyber Pakhtunkhwa,6,0.0,1.1759,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,uniform,baseline,Other,2,,,declared_unscorable,block too small to score; declared
+spatial_kiln_allocation,uniform,baseline,Punjab,34,0.0,0.4475,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,uniform,baseline,Sindh,18,0.0,0.6538,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,population,baseline,pooled,62,0.7567,0.4563,scored,truth = coverage-mask observed_kilns over the surveyed frame; 3 split districts unresolvable on the grid (balochistan_sohbatpur;punjab_chiniot;punjab_nankana_sahib)
+spatial_kiln_allocation,population,baseline,Balochistan,2,,,declared_unscorable,block too small to score; declared
+spatial_kiln_allocation,population,baseline,Khyber Pakhtunkhwa,6,0.7143,0.8746,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,population,baseline,Other,2,,,declared_unscorable,block too small to score; declared
+spatial_kiln_allocation,population,baseline,Punjab,34,0.7565,0.284,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,population,baseline,Sindh,18,0.1228,0.713,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,builtup,baseline,pooled,62,0.7207,0.4981,scored,truth = coverage-mask observed_kilns over the surveyed frame; 3 split districts unresolvable on the grid (balochistan_sohbatpur;punjab_chiniot;punjab_nankana_sahib)
+spatial_kiln_allocation,builtup,baseline,Balochistan,2,,,declared_unscorable,block too small to score; declared
+spatial_kiln_allocation,builtup,baseline,Khyber Pakhtunkhwa,6,0.7714,0.6952,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,builtup,baseline,Other,2,,,declared_unscorable,block too small to score; declared
+spatial_kiln_allocation,builtup,baseline,Punjab,34,0.59,0.4305,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)
+spatial_kiln_allocation,builtup,baseline,Sindh,18,0.0805,0.7478,scored,held-out province block (leave-one-province-out view: score within the block the pooled fit never saw as a block)

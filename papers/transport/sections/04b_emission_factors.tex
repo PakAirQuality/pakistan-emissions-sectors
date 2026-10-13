@@ -1,0 +1,70 @@
+% ===========================================================================
+\section{Emission Factors, and a Trap That Leaves \COtwo{} Correct}
+\label{sec:factors}
+% ===========================================================================
+
+\subsection{Which table, and why it matters here}
+
+IPCC Volume~2 Chapter~3 publishes separate default tables for road, rail and off-road mobile
+sources. Across them the \COtwo{} factor for a given fuel is identical, because \COtwo{}
+depends only on the carbon in the fuel and on complete oxidation. The \CHfour{} and \NtwoO{}
+factors are not.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llrr@{}}
+\toprule
+\textbf{Category} & \textbf{Table} & \textbf{\COtwo{}} & \textbf{\NtwoO{}} \\
+ & & \multicolumn{2}{c}{kg/TJ} \\
+\midrule
+Road diesel        & 3.2.2 & 74\,100 & 3.9 \\
+Off-road machinery & 3.3.1 & 74\,100 & 28.6 \\
+Railways           & 3.4.1 & 74\,100 & 28.6 \\
+\bottomrule
+\end{tabular}
+\caption{The same diesel in three tables. \COtwo{} is identical by construction; \NtwoO{}
+differs by a factor of seven, because off-road and locomotive engines generally carry no
+catalyst and run lean at high load, which is the \NtwoO{}-forming regime.}
+\label{tab:tables}
+\end{table}
+
+\subsection{What the wrong table costs, quantified}
+
+Off-road machinery must take Table~3.3.1. If it took the road table instead, the engine
+reports the diagnostic on every run: off-road \NtwoO{} would be \SI{0.022}{\mega\tonne}
+instead of \SI{0.161}{\mega\tonne}, and the category total \SI{1.59}{\mega\tonne} instead of
+\SI{1.73}{\mega\tonne}---\SI{8}{\percent} low.
+
+The reason this is worth a section rather than a footnote is the failure signature. \COtwo{}
+is \SI{91}{\percent} of the off-road category and is \emph{identical} between the two tables,
+so an inventory making this error would still reconcile against the national diesel supply,
+still agree with EDGAR to within its usual margin, and still pass every mass-balance check the
+compiler had. Nothing available as a validation would catch it. The only thing that catches it
+is reading the guidelines carefully enough to notice that there is more than one table---
+precisely the step that time pressure removes.
+
+It is also directional. Both the road and energy-industry tables carry the \emph{lower} trace-gas
+values and are the more familiar ones, so a community making this error at random rates would
+be biased low on non-\COtwo{} transport emissions rather than scattered around the truth.
+
+A regression test pins the factor, so substituting the road value fails the build.
+
+\subsection{Fossil methane, and why it is flagged}
+
+Road and off-road diesel and petrol are fossil fuels, so their \CHfour{} takes the AR5 fossil
+GWP of \num{30} rather than the biogenic \num{28}. Every methane-emitting component in this
+inventory declares which it is, and a contract test asserts both that the declaration is
+present and that the \COe{} conversion used the corresponding value.
+
+The difference is small here---methane is \SI{0.40}{\mega\tonne} \COe{} across the
+sector---but the flag is not optional, because the same field distinguishes dung-cake methane
+from natural-gas methane in the residential sector where it matters considerably more.
+
+\subsection{No separate oxidation factor}
+
+The 2006 Guidelines assume complete oxidation and fold it into the emission factor;
+Table~1.4 carries an explicit oxidation column of \num{1.0} for every fuel. Applying the
+1996-vintage \num{0.98} on top would double-discount. This inventory's waste sector
+\emph{does} carry an oxidation factor, because open burning genuinely is incomplete, and a
+test pins both conventions so neither can be "corrected" into the other.

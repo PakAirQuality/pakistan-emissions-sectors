@@ -1,0 +1,80 @@
+% ===========================================================================
+\section{Reproduction}
+\label{app:repro}
+% ===========================================================================
+
+The sector runs on Python 3.11 with no compiled dependencies. From the repository
+root:
+
+{\footnotesize
+\begin{verbatim}
+pip install -e .
+python3 -m pkinv.sectors.residential.run_residential
+python3 -m unittest discover tests
+\end{verbatim}
+}
+
+The first command runs every layer of the sector in sequence---the greenhouse-gas
+engine, the air-pollutant layer, the survey comparison, the official benchmarks and
+CCAC bridge, the uncertainty module, the district allocation, the time series and
+the monthly profiles---and prints the dung-cake nitrogen closure as it runs. Its outputs land
+in \texttt{outputs/}, and this is which is which---the list they replace named them
+collectively as \texttt{residential\_*.csv}, which told a reader what exists without giving a
+filename for any of it:
+
+\begin{itemize}\itemsep2pt
+\item \texttt{residential\_\allowbreak totals\_\allowbreak 2024.csv}: the sector total under the reference, with configuration L beside it and the sector's mixed input vintages stated on the row rather than smoothed over.
+\item \texttt{residential\_\allowbreak by\_\allowbreak stream\_\allowbreak 2024.csv}: the same total by fuel stream.
+\item \texttt{residential\_\allowbreak fuel\_\allowbreak 2024.csv}: the energy behind those streams in TJ and share.
+\item \texttt{residential\_\allowbreak provincial\_\allowbreak 2024.csv}: the provincial split, and \texttt{residential\_\allowbreak district\_\allowbreak 2024.csv} the district allocation beneath it.
+\item \texttt{residential\_\allowbreak strata\_\allowbreak 2024.csv}: the allocation basis: fuel by province and rural or urban stratum, on the survey's own strata.
+\item \texttt{residential\_\allowbreak monthly\_\allowbreak 2024.csv}: the monthly profile, and \texttt{residential\_\allowbreak emissions\_\allowbreak monthly\_\allowbreak 2024.csv} the emissions it carries.
+\item \texttt{residential\_\allowbreak air\_\allowbreak pollutants\_\allowbreak 2024.csv}: the air-pollutant layer, and \texttt{residential\_\allowbreak pm\_\allowbreak ratio\_\allowbreak 2024.csv} the residential-over-road primary \PM{} ratio with its parametric interval.
+\item \texttt{residential\_\allowbreak hies\_\allowbreak comparison\_\allowbreak 2024.csv}: the survey comparison, this inventory's quantities against the HIES round that anchors them.
+\item \texttt{residential\_\allowbreak official\_\allowbreak comparison\_\allowbreak 2024.csv}: the official benchmarks, and \texttt{residential\_\allowbreak unfccc\_\allowbreak crt\_\allowbreak cell\_\allowbreak audit\_\allowbreak 2024.csv} the CRT cell extraction behind them.
+\item \texttt{residential\_\allowbreak ccac\_\allowbreak bridge\_\allowbreak 2024.csv}: the CCAC bridge, item by item in \PM{} terms.
+\item \texttt{residential\_\allowbreak uncertainty\_\allowbreak 2024.csv}: the interval; \texttt{residential\_\allowbreak uncertainty\_\allowbreak inputs\_\allowbreak 2024.csv} the input register behind it; \texttt{residential\_\allowbreak uncertainty\_\allowbreak scenarios\_\allowbreak 2024.csv} the structural scenarios.
+\item \texttt{residential\_\allowbreak dung\_\allowbreak ledger\_\allowbreak 2024.csv}: the dung-cake closure the run prints: each claimant's air-dry mass, its share of the diverted quantity and how it is treated.
+\item \texttt{residential\_\allowbreak timeseries.csv}: the series across years.
+\item \texttt{residential\_\allowbreak qa\_\allowbreak 2024.csv}: the quality-control report.
+\end{itemize}
+
+Figures regenerate with \texttt{pkinv.report.figures} and are copied into this manuscript by
+\texttt{scripts/sync\_figures.py}.
+
+The dung stream's diverted quantity is derived from the agriculture sector's nitrogen
+flow, so reproducing it requires that sector's data to be loadable; the equality of the
+two sectors' nitrogen is asserted by \texttt{tests/test\_residential.py} with
+\texttt{==} rather than a tolerance, and the destination configurations (L/S) share
+that quantity.
+
+The HIES microdata are not redistributed here: the SPSS files are fetched from the
+Pakistan Bureau of Statistics microdata portal and hash-pinned in a manifest, and
+only the derived, design-weighted aggregate tables are committed. Every other
+input is committed directly, and a run manifest hashes the held sources.
+
+% ===========================================================================
+\section{Sources}
+\label{app:sources}
+% ===========================================================================
+
+Natural gas and LPG supplied to households are OGRA's sector-wise tables
+\citep{ogra2024}, with the nine-edition archive \citep{ograarchive} behind the
+time series; household kerosene is OCAC's sectoral sales \citep{ocacaviation}.
+Firewood is the HIES 2024--25 design-weighted household quantity \citep{hies2025},
+with the 2018--19 round \citep{hies2019} as an independent check and FAOSTAT's
+wood-fuel series \citep{faostat} retained only as a structural scenario, carrying
+FAO's own estimate flag. Household dung cake is the HIES quantity, a per-household
+rate interpolated between the two rounds \citep{hies2019,hies2025}; the diverted
+quantity it is set against, and configuration L, are derived from the agriculture sector's
+nitrogen balance rather than from any external source, with cake ash and moisture
+from proximate-analysis literature \citep{szymajda2019}. Greenhouse-gas factors
+are IPCC 2006 Guidelines Volume~2 Chapter~2 Table~2.5 \citep{ipcc2006stationary};
+air-pollutant factors are the Andreae compilation \citep{andreae2019}, the
+EMEP/EEA small-combustion chapter \citep{emep2023smallcombustion}, the Akagi
+compilation \citep{akagi2011}, and the field-burning mirrors \citep{emep2019} for
+crop residues. Degree-days derive from NASA POWER monthly temperature
+\citep{nasapower}; the generator stream uses the Government of Pakistan's
+administered petrol prices \citep{goppetrol}. External comparisons are EDGAR
+\citep{edgar2025booklet}, Pakistan's CRT workbook \citep{pakcrt2026}, BUR-1
+\citep{pakbur1} and the CCAC/SEI assessment \citep{ccacsei2023}.

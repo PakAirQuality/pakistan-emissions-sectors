@@ -1,0 +1,92 @@
+# THE DERIVATION CHAIN: the published source, the corrections, what the engine used,
+# and the result - one walk, in the order a reader meets it. Every value is READ from
+# the file named in evidence_file; nothing here is recomputed. A stage a sector has no
+# artifact for is declared absent in a row rather than skipped.
+# Registry: data/verification_chain.csv. See pkinv.report.derivation_chain.
+stage,step,section,subject,item,kind,value,unit,evidence_file,note
+1_source,10,"jet fuel by customer category, as OCAC prints it",JP-1,Domestic Avi-PIA,source,193813.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+1_source,10,"jet fuel by customer category, as OCAC prints it",JP-1,Domestic Avi-Others,source,166119.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+1_source,10,"jet fuel by customer category, as OCAC prints it",100LL,Domestic Avi-Others,source,23.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+1_source,10,"jet fuel by customer category, as OCAC prints it",JP-1,Overseas/Foreign Aviation,source,283147.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+1_source,10,"jet fuel by customer category, as OCAC prints it",JP-1,Government Aviation,source,2973.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+1_source,10,"jet fuel by customer category, as OCAC prints it",JP-1,Government Other,source,12282.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+1_source,10,"jet fuel by customer category, as OCAC prints it",JP-8,Government Other,source,117785.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+1_source,10,"jet fuel by customer category, as OCAC prints it",100LL,Government Aviation,source,4519.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,OCAC Sectoral Sales of Energy Products FY2023-24
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-PIA,ipcc_domestic,reading,193813.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-PIA,international_bunker,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-PIA,military_1a5b,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-PIA,general_aviation,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-PIA,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-PIA,residual,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,ipcc_domestic,reading,166119.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,international_bunker,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,military_1a5b,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,general_aviation,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,residual,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,literal_customer
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,ipcc_domestic,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,international_bunker,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,military_1a5b,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,general_aviation,reading,23.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Domestic Avi-Others,residual,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Overseas/Foreign Aviation,ipcc_domestic,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,foreign_customer_international
+3_correction,20,the bridge: which customer row lands in which IPCC box,Overseas/Foreign Aviation,international_bunker,reading,283147.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,foreign_customer_international
+3_correction,20,the bridge: which customer row lands in which IPCC box,Overseas/Foreign Aviation,military_1a5b,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,foreign_customer_international
+3_correction,20,the bridge: which customer row lands in which IPCC box,Overseas/Foreign Aviation,general_aviation,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,foreign_customer_international
+3_correction,20,the bridge: which customer row lands in which IPCC box,Overseas/Foreign Aviation,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,foreign_customer_international
+3_correction,20,the bridge: which customer row lands in which IPCC box,Overseas/Foreign Aviation,residual,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,foreign_customer_international
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,ipcc_domestic,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,government_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,international_bunker,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,government_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,military_1a5b,reading,2973.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,government_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,general_aviation,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,government_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,government_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,residual,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,government_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,ipcc_domestic,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,unresolved
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,international_bunker,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,unresolved
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,military_1a5b,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,unresolved
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,general_aviation,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,unresolved
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,unresolved
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,residual,reading,12282.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,unresolved
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,ipcc_domestic,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,jp8_military_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,international_bunker,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,jp8_military_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,military_1a5b,reading,117785.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,jp8_military_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,general_aviation,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,jp8_military_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,jp8_military_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Other,residual,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,jp8_military_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,ipcc_domestic,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,international_bunker,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,military_1a5b,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,general_aviation,reading,4519.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,export_other,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,20,the bridge: which customer row lands in which IPCC box,Government Aviation,residual,reading,0.0,t,outputs/aviation_fuel_bridge_fy2023_24.csv,100ll_general_aviation_candidate
+3_correction,30,top-down fuel against the bottom-up route model,2023,domestic_fuel_t,reading,359932.0,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,bottom_up_domestic_fuel_t,reading,94575.54819999999,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,domestic_reconciliation_factor,reading,3.8057617095578204,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,domestic_fuel_t,reading,107555.47115929548,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,bottom_up_domestic_fuel_t,reading,94575.54819999999,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,domestic_reconciliation_factor,reading,1.1372439621692354,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,domestic_fuel_t,reading,92409.04707234274,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,bottom_up_domestic_fuel_t,reading,94575.54819999999,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+3_correction,30,top-down fuel against the bottom-up route model,2023,domestic_reconciliation_factor,reading,0.9770923756838742,"t, and the factor",outputs/aviation_reconciliation_fy2023_24.csv,
+2_used,50,the fuel-constrained streams the engine prices,CO2,Fuel-constrained domestic aviation CO2,used,292.012589,Gg,outputs/aviation_fuel_constrained_by_stream_fy2023_24.csv,
+2_used,50,the fuel-constrained streams the engine prices,CH4,Fuel-constrained domestic aviation CH4,used,0.002038,Gg,outputs/aviation_fuel_constrained_by_stream_fy2023_24.csv,
+2_used,50,the fuel-constrained streams the engine prices,N2O,Fuel-constrained domestic aviation N2O,used,0.00815,Gg,outputs/aviation_fuel_constrained_by_stream_fy2023_24.csv,
+4_final,80,"the sector's own totals, in its own words",,Domestic aviation,final,0.30113,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,1A3a ii domestic aviation; the national total
+4_final,80,"the sector's own totals, in its own words",,International aviation LTO emissions at Pakistani airports,final,,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,"210.4 Gg CO2, excluded from the national total. IPCC 2006 GL Vol 2 Ch 3 s3.6.1: emissions from international aviation are excluded from national totals and reported separately as memo items. Covers only landing and take-off at Pakistani airports. It is distinct from the full-flight bunker memo estimated by the fuel bridge."
+4_final,80,"the sector's own totals, in its own words",,"Non-commercial movements, LTO portion",final,,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,"7.8 Gg CO2, excluded from the national total. Reported separately rather than inside 1A3a: the CAA's non-commercial column mixes general aviation, training circuits and military movements at joint-use airfields, and IPCC reports military aviation under 1A5b."
+4_final,80,"the sector's own totals, in its own words",,Military and government aviation (1A5b candidates),final,,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,"381.6 Gg CO2 (120758 t jet fuel x 3.16), excluded from the national total: IPCC reports military aviation under 1A5b and no record attributes the activity between military operations and civil government use. See completeness 1.A.5.b and gap aviation-1a5b-scope."
+4_final,80,"the sector's own totals, in its own words",,General aviation (100LL),final,,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,"14.1 Gg CO2 (4542 t aviation gasoline x 3.10), excluded from the national total: fuel identified, activity unresolved."
+4_final,80,"the sector's own totals, in its own words",,Unresolved government JP-1,final,,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,"38.8 Gg CO2 (12282 t x 3.16), excluded from the national total: the bridge's unresolved residual, labelled as such."
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: including military/government scope,final,0.68273,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,the 1A3a total plus the military/government jet stream alone (0.382 Mt CO2); configuration military_government_in_scope
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: including general aviation 100LL,final,0.31521,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,the 1A3a total plus the 100LL general-aviation stream alone (0.014 Mt CO2); configuration general_aviation_in_scope
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: including unresolved government JP-1,final,0.33994,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,the 1A3a total plus the bridge's unresolved government residual alone (0.039 Mt CO2); configuration unresolved_jp1_in_scope
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: including military and general aviation scope,final,0.73562,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,"the 1A3a total plus all three priced streams above (0.434 Mt CO2) - the joint scope alternative, retained as the sum of the three independently switchable rows; CO2-only on the added streams"
+4_final,80,"the sector's own totals, in its own words",,Sensitivity: route-resolved ledger reading,final,0.27071,Mt CO2e AR5,outputs/aviation_totals_fy2023_24.csv,"the domestic total read from the flight-route ledger instead of aggregate movements (coverage 99.0%%, CO2-only like the resolution table); configuration aviation_route_resolved_reading. The re-base itself is REFUSED BY TYPE: provisional stamps on every finer product and a 0.98-3.81 reconciliation spread; the EMEP fuel-sales reconciliation is the closer"
+4_final,90,"every category and gas, on the national table",CH4,Civil aviation,final,6e-05,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Civil aviation,final,0.29886,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Civil aviation,final,0.00221,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR5,reading,0.30113,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR6,reading,0.3012,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,uncert_pct_95,reading,58.8,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,share_pct,reading,0.07,Mt CO2e / pct,outputs/national_all_sectors.csv,

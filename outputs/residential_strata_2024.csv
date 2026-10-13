@@ -1,0 +1,74 @@
+fuel,province,region,hies_share,allocated_Mt_co2e,basis
+firewood,Balochistan,rural,0.1157,0.39498,engine geography (HIES strata)
+firewood,Balochistan,urban,0.01533,0.05232,engine geography (HIES strata)
+firewood,Khyber Pakhtunkhwa,rural,0.3365,1.14876,engine geography (HIES strata)
+firewood,Khyber Pakhtunkhwa,urban,0.01098,0.03747,engine geography (HIES strata)
+firewood,Punjab,rural,0.23604,0.80579,engine geography (HIES strata)
+firewood,Punjab,urban,0.04529,0.15462,engine geography (HIES strata)
+firewood,Sindh,rural,0.20504,0.69997,engine geography (HIES strata)
+firewood,Sindh,urban,0.03514,0.11995,engine geography (HIES strata)
+dung_cake,Balochistan,rural,0.00474,0.00569,engine geography (HIES strata)
+dung_cake,Balochistan,urban,0.00113,0.00135,engine geography (HIES strata)
+dung_cake,Khyber Pakhtunkhwa,rural,0.03829,0.04594,engine geography (HIES strata)
+dung_cake,Khyber Pakhtunkhwa,urban,0.00145,0.00174,engine geography (HIES strata)
+dung_cake,Punjab,rural,0.68827,0.82578,engine geography (HIES strata)
+dung_cake,Punjab,urban,0.05062,0.06074,engine geography (HIES strata)
+dung_cake,Sindh,rural,0.14927,0.17909,engine geography (HIES strata)
+dung_cake,Sindh,urban,0.06623,0.07946,engine geography (HIES strata)
+lpg,Balochistan,rural,0.01685,0.0362,engine geography (HIES strata)
+lpg,Balochistan,urban,0.02067,0.04441,engine geography (HIES strata)
+lpg,Khyber Pakhtunkhwa,rural,0.18401,0.39528,engine geography (HIES strata)
+lpg,Khyber Pakhtunkhwa,urban,0.03018,0.06484,engine geography (HIES strata)
+lpg,Punjab,rural,0.25144,0.54013,engine geography (HIES strata)
+lpg,Punjab,urban,0.41067,0.88217,engine geography (HIES strata)
+lpg,Sindh,rural,0.03634,0.07807,engine geography (HIES strata)
+lpg,Sindh,urban,0.04984,0.10705,engine geography (HIES strata)
+natural_gas,Balochistan,rural,0.01296,,diagnostic only - engine rides metered gas connections
+natural_gas,Balochistan,urban,0.02095,,diagnostic only - engine rides metered gas connections
+natural_gas,Khyber Pakhtunkhwa,rural,0.05422,,diagnostic only - engine rides metered gas connections
+natural_gas,Khyber Pakhtunkhwa,urban,0.06231,,diagnostic only - engine rides metered gas connections
+natural_gas,Punjab,rural,0.14068,,diagnostic only - engine rides metered gas connections
+natural_gas,Punjab,urban,0.48364,,diagnostic only - engine rides metered gas connections
+natural_gas,Sindh,rural,0.0197,,diagnostic only - engine rides metered gas connections
+natural_gas,Sindh,urban,0.20554,,diagnostic only - engine rides metered gas connections
+kerosene,Balochistan,rural,0.07926,,diagnostic only - engine rides population fallback (thin survey n)
+kerosene,Khyber Pakhtunkhwa,rural,0.16694,,diagnostic only - engine rides population fallback (thin survey n)
+kerosene,Khyber Pakhtunkhwa,urban,0.01354,,diagnostic only - engine rides population fallback (thin survey n)
+kerosene,Punjab,rural,0.36789,,diagnostic only - engine rides population fallback (thin survey n)
+kerosene,Punjab,urban,0.12087,,diagnostic only - engine rides population fallback (thin survey n)
+kerosene,Sindh,rural,0.23635,,diagnostic only - engine rides population fallback (thin survey n)
+kerosene,Sindh,urban,0.01515,,diagnostic only - engine rides population fallback (thin survey n)
+agricultural_waste,Balochistan,rural,0.09117,,diagnostic only - engine rides the residue rupee geography
+agricultural_waste,Balochistan,urban,0.01225,,diagnostic only - engine rides the residue rupee geography
+agricultural_waste,Khyber Pakhtunkhwa,rural,0.32986,,diagnostic only - engine rides the residue rupee geography
+agricultural_waste,Khyber Pakhtunkhwa,urban,0.01316,,diagnostic only - engine rides the residue rupee geography
+agricultural_waste,Punjab,rural,0.36688,,diagnostic only - engine rides the residue rupee geography
+agricultural_waste,Punjab,urban,0.01983,,diagnostic only - engine rides the residue rupee geography
+agricultural_waste,Sindh,rural,0.14759,,diagnostic only - engine rides the residue rupee geography
+agricultural_waste,Sindh,urban,0.01926,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Balochistan,rural,0.00817,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Balochistan,urban,0.00384,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Khyber Pakhtunkhwa,rural,0.01376,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Khyber Pakhtunkhwa,urban,6e-05,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Punjab,rural,0.70017,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Punjab,urban,0.04281,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Sindh,rural,0.19683,,diagnostic only - engine rides the residue rupee geography
+cotton_sticks,Sindh,urban,0.03435,,diagnostic only - engine rides the residue rupee geography
+charcoal,Balochistan,rural,0.33699,,diagnostic only - engine rides population fallback (thin survey n)
+charcoal,Balochistan,urban,0.25162,,diagnostic only - engine rides population fallback (thin survey n)
+charcoal,Punjab,rural,0.30996,,diagnostic only - engine rides population fallback (thin survey n)
+charcoal,Sindh,rural,0.00883,,diagnostic only - engine rides population fallback (thin survey n)
+charcoal,Sindh,urban,0.0926,,diagnostic only - engine rides population fallback (thin survey n)
+coal,Balochistan,rural,0.64506,,diagnostic only - engine rides population fallback (thin survey n)
+coal,Balochistan,urban,0.05155,,diagnostic only - engine rides population fallback (thin survey n)
+coal,Khyber Pakhtunkhwa,rural,0.06564,,diagnostic only - engine rides population fallback (thin survey n)
+coal,Punjab,rural,0.22332,,diagnostic only - engine rides population fallback (thin survey n)
+coal,Sindh,rural,0.01445,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Balochistan,rural,0.00136,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Balochistan,urban,0.02409,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Khyber Pakhtunkhwa,rural,0.02184,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Khyber Pakhtunkhwa,urban,0.0424,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Punjab,rural,0.06399,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Punjab,urban,0.03562,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Sindh,rural,0.05796,,diagnostic only - engine rides population fallback (thin survey n)
+generator_fuel,Sindh,urban,0.75273,,diagnostic only - engine rides population fallback (thin survey n)

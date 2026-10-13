@@ -1,0 +1,82 @@
+% ===========================================================================
+\section{Emission Factors, and the Boundary of a Finding}
+\label{sec:factors}
+% ===========================================================================
+
+\subsection{Table 2.2 for the grid, Table 2.3 for captive}
+
+IPCC Volume~2 Chapter~2 publishes four parallel default tables for stationary combustion: energy
+industries, manufacturing industries and construction, commercial, and residential. Grid
+generation is 1A1a and takes Table~2.2. Captive self-generation serves the factory that owns
+it rather than selling power, so it is 1A2 and takes Table~2.3.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Natural gas} & \textbf{\COtwo{}} & \textbf{\CHfour{}} & \textbf{\NtwoO{}} \\
+ & \multicolumn{3}{c}{kg/TJ} \\
+\midrule
+Table 2.2, energy industries   & 56\,100 & 1 & 0.1 \\
+Table 2.3, manufacturing       & 56\,100 & 1 & 0.1 \\
+Table 2.5, residential         & 56\,100 & 5 & 0.1 \\
+\bottomrule
+\end{tabular}
+\caption{For natural gas, the industrial and energy-industry tables are identical. Only the
+residential \CHfour{} differs.}
+\label{tab:tables}
+\end{table}
+
+Captive gas takes Table~2.3, the manufacturing-industries table. For natural gas its
+factors are identical to Table~2.2's, so the choice carries no numerical weight here; it is
+cited correctly because the citation is what an auditor checks, and because it will matter if
+the captive fleet later resolves into oil- and coal-fired plants, where the tables do differ
+\citep{ahmad2026national}.
+
+\subsection{The coal blend as a parameter, not a decision}
+
+The lignite share is \SI{79}{\percent}, read from the plant fuel ledger: the Thar-named
+mine-mouth plants are \SI{75.2}{\percent} of FY2023--24 coal generation and the
+imported-coal plants \SI{16.4}{\percent}, with one residual---Lucky Electric, at
+\SI{8.4}{\percent}, whose name states no origin. The residual is carried as bounds rather
+than assigned: \num{0.752} with Lucky as imported, \num{0.835} with Lucky as Thar, and
+\num{0.79} is their midpoint. An independent route---plant coal mass weighted by IPCC rank
+calorific values---gives \numrange{0.70}{0.84}, overlapping the generation route, which is
+what makes the range defensible without resolving the plant. The heat-rate channel of
+Section~\ref{sec:impliedcv} has since produced evidence on the plant itself: Lucky's
+implied calorific value sits at \SIrange{11.4}{12.1}{} TJ/Gg in all three of its
+years---lignite, not imported bituminous---which favours the upper bound. The bounds are
+kept until a source states the origin outright, but the residual is no longer
+evidence-free.
+
+This replaces an inference from an older fleet. The previous value of \SI{35}{\percent} was
+read off an earlier year's generation mix, before Thar Energy, ThalNova and Lucky entered
+service; by the anchor year the mine-mouth plants dominate. The parameter now carries
+\SI{12}{\percent} uncertainty, spanning the union of both routes.
+
+Because the calculation is on an energy basis, that uncertainty propagates to about
+\SI{1}{\percent} on the coal factor rather than to a factor of two. This is the practical
+payoff of Section~\ref{sec:methods}, and the blend remains a parameter with a published
+range rather than a decision the compiler must defend.
+
+\subsection{The TOE conversion, which is this sector's largest unresolved risk}
+
+The tonnes-of-oil-equivalent constant is \SI{0.041868}{} TJ per tonne, cited to the Eurostat
+definition---a \emph{net} calorific basis, matching the IPCC factors. This is not an IPCC
+value; the 2006 Guidelines work in TJ/Gg and never define TOE, so it must be cited elsewhere.
+
+The risk is that NEPRA's own TOE convention is unverified. If the regulator converts on a
+\emph{gross} basis, as some South Asian statistical practice does, this sector overstates
+\COtwo{} by roughly \SI{5}{\percent} for coal and oil and \SI{10}{\percent} for gas. A
+one-sided conversion error cannot be expressed as a symmetric sensitivity without implying
+a symmetry that does not exist---so it is not folded into any $\pm$ percentage. It is
+instead a named structural case: the gross-basis scenario computes to
+\SI{37.17}{\mega\tonne} against the \SI{40.04}{} family reference (alternatives 38.45 heat-rate, 44.05 with K-Electric, 57.82 legacy control)
+(Table~\ref{tab:scenarios}), with its own conditional interval and no probability
+attached. The evidence leans net---the MMBTU-metered plants imply \SI{48.7}{\percent}
+efficiency, which only a net basis supports, and Pakistan's CRT filing states NCV
+outright---but evidence is not documentation.
+
+Resolving it requires one page: the conversion-factors table at the front of the HDIP Pakistan
+Energy Yearbook. It is recorded as this sector's highest-priority acquisition.

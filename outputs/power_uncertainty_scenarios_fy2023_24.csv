@@ -1,0 +1,9 @@
+structural_scenario,scope,deterministic_Mt,mean_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,family_id,status,note,interpretation
+reference,Electricity and heat production,40.04008,40.063,35.985,39.998,44.462,grid_stations_rank_default,provisional_structural_boundary,the estimate,conditional parametric interval; no structural probability
+coal_all_bituminous,Electricity and heat production,38.99548,38.989,34.946,38.937,43.434,,,blend lower endpoint,conditional parametric interval; no structural probability
+coal_all_lignite,Electricity and heat production,40.31776,40.323,36.136,40.233,44.87,,,blend upper endpoint,conditional parametric interval; no structural probability
+coal_at_implied_cv,Electricity and heat production,38.45184,38.448,34.429,38.363,42.912,grid_plant_cv_restated,provisional_structural_boundary,coal energy at ledger mass x per-plant implied NCV (Tables 20/23/28),conditional parametric interval; no structural probability
+coal_at_table3_legacy,Electricity and heat production,57.82049,57.787,51.752,57.701,64.272,grid_nepra_reference_legacy,provisional_structural_boundary,"LEGACY PUBLISHED CONTROL: coal energy as NEPRA SoIR Table 3 prints it, the reference for every release before this one",conditional parametric interval; no structural probability
+toe_gross_basis,Electricity and heat production,37.16835,37.169,33.319,37.119,41.378,,,if HDIP's TOE convention is gross rather than net,conditional parametric interval; no structural probability
+captive_hhv_900,Captive gas self-generation (1A2),4.99454,4.992,4.262,4.979,5.798,,,pipeline gas at 900 Btu/scf,conditional parametric interval; no structural probability
+grid_plus_ke_ledger_fuel,Electricity and heat production,44.05401,44.023,39.792,43.957,48.508,grid_plus_ke,provisional_structural_boundary,if Table 3 excludes the K-Electric system (CO2 only),conditional parametric interval; no structural probability

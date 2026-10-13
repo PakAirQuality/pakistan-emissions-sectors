@@ -1,0 +1,5 @@
+evidence_class,description,share_percent,period,weight_basis,source_location,provenance
+TE1,Observed source-month activity,0.95,FY2023-24,AR5 CO2e mass,outputs/temporal_profile.csv (temporal_method=T1),"read from the product; a share of mass by timing evidence, not a measure of timing accuracy"
+TE2,Reconstructed monthly administrative activity,25.29,FY2023-24,AR5 CO2e mass,outputs/temporal_profile.csv (temporal_method=T2),"read from the product; a share of mass by timing evidence, not a measure of timing accuracy"
+TE3,Process or activity-shape profile,19.12,FY2023-24,AR5 CO2e mass,outputs/temporal_profile.csv (temporal_method=T3),"read from the product; a share of mass by timing evidence, not a measure of timing accuracy"
+TE4,Flat or weakly constrained profile,54.65,FY2023-24,AR5 CO2e mass,outputs/temporal_profile.csv (temporal_method=T4),"read from the product; a share of mass by timing evidence, not a measure of timing accuracy"

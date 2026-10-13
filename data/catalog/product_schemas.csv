@@ -1,0 +1,257 @@
+# THE DECLARED SCHEMA OF EVERY HASHED PRODUCT (rc40 validation package).
+# One row per product the release manifest hashes, plus the products the validation package
+# names by role. primary_key is a semicolon-separated column list; the packager and
+# tests/test_product_schemas.py VERIFY that the key is unique in the file and that every named
+# column exists - a declared key that is not unique is an error here, not a note.
+# units: the unit of the product's main quantity column(s); gwp_basis: which CO2e columns it
+# carries; coverage columns describe what the rows span, in the vocabulary of the registries.
+product_id,relative_path,schema_id,primary_key,units,gwp_basis,configuration_coverage,period_coverage,geography_coverage
+annual.atomic,outputs/pakemis_atomic_annual.csv,pkinv.atomic_annual/v4,period_id;component_id;gas;configuration_id;geography_id,native mass in native_unit; co2e Mt,AR5;AR6,REF_2023_24;L_2023_24,FY2015-16..FY2023-24,PK
+annual.atomic_aggregates,outputs/pakemis_atomic_annual_aggregates.csv,pkinv.atomic_annual_aggregates/v1,aggregation_level;period_id;sector_id;category;gas;configuration_id;geography_id,co2e Mt,AR5;AR6,REF_2023_24;L_2023_24,FY2015-16..FY2023-24,PK
+annual.panel,outputs/pakemis_annual_fy2015_16_fy2023_24.csv,pkinv.annual_panel/v2,period_label;sector;category;gas;grain;configuration_id,co2e Mt,AR5;AR6,REF_2023_24;L_2023_24,FY2015-16..FY2023-24,PK
+annual.national_series,outputs/pakemis_national_series.csv,pkinv.national_series/v1,row_kind;period_label;sector,co2e Mt,AR5;AR6,REF_2023_24,FY2015-16..FY2023-24,PK
+annual.national_series_coverage,outputs/pakemis_national_series_coverage.csv,pkinv.national_series_coverage/v1,period_label,co2e Mt;pct,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+annual.reference_L,outputs/national_all_sectors.csv,pkinv.national_all_sectors/v1,row_kind;sector,co2e Mt,AR5;AR6,REF_2023_24,FY2023-24,PK
+annual.reference_S,outputs/national_all_sectors_ledger.csv,pkinv.national_all_sectors/v1,row_kind;sector,co2e Mt,AR5;AR6,L_2023_24,FY2023-24,PK
+annual.agriculture_fiscal_series,outputs/pakemis_agriculture_fiscal_series.csv,pkinv.agriculture_fiscal_series/v1,fiscal_end_year;category;gas,Gg native; co2e Mt,AR5;AR6,REF_2023_24,FY2015-16..FY2023-24,PK
+annual.power_grid_basis_change,outputs/pakemis_power_grid_basis_change.csv,pkinv.power_grid_basis_change/v1,stream;province,share,none,REF_2023_24,FY2019-20,PK
+annual.agriculture_basis_change,outputs/pakemis_agriculture_basis_change.csv,pkinv.agriculture_basis_change/v1,fiscal_end_year;category,co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+annual.agriculture_crop_calendar,outputs/pakemis_agriculture_crop_calendar.csv,pkinv.agriculture_crop_calendar/v1,crop;field;season,pct,none,REF_2023_24,FY2015-16..FY2023-24,PK
+annual.series_splice_agriculture,outputs/pakemis_series_splice_agriculture.csv,pkinv.series_splice/v1,category,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+annual.cement_activity_sources,outputs/pakemis_cement_activity_sources.csv,pkinv.cement_activity_sources/v1,period_id;source_id,kt cement,none,REF_2023_24,FY2015-16..FY2023-24,PK
+monthly.panel,outputs/pakemis_monthly_fy2015_16_fy2023_24.csv,pkinv.monthly_panel/v3,period_id;month;component_id;configuration_id;geography_id,native mass in native_unit; co2e Mt,AR5;AR6,REF_2023_24,FY2015-16..FY2023-24 (108 months),PK
+monthly.coverage,outputs/pakemis_monthly_coverage.csv,pkinv.monthly_coverage/v1,month;sector_id;ipcc_code;category;temporal_evidence_class,co2e Mt,AR5,REF_2023_24,108 months,PK
+monthly.coverage_summary,outputs/pakemis_monthly_coverage_summary.csv,pkinv.monthly_coverage_summary/v1,month,co2e Mt;pct,AR5,REF_2023_24,108 months,PK
+monthly.controls,outputs/pakemis_monthly_controls.csv,pkinv.monthly_controls/v1,stream;sector_row;products;month,tonnes,none,REF_2023_24,as listed,PK
+monthly.evidence,outputs/pakemis_monthly_evidence.csv,pkinv.monthly_evidence/v1,scope;temporal_evidence_class,co2e Mt;pct,AR5,REF_2023_24,FY2023-24,PK
+monthly.data_requests,outputs/pakemis_monthly_data_requests.csv,pkinv.monthly_data_requests/v1,request_id;component,co2e Mt;pct,AR5,REF_2023_24,FY2023-24,PK
+monthly.ledger_2024,outputs/pakemis_monthly_ledger_2024.csv,pkinv.monthly_ledger/v1,configuration_id;category;subitem;gas;month,Gg native; co2e Mt,AR5;AR6,L_2023_24,FY2023-24,PK
+monthly.temporal_profiles,outputs/pakemis_temporal_profiles.csv,pkinv.temporal_profiles/v1,profile_id;component_id;fiscal_year;month,share,none,REF_2023_24,FY2015-16..FY2023-24,PK
+monthly.temporal_decomposition,outputs/pakemis_temporal_decomposition.csv,pkinv.temporal_decomposition/v1,sector_id;component,co2e Mt;pct,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+monthly.flatness_crosswalk,outputs/pakemis_flatness_crosswalk.csv,pkinv.flatness_crosswalk/v1,row_kind;te_class;flatness_bucket,co2e Mt;pct,AR5,REF_2023_24,FY2023-24,PK
+monthly.bagasse_timing_variant,outputs/pakemis_bagasse_timing_variant.csv,pkinv.timing_variant/v1,profile_variant;fiscal_year_start;month,share,none,REF_2023_24,FY2015-16..FY2023-24,PK
+monthly.fertilizer_timing_variant,outputs/pakemis_fertilizer_timing_variant.csv,pkinv.timing_variant/v1,profile_variant;fiscal_year;month,share,none,REF_2023_24,as listed,PK
+monthly.power_profile_variant,outputs/pakemis_power_profile_variant.csv,pkinv.timing_variant/v1,profile_variant;fiscal_year;subitem;month,share,none,REF_2023_24,as listed,PK
+spatial.cube,outputs/pakemis_grid_0p05_monthly.nc,pkinv.grid_cube/v1,time;lat;lon (netCDF dimensions),Gg per month per cell,native gas mass (AR5 in annual_by_category group),REF_2023_24,FY2023-24 (12 months),PK 0.05 degree grid 267x340
+spatial.adm2_monthly,outputs/pakemis_adm2_monthly.csv,pkinv.adm2_monthly/v1,shape_id;province;gas;month;spatial_view,Gg,native gas mass,REF_2023_24,FY2023-24 (12 months),ADM2 shapes
+spatial.adm2_monthly_sector,outputs/pakemis_adm2_monthly_sector.csv,pkinv.adm2_monthly_sector/v3,module;reporting_sector;shape_id;province;gas;month;spatial_view,Gg; co2e Mt (exact stream-priced),native gas mass; AR5,REF_2023_24,FY2023-24 (12 months),ADM2 shapes
+spatial.adm2_ledger_2024,outputs/pakemis_adm2_ledger_2024.csv,pkinv.adm2_ledger/v3,configuration_id;module;source_stream_id;gas;shape_id;adm2_ids;province;month;spatial_view,Gg; co2e Mt (exact stream-priced),native gas mass,L_2023_24,FY2023-24 (12 months),ADM2 shapes
+spatial.adm1_ledger_2024,outputs/pakemis_adm1_ledger_2024.csv,pkinv.adm1_ledger/v1,configuration_id;source_stream_id;gas;province;month,Gg; co2e Mt,native gas mass; AR5,L_2023_24,FY2023-24 (12 months),ADM1
+spatial.cube_annual,outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc,pkinv.grid_annual/v1,time;spatial_view;lat;lon (netCDF dimensions),Gg per fiscal period per cell,native gas mass,REF_2023_24,FY2015-16..FY2023-24 (9 fiscal periods),PK 0.05 degree grid 267x340
+spatial.cube_ledger,outputs/pakemis_grid_0p05_monthly_ledger.nc,pkinv.grid_cube_ledger/v1,time;lat;lon (netCDF dimensions),Gg per month per cell,native gas mass,L_2023_24,FY2023-24 (12 months),PK grid
+spatial.grid_stream_surfaces,outputs/pakemis_grid_stream_surfaces.csv,pkinv.grid_stream_surfaces/v1,source_stream_id,none,none,REF_2023_24,FY2023-24,PK grid
+spatial.adm2_crosswalk,outputs/pakemis_adm2_crosswalk.csv,pkinv.adm2_crosswalk/v1,adm2_id,none,none,all,all,ADM2 units
+spatial.adm2_nesting_check,outputs/pakemis_adm2_nesting_check.csv,pkinv.adm2_nesting_check/v1,province,co2e Mt,AR5,REF_2023_24,FY2023-24,ADM1 (agriculture only)
+spatial.decomposition,outputs/pakemis_spatial_decomposition.csv,pkinv.spatial_decomposition/v1,module;sub_category;gas,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+spatial.unallocated,outputs/pakemis_spatial_unallocated.csv,pkinv.spatial_unallocated/v1,source_stream_id;month;spatial_view;level;province,Gg; co2e Mt,AR5,REF_2023_24,FY2023-24 (12 months),ADM1
+spatial.exceptions,outputs/pakemis_spatial_exceptions.csv,pkinv.spatial_exceptions/v1,exception_kind;unit_or_shape;province;module,co2e Mt,AR5,REF_2023_24,FY2023-24,ADM2 shapes
+spatial.grid_fallbacks,outputs/pakemis_grid_fallbacks.csv,pkinv.grid_fallbacks/v1,source_stream_id;scope;reason,none,none,REF_2023_24,FY2023-24,PK grid
+spatial.grid_provincial_check,outputs/pakemis_grid_provincial_check.csv,pkinv.grid_provincial_check/v1,source_stream_id;province,share,none,REF_2023_24,FY2023-24,ADM1
+spatial.brackets,outputs/pakemis_spatial_brackets.csv,pkinv.spatial_brackets/v1,none-declared,share;pp,none,REF_2023_24,FY2023-24,ADM1
+spatial.brackets_adm2,outputs/pakemis_spatial_brackets_adm2.csv,pkinv.spatial_brackets_adm2/v1,alternative_id;module;stream_match;level;shape_id;province,share;pp,none,REF_2023_24,FY2023-24,ADM2 shapes
+spatial.facility_registry,outputs/pakemis_facility_registry.csv,pkinv.facility_registry/v1,facility_id,none,none,all,FY2023-24,points
+spatial.road_links,outputs/pakemis_road_links.csv,pkinv.road_links/v1,osm_id;from_node;to_node,km,none,all,OSM 2026-08,PK
+spatial.road_length_adm2,outputs/pakemis_road_length_adm2.csv,pkinv.road_length_adm2/v1,adm2_id;fclass,km,none,all,OSM 2026-08,ADM2 units
+spatial.road_weights_adm2,outputs/pakemis_road_weights_adm2.csv,pkinv.road_weights_adm2/v1,district;province,share,none,all,OSM 2026-08,ADM2 units
+spatial.kiln_allocation_adm2,outputs/pakemis_kiln_allocation_adm2.csv,pkinv.kiln_allocation_adm2/v1,adm2_id;frame,t coal; co2e Mt screening; kt PM2.5,AR5 (screening),screening,FY2022-23,ADM2 units
+spatial.rice_geography_crosscheck,outputs/pakemis_rice_geography_crosscheck.csv,pkinv.rice_geography_crosscheck/v1,shape_id;province_id,pct,none,all,2020/2023,ADM2 shapes
+spatial.builtup_comparison_adm2,outputs/pakemis_builtup_comparison_adm2.csv,pkinv.builtup_comparison_adm2/v1,adm2_ids;province,share,none,all,2021/2026,ADM2 shapes
+spatial.product_coverage,outputs/pakemis_product_coverage.csv,pkinv.product_coverage/v1,module,pct,none,REF_2023_24,FY2023-24,PK
+uncertainty.joint,outputs/pakemis_joint_uncertainty.csv,pkinv.joint_uncertainty/v1,category;module;resolution,co2e Mt;pct,AR5,REF_2023_24,FY2023-24,PK
+uncertainty.longitudinal,outputs/pakemis_longitudinal_uncertainty.csv,pkinv.longitudinal_uncertainty/v1,fiscal_end_year;scenario,co2e Mt;pct,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+uncertainty.longitudinal_prefix,outputs/pakemis_longitudinal_prefix.csv,pkinv.longitudinal_prefix/v1,scenario;fiscal_end_year;draw_index,co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+uncertainty.trend,outputs/pakemis_trend_uncertainty.csv,pkinv.trend_uncertainty/v1,from_period;to_period;scenario,co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+uncertainty.ensemble_summary,outputs/pakemis_ensemble_summary.csv,pkinv.ensemble_summary/v1,name,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+uncertainty.ensemble_ledger_summary,outputs/pakemis_ensemble_ledger_summary.csv,pkinv.ensemble_ledger_summary/v1,configuration_id,co2e Mt,AR5,L_2023_24,FY2023-24,PK
+uncertainty.ensemble_spatial_conditionals,outputs/pakemis_ensemble_spatial_conditionals.csv,pkinv.ensemble_spatial_conditionals/v1,alternative_id;category;province,co2e Mt;share,AR5,REF_2023_24 + alternatives,FY2023-24,ADM1
+uncertainty.common_draw_annual,outputs/mc_draws/pakemis_ensemble_annual.parquet,pkinv.common_draw_annual/v1,draw_id,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+uncertainty.common_draw_monthly,outputs/mc_draws/pakemis_ensemble_monthly.parquet,pkinv.common_draw_monthly/v1,draw_id;category;month,co2e Mt,AR5,REF_2023_24,FY2023-24 (12 months),PK
+uncertainty.common_draw_spatial,outputs/mc_draws/pakemis_ensemble_spatial.parquet,pkinv.common_draw_spatial/v1,draw_id;category;province;placement,co2e Mt,AR5,REF_2023_24,FY2023-24,ADM1 + retained
+uncertainty.national_montecarlo,outputs/national_uncertainty_montecarlo.csv,pkinv.national_uncertainty_montecarlo/v1,scenario;scope;aggregation_level;name,co2e Mt;pct,AR5,REF_2023_24,FY2023-24,PK
+uncertainty.national_parameters,outputs/national_uncertainty_parameters.csv,pkinv.national_uncertainty_parameters/v1,parameter_id,as stated per row,none,REF_2023_24,FY2023-24,PK
+uncertainty.national_decomposition,outputs/national_uncertainty_decomposition.csv,pkinv.national_uncertainty_decomposition/v1,module;category;subitem;gas,pct;sigma,none,REF_2023_24,FY2023-24,PK
+uncertainty.national_reconciliation,outputs/national_uncertainty_reconciliation.csv,pkinv.national_uncertainty_reconciliation/v1,module,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+uncertainty.key_categories,outputs/national_key_categories.csv,pkinv.key_categories/v1,category,co2e Mt;pct,AR5,REF_2023_24,FY2023-24,PK
+uncertainty.sources,outputs/national_uncertainty_sources.csv,pkinv.uncertainty_sources/v1,module;distribution_id,none,none,REF_2023_24,FY2023-24,PK
+configurations.national,outputs/national_configurations.csv,pkinv.national_configurations/v1,configuration_id,co2e Mt,AR5,all named configurations,FY2023-24,PK
+configurations.axis_register,outputs/national_axis_register.csv,pkinv.axis_register/v1,axis;module,co2e Mt,AR5,all axes,FY2023-24,PK
+configurations.structural_bridge,outputs/national_structural_bridge.csv,pkinv.structural_bridge/v1,axis;module,co2e Mt,AR5,all axes,FY2023-24,PK
+configurations.structural_trajectories,outputs/pakemis_structural_trajectories.csv,pkinv.structural_trajectories/v1,axis;module;fiscal_end_year,co2e Mt,AR5,all axes,FY2015-16..FY2023-24,PK
+configurations.bridge,outputs/pakemis_bridge_configurations.csv,pkinv.bridge_configurations/v1,configuration_id;claimant_sector,none,none,declared,as listed,PK
+completeness.table,outputs/completeness.csv,pkinv.completeness/v1,code;category;gas,none,none,REF_2023_24,FY2023-24,PK
+completeness.coverage_matrix,outputs/pakemis_coverage_matrix.csv,pkinv.coverage_matrix/v1,period_label;ipcc_code;category;gas;sector;configuration_id,none,none,REF_2023_24;L_2023_24,FY2015-16..FY2023-24,PK
+completeness.coverage_summary,outputs/pakemis_coverage_summary.csv,pkinv.coverage_summary/v1,fiscal_end_year,count;pct,none,REF_2023_24,FY2015-16..FY2023-24,PK
+completeness.mass,outputs/pakemis_completeness_mass.csv,pkinv.completeness_mass/v1,row_type;ipcc_code;stream;configuration_id,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+completeness.pass2_scorecard,outputs/pakemis_pass2_scorecard.csv,pkinv.pass2_scorecard/v1,outcome_id,as stated,none,REF_2023_24,FY2015-16..FY2023-24,PK
+completeness.unallocated_activity_controls,outputs/pakemis_unallocated_activity_controls.csv,pkinv.unallocated_activity_controls/v1,control_id,as stated,none,declared,as listed,PK
+provenance.source_streams,outputs/pakemis_source_streams.csv,pkinv.source_streams/v2,source_stream_id,native mass; co2e,AR5;AR6,REF_2023_24,FY2023-24,PK
+provenance.data_provenance,outputs/pakemis_data_provenance.csv,pkinv.data_provenance/v1,data_file,none,none,all,all,PK
+provenance.source_register,outputs/pakemis_source_register.csv,pkinv.source_register/v1,data_file,none,none,all,all,PK
+provenance.deposit_manifest,outputs/pakemis_deposit_manifest.csv,pkinv.deposit_manifest/v1,path,bytes,none,all,all,PK
+provenance.artifact_inventory,outputs/pakemis_artifact_inventory.csv,pkinv.artifact_inventory/v1,artifact,bytes;rows,none,all,all,PK
+provenance.product_catalog,outputs/pakemis_product_catalog.csv,pkinv.product_catalog/v1,product_id,none,none,all,all,PK
+provenance.product_facts,outputs/pakemis_product_facts.csv,pkinv.product_facts/v1,fact_id,as stated,none,all,all,PK
+provenance.claim_matrix,outputs/pakemis_claim_matrix.csv,pkinv.claim_matrix/v1,claim_id,as printed,none,all,all,PK
+provenance.paper_hashes,outputs/pakemis_paper_hashes.csv,pkinv.paper_hashes/v1,path,bytes,none,all,all,PK
+validation.catalog,outputs/pakemis_validation_catalog.csv,pkinv.validation_catalog/v1,validation_id,as stated,none,all,all,PK
+validation.scorecard,outputs/pakemis_validation_scorecard.csv,pkinv.validation_scorecard/v1,property_tested;grain,count,none,all,all,PK
+validation.sector_scorecard,outputs/pakemis_validation_sector_scorecard.csv,pkinv.validation_sector_scorecard/v1,module;property_tested,count,none,all,all,PK
+validation.benchmark_comparison,outputs/national_benchmark_comparison.csv,pkinv.benchmark_comparison/v1,source;engine_category;scope_detail;year;gwp,co2e Mt;ratio,AR5,REF_2023_24,as listed,PK
+validation.benchmark_spatial,outputs/benchmark_spatial_allocation.csv,pkinv.benchmark_spatial/v1,task_id;category;record;record_year;candidate;role,rho;share,none,REF_2023_24,as listed,ADM2
+validation.benchmark_kiln,outputs/benchmark_kiln_allocation.csv,pkinv.benchmark_kiln/v1,task_id;block;candidate;role,rho;share,none,screening,as listed,ADM2
+validation.benchmark_temporal,outputs/benchmark_temporal_hindcast.csv,pkinv.benchmark_temporal/v1,task_id;stream;scored_against;candidate;test_fy_start,share;tonnes,none,REF_2023_24,as listed,PK
+spatial.adm2_stream_reference,outputs/pakemis_adm2_stream_reference.csv,pkinv.adm2_stream_reference/v2,source_stream_id;shape_id;allocation_status,Gg,none,REF_2023_24,FY2023-24,PK;ADM2
+spatial.adm2_stream_by_year,outputs/pakemis_adm2_stream_by_year.csv,pkinv.adm2_stream_by_year/v1,period_id;source_stream_id;shape_id;allocation_status,Gg,none,REF_2023_24,FY2015-16..FY2023-24,PK;ADM2
+air.adm1,outputs/air_pollutants_adm1.csv,pkinv.air_adm1/v1,sector_id;period_id;province;category;subitem;proxy;pollutant,kt,none,REF_2023_24,CY2024;FY2023-24,PK;ADM1
+air.adm2,outputs/air_pollutants_adm2.csv,pkinv.air_adm2/v1,sector_id;period_id;shape_id;unit_name;category;subitem;proxy;pollutant,kt,none,REF_2023_24,CY2024;FY2023-24,PK;ADM2
+air.atomic_annual,outputs/pakemis_air_atomic_annual.csv,pkinv.air_atomic_annual/v2,period_id;configuration_id;sector_id;category;subitem;process;pollutant,Gg,none,REF_2023_24,FY2015-16..FY2023-24,PK
+air.annual,outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv,pkinv.air_annual/v2,period_id;configuration_id;sector_id;category;pollutant,Gg,none,REF_2023_24,FY2015-16..FY2023-24,PK
+air.coverage,outputs/pakemis_air_coverage_matrix.csv,pkinv.air_coverage/v1,period_id;sector_id;pollutant,none,none,REF_2023_24,FY2015-16..FY2023-24,PK
+air.power_screening,outputs/power_air_screening_fy2015_16_fy2023_24.csv,pkinv.air_power_screening/v2,period_id;scenario;category;fuel;fuel_detail;pollutant,kt,none,REF_2023_24,FY2015-16..FY2023-24,PK
+air.source_classes,outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv,pkinv.air_source_classes/v1,sector_id;period_id;source_class_id;pollutant,kt,none,REF_2023_24,FY2015-16..FY2023-24,PK
+air.source_class_uncertainty,outputs/pakemis_air_source_class_uncertainty_by_year.csv,pkinv.air_source_class_uncertainty/v1,sector_id;period_id;pollutant,kt,none,REF_2023_24,FY2015-16..FY2023-24,PK
+air.kiln_frame_adm2,outputs/pakemis_kiln_frame_adm2_by_type.csv,pkinv.air_kiln_frame_adm2/v1,kiln_type;shape_id,share,none,REF_2023_24,static (the surveyed kiln frame; period-invariant),ADM2 shapes
+industry.brick_kiln_fleet_by_year,outputs/pakemis_brick_kiln_fleet_by_year.csv,pkinv.industry_brick_kiln_fleet_by_year/v1,reading;period_id;adm2_id,kt,none,REF_2023_24,FY2015-16..FY2023-24,ADM2 districts (Punjab)
+air.power_admission_adm2,outputs/pakemis_power_admission_adm2_by_class.csv,pkinv.air_power_admission_adm2/v1,class_id;period_id;shape_id,share,none,REF_2023_24,FY2015-16..FY2023-24,ADM2 shapes
+air.lahore,outputs/pakemis_air_lahore_by_year.csv,pkinv.air_lahore/v1,period_id;configuration_id;row_kind;sector_id;pollutant,Gg,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,ADM2 punjab_lahore (+ national unplaced rows)
+air.industry_cy2023,outputs/pakemis_air_industry_cy2023.csv,pkinv.air_industry_cy2023/v1,month;source_class_id;pollutant,kt,none,REF_2023_24,CY2023 (composed from FY2022-23 and FY2023-24),PK
+air.industry_edgar,outputs/pakemis_industry_air_edgar_comparison.csv,pkinv.air_industry_edgar/v1,period_id;species,kt,none,REF_2023_24,FY2015-16..FY2023-24 (EDGAR to FY2021-22),PK
+air.lahore_so2_attribution,outputs/pakemis_air_lahore_so2_attribution.csv,pkinv.air_lahore_so2_attribution/v1,stream;sector;channel;kind;period_id,Gg,none,REF_2023_24,FY2015-16..FY2023-24,ADM2 punjab_lahore
+air.lahore_external,outputs/pakemis_air_lahore_external_comparison.csv,pkinv.air_lahore_external/v1,period_id;calendar_year;row_kind;scope;edgar_stream,Gg,none,REF_2023_24,FY2015-16..FY2023-24 (EDGAR to FY2021-22),ADM2 punjab_lahore + PK
+air.lahore_power_register,outputs/pakemis_air_lahore_power_register.csv,pkinv.air_lahore_power_register/v1,plant;period_id,Gg,none,REF_2023_24,FY2015-16..FY2023-24,ADM2 punjab_lahore
+air.absence_screening,outputs/pakemis_air_absence_screening_by_year.csv,pkinv.air_absence_screening/v1,period_id;sector_id;pollutant,kt (scenario ends; never summed into any total),none,REF_2023_24,FY2015-16..FY2023-24,PK
+air.national,outputs/air_pollutants_2024.csv,pkinv.air_national/v1,category;subitem;pollutant,kt,none,REF_2023_24,CY2024,PK
+air.provincial,outputs/air_pollutants_provincial_2024.csv,pkinv.air_provincial/v1,province;category;subitem;proxy;pollutant,kt,none,REF_2023_24,CY2024,PK;ADM1
+air.district,outputs/air_pollutants_district_2024.csv,pkinv.air_district/v1,district;category;proxy;pollutant,kt,none,REF_2023_24,CY2024,PK;ADM2
+air.timeseries,outputs/air_pollutants_timeseries_1990_2024.csv,pkinv.air_timeseries/v1,year;pollutant;category,kt,none,REF_2023_24,CY1990..CY2024,PK
+air.residential,outputs/residential_air_pollutants_2024.csv,pkinv.air_residential/v1,category;subitem;pollutant,kt,none,REF_2023_24,CY2024,PK
+air.transport,outputs/transport_air_pollutants_2024.csv,pkinv.air_transport/v2,category;subitem;pollutant,kt,none,REF_2023_24,CY2024,PK
+air.power,outputs/power_air_pollutants_fy2023_24.csv,pkinv.air_power/v1,category;fuel;fuel_detail;pollutant,kt,none,REF_2023_24,FY2023-24,PK
+air.railways,outputs/railways_air_pollutants_2024.csv,pkinv.air_railways/v1,category;fuel;pollutant,kt,none,REF_2023_24,CY2024,PK
+air.waste,outputs/waste_air_pollutants_2024.csv,pkinv.air_waste/v1,category;subitem;pollutant,kt,none,REF_2023_24,CY2024,PK
+air.aviation,outputs/aviation_air_pollutants_fy2023_24.csv,pkinv.air_aviation/v1,category;subitem;pollutant,kt,none,REF_2023_24,FY2023-24,PK
+air.grid_annual,outputs/pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc,pkinv.air_grid_annual/v1,time;lat;lon (netCDF dimensions),Gg per fiscal period per cell,none,REF_2023_24,FY2015-16..FY2023-24 (9 fiscal periods),PK 0.05 degree grid 267x340
+air.grid_annual_survey,outputs/pakemis_air_grid_0p05_annual_ledger_fy2015_16_fy2023_24.nc,pkinv.air_grid_annual/v1,time;lat;lon (netCDF dimensions),Gg per fiscal period per cell,none,L_HERD1624,FY2015-16..FY2023-24 (9 fiscal periods),PK 0.05 degree grid 267x340
+air.adm1_by_year,outputs/pakemis_air_adm1_by_year.csv,pkinv.air_adm1_by_year/v1,period_id;configuration_id;sector_id;source_stream_id;pollutant;province,Gg,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,ADM1 provinces
+air.adm2_by_year,outputs/pakemis_air_adm2_by_year.csv,pkinv.air_adm2_by_year/v1,period_id;configuration_id;sector_id;pollutant;shape_id,Gg,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,ADM2 shapes
+air.unallocated_by_year,outputs/pakemis_air_unallocated_by_year.csv,pkinv.air_unallocated_by_year/v1,period_id;configuration_id;sector_id;source_stream_id;pollutant;level,Gg,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,ADM1 provinces
+air.spatial_support_by_year,outputs/pakemis_air_spatial_support_by_year.csv,pkinv.air_spatial_support_by_year/v2,period_id;configuration_id;sector_id;source_stream_id;spatial_frame;pollutant,Gg,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,PK
+air.uncertainty_split_by_year,outputs/pakemis_air_uncertainty_split_by_year.csv,pkinv.air_uncertainty_split_by_year/v1,period_id;configuration_id;pollutant,Gg shares; percent,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,PK
+validation.benchmark_air,outputs/benchmark_air_comparison.csv,pkinv.benchmark_air/v1,source;pollutant;scope;benchmark_year;engine_year,kt;ratio,none,REF_2023_24,as listed,PK
+validation.timeseries,outputs/timeseries_validation.csv,pkinv.timeseries_validation/v1,year;category,ratio,none,REF_2023_24,1990-2024,PK
+cross_sector.dung_ledger,outputs/residential_dung_ledger_2024.csv,pkinv.dung_ledger/v1,configuration;claimant,Mt air-dry,none,REF_2023_24;L_2023_24,FY2023-24,PK
+cross_sector.dung_variants,outputs/national_dung_variants.csv,pkinv.dung_variants/v1,variant_id,Mt; Gg; co2e Mt,AR5,S alternatives,FY2023-24,PK
+cross_sector.crop_residue_ledger,outputs/agriculture_crop_residue_ledger_2024.csv,pkinv.crop_residue_ledger/v1,crop,Mt dry; TJ,none,REF_2023_24;L_2023_24,FY2023-24,PK
+cross_sector.gas_closure,outputs/national_gas_closure.csv,pkinv.gas_closure/v1,stream,mmcfd; million m3,none,REF_2023_24,FY2023-24,PK
+cross_sector.post_meter_end_use,outputs/fugitives_post_meter_end_use_2024.csv,pkinv.post_meter_end_use/v1,fiscal_year;end_use,mmcfd; million m3; Gg CH4,AR5,REF_2023_24,FY2023-24,PK
+cross_sector.transport_fuel_ledger,outputs/transport_fuel_ledger_2024.csv,pkinv.transport_fuel_ledger/v1,fuel;tier;claimant,kt,none,REF_2023_24,FY2023-24,PK
+cross_sector.waste_ledger,outputs/waste_ledger_2024.csv,pkinv.waste_ledger/v1,tier;claimant,Mt wet,none,REF_2023_24,FY2023-24,PK
+cross_sector.n_ledger,outputs/n_ledger_2024.csv,pkinv.n_ledger/v1,stage;flow,kg N; Mt N,none,REF_2023_24,FY2023-24,PK
+cross_sector.urea_co2_bridge,outputs/ippu_urea_co2_bridge_2025.csv,pkinv.urea_co2_bridge/v1,fiscal_year;flow,kt urea; kt CO2,none,REF_2023_24,FY2023-24;FY2024-25,PK
+cross_sector.urea_basis,outputs/agriculture_urea_basis.csv,pkinv.urea_basis/v1,fiscal_year,t urea; Mt CO2,none,REF_2023_24,FY2015-16..FY2023-24,PK
+spatial.rebase_rc42,outputs/pakemis_spatial_rebase_rc42.csv,pkinv.spatial_rebase/v1,rebase;product;scope,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+semantic.dim_category,outputs/semantic/dim_category.csv,pkinv.semantic_dim_category/v1,ipcc_code;category,n/a,n/a,n/a,FY2023-24,PK
+semantic.dim_configuration,outputs/semantic/dim_configuration.csv,pkinv.semantic_dim_configuration/v1,configuration_id,n/a,n/a,n/a,FY2023-24,PK
+semantic.dim_evidence_class,outputs/semantic/dim_evidence_class.csv,pkinv.semantic_dim_evidence_class/v1,axis;class_id,n/a,n/a,n/a,FY2023-24,PK
+semantic.dim_gas,outputs/semantic/dim_gas.csv,pkinv.semantic_dim_gas/v1,gas,n/a,n/a,n/a,FY2023-24,PK
+semantic.dim_geography,outputs/semantic/dim_geography.csv,pkinv.semantic_dim_geography/v1,geography_id,n/a,n/a,n/a,FY2023-24,PK;ADM1;ADM2
+semantic.dim_gwp,outputs/semantic/dim_gwp.csv,pkinv.semantic_dim_gwp/v1,gwp_basis;gas_key,n/a,AR5;AR6,n/a,FY2023-24,PK
+semantic.dim_month,outputs/semantic/dim_month.csv,pkinv.semantic_dim_month/v1,month,n/a,n/a,n/a,FY2015-16..FY2023-24,PK
+semantic.dim_notation_key,outputs/semantic/dim_notation_key.csv,pkinv.semantic_dim_notation_key/v1,notation_key,n/a,n/a,n/a,FY2023-24,PK
+semantic.dim_period,outputs/semantic/dim_period.csv,pkinv.semantic_dim_period/v1,period_id,n/a,n/a,n/a,FY2015-16..FY2023-24,PK
+semantic.dim_stream,outputs/semantic/dim_stream.csv,pkinv.semantic_dim_stream/v2,source_stream_id,n/a,n/a,n/a,FY2023-24,PK
+semantic.fact_adm1_month,outputs/semantic/fact_adm1_month.csv,pkinv.semantic_fact_adm1_month/v2,configuration_id;month;province;source_stream_id;gas,co2e Mt; native Gg,AR5;AR6,REF_2023_24;L_2023_24,FY2023-24,PK;ADM1
+semantic.fact_adm2_month,outputs/semantic/fact_adm2_month.csv,pkinv.semantic_fact_adm2_month/v3,configuration_id;month;shape_id;module;reporting_sector;gas;spatial_view;province,co2e Mt; native Gg,AR5,REF_2023_24;L_2023_24,FY2023-24,PK;ADM1;ADM2
+semantic.fact_annual,outputs/semantic/fact_annual.csv,pkinv.semantic_fact_annual/v2,period_id;configuration_id;geography_id;grain;component_id;gas,co2e Mt; native Gg,AR5;AR6,REF_2023_24;L_2023_24,FY2015-16..FY2023-24,PK
+semantic.fact_annual_calendar,outputs/semantic/fact_annual_calendar.csv,pkinv.semantic_fact_annual_calendar/v1,period_id;year_basis;category,co2e Mt; native Gg,AR5,n/a,CY1990..CY2024,PK
+semantic.fact_completeness,outputs/semantic/fact_completeness.csv,pkinv.semantic_fact_completeness/v1,code;category;gas,n/a,n/a,n/a,FY2023-24,PK
+semantic.fact_completeness_mass,outputs/semantic/fact_completeness_mass.csv,pkinv.semantic_fact_completeness_mass/v1,row_type;ipcc_code;stream;configuration_id,n/a,n/a,n/a,FY2023-24,PK
+semantic.fact_evidence,outputs/semantic/fact_evidence.csv,pkinv.semantic_fact_evidence/v1,source_stream_id,n/a,n/a,n/a,FY2023-24,PK
+semantic.fact_monthly,outputs/semantic/fact_monthly.csv,pkinv.semantic_fact_monthly/v2,period_id;month;configuration_id;geography_id;grain;component_id;gas,co2e Mt; native Gg,AR5;AR6,REF_2023_24;L_2023_24,FY2015-16..FY2023-24,PK
+semantic.fact_transfer,outputs/semantic/fact_transfer.csv,pkinv.semantic_fact_transfer/v1,ledger_id;row_id;configuration_id,n/a,n/a,REF_2023_24;L_2023_24,FY2023-24,PK
+semantic.fact_unallocated,outputs/semantic/fact_unallocated.csv,pkinv.semantic_fact_unallocated/v2,configuration_id;source_stream_id;month;level;province,co2e Mt; native Gg,AR5,n/a,FY2023-24,PK;ADM1
+semantic.fact_uncertainty,outputs/semantic/fact_uncertainty.csv,pkinv.semantic_fact_uncertainty/v1,category;module;resolution,n/a,AR5,n/a,FY2023-24,PK
+semantic.fact_uncertainty_series,outputs/semantic/fact_uncertainty_series.csv,pkinv.semantic_fact_uncertainty_series/v1,kind;scope;key;scenario,n/a,AR5,n/a,FY2015-16..FY2023-24,PK
+paper.artefact_hashes,outputs/pakemis_paper_artefact_hashes.csv,pkinv.paper_artefact_hashes/v1,artefact_id,n/a,n/a,n/a,FY2023-24,PK
+paper.figure_data.fig_trend,outputs/paper_figure_data/fig_trend.csv,pkinv.paper_figure_data/v1,artefact_id;query_index;cell_index,co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+paper.figure_data.fig_sectors,outputs/paper_figure_data/fig_sectors.csv,pkinv.paper_figure_data/v1,artefact_id;query_index;cell_index,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+paper.figure_data.fig_months,outputs/paper_figure_data/fig_months.csv,pkinv.paper_figure_data/v1,artefact_id;query_index;cell_index,co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+paper.figure_data.fig_uncertainty,outputs/paper_figure_data/fig_uncertainty.csv,pkinv.paper_figure_data/v1,artefact_id;query_index;cell_index,co2e Mt,AR5,REF_2023_24,FY2023-24,PK
+spatial.adm1_by_year,outputs/pakemis_adm1_by_year.csv,pkinv.adm1_by_year/v1,period_id;source_stream_id;province,Gg; co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,ADM1 provinces
+spatial.adm2_by_year,outputs/pakemis_adm2_by_year.csv,pkinv.adm2_by_year/v1,period_id;shape_id;adm2_ids;province;gas;spatial_view,Gg,native gas mass,REF_2023_24,FY2015-16..FY2023-24,ADM2 shapes
+spatial.grid_fallbacks_by_year,outputs/pakemis_grid_fallbacks_by_year.csv,pkinv.grid_fallbacks_by_year/v1,period_id;source_stream_id;scope;province;shape;reason,Gg; co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,ADM1 provinces
+spatial.stream_surfaces_by_year,outputs/pakemis_grid_stream_surfaces_by_year.csv,pkinv.grid_stream_surfaces_by_year/v1,period_id;source_stream_id,none (a register),n/a,REF_2023_24,FY2015-16..FY2023-24,PK 0.05 degree grid 267x340
+spatial.unallocated_by_year,outputs/pakemis_spatial_unallocated_by_year.csv,pkinv.spatial_unallocated_by_year/v1,period_id;source_stream_id;month;province,Gg,AR5,REF_2023_24,FY2015-16..FY2023-24,ADM1 provinces
+spatial.weights_by_year,outputs/pakemis_spatial_weights_by_year.csv,pkinv.spatial_weights/v2,source_stream_id;period_id,"none (a declaration, not a quantity)",none,REF_2023_24,FY2015-16..FY2023-24,ADM1 provinces
+spatial.adm2_monthly_by_year,outputs/pakemis_adm2_monthly_by_year.csv,pkinv.adm2_monthly_by_year/v1,period_id;shape_id;adm2_ids;province;gas;month;spatial_view,Gg,native gas mass,REF_2023_24,FY2015-16..FY2023-24,ADM2 shapes
+spatial.adm2_sector_by_year,outputs/pakemis_adm2_sector_by_year.csv,pkinv.adm2_sector_by_year/v3,period_id;module;reporting_sector;shape_id;adm2_ids;province;gas;spatial_view,Gg; co2e Mt (exact stream-priced),native gas mass; AR5,REF_2023_24,FY2015-16..FY2023-24,ADM2 shapes
+semantic.dim_pollutant,outputs/semantic/dim_pollutant.csv,pkinv.semantic_dim_pollutant/v2,pollutant,none,none,REF_2023_24,as listed,PK
+semantic.fact_air_annual,outputs/semantic/fact_air_annual.csv,pkinv.semantic_fact_air_annual/v1,sector_id;period_id;category;subitem;pollutant,kt,none,REF_2023_24,CY2024;FY2023-24,PK
+semantic.fact_air_panel,outputs/semantic/fact_air_panel.csv,pkinv.semantic_fact_air_panel/v2,sector_id;period_id;configuration_id;category;pollutant,kt,none,REF_2023_24,FY2015-16..FY2023-24,PK
+semantic.fact_air_timeseries,outputs/semantic/fact_air_timeseries.csv,pkinv.semantic_fact_air_timeseries/v1,year;pollutant;category,kt,none,REF_2023_24,CY1990..CY2024,PK
+semantic.fact_air_adm1,outputs/semantic/fact_air_adm1.csv,pkinv.semantic_fact_air_adm1/v2,sector_id;period_id;province;category;subitem;proxy;pollutant,kt,none,REF_2023_24,CY2024;FY2023-24,PK;ADM1
+semantic.fact_air_adm2,outputs/semantic/fact_air_adm2.csv,pkinv.semantic_fact_air_adm2/v2,sector_id;period_id;shape_id;unit_name;category;subitem;proxy;pollutant,kt,none,REF_2023_24,CY2024;FY2023-24,PK;ADM2
+semantic.fact_adm1_year,outputs/semantic/fact_adm1_year.csv,pkinv.semantic_fact_adm1_year/v2,configuration_id;period_id;province;source_stream_id;spatial_view,co2e Mt; native Gg,AR5,REF_2023_24,FY2015-16..FY2023-24,PK;ADM1
+semantic.fact_spatial_basis_year,outputs/semantic/fact_spatial_basis_year.csv,pkinv.semantic_fact_spatial_basis_year/v1,configuration_id;period_id;module;reporting_sector;spatial_time_basis,co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+semantic.fact_adm2_year,outputs/semantic/fact_adm2_year.csv,pkinv.semantic_fact_adm2_year/v3,configuration_id;period_id;shape_id;module;reporting_sector;gas;spatial_view;province,co2e Mt; native Gg,AR5,REF_2023_24,FY2015-16..FY2023-24,PK;ADM1;ADM2
+semantic.fact_air_adm1_year,outputs/semantic/fact_air_adm1_year.csv,pkinv.semantic_fact_air_adm1_year/v1,configuration_id;period_id;province;sector_id;source_stream_id;pollutant,kt,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,PK;ADM1
+semantic.fact_air_adm2_year,outputs/semantic/fact_air_adm2_year.csv,pkinv.semantic_fact_air_adm2_year/v1,configuration_id;period_id;shape_id;sector_id;pollutant,kt,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,PK;ADM2
+semantic.fact_air_source_classes,outputs/semantic/fact_air_source_classes.csv,pkinv.semantic_fact_air_source_classes/v1,sector_id;period_id;source_class_id;pollutant,kt,none,REF_2023_24,FY2015-16..FY2023-24,PK
+semantic.fact_air_lahore,outputs/semantic/fact_air_lahore.csv,pkinv.semantic_fact_air_lahore/v1,period_id;configuration_id;row_kind;sector_id;pollutant,Gg,none,REF_2023_24;L_HERD1624,FY2015-16..FY2023-24,ADM2 punjab_lahore (+ national unplaced rows)
+semantic.fact_air_absence_screening,outputs/semantic/fact_air_absence_screening.csv,pkinv.semantic_fact_air_absence_screening/v1,period_id;sector_id;pollutant,kt (scenario ends; never summed),none,REF_2023_24,FY2015-16..FY2023-24,PK
+spatial.rebase_rc44,outputs/pakemis_spatial_rebase_rc44.csv,pkinv.spatial_rebase/v1,rebase;product;scope,co2e Mt,AR5,REF_2023_24,FY2015-16..FY2023-24,PK
+activity.crops,outputs/activity/activity_crops.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.fertiliser,outputs/activity/activity_fertiliser.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.fuel_sales_area,outputs/activity/activity_fuel_sales_area.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.fuel_sales_national,outputs/activity/activity_fuel_sales_national.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.household_fuel,outputs/activity/activity_household_fuel.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.livestock,outputs/activity/activity_livestock.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.power_monthly,outputs/activity/activity_power_monthly.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.power_plants,outputs/activity/activity_power_plants.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_crops,outputs/semantic/fact_activity_crops.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_fertiliser,outputs/semantic/fact_activity_fertiliser.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_fuel_sales_area,outputs/semantic/fact_activity_fuel_sales_area.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_fuel_sales_national,outputs/semantic/fact_activity_fuel_sales_national.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_household_fuel,outputs/semantic/fact_activity_household_fuel.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_livestock,outputs/semantic/fact_activity_livestock.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_power_monthly,outputs/semantic/fact_activity_power_monthly.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_power_plants,outputs/semantic/fact_activity_power_plants.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.industry_fuel,outputs/activity/activity_industry_fuel.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_industry_fuel,outputs/semantic/fact_activity_industry_fuel.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.industry_production,outputs/activity/activity_industry_production.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_industry_production,outputs/semantic/fact_activity_industry_production.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.gas_supply,outputs/activity/activity_gas_supply.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_gas_supply,outputs/semantic/fact_activity_gas_supply.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.gas_network,outputs/activity/activity_gas_network.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_gas_network,outputs/semantic/fact_activity_gas_network.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.waste_services,outputs/activity/activity_waste_services.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_waste_services,outputs/semantic/fact_activity_waste_services.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.waste_flows,outputs/activity/activity_waste_flows.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_waste_flows,outputs/semantic/fact_activity_waste_flows.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.railways,outputs/activity/activity_railways.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_railways,outputs/semantic/fact_activity_railways.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.aviation,outputs/activity/activity_aviation.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_aviation,outputs/semantic/fact_activity_aviation.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity.vehicles,outputs/activity/activity_vehicles.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.fact_activity_vehicles,outputs/semantic/fact_activity_vehicles.csv,pkinv.semantic_fact_activity/v2,Record ID,in the unit column of each row,none,none,various by source,PK
+activity_public.aviation,outputs/activity/public/activity_aviation.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.crops,outputs/activity/public/activity_crops.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.fertiliser,outputs/activity/public/activity_fertiliser.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.fuel_sales_area,outputs/activity/public/activity_fuel_sales_area.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.fuel_sales_national,outputs/activity/public/activity_fuel_sales_national.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.gas_network,outputs/activity/public/activity_gas_network.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.gas_supply,outputs/activity/public/activity_gas_supply.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.household_fuel,outputs/activity/public/activity_household_fuel.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.industry_fuel,outputs/activity/public/activity_industry_fuel.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.industry_production,outputs/activity/public/activity_industry_production.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.livestock,outputs/activity/public/activity_livestock.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.power_monthly,outputs/activity/public/activity_power_monthly.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.power_plants,outputs/activity/public/activity_power_plants.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.railways,outputs/activity/public/activity_railways.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.vehicles,outputs/activity/public/activity_vehicles.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.waste_flows,outputs/activity/public/activity_waste_flows.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity_public.waste_services,outputs/activity/public/activity_waste_services.csv,pkinv.activity_presentation/v1,Record ID,in the Unit column of each row,none,none,various by source,PK
+activity.source_details,outputs/activity/activity_source_details.csv,pkinv.activity_publication/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+activity.column_guide,outputs/activity/activity_column_guide.csv,pkinv.activity_presentation/v1,file;column,none,none,none,none,PK
+semantic.fact_activity_source_details,outputs/semantic/fact_activity_source_details.csv,pkinv.semantic_fact_activity_source_details/v1,source_id;source_row;source_column;variable;category,in the unit column of each row,none,none,various by source,PK
+semantic.dim_activity_columns,outputs/semantic/dim_activity_columns.csv,pkinv.semantic_dim_activity_columns/v1,file;column,none,none,none,none,PK

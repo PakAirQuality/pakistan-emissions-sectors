@@ -1,0 +1,102 @@
+% ===========================================================================
+\section{The Correlated-Factor Case}
+\label{app:uncertainty}
+% ===========================================================================
+
+This sector's band was long expected to double under an assumption that most published
+inventories leave undeclared---and, since the common-random-numbers rebuild, it does not
+move at all. Both facts, the old sensitivity and the new insensitivity, are direct
+consequences of anchoring. That makes it worth a note rather than a line.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+& \textbf{Independent} & \textbf{Correlated} \\
+\midrule
+Sector mean (Mt \COe{}) & 41.926 & 41.928 \\
+2.5th percentile        & 36.841 & 36.838 \\
+97.5th percentile       & 47.652 & 47.652 \\
+\textbf{Sector $\pm$\%} & \textbf{12.9} & \textbf{12.9} \\
+\midrule
+Road transport $\pm$\%     & 13.3 & 13.2 \\
+Mixed off-road $\pm$\%     & 28.9 & 28.9 \\
+\bottomrule
+\end{tabular}
+\caption{Approach~2, \num{10000} realisations at seed \num{42}, from
+\texttt{outputs/national\_uncertainty\_montecarlo.csv}. The central estimate does not
+move materially---correlation does not bias a sum---and under the common-random-numbers
+scheme the band does not move either: both treatments print the same width ($\pm\SI{12.9}{\percent}$).}
+\label{tab:mc}
+\end{table}
+
+\subsection{What the two scenarios assume}
+
+Five sector modules in the national inventory burn fossil fuel, and they draw their
+carbon-content factors from the same IPCC table entries with the same published uncertainty
+ranges. The \emph{independent} scenario draws each sector's factor separately. The
+\emph{correlated} scenario draws one realisation of each fuel's factor and applies it
+everywhere at once.
+
+The correlated case is physically the more defensible of the two extremes. There is one carbon
+content of the diesel Pakistan burns, and if the IPCC default is wrong about it, it is wrong
+in the same direction for road transport, railways, off-road machinery and captive generation
+simultaneously. Treating the draws as independent asserts that the true value could be at the
+bottom of its range for railways and the top for road transport at the same moment, which it
+cannot.
+
+\subsection{Why this sector no longer moves}
+
+Road transport goes from $\pm\SI{13.3}{\percent}$ to $\pm\SI{13.2}{\percent}$---the
+common-random-numbers rebuild made the correlation scenario a no-op here. Mixed off-road
+machinery likewise, at $\pm\SI{28.9}{\percent}$ against $\pm\SI{28.9}{\percent}$.
+
+The difference between the two is instructive. Road transport's uncertainty is dominated by
+the shared fuel-carbon factor, because everything else about it is comparatively tight: the
+activity datum is a metered national supply, and \COtwo{} is \SI{97.5}{\percent} of the
+emissions. When the factor stops being able to average against other sectors' draws, there is
+very little else left to average, so almost the whole band is exposed. Mixed off-road machinery
+carries a large independent uncertainty of its own---on the energy share that
+carves it out, and on the \NtwoO{} factor---which continues to average regardless, so the
+correlation adds proportionally little. Note also why the sector band sits below both
+category bands in either scenario: the partition uncertainty between road and off-road is
+negatively coupled and cancels on recombination, while the shared control and
+carbon-factor terms are positively correlated and survive.
+
+Anchoring is what produces this shape. An inventory that built road transport bottom-up would
+carry substantial independent uncertainty in its fleet model, and that uncertainty would
+partly mask the factor correlation. Anchoring removes the fleet uncertainty from the total and
+leaves the factor exposed, which is a more honest representation of what is actually not
+known.
+
+\subsection{How to read the sector's band}
+
+The correlated case is a bound, not a better estimate. Perfect correlation is as strong an
+assumption as perfect independence: the five sectors do share an IPCC default, but they burn
+physically different batches of fuel with genuinely different carbon contents, and their
+activity uncertainties remain independent of one another.
+
+The defensible statement is that this sector's uncertainty is $\pm\SI{12.9}{\percent}$
+under either correlation treatment. An earlier edition read the correlated case as an
+upper bound roughly twice that width; the rebuild showed that spread to be a sampling
+artifact of drawing the same physical factor independently, not a structural axis. What would narrow it is a
+Pakistani fuel carbon-content measurement programme---a small analytical exercise that would
+tighten five sectors at once, and which no country in the region currently runs.
+
+Beside the correlated-factor case, the sector publishes its own structural-scenario
+table (\texttt{outputs/transport\_uncertainty\_scenarios\_2024.csv}): the boundary cases
+of the main paper's boundary table (the national-minus-bulk construction, the road-share
+envelope, the retail non-road cases, the calendar-year construction), the provenance-audit
+bridges beside it, the CNG heating-value case, the off-road \NtwoO{}
+table choice and share cases, the factor-mix invariance row, the CNG exclusion bound, the
+fleet-basis energy band, the off-road reporting recode, the class-composition cases at the
+ends of the declared MJ/km bands and the contrast cases that move light and heavy classes
+against one another, and two declaration rows---the class split and the air-factor
+provenance---that are scope decisions rather than samplable parameters. Each carries a conditional parametric interval, an explicit
+declaration, or a proved invariance, never a structural probability. The deduction and
+cross-check inputs each carry their own register row: the generator carve-out (survey
+expenditure over a declared administered price), the off-road energy fraction,
+and the rail-figure discrepancies---\SI{3.8}{\percent} year-matched,
+\SI{11.2}{\percent} cross-year---that anchor the controls' declared \SI{10}{\percent}
+(\texttt{outputs/transport\_uncertainty\_inputs\_2024.csv}).

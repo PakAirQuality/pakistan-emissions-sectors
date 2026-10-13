@@ -1,0 +1,105 @@
+# Every validation-catalogue entry filed under what the comparison can establish.
+# Rule in pkinv/report/validation_five_classes.py; the catalogue is the only input.
+validation_id,role,independence_class,five_class,what_it_can_establish
+abs-agriculture-timing,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-companion-repo-lanes,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-fugitives-timing,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-industry-geography-non-kiln,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-industry-validation,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-ippu-timing,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-residential-geography,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-residential-timing,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-waste-geography,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+abs-waste-timing,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+bridge-cement-activity-sources,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-agriculture-gcd-rice,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-agriculture-mnfsr,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-aviation-airports,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-builtup-osm-mirror,calibration,large,calibration (fitted to the comparator; cannot validate it),nothing about the estimate it was fitted to
+geo-district-records-multi,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-district-rice-records,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-fugitives-field-evaluation,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-fugitives-flares,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-fugitives-mars,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-fugitives-provincial-evaluation,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-grid-provincial-construction,corroboration,not-applicable,not a comparison,nothing: not a comparison
+geo-ippu-two-registers,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-livestock-district-glw,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-livestock-province-rank,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-nh3-cell-2015,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-power-climatetrace,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-power-gem-census,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-power-tropomi,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-railways-elk,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-transport-proxy,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-agriculture-benchmarks,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-agriculture-cui-ef1,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-aviation-crt,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-aviation-departures,calibration,none,calibration (fitted to the comparator; cannot validate it),nothing about the estimate it was fitted to
+mag-aviation-oecd,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-benchmarks-matrix,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-fertiliser-gas-two-sources,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-fugitives-crt,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-ippu-cement,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-ippu-official,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-livestock-national-vs-district,calibration,none,calibration (fitted to the comparator; cannot validate it),nothing about the estimate it was fitted to
+mag-national-crt,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-national-edgar-scope,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-national-faostat-series,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-power-boundary-audit,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-power-crt,corroboration,none,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
+mag-power-toe-ladder,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-railways-crt,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-railways-fuel-audit,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-residential-ccac-bridge,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-residential-hies,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-residential-official,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-transport-edgar,corroboration,none,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
+mag-industry-air-edgar,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-air-lahore-edgar,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-power-lahore-units,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-air-lahore-attribution,validation,none,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
+mag-ippu-air-edgar,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-fugitives-air-edgar,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-waste-edgar,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+spa-benchmark-allocation,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+spa-benchmark-kilns,validation,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+spa-benchmark-roads,calibration,partial,calibration (fitted to the comparator; cannot validate it),nothing about the estimate it was fitted to
+tim-agriculture-firms-burning,calibration,none,calibration (fitted to the comparator; cannot validate it),nothing about the estimate it was fitted to
+tim-aviation-climatetrace,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-benchmark-hindcast,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-cement-apcma,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-cement-limestone,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-fertiliser-offtake,calibration,none,calibration (fitted to the comparator; cannot validate it),nothing about the estimate it was fitted to
+tim-fugitives-pbs-production,calibration,partial,calibration (fitted to the comparator; cannot validate it),nothing about the estimate it was fitted to
+tim-industry-hindcast,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-ocac-differencing,validation,none,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
+tim-ocac-vintage-shift,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-power-hindcast,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-railways-hindcast,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-residential-era5,corroboration,large,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-rice-fao-calendar,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+tim-transport-hindcast,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+clo-spatial-by-year,validation,internal-identity,internal consistency / accounting identity,that the products agree with each other
+abs-adm2-frame-vintage,declared-absence,not-applicable,declared absence (no check performed),nothing: the check was not performed
+mag-industry-coal-lanes,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+geo-agri-reference-panel,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-coal-sources,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-coal-balance,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-cement-kiln-coal,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-coal-bridge,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-edgar-divergence,validation,shared-upstream,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
+mag-industry-brick-alternatives,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-ippu-ammonia-nitric-series,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-screening-series,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-ippu-hfc-household-bank,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-coal-vintages,validation,internal-consistency,internal consistency / accounting identity,that the products agree with each other
+mag-industry-change-attribution,validation,internal-consistency,internal consistency / accounting identity,that the products agree with each other
+mag-industry-brick-activity,validation,independent-compilation,independent compilation (another inventory; not an observation of emissions),agreement with another compilation; not accuracy against observations
+mag-industry-coal-decision,validation,internal-consistency,internal consistency / accounting identity,that the products agree with each other
+mag-air-provincial-edgar,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+geo-power-province-raster,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-soils-faostat-flows,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-national-btr,validation,shared-upstream,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
+mag-power-coal-reference-audit,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-power-coal-plant-reconciliation,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs

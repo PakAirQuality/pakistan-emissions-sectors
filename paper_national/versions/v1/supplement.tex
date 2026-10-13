@@ -1,0 +1,383 @@
+% ===========================================================================
+% Supplement to: PakEmis v1.0: an evidence-graded public-data reconstruction of
+% Pakistan's non-LULUCF greenhouse-gas emissions, FY2015-16 to FY2023-24
+%
+% A separate document (article class, single-column A4) for the reasons the main
+% article states: the air-pollutant layer is a companion product of markedly lower and
+% MORE UNEVEN assurance than the greenhouse-gas dataset, and a ranking drawn across it is
+% easy to over-read; the parallel-table rule and the reproduction detail are method
+% record rather than data description; and the claim matrix is a table too long for the
+% article. Wide tables fit here without becoming table* floats.
+%
+% Sections: S1 the air beta - S2 key categories (pointer: the analysis is in the main
+% article) - S3 the parallel-table rule (05_factor_tables) - S4 reproduction, months,
+% geography and sources (14_appendix) - S5 the claim matrix (generated/claim_matrix.tex,
+% written by scripts/make_claim_matrix.py).
+%
+% Build: latexmk -pdf supplement.tex   (the Makefile does this automatically, after the
+% main article and before its second pass, because the two documents resolve each
+% other's labels through xr until the prose pass replaces those \ref with pointers)
+% ===========================================================================
+\documentclass[a4paper,11pt]{article}
+\usepackage[margin=0.85in]{geometry}
+\input{../../../paper_common/preamble}
+\hypersetup{pdftitle={Supplement to PakEmis v1.0},
+            pdfauthor={Rehan Ahmad}}
+\usepackage{xr}
+\externaldocument[][nocite]{paper_national}   % nocite: labels only, not the article's \bibcite
+\graphicspath{{../../figures/}}
+
+\sloppy
+\emergencystretch=2em
+% The parallel-table rule's five-column table (05_factor_tables) was laid out for a
+% full-width two-column float; at this text width its column padding overran by half a
+% point. One point less padding per column side fits it with margin to spare.
+\setlength{\tabcolsep}{5pt}
+
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+
+% The moved appendix keeps its four \section lines; under one supplement section they
+% become subsections (the same device the main article's containers use).
+\newcommand{\pkinvDemoteFragment}{\begingroup
+  \let\section\subsection
+  \let\subsection\subsubsection}
+\newcommand{\pkinvEndFragment}{\endgroup}
+
+\title{Supplement to: PakEmis v1.0: an evidence-graded public-data reconstruction of
+Pakistan's non-LULUCF greenhouse-gas emissions, FY2015--16 to FY2023--24\\[6pt]
+\large The air beta, the parallel-table rule, the reproduction record and the claim matrix}
+\author{Rehan Ahmad\\ \small Pakistan Air Quality Initiative (PAQI), Karachi, Pakistan}
+\date{}
+
+\begin{document}
+\maketitle
+
+\input{../../../paper_common/release_cover}
+\ReleaseCover
+
+This supplement carries what a reader of the main article may need and the article itself
+does not hold: the air-pollutant beta layer (Section~\ref{sec:airbeta}), which is
+deliberately kept out of the greenhouse-gas result; a pointer to the key-category
+analysis (Section~\ref{sup:keycat}); the parallel-table rule in the IPCC defaults
+(Section~\ref{sec:factors}); the reproduction record, with where the months and the
+geography come from and the source-by-source account (Section~\ref{sup:reproduction});
+and the claim matrix (Section~S5), the generated register of every headline claim the
+article makes and the release product each one resolves to.
+
+\section{The air beta}
+\label{sec:airbeta}
+
+\textbf{This layer is a labelled beta and is not part of the greenhouse-gas result.} The
+layers below are computed from the same activity quantities as their sectors' greenhouse-gas
+estimates, which is the property worth reporting; they are \emph{not} of comparable assurance
+to each other or to the greenhouse-gas inventory, and the ordering should be read as a
+statement about what is estimated rather than about the country's sources. Every figure here
+is read from the sector output named beside it, and the manuscript-number tests cover this
+document on the same terms as the main paper.
+
+Since this revision the layer is a hashed part of the release rather than a loose companion:
+the ten sector tables (\texttt{air\_pollutants\_2024.csv} with
+\texttt{air\_pollutants\_provincial\_2024.csv}, \texttt{air\_pollutants\_district\_2024.csv} and
+\texttt{air\_pollutants\_timeseries\_1990\_2024.csv} beside it, plus the six per-sector files)
+carry release digests, and the
+semantic layer republishes them as five queryable tables --- \texttt{dim\_pollutant} (the
+fourteen-species union, with the containment that forbids summing across species:
+BC and OC inside PM\textsubscript{2.5}, PM\textsubscript{2.5} inside PM\textsubscript{10},
+PM\textsubscript{10} inside TSP), \texttt{fact\_air\_annual} (the union of the seven sector
+layers with each layer's assurance word), \texttt{fact\_air\_timeseries},
+\texttt{fact\_air\_adm1} and \texttt{fact\_air\_adm2} (agriculture's provincial and district
+allocations). The query contract's \texttt{query\_air} serves them in native kilotonnes of
+the named species, never as CO\textsubscript{2}e, and refuses a sum across pollutants rather
+than computing one.
+
+The cube now also publishes its per-stream district vectors
+(\texttt{pakemis\_adm2\_stream\_reference.csv}): the \texttt{stream\_shape} accumulation the
+shipped ADM2 marginals are built from, at the grain downstream layers inherit from --- every
+placed stream closes to its provincial-year mass at $10^{-9}$ relative, and the only absent
+streams are aviation's three cruise streams, unallocated below the provinces by construction.
+
+On that reference the beta's whole geography now ships: every sector's pollutant rows carry
+their own streams' provincial vectors (\texttt{air\_pollutants\_adm1.csv}, with the vector's
+status and the stream's evidence grade on every row) and, below the provinces, the streams'
+canonical-frame district vectors (\texttt{air\_pollutants\_adm2.csv}) --- agriculture by its
+own allocator re-keyed to the same frame, aviation's cruise share held at the provinces
+exactly as its greenhouse-gas mass is, and each layer closing to its national total at the
+allocator's own tolerance.
+
+\subsection{The nine-fiscal-year covered-sources panel}
+
+The beta's single reference year now sits inside a nine-fiscal-year panel
+(FY2015--16..FY2023--24), built the way the greenhouse-gas national series is built: each
+sector's own air engine run for each year under the sector's own fiscal convention, never a
+national total distributed downward. The atoms
+(\texttt{pakemis\_air\_atomic\_annual.csv}, one row per period, sector, category, process
+and species, in Gg) each carry their activity basis, their factor source and their own
+source-stream anchor; the rollup
+(\texttt{pakemis\_air\_annual\_fy2015\_16\_fy2023\_24.csv}) declares
+\texttt{coverage\_scope=covered\_sources\_only} on every row --- and reaches the query
+layer as its own semantic table (\texttt{fact\_air\_panel.csv}), every answer over it
+carrying that scope as a verbatim limitation --- because this is not a complete national
+seven-species inventory and does not claim to be. What is and is not
+estimated is itself a product: \texttt{pakemis\_air\_coverage\_matrix.csv} types all 630
+period-by-module-by-species cells under the closed IPCC notation keys --- a missing estimate
+is written as its key, never as a zero. Power's screening scenarios run for the
+same nine years and ship beside the panel
+(\texttt{power\_air\_screening\_fy2015\_16\_fy2023\_24.csv}), outside it, so a scenario
+end is never laundered into an estimate; industrial combustion (rc58), IPPU process
+pollutants and fugitive NMVOC with flaring (rc59) are inside the panel as provisional
+estimates from one source-class register, and the classes that register cannot price
+(urea finishing, nitric acid, lime, glass, venting, post-meter NMVOC) stay typed absences
+in the matrix with their gap-register rows. The reference-year slice of the panel
+reproduces the single-year layers above to rounding, and the series honesty is carried in
+the atoms' own bases: agriculture's crops and nitrogen on their fiscal Economic Survey
+series with livestock on the declared inter-census projection, residential's five
+untranscribed fuels held and labelled, and the road and rail sulfur regimes stepping at the
+cited Euro-II and Euro-V import-mandate boundaries. The panel now carries the residential
+dung sensitivity as a second configuration. The reference, \texttt{REF\_2023\_24}, interpolates the dung
+series per household between the two HIES rounds and never claims nine observed years
+(each year's basis is labelled); \texttt{L\_HERD1624} is configuration~L as a nine-year
+series, all the dung agriculture diverts burned in households, the reference year
+reproducing that configuration's shipped particulate exactly, and
+\texttt{residential\_configurations\_by\_year.csv} is the register both
+configurations' dung masses reconcile against.
+
+The panel is spatial for all nine years, on the same $0.05^{\circ}$ lattice and through
+the same dispatch as the greenhouse-gas cube: each pollutant mass rides the cell vector
+its own anchor stream was placed on for that period, so the grid
+(\texttt{pakemis\_air\_grid\_0p05\_annual\_fy2015\_16\_fy2023\_24.nc}, with
+the ledger-anchored configuration as its own file,
+\texttt{pakemis\_air\_grid\_0p05\_annual\_ledger\_fy2015\_16\_fy2023\_24.nc}), the
+provincial table (\texttt{pakemis\_air\_adm1\_by\_year.csv}) and the district table
+(\texttt{pakemis\_air\_adm2\_by\_year.csv}) are three marginals of one allocation,
+closing per period, configuration and species against the panel with the cruise share
+typed in \texttt{pakemis\_air\_unallocated\_by\_year.csv} rather than zeroed. The
+by-year tables carry the (period, stream) join key and no evidence badge of their own
+--- whether a year's geography was measured or borrowed is the weight registry's to
+say, and \texttt{pakemis\_air\_spatial\_support\_by\_year.csv} publishes that join per
+pollutant mass, with the activity/factor and spatial halves of the uncertainty
+reported side by side and never combined in
+\texttt{pakemis\_air\_uncertainty\_split\_by\_year.csv}. The family is servable: the
+semantic layer carries it as \texttt{fact\_air\_adm1\_year.csv} and
+\texttt{fact\_air\_adm2\_year.csv} (kilotonnes, the products' gigagrams verbatim),
+and \texttt{query\_air} answers fiscal-period questions at provincial and district
+grain under either configuration, with the covered-sources limitation on every
+envelope.
+
+What the panel's large typed absence plausibly holds is itself a product --- the
+completeness-mass rule applied to air. Power's screening carries BOTH scenario ends
+(the uncontrolled default and a controlled case crediting every unit with the named
+held-table control), grid only since rc58, and
+\texttt{pakemis\_air\_absence\_screening\_by\_year.csv} serves the pair per period
+and species --- scenario ends, not mathematical bounds --- beside every fiscal-period
+air answer (\texttt{fact\_air\_absence\_screening} in the envelope's completeness
+block) and never summed into the covered panel: a covered total plus an uncontrolled
+end would be a number that is neither an estimate nor a bound. The acquisition that
+would replace power's pair with an estimate stays named per row (the NEPRA licensee
+environmental submissions of gap \texttt{air-power-controlled}).
+
+Industrial combustion entered the covered panel at rc58 as a \emph{provisional
+estimate} (\texttt{industry\_air\_pollutants\_fy2015\_16\_fy2023\_24.csv}): the same
+gas, liquid and coal quantities the greenhouse-gas streams book, the cement engine's
+clinker and the power module's captive gas, each in a source class with its own
+equipment type and control state, on factors transcribed with page and digest from the
+EMEP/EEA 2023, AP-42 and South Asian kiln literature now held, and SO$_2$ from a sulfur
+balance on dated evidence. Its admission rule is the one the user set --- a defensible
+activity basis, an applicable factor for the actual source class, an explicit process
+boundary and documented assumptions, with uncertainty --- and what cannot meet it is a
+typed absence with its activity written beside it (NH$_3$ for every fuel, other-industry
+coal inside HDIP's cement column, captive solids, industrial bagasse). Captive
+self-generation is priced once, here, under IPCC 1.A.2, and no longer appears in the power
+screening. The equipment shares (boilers, furnaces, engines and turbines) are declared
+rather than surveyed and carry 40--50 percent; the brick kilns carry most of the layer's
+SO$_2$ and particulate on Punjab coalfield sulfur ranges rather than a measured average.
+That gap has been closed. Three as-fired analyses of the coal Pakistani
+brick kilns actually burn are now held---2.38 percent from a SAARC Energy Centre audit of a
+Bull's trench kiln at Lohe Bher (2012), and 5.60 and 5.95 percent from the CDPR/IGC kiln study's
+laboratory analyses of the Balochistan coal its zigzag kiln fires and the two-to-one mixture its
+fixed-chimney kiln fires (2022)---and their mean, \SI{4.643}{\percent}, replaces the
+resource-range value the layer carried before. \emph{The ground for the change is the basis, not
+the level}: the superseded value was the geometric middle of two Punjab coalfields' resource
+ranges, which the register's own vocabulary defines as what the seams hold rather than what was
+burned, and the level barely moves. This is the first row in the register to use
+the \texttt{measured\_avg} basis, declared since rc58 and until now unearned. The old derivation
+was wrong independently of its value: both measured Punjab kilns fire Balochistan and Sindh coal
+bought at differing prices, so the sulfur a kiln fires is an economic choice before it is a
+geological one. What is not claimed is precision---three batches are not a fleet, every source
+says so, and the uncertainty was deliberately not narrowed to match the new basis.
+
+A second sulfur value moved with it. Industrial and main-activity power furnace oil were booked at
+\SI{3.0}{\percent} and \SI{1.3229}{\percent}: one national fuel, the same years, a factor of
+\num{2.27} apart, each row carrying a note explaining why the other was wrong. The furnace-oil
+import grade split transcribed from PBS Compendium Table B-10 settles it---the pool runs
+\SIrange{85.3}{100}{\percent} high-sulphur grade across the four years the table covers, so it
+sits near the top of the \SIrange{0.5}{3.5}{\percent} specification span rather than at its
+unweighted middle. The power row is retired, with its reasoning preserved, and the power classes
+now cite the same row as industry, so the disagreement cannot be restated by a later edit.
+Equipment continues to change the \emph{retention}, which is declared per class.
+
+Together these raise Lahore's FY2015--16 SO$_2$ to
+\SI{26.49}{\giga\gram}, close to a third above what the district carried before, and steepen its
+nine-year \emph{endpoint change}---the ratio of the closing year to the opening one, not a fitted
+rate---by about four points. Stream by stream and year by year, with every sign shown, the revision
+is published in \texttt{pakemis\_sulfur\_adoption\_effect.csv}; every row it moved is an
+\emph{increase}. The mechanism is not the one a reader would expect: \emph{neither stream's own
+path changed}. Industrial SO$_2$ falls by the same fraction before and after, and so does power.
+The aggregate moved because power's share of the opening year rose to \SI{40}{\percent} from
+roughly half that, and power declines faster than the district does. A sulfur value is a flat
+multiplier within a stream and cannot bend that stream's path; re-weighting streams whose paths
+differ is what moves an aggregate. What the correction supplies is a better physical assumption---
+not a new observation of how fuel or sulfur moved through time.
+
+Three cautions belong with that number, and the first two were overstated in an earlier draft of
+this section. The district's fall is \emph{not} dominated by any single documented policy. Its
+transport component is almost entirely the modelled diesel sulfur step, which is declared from
+import-mandate coverage rather than measured at the pump; road diesel consumption \emph{rose} over
+the step year, and the step is smaller than a tenfold sulfur cut would give because petrol's
+declared sulfur never moved. Its industrial component is not synonymous with brick kilns, which is
+why the effect table is cut per source class. And the brick column that dominates that component is
+a residual by its publisher's own footnote---estimated by deducting other uses from total
+production---whose value in the closing year rests on a supply table the publisher flags as partial
+and which the next edition revised, with the supply side revised in lockstep. Where that column
+exceeds the domestic non-Thar coal available, the record types the breach \emph{conditional} and
+names its conditions: neither coal imports by consumer nor stock change is held, and the
+publisher's own footnotes place imported coal in the adjacent column. Imports in those years exceed
+domestic production. The breach establishes that the reported quantity is incompatible with a
+domestic-only supply assumption; it does not establish which side is wrong.
+
+A fourth caution is asymmetric and works against the published figure. Lahore's power SO$_2$ is one
+station, and its opening year is priced from generation through a heat rate while its closing year
+is priced from a metered fuel quantity. Where both routes exist the generation route runs high, so
+the opening year is likely overstated relative to the close and the endpoint change correspondingly
+overstated---by roughly a point, on the bias measured in
+\texttt{pakemis\_air\_lahore\_power\_register.csv}. That correction is not booked, because a
+bias measured on one station in five years is not established for the four earlier ones; it is
+recorded so the asymmetry is visible rather than implicit.
+
+Retention remains unmeasured, and the reason is now a hard one rather than an absence. The only
+study pairing fuel sulfur with stack SO$_2$ on Pakistani kilns publishes, for one of its two kilns,
+a fuel-mass emission factor \num{2.5} times what that kiln's own fuel sulfur can supply, and its
+carbon fails by a wider margin still; its two published factors reproduce each other through the
+calorific value, so the fault lies upstream in that kiln's fuel-rate or stack-flow term. The
+declared \SI{0.25}{} retention therefore stands unchanged, and it is a single term standing where
+fuel retention, raw-material sulfur and any installed control should be distinguished. Every
+verdict above, including three readings of the brick test that were withdrawn before the fourth was
+adopted, is recorded in \texttt{pakemis\_fuel\_sulfur\_decision.csv}. What each sulfur row was
+measured on, and how far it has been carried from that population, is stated per row in
+\texttt{fuel\_sulfur\_evidence.csv}: the brick central is three batches from three kilns on two
+dates, applied to every kiln in the country in all nine years, and the register now says so in its
+own columns rather than leaving \texttt{measured\_avg} to imply otherwise.
+
+The same allocation the grid and provincial tables are marginals of is cut for Lahore
+District (\texttt{pakemis\_air\_lahore\_by\_year.csv}), every row beside its anchor streams'
+weight-registry basis and the national mass no geometry placed below the province.
+
+\subsection{Assurance, layer by layer}
+
+\begin{table}[htbp]
+\centering
+\small
+\begin{tabular}{@{}p{0.24\linewidth}p{0.20\linewidth}p{0.48\linewidth}@{}}
+\toprule
+\textbf{Layer} & \textbf{Status} & \textbf{What limits it} \\
+\midrule
+Residential solid fuel & estimated & stove-level factors are declared judgement \\
+Agriculture (burning) & estimated & burned mass bottom-up; timing not resolved \\
+Waste open burning & estimated & burned fraction is a declared parameter \\
+Railways & estimated & one fuel, one factor family \\
+Road transport & Tier 1 & fleet-average factors (EMEP/EEA Tier~1); no technology vintage resolution \\
+Power & uncontrolled bound & no control-device inventory obtained \\
+Aviation & LTO screening & airport cycles only, not a full airport inventory \\
+Industry & provisional estimate & source-class typical controls; declared equipment shares; SO$_2$ by sulfur balance on dated evidence \\
+IPPU & provisional estimate & ammonia, electric-route steel and soda ash on EMEP Tier 1/2 process factors; urea, nitric acid, lime and glass typed absent \\
+Fugitives & provisional estimate & NMVOC per segment on the module's own volumes; refining, refinery flaring and satellite-observed field flaring; venting and post-meter typed absent \\
+\bottomrule
+\end{tabular}
+\caption{Assurance class for each air-pollutant layer. Two of the ten are bounds or
+screening estimates and three are provisional estimates from the source-class register
+(industrial combustion on declared equipment shares; IPPU process pollutants and fugitive
+NMVOC with flaring on the modules' own activity), each with named classes it cannot price,
+so what follows orders what is estimated rather than the country's sources. The classes are declared in
+\texttt{pkinv.report.figures.AIR\_ASSURANCE} and a test asserts this table prints them.}
+\label{tab:airbeta}
+\end{table}
+
+\subsection{Magnitudes}
+
+Within that caveat the contrast is stark. Residential solid fuel is \SI{5.4}{\percent} of
+national greenhouse-gas emissions and emits \SI{282.7}{\kilo\tonne} of primary \PM{} and
+\SI{20.0}{\kilo\tonne} of black carbon under the reference \texttt{REF\_2023\_24}
+(\num{631.9} and \SI{41.5}{\kilo\tonne} under configuration~L)---more than the other estimated sources
+combined. Road transport is \num{1.7} times its size in \COe{}, at \SI{9.0}{\percent} of
+the national total against residential's \SI{5.4}{\percent}, and emits \SI{8.2}{\kilo\tonne}
+of primary \PM{}: about a thirty-fourth as much, on the EMEP/EEA Tier~1 factors that
+replaced the earlier uncited per-kilometre diagnostic, with evaporative and wear processes
+now inside the layer. Open waste burning
+contributes \SI{63.9}{\kilo\tonne} and crop-residue burning \SI{54.0}{\kilo\tonne}, both far
+above transport despite being marginal in \COe{}. Household biomass likewise dominates carbon
+monoxide, at \SI{3353}{\kilo\tonne} against transport's \SI{1430}{\kilo\tonne}.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=0.86\linewidth]{national_pm25.png}
+\caption{Primary \PM{} by combustion source, for the sectors carrying an air-pollutant layer.
+Residential solid fuel emits roughly \num{34} times road transport's primary \PM{} under
+\texttt{REF\_2023\_24} and \num{77} times under configuration~L, while contributing less than half again its
+\COe{}. Hatched bars are the bound and the screening estimate and should not be ranked against
+an estimate. Each layer is computed from the same activity quantities as its sector's
+greenhouse-gas estimate, so the ordering is a property of combustion conditions rather than of
+separate studies with different activity bases.}
+\label{fig:pm25}
+\end{figure}
+
+\subsection{What the comparison does and does not support}
+
+The policy reading is that the two inventories rank sources almost inversely. A mitigation
+programme selected on \COe{} would target transport and electricity; a programme selected on
+primary \PM{} emitted would target household cooking and heating first by a wide margin,
+followed by two open-burning categories that are together \SI{1.0}{\percent} of the national
+inventory. Because each estimate derives from its own sector's activity quantities rather than
+from a separate study, that divergence is a real feature of how these fuels burn rather than
+an artefact of mismatched activity bases---which is the usual reason such comparisons are
+unreliable in developing-country contexts.
+
+Three limits bound how far it can be taken. \emph{Emitted mass is not exposure}: the burden a
+population receives depends on where and how each source releases, which this inventory does
+not model, so the ordering identifies where the particulate mass originates and not where the
+harm lands. \emph{The layer is partial}: the power figures are uncontrolled bounds rather than
+what the fleet emits, industrial combustion is a provisional estimate whose equipment shares
+are declared rather than surveyed, IPPU process pollutants and fugitive NMVOC are provisional
+estimates with urea finishing, nitric acid, lime, glass, venting and post-meter losses typed
+absent, and transport omits cold-start, evaporative and non-exhaust processes. And \emph{the assurance
+is uneven}, per Table~\ref{tab:airbeta}, which is why this note is labelled beta and why the
+main paper reports the one-activity-basis finding without the ranking.
+
+\section{Key categories}
+\label{sup:keycat}
+
+The key-category analysis---level against variance, the two rankings it produces and what
+the ten-sector trend window can and cannot say---is reported in full in the main article's
+Technical validation section (Section~\ref{sec:keycat}) and is not repeated here: a
+fragment is printed in one document only, so that the number tests hold each printed value
+in exactly one place. This slot is retained so that the supplement's numbering follows the
+outline of the data-description article.
+
+% S3: the fragment's own heading is the supplement section.
+\input{sections/05_factor_tables}
+
+\section{Reproduction, months, geography and sources}
+\label{sup:reproduction}
+
+\pkinvDemoteFragment
+\input{sections/14_appendix}
+\pkinvEndFragment
+
+% S5: generated/claim_matrix.tex is written by scripts/make_claim_matrix.py and carries
+% its own heading.
+\input{generated/claim_matrix}
+
+\bibliographystyle{elsarticle-harv}
+\bibliography{../../../paper_common/references}
+
+\end{document}

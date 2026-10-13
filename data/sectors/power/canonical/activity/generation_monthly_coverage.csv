@@ -1,0 +1,31 @@
+Fiscal year,Subitem,Fuel words,Control gwh,Observed gwh,Coverage,Temporal class,Decision,Record ID,Source row
+FY2015-16,Coal,Coal,148.16,148.17,1.0,TE2,fuel-specific monthly shape,012c1b7075848db06cb78db8,1
+FY2015-16,Gas,Gas+RLNG,37562.42,19086.04,0.5081,TE4,no shape; the fuel keeps its flat profile,4b3160c654db37f58c75b097,2
+FY2015-16,Furnace Oil,RFO,34449.47,19510.83,0.5664,TE4,no shape; the fuel keeps its flat profile,d756d5a4eaa009ec4780c4ba,3
+FY2015-16,Diesel Oil,HSD,1512.28,0.0,0.0,TE4,no shape; the fuel keeps its flat profile,5fd0263ac9ca9cdb116ba20d,4
+FY2016-17,Coal,Coal,1059.14,997.14,0.9415,TE2,fuel-specific monthly shape,2d45bf6cb0dc54e972fe2400,5
+FY2016-17,Gas,Gas+RLNG,38946.52,18377.27,0.4719,TE4,no shape; the fuel keeps its flat profile,17b13d9a6eedc0e4ae538709,6
+FY2016-17,Furnace Oil,RFO,37108.2,26536.03,0.7151,TE3,"fuel-specific monthly shape, partial sample",eb6542d50a02e86777629f1b,7
+FY2016-17,Diesel Oil,HSD,1704.54,0.0,0.0,TE4,no shape; the fuel keeps its flat profile,6f47905f3cd5d431af31a1f9,8
+FY2017-18,Coal,Coal,12224.99,11665.03,0.9542,TE2,fuel-specific monthly shape,162fd009a95806962b4a5926,9
+FY2017-18,Gas,Gas+RLNG,50835.78,29469.04,0.5797,TE4,no shape; the fuel keeps its flat profile,ecd751e6a53578bd3a966cbf,10
+FY2017-18,Furnace Oil,RFO,28159.18,20691.27,0.7348,TE3,"fuel-specific monthly shape, partial sample",4bcd9a80b15fef6aceb9790d,11
+FY2017-18,Diesel Oil,HSD,788.18,0.0,0.0,TE4,no shape; the fuel keeps its flat profile,b09dc07d590c81cca289dd59,12
+FY2018-19,Coal,Coal,16725.52,16311.95,0.9753,TE2,fuel-specific monthly shape,a09b61147f71e97796254040,13
+FY2018-19,Gas,Gas+RLNG,58343.41,49396.12,0.8466,TE3,"fuel-specific monthly shape, partial sample; 7023 GWh assigned by annual-control bound",756663a5a3095c4a89861193,14
+FY2018-19,Furnace Oil,RFO,13494.09,10422.71,0.7724,TE3,"fuel-specific monthly shape, partial sample",bd3eb5e4adfe1a0e66c53555,15
+FY2018-19,Diesel Oil,HSD,27.74,21.88,0.7886,TE3,"fuel-specific monthly shape, partial sample",579a6b3158b73baf4446bf18,16
+FY2019-20,Coal,Coal,25966.25,25553.34,0.9841,TE2,fuel-specific monthly shape,47bf4779a59a9760d40b3b49,17
+FY2019-20,Gas,Gas+RLNG,46950.35,38605.3,0.8223,TE3,"fuel-specific monthly shape, partial sample; 5530 GWh assigned by annual-control bound",e8d46a857402cea647aed575,18
+FY2019-20,Furnace Oil,RFO,7908.68,5308.44,0.6712,TE3,"fuel-specific monthly shape, partial sample",d5f052ec765adbfe79b5ab77,19
+FY2019-20,Diesel Oil,HSD,0.67,0.12,0.1776,TE4,no shape; the fuel keeps its flat profile,a2df6ebb4ebb32bb7927e9fd,20
+FY2020-21,Coal,Coal,28000.78,27547.78,0.9838,TE2,fuel-specific monthly shape,a7189164a0ba41d509f565e8,21
+FY2020-21,Gas,Gas+RLNG,49678.48,40839.67,0.8221,TE3,"fuel-specific monthly shape, partial sample",a6ce6e76c6f9d9829f16c9ac,22
+FY2020-21,Furnace Oil,RFO,10595.92,6804.76,0.6422,TE3,"fuel-specific monthly shape, partial sample",f686b4efcf34d23fccd0998c,23
+FY2020-21,Diesel Oil,HSD,402.25,293.83,0.7305,TE3,"fuel-specific monthly shape, partial sample",5ac9b9f442da5c7c7941c365,24
+FY2021-22,Coal,Coal,27060.21,26589.26,0.9826,TE2,fuel-specific monthly shape,20071e2163ce3925e0a2aec2,25
+FY2021-22,Gas,Gas+RLNG,47487.22,14301.03,0.3012,TE4,no shape; the fuel keeps its flat profile,ca02bceef512feb7c5d43c6c,26
+FY2022-23,Coal,Coal,21320.16,20764.59,0.9739,TE2,fuel-specific monthly shape,96cdf6c42ad5f90b6b66e038,27
+FY2022-23,Gas,Gas+RLNG,41992.18,33658.27,0.8015,TE3,"fuel-specific monthly shape, partial sample; 20884 GWh of the observed mass is assigned by annual-control bound",2f22b7a2cefa3f2bc18820f1,28
+FY2023-24,Coal,Coal,20542.45,20232.58,0.9849,TE2,fuel-specific monthly shape,c48b3329675554d74cb9b540,29
+FY2023-24,Gas,Gas+RLNG,43236.01,32490.21,0.7515,TE3,"fuel-specific monthly shape, partial sample; 22944 GWh of the observed mass is assigned by annual-control bound",b700738b0ed506299f783a4f,30

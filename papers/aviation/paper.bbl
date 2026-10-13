@@ -1,0 +1,131 @@
+\begin{thebibliography}{14}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Misc
+\bibitem[{{ADSB.lol}(2024)}]{adsblolhistory}
+\bibinfo{author}{{ADSB.lol}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Globe history daily aircraft trace archives}.
+\newblock
+  \bibinfo{howpublished}{\url{https://github.com/adsblol/globe_history_2023}}.
+\newblock \bibinfo{note}{Daily readsb JSON trace archives; Open Database
+  License 1.0}.
+%Type = Misc
+\bibitem[{{Climate TRACE}(2026)}]{climatetrace}
+\bibinfo{author}{{Climate TRACE}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Climate {TRACE} emissions inventory and data
+  downloads}.
+\newblock \bibinfo{howpublished}{\url{https://climatetrace.org/data}}.
+\newblock \bibinfo{note}{Version 7 country- and source-level API records; CC BY
+  4.0; accessed 6 August 2026}.
+%Type = Misc
+\bibitem[{{Copernicus Climate Change Service}(2026)}]{era5arco}
+\bibinfo{author}{{Copernicus Climate Change Service}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{{ERA5} hourly data on pressure levels: Analysis-ready
+  cloud-optimised data}.
+\newblock
+  \bibinfo{howpublished}{\url{https://confluence.ecmwf.int/spaces/CKB/pages/639215345/Analysis+Ready+Cloud+Optimised+ARCO+Data}}.
+\newblock \bibinfo{note}{Copernicus Climate Data Store; accessed 6 August
+  2026}.
+%Type = Article
+\bibitem[{Garsous et~al.(2022)Garsous, Cottrell, Dequeljoe
+  et~al.}]{oecdaviation}
+\bibinfo{author}{Garsous, G.}, \bibinfo{author}{Cottrell, L.},
+  \bibinfo{author}{Dequeljoe, M.}, et~al., \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{{CO2} emissions from air transport: A near-real-time
+  global database for policy analysis}.
+\newblock \bibinfo{journal}{OECD Statistics Working Papers}
+  \DOIprefix\doi{10.1787/ecc9f16b-en}.
+%Type = Techreport
+\bibitem[{{Government of Pakistan}(2024)}]{pakbtr2024}
+\bibinfo{author}{{Government of Pakistan}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Pakistan's First Biennial Transparency Report to the
+  {UNFCCC}}.
+\newblock \bibinfo{type}{Technical Report}. Ministry of Climate Change and
+  Environmental Coordination.
+\newblock \URLprefix \url{https://unfccc.int/documents/645241}.
+%Type = Techreport
+\bibitem[{{Government of Pakistan}(2025)}]{paknc32025}
+\bibinfo{author}{{Government of Pakistan}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Pakistan's Third National Communication on Climate
+  Change}.
+\newblock \bibinfo{type}{Technical Report}. Ministry of Climate Change and
+  Environmental Coordination.
+\newblock \URLprefix \url{https://unfccc.int/documents/648622}.
+%Type = Misc
+\bibitem[{{Government of Pakistan}(2026)}]{pakcrt2026}
+\bibinfo{author}{{Government of Pakistan}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Common reporting tables for the electronic reporting
+  of pakistan's national greenhouse gas inventory}.
+\newblock \bibinfo{howpublished}{Submission to the UNFCCC}.
+\newblock \URLprefix \url{https://unfccc.int/documents/655653}.
+%Type = Techreport
+\bibitem[{{ICAO}(2024)}]{icaoicec2024}
+\bibinfo{author}{{ICAO}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{{ICAO} Carbon Emissions Calculator Methodology,
+  Version 13.1}.
+\newblock \bibinfo{type}{Technical Report}. International Civil Aviation
+  Organization.
+\newblock \URLprefix
+  \url{https://icec.icao.int/Methodology%20ICAO%20Carbon%20Emissions%20Calculator_v13_Final.pdf}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006energy}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 2: Energy, Chapter 3: Mobile Combustion}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Japan.
+\newblock \URLprefix
+  \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html}.
+%Type = Misc
+\bibitem[{{Oil Companies Advisory Council}(2024)}]{ocacaviation}
+\bibinfo{author}{{Oil Companies Advisory Council}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Sectoral sales of energy products, pakistan,
+  july--june 2023--24}.
+\newblock \URLprefix \url{https://www.ocac.org.pk/oil-industry-statistics/}.
+%Type = Misc
+\bibitem[{{Oil Companies Advisory Council}(2026)}]{ocacarchive}
+\bibinfo{author}{{Oil Companies Advisory Council}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Oil industry statistics archive}.
+\newblock
+  \bibinfo{howpublished}{\url{https://www.ocac.org.pk/oil-industry-statistics/archives/}}.
+\newblock \bibinfo{note}{Annual sectoral-sales reports from FY2016--17 and
+  monthly reports; accessed 6 August 2026}.
+%Type = Techreport
+\bibitem[{{Pakistan Civil Aviation Authority}(2024a)}]{pcaaairlines2024}
+\bibinfo{author}{{Pakistan Civil Aviation Authority}}, \bibinfo{year}{2024}a.
+\newblock \bibinfo{title}{Major Traffic Flows by Airlines During the Year: July
+  2023 to June 2024}.
+\newblock \bibinfo{type}{Technical Report}. Statistics Branch, Pakistan Civil
+  Aviation Authority.
+\newblock \URLprefix
+  \url{https://pcaawebadmin.pcaa.gov.pk/media/ufwmg42i/major-traffic-flow-airlines-2023-24.pdf}.
+%Type = Techreport
+\bibitem[{{Pakistan Civil Aviation Authority}(2024b)}]{pcaaairports2024}
+\bibinfo{author}{{Pakistan Civil Aviation Authority}}, \bibinfo{year}{2024}b.
+\newblock \bibinfo{title}{Major Traffic Flows by Airports During the Year: July
+  2023 to June 2024}.
+\newblock \bibinfo{type}{Technical Report}. Statistics Branch, Pakistan Civil
+  Aviation Authority.
+\newblock \URLprefix
+  \url{https://pcaawebadmin.pcaa.gov.pk/media/ykumyn4k/major-traffic-flow-airports-2023-24.pdf}.
+%Type = Article
+\bibitem[{Sun et~al.(2020)Sun, Hoekstra and Ellerbroek}]{sun2020openap}
+\bibinfo{author}{Sun, J.}, \bibinfo{author}{Hoekstra, J.M.},
+  \bibinfo{author}{Ellerbroek, J.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{{OpenAP}: An open-source aircraft performance model
+  for air transportation studies and simulations}.
+\newblock \bibinfo{journal}{Aerospace} \bibinfo{volume}{7},
+  \bibinfo{pages}{104}.
+\newblock \DOIprefix\doi{10.3390/aerospace7080104}.
+
+\end{thebibliography}

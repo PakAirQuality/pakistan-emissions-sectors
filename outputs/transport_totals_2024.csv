@@ -1,0 +1,6 @@
+category,co2e_Mt_AR5,co2e_Mt_AR6,note
+Road transport,40.19383,40.20659,"1A3b, on TWO activity bases: petrol and diesel from OCAC's FY2023-24 Road customer-class rows (rail excluded by construction; generator petrol carved out by relay), and CNG from OGRA's metered sector gas. They are different fuels from different statistics and cannot double-count."
+Mixed off-road (1A4c/1A2),1.73234,1.73717,"Reported under 1A4c ii; the class mixes agricultural machinery with the source workbook's residual bucket, incl. construction machinery IPCC books to 1A2 gvii - hence the mixed name. Carved from the same diesel control by vehicle-km share; IPCC Vol 2 Ch 3 Table 3.3.1 factors, not the road table"
+TOTAL,41.92617,41.94376,
+Sensitivity: CNG at 900 Btu/scf,41.79798,,"The CNG heating value is the assumption in that stream, as it is for captive gas: OGRA reports a volume and IPCC works in net terajoules. Pakistani pipeline gas runs 900-1,000 Btu/scf and nothing read here pins it. This is the whole-sector total with CNG at 900 instead of 1,000."
+Diagnostic: off-road N2O on the road factor,0.02189,,What 1A4c would report for N2O using Table 3.2.2 (3.9 kg/TJ) instead of Table 3.3.1 (28.6). The gap is why the table choice is pinned by a test.

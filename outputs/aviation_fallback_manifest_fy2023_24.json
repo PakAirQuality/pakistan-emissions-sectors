@@ -1,0 +1,40 @@
+{
+  "coverage": {
+    "aircraft_stage_share": 0.8616354679802956,
+    "resident_international_departure_share": 0.2786146253004525,
+    "route_stage_share": 0.9900246305418723
+  },
+  "dependencies": {
+    "numpy": "2.2.6",
+    "openap": "2.6.0",
+    "pandas": "2.3.3",
+    "scipy": "1.14.1"
+  },
+  "fiscal_period": "2023-07-01/2024-06-30",
+  "inputs": {
+    "aircraft_family_shares_2023_24.csv": "30ee29d3b482819a642299d9250603ad62721eee3e7ee0ff0d599ca1997d3a65",
+    "airline_controls_2023_24.csv": "5b635ca87f06d12b1d29ee7b9e3b6c64d390167bc1da46e32775876e19e7c10d",
+    "airport_controls_2023_24.csv": "274a97030736c85ab67cb9666bf53e1383a73a624641071a34c37569bf3f3463",
+    "airports.csv": "abfe55e8a9457f1e8b90f7b427bea870e28b672d6228a6423c2e308b3fedcefd",
+    "control_reconciliation_2023_24.csv": "bb74f62ca442049891d13a75c3398ab82fbd558cb4a74f5a94a48fb5c808fd11",
+    "fuel_controls_2023_24.csv": "9015a58222159925a0c226ad6946fc9435414838c01e581352a6be65d9dd08dc",
+    "international_airports.csv": "8b19e8e7861620c71dec52f6bbdc09d6201d195fbf0c51d57fdf4e707316d6f2",
+    "route_evidence_2023_24.csv": "7d272a75d23cd0e1a2b058023439c549f44344b0d3c1daf79708561185da063c"
+  },
+  "inventory_status": "provisional",
+  "known_limitations": [
+    "Tier C is an annual constrained reconstruction, not observed flights",
+    "Only contemporaneously evidenced routes and aircraft assignments are allocated",
+    "Modelled-fuel OCAC split is coverage-gated and retains unsupported fuel as residual",
+    "Monthly and actual-trajectory products require Tier A/B observations"
+  ],
+  "models_completed": [
+    "M0",
+    "M1",
+    "M2",
+    "M3"
+  ],
+  "open_sky_required": false,
+  "schema": "pkinv.aviation.fallback_run/v1",
+  "source_adapter": "PCAAReconstructedSource"
+}

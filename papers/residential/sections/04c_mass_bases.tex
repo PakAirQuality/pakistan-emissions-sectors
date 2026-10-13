@@ -1,0 +1,50 @@
+% ===========================================================================
+\subsection{One mass-basis table for every solid fuel}
+\label{sec:massbases}
+% ===========================================================================
+
+Three mass bases circulate in this sector---as-received (air-dry), total dry solids, and
+ash-free volatile solids---and the superseded dung estimate showed what conflating them
+costs. Table~\ref{tab:massbases} states, for every solid fuel, which mass is reported,
+which mass the energy calculation burns, and which mass the air-pollutant factors burn,
+with the moisture and ash fractions that connect them. The rule it encodes: IPCC's
+Table~1.2 net calorific values are as-received and pair with air-dry mass; Andreae-family
+pollutant factors are per kilogram of dry fuel including ash and pair with the dry mass;
+neither conversion is ever applied twice.
+
+\begin{table*}[tbp]
+\centering
+\scriptsize
+\begin{tabular}{@{}lllllll@{}}
+\toprule
+\textbf{Fuel} & \textbf{Reported mass} & \textbf{Basis} & \textbf{Moist.\ (ar)} &
+\textbf{Ash (dry)} & \textbf{Energy pairing} & \textbf{AP-factor mass} \\
+\midrule
+Dung cake (S)  & 10.93 Mt & air-dry cake, HIES rounds     & 0.12 & 0.25 &
+  air-dry $\times$ 11.6 TJ/Gg (ar) & 9.62 Mt total dry solids \\
+Dung cake (L)  & 58.74 Mt & air-dry cake, from N ledger  & 0.12 & 0.25 &
+  air-dry $\times$ 11.6 TJ/Gg (ar) & 51.69 Mt total dry solids \\
+Firewood       & 23.13 Mt & air-dry wood, HIES 2024--25  & 0.15 & incl.\ in factors &
+  air-dry $\times$ 15.6 TJ/Gg (ar) & 19.66 Mt oven-dry \\
+Crop residues  & 10.53 Mt & air-dry, from residue ledger & 0.12 & incl.\ in factors &
+  air-dry $\times$ 11.6 TJ/Gg (ar) & 9.27 Mt dry matter \\
+Charcoal       & 8.3 kt   & as-purchased, HIES 2024--25  & $\sim$0 (declared) & incl.\ in factors &
+  as-purchased $\times$ 29.5 TJ/Gg & 8.3 kt taken as dry \\
+Coal           & 13.2 kt  & as-received, HIES 2024--25   & --- & --- &
+  as-received $\times$ 25.8 TJ/Gg  & energy basis (g/GJ) \\
+\bottomrule
+\end{tabular}
+\caption{Mass bases, fuel by fuel. The reference (S) reads air-dry cake from the survey,
+the per-household quantity interpolated between the two rounds, and removes moisture for
+its dry mass; under configuration L the dung chain runs
+$\mathrm{VS} \rightarrow \mathrm{TS} = \mathrm{VS}/(1-\text{ash}) \rightarrow
+\text{air-dry} = \mathrm{TS}/(1-\text{moisture})$ from the nitrogen ledger. The fractions
+are the same, so the two configurations differ
+only in whose quantity they believe, never in chemistry. Charcoal's as-purchased mass is
+taken as dry (lump charcoal equilibrates at a few percent moisture; the conflation is
+declared and bounded well below that stream's activity uncertainty). Coal needs no dry
+mass because its pollutant factors are on fuel energy. Moisture and ash fractions are
+declared literature-range parameters \citep{szymajda2019}, pinned to
+\texttt{data/residential\_params.csv} by test.}
+\label{tab:massbases}
+\end{table*}

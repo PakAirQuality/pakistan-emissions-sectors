@@ -1,0 +1,169 @@
+survey,province,region,fuel,unit,kind,users_weighted,users_share,mean_monthly_per_using_hh,annual_total,own_produced_share_of_qty,n_obs
+hies2019,Balochistan,rural,lpg,kg,quantity,113990,0.1077,11.925,16311556,0.0,136
+hies2019,Balochistan,urban,lpg,kg,quantity,117279,0.2758,15.437,21724929,0.0,213
+hies2019,Khyber Pakhtunkhwa,rural,lpg,kg,quantity,1539412,0.3916,7.838,144793186,0.004,1146
+hies2019,Khyber Pakhtunkhwa,urban,lpg,kg,quantity,211438,0.2687,9.678,24555552,0.005,378
+hies2019,Punjab,rural,lpg,kg,quantity,2172496,0.1796,9.007,234821052,0.0,1421
+hies2019,Punjab,urban,lpg,kg,quantity,888710,0.1218,9.607,102455094,0.0,477
+hies2019,Sindh,rural,lpg,kg,quantity,30193,0.0086,6.423,2327084,0.0,31
+hies2019,Sindh,urban,lpg,kg,quantity,94546,0.0233,9.44,10710033,0.0,63
+hies2019,Balochistan,rural,kerosene,litre,quantity,96811,0.0915,2.741,3184658,0.093,155
+hies2019,Balochistan,urban,kerosene,litre,quantity,11610,0.0273,2.827,393854,0.0,19
+hies2019,Khyber Pakhtunkhwa,rural,kerosene,litre,quantity,27592,0.007,15.023,4974268,0.554,24
+hies2019,Khyber Pakhtunkhwa,urban,kerosene,litre,quantity,1113,0.0014,4.222,56395,0.0,2
+hies2019,Punjab,rural,kerosene,litre,quantity,125755,0.0104,3.575,5395281,0.232,80
+hies2019,Punjab,urban,kerosene,litre,quantity,3574,0.0005,0.628,26949,0.0,2
+hies2019,Sindh,rural,kerosene,litre,quantity,47950,0.0136,3.394,1952791,0.453,57
+hies2019,Sindh,urban,kerosene,litre,quantity,1980,0.0005,2.968,70518,0.0,2
+hies2019,Balochistan,rural,firewood,kg,quantity,687786,0.6497,149.08,1230420347,0.247,1035
+hies2019,Balochistan,urban,firewood,kg,quantity,150168,0.3532,142.547,256871425,0.062,260
+hies2019,Khyber Pakhtunkhwa,rural,firewood,kg,quantity,2947304,0.7497,207.868,7351786307,0.419,2316
+hies2019,Khyber Pakhtunkhwa,urban,firewood,kg,quantity,204574,0.26,139.672,342879038,0.188,367
+hies2019,Punjab,rural,firewood,kg,quantity,5348750,0.4421,130.509,8376741519,0.284,3491
+hies2019,Punjab,urban,firewood,kg,quantity,816809,0.112,132.43,1298043781,0.111,451
+hies2019,Sindh,rural,firewood,kg,quantity,2423329,0.6869,92.018,2675890172,0.511,2382
+hies2019,Sindh,urban,firewood,kg,quantity,439668,0.1083,89.084,470010855,0.173,334
+hies2019,Balochistan,rural,charcoal,kg,quantity,16371,0.0155,76.235,14976646,0.126,26
+hies2019,Balochistan,urban,charcoal,kg,quantity,3797,0.0089,48.089,2190963,0.0,7
+hies2019,Khyber Pakhtunkhwa,rural,charcoal,kg,quantity,62423,0.0159,186.55,139740419,0.453,46
+hies2019,Khyber Pakhtunkhwa,urban,charcoal,kg,quantity,6059,0.0077,72.974,5305523,0.553,12
+hies2019,Punjab,rural,charcoal,kg,quantity,63115,0.0052,95.933,72657830,0.443,43
+hies2019,Punjab,urban,charcoal,kg,quantity,15952,0.0022,54.44,10421247,0.257,9
+hies2019,Sindh,rural,charcoal,kg,quantity,30689,0.0087,124.804,45961655,0.747,31
+hies2019,Sindh,urban,charcoal,kg,quantity,5284,0.0013,46.35,2938900,0.115,4
+hies2019,Balochistan,rural,coal,kg,quantity,1403,0.0013,50.0,841943,0.0,2
+hies2019,Balochistan,urban,coal,kg,quantity,443,0.001,125.0,663948,0.0,1
+hies2019,Khyber Pakhtunkhwa,rural,coal,kg,quantity,18041,0.0046,182.438,39497480,0.988,16
+hies2019,Khyber Pakhtunkhwa,urban,coal,kg,quantity,1576,0.002,29.556,558914,0.668,3
+hies2019,Punjab,rural,coal,kg,quantity,31022,0.0026,60.185,22404757,0.707,21
+hies2019,Punjab,urban,coal,kg,quantity,5252,0.0007,81.708,5149677,0.0,3
+hies2019,Sindh,rural,coal,kg,quantity,7971,0.0023,67.328,6439906,0.295,8
+hies2019,Balochistan,rural,dung_cake,kg,quantity,178420,0.1685,77.047,164961117,0.557,277
+hies2019,Balochistan,urban,dung_cake,kg,quantity,11881,0.0279,70.487,10049454,0.173,23
+hies2019,Khyber Pakhtunkhwa,rural,dung_cake,kg,quantity,771353,0.1962,106.721,987838918,0.78,611
+hies2019,Khyber Pakhtunkhwa,urban,dung_cake,kg,quantity,35194,0.0447,87.468,36940471,0.672,65
+hies2019,Punjab,rural,dung_cake,kg,quantity,3605089,0.298,94.893,4105186683,0.638,2303
+hies2019,Punjab,urban,dung_cake,kg,quantity,193065,0.0265,95.674,221655949,0.343,110
+hies2019,Sindh,rural,dung_cake,kg,quantity,850928,0.2412,85.964,877794261,0.389,860
+hies2019,Sindh,urban,dung_cake,kg,quantity,105609,0.026,78.648,99671515,0.19,79
+hies2019,Balochistan,rural,electricity,rupees,value,719486,0.6796,895.853,7734637726,,1009
+hies2019,Balochistan,urban,electricity,rupees,value,400952,0.943,1460.436,7026772520,,713
+hies2019,Khyber Pakhtunkhwa,rural,electricity,rupees,value,2955806,0.7518,1278.572,45350534817,,2210
+hies2019,Khyber Pakhtunkhwa,urban,electricity,rupees,value,730004,0.9278,2116.993,18544946207,,1355
+hies2019,Punjab,rural,electricity,rupees,value,11226832,0.928,1568.007,211244980543,,7259
+hies2019,Punjab,urban,electricity,rupees,value,7225178,0.9906,2605.481,225900790082,,3904
+hies2019,Sindh,rural,electricity,rupees,value,2506305,0.7105,762.965,22946685986,,2483
+hies2019,Sindh,urban,electricity,rupees,value,3903885,0.9616,2475.191,115954345068,,2553
+hies2019,Balochistan,rural,generator_fuel,rupees,value,14652,0.0138,1181.03,207658171,,25
+hies2019,Balochistan,urban,generator_fuel,rupees,value,8347,0.0196,985.476,98713768,,15
+hies2019,Khyber Pakhtunkhwa,rural,generator_fuel,rupees,value,70511,0.0179,2041.161,1727097239,,49
+hies2019,Khyber Pakhtunkhwa,urban,generator_fuel,rupees,value,23447,0.0298,1473.539,414604506,,44
+hies2019,Punjab,rural,generator_fuel,rupees,value,77900,0.0064,1096.637,1025140940,,52
+hies2019,Punjab,urban,generator_fuel,rupees,value,51756,0.0071,2050.582,1273550274,,28
+hies2019,Sindh,rural,generator_fuel,rupees,value,28029,0.0079,2639.627,887845957,,28
+hies2019,Sindh,urban,generator_fuel,rupees,value,329766,0.0812,1268.82,5020960185,,204
+hies2019,Balochistan,rural,natural_gas,rupees,value,166236,0.157,1225.854,2445375377,,201
+hies2019,Balochistan,urban,natural_gas,rupees,value,194058,0.4564,1084.763,2526088513,,341
+hies2019,Khyber Pakhtunkhwa,rural,natural_gas,rupees,value,404934,0.103,1096.676,5328982105,,282
+hies2019,Khyber Pakhtunkhwa,urban,natural_gas,rupees,value,510320,0.6486,1067.791,6538976899,,959
+hies2019,Punjab,rural,natural_gas,rupees,value,2246760,0.1857,453.102,12216123588,,1411
+hies2019,Punjab,urban,natural_gas,rupees,value,5804846,0.7959,536.305,37358019194,,3130
+hies2019,Sindh,rural,natural_gas,rupees,value,552111,0.1565,401.499,2660067522,,572
+hies2019,Sindh,urban,natural_gas,rupees,value,3494646,0.8608,467.83,19618799733,,2246
+hies2019,Balochistan,rural,agricultural_waste,rupees,value,188089,0.1777,535.998,1209786058,,275
+hies2019,Balochistan,urban,agricultural_waste,rupees,value,20108,0.0473,546.956,131976510,,36
+hies2019,Khyber Pakhtunkhwa,rural,agricultural_waste,rupees,value,1265490,0.3219,1409.673,21407118897,,1040
+hies2019,Khyber Pakhtunkhwa,urban,agricultural_waste,rupees,value,51446,0.0654,1378.786,851191797,,87
+hies2019,Punjab,rural,agricultural_waste,rupees,value,1705566,0.141,623.863,12768477680,,1092
+hies2019,Punjab,urban,agricultural_waste,rupees,value,74210,0.0102,488.02,434589322,,43
+hies2019,Sindh,rural,agricultural_waste,rupees,value,515012,0.146,428.133,2645926210,,493
+hies2019,Sindh,urban,agricultural_waste,rupees,value,27912,0.0069,514.431,172308530,,23
+hies2019,Balochistan,rural,cotton_sticks,rupees,value,22276,0.021,342.205,91476286,,34
+hies2019,Balochistan,urban,cotton_sticks,rupees,value,1561,0.0037,985.147,18459586,,3
+hies2019,Khyber Pakhtunkhwa,rural,cotton_sticks,rupees,value,53985,0.0137,1528.664,990300548,,44
+hies2019,Khyber Pakhtunkhwa,urban,cotton_sticks,rupees,value,3366,0.0043,994.335,40166873,,7
+hies2019,Punjab,rural,cotton_sticks,rupees,value,2862655,0.2366,977.111,33565571210,,1853
+hies2019,Punjab,urban,cotton_sticks,rupees,value,104250,0.0143,784.333,981204357,,64
+hies2019,Sindh,rural,cotton_sticks,rupees,value,660903,0.1873,565.473,4484673432,,607
+hies2019,Sindh,urban,cotton_sticks,rupees,value,65976,0.0163,560.325,443616005,,51
+hies2025,Balochistan,rural,lpg,kg,quantity,118743,0.0838,10.597,15099323,0.0,118
+hies2025,Balochistan,urban,lpg,kg,quantity,133626,0.2142,11.551,18521927,0.0,163
+hies2025,Khyber Pakhtunkhwa,rural,lpg,kg,quantity,1540010,0.3059,8.922,164874889,0.0,1045
+hies2025,Khyber Pakhtunkhwa,urban,lpg,kg,quantity,259866,0.2884,8.673,27045136,0.0,587
+hies2025,Punjab,rural,lpg,kg,quantity,2564680,0.1986,7.32,225295355,0.0,1784
+hies2025,Punjab,urban,lpg,kg,quantity,2807106,0.2985,10.924,367963881,0.001,1413
+hies2025,Sindh,rural,lpg,kg,quantity,173528,0.0406,15.638,32564149,0.0,193
+hies2025,Sindh,urban,lpg,kg,quantity,407863,0.076,9.124,44653665,0.0,237
+hies2025,Balochistan,rural,kerosene,litre,quantity,11851,0.0084,43.45,6179256,0.547,14
+hies2025,Khyber Pakhtunkhwa,rural,kerosene,litre,quantity,5757,0.0011,188.397,13014984,0.193,4
+hies2025,Khyber Pakhtunkhwa,urban,kerosene,litre,quantity,440,0.0005,200.0,1055280,0.0,1
+hies2025,Punjab,rural,kerosene,litre,quantity,33996,0.0026,70.306,28681063,0.214,24
+hies2025,Punjab,urban,kerosene,litre,quantity,13163,0.0014,59.656,9423030,0.0,7
+hies2025,Sindh,rural,kerosene,litre,quantity,31306,0.0073,49.048,18425923,0.219,40
+hies2025,Sindh,urban,kerosene,litre,quantity,10058,0.0019,9.786,1181225,0.0,6
+hies2025,Balochistan,rural,firewood,kg,quantity,771228,0.5444,289.199,2676459360,0.232,919
+hies2025,Balochistan,urban,firewood,kg,quantity,215668,0.3458,136.992,354536203,0.379,289
+hies2025,Khyber Pakhtunkhwa,rural,firewood,kg,quantity,3085076,0.6128,210.266,7784222026,0.48,2240
+hies2025,Khyber Pakhtunkhwa,urban,firewood,kg,quantity,162525,0.1804,130.179,253888129,0.166,373
+hies2025,Punjab,rural,firewood,kg,quantity,5498807,0.4257,82.748,5460202249,0.386,3749
+hies2025,Punjab,urban,firewood,kg,quantity,1218471,0.1296,71.654,1047700798,0.097,628
+hies2025,Sindh,rural,firewood,kg,quantity,2479172,0.5802,159.431,4743086327,0.577,2974
+hies2025,Sindh,urban,firewood,kg,quantity,591265,0.1102,114.559,812813664,0.212,352
+hies2025,Balochistan,rural,charcoal,kg,quantity,12439,0.0088,18.812,2808120,0.051,18
+hies2025,Balochistan,urban,charcoal,kg,quantity,6311,0.0101,27.685,2096738,0.0,15
+hies2025,Punjab,rural,charcoal,kg,quantity,3725,0.0003,57.78,2582856,0.513,3
+hies2025,Sindh,rural,charcoal,kg,quantity,1745,0.0004,3.513,73565,0.0,2
+hies2025,Sindh,urban,charcoal,kg,quantity,11654,0.0022,5.518,771642,0.0,7
+hies2025,Balochistan,rural,coal,kg,quantity,6914,0.0049,102.8,8529262,0.257,10
+hies2025,Balochistan,urban,coal,kg,quantity,887,0.0014,64.054,681564,0.0,2
+hies2025,Khyber Pakhtunkhwa,rural,coal,kg,quantity,6299,0.0013,11.481,867889,0.0,5
+hies2025,Punjab,rural,coal,kg,quantity,6788,0.0005,36.252,2952804,0.0,5
+hies2025,Sindh,rural,coal,kg,quantity,663,0.0002,24.0,191002,0.0,1
+hies2025,Balochistan,rural,dung_cake,kg,quantity,64471,0.0455,73.358,56754275,0.609,96
+hies2025,Balochistan,urban,dung_cake,kg,quantity,10367,0.0166,108.537,13503120,0.051,23
+hies2025,Khyber Pakhtunkhwa,rural,dung_cake,kg,quantity,420696,0.0836,90.767,458223836,0.634,324
+hies2025,Khyber Pakhtunkhwa,urban,dung_cake,kg,quantity,22302,0.0248,64.734,17324077,0.441,49
+hies2025,Punjab,rural,dung_cake,kg,quantity,3796394,0.2939,180.803,8236782594,0.637,2618
+hies2025,Punjab,urban,dung_cake,kg,quantity,359098,0.0382,140.587,605816424,0.391,185
+hies2025,Sindh,rural,dung_cake,kg,quantity,1100913,0.2577,135.219,1786377574,0.555,1303
+hies2025,Sindh,urban,dung_cake,kg,quantity,133691,0.0249,494.054,792606946,0.61,82
+hies2025,Balochistan,rural,electricity,rupees,value,883525,0.6236,1994.052,21141549114,,1027
+hies2025,Balochistan,urban,electricity,rupees,value,577916,0.9266,3566.342,24732543624,,906
+hies2025,Khyber Pakhtunkhwa,rural,electricity,rupees,value,4347956,0.8636,2946.915,153756711538,,2958
+hies2025,Khyber Pakhtunkhwa,urban,electricity,rupees,value,872257,0.9681,5592.131,58533266857,,2042
+hies2025,Punjab,rural,electricity,rupees,value,12262796,0.9494,4371.725,643314921559,,8300
+hies2025,Punjab,urban,electricity,rupees,value,9333811,0.9924,6804.383,762129836866,,4665
+hies2025,Sindh,rural,electricity,rupees,value,1954035,0.4573,2134.729,50056002050,,2329
+hies2025,Sindh,urban,electricity,rupees,value,5137248,0.9578,6797.274,419031395506,,3018
+hies2025,Balochistan,rural,generator_fuel,rupees,value,1396,0.001,1674.774,28051800,,2
+hies2025,Balochistan,urban,generator_fuel,rupees,value,1333,0.0021,30954.638,495001800,,3
+hies2025,Khyber Pakhtunkhwa,rural,generator_fuel,rupees,value,9125,0.0018,4099.208,448878000,,6
+hies2025,Khyber Pakhtunkhwa,urban,generator_fuel,rupees,value,8674,0.0096,8372.012,871436040,,21
+hies2025,Punjab,rural,generator_fuel,rupees,value,6117,0.0005,17917.28,1315200000,,4
+hies2025,Punjab,urban,generator_fuel,rupees,value,16743,0.0018,3643.169,731970960,,8
+hies2025,Sindh,rural,generator_fuel,rupees,value,22517,0.0053,4408.915,1191301080,,26
+hies2025,Sindh,urban,generator_fuel,rupees,value,87830,0.0164,14678.334,15470341680,,49
+hies2025,Balochistan,rural,natural_gas,rupees,value,158914,0.1122,3022.85,5764474704,,213
+hies2025,Balochistan,urban,natural_gas,rupees,value,266136,0.4267,2917.317,9316841520,,527
+hies2025,Khyber Pakhtunkhwa,rural,natural_gas,rupees,value,750187,0.149,2679.321,24119904130,,474
+hies2025,Khyber Pakhtunkhwa,urban,natural_gas,rupees,value,621254,0.6895,3717.939,27717393806,,1463
+hies2025,Punjab,rural,natural_gas,rupees,value,1928759,0.1493,2703.741,62578371635,,1267
+hies2025,Punjab,urban,natural_gas,rupees,value,6580380,0.6996,2724.446,215134682398,,3268
+hies2025,Sindh,rural,natural_gas,rupees,value,536770,0.1256,1360.35,8762349600,,583
+hies2025,Sindh,urban,natural_gas,rupees,value,4524820,0.8436,1683.854,91429649546,,2654
+hies2025,Balochistan,rural,agricultural_waste,rupees,value,315841,0.2229,3175.158,12034145040,,458
+hies2025,Balochistan,urban,agricultural_waste,rupees,value,35407,0.0568,3805.168,1616745672,,67
+hies2025,Khyber Pakhtunkhwa,rural,agricultural_waste,rupees,value,1482360,0.2944,2447.552,43537827998,,989
+hies2025,Khyber Pakhtunkhwa,urban,agricultural_waste,rupees,value,50401,0.0559,2872.581,1737364594,,115
+hies2025,Punjab,rural,agricultural_waste,rupees,value,2700444,0.2091,1494.348,48424837085,,1765
+hies2025,Punjab,urban,agricultural_waste,rupees,value,165431,0.0176,1318.226,2616902750,,85
+hies2025,Sindh,rural,agricultural_waste,rupees,value,1611223,0.3771,1007.557,19480789298,,1949
+hies2025,Sindh,urban,agricultural_waste,rupees,value,239877,0.0447,883.071,2541941664,,146
+hies2025,Balochistan,rural,cotton_sticks,rupees,value,26098,0.0184,1241.999,388970280,,35
+hies2025,Balochistan,urban,cotton_sticks,rupees,value,10162,0.0163,1501.0,183045149,,8
+hies2025,Khyber Pakhtunkhwa,rural,cotton_sticks,rupees,value,25966,0.0052,2102.997,655284720,,16
+hies2025,Khyber Pakhtunkhwa,urban,cotton_sticks,rupees,value,448,0.0005,500.0,2690400,,1
+hies2025,Punjab,rural,cotton_sticks,rupees,value,1729042,0.1339,1606.579,33334110254,,1166
+hies2025,Punjab,urban,cotton_sticks,rupees,value,114593,0.0122,1482.198,2038190496,,61
+hies2025,Sindh,rural,cotton_sticks,rupees,value,828074,0.1938,943.02,9370689391,,960
+hies2025,Sindh,urban,cotton_sticks,rupees,value,88815,0.0166,1534.561,1635502980,,55

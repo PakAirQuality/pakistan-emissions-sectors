@@ -1,0 +1,5 @@
+account,fuel_type,tonnes,co2_Gg,evidence_class,disposition,closer
+military_government_jet,JP-1,120758,381.6,fuel_identified_activity_unattributed,booked_as_configuration (military_government_in_scope),any record attributing the OCAC government/defence class between military operations (1A5b) and civil government use
+general_aviation_100ll,100LL avgas,4542,14.1,fuel_identified_activity_unresolved,booked_as_configuration (general_aviation_in_scope),a GA movement or flight-hours record for the piston fleet
+unresolved_government_jp1,JP-1,12282,38.8,observed_unallocated_residual,booked_as_configuration (unresolved_jp1_in_scope),"the OCAC bridge's own residual: nothing attributes it, and forcing it into any account would manufacture attribution"
+non_commercial_lto,JP-1/avgas mix,,7.8,movement_observed_fuel_mixed,memo_row (LTO portion of non-commercial movements),"movement-level operator attribution at joint-use airfields; mixes GA, training circuits and military"

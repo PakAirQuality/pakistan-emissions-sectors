@@ -1,0 +1,6 @@
+province,share_energy_basis,share_distance_basis,delta_pp,note
+Punjab,0.0,0.0,0.0,"energy basis = vehicle-km x declared MJ/km, matching the class split; distance basis is what the row used before August 2026"
+Sindh,0.0,0.0,0.0,"energy basis = vehicle-km x declared MJ/km, matching the class split; distance basis is what the row used before August 2026"
+Khyber Pakhtunkhwa,1.0,1.0,0.0,"energy basis = vehicle-km x declared MJ/km, matching the class split; distance basis is what the row used before August 2026"
+Balochistan,0.0,0.0,0.0,"energy basis = vehicle-km x declared MJ/km, matching the class split; distance basis is what the row used before August 2026"
+Other,0.0,0.0,0.0,"energy basis = vehicle-km x declared MJ/km, matching the class split; distance basis is what the row used before August 2026"

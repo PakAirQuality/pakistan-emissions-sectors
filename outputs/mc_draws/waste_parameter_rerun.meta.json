@@ -1,0 +1,22 @@
+{
+  "columns": [
+    "Open burning of waste",
+    "Solid waste disposal",
+    "Domestic wastewater",
+    "MODULE_TOTAL"
+  ],
+  "deterministic": {
+    "Domestic wastewater": 24.457849433675833,
+    "MODULE_TOTAL": 37.452910110850844,
+    "Open burning of waste": 3.8263405627488893,
+    "Solid waste disposal": 9.168720114426124
+  },
+  "distribution_id": "parameter_rerun_ledger_true",
+  "engine": "pkinv.sectors.waste.uncertainty.parameter_rerun_mc",
+  "file": "mc_draws/waste_parameter_rerun.csv",
+  "n_iter": 100000,
+  "note": "fate ledger identities (D+U=G, B+R=U) asserted in every draw; first 10000 draws bit-identical to waste_parameter_mc_2024.csv",
+  "rng": "Mersenne Twister (CPython random module); gauss via Box-Muller with paired-variate cache; python 3.11",
+  "seed": 4421,
+  "sha256": "fc5d3cc04021510cc042e1bbdf25480d0876b815a324be428e75f15b5648fbe8"
+}

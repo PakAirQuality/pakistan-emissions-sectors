@@ -1,0 +1,6 @@
+tier,claimant,Mt_wet,share_of_generated,ipcc_category,treatment,note
+national,Generated,31.5576,1.0,,control,district population panel x Pak-EPA per-capita rates (swds.waste_generated)
+national,Collected to disposal sites,15.8847,0.5034,4.A,First Order Decay over the deposit series,the collected complement of the uncollected fractions; decays over decades at the uncategorised-site MCF
+national,Uncollected,15.6728,0.4966,,partitioned below,urban 0.30 / rural 0.70 of stratum generation (What a Waste); HIES 2024-25 household routes read 0.42 / 0.93 - a named structural scenario
+uncollected,Openly burned,9.4037,0.298,4.C.2,IPCC Eq 5.7 x Eq 5.2; air-pollutant layer on the identical mass,"0.60 of uncollected waste (IPCC Box 5.1); emits immediately, mostly as biogenic CO2 with a fossil third"
+uncollected,"UNRESOLVED - dumped to land and waterways, unburned",6.2691,0.1987,,no GHG pathway applied,"not landfilled (no site conditions), not burned; the honest remainder. Only evidence on its composition: HIES 2024-25 routes (rural open space 0.88, waterways under 0.01). A tonne moved here from collection is a tonne removed from slow landfill decay"

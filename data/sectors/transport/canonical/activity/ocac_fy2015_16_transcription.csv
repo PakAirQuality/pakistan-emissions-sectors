@@ -1,0 +1,105 @@
+Section,Sector row,Product,Tonnes,Read basis,Note,Record ID,Source row
+DOMESTIC,DOMESTIC,KERO,74343,glyph_identity,,462ec16c7ff2f47d3c96ce5c,1
+DOMESTIC,DOMESTIC,FO,14,glyph_identity,,202cca1651462ee7c4edbf40,2
+DOMESTIC,DOMESTIC,TOTAL,74357,glyph_identity,74343+14,beb71900bcdcbcaf30a8c470,3
+INDUSTRY,Cement,MS,196,glyph_identity,,b7cce2787120842be6eb6272,4
+INDUSTRY,Cement,HSD,40394,glyph_identity,,382973ba6230700f646dca4d,5
+INDUSTRY,Cement,FO,126821,glyph_identity,,887c11e556de15c0d9478b47,6
+INDUSTRY,Cement,TOTAL,167411,glyph_identity,196+40394+126821 exactly,f625658602dd9c553a2a062e,7
+INDUSTRY,Others,HOBC,752,glyph_identity,,092f0963b5fc0e41f4e862a0,8
+INDUSTRY,Others,MS,60367,glyph_identity,,b156080de6a628b10b7da60c,9
+INDUSTRY,Others,KERO,31976,glyph_identity,,70cf1f47b49e8c3435e54b15,10
+INDUSTRY,Others,HSD,421169,glyph_identity,,9771e93e58541864d9d7f4c8,11
+INDUSTRY,Others,LDO,4568,glyph_identity,,d88d68b2793d4948021a4c58,12
+INDUSTRY,Others,FO,1337134,glyph_identity,,df901184ad94a92929acf120,13
+INDUSTRY,Others,TOTAL,1855966,identity,row sums to 1855966; the last printed digit is at the glyph floor and the Cement+Others=Total Industry closure fixes it,4d4142f400f0046ac0c2ab4d,14
+INDUSTRY,Total Industry,HOBC,752,glyph_identity,,72976ea934b94cd31514e445,15
+INDUSTRY,Total Industry,MS,60563,glyph_identity,196+60367,2a5df9b6d73272b7f3a16633,16
+INDUSTRY,Total Industry,KERO,31976,glyph_identity,,d34e14b57d2b0f4c0d80225d,17
+INDUSTRY,Total Industry,HSD,461563,glyph_identity,40394+421169,1b549504a9ac5bc2bc3b25e1,18
+INDUSTRY,Total Industry,LDO,4568,glyph_identity,,4917a193aa4065d82ab56544,19
+INDUSTRY,Total Industry,FO,1463955,glyph_identity,126821+1337134,5f082c9fb9e96fe6542bf91f,20
+INDUSTRY,Total Industry,TOTAL,2023377,glyph_identity,row sums exactly; equals the FY2016-17 edition's prior-year column,a6dfa56f1118def5a24a4357,21
+AGRICULTURE,AGRICULTURE,LDO,14512,glyph_identity,,ac58895f1986935674bc3e5d,22
+AGRICULTURE,AGRICULTURE,TOTAL,14512,glyph_identity,,b8c61a8dbbf0df0d5b4f5f38,23
+TRANSPORT,Road,HOBC,38449,identity,glyph floor 38-44x; fixed by Road TOTAL minus MS/HSD/LDO with the internal-HOBC column consistent,d19b15efd5e7914f4132fe2c,24
+TRANSPORT,Road,MS,5687337,glyph_identity,confirmed by the internal MS column: 5687337+60563+347+11516=5759763 printed,a98e369709827bb3e5842d4e,25
+TRANSPORT,Road,HSD,6713723,glyph_identity,confirmed by the transport HSD column: 6831145-117214-208,1cea2d834f56ee4531c895df,26
+TRANSPORT,Road,LDO,686,glyph_identity,confirmed by the internal LDO column: 24106-4568-14512-44-4296,5153ee15c4c46b6922278309,27
+TRANSPORT,Road,TOTAL,12440195,glyph_identity,equals the FY2016-17 edition's prior-year column exactly,0ebace875885b973d6033d84,28
+TRANSPORT,Railways,KERO,57,glyph_identity,,c64175f9af2bc27174cb47e4,29
+TRANSPORT,Railways,HSD,117214,glyph_identity,,386976ebbe87169903ea63d1,30
+TRANSPORT,Railways,FO,507,glyph_identity,,630792d5116b3e88f7825534,31
+TRANSPORT,Railways,TOTAL,117778,glyph_identity,57+117214+507 exactly,51ed24364a74a1d393ff8469,32
+TRANSPORT,Domestic Bunkers,HSD,208,glyph_identity,,be8289de807c6241d63e78ca,33
+TRANSPORT,Domestic Bunkers,FO,1003,glyph_identity,,8d9ff185177485aaa5bee4bf,34
+TRANSPORT,Domestic Bunkers,TOTAL,1211,glyph_identity,208+1003 exactly,67efa8b017555620f88a2a5f,35
+TRANSPORT,Domestic Avi-PIA,JP-1,287090,glyph_identity,,160ba9a571bd45c4d0c68c4e,36
+TRANSPORT,Domestic Avi-PIA,TOTAL,287090,glyph_identity,,a0351edc3ccdd478d7bb25b5,37
+TRANSPORT,Domestic Avi-Others,JP-1,176260,identity,463350-287090; the tens digit is at the glyph floor,5ea19e9e4babf7fa7783e248,38
+TRANSPORT,Domestic Avi-Others,TOTAL,176260,identity,,9148f346774c5bd12b871eea,39
+TRANSPORT,Total Transport,HOBC,38449,identity,= Road (only road carries HOBC),4916809bd9c293fc678d30c2,40
+TRANSPORT,Total Transport,MS,5687337,glyph_identity,,b61bfe1538926cb9b8c807ac,41
+TRANSPORT,Total Transport,JP-1,463350,glyph_identity,confirmed by internal JP-1: 463350+20765=484115 printed,34c23051eae333905f2b0f23,42
+TRANSPORT,Total Transport,KERO,57,glyph_identity,,852651ad74f152d1dfc3a63a,43
+TRANSPORT,Total Transport,HSD,6831145,glyph_identity,,a68128862ae5fcc26dc0ef80,44
+TRANSPORT,Total Transport,LDO,686,identity,= Road,893da76470f621ccfead177b,45
+TRANSPORT,Total Transport,FO,1510,glyph_identity,507+1003,c25972e9809830f33895d506,46
+TRANSPORT,Total Transport,TOTAL,13022534,glyph_identity,the five member TOTALs sum exactly,d660f98a31db64407b5186e8,47
+POWER,K-Electric,MS,347,glyph_identity,,f3988a53a90cf44ffbe49fa0,48
+POWER,K-Electric,HSD,603,glyph_identity,,ff1eabd69ce1b6ca544f3340,49
+POWER,K-Electric,FO,602587,identity,tens digit at the glyph floor; fixed by the power FO column 7485262,ca9b1e36f85e7f3e44deb06c,50
+POWER,K-Electric,TOTAL,603537,glyph_identity,347+603+602587 exactly,467d1a809a21922001cdb090,51
+POWER,PEPCO,HSD,11683,identity,fixed by the power HSD column 279976,63ee5326fae0835ab9a6bcf1,52
+POWER,PEPCO,FO,1753978,glyph_identity,,596553e689b651ed5e03cbd3,53
+POWER,PEPCO,TOTAL,1765661,identity,11683+1753978,29168941842b6f819e47671e,54
+POWER,HUBCO/Hub Narowal,HSD,60,glyph_identity,,43e670735493a0706d6c1eb0,55
+POWER,HUBCO/Hub Narowal,FO,2044284,glyph_identity,,dd479af22c15c769a36d13e9,56
+POWER,HUBCO/Hub Narowal,TOTAL,2044344,glyph_identity,60+2044284 exactly,192af127719d1dfa5d043e43,57
+POWER,Private Power,HSD,213853,glyph_identity,confirmed by row TOTAL 2204175,e38ba05c4f508a8d08cb007a,58
+POWER,Private Power,LDO,44,glyph_identity,,a2cf5a7de41df87bbc557b9b,59
+POWER,Private Power,FO,1990278,glyph_identity,,1f2987d2f731d249d68f69f3,60
+POWER,Private Power,TOTAL,2204175,glyph_identity,213853+44+1990278 exactly,3d70e0e55abb289b59b0405c,61
+POWER,KAPCO (LSFO),HSD,53777,glyph_identity,,69bab7eb2b3c853bd093521a,62
+POWER,KAPCO (LSFO),FO,1094135,glyph_identity,,03c66746e84b3ae4b4790e0f,63
+POWER,KAPCO (LSFO),TOTAL,1147912,glyph_identity,53777+1094135 exactly,147f655c08600f8a2a7353a7,64
+POWER,Total Power,MS,347,glyph_identity,,3c24b8fdf9e7e2a07b9ec73e,65
+POWER,Total Power,HSD,279976,glyph_identity,,fa97030666209e96013d9856,66
+POWER,Total Power,LDO,44,glyph_identity,,2c95eb7f5728402072e29b2b,67
+POWER,Total Power,FO,7485262,glyph_identity,,9e58d03242e383c8eb137130,68
+POWER,Total Power,TOTAL,7765629,glyph_identity,members and products both sum exactly,7ce070b2fa254c2ff77bb41a,69
+GOVERNMENT,Aviation,100 LL,1115,glyph_identity,,e53d94dedf33102709799354,70
+GOVERNMENT,Aviation,JP-1,6846,glyph_identity,,bf1bcec245d374f2e5e51b13,71
+GOVERNMENT,Aviation,TOTAL,7961,glyph_identity,1115+6846 exactly,9791c37787dee7289fbc221a,72
+GOVERNMENT,Bunkers,HSD,41849,glyph_identity,confirmed by row TOTAL 43024,57885c78be37b03312d67eaf,73
+GOVERNMENT,Bunkers,FO,1175,glyph_identity,,2a485437508c55547c143b8d,74
+GOVERNMENT,Bunkers,TOTAL,43024,glyph_identity,,853a5d2c52ef3a4609c4207b,75
+GOVERNMENT,Others,HOBC,1387,glyph_identity,,eeba6bec43e40ac5dc4bc8a6,76
+GOVERNMENT,Others,MS,11516,glyph_identity,,47a577b11d2f7ad84152362e,77
+GOVERNMENT,Others,JP-8,136036,glyph_identity,,639490e52def2b991c724933,78
+GOVERNMENT,Others,JP-1,13919,glyph_identity,confirmed by the govt JP-1 column: 6846+13919=20765,384bc2c8a217b80da4aac529,79
+GOVERNMENT,Others,KERO,35203,glyph_identity,,cc7022df139541772b578fb0,80
+GOVERNMENT,Others,HSD,131331,glyph_identity,confirmed by the govt HSD column: 41849+131331=173180,1e38683f3b429738de759982,81
+GOVERNMENT,Others,LDO,4296,glyph_identity,,1910e6c73f4bdb53283686ef,82
+GOVERNMENT,Others,FO,1559,glyph_identity,confirmed by the govt FO column: 1175+1559=2734,67ec2c2ba1f3876ee104846c,83
+GOVERNMENT,Others,TOTAL,335247,glyph_identity,the eight product cells sum exactly,47409cc3735f0a9e710571c9,84
+GOVERNMENT,Total Government,100 LL,1115,glyph_identity,,632aec0b33952afbcb582926,85
+GOVERNMENT,Total Government,HOBC,1387,glyph_identity,,eb288a679b06c86600ea3571,86
+GOVERNMENT,Total Government,MS,11516,glyph_identity,,6bb69b58ba406fe6836bddc3,87
+GOVERNMENT,Total Government,JP-8,136036,glyph_identity,,98c1840e98f1e12d06264b58,88
+GOVERNMENT,Total Government,JP-1,20765,glyph_identity,,bffb29d6bc32b2c404e03eab,89
+GOVERNMENT,Total Government,KERO,35203,glyph_identity,,2431eb499bd45dd0321da8a7,90
+GOVERNMENT,Total Government,HSD,173180,glyph_identity,,d3a9e0f0ee32136b233ea5a6,91
+GOVERNMENT,Total Government,LDO,4296,glyph_identity,,6a6555197e620009b3cffdcc,92
+GOVERNMENT,Total Government,FO,2734,glyph_identity,,921acab92fd62c955fe31294,93
+GOVERNMENT,Total Government,TOTAL,386232,glyph_identity,members and products both sum exactly,2f5def1b32cc7c37115f52d6,94
+TOTAL_INTERNAL,TOTAL_INTERNAL,100 LL,1115,glyph_identity,,047f3f2762c08e9d5e1d0df8,95
+TOTAL_INTERNAL,TOTAL_INTERNAL,HOBC,40588,identity,38449+752+1387; last digit at the glyph floor,be88ecdde36f5b49181f9c2f,96
+TOTAL_INTERNAL,TOTAL_INTERNAL,MS,5759763,glyph_identity,,35fd93f1e4a3ec3153930a5f,97
+TOTAL_INTERNAL,TOTAL_INTERNAL,JP-8,136036,glyph_identity,,90c83e5bd73728beb35de6eb,98
+TOTAL_INTERNAL,TOTAL_INTERNAL,JP-1,484115,glyph_identity,,66911e214e23006325ca12ee,99
+TOTAL_INTERNAL,TOTAL_INTERNAL,KERO,141579,glyph_identity,,6cc26b17e01e72cd7f6d97a5,100
+TOTAL_INTERNAL,TOTAL_INTERNAL,HSD,7745864,identity,461563+6831145+279976+173180; the hundreds digit at the glyph floor,b0130893bb5d5229e42d4168,101
+TOTAL_INTERNAL,TOTAL_INTERNAL,LDO,24106,glyph_identity,,62935abcff6753d36a4b063d,102
+TOTAL_INTERNAL,TOTAL_INTERNAL,FO,8953475,identity,14+1463955+1510+7485262+2734; two digits at the glyph floor,9c3687e964c19165842cf629,103
+TOTAL_INTERNAL,TOTAL_INTERNAL,TOTAL,23286641,identity,both routes agree: the nine product cells and the six class TOTALs each sum to 23286641,f320d8cf8cdf62abeef8ce4c,104

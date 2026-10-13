@@ -1,0 +1,69 @@
+gas,proxy_group,surface,surface_vintage,emissions_Gg
+CH4,builtup,builtup,ESA WorldCover 2021,387.71169599999996
+CH4,builtup,builtup+ocac_area_shares,ESA WorldCover 2021 + OCAC area pages (per period),0.13400499999999999
+CH4,builtup,captive_register_points+builtup_fallback,,0.004206556074000002
+CH4,builtup,grid_station_points+builtup_fallback,,0.337693100136
+CH4,builtup,ippu_register_points+builtup_fallback,,0.008711831819999972
+CH4,cropland,cropland,ESA WorldCover 2021,36.745393
+CH4,kept,none,,0.001741
+CH4,livestock,glw_livestock,GLW 2020,5925.179412
+CH4,other,firms_fire,VIIRS active-fire detections (per period),19.201095
+CH4,other,rail_network_line_density,"OpenStreetMap railways, Geofabrik extract 2026-08-06",0.019754999999999998
+CH4,other,uniform,,55.481589
+CH4,points,airport_points,,0.000345
+CH4,points,brick_kiln_points+builtup_fallback,,0.291282
+CH4,points,captive_register_points+builtup_fallback,,0.09461544392599999
+CH4,points,flare_points+uniform_fallback,,309.772197
+CH4,points,grid_station_points+builtup_fallback,,0.580765899864
+CH4,points,ippu_register_points+builtup_fallback,,1.1241661681800001
+CH4,points,lng_terminal_points,,3.32
+CH4,points,rail_yard_points,,0.000252
+CH4,points,waste_site_points+population_fallback,,94.10839822026
+CH4,points,wwtp_points+population_fallback,,39.194194170464
+CH4,population,population,WorldPop 2020,169.718101
+CH4,population,waste_site_points+population_fallback,,233.34589177974004
+CH4,population,wwtp_points+population_fallback,,742.438586829536
+CH4,rice,spam_rice,MapSPAM 2020,591.0125
+CH4,roads,road_density,"OpenStreetMap roads, Geofabrik extract 2026-08-06",11.305477
+CO2,builtup,builtup,ESA WorldCover 2021,26746.083335
+CO2,builtup,builtup+ocac_area_shares,ESA WorldCover 2021 + OCAC area pages (per period),3389.412801
+CO2,builtup,captive_register_points+builtup_fallback,,235.98736314297912
+CO2,builtup,grid_station_points+builtup_fallback,,595.2831008830163
+CO2,builtup,ippu_register_points+builtup_fallback,,250.17626521319914
+CO2,cropland,cropland,ESA WorldCover 2021,6393.685615
+CO2,kept,none,,249.458358
+CO2,other,rail_network_line_density,"OpenStreetMap railways, Geofabrik extract 2026-08-06",352.724993
+CO2,other,uniform,,3.789484
+CO2,points,airport_points,,49.400375
+CO2,points,brick_kiln_points+builtup_fallback,,2755.52772
+CO2,points,captive_register_points+builtup_fallback,,5307.916673857021
+CO2,points,flare_points+uniform_fallback,,801.500357
+CO2,points,grid_station_points+builtup_fallback,,39312.04028911698
+CO2,points,ippu_register_points+builtup_fallback,,32282.498014786797
+CO2,points,lng_terminal_points,,29.374
+CO2,points,rail_yard_points,,4.50792
+CO2,population,population,WorldPop 2020,4105.198471
+CO2,roads,road_density,"OpenStreetMap roads, Geofabrik extract 2026-08-06",38079.24482
+N2O,builtup,builtup,ESA WorldCover 2021,0.10550599999999999
+N2O,builtup,builtup+ocac_area_shares,ESA WorldCover 2021 + OCAC area pages (per period),0.0268
+N2O,builtup,captive_register_points+builtup_fallback,,0.00042064709400000023
+N2O,builtup,grid_station_points+builtup_fallback,,0.044672106592
+N2O,builtup,ippu_register_points+builtup_fallback,,0.0013067770799999956
+N2O,cropland,cropland,ESA WorldCover 2021,45.896609999999995
+N2O,kept,none,,0.006963
+N2O,livestock,glw_livestock,GLW 2020,59.968976000000005
+N2O,manure,manure_applied,derived: ESA WorldCover 2021 cropland x GLW 2020,29.948704
+N2O,other,firms_fire,VIIRS active-fire detections (per period),0.497806
+N2O,other,rail_network_line_density,"OpenStreetMap railways, Geofabrik extract 2026-08-06",0.13613799999999998
+N2O,points,airport_points,,0.001379
+N2O,points,brick_kiln_points+builtup_fallback,,0.043692
+N2O,points,captive_register_points+builtup_fallback,,0.009461352906
+N2O,points,flare_points+uniform_fallback,,0.002382
+N2O,points,grid_station_points+builtup_fallback,,0.354789893408
+N2O,points,ippu_register_points+builtup_fallback,,0.16862522292
+N2O,points,rail_yard_points,,0.001737
+N2O,points,wwtp_points+population_fallback,,0.486705536608
+N2O,population,population,WorldPop 2020,2.435683
+N2O,population,wwtp_points+population_fallback,,9.219451463392
+N2O,rice,spam_rice,MapSPAM 2020,3.796571
+N2O,roads,road_density,"OpenStreetMap roads, Geofabrik extract 2026-08-06",1.862408

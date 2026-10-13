@@ -1,0 +1,2 @@
+factor_id,source_value_kg_per_PJ,energy_conversion_MJ_per_m3,derived_t_CH4_per_million_m3,registered_t_CH4_per_million_m3,rounding_difference_t_per_million_m3,ipcc_activity_definition,source_reference,transfer_status
+post_meter_industrial_ch4,175000.0,35.0,6.125,6.1,-0.025000000000000355,non-residential and commercial gas consumed,"IPCC 2019 Refinement Volume 2 Chapter 4, Table 4.2.4k note c and Table 4.2.7",Tier-1 transferred factor; not Pakistan-specific measurement

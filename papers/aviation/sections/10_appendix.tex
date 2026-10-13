@@ -1,0 +1,132 @@
+\section{Reproduction}
+\label{app:repro}
+
+\begin{verbatim}
+pip install -e '.[aviation,gis]'
+make aviation-study
+make figures sync-figures
+make test
+\end{verbatim}
+
+The study target rebuilds official controls, the provisional fallback and every reconciliation
+product, and writes the tables below. Each is named: the paragraph this replaces described them
+by size---"\num{42} monthly comparison rows", "\num{240} monthly source rows"---which told a
+reader how large each output is without saying which file it is.
+
+\begin{itemize}\itemsep2pt
+\item \texttt{aviation\_ocac\_monthly.csv}: \num{240} monthly source rows: reported tonnes by customer category and fuel type, each with its source URL, local file, SHA-256 hash and revision note.
+\item \texttt{aviation\_ocac\_cumulative\_monthly.csv}: the same source on a cumulative basis.
+\item \texttt{aviation\_ocac\_annual\_summary.csv}: \num{9} annual OCAC summaries: resident commercial, foreign commercial and government JP-1 by fiscal year.
+\item \texttt{aviation\_monthly\_reconciliation.csv}: \num{42} monthly comparison rows, OCAC against OECD \COtwo{} with the resident and foreign ratios.
+\item \texttt{aviation\_ocac\_oecd\_annual\_comparison.csv}: the annual OCAC--OECD comparison, of which \num{5} years are complete: the others match six months each and are marked partial rather than dropped.
+\item \texttt{aviation\_annual\_component\_comparison.csv}: the same comparison by component, with the role each component plays in it and the government JP-1 that is excluded.
+\item \texttt{aviation\_\allowbreak bridge\_\allowbreak source\_\allowbreak rows\_\allowbreak all\_\allowbreak scenarios.csv}: every source row under every scenario, with its IPCC domestic, international-bunker, military 1A5b and general-aviation assignment.
+\item \texttt{aviation\_fuel\_bridge\_fy2023\_24.csv}: the reference year's fuel bridge on the same assignments.
+\item \texttt{aviation\_reconciliation\_fy2023\_24.csv}: the reference-year reconciliation: domestic, international and residual fuel against the bottom-up domestic estimate.
+\item \texttt{aviation\_model\_resolution\_fy2023\_24.csv}: how much of the domestic flight population each model resolves---stages modelled against stages total, with the resulting coverage share.
+\item \texttt{aviation\_common\_support\_ladder.csv}: the common-support ladder, each step's stage and fuel coverage under one activity definition.
+\item \texttt{aviation\_two\_year\_replication.csv}: the two-year replication, including the route coverage share and the network assumption behind it.
+\item \texttt{aviation\_timeseries\_2006\_fy2023\_24.csv}: domestic LTO cycles and \COe{} by fiscal year from 2006.
+\item \texttt{aviation\_uncertainty\_inputs\_complete.csv}: the complete input register: central value, 95\,\% range, distribution, applicable model, correlation group and uncertainty class per variable.
+\item \texttt{aviation\_m2\_uncertainty\_intervals.csv}: the intervals by model, route graph and completion method, with the draw count and seed.
+\item \texttt{aviation\_\allowbreak m2\_\allowbreak uncertainty\_\allowbreak contributions.csv}: what each uncertainty group contributes, as the variance reduction from freezing it.
+\item \texttt{aviation\_uncertainty\_sensitivity.csv}: the one-at-a-time sensitivity: each variable's low and high case and its maximum absolute effect.
+\end{itemize}
+
+The run also writes the official UNFCCC extraction, the Climate TRACE fiscal and airport
+products, the route bounds, the completion ladder, the weather and observed-coverage pilots,
+the independence matrix, the QA table and a hash manifest.
+
+The sector's own registered result is written by \texttt{make aviation} rather than by the
+study target, and its five tables were named in neither list above---not described and left
+nameless, simply absent, which is the harder omission to notice:
+
+\begin{itemize}\itemsep2pt
+\item \texttt{aviation\_\allowbreak by\_\allowbreak stream\_\allowbreak fy2023\_\allowbreak 24.csv}: the registered stream ledger---category,
+  subitem and gas with the fossil flag, gigagrams, both common-GWP vintages and the
+  uncertainty per row.
+\item \texttt{aviation\_\allowbreak fuel\_\allowbreak constrained\_\allowbreak by\_\allowbreak stream\_\allowbreak fy2023\_\allowbreak 24.csv}: the same ledger
+  under the fuel constraint, which is the comparison the bridge exists to make.
+\item \texttt{aviation\_provincial\_fy2023\_24.csv}: the province-level AR5 total.
+\item \texttt{aviation\_monthly\_fy2023\_24.csv}: the twelve-month layer, each month's share
+  with the emissions it implies in both vintages and the temporal method and basis behind the
+  shape.
+\item \texttt{aviation\_completeness\_fy2023\_24.csv}: one row per source stream with its
+  status and the note that qualifies it.
+\end{itemize}
+
+\section{Accounting and QA/QC guarantees}
+
+Automated tests require: OCAC JP-1 totals of \SI{633879}{\tonne} and
+\SI{658334}{\tonne} in the two fiscal years; exact closure of every source row; non-negative,
+non-overlapping assignments; monthly sums equal to their reported cumulative controls and any
+final-report revision remains explicit; calendar/fiscal
+benchmark periods; reproducible Monte Carlo draws; separate structural scenarios; route-bound
+ordering; identical common support; coverage completion to 20,300 stages; international memo
+exclusion; distinct LTO and full-flight bunker quantities; representative-engine provenance and
+imputation flags; and agreement between generated outputs and manuscript values.
+
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\begin{tabular}{@{}p{0.23\textwidth}p{0.13\textwidth}p{0.17\textwidth}p{0.23\textwidth}p{0.09\textwidth}@{}}
+\toprule
+\textbf{Variable} & \textbf{Central} & \textbf{Range/distribution} & \textbf{Source or correlation group} & \textbf{Class} \\
+\midrule
+Official domestic movements & 40,600 & Reported; not sampled & PCAA FY2023--24 & Parametric control \\
+M0 aggregate activity/fleet representation & 1.0 & $\pm60$\%; lognormal & Legacy M0 only & Parametric \\
+Constrained route mean & 486.5 nmi & 485.2--503.0; bounded & PCAA margins/supported graph & Structural \\
+M0 representative stage & 550 nmi & $\pm35$\%; lognormal & ICAO route sample; all stages & Parametric \\
+Airline--aircraft shares & Route shares & Categorical draw & Fleet histories; operator--unordered route & Parametric within M2 \\
+OpenAP payload & PCAA passengers, cargo, mail & Observed-centred bounded triangular & Operator and aircraft family & Parametric \\
+Route detour & 1.08 & $\pm10$\%; lognormal & Shared reciprocal route & Parametric \\
+Taxi-in/out & 420/900 s & $\pm50$\%; lognormal & Shared airport & Parametric \\
+Unsupported-aircraft fuel & ICAO factor & OpenAP/ICAO; discrete & Aircraft family & Structural \\
+Fuel carbon conversion & 3.16 t/t & $\pm5$\%; lognormal & IPCC/ICAO; all fuel & Parametric \\
+CH4 factor & 0.5 kg/TJ & $\pm80$\%; lognormal & IPCC; all fuel & Parametric \\
+N2O factor & 2.0 kg/TJ & $\pm110$\%; lognormal & IPCC; all fuel & Parametric \\
+Customer to geography & OECD-calibrated & Literal/movement/carrier cases & OCAC/PCAA/OECD source row & Structural \\
+International stage coverage & 27.9\% & Partial vs residual; discrete & Operator--route & Structural \\
+Weather duration adjustment & Still air & ERA5 audit; empirical resampling & Global secondary interval & Parametric sensitivity \\
+\bottomrule
+\end{tabular}
+\caption{Complete uncertainty-input register. The generated CSV additionally records the
+applicable model and exact source string. Reported controls are conditional on source quality;
+structural choices are not pooled into a confidence interval.}
+\label{tab:uncertainty-register}
+\end{table*}
+
+\begin{table*}[htbp]
+\centering
+\scriptsize
+\begin{tabular}{@{}p{0.36\linewidth}p{0.16\linewidth}p{0.27\linewidth}@{}}
+\toprule
+\textbf{Stream/product} & \textbf{Status} & \textbf{Boundary note} \\
+\midrule
+Scheduled domestic full flight & Estimated & M0/M1/bridge; M2 diagnostic \\
+International bunkers & Estimated & Full-flight bridge memo \\
+International airport LTO & Estimated & Separate local-air product \\
+General aviation/training & Partial & 100LL priced as a memo row; activity unresolved \\
+Military/government & Memo & JP-8/government candidates, priced as memo rows \\
+Helicopters & Not estimated & No classified activity \\
+APU/ground support & Not estimated & Airport survey required \\
+Main-engine LTO pollutants & Estimated & Representative engines \\
+Cruise pollutants/non-\COtwo{} effects & Not estimated & Separate research product \\
+Tyre and brake wear & Not estimated & No local activity assignment \\
+\bottomrule
+\end{tabular}
+\caption{Completeness matrix. Known omissions remain explicit rather than being absorbed into
+``non-commercial aviation''.}
+\label{tab:completeness}
+\end{table*}
+
+The source hierarchy is IPCC Volume~2 Chapter~3 for greenhouse-gas boundaries and factors
+\citep{ipcc2006energy}; OCAC for petroleum sales \citep{ocacaviation}; PCAA for movements and
+passengers \citep{pcaaairports2024,pcaaairlines2024}; Pakistan's BTR, NC3 and CRT for official
+national reporting \citep{pakbtr2024,paknc32025,pakcrt2026}; OECD and Climate TRACE for
+external estimates \citep{oecdaviation,climatetrace}; ADSB.lol/readsb and ERA5 for the public
+coverage and weather pilots \citep{adsblolhistory,readsbjson,era5arco}; ICAO/OpenAP for route-
+performance diagnostics \citep{icaoicec2024,sun2020openap};
+ICAO Doc~9889 and the Engine Emissions Databank for airport pollutants
+\citep{icao9889,icaoeedb}; and the aviation chapter of EMEP/EEA for fuel-based pollutant
+factors \citep{emep2023aviation}.

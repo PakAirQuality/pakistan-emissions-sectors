@@ -1,0 +1,88 @@
+% ===========================================================================
+\section{Emission Factors and Parameters}
+\label{sec:factors}
+% ===========================================================================
+
+Every factor and parameter used here is an IPCC 2006 default, a 2019 Refinement default
+(the wastewater nitrous oxide chain) or a documented regional value,
+with its source recorded in the versioned parameter table. Three deserve discussion because
+the choice was not automatic.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llr@{}}
+\toprule
+\textbf{Parameter} & \textbf{Applies to} & \textbf{Value} \\
+\midrule
+Generation rate, urban    & 4A, 4C2 & \SI{0.453}{} kg/cap/day \\
+Generation rate, rural    & 4A, 4C2 & \SI{0.283}{} kg/cap/day \\
+Uncollected fraction, urban & 4A, 4C2 & 0.30 \\
+Uncollected fraction, rural & 4A, 4C2 & 0.70 \\
+Burned fraction of uncollected & 4C2 & 0.60 \\
+\midrule
+Decay constant $k$        & 4A  & 0.065 yr$^{-1}$ \\
+$\mathrm{DOC_f}$          & 4A  & 0.50 \\
+MCF (site management)     & 4A  & 0.60 \\
+$F$ (\CHfour{} in landfill gas) & 4A & 0.50 \\
+Oxidation factor          & 4A  & 0 \\
+Methane recovery          & 4A  & 0 \\
+Back-projection to 1960   & 4A  & 40\% of first panel year \\
+\midrule
+Dry matter                & 4C2 & 0.70 \\
+Total carbon              & 4C2 & \SI{0.2195}{} t C/t wet \\
+Fossil carbon             & 4C2 & \SI{0.0757}{} t C/t wet \\
+Oxidation factor          & 4C2 & 0.71 \\
+\midrule
+BOD                       & 4D1 & \SI{40}{} g/cap/day \\
+$B_0$                     & 4D1 & \SI{0.6}{} kg \CHfour{}/kg BOD \\
+MCF, sewered / septic     & 4D1 & 0.50 \\
+MCF, latrine / open       & 4D1 & 0.10 / 0 \\
+Industrial-commercial correction & 4D1 & 1.25 \\
+\bottomrule
+\end{tabular}
+\caption{Parameters, with the IPCC volume and table recorded against each in
+\texttt{data/waste\_params.csv}. The two zeros in the 4A block are deliberate and argued in
+Section~\ref{sec:methods}, not defaults left unset. Full row-level provenance---value,
+uncertainty, source and basis for every parameter and factor---is the generated table in
+\ref{app:factors}.}
+\label{tab:params}
+\end{table}
+
+\subsection{Two oxidation factors that must not be reconciled}
+
+This sector carries an oxidation factor of \num{0.71} for open burning and \num{0} for
+landfill, while the fossil-fuel sectors of the same inventory carry none at all. That looks
+like an inconsistency and is not.
+
+The 2006 Guidelines fold complete oxidation into the fuel combustion emission factors
+themselves---Table~1.4 carries an explicit oxidation column of \num{1.0} for every fuel---so
+applying the 1996-vintage \num{0.98} on top of a 2006 factor double-discounts. Open burning is
+different in kind: it genuinely is incomplete, and \num{0.71} is the 2006 value that says so.
+Landfill oxidation is different again, describing methane oxidised while passing through a
+cover layer, which unmanaged Pakistani sites largely do not have.
+
+Three different numbers describing three different physical situations. Tests pin all three,
+so that a future reader who notices the apparent inconsistency and "corrects" it fails the
+build rather than silently changing the sector.
+
+\subsection{Fossil carbon, and why only a third of the burning \COtwo{} is reported}
+
+Total carbon in Pakistani municipal waste is \SI{0.2195}{\tonne} per wet tonne, of which
+\SI{0.0757}{\tonne}---roughly a third---is fossil. Only that third produces reportable
+\COtwo{}; the rest was fixed from the atmosphere by plants within the year and is reported as
+a memo item at \SI{3520}{\giga\gram}.
+
+This convention is easy to apply inconsistently, because the same waste produces \CHfour{} and
+\NtwoO{} that \emph{are} counted in full regardless of carbon origin. The distinction is not
+about the waste but about the atmosphere: biogenic \COtwo{} returns carbon that was recently
+removed, while methane from the same carbon is a different molecule with a different radiative
+effect and no such offset.
+
+\subsection{What the parameters are worth}
+
+Three of the parameters above dominate the sector's uncertainty, and each is examined as a
+published sensitivity rather than left implicit: the sewer MCF (Section~\ref{sec:discussion}),
+the BOD rate, and the spin-up back-projection. The generation and collection rates are not
+among them---not because they are well known, but because the partition means they move
+emissions between categories more than they move the total.

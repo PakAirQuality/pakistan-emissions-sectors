@@ -1,0 +1,4 @@
+bucket,energy_TJ,share,plants,note
+turbine,224843.0,0.8019,Foundation; Halmore; Liberty Daharki; NPPMCL (Balloki); NPPMCL (HBS); Orient; Punjab Thermal; QATPL (Bhikki); Rousch; Saif; Sapphire Electric; Uch; Uch-II,"combined cycle by heat rate (at or below 9,000 kJ/kWh net, reachable by no boiler or simple-cycle turbine) or turbine hardware named in the plant name"
+boiler,38492.0,0.1373,TPS Guddu (Units 14-16) (GENCO-II); TPS Guddu (Units 5-10) (GENCO-II),"heat rate at or above 10,500 kJ/kWh, ordinary for steam and above any combined-cycle design point"
+unresolved,17039.0,0.0608,Engro Powergen. Qadirpur; Fauji Kabirwala; TPS Nandipur (GENCO-III),"the 9,000-10,500 band, where the ledger cannot separate a degraded combined cycle from a steam plant; kept on the boiler NOx factor and reported here rather than assigned"

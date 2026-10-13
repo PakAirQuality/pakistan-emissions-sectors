@@ -1,0 +1,73 @@
+% ===========================================================================
+\section{Related Work}
+\label{sec:related}
+% ===========================================================================
+
+\subsection{Household energy inventories and their activity problem}
+
+Residential fuel inventories are usually built one of two ways: from a household survey giving
+fuel use per household by fuel and region, or from national fuel supply attributed to the
+domestic sector. Surveys give richer structure and are expensive and infrequent; supply
+statistics are annual and coarse.
+
+Pakistan has both in principle. The Pakistan Social and Living Standards Measurement survey
+carries household fuel questions, and OGRA publishes gas and petroleum supply by consuming
+sector. This inventory uses the supply route for the fuels that pass through a market, for the
+same reason the transport sector does:
+the quantity that a national inventory must reproduce is the fuel the country consumed, and a
+survey-based estimate has to be reconciled against it afterwards.
+
+The weakness of that choice is specific and is treated in Section~\ref{sec:limitations}: supply
+statistics cover fuels that pass through a market, and the two largest household biomass fuels in
+Pakistan---firewood and dung---largely do not; for those two the household survey is the estimate.
+
+\subsection{Household air pollution in South Asia}
+
+Solid-fuel combustion in households is among the most studied exposure pathways in the region,
+and the health literature on it is far stronger than the emissions literature. What is
+comparatively weak is the link between the two: exposure studies measure concentrations in
+and around dwellings, while emission inventories estimate mass released, and translating
+between them requires assumptions about ventilation, stove type and time-activity patterns
+that neither literature settles.
+
+This paper does not attempt that translation. It reports emitted mass on the same activity
+basis as the greenhouse gases, which is what an inventory can defensibly supply, and treats
+the exposure implication as a ranking of sources rather than a concentration estimate.
+
+\subsection{Emission factors for biomass cookstoves}
+
+The Andreae compilation \citep{andreae2019} and the Akagi compilation \citep{akagi2011}
+are the standard field-measurement syntheses for biomass combustion, and the EMEP/EEA
+small-combustion chapter \citep{emep2023smallcombustion} is the standard source for
+residential fossil fuels. All carry wide ranges, because cookstove emissions depend heavily
+on stove design, fuel moisture and operator behaviour, and because measurement campaigns
+disagree.
+
+The World Bank's 2024 Pakistan Energy Survey \citep{worldbank2024mtf}, built on a
+nationwide 2021--22 Multi-Tier Framework survey, publishes the national stove typology
+this literature previously lacked: main-stove shares by locality and province, a
+clean-fuel main-stove share of \SI{44.3}{\percent}, rural dominance of traditional and
+three-stone/open-fire stoves (\SI{71.8}{\percent}), and stove stacking at
+\SI{6.2}{\percent}. It stops short of the fuel-by-device-by-end-use crosswalk a fully
+technology-resolved emission inventory needs, which is how this paper uses it: as the
+evidence base for a declared technology-mix sensitivity rather than a resolved device
+layer.
+
+The biomass particulate and black carbon factors used here come from Andreae's compilation,
+the fossil factors from the EMEP/EEA chapter, and the crop-residue rows mirror the
+field-burning factors \citep{emep2019} the agriculture sector already uses---one
+compilation family per burning layer, but literature values rather than Pakistani
+measurement throughout, which is the layer's principal limitation and is stated as such.
+
+\subsection{The biomass \texorpdfstring{\COtwo{}}{CO2} convention}
+
+IPCC reports \COtwo{} from biomass combustion as a memo item outside national totals, on the
+reasoning that the carbon was removed from the atmosphere by the plant and its release is part
+of a short cycle, with any net loss of biomass stock accounted in the land sector instead.
+Methane and nitrous oxide from the same combustion are counted in full, because they are
+different molecules with different radiative effects and no corresponding uptake.
+
+The convention is standard and Pakistan's own national submission states it for the same fuels
+\citep{pakbur1}. It is worth spelling out here because it produces a result that reads oddly
+without it: biomass is \SI{65.4}{\percent} of household energy in this sector and
+\SI{24}{\percent} of its reported emissions.

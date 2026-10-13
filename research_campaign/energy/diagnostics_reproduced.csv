@@ -1,0 +1,21 @@
+route,column,period_id,implied_fleet_efficiency_pct,physically_plausible,envelope_pct
+national control (HDIP Table 3),table3_implied_efficiency_pct,FY2019-20,45.1,yes,28-47
+national control (HDIP Table 3),table3_implied_efficiency_pct,FY2020-21,57.5,no,28-47
+national control (HDIP Table 3),table3_implied_efficiency_pct,FY2021-22,29.6,yes,28-47
+national control (HDIP Table 3),table3_implied_efficiency_pct,FY2022-23,22.8,no,28-47
+national control (HDIP Table 3),table3_implied_efficiency_pct,FY2023-24,18.9,no,28-47
+national mass control (Table 21),table21_mass_implied_efficiency_pct,FY2019-20,34.7,yes,28-47
+national mass control (Table 21),table21_mass_implied_efficiency_pct,FY2020-21,34.4,yes,28-47
+national mass control (Table 21),table21_mass_implied_efficiency_pct,FY2021-22,38.7,yes,28-47
+national mass control (Table 21),table21_mass_implied_efficiency_pct,FY2022-23,34.9,yes,28-47
+national mass control (Table 21),table21_mass_implied_efficiency_pct,FY2023-24,35.2,yes,28-47
+HDIP mass route,hdip_mass_implied_efficiency_pct,FY2019-20,39.2,yes,28-47
+HDIP mass route,hdip_mass_implied_efficiency_pct,FY2020-21,49.0,no,28-47
+HDIP mass route,hdip_mass_implied_efficiency_pct,FY2021-22,36.7,yes,28-47
+HDIP mass route,hdip_mass_implied_efficiency_pct,FY2022-23,31.6,yes,28-47
+HDIP mass route,hdip_mass_implied_efficiency_pct,FY2023-24,29.1,yes,28-47
+plant ledger (per-plant NCV),plant_implied_efficiency_pct,FY2019-20,32.4,yes,28-47
+plant ledger (per-plant NCV),plant_implied_efficiency_pct,FY2020-21,33.1,yes,28-47
+plant ledger (per-plant NCV),plant_implied_efficiency_pct,FY2021-22,45.7,yes,28-47
+plant ledger (per-plant NCV),plant_implied_efficiency_pct,FY2022-23,36.9,yes,28-47
+plant ledger (per-plant NCV),plant_implied_efficiency_pct,FY2023-24,38.2,yes,28-47

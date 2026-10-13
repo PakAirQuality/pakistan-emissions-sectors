@@ -1,0 +1,59 @@
+# What moving agriculture from a FAOSTAT-calendar basis to a Pakistani fiscal basis cost, per year and category.
+# difference_Mt = basis_term_Mt + scope_term_Mt, exactly.
+# scope_term_Mt is COTTON: the calendar history carried four crops and the reference year carried five, so cotton's residue burning and residue nitrogen appeared at the join from nowhere. A source break and a scope break are different claims and are never summed into one column here.
+# This measures what outputs/pakemis_series_splice_agriculture.csv could not: that file compares the two bases AT THE ANCHOR, where they coincide by construction.
+fiscal_end_year,fiscal_label,category,calendar_faostat_Mt,fiscal_Mt,difference_Mt,basis_term_Mt,scope_term_Mt,driver,driver_basis
+2016,FY2015-16,Enteric fermentation,115.03884,115.038812,-2.8e-05,-2.8e-05,-0.0,livestock stocks,calendar_projection
+2016,FY2015-16,Manure management,15.467525,15.467466,-5.9e-05,-5.9e-05,0.0,livestock stocks,calendar_projection
+2016,FY2015-16,Rice cultivation,12.3942,12.46245,0.06825,0.06825,0.0,rice area,observed_fiscal
+2016,FY2015-16,Managed soils,21.995265,20.183021,-1.812244,-1.880745,0.068501,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2016,FY2015-16,Field burning of residues,0.53499,0.505329,-0.029661,-0.106786,0.077125,crop production,observed_fiscal
+2016,FY2015-16,Urea application,4.1346,3.407768,-0.726832,-0.726832,-0.0,N offtake,observed_fiscal
+2017,FY2016-17,Enteric fermentation,118.68612,118.68612,0.0,0.0,0.0,livestock stocks,calendar_projection
+2017,FY2016-17,Manure management,16.07092,16.070874,-4.6e-05,-4.6e-05,0.0,livestock stocks,calendar_projection
+2017,FY2016-17,Rice cultivation,13.1978,12.3942,-0.8036,-0.8036,0.0,rice area,observed_fiscal
+2017,FY2016-17,Managed soils,23.090245,24.059756,0.969511,0.895802,0.073709,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2017,FY2016-17,Field burning of residues,0.57598,0.540387,-0.035593,-0.118581,0.082988,crop production,observed_fiscal
+2017,FY2016-17,Urea application,4.3961,4.757101,0.361001,0.361001,-0.0,N offtake,observed_fiscal
+2018,FY2017-18,Enteric fermentation,122.5,122.500061,6.1e-05,6.1e-05,-0.0,livestock stocks,calendar_projection
+2018,FY2017-18,Manure management,16.68214,16.682371,0.000231,0.000231,-0.0,livestock stocks,calendar_projection
+2018,FY2017-18,Rice cultivation,12.78564,13.19955,0.41391,0.41391,0.0,rice area,observed_fiscal
+2018,FY2017-18,Managed soils,23.47529,23.510467,0.035177,-0.04734,0.082517,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2018,FY2017-18,Field burning of residues,0.531395,0.572478,0.041083,-0.051822,0.092905,crop production,observed_fiscal
+2018,FY2017-18,Urea application,4.3961,4.38087,-0.01523,-0.01523,0.0,N offtake,observed_fiscal
+2019,FY2018-19,Enteric fermentation,126.385,126.385001,1e-06,1e-06,-0.0,livestock stocks,calendar_projection
+2019,FY2018-19,Manure management,17.314365,17.314159,-0.000206,-0.000206,-0.0,livestock stocks,calendar_projection
+2019,FY2018-19,Rice cultivation,13.80456,12.7855,-1.01906,-1.01906,0.0,rice area,observed_fiscal
+2019,FY2018-19,Managed soils,24.093535,23.819823,-0.273712,-0.341826,0.068114,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2019,FY2018-19,Field burning of residues,0.53832,0.518477,-0.019843,-0.096533,0.07669,crop production,observed_fiscal
+2019,FY2018-19,Urea application,4.4706,4.346435,-0.124165,-0.124165,0.0,N offtake,observed_fiscal
+2020,FY2019-20,Enteric fermentation,130.39908,130.399037,-4.3e-05,-4.3e-05,-0.0,livestock stocks,calendar_projection
+2020,FY2019-20,Manure management,17.97636,17.976253,-0.000107,-0.000108,1e-06,livestock stocks,calendar_projection
+2020,FY2019-20,Rice cultivation,15.17684,13.8047,-1.37214,-1.37214,0.0,rice area,observed_fiscal
+2020,FY2019-20,Managed soils,24.67256,24.305206,-0.367354,-0.430544,0.06319,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2020,FY2019-20,Field burning of residues,0.612255,0.52462,-0.087635,-0.15878,0.071145,crop production,observed_fiscal
+2020,FY2019-20,Urea application,4.5069,4.355362,-0.151538,-0.151538,-0.0,N offtake,observed_fiscal
+2021,FY2020-21,Enteric fermentation,134.5456,134.545594,-6e-06,-6e-06,0.0,livestock stocks,calendar_projection
+2021,FY2020-21,Manure management,18.67166,18.671584,-7.6e-05,-7.6e-05,-0.0,livestock stocks,calendar_projection
+2021,FY2020-21,Rice cultivation,16.09496,15.17425,-0.92071,-0.92071,0.0,rice area,observed_fiscal
+2021,FY2020-21,Managed soils,25.7739,25.77409,0.00019,-0.048604,0.048794,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2021,FY2020-21,Field burning of residues,0.67206,0.575816,-0.096244,-0.151181,0.054937,crop production,observed_fiscal
+2021,FY2020-21,Urea application,4.738,4.73287,-0.00513,-0.00513,0.0,N offtake,observed_fiscal
+2022,FY2021-22,Enteric fermentation,138.8268,138.826862,6.2e-05,6.2e-05,-0.0,livestock stocks,calendar_projection
+2022,FY2021-22,Manure management,19.398925,19.3991,0.000175,0.000175,0.0,livestock stocks,calendar_projection
+2022,FY2021-22,Rice cultivation,13.54192,16.09335,2.55143,2.55143,0.0,rice area,observed_fiscal
+2022,FY2021-22,Managed soils,26.099585,26.69172,0.592135,0.534602,0.057533,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2022,FY2021-22,Field burning of residues,0.598965,0.61944,0.020475,-0.044301,0.064776,crop production,observed_fiscal
+2022,FY2021-22,Urea application,4.6765,4.894841,0.218341,0.218341,0.0,N offtake,observed_fiscal
+2023,FY2022-23,Enteric fermentation,143.24912,143.249211,9.1e-05,9.1e-05,0.0,livestock stocks,calendar_projection
+2023,FY2022-23,Manure management,20.163575,20.163445,-0.00013,-0.00013,-0.0,livestock stocks,calendar_projection
+2023,FY2022-23,Rice cultivation,16.54828,13.5408,-3.00748,-3.00748,0.0,rice area,observed_fiscal
+2023,FY2022-23,Managed soils,27.105525,26.456801,-0.648724,-0.68264,0.033916,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2023,FY2022-23,Field burning of residues,0.693115,0.557902,-0.135213,-0.173398,0.038185,crop production,observed_fiscal
+2023,FY2022-23,Urea application,4.8576,4.596406,-0.261194,-0.261194,0.0,N offtake,observed_fiscal
+2024,FY2023-24,Enteric fermentation,151.65752,151.65765,0.00013,0.00013,0.0,livestock stocks,calendar_projection
+2024,FY2023-24,Manure management,21.22858,21.228487,-9.3e-05,-9.3e-05,0.0,livestock stocks,calendar_projection
+2024,FY2023-24,Rice cultivation,16.54828,16.54835,7e-05,7e-05,0.0,rice area,observed_fiscal
+2024,FY2023-24,Managed soils,28.525925,28.525954,2.9e-05,-0.070581,0.07061,"N offtake, crop residues, manure N",observed_fiscal_mixed
+2024,FY2023-24,Field burning of residues,0.66957,0.66955,-2e-05,-0.07952,0.0795,crop production,observed_fiscal
+2024,FY2023-24,Urea application,4.8245,4.824481,-1.9e-05,-1.9e-05,-0.0,N offtake,observed_fiscal

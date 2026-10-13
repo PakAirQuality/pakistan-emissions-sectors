@@ -1,0 +1,54 @@
+# THE CLASSIFICATION SCHEME THIS RELEASE IS CODED IN, AND THE CROSSWALK TO THE UNFCCC CRT.
+#
+# IPCC 2006 is canonical, from Volume 1 Chapter 8 Table 8.2. Until 2026-10-06 the shipped
+# `ipcc_code` column mixed two schemes - CRT in sector 3, IPCC 2006 in sector 4 - which an
+# external reviewer found in a printed table. Renaming the column would not have been enough:
+# the exports carried the mixed codes, so the migration went through the registry and every
+# product derived from it.
+#
+# THE GRAIN IS THE COMPONENT. Two CRT categories split when expressed in IPCC 2006, along a
+# line the engines already compute: manure management's indirect N2O leaves the livestock
+# block for 3.C.6, and agricultural soils divides into direct 3.C.4 and indirect 3.C.5. So a
+# rule matches on (engine_category, subitem_prefix, gas) and the most specific prefix wins.
+#
+# live_components and reference_co2e_Mt_AR5 are what resolved through each rule in the
+# reference year, read from outputs/pakemis_atomic_annual.csv. They are the check a reader can
+# run: the two split pairs must sum to the single CRT category they replace, and a row marked
+# unmapped must carry nothing.
+#
+# WHAT IS NOT MAPPED. CRT 3.I and 3.J have no IPCC 2006 counterpart and none is invented -
+# 3.C.8 "Other" is a different scope. CRT 4.E Settlements and 4.F Other land arrive as one
+# PakEmis row facing two codes and are declared needs_separation rather than apportioned.
+#
+# Energy (1.x) and IPPU (2.x) carry the same codes in both schemes and are not enumerated;
+# tests/test_category_crosswalk.py asserts the live code set against this registry instead.
+scheme_version,ipcc2006_code,ipcc2006_name,crt_code,crt_name,module,engine_category,subitem_prefix,gas,applies_to,tier,basis,live_components,reference_co2e_Mt_AR5,note
+ipcc2006/v1,3.A.1,Enteric Fermentation,3.A,Enteric fermentation,agriculture,Enteric fermentation,,CH4,component,exact,Table 8.2,6,151.657650,"IPCC 2006 names 3.A Livestock and 3.A.1 Enteric Fermentation; the CRT puts enteric at 3.A with no livestock parent, which is the single clearest proof the old sector-3 codes were CRT"
+ipcc2006/v1,3.A.2,Manure Management,3.B,Manure management,agriculture,Manure management,,CH4,component,exact,Table 8.2,7,13.182023,"3.A.2 carries BOTH CH4 and N2O in Table 8.2, so the CH4 and the direct N2O stay together here"
+ipcc2006/v1,3.A.2,Manure Management,3.B,Manure management,agriculture,Manure management,Direct N2O,N2O,component,exact,Table 8.2,1,6.147990,"direct N2O from manure management systems is inside 3.A.2, not in the 3.C block"
+ipcc2006/v1,3.C.6,Indirect N2O Emissions from Manure Management,3.B,Manure management,agriculture,Manure management,Indirect N2O,N2O,component,reclassified,Table 8.2,1,1.898473,"LEAVES THE LIVESTOCK BLOCK. Table 8.2 defines 3.C.6 as indirect N2O from manure management with activity data the amount of nitrogen in manure excreted. The CRT folds it into 3.B, and the BTR crosswalk folded it into 3.C.5 with the soils term; both hide it"
+ipcc2006/v1,3.C.7,Rice Cultivations,3.C,Rice cultivation,agriculture,Rice cultivation,,CH4,component,exact,Table 8.2,1,16.548350,"a CODE SWAP, and the reason a string rename would have been silent: CRT 3.C is rice and IPCC 2006 3.C is the whole aggregate-sources block, while IPCC 2006 3.D is Other and CRT 3.D is agricultural soils"
+ipcc2006/v1,3.C.4,Direct N2O Emissions from Managed Soils,3.D,Agricultural soils,agriculture,Managed soils,Direct N2O,N2O,component,split,Table 8.2,6,16.434471,"six components: synthetic fertiliser upland and rice, organic manure, crop residues, and pasture deposition for cattle-type and sheep/goat/other"
+ipcc2006/v1,3.C.5,Indirect N2O Emissions from Managed Soils,3.D,Agricultural soils,agriculture,Managed soils,Indirect N2O,N2O,component,split,Table 8.2,9,12.091483,nine components. Table 8.2 puts BOTH indirect pathways in 3.C.5 - (1) volatilisation of N and its subsequent deposition and (2) leaching and runoff - so the four volatilisation and five leaching/runoff components share this code
+ipcc2006/v1,3.C.1.b,Biomass Burning in Croplands,3.F,Field burning of agricultural residues,agriculture,Field burning of residues,,CH4,component,exact,Table 8.2,1,0.537631,3.C.1 is biomass burning with a land-class sub-branch; croplands is 3.C.1.b. Any future land module adopting a cropland figure must not book this twice
+ipcc2006/v1,3.C.1.b,Biomass Burning in Croplands,3.F,Field burning of agricultural residues,agriculture,Field burning of residues,,N2O,component,exact,Table 8.2,1,0.131919,as the CH4 row
+ipcc2006/v1,3.C.3,Urea Application,3.H,Urea application,agriculture,Urea application,,CO2,component,exact,Table 8.2,1,4.824481,3.C.2 is Liming and 3.C.3 is Urea Application; do not transpose them
+ipcc2006/v1,3.C.4,Direct N2O Emissions from Managed Soils,3.D,Agricultural soils,agriculture,,Agricultural soils - N from SOC mineralisation,N2O,declaration,exact,Table 8.2,,,"the FSOM term of Eq 11.1, so it belongs with the other direct soils components; notation key NE is unchanged by this migration"
+ipcc2006/v1,3.C.5,Indirect N2O Emissions from Managed Soils,3.D,Agricultural soils,agriculture,,Agricultural soils - NH3 from crop residues,NH3,declaration,precursor,Table 8.2,,,"NH3 is not reported under an IPCC code - it is the volatilised N that 3.C.5 pathway (1) later deposits. Carried so the air layer's row is not left scheme-less, and marked precursor so no aggregation treats it as an emission of 3.C.5"
+ipcc2006/v1,3.C.1.c,Biomass Burning in Grasslands,3.E,Prescribed burning of savannas,agriculture,,,CH4/N2O,declaration,exact,Table 8.2,,,notation key NO is unchanged: no managed savanna burning in Pakistan agriculture
+ipcc2006/v1,3.C.2,Liming,3.G,Liming,agriculture,,,CO2,declaration,exact,Table 8.2,,,notation key NE is unchanged: the IPCC factors are held and only the national lime-use activity statistic is missing
+ipcc2006/v1,,,3.I,Other carbon-containing fertilisers,agriculture,,,CO2,declaration,unmapped,Table 8.2,,,NO IPCC 2006 COUNTERPART AND NONE INVENTED. The 2006 Guidelines define no category for other carbon-containing fertilisers; 3.C.8 Other is a different scope (other CH4 and N2O sources on land) and this row is CO2. Keeps notation key NE
+ipcc2006/v1,,,3.J,Other (agriculture),agriculture,,,-,declaration,unmapped,Table 8.2,,,NO IPCC 2006 COUNTERPART AND NONE INVENTED. Keeps notation key NO
+ipcc2006/v1,3.B.1,Forest Land,4.A,Forest land,lulucf,LULUCF - Forest land,,CO2,component,exact,Table 8.2,0,,the LU sentinel resolves here. IPCC 2006 3.B is Land; the sentinel existed because the hybrid had no free code for it
+ipcc2006/v1,3.B.2,Cropland,4.B,Cropland,lulucf,,,CO2,declaration,exact,Table 8.2,,,notation key NE unchanged
+ipcc2006/v1,3.B.3,Grassland,4.C,Grassland,lulucf,,,CO2,declaration,exact,Table 8.2,,,notation key NE unchanged
+ipcc2006/v1,3.B.4,Wetlands,4.D,Wetlands,lulucf,LULUCF - Wetlands - mangrove blue carbon,,CO2,component,exact,Table 8.2,0,,the mangrove blue-carbon row; IPCC 2013 Wetlands Supplement method under an IPCC 2006 code
+ipcc2006/v1,3.B.5,Settlements,4.E,Settlements,lulucf,,,CO2,declaration,needs_separation,Table 8.2,,,"ONE PakEmis ROW FACING TWO CODES. Settlements is 3.B.5 and Other land is 3.B.6; the held row covers both and no activity split exists, so the pair is declared rather than apportioned. Notation key NE unchanged"
+ipcc2006/v1,3.B.6,Other Land,4.F,Other land,lulucf,,,CO2,declaration,needs_separation,Table 8.2,,,the second half of the pair above
+ipcc2006/v1,3.D.1,Harvested Wood Products,4.G,Harvested wood products,lulucf,,,CO2,declaration,exact,Table 8.2,,,"HWP is 3.D.1 under IPCC 2006 - in the Other block, NOT in the 3.B Land block. Notation key NE unchanged"
+ipcc2006/v1,4.A,Solid Waste Disposal,5.A,Solid waste disposal,waste,,,CH4,declaration,exact,Table 8.2,,,"THE IPCC 2006 SIDE DOES NOT MOVE - waste was already correct. Only the CRT counterpart is recorded, because CRT numbers waste 5.x; the reviewer's example of the mix was exactly this row beside enteric at 3.A"
+ipcc2006/v1,4.B,Biological Treatment of Solid Waste,5.B,Biological treatment,waste,,,CH4/N2O,declaration,exact,Table 8.2,,,CRT side only
+ipcc2006/v1,4.C.1,Waste Incineration,5.C.1,Waste incineration,waste,,,CO2/CH4/N2O,declaration,exact,Table 8.2,,,CRT side only
+ipcc2006/v1,4.C.2,Open Burning of Waste,5.C.2,Open burning of waste,waste,,,CO2/CH4/N2O,declaration,exact,Table 8.2,,,CRT side only
+ipcc2006/v1,4.D,Wastewater Treatment and Discharge,5.D,Wastewater treatment and discharge,waste,,,CH4/N2O,declaration,exact,Table 8.2,,,CRT side only
+ipcc2006/v1,4.D.1,Domestic Wastewater Treatment and Discharge,5.D.1,Domestic wastewater,waste,,,CH4/N2O,declaration,exact,Table 8.2,,,CRT side only

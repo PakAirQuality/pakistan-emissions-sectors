@@ -1,0 +1,90 @@
+% ===========================================================================
+\section{Methods}
+\label{sec:methods}
+% ===========================================================================
+
+\subsection{Grid generation: energy in, energy out}
+
+For each fuel $f$ and gas $g$,
+\begin{equation}
+E_{g,f} \;=\; A_f \cdot c \cdot EF_{g,f},
+\end{equation}
+where $A_f$ is the fuel consumed in tonnes of oil equivalent, $c$ the TOE-to-terajoule
+constant, and $EF_{g,f}$ the IPCC Table~2.2 default. There is no efficiency term, no heat
+rate and no generation figure anywhere in the estimating chain; the plant ledger's generation
+data serve only the diagnostics of Section~\ref{sec:validation} and never enter
+Equation~(1).
+
+\subsubsection{Why the unit choice is the method}
+
+The coal row hides an unpublished blend. Pakistan burns imported bituminous and domestic Thar
+lignite, and NEPRA reports one combined coal figure. IPCC's defaults for the two are:
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+\textbf{Coal} & \textbf{kg \COtwo{}/TJ} & \textbf{NCV (TJ/Gg)} & \textbf{kg \COtwo{}/tonne} \\
+\midrule
+Other bituminous & 94\,600 & 25.8 & $\approx$ 2\,440 \\
+Lignite          & 101\,000 & 11.9 & $\approx$ 1\,200 \\
+\midrule
+\textbf{Ratio}   & \textbf{1.07} & & \textbf{2.03} \\
+\bottomrule
+\end{tabular}
+\caption{The same two coals, two units. Per terajoule they differ by \SI{6.8}{\percent}; per
+tonne by a factor of two, because their calorific values differ by \SI{54}{\percent} and
+lignite's own published range spans \SIrange{5.50}{21.6}{\tera\joule\per\giga\gram}.}
+\label{tab:coals}
+\end{table}
+
+An inventory reading tonnes of coal must assume a blend, and that assumption carries most of
+the sector's uncertainty. An inventory reading terajoules---which is what tonnes of oil
+equivalent already are---carries a \SI{6.8}{\percent} residual instead.
+
+The residual is not assumed away. The sector reports both bounds: all-bituminous gives
+\SI{39.00}{\mega\tonne} and all-lignite \SI{40.32}{\mega\tonne}, a span of
+\SI{1.32}{\mega\tonne} around a central \SI{40.04}{\mega\tonne} (the grid family's reference; alternatives 38.45 heat-rate, 44.05 with K-Electric, 57.82 legacy control) computed at a
+\SI{79}{\percent} lignite share read from the plant fuel ledger
+(Section~\ref{sec:factors}).
+
+\subsubsection{No separate oxidation factor}
+
+The 2006 Guidelines assume complete oxidation and fold it into the emission factor;
+Table~1.4 carries an explicit oxidation column of \num{1.0} for every fuel. Applying the
+1996-vintage \num{0.98} on top would double-discount. This inventory's waste sector
+\emph{does} carry an oxidation factor, because open burning genuinely is incomplete, and tests
+pin both conventions so neither is "corrected" into the other.
+
+\subsection{Captive gas self-generation: volume to energy to emissions}
+
+OGRA reports a volume and IPCC factors are per terajoule on a net calorific basis, so the
+conversion needs a heating value:
+\begin{equation}
+A \;=\; V \cdot 365 \cdot h \cdot \kappa \cdot \eta,
+\end{equation}
+where $V$ is MMCFD, $h$ the gross heating value in Btu per standard cubic foot, $\kappa$ the
+exact Btu-to-terajoule constant, and $\eta$ the gross-to-net ratio.
+
+Two of those are the assumption. Pakistani pipeline gas runs roughly \SIrange{900}{1000}{}
+Btu/scf depending on field and RLNG share, and nothing read here pins it; the utilities bill
+in MMBTU at a nominal \SI{1000}{}. Net calorific value is about \SI{10}{\percent} below gross
+for natural gas, and omitting that step would overstate the category by \SI{11}{\percent},
+because IPCC factors are defined on the net basis.
+
+At \SI{1000}{} Btu/scf the category is \SI{5.55}{\mega\tonne}; at \SI{900}{} it is
+\SI{4.99}{\mega\tonne}. Both are reported, as the cement sector reports both clinker ratios.
+Everything else in the chain is metered gas or an IPCC default.
+
+\subsection{Two categories, one module}
+
+Grid and captive generation are separate IPCC categories---1A1a and 1A2---computed in one
+module, as the transport sector carries road and off-road machinery together. They share the
+subject, the plant register and the FY2023--24 reference year; they do not share a
+factor table or a
+provincial proxy. Nothing downstream conflates them, because the national rollup, the
+key-category screen and the completeness table all work on categories rather than modules.
+
+Both categories report FY2023--24: the grid from the 2025 edition's national fuel table,
+captive from the same fiscal year's metered gas---one reference year across the sector.

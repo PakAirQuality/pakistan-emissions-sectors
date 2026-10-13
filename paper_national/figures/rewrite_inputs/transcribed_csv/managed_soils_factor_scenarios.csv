@@ -1,0 +1,5 @@
+case,emissions_Mt_CO2e,period,gwp,interpretation,source,provenance
+PakEmis reference,28.53,FY2023-24,AR5,Reference uses 2019 dry-climate direct factors,Section 6.4 pages 55-56,Manuscript transcription; no engine rerun
+2006 EF1,40.43,FY2023-24,AR5,Replace EF1 with 2006 aggregate value; other terms held,Section 6.4 pages 55-56,Reported deterministic scenario; not a probability interval
+2006 EF1 and pasture,54.72,FY2023-24,AR5,Replace EF1 and pasture direct factors on disjoint subitems,Section 6.4 pages 55-56,Reported deterministic scenario; not a probability interval
+FAOSTAT,58.50,CY2023,AR5,External managed-soils estimate with fiscal/calendar offset,Table 10 page 51; Section 6.4 pages 55-56,Inventory comparison; not an observation or calibration target

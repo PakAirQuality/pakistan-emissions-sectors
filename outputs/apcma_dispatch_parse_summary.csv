@@ -1,0 +1,4 @@
+# THE APCMA PARSE'S OWN ACCOUNTING, one row. duplicate_year_clashes is the third control: five in-window years are
+# published twice across the five pages and the two copies must agree.
+pages_parsed,year_blocks,fiscal_years_in_window,window_years,month_cells,cells_quarantined,duplicate_year_clashes,crosscheck_months,crosscheck_years
+5,6,5,FY2015-16;FY2016-17;FY2017-18;FY2018-19;FY2019-20,284,50,22,60,5

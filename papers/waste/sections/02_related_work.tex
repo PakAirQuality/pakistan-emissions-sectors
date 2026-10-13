@@ -1,0 +1,63 @@
+% ===========================================================================
+\section{Related Work}
+\label{sec:related}
+% ===========================================================================
+
+\subsection{Global products and what they can and cannot resolve}
+
+EDGAR \citep{edgar2025booklet,crippa2020} reports a Pakistani waste total covering disposal, burning
+and wastewater together, and is the closest external comparator to the scope reported here.
+Climate TRACE \citep{climatetrace} takes a different approach, inferring emissions from
+asset-level and remote-sensing evidence. Both are global products: they apply a consistent
+methodology across every country, which is what makes them comparable and also what limits
+them nationally. A global waste model must assume a collection rate and a sewer condition for
+Pakistan; a national compiler can consult the sanitation statistics and the district
+population panel that describe it.
+
+The disagreement between products is not a defect of any of them, but it is large enough to
+matter. This inventory sits at \SI{141}{\percent} of EDGAR's year-matched Pakistani waste
+figure, and
+Section~\ref{sec:validation} argues that a single assumption---the sewer methane correction
+factor---accounts for most of the difference.
+
+\subsection{Waste generation and composition in South Asia}
+
+Per-capita waste generation and its composition are the two activity inputs the sector cannot
+avoid, and both are surveyed rather than metered. The global compilation by
+\citet{kaza2018} is the standard reference; its Pakistan generation row re-bins the one
+primary national survey, the Pak-EPA eight-city study \citep{pakepa1996}, whose rates are
+used here directly, and its collection coverage supplies the uncollected fractions.
+Composition matters more than it first appears: the fossil carbon fraction of municipal
+waste---plastics, textiles, rubber---determines how much of the \COtwo{} from open burning is
+reportable, because the biogenic remainder is a memo item under IPCC's convention rather than
+a national-total emission.
+
+\subsection{First Order Decay and its implementation choices}
+
+Landfill methane is not a function of this year's waste but of every year's waste still
+decaying, which is why IPCC's Volume~5 method is a first-order decay model over a deposit
+history rather than an emission factor applied to an annual tonnage. Three implementation
+choices then do most of the work and are reported inconsistently in the literature: the decay
+constant, the methane correction factor describing site management, and how far back the
+deposit series is extended before the model is considered spun up.
+
+The third is the one this paper treats explicitly. A model started at the first year of an
+activity panel implicitly asserts that nothing was landfilled before it, which is never true
+and always biases the estimate low. The size of that bias is rarely reported.
+Section~\ref{sec:results} reports it here.
+
+\subsection{The wastewater methane correction factor}
+
+For domestic wastewater the corresponding controversy is the methane correction factor, which
+translates a sanitation pathway into the fraction of its organic load that degrades
+anaerobically. IPCC's default table distinguishes stagnant sewers from flowing ones by an
+order of magnitude in that fraction, and the distinction was drawn for systems that are
+clearly one or the other. Open urban drains that are stagnant in the dry season and flowing
+after rain, and which discharge to irrigation channels, are not obviously either.
+
+Pakistani sanitation coverage itself is well characterised: the WHO/UNICEF Joint Monitoring
+Programme \citep{jmp2023} reports the population shares using sewers, septic systems, latrines
+and open defecation, and those shares are what allocate the national organic load across
+pathways here.
+What the JMP does not report, and no Pakistani source does, is the hydraulic condition of the
+sewered fraction---which is the quantity the correction factor is asking about.

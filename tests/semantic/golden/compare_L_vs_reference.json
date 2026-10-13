@@ -1,0 +1,26 @@
+{
+ "expect": [
+  {
+   "exact": "5.24626",
+   "note_dung_reference_2026_10_13": "2026-10-13, rc67: -5.13279 -> 5.24626, and the sign is the point. The request is unchanged in shape (left the reference, right the second configuration; the value is right minus left), but the roles swapped: through rc66 the reference was the ledger and the second configuration the survey reading (S_2023_24, the 2024-25 round as measured, 24.334 Mt of residential), so the difference was negative. The reference is the survey series now (residential 24.22042) and the second configuration is L_2023_24, all the diverted dung burned in households (29.46668), so the difference is positive. It is a residential difference and nothing else: every other sector is identical under both configurations by construction, so a change to another sector's method moves both national totals and not this cell.",
+   "tolerance": "1e-5"
+  }
+ ],
+ "expect_receipt": "ffb12b9fe32852d80d9f3389d750dcd5",
+ "function": "compare_emissions",
+ "golden_id": "compare_L_vs_reference",
+ "note": "rc67: renamed from compare_S_vs_L (see note_dung_reference_2026_10_13 on the cell).",
+ "request": {
+  "left": {
+   "periods": [
+    "FY2023-24"
+   ]
+  },
+  "right": {
+   "configuration_id": "L_2023_24",
+   "periods": [
+    "FY2023-24"
+   ]
+  }
+ }
+}

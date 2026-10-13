@@ -1,0 +1,150 @@
+% ===========================================================================
+\section{Methods}
+\label{sec:methods}
+% ===========================================================================
+
+\subsection{One generation figure, mass-balanced across fates}
+\label{sec:partition}
+
+The sector's structure follows from a single decision: municipal solid waste is one national
+quantity that must be divided, not three quantities to be estimated separately.
+
+Annual generation is
+\begin{equation}
+G \;=\; 365 \sum_{d} \left( P^{u}_{d} g_{u} + P^{r}_{d} g_{r} \right),
+\end{equation}
+over districts $d$, with $g_u$ and $g_r$ the urban and rural per-capita rates. The collected
+fraction, which is what reaches a disposal site,
+\begin{equation}
+D \;=\; 365 \sum_{d} \left( P^{u}_{d} g_{u} (1 - u_{u}) + P^{r}_{d} g_{r} (1 - u_{r}) \right),
+\end{equation}
+uses the uncollected fractions $u_u$ and $u_r$, and the uncollected remainder is $U = G - D$
+by construction rather than by a second estimate. Of that remainder, the burned quantity is
+$B = f_b U$.
+
+The identity $D + U = G$ is asserted in code with exact equality, and a test fails if it ever
+ceases to hold. (Tier status is stated per component rather than per sector, in
+\ref{app:tiers}: the categories share one country-specific activity basis but differ in how
+much of each calculation is a default.) This is the property that separate estimation cannot provide. If landfill
+tonnage comes from one source and open-burning tonnage from another, their sum is unconstrained
+and can exceed or fall short of national generation without anything in the calculation
+noticing; here, an argument about the collection rate moves emissions between 4A and 4C2 and
+changes the total only through the different methane yields of the two fates.
+
+For FY2023--24 this gives \SI{31.56}{\mega\tonne} generated, \SI{15.88}{\mega\tonne} collected to
+disposal, \SI{15.67}{\mega\tonne} uncollected and \SI{9.40}{\mega\tonne} openly burned. The
+partition is published as an executable fate ledger
+(\texttt{outputs/waste\_ledger\_2024.csv}, the same claimant structure as the transport fuel
+ledger), whose writer raises if either tier fails to close and whose final row is the fate
+this inventory does not model: \SI{6.27}{\mega\tonne} of uncollected waste that does not
+burn---dumped on land or tipped into watercourses, carried explicitly rather than silently.
+
+\subsection{Solid-waste disposal: First Order Decay (4A)}
+
+Methane from a disposal site in year $t$ depends on every year's deposit still decaying, so
+IPCC Volume~5 Chapter~3's first-order decay model is run over a deposit history rather than
+applied to a single year's tonnage. Decomposable degradable organic carbon accumulates and
+decays as
+\begin{align}
+\mathrm{DDOCm}_{a}(t) &= W(t)\,\mathrm{DOC}\cdot\mathrm{DOC_f}\cdot\mathrm{MCF}
+   + \mathrm{DDOCm}_{a}(t{-}1)\,e^{-k}, \\
+\mathrm{CH_4}(t) &= \left[\mathrm{DDOCm}_{a}(t{-}1)\left(1 - e^{-k}\right)\right] F
+   \cdot \tfrac{16}{12},
+\end{align}
+with $k = \num{0.065}$, $\mathrm{DOC_f} = \num{0.5}$, $\mathrm{MCF} = \num{0.6}$ and
+$F = \num{0.5}$.
+
+Two parameters are deliberately zero. No methane recovery is credited, because none is
+documented at national scale and crediting an undocumented recovery would understate the
+category. The oxidation factor is zero for the same class of reason: IPCC's non-zero oxidation
+applies to managed sites with a cover layer, and Pakistani disposal is predominantly
+unmanaged, where the thin intermittent cover that drives oxidation is absent.
+
+\subsubsection{Spin-up, and why it is reported rather than assumed}
+
+The activity panel begins in 2000, but waste deposited before then is still emitting. Starting
+the model at the panel's first year with an empty site would assert that Pakistan landfilled
+nothing before 2000, which is false and biases the estimate low.
+
+The deposit series is therefore back-projected to 1960 at \SI{40}{\percent} of the panel's
+first-year tonnage, and the model is run from there. Because that back-projection is an
+assumption rather than data, the sector reports what it is worth: without spin-up the category
+would be \SI{8.07}{\mega\tonne} instead of \SI{9.17}{\mega\tonne}, so pre-2000 deposits
+contribute \SI{12}{\percent} of today's landfill methane. A reader who prefers to start at the
+panel can read the alternative directly from the output file rather than recomputing it.
+
+\subsubsection{The monthly state engine, and why it is one recursion}
+
+The national release resolves the disposal stream into fiscal months, and the
+engine behind those months is this model run at a monthly step rather than a
+reshaped annual answer: one continuous single-pool recursion from the 1960
+spin-up, $S_m = S_{m-1}\,e^{-k\,d_m/365.25} + W_m$, where $d_m$ is the month's
+exact calendar length (leap Februaries included) and $W_m$ deposits the month's
+own calendar year's tonnage, days-weighted within the year. Running one recursion
+rather than a per-year replay matters for three named reasons: state flows across
+fiscal boundaries (June's stock is July's opening balance, so no seam appears at
+the year change); each month deposits its \emph{own} year's waste (a per-year
+replay had injected the panel's maximum year into every year's stock); and the
+reaction delay between deposit and the onset of decay is a declared parameter
+(\texttt{swds\_delay\_months}, the IPCC six-month convention) applied as a shape
+refinement only. The single pool is kept deliberately --- the annual model carries
+one decay constant, and a cohort structure would claim a waste-composition split
+no Pakistani record supports. The annual control is preserved exactly by
+construction: each fiscal year's twelve shares are normalised against its own
+annual figure, so the monthly engine decides only \emph{when} within the year,
+never how much, and the within-year spread it computes is printed into the
+month rows' basis rather than asserted in prose.
+
+\subsection{Open burning (4C2)}
+
+IPCC Equation~5.1 applied to the burned quantity $B$, taking that chapter's own
+allowance to combine the dry-matter, carbon-content and fossil-fraction terms into one
+coefficient rather than carrying them separately:
+\begin{equation}
+\mathrm{CO_2} \;=\; B \cdot \mathrm{CF_{fossil}} \cdot \mathrm{OF}
+  \cdot \tfrac{44}{12},
+\end{equation}
+where $\mathrm{CF_{fossil}}$ is the fossil carbon per \emph{wet} tonne given in
+Section~\ref{sec:data} and the oxidation factor is $\mathrm{OF} = \num{0.71}$. Dry matter
+does not appear here because it is already inside that coefficient; it enters this category
+only through the \NtwoO{} factor, which IPCC states per dry tonne. The burned quantity $B$
+is itself IPCC Equation~5.7.
+
+Only the fossil carbon fraction produces reportable \COtwo{}. The biogenic fraction is
+reported as a memo item at \SI{3520}{\giga\gram} \COtwo{}, outside the national total, because
+that carbon was fixed from the atmosphere within the year. Methane and nitrous oxide from the
+same burning \emph{are} counted regardless of carbon origin: incomplete combustion is a net
+source however the carbon entered the waste stream.
+
+\subsection{Domestic wastewater (4D1)}
+
+Tier~1 over the sanitation-resolved population. Total organically degradable material is
+\begin{equation}
+\mathrm{TOW} \;=\; P \cdot \mathrm{BOD} \cdot 365 \cdot I,
+\end{equation}
+with $I = \num{1.25}$ the industrial-and-commercial correction, and methane is
+\begin{equation}
+\mathrm{CH_4} \;=\; \sum_{j} \mathrm{TOW}_{j} \cdot B_{0} \cdot \mathrm{MCF}_{j},
+\end{equation}
+summed over sanitation pathways $j$ with $B_0 = \SI{0.6}{\kilo\gram}$ \CHfour{} per kilogram
+BOD. The pathway correction factors are the subject of Section~\ref{sec:discussion}.
+
+Nitrous oxide is computed from protein consumption rather than from BOD, by the method of
+the 2019 Refinement (Volume~5 Chapter~6, Equations~6.7 to 6.10a) \citep{ipcc2019}. Protein
+supply is reduced to protein consumed (a factor of \num{0.96}) and its nitrogen (\num{0.16})
+is allocated to the same sanitation pathways the methane uses, with factors of \num{1.1} for
+household products, \num{1.1} for non-consumed protein (the chapter's updated Table~6.11,
+taken over its text, which gives no increment where food waste goes with solid waste) and,
+for industrial and commercial co-discharge, \num{1.25} on the sewered population only.
+Treatment removes part of each pathway's nitrogen before discharge---\num{0.15} in septic
+tanks, \num{0.12} in latrines and \num{0.40} in the treated share of sewered flow, which is
+declared at \SI{1}{\percent} and not measured---and the nitrogen entering a treatment plant
+emits there at \num{0.016}. What is left is summed over every pathway and emits at the
+effluent factor of \num{0.005}; the whole population stays in the estimate. The result is
+\SI{9.71}{\giga\gram} of \NtwoO{}. The single equation of the 2006 Guidelines, which this
+inventory used before and which treats one nitrogen total on protein supply as effluent,
+is retained as the alternative and gives \SI{11.45}{\giga\gram}. Neither method reads BOD or
+the sewer correction factor. This is why nitrous oxide does not move under either of the
+sensitivities reported below, and why a sensitivity row that reported methane alone would be
+misread as a category total---a distinction this sector's output file previously got wrong
+and now states explicitly.

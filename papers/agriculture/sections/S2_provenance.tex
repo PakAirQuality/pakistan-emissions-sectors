@@ -1,0 +1,122 @@
+% ===========================================================================
+% Supplementary Note S2 — full parameter and factor provenance
+% ===========================================================================
+
+\section*{S2.1 Purpose}
+
+This note gives manuscript-level provenance for every country-specific parameter and
+emission/scaling factor the main paper relies on: value, status, source, and (where
+relevant) derivation. Every value is version-controlled in the corresponding
+\texttt{data/*.csv} file with the same \texttt{source} string. Values marked
+\emph{assumption} are structured judgments made in the absence of a measured
+Pakistan-specific value and are examined by the sensitivity analysis where they
+matter (main paper, Table~5).
+
+\section*{S2.2 Livestock characterisation and activity}
+
+Table~\ref{tab:s2live} lists the species head-counts (activity) and the Tier-2
+characterisation parameters (typical animal mass TAM and nitrogen-excretion rate
+Nex) that drive enteric and manure emissions. Per-head N excretion is
+$Nex = Nrate \cdot TAM \cdot 365/1000$ (kg N/head/yr); the total N excreted
+($\approx$7.9~Mt~N/yr) is the activity basis for manure-management \NtwoO{}.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular}{@{}lrrrp{0.42\linewidth}@{}}
+\toprule
+\textbf{Species} & \textbf{Head (M)} & \textbf{TAM (kg)} & \textbf{Nrate} & \textbf{Source} \\
+\midrule
+Dairy cattle & 16.48 & 400 & 0.47 & PBS census 2024; LRRD 2006 (TAM); IPCC T10.19 (Nrate) \\
+Other cattle & 39.38 & 225 & 0.34 & PBS census 2024; Pak.\ zebu avg.; IPCC T10.19 \\
+Buffalo      & 47.74 & 380 & 0.32 & PBS census 2024; Nili-Ravi herd avg.; IPCC T10.19 \\
+Sheep        & 44.58 & 35  & 1.17 & PBS census 2024; IPCC T10.19 \\
+Goats        & 95.83 & 32  & 1.37 & PBS census 2024; IPCC T10.19 \\
+Camels       &  1.51 & 480 & 0.46 & PBS census 2024; Khan 2025; IPCC T10.19 \\
+Poultry      & 2065  & 1.8 & 0.82 & Economic Survey 2023--24; IPCC T10.19 \\
+\bottomrule
+\end{tabular}
+\caption{Livestock activity (head-counts) and Tier-2 characterisation. Nrate is
+kg~N/1000\,kg/day. Dairy share 0.295 (FAOSTAT QCL 2024) splits cattle into
+dairy/other.}
+\label{tab:s2live}
+\end{table}
+
+\section*{S2.3 Manure management-system shares and dung-cake}
+
+Management-system (MMS) shares (\texttt{data/mms\_shares.csv}): cattle --- pasture
+0.30, daily-spread 0.17, solid-storage 0.15, drylot 0.10, \emph{burned as fuel
+0.28}; buffalo --- pasture 0.20, daily-spread 0.20, solid-storage 0.20, drylot 0.10,
+\emph{burned as fuel 0.30}; sheep/goats/camels --- pasture 0.90, solid-storage 0.10;
+poultry --- litter 1.00. Sources: South-Asia livestock MMS literature (AAQR 2024) and
+Tier-2 estimates; the dung-cake (burned-fuel) fractions are from Pakistan dung-cake
+fuel studies (MDPI \emph{Sustainability} 2021), and that nitrogen is transferred to
+Energy (IE), not counted in agriculture.
+
+\section*{S2.4 Soil \NtwoO{} factors and nitrogen fractions}
+
+From \texttt{data/emission\_factors.csv} (2019 Refinement V4 Ch11 unless noted):
+$EF_1$(dry) 0.005, $EF_{1FR}$(rice) 0.004, $EF_{3PRP}$ 0.002 (cattle)/0.003
+(sheep-goat, 2006 T11.1), $EF_4$ 0.005, $EF_5$ 0.011; $f_{\NHthree{},SF}$ 0.1608
+(product-weighted from the NFDC mix, superseding the IPCC default; FracGASF proper,
+the \NHthree{}+\NOx{} volatilised pool of Eq.~11.9, is 0.1678), FracGASM 0.21,
+FracLEACH 0.24 (T11.3). Nitrogen fractions (\texttt{data/parameters.csv}): urea share
+of applied N 0.80 (NFDC), rice share of synthetic N 0.16 (area-weighted), irrigated
+fraction 0.80 (FAO AQUASTAT) applied to FracLEACH on canal-irrigated land. The
+aggregate $EF_1$ 0.010 (2006) and wet $EF_1$ 0.016 are retained for sensitivity only;
+the empirical anchor is \citet{cui2021}.
+
+\section*{S2.5 Residue, burning, and rice factors}
+
+Residue ratios and returned fractions (\texttt{data/residue\_params.csv}; IPCC ratios
++ Pakistan residue management, IGC): above-ground residue ratio wheat 1.10 / rice 1.00
+/ maize 1.00 / sugarcane 0.25 / cotton 2.00; fraction returned 0.20--0.30 (dry matter
+is folded into these ratios). Burning (\texttt{data/burning\_params.csv},
+\texttt{emission\_factors.csv}): burned fractions rice 0.30, wheat 0.05, cotton 0.10,
+maize 0.05, sugarcane 0.10 (IGC Pakistan); combustion factor $C_f$ 0.85 (IPCC 2006
+T2.6); $G_{ef}$ 2.7 g \CHfour{}/kg~d.m., 0.07 g \NtwoO{}/kg~d.m.\ (T2.5). Rice
+(\texttt{emission\_factors.csv}, IPCC 2006 V4 Ch5): baseline $EF_c$ 1.30~kg/ha/day
+(T5.11), $SF_w$ 1.0 continuous default (T5.12; intermittent 0.52, rainfed 0.28 for
+sensitivity), $SF_p$ 1.0 (T5.13), $SF_o$ 1.0 (no organic amendment, Eq.~5.3),
+cultivation period 125~days (PARC calendar, area-weighted).
+
+\medskip\noindent\textbf{Status of the provenance strings, classified.} The IPCC factors,
+the empirical soil-nitrogen anchor \citep{cui2021}, the EMEP/EEA manure factors
+\citep{emep2019,sommer2019} and the biomass-burning factors \citep{akagi2011} are formally
+cited in the main paper. The country-specific parameters are not all of one kind, and a
+previous edition of this note described them in prose that named five families and silently
+omitted a sixth. Every affected row now carries a \texttt{provenance\_class} column, so the
+distinction is machine-readable and countable rather than a paragraph a reader has to trust.
+Across the five parameter files (59 rows):
+
+\begin{itemize}\itemsep2pt
+\item \textbf{10 cited} --- resolve to a retrievable reference: the IPCC Table 10.19
+  nitrogen-excretion rates, the IPCC poultry mass default, FAOSTAT stocks and the FAO
+  AQUASTAT irrigated fraction.
+\item \textbf{3 derived} --- computed from another parameter or from a definition
+  (urea nitrogen content is stoichiometric; the leaching-applicable fraction is the
+  irrigated fraction), so no external source applies.
+\item \textbf{25 working pointers} --- the source string names a body of literature but
+  not a specific author, title and volume: \texttt{"South-Asia livestock MMS literature
+  (AAQR 2024)"}, \texttt{"Pakistan dung-cake fuel studies (MDPI Sustainability 2021)"},
+  \texttt{"Pak Dairy Info; LRRD 2006"}, \texttt{"Khan 2025"}, \texttt{"PARC rice
+  calendar"}, \texttt{"IGC Pakistan"}, \texttt{"NFDC"}, \texttt{"Climate research"}.
+  They identify where a value came from without letting a reader retrieve it.
+\item \textbf{21 declared judgements} --- no external source at all: \texttt{"Tier 2
+  estimate"}, \texttt{"Predominantly grazing"}, \texttt{"Range/extensive"}, the
+  population-average animal masses, and the two liming rows marked \texttt{ASSUMPTION}.
+  These are assumptions of this inventory, and are now recorded as such rather than
+  sitting in the same column as a citation.
+\end{itemize}
+
+Two consequences are worth stating plainly. The manure-management shares are entirely in the
+last two classes --- fourteen declared judgements and three working pointers, none cited ---
+and two of those rows, the cattle and buffalo \texttt{burned\_fuel} fractions, carry the
+cross-sector dung transfer to residential fuel. Configuration~L therefore rests on two rows
+that name no document. And resolution was attempted for this release and \emph{not}
+completed: identifying which specific paper a value came from requires knowing what the
+original reader had in front of them, and choosing a plausible-looking match would fabricate
+provenance rather than establish it. The gap register carries this as
+\texttt{agriculture-parameter-provenance}; the honest position is that these are declared
+inputs with a stated class, not references, and the count above is the size of the debt.

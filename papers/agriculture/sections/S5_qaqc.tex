@@ -1,0 +1,68 @@
+% ===========================================================================
+\section{Supplementary Note S5: quality assurance and the audited nitrogen chain}
+\label{sec:s5}
+% ===========================================================================
+
+The greenhouse-gas and air-pollutant layers of this work draw on the same excreted
+nitrogen. That sharing is the system's main structural safeguard, but it also means a
+single misplaced fraction propagates into both layers at once. This note records the audit
+of the manure nitrogen chain against the 2019 Refinement, the two implementation errors it
+found, and the regression tests that now pin the corrections. It is included because the
+corrected ledger described in the main text's methods is the outcome of that audit rather
+than an inherited assumption, and a reader should be able to see the evidence.
+
+\subsection*{Defect 1: one volatilisation fraction used for two boundaries}
+
+The IPCC separates two volatilisation fractions that an earlier implementation of this
+work had conflated. $\mathrm{Frac_{GasMS}}$ (Table~10.22) is the nitrogen lost as
+\NHthree{} and \NOx{} \emph{inside} the manure-management system --- housing and storage,
+before manure reaches a field --- and it is what reduces the manure available for
+application. $\mathrm{Frac_{GASM}}$ (Table~11.3) is the nitrogen lost \emph{after} organic
+manure is applied to soil or deposited at grazing; under Tier~1 it drives indirect
+\NtwoO{} but does \emph{not} reduce the organic nitrogen input before direct soil
+\NtwoO{}.
+
+The earlier implementation used $\mathrm{Frac_{GASM}}$ at the pre-field boundary, where
+$\mathrm{Frac_{GasMS}}$ belongs, and then applied it a second time to the surviving
+nitrogen. One post-application fraction therefore stood in for a pre-field loss and was
+charged twice to the same nitrogen. The corrected chain applies the full Eq.~10.34a term
+at the management boundary with per-system Table~10.22 factors, and
+$\mathrm{Frac_{GASM}}$ exactly once, post-application. The effect on the national
+greenhouse-gas total is $-0.62$~Mt~\COe{}, almost all of it in managed soils, because the
+organic nitrogen reaching cropland ($F_{ON}$) falls from \SI{2.721}{} to
+\SI{2.335}{}~Mt~N once the pre-field loss is charged at the correct boundary.
+
+\subsection*{Defect 2: an ammonia share applied to a factor already in \NHthree{}-N}
+
+The EMEP/EEA synthetic-fertiliser product factors are published as \emph{ammonia
+nitrogen}. An earlier version multiplied the product-weighted value by a further
+\NHthree{} share of the volatilised pool, which understates ammonia and simultaneously
+leaves the IPCC indirect-\NtwoO{} pool short of its \NOx{} term, so the split stops
+conserving nitrogen. The three quantities are now defined and computed separately, as set
+out in the main text's air-pollutant methods: $f_{\NHthree{},SF}=0.1608$ drives the ammonia
+estimate directly, $f_{NO,SF}=0.007$ is a separate soil process, and only the IPCC
+indirect pathway uses their sum, $\mathrm{Frac_{GASF}}=0.1678$, because Eq.~11.9 is
+defined on the combined volatilised pool. The net effect on the national total is
+$+0.13$~Mt~\COe{}.
+
+\subsection*{Diagnostic configurations}
+
+Because the two chains disagreed in aggregate before they disagreed visibly in any single
+stage, the audit compared them stage by stage on a common \NHthree{}-N basis rather than
+on totals alone, and the resulting stage table is reported in the main text. That comparison showed the
+two chains' national livestock figures differing by only \num{1.24}$\times$ while
+individual stages differed by factors of roughly two and three in opposite directions ---
+a cancellation that a totals-only check cannot see.
+
+\subsection*{Regression tests}
+
+The corrections are pinned rather than described. The test suite fixes the audited
+national total, the per-stage nitrogen balance on both bases, the identity
+$\mathrm{Frac_{LossMS}} = \mathrm{Frac_{GasMS}} + \mathrm{Frac_{leachMS}} +
+\mathrm{Frac_{N_2MS}} + EF_3$ per species and system, and the requirement that the
+manure-management scenarios in the sensitivity and structural-uncertainty tables be
+produced by the same full ledger rerun --- a cross-module check added after re-slicing a
+single category produced two different national totals for one scenario in two tables of
+this paper. Every table in this manuscript is additionally regenerated from the engine and
+compared against the committed source, so a number cannot drift from the code that
+produced it without a test failing.

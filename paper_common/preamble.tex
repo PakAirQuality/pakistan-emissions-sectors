@@ -1,0 +1,90 @@
+% ===========================================================================
+% Shared preamble for every manuscript in this repository.
+%
+% Papers using it:
+%   paper/            agriculture inventory
+%   paper_nowcast/    agricultural nowcasting
+%   paper_national/   the nine-sector national inventory
+%   notes/<sector>/   one data note per non-agriculture sector
+%
+% It exists because paper/ and paper_nowcast/ began as copies of one another
+% and had already drifted five lines apart before a third manuscript existed.
+% Eleven copies would drift eleven ways, and a macro that renders differently
+% in two papers is the kind of defect nobody notices until proof stage.
+%
+% \graphicspath is deliberately NOT set here - each manuscript sets its own
+% after \input{...preamble}, because figures live beside the document.
+% ===========================================================================
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{siunitx}
+\usepackage[colorlinks=true,citecolor=blue,linkcolor=blue,urlcolor=blue]{hyperref}
+% Document-information metadata for every PDF in the bundle (the seventh review noted
+% the shipped PDFs carried none). Documents that set their own \hypersetup{pdftitle=...}
+% keep it - hyperref takes the LAST setting, and this shared block runs first. Full
+% tagged-PDF (tagpdf / \DocumentMetadata) is deliberately not attempted here: the
+% installed LaTeX toolchain's support is not uniform across sixteen documents, and a
+% half-tagged bundle is worse than an honestly untagged one; deferred deliberately.
+\hypersetup{
+  pdfauthor={Rehan Ahmad, Pakistan Air Quality Initiative (PAQI)},
+  pdfsubject={A reproducible ten-sector national greenhouse-gas inventory
+              for Pakistan},
+  pdfkeywords={Pakistan, greenhouse gas inventory, IPCC 2006 Guidelines, MRV,
+               reproducible research, emissions, air pollutants},
+}
+\usepackage{caption}
+\captionsetup[table]{position=below}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{tabularx}
+\usepackage{natbib}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,positioning,fit,backgrounds}
+
+\setlength{\emergencystretch}{3em}
+
+% Looser float placement to prevent pile-up in two-column mode.
+\renewcommand{\topfraction}{0.95}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.05}
+\renewcommand{\floatpagefraction}{0.85}
+\setcounter{topnumber}{4}
+\setcounter{bottomnumber}{3}
+\setcounter{totalnumber}{6}
+
+% ---------------------------------------------------------------------------
+% Custom shorthand: in macros.tex since the ESSD re-targeting, because the national
+% article compiles under the Copernicus class and cannot take this preamble (the class
+% loads its own packages) but needs exactly the same macros. This file inputs it so that
+% every other manuscript keeps compiling unchanged.
+%
+% THREE relative paths, because \input resolves against the COMPILE DIRECTORY and not
+% against this file, so the depth is a property of whoever is building:
+%   ../paper_common      a manuscript compiled from one level down
+%   ../../paper_common   papers/<sector>/ and notes/<sector>/
+%   ../../../paper_common  paper_national/versions/<v>/, since the national paper was
+%                          versioned - that move is what added this third arm, and the
+%                          supplement failed with "../../paper_common/macros.tex not
+%                          found" until it was here
+% A fourth depth needs a fourth arm, which is the cost of keeping a bare `latexmk` in a
+% manuscript directory working without a TEXINPUTS set for it.
+% ---------------------------------------------------------------------------
+\IfFileExists{../paper_common/macros.tex}%
+  {\input{../paper_common/macros}}%
+  {\IfFileExists{../../paper_common/macros.tex}%
+    {\input{../../paper_common/macros}}%
+    {\input{../../../paper_common/macros}}}
+% Long unbreakable strings - output filenames, module paths, URLs in \texttt - do not fit a
+% two-column measure and TeX prints them past the margin rather than breaking them. Nothing
+% read the log, so 47 of those overruns shipped across seven documents. Emergency stretch lets
+% the paragraph loosen instead, and \texttt is taught to break at the punctuation these names
+% actually contain.
+\emergencystretch=6em
+

@@ -1,0 +1,4 @@
+origin_id,train_fy_start,test_fy_start,train_regime,test_regime,regime_change,note
+fy2022,2021,2022,direct_monthly,cumulative_differenced,yes,predict the test fiscal year's 12-month shape from data available at its start; a regime change between train and test years is part of what the error measures
+fy2023,2022,2023,cumulative_differenced,cumulative_differenced,no,predict the test fiscal year's 12-month shape from data available at its start; a regime change between train and test years is part of what the error measures
+fy2024,2023,2024,cumulative_differenced,direct_monthly,yes,predict the test fiscal year's 12-month shape from data available at its start; a regime change between train and test years is part of what the error measures

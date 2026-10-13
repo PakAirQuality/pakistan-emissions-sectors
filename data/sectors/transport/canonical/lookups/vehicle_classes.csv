@@ -1,0 +1,39 @@
+Source type,Ei class,Note,Record ID,Source row
+"Motor cycles, scooters",2W,,64c6b7261ee75809390efaf0,1
+Motor cycles,2W,Balochistan reports motorcycles and scooters separately,d84a14b70c42cdfbd893f698,2
+Auto rickshaws,3W,,27050bccc49dccbd2078227b,3
+Rickshaws,3W,Balochistan variant,016b033cbcb077ae3849cfbf,4
+"Motor cars, jeeps, station wagons",4W1,Split 4W1/4W2 by a time-varying SUV share; see transport_params.csv,f0b42ffe869f2cc251ff799e,5
+Motor cars,4W1,Balochistan variant,a789667d5e9fc317883d8ba4,6
+Jeeps,4W2,Balochistan reports jeeps separately - these are the SUV class directly,f9425a1a91841ced7c733ced,7
+Station wagons,4W1,,0c9042b0cb602c8f02e78437,8
+Station wagons double cabin,4W2,,291f79a37b4b58b6c8b991cf,9
+Taxis,4WT,,1fcdb0018be4b2fe79a8a147,10
+"Pickups, delivery Vanss",LDV,"double-s typo in the source; a naive join drops 1,506 rows",31ffc935abb9301829f989fe,11
+"Pickups, delivery Vanss, others",LDV,same typo,e483061691d21239003eee4d,12
+Pickups,LDV,,4a4b64fd14f828b87f67f54d,13
+Pickups double cabin,LDV,,0c82bafdd726c28816cf78da,14
+Delivery vans,LDV,,6c2093b04c1a2f2bce17906e,15
+Vans,LDV,,e60c53794a3f1f2add72cf2a,16
+Mini trucks,LDV,,3c3ebe1f304051bfc46c0085,17
+Trucks,HDV,,53d187973bc85dba8a0286fe,18
+Open trucks,HDV,,8c7c63d0a8a16e10eca46c35,19
+Dumper trucks,HDV,,7aa37aff5b16402efc3b2811,20
+Loading trucks,HDV,,09f362cf2e92b0c4cb3e3421,21
+Mixture trucks,HDV,,9c0707b34d952e4949355542,22
+Transit mixer truck,HDV,,efa41800abb0d0401abf6205,23
+Oil tankers,HDV,,4d4770652ccbc8d4ce24a562,24
+Water tankers,HDV,,cdba898dad653b164654ddb1,25
+Truck trailers,HDV,,5caaa1362fbffecc2e9ab6f8,26
+Oil tanker trailers,HDV,,239c5f5ae1f0fb3d1b80b480,27
+Truck cranes,HDV,,b045d7cfdc8e805cbba4231a,28
+"Mini buses, buses, flying coaches, luxury coaches",BUS,,a5ec98a125a84baebac6041e,29
+Buses,BUS,,ecf947d45544b2f380f10a8d,30
+Mini buses,BUS,,9d76083a59d598a378a88c88,31
+Ambulances,LDV,light commercial; grouped with vans rather than buses,a522f382cc603596458f3b24,32
+Tractors,NRV,"agricultural machinery - IPCC 1A4c ii, NOT 1A3b road transport",66afb0ec4397a46e52bb5066,33
+Tractor trailers,NRV,,d1ebbf3abf11f71740e0274f,34
+Cranes,NRV,off-road plant,3574f27251f99791c6f29298,35
+Excavators,NRV,off-road plant,68ea5245dd61ef1be88d2f5b,36
+Road rollers,NRV,off-road plant,76b51bafa66a08e72386ff88,37
+Other vehicles,NRV,"RESIDUAL BUCKET. The source's own catch-all, assigned wholesale to off-road. Inherited from the Punjab workbook's classification and carried here for comparability, but it is a methodological choice rather than an observation: 'Other vehicles' is 1,163 rows and a large share of NRV, and NRV is modelled as 100% diesel. Sensitivity-tested.",c7766a7220e7f2c0301b0d98,38

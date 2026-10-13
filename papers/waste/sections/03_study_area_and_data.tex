@@ -1,0 +1,82 @@
+% ===========================================================================
+\section{Study Area and Data}
+\label{sec:data}
+% ===========================================================================
+
+\subsection{Population, which is the activity datum}
+
+Every category in this sector is driven by population. Waste generation is a per-capita rate
+applied to urban and rural residents; the organic load entering the wastewater system is a
+per-capita BOD applied to the same population split by sanitation pathway. There is no
+tonnage measurement and no metered flow anywhere in the chain, so the population panel is the
+activity data in a way that is unusual for an emissions inventory.
+
+The panel is built at district level and interpolated between censuses, covering
+\num{134} districts, with the 2023 census as its reference---the census's full frame
+including the Islamabad Capital Territory, Gilgit-Baltistan and Azad Kashmir, a
+deliberately wider base than the \num{116} four-province districts the agriculture
+sector allocates to, whose activity statistics are provincial in scope. It resolves to
+\SI{97}{} million urban and \SI{150}{} million rural residents, \SI{247}{} million in total.
+The urban/rural split is load-bearing twice over: urban residents generate more waste per head
+and are far more likely to have their waste collected, and the two effects run in opposite
+directions for emissions, since collected waste goes to a decaying landfill while uncollected
+waste burns.
+
+Building the panel at district level rather than nationally is what makes the provincial
+allocation in Section~\ref{sec:results} a real geography rather than a national figure split
+by a population share, and it is the same panel that drives the sector's air-pollutant layer.
+
+\subsection{Waste generation and collection}
+
+Per-capita generation is \SI{0.453}{\kilo\gram} per person per day urban and
+\SI{0.283}{\kilo\gram} rural, from the Pak-EPA eight-city survey \citep{pakepa1996}, the
+rates the \citet{kaza2018} Pakistan row re-bins. Across the panel that is
+\SI{31.56}{\mega\tonne} of municipal solid waste a year.
+
+Collection is expressed as its complement, the uncollected fraction: \SI{30}{\percent} urban
+and \SI{70}{\percent} rural, which resolves to \SI{50.3}{\percent} of national generation
+collected. Of the uncollected remainder, \SI{60}{\percent} is openly burned; the rest is
+dumped, tipped into watercourses or otherwise disposed of without combustion and emits nothing
+this category reports.
+
+These three parameters---two generation rates, two uncollected fractions and one burned
+fraction---are the softest inputs in the sector, and Section~\ref{sec:limitations} says so.
+They are also the only place where a judgement moves emissions \emph{between} categories
+rather than changing the total, which is a property of the partition rather than of the
+parameters.
+
+\subsection{Waste composition}
+
+Open burning needs the carbon content of what burns. Dry matter is \SI{70}{\percent} of wet
+weight; total carbon is \SI{0.2195}{\tonne} per wet tonne and the fossil fraction of it is
+\SI{0.0757}{\tonne} per wet tonne, so roughly a third of the carbon in Pakistani municipal
+waste is fossil in origin. That third is what produces reportable \COtwo{}; the biogenic
+remainder is a memo item, following IPCC Volume~5 Chapter~5 \S5.1.
+
+\subsection{Sanitation}
+
+The wastewater category needs the population split across sanitation pathways, because the
+methane correction factor is a property of the pathway rather than of the person. Shares come
+from the WHO/UNICEF Joint Monitoring Programme \citep{jmp2023}, each year taking its own:
+sewered, septic, latrine and open defecation,
+each carrying its own correction factor (\num{0.5}, \num{0.5}, \num{0.1} and \num{0}
+respectively).
+
+Organic load is \SI{40}{} g BOD per person per day, the regional default covering Pakistan,
+with an industrial-and-commercial correction of \num{1.25} for load discharged to the domestic
+system from small commercial premises. Nitrous oxide is computed from protein consumption
+rather than from BOD, which is why it is invariant under both of the sensitivities reported
+in Section~\ref{sec:results}.
+
+\subsection{What this inventory has not obtained, and what it would change}
+
+Nothing compiled here reports landfill tonnages at facility level, methane recovery at any
+site, industrial solid-waste quantities, or industrial wastewater organic loading. Three of
+those four have leads that have not been followed: the Urban Unit has mapped solid-waste
+services and facilities across Punjab's tehsils, PBS's district-level living-standards survey
+records household disposal route---municipal collection, private, public bins, roadside,
+waterway, open space---and PCRWR has published organic loading for named Pakistani drains.
+None would give complete national coverage, and each would replace a national assumption with
+district or facility evidence for the population it covers. The first two
+would replace modelled disposal with measured disposal; the second two are whole categories
+this inventory reports as not estimated. Section~\ref{sec:limitations} takes each in turn.

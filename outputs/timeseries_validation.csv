@@ -1,0 +1,205 @@
+year,category,engine_Mt,faostat_Mt,ratio,band
+1990,Enteric fermentation,54.54,54.81,1.0,ok
+1990,Manure management,6.65,4.8,1.38,ok
+1990,Rice cultivation,9.61,8.28,1.16,ok
+1990,Managed soils,10.27,21.79,0.47,review
+1990,Field burning of residues,0.26,0.54,0.48,review
+1990,Urea application,1.88,n/a,n/a,no-faostat
+1991,Enteric fermentation,55.59,55.91,0.99,ok
+1991,Manure management,6.85,4.96,1.38,ok
+1991,Rice cultivation,9.54,8.22,1.16,ok
+1991,Managed soils,10.45,22.25,0.47,review
+1991,Field burning of residues,0.26,0.54,0.48,review
+1991,Urea application,1.87,n/a,n/a,no-faostat
+1992,Enteric fermentation,56.66,57.03,0.99,ok
+1992,Manure management,6.98,5.07,1.38,ok
+1992,Rice cultivation,8.98,7.74,1.16,ok
+1992,Managed soils,11.17,23.61,0.47,review
+1992,Field burning of residues,0.26,0.53,0.49,review
+1992,Urea application,2.09,n/a,n/a,no-faostat
+1993,Enteric fermentation,57.77,58.18,0.99,ok
+1993,Manure management,7.13,5.19,1.37,ok
+1993,Rice cultivation,9.95,8.57,1.16,ok
+1993,Managed soils,11.42,24.24,0.47,review
+1993,Field burning of residues,0.3,0.56,0.53,ok
+1993,Urea application,2.12,n/a,n/a,no-faostat
+1994,Enteric fermentation,58.91,59.37,0.99,ok
+1994,Manure management,7.34,5.36,1.37,ok
+1994,Rice cultivation,9.67,8.33,1.16,ok
+1994,Managed soils,11.89,25.12,0.47,review
+1994,Field burning of residues,0.29,0.55,0.51,ok
+1994,Urea application,2.22,n/a,n/a,no-faostat
+1995,Enteric fermentation,60.08,60.6,0.99,ok
+1995,Manure management,7.55,5.53,1.37,ok
+1995,Rice cultivation,9.84,8.47,1.16,ok
+1995,Managed soils,12.96,27.21,0.48,review
+1995,Field burning of residues,0.32,0.56,0.56,ok
+1995,Urea application,2.54,n/a,n/a,no-faostat
+1996,Enteric fermentation,62.0,63.46,0.98,ok
+1996,Manure management,7.97,5.87,1.36,ok
+1996,Rice cultivation,10.24,8.82,1.16,ok
+1996,Managed soils,12.8,27.3,0.47,review
+1996,Field burning of residues,0.33,0.58,0.56,ok
+1996,Urea application,2.53,n/a,n/a,no-faostat
+1997,Enteric fermentation,63.46,64.95,0.98,ok
+1997,Manure management,8.19,6.04,1.36,ok
+1997,Rice cultivation,10.54,9.08,1.16,ok
+1997,Managed soils,13.29,28.27,0.47,review
+1997,Field burning of residues,0.32,0.57,0.56,ok
+1997,Urea application,2.66,n/a,n/a,no-faostat
+1998,Enteric fermentation,64.98,66.49,0.98,ok
+1998,Manure management,8.24,6.07,1.36,ok
+1998,Rice cultivation,11.03,9.5,1.16,ok
+1998,Managed soils,13.36,28.5,0.47,review
+1998,Field burning of residues,0.36,0.59,0.61,ok
+1998,Urea application,2.67,n/a,n/a,no-faostat
+1999,Enteric fermentation,66.55,68.26,0.97,ok
+1999,Manure management,8.43,6.23,1.35,ok
+1999,Rice cultivation,11.45,9.86,1.16,ok
+1999,Managed soils,13.91,29.58,0.47,review
+1999,Field burning of residues,0.38,0.6,0.63,ok
+1999,Urea application,2.83,n/a,n/a,no-faostat
+2000,Enteric fermentation,68.19,69.75,0.98,ok
+2000,Manure management,8.64,6.36,1.36,ok
+2000,Rice cultivation,10.81,9.32,1.16,ok
+2000,Managed soils,14.24,30.34,0.47,review
+2000,Field burning of residues,0.37,0.59,0.61,ok
+2000,Urea application,2.89,n/a,n/a,no-faostat
+2001,Enteric fermentation,69.89,71.48,0.98,ok
+2001,Manure management,8.86,6.53,1.36,ok
+2001,Rice cultivation,9.62,8.29,1.16,ok
+2001,Managed soils,14.46,30.69,0.47,review
+2001,Field burning of residues,0.32,0.56,0.56,ok
+2001,Urea application,2.92,n/a,n/a,no-faostat
+2002,Enteric fermentation,71.66,73.28,0.98,ok
+2002,Manure management,9.12,6.72,1.36,ok
+2002,Rice cultivation,10.12,8.72,1.16,ok
+2002,Managed soils,14.97,31.71,0.47,review
+2002,Field burning of residues,0.34,0.57,0.61,ok
+2002,Urea application,3.04,n/a,n/a,no-faostat
+2003,Enteric fermentation,73.57,75.22,0.98,ok
+2003,Manure management,9.38,6.91,1.36,ok
+2003,Rice cultivation,11.2,9.65,1.16,ok
+2003,Managed soils,15.4,32.69,0.47,review
+2003,Field burning of residues,0.37,0.59,0.63,ok
+2003,Urea application,3.13,n/a,n/a,no-faostat
+2004,Enteric fermentation,75.39,77.07,0.98,ok
+2004,Manure management,9.61,7.08,1.36,ok
+2004,Rice cultivation,11.46,9.88,1.16,ok
+2004,Managed soils,15.97,33.81,0.47,review
+2004,Field burning of residues,0.39,0.6,0.64,ok
+2004,Urea application,3.28,n/a,n/a,no-faostat
+2005,Enteric fermentation,77.38,79.1,0.98,ok
+2005,Manure management,9.86,7.27,1.36,ok
+2005,Rice cultivation,11.93,10.28,1.16,ok
+2005,Managed soils,16.98,35.82,0.47,review
+2005,Field burning of residues,0.4,0.61,0.66,ok
+2005,Urea application,3.59,n/a,n/a,no-faostat
+2006,Enteric fermentation,84.44,85.85,0.98,ok
+2006,Manure management,10.91,7.94,1.37,ok
+2006,Rice cultivation,11.74,10.12,1.16,ok
+2006,Managed soils,17.65,37.15,0.47,review
+2006,Field burning of residues,0.39,0.6,0.65,ok
+2006,Urea application,3.66,n/a,n/a,no-faostat
+2007,Enteric fermentation,87.08,88.51,0.98,ok
+2007,Manure management,11.29,8.22,1.37,ok
+2007,Rice cultivation,11.45,9.86,1.16,ok
+2007,Managed soils,17.43,37.07,0.47,review
+2007,Field burning of residues,0.43,0.61,0.69,ok
+2007,Urea application,3.46,n/a,n/a,no-faostat
+2008,Enteric fermentation,89.83,91.29,0.98,ok
+2008,Manure management,11.69,8.5,1.38,ok
+2008,Rice cultivation,13.48,11.61,1.16,ok
+2008,Managed soils,18.38,38.87,0.47,review
+2008,Field burning of residues,0.48,0.65,0.75,ok
+2008,Urea application,3.73,n/a,n/a,no-faostat
+2009,Enteric fermentation,92.68,94.17,0.98,ok
+2009,Manure management,12.11,8.8,1.38,ok
+2009,Rice cultivation,13.12,11.3,1.16,ok
+2009,Managed soils,20.38,42.6,0.48,review
+2009,Field burning of residues,0.47,0.64,0.73,ok
+2009,Urea application,4.4,n/a,n/a,no-faostat
+2010,Enteric fermentation,93.51,95.02,0.98,ok
+2010,Manure management,12.27,8.9,1.38,ok
+2010,Rice cultivation,10.76,9.27,1.16,ok
+2010,Managed soils,19.95,41.81,0.48,review
+2010,Field burning of residues,0.39,0.62,0.63,ok
+2010,Urea application,4.17,n/a,n/a,no-faostat
+2011,Enteric fermentation,98.66,100.19,0.98,ok
+2011,Manure management,12.99,9.44,1.38,ok
+2011,Rice cultivation,11.7,10.08,1.16,ok
+2011,Managed soils,20.13,42.61,0.47,review
+2011,Field burning of residues,0.46,0.63,0.73,ok
+2011,Urea application,4.07,n/a,n/a,no-faostat
+2012,Enteric fermentation,101.79,103.35,0.98,ok
+2012,Manure management,13.46,9.77,1.38,ok
+2012,Rice cultivation,10.51,9.05,1.16,ok
+2012,Managed soils,19.33,41.33,0.47,review
+2012,Field burning of residues,0.44,0.61,0.72,ok
+2012,Urea application,3.64,n/a,n/a,no-faostat
+2013,Enteric fermentation,104.84,106.43,0.99,ok
+2013,Manure management,13.91,10.08,1.38,ok
+2013,Rice cultivation,12.69,10.93,1.16,ok
+2013,Managed soils,20.92,44.31,0.47,review
+2013,Field burning of residues,0.51,0.65,0.79,ok
+2013,Urea application,4.13,n/a,n/a,no-faostat
+2014,Enteric fermentation,108.15,109.77,0.99,ok
+2014,Manure management,14.42,10.44,1.38,ok
+2014,Rice cultivation,13.15,11.33,1.16,ok
+2014,Managed soils,20.95,44.7,0.47,review
+2014,Field burning of residues,0.51,0.67,0.76,ok
+2014,Urea application,4.0,n/a,n/a,no-faostat
+2015,Enteric fermentation,111.57,105.06,1.06,ok
+2015,Manure management,14.95,13.33,1.12,ok
+2015,Rice cultivation,12.46,10.74,1.16,ok
+2015,Managed soils,21.36,45.62,0.47,review
+2015,Field burning of residues,0.51,1.02,0.5,review
+2015,Urea application,4.03,n/a,n/a,no-faostat
+2016,Enteric fermentation,115.04,116.71,0.99,ok
+2016,Manure management,15.47,11.2,1.38,ok
+2016,Rice cultivation,12.39,10.68,1.16,ok
+2016,Managed soils,22.0,47.02,0.47,review
+2016,Field burning of residues,0.54,0.69,0.78,ok
+2016,Urea application,4.13,n/a,n/a,no-faostat
+2017,Enteric fermentation,118.69,120.39,0.99,ok
+2017,Manure management,16.07,11.63,1.38,ok
+2017,Rice cultivation,13.2,11.37,1.16,ok
+2017,Managed soils,23.09,49.25,0.47,review
+2017,Field burning of residues,0.58,0.69,0.84,ok
+2017,Urea application,4.4,n/a,n/a,no-faostat
+2018,Enteric fermentation,122.5,124.23,0.99,ok
+2018,Manure management,16.68,12.07,1.38,ok
+2018,Rice cultivation,12.79,11.02,1.16,ok
+2018,Managed soils,23.48,50.17,0.47,review
+2018,Field burning of residues,0.53,0.67,0.79,ok
+2018,Urea application,4.4,n/a,n/a,no-faostat
+2019,Enteric fermentation,126.39,128.14,0.99,ok
+2019,Manure management,17.31,12.53,1.38,ok
+2019,Rice cultivation,13.8,11.89,1.16,ok
+2019,Managed soils,24.09,51.56,0.47,review
+2019,Field burning of residues,0.54,0.68,0.79,ok
+2019,Urea application,4.47,n/a,n/a,no-faostat
+2020,Enteric fermentation,130.4,132.19,0.99,ok
+2020,Manure management,17.98,13.0,1.38,ok
+2020,Rice cultivation,15.18,13.07,1.16,ok
+2020,Managed soils,24.67,52.98,0.47,review
+2020,Field burning of residues,0.61,0.71,0.86,ok
+2020,Urea application,4.51,n/a,n/a,no-faostat
+2021,Enteric fermentation,134.55,136.37,0.99,ok
+2021,Manure management,18.67,13.5,1.38,ok
+2021,Rice cultivation,16.1,13.87,1.16,ok
+2021,Managed soils,25.77,55.38,0.47,review
+2021,Field burning of residues,0.67,0.76,0.88,ok
+2021,Urea application,4.74,n/a,n/a,no-faostat
+2022,Enteric fermentation,138.83,140.68,0.99,ok
+2022,Manure management,19.4,14.03,1.38,ok
+2022,Rice cultivation,13.54,11.67,1.16,ok
+2022,Managed soils,26.1,56.15,0.46,review
+2022,Field burning of residues,0.6,0.73,0.81,ok
+2022,Urea application,4.68,n/a,n/a,no-faostat
+2023,Enteric fermentation,143.25,145.13,0.99,ok
+2023,Manure management,20.16,14.58,1.38,ok
+2023,Rice cultivation,16.55,14.26,1.16,ok
+2023,Managed soils,27.11,58.5,0.46,review
+2023,Field burning of residues,0.69,0.76,0.92,ok
+2023,Urea application,4.86,n/a,n/a,no-faostat

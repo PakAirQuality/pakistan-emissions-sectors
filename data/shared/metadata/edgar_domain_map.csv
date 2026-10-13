@@ -1,0 +1,48 @@
+# Which IPCC codes fall inside each EDGAR domain of the 514.33 Mt national comparator.
+# WHY THIS FILE EXISTS. The benchmark-scope metric used to classify five EDGAR domains as
+# "estimated whole" and three as partial. That classification was ASSERTED - written down
+# from knowledge of which sectors exist - and an external reviewer showed it was wrong: the
+# completeness matrix in the same repository carries NE rows inside three of the five,
+# including domestic navigation and mobile air-conditioning inside transport and industrial
+# wastewater inside waste. The metric was introduced to stop a magnitude ratio from reading
+# as completeness, and it was itself a completeness claim with nothing behind it.
+# This file supplies the join, and the classification is now computed from the notation keys.
+# One row per (domain, code). A code may appear under only one domain.
+# MIGRATED 2026-10-06. The Agriculture rows were UNFCCC CRT (3.A-3.J); this inventory now
+# codes in IPCC 2006, under which two of them split. The CRT code each row came from is in
+# the note, and the authority is data/shared/lookups/category_crosswalk.csv.
+edgar_domain,ipcc_code,note
+Agriculture,3.A.1,enteric fermentation (CRT 3.A)
+Agriculture,3.A.2,manure management CH4 and direct N2O (CRT 3.B)
+Agriculture,3.C.6,indirect N2O from manure management - a category of its own under IPCC 2006 (CRT 3.B)
+Agriculture,3.C.7,rice cultivation (CRT 3.C)
+Agriculture,3.C.4,direct N2O from managed soils (CRT 3.D)
+Agriculture,3.C.5,indirect N2O from managed soils (CRT 3.D)
+Agriculture,3.C.1.c,biomass burning in grasslands (CRT 3.E prescribed savanna burning)
+Agriculture,3.C.1.b,biomass burning in croplands (CRT 3.F field burning of residues)
+Agriculture,3.C.2,liming (CRT 3.G)
+Agriculture,3.C.3,urea application (CRT 3.H)
+Agriculture,(crt-only),CRT 3.I and 3.J have no IPCC 2006 counterpart and are not mapped; carried so the domain's universe stays closed
+Power industry,1.A.1.a,public electricity and heat production
+Transport,1.A.3.a,civil aviation (domestic)
+Transport,1.A.3.b,road transportation
+Transport,1.A.3.c,railways
+Transport,1.A.3.d,water-borne navigation (domestic)
+Industrial combustion (1A2),1.A.2,manufacturing industries and construction
+Buildings,1.A.4.a,commercial and institutional (NE - see the completeness register)
+Buildings,1.A.4.b,residential
+Buildings,1.A.4.c,agriculture/forestry/fishing stationary and off-road
+Processes (IPPU),2.A.1,cement production
+Processes (IPPU),2.A.2,lime production
+Processes (IPPU),2.B.1,ammonia production (estimated since rc52)
+Processes (IPPU),2.B.7,soda ash production
+Processes (IPPU),2.C.1,iron and steel production (estimated since rc52)
+Waste,4.A,solid waste disposal
+Waste,4.B,biological treatment of solid waste
+Waste,4.C.1,waste incineration
+Waste,4.C.2,open burning of waste
+Waste,4.D,wastewater treatment and discharge (industrial)
+Waste,4.D.1,domestic wastewater treatment and discharge
+Fuel exploitation (1B),1.B.1,fugitive emissions from solid fuels
+Fuel exploitation (1B),1.B.2,fugitive emissions from oil and natural gas
+Processes (IPPU),2.D.1,lubricant use (rc52)

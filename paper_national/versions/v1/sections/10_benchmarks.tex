@@ -1,0 +1,501 @@
+% ===========================================================================
+\section{Benchmarks, Including Two Disagreements Worth Defending}
+\label{sec:benchmarks}
+% ===========================================================================
+
+Every sector is compared against whichever external estimates exist for it: EDGAR
+\citep{edgar2025booklet} for all nine non-agricultural sectors, FAOSTAT \citep{faostat} and Climate
+TRACE \citep{climatetrace} for agriculture, and Pakistan's own BUR-1 \citep{pakbur1} where its
+categories are separable. The comparison is generated on every run rather than compiled by
+hand, and \num{26} of its \num{27} rows resolve against an engine category; the one that does
+not is the red-flagged CRT ammonia comparator, which reports native \COtwo{} and is never
+divided into a \COe{} value. Each row's register entry declares its GWP basis, and the engine
+side is resolved in that basis: Climate TRACE publishes under AR6, so those seven rows compare
+AR6 against AR6, where an earlier edition compared them against AR5 values and manufactured a
+few percent of disagreement in the comparison itself. Resolution does not
+imply completeness: the industrial row measures the metered gas component against EDGAR's
+all-fuel category, so its low ratio remains visible.
+
+\begin{table*}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{5pt}
+\begin{tabular}{@{}p{0.26\linewidth}llrrr@{}}
+\toprule
+\textbf{Comparison} & \textbf{Source} & \textbf{Period} & \textbf{Bench.} & \textbf{Engine} &
+\textbf{Ratio} \\
+\midrule
+\multicolumn{6}{@{}l}{\emph{Comparisons on matched boundaries}} \\
+Electricity (1A1a) & EDGAR & CY2024 & 56.80 & 40.04 & 0.70 \\
+Residential (households) & EDGAR & CY2024 & 31.42 & 24.22 & 0.77 \\
+Waste (year-matched) & EDGAR & CY2023 & 26.57 & 37.45 & 1.41 \\
+Agriculture total & FAOSTAT & CY2023 & 233.30 & 223.45 & 0.96 \\
+Agriculture total & EDGAR & CY2024 & 261.20 & 223.45 & 0.86 \\
+Agriculture total & Climate TRACE & CY2024 & 261.50 & 218.07 & 0.83 \\
+Managed soils & FAOSTAT & CY2023 & 58.50 & 28.53 & 0.49 \\
+Rice cultivation & Climate TRACE & CY2024 & 7.80 & 15.96 & 2.05 \\
+[3pt]
+\multicolumn{6}{@{}l}{\emph{Partial-scope diagnostics --- ratio withheld or scope-noted}} \\
+Fugitives (1B2 vs all 1B)$^{e}$ & EDGAR & CY2024 & 17.54 & 23.50 & 1.34 \\
+Transport module vs EDGAR modes & EDGAR & CY2024 & 48.76 & 41.93 & --- \\
+[3pt]
+\multicolumn{6}{@{}l}{\emph{Coverage comparisons --- not agreement}} \\
+All sectors & EDGAR & CY2024 & 514.33 & 444.96 & 0.87 \\
+Industrial combustion (1A2) & EDGAR & CY2024 & 43.98 & 28.13 & 0.64 \\
+IPPU: cement term vs all processes & EDGAR & CY2024 & 27.38 & 21.82 & --- \\
+\bottomrule
+\end{tabular}
+\caption{The 1.A.1.a grid figure is the \texttt{power\_grid\_control} family reference; the family's other members read 38.45~Mt (fuel property), 44.05~Mt (coverage) and 57.82~Mt (legacy account), and none is a sensitivity.
+$^{e}$~The 1.B.2 reference sits one membership step below the top of its own
+9.601--24.694~Mt structural envelope, fertiliser feedstock being outside the post-meter
+leakage base; the priced envelope members, including the 17.68~Mt geometric-mean
+central reading, sit beside it in the configurations file.
+External comparison, \si{\mega\tonne} \COe{}, \textbf{grouped by what the comparison
+can support}. A previous edition printed all three groups as one undifferentiated ratio
+column, which invited a scope difference to be read as an error---and one row was worse than
+that: it was labelled ``Road transport'' while carrying the transport \emph{module}, road plus
+mixed off-road, against an EDGAR row for a different set of modes in a different year. Every
+row now carries its period, and the register behind it
+(\texttt{data/benchmarks.csv}) carries both boundaries and a \texttt{ratio\_permitted} flag; a
+dash means the boundaries do not support a ratio, not that one could not be computed. The
+inventory period is FY2023--24 throughout, so a row whose benchmark period is a calendar year
+is comparing across a partial-year offset as well.}
+\label{tab:benchmarks}
+\end{table*}
+
+\subsection{The aggregate reading}
+
+At the whole-inventory level this work is \SI{87}{\percent} of EDGAR's Pakistani sectors
+summed. That number is a \emph{magnitude ratio} and is reported as one, because on its own it
+conflates two questions that different work answers. Source domains this inventory does not
+estimate at all pull it down; domains it does estimate and where the two disagree pull it in
+either direction---waste sits at \SI{141}{\percent} of EDGAR and agriculture at
+\SI{86}{\percent}---and netting those against each other produces a single figure that reads
+as completeness and is not one. Three numbers are therefore reported separately
+(\texttt{outputs/national\_benchmark\_scope\_coverage.csv}):
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=3pt]
+\item \textbf{Magnitude ratio, \SI{87}{\percent}}---\SI{444.96}{} against
+  \SI{514.33}{\mega\tonne}. How big, not how complete.
+\item \textbf{Benchmark-scope representation, \SI{11}{\percent} fully and
+  \SI{89}{\percent} partially}---the share of EDGAR's source domain, weighted by EDGAR's own
+  magnitudes, in which \emph{every} IPCC category mapped to the domain is estimated, included
+  elsewhere or does not occur. Only public electricity meets that. Nothing is wholly absent:
+  every domain carries at least one estimated category, which the magnitude ratio cannot show.
+  The test is deliberately strict---one unestimated category makes a domain partial, however
+  small it is---so the unestimated categories are named per domain rather than absorbed:
+  liming and other carbon-containing fertilisers in agriculture, domestic navigation in
+  transport, industrial solid fuels in 1.A.2, commercial buildings, four IPPU categories, and
+  industrial wastewater, incineration and biological treatment in waste.
+  \emph{An earlier edition of this paper claimed five domains estimated ``whole'', which the
+  completeness matrix in the same repository contradicted.} The classification is derived from
+  the notation keys now, through \texttt{data/edgar\_domain\_map.csv}, rather than asserted.
+\item \textbf{Inventory completeness}---the IPCC notation-key matrix over all \num{138}
+  category--gas combinations in Section~\ref{sec:completeness}, which is the only one of the
+  three that is independent of a benchmark's own scope.
+\end{enumerate}
+
+\textbf{The bridge from this inventory to EDGAR's total has three terms, and mixing them is
+the error to avoid.} Categories absent here, valued on EDGAR's own basis, are a
+\emph{coverage} gap: industrial combustion (\SI{15.85}{\mega\tonne} of its
+\SI{43.98}{\mega\tonne}, after the brick and cement coal activation) and F-gases
+(\SI{11.54}{\mega\tonne}) are the large ones.
+Differences where both systems estimate the same category are a \emph{method or activity}
+disagreement, and they run in both directions: agriculture is \SI{38}{\mega\tonne} below
+EDGAR and waste is above it. A previous edition listed the agriculture difference beside the
+two absences as though it were a third gap, which it is not---nothing is missing there, the
+two estimates disagree. Adding only the coverage term at EDGAR's own values would put this
+inventory slightly \emph{above} EDGAR overall, which is the
+right sanity check on the estimated categories: they are not systematically low,
+the inventory remains incomplete in specific places, and the completeness table
+(Section~\ref{sec:completeness}) names exactly where.
+
+The resolved sector comparisons fall broadly within a factor of two, which for
+independent Tier~1 estimates built from different activity data is close agreement. The
+flagged component rows are examined rather than adjusted toward their benchmarks.
+
+\subsection{Railways against Pakistan's own submission: a factor of ten}
+
+BUR-1 reports railways at \SI{4.06}{\mega\tonne} \COe{} for FY2017--18, and the comparison
+this paper makes is \emph{year-matched}: run on the operator's metered fuel for that same
+fiscal year, by the identical method, this inventory reconstructs \SI{0.4663}{\mega\tonne}.
+BUR-1 is \num{8.7} times it. Quoting the current year against a 2017--18 filing would fold six
+years of activity change into a ratio that is about method, which is why the matched year
+leads; both years are set out together so neither can be read as the other.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lrr@{}}
+\toprule
+\textbf{Quantity} & \textbf{FY2017--18} & \textbf{FY2023--24} \\
+\midrule
+Reported diesel, thousand litres & \num{156396} & \num{132588} \\
+Estimated diesel mass, \si{\kilo\tonne} & \num{132} & \num{112} \\
+This inventory, \si{\mega\tonne} \COe{} & \num{0.466} & \num{0.394} \\
+BUR-1, \si{\mega\tonne} \COe{} & \num{4.06} & --- \\
+Submission over this inventory & \num{8.7} & --- \\
+\bottomrule
+\end{tabular}
+\caption{The railway comparison, matched. \emph{A previous edition mixed three years in one
+paragraph}: it quoted the matched-year estimate beside FY2017's \num{144631} thousand litres,
+which is a different year again, and beside the current year's mass. The matched-year estimate
+is built on the \num{156396} thousand litres the operator reports for FY2017--18. The
+difference between the two years is fuel, not method: FY2017--18 diesel is \SI{18.0}{\percent}
+above FY2023--24, not a factor of ten in either direction.}
+\label{tab:railmatched}
+\end{table}
+
+The disagreement resolves on arithmetic rather than on judgement. Producing
+\SI{4.06}{\mega\tonne} of \COtwo{} from diesel requires roughly \SI{1280}{\kilo\tonne} of
+fuel. Pakistan Railways---a single state operator that meters and publishes its own fuel
+purchases---reports buying \SI{112}{\kilo\tonne} in FY2023--24 and \SI{132}{\kilo\tonne} in
+FY2017--18, so BUR-1's implied fuel is roughly ten times either. The traffic comparison is a
+\emph{physical-scale diagnostic} rather than a matched-year test, and is labelled as one
+because it pairs the current year's train-kilometres with the older submission: the metered
+purchase works out at \SI{4.0}{\litre} per train-kilometre over the operator's own
+\num{33.1} million train-km, which is where a diesel locomotive belongs, while BUR-1's implied
+fuel would need about \SI{46}{\litre} per train-kilometre, which no locomotive does. The
+conclusion does not rest on it---the fuel-mass route above is matched on both years.
+
+Three independent quantities---the operator's fuel account, the published traffic statistics
+and the carbon content of diesel---all support the lower figure, and both the fuel bound and
+the per-train-kilometre intensity are pinned by tests so the claim is rechecked on every run.
+We record the disagreement openly, on the principle that a national inventory which silently
+diverges from its country's own submission is worse than one that diverges and says so.
+
+Three further facts from the same register
+(\texttt{railways\_official\_comparison\_2024.csv}) place that disagreement, and none of them
+flatters this inventory by construction.
+
+\emph{It is not confined to the superseded narrative filing.} Pakistan's first Common
+Reporting Tables, the current submission and the one this paper prefers wherever a cell
+exists, book \SI{56609}{\tera\joule} under 1.A.3.c for calendar 2022. Against this
+inventory's value for the two fiscal years that calendar year straddles, the filing is
+\num{11.6} times it---worse than BUR-1's \num{8.7}, not better.
+
+\emph{It runs the other way against Pakistan's oldest filing.} The Initial National
+Communication implies \SI{0.5575}{\mega\tonne} for FY1993--94, which is
+\SI{11.9}{\percent} \emph{below} this inventory's independent reconstruction of the same
+period from the operator's own fuel history. That figure is derived from a stated share
+rather than read from a printed row, and the register labels it a magnitude check rather than
+a point match; it is reported here because it is the one official comparison this inventory
+does not win, and because of what it implies about timing. Between the only two filings that
+report railways separately the official figure rose by a factor of \num{7.3} while this
+inventory's reconstruction \emph{fell} by \SI{26}{\percent}. The order-of-magnitude
+disagreement is therefore not a standing feature of Pakistan's reporting: it entered the
+official record somewhere between 2003 and 2022. It cannot be dated more closely than that,
+because the two filings in between report only the 1.A.3 aggregate.
+
+\emph{And it exceeds anything the railway has ever emitted.} The operator's fuel history,
+reconstructed back to 1950, peaks at \SI{2.3049}{\mega\tonne} \COe{} per year in
+1965--70, when Pakistan Railways burned \num{48720} tonnes of coal and \num{542078} tonnes
+of furnace oil annually at the end of the steam era. BUR-1's \SI{4.06}{\mega\tonne} is
+\num{1.8} times that peak. A diesel-only railway a quarter the size of the steam network
+cannot emit twice what the steam network did, and no assumption about factors or boundaries
+recovers the difference---only the activity can, which is where the filing and the operator's
+metered purchases part company.
+
+The railway fuel account also supplies this inventory's only genuinely \emph{independent}
+source-boundary check, and it is worth separating from the closures of
+Section~\ref{sec:closures} because it is the opposite kind of evidence. A closure is an
+identity: one quantity computed once and consumed twice, which cannot disagree because it is
+the same number. This is two unrelated reporting chains describing the same physical fuel.
+Pakistan Railways meters and publishes its own purchases in its Year Book; the Oil Companies
+Advisory Council independently reports a Railways customer-class row in its national
+petroleum statistics. Neither is derived from the other. Year-matched for FY2021--22 they
+differ by \SI{3.80}{\percent}---\SI{112037}{\tonne} against \SI{107932}{\tonne}---which is
+about as close as two independent national fuel accounts get.
+
+That check exists because a closure stopped being necessary. The transport sector once
+subtracted the railway fuel account from a single national diesel supply figure; since it was
+re-anchored on the petroleum statistics' own customer classes, Railways sits outside the Road
+row by construction and there is nothing left to subtract. The quantity that used to enforce
+a boundary now tests one instead.
+
+\subsection{Waste against EDGAR: an unresolved methane correction factor}
+
+The waste sector is \SI{141}{\percent} of EDGAR's year-matched Pakistani waste total. This row has changed
+sides during the project: before domestic wastewater was built it read \SI{47}{\percent}, and
+the gap was a measure of what 4D would add. With 4D in, the sector overshoots.
+
+The likeliest single cause is the methane correction factor for sewers. IPCC gives
+\num{0.5} for stagnant sewers and \num{0.1} for wastewater discharged to a flowing river. At
+\num{0.5}, domestic wastewater is \SI{24.46}{\mega\tonne} and the waste sector overshoots
+EDGAR. At \num{0.1} it is \SI{15.39}{\mega\tonne} and the sector lands close.
+
+The evidence points both ways, and genuinely so. The physical description of Pakistani urban
+drains---open, slow-moving, heavily organically loaded---supports \num{0.5}. The only
+independent comparator supports \num{0.1}. EDGAR is itself a model and does not settle the
+question.
+
+We publish both readings rather than resolving the tension by fiat, and report the
+\num{0.5} case as the headline because it is the value the physical description supports.
+This is the same treatment given to the correlated-uncertainty case in
+Section~\ref{sec:uncertainty}: where an assumption moves a result by a factor approaching
+two and the evidence does not choose, the defensible output is both numbers and a statement
+of what would settle it. Here, what would settle it is a dissolved-methane measurement
+campaign on urban drains in two or three Pakistani cities.
+
+\subsection{The other flagged rows}
+
+\textbf{Fugitives at \num{1.34} of EDGAR} is a matched-year but only partly matched-scope
+comparison. The 2019 segment account includes production, gathering, processing,
+transmission, distribution, refining and post-meter sources; EDGAR labels its aggregate
+``fuel exploitation''. The difference lies inside the engine's declared structural and
+parametric ranges, but no adjustment is made toward EDGAR because both products depend on
+modelled factors rather than Pakistani component measurements.
+
+\textbf{Managed soils at \num{0.49} of FAOSTAT} and \textbf{rice at \num{2.05} of Climate
+TRACE} are agriculture-sector questions treated in the companion manuscript
+\citep{ahmad2026ag}. Both survive scrutiny, and the managed-soils one has been measured
+rather than asserted since this release.
+\texttt{outputs/pakemis\_faostat\_nitrogen\_flows.csv} compares the two compilations at the
+nitrogen flows rather than at the total, and the flows agree. FAOSTAT's four managed-soils
+items map one-to-one onto this inventory's four pools, so none of the difference is scope.
+Synthetic fertiliser nitrogen agrees to \SI{0.9}{\percent}---\num{3775000} against
+\num{3808775}~t~N---and the six livestock species both compilations carry agree to
+\SI{0.9}{\percent} in total, with the residual running the wrong way for the headline: this
+inventory counts \num{1.36} times FAOSTAT's sheep and \num{1.30} times its camels, so more
+excreted nitrogen, not less.
+
+The factor of two is therefore in the emission factors and in the partition of nitrogen, not
+in the nitrogen. Two-fifths of it is the factor vintage: FAOSTAT applies the 2006
+Guidelines' aggregate EF1 of \num{0.010} where this inventory applies the 2019 Refinement's
+\num{0.005} for dry climates, and taking FAOSTAT's vintage as a named scenario moves managed
+soils from \SI{28.53}{\mega\tonne} to \SI{40.43}{\mega\tonne}, closing
+\SI{11.90}{\mega\tonne} of a \SI{29.97}{\mega\tonne} gap. The remaining
+\SI{18.07}{\mega\tonne} is neither the nitrogen nor that vintage, and it is not diffuse
+either. FAOSTAT's four items, acquired separately for this release, put two-thirds of the
+whole gap in one pool: pasture deposition is \SI{7.71}{\mega\tonne} here against
+\SI{27.29}{\mega\tonne}, a difference of \SI{19.58}{\mega\tonne} and \SI{65.3}{\percent}
+of the total. Synthetic fertiliser contributes \SI{8.77}{\mega\tonne}
+(\SI{29.3}{\percent}) and crop residues \SI{2.70}{\mega\tonne}, and the mechanism in all
+three is the one already named: the 2019 Refinement disaggregated these direct factors by
+climate and Pakistan sits at the dry end. Beside EF1's \num{0.005} against \num{0.010}, the
+pasture factor for cattle is \num{0.002} here against the 2006 default's \num{0.02}---a
+tenfold cut, applied to the \SI{40.9}{\percent} of this inventory's
+\SI{7.7834}{\mega\tonne} of excreted nitrogen that its ledger routes to grazing.
+
+Taken together the two direct factors account for almost the whole difference. The pasture
+factor had no scenario beside it until this release, which was an asymmetry rather than a
+judgement: the same climate choice on EF1 has carried three alternatives for releases---the
+wet value, the 2006 aggregate and an empirical adjudicator---while the larger lever carried
+none. It has one now, and applying both 2006 direct factors together moves managed soils to
+\SI{54.72}{\mega\tonne}, closing \SI{26.19}{\mega\tonne} or \SI{87}{\percent} of the gap.
+The two scenarios are disjoint by construction: EF1 scales synthetic fertiliser, organic
+manure and crop residues, the pasture factor scales the two deposition rows, and no subitem
+belongs to both. What remains is \SI{3.78}{\mega\tonne}, in the indirect factors---EF4 and
+EF5 changed between the vintages too, and these scenarios do not touch them---and in the
+nitrogen partition.
+
+One pool runs the other way and the factor vintage cannot explain it. Manure applied to soils
+is \num{1.16} times FAOSTAT's despite the lower factor, so this inventory routes more
+excreted nitrogen to field application than FAOSTAT does. That is a disagreement about where
+the nitrogen goes rather than about what happens to it, and it is the only one of the four.
+
+Whether the dry classification is right for grazing land is a separate question from whether
+it is right for cropland, and the evidence behind it is weaker. The dry EF1 is recorded as
+\emph{best-supported for irrigated arid cropland}, derived largely from irrigated dry
+fields---which is what Pakistan's fertilised area is. Pasture, range and paddock land is
+neither irrigated nor cropland, so that basis does not transfer to it, and no comparable
+Pakistani evidence stands behind the pasture choice. The factor stays at the Refinement's dry
+value, because that is the Refinement's own classification for an arid country, and the
+alternative is now priced beside it rather than left implicit. Climate TRACE's rice estimate, the other agriculture question
+here, uses a cultivated-area basis that diverges from the national crop statistics.
+
+\textbf{IPPU at \num{0.93} of EDGAR} is nearer like-for-like than the label it used to carry,
+and what remains unmatched is now named rather than assumed. EDGAR's ``Processes'' row covers
+cement, lime, soda ash, ammonia, and iron and steel. Of those five this inventory estimates
+three---cement at \SI{21.82}{\mega\tonne}, ammonia at \SI{3.24}{\mega\tonne}, and iron and steel
+at \SI{0.39}{\mega\tonne}---and adds lubricant use, \SI{0.08}{\mega\tonne}, which EDGAR's row
+does not name. Lime is NE for want of activity data; soda ash is NA rather than NE, its
+Solvay-process carbon allocated to Energy under IPCC Volume~3 \S3.8.3.1
+(Section~\ref{sec:completeness}). The \SI{1.84}{\mega\tonne} by which EDGAR's row exceeds this
+module is therefore of the order of one absent category, not of four, and the comparison is
+recorded as a coverage reading rather than as agreement.
+
+Cement alone is \num{0.80} of the whole-processes row, the right order for a country whose IPPU
+is dominated by cement. The cement term's own configuration range brackets matched-period
+clinker trade and the clinker-fraction choice: the Tier~1 diagnostic at the 0.75 fraction gives
+\SI{17.39}{\mega\tonne}, while the 0.95-fraction trade-corrected configuration gives
+\SI{21.50}{\mega\tonne}; the reference itself is the producer census's observed clinker,
+\SI{21.82}{\mega\tonne}, above both. The earlier 48.011-Mt cement control was resolved as FY2021--22,
+not an alternative FY2023--24 series.
+
+\subsection{The national submission, year-matched: the gap is completeness, not estimation}
+\label{sec:btr}
+
+The comparators above all require an approximation. EDGAR and Climate TRACE publish calendar
+years against this inventory's fiscal one; Climate TRACE publishes under AR6 against an AR5
+account; FAOSTAT does both. One comparator requires neither, and it is the most authoritative
+one available: Pakistan's First Biennial Transparency Report \citep{pakbtr2024} publishes a
+full IPCC-category inventory on AR5 global warming potentials, and it states its own period
+convention---``the fiscal year 1993--94 (referred to as 1994)'', ``Pakistan's 2020--21
+inventory (referred to as 2021)''. Its inventory year is a Pakistani fiscal year. It therefore
+faces FY2020--21 directly, with no blend and no metric conversion, and this release carries
+that year.
+
+Four of this project's own ingests had read that document and three of them recorded it as
+calendar 2021; only the aviation ingest read it as fiscal. The correction is why this
+comparison is possible at all, and it is recorded in the register rather than in a footnote.
+
+A join on the IPCC code would be wrong, and silently so. The submission books rice cultivation
+at 3.D and managed soils at 3.C; this inventory books rice at 3.C and soils at 3.D. The codes
+are \emph{swapped} between the two accounts, so a code join compares rice against soil
+nitrous oxide and returns two plausible ratios. Every row of
+\texttt{outputs/pakemis\_btr\_comparison.csv} is therefore an explicit crosswalk entry with a
+declared tier, and a ratio is emitted only where the boundaries support one.
+
+Excluding the submission's land-use block---\SI{34.82}{\mega\tonne}, outside this inventory by
+declared scope---the two national totals are \SI{483.45}{} and \SI{486.65}{\mega\tonne}, a
+ratio of \num{0.993}. That agreement is not the result worth reporting, because it averages
+category ratios spanning more than an order of magnitude: \num{6.91} on oil and gas fugitives,
+\num{0.44} on managed soils, \num{1.19} on enteric fermentation, \num{0.43} on lubricants.
+What the headline does support is a decomposition the single ratio hides. Restricted to the
+categories both accounts actually estimate, the totals are \SI{482.49}{} and
+\SI{480.61}{\mega\tonne}---a ratio of \num{1.004}, this inventory above the submission.
+The \SI{3.20}{\mega\tonne} national difference is the net of two movements in opposite
+directions. \SI{6.04}{\mega\tonne} is seven categories this inventory declares NE and the
+submission books---solid-fuel fugitives, lime, glass, other carbonate uses, other
+industrial processes, waste incineration and industrial wastewater---against
+\SI{0.382}{\mega\tonne} this inventory estimates where the submission books nothing or
+zero, which is iron and steel: a net \SI{5.658}{\mega\tonne} of pure completeness
+difference in the submission's favour. On the categories both accounts estimate, this
+inventory is \SI{1.88}{\mega\tonne} above the submission, which offsets part of it.
+Those seven rows are the same rows that sit in
+\texttt{outputs/pakemis\_completeness\_mass.csv} with no bound, and they now have an
+official magnitude.
+
+\textbf{The sign of that national difference reversed with the coal re-base and has
+reversed back in this release, and earlier
+editions of this paragraph read it each way.} The first described the gap as this inventory's
+\emph{shortfall} and concluded that the difference against Pakistan's own account was a
+completeness difference rather than an estimation one. The matched comparison year is
+inventory year 2022, which the re-base raised by \SI{11.07}{\mega\tonne}---Table 3's flat
+conversion had been reading that year's coal low---so the shortfall became an excess and
+the clean conclusion with it. This release lowers the same year again---household dung on
+the survey, wastewater nitrous oxide on the 2019 Refinement with each year's own sanitation
+shares, fertiliser feedstock outside the post-meter leak base---and the excess is a
+shortfall once more. Both components were
+always there; what changes is which one
+dominates. The completeness difference is unaffected and still \SI{5.658}{\mega\tonne};
+the estimation difference is again the smaller term, and the submission's own coal energy
+descends from the same HDIP series the re-base moved away from, so the two accounts are not
+independent on exactly the category that first reversed the sign.
+
+Two of the apparent order-of-magnitude disagreements are one disagreement. On landfill methane
+this inventory is \num{0.49} of the submission; on open burning of waste it is \num{17.74}
+times it. Summed over the solid stream the ratio is \num{0.68}, so what the accounts mainly
+disagree about is the \emph{fate split} of the same municipal waste---how much is collected to
+a disposal site against how much burns where it falls. That is a question about collection
+statistics rather than about an emission factor, and neither individual ratio should be quoted
+as a level error.
+
+The managed-soils row is the one that should change a reader's mind, because it is the second
+independent account to say the same thing. The submission puts direct and indirect
+managed-soil nitrous oxide at \SI{58.05}{\mega\tonne} against this inventory's
+\SI{25.77}{\mega\tonne}; FAOSTAT, built from different inputs, puts the same quantity at
+\SI{58.50}{} against \SI{28.53}{\mega\tonne} for the reference year. Two accounts, one
+official and one international, land at about twice this inventory, and the cause this paper
+already publishes---the 2019 Refinement's dry-climate \textrm{EF}$_1$ against the 2006
+aggregate value---predicts exactly that. A second comparator agreeing with the first is worth
+more than either alone, and it moves the dry-climate choice from a defensible assumption to
+the single most consequential open question in the agricultural account.
+
+The comparison runs both ways, which a completeness argument has to. The submission reports
+the metal industry as zero, where this inventory estimates iron and steel; and it reports
+substitutes for ozone-depleting substances as zero, where this inventory declares the
+category NE and carries an external bound beside it. A typed absence with a bound states more
+than a reported zero.
+
+One entry in that list has to be withdrawn, and the withdrawal is the more useful result. The
+submission carries no biomass-burning \emph{line}, and reading that as an absence---as an
+earlier version of this crosswalk did---makes this inventory look like the more complete
+account. It is not. The submission folds residue burning into its land block: cropland's
+non-CO\textsubscript{2} half is \SI{3.16}{\mega\tonne} beside \SI{2.50}{\mega\tonne} of
+land-use CO\textsubscript{2} in the same row, and the agriculture Common Reporting Table
+carries crop residue burning as a line of its own---the same quantity filed twice by one
+submission, which is also why a land layer built here cannot simply adopt both. Against the
+folded figure this inventory's field burning is \num{0.18}, not a surplus. The
+exclusion of the land block is therefore not as clean as scope makes it sound:
+\SI{3.47}{\mega\tonne} of its \SI{34.82}{\mega\tonne} is CH\textsubscript{4} and
+N\textsubscript{2}O, which for a land account is fire, and about \SI{3.5}{\mega\tonne} of
+what the scope exclusion withholds is comparable in kind to emissions this inventory does
+estimate. It is also the hazard to avoid in reverse: a land layer here that adopted the
+submission's cropland figure beside this inventory's existing residue burning would count the
+burning twice.
+
+\subsection{Provincial SO\textsubscript{2}: where national agreement hides a fivefold gap}
+\label{sec:benchmarks-provincial-so2}
+
+Every comparison above is national, and a national ratio is the one statistic a spatial
+inventory can pass without being right anywhere. The provincial test is
+\texttt{outputs/pakemis\_air\_provincial\_external\_comparison.csv}, which places this
+inventory's ADM1 allocation beside EDGAR~v8.1's gridded SO\textsubscript{2} summed by
+area fraction into the same boundaries, on a fiscal blend of the two calendar years each
+fiscal year spans.
+
+At FY2021--22 the national ratio is \num{0.92}---as close to agreement as anything in
+Table~\ref{tab:benchmarks}---and it is not informative. Underneath it Punjab is \num{1.25},
+Khyber Pakhtunkhwa \num{1.67}, Balochistan \num{2.05} and Sindh \num{0.18}: a spread of an
+order of magnitude, cancelling to within four percent of unity. A compilation can be wrong in
+every province and right in the sum, and this one very nearly is.
+
+The disagreement is not diffuse. Decomposing by stream puts it almost entirely in electricity
+generation, where this inventory books \SI{167.0}{\giga\gram} against EDGAR's
+\SI{409.3}{\giga\gram}, and within that in Sindh, where it books \SI{4.5}{\giga\gram} against
+\SI{196.9}{\giga\gram}. That is not a defect in the allocation but a declared absence appearing
+where it was declared: power-sector SO\textsubscript{2} \emph{as actually emitted} is NE in this
+release, pending a control-device inventory, and what is booked is the oil-and-diesel admission
+register alone---no coal. The coal fleet that EDGAR is seeing is in Sindh.
+
+Read against the release's own screening the comparison resolves rather than merely disagrees.
+Adding the uncontrolled coal screening to the booked register---the two are disjoint by
+construction, the screening's oil rows covering only the remainder the register does not
+reach---gives \SI{362.2}{\giga\gram}; assuming flue-gas desulphurisation at the screening's
+controlled case gives \SI{202.0}{\giga\gram}. EDGAR's \SI{409.3}{\giga\gram} falls inside that
+bracket, at \SI{129}{\percent} of its width. An independent compilation therefore places
+Pakistani coal generation near the uncontrolled end of this inventory's own declared range,
+which is the most that can be said before the control-device inventory exists, and is more than
+the national ratio could say at all.
+
+One caveat belongs with these provincial numbers rather than after them. The coordinate ingest
+resolves every located station's province by dropping its coordinate into the \ang{0.05}
+grid and reading the cell, and a cell is about \SI{5.5}{\kilo\metre} across.
+\texttt{outputs/pakemis\_power\_province\_boundary\_audit.csv} tests all \num{77} located
+stations against their curated records and against their sources' own province fields:
+\num{7} are misplaced, every one of them within \SI{3.4}{\kilo\metre} of a district line.
+The clearest is the Hub site, where two stations \SI{1.11}{\kilo\metre} apart already sit in
+different provinces in this repository---the oil station recorded in Balochistan, the coal
+station in Sindh because its ingest copies the raster rather than the Global Energy Monitor
+field beside it, which says Balochistan. At FY2021--22 the coal station alone burned
+\SI{25.5}{\percent} of the coal generated in Pakistan, some \SI{6.4}{\mega\tonne} of
+CO\textsubscript{2}; across the ledger years the misplaced stations carry between
+\SI{1.5}{\percent} and \SI{10.3}{\percent} of plant-ledger generation, the low end being the
+FY2023--24 reference, where the Hub coal station barely ran.
+
+A finer grid would not settle this, which is why the audit corrects nothing. For four of the
+seven the simplified district polygons disagree with the curated record as well---ray casting
+places the Hub oil station in Karachi, both Guddu units in Dera Ghazi Khan and Tapal Energy in
+Lasbela---so the error is in the boundary geometry at these sites and not only in the
+rasterisation of it. Province and district are also one decision here: the district raster is
+built inside the province raster, and the nine-year products assert
+$\mathrm{ADM1} = \mathrm{ADM2} + \text{outside} + \text{unallocated}$, so relabelling a
+station's province while its mass stays binned in the old district would break the identity
+that the spatial layer exists to hold. Correcting these seven is a declared provincial re-base
+with a geometry decision inside it; the audit measures what it would move, and a guard holds
+the list at seven so an eighth cannot appear in silence.
+
+The audit now publishes \emph{which kind} of conflict each station has, because the seven are
+three problems and not one. For \num{2} the frame disagrees with itself---the
+\SI{0.05}{\degree} province raster and the district polygon name different provinces, so no
+relabelling settles it. \num{1} sits in a hole: no district polygon contains the Hub coal
+station at all, \SI{0.13}{\kilo\metre} from the nearest vertex. For the remaining \num{4}
+the curated and source records agree and the frame dissents. \num{0} of the seven is a
+station-record error, which is the result that fixes the remedy: every conflict is in the
+geometry, so a boundary revision addresses all of them and a station relabelling addresses
+none. The classification is a declared vocabulary rather than a vote, because the raster
+reads the province file and the containing test reads the district file---a disagreement
+between them can be a file difference or a resolution difference, and nothing held says
+which, so counting them as two witnesses would invent an authority neither has.

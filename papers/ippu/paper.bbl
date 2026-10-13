@@ -1,0 +1,217 @@
+\begin{thebibliography}{28}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Techreport
+\bibitem[{{Attock Cement Pakistan Limited}(2024)}]{attockcement2024}
+\bibinfo{author}{{Attock Cement Pakistan Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Attock Cement Pakistan Limited.
+\newblock \URLprefix
+  \url{https://attockcement.com/wp-content/uploads/2024/09/Attock-Annual-Report-2024.pdf}.
+%Type = Techreport
+\bibitem[{{Bestway Cement Limited}(2024)}]{bestwaycement2024}
+\bibinfo{author}{{Bestway Cement Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Bestway Cement Limited.
+\newblock \URLprefix
+  \url{https://www.bestway.com.pk/wp-content/uploads/2024/08/Annual-Report-2024.pdf}.
+%Type = Techreport
+\bibitem[{{Cherat Cement Company Limited}(2024)}]{cheratcement2024}
+\bibinfo{author}{{Cherat Cement Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Cherat Cement Company Limited.
+\newblock \URLprefix
+  \url{https://gfg.com.pk/cccl/wp-content/uploads/2024/09/CCL-A.R.-2024-Final.pdf}.
+%Type = Techreport
+\bibitem[{{Dandot Cement Company Limited}(2024)}]{dandotcement2024}
+\bibinfo{author}{{Dandot Cement Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Dandot Cement Company Limited.
+\newblock \URLprefix
+  \url{https://www.dandotcement.com/AnualReports/2024/AnnualReportYear2024.pdf}.
+%Type = Techreport
+\bibitem[{{Dewan Cement Limited}(2025)}]{dewancement2025}
+\bibinfo{author}{{Dewan Cement Limited}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Annual Report 2025: Six-Year Operating Statistics}.
+\newblock \bibinfo{type}{Technical Report}. Dewan Cement Limited and Pakistan
+  Stock Exchange.
+\newblock \URLprefix
+  \url{https://www.psx.com.pk/psx/files-attachment/?file=261125.pdf}.
+%Type = Techreport
+\bibitem[{{D.G. Khan Cement Company Limited}(2024)}]{dgkcement2024}
+\bibinfo{author}{{D.G. Khan Cement Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. D.G. Khan Cement Company Limited.
+\newblock \URLprefix
+  \url{https://www.dgcement.com/financial-reports/DGAnnual2024.pdf}.
+%Type = Techreport
+\bibitem[{{Fatima Fertilizer Company Limited}(2024)}]{fatima2024}
+\bibinfo{author}{{Fatima Fertilizer Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Fatima Fertilizer Company Limited.
+\newblock \URLprefix \url{https://dps.psx.com.pk/download/document/250354.pdf}.
+%Type = Techreport
+\bibitem[{{Fauji Cement Company Limited}(2024)}]{faujicement2024}
+\bibinfo{author}{{Fauji Cement Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Fauji Cement Company Limited.
+\newblock \URLprefix
+  \url{https://fccl.com.pk/eng/wp-content/uploads/2025/05/FCCL-Annual-Report-2024.pdf}.
+%Type = Techreport
+\bibitem[{{Fecto Cement Limited}(2024)}]{fectocement2024}
+\bibinfo{author}{{Fecto Cement Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Corporate Briefing Session 2024}.
+\newblock \bibinfo{type}{Technical Report}. Fecto Cement Limited and Pakistan
+  Stock Exchange.
+\newblock \URLprefix
+  \url{https://www.psx.com.pk/psx/files-attachment/?file=243754.pdf}.
+%Type = Techreport
+\bibitem[{{Fecto Cement Limited}(2025)}]{fectocement2025}
+\bibinfo{author}{{Fecto Cement Limited}}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Annual Report 2025 (year ended 30 June 2025), FY2024
+  comparative production and sales volumes}.
+\newblock \bibinfo{type}{Technical Report}. Fecto Cement Limited and Pakistan
+  Stock Exchange.
+\newblock \URLprefix
+  \url{https://financials.psx.com.pk/lib/DownloadPDF.php?id=261224}.
+%Type = Techreport
+\bibitem[{{Flying Cement Company Limited}(2024)}]{flyingcement2024}
+\bibinfo{author}{{Flying Cement Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Flying Cement Company Limited.
+\newblock \URLprefix
+  \url{http://www.flyingcement.com/pdf/2023-2024/annual_report2024.pdf}.
+%Type = Techreport
+\bibitem[{{Gharibwal Cement Limited}(2024)}]{gharibwalcement2024}
+\bibinfo{author}{{Gharibwal Cement Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Gharibwal Cement Limited.
+\newblock \URLprefix \url{https://gharibwalcement.com/PDF/Annual2024.pdf}.
+%Type = Misc
+\bibitem[{{Government of Pakistan}(2026)}]{pakcrt2026}
+\bibinfo{author}{{Government of Pakistan}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Common reporting tables for the electronic reporting
+  of pakistan's national greenhouse gas inventory}.
+\newblock \bibinfo{howpublished}{Submission to the UNFCCC}.
+\newblock \URLprefix \url{https://unfccc.int/documents/655653}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006ippu}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 3: Industrial Processes and Product Use}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Hayama, Japan.
+\newblock \URLprefix
+  \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol3.html}.
+%Type = Techreport
+\bibitem[{{IPCC}(2019)}]{ipcc2019}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2019}.
+\newblock \bibinfo{title}{2019 Refinement to the 2006 {IPCC} Guidelines for
+  National Greenhouse Gas Inventories}.
+\newblock \bibinfo{type}{Technical Report}. IPCC, Switzerland.
+%Type = Techreport
+\bibitem[{{Kohat Cement Company Limited}(2024)}]{kohatcement2024}
+\bibinfo{author}{{Kohat Cement Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Kohat Cement Company Limited.
+\newblock \URLprefix
+  \url{https://www.kohatcement.com/pdf_files/reports/638627682528324242_Kohat_Cement_Annual_Report-2024.pdf}.
+%Type = Techreport
+\bibitem[{{Lucky Cement Limited}(2024)}]{luckycement2024}
+\bibinfo{author}{{Lucky Cement Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Lucky Cement Limited.
+\newblock \URLprefix
+  \url{https://www.lucky-cement.com/wp-content/uploads/2024/09/Lucky%20Cement%20AR%202024_Final_.pdf}.
+%Type = Techreport
+\bibitem[{{Maple Leaf Cement Factory Limited}(2024)}]{mapleleafcement2024}
+\bibinfo{author}{{Maple Leaf Cement Factory Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Maple Leaf Cement Factory Limited
+  and Pakistan Stock Exchange.
+\newblock \URLprefix
+  \url{https://www.psx.com.pk/psx/files-attachment/?file=238846.pdf}.
+%Type = Misc
+\bibitem[{{Ozone Secretariat}(2026)}]{pakistanozoneprofile}
+\bibinfo{author}{{Ozone Secretariat}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Pakistan country profile: Reported hfc consumption}.
+\newblock \bibinfo{howpublished}{Secretariat for the Vienna Convention and
+  Montreal Protocol}.
+\newblock \URLprefix \url{https://ozone.unep.org/countries/profile/pak}.
+%Type = Techreport
+\bibitem[{{Pakistan Bureau of Statistics}(2024)}]{pbsqim2024}
+\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Quantum Index of Large Scale Manufacturing
+  Industries, Production Data: July 2023--June 2024}.
+\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
+\newblock \URLprefix
+  \url{https://www.pbs.gov.pk/sites/default/files/industry_mining_and_energy/qim/2024/june/Table%202.pdf}.
+%Type = Techreport
+\bibitem[{{Pioneer Cement Limited}(2024)}]{pioneercement2024}
+\bibinfo{author}{{Pioneer Cement Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Pioneer Cement Limited.
+\newblock \URLprefix
+  \url{https://pioneercement.com/cp_content/uploads/2024/annual-accounts-2024.pdf}.
+%Type = Techreport
+\bibitem[{{Power Cement Limited}(2024)}]{powercement2024}
+\bibinfo{author}{{Power Cement Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Power Cement Limited.
+\newblock \URLprefix
+  \url{https://powercement.com.pk/wp-content/uploads/2024/10/PCL-Annual-Report-2024.pdf}.
+%Type = Techreport
+\bibitem[{{State Bank of Pakistan}(2024)}]{sbpstatsupp2024}
+\bibinfo{author}{{State Bank of Pakistan}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report FY2023--24: Statistical Supplement}.
+\newblock \bibinfo{type}{Technical Report}. State Bank of Pakistan.
+\newblock \URLprefix
+  \url{https://www.sbp.org.pk/reports/annual/aarFY24/Statistical-Supplement/Complete.pdf}.
+%Type = Techreport
+\bibitem[{{Thatta Cement Company Limited}(2024)}]{thattacement2024}
+\bibinfo{author}{{Thatta Cement Company Limited}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Annual Report 2024}.
+\newblock \bibinfo{type}{Technical Report}. Thatta Cement Company Limited.
+\newblock \URLprefix \url{https://dps.psx.com.pk/download/document/237523.pdf}.
+%Type = Misc
+\bibitem[{{UNFCCC}(2006)}]{pakarabcdm}
+\bibinfo{author}{{UNFCCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{Nitrous oxide abatement at pakarab fertilizers,
+  pakistan: Cdm project record}.
+\newblock \URLprefix
+  \url{https://cdm.unfccc.int/Projects/DB/TUEV-SUED1155134039.49/view}.
+%Type = Misc
+\bibitem[{{UNFCCC}(2011)}]{fatimacdm}
+\bibinfo{author}{{UNFCCC}}, \bibinfo{year}{2011}.
+\newblock \bibinfo{title}{Nitrous oxide abatement at fatima fertilizer,
+  pakistan: Cdm project record}.
+\newblock \URLprefix
+  \url{https://cdm.unfccc.int/Projects/DB/RWTUV1322686352.38/view}.
+%Type = Misc
+\bibitem[{{United Nations Statistics Division}(2024)}]{uncomtrade2024clinker}
+\bibinfo{author}{{United Nations Statistics Division}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{{UN Comtrade}: Pakistan trade in cement clinker, hs
+  252310}.
+\newblock \bibinfo{howpublished}{Monthly public-API records, reporter 586 and
+  partner World}.
+\newblock \URLprefix \url{https://comtradeplus.un.org/}.
+%Type = Misc
+\bibitem[{{World Bank}(2022)}]{witsclinker2022}
+\bibinfo{author}{{World Bank}}, \bibinfo{year}{2022}.
+\newblock \bibinfo{title}{{WITS/UN Comtrade}: Pakistan trade in cement clinker,
+  hs 252310, 2022}.
+\newblock \bibinfo{howpublished}{World Integrated Trade Solution}.
+\newblock \URLprefix
+  \url{https://wits.worldbank.org/trade/comtrade/en/country/PAK/year/2022/tradeflow/Exports/partner/ALL/product/252310}.
+
+\end{thebibliography}

@@ -1,0 +1,14 @@
+fiscal_year,gas_supplier,plant,feed_mmcf,fuel_mmcf,total_mmcf,source,note
+2024-25,SNGPL,Pak-Arab,,14,14,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,SNGPL,Hazara Phosphate,,45,45,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,SNGPL,EFERT,37517,3302,40819,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,LNG,Agritech,8636,2033,10669,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,LNG,Fatimafert,13628,2745,16373,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,OGDCL,EFERT,,2700,2700,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,SSGCL,FFC,18199,139,18338,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,Mari,EFERT,28259,11535,39794,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,Mari,FFC I & II,51123,11894,63017,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,Mari,FFC III,29213,4134,33347,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,Mari,Fatima Fertilizer,32226,4750,36976,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,Mari,Pak-Arab,15200,3860,19060,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,
+2024-25,All,Total,234001,47152,281153,NFDC Annual Fertilizer Review 2024-25 (data/nfdc/AFR_2024-25.txt) Table 40,"83.2% feed / 16.8% fuel; ~770 MMCFD against OGRA's 756 MMCFD fertiliser row for FY2023-24; both halves belong to 2.B.1 under the IPCC ammonia method (2006 GL V3 Ch3), which allocates the total gas requirement to the process. Printed fuel rows sum to 47,151 against this row's 47,152 - a 1-MMCF rounding slip in the source"

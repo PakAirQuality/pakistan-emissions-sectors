@@ -1,0 +1,226 @@
+% ===========================================================================
+\section{Reproducibility}
+\label{app:repro}
+% ===========================================================================
+
+The inventory runs from a documented pipeline (\texttt{python3 run\_all.py}) that
+executes the agricultural stages --- national inventory, provincial downscaling,
+gridding, district downscaling, time series, Monte-Carlo, key-category, sensitivity,
+and uncertainty-input analysis, completeness table, and a consolidated dashboard ---
+and writes all tables and figures reported here. The exploratory land sector is an
+\emph{optional} module (skipped under \texttt{--quick}; see Supplementary Note~S1)
+and feeds none of the agricultural results. The agricultural core runs on the Python
+standard library alone; the gridding and figures use an optional geospatial stack.
+The shipped surfaces need nothing supplied: the FIRMS extraction and the MapSPAM
+rice raster are both committed-or-held and hash-pinned, so ``one command'' means
+one command (the default contract is set out below). Every emission factor, parameter, and
+activity value is stored in a versioned data file, and a suite of more than 240 unit
+tests checks the IPCC worked-example calculations, exact reconciliation at each scale
+(national, provincial, gridded, district, and the district\,$\times$\,year panel),
+emission-factor traceability, and the key-category, sensitivity, uncertainty, and
+completeness outputs. The suite also covers the air-pollutant engine and its shared
+nitrogen ledger --- ledger closure at every stage, the separation of the pre-field and
+post-application volatilisation fractions, conservation between the \NHthree{}-N and
+\NHthree{}+\NOx{} bases, the province and grid allocation of every pollutant, the
+matched-year and spatial benchmarks, and the structural manure-management scenarios ---
+together with a consistency check that every headline number and figure in this
+manuscript still matches the output file it was generated from.
+
+\paragraph{Code and data availability.} The full source code, data files and tests are
+version-controlled; DOIs are minted at archival (none exists yet, and no identifier is
+printed before it resolves), and the archived release corresponding to any submitted
+version will let reviewers run the same code that produced these numbers. The archive contains the calculation engine for both
+layers, the shared nitrogen ledger (\texttt{outputs/n\_ledger\_2024.csv}, every stage-flow
+row as kilograms of nitrogen and as a share of what was excreted) and its diagnostic runs
+(\texttt{outputs/n\_ledger\_stage\_comparison.csv}, the IPCC and EMEP ammonia-nitrogen
+factors set against each other stage by stage), the versioned emission-factor
+and activity files, the gridded (GeoTIFF, EPSG:4326) and district (CSV) products, the
+1990--2024 time series, the uncertainty and benchmark outputs---including
+\texttt{outputs/air\_\allowbreak uncertainty\_\allowbreak montecarlo.csv}, the
+per-pollutant intervals with the Approach~1 comparison beside them---and the test suite; units,
+coordinate reference system and time coverage are recorded with each product, and a run
+manifest records the exact inputs behind the tables reported here. Reproduction: install the (optional) geospatial stack and
+run \texttt{python3 run\_all.py}. The shipped surfaces reproduce as-is with no
+user-supplied input; the contract is stated in full in \ref{app:data}. Expected outputs are the CSV tables and PNG figures
+reproduced here (written under \texttt{outputs/}). The deposited capsule carries its own
+single command, \texttt{sh capsule/run\_tests.sh}, which reruns the agriculture suite in a
+fresh interpreter with nothing installed; in the full repository
+\texttt{python3 -m pytest tests} runs the
+test suite, as does \texttt{python3 -m unittest discover tests}, which is what continuous
+integration uses. On the released commit both pass in full; on any other commit the
+release-integrity tests fail by design: they compare the
+committed release artefacts---manifest, cover, checksums, PDFs---against the working tree,
+and they can only pass on the exact commit the artefacts were cut from. They are not a failed
+reproduction, and a reader who sees them should not read them as one. The code is released under the MIT licence and the derived data under
+CC-BY-4.0; third-party inputs retain their original licences.
+
+\section{Data acquisition}
+\label{app:data}
+
+THE REPRODUCTION CONTRACT, stated once. Livestock density (\GLW{}, 2020) is retrieved
+directly from the FAO open cloud store. The FIRMS VIIRS extraction is \emph{committed}
+and hash-pinned in \texttt{data/gis/manual/}, so no access key is needed to reproduce
+(a key is needed only to RE-FETCH, which would create a new extraction). MapSPAM~2020
+is \emph{held} (V2r2, hash-pinned in \texttt{RICE\_SOURCES.json}) and its former
+cropland-fallback class is deleted from the allow-list, so a checkout missing the
+raster refuses the build rather than silently substituting. The DEFAULT reproducible
+surface is therefore: MapSPAM for rice, frozen FIRMS for burning, and nothing to
+supply. Re-fetching FIRMS or swapping the rice surface (the own-year GCD-Rice 2023
+classification ships as the priced alternative) changes the surface and is an
+\emph{upgrade}: it creates a new configuration and a new manifest, and its outputs
+are not the ones reported here. The
+pipeline auto-detects supplied files and logs which proxy each category used.
+
+\section{IPCC common reporting table}
+\label{app:crt}
+
+Table~\ref{tab:crt} gives a Common-Reporting-Table view of the agriculture sector
+for the base year (1990) and the latest year (2024): the underlying activity data,
+the implied emission factor, and the resulting \COe{}. The principal emission and
+carbon factors themselves are listed in the body (Table~\ref{tab:ef-full}).
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}p{0.22\linewidth}lp{0.30\linewidth}rr@{}}
+\toprule
+\textbf{Code / category} & \textbf{Gas} & \textbf{Activity (2024)}
+& \textbf{1990} & \textbf{2024} \\
+\midrule
+3.A Enteric ferment. & \CHfour{} & 245.52 M ruminant head & 54.5 & 151.7 \\
+3.B Manure mgmt.\ & \CHfour{} & 245.52 M ruminant head$^{a}$ & 4.3 & 13.2 \\
+3.B Manure mgmt.\ & \NtwoO{} & 7.78 M t N excreted$^{a}$ & 2.4 & 8.0 \\
+3.C Rice cultivation & \CHfour{} & 3.64 M ha paddy & 9.6 & 16.5 \\
+3.D Managed soils & \NtwoO{} & F$_{SN}$ 3.78, F$_{ON}$ 2.34, F$_{PRP}$ 3.18, F$_{CR}$ 0.21 M t N$^{d}$ & 10.3 & 28.5 \\
+3.F Field burning & \CHfour{},\NtwoO{} & 7.11 M t d.m.\ combusted$^{c}$ & 0.3 & 0.7 \\
+3.H Urea application & \COtwo{} & 6.58 M t urea$^{b}$ & 1.9 & 4.8 \\
+\midrule
+\textbf{Agriculture total} & & & \textbf{83.2} & \textbf{223.5} \\
+\bottomrule
+\end{tabular}
+\caption{IPCC CRT-style summary by category and gas, 1990 and 2024 (\COe{} in Mt,
+AR5). $^{a}$Manure CH\textsubscript{4} is driven by the ruminant herd and its
+N\textsubscript{2}O by the nitrogen excreted by that herd; both are independent of
+the synthetic-fertiliser series. Poultry adds to the head-count but little emission. $^{b}$Urea mass is NFDC's printed national
+offtake for the fiscal year; earlier years, which have no published product split, keep the
+derivation from the national synthetic-N series, and each year states which it used.
+$^{c}$The residue activity is dry matter actually
+\emph{combusted}: production $\times$ residue ratio $\times$ burned fraction gives
+\SI{8.4}{}~Mt of dry matter reaching the fire, of which the combustion factor
+$C_f=0.85$ leaves \SI{7.1}{}~Mt burnt. Emission factors are applied to the latter. The full
+destination accounting is published in
+\texttt{outputs/agriculture\_crop\_residue\_ledger\_2024.csv}.
+Liming (3.G): not estimated, assumed negligible on
+Pakistan's alkaline, calcareous soils pending national lime-use data.
+$^{d}$The four nitrogen inputs of Eq.~11.1, from the shared ledger: synthetic
+fertiliser, applied organic manure, pasture deposition and crop residue. They are not
+summed here because the pasture term carries its own factor (EF$_{3\mathrm{PRP}}$).}
+\label{tab:crt}
+\end{table}
+
+\section{Completeness and QA/QC}
+\label{app:completeness}
+
+Table~\ref{tab:completeness} gives the notation-key coverage of the agriculture
+categories. All major agriculture source categories are represented, with the
+not-estimated (NE) gaps shown explicitly: soil-organic nitrogen mineralisation
+($F_{SOM}$), which requires field data; and liming, set to NE (assumed negligible on
+Pakistan's alkaline, calcareous soils pending national lime-use data) rather than
+assumed not to occur. Dung-cake combustion is the one cross-sector transfer to
+Energy. Land-sector completeness (forest, cropland/grassland SOC, wetlands,
+harvested wood products) is documented in Supplementary Note~S1. Air-pollutant
+co-emissions (\NHthree{}, \NOx{}, PM$_{2.5}$, CO, NMVOC, BC) are estimated for the
+relevant categories in Section~\ref{sec:airpollutants} and reported in native mass,
+outside this \COe{} completeness table; agricultural SO$_2$ is estimated but small
+($\sim$2.6~kt, from residue burning only). Quality control is automated (source
+traceability, unit checks, exact reconciliation, benchmark bands); quality
+assurance is the independent FAOSTAT and EDGAR comparison; and any method or factor
+change --- such as the harmonisation of the volatilisation factor $EF_4$ to the
+dry-climate value across the manure and soils terms --- triggers a full
+1990--2024 recalculation to preserve time-series consistency.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}llc@{}}
+\toprule
+\textbf{Category} & \textbf{Gas} & \textbf{Key} \\
+\midrule
+3.A Enteric fermentation        & \CHfour{}          & E \\
+3.B Manure management           & \CHfour{}, \NtwoO{} & E \\
+3.C Rice cultivation            & \CHfour{}          & E \\
+3.D Agricultural soils          & \NtwoO{}           & E \\
+\quad SOC mineralisation ($F_{SOM}$) & \NtwoO{}      & NE \\
+3.E Savanna burning             & ---                & NO \\
+3.F Field burning of residues   & \CHfour{}, \NtwoO{} & E \\
+3.G Liming                      & \COtwo{}           & NE \\
+3.H Urea application            & \COtwo{}           & E \\
+Dung-cake combustion            & multi              & IE \\
+\bottomrule
+\end{tabular}
+\caption{Completeness and notation keys for the agriculture sector (IPCC Vol.~1
+Ch.~8). E~estimated, NE~not estimated, NO~not occurring, IE~included elsewhere
+(Energy). Land-sector categories are in Supplementary Note~S1.}
+\label{tab:completeness}
+\end{table}
+
+\section{Uncertainty inputs}
+\label{app:unc}
+
+The uncertainty analysis (Section~\ref{sec:methods}) is reproducible from the inputs
+below. Each category's combined uncertainty is a two-stage quadrature: every emission
+component combines an activity-data and an emission-factor uncertainty (Eq.~3.1), and
+the components are aggregated to the category (Eq.~3.2). The full underlying-input
+table --- per component, the activity-data uncertainty, the factor uncertainty, their
+sources, and which inputs are shared across categories --- is given in Supplementary
+Note~S3; the factor uncertainties also appear as the $\pm$\% column of
+Table~\ref{tab:ef-full}. Table~\ref{tab:unc} gives the resulting per-category
+distribution used by the ANALYTIC comparison alone---the Monte-Carlo samples the engine's
+components, not these fitted category distributions: the point estimate $E_c$, the combined
+95\% half-width, and the mean-preserving lognormal parameters
+$\sigma_{\ln}=(\text{half-width}/100)/1.96$ and
+$\mu_{\ln}=\ln E_c-\sigma_{\ln}^2/2$. Correlation is modelled in one specific place and
+not elsewhere, and the distinction matters: components that are separate rows only
+because they follow different spatial proxies --- the managed-soils indirect
+volatilisation and leaching streams --- share a single emission factor ($EF_4$ and
+$EF_5$ respectively), so they are treated as perfectly correlated, summed linearly
+before the quadrature step and given one shared deviate per group in the
+Monte-Carlo. Treating them as independent would shrink the reported band purely
+because the rows were cut more finely. All other within- and cross-category
+correlations (shared activity data, common factor families across categories) are
+\emph{not} modelled as shared deviates \emph{in this sector-scoped stream}, which samples
+component totals; the national run's parameter graph does carry two of them, and
+Supplementary Note~S3 reports their effect. Approach~1 combines these analytically; the
+Monte-Carlo samples the \emph{components} themselves---each row drawn
+mean-preserving lognormal at its declared width, with the correlated soils groups
+receiving one shared deviate per draw---and the category and sector totals are the
+sums of those sampled rows in every realisation.
+
+\begin{table}[!htbp]
+\centering
+\footnotesize
+\begin{tabular}{@{}lcccc@{}}
+\toprule
+\textbf{Category} & \textbf{$E_c$ (Mt)} & \textbf{$\pm$\% (95\%)} & \textbf{$\mu_{\ln}$} & \textbf{$\sigma_{\ln}$} \\
+\midrule
+Enteric fermentation & 151.7 & 25.4 &  5.013 & 0.129 \\
+Manure management    &  21.2 & 32.9 &  3.042 & 0.167 \\
+Managed soils        &  28.5 & 47.1 &  3.323 & 0.237 \\
+Rice cultivation     &  16.6 & 60.9 &  2.760 & 0.304 \\
+Field burning        &   0.7 & 44.9 & $-0.426$ & 0.226 \\
+Urea application     &   4.8 & 11.2 &  1.571 & 0.057 \\
+\midrule
+\textbf{Total}       & \textbf{223.4} & \textbf{19.1} & --- & --- \\
+\bottomrule
+\end{tabular}
+\caption{Derived per-category uncertainty parameters. $\mu_{\ln},\sigma_{\ln}$ are
+the mean-preserving lognormal parameters implied by each category's 95\% half-width, and
+they describe an ANALYTIC comparison, not the simulation: the Monte-Carlo samples the
+engine's \emph{components} (with shared deviates inside declared correlation groups) and
+obtains each category as the sum of its sampled rows. The national total is likewise a
+sum, never a sampled input distribution, so no $\mu_{\ln}/
+\sigma_{\ln}$ is given for it. Underlying activity/factor inputs and sources are in
+Supplementary Note~S3. Generated by \texttt{src/pkinv/eval/uncertainty\_inputs.py}.}
+\label{tab:unc}
+\end{table}

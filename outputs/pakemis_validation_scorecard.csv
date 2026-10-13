@@ -1,0 +1,41 @@
+# THE VALIDATION SCORECARD (rc33): the (property x grain) space, one row
+# per cell. A covered cell carries its verdict tally and the best
+# independence class achieved; an empty cell is a declared_absent
+# ROADMAP row. Advancing validation step by step = turning one row.
+property_tested,grain,validations,verdict_tally,best_independence,status,note
+magnitude,national,14,,independent-compilation,covered,
+magnitude,sector,5,,partial,covered,2 declared-absent rows alongside
+magnitude,category,23,no_record=32;pass=108;review=19,large,covered,
+magnitude,province,1,,partial,covered,
+magnitude,district,2,,none,covered,
+magnitude,cell,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+magnitude,month,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+magnitude,month_district,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+magnitude,facility,1,,partial,covered,
+magnitude,point,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+magnitude,worksheet_cell,2,,partial,covered,
+magnitude,sample,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,national,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,sector,0,,,declared_absent,"declared absent by catalog row(s): abs-agriculture-timing,abs-fugitives-timing,abs-ippu-timing,abs-residential-timing,abs-waste-timing"
+timing,category,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,province,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,district,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,cell,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,month,15,no_record=15;pass=240,large,covered,
+timing,month_district,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,facility,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,point,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,worksheet_cell,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+timing,sample,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+geography,national,1,,independent-compilation,covered,
+geography,sector,0,,,declared_absent,"declared absent by catalog row(s): abs-industry-geography-non-kiln,abs-residential-geography,abs-waste-geography"
+geography,category,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+geography,province,5,by_construction=950;no_record=15;pass=1;review=45,large,covered,
+geography,district,10,declared_absent=6;no_record=6;pass=53,large,covered,1 declared-absent rows alongside
+geography,cell,0,,,declared_absent,declared absent by catalog row(s): geo-nh3-cell-2015
+geography,month,3,pass=76;review=50,large,covered,
+geography,month_district,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+geography,facility,5,pass=70,large,covered,
+geography,point,3,,large,covered,
+geography,worksheet_cell,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry
+geography,sample,0,,,declared_absent,no validation exists for this cell; the absence is the registered fact and this row is the roadmap entry

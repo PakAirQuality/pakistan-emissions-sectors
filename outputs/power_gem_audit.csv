@@ -1,0 +1,26 @@
+# GEM coal tracker (July 2026) vs the NEPRA per-plant fuel ledger.
+# COMPARATOR ONLY: no total, factor or allocation reads this file.
+# Correspondence declared in pkinv/report/gem_audit.py, never fuzzy.
+gem_plant,gem_unit,capacity_mw,gem_status,coal_type,latitude,longitude,ledger_plant,ledger_rows,match_class,note
+Dera Ghazi Khan Cement power station,--,30.0,operating,unknown,30.33167,70.5394,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Faisalabad Sitara Chemical power plant,Unit 1,40.0,operating,unknown,31.522924,73.388223,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Faisalabad Sitara Chemical power plant,Unit 2,50.0,operating,unknown,31.522924,73.388223,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Fauji Fertilizer power station,--,118.0,operating,unknown,24.83309,67.41962,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Hub Cement power station,--,30.0,operating,unknown,25.15589,66.78361,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Hubco power station,Unit 1,660.0,operating,unknown,24.914675,66.68876,China Power Hub,5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Hubco power station,Unit 2,660.0,operating,unknown,24.914675,66.68876,China Power Hub,5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Jamshoro power station,Unit 5,660.0,operating,subbituminous,25.472222,68.266111,,0,gem_only,"an operating GEM unit the NEPRA per-plant ledger does not carry on coal - a census finding to state, never a quantity to import"
+Maple Leaf power station,--,40.0,operating,unknown,32.904671,71.610642,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Muzaffargarh sugar mill power station,Unit 1,60.0,operating,unknown,30.29455,70.96697,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Muzaffargarh sugar mill power station,Unit 2,60.0,operating,unknown,30.29455,70.96697,,0,industrial_selfgen,"self-generation outside NEPRA's per-plant tables - a boundary fact; its coal belongs to the industry solid-fuel ledger, not to a census hole"
+Port Qasim EPC power station,Unit 1,660.0,operating,unknown,24.7845,67.36939,Port Qasim Electric Power,5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Port Qasim EPC power station,Unit 2,660.0,operating,unknown,24.7845,67.36939,Port Qasim Electric Power,5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Port Qasim Lucky power station,--,660.0,operating,lignite,24.812805,67.27456,Lucky Electric,3,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Sahiwal power station,Unit 1,660.0,operating,bituminous,30.71422,73.23802,Huaneng Shandong Ruyi (Sahiwal Imported Coal),5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Sahiwal power station,Unit 2,660.0,operating,bituminous,30.71422,73.23802,Huaneng Shandong Ruyi (Sahiwal Imported Coal),5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+ThalNova power station,--,330.0,operating,lignite,24.815456,70.388369,ThalNova,2,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Thar Block I power station,Unit 1,660.0,operating,unknown,24.710803,70.302493,Thar Coal Block-I,2,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Thar Block I power station,Unit 2,660.0,operating,unknown,24.710803,70.302493,Thar Coal Block-I,2,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Thar Block II power station,Unit 1,330.0,operating,lignite,24.812481,70.394069,Engro Powergen Thar,5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Thar Block II power station,Unit 2,330.0,operating,lignite,24.812481,70.394069,Engro Powergen Thar,5,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts
+Thar Energy Limited power station,--,330.0,operating,lignite,24.806214,70.400501,Thar Energy,2,matched_grid_ledger,declared correspondence; the ledger's fuel years are NEPRA per-plant accounts

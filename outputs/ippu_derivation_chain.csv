@@ -1,0 +1,51 @@
+# THE DERIVATION CHAIN: the published source, the corrections, what the engine used,
+# and the result - one walk, in the order a reader meets it. Every value is READ from
+# the file named in evidence_file; nothing here is recomputed. A stage a sector has no
+# artifact for is declared absent in a row rather than skipped.
+# Registry: data/verification_chain.csv. See pkinv.report.derivation_chain.
+stage,step,section,subject,item,kind,value,unit,evidence_file,note
+1_source,10,"the process activity, as the producers and PBS report it",2.C.1,Billets and ingots,screen,4914000,t,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 85"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,35432,kt,outputs/ippu_activity_controls_2024.csv,"Pakistan Statistical Year Book 2020, Table 13.2 ""Production of Manufacturing Items"", cement panel (23 reporting factories); sourced there to the Ministry of Industries"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,37022,kt,outputs/ippu_activity_controls_2024.csv,"Pakistan Statistical Year Book 2020, Table 13.2 ""Production of Manufacturing Items"", cement panel (23 reporting factories); sourced there to the Ministry of Industries"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,41148,kt,outputs/ippu_activity_controls_2024.csv,"Pakistan Statistical Year Book 2020, Table 13.2 ""Production of Manufacturing Items"", cement panel (23 reporting factories); sourced there to the Ministry of Industries"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,39924,kt,outputs/ippu_activity_controls_2024.csv,"Pakistan Statistical Year Book 2020, Table 13.2 ""Production of Manufacturing Items"", cement panel (23 reporting factories); sourced there to the Ministry of Industries"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,comparison,39122,kt,outputs/ippu_activity_controls_2024.csv,"Pakistan Statistical Year Book 2020, Table 13.2 ""Production of Manufacturing Items"", cement panel (23 reporting factories); sourced there to the Ministry of Industries"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,39121,kt,outputs/ippu_activity_controls_2024.csv,State Bank of Pakistan Annual Report FY2023-24 Statistical Supplement; Manufactured Goods time series
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,49797,kt,outputs/ippu_activity_controls_2024.csv,State Bank of Pakistan Annual Report FY2023-24 Statistical Supplement; Manufactured Goods time series
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,48011,kt,outputs/ippu_activity_controls_2024.csv,State Bank of Pakistan Annual Report FY2023-24 Statistical Supplement; Manufactured Goods time series
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,control,41448,kt,outputs/ippu_activity_controls_2024.csv,State Bank of Pakistan Annual Report FY2023-24 Statistical Supplement; Manufactured Goods time series
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,estimate,39566,kt,outputs/ippu_activity_controls_2024.csv,"PBS QIM 2015-16=100, Table 1/Table 2, June 2024, item 83; corroborated by SBP FY2023-24 Statistical Supplement"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.3,Glass plates and sheets,screen,20205,000 m2,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 82"
+1_source,10,"the process activity, as the producers and PBS report it",2.F,HFC consumption,control,9815266,t CO2e,outputs/ippu_activity_controls_2024.csv,"Ozone Secretariat Pakistan country profile, HFC consumption chart"
+1_source,10,"the process activity, as the producers and PBS report it",2.D.1,Lubricating oil,screen,130513,000 L,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 48"
+1_source,10,"the process activity, as the producers and PBS report it",2.C.1,Pig iron,screen,0,t,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 84"
+1_source,10,"the process activity, as the producers and PBS report it",2.B.7,Soda ash,screen,785283,t,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 58"
+3_correction,20,"the cement material balance: clinker in, clinker out",clinker,clinker in cement,1,29674.5,kt,outputs/ippu_cement_material_balance_2024.csv,pbs_qim_fy2023_24
+3_correction,20,"the cement material balance: clinker in, clinker out",clinker,imports for consumption,-1,26.131,kt,outputs/ippu_cement_material_balance_2024.csv,"UN Comtrade public API; reporter 586, partner World, flow M; UN Comtrade public API; reporter 586, partner World, flow X"
+3_correction,20,"the cement material balance: clinker in, clinker out",clinker,exports,1,3792.074,kt,outputs/ippu_cement_material_balance_2024.csv,"UN Comtrade public API; reporter 586, partner World, flow M; UN Comtrade public API; reporter 586, partner World, flow X"
+3_correction,20,"the cement material balance: clinker in, clinker out",clinker,stock increase,1,0.0,kt,outputs/ippu_cement_material_balance_2024.csv,no public FY2023-24 stock control; zero reference assumption
+3_correction,20,"the cement material balance: clinker in, clinker out",clinker,inferred domestic production,0,33440.443,kt,outputs/ippu_cement_material_balance_2024.csv,IPCC Equation 2.1/worksheet balance
+3_correction,30,the independent trade-corrected clinker bridge to CO2,,Independent trade-corrected f=0.75,bridge,34.585831,Mt clinker,outputs/ippu_cement_crt_bridge_2022.csv,independent reconstructed clinker activity
+3_correction,30,the independent trade-corrected clinker bridge to CO2,,Independent trade-corrected f=0.95,bridge,43.452031,Mt clinker,outputs/ippu_cement_crt_bridge_2022.csv,independent high-clinker sensitivity
+3_correction,30,the independent trade-corrected clinker bridge to CO2,,CRT reported activity with default clinker EF,bridge,50.2455,Mt clinker,outputs/ippu_cement_crt_bridge_2022.csv,counterfactual only because the CRT activity basis is undocumented
+3_correction,30,the independent trade-corrected clinker bridge to CO2,,CRT submitted activity and implied factor,bridge,50.2455,Mt clinker,outputs/ippu_cement_crt_bridge_2022.csv,official arithmetic; institutional activity and factor derivation requested
+2_used,50,the streams the engine prices,CO2,Clinker calcination CO2,used,21815.6484,Gg,outputs/ippu_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Ammonia process CO2 net of urea recovery,used,3243.300459153049,Gg,outputs/ippu_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Crude steel (electric route) process CO2,used,393.12,Gg,outputs/ippu_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Lubricating oil oxidised in use,used,82.9455176,Gg,outputs/ippu_by_stream_2024.csv,
+2_used,50,the streams the engine prices,CO2,Grease oxidised in use,used,0.34476860000000004,Gg,outputs/ippu_by_stream_2024.csv,
+4_final,80,"the sector's own totals, in its own words",,Cement production,final,21.8156484,Mt CO2e AR5,outputs/ippu_totals_2024.csv,"FY2023-24 reference (rc30 re-base): the complete 16-company producer census's observed clinker production, 41.953170 Mt; process CO2 only. The PBS-QIM 0.75-fraction trade-corrected model is the named diagnostic beside it."
+4_final,80,"the sector's own totals, in its own words",,Ammonia production,final,3.24330046,Mt CO2e AR5,outputs/ippu_totals_2024.csv,rc52: Tier 1 calibrated - NFDC production x NH3 stoichiometry x 1.815 t CO2/t NH3 net of urea recovery (44/60); method envelope in pakemis_ammonia_nitric_series.csv
+4_final,80,"the sector's own totals, in its own words",,Iron and steel production,final,0.39312,Mt CO2e AR5,outputs/ippu_totals_2024.csv,"rc52: Tier 1 EAF 0.08 t CO2/t on QIM billets and ingots; pig iron zero, so the electric route is the only one operating"
+4_final,80,"the sector's own totals, in its own words",,Lubricant use,final,0.08329029,Mt CO2e AR5,outputs/ippu_totals_2024.csv,"rc52: Tier 1 ODU (0.2 oil, 0.05 grease) on OCAC non-energy sales x NCV 40.2 x 20.0 t C/TJ"
+4_final,80,"the sector's own totals, in its own words",,IPPU reference total,final,25.53535915,Mt CO2e AR5,outputs/ippu_totals_2024.csv,sum of the four activated categories
+4_final,80,"the sector's own totals, in its own words",,Legacy cement calculation without clinker trade,final,18.72429,Mt CO2e AR5,outputs/ippu_totals_2024.csv,"Provenance only: combines omission of trade with a 48.011 Mt activity value that belongs to FY2021-22, not FY2023-24."
+4_final,80,"the sector's own totals, in its own words",,IPPU categories not yet independently estimated,final,NE,Mt CO2e AR5,outputs/ippu_totals_2024.csv,See ippu_completeness_2024.csv; activity controls are not converted without the process route or application data required by IPCC.
+4_final,90,"every category and gas, on the national table",CO2,Cement production,final,21.81565,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Ammonia production,final,3.2433,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Iron and steel production,final,0.39312,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CO2,Lubricant use,final,0.08329,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR5,reading,25.53536,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR6,reading,25.53536,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,uncert_pct_95,reading,8.1,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,share_pct,reading,5.74,Mt CO2e / pct,outputs/national_all_sectors.csv,

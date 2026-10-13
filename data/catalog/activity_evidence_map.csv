@@ -1,0 +1,77 @@
+# Every source status value that appears in a published file, and the class it means.
+#
+# ⚠ THIS FILE IS THE JUDGEMENT, AND IT IS WHY IT IS A FILE. A status value with no row here fails the
+# build; nothing falls back to `reported`. The tree's own word survives in the published
+# `evidence_note` column, because `verified` and `unchecked` are statements about PakEmis's
+# TRANSCRIPTION, not about what kind of evidence the publisher offered - collapsing the two axes is
+# how "verified" would come to read as "observed".
+#
+# `drop=yes` means the row is NOT published, and the reason says why.
+#
+# A `value` of `*` means "any non-empty value in this column", and such a row takes precedence over
+# the file's own evidence column: that is how a declared split becomes an allocation.
+path,column,value,evidence,drop,reason
+data/activity/industry/ocac_non_energy_sectoral.csv,status,verified,reported,,"OCAC printed it and the transcription was checked against the edition"
+data/activity/industry/ocac_non_energy_sectoral.csv,status,unchecked,reported,,"OCAC printed it; the transcription has not been second-read. A reported statistic either way - the doubt is ours, and it travels in evidence_note"
+data/activity/industry/ocac_non_energy_sectoral.csv,status,restated,reported,,"the figure a later edition's comparison column restated; still the publisher's own, and the transform names the edition"
+data/activity/industry/ocac_non_energy_sectoral.csv,status,closure-failed,reported,,"printed, but this row's section does not sum to its printed total; the failure travels in evidence_note so a reader can exclude it"
+data/activity/industry/ocac_non_energy_sectoral.csv,status,unidentified,reported,,"printed against a product label PakEmis could not map; the label travels verbatim"
+data/activity/livestock_2024.csv,activity_basis,census_enumeration,reported,,"an exact count from the 7th Agricultural Census"
+data/activity/livestock_2024.csv,activity_basis,economic_survey_projection,projection,,"the Economic Survey's estimate for a year it had not enumerated"
+data/activity/crops_2024.csv,flag,,reported,,"the Economic Survey's published area and production"
+data/activity/crops_2024.csv,flag,bales_converted,reported,,"published in bales; the conversion to tonnes is named in transform and does not change what kind of evidence it is"
+data/activity/agriculture/es_fiscal_series.csv,basis,observed_fiscal,reported,,"the Survey's own fiscal-year figure"
+data/activity/agriculture/es_fiscal_series.csv,basis,observed_fiscal_full_year,reported,,"as above, explicitly a completed year"
+data/activity/agriculture/crop_district_panel.csv,qa_flag,,reported,,"a district figure as the source published it"
+data/activity/agriculture/crop_district_panel.csv,qa_flag,pooled_parent,reported,,"published against a parent district that the source did not split; the geography is the parent, and that is what the row says"
+data/activity/agriculture/crop_district_panel.csv,qa_flag,summed_duplicate,reported,,"the source printed the district twice and the rows were summed; a transcription repair, not a new estimate"
+data/activity/agriculture/crop_district_panel.csv,qa_flag,excluded_corrupt,reported,yes,"⚠ NOT PUBLISHED, and the reason is the opposite of what it looks like: the source DID print these figures, but the district could not be identified and adm2_id is empty. A crop figure with no place answers none of the six questions, and publishing it against a blank geography would be worse than omitting it. Seven rows, all one district."
+data/activity/agriculture/crop_district_panel.csv,split_rule,*,allocation,,"⚠ A POOLED PARENT SPLIT ACROSS ITS CHILDREN BY A DECLARED RULE. Not an observed district production figure, and the brief is explicit that it must not be published as one. The rule travels in transform."
+data/activity/industry/coal_by_consumer.csv,revision_status,final,reported,,"the figure the edition prints as final"
+data/activity/industry/coal_by_consumer.csv,revision_status,provisional,reported,,"printed, and the publisher marks it provisional; still their figure"
+data/activity/industry/coal_by_consumer.csv,revision_status,superseded_provisional,reported,,"⚠ a provisional figure a later edition has since replaced; kept so the vintage is visible, and `combinable` limits it to its own edition"
+data/activity/industry/coal_by_sector_vintages.csv,status,verified,reported,,"printed and the transcription second-read"
+data/activity/industry/coal_by_sector_vintages.csv,status,not_printed,not_printed,,"the edition printed a dash; the value stays empty"
+data/activity/industry/coal_by_sector_vintages.csv,status,transcribed_from_secondary,reported,,"the publisher's figure, read from a later carrier rather than the original edition"
+data/activity/industry/coal_by_sector_pey_compendium.csv,status,verified,reported,,"printed in the compendium and checked"
+data/activity/industry/gas_consumption.csv,status,verified,reported,,
+data/activity/industry/gas_consumption.csv,status,restated,reported,,"restated by a later OGRA edition"
+data/activity/industry/gas_consumption.csv,status,verified-ocr,reported,,"read from a scanned edition by OCR and checked"
+data/activity/industry/coal_supply.csv,revision_status,final,reported,,
+data/activity/industry/coal_supply.csv,revision_status,provisional,reported,,
+data/activity/industry/coal_supply.csv,revision_status,superseded_provisional,reported,,"replaced by a later edition"
+data/activity/industry/coal_production_by_province.csv,status,verified,reported,,
+data/activity/ippu/company_clinker_series.csv,status,verified,reported,,"the company printed it in its annual report"
+data/activity/ippu/company_clinker_series.csv,status,verified-ocr,reported,,"read from a scanned filing by OCR and checked"
+data/activity/ippu/company_clinker_series.csv,status,not_printed,not_printed,,"the company did not print this figure; the cell stays empty"
+data/activity/ippu/cement_producer_census_2023_24.csv,clinker_production_status,reported,reported,,
+data/activity/ippu/national_activity.csv,status,control,reported,,"a published national control the company subset is checked against"
+data/activity/ippu/national_activity.csv,status,screen,reported,,"published by PBS; used here only to screen whether a process occurs at scale"
+data/activity/ippu/national_activity.csv,status,comparison,reported,,"a second publisher's figure for the same quantity, kept beside the control"
+data/activity/ippu/national_activity.csv,status,estimate,reported,,"the publisher's own estimate, not this project's"
+data/activity/ippu/chemical_plant_activity.csv,evidence_status,partial_activity_only,reported,,"the plant published production and nothing else"
+data/activity/ippu/chemical_plant_activity.csv,evidence_status,historical_partial_activity,reported,,"an earlier year's published production, kept for the matched reconstruction"
+data/activity/waste/hies_disposal_routes.csv,route,1,survey_estimate,,"a printed HIES category"
+data/activity/waste/hies_disposal_routes.csv,route,2,survey_estimate,,
+data/activity/waste/hies_disposal_routes.csv,route,3,survey_estimate,,
+data/activity/waste/hies_disposal_routes.csv,route,4,survey_estimate,,
+data/activity/waste/hies_disposal_routes.csv,route,5,survey_estimate,,
+data/activity/waste/hies_disposal_routes.csv,route,6,survey_estimate,,
+data/activity/waste/hies_disposal_routes.csv,route,7,survey_estimate,,
+data/activity/waste/hies_disposal_routes.csv,route,collected,derived,,"⚠ ROUTES 1-3 SUMMED, not an eighth category. Publishing it beside its own parts as a peer is how a total comes to be counted twice."
+data/activity/waste/hies_disposal_routes.csv,route,uncollected,derived,,"⚠ ROUTES 4-7 SUMMED; as above"
+data/activity/railways/fuel_consumption.csv,fuel,Gas/Diesel Oil,reported,,"the Year Book's own metered figure"
+data/activity/railways/fuel_consumption.csv,fuel,Residual Fuel Oil,reported,,
+data/activity/power/generation_monthly.csv,fuel_source,pbs_fuel_column,reported,,"how the FUEL LABEL was attributed (pbs_fuel_column); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,sir_fuel_column,reported,,"how the FUEL LABEL was attributed (sir_fuel_column); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,unassigned,reported,,"how the FUEL LABEL was attributed (unassigned); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,plant_fuel_ledger,reported,,"how the FUEL LABEL was attributed (plant_fuel_ledger): the station burned a fuel the PBS sheet left blank and NEPRA SoIR Table 21 names it. It appears for the first time at rc60 - not because the rule is new, but because the ledger names it reads had a column heading joined onto them (""(000 M. Tons) & Gul Ahmed""), so the lookup missed and twelve of Gul Ahmed's FY2020-21 months stayed unlabelled. The generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,pbs_fuel_column_fy2018,reported,,"how the FUEL LABEL was attributed (pbs_fuel_column_fy2018); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,nepra_panel_100%,reported,,"how the FUEL LABEL was attributed (nepra_panel_100%); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,sir_annual_control_bound_98%,reported,,"how the FUEL LABEL was attributed (sir_annual_control_bound_98%); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,pbs_fuel_column_fy2000,reported,,"how the FUEL LABEL was attributed (pbs_fuel_column_fy2000); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,sir_sheet_label_carried_fy2017,reported,,"how the FUEL LABEL was attributed (sir_sheet_label_carried_fy2017); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,nepra_panel_95%,reported,,"how the FUEL LABEL was attributed (nepra_panel_95%); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,sir_sheet_label,reported,,"how the FUEL LABEL was attributed (sir_sheet_label); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,sir_sheet_bound,reported,,"how the FUEL LABEL was attributed (sir_sheet_bound); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"
+data/activity/power/generation_monthly.csv,fuel_source,sir_annual_control_bound_99%,reported,,"how the FUEL LABEL was attributed (sir_annual_control_bound_99%); the generation figure is reported whatever the label's provenance, and the attribution travels in evidence_note"

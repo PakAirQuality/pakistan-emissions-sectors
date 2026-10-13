@@ -1,0 +1,20 @@
+# The closed vocabulary for the `evidence` column of every published activity row.
+#
+# Your standard asks each row to answer "what kind of evidence is it?". These are the answers, and
+# a row may carry no other. An unmapped source status FAILS THE BUILD rather than defaulting to
+# `reported` - an unmapped status is exactly how "verified" would come to mean "observed".
+#
+# `derived` is here although it was not in the brief's list, because omitting it would force a wrong
+# label: an implied heat rate computed from two reported figures is not itself a reported statistic,
+# and calling it one would be the error this vocabulary exists to prevent.
+#
+# `not_printed` is NOT zero. A source that printed a dash gets an empty value and this class.
+evidence,definition,label
+reported,"a figure the publisher printed as a statistic; PakEmis transcribed it and did not compute it",Reported
+survey_estimate,"a design-weighted estimate from a household survey; carries sample support and is not a census count",Survey estimate
+projection,"the publisher's own forward estimate for a year it had not yet measured",Projection
+allocation,"a total split across places or classes by a declared rule; the rule is named in `transform`, and the parts are not independent observations",Allocated estimate
+assumption,"a value PakEmis chose where no source published one; the reason is in `note`",Assumption
+derived,"computed by PakEmis from other reported values in the same table; `transform` says from what",Calculated
+not_printed,"the source left this cell blank or printed a dash. The value is empty and MUST NOT be read as zero",Not printed in source
+modelled,"a quantity this project computed from activity and a method, not one a publisher printed. ⚠ THE FIRST CLASS HERE THAT IS NOT A PUBLISHED FIGURE: the method is named in `transform`, and a modelled tonnage that reads as reported is the failure this class exists to prevent",Modelled estimate

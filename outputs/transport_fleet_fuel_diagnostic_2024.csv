@@ -1,0 +1,4 @@
+fuel,implied_TJ_lo,implied_TJ_mid,implied_TJ_hi,control_TJ,ratio_mid_over_control,calibration_multiplier,verdict,note
+Petrol,191096.0,267661.0,344227.0,316882.0,0.845,1.184,CONTROL-INSIDE-BAND,"declared engineering bands, not Pakistani measurements; the diagnostic never adjusts the inventory - it demonstrates why the fleet distributes rather than sizes"
+Diesel,99711.0,141114.0,182516.0,238712.0,0.591,1.692,FLEET-MODEL-LOW,"declared engineering bands, not Pakistani measurements; the diagnostic never adjusts the inventory - it demonstrates why the fleet distributes rather than sizes"
+CNG,46625.0,65527.0,84428.0,21488.0,3.049,0.328,FLEET-MODEL-HIGH,"declared engineering bands, not Pakistani measurements; the diagnostic never adjusts the inventory - it demonstrates why the fleet distributes rather than sizes"

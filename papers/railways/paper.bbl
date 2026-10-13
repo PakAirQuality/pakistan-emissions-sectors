@@ -1,0 +1,102 @@
+\begin{thebibliography}{7}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\providecommand{\url}[1]{\texttt{#1}}
+\providecommand{\href}[2]{#2}
+\providecommand{\path}[1]{#1}
+\providecommand{\DOIprefix}{doi:}
+\providecommand{\ArXivprefix}{arXiv:}
+\providecommand{\URLprefix}{URL: }
+\providecommand{\Pubmedprefix}{pmid:}
+\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
+\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
+\providecommand{\bibinfo}[2]{#2}
+\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Misc
+\bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
+\bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{GHG} emissions of all world countries --- 2025
+  report ({EDGAR} {GHG} booklet)}.
+\newblock \bibinfo{howpublished}{European Commission, Joint Research Centre}.
+\newblock \bibinfo{note}{Sheet GHG\_by\_sector\_and\_country; annual series
+  1970--2024; CC BY 4.0. Snapshot archived at
+  \texttt{sources/EDGAR/EDGAR\_2025\_GHG\_booklet\_2025.xlsx}, sha256
+  \texttt{8bd6b8a4\ldots} pinned per benchmark row in
+  \texttt{data/benchmarks.csv}. \url{https://edgar.jrc.ec.europa.eu/}}.
+%Type = Techreport
+\bibitem[{Halder and L{\"o}chter(2005)}]{halder2005}
+\bibinfo{author}{Halder, M.}, \bibinfo{author}{L{\"o}chter, A.},
+  \bibinfo{year}{2005}.
+\newblock \bibinfo{title}{Status and future development of the diesel fleet}.
+\newblock \bibinfo{type}{Technical Report}. International Union of Railways
+  (UIC).
+\newblock \URLprefix
+  \url{https://www.uic.org/download.php/environnement/2006-01-dieselstudy-wp1.pdf}.
+  \bibinfo{note}{rail Diesel Study, WP1 final report. The fleet assessment
+  behind the EMEP/EEA guidebook's Tier 2 railway emission factors (ch 1.A.3.c
+  Tables 3-2 to 3-5)}.
+%Type = Techreport
+\bibitem[{{IPCC}(2006)}]{ipcc2006energy}
+\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
+\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
+  Inventories, Volume 2: Energy, Chapter 3: Mobile Combustion}.
+\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
+  Strategies, Japan.
+\newblock \URLprefix
+  \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html}.
+%Type = Techreport
+\bibitem[{Norris and Ntziachristos(2023)}]{emep2023rail}
+\bibinfo{author}{Norris, J.}, \bibinfo{author}{Ntziachristos, L.},
+  \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{{EMEP/EEA} Air Pollutant Emission Inventory Guidebook
+  2023 -- Chapter 1.A.3.c: Railways}.
+\newblock \bibinfo{type}{Technical Report}. European Environment Agency.
+\newblock \URLprefix
+  \url{https://www.eea.europa.eu/publications/emep-eea-guidebook-2023}.
+%Type = Misc
+\bibitem[{{OpenStreetMap contributors}(2026)}]{osm2026}
+\bibinfo{author}{{OpenStreetMap contributors}}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{{OpenStreetMap} --- pakistan extract ({Geofabrik})}.
+\newblock \bibinfo{howpublished}{Geofabrik GmbH country extract, snapshot
+  2026-08-06}.
+\newblock \bibinfo{note}{Open Database License (ODbL) 1.0. Snapshot zip sha256
+  \texttt{ab445f8f\ldots}, recorded with per-product provenance in
+  \texttt{data/gis/rail/RAIL\_SOURCES.json},
+  \texttt{data/gis/roads/ROAD\_SOURCES.json} and
+  \texttt{data/gis/landfills/LANDFILL\_SOURCES.json}. Extracted geometry tables
+  are ODbL derivative databases (see \texttt{LICENSE-data}); rendered figures
+  are produced works. \url{https://download.geofabrik.de/asia/pakistan.html}}.
+%Type = Article
+\bibitem[{Righi et~al.(2026)Righi, Ehrenberger, Brinkop, Hendricks, Hellekes,
+  Bany{\'s}, Dasgupta, Draheim, Fitz, L{\"o}ber, Pregger, Scholz, Schulz, Suhr,
+  Thomsen, Weder, Berster, Clococeanu, Gelhausen, Lau, Linke, Matthes and
+  Zengerling}]{elk2026}
+\bibinfo{author}{Righi, M.}, \bibinfo{author}{Ehrenberger, S.},
+  \bibinfo{author}{Brinkop, S.}, \bibinfo{author}{Hendricks, J.},
+  \bibinfo{author}{Hellekes, J.}, \bibinfo{author}{Bany{\'s}, P.},
+  \bibinfo{author}{Dasgupta, I.}, \bibinfo{author}{Draheim, P.},
+  \bibinfo{author}{Fitz, A.}, \bibinfo{author}{L{\"o}ber, M.},
+  \bibinfo{author}{Pregger, T.}, \bibinfo{author}{Scholz, Y.},
+  \bibinfo{author}{Schulz, A.}, \bibinfo{author}{Suhr, B.},
+  \bibinfo{author}{Thomsen, N.}, \bibinfo{author}{Weder, C.M.},
+  \bibinfo{author}{Berster, P.}, \bibinfo{author}{Clococeanu, M.},
+  \bibinfo{author}{Gelhausen, M.}, \bibinfo{author}{Lau, A.},
+  \bibinfo{author}{Linke, F.}, \bibinfo{author}{Matthes, S.},
+  \bibinfo{author}{Zengerling, Z.L.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{The {ELK} global emission inventory for the transport
+  sectors}.
+\newblock \bibinfo{journal}{Earth System Science Data} \bibinfo{volume}{18},
+  \bibinfo{pages}{1619--1664}.
+\newblock \DOIprefix\doi{10.5194/essd-18-1619-2026}.
+  \bibinfo{note}{land-transport data set: doi 10.15489/d9dswthdix21 (DLR)}.
+%Type = Techreport
+\bibitem[{{TNO}(2024)}]{tno2024rail}
+\bibinfo{author}{{TNO}}, \bibinfo{year}{2024}.
+\newblock \bibinfo{title}{Rail emissions: update of the national {Dutch}
+  emission factors}.
+\newblock \bibinfo{type}{Technical Report} \bibinfo{number}{TNO 2024 R10284}.
+  TNO, Netherlands Organisation for Applied Scientific Research.
+\newblock \URLprefix
+  \url{https://legacy.emissieregistratie.nl/erpubliek/documenten/05%20Verkeer%20en%20vervoer/2024%20(TNO)%20R10284%20Rail%20emissions_FV_signed.pdf}.
+
+\end{thebibliography}

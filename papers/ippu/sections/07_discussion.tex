@@ -1,0 +1,114 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\subsection{Trade correction is part of the method}
+
+Pakistan's net clinker exports are 12.7\% of the correctly period-tagged no-trade estimate
+after conversion to \COtwo{}. Omitting them assigns calcination to the country where exported
+clinker is ground rather than the country where it was produced. The corrected equation
+therefore changes both the magnitude and the geographic boundary of 2.A.1. Stock movement
+remains unresolved, but it is now visible as one term in the same physical balance.
+
+The source audit also illustrates why period and source documentation are part of the
+calculation. The reported 48.011 and 39.566 Mt values were consecutive observations in the
+same official fiscal series, rather than competing estimates for one year. Correcting the
+period changes the headline result more than the remaining parametric uncertainty and removes
+a spurious structural choice.
+
+\subsection{A complete sector starts with completeness accounting}
+
+Pakistan's official results make the scope problem concrete. In 2022, chemical-industry
+emissions were two-thirds as large as mineral-industry emissions. A cement calculation can
+therefore be rigorous without representing the full IPPU sector. The framework avoids
+conflating the two by assessing the evidence and method available for every 2.A--2.G category
+before calculating a sector total.
+
+This design also changes how public data are interpreted. A soda-ash production record is
+useful for 2.B.7 only after the production route is known and must be distinguished from
+soda-ash consumption under mineral uses. Total fertiliser output cannot estimate ammonia,
+where process \COtwo{} recovery into urea is central. Billets identify steel output but not
+the production route or carbon inputs. HFC consumption establishes chemical supply, whereas
+annual emissions depend on equipment stocks and leakage. These distinctions preserve the
+physical meaning of each category estimate.
+
+\subsection{The CRT audit identifies immediate empirical priorities}
+
+All tested CRT rows reproduce exactly from their reported activities, implied factors and
+recovery terms. Its \SI{49.112}{\mega\tonne} result is consequently traceable to reported
+activities, factors, recovery and omissions rather than a spreadsheet mistake. Three
+empirical priorities follow.
+
+First, the sixteen-company clinker census---complete for production since Fecto's exact
+output was read from its annual report---should be completed with clinker purchases, sales
+and stocks. The census already exceeds the low-clinker inference and slightly exceeds the
+high case, so these data must reconcile reporting boundaries as well as replace Tier~1
+activity. Second, plant ammonia and nitric-acid records can
+reconstruct the official chemical-industry result while preserving recovered carbon and
+abatement. Third, species- and application-level HFC imports, exports and equipment stocks can
+support an estimate based on the Ozone consumption data. The small HFC value in the 2022 CRT
+and the much larger consumption statistic have different accounting boundaries, but together
+they make product-use completeness a high-priority audit. The CRT entry is smaller than
+``small'' conveys and its shape matters: all of category~2.F is a single species, HFC-23,
+entered at \SI{0.236955}{\tonne} as exactly \SI{1}{\percent} of a declared
+\SI{23.69549}{\tonne} operating stock and filed under sub-category 2.F.1.a commercial
+refrigeration, with every other species and sub-category \texttt{NE} or \texttt{NO}.
+HFC-23 is an HCFC-22 by-product and a cascade low-temperature refrigerant rather than a
+commercial refrigerant, so the species assignment is a reporting artefact, and Pakistan's
+first Biennial Transparency Report then books 2.F, 2.C, 2.E and 2.G all at zero. The two
+most recent official submissions therefore disagree about whether the category exists,
+which is not a boundary difference.
+
+The leak rate is the other decision that is easy to overlook, and
+\texttt{outputs/pakemis\_fgas\_leak\_rate\_adjudication.csv} prices it. The
+species-resolved bank applies one operating loss fraction per stratum---refrigeration
+\SI{8}{\percent} per year, stationary air-conditioning \SI{6}{\percent}, mobile
+air-conditioning \SI{15}{\percent}---while IPCC Table~7.9 publishes a rate for each
+sub-application. Mobile air-conditioning maps one-to-one onto its table row and needs no
+weighting. Stationary air-conditioning lumps chillers with residential and commercial
+units, whose bands overlap, and \SI{6}{\percent} is admissible for either part.
+Refrigeration lumps five sub-applications whose operation-emission bands span
+\SIrange{0.1}{50}{\percent} per year with no common value, and the single
+\SI{8}{\percent} lies outside two of them, from \num{16} to \num{80} times above
+domestic refrigeration's whole band. For that part the rate is not uncertain but inadmissible, and
+the split that would resolve it is not held.
+
+What the envelope shows is that the rate decides timing rather than mass. Re-running the
+bank across refrigeration's full band moves the operating channel from
+\SI{0.013}{\mega\tonne} to \SI{2.062}{\mega\tonne} of \COtwo e, a factor of
+one hundred and fifty-five, while the stratum total moves only
+\SIrange{0.757}{2.192}{\mega\tonne}: gas the operating channel does not leak is still
+emitted at retirement, because no recovery is credited anywhere. The deferred mass appears
+instead as a closing bank of \SIrange{1.959}{12.559}{\mega\tonne} of \COtwo e. A low
+leak rate is therefore not a smaller inventory but a larger future liability, and
+category~2.F contributes zero to every reported total throughout.
+
+\subsection{Facility geography is preferable to proxy geography}
+
+The current provincial cement allocation is retained for compatibility with the national
+inventory, but its earlier Punjab activity anchor is not period-matched. Cement kilns,
+ammonia plants, nitric-acid plants, soda-ash works, steel mills and glass plants are point
+sources. A shared facility inventory can assign process emissions to their physical sites and
+link the same installation to Energy 1.A.2 combustion without mixing the two categories.
+Diffuse product use, especially refrigeration and air-conditioning, can then be represented
+through equipment stocks and population or service activity rather than an industrial point
+proxy.
+
+\subsection{The matched official comparison reveals a second cement discrepancy}
+
+Calendar matching does not close the official cement row. Even the 0.95 public-data
+configuration remains 19\% below the CRT, while the low-clinker model is 36\% below. Part of
+the difference is visible in the activity data: the CRT uses 50.246 Mt against 44.331 Mt from
+the monthly QIM reconstruction. The remainder is embedded in the CRT's 0.55539 t/t implied
+factor and any clinker, stock or coverage treatment behind it. Because the workbook arithmetic
+closes, resolving this difference requires the institutional derivation and company clinker
+balance rather than further arithmetic verification.
+
+\subsection{Transferability}
+
+The framework is transferable because its accounting structure is independent of any one
+national data source. Countries with incomplete industrial statistics commonly combine
+national production totals, trade data, partial company reporting, ozone-substitute
+consumption records and official inventory submissions. Higher-quality evidence can replace
+aggregate activity assumptions without changing the material balances or category
+definitions. Exact mass closure, category completeness and an auditable official crosswalk
+remain valid as the quality of the underlying evidence improves.

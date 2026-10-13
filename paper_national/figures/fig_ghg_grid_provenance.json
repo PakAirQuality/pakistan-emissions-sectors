@@ -1,0 +1,375 @@
+{
+  "figures": [
+    "f04_gas_maps.pdf",
+    "f05_spatial_evidence.pdf",
+    "f06_proxy_concentration.pdf"
+  ],
+  "built_by": "scripts/make_fig_ghg_grid.py",
+  "release_version": "1.0.0rc67",
+  "configuration_id": "REF_2023_24",
+  "grid_spec_id": "pk_0p05_epsg4326_v1",
+  "period_plotted": "FY2023-24",
+  "period_basis": "Pakistani fiscal year 1 July - 30 June; not a calendar year",
+  "quantity": "per-cell mass of the native gas over the fiscal year",
+  "unit": "Gg (gas mass), NOT Gg/km2 and NOT CO2e",
+  "gwp_applied_to_the_maps": "none",
+  "projection": "EPSG:4326 WGS 84, plate carree, aspect set at the mid-latitude, no reprojection",
+  "mid_latitude_deg_N": 30.374999999999996,
+  "area_convention": "equal-angle 0.05 deg lattice; cell_area 24.678-28.298 km2; no area normalisation because the quantity is a mass",
+  "colour_scale": "viridis reversed (dark = high), logarithmic, separate per gas; floor at the decade at or below the smallest cell among those holding 99.9 % of placed mass; ceiling at the next 1-2-5 step above the largest cell; cells below the floor in one pale colour",
+  "maps": {
+    "CO2": {
+      "log_limits_Gg": [
+        0.01,
+        10000.0
+      ],
+      "valid_cells": 33674,
+      "zero_cells": 0,
+      "cells_below_lower_limit": 12124,
+      "mass_share_below_lower_limit_pct": 0.02386075981862459,
+      "placed_Gg": 160694.35203770973
+    },
+    "CH4": {
+      "log_limits_Gg": [
+        0.001,
+        100.0
+      ],
+      "valid_cells": 33674,
+      "zero_cells": 0,
+      "cells_below_lower_limit": 3877,
+      "mass_share_below_lower_limit_pct": 0.035291479595331854,
+      "placed_Gg": 8621.130038785086
+    },
+    "N2O": {
+      "log_limits_Gg": [
+        0.0001,
+        0.2
+      ],
+      "valid_cells": 33674,
+      "zero_cells": 2835,
+      "cells_below_lower_limit": 3422,
+      "mass_share_below_lower_limit_pct": 0.06949416361092803,
+      "placed_Gg": 155.00982100608968
+    }
+  },
+  "spatial_views_summed": [
+    "physical",
+    "origin",
+    "accounting"
+  ],
+  "in_country_cells": 33674,
+  "lattice_cells": 90780,
+  "boundary_frame": {
+    "license": "Public Domain",
+    "provider": "geoBoundaries",
+    "release_commit": "9469f09",
+    "citation": "Runfola et al. (2020), PLOS ONE 15(4), e0231866",
+    "boundaries": [
+      {
+        "file": "PAK_ADM1.geojson",
+        "boundary_id": "PAK-ADM1-70912109",
+        "represented_year": 2019,
+        "geometry": "simplified GeoJSON",
+        "source_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+      },
+      {
+        "file": "PAK_ADM2.geojson",
+        "boundary_id": "PAK-ADM2-60131773",
+        "represented_year": 2019,
+        "unit_count": 126,
+        "geometry": "simplified GeoJSON",
+        "source_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM2/geoBoundaries-PAK-ADM2_simplified.geojson"
+      }
+    ]
+  },
+  "territory_units_in_frame": 11,
+  "modules_included": [
+    "agriculture",
+    "aviation",
+    "fugitives",
+    "industry",
+    "ippu",
+    "power",
+    "railways",
+    "residential",
+    "transport",
+    "waste"
+  ],
+  "not_estimated_and_therefore_absent": [
+    "F-gases",
+    "lime 2.A.2",
+    "LULUCF",
+    "commercial and institutional buildings"
+  ],
+  "unallocated_not_on_map": {
+    "co2_Gg": 249.45835550541642,
+    "co2_Mt": 0.24945835550541642,
+    "ch4_Gg": 0.0017409999825899994,
+    "n2o_Gg": 0.006962999930368319,
+    "co2e_Mt_AR5": 0.25135578048643925,
+    "co2e_Mt_AR5_is": "all three gases, CH4 at its fossil GWP",
+    "reason": "domestic-aviation cruise: no native location below the province",
+    "treatment": "carried as its own class in the evidence figure; never spread"
+  },
+  "national_ledger_Gg": {
+    "CO2": 160943.809956,
+    "CH4": 8621.13207,
+    "N2O": 155.01678800000002
+  },
+  "reference_year_share_not_own_activity_pct": {
+    "CO2": 55.501481804998065,
+    "CH4": 86.46871853338861,
+    "N2O": 27.761962143093825
+  },
+  "half_mass_cells": {
+    "CO2": 79,
+    "CH4": 3031,
+    "N2O": 3577
+  },
+  "concentration_population": "all valid cells of the reference year, zero-valued cells included, summed in float64",
+  "surface_vintages_in_use": [
+    "ESA WorldCover 2021",
+    "ESA WorldCover 2021 + OCAC area pages (per period)",
+    "GLW 2020",
+    "MapSPAM 2020",
+    "OpenStreetMap railways, Geofabrik extract 2026-08-06",
+    "OpenStreetMap roads, Geofabrik extract 2026-08-06",
+    "VIIRS active-fire detections (per period)",
+    "WorldPop 2020",
+    "derived: ESA WorldCover 2021 cropland x GLW 2020"
+  ],
+  "closure_identity": "grid + unallocated == national stream ledger, per period and gas",
+  "closure_worst_residual_ppm": 0.033663204481898676,
+  "closure_detail": {
+    "CO2": [
+      {
+        "period_id": "FY2015-16",
+        "grid_Gg": 172607.81133382843,
+        "unallocated_Gg": 399.092450001595,
+        "ledger_Gg": 173006.903589,
+        "residual_Gg": 0.00019483003416098654,
+        "residual_ppm_of_ledger": 0.001126140229778519
+      },
+      {
+        "period_id": "FY2016-17",
+        "grid_Gg": 188210.3853687731,
+        "unallocated_Gg": 426.89540199829713,
+        "ledger_Gg": 188637.280993,
+        "residual_Gg": -0.00022222858387976885,
+        "residual_ppm_of_ledger": -0.0011780735107606612
+      },
+      {
+        "period_id": "FY2017-18",
+        "grid_Gg": 209791.3512129067,
+        "unallocated_Gg": 394.3239029984252,
+        "ledger_Gg": 210185.67542500002,
+        "residual_Gg": -0.00030909490305930376,
+        "residual_ppm_of_ledger": -0.001470580249744932
+      },
+      {
+        "period_id": "FY2018-19",
+        "grid_Gg": 200540.13585114098,
+        "unallocated_Gg": 332.73198099867045,
+        "ledger_Gg": 200872.86815099997,
+        "residual_Gg": -0.0003188603150192648,
+        "residual_ppm_of_ledger": -0.0015873737352103292
+      },
+      {
+        "period_id": "FY2019-20",
+        "grid_Gg": 196208.80102102406,
+        "unallocated_Gg": 239.24039600095642,
+        "ledger_Gg": 196448.04148,
+        "residual_Gg": -6.297498475760221e-05,
+        "residual_ppm_of_ledger": -0.0003205681476036175
+      },
+      {
+        "period_id": "FY2020-21",
+        "grid_Gg": 224477.94862488093,
+        "unallocated_Gg": 249.85773699900022,
+        "ledger_Gg": 224727.806055,
+        "residual_Gg": 0.0003068799269385636,
+        "residual_ppm_of_ledger": 0.001365562777146757
+      },
+      {
+        "period_id": "FY2021-22",
+        "grid_Gg": 216402.74453307674,
+        "unallocated_Gg": 293.02755000058403,
+        "ledger_Gg": 216695.77197999996,
+        "residual_Gg": 0.00010307735647074878,
+        "residual_ppm_of_ledger": 0.0004756777464041262
+      },
+      {
+        "period_id": "FY2022-23",
+        "grid_Gg": 169520.89759118806,
+        "unallocated_Gg": 266.9204429994651,
+        "ledger_Gg": 169787.818084,
+        "residual_Gg": -4.981248639523983e-05,
+        "residual_ppm_of_ledger": -0.00029338080291835684
+      },
+      {
+        "period_id": "FY2023-24",
+        "grid_Gg": 160694.35203770973,
+        "unallocated_Gg": 249.45835550541642,
+        "ledger_Gg": 160943.809956,
+        "residual_Gg": 0.0004372151452116668,
+        "residual_ppm_of_ledger": 0.002716570120535831
+      }
+    ],
+    "CH4": [
+      {
+        "period_id": "FY2015-16",
+        "grid_Gg": 6768.33140713579,
+        "unallocated_Gg": 0.002785000001005008,
+        "ledger_Gg": 6768.334196000001,
+        "residual_Gg": -3.864210157189518e-06,
+        "residual_ppm_of_ledger": -0.0005709248458022681
+      },
+      {
+        "period_id": "FY2016-17",
+        "grid_Gg": 6969.002782376159,
+        "unallocated_Gg": 0.0029789999999937115,
+        "ledger_Gg": 6969.005754999999,
+        "residual_Gg": 6.376159944920801e-06,
+        "residual_ppm_of_ledger": 0.0009149310775566724
+      },
+      {
+        "period_id": "FY2017-18",
+        "grid_Gg": 7217.93717756881,
+        "unallocated_Gg": 0.0027520000019944954,
+        "ledger_Gg": 7217.939931999998,
+        "residual_Gg": -2.4311866582138464e-06,
+        "residual_ppm_of_ledger": -0.0003368255598021021
+      },
+      {
+        "period_id": "FY2018-19",
+        "grid_Gg": 7392.942811937608,
+        "unallocated_Gg": 0.002321999999995356,
+        "ledger_Gg": 7392.945136,
+        "residual_Gg": -2.0623920136131346e-06,
+        "residual_ppm_of_ledger": -0.0002789675799932968
+      },
+      {
+        "period_id": "FY2019-20",
+        "grid_Gg": 7576.477726315851,
+        "unallocated_Gg": 0.001669000001003338,
+        "ledger_Gg": 7576.479395,
+        "residual_Gg": 3.1585204851580784e-07,
+        "residual_ppm_of_ledger": 4.168849831813049e-05
+      },
+      {
+        "period_id": "FY2020-21",
+        "grid_Gg": 7845.872531361479,
+        "unallocated_Gg": 0.0017429999969965138,
+        "ledger_Gg": 7845.874272,
+        "residual_Gg": 2.361475708312355e-06,
+        "residual_ppm_of_ledger": 0.00030098311882716274
+      },
+      {
+        "period_id": "FY2021-22",
+        "grid_Gg": 8086.783319758899,
+        "unallocated_Gg": 0.0020450000000020447,
+        "ledger_Gg": 8086.785368000001,
+        "residual_Gg": -3.2411016945843585e-06,
+        "residual_ppm_of_ledger": -0.00040078987472693837
+      },
+      {
+        "period_id": "FY2022-23",
+        "grid_Gg": 8159.174396428558,
+        "unallocated_Gg": 0.0018629999999981372,
+        "ledger_Gg": 8159.176259999999,
+        "residual_Gg": -5.714409780921414e-07,
+        "residual_ppm_of_ledger": -7.003660172088763e-05
+      },
+      {
+        "period_id": "FY2023-24",
+        "grid_Gg": 8621.130038785086,
+        "unallocated_Gg": 0.0017409999825899994,
+        "ledger_Gg": 8621.13207,
+        "residual_Gg": -0.0002902149317378644,
+        "residual_ppm_of_ledger": -0.033663204481898676
+      }
+    ],
+    "N2O": [
+      {
+        "period_id": "FY2015-16",
+        "grid_Gg": 112.15841101405556,
+        "unallocated_Gg": 0.011139000000019609,
+        "ledger_Gg": 112.16955000000002,
+        "residual_Gg": 1.4055558494874276e-08,
+        "residual_ppm_of_ledger": 0.00012530636429293221
+      },
+      {
+        "period_id": "FY2016-17",
+        "grid_Gg": 128.40401800739482,
+        "unallocated_Gg": 0.011914999996974204,
+        "ledger_Gg": 128.41593300000002,
+        "residual_Gg": 7.391776080112322e-09,
+        "residual_ppm_of_ledger": 5.7561206833363276e-05
+      },
+      {
+        "period_id": "FY2017-18",
+        "grid_Gg": 127.92747300833138,
+        "unallocated_Gg": 0.011005999997975757,
+        "ledger_Gg": 127.93847899999999,
+        "residual_Gg": 8.329365641657205e-09,
+        "residual_ppm_of_ledger": 6.510446041536265e-05
+      },
+      {
+        "period_id": "FY2018-19",
+        "grid_Gg": 130.10243598158883,
+        "unallocated_Gg": 0.009286999996979298,
+        "ledger_Gg": 130.111723,
+        "residual_Gg": -1.8414198166283313e-08,
+        "residual_ppm_of_ledger": -0.0001415260496264684
+      },
+      {
+        "period_id": "FY2019-20",
+        "grid_Gg": 133.1958589688735,
+        "unallocated_Gg": 0.00667800000101146,
+        "ledger_Gg": 133.20253699999998,
+        "residual_Gg": -3.112546664851834e-08,
+        "residual_ppm_of_ledger": -0.00023367022392762943
+      },
+      {
+        "period_id": "FY2020-21",
+        "grid_Gg": 141.03096501742635,
+        "unallocated_Gg": 0.006973999999984202,
+        "ledger_Gg": 141.037939,
+        "residual_Gg": 1.742634481161076e-08,
+        "residual_ppm_of_ledger": 0.0001235578521294952
+      },
+      {
+        "period_id": "FY2021-22",
+        "grid_Gg": 145.89671194972675,
+        "unallocated_Gg": 0.00817900000000649,
+        "ledger_Gg": 145.904891,
+        "residual_Gg": -5.027322913520038e-08,
+        "residual_ppm_of_ledger": -0.0003445616441686001
+      },
+      {
+        "period_id": "FY2022-23",
+        "grid_Gg": 145.41469801146727,
+        "unallocated_Gg": 0.007449999998990741,
+        "ledger_Gg": 145.42214800000002,
+        "residual_Gg": 1.146622707892675e-08,
+        "residual_ppm_of_ledger": 7.884787315152812e-05
+      },
+      {
+        "period_id": "FY2023-24",
+        "grid_Gg": 155.00982100608968,
+        "unallocated_Gg": 0.006962999930368319,
+        "ledger_Gg": 155.01678800000002,
+        "residual_Gg": -3.9939799592048075e-06,
+        "residual_ppm_of_ledger": -0.025764822060464876
+      }
+    ]
+  },
+  "input_digests": {
+    "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc": "659f74005ff51ec05c0113e03672422e8eb4f56a1f3fe4b3622e5caaeeb166f8",
+    "outputs/pakemis_stream_support_ledger.csv": "d499dd025bf6d864cdeaad97333f2cd5433eaa4369b456a9f43445c07edd6a04",
+    "outputs/pakemis_spatial_weights_by_year.csv": "3c789ab95fc97e3cf14ce3047ff6accc949378776fc8437ae6301bf0e861d566",
+    "outputs/pakemis_spatial_unallocated_by_year.csv": "e928c357eb12169535fc4d9302feacac4402f9ed0b75acd73d130a51a0df00c8",
+    "data/shared/gis/PAK_ADM1.geojson": "c7ff4e70bcf740cfba47b871a7c2b2b2b243b59e4c0656e6e1bc2a64e295d93a",
+    "data/shared/gis/adm2_canonical.csv": "c7436e78b285a24d4372e3990b1877eaf29345e47fed476cdfdf970474ead2c1"
+  }
+}

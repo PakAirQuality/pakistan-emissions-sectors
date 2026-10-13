@@ -1,0 +1,11 @@
+Airline ICAO,Origin ICAO,Destination ICAO,Aircraft type,Share,Evidence class,Source reference,Source note,Record ID,Source row
+FJL,*,*,A320,1.0,contemporaneous fleet report,https://www.dawn.com/news/1718018,All-A320 fleet scenario,f2203cc85526183378f6ba4e,1
+ABQ,*,*,A320,0.65,carrier fleet family,https://www.airblue.com/flightinfo/,A320-family central structural scenario,96b5bee3410142e9bcb70b36,2
+ABQ,*,*,A321,0.35,carrier fleet family,https://www.airblue.com/flightinfo/,A320-family central structural scenario,ef082c66b9afd706be518390,3
+SIF,*,*,A320,1.0,contemporaneous fleet report,https://www.dawn.com/news/1744716,A320 operation documented,7f7f25c5d5c976519a69480b,4
+SEP,domestic,domestic,B738,1.0,route suitability scenario,https://www.sereneair.com/destinations,Domestic narrowbody structural scenario,cc589b25a872f4abb530c827,5
+SEP,international,international,A332,1.0,dated aircraft occurrence,https://www.aeroroutes.com/eng/231102-erpkx,A330-200 international structural scenario,b331fc38b71684b57c1fcbb0,6
+PIA,domestic,domestic,A320,0.70,route suitability scenario,https://www.piac.com.pk/corporate/about-us/fleet,A320 majority share for trunk domestic reconstruction,45c57cc83d950f9eba5b724a,7
+PIA,domestic,domestic,AT72,0.30,route suitability scenario,https://www.app.com.pk/national/pia-increases-flights-to-international-domestic-routes/,ATR share for northern and thin-route structural scenario,b2876286943b3cbce7dca89b,8
+PIA,international,international,A320,0.55,route suitability scenario,https://www.piac.com.pk/corporate/about-us/fleet,Regional international structural scenario,0a994a0b0c89d00433f84e55,9
+PIA,international,international,B772,0.45,route suitability scenario,https://www.piac.com.pk/corporate/about-us/fleet,Widebody international structural scenario,de5653b94f475f90380094fc,10

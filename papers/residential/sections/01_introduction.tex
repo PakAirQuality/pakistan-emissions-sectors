@@ -1,0 +1,84 @@
+% ===========================================================================
+\section{Introduction}
+\label{sec:introduction}
+% ===========================================================================
+
+Household fuel is the sector where greenhouse-gas accounting and air-quality accounting most
+clearly disagree about what matters.
+
+Under the IPCC conventions, burning dung and firewood is a modest source: the \COtwo{} is
+biogenic and reported outside the national total, leaving only the methane and nitrous oxide
+of incomplete combustion. Under a primary-emission lens the same combustion is among the dominant sources of
+primary particulate in the country, emitted at breathing height inside and around
+dwellings by the population least able to avoid it---though translating emitted mass
+into exposure requires evidence this inventory does not carry
+(Section~\ref{sec:limitations}).
+
+Both accounts are correct. They are answering different questions, and a sector that is
+\SI{5.4}{} or \SI{6.5}{\percent} of Pakistan's emissions (under the survey-based reference and
+the all-diverted dung configuration of Section~\ref{sec:results}) and, under either, one of
+the largest sources of its primary particulate is where the difference between those
+questions has the largest practical consequence.
+
+\subsection{What this paper does}
+
+We report Pakistan's residential fuel combustion for FY2023--24 from national fuel supply
+statistics and household-survey quantities, with an air-pollutant layer computed from the same fuel quantities, and treat the
+comparison between the two as the result rather than as an aside. Throughout,
+``layers'' distinguishes the greenhouse-gas from the air-pollutant calculation,
+``configurations'' the two dung activity bases (S, the reference, and L), and ``scenarios'' the
+structural sensitivity cases; the word inventory refers to the whole system.
+
+The comparison is defensible here in a way it usually is not. Cross-source particulate
+comparisons in developing countries are typically assembled from separate studies with
+separate activity bases, so the ratio between two sources is partly an artefact of which
+datasets each author had. Every air layer in the inventory this sector belongs to is computed
+from that sector's own greenhouse-gas activity data---the same fuel, the same tonnage, the
+same population panel---so the ratio between household fuel and road transport
+reported in Section~\ref{sec:air} (\numrange{49}{109} across the two dung
+configurations) is free of the mismatched-activity artefact, though it remains
+conditional on the stated factor, boundary and configuration choices.
+
+\subsection{A transfer that had nowhere to go}
+
+The sector also makes explicit a gap that had been open in this inventory and is common in others.
+Pakistani households burn cattle and buffalo dung, and the agriculture sector accounts for
+that on the supply side: it removes \SI{28}{\percent} of cattle and \SI{30}{\percent} of
+buffalo excreted nitrogen from the manure-management balance and reports it with the notation
+key IE---included elsewhere.
+
+Until a residential sector existed, nowhere was elsewhere: \SI{1.259}{\mega\tonne} of
+excreted nitrogen a year left one balance correctly and entered no other. The ledger now
+conserves that diverted quantity---what agriculture removes is accounted for exactly once,
+as household combustion or as a typed unresolved remainder---while the \emph{destination}
+of the diverted mass is treated as an
+open question: the reference books to household combustion the consumption the household
+survey observes, leaving \SI{47.8}{\mega\tonne} with no observed destination, outside the
+total; configuration L, the reference of earlier releases, books it all to household
+combustion
+(Section~\ref{sec:methods}).
+
+\subsection{Contributions}
+
+\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=3pt]
+\item \textbf{A fuel-anchored household energy inventory for Pakistan} across nine streams,
+  with no household-count model and therefore nothing that can drift from the fuel actually
+  supplied (Section~\ref{sec:methods}).
+\item \textbf{An executable cross-sector dung ledger} that conserves the quantity
+  diverted from manure management while distinguishing the observed household
+  destination from an unresolved remainder (\ref{app:dung}).
+\item \textbf{Greenhouse gases and air pollutants on one activity basis}, which is what makes
+  the source ranking in Section~\ref{sec:air} a physical statement rather than a
+  data-availability artefact.
+\item \textbf{An explicit treatment of the biomass memo convention}, under which
+  \SI{65}{\percent} of household energy produces \SI{24}{\percent} of reported emissions, and
+  of the \SI{65}{\mega\tonne}-scale biogenic \COtwo{} that sits outside the total.
+\item \textbf{A survey-anchored firewood quantity}---the HIES 2024--25 design-weighted
+  household measurement, corroborated by the independent 2018--19 round and by FAOSTAT's
+  moisture-matched equivalent, replacing the flagged FAO estimate the sector previously
+  rode---with the sensitivity still published rather than a single number
+  (Section~\ref{sec:results}).
+\end{enumerate}
+
+Method shared with the other nine sectors is documented separately
+\citep{ahmad2026national}.

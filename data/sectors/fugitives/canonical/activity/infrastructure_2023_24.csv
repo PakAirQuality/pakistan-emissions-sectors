@@ -1,0 +1,17 @@
+Asset class,Owner or region,Asset count,Length km,Capacity or power,Capacity unit,Source reference,Note,Record ID,Source row
+transmission_pipeline,SNGPL,,9320.69,,,OGRA Tables 3.13,"Punjab 7,039.06 km; KP 1,578.95 km; other 702.68 km.",7c5e2b508277b031adbb3bc9,1
+transmission_pipeline,SSGCL,,4206,,,OGRA Table 3.17,"Sindh interior 3,430 km and Balochistan 776 km.",1904858b018c650cf384f205,2
+distribution_pipeline,SNGPL,,151419,,,OGRA Table 3.22,"Punjab 124,097 km and KP 27,322 km.",ead0ddd54888bbd778921eae,3
+distribution_pipeline,SSGCL,,49811,,,OGRA Table 3.23,"Sindh 41,356 km and Balochistan 8,455 km.",d7befaf3ed71d242c5b71e53,4
+compressor_station,SNGPL,11,,226200,bhp,OGRA Table 3.16,69 compressor units.,4ab78adc8ad2ae234ddd3575,5
+compressor_station,SSGCL,6,,104600,bhp,OGRA Table 3.20,Station count inferred from six named locations.,0c59f668f48c2324491b4baf,6
+lng_import_terminal,Engro,1,,582.012,MMCFD,OGRA Table 3.24,Entry-point transport during FY2023-24.,7a4965d2878ababb2cbfa450,7
+lng_import_terminal,PGPC,1,,294.859,MMCFD,OGRA Table 3.24,Entry-point transport during FY2023-24.,5aa22defd2e40b22185ebc8a,8
+customer_connection,Domestic,10748538,,,,OGRA Table 3.26,Cumulative connections as of 30 June 2024.,0935292b0eb4b4a502bb08a6,9
+customer_connection,Commercial,91925,,,,OGRA Table 3.26,Cumulative connections as of 30 June 2024.,fc2500c1c9b1db938fd7390e,10
+customer_connection,Industrial,11318,,,,OGRA Table 3.26,Cumulative connections as of 30 June 2024.,df82c232b94561a53f505e28,11
+refinery,PARCO,1,,4.90,million_t_output,OGRA Table 2.3,Energy and non-energy product output.,ed04d9583dcfd201fd96d600,12
+refinery,NRL,1,,1.47,million_t_output,OGRA Table 2.3,Energy and non-energy product output.,e2b1d664858586426417a31b,13
+refinery,PRL,1,,1.45,million_t_output,OGRA Table 2.3,Energy and non-energy product output.,360458f775740fc194faa831,14
+refinery,ARL,1,,1.74,million_t_output,OGRA Table 2.3,Energy and non-energy product output.,249aa8c902c6964f046996c0,15
+refinery,Cnergyico,1,,1.12,million_t_output,OGRA Table 2.3,Energy and non-energy product output.,d342598f5034f8624d59649c,16

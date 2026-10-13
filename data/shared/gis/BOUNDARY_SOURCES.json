@@ -1,0 +1,23 @@
+{
+  "license": "Public Domain",
+  "provider": "geoBoundaries",
+  "release_commit": "9469f09",
+  "citation": "Runfola et al. (2020), PLOS ONE 15(4), e0231866",
+  "boundaries": [
+    {
+      "file": "PAK_ADM1.geojson",
+      "boundary_id": "PAK-ADM1-70912109",
+      "represented_year": 2019,
+      "geometry": "simplified GeoJSON",
+      "source_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM1/geoBoundaries-PAK-ADM1_simplified.geojson"
+    },
+    {
+      "file": "PAK_ADM2.geojson",
+      "boundary_id": "PAK-ADM2-60131773",
+      "represented_year": 2019,
+      "unit_count": 126,
+      "geometry": "simplified GeoJSON",
+      "source_url": "https://github.com/wmgeolab/geoBoundaries/raw/9469f09/releaseData/gbOpen/PAK/ADM2/geoBoundaries-PAK-ADM2_simplified.geojson"
+    }
+  ]
+}

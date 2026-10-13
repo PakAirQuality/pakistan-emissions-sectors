@@ -1,0 +1,24 @@
+category,subitem,gas,fossil,emissions_Gg,co2e_Mt_AR5,co2e_Mt_AR6,uncert_pct
+Residential fuel combustion,Natural gas CO2,CO2,False,15963.4174,15.96342,15.96342,10.8
+Residential fuel combustion,Natural gas CH4,CH4,True,1.4228,0.04268,0.0424,150.3
+Residential fuel combustion,Natural gas N2O,N2O,False,0.0285,0.00754,0.00777,150.3
+Residential fuel combustion,LPG CO2,CO2,False,2142.1489,2.14215,2.14215,20.9
+Residential fuel combustion,LPG CH4,CH4,True,0.1697,0.00509,0.00506,151.3
+Residential fuel combustion,LPG N2O,N2O,False,0.0034,0.0009,0.00093,151.3
+Residential fuel combustion,Kerosene CO2,CO2,False,77.5684,0.07757,0.07757,20.2
+Residential fuel combustion,Kerosene CH4,CH4,True,0.0108,0.00032,0.00032,151.3
+Residential fuel combustion,Kerosene N2O,N2O,False,0.0006,0.00017,0.00018,151.3
+Residential fuel combustion,Coal CO2,CO2,False,32.2719,0.03227,0.03227,40.3
+Residential fuel combustion,Coal CH4,CH4,True,0.1023,0.00307,0.00305,155.2
+Residential fuel combustion,Coal N2O,N2O,False,0.0005,0.00014,0.00014,155.2
+Residential fuel combustion,Generators CO2,CO2,False,172.927,0.17293,0.17293,40.2
+Residential fuel combustion,Generators CH4,CH4,True,0.025,0.00075,0.00074,155.2
+Residential fuel combustion,Generators N2O,N2O,False,0.0015,0.0004,0.00041,155.2
+Residential fuel combustion,Dung cake CH4,CH4,False,38.0482,1.06535,1.0273,154.0
+Residential fuel combustion,Dung cake N2O,N2O,False,0.5073,0.13444,0.1385,154.0
+Residential fuel combustion,Firewood CH4,CH4,False,108.262,3.03134,2.92307,154.0
+Residential fuel combustion,Firewood N2O,N2O,False,1.4435,0.38253,0.39407,154.0
+Residential fuel combustion,Charcoal CH4,CH4,False,0.0492,0.00138,0.00133,155.2
+Residential fuel combustion,Charcoal N2O,N2O,False,0.0002,7e-05,7e-05,155.2
+Residential fuel combustion,Crop residues CH4,CH4,False,36.6575,1.02641,0.98975,161.6
+Residential fuel combustion,Crop residues N2O,N2O,False,0.4888,0.12952,0.13343,161.6

@@ -1,0 +1,35 @@
+% Fig. 1 (ESSD section 1): the PakEmis architecture. A STATIC artefact of
+% paper_national/queries/paper_artefacts.csv (fig_architecture): the sidecar records this
+% file's hash, so a change here is a registered change. Requires \usepackage{tikz} and the
+% shapes/arrows libraries; the block names are the layer names docs/semantic_contract.md
+% and docs/essd_outline.md use. No number is drawn here.
+\begin{tikzpicture}[
+  font=\footnotesize, node distance=4mm and 6mm,
+  box/.style={draw, rounded corners=1pt, minimum height=7mm, text width=27mm, align=center, inner sep=2pt},
+  layer/.style={box, fill=black!4},
+  truth/.style={box, fill=black!10, text width=60mm, minimum height=9mm},
+  flow/.style={-{Latex[length=1.6mm]}, thick}]
+  \node[box] (sectors) {ten sector modules\\(activity $\times$ factor, one reporting period)};
+  \node[box, right=of sectors] (ledgers) {cross-sector ledgers\\(dung, captive power, waste, off-road)};
+  \node[box, right=of ledgers] (registry) {configuration registry\\(REF / S; structural axes)};
+  \node[layer, below=of ledgers] (atomic) {atomic annual table\\(period $\times$ component $\times$ gas)};
+  \node[layer, left=of atomic] (monthly) {monthly layer\\(108 months, TE1--TE4)};
+  \node[layer, right=of atomic] (spatial) {spatial layer\\(ADM1, ADM2, grid; S1--S4; unallocated)};
+  \node[layer, below=of atomic] (unc) {uncertainty\\(parametric draws, structural envelopes)};
+  \node[truth, below=of unc] (semantic) {semantic release: dimension + fact tables, contract, receipts\\(\texttt{outputs/semantic/})};
+  \node[box, below left=of semantic] (paper) {manuscript tables and figures\\(stored queries)};
+  \node[box, below=of semantic] (explorer) {PakEmis Explorer\\(FastAPI over \texttt{pakemis\_query})};
+  \node[box, below right=of semantic] (downloads) {downloads\\(CSV + RECEIPT.json)};
+  \draw[flow] (sectors) -- (atomic);
+  \draw[flow] (ledgers) -- (atomic);
+  \draw[flow] (registry) -- (atomic);
+  \draw[flow] (atomic) -- (monthly);
+  \draw[flow] (atomic) -- (spatial);
+  \draw[flow] (atomic) -- (unc);
+  \draw[flow] (monthly) |- (semantic);
+  \draw[flow] (spatial) |- (semantic);
+  \draw[flow] (unc) -- (semantic);
+  \draw[flow] (semantic) -- (paper);
+  \draw[flow] (semantic) -- (explorer);
+  \draw[flow] (semantic) -- (downloads);
+\end{tikzpicture}

@@ -1,0 +1,263 @@
+# Reader labels for category and subcategory values that the mechanical default (underscores to
+# spaces, first letter capitalised) does not get right: `HSD` -> `High-speed diesel (HSD)`, `2W` ->
+# `Two-wheelers (2W)`. Everything not listed here takes the default. Lookups try the whole value, then
+# each ` · `-separated part.
+collection,raw,label
+aviation,cargo_domestic,Domestic cargo
+aviation,cargo_international,International cargo
+aviation,commercial_domestic,Domestic commercial
+aviation,commercial_international,International commercial
+aviation,disembarked,Passengers disembarked
+aviation,embarked,Passengers embarked
+aviation,mail_domestic,Domestic mail
+aviation,mail_international,International mail
+aviation,non_commercial,Non-commercial
+aviation,transit,Passengers in transit
+fertiliser,IMPORTED,Imported
+fertiliser,UREA,Urea
+fuel_sales_area,100 LL,Aviation gasoline (100 LL)
+fuel_sales_area,AGRICULTURE,Agriculture
+fuel_sales_area,DOMESTIC,Domestic consumers
+fuel_sales_area,Domestic Bunkers,Domestic shipping (bunkers)
+fuel_sales_area,FO,Furnace oil (FO)
+fuel_sales_area,HOBC,High-octane blending component (HOBC)
+fuel_sales_area,HSD,High-speed diesel (HSD)
+fuel_sales_area,JP-1,Jet fuel (JP-1)
+fuel_sales_area,JP-8,Jet fuel (JP-8)
+fuel_sales_area,KERO,Kerosene (KERO)
+fuel_sales_area,LDO,Light diesel oil (LDO)
+fuel_sales_area,MS,Petrol / motor spirit (MS)
+fuel_sales_area,Road,Road transport
+fuel_sales_area,TOTAL,All products total
+fuel_sales_area,TOTAL_INTERNAL,All domestic sales total
+fuel_sales_area,TOTAL_PRIOR,Previous-year comparison total
+fuel_sales_area,Total Government,Government total
+fuel_sales_area,Total Industry,Industry total
+fuel_sales_area,Total Power,Power total
+fuel_sales_area,Total Transport,Transport total
+fuel_sales_national,100 LL,Aviation gasoline (100 LL)
+fuel_sales_national,AGRICULTURE,Agriculture
+fuel_sales_national,AGRICULTURE · AGRICULTURE,Agriculture
+fuel_sales_national,ASPHALT,Asphalt
+fuel_sales_national,BTX,BTX (source product code)
+fuel_sales_national,CARBON OIL,Carbon oil
+fuel_sales_national,DOMESTIC,Domestic consumers
+fuel_sales_national,DOMESTIC · DOMESTIC,Domestic consumers
+fuel_sales_national,Domestic Avi-Others,Domestic aviation: other operators
+fuel_sales_national,Domestic Avi-PIA,Domestic aviation: PIA
+fuel_sales_national,Domestic Bunkers,Domestic shipping (bunkers)
+fuel_sales_national,FO,Furnace oil (FO)
+fuel_sales_national,GOVERNMENT · Aviation,Government: aviation
+fuel_sales_national,GOVERNMENT · Bunkers,Government: shipping (bunkers)
+fuel_sales_national,GOVERNMENT · Others,Government: other
+fuel_sales_national,GOVERNMENT · Total Government,Government total
+fuel_sales_national,GREASES,Greases
+fuel_sales_national,Government Aviation,Government: aviation
+fuel_sales_national,Government Other,Government: other
+fuel_sales_national,HOBC,High-octane blending component (HOBC)
+fuel_sales_national,HSD,High-speed diesel (HSD)
+fuel_sales_national,INDUSTRY · Cement,Industry: cement
+fuel_sales_national,INDUSTRY · Others,Industry: other
+fuel_sales_national,INDUSTRY · Total Industry,Industry total
+fuel_sales_national,INTERNAL USE · A. TOTAL INTERNAL VOLUME,All domestic sales total
+fuel_sales_national,JBO,JBO (source product code)
+fuel_sales_national,JP-1,Jet fuel (JP-1)
+fuel_sales_national,JP-8,Jet fuel (JP-8)
+fuel_sales_national,KERO,Kerosene (KERO)
+fuel_sales_national,LDO,Light diesel oil (LDO)
+fuel_sales_national,LUBES,Lubricants (LUBES)
+fuel_sales_national,MS,Petrol / motor spirit (MS)
+fuel_sales_national,MTT,MTT (source product code)
+fuel_sales_national,OVERSEAS/FOREIGN · Aviation,Overseas / foreign aviation
+fuel_sales_national,OVERSEAS/FOREIGN · B. TOTAL OVERSEAS VOLUME,All overseas sales total
+fuel_sales_national,OVERSEAS/FOREIGN · Bunkers,Overseas / foreign shipping (bunkers)
+fuel_sales_national,OVERSEAS/FOREIGN · Exports,Exports
+fuel_sales_national,Overseas/Foreign Aviation,Overseas / foreign aviation
+fuel_sales_national,POWER · HUBCO,Power: HUBCO
+fuel_sales_national,POWER · HUBCO (BAL) / HUBCO (NAROWAL),Power: HUBCO (Balochistan / Narowal)
+fuel_sales_national,POWER · K-Electric,Power: K-Electric
+fuel_sales_national,POWER · KAPCO (LSFO),Power: KAPCO (low-sulfur fuel oil)
+fuel_sales_national,POWER · Narowal Energy,Power: Narowal Energy
+fuel_sales_national,POWER · PEPCO,Power: PEPCO
+fuel_sales_national,POWER · Private Power,Power: private producers
+fuel_sales_national,POWER · Total Power,Power total
+fuel_sales_national,PROCESS OIL,Process oil
+fuel_sales_national,Road,Road transport
+fuel_sales_national,SOLVENT,Solvent
+fuel_sales_national,TOTAL,All products total
+fuel_sales_national,TOTAL_INTERNAL,All domestic sales total
+fuel_sales_national,TOTAL_PRIOR,Previous-year comparison total
+fuel_sales_national,TRANSPORT · Domestic Avi-Others,Domestic aviation: other operators
+fuel_sales_national,TRANSPORT · Domestic Avi-PIA,Domestic aviation: PIA
+fuel_sales_national,TRANSPORT · Domestic Bunkers,Domestic shipping (bunkers)
+fuel_sales_national,TRANSPORT · Railways,Railways
+fuel_sales_national,TRANSPORT · Road,Road transport
+fuel_sales_national,TRANSPORT · Total Transport,Transport total
+fuel_sales_national,Total Government,Government total
+fuel_sales_national,Total Industry,Industry total
+fuel_sales_national,Total Power,Power total
+fuel_sales_national,Total Transport,Transport total
+gas_network,T&D losses (UFG),Unaccounted-for gas (UFG)
+gas_network,customer_connection,Customer connections
+gas_network,lng_import_terminal,LNG import terminal
+household_fuel,lpg,Liquefied petroleum gas (LPG)
+industry_fuel,Feed,feedstock
+industry_fuel,Fuel,fuel
+industry_fuel,cement_other,Cement and other consumers
+industry_fuel,domestic,Domestic consumers
+industry_fuel,household,Households
+industry_fuel,other_govt,Other government consumers
+industry_fuel,pak_steel,Pakistan Steel
+industry_fuel,power,Power generation
+industry_production,2.A.1,IPCC 2.A.1
+industry_production,2.A.3,IPCC 2.A.3
+industry_production,2.B.7,IPCC 2.B.7
+industry_production,2.C.1,IPCC 2.C.1
+industry_production,2.D.1,IPCC 2.D.1
+industry_production,2.F,IPCC 2.F
+industry_production,252310,HS 252310 (cement clinker)
+industry_production,billets_ingots,Billets and ingots
+industry_production,export,Exports
+industry_production,glass_plates_sheets,Glass plates and sheets
+industry_production,import,Imports
+industry_production,ippu,Industrial processes and product use
+industry_production,local,Domestic dispatches
+power_monthly,Bagasse · pbs_fuel_column,Bagasse
+power_monthly,Bagasse · pbs_fuel_column_fy2018,Bagasse
+power_monthly,Bagasse · sir_fuel_column,Bagasse
+power_monthly,Coal · pbs_fuel_column,Coal
+power_monthly,Coal · pbs_fuel_column_fy2018,Coal
+power_monthly,Coal · sir_fuel_column,Coal
+power_monthly,Coal · sir_sheet_label,Coal
+power_monthly,Coal · sir_sheet_label_carried_fy2017,Coal
+power_monthly,Gas · nepra_panel_100%,Gas
+power_monthly,Gas · pbs_fuel_column,Gas
+power_monthly,Gas · pbs_fuel_column_fy2018,Gas
+power_monthly,Gas · sir_fuel_column,Gas
+power_monthly,HSD · pbs_fuel_column,High-speed diesel (HSD)
+power_monthly,Hydel · pbs_fuel_column,Hydropower
+power_monthly,Hydel · pbs_fuel_column_fy2018,Hydropower
+power_monthly,Hydel · sir_fuel_column,Hydropower
+power_monthly,Nuclear · pbs_fuel_column,Nuclear
+power_monthly,Nuclear · pbs_fuel_column_fy2018,Nuclear
+power_monthly,Nuclear · sir_fuel_column,Nuclear
+power_monthly,RFO · nepra_panel_100%,Residual fuel oil (RFO)
+power_monthly,RFO · nepra_panel_95%,Residual fuel oil (RFO)
+power_monthly,RFO · pbs_fuel_column,Residual fuel oil (RFO)
+power_monthly,RFO · pbs_fuel_column_fy2000,Residual fuel oil (RFO)
+power_monthly,RFO · pbs_fuel_column_fy2018,Residual fuel oil (RFO)
+power_monthly,RFO · sir_fuel_column,Residual fuel oil (RFO)
+power_monthly,RLNG · pbs_fuel_column,Regasified LNG (RLNG)
+power_monthly,RLNG · pbs_fuel_column_fy2018,Regasified LNG (RLNG)
+power_monthly,RLNG · sir_annual_control_bound_98%,Regasified LNG (RLNG)
+power_monthly,RLNG · sir_annual_control_bound_99%,Regasified LNG (RLNG)
+power_monthly,RLNG · sir_fuel_column,Regasified LNG (RLNG)
+power_monthly,RLNG · sir_sheet_bound,Regasified LNG (RLNG)
+power_monthly,Solar · pbs_fuel_column,Solar
+power_monthly,Solar · pbs_fuel_column_fy2018,Solar
+power_monthly,Solar · sir_fuel_column,Solar
+power_monthly,Wind · pbs_fuel_column,Wind
+power_monthly,Wind · pbs_fuel_column_fy2018,Wind
+power_monthly,Wind · sir_fuel_column,Wind
+power_monthly,unassigned,Fuel not assigned
+power_plants,(000 M. Tons) & Gul Ahmed,Gul Ahmed
+power_plants,(000 M. Tons) Lal Pir,Lal Pir
+power_plants,(000 liters) (Average) & Bin Qasim TPS-III,Bin Qasim TPS-III
+power_plants,(Rs. Million) GTPS Faisalabad,GTPS Faisalabad
+power_plants,(Rs. Million) TPS Guddu (Units 5-10) (GENCO-II),TPS Guddu (Units 5-10) (GENCO-II)
+power_plants,(Rs. Million) TPS Jamshoro (GENCO-I),TPS Jamshoro (GENCO-I)
+power_plants,HSD,High-speed diesel (HSD)
+power_plants,RFO,Residual fuel oil (RFO)
+power_plants,RLNG,Regasified liquefied natural gas (RLNG)
+power_plants,RLNG RFO HSD Overall kWh) KAPCO,KAPCO
+power_plants,kWh) & Korangi CCPP,Korangi CCPP
+railways,Gas/Diesel Oil,Gas / diesel oil
+railways,Residual Fuel Oil,Residual fuel oil
+railways,freight_tonnes,Freight carried
+railways,line_haul_freight,Freight train distance
+railways,line_haul_passenger,Passenger train distance
+railways,passenger_km,Passenger distance
+railways,railcar,Railcar distance
+railways,shunting,Shunting distance
+railways,tonne_km,Freight transport work
+railways,total_train_km,Total train distance
+railways,train_km,Train-kilometres
+vehicles,2W,Two-wheelers (2W)
+vehicles,3W,Three-wheelers (3W)
+vehicles,4W1,Small cars (4W1)
+vehicles,4W2,Large cars / SUVs (4W2)
+vehicles,4WT,Taxis (4WT)
+vehicles,BUS,Buses (BUS)
+vehicles,CNG,Compressed natural gas (CNG)
+vehicles,HDV,Heavy-duty vehicles (HDV)
+vehicles,LDV,Light-duty vehicles (LDV)
+vehicles,NRV,Mixed off-road vehicles (NRV)
+vehicles,cng,Compressed natural gas (CNG)
+waste_flows,Generated,Waste generated
+waste_flows,"UNRESOLVED - dumped to land and waterways, unburned",Unburned disposal to land or water (unresolved)
+waste_flows,Uncollected,Uncollected waste
+waste_flows,national,Overall waste balance
+waste_flows,uncollected,Breakdown of uncollected waste
+waste_services,Collected by Municipality van from door step,Municipal doorstep collection
+waste_services,Collected by Private van/cart from door step,Private doorstep collection
+waste_services,Lake/River/Nullah,"Lake, river or drainage channel"
+waste_services,Public Bin/Collection point,Public bin or collection point
+waste_services,Road/street,Road or street
+waste_services,derived: routes 1-3 door-step and public-bin,All collected routes (subtotal)
+waste_services,derived: routes 4-7,All uncollected routes (subtotal)
+waste_services,latrines_and_other_pct,Latrines and other sanitation
+waste_services,open_defecation_pct,Open defecation
+waste_services,septic_tanks_pct,Septic tanks
+waste_services,sewer_connection_pct,Sewer connection
+waste_services,unimproved_pct,Unimproved sanitation
+power_monthly,nepra_panel_100%,Fuel inferred from NEPRA plant panel (100%)
+power_monthly,nepra_panel_95%,Fuel inferred from NEPRA plant panel (95%)
+power_monthly,pbs_fuel_column,Fuel reported by PBS
+power_monthly,pbs_fuel_column_fy2000,Fuel carried from PBS source year FY2000
+power_monthly,pbs_fuel_column_fy2018,Fuel carried from PBS source year FY2018
+power_monthly,sir_annual_control_bound_98%,Fuel inferred from annual totals (98% bound)
+power_monthly,sir_annual_control_bound_99%,Fuel inferred from annual totals (99% bound)
+power_monthly,sir_fuel_column,Fuel reported by NEPRA
+power_monthly,sir_sheet_bound,Fuel assigned from NEPRA sheet information
+power_monthly,sir_sheet_label,NEPRA sheet fuel label
+power_monthly,sir_sheet_label_carried_fy2017,Fuel carried from NEPRA source year FY2017
+power_monthly,unassigned,Fuel not assigned in any source
+crops,bales_converted,Converted from bales
+crops,observed_fiscal,Reported fiscal-year data
+crops,summed_duplicate,Duplicate source entries summed
+fertiliser,observed_fiscal,Reported fiscal-year data
+fertiliser,observed_fiscal_full_year,Reported full fiscal-year data
+fuel_sales_national,closure-failed,Printed total does not match its components
+fuel_sales_national,restated,Source restatement
+fuel_sales_national,unchecked,Not checked
+fuel_sales_national,unidentified,Not identified
+fuel_sales_national,verified,Verified in source extract
+industry_fuel,superseded_provisional,Superseded provisional value
+industry_fuel,transcribed_from_secondary,Transcribed from a secondary source
+industry_fuel,verified-ocr,Verified OCR transcription
+industry_production,control,Control total
+industry_production,screen,Screening activity
+industry_production,verified-ocr,Verified OCR transcription
+livestock,census_enumeration,Census count
+livestock,economic_survey_projection,Projection (not a census count)
+power_monthly,HSD,High-speed diesel (HSD)
+power_monthly,Hydel,Hydropower
+power_monthly,RFO,Residual fuel oil (RFO)
+power_monthly,RLNG,Regasified LNG (RLNG)
+waste_services,1,Disposal route 1
+waste_services,2,Disposal route 2
+waste_services,3,Disposal route 3
+waste_services,4,Disposal route 4
+waste_services,5,Disposal route 5
+waste_services,6,Disposal route 6
+waste_services,7,Disposal route 7
+waste_services,collected,Collected-routes subtotal
+waste_services,uncollected,Uncollected-routes subtotal
+*,AZAD KASHMIR,Azad Kashmir
+*,BALOCHISTAN,Balochistan
+*,FATA,Former Federally Administered Tribal Areas (FATA)
+*,GILGIT BALTISTAN,Gilgit-Baltistan
+*,KARACHI,Karachi (source sales area)
+*,KHYBER PAKHTUNKHWA,Khyber Pakhtunkhwa
+*,PUNJAB,Punjab
+*,SINDH,Sindh (source sales area)

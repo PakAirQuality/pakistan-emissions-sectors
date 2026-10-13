@@ -1,0 +1,10 @@
+corridor,passenger_tier,freight_tier,basis,note
+ML1_south,30,45,corridor_judgement,"The Karachi-Rohri trunk: virtually every long-distance passenger service and the great majority of freight (Karachi division loads 63 percent of wagons, moving up-country) traverse it. Tiers are service-intensity CLASSES, not measurements; weight = tier x corridor km, normalised."
+ML1_central,30,35,corridor_judgement,"Rohri-Lahore trunk; the same spine minus traffic terminating south."
+ML1_north,25,12,corridor_judgement,"Lahore-Peshawar: dense passenger service; freight thins north of Lahore."
+ML2,2,3,corridor_judgement,"The Indus west-bank line: minimal through passenger service; occasional freight relief routing."
+ML3,5,6,corridor_judgement,"Rohri-Quetta: a handful of daily passenger pairs over hard grades; oil and general freight to Balochistan (Quetta division loads under 1 percent)."
+BR_faisalabad,10,8,corridor_judgement,"The Khanewal-Faisalabad-Lahore alternative routing carries several daily through services and industrial freight."
+BR_sialkot,3,1,corridor_judgement,"Wazirabad-Sialkot branch passenger workings."
+BR_sargodha,2,2,corridor_judgement,"Sangla Hill-Sargodha-Kundian cross line."
+branch_other,1,1,corridor_judgement,"Every active network segment not on a defined corridor: residual local workings at the lowest tier."

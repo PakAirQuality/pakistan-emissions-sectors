@@ -1,0 +1,109 @@
+fiscal_year,segment,reporting_group,ch4_Gg,co2_Gg,n2o_Gg,co2e_Mt_AR5,configuration,coverage
+2016,Oil production,upstream/processing,17.26063987732,62.39998089759999,0.00095612873956,0.5804725513331834,reference,matched public-data segment ledger; no interpolation
+2016,Oil pipeline transport,upstream/processing,0.0271741852296,0.0024658056967599997,0.0,0.0008176913625847599,reference,matched public-data segment ledger; no interpolation
+2016,Oil refining,upstream/processing,0.3992858823529412,77.86074705882353,0.0011672457294117648,0.09014864364770589,reference,matched public-data segment ledger; no interpolation
+2016,Gas production,upstream/processing,171.586883929312,60.831535867359996,0.0010488195839200001,5.208715990936458,reference,matched public-data segment ledger; no interpolation
+2016,Gas gathering,upstream/processing,134.24890674176,14.683474174879999,0.0002517167001408,4.0422173813532165,reference,matched public-data segment ledger; no interpolation
+2016,Gas processing,upstream/processing,76.773593542944,5.034334002816,5.453861836384e-05,2.3082565930250025,reference,matched public-data segment ledger; no interpolation
+2016,Sour-gas processing,upstream/processing,1.3424890674176002,894.0977189001215,0.000724944096405504,0.934564501108197,reference,matched public-data segment ledger; no interpolation
+2016,Gas transmission,network/import,47.37582799999999,3.2354224000000005,0.0,1.4245102623999997,reference,matched public-data segment ledger; no interpolation
+2016,Gas distribution,network/import,173.48525999999998,4.44834,0.0,5.20900614,reference,matched public-data segment ledger; no interpolation
+2016,LNG import terminals,network/import,1.66,14.687,0.0,0.06448699999999999,reference,matched public-data segment ledger; no interpolation
+2016,Post-meter appliances,post-meter,25.5907072,0.255907072,0.0,0.767977123072,reference,matched public-data segment ledger; no interpolation
+2016,Post-meter industrial and power,post-meter,125.0625931843495,1.250625931843495,0.0,3.7531284214623284,reference,matched public-data segment ledger; no interpolation
+2017,Oil production,upstream/processing,17.59710565529,63.6163586372,0.0009747667855700001,0.5917878414940759,reference,matched public-data segment ledger; no interpolation
+2017,Oil pipeline transport,upstream/processing,0.027703898116200002,0.0025138722364699997,0.0,0.0008336308157224701,reference,matched public-data segment ledger; no interpolation
+2017,Oil refining,upstream/processing,0.4259294117647059,83.05623529411766,0.0012451336470588237,0.09616407806352942,reference,matched public-data segment ledger; no interpolation
+2017,Gas production,upstream/processing,170.463818970048,60.43338325344,0.0010419548836800002,5.174624070399055,reference,matched public-data segment ledger; no interpolation
+2017,Gas gathering,upstream/processing,133.37022511104,14.58736837152,0.0002500691720832,4.015760390033321,reference,matched public-data segment ledger; no interpolation
+2017,Gas processing,upstream/processing,76.27109748537602,5.001383441664,5.4181653951360005e-05,2.2931486661412412,reference,matched public-data segment ledger; no interpolation
+2017,Sour-gas processing,upstream/processing,1.3337022511104004,888.2456992395264,0.0007201992155996161,0.9284476195649725,reference,matched public-data segment ledger; no interpolation
+2017,Gas transmission,network/import,53.087619999999994,3.6254960000000005,0.0,1.5962540959999998,reference,matched public-data segment ledger; no interpolation
+2017,Gas distribution,network/import,182.21346,4.67214,0.0,5.47107594,reference,matched public-data segment ledger; no interpolation
+2017,LNG import terminals,network/import,1.66,14.687,0.0,0.06448699999999999,reference,matched public-data segment ledger; no interpolation
+2017,Post-meter appliances,post-meter,27.1472832,0.271472832,0.0,0.8146899688320001,reference,matched public-data segment ledger; no interpolation
+2017,Post-meter industrial and power,post-meter,133.53634133753704,1.3353634133753702,0.0,4.007425603539486,reference,matched public-data segment ledger; no interpolation
+2018,Oil production,upstream/processing,17.754159373369998,64.1841330116,0.00098346655421,0.5970695328495655,reference,matched public-data segment ledger; no interpolation
+2018,Oil pipeline transport,upstream/processing,0.0279511546986,0.00253630848191,0.0,0.00084107094943991,reference,matched public-data segment ledger; no interpolation
+2018,Oil refining,upstream/processing,0.4813411764705883,93.8615294117647,0.0014071207058823532,0.10867465169294117,reference,matched public-data segment ledger; no interpolation
+2018,Gas production,upstream/processing,168.96759578671998,59.90293738159999,0.0010328092652,5.129204505438478,reference,matched public-data segment ledger; no interpolation
+2018,Gas gathering,upstream/processing,132.1995859456,14.459329712799997,0.000247874223648,3.9805125947500666,reference,matched public-data segment ledger; no interpolation
+2018,Gas processing,upstream/processing,75.60163821264,4.95748447296,5.37060817904e-05,2.2730208629638344,reference,matched public-data segment ledger; no interpolation
+2018,Sour-gas processing,upstream/processing,1.321995859456,880.4492423976959,0.0007138777641062399,0.9202982957888641,reference,matched public-data segment ledger; no interpolation
+2018,Gas transmission,network/import,54.723397,3.7372076,0.0,1.6454391176,reference,matched public-data segment ledger; no interpolation
+2018,Gas distribution,network/import,197.24795999999998,5.057639999999999,0.0,5.92249644,reference,matched public-data segment ledger; no interpolation
+2018,LNG import terminals,network/import,3.32,29.374,0.0,0.12897399999999998,reference,matched public-data segment ledger; no interpolation
+2018,Post-meter appliances,post-meter,29.310700800000003,0.293107008,0.0,0.8796141310080001,reference,matched public-data segment ledger; no interpolation
+2018,Post-meter industrial and power,post-meter,152.96506352711106,1.5296506352711106,0.0,4.590481556448603,reference,matched public-data segment ledger; no interpolation
+2019,Oil production,upstream/processing,17.72034919795,64.06190380599999,0.00098159368735,0.5959325020716478,reference,matched public-data segment ledger; no interpolation
+2019,Oil pipeline transport,upstream/processing,0.027897925851,0.0025314784568499994,0.0,0.0008394692539868501,reference,matched public-data segment ledger; no interpolation
+2019,Oil refining,upstream/processing,0.43725917647058826,85.2655394117647,0.0012782543258823532,0.09872205210224118,reference,matched public-data segment ledger; no interpolation
+2019,Gas production,upstream/processing,166.374597810752,58.98365937056,0.00101695964432,5.050491087998866,reference,matched public-data segment ledger; no interpolation
+2019,Gas gathering,upstream/processing,130.17083447296,14.23743502048,0.00024407031463680003,3.9194271478426588,reference,matched public-data segment ledger; no interpolation
+2019,Gas processing,upstream/processing,74.441445964224,4.881406292736,5.2881901504640006e-05,2.2381387989233548,reference,matched public-data segment ledger; no interpolation
+2019,Sour-gas processing,upstream/processing,1.3017083447296,866.9377575899135,0.000702922506153984,0.9061752823959324,reference,matched public-data segment ledger; no interpolation
+2019,Gas transmission,network/import,55.1532,3.7665600000000006,0.0,1.65836256,reference,matched public-data segment ledger; no interpolation
+2019,Gas distribution,network/import,207.12393,5.3108699999999995,0.0,6.2190287699999995,reference,matched public-data segment ledger; no interpolation
+2019,LNG import terminals,network/import,3.32,29.374,0.0,0.12897399999999998,reference,matched public-data segment ledger; no interpolation
+2019,Post-meter appliances,post-meter,31.012643200000003,0.31012643199999995,0.0,0.930689422432,reference,matched public-data segment ledger; no interpolation
+2019,Post-meter industrial and power,post-meter,150.71007326100417,1.5071007326100418,0.0,4.522809298562735,reference,matched public-data segment ledger; no interpolation
+2020,Oil production,upstream/processing,15.318736092309999,55.37968733079999,0.0008485597252299999,0.5151666384272859,reference,matched public-data segment ledger; no interpolation
+2020,Oil pipeline transport,upstream/processing,0.024116960611799996,0.0021883908703299996,0.0,0.0007256972092243298,reference,matched public-data segment ledger; no interpolation
+2020,Oil refining,upstream/processing,0.34764705882352936,67.79117647058823,0.0010162882352941177,0.07848990461764706,reference,matched public-data segment ledger; no interpolation
+2020,Gas production,upstream/processing,152.48713578483196,54.060231512959994,0.00093207295712,4.628921304391556,reference,matched public-data segment ledger; no interpolation
+2020,Gas gathering,upstream/processing,119.30533851135999,13.049021399679999,0.0002236975097088,3.5922684565805527,reference,matched public-data segment ledger; no interpolation
+2020,Gas processing,upstream/processing,68.227740461184,4.473950194176,4.8467793770239996e-05,2.0513190079950454,reference,matched public-data segment ledger; no interpolation
+2020,Sour-gas processing,upstream/processing,1.1930533851136,794.5735544856576,0.000644248827961344,0.8305358819784754,reference,matched public-data segment ledger; no interpolation
+2020,Gas transmission,network/import,56.22731799999999,3.8399144,0.0,1.6906594543999998,reference,matched public-data segment ledger; no interpolation
+2020,Gas distribution,network/import,214.58618999999996,5.50221,0.0,6.443087909999999,reference,matched public-data segment ledger; no interpolation
+2020,LNG import terminals,network/import,3.32,29.374,0.0,0.12897399999999998,reference,matched public-data segment ledger; no interpolation
+2020,Post-meter appliances,post-meter,32.1817088,0.32181708800000003,0.0,0.9657730810880001,reference,matched public-data segment ledger; no interpolation
+2020,Post-meter industrial and power,post-meter,127.18860143784237,1.2718860143784236,0.0,3.8169299291496492,reference,matched public-data segment ledger; no interpolation
+2021,Oil production,upstream/processing,15.0291682996,54.332853328,0.0008325195268,0.505428519990602,reference,matched public-data segment ledger; no interpolation
+2021,Oil pipeline transport,upstream/processing,0.023661081288,0.0021470240427999996,0.0,0.0007119794626828,reference,matched public-data segment ledger; no interpolation
+2021,Oil refining,upstream/processing,0.37623529411764706,73.36588235294117,0.0010998611764705883,0.08494440438823529,reference,matched public-data segment ledger; no interpolation
+2021,Gas production,upstream/processing,148.128295648,52.514921439999995,0.00090542968,4.496603729745201,reference,matched public-data segment ledger; no interpolation
+2021,Gas gathering,upstream/processing,115.89499904000002,12.676015519999998,0.0002173031232,3.489583572047648,reference,matched public-data segment ledger; no interpolation
+2021,Gas processing,upstream/processing,66.277452576,4.346062464,4.708234336e-05,1.9926821165649904,reference,matched public-data segment ledger; no interpolation
+2021,Sour-gas processing,upstream/processing,1.1589499904000002,771.8606936063999,0.000625832994816,0.8067950390620261,reference,matched public-data segment ledger; no interpolation
+2021,Gas transmission,network/import,56.4488,3.8550400000000002,0.0,1.6973190399999998,reference,matched public-data segment ledger; no interpolation
+2021,Gas distribution,network/import,224.02926,5.74434,0.0,6.72662214,reference,matched public-data segment ledger; no interpolation
+2021,LNG import terminals,network/import,3.32,29.374,0.0,0.12897399999999998,reference,matched public-data segment ledger; no interpolation
+2021,Post-meter appliances,post-meter,33.6748416,0.33674841599999994,0.0,1.010581996416,reference,matched public-data segment ledger; no interpolation
+2021,Post-meter industrial and power,post-meter,140.0652841036598,1.400652841036598,0.0,4.20335917595083,reference,matched public-data segment ledger; no interpolation
+2022,Oil production,upstream/processing,15.32255337018,55.3934874024,0.00084877117794,0.5152950128699542,reference,matched public-data segment ledger; no interpolation
+2022,Oil pipeline transport,upstream/processing,0.0241229703204,0.0021889361957399996,0.0,0.00072587804580774,reference,matched public-data segment ledger; no interpolation
+2022,Oil refining,upstream/processing,0.378,73.71,0.0011050200000000002,0.0853428303,reference,matched public-data segment ledger; no interpolation
+2022,Gas production,upstream/processing,151.48695129599997,53.70564288,0.00092595936,4.598559560990399,reference,matched public-data segment ledger; no interpolation
+2022,Gas gathering,upstream/processing,118.52279808,12.96343104,0.0002222302464,3.568706264455296,reference,matched public-data segment ledger; no interpolation
+2022,Gas processing,upstream/processing,67.780225152,4.4446049279999995,4.814988672e-05,2.0378641192079807,reference,matched public-data segment ledger; no interpolation
+2022,Sour-gas processing,upstream/processing,1.1852279808000001,789.3618352128,0.0006400231096320001,0.8250882807608525,reference,matched public-data segment ledger; no interpolation
+2022,Gas transmission,network/import,54.097736999999995,3.6944796,0.0,1.6266265895999998,reference,matched public-data segment ledger; no interpolation
+2022,Gas distribution,network/import,228.64725,5.86275,0.0,6.8652802500000005,reference,matched public-data segment ledger; no interpolation
+2022,LNG import terminals,network/import,3.32,29.374,0.0,0.12897399999999998,reference,matched public-data segment ledger; no interpolation
+2022,Post-meter appliances,post-meter,34.209392,0.34209392,0.0,1.02662385392,reference,matched public-data segment ledger; no interpolation
+2022,Post-meter industrial and power,post-meter,130.21877120995234,1.3021877120995233,0.0,3.9078653240106695,reference,matched public-data segment ledger; no interpolation
+2023,Oil production,upstream/processing,13.8294523976,49.995687968,0.0007660629608000001,0.46508226658061197,reference,matched public-data segment ledger; no interpolation
+2023,Oil pipeline transport,upstream/processing,0.021772315728,0.0019756360568,0.0,0.0006551451078968001,reference,matched public-data segment ledger; no interpolation
+2023,Oil refining,upstream/processing,0.328941176472,64.14352941204,0.00096160470588648,0.07426658995325991,reference,matched public-data segment ledger; no interpolation
+2023,Gas production,upstream/processing,137.82069728,48.8606384,0.0008424248,4.183704799371999,reference,matched public-data segment ledger; no interpolation
+2023,Gas gathering,upstream/processing,107.8303744,11.793947199999998,0.000202181952,3.2467587574172803,reference,matched public-data segment ledger; no interpolation
+2023,Gas processing,upstream/processing,61.66549536,4.0436390399999995,4.38060896e-05,1.854020108453744,reference,matched public-data segment ledger; no interpolation
+2023,Sour-gas processing,upstream/processing,1.078303744,718.1502935039999,0.0005822840217599999,0.7506537110897664,reference,matched public-data segment ledger; no interpolation
+2023,Gas transmission,network/import,54.99739999999999,3.7559200000000006,0.0,1.6536779199999998,reference,matched public-data segment ledger; no interpolation
+2023,Gas distribution,network/import,232.50123,5.96157,0.0,6.98099847,reference,matched public-data segment ledger; no interpolation
+2023,LNG import terminals,network/import,3.32,29.374,0.0,0.12897399999999998,reference,matched public-data segment ledger; no interpolation
+2023,Post-meter appliances,post-meter,34.391200000000005,0.343912,0.0,1.0320799120000002,reference,matched public-data segment ledger; no interpolation
+2023,Post-meter industrial and power,post-meter,112.98070440234156,1.1298070440234156,0.0,3.39055093911427,reference,matched public-data segment ledger; no interpolation
+2024,Oil production,upstream/processing,14.07593948292,50.886778305600004,0.0007797167643600001,0.47337158773575544,reference,matched public-data segment ledger; no interpolation
+2024,Oil pipeline transport,upstream/processing,0.022160371197600004,0.00201084849756,0.0,0.0006668219844255601,reference,matched public-data segment ledger; no interpolation
+2024,Oil refining,upstream/processing,0.37658823,73.43470484999999,0.0011008929257000002,0.08502408837531049,reference,matched public-data segment ledger; no interpolation
+2024,Gas production,upstream/processing,132.145727392,46.84872976,0.0008077367199999999,4.0114346017508,reference,matched public-data segment ledger; no interpolation
+2024,Gas gathering,upstream/processing,103.39030016,11.308314079999999,0.0001938568128,3.1130686909353917,reference,matched public-data segment ledger; no interpolation
+2024,Gas processing,upstream/processing,59.126327904,3.8771362559999996,4.2002309440000006e-05,1.7776781039880014,reference,matched public-data segment ledger; no interpolation
+2024,Sour-gas processing,upstream/processing,1.0339030016000001,688.5793990656,0.0005583076208639999,0.7197444406331289,reference,matched public-data segment ledger; no interpolation
+2024,Gas transmission,network/import,55.45942899999999,3.7874732000000004,0.0,1.6675703431999997,reference,matched public-data segment ledger; no interpolation
+2024,Gas distribution,network/import,235.43909999999997,6.036899999999999,0.0,7.069209899999999,reference,matched public-data segment ledger; no interpolation
+2024,LNG import terminals,network/import,3.32,29.374,0.0,0.12897399999999998,reference,matched public-data segment ledger; no interpolation
+2024,Post-meter appliances,post-meter,34.3953216,0.343953216,0.0,1.032203601216,reference,matched public-data segment ledger; no interpolation
+2024,Post-meter industrial and power,post-meter,113.9761575997256,1.1397615759972561,0.0,3.420424489567765,reference,matched public-data segment ledger; no interpolation

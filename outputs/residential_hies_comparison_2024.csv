@@ -1,0 +1,12 @@
+fuel,role,unit,hies2425_annual,hies2425_users_share,hies1819_annual,engine_annual,ratio_hies_over_engine,note
+firewood,primary,kg,23132908755.0,0.3511,22002643443.0,23132908755,0.942,HIES IS the estimate; ratio shown against FAOSTAT's moisture-matched air-dry equivalent
+natural_gas,diagnostic-expenditure,rupees,444823667339.0,0.3848,88692432931.0,,,rupee expenditure only; no physical quantity in HIES
+lpg,diagnostic,kg,896018325.0,0.2005,557698486.0,717726800,1.248,OGRA domestic LPG
+kerosene,diagnostic,litre,77960761.0,0.0027,16054714.0,30788750,2.532,OCAC DOMESTIC kerosene (litres via density). The survey's 2.5x excess rides 116 outlier-heavy households (0.3 percent users) whose implied unit value is a fifth of retail - unusable as evidence in either direction
+dung_cake,primary,kg,11967388847.0,0.1479,6504098369.0,10933402878,0.204,"the HIES rounds ARE the estimate (interpolated per household to the reference year); ratio shown against the dung agriculture diverts, air-dry basis - r_dung inverted, the part of the diverted supply households are observed burning"
+charcoal,sole-source,kg,8332921.0,0.0009,294193184.0,8332921,1.0,survey IS the estimate; no supply-side statistic exists (OGRA's household coal row is nil)
+coal,sole-source,kg,13222520.0,0.0005,75556625.0,13222520,1.0,survey IS the estimate; no supply-side statistic exists (OGRA's household coal row is nil)
+electricity,expenditure,rupees,2132696227114.0,0.8857,654703692948.0,,,rupee expenditure only; no physical quantity in HIES
+generator_fuel,sole-source-expenditure,rupees,20552181360.0,0.0038,10655571040.0,,,rupee expenditure over the administered petrol price IS the engine's generator stream; the mass is deducted from the road petrol control with equality asserted
+agricultural_waste,sole-source-expenditure,rupees,131990554102.0,0.1653,39621375003.0,,,"rupee expenditure only; the engine's residue stream rides the agriculture ledger, and the price-implied bracket from these values (firewood-priced low, dung-priced high) must contain it - see residue_implied_range_kg and the test"
+cotton_sticks,sole-source-expenditure,rupees,47608483670.0,0.0707,40615468297.0,,,"rupee expenditure only; the engine's residue stream rides the agriculture ledger, and the price-implied bracket from these values (firewood-priced low, dung-priced high) must contain it - see residue_implied_range_kg and the test"

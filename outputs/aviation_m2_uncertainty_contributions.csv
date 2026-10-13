@@ -1,0 +1,6 @@
+uncertainty_group,full_variance_Mt2,variance_with_group_frozen_Mt2,variance_reduction_pct,method,iterations
+aircraft,0.00022399375882738645,9.42149114282641e-05,57.938599753188754,drop-one variance reduction screen; contributions are not additive,5000
+detour,0.00022399375882738645,0.00018100950682493815,19.18993289253774,drop-one variance reduction screen; contributions are not additive,5000
+carbon,0.00022399375882738645,0.0001828372670079155,18.373945789796252,drop-one variance reduction screen; contributions are not additive,5000
+payload,0.00022399375882738645,0.0002197951339637189,1.874438326160277,drop-one variance reduction screen; contributions are not additive,5000
+taxi,0.00022399375882738645,0.00022428054994311835,0.0,drop-one variance reduction screen; contributions are not additive,5000

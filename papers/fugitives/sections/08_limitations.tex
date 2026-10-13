@@ -1,0 +1,50 @@
+% ===========================================================================
+\section{Limitations}
+\label{sec:limitations}
+% ===========================================================================
+
+Pakistan-specific equipment and leakage measurements remain sparse. National pipe material,
+pressure class, network age, annual LDAR coverage, compressor type and seal configuration were
+unavailable. The post-meter industrial/power factor is transferred from the IPCC default, and
+processing uses produced or marketable gas in the absence of plant throughput. These inputs
+control the largest structural differences.
+
+The post-meter factor also rides gas the combustion sectors meter: the national
+gas ledger (\texttt{outputs/national\_gas\_closure.csv}) joins OGRA Table~3.31's end-use
+partition to each consuming module's live quantity and quantifies the leaked share of
+the burned-and-leaked classes' double-claim at about \SI{1.0}{\percent} of their
+whole-gas mass. Since this release the combustion side books its gas rows \emph{net}
+of that share---this sector's leak claim is untouched, and no molecule is claimed
+both burned and leaked---while the gross delivered-gas booking survives as
+the joint national configuration \emph{gross\_delivered\_gas\_accounting}
+(\SI{+0.288}{\mega\tonne} of combustion \COtwo{}e restored onto the gas rows the
+consuming modules book net). That figure is the combustion side of the four burned streams
+and holds no fertilizer term. Fertilizer gas is the ledger's sharpest single class,
+\SI{31}{\percent} of the six classes the leak base is drawn from, and it is carried as two
+rows. The chemical feedstock, \SI{83.5}{\percent} of the class, is reformed and not burned:
+it sits outside every combustion module and is now outside the leak base as well. The
+process fuel is burned at the plants and stays inside it. The earlier membership, with the
+feedstock inside the base, is retained as the scenario
+\emph{post\_meter\_including\_feedstock} (\SI{24.694}{\mega\tonne}), the top of the
+structural envelope, and is not defended.
+
+The public gas-flow account does not resolve reinjection, own use, processing shrinkage or
+operator venting and flaring. Active and abandoned wells, exploration, workovers, pneumatic
+equipment, blowdowns, accidents and anomalous releases remain NE or embedded in inclusive
+factors according to the completeness matrix. A complete well-, facility- and component-level
+ledger would improve both coverage and technology classification.
+
+Satellite evidence is spatially and temporally selective. VIIRS detects combustion radiance,
+MARS emphasizes large intermittent plumes, and only \num{8} of the \num{73} official fields
+receive matched MARS events. A zero in the matched record is therefore not an observed
+non-detection: it may be unobserved, cloud- or geometry-limited, below the detection
+threshold, or outside sensor coverage, and the permutation tests retain those zeros as
+rank evidence only---no field is read as observed-clean. Building the sensor-opportunity
+cube that would separate these cases is named future work. The field analysis
+consequently tests upstream geography; network and post-meter rows
+need utility, facility or urban atmospheric measurements.
+
+The full infrastructure reconstruction begins in FY2015--16, and fiscal years only bracket the
+calendar-2022 CRT comparison. Structural envelopes cover the declared public-data choices but
+cannot enumerate every physical configuration. Conditional intervals also depend on the bounded
+input distributions documented in the supplement.

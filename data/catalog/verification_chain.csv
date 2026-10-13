@@ -1,0 +1,98 @@
+# THE FOUR-STAGE DERIVATION CHAIN, declared per sector.
+# 
+# Every step from the published source to the reported number is already computed somewhere
+# in outputs/. None of it was assembled: a reader who wanted to know how 20.3 million
+# registered vehicles become 41.93 Mt CO2e had to know which four of twenty-three transport
+# files were the spine, and in what order. This registry says which, and the chain builder
+# reads them - it computes nothing, so a chain row and its source agree by construction.
+# 
+# stage    1_source      the numbers as the publisher printed them
+#          3_correction  what was taken off, partitioned, re-anchored or selected, and why
+#          2_used        what the engine finally integrated
+#          4_final       the emissions
+#          (numbered 1,3,2,4 because corrections happen TO the source and PRODUCE the used
+#           value; the file is sorted by `order`, so the walk reads correctly)
+# 
+# recipe   ledger        the artifact is already long - one chain row per source row
+#          comparison    the artifact is wide - one chain row per (row, declared value
+#                        column), which is how a side-by-side reads as a walk
+#          absent        no artifact exists for this stage; `note` says what is missing
+# 
+# status   derived | declared_absent. A stage with no artifact is DECLARED, never skipped:
+#          a chain with a missing link that looks complete is worse than no chain.
+# 
+# filter_value MAX takes the latest value of filter_column rather than naming a year that
+# would go stale silently. unit_column overrides unit where the source carries its own.
+# 
+# Written by hand; consumed by pkinv.report.derivation_chain.
+sector,stage,order,title,recipe,source_file,filter_column,filter_value,subject_column,item_column,kind_column,kind_default,value_column,value_columns,unit,unit_column,note_column,status,note
+transport,1_source,10,"the fuel figures as OCAC prints them, before any inventory decision",ledger,outputs/transport_fuel_ledger_2024.csv,tier,national,fuel,claimant,kind,,kt,,kt,,note,derived,
+transport,1_source,20,"the registered vehicle fleet, by class",ledger,outputs/transport_class_parameters_2024.csv,,,,label,,source,registered,,vehicles,,,derived,CUMULATIVE REGISTERED STOCK. It sets the district shape and the class split; it is never the activity level - the fuel figures are
+transport,3_correction,30,"the fuel bridge: what came off the published row, and why",ledger,outputs/transport_fuel_bridge_2024.csv,,,fuel,step,kind,,kt|TJ,,kt|TJ,,note,derived,"opening -> deduction / partition / conversion -> closing, per fuel"
+transport,3_correction,40,"every claimant on the Road control, the unresolved included",ledger,outputs/transport_fuel_ledger_2024.csv,tier,road,fuel,claimant,kind,,kt,,kt,,note,derived,
+transport,3_correction,45,the vehicle-class split the fleet is turned into,ledger,outputs/transport_class_fuel_weights_2024.csv,,,fuel,ei_class,,weight,within_fuel_weight,,share of fuel,,,derived,"VKT x MJ/km, normalised within fuel: an energy-weighted allocation of a control total, which moves no tonne between fuels"
+transport,2_used,50,the energy the engine finally integrates,ledger,outputs/transport_fuel_2024.csv,,,,fuel,,used,TJ,,TJ,,,derived,"the operative controls after the bridge, net calorific"
+transport,4_final,80,"the sector's own totals, in its own words",ledger,outputs/transport_totals_2024.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+transport,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,transport,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+transport,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,transport,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+power,1_source,10,"net generation by fuel and system, as NEPRA publishes it",ledger,data/activity/power/generation_by_fuel.csv,fiscal_year,MAX,system,fuel,,source,gwh_net,,GWh,,,derived,CPPA-G and K-Electric are published apart and are never summed silently
+power,3_correction,20,the boundary question: is K-Electric inside the national fuel row,comparison,outputs/power_boundary_audit_fy2023_24.csv,,,,fiscal_year,,,,gas_without_KE;gas_with_KE;KE_gas_TJ;rfo_without_KE;rfo_with_KE;KE_rfo_TJ,"ratio, or TJ for the KE columns",,note,derived,plant energy over the national fuel row computed both ways; the ratio nearer 1 says which reading the published table supports
+power,3_correction,30,"the reconciliation ladder, rung by rung",comparison,outputs/power_toe_reconciliation.csv,,,fiscal_year,fuel,,,,rung_national_table3_TJ;rung_cppa_plant_TJ;rung_ke_plant_TJ,TJ,,basis,derived,"national Table 3, against the CPPA plant sum, against the K-Electric leg"
+power,2_used,50,the fuel energy the engine finally burns,ledger,outputs/power_fuel_fy2023_24.csv,,,,fuel,,used,TJ,,TJ,,,derived,
+power,4_final,80,"the sector's own totals, in its own words",ledger,outputs/power_totals_fy2023_24.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+power,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,power,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+power,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,power,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+railways,1_source,10,"metered diesel, as the Year Book prints it",ledger,data/activity/railways/fuel_consumption.csv,fiscal_year,MAX,,fuel,,source,quantity,,thousand litres,,note,derived,
+railways,3_correction,20,"the summary account against the printed detail, year by year",comparison,outputs/railways_fuel_reconciliation_2024.csv,,,,fiscal_year,,,,summary_k_litres;locomotive;other_than_locomotive;detail_total;diff,thousand litres,,verdict,derived,"the 2005-10 detail printed 136.988 where every other row uses a comma; the 2024-25 edition restates it 130,988 and the accounts then close"
+railways,3_correction,30,traction against everything else,ledger,outputs/railways_fuel_claimants_2024.csv,,,fuel,claimant,status,,thousand_litres,,thousand litres,,note,derived,"the non-locomotive share is MEASURED from the detail table, not asserted"
+railways,2_used,50,the energy the engine finally uses,ledger,outputs/railways_fuel_2024.csv,,,,stream,,used,TJ,,TJ,,,derived,
+railways,4_final,80,"the sector's own totals, in its own words",ledger,outputs/railways_totals_2024.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+railways,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,railways,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+railways,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,railways,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+residential,1_source,10,"the fuel supplied to households, as OGRA prints it",ledger,data/activity/residential/fuel_supply.csv,fiscal_year,MAX,,fuel,,source,quantity,,,unit,note,derived,"national supply; the household share is a parameter, not embedded here"
+residential,3_correction,20,the survey re-anchor: HIES against the previous round and against the engine,comparison,outputs/residential_hies_comparison_2024.csv,,,unit,fuel,,,,hies2425_annual;hies1819_annual;engine_annual;ratio_hies_over_engine,see subject,,note,derived,"firewood became survey-primary in August 2026: the FAOSTAT series it replaced had been FAO's own flagged estimate, unmoving since 2015"
+residential,3_correction,30,the dung ledger: what agriculture diverts against what the survey observes burned,ledger,outputs/residential_dung_ledger_2024.csv,,,configuration,claimant,treatment,,Mt_air_dry,,Mt air-dry,,note,derived,the unresolved remainder is carried as its own row
+residential,2_used,50,the energy the engine finally burns,ledger,outputs/residential_fuel_2024.csv,,,,stream,,used,TJ,,TJ,,,derived,
+residential,4_final,80,"the sector's own totals, in its own words",ledger,outputs/residential_totals_2024.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+residential,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,residential,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+residential,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,residential,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+waste,1_source,10,how households say their waste is disposed of,ledger,data/activity/waste/hies_disposal_routes.csv,scope,national,region,route_label,,source,share_of_region,,share of region,,source,derived,
+waste,3_correction,20,the fate ledger: where every tonne generated goes,ledger,outputs/waste_ledger_2024.csv,,,tier,claimant,treatment,,Mt_wet,,Mt wet,,note,derived,"generated = collected + uncollected, asserted at write time; the UNRESOLVED row is published rather than spread"
+waste,2_used,50,the streams the engine prices,ledger,outputs/waste_by_stream_2024.csv,,,gas,subitem,,used,emissions_Gg,,Gg,,,derived,
+waste,4_final,80,"the sector's own totals, in its own words",ledger,outputs/waste_totals_2024.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+waste,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,waste,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+waste,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,waste,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+fugitives,1_source,10,"the anchor activity, as the Economic Survey and OGRA print it",ledger,data/activity/fugitives/anchor_activity_2023_24.csv,,,segment,subsegment,status,,value,,,unit,source_reference,derived,
+fugitives,3_correction,20,the segment ledger: activity x factor x structural multiplier,ledger,outputs/fugitives_segment_ledger_2024.csv,scenario,reference,subitem,activity_id,upstream_practice,,activity_value,,,activity_unit,ipcc_code,derived,"THE ONLY SECTOR that already publishes activity, factor and result on one row; the practice class and sour fraction are the structural choices"
+fugitives,2_used,50,the streams the engine prices,ledger,outputs/fugitives_by_stream_2024.csv,,,gas,subitem,,used,emissions_Gg,,Gg,,,derived,
+fugitives,4_final,80,"the sector's own totals, in its own words",ledger,outputs/fugitives_totals_2024.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+fugitives,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,fugitives,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+fugitives,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,fugitives,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+industry,1_source,10,"national coal by consumer, as the Finance Division prints it",ledger,data/activity/industry/coal_by_consumer.csv,fiscal_year,MAX,,consumer,revision_status,,coal_kt,,kt,,note,derived,
+industry,3_correction,20,"power coal, two lanes reconciled",comparison,outputs/industry_coal_reconciliation.csv,,,,fiscal_year,,,,hdip_power_kt;nepra_named_plant_kt;unmatched_kt;hdip_brick_kt,kt,,note,derived,"the unmatched tonnage is typed and published, never spread across plants"
+industry,3_correction,30,"every claimant on the industry control, with its screening vintage",ledger,outputs/industry_fuel_ledger_2024.csv,,,fuel_class,claimant,control_status,,Mt_co2e,,Mt CO2e,,basis,derived,a screening claim held at a PRIOR vintage says so on its own row
+industry,2_used,50,the gas the engine finally burns,ledger,outputs/industry_fuel_2024.csv,,,,stream,,used,TJ_net,,TJ net,,,derived,
+industry,4_final,80,"the sector's own totals, in its own words",ledger,outputs/industry_totals_2024.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+industry,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,industry,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+industry,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,industry,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+agriculture,1_source,10,"the census head counts, national control",comparison,outputs/agriculture_livestock_reconciliation_2024.csv,,,,species,,,,national_control_head;district_sum_head;residual_head,head,,source_document_id,derived,the district transcription is normalised onto the national control; the residual is published rather than absorbed
+agriculture,3_correction,20,"which urea basis each year uses, and what the alternative would have given",comparison,outputs/agriculture_urea_basis.csv,,,urea_activity_basis,fiscal_year,,,,urea_mass_t;reconstruction_t;shortfall_of_reconstruction_pct;co2_Mt,"t, or pct / Mt as named",,source,derived,"a two-basis selection: the printed product offtake where it exists, the reconstruction from total N where it does not"
+agriculture,3_correction,30,the crop-residue ledger: where every tonne of straw goes,ledger,outputs/agriculture_crop_residue_ledger_2024.csv,,,,crop,,fate,dry_residue_Mt,,Mt dry,,receiving_configuration,derived,"returned, burned, taken as fuel, and the remainder three modules each drew from before anyone published the whole"
+agriculture,3_correction,40,the fertiliser product mix behind the nitrogen,ledger,outputs/agriculture_fertiliser_composition_2024.csv,,,,product,,composition,nitrogen_t,,t N,,note,derived,
+agriculture,2_used,50,,absent,,,,,,,,,,,,,declared_absent,"NO SINGLE ACTIVITY TABLE. Agriculture integrates six unlike activities - head counts, crop areas, residue mass, nitrogen, water regime, burned area - and publishes no common 'what the engine used' table the way a fuel sector does. The stage-1 and stage-3 sections above are the activity, each in its own unit."
+agriculture,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,agriculture,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+agriculture,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,agriculture,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+ippu,1_source,10,"the process activity, as the producers and PBS report it",ledger,outputs/ippu_activity_controls_2024.csv,,,ipcc_code,product,status,,quantity,,,unit,source_reference,derived,
+ippu,3_correction,20,"the cement material balance: clinker in, clinker out",ledger,outputs/ippu_cement_material_balance_2024.csv,,,material,flow,sign_in_production_balance,,amount_kt,,kt,,source_reference,derived,"production is reconstructed from the balance, not read off one printed figure"
+ippu,3_correction,30,the independent trade-corrected clinker bridge to CO2,ledger,outputs/ippu_cement_crt_bridge_2022.csv,,,,step,,bridge,activity_mt,,Mt clinker,,interpretation,derived,
+ippu,2_used,50,the streams the engine prices,ledger,outputs/ippu_by_stream_2024.csv,,,gas,subitem,,used,emissions_Gg,,Gg,,,derived,
+ippu,4_final,80,"the sector's own totals, in its own words",ledger,outputs/ippu_totals_2024.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+ippu,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,ippu,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+ippu,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,ippu,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,
+aviation,1_source,10,"jet fuel by customer category, as OCAC prints it",ledger,outputs/aviation_fuel_bridge_fy2023_24.csv,scenario,literal_customer,fuel_type,customer_category,,source,reported_t,,t,,source,derived,
+aviation,3_correction,20,the bridge: which customer row lands in which IPCC box,comparison,outputs/aviation_fuel_bridge_fy2023_24.csv,scenario,literal_customer,,customer_category,,,,ipcc_domestic;international_bunker;military_1a5b;general_aviation;export_other;residual,t,,bridge_method,derived,"only ipcc_domestic enters the national total; the rest are memo items, reported separately by IPCC rule"
+aviation,3_correction,30,top-down fuel against the bottom-up route model,comparison,outputs/aviation_reconciliation_fy2023_24.csv,,,scenario,fiscal_year,,,,domestic_fuel_t;bottom_up_domestic_fuel_t;domestic_reconciliation_factor,"t, and the factor",,,derived,the movement model and the fuel sales disagree by a factor near 4; the fuel sales are the closer and the factor is published rather than tuned away
+aviation,2_used,50,the fuel-constrained streams the engine prices,ledger,outputs/aviation_fuel_constrained_by_stream_fy2023_24.csv,,,gas,subitem,,used,emissions_Gg,,Gg,,,derived,
+aviation,4_final,80,"the sector's own totals, in its own words",ledger,outputs/aviation_totals_fy2023_24.csv,,,,category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,note,derived,
+aviation,4_final,90,"every category and gas, on the national table",ledger,outputs/national_category_gas.csv,module,aviation,gas,ipcc_category,,final,co2e_Mt_AR5,,Mt CO2e AR5,,,derived,the same rows the national roll-up adds up
+aviation,4_final,99,the sector's line in the national inventory,comparison,outputs/national_all_sectors.csv,sector,aviation,,period_label,,,,co2e_Mt_AR5;co2e_Mt_AR6;uncert_pct_95;share_pct,Mt CO2e / pct,,note,derived,

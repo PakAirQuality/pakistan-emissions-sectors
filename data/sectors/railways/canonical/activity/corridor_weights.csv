@@ -1,0 +1,10 @@
+Corridor,Passenger tier,Freight tier,Basis,Note,Record ID,Source row
+ML1_south,30,45,corridor_judgement,"The Karachi-Rohri trunk: virtually every long-distance passenger service and the great majority of freight (Karachi division loads 63 percent of wagons, moving up-country) traverse it. Tiers are service-intensity CLASSES, not measurements; weight = tier x corridor km, normalised.",0f7f5921b517dea94302e3c6,1
+ML1_central,30,35,corridor_judgement,Rohri-Lahore trunk; the same spine minus traffic terminating south.,c855c851c9700dfd07c56f51,2
+ML1_north,25,12,corridor_judgement,Lahore-Peshawar: dense passenger service; freight thins north of Lahore.,8cb2c2bf7649c5656523144a,3
+ML2,2,3,corridor_judgement,The Indus west-bank line: minimal through passenger service; occasional freight relief routing.,1a1b1c007f67ef44bca1c748,4
+ML3,5,6,corridor_judgement,Rohri-Quetta: a handful of daily passenger pairs over hard grades; oil and general freight to Balochistan (Quetta division loads under 1 percent).,820d5c84ffdaa09e3be4c99b,5
+BR_faisalabad,10,8,corridor_judgement,The Khanewal-Faisalabad-Lahore alternative routing carries several daily through services and industrial freight.,8a66835bac8b0e7aea6ba4ac,6
+BR_sialkot,3,1,corridor_judgement,Wazirabad-Sialkot branch passenger workings.,00fd8961b78d8cafff6dd267,7
+BR_sargodha,2,2,corridor_judgement,Sangla Hill-Sargodha-Kundian cross line.,64ba41c262fc577292958a7e,8
+branch_other,1,1,corridor_judgement,Every active network segment not on a defined corridor: residual local workings at the lowest tier.,4fd3336498216039c221699c,9

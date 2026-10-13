@@ -1,0 +1,75 @@
+% ===========================================================================
+\section{Inventory construction}
+\label{sec:methods}
+% ===========================================================================
+
+\subsection{Segment ledger and practice selection}
+
+For segment $s$ and gas $g$, emissions are
+\begin{equation}
+E_{s,g}=A_s EF_{s,g}.
+\end{equation}
+Each ledger row carries the IPCC code, activity and unit, source and imputation status, factor,
+uncertainty bounds and structural configuration. The accounting engine consumes this generic
+schema, allowing facility records to replace aggregate proxies without changing the downstream
+calculations.
+
+The \emph{reference configuration} uses the higher/default 2019 practice factors where national
+LDAR, pipeline-material or compressor-seal evidence is unavailable. Lower-practice factors and
+throughput-based transmission and distribution are evaluated as structural alternatives.
+Produced gas provides the processing proxy; sour-gas processing uses the 2019 default
+\SI{32}{\percent} share. Both assumptions can be varied or excluded independently.
+
+Post-meter appliances use one appliance per domestic meter and the Refinement's warm-country
+fallback. The industrial/power factor is \SI{6.1}{\tonne} CH$_4$ per million m$^3$, derived in
+the 2019 Refinement from a Revised 1996 value of \SI{175000}{\kilogram\per\peta\joule} and a
+\SI{35}{\mega\joule\per\cubic\metre} gas conversion. Its older empirical basis motivates full,
+half-factor and exclusion configurations. The complete factor lineage and uncertainty register
+are given in the supplement.
+
+\subsection{Method-resolution experiment}
+
+Five estimates separate factor changes from boundary expansion:
+\begin{enumerate}[leftmargin=*,itemsep=2pt]
+\item the legacy 2006 production-only calculation for FY2019--20;
+\item the same method on FY2023--24 production;
+\item 2019 factors on identical FY2023--24 oil and gas production;
+\item the 2019 upstream account after adding gathering and processing; and
+\item the public-data 2019 ledger, including T\&D, LNG, refining and post-meter sources.
+\end{enumerate}
+The common-support comparison isolates the factor-framework effect; the later steps measure the
+effect of representing additional physical segments.
+
+\subsection{Monthly timing, upstream only}
+
+The national release resolves this sector into fiscal months, and the line between
+timed and flat streams is a physical one this paper should state. PBS publishes
+monthly provincial production of natural gas and crude oil; the upstream streams
+--- gas production, gathering, processing and sour-gas processing on the gas
+series, oil production on crude --- leak and vent in proportion to field
+throughput, so their months ride the observed series per source-year: an observed
+year carries its own twelve months at evidence class TE2, a year the panel does
+not cover stays days-weighted flat, and no year ever wears another year's shape.
+The line stops exactly where the driver stops being the right one: distribution,
+transmission, post-meter and LNG streams follow \emph{deliveries} and send-out ---
+demand-side quantities with their own season that field production does not
+observe --- and they stay deliberately flat with the acquisition named
+(the utilities' monthly throughput, requested and not yet supplied). Refining and
+pipeline transport follow refinery intake, not wellhead output, and stay flat for
+the same reason. A cubic foot produced is not a cubic foot delivered; the timing
+target on every shaped row is production-side, and the registry publishes it.
+
+\subsection{Process-matched allocation}
+
+Production and gathering follow provincial oil and gas production. Transmission and
+distribution follow measured pipeline length, post-meter industrial emissions follow gas
+consumption, refineries follow facility output, and LNG terminals remain assigned to Sindh. Each
+allocation reconciles exactly to its national control. Facility and network geometry is
+insufficient for a defensible district grid, so the spatial product stops at process-matched
+province and point layers.
+
+The implementation tests unit exponents, source-row and segment closure, activity-year anchors,
+pipeline and gas-flow identities, structural-model enumeration, uncertainty ordering,
+observation coverage, official-inventory reproduction, provincial reconciliation and
+manuscript-output agreement. Detailed assertions and generated products are documented in the
+supplement and reproducibility appendix.

@@ -1,0 +1,15 @@
+# DO AGRICULTURE'S ADM2 UNITS NEST INTO THEIR PROVINCIAL CONTROLS? (rc39 A9 / rc40 G2)
+# Yes, since rc40: every province closes to the allocation the cube was fed at 1e-6.
+# rc39 measured 1.836 Mt of absolute difference here; the cause was two partitions
+# (hard label mask in, exact-area split out) and it is closed, not tolerated.
+# The control is downscale.provincial_rows() UNROUNDED - the printed provincial files
+# carry four significant figures and would measure their own rounding instead.
+# The ADM2 product carries NATIVE GAS MASS; AR5 is applied here to compare it with a
+# CO2e control. Comparing the columns directly gives 212 Mt of nonsense.
+province,adm2_sum_Mt_AR5,provincial_control_Mt_AR5,difference_Mt_AR5,abs_difference_Mt_AR5,share_of_control_pct
+Balochistan,17.294113,17.294114,-1e-06,1e-06,-0.0
+Khyber Pakhtunkhwa,31.010306,31.010307,-1e-06,1e-06,-0.0
+Other,0.402506,0.402506,-0.0,0.0,-0.0
+Punjab,123.304952,123.304956,-4e-06,4e-06,-0.0
+Sindh,51.442587,51.442589,-2e-06,2e-06,-0.0
+TOTAL,223.454464,223.454471,,7e-06,

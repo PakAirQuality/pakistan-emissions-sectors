@@ -1,0 +1,26 @@
+{
+  "layer": "MMS cross-check: current (primary) vs GLEAM 3.0 South Asia",
+  "primary_source": "data/mms_shares.csv (Tier-2 / FAOSTAT-consistent)",
+  "crosscheck_source": "GLEAM 3.0 South Asia (data/gleam_mms.csv; FAO GLEAM Ref Doc v1.0 T3.2-3.5)",
+  "current": {
+    "direct_n2o_Gg": 23.2,
+    "indirect_n2o_Gg": 7.164,
+    "n2o_Mt_co2e": 8.046,
+    "ch4_Mt_co2e": 13.182,
+    "manure_total_Mt_co2e": 21.228,
+    "pasture_N_kg": 3182343263.3
+  },
+  "gleam": {
+    "direct_n2o_Gg": 60.944,
+    "indirect_n2o_Gg": 10.333,
+    "n2o_Mt_co2e": 18.888,
+    "ch4_Mt_co2e": 13.182,
+    "manure_total_Mt_co2e": 32.07,
+    "pasture_N_kg": 2472640888.8
+  },
+  "gleam_vs_current_direct_n2o_ratio": 2.63,
+  "faostat_manure_Mt_co2e": 14.6,
+  "dairy_split_crosscheck": "dairy_cattle_share=0.295 kept (FAOSTAT milk-animals/stock). GLEAM 3.0 publishes no comparable in-milk fraction -- it derives herd structure endogenously (SA fertility 75%%, replacement 21%%, calving 3.1yr) -- so the FAOSTAT value is retained as primary; enteric (151.5 Mt) unchanged.",
+  "finding": "GLEAM's dry-lot-heavy South-Asia split (56% cattle dry lot, EF3=0.02) raises manure direct N2O 2.6x (23.2->60.9 Gg) and the manure category to 32.1 Mt vs FAOSTAT 14.6. This is a GLEAM-MMS-vs-IPCC-EF3 taxonomy mismatch, not a refinement: the current FAOSTAT-consistent split stays primary; GLEAM surfaces MMS as a large hidden uncertainty. No control total changes.",
+  "adds_magnitude": false
+}

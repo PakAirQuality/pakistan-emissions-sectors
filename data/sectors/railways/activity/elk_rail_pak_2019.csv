@@ -1,0 +1,11 @@
+# CONSUMED DERIVATIVE (rc41): ELK 2019 rail emissions summed over the cells whose
+# centres fall inside Pakistan's ADM raster, per species and subsector, at full float
+# precision - what pkinv.sectors.railways.gis.elk_crosscheck used to compute from the
+# netCDFs directly (sources/ELK/, registered in data/raw_manifest.csv, not shipped).
+# sha256 of the documents: ELK_CO2-rep_land_rail-freight_2019_v2.1_global_annual.nc 0103951fd9b6be55; ELK_CO2-rep_land_rail-passenger_2019_v2.1_global_annual.nc b7b0c46120373694; ELK_NOx_land_rail-freight_2019_v2.1_global_annual.nc f1c0bfd20d4e451b; ELK_NOx_land_rail-passenger_2019_v2.1_global_annual.nc 4593a8de91d85300
+# written by scripts/ingest_elk_rail.py; --check re-derives it wherever the documents are held
+species,subsector,elk_pak_kt_2019,cells,document
+CO2-rep,rail-passenger,6.9312063899290965,5,sources/ELK/ELK_CO2-rep_land_rail-passenger_2019_v2.1_global_annual.nc
+CO2-rep,rail-freight,165.23903744111132,1024,sources/ELK/ELK_CO2-rep_land_rail-freight_2019_v2.1_global_annual.nc
+NOx,rail-passenger,0.10286352070585772,5,sources/ELK/ELK_NOx_land_rail-passenger_2019_v2.1_global_annual.nc
+NOx,rail-freight,3.0227990894028394,1024,sources/ELK/ELK_NOx_land_rail-freight_2019_v2.1_global_annual.nc

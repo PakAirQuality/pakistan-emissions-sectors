@@ -1,0 +1,99 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "pakemis.validation_manifest/1.0",
+  "title": "PakEmis national validation package manifest",
+  "type": "object",
+  "required": ["schema_version", "release", "scope", "metrics", "expected_dimensions", "commands",
+               "products", "source_custody", "validation_gates", "known_exceptions", "omitted_artifacts",
+               "presentation_layer", "execution_record"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "release": {
+      "type": "object",
+      "required": ["release_id", "version", "git_commit_full", "git_commit_short", "git_dirty",
+                   "generated_utc", "source_manifest_sha256", "release_manifest_sha256",
+                   "product_manifest_sha256", "sha256sums_sha256", "sha256sums_sha256_rule"],
+      "properties": {
+        "release_id": {"type": "string"},
+        "version": {"type": "string"},
+        "git_commit_full": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "git_commit_short": {"type": "string", "pattern": "^[0-9a-f]{7,12}$"},
+        "git_dirty": {"type": "boolean"},
+        "generated_utc": {"type": "string"},
+        "source_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "release_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "product_manifest_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "sha256sums_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "sha256sums_sha256_rule": {"type": "string"},
+        "stage": {"enum": ["pre", "final"]}
+      }
+    },
+    "scope": {
+      "type": "object",
+      "required": ["country", "iso3", "inventory_scope", "period_start", "period_end",
+                   "reference_period_start", "reference_period_end", "period_registry",
+                   "sector_registry", "ipcc_scope_registry", "lulucf_treatment"]
+    },
+    "metrics": {
+      "type": "object",
+      "required": ["ar5_gwp_registry", "ar6_gwp_registry", "reference_configuration",
+                   "alternative_reference_configurations"]
+    },
+    "expected_dimensions": {
+      "type": "object",
+      "required": ["fiscal_years", "months", "sectors", "annual_atomic_rows", "monthly_rows",
+                   "source_streams", "completeness_rows", "structural_axes", "named_configurations",
+                   "common_draws", "national_monte_carlo_draws"],
+      "additionalProperties": {"type": "integer"}
+    },
+    "commands": {
+      "type": "object",
+      "required": ["environment_setup", "quick_validation", "full_validation", "full_reproduction"]
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["product_id", "relative_path", "format", "sha256", "schema_id", "primary_key",
+                     "row_count", "units", "gwp_basis", "configuration_coverage", "period_coverage",
+                     "geography_coverage", "producer_command", "validation_tests", "licence"],
+        "properties": {
+          "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+          "row_count": {"type": ["integer", "null"]},
+          "validation_tests": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "source_custody": {"type": "object"},
+    "validation_gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["gate_id", "what_it_tests", "command", "result", "exit_code", "log"],
+        "properties": {"result": {"enum": ["passed", "failed", "skipped", "not_executed"]}}
+      }
+    },
+    "known_exceptions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["exception_id", "severity", "affected_products", "reason",
+                     "quantified_mass_or_rows", "temporary_or_permanent", "resolution_path", "test_status"],
+        "properties": {
+          "severity": {"enum": ["blocker", "major", "minor", "informational"]},
+          "temporary_or_permanent": {"enum": ["temporary", "permanent"]},
+          "horizon": {"type": "string"}
+        }
+      }
+    },
+    "omitted_artifacts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["requested_role", "status", "reason", "nearest_packaged_artifact"]
+      }
+    },
+    "presentation_layer": {"type": "object"},
+    "execution_record": {"type": "object"}
+  }
+}

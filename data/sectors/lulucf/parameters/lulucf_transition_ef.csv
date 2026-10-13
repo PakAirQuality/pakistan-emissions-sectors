@@ -1,0 +1,19 @@
+from_class,to_class,tco2_ha_yr,note
+Forest,Cropland,11.0,Deforestation to cropland; forest C 60 tC/ha x 44/12 amortised ~20 yr (IPCC 2006 Vol4 Ch4 Tier-1 default)
+Forest,Grassland,9.0,Deforestation to grassland; partial biomass retention
+Forest,Settlement,11.0,Deforestation to settlement (sealing)
+Forest,Other,11.0,Deforestation to bare/other
+Cropland,Forest,-5.5,Afforestation sink; forest_seq_rate 1.5 tC/ha/yr x 44/12
+Grassland,Forest,-5.5,Afforestation/regrowth sink
+Settlement,Forest,-5.5,Regreening sink
+Other,Forest,-5.5,Afforestation on bare land
+Grassland,Cropland,0.4,Grassland->cropland SOC loss (Tier-1 small)
+Cropland,Grassland,-0.4,Cropland->grassland SOC gain
+Cropland,Settlement,0.9,Cropland sealing SOC loss
+Grassland,Settlement,0.9,Grassland sealing SOC loss
+Wetland,Cropland,20.0,"Wetland/mangrove drainage; blue-carbon stock loss (agb+soil 557 tC/ha, high uncertainty)"
+Wetland,Settlement,22.0,Wetland conversion to settlement
+Wetland,Other,18.0,Wetland loss to bare/other
+Cropland,Wetland,-10.0,Wetland restoration sink
+Grassland,Wetland,-6.5,Mangrove/wetland restoration; mangrove_seq_rate 6.5 tCO2/ha/yr
+Other,Wetland,-6.5,Mangrove restoration on bare/tidal flats

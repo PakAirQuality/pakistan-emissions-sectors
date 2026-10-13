@@ -1,0 +1,6 @@
+category,subitem,gas,emissions_Gg,uncert_pct,activity_year,activity_period_kind,evidence_class,temporal_method,spatial_method,source_id,co2e_Mt_AR5,co2e_Mt_AR6
+Cement production,Clinker calcination CO2,CO2,21815.6484,9.433981132056603,2024,span,E2,T2,S2,producer_census_16_annual_reports,21.815648399999997,21.815648399999997
+Ammonia production,Ammonia process CO2 net of urea recovery,CO2,3243.300459153049,8.602325267042627,2024,span,E2,T4,S3,nfdc_fertilizer_production_series,3.243300459153049,3.243300459153049
+Iron and steel production,Crude steel (electric route) process CO2,CO2,393.12,26.92582403567252,2024,span,E2,T2,S3,pbs_qim_billets_ingots,0.39312,0.39312
+Lubricant use,Lubricating oil oxidised in use,CO2,82.9455176,50.99019513592785,2024,span,E2,T4,S3,ocac_non_energy_sectoral_sales,0.0829455176,0.0829455176
+Lubricant use,Grease oxidised in use,CO2,0.34476860000000004,50.99019513592785,2024,span,E2,T4,S3,ocac_non_energy_sectoral_sales,0.00034476860000000006,0.00034476860000000006

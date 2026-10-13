@@ -1,0 +1,6 @@
+variable,central_co2_t,low_co2_t,high_co2_t,max_absolute_change_pct,affected_fuel_t,scope,method
+Synthetic-route detour,246919.65357377243,225289.3990607525,268549.9080867924,8.760037607357752,68450.17250955684,native non-taxi fuel,one-at-a-time screening; not a Sobol index
+Jet-fuel carbon conversion,246919.65357377243,234573.6708950838,259265.63625246106,5.0,78139.13087777609,all completed fuel,one-at-a-time screening; not a Sobol index
+Taxi time,246919.65357377243,239037.99222929246,254801.31491825246,3.1919943311135457,4988.393256000001,native taxi fuel,one-at-a-time screening; not a Sobol index
+Unsupported-aircraft/residual imputation,246919.65357377243,239492.76069646602,254346.54645107884,3.0078176320976757,4700.56511221925,coverage-completion fuel,one-at-a-time screening; not a Sobol index
+Route-matrix distance envelope,246919.65357377243,246326.92528590007,254241.13170923997,2.9651257117449648,68450.17250955684,native non-taxi fuel,one-at-a-time screening; not a Sobol index

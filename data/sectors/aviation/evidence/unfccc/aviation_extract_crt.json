@@ -1,0 +1,35 @@
+{
+  "name": "aviation_extract_crt",
+  "producer": "pkinv.sectors.aviation.official_reporting.extract_crt",
+  "producer_sha256": "cc694ceaa53b226603ceeb1db7bcda5f20551c24575776f174e8c6b9f6e7e8b7",
+  "result": {
+    "columns": [
+      "reported_inventory_year",
+      "scope",
+      "category",
+      "co2_t",
+      "ch4_t",
+      "n2o_t",
+      "total_co2e_t",
+      "activity_tj",
+      "fuel_reported",
+      "jet_kerosene_notation",
+      "domestic_distribution_pct",
+      "international_distribution_pct",
+      "source_file",
+      "source_sha256",
+      "workbook_file",
+      "workbook_sha256"
+    ],
+    "kind": "records",
+    "path": "aviation_extract_crt.csv",
+    "sha256": "765a1e7a3ae56aafea4f53abf3c4f53ff58c10648ec470838cd42071cfd6ae89",
+    "types": [
+      "issfffffssffssss",
+      "issfffffssffssss"
+    ]
+  },
+  "schema": "pkinv.source_extract/v1",
+  "source": "sources/Aviation/PAK_CRT_2024.zip",
+  "source_sha256": "afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38"
+}

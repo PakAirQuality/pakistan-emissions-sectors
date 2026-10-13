@@ -1,0 +1,69 @@
+# CAN NEPRA'S COAL ENERGY AND NEPRA'S COAL MASS DESCRIBE THE SAME FLEET?
+#
+# One row per fiscal year of the plant fuel ledger. `table3_*` is NEPRA State of Industry
+# Report Table 3 (fuel consumed, tonnes of oil equivalent); `plant_*` is Table 21 (per-station
+# quantities and generation) with each station's own metered heat rate; `composition_only_*`
+# uses the Table 21 mass split by rank and IPCC default calorific values, and no heat rate
+# at all.
+#
+# THREE ACCOUNTS OF THE SAME COAL. `table3_*` is the published energy; `hdip_mass_kt` is the
+# national power-coal consumption Table 3 says it derives from (Pakistan Economic Survey
+# statistical supplement, Table 14.1(4), the HDIP series); `table21_mass_kt` is NEPRA's own
+# per-station quantities. `table3_toe_per_hdip_tonne` spreads 1.35x across the panel
+# where `table3_toe_per_tonne` spreads 2.03x, so the conversion is the steadier of the two
+# ratios. It does NOT follow that the disagreement is in the mass accounts, and an earlier
+# version of this banner drew exactly that conclusion: stability across years is a statement
+# about VARIANCE, and which account carries the level discrepancy is a different question.
+# Decomposed, it is mostly the conversion - `conversion_channel_share_pct` puts 59 to 84 per
+# cent of the log discrepancy against the non-circular physical route in the conversion
+# channel in every one of the five years. Both facts are published because both are true;
+# only the inference between them was wrong.
+#
+# The three `*_implied_efficiency_pct` columns take each account at the fleet's rank
+# composition and divide the electricity out of it, against a 30-45 per cent band for a coal
+# fleet. Only the per-station account stays inside that band in every year.
+#
+# THE BAND'S EDGES ARE CONSEQUENTIAL, which an earlier version of this note denied. It is a
+# plausibility screen from general thermal practice, not a Pakistani measurement, and three
+# cells change side between 30-45 and a wider 28-47: Table 3 at 45.1 in FY2019-20 and 29.6
+# in FY2021-22, and the HDIP account at 29.1 in FY2023-24. Two of those are quoted in a
+# verdict string, so two verdicts are band-dependent and a reader who prefers 28-47 should
+# read them as inside.
+#
+# WHAT SURVIVES EITHER BAND is the conclusion this file is for: the per-station account is
+# inside BOTH bands in all five years, and Table 3 is outside both in three of the five. The
+# asymmetry between the accounts does not depend on where the edges are put; only the
+# marginal verdicts do.
+#
+# `plant_implied_efficiency_pct` IS NOT INDEPENDENT EVIDENCE, and the column exists to be
+# read with that said. The fleet calorific value it uses is itself generation x heat rate /
+# mass, so multiplying it back by mass returns generation x heat rate and the efficiency it
+# implies is NEPRA's own printed heat rates re-expressed. Measured: where the fleet CV covers
+# all the mass, plant_energy_TJ reproduces the sum of generation x printed heat rate to a
+# ratio of 1.000 and 0.986 (FY2022-23, FY2023-24). It cannot test whether NEPRA's fleet
+# efficiency is plausible, because it is inside any band NEPRA's own heat rates are inside.
+# What IS independent is the calorific value: composition_only_ncv_TJ_per_Gg uses rank
+# defaults and no heat rate, and the two agree within 1-3 TJ/Gg on level and direction. The
+# CV corroboration is real; the efficiency corroboration is circular.
+#
+# `fleet_cv_mass_coverage_pct` makes the identity exact and two of the years worse than
+# circular. The fleet CV is mass-weighted over the non-outlier stations with a printed heat
+# rate - sum(generation x heat rate) / that mass, reproducing the printed CV to the digit in
+# all five years - and is then multiplied by TOTAL mass. So plant_energy_TJ is identically
+# sum(generation x printed heat rate) divided by this coverage, which is the precise sense in
+# which the route contains NEPRA's heat rates.
+#
+# Coverage runs 69, 72, 88, 100, 99 per cent. In FY2019-20 and FY2020-21 the only lignite
+# station has no printed heat rate, so the CV is imported-only (23.03 and 22.87 TJ/Gg,
+# identical to this file's own "imported only" rows) and is applied to lignite tonnes whose
+# implied CV in the years that print one is about 11. Those two years' energy is inflated by
+# 1/coverage and their efficiency biased DOWN by the same factor.
+#
+# This adjudicates; it does not re-base. The reference series rides Table 3, and moving it
+# is a declared pin re-base rather than an audit finding.
+period_id,fiscal_start_year,table3_coal_toe,table21_mass_kt,hdip_mass_kt,hdip_over_table21,table3_toe_per_hdip_tonne,hdip_mass_implied_efficiency_pct,table21_mass_implied_efficiency_pct,coal_generation_GWh,lignite_share_of_mass_pct,table3_toe_per_tonne,table3_energy_TJ,table3_implied_ncv_TJ_per_Gg,table3_implied_efficiency_pct,plant_energy_TJ,plant_implied_ncv_TJ_per_Gg,plant_implied_efficiency_pct,fleet_cv_mass_coverage_pct,conversion_channel_share_pct,composition_only_ncv_TJ_per_Gg,table3_over_plant,verdict
+FY2019-20,2019,4875302,12323.92,10897.00,0.88,0.447,39.2,34.7,25553.35,30.6,0.396,204119,16.56,45.1,283820,23.03,32.4,69,68,21.54,0.72,"Table 3 implies 45.1% fleet efficiency, outside 30-45"
+FY2020-21,2020,4123008,13110.78,9215.00,0.70,0.447,49.0,34.4,27547.75,27.6,0.314,172622,13.17,57.5,299844,22.87,33.1,72,59,21.97,0.58,"Table 3 implies 57.5% fleet efficiency, outside 30-45; HDIP's national mass implies 49.0%, outside 30-45"
+FY2021-22,2021,7731514,12158.92,12808.00,1.05,0.604,36.7,38.7,26575.96,39.3,0.636,323703,26.62,29.6,209498,17.23,45.7,88,84,20.34,1.55,"Table 3 implies 29.6% fleet efficiency, outside 30-45; the plant route implies 45.7%, outside 30-45"
+FY2022-23,2022,7919004,14009.04,15493.00,1.11,0.511,31.6,34.9,20973.90,74.6,0.565,331553,23.67,22.8,204812,14.62,36.9,100,81,15.42,1.62,"Table 3 implies 22.8% fleet efficiency, outside 30-45"
+FY2023-24,2023,9177934,15876.22,19196.00,1.21,0.478,29.1,35.2,20217.68,92.0,0.578,384262,24.20,18.9,190673,12.01,38.2,99,77,13.01,2.02,"Table 3 implies 18.9% fleet efficiency, outside 30-45; HDIP's national mass implies 29.1%, outside 30-45"

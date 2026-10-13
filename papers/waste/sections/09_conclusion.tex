@@ -1,0 +1,43 @@
+% ===========================================================================
+\section{Conclusion}
+\label{sec:conclusion}
+% ===========================================================================
+
+Pakistan's waste sector emitted \SI{37.45}{\mega\tonne} \COe{} in FY2023--24 on AR5 metrics:
+\SI{24.46}{\mega\tonne} from domestic wastewater, \SI{9.17}{\mega\tonne} from solid-waste
+disposal and \SI{3.83}{\mega\tonne} from open burning. The sector is \SI{8.4}{\percent} of a
+ten-sector national inventory and \SI{87}{\percent} methane, which makes it unusually
+sensitive to the metric chosen and unusually relevant to near-term mitigation.
+
+Two things generalise beyond this country.
+
+\textbf{An activity figure shared between categories should be partitioned, not estimated
+twice.} Solid-waste disposal and open burning describe two fates of one waste stream, and
+computing them from one generation figure with $D + U = G$ asserted removes a class of
+inconsistency that independent estimation cannot detect. The cost is nil and the gain is that
+an argument about the collection rate becomes an argument about where emissions sit rather
+than about how much waste exists. The same shape recurs wherever two categories divide one
+national quantity.
+
+\textbf{Where an assumption spans a factor approaching two and the evidence does not choose,
+the defensible output is both numbers.} The sewer methane correction factor moves this sector
+from \SI{37.45}{\mega\tonne} to \SI{28.38}{\mega\tonne}. The lower value happens to agree
+better with EDGAR, and adopting it for that reason would have been a mistake: EDGAR is a model
+resting on its own assumption about the same unmeasured quantity, so the agreement would have
+recorded a shared default as though it were evidence about Pakistani drains. We report
+\num{0.5} as central because the physical description of the drains is the stronger and more
+specific evidence, publish \num{0.1} alongside, and name what would settle it.
+
+For Pakistan specifically, the analysis produces one clear recommendation. Domestic wastewater
+is \SI{5.5}{\percent} of national emissions and \SI{13.0}{\percent} of national inventory
+variance under Approach~1---the second largest variance contributor of any category in the
+country on that screen, behind enteric fermentation. Dissolved-methane and flux sampling on
+urban drains in two or three cities, across a seasonal cycle, would reduce national inventory
+uncertainty more per unit of cost than any comparable measurement in the waste or energy
+sectors. It is a small campaign answering a question that currently has no Pakistani answer
+at all.
+
+Everything reported here is reproducible. The engine, the activity data, the parameter tables
+and every output quoted are public; each figure is regenerated from the outputs it plots and a
+test fails if any is stale; and the numbers in this manuscript are checked against the
+generated files they came from on every commit.

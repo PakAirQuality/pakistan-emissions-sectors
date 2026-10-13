@@ -1,0 +1,11 @@
+row_kind,name,gas_or_pollutant,quantity,unit,basis,note
+activity,Brick-kiln coal (national),,2990790,t coal,screening_vintage_fy2022_23,"PEY Table 4.4, the Yearbook's OWN ESTIMATE (sectoral coal mostly unmetered); the series swings 2.7-8.7 Mt across FY2013-FY2023, which outranks every factor CI below"
+ghg_screening,Brick-kiln coal combustion,CO2,7.29956,Mt CO2e (AR5),screening_vintage_fy2022_23,"OBC defaults: NCV 25.8 TJ/Gg (+/-21%), EF Table 2.3; SCREENING - outside every reference total, the 1A2 category stays NE"
+ghg_screening,Brick-kiln coal combustion,CH4,0.02315,Mt CO2e (AR5),screening_vintage_fy2022_23,"OBC defaults: NCV 25.8 TJ/Gg (+/-21%), EF Table 2.3; SCREENING - outside every reference total, the 1A2 category stays NE"
+ghg_screening,Brick-kiln coal combustion,N2O,0.03067,Mt CO2e (AR5),screening_vintage_fy2022_23,"OBC defaults: NCV 25.8 TJ/Gg (+/-21%), EF Table 2.3; SCREENING - outside every reference total, the 1A2 category stays NE"
+ghg_screening,Brick-kiln coal combustion,TOTAL,7.35338,Mt CO2e (AR5),screening_vintage_fy2022_23,"COMPARATOR since rc47 Wave 0: the reference books the measured HDIP brick coal, and the configuration that once priced this screening is retired as a double count"
+air_screening,Brick-kiln coal combustion,NOx,11.22-11.22,kt,screening_vintage_fy2022_23,"technology bracket: improved (zig-zag/VSBK) low bound to FCBTK high bound, kg/t coal; MASS ONLY, never CO2e"
+air_screening,Brick-kiln coal combustion,CO,8.97-8.97,kt,screening_vintage_fy2022_23,"technology bracket: improved (zig-zag/VSBK) low bound to FCBTK high bound, kg/t coal; MASS ONLY, never CO2e"
+air_screening,Brick-kiln coal combustion,SO2,56.83-56.83,kt,screening_vintage_fy2022_23,"technology bracket: improved (zig-zag/VSBK) low bound to FCBTK high bound, kg/t coal; MASS ONLY, never CO2e; printed at S_coal=1.0 - the sulfur content is UNPINNED"
+air_screening,Brick-kiln coal combustion,PM2.5,5.98-39.48,kt,screening_vintage_fy2022_23,"technology bracket: improved (zig-zag/VSBK) low bound to FCBTK high bound, kg/t coal; MASS ONLY, never CO2e"
+air_screening,Brick-kiln coal combustion,NH3,0.00-1.28,kt,screening_vintage_fy2022_23,"technology bracket: improved (zig-zag/VSBK) low bound to FCBTK high bound, kg/t coal; MASS ONLY, never CO2e"

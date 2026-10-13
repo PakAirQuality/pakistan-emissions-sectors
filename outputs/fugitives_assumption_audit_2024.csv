@@ -1,0 +1,7 @@
+assumption,scenario,segment,segment_mt_co2e,difference_from_reference_mt_co2e,ch4_factor_id,ch4_factor_value,activity_value,activity_unit,evidence_or_limitation
+distribution composite practice,reference,Gas distribution,7.069209899999999,0.0,gas_distribution_high_km_ch4,1.17,201230.0,km,less than half plastic and/or limited LDAR
+distribution composite practice,lower_distribution_only,Gas distribution,1.3904992999999999,-5.678710599999999,gas_distribution_low_km_ch4,0.23,201230.0,km,more than half plastic and LDAR; Tier 1 cannot separate the two effects
+distribution activity basis,throughput,Gas distribution,3.115184556651633,-3.954025343348366,gas_distribution_high_volume_ch4,2.92,35524.96928557,million_m3,reported gas throughput rather than measured pipeline length
+post-meter factor transferability,reference,Post-meter industrial and power,3.420424489567765,0.0,post_meter_industrial_ch4,6.1,18684.61599995502,million_m3,IPCC 6.1 t CH4/million m3 transferred from Revised 1996 basis
+post-meter factor transferability,post_meter_half_factor,Post-meter industrial and power,1.7102122447838826,-1.7102122447838826,post_meter_industrial_ch4,3.05,18684.61599995502,million_m3,50% factor stress test
+post-meter factor transferability,no_post_meter_industrial,Post-meter industrial and power,0,-3.420424489567765,excluded,0.0,0.0,,segment excluded pending Pakistan-specific evidence

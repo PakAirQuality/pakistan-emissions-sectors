@@ -1,0 +1,53 @@
+% ===========================================================================
+\section{External evaluation}
+\label{sec:validation}
+% ===========================================================================
+
+\subsection{Official-inventory reconstruction}
+
+Pakistan's 2022 Common Reporting Table (CRT) is evaluated first in native gases. Common-metric
+comparisons use CO$_2$=1, fossil CH$_4$=30 and N$_2$O=265; the submitted total, which implies
+CH$_4$=28, is also retained. A matched-year waterfall begins with the common-metric CRT, removes
+separately reported venting and flaring already included in the 2019 Tier~1 factors, replaces
+matched oil and gas categories, and adds public-data segments absent from the CRT. Every
+published activity--factor product, native-gas subtotal and waterfall step is reproduced
+programmatically. Adjacent FY2021--22 and FY2022--23 inventories bracket calendar 2022.
+
+\subsection{Satellite and field evaluation}
+
+World Bank flare volumes and UNEP MARS methane sources are joined to provincial boundaries and
+to the 73 fields in the official gas-supply table. Each MARS source is assigned through its
+nearest named flare; official fields without observations remain as zero-observation controls.
+The evaluation reports marketable-supply coverage, Spearman and Kendall rank association, top-10
+overlap, and national and within-province permutation tests for flare volume, MARS source count
+and plume count. A match audit records distance, operator, canonical field and confidence for
+every MARS source.
+
+These observations evaluate upstream production and processing geography. Transmission,
+distribution and post-meter sources require utility or facility measurements. Flare conversion
+and MARS fluxes remain observational memos and do not enter the segment inventory.
+
+\subsection{Evidence roles}
+
+Table~\ref{tab:evidence} assigns each comparison a specific task. This separation prevents an
+activity control, official account or intermittent observation from being treated as a universal
+benchmark.
+
+\begin{table*}[htbp]
+\centering
+\small
+\begin{tabular}{@{}llll@{}}
+\toprule
+\textbf{Evidence} & \textbf{Question} & \textbf{Scale} & \textbf{Role} \\
+\midrule
+Gas-flow ledger & Are published supply and use controls compatible? & annual national & physical closure \\
+UFG envelope & Is modelled network methane physically plausible? & annual utility & diagnostic bound \\
+Pakistan CRT & Why does official reporting differ? & matched year/category & audited comparator \\
+World Bank flares & Where is persistent combustion activity located? & field/site & spatial evaluation \\
+UNEP MARS & Where are large detected methane sources? & event/field & spatial evaluation \\
+Nine-year controls & Does the reference result persist through time? & annual segment & temporal robustness \\
+\bottomrule
+\end{tabular}
+\caption{Purpose and scale of the independent controls and comparisons.}
+\label{tab:evidence}
+\end{table*}

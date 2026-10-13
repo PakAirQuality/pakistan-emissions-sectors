@@ -1,0 +1,77 @@
+category,subitem,pollutant,emissions_kt,uncert_pct
+Managed soils,NH3 - synthetic fertiliser (Urea),NH3,629.469,30.4
+Managed soils,NH3 - synthetic fertiliser (DAP),NH3,54.79,30.4
+Managed soils,NH3 - synthetic fertiliser (CAN),NH3,10.841,30.4
+Managed soils,NH3 - synthetic fertiliser (NP),NH3,38.146,30.4
+Managed soils,NH3 - synthetic fertiliser (AS),NH3,2.75,30.4
+Managed soils,NH3 - synthetic fertiliser (NPKs),NH3,1.161,30.4
+Managed soils,NH3 - synthetic fertiliser (MAP),NH3,0.027,30.4
+Managed soils,NH3 - manure applied to soils (buffalo),NH3,256.693,47.2
+Managed soils,NH3 - pasture deposition (cattle-type) (buffalo),NH3,36.02,53.9
+Manure management,NH3 - housing (buffalo),NH3,102.914,47.2
+Manure management,NH3 - storage (buffalo),NH3,34.991,47.2
+Manure management,NH3 - yard (buffalo),NH3,38.593,47.2
+Managed soils,NH3 - manure applied to soils (camels),NH3,3.738,47.2
+Managed soils,NH3 - pasture deposition (sheep/goat/other) (camels),NH3,5.99,53.9
+Manure management,NH3 - housing (camels),NH3,1.627,47.2
+Manure management,NH3 - storage (camels),NH3,1.615,47.2
+Managed soils,NH3 - manure applied to soils (dairy cattle),NH3,179.411,47.2
+Managed soils,NH3 - pasture deposition (cattle-type) (dairy cattle),NH3,34.603,53.9
+Manure management,NH3 - housing (dairy cattle),NH3,21.091,47.2
+Manure management,NH3 - storage (dairy cattle),NH3,36.383,47.2
+Manure management,NH3 - yard (dairy cattle),NH3,24.716,47.2
+Managed soils,NH3 - manure applied to soils (goats),NH3,47.056,47.2
+Managed soils,NH3 - pasture deposition (sheep/goat/other) (goats),NH3,75.41,53.9
+Manure management,NH3 - housing (goats),NH3,20.482,47.2
+Manure management,NH3 - storage (goats),NH3,20.333,47.2
+Managed soils,NH3 - manure applied to soils (other cattle),NH3,161.939,47.2
+Managed soils,NH3 - pasture deposition (cattle-type) (other cattle),NH3,33.65,53.9
+Manure management,NH3 - housing (other cattle),NH3,20.511,47.2
+Manure management,NH3 - storage (other cattle),NH3,35.381,47.2
+Manure management,NH3 - yard (other cattle),NH3,42.463,47.2
+Managed soils,NH3 - manure applied to soils (poultry),NH3,198.713,47.2
+Manure management,NH3 - housing (poultry),NH3,198.581,47.2
+Manure management,NH3 - storage (poultry),NH3,224.113,47.2
+Managed soils,NH3 - manure applied to soils (sheep),NH3,19.314,47.2
+Managed soils,NH3 - pasture deposition (sheep/goat/other) (sheep),NH3,32.773,53.9
+Manure management,NH3 - housing (sheep),NH3,8.901,47.2
+Manure management,NH3 - storage (sheep),NH3,10.099,47.2
+Managed soils,Soil NOx - synthetic fertiliser,NOx,86.825,100.1
+Managed soils,Soil NOx - organic manure,NOx,53.705,102.0
+Managed soils,Soil NOx - crop residues,NOx,4.9,102.0
+Managed soils,NH3 - crop residues left in field,NH3,0.0,53.9
+Field burning of residues,Residue burning PM2.5 (cotton),PM2.5,6.417,61.6
+Field burning of residues,Residue burning CO (cotton),CO,77.684,53.9
+Field burning of residues,Residue burning NOx (cotton),NOx,2.111,61.6
+Field burning of residues,Residue burning NMVOC (cotton),NMVOC,5.911,70.0
+Field burning of residues,Residue burning BC (cotton),BC,0.422,70.0
+Field burning of residues,Residue burning SO2 (cotton),SO2,0.338,78.7
+Field burning of residues,Residue burning NH3 (cotton),NH3,1.098,70.0
+Field burning of residues,Residue burning PM2.5 (maize),PM2.5,3.181,61.6
+Field burning of residues,Residue burning CO (maize),CO,38.502,53.9
+Field burning of residues,Residue burning NOx (maize),NOx,1.046,61.6
+Field burning of residues,Residue burning NMVOC (maize),NMVOC,2.929,70.0
+Field burning of residues,Residue burning BC (maize),BC,0.209,70.0
+Field burning of residues,Residue burning SO2 (maize),SO2,0.167,78.7
+Field burning of residues,Residue burning NH3 (maize),NH3,0.544,70.0
+Field burning of residues,Residue burning PM2.5 (rice),PM2.5,19.126,61.6
+Field burning of residues,Residue burning CO (rice),CO,231.527,53.9
+Field burning of residues,Residue burning NOx (rice),NOx,6.291,61.6
+Field burning of residues,Residue burning NMVOC (rice),NMVOC,17.616,70.0
+Field burning of residues,Residue burning BC (rice),BC,1.258,70.0
+Field burning of residues,Residue burning SO2 (rice),SO2,1.007,78.7
+Field burning of residues,Residue burning NH3 (rice),NH3,3.272,70.0
+Field burning of residues,Residue burning PM2.5 (sugarcane),PM2.5,14.154,61.6
+Field burning of residues,Residue burning CO (sugarcane),CO,171.332,53.9
+Field burning of residues,Residue burning NOx (sugarcane),NOx,4.656,61.6
+Field burning of residues,Residue burning NMVOC (sugarcane),NMVOC,13.036,70.0
+Field burning of residues,Residue burning BC (sugarcane),BC,0.931,70.0
+Field burning of residues,Residue burning SO2 (sugarcane),SO2,0.745,78.7
+Field burning of residues,Residue burning NH3 (sugarcane),NH3,2.421,70.0
+Field burning of residues,Residue burning PM2.5 (wheat),PM2.5,11.17,61.6
+Field burning of residues,Residue burning CO (wheat),CO,135.215,53.9
+Field burning of residues,Residue burning NOx (wheat),NOx,3.674,61.6
+Field burning of residues,Residue burning NMVOC (wheat),NMVOC,10.288,70.0
+Field burning of residues,Residue burning BC (wheat),BC,0.735,70.0
+Field burning of residues,Residue burning SO2 (wheat),SO2,0.588,78.7
+Field burning of residues,Residue burning NH3 (wheat),NH3,1.911,70.0

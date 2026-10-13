@@ -1,0 +1,28 @@
+% ===========================================================================
+% ESSD section 2: Dataset scope and architecture (container).
+% Owns the heading; inputs 03_architecture (lead, its own heading swallowed) and
+% 09_completeness (demoted to a subsection). No printed quantity lives in this file:
+% every number is in the fragments, where the claims registry checks it.
+% ===========================================================================
+\section{Dataset scope and architecture}
+\label{sec:scope}
+
+This section states what the dataset is and is not. PakEmis is a public-data
+reconstruction of Pakistan's anthropogenic greenhouse-gas emissions outside land use,
+land-use change and forestry, reported for fiscal years running from July to June and
+carried on one reference configuration whose alternatives are registered rather than
+implied. The architecture that produces it is described first, because the properties a
+reader can rely on---mass conservation from category to gas to total, one reporting
+period across every sector, and an explicit notation key wherever a category is not
+estimated---are properties of that architecture and are asserted by it on every build.
+The completeness statement that closes the section is the boundary of the estimated
+scope: what is estimated, what is not, and what a comparator implies the absent part is
+worth.
+
+\pkinvLeadFragment
+\input{sections/03_architecture}
+\pkinvEndFragment
+
+\pkinvDemoteFragment
+\input{sections/09_completeness}
+\pkinvEndFragment

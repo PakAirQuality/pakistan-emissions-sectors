@@ -1,0 +1,24 @@
+# WHAT WENT IN AND WHAT CAME OUT, per source stream: the activity quantities, the
+# conversions, the emission factors and the published emission on ONE row.
+# 
+# Outside fugitives - whose segment ledger has always carried activity x factor x
+# structural multiplier - nothing in this release put those numbers beside each other.
+# fact_annual carries the emission and the method_id but neither of the two numbers that
+# were multiplied, and every *_by_stream_*.csv carries only the output. This closes that.
+# 
+# IT IS NOT AN IDENTITY. `reproduces` is yes ONLY where one activity times one factor
+# lands on the published emission within tolerance. Most streams are no or not_attempted,
+# because the engines apply steps the parameter ids do not carry - a partition, a share, a
+# survival curve, a first-order decay. That is the honest state of the join and the reason
+# is on the row; a yes that had not been checked would be worth less than nothing.
+# 
+# Written by pkinv.report.derivation_chain; parameter values resolve through
+# core.parameters.registry() by dependency_group, and factor ids through
+# data/emission_factors.csv.
+source_stream_id,category,subitem,gas,method_id,equation,activity,conversion,factor,unresolved_ids,emissions_Gg,native_unit,co2e_Mt_AR5,reproduces,reproduction_note
+aviation|domestic-aviation|domestic-aviation-lto-ch4|ch4,Domestic aviation,Domestic aviation LTO CH4,CH4,ipcc2006_v2_ch3_eq3.6.1_aviation_ch4_n2o,2006 V2 Ch3 Eq 3.6.1,aviation:Aggregate representative stage length=550.0,,aviation:CH4 emission factor=0.5; aviation:Jet-fuel carbon conversion=3.16; aviation:N2O emission factor=2.0,factor:ncv:Jet Kerosene; factor:ch4:Jet Kerosene,0.000345,Gg,1.034e-05,not_attempted,"1 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+aviation|domestic-aviation|domestic-aviation-lto-co2|co2,Domestic aviation,Domestic aviation LTO CO2,CO2,ipcc2006_v2_ch3_eq3.6.1_aviation_co2,2006 V2 Ch3 s3.6 (Tier 1 fuel-based),aviation:Aggregate representative stage length=550.0,,aviation:CH4 emission factor=0.5; aviation:Jet-fuel carbon conversion=3.16; aviation:N2O emission factor=2.0,factor:ncv:Jet Kerosene; factor:co2:Jet Kerosene,49.400375,Gg,0.04940037,not_attempted,"1 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+aviation|domestic-aviation|domestic-aviation-lto-n2o|n2o,Domestic aviation,Domestic aviation LTO N2O,N2O,ipcc2006_v2_ch3_eq3.6.1_aviation_ch4_n2o,2006 V2 Ch3 Eq 3.6.1,aviation:Aggregate representative stage length=550.0,,aviation:CH4 emission factor=0.5; aviation:Jet-fuel carbon conversion=3.16; aviation:N2O emission factor=2.0,factor:ncv:Jet Kerosene; factor:n2o:Jet Kerosene,0.001379,Gg,0.00036539,not_attempted,"1 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+aviation|domestic-aviation|domestic-aviation-cruise-ch4|ch4,Domestic aviation,Domestic aviation cruise CH4,CH4,ipcc2006_v2_ch3_eq3.6.1_aviation_ch4_n2o,2006 V2 Ch3 Eq 3.6.1,aviation:Aggregate representative stage length=550.0,,aviation:CH4 emission factor=0.5; aviation:Jet-fuel carbon conversion=3.16; aviation:N2O emission factor=2.0,factor:ncv:Jet Kerosene; factor:ch4:Jet Kerosene,0.001741,Gg,5.222e-05,not_attempted,"1 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+aviation|domestic-aviation|domestic-aviation-cruise-co2|co2,Domestic aviation,Domestic aviation cruise CO2,CO2,ipcc2006_v2_ch3_eq3.6.1_aviation_co2,2006 V2 Ch3 s3.6 (Tier 1 fuel-based),aviation:Aggregate representative stage length=550.0,,aviation:CH4 emission factor=0.5; aviation:Jet-fuel carbon conversion=3.16; aviation:N2O emission factor=2.0,factor:ncv:Jet Kerosene; factor:co2:Jet Kerosene,249.458358,Gg,0.24945836,not_attempted,"1 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"
+aviation|domestic-aviation|domestic-aviation-cruise-n2o|n2o,Domestic aviation,Domestic aviation cruise N2O,N2O,ipcc2006_v2_ch3_eq3.6.1_aviation_ch4_n2o,2006 V2 Ch3 Eq 3.6.1,aviation:Aggregate representative stage length=550.0,,aviation:CH4 emission factor=0.5; aviation:Jet-fuel carbon conversion=3.16; aviation:N2O emission factor=2.0,factor:ncv:Jet Kerosene; factor:n2o:Jet Kerosene,0.006963,Gg,0.00184512,not_attempted,"1 distinct activity and 3 distinct factor values resolve; more than one product is definable, so no identity is claimed"
