@@ -21,6 +21,7 @@ import tempfile
 import time
 
 from pkinv import run_all as registry
+from pkinv.core import layers
 from pkinv.build_support import (FileDigests, dump_atomic, file_identity, input_snapshot,
                                 directory_identity, asset_bindings, physical_paths)
 
@@ -651,6 +652,15 @@ def main(argv=None):
         selected, graph = select(phases, targets, cache)
     except ValueError as exc:
         parser.error(str(exc))
+    if layers.mode(registry.ROOT) == "absent":
+        # rc69: a public clone without the restricted layers. The phases that read primary
+        # documents or the release history cannot run, and dropping them quietly would
+        # publish their stale products as if rebuilt. The deposit group seeds them instead.
+        needs = [p.label for p in selected if p.label in DEPOSIT_SOURCE_PHASES]
+        if needs:
+            parser.error("the restricted layers are not mounted here, and these tasks read "
+                         "them: %s. Use --group deposit, or mount them with "
+                         "python3 scripts/overlay.py link PATH" % "; ".join(needs))
     if args.dry_run:
         dry_run(selected, cache, registry_phases=registry.PHASES, full=args.full,
                 strict=args.strict, explain=args.explain)

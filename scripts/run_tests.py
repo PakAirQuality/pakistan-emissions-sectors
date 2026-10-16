@@ -38,6 +38,11 @@ from concurrent.futures import ThreadPoolExecutor
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TESTS = asset_path(ROOT, "tests")
 TIMINGS = asset_path(ROOT, "logs", "test_timings.json")
+# rc69: the tests a public clone WITHOUT the restricted layers skips, one test id per line.
+# A skip with the layers prefix that is not listed here fails the run, and so does a listed
+# test that no longer skips: the set is exact, so a guard cannot drift into skipping unseen.
+GATED = asset_path(ROOT, "data", "catalog", "restricted_gated_tests.txt")
+LAYERS_ABSENT = "restricted layers absent:"
 
 # THE EXCLUSIVE LANE, with the reason beside each entry. A module belongs here only because
 # running it BESIDE another module would be wrong - never because it is slow, and never
@@ -223,7 +228,38 @@ def main(argv=None):
                 _report(r)
 
     _save_timings(results)
-    return _summary(results, time.time() - started)
+    gated = None if args.filter else restricted_skip_problems(results)
+    return _summary(results, time.time() - started, gated)
+
+
+def gated_tests():
+    try:
+        with open(GATED, encoding="utf-8") as handle:
+            return {l.strip() for l in handle if l.strip() and not l.startswith("#")}
+    except FileNotFoundError:
+        return set()
+
+
+def restricted_skip_problems(results, mode=None):
+    """[(test, why)] for skips with the layers prefix that the mode does not allow.
+
+    With the layers present (monorepo, overlay) there may be none at all. Without them the
+    skipped set must equal data/catalog/restricted_gated_tests.txt exactly."""
+    sys.path.insert(0, os.path.join(ROOT, "src"))
+    from pkinv.core import layers
+    mode = mode or layers.mode(ROOT)
+    skipped = {name for r in results for name, why in r["skipped"]
+               if why.startswith(LAYERS_ABSENT)}
+    if mode in ("monorepo", "overlay"):
+        return [(name, "skipped for absent restricted layers while they are mounted")
+                for name in sorted(skipped)]
+    if mode != "absent":
+        return []
+    pinned = gated_tests()
+    return ([(name, "skipped for absent restricted layers and not pinned in %s"
+              % os.path.relpath(GATED, ROOT)) for name in sorted(skipped - pinned)]
+            + [(name, "pinned as restricted-gated and did not skip")
+               for name in sorted(pinned - skipped)])
 
 
 def _report(r):
@@ -243,7 +279,7 @@ FAIL_MARKER = "[FAIL]"
 ERROR_MARKER = "[ERROR]"
 
 
-def _summary(results, wall):
+def _summary(results, wall, gated=None):
     ran = sum(r["ran"] for r in results)
     skipped = sum(len(r["skipped"]) for r in results)
     failures = [(r["module"], n, tb) for r in results for n, tb in r["failures"]]
@@ -258,7 +294,14 @@ def _summary(results, wall):
             print("\n%s %s :: %s\n%s" % (marker, module, name, tb.strip()[-1500:]))
     for module, name in unexpected:
         print("\n%s %s :: %s unexpectedly succeeded" % (FAIL_MARKER, module, name))
-    return 1 if failures or errors or unexpected else 0
+    restricted = sum(1 for r in results for _n, why in r["skipped"]
+                     if why.startswith(LAYERS_ABSENT))
+    release_time = sum(1 for r in results for _n, why in r["skipped"]
+                       if why.startswith("release-time check:"))
+    print("restricted-layer skips: %d; release-time skips: %d" % (restricted, release_time))
+    for name, why in gated or ():
+        print("\n%s restricted layers :: %s %s" % (FAIL_MARKER, name, why))
+    return 1 if failures or errors or unexpected or gated else 0
 
 
 if __name__ == "__main__":

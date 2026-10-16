@@ -30,6 +30,7 @@ import os
 import sys
 
 from pkinv import paths
+from pkinv.core import layers
 from pkinv.core.io import read_rows, write_table  # noqa: F401  (re-exported)
 
 ROOT, DATA, OUTPUTS, DOCS = paths.ROOT, paths.DATA, paths.OUTPUTS, paths.DOCS
@@ -107,6 +108,40 @@ def unshipped_registered():
     return _unshipped
 
 
+LAYERS_ABSENT = "restricted layers absent:"
+
+
+def require_layers(what):
+    """Skip a test that reads the restricted layers (third-party documents, their git
+    history) when a public clone has none mounted; do nothing where they are present.
+
+    rc69. The prefix is fixed because tests/test_layers_exercised.py and the published test
+    record count it: a run on the full tree must show ZERO such skips, and an absent-mode
+    run must skip exactly the set pinned in data/catalog/restricted_gated_tests.txt. A
+    broken mount raises (layers.LayersError) rather than skipping."""
+    import unittest
+    if not layers.present(ROOT) and layers.mode(ROOT) != "package":
+        raise unittest.SkipTest("%s %s" % (LAYERS_ABSENT, what))
+
+
+RELEASE_TIME = "release-time check:"
+
+
+def release_time_check(what):
+    """Skip, when PKINV_RELEASE_CHECKS=0, a test that holds only at a release commit.
+
+    rc69. The work is now committed in the public repository one change at a time, and its
+    CI runs on every push. A few tests compare the committed RELEASE bookkeeping (release
+    manifest, deposit manifest, deposit archives) with the content, and between a content
+    commit and the next `make release-fixpoint` they fail by design - the bookkeeping is
+    regenerated once per release, not once per commit. The public CI sets the variable and
+    prints how many tests it skipped this way; a maintainer's run, the release path and the
+    published test record never set it, so at a release every one of these runs."""
+    import unittest
+    if os.environ.get("PKINV_RELEASE_CHECKS") == "0":
+        raise unittest.SkipTest("%s %s" % (RELEASE_TIME, what))
+
+
 def require_documents(*rel_paths):
     """Skip, inside a validation package, a test that needs a source document the package
     registers and does not carry; fail, everywhere, when the document is simply missing.
@@ -122,10 +157,15 @@ def require_documents(*rel_paths):
     skip is for absence by design, never for absence by accident.
     """
     import unittest
-    if not in_validation_package():
-        return
     missing = [p for p in rel_paths if not os.path.exists(asset_path(ROOT, p))]
     if not missing:
+        return
+    if not in_validation_package():
+        # rc69: a public clone without the restricted layers holds none of the documents,
+        # by design. Absent only if layers says so - a missing document in a checkout
+        # that HAS the layers still fails, as it always did.
+        if layers.mode(ROOT) == "absent" and all(layers.is_restricted(p) for p in missing):
+            raise unittest.SkipTest("%s %s" % (LAYERS_ABSENT, "; ".join(missing)))
         return
     unshipped = unshipped_registered()
     unregistered = []

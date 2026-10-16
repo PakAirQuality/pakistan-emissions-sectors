@@ -31,6 +31,11 @@ import unittest
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 REGISTER = os.path.join(ROOT, "data", "catalog", "published_release_vintages.csv")
 BUILDER = os.path.join(ROOT, "scripts", "build_published_vintages.py")
+sys.path.insert(0, os.path.join(ROOT, "src"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+
+from pkinv.core import layers                                          # noqa: E402
+from _support import require_layers                                    # noqa: E402
 STATES = {"not-yet-published", "matches-published", "diverged-under-the-same-label"}
 
 
@@ -55,6 +60,7 @@ class TestPublishedVintages(unittest.TestCase):
 
     def test_git_still_reproduces_every_published_vintage(self):
         """The falsifiable half: each row's digests are re-hashed out of git."""
+        require_layers("the release history through rc68, held by the private checkout")
         import hashlib
         problems = []
         for row in self.published:
@@ -62,13 +68,12 @@ class TestPublishedVintages(unittest.TestCase):
                                   "semantic_release_sha256"),
                                  ("outputs/release_manifest.json",
                                   "release_manifest_sha256")):
-                run = subprocess.run(["git", "show", "%s:%s" % (row["commit"], path)],
-                                     cwd=ROOT, capture_output=True)
-                if run.returncode:
+                held = layers.git_show(row["commit"], path, root=ROOT)
+                if held is None:
                     problems.append("%s: %s held nothing at %s"
                                     % (row["version"], row["commit"], path))
                     continue
-                got = hashlib.sha256(run.stdout).hexdigest()
+                got = hashlib.sha256(held).hexdigest()
                 if got != row[column]:
                     problems.append("%s: %s holds %s at %s, published %s"
                                     % (row["version"], row["commit"], got[:12], path,

@@ -13,6 +13,7 @@ script exists so the search is never partial again.
 """
 
 from pkinv.assets import asset_path, catalog
+from pkinv.core import layers
 import csv
 import os
 import re
@@ -66,7 +67,15 @@ def main(argv):
     needles = [a.lower() for a in argv[1:]]
     total = 0
 
+    mounted = layers.present(ROOT)
     for tree in TREES:
+        if not mounted:
+            # rc69: a public clone without the restricted layers holds no documents, so it
+            # cannot say a document is NOT held. Saying "0 file(s)" here would be the dead
+            # layer this tool has already been caught reporting.
+            print("== %s: NOT MOUNTED (restricted layers absent; docs/restricted_layers.md)"
+                  % tree)
+            continue
         hits = []
         for dirpath, _dirnames, filenames in os.walk(asset_path(ROOT, tree)):
             for name in filenames:
@@ -120,6 +129,10 @@ def main(argv):
     print("\n%s: %d hit(s) across all layers%s"
           % ("/".join(argv[1:]), total,
              "" if total else " - NOTHING HELD; an acquisition would be genuinely new"))
+    if not mounted:
+        print("the document trees were not searched; mount them with "
+              "python3 scripts/overlay.py link PATH before deciding to acquire anything")
+        return 3
     return 0 if total else 1
 
 

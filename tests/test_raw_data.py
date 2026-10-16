@@ -26,7 +26,7 @@ import os
 import subprocess
 import unittest
 
-from _support import require_documents  # noqa: E402  (rc42: the documents gate)
+from _support import require_documents, require_layers  # noqa: E402  (rc42: the documents gate)
 from pkinv.core.io import read_rows
 from _support import ROOT
 
@@ -150,13 +150,13 @@ class TestTheSizeRuleIsEnforcedNotRemembered(unittest.TestCase):
     def test_the_lfs_rows_really_are_lfs(self):
         """Guards the failure mode that started this: a .gitattributes pattern containing a
         space silently matches nothing and the file goes to plain git looking fine."""
-        try:
-            out = subprocess.run(["git", "lfs", "ls-files", "-n"], cwd=ROOT, check=True,
-                                 stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-        except (subprocess.CalledProcessError, FileNotFoundError):
+        # rc69: each path's LFS state is asked of the repository that owns it - the documents
+        # are tracked by the private checkout mounted beside a public clone.
+        from pkinv.core import layers
+        require_layers("which documents git stores in LFS")
+        actual = layers.lfs_files(root=ROOT)
+        if not actual:
             self.skipTest("git-lfs not available")
-        actual = {line.strip() for line in out.stdout.decode("utf-8", "replace").splitlines()
-                  if line.strip()}
         claimed = {r["path"] for r in _manifest() if r["tracked"] == "lfs"}
         self.assertEqual(claimed - actual, set(),
                          "the manifest calls these LFS and git does not")

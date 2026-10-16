@@ -45,7 +45,8 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from pkinv.assets import asset_path                                     # noqa: E402
-from _support import load_script, unshipped_registered                 # noqa: E402
+from _support import load_script, require_layers, unshipped_registered  # noqa: E402
+from pkinv.core import layers                                          # noqa: E402
 
 LEDGER = os.path.join(ROOT, "data", "catalog", "document_retention.csv")
 LEDGER_GIT = "data/catalog/document_retention.csv"
@@ -193,13 +194,17 @@ class TestTheLedgerOnlyGrows(unittest.TestCase):
         ledger git holds and requires each to be a subset of the present one."""
         if not _in_git():
             self.skipTest("not a git checkout: the ledger's history is not available here")
-        log = subprocess.run(["git", "-C", ROOT, "log", "--format=%H", "--", LEDGER_GIT],
-                             capture_output=True, text=True, timeout=120)
-        commits = [c for c in log.stdout.split() if c]
+        # rc69: the ledger's history through rc68 is in the private checkout, and from rc69
+        # in the public repository; read both (src/pkinv/core/layers.py).
+        commits = []
+        for repo in layers.history_repositories(ROOT):
+            log = subprocess.run(["git", "-C", repo, "log", "--format=%H", "--", LEDGER_GIT],
+                                 capture_output=True, text=True, timeout=120)
+            commits += [(repo, c) for c in log.stdout.split() if c]
         if not commits:
             self.skipTest("the ledger has not been committed yet")
-        for commit in commits:
-            shown = subprocess.run(["git", "-C", ROOT, "show", "%s:%s" % (commit, LEDGER_GIT)],
+        for repo, commit in commits:
+            shown = subprocess.run(["git", "-C", repo, "show", "%s:%s" % (commit, LEDGER_GIT)],
                                    capture_output=True, text=True, timeout=120)
             earlier = list(csv.DictReader(shown.stdout.splitlines()))
             lost = dropped(earlier, self.ledger)

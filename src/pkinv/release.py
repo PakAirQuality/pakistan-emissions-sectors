@@ -41,19 +41,21 @@ LONG_TITLE = ("PakEmis: greenhouse gas and air pollutant emissions in Pakistan, 
 PACKAGE = "pkinv"
 
 # THE REPOSITORY A READER CAN OPEN (rc68). Through rc67 this named the working repository,
-# which is private: every manuscript printed a URL that returned 404 to its readers. The
-# public repository is a COPY of each release without the third-party source documents
-# (scripts/make_public_copy.py decides what is left out; PUBLIC_MIRROR.md in the copy says
-# what and why). It carries no history, so the commits a release manifest names are those of
-# the working repository and do not exist there - REPOSITORY_NOTE says so wherever the
-# manifest gives the URL.
+# which is private: every manuscript printed a URL that returned 404 to its readers. rc68
+# published a COPY of the release there. From rc69 the work is committed there directly, and
+# the third-party source documents stay in the private checkout as the restricted layers
+# (pkinv.core.layers; docs/restricted_layers.md says what and why). Releases through rc68
+# were made in the private repository, so the commits their manifests name are not in the
+# public history - REPOSITORY_NOTE says so wherever the manifest gives the URL.
 OWNER = "PakAirQuality"
 REPO = "pakistan-emissions-sectors"
 REPO_URL = "https://github.com/%s/%s" % (OWNER, REPO)
 LICENCE_URL = "%s/blob/main/LICENSE" % REPO_URL
-REPOSITORY_NOTE = ("a public copy of the release without the third-party source documents, "
-                   "whose checksums it lists; the commits named in the git block are those "
-                   "of the private working repository and do not exist in the copy")
+REPOSITORY_NOTE = ("the public development repository, without the third-party source "
+                   "documents, whose checksums it lists; the git block names its commit, and "
+                   "restricted_layers the commit of the private checkout that holds the "
+                   "documents. Releases through 1.0.0rc68 were made in that private "
+                   "repository and their commits are not in the public history")
 
 # Where the dataset can be explored interactively, and whose project it is. The explorer is
 # deployed separately from the archive and can serve an earlier release than the one a

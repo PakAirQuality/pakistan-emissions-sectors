@@ -11,6 +11,7 @@ from pathlib import Path
 import sys
 
 from pkinv.paths import ROOT
+from pkinv.core import layers
 
 LAYOUT_VERSION = "pkinv.data-layout/v1"
 CATALOG = "data/catalog/assets.csv"
@@ -78,7 +79,14 @@ def catalog(root=ROOT):
 def _relative(value, root):
     value = os.fspath(value)
     if os.path.isabs(value):
-        relative = os.path.relpath(os.path.realpath(value), os.path.realpath(os.fspath(root)))
+        # The lexical path first: from rc69 the restricted layers are SYMLINKS into another
+        # checkout (pkinv.core.layers), and resolving one would carry it outside the root
+        # and lose its catalog identity. The real path is the fallback for a root that is
+        # itself reached through a link.
+        root = os.fspath(root)
+        relative = os.path.relpath(os.path.abspath(value), os.path.abspath(root))
+        if relative == ".." or relative.startswith("../"):
+            relative = os.path.relpath(os.path.realpath(value), os.path.realpath(root))
         if relative == ".." or relative.startswith("../"):
             return None
         return relative
@@ -97,7 +105,10 @@ def resolve(value, *, root=ROOT):
         # does not build a path under a tree that no longer exists. A directory still
         # present on disk is a real one (raw documents stayed put) and is left alone.
         moved = directories.get(relative)
-        if moved is None or os.path.isdir(os.path.join(os.fspath(root), relative)):
+        if (moved is None or os.path.isdir(os.path.join(os.fspath(root), relative))
+                or layers.is_restricted(relative)):
+            # A restricted tree (pkinv.core.layers) is never aliased: whether it is mounted
+            # must not change where a path under it points.
             return os.fspath(value)
         target = os.path.join(os.fspath(root), moved)
         sys.audit("pkinv.asset.resolve", relative + "/", target)

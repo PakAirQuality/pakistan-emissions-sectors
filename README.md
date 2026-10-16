@@ -11,9 +11,10 @@ A shared activity and material-flow inventory for Pakistan covering ten fiscal y
 **Explore the data:** <https://emissions.hawanama.org> is an interactive explorer of this
 inventory, a website of the [Pakistan Air Quality Initiative](https://pakairquality.com). It
 is deployed separately and can serve an earlier release than the one in this repository.
-**Public repository:** <https://github.com/PakAirQuality/pakistan-emissions-sectors>, a copy
-of each release without the third-party source documents (`PUBLIC_MIRROR.md` there says what
-is left out and where its checksums are).
+**Public repository:** <https://github.com/PakAirQuality/pakistan-emissions-sectors>. After
+release 1.0.0rc68 the work is committed here directly. The third-party source documents it was
+built from are not here; `docs/restricted_layers.md` says what is left out, why, and where
+their checksums are, and `NOTICE-ODbL.md` lists the files that carry ODbL obligations.
 
 The common account reconciles Pakistani fuel consumption, physical production, household fuel,
 biomass and nitrogen flows before applying source-specific emissions methods. It distinguishes

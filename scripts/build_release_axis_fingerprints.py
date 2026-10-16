@@ -43,7 +43,6 @@ information too - the provincial layer begins at rc47 and the air one at rc49.
 import csv
 import hashlib
 import os
-import subprocess
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -51,6 +50,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 import pkinv                                                        # noqa: E402
 from pkinv.core.io import read_rows, write_table                    # noqa: E402
+from pkinv.core import layers                                       # noqa: E402
 
 OUT = os.path.join(ROOT, "outputs", "pakemis_release_axis_fingerprints.csv")
 VINTAGES = os.path.join(ROOT, "data", "catalog", "published_release_vintages.csv")
@@ -135,9 +135,8 @@ def fingerprints(blob, geo, value_column):
 
 
 def blob_at(commit, path):
-    run = subprocess.run(["git", "show", "%s:%s" % (commit, path)],
-                         cwd=ROOT, capture_output=True)
-    return None if run.returncode else run.stdout
+    # rc69: the published vintages through rc68 are in the private history (pkinv.core.layers)
+    return layers.git_show(commit, path, root=ROOT)
 
 
 def main():

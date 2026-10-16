@@ -27,6 +27,7 @@ import subprocess
 import pkinv
 from pkinv import release
 from pkinv.core import components
+from pkinv.core import layers
 from pkinv.core import mc_draws
 from pkinv.core import montecarlo
 from pkinv.core import manifest as manifest_core
@@ -128,9 +129,14 @@ def _git_commit():
                                       stderr=subprocess.DEVNULL).decode().strip()
         dirty = bool(subprocess.check_output(["git", "status", "--porcelain"], cwd=ROOT,
                                              stderr=subprocess.DEVNULL).decode().strip())
-        return {"describes_commit": sha, "tree_dirty": dirty}
+        record = {"describes_commit": sha, "tree_dirty": dirty}
     except (OSError, subprocess.CalledProcessError):
-        return {"describes_commit": None, "tree_dirty": None}
+        record = {"describes_commit": None, "tree_dirty": None}
+    # rc69: development moved to the public repository and the documents stayed in the
+    # private checkout mounted beside it (pkinv.core.layers). The documents block above is
+    # hashed from that checkout, so the record names its commit too.
+    record["restricted_layers"] = layers.describe(ROOT)
+    return record
 
 
 def _sectors(path):
@@ -271,6 +277,11 @@ def _one(rows, field):
 
 
 def build():
+    if layers.mode(ROOT) == "absent":
+        # The documents block would hash nothing and still look like a manifest.
+        raise SystemExit("the restricted layers are not mounted here, so a release manifest "
+                         "built now would list none of its source documents. Run "
+                         "python3 scripts/overlay.py link PATH first.")
     baseline_path = os.path.join(OUTPUTS, "national_all_sectors.csv")
     ledger_path = os.path.join(OUTPUTS, "national_all_sectors_ledger.csv")
     sectors, total = _sectors(baseline_path)

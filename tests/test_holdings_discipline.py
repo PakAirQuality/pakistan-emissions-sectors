@@ -13,6 +13,8 @@ the release manifest's document section); these guards hold the line until then.
 """
 
 from pkinv.assets import asset_path
+from pkinv.core import layers
+from _support import require_layers
 import collections
 import csv
 import os
@@ -28,12 +30,20 @@ def read(path):
         return [l for l in h if not l.startswith("#")]
 
 
+def tracked_sources():
+    """sources/ as git tracks it - in the repository that owns it. From rc69 that is the
+    private checkout mounted beside a public clone (src/pkinv/core/layers.py), and a public
+    clone's own `git ls-files sources` is empty by design, which would read as 'every
+    pinned document removed'. Without the layers there is nothing to compare: skip, with
+    the prefix tests/test_layers_exercised.py counts."""
+    require_layers("the frozen sources/ tree")
+    return set(layers.ls_files("sources"))
+
+
 class SourcesTreeIsFrozen(unittest.TestCase):
     def test_no_document_was_added_to_the_legacy_tree(self):
         pinned = set(l.strip() for l in read("data/sources_freeze.txt") if l.strip())
-        tracked = set(subprocess.run(
-            ["git", "-C", ROOT, "ls-files", "sources"],
-            capture_output=True, text=True, check=True).stdout.splitlines())
+        tracked = tracked_sources()
         added = sorted(tracked - pinned)
         self.assertFalse(added,
             "new raw documents go to data/raw/<source>/ - sources/ is the frozen legacy "
@@ -46,9 +56,7 @@ class SourcesTreeIsFrozen(unittest.TestCase):
         "for a deliberate removal". There is no deliberate removal: a held document is never
         deleted (tests/test_document_retention.py), and frozen means frozen both ways."""
         pinned = set(l.strip() for l in read("data/sources_freeze.txt") if l.strip())
-        tracked = set(subprocess.run(
-            ["git", "-C", ROOT, "ls-files", "sources"],
-            capture_output=True, text=True, check=True).stdout.splitlines())
+        tracked = tracked_sources()
         removed = sorted(pinned - tracked)
         self.assertFalse(removed,
             "documents pinned in data/sources_freeze.txt are no longer tracked under "

@@ -17,6 +17,7 @@ import os
 import re
 import sys
 import unittest
+from _support import release_time_check  # noqa: E402
 
 from _support import require_documents  # noqa: E402  (rc42: the documents gate)
 
@@ -483,6 +484,38 @@ class TestSectorRegistriesAgree(unittest.TestCase):
                          "present but unlisted, so untested: %s" % (on_disk - set(SECTORS)))
 
 
+_DIRTY = None
+
+
+def _tracked_clean(path):
+    import subprocess
+    run = subprocess.run(["git", "-C", ROOT, "ls-files", "--error-unmatch", "--", path],
+                         capture_output=True)
+    _edited_at(path)                       # fills _DIRTY
+    return run.returncode == 0 and _DIRTY is not None and os.path.normpath(path) not in _DIRTY
+
+
+def _edited_at(path):
+    """When a file last changed: its last COMMIT time when git holds it unmodified, else its
+    modification time. A fresh clone stamps every file with the moment of checkout, so
+    mtimes there say nothing about which of two committed files was written first (rc69:
+    development moved to the public repository, where every reader starts from a clone)."""
+    import subprocess
+    global _DIRTY
+    if _DIRTY is None:
+        run = subprocess.run(["git", "-C", ROOT, "status", "--porcelain", "--untracked-files=all"],
+                             capture_output=True, text=True)
+        _DIRTY = (None if run.returncode else
+                  {os.path.normpath(os.path.join(ROOT, line[3:].split(" -> ")[-1].strip('"')))
+                   for line in run.stdout.splitlines()})
+    if _DIRTY is not None and os.path.normpath(path) not in _DIRTY:
+        run = subprocess.run(["git", "-C", ROOT, "log", "-1", "--format=%ct", "--", path],
+                             capture_output=True, text=True)
+        if run.returncode == 0 and run.stdout.strip():
+            return float(run.stdout.strip())
+    return os.path.getmtime(path)
+
+
 class TestReleaseIntegrity(unittest.TestCase):
     """One release, one year set, one metric, one configuration.
 
@@ -635,6 +668,19 @@ class TestReleaseIntegrity(unittest.TestCase):
         reachable = subprocess.run(
             ["git", "merge-base", "--is-ancestor", named, "HEAD"],
             cwd=ROOT, stderr=subprocess.DEVNULL).returncode == 0
+        if not reachable:
+            # rc69: releases through rc68 were made in the private repository, whose
+            # history the restricted layers' checkout holds (pkinv.core.layers); a manifest
+            # of one of them names a commit that is reachable THERE.
+            from pkinv.core import layers
+            _public, overlay = layers.repositories(ROOT)
+            if overlay and overlay != _public:
+                reachable = subprocess.run(
+                    ["git", "-C", overlay, "merge-base", "--is-ancestor", named, "HEAD"],
+                    stderr=subprocess.DEVNULL).returncode == 0
+            elif not layers.present(ROOT):
+                self.skipTest("restricted layers absent: the commit %s is in the private "
+                              "history" % named[:12])
         self.assertTrue(reachable,
                         "the committed manifest names %s, which is not an ancestor of HEAD - "
                         "an amended or discarded commit. Re-run make release-fixpoint on the "
@@ -664,6 +710,7 @@ class TestReleaseIntegrity(unittest.TestCase):
         fails. The git block itself is dropped: describes_commit is by construction the
         PARENT of the commit carrying the manifest, and tree_dirty is environmental -
         both are covered by the clean-tree assertion instead."""
+        release_time_check("the release manifest is regenerated at the release fixpoint")
         import subprocess
         from pkinv.report import release_manifest as rm
         try:
@@ -1006,6 +1053,7 @@ class TestReleaseIntegrity(unittest.TestCase):
         handed a reviewer a README quoting superseded sector totals. Nothing in the suite
         could see either, because both tests read the source rather than the artefact.
         """
+        release_time_check("the shipped PDFs are compiled at the release")
         # The national supplement is a second document in the same directory, so it needs its
         # own shipped name and its own source list; taking paper_national.tex's would compare
         # the supplement's PDF against the paper's sections and pass on the wrong evidence.
@@ -1026,11 +1074,15 @@ class TestReleaseIntegrity(unittest.TestCase):
             if not os.path.exists(shipped):
                 stale.append("%s: no PDF in papers/pdf/" % name)
                 continue
-            built = os.path.getmtime(shipped)
+            # One clock for both sides: commit times when git holds the shipped PDF, else
+            # the modification times the compile left (the v1 supplement is deposited and
+            # ignored by git).
+            clock = _edited_at if _tracked_clean(shipped) else os.path.getmtime
+            built = clock(shipped)
             main = _main_tex(root, mainname)
             texts = [main] + _inputs_of(main, root)
             for source in texts + _figures_of(texts, root):
-                if os.path.exists(source) and os.path.getmtime(source) > built:
+                if os.path.exists(source) and clock(source) > built:
                     stale.append("%s: %s is newer than the shipped PDF"
                                  % (name, os.path.relpath(source, ROOT)))
                     break
@@ -1091,6 +1143,7 @@ class TestReleaseIntegrity(unittest.TestCase):
         """Byte-equality apart from nothing: the manifest carries no timestamp precisely
         so that this test can be exact. If it drifts, an output moved without the release
         record moving with it."""
+        release_time_check("the release manifest is regenerated at the release fixpoint")
         from pkinv.report import release_manifest
         import json
         # rc42: the manifest hashes every source document; without the vault the documents

@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := build
-.PHONY: dev release-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national sync-figures paper-national paper-v3 paper-v3-review sector-papers papers figures clean
+.PHONY: dev release-check layers public-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national sync-figures paper-national paper-v3 paper-v3-review sector-papers papers figures clean
 
 # Full national pipeline: nine sectors, then the cross-sector layer.
 all: full
@@ -27,6 +27,15 @@ data-check:
 # not checked while a document it cites may have gone or changed.
 release-check: full
 	python3 scripts/retain_document.py --verify
+	python3 scripts/check_public_tree.py
+
+# Which restricted layers this checkout can read (docs/restricted_layers.md).
+layers:
+	python3 -m pkinv.core.layers
+
+# Nothing tracked here may be unpublishable; run before every push.
+public-check:
+	python3 scripts/check_public_tree.py
 
 full:
 	python3 -m pkinv.build --group full --full --strict $(BUILD_ARGS)

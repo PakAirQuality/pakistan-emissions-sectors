@@ -29,6 +29,7 @@ Writes: outputs/pakemis_test_run.json
 """
 
 from pkinv.assets import asset_path
+from pkinv.core import layers
 import json
 import os
 import platform
@@ -56,6 +57,14 @@ def _counts(detail):
 
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
+    # rc69: the published record is of the WHOLE suite. In a public clone without the
+    # restricted layers the document tests skip by design (tests/_support.require_layers),
+    # and a record taken there would publish those skips as a release's test result.
+    restricted = layers.describe(ROOT)
+    if restricted["mode"] not in ("monorepo", "overlay"):
+        print("the restricted layers are not mounted (mode %s); a release test record is "
+              "taken with them. Run python3 scripts/overlay.py link PATH" % restricted["mode"])
+        return 1
     command = [sys.executable, "-m", "unittest", "discover", "tests"]
     print("-> %s" % " ".join(command))
     proc = subprocess.run(command, cwd=ROOT, capture_output=True, text=True)
@@ -89,6 +98,10 @@ def main(argv=None):
                            for name, module in FAILING.findall(text)}),
         "seconds": float(ran.group(2)),
         "python": platform.python_version(),
+        # which documents the run could read: the mode, and the commit of the checkout that
+        # holds them (pkinv.core.layers). A present mode is what guarantees zero
+        # `restricted layers absent:` skips.
+        "restricted_layers": restricted,
         "platform": platform.platform(terse=True),
         # Said plainly on the artifact itself, because the two numbers WILL be compared.
         "note": ("`executed` counts what the runner ran on this machine and is lower than "
