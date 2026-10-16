@@ -56,14 +56,12 @@ patch(".zenodo.json", [('"version": "%s"' % OLD, '"version": "%s"' % NEW)])
 # mint used no longer exist. The four GENERATED sites are deliberately not here and follow
 # the build: outputs/release_manifest.json, paper_common/release_cover.tex,
 # paper_common/generated_availability_tn.tex and versions/v1/generated/availability.tex.
-patch("paper_national/versions/v1/paper_national.tex", [(OLD, NEW)])
-patch("paper_national/versions/v1/sections/00_abstract.tex", [(OLD, NEW)])
+# rc69: the v1 report's main file and abstract, and the v3 article, no longer name the version
+# in their own text - it reaches them through the generated availability fragments and the
+# release cover - so those three sites were dropped. The v1 short summary is still written
+# by hand and still names it.
+patch("paper_national/versions/v1/short_summary.txt", [(OLD, NEW)])
 patch("README.md", [(OLD, NEW)])
-# THE REWRITTEN ARTICLE'S AVAILABILITY STATEMENT (versions/v3 since rc64; v2 is frozen). Patched by hand at rc60 and therefore missed at
-# rc61 until tests/test_v3_documents.py's version guard caught it - which is what
-# that guard is for, and also the argument for naming the site here rather than
-# relying on the next person to remember it.
-patch("paper_national/versions/v3/paper.tex", [(OLD, NEW)])
 patch("docs/reproducibility.md", [("**%s**" % OLD, "**%s**" % NEW)])
 patch("paper_common/references.bib", [(OLD, NEW)])
 # RESOLVED THROUGH THE ASSET CATALOG, not hardcoded: the 2026-09 layout migration moved
