@@ -987,6 +987,12 @@ PHASES = [
           writes=("outputs/pakemis_air_absence_screening_by_year.csv",),
           reads=("outputs/power_air_screening_fy2015_16_fy2024_25.csv",
                  "outputs/pakemis_air_coverage_matrix.csv",)),
+    # rc69: what the covered total leaves out at power stacks, per species and year, as a share
+    Phase("Air power-stack omission", "pkinv.report.air_power_omission", False,
+          writes=("outputs/pakemis_air_power_omission.csv",),
+          reads=("outputs/power_air_screening_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_air_coverage_matrix.csv")),
     # rc59: the brick-kiln frame by kiln type - the FCBK and ZZ vectors the air sink rides
     # for the typed brick classes (built once; the brick shares are period-invariant).
     # Published so the district shares are inspectable; the sink builds the same frames
@@ -1665,7 +1671,8 @@ PHASES = [
                  "data/activity/industry/coal_by_sector_vintages.csv")),
     Phase("Air structural sensitivities", "pkinv.report.air_sensitivities", False,
           writes=("outputs/pakemis_air_structural_sensitivities.csv",
-                  "outputs/pakemis_nitrogen_partition_sensitivity.csv"),
+                  "outputs/pakemis_nitrogen_partition_sensitivity.csv",
+                  "outputs/pakemis_nitrogen_no_pathways.csv"),
           reads=("outputs/pakemis_air_atomic_annual.csv",
                  "outputs/pakemis_ghg_configuration_atoms.csv",
                  "outputs/pakemis_coal_allocation_cases.csv")),
@@ -1859,18 +1866,11 @@ PHASES = [
     # rc69: the measured validation, one row per check, for the paper's compact table
     Phase("Measured validation", "pkinv.report.validation_measured", False,
           writes=("outputs/pakemis_validation_measured.csv",),
-          reads=("outputs/ocac_parse_summary.csv", "outputs/nfdc_monthly_parse_summary.csv",
-                 "outputs/pbs_minerals_parse_summary.csv", "outputs/pbs_qim_parse_summary.csv",
-                 "outputs/apcma_dispatch_parse_summary.csv", "outputs/pakemis_air_monthly.csv",
-                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
-                 "outputs/pakemis_grid_provincial_check.csv",
-                 "outputs/pakemis_adm2_nesting_check.csv",
-                 "outputs/pakemis_nitrogen_partition_sensitivity.csv",
-                 "outputs/pakemis_coal_change_decomposition.csv",
-                 "held:docs/reproduction/rc68/clean_rebuild_comparison.csv",
-                 "held:docs/reproduction/rc68/unpack_build_comparison.csv",
-                 "held:docs/reproduction/rc68/unpack_not_rebuilt_check.csv",
-                 "prior:outputs/pakemis_test_run.json")),
+          # reads=None, deliberately: besides the held parse summaries and the closure
+          # products it reads the rc68 reproduction record under docs/reproduction/ and the
+          # release test record, which are committed records no phase writes and no read
+          # form declares; an unaudited phase takes the conservative input boundary.
+          reads=None),
     Phase("Comparison crosswalk", "pkinv.report.comparison_crosswalk", True,
           writes=("outputs/pakemis_comparison_crosswalk.csv",),
           reads=("outputs/pakemis_validation_catalog.csv",
@@ -1952,6 +1952,7 @@ PHASES = [
                  "outputs/pakemis_nitrogen_partition_sensitivity.csv",
                  "outputs/pakemis_coal_change_decomposition.csv",
                  "outputs/pakemis_air_source_coverage.csv", "outputs/pakemis_air_coverage_matrix.csv",
+                 "outputs/pakemis_air_power_omission.csv",
                  "outputs/pakemis_air_structural_sensitivities.csv", "outputs/pakemis_industry_air_edgar_comparison.csv",
                  "outputs/pakemis_air_htap_comparison.csv", "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
                  "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
@@ -2359,6 +2360,7 @@ CATEGORIES = {
         "Power SO2 admission bridge",
         "Power air-control evidence",
         "Air absence-screening ledger",
+        "Air power-stack omission",
         "Brick kiln fleet by year",
         "Coal allocation identity",
         "Kiln frame vectors",

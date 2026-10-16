@@ -50,9 +50,7 @@ RESTRICTED_TREES = (
     ("data/gmw", "third-party documents under an older path"),
     ("data/pbs_census", "third-party documents under an older path"),
     ("data/district_records", "third-party documents under an older path"),
-    # the OCHA COD-AB administrative bundle: a humanitarian-data download that no published
-    # number reads (PAK_ADM1/ADM2 are the versioned controls), held as a document
-    ("data/shared/gis/cod_ab", "third-party boundary download"),
+
     ("campaign", "working notes"),
     ("research_campaign", "working notes"),
     (".claude", "tool settings"),
@@ -68,6 +66,10 @@ RESTRICTED_FILES = (
     ("data/sectors/agriculture/gis/manual/spam2020_V2r2_global_A_RICE_R.tif",
      "third-party raster"),
     ("data/sectors/agriculture/gis/manual/spam_rice.tif", "third-party raster"),
+    # the OCHA COD-AB boundaries (CC BY-IGO), held as documents; read by the ADM2 2022 frame
+    # crosswalk only. Their provenance note COD_AB_SOURCES.json is this project's own and public.
+    ("data/shared/gis/cod_ab/pak_admin2.geojson", "third-party boundary download"),
+    ("data/shared/gis/cod_ab/pak_admin_boundaries.geojson.zip", "third-party boundary download"),
     ("CLAUDE.md", "working notes"),
 )
 RESTRICTED_PATTERNS = (

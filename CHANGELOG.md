@@ -54,6 +54,53 @@ clone mounts them as ignored symlinks with `scripts/overlay.py`.
   deposit archives, the shipped PDFs) skip with the reason `release-time check:` when
   `PKINV_RELEASE_CHECKS=0`. Only the public CI sets that variable; the release path never does.
 
+### The nitrogen partition, pathway by pathway against EMEP/EEA 2023
+
+The review called the agricultural nitrogen partition a major structural assumption: the
+all-NH3 diagnostic moves national NOx by 150 Gg. The EMEP/EEA 2023 chapters 3.B and 3.D are
+now held. `pakemis_nitrogen_no_pathways.csv` (`pkinv.report.nitrogen_no_pathways`) compares
+every agricultural NOx pathway with the factor the Guidebook publishes for it:
+
+| Pathway | Central basis | EMEP/EEA 2023 factor |
+|---|---|---|
+| Synthetic fertiliser | 0.007 kg NO-N per kg N | 0.04 kg NO2 per kg N (3.D Table 3-1) |
+| Applied manure | 0.007 kg NO-N per kg N | 0.04 kg NO2 per kg N (3.D Table 3-1) |
+| Grazing excreta | 5 percent of grazing volatilisation | 0.04 kg NO2 per kg N (3.D Table 3-1) |
+| Manure management | 5 percent of every stage's mixed loss | 0.01 kg NO-N per kg TAN entering solid storage (3.B Table 3-10) |
+
+The resulting case, `nitrogen_no_emep2023_process_factors`, is carried through national
+totals for every year and configuration. It raises reference-year NOx by 118.2 Gg: the
+stored-manure term falls by 85 Gg, and the applied and deposited terms rise. The two nitrogen
+cases lie on opposite sides of the central estimate. National NOx changes from FY2015–16 to
+FY2024–25 by:
+- 18.2 percent centrally;
+- 17.4 percent with the EMEP/EEA factors;
+- 11.5 percent under the all-NH3 diagnostic.
+
+The central value is unchanged: replacing it would be a declared re-base, and the choice is
+the authors'.
+
+### What the covered air total leaves out at power stacks
+
+`pakemis_air_power_omission.csv` (`pkinv.report.air_power_omission`) gives, per year and
+species, the screened power-stack pair for the fuels the covered panel does not hold, of
+which coal, as a share of the covered national total. It is never added to a total. The
+omitted SO2 is:
+- 0.04–0.31 percent of covered SO2 in FY2015–16;
+- 6.4–64.2 percent in FY2024–25, almost all coal.
+
+For primary PM2.5 the omission rises to at most 9.0 percent. The paper now gives these
+shares beside the SO2 trend.
+
+### Smaller fixes
+
+- The paper says why FY2023–24 is the detailed reference year: it is the latest year with
+  its own district crop areas. It also says that FY2025–26 is provisional because its source
+  series are incomplete, not because the year has not ended.
+- COD-AB: only the two boundary files are restricted. The project's own provenance note
+  `COD_AB_SOURCES.json` is tracked. A clone without the layers builds the semantic release
+  from the committed release's record of the two library assets.
+
 ### Presentation: measured validation in one table, and road separated from off-road
 
 - **New Table 4** in the evaluation section: what was measured, one row per check.

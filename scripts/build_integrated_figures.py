@@ -174,6 +174,38 @@ def facts(ghg, air):
             command = "Pak" + tag + "NPartition" + macro_species[row["pollutant"]] + "ChangeGg"
             output.append(r"\newcommand{\%s}{%s}" % (command, format(float(row["change_Gg"]), ".4g")))
             table.append({"macro": command, "period": row["period_id"], "species": row["pollutant"], "value": row["change_Gg"], "unit": "Gg"})
+    # rc69: what the covered total leaves out at power stacks (pakemis_air_power_omission.csv)
+    for row in rows("pakemis_air_power_omission.csv", optional=True):
+        if row["period_id"] not in ("FY2015-16", LATEST) or row["pollutant"] not in ("SO2", "PM2.5", "NOx"):
+            continue
+        tag = "First" if row["period_id"] == "FY2015-16" else "Latest"
+        for suffix, key in (("LowPct", "omitted_controlled_share_of_covered_pct"),
+                            ("HighPct", "omitted_uncontrolled_share_of_covered_pct")):
+            command = "Pak" + tag + "PowerOmit" + macro_species[row["pollutant"]] + suffix
+            output.append(r"\newcommand{\%s}{%s}" % (command, format(float(row[key]), ".3g")))
+            table.append({"macro": command, "period": row["period_id"], "species": row["pollutant"],
+                          "value": row[key], "unit": "%"})
+    # rc69: the EMEP/EEA 2023 process-factor case and the NOx trend under each nitrogen case
+    trend = collections.defaultdict(dict)
+    for row in cases:
+        if not reference(row) or row["pollutant"] != "NOx" or not row["scenario_id"].startswith("nitrogen_"):
+            continue
+        trend[row["scenario_id"]][row["period_id"]] = float(row["case_covered_Gg"])
+        if row["scenario_id"] == "nitrogen_no_emep2023_process_factors" and row["period_id"] in (REFERENCE, LATEST):
+            tag = "Ref" if row["period_id"] == REFERENCE else "Latest"
+            command = "Pak" + tag + "NEmepNOxChangeGg"
+            output.append(r"\newcommand{\%s}{%s}" % (command, format(float(row["change_Gg"]), ".4g")))
+            table.append({"macro": command, "period": row["period_id"], "species": "NOx",
+                          "value": row["change_Gg"], "unit": "Gg"})
+    for scenario, suffix in (("nitrogen_no_emep2023_process_factors", "NEmep"),
+                             ("nitrogen_all_volatilised_n_as_nh3_diagnostic", "NPartition")):
+        series = trend.get(scenario, {})
+        if "FY2015-16" in series and LATEST in series:
+            change = 100 * (series[LATEST] / series["FY2015-16"] - 1)
+            command = "PakChangeNOx" + suffix
+            output.append(r"\newcommand{\%s}{%.1f}" % (command, change))
+            table.append({"macro": command, "period": "FY2015-16 to " + LATEST, "species": "NOx",
+                          "value": change, "unit": "%"})
     for row in rows("pakemis_nitrogen_partition_sensitivity.csv", optional=True):
         if not reference(row) or row["period_id"] not in (REFERENCE, LATEST) or row["metric"] not in ("CO2e_AR5", "CO2e_AR6"):
             continue
@@ -480,6 +512,7 @@ SENSITIVITY_FAMILIES = (
     ("Waste burned fraction 0.3 and 0.9", ("waste_burned_fraction_",), "waste", "o"),
     ("Regional fertiliser NH₃ factor", ("fertiliser_urea_regional_factor",), "agriculture", "s"),
     ("Nitrogen attribution diagnostic (all NH₃)", ("nitrogen_all_volatilised_n_as_nh3_diagnostic",), "agriculture", "^"),
+    ("EMEP/EEA 2023 soil and manure NO factors", ("nitrogen_no_emep2023_process_factors",), "agriculture", "D"),
 )
 
 

@@ -2,7 +2,7 @@
 
 One row per headline claim of the national manuscript (data/claim_matrix.csv), held to the release: `printed` is what the section prints today, `resolved` is what the release answers (through pakemis_query where a stored query exists, else through the pointer, else through the DOC_CLAIMS getter). `agrees` applies the DOC_CLAIMS rule (half an ulp at the printed precision plus the claim's registered tolerance); `strict` is half an ulp alone. Nothing here is repaired: a `no` is a finding for tests/paper_numbers/test_claim_matrix.py.
 
-Rows: 85; agree: 85; disagree: 0; via query: 0, pointer: 85, getter: 0.
+Rows: 96; agree: 96; disagree: 0; via query: 0, pointer: 96, getter: 0.
 
 ## 4 Dataset generation
 
@@ -93,4 +93,15 @@ Rows: 85; agree: 85; disagree: 0; via query: 0, pointer: 85, getter: 0.
 | paper_PakLatestCoalSOtwoVintageGg | 9.26 | 9.262785 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoVintageGg |
 | paper_PakLatestCoalSOtwoWithoutAllocationGg | -24 | -23.998507 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoWithoutAllocationGg |
 | paper_PakLatestCoalPMfineWithoutAllocationGg | -8.71 | -8.714733 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalPMfineWithoutAllocationGg |
+| paper_PakRefNEmepNOxChangeGg | 118.2 | 118.19811309029078 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRefNEmepNOxChangeGg |
+| paper_PakChangeNOxNEmep | 17.4 | 17.381507107896187 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakChangeNOxNEmep |
+| paper_PakChangeNOxNPartition | 11.5 | 11.515663390034426 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakChangeNOxNPartition |
+| paper_PakFirstPowerOmitSOtwoLowPct | 0.04 | 0.04 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakFirstPowerOmitSOtwoLowPct |
+| paper_PakFirstPowerOmitSOtwoHighPct | 0.31 | 0.31 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakFirstPowerOmitSOtwoHighPct |
+| paper_PakFirstPowerOmitPMfineHighPct | 0.43 | 0.43 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakFirstPowerOmitPMfineHighPct |
+| paper_PakLatestPowerOmitSOtwoLowPct | 6.43 | 6.43 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitSOtwoLowPct |
+| paper_PakLatestPowerOmitSOtwoHighPct | 64.2 | 64.18 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitSOtwoHighPct |
+| paper_PakLatestPowerOmitPMfineHighPct | 8.98 | 8.98 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitPMfineHighPct |
+| paper_PakLatestPowerOmitNOxLowPct | 9.32 | 9.32 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitNOxLowPct |
+| paper_PakLatestPowerOmitNOxHighPct | 14.3 | 14.28 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitNOxHighPct |
 

@@ -581,8 +581,8 @@ data/shared/gis/adm2_crosswalk.csv,data/shared/gis,producer,scripts/build_adm2_p
 data/shared/gis/adm2_intersections_267x340.csv,data/shared/gis,producer,scripts/build_adm2_intersections.py,derived,,9,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/gis/adm2_intersections_267x340.csv.txt,data/shared/gis,sidecar,,,,2,no,
 data/shared/gis/allowed_grid_fallbacks.csv,data/shared/gis,producer,src/pkinv/report/grid_cube.py,,,6,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/shared/gis/cod_ab/COD_AB_SOURCES.json,data/shared/gis/cod_ab,sidecar,,,,0,yes,
-data/shared/gis/cod_ab/pak_admin2.geojson,data/shared/gis/cod_ab,hand:held-source,,archived,,3,no,rc47 Wave 6 acquisition; retrieval record + sha256 in data/shared/gis/cod_ab/COD_AB_SOURCES.json and data/catalog/raw_ma
+data/shared/gis/cod_ab/COD_AB_SOURCES.json,data/shared/gis/cod_ab,sidecar,,,,1,no,
+data/shared/gis/cod_ab/pak_admin2.geojson,data/shared/gis/cod_ab,hand:held-source,,archived,,4,no,rc47 Wave 6 acquisition; retrieval record + sha256 in data/shared/gis/cod_ab/COD_AB_SOURCES.json and data/catalog/raw_ma
 data/shared/gis/geometry_sets.csv,data/shared/gis,hand:parameter,,,,15,no,
 data/shared/gis/grid_proxy_semantics.csv,data/shared/gis,hand:parameter,,,,4,no,
 data/shared/gis/manual/ghsl_built_1km/GHSL_SOURCES.json,data/shared/gis/manual/ghsl_built_1km,sidecar,,,,3,no,
