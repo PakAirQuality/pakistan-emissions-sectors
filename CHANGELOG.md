@@ -54,6 +54,25 @@ clone mounts them as ignored symlinks with `scripts/overlay.py`.
   deposit archives, the shipped PDFs) skip with the reason `release-time check:` when
   `PKINV_RELEASE_CHECKS=0`. Only the public CI sets that variable; the release path never does.
 
+### Presentation: measured validation in one table, and road separated from off-road
+
+- **New Table 4** in the evaluation section: what was measured, one row per check.
+  `pakemis_validation_measured.csv` (`pkinv.report.validation_measured`) reads the parse
+  summaries, closure ledgers and reproduction record, and recomputes two closures from the
+  released tables: air monthly against annual, and districts against provinces.
+  `scripts/make_validation_table.py` renders the table. It shows:
+  - OCAC 36/36 months closing within 0.14 percent;
+  - NFDC 58/58 product-years;
+  - PBS minerals 36/36;
+  - QIM 1,128/1,137 item-years;
+  - air monthly against annual, 70/70 within 7e-6 Gg;
+  - the rc68 rebuilds, with 0 differing files.
+
+  Fifteen gridded rows that do not close are named as declared divergences: the Islamabad
+  airport LTO streams, which are ICT in the share table and Attock on the grid.
+- **Table 2** (species coverage) has separate road transport and off-road machinery rows.
+  Off-road machinery has GHG estimates only.
+
 ### What moved coal emissions in the latest year
 
 The review asked how much of the FY2024–25 coal revision is physical activity and how much

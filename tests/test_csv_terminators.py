@@ -106,6 +106,7 @@ LF_TERMINATED = (
     "pakemis_validation_five_classes_summary.csv",
     "pakemis_coal_sector_reallocation.csv",
     "pakemis_coal_change_decomposition.csv",
+    "pakemis_validation_measured.csv",
     "pakemis_category_crosswalk.csv",
     "pakemis_coal_allocation_identity.csv",
     "pakemis_faostat_nitrogen_flows.csv",
