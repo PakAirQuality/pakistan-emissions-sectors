@@ -5,14 +5,14 @@ A shared activity and material-flow inventory for Pakistan covering ten fiscal y
 <!-- END GENERATED: headline -->
 
 <!-- BEGIN GENERATED: release -->
-**Release** `1.0.0rc68` | reporting period **July 2015--June 2025 (ten fiscal years)** (2015-07-01 to 2025-06-30) | reference FY2023–24: **444.61 Mt CO2e** (AR5, S_TAN) / **449.85 Mt** (L_TAN) | 23 structural axes, 28 named configurations | completeness 54 E / 70 NE / 9 IE / 4 NO | code MIT; CC-BY-4.0 for project-owned primary products and text; per-file upstream terms retained. ODbL-derived components are packaged separately. Commit and manifest digest: `paper_common/release_cover.tex` and `outputs/release_manifest.json`.
+**Release** `1.0.0rc69` | reporting period **July 2015--June 2025 (ten fiscal years)** (2015-07-01 to 2025-06-30) | reference FY2023–24: **444.61 Mt CO2e** (AR5, S_TAN) / **449.85 Mt** (L_TAN) | 23 structural axes, 28 named configurations | completeness 54 E / 70 NE / 9 IE / 4 NO | code MIT; CC-BY-4.0 for project-owned primary products and text; per-file upstream terms retained. ODbL-derived components are packaged separately. Commit and manifest digest: `paper_common/release_cover.tex` and `outputs/release_manifest.json`.
 <!-- END GENERATED: release -->
 
 **Explore the data:** <https://emissions.hawanama.org> is an interactive explorer of this
 inventory, a website of the [Pakistan Air Quality Initiative](https://pakairquality.com). It
 is deployed separately and can serve an earlier release than the one in this repository.
-**Public repository:** <https://github.com/PakAirQuality/pakistan-emissions-sectors>. After
-release 1.0.0rc68 the work is committed here directly. The third-party source documents it was
+**Public repository:** <https://github.com/PakAirQuality/pakistan-emissions-sectors>. Since
+October 2026 the work is committed here directly. The third-party source documents it was
 built from are not here; `docs/restricted_layers.md` says what is left out, why, and where
 their checksums are, and `NOTICE-ODbL.md` lists the files that carry ODbL obligations.
 

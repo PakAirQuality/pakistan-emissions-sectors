@@ -5,7 +5,10 @@ current method, and this file records how it got there. Each release candidate b
 answers an external review round. Historical totals appear here labelled as history — the only
 current national figures are the manifest's.
 
-## [Unreleased] — development after 1.0.0rc68
+## [1.0.0rc69] — 17 October 2026
+
+The first release developed in this repository, and the answer to the review of the rc68
+public copy.
 
 ### Development moves to the public repository
 

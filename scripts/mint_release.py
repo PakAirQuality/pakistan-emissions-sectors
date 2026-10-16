@@ -52,6 +52,12 @@ patch("CITATION.cff", [("version: %s" % OLD, "version: %s" % NEW)])
 DASHED = lambda v: "v" + v.replace("rc", "-rc")
 patch("CITATION.cff", [(DASHED(OLD), DASHED(NEW))])
 patch(".zenodo.json", [('"version": "%s"' % OLD, '"version": "%s"' % NEW)])
+# rc69: the record titles carry the version too ("PakEmis 1.0.0rc68: ..."), and the rc69 mint
+# left both at the old one.
+patch("CITATION.cff", [('title: "PakEmis %s:' % OLD, 'title: "PakEmis %s:' % NEW)])
+patch(".zenodo.json", [('"title": "PakEmis %s:' % OLD, '"title": "PakEmis %s:' % NEW)])
+patch("docs/reproducibility.md", [("dist/pakemis-%s-" % OLD, "dist/pakemis-%s-" % NEW)])
+patch("docs/zenodo_data_record.md", [("PakEmis %s:" % OLD, "PakEmis %s:" % NEW)])
 # THE v1 PAPER MOVED under paper_national/versions/ after rc59, so the paths the previous
 # mint used no longer exist. The four GENERATED sites are deliberately not here and follow
 # the build: outputs/release_manifest.json, paper_common/release_cover.tex,
