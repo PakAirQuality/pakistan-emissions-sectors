@@ -92,13 +92,21 @@ def reads_restricted(phase):
 
 def absent_seeded(phases=None):
     """Labels a public clone without the restricted layers seeds beyond the fifteen source
-    phases: every other phase that declares a restricted read. Empty where the layers are
-    mounted, so the deposit group is unchanged there."""
+    phases: every other phase that declares a restricted read, and the whole release
+    category. Empty where the layers are mounted, so the deposit group is unchanged there.
+
+    The release phases describe the release as a whole - the deposit manifest and source
+    register hash the restricted documents, the release manifest refuses an absent tree, and
+    the inventory and facts registry count what they find. Built without the layers they
+    describe a smaller tree, not this release (the rc69 public-checks emulation: five
+    products differed and the release manifest stopped the build). They are verified where
+    the layers are mounted: make release-check and .github/workflows/reproduce.yml."""
     phases = registry.PHASES if phases is None else phases
     if layers.mode(registry.ROOT) != "absent":
         return frozenset()
     return frozenset(p.label for p in phases
-                     if p.label not in DEPOSIT_EXCLUDED and reads_restricted(p))
+                     if p.label not in DEPOSIT_EXCLUDED
+                     and (reads_restricted(p) or p.category == "release"))
 
 
 def phases_for_group(group, phases=None):

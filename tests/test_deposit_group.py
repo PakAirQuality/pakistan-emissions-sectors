@@ -23,6 +23,21 @@ class TestTheDepositGroup(unittest.TestCase):
         self.assertTrue(all(build.DEPOSIT_SOURCE_PHASES.values()))
         self.assertTrue(set(build.DEPOSIT_EXCLUDED) <= {p.label for p in run_all.PHASES})
 
+    def test_without_the_layers_the_release_phases_are_seeded(self):
+        """rc69: the release category describes the whole release, restricted documents
+        included, so a public clone reuses its committed products instead of rebuilding a
+        description of a smaller tree. Forced to absent mode here, whatever this checkout is."""
+        from unittest import mock
+        from pkinv import build, run_all
+        from pkinv.core import layers
+        with mock.patch.object(layers, "mode", return_value="absent"):
+            deposit = {p.label for p in build.phases_for_group("deposit")}
+        release = {p.label for p in run_all.PHASES if p.category == "release"}
+        self.assertIn("Release manifest", release)
+        self.assertFalse(release & deposit)
+        science = {p.label for p in run_all.PHASES if p.category == "science"}
+        self.assertTrue(science & deposit)
+
     def test_the_excluded_phases_products_are_tracked_inputs_or_shipped(self):
         """Their outputs must exist in the tree the deposit is cut from."""
         from pkinv import build, run_all

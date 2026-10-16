@@ -58,8 +58,13 @@ verified tables under `data/sectors/` and `data/shared/`, each row citing its so
     `data/catalog/restricted_gated_tests.txt`, and a run that skips anything else fails.
   - Build with `python3 -m pkinv.build --group deposit`. It reuses the published products of
     the fifteen phases that read documents or release history, which
-    `docs/deposit_rebuild_limits.md` lists. Any other group refuses to start rather than
-    silently drop those phases.
+    `docs/deposit_rebuild_limits.md` lists. It also reuses the products of every other
+    phase that declares a restricted read (the ADM2 2022 frame reads the COD-AB
+    boundaries) and of the whole `release` category: the deposit manifest, source register,
+    release manifest, artifact inventory and facts registry describe the release with its
+    documents, so built here they would describe a smaller tree. Those are checked where
+    the layers are mounted (`make release-check`, `.github/workflows/reproduce.yml`). Any
+    other group refuses to start rather than silently drop those phases.
 - **With them** (the maintainer's full build):
   - Run `python3 scripts/overlay.py link /path/to/private/checkout` once. It records the
     path in the ignored file `.pkinv-overlay` and links each restricted name.
