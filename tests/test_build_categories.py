@@ -88,5 +88,23 @@ class TestTheGroupsFollowTheKinds(unittest.TestCase):
                           if p.category in ("manuscript", "release")})
 
 
+class TestTheUncertaintyPairRunsSideBySide(unittest.TestCase):
+    """rc69: the two conditional-uncertainty phases cost about 640 s of a cold build. They are
+    audited and adjacent so the scheduler can batch them; a reorder or a lost flag would put
+    them back in series without any test noticing the time."""
+
+    PAIR = ("GHG conditional uncertainty", "Air conditional uncertainty")
+
+    def test_both_are_audited_adjacent_and_write_disjoint_files(self):
+        labels = [p.label for p in run_all.PHASES]
+        first, second = (labels.index(l) for l in self.PAIR)
+        self.assertEqual(second, first + 1)
+        a, b = (run_all.PHASES[i] for i in (first, second))
+        self.assertTrue(a.audited and b.audited)
+        self.assertFalse(set(a.writes) & set(b.writes))
+        self.assertFalse(set(a.writes) & set(b.reads or ()))
+        self.assertFalse(set(b.writes) & set(a.reads or ()))
+
+
 if __name__ == "__main__":
     unittest.main()
