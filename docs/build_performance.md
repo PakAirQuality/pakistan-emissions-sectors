@@ -6,6 +6,42 @@ from the 20 September snapshot. They do not describe a fresh full build of the
 current folder layout. Existing staged scientific changes were preserved; release
 pins and scientific expectations were not changed to make these checks pass.
 
+## Development build timings, 16-17 October 2026 (rc69, public clone with the layers mounted)
+
+Measured with Python 3.11.10 on the maintainer's ten-core machine, after the build phases
+gained categories (`run_all.CATEGORIES`) and the figure and release stages left `make dev`.
+The development group is now 190 phases (science and validation); it was 151 tasks in
+September and had grown to 201, figures included, before the categories.
+
+| Scenario | Phases executed / reused | Wall time |
+|---|---|---|
+| Cold build, empty cache, serial (16 Oct) | 189 / 0 | 2,055.6 s |
+| Re-populate after a data commit (ab97d51), `--jobs 4`, another build running alongside | 161 / 29 | 1,313.4 s |
+| One code edit (`report/grid_cube.py`), `--jobs 4` | 9 / 181 | 240.8 s |
+| Unchanged tree, `--jobs 4` | 0 / 190 | 1.21 s |
+| Manuscript group (`make figures-v3`), 12 phases | 12 / 0 | 63 s |
+
+Notes on reading the table:
+- The data commit invalidated 161 phases because an unaudited phase outside the sector
+  engines depends on every non-generated file under `data/` and `sources/`
+  (`build.conservative_inputs`). Auditing the phase, with complete declared reads, is what
+  narrows that; it is done so far for the costliest pair.
+- GHG and Air conditional uncertainty (314 s and 260 s) are now audited and adjacent, so
+  `--jobs` runs them side by side. In the re-populate run the producers summed to 1,537.5 s
+  against 1,313.4 s of wall time.
+- The dry run for the `grid_cube.py` edit selected 12 producers; three of them found their
+  inputs unchanged once their upstream had rebuilt.
+- A file edited while the build runs fails the phase that read it
+  (`inputs_changed_during_task`) rather than caching a result built from two versions.
+  Two runs in this series failed that way, from edits made while they ran; both were rerun.
+
+The slowest phases in the cold build: GHG conditional uncertainty 358 s, Air conditional
+uncertainty 278 s, fiscal-panel spatial products 230 s, waste Monte Carlo 180 s, national
+uncertainty 177 s.
+
+The September figure below ("an unchanged rebuild reports 0 producers executed, 151 cached,
+2.22 s") is **superseded** by this table: it measured a 151-task group that no longer exists.
+
 ## Current sector-folder validation
 
 The current registry contains **393 assets**, including **221 canonical tables
@@ -138,7 +174,7 @@ meant to follow. `docs/DATA_ACQUISITION.md` was the worst of those - it told a c
 to drop `spam_rice.tif` into `data/gis/manual/`, where the shim would resolve the registered
 name elsewhere and the dropped file would be ignored in silence.
 
-**Timings.** The cold build executed 152 producers. Held at that state, an unchanged rebuild
+**Timings (21 September; superseded by the October table above).** The cold build executed 152 producers. Held at that state, an unchanged rebuild
 reports **0 producers executed, 151 cached, 2.22 s**. `make data-check` passes on all four
 contracts: 393 assets with no reviewer index differing, 0 compatibility views changed, 0
 canonical differences, 221 canonical tables and 194,306 rows. Git records the relocation as
