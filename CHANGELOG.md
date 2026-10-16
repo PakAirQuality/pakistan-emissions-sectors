@@ -219,6 +219,18 @@ fifteen source phases already do.
   of the release category (the manifests, source register and inventories describe the
   release with its documents), and the job sets `PKINV_RELEASE_CHECKS=0`.
 - Timings are in `docs/build_performance.md`: cold 2,056 s for 189 phases, unchanged 1.2 s.
+- **What the first Ubuntu runs found.**
+  - Two tests depended on the machine. One searched with ripgrep, which the runner lacks;
+    it now reads the same files in Python. The OGRA OCR test checked for tesseract before
+    the document, so it skipped for the wrong reason; it now checks the document first.
+  - The rebuilt products differ from the macOS-committed ones only in floating-point last
+    places: about seventy files of draws, quantiles, shares and grids, plus two rasterised
+    PNGs. Measured on run 38974615431: the largest relative difference is 1.5e-13 in the
+    gridded netCDF and at most 1.5e-15 in the Monte Carlo draws; the 3e-9 in two ADM2 files
+    is an eight-decimal value whose last printed digit flipped. `scripts/compare_rebuild.py`
+    now compares them to a declared tolerance (rtol 1e-9, or one unit in the last printed
+    place), prints the largest difference per file, and fails on any text difference or any
+    number beyond it. Byte identity remains the release contract on one platform.
 
 ### A sum that depended on the hash seed
 

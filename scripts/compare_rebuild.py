@@ -19,8 +19,8 @@ THE RULE, per changed file (working tree against HEAD):
     can flip its last printed digit, and that is the expected platform effect, not a change;
   - same rows, same columns, same order;
   - CSV comment lines (the banners) must be identical;
-  - in JSON, a key that is a digest (sha256, digest, hash) is reported, not compared: it
-    digests a file this script compares directly;
+  - a JSON key or CSV/Parquet column that is a digest (sha256, digest, hash) is reported,
+    not compared: it digests a file this script compares directly;
   - Parquet and netCDF are read and compared column by column / variable by variable;
   - a PNG cannot be compared across platforms (font rasterisation), so it is listed as
     NOT COMPARED and does not fail the check; the figure checks run where it was rendered.
@@ -85,7 +85,9 @@ class Diff:
         allowed = atol + rtol * scale
         if a_text is not None:
             allowed = max(allowed, printed_ulp(a_text), printed_ulp(b_text))
-        if d > allowed * (1 + 1e-12):
+        # The slack is for the subtraction itself: two values one printed unit apart differ
+        # by 1.00000000003e-08 in binary, not 1e-08 (run 38974615431 failed three cells so).
+        if d > allowed * (1 + 1e-6):
             self.problems.append("%r vs %r (|d| %.3g > %.3g)" % (a_text or a, b_text or b,
                                                                    d, allowed))
 
@@ -112,11 +114,19 @@ def compare_csv(diff, old, new, rtol, atol):
     if len(b_old) != len(b_new):
         diff.problems.append("%d rows vs %d" % (len(b_old), len(b_new)))
         return
+    header = b_old[0] if b_old else []
+    if b_old and b_old[0] != b_new[0]:
+        diff.problems.append("header differs")
+        return
+    digest_cols = {j for j, name in enumerate(header) if DIGEST_KEY.search(name)}
     for i, (r_old, r_new) in enumerate(zip(b_old, b_new)):
         if len(r_old) != len(r_new):
             diff.problems.append("row %d: %d cells vs %d" % (i, len(r_old), len(r_new)))
             continue
         for j, (a, b) in enumerate(zip(r_old, r_new)):
+            if j in digest_cols and a != b:
+                diff.digests = getattr(diff, "digests", 0) + 1
+                continue
             text_cells(diff, a, b, "row %d col %d" % (i, j), rtol, atol)
 
 
@@ -170,7 +180,17 @@ def compare_frames(diff, old, new, rtol, atol):
                     diff.problems.append("%s: %r vs %r beyond tolerance (%d cells)"
                                          % (col, x[i], y[i], int(bad.sum())))
         elif not a.equals(b):
-            diff.problems.append("%s: non-numeric values differ" % col)
+            # The semantic tables keep numbers as decimal TEXT in Parquet, so a string
+            # column takes the CSV cell rule, digests included.
+            for i, (x, y) in enumerate(zip(a.tolist(), b.tolist())):
+                if x == y:
+                    continue
+                if DIGEST_KEY.search(str(col)):
+                    diff.digests = getattr(diff, "digests", 0) + 1
+                elif isinstance(x, str) and isinstance(y, str):
+                    text_cells(diff, x, y, "%s row %d" % (col, i), rtol, atol)
+                else:
+                    diff.problems.append("%s row %d: %r vs %r" % (col, i, x, y))
 
 
 def compare_parquet(diff, old, new, rtol, atol):
