@@ -14,6 +14,26 @@ make ingest
 make release-check
 ```
 
+## What each group builds
+
+Every task in `pkinv.run_all.PHASES` declares one of four kinds in `run_all.CATEGORIES`:
+
+- `science`: sources, engines, national, uncertainty, spatial.
+- `validation`: comparisons, benchmarks and audits.
+- `manuscript`: figures, generated tables and TeX facts, and the dashboard.
+- `release`: inventories, manifests, deposit and provenance bookkeeping.
+
+A task with no kind stops the registry from importing, so nothing joins a group by being
+left off a list. Until rc68 `make dev` was "every task except eleven named ones", and the v3
+figure stages added later ran in every development build.
+
+| Group | Kinds | Make |
+|---|---|---|
+| `dev` | science, validation | `make dev` |
+| `manuscript` | manuscript | `make figures` (each paper target depends on it) |
+| `full` | all four | `make full`, `make release-check` |
+| `deposit` | all but the 15 phases that read documents or history | public CI, the deposit reader |
+
 `--target` accepts a task label, its module/script command, or an output path and
 includes prerequisites. `--dry-run` explains the selected tasks without executing
 producers or updating caches. A cold task with incomplete dependencies includes
