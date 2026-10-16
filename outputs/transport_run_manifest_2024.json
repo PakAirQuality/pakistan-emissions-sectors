@@ -359,6 +359,10 @@
       "sha256": "84f757f315f33648af16a5c943558090a79071203ffb8b3b1f6d20a5b7bccbae"
     },
     {
+      "path": "data/activity/transport/emep_tier2_road_pm_by_technology.csv",
+      "sha256": "348ca9850e23fe3f33b11a990b52f4b23504b36d2022088475c7e11030b8d82b"
+    },
+    {
       "path": "data/activity/transport/emission_factors_gkm.csv",
       "sha256": "fa24ae8e21bb2fea42bdf65bb042b88c2a59dffbeda0954a6c2a5a4dc93701da"
     },
