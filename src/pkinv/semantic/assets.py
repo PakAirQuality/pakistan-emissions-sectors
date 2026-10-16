@@ -52,6 +52,12 @@ def _restricted_absent(root, relative):
     return layers.mode(os.fspath(root)) == "absent" and layers.is_restricted(relative)
 
 
+def _prior_digested(root):
+    """Storage paths whose committed record carries a digest: the restricted files a public
+    clone cannot hold but the release recorded (the rasters, the boundary documents)."""
+    return {a.get("storage_path") for a in _prior_assets(root).values() if a.get("sha256")}
+
+
 def _prior_assets(root):
     import json
     path = Path(root) / "outputs" / "semantic" / "semantic_release.json"
@@ -120,10 +126,12 @@ def build(inputs, root=ROOT):
                  "downloadable": downloadable, "packaged": packaged,
                  "aliases": []}
         if not path.is_file() or not (packaged or _travels(row["path"])):
-            if packaged and not path.is_file() and _restricted_absent(root, row["path"]):
+            if not path.is_file() and _restricted_absent(root, row["path"]) and \
+                    (packaged or row["path"] in _prior_digested(root)):
                 # rc69: a public clone without the restricted layers holds no third-party
-                # document (pkinv.core.layers), yet the release packages a few as library
-                # assets (the COD-AB boundaries). Their record is the committed release's own,
+                # document or raster (pkinv.core.layers), yet the release records them: a few
+                # as packaged library assets (the COD-AB boundaries), the rasters with their
+                # digests. Their record is the committed release's own,
                 # exactly as the deposit seeds a document-reading phase's product; a release
                 # is never built here (release_manifest.build() refuses the absent mode).
                 prior = _prior_assets(root).get(asset_id)

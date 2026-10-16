@@ -5,7 +5,7 @@
 # rows no citation could close. A pointer counts whether it is in the register row or
 # in the produced table's own per-row source column; checking only the first is how
 # this gap was previously overstated.
-# 117 of 133 scored sources are pointed (88%); 16 are not.
+# 118 of 134 scored sources are pointed (88%); 16 are not.
 data_file,publisher,archival_state,primary_source,verdict,pointer_checkable_here,pointer_found_in,evidence_or_reason
 data/activity/ippu/data_request_packets.csv,APCMA,derived,APCMA statistics office and producer investor-relations contacts,not-applicable,n.a.,derived,"built from files already in this repository; its provenance is the derivation chain, not a page number"
 data/activity/aviation/climatetrace_airport_monthly_extract.csv,Climate TRACE,archived,"Climate TRACE v7 aviation airport sources, Pakistan 2021-2024 (climatetrace_airports_PAK_2021_2024.json)",not-applicable,n.a.,dataset,"the source is a dataset or export, whose pointer is a file and a variable rather than a table"
@@ -198,6 +198,7 @@ data/activity/railways/traffic.csv,other,archived,Year Book 2024-25 comparative 
 data/activity/residential/fuel_supply_annotations.csv,other,derived,Consolidated observations from data/activity/residential/fuel_supply.csv; data/activity/residential/fuel_supply_history.,pointed,"derived-file: its provenance is the derivation chain, not a document",ingest rows,source: OGRA State of the Regulated Petroleum Industry 2015-16 Table 2.27 (Residential: SNGPL 510 
 data/activity/residential/stove_mix_mtf.csv,other,archived,"World Bank 2024 Pakistan Energy Survey, Executive Summary",pointed,yes,ingest rows,"source: World Bank 2024 Pakistan Energy Survey, Cooking Solutions chapter (Stove Stacking, p.57)"
 data/activity/transport/emep_tier1_road_air.csv,other,archived,EMEP/EEA air pollutant emission inventory guidebook 2023: 1.A.3.b.i-iv Road transport (Update 2025) Tables 3-5/3-6/3-7/3,pointed,yes,register,"A.3.b.i-iv Road transport (Update 2025) Tables 3-5/3-6/3-7/3-11, 1.A.3.b.v Gasoline evaporation Tabl"
+data/activity/transport/emep_tier2_road_pm_by_technology.csv,other,archived,"EMEP/EEA air pollutant emission inventory guidebook 2023 (Update 2025): 1.A.3.b.i-iv Road transport, Tier 2 Tables 3-18/",pointed,yes,register,"5): 1.A.3.b.i-iv Road transport, Tier 2 Tables 3-18/3-20/3-22/3-24/3-26 (PM2.5 g/km), 3-27 (fuel con"
 data/activity/transport/emission_factors_gkm.csv,other,archived,Punjab district transport emissions workbook,pointed,yes,ingest rows,"source: Punjab district transport emissions workbook (Naveed 2024), g/km factor sheet"
 data/activity/transport/fuel_split.csv,other,archived,Punjab district transport workbook,pointed,yes,ingest rows,"source: Punjab district transport workbook (Naveed 2024), Classified sheet - transcribed without a"
 data/activity/transport/fuel_sulfur_by_year.csv,other,not-archived,Press coverage of the fuel-standard mandates (Dawn dawn.com/news/1434195: diesel imports to Euro-II 500 ppm January 2017,pointed,document-not-held: the pointer is stated and must be checked against a copy obtained from the publisher,register,January 2021 diesel; PSO Premier Euro 5 page psopk.com: petrol 500 ppm to 10 ppm) both Dawn articles

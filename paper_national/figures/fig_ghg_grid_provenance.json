@@ -297,11 +297,11 @@
       },
       {
         "period_id": "FY2024-25",
-        "grid_Gg": 8847.787097353228,
+        "grid_Gg": 8847.78709860021,
         "unallocated_Gg": 0.022678999999019966,
         "ledger_Gg": 8847.809776999999,
-        "residual_Gg": -6.46770786261186e-07,
-        "residual_ppm_of_ledger": -7.3099535654855e-05
+        "residual_Gg": 6.002119334880263e-07,
+        "residual_ppm_of_ledger": 6.783734603430166e-05
       }
     ],
     "N2O": [
@@ -379,18 +379,18 @@
       },
       {
         "period_id": "FY2024-25",
-        "grid_Gg": 152.44427106031858,
+        "grid_Gg": 152.4442709848585,
         "unallocated_Gg": 0.1512049999981405,
         "ledger_Gg": 152.59547600000002,
-        "residual_Gg": 6.031669386175054e-08,
-        "residual_ppm_of_ledger": 0.0003952718353311505
+        "residual_Gg": -1.514339942332299e-08,
+        "residual_ppm_of_ledger": -9.92388491472905e-05
       }
     ]
   },
   "input_digests": {
-    "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc": "dee104d30af1fff8828c416dda7e961a4a6abdfee3ee14630b356bb5dab24df7",
-    "outputs/pakemis_stream_support_ledger.csv": "41dc0e5b992291d6617334cc4a488e9c0e66458c87c9d9d380f4a1e1da49b02e",
-    "outputs/pakemis_spatial_weights_by_year.csv": "d412f872fd62db01fd8754aa2810c62bb1b4608af377d1892506e3325343f198",
+    "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc": "2d48617d39ecc6af3e70ef1a67b7b35d2e34a1ec49a5ee4e7e4759fe628fa007",
+    "outputs/pakemis_stream_support_ledger.csv": "67f3504bc70016075b448f75e4abf07a9d774ddb82b0fdc35bf5d2b672877a96",
+    "outputs/pakemis_spatial_weights_by_year.csv": "89931075a7575144451be1901180183dafcdce4c1ad733bb66c2abe23e73bc1e",
     "outputs/pakemis_spatial_unallocated_by_year.csv": "6fde160053b6610a00b1067e8395d06fb571f061e99aef3b56cb08b3da1ea200",
     "data/shared/gis/PAK_ADM1.geojson": "c7ff4e70bcf740cfba47b871a7c2b2b2b243b59e4c0656e6e1bc2a64e295d93a",
     "data/shared/gis/adm2_canonical.csv": "c7436e78b285a24d4372e3990b1877eaf29345e47fed476cdfdf970474ead2c1"

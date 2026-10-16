@@ -125,12 +125,24 @@ def directory_identity(path):
 def input_snapshot(root):
     """Snapshot potential cold-task inputs before its actual reads are known."""
     result, directories = {}, {}
-    for folder, dirs, names in os.walk(root):
-        dirs[:] = [name for name in dirs if name not in SNAPSHOT_IGNORED]
-        directories[os.path.relpath(folder, root)] = directory_identity(folder)
-        for name in names:
-            path = os.path.join(folder, name)
-            result[os.path.relpath(path, root)] = file_identity(path)
+
+    def walk(top):
+        for folder, dirs, names in os.walk(top):
+            dirs[:] = [name for name in dirs if name not in SNAPSHOT_IGNORED]
+            directories[os.path.relpath(folder, root)] = directory_identity(folder)
+            for name in names:
+                path = os.path.join(folder, name)
+                result[os.path.relpath(path, root)] = file_identity(path)
+
+    walk(root)
+    # rc69: the restricted layers are mounted as symlinks (pkinv.core.layers) and os.walk does
+    # not enter a linked folder, so their files were absent here and every one of them read
+    # as "changed while the task ran". A mounted folder is walked through its link.
+    from pkinv.core import layers
+    for name in layers.mounts(root=os.fspath(root)) if layers.mode(os.fspath(root)) == "overlay" else ():
+        top = os.path.join(root, name)
+        if os.path.islink(top) and os.path.isdir(top):
+            walk(top)
     return {"files": result, "directories": directories}
 
 

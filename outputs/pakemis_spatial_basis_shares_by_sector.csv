@@ -721,13 +721,13 @@ L_IPCC,FY2023-24,waste,reference_shape_backcast,"the reference year's pattern, r
 L_IPCC,FY2023-24,waste,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,37.452910
 L_IPCC,FY2023-24,waste,substituted_surface,a declared stand-in surface,33.626570,0.897836,3,37.452910
 L_IPCC,FY2023-24,waste,unallocated,retained at province level,0.000000,0.000000,0,37.452910
-L_IPCC,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,228.979857
+L_IPCC,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.618207,0.002700,2,228.979857
 L_IPCC,FY2024-25,agriculture,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,228.979857
 L_IPCC,FY2024-25,agriculture,modelled_population_proxy,a census-based demographic proxy,0.000000,0.000000,0,228.979857
 L_IPCC,FY2024-25,agriculture,static_structural,a timeless structural surface,178.509571,0.779586,15,228.979857
 L_IPCC,FY2024-25,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,228.979857
 L_IPCC,FY2024-25,agriculture,reference_shape_forward,a reference district pattern reused later,49.852079,0.217714,17,228.979857
-L_IPCC,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.618207,0.002700,2,228.979857
+L_IPCC,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,228.979857
 L_IPCC,FY2024-25,agriculture,unallocated,retained at province level,0.000000,0.000000,0,228.979857
 L_IPCC,FY2024-25,aviation,annual_observed_activity,that year's observed activity,0.050363,0.165297,3,0.304685
 L_IPCC,FY2024-25,aviation,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,0.304685
@@ -1521,13 +1521,13 @@ L_TAN,FY2023-24,waste,reference_shape_backcast,"the reference year's pattern, re
 L_TAN,FY2023-24,waste,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,37.452910
 L_TAN,FY2023-24,waste,substituted_surface,a declared stand-in surface,33.626570,0.897836,3,37.452910
 L_TAN,FY2023-24,waste,unallocated,retained at province level,0.000000,0.000000,0,37.452910
-L_TAN,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,228.561132
+L_TAN,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.618207,0.002705,2,228.561132
 L_TAN,FY2024-25,agriculture,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,228.561132
 L_TAN,FY2024-25,agriculture,modelled_population_proxy,a census-based demographic proxy,0.000000,0.000000,0,228.561132
 L_TAN,FY2024-25,agriculture,static_structural,a timeless structural surface,178.100650,0.779225,15,228.561132
 L_TAN,FY2024-25,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,228.561132
 L_TAN,FY2024-25,agriculture,reference_shape_forward,a reference district pattern reused later,49.842275,0.218070,17,228.561132
-L_TAN,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.618207,0.002705,2,228.561132
+L_TAN,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,228.561132
 L_TAN,FY2024-25,agriculture,unallocated,retained at province level,0.000000,0.000000,0,228.561132
 L_TAN,FY2024-25,aviation,annual_observed_activity,that year's observed activity,0.050363,0.165297,3,0.304685
 L_TAN,FY2024-25,aviation,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,0.304685
@@ -2321,13 +2321,13 @@ S_IPCC,FY2023-24,waste,reference_shape_backcast,"the reference year's pattern, r
 S_IPCC,FY2023-24,waste,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,37.452910
 S_IPCC,FY2023-24,waste,substituted_surface,a declared stand-in surface,33.626570,0.897836,3,37.452910
 S_IPCC,FY2023-24,waste,unallocated,retained at province level,0.000000,0.000000,0,37.452910
-S_IPCC,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,228.979857
+S_IPCC,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.618207,0.002700,2,228.979857
 S_IPCC,FY2024-25,agriculture,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,228.979857
 S_IPCC,FY2024-25,agriculture,modelled_population_proxy,a census-based demographic proxy,0.000000,0.000000,0,228.979857
 S_IPCC,FY2024-25,agriculture,static_structural,a timeless structural surface,178.509571,0.779586,15,228.979857
 S_IPCC,FY2024-25,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,228.979857
 S_IPCC,FY2024-25,agriculture,reference_shape_forward,a reference district pattern reused later,49.852079,0.217714,17,228.979857
-S_IPCC,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.618207,0.002700,2,228.979857
+S_IPCC,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,228.979857
 S_IPCC,FY2024-25,agriculture,unallocated,retained at province level,0.000000,0.000000,0,228.979857
 S_IPCC,FY2024-25,aviation,annual_observed_activity,that year's observed activity,0.050363,0.165297,3,0.304685
 S_IPCC,FY2024-25,aviation,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,0.304685
@@ -3121,13 +3121,13 @@ S_TAN,FY2023-24,waste,reference_shape_backcast,"the reference year's pattern, re
 S_TAN,FY2023-24,waste,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,37.452910
 S_TAN,FY2023-24,waste,substituted_surface,a declared stand-in surface,33.626570,0.897836,3,37.452910
 S_TAN,FY2023-24,waste,unallocated,retained at province level,0.000000,0.000000,0,37.452910
-S_TAN,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.000000,0.000000,0,228.561132
+S_TAN,FY2024-25,agriculture,annual_observed_activity,that year's observed activity,0.618207,0.002705,2,228.561132
 S_TAN,FY2024-25,agriculture,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,228.561132
 S_TAN,FY2024-25,agriculture,modelled_population_proxy,a census-based demographic proxy,0.000000,0.000000,0,228.561132
 S_TAN,FY2024-25,agriculture,static_structural,a timeless structural surface,178.100650,0.779225,15,228.561132
 S_TAN,FY2024-25,agriculture,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,228.561132
 S_TAN,FY2024-25,agriculture,reference_shape_forward,a reference district pattern reused later,49.842275,0.218070,17,228.561132
-S_TAN,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.618207,0.002705,2,228.561132
+S_TAN,FY2024-25,agriculture,substituted_surface,a declared stand-in surface,0.000000,0.000000,0,228.561132
 S_TAN,FY2024-25,agriculture,unallocated,retained at province level,0.000000,0.000000,0,228.561132
 S_TAN,FY2024-25,aviation,annual_observed_activity,that year's observed activity,0.050363,0.165297,3,0.304685
 S_TAN,FY2024-25,aviation,calendar_activity_proxy,a calendar-year activity proxy,0.000000,0.000000,0,0.304685

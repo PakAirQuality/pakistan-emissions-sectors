@@ -163,6 +163,15 @@ def universe():
                 continue
             if rel.endswith(SIDECAR_SUFFIXES) or rel.endswith(PRODUCT_SUFFIXES):
                 files.append(rel)
+    # rc69: a public clone without the restricted layers cannot see their files, but the
+    # audit is of the release, which holds them. Restricted paths the shipped audit lists stay
+    # in the universe; every row is computed from code and registers, not from the file.
+    from pkinv.core import layers
+    if layers.mode(ROOT) == "absent" and os.path.exists(OUT):
+        from pkinv.core.io import read_rows
+        present = set(files)
+        files += [r["data_file"] for r in read_rows(OUT)
+                  if r["data_file"] not in present and layers.is_restricted(r["data_file"])]
     return sorted(files)
 
 

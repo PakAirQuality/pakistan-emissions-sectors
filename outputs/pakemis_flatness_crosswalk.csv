@@ -6,11 +6,11 @@ cell,TE1,variable_timed,128.631,2.86,
 cell,TE2,flat_physically_appropriate,0.009,0.0,
 cell,TE2,variable_timed,711.706,15.83,
 cell,TE3,flat_physically_appropriate,84.547,1.88,
-cell,TE3,variable_timed,798.96,17.77,
+cell,TE3,variable_timed,799.578,17.79,
 cell,TE4,flat_physically_appropriate,1797.734,39.99,
-cell,TE4,variable_unobserved,973.306,21.65,
+cell,TE4,variable_unobserved,972.688,21.64,
 bucket_total,any,flat_physically_appropriate,1882.301,41.88,the 'correctly flat' headline: flat (days-weighted) is the physical answer and a monthly series would not change the shape
-bucket_total,any,variable_timed,1639.298,36.47,should vary and an observed or modeled series carries it (the decomposition's 'observed' column)
-bucket_total,any,variable_unobserved,973.306,21.65,"should vary, nothing observes it - the Pass-2 reduction target"
-te_total,TE4,any,2771.04,61.65,"TE4 at the atom (month-row) grain, equal to the coverage summary's: contains BOTH physically appropriate flatness and unobserved variability, which is why the flat share and the correctly-flat share are different statements"
-grain_difference,TE4,any,-0.0,-0.0,"coverage-summary TE4 (month x sector x category grain, the published 61.65%) minus this table's TE4: zero since rc42, when the join moved to the atom grain; a non-zero value here is a defect"
+bucket_total,any,variable_timed,1639.916,36.48,should vary and an observed or modeled series carries it (the decomposition's 'observed' column)
+bucket_total,any,variable_unobserved,972.688,21.64,"should vary, nothing observes it - the Pass-2 reduction target"
+te_total,TE4,any,2770.421,61.63,"TE4 at the atom (month-row) grain, equal to the coverage summary's: contains BOTH physically appropriate flatness and unobserved variability, which is why the flat share and the correctly-flat share are different statements"
+grain_difference,TE4,any,-0.0,-0.0,"coverage-summary TE4 (month x sector x category grain, the published 61.63%) minus this table's TE4: zero since rc42, when the join moved to the atom grain; a non-zero value here is a defect"

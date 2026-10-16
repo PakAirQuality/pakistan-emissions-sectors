@@ -54,6 +54,47 @@ clone mounts them as ignored symlinks with `scripts/overlay.py`.
   deposit archives, the shipped PDFs) skip with the reason `release-time check:` when
   `PKINV_RELEASE_CHECKS=0`. Only the public CI sets that variable; the release path never does.
 
+### FY2024–25 residue burning has its own fire record
+
+Until now FY2024–25 burning was timed by elapsed days and placed on a substitute cropland
+surface, because the VIIRS area-API record ends in June 2024 and refetching needs a personal
+key. NASA's keyless country-year file for 2025 is now held beside the 2024 one.
+`fetch_firms --from-country-archive 2024` fills that year's burning windows from the two files
+into `firms_fire.csv`. They are the same VIIRS S-NPP standard product, for Pakistan only:
+69,282 detections. Every country-file detection inside the earlier nine years' windows is in
+the area-API record, so the substitution is the same product rather than a different one.
+
+FY2024–25 burning is now TE3, timed and placed by its own detections, on its own FIRMS
+surface. Only FY2024–25 monthly, spatial and gridded rows move. Every annual total is
+unchanged.
+
+### Road particulates under the guidebook's own technology factors
+
+`pakemis_road_technology_case.csv` (`pkinv.report.road_technology_case`) recomputes road
+exhaust PM2.5 and BC with the EMEP/EEA 2023 Tier 2 factors, holding each class's fuel fixed.
+The 22 rows (PM2.5 per km, fuel per km and f-BC per technology, read off the held chapter's
+pages) are in `data/sectors/transport/activity/emep_tier2_road_pm_by_technology.csv`. Two
+cases:
+- **Pre-Euro fleet.** Road PM2.5 rises to 2.5 times the central value, or 0.59–0.83 of matched
+  HTAP (central 0.23–0.33), and BC to 0.42–0.59 of HTAP (central 0.16–0.23).
+- **Euro II fleet.** Slightly below central, because Euro 2 motorcycles emit less than the
+  Tier 1 mean.
+
+Fleet technology therefore explains part of the particulate difference, not all of it. No
+held source gives the fleet's composition by emission standard, so the central inventory keeps
+the Tier 1 means.
+
+### Building without the restricted layers, continued
+
+- The build's input snapshot now walks mounted folders. Before this, every document under a
+  mount read as edited during a task and stopped the build.
+- The paper-artefacts phase no longer declares the two output folders rc68 emptied, which git
+  does not keep.
+- A clone without the layers keeps the committed records of restricted files in the
+  provenance audit and the semantic release (rasters, boundary documents). Both now rebuild
+  byte-identically there.
+- The Table 2 caption now says that wear contributes particulate mass but not BC.
+
 ### The nitrogen partition, pathway by pathway against EMEP/EEA 2023
 
 The review called the agricultural nitrogen partition a major structural assumption: the

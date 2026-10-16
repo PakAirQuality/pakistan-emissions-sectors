@@ -16,6 +16,8 @@ VIIRS_SNPP_SP (science-quality) archive covers 2012 -> ~2 months ago.
 
 Usage:  FIRMS_MAP_KEY=xxxx python3 -m pkinv.sectors.agriculture.gis.fetch_firms
         [--season 2024-25]     # the nowcast stream's newer window, kept by name
+        python3 -m pkinv.sectors.agriculture.gis.fetch_firms --from-country-archive 2024 [--check]
+                               # rc69: a fiscal year from the held keyless country files
 """
 
 from pkinv.assets import asset_path
@@ -107,7 +109,84 @@ def _existing():
     return rows, fetched
 
 
+COUNTRY_FILE = os.path.join(retention.RAW, "firms", "country_archive",
+                            "viirs-snpp_%d_Pakistan.csv")
+
+
+def country_archive_rows(fy_start):
+    """The fiscal year's window rows from NASA's keyless country-year files (rc69).
+
+    The same VIIRS S-NPP standard product as the area API, for Pakistan only: every
+    country-file detection inside the fetched windows of FY2015-16..FY2023-24 is in this
+    layer (scripts/fetch_firms_country_archive.py, 100 percent). A year the MAP_KEY route
+    never reached can therefore be filled from held files without a key. Attribution keeps
+    Pakistan detections only, so the box outside Pakistan, which these files lack, never
+    enters the burning stream. Rows keep the fetch's five columns and its fyYYYY label."""
+    rows, seen = [], set()
+    for start, end in _fetch_spans(fy_start):
+        for year in sorted({start.year, end.year}):
+            path = COUNTRY_FILE % year
+            if not os.path.exists(path):
+                raise FileNotFoundError("%s is not held; keep it first with "
+                                        "scripts/fetch_firms_country_archive.py --years %d"
+                                        % (path, year))
+            with open(path, encoding="utf-8", newline="") as handle:
+                for r in csv.DictReader(handle):
+                    when = date.fromisoformat(r["acq_date"])
+                    k = (r["latitude"], r["longitude"], r["acq_date"])
+                    if start <= when <= end and k not in seen:
+                        seen.add(k)
+                        rows.append({"latitude": r["latitude"], "longitude": r["longitude"],
+                                     "acq_date": r["acq_date"], "frp": r["frp"],
+                                     "confidence": r["confidence"],
+                                     "season": "fy%d" % fy_start})
+    return rows
+
+
+def extend_from_country_archive(fy_start, check=False):
+    """Append one fiscal year's windows from the held country files; --check compares."""
+    rows, fetched = _existing()
+    label = "fy%d" % fy_start
+    fresh = country_archive_rows(fy_start)
+    held = [r for r in rows if r["season"] == label]
+    if check:
+        same = [tuple(r[c] for c in sorted(r)) for r in held] == \
+               [tuple(r[c] for c in sorted(r)) for r in fresh]
+        print("%s: %d rows held, %d from the country files, %s"
+              % (label, len(held), len(fresh), "identical" if same else "DIFFERENT"))
+        return 0 if same else 1
+    seen = {(r["latitude"], r["longitude"], r["acq_date"]) for r in rows if r["season"] != label}
+    rows = [r for r in rows if r["season"] != label]
+    rows += [r for r in fresh if (r["latitude"], r["longitude"], r["acq_date"]) not in seen]
+    windows = [(label, s.isoformat(), e.isoformat()) for s, e in _fetch_spans(fy_start)]
+    fetched |= set(windows)
+    write_table(OUT_CSV, ["latitude", "longitude", "acq_date", "frp", "confidence", "season"],
+                rows)
+    with open(OUT_CSV, "rb") as f:
+        sha = hashlib.sha256(f.read()).hexdigest()
+    with open(SIDECAR, encoding="utf-8") as f:
+        sidecar = json.load(f)
+    by_archive = set(tuple(w) for w in sidecar.get("windows_from_country_archive", []))
+    by_archive |= set(windows)
+    sidecar.update({"windows_fetched": sorted(fetched), "detections": len(rows),
+                    "csv_sha256": sha,
+                    "windows_from_country_archive": sorted(by_archive),
+                    "country_archive_note":
+                        "windows listed here were filled without a key from NASA's "
+                        "country-year files held in data/raw/firms/country_archive/ - the "
+                        "same VIIRS S-NPP standard product, Pakistan only (the box outside "
+                        "Pakistan is absent for them); see fetch_firms.country_archive_rows"})
+    with open(SIDECAR, "w", encoding="utf-8") as f:
+        json.dump(sidecar, f, indent=2, sort_keys=True)
+    print("%s: %d rows from the country files; layer now %d detections"
+          % (label, len(fresh), len(rows)))
+    return 0
+
+
 def main():
+    if "--from-country-archive" in sys.argv:
+        fy = int(sys.argv[sys.argv.index("--from-country-archive") + 1])
+        return extend_from_country_archive(fy, check="--check" in sys.argv)
     key = os.environ.get("FIRMS_MAP_KEY")
     if not key:
         sys.exit("Set FIRMS_MAP_KEY (never committed): FIRMS_MAP_KEY=xxxx python3 -m pkinv.sectors.agriculture.gis.fetch_firms")
@@ -189,4 +268,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

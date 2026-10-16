@@ -86,6 +86,14 @@ def resolve_expression(root, expr):
         if not matches:
             raise AssertionError("No observations for " + expr)
         return sum(float(row[column]) for row in matches)
+    if expr.startswith(("min_where:", "max_where:")):
+        # rc69: a range printed as "x to y" across matched years reads its two ends here
+        kind, rest = expr.split(":", 1)
+        name, key, column = rest.split("#")
+        values = [float(row[column]) for row in matching_rows(root, name, key) if row[column] != ""]
+        if not values:
+            raise AssertionError("No observations for " + expr)
+        return min(values) if kind == "min_where" else max(values)
     if expr.startswith("count:"):
         path = expr[len("count:"):]
         full = path if os.path.isabs(path) else asset_path(root, path)

@@ -1,7 +1,8 @@
 {
   "bbox": "60.5,23.5,77.5,37.5",
-  "csv_sha256": "2d26b95ad76bccc049ccba9ec9fc277143df631728cf08063127966d88079a59",
-  "detections": 1664876,
+  "country_archive_note": "windows listed here were filled without a key from NASA's country-year files held in data/raw/firms/country_archive/ - the same VIIRS S-NPP standard product, Pakistan only (the box outside Pakistan is absent for them); see fetch_firms.country_archive_rows",
+  "csv_sha256": "9d45b25162f4e72a39b0222e6cb709e3611d809a16d9d1eefe25068d6c2cd06f",
+  "detections": 1734158,
   "note": "science-quality VIIRS SP archive; the MAP_KEY is an env var, never committed; windows derive from the FAO calendar (burn_windows.py) since Wave 3; a window is recorded fetched only when every span in it succeeded",
   "product": "VIIRS_SNPP_SP",
   "windows_fetched": [
@@ -49,6 +50,18 @@
       "fy2023",
       "2023-09-01",
       "2024-06-30"
+    ],
+    [
+      "fy2024",
+      "2024-09-01",
+      "2025-06-30"
+    ]
+  ],
+  "windows_from_country_archive": [
+    [
+      "fy2024",
+      "2024-09-01",
+      "2025-06-30"
     ]
   ]
 }

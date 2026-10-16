@@ -7925,14 +7925,14 @@ S_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pastur
 S_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Other,0.00666175931999,0.0017653662198
 S_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Punjab,2.2557850974,0.59778305081
 S_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Sindh,1.19897493804,0.31772835858
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.460946459999,0.01290650088
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978079998,0.02382738624
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.375281333279
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.01388069999,0.0843886595998
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.0119504580001,0.00316687137003
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.0220623840002,0.00584653176005
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482548003,0.0920828752208
-S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376100007,0.0207064666502
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.46094646,0.01290650088
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978080001,0.02382738624
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.37528133328
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.0138807,0.0843886596001
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.011950458,0.00316687137001
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.022062384,0.00584653176001
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482548001,0.0920828752202
+S_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376100002,0.02070646665
 S_TAN,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Balochistan,133.899333323,0.133899333323
 S_TAN,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Khyber Pakhtunkhwa,181.411999986,0.181411999986
 S_TAN,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Other,8.638666666,0.008638666666
@@ -16569,14 +16569,14 @@ L_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pastur
 L_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Other,0.00666175931999,0.0017653662198
 L_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Punjab,2.2557850974,0.59778305081
 L_TAN,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Sindh,1.19897493804,0.31772835858
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.460946459999,0.01290650088
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978079998,0.02382738624
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.375281333279
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.01388069999,0.0843886595998
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.011950458,0.00316687136999
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.022062384,0.00584653175999
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482547999,0.0920828752198
-L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376099998,0.02070646665
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.46094646,0.01290650088
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978080001,0.02382738624
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.37528133328
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.0138807,0.0843886596001
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.011950458,0.00316687137
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.022062384,0.00584653176001
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482548,0.0920828752201
+L_TAN,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376100001,0.02070646665
 L_TAN,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Balochistan,133.899333323,0.133899333323
 L_TAN,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Khyber Pakhtunkhwa,181.411999986,0.181411999986
 L_TAN,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Other,8.638666666,0.008638666666
@@ -25213,14 +25213,14 @@ S_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pastu
 S_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Other,0.00666175931999,0.0017653662198
 S_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Punjab,2.2557850974,0.59778305081
 S_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Sindh,1.19897493804,0.31772835858
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.460946459999,0.01290650088
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978079998,0.02382738624
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.375281333279
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.01388069999,0.0843886595998
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.011950458,0.00316687136999
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.022062384,0.00584653175999
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482547999,0.0920828752198
-S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376099998,0.02070646665
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.46094646,0.01290650088
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978080001,0.02382738624
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.37528133328
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.0138807,0.0843886596001
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.011950458,0.00316687137
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.022062384,0.00584653176001
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482548,0.0920828752201
+S_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376100001,0.02070646665
 S_IPCC,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Balochistan,133.899333323,0.133899333323
 S_IPCC,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Khyber Pakhtunkhwa,181.411999986,0.181411999986
 S_IPCC,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Other,8.638666666,0.008638666666
@@ -33857,14 +33857,14 @@ L_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pastu
 L_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Other,0.00666175931999,0.0017653662198
 L_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Punjab,2.2557850974,0.59778305081
 L_IPCC,FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,agriculture,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,physical,Sindh,1.19897493804,0.31772835858
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.460946459999,0.01290650088
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978079998,0.02382738624
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.375281333279
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.01388069999,0.0843886595998
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.011950458,0.00316687136999
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.022062384,0.00584653175999
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482547999,0.0920828752198
-L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376099998,0.02070646665
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Balochistan,0.46094646,0.01290650088
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Khyber Pakhtunkhwa,0.850978080001,0.02382738624
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Punjab,13.40290476,0.37528133328
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,agriculture,Residue burning CH4,CH4,physical,Sindh,3.0138807,0.0843886596001
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Balochistan,0.011950458,0.00316687137
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Khyber Pakhtunkhwa,0.022062384,0.00584653176001
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Punjab,0.347482548,0.0920828752201
+L_IPCC,FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,agriculture,Residue burning N2O,N2O,physical,Sindh,0.0781376100001,0.02070646665
 L_IPCC,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Balochistan,133.899333323,0.133899333323
 L_IPCC,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Khyber Pakhtunkhwa,181.411999986,0.181411999986
 L_IPCC,FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,agriculture,Urea application CO2,CO2,physical,Other,8.638666666,0.008638666666

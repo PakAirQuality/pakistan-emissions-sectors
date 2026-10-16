@@ -4,7 +4,7 @@
 read from `outputs/pakemis_temporal_decomposition.csv` when this file is written, so a
 request cannot go on claiming a gap that has been closed. Do not edit it by hand.*
 
-The monthly product carries 4494.9 Mt of CO2e-AR5 across nine years. Of that, 21.7% is
+The monthly product carries 4494.9 Mt of CO2e-AR5 across nine years. Of that, 21.6% is
 mass that should vary within the year, is carried flat, and is asked for below.
 
 | request | recipient | what it would close | share of monthly mass |
@@ -16,7 +16,7 @@ mass that should vary within the year, is carried flat, and is asked for below.
 | `MON-MUNI-01` | Provincial local government departments, municipal waste authorities (LWMC, SSWMB) and the WASAs (wastewater) | 1 component | **0.78%** |
 | `MON-PETDIV-01` | Petroleum Division (Directorate General of Petroleum Concessions) | 6 components | **0.48%** |
 | `MON-OCAC-03` | Oil Companies Advisory Council (OCAC) | 1 component | **0.02%** |
-| `MON-CROP-01` | Pakistan Agricultural Research Council and provincial crop reporting services | 1 component | **0.01%** |
+| `MON-CROP-01` | Pakistan Agricultural Research Council and provincial crop reporting services | 1 component | module evidence, not timing |
 | `MON-NFDC-02` | National Fertilizer Development Centre (NFDC) | 1 component | module evidence, not timing |
 | `MON-NHA-01` | National Highway Authority (RAMD / toll & traffic systems) | 1 component | module evidence, not timing |
 | `MON-QIM-01` | Pakistan Bureau of Statistics (Quantum Index of Manufacturing) | 1 component | module evidence, not timing |
@@ -159,7 +159,7 @@ Time crop-residue burning to the harvests it follows; the flooded-window calenda
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| agriculture / Field burning of residues | 0.62 Mt | 0.01% | 90.0% | VIIRS active-fire acquisition dates (held), FAO calendar as comparator |
+| agriculture / Field burning of residues | 0.00 Mt | 0.00% | 100.0% | VIIRS active-fire acquisition dates (held), FAO calendar as comparator |
 
 ## MON-NFDC-02 — National Fertilizer Development Centre (NFDC)
 

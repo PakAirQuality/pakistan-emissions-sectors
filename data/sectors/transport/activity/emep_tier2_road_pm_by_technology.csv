@@ -1,0 +1,38 @@
+# EMEP/EEA air pollutant emission inventory guidebook 2023 (Update 2025), 1.A.3.b.i-iv Road
+# transport, TIER 2 exhaust PM2.5 by technology (rc69), transcribed from the held chapter
+# sources/EMEP/emep_eea_2023_1a3bi_iv_road_transport_2025.pdf: PM2.5 g/km from Tables 3-18,
+# 3-20, 3-22, 3-24 and 3-26 (the chapter's PM2.5=PM10=TSP for exhaust), fuel consumption g/km
+# from Table 3-27 (it separates only Conventional from Euro 1 / Euro I and later), and f-BC
+# from Table 3-92 (printed as a percent of PM2.5; here as a fraction). Every value was read off
+# the rendered page image and checked against a second text extraction. Printed guidebook page
+# numbers equal the PDF page index. pm25_g_per_kg_fuel = pm25_g_per_km / fc_g_per_km x 1000,
+# the only derived column. Read by pkinv.report.road_technology_case, which tests how far
+# technology alone moves the HTAP road comparison; the central inventory keeps the Tier 1 means.
+# Mapping to the engine's classes: 2W = motorcycle 4-stroke <250 cm3; 3W = the same at Euro 2,
+# and motorcycle 2-stroke >50 cm3 when Conventional (the older 2-stroke rickshaw fleet); HDV =
+# diesel rigid 14-20 t with Table 3-27's 16-32 t fuel use; BUS = diesel coach standard <=18 t;
+# LDV diesel = N1-II & N1-III; 4W2 diesel = diesel medium car; petrol 4-wheel classes = petrol
+# medium car (PRE ECE for Conventional, which has no "Conventional" row).
+engine_class,fuel,case,class_label_printed,technology_printed,pm25_g_per_km,fc_g_per_km,pm25_g_per_kg_fuel,f_bc,table_pm,table_fc,table_fbc,guidebook_page,note
+2W,Petrol,euro_ii_fleet,Motorcycles 4-stroke <250 cm³,Euro 2,5.00E-03,36,0.1389,0.25,Table 3-26,Table 3-27 (FC) + Table 3-25 (CO2),Table 3-92,PM 46; CO2 44; FC 47; f-BC 112,
+2W,Petrol,conventional_fleet,Motorcycles 4-stroke <250 cm³,Conventional,2.00E-02,32,0.625,0.15,Table 3-26,Table 3-27 (FC) + Table 3-25 (CO2),Table 3-92,PM 46; CO2 44; FC 47; f-BC 112,
+3W,Petrol,euro_ii_fleet,Motorcycles 4-stroke <250 cm³,Euro 2,5.00E-03,36,0.1389,0.25,Table 3-26,Table 3-27 (FC) + Table 3-25 (CO2),Table 3-92,PM 46; CO2 44; FC 47; f-BC 112,
+3W,Petrol,conventional_fleet,Motorcycles 2-stroke >50 cm³,Conventional,2.00E-01,33,6.0606,0.1,Table 3-26,Table 3-27 (FC) + Table 3-25 (CO2),Table 3-92,PM 45; CO2 44; FC 47; f-BC 112,
+HDV,Diesel,euro_ii_fleet,Diesel Rigid 14 - 20 t,Euro II,1.20E-01,210,0.5714,0.65,Table 3-22,Table 3-27 (16-32 t: 251 Conventional / 210 Euro I and later),Table 3-92,PM 39; CO2 36; FC 47; f-BC 112,FC from the 16-32 t class: Table 3-27 does not split rigid trucks by 14-20 t
+HDV,Diesel,conventional_fleet,Diesel Rigid 14 - 20 t,Conventional,3.51E-01,251,1.3984,0.5,Table 3-22,Table 3-27 (16-32 t: 251 Conventional / 210 Euro I and later),Table 3-92,PM 39; CO2 36; FC 47; f-BC 112,FC from the 16-32 t class: Table 3-27 does not split rigid trucks by 14-20 t
+BUS,Diesel,euro_ii_fleet,Diesel Coaches Standard <=18 t,Euro II,1.37E-01,247,0.5547,0.65,Table 3-24,Table 3-27 (FC) + Table 3-23 (CO2),Table 3-92,PM 43; CO2 42; FC 47; f-BC 112,
+BUS,Diesel,conventional_fleet,Diesel Coaches Standard <=18 t,Conventional,3.30E-01,263,1.2548,0.5,Table 3-24,Table 3-27 (FC) + Table 3-23 (CO2),Table 3-92,PM 43; CO2 42; FC 47; f-BC 112,
+LDV,Diesel,euro_ii_fleet,Diesel N1-II & N1-III,Euro 2,1.16E-01,80,1.45,0.8,Table 3-20,Table 3-27 (FC) + Table 3-19 (CO2),Table 3-92,PM 35; CO2 34; FC 47; f-BC 112,
+LDV,Diesel,conventional_fleet,Diesel N1-II & N1-III,Conventional,3.50E-01,89,3.9326,0.55,Table 3-20,Table 3-27 (FC) + Table 3-19 (CO2),Table 3-92,PM 35; CO2 34; FC 47; f-BC 112,
+4W2,Diesel,euro_ii_fleet,Diesel Medium,Euro 2,5.94E-02,55,1.08,0.8,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 31; CO2 28; FC 47; f-BC 112,
+4W2,Diesel,conventional_fleet,Diesel Medium,Conventional,2.44E-01,63,3.873,0.55,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 31; CO2 28; FC 47; f-BC 112,
+4W1,Petrol,euro_ii_fleet,Petrol Medium,Euro 2,2.35E-03,66,0.0356,0.25,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+4W1,Petrol,conventional_fleet,Petrol Medium,PRE ECE,2.35E-03,77,0.0305,0.02,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+4W2,Petrol,euro_ii_fleet,Petrol Medium,Euro 2,2.35E-03,66,0.0356,0.25,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+4W2,Petrol,conventional_fleet,Petrol Medium,PRE ECE,2.35E-03,77,0.0305,0.02,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+4WT,Petrol,euro_ii_fleet,Petrol Medium,Euro 2,2.35E-03,66,0.0356,0.25,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+4WT,Petrol,conventional_fleet,Petrol Medium,PRE ECE,2.35E-03,77,0.0305,0.02,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+LDV,Petrol,euro_ii_fleet,Petrol Medium,Euro 2,2.35E-03,66,0.0356,0.25,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+LDV,Petrol,conventional_fleet,Petrol Medium,PRE ECE,2.35E-03,77,0.0305,0.02,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+BUS,Petrol,euro_ii_fleet,Petrol Medium,Euro 2,2.35E-03,66,0.0356,0.25,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
+BUS,Petrol,conventional_fleet,Petrol Medium,PRE ECE,2.35E-03,77,0.0305,0.02,Table 3-18,Table 3-27 (FC) + Table 3-17 (CO2),Table 3-92,PM 30; CO2 27; FC 47; f-BC 112,
