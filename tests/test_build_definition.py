@@ -23,9 +23,17 @@ class TestOneBuildDefinition(unittest.TestCase):
             self.assertIn("python3 -m pkinv.build", body.group(1), target)
 
     def test_ci_executes_shared_registry_without_developer_cache(self):
-        with open(os.path.join(ROOT, ".github", "workflows", "ci.yml"), encoding="utf-8") as handle:
-            text = handle.read()
-        self.assertIn("python3 -m pkinv.build --group ci --full --strict", text)
+        # rc69: two workflows. The public checks rebuild from the verified tables with the
+        # deposit group; the complete reproduction is the strict full build.
+        with open(os.path.join(ROOT, ".github", "workflows", "public-checks.yml"),
+                  encoding="utf-8") as handle:
+            public = handle.read()
+        with open(os.path.join(ROOT, ".github", "workflows", "reproduce.yml"),
+                  encoding="utf-8") as handle:
+            full = handle.read()
+        self.assertIn("python3 -m pkinv.build --group deposit --full", public)
+        self.assertIn("python3 -m pkinv.build --group full --full --strict", full)
+        text = public + full
         self.assertNotIn("python3 -m pkinv.sectors.", text)
         self.assertNotIn("python3 -m pkinv.report.", text)
 

@@ -89,9 +89,9 @@ data/sectors/agriculture/gis/proxy_gcd_rice_267x340.npy,data/sectors/agriculture
 data/sectors/agriculture/gis/proxy_gcd_rice_267x340.npy.txt,data/sectors/agriculture/gis,sidecar,,,,0,yes,
 data/sectors/agriculture/gis/proxy_glw_livestock_267x340.npy,data/sectors/agriculture/gis,producer,src/pkinv/core/gis/proxies.py (get_proxy; network),,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/gis/proxy_glw_livestock_267x340.npy.txt,data/sectors/agriculture/gis,sidecar,,,,0,yes,
-data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_I_267x340.npy,data/sectors/agriculture/gis,unregistered,,,,0,yes,
-data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_R_267x340.npy,data/sectors/agriculture/gis,unregistered,,,,0,yes,
-data/sectors/agriculture/gis/proxy_manual_spam_rice_267x340.npy,data/sectors/agriculture/gis,unregistered,,,,0,yes,
+data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_I_267x340.npy,data/sectors/agriculture/gis,producer,scripts/build_manual_proxy_caches.py (resamples the held SPAM raster),,,1,no,
+data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_R_267x340.npy,data/sectors/agriculture/gis,producer,scripts/build_manual_proxy_caches.py (resamples the held SPAM raster),,,1,no,
+data/sectors/agriculture/gis/proxy_manual_spam_rice_267x340.npy,data/sectors/agriculture/gis,producer,scripts/build_manual_proxy_caches.py (resamples the held SPAM raster),,,1,no,
 data/sectors/agriculture/gis/proxy_manure_applied_267x340.npy,data/sectors/agriculture/gis,producer,src/pkinv/sectors/agriculture/gis/derive_manure_proxy.py via proxies.get_proxy,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/gis/proxy_manure_applied_267x340.npy.txt,data/sectors/agriculture/gis,sidecar,,,,0,yes,
 data/sectors/agriculture/parameters/burning_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,5,no,
