@@ -37,6 +37,7 @@ import os
 import unittest
 
 from _support import DATA, ROOT, data_rows, load_script
+from _support import require_layers  # noqa: E402
 
 build = load_script("build_verification_bundle")
 
@@ -222,6 +223,7 @@ class OutputOwnership(unittest.TestCase):
 class SourceManifest(unittest.TestCase):
     def test_the_registry_join_reproduces_a_known_row(self):
         """The manifest schema the rc47 bundle shipped, rebuilt from the two registries."""
+        require_layers("the census tables")
         rows = build.source_manifest(["data/pbs_census/Table_4_District.xls"], build._notes())
         self.assertEqual(1, len(rows))
         row = rows[0]

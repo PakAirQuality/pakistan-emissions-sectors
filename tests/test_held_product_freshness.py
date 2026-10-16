@@ -64,6 +64,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.assets import asset_path                                     # noqa: E402
 from pkinv.core.io import read_rows                                     # noqa: E402
+from _support import require_layers  # noqa: E402
 
 REGISTRY = asset_path(ROOT, "data", "held_products.csv")
 
@@ -235,6 +236,7 @@ class TestTheVerifiableSubsetIsVerified(unittest.TestCase):
         This is the part that would have caught the sensitivity drift on the cycle it
         happened, had that producer had a check mode.
         """
+        require_layers("the documents the held-product checks re-read")
         self.assertTrue(self.by_command, "no held product declares a verification any more")
         stale = []
         for cmd, proc in sorted(self.output.items()):
@@ -277,6 +279,7 @@ class TestTheVerifiableSubsetIsVerified(unittest.TestCase):
             "reason:\n  %s" % "\n  ".join(unclaimed))
 
     def test_the_declared_coverage_only_grows(self):
+        require_layers("the documents the held-product checks re-read")
         covered = set()
         for cmd, proc in self.output.items():
             covered |= set(COVERED.findall(proc.stdout))

@@ -337,6 +337,9 @@ class TestBenchmarkBoundaries(unittest.TestCase):
                               r.get("benchmark_release", ""),
                               "%s names no source file and does not declare why" % key)
                 continue
+            from _support import readable
+            if not readable(file_):
+                continue   # rc69: a restricted document this clone does not mount
             path = asset_path(ROOT, file_)
             self.assertTrue(_os.path.exists(path),
                             "%s pins %s, which is not in the tree" % (key, file_))

@@ -82,6 +82,7 @@ class NoNewCrossTreeDuplicates(unittest.TestCase):
 
 class TheLookupToolExists(unittest.TestCase):
     def test_holdings_script_is_present_and_gates_on_hits(self):
+        require_layers("the document trees the tool searches")
         script = os.path.join(ROOT, "scripts", "holdings.py")
         self.assertTrue(os.path.exists(script))
         hit = subprocess.run(["python3", script, "ocac"], capture_output=True, text=True)
@@ -98,6 +99,7 @@ class TheLookupToolExists(unittest.TestCase):
         the question it exists for - whether a table is already ingested. Assert each layer
         can actually find something, on a keyword the repository certainly holds.
         """
+        require_layers("the document trees the tool searches")
         script = os.path.join(ROOT, "scripts", "holdings.py")
         out = subprocess.run(["python3", script, "ocac"],
                              capture_output=True, text=True, check=True).stdout

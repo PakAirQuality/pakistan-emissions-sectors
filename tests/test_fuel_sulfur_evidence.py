@@ -15,6 +15,7 @@ import csv
 import os
 import sys
 import unittest
+from _support import readable  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -46,7 +47,8 @@ class TestTheObservations(unittest.TestCase):
         self.assertTrue(self.rows)
         for row in self.rows:
             self.assertTrue(row["source_path"], row["observation_id"])
-            self.assertTrue(os.path.exists(asset_path(ROOT, row["source_path"])),
+            self.assertTrue(os.path.exists(asset_path(ROOT, row["source_path"]))
+                            or not readable(row["source_path"]),
                             "%s cites %s, which is not held" % (row["observation_id"], row["source_path"]))
 
     def test_every_observation_says_what_it_cannot_measure(self):

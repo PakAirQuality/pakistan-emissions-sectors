@@ -99,7 +99,9 @@ class TestNothingShipsWithoutTheRightToShipIt(unittest.TestCase):
         sources, which no input pattern matched; `shasum -c` failed on the deposited copy.
         """
         shipped = {row["path"] for row in self.deposit}
-        for listed in sorted(path for path in shipped if path.endswith("/SHA256SUMS")):
+        from _support import readable
+        for listed in sorted(path for path in shipped if path.endswith("/SHA256SUMS")
+                             and readable(path)):
             base = os.path.dirname(listed)
             with open(asset_path(ROOT, listed), encoding="utf-8") as handle:
                 for line in handle:

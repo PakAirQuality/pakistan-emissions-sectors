@@ -115,7 +115,8 @@ class TestTheManifestMatchesTheDisk(unittest.TestCase):
         # (the documents gate mounts them); a missing file anywhere else is still a finding
         from _support import unshipped_registered
         unshipped = unshipped_registered()
-        gone = [p for p in gone if p not in unshipped]
+        from _support import readable
+        gone = [p for p in gone if p not in unshipped and readable(p)]
         self.assertFalse(gone,
                          "%d manifest rows name files that are not here. A raw input cannot "
                          "be re-derived from anything in this repository:\n  %s"

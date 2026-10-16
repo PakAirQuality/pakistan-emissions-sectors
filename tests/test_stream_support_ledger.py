@@ -14,6 +14,7 @@ import unittest
 
 from pkinv.core.io import read_rows
 from _support import OUT
+from _support import require_built  # noqa: E402
 
 PATH = os.path.join(OUT, "pakemis_stream_support_ledger.csv")
 
@@ -122,6 +123,7 @@ class TestTheLedgerIsRectangularAndComplete(unittest.TestCase):
                                  "no_published_ghg_monthly_raster")
 
     def test_the_advertised_monthly_products_cover_the_ledger_periods(self):
+        require_built()
         from pkinv.core import configurations as conf
         from pkinv.report.air_monthly_grid import path_for as monthly_path_for
         from pkinv.report.grid_cube import period_keys

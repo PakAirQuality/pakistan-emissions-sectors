@@ -209,6 +209,11 @@ DATA_FAMILIES = (
     ("data/gis/proxy_*.npy", PUBLIC_LICENCE,
      "WorldPop, ESA WorldCover and FAO GLW rasters, each CC-BY-4.0 per the licence column "
      "of data/gis/PROXY_SOURCES.md; attribution travels with them"),
+    # rc69: the SPAM rasters' resamples to the inventory grid, committed so a public clone
+    # rebuilds without the 38 MB global rasters (pkinv.core.gis.proxies.MANUAL_CACHED)
+    ("data/sectors/agriculture/gis/proxy_manual_spam*.npy", PUBLIC_LICENCE,
+     "IFPRI SPAM 2020 V2r2 resampled to the inventory grid; CC-BY-4.0 like the rasters "
+     "(RICE_SOURCES.json); attribution in data/gis/PROXY_SOURCES.md"),
     ("data/gis/*.npy.txt", OWN_WORK,
      "this project's one-line provenance note beside a cached proxy grid; the grid loader reads "
      "it, and the grid itself carries the licence"),

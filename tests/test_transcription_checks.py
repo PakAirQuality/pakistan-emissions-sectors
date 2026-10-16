@@ -18,6 +18,7 @@ import os
 import unittest
 
 from _support import ROOT, load_script, read_rows
+from _support import readable  # noqa: E402
 
 checker = load_script("check_transcriptions.py")
 REGISTER = asset_path(ROOT, "data", "transcription_checks.csv")
@@ -60,7 +61,8 @@ class TestTheRegisterIsWellFormed(unittest.TestCase):
             # is registered as such with its hash; the register then points at the
             # registry row rather than at bytes. In the repository every document exists.
             self.assertTrue(os.path.exists(asset_path(ROOT, r["document"]))
-                            or _is_registered_absent(r["document"]), r["document"])
+                            or _is_registered_absent(r["document"])
+                            or not readable(r["document"]), r["document"])
             self.assertIn(r["method"], ("pdftotext", "ocr", "read"))
             if r["method"] != "read":
                 self.assertTrue(r["extractor"], "%s: an automatable row needs an extractor"

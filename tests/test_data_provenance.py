@@ -25,6 +25,7 @@ from _support import require_documents  # noqa: E402  (rc42: the documents gate)
 from pkinv.report import completeness
 from _support import ROOT
 from pkinv.assets import asset_path, catalog
+from _support import readable  # noqa: E402
 
 
 
@@ -180,7 +181,8 @@ class TestEveryActivityFileDeclaresItsDocument(unittest.TestCase):
                                   + "\n  ".join(missing))
 
     def test_the_register_has_no_phantom_rows(self):
-        stale = sorted(set(self.by_file) - set(self._activity_files()))
+        stale = sorted(p for p in set(self.by_file) - set(self._activity_files())
+                       if readable(p))   # rc69: a restricted file a clone does not mount
         self.assertFalse(stale, "register rows for files that no longer exist:\n  "
                                 + "\n  ".join(stale))
 

@@ -127,6 +127,7 @@ class TestPublishedVintages(unittest.TestCase):
                          "register exists to make visible" % state)
 
     def test_it_regenerates_identically(self):
+        require_layers("the release history through rc68")
         before = open(REGISTER, "rb").read()
         run = subprocess.run([sys.executable, BUILDER], cwd=ROOT,
                              capture_output=True, text=True)

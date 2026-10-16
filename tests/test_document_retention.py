@@ -163,6 +163,7 @@ class TestTheLedgerOnlyGrows(unittest.TestCase):
 
     def test_every_listed_document_is_still_here(self):
         """The test a deletion fails, and keeps failing: nothing regenerates this list."""
+        require_layers("the held documents")
         absent_by_design = unshipped_registered()      # inside a package, never in the repo
         rows = [r for r in self.ledger if r["path"] not in absent_by_design
                 and not any(r["path"].startswith(p + "/") for p in absent_by_design)]
@@ -299,6 +300,7 @@ class TestEveryCitedDocumentIsAccountedFor(unittest.TestCase):
 
     def test_every_held_document_is_on_disk(self):
         """The check the per-file register could not make: it named directories."""
+        require_layers("the held documents")
         absent_by_design = unshipped_registered()
         if absent_by_design:
             self.skipTest("a validation package registers the documents and does not carry them")
@@ -371,6 +373,7 @@ class TestEveryCitedDocumentIsAccountedFor(unittest.TestCase):
     def test_the_content_check_can_tell_a_page_from_a_shell(self):
         """THE POSITIVE CONTROL for the rule above: among the held pages there is at least
         one that passes and at least one that fails, or the check proves nothing."""
+        require_layers("the saved pages")
         if unshipped_registered():
             self.skipTest("a validation package does not carry the pages")
         states = [s for s, _detail in load_script("fetch_cited_documents").verify().values()]

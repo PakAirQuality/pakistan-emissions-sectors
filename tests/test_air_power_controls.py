@@ -3,10 +3,12 @@ import unittest
 
 from pkinv.core.io import read_rows
 from pkinv.report import air_power_controls as controls
+from _support import require_layers  # noqa: E402
 
 
 class PublicPowerControls(unittest.TestCase):
     def test_final_evidence_keeps_design_and_particle_boundary(self):
+        require_layers("the plant licence applications")
         source = controls.evidence_rows()  # validates retained publisher-document hashes
         exported = read_rows(controls.EVIDENCE)
         self.assertEqual(len(exported), len(source))
@@ -32,6 +34,7 @@ class PublicPowerControls(unittest.TestCase):
             self.assertEqual(row["coverage_scope"], "two_selected_coal_plants_only_not_in_central_panel")
 
     def test_duplicate_station_fuel_fails(self):
+        require_layers("the plant licence applications")
         row = dict(plant="China Power Hub", fiscal_year="2024", fuel="Coal",
                    quantity_unit="000 t", fuel_origin="imported", quantity="313.68",
                    source_table="NEPRA SoIR2025 Table21")

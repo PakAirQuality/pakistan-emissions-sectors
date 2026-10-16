@@ -28,6 +28,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.core.io import read_rows                                      # noqa: E402
+from _support import require_layers  # noqa: E402
 
 OUT = os.path.join(ROOT, "outputs", "pakemis_faostat_nitrogen_flows.csv")
 
@@ -187,6 +188,7 @@ class TestTheNitrogenAgreesAndTheFactorsDoNot(unittest.TestCase):
             "combined case double-counts them: %s" % overlap)
 
     def test_the_shipped_file_matches_a_fresh_build(self):
+        require_layers("the FAOSTAT bulk archives")
         r = subprocess.run(
             [sys.executable, "-m", "pkinv.sectors.agriculture.faostat_nitrogen_flows",
              "--check"],

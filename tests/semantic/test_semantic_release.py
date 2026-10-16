@@ -19,6 +19,7 @@ from pkinv.core.manifest import sha256_file
 from pkinv.paths import DATA, OUTPUTS, ROOT
 from pkinv.semantic import OUT_DIR, SCHEMA
 from pkinv.semantic.canonical import canonical_csv_text, sha256_text
+from _support import require_built  # noqa: E402
 
 RELEASE = os.path.join(OUT_DIR, "semantic_release.json")
 SCHEMA_FILE = asset_path(DATA, "schemas", "semantic_release.schema.json")
@@ -100,6 +101,7 @@ class TestTheContractIsWellFormed(unittest.TestCase):
 class TestEveryTableIsWhatTheContractSays(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        require_built()
         if not os.path.exists(RELEASE):
             raise unittest.SkipTest("semantic release not built")
         cls.release = _load()
@@ -178,6 +180,7 @@ class TestTheClosuresTheContractStates(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        require_built()
         if not os.path.exists(RELEASE):
             raise unittest.SkipTest("semantic release not built")
 

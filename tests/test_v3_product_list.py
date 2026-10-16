@@ -8,6 +8,7 @@ import importlib.util
 import io
 import os
 import unittest
+from _support import require_built  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -22,6 +23,7 @@ def _module():
 
 class TestTheProductListIsCurrent(unittest.TestCase):
     def test_the_committed_list_matches_a_fresh_render(self):
+        require_built()
         module = _module()
         with io.open(module.OUT, encoding="utf-8") as handle:
             current = handle.read()

@@ -14,6 +14,7 @@ from pkinv.assets import asset_path
 from pkinv.core.io import read_rows
 from pkinv.sectors.transport import ocac
 from _support import ROOT
+from _support import require_layers  # noqa: E402
 
 
 class ExtensionInputs(unittest.TestCase):
@@ -21,6 +22,7 @@ class ExtensionInputs(unittest.TestCase):
         return read_rows(asset_path(ROOT, path))
 
     def test_fiscal_agriculture_full_year_cells_from_later_primary_table(self):
+        require_layers("the official extension documents")
         path = Path(ROOT) / "data/raw/finance_division/survey_2025_26/2_Agriculture.pdf"
         text = subprocess.check_output(["pdftotext", "-layout", str(path), "-"]).decode()
         page = next(p for p in text.split("\f") if "PRODUCTION OF IMPORTANT CROPS" in p)
@@ -36,6 +38,7 @@ class ExtensionInputs(unittest.TestCase):
         self.assertEqual(len(rows), len({(r["fiscal_end_year"], r["item"]) for r in rows}))
 
     def test_final_monthly_qim_matches_independent_cell_coordinates(self):
+        require_layers("the official extension documents")
         path = Path(ROOT) / "data/raw/pbs/qim/extension_2026/Table-3-2024-25-6.xlsx"
         book = openpyxl.load_workbook(path, data_only=True, read_only=True)
         sheet = book.active
@@ -52,6 +55,7 @@ class ExtensionInputs(unittest.TestCase):
         book.close()
 
     def test_new_ocac_header_preserves_both_products_and_final_source_mass(self):
+        require_layers("the official extension documents")
         path = Path(ROOT) / "data/raw/ocac/extension_2026/ocac_sector_province_2026_06.pdf"
         page = subprocess.check_output(["pdftotext", "-layout", str(path), "-"]).decode().split("\f")[0]
         self.assertIn("HOBC NAPHTHA", page)
@@ -86,6 +90,7 @@ class ExtensionInputs(unittest.TestCase):
             self.assertGreater(float(row["unresolved_generation_GWh"]), 0)
 
     def test_fertilizer_gas_class_matches_full_year_ogra_source(self):
+        require_layers("the official extension documents")
         path = Path(ROOT) / "data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf"
         text = subprocess.check_output(["pdftotext", "-layout", str(path), "-"]).decode()
         source = re.search(r"^\s*4\s+Fertilizer\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)", text, re.M)
@@ -98,6 +103,7 @@ class ExtensionInputs(unittest.TestCase):
         self.assertAlmostEqual(sum(float(final[0][k]) for k in fields[:3]), float(final[0]["total_mmcfd"]))
 
     def test_aviation_final_panel_closes_own_year_pcaa_control(self):
+        require_layers("the official extension documents")
         path = Path(ROOT) / "data/raw/pcaa/extension_2025/major-traffic-flows-by-airports-during-the-year-2024-25.pdf"
         text = subprocess.check_output(["pdftotext", "-layout", str(path), "-"]).decode()
         printed = next(line for line in text.splitlines() if "Grand Totals" in line)
@@ -110,6 +116,7 @@ class ExtensionInputs(unittest.TestCase):
         self.assertEqual(37, len({r["icao"] for r in final}))
 
     def test_household_new_year_weather_matches_retained_own_year_response(self):
+        require_layers("the official extension documents")
         final = [r for r in self.table("data/activity/residential/monthly_degree_days.csv")
                  if "202407" <= r["month"] <= "202506"]
         self.assertEqual(60, len(final))
@@ -150,6 +157,7 @@ class ExtensionInputs(unittest.TestCase):
         self.assertEqual(float(revised["Road"]["old_tonnes"]), road)
 
     def test_offline_primary_extraction_reproduces_final_exports(self):
+        require_layers("the official extension documents")
         result = subprocess.run([sys.executable, "scripts/ingest_release_extension.py", "--check"],
                                 cwd=ROOT, text=True, capture_output=True)
         self.assertEqual(0, result.returncode, result.stdout + result.stderr)
