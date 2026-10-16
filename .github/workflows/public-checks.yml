@@ -11,7 +11,8 @@
 #      the published products of the fifteen document-reading phases, of the phases that
 #      read the COD-AB boundaries, and of the release category (manifests, source register,
 #      inventory: they describe the release with its documents), and require every rebuilt
-#      product to match the committed one.
+#      product to match the committed one: text exactly, numbers to the platform tolerance
+#      scripts/compare_rebuild.py declares (the products are committed from macOS).
 # Its summary line states how many tests ran, skipped for absent layers, and skipped
 # because the manuscripts are not compiled here, so its coverage is explicit.
 # The complete reproduction is .github/workflows/reproduce.yml.
@@ -66,5 +67,19 @@ jobs:
           mkdir -p logs
           python3 -m pkinv.build --group deposit --full --ledger logs/public_build.json
 
-      - name: Every rebuilt product matches the committed one
-        run: git diff --stat --exit-code -- outputs data
+      # Byte identity is the release contract on ONE platform (scripts/clean_rebuild.py).
+      # Across operating systems libm and BLAS differ in the last binary place, so this step
+      # compares numbers to a declared tolerance and prints the size of every difference.
+      - name: Every rebuilt product matches the committed one (to platform precision)
+        run: python3 scripts/compare_rebuild.py --paths outputs data
+
+      - name: Keep the files that differ, for diagnosis
+        if: failure()
+        run: git status --porcelain -- outputs data | cut -c4- | tar -czf changed-products.tgz -T - || true
+
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: changed-products
+          path: changed-products.tgz
+          retention-days: 7
