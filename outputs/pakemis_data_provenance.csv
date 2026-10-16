@@ -471,6 +471,7 @@ data/sectors/transport/activity/edgar_pak_transport_categories.csv,data/sectors/
 data/sectors/transport/activity/edgar_pak_transport_series.csv,data/sectors/transport/activity,producer,scripts/extract_edgar_transport_series.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/transport/activity/emep_class_map.csv,data/sectors/transport/activity,hand:derived,,derived,,2,no,Air program Wave 2: a cell the guidebook does not publish takes a NAMED proxy here (light CNG -> PC LPG spark-ignition c
 data/sectors/transport/activity/emep_tier1_road_air.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,"Air program Wave 2: hand transcription, 204 cells machine-verified against the pdftotext of the held chapters; positiona"
+data/sectors/transport/activity/emep_tier2_road_pm_by_technology.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,rc69: technology-specific road exhaust PM2.5 and BC for the road technology case; every value read off the rendered page
 data/sectors/transport/activity/emission_factors_gkm.csv,data/sectors/transport/activity,hand:held-source,,archived,,3,no,
 data/sectors/transport/activity/fuel_split.csv,data/sectors/transport/activity,hand:held-source,,archived,,1,no,
 data/sectors/transport/activity/fuel_sulfur_by_year.csv,data/sectors/transport/activity,hand:no-source,,not-archived,road-fuel-sulfur,9,no,both Dawn articles are held with their content; the PSO product page is held only as a script shell without the cited se

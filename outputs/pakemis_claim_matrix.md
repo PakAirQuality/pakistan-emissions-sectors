@@ -2,7 +2,7 @@
 
 One row per headline claim of the national manuscript (data/claim_matrix.csv), held to the release: `printed` is what the section prints today, `resolved` is what the release answers (through pakemis_query where a stored query exists, else through the pointer, else through the DOC_CLAIMS getter). `agrees` applies the DOC_CLAIMS rule (half an ulp at the printed precision plus the claim's registered tolerance); `strict` is half an ulp alone. Nothing here is repaired: a `no` is a finding for tests/paper_numbers/test_claim_matrix.py.
 
-Rows: 96; agree: 96; disagree: 0; via query: 0, pointer: 96, getter: 0.
+Rows: 100; agree: 100; disagree: 0; via query: 0, pointer: 100, getter: 0.
 
 ## 4 Dataset generation
 
@@ -104,4 +104,8 @@ Rows: 96; agree: 96; disagree: 0; via query: 0, pointer: 96, getter: 0.
 | paper_PakLatestPowerOmitPMfineHighPct | 8.98 | 8.98 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitPMfineHighPct |
 | paper_PakLatestPowerOmitNOxLowPct | 9.32 | 9.32 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitNOxLowPct |
 | paper_PakLatestPowerOmitNOxHighPct | 14.3 | 14.28 | % | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestPowerOmitNOxHighPct |
+| paper_PakRoadConvPMfineHtapLow | 0.59 | 0.5867 | ratio | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRoadConvPMfineHtapLow |
+| paper_PakRoadConvPMfineHtapHigh | 0.83 | 0.8324 | ratio | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRoadConvPMfineHtapHigh |
+| paper_PakRoadConvBCHtapLow | 0.42 | 0.4209 | ratio | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRoadConvBCHtapLow |
+| paper_PakRoadConvBCHtapHigh | 0.59 | 0.5861 | ratio | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRoadConvBCHtapHigh |
 

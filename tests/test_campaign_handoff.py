@@ -26,6 +26,7 @@ import json
 import os
 import unittest
 from _support import require_layers  # noqa: E402
+from _support import release_time_check  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAMPAIGN = os.path.join(ROOT, "research_campaign")
@@ -85,6 +86,7 @@ class TestTheHandoffIsPopulated(unittest.TestCase):
                             "%s does not say what it was used for" % row["source_id"])
 
     def test_the_product_manifest_agrees_with_the_release_and_with_disk(self):
+        release_time_check("the release manifest digests are cut at the release fixpoint")
         with open(os.path.join(CAMPAIGN, "product_manifest.json"),
                   encoding="utf-8") as handle:
             manifest = json.load(handle)

@@ -150,9 +150,9 @@ fe4889f45c595459af2c80e9,L_IPCC,FY2023-24,railways,railways,unallocated,12,0.394
 f0a4d75f7c1f020216168829,L_IPCC,FY2023-24,transport,transport,static_structural,39,41.926173454994262
 cbfd35a91ec2aba281804ca8,L_IPCC,FY2023-24,waste,waste,modelled_population_proxy,3,3.82634069500871
 1dc377c893425a51bf52f9b7,L_IPCC,FY2023-24,waste,waste,substituted_surface,3,33.6265695931204
+70290bb948ea5e9cbed819d2,L_IPCC,FY2024-25,agriculture,agriculture,annual_observed_activity,2,0.61820662500021
 b9d16565b487e49f14b76753,L_IPCC,FY2024-25,agriculture,agriculture,reference_shape_forward,17,49.852078622960927
 20e31ba2ec1f3fd3268f793d,L_IPCC,FY2024-25,agriculture,agriculture,static_structural,15,178.5095713936517359
-5cb365e6d8bc4a660854a090,L_IPCC,FY2024-25,agriculture,agriculture,substituted_surface,2,0.61820662499858
 e950bc6786781c5a94922a0e,L_IPCC,FY2024-25,aviation,aviation,annual_observed_activity,3,0.050363346999960258
 a6dcfc401981cb06dd869f89,L_IPCC,FY2024-25,aviation,aviation,unallocated,3,0.254321229999450
 b1c654d9806a9ba6a4ff7b95,L_IPCC,FY2024-25,fugitives,fugitives,calendar_activity_proxy,15,9.297965500981642939
@@ -319,9 +319,9 @@ e7f5658612642e6a025a83ac,L_TAN,FY2023-24,residential,residential,modelled_popula
 d3e59d805d91fb16eaf40e95,L_TAN,FY2023-24,transport,transport,static_structural,39,41.926173454994262
 d1edf8037e6f9e6e23561aa3,L_TAN,FY2023-24,waste,waste,modelled_population_proxy,3,3.82634069500871
 7ff8ee638e0f4e683a6d3ed0,L_TAN,FY2023-24,waste,waste,substituted_surface,3,33.6265695931204
+5bb9035c4354cb888f9e440f,L_TAN,FY2024-25,agriculture,agriculture,annual_observed_activity,2,0.61820662500021
 77f6bc69d157eb4115114633,L_TAN,FY2024-25,agriculture,agriculture,reference_shape_forward,17,49.842274947960499
 a0f3b239751620c2208e4e60,L_TAN,FY2024-25,agriculture,agriculture,static_structural,15,178.1006504236515459
-1408b85c3dda5c2673dbe1c2,L_TAN,FY2024-25,agriculture,agriculture,substituted_surface,2,0.61820662499858
 3b8c4549e5466d54f6476ee2,L_TAN,FY2024-25,aviation,aviation,annual_observed_activity,3,0.050363346999960258
 101947b11e67f97373616da6,L_TAN,FY2024-25,aviation,aviation,unallocated,3,0.254321229999450
 adabc88594d1cab1267c37df,L_TAN,FY2024-25,fugitives,fugitives,calendar_activity_proxy,15,9.297965500981642939
@@ -488,9 +488,9 @@ f042c09ab5e419d5e0973227,S_IPCC,FY2023-24,railways,railways,unallocated,12,0.394
 3c37ca037c791037d3d9e577,S_IPCC,FY2023-24,transport,transport,static_structural,39,41.926173454994262
 2bf76e2aa74f736bd4528acc,S_IPCC,FY2023-24,waste,waste,modelled_population_proxy,3,3.82634069500871
 48aa9a4fa841ec4f975711a6,S_IPCC,FY2023-24,waste,waste,substituted_surface,3,33.6265695931204
+d7c5b63761fb7dfac6689817,S_IPCC,FY2024-25,agriculture,agriculture,annual_observed_activity,2,0.61820662500021
 276b0caa2c03c64171c9d693,S_IPCC,FY2024-25,agriculture,agriculture,reference_shape_forward,17,49.852078622960927
 3c9bd3177a6208f89be7f433,S_IPCC,FY2024-25,agriculture,agriculture,static_structural,15,178.5095713936517359
-9fceaca33ed456a134c620d3,S_IPCC,FY2024-25,agriculture,agriculture,substituted_surface,2,0.61820662499858
 299ff7e0db5eae78860162da,S_IPCC,FY2024-25,aviation,aviation,annual_observed_activity,3,0.050363346999960258
 d780b2233e0ed5344f38c445,S_IPCC,FY2024-25,aviation,aviation,unallocated,3,0.254321229999450
 9e0df2cc3ac9213789aa889b,S_IPCC,FY2024-25,fugitives,fugitives,calendar_activity_proxy,15,9.297965500981642939
@@ -657,9 +657,9 @@ c18f03355d9623d9a2fab580,S_TAN,FY2023-24,residential,residential,modelled_popula
 ab924ee3158d14b8d08bd246,S_TAN,FY2023-24,transport,transport,static_structural,39,41.92617345499274555
 f1d94e7fe590b2e98f21fe20,S_TAN,FY2023-24,waste,waste,modelled_population_proxy,3,3.8263406950073
 cd7de6416612b6e1fb6d3df5,S_TAN,FY2023-24,waste,waste,substituted_surface,3,33.6265695931204
+7dd75666527e0bdafbc7a9a8,S_TAN,FY2024-25,agriculture,agriculture,annual_observed_activity,2,0.61820662500032
 de100dac65391e6acde85c02,S_TAN,FY2024-25,agriculture,agriculture,reference_shape_forward,17,49.842274947962377
 0800be2096261a2598696c2e,S_TAN,FY2024-25,agriculture,agriculture,static_structural,15,178.1006504236505359
-8183b6a3c0c6d2714bd02737,S_TAN,FY2024-25,agriculture,agriculture,substituted_surface,2,0.61820662499988
 e3e79622828331b79c2cb391,S_TAN,FY2024-25,aviation,aviation,annual_observed_activity,3,0.050363346999960258
 1213fb3348ed5f40e21941ed,S_TAN,FY2024-25,aviation,aviation,unallocated,3,0.254321229999550
 a88fcf5f9f3c3b3d1bf372e1,S_TAN,FY2024-25,fugitives,fugitives,calendar_activity_proxy,15,9.297965500983080231

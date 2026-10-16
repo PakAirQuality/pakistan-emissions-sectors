@@ -1819,8 +1819,8 @@ FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(organic-manu
 FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(crop-residues)|n2o,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Managed soils,8435b16c9c7e71d2
 FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-cattle-type)|n2o,agriculture,livestock_total,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,cf1f3d203204a1b3
 FY2024-25,agriculture|managed-soils|indirect-n2o---leaching/runoff-(pasture-sheep/goat/other)|n2o,agriculture,livestock_smallrum,diffuse:adm2_pbs2023,raster_or_administrative,glw_livestock,agri:Managed soils,8d7dcdd4b1038aca
-FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,cropland,,c953c850ed32bfa1
-FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,cropland,,c953c850ed32bfa1
+FY2024-25,agriculture|field-burning-of-residues|residue-burning-ch4|ch4,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,firms_fire,,8f2f35150672eea8
+FY2024-25,agriculture|field-burning-of-residues|residue-burning-n2o|n2o,agriculture,crop_total,diffuse:adm2_pbs2023,raster_or_administrative,firms_fire,,8f2f35150672eea8
 FY2024-25,agriculture|urea-application|urea-application-co2|co2,agriculture,fertilizer_N,diffuse:adm2_pbs2023,raster_or_administrative,cropland,agri:Urea application,e4ce17b6401b489d
 FY2024-25,aviation|domestic-aviation|domestic-aviation-lto-co2|co2,aviation,aviation_lto_domestic,facilities:airports_domestic,per_object_activity,airport_points,,3dd6ef3e2c920057
 FY2024-25,aviation|domestic-aviation|domestic-aviation-lto-ch4|ch4,aviation,aviation_lto_domestic,facilities:airports_domestic,per_object_activity,airport_points,,3dd6ef3e2c920057

@@ -174,6 +174,17 @@ def facts(ghg, air):
             command = "Pak" + tag + "NPartition" + macro_species[row["pollutant"]] + "ChangeGg"
             output.append(r"\newcommand{\%s}{%s}" % (command, format(float(row["change_Gg"]), ".4g")))
             table.append({"macro": command, "period": row["period_id"], "species": row["pollutant"], "value": row["change_Gg"], "unit": "Gg"})
+    # rc69: road exhaust against HTAP when every class takes its pre-Euro Tier 2 factor
+    road = collections.defaultdict(list)
+    for row in rows("pakemis_road_technology_case.csv", optional=True):
+        if row["case"] == "conventional_fleet" and row["case_over_htap"]:
+            road[row["pollutant"]].append(float(row["case_over_htap"]))
+    for pol, values in road.items():
+        for suffix, value in (("Low", min(values)), ("High", max(values))):
+            command = "PakRoadConv" + macro_species[pol] + "Htap" + suffix
+            output.append(r"\newcommand{\%s}{%.2f}" % (command, value))
+            table.append({"macro": command, "period": "FY2015-16 to FY2019-20", "species": pol,
+                          "value": value, "unit": "ratio"})
     # rc69: what the covered total leaves out at power stacks (pakemis_air_power_omission.csv)
     for row in rows("pakemis_air_power_omission.csv", optional=True):
         if row["period_id"] not in ("FY2015-16", LATEST) or row["pollutant"] not in ("SO2", "PM2.5", "NOx"):
@@ -285,7 +296,7 @@ def coverage_table(ghg):
              r"\caption{Coverage by calculation module and species in FY2023--24. E: estimated; "
              r"S: unestimated in the central product, with separate screening cases; NE: not estimated; "
              r"--: not applicable or no source of the species in the module. Power SO$_2$ covers oil and diesel only. "
-             r"Road transport air pollutants cover exhaust, evaporation and tyre, brake and road wear, not resuspended road dust; "
+             r"Road transport air pollutants cover exhaust and evaporation, and particulate mass (not BC) from tyre, brake and road wear, not resuspended road dust; "
              r"off-road machinery has greenhouse-gas estimates only. "
              r"The release gives the same matrix for every year with the reason for each absence.}",
              r"\label{tab:species_coverage}",

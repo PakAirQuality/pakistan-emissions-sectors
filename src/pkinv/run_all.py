@@ -941,6 +941,13 @@ PHASES = [
                  "data/raw/htap/edgar_HTAPv32_NOx.zip", "data/raw/htap/edgar_HTAPv32_SO2.zip",
                  "data/raw/htap/edgar_HTAPv32_PM2.5.zip", "data/raw/htap/edgar_HTAPv32_BC.zip",
                  "data/raw/htap/edgar_HTAPv32_CO.zip", "data/raw/htap/edgar_HTAPv32_NMVOC.zip")),
+    # rc69: road exhaust particulates under the guidebook's own technology-specific Tier 2
+    # factors, against the matched HTAP road sector (the review's road PM2.5/BC question)
+    Phase("Road technology case", "pkinv.report.road_technology_case", False,
+          writes=("outputs/pakemis_road_technology_case.csv",),
+          reads=("outputs/pakemis_air_atomic_annual.csv",
+                 "outputs/pakemis_air_htap_species_comparison.csv",
+                 "data/sectors/transport/activity/emep_tier2_road_pm_by_technology.csv")),
     Phase("Air conditional uncertainty", "pkinv.report.air_uncertainty", False,
           writes=("outputs/pakemis_air_conditional_uncertainty.csv",
                   "outputs/pakemis_air_trend_uncertainty.csv",
@@ -1953,6 +1960,7 @@ PHASES = [
                  "outputs/pakemis_coal_change_decomposition.csv",
                  "outputs/pakemis_air_source_coverage.csv", "outputs/pakemis_air_coverage_matrix.csv",
                  "outputs/pakemis_air_power_omission.csv",
+                 "outputs/pakemis_road_technology_case.csv",
                  "outputs/pakemis_air_structural_sensitivities.csv", "outputs/pakemis_industry_air_edgar_comparison.csv",
                  "outputs/pakemis_air_htap_comparison.csv", "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
                  "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
@@ -1972,7 +1980,9 @@ PHASES = [
           reads=("outputs/pakemis_validation_measured.csv",)),
     Phase("Paper artefacts (stored queries)", "scripts/make_paper_artefacts.py", True,
           writes=("outputs/pakemis_paper_artefact_hashes.csv",
-                  "outputs/paper_figure_data/", "outputs/paper_figures/",
+                  # rc69: outputs/paper_figure_data/ and outputs/paper_figures/ are no longer
+                  # declared: rc68 retired the four stored-query figures, the registry names no
+                  # figure, and git keeps no empty folder, so a fresh clone has neither
                   "paper_national/versions/v1/sections/gen_tab_categorygas.tex",
                   "paper_national/versions/v1/sections/gen_tab_completeness.tex"),
           # + the registry paper_national/queries/paper_artefacts.csv (prose-side, not a product)
@@ -2431,6 +2441,7 @@ CATEGORIES = {
         "Benchmark: temporal hindcast",
         "Data provenance audit",
         "HTAP air comparison",
+        "Road technology case",
         "Power station commissioning check",
         "Industry air vs EDGAR",
         "Pass-2 exit scorecard",

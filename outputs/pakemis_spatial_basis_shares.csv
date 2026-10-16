@@ -73,13 +73,13 @@ L_IPCC,FY2023-24,reference_shape_backcast,"the reference year's pattern, rescale
 L_IPCC,FY2023-24,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,450.274554
 L_IPCC,FY2023-24,substituted_surface,a declared stand-in surface,33.647285,0.074726,5,450.274554
 L_IPCC,FY2023-24,unallocated,retained at province level,0.645726,0.001434,15,450.274554
-L_IPCC,FY2024-25,annual_observed_activity,that year's observed activity,47.472902,0.102532,36,463.006670
+L_IPCC,FY2024-25,annual_observed_activity,that year's observed activity,48.091109,0.103867,38,463.006670
 L_IPCC,FY2024-25,calendar_activity_proxy,a calendar-year activity proxy,9.297966,0.020082,15,463.006670
 L_IPCC,FY2024-25,modelled_population_proxy,a census-based demographic proxy,31.993793,0.069100,26,463.006670
 L_IPCC,FY2024-25,static_structural,a timeless structural surface,288.585498,0.623286,86,463.006670
 L_IPCC,FY2024-25,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,463.006670
 L_IPCC,FY2024-25,reference_shape_forward,a reference district pattern reused later,49.852079,0.107670,17,463.006670
-L_IPCC,FY2024-25,substituted_surface,a declared stand-in surface,35.137773,0.075890,7,463.006670
+L_IPCC,FY2024-25,substituted_surface,a declared stand-in surface,34.519566,0.074555,5,463.006670
 L_IPCC,FY2024-25,unallocated,retained at province level,0.666659,0.001440,14,463.006670
 L_TAN,FY2015-16,annual_observed_activity,that year's observed activity,88.588435,0.220297,34,402.131613
 L_TAN,FY2015-16,calendar_activity_proxy,a calendar-year activity proxy,13.074227,0.032512,15,402.131613
@@ -153,13 +153,13 @@ L_TAN,FY2023-24,reference_shape_backcast,"the reference year's pattern, rescaled
 L_TAN,FY2023-24,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,449.854101
 L_TAN,FY2023-24,substituted_surface,a declared stand-in surface,33.647285,0.074796,5,449.854101
 L_TAN,FY2023-24,unallocated,retained at province level,0.645726,0.001435,15,449.854101
-L_TAN,FY2024-25,annual_observed_activity,that year's observed activity,47.472902,0.102625,36,462.587945
+L_TAN,FY2024-25,annual_observed_activity,that year's observed activity,48.091109,0.103961,38,462.587945
 L_TAN,FY2024-25,calendar_activity_proxy,a calendar-year activity proxy,9.297966,0.020100,15,462.587945
 L_TAN,FY2024-25,modelled_population_proxy,a census-based demographic proxy,31.993793,0.069163,26,462.587945
 L_TAN,FY2024-25,static_structural,a timeless structural surface,288.176577,0.622966,86,462.587945
 L_TAN,FY2024-25,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,462.587945
 L_TAN,FY2024-25,reference_shape_forward,a reference district pattern reused later,49.842275,0.107747,17,462.587945
-L_TAN,FY2024-25,substituted_surface,a declared stand-in surface,35.137773,0.075959,7,462.587945
+L_TAN,FY2024-25,substituted_surface,a declared stand-in surface,34.519566,0.074623,5,462.587945
 L_TAN,FY2024-25,unallocated,retained at province level,0.666659,0.001441,14,462.587945
 S_IPCC,FY2015-16,annual_observed_activity,that year's observed activity,88.757488,0.222869,34,398.249369
 S_IPCC,FY2015-16,calendar_activity_proxy,a calendar-year activity proxy,13.074227,0.032829,15,398.249369
@@ -233,13 +233,13 @@ S_IPCC,FY2023-24,reference_shape_backcast,"the reference year's pattern, rescale
 S_IPCC,FY2023-24,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,445.028208
 S_IPCC,FY2023-24,substituted_surface,a declared stand-in surface,33.647285,0.075607,5,445.028208
 S_IPCC,FY2023-24,unallocated,retained at province level,0.645726,0.001451,15,445.028208
-S_IPCC,FY2024-25,annual_observed_activity,that year's observed activity,47.472902,0.103730,36,457.658557
+S_IPCC,FY2024-25,annual_observed_activity,that year's observed activity,48.091109,0.105081,38,457.658557
 S_IPCC,FY2024-25,calendar_activity_proxy,a calendar-year activity proxy,9.297966,0.020316,15,457.658557
 S_IPCC,FY2024-25,modelled_population_proxy,a census-based demographic proxy,26.645680,0.058222,26,457.658557
 S_IPCC,FY2024-25,static_structural,a timeless structural surface,288.585498,0.630569,86,457.658557
 S_IPCC,FY2024-25,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,457.658557
 S_IPCC,FY2024-25,reference_shape_forward,a reference district pattern reused later,49.852079,0.108929,17,457.658557
-S_IPCC,FY2024-25,substituted_surface,a declared stand-in surface,35.137773,0.076777,7,457.658557
+S_IPCC,FY2024-25,substituted_surface,a declared stand-in surface,34.519566,0.075426,5,457.658557
 S_IPCC,FY2024-25,unallocated,retained at province level,0.666659,0.001457,14,457.658557
 S_TAN,FY2015-16,annual_observed_activity,that year's observed activity,88.588435,0.222675,34,397.837085
 S_TAN,FY2015-16,calendar_activity_proxy,a calendar-year activity proxy,13.074227,0.032863,15,397.837085
@@ -313,11 +313,11 @@ S_TAN,FY2023-24,reference_shape_backcast,"the reference year's pattern, rescaled
 S_TAN,FY2023-24,reference_shape_forward,a reference district pattern reused later,0.000000,0.000000,0,444.607755
 S_TAN,FY2023-24,substituted_surface,a declared stand-in surface,33.647285,0.075679,5,444.607755
 S_TAN,FY2023-24,unallocated,retained at province level,0.645726,0.001452,15,444.607755
-S_TAN,FY2024-25,annual_observed_activity,that year's observed activity,47.472902,0.103825,36,457.239832
+S_TAN,FY2024-25,annual_observed_activity,that year's observed activity,48.091109,0.105177,38,457.239832
 S_TAN,FY2024-25,calendar_activity_proxy,a calendar-year activity proxy,9.297966,0.020335,15,457.239832
 S_TAN,FY2024-25,modelled_population_proxy,a census-based demographic proxy,26.645680,0.058275,26,457.239832
 S_TAN,FY2024-25,static_structural,a timeless structural surface,288.176577,0.630253,86,457.239832
 S_TAN,FY2024-25,reference_shape_backcast,"the reference year's pattern, rescaled",0.000000,0.000000,0,457.239832
 S_TAN,FY2024-25,reference_shape_forward,a reference district pattern reused later,49.842275,0.109007,17,457.239832
-S_TAN,FY2024-25,substituted_surface,a declared stand-in surface,35.137773,0.076848,7,457.239832
+S_TAN,FY2024-25,substituted_surface,a declared stand-in surface,34.519566,0.075496,5,457.239832
 S_TAN,FY2024-25,unallocated,retained at province level,0.666659,0.001458,14,457.239832

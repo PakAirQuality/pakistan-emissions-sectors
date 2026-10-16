@@ -37,8 +37,9 @@ not T2, deliberately: the within-window weights are satellite-OBSERVED, but the 
 themselves are the crop calendar's claim - the fetch was season-scoped, so an out-of-window
 zero is calendar-asserted rather than observed. One year's fire record is never carried to
 another: a year without a fetched season uses elapsed-day weights at T4. The held
-archive supports own-year profiles through FY2023–24. FY2024–25 uses that explicitly
-labelled fallback; its annual burned mass is estimated independently of monthly timing.
+archive supports own-year profiles through FY2024–25; that year's windows were filled
+(rc69) from NASA's keyless country-year files (fetch_firms --from-country-archive 2024).
+The annual burned mass is estimated independently of monthly timing.
 
 Usage:  python3 -m pkinv.sectors.agriculture.monthly
 Writes: outputs/agriculture_monthly_2024.csv

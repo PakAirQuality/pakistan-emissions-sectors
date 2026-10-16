@@ -28,13 +28,13 @@ monthly_last_month,202506,pakemis_monthly_fy2015_16_fy2024_25.csv,latest month p
 monthly_rows,23892,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months published
 monthly_evidence_vocabulary,TE1;TE2;TE3;TE4,pakemis_monthly_fy2015_16_fy2024_25.csv,the timing-evidence letters the nine-year product uses; the reference-year layer uses T1-T4 for the same four classes
 monthly_flat_share_pct,61.6,pakemis_monthly_fy2015_16_fy2024_25.csv,"share of published monthly mass on a declared-flat profile (TE4) - the months exist; this is how much of them is allocation rather than record. SUPERSEDED AS A HEADLINE by monthly_observed_share_pct / monthly_physical_share_pct / monthly_weakly_timed_share_pct: this figure is true but says nothing about how much of that flatness is the physical answer, and most of it is"
-monthly_flat_rows,12468,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months carrying the weakest timing class
-artifact_count,972,pakemis_artifact_inventory.csv,physical files this release ships
-canonical_count,233,pakemis_artifact_inventory.csv,artefacts declared canonical - a product the release is for
+monthly_flat_rows,12444,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months carrying the weakest timing class
+artifact_count,973,pakemis_artifact_inventory.csv,physical files this release ships
+canonical_count,234,pakemis_artifact_inventory.csv,artefacts declared canonical - a product the release is for
 canonical_uncited,0,pakemis_artifact_inventory.csv,canonical artefacts no manuscript names; ratcheted in tests/test_artifact_inventory.py with the list in the failure message
 artifacts_tier_audit,272,pakemis_artifact_inventory.csv,artefacts in the audit release tier
 artifacts_tier_build,169,pakemis_artifact_inventory.csv,artefacts in the build release tier
-artifacts_tier_core,298,pakemis_artifact_inventory.csv,artefacts in the core release tier
+artifacts_tier_core,299,pakemis_artifact_inventory.csv,artefacts in the core release tier
 artifacts_tier_research,56,pakemis_artifact_inventory.csv,artefacts in the research release tier
 artifacts_tier_supporting,177,pakemis_artifact_inventory.csv,artefacts in the supporting release tier
 agriculture_fiscal_basis_categories,6,pakemis_agriculture_fiscal_series.csv,agriculture categories reconstructed on observed Pakistani fiscal activity
@@ -52,7 +52,7 @@ uncertainty_variance_share_residual_pct,1.93,pakemis_longitudinal_uncertainty.cs
 uncertainty_variance_share_persists_pct,77.79,pakemis_longitudinal_uncertainty.csv,share of national variance in parameters that persist across fiscal years
 monthly_observed_share_pct,36.5,pakemis_temporal_decomposition.csv,X: monthly mass whose within-year variation is carried by an observed monthly series
 monthly_physical_share_pct,41.9,pakemis_temporal_decomposition.csv,"Y: monthly mass whose flat profile is the PHYSICAL answer - continuous or stock-driven processes, where obtaining a monthly series would not change the shape"
-monthly_weakly_timed_share_pct,21.7,pakemis_temporal_decomposition.csv,"Z: monthly mass that genuinely varies within the year and is carried flat because no monthly evidence was obtained. THIS is the gap, and the only one of the three that acquiring data would close"
+monthly_weakly_timed_share_pct,21.6,pakemis_temporal_decomposition.csv,"Z: monthly mass that genuinely varies within the year and is carried flat because no monthly evidence was obtained. THIS is the gap, and the only one of the three that acquiring data would close"
 deposit_files,2413,pakemis_deposit_manifest.csv,"files in the archive deposit, assembled from an explicit allowlist"
 deposit_megabytes,2215.4,pakemis_deposit_manifest.csv,"size of the archive deposit, EXCLUDING the context-stamped artefacts whose size this manifest cannot record without describing itself - the PDFs, the manifest and the sidecars. The deposit is larger than this number by those files"
 deposit_source_documents,0,pakemis_deposit_manifest.csv,"third-party source documents in the deposit; the register names them and says where to obtain them instead, because their redistribution terms are mostly not established and this project cannot license what it does not own"

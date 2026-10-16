@@ -115,12 +115,12 @@ def is_restricted(relative):
     return restricted_reason(relative) is not None
 
 
-def mounts():
+def mounts(root=ROOT):
     """Every restricted name a public clone links to the overlay: the trees, the named
     files, and the files the patterns match in the overlay. Paths relative to the root."""
     names = [prefix for prefix, _ in RESTRICTED_TREES] + [p for p, _ in RESTRICTED_FILES]
-    overlay = overlay_root()
-    if overlay and overlay != ROOT:
+    overlay = overlay_root(root)
+    if overlay and overlay != os.path.abspath(root):
         for pattern, _ in RESTRICTED_PATTERNS:
             folder = os.path.dirname(pattern)
             base = os.path.join(overlay, folder)

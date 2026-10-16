@@ -75,6 +75,15 @@ class TestTheMountedLayersAreReal(unittest.TestCase):
         held = {r["path"] for r in _rows("data", "catalog", "document_retention.csv")}
         self.assertGreater(len(manifest), len(held) * 0.9)
 
+    def test_the_build_snapshot_sees_the_mounted_files(self):
+        """The build compares each input before and after a task; a mounted document missing
+        from the before-snapshot reads as edited during the task and fails the build."""
+        from pkinv.build_support import input_snapshot
+        files = input_snapshot(ROOT)["files"]
+        pinned = next(l.strip() for l in open(os.path.join(ROOT, "data", "catalog",
+                      "sources_freeze.txt"), encoding="utf-8") if l.strip() and not l.startswith("#"))
+        self.assertIn(pinned, files)
+
     def test_the_lfs_documents_are_seen(self):
         lfs = layers.lfs_files(root=ROOT)
         if not lfs:
