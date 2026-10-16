@@ -484,6 +484,19 @@ class TestSectorRegistriesAgree(unittest.TestCase):
                          "present but unlisted, so untested: %s" % (on_disk - set(SECTORS)))
 
 
+_FRESH_MANIFEST = []
+
+
+def _fresh_manifest():
+    """One fresh release-manifest build per test process (rc69: two tests each built their
+    own). Each caller gets a deep copy, because both pop the git block before comparing."""
+    import copy
+    from pkinv.report import release_manifest
+    if not _FRESH_MANIFEST:
+        _FRESH_MANIFEST.append(release_manifest.build())
+    return copy.deepcopy(_FRESH_MANIFEST[0])
+
+
 _DIRTY = None
 
 
@@ -712,7 +725,6 @@ class TestReleaseIntegrity(unittest.TestCase):
         both are covered by the clean-tree assertion instead."""
         release_time_check("the release manifest is regenerated at the release fixpoint")
         import subprocess
-        from pkinv.report import release_manifest as rm
         try:
             committed = json.loads(subprocess.check_output(
                 ["git", "show", "HEAD:outputs/release_manifest.json"],
@@ -728,7 +740,7 @@ class TestReleaseIntegrity(unittest.TestCase):
         if os.path.realpath(top) != os.path.realpath(ROOT):
             self.skipTest("this tree is not its own git checkout (a package inside another "
                           "checkout); the committed manifest belongs to the parent")
-        fresh = rm.build()
+        fresh = _fresh_manifest()
         committed.pop("git", None)
         fresh.pop("git", None)
         if committed == fresh:
@@ -1144,7 +1156,6 @@ class TestReleaseIntegrity(unittest.TestCase):
         so that this test can be exact. If it drifts, an output moved without the release
         record moving with it."""
         release_time_check("the release manifest is regenerated at the release fixpoint")
-        from pkinv.report import release_manifest
         import json
         # rc42: the manifest hashes every source document; without the vault the documents
         # block cannot regenerate, so this is a documents-gate test inside a package. The
@@ -1154,7 +1165,7 @@ class TestReleaseIntegrity(unittest.TestCase):
         require_documents(*sorted(p for p in documents.registered() if p.startswith("sources/")))
         with open(os.path.join(OUT, "release_manifest.json"), encoding="utf-8") as handle:
             shipped = json.load(handle)
-        fresh = release_manifest.build()
+        fresh = _fresh_manifest()
         fresh.setdefault("schema", shipped.get("schema"))
         from _support import presentation_layer
         layer = presentation_layer()

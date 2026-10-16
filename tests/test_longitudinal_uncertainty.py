@@ -22,6 +22,7 @@ has a test rather than a paragraph.
 Run:  python3 -m unittest discover tests -p "test_longitudinal_uncertainty.py"
 """
 import collections
+import copy
 import csv
 import os
 import re
@@ -52,10 +53,21 @@ def _rows(name):
     return read_rows(os.path.join(OUTPUTS, name))
 
 
+_BY_YEAR = []
+
+
+def _components_by_year():
+    """One read of the published components (about 8 s) for the whole module, each caller
+    getting its own deep copy, so a test that mutates them cannot leak into another (rc69)."""
+    if not _BY_YEAR:
+        _BY_YEAR.append(lu.components_by_year())
+    return copy.deepcopy(_BY_YEAR[0])
+
+
 class TestItDescribesThePublishedInventory(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.by_year = lu.components_by_year()
+        cls.by_year = _components_by_year()
 
     def test_every_sector_year_closes_to_the_series_before_any_draw(self):
         """The gate that comes first. assert_closure raises, so reaching the count is the
@@ -87,7 +99,7 @@ class TestTheStreamKeyContract(unittest.TestCase):
 
     def test_every_key_leads_with_the_engine_category(self):
         from pkinv.core import parameters as param_core
-        by_year = lu.components_by_year()
+        by_year = _components_by_year()
         for scenario in lu.SCENARIOS:
             for component in lu._keyed(by_year[2020]["power"], "power", 2020, scenario):
                 self.assertEqual(component["_mc_key"].split("|", 1)[0],
@@ -99,7 +111,7 @@ class TestTheStreamKeyContract(unittest.TestCase):
         """`_mc_key` anchors a dependency group's representative member. Writing the value
         into it re-seeds every shared parameter, and the typed scenario silently collapses
         onto full independence - which is exactly what happened before this test existed."""
-        by_year = lu.components_by_year()
+        by_year = _components_by_year()
 
         def keyed(fy_end):
             return {lu._identity(c): c["_mc_key"]
@@ -122,7 +134,7 @@ class TestTheStreamKeyContract(unittest.TestCase):
 class TestTheCorrelationIsRealAndPointsTheRightWay(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.by_year = lu.components_by_year()
+        cls.by_year = _components_by_year()
         cls.levels, cls.draws = lu.levels(cls.by_year, n_iter=N_ITER)
         cls.trend = lu.differences(cls.by_year, cls.draws, n_iter=N_ITER)
 
@@ -209,7 +221,7 @@ class TestTheDiagnosticThatExplainsTheAnswer(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        by_year = lu.components_by_year()
+        by_year = _components_by_year()
         comps = []
         for sector, rows in sorted(by_year[lu.REFERENCE_YEAR].items()):
             comps += lu._keyed(rows, sector, lu.REFERENCE_YEAR, "parameter_typed")
@@ -256,7 +268,7 @@ class TestTheDiagnosticThatExplainsTheAnswer(unittest.TestCase):
         """Fail-closed. An untyped group raises inside group_type; this reaches every group
         the decomposition actually resolves so a new one is caught at test time."""
         from pkinv.core import parameters as param_core
-        by_year = lu.components_by_year()
+        by_year = _components_by_year()
         comps = []
         for sector, rows in sorted(by_year[lu.REFERENCE_YEAR].items()):
             comps += lu._keyed(rows, sector, lu.REFERENCE_YEAR, "parameter_typed")
@@ -378,7 +390,7 @@ class TestTheShippedProductsAgreeWithTheModule(unittest.TestCase):
         the total by that sector alone.
         """
         from pkinv.report import longitudinal_uncertainty as lu
-        by_year = lu.components_by_year()
+        by_year = _components_by_year()
         year = max(y for y in by_year if len(by_year[y]) == 10)
         full = lu._run_year(by_year, year, "parameter_typed", 2000, lu.SEED)
         same = lu._run_year({year: dict(by_year[year])}, year, "parameter_typed", 2000,
@@ -426,7 +438,7 @@ class TestTheStreamKeysCarryNoFloat(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.by_year = lu.components_by_year()
+        cls.by_year = _components_by_year()
         cls.pins = lu.pin_years(cls.by_year)
 
     def test_no_key_contains_a_decimal_number(self):
@@ -484,7 +496,7 @@ class TestTheShippedPrefixIsReproducible(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.by_year = lu.components_by_year()
+        cls.by_year = _components_by_year()
         cls.pins = lu.pin_years(cls.by_year)
         cls.shipped = {}
         for r in read_rows(cls.PREFIX):
