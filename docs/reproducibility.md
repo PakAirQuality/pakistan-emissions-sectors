@@ -1,6 +1,6 @@
 # Reproducibility and release
 
-PakEmis **1.0.0rc68** covers **July 2015–June 2025**, ten fiscal years. FY2023–24
+PakEmis **1.0.0rc69** covers **July 2015–June 2025**, ten fiscal years. FY2023–24
 remains the detailed reference year; FY2025–26 is a separate provisional source
 extension. The maintained article, longer report and sector notes describe this
 release. `outputs/release_manifest.json` records its exact version, code identity,
@@ -90,7 +90,7 @@ documentation. `scripts/unpack_deposit.py` verifies all archive checksums and
 restores the original paths into an empty directory. The compiled-input lane is:
 
 ```sh
-python3 scripts/unpack_deposit.py dist/pakemis-1.0.0rc68-release.zip /tmp/pakemis-review
+python3 scripts/unpack_deposit.py dist/pakemis-1.0.0rc69-release.zip /tmp/pakemis-review
 cd /tmp/pakemis-review
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.lock
