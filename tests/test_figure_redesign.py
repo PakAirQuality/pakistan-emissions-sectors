@@ -24,6 +24,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.report import manuscript_style as S                          # noqa: E402
 from pkinv.core.reporting_window import CORE_PERIOD_IDS
+from _support import require_compiled_manuscripts  # noqa: E402
 
 FIGDIR = os.path.join(ROOT, "paper_national", "figures")
 V3 = os.path.join(ROOT, "paper_national", "versions", "v3")
@@ -98,9 +99,10 @@ class TestEveryFigureIsDrawnAtItsPrintedSize(unittest.TestCase):
     def test_both_layouts_place_every_figure_at_the_size_it_was_drawn(self):
         """The two-column paper and the one-column review manuscript share one set of figure
         blocks. Neither may rescale a figure, in either direction."""
+        require_compiled_manuscripts()
         pattern = re.compile(r"<\.\./\.\./figures/(f\d{2}_[a-z0-9_]+)\.pdf, id=\d+, ([\d.]+)pt x "
                              r"([\d.]+)pt>.*?Requested size: ([\d.]+)pt x ([\d.]+)pt")
-        for doc in ("paper_national", "submission"):
+        for doc in ("paper", "submission"):   # rc69: paper.tex is compiled once; paper_national.pdf is its copy
             log = os.path.join(V3, doc + ".log")
             self.assertTrue(os.path.exists(log), "%s.log is absent: run `make paper-v3 paper-v3-review`" % doc)
             with open(log, encoding="utf-8", errors="ignore") as handle:

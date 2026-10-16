@@ -26,11 +26,13 @@ from pkinv.build_support import (FileDigests, dump_atomic, file_identity, input_
                                 directory_identity, asset_bindings, physical_paths)
 
 
-FINALIZATION = frozenset({
-    "Paper artefacts (stored queries)", "Manuscript figures", "Dashboard",
-    "Artifact inventory", "Product coverage", "Deposit manifest", "Product facts registry",
-    "Claim matrix", "Release manifest", "Availability fragments", "Sync paper figures",
-})
+# The kinds of work `make dev` builds (run_all.CATEGORIES, rc69). Until rc68 the development
+# group was "everything except these eleven labels", and every figure stage added after the
+# list was written ran in each development build. FINALIZATION is kept as the derived set of
+# labels outside the development kinds, for the readers that ask about it by name.
+DEV_CATEGORIES = ("science", "validation")
+FINALIZATION = frozenset(p.label for p in registry.PHASES
+                         if p.category not in DEV_CATEGORIES)
 CI_EXCLUDED = frozenset({"Manuscript figures", "Dashboard", "Sync paper figures"})
 
 # Native readers can bypass Python's file-open audit event. These explicit source
@@ -80,7 +82,11 @@ def phases_for_group(group, phases=None):
     if group == "deposit":
         return [p for p in phases if p.label not in DEPOSIT_EXCLUDED]
     if group == "dev":
-        return [p for p in phases if p.label not in FINALIZATION and not p.network]
+        return [p for p in phases if p.label not in FINALIZATION and not p.network
+                and p.category in DEV_CATEGORIES + (None,)]
+    if group == "manuscript":
+        # figures, tables and TeX only; their science inputs are this checkout's products
+        return [p for p in phases if p.category == "manuscript"]
     if group == "ci":
         return [p for p in phases if p.label not in CI_EXCLUDED]
     if group == "full":
@@ -624,7 +630,7 @@ def execute(phases, graph, cache, *, full=False, strict=False, jobs=1, explain=F
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--group", choices=("dev", "ci", "full", "ingest", "sectors", "deposit"), default="dev")
+    parser.add_argument("--group", choices=("dev", "ci", "full", "ingest", "sectors", "deposit", "manuscript"), default="dev")
     parser.add_argument("--target", action="append", help="task label, command or product; includes prerequisites")
     parser.add_argument("--sector", action="append", choices=sorted(SECTOR_SOURCE_TREES),
                         help="all registered tasks for this sector, with prerequisites")

@@ -239,8 +239,7 @@ eval:
 	python3 -m pkinv.eval.buffalo_implied_ef
 	python3 -m pkinv.eval.spatial_nh3_validation
 
-sync-figures:
-	python3 scripts/sync_figures.py
+sync-figures: figures-v3
 
 # --- Manuscripts ------------------------------------------------------------
 # All share paper_common/{preamble,references}. Every target syncs figures from
@@ -277,12 +276,15 @@ COPERNICUS = TEXINPUTS=$(CURDIR)/paper_common/copernicus//: BSTINPUTS=$(CURDIR)/
 NATIONAL_VERSION ?= v3
 NATIONAL_DIR = paper_national/versions/$(NATIONAL_VERSION)
 
-paper-national: figures-v3 sync-figures
+# ONE COMPILE PER DELIVERABLE (rc69). The v3 article, its review layout and the technical
+# supplement are each compiled once, from their maintained sources, and copied to the
+# release filenames. Until rc68 the wrappers paper_national.tex and supplement.tex (one
+# \input line each) were compiled as well, producing byte-for-byte the same PDFs a second
+# time, and submission.tex was compiled by two targets. The wrappers stay as stable entry
+# points for a reader; nothing builds them. v3 has no cross-document references, so no
+# article-supplement-article pass is needed; v1 keeps its own in its own directory.
+paper-national: paper-v3 paper-v3-review paper-v3-supplement
 	@mkdir -p papers/pdf
-	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper_national.tex
-	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode supplement.tex
-	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper_national.tex
-	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode submission.tex
 	cp $(NATIONAL_DIR)/paper_national.pdf papers/pdf/national_paper.pdf
 	cp $(NATIONAL_DIR)/supplement.pdf papers/pdf/national_supplement.pdf
 	cp $(NATIONAL_DIR)/submission.pdf papers/pdf/national_submission.pdf
@@ -292,33 +294,33 @@ paper-national: figures-v3 sync-figures
 	cd paper_national/versions/v1 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode supplement.tex
 	@if [ -f paper_national/versions/v1/paper_national.pdf ]; then cp paper_national/versions/v1/paper_national.pdf papers/pdf/national_long_report.pdf; fi
 
-# v3 is the current integrated article and technical supplement. The stable
-# paper-national entry points copy these current PDFs into the release directory;
-# the maintained v1 long report is preserved separately. Frozen v2 sources remain
+# v3 is the current integrated article and technical supplement. Frozen v2 sources remain
 # historical records and are never rebuilt by these targets.
-# The five integrated main figures and their generated facts use the released
-# GHG and pollutant products. Legacy technical-note figures are maintained first.
-# All are drawn at their printed size by src/pkinv/report/manuscript_style.py. `make papers-v3`
-# rebuilds the figures and all three documents.
+#
+# ONE FIGURE STAGE. Every figure, generated table and TeX fact file the manuscripts read is
+# a registered build phase of kind `manuscript` (src/pkinv/run_all.py, CATEGORIES), run in
+# registry order by the build with its cache. Until rc68 this target ran five scripts by
+# hand, four of which were also registry phases, and the paper targets depended only on
+# sync-figures, so under `make -j` a compile could start while a figure was being redrawn.
+# Every compile now depends on this one stage. All figures are drawn at their printed size
+# by src/pkinv/report/manuscript_style.py.
 figures-v3:
-	python3 scripts/build_manuscript_figures.py
-	python3 scripts/make_fig_ghg_grid.py
-	python3 scripts/build_integrated_figures.py
-	python3 scripts/make_v3_product_list.py
-	python3 scripts/verify_manuscript_figures.py
+	python3 -m pkinv.build --group manuscript $(BUILD_ARGS)
 
-papers-v3: figures-v3 paper-v3 paper-v3-review paper-v3-supplement
+papers-v3: paper-v3 paper-v3-review paper-v3-supplement
 
-paper-v3: sync-figures
+paper-v3: figures-v3
 	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper.tex
+	cp paper_national/versions/v3/paper.pdf paper_national/versions/v3/paper_national.pdf
 
-paper-v3-review: sync-figures
+paper-v3-review: figures-v3
 	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode submission.tex
 
 # The technical supplement uses the same unmodified Copernicus class and
 # generated release facts as the article and review-layout source.
-paper-v3-supplement: sync-figures
+paper-v3-supplement: figures-v3
 	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode technical_supplement.tex
+	cp paper_national/versions/v3/technical_supplement.pdf paper_national/versions/v3/supplement.pdf
 
 # One self-contained manuscript per sector. Skips papers not yet written, so this target is
 # usable from the first one onwards rather than only when all nine exist.
@@ -328,7 +330,7 @@ SECTORS = agriculture waste transport power residential ippu fugitives railways 
 # beside the source - then lands in papers/pdf/ under its sector's name. Nine files called
 # paper.pdf in nine directories is not something you can hand to anyone; one folder of
 # <sector>_paper.pdf is. The in-place paper.pdf is the intermediate and is gitignored.
-sector-papers: sync-figures
+sector-papers: figures-v3
 	@mkdir -p papers/pdf
 	@for s in $(SECTORS); do \
 		if [ -f papers/$$s/paper.tex ]; then \
@@ -347,7 +349,6 @@ papers: paper-national paper-v3 paper-v3-review paper-v3-supplement sector-paper
 
 # Regenerate every figure the manuscripts use, straight from the engine outputs.
 figures: figures-v3
-	python3 -m pkinv.report.figures
 
 clean:
 	rm -f outputs/*.csv outputs/*.md outputs/*.html outputs/*.png

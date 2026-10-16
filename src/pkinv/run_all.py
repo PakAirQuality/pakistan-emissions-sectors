@@ -108,6 +108,9 @@ class Phase:
     # True only after complete inputs AND exclusive output ownership were audited.
     # Observing one run is useful evidence, but is not such an audit.
     audited: bool = False
+    # science | validation | manuscript | release, from CATEGORIES below (rc69); the build
+    # groups select on it. None only before _with_categories() has run.
+    category: str = None
 
     @property
     def key_output(self):
@@ -1973,6 +1976,11 @@ PHASES = [
                  "data/baselines/rc67_integrated_campaign/outputs/pakemis_air_atomic_annual.csv")),
     Phase("Artifact inventory", "pkinv.report.artifact_inventory", True,
           writes=("outputs/pakemis_artifact_inventory.csv",)),
+    # THE SUPPLEMENT'S PRODUCT LIST WAS IN NO PHASE (rc69): `make figures-v3` ran it by hand,
+    # after the four figure stages the registry already held. It reads the artifact
+    # inventory's roles and every product's leading comment, so it follows that phase.
+    Phase("Supplement product list", "scripts/make_v3_product_list.py", False,
+          writes=("paper_national/versions/v3/products_appendix.tex",)),
     Phase("Product coverage", "scripts/make_product_coverage.py", True,
           writes=("outputs/pakemis_product_coverage.csv",
                   "paper_national/versions/v1/sections/generated_coverage.tex"),
@@ -2199,7 +2207,263 @@ def _with_asset_paths(phases):
             for phase in phases]
 
 
-PHASES = _with_asset_paths(_with_spatial_prerequisites(_with_canonical_prerequisites(PHASES)))
+
+# EVERY PHASE DECLARES WHAT KIND OF WORK IT IS (rc69), and the build groups are chosen by
+# kind. Until rc68 the development group excluded eleven labels by name, so each figure
+# stage added later (the v3 tables and charts, the gridded and integrated figures, their
+# verification) entered every `make dev` without anyone deciding it should. Now:
+#   science     the inventory itself: sources, engines, national, uncertainty, spatial
+#   validation  comparisons, benchmarks and audits that read the science and write evidence
+#   manuscript  figures, tables and TeX for the papers, and the dashboard
+#   release     the release's bookkeeping: inventories, manifests, deposit, provenance
+# `make dev` builds science and validation. Every label is listed under exactly one kind,
+# and there is no default: a new phase that is not listed stops the import, so it cannot
+# drift into a group by omission (tests/test_build_categories.py holds both directions).
+CATEGORIES = {
+    "science": (
+        "Period registry",
+        "Month registry",
+        "ADM2 reporting units",
+        "Brick kiln fleet observations",
+        "Power plant workbooks",
+        "Fiscal extension source tables",
+        "Residential own-year degree-days",
+        "Power station coal booking",
+        "Power SO2 admission register",
+        "Compatibility input views",
+        "Canonical activity tables",
+        "Agriculture",
+        "Agriculture timeseries (1990-2024)",
+        "Agriculture fiscal history",
+        "Agriculture Monte Carlo",
+        "Agriculture key categories",
+        "Agriculture nitrogen ledger",
+        "LULUCF (exploratory, outside every total)",
+        "Agriculture provincial",
+        "Agriculture districts",
+        "Agriculture district panel (1990-2024)",
+        "Agriculture air pollutants",
+        "Agriculture air key categories",
+        "Agriculture air uncertainty",
+        "Agriculture air time series",
+        "Waste",
+        "Waste air pollutants",
+        "Waste MC draw file",
+        "Waste MC alternative draw file",
+        "Waste uncertainty",
+        "Road transport",
+        "Transport provincial shape",
+        "Transport air pollutants",
+        "Power generation",
+        "Power air pollutants",
+        "Power grid basis change",
+        "Residential fuel",
+        "Residential air pollutants",
+        "Industrial processes",
+        "IPPU metadata",
+        "Industrial combustion",
+        "HFC species bank",
+        "Coal lane reconciliation",
+        "Agri reference-panel divergence",
+        "ADM2 frame 2022 crosswalk",
+        "Fugitive oil and gas",
+        "Railways",
+        "Railways air pollutants",
+        "Aviation fallback study",
+        "Aviation reconciliation study",
+        "Aviation",
+        "Aviation air pollutants",
+        "Completeness table",
+        "National rollup",
+        "National key categories",
+        "Fugitives MC draw file",
+        "Agriculture uncertainty inputs",
+        "National uncertainty",
+        "National category ledger",
+        "Parameter decomposition",
+        "Priority rankings",
+        "Dung destination variants",
+        "Dung balance",
+        "Dung residual ledger",
+        "Commercial/institutional audit",
+        "National gas closure",
+        "Named national configurations",
+        "Uncertainty reconciliation",
+        "Kiln allocation product",
+        "Waste release objects",
+        "National axis register",
+        "National series",
+        "Dung fate by year",
+        "Annual product (supported fiscal panel)",
+        "Atomic annual table",
+        "Forest flux adjudication",
+        "Minerals panel screening",
+        "F-gas leak-rate adjudication",
+        "Cement activity sources and their overlap",
+        "Unallocated activity controls",
+        "Bridge configurations (declared, unpopulated)",
+        "Coverage matrix (year x category x gas x configuration)",
+        "National monthly layer",
+        "Source-stream ledger",
+        "Survey monthly (configuration S)",
+        "Temporal profile registry",
+        "Monthly layer, supported fiscal panel",
+        "Spatial brackets (ADM2)",
+        "Temporal decomposition (physics vs ignorance)",
+        "Temporal driver registry",
+        "Monthly coverage, all 120 months",
+        "Flatness crosswalk (TE class vs physics)",
+        "Agriculture timing classes + NFDC residual",
+        "Monthly data requests (the gap, priced)",
+        "Bagasse timing variant",
+        "Fertilizer timing variant",
+        "Power profile variant",
+        "Monthly controls register",
+        "CRT crosswalk",
+        "Parquet twins",
+        "Facility registry",
+        "Gridded monthly cube",
+        "Cement kiln coal reconstruction",
+        "Air annual panel (supported fiscal panel)",
+        "Air monthly allocation",
+        "GHG conditional uncertainty",
+        "Air conditional uncertainty",
+        "Air source classes (supported fiscal panel)",
+        "Power SO2 admission bridge",
+        "Power air-control evidence",
+        "Air absence-screening ledger",
+        "Brick kiln fleet by year",
+        "Coal allocation identity",
+        "Kiln frame vectors",
+        "Power admission vectors",
+        "Fiscal-panel spatial products (ADM1 and ADM2)",
+        "Spatial-allocation brackets",
+        "Joint uncertainty by resolution",
+        "Completeness-mass ledger",
+        "Longitudinal uncertainty",
+        "EDGAR-aligned 0.1-degree grid",
+        "Spatial weight registry (per stream-year)",
+        "Air spatial support ledger",
+        "Stream-to-support ledger",
+        "Power provincial basis by year",
+        "Air spatial (all sectors)",
+        "Lahore air view",
+        "Industry air, calendar 2023",
+        "Spatial exceptions + ADM2 nesting",
+        "Spatial decomposition (geometry vs ignorance)",
+        "Common draw ensemble",
+        "Wastewater method comparison",
+        "Uncertainty drivers",
+        "Power fuel reconciliation",
+        "Power coal configurations",
+        "Structural trajectories",
+        "Activity publication",
+        "Semantic release",
+        "Enteric BTR bridge",
+        "Spatial basis taxonomy",
+        "OGRA gas-class series",
+        "Coal vintage ledger",
+        "Coal source reconciliation",
+        "Coal balance",
+        "Industrial coal bridge",
+        "Brick coal alternatives",
+        "Brick activity reconstruction",
+        "Industrial coal decision",
+        "Lahore power register",
+        "Lahore SO2 attribution",
+        "Category crosswalk",
+        "Power coal re-base ledger",
+        "Coal sector reallocation",
+        "Air structural sensitivities",
+        "Industrial coal scenarios",
+        "Industrial change attribution",
+        "Ammonia and nitric acid series",
+        "Gas-flow crosswalk",
+        "HFC household bank series",
+        "Industrial screening series",
+        "Industrial boundary ledger",
+        "Derivation chains",
+        "FAOSTAT nitrogen flows",
+    ),
+    "validation": (
+        "Railways ELK crosscheck",
+        "Kiln allocation benchmark",
+        "GEM asset-census audit",
+        "Citation pointer audit",
+        "BTR comparison (year-matched)",
+        "Rice geography crosscheck",
+        "Monthly cross-checks",
+        "EDGAR transport comparison",
+        "District rice records validation",
+        "District records validation (multi)",
+        "Livestock district validation (GLW)",
+        "Benchmark: spatial allocation",
+        "Benchmark: temporal hindcast",
+        "Data provenance audit",
+        "HTAP air comparison",
+        "Power station commissioning check",
+        "Industry air vs EDGAR",
+        "Pass-2 exit scorecard",
+        "UNSD industrial-combustion control",
+        "UNSD coal supply control",
+        "Lahore SO2 vs EDGAR gridmaps",
+        "Provincial SO2 vs EDGAR gridmaps",
+        "Power reference audit",
+        "Power province boundary audit",
+        "Industry vs EDGAR divergence",
+        "Validation catalog + scorecard",
+        "Validation five classes",
+        "Comparison crosswalk",
+    ),
+    "manuscript": (
+        "Sector technical-note facts",
+        "Manuscript figures",
+        "Manuscript figures, v3 (tables and charts)",
+        "Gridded figures",
+        "Sync paper figures",
+        "Integrated GHG and air manuscript figures",
+        "Integrated manuscript figure verification",
+        "Paper artefacts (stored queries)",
+        "Dashboard",
+        "Supplement product list",
+        "Availability fragments",
+    ),
+    "release": (
+        "Published release vintages",
+        "Release axis fingerprints",
+        "Product catalog",
+        "Release numerical changes",
+        "Artifact inventory",
+        "Product coverage",
+        "Deposit manifest",
+        "Citation deposit audit",
+        "Product facts registry",
+        "Claim matrix",
+        "Release manifest",
+    ),
+}
+
+
+def _with_categories(phases):
+    kind = {}
+    for category, labels in CATEGORIES.items():
+        for label in labels:
+            if label in kind:
+                raise ValueError("phase %r is listed under both %s and %s"
+                                 % (label, kind[label], category))
+            kind[label] = category
+    unlisted = [p.label for p in phases if p.label not in kind]
+    if unlisted:
+        raise ValueError("phases with no category in run_all.CATEGORIES (add each under "
+                         "science, validation, manuscript or release): %s" % unlisted)
+    stale = sorted(set(kind) - {p.label for p in phases})
+    if stale:
+        raise ValueError("run_all.CATEGORIES names phases that do not exist: %s" % stale)
+    return [replace(phase, category=kind[phase.label]) for phase in phases]
+
+
+PHASES = _with_categories(_with_asset_paths(_with_spatial_prerequisites(
+    _with_canonical_prerequisites(PHASES))))
 
 def declared_writes_after(label, inclusive=False):
     """Repo-relative paths every phase AFTER `label` declares it writes (with `inclusive`,

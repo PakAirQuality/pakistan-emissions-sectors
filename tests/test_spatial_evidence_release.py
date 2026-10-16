@@ -14,6 +14,10 @@ class SpatialEvidenceSourceControls(unittest.TestCase):
         cls.registry = read_rows(asset_path(OUTPUTS, 'pakemis_spatial_weights_by_year.csv'))
         cls.population = read_rows(asset_path(DATA, 'activity', 'waste', 'population_district.csv'))
         cls.crops = read_rows(asset_path(DATA, 'activity', 'agriculture', 'crop_district_panel.csv'))
+        # Built ONCE (rc69). Six read-only tests each called weights.build(), which recomputes
+        # the whole per-stream-year registry. None of them mutates a row; the comparison with
+        # the exported file still recomputes from sources, which is the claim being tested.
+        cls.built = tuple(weights.build())
 
     def test_latest_industrial_liquid_source_geography_reaches_final_export(self):
         from pkinv.sectors.industry import province_shape, downscale
@@ -45,7 +49,7 @@ class SpatialEvidenceSourceControls(unittest.TestCase):
             rows = [r for r in self.population if r['year'] == year]
             self.assertTrue(rows)
             self.assertTrue(all('PROJECTED' in r['source'] for r in rows))
-        rows = [r for r in weights.build() if r['period_id'] == 'FY2024-25'
+        rows = [r for r in self.built if r['period_id'] == 'FY2024-25'
                 and (r['district_panel'].startswith('resi:') or r['district_panel'] == 'waste:population')]
         self.assertTrue(rows)
         for row in rows:
@@ -57,7 +61,7 @@ class SpatialEvidenceSourceControls(unittest.TestCase):
                 self.assertEqual(row['survey_pattern_status'], 'own_period_survey_strata')
 
     def test_reference_households_distinguish_later_survey_from_population_projection(self):
-        rows = [r for r in weights.build() if r['period_id'] == 'FY2023-24'
+        rows = [r for r in self.built if r['period_id'] == 'FY2023-24'
                 and r['district_panel'].startswith('resi:')]
         self.assertTrue(rows)
         for row in rows:
@@ -68,7 +72,7 @@ class SpatialEvidenceSourceControls(unittest.TestCase):
 
     def test_absent_crop_source_produces_forward_reference_class(self):
         self.assertFalse([r for r in self.crops if r['period_id'] == 'FY2024-25'])
-        rows = [r for r in weights.build() if r['period_id'] == 'FY2024-25'
+        rows = [r for r in self.built if r['period_id'] == 'FY2024-25'
                 and r['district_panel'] in weights.CROP_PANELS]
         self.assertTrue(rows)
         for row in rows:
@@ -79,7 +83,7 @@ class SpatialEvidenceSourceControls(unittest.TestCase):
 
     def test_flare_period_is_a_calendar_proxy_not_a_fiscal_observation(self):
         source = read_rows(asset_path(DATA, 'activity', 'fugitives', 'flare_sites_pak.csv'))
-        rows = [r for r in weights.build() if r['surface'] == 'flare_points+uniform_fallback'
+        rows = [r for r in self.built if r['surface'] == 'flare_points+uniform_fallback'
                 and r['spatial_time_basis'] not in ('not_present', 'substituted_surface')]
         self.assertTrue(rows)
         for row in rows:
@@ -93,7 +97,7 @@ class SpatialEvidenceSourceControls(unittest.TestCase):
 
     def test_the_final_export_matches_the_source_derived_registry(self):
         keys = lambda r: (r['source_stream_id'], r['period_id'])
-        expected = {keys(r): {k: str(v) for k, v in r.items()} for r in weights.build()}
+        expected = {keys(r): {k: str(v) for k, v in r.items()} for r in self.built}
         actual = {keys(r): r for r in self.registry}
         self.assertEqual(actual, expected)
 
@@ -101,7 +105,7 @@ class SpatialEvidenceSourceControls(unittest.TestCase):
         surface = {(r['source_stream_id'], r['period_id']): r for r in read_rows(
             asset_path(OUTPUTS, 'pakemis_grid_stream_surfaces_by_year.csv'))}
         checked = 0
-        for row in weights.build():
+        for row in self.built:
             source = surface.get((row['source_stream_id'], row['period_id']))
             if source:
                 self.assertEqual(row['pattern_hash'], source['pattern_hash'])
