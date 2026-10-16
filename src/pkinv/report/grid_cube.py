@@ -52,6 +52,7 @@ Writes: outputs/pakemis_grid_0p05_monthly.nc
 from pkinv.assets import asset_path
 import collections
 import csv
+import math
 import os
 
 import pkinv
@@ -585,7 +586,11 @@ def located_activity_share(profile_id, period=None):
             return None
         labelled, total_gwh = _panel_labelling_coverage(period or REFERENCE)
         coverage = (labelled / total_gwh) if total_gwh > 0 else 1.0
-    total = sum(ledger.values())
+    # fsum, not sum (rc69): `located` is a set of plant names, whose iteration order follows
+    # PYTHONHASHSEED, and a float sum depends on its order. The shipped fallback register
+    # moved in its twelfth digit between two runs of the same tree. The correctly rounded
+    # sum is the same in every order.
+    total = math.fsum(ledger.values())
     located = set()
     for name in GRID_COORDINATE_TABLES:
         path = asset_path(DATA, "activity", "power", name)
@@ -595,7 +600,7 @@ def located_activity_share(profile_id, period=None):
             key = _grid_plant_name_key(row["plant"])
             if key in ledger:
                 located.add(key)
-    return (sum(ledger[k] for k in located) / total) * coverage
+    return (math.fsum(ledger[k] for k in located) / total) * coverage
 
 
 def captive_located_share():

@@ -369,5 +369,29 @@ class TestTheExactStreamPricedCo2e(unittest.TestCase):
         self.assertEqual(interior, {"power", "residential"})
 
 
+class TestTheLocatedShareDoesNotDependOnTheHashSeed(unittest.TestCase):
+    """rc69: located_activity_share summed a set of plant names, so its last digits followed
+    PYTHONHASHSEED and the fallback register moved between two runs of the same tree. The
+    seed is not pinned anywhere in the build, so every run is a different seed; this asks
+    two seeds for the same values."""
+
+    PROBE = ("from pkinv.report import grid_cube as g\n"
+             "for profile, period in (('power_gas', 'FY2015-16'), ('power_coal', 'FY2019-20'),"
+             " ('power_rfo', 'FY2017-18'), ('power_hsd', 'FY2018-19')):\n"
+             "    print(repr(g.located_activity_share(profile, g.period_keys(period))))\n")
+
+    def test_two_seeds_give_the_same_shares(self):
+        import subprocess
+        import sys
+        root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+        seen = set()
+        for seed in ("1", "3"):
+            env = dict(os.environ, PYTHONHASHSEED=seed,
+                       PYTHONPATH=os.path.join(root, "src"))
+            seen.add(subprocess.check_output([sys.executable, "-c", self.PROBE], cwd=root,
+                                             env=env, text=True))
+        self.assertEqual(len(seen), 1, seen)
+
+
 if __name__ == "__main__":
     unittest.main()
