@@ -50,7 +50,7 @@ data/sectors/agriculture/activity/crop_district_panel.csv,data/sectors/agricultu
 data/sectors/agriculture/activity/crops_2024.csv,data/sectors/agriculture/activity,hand:held-source,,archived,,7,no,
 data/sectors/agriculture/activity/es_fiscal_series.csv,data/sectors/agriculture/activity,hand:held-source,,archived,,9,no,"Pakistan Economic Survey 2023-24 Agriculture chapter, statistical appendix Tables 2.3/2.4/2.9 - the PDF is under sources"
 data/sectors/agriculture/activity/fao_harvest_sessions.csv,data/sectors/agriculture/activity,producer,scripts/derive_fao_harvest_sessions.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/agriculture/activity/fertilizer_2024.csv,data/sectors/agriculture/activity,hand:held-source,,archived,,8,no,
+data/sectors/agriculture/activity/fertilizer_2024.csv,data/sectors/agriculture/activity,hand:held-source,,archived,,9,no,
 data/sectors/agriculture/activity/historical/crops.csv,data/sectors/agriculture/activity/historical,producer,src/pkinv/sectors/agriculture/fetch_history.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/activity/historical/faostat_emissions.csv,data/sectors/agriculture/activity/historical,producer,src/pkinv/sectors/agriculture/fetch_history.py;src/pkinv/sectors/agriculture/timeseries.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/activity/historical/fertilizer_n.csv,data/sectors/agriculture/activity/historical,producer,src/pkinv/sectors/agriculture/fetch_history.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -94,7 +94,7 @@ data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_R_267x340.
 data/sectors/agriculture/gis/proxy_manual_spam_rice_267x340.npy,data/sectors/agriculture/gis,producer,scripts/build_manual_proxy_caches.py (resamples the held SPAM raster),,,1,no,
 data/sectors/agriculture/gis/proxy_manure_applied_267x340.npy,data/sectors/agriculture/gis,producer,src/pkinv/sectors/agriculture/gis/derive_manure_proxy.py via proxies.get_proxy,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/gis/proxy_manure_applied_267x340.npy.txt,data/sectors/agriculture/gis,sidecar,,,,0,yes,
-data/sectors/agriculture/parameters/burning_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,5,no,
+data/sectors/agriculture/parameters/burning_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,6,no,
 data/sectors/agriculture/parameters/cui2021_pak_ef.csv,data/sectors/agriculture/parameters,hand:parameter,,,,2,no,
 data/sectors/agriculture/parameters/fertilizer_calendar.csv,data/sectors/agriculture/parameters,hand:parameter,,,,1,no,
 data/sectors/agriculture/parameters/gleam_mms.csv,data/sectors/agriculture/parameters,hand:parameter,,,,6,no,
@@ -102,7 +102,7 @@ data/sectors/agriculture/parameters/mms_shares.csv,data/sectors/agriculture/para
 data/sectors/agriculture/parameters/nfdc_offtake.csv,data/sectors/agriculture/parameters,hand:held-source,,archived,,2,no,NFDC Annual Fertilizer Review 2024-25; the row had pointed at sources/Agriculture
 data/sectors/agriculture/parameters/nowcast_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,1,no,
 data/sectors/agriculture/parameters/parameters.csv,data/sectors/agriculture/parameters,producer,src/pkinv/core/parameters.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/agriculture/parameters/residue_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,6,no,
+data/sectors/agriculture/parameters/residue_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,7,no,
 data/sectors/agriculture/parameters/rice_calendar.csv,data/sectors/agriculture/parameters,hand:parameter,,,,4,no,
 data/sectors/agriculture/parameters/rice_temperature_climatology.csv,data/sectors/agriculture/parameters,hand:parameter,,,,1,no,
 data/sectors/aviation/activity/adsblol_pilot_fy2023_24.json,data/sectors/aviation/activity,producer,scripts/ingest_aviation_study_inputs.py,,,4,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -159,14 +159,14 @@ data/sectors/aviation/evidence/unfccc/aviation_extract_crt.csv,data/sectors/avia
 data/sectors/aviation/evidence/unfccc/aviation_extract_crt.json,data/sectors/aviation/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt aviation_extract_crt.json
 data/sectors/aviation/evidence/unfccc/aviation_extract_crt_audit.csv,data/sectors/aviation/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt aviation_extract_crt_audit.json
 data/sectors/aviation/evidence/unfccc/aviation_extract_crt_audit.json,data/sectors/aviation/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt aviation_extract_crt_audit.json
-data/sectors/aviation/lookups/aircraft_aliases.csv,data/sectors/aviation/lookups,hand:derived,,derived,,2,no,ICAO type-designator normalisation
+data/sectors/aviation/lookups/aircraft_aliases.csv,data/sectors/aviation/lookups,hand:derived,,derived,,3,no,ICAO type-designator normalisation
 data/sectors/aviation/lookups/airport_aliases.csv,data/sectors/aviation/lookups,producer,scripts/build_aviation_anchor_controls.py,derived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/aviation/lookups/airport_coordinate_overrides.csv,data/sectors/aviation/lookups,producer,scripts/build_aviation_anchor_controls.py,derived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/aviation/lookups/operator_groups.csv,data/sectors/aviation/lookups,hand:derived,,derived,,3,no,airline identity grouping
+data/sectors/aviation/lookups/operator_groups.csv,data/sectors/aviation/lookups,hand:derived,,derived,,4,no,airline identity grouping
 data/sectors/aviation/metadata/source_manifest.csv,data/sectors/aviation/metadata,producer,src/pkinv/sectors/ippu/run_ippu.py,derived,,16,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/aviation/parameters/aviation_engine_map.csv,data/sectors/aviation/parameters,hand:parameter,,,,2,no,
-data/sectors/aviation/parameters/aviation_fleet_mix.csv,data/sectors/aviation/parameters,hand:parameter,,,,2,no,
-data/sectors/aviation/parameters/aviation_params.csv,data/sectors/aviation/parameters,hand:parameter,,,,2,no,
+data/sectors/aviation/parameters/aviation_engine_map.csv,data/sectors/aviation/parameters,hand:parameter,,,,3,no,
+data/sectors/aviation/parameters/aviation_fleet_mix.csv,data/sectors/aviation/parameters,hand:parameter,,,,3,no,
+data/sectors/aviation/parameters/aviation_params.csv,data/sectors/aviation/parameters,hand:parameter,,,,3,no,
 data/sectors/fugitives/activity/anchor_activity.csv,data/sectors/fugitives/activity,hand:derived,,derived,,1,no,Maintained source facts; compatibility views preserve the historical source identities.
 data/sectors/fugitives/activity/anchor_activity_2021_23.csv,data/sectors/fugitives/activity,producer,pkinv.activity.compatibility_views,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/fugitives/activity/anchor_activity_2023_24.csv,data/sectors/fugitives/activity,producer,pkinv.activity.compatibility_views,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -175,7 +175,7 @@ data/sectors/fugitives/activity/field_gas_supply_2023_24.csv,data/sectors/fugiti
 data/sectors/fugitives/activity/flare_sites_pak.csv,data/sectors/fugitives/activity,producer,scripts/ingest_fugitives_observations.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/fugitives/activity/gas_flow_controls_2021_24.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,4,no,"acquired 2026-09-10 (data/raw/finance_division/survey_2025_26/): this row had claimed 'archived, sources/Agriculture' wh"
 data/sectors/fugitives/activity/gas_network.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,2,no,
-data/sectors/fugitives/activity/infrastructure_2023_24.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,2,no,"OGRA State of the Regulated Petroleum Industry 2023-24, Tables 3.13/3.17/3.22/3.23 (the file's own source_reference colu"
+data/sectors/fugitives/activity/infrastructure_2023_24.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,3,no,"OGRA State of the Regulated Petroleum Industry 2023-24, Tables 3.13/3.17/3.22/3.23 (the file's own source_reference colu"
 data/sectors/fugitives/activity/infrastructure_history_2015_21.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,4,no,
 data/sectors/fugitives/activity/lng_terminal_coordinates.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,1,no,rc46 Wave 0: the two LNG import terminals located (retires geometry_sets 'facilities:lng_terminals 0 of 2 located' the d
 data/sectors/fugitives/activity/mars_plumes_pak.csv,data/sectors/fugitives/activity,producer,scripts/ingest_fugitives_observations.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -183,8 +183,8 @@ data/sectors/fugitives/activity/mars_sources_pak.csv,data/sectors/fugitives/acti
 data/sectors/fugitives/activity/ogra_sector_gas_2021_2023.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,4,no,"OGRA State of the Regulated Petroleum Industry: the whole sector-wise gas table for FY2020-21 (Table 3.28, read from the"
 data/sectors/fugitives/activity/post_meter_end_use_2023_24.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,6,no,
 data/sectors/fugitives/activity/production.csv,data/sectors/fugitives/activity,producer,src/pkinv/sectors/fugitives/run_fugitives.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/fugitives/activity/production_province.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,2,no,"Pakistan Statistical Year Book 2020, Table 7.3; the row had pointed at sources/Railways"
-data/sectors/fugitives/activity/provincial_controls_2023_24.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,2,no,
+data/sectors/fugitives/activity/production_province.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,3,no,"Pakistan Statistical Year Book 2020, Table 7.3; the row had pointed at sources/Railways"
+data/sectors/fugitives/activity/provincial_controls_2023_24.csv,data/sectors/fugitives/activity,hand:held-source,,archived,,3,no,
 data/sectors/fugitives/canonical/activity/anchor_activity.csv,data/sectors/fugitives/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/fugitives/anchor_activity.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/fugitives/canonical/activity/anchor_activity_2021_23.csv,data/sectors/fugitives/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/fugitives/anchor_activity_2021_23.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/fugitives/canonical/activity/anchor_activity_2023_24.csv,data/sectors/fugitives/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/fugitives/anchor_activity_2023_24.csv; declared field mapping in data/canonical_columns.csv
@@ -256,17 +256,17 @@ data/sectors/industry/gis/BRICK_KILN_SOURCES.json,data/sectors/industry/gis,side
 data/sectors/industry/gis/pak_brick_kiln_assets.csv,data/sectors/industry/gis,producer,scripts/build_brick_kiln_assets.py,derived,,8,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/industry/gis/pak_brick_kiln_coverage.csv,data/sectors/industry/gis,producer,scripts/build_benchmark_splits.py;scripts/build_brick_kiln_assets.py,derived,,2,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/industry/parameters/industry_params.csv,data/sectors/industry/parameters,hand:parameter,,,,8,no,
-data/sectors/ippu/activity/cement_monthly_2022.csv,data/sectors/ippu/activity,hand:held-source,,archived,,7,no,"PBS Quantum Index of Manufacturing Table 2, FY2021-22 and FY2022-23 editions, held as data/raw/pbs/qim/pbs_qim_table2_{2"
+data/sectors/ippu/activity/cement_monthly_2022.csv,data/sectors/ippu/activity,hand:held-source,,archived,,8,no,"PBS Quantum Index of Manufacturing Table 2, FY2021-22 and FY2022-23 editions, held as data/raw/pbs/qim/pbs_qim_table2_{2"
 data/sectors/ippu/activity/cement_producer_census_2023_24.csv,data/sectors/ippu/activity,producer,pkinv.activity.compatibility_views,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/activity/chemical_plant_activity.csv,data/sectors/ippu/activity,producer,src/pkinv/sectors/ippu/run_ippu.py,not-archived,ippu-producer-annual-reports,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/ippu/activity/clinker_trade_annual.csv,data/sectors/ippu/activity,hand:held-source,,archived,,5,no,"the two WITS pages, kept; both cited quantities are printed on them"
+data/sectors/ippu/activity/clinker_trade_annual.csv,data/sectors/ippu/activity,hand:held-source,,archived,,6,no,"the two WITS pages, kept; both cited quantities are printed on them"
 data/sectors/ippu/activity/clinker_trade_annual_controls.csv,data/sectors/ippu/activity,producer,scripts/fetch_comtrade_clinker.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/activity/clinker_trade_monthly.csv,data/sectors/ippu/activity,producer,scripts/fetch_comtrade_clinker.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/activity/company_clinker_2023_24.csv,data/sectors/ippu/activity,producer,pkinv.activity.compatibility_views,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/activity/company_clinker_series.csv,data/sectors/ippu/activity,producer,pkinv.activity.compatibility_views,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/activity/company_production.csv,data/sectors/ippu/activity,hand:derived,,derived,,1,no,Maintained source facts; compatibility views preserve the historical source identities.
 data/sectors/ippu/activity/company_roster.csv,data/sectors/ippu/activity,hand:derived,,derived,,1,no,Maintained source facts; compatibility views preserve the historical source identities.
-data/sectors/ippu/activity/facilities.csv,data/sectors/ippu/activity,hand:derived,,derived,,7,no,facility register keyed to company_public evidence rows
+data/sectors/ippu/activity/facilities.csv,data/sectors/ippu/activity,hand:derived,,derived,,8,no,facility register keyed to company_public evidence rows
 data/sectors/ippu/activity/hfc_consumption_controls.csv,data/sectors/ippu/activity,producer,src/pkinv/sectors/ippu/run_ippu.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/activity/hfc_inventory_rows.csv,data/sectors/ippu/activity,producer,scripts/build_hfc_contract.py,derived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/activity/hfc_trade_screening.csv,data/sectors/ippu/activity,hand:held-source,,archived,,5,no,"the six UN Comtrade responses, kept; fetch_comtrade_hfc.py: 18 of 18 rows agree, and the responses report three HFC line"
@@ -308,7 +308,7 @@ data/sectors/ippu/canonical/lookups/facility_geocoding_overrides.csv,data/sector
 data/sectors/ippu/canonical/parameters/ippu_params.csv,data/sectors/ippu/canonical/parameters,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/ippu_params.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/ippu/evidence/cement_thermal_evidence.csv,data/sectors/ippu/evidence,hand:held-source,,archived,,3,no,"rc53 Wave C: A TYPED NEGATIVE, one row per company. Zero of sixteen reports disclose thermal energy per tonne of clinker"
 data/sectors/ippu/evidence/chemical_plant_evidence.csv,data/sectors/ippu/evidence,producer,src/pkinv/sectors/ippu/run_ippu.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/ippu/evidence/company_boundary_audit.csv,data/sectors/ippu/evidence,hand:held-source,,archived,,5,no,"cement producers' annual reports, held under sources/IPPU/company/ (rc29 re-audit)"
+data/sectors/ippu/evidence/company_boundary_audit.csv,data/sectors/ippu/evidence,hand:held-source,,archived,,6,no,"cement producers' annual reports, held under sources/IPPU/company/ (rc29 re-audit)"
 data/sectors/ippu/evidence/company_production_evidence.csv,data/sectors/ippu/evidence,hand:derived,,derived,,1,no,Maintained source facts; compatibility views preserve the historical source identities.
 data/sectors/ippu/evidence/unfccc/ippu_audit_cells.csv,data/sectors/ippu/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt ippu_audit_cells.json
 data/sectors/ippu/evidence/unfccc/ippu_audit_cells.json,data/sectors/ippu/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt ippu_audit_cells.json
@@ -319,7 +319,7 @@ data/sectors/ippu/evidence/unfccc/ippu_extract_fgas_species.json,data/sectors/ip
 data/sectors/ippu/evidence/unfccc/ippu_extract_summary.csv,data/sectors/ippu/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt ippu_extract_summary.json
 data/sectors/ippu/evidence/unfccc/ippu_extract_summary.json,data/sectors/ippu/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt ippu_extract_summary.json
 data/sectors/ippu/lookups/facility_geocoding_overrides.csv,data/sectors/ippu/lookups,producer,scripts/ingest_ippu_coordinates.py,derived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/ippu/metadata/cdm_access_manifest.csv,data/sectors/ippu/metadata,producer,src/pkinv/sectors/ippu/run_ippu.py,derived,,3,no,Producer and storage binding declared in data/catalog/assets.csv.
+data/sectors/ippu/metadata/cdm_access_manifest.csv,data/sectors/ippu/metadata,producer,src/pkinv/sectors/ippu/run_ippu.py,derived,,4,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/metadata/evidence_maturity.csv,data/sectors/ippu/metadata,producer,src/pkinv/sectors/ippu/run_ippu.py,derived,,5,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/metadata/hfc_inventory_import_contract.csv,data/sectors/ippu/metadata,producer,src/pkinv/sectors/ippu/run_ippu.py,derived,,7,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/ippu/metadata/master_data_gap_matrix.csv,data/sectors/ippu/metadata,hand:derived,,derived,,7,no,gap matrix over this sector's own rows
@@ -405,14 +405,14 @@ data/sectors/power/evidence/workbook_emissions_crosscheck.csv,data/sectors/power
 data/sectors/power/lookups/pbs_sir_aliases.csv,data/sectors/power/lookups,hand:derived,,derived,,3,no,declared pairings between PBS's station names and the SIR listing sheets' company names (the same-year fuel crosswalk); 
 data/sectors/power/lookups/plant_aliases.csv,data/sectors/power/lookups,hand:derived,,derived,,2,no,"declared pairings between PBS's station names and NEPRA's, each corroborated in tests against the two sources' own annua"
 data/sectors/power/lookups/plant_name_crosswalk.csv,data/sectors/power/lookups,producer,scripts/build_plant_name_crosswalk.py,derived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/power/parameters/power_coal_blend_by_year.csv,data/sectors/power/parameters,hand:parameter,,,,5,no,
+data/sectors/power/parameters/power_coal_blend_by_year.csv,data/sectors/power/parameters,hand:parameter,,,,6,no,
 data/sectors/power/parameters/power_fuel_quality.csv,data/sectors/power/parameters,hand:parameter,,,,5,no,
-data/sectors/power/parameters/power_params.csv,data/sectors/power/parameters,hand:parameter,,,,10,no,
+data/sectors/power/parameters/power_params.csv,data/sectors/power/parameters,hand:parameter,,,,11,no,
 data/sectors/railways/activity/corridor_weights.csv,data/sectors/railways/activity,hand:derived,,derived,,3,no,route weights derived from this repo's own network geometry
 data/sectors/railways/activity/diesel_sulfur_regime.csv,data/sectors/railways/activity,hand:derived,,derived,,1,no,Air program Wave 1: the per-year CENTRAL sulfur case selector for railways SO2. Values live in railways_params.csv (each
 data/sectors/railways/activity/elk_rail_pak_2019.csv,data/sectors/railways/activity,producer,scripts/ingest_elk_rail.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/railways/activity/fuel_consumption.csv,data/sectors/railways/activity,hand:no-source,,not-archived,railways-yearbook-2014-15,7,no,"the two pre-series rows cite the 2014-15 Year Book, which is not held; the five later editions are. The row had said arc"
-data/sectors/railways/activity/fuel_detail.csv,data/sectors/railways/activity,hand:held-source,,archived,,2,no,
+data/sectors/railways/activity/fuel_consumption.csv,data/sectors/railways/activity,hand:no-source,,not-archived,railways-yearbook-2014-15,8,no,"the two pre-series rows cite the 2014-15 Year Book, which is not held; the five later editions are. The row had said arc"
+data/sectors/railways/activity/fuel_detail.csv,data/sectors/railways/activity,hand:held-source,,archived,,3,no,
 data/sectors/railways/activity/fuel_history_quinquennial.csv,data/sectors/railways/activity,hand:held-source,,archived,,2,no,
 data/sectors/railways/activity/service_statistics.csv,data/sectors/railways/activity,hand:held-source,,archived,,2,no,
 data/sectors/railways/activity/traffic.csv,data/sectors/railways/activity,hand:held-source,,archived,,2,no,
@@ -438,7 +438,7 @@ data/sectors/railways/gis/RAIL_SOURCES.json,data/sectors/railways/gis,sidecar,sc
 data/sectors/railways/gis/corridors.csv,data/sectors/railways/gis,hand:derived,,derived,,1,no,"not read from a document; the waypoint list that seeds the Dijkstra extraction, checked against the Year Book route-km"
 data/sectors/railways/gis/pak_rail_network.geojson,data/sectors/railways/gis,producer,scripts/build_rail_network.py,derived,,7,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/railways/gis/yards.csv,data/sectors/railways/gis,hand:held-source,,archived,,7,no,coordinates from the hashed OSM snapshot (RAIL_SOURCES.json)
-data/sectors/railways/parameters/railways_params.csv,data/sectors/railways/parameters,hand:parameter,,,,3,no,
+data/sectors/railways/parameters/railways_params.csv,data/sectors/railways/parameters,hand:parameter,,,,4,no,
 data/sectors/residential/activity/fuel_supply.csv,data/sectors/residential/activity,producer,pkinv.activity.compatibility_views,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/residential/activity/fuel_supply_annotations.csv,data/sectors/residential/activity,hand:derived,,derived,,1,no,Maintained source facts; compatibility views preserve the historical source identities.
 data/sectors/residential/activity/fuel_supply_history.csv,data/sectors/residential/activity,producer,pkinv.activity.compatibility_views,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -447,7 +447,7 @@ data/sectors/residential/activity/hies/hies_fuel_quantities.csv,data/sectors/res
 data/sectors/residential/activity/hies/hies_national_totals.csv,data/sectors/residential/activity/hies,producer,scripts/ingest_hies.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/residential/activity/monthly_degree_days.csv,data/sectors/residential/activity,producer,scripts/fetch_hdd.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/residential/activity/stove_mix_mtf.csv,data/sectors/residential/activity,hand:held-source,,archived,,2,no,
-data/sectors/residential/activity/woodfuel.csv,data/sectors/residential/activity,hand:held-source,,archived,,4,no,"the bytes the table was read from, held since the rc65 retention sweep; ingest_residential.py --check reproduces the tab"
+data/sectors/residential/activity/woodfuel.csv,data/sectors/residential/activity,hand:held-source,,archived,,5,no,"the bytes the table was read from, held since the rc65 retention sweep; ingest_residential.py --check reproduces the tab"
 data/sectors/residential/canonical/activity/fuel_supply.csv,data/sectors/residential/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/residential/fuel_supply.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/residential/canonical/activity/fuel_supply_annotations.csv,data/sectors/residential/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/residential/fuel_supply_annotations.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/residential/canonical/activity/fuel_supply_history.csv,data/sectors/residential/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/residential/fuel_supply_history.csv; declared field mapping in data/canonical_columns.csv
@@ -466,20 +466,20 @@ data/sectors/residential/evidence/official_benchmarks.csv,data/sectors/residenti
 data/sectors/residential/evidence/unfccc/residential_extract.csv,data/sectors/residential/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt residential_extract.json
 data/sectors/residential/evidence/unfccc/residential_extract.json,data/sectors/residential/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt residential_extract.json
 data/sectors/residential/parameters/residential_params.csv,data/sectors/residential/parameters,hand:parameter,,,,6,no,
-data/sectors/transport/activity/cng_gas.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,
+data/sectors/transport/activity/cng_gas.csv,data/sectors/transport/activity,hand:held-source,,archived,,3,no,
 data/sectors/transport/activity/edgar_pak_transport_categories.csv,data/sectors/transport/activity,producer,scripts/extract_edgar_transport_categories.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/transport/activity/edgar_pak_transport_series.csv,data/sectors/transport/activity,producer,scripts/extract_edgar_transport_series.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/transport/activity/emep_class_map.csv,data/sectors/transport/activity,hand:derived,,derived,,2,no,Air program Wave 2: a cell the guidebook does not publish takes a NAMED proxy here (light CNG -> PC LPG spark-ignition c
 data/sectors/transport/activity/emep_tier1_road_air.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,"Air program Wave 2: hand transcription, 204 cells machine-verified against the pdftotext of the held chapters; positiona"
 data/sectors/transport/activity/emep_tier2_road_pm_by_technology.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,rc69: technology-specific road exhaust PM2.5 and BC for the road technology case; every value read off the rendered page
-data/sectors/transport/activity/emission_factors_gkm.csv,data/sectors/transport/activity,hand:held-source,,archived,,3,no,
-data/sectors/transport/activity/fuel_split.csv,data/sectors/transport/activity,hand:held-source,,archived,,1,no,
+data/sectors/transport/activity/emission_factors_gkm.csv,data/sectors/transport/activity,hand:held-source,,archived,,4,no,
+data/sectors/transport/activity/fuel_split.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,
 data/sectors/transport/activity/fuel_sulfur_by_year.csv,data/sectors/transport/activity,hand:no-source,,not-archived,road-fuel-sulfur,9,no,both Dawn articles are held with their content; the PSO product page is held only as a script shell without the cited se
 data/sectors/transport/activity/ocac_fy2015_16_transcription.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,identity-gated transcription of an image-only edition; four gate families in sectors/transport/ocac_image_edition.py inc
 data/sectors/transport/activity/ocac_sectoral_annual.csv,data/sectors/transport/activity,hand:held-source,,archived,,17,no,"page 1 of 2, SECTORAL SALES / CONSUMPTION OF POL PRODUCTS subtitled PAKISTAN - ENERGY PRODUCTS; the TRANSPORT sector blo"
 data/sectors/transport/activity/ocac_sectoral_provincial.csv,data/sectors/transport/activity,hand:held-source,,archived,,11,no,"pages 2-9 of 18, SECTORAL SALES OF ENERGY PRODUCTS one page per area in the order SINDH, PUNJAB, KHYBER PAKHTUN KHAWA, B"
 data/sectors/transport/activity/vehicles_district.csv,data/sectors/transport/activity,producer,scripts/ingest_transport.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/transport/activity/vkt.csv,data/sectors/transport/activity,hand:held-source,,archived,,1,no,
+data/sectors/transport/activity/vkt.csv,data/sectors/transport/activity,hand:held-source,,archived,,2,no,
 data/sectors/transport/canonical/activity/cng_gas.csv,data/sectors/transport/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/transport/cng_gas.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/transport/canonical/activity/edgar_pak_transport_categories.csv,data/sectors/transport/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/transport/edgar_pak_transport_categories.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/transport/canonical/activity/edgar_pak_transport_series.csv,data/sectors/transport/canonical/activity,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/transport/edgar_pak_transport_series.csv; declared field mapping in data/canonical_columns.csv
@@ -499,7 +499,7 @@ data/sectors/transport/gis/ROAD_SOURCES.json,data/sectors/transport/gis,sidecar,
 data/sectors/transport/gis/pak_road_density_267x340.npy,data/sectors/transport/gis,producer,scripts/build_road_network.py,derived,,7,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/transport/gis/pak_road_density_267x340.npy.txt,data/sectors/transport/gis,sidecar,scripts/build_road_network.py,,,0,yes,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/transport/lookups/vehicle_classes.csv,data/sectors/transport/lookups,hand:derived,,derived,,4,no,"class definitions, not activity"
-data/sectors/transport/parameters/transport_params.csv,data/sectors/transport/parameters,hand:parameter,,,,7,no,
+data/sectors/transport/parameters/transport_params.csv,data/sectors/transport/parameters,hand:parameter,,,,8,no,
 data/sectors/waste/activity/climatetrace_waste_sites_pak.csv,data/sectors/waste/activity,producer,scripts/ingest_climatetrace_waste.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/waste/activity/hies_disposal_routes.csv,data/sectors/waste/activity,producer,scripts/ingest_hies_waste.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/waste/activity/hydrowaste_pak.csv,data/sectors/waste/activity,producer,scripts/fetch_hydrowaste.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -528,7 +528,7 @@ data/shared/activity/nfdc/afr2025_fertilizer_gas_by_plant.csv,data/shared/activi
 data/shared/activity/nfdc/afr2025_fertilizer_gas_monthly.csv,data/shared/activity/nfdc,producer,scripts/ingest_nfdc_afr2025_fertilizer.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/activity/nfdc/afr2025_offtake_by_product.csv,data/shared/activity/nfdc,producer,scripts/ingest_nfdc_afr2025_fertilizer.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/activity/nfdc/afr2025_production_by_manufacturer.csv,data/shared/activity/nfdc,producer,scripts/ingest_nfdc_afr2025_fertilizer.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/shared/activity/nfdc/annex5_national_month_product.csv,data/shared/activity/nfdc,hand:held-source,,archived,,5,no,"NFDC Annual Fertilizer Review 2024-25, held beside its extractions; the row had pointed at sources/Agriculture"
+data/shared/activity/nfdc/annex5_national_month_product.csv,data/shared/activity/nfdc,hand:held-source,,archived,,6,no,"NFDC Annual Fertilizer Review 2024-25, held beside its extractions; the row had pointed at sources/Agriculture"
 data/shared/activity/nfdc/annex7_province_month_product_2023-24.csv,data/shared/activity/nfdc,producer,scripts/ingest_nfdc_annex7.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/activity/nfdc/nfdc_production_by_product_series.csv,data/shared/activity/nfdc,producer,scripts/ingest_nfdc_production_series.py,archived,ammonia-production,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/activity/pbs_census/livestock_by_district_2024.csv,data/shared/activity/pbs_census,hand:held-source,,archived,,2,no,the hierarchical (province/division/district) transcription of Table 4/6; data/activity/livestock_district_2024.csv is i
@@ -609,16 +609,16 @@ data/shared/metadata/air_source_classes.csv,data/shared/metadata,hand:parameter,
 data/shared/metadata/availability_matrix.csv,data/shared/metadata,hand:parameter,,,,1,no,
 data/shared/metadata/bridge_configurations.csv,data/shared/metadata,hand:parameter,,,,5,no,
 data/shared/metadata/cross_sector_ledger_map.csv,data/shared/metadata,hand:parameter,,,,8,no,
-data/shared/metadata/dependency_group_rules.csv,data/shared/metadata,hand:parameter,,,,4,no,
+data/shared/metadata/dependency_group_rules.csv,data/shared/metadata,hand:parameter,,,,5,no,
 data/shared/metadata/edgar_domain_map.csv,data/shared/metadata,hand:parameter,,,,3,no,
-data/shared/metadata/member_bindings.csv,data/shared/metadata,hand:parameter,,,,3,no,
+data/shared/metadata/member_bindings.csv,data/shared/metadata,hand:parameter,,,,4,no,
 data/shared/metadata/residual_classes.csv,data/shared/metadata,hand:parameter,,,,1,no,
 data/shared/parameters/air_emission_factors.csv,data/shared/parameters,hand:parameter,,,,7,no,
 data/shared/parameters/coal_booking_policy.csv,data/shared/parameters,producer,scripts/build_coal_vintage_ledger.py;scripts/ingest_coal_vintages.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/emission_factors.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/method_registry.csv,data/shared/parameters,hand:parameter,,,,10,no,
-data/shared/parameters/parameter_scope.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,10,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/shared/parameters/parameter_scope_exclusions.csv,data/shared/parameters,hand:parameter,,,,2,no,
+data/shared/parameters/parameter_scope.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,11,no,Producer and storage binding declared in data/catalog/assets.csv.
+data/shared/parameters/parameter_scope_exclusions.csv,data/shared/parameters,hand:parameter,,,,3,no,
 data/shared/parameters/scenario_variants.csv,data/shared/parameters,hand:parameter,,,,2,no,
 data/shared/parameters/scenarios.csv,data/shared/parameters,producer,src/pkinv/report/national_rollup.py,,,24,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/scope_registry.csv,data/shared/parameters,hand:parameter,,,,6,no,
