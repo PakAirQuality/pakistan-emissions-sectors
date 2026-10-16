@@ -8,8 +8,10 @@
 #      skip with the reason "restricted layers absent:" and the runner fails if that set
 #      differs from data/catalog/restricted_gated_tests.txt in either direction;
 #   3. rebuild the inventory from the verified tables with the deposit group, which reuses
-#      the published products of the fifteen document-reading phases, and require every
-#      rebuilt product to match the committed one.
+#      the published products of the fifteen document-reading phases, of the phases that
+#      read the COD-AB boundaries, and of the release category (manifests, source register,
+#      inventory: they describe the release with its documents), and require every rebuilt
+#      product to match the committed one.
 # Its summary line states how many tests ran, skipped for absent layers, and skipped
 # because the manuscripts are not compiled here, so its coverage is explicit.
 # The complete reproduction is .github/workflows/reproduce.yml.
@@ -26,6 +28,10 @@ jobs:
     env:
       # The manuscript layout tests read LaTeX logs; this job does not compile LaTeX.
       PKINV_NO_LATEX: "1"
+      # Checks that hold only at a release fixpoint (the regenerated manifest, the PDF ages,
+      # the deposit audit) skip with "release-time check:" on an ordinary push; the release
+      # sequence and reproduce.yml run them.
+      PKINV_RELEASE_CHECKS: "0"
       MPLBACKEND: Agg
     steps:
       - uses: actions/checkout@v4
@@ -55,7 +61,9 @@ jobs:
         run: python3 scripts/run_tests.py -j 4
 
       - name: Rebuild from the verified tables (deposit group)
-        run: python3 -m pkinv.build --group deposit --full --ledger logs/public_build.json
+        run: |
+          mkdir -p logs
+          python3 -m pkinv.build --group deposit --full --ledger logs/public_build.json
 
       - name: Every rebuilt product matches the committed one
         run: git diff --stat --exit-code -- outputs data
