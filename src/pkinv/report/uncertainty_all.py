@@ -47,6 +47,7 @@ from pkinv.core import factors
 from pkinv.core import montecarlo as mc_core
 from pkinv.core import registry
 from pkinv.paths import OUTPUTS
+from pkinv.core.shared_parameter_draws import SEED as NATIONAL_SEED
 
 # The sectors whose CO2 comes from the IPCC 2006 default fuel-carbon tables - that is, the
 # sectors reporting CO2 under an IPCC 1.A code. Agriculture (3.G/3.H urea and liming), IPPU
@@ -260,7 +261,49 @@ def _load_injected(components, sector_of=None):
     return cat_injected, sector_injected, metas, coupling
 
 
-def run(correlate_fossil=False, n_iter=mc_core.N_ITER, seed=mc_core.SEED, prebuilt=None,
+def native_components(components, n_iter, seed=NATIONAL_SEED, dung_basis="survey"):
+    """Shared native nitrogen and rank-heat draws for this reference ensemble.
+
+    The annual/category and downstream draw products call the same native replay;
+    neither may substitute the superseded independent component approximation.
+    """
+    from pkinv.core.shared_parameter_draws import (Draws, nitrogen_realisations,
+        power_coal_realisations, dung_mass_multiplier, residue_burning_realisations)
+    from pkinv.core import gwp
+    shared = Draws(n_iter, "persistent_parameters", seed)
+    nitrogen, _closure = nitrogen_realisations(2024, shared)
+    coal = power_coal_realisations(2024, shared)
+    burning = residue_burning_realisations(2024, shared)
+    native = {}
+    for c in components:
+        if c.get("_sector") == "power" and c["subitem"].startswith("Coal "):
+            native[c["_mc_key"]] = coal[c["gas"]] * gwp.GWP["AR5"].get(
+                "CH4_fossil" if c["gas"] == "CH4" else c["gas"], 1) / 1000
+        elif (c.get("_sector") == "agriculture" and c["gas"] == "N2O"
+              and c["category"] in ("Manure management", "Managed soils")):
+            key = "ghg:" + c["_mc_key"]
+            if key not in nitrogen:
+                raise ValueError("native N2O recipe missing for %s" % key)
+            native[c["_mc_key"]] = nitrogen[key] * gwp.GWP["AR5"]["N2O"] / 1000
+        elif c.get("_sector") == "agriculture" and c["category"] == "Field burning of residues":
+            native[c["_mc_key"]] = burning[c["gas"]] * gwp.GWP["AR5"][c["gas"]] / 1000
+        elif (dung_basis == "ledger" and c.get("_sector") == "residential"
+              and c["subitem"].startswith("Dung cake ")):
+            import numpy as np
+            from pkinv.core import parameters
+            _row, groups, residual, _derived = parameters.decompose([c])[0]
+            log = np.zeros(n_iter)
+            for group, sigma in groups.items():
+                if group.startswith(("livestock:", "activity:livestock:")) or group in ("1a4b_dung", "1a4b_dung_chain"):
+                    continue
+                log += shared.normal(group, 2024) * sigma - sigma * sigma / 2
+            if residual:
+                raise ValueError("ledger dung has an unexplained residual after material-flow replay")
+            native[c["_mc_key"]] = float(c["co2e_Mt_AR5"]) * np.exp(log) * dung_mass_multiplier(2024, shared)
+    return native, shared
+
+
+def run(correlate_fossil=False, n_iter=mc_core.N_ITER, seed=NATIONAL_SEED, prebuilt=None,
         stream=None, cross_sector=True):
     """Return (by_category, by_sector, total_samples).
 
@@ -291,6 +334,9 @@ def run(correlate_fossil=False, n_iter=mc_core.N_ITER, seed=mc_core.SEED, prebui
     # n_iter (tests assert the 10k prefix reproduces the published sector runs).
     cat_injected = sector_injected = None
     scalers = None
+    native, shared = {}, None
+    if stream == "parameter":
+        native, shared = native_components(components, n_iter, seed)
     if stream == "parameter" and INJECTED_MODULES:
         cat_all, sector_all, _metas, coupling = _load_injected(components)
         cat_injected = {k: v[:n_iter] for k, v in cat_all.items()}
@@ -306,7 +352,8 @@ def run(correlate_fossil=False, n_iter=mc_core.N_ITER, seed=mc_core.SEED, prebui
     by_category, total_samples, cat_samples = mc_core.run(
         components, categories, n_iter=n_iter, seed=seed, has_sinks=False,
         stream=stream, return_samples=True, cross_sector=cross_sector,
-        injected=cat_injected, component_scalers=scalers)
+        injected=cat_injected, component_scalers=scalers,
+        component_values=native, parameter_draws=shared)
 
     relabelled = [dict(c, category=c["_sector"]) for c in components]
     sector_names = [s.NAME for s in registry.all_sectors()]
@@ -315,7 +362,8 @@ def run(correlate_fossil=False, n_iter=mc_core.N_ITER, seed=mc_core.SEED, prebui
                                                stream=stream, return_samples=True,
                                                cross_sector=cross_sector,
                                                injected=sector_injected,
-                                               component_scalers=scalers)
+                                               component_scalers=scalers,
+                                               component_values=native, parameter_draws=shared)
     # The standard error of each published half-width, by batch means over the same
     # draws - and, since rc12's asymmetric surface, of each published quantile.
     for stats, samples in ((by_category, cat_samples), (by_sector, sector_samples)):
@@ -335,6 +383,8 @@ def _row_distribution(scope, name, sector_of):
     module = name if scope == "sector" else sector_of.get(name)
     if module in INJECTED_MODULES:
         return INJECTED_MODULES[module][1]
+    if module == "agriculture":
+        return "native_conserved_nitrogen_plus_shared_parameter_multipliers"
     return "mean_preserving_lognormal"
 
 
@@ -431,7 +481,7 @@ def _write_sources():
                     "mean_preserving_lognormal",
                     "national_uncertainty_parameters.csv (signed shared groups) + "
                     "component uncert_pct",
-                    mc_core.SEED, NATIONAL_N_ITER, "", "",
+                    NATIONAL_SEED, NATIONAL_N_ITER, "", "",
                     "drawn in the national loop on identity-seeded per-parameter "
                     "streams; no draw file because the loop itself is the engine"])
         w.writerow(["(shared gas activity)", "", "", "", "", "", "", "",

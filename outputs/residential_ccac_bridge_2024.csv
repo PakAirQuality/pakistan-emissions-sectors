@@ -1,7 +1,7 @@
 item,pm25_kt,note
-"ENDPOINT A: this inventory, FY2023-24 (reference)",282.7,Andreae mass-basis factors; household dung on the HIES survey series (the reference since rc67); gross emitted mass at the appliance
-WEDGE: inventory year,23.7,to the matched-CY2021 straddle-mean (259.0 kt) on the time series
+"ENDPOINT A: this inventory, FY2023-24 (reference)",282.8,Andreae mass-basis factors; household dung on the HIES survey series (the reference since rc67); gross emitted mass at the appliance
+WEDGE: inventory year,23.8,to the matched-CY2021 straddle-mean (259.0 kt) on the time series
 WEDGE: fuel set (crop residues),67.6,this inventory books household residue burning to 1A4b; a CANDIDATE alignment for an assessment that books residues to agriculture alone
 UNEXPLAINED RESIDUAL,-32.9,"SIGNED, never redistributed: PM definition (filterable/condensable scope unresolved on both sides), GAINS factor family versus Andreae field measurements, and remaining activity-share differences. -15% of endpoint B"
 "ENDPOINT B: CCAC/SEI implied residential, 2021",224.3,"35 percent of a 641 kt national total, section 3.1; GAINS-family factors on modelled household fuel shares"
-MEMO: configuration L at the matched year,590.7,NOT A STEP OF THE BRIDGE. The matched-2021 total with all the dung agriculture diverts burned in households: 2.6 times endpoint B. Through rc66 this was the bridge's starting basis and a 314 kt configuration wedge was needed to leave it
+MEMO: configuration L at the matched year,591.7,NOT A STEP OF THE BRIDGE. The matched-2021 total with all the dung agriculture diverts burned in households: 2.6 times endpoint B. Through rc66 this was the bridge's starting basis and a 314 kt configuration wedge was needed to leave it

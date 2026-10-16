@@ -20,6 +20,8 @@ from pkinv import paths
 from pkinv.core.io import read_rows
 from paper_numbers._common import (
     DOCS,
+    ROOT,
+    active_sections,
     _doc_path)
 from paper_numbers.doc_claims import (
     DOC_CLAIMS,
@@ -250,7 +252,7 @@ MANUSCRIPT_CONSTANTS = {
     # rc62: the six-product industrial-liquids blend the product split replaced. Quoting it is
     # the point - the sentence explains that furnace oil was riding the geography of fuels it
     # does not burn, which cannot be said without naming the number it was riding.
-    ("national", "0.657"): "the superseded all-liquids province blend, quoted as history",
+    ("national", "0.657"): "the superseded all-liquids province blend fraction, quoted as history",
     ("national", "96.59"): "the previous release's administrative share, quoted as history",
     ("national", "29"): "the previous editions' 1A2 residual (~29 Mt), quoted as history "
                         "beside the rc46 activation that halved it to 15.85; the live "
@@ -867,6 +869,82 @@ MANUSCRIPT_CONSTANTS = {
 # which is what pkinv.report.category_ledger exists for.
 
 
+MANUSCRIPT_CONSTANTS[("national-v3", "0.05")] = "declared grid spacing in degrees, a spatial resolution rather than an emission mass"
+
+def _sector_macro_values(doc, section, registered_only=False):
+    """Current note macros independently resolve native inventory quantities."""
+    if doc not in ("agriculture", "power", "residential"):
+        return []
+    path = _doc_path(doc, section)
+    definitions_path = os.path.join(ROOT, "papers", doc, "generated", "integrated_air_facts.tex")
+    if not os.path.exists(path) or not os.path.exists(definitions_path):
+        return []
+    definitions = dict(re.findall(r"\\newcommand\{\\(\w+)\}\{([^{}]+)\}", open(definitions_path).read()))
+    used = []
+    for line, text in enumerate(open(path).read().splitlines(), 1):
+        text = re.sub(r"(?<!\\)%.*", "", text)
+        used.extend((name, line) for name in re.findall(r"\\(Sector\w+)", text) if name in definitions)
+    if registered_only:
+        from pkinv.assets import asset_path
+        ghg = read_rows(asset_path(paths.OUTPUTS, "pakemis_ghg_configuration_atoms.csv"))
+        air = read_rows(asset_path(paths.OUTPUTS, "pakemis_air_annual_fy2015_16_fy2024_25.csv"))
+        species = {"PMfine": "PM2.5", "BC": "BC", "NOx": "NOx", "SOtwo": "SO2",
+                   "CO": "CO", "NMVOC": "NMVOC", "NHthree": "NH3"}
+        for name, _line in used:
+            parsed = re.fullmatch(r"Sector(Ref|Latest)(\w+)", name)
+            if parsed is None:
+                raise AssertionError("unregistered current sector macro " + name)
+            period = "FY2023-24" if parsed.group(1) == "Ref" else "FY2024-25"
+            suffix = parsed.group(2)
+            if suffix == "GHG":
+                source = [float(r["co2e_Mt_AR5"]) for r in ghg if r["sector_id"] == doc
+                          and r["configuration_id"] == "S_TAN" and r["period_id"] == period and r["co2e_Mt_AR5"]]
+            elif suffix in species:
+                source = [float(r["emissions_Gg"]) for r in air if r["sector_id"] == doc
+                          and r["configuration_id"] == "S_TAN" and r["period_id"] == period
+                          and r["pollutant"] == species[suffix] and r["emissions_Gg"]]
+            else:
+                raise AssertionError("unregistered current sector species " + suffix)
+            if not source:
+                raise AssertionError("missing source for sector macro " + name)
+            if float(definitions[name]) != float("%.4g" % sum(source)):
+                raise AssertionError("sector macro differs from independent native inventory: " + doc + "/" + name)
+    return [(definitions[name], line) for name, line in used]
+
+
+def _national_macro_values(doc, section, registered_only=False):
+    """Numeric macros at this exact source site, backed by the current claim audit."""
+    if doc not in ("national", "national-supplement", "national-v3"):
+        return _sector_macro_values(doc, section, registered_only=registered_only)
+    path = _doc_path(doc, section)
+    if not os.path.exists(path):
+        return []
+    from pkinv.assets import asset_path
+    definitions_path = os.path.join(ROOT, "paper_national", "versions", "v3", "generated", "integrated_facts.tex")
+    definitions = dict(re.findall(r"\\newcommand\{\\(\w+)\}\{([^{}]+)\}", open(definitions_path).read()))
+    def resolve(name, seen=()):
+        if name in seen:
+            raise AssertionError("cyclic quantitative macro: " + name)
+        value = definitions[name]
+        alias = re.fullmatch(r"\\(\w+)", value)
+        return resolve(alias.group(1), seen + (name,)) if alias and alias.group(1) in definitions else value
+    numeric = {name: resolve(name) for name in definitions if name not in {"CoreEndYear"}}
+    numeric = {name: value for name, value in numeric.items() if re.fullmatch(r"-?\d+(?:\.\d+)?", value)}
+    if registered_only:
+        rel = os.path.relpath(path, ROOT).replace(os.sep, "/")
+        registry = read_rows(asset_path(ROOT, "data", "claim_matrix.csv"))
+        allowed = {r["printed_pattern"].split(":", 1)[1] for r in registry
+                   if r["section_file"] == rel and r["printed_pattern"].startswith("macro:")}
+        numeric = {name: value for name, value in numeric.items() if name in allowed}
+    out = []
+    for lineno, line in enumerate(open(path).read().splitlines(), 1):
+        line = re.sub(r"(?<!\\)%.*", "", line)
+        for name in re.findall(r"\\(\w+)", line):
+            if name in numeric:
+                out.append((numeric[name], lineno))
+    return out
+
+
 def _quantities(doc, section):
     """Every printed quantity in one section, as (value, line).
 
@@ -909,12 +987,13 @@ def _quantities(doc, section):
                     lineno = sum(1 for o in offsets if o <= pos)
                     out.append((value, lineno))
             pos += len(chunk) + 2
+    out.extend(_national_macro_values(doc, section))
     return out
 
 
 def _covered_values(doc, section):
     """Values in one section already checked against the engine, as printed strings."""
-    covered = set()
+    covered = {value for value, _line in _national_macro_values(doc, section, registered_only=True)}
     path = _doc_path(doc, section)
     if os.path.exists(path):
         # RAW text, deliberately. test_every_claim_still_matches_its_output searches the file
@@ -960,9 +1039,12 @@ def _document_registered_values(doc):
     Generated sections count in full: their bytes equal a fresh render, so a prose repeat
     of one of their cells is a repeat of a verified value."""
     out = set()
-    for section in os.listdir(DOCS[doc]):
+    for section in active_sections(doc):
         if section.endswith(".tex"):
             out |= _covered_values(doc, section)
             if (doc, section) in GENERATED_SECTIONS:
                 out |= {value for value, _lineno in _quantities(doc, section)}
     return out
+
+MANUSCRIPT_CONSTANTS[("agriculture", "10")] = "ESA WorldCover source classification pixel resolution, metres; fixed product specification"
+MANUSCRIPT_CONSTANTS[("agriculture", "0.01")] = "declared kiln-exclusion buffer in degrees for the fire diagnostic; fixed method setting, not an emission result"

@@ -55,7 +55,10 @@ class TheBoundaryLedgerCarriesBothBenchmarks(unittest.TestCase):
             diags = [r for r in csv.DictReader(l for l in h if not l.startswith("#"))
                      if r["boundary_status"] == "diagnostic"]
         names = {r["component"] for r in diags}
-        self.assertIn("EDGAR 1.A.2 coverage gap", names)
+        # rc68: a signed comparator difference, not a measure of absent emissions, so the
+        # row no longer calls itself a "coverage gap"
+        self.assertIn("EDGAR 1.A.2 comparison difference", names)
+        self.assertNotIn("EDGAR 1.A.2 coverage gap", names)
         self.assertIn("UNSD 1.A.2 combustion benchmark", names)
 
 

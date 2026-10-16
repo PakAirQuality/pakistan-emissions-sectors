@@ -9,6 +9,7 @@
 \documentclass[5p,times,authoryear]{elsarticle}
 
 \input{../../paper_common/preamble}
+\input{generated/integrated_air_facts}
 \graphicspath{{figures/}}
 
 % ---------------------------------------------------------------------------
@@ -37,7 +38,7 @@ Air-Pollutant Emissions from Electricity Generation in Pakistan}
 
 \begin{keyword}
 electricity generation \sep captive power \sep energy-basis activity data \sep
-coal blend \sep industrial combustion \sep uncontrolled emission bound \sep
+coal blend \sep industrial combustion \sep control scenarios \sep
 AP-42 \sep IPCC 2006 Guidelines \sep Pakistan \sep MRV
 \end{keyword}
 
@@ -75,7 +76,7 @@ AP-42 \sep IPCC 2006 Guidelines \sep Pakistan \sep MRV
 
 The calculation engine, the activity data, the captive plant register and every output quoted
 here are version-controlled in the inventory repository
-(\url{https://github.com/RehanAhmad13/pakistan-emissions-sectors}) and reproduce from a single command. The sector is regenerated
+(\url{https://github.com/PakAirQuality/pakistan-emissions-sectors}) and reproduce from a single command. The sector is regenerated
 with \texttt{python3 -m pkinv.sectors.power.run\_power}; \ref{app:repro} gives the full
 sequence. Every number printed in this paper is read from a generated CSV rather than
 transcribed, and a test asserts that the manuscript and the engine agree.

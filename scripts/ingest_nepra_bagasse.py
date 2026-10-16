@@ -50,7 +50,8 @@ def _num(tok):
     return float(tok.replace(",", "")) if NUM.match(tok) else None
 
 
-def parse(lines):
+def parse(lines, years=None):
+    years = YEARS if years is None else years
     rows, total_row = [], None
     inside = False
     for line in lines:
@@ -62,16 +63,16 @@ def parse(lines):
             continue
         if END in t:
             nums = [v for v in (_num(x) for x in t.split()) if v is not None]
-            if len(nums) == len(YEARS):
+            if len(nums) == len(years):
                 total_row = nums
             break
         toks = t.split()
         if len(toks) < 6:
             continue
         nums = [v for v in (_num(x) for x in toks) if v is not None]
-        if len(nums) != len(YEARS):
+        if len(nums) != len(years):
             continue
-        words = toks[:len(toks) - len(YEARS)]
+        words = toks[:len(toks) - len(years)]
         # Fuel labels sit at the end of the text part and come from a tiny vocabulary;
         # everything before them is the plant name ("The Thal Industries Corporation").
         fuels = []
@@ -85,7 +86,7 @@ def parse(lines):
             primary, alternate = fuels
         else:
             primary, alternate = label or "Bagasse", ""
-        for year, gwh in zip(YEARS, nums):
+        for year, gwh in zip(years, nums):
             rows.append({"fiscal_year": year, "plant": name, "fuel_primary": primary,
                          "fuel_alternate": alternate, "generation_GWh": gwh,
                          "source_table": "NEPRA SoIR 2024 Table 8 (E3)"})
@@ -104,8 +105,14 @@ def main(check=False):
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     cols = ["fiscal_year", "plant", "fuel_primary", "fuel_alternate", "generation_GWh",
             "source_table"]
+    # The maintained final table includes the next edition's own-year block.
+    # Reuse its source parser and controls rather than dropping appended years.
+    sys.path.insert(0, os.path.dirname(__file__))
+    from ingest_release_extension import power_products
+    extension_rows = power_products()[4]
+    rows = sorted(rows, key=lambda r: (r["plant"], r["fiscal_year"])) + extension_rows
     if write_or_check(OUT, cols,
-                      sorted(rows, key=lambda r: (r["plant"], r["fiscal_year"])), check):
+                      rows, check):
         return 1
     if check:
         print("the bagasse generation reproduces from the held document.")

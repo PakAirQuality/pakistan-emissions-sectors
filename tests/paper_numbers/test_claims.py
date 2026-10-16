@@ -24,7 +24,8 @@ from paper_numbers.doc_claims import (
     CLAIMS,
     DIRECTION_WORDS,
     DOC_CLAIMS,
-    MOVEMENTS)
+    MOVEMENTS,
+    LEGACY_NATIONAL_MOVEMENTS)
 
 
 def _movement_problems(printed_from, printed_to, engine_from, engine_to, span=""):
@@ -93,8 +94,11 @@ class TestRestatedMovementsKeepTheirDirection(unittest.TestCase):
         place. Both groups are required."""
         # Five until rc41 Wave 4, when the transport module stopped moving between the
         # two correlation structures and its entry became a plain two-way anchor.
-        self.assertGreaterEqual(len(MOVEMENTS), 4)
-        for name, doc, section, pattern, _from, _to in MOVEMENTS:
+        # The rewritten article expresses paired changes through generated
+        # quantities, tested independently in test_claim_matrix. Keep the former
+        # two-endpoint sentence controls as an explicit historical registry.
+        self.assertGreaterEqual(len(MOVEMENTS) + len(LEGACY_NATIONAL_MOVEMENTS), 4)
+        for name, doc, section, pattern, _from, _to in list(MOVEMENTS) + list(LEGACY_NATIONAL_MOVEMENTS):
             self.assertTrue(os.path.exists(_doc_path(doc, section)),
                             "%s points at a section that does not exist" % name)
             self.assertEqual(re.compile(pattern).groups, 2,
@@ -193,17 +197,20 @@ class TestPaperNumbers(unittest.TestCase):
             msg.append("paper disagrees with the engine:\n  " + "\n  ".join(stale))
         self.assertFalse(msg, "\n\n".join(msg))
 
-    def test_national_paper_states_the_cross_sector_ar5_contract(self):
+    def test_current_native_product_uses_its_declared_cross_sector_ar5_contract(self):
         from pkinv.core.gwp import GWP
-        with open(_doc_path("national", "03_architecture.tex"), encoding="utf-8") as handle:
-            text = handle.read()
-        expected = {
-            "CO2": r"CO\$_2=([\d.]+)\$",
-            "CH4": r"biogenic CH\$_4=([\d.]+)\$",
-            "CH4_fossil": r"fossil CH\$_4=([\d.]+)\$",
-            "N2O": r"N\$_2\$O\$=([\d.]+)\$",
-        }
-        for key, pattern in expected.items():
-            match = re.search(pattern, text)
-            self.assertIsNotNone(match, "national GWP wording lost for %s" % key)
-            self.assertEqual(float(match.group(1)), GWP["AR5"][key])
+        from pkinv.assets import asset_path
+        from paper_numbers._common import OUT
+        rows = read_rows(asset_path(OUT, "pakemis_ghg_configuration_atoms.csv"))
+        checked = 0
+        for row in rows:
+            if not row["gas"] or not row["emission_native_mass"]:
+                continue
+            key = "CH4_fossil" if row["gas"] == "CH4" and row["gas_origin"] == "fossil" else row["gas"]
+            expected = float(row["emission_native_mass"]) * GWP["AR5"][key] / 1000
+            # Native masses round to 6 dp Gg and metric masses to 8 dp Mt.
+            # Propagate those actual export precisions through the GWP scale.
+            tolerance = 0.5e-6 * GWP["AR5"][key] / 1000 + 0.5e-8 + 1e-12
+            self.assertAlmostEqual(float(row["co2e_Mt_AR5"]), expected, delta=tolerance)
+            checked += 1
+        self.assertGreater(checked, 1000)

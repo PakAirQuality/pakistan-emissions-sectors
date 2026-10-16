@@ -47,16 +47,30 @@ AIR_FILES = {
     "power": "power_air_pollutants_fy2023_24.csv",
     "railways": "railways_air_pollutants_2024.csv",
 }
-PERIODS = {"agriculture": "CY2024", "residential": "CY2024", "transport": "CY2024",
-           "waste": "CY2024", "railways": "CY2024",
-           "power": "FY2023-24", "aviation": "FY2023-24"}
+PERIODS = {sector: REFERENCE_PERIOD for sector in AIR_FILES}
 CRUISE_ANCHOR = "Domestic aviation cruise CO2"
 
 ADM1_FIELDS = ["sector_id", "period_id", "province", "category", "subitem", "proxy",
-               "pollutant", "emissions_kt", "share_status", "evidence_grade", "located_share"]
+               "pollutant", "emissions_kt", "share_status", "evidence_grade", "located_share",
+               "estimate_kind"]
 ADM2_FIELDS = ["sector_id", "period_id", "shape_id", "adm2_ids", "unit_name", "province",
                "category", "subitem", "proxy", "pollutant", "emissions_kt",
-               "allocation_status", "evidence_grade", "located_share"]
+               "allocation_status", "evidence_grade", "located_share", "estimate_kind"]
+# rc68 air review (criterion 3): the power reference-year file this layer places is the
+# UNCONTROLLED SCREENING scenario (coal, gas, bagasse and the unadmitted oil remainder). Until
+# rc68 its rows sat beside the covered estimates here with nothing on the row to say so, and a
+# sum over this file added 211 Gg of screened coal SO2 to covered mass. Every row now carries
+# its kind; a screening row is never a covered estimate and never enters a covered total.
+COVERED = "covered_estimate"
+SCREENING = "screening_scenario_not_in_covered_total"
+
+
+def estimate_kind(sector, row):
+    if sector != "power":
+        return COVERED
+    if "SCREENING" not in row.get("basis", "").upper():
+        raise ValueError("a power air row that is not declared a screening scenario: %r" % row)
+    return SCREENING
 
 
 def _read(path):
@@ -125,11 +139,12 @@ def build():
             base = {"sector_id": sector, "period_id": PERIODS[sector],
                     "category": row["category"], "subitem": subitem,
                     "proxy": proxy, "pollutant": row["pollutant"],
-                    "evidence_grade": grade, "located_share": located}
+                    "evidence_grade": grade, "located_share": located,
+                    "estimate_kind": estimate_kind(sector, row)}
             for province, share in sorted(vec.items()):
                 adm1.append(dict(base, province=province,
                                  emissions_kt="%.9g" % (kt * share), share_status=status))
-            if row.get("ghg_subitem") == CRUISE_ANCHOR:
+            if status == "unallocated_below_adm1":
                 continue                      # ADM1 only, exactly like its stream's mass
             for shape_id, adm2_ids, province, astatus, share in shapes[sid]:
                 adm2.append(dict(base, shape_id=shape_id, adm2_ids=adm2_ids, unit_name="",
@@ -142,7 +157,8 @@ def build():
                      "province": r["province"], "category": r["category"],
                      "subitem": r["subitem"], "proxy": r["proxy"],
                      "pollutant": r["pollutant"], "emissions_kt": r["emissions_kt"],
-                     "share_status": "own_layer", "evidence_grade": "", "located_share": ""})
+                     "share_status": "own_layer", "evidence_grade": "", "located_share": "",
+                     "estimate_kind": COVERED})
     adm2.extend(_agriculture_adm2())
     return adm1, adm2
 
@@ -174,7 +190,7 @@ def _agriculture_adm2():
         base = {"sector_id": "agriculture", "period_id": PERIODS["agriculture"],
                 "category": r["category"], "subitem": "", "proxy": r["proxy"],
                 "pollutant": r["pollutant"], "emissions_kt": "%.9g" % r["emissions_kt"],
-                "evidence_grade": "", "located_share": ""}
+                "evidence_grade": "", "located_share": "", "estimate_kind": COVERED}
         shape = name_to_shape.get(r["district"])
         if shape:
             members = shape_members.get(shape, [])

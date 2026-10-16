@@ -1,41 +1,23 @@
-"""The inventory in 108 months: nine fiscal years, every stream, closing in native gas.
+"""Monthly emissions over the supported fiscal panel, closing in native gas mass.
 
-WHAT THIS IS. The atomic annual table says how much; the temporal profile registry says
-when; this multiplies them:
+The atomic annual product supplies each component-year's magnitude; the temporal
+profile register supplies its twelve monthly weights. The product is their
+multiplication. Every component-year must close to its compatible annual native
+mass and GWP aggregate before records are written. Periods and configurations are
+read from their maintained registers rather than inferred from the latest year.
 
-    E(component, year, month) = E(component, year) x weight(component, year, month)
+Current common-core rows contain native gas masses. The explicit closure_basis
+field also supports legacy CO2e-only records without representing a missing native
+mass as zero. A sector-year declared absent has no estimated monthly records; it
+is never manufactured as twelve zero emissions.
 
-and refuses to write anything unless every component-year's twelve months sum back to it.
-The monthly product therefore cannot move a gramme of the annual inventory - which is the
-whole design constraint, because a seasonal profile is a presentational choice and an annual
-total is a result.
+Source identifiers, timing targets, evidence classes, borrowed-year labels and
+profile status accompany every component-month. These describe the allocation's
+support and do not turn a proxy shape into observed emission timing.
 
-WHY IT IS BUILT FROM THE ATOM RATHER THAN FROM TEN SECTOR ENGINES. Every sector's monthly
-module takes a fiscal year and passes it to its PROFILE while calling its engine with no
-year at all, so a nine-year loop over those modules would have published the reference
-year's mass nine times under nine labels. That defect is unreachable here: magnitudes come
-from the published annual table and the modules are consulted only for shapes.
-
-CLOSURE IS IN NATIVE GAS, before any GWP is applied. A layer that closed on CO2e alone could
-hide a gas mislabelled between CH4 and N2O behind two GWPs that happen to cancel; native
-mass has no such freedom. Every row is checked on AR5 CO2e as well, so nothing closes on
-one basis only by accident.
-
-SIXTY-FOUR ROWS CANNOT CLOSE NATIVELY, and they say so rather than being quietly excluded.
-Agriculture before the reference year rides a FAOSTAT-basis series that publishes AR5 CO2e
-and no gas masses, so those rows reach the atomic table at category-and-gas grain with an
-empty native mass - the same declared coarseness the annual product carries. Their
-`closure_basis` is co2e_AR5 and the closure gate holds them to that; every other row says
-native_mass and is held to both.
-
-WHAT A MISSING MONTH MEANS. Nothing here is filled. A sector-year the annual product
-declares absent has no monthly rows at all - not twelve zeros, which would read as an
-observation that nothing was emitted - and the test asserts the month product covers exactly
-the live atomic rows, no more and no less.
-
-Usage:  python3 -m pkinv.report.monthly_all_years
-Writes: outputs/pakemis_monthly_fy2015_16_fy2023_24.csv
-        outputs/pakemis_monthly_evidence.csv
+Usage: python3 -m pkinv.report.monthly_all_years
+Writes the supported-period monthly product, its configuration expansion and the
+monthly evidence register under outputs/.
 """
 from __future__ import annotations
 
@@ -50,8 +32,9 @@ from pkinv.report import temporal_profiles
 from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 
-OUT = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2023_24.csv")
+OUT = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2024_25.csv")
 EVIDENCE_OUT = asset_path(OUTPUTS, "pakemis_monthly_evidence.csv")
+CONFIGURATIONS_OUT = asset_path(OUTPUTS, "pakemis_ghg_configuration_monthly.csv")
 
 FIELDS = ("period_id", "month", "component_id", "sector_id", "reporting_sector",
           "ipcc_code", "category",
@@ -88,8 +71,8 @@ def _months_table():
     return {r["month_id"]: r for r in month_registry.rows()}
 
 
-def build():
-    atom = _atom()
+def build(atom=None):
+    atom = _atom() if atom is None else atom
     profiles = _profiles()
     calendar = _months_table()
     rows = []
@@ -204,6 +187,12 @@ def evidence_table(rows):
 
 def main():
     rows = build()
+    from pkinv.core import configurations as conf
+    from pkinv.report.atomic_annual import CONFIGURATIONS_OUT as CONFIGURED_ATOMS
+    atoms = [r for r in read_rows(CONFIGURED_ATOMS) if r["co2e_Mt_AR5"] != ""]
+    configured = [row for configuration in conf.ALL
+                  for row in build([r for r in atoms if r["configuration_id"] == configuration])]
+    write_table(CONFIGURATIONS_OUT, FIELDS, configured)
     os.makedirs(OUTPUTS, exist_ok=True)
     with open(OUT, "w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=FIELDS)

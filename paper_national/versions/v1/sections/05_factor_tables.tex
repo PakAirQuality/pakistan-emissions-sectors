@@ -1,131 +1,21 @@
-% ===========================================================================
-\section{The Parallel-Table Trap in the IPCC Defaults}
-\label{sec:factors}
-% ===========================================================================
+\section{Source factors and chemical conventions}\label{sec:factors}
+Stationary-combustion factors are selected by reporting category and fuel. Public energy industries, manufacturing/captive generation and residential combustion use their applicable IPCC tables, even where one gas factor happens to be equal \citep{ipcc2006energy,ipcc2019}. Coal mass is converted with documented rank NCVs before per-energy factors are applied. A factor already incorporating oxidation or control is not discounted twice. Air factors retain the source-specific EMEP/EEA or AP-42 process boundary \citep{emep2019,epaap42}.
 
-The 2006 Guidelines \citep{ipcc2006} publish stationary and mobile combustion factors not as
-one table per fuel but as several parallel tables, one per source category. Volume~2
-Chapter~2 gives four for stationary combustion---energy industries, manufacturing,
-commercial, and residential---and Chapter~3 gives separate tables for road, rail and off-road
-mobile sources. The same fuel appears in all of them.
-
-Across those tables the \COtwo{} factor for a given fuel is \emph{identical}, because \COtwo{}
-depends only on the carbon in the fuel and on complete oxidation. The \CHfour{} and \NtwoO{}
-factors are not identical, and in some cases differ by nearly an order of magnitude, because
-they depend on how completely and at what temperature the fuel burns.
-
-This creates a failure mode with an unusually bad signature. A compiler who selects the wrong
-table gets \COtwo{} exactly right---and \COtwo{} is typically \SIrange{95}{99}{\percent} of a
-fossil combustion category, so every obvious check passes. The total looks correct. The
-comparison against an external \COtwo{} dataset agrees. Only the trace gases are wrong, and
-they can be wrong by a factor large enough to move the affected category by
-\SI{8}{\percent}---which is smaller than most published uncertainty bands and therefore
-invisible to any validation that works at the level of the total.
-
-\textbf{How much of the total moves depends on how \COtwo{}-dominated the category is, and an
-earlier edition of this paper overstated it.} The railway and mixed off-road cases swap
-\NtwoO{} between \SI{28.6}{} and \SI{3.9}{\kilo\gram\per\tera\joule} and move their own
-category by \SI{8.0}{\percent}. The power and residential cases swap \CHfour{} on gas streams
-whose totals are almost entirely \COtwo{}, and move the sector by \SI{0.08}{} and
-\SI{0.12}{\percent} respectively---the \CHfour{} row moves several-fold, the total barely at
-all. This paper previously reported all four as \SIrange{8}{9}{\percent} sector errors. The
-magnitudes are now computed from the engine's activity and the two published factors by
-\texttt{tests/test\_factor\_table\_trap.py}, so the claim cannot be restated without the
-arithmetic agreeing.
-
-The finding is unharmed by the correction, and is arguably sharper for it. What makes these
-errors dangerous is not how much of a total they move but that they move NONE of the
-\COtwo{}: every external comparator this inventory has is \COtwo{}-dominated, so all four are
-invisible to all of them regardless of size.
-
-We encountered this trap four times in ten sectors. Table~\ref{tab:factortrap} gives all
-four instances with the quantified consequence of the plausible error. Each is pinned by a
-test that fails if the wrong table's value is ever substituted, and each sector's module
-carries the warning in its own documentation with a pointer to its mirror image.
-
-\begin{table*}[htbp]
-\centering
-\small
-\begin{tabular}{@{}p{0.15\linewidth}p{0.13\linewidth}p{0.13\linewidth}p{0.22\linewidth}p{0.27\linewidth}@{}}
-\toprule
-\textbf{Sector} & \textbf{Correct table} & \textbf{Plausible error} & \textbf{Factor
-difference} & \textbf{Consequence of the error} \\
-\midrule
-Electricity generation (1A1a) &
-Vol~2 Ch~2 Table~2.2, Energy Industries &
-Table~2.5, Residential &
-Natural gas \CHfour{} \SI{1}{\kilo\gram\per\tera\joule} vs \num{5} &
-\COtwo{} unchanged; \CHfour{} inflated fivefold. A utility boiler burns far more completely
-than a domestic appliance \\[3pt]
-
-Residential fuel (1A4b) &
-Vol~2 Ch~2 Table~2.5, Residential &
-Table~2.2, Energy Industries &
-Natural gas \CHfour{} \SI{5}{\kilo\gram\per\tera\joule} vs \num{1}; kerosene \num{10} vs
-\num{3} &
-The mirror image: \CHfour{} understated by \SI{80}{\percent} on a quarter of household
-energy input \\[3pt]
-
-Railways (1A3c) &
-Vol~2 Ch~3 Table~3.4.1, Railways &
-Table~3.2.2, Road diesel &
-\NtwoO{} \SI{28.6}{\kilo\gram\per\tera\joule} vs \num{3.9}---\num{7.3} times higher &
-Railway \NtwoO{} understated by \SI{86}{\percent} and the sector total by about
-\SI{9}{\percent}. Large slow-speed locomotive engines run lean at high load, the
-\NtwoO{}-forming regime \\[3pt]
-
-Off-road machinery (1A4c) &
-Vol~2 Ch~3 Table~3.3.1, Off-road &
-Table~3.2.2, Road diesel &
-\NtwoO{} \SI{28.6}{\kilo\gram\per\tera\joule} vs \num{3.9} &
-The category would report about \SI{8}{\percent} less. Identical to the rail value because
-both derive from EEA~2005 and neither engine class generally carries a catalyst \\
-\bottomrule
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}p{.29\linewidth}p{.60\linewidth}@{}}\toprule
+Process & Applicable method boundary\\\midrule
+Combustion & Fuel/rank heat and source-category IPCC factors; biomass CO$_2$ convention separate\\
+Road exhaust/evaporation/wear & EMEP source/fuel/process factors and explicit transferred fleet/classes\\
+Industrial stacks and IPPU & Source equipment/process, integrated cement boundary, sulfur/retention and control evidence\\
+Household fuels & Dry fuel including ash for biomass; source energy basis for fossil appliances; gross release\\
+Manure and managed soil & TAN-reference and IPCC alternative; surviving N pools, native molecular conversions\\
+Waste/crop burning and fugitives & Dry/wet burned basis, combustion completeness and source-specific flow/factor methods\\\bottomrule
 \end{tabular}
-\caption{Four instances of the parallel-table trap in this inventory. In every case the
-plausible wrong table leaves \COtwo{} exactly correct---so the sector's dominant gas, its
-external benchmark comparison and its mass balance all still agree---while the trace gases
-move. How far the total moves depends on how \COtwo{}-dominated it is: the railway and
-off-road swaps move their own \emph{category} by \SI{8.0}{\percent}, the power and residential
-swaps move the \CHfour{} row several-fold and the \emph{sector total} by \SI{0.06}{} and
-\SI{0.12}{\percent}. Each magnitude is computed from the engine by a regression test rather
-than quoted.}
-\label{tab:factortrap}
-\end{table*}
+\caption{Factor applicability requires an emitting process and unit, not merely a pollutant name.}\label{tab:factortrap}
+\end{table}
 
-\subsection{Why this is a compiler-facing finding rather than a coding note}
+NH$_3$-N factors become molecular NH$_3$ by 17/14; NO-N becomes NO$_2$-equivalent by 46/14. Source NO factors receive 46/30 once. CO$_2$-equivalent is used only for declared GHG metrics. BC/OC are components of PM$_{2.5}$; compatible particulate strata are nested and are not summed.
 
-Three properties make this worth reporting rather than fixing quietly.
+AP-42 typical uncontrolled factors and transferred controlled-operation rows are scenarios where operation is unresolved. Plant design removal is distinct from installed and demonstrated annual performance. Power central admission is reviewed oil/diesel SO$_2$, while selected coal design cases remain separate. Fuel sulfur specimens, specification ceilings, raw-material sulfur, retention and removal have different evidence support.
 
-It is \emph{systematic}: it arose in four of the six fuel-burning sectors, and in each case
-the wrong table was the one a reasonable person would reach for. The power sector's fuel is
-delivered to buildings; the residential sector's largest fossil fuel is natural gas, whose
-most familiar factor is the utility one; rail and off-road both burn ordinary road diesel
-bought from the same national supply.
-
-It is \emph{invisible to validation}. We compare each sector against EDGAR, FAOSTAT, Climate
-TRACE and, where available, Pakistan's own BUR-1. Every one of those comparators is dominated
-by \COtwo{} for fossil categories. A sector using the wrong trace-gas table passes all of
-them. The only thing that catches it is reading the guidelines carefully enough to notice
-that there is more than one table, which is precisely the step under time pressure.
-
-It is \emph{directional}. The errors do not average out. Three of the four instances would
-understate the trace gases, because the road and energy-industry tables carry the lower
-\CHfour{} and \NtwoO{} values and are the more familiar tables. An inventory community making
-this error at random rates would be biased low on non-\COtwo{} combustion emissions.
-
-Two related decisions in the same family are worth recording because they run the other way.
-First, we apply \emph{no separate oxidation factor} anywhere in fossil combustion: the 2006
-Guidelines assume complete oxidation and fold it into the emission factor, with Table~1.4
-carrying an explicit oxidation column of \num{1.0} for every fuel, so applying the
-1996-vintage \num{0.98} on top would double-discount. Second, and deliberately contrasting,
-the waste sector \emph{does} carry an oxidation factor of \num{0.71}, because open burning
-genuinely is incomplete. Both are pinned by tests, so that neither can be ``corrected'' into
-the other.
-
-Finally, the power sector's activity is handled on an energy basis rather than a mass basis
-for a reason from the same family. IPCC's bituminous and lignite \COtwo{} factors differ by
-only \SI{6.8}{\percent} per terajoule but by a factor of two per tonne of coal, because their
-net calorific values differ by \SI{54}{\percent} and lignite's own published range spans
-\SIrange{5.50}{21.6}{\tera\joule\per\giga\gram}. Working in energy units makes that
-uncertainty disappear rather than requiring an assumption about which coal Pakistan burns.
+The non-rice soil reference retains the dry-climate factor conditionally; irrigated cropland, flooded rice and grazing require separate applicability assessment. Published aggregate/climate alternatives remain structural, with no tuning to FAOSTAT. Factor registers preserve native unit, original particulate definition, source/table, technology, applicability, evidence and uncertainty representation.

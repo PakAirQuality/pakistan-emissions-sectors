@@ -23,7 +23,6 @@ import unittest
 
 from _support import OUTPUTS, read_rows
 
-CONTROL_TOTAL = 223.454471
 CONTINUOUS = {"Enteric fermentation", "Manure management"}
 TIME_VARIABLE = {"Rice cultivation", "Urea application",
                  "Field burning of residues", "Managed soils"}
@@ -43,9 +42,11 @@ class TestTheDeterministicSideReconciles(unittest.TestCase):
         self.assertEqual(len(self.rows), 6)
 
     def test_the_deterministic_total_is_the_published_control(self):
-        """EXACT, because it is the same atomic table the external control reads."""
+        """Join the diagnostic to the independently exposed native engine reference."""
+        from pkinv.sectors.agriculture import engine
         total = sum(float(r["deterministic_Mt"]) for r in self.rows)
-        self.assertAlmostEqual(total, CONTROL_TOTAL, places=5)
+        native = engine.components_for_fiscal_year(2024)
+        self.assertAlmostEqual(total, sum(r["co2e_Mt_AR5"] for r in native), places=5)
 
     def test_every_category_matches_the_atomic_product(self):
         atomic = collections.defaultdict(float)
@@ -70,7 +71,8 @@ class TestTheDeterministicSideReconciles(unittest.TestCase):
         the Monte Carlo has stopped being a Monte Carlo or the column has been quietly
         repointed at the deterministic figure, and the distinction this pass drew is gone."""
         total_mc = sum(float(r["estimate_Mt"]) for r in self.rows)
-        self.assertNotAlmostEqual(total_mc, CONTROL_TOTAL, places=4)
+        self.assertNotAlmostEqual(total_mc, sum(float(r["deterministic_Mt"])
+                                               for r in self.rows), places=4)
 
     def test_it_agrees_with_the_common_ensemble(self):
         ensemble = {r["name"]: float(r["deterministic_Mt"])

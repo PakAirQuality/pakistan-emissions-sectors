@@ -1,13 +1,13 @@
 ipcc_code,ipcc_category,ipcc_allocation,engine_category,module,gas,ch4_origin,configuration,co2e_Mt_AR5,co2e_Mt_AR6,share_pct
 1.A.1.a,Public electricity and heat production,settled,Electricity and heat production,power,CH4,biogenic,L,0.00916,0.00883,0.002
 1.A.1.a,Public electricity and heat production,settled,Electricity and heat production,power,CH4,fossil,L,0.01774,0.01762,0.004
-1.A.1.a,Public electricity and heat production,settled,Electricity and heat production,power,CO2,,L,39.90732,39.90732,8.864
+1.A.1.a,Public electricity and heat production,settled,Electricity and heat production,power,CO2,,L,39.97498,39.97498,8.886
 1.A.1.a,Public electricity and heat production,settled,Electricity and heat production,power,N2O,,L,0.10586,0.10905,0.024
 1.A.2,Manufacturing industries and construction,settled,Industrial fuel combustion (1A2),industry,CH4,fossil,L,0.04974,0.04941,0.011
-1.A.2,Manufacturing industries and construction,settled,Industrial fuel combustion (1A2),industry,CO2,,L,22.46554,22.46554,4.99
+1.A.2,Manufacturing industries and construction,settled,Industrial fuel combustion (1A2),industry,CO2,,L,22.46554,22.46554,4.994
 1.A.2,Manufacturing industries and construction,settled,Industrial fuel combustion (1A2),industry,N2O,,L,0.06636,0.06836,0.015
 1.A.2,Manufacturing industries and construction,settled,Captive gas self-generation (1A2),power,CH4,fossil,L,0.00296,0.00294,0.001
-1.A.2,Manufacturing industries and construction,settled,Captive gas self-generation (1A2),power,CO2,,L,5.5439,5.5439,1.231
+1.A.2,Manufacturing industries and construction,settled,Captive gas self-generation (1A2),power,CO2,,L,5.5439,5.5439,1.232
 1.A.2,Manufacturing industries and construction,settled,Captive gas self-generation (1A2),power,N2O,,L,0.00262,0.0027,0.001
 1.A.2/1.A.4.c,Railway stationary and off-road energy (unresolved split),unresolved,Railway non-traction energy (1A2/1A4c unresolved),railways,CH4,fossil,L,1e-05,1e-05,0.0
 1.A.2/1.A.4.c,Railway stationary and off-road energy (unresolved split),unresolved,Railway non-traction energy (1A2/1A4c unresolved),railways,CO2,,L,0.00451,0.00451,0.001
@@ -16,38 +16,38 @@ ipcc_code,ipcc_category,ipcc_allocation,engine_category,module,gas,ch4_origin,co
 1.A.3.a,Civil aviation,settled,Domestic aviation,aviation,CO2,,L,0.29886,0.29886,0.066
 1.A.3.a,Civil aviation,settled,Domestic aviation,aviation,N2O,,L,0.00221,0.00228,0.0
 1.A.3.b,Road transportation,settled,Road transport,transport,CH4,fossil,L,0.39847,0.39582,0.089
-1.A.3.b,Road transportation,settled,Road transport,transport,CO2,,L,39.28474,39.28474,8.726
-1.A.3.b,Road transportation,settled,Road transport,transport,N2O,,L,0.51062,0.52604,0.113
+1.A.3.b,Road transportation,settled,Road transport,transport,CO2,,L,39.28474,39.28474,8.733
+1.A.3.b,Road transportation,settled,Road transport,transport,N2O,,L,0.51062,0.52604,0.114
 1.A.3.c,Railways,settled,Railways,railways,CH4,fossil,L,0.00059,0.00059,0.0
 1.A.3.c,Railways,settled,Railways,railways,CO2,,L,0.35272,0.35272,0.078
 1.A.3.c,Railways,settled,Railways,railways,N2O,,L,0.03608,0.03717,0.008
-1.A.4.b,Residential,settled,Residential fuel combustion,residential,CH4,biogenic,L,9.78289,9.4335,2.173
+1.A.4.b,Residential,settled,Residential fuel combustion,residential,CH4,biogenic,L,9.78397,9.43454,2.175
 1.A.4.b,Residential,settled,Residential fuel combustion,residential,CH4,fossil,L,0.05192,0.05157,0.012
-1.A.4.b,Residential,settled,Residential fuel combustion,residential,CO2,,L,18.38833,18.38833,4.084
-1.A.4.b,Residential,settled,Residential fuel combustion,residential,N2O,,L,1.24354,1.28108,0.276
+1.A.4.b,Residential,settled,Residential fuel combustion,residential,CO2,,L,18.38833,18.38833,4.088
+1.A.4.b,Residential,settled,Residential fuel combustion,residential,N2O,,L,1.24368,1.28122,0.276
 1.A.4.c,Agriculture/forestry/fishing/fish farms,unresolved,Mixed off-road (1A4c/1A2),transport,CH4,fossil,L,0.00264,0.00262,0.001
 1.A.4.c,Agriculture/forestry/fishing/fish farms,unresolved,Mixed off-road (1A4c/1A2),transport,CO2,,L,1.5692,1.5692,0.349
 1.A.4.c,Agriculture/forestry/fishing/fish farms,unresolved,Mixed off-road (1A4c/1A2),transport,N2O,,L,0.1605,0.16534,0.036
-1.B.2,Fugitive emissions from oil and natural gas,settled,Fugitive emissions from oil and gas,fugitives,CH4,fossil,L,22.58283,22.43228,5.016
-1.B.2,Fugitive emissions from oil and natural gas,settled,Fugitive emissions from oil and gas,fugitives,CO2,,L,0.91562,0.91562,0.203
+1.B.2,Fugitive emissions from oil and natural gas,settled,Fugitive emissions from oil and gas,fugitives,CH4,fossil,L,22.58283,22.43228,5.02
+1.B.2,Fugitive emissions from oil and natural gas,settled,Fugitive emissions from oil and gas,fugitives,CO2,,L,0.91562,0.91562,0.204
 1.B.2,Fugitive emissions from oil and natural gas,settled,Fugitive emissions from oil and gas,fugitives,N2O,,L,0.00092,0.00095,0.0
-2.A.1,Cement production,settled,Cement production,ippu,CO2,,L,21.81565,21.81565,4.846
-2.B.1,Ammonia production,settled,Ammonia production,ippu,CO2,,L,3.2433,3.2433,0.72
+2.A.1,Cement production,settled,Cement production,ippu,CO2,,L,21.81565,21.81565,4.849
+2.B.1,Ammonia production,settled,Ammonia production,ippu,CO2,,L,3.2433,3.2433,0.721
 2.C.1,Iron and steel production,settled,Iron and steel production,ippu,CO2,,L,0.39312,0.39312,0.087
 2.D.1,Lubricant use,settled,Lubricant use,ippu,CO2,,L,0.08329,0.08329,0.019
-3.A.1,Enteric fermentation,settled,Enteric fermentation,agriculture,CH4,biogenic,L,151.65765,146.2413,33.687
-3.A.2,Manure management,settled,Manure management,agriculture,CH4,biogenic,L,13.18202,12.71124,2.928
-3.A.2,Manure management,settled,Manure management,agriculture,N2O,,L,6.14799,6.33359,1.366
-3.C.1.b,Biomass burning in croplands,settled,Field burning of residues,agriculture,CH4,biogenic,L,0.53763,0.51843,0.119
-3.C.1.b,Biomass burning in croplands,settled,Field burning of residues,agriculture,N2O,,L,0.13192,0.1359,0.029
+3.A.1,Enteric fermentation,settled,Enteric fermentation,agriculture,CH4,biogenic,L,151.65765,146.2413,33.713
+3.A.2,Manure management,settled,Manure management,agriculture,CH4,biogenic,L,13.18202,12.71124,2.93
+3.A.2,Manure management,settled,Manure management,agriculture,N2O,,L,6.14799,6.33359,1.367
+3.C.1.b,Biomass burning in croplands,settled,Field burning of residues,agriculture,CH4,biogenic,L,0.53842,0.51919,0.12
+3.C.1.b,Biomass burning in croplands,settled,Field burning of residues,agriculture,N2O,,L,0.13211,0.1361,0.029
 3.C.3,Urea application,settled,Urea application,agriculture,CO2,,L,4.82448,4.82448,1.072
-3.C.4,Direct N2O emissions from managed soils,settled,Managed soils,agriculture,N2O,,L,16.43447,16.93061,3.65
-3.C.5,Indirect N2O emissions from managed soils,settled,Managed soils,agriculture,N2O,,L,12.09148,12.45651,2.686
-3.C.6,Indirect N2O emissions from manure management,settled,Manure management,agriculture,N2O,,L,1.89847,1.95579,0.422
-3.C.7,Rice cultivation,settled,Rice cultivation,agriculture,CH4,biogenic,L,16.54835,15.95734,3.676
-4.A,Solid waste disposal,settled,Solid waste disposal,waste,CH4,biogenic,L,9.16872,8.84127,2.037
+3.C.4,Direct N2O emissions from managed soils,settled,Managed soils,agriculture,N2O,,L,16.8218,17.32963,3.739
+3.C.5,Indirect N2O emissions from managed soils,settled,Managed soils,agriculture,N2O,,L,11.67192,12.02428,2.595
+3.C.6,Indirect N2O emissions from manure management,settled,Manure management,agriculture,N2O,,L,1.51326,1.55894,0.336
+3.C.7,Rice cultivation,settled,Rice cultivation,agriculture,CH4,biogenic,L,16.54835,15.95734,3.679
+4.A,Solid waste disposal,settled,Solid waste disposal,waste,CH4,biogenic,L,9.16872,8.84127,2.038
 4.C.2,Open burning of waste,settled,Open burning of waste,waste,CH4,biogenic,L,1.71147,1.65035,0.38
 4.C.2,Open burning of waste,settled,Open burning of waste,waste,CO2,,L,1.85321,1.85321,0.412
 4.C.2,Open burning of waste,settled,Open burning of waste,waste,N2O,,L,0.26166,0.26956,0.058
-4.D.1,Domestic wastewater treatment and discharge,settled,Domestic wastewater,waste,CH4,biogenic,L,21.88572,21.10409,4.861
-4.D.1,Domestic wastewater treatment and discharge,settled,Domestic wastewater,waste,N2O,,L,2.57213,2.64978,0.571
+4.D.1,Domestic wastewater treatment and discharge,settled,Domestic wastewater,waste,CH4,biogenic,L,21.88572,21.10409,4.865
+4.D.1,Domestic wastewater treatment and discharge,settled,Domestic wastewater,waste,N2O,,L,2.57213,2.64978,0.572

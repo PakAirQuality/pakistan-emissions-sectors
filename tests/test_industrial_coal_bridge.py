@@ -32,9 +32,17 @@ class TestTheIdentity(unittest.TestCase):
         text = "".join(banner())
         self.assertIn("dE_new = dE_official + dE_end - dE_start", text)
         self.assertIn("lies in [", text)
-        # the SOLID streams' share of the sector's -11.69 bar: brick + cement coal fall -8.12 Mt over
-        # the window; the industrial gas and liquid streams carry the remainder of the sector's change
-        self.assertIn("dE_official = -8.", text)
+        # The endpoint is the declared core, not the former nine-year window.
+        import re
+        by_year = defaultdict(float)
+        for row in rows():
+            if row["component"].startswith("1.A.2"):
+                by_year[row["fiscal_year"]] += float(row["official_mt_co2e"] or 0)
+        endpoints = sorted(by_year)
+        expected = by_year[endpoints[-1]] - by_year[endpoints[0]]
+        match = re.search(r"dE_official = ([+-]?[\d.]+) Mt", text)
+        self.assertIsNotNone(match)
+        self.assertAlmostEqual(float(match.group(1)), expected, delta=.011)
         self.assertIn("+37.1", text)                        # the 2.A.1 promotion, back-years summed
 
 
@@ -43,7 +51,8 @@ class TestThePromotedComponent(unittest.TestCase):
         self.clinker = {r["fiscal_year"]: r for r in rows() if r["component"].startswith("2.A.1")}
 
     def test_nine_years_a_point_not_a_band_and_the_census_year_is_unchanged(self):
-        self.assertEqual(len(self.clinker), 9)
+        from pkinv.core.reporting_window import CORE_FY_STARTS
+        self.assertEqual(set(self.clinker), {"%d-%02d" % (y, (y+1)%100) for y in CORE_FY_STARTS})
         for fy, r in self.clinker.items():
             self.assertEqual(r["reconstructed_low_mt"], r["reconstructed_high_mt"], fy)
             self.assertEqual(r["reconstructed_central_mt"], r["reconstructed_high_mt"], fy)
@@ -53,12 +62,12 @@ class TestThePromotedComponent(unittest.TestCase):
 
     def test_the_back_year_deltas_are_the_census_fraction_applied(self):
         """+3.96..+5.57 Mt per year, +37.1 in total - the joint re-base's size on 2.A.1."""
-        deltas = [float(r["delta_vs_official_low_mt"]) for fy, r in self.clinker.items() if fy != "2023-24"]
+        deltas = [float(r["delta_vs_official_low_mt"]) for fy, r in self.clinker.items() if fy < "2023-24"]
         self.assertEqual(len(deltas), 8)
         self.assertTrue(all(3.9 < d < 5.7 for d in deltas), deltas)
         self.assertAlmostEqual(sum(deltas), 37.13, places=1)
         for fy, r in self.clinker.items():
-            if fy != "2023-24":
+            if fy < "2023-24":
                 self.assertTrue(r["decision"].startswith("PROMOTE"), fy)
 
 
@@ -96,7 +105,7 @@ class TestTheOfficialColumnsAreTheAtoms(unittest.TestCase):
         atoms = defaultdict(float)
         with open(ATOMS, encoding="utf-8") as h:
             for r in csv.DictReader(l for l in h if not l.startswith("#")):
-                if r.get("configuration_id", "REF_2023_24") != "REF_2023_24" or not r.get("co2e_Mt_AR5"):
+                if r.get("configuration_id", "S_TAN") != "S_TAN" or not r.get("co2e_Mt_AR5"):
                     continue
                 fy = (r.get("period_label") or r.get("period_id", "")).replace("FY", "")
                 if r["subitem"].startswith("Brick-kiln coal"):

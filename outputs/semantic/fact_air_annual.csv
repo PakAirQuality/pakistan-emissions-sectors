@@ -1,53 +1,53 @@
 result_row_id,sector_id,period_id,category,subitem,pollutant,emissions_kt,uncert_pct,assurance
 bfbe9ef7b3e53a1d1cd251c1,agriculture,CY2024,Field burning of residues,Residue burning BC (cotton),BC,0.422,70.0,estimated
-f7061bba62be1b30a0a086e3,agriculture,CY2024,Field burning of residues,Residue burning BC (maize),BC,0.209,70.0,estimated
-d4b46f4b91cd78313dd45536,agriculture,CY2024,Field burning of residues,Residue burning BC (rice),BC,1.258,70.0,estimated
+f7061bba62be1b30a0a086e3,agriculture,CY2024,Field burning of residues,Residue burning BC (maize),BC,0.207,70.0,estimated
+d4b46f4b91cd78313dd45536,agriculture,CY2024,Field burning of residues,Residue burning BC (rice),BC,1.257,70.0,estimated
 e6923b403a56c891dc673d45,agriculture,CY2024,Field burning of residues,Residue burning BC (sugarcane),BC,0.931,70.0,estimated
-4ca0206cea0f8c21e5980370,agriculture,CY2024,Field burning of residues,Residue burning BC (wheat),BC,0.735,70.0,estimated
-1757e3ebb0d6b9a8c94624ac,agriculture,CY2024,Field burning of residues,Residue burning CO (cotton),CO,77.684,53.9,estimated
-bad8b6b7d5585fc3e3ce939f,agriculture,CY2024,Field burning of residues,Residue burning CO (maize),CO,38.502,53.9,estimated
-be4206b480e37b4f5970ef4c,agriculture,CY2024,Field burning of residues,Residue burning CO (rice),CO,231.527,53.9,estimated
+4ca0206cea0f8c21e5980370,agriculture,CY2024,Field burning of residues,Residue burning BC (wheat),BC,0.744,70.0,estimated
+1757e3ebb0d6b9a8c94624ac,agriculture,CY2024,Field burning of residues,Residue burning CO (cotton),CO,77.689,53.9,estimated
+bad8b6b7d5585fc3e3ce939f,agriculture,CY2024,Field burning of residues,Residue burning CO (maize),CO,38.079,53.9,estimated
+be4206b480e37b4f5970ef4c,agriculture,CY2024,Field burning of residues,Residue burning CO (rice),CO,231.292,53.9,estimated
 96c6bf345b1ba947761fd3d0,agriculture,CY2024,Field burning of residues,Residue burning CO (sugarcane),CO,171.332,53.9,estimated
-7eae425142b85003393083d5,agriculture,CY2024,Field burning of residues,Residue burning CO (wheat),CO,135.215,53.9,estimated
+7eae425142b85003393083d5,agriculture,CY2024,Field burning of residues,Residue burning CO (wheat),CO,136.832,53.9,estimated
 ff2832ed71e270851c51f2e0,agriculture,CY2024,Field burning of residues,Residue burning NH3 (cotton),NH3,1.098,70.0,estimated
-e7d3ec10124bad3d1f74494d,agriculture,CY2024,Field burning of residues,Residue burning NH3 (maize),NH3,0.544,70.0,estimated
-ca65508230aa83ce5c8e8015,agriculture,CY2024,Field burning of residues,Residue burning NH3 (rice),NH3,3.272,70.0,estimated
+e7d3ec10124bad3d1f74494d,agriculture,CY2024,Field burning of residues,Residue burning NH3 (maize),NH3,0.538,70.0,estimated
+ca65508230aa83ce5c8e8015,agriculture,CY2024,Field burning of residues,Residue burning NH3 (rice),NH3,3.268,70.0,estimated
 89ba9a00cf56d2512db0fbc1,agriculture,CY2024,Field burning of residues,Residue burning NH3 (sugarcane),NH3,2.421,70.0,estimated
-58c87824f17a47b2c5c4dcaf,agriculture,CY2024,Field burning of residues,Residue burning NH3 (wheat),NH3,1.911,70.0,estimated
+58c87824f17a47b2c5c4dcaf,agriculture,CY2024,Field burning of residues,Residue burning NH3 (wheat),NH3,1.933,70.0,estimated
 907062fc55e59a4eeaa0c3d6,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (cotton),NMVOC,5.911,70.0,estimated
-b467d4f56714f6049dd0c322,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (maize),NMVOC,2.929,70.0,estimated
-6b13ffbe58450de30b78ac4c,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (rice),NMVOC,17.616,70.0,estimated
+b467d4f56714f6049dd0c322,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (maize),NMVOC,2.897,70.0,estimated
+6b13ffbe58450de30b78ac4c,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (rice),NMVOC,17.598,70.0,estimated
 06e2190cb1a41bf70993cd84,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (sugarcane),NMVOC,13.036,70.0,estimated
-7702b4a82eaa2ecb82a84e2b,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (wheat),NMVOC,10.288,70.0,estimated
+7702b4a82eaa2ecb82a84e2b,agriculture,CY2024,Field burning of residues,Residue burning NMVOC (wheat),NMVOC,10.411,70.0,estimated
 2a4ae9df30f9c9da0494ba30,agriculture,CY2024,Field burning of residues,Residue burning NOx (cotton),NOx,2.111,61.6,estimated
-54559b76426b73e1102dc8bc,agriculture,CY2024,Field burning of residues,Residue burning NOx (maize),NOx,1.046,61.6,estimated
-9c796ad930cb70c6eeb951dd,agriculture,CY2024,Field burning of residues,Residue burning NOx (rice),NOx,6.291,61.6,estimated
+54559b76426b73e1102dc8bc,agriculture,CY2024,Field burning of residues,Residue burning NOx (maize),NOx,1.035,61.6,estimated
+9c796ad930cb70c6eeb951dd,agriculture,CY2024,Field burning of residues,Residue burning NOx (rice),NOx,6.285,61.6,estimated
 69e3d675d7f411e5a086fa4d,agriculture,CY2024,Field burning of residues,Residue burning NOx (sugarcane),NOx,4.656,61.6,estimated
-c0464edb827dd0d0ba2c09c1,agriculture,CY2024,Field burning of residues,Residue burning NOx (wheat),NOx,3.674,61.6,estimated
-9e471db388274619f15a2b16,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (cotton),PM2.5,6.417,61.6,estimated
-ea64413a8c3a36bc9ad1df1b,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (maize),PM2.5,3.181,61.6,estimated
-3949708315661255e6b26cf8,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (rice),PM2.5,19.126,61.6,estimated
+c0464edb827dd0d0ba2c09c1,agriculture,CY2024,Field burning of residues,Residue burning NOx (wheat),NOx,3.718,61.6,estimated
+9e471db388274619f15a2b16,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (cotton),PM2.5,6.418,61.6,estimated
+ea64413a8c3a36bc9ad1df1b,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (maize),PM2.5,3.146,61.6,estimated
+3949708315661255e6b26cf8,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (rice),PM2.5,19.107,61.6,estimated
 2e457363298362b780562670,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (sugarcane),PM2.5,14.154,61.6,estimated
-2cfcc98847c6f4ee655a3904,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (wheat),PM2.5,11.17,61.6,estimated
+2cfcc98847c6f4ee655a3904,agriculture,CY2024,Field burning of residues,Residue burning PM2.5 (wheat),PM2.5,11.304,61.6,estimated
 c96a4142a84086aab3898475,agriculture,CY2024,Field burning of residues,Residue burning SO2 (cotton),SO2,0.338,78.7,estimated
-1928cfa98ace8f9d93fe3d22,agriculture,CY2024,Field burning of residues,Residue burning SO2 (maize),SO2,0.167,78.7,estimated
-f110a5507332d71b6d1b1c1b,agriculture,CY2024,Field burning of residues,Residue burning SO2 (rice),SO2,1.007,78.7,estimated
+1928cfa98ace8f9d93fe3d22,agriculture,CY2024,Field burning of residues,Residue burning SO2 (maize),SO2,0.166,78.7,estimated
+f110a5507332d71b6d1b1c1b,agriculture,CY2024,Field burning of residues,Residue burning SO2 (rice),SO2,1.006,78.7,estimated
 13407db0f4346912236debe6,agriculture,CY2024,Field burning of residues,Residue burning SO2 (sugarcane),SO2,0.745,78.7,estimated
-bf154d9ec2fb0c446cf61230,agriculture,CY2024,Field burning of residues,Residue burning SO2 (wheat),SO2,0.588,78.7,estimated
+bf154d9ec2fb0c446cf61230,agriculture,CY2024,Field burning of residues,Residue burning SO2 (wheat),SO2,0.595,78.7,estimated
 8afea5938eb1fc991d9b726d,agriculture,CY2024,Managed soils,NH3 - crop residues left in field,NH3,0.0,53.9,estimated
-6e439c648b0b50997deb38eb,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (buffalo),NH3,256.693,47.2,estimated
-7b3bd1dd57851a6607da8318,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (camels),NH3,3.738,47.2,estimated
-a1bf9d029206695ac390d8a5,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (dairy cattle),NH3,179.411,47.2,estimated
-e5bdbc9a1a0c962a80e3e382,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (goats),NH3,47.056,47.2,estimated
-25cfb7aadaebcc7a3d6ee69d,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (other cattle),NH3,161.939,47.2,estimated
-9539bcbf8e88308287fe9c96,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (poultry),NH3,198.713,47.2,estimated
-9c4dffc639ce5afd901784c5,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (sheep),NH3,19.314,47.2,estimated
-eea4c043a2ed52bb1aed9160,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (buffalo),NH3,36.02,53.9,estimated
-6c91e9732646ff3a52298de5,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (dairy cattle),NH3,34.603,53.9,estimated
-944c07e714127f6bf7f43d09,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (other cattle),NH3,33.65,53.9,estimated
-a27e0bdedb9572eb521118a1,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (camels),NH3,5.99,53.9,estimated
-ea88ca72a589cd71e2888959,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (goats),NH3,75.41,53.9,estimated
-c2bbd19d966ced52337f4c40,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (sheep),NH3,32.773,53.9,estimated
+6e439c648b0b50997deb38eb,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (buffalo),NH3,240.788,49.2,estimated
+7b3bd1dd57851a6607da8318,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (camels),NH3,3.42,67.8,estimated
+a1bf9d029206695ac390d8a5,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (dairy cattle),NH3,168.48,49.3,estimated
+e5bdbc9a1a0c962a80e3e382,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (goats),NH3,43.052,52.6,estimated
+25cfb7aadaebcc7a3d6ee69d,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (other cattle),NH3,151.774,52.6,estimated
+9539bcbf8e88308287fe9c96,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (poultry),NH3,190.375,55.1,estimated
+9c4dffc639ce5afd901784c5,agriculture,CY2024,Managed soils,NH3 - manure applied to soils (sheep),NH3,17.573,53.7,estimated
+eea4c043a2ed52bb1aed9160,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (buffalo),NH3,36.02,55.9,estimated
+6c91e9732646ff3a52298de5,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (dairy cattle),NH3,34.603,55.9,estimated
+944c07e714127f6bf7f43d09,agriculture,CY2024,Managed soils,NH3 - pasture deposition (cattle-type) (other cattle),NH3,33.65,55.9,estimated
+a27e0bdedb9572eb521118a1,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (camels),NH3,5.99,63.4,estimated
+ea88ca72a589cd71e2888959,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (goats),NH3,75.41,57.4,estimated
+c2bbd19d966ced52337f4c40,agriculture,CY2024,Managed soils,NH3 - pasture deposition (sheep/goat/other) (sheep),NH3,32.773,57.4,estimated
 6f3d63f63f259f9d86796a8b,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (AS),NH3,2.75,30.4,estimated
 b9577578296557218bf5543e,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (CAN),NH3,10.841,30.4,estimated
 5c5219932b3832c8bcfc8a4c,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (DAP),NH3,54.79,30.4,estimated
@@ -55,62 +55,65 @@ e92276dec6655645235a2aa7,agriculture,CY2024,Managed soils,NH3 - synthetic fertil
 4c4fcffa5f510a9338daa0f1,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (NP),NH3,38.146,30.4,estimated
 59f5e39095321716b44b1f77,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (NPKs),NH3,1.161,30.4,estimated
 11fa5b4c94cd4e692cdad0ff,agriculture,CY2024,Managed soils,NH3 - synthetic fertiliser (Urea),NH3,629.469,30.4,estimated
-0cbe1befc7deda49ef9e3dac,agriculture,CY2024,Managed soils,Soil NOx - crop residues,NOx,4.9,102.0,estimated
-bcb144043b51936e909158ca,agriculture,CY2024,Managed soils,Soil NOx - organic manure,NOx,53.705,102.0,estimated
+ed9196a7b6355c963c42ece7,agriculture,CY2024,Managed soils,NOx - pasture_cattle,NOx,14.85,102.0,estimated
+c419b5dfd5da009debc5ad5a,agriculture,CY2024,Managed soils,NOx - pasture_other,NOx,16.26,102.0,estimated
+0cbe1befc7deda49ef9e3dac,agriculture,CY2024,Managed soils,Soil NOx - crop residues,NOx,4.923,102.0,estimated
+bcb144043b51936e909158ca,agriculture,CY2024,Managed soils,Soil NOx - organic manure,NOx,57.96,102.0,estimated
 61d47cf7e3f8e6ac00d51894,agriculture,CY2024,Managed soils,Soil NOx - synthetic fertiliser,NOx,86.825,100.1,estimated
 09d69d341a789719cca5ec06,agriculture,CY2024,Manure management,NH3 - housing (buffalo),NH3,102.914,47.2,estimated
-9cea85cf0784d53ece619738,agriculture,CY2024,Manure management,NH3 - housing (camels),NH3,1.627,47.2,estimated
+9cea85cf0784d53ece619738,agriculture,CY2024,Manure management,NH3 - housing (camels),NH3,1.627,63.4,estimated
 f83cafe8ff49e6301c14ac35,agriculture,CY2024,Manure management,NH3 - housing (dairy cattle),NH3,21.091,47.2,estimated
-84535d6e5dea8b2d96ac3f99,agriculture,CY2024,Manure management,NH3 - housing (goats),NH3,20.482,47.2,estimated
+84535d6e5dea8b2d96ac3f99,agriculture,CY2024,Manure management,NH3 - housing (goats),NH3,20.482,49.0,estimated
 97083b11d5f0d7543bf52bbe,agriculture,CY2024,Manure management,NH3 - housing (other cattle),NH3,20.511,47.2,estimated
-4b9fb7e588fb6e8da329381a,agriculture,CY2024,Manure management,NH3 - housing (poultry),NH3,198.581,47.2,estimated
-40c29f5920f581a41e3e8996,agriculture,CY2024,Manure management,NH3 - housing (sheep),NH3,8.901,47.2,estimated
-cb6fb1adf4aafb77dba0e5c9,agriculture,CY2024,Manure management,NH3 - storage (buffalo),NH3,34.991,47.2,estimated
-95a62de3f123a82c7381f8e9,agriculture,CY2024,Manure management,NH3 - storage (camels),NH3,1.615,47.2,estimated
-1e929df5f3f72bdf97150a33,agriculture,CY2024,Manure management,NH3 - storage (dairy cattle),NH3,36.383,47.2,estimated
-fa0ed4b619b5c6c0f23598ab,agriculture,CY2024,Manure management,NH3 - storage (goats),NH3,20.333,47.2,estimated
-bf51e4c0513a1fab6db9d067,agriculture,CY2024,Manure management,NH3 - storage (other cattle),NH3,35.381,47.2,estimated
-6f7b62eece6f8109a5be1c19,agriculture,CY2024,Manure management,NH3 - storage (poultry),NH3,224.113,47.2,estimated
-f3229091cb31c949a7750bb6,agriculture,CY2024,Manure management,NH3 - storage (sheep),NH3,10.099,47.2,estimated
-b1ec67a26e8ccdf8c7edbb12,agriculture,CY2024,Manure management,NH3 - yard (buffalo),NH3,38.593,47.2,estimated
-e63a1c228fc1035c08ed8448,agriculture,CY2024,Manure management,NH3 - yard (dairy cattle),NH3,24.716,47.2,estimated
-9b61883f8375b56b893d26bb,agriculture,CY2024,Manure management,NH3 - yard (other cattle),NH3,42.463,47.2,estimated
+4b9fb7e588fb6e8da329381a,agriculture,CY2024,Manure management,NH3 - housing (poultry),NH3,198.581,51.2,estimated
+40c29f5920f581a41e3e8996,agriculture,CY2024,Manure management,NH3 - housing (sheep),NH3,8.901,49.0,estimated
+cb6fb1adf4aafb77dba0e5c9,agriculture,CY2024,Manure management,NH3 - storage (buffalo),NH3,34.53,48.2,estimated
+95a62de3f123a82c7381f8e9,agriculture,CY2024,Manure management,NH3 - storage (camels),NH3,1.591,65.0,estimated
+1e929df5f3f72bdf97150a33,agriculture,CY2024,Manure management,NH3 - storage (dairy cattle),NH3,36.216,47.3,estimated
+fa0ed4b619b5c6c0f23598ab,agriculture,CY2024,Manure management,NH3 - storage (goats),NH3,20.031,50.3,estimated
+bf51e4c0513a1fab6db9d067,agriculture,CY2024,Manure management,NH3 - storage (other cattle),NH3,35.219,47.3,estimated
+6f7b62eece6f8109a5be1c19,agriculture,CY2024,Manure management,NH3 - storage (poultry),NH3,220.977,52.3,estimated
+f3229091cb31c949a7750bb6,agriculture,CY2024,Manure management,NH3 - storage (sheep),NH3,9.949,50.3,estimated
+b1ec67a26e8ccdf8c7edbb12,agriculture,CY2024,Manure management,NH3 - yard (buffalo),NH3,38.593,55.9,estimated
+e63a1c228fc1035c08ed8448,agriculture,CY2024,Manure management,NH3 - yard (dairy cattle),NH3,24.716,55.9,estimated
+9b61883f8375b56b893d26bb,agriculture,CY2024,Manure management,NH3 - yard (other cattle),NH3,42.463,55.9,estimated
+efcb8666e5e5ca3ca8f2d205,agriculture,CY2024,Manure management,NOx - manure management,NOx,119.4,102.0,estimated
 d491e82b63a62ec2e8e4f4ff,aviation,FY2023-24,Domestic aviation,Domestic aviation CO,CO,0.1565,80.2,LTO screening
 1b666e35e6748dec392d7e50,aviation,FY2023-24,Domestic aviation,Domestic aviation HC,HC,0.0287,91.8,LTO screening
-3b2bc7d992c34cbec7c4bb6b,aviation,FY2023-24,Domestic aviation,Domestic aviation LTO BC,BC,0.0005,91.8,LTO screening
+3b2bc7d992c34cbec7c4bb6b,aviation,FY2023-24,Domestic aviation,Domestic aviation LTO BC,BC,0.0005,115.4,LTO screening
 1dec810f204dc6495b3bf80b,aviation,FY2023-24,Domestic aviation,Domestic aviation LTO PM2.5,PM2.5,0.0031,98.6,LTO screening
 7d490d6c3c2fe1d6332686ac,aviation,FY2023-24,Domestic aviation,Domestic aviation LTO SO2,SO2,0.0156,85.6,LTO screening
 6aa7b06240ba7f8d65ccee47,aviation,FY2023-24,Domestic aviation,Domestic aviation NOx,NOx,0.2409,80.2,LTO screening
-4615e8a877c0d78420cd8900,aviation,FY2023-24,Domestic aviation,Domestic aviation cruise BC,BC,0.0024,91.8,LTO screening
+4615e8a877c0d78420cd8900,aviation,FY2023-24,Domestic aviation,Domestic aviation cruise BC,BC,0.0024,115.4,LTO screening
 ab4af16981d0ac5bb810a10b,aviation,FY2023-24,Domestic aviation,Domestic aviation cruise PM2.5,PM2.5,0.0158,98.6,LTO screening
 555ef72862ed227af8b5aecf,aviation,FY2023-24,Domestic aviation,Domestic aviation cruise SO2,SO2,0.0789,85.6,LTO screening
 1a34bc7d764b96aa944be640,power,FY2023-24,Electricity and heat production,"Bagasse|wet as-fired basis, Section 1.8's own 7.0 MMBtu/ton",NOx,0.804,22.4,uncontrolled bound
 5cafa87536913b69e68f3b83,power,FY2023-24,Electricity and heat production,"Bagasse|wet as-fired basis, Section 1.8's own 7.0 MMBtu/ton",PM,10.446,22.4,uncontrolled bound
-2678a00fd11277bcc2ae42c0,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",NOx,48.691,15.6,uncontrolled bound
-ee3de54706c575ce93cd250a,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",PM,295.178,15.9,uncontrolled bound
-4f94d968ad738817a2885aea,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",PM10,104.448,15.9,uncontrolled bound
-82aaf1558848991e0e747052,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",PM2.5,29.972,15.9,uncontrolled bound
-599734f5e9ef36e315ce96c3,power,FY2023-24,Electricity and heat production,"Coal|Thar lignite (share 0.79, SCC 1-01-003-02 assumed)",SO2,178.649,152.8,uncontrolled bound
-ab349355132391874ef2cf04,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),CO,0.42,15.6,uncontrolled bound
-4c64e9b2658d560ac5d3482f,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),NOx,18.498,15.6,uncontrolled bound
-6cdce755b229b6530fcc0fe9,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),PM,55.679,15.9,uncontrolled bound
-26c5243b464906c44be94886,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),PM10,12.806,15.9,uncontrolled bound
-123d780aef0ca860a8071d0d,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),PM2.5,3.341,15.9,uncontrolled bound
-e7abd13d36f984b7c00a0d0d,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.21; Thar quality ranges as declared proxy),SO2,27.745,152.8,uncontrolled bound
+2a58934d10aed6ebde7a03c1,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.16; Thar quality ranges as declared proxy),CO,0.318,15.6,uncontrolled bound
+a891cf604adf712a8fb2531a,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.16; Thar quality ranges as declared proxy),NOx,13.99,15.6,uncontrolled bound
+5334eba7ae1887a1ac4ea997,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.16; Thar quality ranges as declared proxy),PM,42.11,15.9,uncontrolled bound
+462f60b2c863c2cd6c14ca8d,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.16; Thar quality ranges as declared proxy),PM10,9.685,15.9,uncontrolled bound
+052c5029d6f6f288b0f347b2,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.16; Thar quality ranges as declared proxy),PM2.5,2.527,15.9,uncontrolled bound
+c4d43b3eee25decc44528fd4,power,FY2023-24,Electricity and heat production,Coal|imported bituminous incl. unresolved residual (share 0.16; Thar quality ranges as declared proxy),SO2,20.984,152.8,uncontrolled bound
+c89c57762370f543801201ea,power,FY2023-24,Electricity and heat production,"Coal|lignite-rank coal (share 0.84; source-year origin; Thar quality proxy, SCC 1-01-003-02 assumed)",NOx,51.845,15.6,uncontrolled bound
+6446eea8a4186a9b52e157e9,power,FY2023-24,Electricity and heat production,"Coal|lignite-rank coal (share 0.84; source-year origin; Thar quality proxy, SCC 1-01-003-02 assumed)",PM,314.3,15.9,uncontrolled bound
+f2273b1613e61793819fb30f,power,FY2023-24,Electricity and heat production,"Coal|lignite-rank coal (share 0.84; source-year origin; Thar quality proxy, SCC 1-01-003-02 assumed)",PM10,111.214,15.9,uncontrolled bound
+c20d9816b6df05c14959aee1,power,FY2023-24,Electricity and heat production,"Coal|lignite-rank coal (share 0.84; source-year origin; Thar quality proxy, SCC 1-01-003-02 assumed)",PM2.5,31.913,15.9,uncontrolled bound
+265f6d2a51a6d2b037c7c0de,power,FY2023-24,Electricity and heat production,"Coal|lignite-rank coal (share 0.84; source-year origin; Thar quality proxy, SCC 1-01-003-02 assumed)",SO2,190.221,152.8,uncontrolled bound
 1798077381aea6f5470cd4ec,power,FY2023-24,Electricity and heat production,Diesel Oil,CO,0.027,10.0,uncontrolled bound
 2465fb29212639902acd2e5b,power,FY2023-24,Electricity and heat production,Diesel Oil,NOx,0.255,10.0,uncontrolled bound
 1848d35b7ac8443ff18b6396,power,FY2023-24,Electricity and heat production,Diesel Oil,SO2,0.68,113.8,uncontrolled bound
 34b4686066a18a6d2417b28c,power,FY2023-24,Electricity and heat production,Furnace Oil,CO,0.345,10.0,uncontrolled bound
 f6823a2cf25aba932c051981,power,FY2023-24,Electricity and heat production,Furnace Oil,NOx,3.247,10.0,uncontrolled bound
 71492ba27c4cc8bd144f2d34,power,FY2023-24,Electricity and heat production,Furnace Oil,SO2,1.584,113.8,uncontrolled bound
-344563a925966700778839c3,power,FY2023-24,Electricity and heat production,Gas,CO,11.091,10.0,uncontrolled bound
-e6fa283cf1ad460d141ccac7,power,FY2023-24,Electricity and heat production,Gas,NOx,41.881,10.0,uncontrolled bound
-72ab6a0852b1635e0aad696b,power,FY2023-24,Electricity and heat production,Gas,PM,1.003,10.0,uncontrolled bound
-94fbb235f29de7c7e4da77d8,power,FY2023-24,Electricity and heat production,Gas,PM10,1.003,10.0,uncontrolled bound
-7750e15c5e9a26d01996f088,power,FY2023-24,Electricity and heat production,Gas,PM2.5,1.003,10.0,uncontrolled bound
-5e46e992b96c5f67e4266851,power,FY2023-24,Electricity and heat production,Gas,SO2,0.079,10.0,uncontrolled bound
-b30d09c3ba788c5ae9bbb798,power,FY2023-24,Electricity and heat production,Gas,VOC,0.726,10.0,uncontrolled bound
-cd04137b3cca8c61087c0556,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,BC,0.001203,104.4,estimated
+344563a925966700778839c3,power,FY2023-24,Electricity and heat production,Gas,CO,10.98,10.0,uncontrolled bound
+e6fa283cf1ad460d141ccac7,power,FY2023-24,Electricity and heat production,Gas,NOx,41.464,10.0,uncontrolled bound
+72ab6a0852b1635e0aad696b,power,FY2023-24,Electricity and heat production,Gas,PM,0.993,10.0,uncontrolled bound
+94fbb235f29de7c7e4da77d8,power,FY2023-24,Electricity and heat production,Gas,PM10,0.993,10.0,uncontrolled bound
+7750e15c5e9a26d01996f088,power,FY2023-24,Electricity and heat production,Gas,PM2.5,0.993,10.0,uncontrolled bound
+5e46e992b96c5f67e4266851,power,FY2023-24,Electricity and heat production,Gas,SO2,0.078,10.0,uncontrolled bound
+b30d09c3ba788c5ae9bbb798,power,FY2023-24,Electricity and heat production,Gas,VOC,0.719,10.0,uncontrolled bound
+cd04137b3cca8c61087c0556,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,BC,0.001203,104.5,estimated
 347a5f234e0767c36b0099b4,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,CO,0.014457,61.2,estimated
 8ead5d465628eb0c816ef212,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,NH3,9e-06,57.2,estimated
 3a158a01cce5243677dd43c7,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,NMVOC,0.006283,65.2,estimated
@@ -119,7 +122,7 @@ f841b512dfaf2cc5931d5802,railways,CY2024,Railway non-traction energy (1A2/1A4c u
 03143c5882defeb4f5543bc2,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,PM2.5,0.001851,100.1,estimated
 adc120f93cd98f1e216fdb84,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,SO2,0.001351,100.1,estimated
 5e79c88ea79d72fa5d957ec3,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Diesel,TSP,0.002054,100.1,estimated
-955474bf9984fc459440bd59,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,BC,5.8e-05,104.4,estimated
+955474bf9984fc459440bd59,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,BC,5.8e-05,108.6,estimated
 72548150af289bc572e896a3,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,CO,0.000694,68.0,estimated
 83463a25e7102f4117315ebd,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,NH3,0.0,64.4,estimated
 bda43a49abb7b10a5f845adc,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,NMVOC,0.000301,71.6,estimated
@@ -128,7 +131,7 @@ f5c8b18fb17a4544a6c97dcd,railways,CY2024,Railway non-traction energy (1A2/1A4c u
 944284384b69c8f78114ac68,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,PM2.5,8.9e-05,104.4,estimated
 d0d787a15d5c644d079461cd,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,SO2,0.004538,42.4,estimated
 ceeb1d7f3ca1623de7170c44,railways,CY2024,Railway non-traction energy (1A2/1A4c unresolved),Furnace oil,TSP,9.9e-05,104.4,estimated
-08f7d5017462bde02eedb8bb,railways,CY2024,Railways,Diesel,BC,0.098566,104.4,estimated
+08f7d5017462bde02eedb8bb,railways,CY2024,Railways,Diesel,BC,0.098566,104.5,estimated
 9cb6016f22665bb7e031797c,railways,CY2024,Railways,Diesel,CO,1.184337,61.2,estimated
 5c3b1f75353599fed8305f24,railways,CY2024,Railways,Diesel,NH3,0.000775,57.2,estimated
 f4d3134c7dcbb97884df2d1c,railways,CY2024,Railways,Diesel,NMVOC,0.514688,65.2,estimated
@@ -137,7 +140,7 @@ f4d3134c7dcbb97884df2d1c,railways,CY2024,Railways,Diesel,NMVOC,0.514688,65.2,est
 2d43c9ef33ae4a45cbeccc4c,railways,CY2024,Railways,Diesel,PM2.5,0.151639,100.1,estimated
 0a50e190f77e599227d5b186,railways,CY2024,Railways,Diesel,SO2,0.110686,100.1,estimated
 4a47815aed591883354a387b,railways,CY2024,Railways,Diesel,TSP,0.168242,100.1,estimated
-5ccc097f03c6d1b12896a864,railways,CY2024,Railways,Furnace oil,BC,1.3e-05,104.4,estimated
+5ccc097f03c6d1b12896a864,railways,CY2024,Railways,Furnace oil,BC,1.3e-05,108.6,estimated
 9d3287a473604c46dcb7aa46,railways,CY2024,Railways,Furnace oil,CO,0.000161,68.0,estimated
 8cfb43ee087dd83e027b36ad,railways,CY2024,Railways,Furnace oil,NH3,0.0,64.4,estimated
 cb7f317522bf48ee9566d46e,railways,CY2024,Railways,Furnace oil,NMVOC,7e-05,71.6,estimated
@@ -153,7 +156,7 @@ a33c168ebd3031bc575f839d,railways,CY2024,Railways,Furnace oil,PM2.5,2.1e-05,104.
 c5c4cd037e70c7e8bd3026b5,residential,CY2024,Residential fuel combustion,Charcoal NOx,NOx,0.015,83.2,estimated
 905dbb707afdc6863a248e3d,residential,CY2024,Residential fuel combustion,Charcoal OC,OC,0.049,58.0,estimated
 453d77abe2bd1dd9b2dffd62,residential,CY2024,Residential fuel combustion,Charcoal PM2.5,PM2.5,0.156,93.9,estimated
-00312a29b1970e964007c140,residential,CY2024,Residential fuel combustion,Coal BC,BC,0.009,112.3,estimated
+00312a29b1970e964007c140,residential,CY2024,Residential fuel combustion,Coal BC,BC,0.009,119.2,estimated
 65f9ea027c18e29dc2d92283,residential,CY2024,Residential fuel combustion,Coal CO,CO,1.569,58.7,estimated
 3a214809be850597ec75d1ed,residential,CY2024,Residential fuel combustion,Coal NH3,NH3,0.0,107.7,estimated
 979423ae5505108e2d11ef53,residential,CY2024,Residential fuel combustion,Coal NMVOC,NMVOC,0.165,72.9,estimated
@@ -162,21 +165,21 @@ a67e8a7548b00caa228002ed,residential,CY2024,Residential fuel combustion,Coal PM1
 c3656584dd9270e64ab32e33,residential,CY2024,Residential fuel combustion,Coal PM2.5,PM2.5,0.136,64.8,estimated
 1501fcb9d6cacc97756d0c02,residential,CY2024,Residential fuel combustion,Coal SO2,SO2,0.307,55.9,estimated
 bacd4a307d4ae21b81b1fa47,residential,CY2024,Residential fuel combustion,Coal TSP,TSP,0.151,71.3,estimated
-f5dcbadc0acc1a72f9bab91a,residential,CY2024,Residential fuel combustion,Crop residues BC,BC,4.635,84.9,estimated
-6dae7e49e4ce73016cd28489,residential,CY2024,Residential fuel combustion,Crop residues CO,CO,852.814,72.1,estimated
-01d96bb25cbd55a6acdf94bc,residential,CY2024,Residential fuel combustion,Crop residues NH3,NH3,12.051,84.9,estimated
-1b49452a56c79441d01d05a3,residential,CY2024,Residential fuel combustion,Crop residues NMVOC,NMVOC,64.888,84.9,estimated
-211f61aa3690c69d2739baaa,residential,CY2024,Residential fuel combustion,Crop residues NOx,NOx,23.174,78.1,estimated
-6437f7d06ac7c8e9bef9f408,residential,CY2024,Residential fuel combustion,Crop residues OC,OC,30.59,84.9,estimated
-19001f80e25823165a572b11,residential,CY2024,Residential fuel combustion,Crop residues PM2.5,PM2.5,70.45,78.1,estimated
-11af4b4fae7f8a4a9dcbe18f,residential,CY2024,Residential fuel combustion,Crop residues SO2,SO2,3.708,92.2,estimated
+f5dcbadc0acc1a72f9bab91a,residential,CY2024,Residential fuel combustion,Crop residues BC,BC,4.64,84.9,estimated
+6dae7e49e4ce73016cd28489,residential,CY2024,Residential fuel combustion,Crop residues CO,CO,853.709,72.1,estimated
+01d96bb25cbd55a6acdf94bc,residential,CY2024,Residential fuel combustion,Crop residues NH3,NH3,12.063,84.9,estimated
+1b49452a56c79441d01d05a3,residential,CY2024,Residential fuel combustion,Crop residues NMVOC,NMVOC,64.956,84.9,estimated
+211f61aa3690c69d2739baaa,residential,CY2024,Residential fuel combustion,Crop residues NOx,NOx,23.199,78.1,estimated
+6437f7d06ac7c8e9bef9f408,residential,CY2024,Residential fuel combustion,Crop residues OC,OC,30.622,84.9,estimated
+19001f80e25823165a572b11,residential,CY2024,Residential fuel combustion,Crop residues PM2.5,PM2.5,70.524,78.1,estimated
+11af4b4fae7f8a4a9dcbe18f,residential,CY2024,Residential fuel combustion,Crop residues SO2,SO2,3.712,92.2,estimated
 93c9f313874443330f43758f,residential,CY2024,Residential fuel combustion,Dung cake BC,BC,4.907,83.6,estimated
-676bb08d00da35b7806d6943,residential,CY2024,Residential fuel combustion,Dung cake CO,CO,856.304,68.6,estimated
+676bb08d00da35b7806d6943,residential,CY2024,Residential fuel combustion,Dung cake CO,CO,856.245,68.6,estimated
 42636a17622f51d50c8f2851,residential,CY2024,Residential fuel combustion,Dung cake NH3,NH3,12.796,77.3,estimated
-a95daa4b08195bfc9e9d73de,residential,CY2024,Residential fuel combustion,Dung cake NMVOC,NMVOC,138.548,86.0,estimated
-c590aa2210d1d20e6e326251,residential,CY2024,Residential fuel combustion,Dung cake NOx,NOx,41.276,67.9,estimated
-996586db3854f59819829a1b,residential,CY2024,Residential fuel combustion,Dung cake OC,OC,42.334,65.9,estimated
-141d4485b2eb3b0e49392db8,residential,CY2024,Residential fuel combustion,Dung cake PM2.5,PM2.5,79.858,64.0,estimated
+a95daa4b08195bfc9e9d73de,residential,CY2024,Residential fuel combustion,Dung cake NMVOC,NMVOC,138.539,86.0,estimated
+c590aa2210d1d20e6e326251,residential,CY2024,Residential fuel combustion,Dung cake NOx,NOx,41.273,67.9,estimated
+996586db3854f59819829a1b,residential,CY2024,Residential fuel combustion,Dung cake OC,OC,42.331,65.9,estimated
+141d4485b2eb3b0e49392db8,residential,CY2024,Residential fuel combustion,Dung cake PM2.5,PM2.5,79.852,64.0,estimated
 b37554054005bdb50d5bbc67,residential,CY2024,Residential fuel combustion,Dung cake SO2,SO2,7.408,69.3,estimated
 4cd1d3ca00dd8eba20c6c8c2,residential,CY2024,Residential fuel combustion,Firewood BC,BC,10.421,74.7,estimated
 a72383b48f2183a9027fabfe,residential,CY2024,Residential fuel combustion,Firewood CO,CO,1632.027,49.5,estimated
@@ -186,19 +189,19 @@ abd30bafbeba511ae4d9bb16,residential,CY2024,Residential fuel combustion,Firewood
 58f8f032e8001bbd7148178b,residential,CY2024,Residential fuel combustion,Firewood OC,OC,58.989,61.0,estimated
 89e389ecc18eec176c61ddd5,residential,CY2024,Residential fuel combustion,Firewood PM2.5,PM2.5,131.742,60.2,estimated
 9645699a9f965aaaad66dbdb,residential,CY2024,Residential fuel combustion,Firewood SO2,SO2,9.242,100.3,estimated
-b46c1cfd8f6819a2210acdab,residential,CY2024,Residential fuel combustion,Kerosene BC,BC,0.0,81.9,estimated
+b46c1cfd8f6819a2210acdab,residential,CY2024,Residential fuel combustion,Kerosene BC,BC,0.0,84.3,estimated
 e6c5a00e20038a4e71ec4edb,residential,CY2024,Residential fuel combustion,Kerosene CO,CO,0.061,44.7,estimated
 4eb79feac5f7a8bc6260eabe,residential,CY2024,Residential fuel combustion,Kerosene NMVOC,NMVOC,0.001,47.4,estimated
 6d13f85ef6932ea1445b97df,residential,CY2024,Residential fuel combustion,Kerosene NOx,NOx,0.055,44.7,estimated
 08caadb7159559bc15300091,residential,CY2024,Residential fuel combustion,Kerosene PM2.5,PM2.5,0.002,43.8,estimated
 1b548a0383d220699c8a0317,residential,CY2024,Residential fuel combustion,Kerosene SO2,SO2,0.076,102.0,estimated
-72a6b7e83e00747dc8f299a1,residential,CY2024,Residential fuel combustion,LPG BC,BC,0.002,87.7,estimated
+72a6b7e83e00747dc8f299a1,residential,CY2024,Residential fuel combustion,LPG BC,BC,0.002,90.0,estimated
 e0464851c72ea9df72a00742,residential,CY2024,Residential fuel combustion,LPG CO,CO,0.883,50.2,estimated
 3dee1e0f2810c13526d1f116,residential,CY2024,Residential fuel combustion,LPG NMVOC,NMVOC,0.065,43.8,estimated
 79c5c0313c1830d904f89164,residential,CY2024,Residential fuel combustion,LPG NOx,NOx,1.731,43.8,estimated
 b7a6f6e87e4304c39ee54b10,residential,CY2024,Residential fuel combustion,LPG PM2.5,PM2.5,0.041,46.5,estimated
 8a87dedceacaccbce95bc272,residential,CY2024,Residential fuel combustion,LPG SO2,SO2,0.01,38.6,estimated
-d06111f554e60dc2591d8a0e,residential,CY2024,Residential fuel combustion,Natural gas BC,BC,0.018,87.7,estimated
+d06111f554e60dc2591d8a0e,residential,CY2024,Residential fuel combustion,Natural gas BC,BC,0.018,88.3,estimated
 b17eb2f455bf558ed01d6359,residential,CY2024,Residential fuel combustion,Natural gas CO,CO,7.398,47.1,estimated
 227a2911e81dbce08f491fa1,residential,CY2024,Residential fuel combustion,Natural gas NMVOC,NMVOC,0.541,40.3,estimated
 b3df57f1ed7f0459861eec1e,residential,CY2024,Residential fuel combustion,Natural gas NOx,NOx,14.512,40.3,estimated

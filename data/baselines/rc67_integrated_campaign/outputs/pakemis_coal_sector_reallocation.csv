@@ -1,0 +1,35 @@
+# IF THE POWER COLUMN MOVES, THE INDUSTRIAL COLUMN MOVES. BY HOW MUCH, AND WHETHER IT HELPS.
+#
+# HDIP's coal consumption IS its coal supply - the allocation identity closes to a kilotonne in
+# thirteen of fourteen years - so the sectoral split redistributes a fixed total. Replacing the
+# power column with the stations' own metered coal therefore changes the industrial residual by
+# the same tonnage in the opposite direction, and the national effect is a difference of two
+# numbers. power_delta_kt and industrial_delta_kt are that pair.
+#
+# THE CROSS-CHECK IS THE POINT OF THE FILE, and it comes from an unrelated source. The
+# brick-kiln FLEET bound is a kiln census; NEPRA's per-station coal is metering. They share no
+# input. brick_position_booked reads "below the fleet floor" in THREE of the nine years, and
+# brick_position_with_residual reads "inside the bound" in all nine. The reallocation therefore
+# never worsens the brick position and repairs it where it was broken - a consistency argument
+# for the reconciled treatment rather than a proof of it, since six years were already inside
+# and the bound is wide.
+#
+# WHAT THE COLUMNS DO NOT SAY. The fleet was counted ONCE and has no time axis, so its bound is
+# constant across the panel and "inside" is a consistency check, not a measurement - the bound
+# is wider than the quantity in dispute. And the residual shows only that coal was supplied and
+# that the stations did not burn it; WHICH non-power consumer took it is unresolved, and
+# attributing all of it to brick is an upper reading used to test the direction, never a
+# booking.
+#
+# NOTHING IS BOOKED FROM THIS FILE. It measures the consequence of a re-base; the re-base
+# itself is a declared pin movement.
+period_id,fiscal_start_year,national_supply_kt,station_power_kt,hdip_power_kt,power_delta_kt,hdip_industrial_kt,residual_industrial_kt,industrial_delta_kt,industrial_offset_Mt,brick_booked_kt,brick_fleet_low_kt,brick_with_residual_kt,brick_position_booked,brick_position_with_residual,identity_closes_kt,note
+FY2015-16,2015,9027,152,204,-52,9026,8875,-152,-0.37,3541,3095,3541,inside the bound,inside the bound,-204,"the industrial lane moves -152 kt, worth -0.37 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's -52 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction. NOTE: HDIP's own supply and consumption do not close this year, by -204 kt - the allocation identity's single declared exception - so the two deltas do not offset here and the difference is that gap"
+FY2016-17,2016,11186,601,860,-258,10326,10585,+258,+0.63,2855,3095,3113,below the fleet floor,inside the bound,+0,"the industrial lane moves +258 kt, worth +0.63 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's -258 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"
+FY2017-18,2017,17981,6450,4436,+2014,13545,11531,-2014,-4.94,3942,3095,3942,inside the bound,inside the bound,-0,"the industrial lane moves -2014 kt, worth -4.94 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's +2014 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"
+FY2018-19,2018,21527,6133,5902,+231,15626,15394,-231,-0.57,5391,3095,5391,inside the bound,inside the bound,+0,"the industrial lane moves -231 kt, worth -0.57 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's +231 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"
+FY2019-20,2019,25157,12324,10897,+1427,14259,12832,-1427,-3.50,8184,3095,8184,inside the bound,inside the bound,+0,"the industrial lane moves -1427 kt, worth -3.50 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's +1427 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"
+FY2020-21,2020,28080,13111,9215,+3896,18862,14967,-3895,-9.55,8678,3095,8678,inside the bound,inside the bound,+1,"the industrial lane moves -3895 kt, worth -9.55 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's +3896 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"
+FY2021-22,2021,27698,12201,12808,-607,14888,15495,+607,+1.49,5643,3095,6250,inside the bound,inside the bound,+0,"the industrial lane moves +607 kt, worth +1.49 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's -607 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"
+FY2022-23,2022,23916,14009,15493,-1484,8423,9905,+1482,+3.63,2991,3095,4473,below the fleet floor,inside the bound,-2,"the industrial lane moves +1482 kt, worth +3.63 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's -1484 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"
+FY2023-24,2023,24719,15876,19196,-3320,5520,8841,+3321,+8.14,1129,3095,4450,below the fleet floor,inside the bound,+1,"the industrial lane moves +3321 kt, worth +8.14 Mt CO2e at industry_ncv 25.8 TJ/Gg - against the power lane's -3320 kt. Which non-power consumer took the coal is NOT resolved; attributing all of it to brick is an upper reading used to test direction"

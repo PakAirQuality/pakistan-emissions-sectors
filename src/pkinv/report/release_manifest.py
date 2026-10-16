@@ -34,6 +34,7 @@ from pkinv.paths import OUTPUTS, ROOT
 from pkinv.report import national_rollup
 from pkinv.report import uncertainty_all
 from pkinv.core.io import read_rows
+from pkinv.core.reporting_window import RETIRED_GHG_PANEL_PRODUCTS
 
 OUT = os.path.join(OUTPUTS, "release_manifest.json")
 
@@ -191,6 +192,21 @@ def _reporting_period(sectors):
     }
 
 
+def _core_reporting_period():
+    """The supported fiscal product window, separate from the reference-year totals."""
+    from pkinv.core.reporting_window import CORE_PERIOD_IDS, CORE_SUFFIX
+    from pkinv.assets import asset_path
+    rows = read_rows(asset_path(OUTPUTS, "pakemis_annual_" + CORE_SUFFIX + ".csv"))
+    actual = sorted({row["period_label"] for row in rows})
+    if actual != list(CORE_PERIOD_IDS):
+        raise ValueError("annual release period differs from the supported core: %s" % actual)
+    return dict(harmonised=True, start="2015-07-01", end="2025-06-30",
+                label="July 2015--June 2025 (ten fiscal years)",
+                period_ids=actual, fiscal_year_count=len(actual),
+                note="Common supported fiscal window; source coverage is separately documented. "
+                     "FY2025-26 is a partial provisional extension, outside common national totals.")
+
+
 def _reference_year_convention(sectors):
     conventions = sorted({s["year_convention"] for s in sectors})
     harmonised = len({(s["period_start"], s["period_end"]) for s in sectors}) == 1
@@ -282,7 +298,8 @@ def build():
         "gwp_basis": {"reported": "AR5 GWP-100", "secondary": "AR6 GWP-100",
                       "note": "fossil and biogenic CH4 carry distinct AR5 values; see "
                               "pkinv.core.gwp"},
-        "reporting_period": _reporting_period(sectors),
+        "reporting_period": _core_reporting_period(),
+        "reference_reporting_period": _reporting_period(sectors),
         "reference_years": {
             # DERIVED, not asserted. This said "the national total is a sum across
             # reference years and not a single-year inventory" for a release in which every
@@ -315,6 +332,7 @@ def build():
                    "survey under-count the ledger reading would need",
         },
         "national_totals": {
+            "period_id": "FY2023-24",
             baseline_code: {"co2e_Mt_AR5": total["co2e_Mt_AR5"],
                             "co2e_Mt_AR6": total["co2e_Mt_AR6"],
                             "uncert_pct_95": total["uncert_pct_95"]},
@@ -358,6 +376,8 @@ def build():
         },
         "product": {"name": release.PRODUCT, "family": release.FAMILY,
                     "package": release.PACKAGE, "repository": release.REPO_URL,
+                    "repository_note": release.REPOSITORY_NOTE,
+                    "explorer": release.EXPLORER_URL,
                     "cite_as": release.cite_name(),
                     # data, not prose: the READMEs' submission sentences are
                     # sweep-checked against these two fields (rc19)
@@ -374,7 +394,7 @@ def build():
         # so the manifest states it rather than leaving it to be discovered.
         "licences": {
             "code": "MIT",
-            "data_and_text": "CC-BY-4.0",
+            "data_and_text": "CC-BY-4.0 for project-owned primary products and text; per-file upstream terms retained",
             # THE PATHS ARE THE PUBLISHED IDENTITIES (legacy_path), which is this
             # project's convention - and the deposit ships each file at its PHYSICAL
             # path, so a reader who searched the deposit for "data/gis/rail/yards.csv"
@@ -383,10 +403,12 @@ def build():
             # the reason "publisher states odbl". Both names are given so the legal
             # statement and the archive can be checked against each other.
             "odbl_carveouts": _odbl_carveouts(),
-            "odbl_note": "OpenStreetMap (c) contributors. A produced work (a "
-                         "rendered map, a figure) needs attribution only; an "
-                         "extracted geometry or coordinate TABLE stays a "
-                         "database under ODbL. See LICENSE-data.",
+            "odbl_note": "OpenStreetMap (c) contributors. ODbL source databases, mixed facility "
+                         "registries, preserved baselines and potentially affected legacy spatial "
+                         "products are in a separate companion. The primary geographic products "
+                         "are rebuilt without OSM geometry or weights. See LICENSE-data, "
+                         "LICENSE-ODbL and pakemis_primary_geography_licence_audit.csv; removing "
+                         "a source file alone does not remove derivative-database obligations.",
             "undetermined": "UNEP MARS plume observations carry no licence "
                             "declaration in the record. They are EVALUATION "
                             "evidence only - no MARS quantity enters any "
@@ -449,7 +471,7 @@ PRODUCT_PATTERNS = (
     "outputs/residential_air_pollutants_2024.csv",
     "outputs/transport_air_pollutants_2024.csv",
     "outputs/power_air_pollutants_fy2023_24.csv",
-    "outputs/power_air_screening_fy2015_16_fy2023_24.csv",
+    "outputs/power_air_screening_fy2015_16_fy2024_25.csv",
     # rc58: industry's covered air layer at class grain (the screening it replaces is retired)
     "outputs/railways_air_pollutants_2024.csv",
     "outputs/waste_air_pollutants_2024.csv",
@@ -462,11 +484,11 @@ PRODUCT_PATTERNS = (
     # globbed as outputs/*.nc, because a glob would silently hash whatever NetCDF happened to
     # be in outputs/ - which is how a superseded vintage gets a release digest and a reader
     # gets two grids with equal standing.
-    "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc",
+    "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
+    "outputs/pakemis_ghg_grid_0p05_annual_*_fy2015_16_fy2024_25.nc",
     # the air family's nine-period cubes (air spatial Wave B): literal for the
     # same reason as the pair above
-    "outputs/pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc",
-    "outputs/pakemis_air_grid_0p05_annual_ledger_fy2015_16_fy2023_24.nc",
+    "outputs/pakemis_air_grid_0p05_*_*_fy2015_16_fy2024_25.nc",
     # rc47 Wave 6: the EDGAR-aligned derived aggregation, named for the same reason
     "outputs/pakemis_grid_0p1_edgar_aligned.nc",
     # v1.0.0: the semantic layer - the canonical CSVs (the identity of every fact and
@@ -588,6 +610,37 @@ PRODUCT_PATTERNS = (
     "outputs/railways_gis_provincial_2024.csv",
     "outputs/transport_monthly_2024.csv",
     "outputs/waste_monthly_2024.csv",
+    # rc68: the evidence tables the rewritten manuscripts name. The rc68 rewrite stopped naming
+    # them; restoring the citations (the v3 supplement's source-check paragraph, the
+    # agriculture and waste appendices) made each one cited-but-undeposited, which is the
+    # failure this list exists to close. Each is the evidence for a check the text describes -
+    # a parse's own controls, the rows it quarantined, a cross-source shape comparison, the
+    # coal and wastewater reconciliations, agriculture's own Monte Carlo and key categories -
+    # so citing a deposited sibling would cite different numbers. The archive holds them.
+    "outputs/agriculture_crop_residue_ledger_2024.csv",
+    "outputs/agriculture_timing_classes.csv",
+    "outputs/apcma_dispatch_parse_summary.csv",
+    "outputs/apcma_dispatch_quarantine.csv",
+    "outputs/apcma_qim_cement_crosscheck.csv",
+    "outputs/era5_degree_day_crosscheck.csv",
+    "outputs/fao_crop_calendar_crosscheck.csv",
+    "outputs/key_categories.csv",
+    "outputs/limestone_qim_cement_crosscheck.csv",
+    "outputs/nfdc_monthly_parse_summary.csv",
+    "outputs/nfdc_monthly_quarantine.csv",
+    "outputs/ocac_direct_edition_crosscheck.csv",
+    "outputs/ocac_direct_edition_quarantine.csv",
+    "outputs/ocac_edition_currency.csv",
+    "outputs/ocac_parse_summary.csv",
+    "outputs/pbs_minerals_parse_summary.csv",
+    "outputs/pbs_minerals_quarantine.csv",
+    "outputs/pbs_qim_parse_summary.csv",
+    "outputs/pbs_qim_quarantine.csv",
+    "outputs/power_table3_hypotheses.csv",
+    "outputs/power_toe_reconciliation.csv",
+    "outputs/uncertainty_montecarlo.csv",
+    "outputs/waste_uncertainty_inputs_2024.csv",
+    "outputs/waste_uncertainty_scenarios_2024.csv",
 )
 
 
@@ -615,7 +668,8 @@ def _products():
             # release dance, not an input to it. pakemis_test_run.json is excluded for the
             # same reason and it is the sharper case: the suite tests this manifest, so a
             # manifest carrying the suite's result would depend on a run that depends on it.
-            if not r["path"].endswith(("pakemis_paper_hashes.csv", "pakemis_test_run.json"))]
+            if not r["path"].endswith(("pakemis_paper_hashes.csv", "pakemis_test_run.json"))
+            and r["path"] not in RETIRED_GHG_PANEL_PRODUCTS]
     for row in rows:
         row["byte_stable"] = True
     return rows
@@ -630,7 +684,7 @@ def main():
           % (body["version"], (body["git"]["describes_commit"] or "n/a")[:12],
              "  (TREE DIRTY)" if body["git"]["tree_dirty"] else ""))
     code = body["baseline_configuration"]["code"]
-    other = next(k for k in total if k not in (code, "note"))
+    other = next(k for k, value in total.items() if k != code and isinstance(value, dict))
     print("  baseline %s: %.2f Mt AR5   second configuration %s: %.2f Mt AR5"
           % (code, total[code]["co2e_Mt_AR5"], other, total[other]["co2e_Mt_AR5"]))
     print("  %d archived source documents hashed" % len(body["source_documents"]))

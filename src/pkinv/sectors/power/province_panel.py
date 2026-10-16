@@ -70,7 +70,8 @@ from pkinv.sectors.power import plant_ledger, point_sources
 from pkinv.sectors.power.plant_names import plant_key
 
 STREAMS = ("power_coal", "power_gas", "power_rfo", "power_hsd", "bagasse_grid")
-FIRST_YEAR, LAST_YEAR = 2015, 2023          # fiscal START years: FY2015-16 .. FY2023-24
+from pkinv.core.reporting_window import FIRST_FY_START, CORE_LAST_FY_START
+FIRST_YEAR, LAST_YEAR = FIRST_FY_START, CORE_LAST_FY_START
 REFERENCE_YEAR = 2023                       # FY2023-24: the committed rows ARE this year
 LEDGER_FIRST_YEAR = 2019                    # the plant fuel ledger begins at FY2019-20
 BAGASSE_FIRST_YEAR = 2019                   # no bagasse emissions are booked before it
@@ -79,6 +80,7 @@ BACK_YEARS = asset_path(DATA, "activity", "power", "plant_fuel_quantity_back_yea
 BAGASSE = asset_path(DATA, "activity", "power", "bagasse_generation.csv")
 GENERATION = asset_path(DATA, "activity", "power", "generation_monthly.csv")
 CROSSWALK = asset_path(DATA, "activity", "power", "plant_name_crosswalk.csv")
+GEM_BAGASSE = asset_path(DATA, "activity", "power", "gem_bioenergy_pak.csv")
 
 # The national control each stream is booked from (NEPRA Table 3, in TOE).
 CONTROL_FUEL = {"power_gas": "Gas", "power_rfo": "Furnace Oil", "power_hsd": "Diesel Oil"}
@@ -260,7 +262,9 @@ def _fuel_record(stream, year):
                 continue
             energy[curated_province(r["province"])] += r["energy_TJ"]
             out["stations"] += 1
-        out["basis"] = "station fuel quantity (plant fuel ledger, NEPRA SoIR 2024)"
+        out["basis"] = "station fuel quantity (plant fuel ledger, NEPRA SoIR %d)" % (2025 if year >= 2024 else 2024)
+        if year >= 2024 and stream == "power_gas":
+            out["basis"] += "; own-year gross gas quantities converted to NCV with documented gross-to-net ratio"
     else:
         rows = _back_year_rows()
         for r in rows:
@@ -299,6 +303,15 @@ def _fuel_record(stream, year):
         control = None
     if control:
         out["coverage"] = (out["energy_TJ"] + unplaced) / control
+        if year >= 2024:
+            # This year's national control explicitly includes generation gaps
+            # reconstructed at the observed same-fuel fleet intensity. Their
+            # emitting locations are not observed: use the station pattern as
+            # a declared proxy and retain their contribution separately.
+            out["derived_share"] = max(0.0, 1 - out["coverage"])
+            if out["derived_share"] > 1e-6:
+                out["basis"] += ("; %.2f%% generation-gap reconstruction allocated using the same-fuel station pattern"
+                                 % (100 * out["derived_share"]))
     if out["shares"] is None:
         out["fallback"] = "no station of the CPPA system burned this fuel on record this year"
     elif out["coverage"] is not None and out["coverage"] < COVERAGE_FLOOR:
@@ -399,10 +412,21 @@ def _bagasse_record(year):
         if int(r["fiscal_year"]) != year or not r["generation_GWh"]:
             continue
         gwh = float(r["generation_GWh"])
-        if r["plant"] in BAGASSE_PLACEMENT:
-            province = BAGASSE_PLACEMENT[r["plant"]][0]
+        plant = point_sources.ALIAS.get(r["plant"], r["plant"])
+        if plant in BAGASSE_PLACEMENT:
+            province = BAGASSE_PLACEMENT[plant][0]
         else:
             province, _how = province_of(r["plant"])
+        if province is None:
+            candidates = [g for g in _read(GEM_BAGASSE)
+                          if g["Country/Area"] == "Pakistan" and plant_key(g["Project Name"]) == plant_key(plant)
+                          and g["State/Province"].strip()]
+            provinces = {curated_province(g["State/Province"].strip()) for g in candidates}
+            if len(provinces) == 1:
+                province = provinces.pop()
+                out["flags"].append("%s province from held GEM bioenergy site record; own-year generation does not establish commercial operating status" % plant)
+            elif len(provinces) > 1:
+                raise ValueError("Conflicting held provincial evidence for bagasse plant " + plant)
         if province is None:
             unplaced += gwh
             out["flags"].append("%s has no Table 5 row" % r["plant"])
@@ -410,7 +434,7 @@ def _bagasse_record(year):
         energy[province] += gwh
         out["stations"] += 1
     out["basis"] = ("station generation (activity for this stream is generation; NEPRA SoIR "
-                    "2024 Table 8)")
+                    "%d Table 8)") % (2025 if year >= 2024 else 2024)
     _finish(out, energy, unplaced)
     total = out["energy_TJ"] + unplaced
     out["coverage"] = (out["energy_TJ"] / total) if total else None

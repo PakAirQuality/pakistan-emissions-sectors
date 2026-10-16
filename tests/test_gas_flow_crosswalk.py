@@ -14,6 +14,8 @@ import os
 import subprocess
 import sys
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -40,7 +42,7 @@ class TestTheCrosswalk(unittest.TestCase):
         cls.data = FugitivesData()
 
     def test_nine_periods_and_a_closed_vocabulary(self):
-        self.assertEqual(len(self.by_period), 9)
+        self.assertEqual(set(self.by_period), set(CORE_PERIOD_IDS))
         for row in self.rows:
             self.assertIn(row["flow_kind"], crosswalk.FLOW_KINDS, row["stream"])
             self.assertIn(row["carbon_status"], crosswalk.CARBON_STATUSES, row["stream"])
@@ -103,8 +105,12 @@ class TestTheCrosswalk(unittest.TestCase):
     def test_the_feed_fraction_is_labelled_wherever_it_is_carried(self):
         for period, rows in self.by_period.items():
             feed = next(r for r in rows if r["stream"] == "Fertiliser: feedstock")
-            word = "observed" if period == "FY2023-24" else "carried"
-            self.assertIn("feed fraction %s from FY2023-24" % word, feed["note"], period)
+            if period == "FY2024-25":
+                self.assertIn("feed fraction observed from FY2024-25", feed["note"])
+                self.assertIn("Annex-28", feed["note"])
+            else:
+                word = "observed" if period == REFERENCE_PERIOD else "carried"
+                self.assertIn("feed fraction %s from FY2023-24" % word, feed["note"], period)
 
     def test_the_carbon_comparison_is_published_as_open(self):
         """The ledger closes on volume. It does not close on carbon, and the product must
@@ -133,16 +139,21 @@ class TestTheHeldClassTables(unittest.TestCase):
     def test_the_engine_ingest_agrees_with_the_class_series_where_it_is_comparable(self):
         held = {int(r["fiscal_year"]): float(r["total_mmcfd"])
                 for r in _rows(os.path.join(ACTIVITY, "fertilizer_gas_class.csv"))}
-        self.assertEqual(sorted(held), list(range(2016, 2025)))
+        self.assertEqual(sorted(held), list(CORE_FY_ENDS))
         compared = 0
-        for r in _rows(os.path.join(ROOT, "outputs", "ogra_gas_class_series.csv")):
+        source_rows = _rows(os.path.join(ROOT, "outputs", "ogra_gas_class_series.csv"))
+        for r in source_rows:
             if r["gas_class"] != "fertilizer" or r["class_comparable"] != "yes":
                 continue
             year = int(r["period_id"][2:6]) + 1
             if year in held:
                 self.assertEqual(held[year], float(r["mmcfd_total"]), r["period_id"])
                 compared += 1
-        self.assertEqual(compared, 7, "seven editions carry a text layer and a comparable row")
+        comparable = {r["period_id"] for r in source_rows if r["gas_class"] == "fertilizer"
+                      and r["class_comparable"] == "yes"
+                      and int(r["period_id"][2:6]) + 1 in held}
+        self.assertEqual(compared, len(comparable), "one comparable class record per source period")
+        self.assertGreater(compared, 0)
 
     def test_the_two_transcribed_years_close_on_their_printed_subtotals(self):
         rows = _rows(os.path.join(ACTIVITY, "ogra_sector_gas_2021_2023.csv"))

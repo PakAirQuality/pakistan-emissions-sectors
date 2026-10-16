@@ -1,12 +1,12 @@
 row_kind,sector,year,year_convention,period_start,period_end,period_label,scenario_id,residential_dung_axis,co2e_Mt_AR5,co2e_Mt_AR6,uncert_pct_95,share_pct,note
-sector,agriculture,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,223.45447,218.06518,19.1,50.22,
-sector,waste,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,37.45291,36.36825,51.1,8.42,
-sector,aviation,2023,fiscal-start,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,0.30113,0.3012,58.8,0.07,
-sector,power,2023,fiscal-start,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,45.58957,45.59238,9.7,10.25,
-sector,transport,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,41.92617,41.94376,11.4,9.42,
-sector,railways,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,0.39437,0.39547,14.6,0.09,
-sector,fugitives,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,23.49937,23.34885,37.7,5.28,
-sector,residential,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,24.22042,24.05685,23.2,5.44,"configuration S (household demand), the baseline since rc67: residential dung read from the HIES rounds' reported cake; the rest of the diverted supply has no observed destination and is outside the total - see outputs/residential_dung_ledger_2024.csv for the fate account and outputs/national_dung_variants.csv for what each destination is worth"
-sector,ippu,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,25.53536,25.53536,8.1,5.74,
-sector,industry,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,22.58165,22.58332,18.7,5.08,
-national_total,TOTAL,FY2023-24,"one period, see period_label",2023-07-01,2024-06-30,FY2023-24,REF_2023_24,S,444.95542,438.19061,10.9,100.0,"Every sector on one reporting period, so this is a single-period national total. What a common period cost is declared per sector: some activity is an enumeration rather than a flow over it, and some shape is borrowed from a neighbouring period. Memo items (international bunkers, off-road machinery diesel, biogenic CO2) are excluded by construction and live in each sector's own outputs. configuration S (household demand), the baseline since rc67: residential dung read from the HIES rounds' reported cake; the rest of the diverted supply has no observed destination and is outside the total - see outputs/residential_dung_ledger_2024.csv for the fate account and outputs/national_dung_variants.csv for what each destination is worth"
+sector,agriculture,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,223.03802,217.6361,19.1,50.17,
+sector,waste,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,37.45291,36.36825,51.1,8.42,
+sector,aviation,2023,fiscal-start,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,0.30113,0.3012,58.8,0.07,
+sector,power,2023,fiscal-start,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,45.65722,45.66003,26.8,10.27,
+sector,transport,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,41.92617,41.94376,11.4,9.43,
+sector,railways,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,0.39437,0.39547,14.6,0.09,
+sector,fugitives,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,23.49937,23.34885,37.7,5.29,
+sector,residential,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,24.22155,24.05795,23.2,5.45,"configuration S (household demand), the baseline since rc67: residential dung read from the HIES rounds' reported cake; the rest of the diverted supply has no observed destination and is outside the total - see outputs/residential_dung_ledger_2024.csv for the fate account and outputs/national_dung_variants.csv for what each destination is worth"
+sector,ippu,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,25.53536,25.53536,8.1,5.74,
+sector,industry,2024,fiscal-end,2023-07-01,2024-06-30,FY2023-24,S_TAN,S,22.58165,22.58332,18.7,5.08,
+national_total,TOTAL,FY2023-24,"one period, see period_label",2023-07-01,2024-06-30,FY2023-24,S_TAN,S,444.60776,437.83029,11.2,100.0,"Every sector on one reporting period, so this is a single-period national total. What a common period cost is declared per sector: some activity is an enumeration rather than a flow over it, and some shape is borrowed from a neighbouring period. Memo items (international bunkers, off-road machinery diesel, biogenic CO2) are excluded by construction and live in each sector's own outputs. configuration S (household demand), the baseline since rc67: residential dung read from the HIES rounds' reported cake; the rest of the diverted supply has no observed destination and is outside the total - see outputs/residential_dung_ledger_2024.csv for the fate account and outputs/national_dung_variants.csv for what each destination is worth"

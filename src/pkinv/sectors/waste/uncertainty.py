@@ -412,7 +412,8 @@ RERUN_SEED = SCENARIO_SEED + 100     # its own stream; scenarios and national MC
 
 
 def parameter_rerun_mc(data=None, n_iter=10000, seed=RERUN_SEED,
-                       return_samples=False, n2o_method=None, freeze=()):
+                       return_samples=False, n2o_method=None, freeze=(),
+                       return_native=False):
     """Approach 2 by PARAMETER RERUN: draw the inputs, rebuild the sector, every draw.
 
     The seventh review's architectural point: a Monte Carlo that draws component
@@ -476,6 +477,7 @@ def parameter_rerun_mc(data=None, n_iter=10000, seed=RERUN_SEED,
     saved_ef = {item: base.ef[item]["value"] for item in ef_items}
     sums = {c: [] for c in categories}
     totals = []
+    native = {}
     try:
         for _ in range(n_iter):
             for p in drawn:
@@ -495,6 +497,15 @@ def parameter_rerun_mc(data=None, n_iter=10000, seed=RERUN_SEED,
                 base.params["ww_n2o_method_2019"] = switch
             ledger.rows(base)        # raises if D+U!=G or B+R!=U in THIS draw
             comps = engine.build_components(base)
+            if return_native:
+                for parameter in drawn:
+                    native.setdefault("parameter:" + parameter, []).append(base.params[parameter])
+                for c in comps:
+                    key = "%s|%s|%s" % (c["category"], c["subitem"], c["gas"])
+                    native.setdefault(key, []).append(c["emissions_Gg"])
+                wet = open_burning.waste_burnt(base)
+                native.setdefault("burned_wet_t", []).append(wet)
+                native.setdefault("burned_dry_t", []).append(wet * base.p("dry_matter"))
             draw_total = 0.0
             for cat in categories:
                 v = sum(c["co2e_Mt_AR5"] for c in comps if c["category"] == cat)
@@ -513,6 +524,8 @@ def parameter_rerun_mc(data=None, n_iter=10000, seed=RERUN_SEED,
         out = _summarize_draws(base, sums, totals, n_iter, seed)
     finally:
         base.params.update(saved_params)
+    if return_native:
+        return out, sums, totals, native
     if return_samples:
         return out, sums, totals
     return out

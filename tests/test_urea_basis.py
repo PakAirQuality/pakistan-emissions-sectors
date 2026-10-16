@@ -93,12 +93,16 @@ class TestThePublishedBasisTable(unittest.TestCase):
         cls.rows = read_rows(os.path.join(OUTPUTS, "agriculture_urea_basis.csv"))
 
     def test_every_fiscal_year_is_present(self):
-        self.assertEqual(len(self.rows), 9)
+        from pkinv.core.reporting_window import CORE_FY_STARTS, fiscal_label
+        self.assertEqual({r["fiscal_year"] for r in self.rows},
+                         {fiscal_label(year) for year in CORE_FY_STARTS})
 
-    def test_only_the_reference_year_is_measured(self):
+    def test_only_years_with_held_full_year_product_offtake_are_measured(self):
         direct = [r for r in self.rows
                   if r["urea_activity_basis"] == "direct_product_offtake"]
-        self.assertEqual([r["fiscal_year"] for r in direct], ["FY2023-24"])
+        # NFDC's held FY2024–25 Annual Fertilizer Review adds another full-year
+        # product quantity; its published period is not a partial Survey figure.
+        self.assertEqual({r["fiscal_year"] for r in direct}, {"FY2023-24", "FY2024-25"})
 
     def test_the_reference_year_carries_the_printed_mass_and_its_co2(self):
         ref = next(r for r in self.rows if r["fiscal_year"] == "FY2023-24")

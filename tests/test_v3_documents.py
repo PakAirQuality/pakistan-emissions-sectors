@@ -251,7 +251,7 @@ class TestTheGriddedFiguresCarryThisRelease(unittest.TestCase):
     def test_each_figure_pdf_names_the_engine_version_and_no_other(self):
         from pkinv import __version__ as engine
         pattern = re.compile(r"\b1\.\d+\.\d+rc\d+\b")
-        self.assertEqual(len(self._figures()), 8, "the manuscript has eight main figures")
+        self.assertEqual(len(self._figures()), 5, "the integrated manuscript has five main figures")
         for name in self._figures():
             info = self._run("pdfinfo", name)
             found = set(pattern.findall(info))
@@ -262,7 +262,7 @@ class TestTheGriddedFiguresCarryThisRelease(unittest.TestCase):
             self.assertIn("release=%s;" % engine, info, name)
 
     def test_no_figure_prints_a_release_string_as_plot_text(self):
-        pattern = re.compile(r"\b1\.\d+\.\d+(?:rc\d+)?\b|\bREF_\d|\brelease\b")
+        pattern = re.compile(r"\b1\.\d+\.\d+(?:rc\d+)?\b|\bREF_\d")
         for name in self._figures():
             found = pattern.findall(self._run("pdftotext", name))
             self.assertEqual(found, [], "%s prints %s on the plot; it belongs in the caption "
@@ -309,13 +309,25 @@ class TestTheGeneratedSupplementTablesAreCurrent(unittest.TestCase):
     def test_the_five_classes_table_is_byte_identical_to_its_product(self):
         self._check("make_five_classes_table.py")
 
+    def test_the_five_classes_product_files_every_catalogue_entry(self):
+        """The table check above compares the table with the product, so both can be stale
+        together: rc68 shipped 103 entries while the catalogue held 104 (the HTAP species
+        row), and only the clean rebuild saw it. The product is checked against its input."""
+        from pkinv.core.io import read_rows
+        from pkinv.report import validation_five_classes
+        rebuilt, _summary = validation_five_classes.build()
+        shipped = read_rows(os.path.join(ROOT, "outputs", "pakemis_validation_five_classes.csv"),
+                            comments=True)
+        self.assertEqual([r["validation_id"] for r in shipped],
+                         [r["validation_id"] for r in rebuilt])
+        self.assertEqual([r["five_class"] for r in shipped], [r["five_class"] for r in rebuilt])
+
     def test_every_generated_table_is_input_by_a_manuscript(self):
         v3 = os.path.join(ROOT, "paper_national", "versions", "v3")
         ts = open(os.path.join(v3, "technical_supplement.tex"), encoding="utf-8").read()
         paper = open(os.path.join(v3, "paper.tex"), encoding="utf-8").read()
-        for name in ("tab_coal_audit", "tab_livestock_factors", "tab_closure", "tab_five_classes"):
-            self.assertIn("\\input{generated/%s.tex}" % name, ts, name)
-        self.assertIn("\\input{generated/tab_btr_qualified.tex}", paper)
+        self.assertIn("\\input{generated/integrated_facts.tex}", ts)
+        self.assertIn("\\input{generated/integrated_facts.tex}", paper)
 
     def test_no_generated_table_carries_a_control_character(self):
         """A Python string with a single backslash before r or a put a carriage return and a

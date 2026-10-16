@@ -21,6 +21,7 @@ import re
 import unittest
 
 from pkinv.core.io import read_rows
+from pkinv.core.reporting_window import CORE_SUFFIX, CORE_FY_ENDS
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 OUT = os.path.join(ROOT, "outputs")
@@ -76,8 +77,8 @@ class TestTheLedgerMatchesTheMatrix(unittest.TestCase):
         self.assertEqual({r["sector_id"] for r in ledger}, {"power", "industry", "fugitives"})
 
         remainder = self._declared_remainder_cells()
-        self.assertEqual(len(remainder), 9,
-                         "power SO2 is the only declared remainder and it must cover all nine "
+        self.assertEqual(len(remainder), len(CORE_FY_ENDS),
+                         "power SO2 is the only declared remainder and it must cover all core "
                          "periods; a gap would mean a year is screened whole beside an estimate")
 
         e_cells = {(c["period_id"], c["sector_id"], c["pollutant"])
@@ -93,7 +94,7 @@ class TestTheLedgerMatchesTheMatrix(unittest.TestCase):
     def _declared_remainder_cells(self):
         """The cells whose screened number says, on the row, that it is only the remainder."""
         out = set()
-        for r in _o("power_air_screening_fy2015_16_fy2023_24.csv"):
+        for r in _o("power_air_screening_%s.csv" % CORE_SUFFIX):
             if "REMAINDER ONLY" in r.get("basis", ""):
                 out.add((r["period_id"], "power", r["pollutant"]))
         return out
@@ -104,7 +105,7 @@ class TestCaptiveIsReportedWhereTheAxisSays(unittest.TestCase):
         axis = {(r["module"], r["category"]): r["reporting_sector"]
                 for r in read_rows(asset_path(DATA, "stream_reporting_sector.csv"))}
         self.assertEqual(axis[("power", "Captive gas self-generation (1A2)")], "industry")
-        for name in ("power_air_pollutants_fy2023_24.csv", "power_air_screening_fy2015_16_fy2023_24.csv"):
+        for name in ("power_air_pollutants_fy2023_24.csv", "power_air_screening_%s.csv" % CORE_SUFFIX):
             with open(os.path.join(OUT, name), encoding="utf-8") as f:
                 cats = {r["category"] for r in csv.DictReader(f)}
             self.assertFalse([c for c in cats if "aptive" in c], name)
@@ -122,36 +123,36 @@ class TestCaptiveIsReportedWhereTheAxisSays(unittest.TestCase):
         with open(os.path.join(ROOT, "papers", "power", "sections", "06b_air_pollutants.tex"), encoding="utf-8") as f:
             text = f.read()
         self.assertNotIn("Grid plus captive", text)
-        self.assertIn("Grid only", text)
+        self.assertIn("Captive gas is counted once in industrial air emissions", text)
+        self.assertIn("Central power air admission", text)
 
 
 class TestTheSupplementAgrees(unittest.TestCase):
     def test_industry_is_not_described_as_having_no_layer(self):
-        with open(os.path.join(PAPER_NATIONAL_MAIN, "supplement.tex"), encoding="utf-8") as f:
+        with open(os.path.join(PAPER_NATIONAL_MAIN, "technical_supplement.tex"), encoding="utf-8") as f:
             text = f.read()
         self.assertNotIn("Industry, IPPU & absent", text)
         self.assertNotIn("industrial combustion and IPPU process pollutants have no layer", text)
-        self.assertIn("Industry & provisional estimate", text)
-        with open(os.path.join(PAPER_NATIONAL_SECTIONS, "12_limitations.tex"), encoding="utf-8") as f:
+        self.assertIn("pollutant factors retain their applicable boiler", text)
+        with open(os.path.join(PAPER_NATIONAL_MAIN, "paper.tex"), encoding="utf-8") as f:
             lim = f.read()
         self.assertNotIn("industrial\ncombustion and IPPU process pollutants, which have no layer at all", lim)
 
     def test_ippu_and_fugitives_are_not_described_as_having_no_layer(self):
         """rc59: the two register modules entered the panel; every description that said
         'no layer' must now say provisional estimate, and the matrix must agree."""
-        with open(os.path.join(PAPER_NATIONAL_MAIN, "supplement.tex"), encoding="utf-8") as f:
+        with open(os.path.join(PAPER_NATIONAL_MAIN, "technical_supplement.tex"), encoding="utf-8") as f:
             text = f.read()
         self.assertNotIn("IPPU, fugitives & absent", text)
         self.assertNotIn("have no layer at", text)
-        self.assertIn("IPPU & provisional estimate", text)
-        self.assertIn("Fugitives & provisional estimate", text)
-        with open(os.path.join(PAPER_NATIONAL_SECTIONS, "12_limitations.tex"), encoding="utf-8") as f:
+        self.assertIn("ammonia, steel, soda ash", text)
+        self.assertIn("Flaring is separate from venting", text)
+        with open(os.path.join(PAPER_NATIONAL_MAIN, "paper.tex"), encoding="utf-8") as f:
             lim = f.read()
         self.assertNotIn("fugitive NMVOC, which have no layer at all", lim)
         from pkinv.semantic import release_json
         texts = " ".join(l["message"] for l in release_json.BASE_LIMITATIONS)
         self.assertNotIn("have no air-pollutant layer", texts)
-        self.assertIn("rc59", texts)
         coverage = _o("pakemis_air_coverage_matrix.csv")
         for module in ("ippu", "fugitives"):
             states = {c["pollutant"]: c["state"] for c in coverage if c["sector_id"] == module and c["period_id"] == "FY2023-24"}

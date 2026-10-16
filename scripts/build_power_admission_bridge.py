@@ -39,13 +39,15 @@ from pkinv.assets import asset_path
 
 from pkinv.core.io import read_rows, write_or_check                      # noqa: E402
 from pkinv.report import air_annual                                      # noqa: E402
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX, CORE_FY_STARTS
 
 ADMISSION = asset_path(ROOT, "data", "activity", "power", "power_so2_admission.csv")
-PANEL = asset_path(ROOT, "outputs", "pakemis_air_annual_fy2015_16_fy2023_24.csv")
+PANEL = asset_path(ROOT, "outputs", "pakemis_air_annual_%s.csv" % CORE_SUFFIX)
 SCREENING = asset_path(ROOT, "outputs",
-                         "power_air_screening_fy2015_16_fy2023_24.csv")
+                         "power_air_screening_%s.csv" % CORE_SUFFIX)
 OUT = asset_path(ROOT, "outputs", "pakemis_air_power_admission_bridge.csv")
-PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024))
+PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS)
 
 FIELDS = ("period_id", "fiscal_end_year", "panel_so2_before_kt",
           "increment_rfo_boiler_kt", "increment_rfo_engine_kt", "increment_rfo_turbine_kt",
@@ -70,7 +72,7 @@ def build():
     # or every period would be counted as many times as there are configurations.
     # REF_2023_24 is the reference; L_HERD1624 differs only in sectors this change does not
     # touch, so the step is identical in both and reporting one keeps the table readable.
-    configuration = "REF_2023_24"
+    configuration = conf.REFERENCE
     after = defaultdict(float)
     power_after = defaultdict(float)
     for r in panel:

@@ -1,13 +1,12 @@
 \section{Limitations}
 \label{sec:limitations}
 
-\textbf{The spatial model's geometry is measured; its corridor weights are not.} The
+\textbf{The separate ODbL route alternative has mapped geometry and assumed corridor weights.} The
 network, the yards and the route-kilometre audit are data. The service intensity assigned
 to each corridor is declared judgment, because Pakistan Railways publishes no
 service-frequency statistics and its public timetable interface refuses unauthenticated
 access; the basis of every weight is stated on its data row, the freight-wagons proxy is
-retained as the structural alternative, and the split's real uncertainty is the distance
-between the two published alternatives. A timetable extraction, or divisional train-km if
+retained as the structural alternative, and the difference between the alternatives is a structural sensitivity, not a confidence interval. A timetable extraction, or divisional train-km if
 any edition ever carries them, would replace the judgment with measurement. The national
 total is unaffected throughout.
 
@@ -39,7 +38,7 @@ The recode IS the reference: the engine books
 traction, with the older summary booking preserved as the configuration
 \emph{rail\_ie\_summary} in
 \texttt{outputs/national\_configurations.csv}. Either booking conserves the national
-total at \num{444.95542} exactly---the same fuel at the same
+total exactly---the same fuel at the same
 factors under a different code, never a deletion. (An earlier edition priced this axis
 as a subtraction; the conserving recode replaced it, and the reference itself now
 carries the split.)

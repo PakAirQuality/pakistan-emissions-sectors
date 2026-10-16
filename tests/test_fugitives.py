@@ -282,7 +282,10 @@ class TestDiagnosticsAreNotInventory(unittest.TestCase):
 
     def test_gas_flow_identity_and_network_compatibility(self):
         rows = gas_balance.balance_rows(self.data)
-        self.assertEqual([row["fiscal_year"] for row in rows], [2022, 2023, 2024])
+        controls = gas_balance.controls()
+        self.assertEqual({row["fiscal_year"] for row in rows},
+                         {row["fiscal_year"] for row in controls})
+        self.assertTrue({2022, 2023, 2024, 2025} <= {row["fiscal_year"] for row in rows})
         self.assertTrue(all(abs(row["supply_identity_residual_mmcfd"]) < 1e-9 for row in rows))
         compatibility = {row["scenario"]: row for row in gas_balance.ufg_compatibility(self.data)}
         self.assertAlmostEqual(

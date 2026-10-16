@@ -2,7 +2,7 @@
 
 WHY THIS EXISTS. An external reviewer graded the 108-month product D - "it still does not
 exist; only the reference year has twelve allocated months" - and made building it the
-highest-leverage next task. It exists: outputs/pakemis_monthly_fy2015_16_fy2023_24.csv holds
+highest-leverage next task. It exists: outputs/pakemis_monthly_fy2015_16_fy2024_25.csv holds
 16,824 rows over 108 distinct months, 201507 to 202406. The reviewer had read the manuscripts,
 and paper_national/supplement.tex said in as many words that the product did not exist.
 
@@ -38,8 +38,8 @@ from pkinv.paths import OUTPUTS
 from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 
-ANNUAL = "pakemis_annual_fy2015_16_fy2023_24.csv"
-MONTHLY = "pakemis_monthly_fy2015_16_fy2023_24.csv"
+ANNUAL = "pakemis_annual_fy2015_16_fy2024_25.csv"
+MONTHLY = "pakemis_monthly_fy2015_16_fy2024_25.csv"
 STREAMS = "pakemis_source_streams.csv"
 UNALLOCATED = "pakemis_spatial_unallocated.csv"
 AGRI_FISCAL = "pakemis_agriculture_fiscal_series.csv"
@@ -190,7 +190,10 @@ def build():
           "projection, for which no fiscal enumeration exists")
 
     change = _rows(AGRI_BASIS)
-    backcast = [r for r in change if r["fiscal_end_year"] != "2024"]
+    # Compare only the eight historical years for which both calendar and
+    # fiscal bases exist.  The FY2024-25 extension has no matched archived
+    # calendar comparator and must never contribute a fabricated zero delta.
+    backcast = [r for r in change if 2016 <= int(r["fiscal_end_year"]) <= 2023]
     _fact(out, "agriculture_basis_change_Mt",
           round(sum(float(r["basis_term_Mt"]) for r in backcast), 4), AGRI_BASIS,
           "what moving eight backcast years from the FAOSTAT-calendar basis to the fiscal "
@@ -359,22 +362,22 @@ def build():
           sum(1 for r in cov if r["state"] == "E"), "pakemis_air_coverage_matrix.csv",
           "cells the covered panel estimates; the rest are typed absences, never zeros")
     _fact(out, "air_panel_rollup_rows",
-          len(_rows("pakemis_air_annual_fy2015_16_fy2023_24.csv")),
-          "pakemis_air_annual_fy2015_16_fy2023_24.csv",
+          len(_rows("pakemis_air_annual_fy2015_16_fy2024_25.csv")),
+          "pakemis_air_annual_fy2015_16_fy2024_25.csv",
           "the covered-sources rollup at period x sector x category x species")
     # the nine-year air spatial family (air spatial Wave B): the shape facts a reader
     # would otherwise count by hand, from the products themselves
     from netCDF4 import Dataset
     with Dataset(asset_path(OUTPUTS,
-                              "pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc")) as ds:
+                              "pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc")) as ds:
         _fact(out, "air_grid_periods", len(ds.dimensions["time"]),
-              "pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc",
+              "pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
               "fiscal periods in the air cube's time axis; the survey-anchored file "
               "carries the same nine")
         _fact(out, "air_grid_species",
               sum(1 for v in ds.variables.values()
                   if getattr(v, "units", "") == "Gg"),
-              "pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc",
+              "pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
               "pollutant layers per period, native mass, never summable across species")
     unalloc = _rows("pakemis_air_unallocated_by_year.csv")
     _fact(out, "air_unallocated_rows", len(unalloc),

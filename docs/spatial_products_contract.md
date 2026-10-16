@@ -225,70 +225,58 @@ in `data/validation_catalog.csv` and stays visible until it is closed. It is del
 in `data/monthly_data_requests.csv`: that registry is keyed to the monthly decomposition's
 components, and a district-frame gap is not one of them.
 
-**What is NOT published, and why.** Nine gridded cubes. At 0.05° that is roughly 52 MB of
-NetCDF whose within-province pattern is, for about two thirds of stream-years, the reference
-year's — precision the evidence does not have, in the format most likely to be read as though
-it did. The gridded product remains the reference year; the months below the nation ship at
-ADM2 for all nine periods, and a historical cube can be regenerated from the code in under a
-minute, which is the same argument that kept the per-stream surfaces out of the tree.
+Annual and monthly products now span the supported ten fiscal years for all four
+configurations. A gridded record is an allocated emission mass, not a direct
+observation at 0.05°. Its source-specific temporal and spatial support remains
+visible in the evidence registers.
 
-## Spatial brackets across the nine years
+## Spatial allocation sensitivities
 
-`outputs/pakemis_spatial_brackets.csv` prices, per allocation, the spread between the placement
-this inventory uses and an admissible second reading of it — road diesel on vehicle
-registrations rather than fuel sales, and so on. It carries 83 rows and no period axis, and
-`data/product_schemas.csv` declares its coverage as FY2023-24.
+Spatial alternative proxies describe conditional changes to the detailed reference
+allocation. They are separate from parameter uncertainty and do not establish a
+confidence interval for unobserved historical or later-year geography. Reusing a
+reference pattern does not add own-year spatial evidence, and a changed modelled
+population pattern does not measure local emissions change.
 
-That is not an oversight in a nine-year release, and the reason is the one that also kept nine
-gridded cubes out of the tree. A bracket measures the distance between two readings of the
-**same** placement. For 1,102 of the 1,672 live stream-years the placement *is* the reference
-year's, rescaled to that year's own control — so those years' brackets are the reference year's
-brackets by construction, and publishing them per year would ship nine copies of one spread.
+## Spatial provenance vocabulary
 
-The join that makes this readable is already published: `spatial_time_basis` in
-`pakemis_spatial_weights_by_year.csv` names every stream-year that is a
-`reference_shape_backcast`, and each of those inherits the reference year's bracket exactly.
-The 299 stream-years whose geography is their own are where a genuinely different bracket could
-exist; pricing them would need the alternative proxies to be available per year, and they are
-not — the registration and area statistics that supply the alternatives are themselves
-single-vintage or province-ragged. That is a data gap rather than a modelling choice, and it is
-the same gap the weight registry records on the primary side.
-
-What a reader must therefore **not** infer is that an earlier year's placement is better
-constrained than the reference year's because no per-year bracket is published for it. It is
-constrained identically where the pattern is inherited, and less well where it is not.
-
-## The provenance vocabulary (rc44)
-
-`pakemis_spatial_weights_by_year.csv` types every stream-period by one question: **does the
-evidence behind this surface have a time axis the engine reads for this period?**
+The registry distinguishes the support of the actual pattern, rather than treating
+any time-indexed input as observed annual activity.
 
 | value | meaning |
 | --- | --- |
-| `annual_observed_activity` | the evidence has a time axis and the engine read it for this period |
-| `static_structural` | a timeless surface — a raster snapshot or a declared judgement with no time axis at all, in any period including the reference year |
-| `reference_shape_backcast` | the reference year's pattern, rescaled to this year's own control |
-| `substituted_surface` | the declared surface had no evidence and a substitute placed the majority of the mass |
-| `unallocated` | never placed below ADM1, in any year |
-| `not_present` | the stream carries no mass in this period |
+| `annual_observed_activity` | usable activity records from the target period informed the pattern; the underlying raster and any fallback retain their own limits |
+| `calendar_activity_proxy` | dated calendar-year activity used as a fiscal-year spatial proxy, with the actual calendar source period recorded separately |
+| `modelled_population_proxy` | census-based district population interpolation/projection informs the target-period allocation; household fuel strata retain their explicitly named HIES vintage |
+| `static_structural` | a fixed raster, location pattern or declared judgement with no own-period activity record |
+| `reference_shape_backcast` | a reference district pattern reused for an earlier fiscal period |
+| `reference_shape_forward` | a reference district pattern reused for a later fiscal period lacking its own usable district panel |
+| `substituted_surface` | a substitute places most of the stream's mass |
+| `unallocated` | no allocation below ADM1 |
+| `not_present` | no estimated stream mass in the period |
 
-**What changed, and why it was not a rename.** Until rc44 the first two were three values —
-`direct_activity`, `administrative_activity` and `dynamic_proxy` — which were a pure function of
-`within_province_placement`, a column already in the same row, and so carried no information the
-row did not already hold. One of them was worse than redundant: `dynamic_proxy` was applied to
-streams placed on an ESA WorldCover 2021 built-up raster, and a reader counting "measured for
-its own year" counted all 196 of them. Re-deriving moved 299 of 1,701 rows and corrected a
-published figure downwards — 299 stream-years measured for their own year became **159**, with
-**140** now saying plainly that they ride a timeless surface. No mass moved.
+`weight_period` identifies the period represented by the applied pattern, not its
+observational status. Four additional fields preserve that distinction:
+`activity_evidence_status`, `activity_evidence_period`, `survey_pattern_period` and
+`survey_pattern_status`. Household FY2024–25 allocations use mean projected
+CY2024/CY2025 district populations and FY2024–25 survey strata. Earlier household
+allocations reuse those survey strata with the population model for their target
+years. FY2023–24 uses a census/projection midpoint, not an observed annual district
+household fuel distribution. WorldPop 2020, ESA WorldCover 2021 and GLW 2020 retain
+their fixed raster vintages.
 
-**Two values the review proposed are reserved, not shipped.**
-`interpolated_between_anchors` and `nearest_vintage` describe evidence this build does not yet
-produce. Declaring them in the enum would make `test_the_basis_vocabulary_is_closed` pass
-vacuously — a value no code path can emit cannot catch a value that should have been retired,
-which is that guard's only job. They will be declared by whatever first emits them.
+The held district crop panel ends in FY2023–24. FY2024–25 crop-driven district
+allocations retain the reference category pattern and are classified
+`reference_shape_forward`; they are not own-year district crop observations.
 
-**One honest imprecision, to be revisited.** A non-reference year whose surface is timeless is
-labelled `reference_shape_backcast` rather than `static_structural`, because although the
-within-province raster is timeless the provincial share it rides is still the reference year's.
-That is true today and stops being true when the provincial shares are period-keyed; the label
-is deliberately the more pessimistic of the two until then.
+Flare-site allocations use the calendar year in which the fiscal year begins.
+The six-month overlap is not a strict majority; these satellite-derived volumes
+are labelled `calendar_activity_proxy`, with `weight_period` and
+`activity_evidence_period` naming the actual calendar year. Location weights are
+unchanged by this classification.
+
+Pollutant evidence shares separately report observed-activity, static, modelled
+population and calendar-proxy pattern masses. The legacy `own_pattern_mass_share` is their aggregate:
+it means a declared non-borrowed pattern, not observed annual geography. Borrowed
+pattern mass includes both backward and forward reference-pattern reuse. These
+shares describe allocation evidence and are not probabilistic uncertainty widths.

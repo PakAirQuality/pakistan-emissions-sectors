@@ -403,7 +403,8 @@ class TestTheRegisterSeparatesMeasurementFromAssumption(unittest.TestCase):
         """
         power = [r for r in read_rows(os.path.join(OUTPUTS, "pakemis_air_coverage_matrix.csv"))
                  if r.get("sector_id") == "power" and r.get("pollutant") == "SO2"]
-        self.assertEqual(len(power), 9)
+        from pkinv.core.reporting_window import CORE_FY_STARTS
+        self.assertEqual(len(power), len(CORE_FY_STARTS))
         for r in power:
             self.assertEqual(r["state"], "E", r)
             self.assertEqual(r["state_basis"], "panel-atom", r)

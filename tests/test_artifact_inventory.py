@@ -160,7 +160,25 @@ from pkinv.core.io import read_rows
 # names it yet: the papers are frozen at the released rc and say "most historical district
 # geography is reconstructed" in prose. Citing it there is a next-mint edit, and the ceiling
 # comes back down when it is made.
-UNCITED_CEILING = {"canonical": 47, "sector_headline": 0, "diagnostic": 41}
+# canonical 47 -> 0 and diagnostic 41 -> 53 (rc68, 15 October 2026). The citation scan now
+# matches a file's name as a WHOLE token: a bare substring test had counted every
+# activity/activity_*.csv working file as cited because the papers name
+# semantic/fact_activity_*.csv. The v3 technical supplement now lists every canonical product
+# (scripts/make_v3_product_list.py), which closes the canonical debt, and three files that a
+# canonical pattern swept up were re-typed: the two nine-year air views are format variants of
+# the ten-year panels, and the rc42 spatial re-base is dated history beside the current rc44.
+# THE DIAGNOSTIC RAISE IS A REAL LOSS, stated as one. The rc68 integration rewrote the long
+# national paper (v1) as a compact article and rewrote the sector notes; together they stopped
+# naming 37 diagnostics. The technical supplement and the agriculture appendix were given the
+# evidence tables behind the checks they still describe (the parse controls and quarantines,
+# the coal, gas, nitrogen, wastewater, power-control and licence audits), which recovered 25.
+# The twelve still uncited are about subjects the rewritten texts no longer discuss - the
+# Lahore power register, the pass-2 and validation scorecards, the axis fingerprints, the
+# forest-flux screening, the chemical-tier gates, the 1990-2024 air series, the grid stream
+# surfaces, the citation pointer audit and the sector-note fact file - and naming a table in
+# prose that makes no claim on it would be a citation without a claim. One more is the rc42
+# re-base re-typed above. Lowering it is free.
+UNCITED_CEILING = {"canonical": 0, "sector_headline": 0, "diagnostic": 53}
 # THE OTHER DIRECTION OF THE SAME RULE, which nothing checked until rc64.
 #
 # The register enforces that a `canonical` artifact must be named in a manuscript - that is
@@ -199,7 +217,10 @@ UNCITED_CEILING = {"canonical": 47, "sector_headline": 0, "diagnostic": 41}
 # document's subject - not a reader-facing claim resting on it. The role is right and so is the
 # citation; of the two remedies the guard offers, re-typing it canonical would be false and
 # not naming it would hide the dependency the document exists to report.
-CITED_INTERMEDIATE_CEILING = 11
+# 11 -> 6 (rc68). Lowered to the live count: the six are run and release records a paper names
+# as records (release_manifest.json, pakemis_test_run.json, three sector run manifests) and the
+# per-class air uncertainty table, all cited before; the whole-name scan removed false matches.
+CITED_INTERMEDIATE_CEILING = 6
 # 51 -> 52 (rc62): pakemis_brick_kiln_fleet_by_year.csv, the brick fleet's dated observations on
 # the year axis beside a production-based coal band. Uncited BY DESIGN and staying so: it books
 # nothing - HDIP's column is still what the engine burns - and it exists so the shape of what is
@@ -367,6 +388,51 @@ class TestTheCountsReconcile(unittest.TestCase):
     # precedent. The count is deliberately not stated: it was "three" while the dict held
     # more, which is the same staleness this round spent its time removing.
     DECLARED_OVERLAPS = {
+        # rc68: ten explicit rows placed ahead of pakemis_*.csv so that none of them is read as
+        # a canonical emissions product. Each is a diagnostic, an evaluation lane or a record
+        # of the release itself; the first-match order is the decision, stated here.
+        "pakemis_air_annual_fy2015_16_fy2023_24.csv":
+            "matches pakemis_*.csv too; format_variant wins because it is the first nine years "
+            "of the ten-year air panel under its older name, not a second product",
+        "pakemis_air_source_classes_fy2015_16_fy2023_24.csv":
+            "matches pakemis_*.csv too; format_variant wins because it is the first nine years "
+            "of the ten-year source-class table under its older name, not a second product",
+        "pakemis_spatial_rebase_rc42.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a dated re-base "
+            "measurement kept as history beside the current rc44 one",
+        "pakemis_air_htap_species_comparison.csv":
+            "matches pakemis_*.csv too; eval_lane wins because it compares this inventory with "
+            "HTAPv3.2 process by process and species by species; it books no emission",
+        "pakemis_air_htap_comparison.csv":
+            "matches pakemis_*.csv too; the explicit eval_lane rule must win because it is a "
+            "matched-year comparison against an external inventory, not an emissions product",
+        "pakemis_htap_nh3_annual.csv":
+            "matches pakemis_*.csv too; eval_lane wins because these are HTAP's own published "
+            "values for Pakistan, carried as a comparator and never as this inventory's estimate",
+        "pakemis_htap_nh3_monthly.csv":
+            "matches pakemis_*.csv too; eval_lane wins because these are HTAP's own published "
+            "monthly values, a comparator for timing and never this inventory's estimate",
+        "pakemis_air_power_control_evidence.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it records public plant design "
+            "controls as evidence and books no emission; demonstrated operation is not inferred",
+        "pakemis_air_power_design_cases.csv":
+            "matches pakemis_*.csv too; eval_lane wins because its estimates are scenario-only "
+            "design and sulfur cases, kept apart from the central totals by construction",
+        "pakemis_nitrogen_partition_sensitivity.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a deterministic chemical "
+            "attribution case with no probability, never a second central nitrogen account",
+        "pakemis_pass2_scorecard.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it reports retired internal "
+            "targets beside current metrics and is not a release-completion verdict or a product",
+        "pakemis_primary_geography_licence_audit.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it records which geography "
+            "inputs the primary package may use under their licences; it books no emission",
+        "pakemis_release_change_summary.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it compares this release with "
+            "the preserved previous one; read as canonical it would be a second, older account",
+        "pakemis_sector_note_facts.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is generated text facts for "
+            "the sector notes, every value of which is read from a canonical product elsewhere",
         "pakemis_power_provincial_basis_by_year.csv":
             "matches pakemis_*.csv too; the explicit diagnostic rule must win because this "
             "table books no emission: it sets the provincial split of grid power under the "
@@ -542,8 +608,8 @@ class TestTheCountsReconcile(unittest.TestCase):
         "pakemis_grid_provincial_check.csv":
             "matches *_provincial_* too; it is a cross-sector product, not a sector's own "
             "provincial allocation, so the pakemis_ rule must win",
-        "pakemis_monthly_fy2015_16_fy2023_24.csv":
-            "matches *_monthly_fy* too; it is the nine-year cross-sector layer, not a "
+        "pakemis_monthly_fy2015_16_fy2024_25.csv":
+            "matches *_monthly_fy* too; it is the ten-year cross-sector layer, not a "
             "sector's monthly file",
         "pakemis_paper_hashes.csv":
             "matches pakemis_*.csv too; its explicit rule must win because it is written "

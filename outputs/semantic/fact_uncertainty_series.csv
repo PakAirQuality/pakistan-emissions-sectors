@@ -1,123 +1,129 @@
 result_row_id,kind,scope,key,scenario,period_or_pair,central_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,rel_down_pct_95,rel_up_pct_95,n_iter,note
-2b7bed85b5d5b22f40f1239b,annual_level,national,FY2015-16,parameter_typed,FY2015-16,393.83627,354.5823,392.5709,439.3455,9.677,11.915,20000,covered total of the sectors present in the year
-a573a7a47dda97432ff7a3b8,annual_level,national,FY2015-16,time_correlated,FY2015-16,393.83627,359.105,392.4679,434.4344,8.501,10.693,20000,covered total of the sectors present in the year
-aafa92206ae84c6f1bdfc540,annual_level,national,FY2015-16,time_independent,FY2015-16,393.83627,359.016,392.4287,433.9501,8.514,10.581,20000,covered total of the sectors present in the year
-e9aa869d52c877857b2a88b4,annual_level,national,FY2016-17,parameter_typed,FY2016-17,419.43997,378.8475,418.1316,467.8978,9.395,11.902,20000,covered total of the sectors present in the year
-0705399a3f40b304a3aeaffd,annual_level,national,FY2016-17,time_correlated,FY2016-17,419.43997,382.9258,418.0306,462.0726,8.398,10.536,20000,covered total of the sectors present in the year
-17499c82e8fa9666e7bd3e62,annual_level,national,FY2016-17,time_independent,FY2016-17,419.43997,383.3911,418.481,462.8096,8.385,10.593,20000,covered total of the sectors present in the year
-fb2d55c52133123cea6ffda3,annual_level,national,FY2017-18,parameter_typed,FY2017-18,447.91006,404.7137,446.6432,496.9258,9.388,11.258,20000,covered total of the sectors present in the year
-62b96df7ab79d5ee8926bed5,annual_level,national,FY2017-18,time_correlated,FY2017-18,447.91006,409.6624,446.5154,492.3446,8.253,10.264,20000,covered total of the sectors present in the year
-b96bf7cac4250693611373e6,annual_level,national,FY2017-18,time_independent,FY2017-18,447.91006,409.5118,446.7379,491.9069,8.333,10.111,20000,covered total of the sectors present in the year
-0b3a69c795fa1f171ed0f88f,annual_level,national,FY2018-19,parameter_typed,FY2018-19,444.0806,399.3207,442.8332,495.7004,9.826,11.938,20000,covered total of the sectors present in the year
-47211b912548d1b605f0b363,annual_level,national,FY2018-19,time_correlated,FY2018-19,444.0806,404.7293,442.6534,489.7178,8.567,10.632,20000,covered total of the sectors present in the year
-78990de7f3443364615d5269,annual_level,national,FY2018-19,time_independent,FY2018-19,444.0806,404.8289,442.51,489.5019,8.515,10.619,20000,covered total of the sectors present in the year
-9ab9131519ad76ed3be80d76,annual_level,national,FY2019-20,parameter_typed,FY2019-20,445.51419,401.2017,444.3636,497.9302,9.713,12.055,20000,covered total of the sectors present in the year
-087ec4bf543d23a4e6a1a6b1,annual_level,national,FY2019-20,time_correlated,FY2019-20,445.51419,405.2948,444.0257,492.4142,8.723,10.898,20000,covered total of the sectors present in the year
-a424e8a9ad49a98648a14c4e,annual_level,national,FY2019-20,time_independent,FY2019-20,445.51419,405.2461,444.6362,491.9183,8.859,10.634,20000,covered total of the sectors present in the year
-fb9868f900e1e59a87a1b140,annual_level,national,FY2020-21,parameter_typed,FY2020-21,483.44611,436.0472,482.0192,538.4589,9.537,11.709,20000,covered total of the sectors present in the year
-4e0e9d3b3bd8549a83e9c850,annual_level,national,FY2020-21,time_correlated,FY2020-21,483.44611,440.8809,481.9392,532.9673,8.519,10.588,20000,covered total of the sectors present in the year
-742ca089af3d6362d0be3865,annual_level,national,FY2020-21,time_independent,FY2020-21,483.44611,441.0687,482.4327,532.5066,8.574,10.379,20000,covered total of the sectors present in the year
-4499464ef110ab3966eb2f1e,annual_level,national,FY2021-22,parameter_typed,FY2021-22,483.44854,435.4323,481.9703,540.0709,9.656,12.055,20000,covered total of the sectors present in the year
-4474926e660259e2ce5d3fa3,annual_level,national,FY2021-22,time_correlated,FY2021-22,483.44854,440.3655,481.8462,533.8257,8.609,10.788,20000,covered total of the sectors present in the year
-48825b7b7f034fa6506e9a09,annual_level,national,FY2021-22,time_independent,FY2021-22,483.44854,440.2747,482.2126,532.8115,8.697,10.493,20000,covered total of the sectors present in the year
-78fb3e8f475105e20e92fea8,annual_level,national,FY2022-23,parameter_typed,FY2022-23,438.34095,390.4717,436.5648,494.518,10.558,13.275,20000,covered total of the sectors present in the year
-6518292899ef442dd82467c5,annual_level,national,FY2022-23,time_correlated,FY2022-23,438.34095,395.6513,436.6838,488.8587,9.396,11.948,20000,covered total of the sectors present in the year
-48495fffd936c12ea8171c90,annual_level,national,FY2022-23,time_independent,FY2022-23,438.34095,395.3454,437.0207,488.2,9.536,11.711,20000,covered total of the sectors present in the year
-3972b560da25804d92949a3f,annual_level,national,FY2023-24,parameter_typed,FY2023-24,444.95542,394.2305,443.3786,504.2321,11.085,13.725,20000,covered total of the sectors present in the year
-030a3474f120773095e4916a,annual_level,national,FY2023-24,time_correlated,FY2023-24,444.95542,400.3082,443.2621,497.7091,9.69,12.283,20000,covered total of the sectors present in the year
-abf32aa6bf2e13ba5471518d,annual_level,national,FY2023-24,time_independent,FY2023-24,444.95542,400.0576,443.4669,497.4255,9.789,12.167,20000,covered total of the sectors present in the year
-3f93602913aeb0a840fabf82,parametric_reference,category,category|Ammonia production,cross_sector,FY2023-24,3.244,2.975,3.241,3.531,8.19,8.95,100000,mean_preserving_lognormal
-8b78fda4dc3f9f0178f6966a,parametric_reference,category,category|Ammonia production,within_sector,FY2023-24,3.244,2.975,3.241,3.531,8.19,8.95,100000,mean_preserving_lognormal
-e56d5563be58346b9c08492b,parametric_reference,category,category|Captive gas self-generation (1A2),cross_sector,FY2023-24,5.551,4.75,5.535,6.447,14.17,16.49,100000,mean_preserving_lognormal
-5b7e10e731b5acc75136ef6d,parametric_reference,category,category|Captive gas self-generation (1A2),within_sector,FY2023-24,5.551,4.75,5.535,6.447,14.17,16.49,100000,mean_preserving_lognormal
-273c40e16cecc0bfa01b41df,parametric_reference,category,category|Cement production,cross_sector,FY2023-24,21.818,19.836,21.789,23.95,8.96,9.92,100000,mean_preserving_lognormal
-c3962fa2241b5e7ecae4a9db,parametric_reference,category,category|Cement production,within_sector,FY2023-24,21.818,19.836,21.789,23.95,8.96,9.92,100000,mean_preserving_lognormal
-6f7195c369b00d309a79ac8b,parametric_reference,category,category|Domestic aviation,cross_sector,FY2023-24,0.302,0.159,0.287,0.529,44.43,84.18,100000,mean_preserving_lognormal
-8bd3c9cd0e1cdc8561bdb758,parametric_reference,category,category|Domestic aviation,within_sector,FY2023-24,0.302,0.159,0.287,0.529,44.43,84.18,100000,mean_preserving_lognormal
+2b7bed85b5d5b22f40f1239b,annual_level,national,FY2015-16,parameter_typed,FY2015-16,397.83709,358.0414,396.5822,443.969,9.718,11.949,20000,covered total of the sectors present in the year
+a573a7a47dda97432ff7a3b8,annual_level,national,FY2015-16,time_correlated,FY2015-16,397.83709,363.2273,396.5161,439.1141,8.395,10.743,20000,covered total of the sectors present in the year
+aafa92206ae84c6f1bdfc540,annual_level,national,FY2015-16,time_independent,FY2015-16,397.83709,362.9231,396.3845,439.1696,8.442,10.794,20000,covered total of the sectors present in the year
+e9aa869d52c877857b2a88b4,annual_level,national,FY2016-17,parameter_typed,FY2016-17,423.58082,382.7968,422.3736,472.2095,9.37,11.799,20000,covered total of the sectors present in the year
+0705399a3f40b304a3aeaffd,annual_level,national,FY2016-17,time_correlated,FY2016-17,423.58082,387.0504,422.191,466.8567,8.323,10.58,20000,covered total of the sectors present in the year
+17499c82e8fa9666e7bd3e62,annual_level,national,FY2016-17,time_independent,FY2016-17,423.58082,387.5079,422.6063,467.7902,8.305,10.692,20000,covered total of the sectors present in the year
+fb2d55c52133123cea6ffda3,annual_level,national,FY2017-18,parameter_typed,FY2017-18,454.70753,411.0728,453.3755,504.8155,9.331,11.346,20000,covered total of the sectors present in the year
+62b96df7ab79d5ee8926bed5,annual_level,national,FY2017-18,time_correlated,FY2017-18,454.70753,416.4289,453.3366,499.7609,8.141,10.241,20000,covered total of the sectors present in the year
+b96bf7cac4250693611373e6,annual_level,national,FY2017-18,time_independent,FY2017-18,454.70753,415.8662,453.5412,499.3084,8.307,10.091,20000,covered total of the sectors present in the year
+0b3a69c795fa1f171ed0f88f,annual_level,national,FY2018-19,parameter_typed,FY2018-19,448.48344,402.1696,447.155,501.488,10.06,12.151,20000,covered total of the sectors present in the year
+47211b912548d1b605f0b363,annual_level,national,FY2018-19,time_correlated,FY2018-19,448.48344,409.1026,447.0428,494.8854,8.487,10.702,20000,covered total of the sectors present in the year
+78990de7f3443364615d5269,annual_level,national,FY2018-19,time_independent,FY2018-19,448.48344,408.6822,446.9996,494.6083,8.572,10.651,20000,covered total of the sectors present in the year
+9ab9131519ad76ed3be80d76,annual_level,national,FY2019-20,parameter_typed,FY2019-20,449.78897,403.9191,448.6065,504.4651,9.961,12.452,20000,covered total of the sectors present in the year
+087ec4bf543d23a4e6a1a6b1,annual_level,national,FY2019-20,time_correlated,FY2019-20,449.78897,409.2362,448.279,497.3282,8.709,10.942,20000,covered total of the sectors present in the year
+a424e8a9ad49a98648a14c4e,annual_level,national,FY2019-20,time_independent,FY2019-20,449.78897,409.1445,448.7761,496.8277,8.831,10.707,20000,covered total of the sectors present in the year
+fb9868f900e1e59a87a1b140,annual_level,national,FY2020-21,parameter_typed,FY2020-21,487.80518,437.7238,486.2889,544.4159,9.987,11.953,20000,covered total of the sectors present in the year
+4e0e9d3b3bd8549a83e9c850,annual_level,national,FY2020-21,time_correlated,FY2020-21,487.80518,444.8106,486.3057,538.0752,8.533,10.645,20000,covered total of the sectors present in the year
+742ca089af3d6362d0be3865,annual_level,national,FY2020-21,time_independent,FY2020-21,487.80518,444.7688,486.9285,537.3831,8.658,10.362,20000,covered total of the sectors present in the year
+4499464ef110ab3966eb2f1e,annual_level,national,FY2021-22,parameter_typed,FY2021-22,487.98948,437.9333,486.6011,545.6116,10.002,12.127,20000,covered total of the sectors present in the year
+4474926e660259e2ce5d3fa3,annual_level,national,FY2021-22,time_correlated,FY2021-22,487.98948,444.4302,486.3099,539.156,8.612,10.867,20000,covered total of the sectors present in the year
+48825b7b7f034fa6506e9a09,annual_level,national,FY2021-22,time_independent,FY2021-22,487.98948,444.1477,486.6269,538.1476,8.729,10.587,20000,covered total of the sectors present in the year
+78fb3e8f475105e20e92fea8,annual_level,national,FY2022-23,parameter_typed,FY2022-23,442.86487,392.8406,441.1682,500.678,10.954,13.489,20000,covered total of the sectors present in the year
+6518292899ef442dd82467c5,annual_level,national,FY2022-23,time_correlated,FY2022-23,442.86487,399.0775,441.1718,494.4881,9.541,12.085,20000,covered total of the sectors present in the year
+48495fffd936c12ea8171c90,annual_level,national,FY2022-23,time_independent,FY2022-23,442.86487,398.7491,441.5884,494.2565,9.701,11.927,20000,covered total of the sectors present in the year
+3972b560da25804d92949a3f,annual_level,national,FY2023-24,parameter_typed,FY2023-24,444.60776,392.2058,443.2994,505.5191,11.526,14.036,20000,covered total of the sectors present in the year
+030a3474f120773095e4916a,annual_level,national,FY2023-24,time_correlated,FY2023-24,444.60776,398.7316,442.8765,498.5388,9.968,12.568,20000,covered total of the sectors present in the year
+abf32aa6bf2e13ba5471518d,annual_level,national,FY2023-24,time_independent,FY2023-24,444.60776,397.5931,443.2829,497.941,10.307,12.33,20000,covered total of the sectors present in the year
+4b22cc49cf06e10d9956c02b,annual_level,national,FY2024-25,parameter_typed,FY2024-25,457.23983,404.6848,455.5969,518.7585,11.175,13.863,20000,covered total of the sectors present in the year
+800562b34b79ff39aeff5a28,annual_level,national,FY2024-25,time_correlated,FY2024-25,457.23983,410.0945,455.5196,512.4454,9.972,12.497,20000,covered total of the sectors present in the year
+d18cd6e6c12e8fc1d4010eea,annual_level,national,FY2024-25,time_independent,FY2024-25,457.23983,410.0191,455.6191,511.7395,10.008,12.317,20000,covered total of the sectors present in the year
+3f93602913aeb0a840fabf82,parametric_reference,category,category|Ammonia production,cross_sector,FY2023-24,3.243,2.973,3.24,3.531,8.24,8.96,100000,mean_preserving_lognormal
+8b78fda4dc3f9f0178f6966a,parametric_reference,category,category|Ammonia production,within_sector,FY2023-24,3.243,2.972,3.241,3.529,8.29,8.92,100000,mean_preserving_lognormal
+e56d5563be58346b9c08492b,parametric_reference,category,category|Captive gas self-generation (1A2),cross_sector,FY2023-24,5.551,4.752,5.534,6.449,14.14,16.52,100000,mean_preserving_lognormal
+5b7e10e731b5acc75136ef6d,parametric_reference,category,category|Captive gas self-generation (1A2),within_sector,FY2023-24,5.549,4.748,5.533,6.44,14.19,16.39,100000,mean_preserving_lognormal
+273c40e16cecc0bfa01b41df,parametric_reference,category,category|Cement production,cross_sector,FY2023-24,21.816,19.826,21.798,23.947,9.05,9.86,100000,mean_preserving_lognormal
+c3962fa2241b5e7ecae4a9db,parametric_reference,category,category|Cement production,within_sector,FY2023-24,21.817,19.828,21.79,23.96,9.0,9.96,100000,mean_preserving_lognormal
+6f7195c369b00d309a79ac8b,parametric_reference,category,category|Domestic aviation,cross_sector,FY2023-24,0.301,0.159,0.286,0.526,44.61,83.65,100000,mean_preserving_lognormal
+8bd3c9cd0e1cdc8561bdb758,parametric_reference,category,category|Domestic aviation,within_sector,FY2023-24,0.301,0.159,0.286,0.525,44.53,83.16,100000,mean_preserving_lognormal
 a0ca9a25404a539ea23cba69,parametric_reference,category,category|Domestic wastewater,cross_sector,FY2023-24,26.51,14.773,25.07,46.568,41.07,85.75,100000,parameter_rerun_ledger_true
 0518a80c4e97f5c441c9aa6e,parametric_reference,category,category|Domestic wastewater,within_sector,FY2023-24,26.51,14.773,25.07,46.568,41.07,85.75,100000,parameter_rerun_ledger_true
-43ab70087cfb6543b7c8af34,parametric_reference,category,category|Electricity and heat production,cross_sector,FY2023-24,40.049,36.508,39.998,43.846,8.73,9.62,100000,mean_preserving_lognormal
-3ead1c7294f32f988dc0ab79,parametric_reference,category,category|Electricity and heat production,within_sector,FY2023-24,40.049,36.508,39.998,43.846,8.73,9.62,100000,mean_preserving_lognormal
-bc430bda305c1ecdb8687a7e,parametric_reference,category,category|Enteric fermentation,cross_sector,FY2023-24,151.65,116.811,150.184,195.171,22.22,29.95,100000,mean_preserving_lognormal
-ca4cb6a19a8bdfa2d0a0fd58,parametric_reference,category,category|Enteric fermentation,within_sector,FY2023-24,151.65,116.811,150.184,195.171,22.22,29.95,100000,mean_preserving_lognormal
-3b475caffd787397220acb35,parametric_reference,category,category|Field burning of residues,cross_sector,FY2023-24,0.669,0.403,0.649,1.052,37.96,62.2,100000,mean_preserving_lognormal
-0253223031fb7616dcd25e6c,parametric_reference,category,category|Field burning of residues,within_sector,FY2023-24,0.669,0.403,0.649,1.052,37.96,62.2,100000,mean_preserving_lognormal
+43ab70087cfb6543b7c8af34,parametric_reference,category,category|Electricity and heat production,cross_sector,FY2023-24,40.122,30.66,39.139,55.156,21.66,40.92,100000,mean_preserving_lognormal
+3ead1c7294f32f988dc0ab79,parametric_reference,category,category|Electricity and heat production,within_sector,FY2023-24,40.116,30.626,39.145,55.132,21.76,40.84,100000,mean_preserving_lognormal
+bc430bda305c1ecdb8687a7e,parametric_reference,category,category|Enteric fermentation,cross_sector,FY2023-24,151.586,116.385,150.134,195.029,22.48,29.9,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+ca4cb6a19a8bdfa2d0a0fd58,parametric_reference,category,category|Enteric fermentation,within_sector,FY2023-24,151.586,116.385,150.134,195.029,22.48,29.9,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+3b475caffd787397220acb35,parametric_reference,category,category|Field burning of residues,cross_sector,FY2023-24,0.671,0.371,0.666,0.995,44.39,49.4,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+0253223031fb7616dcd25e6c,parametric_reference,category,category|Field burning of residues,within_sector,FY2023-24,0.671,0.371,0.666,0.995,44.39,49.4,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
 5841da6a68940f7ea573461c,parametric_reference,category,category|Fugitive emissions from oil and gas,cross_sector,FY2023-24,24.725,21.252,24.153,30.433,12.01,26.0,100000,bounded_split_triangular
 d709d91b0a5765182a067832,parametric_reference,category,category|Fugitive emissions from oil and gas,within_sector,FY2023-24,24.725,21.252,24.153,30.433,12.01,26.0,100000,bounded_split_triangular
-71b1fb4912f13cfb3639583f,parametric_reference,category,category|Industrial fuel combustion (1A2),cross_sector,FY2023-24,22.573,18.539,22.385,27.645,17.18,23.5,100000,mean_preserving_lognormal
-e5cf02151e8c8f477ed2c6d5,parametric_reference,category,category|Industrial fuel combustion (1A2),within_sector,FY2023-24,22.568,18.533,22.388,27.653,17.22,23.52,100000,mean_preserving_lognormal
-3d482de1692f7bf6f6c663dd,parametric_reference,category,category|Iron and steel production,cross_sector,FY2023-24,0.393,0.297,0.39,0.509,23.74,30.59,100000,mean_preserving_lognormal
-f5ae78f98f57cdfa9589fa8d,parametric_reference,category,category|Iron and steel production,within_sector,FY2023-24,0.393,0.297,0.39,0.509,23.74,30.59,100000,mean_preserving_lognormal
-045705e636ea4cd422ff09a5,parametric_reference,category,category|Lubricant use,cross_sector,FY2023-24,0.083,0.049,0.081,0.133,39.51,65.45,100000,mean_preserving_lognormal
-25804ceb62df8a8c6ed6e04f,parametric_reference,category,category|Lubricant use,within_sector,FY2023-24,0.083,0.049,0.081,0.133,39.51,65.45,100000,mean_preserving_lognormal
-d2cb96fb75540c1a648ca0d0,parametric_reference,category,category|Managed soils,cross_sector,FY2023-24,28.471,15.593,27.003,49.969,42.26,85.05,100000,mean_preserving_lognormal
-cbdfbebeb865aa68ff451704,parametric_reference,category,category|Managed soils,within_sector,FY2023-24,28.471,15.593,27.003,49.969,42.26,85.05,100000,mean_preserving_lognormal
-4b795feb3e957c3735d7e2a2,parametric_reference,category,category|Manure management,cross_sector,FY2023-24,21.218,15.085,20.459,31.751,26.27,55.19,100000,mean_preserving_lognormal
-e7dd4d30853f48ce1b343de6,parametric_reference,category,category|Manure management,within_sector,FY2023-24,21.218,15.085,20.459,31.751,26.27,55.19,100000,mean_preserving_lognormal
-e10e8ff71395525a25fbf7a1,parametric_reference,category,category|Mixed off-road (1A4c/1A2),cross_sector,FY2023-24,1.732,1.302,1.711,2.291,23.92,33.9,100000,mean_preserving_lognormal
-dab1faeb0a22cc0f19c9a62a,parametric_reference,category,category|Mixed off-road (1A4c/1A2),within_sector,FY2023-24,1.732,1.302,1.71,2.289,23.9,33.79,100000,mean_preserving_lognormal
+71b1fb4912f13cfb3639583f,parametric_reference,category,category|Industrial fuel combustion (1A2),cross_sector,FY2023-24,22.585,18.55,22.4,27.708,17.19,23.7,100000,mean_preserving_lognormal
+e5cf02151e8c8f477ed2c6d5,parametric_reference,category,category|Industrial fuel combustion (1A2),within_sector,FY2023-24,22.579,18.504,22.397,27.721,17.38,23.77,100000,mean_preserving_lognormal
+3d482de1692f7bf6f6c663dd,parametric_reference,category,category|Iron and steel production,cross_sector,FY2023-24,0.393,0.297,0.389,0.509,23.57,30.92,100000,mean_preserving_lognormal
+f5ae78f98f57cdfa9589fa8d,parametric_reference,category,category|Iron and steel production,within_sector,FY2023-24,0.393,0.298,0.389,0.509,23.44,30.65,100000,mean_preserving_lognormal
+045705e636ea4cd422ff09a5,parametric_reference,category,category|Lubricant use,cross_sector,FY2023-24,0.083,0.049,0.081,0.133,39.48,65.14,100000,mean_preserving_lognormal
+25804ceb62df8a8c6ed6e04f,parametric_reference,category,category|Lubricant use,within_sector,FY2023-24,0.083,0.049,0.081,0.133,39.46,65.34,100000,mean_preserving_lognormal
+d2cb96fb75540c1a648ca0d0,parametric_reference,category,category|Managed soils,cross_sector,FY2023-24,28.435,14.072,27.134,50.199,48.14,85.01,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+cbdfbebeb865aa68ff451704,parametric_reference,category,category|Managed soils,within_sector,FY2023-24,28.435,14.072,27.134,50.199,48.14,85.01,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+4b795feb3e957c3735d7e2a2,parametric_reference,category,category|Manure management,cross_sector,FY2023-24,20.843,16.174,20.602,26.839,21.49,30.27,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+e7dd4d30853f48ce1b343de6,parametric_reference,category,category|Manure management,within_sector,FY2023-24,20.843,16.174,20.602,26.839,21.49,30.27,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+e10e8ff71395525a25fbf7a1,parametric_reference,category,category|Mixed off-road (1A4c/1A2),cross_sector,FY2023-24,1.733,1.301,1.711,2.288,23.95,33.76,100000,mean_preserving_lognormal
+dab1faeb0a22cc0f19c9a62a,parametric_reference,category,category|Mixed off-road (1A4c/1A2),within_sector,FY2023-24,1.732,1.302,1.71,2.293,23.83,34.09,100000,mean_preserving_lognormal
 53cadf617a9067360a80a2bc,parametric_reference,category,category|Open burning of waste,cross_sector,FY2023-24,3.826,1.65,3.529,7.701,53.24,118.2,100000,parameter_rerun_ledger_true
 ebb109ff2650e5d536fc7f40,parametric_reference,category,category|Open burning of waste,within_sector,FY2023-24,3.826,1.65,3.529,7.701,53.24,118.2,100000,parameter_rerun_ledger_true
-0407da926bad9c09cd1547bc,parametric_reference,category,category|Railway non-traction energy (1A2/1A4c unresolved),cross_sector,FY2023-24,0.005,0.004,0.005,0.006,8.8,20.37,100000,mean_preserving_lognormal
-52838bbd4e138fad430943fc,parametric_reference,category,category|Railway non-traction energy (1A2/1A4c unresolved),within_sector,FY2023-24,0.005,0.004,0.005,0.006,8.78,20.74,100000,mean_preserving_lognormal
-a118bb12c79adc03cbb4b9ba,parametric_reference,category,category|Railways,cross_sector,FY2023-24,0.389,0.349,0.384,0.465,9.01,21.26,100000,mean_preserving_lognormal
-9bd62043da1a761827e9d49b,parametric_reference,category,category|Railways,within_sector,FY2023-24,0.389,0.349,0.384,0.467,8.94,21.63,100000,mean_preserving_lognormal
-683349d0754b1275547c54a0,parametric_reference,category,category|Residential fuel combustion,cross_sector,FY2023-24,24.217,19.378,23.457,33.644,17.39,43.43,100000,mean_preserving_lognormal
-436d87d95fcce68c49fedef0,parametric_reference,category,category|Residential fuel combustion,within_sector,FY2023-24,24.217,19.395,23.458,33.681,17.32,43.58,100000,mean_preserving_lognormal
-9d2c53edbdf6e845af4edbc9,parametric_reference,category,category|Rice cultivation,cross_sector,FY2023-24,16.559,8.678,15.792,28.839,45.05,82.62,100000,mean_preserving_lognormal
-3ebd130d3e7b1ef95d8a7220,parametric_reference,category,category|Rice cultivation,within_sector,FY2023-24,16.559,8.678,15.792,28.839,45.05,82.62,100000,mean_preserving_lognormal
-784e4c72755da0496f9882c9,parametric_reference,category,category|Road transport,cross_sector,FY2023-24,40.196,35.209,40.081,45.827,12.15,14.34,100000,mean_preserving_lognormal
-28fcbd68472e067bb77463b1,parametric_reference,category,category|Road transport,within_sector,FY2023-24,40.194,35.205,40.085,45.836,12.17,14.34,100000,mean_preserving_lognormal
+0407da926bad9c09cd1547bc,parametric_reference,category,category|Railway non-traction energy (1A2/1A4c unresolved),cross_sector,FY2023-24,0.005,0.004,0.005,0.006,8.83,20.56,100000,mean_preserving_lognormal
+52838bbd4e138fad430943fc,parametric_reference,category,category|Railway non-traction energy (1A2/1A4c unresolved),within_sector,FY2023-24,0.005,0.004,0.005,0.006,8.82,20.3,100000,mean_preserving_lognormal
+a118bb12c79adc03cbb4b9ba,parametric_reference,category,category|Railways,cross_sector,FY2023-24,0.389,0.349,0.384,0.466,9.03,21.48,100000,mean_preserving_lognormal
+9bd62043da1a761827e9d49b,parametric_reference,category,category|Railways,within_sector,FY2023-24,0.389,0.349,0.384,0.465,9.01,21.14,100000,mean_preserving_lognormal
+683349d0754b1275547c54a0,parametric_reference,category,category|Residential fuel combustion,cross_sector,FY2023-24,24.229,19.361,23.465,33.562,17.49,43.03,100000,mean_preserving_lognormal
+436d87d95fcce68c49fedef0,parametric_reference,category,category|Residential fuel combustion,within_sector,FY2023-24,24.218,19.394,23.449,33.668,17.3,43.58,100000,mean_preserving_lognormal
+9d2c53edbdf6e845af4edbc9,parametric_reference,category,category|Rice cultivation,cross_sector,FY2023-24,16.55,8.643,15.795,28.849,45.28,82.64,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+3ebd130d3e7b1ef95d8a7220,parametric_reference,category,category|Rice cultivation,within_sector,FY2023-24,16.55,8.643,15.795,28.849,45.28,82.64,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+784e4c72755da0496f9882c9,parametric_reference,category,category|Road transport,cross_sector,FY2023-24,40.189,35.236,40.086,45.812,12.1,14.28,100000,mean_preserving_lognormal
+28fcbd68472e067bb77463b1,parametric_reference,category,category|Road transport,within_sector,FY2023-24,40.194,35.234,40.077,45.807,12.08,14.3,100000,mean_preserving_lognormal
 accf26a93651304e2c43f9ec,parametric_reference,category,category|Solid waste disposal,cross_sector,FY2023-24,9.146,3.607,8.662,17.502,58.36,102.05,100000,parameter_rerun_ledger_true
 34705f9e840c69117d854742,parametric_reference,category,category|Solid waste disposal,within_sector,FY2023-24,9.146,3.607,8.662,17.502,58.36,102.05,100000,parameter_rerun_ledger_true
-0c2416904325a4ffab950bf0,parametric_reference,category,category|Urea application,cross_sector,FY2023-24,4.823,4.305,4.816,5.392,10.6,11.95,100000,mean_preserving_lognormal
-33c567e00f05104c15441cfb,parametric_reference,category,category|Urea application,within_sector,FY2023-24,4.823,4.305,4.816,5.392,10.6,11.95,100000,mean_preserving_lognormal
-71e37b7aab916821543a133a,parametric_reference,national,national|TOTAL,cross_sector,FY2023-24,448.149,400.267,446.553,505.218,10.37,13.14,100000,"mixture: injected sector engines (fugitives, waste) + mean_preserving_lognormal remainder"
-69abf48340f985cf41fcb683,parametric_reference,national,national|TOTAL,within_sector,FY2023-24,448.142,400.296,446.525,504.967,10.35,13.09,100000,"mixture: injected sector engines (fugitives, waste) + mean_preserving_lognormal remainder"
-9fc1894a9d5a66afc54eb24e,parametric_reference,sector,module|agriculture,cross_sector,FY2023-24,223.39,180.351,221.75,275.615,18.67,24.29,100000,mean_preserving_lognormal
-443d39ed0636d016c5726329,parametric_reference,sector,module|agriculture,within_sector,FY2023-24,223.39,180.351,221.75,275.615,18.67,24.29,100000,mean_preserving_lognormal
-1656770674c6a5fbd4614f28,parametric_reference,sector,module|aviation,cross_sector,FY2023-24,0.302,0.159,0.287,0.529,44.43,84.18,100000,mean_preserving_lognormal
-c0b64ef5284a7b77d105af19,parametric_reference,sector,module|aviation,within_sector,FY2023-24,0.302,0.159,0.287,0.529,44.43,84.18,100000,mean_preserving_lognormal
+0c2416904325a4ffab950bf0,parametric_reference,category,category|Urea application,cross_sector,FY2023-24,4.825,4.311,4.816,5.388,10.48,11.88,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+33c567e00f05104c15441cfb,parametric_reference,category,category|Urea application,within_sector,FY2023-24,4.825,4.311,4.816,5.388,10.48,11.88,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+71e37b7aab916821543a133a,parametric_reference,national,national|TOTAL,cross_sector,FY2023-24,447.755,399.64,446.462,503.374,10.49,12.75,100000,"mixture: injected sector engines (fugitives, waste) + mean_preserving_lognormal remainder"
+69abf48340f985cf41fcb683,parametric_reference,national,national|TOTAL,within_sector,FY2023-24,447.734,399.785,446.388,503.334,10.44,12.76,100000,"mixture: injected sector engines (fugitives, waste) + mean_preserving_lognormal remainder"
+9fc1894a9d5a66afc54eb24e,parametric_reference,sector,module|agriculture,cross_sector,FY2023-24,222.909,181.445,221.491,272.854,18.08,23.19,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+443d39ed0636d016c5726329,parametric_reference,sector,module|agriculture,within_sector,FY2023-24,222.909,181.445,221.491,272.854,18.08,23.19,100000,native_conserved_nitrogen_plus_shared_parameter_multipliers
+1656770674c6a5fbd4614f28,parametric_reference,sector,module|aviation,cross_sector,FY2023-24,0.301,0.159,0.286,0.526,44.61,83.65,100000,mean_preserving_lognormal
+c0b64ef5284a7b77d105af19,parametric_reference,sector,module|aviation,within_sector,FY2023-24,0.301,0.159,0.286,0.525,44.53,83.16,100000,mean_preserving_lognormal
 c3ad53e9e6614fe74f9c5ea0,parametric_reference,sector,module|fugitives,cross_sector,FY2023-24,24.725,21.252,24.153,30.433,12.01,26.0,100000,bounded_split_triangular
 a13fe0df556a0cdf004251e4,parametric_reference,sector,module|fugitives,within_sector,FY2023-24,24.725,21.252,24.153,30.433,12.01,26.0,100000,bounded_split_triangular
-d85d85304d59924992e053f9,parametric_reference,sector,module|industry,cross_sector,FY2023-24,22.573,18.539,22.385,27.645,17.18,23.5,100000,mean_preserving_lognormal
-be343784ae6574c5cdac0efc,parametric_reference,sector,module|industry,within_sector,FY2023-24,22.568,18.533,22.388,27.653,17.22,23.52,100000,mean_preserving_lognormal
-521dc8857c13466fce8c6f81,parametric_reference,sector,module|ippu,cross_sector,FY2023-24,25.539,23.529,25.509,27.692,7.76,8.56,100000,mean_preserving_lognormal
-622a6d61b29ee76397c2c434,parametric_reference,sector,module|ippu,within_sector,FY2023-24,25.539,23.529,25.509,27.692,7.76,8.56,100000,mean_preserving_lognormal
-6479eef58b3b0767bd5298e4,parametric_reference,sector,module|power,cross_sector,FY2023-24,45.6,41.926,45.555,49.528,7.97,8.72,100000,mean_preserving_lognormal
-2237d51c2f6f080c1e54fe50,parametric_reference,sector,module|power,within_sector,FY2023-24,45.6,41.926,45.555,49.528,7.97,8.72,100000,mean_preserving_lognormal
-1d1e5b2f80b94935238d8ca1,parametric_reference,sector,module|railways,cross_sector,FY2023-24,0.394,0.354,0.389,0.471,9.01,21.25,100000,mean_preserving_lognormal
-dc0a56accec8a1928f5a11b4,parametric_reference,sector,module|railways,within_sector,FY2023-24,0.394,0.354,0.388,0.472,8.93,21.61,100000,mean_preserving_lognormal
-e83e9dd6d7f86cff281832eb,parametric_reference,sector,module|residential,cross_sector,FY2023-24,24.217,19.378,23.457,33.644,17.39,43.43,100000,mean_preserving_lognormal
-3140f435c150d8567d5c6a8f,parametric_reference,sector,module|residential,within_sector,FY2023-24,24.217,19.395,23.458,33.681,17.32,43.58,100000,mean_preserving_lognormal
-3cd8e5533ceed51479dab6ae,parametric_reference,sector,module|transport,cross_sector,FY2023-24,41.928,36.838,41.817,47.652,11.91,13.95,100000,mean_preserving_lognormal
-a72064e5bf1a2430bf7634f5,parametric_reference,sector,module|transport,within_sector,FY2023-24,41.926,36.841,41.816,47.652,11.9,13.96,100000,mean_preserving_lognormal
+d85d85304d59924992e053f9,parametric_reference,sector,module|industry,cross_sector,FY2023-24,22.585,18.55,22.4,27.708,17.19,23.7,100000,mean_preserving_lognormal
+be343784ae6574c5cdac0efc,parametric_reference,sector,module|industry,within_sector,FY2023-24,22.579,18.504,22.397,27.721,17.38,23.77,100000,mean_preserving_lognormal
+521dc8857c13466fce8c6f81,parametric_reference,sector,module|ippu,cross_sector,FY2023-24,25.536,23.519,25.518,27.687,7.83,8.5,100000,mean_preserving_lognormal
+622a6d61b29ee76397c2c434,parametric_reference,sector,module|ippu,within_sector,FY2023-24,25.536,23.524,25.508,27.707,7.78,8.62,100000,mean_preserving_lognormal
+6479eef58b3b0767bd5298e4,parametric_reference,sector,module|power,cross_sector,FY2023-24,45.673,36.123,44.698,60.758,19.18,35.93,100000,mean_preserving_lognormal
+2237d51c2f6f080c1e54fe50,parametric_reference,sector,module|power,within_sector,FY2023-24,45.665,36.113,44.69,60.734,19.19,35.9,100000,mean_preserving_lognormal
+1d1e5b2f80b94935238d8ca1,parametric_reference,sector,module|railways,cross_sector,FY2023-24,0.394,0.354,0.389,0.472,9.01,21.46,100000,mean_preserving_lognormal
+dc0a56accec8a1928f5a11b4,parametric_reference,sector,module|railways,within_sector,FY2023-24,0.394,0.354,0.388,0.471,8.99,21.13,100000,mean_preserving_lognormal
+e83e9dd6d7f86cff281832eb,parametric_reference,sector,module|residential,cross_sector,FY2023-24,24.229,19.361,23.465,33.562,17.49,43.03,100000,mean_preserving_lognormal
+3140f435c150d8567d5c6a8f,parametric_reference,sector,module|residential,within_sector,FY2023-24,24.218,19.394,23.449,33.668,17.3,43.58,100000,mean_preserving_lognormal
+3cd8e5533ceed51479dab6ae,parametric_reference,sector,module|transport,cross_sector,FY2023-24,41.922,36.891,41.813,47.642,11.77,13.94,100000,mean_preserving_lognormal
+a72064e5bf1a2430bf7634f5,parametric_reference,sector,module|transport,within_sector,FY2023-24,41.926,36.869,41.813,47.638,11.83,13.93,100000,mean_preserving_lognormal
 69c5fbf3ef232a21e0df77ad,parametric_reference,sector,module|waste,cross_sector,FY2023-24,39.482,25.472,38.209,60.933,33.33,59.47,100000,parameter_rerun_ledger_true
 b00211bf6cde023dc0acb675,parametric_reference,sector,module|waste,within_sector,FY2023-24,39.482,25.472,38.209,60.933,33.33,59.47,100000,parameter_rerun_ledger_true
-dadbcd362efe2fa3d149117e,trend_pair,national,FY2015-16->FY2016-17,parameter_typed,FY2015-16->FY2016-17,25.6037,-4.9584,25.7192,56.9327,,,20000,both years report the same sectors
-b6a5e58cd5cc3e85ea6b0179,trend_pair,national,FY2015-16->FY2016-17,time_correlated,FY2015-16->FY2016-17,25.6037,22.6472,25.4426,29.2866,,,20000,both years report the same sectors
-853dca2980b44682f9a06e04,trend_pair,national,FY2015-16->FY2016-17,time_independent,FY2015-16->FY2016-17,25.6037,-28.2509,26.1725,80.8114,,,20000,both years report the same sectors
-5c9780e8a28dd17c7be67134,trend_pair,national,FY2015-16->FY2023-24,parameter_typed,FY2015-16->FY2023-24,51.11915,15.939,50.7144,89.5657,,,20000,both years report the same sectors
-481962ed9f90c93b8357a167,trend_pair,national,FY2015-16->FY2023-24,time_correlated,FY2015-16->FY2023-24,51.11915,40.0826,50.7639,64.0143,,,20000,both years report the same sectors
-e60389396d81dbc968c06b5c,trend_pair,national,FY2015-16->FY2023-24,time_independent,FY2015-16->FY2023-24,51.11915,-10.0122,50.8435,114.0712,,,20000,both years report the same sectors
-e198c087be5dbfa4a91d9eae,trend_pair,national,FY2016-17->FY2017-18,parameter_typed,FY2016-17->FY2017-18,28.47009,-4.8506,28.3128,60.8111,,,20000,both years report the same sectors
-de96df6529d851dcf2a71d38,trend_pair,national,FY2016-17->FY2017-18,time_correlated,FY2016-17->FY2017-18,28.47009,25.794,28.4092,31.5082,,,20000,both years report the same sectors
-8a45b6348ad0c04936008a48,trend_pair,national,FY2016-17->FY2017-18,time_independent,FY2016-17->FY2017-18,28.47009,-29.7293,27.8182,84.8901,,,20000,both years report the same sectors
-4d34990e30f0e417ebf55c7d,trend_pair,national,FY2017-18->FY2018-19,parameter_typed,FY2017-18->FY2018-19,-3.82946,-37.3169,-3.8759,29.93,,,20000,both years report the same sectors
-284542eb7b2b0656c7f26832,trend_pair,national,FY2017-18->FY2018-19,time_correlated,FY2017-18->FY2018-19,-3.82946,-6.14,-3.8608,-1.3555,,,20000,both years report the same sectors
-c8e96a6025cb297e50c7464c,trend_pair,national,FY2017-18->FY2018-19,time_independent,FY2017-18->FY2018-19,-3.82946,-62.412,-4.2064,56.9432,,,20000,both years report the same sectors
-39e240df36994e04509df9e5,trend_pair,national,FY2018-19->FY2019-20,parameter_typed,FY2018-19->FY2019-20,1.4336,-32.6977,1.5449,36.1081,,,20000,both years report the same sectors
-913315fcfd21e46b55e968a1,trend_pair,national,FY2018-19->FY2019-20,time_correlated,FY2018-19->FY2019-20,1.4336,-3.5588,1.533,6.0925,,,20000,both years report the same sectors
-8961f6c448f879e2c2b24548,trend_pair,national,FY2018-19->FY2019-20,time_independent,FY2018-19->FY2019-20,1.4336,-58.6262,2.0497,62.1619,,,20000,both years report the same sectors
-a916284c6093678ca9156d50,trend_pair,national,FY2019-20->FY2020-21,parameter_typed,FY2019-20->FY2020-21,37.93192,1.8257,37.6085,73.7882,,,20000,both years report the same sectors
-b7c6f2cae49ae34c2b0b81e1,trend_pair,national,FY2019-20->FY2020-21,time_correlated,FY2019-20->FY2020-21,37.93192,34.0298,37.7722,42.6229,,,20000,both years report the same sectors
-467f2dcaeb89ac37d9adf70b,trend_pair,national,FY2019-20->FY2020-21,time_independent,FY2019-20->FY2020-21,37.93192,-25.0199,37.9506,100.7077,,,20000,both years report the same sectors
-58cb19d40e3fb1c8b90e6adc,trend_pair,national,FY2020-21->FY2021-22,parameter_typed,FY2020-21->FY2021-22,0.00243,-36.9539,0.1933,37.1056,,,20000,both years report the same sectors
-06472521f59cd8bd657e0683,trend_pair,national,FY2020-21->FY2021-22,time_correlated,FY2020-21->FY2021-22,0.00243,-3.5891,0.0852,3.0911,,,20000,both years report the same sectors
-9ad9c886f5f25fdba14f4f14,trend_pair,national,FY2020-21->FY2021-22,time_independent,FY2020-21->FY2021-22,0.00243,-65.496,-0.2042,65.4044,,,20000,both years report the same sectors
-1cd11b068fc0d5ae37eae46c,trend_pair,national,FY2021-22->FY2022-23,parameter_typed,FY2021-22->FY2022-23,-45.10758,-82.9708,-45.3032,-8.055,,,20000,both years report the same sectors
-7c8a286cd6b18f32d745bcbf,trend_pair,national,FY2021-22->FY2022-23,time_correlated,FY2021-22->FY2022-23,-45.10758,-50.5708,-44.9531,-40.3169,,,20000,both years report the same sectors
-cae37925eff0a02291425ba1,trend_pair,national,FY2021-22->FY2022-23,time_independent,FY2021-22->FY2022-23,-45.10758,-111.6409,-45.1037,21.2969,,,20000,both years report the same sectors
-4452964d9dd02f6bb0902d88,trend_pair,national,FY2022-23->FY2023-24,parameter_typed,FY2022-23->FY2023-24,6.61447,-30.5271,6.8026,43.9228,,,20000,both years report the same sectors
-42cad1abbcd13b79d1120a97,trend_pair,national,FY2022-23->FY2023-24,time_correlated,FY2022-23->FY2023-24,6.61447,2.9083,6.5617,10.6167,,,20000,both years report the same sectors
-90387813bb214a707bbe4a69,trend_pair,national,FY2022-23->FY2023-24,time_independent,FY2022-23->FY2023-24,6.61447,-60.7936,6.3321,74.6324,,,20000,both years report the same sectors
+dadbcd362efe2fa3d149117e,trend_pair,national,FY2015-16->FY2016-17,parameter_typed,FY2015-16->FY2016-17,25.74374,-5.961,25.9278,58.5919,,,20000,both years report the same sectors
+b6a5e58cd5cc3e85ea6b0179,trend_pair,national,FY2015-16->FY2016-17,time_correlated,FY2015-16->FY2016-17,25.74374,22.7954,25.5892,29.4416,,,20000,both years report the same sectors
+853dca2980b44682f9a06e04,trend_pair,national,FY2015-16->FY2016-17,time_independent,FY2015-16->FY2016-17,25.74374,-29.0646,26.2497,81.6211,,,20000,both years report the same sectors
+4ea1fc7c315a1508b26b47ad,trend_pair,national,FY2015-16->FY2024-25,parameter_typed,FY2015-16->FY2024-25,59.40275,21.0321,58.7279,101.2979,,,20000,both years report the same sectors
+8bddcfbce79a90a1ed038565,trend_pair,national,FY2015-16->FY2024-25,time_correlated,FY2015-16->FY2024-25,59.40275,43.3715,58.9113,77.9458,,,20000,both years report the same sectors
+fcb24a02e62e4b182a1ab50c,trend_pair,national,FY2015-16->FY2024-25,time_independent,FY2015-16->FY2024-25,59.40275,-3.3004,58.8682,124.7608,,,20000,both years report the same sectors
+e198c087be5dbfa4a91d9eae,trend_pair,national,FY2016-17->FY2017-18,parameter_typed,FY2016-17->FY2017-18,31.12671,-2.8115,30.9598,64.5648,,,20000,both years report the same sectors
+de96df6529d851dcf2a71d38,trend_pair,national,FY2016-17->FY2017-18,time_correlated,FY2016-17->FY2017-18,31.12671,27.487,31.0645,35.1581,,,20000,both years report the same sectors
+8a45b6348ad0c04936008a48,trend_pair,national,FY2016-17->FY2017-18,time_independent,FY2016-17->FY2017-18,31.12671,-28.0362,30.6677,88.6636,,,20000,both years report the same sectors
+4d34990e30f0e417ebf55c7d,trend_pair,national,FY2017-18->FY2018-19,parameter_typed,FY2017-18->FY2018-19,-6.22409,-40.265,-6.285,28.3056,,,20000,both years report the same sectors
+284542eb7b2b0656c7f26832,trend_pair,national,FY2017-18->FY2018-19,time_correlated,FY2017-18->FY2018-19,-6.22409,-8.8474,-6.2389,-3.539,,,20000,both years report the same sectors
+c8e96a6025cb297e50c7464c,trend_pair,national,FY2017-18->FY2018-19,time_independent,FY2017-18->FY2018-19,-6.22409,-65.5628,-6.5402,55.0171,,,20000,both years report the same sectors
+39e240df36994e04509df9e5,trend_pair,national,FY2018-19->FY2019-20,parameter_typed,FY2018-19->FY2019-20,1.30553,-33.8349,1.4657,36.8954,,,20000,both years report the same sectors
+913315fcfd21e46b55e968a1,trend_pair,national,FY2018-19->FY2019-20,time_correlated,FY2018-19->FY2019-20,1.30553,-4.2,1.375,6.617,,,20000,both years report the same sectors
+8961f6c448f879e2c2b24548,trend_pair,national,FY2018-19->FY2019-20,time_independent,FY2018-19->FY2019-20,1.30553,-59.6928,1.7681,62.6812,,,20000,both years report the same sectors
+a916284c6093678ca9156d50,trend_pair,national,FY2019-20->FY2020-21,parameter_typed,FY2019-20->FY2020-21,38.01621,1.4321,37.8067,75.1253,,,20000,both years report the same sectors
+b7c6f2cae49ae34c2b0b81e1,trend_pair,national,FY2019-20->FY2020-21,time_correlated,FY2019-20->FY2020-21,38.01621,34.1093,37.8609,42.6689,,,20000,both years report the same sectors
+467f2dcaeb89ac37d9adf70b,trend_pair,national,FY2019-20->FY2020-21,time_independent,FY2019-20->FY2020-21,38.01621,-25.412,38.0506,101.5857,,,20000,both years report the same sectors
+58cb19d40e3fb1c8b90e6adc,trend_pair,national,FY2020-21->FY2021-22,parameter_typed,FY2020-21->FY2021-22,0.1843,-37.6553,0.356,37.7734,,,20000,both years report the same sectors
+06472521f59cd8bd657e0683,trend_pair,national,FY2020-21->FY2021-22,time_correlated,FY2020-21->FY2021-22,0.1843,-3.4149,0.2622,3.2966,,,20000,both years report the same sectors
+9ad9c886f5f25fdba14f4f14,trend_pair,national,FY2020-21->FY2021-22,time_independent,FY2020-21->FY2021-22,0.1843,-66.0297,-0.0526,66.0894,,,20000,both years report the same sectors
+1cd11b068fc0d5ae37eae46c,trend_pair,national,FY2021-22->FY2022-23,parameter_typed,FY2021-22->FY2022-23,-45.1246,-83.1998,-45.2303,-7.1032,,,20000,both years report the same sectors
+7c8a286cd6b18f32d745bcbf,trend_pair,national,FY2021-22->FY2022-23,time_correlated,FY2021-22->FY2022-23,-45.1246,-51.1227,-45.0795,-39.1743,,,20000,both years report the same sectors
+cae37925eff0a02291425ba1,trend_pair,national,FY2021-22->FY2022-23,time_independent,FY2021-22->FY2022-23,-45.1246,-113.4943,-45.0682,22.6311,,,20000,both years report the same sectors
+4452964d9dd02f6bb0902d88,trend_pair,national,FY2022-23->FY2023-24,parameter_typed,FY2022-23->FY2023-24,1.74288,-35.898,1.8745,39.3959,,,20000,both years report the same sectors
+42cad1abbcd13b79d1120a97,trend_pair,national,FY2022-23->FY2023-24,time_correlated,FY2022-23->FY2023-24,1.74288,-2.2077,1.5486,7.0076,,,20000,both years report the same sectors
+90387813bb214a707bbe4a69,trend_pair,national,FY2022-23->FY2023-24,time_independent,FY2022-23->FY2023-24,1.74288,-67.0247,1.3876,71.7403,,,20000,both years report the same sectors
+f8b8a83853f82dd0b67419cb,trend_pair,national,FY2023-24->FY2024-25,parameter_typed,FY2023-24->FY2024-25,12.63208,-25.2925,12.3217,51.7043,,,20000,both years report the same sectors
+55301d619b9f9c9001fc1545,trend_pair,national,FY2023-24->FY2024-25,time_correlated,FY2023-24->FY2024-25,12.63208,9.657,12.5808,15.9284,,,20000,both years report the same sectors
+ac07dc415c865c479d7c02b6,trend_pair,national,FY2023-24->FY2024-25,time_independent,FY2023-24->FY2024-25,12.63208,-59.2047,12.6649,85.0065,,,20000,both years report the same sectors

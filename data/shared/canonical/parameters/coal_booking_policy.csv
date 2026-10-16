@@ -17,3 +17,5 @@ Reference fiscal year,Consumer,Booked estimate ID,Rule,Reason,Record ID,Source r
 2022-23,cement,sup25:Table14.1sec.4:2022-23:cement_other,supplement_vintage,,0945a1420957032b54826f8c,16
 2023-24,brick_kilns,sup25:Table14.1sec.4:2023-24:brick_kilns,supplement_vintage,"1,129 final; the 2023-24 edition's provisional 1,564 is superseded (-435 kt)",0c3d2ce013c71db3fd41ba53,17
 2023-24,cement,sup25:Table14.1sec.4:2023-24:cement_other,supplement_vintage,"4,391 in every edition that prints it",d1cd69e46f046a24563097d2,18
+2024-25,brick_kilns,es26:annexTable14.1sec.4:2024-25:brick_kilns,latest_full_year_revision,Economic Survey 2025-26 full-year FY2024-25 comparison; provisional Supplement 3483 kt revised to 3616 kt; retain prior vintage separately,e525c8c687c096e130e1f36f,19
+2024-25,cement,es26:annexTable14.1sec.4:2024-25:cement_other,latest_full_year_revision,Economic Survey 2025-26 full-year FY2024-25 comparison; Cement/Others 5022 kt versus Supplement 5155 kt; combined non-power industrial account unchanged,d9eaf417ec020e6b262816ac,20

@@ -6,19 +6,19 @@
 
 **Pakistan agricultural emissions = 223 Mt CO2e (AR5 GWP-100, +/-19%), provisional.**  (AR6: 218 Mt CO2e.)
 
-**Managed-soils EF1 sensitivity (3-point).** At the best-supported dry EF1=0.005 (primary), soils = 28.5 Mt / national = 223.5 Mt. Cui et al. 2021 --- the largest field-observation N2O database (1,507 obs) --- gives a Pakistan crop-weighted EF of **0.0055**, essentially the primary value (soils = 29.7 / national = 224.6 Mt), empirically anchoring the low arid EF1 over FAOSTAT's flat EF1=0.010 (soils = 40.4 / national = 235.4 Mt). Pakistan itself has no field observations, so the Cui value is climate-model-extrapolated with a wide CI, but its central estimate clearly favours 0.005.
+**Managed-soils EF1 sensitivity (3-point).** At the best-supported dry EF1=0.005 (primary), soils = 28.5 Mt / national = 223.0 Mt. Cui et al. 2021 --- the largest field-observation N2O database (1,507 obs) --- gives a Pakistan crop-weighted EF of **0.0055**, essentially the primary value (soils = 29.7 / national = 224.3 Mt), empirically anchoring the low arid EF1 over FAOSTAT's flat EF1=0.010 (soils = 40.8 / national = 235.3 Mt). Pakistan itself has no field observations, so the Cui value is climate-model-extrapolated with a wide CI, but its central estimate clearly favours 0.005.
 
 ## By category
 
 | Category | Mt CO2e (AR5) | Mt CO2e (AR6) | Uncertainty |
 |---|---:|---:|---:|
 | Enteric fermentation | 151.7 | 146.2 | +/-25% |
-| Manure management | 21.2 | 21.0 | +/-33% |
+| Manure management | 20.8 | 20.6 | +/-33% |
 | Rice cultivation | 16.5 | 16.0 | +/-61% |
-| Managed soils | 28.5 | 29.4 | +/-47% |
+| Managed soils | 28.5 | 29.4 | +/-48% |
 | Field burning of residues | 0.7 | 0.7 | +/-45% |
 | Urea application | 4.8 | 4.8 | +/-11% |
-| **TOTAL** | **223.5** | **218.1** | **+/-19%** |
+| **TOTAL** | **223.0** | **217.6** | **+/-19%** |
 
 ## Detailed components
 
@@ -38,20 +38,20 @@
 | Manure management | camels (CH4) | CH4 | 2.4 | 0.07 |
 | Manure management | poultry (CH4) | CH4 | 41.3 | 1.16 |
 | Manure management | Direct N2O | N2O | 23.2 | 6.15 |
-| Manure management | Indirect N2O (volatilisation) | N2O | 7.2 | 1.90 |
+| Manure management | Indirect N2O (volatilisation) | N2O | 5.7 | 1.51 |
 | Rice cultivation | Continuously flooded | CH4 | 591.0 | 16.55 |
 | Managed soils | Direct N2O - synthetic fertiliser (upland) | N2O | 24.9 | 6.60 |
 | Managed soils | Direct N2O - synthetic fertiliser (rice EF1FR) | N2O | 3.8 | 1.01 |
-| Managed soils | Direct N2O - organic manure | N2O | 18.3 | 4.86 |
-| Managed soils | Direct N2O - crop residues | N2O | 1.7 | 0.44 |
+| Managed soils | Direct N2O - organic manure | N2O | 19.8 | 5.25 |
+| Managed soils | Direct N2O - crop residues | N2O | 1.7 | 0.45 |
 | Managed soils | Direct N2O - pasture deposition (cattle-type) | N2O | 3.4 | 0.91 |
 | Managed soils | Direct N2O - pasture deposition (sheep/goat/other) | N2O | 9.9 | 2.61 |
 | Managed soils | Indirect N2O - volatilisation (synthetic fertiliser) | N2O | 5.0 | 1.32 |
-| Managed soils | Indirect N2O - volatilisation (organic manure) | N2O | 3.9 | 1.02 |
-| Managed soils | Indirect N2O - volatilisation (pasture, cattle-type) | N2O | 1.8 | 0.48 |
-| Managed soils | Indirect N2O - volatilisation (pasture, sheep/goat/other) | N2O | 3.4 | 0.91 |
+| Managed soils | Indirect N2O - volatilisation (organic manure) | N2O | 5.4 | 1.44 |
+| Managed soils | Indirect N2O - volatilisation (pasture, cattle-type) | N2O | 0.7 | 0.19 |
+| Managed soils | Indirect N2O - volatilisation (pasture, sheep/goat/other) | N2O | 0.8 | 0.21 |
 | Managed soils | Indirect N2O - leaching/runoff (synthetic fertiliser) | N2O | 12.5 | 3.32 |
-| Managed soils | Indirect N2O - leaching/runoff (organic manure) | N2O | 7.7 | 2.05 |
+| Managed soils | Indirect N2O - leaching/runoff (organic manure) | N2O | 8.4 | 2.22 |
 | Managed soils | Indirect N2O - leaching/runoff (crop residues) | N2O | 0.7 | 0.19 |
 | Managed soils | Indirect N2O - leaching/runoff (pasture, cattle-type) | N2O | 3.6 | 0.96 |
 | Managed soils | Indirect N2O - leaching/runoff (pasture, sheep/goat/other) | N2O | 6.9 | 1.84 |

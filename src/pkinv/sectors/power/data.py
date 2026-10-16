@@ -1,9 +1,8 @@
 """Data library for the power sector (IPCC 1A1).
 
-Activity is fuel CONSUMED, from NEPRA State of Industry Report Table 3, in tonnes of oil
-equivalent. Not generation times an assumed heat rate: TOE is already an energy unit, so
-the conversion to TJ is one documented constant rather than a per-plant efficiency
-assumption, and the enormous net-calorific-value uncertainty on lignite never enters.
+Coal activity is station fuel consumed times documented rank-specific net calorific
+values. Other fuels retain their declared energy controls. Physical fuel mass,
+energy and generation remain separate quantities; rank NCV uncertainty is retained.
 
 YEARS ARE FISCAL, July to June.
 """
@@ -77,8 +76,11 @@ class PowerData:
                 "lo": float(r["booked_lo_toe"]),
                 "hi": float(r["booked_hi_toe"]),
                 "basis": r["basis"],
-                "superseded_toe": float(r["superseded_toe"]),
+                "superseded_toe": _num(r["superseded_toe"]),
                 "evidence_grade": r["evidence_grade"]}
+        self.coal_rank_account = {}
+        for row in read_rows(asset_path(data_dir, "activity", "power", "coal_rank_account.csv"), comments=True):
+            self.coal_rank_account.setdefault(int(row["fiscal_year"]), []).append(row)
 
         self.generation = _read(asset_path(data_dir, "activity", "power",
                                              "generation_by_fuel.csv"))
@@ -104,8 +106,44 @@ class PowerData:
     def efv(self, category, item):
         return self.ef[(category, item)]["value"]
 
+    def coal_uncertainty_drivers(self, year=None, gas="CO2"):
+        """Shared mass, rank-NCV and factor widths on the booked account.
+
+        Commissioning endpoints remain conditional structural bounds; they are
+        never converted to a 95% width. Rank NCV widths summarise IPCC ranges.
+        """
+        year = self.year if year is None else year
+        rank_rows = self.coal_rank_account.get(year)
+        if not rank_rows:
+            raise KeyError("no rank uncertainty account for FY%d" % year)
+        widths = {"activity:coal:power_station_mass": self.p("activity_uncert_coal")}
+        for row in rank_rows:
+            rank, share = row["fuel_rank"], float(row["energy_share"])
+            widths["factor:ncv:" + rank] = share * float(row["ncv_uncert_pct_95"])
+        if gas == "CO2":
+            share = self.coal_energy_lignite_share(year)
+            lig, bit = self.efv("power_combustion_co2", "Lignite"), self.efv("power_combustion_co2", "Other Bituminous Coal")
+            blend = share * lig + (1 - share) * bit
+            widths["factor:co2:Lignite"] = share * lig / blend * self.efu("power_combustion_co2", "Lignite")
+            widths["factor:co2:Other Bituminous Coal"] = (1 - share) * bit / blend * self.efu("power_combustion_co2", "Other Bituminous Coal")
+        else:
+            widths["factor:%s:Other Bituminous Coal" % gas.lower()] = self.efu("power_combustion_" + gas.lower(), "Coal")
+        return widths
+
     def efu(self, category, item):
         return self.ef[(category, item)]["uncert_pct"]
+
+    def coal_energy_lignite_share(self, year=None):
+        """Share of booked coal heat supplied by lignite, not electricity share."""
+        year = self.year if year is None else year
+        rows = self.coal_rank_account.get(year)
+        if not rows:
+            raise KeyError("no coal rank energy account for FY%d" % year)
+        total = sum(float(row["energy_TJ"]) for row in rows)
+        if total <= 0:
+            raise ValueError("non-positive booked coal energy for FY%d" % year)
+        return sum(float(row["energy_TJ"]) for row in rows
+                   if row["fuel_rank"] == "Lignite") / total
 
     def p(self, name):
         return self.params[name]
@@ -176,7 +214,7 @@ class PowerData:
         """
         year = self.year if year is None else year
         for r in self.fuel:
-            if r["fiscal_year"] == year and "oal" in r["fuel"]:
+            if r["fiscal_year"] == year and "oal" in r["fuel"] and "Table 3" in r["source"]:
                 return r["toe"]
         raise KeyError("no Table 3 coal row for FY%d-%02d" % (year, (year + 1) % 100))
 

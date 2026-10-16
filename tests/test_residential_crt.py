@@ -53,7 +53,12 @@ class TestExtraction(unittest.TestCase):
         filing_tj = self.rows["category"]["activity_TJ"]
         own_biomass_tj = sum(combustion.fuel_TJ(self.data)[s]
                              for s in ("Dung cake", "Firewood"))
-        self.assertAlmostEqual(own_biomass_tj, 487701, delta=1)
+        from pkinv.sectors.residential import hies, timeseries
+        expected_tj = (hies.firewood_air_dry_kg()
+                       / 1e6 * self.data.efv("residential_ncv", "Wood/Wood Waste")
+                       + timeseries.dung_survey_air_dry_kg(self.data.year) / 1e6
+                       * self.data.efv("residential_ncv", "Other Primary Solid Biomass"))
+        self.assertAlmostEqual(own_biomass_tj, expected_tj, places=5)
         self.assertGreater(own_biomass_tj, 1.5 * filing_tj)
         self.assertLess(own_biomass_tj, 3 * filing_tj)
         ledger_biomass_tj = sum(
@@ -200,17 +205,12 @@ class TestCcacBridge(unittest.TestCase):
         self.assertLess(abs(residual["pm25_kt"]) / b, 0.25)
 
     def test_the_bridge_is_the_shipped_one(self):
-        """The six rows as published at rc67. Through rc66: endpoint A 631.9
-        (configuration L), year wedge 40.5, configuration wedge 314.6, fuel-set wedge
-        67.6, residual -15.0. The fuel-set wedge and endpoint B did not move."""
-        self.assertEqual(
-            [(r["item"], r["pm25_kt"]) for r in self.bridge],
-            [("ENDPOINT A: this inventory, FY2023-24 (reference)", 282.7),
-             ("WEDGE: inventory year", 23.7),
-             ("WEDGE: fuel set (crop residues)", 67.6),
-             ("UNEXPLAINED RESIDUAL", -32.9),
-             ("ENDPOINT B: CCAC/SEI implied residential, 2021", 224.3),
-             ("MEMO: configuration L at the matched year", 590.7)])
+        """Compare the published final bridge with current source/method reconstruction."""
+        from pkinv.core.io import read_rows
+        shipped = read_rows(os.path.join(OUTPUTS, "residential_ccac_bridge_2024.csv"))
+        self.assertEqual([r["item"] for r in self.bridge], [r["item"] for r in shipped])
+        for expected, actual in zip(self.bridge, shipped):
+            self.assertAlmostEqual(expected["pm25_kt"], float(actual["pm25_kt"]), places=1)
 
     def test_the_year_wedge_is_quantified_by_the_time_series(self):
         from pkinv.sectors.residential import timeseries

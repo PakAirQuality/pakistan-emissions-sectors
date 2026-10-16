@@ -181,6 +181,87 @@ def direct_provincial_rows(already_covered):
     return out
 
 
+CLASSES = ("DOMESTIC", "AGRICULTURE", "Total Transport", "Total Industry", "Total Power",
+           "Total Government")
+
+# THE CORRECTIONS THE RULE BELOW IS EXPECTED TO APPLY, declared so that a change in what it
+# finds fails the ingest instead of moving a booked quantity silently. The declaration lives in
+# pkinv.sectors.transport.ocac_corrections, which the transport diagnostics read too; it is
+# re-exported here for scripts/ingest_release_extension.py, which reports it as applied.
+from pkinv.sectors.transport.ocac_corrections import DECLARED_PUBLISHER_CORRECTIONS  # noqa: E402
+
+
+def publisher_corrections(rows):
+    """Restore a first print's non-additive cell where the next edition restores it (rc68).
+
+    OCAC's FY2017-18 edition prints an HSD grand total of 9,038,298 t while its customer
+    classes sum to 8,516,476 t: 521,822 t are missing from one class. The FY2018-19 edition
+    restates FY2017-18 Road as 15,454,576 t, exactly 521,822 t above the first print, with the
+    grand total unchanged. HSD is the only product whose classes fail its own total, and by
+    the same amount, so the missing tonnes are Road HSD. Through rc67 the engine booked the
+    short figure. The rule applied here is general and fails closed: a cell is corrected only
+    when ONE product's classes fall short of its own printed total by g, and ONE customer row
+    is restated in the next edition by g with the grand total unchanged (both within 2 t of
+    printed rounding). The corrected value is derivable from the first print's own total;
+    the next edition only names the row. Returns the corrections applied.
+    """
+    def val(year, section, row, product):
+        for r in rows:
+            if (int(r["fiscal_year_start"]), r["section"], r["sector_row"], r["product"]) == \
+                    (year, section, row, product):
+                return r
+        return None
+
+    applied = []
+    years = sorted({int(r["fiscal_year_start"]) for r in rows})
+    for year in years:
+        products = {r["product"] for r in rows if int(r["fiscal_year_start"]) == year} \
+            - {"TOTAL", "TOTAL_PRIOR"}
+        gaps = {}
+        for prod in products:
+            total = val(year, "TOTALS", "TOTAL_INTERNAL", prod)
+            if total is None:
+                continue
+            classes = sum(float(r["tonnes"]) for r in rows
+                          if int(r["fiscal_year_start"]) == year and r["product"] == prod
+                          and r["sector_row"] in CLASSES)
+            gap = float(total["tonnes"]) - classes
+            if abs(gap) > 2:
+                gaps[prod] = gap
+        if len(gaps) != 1:
+            continue
+        (prod, gap), = gaps.items()
+        grand_first = val(year, "TOTALS", "TOTAL_INTERNAL", "TOTAL")
+        grand_next = val(year + 1, "TOTALS", "TOTAL_INTERNAL", "TOTAL_PRIOR")
+        if grand_first is None or grand_next is None or \
+                abs(float(grand_next["tonnes"]) - float(grand_first["tonnes"])) > 2:
+            continue
+        restated = []
+        for r in rows:
+            if int(r["fiscal_year_start"]) != year or r["product"] != "TOTAL" or \
+                    r["sector_row"] in CLASSES or r["section"] == "TOTALS":
+                continue
+            nxt = val(year + 1, r["section"], r["sector_row"], "TOTAL_PRIOR")
+            if nxt is not None and abs(float(nxt["tonnes"]) - float(r["tonnes"]) - gap) <= 2:
+                restated.append(r)
+        if len(restated) != 1:
+            continue
+        row = restated[0]
+        section, name = row["section"], row["sector_row"]
+        aggregate = {"TRANSPORT": "Total Transport"}.get(section)
+        targets = [(section, name, prod), (section, name, "TOTAL")]
+        if aggregate:
+            targets += [(section, aggregate, prod), (section, aggregate, "TOTAL")]
+        for key in targets:
+            cell = val(year, *key)
+            if cell is None:
+                raise SystemExit("publisher correction for FY%d %s: no %s cell" % (year, prod, key))
+            before = float(cell["tonnes"])
+            cell["tonnes"] = "%.1f" % (before + gap)
+            applied.append((year, key, before, before + gap))
+    return applied
+
+
 def main():
     os.makedirs(OUT_DIR, exist_ok=True)
     a = annual_rows()
@@ -190,6 +271,18 @@ def main():
     # Its rows are PREPENDED so the file stays sorted by fiscal_year_start.
     from pkinv.sectors.transport import ocac_image_edition
     a = ocac_image_edition.annual_rows(ocac.COMMIT_ROWS) + a
+    applied = publisher_corrections(a)
+    found = {(year,) + key: (before, after - before) for year, key, before, after in applied
+             if key[2] not in ("TOTAL",) and key[1] not in ("Total Transport",)}
+    declared = {k: (v["first_print_tonnes"], v["gap_tonnes"])
+                for k, v in DECLARED_PUBLISHER_CORRECTIONS.items()}
+    if {k: (round(b), round(g)) for k, (b, g) in found.items()} != \
+            {k: (round(b), round(g)) for k, (b, g) in declared.items()}:
+        raise SystemExit("publisher corrections found %r differ from those declared %r"
+                         % (found, declared))
+    for year, key, before, after in applied:
+        print("publisher correction FY%d %s: %.0f -> %.0f t" % (year, " / ".join(key),
+                                                             before, after))
     with open(ANNUAL_OUT, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fieldnames=list(a[0].keys()))
         w.writeheader()

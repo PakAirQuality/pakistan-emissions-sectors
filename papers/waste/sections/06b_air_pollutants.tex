@@ -3,13 +3,7 @@
 \label{sec:air}
 % ===========================================================================
 
-Open burning of municipal waste is a combustion source in the middle of where people live, so
-its air-pollutant emissions matter for reasons its greenhouse-gas emissions do not---though
-the burn sites themselves are unmapped, so its geography, like the sector's, is an origin
-allocation on population rather than observed release locations. This
-section reports them on the same activity basis as Section~\ref{sec:results}: the same
-\SI{9.40}{\mega\tonne} of burned waste, through the \citet{andreae2019} garbage-burning
-factors, reported as mass and never converted to \COe{}.
+Open municipal-waste burning uses the same wet/dry burned quantity and fate account as the greenhouse-gas calculation. The FY2023--24 reference burned mass is \SI{9.40}{\mega\tonne}; pollutant-specific garbage-burning factors follow \citet{andreae2019}. Masses are reported in native units. Burning locations are not observed nationally, so the population allocation describes waste origin rather than confirmed release sites.
 
 \begin{table}[htbp]
 \centering
@@ -30,7 +24,7 @@ Black carbon        &   9.22 \\
 \end{tabular}
 \caption{Air pollutants from open waste burning, FY2023--24. Mass only; these never enter a
 greenhouse-gas total. Computed from the same burned tonnage as the 4C2 emissions above, so the
-two describe the same fire. \NOx{} is reported as NO$_2$-equivalent since August 2026
+two describe the same fire. \NOx{} is reported as NO$_2$-equivalent
 (Andreae publishes the garbage-burning factor as NO; the conversion is documented on the
 factor row), the inventory-wide basis.}
 \label{tab:air}
@@ -45,24 +39,11 @@ everything below \PM{} as a line of zero width.}
 \label{fig:air}
 \end{figure}
 
-\subsection{Where this sits among Pakistani particulate sources}
+\subsection{Interpretation of primary particulate releases}
 
-At \SI{63.85}{\kilo\tonne} of primary \PM{}, open waste burning is the second largest source
-in the national inventory that contains it---behind residential solid fuel at
-\SI{282}{\kilo\tonne} and ahead of crop-residue burning at \SI{54}{\kilo\tonne} and road
-transport at \SI{8.2}{\kilo\tonne} (EMEP/EEA Tier~1 since the air program's factor
-refactor).
+The reference estimate is \SI{63.85}{\kilo\tonne} of primary PM$_{2.5}$. Its relative contribution depends on the compared pollutant, source coverage and household or industrial configuration. No inverse relationship between GHG and pollutant rankings is assumed. Emitted mass does not establish exposure: disposal and burning locations, release conditions, atmospheric transport and chemistry remain outside this calculation.
 
-That ranking is worth stating carefully, because it inverts the greenhouse-gas one. Open
-burning is \SI{0.86}{\percent} of national \COe{} and roughly \SI{14}{\percent} of national
-primary \PM{}: a category that is nearly negligible for climate and substantial for exposure.
-Road transport runs the other way, at \SI{9.03}{\percent} of emissions and a twentieth of the
-particulate.
-
-Because every sector's air layer in this inventory is computed from that sector's own
-greenhouse-gas activity data, the comparison is a statement about how these sources burn
-rather than an artefact of four studies using four different activity bases---which is the
-usual reason such comparisons are unreliable in developing-country settings.
+The common activity account prevents disposal and burning from claiming the same generated waste twice. It does not establish where the uncollected material burns or validate the pollutant factors. The unburned uncollected fraction remains an unresolved fate, rather than an invented combustion destination.
 
 \subsection{Black carbon and hydrogen chloride}
 
@@ -75,16 +56,12 @@ metrics remain contested. It is reported because omitting it would understate th
 relevance of open burning even while the greenhouse-gas total for 4C2 is small.
 
 Hydrogen chloride at \SI{18.43}{\kilo\tonne} appears in no other sector of this inventory and
-is a direct consequence of burning chlorinated plastics in the open. It is a marker for the
-same combustion conditions that produce dioxins and furans, which this inventory does not
-estimate and which would need a dedicated study; its presence here is a flag for that gap
-rather than a complete account of it.
+is a direct consequence of burning chlorinated plastics in the open. It does not quantify dioxin or furan releases, which require separate source-specific methods.
 
 \subsection{Limitations of this layer}
 
-The burned tonnage carries the full uncertainty of the partition, so every figure above
-inherits it. The composition is regional rather than Pakistani, which matters more for
+The conditional air ensemble reuses the same bounded waste-fate realisations as the GHG calculation, then applies pollutant-factor uncertainty. Burning-fraction alternatives remain separate structural cases; their endpoints are not confidence limits. The composition is regional rather than Pakistani, which matters more for
 pollutants than for greenhouse gases because plastics and textiles drive the chlorine and much
 of the particulate. And the factors describe open burning generically rather than the specific
 conditions of Pakistani street-side burning---smouldering, damp, and often mixed with organic
-waste---which would raise the incomplete-combustion products relative to these values.
+waste---whose consequences for incomplete-combustion products require local evidence.

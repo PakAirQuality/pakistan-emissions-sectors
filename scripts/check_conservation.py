@@ -34,7 +34,7 @@ from decimal import Decimal
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "outputs")
 SEM = os.path.join(OUT, "semantic")
-CONFIG = "REF_2023_24"
+CONFIG = "S_TAN"
 REL_TOL = Decimal("1e-6")
 NOTATION_KEYS = {"NE", "IE", "NA", "NO", "C", "E"}  # E = estimated, the project's positive key
 

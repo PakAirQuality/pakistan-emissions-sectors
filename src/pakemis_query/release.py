@@ -94,10 +94,49 @@ class Release:
 
     @staticmethod
     def _parquet_digest(path, table):
+        import pyarrow as pa
         import pyarrow.parquet as pq
-        rows = pq.read_table(path).to_pylist()
-        text = _canonical_text(table["columns"], rows, table["primary_key"])
-        return hashlib.sha256(text.encode("utf-8")).hexdigest()
+        source = pq.ParquetFile(path)
+        if source.schema_arrow.names != table["columns"] or any(
+                not pa.types.is_string(field.type) for field in source.schema_arrow):
+            raise IdentityError("%s: Parquet columns or string types differ from the contract" % path)
+
+        def digest(batches, check_order):
+            result = hashlib.sha256()
+            buffer = io.StringIO(newline="")
+            writer = csv.DictWriter(buffer, fieldnames=table["columns"], lineterminator="\n")
+            writer.writeheader()
+            previous = None
+            for batch in batches:
+                if any(column.null_count for column in batch.columns):
+                    raise IdentityError("%s: Parquet nulls cannot represent empty CSV strings" % path)
+                for row in batch.to_pylist():
+                    key = tuple(row[name] for name in table["primary_key"])
+                    if check_order and previous is not None and key < previous:
+                        return None
+                    previous = key
+                    writer.writerow(row)
+                result.update(buffer.getvalue().encode("utf-8"))
+                buffer.seek(0)
+                buffer.truncate(0)
+            result.update(buffer.getvalue().encode("utf-8"))
+            return result.hexdigest()
+
+        ordered = digest(source.iter_batches(batch_size=10000), True)
+        if ordered is not None:
+            return ordered
+        # A valid representation may reorder records. Canonicalise it with a disk-capable
+        # sort instead of materialising all monthly district dictionaries in Python.
+        import duckdb
+        connection = duckdb.connect(":memory:")
+        try:
+            connection.execute("SET memory_limit='128MB'")
+            keys = ",".join('"' + name.replace('"', '""') + '"' for name in table["primary_key"])
+            batches = connection.execute("SELECT * FROM read_parquet(?) ORDER BY " + keys,
+                                         [str(path)]).fetch_record_batch(10000)
+            return digest(batches, False)
+        finally:
+            connection.close()
 
     def table_path(self, name):
         """The Parquet when present (the engine's fast path), else the CSV."""

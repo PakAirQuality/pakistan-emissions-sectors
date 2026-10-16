@@ -1,0 +1,641 @@
+period_id,configuration_id,dependence_case,rank,driver_id,correlation,squared_correlation,attribution
+FY2015-16,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5743377112290753,0.3298638065398527,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.26439122583187324,0.06990272029688059,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2629870655835123,0.06916219666422661,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.22724057990830498,0.051638281157062746,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.2162664154875485,0.04677116246783295,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,persistent_parameters,6,activity:livestock:cattle,0.20038725453981365,0.04015505178200407,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.1984075569635779,0.03936555866025541,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.1937441379332755,0.03753679098350808,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5741244562153581,0.32961889122458066,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.26434020963268146,0.06987574642864998,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.2626005268068475,0.06895903667923382,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,4,ef:enteric_dairy_cattle,0.2272743804435802,0.05165364400601323,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,5,factor:soils:EF1_dry,0.22304303168769088,0.04974819398443628,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,6,activity:livestock:cattle,0.20047447493452408,0.040190015100273126,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.1983609965110784,0.03934708493686806,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.19371882125396275,0.03752698170802477,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5893633437054694,0.34734915090369123,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2726996480971912,0.07436509807233192,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2612399611263354,0.06824631728928923,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.23724180211711401,0.056283672671775885,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.22488516975806622,0.05057333957711426,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,6,parameter:waste:ww_ef_effluent,0.20463570241272913,0.04187577070195104,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,7,activity:livestock:cattle,0.19717576494434652,0.03887828228138819,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,persistent_parameters,8,ef:rice_EFc,0.15629157643426664,0.02442705686430821,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5891378275649221,0.3470833798679158,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.2726443810765004,0.07433495853258798,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,3,activity:livestock:buffalo,0.26083926835686744,0.06803712391694591,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,4,ef:enteric_dairy_cattle,0.23727425747245504,0.05629907325910488,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,5,factor:soils:EF1_dry,0.2318550009525807,0.05375674146672119,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,6,parameter:waste:ww_ef_effluent,0.20458571314978702,0.04185531402500694,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,7,activity:livestock:cattle,0.197263165253391,0.038912756365786644,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,persistent_parameters,8,ef:rice_EFc,0.15681305820800007,0.024590335224545616,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5594061257397683,0.3129352135151775,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.25875780983919483,0.06695560415277692,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,3,factor:soils:EF1_dry,0.2557839415333204,0.06542542474632107,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,4,activity:livestock:buffalo,0.255769546187018,0.06541806075671315,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,5,ef:enteric_dairy_cattle,0.22237065598953046,0.0494487086452141,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,6,activity:livestock:cattle,0.19714954967815487,0.03886794493829926,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.1931720634348113,0.03731544609166276,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.18879190343879831,0.035642382804044546,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5590229622429872,0.3125066723149243,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,2,factor:soils:EF1_dry,0.26251207496270546,0.06891258950122509,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,3,ef:enteric_other_cattle,0.2586250908749854,0.06688693763009447,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,4,activity:livestock:buffalo,0.255305915223147,0.06518111034792871,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.22234549932501238,0.04943752107008908,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,6,activity:livestock:cattle,0.19717342252150977,0.03887735854884582,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.1930682840768896,0.03727536231639455,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.18870931649763636,0.03561120613300509,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.573250782904591,0.3286164601007265,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2665237533697464,0.07103491111029739,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,3,factor:soils:EF1_dry,0.2651297998009307,0.0702938107424816,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,4,activity:livestock:buffalo,0.2537102903286579,0.06436891141865188,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,5,ef:enteric_dairy_cattle,0.2318413705979374,0.05375042112073016,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,6,parameter:waste:ww_ef_effluent,0.19896921160794967,0.03958874716788905,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,7,activity:livestock:cattle,0.1937475032530495,0.03753809501679043,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,persistent_parameters,8,factor:soils:EF5,0.16820905711933784,0.02829428689697666,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5728417076809555,0.3281476220588333,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,2,factor:soils:EF1_dry,0.2720344747020868,0.0740027554264403,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,3,ef:enteric_other_cattle,0.26637985496874345,0.0709582271331688,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,4,activity:livestock:buffalo,0.2532294554952509,0.06412515713042125,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.23180819321444593,0.053735038441345896,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,6,parameter:waste:ww_ef_effluent,0.19885695763874933,0.039544089601339344,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,7,activity:livestock:cattle,0.19376912219447176,0.037546472716016126,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,persistent_parameters,8,factor:soils:EF5,0.17121959272916312,0.02931614893434049,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5490869807336123,0.3014965124111543,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2560305294322345,0.06555163200135028,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2515878322320894,0.06329643732724197,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,4,factor:soils:EF1_dry,0.23344580876635035,0.054496945630575416,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,5,ef:enteric_dairy_cattle,0.22054805233314495,0.04864144338794364,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.20901560627163868,0.04368752366510068,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,7,activity:livestock:cattle,0.195084155461989,0.0380578277123175,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18951948173062177,0.03591763395544348,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5487060457663566,0.30107832466055107,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.25589566168212785,0.06548258966773404,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.25112443896734854,0.06306348384666556,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.24022956264857032,0.05771024277032337,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.22052989736940404,0.04863343563375988,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.20931634005730118,0.043813330214983744,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,7,activity:livestock:cattle,0.19510687344214642,0.03806669206436974,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.1894177027915637,0.03587906613083316,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5619606657492546,0.3157997898493455,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2633807578953277,0.06936942362951723,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2492600352177487,0.062130565156753324,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,4,factor:soils:EF1_dry,0.24184513651364684,0.05848907005530447,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,5,ef:enteric_dairy_cattle,0.22963812807534426,0.05273366986594821,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.2147601995741154,0.04612194332111388,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.19496814373515933,0.03801257707153375,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,persistent_parameters,8,activity:livestock:cattle,0.19147232320374022,0.03666165055303756,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5615548612763089,0.31534386222305455,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.2632349921659699,0.06929266110061824,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,3,factor:soils:EF1_dry,0.24879894222925306,0.0619009136543952,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,4,activity:livestock:buffalo,0.24878025680548246,0.06189161617620181,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.22961228916008386,0.05272180333333396,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.2150628539463189,0.0462520311475357,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.19485824454139777,0.037969735465755175,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,persistent_parameters,8,activity:livestock:cattle,0.19149288318596275,0.036669524310872774,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5486376060971422,0.30100322282400294,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.25830971655991103,0.06672390966926157,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2513993577143261,0.06320163705917568,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,4,factor:ncv:Other Bituminous Coal,0.2336902663090663,0.05461114056760233,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.2284031090385488,0.05216798021847521,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,6,ef:enteric_dairy_cattle,0.22186926390912395,0.04922597026757649,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,7,activity:livestock:cattle,0.19676762298375833,0.03871749745467846,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18899205069424307,0.03571799522561534,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5482472494035201,0.30057504647852556,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.25816790446290394,0.06665066689476709,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.25092579284210337,0.06296375351343818,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.23535746853608588,0.05539313799571466,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,5,factor:ncv:Other Bituminous Coal,0.23397995794264556,0.05474662071884218,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,6,ef:enteric_dairy_cattle,0.22185637300090102,0.04922025024111493,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,7,activity:livestock:cattle,0.19678751603417016,0.03872532646689878,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18888894500841064,0.035679033546390376,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5615811382550888,0.31537337484388117,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2657624599259124,0.0706296851058722,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.24911552066067097,0.062058542634037185,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,4,factor:ncv:Other Bituminous Coal,0.2401178151660486,0.057656565160116684,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.2367169543256225,0.056034916465198856,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,6,ef:enteric_dairy_cattle,0.23104419746426788,0.053381421181907605,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.19446228418516495,0.03781557997051185,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,persistent_parameters,8,activity:livestock:cattle,0.1931677610583474,0.0373137839122948,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5611648245720656,0.3149059603369972,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.2656090843620026,0.07054818569562141,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,3,activity:livestock:buffalo,0.24862501002886475,0.0618143956118531,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.24384671171616562,0.05946121881478678,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,5,factor:ncv:Other Bituminous Coal,0.2404081414411188,0.057796074471172985,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,6,ef:enteric_dairy_cattle,0.23102332764555172,0.053371777916423946,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.19435072949137489,0.037772206053829575,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,persistent_parameters,8,activity:livestock:cattle,0.19318525707976242,0.037320543552973894,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5507064222587974,0.30327756351708485,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2617917921781355,0.06853494245184008,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.25187417198528406,0.06344059851327245,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,4,factor:ncv:Other Bituminous Coal,0.23859555222558915,0.05692783754183384,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.22618302878256932,0.051158762509256585,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,6,ef:enteric_dairy_cattle,0.22502113219499684,0.05063450993431824,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,7,activity:livestock:cattle,0.19787512540119898,0.03915456525254022,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18835751591737007,0.03547855380256232,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5502982231166947,0.3028281343653915,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.26163906559524397,0.06845500064555238,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.25138543227441695,0.06319463555979547,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,4,factor:ncv:Other Bituminous Coal,0.2388780202494888,0.057062708558315176,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,5,factor:soils:EF1_dry,0.23333709274981237,0.054446198852934544,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,6,ef:enteric_dairy_cattle,0.22501096326104733,0.05062993358766439,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,7,activity:livestock:cattle,0.19788995068798496,0.03916043258329312,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18825074493095723,0.03543834296706032,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5641877376126231,0.31830780327245,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2695596343264405,0.07266239645820431,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.24976041539405053,0.062380265097808675,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,4,factor:ncv:Other Bituminous Coal,0.2453702659786671,0.060206567426441836,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.23462016774178499,0.05504662311118332,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,6,ef:enteric_dairy_cattle,0.23444999124833574,0.054966798396344704,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,7,activity:livestock:cattle,0.19437558932784557,0.037781869726547276,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.19393916675025225,0.03761240039978215,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5637516134328722,0.31781588164816654,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.26939426578405384,0.07257327043732945,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,3,activity:livestock:buffalo,0.24925368382308963,0.06212739889938073,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,4,factor:ncv:Other Bituminous Coal,0.24565275363901978,0.060345275370432945,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,5,factor:soils:EF1_dry,0.241960229237712,0.058544752532766135,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,6,ef:enteric_dairy_cattle,0.23443125254612926,0.054958012170347036,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,7,activity:livestock:cattle,0.19438775133019157,0.037786597867208394,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.19382338700804075,0.03756750535126874,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5332812226552562,0.284388862436685,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,2,factor:ncv:Other Bituminous Coal,0.28095889772325305,0.07893790220986537,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,3,ef:enteric_other_cattle,0.2553369277726913,0.06519694668439657,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,4,activity:livestock:buffalo,0.2442318974080108,0.05964921971151711,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.2274547420497717,0.051735659680928185,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,6,ef:enteric_dairy_cattle,0.21955249036958366,0.048203296027486124,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,7,activity:livestock:cattle,0.19369521213762966,0.03751783520504136,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18247494138146078,0.03329710423216755,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5328107957475208,0.2838873440651063,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,2,factor:ncv:Other Bituminous Coal,0.28117790894735767,0.07906101648000856,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,3,ef:enteric_other_cattle,0.2551507414875665,0.06510190088165499,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,4,activity:livestock:buffalo,0.2437171369658719,0.05939804285084157,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,5,factor:soils:EF1_dry,0.23454997622231163,0.055013691345886954,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,6,ef:enteric_dairy_cattle,0.21952221451413237,0.04819000266518875,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,7,activity:livestock:cattle,0.19368262716376497,0.037512960065057985,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18234789007997038,0.03325075301661696,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5456427581925692,0.2977260195679946,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,2,factor:ncv:Other Bituminous Coal,0.2885104895572034,0.08323830258453715,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,3,ef:enteric_other_cattle,0.26256579219961224,0.06894079523340996,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,4,activity:livestock:buffalo,0.2418426860193249,0.05848788478104177,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.23553125510090703,0.055474972129408544,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,6,ef:enteric_dairy_cattle,0.2284031552254811,0.05216800131695522,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,7,activity:livestock:cattle,0.19003923018824354,0.036114909010540215,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18760533807681398,0.03519576287491567,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5451411783776093,0.2971789043629285,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,2,factor:ncv:Other Bituminous Coal,0.2887245808643198,0.08336188359527714,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,3,ef:enteric_other_cattle,0.2623650373829739,0.06883541284096929,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.24279955178517315,0.05895162234708098,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,5,activity:livestock:buffalo,0.2413099956767,0.05823051401348897,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,6,ef:enteric_dairy_cattle,0.22836237100906026,0.05214937249287969,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,7,activity:livestock:cattle,0.1900234914375259,0.036108927298107475,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.1874680479159234,0.03514426898940695,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5459579474378853,0.2980700803705887,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2643191283921617,0.06986460163399207,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.24949147654289036,0.06224599686755161,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,4,factor:soils:EF1_dry,0.23543924855213602,0.05543163975879448,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,5,ef:enteric_dairy_cattle,0.2267007950879217,0.05139325049349587,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.2185292854410809,0.04775504859538942,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,7,activity:livestock:cattle,0.199577259296261,0.039831082428206994,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.18594503957802344,0.03457555774367271,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5454578646844621,0.29752428214613297,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.2641163539084017,0.06975744840186811,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.2489496760483815,0.06197594120459409,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.24288955737368487,0.058995337081184554,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.22667273430760798,0.05138052847848744,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.21877855677239455,0.04786405690341187,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,7,activity:livestock:cattle,0.19955751991694567,0.03982320375540217,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.18582620152037363,0.03453137717149051,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5591322702657799,0.3126288956525652,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2720337472332621,0.07400235963377035,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.24723998457932414,0.06112760997478444,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,4,factor:soils:EF1_dry,0.24396824581826967,0.05952050496764366,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,5,ef:enteric_dairy_cattle,0.23598384292864047,0.05568837412336926,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.22469311757001348,0.0504869970833319,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,7,activity:livestock:cattle,0.19598872793285946,0.038411581476740404,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.19005266898079876,0.03612001698672507,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5585977295568064,0.31203142346601903,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.27181462002855,0.07388318766126502,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,3,factor:soils:EF1_dry,0.25160614335922094,0.06330565137610084,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,4,activity:livestock:buffalo,0.24667853939037462,0.060850301795768606,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.23594420728948365,0.05566966895346283,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,6,factor:ncv:Other Bituminous Coal,0.22494007740361993,0.050598038422346524,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,7,activity:livestock:cattle,0.19596523978406527,0.038402375203626195,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18990829621103225,0.03606516096977717,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5663329574435236,0.32073301868672793,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.27891991956859463,0.0777963215321513,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2579196892431898,0.0665225660993036,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.23762556046502034,0.05646590698631504,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.2335040323863657,0.05452413314069292,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,6,activity:livestock:cattle,0.2087545386925862,0.04357845742475447,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,7,factor:ch4:Other Primary Solid Biomass,0.1951578806434447,0.038086598377241,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18832586802421244,0.03546663256707308,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5658713880333595,0.32021042779480086,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.27873336523977893,0.077692288897892,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.2573774607020063,0.0662431572774128,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.24146146124333195,0.058303637265765096,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.2376316885872702,0.05646881942083737,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,6,activity:livestock:cattle,0.2087542955304375,0.043578355902409244,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,7,factor:ch4:Other Primary Solid Biomass,0.19505450636036353,0.0380462604514851,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.1882106395102892,0.03542324482487204,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5811233057431873,0.3377042964778899,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2875876257383988,0.08270664247784934,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.25605199278310464,0.06556262300819907,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.2477429007459138,0.061376544869999695,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.24249580311675886,0.05880421452924188,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,6,activity:livestock:cattle,0.20543063902812078,0.04220174745150206,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.19410037804113933,0.0376749567557132,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,persistent_parameters,8,factor:ncv:Lignite,0.1721965631728312,0.029651656368534843,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.580628311268482,0.33712923584648924,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.28738517680750725,0.0825902398486822,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,3,activity:livestock:buffalo,0.25548877566404693,0.0652745144903137,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.2506705726670381,0.06283573600122085,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.24773901874207338,0.06137462140728538,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,6,activity:livestock:cattle,0.20542669738873043,0.042200128000041026,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,7,parameter:waste:ww_ef_effluent,0.19397475714755472,0.03762620641045283,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,persistent_parameters,8,factor:ncv:Lignite,0.17233896639621674,0.029700719338516323,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5602937397696908,0.31392907482510596,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2787667469474574,0.07771089920366775,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2547285912680457,0.0648866552094031,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.2374051861871856,0.05636122242857226,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.23627718888019228,0.05582690998512606,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,6,factor:ncv:Lignite,0.22340257303494734,0.04990870963863498,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,7,activity:livestock:cattle,0.20784188709025153,0.04319825002923686,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.19355631123678388,0.03746404561959075,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5598291867699426,0.3134087183594953,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.2785767716065382,0.07760501767872136,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.25417819774610206,0.06460655620945656,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,4,factor:soils:EF1_dry,0.24438083618560436,0.05972199309477519,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.23741471656832047,0.05636574764321595,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,6,factor:ncv:Lignite,0.22352019242910856,0.04996127642354572,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,7,activity:livestock:cattle,0.20783135705860753,0.043193872976822416,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.19345256693766205,0.03742389565477062,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5744615264248442,0.33000604534236194,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.2871754220693525,0.08246972304071074,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.25264372045800565,0.0638288494868629,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.2472316624670409,0.06112349492621684,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.24509176944829303,0.06006997545129522,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,6,factor:ncv:Lignite,0.23022152165460413,0.05300194903296136,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,7,activity:livestock:cattle,0.2043638181675526,0.041764570176020505,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18941281573893118,0.035877214766150294,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5739643618191888,0.3294350886385086,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.2869697484751297,0.08235163653987919,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,3,factor:soils:EF1_dry,0.2534095521654929,0.06421640112871566,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,4,activity:livestock:buffalo,0.25207295496883614,0.06354077462672089,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,5,ef:enteric_dairy_cattle,0.24723135992553513,0.0611233453306295,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,6,factor:ncv:Lignite,0.23033397584934964,0.053053740430568784,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,7,activity:livestock:cattle,0.2043495710710522,0.04175874719692301,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18929702791731584,0.035833364778329053,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5622418364929459,0.31611588270296054,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.28218465373832596,0.07962817880541892,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.2559732002206934,0.0655222792312232,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.24037583181788963,0.05778054052214236,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.21933307078303083,0.04810699593911401,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,6,factor:ncv:Lignite,0.2103651161111831,0.04425348207647155,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,7,activity:livestock:cattle,0.20997907122726328,0.044091210353464104,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.18827923078746414,0.03544906874591919,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5617663301394763,0.31558140967837506,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.28198496916610566,0.07951552283560956,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,3,activity:livestock:buffalo,0.25541040929729597,0.06523447717741225,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,4,ef:enteric_dairy_cattle,0.24040124232329782,0.05779275731058496,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,5,factor:soils:EF1_dry,0.22771513445353156,0.051854182459189956,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,6,factor:ncv:Lignite,0.21047841809173942,0.04430116448240106,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,7,activity:livestock:cattle,0.20997202793803205,0.04408825251640971,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,persistent_parameters,8,factor:ch4:Other Primary Solid Biomass,0.18817636034061538,0.03541034259104112,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,1,ef:enteric_buffalo,0.5759589875181808,0.3317287553029679,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,2,ef:enteric_other_cattle,0.29042708909562664,0.08434789408055905,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,3,activity:livestock:buffalo,0.25362585181160435,0.0643260727071619,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,4,ef:enteric_dairy_cattle,0.25004041780134734,0.06252021053427233,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,5,factor:soils:EF1_dry,0.22746570870093358,0.05174064863481797,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,6,factor:ncv:Lignite,0.21660173448470044,0.046916311381780665,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,7,activity:livestock:cattle,0.20626131378895987,0.04254372956594777,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.18983335075525354,0.03603670105896712,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,1,ef:enteric_buffalo,0.5754511560090991,0.33114403295220857,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,2,ef:enteric_other_cattle,0.2902116046191868,0.08422277545564322,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,3,activity:livestock:buffalo,0.2530430045225555,0.06403076213780205,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,4,ef:enteric_dairy_cattle,0.25005638312063816,0.06252819473937538,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,5,factor:soils:EF1_dry,0.2360622287338262,0.055725375834781286,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,6,factor:ncv:Lignite,0.21671020287984025,0.04696331203222152,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,7,activity:livestock:cattle,0.2062507449076271,0.04253936977495106,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,persistent_parameters,8,parameter:waste:ww_ef_effluent,0.1897095891665586,0.035989728221744455,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5784298027812774,0.3345810367455875,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2648348391571535,0.07013749203139537,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2016,0.2333599555965416,0.054456868876019866,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,4,ef:enteric_dairy_cattle,0.22541313817771957,0.050811082863127695,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,5,factor:soils:EF1_dry,0.21860217106170868,0.047786909192892545,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.19693480827753448,0.038783318711309266,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.1948396846934368,0.03796250273143787,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_IPCC,annual_activity_errors,8,activity:livestock:cattle:FY2016,0.18700572209701324,0.03497114009702535,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5782220955264659,0.3343407917550174,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.26477063004008866,0.0701034865318255,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,3,activity:livestock:buffalo:FY2016,0.23332508991813602,0.05444059758530626,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,4,ef:enteric_dairy_cattle,0.22550370130328143,0.05085191930147957,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,5,factor:soils:EF1_dry,0.2254266396686779,0.05081716987231195,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.19691667040017535,0.038776175081491296,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.19481075649571775,0.037951230846433835,sensitivity diagnostic; not additive variance shares
+FY2015-16,L_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2016,0.1866749442857282,0.03484753482407973,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5937280106956827,0.3525129506846527,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2732639383699119,0.07467318001343502,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,3,ef:enteric_dairy_cattle,0.23560976270184403,0.055511960280419256,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,4,activity:livestock:buffalo:FY2016,0.2312480507488153,0.053475660975126654,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,5,factor:soils:EF1_dry,0.22734523963488032,0.051685857984641155,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.2033146599246427,0.04133685094027311,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,7,activity:livestock:cattle:FY2016,0.1855579935700795,0.03443176897775366,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_IPCC,annual_activity_errors,8,factor:soils:EF5,0.15330119966959233,0.023501257820136214,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5935144337743053,0.3522593830984343,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.27319805204481196,0.07463717564107979,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,3,ef:enteric_dairy_cattle,0.23570335132522363,0.0555560698259418,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.23436783879096348,0.054928283859547046,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,5,activity:livestock:buffalo:FY2016,0.23121156829402228,0.05345878931298133,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.2032961421952261,0.04132932143146159,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,7,activity:livestock:cattle:FY2016,0.18521716086830067,0.03430539668011397,sensitivity diagnostic; not additive variance shares
+FY2015-16,S_TAN,annual_activity_errors,8,factor:soils:EF5,0.15636746522405548,0.0244507841805962,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5533991619562444,0.30625063245387363,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2637758490707682,0.06957769855300468,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,3,factor:soils:EF1_dry,0.26108976255591043,0.06816786411150169,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,4,activity:livestock:buffalo:FY2017,0.25291863525723035,0.06396783606037992,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.23137648465491617,0.05353507765126666,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.19522023912882883,0.03811094176551711,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.1855837323654989,0.03444132171870913,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_IPCC,annual_activity_errors,8,activity:livestock:cattle:FY2017,0.17436701324698128,0.030403855308672945,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5528425596427059,0.30563489575229885,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,2,factor:soils:EF1_dry,0.2677343900926504,0.07168170363828348,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,3,ef:enteric_other_cattle,0.26355115689939435,0.06945921230300918,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,4,activity:livestock:buffalo:FY2017,0.2530046269477587,0.06401134125697455,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.23132161200249216,0.053509688179431525,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.19505900515689562,0.03804801549279783,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.18547248286122633,0.0344000418987079,sensitivity diagnostic; not additive variance shares
+FY2016-17,L_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2017,0.17473610835927347,0.03053270756454376,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5673524750362107,0.32188883092971404,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.27153382838908624,0.07373061995963373,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,3,factor:soils:EF1_dry,0.27032574320349706,0.07307600743852304,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,4,activity:livestock:buffalo:FY2017,0.25108076262963186,0.06304154936267754,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.24084015525599003,0.058003980383729385,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.20112984064349027,0.04045321279727579,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,7,activity:livestock:cattle:FY2017,0.17092071494191757,0.029213890796256244,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_IPCC,annual_activity_errors,8,factor:soils:EF5,0.169159226444175,0.028614843891191673,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5667667702346623,0.32122457184223047,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,2,factor:soils:EF1_dry,0.27714337347119056,0.0768084494589918,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,3,ef:enteric_other_cattle,0.27129563833027337,0.07360132337703049,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,4,activity:livestock:buffalo:FY2017,0.25116819209040436,0.06308546071796227,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.2407755600101216,0.057972870298187665,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,6,parameter:waste:ww_ef_effluent,0.20095864358978366,0.040384376433445696,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,7,factor:soils:EF5,0.17214956419742386,0.029635472453362958,sensitivity diagnostic; not additive variance shares
+FY2016-17,S_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2017,0.17130070150529345,0.029343930336205644,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5541737159969081,0.3071085075018218,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,2,activity:livestock:buffalo:FY2018,0.2506305561380236,0.062815675670055,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,3,ef:enteric_other_cattle,0.2489545392711479,0.06197836262370953,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.23462718774665584,0.05504991722990449,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.22196994421068744,0.0492706561328957,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.21192221986127596,0.044911027270930985,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.19229254674232354,0.03697642353264868,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1885077068067202,0.035535155525528384,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5538156736229637,0.30671180035045703,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,2,activity:livestock:buffalo:FY2018,0.2502420614619822,0.06262108932474247,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,3,ef:enteric_other_cattle,0.2487979310542887,0.0619004104968946,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.24140039153426135,0.05827414903289468,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.22198039615004425,0.04927529627493058,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.2122433923621775,0.04504725760140523,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.1922370894034376,0.036955098542305255,sensitivity diagnostic; not additive variance shares
+FY2017-18,L_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.18840750447330706,0.03549738774185922,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5680730034680616,0.3227069372692243,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2568315642515865,0.0659624523959168,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2018,0.24595640477248057,0.0604945530486043,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.243121046832253,0.05910784341281056,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.23155203103183963,0.05361634307497003,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.21774276869993356,0.04741191332111277,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.19432847213916296,0.037763555083941434,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_IPCC,annual_activity_errors,8,activity:livestock:cattle:FY2018,0.17688745425415586,0.031289171472516086,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5676977634338962,0.322280750607848,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.25666694621734454,0.06587792128053724,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,3,factor:soils:EF1_dry,0.25007888973470166,0.06253945109094107,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,4,activity:livestock:buffalo:FY2018,0.24555652909917086,0.06029800898323195,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.2315588851825532,0.05361951730698685,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.218069978746794,0.047554515630627195,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.194222751286999,0.03772247711749147,sensitivity diagnostic; not additive variance shares
+FY2017-18,S_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2018,0.17660651436013727,0.031189860914437373,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.552314316154082,0.3050511038287512,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.26482764395466113,0.07013368100257676,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2019,0.2582795152288486,0.06670830798684904,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,4,factor:ncv:Other Bituminous Coal,0.2333874271682712,0.0544696911602251,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,5,factor:soils:EF1_dry,0.23196104420387362,0.05380592602815141,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,6,ef:enteric_dairy_cattle,0.22198325480186695,0.049276565412430584,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,7,activity:livestock:cattle:FY2019,0.1865039495970435,0.03478372321529654,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1834711383086391,0.033661658592267774,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5519596765254675,0.3046594845100987,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.26464537686254525,0.07003717549471859,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,3,activity:livestock:buffalo:FY2019,0.2577864899651153,0.06645387440853448,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.23892596951664125,0.05708561890946698,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,5,factor:ncv:Other Bituminous Coal,0.23370264141297606,0.054616924603402076,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,6,ef:enteric_dairy_cattle,0.2220017034840045,0.049284756349799855,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,7,activity:livestock:cattle:FY2019,0.18695453106790716,0.034951996686821064,sensitivity diagnostic; not additive variance shares
+FY2018-19,L_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1833454626470133,0.033615558673247344,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.564980483034596,0.31920294621000544,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.27242502694016224,0.07421539530334813,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2019,0.25531227709324966,0.0651843588345403,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.23985886402430612,0.05753227465103057,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,5,factor:ncv:Other Bituminous Coal,0.239520578502327,0.05737010752608939,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,6,ef:enteric_dairy_cattle,0.23100436395284865,0.05336301616526016,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.18898183230156387,0.03571413294005641,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_IPCC,annual_activity_errors,8,activity:livestock:cattle:FY2019,0.18582736435437397,0.03453180934289326,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5646076233736802,0.3187817683716755,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.27223319785506234,0.07411091401439351,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,3,activity:livestock:buffalo:FY2019,0.25480520658118805,0.06492569330088192,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.24699990043258102,0.061008950813704936,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,5,factor:ncv:Other Bituminous Coal,0.23983990291361948,0.057523179029614416,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,6,ef:enteric_dairy_cattle,0.23101835628463957,0.05336948094045667,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.18884946516032386,0.03566412049134038,sensitivity diagnostic; not additive variance shares
+FY2018-19,S_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2019,0.18628824783591472,0.03470331128177519,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5534531926602869,0.30631043646586464,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2625728372445355,0.06894449485864533,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,3,factor:ncv:Other Bituminous Coal,0.24661958675015794,0.060821220568818675,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,4,activity:livestock:buffalo:FY2020,0.24257934061208708,0.05884473649179496,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,5,factor:soils:EF1_dry,0.23516655755198948,0.05530330979085318,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,6,ef:enteric_dairy_cattle,0.21996603321930117,0.048385055770234706,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.18758710887832702,0.03518892341732932,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1816162400170456,0.032984458637929114,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5529739109323397,0.30578014617180715,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.26236054032695627,0.06883305312065245,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,3,factor:ncv:Other Bituminous Coal,0.2469045179738938,0.06096184099592084,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,4,activity:livestock:buffalo:FY2020,0.24247859199007185,0.05879586757348774,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,5,factor:soils:EF1_dry,0.24225241026411748,0.058686230278774294,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,6,ef:enteric_dairy_cattle,0.2199340518411742,0.048370987159276305,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.18748848163321874,0.0351519307451298,sensitivity diagnostic; not additive variance shares
+FY2019-20,L_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.18147519011740385,0.03293324462814787,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5671936812428107,0.3217086720417711,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.27051284316399715,0.07317719831666931,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,3,factor:ncv:Other Bituminous Coal,0.253185252040606,0.06410277185086519,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.24343138378986023,0.059258838613846225,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,5,activity:livestock:buffalo:FY2020,0.23749179097467185,0.05640235078035723,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,6,ef:enteric_dairy_cattle,0.2293740121799874,0.052612437463545006,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.1875705310742483,0.03518270412747554,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_IPCC,annual_activity_errors,8,activity:livestock:cattle:FY2020,0.17207862386206071,0.02961105279026057,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5666875377880074,0.3211347654842343,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.2702875343864836,0.07305535124472456,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,3,factor:ncv:Other Bituminous Coal,0.2534715366672618,0.06424781990046305,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.2507025745976005,0.06285178090986543,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,5,activity:livestock:buffalo:FY2020,0.23738753373356103,0.056352841172102576,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,6,ef:enteric_dairy_cattle,0.22933377645096856,0.05259398102126282,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.1874204179440423,0.03512641306231949,sensitivity diagnostic; not additive variance shares
+FY2019-20,S_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2020,0.17214349179147578,0.02963338176616189,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5293039288870474,0.2801626491352645,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,2,factor:ncv:Other Bituminous Coal,0.2809108895143983,0.07891092784777048,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,3,ef:enteric_other_cattle,0.25510528775884306,0.06507870784252212,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.23348526339092207,0.05451536822072826,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,5,activity:livestock:buffalo:FY2021,0.22749070268174104,0.0517520198066323,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,6,ef:enteric_dairy_cattle,0.22242958078944755,0.04947491841016938,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.18523582375872735,0.0343123104035743,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1845309493500659,0.034051671268036585,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5288863347308413,0.27972075506502353,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,2,factor:ncv:Other Bituminous Coal,0.28115223878487366,0.07904658137374662,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,3,ef:enteric_other_cattle,0.2549449222728368,0.06499691339270282,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.2405265014294306,0.05785299788988189,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,5,activity:livestock:buffalo:FY2021,0.22707256181711807,0.05156194833018891,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,6,ef:enteric_dairy_cattle,0.2224453703354133,0.04948194278365917,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.18512811916684893,0.03427242050625502,sensitivity diagnostic; not additive variance shares
+FY2020-21,L_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.184445943071334,0.03402030591547378,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.542163787469524,0.29394157244329916,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,2,factor:ncv:Other Bituminous Coal,0.28843021562604726,0.08319198928608812,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,3,ef:enteric_other_cattle,0.2625693704023578,0.06894267427349056,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.2413697257957692,0.058259344530724816,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.2313764425162909,0.05353505815149446,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,6,activity:livestock:buffalo:FY2021,0.22511843502694115,0.05067830978897912,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.18999715352315152,0.03609891834690001,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_IPCC,annual_activity_errors,8,activity:livestock:cattle:FY2021,0.1793276149226196,0.03215839347383533,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5417231262856066,0.29346394555265126,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,2,factor:ncv:Other Bituminous Coal,0.2886711427150751,0.08333102863642726,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,3,ef:enteric_other_cattle,0.26239844946298807,0.06885294628058031,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.24858870884142262,0.061796346163445585,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.23138611885345267,0.053539535998064124,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,6,activity:livestock:buffalo:FY2021,0.22468730522285005,0.05048438512830618,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.1899052950065309,0.03606402107151752,sensitivity diagnostic; not additive variance shares
+FY2020-21,S_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2021,0.1797730691521433,0.0323183563923813,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.538146047182172,0.28960116809779646,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.26460006983878565,0.07001319695869024,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,3,factor:soils:EF1_dry,0.240028174072722,0.057613524348684934,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,4,activity:livestock:buffalo:FY2022,0.23670535268533768,0.0560294239898901,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.22749047496280653,0.0517519161988033,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.22051774185740833,0.04862807447389058,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.19122526612595697,0.03656710240494307,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.18574187914470686,0.034500045668206886,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5375845155512842,0.2889971113605089,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.26436204954250997,0.0698872932383165,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,3,factor:soils:EF1_dry,0.2474438934516359,0.06122848040650453,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,4,activity:livestock:buffalo:FY2022,0.2365703955925198,0.05596555207080131,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.22744979797427098,0.051733410598536686,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.2207436326596025,0.04872775135975753,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.19108868697159587,0.03651488628852855,sensitivity diagnostic; not additive variance shares
+FY2021-22,L_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.18559221568045223,0.0344444705211795,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5521651020511407,0.3048862999231466,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2728703157717367,0.0744582092293673,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,3,factor:soils:EF1_dry,0.24880751573149001,0.06190517988447565,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,4,ef:enteric_dairy_cattle,0.2371621500650653,0.056245885423484555,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,5,activity:livestock:buffalo:FY2022,0.2317495303918542,0.05370784483684495,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.22702433414588005,0.0515400482943802,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.19141511942801642,0.03663974794564179,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_IPCC,annual_activity_errors,8,activity:livestock:cattle:FY2022,0.17377444531445402,0.03019755784434617,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5515713469894009,0.3042309508197021,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.272616536941238,0.07431977621383339,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,3,factor:soils:EF1_dry,0.25642156674681665,0.06575201989289214,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,4,ef:enteric_dairy_cattle,0.23711068961795545,0.056221479131102405,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,5,activity:livestock:buffalo:FY2022,0.2316114493810937,0.053643863484410935,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,6,factor:ncv:Other Bituminous Coal,0.22724923719864865,0.05164221580736768,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.19125497544107495,0.03657846563096618,sensitivity diagnostic; not additive variance shares
+FY2021-22,S_TAN,annual_activity_errors,8,activity:livestock:cattle:FY2022,0.1742861763649757,0.030375671271923414,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5627890037355143,0.31673146272561276,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.27356754134642747,0.0748391996783293,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2023,0.2430033525004306,0.05905062932644853,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.24227869137532942,0.058698964294542126,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.2370835842347091,0.05620862591357641,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,6,activity:livestock:cattle:FY2023,0.20857302999692454,0.04350270884209798,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.19754129829676093,0.03902256453276988,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1884784241765411,0.03552411638007215,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.562109549747444,0.3159671459172742,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.2732611740570899,0.07467166924705917,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,3,factor:soils:EF1_dry,0.25008143914587855,0.06254072620527376,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,4,activity:livestock:buffalo:FY2023,0.24304616342708704,0.059071437556626305,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.23702469543580645,0.056180706246436805,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,6,activity:livestock:cattle:FY2023,0.2094562056380307,0.043871902080281,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,7,factor:ch4:Other Primary Solid Biomass,0.1973568640164039,0.03894973177438934,sensitivity diagnostic; not additive variance shares
+FY2022-23,L_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1882670723737898,0.03544449054019781,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5777953307309484,0.333847444214486,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.28246038649415506,0.07978386993842745,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,3,factor:soils:EF1_dry,0.2512264714018219,0.06311473993301045,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,4,ef:enteric_dairy_cattle,0.24736596698142946,0.06118992162065765,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,5,activity:livestock:buffalo:FY2023,0.23827195665724454,0.05677352532927182,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,6,activity:livestock:cattle:FY2023,0.2055575155330186,0.04225389219210718,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.1945938927396211,0.037866783091559164,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_IPCC,annual_activity_errors,8,factor:ncv:Lignite,0.17285190761408065,0.02987778196582667,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5770819518147077,0.3330235791102726,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.28213698665220066,0.07960127923718405,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,3,factor:soils:EF1_dry,0.25924367741854704,0.06720728428149167,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,4,ef:enteric_dairy_cattle,0.24729623988510102,0.06115543026130943,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,5,activity:livestock:buffalo:FY2023,0.23831829685331135,0.05679561061506303,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,6,activity:livestock:cattle:FY2023,0.20646706946238358,0.04262865077238472,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,7,parameter:waste:ww_ef_effluent,0.19437080696831072,0.03778001060151231,sensitivity diagnostic; not additive variance shares
+FY2022-23,S_TAN,annual_activity_errors,8,factor:ncv:Lignite,0.17290958519111546,0.029897724650963617,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5586236287757697,0.3120603586266089,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.27663550078832766,0.07652720029640883,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2024,0.26431468162414407,0.06986225092207264,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.2455945414211159,0.06031667877584821,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.23647696887405986,0.055921356807863074,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,6,factor:ncv:Lignite,0.22089983649927003,0.04879673776540423,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,7,activity:livestock:cattle:FY2024,0.20163962614560052,0.04065853883213755,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_IPCC,annual_activity_errors,8,factor:ch4:Other Primary Solid Biomass,0.19264264478481274,0.03711118858968754,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5580321569928908,0.3113998882381383,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.27638758172075867,0.07639009532944906,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,3,activity:livestock:buffalo:FY2024,0.2638908562949046,0.069638384036058,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,4,factor:soils:EF1_dry,0.2535920616715184,0.06430893374281119,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.23646649459792038,0.05591640306742831,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,6,factor:ncv:Lignite,0.22088183559039742,0.04878878529378336,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,7,activity:livestock:cattle:FY2024,0.20215073856688828,0.04086492110313841,sensitivity diagnostic; not additive variance shares
+FY2023-24,L_TAN,annual_activity_errors,8,factor:ch4:Other Primary Solid Biomass,0.19248838184762068,0.037051777146315426,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5733112503642042,0.3286857897941672,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2852735952227616,0.08138102413132002,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2024,0.2609123354621721,0.06807524679632501,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,4,factor:soils:EF1_dry,0.2544565437373779,0.06474813265077212,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,5,ef:enteric_dairy_cattle,0.24651661017041349,0.06077043908991161,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,6,factor:ncv:Lignite,0.22780139253773152,0.05189347444212964,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,7,activity:livestock:cattle:FY2024,0.19787534840370166,0.03915465350588632,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.19034277237770508,0.03623037099643085,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5726811413388806,0.32796368964520295,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.285006850992561,0.08122890511269587,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,3,factor:soils:EF1_dry,0.262672967406225,0.06899708780599173,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,4,activity:livestock:buffalo:FY2024,0.2604735662952208,0.06784647873855078,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,5,ef:enteric_dairy_cattle,0.24649392186546795,0.06075925351661942,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,6,factor:ncv:Lignite,0.22777353547246648,0.051880783461626945,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,7,activity:livestock:cattle:FY2024,0.1983999176983162,0.03936252734269864,sensitivity diagnostic; not additive variance shares
+FY2023-24,S_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.19018492943925475,0.03617030738581431,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.5613522437312977,0.3151163415421622,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2867765278399377,0.08224077691993055,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2025,0.26789362306787895,0.0717669932804348,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,4,ef:enteric_dairy_cattle,0.24210865384527636,0.05861660026677185,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,5,factor:soils:EF1_dry,0.22405202167315205,0.05019930841582659,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,6,activity:livestock:cattle:FY2025,0.21523330113183956,0.04632537391610913,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,7,factor:ncv:Lignite,0.20224926797684933,0.040904766397171416,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.18588010528934287,0.034551413542377195,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5607407550120829,0.31443019433152075,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.28646295800562854,0.0820610263093345,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,3,activity:livestock:buffalo:FY2025,0.26789775687087086,0.07176920813644423,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,4,ef:enteric_dairy_cattle,0.24204242128922684,0.05858453370355157,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,5,factor:soils:EF1_dry,0.23222039225560337,0.05392631057934629,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,6,activity:livestock:cattle:FY2025,0.21560516158540263,0.04648558570226758,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,7,factor:ncv:Lignite,0.2022527572441835,0.040906177812874624,sensitivity diagnostic; not additive variance shares
+FY2024-25,L_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.18569602564501816,0.034483013940355245,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,1,ef:enteric_buffalo,0.574335172745592,0.32986089065270896,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,2,ef:enteric_other_cattle,0.2947421684214381,0.08687294584577136,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,3,activity:livestock:buffalo:FY2025,0.2645200874219583,0.06997087664972047,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,4,ef:enteric_dairy_cattle,0.25150352396062364,0.06325402256461199,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,5,factor:soils:EF1_dry,0.23154391518051054,0.05361258465711946,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,6,activity:livestock:cattle:FY2025,0.21641615362206162,0.046835951548567775,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,7,factor:ncv:Lignite,0.20846102968120803,0.0434560008957495,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_IPCC,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.1911588142020529,0.03654169224713499,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,1,ef:enteric_buffalo,0.5736919283689033,0.32912242867563085,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,2,ef:enteric_other_cattle,0.29441126604429807,0.08667799357380646,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,3,activity:livestock:buffalo:FY2025,0.26452441786149034,0.06997316764496035,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,4,ef:enteric_dairy_cattle,0.2514255967899903,0.06321483072120279,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,5,factor:soils:EF1_dry,0.2399138779783185,0.0575586688465955,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,6,activity:livestock:cattle:FY2025,0.2167944887347945,0.04699985034578094,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,7,factor:ncv:Lignite,0.20845758569863657,0.043454565035304406,sensitivity diagnostic; not additive variance shares
+FY2024-25,S_TAN,annual_activity_errors,8,parameter:waste:ww_ef_effluent,0.19096389896135127,0.036467210706521175,sensitivity diagnostic; not additive variance shares

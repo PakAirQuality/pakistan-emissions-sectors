@@ -19,6 +19,8 @@ import unittest
 from _support import ROOT, read_rows
 from pkinv import run_all
 from pkinv.report import release_manifest
+from pkinv.core.reporting_window import RETIRED_GHG_PANEL_PRODUCTS
+from pkinv.build import DEPOSIT_SOURCE_PHASES
 
 REGISTRY = asset_path(ROOT, "data", "held_products.csv")
 # The files scripts/release_fixpoint.py (and the record step after it) write on a clean
@@ -42,6 +44,8 @@ def manifest_products():
         for path in glob.glob(asset_path(ROOT, pattern)):
             rel = os.path.relpath(path, ROOT)
             if rel.endswith(("pakemis_paper_hashes.csv", "pakemis_test_run.json")):
+                continue
+            if rel in RETIRED_GHG_PANEL_PRODUCTS:
                 continue
             out.add(rel)
     return out
@@ -127,15 +131,33 @@ class TestTheHeldProductRegistry(unittest.TestCase):
         for index, phase in enumerate(run_all.PHASES):
             for write in phase.writes or ():
                 writers.setdefault(write.rstrip("/"), []).append((index, phase.label))
-        held, prior = set(), []
+        held, prior, held_readers = set(), [], {}
         for index, phase in enumerate(run_all.PHASES):
             for read in phase.reads or ():
                 kind, _, path = read.partition(":")
                 if kind == "held":
                     held.add(path)
+                    held_readers.setdefault(path, set()).add(phase.label)
                 elif kind == "prior":
                     prior.append((index, phase.label, path))
-        self.assertEqual(held - self.held, set(), "held: reads with no registry row")
+        from pkinv.report.deposit_manifest import deposit_files
+        software = {p for kind, p in deposit_files() if kind in ("code", "manuscript_source")}
+        raw = {r["path"]: r for r in read_rows(os.path.join(ROOT, "data/catalog/raw_manifest.csv"))}
+        proven_inputs = set()
+        for path in held - self.held:
+            if path in software:
+                self.assertTrue(os.path.isfile(os.path.join(ROOT, path)), path)
+                proven_inputs.add(path)
+            elif path in raw and held_readers[path] <= set(DEPOSIT_SOURCE_PHASES):
+                # Primary extraction phases are explicitly excluded at compiled-
+                # input reproduction level. Their raw sources have independent
+                # immutable provenance, not fabricated held-product ownership.
+                self.assertEqual(len(raw[path]["sha256"]), 64, path)
+                if os.path.isfile(os.path.join(ROOT, path)):
+                    self.assertEqual(_sha256(os.path.join(ROOT, path)), raw[path]["sha256"], path)
+                proven_inputs.add(path)
+        self.assertEqual(held - self.held - proven_inputs, set(),
+                         "held: reads lack product ownership, packaged software or declared primary-source provenance")
         wrong = []
         for index, label, path in prior:
             later = [l for i, l in writers.get(path, ()) if i > index]

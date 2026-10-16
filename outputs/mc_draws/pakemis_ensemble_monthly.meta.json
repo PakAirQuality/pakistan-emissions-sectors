@@ -14,6 +14,6 @@
   "note": "draw_id x category x month; every draw's twelve months sum exactly to its annual draw; weights drawn only where a measured hindcast dispersion exists (Domestic aviation, Electricity and heat production, Field burning of residues, Industrial fuel combustion (1A2), Managed soils, Railways, Road transport)",
   "rng": "prefix of the published national pool (identity-seeded parameter streams + injected sector draw files); profile noise on dedicated blake2b-keyed streams",
   "scenario": "within_sector",
-  "seed": 42,
-  "sha256": "06e4f3d4e54fc92f5b5b1c619b85965afa4ac43d445673022e4c442f33b997b3"
+  "seed": 20261014,
+  "sha256": "cf554a5a62be9c1c9634fbcc411bc1a7bc6878b4a795d6cf6408b4d1a503b89b"
 }

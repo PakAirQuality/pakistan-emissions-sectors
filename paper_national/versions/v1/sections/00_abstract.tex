@@ -1,30 +1,5 @@
-National greenhouse-gas inventories are usually documents, their consistency editorial.
-We present Pakistan's inventory built as software: ten sector modules satisfy a common
-contract, and its cross-cutting properties are executable assertions on every commit.
+PakEmis reconstructs Pakistan's non-LULUCF greenhouse-gas and air-pollutant emissions from a shared national activity and material-flow account. Release \PakEmisRelease\ covers ten fiscal years, July 2015--June 2025, with a separate source-limited provisional FY2025--26 extension. This technical report supports the national data-description article and maintained sector notes.
 
-The inventory reports \SI{444.96}{\mega\tonne} \COe{} (AR5, \SI{438.19}{\mega\tonne} on AR6)
-over twenty-four IPCC categories, \textbf{excluding LULUCF}, for one common reporting period:
-1~July 2023 to 30~June 2024---the total of the \emph{estimated PakEmis scope}, not a
-complete national account: comparator-bounded absences (F-gases, the cement
-kiln-fuel excess) are priced beside it. Every figure is conditional on a
-named structural configuration, \texttt{REF\_2023\_24}, whose twenty-two registered axes are published as a
-scenario registry; dung fuel follows the household survey, its diverted remainder
-unresolved; the destination assumption~L gives \SI{450.20}{\mega\tonne}.
+The S\_TAN reference produces \SI{\PakRefARfive}{\mega\tonne} CO$_2$-equivalent in FY2023--24 and \SI{\PakLatestARfive}{\mega\tonne} in FY2024--25 on AR5 GWP-100. Native CO$_2$, CH$_4$ and N$_2$O remain separately reported. Reference-year covered emissions include \SI{\PakRefPMfine}{\giga\gram} primary PM$_{2.5}$, \SI{\PakRefNOx}{\giga\gram} NO$_2$-equivalent NO$_x$ and \SI{\PakRefNHthree}{\giga\gram} NH$_3$. Seven core air species have substantive source methods, results and evaluation; additional particulate strata retain narrower coverage.
 
-Each annual figure resolves into twelve months closing to it exactly;
-\SI{54.65}{\percent} of the national total sits on a flat profile---a declared assumption,
-not a finding. \num{199} of \num{202} streams are gridded at five hundredths of a degree; the
-\num{3} cruise-aviation streams, \SI{0.05}{\percent}, stay unallocated, and closure is raster plus unallocated.
-
-A nine-year, ten-sector reconstruction ships complete.
-
-Uncertainty is carried at parameter level: the national interval is
-$\pm\SI{11.72}{\percent}$, honestly asymmetric at
-$-\SI{10.3}{\percent}/+\SI{13.1}{\percent}$ about the median, the waste and
-fugitives engines' bounded draws undiluted. Named structural alternatives still open move the total by up to \SI{9.07}{\mega\tonne}---outside
-that interval by construction---and are priced by a bridge. The public-power coal basis led
-that list until this release and is now decided on evidence; the control it replaced ships
-as a legacy configuration worth \SI{17.78}{\mega\tonne}. Completeness is reported with
-notation keys over 138 category--gas combinations, 54 estimated and 71 explicitly not, with
-EDGAR coverage as three numbers rather than one ratio. The engine, activity data
-and every output quoted here are in one repository under release \texttt{1.0.0rc67}.
+Station coal consumption and rank-specific NCVs, reconciled consumer accounts, survey-supported household fuels and conserved nitrogen pathways distinguish this reconstruction from a clipped global inventory. Shared conditional realisations produce native/GWP levels and paired trend intervals, with structural allocations, control scenarios and missing sources kept separate. Monthly and geographic products retain process-specific support, unallocated mass and licensing boundaries. Exact-period public HTAP/EDGAR comparisons identify shared inputs and important source discrepancies. The locally prepared review package includes data, code, metadata, figures, reproduction instructions and checksums; external review deposit and a persistent identifier remain pending.

@@ -325,17 +325,22 @@ def main():
         series = len({(r["fiscal_year_start"], r["item_no"]) for r in parsed})
         per_file[os.path.basename(path)] = (series, len(failed), weighted > 0)
 
-    with open(OUT, "w", newline="", encoding="utf-8") as handle:
-        handle.write("# PBS Table 2 monthly physical output, nine fiscal years.\n")
-        handle.write("# EVERY ROW HERE CLOSED ON THE ANNUAL TOTAL THE SAME ROW PRINTS. Rows "
-                     "that did not are in outputs/pbs_qim_quarantine.csv,\n")
-        handle.write("# with their raw text and unrepaired.\n")
-        handle.write("# This is PRODUCTION, not combustion: it times the making of a product, "
-                     "and for cement that is close to but not the\n")
-        handle.write("# same as calcination, which is why the class carried is TE2.\n")
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
-        writer.writeheader()
-        writer.writerows(rows)
+    # The current PBS edition is XLSX. The extension parser validates its
+    # actual date columns and annual physical sums; provisional FY2026 stays
+    # separate rather than entering this common-core panel.
+    import importlib.util
+    spec = importlib.util.spec_from_file_location("pakemis_extension_ingest",
+                                                 os.path.join(ROOT, "scripts", "ingest_release_extension.py"))
+    extension = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(extension)
+    current = extension.QIM / "Table-3-2024-25-6.xlsx"
+    if current.exists():
+        extra = extension.qim_records(current, 2024)
+        rows.extend(extra)
+        files.append(str(current))
+        per_file[current.name] = (len({r["item_no"] for r in extra}), 0, True)
+    from pkinv.core.io import write_table
+    write_table(OUT, list(rows[0]), rows, banner=extension.qim_banner())
 
     if bad:
         with open(QUARANTINE, "w", newline="", encoding="utf-8") as handle:

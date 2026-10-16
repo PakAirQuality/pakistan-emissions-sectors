@@ -10,7 +10,7 @@ from pkinv.core.gwp import GWP
 
 
 def dim_period(src):
-    """The nine fiscal periods plus the calendar years the agriculture reconstruction publishes:
+    """The ten fiscal periods plus the calendar years the agriculture reconstruction publishes:
     basis is a COLUMN, so a request that names a period names its basis with it."""
     rows = []
     for r in src.rows("periods"):
@@ -53,40 +53,22 @@ def dim_configuration(src):
     fields = ("configuration_id", "kind", "queryable", "display_name", "substitutes_module",
               "available_periods", "available_grains", "family_id", "family_role",
               "national_total_Mt", "national_delta_Mt", "axis", "module", "note")
-    rows = [
-        {"configuration_id": cfg.REFERENCE, "kind": "reference", "queryable": "yes",
-         "display_name": "inventory_reference", "substitutes_module": "",
-         "available_periods": "FY2015-16..FY2023-24",
-         "available_grains": "annual_atom;monthly_atom;adm1_month;adm2_month;grid",
-         "family_id": "", "family_role": "", "national_total_Mt": "", "national_delta_Mt": "",
-         "axis": "", "module": "",
-         "note": "every axis at its reference setting; residential dung on the household "
-                 "survey basis (S) in every year, since release 1.0.0rc67"},
-        {"configuration_id": cfg.LEDGER, "kind": "ledger", "queryable": "yes",
-         "display_name": cfg.LEDGER_DISPLAY, "substitutes_module": "residential",
-         "available_periods": "FY2023-24",
-         "available_grains": "annual_category_gas;monthly_category_subitem_gas;adm1_month;adm2_month;grid",
-         "family_id": "", "family_role": "", "national_total_Mt": "", "national_delta_Mt": "",
-         "axis": "residential dung basis", "module": "residential",
-         "note": "the residential module re-run with all the dung agriculture diverts "
-                 "burned in households, a destination assumption and the reference "
-                 "through 1.0.0rc66; composed as REF minus residential(REF) plus "
-                 "residential(L) at every grain it lacks"},
-        {"configuration_id": cfg.LEDGER_SERIES, "kind": "ledger", "queryable": "no",
-         "display_name": "herd_scaled_ledger_dung_series", "substitutes_module": "residential",
-         "available_periods": "FY2015-16..FY2023-24",
-         "available_grains": "air_annual;air_adm1_year;air_adm2_year;air_grid",
-         "family_id": "", "family_role": "", "national_total_Mt": "", "national_delta_Mt": "",
-         "axis": "residential dung basis", "module": "residential",
-         "note": "the AIR panel's nine-year ledger configuration: all the dung "
-                 "agriculture diverts in each year, scaled by the herd, burned in "
-                 "households. The air panel's alternative to the survey-anchored "
-                 "reference series; the greenhouse-gas products carry it for the "
-                 "reference year only, as L_2023_24"},
-    ]
+    from pkinv.core.reporting_window import CORE_PERIOD_IDS
+    rows = []
+    for cid in cfg.ALL:
+        rows.append({"configuration_id": cid, "kind": "reference" if cid == cfg.REFERENCE else "structural_alternative",
+                     "queryable": "yes", "display_name": cid,
+                     "substitutes_module": "residential;agriculture" if cid != cfg.REFERENCE else "",
+                     "available_periods": CORE_PERIOD_IDS[0] + ".." + CORE_PERIOD_IDS[-1],
+                     "available_grains": "annual_atom;monthly_atom;adm1_year;adm2_year;adm1_month;adm2_month;annual_grid;air_annual;air_adm1_year;air_adm2_year;air_grid",
+                     "family_id": "residential_nitrogen", "family_role": "reference" if cid == cfg.REFERENCE else "alternative",
+                     "national_total_Mt": "", "national_delta_Mt": "", "axis": "dung_destination;nitrogen_method",
+                     "module": "residential;agriculture",
+                     "note": "Household dung basis: %s; nitrogen method: %s. Structural cases have no assigned probabilities."
+                         % (cfg.dung_basis(cid), cfg.nitrogen_method(cid))})
     for r in src.rows("configurations.national"):
         cid = r["configuration_id"]
-        if cid in (cfg.REFERENCE, cfg.LEDGER):
+        if cid in cfg.ALL:
             continue
         rows.append({"configuration_id": cid, "kind": "structural_alternative",
                      "queryable": "no", "display_name": cid, "substitutes_module": r["module"],
@@ -95,13 +77,15 @@ def dim_configuration(src):
                      "national_total_Mt": r["national_total_Mt"],
                      "national_delta_Mt": r["national_delta_Mt"], "axis": r["axis"],
                      "module": r["module"], "note": r["note"]})
-    # fill the two queryable rows' totals from the same register
-    totals = {r["configuration_id"]: r for r in src.rows("configurations.national")}
-    for row in rows[:2]:
-        key = "inventory_reference" if row["configuration_id"] == cfg.REFERENCE else cfg.LEDGER_DISPLAY
-        if key in totals:
-            row["national_total_Mt"] = totals[key]["national_total_Mt"]
-            row["national_delta_Mt"] = totals[key]["national_delta_Mt"]
+    from decimal import Decimal
+    totals = {cid: Decimal(0) for cid in cfg.ALL}
+    for atom in src.rows("annual.configuration_atoms"):
+        if atom["period_id"] == "FY2023-24" and atom["co2e_Mt_AR5"]:
+            totals[atom["configuration_id"]] += Decimal(atom["co2e_Mt_AR5"])
+    for row in rows[:len(cfg.ALL)]:
+        total = totals[row["configuration_id"]]
+        row["national_total_Mt"] = str(total)
+        row["national_delta_Mt"] = str(total - totals[cfg.REFERENCE])
     return fields, ("configuration_id",), rows
 
 

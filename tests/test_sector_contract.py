@@ -159,6 +159,16 @@ class TestSectorContract(unittest.TestCase):
                     self.assertIn(c["gas"], s.GASES)
                     self.assertTrue(math.isfinite(c["emissions_Gg"]))
                     self.assertTrue(math.isfinite(c["uncert_pct"]) and c["uncert_pct"] >= 0)
+                    if "uncertainty_driver_widths" in c:
+                        self.assertIsInstance(c["uncertainty_driver_widths"], dict)
+                        self.assertTrue(c["uncertainty_driver_widths"])
+                        self.assertTrue(all(math.isfinite(v) and v >= 0
+                                            for v in c["uncertainty_driver_widths"].values()))
+                    if "approach1_uncert_pct" in c:
+                        self.assertTrue(math.isfinite(c["approach1_uncert_pct"]) and
+                                        c["approach1_uncert_pct"] >= 0)
+                    if "reconstruction_interval_kind" in c:
+                        self.assertEqual(c["reconstruction_interval_kind"], "conditional_no_probability")
 
     def test_metadata_classes_are_valid_where_present(self):
         """The evidence/temporal/spatial classes are optional while sectors adopt them,

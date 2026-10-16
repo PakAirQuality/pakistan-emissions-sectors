@@ -2,4 +2,4 @@
 # the size of what was parsed. rotation_detectable_series is the positive control: series whose months are
 # distinguishable from a rotation of themselves, and so can carry a profile at all.
 files_parsed,item_years_closed,item_years_quarantined,month_rows,closure_rate_pct,rotation_detectable_series,rotation_flat_series,editions_with_weight_column,canonical_items_carried
-9,1017,9,12204,99.12,932,85,7,4
+10,1128,9,13536,99.21,1031,97,8,4

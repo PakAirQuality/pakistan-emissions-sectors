@@ -296,3 +296,54 @@ fiscal_year,system,plant,fuel,fuel_origin,quantity,quantity_unit,energy_TJ,net_g
 2021,K-Electric,Site GTPS-II,RLNG,,796.61,MMCFT,,81.96,,NEPRA SoIR 2024 Table 26
 2022,K-Electric,Site GTPS-II,RLNG,,195.21,MMCFT,,19.48,,NEPRA SoIR 2024 Table 26
 2023,K-Electric,Site GTPS-II,RLNG,,1.71,MMCFT,,0.2,,NEPRA SoIR 2024 Table 26
+2024,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,,32377.65,MMCFT,30744.206213923753,2355.88,13049.988205648739,NEPRA SoIR 2025 Table 18 p153; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,GENCO,TPS Nandipur (GENCO-III),RLNG,,8140.66,MMCFT,7729.9658794705765,949.54,8140.74802480209,NEPRA SoIR 2025 Table 18 p153; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,GENCO,Jamshoro Coal Power Unit-1,Coal,imported,158.031,000 t,,368.28,,NEPRA SoIR 2025 Table 18 p153; verified; Printed metric tonnes converted to kt; unit testing period with COD 1 May 2025; rank-default bituminous assumption
+2024,IPP,Kohinoor Energy,RFO,,14.74,000 t,595.496,76.16,7819.012605042017,NEPRA SoIR 2025 Table 21 p155; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,IPP,Attock Gen.,RFO,,17.84,000 t,720.736,92.42,7798.485176368751,NEPRA SoIR 2025 Table 21 p155; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,IPP,Nishat Power,RFO,,17.05,000 t,688.82,86.66,7948.534502654051,NEPRA SoIR 2025 Table 21 p155; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,IPP,Nishat Chunian,RFO,,11.42,000 t,461.368,57.21,8064.464254500961,NEPRA SoIR 2025 Table 21 p155; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,IPP,Liberty Power Tech.,RFO,,15.33,000 t,619.332,77.84,7956.474820143884,NEPRA SoIR 2025 Table 21 p155; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,IPP,Narowal Energy,RFO,,7.70,000 t,311.08,37.93,8201.423675191141,NEPRA SoIR 2025 Table 21 p155; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,IPP,Liberty Daharki Power,Gas,,6735784,MMBTU,6395.965498065739,817.72,7821.70608284711,NEPRA SoIR 2025 Table 21 p156; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Engro Powergen Qadirpur,Gas,,7006028,MMBTU,6652.575760517634,774.31,8591.618034789211,NEPRA SoIR 2025 Table 21 p156; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Foundation Power,Gas,,9261513,MMBTU,8794.272145289593,1122.64,7833.563872024506,NEPRA SoIR 2025 Table 21 p156; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Uch Power,Gas,,30697693,MMBTU,29149.002595423808,3885.78,7501.454687456265,NEPRA SoIR 2025 Table 21 p156; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Uch-II Power,Gas,,16910239,MMBTU,16057.12196353768,2233.47,7189.316159848881,NEPRA SoIR 2025 Table 21 p156; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Fauji Kabirwala,RLNG,,643315,MMBTU,610.8599302454118,68.96,8858.177642769893,NEPRA SoIR 2025 Table 21 p156; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Punjab Thermal Power,RLNG,,12307970,MMBTU,11687.036204134243,1757.27,6650.677587470475,NEPRA SoIR 2025 Table 21 p156; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,1560.00,000 t,,4255.19,,NEPRA SoIR 2025 Table 21 p157; verified
+2024,IPP,Port Qasim Electric Power,Coal,imported,1204.60,000 t,,2751.20,,NEPRA SoIR 2025 Table 21 p157; verified
+2024,IPP,China Power Hub,Coal,imported,313.68,000 t,,671.65,,NEPRA SoIR 2025 Table 21 p157; verified
+2024,IPP,Lucky Electric,Coal,unknown,800.35,000 t,,1018.68,,NEPRA SoIR 2025 Table 21 p157; verified; Imported origin heading does not identify rank; reference retains documented lignite NCV and rank alternative remains separate
+2024,IPP,Engro Powergen Thar,Coal,Thar lignite,3471.04,000 t,,3852.90,,NEPRA SoIR 2025 Table 21 p157; verified
+2024,IPP,Thar Coal Block-I,Coal,Thar lignite,6851.22,000 t,,8315.01,,NEPRA SoIR 2025 Table 21 p157; verified
+2024,IPP,Thar Energy,Coal,Thar lignite,1397.04,000 t,,1601.32,,NEPRA SoIR 2025 Table 21 p157; verified
+2024,IPP,ThalNova,Coal,Thar lignite,1554.77,000 t,,1778.36,,NEPRA SoIR 2025 Table 21 p157; verified
+2024,IPP,Sapphire Electric,RLNG,,2232639,MMBTU,2120.002959363898,268.93,7883.103258706346,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Halmore,RLNG,,3024543,MMBTU,2871.9556142857678,364.55,7878.0842526012,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Saif,RLNG,,1916880,MMBTU,1820.1739164932033,234.41,7764.91581627577,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,Orient,RLNG,,3756498,MMBTU,3566.9836802297928,459.13,7769.005902968207,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,QATPL (Bhikki),RLNG,,40256706,MMBTU,38225.7659452524,6098.15,6268.420085641122,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,NPPMCL (Haveli Bahadur Shah),RLNG,,41536438,MMBTU,39440.93580799899,6515.65,6053.261886074144,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,NPPMCL (Balloki),RLNG,,35554291,MMBTU,33760.58652477414,5479.91,6160.79215256713,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,IPP,KAPCO,RFO,,11.03,000 t,445.61199999999997,52.71,8454.031493075316,NEPRA SoIR 2025 Table 21 p158; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,IPP,KAPCO,HSD,,1045.93,000 L,37.7789916,0.00,,NEPRA SoIR 2025 Table 21 p158; verified; Reported fuel despite zero net generation; do not zero consumption from electricity alone; energy_TJ is derived NCV energy: 000 litres times 0.84 kg/L and IPCC diesel NCV
+2024,K-Electric,Bin Qasim TPS-I,Gas,,1073.97,MMCFT,1019.7885006344713,85.45,11934.330024979185,NEPRA SoIR 2025 Table 26 p167; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Bin Qasim TPS-I,RFO,,55.41,000 t,2238.564,199.77,11205.706562546928,NEPRA SoIR 2025 Table 26 p167; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,K-Electric,Bin Qasim TPS-I,RLNG,,1223.21,MMCFT,1161.4993825349793,100.91,11510.250545386774,NEPRA SoIR 2025 Table 26 p167; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Bin Qasim TPS-II,Gas,,3844.40,MMCFT,3650.4510478310954,423.76,8614.430450800206,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Bin Qasim TPS-II,RLNG,,9792.85,MMCFT,9298.80333569679,1156.78,8038.523604917781,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Korangi Town GTPS-II,Gas,,0.13,MMCFT,0.12344153475654,0.01,12344.153475654,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Korangi Town GTPS-II,RLNG,,44.29,MMCFT,42.05558134128582,4.25,9895.430903831959,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Site GTPS-II,Gas,,0,MMCFT,0.0,0,,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Site GTPS-II,RLNG,,0,MMCFT,0.0,0,,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Korangi CCPP,Gas,,73.02,MMCFT,69.33616052248117,7.70,9004.6961717508,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Korangi CCPP,RLNG,,1132.5366,MMCFT,1075.4004313227204,119.34,9011.23203722742,NEPRA SoIR 2025 Table 26 p168; reconstructed; Printed quantity repeats gas cell and implies implausible efficiency; reconstructed from printed 9.49 CFT/kWh ×119.34GWh; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Korangi CCPP,HSD,,1293.02,000 L,46.7038824,5.00,9340.776479999999,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: 000 litres times 0.84 kg/L and IPCC diesel NCV
+2024,K-Electric,Bin Qasim TPS-III,RLNG,,27754.18,MMCFT,26353.989039302058,4329.65,6086.863612370991,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Bin Qasim TPS-III,HSD,,0,000 L,0.0,0,,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: 000 litres times 0.84 kg/L and IPCC diesel NCV
+2024,K-Electric,Gul Ahmed,RFO,,15.98308339,000 t,645.716568956,73.27,8812.837026832263,NEPRA SoIR 2025 Table 26 p168; reconstructed; Source reports positive net generation but zero fuel; adjacent FY2023-24 own-station58.59kt/268.59GWh intensity fallback; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,K-Electric,Tapal Energy,RFO,,0,000 t,0.0,0,,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: mass times IPCC NCV
+2024,K-Electric,Sindh Nooriabad-I,Gas,,2107505,MMBTU,2001.181936208322,254.29,7869.68396794338,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90
+2024,K-Electric,Sindh Nooriabad-II,Gas,,2289027,MMBTU,2173.546199839681,272.43,7978.365818153951,NEPRA SoIR 2025 Table 26 p168; verified; energy_TJ is derived NCV energy: gross MMBTU or 1000 Btu/scf volume times NCV/GCV 0.90

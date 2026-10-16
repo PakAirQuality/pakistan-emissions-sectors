@@ -9,6 +9,7 @@
 \documentclass[5p,times,authoryear]{elsarticle}
 
 \input{../../paper_common/preamble}
+\input{generated/integrated_air_facts}
 \graphicspath{{figures/}}
 
 % ---------------------------------------------------------------------------
@@ -80,7 +81,7 @@ The full system --- the calculation engine for both the greenhouse-gas and
 air-pollutant layers, the shared nitrogen ledger, the gridding and district pipelines,
 the versioned data files, the test suite and the outputs reported here --- is
 version-controlled in the inventory repository
-(\url{https://github.com/RehanAhmad13/pakistan-emissions-sectors}). It reproduces from a
+(\url{https://github.com/PakAirQuality/pakistan-emissions-sectors}). It reproduces from a
 single command (\texttt{run\_all.py}) with NO user-supplied input: the FIRMS extraction
 is committed and hash-pinned, and the MapSPAM rice raster is held and hash-pinned
 beside it (data/gis/manual/RICE\_SOURCES.json) with its cropland-fallback class

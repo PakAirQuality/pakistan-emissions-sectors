@@ -1,6 +1,12 @@
-# Sector Technical Notes
+# National article and sector technical notes
 
-One Sector Technical Note per sector module of Pakistan's national greenhouse-gas inventory
+The current integrated national article is [national_paper.pdf](national_paper.pdf),
+with a [review-layout copy](national_submission.pdf),
+[technical supplement](national_supplement.pdf), and maintained
+[long technical report](national_long_report.pdf). All four describe release
+1.0.0rc68 and the July 2015–June 2025 common core.
+
+One Sector Technical Note per sector module of Pakistan's integrated greenhouse-gas and air-pollutant inventory
 (TN01–TN10, numbered in `src/pkinv/release.py`; TN08, industrial combustion, is numbered and
 reserved), built by `make sector-papers` from `papers/<sector>/paper.tex`. This folder is
 the collected output — these are the files to hand to someone. Each note documents one
@@ -18,15 +24,15 @@ contract, the cross-sector closures, the correlated-uncertainty treatment — is
 <!-- BEGIN GENERATED: papers -->
 | TN | PDF | Sector | IPCC | Mt CO₂e | The argument |
 |---|---|---|---|---:|---|
-| TN01 | `agriculture_paper.pdf` | Agriculture | 3.A-3.H | 223.45 | One nitrogen ledger serving two inventories, with mass-conserving allocation to a 0.05° grid and 114 districts plus a declared residual unit |
-| TN02 | `power_paper.pdf` | Electricity | 1A1a + 1A2 | 45.59 | A plant-resolved, fuel-constrained inventory: 99% of the thermal fleet reconstructed under the national control total, the coal blend read from plant identity, two control-total findings published rather than absorbed |
-| TN03 | `transport_paper.pdf` | Road + off-road | 1A3b + 1A4c/1A2 | 41.93 | Fuel anchoring as reconciliation by construction; a factor-table trap that leaves CO₂ exactly right and the category 8% low |
-| TN04 | `waste_paper.pdf` | Waste | 4A, 4C2, 4D1 | 37.45 | Three categories partitioning one waste stream; the sewer MCF that moves the sector by a third, published rather than resolved |
-| TN05 | `residential_paper.pdf` | Residential fuel | 1A4b | 24.22 | Minor for climate, large for exposure: 283 kt PM₂.₅ against road transport's 22 under the reference (632 kt under configuration L, which burns all diverted dung in households), from a sector three-fifths its size; household dung read from the survey, with the diverted remainder carried as unresolved |
-| TN06 | `fugitives_paper.pdf` | Oil & gas fugitives | 1B2 | 23.50 | The published envelope spans 9.60-24.69 Mt across 280 structural configurations; 5.3% of emissions and 3.3% of national Approach-1 variance |
-| TN07 | `ippu_paper.pdf` | Cement | 2A1 | 25.54 | One equation, one unsettled ratio: IPCC's two clinker defaults are 4.1 Mt apart, published as cases rather than compressed into a band; calcination only, with cement-kiln fuel a declared unpriced claimant in the industrial fuel ledger |
-| TN09 | `railways_paper.pdf` | Railways | 1A3c + 1A2/1A4c | 0.39 | Pakistan's own BUR-1 refuted on arithmetic — a tenth of the submitted figure, bounded twice by metered fuel and by litres per train-kilometre; the operator's fuel account as an independent cross-source check |
-| TN10 | `aviation_paper.pdf` | Domestic aviation | 1A3a ii | 0.30 | Three definitional traps each worth a factor of two and each invisible in the output; a divisor settled against a load factor rather than against a glossary |
+| TN01 | `agriculture_paper.pdf` | Agriculture | 3.A-3.H | 223.04 | One nitrogen ledger serving two inventories, with mass-conserving allocation to a 0.05° grid and 114 districts plus a declared residual unit |
+| TN02 | `power_paper.pdf` | Electricity | 1A1a + 1A2 | 45.66 | Physical station fuel and rank-specific calorific values, with public/captive and K-Electric boundaries and control assumptions kept explicit |
+| TN03 | `transport_paper.pdf` | Road + off-road | 1A3b + 1A4c/1A2 | 41.93 | Product-specific fuel balances with exhaust, evaporation and wear; transferred fleet factors tested separately from the carbon balance |
+| TN04 | `waste_paper.pdf` | Waste | 4A, 4C2, 4D1 | 37.45 | Disposal history, wastewater and open burning with shared activity and separate method and treatment alternatives |
+| TN05 | `residential_paper.pdf` | Residential fuel | 1A4b | 24.22 | Survey-based household fuel and an explicit diverted-dung alternative; gross appliance emissions, with no assumed outdoor escape fraction |
+| TN06 | `fugitives_paper.pdf` | Oil & gas fugitives | 1B2 | 23.50 | The published envelope spans 9.60-24.69 Mt across 280 structural configurations; 5.3% of emissions and 3.1% of national Approach-1 variance |
+| TN07 | `ippu_paper.pdf` | Industrial processes | 2A1 | 25.54 | Physical cement, ammonia, steel and lubricant accounts; process carbon separated from fuel, and admitted air-process boundaries recorded explicitly |
+| TN09 | `railways_paper.pdf` | Railways | 1A3c + 1A2/1A4c | 0.39 | Operator diesel and traction accounts checked against traffic; national fuel, network allocation and unplaced mass kept distinct |
+| TN10 | `aviation_paper.pdf` | Domestic aviation | 1A3a ii | 0.30 | Domestic airport movements and modelled stage fuel, with landing/take-off, cruise and international-bunker boundaries stated separately |
 <!-- END GENERATED: papers -->
 
 

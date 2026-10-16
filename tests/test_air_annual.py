@@ -1,16 +1,8 @@
-"""The nine-fiscal-year air panel closes, types its absences, and reproduces the
-reference year (air program Wave 3).
+"""Current fiscal air panel closure, typed absences and source-layer consistency.
 
-Four properties, each the product's own claim: the rollup is exactly the sum of the
-core atoms; the coverage matrix is exactly 630 cells under the closed notation keys,
-E if and only if the panel carries mass there; the reference-year slice reproduces the
-shipped single-year layers to the rounding of those files (n x half-ulp absolute,
-the doctrine for rounded byte-copies); and every atom names a real stream and an
-activity basis from the declared vocabulary. Power is asserted OUT of the panel and
-present in its screening file (grid only since rc58); industry is asserted IN it, at
-class grain, for exactly the species its register prices.
-
-Run:  python3 -m unittest discover tests -p "test_air_annual.py"
+The rollup composes the four dung/nitrogen configurations from source atoms.
+Coverage cells distinguish estimates from missing categories, and narrow power
+SO2 admission does not admit the separate screening products.
 """
 
 from pkinv.assets import asset_path
@@ -19,6 +11,9 @@ import unittest
 from collections import defaultdict
 
 from pkinv.core.io import read_rows
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX, CORE_FY_ENDS
+from pkinv.report.air_annual import atom_configuration
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 OUT = os.path.join(ROOT, "outputs")
@@ -26,7 +21,8 @@ CORE7 = {"BC", "CO", "NH3", "NMVOC", "NOx", "PM2.5", "SO2"}
 BASES = {"observed", "observed_fiscal", "reconstructed", "held", "calendar_projection",
          "calendar_blend",            # rc59: the satellite flare volumes, half of each calendar year
          "observed_population_held_parameters",
-         "survey_anchored_interpolation", "survey_anchored_extrapolated_flat"}
+         "survey_anchored_interpolation", "survey_anchored_extrapolated_flat",
+         "survey_observed_reference_round", "census_anchored_reconstruction"}
 # rc58/rc59: the three register modules have no single-year layer - their reference slices
 # are asserted against their own nine-year detail file in tests/test_industry_air.py
 # rc60: power joins them with SO2 only - the oil and diesel grid classes. Its other pollutants
@@ -56,7 +52,7 @@ class TestThePanel(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.atoms = _o("pakemis_air_atomic_annual.csv")
-        cls.rollup = _o("pakemis_air_annual_fy2015_16_fy2023_24.csv")
+        cls.rollup = _o("pakemis_air_annual_%s.csv" % CORE_SUFFIX)
         cls.coverage = _o("pakemis_air_coverage_matrix.csv")
 
     def test_the_rollup_is_exactly_the_core_atoms(self):
@@ -65,15 +61,13 @@ class TestThePanel(unittest.TestCase):
         own = defaultdict(set)
         for a in self.atoms:
             own[a["configuration_id"]].add(a["sector_id"])
-        configs = sorted(own)
+        configs = conf.AIR_ALL
         want = defaultdict(float)
         for cfg in configs:
             for a in self.atoms:
                 if a["core7"] != "yes":
                     continue
-                if (a["configuration_id"] == cfg
-                        or (a["configuration_id"] == "REF_2023_24"
-                            and a["sector_id"] not in own[cfg])):
+                if a["configuration_id"] == atom_configuration(cfg, a["sector_id"]):
                     want[(a["period_id"], cfg, a["sector_id"], a["pollutant"])] += \
                         float(a["emissions_Gg"])
         got = defaultdict(float)
@@ -85,38 +79,23 @@ class TestThePanel(unittest.TestCase):
             self.assertAlmostEqual(got[k], v, places=4, msg=str(k))
 
     def test_the_ledger_configuration_moves_residential_alone(self):
-        """L_HERD1624 vs REF: identical outside residential; inside it, the dung-driven
-        totals differ, and the 2024 slice is the shipped sensitivity (422.7 -> 771.9
-        Gg PM2.5 with everything else fixed; residential alone 282.725 -> 631.915). The
-        other sectors sit on both sides, so the DIFFERENCE 349.190 is the durable pin.
-
-        rc67 (2026-10-13): the roles swapped. Through rc66 the reference was the ledger
-        (771.873) and the alternative S_HIES1925 was the survey series (430.235), a
-        difference of 341.637 with the reference the larger. The reference is the survey
-        series now and the alternative is the larger side. The difference also moved,
-        by 7.552: the rc66 survey series carried the 2024-25 round's own 11.97 Mt in its
-        reference-year dung PM2.5 (87.41 Gg) beside a mass column that said 10.93; the
-        reference burns the interpolated 10.93 Mt in both (79.86 Gg)."""
+        """S/L changes household dung only, independently of the nitrogen axis."""
         by = defaultdict(float)
-        for r in self.rollup:
-            by[(r["fiscal_end_year"], r["configuration_id"], r["sector_id"],
-                r["pollutant"])] += float(r["emissions_Gg"])
-        for (fy, cfg, sec, pol), v in by.items():
-            if cfg == "L_HERD1624" and sec != "residential":
-                self.assertAlmostEqual(v, by[(fy, "REF_2023_24", sec, pol)],
-                                       places=9, msg=(fy, sec, pol))
-        pm = defaultdict(float)
-        for r in self.rollup:
-            if r["fiscal_end_year"] == "2024" and r["pollutant"] == "PM2.5":
-                pm[r["configuration_id"]] += float(r["emissions_Gg"])
-        self.assertEqual(set(pm), {"REF_2023_24", "L_HERD1624"})
-        self.assertAlmostEqual(pm["REF_2023_24"], 422.683, delta=0.01)
-        self.assertAlmostEqual(pm["L_HERD1624"], 771.873, delta=0.01)
-        self.assertAlmostEqual(pm["L_HERD1624"] - pm["REF_2023_24"], 349.190, delta=0.01)
-        self.assertAlmostEqual(by[("2024", "REF_2023_24", "residential", "PM2.5")],
-                               282.725, delta=0.01)
-        self.assertAlmostEqual(by[("2024", "L_HERD1624", "residential", "PM2.5")],
-                               631.915, delta=0.01)
+        for row in self.rollup:
+            by[(row["period_id"], row["configuration_id"], row["sector_id"], row["pollutant"])]+=float(row["emissions_Gg"])
+        for survey, ledger in ((conf.REFERENCE, conf.LEDGER), (conf.IPCC_REFERENCE, conf.IPCC_LEDGER)):
+            for (period, cfg, sector, pol), value in by.items():
+                if cfg == ledger and sector != "residential":
+                    self.assertAlmostEqual(value, by[(period, survey, sector, pol)], places=9)
+        # At source grain the only changed fuel is the dung stream; totals must
+        # attribute the entire difference to those source records.
+        source = defaultdict(float)
+        for row in self.atoms:
+            if row["sector_id"] == "residential":
+                source[(row["period_id"],row["configuration_id"],row["fuel_or_material"],row["pollutant"])]+=float(row["emissions_Gg"])
+        for (period,cfg,fuel,pol), value in source.items():
+            if cfg == conf.LEDGER and fuel != "Dung cake":
+                self.assertAlmostEqual(value, source[period,conf.REFERENCE,fuel,pol], places=8)
 
     def test_the_ledger_series_is_the_larger_in_every_year(self):
         """The ledger burns all the dung agriculture diverts and the survey series what
@@ -128,12 +107,12 @@ class TestThePanel(unittest.TestCase):
             if r["sector_id"] == "residential" and r["pollutant"] == "PM2.5":
                 pm[(r["fiscal_end_year"], r["configuration_id"])] += float(r["emissions_Gg"])
         years = sorted({fy for fy, _cfg in pm})
-        self.assertEqual(len(years), 9)
+        self.assertEqual(len(years), len(CORE_FY_ENDS))
         for fy in years:
-            self.assertGreater(pm[(fy, "L_HERD1624")], 2 * pm[(fy, "REF_2023_24")], fy)
+            self.assertGreater(pm[(fy, "L_TAN")], 2 * pm[(fy, "S_TAN")], fy)
 
     def test_the_coverage_matrix_is_630_typed_cells(self):
-        self.assertEqual(len(self.coverage), 630)
+        self.assertEqual(len(self.coverage), len(CORE_FY_ENDS)*10*7)
         estimated = {(a["period_id"], a["sector_id"], a["pollutant"])
                      for a in self.atoms if a["core7"] == "yes"}
         for c in self.coverage:
@@ -162,12 +141,12 @@ class TestThePanel(unittest.TestCase):
         self.assertTrue(power_atoms, "power contributes no atom; the admission is not wired")
         self.assertEqual({a["pollutant"] for a in power_atoms}, {"SO2"},
                          "only SO2 is admitted for power; another pollutant has leaked in")
-        self.assertEqual(len({a["period_id"] for a in power_atoms}), 9,
+        self.assertEqual(len({a["period_id"] for a in power_atoms}), len(CORE_FY_ENDS),
                          "the admission must reach all nine periods or it adds a coverage slope "
                          "to the very series it exists to repair")
 
-        screening = _o("power_air_screening_fy2015_16_fy2023_24.csv")
-        self.assertEqual(len({r["period_id"] for r in screening}), 9)
+        screening = _o("power_air_screening_%s.csv" % CORE_SUFFIX)
+        self.assertEqual(len({r["period_id"] for r in screening}), len(CORE_FY_ENDS))
         # rc58: captive self-generation left the screening for the industry atoms
         self.assertFalse([r for r in screening if r["category"].startswith("Captive")])
         self.assertTrue([a for a in self.atoms
@@ -202,7 +181,7 @@ class TestThePanel(unittest.TestCase):
         admitted_years = {int(r["fiscal_start_year"]) + 1
                           for r in _d("activity/power/power_so2_admission.csv")
                           if r["disposition"] == "provisional_estimate" and r["fuel"] == "RFO"}
-        self.assertEqual(len(admitted_years), 9)
+        self.assertEqual(len(admitted_years), len(CORE_FY_ENDS))
         for fy_end in sorted(admitted_years):
             fraction, why = air_annual.admitted_remainder_fraction(fy_end, "Furnace Oil")
             self.assertTrue(why, "FY%d admits furnace oil but the screening was not narrowed"
@@ -218,7 +197,7 @@ class TestThePanel(unittest.TestCase):
         n = defaultdict(int)
         for a in self.atoms:
             if (a["period_id"] == "FY2023-24"
-                    and a["configuration_id"] == "REF_2023_24"):
+                    and a["configuration_id"] == "S_TAN"):
                 panel[(a["sector_id"], a["pollutant"])] += float(a["emissions_Gg"])
         for sector, fname in REFERENCE_FILES.items():
             for r in _o(fname):
@@ -239,7 +218,7 @@ class TestThePanel(unittest.TestCase):
             self.assertEqual(a["coverage_scope"], "covered_sources_only")
 
     def test_the_panel_is_nine_periods_and_nine_sectors(self):
-        self.assertEqual(len({a["period_id"] for a in self.atoms}), 9)
+        self.assertEqual(len({a["period_id"] for a in self.atoms}), len(CORE_FY_ENDS))
         self.assertEqual({a["sector_id"] for a in self.atoms}, PANEL_SECTORS)
 
     def test_industry_is_e_for_exactly_the_species_its_register_prices(self):

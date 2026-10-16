@@ -36,12 +36,13 @@ PANEL = asset_path(DATA, "activity", "waste", "population_district.csv")
 
 ANCHOR_EARLY = 2017          # 6th Population and Housing Census
 ANCHOR_LATE = 2023           # 7th Population and Housing Census, the panel's last year
-TARGET = 2024                # the FY2023-24 midpoint, 1 January 2024
+from pkinv.core.reporting_window import CORE_LAST_FY_START
+TARGET = CORE_LAST_FY_START + 1
 COLUMNS = ("pop_total", "pop_rural", "pop_urban")
-SOURCE = ("PBS 6th (2017) + 7th (2023) Population and Housing Census, PROJECTED one year "
+SOURCE = ("PBS 6th (2017) + 7th (2023) Population and Housing Census, PROJECTED %d years "
           "past the 7th Census anchor at the panel's own 2017-2023 district growth rate, "
-          "for the FY2023-24 midpoint (1 January 2024). An extrapolation, not an "
-          "interpolation - see scripts/project_waste_population.py")
+          "for the fiscal-year midpoint (1 January %d). An extrapolation, not an "
+          "interpolation - see scripts/project_waste_population.py") % (TARGET - ANCHOR_LATE, TARGET)
 
 
 def project(rows):

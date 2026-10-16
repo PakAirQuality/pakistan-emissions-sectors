@@ -11,14 +11,14 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class TestTheDepositGroup(unittest.TestCase):
-    def test_it_is_full_minus_exactly_the_two_measured_phases(self):
+    def test_it_excludes_only_explicit_primary_source_phases(self):
         from pkinv import build, run_all
         full = [p.label for p in build.phases_for_group("full")]
         deposit = [p.label for p in build.phases_for_group("deposit")]
         self.assertEqual(sorted(set(full) - set(deposit)),
                          sorted(build.DEPOSIT_EXCLUDED))
-        self.assertEqual(set(build.DEPOSIT_EXCLUDED),
-                         {"Power plant workbooks", "OGRA gas-class series"})
+        self.assertEqual(set(build.DEPOSIT_EXCLUDED), set(build.DEPOSIT_SOURCE_PHASES))
+        self.assertTrue(all(build.DEPOSIT_SOURCE_PHASES.values()))
         self.assertTrue(set(build.DEPOSIT_EXCLUDED) <= {p.label for p in run_all.PHASES})
 
     def test_the_excluded_phases_products_are_tracked_inputs_or_shipped(self):

@@ -1,4 +1,4 @@
-"""The nine-year ensemble: it describes the published inventory, and its correlation is real.
+"""The core-period ensemble: it describes the published inventory, and its correlation is real.
 
 WHY THESE TESTS AND NOT OTHERS. An uncertainty product is unusually easy to ship broken,
 because a wrong band looks exactly like a right one. Three things can go wrong here and each
@@ -61,9 +61,10 @@ class TestItDescribesThePublishedInventory(unittest.TestCase):
         """The gate that comes first. assert_closure raises, so reaching the count is the
         assertion; the count itself is checked so a silently emptied dict cannot pass."""
         checked = lu.assert_closure(self.by_year)
-        self.assertEqual(checked, 90, "the ensemble covers %d sector-years, not the 90 the "
-                                      "series publishes (the full rectangle since rc20's "
-                                      "FY2015-16 recovery)" % checked)
+        from pkinv.core.reporting_window import CORE_FY_ENDS
+        from pkinv.core import registry
+        expected = len(CORE_FY_ENDS) * len(registry.all_sectors())
+        self.assertEqual(checked, expected)
 
     def test_no_sector_year_is_silently_missing_its_components(self):
         published = {(r["sector"], int(r["fiscal_end_year"]))
@@ -76,7 +77,9 @@ class TestItDescribesThePublishedInventory(unittest.TestCase):
                     for rows in self.by_year[lu.REFERENCE_YEAR].values() for c in rows)
         # rc39 A1 re-base: the reference herd became the census's exact enumeration, so the pins moved for the first time since rc30 (L 452.14350 -> 452.33432, S 447.01683 -> 447.20153; agriculture +0.184699 and residential +0.006121 through the dung handoff)
         # rc39 A2: FracGASF is one global factor, so re-weighting it onto the fiscal year's own product mix lifts managed soils in EVERY year by ~0.0021-0.0023 Mt
-        self.assertAlmostEqual(total, 444.95542, places=4)  # rc67 reference re-base (was 451.85782)
+        published = next(row for row in _rows("pakemis_national_series.csv")
+                         if row["row_kind"] == "covered_total" and int(row["fiscal_end_year"]) == lu.REFERENCE_YEAR)
+        self.assertAlmostEqual(total, float(published["co2e_Mt_AR5"]), places=4)
 
 
 class TestTheStreamKeyContract(unittest.TestCase):
@@ -194,7 +197,9 @@ class TestTheCorrelationIsRealAndPointsTheRightWay(unittest.TestCase):
         # The window change is the one every scenario resolves; if it ever stopped being
         # significant under the NARROWEST scenario, the ensemble would be saying that eight
         # years of Pakistani growth are indistinguishable from nothing.
-        window = self._pair("time_correlated", "FY2015-16", "FY2023-24")
+        from pkinv.core.reporting_window import CORE_FY_STARTS, fiscal_label
+        window = self._pair("time_correlated", fiscal_label(min(CORE_FY_STARTS)),
+                            fiscal_label(max(CORE_FY_STARTS)))
         self.assertEqual(window["significant_at_95"], "yes")
 
 
@@ -310,9 +315,10 @@ class TestTheShippedProductsAgreeWithTheModule(unittest.TestCase):
         rows = _rows("pakemis_longitudinal_uncertainty.csv")
         years = {r["fiscal_end_year"] for r in rows}
         scenarios = {r["scenario"] for r in rows}
-        self.assertEqual(len(years), 9)
+        from pkinv.core.reporting_window import CORE_FY_ENDS
+        self.assertEqual(years, {str(year) for year in CORE_FY_ENDS})
         self.assertEqual(scenarios, set(lu.SCENARIOS))
-        self.assertEqual(len(rows), 9 * len(lu.SCENARIOS))
+        self.assertEqual(len(rows), len(CORE_FY_ENDS) * len(lu.SCENARIOS))
 
     def test_the_trend_file_carries_both_windows_and_every_step(self):
         rows = _rows("pakemis_trend_uncertainty.csv")
@@ -323,7 +329,9 @@ class TestTheShippedProductsAgreeWithTheModule(unittest.TestCase):
         self.assertEqual(kinds, {"consecutive", "window_full_panel"})
         consecutive = {(r["from_period"], r["to_period"]) for r in rows
                        if r["pair_kind"] == "consecutive"}
-        self.assertEqual(len(consecutive), 8)
+        from pkinv.core.reporting_window import CORE_FY_STARTS, fiscal_label
+        expected = {(fiscal_label(year), fiscal_label(year + 1)) for year in CORE_FY_STARTS[:-1]}
+        self.assertEqual(consecutive, expected)
 
     def test_every_difference_is_the_sum_over_the_sectors_it_claims(self):
         """THE GUARD THAT WAS MISSING, and its absence cost the headline number.

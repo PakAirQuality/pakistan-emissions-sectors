@@ -198,20 +198,42 @@ class TestThePriceOfTheChangeIsPublished(unittest.TestCase):
         """difference = basis + scope, to the precision the file publishes. A single
         `difference` column would let a reader attribute a scope break to a timing fix."""
         for row in _rows("pakemis_agriculture_basis_change.csv"):
+            if row["comparison_status"] == "archived_calendar_comparator_absent":
+                self.assertEqual(row["calendar_faostat_Mt"], "")
+                self.assertEqual(row["difference_Mt"], "")
+                self.assertEqual(row["basis_term_Mt"], "")
+                continue
             self.assertAlmostEqual(
                 float(row["difference_Mt"]),
                 float(row["basis_term_Mt"]) + float(row["scope_term_Mt"]), places=5,
                 msg="%s %s" % (row["fiscal_label"], row["category"]))
 
-    def test_the_livestock_categories_carry_no_basis_term(self):
-        """The decomposition isolates ONE variable. Enteric and manure keep the same driver
-        across both series, so a non-zero basis term there would mean the comparison is
-        measuring something other than the crop and nitrogen change."""
+    def test_livestock_basis_difference_is_the_adopted_census_reconstruction(self):
+        """Cotton removal does not alter livestock; source/anchor changes can alter them."""
         for row in _rows("pakemis_agriculture_basis_change.csv"):
             if row["category"] not in ("Enteric fermentation", "Manure management"):
                 continue
-            self.assertLess(abs(float(row["basis_term_Mt"])), 0.001,
-                            "%s %s" % (row["fiscal_label"], row["category"]))
+            # Fiscal category totals and component sums follow separate six-decimal
+            # export paths; their two half-unit rounding errors can sum to 1e-6 Mt.
+            self.assertAlmostEqual(float(row["scope_term_Mt"]), 0.0, delta=1.5e-6)
+            if row["comparison_status"] == "compared_to_archived_calendar":
+                self.assertAlmostEqual(float(row["basis_term_Mt"]),
+                    float(row["fiscal_Mt"]) - float(row["calendar_faostat_Mt"]), places=5)
+            self.assertEqual(row["driver_basis"], fa.CALENDAR_BASIS)
+
+    def test_missing_archive_year_is_typed_in_final_export_and_keeps_fiscal_scope(self):
+        archive = fs._calendar_by_category()
+        for row in _rows("pakemis_agriculture_basis_change.csv"):
+            year = int(row["fiscal_end_year"])
+            has_comparator = row["category"] in archive.get(year, {})
+            self.assertEqual(row["comparison_status"], "compared_to_archived_calendar"
+                             if has_comparator else "archived_calendar_comparator_absent")
+            self.assertGreater(float(row["fiscal_Mt"]), 0)
+            self.assertNotEqual(row["scope_term_Mt"], "")
+            if not has_comparator:
+                self.assertEqual(row["calendar_faostat_Mt"], "")
+                self.assertEqual(row["basis_term_Mt"], "")
+                self.assertEqual(row["difference_Mt"], "")
 
     def test_the_cotton_scope_term_is_present_in_every_backcast_year(self):
         by_year = {}

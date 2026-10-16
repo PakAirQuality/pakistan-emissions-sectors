@@ -1,6 +1,6 @@
 cff-version: 1.2.0
 message: "If you use this inventory, its data products or its calculation engine, please cite it as below."
-title: "PakEmis-GHG: a reproducible ten-module national greenhouse-gas inventory for Pakistan, excluding LULUCF"
+title: "PakEmis 1.0.0rc68: greenhouse gas and air pollutant emissions in Pakistan, July 2015–June 2025"
 abstract: >-
   A reproducible national emissions inventory for Pakistan covering ten sectors, with
   national, provincial, district and gridded products. Sector modules satisfy a common
@@ -10,10 +10,11 @@ abstract: >-
   from the calculation engine. Excludes LULUCF, which is carried as an exploratory module
   outside all totals.
 type: software
-version: 1.0.0rc67
+version: 1.0.0rc68
 license: MIT
-license-url: "https://github.com/RehanAhmad13/pakistan-emissions-sectors/blob/main/LICENSE"
-repository-code: "https://github.com/RehanAhmad13/pakistan-emissions-sectors"
+license-url: "https://github.com/PakAirQuality/pakistan-emissions-sectors/blob/main/LICENSE"
+repository-code: "https://github.com/PakAirQuality/pakistan-emissions-sectors"
+url: "https://emissions.hawanama.org"
 authors:
   - family-names: Ahmad
     given-names: Rehan
@@ -39,6 +40,6 @@ keywords:
 #       description: "Zenodo concept DOI (resolves to the latest version)"
 #     - type: doi
 #       value: 10.5281/zenodo.YYYYYYY    # this version
-#       description: "Zenodo DOI for v1.0.0-rc67"
+#       description: "Zenodo DOI for v1.0.0-rc68"
 #
 # and set the same values in .zenodo.json and pkinv.report.release_manifest.DOI.

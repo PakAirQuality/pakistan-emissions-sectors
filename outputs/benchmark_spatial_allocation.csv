@@ -5,7 +5,7 @@ spatial_rice_mnfsr,Rice cultivation,district_rice_area_MNFSR_2022-23.csv,2022-23
 spatial_rice_mnfsr,Rice cultivation,district_rice_area_MNFSR_2022-23.csv,2022-23,cropland,reference,66,0.641,0.0,0.2,0.267,0.8705,scored,reference (the model's own allocator; agreement is partly self-agreement) - never a baseline
 spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,uniform,baseline,85,,,,,0.8672,scored,baseline: equal mass per matched district
 spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,population,baseline,85,0.711,0.0,0.5,0.6,0.6231,scored,baseline: WorldPop mass per district (proxy raster bincount)
-spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,model,model,85,0.845,0.0,0.7,0.6,0.3715,scored,the engine's own district allocation (district_totals_2024.csv)
+spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,model,model,85,0.85,0.0,0.7,0.6,0.3626,scored,the engine's own district allocation (district_totals_2024.csv)
 spatial_wheat_mnfsr,Managed soils,district_wheat_area_MNFSR_2022-23.csv,2022-23,cropland,reference,85,0.845,0.0,0.6,0.6,0.378,scored,reference (the model's own allocator; agreement is partly self-agreement) - never a baseline
 spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2022-23,uniform,baseline,29,,,,,0.7713,scored,baseline: equal mass per matched district
 spatial_rice_punjabcrs,Rice cultivation,district_rice_area_PunjabCRS_2022-25.csv,2022-23,population,baseline,29,0.234,0.22159,0.3,0.533,0.8618,scored,baseline: WorldPop mass per district (proxy raster bincount)

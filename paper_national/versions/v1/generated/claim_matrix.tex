@@ -8,108 +8,43 @@ Every headline claim of the national paper is a row of \texttt{data/claim\_matri
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\caption{Claim matrix: Abstract.}
-\begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
-\toprule
-\textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
-\midrule
-abs\_\allowbreak{}total\_\allowbreak{}L & query & 444.96 & 444.96 & closure-exact & incomplete-floor \\
-abs\_\allowbreak{}total\_\allowbreak{}AR6 & query & 438.19 & 438.19 & closure-exact &  \\
-abs\_\allowbreak{}total\_\allowbreak{}S & query & 450.20 & 450.20 & structural & incomplete-floor \\
-abs\_\allowbreak{}flat\_\allowbreak{}share & pointer & 54.65 & 54.65 & estimated-TE4 & monthly-physics \\
-abs\_\allowbreak{}streams\_\allowbreak{}gridded & pointer & 199 & 199 & coverage-count &  \\
-abs\_\allowbreak{}streams\_\allowbreak{}total & pointer & 202 & 202 & coverage-count &  \\
-abs\_\allowbreak{}streams\_\allowbreak{}unallocated & pointer & 3 & 3 & spatial-S4 &  \\
-abs\_\allowbreak{}unallocated\_\allowbreak{}share & pointer & 0.05 & 0.06 & spatial-S4 &  \\
-abs\_\allowbreak{}mc\_\allowbreak{}interval & pointer & 11.72 & 11.72 & parametric &  \\
-abs\_\allowbreak{}mc\_\allowbreak{}down & pointer & 10.3 & 10.3 & parametric &  \\
-abs\_\allowbreak{}mc\_\allowbreak{}up & pointer & 13.1 & 13.1 & parametric &  \\
-abs\_\allowbreak{}structural\_\allowbreak{}max & pointer & 9.07 & 9.1 & structural &  \\
-abs\_\allowbreak{}legacy\_\allowbreak{}control\_\allowbreak{}delta & pointer & 17.78 & 17.8 & structural &  \\
-abs\_\allowbreak{}completeness\_\allowbreak{}rows & query & 138 & 138 & coverage-count & incomplete-floor \\
-abs\_\allowbreak{}completeness\_\allowbreak{}E & query & 54 & 54 & coverage-count & incomplete-floor \\
-abs\_\allowbreak{}completeness\_\allowbreak{}NE & query & 71 & 71 & coverage-count & incomplete-floor \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\caption{Claim matrix: 1 Introduction.}
-\begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
-\toprule
-\textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
-\midrule
-intro\_\allowbreak{}contract\_\allowbreak{}tests & getter & 32 & 32 & provenance-count &  \\
-intro\_\allowbreak{}enteric\_\allowbreak{}share & pointer & 34.1 & 34.1 & closure-exact &  \\
-intro\_\allowbreak{}residential\_\allowbreak{}share & pointer & 5.4 & 5.4 & closure-exact &  \\
-intro\_\allowbreak{}total\_\allowbreak{}L & query & 444.96 & 444.96 & closure-exact & incomplete-floor \\
-intro\_\allowbreak{}edgar\_\allowbreak{}magnitude & pointer & 87 & 86 & external-comparison & incomplete-floor \\
-intro\_\allowbreak{}edgar\_\allowbreak{}scope & pointer & 11 & 11 & external-comparison & incomplete-floor \\
-intro\_\allowbreak{}completeness\_\allowbreak{}rows & query & 138 & 138 & coverage-count &  \\
-intro\_\allowbreak{}contract\_\allowbreak{}invariants & getter & 32 & 32 & provenance-count &  \\
-intro\_\allowbreak{}residual\_\allowbreak{}variance & pointer & 2.5 & 2.5 & parametric &  \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\caption{Claim matrix: 2 Dataset scope and architecture.}
-\begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
-\toprule
-\textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
-\midrule
-tab\_\allowbreak{}completeness\_\allowbreak{}rows & query & 138 & 138 & coverage-count & incomplete-floor \\
-tab\_\allowbreak{}completeness\_\allowbreak{}codes & pointer & 72 & 72 & coverage-count & incomplete-floor \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\footnotesize
-\setlength{\tabcolsep}{4pt}
 \caption{Claim matrix: 4 Dataset generation.}
 \begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
 \toprule
 \textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
 \midrule
-tab\_\allowbreak{}sectors\_\allowbreak{}total & query & 444.96 & 444.96 & closure-exact &  \\
-fig\_\allowbreak{}sectors\_\allowbreak{}agriculture\_\allowbreak{}share & pointer & 50.2 & 50.2 & closure-exact &  \\
-tab\_\allowbreak{}categorygas\_\allowbreak{}CH4 & query & 242.932 & 242.932 & closure-exact &  \\
-tab\_\allowbreak{}categorygas\_\allowbreak{}CO2 & query & 160.944 & 160.944 & closure-exact &  \\
-tab\_\allowbreak{}categorygas\_\allowbreak{}N2O & query & 41.079 & 41.079 & closure-exact &  \\
-fig\_\allowbreak{}series\_\allowbreak{}first\_\allowbreak{}year & query & 393.84 & 393.84 & closure-exact & series-basis \\
-fig\_\allowbreak{}series\_\allowbreak{}window\_\allowbreak{}change & query & 51.12 & 51.12 & closure-exact & series-basis \\
-fig\_\allowbreak{}seasonality\_\allowbreak{}closure & query & 444.96 & 444.96 & closure-exact &  \\
-fig\_\allowbreak{}seasonality\_\allowbreak{}flat\_\allowbreak{}share & pointer & 54.65 & 54.65 & estimated-TE4 & monthly-physics \\
-tab\_\allowbreak{}correlation\_\allowbreak{}national & pointer & 11.72 & 11.72 & parametric &  \\
-tab\_\allowbreak{}correlation\_\allowbreak{}national\_\allowbreak{}correlated & pointer & 11.75 & 11.75 & parametric &  \\
-fig\_\allowbreak{}bridge\_\allowbreak{}largest & pointer & 9.1 & 9.1 & structural &  \\
-tab\_\allowbreak{}dungvariants\_\allowbreak{}difference & query & 5.2 & 5.2 & structural & incomplete-floor \\
-res\_\allowbreak{}streams\_\allowbreak{}gridded & pointer & 199 & 199 & coverage-count &  \\
-res\_\allowbreak{}streams\_\allowbreak{}unallocated & pointer & 3 & 3 & spatial-S4 &  \\
-res\_\allowbreak{}agri\_\allowbreak{}misaligned\_\allowbreak{}crops & pointer & 3 & 3 & coverage-count & series-basis \\
-res\_\allowbreak{}agri\_\allowbreak{}calendar\_\allowbreak{}share & pointer & 77.37 & 77.37 & estimated-TE4 & series-basis \\
-res\_\allowbreak{}agri\_\allowbreak{}basis\_\allowbreak{}change & pointer & -7.6969 & -7.6969 & structural & series-basis \\
-res\_\allowbreak{}agri\_\allowbreak{}cotton\_\allowbreak{}scope & pointer & 1.055 & 1.055 & structural & series-basis \\
-unc\_\allowbreak{}trend\_\allowbreak{}changes\_\allowbreak{}tested & pointer & 8 & 8 & parametric & series-basis \\
-unc\_\allowbreak{}trend\_\allowbreak{}changes\_\allowbreak{}resolved & pointer & 2 & 2 & parametric & series-basis \\
-unc\_\allowbreak{}trend\_\allowbreak{}common\_\allowbreak{}window & pointer & 51.12 & 51.12 & parametric & series-basis \\
-unc\_\allowbreak{}variance\_\allowbreak{}persists & pointer & 76.56 & 76.56 & parametric &  \\
-unc\_\allowbreak{}variance\_\allowbreak{}residual & pointer & 2.48 & 2.48 & parametric &  \\
-spatial\_\allowbreak{}adm1\_\allowbreak{}by\_\allowbreak{}year\_\allowbreak{}rows & pointer & 7864 & 7864 & coverage-count &  \\
-spatial\_\allowbreak{}adm2\_\allowbreak{}by\_\allowbreak{}year\_\allowbreak{}rows & pointer & 10350 & 10350 & coverage-count &  \\
-spatial\_\allowbreak{}grid\_\allowbreak{}fleet\_\allowbreak{}substituted\_\allowbreak{}fy2015\_\allowbreak{}16 & getter & 17.66 & 17.66 & spatial-S4 &  \\
-spatial\_\allowbreak{}stream\_\allowbreak{}years\_\allowbreak{}own\_\allowbreak{}year & getter & 795 & 795 & provenance-count &  \\
-spatial\_\allowbreak{}stream\_\allowbreak{}years\_\allowbreak{}backcast & pointer & 306 & 306 & provenance-count &  \\
-spatial\_\allowbreak{}adm2\_\allowbreak{}monthly\_\allowbreak{}by\_\allowbreak{}year\_\allowbreak{}rows & pointer & 122616 & 122616 & coverage-count &  \\
-spatial\_\allowbreak{}stream\_\allowbreak{}years\_\allowbreak{}timeless & pointer & 615 & 615 & provenance-count &  \\
+00\_\allowbreak{}abstract\_\allowbreak{}PakLatestARfive & pointer & 457.2 & 457.2 & estimated-mixed & sec:scope \\
+00\_\allowbreak{}abstract\_\allowbreak{}PakRefARfive & pointer & 444.6 & 444.6 & estimated-mixed & sec:scope \\
+00\_\allowbreak{}abstract\_\allowbreak{}PakRefNHthree & pointer & 2670 & 2670 & estimated-mixed & sec:scope \\
+00\_\allowbreak{}abstract\_\allowbreak{}PakRefNOx & pointer & 816.6 & 816.6 & estimated-mixed & sec:scope \\
+00\_\allowbreak{}abstract\_\allowbreak{}PakRefPMfine & pointer & 422.8 & 422.8 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakChangeARfive & pointer & 14.9 & 14.9 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakChangeNHthree & pointer & 45.7 & 45.7 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakChangeNOx & pointer & 18.2 & 18.2 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakChangePMfine & pointer & 24.0 & 24.0 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakChangeSOtwo & pointer & -45.0 & -45.0 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestARfive & pointer & 457.2 & 457.2 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestARsix & pointer & 450.2 & 450.2 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestBC & pointer & 46.64 & 46.64 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestCO & pointer & 5999 & 5999 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestNHthree & pointer & 2690 & 2690 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestNMVOC & pointer & 1226 & 1226 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestNOx & pointer & 833.1 & 833.1 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestPMfine & pointer & 422.7 & 422.7 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakLatestSOtwo & pointer & 368.9 & 368.9 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefARfive & pointer & 444.6 & 444.6 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefARsix & pointer & 437.8 & 437.8 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefBC & pointer & 40.44 & 40.44 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefCHfour & pointer & 8621 & 8621 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefCO & pointer & 5991 & 5991 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefCOtwo & pointer & 161 & 161 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefNHthree & pointer & 2670 & 2670 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefNMVOC & pointer & 1187 & 1187 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefNOx & pointer & 816.6 & 816.6 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefNtwoO & pointer & 153.4 & 153.4 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefPMfine & pointer & 422.8 & 422.8 & estimated-mixed & sec:scope \\
+06\_\allowbreak{}results\_\allowbreak{}PakRefSOtwo & pointer & 213.6 & 213.6 & estimated-mixed & sec:scope \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}GHGReferenceHigh & pointer & 503.2 & 503.2 & parametric & sec:uncertainty \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -118,12 +53,43 @@ spatial\_\allowbreak{}stream\_\allowbreak{}years\_\allowbreak{}timeless & pointe
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\caption{Claim matrix: 6 Technical validation.}
+\caption{Claim matrix: 4 Dataset generation (continued).}
 \begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
 \toprule
 \textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
 \midrule
-tab\_\allowbreak{}benchmarks\_\allowbreak{}magnitude & pointer & 87 & 86 & external-comparison & incomplete-floor \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}GHGReferenceLow & pointer & 399.9 & 399.9 & parametric & sec:uncertainty \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}PakRefNHthreeHigh & pointer & 3069 & 3069 & parametric & sec:uncertainty \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}PakRefNHthreeLow & pointer & 2297 & 2297 & parametric & sec:uncertainty \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}PakRefNOxHigh & pointer & 1029 & 1029 & parametric & sec:uncertainty \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}PakRefNOxLow & pointer & 660.6 & 660.6 & parametric & sec:uncertainty \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}PakRefPMfineHigh & pointer & 567 & 567 & parametric & sec:uncertainty \\
+07\_\allowbreak{}uncertainty\_\allowbreak{}PakRefPMfineLow & pointer & 311.2 & 311.2 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}AirLatestBC & pointer & 46.64 & 46.64 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirLatestCO & pointer & 5999 & 5999 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirLatestNHthree & pointer & 2690 & 2690 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirLatestNMVOC & pointer & 1226 & 1226 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirLatestNOx & pointer & 833.1 & 833.1 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirLatestPM & pointer & 422.7 & 422.7 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirLatestSOtwo & pointer & 368.9 & 368.9 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirReferenceBC & pointer & 40.44 & 40.44 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirReferenceCO & pointer & 5991 & 5991 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirReferenceNHthree & pointer & 2670 & 2670 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirReferenceNMVOC & pointer & 1187 & 1187 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirReferenceNOx & pointer & 816.6 & 816.6 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirReferencePM & pointer & 422.8 & 422.8 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}AirReferenceSOtwo & pointer & 213.6 & 213.6 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}GHGLatestTotal & pointer & 457.2 & 457.2 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}GHGReferenceHigh & pointer & 503.2 & 503.2 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}GHGReferenceLow & pointer & 399.9 & 399.9 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}GHGReferenceTotal & pointer & 444.6 & 444.6 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakChangeARfive & pointer & 14.9 & 14.9 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakChangeNHthree & pointer & 45.7 & 45.7 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakChangeNOx & pointer & 18.2 & 18.2 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakChangePMfine & pointer & 24.0 & 24.0 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakChangeSOtwo & pointer & -45.0 & -45.0 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakNPartitionGHGChange & pointer & 0.04426 & 0.04426 & structural & sec:scope \\
+paper\_\allowbreak{}PakNPartitionNHthreeChangeGg & pointer & 24.65 & 24.65 & structural & sec:scope \\
 \bottomrule
 \end{tabular}
 \end{table}
@@ -132,84 +98,25 @@ tab\_\allowbreak{}benchmarks\_\allowbreak{}magnitude & pointer & 87 & 86 & exter
 \centering
 \footnotesize
 \setlength{\tabcolsep}{4pt}
-\caption{Claim matrix: 7 Usage notes and limitations.}
+\caption{Claim matrix: 4 Dataset generation (continued).}
 \begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
 \toprule
 \textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
 \midrule
-lim\_\allowbreak{}single\_\allowbreak{}year\_\allowbreak{}period & pointer & FY2023--24 & FY2023-24 & coverage-count & single-year \\
-lim\_\allowbreak{}floor\_\allowbreak{}edgar\_\allowbreak{}1a2 & pointer & 44 & 44 & external-comparison & incomplete-floor \\
-lim\_\allowbreak{}floor\_\allowbreak{}industry\_\allowbreak{}gas & getter & 5.61 & 5.61 & closure-exact & incomplete-floor \\
-lim\_\allowbreak{}floor\_\allowbreak{}1a2\_\allowbreak{}remaining & pointer & 15.85 & 16 & external-comparison & incomplete-floor \\
-lim\_\allowbreak{}floor\_\allowbreak{}chemical\_\allowbreak{}filing & pointer & 19.4 & 19.4 & external-comparison & incomplete-floor \\
-lim\_\allowbreak{}floor\_\allowbreak{}commercial & getter & 2.4 & 2.4 & structural & incomplete-floor \\
-lim\_\allowbreak{}floor\_\allowbreak{}total\_\allowbreak{}rounded & query & 445 & 445 & closure-exact & incomplete-floor \\
-lim\_\allowbreak{}floor\_\allowbreak{}dung\_\allowbreak{}ratio & getter & 4.9 & 4.9 & structural & incomplete-floor \\
-lim\_\allowbreak{}floor\_\allowbreak{}config\_\allowbreak{}difference & query & 5.25 & 5.25 & structural & incomplete-floor \\
-lim\_\allowbreak{}lulucf\_\allowbreak{}sink & pointer & -4.01 & -4.01 & structural & lulucf \\
-lim\_\allowbreak{}fugitives\_\allowbreak{}floor & pointer & 9.601 & 9.601 & structural & fugitive-envelope \\
-lim\_\allowbreak{}fugitives\_\allowbreak{}top & pointer & 23.499 & 23.499 & structural & fugitive-envelope \\
-lim\_\allowbreak{}fugitives\_\allowbreak{}lower & pointer & 14.894 & 14.894 & structural & fugitive-envelope \\
-lim\_\allowbreak{}series\_\allowbreak{}first\_\allowbreak{}fy & pointer & FY2015--16 & FY2015-16 & coverage-count & series-basis \\
-lim\_\allowbreak{}series\_\allowbreak{}calendar\_\allowbreak{}share & pointer & 77.37 & 77.37 & estimated-TE4 & series-basis \\
-lim\_\allowbreak{}series\_\allowbreak{}ne\_\allowbreak{}years & pointer & no & 0 & coverage-count & series-basis \\
-lim\_\allowbreak{}firewood\_\allowbreak{}energy\_\allowbreak{}share & getter & 38.7 & 38.7 & structural & firewood \\
-lim\_\allowbreak{}dung\_\allowbreak{}energy\_\allowbreak{}share & getter & 13.6 & 13.6 & structural & firewood \\
-lim\_\allowbreak{}firewood\_\allowbreak{}uncertainty & pointer & 35 & 35 & parametric & firewood \\
-lim\_\allowbreak{}firewood\_\allowbreak{}faostat & pointer & 23.89 & 23.89 & structural & firewood \\
-lim\_\allowbreak{}firewood\_\allowbreak{}excluded & pointer & 20.81 & 20.81 & structural & firewood \\
-lim\_\allowbreak{}monthly\_\allowbreak{}flat\_\allowbreak{}share & pointer & 54.65 & 54.65 & estimated-TE4 & monthly-physics \\
-lim\_\allowbreak{}monthly\_\allowbreak{}observed & pointer & 37.3 & 37.3 & estimated-TE2 & monthly-physics \\
-lim\_\allowbreak{}monthly\_\allowbreak{}physical & pointer & 41.0 & 41.0 & estimated-TE4 & monthly-physics \\
-lim\_\allowbreak{}monthly\_\allowbreak{}weakly\_\allowbreak{}timed & pointer & 21.8 & 21.8 & estimated-TE4 & monthly-physics \\
-lim\_\allowbreak{}grade\_\allowbreak{}nine\_\allowbreak{}year & getter & 21.76 & 21.76 & estimated-TE4 & monthly-grade \\
-lim\_\allowbreak{}grade\_\allowbreak{}reference\_\allowbreak{}year & getter & 9.57 & 9.57 & estimated-TE4 & monthly-grade \\
-lim\_\allowbreak{}grade\_\allowbreak{}target & getter & 15 & 15 & estimated-TE4 & monthly-grade \\
-lim\_\allowbreak{}grade\_\allowbreak{}ocac\_\allowbreak{}mass & getter & 283.2 & 283.2 & estimated-TE4 & monthly-grade \\
-lim\_\allowbreak{}grade\_\allowbreak{}after\_\allowbreak{}ocac & getter & 14.68 & 14.68 & estimated-TE4 & monthly-grade \\
-lim\_\allowbreak{}managed\_\allowbreak{}soils\_\allowbreak{}moved & getter & 95.09 & 95.11 & estimated-TE2 & monthly-gap \\
-lim\_\allowbreak{}agriculture\_\allowbreak{}cells & getter & 72 & 72 & closure-exact & monthly-gap \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\caption{Claim matrix: 7 Usage notes and limitations (continued).}
-\begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
-\toprule
-\textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
-\midrule
-lim\_\allowbreak{}fugitives\_\allowbreak{}moved & getter & 93.66 & 93.66 & estimated-TE2 & monthly-gap \\
-lim\_\allowbreak{}fugitives\_\allowbreak{}t2\_\allowbreak{}share & getter & 43.0 & 43.0 & estimated-TE2 & monthly-gap \\
-lim\_\allowbreak{}deposit\_\allowbreak{}sources & pointer & 217 & 217 & provenance-count & deposit \\
-lim\_\allowbreak{}deposit\_\allowbreak{}archived & pointer & 153 & 153 & provenance-count & deposit \\
-lim\_\allowbreak{}deposit\_\allowbreak{}no\_\allowbreak{}terms & pointer & 126 & 126 & provenance-count & deposit \\
-lim\_\allowbreak{}deposit\_\allowbreak{}sources\_\allowbreak{}restated & pointer & 217 & 217 & provenance-count & deposit \\
-lim\_\allowbreak{}deposit\_\allowbreak{}files & pointer & 1761 & 1761 & provenance-count & deposit \\
-\bottomrule
-\end{tabular}
-\end{table}
-
-\begin{table}[htbp]
-\centering
-\footnotesize
-\setlength{\tabcolsep}{4pt}
-\caption{Claim matrix: 10 Conclusions.}
-\begin{tabular}{@{}p{3.6cm}lrrp{2.6cm}p{2.4cm}@{}}
-\toprule
-\textbf{claim} & \textbf{via} & \textbf{printed} & \textbf{resolved} & \textbf{evidence} & \textbf{limitation} \\
-\midrule
-concl\_\allowbreak{}total\_\allowbreak{}L & query & 444.96 & 444.96 & closure-exact & incomplete-floor \\
-concl\_\allowbreak{}contract\_\allowbreak{}invariants & getter & 32 & 32 & provenance-count &  \\
-concl\_\allowbreak{}factor\_\allowbreak{}trap & getter & 8.0 & 8.0 & structural &  \\
-concl\_\allowbreak{}mc\_\allowbreak{}interval & pointer & 11.72 & 11.72 & parametric &  \\
-concl\_\allowbreak{}mc\_\allowbreak{}road & pointer & 13.3 & 13.3 & parametric &  \\
-concl\_\allowbreak{}wastewater\_\allowbreak{}factor & getter & 1.6 & 1.6 & structural &  \\
-concl\_\allowbreak{}edgar\_\allowbreak{}1a2 & pointer & 44 & 44 & external-comparison & incomplete-floor \\
-concl\_\allowbreak{}activity\_\allowbreak{}files & pointer & 217 & 217 & provenance-count & deposit \\
+paper\_\allowbreak{}PakNPartitionNOxChangeGg & pointer & -149.8 & -149.8 & structural & sec:scope \\
+paper\_\allowbreak{}PakRefCHfour & pointer & 8621 & 8621 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakRefCOtwo & pointer & 161 & 161 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakRefNHthreeHigh & pointer & 3069 & 3069 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}PakRefNHthreeLow & pointer & 2297 & 2297 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}PakRefNOxHigh & pointer & 1029 & 1029 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}PakRefNOxLow & pointer & 660.6 & 660.6 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}PakRefNtwoO & pointer & 153.4 & 153.4 & estimated-mixed & sec:scope \\
+paper\_\allowbreak{}PakRefPMfineHigh & pointer & 567 & 567 & parametric & sec:uncertainty \\
+paper\_\allowbreak{}PakRefPMfineLow & pointer & 311.2 & 311.2 & parametric & sec:uncertainty \\
+technical\_\allowbreak{}supplement\_\allowbreak{}AirReferenceNHthree & pointer & 2670 & 2670 & estimated-mixed & sec:scope \\
+technical\_\allowbreak{}supplement\_\allowbreak{}AirReferenceNOx & pointer & 816.6 & 816.6 & estimated-mixed & sec:scope \\
+technical\_\allowbreak{}supplement\_\allowbreak{}AirReferencePM & pointer & 422.8 & 422.8 & estimated-mixed & sec:scope \\
+technical\_\allowbreak{}supplement\_\allowbreak{}GHGReferenceTotal & pointer & 444.6 & 444.6 & estimated-mixed & sec:scope \\
 \bottomrule
 \end{tabular}
 \end{table}

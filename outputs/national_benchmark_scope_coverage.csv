@@ -7,7 +7,7 @@ Buildings,31.42,6.1,partial,"2 of 3 codes estimated, 1 only in part",1.A.4.a; 1.
 Processes (IPPU),27.38,5.3,partial,"4 of 6 codes estimated, 1 not applicable (2.B.7)",2.A.2
 Waste,27.21,5.3,partial,"3 of 6 codes estimated, 1 only in part",4.A; 4.B; 4.C.1; 4.D
 Fuel exploitation (1B),17.54,3.4,partial,"1 of 2 codes estimated, 1 only in part",1.B.1; 1.B.2
-SUMMARY: magnitude ratio,444.96,86.5,magnitude,,this inventory over EDGAR's total; not a completeness measure
+SUMMARY: magnitude ratio,444.61,86.4,magnitude,,this inventory over EDGAR's total; not a completeness measure
 SUMMARY: scope fully represented,,11.0,scope,,"share of EDGAR's magnitude in domains where every mapped IPCC category is E, IE or NO"
 SUMMARY: scope partially represented,,89.0,scope,,"share in domains carrying at least one NE category, named per row"
 SUMMARY: scope absent,,0.0,scope,,share with no estimate at all

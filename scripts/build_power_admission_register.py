@@ -94,6 +94,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 from pkinv.assets import asset_path
 
 from pkinv.core import air_factors, sulfur                                   # noqa: E402
+from pkinv.core.reporting_window import CORE_FY_STARTS                         # noqa: E402
 from pkinv.core.io import read_rows, write_or_check                          # noqa: E402
 from pkinv.sectors.power import heat_rate as heat_rate_module                # noqa: E402
 from pkinv.sectors.power.data import PowerData                               # noqa: E402
@@ -102,7 +103,7 @@ from pkinv.sectors.power.point_sources import (ALIAS, HSD_KG_PER_L,          # n
                                                RFO_NCV_TJ_PER_GG, equipment_class)
 
 OUT = asset_path(ROOT, "data", "activity", "power", "power_so2_admission.csv")
-PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024))
+PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS)
 LEDGER_PERIODS = frozenset(PERIODS[4:])          # FY2019-20.. , where a metered quantity exists
 FUELS = ("RFO", "HSD")
 KJ_PER_KWH = 3600.0
@@ -257,6 +258,10 @@ def national_rfo_heat_rates():
     data = PowerData()
     out = {}
     for year in heat_rate_module.overlap_years(data):
+        if int(year) >= 2019:
+            # Later records use physical station fuel; no fleet heat-rate
+            # calculation is needed to admit them or infer their consumption.
+            continue
         for row in heat_rate_module.implied(data, year):
             if row["fuel"] == "Furnace Oil":
                 out[int(year)] = (row["heat_rate_kJ_per_kWh"], row["verdict"])
@@ -294,10 +299,13 @@ def ledger_systems(names):
 def ledger_fuels_by_station(names):
     """{station: {fuels the ledger ever names for it}} - the fuel-label conflict test.
 
-    The monthly panel labels a fuel per plant-month, and those labels are not always right:
-    it prints 2,955 GWh of RFO for Liberty Daharki, which the ledger meters as a GAS station
-    in every year it appears. A label that disagrees with the metered record is a question,
-    not an activity, so those rows become scenario_only. The test is only applied to stations
+    The monthly panel labels fuel per plant-month. A label that disagrees with a
+    matched station's metered record is unresolved, so the row is scenario_only.
+    Liberty Power Limited's company identity and capacity support Daharki, but its
+    SIR RFO label conflicts with the station fuel ledger and CPPA's separately
+    reported Liberty GAS entry. The alias does not establish RFO consumption;
+    unresolved rows remain scenario_only and do not enter central emissions.
+    The test is only applied to stations
     the ledger actually covers - a station it never lists is an absence of evidence, not a
     contradiction, and its panel label stands.
     """
@@ -320,11 +328,18 @@ def build():
     boiler_retention = 1.0 - boiler_per_pct / 20.0
 
     ledger_by = {}
-    for r in read_rows(asset_path(ROOT, "data", "activity", "power",
-                                    "plant_fuel_ledger.csv")):
+    ledger_records = read_rows(asset_path(ROOT, "data", "activity", "power", "plant_fuel_ledger.csv"))
+    # The new edition is a verified own-year physical consumption table. Keeping
+    # it separate preserves the old release's raw/transcribed source identities.
+    extra = asset_path(ROOT, "data", "sectors", "power", "activity", "plant_fuel_2024_25.csv")
+    if os.path.exists(extra) and not any(int(r["fiscal_year"]) == 2024 for r in ledger_records):
+        ledger_records.extend(read_rows(extra))
+    for r in ledger_records:
         if r["fuel"] in FUELS and r["quantity"]:
-            ledger_by[(station(r["plant"], names), r["fuel"],
-                       _period(int(r["fiscal_year"])))] = r
+            key = (station(r["plant"], names), r["fuel"], _period(int(r["fiscal_year"])))
+            if key in ledger_by:
+                raise ValueError("two physical fuel records for %r; select the authoritative edition explicitly" % (key,))
+            ledger_by[key] = r
 
     # ONE name space, so no station can be reached twice by two different spellings
     plants = {p for (p, _f, _y) in ledger_by} | {p for (p, _f, _y) in gen}
@@ -422,10 +437,16 @@ def _row(plant, t5, fuel, period, place, klass, station_type, dist, ledger_by, g
         r.update(activity_route="ledger_quantity", activity_quantity=q,
                  activity_unit=led["quantity_unit"],
                  activity_evidence_class="metered_fuel_quantity",
-                 activity_basis="NEPRA SoIR 2024 %s, quantity of %s consumed by this station in "
+                 activity_basis="%s, quantity of %s consumed by this station in "
                                 "this fiscal year, read directly - no heat rate, calorific value "
                                 "or efficiency stands between the document and the mass"
                                 % (led["source_table"], fuel))
+        if int(led["fiscal_year"]) == 2024:
+            r["generation_gwh"] = led.get("net_generation_GWh", "")
+            r["activity_basis"] += "; own FY2024-25 physical activity; equipment inherited only for the same reviewed station"
+            if led.get("estimate_status") != "verified":
+                r["activity_evidence_class"] = "reconstructed_fuel_quantity"
+                r["activity_basis"] += "; " + led.get("note", "")
         if led["quantity_unit"] == "000 t":
             mass_kt = q
         elif led["quantity_unit"] == "000 L":
@@ -532,8 +553,13 @@ def national_control(priced):
 def main():
     rows = build()
     check = "--check" in sys.argv
-    write_or_check(OUT, FIELDS, rows, check=check)
     priced = [r for r in rows if r["disposition"] == "provisional_estimate"]
+    controls = national_control(priced)
+    over = [(period, round(ratio, 3)) for period, _cppa, _ke, _national, ratio in controls if ratio > 1.0]
+    if over:
+        raise ValueError("admitted CPPA furnace oil exceeds the compatible national fuel control: %r" % over)
+    # Validate final candidate records before replacing the published panel.
+    write_or_check(OUT, FIELDS, rows, check=check)
     out = {}
     for r in priced:
         out[r["period_id"]] = out.get(r["period_id"], 0.0) + float(r["so2_Gg"])
@@ -542,16 +568,9 @@ def main():
     print()
     print("   %-10s %9s | %10s %9s %10s %7s" % ("period", "SO2 Gg", "RFO CPPA", "RFO K-E",
                                                 "national", "CPPA/n"))
-    over = []
-    for period, cppa, ke, national, ratio in national_control(priced):
+    for period, cppa, ke, national, ratio in controls:
         print("   %-10s %9.2f | %10.1f %9.1f %10.1f %7.3f"
               % (period, out.get(period, 0.0), cppa, ke, national, ratio))
-        if ratio > 1.0:
-            over.append((period, round(ratio, 3)))
-    if over:
-        sys.exit("the CPPA-side furnace oil exceeds the national supply in %s - a register that "
-                 "burns more fuel than the country delivered is double counting, which is how "
-                 "the first build of this file was caught" % over)
 
 
 if __name__ == "__main__":

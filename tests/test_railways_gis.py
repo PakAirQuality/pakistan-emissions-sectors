@@ -124,7 +124,7 @@ class TestReconciliation(unittest.TestCase):
         with; it must not drift from what the spatial model computes."""
         from pkinv.sectors.railways.gis import run_gis
         fresh = run_gis.province_shares(self.grid, self.surf)
-        row = downscale.load_shares()[downscale.PROXY]
+        row = downscale.load_shares()["railways_route_model"]
         for p, v in fresh.items():
             self.assertAlmostEqual(row[p], v, places=4, msg=p)
 

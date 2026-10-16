@@ -1,32 +1,5 @@
-% ===========================================================================
-% PakEmis v1.0: an evidence-graded public-data reconstruction of Pakistan's non-LULUCF
-% greenhouse-gas emissions, FY2015-16 to FY2023-24
-%
-% Target journal: Earth System Science Data (Copernicus), regular data-description article.
-% Document class: copernicus (essd, manuscript = one column with line numbers), vendored in
-% paper_common/copernicus/ (VENDORED.md records the version and digest). latexmk finds it
-% through the TEXINPUTS/BSTINPUTS the Makefile exports; CI copies it beside this file.
-%
-% FILE-PRESERVING RE-TARGETING (Wave 4, part A). Every section fragment under sections/
-% keeps its path: the claims tests key on those paths. The ESSD sections are CONTAINERS
-% (sections/20_scope.tex ... 70_usage_notes.tex) that own the \section heading and input
-% the fragments; the two structure macros below decide what a fragment's own \section
-% line becomes. The prose itself is rewritten in the next pass, not here.
-%
-% Section map (docs/essd_outline.md):
-%   1 Introduction                     01_introduction (lead) + 02_related_work
-%   2 Dataset scope and architecture   20_scope: 03_architecture (lead) + 09_completeness
-%   3 Source data and processing       30_sources (pointer to the source register products)
-%   4 Dataset generation               40_generation: 06_results (lead) + 04_closures + 07_uncertainty
-%   5 Data records                     50_data_records: generated_products + generated_coverage
-%   6 Technical validation             60_validation: 10_benchmarks (lead) + 08_key_categories
-%   7 Usage notes and limitations      70_usage_notes: 12_limitations (lead) + 11_discussion
-%   8 Conclusions                      13_conclusion (lead)
-%   Data availability / Code availability   generated/availability.tex (from the manifest)
-% Supplement (supplement.tex, article class): S1 air beta, S2 key categories (pointer),
-%   S3 05_factor_tables, S4 14_appendix, S5 generated/claim_matrix.
-% ===========================================================================
-
+% Maintained technical report for the joint GHG/air release.
+% Core: July2015--June2025; FY2026 source extensions separate.
 \documentclass[essd, manuscript]{copernicus}
 
 % The shared shorthand (gas names, units, the \_ break). NOT preamble.tex: the class loads
@@ -40,6 +13,7 @@
 \usepackage{booktabs}
 \usepackage{enumitem}
 \input{../../../paper_common/macros}
+\input{../v3/generated/integrated_facts}
 % Cross-document references. Two fragments moved to the supplement (05_factor_tables,
 % 14_appendix) still carry labels this article's fragments \ref, and vice versa; xr
 % resolves them from the companion's .aux until the next pass replaces every such \ref
@@ -82,41 +56,13 @@
 % so they stay in this file and the generated statement calls them in.
 % ---------------------------------------------------------------------------
 \newcommand{\pkinvDataTerms}{%
-Redistribution rights are a property of each source document rather than of this
-project---and the OpenStreetMap-derived geometry tables and rasters (landfill polygons, the
-rail network and yards, the road-density and building-fraction diagnostics, and \num{71} rows of the
-facility registry, each flagged in its \texttt{licence} column) are \emph{derivative
-databases} under ODbL~1.0 rather than CC-BY: ODbL's own distinction, under which a rendered
-map is a produced work needing only attribution but an extracted coordinate table remains a
-database and keeps ODbL's share-alike terms. \texttt{LICENSE-data} lists every such file.
-\texttt{data/catalog/source\_documents.csv} classifies all \num{217} activity files as archived
-(\num{153}), derived from an archived source (\num{52}) or citing at least one document this
-project has not kept (\num{12}), and a not-archived file must carry a gap-register row saying
-so; \texttt{data/catalog/cited\_documents.csv} names, for each cited document, the file that
-holds it. The
-source documents themselves are not redistributed: the source register names each one,
-records its hash and says where its publisher provides it.}
-
+Product-specific licences and source custody are recorded in the release package. The primary geographic products exclude ODbL-derived effects at calculation time; preserved alternative database/geographic products retain their separate obligations. Source documents are named, located and hashed, without assuming that reading public information grants republication rights. A local review package is prepared; an external repository review deposit and persistent identifier remain pending.}
 \newcommand{\pkinvCodeTerms}{%
-The inventory engine, the activity data, the emission-factor tables and every output file
-quoted in this paper are in a single repository
-(\url{https://github.com/RehanAhmad13/pakistan-emissions-sectors}); the reproduction
-procedure is Supplement~S4. Every number printed here is read from a generated CSV rather
-than transcribed, and a test suite asserts that the manuscript and the engine agree.
-This paper describes release \texttt{1.0.0rc67} of PakEmis, schema
-\texttt{pkinv.release/v1}. The release is identified by
-\texttt{outputs/release\_manifest.json}, which records the commit, the reporting period, the
-baseline configuration, both national totals, and a SHA-256 for every activity file the run
-read; each technical note reproduces that block on its first page, so a printed document
-always says which release it documents. Reproduction is
-\texttt{pip install -e .} followed by \texttt{make sectors}, \texttt{make national} and
-\texttt{make papers}, and continuous integration runs exactly that sequence and then diffs
-the regenerated outputs against the committed ones.}
+Source code is maintained at \url{https://github.com/PakAirQuality/pakistan-emissions-sectors}. This technical report describes PakEmis \PakEmisRelease, with exact code version, product hashes and reproduction level in the manifest/build record. Principal quantities are generated from current native data products. The national data-description article and maintained sector notes describe the same scope and configurations.}
 
 \begin{document}
 
-\title{PakEmis v1.0: an evidence-graded public-data reconstruction of Pakistan's non-LULUCF
-greenhouse-gas emissions, FY2015--16 to FY2023--24}
+\title{PakEmis \PakEmisRelease: technical account of greenhouse-gas and air-pollutant emissions in Pakistan, July 2015--June 2025}
 
 \Author[1][rehan@pakairquality.com]{Rehan}{Ahmad}
 
@@ -124,7 +70,7 @@ greenhouse-gas emissions, FY2015--16 to FY2023--24}
 
 \correspondence{Rehan Ahmad (rehan@pakairquality.com)}
 
-\runningtitle{PakEmis v1.0}
+\runningtitle{PakEmis integrated technical report}
 \runningauthor{Ahmad}
 
 \received{}
@@ -182,6 +128,9 @@ greenhouse-gas emissions, FY2015--16 to FY2023--24}
 documents, wrote the engine and its tests, produced the data records and wrote the paper.}
 
 \competinginterests{The author declares no competing interests.}
+
+\input{../../../paper_common/release_cover}
+\ReleaseCover
 
 \bibliographystyle{copernicus}
 \bibliography{../../../paper_common/references}

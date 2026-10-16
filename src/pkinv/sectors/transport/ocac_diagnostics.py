@@ -18,9 +18,11 @@ FOUR CHECKS, ONE OF WHICH IS NOT INDEPENDENT AND SAYS SO:
 
 2. Customer classes against the printed national total, every annual edition. This is
    where the interesting failure lives: FY2017-18's HSD classes sum 521,822 t short of
-   the total the same page prints - the only such failure in nine editions - and that
-   edition is precisely the one that sets the LOW end of the nine-year road-share
-   envelope the paper publishes as a boundary case.
+   the total the same page prints - the only such failure in the annual editions. Until
+   rc68 the core carried that short first print, and it set the LOW end of the road-share
+   envelope the paper publishes as a boundary case. The FY2018-19 edition restores exactly
+   that amount to Road; the core now carries the restatement (ocac_corrections.py), and
+   this check reports the first print as the non-additive page it was.
 
 3. Provincial additivity in the monthly editions. KARACHI is nested inside SINDH in
    this publication and must be excluded from the sum, which is the kind of thing that
@@ -120,6 +122,15 @@ def annual_vs_monthly(annual=None, provincial=None):
     return out
 
 
+def _declared_first_print(fy, product):
+    """(gap, sector row, restating edition) for a declared first-print correction, or None."""
+    from pkinv.sectors.transport.ocac_corrections import DECLARED_PUBLISHER_CORRECTIONS
+    for (year, _section, row_name, prod), rec in DECLARED_PUBLISHER_CORRECTIONS.items():
+        if str(year) == str(fy) and prod == product:
+            return rec["gap_tonnes"], row_name, rec["restated_in"].split(" ")[0]
+    return None
+
+
 def classes_vs_total(annual=None):
     """Check 2: customer-class rows against the national total the same page prints."""
     annual = _rows(ANNUAL) if annual is None else annual
@@ -140,6 +151,21 @@ def classes_vs_total(annual=None):
                           if r["sector_row"] in CUSTOMER_CLASSES
                           and r["product"] == product)
             if not printed:
+                continue
+            first_print = _declared_first_print(fy, product)
+            if first_print is not None:
+                # The core carries the next edition's restatement, so the classes read here
+                # add up; the page as first printed did not, and that is the evidence.
+                gap, row_name, restated_in = first_print
+                classes -= gap
+                rel = abs(100.0 * (classes - printed) / printed)
+                out.append(_row(
+                    "classes vs printed total", fy, product, total_row, classes,
+                    printed, "yes", "NON-ADDITIVE",
+                    "as first printed, the edition's customer classes fall %.0f t short of "
+                    "the total it prints; %s restores exactly that amount to %s, and the "
+                    "core carries the restated figure (a declared publisher correction, "
+                    "pkinv.sectors.transport.ocac_corrections)" % (gap, restated_in, row_name)))
                 continue
             rel = abs(100.0 * (classes - printed) / printed)
             out.append(_row(

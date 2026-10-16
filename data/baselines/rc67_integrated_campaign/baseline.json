@@ -1,0 +1,245 @@
+{
+  "commit": "3db0d658294dae1e6c760844df167daf7938fd65",
+  "files": [
+    {
+      "bytes": 3442755,
+      "path": "data/shared/activity/monthly/pbs_minerals_month_province.csv",
+      "sha256": "06a9f265ba7b50dec99ce73ac4d279f68674aea29eeef88ab87343caa36e1b02"
+    },
+    {
+      "bytes": 6839,
+      "path": "data/sectors/power/activity/coal_energy_booking.csv",
+      "sha256": "e4d60e00ef77f38b6d43fc5bc38575a1e0ea789415e237978a62017ff5f19c0d"
+    },
+    {
+      "bytes": 26457,
+      "path": "data/sectors/industry/activity/coal_by_consumer.csv",
+      "sha256": "706f74dd2639695add60d59c7720b4968b4463df57c19796d1a9b4dcba8b0357"
+    },
+    {
+      "bytes": 38833,
+      "path": "data/shared/metadata/air_source_classes.csv",
+      "sha256": "d08abbd16cecd2c013216f061c86300f5c202aee6bcb24ace760ea492be62131"
+    },
+    {
+      "bytes": 223713,
+      "path": "outputs/release_manifest.json",
+      "sha256": "13462fb4c2d1ea627fa5b355ac614c0da64161d94ef6063594afa469ed0e6060"
+    },
+    {
+      "bytes": 303,
+      "path": "outputs/national_totals_2024.csv",
+      "sha256": "148da2ec43279d7126fcedd0dcc9c5f0146177c969636873fb8422c258e1c360"
+    },
+    {
+      "bytes": 2468,
+      "path": "outputs/national_all_sectors.csv",
+      "sha256": "ef3b34eaa537d3e2082c769e5aafbbd5b2a5091f908102ff00bc515fb3272046"
+    },
+    {
+      "bytes": 23656,
+      "path": "outputs/national_configurations.csv",
+      "sha256": "c71fa429f5225ebd776e1b4272778dbeecc043d675d989f0e1f637fad6826fec"
+    },
+    {
+      "bytes": 20554,
+      "path": "outputs/national_uncertainty_montecarlo.csv",
+      "sha256": "d1c61e504de80bc80d31ab2651a964c5d8e7f580f8fca710d26bdf89d6c7c83f"
+    },
+    {
+      "bytes": 152358,
+      "path": "outputs/national_uncertainty_parameters.csv",
+      "sha256": "921d8f89028abd7e7cecea28a56dee2402646be801f8a19b99d7e2b95fa08f49"
+    },
+    {
+      "bytes": 666329,
+      "path": "outputs/pakemis_atomic_annual.csv",
+      "sha256": "13aec3687d73d16517ac4a8ec8155967996bd3fcbfac8fc51ad1f731088c5b9e"
+    },
+    {
+      "bytes": 25491,
+      "path": "outputs/pakemis_national_series.csv",
+      "sha256": "b67cdbe83510f05dc06a892398bc1134a10e5eb4b6f485de50c98d751df59236"
+    },
+    {
+      "bytes": 65157,
+      "path": "outputs/pakemis_annual_fy2015_16_fy2023_24.csv",
+      "sha256": "5b740345303729158307fd9d654b55a108ef0edd8db8c21f71b389d2cfe52550"
+    },
+    {
+      "bytes": 7517819,
+      "path": "outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
+      "sha256": "715975ce1f190f76d9e3996474a6a37daeec67594087b694844c565c19408b0d"
+    },
+    {
+      "bytes": 1468563,
+      "path": "outputs/pakemis_air_atomic_annual.csv",
+      "sha256": "545885ef96264cd8ff97128a3bf94f7ac5978904e5ad41af96cf27d066104972"
+    },
+    {
+      "bytes": 149112,
+      "path": "outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv",
+      "sha256": "daac22e633f5681b2ed50f11020b23ace7c73025f8866151a0f7f06b1deedb1f"
+    },
+    {
+      "bytes": 58935,
+      "path": "outputs/pakemis_air_coverage_matrix.csv",
+      "sha256": "16dd711fa9779775aa19a1bb4454947a7fc7178a6a2699cd28b6717e24744e84"
+    },
+    {
+      "bytes": 13170,
+      "path": "outputs/pakemis_air_uncertainty_split_by_year.csv",
+      "sha256": "dcebb0409cb9650dd07cee0d836126fc1bb5806cb77f3ab9fc3daa3bf749c17a"
+    },
+    {
+      "bytes": 422502,
+      "path": "outputs/pakemis_monthly_coverage.csv",
+      "sha256": "8b4f86039544ab489232e764ad57ccc9d6d26d255c9ac2efefe939ddb1ac64ef"
+    },
+    {
+      "bytes": 9779,
+      "path": "outputs/pakemis_monthly_coverage_summary.csv",
+      "sha256": "ade53485d7be81ee54b579a14c657cae6a92cb3ba070681298a4dc54cedc1272"
+    },
+    {
+      "bytes": 1453963,
+      "path": "outputs/pakemis_spatial_weights_by_year.csv",
+      "sha256": "3c789ab95fc97e3cf14ce3047ff6accc949378776fc8437ae6301bf0e861d566"
+    },
+    {
+      "bytes": 453980,
+      "path": "outputs/pakemis_spatial_unallocated_by_year.csv",
+      "sha256": "e928c357eb12169535fc4d9302feacac4402f9ed0b75acd73d130a51a0df00c8"
+    },
+    {
+      "bytes": 1311062,
+      "path": "outputs/pakemis_adm1_by_year.csv",
+      "sha256": "65f249d26431433b3be69874017c75065bbde2f12d8c6c2b5c63b0d9d9d948f5"
+    },
+    {
+      "bytes": 1044058,
+      "path": "outputs/pakemis_adm2_by_year.csv",
+      "sha256": "d0ae0611a63dbd87a2abcdd40da4d5d83adcc362ecdc46b0cf745ac920b58c76"
+    },
+    {
+      "bytes": 4637,
+      "path": "outputs/pakemis_trend_uncertainty.csv",
+      "sha256": "4117043ddb1611379187490333a666955804dc1f75da9dc3e6e730b6b45b6fc8"
+    },
+    {
+      "bytes": 5164,
+      "path": "outputs/pakemis_longitudinal_uncertainty.csv",
+      "sha256": "5d3afd441b64dce02857b6f4861143c518944e0d5733e9d7d2efc69498810a63"
+    },
+    {
+      "bytes": 17855,
+      "path": "outputs/pakemis_minerals_panel_screening.csv",
+      "sha256": "b55396e32f170ad2e4c702ae08bf6867e0609863007fea7ea7d3d002a9ae6256"
+    },
+    {
+      "bytes": 624,
+      "path": "outputs/pbs_minerals_parse_summary.csv",
+      "sha256": "83402fbf8423644fa23c9f7e8784af8c69f61590d017d67bcad9f30ab440a987"
+    },
+    {
+      "bytes": 63827,
+      "path": "outputs/pakemis_power_fuel_reconciliation.csv",
+      "sha256": "06db4690651fb79fdf73ca20d152a4c8f00a02bcca428246016e40da3af73762"
+    },
+    {
+      "bytes": 18279,
+      "path": "outputs/pakemis_power_coal_configurations.csv",
+      "sha256": "069a98354730802f62a52b49d8d515254fc4e0759f80ca469e7d70ef500ba7ab"
+    },
+    {
+      "bytes": 16100,
+      "path": "outputs/pakemis_coal_balance.csv",
+      "sha256": "c92ae9c0eb2bd8aef939a78495b03888ddf26bb886fedb163a4d6d316aa89ab4"
+    },
+    {
+      "bytes": 5536,
+      "path": "outputs/pakemis_coal_sector_reallocation.csv",
+      "sha256": "aff5c38726cbecfc9dc6f0743aba0d8564651853834500fa9ba7b1e04c469787"
+    },
+    {
+      "bytes": 2281,
+      "path": "outputs/n_ledger_2024.csv",
+      "sha256": "da7522f9ee0ca7742f9288a46e5e1153f2322e3464b12c2aa654a98895331da5"
+    },
+    {
+      "bytes": 8731209,
+      "path": "outputs/pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc",
+      "sha256": "da7acffe93c3960ac8372519904ee0c6657eb21d9e9fb59c10a07e3b092db980"
+    },
+    {
+      "bytes": 8679075,
+      "path": "outputs/pakemis_air_grid_0p05_annual_ledger_fy2015_16_fy2023_24.nc",
+      "sha256": "77d7925341831b8f3fca5bc36b801c315c849fc7e1c6d845b3fc3d8aa4c0eefc"
+    },
+    {
+      "bytes": 9503449,
+      "path": "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc",
+      "sha256": "659f74005ff51ec05c0113e03672422e8eb4f56a1f3fe4b3622e5caaeeb166f8"
+    },
+    {
+      "bytes": 6525769,
+      "path": "outputs/pakemis_grid_0p05_monthly.nc",
+      "sha256": "20f876bf3f5bfca008d5c0e100ed7d82d15d95bdd2bbc46a9da4b347bbf1f07f"
+    },
+    {
+      "bytes": 3951092,
+      "path": "outputs/pakemis_grid_0p05_monthly_ledger.nc",
+      "sha256": "27679f5f9d19535387bf347c479f95b03e0463501e13a4614e23fb087d40d1ff"
+    },
+    {
+      "bytes": 3036069,
+      "path": "outputs/pakemis_grid_0p1_edgar_aligned.nc",
+      "sha256": "c8f87e2bb3ade04e7d8de161d9045e813ec2194defcbbe981e13fdb9b46f32e8"
+    },
+    {
+      "bytes": 67937,
+      "path": "paper_national/versions/v3/paper.tex",
+      "sha256": "9ad5dce2b73828485186212a53baffda0ec6ccf48cc55522b664b495b00a08ce"
+    },
+    {
+      "bytes": 613418,
+      "path": "paper_national/versions/v3/paper.pdf",
+      "sha256": "8af55e4a150ad580b103ba9312500cdb73a675cb4cf04fe10e4a072b59a9bb83"
+    },
+    {
+      "bytes": 564,
+      "path": "paper_national/versions/v3/submission.tex",
+      "sha256": "ec5da001969981e10ed3898dfc51d006e2022ee850be3fa2a21be797e6762eab"
+    },
+    {
+      "bytes": 610927,
+      "path": "paper_national/versions/v3/submission.pdf",
+      "sha256": "070f872913fa81c8547793dae8cbed2a6c43feca7e7d360b04ece9e910a7d79e"
+    },
+    {
+      "bytes": 76188,
+      "path": "paper_national/versions/v3/technical_supplement.tex",
+      "sha256": "485c16094a3ed94a7552ccd9f6033b70eed5c8dd9467348b0257b2c1c0944592"
+    },
+    {
+      "bytes": 298747,
+      "path": "paper_national/versions/v3/technical_supplement.pdf",
+      "sha256": "934c7d7dc811852246e94ab3841b4b963b9486a44de12ad9dc1f83ceca7c07dd"
+    },
+    {
+      "bytes": 998427,
+      "path": "papers/pdf/national_paper.pdf",
+      "sha256": "8c48b732222c1d90151fa3f2fb3db17f7d3cd70ddb584b930586c86d919aea36"
+    },
+    {
+      "bytes": 524356,
+      "path": "papers/pdf/national_supplement.pdf",
+      "sha256": "d359ed02cada356d3e45f3ab422bc61db751ca7c772379d3e5c7f220d7705700"
+    }
+  ],
+  "not_present": [
+    "outputs/agriculture_air_pollutants_2024.csv"
+  ],
+  "scope": "baseline only; ODbL-derived spatial databases retain upstream terms",
+  "version": "1.0.0rc67"
+}

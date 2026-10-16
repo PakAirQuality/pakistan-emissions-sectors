@@ -48,7 +48,8 @@ class TestTheRealBuildIsConsistent(unittest.TestCase):
         # rc41: the ADM2 registry phase rewrites only what differs (a rerun is byte-identical
         # and touches nothing), so like the figure sync it is checked for existence only
         self.assertEqual([p.label for p in run_all.PHASES if p.idempotent],
-                         ["ADM2 reporting units", "Compatibility input views", "Canonical activity tables",
+                         ["ADM2 reporting units", "Residential own-year degree-days",
+                          "Compatibility input views", "Canonical activity tables",
                           "Semantic release", "Sync paper figures"])
 
 

@@ -14,7 +14,7 @@ denominator pointers), how documents may print it (rounding), and which document
 allowed to state it (allowed_documents). This module then enforces four directions:
 
   1. the row RESOLVES - the pointer arithmetic reproduces a value from the output;
-  2. every ALLOWED document states that value, via the per-claim patterns below;
+  2. every manuscript-active or historical comparison states its source value;
   3. no OTHER manuscript states a CONFLICTING value for the same pattern - the
      cross-document direction that caught nothing until this file existed;
   4. banned phrasings tied to a claim (a superseded period label, a future-work
@@ -22,6 +22,8 @@ allowed to state it (allowed_documents). This module then enforces four directio
 
 The patterns live here rather than in the CSV because they are regex mechanics, not
 semantics; the CSV stays readable by machines that are not this test suite.
+Explicit product-only claims retain numerical source checks and a reason why their
+former headline prose is absent. Historical comparisons remain checked where printed.
 
 POINTER GRAMMAR (numerator / denominator):
   file.csv#key=value#column          one cell (keys may be comma-joined: k1=v1,k2=v2)
@@ -36,8 +38,10 @@ Empty numerator marks a label claim (no arithmetic; patterns and bans still appl
 from pkinv.assets import asset_path
 import csv
 import os
+from pathlib import Path
 import re
 import unittest
+from unittest.mock import patch
 
 from paper_numbers import _common as tpn
 from pkinv.core.io import read_rows
@@ -48,7 +52,8 @@ REGISTRY = asset_path(ROOT, "data", "claims_registry.csv")
 
 COLUMNS = ["claim_id", "release_id", "reporting_period", "scenario", "numerator",
            "denominator", "unit", "scope", "comparator_period", "comparator_scope",
-           "rounding", "authoritative_output", "allowed_documents"]
+           "rounding", "authoritative_output", "allowed_documents", "claim_status", "status_reason"]
+STATUSES = {"current_manuscript", "current_product_only", "historical_comparison"}
 
 # --------------------------------------------------------------------------------------
 # Per-claim appearance patterns. Each entry is a list of alternates; a document "states
@@ -69,8 +74,10 @@ PATTERNS = {
         r"road-transport ratio from \\num\{\d+\} to \\num\{(\d+)\}",
     ],
     "district_base_census_frame": [
-        r"over (\d+) census districts",
-        r"covering\s*\\num\{(\d+)\} districts, with the 2023 census",
+        r"over\s*(?:\\num\{)?(\d+)\}? allocation units",
+    ],
+    "population_panel_district_units": [
+        r"population panel covers\s*\\num\{(\d+)\} district units",
     ],
     "district_base_provincial_scope": [
         r"(?:\\num\{)?(\d+)\}? four-province districts",
@@ -158,10 +165,15 @@ def _resolve_pointer(ptr):
     """One cell: file.csv#k1=v1,k2=v2#column. Files resolve under outputs/."""
     fname, keys, col = ptr.split("#")
     matchers = _parse_matchers(keys)
-    for r in _read_rows(os.path.join(OUT, fname)):
-        if all(r[k] == v for k, v in matchers):
-            return float(r[col])
-    raise KeyError(ptr)
+    matches = [r for r in _read_rows(os.path.join(OUT, fname))
+               if all(r[k] == v for k, v in matchers)]
+    if len(matches) != 1:
+        raise AssertionError("claim pointer must resolve exactly one row: %s (%d matches)" % (ptr, len(matches)))
+    return float(matches[0][col])
+
+
+def _table_path(name):
+    return asset_path(ROOT, name) if name.startswith("data/") else os.path.join(OUT, name)
 
 
 def _resolve(expr):
@@ -175,11 +187,11 @@ def _resolve(expr):
         return float(len(_read_rows(full)))
     if expr.startswith("count_unique_excl_residual:"):
         fname, col = expr[len("count_unique_excl_residual:"):].split("#")
-        return float(len({r[col] for r in _read_rows(os.path.join(OUT, fname))
+        return float(len({r[col] for r in _read_rows(_table_path(fname))
                           if "residual" not in r[col]}))
     if expr.startswith("count_unique:"):
         fname, col = expr[len("count_unique:"):].split("#")
-        return float(len({r[col] for r in _read_rows(os.path.join(OUT, fname))}))
+        return float(len({r[col] for r in _read_rows(_table_path(fname))}))
     if expr.startswith("max_abs:"):
         fname, col = expr[len("max_abs:"):].split("#")
         return max(abs(float(r[col])) for r in _read_rows(os.path.join(OUT, fname)))
@@ -207,7 +219,7 @@ def _doc_text(doc):
         if name == doc:
             main = tpn._main_tex(root, mainname)
             texts = [main] + tpn._inputs_of(main, root)
-            return "\n".join(open(p, encoding="utf-8").read()
+            return "\n".join(Path(p).read_text(encoding="utf-8")
                              for p in texts if os.path.exists(p))
     raise KeyError("unknown document %r" % doc)
 
@@ -229,7 +241,7 @@ def _as_float(captured):
 
 
 class TestClaimsRegistry(unittest.TestCase):
-    def test_schema_is_exactly_the_reviewer_columns(self):
+    def test_schema_retains_scope_provenance_and_explicit_claim_status(self):
         with open(REGISTRY, newline="", encoding="utf-8") as f:
             header = next(csv.reader(f))
         self.assertEqual(header, COLUMNS)
@@ -238,12 +250,13 @@ class TestClaimsRegistry(unittest.TestCase):
         self.assertEqual(len(ids), len(set(ids)), "duplicate claim_id")
         for r in rows:
             for col in ("claim_id", "release_id", "scope", "authoritative_output",
-                        "allowed_documents"):
+                        "allowed_documents", "status_reason"):
                 self.assertTrue(r[col].strip(),
                                 "%s: empty %s" % (r["claim_id"], col))
             if r["numerator"].strip():
                 self.assertTrue(r["rounding"].strip(),
                                 "%s: numeric claim with no rounding" % r["claim_id"])
+            self.assertIn(r["claim_status"], STATUSES, r["claim_id"])
 
     def test_release_id_is_the_current_version(self):
         """A registry describing a previous release is a registry describing nothing:
@@ -273,6 +286,8 @@ class TestClaimsRegistry(unittest.TestCase):
         for r in _registry():
             if r["claim_id"] not in PATTERNS or not r["numerator"].strip():
                 continue
+            if r["claim_status"] == "current_product_only":
+                continue
             expected = round(_resolved_value(r), int(r["rounding"]))
             half_ulp = 0.5 * 10 ** -int(r["rounding"]) + 1e-9
             for doc in r["allowed_documents"].split(";"):
@@ -286,6 +301,24 @@ class TestClaimsRegistry(unittest.TestCase):
                         problems.append("%s: %s prints %s, engine resolves %s"
                                         % (r["claim_id"], doc, c, expected))
         self.assertFalse(problems, "\n  " + "\n  ".join(problems))
+
+    def test_product_only_claims_keep_source_checks_without_requiring_retired_prose(self):
+        for row in _registry():
+            if row["claim_status"] != "current_product_only":
+                continue
+            self.assertTrue(row["numerator"].strip())
+            self.assertTrue(row["status_reason"].strip())
+            self.assertTrue(abs(_resolved_value(row)) < 1e12)
+            for doc in row["allowed_documents"].split(";"):
+                self.assertFalse(_captures(_doc_text(doc), PATTERNS[row["claim_id"]]),
+                                 "%s reappeared in %s; review its current scope and status" % (row["claim_id"], doc))
+
+    def test_historical_comparison_is_explicit_and_still_appears_at_its_source_value(self):
+        historical = [r for r in _registry() if r["claim_status"] == "historical_comparison"]
+        self.assertEqual({r["claim_id"] for r in historical}, {"transport_edgar_superseded_ratio"})
+        for row in historical:
+            self.assertIn("superseded", row["scope"])
+            self.assertIn("rc4", row["status_reason"])
 
     def test_no_other_manuscript_states_a_conflicting_value(self):
         """Direction 3, the one that caught nothing until now: a manuscript OUTSIDE
@@ -348,6 +381,12 @@ class TestPointerGrammarSurvivesCommaValues(unittest.TestCase):
     def test_a_leading_bare_segment_is_an_error(self):
         with self.assertRaises(ValueError):
             _parse_matchers("no-equals-here,a=1")
+
+    def test_a_numeric_pointer_cannot_silently_select_the_first_duplicate(self):
+        with patch(__name__ + "._read_rows", return_value=[{"key": "a", "value": "1"},
+                                                          {"key": "a", "value": "2"}]):
+            with self.assertRaisesRegex(AssertionError, "exactly one row"):
+                _resolve_pointer("source.csv#key=a#value")
 
 
 if __name__ == "__main__":

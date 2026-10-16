@@ -54,6 +54,11 @@ OIL_BASIS_COVERED = ("PBS monthly provincial crude-oil production, the year's ow
                      "months; times FIELD OUTPUT, not refinery intake")
 FLAT_BASIS_UNCOVERED = ("days-weighted: the PBS minerals panel does not cover this fiscal "
                         "year and one year's production shape is never carried to another")
+# rc68: a year the panel HOLDS but whose monthly cells were refused for source quality (the
+# FY2021-22 oil and gas tables) said "does not cover", which reads as an unread source.
+FLAT_BASIS_WITHDRAWN = ("days-weighted: the PBS minerals panel holds this fiscal year, but its "
+                        "monthly cells fail source-quality checks and their timing is withdrawn; "
+                        "the annual quantity is unaffected")
 
 
 def _is(prefixes):
@@ -72,7 +77,9 @@ def rows(data=None, fy_start=FY_START):
         shares, method_map, covered = pbs_minerals.profile_or_flat(mineral, fy_start)
         plans.append((_is(prefixes), shares,
                       lambda _c, m, _mm=method_map: _mm[m],
-                      covered_basis if covered else FLAT_BASIS_UNCOVERED))
+                      covered_basis if covered else (
+                          FLAT_BASIS_WITHDRAWN if pbs_minerals.withdrawn(mineral, fy_start)
+                          else FLAT_BASIS_UNCOVERED)))
     plans.append((lambda c: True, flat, "T4", FLAT_BASIS))
 
     out, seen = [], set()

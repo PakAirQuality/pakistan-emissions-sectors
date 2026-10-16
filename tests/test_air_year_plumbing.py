@@ -1,18 +1,11 @@
-"""The air layers honour the year they are asked about (air program Wave 1).
+"""Air engines retain source-year activities, rank, sulfur and fuel boundaries.
 
-Four engines already took a year; three defects kept the answers wrong off-reference:
-power applied the FY2023-24 lignite share to years when no Thar unit ran, dropped the
-year on bagasse, and passed a fiscal-START year straight into the fiscal-END captive
-panel (a silent one-year shift). Railways burned 500 ppm sulfur in years that
-circulated 0.5 percent fuel - the central case is now the year's own declared regime
-(data/activity/railways/diesel_sulfur_regime.csv). Residential's series slice
-generalises from PM2.5 alone to every species, keyed (stream, pollutant), absent -
-never zero - where the reference emits none. Aviation needed nothing: its fleet mix
-carries era rows back to 2006, asserted here so a future edit cannot silently shrink
-the span. Reference-year outputs are byte-identical throughout (the gate's regen
-asserts that; these tests pin the off-reference behaviour).
+Pre-Thar Lakhra is legitimately lignite rank; an energy share is not a geographic
+origin label. Captive fuel uses the fiscal-end source without a year shift and
+subtracts the same post-meter leakage share as GHG combustion. Annual sulfur
+specifications remain policy scenarios rather than measured compliance.
 
-Run:  python3 -m unittest discover tests -p "test_air_year_plumbing.py"
+Run: python3 -m unittest discover tests -p "test_air_year_plumbing.py"
 """
 import unittest
 
@@ -25,12 +18,13 @@ class TestPowerOffReference(unittest.TestCase):
         cls.data = PowerData()
         cls.ap = air_pollutants
 
-    def test_no_thar_lignite_before_the_fleet_existed(self):
+    def test_pre_thar_lakhra_is_not_mislabelled_as_thar_origin(self):
         rows = self.ap.compute(self.data, 2015)
-        lignite = [r for r in rows
-                   if "lignite" in r.get("fuel_detail", "").lower()
-                   and r["emissions_kt"] > 0]
-        self.assertEqual(lignite, [], "FY2015-16 coal carries Thar lignite mass")
+        coal = [r for r in rows if r["fuel"] == "Coal" and r["emissions_kt"] > 0]
+        self.assertTrue(coal)
+        self.assertEqual(self.data.coal_energy_lignite_share(2015), 1)
+        self.assertTrue(all("lignite-rank coal" in row["fuel_detail"] for row in coal))
+        self.assertTrue(all("Thar lignite" not in row["fuel_detail"] for row in coal))
 
     def test_the_reference_year_keeps_the_published_share(self):
         ref = {(r["fuel"], r["fuel_detail"], r["pollutant"]): r["emissions_kt"]
@@ -51,6 +45,7 @@ class TestPowerOffReference(unittest.TestCase):
         # The grid screening no longer carries captive at all (include_captive=False).
         from pkinv.sectors.industry import air_pollutants as ind
         from pkinv.sectors.power import captive
+        from pkinv.sectors.fugitives import post_meter
         ctx = ind.Context()
         cls = {c["source_class_id"]: c for c in ind.classes()}["captive_gas_engine"]
         fy_end = 2017
@@ -59,7 +54,8 @@ class TestPowerOffReference(unittest.TestCase):
         wrong_tj = captive.gas_TJ(ctx.power, year=fy_end - 1)
         self.assertNotAlmostEqual(tj, wrong_tj, places=0,
                                   msg="the two conventions coincide; pick another year")
-        self.assertAlmostEqual(m["TJ_ncv"], tj * float(cls["activity_share"]), places=6)
+        self.assertAlmostEqual(m["TJ_ncv"], tj * float(cls["activity_share"])
+                               * post_meter.combusted_fraction(), places=6)
         self.assertFalse([r for r in self.ap.compute(self.data, fy_end - 1)
                           if r["category"] == captive.CATEGORY])
 
@@ -72,8 +68,9 @@ class TestRailwaysSulfurRegime(unittest.TestCase):
         cls.data = RailwaysData()
         cls.ap = air_pollutants
 
-    def test_the_regime_is_declared_for_all_nine_panel_years(self):
-        for y in range(2016, 2025):
+    def test_the_regime_is_declared_for_all_core_years(self):
+        from pkinv.core.reporting_window import CORE_FY_ENDS
+        for y in CORE_FY_ENDS:
             self.assertIn(self.ap.case_for_year(y),
                           dict(self.ap.SULFUR_CASES))
 

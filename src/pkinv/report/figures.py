@@ -610,7 +610,7 @@ def national_series():
     between them is the visible fact: the full-scope line rises where sectors
     ENTER the record, the common-scope line only where emissions move."""
     series = _read("pakemis_national_series.csv")
-    annual = _read("pakemis_annual_fy2015_16_fy2023_24.csv")
+    annual = _read("pakemis_annual_fy2015_16_fy2024_25.csv")
     if not series or not annual:
         return None
     full = {r["period_label"]: float(r["co2e_Mt_AR5"])
@@ -803,12 +803,12 @@ def national_air_pollutants():
     # rc58/rc59: the register modules have no single-year layer of their own - their
     # reference-year PM2.5 is the nine-year panel's FY2023-24 slice (the same atoms, one
     # configuration)
-    panel = _read("pakemis_air_annual_fy2015_16_fy2023_24.csv")
+    panel = _read("pakemis_air_annual_fy2015_16_fy2024_25.csv")
     for sector in ("industry", "ippu", "fugitives"):
         total = sum(_num(r, "emissions_Gg") or 0.0
                     for r in panel
                     if r["sector_id"] == sector and r["pollutant"] == "PM2.5"
-                    and r["period_id"] == "FY2023-24" and r["configuration_id"] == "REF_2023_24")
+                    and r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN")
         items.append((labels[sector], total, AIR_ASSURANCE[sector]))
     items.sort(key=lambda kv: kv[1])
     plt = _plt()

@@ -23,7 +23,7 @@ from pkinv.paths import DATA, OUTPUTS
 # applied to streams riding a 2021 raster snapshot in FY2023-24. `interpolated_between_anchors`
 # and `nearest_vintage` are deliberately absent: no code path emits them, and an unemittable
 # value in a closed enum makes this test pass vacuously.
-BASES = ("annual_observed_activity", "static_structural",
+BASES = ("annual_observed_activity", "modelled_population_proxy", "calendar_activity_proxy", "reference_shape_forward", "static_structural",
          "reference_shape_backcast", "substituted_surface", "unallocated",
          "not_present")
 
@@ -56,7 +56,7 @@ class TestTheRegistryIsComplete(unittest.TestCase):
 
     def test_a_borrowed_row_names_the_period_it_borrowed_from_and_no_other_row_does(self):
         for row in self.reg:
-            if row["spatial_time_basis"] == "reference_shape_backcast":
+            if row["spatial_time_basis"] in ("reference_shape_backcast", "reference_shape_forward"):
                 self.assertTrue(row["borrowed_from_period"], row["source_stream_id"])
                 self.assertNotEqual(row["borrowed_from_period"], row["period_id"],
                                     row["source_stream_id"])
@@ -200,7 +200,7 @@ class TestTheRegistryDescribesTheBuild(unittest.TestCase):
     # period, and that is a WEAKER claim than annual_observed_activity, not a stronger one.
     # What this guard exists to catch - annual_observed_activity on a period the engine does
     # not key - is still caught exactly, because that value is in neither list.
-    NOT_A_YEAR_EVIDENCE_CLAIM = ("reference_shape_backcast", "static_structural",
+    NOT_A_YEAR_EVIDENCE_CLAIM = ("reference_shape_backcast", "reference_shape_forward", "modelled_population_proxy", "calendar_activity_proxy", "static_structural",
                                  "unallocated", "substituted_surface", "not_present")
 
     def test_no_year_but_the_reference_claims_evidence_the_engine_does_not_read(self):
@@ -318,21 +318,31 @@ class TestTheRegistryDescribesTheBuild(unittest.TestCase):
                    and r["period_id"] != "FY2023-24"
                    and r["spatial_time_basis"] != "not_present"]
         self.assertTrue(burning, "no field-burning rows to hold the raster claim on")
+        held_years = {r["acq_date"][:4] if int(r["acq_date"][5:7]) >= 7
+                      else str(int(r["acq_date"][:4]) - 1)
+                      for r in rows(asset_path(DATA, "gis", "manual", "firms_fire.csv"))}
         for row in burning:
             self.assertEqual(row["district_panel"], "",
                              "%s carries a district panel the category declined"
                              % row["source_stream_id"])
-            self.assertEqual(row["spatial_time_basis"], "annual_observed_activity",
-                             "%s %s: the FIRMS surface stopped carrying the year axis"
-                             % (row["source_stream_id"], row["period_id"]))
+            if row["period_id"][2:6] in held_years:
+                self.assertEqual(row["spatial_time_basis"], "annual_observed_activity")
+            else:
+                self.assertEqual(row["spatial_time_basis"], "substituted_surface")
+                self.assertEqual(float(row["substituted_share"]), 1.0)
         for row in self.reg:
             if row["period_id"] == "FY2023-24" or not row["district_panel"].startswith("agri:"):
                 continue
             if row["spatial_time_basis"] == "not_present":
                 continue
             if row["district_panel"] in YEAR_KEYED_PANELS:
-                self.assertEqual(row["spatial_time_basis"], "annual_observed_activity",
-                                 "%s %s: the crop panel stopped being read"
+                source_periods = {r["period_id"] for r in rows(asset_path(
+                    DATA, "activity", "agriculture", "crop_district_panel.csv"))
+                    if r["qa_flag"] != "excluded_corrupt" and r["adm2_id"]}
+                expected = ("annual_observed_activity" if row["period_id"] in source_periods
+                            else "reference_shape_forward")
+                self.assertEqual(row["spatial_time_basis"], expected,
+                                 "%s %s: class differs from usable crop-panel coverage"
                                  % (row["source_stream_id"], row["period_id"]))
             else:
                 # static_structural is admissible here for the same reason it is a

@@ -19,7 +19,8 @@ VINTAGES = asset_path(DATA, "activity", "industry", "coal_by_sector_vintages.csv
 LEDGER = os.path.join(OUTPUTS, "pakemis_coal_vintage_ledger.csv")
 POLICY = asset_path(DATA, "coal_booking_policy.csv")
 CONSUMERS = asset_path(DATA, "activity", "industry", "coal_by_consumer.csv")
-PERIODS = ["%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024)]
+from pkinv.core.reporting_window import CORE_FY_STARTS
+PERIODS = ["%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS]
 
 
 def rows(path):
@@ -112,7 +113,7 @@ class BookingPolicy(unittest.TestCase):
         self.assertEqual(sorted({(r["reference_fiscal_year"], r["consumer"]) for r in pol}),
                          sorted([(fy, c) for fy in PERIODS for c in ("brick_kilns", "cement")]))
         for r in pol:
-            self.assertIn(r["rule"], ("supplement_vintage", "older_vintage_closes_balance"))
+            self.assertIn(r["rule"], ("supplement_vintage", "older_vintage_closes_balance", "latest_full_year_revision"))
 
     def test_no_july_march_print_can_be_booked(self):
         prints = {r["estimate_id"]: r for r in rows(VINTAGES)}
@@ -122,6 +123,7 @@ class BookingPolicy(unittest.TestCase):
     def test_the_policy_reproduces_what_the_release_already_booked(self):
         """rc53 declares the choice; it does not change it. Every booked value equals the
         transcribed series to the gram, so no national number moves."""
+        source_prints = {r["estimate_id"]: r for r in rows(VINTAGES)}
         series = {(r["fiscal_year"], r["consumer"]): r for r in rows(CONSUMERS)
                   if r["revision_status"] in ("final", "provisional")}
         for fy in PERIODS:
@@ -130,6 +132,14 @@ class BookingPolicy(unittest.TestCase):
                 if rule == "older_vintage_closes_balance":
                     self.assertEqual((fy, consumer), ("2015-16", "brick_kilns"))
                     self.assertAlmostEqual(kt, 3337.102, places=3)
+                    continue
+                if rule == "latest_full_year_revision":
+                    source = source_prints[estimate_id]
+                    self.assertEqual(source["reference_fiscal_year"], fy)
+                    self.assertEqual(source["period_coverage"], "full_year")
+                    self.assertEqual(source["edition_year"], "2026")
+                    self.assertEqual(source["table_id"], "annex Table 14.1 sec.4")
+                    self.assertAlmostEqual(kt, float(source["value"]), places=6)
                     continue
                 self.assertAlmostEqual(kt, float(series[(fy, consumer)]["coal_kt"]), places=6,
                                        msg="%s %s booked %s" % (fy, consumer, estimate_id))

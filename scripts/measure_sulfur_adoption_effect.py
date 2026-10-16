@@ -55,6 +55,7 @@ from pkinv.core.io import write_or_check  # noqa: E402
 OUT = asset_path(ROOT, "outputs", "pakemis_sulfur_adoption_effect.csv")
 DEFAULT_BASELINE = asset_path(ROOT, "data", "baselines", "pre_rc63_sulfur_adoption")
 DEFAULT_CANDIDATE = asset_path(ROOT, "data", "baselines", "post_rc63_sulfur_adoption")
+# These are immutable rc63/rc66 comparison snapshots, not the current core panel.
 CLASSES = "pakemis_air_source_classes_fy2015_16_fy2023_24.csv"
 LAHORE = "pakemis_air_lahore_by_year.csv"
 CONFIG = "REF_2023_24"

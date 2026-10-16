@@ -33,14 +33,14 @@ def co2e_Mt(gas, emissions_Gg, ar):
     return gwp.to_co2e(gas, emissions_Gg, ar) / 1000.0
 
 
-def build_components(data, ef1_override=None):
+def build_components(data, ef1_override=None, nitrogen_method=None):
     """Compute all category components with CO2e enrichment. Reused by downscale.py.
 
     ef1_override forces the managed-soils upland EF1 (sensitivity pass); None = Tier 2 default.
     """
     components = []
     components += enteric.compute(data)
-    manure_comp, npools = manure.compute(data)
+    manure_comp, npools = manure.compute(data, method=nitrogen_method)
     components += manure_comp
     components += rice.compute(data)
     components += soils.compute(data, npools, ef1_override=ef1_override)
@@ -239,7 +239,7 @@ def _write_crop_residue_ledger(run, data):
                            ("combusted", combusted), ("fuel", fuel), ("other", other)):
             tot[key] += value
         rows.append([
-            crop, int(prod), rr, round(dry, 6),
+            crop, prod, rr, round(dry, 6),
             f_ret, round(returned, 6),
             f_burn, round(fire, 6), cf, round(combusted, 6),
             f_fuel, round(fuel, 6), round(other, 6),

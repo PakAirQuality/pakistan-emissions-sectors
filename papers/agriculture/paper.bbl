@@ -1,4 +1,4 @@
-\begin{thebibliography}{33}
+\begin{thebibliography}{34}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -14,13 +14,12 @@
 %Type = Unpublished
 \bibitem[{Ahmad(2026)}]{ahmad2026national}
 \bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}.
-\newblock \bibinfo{title}{Pakemis v1.0: an evidence-graded public-data
-  reconstruction of pakistan's non-lulucf greenhouse-gas emissions, fy2015--16
-  to fy2023--24}.
-\newblock \bibinfo{note}{Manuscript in preparation for Earth System Science
-  Data; it describes release 1.0.0rc67, whose data, software and technical
-  documentation DOIs are reserved and not yet assigned (see CITATION.cff). No
-  submission has been made}.
+\newblock \bibinfo{title}{{PakEmis} 1.0.0rc68: greenhouse gas and air pollutant
+  emissions in pakistan, july 2015--june 2025}.
+\newblock \bibinfo{note}{National data-description manuscript with technical
+  report and sector notes; local review package prepared. External repository
+  review deposit and persistent identifier pending; no journal submission
+  asserted}.
 %Type = Article
 \bibitem[{Akagi et~al.(2011)Akagi, Yokelson, Wiedinmyer, Alvarado, Reid, Karl,
   Crounse and Wennberg}]{akagi2011}
@@ -111,13 +110,6 @@
   \bibinfo{address}{Copenhagen}.
 \newblock \URLprefix
   \url{https://www.eea.europa.eu/publications/emep-eea-guidebook-2023}.
-%Type = Techreport
-\bibitem[{{FAO}(2022)}]{gleam2022}
-\bibinfo{author}{{FAO}}, \bibinfo{year}{2022}.
-\newblock \bibinfo{title}{Global Livestock Environmental Assessment Model
-  (GLEAM) 3.0 --- Model description, revision 9}.
-\newblock \bibinfo{type}{Technical Report}. Food and Agriculture Organization
-  of the United Nations. \bibinfo{address}{Rome}.
 %Type = Misc
 \bibitem[{{FAO}(2025)}]{faostat}
 \bibinfo{author}{{FAO}}, \bibinfo{year}{2025}.
@@ -125,6 +117,14 @@
   fertilizers by nutrient, and forestry production and trade (wood fuel)}.
 \newblock \bibinfo{howpublished}{Food and Agriculture Organization, Rome}.
 \newblock \bibinfo{note}{\url{https://www.fao.org/faostat/}}.
+%Type = Techreport
+\bibitem[{{Finance Division, Government of Pakistan}(2026)}]{peseconomic2026}
+\bibinfo{author}{{Finance Division, Government of Pakistan}},
+  \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Pakistan Economic Survey 2025--26}.
+\newblock \bibinfo{type}{Technical Report}. Ministry of Finance.
+  \bibinfo{address}{Islamabad}.
+\newblock \URLprefix \url{https://www.finance.gov.pk/survey_2026.html}.
 %Type = Article
 \bibitem[{Giglio et~al.(2016)Giglio, Schroeder and Justice}]{giglio2016}
 \bibinfo{author}{Giglio, L.}, \bibinfo{author}{Schroeder, W.},
@@ -217,6 +217,13 @@
 \newblock \bibinfo{title}{Fertilizer Review 2023--24}.
 \newblock \bibinfo{type}{Technical Report} \bibinfo{number}{NFDC Publication
   No. 2/2024}. Ministry of National Food Security and Research, Government of
+  Pakistan. \bibinfo{address}{Islamabad}.
+%Type = Techreport
+\bibitem[{{National Fertilizer Development Centre}(2025)}]{nfdc2025}
+\bibinfo{author}{{National Fertilizer Development Centre}},
+  \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Fertilizer Review 2024--25}.
+\newblock \bibinfo{type}{Technical Report}. Planning Commission, Government of
   Pakistan. \bibinfo{address}{Islamabad}.
 %Type = Article
 \bibitem[{Oda et~al.(2018)Oda, Maksyutov and Andres}]{oda2018}

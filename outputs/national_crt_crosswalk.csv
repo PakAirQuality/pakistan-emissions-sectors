@@ -1,5 +1,5 @@
 ipcc_code,category,sector,crt_period,engine_period,overlap_months,crt_Mt_co2e,engine_Mt_co2e,ratio_engine_over_crt,comparison_kind,note
-1.A.1.a,Electricity and heat production,power,CY2022,FY2023-24,0,62.841,40.0401,0.6372,no overlap,"the two periods share 0 of twelve months; a ratio across a gap this wide measures how the source changed, not whether two methods agree"
+1.A.1.a,Electricity and heat production,power,CY2022,FY2023-24,0,62.841,40.1077,0.6382,no overlap,"the two periods share 0 of twelve months; a ratio across a gap this wide measures how the source changed, not whether two methods agree"
 1.A.3.a,Domestic aviation,aviation,CY2022,FY2023-24,0,0.6591,0.3011,0.4568,no overlap,"the two periods share 0 of twelve months; a ratio across a gap this wide measures how the source changed, not whether two methods agree"
 1.B.2,Fugitive emissions from oil and gas,fugitives,CY2022,FY2023-24,0,4.4328,23.4994,5.3012,no overlap,"the two periods share 0 of twelve months; a ratio across a gap this wide measures how the source changed, not whether two methods agree"
 2.A.1,Cement production,ippu,CY2022,FY2023-24,0,27.9058,21.8156,0.7818,no overlap,"the two periods share 0 of twelve months; a ratio across a gap this wide measures how the source changed, not whether two methods agree"

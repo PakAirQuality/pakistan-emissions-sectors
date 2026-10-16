@@ -1,29 +1,21 @@
-% ===========================================================================
-% ESSD section 3: Source data and processing (container).
-% This pass carries an introductory statement only. The source-by-source account stays
-% in the reproduction supplement (14_appendix, Supplement S4) until the next pass splits
-% its sources part into a fragment of this section; the products named here are the
-% authoritative register in the meantime. No printed quantity lives in this file.
-% ===========================================================================
-\section{Source data and processing}
-\label{sec:sources}
+\section{Source data and processing}\label{sec:sources}
+The source hierarchy favours compatible national observations and held/public primary documents. Publication title alone does not establish complete fiscal coverage. The source availability record identifies edition, exact months, revision status, units, variables, location and actual usability by sector/year. Transcribed records retain source table/page or worksheet identity; raw public bytes and retrieval hashes preserve the evidence.
 
-Every activity quantity in the dataset is traced to a document in the public record: the
-regulators' annual reports and the statistics bureau's yearbooks for energy, the economic
-survey and the fertiliser development centre for agriculture, census and survey tables for
-population and households, and the international defaults where the country publishes no
-factor of its own. The source hierarchy---a national document over an international
-default, a period-matched edition over a borrowed one, a transcribed table over an inferred
-one---is applied per stream and recorded per stream, so that the evidence grade of a number
-is a column beside it rather than a sentence about it. Two released products are the
-register of record for this section and are described with the other data records in
-Section~\ref{sec:records}: \texttt{outputs/pakemis\_source\_register.csv} names every source
-document the release read, its hash, its custody status and where its publisher provides
-it; \texttt{outputs/pakemis\_source\_streams.csv} joins each source to the emission streams
-it feeds and carries the temporal and spatial evidence classes that the monthly estimate and
-the spatial allocation inherit from it. Transcriptions are held to their documents by a
-re-extraction check, and the transformations between a document's units and the
-inventory's are code in the repository, not steps in a methods note. The redistribution
-terms that follow from this custody model are stated in the Data availability section:
-the derived products are open, and the source documents are named and located rather than
-re-published.
+\begin{table}[htbp]\centering\small
+\begin{tabular}{@{}p{.25\linewidth}p{.64\linewidth}@{}}\toprule
+Source family & Principal core use and limitation\\\midrule
+NEPRA, CPPA and K-Electric & Physical station fuel, generation, status and boundaries; public controls are not consignment fuel analysis\\
+OCAC and OGRA & Product sales, deliveries, production and infrastructure; later overlap revisions and feed/fuel boundaries retained\\
+PBS QIM/minerals & Physical item/month/province controls where the source supplies them; aggregate indices do not provide missing process output\\
+Economic Survey, PBS census and NFDC & Fiscal crops, nutrient/product offtake and census-anchored herd reconstruction; application timing and annual herd enumeration not observed\\
+HIES and demographic records & Household fuel and population histories; survey interpolation/extrapolation and waste management assumptions labelled\\
+PCAA and Pakistan Railways & Domestic/international traffic, fuel and operator controls; traction, LTO/cruise and fuel-uplift boundaries separate\\\bottomrule
+\end{tabular}
+\caption{Activity sources and the distinctions needed for their scientific use. Exact vintages, months and controls are in the availability/source registers.}\label{tab:source_families}
+\end{table}
+
+The latest core uses FY2024--25 supportable annual controls. FY2025--26 is investigated source by source: full-year OCAC records are distinguished from July--March Economic Survey fuel figures, and supportable QIM/source extensions retain their own scope. A partial sum never becomes a common national total. Overlapping editions identify historical revisions without manufacturing revised category cells.
+
+PBS grouping preserves vertically centred mineral labels, province continuations, units and printed year blocks. Worksheet selection uses schema/provenance rather than equality of legitimate values. Final exported province/month records reconcile to compatible controls, with source anomalies and exclusions retained. Missing provinces are neither invented nor zero-filled. Profile evidence is downgraded or replaced where complete national support cannot be established.
+
+Sources and factor/control evidence are identified in machine-readable registers. Public documents can be used as evidence without presuming they may be republished under this project's licence. Source retrieval, compiled-input regeneration and primary-source re-extraction are distinct reproduction stages.

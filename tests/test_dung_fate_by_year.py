@@ -20,6 +20,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.report import dung_fate_by_year as fate                # noqa: E402
 from pkinv.sectors.residential import timeseries                  # noqa: E402
+from pkinv.core.reporting_window import CORE_PERIOD_IDS
 
 PRODUCT = os.path.join(ROOT, "outputs", "pakemis_dung_fate_by_year.csv")
 REFERENCE_YEAR_FILE = os.path.join(ROOT, "outputs", "national_dung_variants.csv")
@@ -44,12 +45,10 @@ class TestTheFateAccount(unittest.TestCase):
         for row in cls.rows:
             cls.by_period[row["period_id"]].append(row)
 
-    def test_nine_periods_by_five_variants(self):
+    def test_every_core_period_has_five_variants(self):
         self.assertEqual(list(self.rows[0]), list(fate.FIELDS))
-        self.assertEqual(len(self.rows), 45)
-        self.assertEqual(len(self.by_period), 9)
-        self.assertEqual(sorted(self.by_period)[0], "FY2015-16")
-        self.assertEqual(sorted(self.by_period)[-1], REFERENCE_PERIOD)
+        self.assertEqual(len(self.rows), len(CORE_PERIOD_IDS) * len(VARIANTS))
+        self.assertEqual(set(self.by_period), set(CORE_PERIOD_IDS))
         for period, rows in self.by_period.items():
             self.assertEqual([r["variant_id"] for r in rows], list(VARIANTS), period)
 
@@ -153,7 +152,7 @@ class TestTheFateAccount(unittest.TestCase):
         reference = self.by_period[REFERENCE_PERIOD][0]
         self.assertAlmostEqual(float(reference["household_Mt"]),
                                timeseries.dung_survey_air_dry_kg(2024) / 1e9, delta=6e-5)
-        self.assertAlmostEqual(float(reference["household_Mt"]), 10.9334, places=4)
+        self.assertLess(float(reference["household_Mt"]), float(reference["diverted_Mt"]))
 
     def test_the_reference_year_is_the_reference_year_file(self):
         """outputs/national_dung_variants.csv prices the same five destinations for

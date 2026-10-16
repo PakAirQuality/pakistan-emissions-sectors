@@ -31,7 +31,7 @@ Usage:  python3 scripts/make_claim_matrix.py [--check] [--root DIR] [--out DIR]
 """
 
 from pkinv.assets import asset_path
-from pkinv.paths import PAPER_NATIONAL_MAIN_REL, PAPER_NATIONAL_SECTIONS  # noqa: E402
+from pkinv.paths import PAPER_NATIONAL_REPORT_REL, PAPER_NATIONAL_SECTIONS  # noqa: E402
 import argparse
 import hashlib
 import json
@@ -52,7 +52,7 @@ OUT_MD = asset_path("outputs", "pakemis_claim_matrix.md")
 # "fresh render" wrote over the real fragment mid-suite and the shipped-PDF staleness check
 # failed two tests later, inside a full serial run only. SECTIONS_DIR is read, not written,
 # so it stays absolute.
-OUT_TEX = asset_path(PAPER_NATIONAL_MAIN_REL, "generated", "claim_matrix.tex")
+OUT_TEX = asset_path(PAPER_NATIONAL_REPORT_REL, "generated", "claim_matrix.tex")
 SECTIONS_DIR = PAPER_NATIONAL_SECTIONS
 
 REGISTRY_FIELDS = ("claim_id", "essd_section", "section_file", "claim_text", "printed_pattern",
@@ -68,7 +68,10 @@ ESSD_TITLES = {"abstract": "Abstract", "1": "1 Introduction", "2": "2 Dataset sc
                "6": "6 Technical validation", "7": "7 Usage notes and limitations",
                "8": "8 Data availability", "9": "9 Code availability", "10": "10 Conclusions",
                "conclusions": "10 Conclusions"}
-EVIDENCE_CLASSES = ("closure-exact", "estimated-TE1", "estimated-TE2", "estimated-TE3", "estimated-TE4",
+# A national aggregate can combine several TE classes; its claim metadata must not
+# assert a single source-month evidence grade. The temporal support products carry
+# the pollutant- and process-specific shares.
+EVIDENCE_CLASSES = ("closure-exact", "estimated-TE1", "estimated-TE2", "estimated-TE3", "estimated-TE4", "estimated-mixed",
                     "spatial-S1", "spatial-S2", "spatial-S3", "spatial-S4", "parametric", "structural",
                     "external-comparison", "coverage-count", "provenance-count")
 QUERY_FUNCTIONS = ("query_emissions", "compare_emissions", "get_timeseries", "get_uncertainty",
@@ -106,9 +109,23 @@ class Sections:
 
     def text(self, name):
         if name not in self.raw:
-            with open(asset_path(self.root, SECTIONS_DIR, name), encoding="utf-8") as handle:
+            path = (asset_path(self.root, name) if name.startswith("paper_national/")
+                    else asset_path(self.root, SECTIONS_DIR, name))
+            with open(path, encoding="utf-8") as handle:
                 self.raw[name] = handle.read()
         return self.raw[name]
+
+    def macro(self, name):
+        definitions = dict(re.findall(r"\\newcommand\{\\(\w+)\}\{([^{}]+)\}",
+            self.text("paper_national/versions/v3/generated/integrated_facts.tex")))
+        seen = set()
+        while name not in seen:
+            seen.add(name)
+            value = definitions[name]
+            if not value.startswith("\\"):
+                return value
+            name = value[1:]
+        raise ValueError("Recursive quantitative macro: " + name)
 
     def contains(self, name, sentence):
         return normalise(sentence) in normalise(self.text(name))
@@ -130,6 +147,11 @@ def first_claim_ref(row):
 
 def printed_value(row, sections, doc_claims):
     """The value the row's own section prints, as the string in the prose."""
+    if row["printed_pattern"].startswith("macro:"):
+        name = row["printed_pattern"].split(":", 1)[1]
+        if not re.search(r"\\" + re.escape(name) + r"\b", sections.text(row["section_file"])):
+            raise LookupError("Registered quantitative macro is absent: " + name)
+        return sections.macro(name)
     if row["printed_pattern"]:
         pattern = row["printed_pattern"]
         # the live section first (a repaired number must be read from the prose, not from the
@@ -292,18 +314,29 @@ def load_registry(root):
 def build(root):
     """The resolved rows, in registry order."""
     _setup_paths(root)
-    from paper_numbers.doc_claims import DOC_CLAIMS
+    registry = load_registry(root)
+    if any(first_claim_ref(row) for row in registry):
+        from paper_numbers.doc_claims import DOC_CLAIMS
+    else:
+        DOC_CLAIMS = ()
     with open(asset_path(root, "outputs", "semantic", "semantic_release.json"), encoding="utf-8") as handle:
         release_id = json.load(handle)["release"]["release_id"]
     sections = Sections(root)
-    engine = open_engine(root)
+    engine = open_engine(root) if any(row["query_function"] for row in registry) else None
     out = []
-    for row in load_registry(root):
+    for row in registry:
         result = dict(row)
         printed = printed_value(row, sections, DOC_CLAIMS)
         resolved, via, receipt = resolve(row, root, engine, DOC_CLAIMS)
         tol = claim_tolerance(row, DOC_CLAIMS)
-        agrees, strict = compare(printed, resolved, int(row["rounding"] or 0), tol)
+        precision = row["rounding"] or "0"
+        if precision.startswith("sig:"):
+            import math
+            number = abs(float(printed))
+            dp = int(precision[4:]) - 1 - (math.floor(math.log10(number)) if number else 0)
+        else:
+            dp = int(precision)
+        agrees, strict = compare(printed, resolved, dp, tol)
         result.update(resolved_value=resolved, printed_value=printed, tolerance=repr(tol),
                       agrees="yes" if agrees else "no", agrees_strict="yes" if strict else "no",
                       resolved_via=via, query_hash=query_hash(row["query_params"]), receipt=receipt,
@@ -386,7 +419,10 @@ def render_tex(rows):
             for r in part:
                 resolved = r["resolved_value"]
                 if _as_number(resolved) is not None and _as_number(r["printed_value"]) is not None:
-                    resolved = ("%%.%df" % int(r["rounding"])) % float(resolved)
+                    precision = r["rounding"]
+                    resolved = (format(float(resolved), ".%sg" % precision[4:])
+                                if precision.startswith("sig:") else
+                                ("%%.%df" % int(precision)) % float(resolved))
                 lines.append("%s & %s & %s & %s%s & %s & %s \\\\" % (
                     tex_escape(r["claim_id"]).replace("\\_", "\\_\\allowbreak{}"), r["resolved_via"], tex_escape(r["printed_value"]),
                     tex_escape(resolved), "" if r["agrees"] == "yes" else "$^{\\dagger}$",

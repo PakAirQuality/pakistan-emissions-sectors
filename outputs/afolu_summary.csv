@@ -1,5 +1,5 @@
 sector,Mt_CO2e_AR5,note
-Agriculture (6 categories),223.5,from national_totals_2024.csv
+Agriculture (6 categories),223.0,from national_totals_2024.csv
 "LULUCF (engine, forest + mangrove)",-4.01,Tier 1; sink negative
-AFOLU net (engine),219.4,agriculture + LULUCF
+AFOLU net (engine),219.0,agriculture + LULUCF
 "LULUCF (FAOSTAT, forest only)",n/a,FAOSTAT omits mangroves -> engine slightly more negative

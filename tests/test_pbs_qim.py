@@ -27,7 +27,7 @@ PANEL = asset_path(ROOT, "data", "activity", "monthly", "pbs_qim_month_item.csv"
 SUMMARY = os.path.join(ROOT, "outputs", "pbs_qim_parse_summary.csv")
 QUARANTINE = os.path.join(ROOT, "outputs", "pbs_qim_quarantine.csv")
 
-FISCAL_YEARS = tuple(range(2015, 2024))
+FISCAL_YEARS = tuple(range(2015, 2025))
 
 # The item-years PBS's OWN arithmetic does not close, listed rather than counted. Both are
 # rows whose twelve printed months cannot sum to the annual figure printed beside them.
@@ -43,8 +43,8 @@ class TheParseClosesOnItsOwnControls(unittest.TestCase):
     def setUp(self):
         self.summary = _rows(SUMMARY)[0]
 
-    def test_all_nine_editions_were_parsed(self):
-        self.assertEqual(9, int(self.summary["files_parsed"]))
+    def test_all_ten_core_editions_were_parsed(self):
+        self.assertEqual(10, int(self.summary["files_parsed"]))
 
     def test_the_closure_rate_is_not_quietly_degrading(self):
         """A floor, not a target. Rows that fail are PBS's arithmetic, not the parser's, and
@@ -75,7 +75,7 @@ class TheParseClosesOnItsOwnControls(unittest.TestCase):
         """Seven editions print a Weight column and two do not. If this ever reads 9 or 0, one
         layout is being forced through the other's rule and the closure test is the only thing
         standing between that and a silently shifted month."""
-        self.assertEqual(7, int(self.summary["editions_with_weight_column"]))
+        self.assertEqual(8, int(self.summary["editions_with_weight_column"]))
 
 
 class TheIndexRowsAreNotTonnages(unittest.TestCase):

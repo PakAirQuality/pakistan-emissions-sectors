@@ -9,10 +9,8 @@ from one object read from data/periods.csv and data/months.csv, and these tests 
 properties that makes the object worth having: it agrees with the literal it replaced, and it
 works for the eight years the cube has never been built for.
 
-WHAT IS NOT CLAIMED HERE. The cube still BUILDS one period. Making the year a parameter is not
-the same as reading nine years of activity, and the test that the reference year is still the
-only buildable one is written below as a fact about this increment, not as a limit anyone
-should preserve - it is the next increment's job to retire it.
+All core periods have annual and monthly products. The detailed reference-year compatibility
+writers remain separate from the period-aware, configuration-labelled release writers.
 """
 
 from pkinv.assets import asset_path
@@ -39,7 +37,8 @@ class TestPeriodKeys(unittest.TestCase):
         from pkinv.paths import DATA
         with open(asset_path(DATA, "periods.csv"), newline="", encoding="utf-8") as handle:
             periods = [r["period_id"] for r in csv.DictReader(handle)]
-        self.assertEqual(len(periods), 9, "the period registry should hold nine fiscal years")
+        from pkinv.report.annual_grid import period_bounds
+        self.assertEqual(set(periods), {p[0] for p in period_bounds()})
         for period_id in periods:
             keys = grid_cube.period_keys(period_id)
             self.assertEqual(len(keys.months), 12, period_id)
@@ -225,24 +224,14 @@ class TestWhatThisIncrementDoesNotYetDo(unittest.TestCase):
                 writer(acc, "/dev/null")
             self.assertIn("FY2015-16", str(caught.exception))
 
-    def test_the_monthly_grain_remains_the_reference_year_alone(self):
-        """Retired and replaced, rather than deleted, at the annual-grid increment.
-
-        This used to read "the SHIPPED products are still the reference year's alone" and
-        assert the same constant. That sentence stopped being true when
-        pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc shipped nine periods, so the claim
-        is narrowed to the one that survived: the MONTHLY grain is still the reference year's.
-        Eight historical years have annual cells and no monthly ones, because a historical
-        month's seasonal geography is not evidenced - and the annual cube's own tests
-        (tests/test_annual_grid.py) now hold the nine-period side of this.
-        """
+    def test_the_compatibility_reference_and_full_period_products_are_both_retained(self):
+        """Reference compatibility files coexist with explicitly evidenced core cubes."""
         import os
         from pkinv.paths import OUTPUTS
+        from pkinv.report.annual_grid import CORE
         self.assertEqual(grid_cube.REFERENCE.file_token, "2024")
-        self.assertTrue(os.path.exists(os.path.join(
-            OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc")),
-            "the annual cube is gone: this test's premise, that history moved to the annual "
-            "grain, no longer holds and the monthly claim must be re-examined")
+        self.assertTrue(os.path.exists(CORE))
+        self.assertTrue(os.path.exists(os.path.join(OUTPUTS, "pakemis_grid_0p05_monthly.nc")))
 
 
 if __name__ == "__main__":

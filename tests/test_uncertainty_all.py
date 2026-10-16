@@ -392,7 +392,10 @@ class TestCorrelationNeverNarrowsABand(unittest.TestCase):
         power_grid = [c for c in components
                       if c["_sector"] == "power" and c["subitem"].endswith("CO2")
                       and c.get("corr_group") == "1a1a_toe_activity"]
-        self.assertEqual(len(power_grid), 4)
+        # Coal now uses physical station mass and rank NCVs, while gas/oil/
+        # diesel retain their shared published energy conversion group.
+        self.assertEqual(len(power_grid), 3)
+        self.assertFalse(any(c["subitem"].startswith("Coal") for c in power_grid))
         excluded = {(s, sub) for s, sub, _g in
                     uncertainty_all.excluded_from_fossil_scenario(components)}
         for c in power_grid:

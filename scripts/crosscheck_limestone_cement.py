@@ -33,8 +33,9 @@ FIELDS = ("fiscal_year_start", "month", "limestone_share", "cement_share",
 NOTE = "shape only - limestone feeds lime and aggregate too, and stockpiles decouple months"
 
 # A single month whose share exceeds this is a reporting anomaly in the SOURCE, not a
-# seasonality signal: November 2016 carries 36.7% of FY2016-17's limestone in one month,
-# 4.4 times a flat month, while cement shows nothing of the kind. Flagged, never dropped -
+# seasonality signal. November 2016 carried 36.7% of FY2016-17's limestone in the defective
+# parse of rc67 and carries 9.9% in the repaired one (the FATA cell, 8.6 times its own row
+# median, printed in both held editions), while cement shows nothing of the kind. Flagged, never dropped -
 # the reader decides, and the flag is what keeps the year's mean from being read as signal.
 ANOMALY_SHARE = 0.25
 

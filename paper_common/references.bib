@@ -1118,7 +1118,7 @@
 }
 
 % RETITLED FROM "companion manuscript, in preparation". These are not forthcoming articles:
-% one article is submitted from this programme, and the nine sector documents are versioned
+% one article is prepared for submission from this programme, and the nine sector documents are versioned
 % technical documentation of the release it describes. Calling them manuscripts in preparation
 % told a reader to wait for something that is not coming, and contradicted the release block
 % each of them now prints on its own first page.
@@ -1127,7 +1127,7 @@
   title       = {{PakEmis} Technical Documentation: Agriculture Module},
   institution = {Pakistan Air Quality Initiative},
   year        = {2026},
-  note        = {Versioned technical documentation of release 1.0.0rc67; DOI to be assigned}
+  note        = {Versioned technical documentation of release 1.0.0rc68; DOI pending}
 }
 
 @techreport{ahmad2026nowcast,
@@ -1136,48 +1136,50 @@
                  between Census Years},
   institution = {Pakistan Air Quality Initiative},
   year        = {2026},
-  note        = {Research note accompanying release 1.0.0rc67; DOI to be assigned}
+  note        = {Research note accompanying release 1.0.0rc68; DOI pending}
 }
 
-% The one submitted article of this programme. The nine sector documents that cite it are
+% The one article prepared for submission in this programme. The nine sector documents that cite it are
 % versioned technical documentation of the same release, not companion submissions, so the
 % citation runs from the documentation to the paper it documents. Add the preprint or
 % journal DOI to the entry below when it exists - and nowhere else, since every sector
 % document resolves this one key. (BibTeX has no in-entry comment syntax: a % inside the
 % braces is a parse error, not a comment, which is how this note started life as one.)
+Title as the manuscript prints it, for the retitle check (BibTeX ignores text outside entries):
+PakEmis \PakEmisRelease: greenhouse gas and air pollutant emissions in Pakistan, July 2015--June 2025
+
 @unpublished{ahmad2026national,
   author = {Ahmad, Rehan},
-  title  = {PakEmis v1.0: an evidence-graded public-data reconstruction of Pakistan's
-            non-LULUCF greenhouse-gas emissions, FY2015--16 to FY2023--24},
+  title  = {{PakEmis} 1.0.0rc68: greenhouse gas and air pollutant emissions in Pakistan,
+            July 2015--June 2025},
   year   = {2026},
-  note   = {Manuscript in preparation for Earth System Science Data; it describes release
-            1.0.0rc67, whose data, software and technical documentation DOIs are reserved
-            and not yet assigned (see CITATION.cff). No submission has been made}
+  note   = {National data-description manuscript with technical report and sector notes;
+            local review package prepared. External repository review deposit and
+            persistent identifier pending; no journal submission asserted}
 }
 
 @misc{pakemis2026data,
-  author    = {Ahmad, Rehan},
-  title     = {PakEmis v1.0: an evidence-graded public-data reconstruction of Pakistan's
-               non-LULUCF greenhouse-gas emissions, FY2015--16 to FY2023--24 (dataset)},
-  year      = {2026},
-  publisher = {Zenodo},
-  note      = {version 1.0.0rc67; DOI assigned on deposit}
+  author = {Ahmad, Rehan},
+  title  = {{PakEmis} 1.0.0rc68: greenhouse gas and air pollutant emissions in Pakistan,
+            July 2015--June 2025 (dataset)},
+  year   = {2026},
+  note   = {Local deposit-ready data package; persistent repository identifier pending}
 }
 
 @misc{pakemis2026software,
-  author    = {Ahmad, Rehan},
-  title     = {pkinv: the PakEmis inventory engine (software)},
-  year      = {2026},
-  publisher = {Zenodo},
-  note      = {version 1.0.0rc67; DOI assigned on deposit}
+  author = {Ahmad, Rehan},
+  title  = {pkinv: the {PakEmis} inventory engine (software)},
+  year   = {2026},
+  url    = {https://github.com/PakAirQuality/pakistan-emissions-sectors},
+  note   = {Version 1.0.0rc68; exact code revision recorded in the release manifest}
 }
 
 @misc{pakemis2026documentation,
-  author    = {Ahmad, Rehan},
-  title     = {PakEmis v1.0 technical documentation: sector technical notes and supplement},
-  year      = {2026},
-  publisher = {Zenodo},
-  note      = {version 1.0.0rc67; DOI assigned on deposit}
+  author = {Ahmad, Rehan},
+  title  = {{PakEmis} 1.0.0rc68 technical documentation: integrated report,
+            sector technical notes and supplements},
+  year   = {2026},
+  note   = {Local review documentation; persistent identifier pending}
 }
 
 @article{alvarez2018methane,

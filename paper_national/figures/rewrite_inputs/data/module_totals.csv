@@ -1,11 +1,11 @@
 module,emissions_Mt_CO2e,period,gwp,configuration,source_location,provenance
-Agriculture,223.45,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=agriculture),read from the product; the same pointer the registered claim uses
-Power,45.59,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=power),read from the product; the same pointer the registered claim uses
-Transport,41.93,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=transport),read from the product; the same pointer the registered claim uses
-Waste,37.45,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=waste),read from the product; the same pointer the registered claim uses
-Residential,24.22,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=residential),read from the product; the same pointer the registered claim uses
-IPPU,25.54,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=ippu),read from the product; the same pointer the registered claim uses
-Oil and gas fugitives,23.50,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=fugitives),read from the product; the same pointer the registered claim uses
-Industrial fuel,22.58,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=industry),read from the product; the same pointer the registered claim uses
-Railways,0.39,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=railways),read from the product; the same pointer the registered claim uses
-Domestic aviation,0.30,FY2023-24,AR5,REF_2023_24 (residential L),outputs/national_all_sectors.csv (sector=aviation),read from the product; the same pointer the registered claim uses
+Agriculture,223.04,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=agriculture),read from the product; the same pointer the registered claim uses
+Power,45.66,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=power),read from the product; the same pointer the registered claim uses
+Transport,41.93,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=transport),read from the product; the same pointer the registered claim uses
+Waste,37.45,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=waste),read from the product; the same pointer the registered claim uses
+Residential,24.22,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=residential),read from the product; the same pointer the registered claim uses
+IPPU,25.54,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=ippu),read from the product; the same pointer the registered claim uses
+Oil and gas fugitives,23.50,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=fugitives),read from the product; the same pointer the registered claim uses
+Industrial fuel,22.58,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=industry),read from the product; the same pointer the registered claim uses
+Railways,0.39,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=railways),read from the product; the same pointer the registered claim uses
+Domestic aviation,0.30,FY2023-24,AR5,S_TAN,outputs/national_all_sectors.csv (sector=aviation),read from the product; the same pointer the registered claim uses

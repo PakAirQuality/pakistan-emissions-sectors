@@ -1,72 +1,64 @@
-% ===========================================================================
-% Supplementary Note S3 — underlying uncertainty inputs
-% ===========================================================================
+% Maintained uncertainty note for the shared native GHG/air calculation.
+\section*{S3.1 Conditional parameter calculation}
 
-\section*{S3.1 Two-stage combination}
+The current annual conditional product reruns native agricultural quantities from
+shared physical inputs. It does not sample unrelated category totals and then
+infer a material balance from their sum. Each species' sampled herd enters
+enteric methane, manure nitrogen and the linked ledger-L household dung quantity.
+Each crop production draw enters its residue destinations; fertiliser nutrient
+and product inputs retain their own source uncertainty and units. Synthetic
+fertiliser NH$_3$ factors retain the adopted product mix and receive one common
+table-wide factor multiplier in this conditional case; this is not a measurement
+of cross-product factor covariance. Other dependence interpretations remain an
+uncertainty limitation.
 
-Each category's combined uncertainty (main paper, Appendix~E) is a two-stage
-quadrature. \emph{Stage 1 (IPCC Eq.~3.1, product rule):} every emission component
-combines its activity-data uncertainty and its emission-factor uncertainty,
-$u = \sqrt{\sum_i u_i^2}$. \emph{Stage 2 (Eq.~3.2, sum rule):} the components are
-aggregated to the category, emission-magnitude-weighted. Table~\ref{tab:s3} lists the
-Stage-1 inputs. Activity-data uncertainties for measured activities (livestock heads,
-crop production/area, fertiliser N) are stored in the activity CSVs; those for derived
-nitrogen pools (organic-manure and residue N, pasture-deposited N, volatilised and
-leached N) are inventory assumptions set in the calculation modules. All are treated
-as 95\% relative half-widths.
+Nitrogen calculations retain the selected TAN or complete IPCC formulation.
+The same surviving material state supplies management and post-application
+NH$_3$, soil NO$_x$ and direct/indirect N$_2$O. Fractions drawn within this
+conditional model retain their physical bounds. Management-system shares and
+structural factor applicability are held within a case rather than independently
+multiplied outside a partition. Excretion rates and unsupported management changes
+remain stated assumptions. A wider interval does not repair a transcription
+error or represent an unestimated source.
 
-The Monte-Carlo samples the \emph{components} themselves---each engine row is
-drawn from a mean-preserving lognormal at its declared width---and correlation is
-modelled in exactly one declared place: managed-soils components that share an
-emission factor (the volatilised-N and leached-N groups) receive one shared deviate
-per draw, so they move together, matching the linear-within-group Approach-1
-treatment. Two further couplings are physical and are carried in the NATIONAL run's
-parameter graph rather than by this sector-scoped stream: fertiliser N (5\%) is one
-audited series driving the soils synthetic and indirect components \emph{and} the urea
-term---scoped as a single parameter across both categories---and each species'
-head-count is shared between its enteric and manure components. Their effect at
-national scale is about a hundredth of a percentage point, in the widening direction:
-small, real, and reported rather than assumed away. The main text (Section~4) states the
-complementary half: that this sector-scoped stream does not model them, because it samples
-component totals rather than parameters.
+The reference assigns 0.95 of volatilized nitrogen to NH$_3$ under the adopted
+chemical attribution. A separate deterministic case assigns all volatilized
+nitrogen to NH$_3$ and reruns the linked NH$_3$, NO$_x$ and N$_2$O pathways from
+the same native ledger. It tests attribution sensitivity without assigning a
+probability or interpreting the endpoint as an uncertainty bound. The 0.80
+irrigated/leaching applicability setting is likewise a conditional assumption;
+approximate national area totals do not independently establish that fraction.
 
-\begin{table}[!htbp]
-\centering
-\footnotesize
-\begin{tabular}{@{}lllr@{}}
+\begin{table}[!htbp]\centering\footnotesize
+\begin{tabular}{@{}p{.28\linewidth}p{.29\linewidth}p{.33\linewidth}@{}}
 \toprule
-\textbf{Category / component} & \textbf{AD unc.\ (source)} & \textbf{EF unc.\ (source)} & \textbf{$u$\%} \\
-\midrule
-\multicolumn{4}{@{}l}{\emph{Enteric \CHfour{}} (heads: livestock census; EF: IPCC T10.10--10.11)} \\
-\quad buffalo            & 15 (census) & 40 (T10.10) & 43 \\
-\quad dairy/other cattle & 15 (census) & 50 (T10.11) & 52 \\
-\quad sheep, goats       & 20 (census) & 50 (T10.10) & 54 \\
-\quad camels             & 25 (census) & 50 (T10.10) & 56 \\
-\addlinespace
-\multicolumn{4}{@{}l}{\emph{Manure management} (T10.14--10.21)} \\
-\quad \CHfour{} (by species) & 15--25 (census) & 30 (T10.14--16) & 34--39 \\
-\quad Direct \NtwoO{}    & 15 (assumption) & 100 ($EF_3$) & 101 \\
-\quad Indirect \NtwoO{}  & 20 (assumption) & 100 ($EF_4$) & 102 \\
-\addlinespace
-\multicolumn{4}{@{}l}{\emph{Managed soils} (2019 T11.1--11.3)} \\
-\quad synthetic (upland) & 5 (NFDC N)  & 110 ($EF_1$) & 110 \\
-\quad synthetic (rice)   & 5 (NFDC N)  & 120 ($EF_{1FR}$) & 120 \\
-\quad organic manure     & 30 (assumption) & 110 ($EF_1$) & 114 \\
-\quad crop residues      & 30 (assumption) & 110 ($EF_1$) & 114 \\
-\quad pasture deposition & 20 (assumption) & 100 ($EF_3$) & 102 \\
-\quad indirect (vol., leach) & 20 (assumption) & 100 ($EF_4/EF_5$) & 102 \\
-\addlinespace
-\multicolumn{4}{@{}l}{\emph{Rice, burning, urea}} \\
-\quad Rice \CHfour{}     & 20 (area) & 53 ($EF_c$), 26 ($SF_w$) & 62 \\
-\quad Field burning      & 20 (production) & 30 ($C_f$), 40--50 ($G_{ef}$) & 54--62 \\
-\quad Urea \COtwo{}      & 5 (NFDC N) & 10 (C content) & 11 \\
-\bottomrule
+Input & Shared calculation & Conditional treatment\\\midrule
+Livestock heads & Enteric, manure and ledger-L dung & Same species/input realization; census bridge held\\
+Crop production and area & Residue flows, burning, crop nitrogen and rice & Own input uncertainty; source vintage and calendar retained\\
+Fertiliser nutrients/products & Synthetic NH$_3$, soil NO$_x$ and N$_2$O & Common input identity with pathway-specific factors\\
+Nitrogen pathway factors & Management, field and indirect losses & Declared factor uncertainty and bounded fractions; material closure\\
+Rice regime and soil climate & Methane and managed-soil factors & Conditional reference or explicit structural sensitivity\\
+Management and destination shares & Manure, residue and dung fate & Fixed supported case or separate configuration; no invented probabilities\\\bottomrule
 \end{tabular}
-\caption{Stage-1 (Eq.~3.1) uncertainty inputs by emission component: activity-data
-(AD) and emission-factor (EF) 95\% relative half-widths, with sources, and the
-combined component uncertainty $u$. ``census'' = \texttt{livestock\_2024.csv}
-\texttt{ad\_uncert\_pct}; ``NFDC N''/``area''/``production'' = the crop/fertiliser
-activity CSVs; ``assumption'' = a module-level value for a derived nitrogen pool.
-Stage-2 aggregation of these gives the per-category values in Appendix~E.}
-\label{tab:s3}
+\caption{Physical input sharing in the current conditional calculation. The
+parameter catalogue gives exact widths, distributions, means, provenance,
+identifiers, seed and draw count. These are separate from structural choices and
+from the older aggregate Approach~1 screen.}\label{tab:s3}
 \end{table}
+
+\section*{S3.2 Temporal dependence and fitness}
+
+Historical changes use paired realizations. A persistent-parameter case retains
+common uncertain factors across years, while a separate annual-activity-error
+case tests a different activity dependence. Each change is calculated within a
+realization before percentiles are taken. Subtracting unrelated annual percentiles
+would give a different quantity and is not the reported trend interval.
+
+The conditional intervals cover admitted sources under a named configuration.
+Unestimated categories, alternative livestock or management reconstructions,
+controls, destination choices and temporal/spatial allocation uncertainty are not
+combined into a probability interval. The reference uncertainty year remains
+FY2023--24 even though supported annual activity extends through FY2024--25.
+The earlier component-lognormal sector diagnostic and Approach~1 calculations
+retain their own settings when shown; they are not substituted for this native
+annual product.

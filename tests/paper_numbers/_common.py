@@ -19,7 +19,7 @@ import sys
 import unittest
 
 from pkinv import paths
-from pkinv.paths import PAPER_NATIONAL_MAIN, PAPER_NATIONAL_SECTIONS, PAPER_NATIONAL_VERSIONS  # noqa: E402
+from pkinv.paths import PAPER_NATIONAL_MAIN, PAPER_NATIONAL_REPORT, PAPER_NATIONAL_SECTIONS, PAPER_NATIONAL_VERSIONS  # noqa: E402
 from pkinv.core.io import read_rows
 
 
@@ -45,7 +45,7 @@ DOCS = {"national": PAPER_NATIONAL_SECTIONS}
 # directory" is the manuscript directory and its one section is supplement.tex. Listing it as
 # a document is what puts its quantities under the same coverage rule as the paper's - the
 # air-pollutant figures moved there, and moving a number must not move it out of coverage.
-DOCS["national-supplement"] = PAPER_NATIONAL_MAIN
+DOCS["national-supplement"] = PAPER_NATIONAL_REPORT
 # The release record is prose too, and it was the last place a superseded vintage could live.
 # docs/reproducibility.md printed 455.14 / 450.01 Mt against a current 448.00 / 442.88, and
 # still described the inventory as a sum across reference years three rounds after the sectors
@@ -79,12 +79,14 @@ DOCS.update({n: os.path.join(ROOT, "papers", n, "sections") for n in SECTORS})
 # registry has to say which .tex each one IS. Sector supplements are listed as documents in
 # their own right -- until they were, their S*.tex inputs sat outside every
 # MANUSCRIPTS-driven guard and five shipped supplement PDFs carried no provenance block.
-MANUSCRIPTS = [("national", PAPER_NATIONAL_MAIN, "copernicus",
+MANUSCRIPTS = [("national", PAPER_NATIONAL_REPORT, "copernicus",
                 "paper_national.tex"),
-               ("national-supplement", PAPER_NATIONAL_MAIN, "a4",
+               ("national-supplement", PAPER_NATIONAL_REPORT, "a4",
                 "supplement.tex")]
 
 
+MANUSCRIPTS += [("national-v3", PAPER_NATIONAL_MAIN, "copernicus", "paper.tex"),
+                ("national-integrated-supplement", PAPER_NATIONAL_MAIN, "copernicus", "technical_supplement.tex")]
 MANUSCRIPTS += [(n, os.path.join(ROOT, "papers", n), "5p", "paper.tex") for n in SECTORS]
 
 
@@ -334,3 +336,27 @@ def _data_rows(relpath):
 def _data_rows_nocomment(relpath):
     """Same, for the registries whose files open with a # commentary block."""
     return read_rows(asset_path(ROOT, 'data', relpath))
+
+
+def active_sections(doc):
+    """Section paths included by the maintained document, excluding orphan history."""
+    if doc == "release-record":
+        return {name for name in os.listdir(DOCS[doc]) if name.endswith((".md", ".txt"))}
+    if doc == "national":
+        mains = [(PAPER_NATIONAL_REPORT, "paper_national.tex")]
+    elif doc == "national-supplement":
+        mains = [(PAPER_NATIONAL_REPORT, "supplement.tex")]
+    elif doc == "national-v3":
+        mains = [(PAPER_NATIONAL_MAIN, "paper.tex"),
+                 (PAPER_NATIONAL_MAIN, "technical_supplement.tex")]
+    else:
+        # Sector sections are shared with their maintained supplement. Preserve
+        # their existing claim universe; the paper-artefact graph audits inputs.
+        return {name for name in os.listdir(DOCS[doc]) if name.endswith(".tex")}
+    found = set()
+    for root, main in mains:
+        path = os.path.join(root, main)
+        for candidate in [path] + _inputs_of(path, root):
+            if os.path.dirname(candidate) == DOCS[doc]:
+                found.add(os.path.basename(candidate))
+    return found

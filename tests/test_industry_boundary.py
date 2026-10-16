@@ -7,12 +7,14 @@ import collections
 import csv
 import os
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUTPUTS = os.path.join(os.path.dirname(HERE), "outputs")
 LEDGER = os.path.join(OUTPUTS, "pakemis_industry_boundary_ledger.csv")
 ATOMS = os.path.join(OUTPUTS, "semantic", "fact_annual.csv")
-REF = "REF_2023_24"
+REF = REFERENCE
 
 
 def _rows(path):
@@ -57,7 +59,7 @@ class IndustryBoundary(unittest.TestCase):
         for r in self.priced:
             by_component[(r["ipcc_code"], r["component"], r["gas"])].add(r["period_id"])
         for key, periods in by_component.items():
-            self.assertEqual(len(periods), 9, msg=str(key))
+            self.assertEqual(periods, set(CORE_PERIOD_IDS), msg=str(key))
 
     def test_non_priced_rows_price_nothing(self):
         for r in self.ledger:
@@ -74,17 +76,54 @@ class IndustryBoundary(unittest.TestCase):
         self.assertEqual(sorted(d["period_id"] for d in series), periods)
         # UNSD's calendar series ends at CY2023: the fiscal blend exists for every period but the
         # last (FY2023-24 needs CY2024), and the builder types that absence by omitting the row
-        self.assertEqual(sorted(d["period_id"] for d in unsd_series), periods[:-1])
-        for d in series + unsd_series:
-            self.assertIn("never a", d["note"].replace("never an", "never a"))
-            float(d["bound_high_Mt"])                       # the signed divergence, engine minus benchmark
-        self.assertIn("never an EDGAR residual", next(d["note"] for d in diags if d["component"] == "EDGAR 1.A.2 coverage gap"))
-        self.assertIn("independent benchmark", next(d["note"] for d in diags if "UNSD" in d["component"]))
+        self.assertEqual(sorted(d["period_id"] for d in unsd_series), [p for p in periods if int(p[2:6]) < 2023])
+        for d in diags:
+            self.assertEqual(d["bound_low_Mt"], "")
+            self.assertEqual(d["bound_high_Mt"], "")
+            self.assertIn(d["comparison_basis"],
+                          {"engine_minus_comparator", "comparator_minus_engine"})
+        source = {r["period_id"]: r for r in _rows(os.path.join(
+            OUTPUTS, "pakemis_industry_edgar_divergence.csv"))}
+        for d in series:
+            self.assertEqual(d["comparison_difference_Mt"],
+                             source[d["period_id"]]["divergence_1a2_mt"])
+            if d["comparison_difference_Mt"]:
+                float(d["comparison_difference_Mt"])
+            else:
+                self.assertEqual(d["period_id"], CORE_PERIOD_IDS[-1])
+                self.assertIn("No matched fiscal comparator", d["note"])
+                self.assertIn("not extrapolated", d["note"])
+        comparison = next(d for d in diags if d["component"] == "EDGAR 1.A.2 comparison difference")
+        self.assertIn("not absent emissions", comparison["note"])
+        self.assertEqual(comparison["comparison_basis"], "comparator_minus_engine")
+        self.assertIn("shares national energy statistics", next(
+            d["note"] for d in diags if d["component"] == "UNSD 1.A.2 combustion benchmark"))
 
     def test_the_states_are_a_closed_vocabulary(self):
         self.assertEqual(
             {r["boundary_status"] for r in self.ledger},
             {"priced", "screened_not_priced", "typed_absent", "diagnostic"})
+
+    def test_unsd_co2_comparison_uses_native_co2_and_source_periods(self):
+        controls = {int(r["year"]): float(r["co2_Mt"]) for r in _rows(os.path.join(
+            OUTPUTS, "unsd_industry_combustion_control.csv"))
+                    if r["fuel"] == "FOSSIL_COMBUSTION_TOTAL"}
+        native = collections.defaultdict(float)
+        for atom in _rows(ATOMS):
+            if atom["configuration_id"] != REF or atom["geography_id"] != "PK":
+                continue
+            if atom["gas"] != "CO2" or atom["reporting_sector"] != "industry":
+                continue
+            self.assertEqual(atom["native_unit"], "Gg")
+            native[atom["period_id"]] += float(atom["native_mass"]) / 1000
+        series = [r for r in self.ledger if r["component"] == "UNSD 1.A.2 series benchmark"]
+        self.assertTrue(series)
+        for row in series:
+            start = int(row["period_id"][2:6])
+            expected = native[row["period_id"]] - (controls[start] + controls[start + 1]) / 2
+            self.assertEqual(row["comparison_basis"], "engine_minus_comparator")
+            self.assertAlmostEqual(float(row["comparison_difference_Mt"]), expected,
+                                   delta=0.000501, msg=row["period_id"])
 
     def test_captive_is_claimed_for_the_industrial_aggregate(self):
         captive = [r for r in self.priced if r["component"] == "Captive gas self-generation"]

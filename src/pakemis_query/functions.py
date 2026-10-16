@@ -46,8 +46,8 @@ def compare_emissions(engine, req):
 def get_timeseries(engine, req):
     q = engine._fill(req.query)
     periods = tuple(p["period_id"] for p in engine.release.dim("dim_period") if p["basis"] == q.basis)
-    if q.basis == "fiscal" and q.configuration_id == "L_2023_24":
-        raise E.GrainUnavailable("configuration L exists for FY2023-24 only; a series is the reference's", "config_L_residential_only")
+    if req.step not in ("annual", "monthly"):
+        raise E.UnknownDimensionValue("unknown timeseries step %r" % req.step)
     group = ("month",) if req.step == "monthly" else ("period_id",)
     series = dataclasses.replace(q, periods=periods, group_by=group + tuple(g for g in q.group_by if g not in group),
                                  months=q.months, defaults_applied=q.defaults_applied)
@@ -71,6 +71,56 @@ def get_timeseries(engine, req):
 
 def get_uncertainty(engine, req):
     r = engine.release
+    from pakemis_query import configurations
+    configuration = configurations.canonical(req.configuration_id or r.defaults["configuration_id"])
+    if configuration not in configurations.AIR_ALL:
+        raise E.UnknownDimensionValue("unknown configuration %r" % configuration)
+    if req.scope not in ("national", "series", "category"):
+        raise E.UnknownDimensionValue("unknown uncertainty scope %r" % req.scope)
+    if req.scope in ("national", "series") and "fact_ghg_conditional" in r.tables:
+        if req.category or req.resolution:
+            raise E.GrainUnavailable("conditional annual uncertainty is available by national total or sector; category and allocation intervals use scope='category'", "uncertainty_grain")
+        def quoted(s):
+            return "'" + s.replace("'", "''") + "'"
+        sector = req.module or "national_covered"
+        common = ["configuration_id = " + quoted(configuration),
+                  "sector_id = " + quoted(sector), "species_or_metric = 'CO2e_AR5'"]
+        period = req.period_id or (r.defaults.get("period_id", REFERENCE_PERIOD)
+                                   if req.scope == "national" else "")
+        clauses = common + (["period_id = " + quoted(period)] if period else [])
+        levels = engine._fetch("SELECT * FROM fact_ghg_conditional WHERE " + " AND ".join(clauses))
+        trends = []
+        tables = ["fact_ghg_conditional"]
+        if req.scope == "series" and "fact_ghg_trend" in r.tables:
+            # A period filter selects changes ending in that year. Percentiles are
+            # read from paired draws, never constructed by subtracting annual limits.
+            clauses = common + (["end_period = " + quoted(period)] if period else [])
+            trends = engine._fetch("SELECT * FROM fact_ghg_trend WHERE " + " AND ".join(clauses))
+            tables.append("fact_ghg_trend")
+        if not levels and not trends:
+            raise E.NotEstimated("no conditional uncertainty for %s, %s, %s" %
+                                 (configuration, sector, period or "the core series"), "uncertainty_scope")
+        values = []
+        for kind, rows in (("annual_level", levels), ("paired_change", trends)):
+            for row in rows:
+                values.append(value(row["P50_quantity"], row["unit"], 3,
+                    row_ids=[row["result_row_id"]], formula="median of shared native parameter draws" if kind == "annual_level" else "median of paired-year differences from shared draws",
+                    quantiles={"P2.5": row["P2_5_quantity"], "P97.5": row["P97_5_quantity"]},
+                    kind=kind, period_id=row.get("period_id", ""),
+                    start_period=row.get("start_period", ""), end_period=row.get("end_period", ""),
+                    sector_id=sector, species_or_metric="CO2e_AR5",
+                    dependence_case=row["dependence_case"],
+                    deterministic_quantity=row.get("deterministic_quantity", row.get("deterministic_change", "")),
+                    interval_kind=row["interval_kind"], limitations=row["limitations"]))
+        periods = sorted({row["period_id"] for row in levels} |
+                         {row[key] for row in trends for key in ("start_period", "end_period")})
+        return envelope(r, "get_uncertainty", canonical_json(req),
+            {"basis": "fiscal", "periods": tuple(periods), "configuration_id": configuration, "gwp_basis": "AR5"},
+            values, {"kind": "lookup", "tables": tables}, engine._provenance(tables),
+            uncertainty={"interpretation": "Conditional parameter percentiles for admitted sources, separately by temporal dependence case. Structural cases, missing sources and allocation uncertainty are excluded; intervals cannot be added."})
+    if configuration != configurations.canonical(r.defaults["configuration_id"]):
+        raise E.NotEstimated("the legacy uncertainty table does not carry configuration %s" % configuration,
+                             "uncertainty_configuration")
     if req.scope == "series":
         rows = engine._fetch("SELECT * FROM fact_uncertainty_series WHERE kind IN ('annual_level','trend_pair')"
                              + (" AND period_or_pair = '%s'" % req.period_id if req.period_id else ""))
@@ -102,7 +152,7 @@ def get_uncertainty(engine, req):
                                 category=row["category"], module=row["module"], resolution=row["resolution"],
                                 aggregation_rule=row["aggregation_rule"]))
     fields = {"basis": "fiscal", "periods": (req.period_id or REFERENCE_PERIOD,),
-              "configuration_id": req.configuration_id or r.defaults["configuration_id"], "gwp_basis": "AR5"}
+              "configuration_id": configuration, "gwp_basis": "AR5"}
     return envelope(r, "get_uncertainty", canonical_json(req), fields, values,
                     {"kind": "lookup", "table": table}, engine._provenance([table]),
                     uncertainty={"interpretation": "quantiles of draws for the series; per-category envelopes "
@@ -227,36 +277,50 @@ def _time_origin(variable):
 
 
 def get_grid_cell(engine, req, cube_paths):
-    """cube_paths: {"REF_2023_24": path, "L_2023_24": path, "ANNUAL": path} to the products.
+    """Read annual cells for all configurations; detailed months exist at the reference year.
 
-    Three refusals live here rather than in a caller, because a lookup that answers anyway is
-    worse than one that declines: a point outside the grid, the period-named alternative
-    configuration outside its period, and a historical MONTH. The last is the honest shape of the products -
-    eight of the nine years have annual cells and no monthly ones, because a historical month's
-    seasonal geography is not evidenced and will not be invented to satisfy a query.
+    Annual files use keys ANNUAL_<configuration> (ANNUAL remains a reference alias).
+    Monthly files use configuration keys. Missing files are never replaced with another
+    configuration's grid. Historical monthly requests remain unsupported.
     """
     try:
         from netCDF4 import Dataset
     except ImportError as exc:
         raise E.GrainUnavailable("the grid needs netCDF4: %s" % exc, "grid_not_tabular")
-    conf = req.configuration_id or engine.release.defaults["configuration_id"]
+    from pakemis_query import configurations
+    conf = configurations.canonical(req.configuration_id or engine.release.defaults["configuration_id"])
+    if conf not in configurations.AIR_ALL:
+        raise E.UnknownDimensionValue("unknown configuration %r" % conf)
+    if req.gas not in ("CO2", "CH4", "N2O"):
+        raise E.UnknownDimensionValue("unknown native greenhouse gas %r" % req.gas)
     period = req.period_id or REFERENCE_PERIOD
     historical = period != REFERENCE_PERIOD
 
-    if historical and conf != "REF_2023_24":
-        raise E.NotEstimated(
-            "configuration %s is built on the grid for %s alone; %s is published under "
-            "the reference configuration only"
-            % (conf, REFERENCE_PERIOD, period), "configuration_l_reference_year_only")
     if historical and req.month and req.month != "annual":
         raise E.GrainUnavailable(
             "the monthly grain is the reference year's alone; %s is published annually on the "
             "grid (a historical month's seasonal geography is not evidenced)" % period,
             "grid_monthly_reference_year_only")
 
-    path = cube_paths["ANNUAL"] if historical else cube_paths[conf]
+    annual = historical or not req.month or req.month == "annual"
+    paths = {configurations.canonical(k): v for k, v in cube_paths.items()}
+    annual_path = paths.get("ANNUAL_" + conf)
+    if annual_path is None and conf == configurations.REFERENCE:
+        annual_path = paths.get("ANNUAL")
+    path = annual_path if annual else paths.get(conf)
+    # Legacy callers may supply only the detailed reference cube. Its annual sum
+    # remains readable, but an alternative configuration has no implicit fallback.
+    if path is None and annual and not historical:
+        path = paths.get(conf)
+        annual = False
+    if path is None:
+        raise E.GrainUnavailable("no %s grid supplied for configuration %s" %
+                                 ("annual" if annual else "monthly", conf), "grid_configuration_unavailable")
     ds = Dataset(path)
     try:
+        declared = getattr(ds, "configuration_id", "")
+        if declared and configurations.canonical(declared) != conf:
+            raise E.IdentityError("requested configuration %s but cube declares %s" % (conf, declared))
         lats, lons = ds["lat"][:], ds["lon"][:]
         # A DOMAIN CHECK, BECAUSE argmin ALWAYS SUCCEEDS. Without this, a query for Delhi or
         # for the middle of the Arabian Sea snaps to the nearest edge cell and is returned with
@@ -271,12 +335,12 @@ def get_grid_cell(engine, req, cube_paths):
                                  float(lons.min()), float(lons.max())), "grid_domain")
         i = int(abs(lats - req.lat).argmin()); j = int(abs(lons - req.lon).argmin())
 
-        if historical:
+        if annual:
             var = ds["%s_emissions" % req.gas.lower()]
             periods = [str(p) for p in ds["period_id"][:]]
             if period not in periods:
                 raise E.UnknownDimensionValue(
-                    "%s is not one of the nine gridded periods %s" % (period, periods),
+                    "%s is not one of the gridded periods %s" % (period, periods),
                     "grid_period")
             k = periods.index(period)
             views = [str(v) for v in ds["spatial_view"][:]]
@@ -309,9 +373,13 @@ def get_grid_cell(engine, req, cube_paths):
                 if t not in axis:
                     raise E.UnknownDimensionValue(
                         "%s is not a month of %s" % (req.month, REFERENCE_PERIOD), "grid_month")
-                val = float(var[axis.index(t), i, j])
+                cell = var[axis.index(t), i, j]
             else:
-                val = float(var[:, i, j].sum())
+                cell = var[:, i, j].sum()
+            import numpy as _np
+            if _np.ma.is_masked(cell):
+                raise E.NotEstimated("requested cell is outside Pakistan", "grid_outside_country")
+            val = float(cell)
         conservation = getattr(ds, "conservation", "")
     finally:
         ds.close()

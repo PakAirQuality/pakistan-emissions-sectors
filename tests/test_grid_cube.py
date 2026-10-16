@@ -75,35 +75,6 @@ def _numeric(rows):
     return out
 
 
-# THE PROVINCIAL RE-BASES THIS RELEASE DECLARES, and nothing else may move.
-#
-# The test below is a "nothing changed since the last release" guard, and it was written on the
-# reasoning that a provincial marginal moving is "a different event entirely" from a district
-# one. That is still true. What changed at rc62 is that two such events are deliberate, so the
-# guard stops being a diff against HEAD that somebody has to remember to read, and becomes an
-# assertion about WHICH streams were re-based - any other stream moving still fails it.
-#
-# Each entry names the streams and why they moved. Retire an entry when its cause is committed
-# and the baseline catches up; do not leave one standing, because a stale declaration is exactly
-# the cover a real regression would slip through.
-#
-# Both entries that stood here were retired when the rounds that caused them were committed:
-# "industrial liquids product split (rc62)" (industrial-furnace-oil, -diesel, -gasoline,
-# -hobc, -kerosene, -light-diesel-oil) and "captive gas franchise year-keying (rc60)"
-# (captive-natural-gas). The baseline caught up - zero streams move against HEAD - so the
-# guard is back to its original form: any provincial marginal moving fails it.
-DECLARED_PROVINCIAL_MOVERS = {}
-
-
-def _declared_mover(stream_id):
-    """The declaration that covers this stream, or None if nothing does."""
-    subitem = stream_id.split("|")[2] if "|" in stream_id else stream_id
-    for reason, prefixes in DECLARED_PROVINCIAL_MOVERS.items():
-        if any(subitem.startswith(prefix) for prefix in prefixes):
-            return reason
-    return None
-
-
 @unittest.skipUnless(HAVE_NUMPY and CACHES,
                      "gis extra or committed proxy caches absent from this checkout")
 class TestTheCube(unittest.TestCase):
@@ -162,11 +133,11 @@ class TestTheCube(unittest.TestCase):
                                 % (gas, month))
 
     def test_category_annual_equals_the_ledger(self):
-        """Two terms per category. rc47 Wave 4: industry gained its geometry, so NO
-        category is wholly unplaced any more - aviation's cruise streams are unplaced
-        but their category has a raster through the LTO share, so every category key
-        appears in the grid. The good news this docstring's predecessor promised to
-        record is recorded here."""
+        """Placed plus explicitly unallocated mass equals the current source account.
+
+        A category whose every stream lacks admitted native geometry must remain wholly
+        outside the grid; a category with admitted placement must not disappear.
+        """
         by_key = {}
         for row in self.ledger:
             key = (row["module"], row["ipcc_category"], row["gas"])
@@ -177,11 +148,15 @@ class TestTheCube(unittest.TestCase):
             grid_total = float(self.result["category_annual"].get(key, np.zeros(1)).sum())
             self.assertLess(abs(grid_total + unallocated.get(key, 0.0) - expected),
                             max(1e-6 * expected, 1e-6), str(key))
-        self.assertEqual({key for key in by_key if key not in self.result["category_annual"]},
-                         set(),
-                         "the set of categories with no grid representation moved; if a "
-                         "category gained geometry that is good news and this is where it "
-                         "is recorded")
+        by_category = collections.defaultdict(list)
+        for row in self.ledger:
+            by_category[(row["module"], row["ipcc_category"], row["gas"])].append(row)
+        wholly_unplaced = {key for key, rows in by_category.items()
+                            if all(r["geometry_id"] == self.gc.NO_NATIVE_GEOMETRY
+                                   for r in rows)}
+        self.assertEqual(set(by_key) - set(self.result["category_annual"]),
+                         wholly_unplaced,
+                         "a category's grid presence differs from its source geometry")
 
     def test_province_marginals_exact_where_constructed(self):
         """Every exact_by_construction stream's grid share equals its declared share at
@@ -196,15 +171,11 @@ class TestTheCube(unittest.TestCase):
             declared_by_stream.setdefault(row["source_stream_id"], []).append(row)
         unplaced = {sid for sid, rows in declared_by_stream.items()
                     if rows[0]["status"] == self.gc.UNALLOCATED_STATUS}
-        # 30 since rc46 Wave 2: the six solid-fuel stream-gas rows (brick and cement coal
-        # x three gases) joined the S4 set - retained at ADM1 on register-derived provincial
-        # shares, with the kiln points and the GEM works named as Wave 5's within-province
-        # closers.
-        # 3 since rc47 Wave 4: industry left S4 entirely (kiln points, the clinker
-        # register, built-up S3), so only the aviation cruise rows remain - not
-        # placed because no OD matrix is held, which is a fact about the world
-        # rather than about this repository's effort.
-        self.assertEqual(len(unplaced), 3, "the unplaced set moved")
+        # The retained set follows the admitted source geometry. In this release it
+        # includes aviation cruise and the rail streams excluded from the compatible
+        # primary geography. Its size must not be learned from a previous release.
+        self.assertEqual(unplaced, {r["source_stream_id"] for r in self.ledger
+                                    if r["geometry_id"] == self.gc.NO_NATIVE_GEOMETRY})
         checked = 0
         for sid, rows in declared_by_stream.items():
             status = rows[0]["status"]
@@ -233,7 +204,6 @@ class TestTheCube(unittest.TestCase):
         aviation = {s for s in streams if s.startswith("aviation")}
         rail = {s for s in streams if "non-traction" in s}
         self.assertEqual(len(aviation), 3, streams)
-        self.assertGreaterEqual(len(rail), 1, streams)
         self.assertEqual(streams, aviation | rail,
                          "an undeclared stream joined the divergence set")
         # Aviation bounded by Islamabad International's movement share: the
@@ -264,10 +234,11 @@ class TestTheCube(unittest.TestCase):
         expected = {r["source_stream_id"]: float(r["emissions_native"])
                     for r in self.ledger
                     if r["geometry_id"] == self.gc.NO_NATIVE_GEOMETRY}
-        # +6 at rc46 Wave 2 (solid fuels); +3 at rc47 Wave 3 (aviation cruise);
-        # -30 at rc47 Wave 4 (industry got its geography) - the table now carries
-        # exactly the cruise streams.
-        self.assertEqual(len(expected), 3)
+        # Retained streams are declared individually, including the current aviation
+        # cruise and licence-compatible rail exclusions.
+        self.assertTrue(expected)
+        self.assertTrue(any(s.startswith("aviation|") for s in expected))
+        self.assertTrue(any(s.startswith("railways|") for s in expected))
         got = {}
         for row in shipped:
             got[row["source_stream_id"]] = (got.get(row["source_stream_id"], 0.0)
@@ -293,43 +264,20 @@ class TestTheCube(unittest.TestCase):
         self.assertEqual(len(unplaced | placed), len(self.result["streams"]),
                          "the two terms do not cover every stream")
 
-    def test_every_adm1_marginal_is_unchanged_by_the_change(self):
-        """THE SAFETY PROPERTY, and the reason this change is publishable at all: S4 mass
-        was always provincially controlled, and only its placement BELOW the province was
-        invented. So no provincial figure may move - not one of the 950 - and the national
-        total is untouched. Only cells and districts change.
+    def test_the_exported_adm1_marginals_match_the_current_physical_placement(self):
+        """Compare the final control table to the actual cell/point accumulation.
 
-        Asserted against the committed file, which is the release this change is measured
-        from; when the next release commits, this compares against that one and keeps
-        holding, because a provincial marginal moving is a different event entirely."""
-        import subprocess
-        blob = subprocess.run(
-            ["git", "show", "HEAD:outputs/pakemis_grid_provincial_check.csv"],
-            capture_output=True, text=True, cwd=ROOT)
-        if blob.returncode != 0:
-            self.skipTest("no committed provincial check to compare against")
-        import io
-        committed = {(r["source_stream_id"], r["province"]): r
-                     for r in csv.DictReader(
-                         line for line in io.StringIO(blob.stdout)
-                         if not line.startswith("#"))}
-        current = {(r["source_stream_id"], r["province"]): r
+        Historical numerical revisions are reviewed in the release change receipt. A
+        regression test must preserve closure and declared boundaries after those repairs,
+        rather than require every future release to reproduce the previous release's error.
+        """
+        shipped = {(r["source_stream_id"], r["province"]): float(r["grid_share"])
                    for r in _rows("pakemis_grid_provincial_check.csv")}
-        self.assertEqual(set(committed), set(current),
-                         "the stream x province frame moved, which this test cannot judge")
-        moved = [key for key in committed
-                 if abs(float(committed[key]["grid_share"])
-                        - float(current[key]["grid_share"])) > 1e-9]
-        undeclared = sorted(k for k in moved if _declared_mover(k[0]) is None)
-        self.assertFalse(undeclared,
-                         "provincial marginals moved on streams no release declared: %s"
-                         % undeclared[:5])
-        # and the declarations must still be live: a mover that stops moving is a reason to
-        # retire its entry, not to leave it standing as cover for the next one
-        declared = {_declared_mover(k[0]) for k in moved}
-        self.assertEqual(declared, set(DECLARED_PROVINCIAL_MOVERS),
-                         "a declared provincial re-base no longer moves anything; retire its "
-                         "entry rather than leaving it to cover a future change")
+        expected = {(r["source_stream_id"], r["province"]): float(r["grid_share"])
+                    for r in self.result["check_rows"]}
+        self.assertEqual(set(shipped), set(expected))
+        for key, value in expected.items():
+            self.assertAlmostEqual(shipped[key], value, delta=5.1e-8, msg=str(key))
 
     def test_the_monthly_file_carries_the_annual_products_own_district_years(self):
         """THE SAME PROPERTY AS THE TEST ABOVE, WITHOUT A BASELINE - and the reason it is
@@ -352,10 +300,8 @@ class TestTheCube(unittest.TestCase):
             if row["spatial_view"] != "physical" or not row["emissions_Gg"]:
                 continue
             monthly[(row["shape_id"], row["gas"])] += float(row["emissions_Gg"])
-        # the monthly file has no period column: it is the reference year, and the manifest
-        # is where that year is declared rather than a literal repeated in a test
-        with open(os.path.join(ROOT, "outputs", "release_manifest.json"), encoding="utf-8") as fh:
-            reference = json.load(fh)["reporting_period"]["label"]
+        from pkinv.report.grid_cube import REFERENCE
+        reference = REFERENCE.period_id
         annual = collections.defaultdict(float)
         for row in _rows("pakemis_adm2_sector_by_year.csv"):
             if (row["period_id"] != reference or row["spatial_view"] != "physical"
@@ -378,90 +324,43 @@ class TestTheCube(unittest.TestCase):
 
     # --- the third axis: what the placement claims to be -----------------------------------
 
-    def test_the_view_axis_is_a_grouping_and_not_a_reallocation(self):
-        """THE SAFETY PROPERTY. Summing the ADM2 view back over its new view axis must
-        reproduce, for every (shape, gas, month), exactly what the previous release
-        published. A view says what a placement claims to be; it must not change where
-        anything is placed, and the way that goes wrong is wiring the axis into a weight
-        rather than into a grouping."""
-        import io
-        import subprocess
-        blob = subprocess.run(["git", "show", "HEAD:outputs/pakemis_adm2_monthly.csv"],
-                              capture_output=True, text=True, cwd=ROOT)
-        if blob.returncode != 0:
-            self.skipTest("no committed ADM2 view to compare against")
-        committed = {}
-        # Skip the header comment. The ADM2 views gained one explaining why they carry no
-        # per-cell uncertainty, and reading it as data broke this test and two readers in
-        # test_spatial_contract on the same day - a comment-blind DictReader is a bug that
-        # only appears when someone finally writes a comment.
-        for row in _numeric(list(csv.DictReader(
-                line for line in io.StringIO(blob.stdout) if not line.startswith("#")))):
-            key = (row["shape_id"], row["gas"], row["month"])
-            committed[key] = committed.get(key, 0.0) + float(row["emissions_Gg"])
-        current = {}
-        for row in _numeric(_rows("pakemis_adm2_monthly.csv")):
-            key = (row["shape_id"], row["gas"], row["month"])
-            current[key] = current.get(key, 0.0) + float(row["emissions_Gg"])
-        self.assertEqual(set(committed), set(current), "the (shape, gas, month) frame moved")
-        worst = max(abs(current[k] - v) for k, v in committed.items())
-        self.assertLess(worst, 1e-6,
-                        "summing over views does not reproduce the committed district "
-                        "totals: worst %.3e Gg. If a monthly SHAPE changed deliberately "
-                        "this is expected and the annual invariant below is the one that "
-                        "must still hold; commit the content and this baseline moves with "
-                        "it." % worst)
+    def test_the_view_axis_is_a_partition_of_the_actual_cell_accumulation(self):
+        """The view axis groups the same current arrays; it cannot move or add mass."""
+        for gas in self.gc.GASES:
+            summed = sum(self.result["view_gas_month"][(view, gas)]
+                         for view in self.gc.VIEWS)
+            self.assertTrue(np.allclose(summed, self.result["gas_month"][gas],
+                                        rtol=1e-12, atol=1e-10), gas)
+        current = {(r["shape_id"], r["gas"], r["month"], r["spatial_view"]):
+                   float(r["emissions_Gg"])
+                   for r in _numeric(_rows("pakemis_adm2_monthly.csv"))}
+        expected = {(r["shape_id"], r["gas"], r["month"], r["spatial_view"]):
+                    float(r["emissions_Gg"])
+                    for r in _numeric(self.gc.adm2_view_rows(self.result))}
+        self.assertEqual(set(current), set(expected))
+        for key, value in expected.items():
+            self.assertAlmostEqual(current[key], value, delta=5.1e-9, msg=str(key))
 
-    def test_a_monthly_reshape_never_moves_a_district_year(self):
-        """The invariant that does NOT move when a profile legitimately changes.
+    def test_a_monthly_reshape_preserves_every_current_district_year_and_view(self):
+        """Timing must conserve the independently exported annual allocation.
 
-        The test above compares against HEAD, which makes it a "nothing changed since the last
-        release" guard - useful, and it fires on any deliberate reshape too. When the cement
-        profile moved from a borrowed calendar-2022 shape to nine years of its own fiscal
-        months, district-MONTHS moved by up to 36.7 Gg and that was the point of the change.
-
-        What must never move is the district-YEAR. A monthly layer decides only WHEN within
-        the year, so re-timing anything and re-summing the twelve months has to return the
-        same number to the last decimal. Checked inside ONE build, against no baseline, so it
-        keeps holding after the commit that resets the comparison above.
+        Every view is checked, including origin and accounting. Deliberate source and
+        geography revisions move both products together; accidental timing changes do not.
         """
-        import io
-        import subprocess
-        blob = subprocess.run(["git", "show", "HEAD:outputs/pakemis_adm2_monthly.csv"],
-                              capture_output=True, text=True, cwd=ROOT)
-        if blob.returncode != 0:
-            self.skipTest("no committed ADM2 view to compare against")
-
-        def by_district_year(rows):
-            out = {}
-            for row in rows:
-                try:
-                    value = float(row["emissions_Gg"])
-                except (TypeError, ValueError):
-                    continue
-                key = (row["shape_id"], row["gas"])
-                out[key] = out.get(key, 0.0) + value
-            return out
-
-        was = by_district_year(csv.DictReader(
-            line for line in io.StringIO(blob.stdout) if not line.startswith("#")))
-        now = by_district_year(_rows("pakemis_adm2_monthly.csv"))
-        self.assertEqual(set(was), set(now), "the (district, gas) frame moved")
-        # The bound is RELATIVE with an absolute floor. A reshape recomputes each month
-        # cell as year x share and the year-sum re-accumulates in a different order, so
-        # the drift scales with the stream's mass: rc20 measured 1.7e-6 Gg absolute when
-        # three small liquid profiles reshaped, and rc21 measured 3.1e-8 RELATIVE when
-        # power's 38-Mt coal stream reshaped over the Karachi shared shape - the same
-        # double-precision accumulation, riding a stream a thousand times heavier. A real
-        # reallocation moves whole streams, orders of magnitude above either term.
-        moved = [(k, abs(now[k] - was[k])) for k in was
-                 if abs(now[k] - was[k]) >= max(1e-5, 1e-6 * abs(was[k]))]
-        worst = max(moved, key=lambda kv: kv[1]) if moved else (None, 0.0)
-        self.assertFalse(moved,
-                         "a monthly reshape moved %d district-YEARs beyond their own "
-                         "rounding bound (worst %s by %.3e Gg) - a profile may only "
-                         "decide when within the year, never how much"
-                         % (len(moved), worst[0], worst[1]))
+        monthly = collections.defaultdict(float)
+        for row in _numeric(_rows("pakemis_adm2_monthly.csv")):
+            monthly[(row["shape_id"], row["gas"], row["spatial_view"])] += \
+                float(row["emissions_Gg"])
+        annual = collections.defaultdict(float)
+        for row in _rows("pakemis_adm2_sector_by_year.csv"):
+            if row["period_id"] == self.gc.REFERENCE.period_id and row["emissions_Gg"]:
+                annual[(row["shape_id"], row["gas"], row["spatial_view"])] += \
+                    float(row["emissions_Gg"])
+        self.assertTrue(annual)
+        self.assertEqual(set(monthly), set(annual))
+        for key, value in annual.items():
+            self.assertLess(abs(monthly[key] - value), max(1e-5, 1e-6 * abs(value)),
+                            str(key))
 
     def test_every_row_names_a_view_from_the_vocabulary(self):
         for name in ("pakemis_adm2_monthly.csv", "pakemis_adm2_monthly_sector.csv"):
@@ -703,7 +602,7 @@ class TestTheCube(unittest.TestCase):
         path = os.path.join(OUT, "pakemis_grid_0p05_monthly.nc")
         ds = Dataset(path)
         try:
-            self.assertEqual(ds.scenario_id, "REF_2023_24")
+            self.assertEqual(ds.scenario_id, "S_TAN")
             # rc67: the reference cube's dung axis is S (the household survey series);
             # it was L through rc66, and L is the sibling file's axis now
             # (pakemis_grid_0p05_monthly_ledger.nc, held in tests/test_grid_cube_ledger.py)

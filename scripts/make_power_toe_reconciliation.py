@@ -1,4 +1,4 @@
-"""The NEPRA/K-Electric reconciliation ladder as ONE published table (rc30).
+"""The source-control and reconstructed-reference energy ladder.
 
 The eighteenth review asked for the public reconciliation to be finished as an
 explicit ladder - physical plant fuel, K-Electric's leg, the national Table-3
@@ -11,14 +11,11 @@ vintage of the arithmetic it summarises.
 The national energy per fuel is recovered from the audit's own two ratios
 (without-KE and with-KE coverage of the same national row):
     national_TJ = KE_TJ / (with_ratio - without_ratio)
-which uses no calorific constant of its own - the point, because the TOE
-conversion IS the open question (gap rows coal-toe-ncv and ke-boundary; the
-HDIP metadata remains the closing acquisition and letter REQ-HDIP-01 is
-drafted). The three configurations stay as named and none is silently
-privileged; the reviewer's proposed post-HDIP names map
-    hdip_toe_reported  -> inventory_reference (57.82)
-    plant_physical_ncv -> power_plant_physical_coal (38.45)
-    hdip_toe_plus_ke   -> power_with_kelectric (61.83)
+which introduces no additional calorific constant. The historical Table-3
+control is distinct from the adopted station/rank reference. FY2024–25 has no
+independent Table-3 control: its reconstructed reference has a separate column,
+and station sums use the documented physical-fuel/NCV basis. K-Electric remains
+a fuel-specific coverage alternative, not a forced balancing term.
 
 Usage:  python3 scripts/make_power_toe_reconciliation.py
 Writes: outputs/power_toe_reconciliation.csv
@@ -42,6 +39,10 @@ def _rows(path):
 
 
 def build():
+    from pkinv.sectors.power.data import PowerData
+    from pkinv.sectors.power import plant_ledger
+    data = PowerData()
+    direct = {str(r["fiscal_year"]): r for r in plant_ledger.ke_boundary_audit(data)}
     audit = {r["fiscal_year"]: r for r in _rows(AUDIT)}
     ke = {r["fiscal_year"]: r for r in _rows(KE)}
     cv = _rows(CV)
@@ -53,17 +54,26 @@ def build():
             without = float(a["%s_without_KE" % prefix])
             with_ke = float(a["%s_with_KE" % prefix])
             ke_tj = float(a[ke_col])
-            national = ke_tj / (with_ke - without) if with_ke > without else ""
-            cppa = national * without if national else ""
+            latest = int(year) >= 2024
+            if latest:
+                key = "Gas" if prefix == "gas" else "Furnace Oil"
+                national = data.fuel_for(int(year))[key] * data.p("toe_to_tj")
+                cppa = national * direct[year][prefix + "_without_KE_over_national"]
+            else:
+                national = ke_tj / (with_ke - without) if with_ke > without else ""
+                cppa = national * without if national else ""
             out.append({
                 "fiscal_year": year, "fuel": fuel,
-                "rung_national_table3_TJ": round(national) if national else "",
+                "rung_national_table3_TJ": round(national) if national and not latest else "",
+                "rung_reconstructed_reference_TJ": round(national) if national and latest else "",
                 "rung_cppa_plant_TJ": round(cppa) if cppa else "",
                 "rung_ke_plant_TJ": round(ke_tj),
                 "coverage_without_ke": without, "coverage_with_ke": with_ke,
-                "basis": "national energy recovered from the audit's own ratio pair "
+                "basis": ("No independent Table-3 control; reconstructed reference NCV energy, "
+                         "station fuel sums and separate KE coverage alternative" if latest else
+                         "national energy recovered from the audit's own ratio pair "
                          "(no calorific constant of this table's own); plant rungs "
-                         "from the NEPRA plant ledger; KE rung from the KE leg",
+                         "from the NEPRA plant ledger; KE rung from the KE leg"),
             })
         year_cv = [r for r in cv if r["fiscal_year"] == year
                    and r["implied_cv_TJ_per_Gg"] and r["mass_kt"]]
@@ -73,13 +83,13 @@ def build():
             out.append({
                 "fiscal_year": year, "fuel": "coal (plant-implied energy)",
                 "rung_national_table3_TJ": "",
+                "rung_reconstructed_reference_TJ": "",
                 "rung_cppa_plant_TJ": round(implied),
                 "rung_ke_plant_TJ": 0,
                 "coverage_without_ke": "", "coverage_with_ke": "",
                 "basis": "sum of ledger mass x heat-rate-implied CV over %d plants; "
-                         "the Table-3 comparison is the open coal-toe-ncv question "
-                         "(x~2 at FY2023-24) and is NOT settled here - see the "
-                         "power_grid_control configuration family and REQ-HDIP-01"
+                         "a generation/heat-rate diagnostic, distinct from the adopted "
+                         "station mass times documented rank-NCV reference"
                          % len(year_cv),
             })
     return out
@@ -90,8 +100,8 @@ def main():
     with open(OUT, "w", newline="", encoding="utf-8") as f:
         f.write("# The NEPRA/K-Electric reconciliation ladder, assembled from shipped "
                 "outputs only (rc30).\n"
-                "# The three power configurations remain co-published and unprivileged; "
-                "the HDIP metadata is the closing acquisition.\n")
+                "# Historical source controls, reconstructed reference and KE coverage "
+                "alternatives retain distinct bases.\n")
         w = csv.DictWriter(f, fieldnames=list(rows[0].keys()))
         w.writeheader()
         w.writerows(rows)

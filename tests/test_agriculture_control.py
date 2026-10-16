@@ -1,25 +1,10 @@
-"""rc39 A5: the agriculture reference year, pinned against an EXTERNAL control.
+"""Preserve the historical agriculture control without freezing current methods.
 
-An external audit of the rc38 capsule supplied expected values for every agriculture category
-after four corrections: the reference herd re-based to the census's exact enumeration (A1), the
-fertiliser composition re-weighted onto the fiscal year's own product mix (A2), urea taken from
-NFDC's printed offtake instead of reconstructed (A3), and 3.G split from 3.H (A4).
-
-Those values were NOT used as inputs anywhere. Each pass changed an input or a method and the
-engine produced what it produced; this module compares the result to the audit afterwards. All
-six categories and the total land on the expected figures to six decimal places.
-
-WHY THIS IS WORTH A TEST OF ITS OWN. The per-pass tests each check one mechanism, and the pins
-in test_national_configurations check the national total - but nothing held the SECTOR to a
-figure computed outside this repository. That is the only kind of check that can catch a set of
-changes which are each internally consistent and collectively wrong: four passes that agree
-with each other will pass every test that only asks whether they agree with each other.
-
-The values are therefore deliberately hard-coded here rather than read from an output. This is
-the one place in the suite where that is the right thing to do: reading them from the engine
-would make the test compare the engine to itself, which is what the rest of the suite already
-does. If a later pass moves one of these, it is a re-base and must be named as one - the same
-rule the pins live under.
+The rc39 external calculation describes the rc67 input vintage and IPCC nitrogen
+configuration. Its exact values remain checked against the immutable release baseline.
+Current source revisions and TAN/IPCC configurations are checked separately against
+native components, so a historical model calculation cannot silently become an
+observation that forbids a documented scientific change.
 """
 
 from pkinv.assets import asset_path
@@ -52,9 +37,12 @@ CONTROL = {
 CONTROL_TOTAL = 223.454471
 
 
-def _agriculture_by_code():
+def _agriculture_by_code(path=None):
     agg = collections.defaultdict(float)
-    for row in read_rows(os.path.join(OUTPUTS, "pakemis_atomic_annual.csv")):
+    if path is None:
+        from pkinv.paths import DATA
+        path = os.path.join(DATA, "baselines", "rc67_integrated_campaign", "outputs", "pakemis_atomic_annual.csv")
+    for row in read_rows(path):
         if row["period_id"] != "FY2023-24" or row["sector_id"] != "agriculture":
             continue
         value = row["co2e_Mt_AR5"]
@@ -84,7 +72,7 @@ def _folded_to_control_scheme():
     return dict(folded)
 
 
-class TestTheSectorReproducesTheExternalControl(unittest.TestCase):
+class TestHistoricalReleaseRetainsExternalControl(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.by_code = _folded_to_control_scheme()
@@ -126,6 +114,22 @@ class TestTheSectorReproducesTheExternalControl(unittest.TestCase):
                     % (crt_code, " + ".join(parts), CONTROL[crt_code][1]))
 
 
+class TestCurrentReferenceHasExplicitMethodAndSourceRevision(unittest.TestCase):
+    def test_current_native_categories_match_the_adopted_reference(self):
+        from pkinv.sectors.agriculture import engine
+        from pkinv.core import configurations as conf
+        from pkinv.report.category_ledger import component_code
+        expected = collections.defaultdict(float)
+        for row in engine.components_for_fiscal_year(2024, nitrogen_method=conf.nitrogen_method(conf.REFERENCE)):
+            expected[component_code(row["category"], row["subitem"], row["gas"])] += row["co2e_Mt_AR5"]
+        current = _agriculture_by_code(os.path.join(OUTPUTS, "pakemis_atomic_annual.csv"))
+        self.assertEqual(set(current), set(expected))
+        for code in expected:
+            self.assertAlmostEqual(current[code], expected[code], delta=5e-8)
+        self.assertNotEqual(round(sum(current.values()), 6), CONTROL_TOTAL,
+                            "the documented source/nitrogen revision unexpectedly disappeared")
+
+
 class TestTheControlIsNotSelfReferential(unittest.TestCase):
     """The check that this file is worth having: the numbers above must not be reachable
     from the engine, or the comparison is the engine against itself."""
@@ -138,12 +142,11 @@ class TestTheControlIsNotSelfReferential(unittest.TestCase):
         hits = []
         for needle in needles:
             out = subprocess.run(
-                ["grep", "-rl", "--include=*.csv", "--include=*.json", needle,
+                ["rg", "-l", "-g", "*.csv", "-g", "*.json", "-g", "!**/baselines/**", needle,
                  asset_path(ROOT, "data")], capture_output=True, text=True)
             if out.stdout.strip():
                 hits.append((needle, out.stdout.split()))
-        self.assertFalse(hits, "an audit control value is present in the INPUTS, so the "
-                               "engine could be reproducing it by construction: %s" % hits)
+        self.assertFalse(hits, "a historical audit control appears in active model inputs: %s" % hits)
 
 
 if __name__ == "__main__":

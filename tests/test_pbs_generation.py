@@ -138,7 +138,10 @@ class TestNoFuelIsGuessedFromAName(unittest.TestCase):
         diesel happened to be read first."""
         fuels = ingest.ledger_fuels()
         for ambiguous in ("kapco", "jamshoro", "binqasimtpsi"):
-            self.assertFalse([k for k in fuels if ambiguous in k],
+            # Jamshoro Coal Unit-1 is a separate, explicitly coal-fired FY2025
+            # station; a substring is not the older multi-fuel thermal plant.
+            self.assertFalse([k for k in fuels if ambiguous in k and
+                              not (ambiguous == "jamshoro" and k == "jamshorocoalpowerunit1")],
                              "%s is multi-fuel and must not carry a single label"
                              % ambiguous)
 

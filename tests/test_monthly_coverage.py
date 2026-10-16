@@ -1,4 +1,4 @@
-"""Gates on the 108-month coverage report and on the evidence class it can now show.
+"""Gates on the core-period monthly coverage report and its evidence classes.
 
 WHAT IS BEING PROTECTED. The report is an assembly, not a computation: it reads the monthly
 product's classes and the annual product's declared absences and puts them in the view the
@@ -23,7 +23,7 @@ from _support import OUT, ROOT
 
 DETAIL = os.path.join(OUT, "pakemis_monthly_coverage.csv")
 SUMMARY = os.path.join(OUT, "pakemis_monthly_coverage_summary.csv")
-PRODUCT = os.path.join(OUT, "pakemis_monthly_fy2015_16_fy2023_24.csv")
+PRODUCT = os.path.join(OUT, "pakemis_monthly_fy2015_16_fy2024_25.csv")
 ATOM = os.path.join(OUT, "pakemis_atomic_annual.csv")
 
 # EMPTY since rc20: the last two absent sector-years (industry and transport FY2015-16)
@@ -46,11 +46,11 @@ class TheSummaryAnswersTheQuestionAsked(unittest.TestCase):
         self.rows = _rows(SUMMARY)
 
     def test_it_has_exactly_one_row_per_month_of_the_window(self):
-        self.assertEqual(108, len(self.rows))
+        self.assertEqual({r["month"] for r in self.rows}, {r["month"] for r in _rows(PRODUCT)})
         months = [r["month"] for r in self.rows]
         self.assertEqual(len(months), len(set(months)))
         self.assertEqual("201507", min(months))
-        self.assertEqual("202406", max(months))
+        self.assertEqual(max(r["month"] for r in _rows(PRODUCT)), max(months))
 
     def test_every_month_names_a_period(self):
         for row in self.rows:
@@ -61,24 +61,29 @@ class TheSummaryAnswersTheQuestionAsked(unittest.TestCase):
             parts = sum(float(row[k]) for k in ("TE1_Mt", "TE2_Mt", "TE3_Mt", "TE4_Mt"))
             self.assertAlmostEqual(parts, float(row["co2e_Mt_AR5"]), places=4, msg=row["month"])
 
-    def test_the_observed_concentration_is_visible_rather_than_averaged_away(self):
-        """The finding a single headline would hide.
+    def test_each_periods_observed_share_is_derived_from_its_actual_source_rows(self):
+        """An extension can have weaker evidence than earlier years.
 
-        The strong classes sit in the years OCAC's panel reaches. This asserts the report
-        still SHOWS that - if every year came out alike, either the panel stopped mattering
-        or the report stopped distinguishing years, and both need looking at.
+        The report must preserve source-specific classes, rather than satisfy an assumed
+        ordering of years or copy the reference-year evidence score into the extension.
         """
         by_period = collections.defaultdict(lambda: [0.0, 0.0])
         for row in self.rows:
             by_period[row["period_id"]][0] += float(row["TE1_Mt"]) + float(row["TE2_Mt"])
             by_period[row["period_id"]][1] += float(row["co2e_Mt_AR5"])
         shares = {p: 100.0 * o / t for p, (o, t) in by_period.items() if t}
-        self.assertEqual(9, len(shares))
-        early = max(shares[p] for p in shares if p < "FY2021-22")
-        late = min(shares[p] for p in shares if p >= "FY2021-22")
-        self.assertGreater(late, early,
-                           "the panel years no longer show a higher observed share than the "
-                           "years before it: %s" % sorted(shares.items()))
+        self.assertEqual(set(shares), {r["period_id"] for r in _rows(PRODUCT)})
+        product = collections.defaultdict(lambda: [0.0, 0.0])
+        for row in _rows(PRODUCT):
+            value = float(row["co2e_Mt_AR5"] or 0.0)
+            product[row["period_id"]][1] += value
+            if row["temporal_evidence_class"] in ("TE1", "TE2"):
+                product[row["period_id"]][0] += value
+        for period, (observed, total) in product.items():
+            self.assertAlmostEqual(shares[period], 100.0 * observed / total,
+                                   places=4, msg=period)
+        self.assertGreater(max(shares.values()) - min(shares.values()), 1.0,
+                           "the report lost the source-dependent differences between years")
 
 
 class ItLosesNothingOnTheWayThrough(unittest.TestCase):

@@ -8,6 +8,7 @@ import sys
 import tempfile
 import unittest
 import zipfile
+from unittest.mock import patch
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -27,6 +28,25 @@ def _sha(path):
         for chunk in iter(lambda: handle.read(1 << 20), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+class WorkingTreeEnumeration(unittest.TestCase):
+    def test_unstaged_deletion_is_not_a_snapshot_input(self):
+        builder = _load("build_validation_package")
+        with tempfile.TemporaryDirectory(prefix="pakemis-snapshot-inputs-") as root:
+            os.makedirs(os.path.join(root, "tests"))
+            retained = "tests/retained.py"
+            with open(os.path.join(root, retained), "w", encoding="utf-8") as handle:
+                handle.write("# retained working-tree input\n")
+            removed = "tests/removed_golden.json"
+            with patch.object(builder, "ROOT", root), \
+                 patch.object(builder, "git", return_value=retained + "\n" + removed + "\n"), \
+                 patch.object(builder, "asset_catalog", return_value=[]), \
+                 patch.object(builder.deposit, "DEPOSIT_PATTERNS", ()), \
+                 patch.object(builder.deposit, "reviewer_guides", return_value=[]):
+                paths = builder.tracked_files()
+            self.assertIn(retained, paths)
+            self.assertNotIn(removed, paths)
 
 
 class DevSnapshot(unittest.TestCase):
@@ -108,40 +128,10 @@ class DepositZips(unittest.TestCase):
         cls.mod = _load("build_deposit_zip")
         cls.rows = cls.mod.deposit_rows()
 
-    # ⚠ THE EXCLUSIONS, DECLARED (rc64). A deposit-manifest PRODUCT row whose inventory tier is
-    # `build` is skipped by data_layout under rule 7 - no build artifact in a deposit - while
-    # the builder's own docstring says the archive carries "every deposit-manifest row of kind
-    # product". Both rules are defensible; together they contradict, and the code resolved it
-    # silently because the two selections share no criterion: deposit_manifest.py picks
-    # products from release_manifest.PRODUCT_PATTERNS and never consults role or tier.
-    #
-    # THIRTEEN rows were in that gap, essentially the whole air-pollutant family - the district
-    # panel (1,335 rows), the industrial air panel (1,260), the 1990-2024 series (595). It was
-    # the rc48 defect displaced by one layer: then a product was missing from the MANIFEST
-    # while the description claimed it, now it was in the manifest and missing from the ZIP.
-    # Nine were closed by typing them from the evidence - six by the catch-all learning to
-    # defer to citation, three from PRODUCT_PATTERNS' own literal naming.
-    #
-    # These four reach the manifest through the broad `pakemis_*.csv` glob rather than a
-    # deliberate literal entry, and each carries a hand-written role row naming its producer.
-    # So the manifest's claim on them may be incidental and the role considered - the opposite
-    # of the air family - and which registry is right is a decision about what the deposit is
-    # FOR. That is the user's call, so they are DECLARED here with the reason instead of
-    # dropped in silence. Resolving one means either removing it from the deposit manifest or
-    # changing its role, and deleting it from this dict is how either choice gets asserted.
-    DECLARED_UNPLACED = {
-        "outputs/pakemis_air_industry_cy2023.csv":
-            "calendar-2023 industrial air layer, composed from two fiscal years; role says "
-            "working file, glob says product",
-        "outputs/pakemis_air_source_class_uncertainty_by_year.csv":
-            "THREE registries disagree about this one: the role says working file, the deposit "
-            "manifest says product, and the national paper names it",
-        "outputs/pakemis_kiln_frame_adm2_by_type.csv":
-            "brick-kiln spatial frame by kiln type; a frame an allocation rides, not a "
-            "reported quantity",
-        "outputs/pakemis_power_admission_adm2_by_class.csv":
-            "the spatial frame the admitted power SO2 rides; same class as the kiln frame",
-    }
+    # The integrated package supplies registered compiled dependencies in a
+    # reproduction-support lane and separates ODbL-sensitive records. No
+    # manifest product is silently omitted from both archives.
+    DECLARED_UNPLACED = {}
 
     def test_data_layout_is_a_partition_of_the_manifests_data_rows(self):
         entries = self.mod.data_layout(self.rows)
@@ -158,7 +148,7 @@ class DepositZips(unittest.TestCase):
         manifest row is placed - so thirteen hashed products could be skipped by the builder
         while the manifest claimed them and nothing failed. A partition needs both halves.
         """
-        entries = self.mod.data_layout(self.rows)
+        entries = self.mod.data_layout(self.rows) + self.mod.companion_layout(self.rows)
         placed = {rel for _, rel in entries}
         products = {r["path"] for r in self.rows if r["kind"] == "product"}
         missing = sorted(products - placed - set(self.DECLARED_UNPLACED))
@@ -172,7 +162,7 @@ class DepositZips(unittest.TestCase):
 
     def test_no_declared_exclusion_is_stale(self):
         """A declaration for a row that is now placed reads as an exclusion still in force."""
-        entries = self.mod.data_layout(self.rows)
+        entries = self.mod.data_layout(self.rows) + self.mod.companion_layout(self.rows)
         placed = {rel for _, rel in entries}
         products = {r["path"] for r in self.rows if r["kind"] == "product"}
         gone = sorted(p for p in self.DECLARED_UNPLACED if p in placed or p not in products)
@@ -198,14 +188,14 @@ class DepositZips(unittest.TestCase):
         self.assertIn("pakemis-core/semantic/semantic_release.json", arcs)
         self.assertIn("pakemis-core/provenance/pakemis_deposit_manifest.csv", arcs)
 
-    def test_no_build_artifact_enters_a_deposit(self):
-        """Rule 7 of docs/product_catalog_design.md, for the product rows; a provenance record
-        (the test-run record) is deposited whatever tier the inventory files it under."""
+    def test_build_artifacts_are_only_in_the_reproduction_support_directory(self):
+        """Registered compiled dependencies remain distinct from core advertised data."""
         tier = self.mod.tiers()
         kind = {r["path"]: r["kind"] for r in self.rows}
         for arc, rel in self.mod.data_layout(self.rows):
             if rel.startswith("outputs/") and kind.get(rel) == "product":
-                self.assertNotEqual(tier.get(rel[len("outputs/"):]), "build", rel)
+                if tier.get(rel[len("outputs/"):]) == "build":
+                    self.assertTrue(arc.startswith("pakemis-support/reproduction/"), rel)
 
     def test_documentation_layout_is_the_pdfs_with_their_hash_sidecar(self):
         entries = dict(self.mod.documentation_layout(self.rows))

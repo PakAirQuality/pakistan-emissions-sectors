@@ -40,9 +40,9 @@ QUERY_CONTRACT = {
 }
 
 BASE_LIMITATIONS = [
-    {"id": "air_covered_sources", "scope": "query_air, the nine-fiscal-year panel",
+    {"id": "air_covered_sources", "scope": "query_air, the ten-fiscal-year panel",
      "notation_key": "E",
-     "message": "the nine-fiscal-year panel covers the ESTIMATED sources alone "
+     "message": "the ten-fiscal-year panel covers the ESTIMATED sources alone "
                 "(coverage_scope=covered_sources_only): grid power is inside it only for the "
                 "species its admission register prices (oil and diesel SO2) and otherwise "
                 "ships beside it as a controlled-to-uncontrolled screening pair; industrial "
@@ -52,9 +52,12 @@ BASE_LIMITATIONS = [
                 "register cannot price typed absent per species in "
                 "pakemis_air_coverage_matrix.csv - this is not a complete national "
                 "seven-species inventory and does not claim to be, so 'the largest source' "
-                "means the largest of the sources estimated here"},
+                "means the largest of the sources estimated here. Agricultural management/"
+                "grazing NOx includes the adopted chemical partition of volatilised nitrogen; "
+                "that partition is held in conditional intervals and tested separately by "
+                "a nitrogen-conserving attribution diagnostic, not measured in Pakistan"},
     {"id": "air_beta", "scope": "query_air", "notation_key": "E",
-     "message": "the air-pollutant layer is a companion product (PakEmis-Air beta): native "
+     "message": "the integrated air-pollutant layer reports native "
                 "kt of the named species, never CO2e, with assurance that is uneven across "
                 "sectors (pakemis_air_coverage_matrix.csv states each sector, species and "
                 "period) and outside every greenhouse-gas total"},
@@ -74,7 +77,7 @@ BASE_LIMITATIONS = [
     {"id": "air_spatial_not_in_layer", "scope": "query_air, geography_level adm1/adm2",
      "notation_key": "NE",
      "message": "every sector's air layer is placed with its own streams' geography, for "
-                "all nine fiscal periods (fact_air_adm1_year, fact_air_adm2_year). What a "
+                "all ten fiscal periods (fact_air_adm1_year, fact_air_adm2_year). What a "
                 "grain does not place stays typed, never zeroed, in "
                 "pakemis_air_unallocated_by_year.csv - aviation cruise below the provinces, "
                 "and mass outside the district frame - and a request for a sector the "
@@ -83,25 +86,12 @@ BASE_LIMITATIONS = [
     {"id": "air_history_national_only", "scope": "query_air, years set",
      "notation_key": "NE",
      "message": "the 1990-2024 calendar-year air series is national and agriculture-only; "
-                "provinces and districts carry the nine fiscal periods (FY2015-16..FY2023-24), "
+                "provinces and districts carry the ten fiscal periods (FY2015-16..FY2024-25), "
                 "not calendar years"},
     {"id": "calendar_basis_ne", "scope": "basis=calendar, sector != agriculture", "notation_key": "NE",
      "message": "calendar-year values exist only for the agriculture reconstruction "
                 "(fact_annual_calendar); every other sector is fiscal (July-June) and a calendar "
                 "request is refused, never computed"},
-    {"id": "adm2_history_annual_only", "scope": "geography_level=ADM2, periods != FY2023-24",
-     "notation_key": "NE",
-     "message": "the eight historical periods are published at ADM2 ANNUALLY "
-                "(fact_adm2_year, module grain) and monthly only in aggregate; a "
-                "module-resolved MONTHLY district request outside FY2023-24 is refused rather "
-                "than computed. Their within-province geography is not all their own: a "
-                "stream-year either has that year's observed pattern, rides a surface that "
-                "does not change with time, or carries the reference year's pattern rescaled "
-                "(a back-cast). Which, is published per stream-year in "
-                "pakemis_spatial_weights_by_year.csv (spatial_time_basis) and summed by mass "
-                "per period and sector in fact_spatial_basis_year; a district value for an "
-                "earlier year is a reconstruction of where that mass most likely sat, not an "
-                "observation"},
     {"id": "adm2_frame_is_fixed", "scope": "geography_level=ADM2, all periods",
      "notation_key": "NE",
      "message": "every period is published on one fixed district frame "
@@ -112,13 +102,10 @@ BASE_LIMITATIONS = [
                 "geography is not held - see abs-adm2-frame-vintage"},
     {"id": "ar6_adm2_ne", "scope": "gwp_basis=AR6 at ADM2 or below", "notation_key": "NE",
      "message": "the ADM2 products carry native gas mass at module grain; AR6 CO2e is available "
-                "at national grain and at ADM1 for the reference year (fact_adm1_month). The "
-                "eight earlier years at ADM1 (fact_adm1_year) and every ADM2 table are AR5"},
-    {"id": "config_L_residential_only", "scope": "configuration_id=L_2023_24", "notation_key": "E",
-     "message": "configuration L substitutes the residential module for FY2023-24 only; a total "
-                "under L is composed as REF minus residential(REF) plus residential(L). Under "
-                "the reference, the diverted dung with no household destination is a separate, "
-                "typed row of the annual panel in every year and carries no emission"},
+                "nationally and at ADM1 in the monthly table fact_adm1_month. The annual ADM1 "
+                "table fact_adm1_year and every ADM2 table carry AR5 only"},
+    {"id": "configuration_structure", "scope": "all configurations", "notation_key": "E",
+     "message": "S_TAN is the reference. L_TAN, S_IPCC and L_IPCC alter household dung destination and nitrogen methods. All four are annual and monthly native-gas calculations, not additive components or probability-weighted scenarios."},
     {"id": "industry_reported_fuel_series", "scope": "sector=industry", "notation_key": "E",
      "message": "Covered industrial-combustion emissions fell, reflecting lower recorded fuel use. "
                 "This does not mean Pakistan's total industrial emissions declined; several "
@@ -127,12 +114,12 @@ BASE_LIMITATIONS = [
                 "brick-kiln coal and cement-sector coal, are the official HDIP coal-by-consumer "
                 "allocation (Finance Division Statistical Supplement Table 14.1(4), marked "
                 "'** Estimated'), which swings threefold across the window and falls sharply after "
-                "FY2020-21. That decline has not yet been independently reconciled with production "
-                "and fuel-supply evidence and must not be read as a verified reduction from "
-                "mitigation or efficiency. The column the Supplement prints as 'Cement' is the "
+                "FY2020-21. The published coal account compares production, imports and station "
+                "consumption and retains unresolved quantities. Its allocation changes must not "
+                "be read as verified reductions from mitigation or efficiency. The column the Supplement prints as 'Cement' is the "
                 "primary publication's 'Cement/Other Industry', so other industrial coal may sit "
-                "inside it unsplit. A reconstruction is open; the official series is preserved "
-                "beside it"},
+                "inside it unsplit. Dated fleet and fuel-use alternatives are separate structural "
+                "cases, without assigned probabilities"},
     {"id": "reporting_sector_view", "scope": "group_by=reporting_sector / reporting_sectors filter",
      "notation_key": "E",
      "message": "reporting_sector files each stream where IPCC 2006 reports it, in the module "
@@ -154,10 +141,11 @@ BASE_LIMITATIONS = [
                 "reporting_sector axis) plus every 2.x process category; every other sector keeps its "
                 "module. It is additive with the IPCC view. Its industrial aggregate is "
                 "'covered direct industrial sources' - the priced boundary only. Since rc52 that boundary "
-                "holds ammonia (2.B.1), iron and steel (2.C.1) and lubricant use (2.D.1) as nine-year "
+                "holds ammonia (2.B.1), iron and steel (2.C.1) and lubricant use (2.D.1) as ten-year "
                 "series beside cement; nitric acid (a pair), HFCs and SF6, lime, glass, soda ash (NA in "
                 "IPPU) and industrial wastewater are screened or absent and are NOT inside it; each enters "
-                "only as a full FY2015-16 to FY2023-24 series, never in the reference year alone"},
+                "only with an explicitly supported period and boundary. The common core covers "
+                "FY2015-16 through FY2024-25; partial FY2025-26 records cannot be summed into it"},
     {"id": "grid_not_tabular", "scope": "0.05 degree grid", "notation_key": "E",
      "message": "grid cells stay in the NetCDF products (CF-1.8), which the release manifest "
                 "lists and hashes; the API reads a cell from the file and the map tiles are "

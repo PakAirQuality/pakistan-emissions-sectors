@@ -13,23 +13,23 @@ Manure management,goats (CH4),CH4,21.082,0.5903,0.5692,36.1
 Manure management,camels (CH4),CH4,2.4181,0.0677,0.0653,39.1
 Manure management,poultry (CH4),CH4,41.3,1.1564,1.1151,39.1
 Manure management,Direct N2O,N2O,23.2,6.148,6.3336,101.1
-Manure management,Indirect N2O (volatilisation),N2O,7.1641,1.8985,1.9558,107.1
+Manure management,Indirect N2O (volatilisation),N2O,5.7104,1.5133,1.5589,104.7
 Rice cultivation,Continuously flooded,CH4,591.0125,16.5483,15.9573,60.9
 Managed soils,Direct N2O - synthetic fertiliser (upland),N2O,24.915,6.6025,6.8018,110.1
 Managed soils,Direct N2O - synthetic fertiliser (rice EF1FR),N2O,3.7966,1.0061,1.0365,120.1
-Managed soils,Direct N2O - organic manure,N2O,18.3464,4.8618,5.0086,114.0
-Managed soils,Direct N2O - crop residues,N2O,1.6738,0.4436,0.457,114.0
+Managed soils,Direct N2O - organic manure,N2O,19.8001,5.247,5.4054,114.0
+Managed soils,Direct N2O - crop residues,N2O,1.6818,0.4457,0.4591,114.0
 Managed soils,Direct N2O - pasture deposition (cattle-type),N2O,3.4349,0.9102,0.9377,102.0
 Managed soils,Direct N2O - pasture deposition (sheep/goat/other),N2O,9.8502,2.6103,2.6891,102.0
 Managed soils,Indirect N2O - volatilisation (synthetic fertiliser),N2O,4.9776,1.3191,1.3589,102.0
-Managed soils,Indirect N2O - volatilisation (organic manure),N2O,3.8527,1.021,1.0518,102.0
-Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",N2O,1.8033,0.4779,0.4923,102.0
-Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",N2O,3.4476,0.9136,0.9412,102.0
+Managed soils,Indirect N2O - volatilisation (organic manure),N2O,5.4151,1.435,1.4783,102.0
+Managed soils,"Indirect N2O - volatilisation (pasture, cattle-type)",N2O,0.7102,0.1882,0.1939,102.0
+Managed soils,"Indirect N2O - volatilisation (pasture, sheep/goat/other)",N2O,0.7776,0.2061,0.2123,102.0
 Managed soils,Indirect N2O - leaching/runoff (synthetic fertiliser),N2O,12.5287,3.3201,3.4203,102.0
-Managed soils,Indirect N2O - leaching/runoff (organic manure),N2O,7.7495,2.0536,2.1156,102.0
-Managed soils,Indirect N2O - leaching/runoff (crop residues),N2O,0.707,0.1874,0.193,102.0
+Managed soils,Indirect N2O - leaching/runoff (organic manure),N2O,8.3635,2.2163,2.2832,102.0
+Managed soils,Indirect N2O - leaching/runoff (crop residues),N2O,0.7104,0.1883,0.1939,102.0
 Managed soils,"Indirect N2O - leaching/runoff (pasture, cattle-type)",N2O,3.6272,0.9612,0.9902,102.0
 Managed soils,"Indirect N2O - leaching/runoff (pasture, sheep/goat/other)",N2O,6.9345,1.8376,1.8931,102.0
-Field burning of residues,Residue burning CH4,CH4,19.2011,0.5376,0.5184,53.9
-Field burning of residues,Residue burning N2O,N2O,0.4978,0.1319,0.1359,61.6
+Field burning of residues,Residue burning CH4,CH4,19.2294,0.5384,0.5192,53.9
+Field burning of residues,Residue burning N2O,N2O,0.4985,0.1321,0.1361,61.6
 Urea application,Urea application CO2,CO2,4824.4812,4.8245,4.8245,11.2

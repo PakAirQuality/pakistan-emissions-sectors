@@ -1,4 +1,6 @@
 fiscal_year,stream,sngpl_mmcfd,ssgcl_mmcfd,independent_mmcfd,total_mmcfd,pct_national_gas,status,source,note
+2025,Cement,0.16,0,0,0.16,0.00,verified,OGRA State of the Regulated Petroleum Industry 2024-25 Table 3.29; data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,Full July2024-June2025 sector deliveries; excludes the separately reported captive-power row.
+2025,General Industry,85,128,0,213,6.39,verified,OGRA State of the Regulated Petroleum Industry 2024-25 Table 3.29; data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf,Full July2024-June2025 sector deliveries; excludes captive power and fertilizer feedstock.
 2016,Cement,1,1,0,2,0,verified,OGRA State of the Regulated Petroleum Industry 2015-16 Table 2.27 (Cement row),
 2017,Cement,1,1,0,2,0,verified,OGRA State of the Regulated Petroleum Industry 2016-17 Table 2.27 (Cement row),
 2018,Cement,1,1,0,2,0,verified,OGRA State of the Regulated Petroleum Industry 2017-18 Table 2.29 (Cement row),

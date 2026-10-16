@@ -31,7 +31,7 @@ from pkinv.paths import OUTPUTS
 ANNUAL = os.path.join(OUTPUTS, "semantic", "fact_annual.csv")
 OUT = os.path.join(OUTPUTS, "pakemis_enteric_btr_bridge.csv")
 PERIOD = "FY2020-21"
-CONFIG = "REF_2023_24"
+CONFIG = "S_TAN"
 SOURCE = ("Pakistan First BTR (2024), Figure 1 'Animal population (%) and enteric CH4 "
           "emissions (MtCO2e)', PDF page 15; sources/UNFCCC/pakistan_btr1_2024.pdf")
 

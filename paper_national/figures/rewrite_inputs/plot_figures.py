@@ -27,6 +27,9 @@ ROOT = HERE.parents[2]
 sys.path.insert(0, str(ROOT / "src"))
 
 from pkinv.report import manuscript_style as S  # noqa: E402
+from pkinv.assets import asset_path  # noqa: E402
+from pkinv.core.io import read_rows  # noqa: E402
+from pkinv.core.reporting_window import REFERENCE_PERIOD  # noqa: E402
 
 plt = S.use()
 import numpy as np  # noqa: E402
@@ -59,19 +62,25 @@ def nice_ceiling(value, step):
 
 
 # =================================================================================================
-# Figure 2: reference-year composition, the nine annual estimates, and the change with its interval
+# Figure 2: reference composition, supported annual panel, and the change interval
 # =================================================================================================
 module = rows("module_totals.csv")
 annual = rows("annual_national_series.csv")
 change = rows("period_change_intervals.csv")
 unc = rows("national_uncertainty.csv")
-assert len(module) == 10 and len(annual) == 9 and len(change) == 3
+assert len(module) == 10 and len(change) == 3
+expected_periods = sorted(r["period_id"] for r in read_rows(asset_path(ROOT, "data/periods.csv"))
+                          if r["time_basis"] == "fiscal-july-june")
+assert [r["period"] for r in annual] == expected_periods, "annual plot periods differ from registry"
 mod_v = np.array([float(r["emissions_Mt_CO2e"]) for r in module])
 ann_v = np.array([float(r["emissions_Mt_CO2e"]) for r in annual])
 reference = float(unc[0]["point_Mt_CO2e"])
 # the modules are the whole of the reference estimate, at the precision the table prints
 assert abs(mod_v.sum() - reference) < 0.05, (mod_v.sum(), reference)
-assert abs(ann_v[-1] - reference) < 0.005, (ann_v[-1], reference)
+reference_values = [float(r["emissions_Mt_CO2e"]) for r in annual
+                    if r["period"] == REFERENCE_PERIOD]
+assert len(reference_values) == 1
+assert abs(reference_values[0] - reference) < 0.005, (reference_values[0], reference)
 order = np.argsort(-mod_v)                      # ranked, largest first
 year = S.fiscal(module[0]["period"])
 
@@ -83,7 +92,7 @@ def signed(value, fmt="%.0f"):
 
 fig = S.figure(S.FULL_WIDTH, 3.55)
 # (a) spans the height at left; (b) over (c) at right. The three-column alternative put the
-# nine fiscal years on a 38 mm axis, where only three of them could be labelled.
+# fiscal periods on a 38 mm axis, where only three could be labelled.
 a = fig.add_axes([0.205, 0.130, 0.225, 0.775])
 y = np.arange(len(module))
 # an edge of the bar's own colour, so a module of 0.3 Mt is a visible line and not an absence
@@ -113,7 +122,7 @@ ceiling = 20 * np.ceil((ann_v.max() + 18) / 20)
 b.set_ylim(floor, ceiling)
 b.set_yticks(np.arange(50 * np.ceil(floor / 50), ceiling + 1, 50))
 b.set_xlim(-0.40, len(annual) - 0.60)
-b.set_xticks(x, [S.fiscal(r["period"]) if i % 2 == 0 else "" for i, r in enumerate(annual)])
+b.set_xticks(x, [S.fiscal(r["period"]) if i % 2 == 0 or i == len(annual) - 1 else "" for i, r in enumerate(annual)])
 b.set_ylabel("Mt CO₂e\n(axis from %d)" % floor)
 # first, last, and the two highest years: the pair that must read as a tie, not as one peak.
 # The two labels sit side by side, the earlier one ending at its point and the later starting at

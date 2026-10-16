@@ -114,10 +114,12 @@ class TestDiagnosticRuns(unittest.TestCase):
         known distance BELOW the reported total - the boundary fix is what closed that gap - so
         the assertion is on the relationship, not on a number that any unrelated change can
         move."""
-        from pkinv.core import registry
+        from pkinv.sectors.agriculture import run_inventory
+        from pkinv.sectors.agriculture.ef_library import InventoryData
         from pkinv.core.components import enrich_co2e
-        sector = registry.get("agriculture")
-        comps = sector.build_components(sector.load_data())
+        # Legacy diagnostic B is the complete IPCC formulation, now an explicit
+        # structural alternative to the central TAN material-flow formulation.
+        comps = run_inventory.build_components(InventoryData(), nitrogen_method="ipcc")
         enrich_co2e(comps)
         reported = sum(c["co2e_Mt_AR5"] for c in comps)
         legacy = self.runs["A"]["national_total_Mt"]
@@ -137,9 +139,11 @@ class TestDiagnosticRuns(unittest.TestCase):
         self.assertAlmostEqual(delta, 0.62, delta=0.03)
 
     def test_shipped_run_matches_the_engine(self):
-        got = float([r for r in csv.DictReader(
-            open(os.path.join(NAT_OUT, "national_totals_2024.csv")))
-            if r["category"] == "TOTAL"][0]["co2e_Mt_AR5"])
+        from pkinv.report import annual_product
+        from pkinv.core import configurations as conf
+        rows = annual_product.components_for("agriculture", 2024,
+                                             annual_product.build_context(), conf.IPCC_REFERENCE)
+        got = sum(row["co2e_Mt_AR5"] for row in rows)
         self.assertAlmostEqual(self.runs["B"]["national_total_Mt"], got, delta=0.01)
 
     def test_correction_lowers_manure_n_reaching_soils(self):

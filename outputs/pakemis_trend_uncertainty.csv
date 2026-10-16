@@ -1,31 +1,34 @@
-# THE INTERVAL ON A CHANGE, which this release has never published and which is the one a trend reader actually needs.
-# Differenced draw by draw so that shared error cancels the way the real quantity does. Combining two published intervals in quadrature instead would reproduce exactly the overstatement this product exists to correct.
-# significant_at_95 is stated PER SCENARIO. A change significant under both ends of the bracket is resolved by this inventory; one significant under neither is not; one that differs between them is resolved only if you are willing to assert a correlation structure nobody has measured.
-from_period,to_period,pair_kind,scenario,difference_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,half_width_Mt,significant_at_95,comparable_sectors,sectors_dropped,scope_note,n_iter
-FY2015-16,FY2016-17,consecutive,time_correlated,25.6037,22.6472,25.4426,29.2866,3.3197,yes,10,none,both years report the same sectors,20000
-FY2016-17,FY2017-18,consecutive,time_correlated,28.47009,25.794,28.4092,31.5082,2.8571,yes,10,none,both years report the same sectors,20000
-FY2017-18,FY2018-19,consecutive,time_correlated,-3.82946,-6.14,-3.8608,-1.3555,2.3923,yes,10,none,both years report the same sectors,20000
-FY2018-19,FY2019-20,consecutive,time_correlated,1.4336,-3.5588,1.533,6.0925,4.8256,no,10,none,both years report the same sectors,20000
-FY2019-20,FY2020-21,consecutive,time_correlated,37.93192,34.0298,37.7722,42.6229,4.2965,yes,10,none,both years report the same sectors,20000
-FY2020-21,FY2021-22,consecutive,time_correlated,0.00243,-3.5891,0.0852,3.0911,3.3401,no,10,none,both years report the same sectors,20000
-FY2021-22,FY2022-23,consecutive,time_correlated,-45.10758,-50.5708,-44.9531,-40.3169,5.127,yes,10,none,both years report the same sectors,20000
-FY2022-23,FY2023-24,consecutive,time_correlated,6.61447,2.9083,6.5617,10.6167,3.8542,yes,10,none,both years report the same sectors,20000
-FY2015-16,FY2023-24,window_full_panel,time_correlated,51.11915,40.0826,50.7639,64.0143,11.9658,yes,10,none,both years report the same sectors,20000
-FY2015-16,FY2016-17,consecutive,parameter_typed,25.6037,-4.9584,25.7192,56.9327,30.9455,no,10,none,both years report the same sectors,20000
-FY2016-17,FY2017-18,consecutive,parameter_typed,28.47009,-4.8506,28.3128,60.8111,32.8309,no,10,none,both years report the same sectors,20000
-FY2017-18,FY2018-19,consecutive,parameter_typed,-3.82946,-37.3169,-3.8759,29.93,33.6234,no,10,none,both years report the same sectors,20000
-FY2018-19,FY2019-20,consecutive,parameter_typed,1.4336,-32.6977,1.5449,36.1081,34.4029,no,10,none,both years report the same sectors,20000
-FY2019-20,FY2020-21,consecutive,parameter_typed,37.93192,1.8257,37.6085,73.7882,35.9813,yes,10,none,both years report the same sectors,20000
-FY2020-21,FY2021-22,consecutive,parameter_typed,0.00243,-36.9539,0.1933,37.1056,37.0297,no,10,none,both years report the same sectors,20000
-FY2021-22,FY2022-23,consecutive,parameter_typed,-45.10758,-82.9708,-45.3032,-8.055,37.4579,yes,10,none,both years report the same sectors,20000
-FY2022-23,FY2023-24,consecutive,parameter_typed,6.61447,-30.5271,6.8026,43.9228,37.2249,no,10,none,both years report the same sectors,20000
-FY2015-16,FY2023-24,window_full_panel,parameter_typed,51.11915,15.939,50.7144,89.5657,36.8134,yes,10,none,both years report the same sectors,20000
-FY2015-16,FY2016-17,consecutive,time_independent,25.6037,-28.2509,26.1725,80.8114,54.5312,no,10,none,both years report the same sectors,20000
-FY2016-17,FY2017-18,consecutive,time_independent,28.47009,-29.7293,27.8182,84.8901,57.3097,no,10,none,both years report the same sectors,20000
-FY2017-18,FY2018-19,consecutive,time_independent,-3.82946,-62.412,-4.2064,56.9432,59.6776,no,10,none,both years report the same sectors,20000
-FY2018-19,FY2019-20,consecutive,time_independent,1.4336,-58.6262,2.0497,62.1619,60.3941,no,10,none,both years report the same sectors,20000
-FY2019-20,FY2020-21,consecutive,time_independent,37.93192,-25.0199,37.9506,100.7077,62.8638,no,10,none,both years report the same sectors,20000
-FY2020-21,FY2021-22,consecutive,time_independent,0.00243,-65.496,-0.2042,65.4044,65.4502,no,10,none,both years report the same sectors,20000
-FY2021-22,FY2022-23,consecutive,time_independent,-45.10758,-111.6409,-45.1037,21.2969,66.4689,no,10,none,both years report the same sectors,20000
-FY2022-23,FY2023-24,consecutive,time_independent,6.61447,-60.7936,6.3321,74.6324,67.713,no,10,none,both years report the same sectors,20000
-FY2015-16,FY2023-24,window_full_panel,time_independent,51.11915,-10.0122,50.8435,114.0712,62.0417,no,10,none,both years report the same sectors,20000
+# LEGACY ANALYTICAL SENSITIVITY: not the current native material-flow uncertainty; scenario endpoints are not uncertainty bounds.
+# Legacy case differences are paired by draw identity and restricted to comparable sectors.
+# significant_at_95 is conditional on the selected analytical sensitivity case; it does not establish a universally resolved trend or bound the current native interval.
+from_period,to_period,pair_kind,scenario,difference_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,half_width_Mt,significant_at_95,comparable_sectors,sectors_dropped,scope_note,n_iter,model_basis
+FY2015-16,FY2016-17,consecutive,time_correlated,25.74374,22.7954,25.5892,29.4416,3.3231,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2016-17,FY2017-18,consecutive,time_correlated,31.12671,27.487,31.0645,35.1581,3.8356,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2017-18,FY2018-19,consecutive,time_correlated,-6.22409,-8.8474,-6.2389,-3.539,2.6542,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2018-19,FY2019-20,consecutive,time_correlated,1.30553,-4.2,1.375,6.617,5.4085,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2019-20,FY2020-21,consecutive,time_correlated,38.01621,34.1093,37.8609,42.6689,4.2798,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2020-21,FY2021-22,consecutive,time_correlated,0.1843,-3.4149,0.2622,3.2966,3.3557,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2021-22,FY2022-23,consecutive,time_correlated,-45.1246,-51.1227,-45.0795,-39.1743,5.9742,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2022-23,FY2023-24,consecutive,time_correlated,1.74288,-2.2077,1.5486,7.0076,4.6076,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2023-24,FY2024-25,consecutive,time_correlated,12.63208,9.657,12.5808,15.9284,3.1357,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2015-16,FY2024-25,window_full_panel,time_correlated,59.40275,43.3715,58.9113,77.9458,17.2872,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2015-16,FY2016-17,consecutive,parameter_typed,25.74374,-5.961,25.9278,58.5919,32.2764,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2016-17,FY2017-18,consecutive,parameter_typed,31.12671,-2.8115,30.9598,64.5648,33.6881,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2017-18,FY2018-19,consecutive,parameter_typed,-6.22409,-40.265,-6.285,28.3056,34.2853,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2018-19,FY2019-20,consecutive,parameter_typed,1.30553,-33.8349,1.4657,36.8954,35.3652,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2019-20,FY2020-21,consecutive,parameter_typed,38.01621,1.4321,37.8067,75.1253,36.8466,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2020-21,FY2021-22,consecutive,parameter_typed,0.1843,-37.6553,0.356,37.7734,37.7144,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2021-22,FY2022-23,consecutive,parameter_typed,-45.1246,-83.1998,-45.2303,-7.1032,38.0483,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2022-23,FY2023-24,consecutive,parameter_typed,1.74288,-35.898,1.8745,39.3959,37.647,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2023-24,FY2024-25,consecutive,parameter_typed,12.63208,-25.2925,12.3217,51.7043,38.4984,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2015-16,FY2024-25,window_full_panel,parameter_typed,59.40275,21.0321,58.7279,101.2979,40.1329,yes,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2015-16,FY2016-17,consecutive,time_independent,25.74374,-29.0646,26.2497,81.6211,55.3429,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2016-17,FY2017-18,consecutive,time_independent,31.12671,-28.0362,30.6677,88.6636,58.3499,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2017-18,FY2018-19,consecutive,time_independent,-6.22409,-65.5628,-6.5402,55.0171,60.2899,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2018-19,FY2019-20,consecutive,time_independent,1.30553,-59.6928,1.7681,62.6812,61.187,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2019-20,FY2020-21,consecutive,time_independent,38.01621,-25.412,38.0506,101.5857,63.4988,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2020-21,FY2021-22,consecutive,time_independent,0.1843,-66.0297,-0.0526,66.0894,66.0595,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2021-22,FY2022-23,consecutive,time_independent,-45.1246,-113.4943,-45.0682,22.6311,68.0627,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2022-23,FY2023-24,consecutive,time_independent,1.74288,-67.0247,1.3876,71.7403,69.3825,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2023-24,FY2024-25,consecutive,time_independent,12.63208,-59.2047,12.6649,85.0065,72.1056,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+FY2015-16,FY2024-25,window_full_panel,time_independent,59.40275,-3.3004,58.8682,124.7608,64.0306,no,10,none,both years report the same sectors,20000,legacy_parameter_graph_sensitivity_not_native_material_flow

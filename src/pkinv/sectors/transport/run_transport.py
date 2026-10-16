@@ -97,8 +97,9 @@ def _manifest(data, out_path=None):
         "methods": {
             "ghg": "IPCC 2006 Vol 2 Ch 3 Tier 1, fuel-anchored: Table 3.2.1/3.2.2 "
                    "road, Table 3.3.1 off-road; CNG on OGRA metered gas",
-            "air": "per-kilometre factors inherited from the Punjab workbook, no "
-                   "primary citation located (air_pollutants.py); exhaust only",
+            "air": "EMEP/EEA 2023 Tier 1 per class and process on the OCAC road fuel "
+                   "(exhaust, evaporation, tyre and brake wear, road wear); SO2 from declared "
+                   "fuel sulfur; resuspended dust not estimated (air_pollutants.py)",
             "spatial": "province proxies in data/province_shares.csv "
                        "(transport_vkt, transport_offroad, transport_cng_vkt)",
             "ledger": "fuel-claimant ledger over both petroleum controls, unresolved "

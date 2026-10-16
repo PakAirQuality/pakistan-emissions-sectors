@@ -46,7 +46,7 @@ from pkinv.core import monthly as core_monthly
 from pkinv.paths import DATA, OUTPUTS
 from pkinv.activity.store import read_rows
 
-MONTHLY = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2023_24.csv")
+MONTHLY = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2024_25.csv")
 ATOM = asset_path(OUTPUTS, "pakemis_atomic_annual.csv")
 MATRIX = asset_path(OUTPUTS, "pakemis_coverage_matrix.csv")
 MONTHS = asset_path(DATA, "months.csv")

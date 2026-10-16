@@ -8,7 +8,7 @@
 # (the firewood moisture term, which enters only the air layer) but a component matching
 # zero or several members of a select group is an error at decompose time.
 parameter_id,category_pattern,subitem_pattern,gas_pattern,note
-power:Coal TOE row,,^Coal,,NEPRA Table 3 coal row; metered mass + CRT agreement
+power:Coal station consumption mass,,^Coal,,Shared station consumption mass; rank heat derives from this mass and rank NCV
 power:Gas TOE row,,^Gas,,NEPRA Table 3 gas row
 power:Furnace oil TOE row,,^Furnace,,NEPRA Table 3 furnace-oil row
 power:Diesel TOE row,,^Diesel,,NEPRA Table 3 diesel row

@@ -1,49 +1,5 @@
-Pakistan's agricultural emissions remain poorly resolved spatially, and the country lacks a
-gridded agricultural air-pollutant inventory based on national activity data. We develop a
-reproducible framework that calculates greenhouse-gas and air-pollutant emissions from a
-shared set of activity data and a common nitrogen accounting system. The framework combines
-official Pakistani statistics, open global datasets, and published IPCC and EMEP/EEA
-methods.
+This technical note documents the agricultural contribution to PakEmis using a common livestock, crop, fertiliser and nitrogen-flow account for greenhouse gases and air pollutants. The supported national core covers July 2015--June 2025. FY2023--24 remains the detailed reference year; earlier long calendar-year diagnostics are separate products and do not define the common fiscal period.
 
-We construct a \emph{hybrid Tier~1/Tier~2} inventory covering six IPCC agricultural
-categories and allocate the resulting emissions to provinces, a \SI{0.05}{\degree} grid, and
-116 district units plus one residual unit. Activity data and emission factors determine the magnitude of
-each emission stream, while process-matched spatial proxies determine its distribution. Each
-spatial product is rescaled to its control total, ensuring exact reconciliation across
-national, provincial, gridded, and district estimates.
+The reference TAN-coherent configuration produces \SI{\SectorRefGHG}{\mega\tonne} \COe{} on AR5 GWP-100, \SI{\SectorRefNHthree}{\kilo\tonne} \NHthree{}, \SI{\SectorRefNOx}{\kilo\tonne} NO$_2$-equivalent \NOx{} and \SI{\SectorRefPMfine}{\kilo\tonne} primary PM$_{2.5}$ in FY2023--24. FY2024--25 uses observed fiscal crop and nutrient controls and the consistent census-anchored livestock reconstruction. Native gas masses, pollutant masses and GWP aggregates remain separate.
 
-For 2024, we estimate agricultural greenhouse-gas emissions of \SI{223}{}~Mt~\COe{} using
-AR5 GWP-100 values, with an analytical uncertainty of $\pm$19\% and a Monte-Carlo 95\%
-interval of \SI{185}{}--\SI{271}{}~Mt~\COe{}. We also estimate \SI{2.7}{}~Mt of \NHthree{}
-and, from crop-residue burning, \SI{0.65}{}~Mt of CO and \SI{54}{}~kt of PM$_{2.5}$. The
-air-pollutant inventory is provided on the same grid and district geography and as a
-1990--2024 national time series.
-
-We evaluate district patterns against independent government crop records and compare the
-gridded ammonia surface with an independent \SI{0.1}{\degree} inventory for South Asia. The
-two ammonia inventories show strong spatial agreement, with a Pearson correlation of
-\num{0.90} and \SI{78}{\percent} overlap among top-decile cells. However, our national
-estimate is approximately \num{1.8} times higher, with a broadly consistent ratio across
-provinces. Stream-level comparisons show that aggregate statistics conceal important
-differences among livestock, fertiliser, and residue-burning emissions.
-
-The ammonia estimate is particularly sensitive to the assumed distribution of
-manure-management systems, which has not been measured nationally. Across plausible
-configurations, national \NHthree{} emissions range from \SI{1.7}{} to \SI{3.0}{}~Mt. We
-therefore report structural and parametric uncertainty separately and treat the
-livestock-ammonia estimate as provisional. The open-source framework provides a reproducible
-basis for biennial transparency reporting and a nationally grounded gridded agricultural
-emissions inventory for Pakistan.
-
-The sector described here is the largest component of a ten-sector national inventory built
-on the same engine, in which agriculture is \SI{50.2}{\percent} of \SI{444.96}{}~Mt~\COe{}
-\citep{ahmad2026national}. Two of its boundaries are accounted for against another sector rather than
-described in prose: dung-cake nitrogen leaves the manure-management balance here, and the
-part the household survey observes burned arrives as household fuel in the residential
-sector while the remainder is carried as an unresolved row outside the total; and the crop
-residue burned as household fuel
-(\SI{9.27}{}~Mt dry matter, \SI{122192}{}~TJ) leaves the residue balance here and arrives
-in the same fuel ledger---an exact transfer rather than a pair of independent estimates. Readers
-concerned with those transfers, with the cross-sector uncertainty treatment,
-or with where agriculture sits among national key categories should read the two papers
-together.
+Species- and stage-resolved TAN losses drive both \NHthree{} and the surviving manure pools used for \NtwoO{}. An IPCC volatilisation configuration is retained separately; it is not mixed probabilistically with the TAN reference. Conditional uncertainty replays shared herd, crop, nitrogen and applicable fate-factor draws, while management shares, factor applicability and missing sources remain distinct limitations. Direct comparison with the publicly released HTAPv3.2 monthly country tables matches exact July--June periods and records shared REAS/EDGAR inputs. The release provides national activity detail and process-matched geographic support beyond a simple clipped global inventory.

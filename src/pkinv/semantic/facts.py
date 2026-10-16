@@ -59,7 +59,7 @@ def _reporting_sector_of(src):
 
 def fact_annual(src):
     rows = []
-    for r in src.rows("annual.atomic"):
+    for r in src.rows("annual.configuration_atoms"):
         rows.append({"period_id": r["period_id"], "configuration_id": r["configuration_id"],
                      "geography_id": r["geography_id"], "grain": "atom",
                      "component_id": r["component_id"], "gas": r["gas"],
@@ -72,23 +72,6 @@ def fact_annual(src):
                      "native_mass": r["emission_native_mass"], "native_unit": r["native_unit"],
                      "co2e_Mt_AR5": r["co2e_Mt_AR5"], "co2e_Mt_AR6": r["co2e_Mt_AR6"],
                      "source_stream_id": r["source_stream_id"], "basis": "fiscal"})
-    # configuration L: the residential module at category x gas grain, FY2023-24 only. The
-    # REFERENCE's residual rows ("Diverted dung, unresolved fate", one per year) carry no
-    # gas and no mass and stay where they are published (annual.panel), named in
-    # known_limitations
-    for r in src.rows("annual.panel"):
-        if r["configuration_id"] != cfg.LEDGER or r["grain"] != "category_gas":
-            continue
-        rows.append({"period_id": r["period_label"], "configuration_id": cfg.LEDGER,
-                     "geography_id": "PK", "grain": "category_gas",
-                     "component_id": "%s|%s|%s" % (r["sector"], r["category"], r["gas"]),
-                     "gas": r["gas"], "sector_id": r["sector"], "reporting_sector": r["sector"],
-                     "ipcc_code": "1.A.4.b",
-                     "category": r["category"], "subitem": "", "gas_origin": "",
-                     "estimate_status": "E", "activity_status": r["activity_basis"],
-                     "evidence_class": "", "method_id": "", "uncertainty_model_id": "",
-                     "native_mass": "", "native_unit": "", "co2e_Mt_AR5": r["co2e_Mt_AR5"],
-                     "co2e_Mt_AR6": r["co2e_Mt_AR6"], "source_stream_id": "", "basis": "fiscal"})
     key = ("period_id", "configuration_id", "geography_id", "grain", "component_id", "gas")
     return ATOM_FIELDS, key, rows
 
@@ -118,24 +101,10 @@ MONTHLY_FIELDS = ("period_id", "month", "configuration_id", "geography_id", "gra
 
 def fact_monthly(src):
     rows = []
-    for r in src.rows("monthly.panel"):
+    for r in src.rows("monthly.configuration_atoms"):
         row = {k: r[k] for k in MONTHLY_FIELDS if k in r}
         row.update({"grain": "atom", "native_mass": r["emission_native_mass"], "basis": "fiscal"})
         rows.append(row)
-    for r in src.rows("monthly.ledger_2024"):
-        rows.append({"period_id": REFERENCE_PERIOD, "month": r["month"],
-                     "configuration_id": r["configuration_id"], "geography_id": "PK",
-                     "grain": "category_subitem_gas",
-                     "component_id": "residential|%s|%s" % (r["category"], r["subitem"]),
-                     "gas": r["gas"], "sector_id": "residential", "reporting_sector": "residential",
-                     "ipcc_code": "1.A.4.b",
-                     "category": r["category"], "subitem": r["subitem"], "gas_origin": "",
-                     "native_mass": r["emissions_Gg"], "native_unit": "Gg",
-                     "co2e_Mt_AR5": r["co2e_Mt_AR5"], "co2e_Mt_AR6": r["co2e_Mt_AR6"],
-                     "share": r["share"], "closure_basis": "", "temporal_evidence_class": "",
-                     "timing_target": "", "temporal_status": "", "profile_id": "",
-                     "source_id": r["basis"], "borrowed_from_year": "", "special_period_flag": "",
-                     "basis": "fiscal"})
     key = ("period_id", "month", "configuration_id", "geography_id", "grain", "component_id", "gas")
     return MONTHLY_FIELDS, key, rows
 
@@ -148,48 +117,19 @@ ADM1_FIELDS = ("configuration_id", "month", "province", "source_stream_id", "gas
 
 
 def fact_adm1_month(src):
-    """Stream x province x month for the reference year: the monthly stream mass times the
-    month-invariant declared province share (pakemis_grid_provincial_check.csv). Exact decimal
-    products, twelve decimals; national == ADM1 per gas and month is the golden closure."""
-    shares = {(r["source_stream_id"], r["province"]): r
-              for r in src.rows("spatial.grid_provincial_check")}
-    views = {r["source_stream_id"]: (r["spatial_view"], r["module"])
-             for r in src.rows("provenance.source_streams")}
-    reporting = _reporting_sector_of(src)
+    """The published process-specific province allocation for every configuration/month."""
+    from pkinv.core import gwp
+    streams = {r["source_stream_id"]: r for r in src.rows("provenance.source_streams")}
     rows = []
-    for r in src.rows("monthly.panel"):
-        if r["period_id"] != REFERENCE_PERIOD or r["configuration_id"] != cfg.REFERENCE:
-            continue
-        sid = r["source_stream_id"] if "source_stream_id" in r else r["component_id"]
-        view, module = views.get(sid, ("", r["sector_id"]))
-        for (stream, province), share in shares.items():
-            if stream != sid:
-                continue
-            s = Decimal(share["declared_share"])
-            rows.append({"configuration_id": cfg.REFERENCE, "month": r["month"],
-                         "province": province, "source_stream_id": sid, "gas": r["gas"],
-                         "module": module, "reporting_sector": reporting.get(sid, module),
-                         "spatial_view": view,
-                         "declared_share": share["declared_share"],
-                         "emissions_Gg": _q(Decimal(r["emission_native_mass"]) * s),
-                         "co2e_Mt_AR5": _q(Decimal(r["co2e_Mt_AR5"]) * s),
-                         "co2e_Mt_AR6": _q(Decimal(r["co2e_Mt_AR6"]) * s),
-                         "share_status": share["status"],
-                         "basis_note": "monthly stream mass x declared province share"})
-    for r in src.rows("spatial.adm1_ledger_2024"):
-        rows.append({"configuration_id": r["configuration_id"], "month": r["month"],
-                     "province": r["province"], "source_stream_id": r["source_stream_id"],
-                     "gas": r["gas"], "module": r["module"],
-                     # configuration L's stream ids are the residential module's; a
-                     # stream the source-stream ledger does not name reports under its module
-                     "reporting_sector": reporting.get(r["source_stream_id"], r["module"]),
-                     "spatial_view": r["spatial_view"],
-                     "declared_share": "", "emissions_Gg": r["emissions_Gg"],
-                     "co2e_Mt_AR5": r["co2e_Mt_AR5"], "co2e_Mt_AR6": "",
-                     "share_status": "ledger_product", "basis_note": "pakemis_adm1_ledger_2024.csv"})
-    key = ("configuration_id", "month", "province", "source_stream_id", "gas")
-    return ADM1_FIELDS, key, rows
-
+    for r in src.rows("spatial.configuration_adm1_monthly"):
+        origin = streams[r["source_stream_id"]]["methane_origin"]
+        factor = gwp.to_co2e(r["gas"], 1.0, "AR6", fossil=(origin == "fossil"))
+        rows.append(dict({k: v for k, v in r.items() if k in ("period_id",) + ADM1_FIELDS}, declared_share="", share_status="configured_placement",
+                         co2e_Mt_AR6=_q(Decimal(r["emissions_Gg"]) * Decimal(str(factor)) / Decimal(1000)),
+                         basis_note="Own configuration mass; within-year emitting-process geography fixed"))
+    fields = ("period_id",) + ADM1_FIELDS
+    key = ("configuration_id", "period_id", "month", "province", "source_stream_id", "gas")
+    return fields, key, rows
 
 # --- ADM2 ----------------------------------------------------------------------------------
 
@@ -199,11 +139,11 @@ ADM2_FIELDS = ("configuration_id", "month", "shape_id", "module", "reporting_sec
 
 
 def fact_adm1_year(src):
-    """Stream x province x YEAR, for all nine periods - the provincial layer the query
+    """Stream x province x YEAR, for all ten periods - the provincial layer the query
     surface refused until rc47's app wiring asked for it and found only the monthly
     reference table published.
 
-    The source is the release's own nine-year ADM1 product (pakemis_adm1_by_year.csv):
+    The source is the release's own ten-year ADM1 product (pakemis_adm1_by_year.csv):
     stream grain, EXACT co2e - ADM1 is the level the closure identity holds exactly at
     (ADM1 == ADM2 + unallocated below ADM1), so unlike fact_adm2_year there are no
     bounded cells and no absence rows to carry. AR5 only, like the district year table:
@@ -211,8 +151,8 @@ def fact_adm1_year(src):
     by name rather than converting."""
     reporting = _reporting_sector_of(src)
     rows = []
-    for r in src.rows("spatial.adm1_by_year"):
-        rows.append({"configuration_id": cfg.REFERENCE, "period_id": r["period_id"],
+    for r in src.rows("spatial.configuration_adm1"):
+        rows.append({"configuration_id": r["configuration_id"], "period_id": r["period_id"],
                      "province": r["province"],
                      "source_stream_id": r["source_stream_id"], "module": r["module"],
                      "reporting_sector": reporting.get(r["source_stream_id"], r["module"]),
@@ -259,12 +199,12 @@ def fact_spatial_basis_year(src):
     reporting = _reporting_sector_of(src)
     mass = {}
     module_of = {}
-    for r in src.rows("spatial.adm1_by_year"):
-        key = (r["period_id"], r["source_stream_id"])
+    for r in src.rows("spatial.configuration_adm1"):
+        key = (r["configuration_id"], r["period_id"], r["source_stream_id"])
         mass[key] = mass.get(key, Decimal(0)) + Decimal(r["co2e_Mt_AR5"])
         module_of[r["source_stream_id"]] = r["module"]
     out = {}
-    for (period_id, stream), value in mass.items():
+    for (configuration_id, period_id, stream), value in mass.items():
         basis = basis_of.get((stream, period_id))
         if not basis:
             raise ValueError("stream %s has ADM1 mass in %s and no row in the spatial weight "
@@ -273,11 +213,11 @@ def fact_spatial_basis_year(src):
             raise ValueError("stream %s is typed not_present in %s and carries %s Mt"
                              % (stream, period_id, value))
         module = module_of[stream]
-        key = (period_id, module, reporting.get(stream, module), basis)
+        key = (configuration_id, period_id, module, reporting.get(stream, module), basis)
         n, total = out.get(key, (0, Decimal(0)))
         out[key] = (n + 1, total + value)
-    rows = [{"configuration_id": cfg.REFERENCE, "period_id": k[0], "module": k[1],
-             "reporting_sector": k[2], "spatial_time_basis": k[3],
+    rows = [{"configuration_id": k[0], "period_id": k[1], "module": k[2],
+             "reporting_sector": k[3], "spatial_time_basis": k[4],
              "n_streams": str(n), "co2e_Mt_AR5": format(total, "f")}
             for k, (n, total) in sorted(out.items())]
     fields = ("configuration_id", "period_id", "module", "reporting_sector",
@@ -288,11 +228,11 @@ def fact_spatial_basis_year(src):
 
 
 def fact_adm2_year(src):
-    """Module x district x YEAR, for all nine periods - the historical spatial layer as the
+    """Module x district x YEAR, for all ten periods - the historical spatial layer as the
     query surface sees it.
 
     WHY A SECOND TABLE RATHER THAN NINE YEARS INSIDE fact_adm2_month. The month table is
-    module-resolved and carries the reference year; making it cover nine years at the same
+    module-resolved and carries the reference year; making it cover ten years at the same
     grain costs about 36 MB, and what those rows would store, for two thirds of stream-years,
     is the reference year's within-province pattern repeated a hundred and eight times per
     district instead of nine - more rows carrying no more evidence. Splitting the tables puts
@@ -309,10 +249,10 @@ def fact_adm2_year(src):
     docstring used to quote a count of back-cast stream-years; the count moved twice after it
     was written and the sentence did not.)"""
     rows = []
-    for r in src.rows("spatial.adm2_sector_by_year"):
+    for r in src.rows("spatial.configuration_adm2"):
         if r["allocation_status"] == "unallocated-below-adm1":
             continue          # published once, in fact_unallocated
-        rows.append({"configuration_id": cfg.REFERENCE, "period_id": r["period_id"],
+        rows.append({"configuration_id": r["configuration_id"], "period_id": r["period_id"],
                      "shape_id": r["shape_id"], "module": r["module"],
                      "reporting_sector": r["reporting_sector"], "gas": r["gas"],
                      "spatial_view": r["spatial_view"], "province": r["province"],
@@ -327,56 +267,29 @@ def fact_adm2_year(src):
 
 
 def fact_adm2_month(src):
-    rows = []
-    for r in src.rows("spatial.adm2_monthly_sector"):
-        if r["allocation_status"] == "unallocated-below-adm1":
-            continue          # published once, in fact_unallocated
-        rows.append({"configuration_id": cfg.REFERENCE, "month": r["month"],
-                     "shape_id": r["shape_id"], "module": r["module"],
-                     "reporting_sector": r["reporting_sector"], "gas": r["gas"],
-                     "spatial_view": r["spatial_view"], "province": r["province"],
-                     "adm2_ids": r["adm2_ids"], "allocation_status": r["allocation_status"],
-                     "absence_reason": r["absence_reason"], "emissions_Gg": r["emissions_Gg"],
-                     "co2e_Mt_AR5": r["co2e_Mt_AR5"],
-                     "co2e_exactness": "" if r["co2e_Mt_AR5"] == "" else "exact_stream_priced"})
-    # configuration L: the ledger product is at stream grain; summed to the module grain
-    sums = collections.OrderedDict()
-    for r in src.rows("spatial.adm2_ledger_2024"):
-        k = (r["configuration_id"], r["month"], r["shape_id"], r["module"],
-             r.get("reporting_sector") or r["module"], r["gas"],
-             r["spatial_view"], r["province"], r["adm2_ids"], r["allocation_status"], r["absence_reason"])
-        if r["emissions_Gg"] == "":
-            sums.setdefault(k, None)
-            continue
-        gg_sum, co2e_sum = sums.get(k) or (Decimal(0), Decimal(0))
-        sums[k] = (gg_sum + Decimal(r["emissions_Gg"]),
-                   co2e_sum + Decimal(r["co2e_Mt_AR5"]))
-    for k, total in sums.items():
-        rows.append({"configuration_id": k[0], "month": k[1], "shape_id": k[2], "module": k[3],
-                     "reporting_sector": k[4],
-                     "gas": k[5], "spatial_view": k[6], "province": k[7], "adm2_ids": k[8],
-                     "allocation_status": k[9], "absence_reason": k[10],
-                     "emissions_Gg": "" if total is None else _q(total[0]),
-                     "co2e_Mt_AR5": "" if total is None else _q(total[1]),
-                     "co2e_exactness": "" if total is None else "exact_stream_priced"})
-    key = ("configuration_id", "month", "shape_id", "module", "reporting_sector", "gas",
+    rows = (dict(r, co2e_exactness="" if r["co2e_Mt_AR5"] == "" else "exact_stream_priced")
+            for r in src.iter_rows("spatial.configuration_adm2_monthly")
+            if r["allocation_status"] != "unallocated-below-adm1")
+    fields = ("period_id",) + ADM2_FIELDS
+    key = ("configuration_id", "period_id", "month", "shape_id", "module", "reporting_sector", "gas",
            "spatial_view", "province")
-    return ADM2_FIELDS, key, rows
-
+    return fields, key, rows
 
 def fact_unallocated(src):
-    fields = ("configuration_id", "source_stream_id", "month", "level", "province", "module",
-              "reporting_sector", "ipcc_category", "gas", "spatial_view", "emissions_Gg",
-              "co2e_Mt_AR5", "reason")
-    reporting = _reporting_sector_of(src)
-    rows = [dict(configuration_id=cfg.REFERENCE,
-                 reporting_sector=reporting.get(r["source_stream_id"], r["module"]),
-                 **{k: r[k] for k in fields if k not in ("configuration_id", "reporting_sector")})
-            for r in src.rows("spatial.unallocated")]
-    return fields, ("configuration_id", "source_stream_id", "month", "level", "province"), rows
-
+    fields = ("configuration_id", "period_id", "source_stream_id", "month", "level", "province", "module",
+              "reporting_sector", "ipcc_category", "gas", "spatial_view", "emissions_Gg", "co2e_Mt_AR5", "reason")
+    rows = src.rows("spatial.configuration_unallocated")
+    return fields, ("configuration_id", "period_id", "source_stream_id", "month", "level", "province"), rows
 
 # --- uncertainty, completeness, transfers, evidence ------------------------------------------
+
+def fact_conditional(src, product_id, trend=False, air=False):
+    rows = src.rows(product_id)
+    fields = tuple(rows[0])
+    period = ("start_period", "end_period") if trend else ("period_id",)
+    key = period + ("configuration_id", "sector_id", "pollutant" if air else "species_or_metric", "dependence_case")
+    return fields, key, rows
+
 
 def fact_uncertainty(src):
     rows = src.rows("uncertainty.joint")
@@ -545,17 +458,13 @@ AIR_PANEL_FIELDS = ("sector_id", "period_id", "configuration_id", "category",
 
 
 def fact_air_panel(src):
-    """The nine-fiscal-year covered-sources rollup, servable: one row per
-    (sector, period, configuration, category, species), kt (the product's Gg, 1:1).
-    Two configurations since the air spatial Wave A: REF_2023_24 (household dung on
-    the survey-anchored series, the reference since rc67) and L_HERD1624 (all the
-    diverted dung of each year's herd; residential differs, every other sector
-    identical by construction). Every row carries
-    coverage_scope=covered_sources_only - the query layer surfaces it as a
-    limitation, because this panel is NOT a complete national seven-species
-    inventory and must never be served as one. Grid power is in it only for the species
-    its admission register prices (oil and diesel SO2); its screening scenario pair for
-    every species ships beside the panel (fact_air_absence_screening), never inside it."""
+    """Ten fiscal years, four structural configurations, and native pollutant kt.
+
+    One row per sector, period, configuration, category and species. Each
+    configuration has its own activity/nitrogen calculation and must be selected
+    explicitly; defaults select S_TAN. Coverage is estimated sources only.
+    Power contributes admitted oil/diesel SO2; screening scenarios remain separate.
+    """
     rows = [{"sector_id": r["sector_id"], "period_id": r["period_id"],
              "configuration_id": r["configuration_id"],
              "category": r["category"], "pollutant": r["pollutant"],
@@ -596,22 +505,13 @@ def fact_air_adm2(src):
 
 
 def fact_air_adm1_year(src):
-    """Anchor stream x province x YEAR x configuration, all nine periods - the
-    provincial air layer the query surface refused until the rc49 spatial family
-    existed, and refused after it existed too (air_panel_national_only), which is
-    the same registered-but-read-by-nothing gap fact_adm1_year closed for the
-    greenhouse-gas lane after rc47.
+    """Ten fiscal years of pollutant-specific provincial allocations.
 
-    The source is the release's own nine-year product (pakemis_air_adm1_by_year.csv):
-    each pollutant mass on its anchor stream's OWN province marginals for that period
-    - the greenhouse-gas cube's dispatch, never a fresh guess. emissions_kt is the
-    product's emissions_Gg verbatim: a gigagram IS a kilotonne, and kt is the unit
-    every air fact serves. TWO CONFIGURATIONS (REF_2023_24 and the ledger series
-    L_HERD1624, residential dung alone differing); a consumer that does not filter
-    configuration_id double-counts, so the engine defaults REF and validates.
-    Evidence per (period, stream) is the weight registry's, joined in
-    pakemis_air_spatial_support_by_year.csv - this table is the mass, that one its
-    provenance."""
+    Native Gg are numerically identical to kt. The four configurations are
+    alternatives, never additive. Process-specific spatial dispatch and typed
+    unallocated mass come from air.adm1_by_year; the spatial-support table records
+    whether each surface uses own-year information, a fixed proxy or a substitute.
+    """
     fields = ("configuration_id", "period_id", "province", "sector_id",
               "source_stream_id", "pollutant", "emissions_kt")
     rows = [{"configuration_id": r["configuration_id"], "period_id": r["period_id"],
@@ -878,18 +778,26 @@ FACTS = (
       "closure": "DESIGN-WEIGHTED HIES ESTIMATES, not a census. The SURVEY ROUND is the period, "
                  "whatever year the inventory later applies the quantity to; n_obs travels as "
                  "sample support and a mean per household is not additive across strata"}),
-    ("fact_annual", fact_annual, {"rule": "additive", "closure": "sum of atoms == national total per period and configuration; L = REF - residential(REF) + residential(L)"}),
+    ("fact_annual", fact_annual, {"rule": "additive", "closure": "sum of atoms == covered national total per period and configuration; the four configurations are alternatives, never additive"}),
     ("fact_annual_calendar", fact_annual_calendar, {"rule": "additive_within_sector", "closure": "agriculture only; calendar-year reconstruction, not a fiscal product"}),
     ("fact_monthly", fact_monthly, {"rule": "additive", "closure": "the twelve months of a period sum to its annual atom exactly (closure_basis native_mass)"}),
     ("fact_adm1_month", fact_adm1_month, {"rule": "additive", "closure": "sum over provinces == the stream's monthly mass (declared shares sum to one)"}),
     ("fact_adm2_month", fact_adm2_month, {"rule": "additive_within_view_and_across_views", "closure": "ADM1 == ADM2 + unallocated below ADM1, per gas and month; the three spatial views are disjoint and additive"}),
     ("fact_adm1_year", fact_adm1_year, {"rule": "additive_within_view_and_across_views",
-     "closure": "national == sum over provinces, per gas, view and PERIOD, for all nine "
+     "closure": "national == sum over provinces, per gas, view and PERIOD, for all ten "
                 "periods - ADM1 is exact (the closure identity's left-hand side), with "
                 "the unallocated-below-ADM1 mass INSIDE these provincial rows"}),
-    ("fact_adm2_year", fact_adm2_year, {"rule": "additive_within_view_and_across_views", "closure": "ADM1 == ADM2 + unallocated below ADM1, per gas and PERIOD, for all nine periods; the three spatial views are disjoint and additive. The geography of eight of the nine periods is the reference year's rescaled - see pakemis_spatial_weights_by_year.csv for the basis per stream-year"}),
+    ("fact_adm2_year", fact_adm2_year, {"rule": "additive_within_view_and_across_views", "closure": "ADM1 == ADM2 + unallocated below ADM1, per gas and PERIOD, for all ten periods; the three spatial views are disjoint and additive. Own-year activity, fixed proxies, reference patterns and substitutes are distinguished in pakemis_spatial_weights_by_year.csv per stream-year"}),
     ("fact_spatial_basis_year", fact_spatial_basis_year, {"rule": "additive", "closure": "per period: the sum over module, reporting sector and spatial_time_basis == fact_adm1_year's total; a partition of the year's mass by what its within-province geography rests on. n_streams counts stream-years and is NOT additive across reporting sectors of one stream"}),
-    ("fact_unallocated", fact_unallocated, {"rule": "additive", "closure": "the mass a spatial level does not place - THE REFERENCE YEAR'S; another year's is the same streams' rows in fact_adm1_year, which is where the query reads it"}),
+    ("fact_unallocated", fact_unallocated, {"rule": "additive", "closure": "mass not placed at the named spatial level, per configuration, period, source and month; retain alongside placed mass for closure"}),
+    ("fact_ghg_conditional", lambda src: fact_conditional(src, "uncertainty.ghg_conditional"),
+     {"rule": "non_additive", "closure": "percentiles of shared native draws; do not sum intervals"}),
+    ("fact_air_conditional", lambda src: fact_conditional(src, "uncertainty.air_conditional", air=True),
+     {"rule": "non_additive", "closure": "native pollutant conditional percentiles; screening and structural cases excluded"}),
+    ("fact_ghg_trend", lambda src: fact_conditional(src, "uncertainty.ghg_trend", trend=True),
+     {"rule": "non_additive", "closure": "percentiles of paired-year differences"}),
+    ("fact_air_trend", lambda src: fact_conditional(src, "uncertainty.air_trend", trend=True, air=True),
+     {"rule": "non_additive", "closure": "percentiles of paired-year native pollutant differences"}),
     ("fact_uncertainty", fact_uncertainty, {"rule": "envelope_not_quadrature", "closure": "per-category envelopes; NEVER combined in quadrature across categories (the table's own aggregation_rule column)"}),
     ("fact_uncertainty_series", fact_uncertainty_series, {"rule": "not_additive", "closure": "quantiles of draws; a sum of quantiles is not a quantile of a sum"}),
     ("fact_completeness", fact_completeness, {"rule": "categorical", "closure": "one notation key per category x gas"}),
@@ -918,11 +826,8 @@ FACTS = (
                 "aviation-cruise retention; the canonical shape frame throughout"}),
     ("fact_air_adm1_year", fact_air_adm1_year, {"rule": "additive_within_pollutant_only",
      "closure": "per configuration, period and pollutant the provinces sum to the covered "
-                "panel exactly (ADM1 carries the cruise mass; the closure identity's "
-                "left-hand side) - two configurations, NEVER summed across them. rc60 broke "
-                "this briefly by publishing the admitted power SO2 at national grain, with no "
-                "province to sum into; rc61 gave it a frame of its own and the sentence is "
-                "true again"}),
+                "panel (ADM1 retains cruise mass); district placements plus typed unallocated "
+                "mass reconcile to these totals. Four configurations, never summed across them"}),
     ("fact_air_source_classes", fact_air_source_classes,
      {"rule": "additive_within_pollutant_only",
       "closure": "status=estimate rows sum to the panel's atoms of their sector_id per (period, "

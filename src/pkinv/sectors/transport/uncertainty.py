@@ -242,18 +242,23 @@ def _diesel_co2e_per_TJ(data, prefix):
 
 
 def _road_share_panel(data):
-    """(min, max) of Road HSD / national internal HSD across the nine OCAC years -
-    the observed envelope on the diesel boundary, computed from the data, never
-    hardcoded."""
-    shares = [data.ocac_t("Road", "HSD", y) / data.ocac_t("TOTAL_INTERNAL", "HSD", y)
-              for y in data.ocac_years()]
-    return min(shares), max(shares)
+    """(min, max, year of min, year of max, number of years) of Road HSD / national internal
+    HSD across the OCAC years - the observed envelope on the diesel boundary, computed from
+    the data, never hardcoded. The note used to name FY2017-18 as the low year; that was the
+    edition whose first print left 521,822 t out of Road, and once the print is corrected
+    the low year is a different one, so the year is read here too."""
+    years = list(data.ocac_years())
+    shares = {y: data.ocac_t("Road", "HSD", y) / data.ocac_t("TOTAL_INTERNAL", "HSD", y)
+              for y in years}
+    lo_year = min(shares, key=shares.get)
+    hi_year = max(shares, key=shares.get)
+    return shares[lo_year], shares[hi_year], lo_year, hi_year, len(years)
 
 
 def structural_scenarios(data, n_iter=10000, seed=SCENARIO_SEED):
     n2o_scale = (data.efv("transport_fuel_n2o", "Gas/Diesel Oil")
                  / data.efv("offroad_machinery_n2o", "Gas/Diesel Oil"))
-    lo, hi = _road_share_panel(data)
+    lo, hi, lo_year, hi_year, n_years = _road_share_panel(data)
     natl_hsd = data.ocac_t("TOTAL_INTERNAL", "HSD") / 1000.0
     road_hsd = data.ocac_t("Road", "HSD") / 1000.0
     minus_bulk = (natl_hsd
@@ -293,12 +298,11 @@ def structural_scenarios(data, n_iter=10000, seed=SCENARIO_SEED):
          "%.2f%%, because Road plus Domestic Bunkers IS the national total minus "
          "the bulk rows" % (100 * abs(minus_bulk - 1.0))),
         ("road_share_low", _diesel_scaled(lo * natl_hsd / road_hsd),
-         "the boundary envelope, low end: diesel at the nine-year minimum Road "
-         "share of national HSD (%.3f, the FY2017-18 edition on its own printed "
-         "total)" % lo),
+         "the boundary envelope, low end: diesel at the %d-year minimum Road "
+         "share of national HSD (%.3f, FY%d-%02d)" % (n_years, lo, lo_year - 1, lo_year % 100)),
         ("road_share_high", _diesel_scaled(hi * natl_hsd / road_hsd),
-         "the boundary envelope, high end: diesel at the nine-year maximum Road "
-         "share of national HSD (%.3f)" % hi),
+         "the boundary envelope, high end: diesel at the %d-year maximum Road "
+         "share of national HSD (%.3f, FY%d-%02d)" % (n_years, hi, hi_year - 1, hi_year % 100)),
         ("cng_hhv_900",
          lambda: engine.build_components(data, cng_hhv_btu=900),
          "the published heating-value case: Pakistani pipeline gas runs 900-1,000 "
@@ -593,7 +597,7 @@ def inputs_register(data):
                 "uncertainty_class": klass, "note": note}
 
     d = data
-    lo, hi = _road_share_panel(d)
+    lo, hi = _road_share_panel(d)[:2]
     chk = road.rail_crosscheck(d)
     rows = [
         row("Petrol control total", d.efv("transport_fuel_supply", "Motor Gasoline"),

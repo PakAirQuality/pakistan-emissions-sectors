@@ -2,11 +2,13 @@
  "expect": [
   {
    "claims_pointer": "national_totals_2024.csv#category=Enteric fermentation#co2e_Mt_AR5",
-   "exact": "151.658",
-   "tolerance": "5e-4"
+   "exact": "151.65764953",
+   "group": {},
+   "note_rc68": "Reconciled independently against pakemis_ghg_configuration_atoms.csv after the integrated source/accounting revision; previous notes describe historical releases.",
+   "tolerance": "0.0005"
   }
  ],
- "expect_receipt": "47aac8d55816a5e222eea5130cfb8908",
+ "expect_receipt": "57c41653dbaf171825ba603b95151ba7",
  "function": "query_emissions",
  "golden_id": "category_enteric_reference",
  "note": "rc67 (2026-10-13): renamed from category_enteric_L. The suffix named the reference configuration by its dung letter, and the reference is no longer L: it carries the household survey's dung (S) in every year, and L is the alternative. The request is unchanged - it asks for the reference by default. No value moved: enteric fermentation does not depend on the dung basis.",

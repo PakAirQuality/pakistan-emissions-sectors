@@ -233,17 +233,19 @@ def _cell_value(cell):
 
 
 def _expand_generated_inputs(block, path):
-    """A table block that inputs a generated body (\\input{sections/gen_*}) is read with
-    that body spliced in, so the label, self-sum and coverage readers see the cells the
-    paper prints (v1.0.0 Wave 4: the stored-query tables live in their own files)."""
-    def splice(m):
-        target = os.path.join(os.path.dirname(path), os.path.basename(m.group(1)))
+    """Read the table body through the document's real relative input paths."""
+    def splice(match):
+        target = match.group(1)
         target = target if target.endswith(".tex") else target + ".tex"
-        if not os.path.exists(target):
-            return m.group(0)
-        body = open(target, encoding="utf-8").read()
-        return re.sub(r"(?<!\\)%.*", "", body)
-    return re.sub(r"\\input\{(sections/gen_[^}]*)\}", splice, block)
+        candidates = [os.path.join(os.path.dirname(path), target),
+                      os.path.join(os.path.dirname(os.path.dirname(path)), target)]
+        resolved = next((p for p in candidates if os.path.exists(p)), None)
+        if resolved is None:
+            return match.group(0)
+        body = open(resolved, encoding="utf-8").read()
+        body = re.sub(r"(?<!\\)%.*", "", body)
+        return _expand_generated_inputs(body, resolved)
+    return re.sub(r"\\input\{([^}]*)\}", splice, block)
 
 
 def _tex_table(doc, section, label):
@@ -1421,3 +1423,107 @@ LABELLED_TABLES = [
 from paper_numbers.labelled_tables import NEW_LABELLED  # noqa: E402
 
 LABELLED_TABLES.extend(NEW_LABELLED)
+
+
+# Finite rc68 dispositions for replaced/removed publication tables. Current
+# quantitative table/macro sites remain independently checked against products.
+# A future missing label outside this fixed list continues to fail.
+_RETIREMENTS = json.load(open(os.path.join(os.path.dirname(__file__), "retired_sentence_claims_rc68.json")))
+LEGACY_TABLES = tuple(r for r in TABLES if "/".join(r[:3]) in _RETIREMENTS["table_ids"])
+TABLES = [r for r in TABLES if "/".join(r[:3]) not in _RETIREMENTS["table_ids"]]
+LEGACY_LABELLED_TABLES = tuple(r for r in LABELLED_TABLES if "/".join(r[:3]) in _RETIREMENTS["labelled_table_ids"])
+LABELLED_TABLES = [r for r in LABELLED_TABLES if "/".join(r[:3]) not in _RETIREMENTS["labelled_table_ids"]]
+
+
+def _current_agriculture_factor_rows():
+    from pkinv.sectors.agriculture.ef_library import InventoryData
+    d = InventoryData()
+    identities = [("enteric", "buffalo"), ("enteric", "dairy_cattle"),
+        ("enteric", "other_cattle"), ("enteric", "camels"), ("enteric", "sheep"),
+        ("manure_ch4", "buffalo_warm"), ("manure_ch4", "dairy_cattle_warm"),
+        ("manure_n2o_ef3", "solid_storage"), ("manure_n2o_ef3", "drylot"),
+        ("rice", "EFc"), ("rice", "SFw_continuous"), ("rice", "SFw_intermittent_multiple"),
+        ("rice", "SFw_rainfed"), ("soils", "EF1_dry"), ("soils", "EF1FR_rice"),
+        ("soils", "EF1_agg"), ("soils", "EF1_cui"), ("soils", "EF4_dry"),
+        ("soils", "EF5"), ("liming_urea", "EF_urea"), ("burning", "Gef_CH4")]
+    return [[d.efv(c, item), d.efu(c, item)] for c, item in identities]
+
+def _current_agriculture_parameter_rows():
+    from pkinv.sectors.agriculture.ef_library import InventoryData
+    d = InventoryData()
+    return [[d.params[key]] for key in ("dairy_cattle_share", "warm_zone_share",
+            "irrigated_cropland_fraction", "rice_N_fraction", "urea_N_share")]
+
+def _current_agriculture_air_factor_rows():
+    from pkinv.sectors.agriculture.ef_library import InventoryData
+    d = InventoryData()
+    # Multi-value species cells retain text separators; the numeric row reader
+    # checks their common source width. Central factors are checked separately.
+    rows = [[d.efu("fert_nh3_highpH", "Urea")]]
+    rows.extend([[d.efu(c, "dairy_cattle")] for c in ("nh3_emep_grazing", "nh3_emep_housing",
+                "nh3_emep_yard", "nh3_emep_storage", "nh3_emep_application", "nh3_emep_tan")])
+    rows.append([d.efv("soils", "NOx_frac_of_applied"), d.efu("soils", "NOx_frac_of_applied")])
+    rows.extend([[d.efv("burning", item), d.efu("burning", item)] for item in
+                 ("Gef_CO", "Gef_PM25", "Gef_NMVOC", "Gef_NOx", "Gef_NH3", "Gef_BC", "Gef_SO2")])
+    return rows
+
+TABLES.extend([
+    ("agriculture", "04b_emission_factors.tex", "tab:ef-full", _current_agriculture_factor_rows),
+    ("agriculture", "04b_emission_factors.tex", "tab:tier2", _current_agriculture_parameter_rows),
+    ("agriculture", "04c_shared_ledger.tex", "tab:apef", _current_agriculture_air_factor_rows),
+])
+
+
+# Transport's former g/km comparison column was removed from the maintained
+# native-factor table. Preserve the central fuel/exhaust row quantities only.
+for _index, _entry in enumerate(TABLES):
+    if _entry[:3] == ("transport", "06b_air_pollutants.tex", "tab:air"):
+        TABLES[_index] = _entry[:3] + (lambda: [[_sum_where("transport_air_pollutants_%d.csv" % _transport_year(), "emissions_kt", pollutant=pol)] for pol in ("CO", "NMVOC", "NOx", "SO2", "PM2.5", "BC", "NH3")],)
+for _index, _entry in enumerate(LABELLED_TABLES):
+    if _entry[:3] == ("transport", "06b_air_pollutants.tex", "tab:air"):
+        _old_expected = _entry[3]
+        LABELLED_TABLES[_index] = _entry[:3] + (lambda fn=_old_expected: [(name, values[:1]) for name, values in fn()],)
+
+
+def _current_air_table_rows(sector):
+    from pkinv.core.reporting_window import REFERENCE_PERIOD, CORE_LAST_FY_START, fiscal_label
+    rows = _rows("pakemis_air_annual_fy2015_16_fy2024_25.csv")
+    periods = (REFERENCE_PERIOD, fiscal_label(CORE_LAST_FY_START))
+    result = []
+    for pollutant in ("PM2.5", "BC", "NOx", "SO2", "CO", "NMVOC", "NH3"):
+        years = [[r for r in rows if r["sector_id"] == sector and r["configuration_id"] == "S_TAN"
+                  and r["period_id"] == period and r["pollutant"] == pollutant and r["emissions_Gg"]]
+                 for period in periods]
+        if not any(years):
+            continue  # typed NE has no numerical cell, never a fabricated zero
+        if not all(years):
+            raise AssertionError("inconsistent generated table coverage")
+        result.append([sum(float(r["emissions_Gg"]) for r in year) for year in years])
+    return result
+
+
+def _current_agriculture_category_rows():
+    from pkinv.core.reporting_window import REFERENCE_PERIOD, CORE_LAST_FY_START, fiscal_label
+    rows = _rows("pakemis_ghg_configuration_atoms.csv")
+    periods = (REFERENCE_PERIOD, fiscal_label(CORE_LAST_FY_START))
+    categories = sorted({r["category"] for r in rows if r["sector_id"] == "agriculture" and r["gas"]})
+    return [[sum(float(r["co2e_Mt_AR5"]) for r in rows if r["sector_id"] == "agriculture"
+                 and r["configuration_id"] == "S_TAN" and r["period_id"] == year
+                 and r["category"] == category and r["co2e_Mt_AR5"])
+             for year in periods] for category in categories]
+
+# Existing labels now show source-backed own-year reference/latest tables.
+_REPLACED_NATIVE_TABLES = {
+    ("power", "06b_air_pollutants.tex", "tab:air"),
+    ("residential", "06b_air_pollutants.tex", "tab:air"),
+    ("agriculture", "06b_air_pollutants.tex", "tab:apresults"),
+    ("agriculture", "06_results.tex", "tab:national"),
+}
+LEGACY_TABLES += tuple(r for r in TABLES if r[:3] in _REPLACED_NATIVE_TABLES)
+LEGACY_LABELLED_TABLES += tuple(r for r in LABELLED_TABLES if r[:3] in _REPLACED_NATIVE_TABLES)
+TABLES = [r for r in TABLES if r[:3] not in _REPLACED_NATIVE_TABLES]
+LABELLED_TABLES = [r for r in LABELLED_TABLES if r[:3] not in _REPLACED_NATIVE_TABLES]
+TABLES.extend([(doc, section, label,
+               (lambda: _current_agriculture_category_rows()) if label == "tab:national"
+               else (lambda sector=doc: _current_air_table_rows(sector)))
+              for doc, section, label in sorted(_REPLACED_NATIVE_TABLES)])

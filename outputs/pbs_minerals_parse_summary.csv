@@ -1,4 +1,2 @@
-# THE MINERALS PARSE'S OWN ACCOUNTING, one row. fiscal_years_absent is a declared literal, not a blank: FY2015-16
-# is not published in a form this project holds, and an empty cell would read as 'nothing missing'.
 files_parsed,fiscal_years_held,fiscal_years_absent,month_rows,rows_quarantined,mineral_years,mineral_years_closing_group_control,canonical_minerals_found,canonical_year_coverage,wired_into_any_sector
-8,8,FY2015-16,36084,146,1683,1571,coal;crude_oil;limestone;natural_gas,coal:6/8;crude_oil:8/8;limestone:6/8;natural_gas:8/8,"fugitives upstream (gas, oil) per covered year; limestone as a cement cross-check"
+8,9,FY2024-25,1656,0,36,36,coal;crude_oil;limestone;natural_gas,coal:9/9;crude_oil:9/9;limestone:9/9;natural_gas:9/9,fugitives upstream validated timing; limestone cross-check

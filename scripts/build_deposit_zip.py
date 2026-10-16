@@ -1,32 +1,14 @@
 #!/usr/bin/env python3
-"""The three archive deposits of a release, prepared in dist/ (v1.0.0 program; user-only upload).
+"""Prepare a local review collection with primary data, ODbL companion, documentation
+and manifest-verified software/dependencies. Every archive has SHA256SUMS; one
+outer release archive contains all records and their checksums. No upload or DOI
+is performed. Raw publications are excluded unless separately admitted.
 
-    python3 scripts/build_deposit_zip.py [--data] [--documentation] [--software] [--out DIR]
-
-- data          pakemis-<version>-data.zip: every deposit-manifest row of kind product, input,
-                provenance or documentation EXCEPT a product whose release tier is `build`,
-                laid out per docs/product_catalog_design.md (pakemis-core/ by release tier
-                core, pakemis-support/ for supporting + research + inputs, pakemis-audit/ for
-                audit) with SHA256SUMS. Refuses any file that is not a deposit-manifest row,
-                and any manifest row whose digest no longer matches disk.
-
-                THAT EXCEPTION USED TO BE UNSTATED, and it is not a detail. This docstring said
-                "every product row" while data_layout() skipped build-tier products under rule
-                7, and the two selections share no criterion - deposit_manifest.py picks
-                products from release_manifest.PRODUCT_PATTERNS and never consults role or
-                tier. Thirteen hashed products fell in the gap, essentially the whole
-                air-pollutant family, and the test named for a partition held one inclusion
-                only, so nothing noticed. Every remaining exclusion is now declared in
-                tests/test_dev_snapshot.py::DepositZips.DECLARED_UNPLACED with its reason.
-- documentation pakemis-<version>-documentation.zip: the manuscript rows (papers/pdf) with the
-                paper-hash sidecar, the release cover and the licences.
-- software      pakemis-<version>-software.zip: `git archive HEAD` (the tracked tree at the
-                commit; sources/ is untracked and data/raw is excluded by .gitattributes rules).
-
-Nothing here mints or uploads anything. The zips are deterministic for a given tree
-(fixed entry times, sorted entries)."""
+Usage: python3 scripts/build_deposit_zip.py [--data] [--documentation] [--software] [--out DIR]
+"""
 import csv
 import hashlib
+import json
 import os
 import subprocess
 import sys
@@ -46,7 +28,7 @@ STAMP = (2026, 1, 1, 0, 0, 0)
 TIER_DIR = {"core": "pakemis-core", "supporting": "pakemis-support", "research": "pakemis-support",
             "audit": "pakemis-audit"}
 DATA_KINDS = ("product", "input", "provenance", "documentation")
-ROOT_DOCS = ("LICENSE", "LICENSE-data", "CITATION.cff", ".zenodo.json", "README.md", "CHANGELOG.md")
+ROOT_DOCS = ("LICENSE", "LICENSE-data", "LICENSE-ODbL", "CITATION.cff", ".zenodo.json", "README.md", "CHANGELOG.md")
 
 
 def sha256(path):
@@ -72,19 +54,24 @@ def tiers():
     return {row["artifact"]: row["release_tier"] for row in read_rows(INVENTORY)}
 
 
-def data_layout(rows):
+def data_layout(rows, package_group="primary"):
     """[(archive path, repo-relative path)] for the data deposit."""
     tier = tiers()
     out = []
     for row in rows:
         rel, kind = row["path"], row["kind"]
+        if row.get("package_group", "primary") != package_group:
+            continue
         if kind not in DATA_KINDS or rel.startswith("papers/"):
             continue
         if kind == "product":
             name = rel[len("outputs/"):] if rel.startswith("outputs/") else rel
             t = tier.get(name, "")
             if t == "build":
-                continue                                    # rule 7: no build artifact in a deposit
+                # Compiled-table reproduction needs registered downstream inputs.
+                # Preserve these in support/reproduction, separate from core records.
+                out.append(("pakemis-support/reproduction/%s" % name, rel))
+                continue
             folder = TIER_DIR.get(t, "pakemis-support")
             out.append(("%s/%s" % (folder, name), rel))
         elif kind == "input":
@@ -95,6 +82,8 @@ def data_layout(rows):
         else:                                               # documentation
             if rel in ROOT_DOCS:
                 out.append((rel, rel))
+            elif rel.startswith("campaign/"):
+                out.append(("pakemis-core/review-evidence/%s" % rel, rel))
             else:
                 out.append(("pakemis-core/docs/%s" % rel.replace("docs/", "", 1), rel))
     out.append(("pakemis-core/provenance/pakemis_deposit_manifest.csv", "outputs/pakemis_deposit_manifest.csv"))
@@ -106,11 +95,17 @@ def data_layout(rows):
     return sorted(seen.items())
 
 
+def companion_layout(rows):
+    entries = data_layout(rows, "odbl-companion")
+    entries.extend((rel, rel) for rel in ("LICENSE-data", "LICENSE-ODbL", "docs/deposit_rebuild_limits.md"))
+    return sorted(set(entries))
+
+
 def documentation_layout(rows):
     out = [(rel, rel) for rel in ("outputs/pakemis_paper_hashes.csv", "paper_common/release_cover.tex",
-                                  "LICENSE-data", "CITATION.cff")]
+                                  "LICENSE-data", "LICENSE-ODbL", "CITATION.cff")]
     for row in rows:
-        if row["kind"] == "manuscript":
+        if row["kind"] in ("manuscript", "manuscript_source"):
             out.append((row["path"], row["path"]))
     return sorted(set(out))
 
@@ -137,11 +132,11 @@ def write_zip(zip_path, entries, sums_name="SHA256SUMS"):
 # with the code because a reader cannot run it otherwise; the raw document trees do not,
 # because they are not software and the data record carries what of them is redistributable.
 SOFTWARE_EXTRA = ("Makefile", "README.md", "LICENSE", "CITATION.cff", ".zenodo.json",
-                  "pyproject.toml", "requirements.txt", "reproduce.sh")
+                  "pyproject.toml", "requirements.txt", "requirements.lock", "reproduce.sh", "LICENSE-data", "LICENSE-ODbL")
 
 
 def software_zip(zip_path, rows=None):
-    """The code, at HEAD, as the deposit manifest itself defines code.
+    """Code and dependency records from the manifest-verified release snapshot.
 
     THIS SHIPPED THE WHOLE TREE UNTIL 2026-10-08. It was `git archive HEAD` with no
     pathspec, which archives everything tracked - and this repository tracks its raw
@@ -149,35 +144,43 @@ def software_zip(zip_path, rows=None):
     came out at 16.7 GB: a full repository snapshot wearing the label "software", against
     10.8 MB for the 928 files the deposit manifest calls code.
 
-    An honest note on what this is NOT. A first reading of mine was that shipping those
-    documents contradicted the manifest's licensing, and the evidence does not support it:
-    the manifest does not cover sources/ at all, every outbound licence in it is own-work,
-    own-work-compilation or public-licence, and nothing in it declines redistribution. The
-    documents are tracked in a public repository already, so archiving them creates no new
-    exposure. The defect is that a 16.7 GB software record is unusable and mislabelled, not
-    that it is impermissible.
+    Public availability does not establish redistribution permission. Raw publications
+    and survey microdata are excluded; only the declared code and dependency closure
+    enter this record.
 
     THE SELECTION COMES FROM THE MANIFEST, not from a second list kept here. kind == "code"
     is already the repository's own answer to "what is software", and a pathspec written
-    beside it would drift from it the first time a directory moved - which is the same
-    mistake as the glob that sat beside the literals it subsumed. Files are read from HEAD
-    rather than from the working tree, so the archive describes the committed release.
+    beside it would drift from it the first time a directory moved. Bytes are read from
+    the verified snapshot, including authorized new files. HEAD alone would silently
+    package obsolete code while products describe an uncommitted corrected release.
+    The revision and dirty status are recorded, never described as a clean commit.
     """
-    paths = sorted({r["path"] for r in (rows or deposit_rows()) if r["kind"] == "code"})
+    paths = sorted({r["path"] for r in (rows or deposit_rows()) if r["kind"] in ("code", "build")})
     assert paths, "the deposit manifest lists no code; refusing to write an empty archive"
     for extra in SOFTWARE_EXTRA:
         if os.path.exists(asset_path(ROOT, extra)):
             paths.append(extra)
+    paths = sorted(set(paths))
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as z:
         lines = []
         for rel in paths:
-            blob = subprocess.run(["git", "-C", ROOT, "show", "HEAD:%s" % rel],
-                                  capture_output=True, check=True).stdout
+            with open(asset_path(ROOT, rel), "rb") as handle:
+                blob = handle.read()
             arc = "pakemis-%s/%s" % (VERSION, rel)
             info = zipfile.ZipInfo(arc, date_time=STAMP)
             info.external_attr = 0o644 << 16
             z.writestr(info, blob)
             lines.append("%s  %s" % (hashlib.sha256(blob).hexdigest(), rel))
+        revision = subprocess.run(["git", "-C", ROOT, "rev-parse", "HEAD"], capture_output=True, text=True, check=True).stdout.strip()
+        dirty = subprocess.run(["git", "-C", ROOT, "status", "--porcelain"], capture_output=True, text=True, check=True).stdout != ""
+        metadata = json.dumps({"release_version": VERSION, "git_head": revision,
+            "working_tree_modified": dirty, "software_content_sha256": hashlib.sha256("\n".join(lines).encode()).hexdigest(),
+            "reproduction_basis": "manifest-verified compiled inputs; primary-source re-extraction separate"}, sort_keys=True, indent=2).encode() + b"\n"
+        arc = "pakemis-%s/RELEASE_SNAPSHOT.json" % VERSION
+        info = zipfile.ZipInfo(arc, date_time=STAMP)
+        info.external_attr = 0o644 << 16
+        z.writestr(info, metadata)
+        lines.append("%s  RELEASE_SNAPSHOT.json" % hashlib.sha256(metadata).hexdigest())
         info = zipfile.ZipInfo("pakemis-%s/SHA256SUMS" % VERSION, date_time=STAMP)
         info.external_attr = 0o644 << 16
         z.writestr(info, "\n".join(lines) + "\n")
@@ -193,6 +196,7 @@ def main(argv):
     built = []
     if "--data" in wanted:
         built.append(write_zip(asset_path(out_dir, "pakemis-%s-data.zip" % VERSION), data_layout(rows)))
+        built.append(write_zip(asset_path(out_dir, "pakemis-%s-odbl-companion.zip" % VERSION), companion_layout(rows)))
     if "--documentation" in wanted:
         built.append(write_zip(asset_path(out_dir, "pakemis-%s-documentation.zip" % VERSION),
                                documentation_layout(rows)))
@@ -203,6 +207,17 @@ def main(argv):
         for path in built:
             handle.write("%s  %s\n" % (sha256(path), os.path.basename(path)))
             print("%s  %s  (%.1f MB)" % (sha256(path), path, os.path.getsize(path) / 1e6))
+    # One immutable review collection includes all constituent archives and their
+    # actual checksums. Building it is local; no deposit or DOI is minted here.
+    sums = asset_path(out_dir, "pakemis-%s-deposits.SHA256SUMS" % VERSION)
+    release_path = asset_path(out_dir, "pakemis-%s-release.zip" % VERSION)
+    with zipfile.ZipFile(release_path, "w", zipfile.ZIP_STORED) as archive:
+        for path in sorted(built + [sums]):
+            info = zipfile.ZipInfo(os.path.basename(path), date_time=STAMP)
+            info.external_attr = 0o644 << 16
+            with open(path, "rb") as handle:
+                archive.writestr(info, handle.read())
+    print("%s  %s" % (sha256(release_path), release_path))
     return 0
 
 

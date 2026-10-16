@@ -15,30 +15,9 @@ from being removed twice, retained twice, or assigned inconsistently between \NH
 \subsection{Alignment of the nitrogen boundaries}
 \label{sec:methods-ledger}
 
-Two IPCC volatilisation fractions apply at different stages of the manure chain.
+The reference TAN formulation follows species- and system-specific ammonia loss through housing or yard exposure, storage and field application. Each stage acts on surviving total ammoniacal nitrogen. Management NH$_3$ and NO$_x$, leaching, N$_2$ and N$_2$O losses are removed once before the surviving organic pool reaches soil. Grazing and field volatilisation remain separate pathways. The same realised pools drive indirect N$_2$O and the air species.
 
-$\mathrm{Frac_{GasMS}}$ (Table~10.22) represents nitrogen lost as \NHthree{} and \NOx{}
-within the manure-management system, principally during housing and storage before manure
-reaches agricultural land. This loss reduces the quantity of manure nitrogen available for
-later application.
-
-$\mathrm{Frac_{GASM}}$ (Table~11.3) represents volatilisation after organic nitrogen has
-been applied to soil or deposited during grazing. Under the Tier~1 soil-\NtwoO{} method this
-fraction contributes to indirect \NtwoO{}. It does \emph{not} reduce the organic nitrogen
-input before direct soil \NtwoO{} is calculated.
-
-Pre-field losses are therefore calculated as
-\begin{equation}
-\mathrm{Frac_{LossMS}} \;=\; \mathrm{Frac_{GasMS}} + \mathrm{Frac_{leachMS}} +
-\mathrm{Frac_{N_2MS}} + EF_3 ,
-\end{equation}
-evaluated separately by livestock species and manure-management system using the factors in
-IPCC Table~10.22. The post-application factor $\mathrm{Frac_{GASM}}$ is then applied once,
-after manure reaches the field or is deposited during grazing.
-
-This implementation replaces an earlier version of the nitrogen chain. Supplementary
-Note~S5 documents the previous errors, their quantitative effects, and the regression tests
-used to prevent their recurrence.
+A separately identified IPCC alternative uses the applicable management and field volatilisation fractions. It regenerates both product families rather than combining an IPCC N$_2$O account with a different EMEP ammonia chain. Its management fractions are not additional removal from the TAN reference. Material-flow closure is tested in each configuration and uncertainty draw.
 
 \subsection{Synthetic-fertiliser ammonia}
 \label{sec:methods-air}
@@ -131,7 +110,7 @@ storage stage. Dry lots are represented as uncovered yards.
 
 Factors also differ among livestock categories, and are taken from Table~3-9 of the
 Guidebook. Buffalo manure is assigned a TAN fraction of \num{0.50}, compared with
-\num{0.61} for cattle, and a storage factor of \num{0.17} against \num{0.32}. Grazing
+\num{0.60} for cattle, and a storage factor of \num{0.17} against \num{0.32}. Grazing
 factors are applied to TAN rather than to total excreted nitrogen (\num{0.14} for cattle and
 buffalo, \num{0.09} for small ruminants).
 
@@ -153,10 +132,7 @@ black carbon and SO$_2$ (Table~\ref{tab:apef}). The PM$_{2.5}$ factor is also us
 related satellite-nowcasting layer so that the two products report a consistent crop-burning
 PM$_{2.5}$ quantity.
 
-All air-pollutant factors are stored with their units, sources and uncertainty in
-\texttt{data/emission\_factors.csv}. Their uncertainties are combined with activity-data
-uncertainty using the same IPCC Approach-1 product rule applied in the greenhouse-gas
-inventory.
+All air factors retain native units and source applicability. Local product-rule widths are diagnostics; the integrated conditional ensemble replays shared herd, crop, nutrient and bounded fate-factor realisations across NH$_3$, NO$_x$ and N$_2$O. Structural management shares and factor alternatives are separate cases, not confidence limits.
 
 \begin{table}[!htbp]
 \centering

@@ -28,14 +28,14 @@ agreement: the national table is the emissions control, the district tables driv
 allocation, and the residual per species is published with the normalisation factor it implies in
 \texttt{outputs/agriculture\_livestock\_reconciliation\_2024.csv}.
 
-Crop area and production data are taken from the Pakistan Economic Survey's Agriculture
-chapter for FY2023--24 \citep{econsurvey2024ag} and PBS agricultural statistics.
-Synthetic-nitrogen offtake is the audited full-year figure from the National Fertilizer
-Development Centre's Fertilizer Review for the same year \citep{nfdc2024}. Both documents are
-archived in this repository; the citations name the editions the engine reads, not the most
-recent editions published. FAOSTAT activity series are used to reconstruct emissions
-for 1990--2023, while the 2024 inventory is anchored to the latest Pakistani census and
-administrative data \citep{faostat}.
+Crop area and production use the full-year historical rows of the Pakistan Economic
+Survey 2025--26 \citep{peseconomic2026}, with the same source vintage applied across
+the core. Partial current-year figures are excluded from annual controls. Fertiliser
+nutrients and products use the applicable full-year National Fertilizer Development
+Centre reviews, including FY2023--24 and FY2024--25 \citep{nfdc2024,nfdc2025}.
+The adopted census anchors a consistent livestock reconstruction through the core,
+with post-census growth identified as extrapolation. The separate 1990--2024
+FAOSTAT calendar reconstruction remains a contextual comparison \citep{faostat}.
 
 \subsection{Geospatial data}
 
@@ -48,47 +48,28 @@ spatial facility program, its former cropland-fallback class deleted from the
 allow-list so a checkout without it refuses the build, and the own-year GCD-Rice
 2023 classification is published beside it as a crosscheck and a priced
 district-level bracket. Crop-residue
-burning is allocated using NASA FIRMS VIIRS
-active-fire detections from the reporting period's own burning windows
-\citep{firms}. The held record spans all nine fiscal years---\num{1664876} unique
-detections fetched over per-crop burning windows derived from the FAO crop calendar's
-own harvest dates (rice, wheat, cotton, maize and sugarcane, each harvest followed by a
-45-day residue-clearing tail, clipped to its fiscal year)---but the spatial surface
-consumes only the reporting period's own dates, \num{166393} in-grid detections inside
-FY2023--24. Period-matching is a correction this series already made once (an earlier
-extraction spanned October 2024--May 2025, one season after the period, and that offset
-was declared until the period-matched extraction replaced it), so the nine-year record
-is deliberately not pooled into a climatology here: each year's fires allocate only
-that year. The window shapes only the within-province fire geography, never a
-magnitude.
+burning uses NASA FIRMS VIIRS active-fire detections matched to the reporting
+period's crop-burning windows \citep{firms}. The held record covers the nine
+fiscal years FY2015--16 through FY2023--24, with \num{1664876} unique
+detections; it does not observe fires in the newly added FY2024--25.
+The latter uses an explicitly labelled cropland spatial substitute and
+calendar-days monthly fallback. Extending annual activity therefore does not
+upgrade its fire evidence.
 
-The fire layer's construction is stated in full so its declared choices are reviewable.
-The product is the science-quality \texttt{VIIRS\_SNPP\_SP} archive, requested in
-five-day spans (the area API's maximum) over the national bounding box; detections
-are deduplicated on (latitude, longitude, acquisition date).
-Each detection is weighted by fire radiative power plus one---FRP approximates biomass
-burned, and the offset keeps zero-FRP detections from vanishing. Two filters are
-deliberately \emph{not} applied to this spatial surface, and their absence is a
-declared choice rather than an
-omission: no confidence filter (every detection at any confidence enters the surface)
-and no crop mask (the only mask is the national boundary, so non-agricultural fires
-inside Pakistan contribute weight where they burn). The monthly timing layer is
-stricter: there an attribution ladder masks the bounding box's Indian-Punjab
-detections, excludes persistent detections within \num{0.01}\si{\degree} of the kiln
-registry's coordinates, and keeps cropland detections only---of the \num{169657}
-detections in FY2023--24, \num{103747} fall outside Pakistan, \num{4102} sit near
-kilns, \num{9380} off cropland, and \num{52428} are attributed to residue burning; the
-unattributed counts are published in the burning crosscheck, never forced into the
-profile. A district shape carrying
-residue-burning mass in which the layer records no fire falls back to a uniform spread
-within that shape, declared per event in the grid fallback ledger; a fetch returning
-zero detections refuses to write at all, so an empty fire layer can never look
-fetched. Other
+Temporal and spatial fire allocations use the same attribution ladder: the crop
+burning window, the Pakistan mask, cropland, and exclusion of detections within
+\num{0.01}\si{\degree} of registered kilns. Retained detections are weighted by
+fire radiative power, with no additive offset. The counts excluded at each step
+remain in the source diagnostic. Each supported year's detections shape its own
+allocation rather than a pooled climatology; zero-weight or unsupported locations
+use a declared fallback. The fire proxy controls allocation, not annual burned mass.
+Other
 cropland-related streams are allocated using the cropland fraction from ESA WorldCover~2021
 \citep{worldcover2021}.
 
-Provincial boundaries are obtained from geoBoundaries \citep{runfola2020}, while district
-boundaries are based on GADM or GAUL ADM2 polygons. District allocations are evaluated
+The primary provincial and district boundaries use geoBoundaries
+\citep{runfola2020}; legacy boundary and derived alternatives are separated under
+their applicable licences. District allocations are evaluated
 against crop-area statistics published by the Ministry of National Food Security and
 Research \citep{mnfsrcrops}. National emission totals are compared with FAOSTAT, EDGAR and
 Climate TRACE.
@@ -104,8 +85,8 @@ PBS 7th Ag.\ Census & activity & livestock, crop area \\
 Economic Survey & activity & crops, livestock cross-check \\
 NFDC & activity & synthetic nitrogen \\
 FAOSTAT (QCL/RFN/GT) & activity/bench. & time series, benchmark \\
-EDGAR 2024/2025 & benchmark & independent national totals \\
-Climate TRACE v7.1.9 & benchmark & independent national totals \\
+EDGAR 2024/2025 & benchmark & matched-boundary national comparisons \\
+Climate TRACE v7.1.9 & benchmark & matched-boundary national comparisons \\
 MNFSR district crops & records & district validation (rice, wheat) \\
 \GLW{} (2020) & proxy & livestock density \\
 MapSPAM 2020 & proxy (held, hash-pinned) & rice area \\

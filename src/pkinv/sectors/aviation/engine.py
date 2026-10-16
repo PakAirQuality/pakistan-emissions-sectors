@@ -46,7 +46,11 @@ load_shares = downscale.load_shares
 # taxiways and false of cruise: ~83.5% of the full-flight fuel burns en route, and placing it
 # at airports at S1 was the twenty-first review's aviation finding. The stream is split now;
 # the cruise components are overridden to NA below and are not placed beneath the province.
-EVIDENCE_CLASS, TEMPORAL_METHOD, SPATIAL_METHOD = "E2", "T2", "S1"
+# T3, not T2 (rc68): the monthly layer allocates domestic-flight emissions by jet fuel sold to
+# resident airline customers, whose flights include international services, so the timing is
+# a proxy. The layer was downgraded and the declaration had stayed T2; test_monthly_layer
+# holds the two to one class.
+EVIDENCE_CLASS, TEMPORAL_METHOD, SPATIAL_METHOD = "E2", "T3", "S1"
 SOURCE_ID = "pcaa_movements_ocac_jet_fuel"
 
 

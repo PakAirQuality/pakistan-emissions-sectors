@@ -163,7 +163,7 @@ def compute(data, year=None, sulfur_case=None):
             frac = data.efv("railway_air_frac", "BC_of_PM2.5")
             rows.append({"category": category, "fuel": stream, "pollutant": "BC",
                          "emissions_kt": pm25_kt * frac,
-                         "uncert_pct": product(data.efu("railway_air", "PM2.5"),
+                         "uncert_pct": product(ad_u, data.efu("railway_air", "PM2.5"),
                                                data.efu("railway_air_frac", "BC_of_PM2.5")),
                          "source": data.efs("railway_air_frac", "BC_of_PM2.5"),
                          "sulfur_case": "",

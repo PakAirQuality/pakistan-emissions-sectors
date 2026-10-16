@@ -1,105 +1,25 @@
-"""Air-pollutant co-emissions from electricity generation - UNCONTROLLED, and that word carries
-the whole caveat.
+"""Separate power air-pollutant screening cases on shared combustion activity.
 
-Mass only. Air pollutants are never converted to CO2e and never enter a greenhouse-gas total,
-as in the residential, transport, waste and aviation layers.
+Coal factors use AP-42 rank-specific equations and size distributions. Sulfur
+and ash enter only where the factor requires them. Rank-specific NCVs convert
+the same station fuel mass as the GHG account; imported coal currently retains
+an explicit Thar-quality proxy because consignment analyses are unavailable.
+Gas NOx uses the documented turbine/boiler split with unresolved technology
+retained on the declared boiler factor. Bagasse factors cover only the species
+supported by AP-42 Section 1.8. Species absent from a source table remain absent.
 
-ON THE FUEL, NOT ON GENERATION. Every factor here is applied to the same terajoules that the
-greenhouse-gas layer burns, because the two inventories describing the same combustion should
-describe the same activity. That is what makes the cross-sector comparison in the national
-manuscript - household biomass against road transport against this sector - a statement about
-how fuels burn rather than an artefact of three different activity bases.
+Uncontrolled and generic controlled-operation cases are screening scenarios,
+not central estimates, mathematical bounds or confidence limits. Typical AP-42
+rates do not prove an upper bound. Generic controls are technology transfers,
+not observations of Pakistani plant operation. Public plant licence applications
+now establish proposed FGD/ESP equipment at selected stations; the separate
+plant-design evidence product distinguishes design from demonstrated operation.
+Bulk fly-ash removal cannot be applied directly to PM2.5.
 
-WHY THIS SECTOR WAS NOT ESTIMATED BEFORE, AND WHAT ACTUALLY CHANGED. The completeness table
-recorded this category as blocked on emission factors. Re-deriving from AP-42 showed that was
-the wrong diagnosis. AP-42 does not publish a coal SO2 factor: Table 1.1-3 publishes 38S,
-where S is the sulfur weight percent of the coal burned. Table 1.3-1 publishes 157S for No. 6
-oil. Table 1.1-4 publishes PM as 10A, a function of ash. The factors were never missing - the
-FUEL ANALYSIS was, and NEPRA publishes none. So the blocker was fuel quality all along, and
-naming it that way is most of this module's value.
-
-THREE THINGS THIS IS A BOUND ON, NOT AN ESTIMATE OF.
-
-First, sulfur. Published Thar lignite sulfur spans 0.26 to 2.90 percent, a factor of eleven,
-and the imported bituminous burned at Sahiwal, Port Qasim and Hub is a different coal that SIR
-Table 3 does not separate. The central value is the geometric mean of the published range and
-the uncertainty is read off the range, which is exactly how sectors/fugitives/leakage.py
-handles IPCC's published factor ranges; range_uncert_pct is imported from there rather than
-reimplemented, so the two sectors cannot drift apart on the convention.
-
-Second, and larger: THESE ARE UNCONTROLLED FACTORS. AP-42's uncontrolled rows describe what
-leaves the furnace, not what leaves the stack. Pakistan's supercritical coal units were built
-with electrostatic precipitators, and the newer ones with flue-gas desulphurisation, which
-remove most of the particulate and much of the sulfur. No national dataset records which
-control is fitted where or how it performs, so applying a removal efficiency would mean
-inventing one. The uncontrolled figure is therefore reported as what it is - an UNCONTROLLED
-SCREENING SCENARIO of what the fleet emits with no control devices credited - and the
-estimate of what it does emit is left NE. It is NOT a mathematical maximum: AP-42 defaults
-are typical uncontrolled rates, not worst cases, so a plant could exceed a row of this
-scenario even uncontrolled. A number labelled as a screening scenario is useful; the same
-number labelled as an estimate (or as a bound it is not) would not be.
-
-Third, combustor type for gas - RESOLVED BY THE LEDGER, WITH A RESIDUAL. AP-42 Chapter 1.4 is
-an EXTERNAL COMBUSTION chapter - boilers - while much of Pakistan's gas fleet is
-combined-cycle, which is Chapter 3.1, and turbine NOx differs from boiler NOx (3.2E-01 versus
-280/1,020 = 2.7E-01 lb/MMBtu, both uncontrolled, both rated A). SIR Table 3 reports fuel
-without plant type, but the plant ledger carries heat rates, and a plant at or below 9,000
-kJ/kWh net can only be a combined cycle. plant_ledger.gas_technology_split classifies the
-grid gas energy that way - turbine, boiler, or unresolved - and the grid gas NOx factor here
-is the energy-weighted blend, with the unresolved share KEPT ON THE BOILER FACTOR and
-published as the residual rather than assigned. Only NOx is split: the CO factors are
-numerically indistinguishable across the two chapters (84/1,020 = 8.2E-02 versus 8.2E-02
-lb/MMBtu), and sulfur passes through to SO2 regardless of how the gas is burned. Captive gas
-stays on the boiler chapter: those units are engines and small turbines that Chapter 3.2
-would describe, but no dataset splits the captive fleet, so its NOx keeps the weakest-row
-caveat that the grid row has now shed.
-
-PM2.5 FROM THE SIZE DISTRIBUTION, NOT A LOOKUP. AP-42 Table 1.1-4 gives filterable PM and
-PM-10 for coal but no PM2.5. Table 1.1-6 publishes the cumulative particle-size distribution
-for dry-bottom pulverised-coal boilers, uncontrolled: 6 percent of filterable mass is at or
-below 2.5 microns, a cumulative factor of 0.6A lb/ton, which the table rates C - below the
-A of the mass factor it scales, as a derived number should be. The same table puts 23
-percent at or below 10 microns, 2.3A, exactly the PM-10 factor Table 1.1-4 already carries,
-which is the internal consistency check on the transcription. Gas PM2.5 equals gas PM
-because AP-42's note says all gas particulate is under a micron. Oil PM (all sizes) remains
-out: this module has never carried an oil particulate factor, and oil is under two percent
-of the sector's fuel. Reporting the gas figure alone would have put about 1 kt against
-residential biomass at 461 and read as power being negligible for fine particulate, which
-uncontrolled coal is not - the coal row is what makes the number honest.
-
-THE COAL FAMILY IS SPLIT BY RANK SINCE rc10, because AP-42 is. Section 1.1 is BITUMINOUS
-and subbituminous coal; 79 percent of this fleet's coal energy is Thar LIGNITE
-(coal_lignite_share, generation-weighted from the plant fuel ledger), which AP-42 covers in
-its own Section 1.7 with different factors on every axis: SOx 30S against 38S, and the
-sulfur-retention physics differ (the 1.7-1 footnote scales the factor 22S-34S with ash
-sodium, unknown here, so the table's own 30S default is carried); PM 6.5A against 10A; and
-the size distribution is lignite's own Table 1.7-7 (35 percent of filterable at or below 10
-microns, 10 percent at 2.5) rather than 1.1-6's 23/6. Firing configuration is carried as a
-DECLARED ASSUMPTION: pulverized dry-bottom TANGENTIAL (SCC 1-01-003-02), the configuration
-whose NOx factor 1.7-1 rates A and whose PM matches Table 1.7-7's own basis - no Pakistani
-document read here states the Thar boilers' firing arrangement. Lignite CO is ND for
-tangential in 1.7-1 and is therefore ABSENT, not zero-filled - the same rule that kept the
-placeholder bagasse factors out. The 3 unknown-origin ledger plants ride the bituminous side
-via the share's own construction (0.79 is the midpoint of Lucky-as-imported/Lucky-as-Thar).
-Per-TJ conversion uses each rank's own IPCC NCV (plant_ledger.NCV_LIGNITE 11.9 against 25.8)
-- the point the GHG layer already makes: rank factors differ modestly per TJ and enormously
-per tonne. The Thar sulfur and ash ranges apply to the LIGNITE rows by construction; the
-bituminous rows keep the same ranges as a DECLARED PROXY because no imported-coal
-consignment analysis is held (power-fuel-analysis in the gap register) - typically imported
-bituminous is lower-sulfur, so if anything the bituminous side of the bound is generous.
-
-BAGASSE IS ESTIMATED SINCE rc10, from AP-42 Section 1.8 (bagasse-fired boilers, sugar
-mills) on the same fuel energy the greenhouse-gas layer burns (bagasse.fuel_TJ). The
-section publishes uncontrolled filterable PM (15.6 lb/ton wet bagasse, rated C) and NOx
-(1.2, C) and NO SOx or CO factor - bagasse sulfur is characteristically negligible and the
-section says so in prose rather than printing a factor - so this stream carries exactly two
-pollutant rows and the absence of the others is the section's, not an oversight. Conversion
-uses the section's own stated heating value (7.0 MMBtu per wet ton), so the factor stays on
-the basis it was measured on. The old placeholder story: the source workbook for this
-sector's plant register carries four bagasse factors it flags itself as unsourced
-placeholders, all zero - a zero that means "not looked up" is worse than an absence, so
-those never entered and the category was NE until the section itself was fetched
-(sources/AP42/AP42_1.8_bagasse.pdf).
+The central national air panel admits only the separately reviewed oil/diesel
+SO2 records from the plant-fuel-year admission register. This screening module
+does not silently add coal, gas or bagasse cases to that central panel. All
+outputs are native pollutant masses and never enter a CO2-equivalent total.
 """
 
 from pkinv.assets import asset_path
@@ -184,9 +104,8 @@ GAS_TURBINE_NOX_LB_PER_MMBTU = (0.32, "3.1-1", "A")
 
 # ---------------------------------------------------------------------------
 # THE CONTROLLED-CASE SCENARIO END (air absence-screening round). The pair
-# uncontrolled/controlled_case are the two ends the fleet lies between GIVEN the
-# control fleet is unknown; NEITHER is an estimate, and the NEPRA acquisition
-# (gap air-power-controlled) is what would replace the pair with one. Every value
+# uncontrolled/controlled_case tests two assumed operating states. It does not
+# establish that actual releases lie between them; neither is a central estimate. Every value
 # below is a HELD-table row, never an invented removal rate:
 #   coal NOx: Table 1.1-3's "Pre-NSPS with low-NOx burner" wall-fired row (11, A);
 #   lignite NOx: Table 1.7-3's Subpart Da tangential overfire-air row (6.0, C) -
@@ -231,8 +150,8 @@ CONTROLLED_BASIS = (
     "COAL-CONTROL SCENARIO, OIL REMOVAL UNCHANGED - every unit credited with the "
     "named held-table control (LNB/OFA for NOx, ESP-class collection for PM, wet "
     "lime/limestone FGD residual 0.05-0.20 for SO2, water-steam injection for the "
-    "turbine share); the other end of the pair the fleet lies between, not an "
-    "estimate and not a minimum - gas boilers, oil, bagasse and captive keep "
+    "turbine share); a conditional technology case, not a demonstrated endpoint "
+    "of actual fleet emissions or a minimum - gas boilers, oil, bagasse and captive keep "
     "uncontrolled factors because no held chapter prices their controls. "
     "ITS NAME WAS WRONG UNTIL rc60. It was called the `controlled_case`, and for "
     "SO2 that reads as 'the fleet with its controls credited' when what it "
@@ -385,20 +304,17 @@ def compute(data, year=None, scenario="uncontrolled", include_captive=False):
 
     for fuel, energy in sorted(tj.items()):
         if fuel == "Coal":
-            # split by rank: 79% of the coal energy is Thar lignite on Section 1.7
-            # factors, the rest imported bituminous (plus the ledger's unresolved
-            # residual, by the share's own construction) on Section 1.1
-            # year-aware: the FY2023-24 parameter at the reference, the ledger mid from
-            # FY2019-20, zero before the Thar fleet existed - the same three-regime rule
-            # the GHG layer burns (applying 0.79 lignite to FY2015-16 would be the very
-            # defect the module docstring warns about, pointed backwards)
+            # Split booked heat by the same source-year station mass/rank NCV account
+            # as GHGs. Lignite rank includes Lakhra before the Thar fleet operated;
+            # a rank label must not imply that all domestic coal originated in Thar.
             share = combustion.coal_lignite_share(data, year)
             share_u = data.pu("coal_lignite_share")
             lignite_set = LIGNITE_CONTROLLED_LB_PER_TON if controlled else LIGNITE_LB_PER_TON
             bituminous_set = (BITUMINOUS_CONTROLLED_LB_PER_TON if controlled
                               else BITUMINOUS_LB_PER_TON)
             for detail, portion, table_set, rank, qfuel in (
-                    ("Thar lignite (share %.2f, SCC 1-01-003-02 assumed)" % share,
+                    ("lignite-rank coal (share %.2f; source-year origin; Thar quality "
+                     "proxy, SCC 1-01-003-02 assumed)" % share,
                      share, lignite_set, "Lignite", "Lignite"),
                     ("imported bituminous incl. unresolved residual (share %.2f; "
                      "Thar quality ranges as declared proxy)" % (1.0 - share),
@@ -422,6 +338,8 @@ def compute(data, year=None, scenario="uncontrolled", include_captive=False):
                 k, u = _oil_kg_per_TJ(v, scaled, data)
                 emit(CATEGORY, fuel, pol, k, u, tbl, rate, energy)
         elif fuel == "Gas":
+            from pkinv.sectors.fugitives import post_meter
+            energy *= post_meter.combusted_fraction()
             split = plant_ledger.gas_technology_split(data, year)
             for pol, (v, _s, tbl, rate) in sorted(GAS_LB_PER_MMSCF.items()):
                 k, u = _gas_kg_per_TJ(v)
@@ -462,7 +380,8 @@ def compute(data, year=None, scenario="uncontrolled", include_captive=False):
     # the captive panel is fiscal-END keyed while the grid year is fiscal-START; the
     # engine does this +1 at its own seam and the air layer must do the same, or captive
     # history shifts by a year silently (None keeps the pinned reference)
-    cap_tj = captive.gas_TJ(data, year=None if year is None else year + 1)
+    from pkinv.sectors.fugitives import post_meter
+    cap_tj = captive.gas_TJ(data, year=None if year is None else year + 1) * post_meter.combusted_fraction()
     cap_u = product(data.p("captive_activity_uncert"), data.pu("captive_hhv_btu_per_scf"))
     for pol, (v, _s, tbl, rate) in sorted(GAS_LB_PER_MMSCF.items()):
         k, _u = _gas_kg_per_TJ(v)

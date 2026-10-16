@@ -131,6 +131,17 @@ def volatilised_n(data, npools, basis="NH3+NOx"):
 
     synthetic = FSN * (f_nh3_sf if basis == "NH3" else f_nh3_sf + f_no_sf)
     organic_f = fracgasm * (nh3_share if basis == "NH3" else 1.0)
+    # Reference TAN and complete IPCC alternative expose their actual field
+    # releases. FON itself remains gross input to direct N2O; application losses
+    # are not subtracted a second time from that activity.
+    if "field_volat_NH3_N" in npools:
+        nh3 = npools["field_volat_NH3_N"]
+        nox = npools["field_volat_NOx_N"]
+        out = {"synthetic": synthetic}
+        for key in ("organic", "pasture_cattle", "pasture_other"):
+            out[key] = nh3.get(key, 0.0) + (nox.get(key, 0.0) if basis == "NH3+NOx" else 0.0)
+        out["total"] = sum(out.values())
+        return out
     out = {
         "synthetic": synthetic,
         "organic": npools["FON_N"] * organic_f,

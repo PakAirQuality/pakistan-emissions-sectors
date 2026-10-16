@@ -80,20 +80,14 @@ Pakistan Railways Year Book \citep{pakrailyearbook2024} through the railways mod
 generator carve-out reads HIES \citep{hies2025} over the administered petrol price
 \citep{goppetrol} through the residential module. Emission factors are
 IPCC 2006 Guidelines Volume~2 Chapter~3 defaults \citep{ipcc2006energy}: Table~3.2.2 for
-road, Table~3.3.1 for off-road machinery. Air-pollutant factors are per-kilometre values
-inherited from the Punjab emissions workbook without a located primary citation
-(Section~\ref{sec:data}); Supplementary Note~S2 renders them with that label. External
+road, Table~3.3.1 for off-road machinery. Air factors come from held EMEP/EEA 2023 source chapters, with separate fuel, evaporation and wear units and an explicit class/fuel bridge (Section~\ref{sec:air}). Supplementary Note~S2 renders the current source tables and clearly labels the superseded diagnostic rows as historical. External
 comparison is EDGAR's series \citep{edgar2025booklet}, read at this sector's fiscal
 year as a blend of the 2023 and 2024 columns (\SI{48.13}{\mega\tonne}); the
 CY2021/CY2022 blend survives only as the superseded rc4 construction in the
 comparison table.
 
 Every factor in the repository carries a source string, and a provenance test asserts that
-none is empty and that any informally sourced value is declared as such. Two populations sit
-inside that rule rather than outside it: the per-kilometre air-pollutant factors, whose source
-file records no primary citation and which are labelled accordingly wherever they appear, and
-the declared MJ/km intensity bands, which are this inventory's own engineering judgement and
-say so on every row. A source string is not the same thing as a citation, and the distinction
+none is empty and that any informally sourced value is declared as such. The declared MJ/km intensity bands remain engineering assumptions rather than Pakistani operating measurements. Source-based air factors likewise require an applicability assessment for the transferred fleet and fuel technology. A source string is not the same thing as a citation, and the distinction
 is made explicit rather than averaged away.
 
 % ===========================================================================

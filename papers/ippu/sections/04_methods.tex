@@ -48,8 +48,7 @@ Process \COtwo{} is
 E_{\COtwo{},y}=C^{\mathrm{production}}_y\,\mathrm{EF}_{\mathrm{clinker}},
 \end{equation}
 with an IPCC default factor of \SI{0.52}{\tonne} \COtwo{} per tonne of clinker. The estimate
-covers calcination only. Kiln fuel belongs to Energy 1.A.2 and will be linked through the
-shared facility inventory rather than included in 2.A.1.
+covers calcination only. Kiln fuel belongs to Energy 1.A.2 and shares the facility account while remaining outside 2.A.1. The air calculation uses an integrated cement-stack factor once, rather than adding fuel and process factors for that same stack.
 
 \subsection{Structural and parametric uncertainty}
 
@@ -89,17 +88,4 @@ The current cement provincial allocation preserves the legacy cement/limestone p
 that downstream national and province tables remain reconciled. Its former Punjab activity
 anchor is no longer treated as period-matched. Industrial
 process emissions are point sources, so the target product is a facility ledger that
-reconciles plant, district, province and national totals. Thirty-four facilities have been
-identified; \num{24} carry resolved coordinates---one independently verified site geocode,
-seven from named OSM industrial polygon centroids and \num{16} from the Global Energy
-Monitor cement tracker, each point-in-polygon verified against
-its census district at build---and the remaining \num{10} are located only to their reported
-locality. Where both registers place the same works,
-\texttt{outputs/ippu\_facility\_coordinate\_agreement.csv} records the separation: eight
-sites are placed independently by OpenStreetMap and by the tracker and agree to within
-\SIrange{0.024}{0.744}{\kilo\metre}. The file's other eleven rows are not evidence and say
-so---those coordinates came from the tracker in the first place, so their distance to it is
-zero and the comparison is a register against itself. Company-wide activity is assigned among plants only when
-plant-specific evidence is available. Spatial and historical products are therefore reported
-only where the required facility- or year-specific activity data have been assembled. A
-1990--2024 coverage table records the remaining years as unavailable.
+reconciles plant, district, province and national totals. Facility records retain their source and coordinate licence. Only locations compatible with the primary package enter its facility-assisted allocation. ODbL-derived alternatives retain separate identities and obligations. Company-wide output is distributed among its works conditionally when plant-specific production is unavailable. Unlocated or excluded activity remains in the unallocated account; it does not establish native facility resolution.

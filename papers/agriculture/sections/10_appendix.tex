@@ -35,7 +35,16 @@ row as kilograms of nitrogen and as a share of what was excreted) and its diagno
 (\texttt{outputs/n\_ledger\_stage\_comparison.csv}, the IPCC and EMEP ammonia-nitrogen
 factors set against each other stage by stage), the versioned emission-factor
 and activity files, the gridded (GeoTIFF, EPSG:4326) and district (CSV) products, the
-1990--2024 time series, the uncertainty and benchmark outputs---including
+twelve-month layer for the reference year
+(\texttt{outputs/agriculture\_\allowbreak monthly\_\allowbreak 2024.csv}, each month's share
+with the emissions it implies and the basis of the shape) with the timing class each
+category's evidence supports (\texttt{outputs/agriculture\_\allowbreak timing\_\allowbreak classes.csv}),
+the crop-residue ledger recording where each tonne of residue goes
+(\texttt{outputs/agriculture\_\allowbreak crop\_\allowbreak residue\_\allowbreak ledger\_\allowbreak 2024.csv}), the
+1990--2024 time series, the uncertainty and benchmark outputs---including the
+reference-year greenhouse-gas Monte Carlo by category
+(\texttt{outputs/uncertainty\_\allowbreak montecarlo.csv}), the level and trend key-category
+assessment (\texttt{outputs/key\_\allowbreak categories.csv}) and
 \texttt{outputs/air\_\allowbreak uncertainty\_\allowbreak montecarlo.csv}, the
 per-pollutant intervals with the Approach~1 comparison beside them---and the test suite; units,
 coordinate reference system and time coverage are recorded with each product, and a run
@@ -71,53 +80,40 @@ classification ships as the priced alternative) changes the surface and is an
 are not the ones reported here. The
 pipeline auto-detects supplied files and logs which proxy each category used.
 
-\section{IPCC common reporting table}
+\section{Reporting-category and period conventions}
 \label{app:crt}
-
-Table~\ref{tab:crt} gives a Common-Reporting-Table view of the agriculture sector
-for the base year (1990) and the latest year (2024): the underlying activity data,
-the implied emission factor, and the resulting \COe{}. The principal emission and
-carbon factors themselves are listed in the body (Table~\ref{tab:ef-full}).
+The current national core uses fiscal years from July 2015 through June 2025.
+Its detailed agricultural reference is FY2023--24; the adopted census supplies
+livestock stocks, while crops and nutrient offtake retain their stated fiscal
+periods. The former calendar-1990 diagnostic remains a separate historical
+calculation and is not combined with this core as an observed fiscal series.
 
 \begin{table}[!htbp]
-\centering
-\footnotesize
-\setlength{\tabcolsep}{3pt}
-\begin{tabular}{@{}p{0.22\linewidth}lp{0.30\linewidth}rr@{}}
+\centering\footnotesize
+\begin{tabular}{@{}p{.23\linewidth}lp{.49\linewidth}@{}}
 \toprule
-\textbf{Code / category} & \textbf{Gas} & \textbf{Activity (2024)}
-& \textbf{1990} & \textbf{2024} \\
-\midrule
-3.A Enteric ferment. & \CHfour{} & 245.52 M ruminant head & 54.5 & 151.7 \\
-3.B Manure mgmt.\ & \CHfour{} & 245.52 M ruminant head$^{a}$ & 4.3 & 13.2 \\
-3.B Manure mgmt.\ & \NtwoO{} & 7.78 M t N excreted$^{a}$ & 2.4 & 8.0 \\
-3.C Rice cultivation & \CHfour{} & 3.64 M ha paddy & 9.6 & 16.5 \\
-3.D Managed soils & \NtwoO{} & F$_{SN}$ 3.78, F$_{ON}$ 2.34, F$_{PRP}$ 3.18, F$_{CR}$ 0.21 M t N$^{d}$ & 10.3 & 28.5 \\
-3.F Field burning & \CHfour{},\NtwoO{} & 7.11 M t d.m.\ combusted$^{c}$ & 0.3 & 0.7 \\
-3.H Urea application & \COtwo{} & 6.58 M t urea$^{b}$ & 1.9 & 4.8 \\
-\midrule
-\textbf{Agriculture total} & & & \textbf{83.2} & \textbf{223.5} \\
-\bottomrule
+IPCC 2006 category & Native gas & Shared source account\\\midrule
+3.A.1 Enteric fermentation & CH$_4$ & Census-anchored livestock history\\
+3.A.2 / 3.C.6 Manure management & CH$_4$, N$_2$O & Excreted N, management and surviving material\\
+3.C.7 Rice cultivation & CH$_4$ & Own-year rice area and declared water regime\\
+3.C.4 / 3.C.5 Managed soils & N$_2$O & Synthetic, organic, pasture and crop-residue nitrogen\\
+3.C.1.b Field burning & CH$_4$, N$_2$O & Produced residue, burned fraction and completeness\\
+3.C.3 Urea application & CO$_2$ & Product-specific national urea offtake\\\bottomrule
 \end{tabular}
-\caption{IPCC CRT-style summary by category and gas, 1990 and 2024 (\COe{} in Mt,
-AR5). $^{a}$Manure CH\textsubscript{4} is driven by the ruminant herd and its
-N\textsubscript{2}O by the nitrogen excreted by that herd; both are independent of
-the synthetic-fertiliser series. Poultry adds to the head-count but little emission. $^{b}$Urea mass is NFDC's printed national
-offtake for the fiscal year; earlier years, which have no published product split, keep the
-derivation from the national synthetic-N series, and each year states which it used.
-$^{c}$The residue activity is dry matter actually
-\emph{combusted}: production $\times$ residue ratio $\times$ burned fraction gives
-\SI{8.4}{}~Mt of dry matter reaching the fire, of which the combustion factor
-$C_f=0.85$ leaves \SI{7.1}{}~Mt burnt. Emission factors are applied to the latter. The full
-destination accounting is published in
-\texttt{outputs/agriculture\_crop\_residue\_ledger\_2024.csv}.
-Liming (3.G): not estimated, assumed negligible on
-Pakistan's alkaline, calcareous soils pending national lime-use data.
-$^{d}$The four nitrogen inputs of Eq.~11.1, from the shared ledger: synthetic
-fertiliser, applied organic manure, pasture deposition and crop residue. They are not
-summed here because the pasture term carries its own factor (EF$_{3\mathrm{PRP}}$).}
-\label{tab:crt}
+\caption{Current agricultural reporting accounts. Native annual records supply
+quantities and separate AR5/AR6 aggregates under each nitrogen formulation.
+The household dung-fate choice affects the linked Energy account; source-process
+coverage and notation statuses remain explicit.}\label{tab:crt}
 \end{table}
+
+The nitrogen ledger identifies management losses before field application and
+post-application losses separately. TAN and complete IPCC formulations are named
+structural choices. Fertiliser offtake is not observed application timing; a
+calendar crop or herd observation does not become a monthly emission measurement.
+The residue ledger publishes returned, field-burned, fuel and unresolved
+material, with dry-to-air-dry moisture conversion and combustion completeness
+applied at their own boundaries. None of these flows is inferred from a
+historical total copied into a reporting table.
 
 \section{Completeness and QA/QC}
 \label{app:completeness}
@@ -132,13 +128,13 @@ Energy. Land-sector completeness (forest, cropland/grassland SOC, wetlands,
 harvested wood products) is documented in Supplementary Note~S1. Air-pollutant
 co-emissions (\NHthree{}, \NOx{}, PM$_{2.5}$, CO, NMVOC, BC) are estimated for the
 relevant categories in Section~\ref{sec:airpollutants} and reported in native mass,
-outside this \COe{} completeness table; agricultural SO$_2$ is estimated but small
-($\sim$2.6~kt, from residue burning only). Quality control is automated (source
+outside this \COe{} completeness table; agricultural SO$_2$ is estimated for
+supported residue burning only. Quality control is automated (source
 traceability, unit checks, exact reconciliation, benchmark bands); quality
 assurance is the independent FAOSTAT and EDGAR comparison; and any method or factor
 change --- such as the harmonisation of the volatilisation factor $EF_4$ to the
 dry-climate value across the manure and soils terms --- triggers a full
-1990--2024 recalculation to preserve time-series consistency.
+recalculation of every supported common-core fiscal year to preserve time-series consistency.
 
 \begin{table}[!htbp]
 \centering
@@ -165,62 +161,8 @@ Ch.~8). E~estimated, NE~not estimated, NO~not occurring, IE~included elsewhere
 \label{tab:completeness}
 \end{table}
 
-\section{Uncertainty inputs}
+\section{Conditional uncertainty inputs}
 \label{app:unc}
+The current joint ensemble is reproduced from the registered activity, factor and conditional-parameter products. Native manure/soil nitrogen is replayed with common herd, crop, nutrient and bounded fate-factor draws. Waste fate and applicable fugitive activity use their physical native reruns. Shared identities refer to actual inputs rather than merely named correlations.
 
-The uncertainty analysis (Section~\ref{sec:methods}) is reproducible from the inputs
-below. Each category's combined uncertainty is a two-stage quadrature: every emission
-component combines an activity-data and an emission-factor uncertainty (Eq.~3.1), and
-the components are aggregated to the category (Eq.~3.2). The full underlying-input
-table --- per component, the activity-data uncertainty, the factor uncertainty, their
-sources, and which inputs are shared across categories --- is given in Supplementary
-Note~S3; the factor uncertainties also appear as the $\pm$\% column of
-Table~\ref{tab:ef-full}. Table~\ref{tab:unc} gives the resulting per-category
-distribution used by the ANALYTIC comparison alone---the Monte-Carlo samples the engine's
-components, not these fitted category distributions: the point estimate $E_c$, the combined
-95\% half-width, and the mean-preserving lognormal parameters
-$\sigma_{\ln}=(\text{half-width}/100)/1.96$ and
-$\mu_{\ln}=\ln E_c-\sigma_{\ln}^2/2$. Correlation is modelled in one specific place and
-not elsewhere, and the distinction matters: components that are separate rows only
-because they follow different spatial proxies --- the managed-soils indirect
-volatilisation and leaching streams --- share a single emission factor ($EF_4$ and
-$EF_5$ respectively), so they are treated as perfectly correlated, summed linearly
-before the quadrature step and given one shared deviate per group in the
-Monte-Carlo. Treating them as independent would shrink the reported band purely
-because the rows were cut more finely. All other within- and cross-category
-correlations (shared activity data, common factor families across categories) are
-\emph{not} modelled as shared deviates \emph{in this sector-scoped stream}, which samples
-component totals; the national run's parameter graph does carry two of them, and
-Supplementary Note~S3 reports their effect. Approach~1 combines these analytically; the
-Monte-Carlo samples the \emph{components} themselves---each row drawn
-mean-preserving lognormal at its declared width, with the correlated soils groups
-receiving one shared deviate per draw---and the category and sector totals are the
-sums of those sampled rows in every realisation.
-
-\begin{table}[!htbp]
-\centering
-\footnotesize
-\begin{tabular}{@{}lcccc@{}}
-\toprule
-\textbf{Category} & \textbf{$E_c$ (Mt)} & \textbf{$\pm$\% (95\%)} & \textbf{$\mu_{\ln}$} & \textbf{$\sigma_{\ln}$} \\
-\midrule
-Enteric fermentation & 151.7 & 25.4 &  5.013 & 0.129 \\
-Manure management    &  21.2 & 32.9 &  3.042 & 0.167 \\
-Managed soils        &  28.5 & 47.1 &  3.323 & 0.237 \\
-Rice cultivation     &  16.6 & 60.9 &  2.760 & 0.304 \\
-Field burning        &   0.7 & 44.9 & $-0.426$ & 0.226 \\
-Urea application     &   4.8 & 11.2 &  1.571 & 0.057 \\
-\midrule
-\textbf{Total}       & \textbf{223.4} & \textbf{19.1} & --- & --- \\
-\bottomrule
-\end{tabular}
-\caption{Derived per-category uncertainty parameters. $\mu_{\ln},\sigma_{\ln}$ are
-the mean-preserving lognormal parameters implied by each category's 95\% half-width, and
-they describe an ANALYTIC comparison, not the simulation: the Monte-Carlo samples the
-engine's \emph{components} (with shared deviates inside declared correlation groups) and
-obtains each category as the sum of its sampled rows. The national total is likewise a
-sum, never a sampled input distribution, so no $\mu_{\ln}/
-\sigma_{\ln}$ is given for it. Underlying activity/factor inputs and sources are in
-Supplementary Note~S3. Generated by \texttt{src/pkinv/eval/uncertainty\_inputs.py}.}
-\label{tab:unc}
-\end{table}
+Parameter widths, distribution, mean where required, provenance, seed and draw count are recorded with the release. Paired historical realisations yield trend intervals. Management-system shares, excretion rates, structural soil/climate factors, missing categories and temporal/spatial allocation uncertainty are excluded from the conditional percentiles. The older aggregate category-lognormal diagnostic does not define the current uncertainty product and is retained only with the preserved prior release.

@@ -1,61 +1,19 @@
-"""The coverage matrix: one row for every cell the inventory has a position on, absent or not.
+"""Category/species coverage across the declared core and configurations.
 
-WHY A DENOMINATOR IS THE WHOLE POINT. Every product in this repository enumerates what it
-HAS. outputs/pakemis_annual_fy2015_16_fy2023_24.csv carries 396 rows over nine fiscal
-years, and a reader who wants to know what is missing has to infer it from rows that are
-not there - which cannot be done, because the file never says how many rows there should
-be. "385 of 405 cells" was a number nobody could compute from the shipped products; it
-took an audit. A coverage matrix is the fix: it starts from the DECLARED universe and
-gives every cell in it a state, so absence is a value rather than a silence.
+The completeness register defines the source universe, including estimates,
+notation keys and unestimated categories. Each source-category/gas/year cell
+retains its evidence, activity status and any declared gap; a ten-module
+rectangle does not imply complete national source coverage.
 
-WHERE THE UNIVERSE COMES FROM. outputs/completeness.csv is the only artefact that takes a
-position on categories the inventory does NOT estimate, one IPCC notation key per
-category-gas row (the counts live in that file and its own footer, never in this prose -
-an earlier revision froze "87 rows, 35 NE" here and both went stale the day Wave 4 added
-the missing 2.B.2 row). That is the denominator. Crossed with the nine fiscal years of
-the national series, every base cell gets a state here whether or not a number exists
-for it.
+The four integrated household/nitrogen configurations share source coverage and
+are implemented for every core fiscal year. Separate source-specific structural
+cases in the national case register retain their actual detailed reference-year
+scope. The reference year comes from the reporting-window declaration, never
+from the latest year present in an extended annual panel. Those cases are
+unresolved in other years unless their annual implementation is built; a case
+endpoint is not a probabilistic completeness bound.
 
-THE STATE VOCABULARY IS CLOSED, and each value means one thing:
-
-    estimated     a number exists for this cell in this year
-    interpolated  a number exists but its activity was reconstructed, not observed
-    held          a number exists and is carried unchanged from another year
-    screened      not estimated, but a bounded configuration prices it
-    NE / NO / IE  the IPCC notation key. NE arrives two ways: carried from the completeness
-                  register for a category this inventory does not estimate at all, and
-                  assigned HERE for a sector-year that is inside the scope but has no number
-                  because its evidence is not held. Both are "not estimated" in IPCC's own
-                  sense, and both carry the gap that would close them.
-    unresolved    inside the declared scope, no number, and the reason is named
-
-Nothing may be blank. A cell with no state would reintroduce exactly the silence this
-file exists to remove, and the writer asserts it.
-
-CONFIGURATIONS ARE MODULE-SCOPED AND PRICED AT ONE YEAR. The named configurations
-(the count lives in national_configurations.csv, never here) each move one module or
-ship as declared cross-sector JOINTs, and each is evaluated only at the reference year - pricing an
-alternative for FY2016-17 would mean re-running that sector's engine for that year under
-the alternative, which the sector engines do not currently support. Rather than leave that
-implicit, every configuration gets rows for the cells of its own module across all nine
-years, priced at the reference year and `unresolved` before it, with the reason on the row.
-A reader can therefore see that the structural envelope is a reference-year object, which
-is true and was previously only discoverable by noticing an absence.
-
-WHAT THIS MATRIX INHERITS AND CANNOT FIX. The reason attached to an absent cell comes from
-national_series.GAPS, which is a hard-coded dict: the series declares a sector-year absent
-and skips it before any engine runs, so nothing tests whether the data is really missing.
-Running the engines directly shows two of the three declared reasons are wrong or partial -
-IPPU's cement ACTIVITY fails before its trade does, and industry's two absent years fail on
-different halves of the sector. The IPPU half is no longer only asserted: the trade gate in
-src/pkinv/sectors/ippu/trade_evidence.py resolves each fiscal year against the monthly panel
-and the source's own annual totals, so "trade unobtained" is now a measurement. The matrix
-still reports the other absences faithfully and names the reason it was given without
-auditing it. See the declared-absence-untested gap.
-
-Usage:  python3 -m pkinv.report.coverage_matrix
-Writes: outputs/pakemis_coverage_matrix.csv
-        outputs/pakemis_coverage_summary.csv
+Writes pakemis_coverage_matrix.csv and pakemis_coverage_summary.csv.
 """
 from __future__ import annotations
 
@@ -71,6 +29,7 @@ OUT = asset_path(OUTPUTS, "pakemis_coverage_matrix.csv")
 SUMMARY = asset_path(OUTPUTS, "pakemis_coverage_summary.csv")
 
 from pkinv.core import configurations as _conf
+from pkinv.core.reporting_window import REFERENCE_FY_START
 from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 REFERENCE_CONFIGURATION = _conf.REFERENCE
@@ -106,6 +65,7 @@ BASIS_STATE = {
     "observed_fiscal": "estimated",
     "observed_fiscal_mixed": "estimated",
     "calendar_projection": "interpolated",
+    "census_anchored_reconstruction": "interpolated",
 }
 
 # WHAT THIS SAID BEFORE WAS FALSE, and it was mine. It read "which the sector engines do
@@ -115,12 +75,9 @@ BASIS_STATE = {
 # constraint is that the per-sector scenario RUNNERS write their alternatives only for the
 # reference year, so the national configuration register has one year of deltas to read.
 # Saying "unsupported" made an unbuilt product sound like a blocked one.
-NOT_PRICED = ("this configuration is priced at the reference year only: the per-sector "
-              "scenario runners write their alternatives for the reference year alone, so "
-              "the national configuration register has nothing to read for earlier years. "
-              "Where a sector's engine does accept a year and a scenario together - "
-              "fugitives runs twelve of thirteen across all nine - the cell is unbuilt "
-              "rather than unsupported")
+NOT_PRICED = ("this configuration is priced at the reference year only: its source-specific "
+              "annual case has not been built for this cell. The four integrated household/"
+              "nitrogen configurations are separate and run over the complete core")
 
 # The greenhouse gases this inventory reports as CO2e. The completeness register's gas
 # column is a SLASH-JOINED STRING, not an atomic value - "CO2/CH4/N2O" on 27 rows, and on
@@ -215,7 +172,7 @@ def _screened(configurations):
 
 def build():
     completeness = _rows("completeness.csv")
-    annual = [r for r in _rows("pakemis_annual_fy2015_16_fy2023_24.csv")
+    annual = [r for r in _rows("pakemis_annual_fy2015_16_fy2024_25.csv")
               # rc31: the matrix's frame is the REFERENCE configuration; the S rows
               # carry their own configuration_id and their coverage is the
               # reference's by construction (an engine re-run on the same activity
@@ -231,7 +188,7 @@ def build():
     sector_of = _sector_of(annual)
     series_at = _series_index(series)
     screened_codes = _screened(configurations)
-    reference_year = max(year for year, _ in periods)
+    reference_year = REFERENCE_FY_START + 1
 
     # THE REGISTER IS FINER THAN THE PRODUCT, and reading it naively cries wolf. Under one
     # IPCC code the completeness register lists the streams separately - 1.A.4.b carries a
@@ -354,10 +311,23 @@ def build():
                            "held_constant": held, "gap_id": row["gap_id"],
                            "evidence": evidence})
 
-    # The structural envelope, stated as a reference-year object rather than left implicit.
+    # The four implemented configurations have identical category coverage, with
+    # different household dung and nitrogen equations. Missing sources stay missing.
+    reference_rows = list(rows)
+    for configuration_id in _conf.ALL:
+        if configuration_id == REFERENCE_CONFIGURATION:
+            continue
+        rows.extend(dict(row, configuration_id=configuration_id,
+                         evidence=row["evidence"] + "; household dung=" +
+                         _conf.dung_basis(configuration_id) + "; nitrogen method=" +
+                         _conf.nitrogen_method(configuration_id)) for row in reference_rows)
+
+    # Other structural cases retain their explicitly limited reference-year scope.
     estimated_cells = {(r["ipcc_code"], r["category"], r["gas"], r["sector"])
                        for r in rows if r["state"] in ("estimated", "interpolated")}
     for configuration in configurations:
+        if configuration["configuration_id"] in _conf.ALL:
+            continue
         module = configuration["module"]
         if not module:
             continue                                  # the reference row itself

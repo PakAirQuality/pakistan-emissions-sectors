@@ -21,8 +21,9 @@ engine's value moves, the disagreement surfaces HERE, as a question about which 
 right, rather than being silently overwritten by a regeneration. The transcription is the only
 independent record of what the manuscript printed on 1 October 2026.
 
-If a product legitimately changes, this test fails and the honest response is to update the
-transcription WITH a note saying what moved and why - not to delete the comparison.
+If a product legitimately changes, preserve the original transcription and record each
+reviewed old/new printed cell with release-specific evidence. Unlisted drift and stale
+revision entries remain failures.
 """
 import csv
 import io
@@ -38,6 +39,24 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 BASE = os.path.join(PAPER_NATIONAL_FIGURES, "rewrite_inputs")
 GENERATED = os.path.join(BASE, "data")
 TRANSCRIBED = os.path.join(BASE, "transcribed_csv")
+REVISIONS = os.path.join(ROOT, "tests", "fixtures", "rc68_legacy_figure_revisions.csv")
+
+
+def _reviewed_revisions():
+    with io.open(REVISIONS, encoding="utf-8", newline="") as handle:
+        rows = list(csv.DictReader(handle))
+    result = {}
+    for row in rows:
+        key = (row["file"], row["row_key"], row["column"])
+        if key in result:
+            raise AssertionError("duplicate reviewed figure revision: %r" % (key,))
+        if row["release"] != "1.0.0rc68" or not row["reason"] or not row["evidence"]:
+            raise AssertionError("unsubstantiated figure revision: %r" % row)
+        evidence = row["evidence"].split("#", 1)[0]
+        if not os.path.isfile(os.path.join(ROOT, evidence)):
+            raise AssertionError("missing revision evidence: %s" % evidence)
+        result[key] = row
+    return result
 
 # file -> (key column, value columns to compare)
 COMPARE = {
@@ -51,6 +70,8 @@ COMPARE = {
 # Rows a plot table has gained since the transcription, each for a stated reason.
 ADDED_SINCE_TRANSCRIPTION = {
     "managed_soils_factor_scenarios.csv": {"2006 pasture"},
+    # Added core year, verified against the exact registry by the producer.
+    "annual_national_series.csv": {"FY2024-25"},
 }
 # Agreement was exact at the rewiring; the tolerance is the printed precision, not a band.
 TOLERANCE = 0.005
@@ -81,6 +102,8 @@ class TestTheFigureInputsComeFromTheProducts(unittest.TestCase):
 
     def test_every_generated_value_still_matches_the_transcription(self):
         problems = []
+        reviewed = _reviewed_revisions()
+        used = set()
         for name, (key, columns) in COMPARE.items():
             gpath, tpath = os.path.join(GENERATED, name), os.path.join(TRANSCRIBED, name)
             if not (os.path.exists(gpath) and os.path.exists(tpath)):
@@ -99,6 +122,14 @@ class TestTheFigureInputsComeFromTheProducts(unittest.TestCase):
             for row_key in sorted(old):
                 for column in columns:
                     g, t = gen[row_key].get(column, ""), old[row_key].get(column, "")
+                    revision_key = (name, row_key, column)
+                    if revision_key in reviewed:
+                        revision = reviewed[revision_key]
+                        used.add(revision_key)
+                        if t != revision["old_value"] or g != revision["new_value"]:
+                            problems.append("%s: reviewed old/new cell differs: %s/%s versus %s/%s"
+                                            % (revision_key, t, g, revision["old_value"], revision["new_value"]))
+                        continue
                     if not g and not t:
                         continue
                     try:
@@ -108,12 +139,13 @@ class TestTheFigureInputsComeFromTheProducts(unittest.TestCase):
                         pass
                     problems.append("%s %s/%s: product gives %s, the manuscript printed %s"
                                     % (name, row_key, column, g or "(blank)", t or "(blank)"))
+        if set(reviewed) != used:
+            problems.append("unused reviewed revisions: %s" % sorted(set(reviewed) - used))
         self.assertFalse(
             problems,
-            "the products no longer agree with what the manuscript printed. Decide which is "
-            "right: if the product moved for a good reason, update the transcription WITH a "
-            "note recording what moved - do not delete the comparison, it is the only "
-            "independent record of the 1 October 2026 figures.\n  %s"
+            "the current product differs from both the preserved 1 October transcription "
+            "and the explicitly reviewed rc68 revisions. Investigate the source/product "
+            "change and retain the independent historical record.\n  %s"
             % "\n  ".join(problems))
 
     def test_the_comparison_is_actually_comparing_something(self):
@@ -152,7 +184,8 @@ class TestFigureOneClosesPerGas(unittest.TestCase):
         path = os.path.join(GENERATED, "construction_quantities.csv")
         if not os.path.exists(path):
             raise unittest.SkipTest("construction_quantities.csv not generated here")
-        cls.rows = list(csv.DictReader(io.open(path, encoding="utf-8")))
+        with io.open(path, encoding="utf-8") as handle:
+            cls.rows = list(csv.DictReader(handle))
         unal = os.path.join(ROOT, "outputs", "pakemis_spatial_unallocated.csv")
         cls.unallocated = {}
         with io.open(unal, encoding="utf-8") as handle:

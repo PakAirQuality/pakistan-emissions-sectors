@@ -3,10 +3,12 @@
   {
    "claims_pointer": "timeseries_1990_2024.csv#year=1990,category=Enteric fermentation#co2e_Mt_AR5",
    "exact": "54.54",
-   "tolerance": "5e-3"
+   "group": {},
+   "note_rc68": "Reconciled independently against timeseries_1990_2024.csv after the integrated source/accounting revision; previous notes describe historical releases.",
+   "tolerance": "0.005"
   }
  ],
- "expect_receipt": "f2da44729340e2687cd9eb6cbefd6463",
+ "expect_receipt": "663a0399ceb03dc055752de613788467",
  "function": "query_emissions",
  "golden_id": "calendar_agriculture_1990_enteric",
  "request": {

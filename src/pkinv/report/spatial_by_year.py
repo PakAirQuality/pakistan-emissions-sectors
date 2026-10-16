@@ -1,7 +1,7 @@
 """The nine-year spatial products: where each year's mass sits, at ADM1 and ADM2.
 
 WHAT THIS IS. Until now the inventory had a nine-year national ledger attached to a one-year
-renderer: outputs/pakemis_monthly_fy2015_16_fy2023_24.csv carries all 108 months at national
+renderer: outputs/pakemis_monthly_fy2015_16_fy2024_25.csv carries all 108 months at national
 grain, and everything below the nation existed for FY2023-24 alone. This publishes the other
 eight years at ADM1 and ADM2, annually, under the identity the cube already holds per year:
 
@@ -216,7 +216,7 @@ def sector_rows(result, period_id):
     return out
 
 
-def build(period_sink=None, capture_cells=None):
+def build(period_sink=None, capture_cells=None, configuration_id=None, collect=True):
     """`period_sink` receives each period as it is built and before it is dropped.
 
     The nine cubes have always been computed here; what was missing was somewhere for them to
@@ -236,9 +236,11 @@ def build(period_sink=None, capture_cells=None):
     stream_district = []
     for time_index, period_id in enumerate(periods()):
         result = grid_cube.build(period=grid_cube.period_keys(period_id), ledger=False,
-                                 capture_cells=capture_cells)
+                                 capture_cells=capture_cells, configuration_id=configuration_id)
         if period_sink is not None:
             period_sink.write(time_index, period_id, result)
+        if not collect:
+            continue
         # Built ONCE per period and shared: the annual table is this view summed, and the
         # monthly table is this view itself. Deriving them separately is how two views of one
         # geography drift apart.
@@ -259,42 +261,99 @@ def build(period_sink=None, capture_cells=None):
             stream_district)
 
 
+def configuration_grid_path(configuration_id):
+    from pkinv.core.reporting_window import CORE_SUFFIX
+    return asset_path(OUTPUTS, "pakemis_ghg_grid_0p05_annual_%s_%s.nc" %
+                      (configuration_id.lower(), CORE_SUFFIX))
+
+
+class ConfigurationSink:
+    """Administrative views and unallocated mass from actual configuration placement."""
+
+    FIELDS = {"adm1": ADM1_FIELDS, "adm2": SECTOR_FIELDS,
+              "adm1_monthly": ADM1_FIELDS + ("month",),
+              "adm2_monthly": SECTOR_FIELDS + ("month",),
+              "unallocated": UNALLOC_FIELDS}
+
+    @classmethod
+    def open_tables(cls, stack):
+        writers = {}
+        for name, fields in cls.FIELDS.items():
+            path = asset_path(OUTPUTS, "pakemis_ghg_configuration_%s.csv" % name)
+            handle = stack.enter_context(open(path + ".partial", "w", newline="", encoding="utf-8"))
+            writer = csv.DictWriter(handle, ("configuration_id",) + fields, extrasaction="ignore")
+            writer.writeheader()
+            writers[name] = writer
+        return writers
+
+    def __init__(self, configuration_id, tables, grid_writer):
+        self.configuration_id, self.tables, self.grid_writer = configuration_id, tables, grid_writer
+
+    def emit(self, name, rows):
+        self.tables[name].writerows(dict(row, configuration_id=self.configuration_id) for row in rows)
+
+    def write(self, time_index, period_id, result):
+        self.grid_writer.write(time_index, period_id, result)
+        provinces = adm1_rows(result, period_id)
+        self.emit("adm1", provinces)
+        self.emit("adm2", sector_rows(result, period_id))
+        shares = {s["source_stream_id"]: s["monthly_share"] for s in result["streams"]}
+        self.emit("adm1_monthly", (dict(row, month=month,
+                  emissions_Gg=float(row["emissions_Gg"]) * weight,
+                  co2e_Mt_AR5=float(row["co2e_Mt_AR5"]) * weight)
+                  for row in provinces for month, weight in shares[row["source_stream_id"]].items()))
+        self.emit("adm2_monthly", (dict(row, period_id=period_id)
+                  for row in grid_cube.adm2_sector_rows(result)))
+        self.emit("unallocated", (dict(row, period_id=period_id) for row in result["unallocated"]))
+
+
 def main():
     os.makedirs(OUTPUTS, exist_ok=True)
     from pkinv.core.gis.grid import build_grid
     from pkinv.report.annual_grid import AnnualGridWriter, CORE, period_bounds
-    from pkinv.report.air_annual_grid import (AirAnnualGridWriter,
-                                              REF_PATH as AIR_REF,
-                                              SURVEY_PATH as AIR_SURVEY)
+    from pkinv.report.air_annual_grid import AirAnnualGridWriter, path_for as air_path_for
+    from pkinv.core import configurations as conf
+    from contextlib import ExitStack
     from pkinv.report.air_spatial_by_year import AirSink
     grid = build_grid()
     bounds = period_bounds()
     temporary = CORE + ".partial"
-    air_ref_tmp, air_survey_tmp = AIR_REF + ".partial", AIR_SURVEY + ".partial"
+    air_paths = {cfg: air_path_for(cfg) for cfg in conf.AIR_ALL}
     # The air lane is a SECOND sink on the same residency: the pollutant masses ride
     # the very vectors each period's cube placed their anchor streams on, so the two
     # families cannot disagree about where a stream's mass went.
-    with AnnualGridWriter(temporary, grid, bounds) as writer, \
-            AirAnnualGridWriter(air_ref_tmp, grid, bounds,
-                                "REF_2023_24") as air_ref_writer, \
-            AirAnnualGridWriter(air_survey_tmp, grid, bounds,
-                                "L_HERD1624") as air_survey_writer:
-        air = AirSink(grid, {"REF_2023_24": air_ref_writer,
-                             "L_HERD1624": air_survey_writer})
+    with ExitStack() as stack:
+        writer = stack.enter_context(AnnualGridWriter(temporary, grid, bounds))
+        tables = ConfigurationSink.open_tables(stack)
+        configured = ConfigurationSink(conf.REFERENCE, tables, writer)
+        air_writers = {cfg: stack.enter_context(AirAnnualGridWriter(
+            path + ".partial", grid, bounds, cfg)) for cfg, path in air_paths.items()}
+        air = AirSink(grid, air_writers)
 
         class _BothSinks:
             def write(self, time_index, period_id, result):
-                writer.write(time_index, period_id, result)
+                configured.write(time_index, period_id, result)
                 air.write(time_index, period_id, result)
 
         (adm1, adm2, monthly, sector, fallbacks, unallocated,
          surfaces, stream_district) = build(period_sink=_BothSinks(), capture_cells=air.anchors)
+        for configuration_id in conf.ALL:
+            if configuration_id == conf.REFERENCE:
+                continue
+            path = configuration_grid_path(configuration_id)
+            with AnnualGridWriter(path + ".partial", grid, bounds, configuration_id) as alt_writer:
+                build(period_sink=ConfigurationSink(configuration_id, tables, alt_writer),
+                      configuration_id=configuration_id, collect=False)
+            os.replace(path + ".partial", path)
     air.close()
+    for name in ConfigurationSink.FIELDS:
+        path = asset_path(OUTPUTS, "pakemis_ghg_configuration_%s.csv" % name)
+        os.replace(path + ".partial", path)
     # ATOMIC: a half-written cube must never be mistaken for a product. The reader that
     # opens this file next may be a release gate.
     os.replace(temporary, CORE)
-    os.replace(air_ref_tmp, AIR_REF)
-    os.replace(air_survey_tmp, AIR_SURVEY)
+    for path in air_paths.values():
+        os.replace(path + ".partial", path)
     for path, fields, rows in ((ADM1_OUT, ADM1_FIELDS, adm1), (ADM2_OUT, ADM2_FIELDS, adm2),
                                (MONTHLY_OUT, MONTHLY_FIELDS, monthly),
                                (SECTOR_OUT, SECTOR_FIELDS, sector),
@@ -306,7 +365,7 @@ def main():
             writer = csv.DictWriter(handle, fieldnames=list(fields))
             writer.writeheader()
             writer.writerows(rows)
-    print("nine-year spatial products")
+    print("fiscal-panel spatial products")
     print("  %-44s %6d rows" % (os.path.relpath(ADM1_OUT), len(adm1)))
     print("  %-44s %6d rows" % (os.path.relpath(ADM2_OUT), len(adm2)))
     print("  %-44s %6d rows" % (os.path.relpath(MONTHLY_OUT), len(monthly)))
@@ -318,10 +377,8 @@ def main():
                                 os.path.getsize(CORE) / 1e6))
     print("  %-44s %6d rows" % (os.path.relpath(FALLBACK_OUT), len(fallbacks)))
     from pkinv.report import air_spatial_by_year as air_out
-    print("  %-44s %6.1f MB" % (os.path.relpath(AIR_REF),
-                                os.path.getsize(AIR_REF) / 1e6))
-    print("  %-44s %6.1f MB" % (os.path.relpath(AIR_SURVEY),
-                                os.path.getsize(AIR_SURVEY) / 1e6))
+    for path in air_paths.values():
+        print("  %-44s %6.1f MB" % (os.path.relpath(path), os.path.getsize(path) / 1e6))
     for path in (air_out.ADM1_OUT, air_out.ADM2_OUT, air_out.UNALLOC_OUT):
         with open(path, encoding="utf-8") as handle:
             n = sum(1 for _ in handle) - 1

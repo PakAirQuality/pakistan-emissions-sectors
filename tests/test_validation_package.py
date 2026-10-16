@@ -14,6 +14,7 @@ import re
 import unittest
 
 from _support import ROOT
+from pkinv.core.reporting_window import CORE_SUFFIX
 
 BUILDER = os.path.join(ROOT, "scripts", "build_validation_package.py")
 VIEWS = os.path.join(ROOT, "src", "pkinv", "report", "validation_views.py")
@@ -32,7 +33,7 @@ SPEC_SLOTS = (
     "outputs/annual/sector_totals.csv", "outputs/annual/category_totals.csv", "outputs/annual/gas_totals.csv",
     "outputs/annual/configuration_totals.csv", "outputs/annual/national_ar5_ar6_bridge.csv",
     "outputs/annual/annual_closure_report.csv", "outputs/annual/annual_method_basis_seams.csv",
-    "outputs/monthly/pakemis_monthly_fy2015_16_fy2023_24.parquet", "outputs/monthly/annual_monthly_closure.csv",
+    "outputs/monthly/pakemis_monthly_%s.parquet" % CORE_SUFFIX, "outputs/monthly/annual_monthly_closure.csv",
     "outputs/monthly/temporal_evidence_by_stream.csv", "outputs/monthly/temporal_evidence_by_sector.csv",
     "outputs/monthly/temporal_profile_values.csv", "outputs/monthly/temporal_validation.csv",
     "outputs/monthly/variable_but_unobserved_mass.csv", "outputs/monthly/monthly_exceptions.csv",

@@ -1,19 +1,7 @@
-"""The configuration vocabulary, held closed across every product (rc31).
+"""The four coherent configurations retain common non-residential accounts.
 
-The eighteenth review found one alternative wearing four names; the vocabulary
-now lives in pkinv.core.configurations and every product that keys on a
-configuration must draw from it. These tests hold the closure, the L identity
-(non-residential sectors identical by construction, so their rows are absent
-rather than duplicated), and the numeric closures that make the L rows a
-configuration rather than a decoration.
-
-rc67 (2026-10-13): the roles swapped. Through rc66 the reference burned all the
-diverted dung in households and the survey reading was the alternative, published
-as S_2023_24. The reference now carries the survey's dung and the alternative is
-the ledger, L_2023_24. Everything below that used to say "survey rows" says
-"ledger rows", the alternative is the LARGER side, and the typed row for the
-diverted dung with no household destination belongs to the reference, in every
-year, where it used to be one row under S.
+S and L change household dung fate; TAN and IPCC change the nitrogen method.
+These checks cover the complete core period and preserve their physical identities.
 """
 import csv
 import io
@@ -21,26 +9,32 @@ import os
 import unittest
 
 from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_FY_STARTS, fiscal_label
 from pkinv.core.io import read_rows
 from _support import OUT, ROOT
 
 
 
 def _rows(name):
+    if name.startswith("pakemis_annual_fy"):
+        from pkinv.report.annual_product import OUT as path
+        return read_rows(path)
+    if name.startswith("pakemis_monthly_fy"):
+        from pkinv.report.monthly_all_years import OUT as path
+        return read_rows(path)
+    if name.startswith("pakemis_air_annual_fy"):
+        from pkinv.report.air_annual import ROLLUP_OUT as path
+        return read_rows(path)
     return read_rows(os.path.join(OUT, name))
 
 
 class TestTheVocabularyIsClosed(unittest.TestCase):
-    def test_the_vocabulary_is_exactly_two_ids(self):
-        self.assertEqual(conf.ALL, (conf.REFERENCE, conf.LEDGER))
-        self.assertEqual(conf.REFERENCE, "REF_2023_24")
-        self.assertEqual(conf.LEDGER, "L_2023_24")
-        # the air panel's nine-year ledger series (air spatial Wave A; the survey series
-        # until rc67, when the survey became the reference): its own id, because
-        # L_2023_24 is period-named and may not be manufactured for history; the
-        # greenhouse-gas vocabulary conf.ALL is UNCHANGED by it
-        self.assertEqual(conf.AIR_ALL, (conf.REFERENCE, conf.LEDGER_SERIES))
-        self.assertEqual(conf.LEDGER_SERIES, "L_HERD1624")
+    def test_the_vocabulary_is_exactly_the_four_coherent_configurations(self):
+        self.assertEqual(conf.ALL, (conf.REFERENCE, conf.LEDGER, conf.IPCC_REFERENCE, conf.IPCC_LEDGER))
+        self.assertEqual(conf.REFERENCE, "S_TAN")
+        self.assertEqual(conf.LEDGER, "L_TAN")
+        self.assertEqual(conf.AIR_ALL, conf.ALL)
+        self.assertEqual(conf.LEDGER_SERIES, "L_TAN")
 
     def test_the_one_dung_switch_says_survey(self):
         """rc67: the reference dung basis is the household survey and the alternative is
@@ -62,8 +56,8 @@ class TestTheVocabularyIsClosed(unittest.TestCase):
         self.assertEqual(conf.RETIRED, {"S_2023_24": conf.REFERENCE,
                                         "S_HIES1925": conf.REFERENCE})
         self.assertFalse(set(conf.RETIRED) & (set(conf.ALL) | set(conf.AIR_ALL)))
-        for name in ("pakemis_annual_fy2015_16_fy2023_24.csv",
-                     "pakemis_monthly_fy2015_16_fy2023_24.csv",
+        for name in ("pakemis_annual_fy2015_16_fy2024_25.csv",
+                     "pakemis_monthly_fy2015_16_fy2024_25.csv",
                      "pakemis_monthly_ledger_2024.csv",
                      "pakemis_adm1_ledger_2024.csv",
                      "pakemis_adm2_ledger_2024.csv",
@@ -74,12 +68,12 @@ class TestTheVocabularyIsClosed(unittest.TestCase):
 
     def test_the_annual_product_draws_from_it(self):
         ids = {r["configuration_id"]
-               for r in _rows("pakemis_annual_fy2015_16_fy2023_24.csv")}
+               for r in _rows("pakemis_annual_fy2015_16_fy2024_25.csv")}
         self.assertEqual(ids, set(conf.ALL))
 
     def test_the_monthly_product_draws_from_it(self):
         ids = {r["configuration_id"]
-               for r in _rows("pakemis_monthly_fy2015_16_fy2023_24.csv")}
+               for r in _rows("pakemis_monthly_fy2015_16_fy2024_25.csv")}
         self.assertLessEqual(ids, set(conf.ALL))
 
     def test_the_ledger_layers_carry_the_ledger_id(self):
@@ -92,24 +86,29 @@ class TestTheVocabularyIsClosed(unittest.TestCase):
 
 
 class TestTheLedgerRowsClose(unittest.TestCase):
-    def test_annual_ledger_rows_are_residential_only(self):
-        """The identity: every non-residential sector is IDENTICAL under L by
-        construction, so its L rows are deliberately absent - duplication would
-        invite the two copies to drift. The id is period-named, so the rows are the
-        reference year's and no other."""
-        led = [r for r in _rows("pakemis_annual_fy2015_16_fy2023_24.csv")
+    def test_annual_ledger_changes_household_fate_without_changing_other_sources(self):
+        """Dung fate changes residential emissions; other sectors keep the same account."""
+        led = [r for r in _rows("pakemis_annual_fy2015_16_fy2024_25.csv")
                if r["configuration_id"] == conf.LEDGER]
         self.assertTrue(led)
-        self.assertEqual({r["sector"] for r in led}, {"residential"})
-        self.assertEqual({r["period_label"] for r in led}, {"FY2023-24"})
+        self.assertEqual({r["period_label"] for r in led}, {fiscal_label(year) for year in CORE_FY_STARTS})
         self.assertEqual({r["grain"] for r in led}, {"category_gas"})
+        annual = _rows("pakemis_annual_fy2015_16_fy2024_25.csv")
+        def key(row):
+            return row["period_label"], row["sector"], row["category"], row["gas"]
+        reference = {key(row): float(row["co2e_Mt_AR5"]) for row in annual
+                     if row["configuration_id"] == conf.REFERENCE and row["grain"] == "category_gas"}
+        self.assertTrue(any(row["sector"] == "residential" for row in led))
+        for row in led:
+            if row["sector"] != "residential":
+                self.assertEqual(reference[key(row)], float(row["co2e_Mt_AR5"]))
 
     def test_annual_totals_are_the_register_values(self):
         """Each side of the register against the annual product. Through rc66 the
         alternative's rows summed to the register's S (then 24.334, the 2024-25 round as
         measured); they are configuration L's now (29.467), and the reference's own
         residential rows are the register's S (24.22, the two-round series)."""
-        annual = [r for r in _rows("pakemis_annual_fy2015_16_fy2023_24.csv")
+        annual = [r for r in _rows("pakemis_annual_fy2015_16_fy2024_25.csv")
                   if r["sector"] == "residential" and r["period_label"] == "FY2023-24"
                   and r["grain"] == "category_gas" and r["co2e_Mt_AR5"]]
         register = {r["configuration"]: float(r["co2e_Mt_AR5"])
@@ -165,12 +164,12 @@ class TestTheLedgerRowsClose(unittest.TestCase):
         rc67 the reference leaves it unburned in every year, so the row belongs to the
         reference, appears once per fiscal year, and configuration L (which burns all
         of it) has none. It carries a mass in its note and never a CO2e."""
-        rows = [r for r in _rows("pakemis_annual_fy2015_16_fy2023_24.csv")
+        rows = [r for r in _rows("pakemis_annual_fy2015_16_fy2024_25.csv")
                 if r["grain"] == "residual_no_pathway"]
-        self.assertEqual(len(rows), 9)
-        self.assertEqual(len({r["period_label"] for r in rows}), 9)
+        self.assertEqual({r["period_label"] for r in rows}, {fiscal_label(year) for year in CORE_FY_STARTS})
+        self.assertEqual(len(rows), len(CORE_FY_STARTS) * len({row["configuration_id"] for row in rows}))
         for row in rows:
-            self.assertEqual(row["configuration_id"], conf.REFERENCE)
+            self.assertEqual(conf.dung_basis(row["configuration_id"]), "survey")
             self.assertEqual(row["sector"], "residential")
             self.assertEqual(row["category"], "Diverted dung, unresolved fate")
             self.assertIn("no emissions pathway", row["gap_id"])
@@ -186,7 +185,7 @@ class TestTheLedgerRowsClose(unittest.TestCase):
         fate = {r["period_id"]: float(r["unresolved_Mt"])
                 for r in _rows("pakemis_dung_fate_by_year.csv")
                 if r["is_reference"] == "yes"}
-        rows = [r for r in _rows("pakemis_annual_fy2015_16_fy2023_24.csv")
+        rows = [r for r in _rows("pakemis_annual_fy2015_16_fy2024_25.csv")
                 if r["grain"] == "residual_no_pathway"]
         for row in rows:
             quoted = float(re.search(r"\(([0-9.]+) Mt air-dry mass", row["gap_id"]).group(1))

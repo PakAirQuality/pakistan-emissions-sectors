@@ -78,7 +78,7 @@ from pkinv.paths import DATA, OUTPUTS, ROOT
 
 OUT = asset_path(OUTPUTS, "pakemis_power_fuel_reconciliation.csv")
 
-CAMPAIGN = os.path.join(ROOT, "research_campaign", "energy", "plant_fuel_year.csv")
+CAMPAIGN = asset_path(DATA, "activity", "power", "plant_fuel_year_controls.csv")
 
 TOE_PER_TJ = 1.0 / 0.041868          # 1 TJ = 23.8846 toe; the sector's own conversion
 
@@ -156,7 +156,8 @@ KE_TREATMENT = ("outside the CPPA-G panel: K-Electric's own plant tables (NEPRA 
 # meant to be comparable with.
 from pkinv.sectors.power.reference_audit import NCV_BIT, NCV_LIG   # noqa: E402
 
-RANK_DEFAULT_NCV = {"imported": NCV_BIT, "Thar lignite": NCV_LIG}
+RANK_DEFAULT_NCV = {"imported": NCV_BIT, "Thar lignite": NCV_LIG,
+                    "Lakhra coal (lignite default)": NCV_LIG}
 
 
 def _campaign_rows():
@@ -258,7 +259,7 @@ def rows():
     return out
 
 
-def account_rows(announce=False):
+def account_rows(announce=False, include_booking=True, panel_only=True):
     """The coal account from data/ inputs alone: station rows, the booked total and the
     commissioning lane, WITHOUT the basis columns.
 
@@ -299,6 +300,34 @@ def account_rows(announce=False):
             "reconstruction_rule": "",
             "note": r.get("flags", ""),
         })
+
+    # The later held edition is a physical-consumption transcription. It can
+    # feed the booking before any sector output or canonical product exists.
+    extension = asset_path(DATA, "activity", "power", "plant_fuel_2024_25.csv")
+    if os.path.exists(extension):
+        for r in read_rows(extension):
+            if r["fuel"] != "Coal" or r["system"] == "K-Electric":
+                continue
+            if r["quantity_unit"] != "000 t":
+                raise ValueError("coal station quantity must be in kt: %s" % r["plant"])
+            origin = r["fuel_origin"]
+            # Lucky's origin heading does not establish its rank. Retain the
+            # documented reference rank, rather than treating import as rank.
+            ncv = NCV_LIG if origin == "Thar lignite" or r["plant"] == "Lucky Electric" else NCV_BIT
+            out.append({
+                "period_id": _period(r["fiscal_year"]), "plant": r["plant"],
+                "system": r["system"], "fuel": "Coal", "fuel_rank": origin,
+                "rank_evidence": r["note"], "mass_kt": r["quantity"],
+                "mass_lo_kt": "", "mass_hi_kt": "", "quantity_class": "metered",
+                "mass_semantics": "coal consumed, including reported testing-period consumption",
+                "mass_source_edition": "NEPRA SoIR 2025", "mass_source_table": r["source_table"],
+                "ncv_TJ_per_Gg": str(ncv), "ncv_basis": "rank_default",
+                "energy_TJ_booked_basis": "%.6f" % (float(r["quantity"]) * ncv),
+                "energy_TJ_generation_implied_basis": "", "net_generation_GWh": r["net_generation_GWh"],
+                "generation_basis": "net generation as printed", "generation_source": r["source_table"],
+                "plant_coverage_class": "enumerated station", "ke_treatment": KE_TREATMENT,
+                "reconstruction_rule": "", "note": r["note"],
+            })
 
     ledger_periods = {r["period_id"] for r in out}
 
@@ -349,8 +378,9 @@ def account_rows(announce=False):
         })
 
     # ---- the booked account per year, as the control the rows must explain ---------
-    booking = read_rows(asset_path(DATA, "activity", "power",
-                                   "coal_energy_booking.csv"), comments=True)
+    booking = (read_rows(asset_path(DATA, "activity", "power",
+                                    "coal_energy_booking.csv"), comments=True)
+               if include_booking else [])
     for r in booking:
         period = _period(r["fiscal_year"])
         toe = _num(r.get("booked_toe"))
@@ -402,6 +432,8 @@ def account_rows(announce=False):
             placed[year] = placed.get(year, 0.0) + gwh
     lo_i, hi_i = _intensity_band(out)
     for year in sorted(control):
+        if year >= 2024 and not placed.get(year):
+            raise ValueError("FY%d coal generation is present but its held station-consumption transcription is not registered/readable" % year)
         gap = control[year] - placed.get(year, 0.0)
         if abs(gap) <= GENERATION_TOLERANCE_GWh:
             continue
@@ -443,11 +475,12 @@ def account_rows(announce=False):
     # engine books those years for the historical series, but the reported panel is nine
     # years and a reconciliation that silently included three more would not reconcile
     # against anything the manuscript states.
-    panel = {r["period_id"] for r in read_rows(asset_path(DATA, "periods.csv"))}
+    from pkinv.core.reporting_window import CORE_FY_STARTS
+    panel = {_period(year) for year in CORE_FY_STARTS}
     dropped = sorted({r["period_id"] for r in out} - panel)
-    out = [r for r in out if r["period_id"] in panel]
-    assert len(panel) == 9, "the period registry holds %d periods, not nine" % len(panel)
-    if dropped and announce:
+    if panel_only:
+        out = [r for r in out if r["period_id"] in panel]
+    if dropped and announce and panel_only:
         print("  outside the reported panel, not included: %s" % ", ".join(dropped))
     out.sort(key=lambda r: (r["period_id"], r["plant_coverage_class"] == "booked total",
                             r["plant"]))

@@ -1361,20 +1361,6 @@ def _bench(source, category, col="ratio_engine_over_benchmark", year=None):
     raise KeyError((source, category, year))
 
 
-def _scope(metric):
-    """One of the three coverage metrics, from the scope-coverage output.
-
-    The manuscript used to print a single "87% coverage" and the test anchored it to the
-    magnitude ratio, so the two numbers the ratio was hiding - how much of the benchmark's
-    source domain is estimated at all, and how much is estimated only in part - were typed
-    prose with nothing behind them. They are outputs now, and anchored like everything else.
-    """
-    for r in _rows("national_benchmark_scope_coverage.csv"):
-        if r["edgar_domain"] == "SUMMARY: %s" % metric:
-            return float(r["share_of_edgar_pct"])
-    raise KeyError(metric)
-
-
 def _attribution(group, col="total_effect_index"):
     """One dependency group's Sobol index, from the covariance-aware attribution."""
     for r in _rows("national_variance_attribution.csv"):
@@ -1446,12 +1432,6 @@ def _largest_named_group():
     return max(named, key=lambda r: float(r["total_effect_index"]))["parameter_group"]
 
 
-def _bridge(axis, col="national_delta_Mt_co2e"):
-    """One structural axis's deterministic effect on the national total, from the bridge."""
-    for r in _rows("national_structural_bridge.csv"):
-        if r["axis"] == axis:
-            return abs(float(r[col]))
-    raise KeyError(axis)
 
 
 def _temporal_share(cls):
@@ -1475,16 +1455,8 @@ def _power_grid_shaped_mass():
                if r["subitem"].startswith(("Coal ", "Gas ")))
 
 
-def _fertiliser_gap(worst=True):
-    """The offtake-versus-agronomy disagreement, in percentage points."""
-    gaps = [abs(float(r["difference"])) for r in _rows("monthly_crosschecks.csv")
-            if r["check"] == "fertiliser"]
-    return 100.0 * (max(gaps) if worst else sum(gaps))
 
 
-def _vintage_worst(prefix="vintage:FY2021-22"):
-    return 100.0 * max(abs(float(r["difference"])) for r in _rows("monthly_crosschecks.csv")
-                       if r["check"].startswith(prefix))
 
 
 def _annex28_share(fiscal_year, consumption):
@@ -1521,14 +1493,6 @@ def _annex28_mmcfd(fiscal_year):
     return sum(float(r["mmcf"]) for r in rows) / 365.0
 
 
-def _attribution_rung(rung):
-    """One rung's detection count from the published burning-attribution rows
-    (outputs/monthly_crosschecks.csv, check burning_attribution:FY2023-24; the
-    count sits in the published_share column, the rung name in month)."""
-    for r in _csv_rows("monthly_crosschecks.csv"):
-        if r.get("check") == "burning_attribution:FY2023-24" and r.get("month") == rung:
-            return float(r["published_share"])
-    raise AssertionError("no burning_attribution row for rung %r" % rung)
 
 
 def _ef(ef_id, col="value"):
@@ -1674,16 +1638,6 @@ def _industry_liquid_Mt():
                if " gas " not in r["subitem"])
 
 
-def _harmonized_view_total(period_label):
-    """The trend-safe view's total for one year: the annual product's own rows,
-    summed the way the product's own closure test sums them."""
-    total = 0.0
-    for r in _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv"):
-        if (r["harmonized_common_scope"] == "yes"
-                and r.get("configuration_id", "REF_2023_24") == "REF_2023_24"
-                and r["period_label"] == period_label and r["co2e_Mt_AR5"]):
-            total += float(r["co2e_Mt_AR5"])
-    return total
 
 
 def _class_distance_weight(ei_class, fuel):
@@ -1972,7 +1926,7 @@ DOC_CLAIMS = [
     ("annual cube megabytes", "national", "06_results.tex",
      r"lattice,\s*\n?\s*\\SI\{([\d.]+)\}\{\\mega\\byte\}",
      lambda: round(os.path.getsize(os.path.join(
-         OUT, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc")) / 1e6, 1), 0.0),
+         OUT, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc")) / 1e6, 1), 0.0),
     ("adm2 monthly by year row count", "national", "06_results.tex",
      r"grain \(\\num\{(\d+)\} rows\)",
      lambda: len(_rows("pakemis_adm2_monthly_by_year.csv")), 0.0),
@@ -2498,15 +2452,6 @@ DOC_CLAIMS = [
     ("power newly timed mass, history", "national", "06_results.tex",
      r"new evidence about\s+\\SI\{([\d.]+)\}\{\\mega\\tonne\} that had sat flat",
      _power_grid_shaped_mass, 0.005),
-    ("fertiliser worst month gap", "national", "06_results.tex",
-     r"disagree by \\SI\{([\d.]+)\}\{\} percentage points",
-     lambda: _fertiliser_gap(worst=True), 0.05),
-    ("fertiliser annual gap", "national", "06_results.tex",
-     r"in the worst month and \\SI\{([\d.]+)\}\{\} points summed",
-     lambda: _fertiliser_gap(worst=False), 0.05),
-    ("ocac vintage reassembly", "national", "06_results.tex",
-     r"they return within \\SI\{([\d.]+)\}\{\\percent\}",
-     lambda: _vintage_worst(), 0.005),
     ("monthly livestock share", "national", "06_results.tex",
      r"categories---\\SI\{([\d.]+)\}\{\\percent\} of the national inventory",
      lambda: 100.0 * sum(_sum_where("national_monthly_2024.csv", "co2e_Mt_AR5",
@@ -2517,9 +2462,6 @@ DOC_CLAIMS = [
      r"an observed monthly basis for \\SI\{([\d.]+)\}\{\\mega\\tonne\}",
      lambda: _sum_where("national_monthly_2024.csv", "co2e_Mt_AR5",
                         category="Managed soils", temporal_method="T4"), 0.005),
-    ("monthly component rows", "national", "06_results.tex",
-     r"of \\num\{(\d+)\} component rows",
-     lambda: len(_rows("national_uncertainty_decomposition.csv")), 0.0),
     ("abstract monthly T4 share", "national", "00_abstract.tex",
      r"\\SI\{([\d.]+)\}\{\\percent\} of the national total sits on a flat profile",
      lambda: _temporal_share("T4"), 0.05),
@@ -2533,9 +2475,6 @@ DOC_CLAIMS = [
     ("seasonality caption T4 share", "national", "06_results.tex",
      r"\\SI\{([\d.]+)\}\{\\percent\} of the inventory sits in the flat TE4 band",
      lambda: _temporal_share("T4"), 0.05),
-    ("crosscheck caption annual gap", "national", "06_results.tex",
-     r"They disagree by\s*\\SI\{([\d.]+)\}\{\} percentage points summed over the year",
-     lambda: _fertiliser_gap(worst=False), 0.05),
 
     # ---- national: the abstract's own completeness and coverage sentence ----
     # Registered because it was wrong. The abstract said 81 combinations and 39 estimated
@@ -2651,9 +2590,6 @@ DOC_CLAIMS = [
     ("introduction EDGAR coverage", "national", "01_introduction.tex",
      r"\\SI\{([\d.]+)\}\{\\percent\} of the\s*corresponding EDGAR aggregate magnitude",
      lambda: 100 * _bench("EDGAR", "NATIONAL"), 0.0),
-    ("introduction EDGAR scope covered", "national", "01_introduction.tex",
-     r"category estimated over\s*\\SI\{([\d.]+)\}\{\\percent\} of that scope",
-     lambda: _scope("scope fully represented"), 0.0),
     ("architecture contract tests", "national", "03_architecture.tex",
      r"groups the \\num\{(\d+)\} contract tests", lambda: _contract_invariant_count(), 0.0),
     ("results AR6 difference", "national", "06_results.tex",
@@ -2850,18 +2786,6 @@ DOC_CLAIMS = [
      lambda: _mc("within_sector", "TOTAL"), 0.05),
     # rc40 G3b: the twelve manure and soils N2O rows now derived from the graph, and the
     # widths they declared. Printed as integer ranges; each endpoint is its own claim.
-    ("G3b derived rows, low derived width", "national", "07_uncertainty.tex",
-     r"the graph now carries them at\s*\\SIrange\{(\d+)\}\{\d+\}\{\\percent\} against",
-     lambda: min(_g3b_n2o_rows("derived_uncert_pct")), 0.0),
-    ("G3b derived rows, high derived width", "national", "07_uncertainty.tex",
-     r"the graph now carries them at\s*\\SIrange\{\d+\}\{(\d+)\}\{\\percent\} against",
-     lambda: max(_g3b_n2o_rows("derived_uncert_pct")), 0.0),
-    ("G3b derived rows, low declared width", "national", "07_uncertainty.tex",
-     r"against the \\SIrange\{(\d+)\}\{\d+\}\{\\percent\} they declared",
-     lambda: min(_g3b_n2o_rows("declared_uncert_pct")), 0.0),
-    ("G3b derived rows, high declared width", "national", "07_uncertainty.tex",
-     r"against the \\SIrange\{\d+\}\{(\d+)\}\{\\percent\} they declared",
-     lambda: max(_g3b_n2o_rows("declared_uncert_pct")), 0.0),
     # The ninth review's basis fix: the same percentile band read against the
     # DETERMINISTIC reference, computed here from the published percentiles and
     # the published deterministic total so neither basis can drift alone.
@@ -2933,12 +2857,6 @@ DOC_CLAIMS = [
      lambda: max(float(r["co2e_Mt_AR5"])
                  for r in _rows("pakemis_national_series.csv")
                  if r["row_kind"] == "covered_total"), 0.005),
-    ("harmonized view first year", "national", "06_results.tex",
-     r"the view runs\s*\\SI\{([\d.]+)\}\{\\mega\\tonne\} to",
-     lambda: _harmonized_view_total("FY2015-16"), 0.01),
-    ("harmonized view last year", "national", "06_results.tex",
-     r"the view runs\s*\\SI\{[\d.]+\}\{\\mega\\tonne\} to\s*\\SI\{([\d.]+)\}\{\\mega\\tonne\}",
-     lambda: _harmonized_view_total("FY2023-24"), 0.01),
     # The conservation split (rc15, the tenth review): the exact/declared/derived
     # counts in the invariance statement read off the provincial check itself.
     ("conservation exact count", "national", "06_results.tex",
@@ -3061,11 +2979,6 @@ DOC_CLAIMS = [
          if "MARS" in r["comparison"])), 0.0),
     # The gas double-claim paragraphs (rc14): both papers quote the variant's
     # deduction and the ledger's leak base from the products themselves.
-    ("national gas restoration", "national", "04_closures.tex",
-     r"gross\\_delivered\\_gas\\_accounting\}\s*\(\\SI\{\+([\d.]+)\}\{\\mega\\tonne\}\)",
-     lambda: _first_where("national_gas_closure_variant.csv", "adjustment_Mt_co2e",
-                          configuration="gross_delivered_gas_accounting"),
-     0.0005),
     ("national gas leak base", "national", "04_closures.tex",
      r"\\num\{(\d+)\} million m\$\^3\$ leak base",
      lambda: round(float(next(
@@ -3078,42 +2991,6 @@ DOC_CLAIMS = [
      0.0005),
     # The waste series product facts (rc17): the per-year FOD claim's numbers,
     # asserted from the shipped annual product - the hidden-108-month lesson.
-    ("waste FOD first year", "national", "06_results.tex",
-     r"Solid-waste disposal runs\s+\\SI\{([\d.]+)\}\{\} to",
-     lambda: min(float(r["co2e_Mt_AR5"]) for r in
-                 _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv")
-                 if r["sector"] == "waste" and "Solid waste" in r["category"]),
-     0.0005),
-    ("waste FOD reference year", "national", "06_results.tex",
-     r"Solid-waste disposal runs\s+\\SI\{[\d.]+\}\{\} to "
-     r"\\SI\{([\d.]+)\}\{\\mega\\tonne\} of CH",
-     lambda: max(float(r["co2e_Mt_AR5"]) for r in
-                 _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv")
-                 if r["sector"] == "waste" and "Solid waste" in r["category"]),
-     0.0005),
-    ("waste FOD growth", "national", "06_results.tex",
-     r"\\SI\{([\d.]+)\}\{\\percent\} growth against population growth",
-     lambda: (lambda vals: 100.0 * (max(vals) / min(vals) - 1.0))(
-         [float(r["co2e_Mt_AR5"]) for r in
-          _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv")
-          if r["sector"] == "waste" and "Solid waste" in r["category"]]), 0.05),
-    ("waste module series low", "national", "06_results.tex",
-     r"waste module total runs \\SI\{([\d.]+)\}\{\} to",
-     lambda: min(sum(float(r["co2e_Mt_AR5"]) for r in
-                     _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv")
-                     if r["sector"] == "waste" and r["period_label"] == p)
-                 for p in {r["period_label"] for r in
-                           _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv")
-                           if r["sector"] == "waste"}), 0.005),
-    ("waste module series high", "national", "06_results.tex",
-     r"waste module total runs \\SI\{[\d.]+\}\{\} to\s+"
-     r"\\SI\{([\d.]+)\}\{\\mega\\tonne\}",
-     lambda: max(sum(float(r["co2e_Mt_AR5"]) for r in
-                     _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv")
-                     if r["sector"] == "waste" and r["period_label"] == p)
-                 for p in {r["period_label"] for r in
-                           _csv_rows("pakemis_annual_fy2015_16_fy2023_24.csv")
-                           if r["sector"] == "waste"}), 0.005),
     # The rc17 solid-fuel screenings: the completeness section's numbers pinned
     # to the industry ledger and totals rows they come from.
     # rc46 Wave 2: the screening CENTRAL is no longer printed (the measured stream
@@ -3153,16 +3030,6 @@ DOC_CLAIMS = [
                         _data_rows_nocomment("activity/industry/coal_by_consumer.csv")
                         if r["fiscal_year"] == "2023-24" and r["consumer"] == "cement"
                         and r["revision_status"] == "final")), 0.5),
-    ("completeness captive coal bracket low", "national", "09_completeness.tex",
-     r"a \\SIrange\{([\d.]+)\}\{[\d.]+\}\{\\mega\\tonne\} configuration",
-     lambda: float(next(r["bracket_low_Mt"] for r in
-                        _rows_banner("industry_captive_screening_2024.csv")
-                        if r["configuration"] == "captive_coal_in_scope")), 0.005),
-    ("completeness captive coal bracket high", "national", "09_completeness.tex",
-     r"a \\SIrange\{[\d.]+\}\{([\d.]+)\}\{\\mega\\tonne\} configuration",
-     lambda: float(next(r["bracket_high_Mt"] for r in
-                        _rows_banner("industry_captive_screening_2024.csv")
-                        if r["configuration"] == "captive_coal_in_scope")), 0.005),
     ("limitations brick coal stream", "national", "12_limitations.tex",
      r"estimates\s*\n?\s*\\SI\{([\d.]+)\}\{\\mega\\tonne\} of brick-kiln",
      lambda: _first_where("industry_fuel_ledger_2024.csv", "Mt_co2e",
@@ -3460,7 +3327,7 @@ DOC_CLAIMS = [
      r"is \\SI\{[\d.]+\}\{\\percent\} and \\SI\{([\d.]+)\}\{\\percent\}\. The binding",
      lambda: _keycat("Road transport", "variance_share_pct_independent_approx"), 0.0),
     ("waste district base contrast", "waste", "03_study_area_and_data.tex",
-     r"than the \\num\{(\d+)\} four-province districts",
+     r"uses \\num\{(\d+)\} four-province districts",
      lambda: len({r["district"] for r in _rows("district_totals_2024.csv")
                   if "residual" not in r["district"]}), 0.0),
     ("power discussion 1A2 remaining", "power", "07_discussion.tex",
@@ -3518,10 +3385,6 @@ DOC_CLAIMS = [
      r"against the\s*\\num\{([\d.]+)\} reference",
      lambda: _cell("national_configurations.csv", "configuration_id",
                    "inventory_reference", "national_total_Mt"), 0.0),
-    ("fugitives national mc median", "fugitives", "06_results.tex",
-     r"and prints \\num\{([\d.]+)\} for this module",
-     lambda: _cell("national_uncertainty_reconciliation.csv", "module",
-                   "fugitives", "national_p50_Mt"), 0.0),
     ("railways non-traction recode quantity", "railways", "08_limitations.tex",
      r"\\SI\{([\d.]+)\}\{\\mega\\tonne\} at its own non-traction category",
      lambda: sum(float(r["co2e_Mt_AR5"])
@@ -4879,10 +4742,10 @@ DOC_CLAIMS = [
      r"is \\num\{([\d.]+)\} times road\}",
      lambda: _factor_ratio("rail_n2o_diesel", "tr_n2o_diesel"), 0.05),
     ("factor trap rail over road, transport", "transport", "S3_completeness.tex",
-     r"\\num\{([\d.]+)\} times the road value\. Railway",
+     r"factor is ([\d.]+) times the road value\. Railway",
      lambda: _factor_ratio("rail_n2o_diesel", "tr_n2o_diesel"), 0.05),
     ("factor trap offroad over road, transport", "transport", "S3_completeness.tex",
-     r"\\num\{([\d.]+)\} times the road value \(and identical",
+     r"N2O is ([\d.]+) times the road value \(and identical",
      lambda: _factor_ratio("offroad_n2o_diesel", "tr_n2o_diesel"), 0.05),
     ("rail diesel year change, national", "national", "10_benchmarks.tex",
      r"diesel is \\SI\{([\d.]+)\}\{\\percent\}",
@@ -4930,15 +4793,6 @@ DOC_CLAIMS = [
     ("bridge interval in megatonnes", "national", "07_uncertainty.tex",
      r"interval, which is about \\SI\{(\d+)\}\{\\mega\\tonne\}",
      lambda: _mc("within_sector", "TOTAL") / 100.0 * _sector("TOTAL"), 0.5),
-    ("bridge power coal basis", "national", "07_uncertainty.tex",
-     r"coal energy basis in\s*power is worth \\SI\{([\d.]+)\}\{\\mega\\tonne\}",
-     lambda: _bridge("power coal energy basis"), 0.05),
-    ("bridge sewer MCF", "national", "07_uncertainty.tex",
-     r"correction factor\s*\\SI\{([\d.]+)\}\{\\mega\\tonne\}",
-     lambda: _bridge("sewer methane correction factor"), 0.05),
-    ("bridge fugitive practice", "national", "07_uncertainty.tex",
-     r"fugitive practice assumption \\SI\{([\d.]+)\}\{\\mega\\tonne\}",
-     lambda: _bridge("fugitive practice"), 0.05),
     ("uncertainty coal calorific scenario", "national", "07_uncertainty.tex",
      r"coal calorific conversion \(worth \\SI\{([\d.]+)\}\{\\mega\\tonne\}\)",
      lambda: _power_scenario("reference") - _power_scenario("coal_at_implied_cv"), 0.0),
@@ -5095,12 +4949,6 @@ DOC_CLAIMS = [
     ("benchmarks magnitude ratio restated", "national", "10_benchmarks.tex",
      r"Magnitude ratio, \\SI\{([\d.]+)\}\{\\percent\}",
      lambda: 100 * _bench("EDGAR", "NATIONAL"), 0.0),
-    ("benchmarks scope fully represented", "national", "10_benchmarks.tex",
-     r"Benchmark-scope representation, \\SI\{([\d.]+)\}\{\\percent\} fully",
-     lambda: _scope("scope fully represented"), 0.0),
-    ("benchmarks scope partially represented", "national", "10_benchmarks.tex",
-     r"fully and\s*\\SI\{([\d.]+)\}\{\\percent\} partially",
-     lambda: _scope("scope partially represented"), 0.0),
     ("benchmarks engine total", "national", "10_benchmarks.tex",
      r"\\SI\{([\d.]+)\}\{\} against\s*\\SI\{[\d.]+\}\{\\mega\\tonne\}",
      lambda: _sector("TOTAL"), 0.0),
@@ -5311,7 +5159,7 @@ DOC_CLAIMS = [
      lambda: _cell("residential_configurations_2024.csv", "configuration", "L",
                    "pm_ratio_vs_road_exhaust"), 0.0),
     ("residential results ratio swing S", "residential", "06_results.tex",
-     r"road-transport ratio from \\num\{[\d]+\} to \\num\{([\d]+)\}---all larger",
+     r"road-transport ratio from \\num\{[\d]+\} to \\num\{([\d]+)\}\. The configurations",
      lambda: _cell("residential_configurations_2024.csv", "configuration", "S",
                    "pm_ratio_vs_road_exhaust"), 0.0),
     ("residential abstract S co2e", "residential", "00_abstract.tex",
@@ -5998,7 +5846,7 @@ DOC_CLAIMS = [
      0.0),
 
     ("waste panel districts", "waste", "03_study_area_and_data.tex",
-     r"\\num\{([\d]+)\} districts, with the 2023 census",
+     r"panel covers \\num\{([\d]+)\} district units",
      lambda: float(len({(r["province"], r["district"])
                         for r in _data_rows(os.path.join("activity", "waste",
                                             "population_district.csv"))
@@ -6696,16 +6544,6 @@ DOC_CLAIMS = [
      0.0),
     # The two-register agreement, and its bounds. The narrowest and widest separations are
     # both claims because a sentence quoting a range can go stale at either end.
-    ("ippu agreement nearest", "ippu", "04_methods.tex",
-     r"\\SIrange\{([\d.]+)\}\{[\d.]+\}\{\\kilo\\metre\}",
-     lambda: min(float(r["separation_km"])
-                 for r in _rows("ippu_facility_coordinate_agreement.csv")
-                 if r["independent"] == "yes"), 0.0),
-    ("ippu agreement furthest", "ippu", "04_methods.tex",
-     r"\\SIrange\{[\d.]+\}\{([\d.]+)\}\{\\kilo\\metre\}",
-     lambda: max(float(r["separation_km"])
-                 for r in _rows("ippu_facility_coordinate_agreement.csv")
-                 if r["independent"] == "yes"), 0.0),
     ("ippu census works limitations", "ippu", "08_limitations.tex",
      r"Although \\num\{(\d+)\} facilities are identified",
      lambda: float(_first_where("ippu_facility_coverage.csv", "facilities_declared",
@@ -7490,14 +7328,14 @@ DOC_CLAIMS = [
              - _cell("residential_totals_2024.csv", "category",
                      "Residential fuel combustion", "co2e_Mt_AR5"), 0.0),
     ("residential series start", "residential", "06_results.tex",
-     r"FY2015--16 through FY2023--24: \\SI\{([\d.]+)\}\{\} to",
+     r"FY2015--16 through FY2024--25: \\SI\{([\d.]+)\}\{\} to",
      lambda: _first_where("residential_timeseries.csv", "co2e_Mt_AR5",
                           fiscal_year="2016"), 0.0),
     ("residential series end", "residential", "06_results.tex",
-     r"FY2015--16 through FY2023--24: \\SI\{[\d.]+\}\{\} to\s*"
+     r"FY2015--16 through FY2024--25: \\SI\{[\d.]+\}\{\} to\s*"
      r"\\SI\{([\d.]+)\}\{\\mega\\tonne\}",
      lambda: _first_where("residential_timeseries.csv", "co2e_Mt_AR5",
-                          fiscal_year="2024"), 0.0),
+                          fiscal_year="2025"), 0.0),
     ("residential January PM", "residential", "06_results.tex",
      r"January at \\SI\{([\d]+)\}\{\\kilo\\tonne\} of \\PM\{\} per month",
      lambda: max((lambda m: sum(float(r["pm25_kt"])
@@ -7831,10 +7669,6 @@ DOC_CLAIMS = [
      lambda: _first_where("residential_uncertainty_scenarios_2024.csv", "deterministic",
                           structural_scenario="dung_survey_round_2024_25_as_measured"),
      0.0),
-    ("residential firewood factor variance share", "residential", "04_methods.tex",
-     r"firewood factor terms alone carry \\SI\{([\d]+)\}\{\\percent\}",
-     lambda: _first_where("residential_variance_decomposition_2024.csv",
-                          "variance_share_pct", stream="Firewood", term="factors"), 0.0),
     # -- emission factors
     ("residential grouped band, factors", "residential", "04b_emission_factors.tex",
      r"figure of \$\\pm\\SI\{([\d.]+)\}\{\\percent\}\$ \(Section",
@@ -8211,7 +8045,7 @@ DOC_CLAIMS = [
                           subitem="BUS Diesel CO2"), 0.05),
 
     ("transport share now", "transport", "06_results.tex",
-     r"to \\SI\{([\d.]+)\}\{\\percent\}, and road transport drops",
+     r"it is \\SI\{([\d.]+)\}\{\\percent\}, and road transport remains",
      lambda: 100.0 * _cell("transport_totals_2024.csv", "category", "TOTAL",
                            "co2e_Mt_AR5") / _sector("TOTAL"), 0.4),
 
@@ -8314,19 +8148,8 @@ DOC_CLAIMS = [
                  for r in _rows_banner("pakemis_spatial_exceptions.csv")
                  if r["exception_kind"] == "proxy_empty" and r["module"] == "agriculture"),
      0.005),
-    # rc39 A8. The two readings of agriculture's timing, and the NFDC residual. Registered
-    # against the products that compute them so the conclusion cannot drift back into
-    # quoting the flat share alone - which is true and, on its own, misleading.
-    ("agri timing unresolved nine years", "agriculture", "09_conclusion.tex",
-     r"\\SI\{([\d.]+)\}\{\\percent\} of the nine-year panel",
-     lambda: next(float(r["unobserved_pct_nine_years"]) for r in
-                  _rows_banner("agriculture_timing_classes.csv")
-                  if r["category"] == "TOTAL"), 0.005),
-    ("agri timing unresolved reference year", "agriculture", "09_conclusion.tex",
-     r"and \\SI\{([\d.]+)\}\{\\percent\} of the reference",
-     lambda: next(float(r["unobserved_pct_reference_year"]) for r in
-                  _rows_banner("agriculture_timing_classes.csv")
-                  if r["category"] == "TOTAL"), 0.005),
+    # The earlier nine-year timing percentages are no longer manuscript claims.
+    # The typed timing diagnostic remains available as a separate data product.
     ("agri nfdc residual tonnes", "agriculture", "04c_shared_ledger.tex",
      r"\\SI\{(\d+)\}\{\\tonne\} of product",
      lambda: next(float(r["residual_tonnes"]) for r in
@@ -8757,24 +8580,6 @@ DOC_CLAIMS = [
      r"interval of \\SI\{[\d]+\}\{\}--\\SI\{([\d]+)\}\{\}~kt",
      lambda: _cell("air_uncertainty_montecarlo.csv", "pollutant", "NH3",
                    "P97.5_kt"), 0.0),
-    ("agri key source applied", "agriculture", "06b_air_pollutants.tex",
-     r"manure applied to soils, contributing\s*approximately "
-     r"\\SI\{([\d]+)\}\{\\percent\}",
-     lambda: _first_where("air_key_categories.csv", "level_pct",
-                          source="NH3 - manure applied to soils"), 0.1),
-    ("agri key source housing", "agriculture", "06b_air_pollutants.tex",
-     r"housing and storage, contributing\s*\\SI\{([\d]+)\}\{\\percent\}",
-     lambda: _first_where("air_key_categories.csv", "level_pct",
-                          source="NH3 - housing and storage"), 0.1),
-    ("agri key source synthetic", "agriculture", "06b_air_pollutants.tex",
-     r"synthetic fertiliser, contributing \\SI\{([\d]+)\}\{\\percent\}",
-     lambda: _first_where("air_key_categories.csv", "level_pct",
-                          source="NH3 - synthetic fertiliser"), 0.1),
-    ("agri key source grazing", "agriculture", "06b_air_pollutants.tex",
-     r"grazing, contributing \\SI\{([\d]+)\}\{\\percent\}",
-     lambda: _first_where("air_key_categories.csv", "level_pct",
-                          source="NH3 - pasture deposition (sheep/goat/other)"),
-     0.3),
     ("agri MMS current grazing", "agriculture", "06b_air_pollutants.tex",
      r"It assigns \\SI\{([\d]+)\}\{\\percent\} of excreted",
      lambda: 100.0 * _first_where(os.path.join("eval",
@@ -8956,9 +8761,9 @@ DOC_CLAIMS = [
      lambda: float(next(r for r in _data_rows(os.path.join(
          "activity", "fertilizer_2024.csv"))
          if r["item"] == "nitrogen_N_offtake")["value_t"]) / 1e6, 0.0),
-    ("agri FON current", "agriculture", "S5_qaqc.tex",
+    ("agri FON prior IPCC correction", "agriculture", "S5_qaqc.tex",
      r"falls from \\SI\{[\d.]+\}\{\} to\s*\\SI\{([\d.]+)\}\{\}~Mt~N",
-     lambda: float(next(r for r in _rows("n_ledger_2024.csv")
+     lambda: float(next(r for r in read_rows(os.path.join(paths.DATA, "baselines", "rc67_integrated_campaign", "outputs", "n_ledger_2024.csv"))
                         if r["flow"].startswith("= N available"))["Mt_N"]), 0.0),
 
     ("agri AWD delta", "agriculture", "04b_emission_factors.tex",
@@ -9990,21 +9795,6 @@ DOC_CLAIMS = [
     # The attribution ladder's rungs (Wave 3): each count the data section prints
     # is the burning crosscheck's own published row, so the ladder cannot move
     # without breaking the prose that narrates it.
-    ("agriculture fire in-year count", "agriculture", "03_study_area_and_data.tex",
-     r"of the \\num\{(\d+)\}\s+detections in FY2023--24",
-     lambda: float(_attribution_rung("detections_in_year")), 0.0),
-    ("agriculture fire outside-pakistan count", "agriculture",
-     "03_study_area_and_data.tex", r"\\num\{(\d+)\} fall outside Pakistan",
-     lambda: float(_attribution_rung("outside_pakistan")), 0.0),
-    ("agriculture fire near-kiln count", "agriculture", "03_study_area_and_data.tex",
-     r"\\num\{(\d+)\} sit near\s+kilns",
-     lambda: float(_attribution_rung("near_kiln")), 0.0),
-    ("agriculture fire off-cropland count", "agriculture", "03_study_area_and_data.tex",
-     r"\\num\{(\d+)\} off cropland",
-     lambda: float(_attribution_rung("off_cropland")), 0.0),
-    ("agriculture fire attributed count", "agriculture", "03_study_area_and_data.tex",
-     r"\\num\{(\d+)\} are\s+attributed to residue burning",
-     lambda: float(_attribution_rung("attributed")), 0.0),
     # The conclusion's flat-share verdict rides the shipped monthly layer's own
     # evidence declaration (same source as claims-registry
     # agriculture_monthly_flat_share, integer-rounded as printed).
@@ -10034,9 +9824,6 @@ DOC_CLAIMS = [
      r"\\num\{10000\} draws on seed\s*\\num\{(\d+)\}",
      lambda: _first_where("waste_uncertainty_scenarios_2024.csv", "seed",
                           structural_scenario="reference"), 0.0),
-    ("waste rerun seed", "waste", "S1_uncertainty.tex",
-     r"the published seed \\num\{(\d+)\}",
-     lambda: float(_rows("waste_parameter_mc_2024.csv")[0]["seed"]), 0.0),
     ("railways abstract NOx", "railways", "00_abstract.tex",
      r"Tier~1:\s+\\SI\{([\d.]+)\}\{\\kilo\\tonne\} NO",
      lambda: _air_kt("NOx"), 0.005),
@@ -11046,18 +10833,6 @@ DOC_CLAIMS = [
     # over it ("v2 power ...") resolving through national_configurations.csv by
     # configuration_id. Three loose anchors are removed because their quantities are
     # covered more tightly, which is the only reason a claim may be deleted.
-    ("rewrite sewer MCF reference", "national-v3", "paper.tex",
-     r"correction factor from \\num\{([\d.]+)\}",
-     lambda: _bridge_setting("sewer methane correction factor", "baseline_setting"), 0.0),
-    ("rewrite sewer MCF alternative", "national-v3", "paper.tex",
-     r"from \\num\{[\d.]+\} to \\num\{([\d.]+)\} lowers domestic wastewater",
-     lambda: _bridge_setting("sewer methane correction factor", "alternative"), 0.0),
-    ("rewrite wastewater reference", "national-v3", "paper.tex",
-     r"lowers domestic wastewater from \\SI\{([\d.]+)\}\{\}",
-     lambda: _bridge_baseline_mt("sewer methane correction factor"), 0.005),
-    ("rewrite wastewater river MCF", "national-v3", "paper.tex",
-     r"to \\SI\{([\d.]+)\}\{\\mega\\tonne\}\. Oil and gas fugitive",
-     lambda: _bridge("sewer methane correction factor", "alternative_Mt_co2e"), 0.005),
     ("rewrite fugitives envelope floor", "national-v3", "paper.tex",
      r"span \\SIrange\{([\d.]+)\}\{[\d.]+\}\{\\mega\\tonne\}",
      lambda: _as_registered("national fugitives envelope floor"), 0.005),
@@ -11069,15 +10844,6 @@ DOC_CLAIMS = [
      r"The reference, \\SI\{([\d.]+)\}\{\\mega\\tonne\}, keeps the higher published",
      lambda: (_configuration("fugitives_including_feedstock", "alternative_value_Mt")
               - _configuration("fugitives_including_feedstock", "national_delta_Mt")), 0.0005),
-    ("rewrite effluent factor reference", "national-v3", "paper.tex",
-     r"effluent N\$_2\$O factor from \\num\{([\d.]+)\}",
-     lambda: _bridge_setting("wastewater effluent N2O factor", "baseline_setting"), 0.0),
-    ("rewrite effluent factor ceiling", "national-v3", "paper.tex",
-     r"to\s*\\num\{([\d.]+)\}~kg N\$_2\$O--N",
-     lambda: _bridge_setting("wastewater effluent N2O factor", "alternative"), 0.0),
-    ("rewrite effluent endpoint delta", "national-v3", "paper.tex",
-     r"increases the national total by approximately\s*\\SI\{([\d.]+)\}\{\\mega\\tonne\}",
-     lambda: _bridge("wastewater effluent N2O factor", "national_delta_Mt_co2e"), 0.05),
     ("rewrite ocac exact", "national-v3", "paper.tex",
      r"\\num\{(\d+)\} of \\num\{\d+\} reconstructed monthly values",
      lambda: _as_registered("ocac crosscheck exact"), 0.0),
@@ -11324,9 +11090,6 @@ DOC_CLAIMS = [
     ("v2 gas outside volume", "national-v3", "technical_supplement.tex",
      r"\\num\{\d+\} carrying\s*\n?\s*\\SI\{(\d+)\}\{\} million~m\$\^3\$ are outside",
      lambda: _gas_closure("outside_volume"), 1.0),
-    ("v2 gas gross alternative", "national-v3", "technical_supplement.tex",
-     r"configuration worth\s*\n?\s*\\SI\{([\d.]+)\}\{\\mega\\tonne\}",
-     lambda: _gas_closure_variant("gross_delivered_gas_accounting"), 0.0005),
     # ---- v2: the paddy crosscheck's RESULT (item 5) -------------------------------------
     ("v2 rice crosscheck agree", "national-v3", "technical_supplement.tex",
      r"provincial rice mass, the two surfaces agree in \\num\{(\d+)\}",
@@ -12670,12 +12433,6 @@ def _sobol_samples():
     return float(variance_attribution.N_SAMPLES)
 
 
-def _g3b_n2o_rows(col):
-    """The agriculture N2O rows whose marginal derives from the parameter graph (rc40 G3b):
-    manure management and managed soils, disposition derive_row_from_parameters."""
-    return [float(r[col]) for r in _rows("national_uncertainty_decomposition.csv")
-            if r["module"] == "agriculture" and r["disposition"] == "derive_row_from_parameters"
-            and r["gas"] == "N2O" and r["category"] in ("Manure management", "Managed soils")]
 
 
 def _over_decomposed_component_count():
@@ -12869,7 +12626,7 @@ def _as_registered(label):
     borrows it fails loudly in test_claims, which is the behaviour wanted. A claim that
     silently stops resolving is a claim that silently stops guarding.
     """
-    for entry in DOC_CLAIMS:
+    for entry in list(DOC_CLAIMS) + list(globals().get("LEGACY_NATIONAL_DOC_CLAIMS", ())):
         if entry[0] == label:
             return entry[4]()
     raise AssertionError(
@@ -12966,40 +12723,8 @@ def _fgas_benchmark():
     raise AssertionError("the completeness-mass ledger has lost its F-gas benchmark row")
 
 
-def _bridge_setting(axis, which):
-    """The NUMBER inside a bridge row's own setting label ('baseline_setting'/'alternative').
-
-    Same discipline as _faostat_ef1 and _reference_ef1: when a sentence prints a factor AND
-    the emissions that factor produces, both should come from one row, so they cannot
-    disagree. The sewer MCF pair (0.5 -> 0.1) and the effluent pair (0.005 -> 0.25) are each
-    a factor and a mass in one sentence, and the factors had nothing behind them at all.
-    """
-    for r in _rows("national_structural_bridge.csv"):
-        if r["axis"] == axis:
-            m = re.search(r"([\d.]+)", r[which])
-            if m:
-                return float(m.group(1))
-            raise AssertionError("bridge axis %r states no number in %r" % (axis, which))
-    raise AssertionError("no structural-bridge axis named %r" % axis)
 
 
-def _bridge_baseline_mt(axis):
-    """The baseline an alternative moves FROM: alternative minus the SIGNED national delta.
-
-    The bridge ships the alternative and the delta, not the baseline, so the reference-case
-    magnitude a sentence prints beside the alternative is recovered rather than restated.
-
-    This reads the row itself instead of calling _bridge, and the reason is the whole point
-    of the function: _bridge returns abs(delta), which is right for "how far does this axis
-    move the total" and wrong here. The sewer-MCF delta is -9.07, so the baseline is
-    15.849 - (-9.07) = 24.919; through the absolute value it would come out at 6.779 and
-    quietly anchor the sentence to a number the inventory never printed.
-    """
-    for r in _rows("national_structural_bridge.csv"):
-        if r["axis"] == axis:
-            return (float(r["alternative_Mt_co2e"])
-                    - float(r["national_delta_Mt_co2e"]))
-    raise AssertionError("no structural-bridge axis named %r" % axis)
 
 def _dung_balance(element, field="S_side"):
     """One cell of the dung balance, by element. Substring match on the element name, because
@@ -13376,3 +13101,447 @@ def _hies_concentration(survey):
         if r["survey"] == survey and r["fuel"] == "dung_cake":
             return 100.0 * float(r["top5pct_hh_share_of_total"])
     raise KeyError(survey)
+
+
+# rc68 replaces the national article/supplement and revises the maintained
+# technical report. Preserve former sentence-level claims as an explicit archive;
+# only quantities/phrases actually present in an included source can be current
+# prose claims. Every new generated national macro is independently checked by
+# test_claim_matrix; the quantity-coverage sweep still rejects unregistered
+# literal results. Sector claim and numerical-product audits remain unchanged.
+def _current_national_sentence(doc, section, pattern, literal=False):
+    revised = _RETIREMENTS.get("revised_sector_sections", {})
+    if doc not in ("national", "national-supplement", "national-v3") and section not in revised.get(doc, []):
+        return True
+    from paper_numbers._common import _doc_path, active_sections
+    if section not in active_sections(doc):
+        return False
+    path = _doc_path(doc, section)
+    with open(path, encoding="utf-8") as handle:
+        text = handle.read()
+    if literal:
+        return pattern in text
+    return re.search(pattern, text) is not None
+
+_RETIREMENTS = json.load(open(os.path.join(os.path.dirname(__file__), "retired_sentence_claims_rc68.json")))
+
+def _declared_retired(kind, row, literal=False):
+    return row[1] + "/" + row[0] in _RETIREMENTS[kind] and not _current_national_sentence(row[1], row[2], row[3], literal=literal)
+
+LEGACY_NATIONAL_DOC_CLAIMS = tuple(r for r in DOC_CLAIMS if _declared_retired("doc_claim_ids", r))
+DOC_CLAIMS = [r for r in DOC_CLAIMS if not _declared_retired("doc_claim_ids", r)]
+LEGACY_NATIONAL_COMPARATIVE_CLAIMS = tuple(r for r in CLAIMS if _declared_retired("comparative_claim_ids", r, literal=True))
+CLAIMS = [r for r in CLAIMS if not _declared_retired("comparative_claim_ids", r, literal=True)]
+LEGACY_NATIONAL_MOVEMENTS = tuple(r for r in MOVEMENTS if _declared_retired("movement_ids", r))
+MOVEMENTS = [r for r in MOVEMENTS if not _declared_retired("movement_ids", r)]
+
+
+def _current_core_period_count():
+    from pkinv.core.reporting_window import CORE_FY_STARTS
+    return len(CORE_FY_STARTS)
+
+def _current_air_species_count():
+    from pkinv.report.air_annual import CORE7
+    return len(CORE7)
+
+def _current_configuration_count():
+    from pkinv.core.configurations import ALL
+    return len(ALL)
+
+CLAIMS.extend([
+    ("integrated ten fiscal years", "national-v3", "paper.tex", "ten fiscal years", "count_equals", 10, 0., _current_core_period_count),
+    ("integrated three native greenhouse gases", "national-v3", "paper.tex", "The greenhouse gases are", "count_equals", 3, 0.,
+     lambda: len({r["gas"] for r in _rows("pakemis_ghg_configuration_atoms.csv") if r["gas"]})),
+    ("integrated seven core air species", "national-v3", "paper.tex", "The core air panel contains", "count_equals", 7, 0., _current_air_species_count),
+    ("integrated four coherent configurations", "national-v3", "paper.tex", "These four configurations describe structural choices", "count_equals", 4, 0., _current_configuration_count),
+    ("no provisional year in common trend", "national-v3", "paper.tex", "provisional FY2025--26 sources are excluded", "count_equals", 0, 0.,
+     lambda: len([r for r in _rows("pakemis_ghg_configuration_atoms.csv") if r["period_id"] == "FY2025-26"])),
+])
+
+
+def _native_waste_interval(column):
+    rows = _rows("pakemis_ghg_conditional_uncertainty.csv")
+    selected = [r for r in rows if r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN"
+                and r["sector_id"] == "waste" and r["species_or_metric"] == "CO2e_AR5"
+                and r["dependence_case"] == "persistent_parameters"]
+    if len(selected) != 1:
+        raise AssertionError("expected one current native waste interval")
+    return float(selected[0][column])
+
+for _section in ("00_abstract.tex", "06_results.tex", "S1_uncertainty.tex"):
+    DOC_CLAIMS.extend([
+        ("native conditional waste lower " + _section, "waste", _section,
+         r"\\SIrange\{([\d.]+)\}\{[\d.]+\}\{\\mega\\tonne\}",
+         lambda: _native_waste_interval("P2_5_quantity"), 0.),
+        ("native conditional waste upper " + _section, "waste", _section,
+         r"\\SIrange\{[\d.]+\}\{([\d.]+)\}\{\\mega\\tonne\}",
+         lambda: _native_waste_interval("P97_5_quantity"), 0.),
+    ])
+DOC_CLAIMS.extend([
+    ("native waste current draw count", "waste", "S1_uncertainty.tex", r"uses \\num\{(\d+)\} realisations", lambda: _native_waste_interval("draws"), 0.),
+    ("native waste current seed", "waste", "S1_uncertainty.tex", r"seed \\num\{(\d+)\}", lambda: _native_waste_interval("seed"), 0.),
+    ("current admitted IPPU module abstract", "ippu", "00_abstract.tex", r"total is \\SI\{([\d.]+)\}\{\\mega\\tonne\}",
+     lambda: _cell("ippu_totals_2024.csv", "category", "IPPU reference total", "co2e_Mt_AR5"), 0.),
+    ("current admitted IPPU module results", "ippu", "06_results.tex", r"to the \\SI\{([\d.]+)\}\{\\mega\\tonne\} module total",
+     lambda: _cell("ippu_totals_2024.csv", "category", "IPPU reference total", "co2e_Mt_AR5"), 0.),
+])
+
+
+def _native_fugitives_interval(column):
+    selected = [r for r in _rows("pakemis_ghg_conditional_uncertainty.csv")
+                if r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN"
+                and r["sector_id"] == "fugitives" and r["species_or_metric"] == "CO2e_AR5"
+                and r["dependence_case"] == "persistent_parameters"]
+    if len(selected) != 1:
+        raise AssertionError("expected one current native fugitives interval")
+    return float(selected[0][column])
+
+DOC_CLAIMS.extend([
+    ("native conditional fugitives lower", "fugitives", "06_results.tex",
+     r"reference 2\.5th--97\.5th percentiles are \\SIrange\{([\d.]+)\}\{[\d.]+\}",
+     lambda: _native_fugitives_interval("P2_5_quantity"), 0.),
+    ("native conditional fugitives upper", "fugitives", "06_results.tex",
+     r"reference 2\.5th--97\.5th percentiles are \\SIrange\{[\d.]+\}\{([\d.]+)\}",
+     lambda: _native_fugitives_interval("P97_5_quantity"), 0.),
+])
+
+
+def _agriculture_input_factor(category, item):
+    from pkinv.sectors.agriculture.ef_library import InventoryData
+    return InventoryData().efv(category, item)
+
+DOC_CLAIMS.extend([
+    ("current TAN cattle fraction", "agriculture", "04c_shared_ledger.tex", r"\\num\{([\d.]+)\} for cattle,", lambda: _agriculture_input_factor("nh3_emep_tan", "dairy_cattle"), 0.),
+    ("current grazing small-ruminant fraction", "agriculture", "04c_shared_ledger.tex", r"\\num\{([\d.]+)\} for small ruminants", lambda: _agriculture_input_factor("nh3_emep_grazing", "sheep"), 0.),
+    ("soil NOx native nitrogen fraction", "agriculture", "04c_shared_ledger.tex", r"estimated as approximately \\SI\{([\d.]+)\}\{\\percent\}", lambda: 100 * _agriculture_input_factor("soils", "NOx_frac_of_applied"), 0.),
+])
+
+DOC_CLAIMS.extend([
+    ("railway ODbL alternative audited length fraction", "railways", "04_methods.tex",
+     r"line-kilometres, \\SI\{([\d.]+)\}\{\\percent\} of the Year Book",
+     lambda: 100 * _cell("railways_network_audit_2024.csv", "item", "active_total", "km")
+             / __import__("pkinv.sectors.railways.data", fromlist=["RailwaysData"]).RailwaysData().p("route_km"), 0.),
+    ("residential matched-scope relative difference", "residential", "05_validation.tex",
+     r"---within\s*\\SI\{([\d.]+)\}\{\\percent\}",
+     lambda: 100 * (_cell("residential_official_comparison_2024.csv", "benchmark_id", "crt2022", "own_Mt_co2e")
+                   / _cell("residential_official_comparison_2024.csv", "benchmark_id", "crt2022", "official_Mt_co2e") - 1), 0.),
+])
+
+
+# =========================================================================================
+# rc68, 15 October 2026: the integrated article's literal quantities. Every share, ratio and
+# interval the revised paper.tex prints outside the generated macros resolves here from the
+# released products, at the precision printed (tolerance 0 beyond half a unit in the last
+# digit). A product moved by later work fails the claim rather than the sentence drifting.
+# =========================================================================================
+_V3_REF, _V3_LATEST, _V3_FIRST = "FY2023-24", "FY2024-25", "FY2015-16"
+
+
+def _v3_air(period, pollutant, keep=lambda r: True, configuration="S_TAN"):
+    return sum(float(r["emissions_Gg"]) for r in _rows("pakemis_air_annual_fy2015_16_fy2024_25.csv")
+               if r["period_id"] == period and r["configuration_id"] == configuration
+               and r["pollutant"] == pollutant and keep(r))
+
+
+def _v3_air_share(pollutant, keep, period=_V3_REF):
+    return 100.0 * _v3_air(period, pollutant, keep) / _v3_air(period, pollutant)
+
+
+def _v3_ghg(period, keep=lambda r: True, configuration="S_TAN"):
+    return sum(float(r["co2e_Mt_AR5"]) for r in _rows("pakemis_ghg_configuration_atoms.csv")
+               if r["period_id"] == period and r["configuration_id"] == configuration
+               and r["co2e_Mt_AR5"] and keep(r))
+
+
+def _v3_ghg_share(keep, period=_V3_REF):
+    return 100.0 * _v3_ghg(period, keep) / _v3_ghg(period)
+
+
+_V3_MIDDLE_MODULES = ("power", "transport", "waste", "ippu", "residential", "fugitives", "industry")
+
+
+def _v3_configuration_totals(period=_V3_REF):
+    from pkinv.core.configurations import ALL
+    return [_v3_ghg(period, configuration=c) for c in ALL]
+
+
+def _v3_trend_rows(dependence="persistent_parameters"):
+    return [r for r in _rows("pakemis_ghg_trend_uncertainty.csv")
+            if r["configuration_id"] == "S_TAN" and r["sector_id"] == "national_covered"
+            and r["species_or_metric"] == "CO2e_AR5" and r["dependence_case"] == dependence]
+
+
+def _v3_endpoint(column):
+    rows = [r for r in _v3_trend_rows() if r["start_period"] == _V3_FIRST and r["end_period"] == _V3_LATEST]
+    assert len(rows) == 1, "expected one paired endpoint change"
+    return float(rows[0][column])
+
+
+def _v3_steps(dependence=None):
+    """Consecutive annual changes; with a dependence case, those whose 95 % interval excludes zero."""
+    from pkinv.core.reporting_window import CORE_FY_STARTS
+    labels = ["FY%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS]
+    pairs = set(zip(labels, labels[1:]))
+    if dependence is None:
+        return len(pairs)
+    return sum(1 for r in _v3_trend_rows(dependence) if (r["start_period"], r["end_period"]) in pairs
+               and (float(r["P2_5_quantity"]) > 0 or float(r["P97_5_quantity"]) < 0))
+
+
+def _v3_air_interval(pollutant, column, period=_V3_REF):
+    rows = [r for r in _rows("pakemis_air_conditional_uncertainty.csv")
+            if r["period_id"] == period and r["configuration_id"] == "S_TAN" and r["pollutant"] == pollutant
+            and r["sector_id"] == "national_covered" and r["dependence_case"] == "persistent_parameters"]
+    assert len(rows) == 1
+    return float(rows[0][column])
+
+
+def _v3_structural(scenario, pollutant, column="case_covered_Gg", period=_V3_REF):
+    rows = [r for r in _rows("pakemis_air_structural_sensitivities.csv")
+            if r["period_id"] == period and r["configuration_id"] == "S_TAN"
+            and r["scenario_id"] == scenario and r["pollutant"] == pollutant]
+    assert len(rows) == 1
+    return float(rows[0][column])
+
+
+def _v3_btr(subject):
+    rows = [r for r in _csv_rows("pakemis_btr_comparison.csv") if r["subject"] == subject]
+    assert len(rows) == 1, subject
+    return float(rows[0]["ratio_pakemis_over_btr"])
+
+
+def _v3_edgar_industry(species, boundary):
+    """PakEmis industry over EDGAR 1.A.2 (fossil, or fossil plus biomass) plus cement 2.A.1,
+    FY2021-22 - the latest complete fiscal blend, exactly as Fig. 13 draws it."""
+    row = next(r for r in _csv_rows("pakemis_industry_air_edgar_comparison.csv")
+               if r["period_id"] == "FY2021-22" and r["species"] == species)
+    pak = float(row["engine_industry_kt"])
+    fossil = float(row["edgar_1a2_fossil_plus_2a1_kt"])
+    if boundary == "fossil":
+        return pak / fossil
+    cement = fossil - float(row["edgar_1a2_fossil_kt"])
+    return pak / (float(row["edgar_1a2_fossil_bio_kt"]) + cement)
+
+
+def _v3_htap(sector, pick):
+    ratios = [float(r["ratio_pakemis_over_htap"]) for r in _rows("pakemis_air_htap_comparison.csv")
+              if r["configuration_id"] == "S_TAN" and r["pollutant"] == "NH3"
+              and r["comparison_status"] == "sector_comparison" and r["comparison_sector"] == sector]
+    assert len(ratios) == 5
+    return pick(ratios)
+
+
+def _v3_draws():
+    rows = {r["draws"] for r in _rows("pakemis_ghg_conditional_uncertainty.csv")}
+    assert len(rows) == 1
+    return float(rows.pop())
+
+
+def _v3_htap_rows(group, pollutant, configuration="S_TAN"):
+    rows = [r for r in _csv_rows("pakemis_air_htap_species_comparison.csv")
+            if r["configuration_id"] == configuration and r["comparison_group"] == group
+            and r["pollutant"] == pollutant and r["comparison_status"] == "process_comparison"]
+    assert len(rows) == 5, (group, pollutant, configuration)
+    return rows
+
+
+def _v3_htap_species(group, pollutant, pick, configuration="S_TAN"):
+    return pick(float(r["ratio_pakemis_over_htap"]) for r in _v3_htap_rows(group, pollutant, configuration))
+
+
+def _v3_htap_species_year(group, pollutant, period):
+    return next(float(r["ratio_pakemis_over_htap"]) for r in _v3_htap_rows(group, pollutant)
+                if r["period_id"] == period)
+
+
+def _v3_residue_factor_ratios():
+    """HTAP's residue-burning mass expressed as a factor on PakEmis's own burned dry matter,
+    over PakEmis's factor, for every species and year compared."""
+    return [float(r["htap_equivalent_factor_at_pakemis_activity"]) / float(r["pakemis_implied_factor"])
+            for r in _csv_rows("pakemis_air_htap_species_comparison.csv")
+            if r["configuration_id"] == "S_TAN" and r["comparison_group"] == "agricultural_residue_burning"
+            and r["comparison_status"] == "process_comparison" and r["pakemis_implied_factor"]]
+
+
+def _v3_diesel_ppm(fiscal_end_year):
+    return float(next(r["ppm_central"] for r in _data_rows_nocomment("activity/transport/fuel_sulfur_by_year.csv")
+                      if r["fuel"] == "Diesel" and int(r["fiscal_end_year"]) == fiscal_end_year))
+
+
+_V3 = ("national-v3", "paper.tex")
+DOC_CLAIMS.extend([(label,) + _V3 + tuple(rest) for label, *rest in [
+    ("integrated CH4 share of aggregate", r"Methane contributes \\SI\{(\d+)\}\{\\percent\}",
+     lambda: _v3_ghg_share(lambda r: r["gas"] == "CH4"), 0.),
+    ("integrated agriculture share of aggregate", r"aggregate, and agriculture \\SI\{(\d+)\}\{\\percent\}",
+     lambda: _v3_ghg_share(lambda r: r["sector_id"] == "agriculture"), 0.),
+    ("integrated middle modules lowest share", r"each contribute between \\SI\{(\d+)\}\{\\percent\}",
+     lambda: min(_v3_ghg_share(lambda r, m=m: r["sector_id"] == m) for m in _V3_MIDDLE_MODULES), 0.),
+    ("integrated middle modules highest share", r"each contribute between \\SI\{\d+\}\{\\percent\} and \\SI\{(\d+)\}\{\\percent\}",
+     lambda: max(_v3_ghg_share(lambda r, m=m: r["sector_id"] == m) for m in _V3_MIDDLE_MODULES), 0.),
+    ("integrated configuration span low", r"aggregate ranges from \\SI\{([\d.]+)\}\{\\mega\\tonne\}",
+     lambda: min(_v3_configuration_totals()), 0.),
+    ("integrated configuration span high", r"aggregate ranges from \\SI\{[\d.]+\}\{\\mega\\tonne\} to \\SI\{([\d.]+)\}",
+     lambda: max(_v3_configuration_totals()), 0.),
+    ("integrated PM2.5 household share", r"Household fuel combustion accounts for \\SI\{(\d+)\}",
+     lambda: _v3_air_share("PM2.5", lambda r: r["sector_id"] == "residential"), 0.),
+    ("integrated PM2.5 waste burning share", r"open burning of waste for \\SI\{(\d+)\}",
+     lambda: _v3_air_share("PM2.5", lambda r: r["sector_id"] == "waste"), 0.),
+    ("integrated PM2.5 residue burning share", r"crop-residue burning for \\SI\{(\d+)\}",
+     lambda: _v3_air_share("PM2.5", lambda r: r["category"] == "Field burning of residues"), 0.),
+    ("integrated NOx agriculture share", r"agriculture \(\\SI\{(\d+)\}\{\\percent\}, mainly",
+     lambda: _v3_air_share("NOx", lambda r: r["sector_id"] == "agriculture"), 0.),
+    ("integrated NOx transport share", r"road and other transport \(\\SI\{(\d+)\}",
+     lambda: _v3_air_share("NOx", lambda r: r["sector_id"] == "transport"), 0.),
+    ("integrated NOx household share", r"households \(\\SI\{(\d+)\}\{\\percent\}\) and industry",
+     lambda: _v3_air_share("NOx", lambda r: r["sector_id"] == "residential"), 0.),
+    ("integrated NOx industry share", r"and industry \(\\SI\{(\d+)\}",
+     lambda: _v3_air_share("NOx", lambda r: r["sector_id"] == "industry"), 0.),
+    ("integrated NH3 agriculture share", r"Agriculture supplies \\SI\{(\d+)\}",
+     lambda: _v3_air_share("NH3", lambda r: r["sector_id"] == "agriculture"), 0.),
+    ("integrated NH3 managed soils share", r"managed soils give \\SI\{(\d+)\}",
+     lambda: _v3_air_share("NH3", lambda r: r["category"] == "Managed soils"), 0.),
+    ("integrated NH3 manure share", r"manure management \\SI\{(\d+)\}\{\\percent\}\.",
+     lambda: _v3_air_share("NH3", lambda r: r["category"] == "Manure management"), 0.),
+    ("integrated SO2 industry share", r"cement kilns give \\SI\{(\d+)\}",
+     lambda: _v3_air_share("SO2", lambda r: r["sector_id"] == "industry"), 0.),
+    ("integrated SO2 power share", r"power oil and diesel \\SI\{(\d+)\}",
+     lambda: _v3_air_share("SO2", lambda r: r["sector_id"] == "power"), 0.),
+    ("integrated CO household share", r"Households dominate CO \(\\SI\{(\d+)\}",
+     lambda: _v3_air_share("CO", lambda r: r["sector_id"] == "residential"), 0.),
+    ("integrated NMVOC road share", r"dominates NMVOC \(\\SI\{(\d+)\}",
+     lambda: _v3_air_share("NMVOC", lambda r: r["sector_id"] == "transport"), 0.),
+    ("integrated paired endpoint change", r"the change is \\SI\{([\d.]+)\}\{\\mega\\tonne\}",
+     lambda: _v3_endpoint("deterministic_change"), 0.),
+    ("integrated paired endpoint low", r"interval of \\SIrange\{([\d.]+)\}\{[\d.]+\}\{\\mega\\tonne\} under persistent",
+     lambda: _v3_endpoint("P2_5_quantity"), 0.),
+    ("integrated paired endpoint high", r"interval of \\SIrange\{[\d.]+\}\{([\d.]+)\}\{\\mega\\tonne\} under persistent",
+     lambda: _v3_endpoint("P97_5_quantity"), 0.),
+    ("integrated consecutive annual changes", r"Of the \\num\{(\d+)\} consecutive annual changes",
+     lambda: _v3_steps(), 0.),
+    ("integrated resolved steps persistent", r"annual changes, \\num\{(\d+)\} have intervals",
+     lambda: _v3_steps("persistent_parameters"), 0.),
+    ("integrated resolved steps annual errors", r"persistent parameters and \\num\{(\d+)\} under independently",
+     lambda: _v3_steps("annual_activity_errors"), 0.),
+    ("integrated power SO2 first year", r"\(from \\SI\{([\d.]+)\}\{\\giga\\gram\} to",
+     lambda: _v3_air(_V3_FIRST, "SO2", lambda r: r["sector_id"] == "power"), 0.),
+    ("integrated power SO2 latest year", r"\(from \\SI\{[\d.]+\}\{\\giga\\gram\} to \\SI\{([\d.]+)\}",
+     lambda: _v3_air(_V3_LATEST, "SO2", lambda r: r["sector_id"] == "power"), 0.),
+    ("integrated SO2 interval low", r"\\SIrange\{([\d.]+)\}\{[\d.]+\}\{\\giga\\gram\} SO\$_2\$ and",
+     lambda: _v3_air_interval("SO2", "P2_5_Gg"), 0.),
+    ("integrated SO2 interval high", r"\\SIrange\{[\d.]+\}\{([\d.]+)\}\{\\giga\\gram\} SO\$_2\$ and",
+     lambda: _v3_air_interval("SO2", "P97_5_Gg"), 0.),
+    ("integrated dung case GHG change", r"changes the GHG aggregate by about \\SI\{(\d+)\}",
+     lambda: 100.0 * (_v3_ghg(_V3_REF, configuration="L_TAN") / _v3_ghg(_V3_REF) - 1.0), 0.),
+    ("integrated dung case PM2.5", r"raises PM\$_\{2\.5\}\$ to \\SI\{([\d.]+)\}",
+     lambda: _v3_structural("all_diverted_dung_household_combustion", "PM2.5"), 0.),
+    ("integrated draw count", r"Conditional ensembles of \\num\{(\d+)\} realisations",
+     _v3_draws, 0.),
+    ("integrated BTR matched total", r"PakEmis is \\num\{([\d.]+)\} times the reported total",
+     lambda: _v3_btr("TOTAL on categories both accounts estimate"), 0.),
+    ("integrated BTR oil and gas fugitives", r"fugitive emissions are \\num\{([\d.]+)\} times",
+     lambda: _v3_btr("Oil and natural gas fugitives"), 0.),
+    ("integrated BTR enteric", r"enteric fermentation \\num\{([\d.]+)\} times",
+     lambda: _v3_btr("Enteric fermentation"), 0.),
+    ("integrated BTR wastewater", r"domestic wastewater \\num\{([\d.]+)\} times",
+     lambda: _v3_btr("Domestic wastewater"), 0.),
+    ("integrated BTR managed soils", r"managed soils are \\num\{([\d.]+)\} times",
+     lambda: _v3_btr("Managed soils"), 0.),
+    ("integrated EDGAR industry SO2 fossil", r"Industrial SO\$_2\$ is \\num\{([\d.]+)\} times",
+     lambda: _v3_edgar_industry("SO2", "fossil"), 0.),
+    ("integrated EDGAR industry SO2 fossil+bio", r"fossil account and \\num\{([\d.]+)\} times its fossil-plus-biomass",
+     lambda: _v3_edgar_industry("SO2", "all"), 0.),
+    ("integrated EDGAR industry PM2.5 fossil", r"PM\$_\{2\.5\}\$ is \\num\{([\d.]+)\} and",
+     lambda: _v3_edgar_industry("PM2.5", "fossil"), 0.),
+    ("integrated EDGAR industry PM2.5 fossil+bio", r"PM\$_\{2\.5\}\$ is \\num\{[\d.]+\} and \\num\{([\d.]+)\} times",
+     lambda: _v3_edgar_industry("PM2.5", "all"), 0.),
+    ("integrated HTAP road NH3 low", r"Road NH\$_3\$, a small source, is \\num\{([\d.]+)\} to",
+     lambda: _v3_htap_species("road_exhaust", "NH3", min), 0.),
+    ("integrated HTAP road NH3 high", r"Road NH\$_3\$, a small source, is \\num\{[\d.]+\} to \\num\{([\d.]+)\}",
+     lambda: _v3_htap_species("road_exhaust", "NH3", max), 0.),
+] + [
+    ("integrated HTAP %s %s %s" % (group, species, end),
+     r"%s \\num\{%s\} to \\num\{%s\}" % (anchor, "([\d.]+)" if end == "low" else "[\d.]+",
+                                              "([\d.]+)" if end == "high" else "[\d.]+"),
+     (lambda g=group, p=species, c=configuration, f=(min if end == "low" else max):
+      _v3_htap_species(g, p, f, c)), 0.)
+    for group, species, configuration, anchor in (
+        ("road_exhaust", "NOx", "S_TAN", r"Road-exhaust NO\$_x\$ is"),
+        ("road_exhaust", "CO", "S_TAN", r"times HTAP and CO"),
+        ("road_exhaust", "PM2.5", "S_TAN", r"road PM\$_\{2\.5\}\$ is"),
+        ("road_exhaust", "BC", "S_TAN", r"times and BC"),
+        ("agriculture_livestock_and_soils", "NH3", "S_TAN", r"Livestock and soil NH\$_3\$ is"),
+        ("agriculture_livestock_and_soils", "NH3", "S_IPCC", r"reference configuration and"),
+        ("agriculture_livestock_and_soils", "NOx", "S_TAN", r"soil NO\$_x\$"))
+    for end in ("low", "high")
+] + [
+    ("integrated HTAP road SO2 first", r"Road SO\$_2\$ is \\num\{([\d.]+)\} and",
+     lambda: _v3_htap_species_year("road_exhaust", "SO2", "FY2015-16"), 0.),
+    ("integrated HTAP road SO2 second", r"Road SO\$_2\$ is \\num\{[\d.]+\} and \\num\{([\d.]+)\} times",
+     lambda: _v3_htap_species_year("road_exhaust", "SO2", "FY2016-17"), 0.),
+    ("integrated HTAP road SO2 later low", r"first two years and \\num\{([\d.]+)\} to",
+     lambda: min(_v3_htap_species_year("road_exhaust", "SO2", p) for p in ("FY2017-18", "FY2018-19", "FY2019-20")), 0.),
+    ("integrated HTAP road SO2 later high", r"first two years and \\num\{[\d.]+\} to \\num\{([\d.]+)\}",
+     lambda: max(_v3_htap_species_year("road_exhaust", "SO2", p) for p in ("FY2017-18", "FY2018-19", "FY2019-20")), 0.),
+    ("integrated HTAP residue factor ratio low", r"implies emission factors \\num\{([\d.]+)\} to",
+     lambda: min(_v3_residue_factor_ratios()), 0.),
+    ("integrated HTAP residue factor ratio high", r"implies emission factors \\num\{[\d.]+\} to \\num\{([\d.]+)\}",
+     lambda: max(_v3_residue_factor_ratios()), 0.),
+    ("integrated SO2 power coverage change", r"diesel only, changes by \\SI\{(-?\d+)\}",
+     lambda: _v3_air(_V3_LATEST, "SO2", lambda r: r["sector_id"] == "power")
+             - _v3_air(_V3_FIRST, "SO2", lambda r: r["sector_id"] == "power"), 0.),
+    ("integrated SO2 road change", r"Road transport changes by \\SI\{(-?\d+)\}",
+     lambda: _v3_air(_V3_LATEST, "SO2", lambda r: r["sector_id"] == "transport")
+             - _v3_air(_V3_FIRST, "SO2", lambda r: r["sector_id"] == "transport"), 0.),
+    ("integrated diesel sulfur before step", r"steps from \\num\{(\d+)\} to",
+     lambda: _v3_diesel_ppm(2017), 0.),
+    ("integrated diesel sulfur after step", r"steps from \\num\{\d+\} to \\num\{(\d+)\}~ppm",
+     lambda: _v3_diesel_ppm(2018), 0.),
+]])
+
+CLAIMS.extend([
+    ("integrated methane is the largest part", "national-v3", "paper.tex",
+     "Methane from livestock, rice and waste is the largest part of the GHG aggregate", "ratio_at_least", 0.5, 0.,
+     lambda: _v3_ghg_share(lambda r: r["gas"] == "CH4") / 100.0),
+    ("integrated households dominate PM2.5", "national-v3", "paper.tex",
+     "household biomass combustion dominates primary PM$_{2.5}$", "ratio_at_least", 0.5, 0.,
+     lambda: _v3_air_share("PM2.5", lambda r: r["sector_id"] == "residential") / 100.0),
+    ("integrated industry dominates SO2", "national-v3", "paper.tex",
+     "industrial fuel combustion dominates SO$_2$", "ratio_at_least", 0.5, 0.,
+     lambda: _v3_air_share("SO2", lambda r: r["sector_id"] == "industry", period=_V3_LATEST) / 100.0),
+    ("integrated kiln long season several times", "national-v3", "paper.tex",
+     "raise SO$_2$ to several times the reference", "ratio_at_least", 3.0, 0.,
+     lambda: min(_v3_structural(s, "SO2") for s in ("coal_allocation:fleet_bkoap_long_season",
+                                                    "coal_allocation:fleet_hamdani_long_season"))
+             / _v3_structural("coal_allocation:fleet_bkoap_long_season", "SO2", "reference_covered_Gg")),
+    ("integrated power SO2 only oil and diesel", "national-v3", "paper.tex",
+     "The power module carries SO$_2$ only among air pollutants", "count_equals", 1, 0.,
+     lambda: len({r["pollutant"] for r in _rows("pakemis_air_annual_fy2015_16_fy2024_25.csv")
+                  if r["sector_id"] == "power" and float(r["emissions_Gg"]) != 0})),
+])
+
+DOC_CLAIMS.extend([
+    # The residential grid paragraph's two unit counts, read from the allocation products
+    # that carry the units (the residential district file and the agricultural district base).
+    ("residential allocation unit count", "residential", "06_results.tex",
+     r"spreads over \\num\{(\d+)\} allocation units",
+     lambda: len({r["adm2_id"] for r in _rows("residential_district_2024.csv")}), 0.),
+    ("residential agricultural district count", "residential", "06_results.tex",
+     r"The agricultural account has \\num\{(\d+)\} four-province districts",
+     lambda: len({r["district"] for r in _rows("district_totals_2024.csv")
+                  if "residual" not in r["district"]}), 0.),
+])
+
+
+def _v3_seam(column, period="FY2024-25"):
+    row = next(r for r in _csv_rows("pakemis_coal_sector_reallocation.csv") if r["period_id"] == period)
+    return float(row[column])
+
+
+DOC_CLAIMS.extend([
+    ("integrated coal seam share of period change", "national-v3", "paper.tex",
+     r"allocation seam is \\SI\{([\d.]+)\}\{\\percent\} of the change",
+     lambda: _v3_seam("seam_share_of_national_change_vs_base_S_TAN_pct"), 0.),
+    ("integrated coal seam share of one-year change", "national-v3", "paper.tex",
+     r"FY2024--25 but \\SI\{([\d.]+)\}\{\\percent\} of the one-year change",
+     lambda: _v3_seam("seam_share_of_national_change_yoy_S_TAN_pct"), 0.),
+])

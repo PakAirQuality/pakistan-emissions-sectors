@@ -211,7 +211,7 @@ class TestBenchmarkCoverage(unittest.TestCase):
         by_cat = {r["engine_category"]: r for r in self.rows}
         self.assertIn("1A2 (all estimated)", by_cat)
         row = by_cat["1A2 (all estimated)"]
-        self.assertIn("Industrial Combustion", row["scope_detail"])
+        self.assertIn("industrial combustion", row["scope_detail"].lower())
         self.assertIn("PARTIAL", row["scope_detail"].upper())
         self.assertIn("COVERAGE", row["note"].upper())
         self.assertNotIn("NOT ESTIMATED HERE",

@@ -14,7 +14,7 @@ Carbon stock change in the land sector (IPCC 3.B), reported separately from agri
 
 ## AFOLU total
 
-Agriculture **223.5** + LULUCF **-4.0** = **AFOLU net 219.4 Mt CO2e**.
+Agriculture **223.0** + LULUCF **-4.0** = **AFOLU net 219.0 Mt CO2e**.
 
 ## Land-sector narrative (FAOSTAT)
 

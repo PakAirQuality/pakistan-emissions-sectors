@@ -65,6 +65,20 @@ class AssetCatalog(unittest.TestCase):
         self.assertFalse(external["downloadable"])
         self.assertFalse(external["packaged"])
 
+    def test_an_undeposited_internal_file_is_described_and_not_hashed(self):
+        """rc68: a digest recorded because a file sat on the maintainer's disk made the
+        contract differ in a clean rebuild; an undeposited data file carries no digest."""
+        held = self.root / "data/shared/gis/cod_ab/boundaries.geojson.zip"
+        held.parent.mkdir(parents=True)
+        held.write_bytes(b"zip")
+        self.rows.append({"asset_id": "gis.cod_ab", "legacy_path": "data/gis/cod_ab.zip",
+                          "path": "data/shared/gis/cod_ab/boundaries.geojson.zip",
+                          "owner_sector": "shared", "purpose": "gis", "publication": "internal",
+                          "license": "not-established"})
+        entry = next(a for a in self.export()["assets"] if a["asset_id"] == "gis.cod_ab")
+        self.assertNotIn("sha256", entry)
+        self.assertNotIn("bytes", entry)
+
     def test_altered_canonical_bytes_are_refused(self):
         (self.root / self.table["path"]).write_text("Fuel,Record ID,Source row\nCoal,kept-id,1\n")
         with self.assertRaisesRegex(ValueError, "differs from its catalog"):

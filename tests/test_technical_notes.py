@@ -21,10 +21,7 @@ BANNER = re.compile(r"\\TNBanner\{(TN\d\d)\}")
 
 # Statements of a national-exclusive value in a technical note's own prose that predate the
 # exclusivity rule. Ratchet: this list may only shrink. Each is a next-pass prose item.
-KNOWN_STATEMENTS = {
-    ("agriculture", "national_total_L"): "sections/00_abstract.tex states the sector share against the "
-                                        "national total (49.4% of 452.35 Mt); rewrite as a share alone",
-}
+KNOWN_STATEMENTS = {}
 
 
 def _paper_text(sector):

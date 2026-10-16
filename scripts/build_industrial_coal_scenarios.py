@@ -63,7 +63,7 @@ OUT = asset_path(OUTPUTS, "pakemis_industrial_coal_scenarios.csv")
 
 START, END = "FY2015-16", "FY2023-24"
 COAL_STREAMS = ("Brick-kiln coal", "Cement-sector coal")
-CONFIG = "REF_2023_24"
+CONFIG = "S_TAN"
 
 # The one pair of numbers this product takes from outside. Paywalled; see the module docstring.
 EXT_THERMAL_GJ_PER_T_CLINKER = 3.5322

@@ -70,7 +70,8 @@ from pkinv.paths import OUTPUTS
 from pkinv.report import unallocated_controls
 from pkinv.core.io import seq_sum, write_table
 
-SERIES_YEARS = tuple(range(2016, 2025))       # fiscal-END keys: 2016 = FY2015-16
+from pkinv.core.reporting_window import CORE_FY_ENDS
+SERIES_YEARS = CORE_FY_ENDS
 
 # row_kind is typed for the same reason it is in national_all_sectors.csv: nine
 # COVERED_TOTAL rows sit in the same `sector` column as the ten sector rows they sum, and
@@ -127,9 +128,10 @@ HELD = {
     # zero in every year for the same reason it is zero at the reference: no public control.
     "ippu": "clinker fraction, clinker calcination factor and the zero stock-change "
             "assumption at reference vintage (activity and trade move per year)",
-    "agriculture": "Tier-2 rates, manure-management shares, dung fractions (fiscal crop and "
-                   "nitrogen activity moves per year; livestock stocks remain the FAOSTAT "
-                   "calendar projection; parameters held)",
+    "agriculture": "Tier-2 rates, manure-management shares and dung fractions held; "
+                   "census-anchored livestock reconstruction uses the adopted 2024 stock "
+                   "anchors and species-specific relative proxy changes, with declared "
+                   "post-census extrapolation; fiscal crop and nitrogen activities vary",
 }
 
 # Why a sector-year is absent, named per the no-silent-nulls discipline.
@@ -236,6 +238,7 @@ def _sum(pairs):
 
 
 def build():
+    from pkinv.sectors.agriculture import fiscal_activity as agri_activity
     rows = []
     splice = []
     reference = {}          # sector -> (AR5, AR6) at FY2023-24, from the engines
@@ -291,11 +294,10 @@ def build():
             if name == "agriculture" and fy_end != 2024:
                 ar5, ar6 = _sum(list(agri_fiscal[fy_end].values()))
                 basis, held = "reconstructed-fiscal", HELD["agriculture"]
-                note = ("Pakistani fiscal activity: Economic Survey crop and nitrogen "
-                        "tables; livestock stocks remain the FAOSTAT projection, which has "
-                        "no fiscal enumeration to move to. Per-category bases in "
+                note = ("Fiscal crop/nitrogen activity: Economic Survey and NFDC; "
+                        + agri_activity.livestock_provenance(fy_end) + ". Per-category bases in "
                         "pakemis_agriculture_fiscal_series.csv; the change from the former "
-                        "FAOSTAT-calendar history is priced in "
+                        "FAOSTAT-level/calendar history is reported in "
                         "pakemis_agriculture_basis_change.csv")
             elif name == "residential":
                 comps = res_ts.components_for_year(res_data, fy_end)
@@ -374,8 +376,9 @@ def main():
     write_table(splice_path, list(splice[0]), splice)
 
     print("national series -> %s" % path)
-    print("  FY2015-16..FY2023-24, %d sector-years + %d covered totals"
-          % (sum(1 for r in rows if r["sector"] != "COVERED_TOTAL"), len(coverage)))
+    print("  %s..%s, %d sector-years + %d covered totals"
+          % (coverage[0]["period_label"], coverage[-1]["period_label"],
+             sum(1 for r in rows if r["sector"] != "COVERED_TOTAL"), len(coverage)))
     for c in coverage:
         print("  %s  %6.2f Mt  %d sectors  %5.1f%% of reference scope"
               % (c["period_label"], c["covered_Mt_AR5"], c["sectors_covered"],

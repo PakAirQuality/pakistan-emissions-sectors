@@ -20,6 +20,9 @@ stage,step,section,subject,item,kind,value,unit,evidence_file,note
 1_source,10,"the process activity, as the producers and PBS report it",2.D.1,Lubricating oil,screen,130513,000 L,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 48"
 1_source,10,"the process activity, as the producers and PBS report it",2.C.1,Pig iron,screen,0,t,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 84"
 1_source,10,"the process activity, as the producers and PBS report it",2.B.7,Soda ash,screen,785283,t,outputs/ippu_activity_controls_2024.csv,"PBS QIM, June 2024, item 58"
+1_source,10,"the process activity, as the producers and PBS report it",2.A.1,Cement,estimate,37779.0,kt,outputs/ippu_activity_controls_2024.csv,data/raw/pbs/qim/extension_2026/Table-3-2024-25-6.xlsx item83
+1_source,10,"the process activity, as the producers and PBS report it",2.C.1,Billets and ingots,control,3840000.0,t,outputs/ippu_activity_controls_2024.csv,data/raw/pbs/qim/extension_2026/Table-3-2024-25-6.xlsx item85
+1_source,10,"the process activity, as the producers and PBS report it",2.B.7,Soda ash,control,699450.0,t,outputs/ippu_activity_controls_2024.csv,data/raw/pbs/qim/extension_2026/Table-3-2024-25-6.xlsx item58
 3_correction,20,"the cement material balance: clinker in, clinker out",clinker,clinker in cement,1,29674.5,kt,outputs/ippu_cement_material_balance_2024.csv,pbs_qim_fy2023_24
 3_correction,20,"the cement material balance: clinker in, clinker out",clinker,imports for consumption,-1,26.131,kt,outputs/ippu_cement_material_balance_2024.csv,"UN Comtrade public API; reporter 586, partner World, flow M; UN Comtrade public API; reporter 586, partner World, flow X"
 3_correction,20,"the cement material balance: clinker in, clinker out",clinker,exports,1,3792.074,kt,outputs/ippu_cement_material_balance_2024.csv,"UN Comtrade public API; reporter 586, partner World, flow M; UN Comtrade public API; reporter 586, partner World, flow X"

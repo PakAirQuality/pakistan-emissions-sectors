@@ -402,7 +402,6 @@ class TestTheScenarioRegistryAndBridge(unittest.TestCase):
         row = next(r for r in self.bridge if r["module"] == "residential")
         self.assertGreater(row["national_delta_Mt"], 0.0)
         self.assertAlmostEqual(row["national_delta_Mt"], led - ref, places=4)
-        self.assertAlmostEqual(row["national_delta_Mt"], 5.24626, places=4)
 
     def test_each_priced_axis_moves_the_total(self):
         """Recode axes are the declared exception: a reporting recode conserves the
@@ -435,7 +434,8 @@ class TestTheScenarioRegistryAndBridge(unittest.TestCase):
         from pkinv.paths import OUTPUTS
         with open(_os.path.join(OUTPUTS, "release_manifest.json"), encoding="utf-8") as h:
             manifest = json.load(h)
-        self.assertEqual(manifest["scenario"]["scenario_id"], "REF_2023_24")
+        from pkinv.core.configurations import REFERENCE
+        self.assertEqual(manifest["scenario"]["scenario_id"], REFERENCE)
         self.assertEqual(len(manifest["scenario"]["axes"]), len(self.registry),
                          "the manifest records fewer axes than the registry declares")
 

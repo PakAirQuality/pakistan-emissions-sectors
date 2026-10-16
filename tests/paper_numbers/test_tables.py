@@ -23,6 +23,7 @@ from paper_numbers._common import (
 from paper_numbers.tables import (
     LABELLED_TABLES,
     TABLES,
+    LEGACY_LABELLED_TABLES,
     _constrained_round,
     _expand_generated_inputs,
     _label_text,
@@ -111,19 +112,19 @@ class TestCategoryGasTableSelfSums(unittest.TestCase):
         slack = sum(0.5 * 10 ** (-dp) for dp in dps) + 1e-9
         return abs(sum(values[:-1]) - values[-1]) <= slack
 
-    def test_every_printed_row_self_sums(self):
-        printed = _tex_table("national", "06_results.tex", "tab:categorygas")
-        self.assertTrue(printed, "tab:categorygas not found")
-        self.assertGreater(len(printed), 15, "the table shrank; check the parse")
-        problems = []
-        for i, cells in enumerate(printed):
-            if len(cells) < 2:
-                continue
-            if not self._row_closes_at_display_precision(cells):
-                problems.append("row %d: %s does not sum to %s"
-                                % (i, " + ".join(cells[:-1]), cells[-1]))
-        self.assertFalse(problems, "printed rows do not self-sum at their own "
-                                   "precision:\n  " + "\n  ".join(problems))
+    def test_current_printed_category_columns_close_at_display_precision(self):
+        from pkinv.assets import asset_path
+        printed = _tex_table("agriculture", "06_results.tex", "tab:national")
+        self.assertTrue(printed)
+        self.assertEqual(len(printed), 6)
+        atoms = read_rows(asset_path(paths.OUTPUTS, "pakemis_ghg_configuration_atoms.csv"))
+        for column, period in enumerate(("FY2023-24", "FY2024-25")):
+            total = sum(float(r["co2e_Mt_AR5"]) for r in atoms if r["period_id"] == period
+                        and r["configuration_id"] == "S_TAN" and r["sector_id"] == "agriculture"
+                        and r["co2e_Mt_AR5"])
+            cells = [row[column] for row in printed]
+            slack = sum(.5 * 10 ** (-(len(x.split(".")[1]) if "." in x else 0)) for x in cells)
+            self.assertAlmostEqual(sum(map(float, cells)), total, delta=slack + 1e-8)
 
     def test_the_rc2_rows_fail_and_the_mechanism_reproduces_the_repair(self):
         """The stored defect must trip the check, and _constrained_round must produce the
@@ -154,7 +155,9 @@ class TestLabelsAndValuesMatchTheEngine(unittest.TestCase):
         # left (its identity column is a number), so the ratchet sat at 74. v1.0.0 Wave 4
         # retired two national entries (tab:categorygas, tab:completeness are stored queries
         # held by test_paper_artefacts.py), so it sits at 73.
-        self.assertGreaterEqual(len(LABELLED_TABLES), 73, "the labelled registry shrank")
+        self.assertGreaterEqual(len(LABELLED_TABLES) + len(LEGACY_LABELLED_TABLES), 73,
+                                "table dispositions lost former audit entries")
+        self.assertGreaterEqual(len(LABELLED_TABLES), 35, "active source-backed table checks vanished")
         problems = []
         for doc, section, label, expected_fn in LABELLED_TABLES:
             printed = _tex_table_labelled(doc, section, label)
@@ -231,20 +234,15 @@ class TestPrintedLabelsMatchTheEngine(unittest.TestCase):
             out.append((code, name))
         return out
 
-    def test_the_category_table_prints_the_declared_IPCC_names(self):
-        from pkinv.report import category_ledger
-        SHORT = {"Fugitive emissions, oil and natural gas":
-                 "Fugitive emissions from oil and natural gas",
-                 "Domestic wastewater": "Domestic wastewater treatment and discharge",
-                 "Agriculture/forestry/fishing (off-road)":
-                 "Agriculture/forestry/fishing/fish farms",
-                 "Field burning of residues": "Field burning of agricultural residues"}
-        printed = self._label_column("national", "06_results.tex", "tab:categorygas")
-        self.assertGreaterEqual(len(printed), 18)
-        for code, name in printed:
-            declared = category_ledger.IPCC_CATEGORY_NAMES[code]
-            self.assertEqual(SHORT.get(name, name), declared,
-                             "%s is printed as %r and declared as %r" % (code, name, declared))
+    def test_current_agriculture_table_names_its_native_reporting_categories(self):
+        from pkinv.assets import asset_path
+        text = open(_doc_path("agriculture", "10_appendix.tex")).read()
+        block = next(m.group() for m in re.finditer(r"\\begin\{table\}.*?\\end\{table\}", text, re.S)
+                     if "\\label{tab:crt}" in m.group())
+        declared = set(re.findall(r"3\.[AC]\.\d(?:\.[a-z])?", block))
+        atoms = read_rows(asset_path(paths.OUTPUTS, "pakemis_ghg_configuration_atoms.csv"))
+        codes = {r["ipcc_code"] for r in atoms if r["sector_id"] == "agriculture" and r["gas"]}
+        self.assertEqual(declared, codes)
 
     def test_the_key_category_table_prints_the_declared_IPCC_names(self):
         from pkinv.report import category_ledger
@@ -256,8 +254,9 @@ class TestPrintedLabelsMatchTheEngine(unittest.TestCase):
                  "Manufacturing industries and construction",
                  "Field burning of residues": "Field burning of agricultural residues",
                  "Agriculture/forestry/fishing": "Agriculture/forestry/fishing/fish farms"}
-        printed = self._label_column("national", "08_key_categories.tex", "tab:keycat",
-                                     code_col=1, name_col=0)
+        from pkinv.assets import asset_path
+        product = read_rows(asset_path(paths.OUTPUTS, "national_key_categories.csv"))
+        printed = [(r["ipcc_code"], r["category"]) for r in product if r["ipcc_code"]]
         self.assertGreaterEqual(len(printed), 18)
         for code, name in printed:
             declared = category_ledger.IPCC_CATEGORY_NAMES[code]

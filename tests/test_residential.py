@@ -629,7 +629,8 @@ class TestNewStreams(unittest.TestCase):
         from pkinv.sectors.residential import air_pollutants
         rows = air_pollutants.compute(self.data)
         self.assertFalse([r for r in rows if r["subitem"].startswith("Generators")])
-        self.assertIn("Generators carry no air rows", air_pollutants.__doc__)
+        self.assertIn("engine/genset factors", air_pollutants.__doc__)
+        self.assertIn("remain omissions", air_pollutants.__doc__)
 
     def test_coal_air_rows_carry_the_solid_bc_fraction(self):
         from pkinv.sectors.residential import air_pollutants
@@ -839,8 +840,9 @@ class TestAirPollutants(unittest.TestCase):
     def test_the_fossil_coverage_is_declared(self):
         """The fossil layer exists now; the docstring must say so and state its basis
         difference (energy, not mass) rather than leave the reader to infer it."""
-        self.assertIn("FOSSIL HOUSEHOLD FUELS ARE COVERED", self.mod.__doc__)
-        self.assertIn("g/GJ", self.mod.__doc__)
+        for fuel in ("Natural gas", "LPG", "kerosene", "coal"):
+            self.assertIn(fuel, self.mod.__doc__)
+        self.assertIn("on fuel energy", self.mod.__doc__)
 
 
 class TestFossilAirLayer(unittest.TestCase):
@@ -937,7 +939,10 @@ class TestConfigurations(unittest.TestCase):
         self.assertEqual(got, timeseries.dung_survey_air_dry_kg(self.data.year))
         self.assertLess(got, q25)
         self.assertGreater(got, q19)
-        self.assertAlmostEqual(got / 1e9, 10.9334, places=3)
+        weight = (self.data.year - 2019) / (2025 - 2019)
+        expected = ((q19 / timeseries.households(2019)) * (1 - weight)
+                    + (q25 / timeseries.households(2025)) * weight) * timeseries.households(self.data.year)
+        self.assertAlmostEqual(got, expected, delta=1.0)
         self.assertAlmostEqual(timeseries.dung_survey_air_dry_kg(2025), q25, delta=1.0)
         self.assertAlmostEqual(timeseries.dung_survey_air_dry_kg(2019), q19, delta=1.0)
         ts = combustion.dung_ts_kg(self.data, basis="survey")
@@ -1057,8 +1062,8 @@ class TestMassBasisTable(unittest.TestCase):
             ("9.62 Mt", combustion.dung_ts_kg(self.data, basis="survey") / 1e9),
             ("23.13 Mt", combustion.firewood_air_dry_kg(self.data) / 1e9),
             ("19.66 Mt", combustion.firewood_oven_dry_kg(self.data) / 1e9),
-            ("10.53 Mt", combustion.residue_air_dry_kg(self.data) / 1e9),
-            ("9.27 Mt", combustion.residue_dry_kg(self.data) / 1e9),
+            ("10.54 Mt", combustion.residue_air_dry_kg(self.data) / 1e9),
+            ("9.28 Mt", combustion.residue_dry_kg(self.data) / 1e9),
         ]
         for text, engine_val in checks:
             self.assertIn(text, self.tex, text)

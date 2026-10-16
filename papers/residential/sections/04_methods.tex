@@ -66,9 +66,9 @@ pollutant factors pair with the dry mass, and no conversion is applied twice.
 \subsection{The biomass memo convention, and what it does to the arithmetic}
 
 Biogenic \COtwo{} from dung and firewood is reported outside the national total:
-\SI{12683}{\giga\gram} from dung cake, \SI{40418}{\giga\gram} from firewood and
-\SI{12247}{\giga\gram} from crop residues and charcoal,
-\SI{65347}{\giga\gram} together (\SI{120805}{} under configuration~L). Their \CHfour{} and \NtwoO{}
+\SI{12682}{\giga\gram} from dung cake, \SI{40418}{\giga\gram} from firewood and
+\SI{12260}{\giga\gram} from crop residues and charcoal,
+\SI{65359}{\giga\gram} together (\SI{120817}{} under configuration~L). Their \CHfour{} and \NtwoO{}
 are counted in full.
 
 The consequence is worth following through, because it produces a result that looks
@@ -155,26 +155,7 @@ All pollutant masses are gross emission at the appliance (Section~\ref{sec:air})
 
 \subsection{Uncertainty}
 
-Parametric uncertainty is IPCC Approach~1 with the activity term of each stream treated
-as perfectly shared across its gas rows (grouped; the independent treatment is
-published alongside), and a Monte Carlo counterpart of \num{10000} mean-preserving
-lognormal draws per case ($\sigma = \ln(1 + u/100)/1.96$ from each row's 95~percent
-half-width; the dung chain shares one correlation group; seed 1404, disjoint from the
-national inventory's published stream). The dung activity term carries
-\SI{35}{\percent} under the reference, the survey width firewood carries; the ledger
-chain's \SI{50}{\percent} applies to configuration~L only. Structural choices are never
-sampled: the two
-dung configurations, the construction of the survey dung series (the 2018--19
-per-household rate held to the reference year, \SI{23.85}{\mega\tonne} for the sector;
-the 2024--25 round taken as measured, \SI{24.33}{}), the two firewood anchors, the ends
-of the residue price bracket and the
-superseded bases are named cases
-with conditional intervals and no probability attached. The residential-to-road
-particulate ratio is sampled with numerator and denominator rows drawn independently,
-per configuration, and the structural span across configurations is published beside
-the parametric intervals. The per-input variance decomposition
-(\texttt{residential\_variance\_decomposition\_2024.csv}) attributes the grouped band:
-firewood factor terms alone carry \SI{67}{\percent} of the sector variance.
+The integrated conditional ensemble samples shared household quantities across native gases and pollutants and retains named source-factor identities. Ledger-L dung follows the same sampled herd as manure accounting; diversion, volatile-solid rates and destination remain conditional assumptions. Structural dung, wood, stove/fuel and survey-construction cases are not sampled into a combined interval and have no assigned probabilities. Paired annual realisations produce trend intervals, with persistent and annually independent activity errors reported separately. Technology endpoints are sensitivities rather than probabilistic residential/road ratio limits. The older sector-local aggregate interval remains a diagnostic and does not replace the current joint parameter product.
 
 \subsection{Spatial hierarchy}
 
@@ -192,7 +173,7 @@ until the Census~2023 cooking-fuel tables are processed; the gap register carrie
 
 \subsection{Time series and monthly profiles}
 
-The FY2015--16 to FY2023--24 series moves gas on a transcribed nine-edition OGRA
+The FY2015--16 to FY2024--25 series moves gas on a transcribed OGRA
 archive \citep{ograarchive} (one interpolated year, labelled), dung and firewood on
 per-household quantities interpolated
 between the two survey rounds on census-shaped household counts (configuration~L moves

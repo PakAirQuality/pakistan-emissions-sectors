@@ -16,6 +16,8 @@ import unittest
 from pkinv.paths import OUTPUTS
 from pkinv.report import coverage_matrix as cm
 from pkinv.core.io import read_rows
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX, CORE_FY_ENDS, REFERENCE_FY_START
 
 
 def _rows(name):
@@ -46,7 +48,7 @@ class TestTheUniverseIsDeclared(unittest.TestCase):
     def test_the_denominator_exceeds_the_realized_set(self):
         """If the matrix only covered what the annual product built, it would be the
         circularity it exists to break: 45 realized cells cannot tell you 20 are missing."""
-        annual = _rows("pakemis_annual_fy2015_16_fy2023_24.csv")
+        annual = _rows("pakemis_annual_" + CORE_SUFFIX + ".csv")
         realized = {(r["category"], r["gas"]) for r in annual
                     if r["grain"] == "category_gas"}
         declared = {(r["category"], r["gas"]) for r in self.base}
@@ -121,16 +123,35 @@ class TestNoCellIsSilent(unittest.TestCase):
 
 
 class TestTheConfigurationAxisIsHonest(unittest.TestCase):
-    """The structural envelope is a reference-year object, and the matrix says so."""
+    """Four complete configurations differ from reference-only source cases."""
 
     @classmethod
     def setUpClass(cls):
         cls.rows = _rows("pakemis_coverage_matrix.csv")
-        cls.reference_year = max(int(r["fiscal_end_year"]) for r in cls.rows)
+        cls.reference_year = REFERENCE_FY_START + 1
 
-    def test_alternative_configurations_are_priced_only_at_the_reference_year(self):
+    def test_integrated_configurations_have_all_years_and_actual_annual_support(self):
+        integrated = [r for r in self.rows if r["configuration_id"] in conf.ALL]
+        annual = _rows("pakemis_annual_" + CORE_SUFFIX + ".csv")
+        annual_support = {(r["configuration_id"], r["sector"], int(r["fiscal_end_year"]), r["gas"])
+                          for r in annual if r["grain"] == "category_gas" and r["co2e_Mt_AR5"]}
+        self.assertEqual({(r["configuration_id"], int(r["fiscal_end_year"])) for r in integrated},
+                         {(cfg, year) for cfg in conf.ALL for year in CORE_FY_ENDS})
+        reference = {(r["fiscal_end_year"], r["ipcc_code"], r["category"], r["gas"], r["sector"]): r
+                     for r in integrated if r["configuration_id"] == conf.REFERENCE}
+        for row in integrated:
+            key = (row["fiscal_end_year"], row["ipcc_code"], row["category"], row["gas"], row["sector"])
+            self.assertIn(key, reference)
+            for field in ("state", "state_basis", "activity_basis", "gap_id"):
+                self.assertEqual(row[field], reference[key][field], (key, field))
+            if row["state_basis"] == "annual-product-row":
+                self.assertIn((row["configuration_id"], row["sector"], int(row["fiscal_end_year"]), row["gas"]),
+                              annual_support)
+                self.assertIn("annual product row", row["evidence"])
+
+    def test_other_structural_cases_are_priced_only_at_the_actual_reference_year(self):
         alternatives = [r for r in self.rows
-                        if r["configuration_id"] != cm.REFERENCE_CONFIGURATION]
+                        if r["configuration_id"] not in conf.ALL]
         self.assertTrue(alternatives)
         for row in alternatives:
             priced = int(row["fiscal_end_year"]) == self.reference_year

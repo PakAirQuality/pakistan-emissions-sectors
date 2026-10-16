@@ -1,91 +1,41 @@
-\begin{thebibliography}{11}
-\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\begin{thebibliography}{4}
+\providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
-\providecommand{\href}[2]{#2}
-\providecommand{\path}[1]{#1}
-\providecommand{\DOIprefix}{doi:}
-\providecommand{\ArXivprefix}{arXiv:}
-\providecommand{\URLprefix}{URL: }
-\providecommand{\Pubmedprefix}{pmid:}
-\providecommand{\doi}[1]{\href{http://dx.doi.org/#1}{\path{#1}}}
-\providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
-\providecommand{\bibinfo}[2]{#2}
-\ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
-%Type = Techreport
-\bibitem[{Ahmad(2026a)}]{ahmad2026ag}
-\bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}a.
-\newblock \bibinfo{title}{{PakEmis} Technical Documentation: Agriculture
-  Module}.
-\newblock \bibinfo{type}{Technical Report}. Pakistan Air Quality Initiative.
-\newblock \bibinfo{note}{Versioned technical documentation of release
-  1.0.0rc67; DOI to be assigned}.
-%Type = Techreport
-\bibitem[{Ahmad(2026b)}]{ahmad2026nowcast}
-\bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}b.
-\newblock \bibinfo{title}{Satellite-Assisted Nowcasting of Agricultural
-  Greenhouse-Gas Emissions between Census Years}.
-\newblock \bibinfo{type}{Technical Report}. Pakistan Air Quality Initiative.
-\newblock \bibinfo{note}{Research note accompanying release 1.0.0rc67; DOI to
-  be assigned}.
-%Type = Misc
-\bibitem[{{FAO}(2025)}]{faostat}
-\bibinfo{author}{{FAO}}, \bibinfo{year}{2025}.
-\newblock \bibinfo{title}{{FAOSTAT}: Emissions totals, crops and livestock,
-  fertilizers by nutrient, and forestry production and trade (wood fuel)}.
-\newblock \bibinfo{howpublished}{Food and Agriculture Organization, Rome}.
-\newblock \bibinfo{note}{\url{https://www.fao.org/faostat/}}.
-%Type = Techreport
-\bibitem[{{IPCC}(2006)}]{ipcc2006}
-\bibinfo{author}{{IPCC}}, \bibinfo{year}{2006}.
-\newblock \bibinfo{title}{2006 {IPCC} Guidelines for National Greenhouse Gas
-  Inventories, Volume 4: Agriculture, Forestry and Other Land Use}.
-\newblock \bibinfo{type}{Technical Report}. Institute for Global Environmental
-  Strategies, Japan.
-%Type = Techreport
-\bibitem[{{IPCC}(2019)}]{ipcc2019}
-\bibinfo{author}{{IPCC}}, \bibinfo{year}{2019}.
-\newblock \bibinfo{title}{2019 Refinement to the 2006 {IPCC} Guidelines for
-  National Greenhouse Gas Inventories}.
-\newblock \bibinfo{type}{Technical Report}. IPCC, Switzerland.
-%Type = Techreport
-\bibitem[{{Ministry of Finance}(2024)}]{econsurvey2024ag}
-\bibinfo{author}{{Ministry of Finance}}, \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Pakistan Economic Survey 2023--24, Chapter 2:
-  Agriculture}.
-\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
-%Type = Techreport
-\bibitem[{{Ministry of Finance}(2025)}]{econsurvey}
-\bibinfo{author}{{Ministry of Finance}}, \bibinfo{year}{2025}.
-\newblock \bibinfo{title}{Pakistan Economic Survey 2024--25, Chapter 2:
-  Agriculture}.
-\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
-%Type = Techreport
-\bibitem[{{Ministry of National Food Security and Research}(2023)}]{mnfsrcrops}
-\bibinfo{author}{{Ministry of National Food Security and Research}},
-  \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{Crops Area and Production (District-wise) 2022--23}.
-\newblock \bibinfo{type}{Technical Report}. Government of Pakistan, Economic
-  Wing. \bibinfo{address}{Islamabad}.
-%Type = Techreport
-\bibitem[{{National Fertilizer Development Centre}(2024)}]{nfdc2024}
-\bibinfo{author}{{National Fertilizer Development Centre}},
-  \bibinfo{year}{2024}.
-\newblock \bibinfo{title}{Fertilizer Review 2023--24}.
-\newblock \bibinfo{type}{Technical Report} \bibinfo{number}{NFDC Publication
-  No. 2/2024}. Ministry of National Food Security and Research, Government of
-  Pakistan. \bibinfo{address}{Islamabad}.
-%Type = Techreport
-\bibitem[{{National Fertilizer Development Centre}(2025)}]{nfdc2025}
-\bibinfo{author}{{National Fertilizer Development Centre}},
-  \bibinfo{year}{2025}.
-\newblock \bibinfo{title}{Fertilizer Review 2024--25}.
-\newblock \bibinfo{type}{Technical Report}. Planning Commission, Government of
-  Pakistan. \bibinfo{address}{Islamabad}.
-%Type = Techreport
-\bibitem[{{Pakistan Bureau of Statistics}(2023)}]{pbscensus2023}
-\bibinfo{author}{{Pakistan Bureau of Statistics}}, \bibinfo{year}{2023}.
-\newblock \bibinfo{title}{7th Population and Housing Census 2023}.
-\newblock \bibinfo{type}{Technical Report}. Government of Pakistan.
-\newblock \URLprefix \url{https://www.pbs.gov.pk/digital-census}.
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[{EMEP/EEA}(2019)]{emep2019}
+{EMEP/EEA}.
+\newblock Emep/eea air pollutant emission inventory guidebook 2019 --- 3.f
+  field burning of agricultural wastes.
+\newblock Technical report, European Environment Agency, 2019.
+
+\bibitem[{IPCC}(2006)]{ipcc2006energy}
+{IPCC}.
+\newblock 2006 {IPCC} guidelines for national greenhouse gas inventories,
+  volume 2: Energy, chapter 3: Mobile combustion.
+\newblock Technical report, Institute for Global Environmental Strategies,
+  Japan, 2006.
+\newblock URL \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/vol2.html}.
+
+\bibitem[{IPCC}(2019)]{ipcc2019}
+{IPCC}.
+\newblock 2019 refinement to the 2006 {IPCC} guidelines for national greenhouse
+  gas inventories.
+\newblock Technical report, IPCC, Switzerland, 2019.
+
+\bibitem[{US Environmental Protection Agency}(1995)]{epaap42}
+{US Environmental Protection Agency}.
+\newblock {AP-42}: Compilation of air emissions factors, fifth edition,
+  volume~i, chapter~1: External combustion sources.
+\newblock Technical report, Office of Air Quality Planning and Standards,
+  Research Triangle Park, NC, 1995.
+\newblock URL
+  \url{https://www.epa.gov/air-emissions-factors-and-quantification/ap-42-compilation-air-emissions-factors}.
+\newblock Sections 1.1 bituminous and subbituminous coal, 1.3 fuel oil and 1.4
+  natural gas. Individual sections carry their own revision dates and are
+  revised independently of the edition; the sections used here should be
+  version-locked before final submission.
 
 \end{thebibliography}

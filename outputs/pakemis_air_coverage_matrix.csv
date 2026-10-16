@@ -1,9 +1,9 @@
 period_id,fiscal_end_year,sector_id,pollutant,state,state_basis,activity_basis,gap_id,note
 FY2015-16,2016,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2015-16,2016,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2015-16,2016,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2015-16,2016,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2015-16,2016,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2015-16,2016,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2015-16,2016,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2015-16,2016,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2015-16,2016,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2015-16,2016,aviation,BC,E,panel-atom,observed,,
@@ -35,11 +35,11 @@ FY2015-16,2016,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2015-16,2016,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2015-16,2016,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2015-16,2016,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2015-16,2016,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2015-16,2016,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2015-16,2016,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2015-16,2016,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2015-16,2016,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2015-16,2016,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2015-16,2016,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2015-16,2016,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2015-16,2016,power,SO2,E,panel-atom,observed_fiscal,,
 FY2015-16,2016,railways,BC,E,panel-atom,observed,,
 FY2015-16,2016,railways,CO,E,panel-atom,observed,,
@@ -71,9 +71,9 @@ FY2015-16,2016,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2015-16,2016,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2016-17,2017,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2016-17,2017,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2016-17,2017,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2016-17,2017,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2016-17,2017,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2016-17,2017,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2016-17,2017,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2016-17,2017,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2016-17,2017,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2016-17,2017,aviation,BC,E,panel-atom,observed,,
@@ -105,11 +105,11 @@ FY2016-17,2017,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2016-17,2017,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2016-17,2017,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2016-17,2017,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2016-17,2017,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2016-17,2017,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2016-17,2017,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2016-17,2017,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2016-17,2017,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2016-17,2017,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2016-17,2017,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2016-17,2017,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2016-17,2017,power,SO2,E,panel-atom,observed_fiscal,,
 FY2016-17,2017,railways,BC,E,panel-atom,observed,,
 FY2016-17,2017,railways,CO,E,panel-atom,observed,,
@@ -141,9 +141,9 @@ FY2016-17,2017,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2016-17,2017,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2017-18,2018,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2017-18,2018,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2017-18,2018,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2017-18,2018,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2017-18,2018,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2017-18,2018,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2017-18,2018,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2017-18,2018,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2017-18,2018,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2017-18,2018,aviation,BC,E,panel-atom,observed,,
@@ -175,11 +175,11 @@ FY2017-18,2018,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2017-18,2018,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2017-18,2018,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2017-18,2018,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2017-18,2018,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2017-18,2018,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2017-18,2018,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2017-18,2018,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2017-18,2018,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2017-18,2018,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2017-18,2018,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2017-18,2018,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2017-18,2018,power,SO2,E,panel-atom,observed_fiscal,,
 FY2017-18,2018,railways,BC,E,panel-atom,observed,,
 FY2017-18,2018,railways,CO,E,panel-atom,observed,,
@@ -211,9 +211,9 @@ FY2017-18,2018,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2017-18,2018,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2018-19,2019,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2018-19,2019,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2018-19,2019,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2018-19,2019,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2018-19,2019,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2018-19,2019,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2018-19,2019,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2018-19,2019,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2018-19,2019,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2018-19,2019,aviation,BC,E,panel-atom,observed,,
@@ -245,11 +245,11 @@ FY2018-19,2019,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2018-19,2019,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2018-19,2019,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2018-19,2019,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2018-19,2019,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2018-19,2019,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2018-19,2019,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2018-19,2019,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2018-19,2019,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2018-19,2019,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2018-19,2019,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2018-19,2019,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2018-19,2019,power,SO2,E,panel-atom,observed_fiscal,,
 FY2018-19,2019,railways,BC,E,panel-atom,observed,,
 FY2018-19,2019,railways,CO,E,panel-atom,observed,,
@@ -281,9 +281,9 @@ FY2018-19,2019,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2018-19,2019,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2019-20,2020,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2019-20,2020,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2019-20,2020,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2019-20,2020,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2019-20,2020,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2019-20,2020,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2019-20,2020,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2019-20,2020,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2019-20,2020,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2019-20,2020,aviation,BC,E,panel-atom,observed,,
@@ -315,11 +315,11 @@ FY2019-20,2020,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2019-20,2020,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2019-20,2020,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2019-20,2020,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2019-20,2020,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2019-20,2020,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2019-20,2020,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2019-20,2020,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2019-20,2020,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2019-20,2020,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2019-20,2020,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2019-20,2020,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2019-20,2020,power,SO2,E,panel-atom,observed_fiscal,,
 FY2019-20,2020,railways,BC,E,panel-atom,observed,,
 FY2019-20,2020,railways,CO,E,panel-atom,observed,,
@@ -351,9 +351,9 @@ FY2019-20,2020,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2019-20,2020,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2020-21,2021,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2020-21,2021,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2020-21,2021,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2020-21,2021,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2020-21,2021,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2020-21,2021,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2020-21,2021,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2020-21,2021,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2020-21,2021,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2020-21,2021,aviation,BC,E,panel-atom,observed,,
@@ -385,11 +385,11 @@ FY2020-21,2021,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2020-21,2021,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2020-21,2021,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2020-21,2021,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2020-21,2021,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2020-21,2021,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2020-21,2021,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2020-21,2021,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2020-21,2021,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2020-21,2021,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2020-21,2021,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2020-21,2021,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2020-21,2021,power,SO2,E,panel-atom,observed_fiscal,,
 FY2020-21,2021,railways,BC,E,panel-atom,observed,,
 FY2020-21,2021,railways,CO,E,panel-atom,observed,,
@@ -421,9 +421,9 @@ FY2020-21,2021,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2020-21,2021,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2021-22,2022,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2021-22,2022,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2021-22,2022,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2021-22,2022,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2021-22,2022,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2021-22,2022,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2021-22,2022,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2021-22,2022,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2021-22,2022,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2021-22,2022,aviation,BC,E,panel-atom,observed,,
@@ -455,11 +455,11 @@ FY2021-22,2022,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2021-22,2022,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2021-22,2022,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2021-22,2022,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2021-22,2022,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2021-22,2022,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2021-22,2022,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2021-22,2022,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2021-22,2022,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2021-22,2022,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2021-22,2022,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2021-22,2022,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2021-22,2022,power,SO2,E,panel-atom,observed_fiscal,,
 FY2021-22,2022,railways,BC,E,panel-atom,observed,,
 FY2021-22,2022,railways,CO,E,panel-atom,observed,,
@@ -491,9 +491,9 @@ FY2021-22,2022,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2021-22,2022,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2022-23,2023,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2022-23,2023,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2022-23,2023,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2022-23,2023,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2022-23,2023,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2022-23,2023,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2022-23,2023,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2022-23,2023,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2022-23,2023,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2022-23,2023,aviation,BC,E,panel-atom,observed,,
@@ -525,11 +525,11 @@ FY2022-23,2023,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2022-23,2023,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2022-23,2023,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2022-23,2023,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2022-23,2023,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2022-23,2023,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2022-23,2023,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2022-23,2023,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2022-23,2023,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2022-23,2023,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2022-23,2023,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2022-23,2023,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2022-23,2023,power,SO2,E,panel-atom,observed_fiscal,,
 FY2022-23,2023,railways,BC,E,panel-atom,observed,,
 FY2022-23,2023,railways,CO,E,panel-atom,observed,,
@@ -561,9 +561,9 @@ FY2022-23,2023,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2022-23,2023,waste,SO2,E,panel-atom,observed_population_held_parameters,,
 FY2023-24,2024,agriculture,BC,E,panel-atom,observed_fiscal,,
 FY2023-24,2024,agriculture,CO,E,panel-atom,observed_fiscal,,
-FY2023-24,2024,agriculture,NH3,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2023-24,2024,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2023-24,2024,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
-FY2023-24,2024,agriculture,NOx,E,panel-atom,calendar_projection;observed_fiscal,,
+FY2023-24,2024,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
 FY2023-24,2024,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
 FY2023-24,2024,agriculture,SO2,E,panel-atom,observed_fiscal,,
 FY2023-24,2024,aviation,BC,E,panel-atom,observed,,
@@ -595,11 +595,11 @@ FY2023-24,2024,ippu,NOx,E,panel-atom,observed_fiscal,,
 FY2023-24,2024,ippu,PM2.5,E,panel-atom,observed_fiscal,,
 FY2023-24,2024,ippu,SO2,E,panel-atom,observed_fiscal,,
 FY2023-24,2024,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2023-24,2024,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2023-24,2024,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2023-24,2024,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
 FY2023-24,2024,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
-FY2023-24,2024,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
-FY2023-24,2024,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2023_24.csv, joined per period in pakemis_air_absence_screening_by_year.csv; the control inventory exists at NEPRA unpublished, so no estimate enters the covered panel"
+FY2023-24,2024,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2023-24,2024,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
 FY2023-24,2024,power,SO2,E,panel-atom,observed_fiscal,,
 FY2023-24,2024,railways,BC,E,panel-atom,observed,,
 FY2023-24,2024,railways,CO,E,panel-atom,observed,,
@@ -629,3 +629,73 @@ FY2023-24,2024,waste,NMVOC,E,panel-atom,observed_population_held_parameters,,
 FY2023-24,2024,waste,NOx,E,panel-atom,observed_population_held_parameters,,
 FY2023-24,2024,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
 FY2023-24,2024,waste,SO2,E,panel-atom,observed_population_held_parameters,,
+FY2024-25,2025,agriculture,BC,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,agriculture,CO,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,agriculture,NH3,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
+FY2024-25,2025,agriculture,NMVOC,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,agriculture,NOx,E,panel-atom,census_anchored_reconstruction;observed_fiscal,,
+FY2024-25,2025,agriculture,PM2.5,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,agriculture,SO2,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,aviation,BC,E,panel-atom,observed,,
+FY2024-25,2025,aviation,CO,E,panel-atom,observed,,
+FY2024-25,2025,aviation,NH3,NE,no-published-factor,,,"no NH3 factor in the aviation chain; absent, not zero"
+FY2024-25,2025,aviation,NMVOC,NE,unharmonised-source-species,,air-aviation-nmvoc,EEDB publishes HC (unspeciated); HC is not renamed NMVOC (dim_pollutant rule) and the methane basis is undocumented
+FY2024-25,2025,aviation,NOx,E,panel-atom,observed,,
+FY2024-25,2025,aviation,PM2.5,E,panel-atom,observed,,
+FY2024-25,2025,aviation,SO2,E,panel-atom,observed,,
+FY2024-25,2025,fugitives,BC,E,panel-atom,calendar_blend,,
+FY2024-25,2025,fugitives,CO,E,panel-atom,calendar_blend;observed_fiscal,,
+FY2024-25,2025,fugitives,NH3,NE,no-published-factor,,air-fugitives-species,"EMEP/EEA 2023 lists NH3 as not estimated for venting and flaring and included elsewhere (1.A.1.b) for refining; the oil and gas segment chapters list it not applicable - absent, not zero"
+FY2024-25,2025,fugitives,NMVOC,E,panel-atom,calendar_blend;observed_fiscal,,
+FY2024-25,2025,fugitives,NOx,E,panel-atom,calendar_blend;observed_fiscal,,
+FY2024-25,2025,fugitives,PM2.5,E,panel-atom,calendar_blend;observed_fiscal,,
+FY2024-25,2025,fugitives,SO2,E,panel-atom,calendar_blend;observed_fiscal,,
+FY2024-25,2025,industry,BC,E,panel-atom,observed_fiscal;reconstructed,,
+FY2024-25,2025,industry,CO,E,panel-atom,observed_fiscal;reconstructed,,
+FY2024-25,2025,industry,NH3,NE,no-published-factor,,air-industry-nh3,"EMEP/EEA 2023 lists NH3 as not estimated for gas, liquid and solid fuel combustion in 1.A.2 (Tables 3-2, 3-3, 3-4); AP-42's combustion chapters carry no NH3 row; the one South Asian kiln measurement (Stockwell et al. 2016) is not held - absent, not zero"
+FY2024-25,2025,industry,NMVOC,E,panel-atom,observed_fiscal;reconstructed,,
+FY2024-25,2025,industry,NOx,E,panel-atom,observed_fiscal;reconstructed,,
+FY2024-25,2025,industry,PM2.5,E,panel-atom,observed_fiscal;reconstructed,,
+FY2024-25,2025,industry,SO2,E,panel-atom,observed_fiscal;reconstructed,,
+FY2024-25,2025,ippu,BC,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,ippu,CO,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,ippu,NH3,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,ippu,NMVOC,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,ippu,NOx,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,ippu,PM2.5,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,ippu,SO2,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,power,BC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
+FY2024-25,2025,power,CO,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2024-25,2025,power,NH3,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
+FY2024-25,2025,power,NMVOC,NE,uncontrolled-screening-only,,air-power-controlled,not in the AP-42 screening set (power VOC is not NMVOC; no BC or NH3 factor screened)
+FY2024-25,2025,power,NOx,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2024-25,2025,power,PM2.5,NE,uncontrolled-screening-only,,air-power-controlled,"the screening PAIR (uncontrolled and controlled-case scenario ends) prices this species in power_air_screening_fy2015_16_fy2024_25.csv, joined per period in pakemis_air_absence_screening_by_year.csv; public plant design evidence does not establish annual control operation, so no central estimate enters the covered panel"
+FY2024-25,2025,power,SO2,E,panel-atom,observed_fiscal,,
+FY2024-25,2025,railways,BC,E,panel-atom,observed,,
+FY2024-25,2025,railways,CO,E,panel-atom,observed,,
+FY2024-25,2025,railways,NH3,E,panel-atom,observed,,
+FY2024-25,2025,railways,NMVOC,E,panel-atom,observed,,
+FY2024-25,2025,railways,NOx,E,panel-atom,observed,,
+FY2024-25,2025,railways,PM2.5,E,panel-atom,observed,,
+FY2024-25,2025,railways,SO2,E,panel-atom,observed,,
+FY2024-25,2025,residential,BC,E,panel-atom,held;observed;reconstructed;survey_observed_reference_round,,
+FY2024-25,2025,residential,CO,E,panel-atom,held;observed;reconstructed;survey_observed_reference_round,,
+FY2024-25,2025,residential,NH3,E,panel-atom,held;reconstructed;survey_observed_reference_round,,
+FY2024-25,2025,residential,NMVOC,E,panel-atom,held;observed;reconstructed;survey_observed_reference_round,,
+FY2024-25,2025,residential,NOx,E,panel-atom,held;observed;reconstructed;survey_observed_reference_round,,
+FY2024-25,2025,residential,PM2.5,E,panel-atom,held;observed;reconstructed;survey_observed_reference_round,,
+FY2024-25,2025,residential,SO2,E,panel-atom,held;observed;reconstructed;survey_observed_reference_round,,
+FY2024-25,2025,transport,BC,E,panel-atom,observed,,
+FY2024-25,2025,transport,CO,E,panel-atom,observed,,
+FY2024-25,2025,transport,NH3,E,panel-atom,observed,,
+FY2024-25,2025,transport,NMVOC,E,panel-atom,observed,,
+FY2024-25,2025,transport,NOx,E,panel-atom,observed,,
+FY2024-25,2025,transport,PM2.5,E,panel-atom,observed,,
+FY2024-25,2025,transport,SO2,E,panel-atom,observed,,
+FY2024-25,2025,waste,BC,E,panel-atom,observed_population_held_parameters,,
+FY2024-25,2025,waste,CO,E,panel-atom,observed_population_held_parameters,,
+FY2024-25,2025,waste,NH3,E,panel-atom,observed_population_held_parameters,,
+FY2024-25,2025,waste,NMVOC,E,panel-atom,observed_population_held_parameters,,
+FY2024-25,2025,waste,NOx,E,panel-atom,observed_population_held_parameters,,
+FY2024-25,2025,waste,PM2.5,E,panel-atom,observed_population_held_parameters,,
+FY2024-25,2025,waste,SO2,E,panel-atom,observed_population_held_parameters,,

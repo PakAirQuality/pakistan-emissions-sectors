@@ -150,7 +150,8 @@ def group_stream_key(group, rep_ident, cross_sector):
 def run(components, categories, n_iter=N_ITER, seed=SEED, has_sinks=False,
         stream="sequential", return_samples=False, cross_sector=True,
         injected=None, group_qualifier=None, residual_qualifier=None,
-        component_scalers=None):
+        component_scalers=None, component_values=None, parameter_draws=None,
+        parameter_year=2024):
     """Return ({category|'TOTAL': stats}, total_samples), or a third value with the draws.
 
     return_samples=True adds {category|'TOTAL': [draws]} so a caller can quantify the Monte
@@ -189,6 +190,12 @@ def run(components, categories, n_iter=N_ITER, seed=SEED, has_sinks=False,
     # every z-stream, every seed and the bit-identical-prefix property are
     # untouched. Parameter stream only, like injection.
     component_scalers = component_scalers or {}
+    component_values = component_values or {}
+    if (component_values or parameter_draws is not None) and stream != "parameter":
+        raise ValueError("native shared parameter replay requires stream='parameter'")
+    for identity, values in component_values.items():
+        if len(values) < n_iter or any(not math.isfinite(float(v)) for v in values[:n_iter]):
+            raise ValueError("invalid native component draws for %s" % identity)
     if component_scalers and stream != "parameter":
         raise ValueError("component_scalers are a parameter-stream mechanism; "
                          "stream=%r cannot consume them" % stream)
@@ -216,6 +223,16 @@ def run(components, categories, n_iter=N_ITER, seed=SEED, has_sinks=False,
     a1_comps = comps
     if injected:
         comps = [c for c in comps if c["category"] not in injected]
+    native = []
+    if component_values:
+        remaining = []
+        for c in comps:
+            identity = c.get("_mc_key") or "%s|%s|%s" % (c["category"], c["subitem"], c["gas"])
+            if identity in component_values:
+                native.append((c["category"], component_values[identity]))
+            else:
+                remaining.append(c)
+        comps = remaining
 
     # _mc_key lets a caller pin a component's stream identity across runs that relabel the
     # category column. uncertainty_all does exactly that - it runs once by category and again
@@ -266,6 +283,15 @@ def run(components, categories, n_iter=N_ITER, seed=SEED, has_sinks=False,
             for c, shared, _r, _o in decomposition for g in shared)
         z_group = {}
         for g in groups:
+            if parameter_draws is not None:
+                physical = g if cross_sector else g.split("|", 1)[1]
+                # Native nitrogen and other agriculture rows use identical herd
+                # draws in both covariance cases. Other module boundaries remain
+                # the explicit within-sector sensitivity.
+                if not cross_sector and not g.startswith("agriculture|"):
+                    physical = g
+                z_group[g] = parameter_draws.normal(physical, parameter_year)
+                continue
             key = group_stream_key(g, rep[g], cross_sector)
             # group_qualifier SPLITS a dependency group's stream, and exists for exactly one
             # caller: the longitudinal ensemble, which runs this inventory over nine fiscal
@@ -318,6 +344,8 @@ def run(components, categories, n_iter=N_ITER, seed=SEED, has_sinks=False,
                     drawn *= scales[i]
                 cat_iter[category] += drawn
             for cat, draws in injected.items():
+                cat_iter[cat] += draws[i]
+            for cat, draws in native:
                 cat_iter[cat] += draws[i]
             for c in categories:
                 cat_samples[c].append(cat_iter[c])

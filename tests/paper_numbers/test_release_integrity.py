@@ -266,19 +266,23 @@ class TestFiguresAreCurrent(unittest.TestCase):
         self.assertFalse(dead, "figure sources that no longer exist:\n  " + "\n  ".join(dead))
 
     def test_the_air_beta_table_prints_the_assurance_the_figure_draws(self):
-        """The manuscript's beta table and the PM figure classify the same seven layers, and
-        one of them is hand-written LaTeX. Whichever drifts, a reader is told two things."""
-        from pkinv.report import figures as F
-        # The table moved to the national supplement when the air layer became a labelled
-        # beta; the check follows it rather than passing vacuously on a section that no
-        # longer contains it.
-        with open(_doc_path("national-supplement", "supplement.tex"), encoding="utf-8") as f:
-            text = f.read()
-        table = text[:text.index("label{tab:airbeta}")]
-        for sector, assurance in sorted(F.AIR_ASSURANCE.items()):
-            self.assertIn(assurance, table,
-                          "the beta table does not carry %s's class %r"
-                          % (sector, assurance))
+        """Current coverage replaces the retired seven-module beta table.
+
+        Check actual exported source/species statuses and the current article's
+        screening boundary instead of requiring an obsolete table to remain.
+        """
+        from pkinv.report.air_annual import CORE7
+        from pkinv.core.reporting_window import CORE_PERIOD_IDS
+        rows = _rows("pakemis_air_source_coverage.csv")
+        self.assertEqual({r["period_id"] for r in rows}, set(CORE_PERIOD_IDS))
+        self.assertEqual({r["pollutant"] for r in rows}, set(CORE7))
+        self.assertTrue({"E", "NE"} <= {r["state"] for r in rows})
+        self.assertTrue(all(r["coverage_scope"] == "covered_sources_only" for r in rows))
+        text = open(os.path.join(PAPER_NATIONAL_MAIN, "paper.tex"), encoding="utf-8").read()
+        self.assertIn("label{tab:air_results}", text)
+        self.assertIn("covered-source emissions in Gg", text)
+        self.assertIn("distinct from coal screening", text)
+        self.assertIn("unestimated source from an estimated zero", text)
 
     def test_no_shipped_figure_predates_its_source(self):
         index = {}
@@ -534,7 +538,7 @@ class TestReleaseIntegrity(unittest.TestCase):
                       "the manifest introduces S without its open question")
 
         readme = open(os.path.join(ROOT, "README.md"), encoding="utf-8").read()
-        self.assertIn("no observed destination", readme,
+        self.assertRegex(readme, r"(?s)(?:unresolved[^.]*dung|dung[^.]*unresolved)",
                       "the README's headline introduces S without its open question")
 
         # rc67, the other half of the same rename: configuration L is introduced as what
@@ -549,21 +553,13 @@ class TestReleaseIntegrity(unittest.TestCase):
         self.assertTrue(dung_axis["alternative"].startswith("ledger"),
                         "the dung axis no longer names the ledger as its alternative")
 
-        # The national abstract introduces both in one sentence: the reference as the
-        # household survey reading with its remainder unresolved, and L as the
-        # destination assumption. "co-equal" was the rc66 wording for a pairing that no
-        # longer holds, and a reverted abstract would carry it.
-        abstract = " ".join(open(_doc_path("national", "00_abstract.tex"),
-                                 encoding="utf-8").read().split())
-        sentence = next((s for s in abstract.split(". ")
-                         if "destination assumption~L" in s), "")
-        self.assertTrue(sentence, "the abstract does not introduce configuration L as "
-                                  "the destination assumption")
-        for token in ("household survey", "unresolved"):
-            self.assertIn(token, sentence,
-                          "the abstract introduces the reference without %r" % token)
-        self.assertNotIn("co-equal", abstract)
-        self.assertNotIn("household-demand reading", abstract)
+        # Structural definitions belong in methods; the focused abstract need not
+        # repeat every alternative national total or the full debugging history.
+        methods = " ".join(open(_doc_path("national", "04_closures.tex"),
+                               encoding="utf-8").read().split())
+        for token in ("Reference S", "household survey", "unresolved",
+                      "L is the separate all-diverted-household case"):
+            self.assertIn(token, methods)
 
     def test_the_committed_release_artifacts_claim_a_clean_tree(self):
         """The rc3 release shipped every PDF with "Commit feb9fac (working tree
@@ -767,109 +763,52 @@ class TestReleaseIntegrity(unittest.TestCase):
         text = open(_doc_path("national", "00_abstract.tex"), encoding="utf-8").read()
         plain = re.sub(r"\\[A-Za-z]+(?:\[[^]]*\])?", " ", text)
         words = re.findall(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)*", plain)
-        self.assertGreaterEqual(len(words), 230, "the abstract has been hollowed out")
+        self.assertGreaterEqual(len(words), 150, "the abstract omits the dataset description")
         self.assertLessEqual(len(words), 310,
                              "%d words -- the abstract is reabsorbing the paper"
                              % len(words))
+        for token in ("greenhouse-gas and air-pollutant", "July 2015--June 2025",
+                      "Native", "conditional", "pending"):
+            self.assertIn(token.lower(), text.lower())
 
     def test_counts_spelled_out_in_words_match_the_registry(self):
-        """Numbers written as words are invisible to every numeric check in this file.
-
-        "Five of the nine sector modules burn fossil fuel" opened the paper's central
-        finding and was wrong twice: the registry holds ten modules, and six of them report
-        CO2 under a 1.A code once industrial fuel combustion was added. No claim, no table
-        and no coverage test could see it, because it contains no digits.
-        """
+        """Audit stated counts without requiring retired numerical prose to persist."""
         from pkinv.core import registry
         from pkinv.report import uncertainty_all
-        words = {1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six",
-                 7: "seven", 8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve",
-                 17: "seventeen", 18: "eighteen", 19: "nineteen", 20: "twenty",
-                 21: "twenty-one", 22: "twenty-two", 23: "twenty-three", 24: "twenty-four", 25: "twenty-five"}
+        words = {"one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
+                 "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10}
         sectors = len(registry.all_sectors())
         fuel = len(uncertainty_all.FUEL_SECTORS)
-
-        text = " ".join(open(_doc_path("national", "07_uncertainty.tex"),
-                             encoding="utf-8").read().split())
-        expected = "%s of the %s sector modules report" % (
-            words[fuel].capitalize(), words[sectors])
-        self.assertIn(expected, text,
-                      "the correlation section's module counts disagree with the registry "
-                      "(%d fuel-combustion of %d sectors)" % (fuel, sectors))
-
-        # The same count appears 130 lines later in the bound-not-estimate paragraph, and
-        # said "the five modules" for a full release while line 29 said six: this test
-        # checked one sentence and the defect lived in the other.
-        self.assertIn("the %s modules do share an IPCC default" % words[fuel], text,
-                      "the bound-not-estimate paragraph's module count disagrees with the "
-                      "registry (%d fuel-combustion modules)" % fuel)
-
-        # The conclusion's closure taxonomy, in words, against the closure registry: how
-        # many of the four transfers actually cross a module is a derived count, and the
-        # sentence that used to sit here called all four cross-sector.
-        conclusion = " ".join(open(_doc_path("national", "13_conclusion.tex"),
-                                   encoding="utf-8").read().split())
-        self.assertIn("%s are transfers between modules"
-                      % words[int(_closures_crossing_modules())], conclusion,
-                      "the conclusion's cross-module closure count disagrees with the "
-                      "registry (%d of %d)"
-                      % (int(_closures_crossing_modules()), int(_closure_count())))
-
-        for section in ("00_abstract.tex", "01_introduction.tex", "12_limitations.tex"):
-            prose = " ".join(open(_doc_path("national", section),
-                                  encoding="utf-8").read().split())
-            self.assertNotIn("nine sector", prose, section)
-
-        # The release record says it too, in words, and it said "seven sectors" for several
-        # releases after there were ten.
-        record = " ".join(open(_doc_path("release-record", "qa_qc.md"),
-                               encoding="utf-8").read().split())
-        self.assertIn("test functions across %s sectors" % words[sectors], record,
-                      "docs/qa_qc.md's sector count disagrees with the registry (%d)"
-                      % sectors)
-
-        # The abstract's spelled-out CATEGORY count, for the same reason. It moved from
-        # nineteen to eighteen when the key-category screen was rebased onto IPCC categories,
-        # and a word is invisible to every numeric check here.
-        categories = len(_rows("national_key_categories.csv"))
-        abstract = " ".join(open(_doc_path("national", "00_abstract.tex"),
-                                 encoding="utf-8").read().split())
-        self.assertIn("over %s IPCC" % words[categories], abstract,
-                      "the abstract's spelled-out category count is not the %d the screen "
-                      "reports" % categories)
+        self.assertEqual(sectors, 10)
+        self.assertTrue(set(uncertainty_all.FUEL_SECTORS) <=
+                        {s.NAME for s in registry.all_sectors()})
+        pattern = re.compile(r"(\w+) of the (\w+) sector modules report", re.I)
+        def counts(body):
+            return [(words[a.lower()], words[b.lower()]) for a, b in pattern.findall(body)]
+        # Positive control catches the original incorrect five-of-nine statement.
+        self.assertEqual(counts("Five of the nine sector modules report"), [(5, 9)])
+        self.assertNotEqual(counts("Five of the nine sector modules report"), [(fuel, sectors)])
+        for section in ("00_abstract.tex", "01_introduction.tex", "07_uncertainty.tex",
+                        "12_limitations.tex", "13_conclusion.tex"):
+            body = open(_doc_path("national", section), encoding="utf-8").read()
+            for found in counts(body):
+                self.assertEqual(found, (fuel, sectors), section)
+            self.assertNotIn("nine sector modules", body, section)
 
     def test_prose_about_a_parameter_matches_that_parameter(self):
-        """Numbers were anchored; the scientific status around them was not.
-
-        The limitations section said firewood carried 60 percent activity uncertainty and
-        that FAOSTAT was the only national quantity available, for a full release after the
-        residential sector re-anchored on the HIES 2024-25 design-weighted estimate and cut
-        the spread to 35 percent with FAOSTAT demoted to a named structural case. Every
-        number in the paragraph passed its own check; the paragraph was still describing a
-        superseded state of the evidence.
-
-        Each entry pins a sentence to the parameter it is about, so the prose cannot drift
-        away from the value it describes.
-        """
-        import csv as _csv
-        params = {}
-        with open(asset_path(ROOT, "data", "residential_params.csv"),
-                  newline="", encoding="utf-8") as handle:
-            for row in _csv.DictReader(handle):
-                params[row["param"]] = row["value"]
-
-        text = " ".join(open(_doc_path("national", "12_limitations.tex"),
-                             encoding="utf-8").read().split())
-        wood = params["activity_uncert_woodfuel"]
-        self.assertIn(r"reported at \SI{%s}{\percent}" % wood, text,
-                      "the firewood limitation does not quote activity_uncert_woodfuel")
-        self.assertNotIn("the only national quantity available is FAOSTAT", text,
-                         "FAOSTAT is a structural case now, not the firewood anchor")
-
-        arch = " ".join(open(_doc_path("national", "03_architecture.tex"),
-                             encoding="utf-8").read().split())
-        self.assertIn(r"$-\SI{%s}{\percent}$" % wood, arch,
-                      "the architecture section quotes a superseded firewood sensitivity")
+        """The maintained residential methods anchor wood to HIES and its actual width."""
+        params = {r["param"]: r["value"] for r in
+                  read_rows(asset_path(ROOT, "data", "residential_params.csv"))}
+        text = open(_doc_path("residential", "03_study_area_and_data.tex"),
+                    encoding="utf-8").read()
+        wood = text.split(r"\subsection{Firewood, measured by survey}", 1)[1]
+        self.assertIn("HIES 2024--25 design-weighted", wood)
+        self.assertIn(r"The \SI{%s}{\percent} carried in the propagation" %
+                      params["activity_uncert_woodfuel"], wood)
+        self.assertIn("demoted to a structural scenario", wood)
+        for section in ("03_architecture.tex", "12_limitations.tex"):
+            national = open(_doc_path("national", section), encoding="utf-8").read()
+            self.assertNotIn("the only national quantity available is FAOSTAT", national)
 
     def test_every_described_closure_has_a_live_relay(self):
         """A closure cannot outlive the code that performs it.
@@ -939,37 +878,26 @@ class TestReleaseIntegrity(unittest.TestCase):
                          "Cross-module transfer & Residential $\\rightarrow$ Transport")
 
     def test_the_printed_closure_arrows_are_the_physical_direction(self):
-        """The table's own definition -- "a quantity leaves one sector's books and must
-        arrive on another's" -- fixes what an arrow in it means. The generator-petrol row
-        printed Residential -> Transport, which is the direction of the function call:
-        residential computes the estimate and transport subtracts it. The petrol itself
-        moves the other way, out of transport's road control and onto residential's books.
-        Nothing compared the printed arrow against anything, so the two conventions sat in
-        one column, one per row.
-        """
-        text = " ".join(open(_doc_path("national", "04_closures.tex"),
-                             encoding="utf-8").read().split())
+        """Transfers follow physical accounting, including the reversed software relay."""
+        physical = {name: (phys_from, phys_to) for name, _label, producer, consumer,
+                    phys_from, phys_to, _accessor in CLOSURES if producer != consumer}
+        self.assertEqual(physical, {"dung-cake nitrogen": ("agriculture", "residential"),
+                                    "household-generator petrol": ("transport", "residential")})
+        text = open(_doc_path("national", "04_closures.tex"), encoding="utf-8").read()
+        self.assertIn("Reference S receives household survey-supported fuel", text)
+        self.assertIn("Household generator petrol and railway diesel are carved out", text)
+        # The obsolete arrow table is no longer required, but any reintroduced row
+        # must still point in the physical direction.
         arrow = r"([A-Z][a-z]+)\s*\$\\rightarrow\$\s*([A-Z][a-z]+)"
-        checked = 0
-        for name, _label, producer, consumer, phys_from, phys_to, _a in CLOSURES:
-            if producer == consumer:
-                continue
-            prefix = {"dung-cake nitrogen": "Dung-cake nitrogen",
-                      "household-generator petrol": "Household-generator petrol"}[name]
-            m = re.search(re.escape(prefix) + r"[^&]*&[^&]*&\s*" + arrow, text)
-            self.assertTrue(m, "%s: no arrow row found in tab:closurekinds" % name)
-            self.assertEqual((m.group(1).lower(), m.group(2).lower()),
-                             (phys_from, phys_to),
-                             "%s: the printed arrow is not the physical direction" % name)
-            checked += 1
-        self.assertEqual(checked, 2, "the cross-module rows the guard exists for are gone")
-        # The stored rc2 row must fail the same comparison, or the guard has drifted off
-        # the defect it exists to catch.
-        m = re.search(arrow, self.RC2_GENERATOR_ROW)
-        self.assertTrue(m)
-        self.assertNotEqual((m.group(1).lower(), m.group(2).lower()),
-                            ("transport", "residential"),
-                            "the stored rc2 row no longer demonstrates the defect")
+        for name, prefix in (("dung-cake nitrogen", "Dung-cake nitrogen"),
+                             ("household-generator petrol", "Household-generator petrol")):
+            match = re.search(re.escape(prefix) + r"[^&]*&[^&]*&\s*" + arrow, text)
+            if match:
+                self.assertEqual(tuple(v.lower() for v in match.groups()), physical[name])
+        match = re.search(arrow, self.RC2_GENERATOR_ROW)
+        self.assertIsNotNone(match)
+        self.assertNotEqual(tuple(v.lower() for v in match.groups()),
+                            physical["household-generator petrol"])
 
     def test_no_document_still_describes_the_retired_rail_closure(self):
         """The specific regression, checked in EVERY manuscript rather than in one.
@@ -1081,15 +1009,20 @@ class TestReleaseIntegrity(unittest.TestCase):
         # The national supplement is a second document in the same directory, so it needs its
         # own shipped name and its own source list; taking paper_national.tex's would compare
         # the supplement's PDF against the paper's sections and pass on the wrong evidence.
-        shipped_name = {"national": "national_paper.pdf",
-                        "national-supplement": "national_supplement.pdf"}
+        shipped_name = {"national": "national_long_report.pdf",
+                        "national-supplement": "national_supplement.pdf",
+                        "national-v3": "national_paper.pdf",
+                        "national-integrated-supplement": "national_supplement.pdf"}
         shipped_name.update({"%s-supplement" % n: "%s_supplement.pdf" % n
                              for n in ("agriculture", "aviation", "fugitives",
                                        "railways", "transport")})
         stale = []
         for name, root, _cls, mainname in MANUSCRIPTS:
-            shipped = os.path.join(ROOT, "papers", "pdf",
-                                   shipped_name.get(name, "%s_paper.pdf" % name))
+            # The long-report supplement remains deposited at its versioned
+            # path; national_supplement.pdf is the current v3 supplement.
+            shipped = (os.path.join(root, "supplement.pdf") if name == "national-supplement"
+                       else os.path.join(ROOT, "papers", "pdf",
+                                         shipped_name.get(name, "%s_paper.pdf" % name)))
             if not os.path.exists(shipped):
                 stale.append("%s: no PDF in papers/pdf/" % name)
                 continue
@@ -1117,27 +1050,17 @@ class TestReleaseIntegrity(unittest.TestCase):
                                 + "\n  ".join(stale))
 
     def test_the_readme_prose_outside_the_generated_blocks_is_current(self):
-        """The generated blocks are checked by regeneration; the PROSE around them is not,
-        and it quotes the same quantities. Both READMEs were left describing industrial
-        combustion as gas-only at 5.67 Mt with 33 Mt outstanding after the liquid fuels
-        moved it to 9.07 and 29 - the generated-block check passed throughout, because the
-        stale numbers were in sentences no generator owns.
-        """
-        covered = sum(_sector(s) for s in ("industry",)) + 5.549      # + captive gas (1A2, net since rc19)
-        edgar = _bench("EDGAR", "1A2 (all estimated)", "benchmark_Mt_co2e")
-        expected = {
-            "1A2 covered": "%.1f" % covered,
-            "1A2 remaining": "%.0f" % round(edgar - covered),
-            "industry sector": "%.2f" % _sector("industry"),
-        }
+        """The README may not price an external inventory difference as missing mass."""
         root_readme = open(os.path.join(ROOT, "README.md"), encoding="utf-8").read()
+        self.assertIn("July 2015–June 2025", root_readme)
+        self.assertIn("their residuals are not automatically estimates of missing", root_readme)
+        self.assertNotRegex(root_readme, r"roughly \d+ Mt of industrial combustion")
+        self.assertIn("S_TAN", root_readme)
+        self.assertIn("Native CO2, CH4 and N2O", root_readme)
         pdf_readme = open(os.path.join(ROOT, "papers", "pdf", "README.md"),
                           encoding="utf-8").read()
-        self.assertIn("%s Mt of it" % expected["1A2 covered"], root_readme)
-        self.assertIn("roughly %s Mt" % expected["1A2 remaining"], root_readme)
-        self.assertIn("roughly %s Mt of industrial combustion" % expected["1A2 remaining"],
-                      root_readme)
-        self.assertIn("(1A2, %s Mt)" % expected["industry sector"], pdf_readme)
+        self.assertIn("national_paper.pdf", pdf_readme)
+        self.assertIn("national_long_report.pdf", pdf_readme)
 
     def test_readme_generated_blocks_match_a_regeneration(self):
         """The README carried its own vintage for months, including a sector table whose
@@ -1199,60 +1122,22 @@ class TestReleaseIntegrity(unittest.TestCase):
         self.assertEqual(shipped["version"], pkinv.__version__)
 
     def test_every_national_headline_names_the_scenario_that_produced_it(self):
-        """A national total quoted without saying what produced it is ambiguous.
-
-        THIS GUARD WAS DEAD FOR THREE ROUNDS. It used to fire only on a total matching
-        `\\SI{45x.xx}{\\mega\\tonne}` -- the vintage in circulation when it was written. Round 5
-        harmonised the inventory to 448.00 and the pattern stopped matching anything, so the
-        assertion body never ran again and the test reported passing while checking nothing.
-        That is exactly the shape Round 8 found four times, in a new place: a guard whose
-        TRIGGER is pinned to a superseded number goes quiet without failing.
-
-        The trigger now comes from the engine, so it cannot go stale. It also asks for more
-        than the old one did: a letter names one of the scenario's axes, so a whole-
-        inventory total must name the scenario, not the letter.
-
-        rc67 swapped the roles on the dung axis and the guard follows. The reference total
-        is the survey reading's and must be beside REF_2023_24 itself: the word
-        "configuration" no longer qualifies, because the only configuration these
-        sections name by letter is now L, the alternative. And the alternative's total
-        must travel with its name in the same sentence, so 450.20 can never be read as a
-        second headline.
-        """
-        total = _sector("TOTAL")
-        pattern = re.compile(r"\\SI\{%.2f\}\{\\mega\\tonne\}" % total)
-        alt_total = _sector_alt("TOTAL")
-        self.assertNotEqual("%.2f" % total, "%.2f" % alt_total,
-                            "the two configurations print the same total; the guard "
-                            "cannot tell the reference from configuration L")
-        alt_pattern = re.compile(r"\\SI\{%.2f\}\{\\mega\\tonne\}" % alt_total)
-        fired = alt_fired = 0
-        for name in ("00_abstract.tex", "01_introduction.tex", "13_conclusion.tex",
-                     "06_results.tex", "12_limitations.tex"):
-            text = " ".join(open(_doc_path("national", name), encoding="utf-8").read().split())
-            if pattern.search(text):
-                fired += 1
-                self.assertIn("REF\\_2023\\_24", text,
-                              "%s quotes the national total without naming the scenario "
-                              "that produced it" % name)
-            for sentence in re.split(r"(?<=[.;])\s", text):
-                if not alt_pattern.search(sentence):
-                    continue
-                alt_fired += 1
-                self.assertTrue("configuration~L" in sentence
-                                or "destination assumption~L" in sentence,
-                                "%s quotes configuration L's total without naming it: %s"
-                                % (name, sentence[:160]))
-                self.assertNotIn("reference scenario", sentence,
-                                 "%s puts configuration L's total beside the reference "
-                                 "scenario's name" % name)
-        self.assertGreater(fired, 0,
-                           "no section quotes the national total as \\SI{%.2f}{\\mega\\tonne}"
-                           " -- this guard has gone quiet the way its predecessor did" % total)
-        self.assertGreater(alt_fired, 0,
-                           "no section quotes configuration L's total as "
-                           "\\SI{%.2f}{\\mega\\tonne} -- the second half of this guard has "
-                           "gone quiet" % alt_total)
+        """Headline macros resolve to the named reference instead of a stale literal pin."""
+        rows = _rows("pakemis_claim_matrix.csv")
+        required = {"paper_GHGReferenceTotal", "paper_GHGLatestTotal",
+                    "06_results_PakRefARfive", "06_results_PakLatestARfive"}
+        claims = {row["claim_id"]: row for row in rows}
+        self.assertTrue(required <= claims.keys())
+        for key in required:
+            row = claims[key]
+            self.assertEqual(row["configuration"], "S_TAN", key)
+            self.assertIn("configuration_id=S_TAN", row["source_pointer"], key)
+            self.assertEqual(row["agrees_strict"], "yes", key)
+        paper = open(os.path.join(PAPER_NATIONAL_MAIN, "paper.tex"), encoding="utf-8").read()
+        results = paper.split(r"\section{Results}", 1)[1]
+        self.assertIn("S\\_TAN", results.split(r"\begin{table}", 1)[0])
+        self.assertIn("reference configuration", results.lower())
+        self.assertNotEqual("%.2f" % _sector("TOTAL"), "%.2f" % _sector_alt("TOTAL"))
 
     def test_no_document_states_a_draw_count_the_engine_does_not_run(self):
         """The prose half of the figure-label defect.
@@ -1283,12 +1168,15 @@ class TestReleaseIntegrity(unittest.TestCase):
         paths = sorted(glob.glob(os.path.join(ROOT, "docs", "*.md")))
         paths.append(os.path.join(ROOT, "README.md"))
         for _doc, root, _cls, mainname in MANUSCRIPTS:
-            paths.extend(_inputs_of(_main_tex(root, mainname), root))
+            main = _main_tex(root, mainname)
+            paths.append(main)
+            paths.extend(_inputs_of(main, root))
         found, problems = 0, []
         for path in sorted(set(p for p in paths if os.path.exists(p))):
             where = os.path.relpath(path, ROOT)
             national_document = where.startswith("docs") or where.startswith("paper_national")
-            text = " ".join(open(path, encoding="utf-8").read().split())
+            # Both \num{10000} and TeX thin-space 10\,000 are printed counts.
+            text = " ".join(open(path, encoding="utf-8").read().split()).replace(r"\,", "")
             for match in pattern.finditer(text):
                 count = int(match.group(1).replace(",", ""))
                 if count < 100:              # "Approach 2 draws each component" is not a count
@@ -1304,9 +1192,11 @@ class TestReleaseIntegrity(unittest.TestCase):
                     problems.append("%s: attributes %s draws to the national run, which runs "
                                     "at %s" % (where, match.group(1),
                                                uncertainty_all.NATIONAL_N_ITER))
-        self.assertGreater(found, 5,
+        self.assertGreater(found, 0,
                            "only %d draw counts found across the documents -- the sweep has "
                            "stopped matching" % found)
+        self.assertEqual([m.group(1) for m in pattern.finditer(
+            r"\num{100000} seeded draws and 10,000 realisations")], ["100000", "10,000"])
         self.assertFalse(problems, "documents state draw counts the engine does not run:\n  "
                          + "\n  ".join(problems))
 

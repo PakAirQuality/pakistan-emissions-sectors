@@ -79,7 +79,7 @@ INVENTORY = "btr1_national_inventory.csv"
 
 # The BTR's inventory year, as a PakEmis period. Not a guess: see the module docstring.
 MATCHED_PERIOD = "FY2020-21"
-CONFIGURATION = "REF_2023_24"
+from pkinv.core.configurations import REFERENCE as CONFIGURATION
 GWP = "AR5"
 SOURCE = "Pakistan BTR1 (2024), national inventory 2020-21"
 

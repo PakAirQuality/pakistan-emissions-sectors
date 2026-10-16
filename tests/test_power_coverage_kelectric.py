@@ -18,6 +18,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.report import national_configurations as nc          # noqa: E402
 from pkinv.sectors.power import engine, ke_leg                  # noqa: E402
+from pkinv.core.reporting_window import CORE_FY_ENDS
 
 CONFIGURATIONS = os.path.join(ROOT, "outputs", "national_configurations.csv")
 TRAJECTORIES = os.path.join(ROOT, "outputs", "pakemis_structural_trajectories.csv")
@@ -83,8 +84,9 @@ class TestTheCoverageSeries(unittest.TestCase):
         cls.data = engine.load_data()
         cls.series = {r["fiscal_year"]: r for r in ke_leg.coverage_series(cls.data)}
 
-    def test_nine_years(self):
-        self.assertEqual(sorted(self.series), list(range(2015, 2024)))
+    def test_every_core_year(self):
+        from pkinv.core.reporting_window import CORE_FY_STARTS
+        self.assertEqual(sorted(self.series), list(CORE_FY_STARTS))
 
     def test_the_ledger_years_are_the_existing_leg(self):
         for row in ke_leg.series(self.data):
@@ -120,15 +122,23 @@ class TestTheCoverageSeries(unittest.TestCase):
     def test_the_scope_axis_is_priced_for_every_year(self):
         """Refused for eight of nine years through rc66."""
         rows = [r for r in _rows(TRAJECTORIES) if r["axis"] == "power scope"]
-        self.assertEqual(len(rows), 9)
+        self.assertEqual({int(r["fiscal_end_year"]) for r in rows}, set(CORE_FY_ENDS))
         for r in rows:
             self.assertIn(r["status"], ("priced", "priced_reference_register"),
                           r["fiscal_end_year"])
             year = int(r["fiscal_end_year"]) - 1
             self.assertAlmostEqual(float(r["delta_Mt"]), self.series[year]["co2_Mt"],
                                    places=4, msg=r["fiscal_end_year"])
-        flagged = [r for r in rows if "not provided" in r["reason"]]
-        self.assertEqual(sorted(r["fiscal_end_year"] for r in flagged), ["2016", "2019"])
+        # Actual source reconstructions include the new-year Korangi/Gul Ahmed
+        # cells as well as the three historical n.p. cells. The public trajectory
+        # must retain that evidence instead of labelling all priced mass verified.
+        flagged = {int(r["fiscal_end_year"]): r for r in rows if r["reason"]
+                   and r["status"] != "priced_reference_register"}
+        expected = {year + 1: row for year, row in self.series.items() if row["estimated_cells"]}
+        self.assertEqual(set(flagged), set(expected))
+        for end_year, row in flagged.items():
+            self.assertIn("reconstructed", row["reason"])
+            self.assertIn(expected[end_year]["estimated_cells"], row["reason"])
 
 
 if __name__ == "__main__":

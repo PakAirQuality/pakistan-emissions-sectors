@@ -4,26 +4,26 @@ Tier 2 method (constant Phase-5 EFs) driven over FAOSTAT historical activity dat
 
 ## Trajectory
 
-- **1990:** 83 Mt CO2e -> **2024:** 223 Mt CO2e  (CAGR **2.9%/yr**, x2.7 over 34 yr)
+- **1990:** 83 Mt CO2e -> **2024:** 223 Mt CO2e  (CAGR **3.0%/yr**, x2.7 over 34 yr)
 
 | Category | 1990 (Mt) | 2024 (Mt) | growth |
 |---|---:|---:|---:|
 | Enteric fermentation | 54.5 | 151.7 | x2.8 |
-| Manure management | 6.6 | 21.2 | x3.2 |
+| Manure management | 6.6 | 20.8 | x3.2 |
 | Rice cultivation | 9.6 | 16.5 | x1.7 |
-| Managed soils | 10.3 | 28.5 | x2.8 |
+| Managed soils | 10.1 | 28.5 | x2.8 |
 | Field burning of residues | 0.3 | 0.7 | x2.6 |
 | Urea application | 1.9 | 4.8 | x2.6 |
-| **TOTAL** | **83.2** | **223.5** | **x2.7** |
+| **TOTAL** | **82.9** | **223.0** | **x2.7** |
 
 ## Validation vs FAOSTAT (latest common year)
 
 | Category | Engine (Mt) | FAOSTAT (Mt) | ratio |
 |---|---:|---:|---:|
 | Enteric fermentation | 143.2 | 145.1 | 0.99 |
-| Manure management | 20.2 | 14.6 | 1.38 |
+| Manure management | 19.8 | 14.6 | 1.36 |
 | Rice cultivation | 16.5 | 14.3 | 1.16 |
-| Managed soils | 27.1 | 58.5 | 0.46 |
+| Managed soils | 27.2 | 58.5 | 0.46 |
 | Field burning of residues | 0.7 | 0.8 | 0.92 |
 | Urea application | 4.9 | 0.0 | 0.00 |
 

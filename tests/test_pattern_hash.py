@@ -20,6 +20,7 @@ import unittest
 from collections import Counter
 
 from pkinv.paths import OUTPUTS
+from pkinv.core.reporting_window import CORE_PERIOD_IDS
 
 REGISTRY = os.path.join(OUTPUTS, "pakemis_spatial_weights_by_year.csv")
 SURFACES = os.path.join(OUTPUTS, "pakemis_grid_stream_surfaces_by_year.csv")
@@ -98,7 +99,7 @@ class TestTheHashAgreesWithTheClaim(unittest.TestCase):
 @unittest.skipUnless(os.path.exists(SURFACES), "the by-year surfaces have not been built")
 class TestTheSurfacesAreNowPerPeriod(unittest.TestCase):
 
-    def test_the_registry_no_longer_reads_the_reference_year_for_all_nine(self):
+    def test_the_registry_reads_every_supported_period(self):
         """The defect this product was added to fix.
 
         pakemis_grid_stream_surfaces.csv is the reference year's, and the registry read it for
@@ -108,13 +109,13 @@ class TestTheSurfacesAreNowPerPeriod(unittest.TestCase):
         """
         rows = _rows(SURFACES)
         periods = {r["period_id"] for r in rows}
-        self.assertEqual(len(periods), 9, sorted(periods))
+        self.assertEqual(periods, set(CORE_PERIOD_IDS))
         by_stream = {}
         for row in rows:
             by_stream.setdefault(row["source_stream_id"], set()).add(row["pattern_hash"])
         varying = [s for s, hashes in by_stream.items() if len(hashes) > 1]
         self.assertTrue(
-            varying, "no stream's pattern differs across the nine periods, which would mean "
+            varying, "no stream's pattern differs across the supported periods, which would mean "
                      "the by-year file is the reference year repeated and the join that reads "
                      "it gains nothing")
 

@@ -34,6 +34,7 @@ LEGACY_COLUMNS = ("validation_id", "property_tested", "module", "source", "perio
 # Files that LOOK like comparisons and are deliberately not registry rows, each with the
 # reason. An entry here without a reason is a debt list, which this repo retired.
 OUT_OF_SCOPE = {
+    "pakemis_primary_geography_licence_audit.csv": "a provenance and licensing audit of the primary spatial geometry, not an independent emissions comparison",
     "pakemis_wastewater_method_comparison.csv": "a METHOD comparison inside the inventory, not a validation against an outside estimate: it sets the wastewater nitrous-oxide reference (2019 Refinement) beside the method it replaced (2006 Guidelines) on the same draws, and neither side is evidence about the other (rc67)",
     "pakemis_minerals_panel_screening.csv": "a COMPLETENESS screening of an activity panel, not a comparison of two estimates: it reports which province-years the panel holds and what a missing one costs the served monthly shape. Its guards are tests/test_minerals_panel_screening.py",
     "pakemis_citation_pointer_audit.csv": "a CITATION audit, not a validation: it scores whether each registered source names the table its figures were read from, and says nothing about whether any estimate is right. Its ratchets are tests/test_citation_pointer_audit.py",

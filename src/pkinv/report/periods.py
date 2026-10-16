@@ -31,6 +31,7 @@ import csv
 import os
 
 from pkinv.core import period
+from pkinv.core.reporting_window import FIRST_FY_START, CORE_LAST_FY_START, REFERENCE_FY_START
 from pkinv.paths import DATA
 from pkinv.core.io import write_table
 
@@ -38,7 +39,7 @@ OUT = asset_path(DATA, "periods.csv")
 
 # The reporting window the annual product covers: FY2015-16 through FY2023-24, named by the
 # calendar year each fiscal year OPENS in.
-FIRST_START_YEAR, LAST_START_YEAR = 2015, 2023
+FIRST_START_YEAR, LAST_START_YEAR = FIRST_FY_START, CORE_LAST_FY_START
 
 FIELDS = ("period_id", "period_start", "period_end", "time_basis", "days",
           "fiscal_start_year", "fiscal_end_year", "is_reference", "note")
@@ -58,9 +59,9 @@ def rows():
             "days": (end - start).days + 1,
             "fiscal_start_year": start_year,
             "fiscal_end_year": start_year + 1,
-            "is_reference": start_year == LAST_START_YEAR,
+            "is_reference": start_year == REFERENCE_FY_START,
             "note": ("the reference period every sector reports"
-                     if start_year == LAST_START_YEAR else
+                     if start_year == REFERENCE_FY_START else
                      "series period; sector coverage is declared per cell in the "
                      "coverage matrix"),
         })

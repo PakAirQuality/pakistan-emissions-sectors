@@ -1,23 +1,18 @@
-"""The nine-period annual 0.05-degree grid, written as the periods are built.
+"""Annual 0.05-degree emissions grids streamed over registered fiscal periods.
 
-WHY THIS EXISTS, AND WHY IT DID NOT. rc44 declined to publish nine cubes, in shipped prose:
-"for 65.9% of stream-years [they carry] the reference year's within-province pattern multiplied
-into 3.4 million cells a year - precision the evidence does not have, in the format most likely
-to be read as though it did". That objection was right and it is answered here rather than
-overridden: every layer ships beside the evidence fields that say whether its PATTERN actually
-changed for that period or only its national magnitude. A mostly-borrowed raster with an honest
-provenance column is useful; the same raster without one is what rc44 refused.
+The current core spans July 2015 through June 2025: ten fiscal years. Each layer
+carries its fiscal identifier and evidence records distinguishing own-period activity,
+modelled or reused geography, substitution and unallocated mass. A grid resolution is
+not an observation of source activity at that resolution.
 
-STREAMED, NOT COLLECTED. spatial_by_year already builds all nine periods, one grid_cube.build()
-each, and drops every raster when the loop rebinds. A period is about 140 MB of float64
-accumulators, so nine of them held at once is not the shape of this program. The writer is a
-sink the loop hands each period to; one period is resident at a time, exactly as before.
+The writer is a sink for spatial_by_year: one period's accumulators are resident at a
+time. The annual, monthly administrative and detailed reference products therefore
+consume the same physical allocation rather than independently deriving geography.
 
-TIME IS NINE FISCAL INTERVALS AND NOT TEN CALENDAR YEARS. Each period runs 1 July to 30 June.
-data/periods.csv records the end date INCLUSIVE, so the CF bound is that date plus one day, and
-the coordinate is the interval midpoint. A calendar-year product could only be made directly for
-CY2016-CY2023 - CY2015 has no January-June here and CY2024 no July-December - so the period_id
-travels with every slice and nothing is relabelled as a calendar year.
+CF intervals run from 1 July to the following 1 July (exclusive). The source register
+stores inclusive period-end dates, converted here by adding one day. Complete calendar
+years could be assembled only for CY2016 through CY2024 at compatible source and
+allocation boundaries; the fiscal layers themselves remain July-to-June intervals.
 """
 
 from pkinv.assets import asset_path
@@ -34,11 +29,11 @@ GASES = ("CO2", "CH4", "N2O")
 VIEWS = ("physical", "origin", "accounting")
 FILL = -9999.0
 EPOCH = _dt.date(1970, 1, 1)
-CORE = asset_path(OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc")
+CORE = asset_path(OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc")
 
 
 def period_bounds():
-    """[(period_id, start_days, end_days_exclusive, mid_days)] over the nine fiscal periods."""
+    """[(period_id, start_days, end_days_exclusive, mid_days)] over the registered fiscal core."""
     out = []
     for row in read_rows(asset_path(DATA, "periods.csv")):
         start = _dt.date.fromisoformat(row["period_start"])
@@ -79,9 +74,9 @@ def write_frame(ds, grid, periods, view_names=None):
     bnds[:, 1] = [p[2] for p in periods]
 
     pid = ds.createVariable("period_id", str, ("time",))
-    pid.long_name = ("fiscal period identifier; these are nine July-to-June intervals and "
+    pid.long_name = ("fiscal period identifier; these are July-to-June intervals and "
                      "NOT calendar years - a calendar-year product could be made directly "
-                     "only for CY2016-CY2023")
+                     "only for CY2016-CY2024")
     for i, p in enumerate(periods):
         pid[i] = p[0]
 
@@ -146,7 +141,7 @@ def write_frame(ds, grid, periods, view_names=None):
 class AnnualGridWriter:
     """Opened once, fed one period at a time, closed once."""
 
-    def __init__(self, path, grid, periods):
+    def __init__(self, path, grid, periods, configuration_id=None):
         from netCDF4 import Dataset
         from pkinv.core.gis.grid import GRID_SPEC
         self.path = path
@@ -176,19 +171,20 @@ class AnnualGridWriter:
 
         self.outside = grid.province_id < 0
         ds.Conventions = "CF-1.8"
-        ds.title = ("PakEmis 0.05 degree annual emissions, FY2015-16 to FY2023-24, "
-                    "reference configuration")
+        from pkinv.core import configurations as conf
+        configuration_id = conf.canonical(configuration_id or conf.REFERENCE)
+        ds.title = "PakEmis annual native greenhouse-gas emissions, " + self.periods[0][0] + " to " + self.periods[-1][0]
         ds.release_version = pkinv.__version__
         ds.grid_spec_id = GRID_SPEC["grid_spec_id"]
-        ds.configuration_id = "REF_2023_24"
+        ds.configuration_id = configuration_id
         ds.institution = "Pakistan Air Quality Initiative"
-        ds.licence = "CC-BY-4.0"
-        ds.time_basis = ("nine Pakistani fiscal years, 1 July to 30 June. NOT calendar years, "
+        ds.licence = "See LICENSE-data and per-product provenance; upstream licences retained"
+        ds.geographic_licence_basis = "independent_primary_geography; ODbL alternatives excluded"
+        ds.time_basis = ("Pakistani fiscal years, 1 July to 30 June. NOT calendar years, "
                          "and not relabelled as any: period_id travels with every slice.")
-        ds.configurations = ("this file is the reference configuration only (household dung "
-                             "on the survey series, in every year). Configuration L is "
-                             "gridded for FY2023-24 alone and is not manufactured for "
-                             "history; see pakemis_grid_0p05_monthly_ledger.nc.")
+        ds.configurations = ("This file contains one structural configuration: " + configuration_id +
+                             "; household dung=" + conf.dung_basis(configuration_id) +
+                             "; nitrogen method=" + conf.nitrogen_method(configuration_id))
         ds.monthly_grain = ("monthly cells exist for FY2023-24 only "
                             "(pakemis_grid_0p05_monthly.nc). A historical month has no "
                             "seasonal geography evidence and none is invented here.")
@@ -198,6 +194,11 @@ class AnnualGridWriter:
         ds.evidence = ("what each layer's spatial pattern rests on, per stream and period, is "
                        "in pakemis_spatial_weights_by_year.csv - including whether the pattern "
                        "is the period's own evidence or the reference year's, carried back.")
+        ds.configuration_allocation = (
+            "All configurations use the same process-specific geographic allocation within each "
+            "period. Changing dung fate or nitrogen method changes process mass; it does not "
+            "supply new observations of locations. Differences between configuration maps are "
+            "conditional on this fixed allocation, including reference/proxy patterns.")
 
     def write(self, time_index, period_id, result):
         """One period, straight from the accumulator the loop already holds."""

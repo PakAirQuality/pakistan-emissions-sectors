@@ -33,6 +33,7 @@ from pkinv.activity.store import read_rows as _activity_rows
 import collections
 import csv
 import os
+import re
 
 from pkinv.core.geography import members_of, other_membership
 from pkinv.core.io import write_table
@@ -48,6 +49,8 @@ FIELDS = ("source_stream_id", "module", "ipcc_category", "gas", "period_id",
           "other_membership", "allowed_geographies", "evidence_grade", "basis",
           "pattern_hash", "temporal_operator", "correlation_group_id",
           "evidence_role", "validation_ids")
+FIELDS += ("activity_evidence_status", "activity_evidence_period",
+           "survey_pattern_period", "survey_pattern_status")
 
 # THE FUSED ROLE, derived - never declared - from the placement the build recorded. The
 # twentieth review asked for a single role vocabulary per stream-year (its proposal named
@@ -72,8 +75,8 @@ REFERENCE = "FY2023-24"
 GEOMETRY_VINTAGE = "geoBoundaries-gbOpen-PAK-ADM2-2019"
 NO_NATIVE = "S4:no-native-geometry"
 
-# THE VOCABULARY ANSWERS ONE QUESTION: does the evidence behind this surface have a time axis
-# the engine reads for THIS period?
+# The vocabulary distinguishes observed activity, modelled demographic proxies, reference
+# pattern reuse and static/substituted surfaces. A readable year axis alone proves no observation.
 #
 # It used to answer a different one. `direct_activity`, `administrative_activity` and
 # `dynamic_proxy` were a pure function of `within_province_placement` - a column already in the
@@ -83,25 +86,25 @@ NO_NATIVE = "S4:no-native-geometry"
 # does not make a 2021 snapshot an observation of FY2023-24. 196 rows and 632.9 Mt carried that
 # label, and a reader counting "measured in their own year" counted all of them.
 #
-#   annual_observed_activity  the evidence has a time axis AND the engine reads it for this
-#                             period (YEAR_KEYED below is the whole of that test)
+#   annual_observed_activity  usable own-period activity records were read; a time-indexed
+#                             interpolation/projection is not an observation
+#   modelled_population_proxy census-based district population interpolation/projection,
+#                             with fixed survey strata where applicable
 #   static_structural         a timeless surface - a raster snapshot or a declared judgement
 #                             with no time axis at all, in any period including the reference
 #   reference_shape_backcast  the reference year's pattern, rescaled to this year's control
+#   reference_shape_forward   reference district pattern reused in a later fiscal period
 #   substituted_surface       the declared surface had no evidence and a substitute placed the
 #                             majority of the mass
 #   unallocated               never placed below ADM1, in any year
 #   not_present               the stream carries no mass this period
 #
-# Two further values the review proposed - interpolated_between_anchors and nearest_vintage -
-# are NOT declared here. No code path produces them, and a value in a closed enum that the
-# build never emits makes the vocabulary test pass vacuously: the "derived, never declared"
-# rule in this module's own header, broken by the module itself. They are reserved in
-# docs/spatial_products_contract.md and will be declared by whatever first emits them.
 NOT_PLACED = "not_placed"
+CROP_PANELS = {"agri:Rice cultivation", "agri:Managed soils", "agri:Urea application"}
 
-# A stream-year earns a year-specific basis only where its evidence HAS a year axis AND the
-# engine reads that axis. Both halves are load-bearing: the plant fleet satisfied the first
+# YEAR_KEYED records a dispatch capability, not observational maturity. Actual panel
+# availability and demographic interpolation/projection are checked separately. Both halves
+# of dispatch remain load-bearing: the plant fleet satisfied the first
 # while failing the second for the whole of this pass, invisibly.
 #
 # THE CAPABILITY IS NOT A PROPERTY OF THE SURFACE. `population` is the same static WorldPop
@@ -173,9 +176,10 @@ YEAR_KEYED = {
     # static built-up raster; what carries the year axis is the provincial share vector, now
     # read per product from OCAC's own Total Industry area pages
     # (pkinv.sectors.industry.province_shape). The panel prints twelve provincial months for
-    # FY2021-22, FY2022-23 and FY2023-24 - the reference year reads the committed table and is
-    # graded reference_period on its own, so the window names the two before it. The six
-    # pre-panel years genuinely borrow, which is why this is a window and not a None.
+    # FY2021-22 through FY2024-25. The reference year keeps its committed rounded vector;
+    # the window names the other three supported periods. Source-to-export tests require
+    # twelve source months for every product group before crediting the added FY2024-25.
+    # The six pre-panel years genuinely borrow, so this is a window rather than None.
     #
     # AND WHY THE SURFACE HAS ITS OWN NAME. The key is (surface, district_panel), and the panel
     # is empty for every diffuse industry stream, so the only key otherwise available would be
@@ -187,7 +191,7 @@ YEAR_KEYED = {
     # The within-province half of the placement is NOT improved by this and is not claimed to
     # be: it is bracketed in data/stream_spatial_alternatives.csv against the one within-province
     # figure OCAC publishes.
-    ("builtup+ocac_area_shares", ""): ("FY2021-22", "FY2022-23"),
+    ("builtup+ocac_area_shares", ""): ("FY2021-22", "FY2022-23", "FY2024-25"),
     # rc46 Wave 5: solid waste disposal kept its year-keyed panel and changed its
     # surface name - the base is still the per-period district population weight
     # (the ("population", "waste:population") pair above), and the site re-seat only
@@ -266,6 +270,7 @@ SURFACE_VINTAGE = {
     "road_density": "OpenStreetMap roads, Geofabrik extract 2026-08-06",
     "rail_network_line_density": "OpenStreetMap railways, Geofabrik extract 2026-08-06",
     "firms_fire": "VIIRS active-fire detections (per period)",
+    "flare_points+uniform_fallback": "World Bank satellite flare-site estimates; source calendar year recorded separately",
     # rc62: same raster, and the province vector dated by OCAC's own monthly area editions
     "builtup+ocac_area_shares": "ESA WorldCover 2021 + OCAC area pages (per period)",
 }
@@ -277,7 +282,7 @@ SUBSTITUTION_MAJORITY = 0.5      # above this, the declared surface did not plac
 # curtailment year, bagasse power before FY2019-20, railway furnace oil before FY2021-22. A row
 # for a stream-year with no mass cannot be graded on how its mass was placed - it would read as
 # a backcast of nothing, which is how this was caught - so it is typed `not_present` instead.
-PANEL = "pakemis_monthly_fy2015_16_fy2023_24.csv"
+PANEL = "pakemis_monthly_fy2015_16_fy2024_25.csv"
 
 
 def _rows(path):
@@ -361,6 +366,85 @@ def _validation_index():
     return index
 
 
+def panel_evidence_context():
+    """Read the actual panel vintages; a year column alone proves no observation."""
+    population = collections.defaultdict(set)
+    for row in _rows(asset_path(DATA, "activity", "waste", "population_district.csv")):
+        population[row["year"]].add(row["source"])
+    crop_periods = {row["period_id"] for row in _rows(asset_path(
+        DATA, "activity", "agriculture", "crop_district_panel.csv"))
+        if row["qa_flag"] != "excluded_corrupt" and row["adm2_id"]
+        and float(row["area_kha"]) > 0}
+    # The GIS layer calls strata_shares without a survey override. Follow that
+    # maintained default rather than assuming the emissions reference year.
+    from pkinv.sectors.residential import hies
+    survey_periods = set()
+    for row in _rows(asset_path(DATA, "activity", "residential", "hies",
+                                "hies_national_totals.csv")):
+        if row["survey"] == hies.CURRENT:
+            match = re.search(r"HIES (\d{4})[-–](\d{2})", row["source"])
+            if match:
+                survey_periods.add("FY%s-%s" % match.groups())
+    if len(survey_periods) != 1:
+        raise ValueError("HIES spatial pattern has no unique documented period: %r"
+                         % survey_periods)
+    flares = _rows(asset_path(DATA, "activity", "fugitives", "flare_sites_pak.csv"))
+    if not flares:
+        raise ValueError("flare-site source table is empty")
+    return {"population": population, "crop_periods": crop_periods,
+            "survey_period": survey_periods.pop(),
+            "flare_years": {field for field in flares[0] if field.isdigit()}}
+
+
+def panel_evidence(period, panel, context, surface=""):
+    """Support of the district panel actually used, independently of its target year."""
+    out = {name: "" for name in ("activity_evidence_status", "activity_evidence_period",
+                                "survey_pattern_period", "survey_pattern_status")}
+    out["note"] = ""
+    if surface == "flare_points+uniform_fallback":
+        year = str(max(2012, min(2025, int(period[2:6]))))
+        if year not in context["flare_years"]:
+            raise ValueError("flare-site source lacks calendar year " + year)
+        out.update(activity_evidence_status="satellite_calendar_year_flaring_proxy",
+                   activity_evidence_period="CY" + year)
+        out["note"] = ("The fiscal allocation uses satellite-derived flare-site volumes for "
+                       "CY%s as a spatial proxy. That calendar year overlaps %s for six "
+                       "months, not a strict majority; it is not observed fiscal-year "
+                       "fuel or emission activity." % (year, period))
+    elif panel == "waste:population" or panel.startswith("resi:"):
+        start = int(period[2:6])
+        years = (str(start), str(start + 1))
+        if any(year not in context["population"] for year in years):
+            raise ValueError("population geography lacks calendar sources for " + period)
+        year_status = {year: ("projected" if any("projected" in source.lower()
+                        for source in context["population"][year]) else "census_anchored_series")
+                       for year in years}
+        status = ("census_population_projection" if "projected" in year_status.values()
+                  else "census_anchored_population_series")
+        out.update(activity_evidence_status=status,
+                   activity_evidence_period="mean(CY%s,CY%s)" % years)
+        out["note"] = ("District population uses %s from the 2017/2023 census-based model; "
+                       "%s, not observed annual district activity. Calendar-source status: %s. "
+                       "The raster remains its separately recorded snapshot vintage."
+                       % (out["activity_evidence_period"], status,
+                          "; ".join("CY%s=%s" % (year, year_status[year]) for year in years)))
+        if panel.startswith("resi:"):
+            survey = context["survey_period"]
+            out.update(survey_pattern_period=survey,
+                       survey_pattern_status=("own_period_survey_strata" if period == survey
+                                              else "fixed_survey_strata_reused"))
+            out["note"] += (" Household urban/rural fuel strata use HIES %s (%s); "
+                            "only the modelled population panel varies with the target year."
+                            % (survey, out["survey_pattern_status"]))
+    elif panel in CROP_PANELS and period not in context["crop_periods"]:
+        out.update(activity_evidence_status="reference_district_pattern_reused",
+                   activity_evidence_period=REFERENCE)
+        out["note"] = ("No usable district crop panel exists for %s; the cube retains the "
+                       "%s district category pattern. This is reference-pattern reuse, "
+                       "not observed own-year district crop activity." % (period, REFERENCE))
+    return out
+
+
 def build():
     ledger = {r["source_stream_id"]: r
               for r in _rows(asset_path(OUTPUTS, "pakemis_source_streams.csv"))}
@@ -376,6 +460,7 @@ def build():
     validation = _validation_index()
     substituted = substituted_shares()
     present = present_stream_periods()
+    panel_context = panel_evidence_context()
     rows = []
     for period in periods():
         for stream_id, stream in sorted(ledger.items()):
@@ -401,6 +486,7 @@ def build():
                 operator = "own_period_pattern"
 
             panel = surface_row.get("district_panel", "")
+            evidence = panel_evidence(period, panel, panel_context, surface)
             allowed = YEAR_KEYED.get((surface, panel), ())
             keyed = allowed is None or period in allowed
             # A surface absent from YEAR_KEYED is keyed for NO period: it has no time axis in
@@ -418,6 +504,17 @@ def build():
                 # period: calling it a backcast would credit a pattern that was not used.
                 basis, weight_period, borrowed, control = ("substituted_surface", period, "",
                                                            "grid")
+            elif evidence["activity_evidence_status"] == "satellite_calendar_year_flaring_proxy":
+                basis, weight_period, borrowed, control = ("calendar_activity_proxy",
+                    evidence["activity_evidence_period"], "", "grid")
+            elif evidence["activity_evidence_status"] in ("census_population_projection",
+                                                            "census_anchored_population_series"):
+                basis, weight_period, borrowed, control = ("modelled_population_proxy",
+                                                           period, "", "grid")
+            elif evidence["activity_evidence_status"] == "reference_district_pattern_reused":
+                basis, weight_period, borrowed, control = (
+                    "reference_shape_forward" if period > REFERENCE else "reference_shape_backcast",
+                    REFERENCE, REFERENCE, "grid")
             elif keyed:
                 # the year's own evidence, read for this period
                 basis, weight_period, borrowed, control = ("annual_observed_activity", period,
@@ -448,8 +545,8 @@ def build():
                 # pattern is carried and rescaled.
                 #
                 # WHAT THIS STILL DOES NOT SAY, declared rather than left to be found. For
-                # road_density and builtup+ocac_area_shares the axis exists only in FY2021-22
-                # and FY2022-23, so the REFERENCE year is not keyed either and its own row
+                # road_density and builtup+ocac_area_shares the reference year deliberately
+                # keeps its committed rounded vector, so its own row
                 # says static_structural for the very pattern these rows call a backcast. The
                 # label is literally true - these periods do carry the reference year's
                 # pattern - and it is kept, because the alternative empties the value: no
@@ -459,6 +556,9 @@ def build():
                 # test pass vacuously. 51 streams per period are in this state.
                 basis, weight_period, borrowed, control = ("reference_shape_backcast",
                                                            REFERENCE, REFERENCE, "grid")
+
+            if basis in ("not_present", "unallocated"):
+                evidence = {key: "" for key in evidence}
 
             rows.append({
                 "source_stream_id": stream_id, "module": stream.get("module", ""),
@@ -476,7 +576,8 @@ def build():
                 "allowed_geographies": "|".join(members_of(membership)),
                 "evidence_grade": ("" if (stream_id, period) not in present
                                    else period_grade(placement, share)),
-                "basis": _sentence(basis, period, share),
+                "basis": (_sentence(basis, period, share) +
+                          (" " + evidence["note"] if evidence["note"] else "")),
                 "pattern_hash": digest,
                 "temporal_operator": operator,
                 # WHICH STREAMS MOVE TOGETHER. Streams sharing a (surface, district panel) pair
@@ -491,11 +592,21 @@ def build():
                                   else EVIDENCE_ROLE[placement]),
                 "validation_ids": "|".join(validation.get(stream.get("module", ""), [])
                                            + validation.get("cross-sector", [])),
+                **{key: value for key, value in evidence.items() if key != "note"},
             })
     return rows
 
 
 def _sentence(basis, period, share):
+    if basis == "calendar_activity_proxy":
+        return ("Calendar-year activity informs a fiscal-year spatial proxy; its exact "
+                "source calendar period is recorded independently of the target fiscal period.")
+    if basis == "modelled_population_proxy":
+        return ("The target-year geography is a modelled demographic proxy; reading a "
+                "time-indexed population estimate does not make it observed emissions activity.")
+    if basis == "reference_shape_forward":
+        return ("A later-year allocation retains the declared reference district pattern; "
+                "it does not observe changes in local geography after that reference.")
     if basis == "annual_observed_activity":
         return ("the evidence behind this surface has a time axis and the engine read it for "
                 "%s" % period)

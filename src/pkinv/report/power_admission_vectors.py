@@ -149,7 +149,8 @@ def province_of_adm2():
 def held_points():
     """{plant: (lon, lat)} for the admitted fleet, from the reviewed facility registry."""
     out = {}
-    for r in read_rows(REGISTRY):
+    from pkinv.core.primary_geography import compatible_facilities
+    for r in compatible_facilities(read_rows(REGISTRY)):
         if r["module"] != "power" or not r["latitude"].strip():
             continue
         out.setdefault(r["name"], (float(r["longitude"]), float(r["latitude"])))

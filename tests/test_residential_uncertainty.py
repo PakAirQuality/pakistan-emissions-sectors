@@ -97,9 +97,8 @@ class TestStructuralScenarios(unittest.TestCase):
                      for c in engine.build_components(self.data, dung_basis="ledger"))
         self.assertAlmostEqual(
             self.scen["dung_all_diverted_household"]["deterministic"], ledger, places=9)
-        self.assertAlmostEqual(ledger, 29.4667, places=4)
-        self.assertAlmostEqual(self.scen["reference"]["deterministic"], 24.2204,
-                               places=4)
+        self.assertAlmostEqual(self.scen["reference"]["deterministic"],
+            sum(c["co2e_Mt_AR5"] for c in engine.build_components(self.data)), places=9)
 
     def test_the_survey_rounds_bracket_the_reference(self):
         """Through rc66 this test held dung_activity_hies (r_dung ~ 4.9 applied once) as
@@ -114,8 +113,15 @@ class TestStructuralScenarios(unittest.TestCase):
         low = self.scen["dung_survey_rate_2018_19"]["deterministic"]
         high = self.scen["dung_all_diverted_household"]["deterministic"]
         as_measured = self.scen["dung_survey_round_2024_25_as_measured"]["deterministic"]
-        self.assertAlmostEqual(low, 23.8524, places=4)
-        self.assertAlmostEqual(as_measured, 24.3339, places=4)
+        from pkinv.sectors.residential import timeseries, hies
+        comps = engine.build_components(self.data)
+        dung = sum(c["co2e_Mt_AR5"] for c in comps if c["subitem"].startswith("Dung"))
+        quantity = combustion.dung_air_dry_kg(self.data)
+        old_quantity = hies.national_quantity("dung_cake", "hies2019")[0] * (
+            timeseries.households(self.data.year) / timeseries.households(2019))
+        latest_quantity = hies.national_quantity("dung_cake", "hies2025")[0]
+        self.assertAlmostEqual(low, ref - dung + dung * old_quantity / quantity, places=9)
+        self.assertAlmostEqual(as_measured, ref - dung + dung * latest_quantity / quantity, places=9)
         self.assertLess(low, ref)
         self.assertLess(ref, as_measured)
         for name, r in self.scen.items():

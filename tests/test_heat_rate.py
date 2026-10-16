@@ -105,13 +105,21 @@ class TestFindings(unittest.TestCase):
         that tracks a known fleet transition and then sits at the combined-cycle
         ceiling only a net basis supports."""
         s = self.stab["Gas"]
-        self.assertEqual(s["verdict"], "stable")
+        # The latest physical-station reconstruction extends the combined-cycle
+        # fleet to ~60%; the old full-window "stable" flag need not persist.
+        self.assertLessEqual(s["spread"], 1.7)
         self.assertTrue(0.35 < s["lo"] < s["hi"] < 0.64,
                         "gas implies %.1f-%.1f%%" % (100 * s["lo"], 100 * s["hi"]))
         recent = [r["efficiency"] for y in (2021, 2022, 2023)
                   for r in heat_rate.implied(self.data, y) if r["fuel"] == "Gas"]
         for e in recent:
             self.assertGreater(e, 0.45, "the combined-cycle era must hold near 50%%")
+
+    def test_missing_latest_table3_is_not_replaced_by_the_station_reference(self):
+        from pkinv.core.reporting_window import CORE_FY_STARTS
+        rows = heat_rate.implied(self.data, max(CORE_FY_STARTS), basis="table3")
+        self.assertNotIn("Coal", {r["fuel"] for r in rows})
+        self.assertIn("Gas", {r["fuel"] for r in rows})
 
     def test_table_threes_coal_is_unstable_and_the_booked_account_is_not(self):
         """THE FINDING, AND THE RE-BASE THAT ANSWERED IT, IN ONE TEST.

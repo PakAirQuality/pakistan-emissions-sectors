@@ -1,0 +1,654 @@
+id,kind,uncert_pct,distribution,evidence,dependence_case,uncertainty_low_pct,uncertainty_high_pct,mean
+parameter:waste:gen_rate_urban,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:gen_rate_rural,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:uncollected_urban,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:uncollected_rural,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:burned_fraction,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:oxidation_factor,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:dry_matter,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:fossil_c_per_wet_t,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:total_c_per_wet_t,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:swds_k,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:swds_docf,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:swds_f,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_bod_g_per_cap_day,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_bo,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_mcf_sewer,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_mcf_latrine,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_industrial_factor,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_f_npr,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_f_non_con,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_f_ind_com,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_ef_effluent,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_f_pc,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_n_hh,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_nrem_secondary,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_nrem_septic,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_nrem_latrine,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+parameter:waste:ww_ef_plant_aerobic,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,persistent_parameters,,,
+activity:fugitives:gas-production-volume,activity,,bounded_split_triangular,Default 32% sour-gas share,persistent_parameters,100.0,100.0,
+activity:fugitives:gas_transmission_throughput,activity,,bounded_split_triangular,Tables 2.3; 3.11; 3.15; 3.20; 3.21; 3.24; 3.29; 4.1; 4.2,persistent_parameters,3.0,3.0,
+activity:fugitives:gas_distribution_throughput,activity,,bounded_split_triangular,Tables 2.3; 3.11; 3.15; 3.20; 3.21; 3.24; 3.29; 4.1; 4.2,persistent_parameters,3.0,3.0,
+activity:fugitives:ufg_diagnostic,activity,,bounded_split_triangular,Tables 2.3; 3.11; 3.15; 3.20; 3.21; 3.24; 3.29; 4.1; 4.2,persistent_parameters,15.0,15.0,
+native:fugitives:activity-residual:oil_pipeline_transport,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-source:oil_refining,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-residual:gas_gathering,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-residual:gas_processing,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-residual:sour_gas_processing_gross_32,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-source:lng_import_terminals,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-source:post_meter_appliances,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-source:post_meter_nonresidential,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-source:gas_transmission_pipeline,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:activity-source:gas_distribution_pipeline,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:oil_prod_high,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:oil_transport_pipeline,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:oil_refining,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:gas_prod_high,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:gas_gathering,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:gas_processing_high,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:gas_processing_sour,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:lng_import,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:post_meter_appliance,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:post_meter_industrial,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:gas_transmission_high_km,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+native:fugitives:factor:gas_distribution_high_km,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,persistent_parameters,,,
+activity:coal:power_station_mass,activity,5.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:ncv:Lignite,factor,67.647059,mean_preserving_lognormal,,persistent_parameters,,,
+factor:co2:Lignite,factor,12.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:ch4:Other Bituminous Coal,factor,150.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:n2o:Other Bituminous Coal,factor,150.0,mean_preserving_lognormal,,persistent_parameters,,,
+activity:crop:rice,activity,15.0,mean_preserving_lognormal,,persistent_parameters,,,
+activity:crop:wheat,activity,10.0,mean_preserving_lognormal,,persistent_parameters,,,
+activity:crop:cotton,activity,25.0,mean_preserving_lognormal,,persistent_parameters,,,
+activity:crop:maize,activity,10.0,mean_preserving_lognormal,,persistent_parameters,,,
+activity:crop:sugarcane,activity,10.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:burning:combustion_factor,factor,30.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.85
+factor:burning:Gef_CH4,factor,40.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:burning:Gef_N2O,factor,50.0,mean_preserving_lognormal,,persistent_parameters,,,
+activity:livestock:cattle,activity,15,mean_preserving_lognormal,,persistent_parameters,,,
+activity:livestock:buffalo,activity,15,mean_preserving_lognormal,,persistent_parameters,,,
+activity:livestock:sheep,activity,15,mean_preserving_lognormal,,persistent_parameters,,,
+activity:livestock:goats,activity,15,mean_preserving_lognormal,,persistent_parameters,,,
+activity:livestock:camels,activity,15,mean_preserving_lognormal,,persistent_parameters,,,
+activity:livestock:poultry,activity,15,mean_preserving_lognormal,,persistent_parameters,,,
+activity:agriculture:nitrogen_offtake,activity,5.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:manure_n2o_ef3:pasture_range_paddock,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.0
+factor:manure_n2o_ef3:daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.0
+factor:manure_n2o_ef3:solid_storage,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.005
+factor:manure_n2o_ef3:drylot,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.02
+factor:manure_n2o_ef3:liquid_slurry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.005
+factor:manure_n2o_ef3:burned_fuel,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.0
+factor:manure_n2o_ef3:poultry_litter,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.001
+factor:soils:EF1_dry,factor,110.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.005
+factor:soils:EF1FR_rice,factor,120.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.004
+factor:soils:EF4_dry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.005
+factor:soils:EF5,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.011
+factor:soils:FracGASM,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.21
+factor:soils:FracLEACH,factor,80.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.24
+factor:soils:EF3PRP_cattle,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.002
+factor:soils:EF3PRP_sheepgoat,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.003
+factor:soils:NOx_frac_of_applied,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.007
+factor:manure_fracleachms:daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.0
+factor:manure_fracleachms:solid_storage,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.02
+factor:manure_fracleachms:drylot,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.035
+factor:manure_fracleachms:liquid_slurry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.0
+factor:manure_fracleachms:poultry_litter,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.0
+factor:nh3_emep_tan:dairy_cattle,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.6
+factor:nh3_emep_tan:other_cattle,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.6
+factor:nh3_emep_tan:buffalo,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.5
+factor:nh3_emep_tan:sheep,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.5
+factor:nh3_emep_tan:goats,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.5
+factor:nh3_emep_tan:camels,factor,30.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.5
+factor:nh3_emep_tan:poultry,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.7
+factor:nh3_emep_housing:dairy_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.08
+factor:nh3_emep_housing:other_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.08
+factor:nh3_emep_housing:buffalo,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.2
+factor:nh3_emep_housing:sheep,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.22
+factor:nh3_emep_housing:goats,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.22
+factor:nh3_emep_housing:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.22
+factor:nh3_emep_housing:poultry,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.21
+factor:nh3_emep_yard:dairy_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:nh3_emep_yard:other_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.53
+factor:nh3_emep_yard:buffalo,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:nh3_emep_yard:sheep,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.75
+factor:nh3_emep_yard:goats,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.75
+factor:nh3_emep_yard:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.75
+factor:nh3_emep_yard:poultry,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.21
+factor:nh3_emep_storage:dairy_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.32
+factor:nh3_emep_storage:other_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.32
+factor:nh3_emep_storage:buffalo,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.17
+factor:nh3_emep_storage:sheep,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.32
+factor:nh3_emep_storage:goats,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.28
+factor:nh3_emep_storage:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.28
+factor:nh3_emep_storage:poultry,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:nh3_emep_application:dairy_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.68
+factor:nh3_emep_application:other_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.68
+factor:nh3_emep_application:buffalo,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.55
+factor:nh3_emep_application:sheep,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.9
+factor:nh3_emep_application:goats,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.9
+factor:nh3_emep_application:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.9
+factor:nh3_emep_application:poultry,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.38
+factor:nh3_emep_grazing:dairy_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.14
+factor:nh3_emep_grazing:other_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.14
+factor:nh3_emep_grazing:buffalo,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.14
+factor:nh3_emep_grazing:sheep,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.09
+factor:nh3_emep_grazing:goats,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.09
+factor:nh3_emep_grazing:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.09
+factor:nh3_emep_grazing:poultry,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.0
+factor:fert_nh3_highpH:shared_table,factor,30.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:crop_residue_nh3:slope,factor,50.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:manure_fracgasms:dairy_cattle_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.07
+factor:manure_fracgasms:other_cattle_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.07
+factor:manure_fracgasms:buffalo_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.07
+factor:manure_fracgasms:other_animals_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.07
+factor:manure_fracgasms:poultry_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.07
+factor:manure_fracgasms:dairy_cattle_solid_storage,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:other_cattle_solid_storage,factor,61.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.45
+factor:manure_fracgasms:buffalo_solid_storage,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:other_animals_solid_storage,factor,63.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.12
+factor:manure_fracgasms:poultry_solid_storage,factor,60.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.4
+factor:manure_fracgasms:dairy_cattle_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:other_cattle_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:buffalo_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:other_animals_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:dairy_cattle_liquid_slurry,factor,45.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:other_cattle_liquid_slurry,factor,45.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:buffalo_liquid_slurry,factor,45.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.3
+factor:manure_fracgasms:other_animals_liquid_slurry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.09
+factor:manure_fracgasms:poultry_poultry_litter,factor,63.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,persistent_parameters,,,0.4
+ef:enteric_dairy_cattle,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:enteric_other_cattle,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:enteric_buffalo,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:enteric_sheep,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:enteric_goats,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:enteric_camels,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:manure_ch4_dairy_cattle,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:manure_ch4_other_cattle,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:manure_ch4_buffalo,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:manure_ch4_sheep,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:manure_ch4_goats,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:manure_ch4_camels,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:manure_ch4_poultry,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:rice_EFc,factor,53.00097348726815,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:rice_SFw_continuous,factor,26.000477559791907,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ef:liming_EF_urea,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+all domestic stages,factor,35.0006428689506,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+all jet fuel,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a1a_toe_activity,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:co2:Gas/Diesel Oil,factor,2.000036735368747,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Oil,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Oil,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:co2:Residual Fuel Oil,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:co2:Natural Gas,factor,4.000073470737494,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Natural Gas,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Natural Gas,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+delivered_gas_ogra_3_31,factor,12.000220412211771,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a3b_petrol_control,factor,10.772460894093285,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:co2:Motor Gasoline,factor,2.000036735368747,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Motor Gasoline,factor,60.00110206105829,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Motor Gasoline,factor,70.00128573790133,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a3b_diesel_control,factor,10.441620259887385,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Gas/Diesel Oil,factor,60.00110206105829,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Gas/Diesel Oil,factor,70.00128573790133,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a3b_cng_chain,factor,8.54503812517952,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a3c_fuel_account,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a3c_hsd_density,factor,2.000036735368747,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a3c_ncv,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Residual Fuel Oil,factor,4.000073470737494,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_gas,factor,8.000146941474455,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_lpg,factor,25.000459192107588,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:co2:Liquefied Petroleum Gases,factor,6.00011020610553,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Liquefied Petroleum Gases,factor,8.000146941474455,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Liquefied Petroleum Gases,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Liquefied Petroleum Gases,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_kerosene,factor,20.000367353686194,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:co2:Other Kerosene,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Other Kerosene,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Other Kerosene,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Other Kerosene,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_coal,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:co2:Other Bituminous Coal,factor,6.0,mean_preserving_lognormal,,persistent_parameters,,,
+factor:ncv:Other Bituminous Coal,factor,21.0,mean_preserving_lognormal,,persistent_parameters,,,
+1a4b_generators,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Motor Gasoline,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_dung_chain,factor,67.7936565231672,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Other Primary Solid Biomass,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Other Primary Solid Biomass,factor,74.0013592086385,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Other Primary Solid Biomass,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_firewood,factor,35.0006428689506,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Wood/Wood Waste,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Wood/Wood Waste,factor,74.0013592086385,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Wood/Wood Waste,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_charcoal,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Charcoal,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Charcoal,factor,74.0013592086385,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Charcoal,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+1a4b_residue,factor,60.00110206105829,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+cement_activity,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+clinker_factor,factor,8.000146941474455,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ammonia_activity,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+ammonia_factor,factor,7.000128573789853,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+steel_activity,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+steel_factor,factor,25.000459192107588,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+lubricant_activity,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+lubricant_odu,factor,50.00091838421526,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Natural Gas,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+industry:OCAC Total Industry liquid fuels,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ch4:Liquid Fuels,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:n2o:Liquid Fuels,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+factor:ncv:Gas/Diesel Oil,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+activity:coal:brick_kilns,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+activity:coal:cement,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+power:Bagasse heat rate,factor,20.000367353686194,mean_preserving_lognormal,existing component parameter graph,persistent_parameters,,,
+parameter:waste:gen_rate_urban,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:gen_rate_rural,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:uncollected_urban,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:uncollected_rural,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:burned_fraction,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:oxidation_factor,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:dry_matter,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:fossil_c_per_wet_t,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:total_c_per_wet_t,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:swds_k,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:swds_docf,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:swds_f,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_bod_g_per_cap_day,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_bo,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_mcf_sewer,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_mcf_latrine,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_industrial_factor,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_f_npr,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_f_non_con,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_f_ind_com,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_ef_effluent,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_f_pc,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_n_hh,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_nrem_secondary,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_nrem_septic,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_nrem_latrine,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+parameter:waste:ww_ef_plant_aerobic,factor,0.0,native_waste_parameter,existing bounded/positive waste parameter rerun; raw parameter draws,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2016,activity,,bounded_split_triangular,Default 32% sour-gas share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2016,activity,,bounded_split_triangular,Tables 2.16; 2.21; 2.23-2.27; 6.3,annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2016,activity,,bounded_split_triangular,Tables 2.16; 2.21; 2.23-2.27; 6.3,annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2016,activity,,bounded_split_triangular,Tables 2.16; 2.21; 2.23-2.27; 6.3,annual_activity_errors,15.0,15.0,
+native:fugitives:activity-residual:oil_pipeline_transport,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-source:oil_refining,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-residual:gas_gathering,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-residual:gas_processing,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-residual:sour_gas_processing_gross_32,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-source:lng_import_terminals,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-source:post_meter_appliances,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-source:post_meter_nonresidential,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-source:gas_transmission_pipeline,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:activity-source:gas_distribution_pipeline,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:oil_prod_high,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:oil_transport_pipeline,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:oil_refining,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:gas_prod_high,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:gas_gathering,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:gas_processing_high,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:gas_processing_sour,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:lng_import,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:post_meter_appliance,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:post_meter_industrial,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:gas_transmission_high_km,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+native:fugitives:factor:gas_distribution_high_km,factor,0.0,native_fugitives_parameter,source/group bounded parameter rerun; raw underlying draw,annual_activity_errors,,,
+activity:coal:power_station_mass:FY2016,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:ncv:Lignite,factor,67.647059,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:co2:Lignite,factor,12.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:ch4:Other Bituminous Coal,factor,150.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:n2o:Other Bituminous Coal,factor,150.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2016,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2016,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2016,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2016,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2016,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:burning:combustion_factor,factor,30.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.85
+factor:burning:Gef_CH4,factor,40.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:burning:Gef_N2O,factor,50.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2016,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2016,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2016,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2016,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2016,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2016,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2016,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:manure_n2o_ef3:pasture_range_paddock,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.0
+factor:manure_n2o_ef3:daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.0
+factor:manure_n2o_ef3:solid_storage,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.005
+factor:manure_n2o_ef3:drylot,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.02
+factor:manure_n2o_ef3:liquid_slurry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.005
+factor:manure_n2o_ef3:burned_fuel,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.0
+factor:manure_n2o_ef3:poultry_litter,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.001
+factor:soils:EF1_dry,factor,110.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.005
+factor:soils:EF1FR_rice,factor,120.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.004
+factor:soils:EF4_dry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.005
+factor:soils:EF5,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.011
+factor:soils:FracGASM,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.21
+factor:soils:FracLEACH,factor,80.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.24
+factor:soils:EF3PRP_cattle,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.002
+factor:soils:EF3PRP_sheepgoat,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.003
+factor:soils:NOx_frac_of_applied,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.007
+factor:manure_fracleachms:daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.0
+factor:manure_fracleachms:solid_storage,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.02
+factor:manure_fracleachms:drylot,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.035
+factor:manure_fracleachms:liquid_slurry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.0
+factor:manure_fracleachms:poultry_litter,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.0
+factor:nh3_emep_tan:dairy_cattle,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.6
+factor:nh3_emep_tan:other_cattle,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.6
+factor:nh3_emep_tan:buffalo,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.5
+factor:nh3_emep_tan:sheep,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.5
+factor:nh3_emep_tan:goats,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.5
+factor:nh3_emep_tan:camels,factor,30.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.5
+factor:nh3_emep_tan:poultry,factor,20.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.7
+factor:nh3_emep_housing:dairy_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.08
+factor:nh3_emep_housing:other_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.08
+factor:nh3_emep_housing:buffalo,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.2
+factor:nh3_emep_housing:sheep,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.22
+factor:nh3_emep_housing:goats,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.22
+factor:nh3_emep_housing:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.22
+factor:nh3_emep_housing:poultry,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.21
+factor:nh3_emep_yard:dairy_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:nh3_emep_yard:other_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.53
+factor:nh3_emep_yard:buffalo,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:nh3_emep_yard:sheep,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.75
+factor:nh3_emep_yard:goats,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.75
+factor:nh3_emep_yard:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.75
+factor:nh3_emep_yard:poultry,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.21
+factor:nh3_emep_storage:dairy_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.32
+factor:nh3_emep_storage:other_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.32
+factor:nh3_emep_storage:buffalo,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.17
+factor:nh3_emep_storage:sheep,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.32
+factor:nh3_emep_storage:goats,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.28
+factor:nh3_emep_storage:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.28
+factor:nh3_emep_storage:poultry,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:nh3_emep_application:dairy_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.68
+factor:nh3_emep_application:other_cattle,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.68
+factor:nh3_emep_application:buffalo,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.55
+factor:nh3_emep_application:sheep,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.9
+factor:nh3_emep_application:goats,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.9
+factor:nh3_emep_application:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.9
+factor:nh3_emep_application:poultry,factor,40.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.38
+factor:nh3_emep_grazing:dairy_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.14
+factor:nh3_emep_grazing:other_cattle,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.14
+factor:nh3_emep_grazing:buffalo,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.14
+factor:nh3_emep_grazing:sheep,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.09
+factor:nh3_emep_grazing:goats,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.09
+factor:nh3_emep_grazing:camels,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.09
+factor:nh3_emep_grazing:poultry,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.0
+factor:fert_nh3_highpH:shared_table,factor,30.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:crop_residue_nh3:slope,factor,50.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:manure_fracgasms:dairy_cattle_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.07
+factor:manure_fracgasms:other_cattle_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.07
+factor:manure_fracgasms:buffalo_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.07
+factor:manure_fracgasms:other_animals_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.07
+factor:manure_fracgasms:poultry_daily_spread,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.07
+factor:manure_fracgasms:dairy_cattle_solid_storage,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:other_cattle_solid_storage,factor,61.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.45
+factor:manure_fracgasms:buffalo_solid_storage,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:other_animals_solid_storage,factor,63.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.12
+factor:manure_fracgasms:poultry_solid_storage,factor,60.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.4
+factor:manure_fracgasms:dairy_cattle_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:other_cattle_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:buffalo_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:other_animals_drylot,factor,50.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:dairy_cattle_liquid_slurry,factor,45.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:other_cattle_liquid_slurry,factor,45.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:buffalo_liquid_slurry,factor,45.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.3
+factor:manure_fracgasms:other_animals_liquid_slurry,factor,100.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.09
+factor:manure_fracgasms:poultry_poultry_litter,factor,63.0,bounded_beta,conditional mean and variance from declared parameter width; not a structural-case probability,annual_activity_errors,,,0.4
+ef:enteric_dairy_cattle,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:enteric_other_cattle,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:enteric_buffalo,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:enteric_sheep,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:enteric_goats,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:enteric_camels,factor,50.00091838421518,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:manure_ch4_dairy_cattle,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:manure_ch4_other_cattle,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:manure_ch4_buffalo,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:manure_ch4_sheep,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:manure_ch4_goats,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:manure_ch4_camels,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:manure_ch4_poultry,factor,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:rice_EFc,factor,53.00097348726815,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:rice_SFw_continuous,factor,26.000477559791907,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ef:liming_EF_urea,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+all domestic stages,factor,35.0006428689506,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+all jet fuel,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a1a_toe_activity,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:co2:Gas/Diesel Oil,factor,2.000036735368747,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Oil,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Oil,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:co2:Residual Fuel Oil,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:co2:Natural Gas,factor,4.000073470737494,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Natural Gas,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Natural Gas,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+delivered_gas_ogra_3_31,factor,12.000220412211771,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a3b_petrol_control,factor,10.772460894093285,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:co2:Motor Gasoline,factor,2.000036735368747,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Motor Gasoline,factor,60.00110206105829,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Motor Gasoline,factor,70.00128573790133,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a3b_diesel_control,factor,10.441620259887385,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Gas/Diesel Oil,factor,60.00110206105829,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Gas/Diesel Oil,factor,70.00128573790133,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a3b_cng_chain,factor,8.54503812517952,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a3c_fuel_account,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a3c_hsd_density,factor,2.000036735368747,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a3c_ncv,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Residual Fuel Oil,factor,4.000073470737494,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_gas,factor,8.000146941474455,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_lpg,factor,25.000459192107588,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:co2:Liquefied Petroleum Gases,factor,6.00011020610553,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Liquefied Petroleum Gases,factor,8.000146941474455,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Liquefied Petroleum Gases,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Liquefied Petroleum Gases,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_kerosene,factor,20.000367353686194,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:co2:Other Kerosene,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Other Kerosene,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Other Kerosene,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Other Kerosene,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_coal,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:co2:Other Bituminous Coal,factor,6.0,mean_preserving_lognormal,,annual_activity_errors,,,
+factor:ncv:Other Bituminous Coal,factor,21.0,mean_preserving_lognormal,,annual_activity_errors,,,
+1a4b_generators,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Motor Gasoline,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_dung_chain,factor,67.7936565231672,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Other Primary Solid Biomass,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Other Primary Solid Biomass,factor,74.0013592086385,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Other Primary Solid Biomass,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_firewood,factor,35.0006428689506,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Wood/Wood Waste,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Wood/Wood Waste,factor,74.0013592086385,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Wood/Wood Waste,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_charcoal,factor,40.00073470737217,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Charcoal,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Charcoal,factor,74.0013592086385,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Charcoal,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+1a4b_residue,factor,60.00110206105829,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+cement_activity,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+clinker_factor,factor,8.000146941474455,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ammonia_activity,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+ammonia_factor,factor,7.000128573789853,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+steel_activity,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+steel_factor,factor,25.000459192107588,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+lubricant_activity,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+lubricant_odu,factor,50.00091838421526,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Natural Gas,factor,5.000091838421654,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+industry:OCAC Total Industry liquid fuels,factor,10.000183676842882,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ch4:Liquid Fuels,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:n2o:Liquid Fuels,factor,150.00275515264562,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+factor:ncv:Gas/Diesel Oil,factor,3.0000551030527656,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2016,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2016,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2017,activity,,bounded_split_triangular,Default 32% sour-gas share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2017,activity,,bounded_split_triangular,2016-17 Tables 2.16; 2.21; 2.23-2.27; 2017-18 Table 6.3,annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2017,activity,,bounded_split_triangular,2016-17 Tables 2.16; 2.21; 2.23-2.27; 2017-18 Table 6.3,annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2017,activity,,bounded_split_triangular,2016-17 Tables 2.16; 2.21; 2.23-2.27; 2017-18 Table 6.3,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2017,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2017,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2017,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2017,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2017,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2017,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2017,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2017,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2017,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2017,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2017,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2017,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2017,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2017,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2017,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2018,activity,,bounded_split_triangular,Default 32% sour-gas share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2018,activity,,bounded_split_triangular,Tables 2.17; 2.22; 2.24-2.29; 6.3,annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2018,activity,,bounded_split_triangular,Tables 2.17; 2.22; 2.24-2.29; 6.3,annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2018,activity,,bounded_split_triangular,Tables 2.17; 2.22; 2.24-2.29; 6.3,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2018,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2018,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2018,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2018,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2018,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2018,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2018,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2018,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2018,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2018,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2018,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2018,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2018,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2018,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2018,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2019,activity,,bounded_split_triangular,Default 32% sour-gas share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2019,activity,,bounded_split_triangular,Tables 2.3; 3.18; 3.23; 3.25-3.30,annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2019,activity,,bounded_split_triangular,Tables 2.3; 3.18; 3.23; 3.25-3.30,annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2019,activity,,bounded_split_triangular,Tables 2.3; 3.18; 3.23; 3.25-3.30,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2019,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2019,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2019,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2019,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2019,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2019,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2019,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2019,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2019,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2019,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2019,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2019,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2019,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2019,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2019,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2020,activity,,bounded_split_triangular,Default 32% sour-gas share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2020,activity,,bounded_split_triangular,Tables 2.3; 3.18; 3.23; 3.25-3.29,annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2020,activity,,bounded_split_triangular,Tables 2.3; 3.18; 3.23; 3.25-3.29,annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2020,activity,,bounded_split_triangular,Tables 2.3; 3.18; 3.23; 3.25-3.29,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2020,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2020,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2020,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2020,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2020,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2020,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2020,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2020,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2020,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2020,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2020,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2020,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2020,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+power:Bagasse heat rate,factor,20.000367353686194,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2020,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2020,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2021,activity,,bounded_split_triangular,Default 32% sour-gas share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2021,activity,,bounded_split_triangular,Tables 2.3; 3.17; 3.22; 3.24-3.28,annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2021,activity,,bounded_split_triangular,Tables 2.3; 3.17; 3.22; 3.24-3.28,annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2021,activity,,bounded_split_triangular,Tables 2.3; 3.17; 3.22; 3.24-3.28,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2021,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2021,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2021,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2021,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2021,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2021,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2021,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2021,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2021,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2021,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2021,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2021,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2021,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2021,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2021,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2022,activity,,bounded_split_triangular,Default 32% sour share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2022,activity,,bounded_split_triangular,"Table 3.22: 3,781 categorized + 292 T&D-loss MMCFD",annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2022,activity,,bounded_split_triangular,"Table 3.22: 3,781 categorized MMCFD",annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2022,activity,,bounded_split_triangular,Table 3.22: 292 MMCFD,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2022,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2022,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2022,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2022,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2022,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2022,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2022,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2022,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2022,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2022,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2022,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2022,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2022,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2022,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2022,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2023,activity,,bounded_split_triangular,Default 32% sour share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2023,activity,,bounded_split_triangular,"Table 3.25: 3,458 categorized + 241 T&D-loss MMCFD",annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2023,activity,,bounded_split_triangular,"Table 3.25: 3,458 categorized MMCFD",annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2023,activity,,bounded_split_triangular,Table 3.25: 241 MMCFD,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2023,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2023,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2023,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2023,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2023,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2023,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2023,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2023,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2023,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2023,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2023,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2023,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2023,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2023,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2023,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2024,activity,,bounded_split_triangular,Section 4.2.2.4 default 32% sour-gas share applied to gas production,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2024,activity,,bounded_split_triangular,"Table 3.31: categorized gas 3,437.13 plus T&D losses 193 MMCFD, annualised",annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2024,activity,,bounded_split_triangular,"Table 3.31: categorized gas 3,437.13 MMCFD annualised",annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2024,activity,,bounded_split_triangular,Table 3.31: 193 MMCFD annualised,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2024,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2024,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2024,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2024,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2024,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2024,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2024,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2024,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2024,activity,20.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2024,activity,20.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2024,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2024,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2024,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2024,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2024,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:fugitives:gas-production-volume:FY2025,activity,,bounded_split_triangular,Default 32% sour-gas share,annual_activity_errors,100.0,100.0,
+activity:fugitives:gas_transmission_throughput:FY2025,activity,,bounded_split_triangular,Tables 2.3; 3.11; 3.15; 3.20; 3.21; 3.24; 3.29; 4.1; 4.2,annual_activity_errors,3.0,3.0,
+activity:fugitives:gas_distribution_throughput:FY2025,activity,,bounded_split_triangular,Tables 2.3; 3.11; 3.15; 3.20; 3.21; 3.24; 3.29; 4.1; 4.2,annual_activity_errors,3.0,3.0,
+activity:fugitives:ufg_diagnostic:FY2025,activity,,bounded_split_triangular,Tables 2.3; 3.11; 3.15; 3.20; 3.21; 3.24; 3.29; 4.1; 4.2,annual_activity_errors,15.0,15.0,
+activity:coal:power_station_mass:FY2025,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:rice:FY2025,activity,15.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:wheat:FY2025,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:cotton:FY2025,activity,25.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:maize:FY2025,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:crop:sugarcane:FY2025,activity,10.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:cattle:FY2025,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:buffalo:FY2025,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:sheep:FY2025,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:goats:FY2025,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:camels:FY2025,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:livestock:poultry:FY2025,activity,15,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:agriculture:nitrogen_offtake:FY2025,activity,5.0,mean_preserving_lognormal,,annual_activity_errors,,,
+activity:coal:brick_kilns:FY2025,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,
+activity:coal:cement:FY2025,activity,30.000551030529074,mean_preserving_lognormal,existing component parameter graph,annual_activity_errors,,,

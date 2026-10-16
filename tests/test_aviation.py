@@ -40,11 +40,15 @@ class TestActivity(unittest.TestCase):
         mv = sum(r["com_dom_mv"] for r in self.data.movements_for())
         self.assertAlmostEqual(cyc["domestic"], mv / 2.0, places=6)
 
-    def test_panel_is_fiscal_years_2006_to_2023(self):
+    def test_panel_is_fiscal_years_2006_to_2024(self):
         years = {r["year"] for r in self.data.movements}
         self.assertEqual(min(years), 2006)
-        self.assertEqual(max(years), 2023)
-        self.assertEqual(len(years), 18)
+        self.assertEqual(max(years), 2024)
+        self.assertEqual(len(years), 19)
+
+    def test_missing_movements_never_silently_become_zero_emissions(self):
+        with self.assertRaisesRegex(KeyError, "missing activity cannot become zero"):
+            lto.compute(self.data, 2025)
 
     def test_every_airport_maps_into_a_province(self):
         self.assertEqual({r["province"] for r in self.data.movements} - set(PROVINCES), set())

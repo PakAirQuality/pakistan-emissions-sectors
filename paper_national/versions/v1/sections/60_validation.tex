@@ -1,27 +1,9 @@
-% ===========================================================================
-% ESSD section 6: Technical validation (container).
-% Inputs 10_benchmarks (lead) and 08_key_categories (demoted). The closure identities
-% themselves are stated with the generation (Section 4); this section is what was
-% compared against something outside the engine. No printed quantity lives here.
-% ===========================================================================
-\section{Technical validation}
-\label{sec:validation}
-
-Validation here means two different things, and the section keeps them apart. The first
-is internal: the annual, category and gas totals close exactly; every annual cell equals
-the sum of its twelve months; the national total equals the spatial allocation plus its
-unallocated remainder; and the ledgers between sectors balance. Those identities are
-asserted on every build and are reported with the generation stages that produce them.
-The second is external, and is the substance of this section: each sector is compared
-against whichever independent estimates exist for it, the disagreements are explained or
-defended rather than absorbed, and the key-category analysis says which categories carry
-the level and which carry the variance---so that a reader knows where the evidence-graded
-product is strong and where a proxy is doing the work.
-
+\section{Technical evaluation}\label{sec:validation}
+Internal reconciliation verifies extraction, units, material constraints, aggregation and product interfaces. External evidence evaluates magnitude, historical change, timing and location with matched species/period/boundary and shared inputs recorded. These different checks do not imply the same level of validation.
 \pkinvLeadFragment
 \input{sections/10_benchmarks}
 \pkinvEndFragment
-
 \pkinvDemoteFragment
 \input{sections/08_key_categories}
 \pkinvEndFragment
+

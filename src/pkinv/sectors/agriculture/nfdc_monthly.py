@@ -31,19 +31,39 @@ from pkinv.assets import asset_path
 from pkinv.activity.store import input_exists as _input_exists
 import csv
 import os
+import re
 
 from pkinv.core import monthly as core_monthly
 from pkinv.paths import DATA
 from pkinv.activity.store import read_rows
+from pkinv.core.reporting_window import CORE_FY_STARTS
 
 PANEL = asset_path(DATA, "activity", "monthly", "nfdc_month_product_offtake.csv")
+ANNEX5 = asset_path(DATA, "nfdc", "annex5_national_month_product.csv")
 UREA = "UREA"
 
 
 def _panel():
-    if not _input_exists(PANEL):
-        return []
-    return read_rows(PANEL)
+    rows = list(read_rows(PANEL)) if _input_exists(PANEL) else []
+    existing_years = {int(row["fiscal_year_start"]) for row in rows}
+    # The 2024-25 review's already transcribed Annex5 holds complete national
+    # product-month quantities. Do not confuse an unconnected extraction with
+    # absent evidence. Existing-year agency-resolved observations remain intact.
+    if _input_exists(ANNEX5):
+        numbers = {name: index for index, name in enumerate(
+            ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"), 1)}
+        for row in read_rows(ANNEX5):
+            start = int(row["fiscal_year"].split("-")[0])
+            if start in existing_years or start not in CORE_FY_STARTS:
+                continue
+            year, month = int(row["calendar_year"]), numbers[row["month"]]
+            if year - (month < 7) != start:
+                raise ValueError("NFDC Annex5 observation is outside its stated fiscal year")
+            rows.append(dict(fiscal_year_start=str(start), month="%d%02d" % (year, month),
+                product=row["product"].upper(), agency="National total",
+                tonnes=row["offtake_product_tonnes"], source_file="data/nfdc/AFR_2024-25.pdf",
+                source_page="", timing_target="commodity_offtake", t_class="T2"))
+    return rows
 
 
 def series(fy_start, product=UREA, rows=None):
@@ -89,10 +109,17 @@ def source_name(fy_start, rows=None):
     rows = rows if rows is not None else _panel()
     files = {r["source_file"] for r in rows
              if int(r["fiscal_year_start"]) == fy_start}
-    review = {f for f in files if "annual_fertilizer_review" in f}
+    review = {f for f in files if re.search(r"annual_fertilizer_review|AFR_", f, re.I)}
     if review and review != files:
         raise ValueError("FY%d mixes NFDC source lanes: %s" % (fy_start, sorted(files)))
-    return "AFR 2023-24 Annex-5" if review else "Table 3.4"
+    if review:
+        editions = {tuple(re.search(r"(?:annual_fertilizer_review_|AFR_)(\d{4})[_-](\d{2})",
+                                    f, re.I).groups()) for f in review}
+        if len(editions) != 1:
+            raise ValueError("NFDC fiscal year mixes review editions: " + repr(sorted(files)))
+        first, last = next(iter(editions))
+        return "AFR %s-%s Annex-5" % (first, last)
+    return "Table 3.4"
 
 
 def profile(fy_start, product=UREA, rows=None):

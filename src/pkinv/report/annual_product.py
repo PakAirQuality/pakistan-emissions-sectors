@@ -38,7 +38,7 @@ a second vintage of the number the series owns - the defect the release manifest
 built to end.
 
 Usage:  python3 -m pkinv.report.annual_product
-Writes: outputs/pakemis_annual_fy2015_16_fy2023_24.csv (+ .parquet where pyarrow is
+Writes: outputs/pakemis_annual_fy2015_16_fy2024_25.csv (+ .parquet where pyarrow is
         installed - the CSV is authoritative and the two are asserted equal)
 """
 
@@ -54,10 +54,10 @@ from pkinv.report import national_series as ns
 from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 
-OUT = asset_path(OUTPUTS, "pakemis_annual_fy2015_16_fy2023_24.csv")
+OUT = asset_path(OUTPUTS, "pakemis_annual_fy2015_16_fy2024_25.csv")
 # A literal, not OUT[:-4] + ".parquet": the outputs audit finds writers by
 # scanning for the name, and a computed path is a file nothing appears to write.
-OUT_PARQUET = asset_path(OUTPUTS, "pakemis_annual_fy2015_16_fy2023_24.parquet")
+OUT_PARQUET = asset_path(OUTPUTS, "pakemis_annual_fy2015_16_fy2024_25.parquet")
 
 FIELDS = ("period_label", "fiscal_end_year", "sector", "category", "gas", "grain",
           "configuration_id",
@@ -147,7 +147,7 @@ def build_context():
             "res_data": registry.get("residential").load_data()}
 
 
-def components_for(name, fy_end, ctx):
+def components_for(name, fy_end, ctx, configuration_id=_conf.REFERENCE):
     """The COMPONENT rows for one sector-year, or None where only a total exists.
 
     Split out of _detail so the atomic annual table can read components rather than the
@@ -170,11 +170,18 @@ def components_for(name, fy_end, ctx):
     finding, and this is the largest instance of it so far.
     """
     sector = registry.get(name)
-    if name == "agriculture" and fy_end != 2024:
-        return components.enrich_identity(
-            sector.series_components_for_year(fy_end), name)
+    configuration_id = _conf.canonical(configuration_id)
+    if configuration_id not in _conf.ALL:
+        raise ValueError("unknown configuration: " + configuration_id)
+    if name == "agriculture":
+        method = _conf.nitrogen_method(configuration_id)
+        comps = (sector.build_components(sector.load_data(), nitrogen_method=method)
+                 if fy_end == 2024 else
+                 sector.series_components_for_year(fy_end, nitrogen_method=method))
+        return components.enrich_identity(comps, name)
     if name == "residential":
-        comps = sector.components_for_year(ctx["res_data"], fy_end)
+        comps = sector.components_for_year(
+            ctx["res_data"], fy_end, dung_basis=_conf.dung_basis(configuration_id))
     else:
         data = sector.load_data()
         year_key = fy_end if sector.YEAR_CONVENTION == "fiscal-end" else fy_end - 1
@@ -257,9 +264,10 @@ def _configuration_rows(reference_rows):
         if fy_end in seen:
             continue
         seen.add(fy_end)
-        out.append({**r, "category": "Diverted dung, unresolved fate", "gas": "",
+        for survey_configuration in (conf.REFERENCE, conf.IPCC_REFERENCE):
+            out.append({**r, "category": "Diverted dung, unresolved fate", "gas": "",
                     "grain": "residual_no_pathway",
-                    "configuration_id": conf.REFERENCE,
+                    "configuration_id": survey_configuration,
                     "co2e_Mt_AR5": "", "co2e_Mt_AR6": "",
                     "activity_basis": "survey dung basis (the reference since rc67)",
                     "completeness_state": "NA",
@@ -267,22 +275,23 @@ def _configuration_rows(reference_rows):
                               "quantified for every year in pakemis_dung_fate_by_year.csv "
                               "(%.2f Mt air-dry mass, not CO2e)"
                               % _dung_residual_Mt(fy_end)})
-    comps = res_engine.build_components(data, dung_basis=conf.ALTERNATIVE_DUNG_BASIS)
-    ref_year = max(seen)
-    template = next(r for r in reference_rows
-                    if r["sector"] == "residential"
-                    and int(r["fiscal_end_year"]) == ref_year)
-    by_cat = collections.defaultdict(lambda: [0.0, 0.0])
-    for c in comps:
-        key = (c["category"], c["gas"])
-        by_cat[key][0] += c["co2e_Mt_AR5"]
-        by_cat[key][1] += c["co2e_Mt_AR6"]
-    for (cat, gas), (a5, a6) in sorted(by_cat.items()):
-        out.append({**template, "category": cat, "gas": gas,
-                    "grain": "category_gas", "configuration_id": conf.LEDGER,
-                    "co2e_Mt_AR5": round(a5, 6), "co2e_Mt_AR6": round(a6, 6),
-                    "activity_basis": "ledger dung basis (configuration L)",
-                    "completeness_state": "E", "gap_id": ""})
+    context = build_context()
+    templates = {(r["sector"], int(r["fiscal_end_year"])): r for r in reference_rows
+                 if r["co2e_Mt_AR5"] != ""}
+    for configuration_id in conf.ALL:
+        if configuration_id == conf.REFERENCE:
+            continue
+        for (sector, fy_end), template in sorted(templates.items()):
+            by_cat = collections.defaultdict(lambda: [0.0, 0.0])
+            for component in components_for(sector, fy_end, context, configuration_id):
+                key = (component["category"], component["gas"])
+                by_cat[key][0] += component["co2e_Mt_AR5"]
+                by_cat[key][1] += component["co2e_Mt_AR6"]
+            for (category, gas), (ar5, ar6) in sorted(by_cat.items()):
+                out.append({**template, "category": category, "gas": gas,
+                            "grain": "category_gas", "configuration_id": configuration_id,
+                            "co2e_Mt_AR5": round(ar5, 6), "co2e_Mt_AR6": round(ar6, 6),
+                            "completeness_state": "E", "gap_id": ""})
     return out
 
 

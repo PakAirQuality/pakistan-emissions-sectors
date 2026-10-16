@@ -340,69 +340,34 @@ def placement_brackets():
     return out
 
 
-# --- completeness, the fifth kind (rc18, the twelfth review's separation) ------------
-#
-# Parameter, profile, placement and structure were already columns of this lattice or
-# rows of the configurations file; completeness was the one kind with no seat - it
-# lived in the register as notation keys and in the coverage ranking as comparator
-# magnitudes, and the reviewer's "integrate completeness uncertainty" is answered the
-# repository's way: a BOUND beside the interval, never a distribution inside it. A
-# category with a comparator-bounded absent remainder carries that bound; everything
-# else carries no_bound_declared, which is a statement, not a blank.
-#
-# The rows below map the coverage ranking's comparator names onto lattice categories.
-# Absences with NO lattice category to sit in (F-gases, ammonia) cannot appear here;
-# completeness_national() carries them instead.
-COVERAGE_BOUND_CATEGORY = {
-    "1A2 (all estimated) (EDGAR)": "Industrial fuel combustion (1A2)",
-    "Cement production (EDGAR)": "Cement production",
-    "Residential fuel combustion (EDGAR)": "Residential fuel combustion",
-    "Managed soils (Cui 2021)": "Managed soils",
-}
-
-# EDGAR's Pakistani F-gases, reported separately from every domain row and excluded
-# from both sides of the national comparator (data/benchmarks.csv, gas_scope notes).
-# No engine category exists to attach it to, so it rides the national statement; a
-# test pins this literal to the number inside the benchmarks register's own note.
-FGAS_BOUND_MT = 11.54
-FGAS_BOUND_SOURCE = ("EDGAR 2025 booklet F-gases, reported separately "
-                     "(data/benchmarks.csv gas_scope notes); no engine category "
-                     "exists to carry it")
+# --- unestimated-source coverage, distinct from conditional parameter draws ---
+# EDGAR's separately reported F-gas estimate is comparator context. It is not an
+# upper bound on Pakistan's unestimated F-gas emissions and is never summed with
+# inventory disagreements to manufacture a missing-emissions interval.
+FGAS_BOUND_MT = 11.54  # legacy identifier; comparator magnitude only, never a bound
+FGAS_BOUND_SOURCE = ("EDGAR 2025 booklet F-gases comparator, reported separately; "
+                     "not a numerical completeness bound")
 
 
 def completeness_bounds():
-    """{category: (bound_Mt, source)} - the comparator-bounded absent mass beside
-    each category, from the coverage ranking (which already carries every
-    caveat about what a comparator magnitude is and is not)."""
-    out = {}
-    for row in _rows("national_priority_rankings.csv"):
-        if row["ranking"] != "coverage":
-            continue
-        category = COVERAGE_BOUND_CATEGORY.get(row["name"])
-        if category is None:
-            continue
-        out[category] = (float(row["metric"]),
-                         "%s - national_priority_rankings.csv coverage rank %s: %s"
-                         % (row["name"], row["rank"], row["note"][:160]))
-    return out
+    """No numerical absent-source bound is established by the held comparisons.
+
+    Comparator differences combine activities, factors, source coverage and
+    period/boundary choices. They cannot bound an unestimated source's mass,
+    even when the difference is positive. NE statuses remain in the coverage
+    registers; an unknown remainder is neither a zero nor a percentile draw.
+    """
+    return {}
 
 
 def completeness_national():
-    """The composed national completeness statement: what the held bounds say is
-    outside the inventory, and why the pieces must not be naively summed."""
-    bounds = completeness_bounds()
-    industry = bounds.get("Industrial fuel combustion (1A2)", (0.0, ""))[0]
-    composable = industry + FGAS_BOUND_MT
+    """Unknown missing-source mass, distinct from conditional parameter intervals."""
     return {
-        "composable_bound_Mt": round(composable, 2),
-        "pieces": "1A2 unresolved solid-fuel residual %.2f + F-gases %.2f"
-                  % (industry, FGAS_BOUND_MT),
-        "not_composed": ("ammonia's CRT comparator (19.4, red-flagged as a "
-                         "chemical-industries aggregate) and cement's whole-IPPU "
-                         "EDGAR row (9.99, not like-for-like) are bounds on "
-                         "OVERLAPPING or mislabelled scopes and are listed, not "
-                         "summed"),
-        "kind": "bound beside the interval, never a distribution inside it",
+        "composable_bound_Mt": "",
+        "pieces": "No defensible composable missing-emissions range declared",
+        "not_composed": ("Comparator differences and F-gas benchmark magnitudes are contextual "
+                         "estimates, not numerical bounds; unestimated categories retain NE status"),
+        "kind": "no_numerical_completeness_bound_declared",
     }
 
 

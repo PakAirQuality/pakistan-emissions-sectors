@@ -21,6 +21,7 @@ import math
 import os
 import sys
 import unittest
+import tempfile
 
 
 from pkinv.core import montecarlo, parameters, registry   # noqa: E402
@@ -92,6 +93,20 @@ class TestTheDecompositionIsAnIdentity(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.rows = parameters.decompose(_BUILT[0])
+
+    def test_exported_analytical_width_is_not_labelled_native_sampled_marginal(self):
+        from pkinv.core.io import read_rows
+        with tempfile.TemporaryDirectory() as directory:
+            path = os.path.join(directory, "decomposition.csv")
+            parameters.write_decomposition(_BUILT[0], path)
+            exported = read_rows(path)
+        native = [r for r in exported if r["sampling_method"] == "native_material_flow_replay"]
+        self.assertTrue(native)
+        for row in native:
+            self.assertEqual(row["analytical_width_role"], "analytical_comparator_not_sampled")
+        for row in exported:
+            if row["sampling_method"] == "shared_lognormal_parameter_graph":
+                self.assertEqual(row["analytical_width_role"], "sampled_graph_marginal")
 
     def test_named_and_residual_reconstruct_the_declared_variance(self):
         """The identity, wherever the row reconciles.
@@ -230,7 +245,9 @@ class TestTheScopeMapResolvesBothWays(unittest.TestCase):
                 touched.setdefault(g, set()).add((c["_sector"], c["subitem"]))
         for group, rows in touched.items():
             if len(rows) > 1:
-                self.assertTrue(group in scopes or group.startswith("factor:"),
+                explicitly_declared = all(group in c.get("uncertainty_driver_widths", {})
+                    for c in comps if group in parameters.groups_for(c, scopes))
+                self.assertTrue(group in scopes or group.startswith("factor:") or explicitly_declared,
                                 "%s spans %d components and is neither declared nor a fuel "
                                 "factor" % (group, len(rows)))
 

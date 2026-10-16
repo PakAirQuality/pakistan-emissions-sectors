@@ -12,7 +12,7 @@ import unittest
 from pkinv.core.io import read_rows
 from _support import ROOT
 
-OUT = os.path.join(ROOT, "outputs", "pakemis_annual_fy2015_16_fy2023_24.csv")
+from pkinv.report.annual_product import OUT
 SERIES = os.path.join(ROOT, "outputs", "pakemis_national_series.csv")
 
 GRAINS = ("category_gas", "sector_total", "absent", "residual_no_pathway")
@@ -61,7 +61,7 @@ class TestAnnualProduct(unittest.TestCase):
         for r in _rows():
             if not r["co2e_Mt_AR5"]:
                 continue
-            if r["configuration_id"] != "REF_2023_24":
+            if r["configuration_id"] != "S_TAN":
                 continue      # the S rows close against the S register, not the series
             key = (r["sector"], r["fiscal_end_year"])
             sums[key] = sums.get(key, 0.0) + float(r["co2e_Mt_AR5"])

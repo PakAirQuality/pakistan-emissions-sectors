@@ -370,6 +370,11 @@ def build():
         files, archival, licence = provenance.get(
             c["source_id"], ([], UNRESOLVED, UNRESOLVED))
         geometry = _geometry_for(geometry_rows, module, c["category"], c["subitem"])
+        from pkinv.core.primary_geography import RAIL_GEOMETRIES
+        compatible_rail = geometry in RAIL_GEOMETRIES
+        if compatible_rail:
+            geometry = "S4:no-native-geometry"
+            proxy = "railways_freight_div"
         out.append({
             "release_version": pkinv.__version__,
             # Read from the row, not recomputed: the component already carries its
@@ -425,11 +430,12 @@ def build():
             "temporal_class": c["temporal_method"],
             "temporal_profile_id": profile_id,
             "temporal_profile_source": profile_source,
-            "spatial_class": c["spatial_method"],
+            "spatial_class": "NA" if compatible_rail else c["spatial_method"],
             "spatial_class_measured": _refined_measured(measured_class[geometry], geometry,
                                                         proxy, placements),
             "geometry_available": "no" if geometry == "S4:no-native-geometry" else "yes",
-            "spatial_view": _view_for(geometry_rows, module, c["category"], c["subitem"]),
+            "spatial_view": ("accounting" if compatible_rail else
+                             _view_for(geometry_rows, module, c["category"], c["subitem"])),
             "spatial_profile_id": proxy,
             "geometry_id": geometry,
             "release_height_class": heights(module, c["category"], c["subitem"]),

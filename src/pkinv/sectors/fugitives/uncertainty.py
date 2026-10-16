@@ -174,7 +174,7 @@ def _correlation(xs, ys):
 
 def refinement_analysis(data, scenario="reference", n_iter=N_ITER, seed=SEED, year=None,
                         distribution="bounded_split_triangular",
-                        return_inputs=False):
+                        return_inputs=False, return_native=False, parameter_draws=None):
     """Conditional Monte Carlo plus a transparent rank-sensitivity diagnostic."""
     config = segment_inventory.configuration(scenario)
     ledger = segment_inventory.inventory_rows(data, config, year=year)
@@ -183,8 +183,19 @@ def refinement_analysis(data, scenario="reference", n_iter=N_ITER, seed=SEED, ye
     total_samples = []
     segment_samples = {row["subitem"]: [] for row in ledger}
     input_samples = defaultdict(list)
-    for _ in range(n_iter):
-        group_u = {group: rng.random() for group in by_group}
+    native = {}
+    uniforms = {}
+    if parameter_draws is not None:
+        from pkinv.core.shared_parameter_draws import rng_for
+        def uniform(identity, kind):
+            key = parameter_draws.identity(identity, kind, year or data.year)
+            if key not in uniforms:
+                uniforms[key] = rng_for(key, seed).random(n_iter)
+            return uniforms[key]
+    for iteration in range(n_iter):
+        group_u = {group: (rng.random() if parameter_draws is None else
+                          uniform("activity:fugitives:" + group, "activity")[iteration])
+                   for group in by_group}
         activities = {}
         for activity_id, row in by_activity.items():
             group = row["activity_corr_group"]
@@ -197,16 +208,26 @@ def refinement_analysis(data, scenario="reference", n_iter=N_ITER, seed=SEED, ye
             residual_high = math.sqrt(max(0.0, high ** 2 - base_high ** 2))
             residual = 1.0
             if residual_low or residual_high:
-                residual = _draw_multiplier(
-                    rng, residual_low, residual_high, distribution)
+                residual = (_draw_multiplier(rng, residual_low, residual_high, distribution)
+                            if parameter_draws is None else _multiplier_from_u(
+                                uniform("activity:fugitives:residual:" + activity_id, "activity")[iteration],
+                                residual_low, residual_high, distribution))
                 input_samples["activity-residual:" + activity_id].append(residual)
             activities[activity_id] = row["activity_value"] * base * residual
 
-        factor_u = {row["factor_corr_group"]: rng.random() for row in ledger}
+        factor_u = {row["factor_corr_group"]: (rng.random() if parameter_draws is None else
+                     uniform("factor:fugitives:" + row["factor_corr_group"], "factor")[iteration])
+                    for row in ledger}
+        if return_native:
+            for activity_id, quantity in activities.items():
+                central = by_activity[activity_id]["activity_value"]
+                multiplier = quantity / central if central else 1.0
+                native.setdefault("activity:" + activity_id, []).append(multiplier)
         for group, value in factor_u.items():
             input_samples["factor:" + group].append(value)
 
         segment_iter = {key: 0.0 for key in segment_samples}
+        native_iter = defaultdict(float)
         for row in ledger:
             factor = row["factor_value"] * _multiplier_from_u(
                 factor_u[row["factor_corr_group"]],
@@ -214,10 +235,14 @@ def refinement_analysis(data, scenario="reference", n_iter=N_ITER, seed=SEED, ye
                 row["factor_uncertainty_high_pct"], distribution)
             emissions_Gg = (activities[row["activity_id"]] * factor *
                             row["structural_multiplier"] / 1000.0)
+            if return_native:
+                native_iter[row["subitem"] + "|" + row["gas"]] += emissions_Gg
             segment_iter[row["subitem"]] += co2e_Mt(
                 row["gas"], emissions_Gg, "AR5", fossil=(row["gas"] == "CH4"))
         for key, value in segment_iter.items():
             segment_samples[key].append(value)
+        for key, value in native_iter.items():
+            native.setdefault(key, []).append(value)
         total_samples.append(sum(segment_iter.values()))
 
     stats = {key: _summary(values) for key, values in segment_samples.items()}
@@ -246,6 +271,8 @@ def refinement_analysis(data, scenario="reference", n_iter=N_ITER, seed=SEED, ye
         row["interpretation"] = ("rank-based sensitivity share; normalized squared "
                                  "correlations are diagnostic, not an exact Sobol decomposition")
     sensitivity.sort(key=lambda row: row["normalized_squared_spearman_pct"], reverse=True)
+    if return_native:
+        return stats, total_samples, sensitivity, native, dict(input_samples)
     if return_inputs:
         # Wave 6 (per-draw gas): the caller that persists the draw file needs the
         # factor groups' uniform streams to re-express one factor's multiplier per

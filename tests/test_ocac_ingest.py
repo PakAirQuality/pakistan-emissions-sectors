@@ -97,15 +97,24 @@ class TestClosureIdentities(unittest.TestCase):
 
     # The FY2017-18 edition's printed national HSD total exceeds the sum of its
     # own printed class rows by exactly this amount - a source-side inconsistency
-    # in that edition alone, pinned here so a parser regression cannot hide behind
-    # it and a source revision cannot go unnoticed.
+    # in that edition alone. Since rc68 the ingest books the publisher's own fix
+    # (the FY2018-19 edition restores it to Road), so the identity now holds in
+    # every year; the amount is pinned in the ingest's declared correction.
     FY2017_18_HSD_DISCREPANCY_T = 521822.0
 
     def test_customer_classes_sum_to_the_national_total(self):
         """Per year, HSD across the customer classes equals TOTAL_INTERNAL exactly
         - the identity that makes OCAC's sector rows an exhaustive partition of
         national sales, which is the claimant-exhaustiveness demonstration. The
-        one documented exception is the FY2017-18 edition's own arithmetic."""
+        FY2017-18 first print failed it by 521,822 t until the correction was
+        booked at rc68; the declared correction must carry exactly that amount."""
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(
+            "ingest_ocac_sectoral", os.path.join(ROOT, "scripts", "ingest_ocac_sectoral.py"))
+        ingest = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(ingest)
+        declared = ingest.DECLARED_PUBLISHER_CORRECTIONS[(2017, "TRANSPORT", "Road", "HSD")]
+        self.assertEqual(declared["gap_tonnes"], self.FY2017_18_HSD_DISCREPANCY_T)
         for year in sorted({r["inventory_year"] for r in self.rows}):
             classes = sum(_cell(self.rows, inventory_year=year, sector_row=s,
                                 product="HSD")
@@ -114,10 +123,7 @@ class TestClosureIdentities(unittest.TestCase):
                                     "Total Government"))
             total = _cell(self.rows, inventory_year=year,
                           sector_row="TOTAL_INTERNAL", product="HSD")
-            expected_gap = (self.FY2017_18_HSD_DISCREPANCY_T
-                            if year == "2018" else 0.0)
-            self.assertAlmostEqual(total - classes, expected_gap, delta=2.0,
-                                   msg=year)
+            self.assertAlmostEqual(total - classes, 0.0, delta=2.0, msg=year)
 
     def test_road_share_of_national_hsd_stays_in_the_declared_band(self):
         """The 9-year panel that bounds the unresolved retail claimants: the

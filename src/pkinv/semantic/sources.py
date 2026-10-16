@@ -99,6 +99,13 @@ class Sources:
             self._cached_rows += len(rows)
         return rows
 
+    def iter_rows(self, name):
+        """Stream a generated CSV while retaining the same provenance tracking."""
+        import csv
+        path = self.path(name)
+        with open(path, encoding="utf-8", newline="") as handle:
+            yield from csv.DictReader(line for line in handle if not line.startswith("#"))
+
     def digests(self, names=None):
         out = []
         for name in sorted(self.used if names is None else names):

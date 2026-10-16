@@ -111,11 +111,10 @@ class TestTheMonthlyBoundaryIsTheSources(unittest.TestCase):
             self.skipTest("the limitations section is not in this checkout")
         with open(SECTION, encoding="utf-8") as handle:
             text = handle.read()
-        self.assertIn(
-            "property of the source", text,
-            "Section 12 no longer says the monthly gap is the source's boundary. The two "
-            "sentences it replaced - 'are not held' and 'drafted and unsent' - were both true "
-            "and together implied a download nobody had made.")
+        # The main limitations now states the shared export/source-control rule;
+        # exact OCAC archive dates are checked against source records above.
+        self.assertIn("Monthly availability is assessed", text)
+        self.assertIn("Twelve months alone never establish national observed activity", text)
 
 
 if __name__ == "__main__":

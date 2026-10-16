@@ -262,6 +262,7 @@ PHASES = [
                  "outputs/mc_draws/waste_parameter_rerun.meta.json")),
     Phase("Road transport", "pkinv.sectors.transport.run_transport", False,
           writes=("outputs/transport_totals_2024.csv",
+                  "outputs/transport_fuel_ledger_2024.csv",
                   "outputs/transport_air_pollutants_2024.csv",
                   # rc64: declared when the file entered the shipped set. The runner wrote
                   # it all along; the Phase named two of its outputs and not this one, which
@@ -307,7 +308,11 @@ PHASES = [
                   # via run_power line ~412) and never declared it, so the build graph had a
                   # file three later phases read and nothing wrote. The coal-configurations
                   # phase declared it as a read and the order checker found the hole.
-                  "outputs/power_implied_coal_cv_fy2023_24.csv",),
+                  "outputs/power_implied_coal_cv_fy2023_24.csv",
+                  # rc68: and the Table 3 hypotheses register (run_power line ~503). It
+                  # had been registered as a hand-run held product on the belief that no
+                  # phase wrote it; the clean rebuild found this phase rewriting it.
+                  "outputs/power_table3_hypotheses.csv",),
           reads=()),
     Phase("Power air pollutants", "pkinv.sectors.power.air_pollutants", False,
           writes=("outputs/power_air_pollutants_fy2023_24.csv",)),
@@ -341,6 +346,7 @@ PHASES = [
           writes=("outputs/residential_air_pollutants_2024.csv",), prints_only=True),
     Phase("Industrial processes", "pkinv.sectors.ippu.run_ippu", False,
           writes=("outputs/ippu_totals_2024.csv",
+                  "outputs/ippu_urea_co2_bridge_2025.csv",
                   "outputs/ippu_chemicals_screening_2024.csv",
                   # cycle 38, same reason: run_ippu writes these three and calls
                   # monthly.main() at line 558
@@ -399,6 +405,7 @@ PHASES = [
                  "data/gis/cod_ab/pak_admin2.geojson",)),
     Phase("Fugitive oil and gas", "pkinv.sectors.fugitives.run_fugitives", False,
           writes=("outputs/fugitives_totals_2024.csv",
+                  "outputs/fugitives_post_meter_end_use_2024.csv",
                   "outputs/fugitives_structural_factorial_2024.csv",
                   "outputs/fugitives_conditional_intervals_2024.csv",
                   # rc36: the seven products the fugitives paper cites were written
@@ -519,20 +526,23 @@ PHASES = [
     # loop costs ~4-5 minutes; both are deterministic, so an unchanged sector
     # rewrites byte-identical files.
     Phase("Fugitives MC draw file", "pkinv.sectors.fugitives.uncertainty draws", True,
-          writes=("outputs/mc_draws/fugitives_bounded.csv",)),
+          writes=("outputs/mc_draws/fugitives_bounded.csv",
+                  "outputs/mc_draws/fugitives_bounded.meta.json")),
     # Before the national pool: the registry globs outputs/*uncertainty_inputs*
     # and agriculture's factor parameters (rc18) must exist when it does.
     Phase("Agriculture uncertainty inputs", "pkinv.sectors.agriculture.uncertainty_inputs", True,
           writes=("outputs/agriculture_uncertainty_inputs_2024.csv",)),
     Phase("National uncertainty", "pkinv.report.uncertainty_all", True,
-          writes=("outputs/national_uncertainty_montecarlo.csv",),
+          writes=("outputs/national_uncertainty_montecarlo.csv",
+                  "outputs/national_uncertainty_sources.csv"),
           reads=("glob:outputs/*uncertainty_inputs*",)),
     # These four were in the Makefile's `national` target and not here, so `make all` and
     # `make national` produced different sets of outputs. Same list, one order, both places.
     Phase("National category ledger", "pkinv.report.category_ledger", True,
           writes=("outputs/national_category_gas.csv",)),
     Phase("Parameter decomposition", "pkinv.core.parameters", True,
-          writes=("outputs/national_uncertainty_decomposition.csv",)),
+          writes=("outputs/national_uncertainty_decomposition.csv",
+                  "outputs/national_uncertainty_parameters.csv")),
     Phase("Priority rankings", "pkinv.report.priority_rankings", True,
           writes=("outputs/national_priority_rankings.csv",)),
     Phase("Dung destination variants", "pkinv.report.dung_variants", True,
@@ -600,8 +610,9 @@ PHASES = [
                  "data/scenario_variants.csv", "data/periods.csv",
                  "data/activity/residential/hies/hies_national_totals.csv",
                  "data/mms_shares.csv", "data/residential_params.csv")),
-    Phase("Annual product (nine fiscal years)", "pkinv.report.annual_product", True,
-          writes=("outputs/pakemis_annual_fy2015_16_fy2023_24.csv",),
+    Phase("Annual product (supported fiscal panel)", "pkinv.report.annual_product", True,
+          writes=("outputs/pakemis_annual_fy2015_16_fy2024_25.csv",
+                  "outputs/pakemis_annual_fy2015_16_fy2024_25.parquet"),
           # rc39: this read was NEVER DECLARED, so check_order could not see that the
           # phase writing it ran AFTERWARDS. The annual product recomputes each sector's
           # detail and closes it against the published series, so with a stale series it
@@ -617,6 +628,7 @@ PHASES = [
           writes=("data/periods.csv",), reads=(), audited=True),
     Phase("Atomic annual table", "pkinv.report.atomic_annual", True,
           writes=("outputs/pakemis_atomic_annual.csv",
+                  "outputs/pakemis_ghg_configuration_atoms.csv",
                   "outputs/pakemis_atomic_annual_aggregates.csv"),
           reads=("data/periods.csv",)),
     # Downstream of the atomic annual table because it needs a HISTORICAL year: the BTR's
@@ -682,11 +694,6 @@ PHASES = [
     # rebuild stopped on it), so both follow the ledger.
     Phase("Rice geography crosscheck", "pkinv.report.rice_geography_crosscheck", True,
           writes=("outputs/pakemis_rice_geography_crosscheck.csv",)),
-    Phase("Spatial brackets (ADM2)", "pkinv.report.spatial_brackets_adm2", True,
-          writes=("outputs/pakemis_spatial_brackets_adm2.csv",),
-          reads=("outputs/pakemis_rice_geography_crosscheck.csv",
-                 "outputs/pakemis_source_streams.csv",
-                 "held:outputs/pakemis_road_weights_adm2.csv",)),
     Phase("Survey monthly (configuration S)", "pkinv.report.monthly_ledger", True,
           writes=("outputs/pakemis_monthly_ledger_2024.csv",),
           reads=("outputs/national_monthly_2024.csv",)),
@@ -695,13 +702,24 @@ PHASES = [
     Phase("Temporal profile registry", "pkinv.report.temporal_profiles", True,
           writes=("outputs/pakemis_temporal_profiles.csv",),
           reads=("data/months.csv",)),
-    Phase("Monthly layer, nine years", "pkinv.report.monthly_all_years", True,
-          writes=("outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
+    Phase("Monthly layer, supported fiscal panel", "pkinv.report.monthly_all_years", True,
+          writes=("outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
+                  "outputs/pakemis_ghg_configuration_monthly.csv",
                   "outputs/pakemis_monthly_evidence.csv")),
+    # rc68: after the fiscal panel, which it reads through grid_cube.load_streams (the
+    # engine names per stream come from the monthly layer). It sat three phases earlier with
+    # that read undeclared, so every build priced the brackets on the PREVIOUS build's panel;
+    # the first rc68 clean rebuild, with no previous panel, stopped here.
+    Phase("Spatial brackets (ADM2)", "pkinv.report.spatial_brackets_adm2", True,
+          writes=("outputs/pakemis_spatial_brackets_adm2.csv",),
+          reads=("outputs/pakemis_rice_geography_crosscheck.csv",
+                 "outputs/pakemis_source_streams.csv",
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
+                 "held:outputs/pakemis_road_weights_adm2.csv",)),
     # Why each flat month is flat. Runs after the monthly product because it reads it.
     Phase("Temporal decomposition (physics vs ignorance)", "pkinv.report.temporal_decomposition", True,
           writes=("outputs/pakemis_temporal_decomposition.csv",),
-          reads=("outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",)),
+          reads=("outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",)),
     # WIRED IN rc39 A2, the product_catalog class a third time. data/temporal_driver_registry.csv
     # is GENERATED from the decomposition above - its own header says "GENERATED ... Do not edit
     # by hand" - and a test asserts it regenerates identically, yet no build definition ran the
@@ -712,10 +730,10 @@ PHASES = [
           writes=("data/temporal_driver_registry.csv",),
           reads=("outputs/pakemis_temporal_decomposition.csv",)),
     # After the monthly layer and the decomposition, because it reads both.
-    Phase("Monthly coverage, all 108 months", "pkinv.report.monthly_coverage", True,
+    Phase("Monthly coverage, all 120 months", "pkinv.report.monthly_coverage", True,
           writes=("outputs/pakemis_monthly_coverage.csv",
                   "outputs/pakemis_monthly_coverage_summary.csv",),
-          reads=("outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
+          reads=("outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
                  "outputs/pakemis_temporal_decomposition.csv",)),
     Phase("Flatness crosswalk (TE class vs physics)", "pkinv.report.flatness_crosswalk", True,
           writes=("outputs/pakemis_flatness_crosswalk.csv",)),
@@ -801,7 +819,7 @@ PHASES = [
           writes=("outputs/pakemis_completeness_mass.csv",),
           reads=("outputs/national_configurations.csv",)),
     # The exit scorecard, after everything it scores (Wave 6, the science freeze).
-    # The nine-year ensemble. After the series and the joint table, because it reads the
+    # The supported fiscal-panel ensemble. After the series and the joint table, because it reads the
     # published series to gate itself: an interval around a total the release does not
     # publish would be worse than no interval.
     Phase("Longitudinal uncertainty", "pkinv.report.longitudinal_uncertainty", True,
@@ -825,9 +843,9 @@ PHASES = [
     # a monthly parquet for releases without one existing.
     Phase("Parquet twins", "pkinv.report.parquet_twins", True,
           writes=("outputs/pakemis_atomic_annual.parquet",
-                  "outputs/pakemis_monthly_fy2015_16_fy2023_24.parquet"),
+                  "outputs/pakemis_monthly_fy2015_16_fy2024_25.parquet"),
           reads=("outputs/pakemis_atomic_annual.csv",
-                 "outputs/pakemis_monthly_fy2015_16_fy2023_24.csv")),
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv")),
     # rc41: the product-coverage table (a manifest product and the supplement's generated
     # table) was a hand-run script; it globs outputs/, so it runs after the inventory.
     # What the archive deposit ships and by whose permission. After the manifest, because
@@ -875,17 +893,21 @@ PHASES = [
     Phase("Power SO2 admission register", "scripts/build_power_admission_register.py", False,
           writes=("data/activity/power/power_so2_admission.csv",),
           reads=("data/activity/power/plant_fuel_ledger.csv",
+                 "data/activity/power/plant_fuel_2024_25.csv",
                  "data/activity/power/plant_heat_rates.csv",
                  "data/activity/power/generation_monthly.csv",
                  "data/activity/power/plant_name_crosswalk.csv",
                  "data/activity/power/plant_locations.csv",
                  "data/facility_registry.csv",
                  "data/activity/industry/fuel_sulfur_evidence.csv",)),
-    Phase("Air annual panel (nine fiscal years)", "pkinv.report.air_annual", False,
+    Phase("Air annual panel (supported fiscal panel)", "pkinv.report.air_annual", False,
           writes=("outputs/pakemis_air_atomic_annual.csv",
+                  "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
                   "outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv",
                   "outputs/pakemis_air_coverage_matrix.csv",
-                  "outputs/power_air_screening_fy2015_16_fy2023_24.csv",),
+                  "outputs/pakemis_air_source_coverage.csv",
+                  "outputs/power_air_screening_fy2015_16_fy2024_25.csv",
+                  "outputs/power_air_screening_fy2015_16_fy2023_24.csv"),
           reads=("outputs/pakemis_source_streams.csv",
                  # rc58: the industry atoms are computed in-process from the register
                  "data/air_source_classes.csv",
@@ -896,14 +918,41 @@ PHASES = [
                  "data/activity/power/power_so2_admission.csv",
                  "outputs/pakemis_kiln_allocation_adm2.csv",
                  "outputs/pakemis_cement_kiln_coal_reconstruction.csv",)),
+    Phase("Air monthly allocation", "pkinv.report.air_monthly", False,
+          writes=("outputs/pakemis_air_monthly.csv",
+                  "outputs/pakemis_air_temporal_support.csv"),
+          reads=("outputs/pakemis_air_atomic_annual.csv",
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv")),
+    Phase("GHG conditional uncertainty", "pkinv.report.ghg_conditional_uncertainty", False,
+          writes=("outputs/pakemis_ghg_conditional_uncertainty.csv",
+                  "outputs/pakemis_ghg_trend_uncertainty.csv",
+                  "outputs/pakemis_ghg_uncertainty_drivers.csv",
+                  "outputs/pakemis_ghg_uncertainty_parameters.csv"),
+          reads=("outputs/pakemis_national_series.csv",
+                 "outputs/pakemis_ghg_configuration_atoms.csv")),
+    Phase("HTAP air comparison", "pkinv.report.air_external_htap", False,
+          writes=("outputs/pakemis_htap_nh3_annual.csv", "outputs/pakemis_htap_nh3_monthly.csv",
+                  "outputs/pakemis_air_htap_comparison.csv",
+                  "outputs/pakemis_air_htap_species_comparison.csv"),
+          reads=("outputs/pakemis_air_atomic_annual.csv", "data/raw/htap/edgar_HTAPv32_NH3.zip",
+                 "data/raw/htap/edgar_HTAPv32_NOx.zip", "data/raw/htap/edgar_HTAPv32_SO2.zip",
+                 "data/raw/htap/edgar_HTAPv32_PM2.5.zip", "data/raw/htap/edgar_HTAPv32_BC.zip",
+                 "data/raw/htap/edgar_HTAPv32_CO.zip", "data/raw/htap/edgar_HTAPv32_NMVOC.zip")),
+    Phase("Air conditional uncertainty", "pkinv.report.air_uncertainty", False,
+          writes=("outputs/pakemis_air_conditional_uncertainty.csv",
+                  "outputs/pakemis_air_trend_uncertainty.csv",
+                  "outputs/pakemis_air_uncertainty_drivers.csv",
+                  "outputs/pakemis_air_uncertainty_parameters.csv"),
+          reads=("outputs/pakemis_air_atomic_annual.csv",)),
     # rc58/rc59: the source-class air layer (industry, ippu, fugitives) is a COVERED
     # estimate - the panel above computes its atoms in-process (air_annual.register_atoms);
     # this phase writes the class-level detail (estimates, typed absences and IE pointers
     # alike) and the per-sector, per-period uncertainty. Then the absence ledger: power's grid-only scenario pair
     # beside the panel, and industry's remaining typed absences read from the matrix.
-    Phase("Air source classes (nine fiscal years)",
+    Phase("Air source classes (supported fiscal panel)",
           "pkinv.sectors.industry.air_pollutants", False,
-          writes=("outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv",
+          writes=("outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv",
+                  "outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv",
                   "outputs/pakemis_air_source_class_uncertainty_by_year.csv",),
           reads=("data/air_source_classes.csv",
                  "data/air_emission_factors.csv",
@@ -921,12 +970,19 @@ PHASES = [
     Phase("Power SO2 admission bridge", "scripts/build_power_admission_bridge.py", False,
           writes=("outputs/pakemis_air_power_admission_bridge.csv",),
           reads=("data/activity/power/power_so2_admission.csv",
-                 "outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv",
-                 "outputs/power_air_screening_fy2015_16_fy2023_24.csv",)),
+                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/power_air_screening_fy2015_16_fy2024_25.csv",)),
+    Phase("Power air-control evidence", "pkinv.report.air_power_controls", False,
+          writes=("outputs/pakemis_air_power_control_evidence.csv",
+                  "outputs/pakemis_air_power_design_cases.csv"),
+          reads=("data/activity/power/plant_fuel_ledger.csv", "data/power_fuel_quality.csv",
+                 "data/raw/nepra/air_controls/port_qasim_generation_application_2014.pdf",
+                 "data/raw/nepra/air_controls/cihc_pak_generation_application_2017.pdf",
+                 "data/raw/nepra/air_controls/RETRIEVALS.csv")),
     Phase("Air absence-screening ledger", "scripts/build_air_absence_screening.py",
           False,
           writes=("outputs/pakemis_air_absence_screening_by_year.csv",),
-          reads=("outputs/power_air_screening_fy2015_16_fy2023_24.csv",
+          reads=("outputs/power_air_screening_fy2015_16_fy2024_25.csv",
                  "outputs/pakemis_air_coverage_matrix.csv",)),
     # rc59: the brick-kiln frame by kiln type - the FCBK and ZZ vectors the air sink rides
     # for the typed brick classes (built once; the brick shares are period-invariant).
@@ -966,7 +1022,7 @@ PHASES = [
     # The same dispatch, run for all nine registered periods and published annually. It
     # rebuilds the cube per period rather than reading its products, because the cube writes
     # the reference year only; nine builds cost about a minute.
-    Phase("Nine-year spatial products (ADM1 and ADM2)", "pkinv.report.spatial_by_year", False,
+    Phase("Fiscal-panel spatial products (ADM1 and ADM2)", "pkinv.report.spatial_by_year", False,
           writes=("outputs/pakemis_adm1_by_year.csv",
                   "outputs/pakemis_adm2_by_year.csv",
                   "outputs/pakemis_adm2_monthly_by_year.csv",
@@ -974,31 +1030,48 @@ PHASES = [
                   "outputs/pakemis_adm2_stream_by_year.csv",
                   "outputs/pakemis_grid_fallbacks_by_year.csv",
                   "outputs/pakemis_spatial_unallocated_by_year.csv",
-                  "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc",
+                  "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_ghg_configuration_adm1.csv",
+                  "outputs/pakemis_ghg_configuration_adm2.csv",
+                  "outputs/pakemis_ghg_configuration_adm1_monthly.csv",
+                  "outputs/pakemis_ghg_configuration_adm2_monthly.csv",
+                  "outputs/pakemis_ghg_configuration_unallocated.csv",
                   "outputs/pakemis_grid_stream_surfaces_by_year.csv",
                   # the air sink on the same residency (air spatial Wave B): the
                   # pollutant masses ride the very vectors each period's cube placed
                   # their anchors on, which is why this is a second sink here and
                   # not a separate build
-                  "outputs/pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc",
-                  "outputs/pakemis_air_grid_0p05_annual_ledger_fy2015_16_fy2023_24.nc",
+                  "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc",
+                  "outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc",
                   "outputs/pakemis_air_adm1_by_year.csv",
                   "outputs/pakemis_air_adm2_by_year.csv",
-                  "outputs/pakemis_air_unallocated_by_year.csv",),
+                  "outputs/pakemis_air_unallocated_by_year.csv",
+                  "outputs/pakemis_air_monthly_unallocated.csv",),
           reads=("data/air_source_classes.csv",           # rc59: spatial_override per class
                  "data/ml/brick_kilns_pk.csv",
                  "outputs/pakemis_source_streams.csv",
-                 "outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
                  "outputs/national_monthly_2024.csv",
                  "outputs/district_totals_2024.csv",
                  "outputs/residential_district_2024.csv",
                  "outputs/pakemis_air_atomic_annual.csv",
+                 "outputs/pakemis_air_monthly.csv",
+                 "outputs/pakemis_ghg_configuration_monthly.csv",
                  "data/activity/agriculture/crop_district_panel.csv",)),
     # rc47 Wave 6: the EDGAR-aligned derived aggregation reads the annual cube the
     # phase above writes, so it must follow it (the rc40 check_order lesson).
     Phase("EDGAR-aligned 0.1-degree grid", "scripts.build_grid_01deg", False,
           writes=("outputs/pakemis_grid_0p1_edgar_aligned.nc",),
-          reads=("outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc",)),
+          reads=("outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",)),
     # Reads the substitution record the phase above writes, so it must follow it: the registry
     # grades a stream-year from what the build DID, and the record of that is its input.
     Phase("Spatial weight registry (per stream-year)", "pkinv.report.spatial_weights", True,
@@ -1006,8 +1079,13 @@ PHASES = [
           reads=("outputs/pakemis_source_streams.csv",
                  "outputs/pakemis_grid_stream_surfaces_by_year.csv",
                  "outputs/pakemis_grid_fallbacks_by_year.csv",
-                 "outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
-                 "data/periods.csv", "data/province_shares.csv")),
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
+                 "data/periods.csv", "data/province_shares.csv",
+                 "data/activity/waste/population_district.csv",
+                 "data/activity/agriculture/crop_district_panel.csv",
+                 "data/activity/fugitives/flare_sites_pak.csv",
+                 "data/activity/residential/hies/hies_national_totals.csv",
+                 "data/activity/residential/hies/hies_fuel_quantities.csv")),
     # The air support join runs AFTER the registry because the registry IS its input:
     # the by-year air tables carry no evidence columns (the badge is the registry's to
     # derive from what the build did), and this is the phase that publishes the join.
@@ -1015,6 +1093,7 @@ PHASES = [
           writes=("outputs/pakemis_air_spatial_support_by_year.csv",
                   "outputs/pakemis_air_uncertainty_split_by_year.csv",),
           reads=("outputs/pakemis_air_atomic_annual.csv",
+                 "outputs/pakemis_air_conditional_uncertainty.csv",
                  "outputs/pakemis_spatial_weights_by_year.csv",
                  "data/air_source_classes.csv",
                  "data/ml/brick_kilns_pk.csv",)),
@@ -1054,9 +1133,9 @@ PHASES = [
                  "data/activity/power/generation_monthly.csv",
                  "data/activity/power/plant_name_crosswalk.csv",
                  "data/periods.csv")),
-    # rc66: what the per-year provincial split of grid power moved, fuel by fuel. It joins
-    # the rc65 baseline to the nine-year ADM1 product this build has just written, and
-    # refuses to write if any fuel-year's national total differs between the two.
+    # Year-specific grid-power geography, fuel by fuel. Compare the current activity
+    # mass placed on own-year shares with that same mass placed on reference-year
+    # shares; retain the archived source-vintage comparison as a separate diagnostic.
     Phase("Power provincial basis by year", "pkinv.report.power_provincial_basis", True,
           writes=("outputs/pakemis_power_provincial_basis_by_year.csv",),
           reads=("outputs/pakemis_adm1_by_year.csv",
@@ -1098,12 +1177,12 @@ PHASES = [
                  "data/adm2_canonical.csv",)),
     Phase("Industry air, calendar 2023", "pkinv.report.air_calendar_2023", False,
           writes=("outputs/pakemis_air_industry_cy2023.csv",),
-          reads=("outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv",
-                 "outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
+          reads=("outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
                  "data/air_source_classes.csv",)),
     Phase("Industry air vs EDGAR", "scripts/build_industry_air_edgar_comparison.py", False,
           writes=("outputs/pakemis_industry_air_edgar_comparison.csv",),
-          reads=("outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv",
+          reads=("outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
                  "data/activity/industry/edgar_pak_industry_ap_series.csv",)),
     Phase("Spatial exceptions + ADM2 nesting", "pkinv.report.spatial_exceptions", True,
           writes=("outputs/pakemis_spatial_exceptions.csv",
@@ -1127,7 +1206,10 @@ PHASES = [
                   "outputs/pakemis_ensemble_spatial_conditionals.csv",
                   "outputs/mc_draws/pakemis_ensemble_annual.parquet",
                   "outputs/mc_draws/pakemis_ensemble_monthly.parquet",
-                  "outputs/mc_draws/pakemis_ensemble_spatial.parquet"),
+                  "outputs/mc_draws/pakemis_ensemble_spatial.parquet",
+                  "outputs/mc_draws/pakemis_ensemble_annual.meta.json",
+                  "outputs/mc_draws/pakemis_ensemble_monthly.meta.json",
+                  "outputs/mc_draws/pakemis_ensemble_spatial.meta.json"),
           reads=("outputs/national_monthly_2024.csv",
                  "outputs/pakemis_joint_uncertainty.csv",
                  "outputs/pakemis_source_streams.csv",
@@ -1180,8 +1262,7 @@ PHASES = [
           reads=("outputs/pakemis_temporal_decomposition.csv",
                  "outputs/pakemis_completeness_mass.csv",
                  "outputs/pakemis_spatial_decomposition.csv",
-                 "outputs/pakemis_ensemble_summary.csv",
-                 "data/temporal_driver_registry.csv")),
+                 "outputs/pakemis_ensemble_summary.csv")),
     # THE COAL-ENERGY ACCOUNTS, moved up on 2026-10-07 from beside the rest of the Stage 2
     # power work. Structural trajectories prices the non-circular coal axis from the
     # configurations table, so the pair has to precede it; left where they were, the
@@ -1189,7 +1270,7 @@ PHASES = [
     # refused the build. They only need the Power runner's implied-CV table, which is
     # written a hundred phases earlier, so moving them up costs nothing.
     #
-    # The nine-year plant/fuel/year reconciliation. Reads the committed ledger, the back-year
+    # The supported fiscal-panel plant/fuel/year reconciliation. Reads the committed ledger, the back-year
     # transcription from the editions its producer does not read, and the generation series.
     Phase("Power fuel reconciliation", "pkinv.sectors.power.fuel_reconciliation", False,
           writes=("outputs/pakemis_power_fuel_reconciliation.csv",),
@@ -1200,7 +1281,7 @@ PHASES = [
           # held: - the campaign file is an INPUT this build does not produce. Only a
           # data/ path is exempt from rule 1 implicitly; research_campaign/ is not,
           # and declaring it bare made check_order report a read before its writer.
-          reads=("held:research_campaign/energy/plant_fuel_year.csv",
+          reads=("data/activity/power/plant_fuel_year_controls.csv",
                  "data/activity/power/coal_plant_fuel_back_years.csv",
                  "data/activity/power/coal_energy_booking.csv",
                  "data/activity/power/generation_by_fuel.csv",
@@ -1302,8 +1383,8 @@ PHASES = [
                   "outputs/semantic/semantic_release.json",),
           reads=("prior:outputs/release_manifest.json",
                  "outputs/pakemis_atomic_annual.csv",
-                 "outputs/pakemis_annual_fy2015_16_fy2023_24.csv",
-                 "outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
+                 "outputs/pakemis_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
                  "outputs/pakemis_monthly_ledger_2024.csv",
                  "outputs/pakemis_adm2_monthly_sector.csv",
                  "outputs/pakemis_adm2_ledger_2024.csv",
@@ -1332,8 +1413,8 @@ PHASES = [
                  # only an air product moved, and the semantic build is what regenerates the
                  # table behind tests/semantic/golden/air_panel_so2_series.json - the golden that
                  # exists to make exactly that kind of move visible.
-                 "outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv",
-                 "outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv",
+                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv",
                  "outputs/pakemis_air_absence_screening_by_year.csv",
                  "outputs/pakemis_air_lahore_by_year.csv",
                  "outputs/air_pollutants_2024.csv",
@@ -1537,7 +1618,7 @@ PHASES = [
           "scripts/build_air_provincial_external_comparison.py", False,
           writes=("outputs/pakemis_air_provincial_external_comparison.csv",),
           reads=("outputs/pakemis_air_adm1_by_year.csv",
-                 "outputs/power_air_screening_fy2015_16_fy2023_24.csv",
+                 "outputs/power_air_screening_fy2015_16_fy2024_25.csv",
                  "data/activity/industry/edgar_pak_industry_ap_series.csv",)),
     # Which located stations the 0.05 degree province raster misplaces, and how much
     # generation they carry. Reads the coordinate tables and the grid, writes no correction:
@@ -1563,11 +1644,21 @@ PHASES = [
                  "outputs/pakemis_national_series.csv",
                  "data/activity/power/coal_energy_booking.csv")),
     Phase("Coal sector reallocation", "pkinv.sectors.industry.coal_reallocation", False,
-          writes=("outputs/pakemis_coal_sector_reallocation.csv",),
+          writes=("outputs/pakemis_coal_sector_reallocation.csv",
+                  "outputs/pakemis_coal_allocation_cases.csv"),
           reads=("outputs/pakemis_power_coal_configurations.csv",
                  "outputs/pakemis_coal_allocation_identity.csv",
+                 "outputs/pakemis_ghg_configuration_atoms.csv",
+                 "outputs/pakemis_brick_kiln_fleet_by_year.csv",
+                 "data/activity/power/generation_by_fuel.csv",
                  "data/activity/industry/coal_supply.csv",
                  "data/activity/industry/coal_by_consumer.csv",)),
+    Phase("Air structural sensitivities", "pkinv.report.air_sensitivities", False,
+          writes=("outputs/pakemis_air_structural_sensitivities.csv",
+                  "outputs/pakemis_nitrogen_partition_sensitivity.csv"),
+          reads=("outputs/pakemis_air_atomic_annual.csv",
+                 "outputs/pakemis_ghg_configuration_atoms.csv",
+                 "outputs/pakemis_coal_allocation_cases.csv")),
     Phase("Power reference audit", "pkinv.sectors.power.reference_audit", False,
           writes=("outputs/pakemis_power_reference_audit.csv",),
           reads=("data/activity/power/fuel_consumed.csv",
@@ -1644,7 +1735,7 @@ PHASES = [
                  "data/activity/industry/ocac_non_energy_sectoral.csv",
                  "data/ippu_params.csv",)),
     # Wave A of the boundary program: the engine's industrial series against EDGAR's for all
-    # nine fiscal years at the fiscal blend - a diagnostic of SHAPE the ledger carries per
+    # matched fiscal periods at the fiscal blend - a diagnostic of SHAPE the ledger carries per
     # period (never a residual). The ingest is extracted from the held booklet by
     # scripts/extract_edgar_industry_series.py.
     Phase("Industry vs EDGAR divergence", "scripts/build_industry_edgar_divergence.py", False,
@@ -1683,24 +1774,7 @@ PHASES = [
                   "paper_national/versions/v1/sections/generated_products.tex",),
           reads=("outputs/pakemis_monthly_coverage_summary.csv",
                  "outputs/semantic/",)),
-    Phase("Paper artefacts (stored queries)", "scripts/make_paper_artefacts.py", True,
-          writes=("outputs/pakemis_paper_artefact_hashes.csv",
-                  "outputs/paper_figure_data/", "outputs/paper_figures/",
-                  "paper_national/versions/v1/sections/gen_tab_categorygas.tex",
-                  "paper_national/versions/v1/sections/gen_tab_completeness.tex"),
-          # + the registry paper_national/queries/paper_artefacts.csv (prose-side, not a product)
-          reads=("outputs/semantic/",)),
-    # THE DERIVATION CHAINS ARE A BUILD PHASE, not a hand-run product, because they are pure
-    # derivations of files this build already wrote: the chain re-keys shipped tables onto one
-    # schema and the ledger joins dim_stream's parameter ids to their values. They shipped
-    # committed with no producer in this definition, and the rc48 package build is what found
-    # it - reproduce.sh rebuilt a tree without them and all four receipts diverged (artifact
-    # inventory 761 rows against 740). A committed product no build definition writes is
-    # exactly what data/held_products.csv exists to declare, and these do not qualify: nothing
-    # about them needs a document the build lacks.
-    #
-    # AFTER the semantic release (the ledger reads dim_stream and fact_annual) and after the
-    # national tables; BEFORE the artifact inventory, which sizes every file under outputs/.
+
     Phase("Derivation chains", "pkinv.report.derivation_chain", True,
           # every file the module writes, ALL ten sectors: an under-enumerated
           # writes tuple leaks the missing names into the sector runners'
@@ -1776,6 +1850,13 @@ PHASES = [
           writes=("outputs/pakemis_comparison_crosswalk.csv",),
           reads=("outputs/pakemis_validation_catalog.csv",
                  "outputs/pakemis_btr_comparison.csv")),
+    Phase("Sector technical-note facts", "pkinv.report.air_sector_facts", True,
+          writes=("outputs/pakemis_sector_note_facts.csv",) + tuple(
+              "papers/%s/generated/%s.tex" % (sector, name)
+              for sector in ("agriculture", "power", "residential")
+              for name in ("integrated_air_facts", "integrated_air_table", "integrated_ghg_table")),
+          reads=("outputs/pakemis_atomic_annual.csv",
+                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",)),
     Phase("Manuscript figures", "pkinv.report.figures", False,
           writes=("outputs/figures/",)),
     # THE GRIDDED FIGURES WERE IN NO PHASE. A version bump rebuilt the papers and left
@@ -1821,13 +1902,61 @@ PHASES = [
                   "paper_national/figures/fig_ghg_grid_proxy.csv",
                   "paper_national/figures/fig_ghg_grid_proxy_surfaces.csv",
                   "paper_national/figures/fig_ghg_grid_concentration.csv"),
-          reads=("outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc",
+          reads=("outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
                  "outputs/pakemis_stream_support_ledger.csv",
                  "outputs/pakemis_spatial_weights_by_year.csv",
                  "outputs/pakemis_spatial_unallocated_by_year.csv",
                  "data/shared/gis/PAK_ADM1.geojson",
                  "data/shared/gis/BOUNDARY_SOURCES.json",
                  "data/shared/gis/adm2_canonical.csv")),
+    Phase("Sync paper figures", "scripts/sync_figures.py", True,
+          writes=("paper_national/figures/",), idempotent=True),
+    Phase("Integrated GHG and air manuscript figures", "scripts/build_integrated_figures.py", False,
+          writes=tuple("paper_national/figures/" + name + ".pdf" for name in (
+                     "f09_integrated_composition", "f10_integrated_trends", "f11_integrated_maps",
+                     "f12_air_sensitivity", "f13_air_evaluation")) +
+                 tuple("paper_national/figures/integrated_inputs/" + name + ".csv" for name in (
+                     "f09_integrated_composition", "f10_integrated_trends", "f11_integrated_maps",
+                     "f11_integrated_map_scales", "f12_air_sensitivity", "f13_air_evaluation", "integrated_facts")) +
+                 tuple("paper_national/figures/integrated_inputs/previews/" + name + ".png" for name in (
+                     "f09_integrated_composition", "f10_integrated_trends", "f11_integrated_maps",
+                     "f12_air_sensitivity", "f13_air_evaluation")) +
+                 ("paper_national/versions/v3/generated/integrated_facts.tex",),
+          reads=("outputs/pakemis_atomic_annual.csv", "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_ghg_conditional_uncertainty.csv", "outputs/pakemis_air_conditional_uncertainty.csv",
+                 "outputs/pakemis_nitrogen_partition_sensitivity.csv",
+                 "outputs/pakemis_air_structural_sensitivities.csv", "outputs/pakemis_industry_air_edgar_comparison.csv",
+                 "outputs/pakemis_air_htap_comparison.csv", "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
+                 "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
+                 "held:src/pkinv/report/manuscript_style.py"), requires=("matplotlib", "numpy", "netCDF4")),
+    Phase("Integrated manuscript figure verification", "scripts/verify_manuscript_figures.py", True,
+          writes=("paper_national/figures/integrated_inputs/figure_value_checks.csv",),
+          reads=("paper_national/figures/integrated_inputs/integrated_facts.csv",
+                 "outputs/pakemis_atomic_annual.csv", "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_ghg_conditional_uncertainty.csv", "outputs/pakemis_air_conditional_uncertainty.csv",
+                 "outputs/pakemis_nitrogen_partition_sensitivity.csv",
+                 "outputs/pakemis_air_structural_sensitivities.csv", "outputs/pakemis_air_htap_comparison.csv",
+                 "outputs/pakemis_industry_air_edgar_comparison.csv",
+                 "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
+                 "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc")),
+    Phase("Paper artefacts (stored queries)", "scripts/make_paper_artefacts.py", True,
+          writes=("outputs/pakemis_paper_artefact_hashes.csv",
+                  "outputs/paper_figure_data/", "outputs/paper_figures/",
+                  "paper_national/versions/v1/sections/gen_tab_categorygas.tex",
+                  "paper_national/versions/v1/sections/gen_tab_completeness.tex"),
+          # + the registry paper_national/queries/paper_artefacts.csv (prose-side, not a product)
+          reads=("outputs/semantic/",)),
+    # THE DERIVATION CHAINS ARE A BUILD PHASE, not a hand-run product, because they are pure
+    # derivations of files this build already wrote: the chain re-keys shipped tables onto one
+    # schema and the ledger joins dim_stream's parameter ids to their values. They shipped
+    # committed with no producer in this definition, and the rc48 package build is what found
+    # it - reproduce.sh rebuilt a tree without them and all four receipts diverged (artifact
+    # inventory 761 rows against 740). A committed product no build definition writes is
+    # exactly what data/held_products.csv exists to declare, and these do not qualify: nothing
+    # about them needs a document the build lacks.
+    #
+    # AFTER the semantic release (the ledger reads dim_stream and fact_annual) and after the
+    # national tables; BEFORE the artifact inventory, which sizes every file under outputs/.
     Phase("Dashboard", "pkinv.report.dashboard", False,
           writes=("outputs/dashboard.html",)),
     # rc41: the artifact inventory records the size of EVERY file under outputs/ and the
@@ -1837,6 +1966,11 @@ PHASES = [
     # the dashboard, complete only because the previous release's files were on disk;
     # an empty outputs/ made both differ. The release-run records they list
     # (pakemis_test_run.json, pakemis_paper_hashes.csv) are held products.
+    Phase("Release numerical changes", "scripts/build_release_change_summary.py", True,
+          writes=("outputs/pakemis_release_change_summary.csv",),
+          reads=("outputs/pakemis_atomic_annual.csv", "outputs/pakemis_air_atomic_annual.csv",
+                 "data/baselines/rc67_integrated_campaign/outputs/pakemis_atomic_annual.csv",
+                 "data/baselines/rc67_integrated_campaign/outputs/pakemis_air_atomic_annual.csv")),
     Phase("Artifact inventory", "pkinv.report.artifact_inventory", True,
           writes=("outputs/pakemis_artifact_inventory.csv",)),
     Phase("Product coverage", "scripts/make_product_coverage.py", True,
@@ -1845,6 +1979,7 @@ PHASES = [
           reads=("glob:outputs/*provincial*.csv",)),
     Phase("Deposit manifest", "pkinv.report.deposit_manifest", True,
           writes=("outputs/pakemis_deposit_manifest.csv",
+                  "outputs/pakemis_primary_geography_licence_audit.csv",
                   "outputs/pakemis_source_register.csv",),
           reads=("data/raw_manifest.csv", "data/source_documents.csv",
                  "data/manifests/source_manifest.csv", "data/not_retained_register.csv",
@@ -1890,8 +2025,8 @@ PHASES = [
                  "prior:paper_national/versions/v1/generated/claim_matrix.tex",)),
     Phase("Product facts registry", "pkinv.report.product_facts", True,
           writes=("outputs/pakemis_product_facts.csv",),
-          reads=("outputs/pakemis_annual_fy2015_16_fy2023_24.csv",
-                 "outputs/pakemis_monthly_fy2015_16_fy2023_24.csv",
+          reads=("outputs/pakemis_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
                  "outputs/pakemis_artifact_inventory.csv",
                  "outputs/pakemis_agriculture_fiscal_series.csv",
                  "outputs/pakemis_agriculture_basis_change.csv",
@@ -1919,7 +2054,15 @@ PHASES = [
           reads=("outputs/semantic/",
                  "data/claim_matrix.csv",
                  "data/claims_registry.csv",
-                 "outputs/pakemis_product_facts.csv",)),
+                 "outputs/pakemis_product_facts.csv",
+                 "paper_national/versions/v3/generated/integrated_facts.tex",
+                 "outputs/pakemis_ghg_configuration_atoms.csv",
+                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_ghg_conditional_uncertainty.csv",
+                 "outputs/pakemis_air_conditional_uncertainty.csv",
+                 "outputs/pakemis_air_structural_sensitivities.csv",
+                 "outputs/pakemis_nitrogen_partition_sensitivity.csv",
+                 "held:paper_national/versions/v3/paper.tex")),
     # The catalog audits every validation product for freshness, so it must be
     # nearly LAST - after the benchmarks, the grid cube and the ensemble have
     # written the products it gates (it ran mid-list once and correctly failed
@@ -1939,8 +2082,7 @@ PHASES = [
                   "paper_national/versions/v1/generated/abstract_doi.tex",
                   "paper_common/generated_availability_tn.tex"),
           reads=("outputs/release_manifest.json",)),
-    Phase("Sync paper figures", "scripts/sync_figures.py", True,
-          writes=("paper_national/figures/",), idempotent=True),
+
 ]
 
 
@@ -1972,8 +2114,52 @@ def _with_canonical_prerequisites(phases):
             "ippu/company_production.csv", "ippu/company_production_evidence.csv",
             "ippu/company_roster.csv")) + ("data/compatibility_view_formats.json",),
         idempotent=True, audited=True)
-    labels = ("Period registry", "Month registry", "ADM2 reporting units", "Power SO2 admission register",
-              "Brick kiln fleet observations", "Power plant workbooks")
+    coal_booking = Phase(
+        "Power station coal booking", "pkinv.sectors.power.coal_booking", True,
+        writes=("data/activity/power/coal_energy_booking.csv",
+                "data/activity/power/coal_rank_account.csv"),
+        reads=("data/activity/power/plant_fuel_year_controls.csv",
+               "data/activity/power/coal_plant_fuel_back_years.csv",
+               "data/activity/power/generation_by_fuel.csv",
+               "data/activity/power/plant_fuel_2024_25.csv",
+               "data/activity/power/fuel_consumed.csv"))
+    extension = Phase(
+        "Fiscal extension source tables", "scripts/ingest_release_extension.py", True,
+        writes=("data/activity/agriculture/es_fiscal_series.csv", "data/activity/crops_2024.csv",
+                "data/activity/monthly/pbs_qim_month_item.csv", "data/activity/ippu/national_activity.csv",
+                "data/activity/power/plant_fuel_ledger.csv", "data/activity/power/fuel_consumed.csv",
+                "data/activity/power/generation_by_fuel.csv", "data/activity/power/bagasse_generation.csv",
+                "data/activity/power/captive_gas.csv", "data/activity/fugitives/fertilizer_gas_class.csv",
+                "data/activity/aviation/movements_airport.csv", "data/activity/aviation/fuel_sales.csv",
+                "outputs/pakemis_power_extension_controls.csv", "outputs/pakemis_extension_activity_revisions.csv",
+                "outputs/pakemis_fy2025_26_provisional_activity.csv", "outputs/pakemis_ocac_extension_revisions.csv",
+                "outputs/pakemis_extension_source_controls.csv", "outputs/pakemis_extension_source_availability.csv",
+                "outputs/pakemis_fy2025_26_provisional_emissions.csv", "outputs/pakemis_fy2025_26_provisional_monthly.csv"),
+        reads=("held:sources/Power Plants/NEPRA State of Industry Report 2025.pdf",
+               "data/raw/finance_division/survey_2025_26/", "data/raw/pbs/qim/extension_2026/",
+               "data/raw/ocac/extension_2026/", "data/activity/power/plant_fuel_2024_25.csv",
+               "data/raw/pcaa/extension_2025/", "data/raw/ogra/state_of_industry/ogra_petroleum_industry_report_2024_25.pdf",
+               "data/activity/aviation/airport_aliases.csv", "data/activity/aviation/ocac_annual_sources.csv",
+               "held:sources/Aviation/ocac_annual/OCAC_FY2024_25.pdf", "held:scripts/ingest_aviation.py",
+               "held:sources/Aviation/2006-2007-apt.pdf", "held:sources/Aviation/2007-2008-apt.pdf",
+               "held:sources/Aviation/2008-2009-apt.pdf", "held:sources/Aviation/2009-2010-apt.pdf",
+               "held:sources/Aviation/2010-2011-apt.pdf", "held:sources/Aviation/2011-2012-apt.pdf",
+               "held:sources/Aviation/2012-2013-apt.pdf", "held:sources/Aviation/2013-2014-apt.pdf",
+               "held:sources/Aviation/2014-2015-apt.pdf", "held:sources/Aviation/2015-2016-apt.pdf",
+               "held:sources/Aviation/2016-2017-apt.pdf", "held:sources/Aviation/2017-2018-apt.pdf",
+               "held:sources/Aviation/2018-2019-apt.pdf", "held:sources/Aviation/2019-2020-apt.pdf",
+               "held:sources/Aviation/2020-2021-apt.pdf", "held:sources/Aviation/2021-2022-apt.pdf",
+               "held:sources/Aviation/major-traffic-flow-airports-2022-23.pdf",
+               "held:sources/Aviation/major-traffic-flow-airports-2023-24.pdf",
+               "data/emission_factors.csv", "data/shared/activity/extension/rc67_agricultural_revision_controls.csv"))
+    household_weather = Phase(
+        "Residential own-year degree-days", "scripts/fetch_hdd.py --offline", True,
+        writes=("data/activity/residential/monthly_degree_days.csv",),
+        reads=("data/raw/nasa_power/",), idempotent=True)
+    phases = [extension, household_weather, coal_booking] + phases
+    labels = ("Period registry", "Month registry", "ADM2 reporting units",
+              "Brick kiln fleet observations", "Power plant workbooks", "Fiscal extension source tables",
+              "Residential own-year degree-days", "Power station coal booking", "Power SO2 admission register")
     by_label = {p.label: p for p in phases}
     canonical = Phase("Canonical activity tables", "pkinv.activity.build", True,
                       writes=tuple(row["path"] for row in tables) +
@@ -1987,12 +2173,12 @@ def _with_canonical_prerequisites(phases):
 def _with_spatial_prerequisites(phases):
     """Price allocation uncertainty from the spatial products of this build.
 
-    The Karachi bracket consumes the published nine-year stream surface. Its
+    The Karachi bracket consumes the published fiscal-panel stream surface. Its
     downstream uncertainty tables must therefore follow that surface as well.
     """
     deferred = {"Spatial-allocation brackets", "Joint uncertainty by resolution",
                 "Completeness-mass ledger", "Longitudinal uncertainty"}
-    after = "Nine-year spatial products (ADM1 and ADM2)"
+    after = "Fiscal-panel spatial products (ADM1 and ADM2)"
     result = []
     for phase in phases:
         if phase.label not in deferred:

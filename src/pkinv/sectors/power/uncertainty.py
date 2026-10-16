@@ -205,10 +205,11 @@ def full_factor_table(data):
             "lognormal", "NEPRA SIR Table 3", "Gas CO2/CH4/N2O",
             combustion.TOE_CORR_GROUP, "parametric",
             "corroborated by exact-MMBTU plant meters; bracketing spread 0.89-1.09"),
-        row("Coal TOE row", round(fuels["Coal"]), "TJ", data.p("activity_uncert_coal"),
-            "lognormal", "NEPRA SIR Table 3", "Coal CO2/CH4/N2O",
-            combustion.TOE_CORR_GROUP, "parametric",
-            "metered mass + CRT 2% agreement, conditional on Table 3 as control total"),
+        row("Coal station consumption mass", sum(float(r["mass_kt"]) for r in data.coal_rank_account[data.year]),
+            "kt", data.p("activity_uncert_coal"), "lognormal",
+            "NEPRA station coal consumption; maintained rank account", "Coal CO2/CH4/N2O",
+            "activity:coal:power_station_mass", "parametric",
+            "shared station-mass error; heat is rank mass times sampled rank NCV; commissioning reconstruction endpoints remain structural bounds"),
         row("Furnace oil TOE row", round(fuels["Furnace Oil"]), "TJ",
             data.p("activity_uncert_fo"), "lognormal", "NEPRA SIR Table 3",
             "Furnace Oil CO2/CH4/N2O", combustion.TOE_CORR_GROUP, "parametric",
@@ -222,19 +223,18 @@ def full_factor_table(data):
             "all grid streams", "", "structural",
             "one-sided; scenario toe_gross_basis. Evidence for net: 48.7% implied "
             "efficiency, CRT states NCV"),
-        row("Coal conversion/scope (Table 3 vs ledger x implied CV)", 2.01, "ratio", "",
-            "not sampled", "SIR Tables 20/23/28 vs Table 3", "Coal CO2/CH4/N2O", "",
-            "structural", "one-sided, 19.4 Mt; scenario coal_at_implied_cv; CRT 2% "
-            "solid-fuel agreement is the counter-evidence"),
+        row("Superseded Table 3 / station rank energy", data.table3_coal_toe(data.year) * data.p("toe_to_tj") / fuels["Coal"],
+            "ratio", "", "not sampled", "NEPRA Table 3 versus station mass times rank NCV",
+            "Coal CO2/CH4/N2O", "", "structural",
+            "comparison with superseded aggregate account; generation-derived heat is a separate diagnostic, not the reference"),
         row("K-Electric coverage of Table 3", ke_leg.fy2023_case(data), "Mt CO2", "",
             "not sampled", "ledger boundary audit", "grid scope", "", "structural",
             "one-sided; scenario grid_plus_ke_ledger_fuel; a trend 7.1->4.0 Mt "
             "FY2019-23"),
-        row("Lignite share of coal", data.p("coal_lignite_share"), "fraction",
-            data.pu("coal_lignite_share"), "lognormal", "plant ledger origin split",
-            "Coal CO2", "", "parametric",
-            "delta-method sensitivity ~0.6% on the factor; endpoints also published as "
-            "scenarios"),
+        row("Lignite heat share of coal", data.coal_energy_lignite_share(data.year), "fraction",
+            "", "derived; not independently sampled", "station mass times rank NCV",
+            "Coal CO2", "", "derived",
+            "rank heat share recomputed from shared mass and NCV realizations; includes pre-Thar Lakhra where present; no independent generation-share factor"),
         row("Lignite CO2 factor", data.efv("power_combustion_co2", "Lignite"), "kg/TJ",
             data.efu("power_combustion_co2", "Lignite"), "lognormal",
             "IPCC Table 2.2", "Coal CO2", "", "parametric"),
@@ -253,7 +253,7 @@ def full_factor_table(data):
             "IPCC Table 2.2", "Diesel Oil CO2", "", "parametric"),
         row("CH4 and N2O factors", "Table 2.2 values", "kg/TJ", 150, "lognormal",
             "IPCC Table 2.2", "all CH4/N2O streams", "", "parametric",
-            "0.07% of grid variance combined"),
+            "rank NCV and station mass remain shared across gases"),
         row("Captive gas volume", data.captive_total_mmcfd(), "MMCFD",
             data.p("captive_activity_uncert"), "lognormal", "OGRA",
             "captive streams", "delivered_gas_ogra_3_31", "parametric",
@@ -275,4 +275,10 @@ def full_factor_table(data):
             "assumed; declared structurally weaker", "Bagasse CH4/N2O", "",
             "parametric"),
     ]
+    for rank in data.coal_rank_account[data.year]:
+        rows.append(row("Coal rank NCV: " + rank["fuel_rank"], float(rank["ncv_TJ_per_Gg"]),
+                        "TJ/Gg", float(rank["ncv_uncert_pct_95"]), "lognormal",
+                        rank["source"], "same-rank power and industrial coal",
+                        "factor:ncv:" + rank["fuel_rank"], "parametric",
+                        "published rank range summarized as conditional parameter width; distinct from reconstruction endpoints"))
     return rows

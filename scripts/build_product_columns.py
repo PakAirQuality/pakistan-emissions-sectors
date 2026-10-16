@@ -13,7 +13,8 @@ from) or a foreign key (the registry column its values must exist in).
 
 HOW MUCH IS INFERRED AND HOW MUCH DECLARED, stated so a reader can weigh the registry.
 Type and nullability are inferred from the shipped file (the narrowest type every
-non-empty cell parses as) and frozen here; a rebuild that widens a column - a number
+non-empty cell parses as), with explicit nullable numeric contracts for entirely
+unestimated bounds, and frozen here; a rebuild that widens a column - a number
 becoming text - fails tests/validation/test_product_columns.py. Constraints are DECLARED
 below by column name, never inferred: a small distinct-value set is not evidence of a
 vocabulary. --check re-derives the registry and reports any drift.
@@ -22,6 +23,7 @@ Usage:  python3 scripts/build_product_columns.py [--check]
 """
 import os
 import sys
+import csv
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -69,6 +71,15 @@ LIST_FOREIGN_KEYS = {
 # matrix carries the F-gases; the configuration products key on the named-configuration
 # registry, not the two gridded ids) or from none ("" - a free label).
 OVERRIDES = {
+    ("uncertainty.longitudinal", "model_basis"):
+        ("enum:legacy_parameter_graph_sensitivity_not_native_material_flow",
+         "this retained sensitivity diagnostic is not the native material-flow ensemble"),
+    ("uncertainty.longitudinal_prefix", "model_basis"):
+        ("enum:legacy_parameter_graph_sensitivity_not_native_material_flow",
+         "paired historical-prefix sensitivity uses the same legacy parameter graph"),
+    ("uncertainty.trend", "model_basis"):
+        ("enum:legacy_parameter_graph_sensitivity_not_native_material_flow",
+         "legacy parameter-graph trend diagnostics remain distinct from native paired draws"),
     ("semantic.fact_air_adm1", "period_id"):
         ("enum:CY2024|FY2023-24", "the air layers are single-period; CY2024 is a calendar "
          "label of dim_period's calendar block, not a fiscal registry row"),
@@ -87,6 +98,12 @@ OVERRIDES = {
          "dim_period's calendar block, not a row of the fiscal period registry the "
          "period_id foreign key points at"),
     ("annual.atomic", "gas"): ("", "the atomic table carries air pollutants beside the three GHGs"),
+    ("annual.agriculture_basis_change", "comparison_status"):
+        ("enum:compared_to_archived_calendar|archived_calendar_comparator_absent",
+         "the FY2024-25 fiscal estimate has no archived calendar comparator; missing comparison values are nullable, not zero"),
+    ("extension.power_controls", "estimate_status"):
+        ("enum:physical_station_fuel|derived_fleet_intensity_gap|not_estimated_missing_fuel",
+         "this control audit uses physical-fuel evidence states rather than IPCC E/NE notation"),
     ("spatial.adm2_monthly", "gas"): ("enum:CO2|CH4|N2O|all", "absence rows say gas=all"),
     ("spatial.adm2_monthly_sector", "gas"): ("enum:CO2|CH4|N2O|all", "absence rows say gas=all"),
     ("spatial.adm2_ledger_2024", "gas"): ("enum:CO2|CH4|N2O|all", "absence rows say gas=all"),
@@ -97,11 +114,16 @@ OVERRIDES = {
         ("enum:physical|origin|accounting|all", "absence rows say spatial_view=all"),
     ("spatial.adm2_monthly_by_year", "gas"):
         ("enum:CO2|CH4|N2O|all", "absence rows say gas=all"),
+    ("spatial.configuration_adm2", "gas"):
+        ("enum:CO2|CH4|N2O|all", "typed absence rows have no species-specific estimate and say gas=all"),
+    ("spatial.configuration_adm2_monthly", "gas"):
+        ("enum:CO2|CH4|N2O|all", "typed absence rows have no species-specific estimate and say gas=all"),
     ("spatial.adm2_monthly_by_year", "spatial_view"):
         ("enum:physical|origin|accounting|all", "absence rows say spatial_view=all"),
     ("spatial.weights_by_year", "spatial_time_basis"):
         ("enum:annual_observed_activity|static_structural|"
-         "reference_shape_backcast|substituted_surface|unallocated|not_present",
+         "modelled_population_proxy|calendar_activity_proxy|reference_shape_backcast|reference_shape_forward|"
+         "substituted_surface|unallocated|not_present",
          "does the evidence behind this surface have a time axis the engine reads for this "
          "period? The three values this replaced answered a different question - they were a "
          "function of within_province_placement, already a column in the same row"),
@@ -187,6 +209,14 @@ OVERRIDES = {
         ("fk:outputs/national_configurations.csv#configuration_id", "keys on the named-configuration registry"),
 }
 
+# An entirely unestimated numeric column contains only empty cells, so its type
+# cannot be learned from values. These are optional numerical bounds, never
+# notation strings or a zero-valued completeness estimate.
+DECLARED_TYPES = {
+    ("uncertainty.joint", "completeness_bound_Mt"): ("float", "yes"),
+    ("semantic.fact_uncertainty", "completeness_bound_Mt"): ("float", "yes"),
+}
+
 
 def _infer(values):
     """(type, nullable) for a column's cell values."""
@@ -220,11 +250,39 @@ def build():
         path = asset_path(ROOT, rel)
         if not os.path.exists(path):
             continue
-        data = read_rows(path)
-        if not data:
+        # Stream large monthly spatial products; inferring each column must not
+        # retain millions of dictionaries and another list per column.
+        with open(path, newline="", encoding="utf-8") as handle:
+            reader = csv.DictReader(line for line in handle if not line.startswith("#"))
+            state = {column: ["int", False, False] for column in reader.fieldnames or []}
+            count = 0
+            for row in reader:
+                count += 1
+                for column, value in row.items():
+                    item = state[column]
+                    if value == "":
+                        item[1] = True
+                        continue
+                    item[2] = True
+                    if item[0] == "int":
+                        try:
+                            int(value)
+                            continue
+                        except ValueError:
+                            item[0] = "float"
+                    if item[0] == "float":
+                        try:
+                            float(value)
+                        except ValueError:
+                            item[0] = "str"
+        if not count:
             continue
-        for column in data[0].keys():
-            kind, nullable = _infer([r[column] for r in data])
+        for column, (kind, has_empty, has_value) in state.items():
+            nullable = "yes" if has_empty else "no"
+            if not has_value:
+                kind = "str"
+            kind, nullable = DECLARED_TYPES.get((product["product_id"], column),
+                                                (kind, nullable))
             constraint = ""
             if (product["product_id"], column) in OVERRIDES:
                 constraint = OVERRIDES[(product["product_id"], column)][0]

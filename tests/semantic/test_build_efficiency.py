@@ -82,6 +82,28 @@ class BuildEfficiency(unittest.TestCase):
             self.assertEqual(build.main([]), 0)
             self.assertEqual((self.root / "example.csv").read_text(), text)
 
+    def test_a_twin_in_another_layout_is_rewritten(self):
+        """rc68: single-row-group twins from an older writer matched cell for cell and were
+        kept, so the release's twin sizes differed from a clean rebuild's."""
+        try:
+            import pyarrow as pa
+            import pyarrow.parquet as pq
+        except ImportError:
+            self.skipTest("pyarrow not installed")
+        rows = [{"key": "k%05d" % i, "value": "1"} for i in range(10001)]
+        table, text = build._table("example", "fact", ("key", "value"), ("key",), rows,
+                                   {"rule": "sum"})
+        import csv
+        import io
+        parquet = self.root / "example.parquet"
+        schema = pa.schema([(name, pa.string()) for name in table["columns"]])
+        same_cells = list(csv.DictReader(io.StringIO(text)))
+        pq.write_table(pa.Table.from_pylist(same_cells, schema=schema), parquet)  # one row group
+        self.assertFalse(build._parquet_matches(parquet, table, text))
+        build._write_parquet(str(parquet), table["columns"], text)
+        self.assertEqual(pq.ParquetFile(parquet).metadata.num_row_groups, 2)
+        self.assertTrue(build._parquet_matches(parquet, table, text))
+
     def test_rebuild_repairs_corrupted_parquet_without_rewriting_csv(self):
         try:
             import pyarrow as pa

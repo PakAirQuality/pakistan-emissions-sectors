@@ -1,7 +1,7 @@
 crop,production_t,residue_ratio_ag,dry_residue_Mt,frac_returned,returned_to_soil_Mt,frac_burned,to_fire_Mt,combustion_factor,combusted_Mt,frac_fuel,fuel_dry_Mt,other_unresolved_Mt,other_pct_of_dry,moisture_air_dry,fuel_air_dry_Mt,ncv_TJ_per_Gg,energy_TJ,receiving_configuration
-cotton,4967000,2.0,9.934,0.2,1.9868,0.1,0.9934,0.85,0.84439,0.5,4.967,1.9868,20.0,0.12,5.644318,11.6,65474.0909,residential 1.A.4.b (configuration L and S alike)
-maize,9847000,1.0,9.847,0.3,2.9541,0.05,0.49235,0.85,0.418498,0.1,0.9847,5.41585,55.0,0.12,1.118977,11.6,12980.1364,residential 1.A.4.b (configuration L and S alike)
-rice,9869000,1.0,9.869,0.2,1.9738,0.3,2.9607,0.85,2.516595,0.05,0.49345,4.44105,45.0,0.12,0.560739,11.6,6504.5682,residential 1.A.4.b (configuration L and S alike)
-sugarcane,87638000,0.25,21.9095,0.3,6.57285,0.1,2.19095,0.85,1.862308,0.05,1.095475,12.050225,55.0,0.12,1.244858,11.6,14440.3523,residential 1.A.4.b (configuration L and S alike)
-wheat,31438000,1.1,34.5818,0.2,6.91636,0.05,1.72909,0.85,1.469727,0.05,1.72909,24.20726,70.0,0.12,1.964875,11.6,22792.55,residential 1.A.4.b (configuration L and S alike)
-TOTAL,,,86.1413,,20.40391,,8.36649,0.85,7.111516,,9.269715,48.101185,55.8399,0.12,10.533767,11.6,122191.6977,
+cotton,4967355.7,2.0,9.934711,0.2,1.986942,0.1,0.993471,0.85,0.84445,0.5,4.967356,1.986942,20.0,0.12,5.644722,11.6,65478.7797,residential 1.A.4.b (configuration L and S alike)
+maize,9739000.0,1.0,9.739,0.3,2.9217,0.05,0.48695,0.85,0.413908,0.1,0.9739,5.35645,55.0,0.12,1.106705,11.6,12837.7727,residential 1.A.4.b (configuration L and S alike)
+rice,9859000.0,1.0,9.859,0.2,1.9718,0.3,2.9577,0.85,2.514045,0.05,0.49295,4.43655,45.0,0.12,0.56017,11.6,6497.9773,residential 1.A.4.b (configuration L and S alike)
+sugarcane,87638000.0,0.25,21.9095,0.3,6.57285,0.1,2.19095,0.85,1.862308,0.05,1.095475,12.050225,55.0,0.12,1.244858,11.6,14440.3523,residential 1.A.4.b (configuration L and S alike)
+wheat,31814000.0,1.1,34.9954,0.2,6.99908,0.05,1.74977,0.85,1.487304,0.05,1.74977,24.49678,70.0,0.12,1.988375,11.6,23065.15,residential 1.A.4.b (configuration L and S alike)
+TOTAL,,,86.437611,,20.452372,,8.378841,0.85,7.122015,,9.279451,48.326947,55.9096,0.12,10.54483,11.6,122320.032,

@@ -1,4 +1,4 @@
 configuration,deterministic_ratio,P2.5,P50,P97.5,n_iter,note
-S,48.961,14.207,64.84,199.348,10000,"PARAMETRIC 95% interval under configuration S: residential primary PM2.5 over road primary exhaust PM2.5, both from fuel-anchored layers; road non-exhaust wear PM excluded on both sides by the ratio's definition"
-L,109.433,30.908,143.249,445.481,10000,"PARAMETRIC 95% interval under configuration L: residential primary PM2.5 over road primary exhaust PM2.5, both from fuel-anchored layers; road non-exhaust wear PM excluded on both sides by the ratio's definition"
-structural,,14.207,,445.481,,"Structural span across the two configurations: the survey configuration's parametric lower bound to the ledger configuration's upper - the honest total range, since no probability attaches to the configuration choice"
+S,48.973,14.212,64.862,199.421,10000,"PARAMETRIC 95% interval under configuration S: residential primary PM2.5 over road primary exhaust PM2.5, both from fuel-anchored layers; road non-exhaust wear PM excluded on both sides by the ratio's definition"
+L,109.445,30.913,143.265,445.53,10000,"PARAMETRIC 95% interval under configuration L: residential primary PM2.5 over road primary exhaust PM2.5, both from fuel-anchored layers; road non-exhaust wear PM excluded on both sides by the ratio's definition"
+structural,,14.212,,445.53,,"Structural span across the two configurations: the survey configuration's parametric lower bound to the ledger configuration's upper - the honest total range, since no probability attaches to the configuration choice"

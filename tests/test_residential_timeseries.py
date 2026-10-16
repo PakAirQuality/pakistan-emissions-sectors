@@ -11,6 +11,8 @@ from pkinv.assets import asset_path
 import csv
 import os
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 
 from pkinv.paths import DATA, OUTPUTS
 from pkinv.sectors.residential import combustion, engine, hies, monthly, timeseries
@@ -62,7 +64,8 @@ class TestSeries(unittest.TestCase):
         """A sector series longer than its largest CO2 stream's source would mislead;
         the module docstring commits to this boundary and the years enforce it."""
         self.assertEqual(min(timeseries.YEARS), 2016)
-        self.assertEqual(max(timeseries.YEARS), self.data.year)
+        self.assertEqual(tuple(timeseries.YEARS), CORE_FY_ENDS)
+        self.assertEqual(set(timeseries.gas_mmcfd()), set(CORE_FY_ENDS))
 
     def test_matched_cy_is_the_straddle_mean(self):
         m = timeseries.matched_cy(2022, self.data, self.series)
@@ -156,12 +159,12 @@ class TestTheDungSeries(unittest.TestCase):
         across all eighteen rows. Through rc66 it was not: the survey rows carried the
         2024-25 round's 11.97 Mt in their PM2.5 beside a mass column that said 10.93
         (87.41 kt where 79.86 belongs)."""
-        self.assertEqual({cfg for _y, cfg in self.shipped}, {"REF_2023_24", "L_HERD1624"})
+        self.assertEqual({cfg for _y, cfg in self.shipped}, {"S_TAN", "L_TAN"})
         self.assertEqual(len(self.shipped), 2 * len(timeseries.YEARS))
         led_kg = combustion.dung_air_dry_kg(self.data, basis="ledger")
         per_tonne = set()
         for y in timeseries.YEARS:
-            ref, led = self.shipped[(y, "REF_2023_24")], self.shipped[(y, "L_HERD1624")]
+            ref, led = self.shipped[(y, "S_TAN")], self.shipped[(y, "L_TAN")]
             self.assertEqual(ref["dung_activity_basis"], timeseries.dung_survey_basis(y))
             self.assertEqual(led["dung_activity_basis"], "herd_scaled_nitrogen_ledger")
             self.assertAlmostEqual(float(ref["dung_air_dry_Mt"]),
@@ -173,10 +176,13 @@ class TestTheDungSeries(unittest.TestCase):
                 per_tonne.add(round(float(row["dung_pm25_kt"])
                                     / float(row["dung_air_dry_Mt"]), 2))
         self.assertEqual(per_tonne, {7.3})
-        self.assertAlmostEqual(float(self.shipped[(2024, "REF_2023_24")]["dung_pm25_kt"]),
-                               79.858, places=3)
-        self.assertAlmostEqual(float(self.shipped[(2024, "L_HERD1624")]["dung_pm25_kt"]),
-                               429.047, places=3)
+        factor_per_airdry_tonne = (self.data.efv("residential_biofuel", "Gef_PM25_Dung")
+                                  * (1 - self.data.p("dung_cake_moisture_ar")))
+        self.assertAlmostEqual(float(self.shipped[(2024, "S_TAN")]["dung_pm25_kt"]),
+                               timeseries.dung_survey_air_dry_kg(2024) / 1e9 * factor_per_airdry_tonne,
+                               places=3)
+        self.assertAlmostEqual(float(self.shipped[(2024, "L_TAN")]["dung_pm25_kt"]),
+                               led_kg / 1e9 * factor_per_airdry_tonne, places=3)
 
 
 class TestMonthly(unittest.TestCase):
@@ -216,7 +222,7 @@ class TestMonthly(unittest.TestCase):
         self.assertGreater(jan, 2 * jun)
 
     def test_the_degree_days_are_sourced(self):
-        """Ten fiscal years of them, not one.
+        """Ten core fiscal years plus the precursor weather year.
 
         This asserted 60 rows - five provinces of the reference year - which was right
         while the residential layer had one year to profile. Every other year would have
@@ -226,9 +232,9 @@ class TestMonthly(unittest.TestCase):
         path = asset_path(DATA, "activity", "residential", "monthly_degree_days.csv")
         rows = list(csv.DictReader(open(path)))
         months = sorted({r["month"] for r in rows})
-        self.assertEqual(len(months), 120)       # July 2014 through June 2024
+        self.assertEqual(len(months), 132)       # July2014 through June2025
         self.assertEqual(months[0], "201407")
-        self.assertEqual(months[-1], "202406")
+        self.assertEqual(months[-1], "202506")
         self.assertEqual(len(rows), 5 * len(months))
         for r in rows:
             self.assertIn("NASA POWER", r["source"])

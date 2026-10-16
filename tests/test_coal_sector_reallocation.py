@@ -29,7 +29,8 @@ class TestTheTwoLanesMoveTogether(unittest.TestCase):
         cls.rows = _rows(OUT)
 
     def test_it_covers_the_panel(self):
-        self.assertEqual(len(self.rows), 9)
+        from pkinv.core.reporting_window import CORE_FY_STARTS
+        self.assertEqual({int(r["fiscal_start_year"]) for r in self.rows}, set(CORE_FY_STARTS))
 
     def test_the_two_deltas_offset_wherever_the_identity_CLOSES(self):
         """The whole premise - but it can only hold where HDIP's own supply and consumption
@@ -48,11 +49,9 @@ class TestTheTwoLanesMoveTogether(unittest.TestCase):
                 msg="%s: power %+.0f and industrial %+.0f sum to %+.0f, which is not the "
                     "identity's own gap of %+.0f - so the supply total is not being held fixed"
                     % (r["period_id"], p, i, p + i, gap))
-        non_closing = [r["period_id"] for r in self.rows
-                       if abs(float(r["identity_closes_kt"])) > 3.0]
-        self.assertEqual(non_closing, ["FY2015-16"],
-                         "the set of non-closing years has changed to %s; the allocation "
-                         "identity declares exactly one" % non_closing)
+        # This product uses the inventory booking policy, including its older
+        # FY2015-16 vintage. The raw publisher identity is a separate product.
+        self.assertLessEqual(max(abs(float(r["identity_closes_kt"])) for r in self.rows), 3.)
 
     def test_the_offset_opposes_the_power_move(self):
         for r in self.rows:
@@ -66,8 +65,8 @@ class TestTheTwoLanesMoveTogether(unittest.TestCase):
         """The actual claim, which is weaker than "it fixes brick": it must not break a year
         that was already consistent."""
         for r in self.rows:
-            if r["brick_position_booked"] == "inside the bound":
-                self.assertEqual(r["brick_position_with_residual"], "inside the bound",
+            if r["brick_position_booked"] == "within conditional fleet range":
+                self.assertEqual(r["brick_position_with_residual"], "within conditional fleet range",
                                  "%s was inside the bound and the reallocation pushed it out"
                                  % r["period_id"])
 
@@ -75,14 +74,16 @@ class TestTheTwoLanesMoveTogether(unittest.TestCase):
         """An earlier draft of the module docstring said the brick column was below its floor
         in "most years". The product says three. A claim that drifts upward in prose while the
         data says otherwise is the failure this asserts against."""
+        # rc68: a fleet counted once (2020-11, 2023-07) is compared only inside the fiscal
+        # period of its observation. Through rc67 one count was carried across every year
+        # and three years read "below"; two of them (FY2016-17, FY2022-23) had no count.
         below = [r["period_id"] for r in self.rows
-                 if r["brick_position_booked"] == "below the fleet floor"]
-        self.assertEqual(len(below), 3, "the count of below-floor years has changed to %d, so "
-                                        "the module docstring's 'three of the nine years' "
-                                        "needs restating: %s" % (len(below), below))
+                 if r["brick_position_booked"] == "below conditional fleet case"]
+        self.assertEqual(below, ["FY2023-24"], "below-floor years changed: %s" % below)
+        compared = {r["period_id"] for r in self.rows if r["brick_fleet_low_kt"]}
+        self.assertEqual(compared, {"FY2020-21", "FY2023-24"})
         source = open(SRC, encoding="utf-8").read()
-        self.assertIn("THREE of the nine years", source,
-                      "the docstring no longer states the count the product carries")
+        self.assertIn("not an annual physical floor", source)
 
     def test_it_does_not_claim_which_consumer_took_the_coal(self):
         for r in self.rows:

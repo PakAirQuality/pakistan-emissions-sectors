@@ -39,7 +39,7 @@
       "n_record_districts": 130,
       "n_matched": 85,
       "note": "model per-district Managed soils (Mt CO2e) vs official district wheat area (MNFSR Table 1); rank comparison",
-      "spearman_rho": 0.845,
+      "spearman_rho": 0.85,
       "p_value": 0.0,
       "top10_overlap": 0.7,
       "top15_overlap": 0.6,

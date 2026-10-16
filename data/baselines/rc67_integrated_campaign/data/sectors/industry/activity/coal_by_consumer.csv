@@ -1,0 +1,201 @@
+# National coal consumption by consumer, from the Finance Division's Pakistan Economic
+# Survey Statistical Supplement, Table 14.1 section 4 "Coal (000 metric ton)" - the HDIP
+# sectoral coal series republished annually by the Finance Division (source line on the
+# table: Hydrocarbon Development Institute of Pakistan; Ministry of Energy (Petroleum
+# Division); OCAC; Directorate General of Gas). This is the series whose absence was the
+# 7.0 Mt typed refusal (refused_no_series_held) in the industry fuel ledger, and the
+# nine-year coal-by-consumer control the industrial_solid_fuels_1a2 activation gate needs.
+#
+# THE TABLE'S OWN CAVEAT TRAVELS WITH EVERY ROW: the column set is marked "** Estimated" -
+# sectoral coal is mostly not directly metered (Power excepted, and even Power here is the
+# HDIP estimate, to be reconciled against NEPRA plant-month, never averaged with it).
+#
+# VINTAGES. Values are the 2024-25 edition (data/raw/finance_division/supplement_2024_25/
+# supplement_2024-25.pdf, sha256 8ce172d6...). FY2023-24 was REVISED between editions:
+# brick kilns 1,564 kt provisional (2023-24 edition, Supl-14_E.pdf, sha256 37490ed4...)
+# -> 1,129 kt final; the superseded provisional row is retained below with
+# revision_status=superseded_provisional. FY2024-25 rows are the edition's own "P".
+#
+# CROSS-VALIDATION AGAINST THE HELD PEY TRANSCRIPTION (brick_kiln_coal.csv, PEY Table 4.4
+# via three editions): 10 of 11 overlap years agree to the kt. The exception is FY2015-16
+# brick: PEY 2018 edition 3,337.1 kt vs this supplement's 3,541.1 kt (+204.0) - a vintage
+# revision inside HDIP's own series, recorded here and not smoothed. Row sums close on the
+# printed totals within the components' integer rounding (worst 1.5 kt, FY2022-23).
+#
+# UNITS: thousand metric tonnes (kt), as printed. "-" in the source (other_govt, most
+# household years) is carried as an empty cell, not zero.
+# STATUS: ACTIVATED at rc46 Wave 2 (968b5d4e). src/pkinv/sectors/industry/solid_fuels.py reads the
+# brick_kilns and cement rows into the reference 1A2 (final + provisional vintages; superseded excluded).
+#
+# LABEL CAVEAT (2026-09-10). The Supplement prints the second column as "Cement"; the Economic Survey
+# prints the SAME HDIP series as "Cement/Others" (2025-26 ch.14 Table 14.10, held under
+# data/raw/finance_division/survey_2025_26/) and the PEY as "Cement/Other Industry" (Table 4.4,
+# witnessed in sources/Papers/Punjab Industry.pdf s3.1). Other industrial coal (steel, textile,
+# chemical) may therefore sit inside this column unsplit. HDIP states its allocation rule in the same
+# chapter: Thar coal to the Thar power plants, other coalfields' coal to brick kilns, imported coal to
+# power plants and the industrial sector.
+#
+# CLOSURE CAVEAT. Table 14.3 (imports + production) reproduces this table's total to <1 kt every year
+# and the FY2023-24 revision moved both by an identical -434 kt: the two tables balance BY CONSTRUCTION,
+# so the closure verifies the transcription, not the sectoral split. The publisher also flags FY2023-24
+# supply as PARTIAL (Survey 2025-26 ch.14 footnote #: Punjab and Sindh coal production available till
+# February 2024, coal imports up to January 2024; Supplement 2024-25 Table 14.3: Balochistan production
+# upto March 2024). The reconciliation lives in outputs/pakemis_coal_source_reconciliation.csv; this file
+# stays the untouched original-source record.
+fiscal_year,consumer,coal_kt,revision_status,edition_provenance,source_document,note
+2000-01,household,1.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2000-01,power,205.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2000-01,brick_kilns,2837.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2000-01,cement,1000.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2000-01,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2000-01,total,4044.7,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2001-02,household,1.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2001-02,power,249.4,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2001-02,brick_kilns,2577.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2001-02,cement,1580.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2001-02,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2001-02,total,4408.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2002-03,household,1.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2002-03,power,203.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2002-03,brick_kilns,2607.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2002-03,cement,2078.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2002-03,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2002-03,total,4889.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2003-04,household,1.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2003-04,power,184.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2003-04,brick_kilns,2589.4,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2003-04,cement,3289.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2003-04,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2003-04,total,6064.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2004-05,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2004-05,power,179.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2004-05,brick_kilns,3906.7,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2004-05,cement,3807.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2004-05,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2004-05,total,7893.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2005-06,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2005-06,power,149.3,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2005-06,brick_kilns,4221.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2005-06,cement,3342.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2005-06,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2005-06,total,7714.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2006-07,household,1.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2006-07,power,164.4,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2006-07,brick_kilns,3277.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2006-07,cement,4451.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2006-07,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2006-07,total,7894.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2007-08,household,1.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2007-08,power,162.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2007-08,brick_kilns,3760.7,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2007-08,cement,6186.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2007-08,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2007-08,total,10110.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2008-09,household,0.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2008-09,power,112.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2008-09,brick_kilns,3274.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2008-09,cement,5001.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2008-09,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2008-09,total,8389.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2009-10,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2009-10,power,125.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2009-10,brick_kilns,3005.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2009-10,cement,5007.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2009-10,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2009-10,total,8138.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2010-11,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2010-11,power,96.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2010-11,brick_kilns,3003.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2010-11,cement,4617.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2010-11,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2010-11,total,7717.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2011-12,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2011-12,power,104.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2011-12,brick_kilns,3108.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2011-12,cement,4456.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2011-12,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2011-12,total,7669.7,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2012-13,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2012-13,power,63.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2012-13,brick_kilns,2696.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2012-13,cement,4129.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2012-13,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2012-13,total,6889.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2013-14,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2013-14,power,160.7,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2013-14,brick_kilns,2727.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2013-14,cement,3669.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2013-14,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2013-14,total,6557.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2014-15,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2014-15,power,151.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2014-15,brick_kilns,3010.4,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2014-15,cement,5553.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2014-15,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2014-15,total,8715.4,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2015-16,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2015-16,power,204.4,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2015-16,brick_kilns,3541.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,PEY 2018 edition printed 3337.1 for this cell; vintage revision inside the HDIP series
+2015-16,cement,5485.3,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2015-16,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2015-16,total,9230.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2016-17,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2016-17,power,859.6,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2016-17,brick_kilns,2855.3,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2016-17,cement,7470.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2016-17,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2016-17,total,11185.8,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2017-18,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2017-18,power,4436.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2017-18,brick_kilns,3941.7,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2017-18,cement,9603.3,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2017-18,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2017-18,total,17981.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2018-19,household,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2018-19,power,5901.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2018-19,brick_kilns,5391.2,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2018-19,cement,10234.3,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2018-19,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2018-19,total,21527.1,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2019-20,household,1.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2019-20,power,10897.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2019-20,brick_kilns,8184.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2019-20,cement,6075.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2019-20,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2019-20,total,25156.9,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2020-21,household,2.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2020-21,power,9215.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2020-21,brick_kilns,8678.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2020-21,cement,10184.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2020-21,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2020-21,total,28079.3,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2021-22,household,2.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2021-22,power,12808.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2021-22,brick_kilns,5643.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2021-22,cement,9245.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2021-22,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2021-22,total,27697.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2022-23,household,2.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2022-23,power,15493.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2022-23,brick_kilns,2991.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2022-23,cement,5432.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2022-23,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2022-23,total,23916.5,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,components are integer-printed; their sum is 23918.0 vs this printed total (rounding)
+2023-24,household,2.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2023-24,power,19196.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2023-24,brick_kilns,1129.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2023-24,cement,4391.0,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2023-24,other_govt,,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2023-24,total,24718.4,final,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2024-25,household,2.0,provisional,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2024-25,power,17087.0,provisional,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2024-25,brick_kilns,3483.0,provisional,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2024-25,cement,5155.0,provisional,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2024-25,other_govt,,provisional,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2024-25,total,25726.5,provisional,Statistical Supplement 2024-25 Table 14.1(4),data/raw/finance_division/supplement_2024_25/supplement_2024-25.pdf,
+2023-24,household,2.0,superseded_provisional,Statistical Supplement 2023-24 Table 14.1(4),data/raw/finance_division/supplement_2023_24/Supl-14_E.pdf,the 2023-24 edition's provisional print; brick 1564 was revised to 1129 in the 2024-25 edition
+2023-24,power,19196.0,superseded_provisional,Statistical Supplement 2023-24 Table 14.1(4),data/raw/finance_division/supplement_2023_24/Supl-14_E.pdf,the 2023-24 edition's provisional print; brick 1564 was revised to 1129 in the 2024-25 edition
+2023-24,brick_kilns,1564.0,superseded_provisional,Statistical Supplement 2023-24 Table 14.1(4),data/raw/finance_division/supplement_2023_24/Supl-14_E.pdf,the 2023-24 edition's provisional print; brick 1564 was revised to 1129 in the 2024-25 edition
+2023-24,cement,4391.0,superseded_provisional,Statistical Supplement 2023-24 Table 14.1(4),data/raw/finance_division/supplement_2023_24/Supl-14_E.pdf,the 2023-24 edition's provisional print; brick 1564 was revised to 1129 in the 2024-25 edition
+2023-24,other_govt,,superseded_provisional,Statistical Supplement 2023-24 Table 14.1(4),data/raw/finance_division/supplement_2023_24/Supl-14_E.pdf,the 2023-24 edition's provisional print; brick 1564 was revised to 1129 in the 2024-25 edition
+2023-24,total,25153.2,superseded_provisional,Statistical Supplement 2023-24 Table 14.1(4),data/raw/finance_division/supplement_2023_24/Supl-14_E.pdf,the 2023-24 edition's provisional print; brick 1564 was revised to 1129 in the 2024-25 edition

@@ -17,7 +17,7 @@ byte-identical across a run of this script. It is evidence about where two compi
 EDGAR is IEA-balance-fed with global default factors; this layer is OGRA/OCAC/HDIP-fed with
 source-class factors and Pakistani sulfur evidence.
 
-Reads:  outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv, data/activity/industry/edgar_pak_industry_ap_series.csv
+Reads:  outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv, data/activity/industry/edgar_pak_industry_ap_series.csv
 Writes: outputs/pakemis_industry_air_edgar_comparison.csv
 """
 import csv
@@ -31,8 +31,10 @@ from pkinv.assets import asset_path
 
 from pkinv.core.io import read_rows  # noqa: E402
 from pkinv.paths import DATA, OUTPUTS  # noqa: E402
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX, CORE_FY_ENDS
 
-PANEL = asset_path(OUTPUTS, "pakemis_air_annual_fy2015_16_fy2023_24.csv")
+PANEL = asset_path(OUTPUTS, "pakemis_air_annual_%s.csv" % CORE_SUFFIX)
 EDGAR = asset_path(DATA, "activity", "industry", "edgar_pak_industry_ap_series.csv")
 OUT = asset_path(OUTPUTS, "pakemis_industry_air_edgar_comparison.csv")
 SPECIES = ("NOx", "SO2", "CO", "NMVOC", "PM2.5", "BC", "NH3")
@@ -42,7 +44,14 @@ FIELDS = ("period_id", "fiscal_end_year", "species", "engine_industry_kt",
           # rc59: the two other register modules against their EDGAR categories
           "engine_ippu_kt", "edgar_2b_2c_kt", "ratio_ippu_over_edgar",
           "engine_fugitives_kt", "edgar_1b2_kt", "ratio_fugitives_over_edgar",
-          "edgar_basis", "reading")
+          "edgar_basis", "reading",
+          # rc68 air review (criterion 10): the MATCHED boundary. The engine's industry atoms
+          # carry the integrated cement kiln, whose particulate EDGAR books in 2.A.1, so the
+          # like-for-like EDGAR side is 1.A.2 + 2.A.1. Through rc67 the reading was made on
+          # 1.A.2 fossil alone, the one column that does NOT match; the figure computed the
+          # matched ratio for itself. Both matched ratios are now on the record.
+          "edgar_1a2_fossil_bio_plus_2a1_kt", "ratio_engine_over_edgar_fossil_plus_2a1",
+          "ratio_engine_over_edgar_fossil_bio_plus_2a1", "decomposition")
 HEADER = """\
 # THE INDUSTRY AIR LAYER AGAINST EDGAR v8.1, MATCHED YEARS - a comparison of two compilations, never a
 # calibration: nothing in the registers is read back from this table (tests hold them byte-identical).
@@ -54,13 +63,15 @@ HEADER = """\
 # rc59: the ippu atoms (ammonia, electric steel, soda ash) beside EDGAR's 2.B + 2.C (chemical and
 # metal industry, all processes) and the fugitives atoms (segment NMVOC, refining, flaring) beside
 # EDGAR's 1.B.2 (oil and gas fugitives) - the same blend, the same rule: compared, never fitted.
+# rc68: the MATCHED boundary is 1.A.2 + 2.A.1 (the engine's integrated cement kiln); `reading` is made
+# on ratio_engine_over_edgar_fossil_plus_2a1, and the fossil-only ratio is kept as the unmatched view.
 """
 
 
 def engine_totals(sector="industry"):
     out = defaultdict(float)
     for r in read_rows(PANEL):
-        if r["sector_id"] == sector and r["configuration_id"] == "REF_2023_24":
+        if r["sector_id"] == sector and conf.canonical(r["configuration_id"]) == conf.REFERENCE:
             out[(int(r["fiscal_end_year"]), r["pollutant"])] += float(r["emissions_Gg"])
     return out
 
@@ -95,7 +106,7 @@ def main():
     fug = engine_totals("fugitives")
     ed = edgar()
     rows = []
-    for fy in range(2016, 2025):
+    for fy in CORE_FY_ENDS:
         pid = "FY%d-%02d" % (fy - 1, fy % 100)
         for sp in SPECIES:
             e = eng.get((fy, sp))
@@ -106,6 +117,8 @@ def main():
                    "engine_fugitives_kt": "" if ef is None else "%.4f" % ef,
                    "edgar_basis": "EDGAR v8.1 IPCC 2006 sheet, Pakistan, fiscal blend of calendar %d and %d" % (fy - 1, fy)}
             if fy > 2022:
+                row.update(edgar_1a2_fossil_bio_plus_2a1_kt="", ratio_engine_over_edgar_fossil_plus_2a1="",
+                           ratio_engine_over_edgar_fossil_bio_plus_2a1="", decomposition="")
                 row.update(edgar_1a2_fossil_kt="", edgar_1a2_fossil_bio_kt="", edgar_1a2_fossil_plus_2a1_kt="",
                            ratio_engine_over_edgar_fossil="", ratio_engine_over_edgar_fossil_bio="",
                            edgar_2b_2c_kt="", ratio_ippu_over_edgar="", edgar_1b2_kt="", ratio_fugitives_over_edgar="",
@@ -116,25 +129,40 @@ def main():
             f = blend(ed, sp, fy, ("1.A.2",), ("fossil",))
             fb = blend(ed, sp, fy, ("1.A.2",), ("fossil", "bio"))
             f2 = blend(ed, sp, fy, ("1.A.2", "2.A.1"), ("fossil",))
+            fb2 = blend(ed, sp, fy, ("1.A.2", "2.A.1"), ("fossil", "bio"))
             d_ippu = blend(ed, sp, fy, ("2.B", "2.C"), ("fossil", "bio"))
             d_fug = blend(ed, sp, fy, ("1.B.2",), ("fossil", "bio"))
             row.update(edgar_1a2_fossil_kt="%.4f" % f, edgar_1a2_fossil_bio_kt="%.4f" % fb,
                        edgar_1a2_fossil_plus_2a1_kt="%.4f" % f2,
+                       edgar_1a2_fossil_bio_plus_2a1_kt="%.4f" % fb2,
                        edgar_2b_2c_kt="%.4f" % d_ippu, ratio_ippu_over_edgar=_ratio(ei, d_ippu),
                        edgar_1b2_kt="%.4f" % d_fug, ratio_fugitives_over_edgar=_ratio(ef, d_fug))
             if e is None:
                 row.update(ratio_engine_over_edgar_fossil="", ratio_engine_over_edgar_fossil_bio="",
+                           ratio_engine_over_edgar_fossil_plus_2a1="", ratio_engine_over_edgar_fossil_bio_plus_2a1="",
+                           decomposition="",
                            reading="typed absent in the engine (%s); EDGAR's figure is shown for scale, not as a gap to fill" % sp)
             else:
                 rf = e / f if f else float("nan")
                 rfb = e / fb if fb else float("nan")
-                row.update(ratio_engine_over_edgar_fossil="%.3f" % rf, ratio_engine_over_edgar_fossil_bio="%.3f" % rfb)
-                if 0.5 <= rf <= 2.0:
-                    reading = "within a factor of two of EDGAR's fossil 1.A.2"
-                elif rf > 2.0:
-                    reading = "above EDGAR's fossil 1.A.2 by more than a factor of two"
+                rm = e / f2 if f2 else float("nan")
+                rmb = e / fb2 if fb2 else float("nan")
+                row.update(ratio_engine_over_edgar_fossil="%.3f" % rf, ratio_engine_over_edgar_fossil_bio="%.3f" % rfb,
+                           ratio_engine_over_edgar_fossil_plus_2a1="%.3f" % rm,
+                           ratio_engine_over_edgar_fossil_bio_plus_2a1="%.3f" % rmb,
+                           decomposition=("coverage: EDGAR industrial biomass %.4f kt (bio minus fossil, 1.A.2+2.A.1) "
+                                          "has no engine counterpart (bagasse typed absent); cement 2.A.1 %.4f kt is "
+                                          "inside the matched EDGAR side. Activity and factor terms are not separable: "
+                                          "EDGAR publishes no Pakistan industrial fuel quantities beside these masses"
+                                          % (fb2 - f2, f2 - f)))
+                # A DESCRIPTION of where the two compilations sit, on the matched boundary;
+                # never an acceptance test and never read back into a factor.
+                if 0.5 <= rm <= 2.0:
+                    reading = "within a factor of two of EDGAR's fossil 1.A.2 + 2.A.1 (matched boundary)"
+                elif rm > 2.0:
+                    reading = "above EDGAR's fossil 1.A.2 + 2.A.1 (matched boundary) by more than a factor of two"
                 else:
-                    reading = "below EDGAR's fossil 1.A.2 by more than a factor of two"
+                    reading = "below EDGAR's fossil 1.A.2 + 2.A.1 (matched boundary) by more than a factor of two"
                 if sp == "SO2":
                     reading += "; the engine's SO2 is a sulfur balance on three as-fired Pakistani kiln-coal analyses (4.643 %S central, band 2.38-5.95, basis measured_avg since rc63; it read a 2.6-10.7 Punjab coalfield RESOURCE range until then), EDGAR's a global default"
                 if sp == "PM2.5":

@@ -56,25 +56,7 @@ sensitive to the metric chosen.
 
 \subsection{Where the uncertainty is}
 
-Five of the six streams carry bands between \SI{74}{\percent} and \SI{124}{\percent}; the
-sixth, wastewater N$_2$O, declares \SI{268.0}{\percent}---the log-variance-matched
-equivalent of its factor's bounded 150-fold published range, repriced after the
-previous symmetric \SI{100}{\percent} was shown incompatible with the
-stated evidence. Together they give
-$\pm\SI{51.1}{\percent}$ for the sector under Approach~1---the widest of any major
-sector in the national inventory this sector belongs to; only domestic aviation, at
-\SI{0.1}{\percent} of the national total, carries a wider band ($\pm\SI{58.8}{\percent}$).
-
-The bands are wide because the activity data are modelled rather than measured, and the
-Approach-1 figure does not carry their shape: the sector's own
-parameter-rerun treatment---inputs drawn, the engine rebuilt and the fate ledger asserted
-in every one of \num{10000} realisations---puts the 95\% interval at
-\SIrange{25.7}{61.4}{\mega\tonne}, asymmetric by construction, and the
-NATIONAL Monte Carlo consumes those same draws, printing $\pm\SI{46.4}{\percent}$ as this
-module's symmetric summary where the retired lognormal surrogate said
-\SI{58.2}{\percent}
-(Supplementary Note~S1). A symmetric percentage cannot represent that shape; it is quoted
-here only because the quadrature convention requires one number.
+The factor and activity uncertainties differ substantially by pathway. The current common ensemble reruns the native waste calculation for each realisation and preserves both the waste-fate identity and the asymmetric effluent-N$_2$O factor distribution. Its reference-year conditional interval is \SIrange{25.4}{61.5}{\mega\tonne} CO$_2$e on AR5. This is a parameter interval within the selected management interpretation and source coverage; structural cases remain separate. The standalone sector ensemble and Approach~1 screen retain their own stated settings and are not substituted for the common release interval (Supplementary Note~S1).
 
 \subsection{Sensitivities, published rather than chosen}
 
@@ -114,11 +96,10 @@ pre-2000 deposits contribute \SI{12}{\percent} of today's landfill methane. An i
 that starts at its activity panel is not making no assumption; it is asserting that the
 country landfilled nothing before its data begin.
 
-The supplement extends these point sensitivities to named structural scenarios with
-conditional intervals (Table~\ref{tab:wastescenarios}), including a mixture representation
-of the sewer correction factor---stagnant, flowing and treated regimes weighted
-explicitly---and the partition on the HIES household route shares of
-Section~\ref{sec:validation}.
+Named structural cases retain their own sewer and management assumptions. They are not
+combined into a probability mixture. Conditional parameter intervals describe a specified
+case; differences between cases remain a separate sensitivity, including the alternative
+partition based on the HIES household route shares in Section~\ref{sec:validation}.
 
 \subsection{Provincial allocation}
 
@@ -163,29 +144,4 @@ section carries the gap.
 
 \subsection{Contribution to the national inventory}
 
-Within the ten-sector national inventory this sector belongs to, its three categories rank
-very differently by size and by contribution to national uncertainty:
-
-\begin{table}[htbp]
-\centering
-\footnotesize
-\begin{tabular}{@{}lrr@{}}
-\toprule
-\textbf{Category} & \textbf{Level (\%)} & \textbf{Variance (\%)} \\
-\midrule
-Domestic wastewater  & 5.5 & 13.0 \\
-Solid-waste disposal & 2.06 & 2.27 \\
-Open burning         & 0.86 & 0.22 \\
-\bottomrule
-\end{tabular}
-\caption{Shares of the national total and of national Approach-1 variance. Domestic
-wastewater contributes more than twice as much uncertainty as emissions; open burning
-contributes a quarter as much.}
-\label{tab:keycat}
-\end{table}
-
-On that Approach-1 screen domestic wastewater is the second largest contributor to national
-inventory variance of any category in the country, behind only enteric fermentation. That is
-the quantitative form of the argument in Section~\ref{sec:discussion}: the measurement that
-would settle this sector's central assumption is worth more to the national inventory than
-its size alone suggests.
+The category composition separates wastewater methane and N$_2$O, disposal-history methane and burning releases. Their uncertainty and user relevance depend on the species: a small contribution to the GHG aggregate does not imply a small primary PM or other pollutant release. The current native ensemble and pollutant-specific driver diagnostics are used to identify parameter sensitivity, without treating the old Approach~1 category screen as an additive variance decomposition of the nonlinear national ensemble.

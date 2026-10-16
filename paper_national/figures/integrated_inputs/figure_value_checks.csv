@@ -1,0 +1,511 @@
+figure,quantity,product,product_value,plotted_value,tolerance,agrees
+9,CO2/agriculture mass,final native annual atoms,4824.4812,4824.4812,1e-08,yes
+9,CO2/agriculture share,native source and national sums,2.9963587771864484,2.9963587771864484,1e-09,yes
+9,CH4/agriculture mass,final native annual atoms,6497.3731099999995,6497.3731099999995,1e-08,yes
+9,CH4/agriculture share,native source and national sums,75.3650988263346,75.36509882633459,1e-09,yes
+9,N2O/agriculture mass,final native annual atoms,136.932414,136.93241399999997,1e-08,yes
+9,N2O/agriculture share,native source and national sums,89.24006887572165,89.24006887572162,1e-09,yes
+9,PM2.5/agriculture mass,final native annual atoms,54.127314,54.127314,1e-08,yes
+9,PM2.5/agriculture share,native source and national sums,12.801329315510975,12.801329315510976,1e-09,yes
+9,BC/agriculture mass,final native annual atoms,3.561007,3.561007,1e-08,yes
+9,BC/agriculture share,native source and national sums,8.806271121036852,8.806271121036852,1e-09,yes
+9,NOx/agriculture mass,final native annual atoms,318.022828,318.022828,1e-08,yes
+9,NOx/agriculture share,native source and national sums,38.94292478126717,38.94292478126717,1e-09,yes
+9,SO2/agriculture mass,final native annual atoms,2.848806,2.848806,1e-08,yes
+9,SO2/agriculture share,native source and national sums,1.3336222467608574,1.3336222467608576,1e-09,yes
+9,CO/agriculture mass,final native annual atoms,655.225377,655.225377,1e-08,yes
+9,CO/agriculture share,native source and national sums,10.936412349401905,10.936412349401904,1e-09,yes
+9,NMVOC/agriculture mass,final native annual atoms,49.854105,49.854105,1e-08,yes
+9,NMVOC/agriculture share,native source and national sums,4.200990769910832,4.200990769910832,1e-09,yes
+9,NH3/agriculture mass,final native annual atoms,2618.742784,2618.742784,1e-08,yes
+9,NH3/agriculture share,native source and national sums,98.06598544478595,98.06598544478594,1e-09,yes
+9,CO2/industry mass,final native annual atoms,22465.544406,22465.544406,np.float64(2.2465544406000002e-08),yes
+9,CO2/industry share,native source and national sums,13.952760592204198,13.952760592204196,1e-09,yes
+9,CH4/industry mass,final native annual atoms,1.65805,1.65805,1e-08,yes
+9,CH4/industry share,native source and national sums,0.019232249709760642,0.0192322497097606,1e-09,yes
+9,N2O/industry mass,final native annual atoms,0.25041199999999997,0.2504119999999999,1e-08,yes
+9,N2O/industry share,native source and national sums,0.16319572170331567,0.1631957217033156,1e-09,yes
+9,PM2.5/industry mass,final native annual atoms,13.257202,13.257202,1e-08,yes
+9,PM2.5/industry share,native source and national sums,3.1353820476709915,3.135382047670992,1e-09,yes
+9,BC/industry mass,final native annual atoms,5.4920469999999995,5.4920469999999995,1e-08,yes
+9,BC/industry share,native source and national sums,13.581679252940832,13.581679252940834,1e-09,yes
+9,NOx/industry mass,final native annual atoms,142.82656500000002,142.82656500000002,1e-08,yes
+9,NOx/industry share,native source and national sums,17.489575237541647,17.48957523754165,1e-09,yes
+9,SO2/industry mass,final native annual atoms,140.311734,140.311734,1e-08,yes
+9,SO2/industry share,native source and national sums,65.68465874615251,65.68465874615252,1e-09,yes
+9,CO/industry mass,final native annual atoms,99.08279999999999,99.0828,1e-08,yes
+9,CO/industry share,native source and national sums,1.6537979076676068,1.653797907667607,1e-09,yes
+9,NMVOC/industry mass,final native annual atoms,11.627144999999999,11.627145,1e-08,yes
+9,NMVOC/industry share,native source and national sums,0.9797694457741218,0.979769445774122,1e-09,yes
+9,CO2/ippu mass,final native annual atoms,25535.359146,25535.359145999995,np.float64(2.5535359145999997e-08),yes
+9,CO2/ippu share,native source and national sums,15.859342037797834,15.859342037797832,1e-09,yes
+9,PM2.5/ippu mass,final native annual atoms,0.103194,0.103194,1e-08,yes
+9,PM2.5/ippu share,native source and national sums,0.02440579958179413,0.0244057995817941,1e-09,yes
+9,BC/ippu mass,final native annual atoms,0.000371,0.000371,1e-08,yes
+9,BC/ippu share,native source and national sums,0.0009174726659915782,0.0009174726659915,1e-09,yes
+9,NOx/ippu mass,final native annual atoms,5.088986,5.088986,1e-08,yes
+9,NOx/ippu share,native source and national sums,0.623162809592152,0.623162809592152,1e-09,yes
+9,SO2/ippu mass,final native annual atoms,0.29484,0.29484,1e-08,yes
+9,SO2/ippu share,native source and national sums,0.13802455598414604,0.138024555984146,1e-09,yes
+9,CO/ippu mass,final native annual atoms,15.866364,15.866364,1e-08,yes
+9,CO/ippu share,native source and national sums,0.26482658529525455,0.2648265852952545,1e-09,yes
+9,NMVOC/ippu mass,final native annual atoms,0.226044,0.226044,1e-08,yes
+9,NMVOC/ippu share,native source and national sums,0.019047754595007252,0.0190477545950072,1e-09,yes
+9,NH3/ippu mass,final native annual atoms,0.751256,0.751256,1e-08,yes
+9,NH3/ippu share,native source and national sums,0.028132835500849294,0.0281328355008492,1e-09,yes
+9,CO2/power mass,final native annual atoms,45518.883679,45518.883679000006,np.float64(4.5518883679e-08),yes
+9,CO2/power share,native source and national sums,28.27058516453554,28.270585164535543,1e-09,yes
+9,CH4/power mass,final native annual atoms,1.017281,1.017281,1e-08,yes
+9,CH4/power share,native source and national sums,0.011799766121042802,0.0117997661210427,1e-09,yes
+9,N2O/power mass,final native annual atoms,0.409344,0.409344,1e-08,yes
+9,N2O/power share,native source and national sums,0.2667731159246444,0.2667731159246444,1e-09,yes
+9,SO2/power mass,final native annual atoms,30.021747,30.021747,1e-08,yes
+9,SO2/power share,native source and national sums,14.054193120144378,14.05419312014438,1e-09,yes
+9,CO2/residential mass,final native annual atoms,18388.333686,18388.333686,np.float64(1.8388333686000002e-08),yes
+9,CO2/residential share,native source and national sums,11.420511916986916,11.420511916986914,1e-09,yes
+9,CH4/residential mass,final native annual atoms,184.7834,184.7834,1e-08,yes
+9,CH4/residential share,native source and national sums,2.1433614734287776,2.143361473428777,1e-09,yes
+9,N2O/residential mass,final native annual atoms,2.4748010000000003,2.4748010000000003,1e-08,yes
+9,N2O/residential share,native source and national sums,1.6128497646561963,1.6128497646561963,1e-09,yes
+9,PM2.5/residential mass,final native annual atoms,282.793671,282.793671,1e-08,yes
+9,PM2.5/residential share,native source and national sums,66.88185027642913,66.88185027642913,1e-09,yes
+9,BC/residential mass,final native annual atoms,20.00076,20.00076,1e-08,yes
+9,BC/residential share,native source and national sums,49.46132236942781,49.46132236942782,1e-09,yes
+9,NOx/residential mass,final native annual atoms,156.131952,156.131952,1e-08,yes
+9,NOx/residential share,native source and national sums,19.11886294743727,19.11886294743727,1e-09,yes
+9,SO2/residential mass,final native annual atoms,20.839437,20.839437,1e-08,yes
+9,SO2/residential share,native source and national sums,9.755643870860752,9.755643870860755,1e-09,yes
+9,CO/residential mass,final native annual atoms,3353.618059,3353.618059,1e-08,yes
+9,CO/residential share,native source and national sums,55.975472323052045,55.975472323052045,1e-09,yes
+9,NMVOC/residential mass,final native annual atoms,357.691894,357.691894,1e-08,yes
+9,NMVOC/residential share,native source and national sums,30.14115578177411,30.141155781774113,1e-09,yes
+9,NH3/residential mass,final native annual atoms,42.37984,42.37984,1e-08,yes
+9,NH3/residential share,native source and national sums,1.5870290117780264,1.5870290117780264,1e-09,yes
+9,CO2/transport mass,final native annual atoms,40853.944129999996,40853.94413,np.float64(4.0853944129999995e-08),yes
+9,CO2/transport share,native source and national sums,25.373313523661416,25.373313523661423,1e-09,yes
+9,CH4/transport mass,final native annual atoms,13.370287000000001,13.370287,1e-08,yes
+9,CH4/transport share,native source and national sums,0.15508621469507342,0.1550862146950734,1e-09,yes
+9,N2O/transport mass,final native annual atoms,2.532531,2.5325309999999996,1e-08,yes
+9,N2O/transport share,native source and national sums,1.650472917755618,1.6504729177556177,1e-09,yes
+9,PM2.5/transport mass,final native annual atoms,8.233043,8.233043,1e-08,yes
+9,PM2.5/transport share,native source and national sums,1.9471480648709527,1.947148064870953,1e-09,yes
+9,BC/transport mass,final native annual atoms,2.000766,2.000766,1e-08,yes
+9,BC/transport share,native source and national sums,4.947838587723196,4.947838587723197,1e-09,yes
+9,NOx/transport mass,final native annual atoms,172.117476,172.117476,1e-08,yes
+9,NOx/transport share,native source and national sums,21.07634210903111,21.076342109031113,1e-09,yes
+9,SO2/transport mass,final native annual atoms,12.212039,12.212039,1e-08,yes
+9,SO2/transport share,native source and national sums,5.71686765919168,5.7168676591916805,1e-09,yes
+9,CO/transport mass,final native annual atoms,1430.394672,1430.394672,1e-08,yes
+9,CO/transport share,native source and national sums,23.87481697824943,23.87481697824943,1e-09,yes
+9,NMVOC/transport mass,final native annual atoms,535.064293,535.064293,1e-08,yes
+9,NMVOC/transport share,native source and national sums,45.087564127404654,45.087564127404654,1e-09,yes
+9,NH3/transport mass,final native annual atoms,2.58949,2.58949,1e-08,yes
+9,NH3/transport share,native source and national sums,0.09697053494560341,0.0969705349456034,1e-09,yes
+9,CO2/waste mass,final native annual atoms,1853.209154,1853.209154,1e-08,yes
+9,CO2/waste share,native source and national sums,1.1509796150827931,1.1509796150827931,1e-09,yes
+9,CH4/waste mass,final native annual atoms,1170.211123,1170.211123,1e-08,yes
+9,CH4/waste share,native source and national sums,13.573651295603526,13.573651295603522,1e-09,yes
+9,N2O/waste mass,final native annual atoms,10.693546,10.693546,1e-08,yes
+9,N2O/waste share,native source and national sums,6.969078786310578,6.969078786310579,1e-09,yes
+9,PM2.5/waste mass,final native annual atoms,63.851125,63.851125,1e-08,yes
+9,PM2.5/waste share,native source and national sums,15.101050059325976,15.10105005932598,1e-09,yes
+9,BC/waste mass,final native annual atoms,9.215626,9.215626,1e-08,yes
+9,BC/waste share,native source and national sums,22.789986401620762,22.78998640162077,1e-09,yes
+9,NOx/waste mass,final native annual atoms,15.139957,15.139957,1e-08,yes
+9,NOx/waste share,native source and national sums,1.8539367452031443,1.8539367452031448,1e-09,yes
+9,SO2/waste mass,final native annual atoms,3.291295,3.291295,1e-08,yes
+9,SO2/waste share,native source and national sums,1.5407662833667073,1.5407662833667073,1e-09,yes
+9,CO/waste mass,final native annual atoms,434.450952,434.450952,1e-08,yes
+9,CO/waste share,native source and national sums,7.251451063169389,7.251451063169389,1e-09,yes
+9,NMVOC/waste mass,final native annual atoms,151.399574,151.399574,1e-08,yes
+9,NMVOC/waste share,native source and national sums,12.757790214916746,12.757790214916746,1e-09,yes
+9,NH3/waste mass,final native annual atoms,5.924331,5.924331,1e-08,yes
+9,NH3/waste share,native source and national sums,0.221852776517701,0.221852776517701,1e-09,yes
+9,CO2/fugitives mass,final native annual atoms,915.619161,915.619161,1e-08,yes
+9,CO2/fugitives share,native source and national sums,0.5686670536973886,0.5686670536973885,1e-09,yes
+9,CH4/fugitives mass,final native annual atoms,752.760954,752.7609540000001,1e-08,yes
+9,CH4/fugitives share,native source and national sums,8.731513910367989,8.731513910367989,1e-09,yes
+9,N2O/fugitives mass,final native annual atoms,0.003483,0.003483,1e-08,yes
+9,N2O/fugitives share,native source and national sums,0.0022699019962807237,0.0022699019962807,1e-09,yes
+9,PM2.5/fugitives mass,final native annual atoms,0.287665,0.287665,1e-08,yes
+9,PM2.5/fugitives share,native source and national sums,0.0680339393443108,0.0680339393443108,1e-09,yes
+9,BC/fugitives mass,final native annual atoms,0.063918,0.063918,1e-08,yes
+9,BC/fugitives share,native source and national sums,0.15806743359797762,0.1580674335979776,1e-09,yes
+9,NOx/fugitives mass,final native annual atoms,1.194715,1.194715,1e-08,yes
+9,NOx/fugitives share,native source and national sums,0.14629671924070684,0.1462967192407068,1e-09,yes
+9,SO2/fugitives mass,final native annual atoms,3.582058,3.582058,1e-08,yes
+9,SO2/fugitives share,native source and national sums,1.6768822580364204,1.6768822580364209,1e-09,yes
+9,CO/fugitives mass,final native annual atoms,1.233431,1.233431,1e-08,yes
+9,CO/fugitives share,native source and national sums,0.020587282626776435,0.0205872826267764,1e-09,yes
+9,NMVOC/fugitives mass,final native annual atoms,80.338157,80.338157,1e-08,yes
+9,NMVOC/fugitives share,native source and national sums,6.769750575778008,6.769750575778008,1e-09,yes
+9,CO2/aviation mass,final native annual atoms,298.85873300000003,298.85873300000003,1e-08,yes
+9,CO2/aviation share,native source and national sums,0.1856133230995638,0.1856133230995638,1e-09,yes
+9,CH4/aviation mass,final native annual atoms,0.0020859999999999997,0.0020859999999999,1e-08,yes
+9,CH4/aviation share,native source and national sums,2.419617797687687e-05,2.4196177976876865e-05,1e-09,yes
+9,N2O/aviation mass,final native annual atoms,0.008341999999999999,0.0083419999999999,1e-08,yes
+9,N2O/aviation share,native source and national sums,0.0054365553984995095,0.0054365553984995,1e-09,yes
+9,PM2.5/aviation mass,final native annual atoms,0.018915,0.018915,1e-08,yes
+9,PM2.5/aviation share,native source and national sums,0.004473474224176173,0.0044734742241761,1e-09,yes
+9,BC/aviation mass,final native annual atoms,0.002837,0.002837,1e-08,yes
+9,BC/aviation share,native source and national sums,0.007015821976868214,0.0070158219768682,1e-09,yes
+9,NOx/aviation mass,final native annual atoms,0.240874,0.240874,1e-08,yes
+9,NOx/aviation share,native source and national sums,0.0294958010491088,0.0294958010491088,1e-09,yes
+9,SO2/aviation mass,final native annual atoms,0.094576,0.094576,1e-08,yes
+9,SO2/aviation share,native source and national sums,0.044274217903800685,0.0442742179038006,1e-09,yes
+9,CO/aviation mass,final native annual atoms,0.156496,0.156496,1e-08,yes
+9,CO/aviation share,native source and national sums,0.0026120856229168918,0.0026120856229168,1e-09,yes
+9,CO2/railways mass,final native annual atoms,357.232913,357.232913,1e-08,yes
+9,CO2/railways share,native source and national sums,0.22186799574790192,0.2218679957479019,1e-09,yes
+9,CH4/railways mass,final native annual atoms,0.020006999999999997,0.020007,1e-08,yes
+9,CH4/railways share,native source and national sums,0.0002320675612576105,0.0002320675612576,1e-09,yes
+9,N2O/railways mass,final native annual atoms,0.137875,0.1378749999999999,1e-08,yes
+9,N2O/railways share,native source and national sums,0.08985436053321985,0.0898543605332198,1e-09,yes
+9,PM2.5/railways mass,final native annual atoms,0.1536,0.1536,1e-08,yes
+9,PM2.5/railways share,native source and national sums,0.036327023041684385,0.0363270230416843,1e-09,yes
+9,BC/railways mass,final native annual atoms,0.09984,0.09984,1e-08,yes
+9,BC/railways share,native source and national sums,0.24690153900970124,0.2469015390097013,1e-09,yes
+9,NOx/railways mass,final native annual atoms,5.874919,5.874919,1e-08,yes
+9,NOx/railways share,native source and national sums,0.7194028496376912,0.7194028496376913,1e-09,yes
+9,SO2/railways mass,final native annual atoms,0.117631,0.117631,1e-08,yes
+9,SO2/railways share,native source and national sums,0.055067041598735184,0.0550670415987352,1e-09,yes
+9,CO/railways mass,final native annual atoms,1.199649,1.199649,1e-08,yes
+9,CO/railways share,native source and national sums,0.02002342491467275,0.0200234249146727,1e-09,yes
+9,NMVOC/railways mass,final native annual atoms,0.521343,0.521343,1e-08,yes
+9,NMVOC/railways share,native source and national sums,0.043931329846511595,0.0439313298465115,1e-09,yes
+9,NH3/railways mass,final native annual atoms,0.000785,0.000785,1e-08,yes
+9,NH3/railways share,native source and national sums,2.939647186600399e-05,2.939647186600399e-05,1e-09,yes
+10,FY2015-16/AR5 central,final annual atoms,397.83708523,397.83708523,1e-07,yes
+10,FY2015-16/AR5 P2_5,released conditional ensemble,363.8116273329549,363.8116273329549,1e-07,yes
+10,FY2015-16/AR5 P97_5,released conditional ensemble,441.9533437180025,441.9533437180025,1e-07,yes
+10,FY2016-17/AR5 central,final annual atoms,423.58082045,423.5808204500001,1e-07,yes
+10,FY2016-17/AR5 P2_5,released conditional ensemble,387.4224752696991,387.4224752696991,1e-07,yes
+10,FY2016-17/AR5 P97_5,released conditional ensemble,470.45226156260054,470.45226156260054,1e-07,yes
+10,FY2017-18/AR5 central,final annual atoms,454.70753146,454.7075314599998,1e-07,yes
+10,FY2017-18/AR5 P2_5,released conditional ensemble,416.5751179819074,416.5751179819074,1e-07,yes
+10,FY2017-18/AR5 P97_5,released conditional ensemble,503.4643348254575,503.4643348254575,1e-07,yes
+10,FY2018-19/AR5 central,final annual atoms,448.48344102,448.4834410200001,1e-07,yes
+10,FY2018-19/AR5 P2_5,released conditional ensemble,409.3001938879857,409.3001938879857,1e-07,yes
+10,FY2018-19/AR5 P97_5,released conditional ensemble,499.0773305540501,499.0773305540501,1e-07,yes
+10,FY2019-20/AR5 central,final annual atoms,449.78897109999997,449.7889711000002,1e-07,yes
+10,FY2019-20/AR5 P2_5,released conditional ensemble,409.2303822565927,409.2303822565927,1e-07,yes
+10,FY2019-20/AR5 P97_5,released conditional ensemble,502.1396369166805,502.1396369166805,1e-07,yes
+10,FY2020-21/AR5 central,final annual atoms,487.80517655,487.8051765500004,1e-07,yes
+10,FY2020-21/AR5 P2_5,released conditional ensemble,444.5520097151861,444.5520097151861,1e-07,yes
+10,FY2020-21/AR5 P97_5,released conditional ensemble,543.1870358862232,543.1870358862232,1e-07,yes
+10,FY2021-22/AR5 central,final annual atoms,487.98947933,487.98947932999977,1e-07,yes
+10,FY2021-22/AR5 P2_5,released conditional ensemble,444.6567390405677,444.6567390405677,1e-07,yes
+10,FY2021-22/AR5 P97_5,released conditional ensemble,543.7386807827213,543.7386807827213,1e-07,yes
+10,FY2022-23/AR5 central,final annual atoms,442.86487496,442.86487496,1e-07,yes
+10,FY2022-23/AR5 P2_5,released conditional ensemble,400.0512414512753,400.0512414512753,1e-07,yes
+10,FY2022-23/AR5 P97_5,released conditional ensemble,499.0750468906341,499.0750468906341,1e-07,yes
+10,FY2023-24/AR5 central,final annual atoms,444.60775549,444.6077554900002,1e-07,yes
+10,FY2023-24/AR5 P2_5,released conditional ensemble,399.8675867063499,399.8675867063499,1e-07,yes
+10,FY2023-24/AR5 P97_5,released conditional ensemble,503.2167084667016,503.2167084667016,1e-07,yes
+10,FY2024-25/AR5 central,final annual atoms,457.23983224,457.2398322399998,1e-07,yes
+10,FY2024-25/AR5 P2_5,released conditional ensemble,411.4301801096119,411.4301801096119,1e-07,yes
+10,FY2024-25/AR5 P97_5,released conditional ensemble,517.3403737606181,517.3403737606181,1e-07,yes
+10,FY2015-16/PM2.5 central,final annual atoms,340.78679600000004,340.78679600000004,1e-07,yes
+10,FY2015-16/PM2.5 P2_5,released conditional ensemble,251.4177308746661,251.4177308746661,1e-07,yes
+10,FY2015-16/PM2.5 P97_5,released conditional ensemble,457.1222256346643,457.1222256346643,1e-07,yes
+10,FY2016-17/PM2.5 central,final annual atoms,351.49402299999997,351.49402299999997,1e-07,yes
+10,FY2016-17/PM2.5 P2_5,released conditional ensemble,259.2901075389053,259.2901075389053,1e-07,yes
+10,FY2016-17/PM2.5 P97_5,released conditional ensemble,471.711306333829,471.711306333829,1e-07,yes
+10,FY2017-18/PM2.5 central,final annual atoms,360.46601699999997,360.466017,1e-07,yes
+10,FY2017-18/PM2.5 P2_5,released conditional ensemble,266.89196851415613,266.89196851415613,1e-07,yes
+10,FY2017-18/PM2.5 P97_5,released conditional ensemble,482.3319050775524,482.3319050775524,1e-07,yes
+10,FY2018-19/PM2.5 central,final annual atoms,365.699808,365.699808,1e-07,yes
+10,FY2018-19/PM2.5 P2_5,released conditional ensemble,270.1108990307671,270.1108990307671,1e-07,yes
+10,FY2018-19/PM2.5 P97_5,released conditional ensemble,490.0380562624945,490.0380562624945,1e-07,yes
+10,FY2019-20/PM2.5 central,final annual atoms,389.33289099999996,389.332891,1e-07,yes
+10,FY2019-20/PM2.5 P2_5,released conditional ensemble,286.9164758385768,286.9164758385768,1e-07,yes
+10,FY2019-20/PM2.5 P97_5,released conditional ensemble,519.2832504518199,519.2832504518199,1e-07,yes
+10,FY2020-21/PM2.5 central,final annual atoms,412.33886900000005,412.3388690000001,1e-07,yes
+10,FY2020-21/PM2.5 P2_5,released conditional ensemble,305.1249787765468,305.1249787765468,1e-07,yes
+10,FY2020-21/PM2.5 P97_5,released conditional ensemble,548.6193735518153,548.6193735518153,1e-07,yes
+10,FY2021-22/PM2.5 central,final annual atoms,414.61633299999994,414.61633299999994,1e-07,yes
+10,FY2021-22/PM2.5 P2_5,released conditional ensemble,307.29707945442436,307.29707945442436,1e-07,yes
+10,FY2021-22/PM2.5 P97_5,released conditional ensemble,551.1061245698476,551.1061245698476,1e-07,yes
+10,FY2022-23/PM2.5 central,final annual atoms,407.820543,407.820543,1e-07,yes
+10,FY2022-23/PM2.5 P2_5,released conditional ensemble,300.4111488440618,300.4111488440618,1e-07,yes
+10,FY2022-23/PM2.5 P97_5,released conditional ensemble,547.1948928227299,547.1948928227299,1e-07,yes
+10,FY2023-24/PM2.5 central,final annual atoms,422.8257290000001,422.8257290000001,1e-07,yes
+10,FY2023-24/PM2.5 P2_5,released conditional ensemble,311.18836760402195,311.18836760402195,1e-07,yes
+10,FY2023-24/PM2.5 P97_5,released conditional ensemble,567.0472975400734,567.0472975400734,1e-07,yes
+10,FY2024-25/PM2.5 central,final annual atoms,422.696091,422.696091,1e-07,yes
+10,FY2024-25/PM2.5 P2_5,released conditional ensemble,311.7454848666881,311.7454848666881,1e-07,yes
+10,FY2024-25/PM2.5 P97_5,released conditional ensemble,564.9348369774275,564.9348369774275,1e-07,yes
+10,FY2015-16/NOx central,final annual atoms,705.055782,705.0557819999999,1e-07,yes
+10,FY2015-16/NOx P2_5,released conditional ensemble,583.9395301148161,583.9395301148161,1e-07,yes
+10,FY2015-16/NOx P97_5,released conditional ensemble,865.8964608840869,865.8964608840869,1e-07,yes
+10,FY2016-17/NOx central,final annual atoms,774.585764,774.5857639999999,1e-07,yes
+10,FY2016-17/NOx P2_5,released conditional ensemble,633.7133235691514,633.7133235691514,1e-07,yes
+10,FY2016-17/NOx P97_5,released conditional ensemble,965.8348527056422,965.8348527056422,1e-07,yes
+10,FY2017-18/NOx central,final annual atoms,804.302739,804.302739,1e-07,yes
+10,FY2017-18/NOx P2_5,released conditional ensemble,662.0409770798777,662.0409770798777,1e-07,yes
+10,FY2017-18/NOx P97_5,released conditional ensemble,994.8605130010588,994.8605130010588,1e-07,yes
+10,FY2018-19/NOx central,final annual atoms,774.73228,774.7322800000001,1e-07,yes
+10,FY2018-19/NOx P2_5,released conditional ensemble,635.1524691830281,635.1524691830281,1e-07,yes
+10,FY2018-19/NOx P97_5,released conditional ensemble,964.8401159108246,964.8401159108246,1e-07,yes
+10,FY2019-20/NOx central,final annual atoms,764.8052279999999,764.8052279999999,1e-07,yes
+10,FY2019-20/NOx P2_5,released conditional ensemble,624.9478822389792,624.9478822389792,1e-07,yes
+10,FY2019-20/NOx P97_5,released conditional ensemble,956.224462370457,956.224462370457,1e-07,yes
+10,FY2020-21/NOx central,final annual atoms,843.4737400000001,843.47374,1e-07,yes
+10,FY2020-21/NOx P2_5,released conditional ensemble,687.8916615205236,687.8916615205236,1e-07,yes
+10,FY2020-21/NOx P97_5,released conditional ensemble,1054.9432509834228,1054.9432509834228,1e-07,yes
+10,FY2021-22/NOx central,final annual atoms,878.424877,878.4248769999999,1e-07,yes
+10,FY2021-22/NOx P2_5,released conditional ensemble,718.2479271836897,718.2479271836897,1e-07,yes
+10,FY2021-22/NOx P97_5,released conditional ensemble,1095.495190191181,1095.495190191181,1e-07,yes
+10,FY2022-23/NOx central,final annual atoms,790.154339,790.154339,1e-07,yes
+10,FY2022-23/NOx P2_5,released conditional ensemble,640.1117261263402,640.1117261263402,1e-07,yes
+10,FY2022-23/NOx P97_5,released conditional ensemble,994.0747624259832,994.0747624259832,1e-07,yes
+10,FY2023-24/NOx central,final annual atoms,816.638272,816.638272,1e-07,yes
+10,FY2023-24/NOx P2_5,released conditional ensemble,660.6428150432497,660.6428150432497,1e-07,yes
+10,FY2023-24/NOx P97_5,released conditional ensemble,1029.329914241718,1029.329914241718,1e-07,yes
+10,FY2024-25/NOx central,final annual atoms,833.1277690000001,833.1277690000001,1e-07,yes
+10,FY2024-25/NOx P2_5,released conditional ensemble,679.5295298774729,679.5295298774729,1e-07,yes
+10,FY2024-25/NOx P97_5,released conditional ensemble,1039.513797795203,1039.513797795203,1e-07,yes
+10,FY2015-16/SO2 central,final annual atoms,671.166034,671.166034,1e-07,yes
+10,FY2015-16/SO2 P2_5,released conditional ensemble,531.9563129563189,531.9563129563189,1e-07,yes
+10,FY2015-16/SO2 P97_5,released conditional ensemble,899.5725110803687,899.5725110803687,1e-07,yes
+10,FY2016-17/SO2 central,final annual atoms,748.366438,748.366438,1e-07,yes
+10,FY2016-17/SO2 P2_5,released conditional ensemble,624.8062460409394,624.8062460409394,1e-07,yes
+10,FY2016-17/SO2 P97_5,released conditional ensemble,944.9777086429292,944.9777086429292,1e-07,yes
+10,FY2017-18/SO2 central,final annual atoms,668.727372,668.7273720000001,1e-07,yes
+10,FY2017-18/SO2 P2_5,released conditional ensemble,506.3870851959309,506.3870851959309,1e-07,yes
+10,FY2017-18/SO2 P97_5,released conditional ensemble,937.2729863230452,937.2729863230452,1e-07,yes
+10,FY2018-19/SO2 central,final annual atoms,605.388704,605.3887040000001,1e-07,yes
+10,FY2018-19/SO2 P2_5,released conditional ensemble,388.63777800894377,388.63777800894377,1e-07,yes
+10,FY2018-19/SO2 P97_5,released conditional ensemble,973.997918491054,973.997918491054,1e-07,yes
+10,FY2019-20/SO2 central,final annual atoms,734.314229,734.314229,1e-07,yes
+10,FY2019-20/SO2 P2_5,released conditional ensemble,405.9031762373101,405.9031762373101,1e-07,yes
+10,FY2019-20/SO2 P97_5,released conditional ensemble,1293.7851061657957,1293.7851061657957,1e-07,yes
+10,FY2020-21/SO2 central,final annual atoms,814.2456010000001,814.2456009999999,1e-07,yes
+10,FY2020-21/SO2 P2_5,released conditional ensemble,466.2425642118122,466.2425642118122,1e-07,yes
+10,FY2020-21/SO2 P97_5,released conditional ensemble,1407.1592482271178,1407.1592482271178,1e-07,yes
+10,FY2021-22/SO2 central,final annual atoms,681.9905050000001,681.9905050000001,1e-07,yes
+10,FY2021-22/SO2 P2_5,released conditional ensemble,454.6619314336649,454.6619314336649,1e-07,yes
+10,FY2021-22/SO2 P97_5,released conditional ensemble,1068.501005760991,1068.501005760991,1e-07,yes
+10,FY2022-23/SO2 central,final annual atoms,377.617859,377.617859,1e-07,yes
+10,FY2022-23/SO2 P2_5,released conditional ensemble,255.0676130796616,255.0676130796616,1e-07,yes
+10,FY2022-23/SO2 P97_5,released conditional ensemble,583.068642841998,583.068642841998,1e-07,yes
+10,FY2023-24/SO2 central,final annual atoms,213.61416300000002,213.614163,1e-07,yes
+10,FY2023-24/SO2 P2_5,released conditional ensemble,163.0174546452182,163.0174546452182,1e-07,yes
+10,FY2023-24/SO2 P97_5,released conditional ensemble,292.96814845267295,292.96814845267295,1e-07,yes
+10,FY2024-25/SO2 central,final annual atoms,368.90514,368.90514,1e-07,yes
+10,FY2024-25/SO2 P2_5,released conditional ensemble,221.77637684274484,221.77637684274484,1e-07,yes
+10,FY2024-25/SO2 P97_5,released conditional ensemble,616.6922080409437,616.6922080409437,1e-07,yes
+10,FY2015-16/NH3 central,final annual atoms,1846.895151,1846.895151,1e-07,yes
+10,FY2015-16/NH3 P2_5,released conditional ensemble,1603.1810668105093,1603.1810668105093,1e-07,yes
+10,FY2015-16/NH3 P97_5,released conditional ensemble,2106.958098432403,2106.958098432403,1e-07,yes
+10,FY2016-17/NH3 central,final annual atoms,2119.9208539999995,2119.9208539999995,1e-07,yes
+10,FY2016-17/NH3 P2_5,released conditional ensemble,1830.234650691389,1830.234650691389,1e-07,yes
+10,FY2016-17/NH3 P97_5,released conditional ensemble,2436.363832160182,2436.363832160182,1e-07,yes
+10,FY2017-18/NH3 central,final annual atoms,2125.728234,2125.728234,1e-07,yes
+10,FY2017-18/NH3 P2_5,released conditional ensemble,1839.2412313708485,1839.2412313708485,1e-07,yes
+10,FY2017-18/NH3 P97_5,released conditional ensemble,2433.2087240599803,2433.2087240599803,1e-07,yes
+10,FY2018-19/NH3 central,final annual atoms,2186.4712709999994,2186.4712710000003,1e-07,yes
+10,FY2018-19/NH3 P2_5,released conditional ensemble,1894.018818954976,1894.018818954976,1e-07,yes
+10,FY2018-19/NH3 P97_5,released conditional ensemble,2501.6862027850275,2501.6862027850275,1e-07,yes
+10,FY2019-20/NH3 central,final annual atoms,2259.957716,2259.957716,1e-07,yes
+10,FY2019-20/NH3 P2_5,released conditional ensemble,1959.026612538192,1959.026612538192,1e-07,yes
+10,FY2019-20/NH3 P97_5,released conditional ensemble,2581.0047102870276,2581.0047102870276,1e-07,yes
+10,FY2020-21/NH3 central,final annual atoms,2396.0308199999995,2396.0308199999995,1e-07,yes
+10,FY2020-21/NH3 P2_5,released conditional ensemble,2076.2242862960975,2076.2242862960975,1e-07,yes
+10,FY2020-21/NH3 P97_5,released conditional ensemble,2738.530049280018,2738.530049280018,1e-07,yes
+10,FY2021-22/NH3 central,final annual atoms,2502.602157,2502.602157,1e-07,yes
+10,FY2021-22/NH3 P2_5,released conditional ensemble,2170.102815958629,2170.102815958629,1e-07,yes
+10,FY2021-22/NH3 P97_5,released conditional ensemble,2860.2283100081363,2860.2283100081363,1e-07,yes
+10,FY2022-23/NH3 central,final annual atoms,2542.4183120000002,2542.418312,1e-07,yes
+10,FY2022-23/NH3 P2_5,released conditional ensemble,2205.7238277356632,2205.7238277356632,1e-07,yes
+10,FY2022-23/NH3 P97_5,released conditional ensemble,2896.9139825077114,2896.9139825077114,1e-07,yes
+10,FY2023-24/NH3 central,final annual atoms,2670.3884860000003,2670.3884860000003,1e-07,yes
+10,FY2023-24/NH3 P2_5,released conditional ensemble,2296.8639522060325,2296.8639522060325,1e-07,yes
+10,FY2023-24/NH3 P97_5,released conditional ensemble,3069.025986247727,3069.025986247727,1e-07,yes
+10,FY2024-25/NH3 central,final annual atoms,2690.0885439999997,2690.0885439999997,1e-07,yes
+10,FY2024-25/NH3 P2_5,released conditional ensemble,2333.110715195779,2333.110715195779,1e-07,yes
+10,FY2024-25/NH3 P97_5,released conditional ensemble,3060.7912740399756,3060.7912740399756,1e-07,yes
+10,FY2015-16/BC central,final annual atoms,40.943724,40.943724,1e-07,yes
+10,FY2015-16/BC P2_5,released conditional ensemble,27.71147980882592,27.71147980882592,1e-07,yes
+10,FY2015-16/BC P97_5,released conditional ensemble,61.875482477879295,61.875482477879295,1e-07,yes
+10,FY2016-17/BC central,final annual atoms,41.11209099999999,41.112091,1e-07,yes
+10,FY2016-17/BC P2_5,released conditional ensemble,28.091476570173164,28.091476570173164,1e-07,yes
+10,FY2016-17/BC P97_5,released conditional ensemble,61.77463107169331,61.77463107169331,1e-07,yes
+10,FY2017-18/BC central,final annual atoms,44.350249,44.350249,1e-07,yes
+10,FY2017-18/BC P2_5,released conditional ensemble,29.96918355253226,29.96918355253226,1e-07,yes
+10,FY2017-18/BC P97_5,released conditional ensemble,67.21938414411056,67.21938414411056,1e-07,yes
+10,FY2018-19/BC central,final annual atoms,47.152254,47.152254,1e-07,yes
+10,FY2018-19/BC P2_5,released conditional ensemble,30.94221958965608,30.94221958965608,1e-07,yes
+10,FY2018-19/BC P97_5,released conditional ensemble,73.74489734068267,73.74489734068267,1e-07,yes
+10,FY2019-20/BC central,final annual atoms,54.878001,54.878001,1e-07,yes
+10,FY2019-20/BC P2_5,released conditional ensemble,34.51145508598873,34.51145508598873,1e-07,yes
+10,FY2019-20/BC P97_5,released conditional ensemble,89.45716382650373,89.45716382650373,1e-07,yes
+10,FY2020-21/BC central,final annual atoms,58.439018999999995,58.439019,1e-07,yes
+10,FY2020-21/BC P2_5,released conditional ensemble,37.09804974535113,37.09804974535113,1e-07,yes
+10,FY2020-21/BC P97_5,released conditional ensemble,94.76265979576048,94.76265979576048,1e-07,yes
+10,FY2021-22/BC central,final annual atoms,51.620726999999995,51.62072699999999,1e-07,yes
+10,FY2021-22/BC P2_5,released conditional ensemble,34.2477143302689,34.2477143302689,1e-07,yes
+10,FY2021-22/BC P97_5,released conditional ensemble,80.0983961218129,80.0983961218129,1e-07,yes
+10,FY2022-23/BC central,final annual atoms,43.85602999999999,43.85602999999999,1e-07,yes
+10,FY2022-23/BC P2_5,released conditional ensemble,29.484695022796984,29.484695022796984,1e-07,yes
+10,FY2022-23/BC P97_5,released conditional ensemble,66.82163513104935,66.82163513104935,1e-07,yes
+10,FY2023-24/BC central,final annual atoms,40.437172000000004,40.437172,1e-07,yes
+10,FY2023-24/BC P2_5,released conditional ensemble,27.419449135452336,27.419449135452336,1e-07,yes
+10,FY2023-24/BC P97_5,released conditional ensemble,62.029552117478374,62.029552117478374,1e-07,yes
+10,FY2024-25/BC central,final annual atoms,46.64349800000001,46.64349800000001,1e-07,yes
+10,FY2024-25/BC P2_5,released conditional ensemble,31.296919290493495,31.296919290493495,1e-07,yes
+10,FY2024-25/BC P97_5,released conditional ensemble,71.23485115394188,71.23485115394188,1e-07,yes
+11,CO2 cell count,final cube positive placed cells,33674.0,33674.0,0,yes
+11,CO2 placed tonnes,final cube native Gg to tonnes,160404774.25093833,160404774.25093833,np.float64(0.00016040477425093832),yes
+11,CO2 published scale mass,final cube placed sum,160404774.25093833,160404774.25093833,np.float64(0.00016040477425093832),yes
+11,CH4 cell count,final cube positive placed cells,33674.0,33674.0,0,yes
+11,CH4 placed tonnes,final cube native Gg to tonnes,8621174.546565901,8621174.546565903,np.float64(8.6211745465659e-06),yes
+11,CH4 published scale mass,final cube placed sum,8621174.546565901,8621174.546565903,np.float64(8.6211745465659e-06),yes
+11,N2O cell count,final cube positive placed cells,30242.0,30242.0,0,yes
+11,N2O placed tonnes,final cube native Gg to tonnes,153297.91004091682,153297.91004091682,np.float64(1.5329791004091682e-07),yes
+11,N2O published scale mass,final cube placed sum,153297.91004091682,153297.91004091682,np.float64(1.5329791004091682e-07),yes
+11,PM2.5 cell count,final cube positive placed cells,30154.0,30154.0,0,yes
+11,PM2.5 placed tonnes,final cube native Gg to tonnes,422433.6300747715,422433.6300747715,np.float64(4.224336300747715e-07),yes
+11,PM2.5 published scale mass,final cube placed sum,422433.6300747715,422433.6300747715,np.float64(4.224336300747715e-07),yes
+11,NOx cell count,final cube positive placed cells,30217.0,30217.0,0,yes
+11,NOx placed tonnes,final cube native Gg to tonnes,810690.1804546157,810690.1804546159,np.float64(8.106901804546157e-07),yes
+11,NOx published scale mass,final cube placed sum,810690.1804546157,810690.1804546159,np.float64(8.106901804546157e-07),yes
+11,NH3 cell count,final cube positive placed cells,30211.0,30211.0,0,yes
+11,NH3 placed tonnes,final cube native Gg to tonnes,2670387.700827209,2670387.700827209,np.float64(2.6703877008272087e-06),yes
+11,NH3 published scale mass,final cube placed sum,2670387.700827209,2670387.700827209,np.float64(2.6703877008272087e-06),yes
+12,PM2.5 lower,released conditional interval,0.735973110255192,0.735973110255192,1e-10,yes
+12,PM2.5 upper,released conditional interval,1.3410898564287312,1.3410898564287312,1e-10,yes
+12,BC lower,released conditional interval,0.6780753228088505,0.6780753228088505,1e-10,yes
+12,BC upper,released conditional interval,1.5339735079274304,1.5339735079274304,1e-10,yes
+12,NOx lower,released conditional interval,0.8089785121340375,0.8089785121340375,1e-10,yes
+12,NOx upper,released conditional interval,1.2604477995629264,1.2604477995629264,1e-10,yes
+12,SO2 lower,released conditional interval,0.7631397191383752,0.7631397191383752,1e-10,yes
+12,SO2 upper,released conditional interval,1.371482771665401,1.371482771665401,1e-10,yes
+12,NH3 lower,released conditional interval,0.8601235229434824,0.8601235229434824,1e-10,yes
+12,NH3 upper,released conditional interval,1.149280714149891,1.149280714149891,1e-10,yes
+12,PM2.5/all_diverted_dung_household_combustion,released structural case,1.8258613258942415,1.8258613258942415,1e-10,yes
+12,BC/all_diverted_dung_household_combustion,released structural case,1.5306153573099683,1.5306153573099683,1e-10,yes
+12,NOx/all_diverted_dung_household_combustion,released structural case,1.221013094741397,1.2210130947413973,1e-10,yes
+12,SO2/all_diverted_dung_household_combustion,released structural case,1.151653041587139,1.151653041587139,1e-10,yes
+12,NH3/all_diverted_dung_household_combustion,released structural case,1.0209540335772702,1.0209540335772702,1e-10,yes
+12,PM2.5/coal_allocation:fleet_bkoap_long_season,released structural case,1.0784778392109116,1.0784778392109116,1e-10,yes
+12,PM2.5/coal_allocation:fleet_bkoap_short_season,released structural case,1.0211305914019602,1.0211305914019602,1e-10,yes
+12,PM2.5/coal_allocation:fleet_hamdani_long_season,released structural case,1.0730348779367194,1.0730348779367194,1e-10,yes
+12,PM2.5/coal_allocation:fleet_hamdani_short_season,released structural case,1.0192597381012851,1.0192597381012851,1e-10,yes
+12,BC/coal_allocation:fleet_bkoap_long_season,released structural case,1.6404930200362495,1.6404930200362495,1e-10,yes
+12,BC/coal_allocation:fleet_bkoap_short_season,released structural case,1.172456281139703,1.172456281139703,1e-10,yes
+12,BC/coal_allocation:fleet_hamdani_long_season,released structural case,1.5960705596384976,1.5960705596384976,1e-10,yes
+12,BC/coal_allocation:fleet_hamdani_short_season,released structural case,1.1571874040574275,1.1571874040574277,1e-10,yes
+12,NOx/coal_allocation:fleet_bkoap_long_season,released structural case,1.0137598563286025,1.0137598563286023,1e-10,yes
+12,NOx/coal_allocation:fleet_bkoap_short_season,released structural case,1.0037049172703134,1.0037049172703134,1e-10,yes
+12,NOx/coal_allocation:fleet_hamdani_long_season,released structural case,1.0128055185704776,1.0128055185704776,1e-10,yes
+12,NOx/coal_allocation:fleet_hamdani_short_season,released structural case,1.0033768925325273,1.0033768925325273,1e-10,yes
+12,SO2/coal_allocation:fleet_bkoap_long_season,released structural case,4.244055690293039,4.244055690293039,1e-10,yes
+12,SO2/coal_allocation:fleet_bkoap_short_season,released structural case,1.8734799016644506,1.8734799016644503,1e-10,yes
+12,SO2/coal_allocation:fleet_hamdani_long_season,released structural case,4.019058803641585,4.019058803641585,1e-10,yes
+12,SO2/coal_allocation:fleet_hamdani_short_season,released structural case,1.7961440275274658,1.7961440275274658,1e-10,yes
+12,PM2.5/industrial_fuel_sulfur_high,released structural case,1.0,1.0,1e-10,yes
+12,PM2.5/industrial_fuel_sulfur_low,released structural case,1.0,1.0,1e-10,yes
+12,BC/industrial_fuel_sulfur_high,released structural case,1.0,1.0,1e-10,yes
+12,BC/industrial_fuel_sulfur_low,released structural case,1.0,1.0,1e-10,yes
+12,NOx/industrial_fuel_sulfur_high,released structural case,1.0,1.0,1e-10,yes
+12,NOx/industrial_fuel_sulfur_low,released structural case,1.0,1.0,1e-10,yes
+12,SO2/industrial_fuel_sulfur_high,released structural case,1.1511542357167455,1.1511542357167457,1e-10,yes
+12,SO2/industrial_fuel_sulfur_low,released structural case,0.6983105258103528,0.6983105258103528,1e-10,yes
+12,PM2.5/road_transferred_factor_high,released structural case,1.0983183740013198,1.09831837400132,1e-10,yes
+12,PM2.5/road_transferred_factor_low,released structural case,0.9851433166582444,0.9851433166582444,1e-10,yes
+12,BC/road_transferred_factor_high,released structural case,1.2226348751420932,1.2226348751420932,1e-10,yes
+12,BC/road_transferred_factor_low,released structural case,0.9521987027886712,0.9521987027886712,1e-10,yes
+12,NOx/road_transferred_factor_high,released structural case,1.3125465713253435,1.3125465713253437,1e-10,yes
+12,NOx/road_transferred_factor_low,released structural case,0.8613629273695773,0.8613629273695773,1e-10,yes
+12,SO2/road_transferred_factor_high,released structural case,1.0571686851517141,1.057168685151714,1e-10,yes
+12,SO2/road_transferred_factor_low,released structural case,0.94397468855132,0.94397468855132,1e-10,yes
+12,NH3/road_transferred_factor_high,released structural case,1.0013759793963124,1.0013759793963124,1e-10,yes
+12,NH3/road_transferred_factor_low,released structural case,0.99914413963168,0.99914413963168,1e-10,yes
+12,PM2.5/waste_burned_fraction_0.3,released structural case,0.924494749881943,0.924494749881943,1e-10,yes
+12,PM2.5/waste_burned_fraction_0.9,released structural case,1.0755052501180569,1.0755052501180569,1e-10,yes
+12,BC/waste_burned_fraction_0.3,released structural case,0.8860500708098462,0.8860500708098462,1e-10,yes
+12,BC/waste_burned_fraction_0.9,released structural case,1.1139499291901538,1.1139499291901538,1e-10,yes
+12,NOx/waste_burned_fraction_0.3,released structural case,0.9907303162853354,0.9907303162853354,1e-10,yes
+12,NOx/waste_burned_fraction_0.9,released structural case,1.0092696837146649,1.0092696837146649,1e-10,yes
+12,SO2/waste_burned_fraction_0.3,released structural case,0.9922961686913592,0.9922961686913592,1e-10,yes
+12,SO2/waste_burned_fraction_0.9,released structural case,1.0077038313086408,1.0077038313086408,1e-10,yes
+12,NH3/waste_burned_fraction_0.3,released structural case,0.9988907361174114,0.9988907361174114,1e-10,yes
+12,NH3/waste_burned_fraction_0.9,released structural case,1.0011092638825885,1.0011092638825885,1e-10,yes
+12,PM2.5/fertiliser_urea_regional_factor,released structural case,1.0,1.0,1e-10,yes
+12,BC/fertiliser_urea_regional_factor,released structural case,1.0,1.0,1e-10,yes
+12,NOx/fertiliser_urea_regional_factor,released structural case,0.9999999999999999,1.0,1e-10,yes
+12,SO2/fertiliser_urea_regional_factor,released structural case,1.0,1.0,1e-10,yes
+12,NH3/fertiliser_urea_regional_factor,released structural case,0.9223504838455356,0.9223504838455356,1e-10,yes
+12,PM2.5/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,1.0,1.0,1e-10,yes
+12,BC/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,1.0,1.0,1e-10,yes
+12,NOx/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,0.8166177019413369,0.8166177019413369,1e-10,yes
+12,SO2/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,1.0,1.0,1e-10,yes
+12,NH3/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,1.0092304667526317,1.0092304667526315,1e-10,yes
+13,FY2021-22/PM2.5/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.4892202821749666,0.4892202821749666,1e-10,yes
+13,FY2021-22/PM2.5/industry/EDGAR fossil+biomass 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.21685509030639422,0.2168550903063942,1e-10,yes
+13,FY2021-22/BC/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,4.834060307225489,4.834060307225489,1e-10,yes
+13,FY2021-22/BC/industry/EDGAR fossil+biomass 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.6638243095936992,0.6638243095936992,1e-10,yes
+13,FY2021-22/NOx/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,1.1416475305242784,1.1416475305242784,1e-10,yes
+13,FY2021-22/NOx/industry/EDGAR fossil+biomass 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.6427448434427562,0.6427448434427562,1e-10,yes
+13,FY2021-22/SO2/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,2.2167368244607135,2.2167368244607135,1e-10,yes
+13,FY2021-22/SO2/industry/EDGAR fossil+biomass 1.A.2 + cement process 2.A.1,released matched-boundary comparison,1.9329374714106966,1.9329374714106968,1e-10,yes
+13,FY2021-22/CO/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.18935939006359517,0.1893593900635951,1e-10,yes
+13,FY2021-22/CO/industry/EDGAR fossil+biomass 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.13725587722195284,0.1372558772219528,1e-10,yes
+13,FY2021-22/NMVOC/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.26758463323019904,0.267584633230199,1e-10,yes
+13,FY2021-22/NMVOC/industry/EDGAR fossil+biomass 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.08504493619907584,0.0850449361990758,1e-10,yes
+13,FY2015-16/NOx/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.7773385006378659,0.7773385006378661,1e-10,yes
+13,FY2016-17/NOx/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.8377400557523085,0.8377400557523085,1e-10,yes
+13,FY2017-18/NOx/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.9491422250087734,0.9491422250087734,1e-10,yes
+13,FY2018-19/NOx/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.9139947669178095,0.9139947669178096,1e-10,yes
+13,FY2019-20/NOx/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.893448867616911,0.893448867616911,1e-10,yes
+13,FY2015-16/CO/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.8251050921235955,0.8251050921235953,1e-10,yes
+13,FY2016-17/CO/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.9054488306035545,0.9054488306035544,1e-10,yes
+13,FY2017-18/CO/road_exhaust/HTAPv3.2,released matched-boundary comparison,1.0880755404435483,1.0880755404435485,1e-10,yes
+13,FY2018-19/CO/road_exhaust/HTAPv3.2,released matched-boundary comparison,1.203708621867324,1.2037086218673243,1e-10,yes
+13,FY2019-20/CO/road_exhaust/HTAPv3.2,released matched-boundary comparison,1.2014783667152233,1.2014783667152231,1e-10,yes
+13,FY2015-16/NMVOC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.8391714500176023,0.8391714500176023,1e-10,yes
+13,FY2016-17/NMVOC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.876245453985302,0.876245453985302,1e-10,yes
+13,FY2017-18/NMVOC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.9446537357860685,0.9446537357860684,1e-10,yes
+13,FY2018-19/NMVOC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.9731004335166987,0.9731004335166988,1e-10,yes
+13,FY2019-20/NMVOC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.9908239768331197,0.9908239768331196,1e-10,yes
+13,FY2015-16/SO2/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.620651451590723,0.620651451590723,1e-10,yes
+13,FY2016-17/SO2/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.6604578901698495,0.6604578901698495,1e-10,yes
+13,FY2017-18/SO2/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.12292983714463526,0.1229298371446352,1e-10,yes
+13,FY2018-19/SO2/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.11438747172767842,0.1143874717276784,1e-10,yes
+13,FY2019-20/SO2/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.1139903162493443,0.1139903162493443,1e-10,yes
+13,FY2015-16/PM2.5/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.22989570980886037,0.2298957098088603,1e-10,yes
+13,FY2016-17/PM2.5/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.26004776412318936,0.2600477641231893,1e-10,yes
+13,FY2017-18/PM2.5/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.31938026956001125,0.3193802695600112,1e-10,yes
+13,FY2018-19/PM2.5/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.32898041214376883,0.3289804121437688,1e-10,yes
+13,FY2019-20/PM2.5/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.32198993976427376,0.3219899397642738,1e-10,yes
+13,FY2015-16/BC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.16364390901575565,0.1636439090157556,1e-10,yes
+13,FY2016-17/BC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.18436382412586405,0.184363824125864,1e-10,yes
+13,FY2017-18/BC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.22782292717208602,0.227822927172086,1e-10,yes
+13,FY2018-19/BC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.22498429546355034,0.2249842954635503,1e-10,yes
+13,FY2019-20/BC/road_exhaust/HTAPv3.2,released matched-boundary comparison,0.21421432700015977,0.2142143270001597,1e-10,yes
+13,FY2015-16/NH3/road_exhaust/HTAPv3.2,released matched-boundary comparison,4.426544668295207,4.426544668295207,1e-10,yes
+13,FY2016-17/NH3/road_exhaust/HTAPv3.2,released matched-boundary comparison,4.874031826135331,4.874031826135331,1e-10,yes
+13,FY2017-18/NH3/road_exhaust/HTAPv3.2,released matched-boundary comparison,5.438242313395876,5.438242313395875,1e-10,yes
+13,FY2018-19/NH3/road_exhaust/HTAPv3.2,released matched-boundary comparison,6.188724007995089,6.188724007995089,1e-10,yes
+13,FY2019-20/NH3/road_exhaust/HTAPv3.2,released matched-boundary comparison,6.0826831832892125,6.0826831832892125,1e-10,yes
+13,FY2015-16/NH3/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.109615008501476,1.109615008501476,1e-10,yes
+13,FY2016-17/NH3/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.1110468352645577,1.111046835264558,1e-10,yes
+13,FY2017-18/NH3/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.0602998554149208,1.0602998554149208,1e-10,yes
+13,FY2018-19/NH3/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.0499971712492215,1.0499971712492215,1e-10,yes
+13,FY2019-20/NH3/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.0351156385324989,1.0351156385324989,1e-10,yes
+13,FY2015-16/NOx/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.8179964453737063,1.8179964453737063,1e-10,yes
+13,FY2016-17/NOx/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.9225275059377345,1.9225275059377345,1e-10,yes
+13,FY2017-18/NOx/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.9264404304910985,1.9264404304910987,1e-10,yes
+13,FY2018-19/NOx/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.949561627358145,1.949561627358145,1e-10,yes
+13,FY2019-20/NOx/agriculture_livestock_and_soils/HTAPv3.2,released matched-boundary comparison,1.9362304431108601,1.93623044311086,1e-10,yes
+13,FY2015-16/PM2.5/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.3289523171229271,0.3289523171229271,1e-10,yes
+13,FY2016-17/PM2.5/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.33890268564239945,0.3389026856423994,1e-10,yes
+13,FY2017-18/PM2.5/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.36212327709944164,0.3621232770994416,1e-10,yes
+13,FY2018-19/PM2.5/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.3452146618387146,0.3452146618387146,1e-10,yes
+13,FY2019-20/PM2.5/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.33077525894012877,0.3307752589401287,1e-10,yes
+13,FY2015-16/CO/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.314603721375921,0.314603721375921,1e-10,yes
+13,FY2016-17/CO/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.323912848281031,0.323912848281031,1e-10,yes
+13,FY2017-18/CO/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.3469145472889568,0.3469145472889568,1e-10,yes
+13,FY2018-19/CO/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.33398660584030504,0.3339866058403051,1e-10,yes
+13,FY2019-20/CO/agricultural_residue_burning/HTAPv3.2,released matched-boundary comparison,0.3220624060984014,0.3220624060984014,1e-10,yes

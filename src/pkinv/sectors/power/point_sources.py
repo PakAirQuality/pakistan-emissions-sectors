@@ -24,6 +24,12 @@ default NCV and HSD its default with a 0.84 kg/L density. Shares weight energy, 
 energy times emission factor; the lignite/bituminous factor difference would move the coal
 split by well under one percent and is noted rather than modelled.
 
+FY2024-25 has physical fuel quantities but no admitted own-year heat-rate-derived
+coal CV. Its point rows use the documented station-rank NCV from the shared coal
+account. Gross gas quantities use the declared gross-to-net conversion, matching
+the national extension control; these energy quantities remain distinct from
+observed fuel masses and generation. Missing rank evidence raises an error.
+
 K-ELECTRIC IS EXCLUDED from the shares for the same reason it is excluded from the gas
 technology split: the boundary audit finds the national fuel rows cover the CPPA side
 only, and a share should describe the fleet behind the activity it allocates. K-E plants
@@ -83,10 +89,19 @@ ALIAS = {
     "TPS Guddu (Units 11-13) (GENCO-II)": "TPS Guddu (Units 11-13)",
     "Atlas": "Atlas Power",
     "Engro Powergen. Qadirpur": "Engro Power Gen. Qadirpur",
+    "Engro Powergen Qadirpur": "Engro Power Gen. Qadirpur",
+    "NPPMCL (Haveli Bahadur Shah)": "NPPMCL (HBS)",
+    "Jamshoro Coal Power Unit-1": "TPS Jamshoro",
+    "Jamal Din Wali-11": "Jamal Din Wali-II",
+    "Jamal Din Wali-111": "Jamal Din Wali-III",
+    "RYKMills": "RYK Mills",
     "Foundation": "Foundation Power",
     "Halmore": "Halmore Power",
     "Hub": "Hub Power",
     "Liberty Daharki": "Liberty Daharki Power",
+    # NEPRA SoIR2024 Table23 heat-rate spelling; Table5 and the physical
+    # fuel ledger name the same Faisalabad oil engine station in full.
+    "Liberty Tech.": "Liberty Power Tech.",
     "Lucky Electric": "Lucky Electric Power",
     "Nishat": "Nishat Power",
     "Orient": "Orient Power",
@@ -156,21 +171,34 @@ def rows(data, year=None):
     cv = {r["plant"]: r for r in implied_cv.implied_coal_cv(data)
           if r["fiscal_year"] == year}
     fleet = implied_cv.fleet_cv(data, year)["fleet_cv"]
+    rank_ncv = {}
+    if fleet is None:
+        from pkinv.sectors.power.coal_booking import station_accounts
+        rank_ncv = {r["plant"]: float(r["ncv_TJ_per_Gg"]) for r in station_accounts()
+                    if int(r["period_id"][2:6]) == year and r["ncv_TJ_per_Gg"]}
     hhv = data.p("captive_hhv_btu_per_scf")
+    gross_to_net = plant_ledger.gas_energy_scale(data, year)
     out = []
     for r in plant_ledger.rows(year):
         q, unit = float(r["quantity"]), r["quantity_unit"]
         if unit == "MMBTU":
-            tj, evidence = q * TJ_PER_MMBTU, "exact (MMBTU)"
+            tj = q * TJ_PER_MMBTU * gross_to_net
+            evidence = "gross MMBTU x documented gross-to-net ratio" if year >= 2024 else "exact (MMBTU)"
         elif unit == "MMCFT":
-            tj, evidence = q * hhv * TJ_PER_MMCF_PER_BTU, "assumed heating value"
+            tj = q * hhv * TJ_PER_MMCF_PER_BTU * gross_to_net
+            evidence = "assumed gross heating value x documented gross-to-net ratio" if year >= 2024 else "assumed heating value"
         elif unit == "000 t" and r["fuel"] == "Coal":
             c = cv.get(r["plant"])
             if (c and c["implied_cv_TJ_per_Gg"]
                     and c["evidence_class"] not in ("no-hr", "outlier")):
                 tj, evidence = q * float(c["implied_cv_TJ_per_Gg"]), "implied CV"
-            else:
+            elif fleet is not None:
                 tj, evidence = q * fleet, "fleet CV (outlier or no heat rate)"
+            else:
+                if r["plant"] not in rank_ncv:
+                    raise KeyError("No documented coal rank NCV or own-year heat evidence for %s FY%d" % (r["plant"], year))
+                tj = q * rank_ncv[r["plant"]]
+                evidence = "documented station rank-default NCV (no own-year heat-rate evidence)"
         elif unit == "000 t":
             tj, evidence = q * RFO_NCV_TJ_PER_GG, "IPCC default NCV"
         elif unit == "000 L":
@@ -188,7 +216,7 @@ def rows(data, year=None):
         else:
             town, province, located = "", "", "UNMATCHED"
         out.append({"fiscal_year": year, "system": r["system"], "plant": r["plant"],
-                    "fuel": r["fuel"], "energy_TJ": round(tj, 1),
+                    "fuel": r["fuel"], "energy_TJ": tj if year >= 2024 else round(tj, 1),
                     "energy_evidence": evidence, "town": town, "province": province,
                     "located_by": located})
     return out

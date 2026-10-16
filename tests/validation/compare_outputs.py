@@ -13,6 +13,7 @@ differs is a `difference` and fails the comparison.
 """
 
 from pkinv.assets import asset_path
+from pkinv.core.reporting_window import CORE_SUFFIX, RETIRED_GHG_PANEL_PRODUCTS
 import csv
 import hashlib
 import json
@@ -35,23 +36,26 @@ def sha256(path):
 
 
 def numeric_csv_diff(a, b):
-    with open(a, encoding="utf-8") as fa, open(b, encoding="utf-8") as fb:
-        ra, rb = list(csv.reader(fa)), list(csv.reader(fb))
-    if len(ra) != len(rb):
-        return "row count %d vs %d" % (len(ra), len(rb)), float("inf")
+    import itertools
+    import math
     worst = 0.0
-    for i, (xa, xb) in enumerate(zip(ra, rb)):
-        if len(xa) != len(xb):
-            return "column count differs at row %d" % i, float("inf")
-        for ca, cb in zip(xa, xb):
-            if ca == cb:
-                continue
-            try:
-                fa_, fb_ = float(ca), float(cb)
-            except ValueError:
-                return "text cell differs at row %d: %r vs %r" % (i, ca[:40], cb[:40]), float("inf")
-            scale = max(abs(fa_), abs(fb_), ABS_TOL)
-            worst = max(worst, abs(fa_ - fb_) / scale)
+    with open(a, encoding="utf-8") as fa, open(b, encoding="utf-8") as fb:
+        for i, (xa, xb) in enumerate(itertools.zip_longest(csv.reader(fa), csv.reader(fb))):
+            if xa is None or xb is None:
+                return "row count differs at row %d" % i, float("inf")
+            if len(xa) != len(xb):
+                return "column count differs at row %d" % i, float("inf")
+            for ca, cb in zip(xa, xb):
+                if ca == cb:
+                    continue
+                try:
+                    fa_, fb_ = float(ca), float(cb)
+                except ValueError:
+                    return "text cell differs at row %d: %r vs %r" % (i, ca[:40], cb[:40]), float("inf")
+                if not (math.isfinite(fa_) and math.isfinite(fb_)):
+                    return "nonfinite numeric cell differs at row %d" % i, float("inf")
+                scale = max(abs(fa_), abs(fb_), ABS_TOL)
+                worst = max(worst, abs(fa_ - fb_) / scale)
     return ("numeric within tolerance" if worst <= REL_TOL else "numeric difference"), worst
 
 
@@ -73,17 +77,37 @@ def cube_diff(a, b):
     def walk(ga, gb, prefix=""):
         """(message, worst) over one group and every group beneath it."""
         worst = 0.0
+        def metadata(obj):
+            return {key: str(obj.getncattr(key)) for key in obj.ncattrs()}
+        if metadata(ga) != metadata(gb):
+            return "group attributes differ: " + prefix, float("inf")
+        if {k: (len(v), v.isunlimited()) for k, v in ga.dimensions.items()} != {
+                k: (len(v), v.isunlimited()) for k, v in gb.dimensions.items()}:
+            return "dimensions differ: " + prefix, float("inf")
         names_a, names_b = set(ga.variables), set(gb.variables)
         for name in sorted(names_a ^ names_b):
             side = "reference" if name in names_a else "rebuild"
             return "variable %s%s present only in the %s" % (prefix, name, side), float("inf")
         for name in sorted(names_a):
+            va, vb = ga.variables[name], gb.variables[name]
+            if va.dimensions != vb.dimensions or metadata(va) != metadata(vb):
+                return "variable metadata differs: " + prefix + name, float("inf")
             xa, xb = ga.variables[name][:], gb.variables[name][:]
             kind = getattr(getattr(xa, "dtype", None), "kind", None)
-            if kind in "fiu":
+            if not np.array_equal(np.ma.getmaskarray(xa), np.ma.getmaskarray(xb)):
+                return "mask differs: " + prefix + name, float("inf")
+            if kind in ("f", "i", "u"):
                 xa, xb = np.asarray(xa, dtype=float), np.asarray(xb, dtype=float)
                 if xa.shape != xb.shape:
                     return "shape of %s%s differs" % (prefix, name), float("inf")
+                if not np.array_equal(np.isfinite(xa), np.isfinite(xb)):
+                    return "finite values differ: " + prefix + name, float("inf")
+                if not np.array_equal(np.isnan(xa), np.isnan(xb)):
+                    return "NaN locations differ: " + prefix + name, float("inf")
+                valid = np.isfinite(xa) & ~np.ma.getmaskarray(ga.variables[name][:])
+                if not np.array_equal(xa[~np.isfinite(xa)], xb[~np.isfinite(xb)], equal_nan=True):
+                    return "nonfinite values differ: " + prefix + name, float("inf")
+                xa, xb = xa[valid], xb[valid]
                 scale = np.maximum(np.maximum(np.abs(xa), np.abs(xb)), ABS_TOL)
                 worst = max(worst, float(np.max(np.abs(xa - xb) / scale)) if xa.size else 0.0)
             else:
@@ -130,15 +154,15 @@ def targets(root, seeded=()):
                     paths.append(rel)
     paths += [rel for rel in seeded if os.path.exists(asset_path(root, rel))]
     for extra in ("outputs/pakemis_atomic_annual.parquet",
-                  "outputs/pakemis_monthly_fy2015_16_fy2023_24.parquet",
-                  "outputs/pakemis_annual_fy2015_16_fy2023_24.parquet"):
+                  "outputs/pakemis_monthly_" + CORE_SUFFIX + ".parquet",
+                  "outputs/pakemis_annual_" + CORE_SUFFIX + ".parquet"):
         if os.path.exists(asset_path(root, extra)):
             paths.append(extra)
     draws = os.path.join(root, "outputs", "mc_draws")
     if os.path.isdir(draws):
         paths += sorted("outputs/mc_draws/" + n for n in os.listdir(draws)
                         if not n.startswith("."))
-    return sorted(set(paths))
+    return sorted(set(paths) - RETIRED_GHG_PANEL_PRODUCTS)
 
 
 def load_ledger(tree):
@@ -247,14 +271,16 @@ def main(root, tree, report, paper_status):
             failed += 1
         elif sha256(a) == sha256(b):
             row.update(status="rebuilt_identical", detail="bytewise")
-        elif rel in EXPECTED and rel.endswith(".nc"):
+        elif rel.endswith(".nc"):
             detail, worst = cube_diff(a, b)
-            row.update(status="rebuilt_expected_difference" if worst is None or worst <= REL_TOL
-                       else "difference", detail="%s; %s" % (EXPECTED[rel], detail),
+            row.update(status="rebuilt_identical_numerically" if worst is not None and worst <= REL_TOL
+                       else "difference", detail=detail,
                        max_rel_diff="" if worst is None else "%.3e" % worst)
             failed += row["status"] == "difference"
         elif rel in EXPECTED:
-            row.update(status="rebuilt_expected_difference", detail=EXPECTED[rel])
+            equal = _release_manifest_masked_equal(a, b)
+            row.update(status="rebuilt_expected_difference" if equal else "difference", detail=EXPECTED[rel])
+            failed += not equal
         elif rel.endswith(".csv"):
             detail, worst = numeric_csv_diff(a, b)
             row.update(status="rebuilt_identical_numerically" if worst <= REL_TOL else "difference",

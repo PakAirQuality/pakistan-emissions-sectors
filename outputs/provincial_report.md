@@ -6,12 +6,12 @@ National Tier 1 emissions allocated to provinces by category-appropriate proxies
 
 | Province | Enteric fermentation | Manure management | Rice cultivation | Managed soils | Field burning of residues | Urea application | TOTAL | Share |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Punjab | 79.9 | 10.3 | 12.2 | 17.1 | 0.5 | 3.3 | 123.3 | 55% |
-| Sindh | 35.8 | 4.7 | 3.4 | 6.4 | 0.1 | 1.1 | 51.4 | 23% |
-| Khyber Pakhtunkhwa | 24.3 | 3.7 | 0.3 | 2.5 | 0.0 | 0.2 | 31.0 | 14% |
-| Balochistan | 11.4 | 2.5 | 0.7 | 2.6 | 0.0 | 0.1 | 17.3 | 8% |
+| Punjab | 79.9 | 10.2 | 12.2 | 17.4 | 0.5 | 3.3 | 123.5 | 55% |
+| Sindh | 35.8 | 4.6 | 3.4 | 6.4 | 0.1 | 1.1 | 51.4 | 23% |
+| Khyber Pakhtunkhwa | 24.3 | 3.6 | 0.3 | 2.3 | 0.0 | 0.2 | 30.8 | 14% |
+| Balochistan | 11.4 | 2.4 | 0.7 | 2.4 | 0.0 | 0.1 | 17.0 | 8% |
 | Other | 0.3 | 0.0 | 0.0 | 0.0 | 0.0 | 0.0 | 0.4 | 0% |
-| **NATIONAL** | 151.7 | 21.2 | 16.5 | 28.5 | 0.7 | 4.8 | **223.5** | 100% |
+| **NATIONAL** | 151.7 | 20.8 | 16.5 | 28.5 | 0.7 | 4.8 | **223.0** | 100% |
 
 ## Allocation proxies
 

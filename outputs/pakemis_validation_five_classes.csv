@@ -103,3 +103,5 @@ mag-soils-faostat-flows,validation,partial,partially independent benchmark,agree
 mag-national-btr,validation,shared-upstream,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
 mag-power-coal-reference-audit,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
 mag-power-coal-plant-reconciliation,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-air-htap-nh3,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
+mag-air-htap-species,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs

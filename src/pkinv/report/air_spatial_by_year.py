@@ -1,58 +1,21 @@
-"""The nine-year air spatial allocation: a second sink on the cube's own residency.
+"""Species-specific air masses on documented annual source supports.
 
-spatial_by_year.build() rebuilds the full greenhouse-gas cube once per period; while each
-period's accumulator is resident, this sink multiplies the air panel's masses onto the
-SAME per-stream vectors the greenhouse-gas products are built from - the cell weight
-vector (captured via grid_cube.build(capture_cells=...)), the ADM2 shape marginal
-(acc["stream_shape"], which carries the point-projection exactness for facility streams),
-the province marginals (acc["marginals"]) - so the 0.05-degree grid, the ADM2 totals and
-the ADM1 totals are three marginals of ONE allocation, never reconstructions of each
-other, and the conservation identity
+The four dung/nitrogen configurations compose their own atom masses. Annual
+cell, district and provincial weights come from the supported emitting process,
+with separate declared frames for reviewed oil/diesel stations and kiln types.
+A shared activity anchor is used only where it describes the emitting location.
+Within-year monthly grids retain the documented annual source geography and use
+the separate process-specific air monthly weights; this is not observed monthly
+movement of sources. Household releases are gross appliance emissions, and
+municipal waste burning is allocated at origin rather than measured fire sites.
 
-    covered panel = grid = ADM1 = ADM2 + outside + unallocated_below_adm1
-
-holds by construction per (pollutant, period, configuration) and is asserted in
-tests/test_air_spatial_by_year.py for every cell of that cross, not a sample.
-
-WHERE A CLASS RIDES A FRAME INSTEAD (rc59, amended rc61). A `spatial_override` on a source
-class replaces the anchor's vectors with the frame's, and there are now two kinds, because
-"the same vectors the greenhouse-gas products are built from" is the right rule only while
-the air mass IS the stream's mass:
-
-  INHERITING - the brick kiln frames. The FCBK and ZZ classes are the pooled brick stream's
-  own mass split by kiln type within each province, so the frame's province marginal must
-  EQUAL the anchor's, and a difference is a defect. The sink asserts it to 1e-9.
-
-  DECLARING - the admitted power SO2 frames. That mass is a reviewed SUBSET of its anchor's
-  fleet: the 54-89 percent of CPPA furnace oil the admission register could price, station by
-  station. Its provinces legitimately differ from the whole fleet's, and multiplying the
-  subset by the whole's vector is a reconstruction with a measured bias - it put Lahore at 1.3
-  to 2.2 times the register's own figure and 7 Gg into a Quetta with no furnace-oil station.
-  So these frames declare their own province marginal and ADM1 takes it.
-
-The identity is unchanged either way: whichever vector carries the mass supplies all three
-marginals, and they still sum to it. What changed is that "the anchor's vector" stopped being
-the only possible answer to "which allocation is this".
-
-THE JOIN IS (period, configuration, support_anchor_id). Every air atom names the
-greenhouse-gas stream whose activity supports it (air_annual writes the column
-fail-closed), and that stream's vectors FOR THAT PERIOD are what the mass rides - the
-year's own weights where the registry has them, the reference backcast where it declares
-one. An anchor with no native geometry below the provincial control (the aviation cruise
-class, registry basis `unallocated`) keeps its ADM1 placement and routes the rest to the
-unallocated table with a typed reason, exactly as its greenhouse-gas mass does.
-
-NO EVIDENCE COLUMNS HERE, DELIBERATELY - the same rule the greenhouse-gas by-year tables
-follow, for the same reason (see spatial_by_year.py): whether a year's geography was
-measured or borrowed is the weight registry's to say, derived from what the build DID.
-These tables carry the (period_id, source_stream_id) join key; the per-pollutant join is
-published as outputs/pakemis_air_spatial_support_by_year.csv by a later phase that reads
-the registry the build's own record generates.
-
-TWO CONFIGURATIONS, ONE BUILD. The by-year loop places the reference streams; the
-ledger configuration L_HERD1624 differs in the residential dung MASSES alone
-and rides the same weight vectors (the dung streams' spatial pattern does not
-depend on the dung basis), so one cube residency serves both files.
+Placed and unallocated mass remain separate. Cruise and excluded native geometry
+retain appropriate administrative controls without invented sub-provincial
+locations. The air monthly unallocated ledger preserves the same distinction by
+month. Reporting territories and outside-frame mass use the common spatial
+account. Every species/configuration/year must close to its own covered total;
+missing sources are coverage statuses, never observed-zero cells. Spatial
+evidence is recorded separately by pollutant in the support product.
 """
 
 from pkinv.assets import asset_path
@@ -69,12 +32,14 @@ from pkinv.activity.store import read_rows
 # module-level is safe: power_admission_vectors defers its own import of this
 # module to inside the two functions that need shape_frame
 from pkinv.report import power_admission_vectors
+from pkinv.report.air_annual import atom_configuration
 
 ATOMS = asset_path(OUTPUTS, "pakemis_air_atomic_annual.csv")
 
 ADM1_OUT = asset_path(OUTPUTS, "pakemis_air_adm1_by_year.csv")
 ADM2_OUT = asset_path(OUTPUTS, "pakemis_air_adm2_by_year.csv")
 UNALLOC_OUT = asset_path(OUTPUTS, "pakemis_air_unallocated_by_year.csv")
+MONTHLY_UNALLOC_OUT = asset_path(OUTPUTS, "pakemis_air_monthly_unallocated.csv")
 
 ADM1_FIELDS = ("period_id", "configuration_id", "sector_id", "source_stream_id",
                "pollutant", "province", "emissions_Gg")
@@ -82,6 +47,7 @@ ADM2_FIELDS = ("period_id", "configuration_id", "sector_id", "pollutant", "shape
                "adm2_ids", "allocation_status", "province", "emissions_Gg")
 UNALLOC_FIELDS = ("period_id", "configuration_id", "sector_id", "source_stream_id",
                   "pollutant", "level", "emissions_Gg", "reason")
+MONTHLY_UNALLOC_FIELDS = ("month",) + UNALLOC_FIELDS
 
 CRUISE_REASON = ("the anchor stream has no native geometry below the provincial "
                  "control (the aviation cruise class); the mass is placed at ADM1 "
@@ -144,9 +110,7 @@ def load_atoms():
         lambda: collections.defaultdict(float)))
     for cfg in conf.AIR_ALL:
         for r in rows:
-            use = (r["configuration_id"] == cfg
-                   or (r["configuration_id"] == conf.REFERENCE
-                       and r["sector_id"] not in own[cfg]))
+            use = conf.canonical(r["configuration_id"]) == atom_configuration(cfg, r["sector_id"])
             if not use:
                 continue
             frame = frames.get(r["subitem"], FRAME_NONE)
@@ -206,6 +170,19 @@ class AirSink:
                                                 #   frames share one anchor and sum here)
         self.adm2 = collections.OrderedDict()   # aggregate key -> Gg
         self.unalloc = []
+        self.monthly_unalloc = []
+        self.monthly_writers = {}
+        self.monthly_mass = collections.defaultdict(lambda: collections.defaultdict(float))
+        from pkinv.report.air_monthly import OUT as monthly_out
+        if os.path.exists(monthly_out):
+            from pkinv.report.air_monthly_grid import AirMonthlyGridWriter
+            from pkinv.report.annual_grid import period_bounds
+            self.monthly_writers = {cfg: AirMonthlyGridWriter(grid, period_bounds(), cfg) for cfg in writers}
+            frames = frame_of_class()
+            for r in read_rows(monthly_out):
+                frame = frames.get(r["source_class_id"], FRAME_NONE)
+                key = (r["period_id"], r["configuration_id"], r["support_anchor_id"], frame, r["sector_id"], r["month"])
+                self.monthly_mass[key][r["pollutant"]] += float(r["emissions_Gg"])
 
     def write(self, time_index, period_id, acc):
         per = self.atoms.get(period_id)
@@ -221,6 +198,7 @@ class AirSink:
                                      % (sid, period_id))
                 streams[sid] = s
         rasters = {cfg: {} for cfg in self.writers}
+        monthly_rasters = collections.defaultdict(dict)
         for (cfg, sid, frame, sector), by_pol in sorted(per.items()):
             stream = streams.get(sid)
             if stream is None:
@@ -263,27 +241,50 @@ class AirSink:
                     key = (period_id, cfg, sector, sid, pol, province)
                     self.adm1[key] = self.adm1.get(key, 0.0) + mass * share
                 if not placed:
-                    self.unalloc.append({
+                    record = {
                         "period_id": period_id, "configuration_id": cfg,
                         "sector_id": sector, "source_stream_id": sid,
                         "pollutant": pol,
                         "level": "below_adm1",
                         "emissions_Gg": "%.12g" % mass,
-                        "reason": (KILN_FRAME_REASON if frame == "adm1_only"
-                                   else CRUISE_REASON)})
+                        "reason": (KILN_FRAME_REASON if frame == "adm1_only" else
+                                   "no compatible native geography below ADM1; railway ODbL geometry excluded from primary release" if sector == "railways" else CRUISE_REASON)}
+                    self.unalloc.append(record)
+                    if self.monthly_writers:
+                        from pkinv.core.monthly import months_for
+                        for month in months_for(2000 + int(period_id[-2:]) - 1):
+                            mkey = (period_id, cfg, sid, frame, sector, month)
+                            self.monthly_unalloc.append(dict(record, month=month,
+                                emissions_Gg="%.12g" % self.monthly_mass[mkey].get(pol, 0.0)))
                     continue
                 grid_r = rasters[cfg]
                 if pol not in grid_r:
                     grid_r[pol] = np.zeros((self.grid.height, self.grid.width))
                 if carrier is not None:
                     grid_r[pol] += mass * carrier.cells
+                    cell_weights = carrier.cells
                     shape_share = carrier.shape_vec
                     outside = carrier.outside * mass
                 else:
                     grid_r[pol] += mass * captured[sid]
+                    cell_weights = captured[sid]
                     annual = stream["emissions_Gg"]
                     shape_share = acc["stream_shape"][sid] / annual
                     outside = (acc["stream_outside"][sid] / annual) * mass
+                if self.monthly_writers:
+                    from pkinv.core.monthly import months_for
+                    months = months_for(2000 + int(period_id[-2:]) - 1)
+                    monthly_total = 0.0
+                    for month in months:
+                        mkey = (period_id, cfg, sid, frame, sector, month)
+                        month_mass = self.monthly_mass[mkey].get(pol, 0.0)
+                        monthly_total += month_mass
+                        per_month = monthly_rasters[(cfg, month)]
+                        if pol not in per_month:
+                            per_month[pol] = np.zeros((self.grid.height, self.grid.width))
+                        per_month[pol] += month_mass * cell_weights
+                    if abs(monthly_total - mass) > 1e-9 * max(mass, 1):
+                        raise ValueError("monthly air masses do not match annual placed source %s %s %s" % (period_id, sid, pol))
                 total_shapes = 0.0
                 for idx, shape_id, adm2_ids, status, province in self.frame:
                     value = mass * float(shape_share[idx])
@@ -306,8 +307,15 @@ class AirSink:
                         "reason": OUTSIDE_REASON})
         for cfg, writer in self.writers.items():
             writer.write_period(period_id, rasters[cfg])
+        if self.monthly_writers:
+            from pkinv.core.monthly import months_for
+            for cfg, writer in self.monthly_writers.items():
+                for month in months_for(2000 + int(period_id[-2:]) - 1):
+                    writer.write_period(month, monthly_rasters.get((cfg, month), {}))
 
     def close(self):
+        for writer in self.monthly_writers.values():
+            writer.close()
         adm1_rows = [{"period_id": k[0], "configuration_id": k[1], "sector_id": k[2],
                       "source_stream_id": k[3], "pollutant": k[4], "province": k[5],
                       "emissions_Gg": "%.12g" % v}
@@ -319,7 +327,8 @@ class AirSink:
                      for k, v in self.adm2.items()]
         for path, fields, rows in ((ADM1_OUT, ADM1_FIELDS, adm1_rows),
                                    (ADM2_OUT, ADM2_FIELDS, adm2_rows),
-                                   (UNALLOC_OUT, UNALLOC_FIELDS, self.unalloc)):
+                                   (UNALLOC_OUT, UNALLOC_FIELDS, self.unalloc),
+                                   (MONTHLY_UNALLOC_OUT, MONTHLY_UNALLOC_FIELDS, self.monthly_unalloc)):
             with open(path, "w", newline="", encoding="utf-8") as handle:
                 writer = csv.DictWriter(handle, fieldnames=list(fields),
                                         lineterminator="\n")

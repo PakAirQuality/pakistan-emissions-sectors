@@ -6,6 +6,8 @@ import unittest
 from collections import defaultdict
 
 from pkinv.core.io import read_rows
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX
 from pkinv.paths import DATA, OUTPUTS
 
 FRAME = os.path.join(OUTPUTS, "pakemis_kiln_frame_adm2_by_type.csv")
@@ -13,7 +15,7 @@ ATOMS = os.path.join(OUTPUTS, "pakemis_air_atomic_annual.csv")
 ADM2 = os.path.join(OUTPUTS, "pakemis_air_adm2_by_year.csv")
 UNALLOC = os.path.join(OUTPUTS, "pakemis_air_unallocated_by_year.csv")
 SUPPORT = os.path.join(OUTPUTS, "pakemis_air_spatial_support_by_year.csv")
-DETAIL = os.path.join(OUTPUTS, "pakemis_air_source_classes_fy2015_16_fy2023_24.csv")
+DETAIL = os.path.join(OUTPUTS, "pakemis_air_source_classes_%s.csv" % CORE_SUFFIX)
 BRICK = "industry|industrial-fuel-combustion-(1a2)|brick-kiln-coal-co2|co2"
 
 
@@ -70,7 +72,7 @@ class TestTheSinkHonoursTheOverride(unittest.TestCase):
         for a in self.atoms:
             want[(a["period_id"], a["pollutant"])] += float(a["emissions_Gg"])
         for (pid, pol), v in want.items():
-            for cfg in ("REF_2023_24", "L_HERD1624"):
+            for cfg in conf.AIR_ALL:
                 got = sum(by_frame[(pid, cfg, pol, f)] for f in ("kiln_frame:FCBK", "kiln_frame:ZZ", "adm1_only"))
                 self.assertAlmostEqual(got, v, places=9, msg=(pid, cfg, pol))
 
@@ -82,11 +84,12 @@ class TestTheSinkHonoursTheOverride(unittest.TestCase):
         below = defaultdict(float)
         for r in self.unalloc:
             if r["level"] == "below_adm1":
-                below[(r["period_id"], r["pollutant"])] += float(r["emissions_Gg"]) / 2.0   # two configurations
+                below[(r["period_id"], r["configuration_id"], r["pollutant"])] += float(r["emissions_Gg"])
         core = {"BC", "CO", "NH3", "NMVOC", "NOx", "PM2.5", "SO2"}
         for k, v in remainder.items():
             if k[1] in core:
-                self.assertAlmostEqual(below[k], v, delta=1e-6, msg=k)
+                for cfg in conf.AIR_ALL:
+                    self.assertAlmostEqual(below[k[0], cfg, k[1]], v, delta=1e-6, msg=(k, cfg))
 
     def test_typed_frames_carry_their_own_hash_and_the_remainder_none(self):
         for r in self.support:

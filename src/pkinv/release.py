@@ -34,21 +34,39 @@ PRODUCT = "PakEmis"
 AIR_PRODUCT = "PakEmis-Air"
 LAND_PRODUCT = "PakEmis-Land"
 
-LONG_TITLE = ("PakEmis: a reproducible ten-module national greenhouse-gas inventory "
-              "for Pakistan, excluding LULUCF")
+LONG_TITLE = ("PakEmis: greenhouse gas and air pollutant emissions in Pakistan, "
+              "July 2015–June 2025, excluding LULUCF")
 
 # The import package, which is not the product name and never has been.
 PACKAGE = "pkinv"
 
-OWNER = "RehanAhmad13"
+# THE REPOSITORY A READER CAN OPEN (rc68). Through rc67 this named the working repository,
+# which is private: every manuscript printed a URL that returned 404 to its readers. The
+# public repository is a COPY of each release without the third-party source documents
+# (scripts/make_public_copy.py decides what is left out; PUBLIC_MIRROR.md in the copy says
+# what and why). It carries no history, so the commits a release manifest names are those of
+# the working repository and do not exist there - REPOSITORY_NOTE says so wherever the
+# manifest gives the URL.
+OWNER = "PakAirQuality"
 REPO = "pakistan-emissions-sectors"
 REPO_URL = "https://github.com/%s/%s" % (OWNER, REPO)
 LICENCE_URL = "%s/blob/main/LICENSE" % REPO_URL
+REPOSITORY_NOTE = ("a public copy of the release without the third-party source documents, "
+                   "whose checksums it lists; the commits named in the git block are those "
+                   "of the private working repository and do not exist in the copy")
+
+# Where the dataset can be explored interactively, and whose project it is. The explorer is
+# deployed separately from the archive and can serve an earlier release than the one a
+# reader holds, so nothing here or in the manuscripts says which release it serves.
+EXPLORER_URL = "https://emissions.hawanama.org"
+INITIATIVE = "Pakistan Air Quality Initiative"
+INITIATIVE_URL = "https://pakairquality.com"
 
 # A real, separate repository: satellite nowcasting of agricultural emissions between census
-# years. It depends on this one. It is not where this one lives.
+# years. It depends on this one. It is not where this one lives, and it did not move with it.
+COMPANION_OWNER = "RehanAhmad13"
 COMPANION_REPO = "pakistan-emissions-nowcast"
-COMPANION_URL = "https://github.com/%s/%s" % (OWNER, COMPANION_REPO)
+COMPANION_URL = "https://github.com/%s/%s" % (COMPANION_OWNER, COMPANION_REPO)
 
 SCHEMA = "pkinv.release/v1"
 
@@ -67,8 +85,8 @@ SUBMISSION_IDENTIFIER = None
 # TN08 (industrial combustion) is numbered and reserved: its text is written after the
 # Explorer shell. Paths and document names (papers/<sector>/) do not change - 1,127 sector
 # claims key on them - only the titles, the first-page banner and the deposited PDF names.
-NATIONAL_ARTICLE_TITLE = ("PakEmis v1.0: an evidence-graded public-data reconstruction of Pakistan's "
-                          "non-LULUCF greenhouse-gas emissions, FY2015-16 to FY2023-24")
+NATIONAL_ARTICLE_TITLE = ("PakEmis %s: greenhouse gas and air pollutant emissions in Pakistan, "
+                          "July 2015–June 2025" % __version__)
 NATIONAL_ARTICLE_VENUE = "Earth System Science Data (data-description article, in preparation)"
 SECTOR_ORDER = ("agriculture", "power", "transport", "waste", "residential", "fugitives", "ippu",
                 "railways", "aviation")

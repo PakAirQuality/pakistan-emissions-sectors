@@ -316,12 +316,14 @@ class Context:
         # loads directly rather than through the get_proxy cache - a second copy
         # under data/gis/ would be an unregistered duplicate of a manifested file.
         # Extensive (km in the cell): no area weighting, per its registry row.
-        road = np.load(asset_path(DATA, "gis", "roads",
-                                    "pak_road_density_%dx%d.npy"
-                                    % (grid.height, grid.width)))
-        if road.shape != (grid.height, grid.width):
-            raise ValueError("road raster shape %s vs grid" % (road.shape,))
-        self.proxies["road_density"] = road.astype(np.float64)
+        from pkinv.core.primary_geography import PRIMARY_COMPATIBLE
+        if not PRIMARY_COMPATIBLE:
+            road = np.load(asset_path(DATA, "gis", "roads",
+                                        "pak_road_density_%dx%d.npy"
+                                        % (grid.height, grid.width)))
+            if road.shape != (grid.height, grid.width):
+                raise ValueError("road raster shape %s vs grid" % (road.shape,))
+            self.proxies["road_density"] = road.astype(np.float64)
         # UNIFORM MEANS UNIFORM PER SQUARE KILOMETRE (rc44). This was np.ones, which is
         # uniform per square DEGREE, and a 0.05-degree cell is 28.298 km2 at 23.75 N against
         # 24.678 km2 at 37.05 N - so spreading a province's mass "evenly" over its cells put

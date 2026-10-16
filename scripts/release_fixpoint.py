@@ -249,6 +249,18 @@ def main():
             print("  %s" % p)
         return 1
 
+    if dirty:
+        # rc68: artifacts left over from an EARLIER fixpoint passed the check above, but the
+        # manifest computes tree_dirty from the whole of `git status`, so the regenerated cover
+        # still printed "(working tree modified)". A fixpoint rerun after a further content
+        # commit must start from a tree with nothing uncommitted at all.
+        print("REFUSING: the tree carries uncommitted artifacts from an earlier run; the "
+              "manifest would record tree_dirty. Commit them (or restore them from HEAD) "
+              "and rerun:")
+        for p in dirty[:20]:
+            print("  %s" % p)
+        return 1
+
     _run([sys.executable, "-m", "pkinv.report.release_manifest"])
     _write_sha256sums()
     _run([sys.executable, "scripts/make_release_cover.py"])

@@ -34,9 +34,10 @@ years by the blend this repository already uses, 0.5 x CY(Y-1) + 0.5 x CY(Y). Th
 approximation and it is labelled one: eight calendar years are not eight July-June years. Where the
 monthly grids are held the exact fiscal year is computed beside the blend.
 
-WHAT IS NOT COMPARED, and why the absence is a row rather than a silence: CEDS is 0.5 degree, wider
-than the district; CAMS-GLOB-ANT and HTAP v3 need an ECCAD/AERIS account this machine does not hold
-and are mosaics of EDGAR and CEDS; the Urban Unit's Lahore inventory data has not been obtained.
+WHAT IS NOT COMPARED, and why the absence is a row rather than a silence: CEDS is 0.5 degree,
+wider than the district. Public CAMS and HTAP downloads exist; this district comparison has
+not acquired their SO2 grids. The held public HTAP NH3 country/month bundle instead supports
+the separate matched national evaluation. The Urban Unit's underlying Lahore data is not held.
 
 COMPARED, NEVER FITTED. Nothing here is read back into any register. A test hashes the five
 registers, runs this script, and hashes them again.
@@ -50,6 +51,8 @@ import os
 import zipfile
 
 from pkinv.core.io import read_rows
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 GRIDMAPS = asset_path(ROOT, "data", "raw", "edgar", "gridmaps")
@@ -60,7 +63,7 @@ OUT = asset_path(ROOT, "outputs", "pakemis_air_lahore_external_comparison.csv")
 CACHE = asset_path(ROOT, "build", "edgar_0p1_lahore_weights.csv")
 SHAPE_ID = "60131773B12131197496886"
 ADM2_ID = "punjab_lahore"
-CFG = "REF_2023_24"
+CFG = conf.REFERENCE
 EQUAL_AREA = "ESRI:54034"          # World Cylindrical Equal Area, as build_adm2_intersections uses
 # (edgar_stream, ipcc_code, our sector or None, words). The third column is the ONLY place a
 # comparison pair is declared; a stream with None has no like-for-like row on our side and is shown
@@ -101,7 +104,7 @@ SELF_CHECK = (
     (("IRO", "NFE"), "2.C", ("fossil",)),
 )
 YEARS = tuple(range(2015, 2023))
-PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024))
+PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS)
 COLUMNS = ("period_id", "calendar_year", "row_kind", "calendar_basis", "scope",
            "edgar_stream", "engine_Gg", "edgar_Gg", "ratio_engine_over_edgar", "engine_basis",
            "edgar_basis", "reading")
@@ -319,7 +322,7 @@ BANNER = """\
 # LAHORE DISTRICT SO2 AGAINST EDGAR v8.1, MATCHED YEARS - a comparison of two compilations, never a
 # calibration: nothing in the registers is read back from this table (a test holds them byte-identical
 # across a run of the builder). engine = the release's own ADM2 allocation for the census district
-# punjab_lahore (geoBoundaries shape 60131773B12131197496886), Gg SO2, configuration REF_2023_24.
+# punjab_lahore (geoBoundaries shape 60131773B12131197496886), Gg SO2, configuration S_TAN.
 # edgar = the v8.1 0.1 degree annual gridmaps summed over that SAME polygon, boundary cells split by
 # exact area fraction in an equal-area projection, at the fiscal blend 0.5 x CY(Y-1) + 0.5 x CY(Y).
 # EDGAR ends at calendar 2022, so FY2022-23 and FY2023-24 are NOT compared and say so rather than
@@ -332,11 +335,10 @@ BANNER = """\
 NOT_COMPARED = (
     ("CEDS", "0.5 degree grid - one cell is wider than Lahore District, so there is no district "
              "figure to compare. Not acquired: it could not answer the question."),
-    ("CAMS-GLOB-ANT", "distributed through ECCAD/AERIS, which needs an account this machine does "
-                      "not hold; and it is built FROM EDGAR and CEDS, so it is not an independent "
-                      "vote even when fetched."),
-    ("HTAP v3", "same distributor, and a mosaic of EDGAR with regional inventories; "
-                "data/benchmarks_air.csv holds only a figure DERIVED from a paper, not the data."),
+    ("CAMS-GLOB-ANT", "public downloads are advertised, but SO2 grids were not acquired for "
+                      "this district comparison; shared EDGAR/CEDS inputs also limit independence."),
+    ("HTAP v3.2", "public JRC country bundles are available and NH3 country/month data are held "
+                  "for a separate exact fiscal national comparison; no SO2 district grid is used here."),
     ("Urban Unit Lahore inventory", "a local inventory exists in the literature; "
                                     "docs/completeness.md records that the underlying data has "
                                     "not been obtained, and a published headline is not a series."),
@@ -425,7 +427,7 @@ def main():
     # Lahore: every EDGAR sector, and a RATIO only where the crosswalk declares a counterpart
     for stream in STREAMS:
         ours_sector = OUR_SECTOR.get(stream)
-        for fy_end in range(2016, 2025):
+        for fy_end in CORE_FY_ENDS:
             period = "FY%d-%02d" % (fy_end - 1, fy_end % 100)
             theirs = blend(edgar_lahore[stream], fy_end)
             if stream == "TOTALS":
@@ -439,7 +441,7 @@ def main():
                 # coal and gas stay in the screening - and the basis says so rather than letting
                 # a ratio below 1 read as a disagreement.
                 ours = engine_sector.get((period, ours_sector), 0.0)
-                basis = ("outputs/pakemis_air_lahore_by_year.csv, sector power: the ADMITTED oil and diesel classes only (rc61 placed them on the admission register's own districts). Coal and gas power SO2 are NOT in this figure - they remain a screening scenario at Lahore - so this is a PARTIAL counterpart to EDGAR ENE and a ratio well below 1 is expected")
+                basis = ("outputs/pakemis_air_lahore_by_year.csv, sector power: the ADMITTED oil and diesel classes only (rc61 placed them on the admission register's own districts). Coal and gas power SO2 are NOT in this figure - they remain a screening scenario at Lahore - so this is a PARTIAL counterpart to EDGAR ENE and the ratio cannot validate total power emissions")
             elif ours_sector:
                 ours = engine_sector.get((period, ours_sector), 0.0)
                 basis = ("outputs/pakemis_air_lahore_by_year.csv, sector %s (IPCC %s)"
@@ -470,7 +472,7 @@ def main():
                 "engine_basis": basis,
                 "edgar_basis": "v8.1 0.1 degree %s gridmap (IPCC %s) over the district polygon"
                                % (stream, IPCC_OF.get(stream, "all")),
-                "reading": ("engine over EDGAR %s, on %s"
+                "reading": ("contextual engine/EDGAR ratio %s, on %s; source boundaries and shared inputs must be checked"
                             % (band(ratio), STREAM_WORDS[stream]) if ratio else
                             "EDGAR's %s at Lahore; no ratio is formed because %s"
                             % (STREAM_WORDS[stream],
@@ -490,15 +492,14 @@ def main():
         "engine_Gg": "", "edgar_Gg": "", "ratio_engine_over_edgar": "",
         "engine_basis": "outputs/pakemis_air_lahore_by_year.csv, sector industry (all 1.A.2)",
         "edgar_basis": "v8.1 0.1 degree IND gridmap (IPCC 1.A.2) over the district polygon",
-        "reading": "THE LIKE-FOR-LIKE COMPARISON, on the corrected crosswalk. Both sides are IPCC "
-                   "1.A.2, so brick-kiln coal, cement-kiln coal and industrial furnace oil are "
-                   "inside BOTH. The engine is %.2f to %.2f times EDGAR across the window, and the "
-                   "two move in OPPOSITE directions: EDGAR rises %.3f -> %.3f Gg (+%.0f %%) while "
-                   "the engine falls %.3f -> %.3f Gg (%.0f %%). EDGAR carries no hump at FY2020-21 "
-                   "and no collapse after it. It is the SHAPE, not the level, that the outside "
-                   "compilation declines to corroborate - and EDGAR's own Pakistani fuel is "
-                   "IEA-balance derived and the IEA balance is HDIP-fed, so on magnitude this is "
-                   "only partial independence"
+        "reading": "CONTEXTUAL INDUSTRY COMPARISON. The engine/EDGAR ratio changes from %.2f to %.2f "
+                   "across the matched window. EDGAR changes %.3f -> %.3f Gg (%.0f %%) and "
+                   "the engine %.3f -> %.3f Gg (%.0f %%). PakEmis industry includes an "
+                   "integrated cement-stack factor, while IND is fuel combustion only; the "
+                   "district ratio is therefore not a fully matched factor test. The national "
+                   "comparison separately includes EDGAR cement process emissions. Shared "
+                   "HDIP/energy statistics limit independence, and fixed location proxies "
+                   "do not observe changing local activity."
                    % (ours_ind_s / at("IND", 2016), ours_ind_e / at("IND", 2022),
                       at("IND", 2016), at("IND", 2022),
                       100 * (at("IND", 2022) / at("IND", 2016) - 1),
@@ -515,18 +516,13 @@ def main():
         "engine_basis": ("the admitted oil and diesel power SO2 at Lahore (rc61); coal and gas "
                          "power stay typed NE, so this is a partial counterpart"),
         "edgar_basis": "v8.1 0.1 degree ENE gridmap (IPCC 1.A.1.a) over the district polygon",
-        "reading": "AN EDGAR-SIDE ANOMALY, reported as one and NOT used to size a coverage gap. "
-                   "EDGAR puts %.0f %% of Lahore's SO2 in power. Carried back to fuel that is "
-                   "%.0f kt of 3.0 %%-sulfur furnace oil in ONE district, against %.0f kt for the "
-                   "engine's entire NATIONAL industrial furnace oil. No grid station is placed in "
-                   "either of the two cells that carry 75 %% of it (74.35E 31.55N and 74.25E "
-                   "31.25N); the captive rows that fall there carry coord_confidence=low, with 36 "
-                   "registrants sharing one geocoded point and one of them assigned to Gujranwala. "
-                   "So the cells are UNIDENTIFIED. rc61 REPLACED THE ZERO WITH A NUMBER: "
-                   "Kohinoor Energy is admitted and placed at Lahore, and our power SO2 runs "
-                   "5.5 to 16.4 percent of EDGAR's ENE across the nine years. That does not "
-                   "close the gap and is not meant to - it measures it, and the reading is "
-                   "unchanged: this is an EDGAR-side anomaly, not a coverage gap of ours to fill"
+        "reading": "PARTIAL POWER-BOUNDARY COMPARISON. EDGAR allocates %.0f %% of its Lahore SO2 "
+                   "to power. Interpreting that mass as 3.0 %%-sulfur furnace oil would imply "
+                   "%.0f kt, against the retained national industrial-furnace-oil control of "
+                   "%.0f kt. This fuel interpretation is a sensitivity, not observed plant fuel. "
+                   "PakEmis centrally admits reviewed oil/diesel SO2 only; coal, gas and other "
+                   "plant/control boundaries differ. The discrepancy therefore does not "
+                   "identify an EDGAR error or establish complete PakEmis coverage."
                    % (100 * at("ENE", 2016) / at("TOTALS", 2016), fo_kt, 1465.0),
     })
 
@@ -536,12 +532,11 @@ def main():
         "engine_Gg": "", "edgar_Gg": "", "ratio_engine_over_edgar": "",
         "engine_basis": "data/activity/transport/fuel_sulfur_by_year.csv, 500 ppm from FY2017-18",
         "edgar_basis": "v8.1 0.1 degree TRO gridmap (IPCC 1.A.3.b)",
-        "reading": "THE ONE PLACE THIS RELEASE IS THE DEFENSIBLE SIDE. The engine is %.0f times "
-                   "EDGAR on road transport at Lahore even after its own sulfur step. Nationally "
-                   "EDGAR's road SO2 for Pakistan is 0.23 Gg in CY2020 against the engine's 14.88, "
-                   "which implies near-zero-sulfur road fuel from 2015 - Euro-V levels, a decade "
-                   "early. A disagreement of this size on a well-understood fuel is a reason to "
-                   "distrust EDGAR's road proxy, not this release's 500 ppm"
+        "reading": "ROAD SULFUR-ASSUMPTION SENSITIVITY. The engine is %.0f times EDGAR at "
+                   "Lahore for the matched comparison. PakEmis uses the declared 500 ppm "
+                   "policy/specification case, not measured universal pump compliance. "
+                   "Fuel sulfur, activity, control and location assumptions may all contribute; "
+                   "the ratio alone cannot identify which inventory is closer to actual releases."
                    % (engine_sector.get(("FY2021-22", "transport"), 0.0) / at("TRO", 2022)),
     })
 
@@ -551,10 +546,10 @@ def main():
         "engine_Gg": "", "edgar_Gg": "", "ratio_engine_over_edgar": "",
         "engine_basis": "outputs/pakemis_air_lahore_by_year.csv, sector residential",
         "edgar_basis": "v8.1 0.1 degree RCO gridmap (IPCC 1.A.4)",
-        "reading": "AND ONE WHERE THE ENGINE IS THE LOW SIDE: this release is about %.2f of EDGAR "
-                   "on residential and commercial, steadily across the window. Unlike the power "
-                   "row this is a real like-for-like disagreement on a sector both compile, and it "
-                   "is the smallest of the four - worth recording, not worth a verdict"
+        "reading": "HOUSEHOLD-BOUNDARY CONTEXT. PakEmis is %.2f of EDGAR in the selected "
+                   "comparison. PakEmis household gross appliance emissions and EDGAR's "
+                   "residential-plus-commercial sector are different source boundaries. "
+                   "This contextual ratio is not independent validation or an ambient release test."
                    % (engine_sector.get(("FY2021-22", "residential"), 0.0) / at("RCO", 2022)),
     })
 
@@ -564,13 +559,11 @@ def main():
         "engine_Gg": "", "edgar_Gg": "0.0", "ratio_engine_over_edgar": "",
         "engine_basis": "outputs/pakemis_air_lahore_by_year.csv, sector ippu (IPCC 2.A/2.B/2.C)",
         "edgar_basis": "v8.1 0.1 degree NMM gridmap (IPCC 2.A.1)",
-        "reading": "A WITHDRAWN FINDING, kept as a row so the correction is on the record. An "
-                   "earlier version read EDGAR's zero here as 'EDGAR books no brick kilns at "
-                   "Lahore' and concluded the two inventories attribute the district's SO2 to "
-                   "disjoint sectors. That was a crosswalk error: NMM is 2.A.1 mineral PROCESS "
-                   "emissions and kiln FUEL is 1.A.2, which is the IND grid. EDGAR's zero here "
-                   "means only that it books no clinker calcination inside the district, which is "
-                   "correct - there is no cement plant in Lahore - and it says nothing about brick",
+        "reading": "MINERAL-PROCESS BOUNDARY. NMM describes mineral process emissions, "
+                   "whereas brick firing fuel belongs to combustion. A zero NMM grid allocation "
+                   "does not establish the absence of brick emissions. The PakEmis IPPU module "
+                   "also includes chemical and metal processes, so its aggregate is not a "
+                   "fully matched NMM counterpart.",
     })
 
     # ------------------------------------------------ exact fiscal years, where monthly is held
@@ -603,7 +596,7 @@ def main():
                 "engine_Gg": round(ours, 4) if ours is not None else "",
                 "edgar_Gg": round(exact, 6),
                 "ratio_engine_over_edgar": round(ratio, 4) if ratio else "",
-                "engine_basis": ("outputs/pakemis_air_lahore_by_year.csv, sector power: the ADMITTED oil and diesel classes only (rc61 placed them on the admission register's own districts). Coal and gas power SO2 are NOT in this figure - they remain a screening scenario at Lahore - so this is a PARTIAL counterpart to EDGAR ENE and a ratio well below 1 is expected" if ours_sector == "power"
+                "engine_basis": ("outputs/pakemis_air_lahore_by_year.csv, sector power: the ADMITTED oil and diesel classes only (rc61 placed them on the admission register's own districts). Coal and gas power SO2 are NOT in this figure - they remain a screening scenario at Lahore - so this is a PARTIAL counterpart to EDGAR ENE and the ratio cannot validate total power emissions" if ours_sector == "power"
                                  else "outputs/pakemis_air_lahore_by_year.csv, sector %s"
                                       % ours_sector),
                 "edgar_basis": "v8.1 0.1 degree %s monthly grids over the district polygon"
@@ -647,15 +640,14 @@ def main():
                             "(data/activity/power/captive_register.csv, priced in the industry "
                             "module)",
             "edgar_basis": "the monthly bulk groupings against the annual sector codes, over Pakistan",
-            "reading": "THE AUTOPRODUCER BOUNDARY, RESOLVED. EDGAR's monthly grids come in bulk "
+            "reading": "EDGAR INTERNAL BOUNDARY CHECK. Its monthly grids come in bulk "
                        "groupings that are broader than its annual sector codes, so a power "
                        "grouping could carry autoproducers that the ENE code does not - which "
                        "would matter, because this release books captive generation under 1.A.2. "
-                       "Measured, the two boundaries agree to within %.1f %% over Pakistan. So "
-                       "EDGAR's power figure is not inflated by a captive term, and the Lahore "
-                       "power disagreement above is not a boundary artefact. It also means the "
-                       "calendar blend is safe for industry (0.1 %% against the exact July-June "
-                       "year) but NOT for power, where the same test shows 10.2 %% at FY2015-16"
+                       "The maximum checked difference is %.1f %% over Pakistan. This is an internal "
+                       "comparison of EDGAR products, not independent evidence of a PakEmis boundary "
+                       "match. Exact fiscal and adjacent-calendar blends retain their own timing "
+                       "differences; agreement in a national sum does not establish district equivalence."
                        % (100 * worst),
         })
 

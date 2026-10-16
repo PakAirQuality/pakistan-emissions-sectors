@@ -17,7 +17,7 @@ import os
 from pkinv.paths import DATA
 from pkinv.activity.store import read_rows
 
-YEAR = 2023          # fiscal year 2023-24, the latest CAA publication
+YEAR = 2023          # detailed reference FY2023-24; observed panel extends through FY2024-25
 
 
 def _read(path):
@@ -115,11 +115,17 @@ class AviationData:
 
     def movements_for(self, year=None):
         year = self.year if year is None else year
-        return [r for r in self.movements if r["year"] == year]
+        rows = [r for r in self.movements if r["year"] == year]
+        if not rows:
+            raise KeyError("No observed airport movements for FY%d-%02d; missing activity cannot become zero emissions" % (year, (year + 1) % 100))
+        return rows
 
     def fuel_sales_for(self, year=None):
         year = self.year if year is None else year
-        return [r for r in self.fuel_sales if r["fiscal_year"] == year]
+        rows = [r for r in self.fuel_sales if r["fiscal_year"] == year]
+        if not rows:
+            raise KeyError("No aviation fuel sales for FY%d-%02d" % (year, (year + 1) % 100))
+        return rows
 
     def benchmarks_for(self, year=None, source=None):
         year = self.year if year is None else year

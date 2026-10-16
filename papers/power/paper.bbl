@@ -1,4 +1,4 @@
-\begin{thebibliography}{6}
+\begin{thebibliography}{4}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -14,24 +14,12 @@
 %Type = Unpublished
 \bibitem[{Ahmad(2026)}]{ahmad2026national}
 \bibinfo{author}{Ahmad, R.}, \bibinfo{year}{2026}.
-\newblock \bibinfo{title}{Pakemis v1.0: an evidence-graded public-data
-  reconstruction of pakistan's non-lulucf greenhouse-gas emissions, fy2015--16
-  to fy2023--24}.
-\newblock \bibinfo{note}{Manuscript in preparation for Earth System Science
-  Data; it describes release 1.0.0rc67, whose data, software and technical
-  documentation DOIs are reserved and not yet assigned (see CITATION.cff). No
-  submission has been made}.
-%Type = Misc
-\bibitem[{{Copernicus Sentinel-5P (processed by ESA)}(2018)}]{copernicuss5p}
-\bibinfo{author}{{Copernicus Sentinel-5P (processed by ESA)}},
-  \bibinfo{year}{2018}.
-\newblock \bibinfo{title}{{TROPOMI} level-2 nitrogen dioxide products
-  ({S5P/OFFL})}.
-\newblock \bibinfo{howpublished}{European Space Agency / European Commission
-  Copernicus}.
-\newblock \bibinfo{note}{Used here as the {GEE} \texttt{S5P/OFFL/L3} 0.1-degree
-  composites (quality-filtered qa>0.75); Copernicus Sentinel data terms: free,
-  full and open access with attribution; \doi{10.5270/S5P-9bnp8q8}}.
+\newblock \bibinfo{title}{{PakEmis} 1.0.0rc68: greenhouse gas and air pollutant
+  emissions in pakistan, july 2015--june 2025}.
+\newblock \bibinfo{note}{National data-description manuscript with technical
+  report and sector notes; local review package prepared. External repository
+  review deposit and persistent identifier pending; no journal submission
+  asserted}.
 %Type = Misc
 \bibitem[{Crippa et~al.(2025)Crippa, Guizzardi et~al.}]{edgar2025booklet}
 \bibinfo{author}{Crippa, M.}, \bibinfo{author}{Guizzardi, D.}, et~al.,
@@ -66,20 +54,5 @@
   and 1.4 natural gas. Individual sections carry their own revision dates and
   are revised independently of the edition; the sections used here should be
   version-locked before final submission}.
-%Type = Article
-\bibitem[{Veefkind et~al.(2012)Veefkind, Aben, McMullan, F{\"o}rster, de~Vries,
-  Otter, Claas, Eskes, de~Haan, Kleipool et~al.}]{veefkind2012}
-\bibinfo{author}{Veefkind, J.P.}, \bibinfo{author}{Aben, I.},
-  \bibinfo{author}{McMullan, K.}, \bibinfo{author}{F{\"o}rster, H.},
-  \bibinfo{author}{de~Vries, J.}, \bibinfo{author}{Otter, G.},
-  \bibinfo{author}{Claas, J.}, \bibinfo{author}{Eskes, H.J.},
-  \bibinfo{author}{de~Haan, J.F.}, \bibinfo{author}{Kleipool, Q.}, et~al.,
-  \bibinfo{year}{2012}.
-\newblock \bibinfo{title}{{TROPOMI} on the {ESA} {Sentinel-5} precursor: A
-  {GMES} mission for global observations of the atmospheric composition for
-  climate, air quality and ozone layer applications}.
-\newblock \bibinfo{journal}{Remote Sensing of Environment}
-  \bibinfo{volume}{120}, \bibinfo{pages}{70--83}.
-\newblock \DOIprefix\doi{10.1016/j.rse.2011.09.027}.
 
 \end{thebibliography}

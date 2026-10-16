@@ -1,7 +1,5 @@
-% Repository technical companion, 1 October 2026.
-% Retains the detailed construction methods, source families, category account
-% and notation from pakemis_rewritten.tex. No inventory calculation rerun.
-% This is repository technical documentation, not a designated ESSD supplement.
+% Integrated release technical supplement, revised 15 October 2026.
+% Quantitative macros are generated from the rebuilt rc68 products.
 % Official Copernicus class remains unmodified.
 \documentclass[essd]{copernicus}
 
@@ -19,426 +17,196 @@
 \usepackage{siunitx}
 \input{../../../paper_common/macros}
 
+\input{generated/integrated_facts.tex}
+
 \begin{document}
-\title{Technical documentation for the national greenhouse gas emissions inventory for Pakistan, 2015--2024}
+\title{Technical documentation for PakEmis \PakEmisRelease: greenhouse gas and air pollutant emissions, July 2015--June 2025}
 \Author[1][rehan@pakairquality.com]{Rehan}{Ahmad}
 \affil[1]{Pakistan Air Quality Initiative (PAQI), Karachi, Pakistan}
-\runningtitle{Technical documentation for the Pakistan greenhouse gas inventory}
+\runningtitle{PakEmis integrated technical documentation}
 \runningauthor{R. Ahmad}
-\received{}
-\pubdiscuss{}
-\revised{}
-\accepted{}
-\published{}
-\firstpage{1}
-\maketitle
+\received{}\pubdiscuss{}\revised{}\accepted{}\published{}
+\firstpage{1}\maketitle
 
-% The release cover, on the same terms as the main article and v1's supplement: the
-% commit a reader needs in order to fetch exactly this release, generated from the
-% release manifest rather than typed.
-\input{../../../paper_common/release_cover}
-\ReleaseCover
 \begin{abstract}
-This technical documentation accompanies the main article describing the PakEmis national greenhouse gas emissions inventory. It preserves the detailed construction methods, source families, reference-year category and gas account, and reporting conventions for the same inventory; it does not present a separate study or new estimates. The reporting periods are the nine fiscal years from FY2015--16 to FY2023--24, with FY2023--24 as the reference year. The documentation is intended to accompany the repository record and should be read with the main article's evaluation, limitations and data-access information. It is not designated as a journal supplementary file. Sections, equations and tables are numbered independently here.
+This documentation describes the shared activity accounting, chemical conventions, source-specific calculations and reproduction interfaces underlying the national greenhouse-gas and air-pollutant dataset. The common core comprises ten fiscal years, July 2015--June 2025 (FY2015--16 to FY2024--25); FY2023--24 is the detailed reference year. Source-specific provisional estimates for FY2025--26 are kept separate. This document accompanies the national data-description article and the maintained sector notes and does not define another inventory total. Numerical summaries are read from the same released products as the main article. Appendix~\ref{app:products} lists every canonical data product.
 \end{abstract}
 
-\section{Inventory scope and source data}
-\label{sec:scope}
+\section{Scope, period and record conventions}
+The native greenhouse gases are CO$_2$, CH$_4$ and N$_2$O. The core air panel is primary fine particulate matter (PM$_{2.5}$), black carbon (BC), nitrogen oxides (NO$_x$), sulfur dioxide (SO$_2$), carbon monoxide (CO), non-methane volatile organic compounds (NMVOC) and ammonia (NH$_3$). PM$_{10}$, total suspended particles (TSP), organic carbon (OC) and other species have narrower source coverage. Land use, land-use change and forestry are outside the inventory. Fluorinated gases, coal-mining fugitive emissions, several industrial processes and some treatment and combustion sources are listed as unestimated. A product that spans all modules is therefore not a complete category--species matrix.
 
-PakEmis describes estimated anthropogenic emissions of CO$_2$, CH$_4$ and N$_2$O outside land use, land-use change and forestry (LULUCF). The reference period, FY2023--24, extends from 1 July 2023 to 30 June 2024. The historical reconstruction covers nine fiscal years beginning in FY2015--16. Ten calculation modules contribute to the account: agriculture, power, transport, residential fuel, industrial combustion, oil and gas fugitives, industrial processes and product use (IPPU), waste, railways and domestic aviation. All ten are represented in each year, but this does not imply complete national source coverage.
+A fiscal year runs from July to June and is identified by its start and end years; the FY2024--25 core endpoint is June 2025, not calendar 2025. A monthly publication through June 2026 can support a full FY2025--26 physical series when all required months and variables are present, whereas the Economic Survey 2025--26 reports several series for July--March only. The availability table records edition, covered months, revision status, variable, unit, held/public location and usability before a source is admitted to an extension.
 
-Modules organise the calculation; IPCC categories organise the reported inventory. These partitions differ where one module supplies several categories or a category receives contributions from several modules. In particular, public generation is reported under 1.A.1.a, while captive industrial generation contributes to 1.A.2 together with the industrial-combustion module. The transport module separates road use from a mixed off-road machinery allocation, and the railway module separates locomotive traction from a small stationary or off-road component whose finer category remains unresolved. Category and gas identifiers are therefore retained before aggregation.
+The annual records identify the source, process, reporting category and calculation module separately. They retain native gas/species, mass convention, activity quantity and unit, activity period and provenance, factor unit and applicability, technology, control state, configuration, estimate status, temporal/spatial support and uncertainty model. Estimated zero, not applicable and not estimated are distinct statuses. Source coverage is supplied by process, species and year; configuration alternatives are never implicitly added to the reference.
 
-The principal inputs are Pakistani administrative statistics, censuses and surveys (Table~\ref{tab:sources}). Energy records come from the National Electric Power Regulatory Authority (NEPRA), Hydrocarbon Development Institute of Pakistan (HDIP), Oil and Gas Regulatory Authority (OGRA), and Oil Companies Advisory Council (OCAC). Statistical sources include the Pakistan Bureau of Statistics (PBS), National Fertilizer Development Centre (NFDC), and Household Integrated Economic Survey (HIES). Each compiled activity record identifies its reporting period, original units, source document or dataset, transformation and applicable sector boundary. Where a source is revised, the version used in the calculation is retained rather than replaced silently. International datasets serve as inputs or comparators according to their role; the two uses are distinguished in the evaluation. The agricultural census, for example, supplies the reference livestock population, whereas FAOSTAT provides an external agricultural comparison that can share some underlying statistics and default factors.
+NO$_x$ is NO$_2$-equivalent mass, with NO-N converted by $46/14$. NH$_3$-N is converted to NH$_3$ by $17/14$, and N$_2$O-N to N$_2$O by $44/28$. Native pollutant masses never use a global warming potential. The separate AR5 and AR6 aggregates identify the selected fossil/biogenic methane convention \citep{IPCCAR5,IPCCAR6}. BC and OC cannot be added to compatible PM$_{2.5}$ totals; nor can PM$_{2.5}$, PM$_{10}$ and TSP be summed across nested definitions. Precursors are not combined into emitted ozone or total ambient PM$_{2.5}$.
 
-\begin{table*}[t]
-\caption{Main source families and their roles. The source register records the activity period, publication edition and location of individual records.}
-\label{tab:sources}
-\small
-\begin{tabular}{p{0.19\textwidth}p{0.38\textwidth}p{0.35\textwidth}}
-\tophline
-Source family & Quantities used & Principal qualification \\
-\middlehline
-NEPRA and HDIP & Generation, fuel energy and coal quantities; national energy controls & Fuel-energy basis and coverage differ between aggregate and plant records. \\
-OGRA and utilities & Gas sales, throughput and infrastructure & Delivered gas, feedstock, combustion and leakage have different boundaries. \\
-OCAC & Petroleum sales by product and customer class & Sales categories do not always identify final combustion activity. \\
-PBS and Economic Survey & Livestock, crops, population and industrial production & Census stocks, fiscal flows and industrial indices have different temporal support. \\
-NFDC & Fertiliser offtake and production inputs & Offtake measures distribution rather than application to fields. \\
-HIES & Household fuel quantities and generator expenditure & Survey recall, weights and the adjacent survey year affect the reconstruction. \\
-Operators and producers & Railway fuel, aviation activity and industrial process quantities & Coverage and reporting basis require source-specific reconciliation. \\
-International datasets & Factors, spatial proxies and external comparisons & Shared inputs and differing source boundaries limit independence. \\
-\bottomhline
-\end{tabular}
-\end{table*}
+\section{Source ingestion and shared activity}
+\subsection{Monthly minerals and source controls}
+Monthly mineral production from the Pakistan Bureau of Statistics (PBS) is read at its printed mineral, year and provincial grouping. The printed year block, not the workbook name, identifies the year; worksheets are selected by table schema and provenance; and a province row keeps the mineral group whose label and printed total enclose it. A printed dash or an illegible cell is kept as a missing value rather than a zero, and a province absent from the source is not added.
 
-An annual estimate does not necessarily refer to an observation made during that fiscal year. Reference livestock numbers are anchored to the 2024 agricultural census, historical stocks retain the stated calendar-year reconstruction, and household fuel estimates use the adjacent HIES 2024--25 round \citep{PBSAgri2026,PBSHIES2026}. Crop and fertiliser records follow fiscal reporting. These alignments are retained as qualifications rather than hidden by a common year label. A change between two fiscal totals can consequently reflect both recorded activity and assumptions needed to align heterogeneous sources.
+Exported records are compared with independently transcribed source quantities: province--month entries, published national months, compatible annual totals and the expected producing provinces. A twelve-month profile is classed as national observed timing only when both its months and its producing-area coverage support that reading; otherwise the profile and its evidence class name the substitute. Mineral production supports the timing of the corresponding upstream oil and gas segments, while coal mine output does not establish when kilns or power stations burn coal. Because normalisation removes a uniform duplication, an unchanged profile cannot validate an exported activity table, so source controls, exported quantities and profiles are checked separately.
 
-Missing categories are represented through notation keys. ``Not estimated'' (NE) identifies a source without a quantified estimate; ``included elsewhere'' (IE) refers to a documented allocation to another category; ``not occurring'' (NO) and ``not applicable'' (NA) have distinct meanings. Missing cells are not replaced with numeric zeros. Material gaps include fluorinated gases, coal-mining fugitives, industrial wastewater and several industrial and combustion sources. Estimated IPPU sources include cement, ammonia, iron and steel, and lubricant use. The category--gas matrix, rather than an aggregate comparison with another inventory, defines the estimated scope.
-
-\section{Inventory construction}
-\label{sec:methods}
-
-\subsection{Activity data and emission factors}
-\label{sec:activity_factors}
-
-We estimate emissions by source, gas and reporting period using Pakistani activity statistics and published emission factors. The reference period is 1 July 2023 to 30 June 2024, and the historical panel covers FY2015--16 to FY2023--24. Activity records retain their source period and measurement basis. An annual fuel sale, a crop harvest and a livestock census count represent different quantities even when assigned to the same reporting year. In particular, the reference agricultural herd is anchored to the 2024 census, while historical livestock estimates retain a calendar-year stock basis. Crop production and fertiliser nitrogen follow Pakistani fiscal-year records.
-
-For a source described by an activity--factor relationship, emissions are
+\subsection{Coal mass, energy and consumer allocation}
+Station coal consumption is reported in kt (1~kt = 1~Gg) by the National Electric Power Regulatory Authority (NEPRA) \citep{NEPRA2024}. For station $i$ and rank $r$,
 \begin{equation}
- E_{s,g,t}=A_{s,t}\,\mathrm{EF}_{s,g},
- \label{eq:activity_factor}
+ Q_{i,t}=M_{i,t}\,NCV_{r(i),t},\qquad
+ E_{\mathrm{CO_2},t}=\sum_i Q_{i,t}EF_{\mathrm{CO_2},r(i)},
+ \label{eq:station_coal}
 \end{equation}
-where $A_{s,t}$ is the activity of source $s$ in period $t$ and $\mathrm{EF}_{s,g}$ is the factor for gas $g$. Activity and factor units are matched before aggregation. Fuel quantities are converted to energy using the corresponding net calorific value; livestock factors may instead be expressed per animal, and agricultural soil factors per unit of nitrogen. Processes with storage or transfers, including manure handling and waste disposal, are calculated from the balances described below rather than from an independent factor applied to the final category total.
+where $Q$ is TJ, $M$ is kt and NCV is TJ\,Gg$^{-1}$. Thus the blend in kg\,CO$_2$\,TJ$^{-1}$ is weighted by heat, not by generation. The reference retains the documented rank-default NCVs. Reported coal used is distinct from purchases, receipts, stock movements and generation. Testing-period consumption is included where it is actually reported.
 
-The calculations use the 2006 IPCC Guidelines and relevant updates from the 2019 Refinement \citep{IPCC2006,IPCC2019}. Most categories use Tier~1 methods with country-specific activity. Selected agricultural parameters provide additional livestock characterisation, but do not constitute a uniformly Tier~2 inventory. Factors retain their process and fuel classifications: residential combustion, for example, uses the residential defaults rather than the defaults for electricity generation. Source references, units, parameter assumptions and uncertainties are retained with the inputs.
+When a commissioning lane has observed generation but no printed mass, the reconstruction retains an interval derived from the documented station-intensity evidence. Its midpoint defines the conditional reference calculation; the endpoints carry no assigned probability or confidence level. A missing latest-year station transcription causes a failure rather than assigning its entire generation to a reconstructed lane. Older aggregate coal energy remains a comparator, and a year without a published aggregate energy value remains absent in that comparator.
 
-Gas masses are stored separately and converted to carbon-dioxide equivalents only for reporting. The headline AR5 factors \citep{IPCCAR5} are 1 for CO$_2$, 28 for biogenic CH$_4$, 30 for fossil CH$_4$ and 265 for N$_2$O. Methane origin is specified for each source. AR6-equivalent estimates are retained as a separate reporting basis \citep{IPCCAR6}. CO$_2$ from biomass combustion is reported as a memo item outside the greenhouse-gas total; CH$_4$ and N$_2$O from the same combustion are included. This convention does not establish that biomass use is carbon neutral: associated land-carbon changes are outside this inventory's non-LULUCF boundary.
+The national coal account retains production, imports, exports and stock change where observed, and the consumer columns for public power, households, brick kilns and cement/other industry. Captive and K-Electric-system coal have no printed fuel quantity and remain, unsplit, inside the published cement and other industry column. If exports or stocks are not observed, the resulting discrepancy is not labelled a measured physical residual. The source records' coal origin, rank, moisture or calorific basis remain distinct.
 
+The adopted industrial publication vintage is selected explicitly. For FY2024--25 the full-year table in the later Economic Survey assigns brick kilns and cement and other industry differently from the earlier provisional supplement, with the same combined activity. Both versions remain traceable. Substituting station consumption for a publisher's power allocation does not establish which non-power consumer used the difference. The unresolved quantity remains in the account and is not automatically emitted as kiln fuel.
 
+Dated kiln counts are evaluated with the stated fuel rate and operating-season assumptions. The Punjab fleet cases retain their different observation dates and are scaled to the national total by the Punjab share of counted kilns; each count is compared with the booked allocation only in the fiscal year in which it was made, and the cases are not averaged. Negative supply-minus-use quantities under a case are retained as contradictions or unresolved source differences, not rounded away. Source-specific GHG and pollutant effects of these cases are reported separately from the conditional activity distribution.
 
-\subsection{Electricity generation and industrial combustion}
-\label{sec:energy_methods}
+\subsection{Delivered gas, processes and transport fuel}
+The gas ledger distinguishes production, processing, utility delivery, chemical feedstock, process fuel and other combustion. Fertiliser feedstock is separated from combustion fuel where the source supports it. It is not included in the post-meter combustion-leakage base merely because a utility calls both quantities fertiliser deliveries. Methane releases are estimated with segment-specific activities and factors; national unaccounted-for gas is not used as a measured methane loss.
 
-Power emissions are calculated from fuel-specific activity and combustion factors. NEPRA generation and fuel records provide national controls and plant information, supplemented by HDIP energy statistics \citep{NEPRA2024}. The public-generation estimate is distinguished from captive self-generation. Electricity consumed by households or industry is not added again at the point of use. Fuel properties retain their original measurement basis, including the distinction between net and gross calorific values and between energy reported in tonnes of oil equivalent and physical fuel mass.
+The shared gas deduction acts on the combustion activity to which the post-meter factor applies. A draw assigning additional methane release correspondingly changes the combusted fraction. This coupling prevents the same gas from being fully burned and lost as methane. It does not resolve all carbon differences between national gas statistics and source-specific process production.
 
-The public-power control is a consequential unresolved input. Four readings are published for FY2023--24, each as a named configuration with its own national total. The four values are given in the main article and resolve through \texttt{outputs/national\_configurations.csv} by \texttt{configuration\_id}; they are not restated here, because a number printed in two documents is a number that can disagree with itself. The reference books the stations' own metered coal at IPCC rank-default calorific values. The plant-based alternative takes the same masses at the calorific values the plants' own generation implies, which restates the regulator's heat rates and so cannot test them; that circularity, not a preference between sources, is why the reference is selected. The legacy control is retained because a reader holding a total from an earlier release can find the account it came from, and it is not preferred: its energy fails the physical audit reported in the main article. The audit's five rescue routes and their numerical requirements are in Table~\ref{tab:coal_audit}.
-\input{generated/tab_coal_audit.tex} We retain the alternatives as separate configurations and examine the physical implications of their fuel and generation records in the main article. The module total also contains 5.55~Mt from captive generation, which is assigned to industrial combustion in the category account.
+Petroleum product sales retain customer-class and fuel distinctions. Retail diesel is partitioned between road use and off-road machinery; petrol attributed to residential generators is deducted from the quantity otherwise available to road transport. Operator fuel distinguishes railway traction from non-traction activity. Domestic aviation is separated from international bunkers and landing/take-off from cruise where the evidence permits. Electrical energy bought from another generator is not counted as a second combustion source. K-Electric's fuel-specific station record and purchased generation are therefore separate boundary questions. Its FY2024--25 gas and regasified liquefied natural gas (RLNG) coverage case converts gross-heat volumes to the station net-calorific basis before comparison or emissions calculation; oil and coal use their reported physical fuel quantities.
 
-Industrial combustion combines metered gas, petroleum products, and recorded coal use in brick kilns and cement production. Gas attributed to fertiliser manufacturing is reconciled with the ammonia-process account. Petroleum customer classes are checked against those assigned to transport and power. Coal activity follows the reported consumer allocation, with separate factors and uncertainty for its use in kilns and cement plants. In the reference year, the module includes 1.564~Mt of brick-kiln coal and 4.391~Mt of cement-sector coal. The resulting industrial-combustion category is broader than metered gas alone, but remains incomplete where other fuel uses cannot be quantified.
+\section{Agricultural nitrogen and household configurations}
+\subsection{Census-consistent historical activity}
+Historical livestock levels are anchored to the adopted 2024 census \citep{PBSAgri2026}. For species $a$ and proxy stock $P_{a,t}$,
+\begin{equation}
+ H_{a,t}=H_{a,2024}\frac{P_{a,t}}{P_{a,2024}}.
+ \label{eq:livestock_bridge}
+\end{equation}
+The proxy supplies relative changes, not a second census level. It is the FAOSTAT livestock series, which reproduces the Economic Survey's projection from 1996--2006 inter-census growth rates, so the year-to-year change of every species, including the FY2024--25 growth, is a projected rate rather than an annual count; the 2024 census differs from that projection most for sheep. Beyond the last held proxy year, a species-specific geometric rate over the declared recent proxy window is applied to the census anchor, which is modelled extrapolation. The phase sensitivity uses the same bridge when assessing the six-month stock-to-fiscal alignment.
 
-The coal accounts require particular caution because a consumer allocation can be derived from the same balance as the national control. Agreement between the sum of consumers and supply then verifies the allocation identity rather than independently measuring each consumer. The reconstruction preserves this distinction and tests the industrial series against plant and kiln information where available. Alternative kiln activity assumptions are treated as scenarios, since a count of facilities does not specify their annual utilisation or fuel consumption.
+Crops use the full-year FY2024--25 tables of the Pakistan Economic Survey 2025--26 and historical fiscal editions; fertiliser product composition and offtake use the full-year Annual Fertilizer Review 2024--25 of the National Fertilizer Development Centre (NFDC) and historical editions \citep{MoF2024,MoF2026,NFDC2024,NFDC2025}. Cotton lint bales are converted to the seed-cotton mass required by the residue equations with the documented conversion. Crop production, area and fertiliser product composition retain distinct uncertainty and applicability. Fertiliser offtake is a supply quantity; it is not an observed application date or a direct measurement of field nitrogen loss.
 
-\subsection{Road transport, railways and domestic aviation}
-\label{sec:transport_methods}
-
-Road and off-road estimates begin with petroleum customer classes and the relevant fuel properties. Retail diesel is partitioned between road activity and off-road machinery rather than assigned in full to both. The off-road allocation includes agricultural and industrial uses whose finer separation is not established by the customer class. Petrol attributed to household generators is transferred from the wider road-customer control to residential combustion. Thus, the transport-module total and the road-transport category are not interchangeable. Fuel-specific CO$_2$ factors are applied on an energy basis, while CH$_4$ and N$_2$O factors retain the appropriate mobile-combustion classification \citep{IPCC2006}.
-
-Railway activity is based on operator fuel consumption. Volume is converted to mass and energy using documented diesel properties, and traction is separated from non-traction use. The latter is retained as a small unresolved stationary/off-road allocation rather than forced into locomotive emissions. Applying the same method to the operator's historical records permits a fiscal-year comparison with Pakistan's Biennial Update Report, discussed in the main article.
-
-Domestic aviation is separated from international activity. Airport-related activity supports the allocation of landing and take-off emissions, whereas cruise emissions require information about flight paths that is not available at the same spatial detail. Cruise streams retain their national or administrative account and remain unallocated on the grid. International bunkers are outside the domestic national total. The aviation result should be read with its activity coverage and phase-of-flight boundary rather than as an estimate for every aircraft movement affecting Pakistan's airspace.
-
-\subsection{Industrial processes and oil and gas fugitives}
-\label{sec:process_methods}
-
-The IPPU calculation separates process emissions from the fuels used to operate industrial facilities. Cement-process CO$_2$ uses the producer-based clinker reconstruction; a lower-clinker default case is retained separately. Cement kiln fuel is assigned to industrial combustion. Ammonia production uses the relevant gas and process-carbon account, with feedstock and process-fuel treatment reconciled to prevent a second charge to the same gas in the energy module. Iron and steel and lubricant use are additional estimated sources. The absence of an independently quantified process row does not imply zero emissions from the associated industry's energy use.
-
-Oil and gas fugitives follow production, processing, transmission and distribution segments using the activity supported by national records. Production, utility throughput and pipeline length constrain different parts of the system. Emission factors additionally depend on operating practices, equipment and infrastructure for which Pakistani evidence is less complete. The practice and coverage alternatives are therefore reported as conditional estimates rather than assigned an unsupported probability distribution. The reference total lies high in the published practice and coverage envelope, because the practice legs are at their conservative setting, but it is not the top of it: the top is the membership that keeps fertiliser feedstock inside the post-meter base, described below.
-
-Gas assigned to leakage is reconciled with delivered gas used in combustion, and the boundary the deduction applies to is stated explicitly rather than implied. The deduction is taken on \emph{delivered}, post-meter gas and never on gross supply: the leak factor is itself derived downstream of the loss, so applying it to a supply-side volume would deduct a share of gas that the loss has already been removed from. The reference combustion calculation is therefore net of the identified leakage transfer for all three gases, while the leaked methane remains in fugitives, so no molecule is claimed as both fully combusted fuel and methane loss. Membership of that base is a declared list, not a residual. Of \num{10} delivered streams totalling \SI{35505}{} million~m$^3$, \num{6} carrying \SI{18685}{} million~m$^3$ (\SI{52.6}{\percent}) are inside the post-meter base --- commercial, general industry, fertiliser process fuel, captive power, cement and grid power --- and \num{4} carrying \SI{16821}{} million~m$^3$ are outside it. Residential leakage is estimated separately from an appliance-count route, vehicle CNG sits inside the road module's own control, the regulator's residual class is resolved to no module, and fertiliser feedstock is reformed rather than burned.
-
-The last of these is a change of reference. The post-meter factor is defined on gas consumed in non-residential combustion equipment \citep{IPCC2019}, and earlier releases applied it to the whole fertiliser class. NFDC's metered feed and fuel gas (Annual Fertilizer Review 2024--25, Annex~28) puts \SI{83.5}{\percent} of that class in feedstock in FY2023--24. The fraction is observed for the reference year and the year after it; the seven earlier years carry the reference-year fraction and are labelled as carried. The feedstock, \SI{6526}{} million~m$^3$, was \SI{25.9}{\percent} of the base as it stood before. Removing it lowers the fugitive estimate by \SI{1.195}{\mega\tonne}\,CO$_2$e. The former membership is retained as a national configuration so that earlier releases can be reproduced; it is not defended. A different alternative --- the full metered delivery of the four burned streams treated as combusted, with no leakage netted from it --- is a joint national configuration worth \SI{0.288}{\mega\tonne}\,CO$_2$e. It contains no fertiliser term and is not the size of the feedstock correction.
-
-Each delivered stream is classified for each year in \texttt{outputs/pakemis\_gas\_flow\_crosswalk.csv} as chemical feedstock, process fuel, other combustion or a loss, with the activity on which its factor is defined and the category that books its carbon. The volume ledger is \texttt{outputs/national\_gas\_closure.csv}, whose identity aborts the build if the streams stop closing on the published delivery total. The ledger closes on volume and not on carbon. For the fertiliser class the carbon in the delivered gas is \SIrange{13.2}{14.7}{\mega\tonne}\,CO$_2$ across the utility heating-value band, against \SI{8.08}{\mega\tonne} booked on ammonia production. We publish this difference as open and assign it to no cause. None of this establishes that all national losses are measured, or that the available activity supports every fugitive segment equally; the carried feed fraction, the open carbon difference and the dependence between leakage and combustion inputs remain documented limitations of the gas account.
-
-\subsection{Agriculture and shared nitrogen accounting}
-\label{sec:agriculture_methods}
-
-Agricultural calculations cover enteric fermentation, manure management, rice cultivation, managed soils, field burning of crop residues and urea application. Reference-year livestock numbers come from the PBS Agricultural Census \citep{PBSAgri2026}; crop quantities and synthetic-nitrogen offtake come from the corresponding Economic Survey and NFDC fiscal-year publications \citep{MoF2024,NFDC2024}. The historical fiscal reconstruction uses crop and nitrogen records for each year. Enteric fermentation and manure management, together approximately 77\% of the reference agricultural estimate, retain calendar-year livestock projections outside the census anchor. A separate FAOSTAT-based calendar series provides longer context and is not substituted for the fiscal panel \citep{FAOSTAT2025}.
-
-Enteric methane is the sum of species populations multiplied by annual per-head factors. Manure methane follows the IPCC temperature-dependent factors, while nitrogen emissions are calculated from a shared excretion ledger. For animal group $a$,
+\subsection{Conserved management and field pathways}
+Nitrogen excretion for species $a$ is
 \begin{equation}
  N_{\mathrm{ex},a}=H_a r_{N,a} M_a\,365/1000,
- \label{eq:nitrogen_excretion}
+ \label{eq:excretion}
 \end{equation}
-where $H_a$ is the animal population, $M_a$ is typical animal mass in kilograms and $r_{N,a}$ is the daily nitrogen-excretion rate in kilograms of nitrogen per 1000~kg of animal mass. The resulting nitrogen is partitioned among grazing, managed manure systems and diversion to fuel. Management shares and animal masses include declared assumptions where nationally measured parameters are unavailable. The species populations, factors, typical masses and excretion rates, with their sources, are in Table~\ref{tab:livestock_factors}. Against the First BTR's enteric CH$_4$ by species (its Figure~1), \texttt{outputs/pakemis\_enteric\_btr\_bridge.csv} shows four species --- dairy cattle, goats, sheep and camels --- agreeing to the printed precision for FY2020--21, the whole \SI{21.7}{\mega\tonne} difference sitting in buffalo (\num{65.32} against \num{48.43}) and other cattle (\num{27.45} against \num{20.80}), and two species the submission carries that this inventory does not estimate (mules and asses, horses; \SI{1.82}{\mega\tonne}).
-\input{generated/tab_livestock_factors.tex}
+where $M_a$ is typical animal mass and $r_{N,a}$ is the daily nitrogen excretion rate per unit animal mass on the source's stated basis. The total is partitioned into grazing deposition, managed manure and diverted material. Destination assumptions do not change this partition into evidence that all diverted dung was combusted.
 
-The nitrogen available for field application is calculated after losses during manure management. These losses include volatilisation, leaching, molecular nitrogen and direct N$_2$O, using the relevant management-system factors. The pre-field volatilisation fraction, $\mathrm{FracGasMS}$, therefore reduces the manure nitrogen reaching the soil. The post-application fraction, $\mathrm{FracGASM}$, acts subsequently in the indirect N$_2$O calculation. Keeping these boundaries separate prevents one volatilisation fraction from being charged twice to the same nitrogen.
-
-Direct soil emissions are calculated from synthetic fertiliser, applied manure, returned crop residues and nitrogen deposited during grazing:
+In the reference TAN formulation, incoming TAN is the species-specific fraction of the relevant nitrogen pool. At housing, yard or storage stage $j$,
 \begin{equation}
- E_{\mathrm{N_2O,direct}}
- =\frac{44}{28}\left[
- \sum_j F_j\,\mathrm{EF}_{1,j}
- +\sum_a F_{\mathrm{PRP},a}\,\mathrm{EF}_{3,a}
- \right],
- \label{eq:managed_soil_nitrogen}
+ \begin{aligned}
+ L_{\mathrm{NH_3-N},j}&=TAN_j f_j,\\
+ TAN_{j+1}&=TAN_j-L_{\mathrm{NH_3-N},j}-L_{\mathrm{NO_x-N},j}.
+ \end{aligned}
+ \label{eq:tan}
 \end{equation}
-where $F_j$ denotes nitrogen inputs to cultivated soils and $F_{\mathrm{PRP},a}$ denotes pasture, range and paddock deposition. Factors are expressed as N$_2$O--N per unit nitrogen; $44/28$ converts nitrogen mass to N$_2$O. The reference uses the dry-climate direct factor of 0.005 for non-rice cropland and the separate flooded-rice factor. Indirect emissions follow the volatilised and leached nitrogen pools. Alternative direct factors for cropland and grazing are evaluated separately because evidence supporting an irrigated-cropland classification does not by itself establish the appropriate factor for grazing land.
-
-Rice methane is calculated from cultivated area, cultivation duration and the IPCC daily factor with water-regime, pre-season and organic-amendment scaling. Continuous flooding is the reference assumption; alternative water regimes are structural scenarios. Urea CO$_2$ follows urea application and its carbon content. Liming and soil-organic-nitrogen mineralisation remain not estimated where the required activity is unavailable.
-
-Crop residues are partitioned by crop before emissions are calculated:
+The adopted NH$_3$-N share of mixed volatilisation is 0.95, so the associated NO$_x$-N loss in management and grazing is $L_{\mathrm{NH_3-N}}(1-0.95)/0.95$ in the TAN formulation. This chemical attribution is not a measured Pakistani management or grazing factor. Other management losses remove TAN and organic nitrogen in proportion to their surviving pools where no evidence establishes another partition. Nitrogen reaching application is
 \begin{equation}
- R_{\mathrm{produced}}=R_{\mathrm{returned}}+R_{\mathrm{field}}
- +R_{\mathrm{fuel}}+R_{\mathrm{other}}.
- \label{eq:residue_balance}
+ \begin{aligned}
+ N_{\mathrm{applied}}={}&N_{\mathrm{managed}}-L_{\mathrm{NH_3-N}}-L_{\mathrm{NO_x-N}}\\
+ &-L_{\mathrm{leach}}-L_{\mathrm{N_2}}-L_{\mathrm{N_2O-N}}.
+ \end{aligned}
+ \label{eq:fon}
 \end{equation}
-Production, residue ratios and dry-matter assumptions determine the available residue. Only the field-burning share enters agricultural combustion, after application of the combustion factor; returned residues enter soil nitrogen accounting. Fuel residues are transferred to the residential calculation, while the remaining mass retains an unresolved destination. This balance prevents the same residue from being assigned independently to field burning, soil return and household fuel.
+Each fate is accounted once and closure is tested for every species/system and every uncertainty realisation.
 
-\subsection{Residential fuel and biomass configurations}
-\label{sec:residential_methods}
+Direct soil N$_2$O uses gross applied nitrogen on its applicable IPCC basis. Application volatilisation drives subsequent indirect N$_2$O and is not deducted again before direct N$_2$O. Grazing retains its distinct deposited nitrogen and factors. Synthetic NH$_3$ follows product-weighted nitrogen offtake and NH$_3$-N factors; the associated NO$_x$-N term is retained when constructing the indirect N$_2$O activity. Product factors already expressed as NH$_3$-N are not multiplied by an additional NH$_3$ share.
 
-Residential emissions are calculated for natural gas, LPG, kerosene, coal, charcoal, firewood, dung cake, crop residues and household-generator petrol. Gas, LPG and kerosene use domestic sales statistics. Firewood, coal and charcoal use design-weighted HIES quantities \citep{HIES2019,PBSHIES2026}. Dung cake uses the same survey, residue fuel connects to the agricultural ledger, and generator petrol is inferred from household expenditure. Purchased, own-produced, in-kind and gifted survey quantities are combined and annualised from the one-month recall period. For firewood, coal and charcoal the 2024--25 HIES round is applied to the adjacent FY2023--24 reference period; this timing mismatch remains part of the activity qualification. Historical firewood and dung quantities interpolate per-household consumption between survey rounds using census-based household counts. For dung the interpolation is also applied in FY2023--24, so the two fuels are not treated alike in the reference year.
+The alternative IPCC formulation applies its complete pre-field and field volatilisation fractions to the corresponding pools. The reference upland, flooded-rice and grazing factor choices retain their source-defined applicability \citep{IPCC2019}. Synthetic nitrogen is partitioned to rice where supported; organic and residue inputs do not have a fully observed crop and irrigation allocation. Factor and allocation sensitivities are published, and agreement with FAOSTAT \citep{FAOSTAT2025} is not used to select a factor.
 
-The dung calculation distinguishes the quantity diverted from agricultural management from the quantity burned in households. Cattle and buffalo fuel-diversion shares are 0.28 and 0.30, respectively. The same species populations and diversion shares determine both the removed nitrogen and the volatile solids delivered to the fuel ledger. If $V$ denotes ash-free volatile solids, total dry solids and air-dry cake are
+A separate chemical-attribution diagnostic replaces the mixed-loss NH$_3$-N share by 1.0 and reruns manure fate, field inputs, NH$_3$, NO$_x$ and native greenhouse gases for each of the four configurations and all core years. In the TAN case this removes inferred management and grazing NO$_x$-N, changes the surviving manure nitrogen and thereby changes later NH$_3$ and N$_2$O. Separately factored applied-nitrogen and burning NO$_x$ are retained. In the IPCC formulation the same diagnostic repartitions fixed mixed volatilisation losses, including application, while retaining their total nitrogen loss. The diagnostic is neither a measured alternative nor a plausible bound and has no probability. Air-pollutant masses and native-gas/AR5/AR6 consequences occupy separately typed tables; other sources are held at their configuration's central values.
+
+\subsection{Survey-based and diverted-dung household activity}
+The household reference estimates fuel use from quantities in the Household Integrated Economic Survey (HIES), household counts from the 2023 census and supported fuel sales \citep{HIES2019,PBSHIES2026,PBSCensus2023}. Interpolation and extrapolation between surveys are labelled. The alternative burns all the material diverted from manure management in households; it is a destination assumption. Under that alternative the uncertain herd drives both diverted dung and household emissions in the same realisation. Volatile solids, dry solids including ash, air-dry fuel and moisture remain distinct mass bases.
+
+\begin{table}[t]
+\caption{Structural configurations. The machine identifiers are join keys; the reference is the survey/TAN combination. No probabilities are assigned.}
+\label{tab:configurations}
+\begin{tabularx}{\linewidth}{@{}lXX@{}}
+\tophline
+Identifier & Household dung & Nitrogen formulation \\
+\middlehline
+\texttt{S\_TAN} & Survey fuel use & TAN chain \\
+\texttt{L\_TAN} & All diverted dung combusted & TAN chain \\
+\texttt{S\_IPCC} & Survey fuel use & Complete IPCC fractions \\
+\texttt{L\_IPCC} & All diverted dung combusted & Complete IPCC fractions \\
+\bottomhline
+\end{tabularx}
+\end{table}
+
+Residential pollutant factors represent gross appliance emissions. No nationally justified outdoor escape fraction is assumed. Household emissions should therefore not be interpreted as outdoor atmospheric-model releases without an additional boundary treatment. Unresolved dung destinations remain in a residual material account, with no invented combustion or return-to-soil pathway.
+
+\section{Air-pollutant source equations and coverage}
+\subsection{Stationary combustion and processes}
+Activity is shared with the greenhouse-gas account, but pollutant factors retain their applicable boiler, furnace, engine, turbine, kiln or process boundary. GHG cement process and fuel emissions remain separate; the cement air factor represents the integrated kiln stack and is applied once to clinker output. Other industrial process and combustion boundaries retain separate source classes. Gas combustion uses the quantity remaining after the shared post-meter leakage deduction. A controlled factor receives no second removal efficiency. A plant licence or EIA can establish installed or designed equipment without establishing actual operation. The reference admitted power oil/diesel SO$_2$ remains distinct from coal screening and other unresolved plant pollutants.
+
+Sulfur-based calculations keep fuel sulfur, retention and removal as separate quantities. Brick-kiln SO$_2$ is calculated from fuel sulfur only, with an assumed retention of 0.25; sulfur from the clay is not estimated. The cement-kiln factor combines fuel and raw-meal sulfur with in-kiln retention and cannot be separated into those parts. Limited kiln-fuel samples constrain particular fuels and dates; they are not a nationally representative sampling distribution. Uncontrolled combustion endpoints are conditional calculations; they are not treated as bounds on actual emissions.
+
+Cement, ammonia, steel, soda ash and other process rows retain only their admitted source boundaries. Unestimated urea finishing, nitric acid, lime, glass or other industrial sources remain in the coverage register. Flaring is separate from venting; the same feed or fuel flow is not added in energy, IPPU and fugitives as three independent inputs.
+
+\subsection{Road, rail and aviation}
+Road air emissions comprise the supported exhaust, evaporative, tyre/brake and road-surface wear calculations. Exhaust factors include the guidebook's average hot/cold treatment; the dataset does not supply an independently calibrated Pakistan cold-start model. Registration survival, vehicle age and class/fuel proxies constrain the transferred factors. CNG chemistry and vehicle-class substitutions are labelled where retained. Road resuspension is excluded, and road estimates do not silently include off-road machinery.
+
+Fuel-sulfur policy dates define specification scenarios rather than pump-level compliance observations. Technology and factor endpoints are propagated into pollutant consequences independently of the fuel/CO$_2$ closure. Non-exhaust wear follows distance/vehicle activity rather than treating its emissions as a fixed combustion factor. Rail factors follow operator traction fuel and their technology assumptions; domestic aviation retains its source-specific activity and phase boundaries.
+
+Monthly resident-airline jet-fuel purchases are a proxy for domestic-flight activity: the purchaser and flight-geography boundaries differ. Aviation therefore carries proxy timing support rather than observed monthly domestic movements. The common temporal ensemble's customer-sales hindcast describes dispersion within that proxy profile; it does not quantify the unresolved transfer from customer uplift to domestic-flight timing. National petrol distribution similarly treats road-customer sales as a timing proxy for a broader activity account.
+
+\subsection{Agricultural and waste burning}
+Crop burning uses production, residue ratios, burned fractions, combustion completeness and species factors on their documented mass bases. Residue returned to soil, diverted fuel and field burning are accounted on compatible definitions. A source-specific factor does not imply that the burned fraction was annually observed.
+
+Waste generation per person follows the eight-city national survey \citep{PakEPA1996} and is partitioned into collected disposal and uncollected material. The latter is partitioned into burning and unresolved fate. The first-order-decay state carries the disposal history forward, rather than treating an annual population update as an observation of annual waste-management change \citep{IPCC2006,Kaza2018,JMP2023}. Open-burning CH$_4$ and N$_2$O retain their source-specific wet/dry bases. The pollutant calculation uses the same burned dry mass as the native waste uncertainty replay. Waste origin geography does not establish the location of disposal, treatment or burning.
+
+\section{Monthly and geographic products}
+For an allocation with annual mass $E_{s,p,t}$ and monthly weights $w_{s,p,t,m}$, following the structure of sector-specific temporal profiles \citep{Crippa2020},
 \begin{equation}
- M_{\mathrm{dry}}=\frac{V}{1-a},\qquad
- M_{\mathrm{air}}=\frac{M_{\mathrm{dry}}}{1-w},
- \label{eq:dung_mass_bases}
-\end{equation}
-where $a$ is the ash fraction of dry solids and $w$ is the moisture fraction of air-dry cake. The declared fractions, 0.25 and 0.12, convert 38.77~Mt of volatile solids to 58.74~Mt of air-dry cake.
-
-The reference takes household dung from the survey in every year. HIES 2018--19 gives 6.50~Mt of dung cake from 5.75~million user households (\SI{17.3}{\percent} of 33.2~million weighted households), and HIES 2024--25 gives 11.97~Mt from 5.91~million user households (\SI{14.8}{\percent} of 39.9~million). The quantity per household is interpolated between the two rounds and held at the first round's rate before it. FY2023--24 lies between the rounds and takes \SI{10.93}{\mega\tonne} of air-dry cake, not the total the later round measured. Configuration L instead assigns the whole diverted quantity to residential combustion. It was the reference of earlier releases and is retained as a bounded assumption about where the diverted dung goes, not as a reading of household use.
-
-The two are not competing estimates of one quantity, and reading them as such is what makes the gap look like an error. L is all excreted nitrogen leaving manure management for any burner, carried through equation~(\ref{eq:dung_mass_bases}); the survey quantity is formed cake entering a sampled dwelling. The difference is therefore a question about destinations, and it is reported term by term --- species, age classes, moisture basis, ash fraction, preparation losses, end user and survey design, each with a comparability verdict --- in \texttt{outputs/pakemis\_dung\_balance.csv}. Three asymmetries are structural rather than numerical: the supply side covers only cattle and buffalo while the survey records cake with no species attribution, the supply side carries no preparation or handling loss at all, and the survey measures household consumption by questionnaire construction while the manure-share vocabulary names no end user, so commercial burning is outside both. Configuration L is nonetheless falsifiable, which is the useful thing to state about it: for the diversion to be household fuel at the per-household intensity the 2024--25 round observes, about \SI{72.6}{\percent} of weighted households would have to burn cake against the \SI{14.79}{\percent} the survey records, or the households that do burn it would have to burn \num{4.9} times the observed daily quantity. Either is a checkable claim about Pakistan, and a national household fuel survey or a commercial cake-fuel survey would settle it.
-
-The survey is not settled either. The per-user quantity, the user share and the household count all changed between rounds; the quantity moved from 6.50 to 11.97~Mt, an \SI{84}{\percent} change larger than the parameter uncertainty on either, and the quantity per weighted household differs by a factor of \num{1.53}. In 2024--25 the top \SI{5}{\percent} of reporting households hold \SI{44.7}{\percent} of the reported total, against \SI{19.6}{\percent} in 2018--19. We cannot establish from the held material that the two rounds measure the same thing. The dung activity therefore carries an uncertainty of \SI{35}{\percent} under the reference, and the two rounds are priced as scenarios beside it: the first round's rate throughout gives a residential total of \SI{23.85}{\mega\tonne} and the later round as measured gives \SI{24.33}{\mega\tonne}, against \SI{24.22}{\mega\tonne} for the reference. Both configurations satisfy the destination balance
-\begin{equation}
- D_{\mathrm{diverted}}=D_{\mathrm{residential}}
- +D_{\mathrm{other/unresolved}},
- \label{eq:dung_destination}
-\end{equation}
-on a common mass basis. Thus, accounting closure does not resolve the disagreement between supply-derived diversion and survey-reported consumption. In FY2023--24 the unresolved term is \SI{47.81}{\mega\tonne} of air-dry cake holding \SI{1026}{\kilo\tonne} of nitrogen. It is outside the total in every year and no emission is applied to it. Its candidate destinations are priced for each year in \texttt{outputs/pakemis\_dung\_fate\_by\_year.csv}: burned by non-household users on the same fuel chain, which is configuration L (\SI{5.25}{\mega\tonne}\,CO$_2$e above the reference in FY2023--24); never having left manure management (\SI{4.49}{\mega\tonne}), for which agriculture is run again with the diversion reduced to what the survey supports, so that volatile solids and nitrogen move together; and applied to fields (\SI{3.49}{\mega\tonne}). No probabilities are assigned to them. Crop-residue fuel is also qualified: its agricultural ledger describes all fuel destinations, so allocating the entire fuel share to households is an upper-bound residential allocation where commercial and industrial uses are not separately measured. The survey records residue fuel in rupees and not kilograms, and its price bracket contains the ledger's quantity, so that quantity is kept. The nitrogen and volatile solids inside the unresolved dung, by species and through the same chain, are in \texttt{outputs/pakemis\_dung\_residual\_ledger.csv}; the species split of the residual is an assumption that table declares.
-
-Fuel mass and energy use consistent moisture and ash bases. As-received calorific values multiply as-received fuel mass; dry-mass pollutant factors multiply dry mass. Residential greenhouse-gas factors follow IPCC Volume~2, Chapter~2, Table~2.5. Generator petrol is estimated from reported expenditure, the administered petrol price and fuel density; the same quantity is deducted from the road-customer petrol control and assigned to residential combustion. Household electricity consumption is excluded because its generation emissions are counted in the power sector.
-
-\subsection{Waste generation, disposal and wastewater}
-\label{sec:waste_methods}
-
-Waste calculations cover municipal solid-waste disposal, open burning and domestic wastewater. A district population panel distinguishes urban and rural residents \citep{PBSCensus2023}. It is interpolated between census observations and projected to the reference fiscal midpoint. Municipal waste generation is
-\begin{equation}
- G_t=365\sum_d\left(P_{d,u,t}q_u+P_{d,r,t}q_r\right),
- \label{eq:waste_generation}
-\end{equation}
-where $q_u$ and $q_r$ are urban and rural daily generation rates. The adopted rates are 0.453 and 0.283~kg per person, respectively, from the Pak-EPA eight-city study \citep{PakEPA1996}. Collection is calculated using separate urban and rural shares \citep{Kaza2018}. Generation, disposal, uncollected waste, open burning and the unresolved remainder satisfy
-\begin{equation}
- G_t=D_t+U_t,\qquad B_t=f_bU_t,\qquad O_t=U_t-B_t,
- \label{eq:waste_fates}
-\end{equation}
-with $f_b=0.60$. The uncollected, unburned remainder is retained explicitly rather than treated as a measured zero-emission fate. Alternative unmanaged-disposal assumptions are evaluated as scenarios.
-
-Solid-waste methane is calculated by first-order decay over the deposit history. A worked annual example reproducing the engine's FY2023--24 value from the deposit series, the 1960 spin-up and the stated parameters is in \texttt{docs/waste\_fod\_worked\_example.md}. Let $S_t$ be the accumulated decomposable degradable organic carbon, $C_t^{\mathrm{in}}$ its addition from disposed waste and $C_t^{\mathrm{dec}}$ the amount decomposed during period $t$. The carbon balance and methane conversion are
-\begin{align}
- S_t&=S_{t-1}+C_t^{\mathrm{in}}-C_t^{\mathrm{dec}},\\
- E_{\mathrm{CH_4},t}&=C_t^{\mathrm{dec}}F\frac{16}{12},
- \label{eq:waste_fod}
-\end{align}
-with $C_t^{\mathrm{in}}=W_t\,\mathrm{DOC}\,\mathrm{DOC}_f\,\mathrm{MCF}$ for disposed wet waste $W_t$. DOC is degradable organic carbon per unit waste, $\mathrm{DOC}_f$ is its decomposable fraction, MCF represents disposal conditions and $F$ is the methane fraction of landfill gas. Decomposition follows the deposit history with $k=0.065$~yr$^{-1}$. The reference uses $\mathrm{DOC}_f=0.5$, $\mathrm{MCF}=0.6$ and $F=0.5$, with no methane recovery or cover oxidation credited. The history extends to 1960 using a declared pre-panel assumption; a no-spin-up scenario assesses its influence. Each historical year is obtained by reconstructing deposits and running the decay model to that year's endpoint. Generation rates, collection, composition and sanitation shares remain fixed, so the series represents demographic change and accumulated deposits rather than observed changes in waste-management practice.
-
-Open-burning factors are applied to $B_t$ on their stated wet- or dry-mass bases. Fossil carbon contributes reportable CO$_2$; biogenic CO$_2$ is a memo item. CH$_4$ and N$_2$O are included for both carbon origins. Domestic wastewater methane follows population-weighted sanitation pathways:
-\begin{equation}
- E_{\mathrm{CH_4}}=\sum_j \mathrm{TOW}_j B_0\mathrm{MCF}_j,
- \label{eq:wastewater_methane}
-\end{equation}
-where TOW is degradable organic load, calculated from population, per-capita biochemical oxygen demand and the industrial--commercial correction. Sanitation shares follow the WHO/UNICEF Joint Monitoring Programme \citep{JMP2023}, each year taking its own shares. The reference uses 40~g BOD per person per day, a correction of 1.25 and $B_0=0.6$~kg CH$_4$ per kilogram BOD. Sewer MCF values of 0.5 and 0.1 represent alternative stagnant-sewer and receiving-water interpretations. Wastewater N$_2$O is calculated separately from protein-derived nitrogen; it is therefore unchanged in scenarios varying only BOD or sewer MCF.
-
-Nitrous oxide follows the 2019 Refinement \citep{IPCC2019}, which allocates nitrogen to the sanitation pathways the methane estimate already uses. The nitrogen entering pathway $j$ is
-\begin{equation}
- N_j=P_j\,\mathrm{Protein}\,F_{\mathrm{NPR}}\,N_{\mathrm{HH}}\,
- F_{\mathrm{NON\text{-}CON}}\,F_{\mathrm{IND\text{-}COM},j},
- \label{eq:wastewater_nitrogen}
-\end{equation}
-where $P_j$ is the population served by the pathway and protein is the quantity consumed, taken as 0.96 of supply. The factors are $F_{\mathrm{NPR}}=0.16$, household products $N_{\mathrm{HH}}=1.1$, non-consumed protein $F_{\mathrm{NON\text{-}CON}}=1.1$, and an industrial and commercial factor of 1.25 for the sewered population and 1 elsewhere. The chapter states the non-consumed factor in two ways; we take the value in its updated table. Emissions at treatment plants apply a factor of 0.016 to the treated share of sewered nitrogen. Effluent emissions apply 0.005 to the nitrogen that remains after removal (none 0, secondary treatment 0.40, septic tank 0.15, latrine 0.12), summed over every pathway, so the whole population remains in the estimate. For FY2023--24 this gives \SI{9.71}{\giga\gram}~N$_2$O. The 2006 equation, which earlier releases used, treats the nitrogen of the whole population as effluent and removes none of it; it gives \SI{11.45}{\giga\gram}, and the difference is \SI{0.46}{\mega\tonne}\,CO$_2$e. The 2006 method is retained as an alternative with its own draws, and the two are compared for every year in \texttt{outputs/pakemis\_wastewater\_method\_comparison.csv}. The published range of the effluent factor is 0.0005 to 0.075 in the Refinement and 0.0005 to 0.25 in the 2006 Guidelines, and this, more than the central estimate, is what separates the two methods in the national interval (Sect.~\ref{sec:uncertainty_methods}).
-
-Three inputs to the Refinement's method are declared rather than measured, and each is priced as a scenario against a waste total of \SI{37.45}{\mega\tonne}\,CO$_2$e. The treated share of sewered wastewater is set at \SI{1}{\percent}; doubling it gives \SI{37.48}{\mega\tonne}. Nitrogen leaving septic tanks, latrines, unimproved facilities and open defecation is taken to reach water. The Refinement's own flow diagram sends it to soil, and if only sewered nitrogen is counted as effluent the total is \SI{35.87}{\mega\tonne}. Receiving waters are taken as not nutrient-impacted; with the factor for nutrient-impacted waters (\num{0.019}) the total is \SI{44.57}{\mega\tonne}. We hold no measurement that would settle any of the three. Open defecation carries an explicit zero on the methane side rather than being dropped, because material left on open ground decomposes aerobically and the Guidelines offer no anaerobic pathway for it.
-
-Industrial wastewater and other unquantified waste categories retain explicit not-estimated status. The structural alternatives the module prices one at a time --- the sewer mixture endpoints, the BOD rate, no spin-up, the HIES route shares, the unresolved-fate members, the 2006 N$_2$O method and the three declared wastewater inputs --- are tabulated with their conditional intervals in \texttt{outputs/waste\_uncertainty\_scenarios\_2024.csv}; the historical generation, collection and sanitation series enter through the deposit history and the pathway shares those rows vary.
-
-
-\subsection{Monthly allocation and temporal evidence}
-\label{sec:temporal}
-
-Annual emissions are allocated to months using source-specific profiles. For stream $s$, gas $g$ and fiscal year $y$,
-\begin{equation}
- E_{s,g,y,m}=E_{s,g,y}\,p_{s,y,m},\qquad
- \sum_{m=1}^{12}p_{s,y,m}=1.
+ E_{s,p,t,m}=E_{s,p,t}w_{s,p,t,m},\qquad \sum_m w_{s,p,t,m}=1.
  \label{eq:monthly}
 \end{equation}
-The profile is independent of the gas reporting metric: the same activity timing is applied before conversion to CO$_2$ equivalents. Fiscal months run from July to June, and calendar-year sources retain the transformation used to align them. This approach is consistent with the role of temporal profiles as allocations of annual emissions \citep{Crippa2020}; it does not turn monthly proxies into direct emission observations.
+The weights carry their own source and evidence classification. A twelve-month profile with incomplete producing-area coverage is not national observed activity. A flat constant-daily-rate profile weights actual month lengths and leap days, expressing unresolved seasonality. Fertiliser sales, field application, manure stages, evaporation and combustion can require different profiles despite their shared annual input.
+FY2024--25 crop-residue burning has supported annual activity but no held own-year VIIRS fire windows. Its monthly mass uses the labelled elapsed-days fallback and its cropland placement uses a substitute surface; neither is an observed fire pattern for that year.
+The held crop district panel stops at FY2023--24. Crop-driven FY2024--25 district weights therefore reuse its reference shape and are separately marked as a forward proxy. Residential and waste district weights driven by population projections are marked as modelled demographic patterns, even when the household survey strata are from FY2024--25.
 
-Four evidence classes distinguish the origin of a profile. TE1 uses observed source-month activity; TE2 uses reconstructed monthly administrative activity; TE3 uses a process or activity-shape proxy; and TE4 uses a weakly constrained or flat allocation. A flat profile represents a constant daily rate, so monthly mass is proportional to elapsed days, including leap years. It is not twelve equal monthly masses and should not be interpreted as evidence that the process lacks seasonality.
+Annual administrative and grid products preserve the distinction between reporting and physical geography. Facility commissioning/closure periods are retained, and historical allocations state whether they use own-year evidence, a fixed proxy, a reference pattern or a substitute. This prevents a repeated location surface from being interpreted as observed district relocation. The primary package and alternative geographic products identify their respective boundaries, source licences and reporting masks. Cement works are placed at plant coordinates from the Global Cement and Concrete Tracker (CC BY 4.0) \citep{GEMCement2026}; coordinates derived from OpenStreetMap are used only in the separate ODbL companion.
 
-Plant dispatch, petroleum sales, fertiliser offtake, industrial production and fire detections contribute where the stream and reporting period support their use. Their meanings are retained: electricity generation need not identify the monthly fuel mix, fertiliser sales need not coincide with field application, and a production profile is not automatically a profile for downstream deliveries. Historical records are used for their own years where available. Borrowed profiles retain the source year, and unsupported historical detail is not inferred from the reference year's seasonal shape without qualification.
-
-Monthly inputs are checked for date order, missing values, unit consistency and agreement with annual source totals. Reconstructed series are compared with independently printed tables where available. These checks address extraction and timing; they do not independently validate the timing of emissions. Profile alternatives are evaluated separately from changes to annual activity so that the effects on national magnitude and within-year distribution remain distinguishable.
-
-\subsection{Spatial allocation and geographical support}
-\label{sec:spatial}
-
-Spatial products use a fixed 0.05$^{\circ}$ geographical lattice and administrative crosswalks. Point sources use supported facility locations; distributed sources use administrative activity or spatial proxies appropriate to the process. Agricultural crop panels, livestock distributions, settlement information, industrial facilities and transport infrastructure therefore have different roles. The reference administrative frame contains 152 second-level units based on the stated geoBoundaries 2019 frame. At the first level the inventory carries five units, and the fifth needs stating because it is a residual rather than a province: Punjab, Sindh, Khyber Pakhtunkhwa and Balochistan are reported individually, and \emph{Other} aggregates Gilgit-Baltistan, Azad Kashmir and Islamabad Capital Territory. Emissions arising in those three territories are therefore inside the national total and inside the national denominator, and are reported together rather than separately --- the activity statistics that drive the provincial controls generally print four provinces and a remainder, so a finer split would be an allocation assumption and not a reported figure. Where a source does distinguish them, such as the curated station record, the distinction is preserved in the underlying evidence and collapsed only at the reported first level.
-Table~\ref{tab:other_units} fixes the vocabulary used for these three territories throughout this document and the data products.
-\begin{table*}[t]
-\caption{The three territories aggregated as \emph{Other}: where each sits in the frame, the total and the reporting. Source: \texttt{src/pkinv/core/geography.py} (\texttt{ADM1\_TO\_PROVINCE}) and \texttt{data/shared/gis/stream\_geometry.csv}.}
-\label{tab:other_units}
-\begin{tabular}{llll}
-\tophline
-Unit & In the declared boundary frame & In the national total & Reported at the first level as \\
-\middlehline
-Gilgit-Baltistan & yes & yes & Other \\
-Azad Jammu \& Kashmir & yes & yes & Other \\
-Islamabad Capital Territory & yes & yes & Other \\
-\bottomhline
-\end{tabular}
-\end{table*}
-``Inside the frame'' means the unit is part of the geoBoundaries ADM1 geometry the grid is cut to; ``in the national total'' means its emissions are inside the reference total and its denominator; ``outside the national statistical tables'' (the phrase used in the map legend) means the provincial activity statistics that drive the controls print the four provinces and a remainder, so these units are allocated from the remainder rather than from a line of their own. Historical allocations on this frame describe estimates within a common geography rather than observations on each year's changing district boundaries.
-
-For a placed stream, spatial weights satisfy
+Spatial closure is
 \begin{equation}
- E_{s,g,y,i}=E_{s,g,y}\,w_{s,y,i},\qquad
- \sum_i w_{s,y,i}=1,
+ E_{p,t,c}^{\mathrm{national}}=\sum_g E_{p,t,c,g}^{\mathrm{placed}}
+                      +E_{p,t,c}^{\mathrm{unallocated}},
  \label{eq:spatial}
 \end{equation}
-where $i$ denotes the spatial unit. Mass that cannot be placed at the requested resolution is carried in an explicit unallocated term. National conservation is assessed using both parts:
-\begin{equation}
- \sum_i E_{g,y,i}+E_{g,y,\mathrm{unallocated}}
- =E_{g,y,\mathrm{national}}.
- \label{eq:spatial_closure}
-\end{equation}
-Raster, administrative and physical-source views require their declared crosswalks and any outside-boundary terms. They are not separate emissions to be added together, and an independent sector raster should not be assumed to reproduce a district table built with another allocator.
+for species $p$, year $t$ and configuration $c$, on a compatible reporting boundary. Territories outside a statistical total are not silently included by a broader grid footprint. The maximum residual is reported at the product's actual numerical precision. Meaningful discrepancies are not absorbed into rounding.
 
-Each historical year uses that year's annual emission streams. Spatial weights are drawn from the same year when supported, while timeless locations and borrowed or substituted patterns remain identified. A change in a grid cell can therefore arise from annual activity, a changing spatial input or a fixed pattern applied to a new total. Users should inspect the weight provenance before interpreting local trends.
+The \SI{0.05}{\degree} grid stores native mass per cell and period. Flux density requires mass-unit conversion, the appropriate cell/country area and period duration. A country fraction already incorporated into allocated cell mass must not be applied again as though it were a flux. Atmospheric-model use additionally requires release height, speciation and source-boundary choices; these are not supplied merely by placing mass on a grid.
 
-The closure identities between the products --- monthly sums equal to the annual estimate, and placed plus unallocated mass equal to the national stream ledger --- hold per gas to the printed precision (Table~\ref{tab:closure}).
-\input{generated/tab_closure.tex}
+\section{Uncertainty and evaluation}
+The annual conditional ensembles use common parameter identities, seeds and draw indices for greenhouse gases and air pollutants. Positive quantities use the specified mean-preserving distributions; physically bounded fractions use distributions matched to their stated conditional mean/variance where justified. The selected distributions are modelling assumptions. Their ensemble percentiles are not probabilities assigned to structural cases or empirical confidence statements about missing sources.
 
-The allocation inputs are versioned, licensed and hashed, and the record of them is machine-readable rather than descriptive. Five committed 0.05$^{\circ}$ proxy rasters carry the distributed streams: WorldPop constrained population (2020), ESA WorldCover v200 built-up and cropland classes (2021), FAO Gridded Livestock of the World~4 weighted by species emission factors (2020), and a derived cropland~$\times$~livestock manure-application surface. Two further surfaces are manual acquisitions held in the repository: MapSPAM 2020 rice physical area (V2r2) and VIIRS fire detections for residue burning. Each carries its licence and a SHA-256 digest, and each digest enters the release manifest, so a re-derivation can establish identity without the manifest. \textbf{Every surface predates the reference reporting period: built-up and cropland observe 2021 and population 2020, a declared vintage offset of two to three years against the activity they allocate.} A spatial proxy here is a versioned snapshot, never a measurement of the reporting period. A separate 2023 30~m classified-paddy raster is used only as a rice crosscheck instrument and is never an allocation surface, and its result is reported rather than merely cited. The instrument is GCD-Rice 2023 (30~m classified paddy for calendar year 2023, \SI{88.9}{\percent} reported classification accuracy, which is an accuracy of the paddy map and not of emission location), independent of MapSPAM in both its observation and its method; it observes calendar 2023 against a FY2023--24 reporting period rather than preceding it by several years. Compared as within-province ADM2 shares --- the quantity the allocation actually uses --- the primary statistic is the threshold-free one: half the L1 distance between the two surfaces' district shares, per province, given below. At a declared reading line of \num{2.0} percentage points of a unit's own provincial rice mass, the two surfaces agree in \num{76} of \num{126} districts and disagree in \num{50}. Aggregated per province, the fraction of provincial rice mass the own-year instrument would place in different districts is \SI{25.3}{\percent} in Punjab, \SI{38.0}{\percent} in Sindh, \SI{62.3}{\percent} in Khyber Pakhtunkhwa, \SI{34.3}{\percent} in Balochistan and \SI{41.5}{\percent} in the residual province. These are disagreements about \emph{where} rice emissions sit inside a province, not about how much there is: provincial and national totals are controlled elsewhere and no total moves. Coverage is \num{126} of the canonical \num{152} ADM2 units --- the instrument is rice-growing area, so districts with no detected paddy on either surface carry no comparison --- and the full table is \texttt{outputs/pakemis\_rice\_geography\_crosscheck.csv}. We report this as the size of an open question about the rice surface, not as a correction: adopting the own-year instrument would be a declared re-base of the agriculture geography and is not made here. Two products added in v3 make the evidence behind the district geography readable without the registry: \texttt{outputs/pakemis\_spatial\_basis\_shares.csv} gives the mass-weighted share of each year under each evidence class, with the classes defined in plain words in \texttt{pakemis\_spatial\_basis\_classes.csv} and the same shares per reporting sector in \texttt{pakemis\_spatial\_basis\_shares\_by\_sector.csv} (FY2023--24: \SI{62.2}{\percent} on a timeless structural surface, \SI{30.2}{\percent} on that year's observed activity, \SI{7.5}{\percent} on a declared stand-in surface, \SI{0.06}{\percent} retained at province level); and \texttt{outputs/pakemis\_power\_provincial\_basis\_by\_year.csv} prints, per grid fuel, period and province, the emissions booked under the reference-year provincial vector that earlier releases applied to every period and under each period's own stations, which is what this release applies, with the basis of each applied split and the coverage of the national fuel control (the two differ by up to \SI{11.6}{\mega\tonne}\,CO$_2$e in one province-year, and by at most \SI{0.17}{\mega\tonne}\,CO$_2$e in the reference year; no national total differs). Its station table \texttt{pakemis\_power\_station\_status.csv} sets each coal station beside its Global Energy Monitor commissioning window, and no station carries coal outside its window.
+The nitrogen engine regenerates its material state and native N$_2$O/NH$_3$/NO$_x$ releases. Crop-residue burning sums crop-specific burned masses after applying their corresponding production draws, then applies the common combustion-completeness and species-factor draws; the same crop-activity identities reach the air calculation. The waste engine reruns its bounded and positive parameters and tests fate closure before accepting a realisation. Fugitives retain their source/activity and factor-group bounded model; identity-seeded streams preserve paired parameters across years. Coal heat and CO$_2$ factors are replayed by rank. Other streams retain the existing parameter graph and its documented approximation. Unsupported management/equipment shares and control performance are not independently perturbed into physically impossible partitions.
 
-Four registers make the allocation inspectable at the grain at which it is decided. A per-stream proxy table states which surface each stream uses; a geometry table and a geometry-set table state the shapes it is placed within; and the per-stream-year weight registry publishes 1818 rows and 27 columns, including the geometry and surface vintages separately, the share of mass placed by a substituted surface, the period a borrowed pattern came from, and a pattern hash that makes ``borrowed'' a checkable property rather than a label.
+Fertiliser NH$_3$ factors retain their product-specific central values and share one table-wide multiplier in the conditional ensemble. This dependence assumption is not a measured cross-product covariance; the published interval is conditional on it.
 
-That registry also carries a four-class vocabulary for the time basis of each placement, and the classes are deliberately narrow. \emph{Annual observed activity} (795 stream-years) requires both that the evidence has a time axis and that the engine reads it for that period. \emph{Static structural} (615) is a timeless surface --- a raster snapshot or a declared judgement --- in any period, \emph{including the reference year}: being the reference year does not make a 2021 snapshot an observation of FY2023--24, and an earlier vocabulary that implied otherwise labelled 196 stream-years and \SI{632.9}{\mega\tonne} in a way that invited exactly that reading. \emph{Reference shape backcast} (306) is the reference year's pattern rescaled to another year's control, and \emph{substituted surface} (46) is a placement where the declared surface had no evidence. \num{27} stream-years are never placed below the first administrative level and are labelled as such, and \num{29} carry no mass at all in their period --- a stream-year with nothing to place has no geography to grade --- so they are held as explicit rows rather than omitted. Those six values account for all \num{1818} rows.
+Two annual dependence cases retain persistent parameters or resample annual activity errors. Trend intervals use paired realisations. Waste-management parameters that are held across the activity history persist in both cases. The four structural configurations remain separate; kiln operating seasons, fuel sulfur specifications and unresolved controls are additional deterministic cases without probabilities. Allocation uncertainty and unestimated sources are not folded into parameter percentiles.
 
-Substitutions are fail-closed rather than silent. Every fallback the cube takes is written to a declared-fallback product, and a release may ship only fallback \emph{classes} that appear in a committed allow-list with a written justification. A class that appears in the fallbacks product and not in the allow-list --- a deleted proxy cache, a renamed raster, a new stream with no registry row --- refuses the release fixpoint. When a manual acquisition landed, its former absence class was deleted from the allow-list, so a checkout without that file now refuses to build rather than quietly substituting.
+The conditional level and paired-trend tables include native CO$_2$, CH$_4$ and N$_2$O masses and separate AR5 and AR6 aggregates. An analytical longitudinal sensitivity table, which does not replay every native material flow, is published with an explicit model-basis field and does not replace the conditional intervals. Pollutant intervals retain their chemical-mass convention. Driver products are calculated separately for greenhouse gases and each pollutant; correlation diagnostics identify sensitivity and are not summed as variance attribution. Prefix and reproducibility tests check that a shorter run reproduces the same initial realisations and that output-row ordering does not create new physical uncertainty.
 
-The gridded variable is mass per cell and period, expressed in native-gas units, rather than a flux density. Cell area and the geographical fraction used in allocation accompany the product. Conversion to a flux requires the applicable area and period duration; the fraction must not be applied a second time if it is already included in the allocated mass. For an annual cell mass $E_i$ in gigagrams, a full-cell average flux is $10^6E_i/(A_i\Delta t)$ in kg~m$^{-2}$~s$^{-1}$, where $A_i$ is cell area in square metres and $\Delta t$ is the period in seconds. An in-country-area convention instead uses the corresponding covered area and must be labelled accordingly.
+Evaluation first matches period, gas/species, mass convention, category and fuel boundary. A half-weighted blend of adjacent calendar years is labelled a fiscal approximation unless monthly observations permit exact fiscal aggregation. Comparison with national reporting uses the stated IPCC/CRT crosswalk, not an unqualified join on category text. Comparisons with global inventories identify shared activity statistics and factors.
 
-\paragraph{Provenance of the gridded figures.}
-The paragraphs below are generated by the figure script itself
-(\texttt{scripts/make\_fig\_ghg\_grid.py} $\rightarrow$
-\texttt{paper\_national/figures/fig\_ghg\_grid\_provenance.tex}) from the same arrays the
-figures plot, so they cannot describe a different build. They were previously typeset inside
-the figure at 6.3\,pt, which is what forced a page larger than either Letter or A4; as prose
-they reflow, are searchable with the rest of the text, and carry the same numbers.
-\input{../../figures/fig_ghg_grid_provenance.tex}
-\GridProvenance{}
+For pollutants, fossil-only versus fossil-plus-biomass industrial comparisons separate a coverage difference before testing factors. Power coal screening is not ranked alongside central admitted emissions. Provincial and district tests use common polygons and retain unallocated mass. Timing checks use source-month controls or evidence not used to create the same profile. Geographic comparisons distinguish construction proxies from independent evaluation evidence. Satellite columns or aerosol observations require appropriate transport, chemistry and retrieval treatment; a simple concentration--emission correlation is not used as validation.
 
-\subsection{Uncertainty, dependence and structural alternatives}
-\label{sec:uncertainty_methods}
+\section{Data products, reproduction and access}
+The FY2023--24 covered aggregate is \SI{\GHGReferenceTotal}{\mega\tonne} CO$_2$e on the AR5 basis. The same release gives \SI{\AirReferencePM}{\giga\gram} primary PM$_{2.5}$, \SI{\AirReferenceNOx}{\giga\gram} NO$_x$ and \SI{\AirReferenceNHthree}{\giga\gram} NH$_3$. The main article tabulates all core pollutants and shows selected native-gas maps, trends, structural cases and matched-boundary comparisons. These summaries are read from released products through a generated fact file.
 
-The inventory combines measured activity, emission factors, conversion factors and allocation assumptions. These inputs affect different properties of the estimate. An uncertain livestock emission factor changes annual national emissions, whereas uncertain provincial shares change their location without changing the national mass. We therefore distinguish parameter uncertainty from structural choices, temporal profiles, spatial allocation and incomplete source coverage. The reported probability intervals describe parameter uncertainty conditional on a specified inventory configuration. Alternatives for which probabilities are unsupported are reported separately.
+The product catalogue identifies annual source records, administrative summaries, monthly activity/emissions, grids, coverage/factor/control evidence, conditional uncertainty, structural cases and evaluation tables. Source release versions and overlapping revisions remain traceable. Query interfaces use the same periods, units and canonical configurations as downloads and retain aliases for legacy identifiers where applicable.
 
-The parameter registry connects each emission stream to its activity, conversions and emission factors. A stream can depend on several parameters, and a parameter can enter several streams. For example, a power-sector gas stream depends on its activity, the conversion from tonnes of oil equivalent to energy, and the carbon content of natural gas. These terms are sampled separately, with the same draw used wherever a shared parameter enters the calculation. This representation preserves common inputs without imposing the full uncertainty of one stream on another. Remaining uncertainty that is not assigned to a named parameter is retained as a stream-specific residual.
+Reproduction from compiled activity tables is distinguished from re-extraction of primary sources. The build records state which level was run, the dependencies, input hashes and outcome. The deposit includes the numerical products, source code, metadata, plotted data and reproduction instructions. Primary source documents are held by the project and redistributed only where their terms permit. Geographic alternatives derived from OpenStreetMap data under the Open Database Licence (ODbL) form a separate companion package.
 
-We report both IPCC Approach~1 error propagation and Approach~2 Monte Carlo results. Approach~1 combines the declared component uncertainties, preserving the dependence specified within its groups. Approach~2 propagates 100\,000 realizations through the national calculation using national driver seed~42, with the inherited sector seeds retained. Waste and fugitives contribute the persisted draws from their own sector engines. Waste is recalculated with its material-fate identities preserved in every realization; fugitives retains its bounded split-triangular input distributions and shared activity draws. The other modules use mean-preserving lognormal multipliers for their sampled parameters. The national ensemble consequently preserves these different sector distributions rather than fitting one distribution to the national total. Source files, seeds and checksums identify the draws used.
+\paragraph{Evidence tables behind the source checks.} Each parsed monthly source ships its own denominators and controls, and rows that fail a printed total are kept unrepaired in a quarantine file rather than corrected: \texttt{pbs\_\allowbreak minerals\_\allowbreak parse\_\allowbreak summary.csv} and \texttt{pbs\_\allowbreak minerals\_\allowbreak quarantine.csv} for PBS minerals, with \texttt{pakemis\_\allowbreak minerals\_\allowbreak panel\_\allowbreak screening.csv} recording which mineral-years of the province panel are whole; \texttt{pbs\_\allowbreak qim\_\allowbreak parse\_\allowbreak summary.csv} and \texttt{pbs\_\allowbreak qim\_\allowbreak quarantine.csv} for the Quantum Index of Manufacturing; \texttt{ocac\_\allowbreak parse\_\allowbreak summary.csv} and \texttt{ocac\_\allowbreak direct\_\allowbreak edition\_\allowbreak quarantine.csv} for petroleum sales, with \texttt{ocac\_\allowbreak edition\_\allowbreak currency.csv} naming the edition each month is built on and \texttt{ocac\_\allowbreak direct\_\allowbreak edition\_\allowbreak crosscheck.csv} comparing differenced months with OCAC's single-month editions; \texttt{nfdc\_\allowbreak monthly\_\allowbreak parse\_\allowbreak summary.csv} and \texttt{nfdc\_\allowbreak monthly\_\allowbreak quarantine.csv} for fertiliser offtake; and \texttt{apcma\_\allowbreak dispatch\_\allowbreak parse\_\allowbreak summary.csv} and \texttt{apcma\_\allowbreak dispatch\_\allowbreak quarantine.csv} for cement despatch. Monthly shapes are compared across sources in \texttt{limestone\_\allowbreak qim\_\allowbreak cement\_\allowbreak crosscheck.csv} and \texttt{apcma\_\allowbreak qim\_\allowbreak cement\_\allowbreak crosscheck.csv}, the residential temperature profile against ERA5 in \texttt{era5\_\allowbreak degree\_\allowbreak day\_\allowbreak crosscheck.csv} (timing, not level) and the rice calendar against FAO harvest windows in \texttt{fao\_\allowbreak crop\_\allowbreak calendar\_\allowbreak crosscheck.csv}. For coal, \texttt{pakemis\_\allowbreak coal\_\allowbreak allocation\_\allowbreak identity.csv} tests whether the consumer split is a measurement or a redistribution, \texttt{pakemis\_\allowbreak power\_\allowbreak coal\_\allowbreak energy\_\allowbreak adjudication.csv} asks whether NEPRA's aggregate coal energy and its per-station coal mass can describe the same fleet, \texttt{power\_\allowbreak table3\_\allowbreak hypotheses.csv} enumerates the candidate explanations without selecting one, and \texttt{power\_\allowbreak toe\_\allowbreak reconciliation.csv} lays out the NEPRA and K-Electric reconciliation by year and fuel. \texttt{pakemis\_\allowbreak gas\_\allowbreak flow\_\allowbreak crosswalk.csv} classifies every delivered gas stream by the kind of flow it is. Power-plant controls are recorded in \texttt{pakemis\_\allowbreak air\_\allowbreak power\_\allowbreak control\_\allowbreak evidence.csv} as public design evidence, without inferring demonstrated operation. \texttt{pakemis\_\allowbreak faostat\_\allowbreak nitrogen\_\allowbreak flows.csv} compares managed soils with FAOSTAT at the nitrogen flows, and \texttt{pakemis\_\allowbreak nitrogen\_\allowbreak partition\_\allowbreak sensitivity.csv} gives the greenhouse-gas consequences of the all-NH$_3$ chemical-attribution diagnostic, with no probability or bound. \texttt{pakemis\_\allowbreak wastewater\_\allowbreak method\_\allowbreak comparison.csv} sets domestic wastewater N$_2$O under the 2019 Refinement beside the 2006 single-equation method. \texttt{pakemis\_\allowbreak primary\_\allowbreak geography\_\allowbreak licence\_\allowbreak audit.csv} records each primary-geography dependency and the scope of the separate ODbL companion, and \texttt{pakemis\_\allowbreak citation\_\allowbreak deposit\_\allowbreak audit.csv} lists every output path the manuscripts cite with whether the deposit contains it.
 
-For configuration $s$, the national total in realization $d$ is
-\begin{equation}
- T_y^{(d)}(s)=\sum_i \mathrm{GWP}_{g(i)}\,
- E_{i,y}^{(d)}(s),
- \label{eq:uncertainty_total}
-\end{equation}
-where $E_{i,y}^{(d)}$ is the native-gas emission of stream $i$ in year $y$, and $g(i)$ identifies its gas. Percentiles are calculated after aggregation. Thus, a national interval retains the dependence present in the draws; it is not obtained by summing sector percentile limits. We distinguish the deterministic reference total, used for accounting comparisons, from the simulated median, used to summarize the conditional distribution.
-
-Two dependency settings examine the treatment of fuel-carbon factors. In the first, sharing stops at the module boundary. In the second, all eligible combustion streams using the same physical fuel-carbon factor share its draw across modules. Separate groups represent diesel, gasoline, natural gas, residual fuel oil, coal, jet kerosene, other kerosene and LPG. Process emissions and other non-combustion carbon sources are excluded from these groups. Activity and conversion parameters retain their own dependencies. Common random numbers support comparison between settings, and batch standard errors quantify simulation variability. These settings test specified dependency assumptions; they do not estimate the true covariance of fuel properties or establish bounds on every possible dependency structure.
-
-The importance of individual parameters is not estimated. Earlier versions reported a variance decomposition of a closed-form surrogate of the inventory. It did not decompose the released ensemble, because the waste and fugitive draws are injected from their own engines and were not re-expressed in the surrogate, and its first-order indices summed to more than one, which an exact bound forbids. That decomposition, its sample-size sweep and the effluent-factor diagnostic built on it have been withdrawn. What we report instead is read from the draws of the released ensemble (\texttt{outputs/pakemis\_uncertainty\_drivers.csv}).
-
-For each category and each sector we give the covariance of its draws with the national total, divided by the national variance. These shares sum to one by construction. They show which categories carry the spread of the national total; they do not separate one parameter from another inside a category. Enteric fermentation carries \SI{59.8}{\percent} of the variance, managed soils \SI{14.0}{\percent}, domestic wastewater \SI{9.0}{\percent}, manure management \SI{5.6}{\percent} and rice cultivation \SI{4.0}{\percent}. By sector, agriculture carries \SI{83.5}{\percent} and waste \SI{11.1}{\percent}. The same table gives each category's share of the excess over the mean in the highest \SI{2.5}{\percent} of draws, which is \SI{60.1}{\percent} for enteric fermentation and \SI{10.5}{\percent} for domestic wastewater, and the national interval with that category held at its deterministic value. Holding enteric fermentation fixed narrows the interval of the \num{10000}-draw ensemble from \SIrange{399.81}{505.41}{\mega\tonne} to \SIrange{420.31}{483.90}{\mega\tonne}.
-
-One parameter is examined directly, because the upper tail of earlier releases depended on it. The wastewater effluent factor is sampled in the waste engine as a bounded split-triangular distribution in log space over its published range. With the factor frozen at its central value in a rerun of the waste engine on the same streams, it accounts for \SI{4.1}{\percent} of the national variance and \SI{4.8}{\percent} of the upper-tail excess. Under the 2006 method and its wider range, domestic wastewater was \SI{61.2}{\percent} of the upper-tail excess, and on the same draws the national interval was \SIrange{401.02}{524.35}{\mega\tonne}. Pricing the ceiling of the Refinement's range (\num{0.075}) adds \SI{35.6}{\mega\tonne}\,CO$_2$e to the national total. This is not a structural endpoint: nothing about the system's structure changes, and the quantity priced is the ceiling of a parameter's own sampled support. It is a stress test of a parameter the ensemble already represents and must not be added to the ensemble's interval.
-
-A high variance share does not by itself make a category the largest driver of the upper tail: variance is a statement about spread around the centre, and the tail is governed by the shape of each factor's support as well as by its variance. The two columns are therefore reported separately. This analysis is conditional on the registered parameterization and is distinct from the category-level Approach~1 variance ranking.
-
-Every external and internal check the inventory makes is registered rather than described, so a reader can ask what a given comparison can and cannot establish without reconstructing it from prose. The register holds \num{102} entries, each carrying the property tested (magnitude, timing or geography), the module, the grain, the comparator and its version, the period and boundary on each side, the inputs the two sides are known to share, an independence class, whether the entry is a validation, a corroboration, a calibration or a declared absence, the output that holds its result, and --- for all \num{102} --- an explicit interpretation limit.
-
-The independence classes are the reason the register exists, and they partition the register exactly: of \num{102} entries, \num{11} compare against an independent compilation, \num{45} are partial, \num{20} share a large part of their inputs, \num{2} share an upstream statistic outright, \num{4} are internal identities or consistency checks, \num{12} have no applicable comparator, and \num{8} have none. A second, \emph{independent} classification records what each entry is for rather than how independent it is, and it partitions the same \num{102}: \num{69} validations, \num{15} corroborations, \num{7} calibrations and \num{11} declared absences. The two must not be added together --- a calibration also has an independence class, and a breakdown that mixed the two columns would double-count the \num{3} calibrations that sit inside the partial and large classes while omitting the entries whose class it never named. Calibrations are separated because an input fitted to a comparator cannot then be validated by it; declared absences are carried rather than omitted, so the gaps are counted alongside the checks.
-Table~\ref{tab:five_classes} regroups the same \num{102} entries by what each comparison can establish, mapping the register's independence and role columns onto five classes (\texttt{campaign/v3\_readiness/validation\_catalog\_five\_classes.csv}).
-\input{generated/tab_five_classes.tex} The class of every entry is in \texttt{outputs/pakemis\_validation\_five\_classes.csv} and the counts in \texttt{outputs/pakemis\_validation\_five\_classes\_summary.csv}; both are generated from the catalogue by one rule on its role and independence columns. The terms of every external comparison --- source, gas metric, year basis on each side, units, category boundary and independence class --- are declared row by row in \texttt{outputs/pakemis\_comparison\_crosswalk.csv}, built from the catalogue and the BTR table so it cannot drift from them.
-
-A companion benchmark table adds, per comparison, whether the two boundaries match and what ratio the comparison is permitted to support. Together these decide what a number like a \num{0.92} national ratio means: without the boundary and shared-input fields it reads as accuracy, and with them it reads as what it is.
-
-Structural alternatives address different interpretations of evidence, including the power coal-energy basis, sewer methane correction factor, fugitive operating practices and residential dung use. The reference configuration fixes these choices. Each alternative is evaluated through the relevant calculation and reported with its change from the reference. Alternatives are not assigned probabilities or pooled into the parameter ensemble. Mutually exclusive readings of the same quantity are identified as a family, and changes from separate alternatives are not added unless their joint calculation is explicitly defined. Unestimated categories retain their notation keys; comparator-based magnitudes and scope screenings indicate possible omissions without being inserted into the reference total.
-
-The annual, monthly and provincial uncertainty products share realization identifiers. A 10\,000-draw subset is identical to the corresponding prefix of the national run. Monthly weights are sampled only where measured profile dispersion is available, using the documented error model and renormalizing each realization to sum to one. Elsewhere the profile remains fixed or is represented by a separate conditional alternative. Provincial shares remain fixed within a configuration; alternative allocations are evaluated on the same emission draws. Each realization satisfies
-\begin{equation}
- \begin{split}
- \sum_m E_{c,m}^{(d)}&=E_{c,\mathrm{annual}}^{(d)},\\
- \sum_p E_{c,p}^{(d)}+E_{c,\mathrm{unallocated}}^{(d)}
- &=E_{c,\mathrm{annual}}^{(d)}.
- \end{split}
- \label{eq:uncertainty_allocation}
-\end{equation}
-Parameter intervals and temporal, spatial or completeness brackets remain separately identified. Any envelope across alternatives covers only the configurations considered and is not a probability interval or a comprehensive bound on omitted uncertainty.
-
-\begin{table*}[t]
-\caption{Estimated emissions by IPCC category and gas in FY2023--24 under the reference configuration. \textbf{Codes are IPCC 2006 throughout} (Volume~1, Chapter~8, Table~8.2); a crosswalk to the UNFCCC common reporting tables, including the categories that have no counterpart in either direction, is published as \texttt{outputs/pakemis\_category\_crosswalk.csv}, which carries beside each rule the components that resolved through it and what they sum to. An earlier edition of this table mixed the two schemes, reporting enteric fermentation at the CRT's 3.A beside solid-waste disposal at IPCC 2006's 4.A. All gas columns and totals are Mt~CO$_2$e on the AR5 basis. A dash denotes no contribution to this reported row, not a national completeness notation. Rounded cells can differ slightly from rounded row or column totals.}
-\label{tab:categories}
-\small
-\begin{tabular}{lp{0.34\textwidth}rrrr}
-\tophline
-IPCC code & Category & CO$_2$ & CH$_4$ & N$_2$O & Total \\
-\middlehline
-3.A.1 & Enteric fermentation & -- & 151.658 & -- & 151.658 \\
-1.A.3.b & Road transportation & 39.285 & 0.398 & 0.511 & 40.194 \\
-1.A.1.a & Public electricity and heat & 39.907 & 0.027 & 0.106 & 40.040 \\
-1.A.2 & Manufacturing and construction & 28.009 & 0.053 & 0.069 & 28.131 \\
-4.D.1 & Domestic wastewater & -- & 21.886 & 2.572 & 24.458 \\
-1.A.4.b & Residential & 18.388 & 5.176 & 0.656 & 24.220 \\
-1.B.2 & Oil and gas fugitives & 0.916 & 22.583 & 0.001 & 23.499 \\
-2.A.1 & Cement production & 21.816 & -- & -- & 21.816 \\
-3.A.2 & Manure management (CH$_4$ and direct N$_2$O) & -- & 13.182 & 6.148 & 19.330 \\
-3.C.7 & Rice cultivation & -- & 16.548 & -- & 16.548 \\
-3.C.4 & Direct N$_2$O from managed soils & -- & -- & 16.434 & 16.434 \\
-3.C.5 & Indirect N$_2$O from managed soils & -- & -- & 12.091 & 12.091 \\
-4.A & Solid-waste disposal & -- & 9.169 & -- & 9.169 \\
-3.C.3 & Urea application & 4.824 & -- & -- & 4.824 \\
-4.C.2 & Open burning of waste & 1.853 & 1.711 & 0.262 & 3.826 \\
-2.B.1 & Ammonia production & 3.243 & -- & -- & 3.243 \\
-3.C.6 & Indirect N$_2$O from manure management & -- & -- & 1.898 & 1.898 \\
-1.A.4.c$^{a}$ & Mixed off-road machinery & 1.569 & 0.003 & 0.160 & 1.732 \\
-3.C.1.b & Biomass burning in croplands & -- & 0.538 & 0.132 & 0.670 \\
-2.C.1 & Iron and steel production & 0.393 & -- & -- & 0.393 \\
-1.A.3.c & Railway traction & 0.353 & 0.001 & 0.036 & 0.389 \\
-1.A.3.a & Domestic aviation & 0.299 & 0.000 & 0.002 & 0.301 \\
-2.D.1 & Lubricant use & 0.083 & -- & -- & 0.083 \\
-$^{b}$ & Railway non-traction & 0.005 & 0.000 & 0.000 & 0.005 \\
-\middlehline
- & Total & 160.944 & 242.932 & 41.079 & 444.955 \\
-\bottomhline
-\end{tabular}
-\belowtable{$^{a}$ The mixed off-road allocation includes uses not fully separated between 1.A.4.c and 1.A.2. $^{b}$ The 1.A.2/1.A.4.c split is unresolved. Public electricity excludes captive industrial generation, which contributes to 1.A.2.}
-\end{table*}
-
-Trend uncertainty is calculated by differencing corresponding realizations over a common sector scope. The reported temporal dependency setting holds emission factors, physical constants and other persistent parameters across years, while allowing year-specific activity to vary between years. Sensitivity settings increase or decrease temporal sharing. For years $a$ and $b$, each change is calculated as $\Delta T^{(d)}=T_b^{(d)}-T_a^{(d)}$ before taking percentiles. This allows common errors to cancel and avoids treating two annual level intervals as an interval for their difference.
-
-
-
-\section{Reference-year category and gas account}
-\label{sec:category_account}
-
-Table~\ref{tab:categories} retains the full reference-year category account. The columns report each gas's CO$_2$-equivalent contribution, not native gas mass. Modules and IPCC categories differ where one category receives contributions from several modules; public generation and captive industrial generation remain separately allocated. These are estimates for the implemented scope, not a complete national inventory.
-
-
+A dataset DOI and external review-access deposit are pending. Neither this documentation nor the local package claims journal submission, external publication or acceptance.
 
 \appendix
-\section{Notation and reporting conventions}
-\label{app:notation}
+\input{products_appendix}
 
-Table~\ref{tab:notation} summarises the notation and reporting conventions used in the inventory.
-
-\begin{table*}[t]
-\caption{Conventions needed to interpret the inventory.}
-\label{tab:notation}
-\small
-\begin{tabular}{p{0.24\textwidth}p{0.66\textwidth}}
-\tophline
-Term & Meaning \\
-\middlehline
-FY2023--24 & 1 July 2023 to 30 June 2024; analogous boundaries apply to other fiscal years. \\
-Native gas & Mass of CO$_2$, CH$_4$ or N$_2$O before GWP weighting. \\
-AR5 CO$_2$e & GWP$_{100}$: CO$_2$ 1; biogenic CH$_4$ 28; fossil CH$_4$ 30; N$_2$O 265. \\
-AR6 CO$_2$e & GWP$_{100}$: CO$_2$ 1; biogenic CH$_4$ 27; fossil CH$_4$ 29.8; N$_2$O 273. \\
-Biogenic CO$_2$ & Biomass-combustion memo item, excluded from the reported non-LULUCF total. \\
-Reference and L & Household dung from the survey (the reference); all dung diverted from manure management burned by households (configuration L). \\
-NE; IE; NO; NA & Not estimated; included elsewhere; not occurring; not applicable. These are not interchangeable with zero. \\
-Unallocated & Estimated mass lacking placement at the requested spatial resolution; retained in national reconciliation. \\
-Conditional interval & Parameter percentiles under a stated scope, configuration and dependence model. \\
-Structural alternative & A separate interpretation of evidence or system boundaries with no assigned probability. \\
-\bottomhline
-\end{tabular}
-\end{table*}
-
-\noappendix
+\input{../../../paper_common/release_cover}
+\ReleaseCover
 
 \begin{thebibliography}{99}
 
@@ -447,6 +215,9 @@ Crippa, M., Solazzo, E., Huang, G., Guizzardi, D., Koffi, E., Muntean, M., Schie
 
 \bibitem[FAO(2025)]{FAOSTAT2025}
 FAO: FAOSTAT: emissions totals, crops and livestock, fertilisers by nutrient, and forestry production and trade, Food and Agriculture Organization of the United Nations, Rome [data sets], \url{https://www.fao.org/faostat/}, 2025 snapshot used in the source inventory; catalogue checked 30 September 2026, 2025.
+
+\bibitem[Global Energy Monitor(2026)]{GEMCement2026}
+Global Energy Monitor: Global Cement and Concrete Tracker, plant-level data, July 2026 (standard copy V1), Global Energy Monitor [data set], licensed under CC BY 4.0, 2026.
 
 \bibitem[IPCC(2006)]{IPCC2006}
 IPCC: 2006 IPCC Guidelines for National Greenhouse Gas Inventories, edited by: Eggleston, H. S., Buendia, L., Miwa, K., Ngara, T., and Tanabe, K., Institute for Global Environmental Strategies, Hayama, Japan, \url{https://www.ipcc-nggip.iges.or.jp/public/2006gl/}, 2006.
@@ -466,11 +237,17 @@ Kaza, S., Yao, L., Bhada-Tata, P., and Van Woerden, F.: What a Waste 2.0: A Glob
 \bibitem[Ministry of Finance(2024)]{MoF2024}
 Ministry of Finance: Pakistan Economic Survey 2023--24, Government of Pakistan, Islamabad, chapter 2, Agriculture, 2024.
 
+\bibitem[Ministry of Finance(2026)]{MoF2026}
+Ministry of Finance: Pakistan Economic Survey 2025--26, Government of Pakistan, Islamabad, agriculture chapter and statistical annexes, \url{https://www.finance.gov.pk/survey/chapter_26/2_Agriculture.pdf}, 2026.
+
 \bibitem[NEPRA(2024)]{NEPRA2024}
 NEPRA: State of Industry Report 2024, National Electric Power Regulatory Authority, Islamabad, \url{https://nepra.org.pk/publications/State%20of%20Industry%20Reports/State%20of%20Industry%20Report%202024.pdf}, 2024.
 
 \bibitem[NFDC(2024)]{NFDC2024}
 NFDC: Fertilizer Review 2023--24, Publication No. 2/2024, National Fertilizer Development Centre, Government of Pakistan, Islamabad, \url{https://nfdc.gov.pk/publications/Annual%20Fertilizer%20Review%202023-24.pdf}, 2024.
+
+\bibitem[NFDC(2025)]{NFDC2025}
+NFDC: Annual Fertilizer Review 2024--25, National Fertilizer Development Centre, Government of Pakistan, \url{https://mnfsr.gov.pk/SiteImage/Misc/files/AFR2024-25.pdf}, 2025.
 
 \bibitem[Pak-EPA and EPMC(1996)]{PakEPA1996}
 Pak-EPA and EPMC: National Study on Privatization of Solid Waste Management in Eight Cities of Pakistan, Pakistan Environmental Protection Agency, Islamabad, 1996.
@@ -490,6 +267,6 @@ PBS: Household Integrated Economic Survey (HIES) 2024--25, Pakistan Bureau of St
 \bibitem[WHO and UNICEF(2023)]{JMP2023}
 WHO and UNICEF: Joint Monitoring Programme for Water Supply, Sanitation and Hygiene: Pakistan household country file, 2023 snapshot, \url{https://washdata.org/data/downloads}, 2023.
 
-\end{thebibliography}
 
+\end{thebibliography}
 \end{document}

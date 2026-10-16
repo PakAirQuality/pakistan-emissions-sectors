@@ -1,21 +1,13 @@
-"""rc39 A8: the monthly product says which flat months are physics and which are ignorance.
+"""Agriculture timing classifications are tied to the final exported coverage panel.
 
-87.3% of agriculture sits at TE4, which reads as a sector whose timing is almost entirely
-unevidenced. It is not. Enteric fermentation and manure management are continuous processes
-riding a census stock, and a flat month there is the physics rather than a gap - no
-acquisition could improve it. The share whose timing this inventory SHOULD resolve and has
-not is 6.67% of the nine-year panel and 7.00% of the reference year.
-
-Both classifications had been computed for several releases and lived in two products at two
-grains, so a reader had to know to join them. Quoting either alone misleads in opposite
-directions: the TE count overstates the problem by more than an order of magnitude, and the
-physical class alone hides that a real gap exists.
+Unresolved timing counts only TE4 mass from a process that should vary; calendar
+allocation of a continuous process is not evidence of missing seasonal activity.
 """
 import csv
 import os
 import unittest
 
-from _support import OUTPUTS, read_rows
+from _support import OUTPUTS, ROOT, read_rows
 
 TIMING = "agriculture_timing_classes.csv"
 RESIDUAL = "agriculture_nfdc_province_residual.csv"
@@ -42,57 +34,86 @@ class TestBothClassificationsArePublished(unittest.TestCase):
             self.assertTrue(r["temporal_evidence_classes"], r["category"])
             self.assertNotEqual(r["physical_timing_class"], "unclassified", r["category"])
 
-    def test_the_unobserved_share_is_the_audited_figure(self):
-        self.assertAlmostEqual(float(self.total["unobserved_pct_nine_years"]), 6.67, places=2)
-        self.assertAlmostEqual(float(self.total["unobserved_pct_reference_year"]), 7.00,
-                               places=2)
+    def test_the_unobserved_share_matches_final_coverage_records(self):
+        coverage = [r for r in read_rows(os.path.join(OUTPUTS, "pakemis_monthly_coverage.csv"))
+                    if r["sector_id"] == "agriculture"]
+        variable = {r["category"] for r in self.cats
+                    if r["activity_should_vary_but_unobserved"] == "yes"}
+        for suffix, rows in (("panel", coverage), ("reference_year", [r for r in coverage
+                             if r["period_id"] == "FY2023-24"])):
+            total = sum(float(r["co2e_Mt_AR5"]) for r in rows)
+            unresolved = sum(float(r["co2e_Mt_AR5"]) for r in rows
+                             if r["category"] in variable and r["temporal_evidence_class"] == "TE4")
+            self.assertAlmostEqual(float(self.total["unobserved_pct_" + suffix]),
+                                   100 * unresolved / total, places=4)
+        self.assertEqual(len({r["period_id"] for r in coverage}), 10)
+        self.assertTrue(all("nine_years" not in field for field in self.total))
 
     def test_the_continuous_processes_contribute_no_unobserved_timing(self):
         """The whole point: a flat month of a stock-driven process is not a gap. If these
         ever contributed, the physical class would have stopped doing its job."""
         for r in self.cats:
             if r["physical_timing_class"] == "continuous_by_process":
-                self.assertEqual(float(r["unobserved_Mt_nine_years"]), 0.0, r["category"])
+                self.assertEqual(float(r["unobserved_Mt_panel"]), 0.0, r["category"])
                 self.assertEqual(r["activity_should_vary_but_unobserved"], "no", r["category"])
 
     def test_managed_soils_is_the_gap(self):
         soils = next(r for r in self.cats if r["category"] == "Managed soils")
         self.assertEqual(soils["activity_should_vary_but_unobserved"], "yes")
-        self.assertGreater(float(soils["unobserved_Mt_nine_years"]), 100.0)
+        self.assertGreater(float(soils["unobserved_Mt_panel"]), 100.0)
 
     def test_the_categories_sum_to_the_total_row(self):
-        for column in ("co2e_Mt_nine_years", "unobserved_Mt_nine_years",
+        for column in ("co2e_Mt_panel", "unobserved_Mt_panel",
                        "co2e_Mt_reference_year", "unobserved_Mt_reference_year"):
             self.assertAlmostEqual(sum(float(r[column]) for r in self.cats),
                                    float(self.total[column]), places=4, msg=column)
 
     def test_the_reference_year_total_is_the_published_sector_total(self):
         """Ties this product to the inventory rather than letting it drift as a side table."""
-        self.assertAlmostEqual(float(self.total["co2e_Mt_reference_year"]), 223.454471,
-                               places=4)
+        rows = [r for r in read_rows(os.path.join(OUTPUTS, "pakemis_monthly_coverage.csv"))
+                if r["sector_id"] == "agriculture" and r["period_id"] == "FY2023-24"]
+        self.assertAlmostEqual(float(self.total["co2e_Mt_reference_year"]),
+                               sum(float(r["co2e_Mt_AR5"]) for r in rows), places=4)
 
 
 class TestTheFireProfilesAreYearSpecific(unittest.TestCase):
     """The prose said the reference year's profile was the fire record, and that a year
-    without a fetched season stays flat at T4. Neither describes the current product: all
-    nine years carry their own FRP-weighted VIIRS profile and the fallback has never fired."""
+    without a fetched season stays flat at T4. Neither describes the current product: the current panel records own-year FRP-weighted VIIRS profiles and labels any carried
+    profile explicitly."""
 
-    def test_nine_distinct_profiles_none_borrowed(self):
+    def test_each_supported_period_has_a_complete_profile(self):
         rows = [r for r in read_rows(os.path.join(OUTPUTS, "pakemis_temporal_profiles.csv"))
                 if r["category"] == "Field burning of residues"]
         self.assertTrue(rows)
-        self.assertEqual({r["borrowed_from_year"] for r in rows}, {""})
         by_year = {}
         for r in rows:
             by_year.setdefault(r["fiscal_year"], {})[r["month"]] = r["weight"]
-        self.assertEqual(len(by_year), 9)
-        distinct = {tuple(sorted(v.items())) for v in by_year.values()}
-        self.assertEqual(len(distinct), 9, "a fire profile is shared between years")
+        periods = read_rows(os.path.join(ROOT, "data", "shared", "lookups", "periods.csv"))
+        self.assertEqual(set(by_year), {r["period_id"] for r in periods})
+        for year, weights in by_year.items():
+            self.assertEqual(len(weights), 12, year)
+            self.assertAlmostEqual(sum(float(v) for v in weights.values()), 1., places=8)
 
-    def test_every_year_is_te3(self):
+    def test_classes_match_actual_held_fire_window_coverage(self):
+        from pkinv.sectors.agriculture.monthly import FIRMS_FIRE
+        held_years = set()
+        for detection in read_rows(FIRMS_FIRE):
+            year, month = int(detection["acq_date"][:4]), int(detection["acq_date"][5:7])
+            held_years.add(year if month >= 7 else year - 1)
         rows = [r for r in read_rows(os.path.join(OUTPUTS, "pakemis_temporal_profiles.csv"))
                 if r["category"] == "Field burning of residues"]
-        self.assertEqual({r["temporal_evidence_class"] for r in rows}, {"TE3"})
+        for row in rows:
+            own_year = int(row["fiscal_year"][2:6]) in held_years
+            self.assertEqual(row["temporal_evidence_class"], "TE3" if own_year else "TE4")
+            self.assertEqual(row["borrowed_from_year"], "")
+            if not own_year:
+                import calendar
+                year, month = int(row["month"][:4]), int(row["month"][4:])
+                fy = int(row["fiscal_year"][2:6])
+                days = 366 if calendar.isleap(fy + 1) else 365
+                self.assertAlmostEqual(float(row["weight"]),
+                                       calendar.monthrange(year, month)[1] / days, places=10)
+                self.assertIn("no monthly series", row["basis"])
 
     def test_no_module_still_says_the_reference_year_carries_the_profile(self):
         import subprocess

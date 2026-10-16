@@ -19,11 +19,11 @@
     },
     {
       "path": "data/activity/ippu/national_activity.csv",
-      "sha256": "a787d28ec4e39edb9c47e9d7070adf70cfeb51f8d1e6270d7d9cfd64fc260a5f"
+      "sha256": "747f6ed64c51a22dbbe6422f0e9664bf7008550dd08361700738a9fca25f01d9"
     },
     {
       "path": "data/activity/ippu/clinker_trade_monthly.csv",
-      "sha256": "411d0bfa0f2e8469300b9e0f0df87450bab8ebf437a3d3d71012fd04d5ca17d2"
+      "sha256": "4b078057740b81b987524cc9e43d26c21bf3de7ddad95df7ee5613a0f97e91ac"
     },
     {
       "path": "data/activity/ippu/company_clinker_2023_24.csv",
@@ -83,7 +83,7 @@
     },
     {
       "path": "data/activity/ippu/facility_geocoding_overrides.csv",
-      "sha256": "0d8dd89c0f916d687602a50c2e848d13ee34fad43550a8185ebbc7a2bf5a0cd3"
+      "sha256": "6fc670b1f0e3291d4aea874bb08b7d369792eaa35234f8789a08acada6b79be3"
     },
     {
       "path": "data/activity/ippu/data_request_packets.csv",

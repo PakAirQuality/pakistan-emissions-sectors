@@ -540,16 +540,19 @@ class TestTransportEditorialStructure(unittest.TestCase):
         self.assertIn("1A2\\,gvii", limitations)
         self.assertIn("Mixed off-road", limitations)
 
-    def test_air_factors_are_never_attributed_to_emep(self):
-        """The g/km factors are Punjab-workbook transcriptions with no located
-        primary citation; the EMEP/EEA road chapter was never acquired. EMEP may be
-        named only for what is NOT estimated (the gap-register process families)."""
-        for name in ("03_study_area_and_data.tex", "06b_air_pollutants.tex",
-                     "10_appendix.tex"):
-            text = self._read(name)
-            self.assertNotIn("emep2019", text, name)
-        data = " ".join(self._read("03_study_area_and_data.tex").split())
-        self.assertIn("no primary citation", data)
+    def test_air_factors_credit_the_held_guidebook_and_distinguish_superseded_workbook(self):
+        """Current Tier1 factors come from held EMEP tables; the superseded
+        workbook g/km block must retain its narrower provenance label.
+        """
+        from pkinv.sectors.transport import air_pollutants
+        self.assertTrue(air_pollutants.factors())
+        current = self._read("06b_air_pollutants.tex")
+        self.assertIn("EMEP/EEA", current)
+        self.assertIn("Tier~1", current)
+        self.assertNotIn("emep2019", current, "the crop-burning chapter is not a road factor source")
+        factors = " ".join(self._read("S2_factors.tex").split())
+        self.assertIn("SUPERSEDED per-kilometre factors", factors)
+        self.assertIn("no primary citation was ever located", factors)
 
     def test_the_air_layer_is_an_appendix_with_stated_bases_and_bounded_claims(self):
         """The demotion guard's successor (air program Wave 2): the layer is no longer
@@ -566,8 +569,9 @@ class TestTransportEditorialStructure(unittest.TestCase):
                         paper.index("sections/06b_air_pollutants"))
         air = self._read("06b_air_pollutants.tex")
         self.assertIn("EMEP/EEA Tier~1", air)
-        self.assertIn("superseded diagnostic", air)
-        self.assertIn("What it still may not carry is a", air)
+        self.assertIn("does not validate a transferred PM or NO$_x$ factor", air)
+        self.assertIn("not universal pump-level compliance", air)
+        self.assertIn("resuspension stays out", air)
         self.assertIn("NO$_2$-equivalent", air)
         self.assertIn("NMVOC", air)
         for name in ("00_abstract.tex", "07_discussion.tex", "09_conclusion.tex",
@@ -811,7 +815,7 @@ class TestTransportEditorialStructure(unittest.TestCase):
             bib = handle.read()
         entry = re.search(r"@\w+\{ahmad2026national.*?\n\}", bib, re.S)
         self.assertIsNotNone(entry, "ahmad2026national entry lost")
-        with open(os.path.join(PAPER_NATIONAL_MAIN, "paper_national.tex"),
+        with open(_main_tex(PAPER_NATIONAL_MAIN),
                   encoding="utf-8") as handle:
             national = handle.read()
         # The bibliography entry must carry the manuscript's CURRENT title, whatever it is,
@@ -820,8 +824,11 @@ class TestTransportEditorialStructure(unittest.TestCase):
         # checked for accuracy in TestTheTitleIsAccurate.
         title = re.search(r"\\title\{(.*?)\}\s*\\author", " ".join(national.split()))
         self.assertIsNotNone(title, "the national manuscript has no title")
-        head = " ".join(title.group(1).split())[:48]
-        self.assertIn(head, " ".join(entry.group(0).split()),
+        import pkinv
+        headline = title.group(1).replace(r"\PakEmisRelease{}", pkinv.__version__).replace(r"\PakEmisRelease", pkinv.__version__)
+        head = " ".join(headline.split()).replace("{", "").replace("}", "")[:48]
+        citation = " ".join(entry.group(0).split()).replace("{", "").replace("}", "")
+        self.assertIn(head, citation,
                       "references.bib cites a superseded title")
         for text, where in ((entry.group(0), "references.bib"),
                             (national, "paper_national.tex")):
@@ -894,7 +901,9 @@ class TestWasteEditorialStructure(unittest.TestCase):
         the reader needs is that the NATIONAL rows are the sector's own injected
         rerun draws, on the published seed."""
         s1 = " ".join(self._read("S1_uncertainty.tex").split())
-        self.assertIn("national engine consumes this sector's own rerun draws", s1)
-        self.assertIn("seed \\num{4421}", s1)
-        results = " ".join(self._read("06_results.tex").split())
-        self.assertIn("NATIONAL Monte Carlo consumes those same draws", results)
+        self.assertIn("reruns the disposal-history, wastewater and burning calculations", s1)
+        self.assertIn("same burned dry mass realisations", s1)
+        self.assertIn("does not sample population, collection or burn fraction a second time", s1)
+        from pkinv.core.shared_parameter_draws import SEED
+        self.assertIn("seed \\num{%d}" % SEED, s1)
+        self.assertIn("earlier standalone sector ensemble remains a named diagnostic", s1)

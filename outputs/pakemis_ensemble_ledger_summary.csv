@@ -1,2 +1,2 @@
 configuration_id,deterministic_Mt,mean_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,n_draws,dung_scale,draw_identity
-L_2023_24,450.20168,453.2584,404.0815,451.4245,513.414,10000,5.372659,"same draw_id as the reference ensemble: the dung components scale deterministically per draw, no RNG consumed"
+L_TAN,449.8541,452.5344,404.0985,451.0997,509.0598,10000,5.373028,same shared parameter identities; ledger dung follows sampled herd; fate/excretion fixed; dung_scale is deterministic level ratio only

@@ -22,15 +22,15 @@ Key sources by level: Residue burning CO
 
 | Source | Level %% | Cum %% | Key |
 |---|---:|---:|:--:|
-| NH3 - manure applied to soils | 32.4 | 32.4 | YES |
-| NH3 - housing and storage | 31.5 | 63.9 | YES |
-| NH3 - synthetic fertiliser | 27.6 | 91.5 | YES |
-| NH3 - pasture deposition (sheep/goat/other) | 4.3 | 95.8 | YES |
-| NH3 - pasture deposition (cattle-type) | 3.9 | 99.7 |  |
-| Residue burning NH3 | 0.3 | 100.0 |  |
+| NH3 - housing and storage | 32.0 | 32.0 | YES |
+| NH3 - manure applied to soils | 31.1 | 63.2 | YES |
+| NH3 - synthetic fertiliser | 28.2 | 91.3 | YES |
+| NH3 - pasture deposition (sheep/goat/other) | 4.4 | 95.7 | YES |
+| NH3 - pasture deposition (cattle-type) | 4.0 | 99.6 |  |
+| Residue burning NH3 | 0.4 | 100.0 |  |
 | NH3 - crop residues left in field | 0.0 | 100.0 |  |
 
-Key sources by level: NH3 - manure applied to soils, NH3 - housing and storage, NH3 - synthetic fertiliser, NH3 - pasture deposition (sheep/goat/other)
+Key sources by level: NH3 - housing and storage, NH3 - manure applied to soils, NH3 - synthetic fertiliser, NH3 - pasture deposition (sheep/goat/other)
 
 ## NMVOC
 
@@ -44,12 +44,15 @@ Key sources by level: Residue burning NMVOC
 
 | Source | Level %% | Cum %% | Key |
 |---|---:|---:|:--:|
-| Soil NOx - synthetic fertiliser | 53.2 | 53.2 | YES |
-| Soil NOx - organic manure | 32.9 | 86.1 | YES |
-| Residue burning NOx | 10.9 | 97.0 | YES |
-| Soil NOx - crop residues | 3.0 | 100.0 |  |
+| NOx - manure management | 37.5 | 37.5 | YES |
+| Soil NOx - synthetic fertiliser | 27.3 | 64.8 | YES |
+| Soil NOx - organic manure | 18.2 | 83.1 | YES |
+| Residue burning NOx | 5.6 | 88.7 | YES |
+| NOx - pasture_other | 5.1 | 93.8 | YES |
+| NOx - pasture_cattle | 4.7 | 98.5 | YES |
+| Soil NOx - crop residues | 1.5 | 100.0 |  |
 
-Key sources by level: Soil NOx - synthetic fertiliser, Soil NOx - organic manure, Residue burning NOx
+Key sources by level: NOx - manure management, Soil NOx - synthetic fertiliser, Soil NOx - organic manure, Residue burning NOx, NOx - pasture_other, NOx - pasture_cattle
 
 ## PM2.5
 

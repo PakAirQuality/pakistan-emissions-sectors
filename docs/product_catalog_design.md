@@ -92,6 +92,13 @@ build/            regenerable intermediates, temporary joins, caches -- normally
 If an intermediate is necessary *because its source is unavailable or hard to reconstruct*, it
 is a derived source artifact and belongs in `support/`, not `build/`.
 
+The integrated release retains registered compiled dependencies in
+`pakemis-support/reproduction/` for offline recalculation. They remain distinct
+from advertised core records. ODbL-derived inputs, legacy spatial descendants and
+preserved baselines are packaged in a separate ODbL companion with upstream
+licences and attribution. The manifest's `package_group` determines which archive
+contains a file; removing an input alone cannot clear a derived product.
+
 ## Manifests, and why there must be two
 
 ```

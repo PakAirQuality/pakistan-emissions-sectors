@@ -1,26 +1,11 @@
-"""The air spatial support ledger and the uncertainty split, per period.
+"""Pollutant-specific spatial support and conditional parameter-width summaries.
 
-TWO PRODUCTS, ONE JOIN. The by-year air spatial tables carry no evidence columns,
-deliberately (the badge belongs to the weight registry, derived from what the build
-DID - see spatial_by_year.py). This script publishes the join:
-
-  pakemis_air_spatial_support_by_year.csv - every (period, configuration, anchor,
-    pollutant) mass beside its registry row: the activity year, the weight period, the
-    proxy operator, the pattern hash and the evidence grade PRESERVED AS SEPARATE
-    COLUMNS, never collapsed into a composite score.
-
-  pakemis_air_uncertainty_split_by_year.csv - per (period, configuration, pollutant),
-    the two halves of the uncertainty REPORTED SEPARATELY, never combined: the
-    activity/factor half (the reference-year sector layers' mass-weighted uncert_pct -
-    the percent structure is the reference year's, and the basis column says so) and
-    the spatial half measured for THAT year from the registry (what share of the mass
-    rode the year's own pattern, a borrowed pattern, a substituted surface, or was
-    never placed below ADM1).
-
-Runs AFTER the weight registry phase (its input is the registry the build's own record
-generates) and after the air panel.
-
-Usage:  python3 -m scripts.build_air_spatial_support
+Source/process annual masses join the spatial registry actually used by the
+build. Own-year patterns, borrowed patterns, substituted surfaces and unallocated
+mass remain separate evidence fields. The parameter summary reads the matching
+period/configuration/species ensemble; complete conditional percentiles are in
+pakemis_air_conditional_uncertainty.csv. Allocation evidence shares are not
+probabilistic uncertainty and are never combined with parameter widths.
 """
 import collections
 import csv
@@ -39,12 +24,6 @@ REGISTRY = asset_path(OUTPUTS, "pakemis_spatial_weights_by_year.csv")
 SUPPORT_OUT = asset_path(OUTPUTS, "pakemis_air_spatial_support_by_year.csv")
 SPLIT_OUT = asset_path(OUTPUTS, "pakemis_air_uncertainty_split_by_year.csv")
 
-# the reference-year sector air layers: the activity/factor uncert basis
-LAYER_FILES = ("air_pollutants_2024.csv", "residential_air_pollutants_2024.csv",
-               "transport_air_pollutants_2024.csv", "waste_air_pollutants_2024.csv",
-               "aviation_air_pollutants_fy2023_24.csv",
-               "railways_air_pollutants_2024.csv")
-
 SUPPORT_FIELDS = ("period_id", "configuration_id", "sector_id", "source_stream_id",
                   # rc59: "" | kiln_frame:FCBK | kiln_frame:ZZ | adm1_only
                   # rc60: national_only - the admitted power SO2, which has no defensible
@@ -52,33 +31,40 @@ SUPPORT_FIELDS = ("period_id", "configuration_id", "sector_id", "source_stream_i
                   "spatial_frame",
                   "pollutant", "emissions_Gg", "spatial_time_basis", "weight_period",
                   "temporal_operator", "pattern_hash", "evidence_grade",
-                  "substituted_share", "geometry_id", "surface")
+                  "substituted_share", "geometry_id", "surface",
+                  "activity_evidence_status", "activity_evidence_period",
+                  "survey_pattern_period", "survey_pattern_status")
 SPLIT_FIELDS = ("period_id", "configuration_id", "pollutant",
                 "activity_factor_uncert_pct", "activity_factor_basis",
                 "own_pattern_mass_share", "borrowed_pattern_mass_share",
-                "substituted_mass_share", "unallocated_mass_share")
+                "substituted_pattern_mass_share", "substituted_mass_share", "unallocated_mass_share",
+                "observed_activity_pattern_mass_share", "static_pattern_mass_share",
+                "modelled_population_pattern_mass_share", "calendar_proxy_pattern_mass_share")
 
-OWN_BASES = ("annual_observed_activity", "static_structural")
-# the token every row carries; the sentence it stands for lives in the product
-# schema: the percent structure is FY2023-24's sector layers, mass-weighted -
-# historical magnitudes are observed per year but their factor families are the
-# same, so the number transfers while its composition does not. Reported beside
-# the spatial half, never combined with it.
-AF_BASIS = "reference_year_layers_mass_weighted"
+# Legacy own_pattern means a non-borrowed declared pattern, not observed activity.
+# Publish observed/static/modelled/calendar constituents separately.
+OWN_BASES = ("annual_observed_activity", "static_structural", "modelled_population_proxy", "calendar_activity_proxy")
+AF_BASIS = "conditional_parameter_percentiles:persistent_parameters;half_95pct_span_divided_by_median;not_allocation_or_missing_source_uncertainty"
 
 
 def _af_uncert():
-    """{pollutant: mass-weighted uncert_pct} over the reference-year layers."""
-    mass = collections.defaultdict(float)
-    weighted = collections.defaultdict(float)
-    for name in LAYER_FILES:
-        for r in read_rows(asset_path(OUTPUTS, name)):
-            kt = abs(float(r["emissions_kt"] or 0.0))
-            if kt == 0.0 or not r.get("uncert_pct"):
-                continue
-            mass[r["pollutant"]] += kt
-            weighted[r["pollutant"]] += kt * float(r["uncert_pct"])
-    return {p: weighted[p] / mass[p] for p in mass}
+    """Conditional interval-width summaries at the product's actual year/configuration.
+
+    The complete percentile endpoints are published separately. A relative width
+    summary is neither a confidence claim about missing sources nor allocation
+    uncertainty, and is never a mass-weighted average of component percentages.
+    """
+    from pkinv.report.air_uncertainty import OUT
+    out = {}
+    for row in read_rows(OUT):
+        if row["sector_id"] != "national_covered" or row["dependence_case"] != "persistent_parameters":
+            continue
+        center = float(row["P50_Gg"])
+        out[(row["period_id"], row["configuration_id"], row["pollutant"])] = (
+            50 * (float(row["P97_5_Gg"]) - float(row["P2_5_Gg"])) / center if center else 0.0)
+    if not out:
+        raise ValueError("the air conditional parameter ensemble has no national rows")
+    return out
 
 
 def _kiln_frames():
@@ -168,16 +154,22 @@ def main():
                     "evidence_grade": reg["evidence_grade"],
                     "substituted_share": reg["substituted_share"],
                     "geometry_id": reg["geometry_id"],
-                    "surface": reg["surface"]})
+                    "surface": reg["surface"],
+                    **{field: reg.get(field, "") for field in
+                       ("activity_evidence_status", "activity_evidence_period",
+                        "survey_pattern_period", "survey_pattern_status")}})
                 cell = shares[(period_id, cfg, pol)]
                 cell["total"] += mass
                 basis = reg["spatial_time_basis"]
                 if basis in OWN_BASES:
                     cell["own"] += mass
-                elif basis == "reference_shape_backcast":
+                    cell[basis] += mass
+                elif basis in ("reference_shape_backcast", "reference_shape_forward"):
                     cell["borrowed"] += mass
                 elif basis == "unallocated":
                     cell["unallocated"] += mass
+                elif basis == "substituted_surface":
+                    cell["substituted_pattern"] += mass
                 else:
                     raise SystemExit("unrecognised spatial_time_basis %r for %s %s"
                                      % (basis, period_id, sid))
@@ -188,12 +180,17 @@ def main():
         total = cell["total"]
         split.append({
             "period_id": period_id, "configuration_id": cfg, "pollutant": pol,
-            "activity_factor_uncert_pct": "%.1f" % af[pol],
+            "activity_factor_uncert_pct": "%.1f" % af[(period_id, cfg, pol)],
             "activity_factor_basis": AF_BASIS,
             "own_pattern_mass_share": "%.6f" % (cell["own"] / total),
             "borrowed_pattern_mass_share": "%.6f" % (cell["borrowed"] / total),
+            "substituted_pattern_mass_share": "%.6f" % (cell["substituted_pattern"] / total),
             "substituted_mass_share": "%.6f" % (cell["substituted"] / total),
-            "unallocated_mass_share": "%.6f" % (cell["unallocated"] / total)})
+            "unallocated_mass_share": "%.6f" % (cell["unallocated"] / total),
+            "observed_activity_pattern_mass_share": "%.6f" % (cell["annual_observed_activity"] / total),
+            "static_pattern_mass_share": "%.6f" % (cell["static_structural"] / total),
+            "modelled_population_pattern_mass_share": "%.6f" % (cell["modelled_population_proxy"] / total),
+            "calendar_proxy_pattern_mass_share": "%.6f" % (cell["calendar_activity_proxy"] / total)})
     for path, fields, rows in ((SUPPORT_OUT, SUPPORT_FIELDS, support),
                                (SPLIT_OUT, SPLIT_FIELDS, split)):
         with open(path, "w", newline="", encoding="utf-8") as handle:

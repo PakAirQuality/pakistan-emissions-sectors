@@ -1,10 +1,10 @@
 category,subitem,ghg_subitem,pollutant,emissions_kt,uncert_pct
-Residential fuel combustion,Dung cake PM2.5,Dung cake CH4,PM2.5,79.858,64.0
+Residential fuel combustion,Dung cake PM2.5,Dung cake CH4,PM2.5,79.852,64.0
 Residential fuel combustion,Dung cake BC,Dung cake CH4,BC,4.907,83.6
-Residential fuel combustion,Dung cake OC,Dung cake CH4,OC,42.334,65.9
-Residential fuel combustion,Dung cake CO,Dung cake CH4,CO,856.304,68.6
-Residential fuel combustion,Dung cake NOx,Dung cake CH4,NOx,41.276,67.9
-Residential fuel combustion,Dung cake NMVOC,Dung cake CH4,NMVOC,138.548,86.0
+Residential fuel combustion,Dung cake OC,Dung cake CH4,OC,42.331,65.9
+Residential fuel combustion,Dung cake CO,Dung cake CH4,CO,856.245,68.6
+Residential fuel combustion,Dung cake NOx,Dung cake CH4,NOx,41.273,67.9
+Residential fuel combustion,Dung cake NMVOC,Dung cake CH4,NMVOC,138.539,86.0
 Residential fuel combustion,Dung cake SO2,Dung cake CH4,SO2,7.408,69.3
 Residential fuel combustion,Dung cake NH3,Dung cake CH4,NH3,12.796,77.3
 Residential fuel combustion,Firewood PM2.5,Firewood CH4,PM2.5,131.742,60.2
@@ -15,14 +15,14 @@ Residential fuel combustion,Firewood NOx,Firewood CH4,NOx,75.309,62.7
 Residential fuel combustion,Firewood NMVOC,Firewood CH4,NMVOC,153.371,72.9
 Residential fuel combustion,Firewood SO2,Firewood CH4,SO2,9.242,100.3
 Residential fuel combustion,Firewood NH3,Firewood CH4,NH3,17.5,65.2
-Residential fuel combustion,Crop residues PM2.5,Crop residues CH4,PM2.5,70.45,78.1
-Residential fuel combustion,Crop residues BC,Crop residues CH4,BC,4.635,84.9
-Residential fuel combustion,Crop residues OC,Crop residues CH4,OC,30.59,84.9
-Residential fuel combustion,Crop residues CO,Crop residues CH4,CO,852.814,72.1
-Residential fuel combustion,Crop residues NOx,Crop residues CH4,NOx,23.174,78.1
-Residential fuel combustion,Crop residues NMVOC,Crop residues CH4,NMVOC,64.888,84.9
-Residential fuel combustion,Crop residues SO2,Crop residues CH4,SO2,3.708,92.2
-Residential fuel combustion,Crop residues NH3,Crop residues CH4,NH3,12.051,84.9
+Residential fuel combustion,Crop residues PM2.5,Crop residues CH4,PM2.5,70.524,78.1
+Residential fuel combustion,Crop residues BC,Crop residues CH4,BC,4.64,84.9
+Residential fuel combustion,Crop residues OC,Crop residues CH4,OC,30.622,84.9
+Residential fuel combustion,Crop residues CO,Crop residues CH4,CO,853.709,72.1
+Residential fuel combustion,Crop residues NOx,Crop residues CH4,NOx,23.199,78.1
+Residential fuel combustion,Crop residues NMVOC,Crop residues CH4,NMVOC,64.956,84.9
+Residential fuel combustion,Crop residues SO2,Crop residues CH4,SO2,3.712,92.2
+Residential fuel combustion,Crop residues NH3,Crop residues CH4,NH3,12.063,84.9
 Residential fuel combustion,Charcoal PM2.5,Charcoal CH4,PM2.5,0.156,93.9
 Residential fuel combustion,Charcoal BC,Charcoal CH4,BC,0.004,63.3
 Residential fuel combustion,Charcoal OC,Charcoal CH4,OC,0.049,58.0
@@ -35,19 +35,19 @@ Residential fuel combustion,Natural gas CO,Natural gas CO2,CO,7.398,47.1
 Residential fuel combustion,Natural gas NMVOC,Natural gas CO2,NMVOC,0.541,40.3
 Residential fuel combustion,Natural gas SO2,Natural gas CO2,SO2,0.085,34.5
 Residential fuel combustion,Natural gas PM2.5,Natural gas CO2,PM2.5,0.341,43.2
-Residential fuel combustion,Natural gas BC,Natural gas CO2,BC,0.018,87.7
+Residential fuel combustion,Natural gas BC,Natural gas CO2,BC,0.018,88.3
 Residential fuel combustion,LPG NOx,LPG CO2,NOx,1.731,43.8
 Residential fuel combustion,LPG CO,LPG CO2,CO,0.883,50.2
 Residential fuel combustion,LPG NMVOC,LPG CO2,NMVOC,0.065,43.8
 Residential fuel combustion,LPG SO2,LPG CO2,SO2,0.01,38.6
 Residential fuel combustion,LPG PM2.5,LPG CO2,PM2.5,0.041,46.5
-Residential fuel combustion,LPG BC,LPG CO2,BC,0.002,87.7
+Residential fuel combustion,LPG BC,LPG CO2,BC,0.002,90.0
 Residential fuel combustion,Kerosene NOx,Kerosene CO2,NOx,0.055,44.7
 Residential fuel combustion,Kerosene CO,Kerosene CO2,CO,0.061,44.7
 Residential fuel combustion,Kerosene NMVOC,Kerosene CO2,NMVOC,0.001,47.4
 Residential fuel combustion,Kerosene SO2,Kerosene CO2,SO2,0.076,102.0
 Residential fuel combustion,Kerosene PM2.5,Kerosene CO2,PM2.5,0.002,43.8
-Residential fuel combustion,Kerosene BC,Kerosene CO2,BC,0.0,81.9
+Residential fuel combustion,Kerosene BC,Kerosene CO2,BC,0.0,84.3
 Residential fuel combustion,Coal NOx,Coal CO2,NOx,0.038,85.0
 Residential fuel combustion,Coal CO,Coal CO2,CO,1.569,58.7
 Residential fuel combustion,Coal NMVOC,Coal CO2,NMVOC,0.165,72.9
@@ -56,4 +56,4 @@ Residential fuel combustion,Coal PM2.5,Coal CO2,PM2.5,0.136,64.8
 Residential fuel combustion,Coal PM10,Coal CO2,PM10,0.138,64.0
 Residential fuel combustion,Coal TSP,Coal CO2,TSP,0.151,71.3
 Residential fuel combustion,Coal NH3,Coal CO2,NH3,0.0,107.7
-Residential fuel combustion,Coal BC,Coal CO2,BC,0.009,112.3
+Residential fuel combustion,Coal BC,Coal CO2,BC,0.009,119.2

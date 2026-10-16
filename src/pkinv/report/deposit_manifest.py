@@ -51,6 +51,7 @@ from pkinv.core import manifest as manifest_core
 from pkinv.paths import DATA, OUTPUTS, ROOT
 from pkinv.report import release_manifest
 from pkinv.core.io import read_rows
+from pkinv.core.reporting_window import RETIRED_GHG_PANEL_PRODUCTS
 from pkinv.assets import catalog as asset_catalog, resolve, legacy_path
 
 
@@ -94,12 +95,10 @@ OUTBOUND_VALUES = (PUBLIC_LICENCE, OWN_WORK, COMPILATION, NOT_ESTABLISHED, PROHI
 DEPOSITABLE = (PUBLIC_LICENCE, OWN_WORK, COMPILATION, MIXED)
 
 # A FILE WHOSE OWN ROWS CARRY LICENCES CANNOT HAVE ONE. Both facility registries have a
-# `licence` column describing each facility's provenance, and 71 of their 12,680 rows read
-# `odbl-1.0 (OpenStreetMap contributors; derivative database)` - a share-alike position this
-# project cannot waive. They were shipping as plain `own-work` with the reason "this
-# project's own code, product or prose", which is the exact claim the limitations section
-# says this project cannot make: the deposit would have offered 71 ODbL database rows under
-# a CC-BY grant. The whole-file licence is now `mixed-per-row` and the reason names the
+# `licence` column describing each facility's provenance. Counts are read from the file;
+# rows labelled `odbl-1.0 (OpenStreetMap contributors; derivative database)` have a share-alike position this
+# project cannot waive. A whole-file `own-work` grant would incorrectly cover those database
+# rows. The whole-file licence is `mixed-per-row` and the reason names the
 # column, so the per-row position travels with the file instead of being overwritten by it.
 #
 # The DISTINCTION that makes this a short list rather than a rule: assets.csv and
@@ -135,6 +134,9 @@ ROW_LICENSED = {
 # Derived rather than hand-entered a second time: two registers of one fact are two vintages
 # waiting to disagree, and this repository has paid for that lesson more than once.
 OUTBOUND_OF_LICENCE = {
+    "own-work": OWN_WORK,
+    "own-work-compilation": COMPILATION,
+    "public-licence": PUBLIC_LICENCE,
     "cc-by-4.0": PUBLIC_LICENCE,
     "odbl": PUBLIC_LICENCE,
     "unfccc-public": PUBLIC_LICENCE,
@@ -178,16 +180,15 @@ INBOUND_OVERRIDES = {
 # found that nothing READ them either - every Climate TRACE consumer reads sources/ -
 # and removed the directory; the rule that covered it went with it.
 DATA_FAMILIES = (
-    # rc64: preserved measurement baselines. Each file under data/baselines/ is a byte copy of
-    # one of this project's OWN shipped outputs, taken at a named moment so a later change can be
-    # measured against something rather than described. They ship because a comparison whose
-    # baseline a reader cannot obtain is an assertion - the point of preserving them was that two
-    # states are comparable without either being a commit, and that only holds if both travel.
-    # They are not third-party data and carry no upstream terms; the directory's own README says
-    # what state each represents and its SHA256SUMS pins them.
-    ("data/baselines/*", OWN_WORK,
-     "a preserved copy of this project's own output, held as the baseline of a published "
-     "measurement"),
+    ("data/gis/manual/spam*.tif", PUBLIC_LICENCE,
+     "IFPRI SPAM 2020 V2r2; CC-BY-4.0 under dataset Terms of Use section 4; retained Dataverse API metadata and RICE_SOURCES.json hashes"),
+    ("data/gis/manual/ghsl_built_1km/*.tif", PUBLIC_LICENCE,
+     "European Commission GHSL R2023A; CC-BY-4.0 with dataset citation and retained GHSL_SOURCES.json hashes"),
+    ("data/gis/worldpop_pak_2020_1km.tif", PUBLIC_LICENCE,
+     "WorldPop 2020 population raster; CC-BY-4.0 as recorded in PROXY_SOURCES.md; original provider attribution retained"),
+    # Prior spatial products can inherit upstream terms. Preservation does not clear them.
+    ("data/baselines/*", PUBLIC_LICENCE,
+     "preserved prior release; ODbL-sensitive companion database with original contents licences retained"),
     # v1.0.0: the JSON Schemas under data/schemas/ are this project's own contracts
     ("data/schemas/*.schema.json", OWN_WORK, "this project's own contract (a JSON Schema)"),
     ("data/claim_matrix.csv", OWN_WORK, "this project's own registry of the national manuscript's headline claims"),
@@ -208,6 +209,12 @@ DATA_FAMILIES = (
     ("data/gis/proxy_*.npy", PUBLIC_LICENCE,
      "WorldPop, ESA WorldCover and FAO GLW rasters, each CC-BY-4.0 per the licence column "
      "of data/gis/PROXY_SOURCES.md; attribution travels with them"),
+    ("data/gis/*.npy.txt", OWN_WORK,
+     "this project's one-line provenance note beside a cached proxy grid; the grid loader reads "
+     "it, and the grid itself carries the licence"),
+    ("data/gis/*.csv.txt", OWN_WORK,
+     "this project's provenance note beside the exact-area ADM2 partition it deposits; the "
+     "partition carries its own classification"),
     ("data/gis/*SOURCES*.json", OWN_WORK, "this project's provenance notes for a geometry set"),
     ("data/gis/**/*SOURCES*.json", OWN_WORK, "as above, per geometry family"),
     # rc40: the two registries the validation package stands on. Neither is read from a
@@ -233,10 +240,8 @@ DATA_FAMILIES = (
      "this project's register of tables extracted from documents the package does not ship"),
     ("data/product_columns.csv", OWN_WORK,
      "this project's typed column registry of its products, verified by tests/validation/test_product_columns.py"),
-    ("data/activity/aviation/adsblol_pilot_fy2023_24.json", OWN_WORK,
-     "this project's own ADS-B pilot summary (a byte copy of its sources/ original, "
-     "registered in data/consumed_derivatives.csv); the raw traces it summarises are ODbL "
-     "and are not held"),
+    ("data/activity/aviation/adsblol_pilot_fy2023_24.json", PUBLIC_LICENCE,
+     "ADS-B summary derived from ODbL traces; retained in the ODbL companion with source terms"),
     # An inventory OF third-party files is this project's own work and carries no third-party
     # rights: it records names, hashes, URLs and retrieval dates, and redistributes none of the
     # documents it describes. That distinction is the whole reason the deposit ships derived
@@ -376,12 +381,38 @@ DEPOSIT_PATTERNS = (
     # the data products - the reason the deposit exists
     ("product", release_manifest.PRODUCT_PATTERNS),
     # the engine that produced them, and the contract it is held to
-    ("code", ("src/pkinv/**/*.py", "scripts/*.py", "run_all.py", "tests/**/*.py")),
+    ("code", ("src/pkinv/**/*.py", "src/pakemis_query/**/*.py", "scripts/*.py", "run_all.py", "tests/**/*.py",
+              "tests/paper_numbers/retired_sentence_claims_rc68.json", "tests/semantic/golden/*.json",
+              "tests/fixtures/rc68_legacy_figure_revisions.csv")),
     # what a reader needs to interpret and rebuild
-    ("build", ("Makefile", "pyproject.toml", "requirements.lock", ".github/workflows/*.yml")),
+    ("build", ("Makefile", "pyproject.toml", "requirements.txt", "requirements.lock", "reproduce.sh", ".github/workflows/*.yml")),
     ("documentation", ("README.md", "docs/*.md", "CITATION.cff", ".zenodo.json",
-                       "LICENSE", "LICENSE-data")),
+                       "LICENSE", "LICENSE-data", "LICENSE-ODbL",
+                       "campaign/v3_readiness/repair_register.csv",
+                       "campaign/v3_readiness/numerical_changes.csv",
+                       "campaign/v3_readiness/pbs_timing_before_after.csv",
+                       "campaign/v3_readiness/nfdc_timing_before_after.csv",
+                       "campaign/v3_readiness/liberty_so2_before_after.csv",
+                       "campaign/v3_readiness/ke_energy_basis_before_after.csv",
+                       "campaign/v3_readiness/crop_uncertainty_before_after.csv",
+                       "campaign/v3_readiness/final_report.md",
+                       "campaign/v3_readiness/scientific_changes.md",
+                       "campaign/v3_readiness/INTEGRATED_WORK_LOG.md",
+                       "campaign/v3_readiness/reproduction_rc68/*")),
     ("manuscript", ("papers/pdf/*.pdf",)),
+    # rc68: paper_national/queries/*.csv, the stored-query registry make_paper_artefacts.py
+    # reads, and the v3 figure scripts under figures/rewrite_inputs/ with their README and
+    # the transcription record a test compares against; the first rc68 clean rebuild
+    # stopped at "Paper artefacts" and at "Manuscript figures, v3" without them.
+    ("manuscript_source", ("paper_national/**/*.tex", "paper_national/**/*.bib",
+         "paper_national/queries/*.csv",
+         "paper_national/figures/rewrite_inputs/*.py", "paper_national/figures/rewrite_inputs/README.md",
+         "paper_national/figures/rewrite_inputs/transcribed_csv/*.csv",
+         "paper_national/versions/v3/short_summary.txt",
+         "paper_national/figures/*.pdf", "paper_national/figures/*.csv", "paper_national/figures/*.json",
+         "paper_national/figures/integrated_inputs/*.csv",
+         "papers/**/*.tex", "paper_common/**/*.tex", "paper_common/**/*.bib",
+         "paper_common/copernicus/*", "paper_common/*.sty")),
     # The provenance record. It was missing, which was incoherent: the deposit pointed at
     # release_manifest.json as the artefact holding the digests of everything this file
     # cannot digest, and then did not ship it. Both are context-stamped, so neither is
@@ -394,8 +425,21 @@ DEPOSIT_PATTERNS = (
     # allowlist" purely because the patterns stopped at .csv/.json/.md. They are openly
     # licensed, the cube needs them, and their ODbL share-alike obligation travels with them
     # through LICENSE-data.
+    # rc68: data/**/*.npy.txt, the provenance line beside each cached proxy grid. The grid
+    # loader reads it, so the first clean rebuild of rc68 stopped at "Agriculture districts"
+    # with the .npy deposited and its sidecar not.
+    # rc68: data/baselines/**/*.tex. The rc67 campaign baseline preserves the v3 sources
+    # beside their PDFs and its SHA256SUMS names all six; the companion shipped the PDFs and
+    # the list, so `shasum -c` on the deposited baseline failed on the three sources.
+    # rc68: data/**/*.csv.txt, the provenance note beside the deposited ADM2 partition; the
+    # clean rebuild's data provenance listed the partition without it.
     ("input", ("data/*.csv", "data/**/*.csv", "data/**/*.json", "data/**/*.md",
-               "data/**/*.geojson", "data/**/*.npy")),
+               "data/**/*.geojson", "data/**/*.npy", "data/**/*.npy.txt", "data/**/*.csv.txt",
+               "data/baselines/**/*.nc",
+               "data/baselines/**/*.parquet", "data/baselines/**/*.pdf", "data/baselines/**/*.tex",
+               "data/baselines/**/SHA256SUMS",
+               "data/sectors/agriculture/gis/manual/spam*.tif",
+               "data/shared/gis/manual/ghsl_built_1km/*.tif", "data/shared/gis/worldpop_pak_2020_1km.tif")),
 )
 
 # CONTEXT-STAMPED ARTEFACTS: they ship, and this file may not record their digest.
@@ -438,6 +482,18 @@ CONTEXT_STAMPED = (
     ("outputs/pakemis_claim_matrix.csv", "release_manifest.json",
      "written after this step (phase 115 against 113), so its digest is one generation "
      "stale here"),
+    # rc68: the same class again, found the same way. The citation deposit audit reads this
+    # manifest, so its phase must follow it, and on a warm tree its previous copy was hashed.
+    ("outputs/pakemis_citation_deposit_audit.csv", "release_manifest.json",
+     "written after this step (the audit reads this manifest), so its digest is one "
+     "generation stale here"),
+    # rc68: found by the first clean rebuild of this release, which refuses a deposited input
+    # whose digest does not match. The release fixpoint writes the cover from the release
+    # manifest AFTER this file, and the cover prints the commit it describes, so the digest
+    # recorded here was always the previous fixpoint's.
+    ("paper_common/release_cover.tex", "itself",
+     "written by the release fixpoint after this file and prints the commit it describes, so "
+     "a digest recorded here is one fixpoint stale by construction"),
     ("papers/pdf/*.pdf", "outputs/pakemis_paper_hashes.csv",
      "built by the release fixpoint after this file, and LaTeX stamps a creation date into "
      "every one, so no digest recorded here could ever be reproduced"),
@@ -477,8 +533,25 @@ def _rows(path):
 
 def source_documents():
     return [dict(row, data_file=storage_path(row["data_file"]),
-                 archived_path=storage_path(row["archived_path"]) if row.get("archived_path") else "")
+                 archived_path=document_location(row["archived_path"]) if row.get("archived_path") else "")
             for row in _rows(SOURCE_DOCUMENTS)]
+
+
+def document_location(relative):
+    """Where a cited document is held, from the raw manifest and not from the disk.
+
+    storage_path leaves a legacy directory alone only while it exists on disk, because the
+    raw documents stayed put when the ingests moved. The deposit does not carry those
+    documents, so in the rc68 clean rebuild data/pbs_census and data/district_records were
+    absent and the register named the migrated CSV folders as where the documents are. The
+    raw manifest is deposited and lists every held document, so it answers the same way in
+    both trees.
+    """
+    held = _held_manifest_hashes()
+    prefix = relative.rstrip("/") + "/"
+    if relative in held or any(path.startswith(prefix) for path in held):
+        return os.path.normpath(relative)
+    return storage_path(relative)
 
 
 def outbound_of(row):
@@ -496,6 +569,8 @@ def outbound_of(row):
         return outbound, "publisher states %s" % status
     if outbound == OWN_WORK:
         return outbound, "built from files already in this repository"
+    if outbound == COMPILATION:
+        return outbound, "this project's documented transcription of published quantities"
     return outbound, "lawfully obtained from a public publication; no terms stated"
 
 
@@ -521,6 +596,19 @@ def deposit_files():
                     continue
                 seen.add(relative)
                 out.append((kind, relative))
+    # rc68: the held products. A reproduction from an empty outputs/ seeds them
+    # (tests/validation/seed_held_products.py), and clean_rebuild.py seeded them from the
+    # maintainer's checkout, so the comparison passed while 66 of them were not in the
+    # deposit: a reader who unpacked the archives stopped at "Derivation chains" for want of
+    # the transport class tables. The checksum list is context-stamped and stays out.
+    # outputs/figures/ is excluded as regenerable, which a HELD figure is not: no phase
+    # draws it, so it ships with the other held products.
+    for relative in held_product_paths():
+        excluded = _excluded(relative) and not relative.startswith("outputs/figures/")
+        if relative in seen or excluded or not os.path.isfile(os.path.join(ROOT, relative)):
+            continue
+        seen.add(relative)
+        out.append(("product", relative))
     # rc41: the products this phase and every LATER phase declare they write (run_all.py) -
     # this manifest and the source register included - listed by
     # declaration so a first run from an empty outputs/ deposits the same set as the
@@ -541,6 +629,13 @@ def deposit_files():
     return sorted(out, key=lambda pair: pair[1])
 
 
+def held_product_paths():
+    """The registered held products under outputs/ that a reader's build needs seeded."""
+    path = resolve(os.path.join(DATA, "held_products.csv"), root=ROOT)
+    return sorted(row["path"] for row in _rows(path)
+                  if row["path"].startswith("outputs/") and not row["path"].endswith("/SHA256SUMS"))
+
+
 def _excluded(relative):
     # rc41: the validation package's presentation copies and views under data/ are the
     # package's reading index, not deposit content (pkinv.core.presentation).
@@ -548,7 +643,8 @@ def _excluded(relative):
     # The archive carries the complete source/schema recipe and catalog hashes.
     # Canonical CSVs are reconstructed offline before calculations; depositing
     # their duplicate values adds no evidence. Undeclared files still fail closed.
-    return (relative in _canonical_source_paths()
+    return (relative in RETIRED_GHG_PANEL_PRODUCTS
+            or relative in _canonical_source_paths()
             or any(relative.startswith(tree) for tree in EXCLUDED_TREES)
             or relative in presentation.layer())
 
@@ -582,6 +678,13 @@ def licence_of_deposited(relative, by_data_file):
         source = _canonical_source_paths()[relative]
         licence, reason = licence_of_deposited(source, by_data_file)
         return licence, "%s; lossless canonical copy of %s" % (reason, source)
+    from pkinv.report.deposit_licensing import upstream_dependencies
+    dependencies = upstream_dependencies(relative, by_data_file)
+    if dependencies:
+        return PUBLIC_LICENCE, ("ODbL-1.0 companion database; original contents licences retained; "
+                                "upstream dependencies: " + ";".join(dependencies))
+    if relative.startswith("paper_common/copernicus/"):
+        return PUBLIC_LICENCE, "third-party Copernicus typesetting files; original LPPL notices retained"
     if legacy_path(relative, root=ROOT).startswith("data/extracted/unfccc/"):
         return _extract_licences()[relative]
     row = by_data_file.get(relative)
@@ -700,6 +803,7 @@ def _extract_licences():
 def build_deposit():
     by_data_file = {r["data_file"]: r for r in source_documents()}
     rows = []
+    from pkinv.report.deposit_licensing import package_group, upstream_dependencies
     for kind, relative in deposit_files():
         licence, reason = licence_of_deposited(relative, by_data_file)
         # Hashed from the RESOLVED allowlist rather than by re-globbing the patterns: the
@@ -713,6 +817,8 @@ def build_deposit():
             "kind": kind,
             "outbound_licence": licence,
             "licence_reason": reason,
+            "package_group": package_group(relative, by_data_file),
+            "upstream_dependencies": ";".join(upstream_dependencies(relative, by_data_file)),
             # Size is omitted with the digest for the same reason: it is one generation
             # stale for anything written after this step, and a stale number that looks
             # current is worse than a blank that says why.
@@ -928,6 +1034,11 @@ def _write(path, rows, header_lines):
 
 
 def main():
+    from pkinv.report.deposit_licensing import audit_rows
+    _write(os.path.join(OUTPUTS, "pakemis_primary_geography_licence_audit.csv"), audit_rows(), [
+        "Primary and ODbL-sensitive package scopes; calculation-time exclusion is required.",
+        "Conservative companion classification is retained for historical spatial products and baselines.",
+    ])
     deposit = build_deposit()
     register = build_register()
 

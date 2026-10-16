@@ -213,19 +213,23 @@ class TestFigureTextIsDerived(unittest.TestCase):
         ever redrawn as a distribution plot, this test fails on its first assertion and
         must be rewritten with the caption, together.
         """
+        import importlib.util
         import inspect
-        # v1.0.0: the figure is the stored query fig_uncertainty (paper_figures.uncertainty,
-        # fed by get_uncertainty); it draws the P2.5-P97.5 interval with the median ticked.
-        from pkinv.report import paper_figures
-        src = inspect.getsource(paper_figures.uncertainty)
-        self.assertTrue('"P2.5"' in src and '"P97.5"' in src
+        # The active joint manuscript separates interval bars and structural points.
+        spec = importlib.util.spec_from_file_location(
+            "integrated_figures", os.path.join(ROOT, "scripts", "build_integrated_figures.py"))
+        builder = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(builder)
+        src = inspect.getsource(builder.sensitivity)
+        self.assertTrue('"P2_5_Gg"' in src and '"P97_5_Gg"' in src and 'S.interval(' in src
                         and not any(w in src for w in ("hist(", "kde", "violin",
                                                        "fill_between")),
-                        "paper_figures.uncertainty() no longer draws percentile interval bars; "
+                        "sensitivity() no longer draws percentile interval bars; "
                         "rewrite the caption and this guard together")
         path = os.path.join(PAPER_NATIONAL_SECTIONS, "07_uncertainty.tex")
-        text = " ".join(open(path, encoding="utf-8").read().split())
-        m = re.search(r"fig_uncertainty\.png\}\s*\\caption\{(.*?)\}\s*"
+        with open(path, encoding="utf-8") as handle:
+            text = " ".join(handle.read().split())
+        m = re.search(r"f12_air_sensitivity\.pdf\}\s*\\caption\{(.*?)\}\s*"
                       r"\\label\{fig:uncertainty\}", text)
         self.assertTrue(m, "the uncertainty figure block or its caption moved; re-anchor")
         self.assertNotRegex(m.group(1), r"[Dd]istribution",

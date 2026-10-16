@@ -1,63 +1,7 @@
-% ===========================================================================
 \section{Introduction}
 \label{sec:introduction}
-% ===========================================================================
+Pakistan's thermal fleet combines imported bituminous coal, domestic lignite, gas/RLNG and liquid fuels across CPPA-G/GENCO and K-Electric. NEPRA publishes national fuel controls and plant-level physical fuel, generation and heat-rate records. Their reconciliation provides country-specific activity and boundaries that an aggregate energy table cannot resolve.
 
-Pakistan's thermal generating fleet is a small, fully licensed, fully metered population:
-roughly seventy plant--fuel series across three systems---the CPPA-G market operator's
-independent producers, four legacy public generating companies, and the vertically integrated
-K-Electric utility in Karachi---burning imported bituminous coal, domestic Thar lignite,
-pipeline gas, regasified LNG, furnace oil and diesel. Its regulator publishes both a national
-fuel account and, in the same annual report, plant-level fuel and generation tables that
-national inventories, including this one until now, have left unread.
+This note selects station coal consumption times rank-specific NCV, distinguishes energy from electricity, and tests fuel-specific system coverage. It supports one common GHG and air inventory over July 2015--June 2025. Captive gas is calculated here but reported in industrial combustion. The module's reference-year AR5 total is \SI{\SectorRefGHG}{\mega\tonne} CO$_2$-equivalent; native gases remain separate.
 
-This paper reconstructs that fleet plant by plant and forces it to reconcile with the national
-statistics above it. The architecture is a control total with a ledger underneath: the
-regulator's national fuel table---in tonnes of oil equivalent, already an energy unit---sets
-each fuel's magnitude, and a ledger parsed from the plant tables, covering \SI{99.0}{\percent}
-of thermal generation, sets the structure beneath it: which plants, burning which coal, in
-which province, at what implied efficiency. The reconciliation runs both ways. The ledger
-answers questions the national table cannot---the coal blend becomes an observation rather
-than an inference---and it interrogates the national table itself, yielding two findings about
-Pakistan's official energy statistics that the aggregate figures alone could never expose.
-
-On that basis we report \SI{45.59}{\mega\tonne} \COe{} for FY2023--24 across two IPCC
-categories---grid generation (1A1a) at \SI{40.04}{\mega\tonne} and industrial captive gas
-self-generation (1A2) at \SI{5.55}{\mega\tonne}---on a single reference year,
-\SI{10.2}{\percent} of a ten-sector national inventory, with an air-pollutant layer published
-as an explicitly uncontrolled bound. The grid figure is the selected member of a
-structural family (\SI{38.45}{} and \SI{44.05}{\mega\tonne} are the
-plant-implied-calorific and K-Electric-inclusive readings, the first a fuel-property
-alternative and the second a coverage alternative kept apart from it), and no parametric
-interval in this paper is quoted without that family beside it.
-
-\subsection{Contributions}
-
-\begin{enumerate}[leftmargin=*,itemsep=2pt,topsep=3pt]
-\item \textbf{A plant fuel ledger} parsed from the regulator's own tables, covering
-  \SI{99.0}{\percent} of FY2023--24 thermal generation, validated per fuel against a
-  generation table the parser never reads and screened row-by-row against fuel-intensity
-  physics (Section~\ref{sec:data}).
-\item \textbf{A coal blend read from plant identity} rather than inferred: lignite share
-  \num{0.79}, with the one plant whose origin its name does not state carried as bounds
-  (\numrange{0.752}{0.835}). On the energy basis this activity is kept in, the blend moves
-  the coal factor by \SI{6.8}{\percent} end to end rather than the factor of two it is worth
-  per tonne (Sections~\ref{sec:methods} and~\ref{sec:factors}).
-\item \textbf{A physical energy closure} between plant meters and the national table. Its
-  assumption-free leg---plants metered in MMBTU---implies \SI{48.7}{\percent} net efficiency,
-  evidence that the national table is on the net calorific basis the IPCC factors require,
-  which had been this sector's largest declared risk (Section~\ref{sec:validation}).
-\item \textbf{Two findings about the official statistics}, published rather than absorbed:
-  the national coal energy implies a calorific value \num{1.86} times what a
-  \SI{92}{\percent}-lignite fleet supports, and the plant sums bracket the national gas row
-  only when K-Electric is excluded---each a question worth megatonnes, posed precisely enough
-  to be settled by a tariff filing or a scope note (Section~\ref{sec:validation}).
-\item \textbf{Captive gas self-generation}, from metered gas reconciling with a 1,105-plant
-  register to within \SI{0.01}{} MMCFD, reported as a floor on industrial combustion rather
-  than an estimate of it; and \textbf{an air-pollutant layer as a declared uncontrolled
-  bound}, with the parameters that would turn it into an estimate named
-  (Section~\ref{sec:air}).
-\end{enumerate}
-
-Method shared with the other nine sectors---the module contract, the accounting closures,
-the correlated-uncertainty treatment---is documented separately \citep{ahmad2026national}.
+Reviewed oil/diesel SO$_2$ joins the central air panel, while coal/gas/control cases remain separately typed. Public design documents improve selected-plant scenarios without supplying measured annual removal. The contribution is traceable station activity, rank/material accounting and explicit boundary alternatives rather than finer nominal grids alone. Shared national methods and products are documented in the national paper \citep{ahmad2026national}.

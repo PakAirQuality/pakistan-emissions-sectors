@@ -105,9 +105,15 @@ class TestCoverage(unittest.TestCase):
         """Every ledger coal plant-year joins a heat-rate row except Engro Powergen Thar
         FY2019 and FY2020, which Table 23 simply does not print."""
         rows = implied_cv.implied_coal_cv(PowerData())
-        self.assertEqual(len(rows), 29)
+        historical = [r for r in rows if r["fiscal_year"] <= 2023]
+        self.assertEqual(len(historical), 29)
+        self.assertEqual(len([r for r in rows if r["fiscal_year"] == 2024]), 9)
         missing = [(r["plant"], r["fiscal_year"]) for r in rows
-                   if r["evidence_class"] == "no-hr"]
+                   if r["evidence_class"] == "no-hr" and r["fiscal_year"] <= 2023]
+        # New station consumption is usable without a published heat-rate table;
+        # the diagnostic must keep that absence rather than manufacture heat.
+        self.assertTrue(all(r["evidence_class"] == "no-hr" for r in rows
+                            if r["fiscal_year"] == 2024))
         self.assertEqual(sorted(missing),
                          [("Engro Powergen Thar", 2019), ("Engro Powergen Thar", 2020)])
 

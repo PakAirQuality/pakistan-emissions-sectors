@@ -38,11 +38,11 @@ class TestNineYearSpatialProducts(unittest.TestCase):
         cls.periods = [r["period_id"] for r in rows(asset_path(DATA, "periods.csv"))]
         cls.national = collections.defaultdict(lambda: collections.defaultdict(float))
         for row in rows(os.path.join(OUTPUTS,
-                                     "pakemis_monthly_fy2015_16_fy2023_24.csv")):
+                                     "pakemis_monthly_fy2015_16_fy2024_25.csv")):
             cls.national[row["period_id"]][row["gas"]] += float(row["emission_native_mass"])
 
     def test_both_products_carry_every_registered_period(self):
-        self.assertEqual(len(self.periods), 9)
+        self.assertEqual(set(self.periods), {r["period_id"] for r in self.adm1})
         for table, name in ((self.adm1, "adm1"), (self.adm2, "adm2"),
                             (self.fallbacks, "fallbacks")):
             self.assertEqual({r["period_id"] for r in table}, set(self.periods), name)
@@ -141,10 +141,12 @@ class TestTheMonthsBelowTheNation(unittest.TestCase):
         cls.monthly = rows(os.path.join(OUTPUTS, "pakemis_adm2_monthly_by_year.csv"))
         cls.annual = rows(os.path.join(OUTPUTS, "pakemis_adm2_by_year.csv"))
 
-    def test_the_product_carries_one_hundred_and_eight_months(self):
+    def test_the_product_carries_twelve_months_per_registered_period(self):
         months = {r["month"] for r in self.monthly} - {"all"}
-        self.assertEqual(len(months), 108)
-        self.assertEqual(len({r["period_id"] for r in self.monthly}), 9)
+        from pkinv.report.annual_grid import period_bounds
+        periods = {p[0] for p in period_bounds()}
+        self.assertEqual(len(months), 12 * len(periods))
+        self.assertEqual({r["period_id"] for r in self.monthly}, periods)
 
     def test_the_reference_year_is_the_file_that_already_shipped(self):
         """Byte-for-byte, not approximately: a second monthly ADM2 table that differed from
@@ -248,10 +250,14 @@ class TestTheSubstitutionRecordIsPublishedPerYear(unittest.TestCase):
                        for r in rows(asset_path(DATA, "allowed_grid_fallbacks.csv"))}
 
     def test_every_substitution_in_every_year_is_allow_listed(self):
-        """The fail-closed gate, now over nine years instead of one."""
+        """The fail-closed gate over every supported core period."""
         for row in self.fallbacks:
             self.assertIn((row["scope"], row["declared"], row["used"]), self.allowed,
                           "%s %s" % (row["period_id"], row["source_stream_id"]))
+            if (row["scope"], row["declared"], row["used"]) == \
+                    ("raster", "firms_fire", "cropland"):
+                self.assertEqual(row["period_id"], "FY2024-25",
+                                 "a held-period FIRMS layer was lost, rather than extended")
 
     def test_the_grid_fleet_substitution_stays_small_in_every_year(self):
         """Rewritten at rc46 Wave 1, which retired the premise of its predecessor.

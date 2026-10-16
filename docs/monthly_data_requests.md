@@ -4,19 +4,19 @@
 read from `outputs/pakemis_temporal_decomposition.csv` when this file is written, so a
 request cannot go on claiming a gap that has been closed. Do not edit it by hand.*
 
-The monthly product carries 4001.0 Mt of CO2e-AR5 across nine years. Of that, 21.8% is
+The monthly product carries 4494.9 Mt of CO2e-AR5 across nine years. Of that, 21.7% is
 mass that should vary within the year, is carried flat, and is asked for below.
 
 | request | recipient | what it would close | share of monthly mass |
 |---|---|---|---|
-| `MON-OCAC-01` | Oil Companies Advisory Council (OCAC) | 5 components | **10.82%** |
-| `MON-GAS-01` | OGRA with SNGPL and SSGC, and PPIS/DGPC for field-level detail | 6 components | **4.18%** |
-| `MON-NFDC-01` | National Fertilizer Development Centre (NFDC) | 2 components | **2.90%** |
-| `MON-CPPAG-01` | CPPA-G and NEPRA | 1 component | **2.71%** |
+| `MON-OCAC-01` | Oil Companies Advisory Council (OCAC) | 5 components | **9.89%** |
+| `MON-GAS-01` | OGRA with SNGPL and SSGC, and PPIS/DGPC for field-level detail | 6 components | **4.13%** |
+| `MON-CPPAG-01` | CPPA-G and NEPRA | 1 component | **3.27%** |
+| `MON-NFDC-01` | National Fertilizer Development Centre (NFDC) | 2 components | **3.07%** |
 | `MON-MUNI-01` | Provincial local government departments, municipal waste authorities (LWMC, SSWMB) and the WASAs (wastewater) | 1 component | **0.78%** |
-| `MON-PETDIV-01` | Petroleum Division (Directorate General of Petroleum Concessions) | 6 components | **0.35%** |
+| `MON-PETDIV-01` | Petroleum Division (Directorate General of Petroleum Concessions) | 6 components | **0.48%** |
 | `MON-OCAC-03` | Oil Companies Advisory Council (OCAC) | 1 component | **0.02%** |
-| `MON-CROP-01` | Pakistan Agricultural Research Council and provincial crop reporting services | 1 component | module evidence, not timing |
+| `MON-CROP-01` | Pakistan Agricultural Research Council and provincial crop reporting services | 1 component | **0.01%** |
 | `MON-NFDC-02` | National Fertilizer Development Centre (NFDC) | 1 component | module evidence, not timing |
 | `MON-NHA-01` | National Highway Authority (RAMD / toll & traffic systems) | 1 component | module evidence, not timing |
 | `MON-QIM-01` | Pakistan Bureau of Statistics (Quantum Index of Manufacturing) | 1 component | module evidence, not timing |
@@ -39,11 +39,11 @@ Extend the monthly petroleum sales panel back to the start of the inventory wind
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| transport / Road transport | 283.17 Mt | 7.08% | 33.3% | OCAC customer-class monthly sales |
-| industry / Industrial fuel combustion (1A2) | 134.52 Mt | 3.36% | 100.0% | OCAC monthly industrial liquids and utility gas deliveries |
-| transport / Mixed off-road (1A4c/1A2) | 10.22 Mt | 0.26% | 33.3% | a claimant-specific profile: agricultural machinery follows the crop calendar and construction plant does not |
-| railways / Railways | 2.58 Mt | 0.07% | 33.3% | OCAC railway diesel, monthly |
-| aviation / Domestic aviation | 2.46 Mt | 0.06% | 33.3% | OCAC JP-1 monthly |
+| transport / Road transport | 285.86 Mt | 6.36% | 40.0% | OCAC customer-class monthly sales |
+| industry / Industrial fuel combustion (1A2) | 143.41 Mt | 3.19% | 100.0% | OCAC monthly industrial liquids and utility gas deliveries |
+| transport / Mixed off-road (1A4c/1A2) | 10.35 Mt | 0.23% | 40.0% | a claimant-specific profile: agricultural machinery follows the crop calendar and construction plant does not |
+| railways / Railways | 2.58 Mt | 0.06% | 40.0% | OCAC railway diesel, monthly |
+| aviation / Domestic aviation | 2.46 Mt | 0.06% | 40.0% | OCAC JP-1 monthly |
 
 ## MON-GAS-01 — OGRA with SNGPL and SSGC, and PPIS/DGPC for field-level detail
 
@@ -58,28 +58,12 @@ Give the gas network's seven fugitive segments and captive self-generation a mon
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| fugitives / Gas distribution | 56.91 Mt | 1.42% | 0.0% | utility system throughput and gas sold |
-| power / Captive gas self-generation (1A2) | 50.68 Mt | 1.27% | 0.0% | monthly captive gas deliveries by utility |
-| fugitives / Post-meter industrial and power | 35.61 Mt | 0.89% | 0.0% | monthly consumer-class deliveries |
-| fugitives / Gas transmission | 14.66 Mt | 0.37% | 0.0% | indigenous production plus monthly RLNG send-out |
-| fugitives / Post-meter appliances | 8.46 Mt | 0.21% | 0.0% | monthly consumer-class deliveries |
-| fugitives / LNG import terminals | 1.03 Mt | 0.03% | 0.0% | monthly RLNG terminal receipts |
-
-## MON-NFDC-01 — National Fertilizer Development Centre (NFDC)
-
-Put the fertiliser calendar behind managed-soil nitrogen in every year rather than one; a single edition cannot be carried across years because sowing dates and import arrivals move it.
-
-**Period.** Fertilizer years 2015-16 to 2022-23  
-**Fields.** Annex-5 national offtake by month and product; Annex-7 offtake by province, month and product; product tonnes  
-**Boundary and definitions.** Product tonnes as published, not nutrient tonnes; the fertiliser year runs April to March and the mismatch against the July-June fiscal year is handled here and does not need adjusting at source  
-**Format.** PDF or XLSX of the Annual Fertilizer Review back editions  
-**Status.** drafted_not_sent  
-**Where to ask.** NFDC Islamabad; AFR 2024-25 and FR 2026 are already held under data/nfdc
-
-| component | unobserved | share of monthly mass | months already carried | driver |
-|---|---|---|---|---|
-| agriculture / Managed soils | 116.02 Mt | 2.90% | 100.0% | fertiliser offtake and application calendar |
-| agriculture / Urea application | 0.00 Mt | 0.00% | 100.0% | urea offtake |
+| fugitives / Gas distribution | 64.05 Mt | 1.43% | 0.0% | utility system throughput and gas sold |
+| power / Captive gas self-generation (1A2) | 55.80 Mt | 1.24% | 0.0% | monthly captive gas deliveries by utility |
+| fugitives / Post-meter industrial and power | 38.74 Mt | 0.86% | 0.0% | monthly consumer-class deliveries |
+| fugitives / Gas transmission | 16.35 Mt | 0.36% | 0.0% | indigenous production plus monthly RLNG send-out |
+| fugitives / Post-meter appliances | 9.49 Mt | 0.21% | 0.0% | monthly consumer-class deliveries |
+| fugitives / LNG import terminals | 1.16 Mt | 0.03% | 0.0% | monthly RLNG terminal receipts |
 
 ## MON-CPPAG-01 — CPPA-G and NEPRA
 
@@ -94,7 +78,23 @@ Close the RESIDUAL the public record cannot: monthly fuel quantities by plant wh
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| power / Electricity and heat production | 108.44 Mt | 2.71% | 100.0% | plant-month generation by fuel |
+| power / Electricity and heat production | 146.83 Mt | 3.27% | 100.0% | plant-month generation by fuel |
+
+## MON-NFDC-01 — National Fertilizer Development Centre (NFDC)
+
+Put the fertiliser calendar behind managed-soil nitrogen in every year rather than one; a single edition cannot be carried across years because sowing dates and import arrivals move it.
+
+**Period.** Fertilizer years 2015-16 to 2022-23  
+**Fields.** Annex-5 national offtake by month and product; Annex-7 offtake by province, month and product; product tonnes  
+**Boundary and definitions.** Product tonnes as published, not nutrient tonnes; the fertiliser year runs April to March and the mismatch against the July-June fiscal year is handled here and does not need adjusting at source  
+**Format.** PDF or XLSX of the Annual Fertilizer Review back editions  
+**Status.** drafted_not_sent  
+**Where to ask.** NFDC Islamabad; AFR 2024-25 and FR 2026 are already held under data/nfdc
+
+| component | unobserved | share of monthly mass | months already carried | driver |
+|---|---|---|---|---|
+| agriculture / Managed soils | 137.90 Mt | 3.07% | 100.0% | fertiliser offtake and application calendar |
+| agriculture / Urea application | 0.00 Mt | 0.00% | 100.0% | urea offtake |
 
 ## MON-MUNI-01 — Provincial local government departments, municipal waste authorities (LWMC, SSWMB) and the WASAs (wastewater)
 
@@ -109,7 +109,7 @@ Give open burning of waste a seasonal basis; burning is weather-driven and colle
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| waste / Open burning of waste | 31.22 Mt | 0.78% | 0.0% | dry-season concentration and municipal collection failure |
+| waste / Open burning of waste | 35.15 Mt | 0.78% | 0.0% | dry-season concentration and municipal collection failure |
 
 ## MON-PETDIV-01 — Petroleum Division (Directorate General of Petroleum Concessions)
 
@@ -124,12 +124,12 @@ Time the upstream fugitive segments to the production they track; PBS confirms i
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| fugitives / Gas production | 5.21 Mt | 0.13% | 88.9% | monthly field gas production |
-| fugitives / Gas gathering | 4.04 Mt | 0.10% | 88.9% | monthly production entering each gathering system |
-| fugitives / Gas processing | 2.31 Mt | 0.06% | 88.9% | monthly throughput at processing plants |
-| fugitives / Sour-gas processing | 0.93 Mt | 0.02% | 88.9% | monthly throughput at the sour-gas treatment plants |
-| fugitives / Oil refining | 0.80 Mt | 0.02% | 0.0% | monthly refinery throughput |
-| fugitives / Oil production | 0.58 Mt | 0.01% | 88.9% | monthly crude production |
+| fugitives / Gas production | 8.30 Mt | 0.18% | 80.0% | monthly field gas production |
+| fugitives / Gas gathering | 6.44 Mt | 0.14% | 80.0% | monthly production entering each gathering system |
+| fugitives / Gas processing | 3.68 Mt | 0.08% | 80.0% | monthly throughput at processing plants |
+| fugitives / Sour-gas processing | 1.49 Mt | 0.03% | 80.0% | monthly throughput at the sour-gas treatment plants |
+| fugitives / Oil production | 0.93 Mt | 0.02% | 80.0% | monthly crude production |
+| fugitives / Oil refining | 0.89 Mt | 0.02% | 0.0% | monthly refinery throughput |
 
 ## MON-OCAC-03 — Oil Companies Advisory Council (OCAC)
 
@@ -144,7 +144,7 @@ Time lubricant oxidation (2.D.1, in the reference since rc52) on monthly lubrica
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| ippu / Lubricant use | 0.73 Mt | 0.02% | 0.0% | monthly lubricant sales (not published) |
+| ippu / Lubricant use | 0.81 Mt | 0.02% | 0.0% | monthly lubricant sales (not published) |
 
 ## MON-CROP-01 — Pakistan Agricultural Research Council and provincial crop reporting services
 
@@ -159,7 +159,7 @@ Time crop-residue burning to the harvests it follows; the flooded-window calenda
 
 | component | unobserved | share of monthly mass | months already carried | driver |
 |---|---|---|---|---|
-| agriculture / Field burning of residues | 0.00 Mt | 0.00% | 100.0% | VIIRS active-fire acquisition dates (held), FAO calendar as comparator |
+| agriculture / Field burning of residues | 0.62 Mt | 0.01% | 90.0% | VIIRS active-fire acquisition dates (held), FAO calendar as comparator |
 
 ## MON-NFDC-02 — National Fertilizer Development Centre (NFDC)
 

@@ -61,9 +61,12 @@ GAS_DASH = {"CO2": "-", "CH4": (0, (5, 1.6)), "N2O": (0, (1.4, 1.4))}
 # first. Lightness separates the classes in greyscale; the rescaled class is hatched as well,
 # because its lightness is the nearest to its neighbour's.
 EVIDENCE = (
-    ("annual_observed_activity", "That year's observed activity", "#08306b", None),
-    ("static_structural", "Timeless structural surface", "#6baed6", None),
-    ("reference_shape_backcast", "Reference year's pattern, rescaled", "#fdd0a2", "////"),
+    ("annual_observed_activity", "Observed own-period activity", "#08306b", None),
+    ("calendar_activity_proxy", "Calendar-year activity proxy", "#2171b5", ".."),
+    ("modelled_population_proxy", "Modelled population proxy", "#6baed6", None),
+    ("static_structural", "Timeless structural surface", "#c6dbef", None),
+    ("reference_shape_backcast", "Reference pattern, backcast", "#fdd0a2", "////"),
+    ("reference_shape_forward", "Reference pattern, later reuse", "#fdae6b", "\\\\"),
     ("substituted_surface", "Declared stand-in surface", "#d94801", None),
     ("unallocated", "Retained at province level", "#252525", None),
 )
@@ -89,13 +92,14 @@ PROXY = (
 # THE MAIN FIGURES, in manuscript order, named as the journal asks (f01, f02, ...). One list:
 # the plotting scripts write these, the build phase declares them, and the guards walk them, so
 # a figure cannot be added, renamed or split without every one of those noticing.
-FIGURES = ("f01_construction", "f02_inventory", "f03_evidence_uncertainty", "f04_gas_maps",
-           "f05_spatial_evidence", "f06_proxy_concentration", "f07_btr_ratios",
-           "f08_managed_soils")
+LEGACY_FIGURES = ("f01_construction", "f02_inventory", "f03_evidence_uncertainty", "f04_gas_maps",
+                  "f05_spatial_evidence", "f06_proxy_concentration", "f07_btr_ratios", "f08_managed_soils")
+FIGURES = ("f09_integrated_composition", "f10_integrated_trends", "f12_air_sensitivity",
+           "f11_integrated_maps", "f13_air_evaluation")
 NARROW = ("f08_managed_soils",)                  # drawn and placed at the column width
 FIGURE_SCRIPTS = ("paper_national/figures/rewrite_inputs/plot_construction.py",
                   "paper_national/figures/rewrite_inputs/plot_figures.py",
-                  "scripts/make_fig_ghg_grid.py")
+                  "scripts/make_fig_ghg_grid.py", "scripts/build_integrated_figures.py")
 
 LW_AXIS = 0.6
 LW_GRID = 0.5
@@ -237,7 +241,7 @@ def release_version():
     return pkinv.__version__
 
 
-def save(fig, stem, figures_dir, preview_dir, script, title, configuration="REF_2023_24"):
+def save(fig, stem, figures_dir, preview_dir, script, title, configuration="S_TAN"):
     """The PDF beside the manuscript and a PNG preview beside the script.
 
     THE RELEASE IS IN THE FILE, NOT ON THE PLOT. A version string printed under a title is

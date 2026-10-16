@@ -90,9 +90,6 @@ def compute(data=None):
     #     streams - three different release locations the old four-row collapse partly
     #     misplaced. ---
     flows = livestock_nh3_flows(data, npools)
-    u_graze = product(20, data.efu("nh3_emep_grazing", "buffalo"))
-    u_flow = product(15, data.efu("nh3_emep_tan", "buffalo"),
-                     data.efu("nh3_emep_housing", "buffalo"))
     STAGE_ROW = {
         "housing": ("Manure management", "NH3 - housing", "Indirect N2O (volatilisation)"),
         "yard": ("Manure management", "NH3 - yard", "Indirect N2O (volatilisation)"),
@@ -108,7 +105,7 @@ def compute(data=None):
         if kg_n <= 0.0:
             continue
         cat, sub, ghg_sub = STAGE_ROW[stage]
-        u = u_graze if stage.startswith("grazing") else u_flow
+        u = livestock_stage_uncertainty(data, npools, sp, stage)
         add(cat, "%s (%s)" % (sub, sp.replace("_", " ")), ghg_sub, "NH3",
             kg_n * NH3_PER_N / 1e6, u)
 
@@ -129,8 +126,23 @@ def compute(data=None):
              "Direct N2O - organic manure", npools["FON_N"], 20),
             ("Soil NOx - crop residues",
              "Direct N2O - crop residues", soils.residue_N(data), 20)):
+        nox_n = (npools["field_volat_NOx_N"]["organic"]
+                 if "field_volat_NOx_N" in npools and "organic manure" in sub
+                 else pool_n * nox_frac)
         add("Managed soils", sub, ghg_sub, "NOx",
-            pool_n * nox_frac * NO2_PER_N / 1e6, product(act_u, nox_efu))
+            nox_n * NO2_PER_N / 1e6, product(act_u, nox_efu))
+    # The common ledger's mixed NH3/NOx management and grazing loss must not
+    # disappear from the air panel while remaining in indirect N2O activity.
+    if "managed_NOx_N" in npools:
+        add("Manure management", "NOx - manure management",
+            "Indirect N2O (volatilisation)", "NOx",
+            npools["managed_NOx_N"] * NO2_PER_N / 1e6,
+            product(20, nox_efu))
+        for pool, anchor in (("pasture_cattle", "Direct N2O - pasture deposition (cattle-type)"),
+                             ("pasture_other", "Direct N2O - pasture deposition (sheep/goat/other)")):
+            add("Managed soils", "NOx - " + pool, anchor, "NOx",
+                npools["field_volat_NOx_N"][pool] * NO2_PER_N / 1e6,
+                product(20, nox_efu))
 
     # --- NH3 from crop residues LEFT to decompose in the field (CRR) ---
     crr, _ = crop_residue_nh3(data)
@@ -152,6 +164,8 @@ def compute(data=None):
             add("Field burning of residues",
                 "Residue burning %s (%s)" % (poll, crop), "Residue burning CH4",
                 poll, mb * cf * gef / 1e6, u)
+    for row in rows:
+        row["nitrogen_method"] = npools.get("nitrogen_method", "ipcc")
     return rows
 
 
@@ -163,13 +177,59 @@ from pkinv.sectors.agriculture.manure import PRP_CATTLE_TYPE  # noqa: E402,F401
 # livestock and manure type rather than by the IPCC system names, so the correspondence is stated
 # here rather than left implicit: a dry lot is an uncovered yard, and daily spread reaches the field
 # without a storage stage.
-SYSTEM_STAGES = {
+_LEGACY_SYSTEM_STAGES = {
     "solid_storage": ("housing", "storage", "application"),
     "daily_spread": ("housing", "application"),
     "drylot": ("yard", "application"),
     "poultry_litter": ("housing", "storage", "application"),
     "liquid_slurry": ("housing", "storage", "application"),
 }
+
+# Kept as a public re-export while the shared material-flow engine owns the stages.
+SYSTEM_STAGES = getattr(manure, "SYSTEM_STAGES", _LEGACY_SYSTEM_STAGES)
+
+
+def livestock_stage_uncertainty(data, npools, species, stage):
+    """First-order uncertainty of a stage loss, using that species' factors.
+
+    Stage losses act on surviving TAN. Earlier emission fractions therefore enter
+    through their survival terms, whose relative sensitivity is f/(1-f), rather
+    than being substituted by the housing uncertainty. The conditional ensemble
+    propagates the complete ledger; this value is its auditable local linear
+    approximation. Management-system shares remain a separate structural choice.
+    """
+    herd = manure.MMS_KEY.get(species, species)
+    activity_u = data.livestock[herd]["uncert_pct"]
+    tan_u = data.efu("nh3_emep_tan", species)
+    if stage.startswith("grazing"):
+        return product(activity_u, tan_u, data.efu("nh3_emep_grazing", species))
+    terms = []
+    for row in npools["by_system"]:
+        if row["species"] != species:
+            continue
+        stages = SYSTEM_STAGES.get(row["system"], ())
+        if stage not in stages:
+            continue
+        surviving = float(row["excreted_N"]) * data.efv("nh3_emep_tan", species)
+        survival_u = []
+        for previous in stages:
+            fraction = data.efv("nh3_emep_" + previous, species)
+            if previous == stage:
+                loss = surviving * fraction
+                terms.append((loss, product(activity_u, tan_u,
+                                            data.efu("nh3_emep_" + stage, species),
+                                            *survival_u), species))
+                break
+            surviving *= 1.0 - fraction
+            if fraction < 1.0:
+                survival_u.append(fraction / (1.0 - fraction)
+                                  * data.efu("nh3_emep_" + previous, species))
+    if not terms:
+        # The IPCC alternative has a typed management loss without an EMEP
+        # stage fraction. Its own shared ledger carries the matching uncertainty.
+        return float(npools.get("managed_volat_uncert_pct", activity_u))
+    from pkinv.core.uncertainty import combine_sum
+    return combine_sum(terms)[1]
 
 
 def livestock_nh3_flows(data=None, npools=None):
@@ -191,6 +251,19 @@ def livestock_nh3_flows(data=None, npools=None):
         data = InventoryData()
     if npools is None:
         _, npools = manure.compute(data)
+
+    if "stage_nh3_N" in npools:
+        # One material account serves NH3 and indirect N2O. Do not start a second
+        # TAN chain from pre-management excretion after the shared engine has
+        # already debited housing, storage and field losses.
+        detail = dict(npools["stage_nh3_N"])
+        out = collections.defaultdict(float)
+        for (_species, stage), value in detail.items():
+            out[stage] += value
+        out["grazing"] = out["grazing_cattle_type"] + out["grazing_other"]
+        result = dict(out)
+        result["by_species_stage"] = detail
+        return result
 
     out = collections.defaultdict(float)
     detail = collections.defaultdict(float)   # (species, stage) -> NH3-N kg

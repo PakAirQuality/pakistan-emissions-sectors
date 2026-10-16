@@ -58,9 +58,6 @@ MIN_PARTS = 3
 # (file, total) -> why its parts do not sum to it. Both classes are recognisable and neither
 # is a defect; see the module docstring.
 DECLARED = {
-    ("04_methods.tex", 24):
-        "a REMAINDER CLAUSE: 1 + 7 + 16 = 24 and the trailing 'remaining 10 are retained at "
-        "locality level' is the complement of the total, not a fourth part",
     ("08_limitations.tex", 130988):
         "an EXPLICIT IDENTITY: the passage states 130988 + 1599 = 132587 out loud, so summing "
         "its numerals double-counts the sentence's own arithmetic",
@@ -163,10 +160,19 @@ class TestAPassageAgreesWithItself(unittest.TestCase):
             "the stale spelled-out count is back. It was five short of the registry and of "
             "the registered figure in 04_methods.tex, and its own sentence's parts summed to "
             "19 against the 24 it stated.")
-        self.assertIn(
-            "resolved coordinates---\\num{1} from an", text,
-            "the registry breakdown's components are no longer numerals, so neither the "
-            "claims registry nor this test can hold them")
+        # The current note describes provenance and licence-compatible placement
+        # rather than the superseded coordinate-count paragraph. Preserve the actual
+        # arithmetic regression as a positive control for the same detector.
+        stale = r"\num{24} resolved coordinates---\num{1} from reports, \num{7} from maps and eleven from the Global Energy Monitor."
+        match = PASSAGE.search(stale)
+        self.assertIsNotNone(match)
+        parts = [_value(m) for m in NUMBER.finditer(match.group(2))]
+        self.assertEqual(parts, [1, 7, 11])
+        self.assertNotEqual(sum(parts), int(match.group(1)))
+        repaired = stale.replace("eleven", r"\num{16}")
+        match = PASSAGE.search(repaired)
+        self.assertEqual(sum(_value(m) for m in NUMBER.finditer(match.group(2))),
+                         int(match.group(1)))
 
 
 if __name__ == "__main__":
