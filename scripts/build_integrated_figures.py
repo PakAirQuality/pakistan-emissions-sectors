@@ -214,6 +214,8 @@ def facts(ghg, air):
 
 
 COVERAGE_TABLE = ROOT / "paper_national/versions/v3/generated/tab_integrated_coverage.tex"
+OFF_ROAD_CATEGORY = "Mixed off-road (1A4c/1A2)"
+OFF_ROAD_CLASS = "transport:off_road_machinery"
 MODULE_LABEL = {"power": "Public power", "industry": "Industrial combustion", "ippu": "Industrial processes",
                 "transport": "Road and off-road transport", "railways": "Railways", "aviation": "Domestic aviation",
                 "residential": "Households", "agriculture": "Agriculture", "waste": "Waste",
@@ -251,6 +253,8 @@ def coverage_table(ghg):
              r"\caption{Coverage by calculation module and species in FY2023--24. E: estimated; "
              r"S: unestimated in the central product, with separate screening cases; NE: not estimated; "
              r"--: not applicable or no source of the species in the module. Power SO$_2$ covers oil and diesel only. "
+             r"Road transport air pollutants cover exhaust, evaporation and tyre, brake and road wear, not resuspended road dust; "
+             r"off-road machinery has greenhouse-gas estimates only. "
              r"The release gives the same matrix for every year with the reason for each absence.}",
              r"\label{tab:species_coverage}",
              r"\small",
@@ -258,7 +262,26 @@ def coverage_table(ghg):
              r"\tophline",
              head + r" \\",
              r"\middlehline"]
+    # rc69: the transport module holds road vehicles AND off-road machinery (1.A.4.c/1.A.2),
+    # and only road vehicles have an air layer. One "Road and off-road transport" row printed
+    # E for every air species and read as more complete than the methods describe. The two
+    # are split: GHG cells by category, the off-road air cells from the process-level
+    # coverage table, where off-road machinery is a typed omission.
+    process = {(r["source_class_id"], r["pollutant"]): r["state"]
+               for r in rows("pakemis_air_source_coverage.csv") if r["period_id"] == REFERENCE}
+    category_gas = collections.defaultdict(float)
+    for r in ghg:
+        if r["period_id"] == REFERENCE and r["sector_id"] == "transport":
+            category_gas[(r["category"] == OFF_ROAD_CATEGORY, r["gas"])] += \
+                abs(float(r["emission_native_mass"]))
     for sector in SECTOR:
+        if sector == "transport":
+            for off_road, label in ((False, "Road transport"), (True, "Off-road machinery")):
+                cells = ["E" if category_gas.get((off_road, g), 0) > 0 else "--" for g in gases]
+                cells += [process[(OFF_ROAD_CLASS, p)] if off_road
+                          else air_state.get((sector, p), "--") for p in CORE7]
+                lines.append(" & ".join([label] + cells) + r" \\")
+            continue
         cells = ["E" if gas_state.get((sector, g), 0) > 0 else "--" for g in gases]
         cells += [air_state.get((sector, p), "--") for p in CORE7]
         lines.append(" & ".join([MODULE_LABEL[sector]] + cells) + r" \\")
