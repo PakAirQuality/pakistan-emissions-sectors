@@ -192,6 +192,44 @@ A public clone's deposit build also reuses the committed product of any phase th
 a restricted read (the ADM2 2022 frame crosswalk reads the OCHA COD-AB boundaries), as the
 fifteen source phases already do.
 
+### The build workflow
+
+- **Every phase declares its kind.** `run_all.CATEGORIES` gives each phase one of science,
+  validation, manuscript or release, and the registry refuses a phase it does not list.
+  `make dev` builds science and validation only. Before this it was "every phase except
+  eleven labels", and the figure stages written after that list (the v3 tables and charts,
+  the gridded figures, the integrated figures and their check, the sector-note TeX) ran on
+  every development build. `make figures-v3` is now the manuscript group.
+- **Each manuscript is compiled once.** `paper.tex`, `technical_supplement.tex` and
+  `submission.tex` are each built once and copied to their release names; the wrapper files
+  that compiled the same PDF a second time are gone. The paper targets depend on the figure
+  target, so `make -j` cannot compile a paper before its figures.
+- **The two slowest phases run side by side.** GHG and Air conditional uncertainty (about
+  640 s of a cold build together) declare their complete reads, are audited, and sit next to
+  each other, so `--jobs` batches them.
+- **Repeated test setup removed.** `weights.build()` once per class instead of six times;
+  the longitudinal-uncertainty components read once instead of nine times (that module:
+  100 s to 29 s); one fresh release manifest for the two tests that compare against it.
+- **Continuous integration in two workflows.** `public-checks.yml` runs on every push without
+  the restricted layers: the public-tree check, the whole suite (its summary counts the
+  skips of each class), and the deposit-group rebuild, which must reproduce every committed
+  product. `reproduce.yml` is the complete reproduction, run by hand where the layers are
+  mounted. The old workflow compiled a manuscript file that no longer existed and installed
+  unpinned packages. Without the layers the deposit group also reuses the committed products
+  of the release category (the manifests, source register and inventories describe the
+  release with its documents), and the job sets `PKINV_RELEASE_CHECKS=0`.
+- Timings are in `docs/build_performance.md`: cold 2,056 s for 189 phases, unchanged 1.2 s.
+
+### A sum that depended on the hash seed
+
+The grid's located share of each power fuel summed plant fuel over a set of plant names. A
+set of strings iterates in an order set by `PYTHONHASHSEED`, which no part of the build
+fixes, so the share moved in its last binary place from run to run, and two FY2018–19
+furnace-oil rows of `pakemis_grid_fallbacks_by_year.csv` changed their twelfth printed digit.
+It showed up as a difference between a public-clone rebuild and a full build of the same
+commit. The sum is now `math.fsum`, which gives the same correctly rounded result in any
+order, and a test runs it under two seeds.
+
 ## [1.0.0rc68] — 14 October 2026
 
 The integrated national greenhouse-gas and air-pollutant release now covers ten fiscal
