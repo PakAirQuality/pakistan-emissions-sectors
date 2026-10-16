@@ -1,0 +1,396 @@
+path,status,detail,max_rel_diff,writer_phase,phase_status
+outputs/agriculture_crop_residue_ledger_2024.csv,rebuilt_identical,bytewise,,Agriculture,OK
+outputs/agriculture_monthly_2024.csv,rebuilt_identical,bytewise,,Agriculture,OK
+outputs/agriculture_timing_classes.csv,rebuilt_identical,bytewise,,Agriculture timing classes + NFDC residual,OK
+outputs/air_pollutants_2024.csv,rebuilt_identical,bytewise,,Agriculture air pollutants,OK
+outputs/air_pollutants_adm1.csv,rebuilt_identical,bytewise,,Air spatial (all sectors),OK
+outputs/air_pollutants_adm2.csv,rebuilt_identical,bytewise,,Air spatial (all sectors),OK
+outputs/air_pollutants_district_2024.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/air_pollutants_provincial_2024.csv,rebuilt_identical,bytewise,,Agriculture air pollutants,OK
+outputs/air_pollutants_timeseries_1990_2024.csv,rebuilt_identical,bytewise,,Agriculture air time series,OK
+outputs/air_uncertainty_montecarlo.csv,rebuilt_identical,bytewise,,Agriculture air uncertainty,OK
+outputs/apcma_dispatch_parse_summary.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/apcma_dispatch_quarantine.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/apcma_qim_cement_crosscheck.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/aviation_air_pollutants_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_by_stream_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_completeness_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_fuel_constrained_by_stream_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_monthly_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_provincial_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/completeness.csv,rebuilt_identical,bytewise,,Completeness table,OK
+outputs/era5_degree_day_crosscheck.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/fao_crop_calendar_crosscheck.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/fugitives_by_stream_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_completeness_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_monthly_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_observation_provincial_evaluation_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_provincial_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_totals_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_uncertainty_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/industry_by_stream_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_captive_screening_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_monthly_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_provincial_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_totals_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/ippu_by_stream_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_completeness_2024.csv,rebuilt_identical,bytewise,,IPPU metadata,OK
+outputs/ippu_fertilizer_gas_monthly_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_monthly_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_provincial_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_totals_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/key_categories.csv,rebuilt_identical,bytewise,,Agriculture key categories,OK
+outputs/limestone_qim_cement_crosscheck.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/mc_draws/fugitives_bounded.csv,rebuilt_identical,bytewise,,Fugitives MC draw file,OK
+outputs/mc_draws/fugitives_bounded.meta.json,rebuilt_identical,bytewise,,Fugitives MC draw file,OK
+outputs/mc_draws/pakemis_ensemble_annual.meta.json,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_annual.parquet,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_monthly.meta.json,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_monthly.parquet,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_spatial.meta.json,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_spatial.parquet,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/waste_parameter_rerun.csv,rebuilt_identical,bytewise,,Waste MC draw file,OK
+outputs/mc_draws/waste_parameter_rerun.meta.json,rebuilt_identical,bytewise,,Waste MC draw file,OK
+outputs/mc_draws/waste_parameter_rerun_ipcc2006.csv,rebuilt_identical,bytewise,,Waste MC alternative draw file,OK
+outputs/mc_draws/waste_parameter_rerun_ipcc2006.meta.json,rebuilt_identical,bytewise,,Waste MC alternative draw file,OK
+outputs/n_ledger_2024.csv,rebuilt_identical,bytewise,,Agriculture nitrogen ledger,OK
+outputs/n_ledger_stage_comparison.csv,rebuilt_identical,bytewise,,Agriculture nitrogen ledger,OK
+outputs/national_all_sectors.csv,rebuilt_identical,bytewise,,National rollup,OK
+outputs/national_all_sectors_ledger.csv,rebuilt_identical,bytewise,,National rollup,OK
+outputs/national_gas_closure_variant.csv,rebuilt_identical,bytewise,,National gas closure,OK
+outputs/national_uncertainty_decomposition.csv,rebuilt_identical,bytewise,,Parameter decomposition,OK
+outputs/nfdc_monthly_parse_summary.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/nfdc_monthly_quarantine.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/ocac_direct_edition_crosscheck.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/ocac_direct_edition_quarantine.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/ocac_edition_currency.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/ocac_parse_summary.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/ogra_gas_class_series.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_adm1_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm1_ledger_2024.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_crosswalk.csv,rebuilt_identical,bytewise,,ADM2 reporting units,OK
+outputs/pakemis_adm2_frame_2022.csv,rebuilt_identical,bytewise,,ADM2 frame 2022 crosswalk,OK
+outputs/pakemis_adm2_ledger_2024.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_monthly.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_monthly_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_monthly_sector.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_nesting_check.csv,rebuilt_identical,bytewise,,Spatial exceptions + ADM2 nesting,OK
+outputs/pakemis_adm2_sector_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_stream_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_stream_reference.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_agriculture_basis_change.csv,rebuilt_identical,bytewise,,Agriculture fiscal history,OK
+outputs/pakemis_agriculture_crop_calendar.csv,rebuilt_identical,bytewise,,Agriculture fiscal history,OK
+outputs/pakemis_agriculture_fiscal_series.csv,rebuilt_identical,bytewise,,Agriculture fiscal history,OK
+outputs/pakemis_air_absence_screening_by_year.csv,rebuilt_identical,bytewise,,Air absence-screening ledger,OK
+outputs/pakemis_air_adm1_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_adm2_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_atomic_annual.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_conditional_uncertainty.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_coverage_matrix.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_htap_comparison.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_air_htap_species_comparison.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_air_industry_cy2023.csv,rebuilt_identical,bytewise,,"Industry air, calendar 2023",OK
+outputs/pakemis_air_lahore_by_year.csv,rebuilt_identical,bytewise,,Lahore air view,OK
+outputs/pakemis_air_lahore_external_comparison.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_air_lahore_power_register.csv,rebuilt_identical,bytewise,,Lahore power register,OK
+outputs/pakemis_air_lahore_so2_attribution.csv,rebuilt_identical,bytewise,,Lahore SO2 attribution,OK
+outputs/pakemis_air_monthly.csv,rebuilt_identical,bytewise,,Air monthly allocation,OK
+outputs/pakemis_air_monthly_unallocated.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_power_admission_bridge.csv,rebuilt_identical,bytewise,,Power SO2 admission bridge,OK
+outputs/pakemis_air_power_control_evidence.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_air_power_design_cases.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_air_provincial_external_comparison.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_air_source_class_uncertainty_by_year.csv,rebuilt_identical,bytewise,,Air source classes (supported fiscal panel),OK
+outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv,rebuilt_identical,bytewise,,Air source classes (supported fiscal panel),OK
+outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Air source classes (supported fiscal panel),OK
+outputs/pakemis_air_source_coverage.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_spatial_support_by_year.csv,rebuilt_identical,bytewise,,Air spatial support ledger,OK
+outputs/pakemis_air_structural_sensitivities.csv,rebuilt_identical,bytewise,,Air structural sensitivities,OK
+outputs/pakemis_air_temporal_support.csv,rebuilt_identical,bytewise,,Air monthly allocation,OK
+outputs/pakemis_air_trend_uncertainty.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_unallocated_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_uncertainty_drivers.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_uncertainty_parameters.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_uncertainty_split_by_year.csv,rebuilt_identical,bytewise,,Air spatial support ledger,OK
+outputs/pakemis_ammonia_nitric_series.csv,rebuilt_identical,bytewise,,Ammonia and nitric acid series,OK
+outputs/pakemis_annual_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Annual product (supported fiscal panel),OK
+outputs/pakemis_annual_fy2015_16_fy2024_25.parquet,rebuilt_identical,bytewise,,Annual product (supported fiscal panel),OK
+outputs/pakemis_artifact_inventory.csv,rebuilt_identical,bytewise,,Artifact inventory,OK
+outputs/pakemis_atomic_annual.csv,rebuilt_identical,bytewise,,Atomic annual table,OK
+outputs/pakemis_atomic_annual.parquet,rebuilt_identical,bytewise,,Parquet twins,OK
+outputs/pakemis_atomic_annual_aggregates.csv,rebuilt_identical,bytewise,,Atomic annual table,OK
+outputs/pakemis_bagasse_timing_variant.csv,rebuilt_identical,bytewise,,Bagasse timing variant,OK
+outputs/pakemis_brick_activity_reconstruction.csv,rebuilt_identical,bytewise,,Brick activity reconstruction,OK
+outputs/pakemis_brick_coal_alternatives.csv,rebuilt_identical,bytewise,,Brick coal alternatives,OK
+outputs/pakemis_brick_kiln_fleet_by_year.csv,rebuilt_identical,bytewise,,Brick kiln fleet by year,OK
+outputs/pakemis_bridge_configurations.csv,rebuilt_identical,bytewise,,"Bridge configurations (declared, unpopulated)",OK
+outputs/pakemis_btr_comparison.csv,rebuilt_identical,bytewise,,BTR comparison (year-matched),OK
+outputs/pakemis_builtup_comparison_adm2.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_category_crosswalk.csv,rebuilt_identical,bytewise,,Category crosswalk,OK
+outputs/pakemis_cement_activity_sources.csv,rebuilt_identical,bytewise,,Cement activity sources and their overlap,OK
+outputs/pakemis_cement_kiln_coal_reconstruction.csv,rebuilt_identical,bytewise,,Cement kiln coal reconstruction,OK
+outputs/pakemis_citation_deposit_audit.csv,rebuilt_identical,bytewise,,Citation deposit audit,OK
+outputs/pakemis_citation_pointer_audit.csv,rebuilt_identical,bytewise,,Citation pointer audit,OK
+outputs/pakemis_claim_matrix.csv,rebuilt_identical,bytewise,,Claim matrix,OK
+outputs/pakemis_coal_allocation_cases.csv,rebuilt_identical,bytewise,,Coal sector reallocation,OK
+outputs/pakemis_coal_allocation_identity.csv,rebuilt_identical,bytewise,,Coal allocation identity,OK
+outputs/pakemis_coal_balance.csv,rebuilt_identical,bytewise,,Coal balance,OK
+outputs/pakemis_coal_sector_reallocation.csv,rebuilt_identical,bytewise,,Coal sector reallocation,OK
+outputs/pakemis_coal_source_reconciliation.csv,rebuilt_identical,bytewise,,Coal source reconciliation,OK
+outputs/pakemis_coal_vintage_ledger.csv,rebuilt_identical,bytewise,,Coal vintage ledger,OK
+outputs/pakemis_comparison_crosswalk.csv,rebuilt_identical,bytewise,,Comparison crosswalk,OK
+outputs/pakemis_completeness_mass.csv,rebuilt_identical,bytewise,,Completeness-mass ledger,OK
+outputs/pakemis_coverage_matrix.csv,rebuilt_identical,bytewise,,Coverage matrix (year x category x gas x configuration),OK
+outputs/pakemis_coverage_summary.csv,rebuilt_identical,bytewise,,Coverage matrix (year x category x gas x configuration),OK
+outputs/pakemis_data_provenance.csv,rebuilt_identical,bytewise,,Data provenance audit,OK
+outputs/pakemis_deposit_manifest.csv,rebuilt_identical,bytewise,,Deposit manifest,OK
+outputs/pakemis_dung_balance.csv,rebuilt_identical,bytewise,,Dung balance,OK
+outputs/pakemis_dung_fate_by_year.csv,rebuilt_identical,bytewise,,Dung fate by year,OK
+outputs/pakemis_dung_residual_ledger.csv,rebuilt_identical,bytewise,,Dung residual ledger,OK
+outputs/pakemis_ensemble_ledger_summary.csv,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/pakemis_ensemble_spatial_conditionals.csv,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/pakemis_ensemble_summary.csv,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/pakemis_enteric_btr_bridge.csv,rebuilt_identical,bytewise,,Enteric BTR bridge,OK
+outputs/pakemis_extension_activity_revisions.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_extension_source_availability.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_extension_source_controls.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_facility_registry.csv,rebuilt_identical,bytewise,,Facility registry,OK
+outputs/pakemis_faostat_nitrogen_flows.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_fertilizer_timing_variant.csv,rebuilt_identical,bytewise,,Fertilizer timing variant,OK
+outputs/pakemis_fgas_leak_rate_adjudication.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_flatness_crosswalk.csv,rebuilt_identical,bytewise,,Flatness crosswalk (TE class vs physics),OK
+outputs/pakemis_forest_flux_adjudication.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_fuel_sulfur_decision.csv,rebuilt_identical,bytewise,,Industrial coal decision,OK
+outputs/pakemis_fy2025_26_provisional_activity.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_fy2025_26_provisional_emissions.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_fy2025_26_provisional_monthly.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_gas_flow_crosswalk.csv,rebuilt_identical,bytewise,,Gas-flow crosswalk,OK
+outputs/pakemis_ghg_conditional_uncertainty.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_ghg_configuration_adm1.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_adm1_monthly.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_adm2.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_adm2_monthly.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_atoms.csv,rebuilt_identical,bytewise,,Atomic annual table,OK
+outputs/pakemis_ghg_configuration_monthly.csv,rebuilt_identical,bytewise,,"Monthly layer, supported fiscal panel",OK
+outputs/pakemis_ghg_configuration_unallocated.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_trend_uncertainty.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_ghg_uncertainty_drivers.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_ghg_uncertainty_parameters.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_grid_0p05_monthly.nc,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_0p05_monthly_ledger.nc,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_0p1_edgar_aligned.nc,rebuilt_identical,bytewise,,EDGAR-aligned 0.1-degree grid,OK
+outputs/pakemis_grid_fallbacks.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_fallbacks_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_grid_provincial_check.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_stream_surfaces.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_stream_surfaces_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_hfc_bank_series.csv,rebuilt_identical,bytewise,,HFC household bank series,OK
+outputs/pakemis_htap_nh3_annual.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_htap_nh3_monthly.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_industrial_change_attribution.csv,rebuilt_identical,bytewise,,Industrial change attribution,OK
+outputs/pakemis_industrial_coal_bridge.csv,rebuilt_identical,bytewise,,Industrial coal bridge,OK
+outputs/pakemis_industrial_coal_decision.csv,rebuilt_identical,bytewise,,Industrial coal decision,OK
+outputs/pakemis_industrial_coal_scenarios.csv,rebuilt_identical,bytewise,,Industrial coal scenarios,OK
+outputs/pakemis_industrial_screening_series.csv,rebuilt_identical,bytewise,,Industrial screening series,OK
+outputs/pakemis_industry_air_edgar_comparison.csv,rebuilt_identical,bytewise,,Industry air vs EDGAR,OK
+outputs/pakemis_industry_boundary_ledger.csv,rebuilt_identical,bytewise,,Industrial boundary ledger,OK
+outputs/pakemis_industry_edgar_divergence.csv,rebuilt_identical,bytewise,,Industry vs EDGAR divergence,OK
+outputs/pakemis_joint_uncertainty.csv,rebuilt_identical,bytewise,,Joint uncertainty by resolution,OK
+outputs/pakemis_kiln_allocation_adm2.csv,rebuilt_identical,bytewise,,Kiln allocation product,OK
+outputs/pakemis_kiln_frame_adm2_by_type.csv,rebuilt_identical,bytewise,,Kiln frame vectors,OK
+outputs/pakemis_longitudinal_prefix.csv,rebuilt_identical,bytewise,,Longitudinal uncertainty,OK
+outputs/pakemis_longitudinal_uncertainty.csv,rebuilt_identical,bytewise,,Longitudinal uncertainty,OK
+outputs/pakemis_minerals_controls.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_minerals_panel_screening.csv,rebuilt_identical,bytewise,,Minerals panel screening,OK
+outputs/pakemis_monthly_controls.csv,rebuilt_identical,bytewise,,Monthly controls register,OK
+outputs/pakemis_monthly_coverage.csv,rebuilt_identical,bytewise,,"Monthly coverage, all 120 months",OK
+outputs/pakemis_monthly_coverage_summary.csv,rebuilt_identical,bytewise,,"Monthly coverage, all 120 months",OK
+outputs/pakemis_monthly_data_requests.csv,rebuilt_identical,bytewise,,"Monthly data requests (the gap, priced)",OK
+outputs/pakemis_monthly_evidence.csv,rebuilt_identical,bytewise,,"Monthly layer, supported fiscal panel",OK
+outputs/pakemis_monthly_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,"Monthly layer, supported fiscal panel",OK
+outputs/pakemis_monthly_fy2015_16_fy2024_25.parquet,rebuilt_identical,bytewise,,Parquet twins,OK
+outputs/pakemis_monthly_ledger_2024.csv,rebuilt_identical,bytewise,,Survey monthly (configuration S),OK
+outputs/pakemis_national_series.csv,rebuilt_identical,bytewise,,National series,OK
+outputs/pakemis_national_series_coverage.csv,rebuilt_identical,bytewise,,National series,OK
+outputs/pakemis_nitrogen_partition_sensitivity.csv,rebuilt_identical,bytewise,,Air structural sensitivities,OK
+outputs/pakemis_ocac_extension_revisions.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_paper_artefact_hashes.csv,rebuilt_identical,bytewise,,Paper artefacts (stored queries),OK
+outputs/pakemis_pass2_scorecard.csv,rebuilt_identical,bytewise,,Pass-2 exit scorecard,OK
+outputs/pakemis_power_admission_adm2_by_class.csv,rebuilt_identical,bytewise,,Power admission vectors,OK
+outputs/pakemis_power_coal_configurations.csv,rebuilt_identical,bytewise,,Power coal configurations,OK
+outputs/pakemis_power_coal_energy_adjudication.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/pakemis_power_coal_rebase_ledger.csv,rebuilt_identical,bytewise,,Power coal re-base ledger,OK
+outputs/pakemis_power_extension_controls.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_power_fuel_reconciliation.csv,rebuilt_identical,bytewise,,Power fuel reconciliation,OK
+outputs/pakemis_power_grid_basis_change.csv,rebuilt_identical,bytewise,,Power grid basis change,OK
+outputs/pakemis_power_profile_variant.csv,rebuilt_identical,bytewise,,Power profile variant,OK
+outputs/pakemis_power_province_boundary_audit.csv,rebuilt_identical,bytewise,,Power province boundary audit,OK
+outputs/pakemis_power_provincial_basis_by_year.csv,rebuilt_identical,bytewise,,Power provincial basis by year,OK
+outputs/pakemis_power_reference_audit.csv,rebuilt_identical,bytewise,,Power reference audit,OK
+outputs/pakemis_power_station_status.csv,rebuilt_identical,bytewise,,Power station commissioning check,OK
+outputs/pakemis_primary_geography_licence_audit.csv,rebuilt_identical,bytewise,,Deposit manifest,OK
+outputs/pakemis_product_catalog.csv,rebuilt_identical,bytewise,,Product catalog,OK
+outputs/pakemis_product_coverage.csv,rebuilt_identical,bytewise,,Product coverage,OK
+outputs/pakemis_product_facts.csv,rebuilt_identical,bytewise,,Product facts registry,OK
+outputs/pakemis_release_axis_fingerprints.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_release_change_summary.csv,rebuilt_identical,bytewise,,Release numerical changes,OK
+outputs/pakemis_rice_geography_crosscheck.csv,rebuilt_identical,bytewise,,Rice geography crosscheck,OK
+outputs/pakemis_road_length_adm2.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_road_links.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_road_weights_adm2.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_sector_note_facts.csv,rebuilt_identical,bytewise,,Sector technical-note facts,OK
+outputs/pakemis_series_splice_agriculture.csv,rebuilt_identical,bytewise,,National series,OK
+outputs/pakemis_source_register.csv,rebuilt_identical,bytewise,,Deposit manifest,OK
+outputs/pakemis_source_streams.csv,rebuilt_identical,bytewise,,Source-stream ledger,OK
+outputs/pakemis_spatial_basis_classes.csv,rebuilt_identical,bytewise,,Spatial basis taxonomy,OK
+outputs/pakemis_spatial_basis_shares.csv,rebuilt_identical,bytewise,,Spatial basis taxonomy,OK
+outputs/pakemis_spatial_basis_shares_by_sector.csv,rebuilt_identical,bytewise,,Spatial basis taxonomy,OK
+outputs/pakemis_spatial_brackets.csv,rebuilt_identical,bytewise,,Spatial-allocation brackets,OK
+outputs/pakemis_spatial_brackets_adm2.csv,rebuilt_identical,bytewise,,Spatial brackets (ADM2),OK
+outputs/pakemis_spatial_decomposition.csv,rebuilt_identical,bytewise,,Spatial decomposition (geometry vs ignorance),OK
+outputs/pakemis_spatial_exceptions.csv,rebuilt_identical,bytewise,,Spatial exceptions + ADM2 nesting,OK
+outputs/pakemis_spatial_rebase_rc42.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_spatial_rebase_rc44.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_spatial_unallocated.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_spatial_unallocated_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_spatial_weights_by_year.csv,rebuilt_identical,bytewise,,Spatial weight registry (per stream-year),OK
+outputs/pakemis_stream_support_ledger.csv,rebuilt_identical,bytewise,,Stream-to-support ledger,OK
+outputs/pakemis_structural_trajectories.csv,rebuilt_identical,bytewise,,Structural trajectories,OK
+outputs/pakemis_sulfur_adoption_effect.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pakemis_temporal_decomposition.csv,rebuilt_identical,bytewise,,Temporal decomposition (physics vs ignorance),OK
+outputs/pakemis_temporal_profiles.csv,rebuilt_identical,bytewise,,Temporal profile registry,OK
+outputs/pakemis_trend_uncertainty.csv,rebuilt_identical,bytewise,,Longitudinal uncertainty,OK
+outputs/pakemis_unallocated_activity_controls.csv,rebuilt_identical,bytewise,,Unallocated activity controls,OK
+outputs/pakemis_uncertainty_drivers.csv,rebuilt_identical,bytewise,,Uncertainty drivers,OK
+outputs/pakemis_validation_catalog.csv,rebuilt_identical,bytewise,,Validation catalog + scorecard,OK
+outputs/pakemis_validation_five_classes.csv,rebuilt_identical,bytewise,,Validation five classes,OK
+outputs/pakemis_validation_five_classes_summary.csv,rebuilt_identical,bytewise,,Validation five classes,OK
+outputs/pakemis_validation_scorecard.csv,rebuilt_identical,bytewise,,Validation catalog + scorecard,OK
+outputs/pakemis_validation_sector_scorecard.csv,rebuilt_identical,bytewise,,Validation catalog + scorecard,OK
+outputs/pakemis_wastewater_method_comparison.csv,rebuilt_identical,bytewise,,Wastewater method comparison,OK
+outputs/pbs_minerals_parse_summary.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pbs_minerals_quarantine.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pbs_qim_parse_summary.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/pbs_qim_quarantine.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/power_air_pollutants_fy2023_24.csv,rebuilt_identical,bytewise,,Power air pollutants,OK
+outputs/power_air_screening_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/power_by_stream_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_monthly_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_provincial_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_table3_hypotheses.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_toe_reconciliation.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/power_totals_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_uncertainty_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/railways_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Railways air pollutants,OK
+outputs/railways_by_stream_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_gis_provincial_2024.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/railways_monthly_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_provincial_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_totals_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_uncertainty_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/residential_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_by_stream_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_configurations_by_year.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_emissions_monthly_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_monthly_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_provincial_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_totals_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_uncertainty_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/semantic/dim_activity_columns.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_category.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_configuration.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_evidence_class.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_gas.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_geography.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_gwp.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_month.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_notation_key.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_period.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_pollutant.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/dim_stream.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_aviation.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_crops.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_fertiliser.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_fuel_sales_area.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_fuel_sales_national.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_gas_network.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_gas_supply.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_household_fuel.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_industry_fuel.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_industry_production.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_livestock.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_power_monthly.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_power_plants.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_railways.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_source_details.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_vehicles.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_waste_flows.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_activity_waste_services.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_adm1_month.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_adm1_year.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_adm2_month.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_adm2_year.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_absence_screening.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_adm1.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_adm1_year.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_adm2.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_adm2_year.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_annual.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_conditional.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_lahore.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_panel.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_source_classes.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_timeseries.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_air_trend.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_annual.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_annual_calendar.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_completeness.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_completeness_mass.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_evidence.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_ghg_conditional.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_ghg_trend.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_monthly.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_spatial_basis_year.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_transfer.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_unallocated.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_uncertainty.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/fact_uncertainty_series.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/semantic/semantic_release.json,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/transport_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Transport air pollutants,OK
+outputs/transport_by_stream_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_cng_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_cng_crosscheck_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_monthly_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_provincial_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_provincial_proxy_comparison_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_provincial_shape_brackets.csv,rebuilt_identical,bytewise,,Transport provincial shape,OK
+outputs/transport_totals_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_uncertainty_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/uncertainty_montecarlo.csv,rebuilt_identical,bytewise,,Agriculture Monte Carlo,OK
+outputs/unsd_coal_supply_control.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/unsd_industry_combustion_control.csv,not_rebuilt,present in the rebuilt tree but no phase logged OK and wrote it in this run (no writer in the ledger),,,
+outputs/waste_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_by_stream_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_monthly_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_provincial_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_release_assignment_2024.csv,rebuilt_identical,bytewise,,Waste release objects,OK
+outputs/waste_totals_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_uncertainty_2024.csv,rebuilt_identical,bytewise,,Waste uncertainty,OK
+outputs/waste_uncertainty_inputs_2024.csv,rebuilt_identical,bytewise,,Waste uncertainty,OK
+outputs/waste_uncertainty_scenarios_2024.csv,rebuilt_identical,bytewise,,Waste uncertainty,OK
+manuscripts,skipped_by_flag,make papers exit skipped,,make papers,skipped

@@ -40,17 +40,34 @@ geographic products exclude OSM coordinates and weights. The per-product audit
 and `LICENSE-data` explain this separation. Extracting facts from a document does
 not remove obligations inherited from a licensed source database.
 
-## Build from the working repository
+## Build from a clone of this repository
 
-Use the pinned environment for release reproduction:
+The third-party documents are not in this repository (`docs/restricted_layers.md`). A
+plain clone therefore rebuilds from the verified tables. The fifteen phases that read
+documents or the private release history reuse their published products:
 
 ```sh
 python3 -m venv .venv
 .venv/bin/python -m pip install -r requirements.lock
 .venv/bin/python -m pip install --no-deps -e .
+.venv/bin/python scripts/build_adm2_intersections.py
 .venv/bin/python -m pkinv.activity.build
+.venv/bin/python -m pkinv.build --group deposit --strict --quick
+PKINV_RELEASE_CHECKS=0 .venv/bin/python scripts/run_tests.py -j 4
+```
+
+In that clone the tests that need a document skip with the reason `restricted layers
+absent:`. The runner fails if the skipped set differs from
+`data/catalog/restricted_gated_tests.txt`. `PKINV_RELEASE_CHECKS=0` skips, and counts,
+the few tests that hold only at a release commit.
+
+With the restricted layers mounted, the maintainer's full build includes the
+document-reading phases:
+
+```sh
+.venv/bin/python scripts/overlay.py link /path/to/private/checkout
 .venv/bin/python -m pkinv.build --group full --strict --quick \
-  --ledger logs/pakemis_rc68_integrated_run.json
+  --ledger logs/pakemis_full_run.json
 .venv/bin/python scripts/retain_document.py --verify
 ```
 
@@ -86,8 +103,12 @@ The fresh-directory verification harness is `scripts/clean_rebuild.py`. It start
 from manifest-listed code, inputs and dependencies in an isolated pinned
 environment. Explicitly held or source-extracted products have named reasons and
 verified hashes. The result distinguishes build status, product comparison and
-source re-extraction. See [the exact reproduction levels](deposit_rebuild_limits.md)
-and the current `campaign/v3_readiness/reproduction_rc68` evidence when generated.
+source re-extraction. See [the exact reproduction levels](deposit_rebuild_limits.md).
+The recorded rc68 runs are in [docs/reproduction/rc68](reproduction/rc68/README.md):
+- the clean rebuild compared 465 files with 0 differences;
+- the reader's unpack-and-build compared 395 files with 0 differences, and its 110
+  not-rebuilt files were checked byte-identical.
+
 A successful level is claimed only after its actual result is recorded.
 
 CSV comparison preserves text, missingness and numerical tolerances. NetCDF
