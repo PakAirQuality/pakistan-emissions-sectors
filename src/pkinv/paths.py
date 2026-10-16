@@ -55,9 +55,12 @@ SRC = os.path.join(ROOT, "src")
 # with the CURRENT symlink and with what is on disk.
 PAPER_NATIONAL = os.path.join(ROOT, "paper_national")
 PAPER_NATIONAL_VERSIONS = os.path.join(PAPER_NATIONAL, "versions")
-PAPER_NATIONAL_CURRENT = "v1"
+PAPER_NATIONAL_CURRENT = "v3"
 PAPER_NATIONAL_MAIN = os.path.join(PAPER_NATIONAL_VERSIONS, PAPER_NATIONAL_CURRENT)
-PAPER_NATIONAL_SECTIONS = os.path.join(PAPER_NATIONAL_MAIN, "sections")
+PAPER_NATIONAL_REPORT = os.path.join(PAPER_NATIONAL_VERSIONS, "v1")
+# The maintained long report has chapter generators; the integrated main paper
+# is a single source with generated quantitative macros.
+PAPER_NATIONAL_SECTIONS = os.path.join(PAPER_NATIONAL_REPORT, "sections")
 PAPER_NATIONAL_GENERATED = os.path.join(PAPER_NATIONAL_MAIN, "generated")
 PAPER_NATIONAL_FIGURES = os.path.join(PAPER_NATIONAL, "figures")
 PAPER_NATIONAL_QUERIES = os.path.join(PAPER_NATIONAL, "queries")
@@ -65,3 +68,4 @@ PAPER_NATIONAL_QUERIES = os.path.join(PAPER_NATIONAL, "queries")
 # paths - the release manifest's product list, the deposit audit and the doc globs.
 PAPER_NATIONAL_REL = "paper_national"
 PAPER_NATIONAL_MAIN_REL = "paper_national/versions/%s" % PAPER_NATIONAL_CURRENT
+PAPER_NATIONAL_REPORT_REL = "paper_national/versions/v1"

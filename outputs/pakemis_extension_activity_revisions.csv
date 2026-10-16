@@ -1,0 +1,5 @@
+domain,period,item,old,new,unit,reason,source
+agriculture,FY2023-24,wheat_area_ha,9632000,9734000,ha,Later official source revision,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26
+agriculture,FY2023-24,wheat_production_t,31438000,31814000,t,Later official source revision,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27
+agriculture,FY2023-24,rice_production_t,9869000,9859000,t,Later official source revision,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27
+agriculture,FY2023-24,maize_production_t,9847000,9739000,t,Later official source revision,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27

@@ -1,0 +1,55 @@
+sector,period_id,configuration_id,species,quantity,unit,coverage
+agriculture,FY2023-24,S_TAN,CO2e_AR5,223.03801823999999,Mt_CO2e,supported_source_scope
+agriculture,FY2023-24,S_TAN,PM2.5,54.127314,Gg,covered_sources_only
+agriculture,FY2023-24,S_TAN,BC,3.561007,Gg,covered_sources_only
+agriculture,FY2023-24,S_TAN,NOx,318.022828,Gg,covered_sources_only
+agriculture,FY2023-24,S_TAN,SO2,2.848806,Gg,covered_sources_only
+agriculture,FY2023-24,S_TAN,CO,655.225377,Gg,covered_sources_only
+agriculture,FY2023-24,S_TAN,NMVOC,49.854105,Gg,covered_sources_only
+agriculture,FY2023-24,S_TAN,NH3,2618.742784,Gg,covered_sources_only
+agriculture,FY2024-25,S_TAN,CO2e_AR5,228.56113228999996,Mt_CO2e,supported_source_scope
+agriculture,FY2024-25,S_TAN,PM2.5,49.903036,Gg,covered_sources_only
+agriculture,FY2024-25,S_TAN,BC,3.283094,Gg,covered_sources_only
+agriculture,FY2024-25,S_TAN,NOx,318.449886,Gg,covered_sources_only
+agriculture,FY2024-25,S_TAN,SO2,2.626476,Gg,covered_sources_only
+agriculture,FY2024-25,S_TAN,CO,604.089379,Gg,covered_sources_only
+agriculture,FY2024-25,S_TAN,NMVOC,45.963322,Gg,covered_sources_only
+agriculture,FY2024-25,S_TAN,NH3,2639.397258,Gg,covered_sources_only
+agriculture,FY2023-24,S_TAN,category:Enteric fermentation,151.65764953000001,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2024-25,S_TAN,category:Enteric fermentation,156.43682187999997,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2023-24,S_TAN,category:Field burning of residues,0.6705377100000001,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2024-25,S_TAN,category:Field burning of residues,0.61820668,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2023-24,S_TAN,category:Managed soils,28.49372651,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2024-25,S_TAN,category:Managed soils,27.782491869999994,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2023-24,S_TAN,category:Manure management,20.84327329,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2024-25,S_TAN,category:Manure management,21.663828530000004,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2023-24,S_TAN,category:Rice cultivation,16.54835,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2024-25,S_TAN,category:Rice cultivation,17.74045,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2023-24,S_TAN,category:Urea application,4.8244812,Mt_CO2e_AR5,supported_source_scope
+agriculture,FY2024-25,S_TAN,category:Urea application,4.31933333,Mt_CO2e_AR5,supported_source_scope
+power,FY2023-24,S_TAN,CO2e_AR5,45.65722415,Mt_CO2e,supported_source_scope
+power,FY2023-24,S_TAN,SO2,30.021747,Gg,covered_sources_only
+power,FY2024-25,S_TAN,CO2e_AR5,43.86479148000001,Mt_CO2e,supported_source_scope
+power,FY2024-25,S_TAN,SO2,5.707479,Gg,covered_sources_only
+power,FY2023-24,S_TAN,category:Captive gas self-generation (1A2),5.54948747,Mt_CO2e_AR5,supported_source_scope
+power,FY2024-25,S_TAN,category:Captive gas self-generation (1A2),5.1255682899999995,Mt_CO2e_AR5,supported_source_scope
+power,FY2023-24,S_TAN,category:Electricity and heat production,40.107736679999995,Mt_CO2e_AR5,supported_source_scope
+power,FY2024-25,S_TAN,category:Electricity and heat production,38.739223190000004,Mt_CO2e_AR5,supported_source_scope
+residential,FY2023-24,S_TAN,CO2e_AR5,24.22155231,Mt_CO2e,supported_source_scope
+residential,FY2023-24,S_TAN,PM2.5,282.793671,Gg,covered_sources_only
+residential,FY2023-24,S_TAN,BC,20.00076,Gg,covered_sources_only
+residential,FY2023-24,S_TAN,NOx,156.131952,Gg,covered_sources_only
+residential,FY2023-24,S_TAN,SO2,20.839437,Gg,covered_sources_only
+residential,FY2023-24,S_TAN,CO,3353.618059,Gg,covered_sources_only
+residential,FY2023-24,S_TAN,NMVOC,357.691894,Gg,covered_sources_only
+residential,FY2023-24,S_TAN,NH3,42.37984,Gg,covered_sources_only
+residential,FY2024-25,S_TAN,CO2e_AR5,22.721702370000006,Mt_CO2e,supported_source_scope
+residential,FY2024-25,S_TAN,PM2.5,276.393217,Gg,covered_sources_only
+residential,FY2024-25,S_TAN,BC,19.547197,Gg,covered_sources_only
+residential,FY2024-25,S_TAN,NOx,154.201489,Gg,covered_sources_only
+residential,FY2024-25,S_TAN,SO2,20.800107,Gg,covered_sources_only
+residential,FY2024-25,S_TAN,CO,3265.408934,Gg,covered_sources_only
+residential,FY2024-25,S_TAN,NMVOC,357.928319,Gg,covered_sources_only
+residential,FY2024-25,S_TAN,NH3,41.208365,Gg,covered_sources_only
+residential,FY2023-24,S_TAN,category:Residential fuel combustion,24.22155231,Mt_CO2e_AR5,supported_source_scope
+residential,FY2024-25,S_TAN,category:Residential fuel combustion,22.721702370000006,Mt_CO2e_AR5,supported_source_scope

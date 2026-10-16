@@ -235,7 +235,11 @@ class TestThePublishedSeriesIsCutWithSequentialSums(unittest.TestCase):
         self.assertNotIn("(sum(", source)
 
     def test_the_published_cell_is_the_sequential_one(self):
+        from pkinv.core.io import seq_sum
+        from pkinv.sectors.agriculture import engine
+        components = engine.components_for_fiscal_year(2023)
+        expected = "%.5f" % seq_sum(row["co2e_Mt_AR5"] for row in components)
         row = next(r for r in _rows("pakemis_national_series.csv")
                    if r["row_kind"] == "sector" and r["sector"] == "agriculture"
                    and r["fiscal_end_year"] == "2023")
-        self.assertEqual(row["co2e_Mt_AR5"], "208.56457")
+        self.assertEqual(row["co2e_Mt_AR5"], expected)

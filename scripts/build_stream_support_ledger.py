@@ -2,7 +2,7 @@
 """THE ATOMIC STREAM-TO-SUPPORT LEDGER (rc47 Wave 7) - the audit's named deliverable.
 
 One product at grain (period_id, source_stream_id): every stream-year's MASS and its
-SPATIAL SUPPORT in one row, rectangular over the full 198-stream x 9-period panel with a
+SPATIAL SUPPORT in one row, rectangular over the registered stream x core-period panel with a
 typed absence key - the three files a reader used to join by hand (atomic mass, weight
 registry, fallback ledger) joined once, here, with the join's completeness pinned by test.
 
@@ -13,8 +13,11 @@ Columns beyond the join:
                     silent re-seats all price their remainders now)
   fallback_Mt       mass the year placed on a fallback surface, from the priced events
   adm1_retained_Mt  mass retained at ADM1 (the unallocated ledger's stream-years)
-  monthly_support   the reference year's cells exist monthly; every other year carries
-                    the standing typed refusal, per row instead of per dataset attribute
+  monthly_support   the reference has a published GHG monthly raster and ADM tables;
+                    other periods have monthly administrative allocations and annual
+                    rasters, with their temporal/spatial evidence carried separately.
+                    This GHG ledger does not describe the separate four-configuration
+                    air annual/monthly cube family.
 
 Usage:  python3 scripts/build_stream_support_ledger.py [--check]
 Writes: outputs/pakemis_stream_support_ledger.csv
@@ -32,8 +35,8 @@ from pkinv.paths import OUTPUTS  # noqa: E402
 
 OUT = asset_path(OUTPUTS, "pakemis_stream_support_ledger.csv")
 REFERENCE = "FY2023-24"
-MONTHLY_REFUSAL = ("monthly cells exist for FY2023-24 only: a historical month has no "
-                   "seasonal geography evidence and none is invented")
+MONTHLY_ADMINISTRATIVE = ("monthly_administrative_allocation; "
+                          "no_published_ghg_monthly_raster")
 FIELDS = ("period_id", "source_stream_id", "module", "gas", "status",
           "emissions_Gg", "co2e_Mt_AR5",
           "geometry_id", "surface", "district_panel", "spatial_view",
@@ -98,18 +101,22 @@ def build():
             "evidence_role": w["evidence_role"],
             "validation_ids": w["validation_ids"],
             "monthly_support": ("gridded_monthly" if w["period_id"] == REFERENCE
-                                else MONTHLY_REFUSAL) if present else "",
+                                else MONTHLY_ADMINISTRATIVE) if present else "",
             "basis": w["basis"],
         })
     rows.sort(key=lambda r: (r["period_id"], r["source_stream_id"]))
     banner = [
         "THE ATOMIC STREAM-TO-SUPPORT LEDGER (rc47 Wave 7). One row per (period,",
         "stream): the mass, the support that placed it, the measured located share,",
-        "the priced fallback and ADM1-retained masses, and the monthly-support refusal",
+        "the priced fallback and ADM1-retained masses, and actual GHG monthly support",
         "stated per row. Rectangular over the full stream x period panel; a stream-year",
         "with nothing to place carries status=not_present rather than silence.",
         "Sources: pakemis_atomic_annual + pakemis_spatial_weights_by_year +",
         "pakemis_grid_stream_surfaces_by_year + the fallback and unallocated ledgers.",
+        "This is the S_TAN GHG stream ledger. All core periods have monthly administrative",
+        "allocations; only the detailed reference has a published GHG monthly raster.",
+        "Separate air annual/monthly cubes carry all four configurations and their own",
+        "source/process coverage and allocation evidence, not the GHG stream coverage.",
     ]
     check = "--check" in sys.argv
     write_or_check(OUT, list(FIELDS), rows, check=check, banner=banner,

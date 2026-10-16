@@ -49,13 +49,29 @@ SECTOR_SOURCE_TREES = {
 }
 
 
-# THE DEPOSIT GROUP (rc63, from the v3 campaign's measurement). Two registered phases read
-# primary documents under the frozen sources/ tree, which the archive deposit does not ship:
-# the station-location ingest and the OGRA gas-class cross-check. Both products ship as
-# inputs, so a rebuild from the deposit takes them as given and runs everything else. The
-# set is MEASURED - docs/deposit_rebuild_limits.md records the experiment - and a test holds
-# it to exactly these two: a third name here would hide a new raw-document dependency.
-DEPOSIT_EXCLUDED = ("Power plant workbooks", "OGRA gas-class series")
+# The deposit reproduces from compiled source tables. These explicitly named
+# phases need retained primary documents not shipped in the compact package;
+# their verified compiled products are seeded and recorded separately.
+DEPOSIT_SOURCE_PHASES = {
+    "Power plant workbooks": "retained NEPRA primary spreadsheets",
+    "OGRA gas-class series": "retained OGRA primary report",
+    "Fiscal extension source tables": "retained official PDFs, XLSX and monthly source records",
+    "Residential own-year degree-days": "retained NASA POWER monthly responses",
+    "HTAP air comparison": "retained HTAP source workbook archive",
+    "Power air-control evidence": "retained plant licence application PDFs",
+    "UNSD industrial-combustion control": "retained UNSD energy-balance PDF",
+    "UNSD coal supply control": "retained UNSD energy-balance PDF",
+    "Forest flux adjudication": "retained FAOSTAT land-use forests bulk archive",
+    "F-gas leak-rate adjudication": "retained UNFCCC CRT tables",
+    "Lahore SO2 vs EDGAR gridmaps": "retained EDGAR v8.1 air-pollutant gridmap archives",
+    "Provincial SO2 vs EDGAR gridmaps": "retained EDGAR v8.1 air-pollutant gridmap archives",
+    "FAOSTAT nitrogen flows": "retained FAOSTAT bulk emissions archives",
+    # rc68: these two read every published release's manifest out of git history, which a
+    # deposit does not carry; in a fresh tree each earlier vintage came out "absent".
+    "Published release vintages": "published release manifests read from git history",
+    "Release axis fingerprints": "published release products read from git history",
+}
+DEPOSIT_EXCLUDED = tuple(DEPOSIT_SOURCE_PHASES)
 
 
 def phases_for_group(group, phases=None):
@@ -619,6 +635,7 @@ def main(argv=None):
     parser.add_argument("--jobs", "-j", type=int, default=min(4, os.cpu_count() or 1),
                         help="parallel workers for explicitly audited tasks; others stay serial")
     parser.add_argument("--ledger", default=None)
+    parser.add_argument("--seeded", default=None, help="verified seeded-product receipt for strict reproduction")
     args = parser.parse_args(argv)
     if args.jobs < 1:
         parser.error("--jobs must be positive")
@@ -657,6 +674,8 @@ def main(argv=None):
                     legacy.append("--quick")
                 if args.ledger:
                     legacy += ["--ledger", args.ledger]
+                if args.seeded:
+                    legacy += ["--seeded", args.seeded]
                 return registry.main(legacy)
             finally:
                 registry.PHASES = original

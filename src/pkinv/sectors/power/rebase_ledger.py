@@ -100,10 +100,20 @@ def build():
                 if r["row_kind"] == "covered_total"}
 
     rows = []
-    for y in sorted(set(cfg) & set(booking) & set(legacy)):
+    for y in sorted(set(cfg) & set(booking)):
         period = "FY%d-%02d" % (y, (y + 1) % 100)
         c0, c1 = cfg[y]["C0_table3"], cfg[y]["C1_stations_rank_default"]
         b = booking[y]
+        if _num(b["superseded_toe"]) is None or y not in legacy or _num(c0["coal_energy_TJ"]) is None:
+            row = dict.fromkeys(FIELDS, "")
+            row.update(period_id=period, fiscal_start_year=y,
+                booked_toe="%.0f" % _num(b["booked_toe"]), booked_evidence_grade=b["evidence_grade"],
+                dominant_term="not_applicable_no_legacy_control", booked_source=b["mass_account"],
+                superseded_source=b["superseded_source"],
+                national_booked_Mt=national.get(period, ""),
+                note="No independently published superseded energy control for this year; no ratio, decomposition or emissions change is manufactured.")
+            rows.append(row)
+            continue
         m1 = _num(c1["mass_kt"])
         if m1 is None:
             m1 = 0.5 * (_num(c1["mass_lo_kt"]) + _num(c1["mass_hi_kt"]))

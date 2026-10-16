@@ -1,10 +1,10 @@
 # Counts of pakemis_validation_five_classes.csv by class.
 five_class,entries,what_it_can_establish
-partially independent benchmark,62,agreement or disagreement with a comparator that shares some inputs
+partially independent benchmark,64,agreement or disagreement with a comparator that shares some inputs
 independent compilation (another inventory; not an observation of emissions),11,agreement with another compilation; not accuracy against observations
 calibration (fitted to the comparator; cannot validate it),7,nothing about the estimate it was fitted to
 shares activity or factors with the estimate,6,"consistency of shared inputs, not independent confirmation"
 internal consistency / accounting identity,4,that the products agree with each other
 declared absence (no check performed),11,nothing: the check was not performed
 not a comparison,1,nothing: not a comparison
-TOTAL,102,catalogue entries
+TOTAL,104,catalogue entries

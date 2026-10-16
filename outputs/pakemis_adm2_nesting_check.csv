@@ -7,9 +7,9 @@
 # The ADM2 product carries NATIVE GAS MASS; AR5 is applied here to compare it with a
 # CO2e control. Comparing the columns directly gives 212 Mt of nonsense.
 province,adm2_sum_Mt_AR5,provincial_control_Mt_AR5,difference_Mt_AR5,abs_difference_Mt_AR5,share_of_control_pct
-Balochistan,17.294113,17.294114,-1e-06,1e-06,-0.0
-Khyber Pakhtunkhwa,31.010306,31.010307,-1e-06,1e-06,-0.0
-Other,0.402506,0.402506,-0.0,0.0,-0.0
-Punjab,123.304952,123.304956,-4e-06,4e-06,-0.0
-Sindh,51.442587,51.442589,-2e-06,2e-06,-0.0
-TOTAL,223.454464,223.454471,,7e-06,
+Balochistan,16.975431,16.975431,-0.0,0.0,-0.0
+Khyber Pakhtunkhwa,30.766449,30.766449,-0.0,0.0,-0.0
+Other,0.402213,0.402213,-0.0,0.0,-0.0
+Punjab,123.453368,123.453368,-0.0,0.0,-0.0
+Sindh,51.440556,51.440556,-0.0,0.0,-0.0
+TOTAL,223.038018,223.038018,,0.0,

@@ -54,12 +54,12 @@ class TestLimitationsAgreeWithTheTables(unittest.TestCase):
             self.assertEqual(shipped.get(limitation), message, "%s: the built contract is stale" % limitation)
 
     def test_provinces_and_districts_carry_the_fiscal_periods(self):
+        from pkinv.core.reporting_window import CORE_PERIOD_IDS
         for table in ("fact_air_adm1_year", "fact_air_adm2_year"):
             periods = _distinct(table, "period_id")
-            self.assertEqual(len(periods), 9, table)
-            self.assertTrue(all(p.startswith("FY") for p in periods), table)
+            self.assertEqual(periods, set(CORE_PERIOD_IDS), table)
         self.assertNotIn("CY2024", self.text["air_history_national_only"])
-        self.assertIn("nine fiscal periods", self.text["air_history_national_only"])
+        self.assertIn("fiscal", self.text["air_history_national_only"])
 
     def test_no_sector_with_a_spatial_air_layer_is_called_absent(self):
         have = _distinct("fact_air_adm1_year", "sector_id") & _distinct("fact_air_adm2_year", "sector_id")
@@ -118,7 +118,9 @@ class TestLimitationsAgreeWithTheTables(unittest.TestCase):
     def test_no_sentence_quotes_a_count_of_stream_years(self):
         for limitation, message in self.text.items():
             self.assertNotRegex(message, r"[\d,]+ of [\d,]+ live stream-years", limitation)
-        self.assertIn("fact_spatial_basis_year", self.text["adm2_history_annual_only"])
+        # adm2_history_annual_only was retired at rc68: district months exist for every core
+        # period, so there is no annual-only district history left to describe
+        self.assertNotIn("adm2_history_annual_only", self.text)
         from pkinv.semantic import facts
         self.assertNotRegex(facts.fact_adm2_year.__doc__, r"For [\d,]+ of [\d,]+\s+live stream-years")
 
@@ -137,10 +139,14 @@ class TestTheAirGridSaysWhatItHolds(unittest.TestCase):
             from netCDF4 import Dataset
         except ImportError:
             raise unittest.SkipTest("netCDF4 not installed")
-        for name in ("pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc",
-                     "pakemis_air_grid_0p05_annual_ledger_fy2015_16_fy2023_24.nc"):
-            with Dataset(os.path.join(ROOT, "outputs", name)) as ds:
-                self.assertEqual(ds.coverage_scope, text, name)
+        from pkinv.core import configurations as conf
+        from pkinv.core.reporting_window import CORE_PERIOD_IDS
+        for cfg in conf.AIR_ALL:
+            path = air_annual_grid.path_for(cfg)
+            with Dataset(path) as ds:
+                self.assertEqual(ds.coverage_scope, text, path)
+                self.assertEqual(ds.configuration_id, cfg)
+                self.assertEqual(set(map(str, ds["period_id"][:])), set(CORE_PERIOD_IDS))
 
 
 if __name__ == "__main__":

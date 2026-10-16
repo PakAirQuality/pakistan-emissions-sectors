@@ -5,7 +5,7 @@ calendar one (annual_grid.py says why). A calendar 2023 industrial figure is nev
 what a Lahore campaign or an EDGAR/CAMS column is dated to, so it is COMPOSED here, in the
 open: January-June 2023 from FY2022-23's months, July-December 2023 from FY2023-24's, each
 class-year's air mass split across its months by the monthly cube's own share vector for the
-greenhouse-gas component the class rides (outputs/pakemis_monthly_fy2015_16_fy2023_24.csv:
+greenhouse-gas component the class rides (outputs/pakemis_monthly_fy2015_16_fy2024_25.csv:
 the same T2 differenced OCAC editions, T3 QIM production shapes and days-weighted flat
 profiles that time the CO2). The month_method column names, per row, which of those it was
 - an air row cannot be better timed than the fuel it burns.
@@ -15,8 +15,8 @@ ends in 2022; the comparison script says so), and not a Lahore figure - it is na
 class and species, the input a later spatial composition would multiply.
 
 Usage:  python3 -m pkinv.report.air_calendar_2023
-Reads:  outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv (industry rows),
-        outputs/pakemis_monthly_fy2015_16_fy2023_24.csv, data/air_source_classes.csv
+Reads:  outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv (industry rows),
+        outputs/pakemis_monthly_fy2015_16_fy2024_25.csv, data/air_source_classes.csv
 Writes: outputs/pakemis_air_industry_cy2023.csv
 """
 
@@ -28,8 +28,8 @@ from collections import defaultdict
 from pkinv.activity.store import read_rows
 from pkinv.paths import DATA, OUTPUTS
 
-DETAIL = asset_path(OUTPUTS, "pakemis_air_source_classes_fy2015_16_fy2023_24.csv")
-MONTHLY = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2023_24.csv")
+DETAIL = asset_path(OUTPUTS, "pakemis_air_source_classes_fy2015_16_fy2024_25.csv")
+MONTHLY = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2024_25.csv")
 REGISTER = asset_path(DATA, "air_source_classes.csv")
 OUT = asset_path(OUTPUTS, "pakemis_air_industry_cy2023.csv")
 CALENDAR_YEAR = 2023
@@ -43,7 +43,7 @@ def _component_shares():
     industry and captive CO2 components - the monthly cube's own timing."""
     out = defaultdict(dict)
     for r in read_rows(MONTHLY):
-        if r["gas"] != "CO2" or r["configuration_id"] != "REF_2023_24":
+        if r["gas"] != "CO2" or r["configuration_id"] != "S_TAN":
             continue
         if r["sector_id"] != "industry" and not r["category"].startswith("Captive"):
             continue

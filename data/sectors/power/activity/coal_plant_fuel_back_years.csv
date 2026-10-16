@@ -44,12 +44,12 @@
 # Lakhra's five years it disagrees with the table's own mass over generation, which is a
 # property of the document and is flagged per row.
 fiscal_year,system,plant,fuel,fuel_origin,quantity_kt,net_generation_GWh,intensity_kg_per_kWh_printed,edition,source_table,note
-2013,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,160.71,112.00,1.03,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.435); reads as a gross-vs-net generation mix"
-2014,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,151.00,102.27,1.04,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.476)"
-2015,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,152.22,148.16,1.03,2018,NEPRA SoIR 2018 GENCO coal block,"internally consistent: mass/generation 1.027 against 1.03 printed. The whole national coal fleet in FY2015-16"
-2016,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,123.90,123.97,0.99,2018,NEPRA SoIR 2018 GENCO coal block,"internally consistent: 0.999 against 0.99 printed"
-2017,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,5.30,3.39,1.01,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.563); Lakhra is nearly shut by this year"
-2018,GENCO,FBC Lakhra (GENCO-IV),Coal,Thar lignite,0.26,0.06,4.04,2020,NEPRA SoIR 2020 GENCO coal block,"Lakhra is effectively shut by FY2018-19 and zero from FY2019-20. Its printed intensity of 4.04 is meaningless at 0.06 GWh and is carried only because the column exists"
+2013,GENCO,FBC Lakhra (GENCO-IV),Coal,Lakhra coal (lignite default),160.71,112.00,1.03,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.435); reads as a gross-vs-net generation mix"
+2014,GENCO,FBC Lakhra (GENCO-IV),Coal,Lakhra coal (lignite default),151.00,102.27,1.04,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.476)"
+2015,GENCO,FBC Lakhra (GENCO-IV),Coal,Lakhra coal (lignite default),152.22,148.16,1.03,2018,NEPRA SoIR 2018 GENCO coal block,"internally consistent: mass/generation 1.027 against 1.03 printed. The whole national coal fleet in FY2015-16"
+2016,GENCO,FBC Lakhra (GENCO-IV),Coal,Lakhra coal (lignite default),123.90,123.97,0.99,2018,NEPRA SoIR 2018 GENCO coal block,"internally consistent: 0.999 against 0.99 printed"
+2017,GENCO,FBC Lakhra (GENCO-IV),Coal,Lakhra coal (lignite default),5.30,3.39,1.01,2018,NEPRA SoIR 2018 GENCO coal block,"printed intensity disagrees with mass/generation (1.563); Lakhra is nearly shut by this year"
+2018,GENCO,FBC Lakhra (GENCO-IV),Coal,Lakhra coal (lignite default),0.26,0.06,4.04,2020,NEPRA SoIR 2020 GENCO coal block,"Lakhra is effectively shut by FY2018-19 and zero from FY2019-20. Its printed intensity of 4.04 is meaningless at 0.06 GWh and is carried only because the column exists"
 2018,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,2936.97,8220.07,,2023,NEPRA SoIR 2023 Table 21,"the year the committed ledger does not reach; no edition before 2023 prints a per-station coal mass"
 2018,IPP,Port Qasim Electric Power,Coal,imported,2901.23,7553.64,,2023,NEPRA SoIR 2023 Table 21,"as above"
 2019,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,2270.37,6167.19,,2023,NEPRA SoIR 2023 Table 21,"overlap row: agrees with the SoIR 2024 ledger"

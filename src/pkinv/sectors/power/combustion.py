@@ -45,51 +45,17 @@ def fuel_TJ(data, year=None):
 
 
 def coal_lignite_share(data, year=None):
-    """The lignite share of coal generation for one year, and where it comes from.
+    """Lignite share of booked heat from station mass and rank-specific NCV.
 
-    THIS USED TO BE ONE NUMBER FOR EVERY YEAR, and the number described FY2023-24. The
-    parameter's own note warns that its predecessor (0.35) was wrong because it was read
-    off an earlier year's generation mix while the Thar fleet ramped - and the same defect
-    then pointed the other way, applying a three-quarters-lignite blend back to years when
-    no domestic-lignite plant was running. the plant closure's coal_blend() has been
-    year-aware the whole time and was never called from here.
-
-    Three regimes, each declared:
-
-      the reference year   the published parameter, which IS the ledger's own FY2023-24
-                           figure rounded for publication (0.79 against 0.7933). The
-                           parameter carries the source and the uncertainty, so it stays
-                           the reported value and the headline does not move on a rounding.
-      2019-20 onwards      the ledger's generation-weighted mid for that year, from
-                           data/activity/power/plant_fuel_ledger.csv.
-      before 2019-20       zero, because the domestic-lignite fleet did not exist: the
-                           first Thar unit starts in 2019 and Thar Energy, Lucky and
-                           ThalNova in 2022-23 (GEM commissioning years), while the coal
-                           generation of those years is the imported Sahiwal and Port
-                           Qasim units that came on in 2017. The caveat, stated rather
-                           than hidden: Lakhra is domestic lignite and dates to 1995, so
-                           the true share is not exactly zero. It is a 150 MW plant that
-                           barely runs, and total coal generation in the two years it
-                           could matter is 148 and 1,059 GWh - if every one of those
-                           kilowatt-hours were lignite the factor moves by 6,400 kg/TJ on
-                           under two percent of the decade's coal, which is smaller than
-                           the parameter's own 12 percent uncertainty.
-
-    The per-year shares are READ FROM DATA, not computed here, and deliberately so.
-    The plant closure derives them, but it also carries IPCC default NCVs for Thar lignite -
-    the weakest evidence in this sector - and tests/test_plant_closure.py holds that this
-    module may not import it, so a default NCV can never reach the emissions path. The
-    shares are therefore derived once into data/power_coal_blend_by_year.csv, each row
-    carrying its basis, its source and its lo/hi bound, where they can be audited like any
-    other activity datum instead of appearing out of a function call.
+    CO2 factors are expressed per unit of fuel energy. Electricity shares cannot
+    weight them because ranks have different conversion efficiencies. Generation
+    remains a separate diagnostic and never enters this factor weighting.
     """
-    if year is None or year == data.year:
-        return data.p("coal_lignite_share")
-    return data.coal_blend_share(year)
+    return data.coal_energy_lignite_share(year)
 
 
 def coal_co2_factor(data, override=None, year=None):
-    """Generation-weighted kg CO2/TJ for coal, for the year asked about.
+    """Energy-weighted kg CO2/TJ for coal, for the year asked about.
 
     override='bituminous' or 'lignite' forces a bound, for the sensitivity run.
     """
@@ -124,31 +90,21 @@ def activity_uncert(data, fuel):
     return product(data.p(ACTIVITY_UNCERT_KEY[fuel]), data.pu("toe_to_tj"))
 
 
-def coal_co2_factor_uncert(data):
-    """Delta-method uncertainty of the blended coal CO2 factor.
+def coal_co2_factor_uncert(data, year=None):
+    """Factor-only uncertainty conditional on the station rank heat account.
 
-    The previous form - product(lignite EF uncert, blend uncert) = 16.97 percent - applied
-    the whole 12 percent blend range as if the share multiplied the whole factor. It does
-    not: the factor is bit + share x (lig - bit), so a 12 percent share error moves the
-    blend by share x (EF_lig - EF_bit) / EF_blend = about 0.6 percent. Propagating each
-    term by its actual sensitivity:
-
-        u^2 = (w_lig u_lig)^2 + (w_bit u_bit)^2 + (share dEF/EF u_share)^2
-
-    with w the factor-weighted rank shares. The blend ENDPOINTS remain published as the
-    all-bituminous/all-lignite scenario rows, so nothing the old number gestured at is
-    lost - it is just no longer misfiled as parametric width.
+    Rank NCV uncertainty enters the energy drivers separately and changes the
+    heat shares there. An independent generation-blend share draw would duplicate
+    a retired assumption rather than describe the documented physical account.
     """
     import math
-    share = data.p("coal_lignite_share")
+    share = coal_lignite_share(data, year)
     lig, bit = (data.efv("power_combustion_co2", "Lignite"),
                 data.efv("power_combustion_co2", "Other Bituminous Coal"))
     blend = bit * (1.0 - share) + lig * share
     w_lig, w_bit = share * lig / blend, (1.0 - share) * bit / blend
-    share_term = share * (lig - bit) / blend * data.pu("coal_lignite_share")
     return math.sqrt((w_lig * data.efu("power_combustion_co2", "Lignite")) ** 2
-                     + (w_bit * data.efu("power_combustion_co2", "Other Bituminous Coal")) ** 2
-                     + share_term ** 2)
+                     + (w_bit * data.efu("power_combustion_co2", "Other Bituminous Coal")) ** 2)
 
 
 def compute(data, year=None, coal_override=None):
@@ -161,7 +117,7 @@ def compute(data, year=None, coal_override=None):
         ad_u = activity_uncert(data, fuel)
         if fuel == "Coal":
             co2_ef = coal_co2_factor(data, coal_override, year)
-            co2_u = coal_co2_factor_uncert(data)
+            co2_u = coal_co2_factor_uncert(data, year)
             ch4_ef = data.efv("power_combustion_ch4", "Coal")
             n2o_ef = data.efv("power_combustion_n2o", "Coal")
             ch4_u = data.efu("power_combustion_ch4", "Coal")
@@ -206,4 +162,23 @@ def compute(data, year=None, coal_override=None):
             "uncert_pct": product(ad_u, n2o_u),
             "net_of_leak": fuel == "Gas"})
 
+    # The booked coal account is mass × rank NCV, unlike the three retained
+    # Table 3 energy controls. Name those actual dependencies and remove the
+    # obsolete shared TOE-convention draw from coal.
+    for row in components:
+        if row["subitem"].startswith("Coal "):
+            widths = data.coal_uncertainty_drivers(year, row["gas"])
+            row["uncertainty_driver_widths"] = widths
+            row.pop("corr_group", None)
+            # The graph samples a product of lognormal drivers. Summing relative
+            # widths in Approach 1 and then converting that sum to log variance
+            # is not equivalent when CH4/N2O factor widths are large. Derive the
+            # declared marginal in the same domain; retain the first-order
+            # diagnostic separately. No variance is silently clamped or widened.
+            import math
+            from pkinv.core.parameters import sigma_log, pct_from_sigma
+            row["approach1_uncert_pct"] = product(*widths.values())
+            row["uncert_pct"] = pct_from_sigma(math.sqrt(sum(sigma_log(width) ** 2
+                                                          for width in widths.values())))
+            row["reconstruction_interval_kind"] = "conditional_no_probability"
     return components, []

@@ -11,6 +11,8 @@ from pkinv.assets import asset_path
 import csv
 import os
 import unittest
+from fnmatch import fnmatchcase
+from pkinv.core import configurations
 
 from _support import ROOT
 from validation._package import IN_PACKAGE, data_rows
@@ -48,8 +50,13 @@ class TestTheLedgerMap(unittest.TestCase):
     def test_every_ledger_closes_per_configuration(self):
         sums = {}
         for row in self.map:
+            if row["kind"] == "memo":
+                # Explicitly unquantified retail claimants are descriptive and
+                # are already inside a counted flow; they never enter closure.
+                continue
             value = resolve(row)[0][row["value_column"]]
-            x = float(value) if value not in ("", None) else 0.0
+            self.assertNotIn(value, ("", None), "unknown ledger mass is not zero: " + row["row_id"])
+            x = float(value)
             for cfg in row["configuration_id"].split(";"):
                 d = sums.setdefault((row["ledger_id"], cfg), {"control": 0.0, "transfer": 0.0,
                                                                "unresolved": 0.0, "memo": 0.0})
@@ -81,16 +88,15 @@ class TestTheLedgerMap(unittest.TestCase):
             notation.setdefault(r["code"], set()).add(r["notation_key"])
         bad = []
         for row in self.map:
-            if row["kind"] != "transfer" or row["status"] != "resolved":
+            if row["kind"] != "transfer" or not row["status"].startswith("resolved"):
                 continue
             dest = row["destination_source_stream"]
             if not dest or dest == "-":
                 continue
-            codes = {code for sid, code in streams.items()
-                     if sid == dest or (dest.endswith("*") and sid.startswith(dest[:-1]))}
+            codes = {code for sid, code in streams.items() if fnmatchcase(sid, dest)}
             if not codes:
-                # a destination stream absent from the ledger has no category to be NE in;
-                # the pointer test above already holds the row to its own cell
+                bad.append("%s/%s -> no estimated stream matching %s"
+                           % (row["ledger_id"], row["row_id"], dest))
                 continue
             for code in codes:
                 # IE is a category reported elsewhere by design (the waste fate ledger's
@@ -101,6 +107,27 @@ class TestTheLedgerMap(unittest.TestCase):
                                % (row["ledger_id"], row["row_id"], dest, code,
                                   "/".join(sorted(keys))))
         self.assertEqual(bad, [], "resolved transfers into a category that is not estimated")
+
+    def test_all_four_configurations_have_each_ledger(self):
+        support = {(r["ledger_id"], cfg) for r in self.map for cfg in r["configuration_id"].split(";")}
+        self.assertEqual(support, {(ledger, cfg) for ledger in self.LEDGERS for cfg in configurations.ALL})
+        households = [r for r in self.map if r["ledger_id"] == "dung_transfer"
+                      and r["row_id"].endswith("_households")]
+        for row in households:
+            source_basis = parse_key(row["row_key"])["configuration"]
+            expected = {cfg for cfg in configurations.ALL
+                        if configurations.dung_basis(cfg) == ("survey" if source_basis == "S" else "ledger")}
+            self.assertEqual(set(row["configuration_id"].split(";")), expected)
+
+    def test_diverted_nitrogen_is_not_an_observed_combustion_transfer(self):
+        row = next(r for r in self.map if r["ledger_id"] == "nitrogen_excretion_ledger"
+                   and r["row_id"] == "to_dung_fuel")
+        self.assertEqual((row["kind"], row["status"]), ("unresolved", "unresolved"))
+        self.assertEqual((row["destination_sector"], row["destination_source_stream"]), ("-", "-"))
+        source = resolve(row)
+        self.assertEqual(len(source), 1)
+        self.assertIn("destinations unresolved", source[0]["flow"])
+        self.assertGreater(float(source[0][row["value_column"]]), 0)
 
     def test_fertiliser_gas_is_two_resolved_transfers_now_that_ammonia_is_estimated(self):
         """Through rc66 one row, `fertilizer_feedstock`, was held unresolved "while ammonia

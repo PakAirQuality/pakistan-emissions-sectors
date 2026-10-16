@@ -17,9 +17,9 @@ annual parquet is not, because pyarrow's footer names its own version and a mani
 would then pin the release to a library build rather than to the numbers.
 
 Reads:  outputs/pakemis_atomic_annual.csv
-        outputs/pakemis_monthly_fy2015_16_fy2023_24.csv
+        outputs/pakemis_monthly_fy2015_16_fy2024_25.csv
 Writes: outputs/pakemis_atomic_annual.parquet
-        outputs/pakemis_monthly_fy2015_16_fy2023_24.parquet
+        outputs/pakemis_monthly_fy2015_16_fy2024_25.parquet
 """
 
 from pkinv.assets import asset_path
@@ -30,7 +30,7 @@ from pkinv.paths import OUTPUTS
 
 TWINS = (
     ("pakemis_atomic_annual.csv", "pakemis_atomic_annual.parquet"),
-    ("pakemis_monthly_fy2015_16_fy2023_24.csv", "pakemis_monthly_fy2015_16_fy2023_24.parquet"),
+    ("pakemis_monthly_fy2015_16_fy2024_25.csv", "pakemis_monthly_fy2015_16_fy2024_25.parquet"),
 )
 
 # Identifier columns that must stay text even when every value happens to look numeric.

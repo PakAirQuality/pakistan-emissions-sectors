@@ -55,12 +55,16 @@ stage,step,section,subject,item,kind,value,unit,evidence_file,note
 3_correction,20,"which urea basis each year uses, and what the alternative would have given",FY2023-24,reconstruction_t,reading,6565217.391,"t, or pct / Mt as named",outputs/agriculture_urea_basis.csv,"NFDC Annex-5 printed national offtake, Jul-Jun window"
 3_correction,20,"which urea basis each year uses, and what the alternative would have given",FY2023-24,shortfall_of_reconstruction_pct,reading,0.207037,"t, or pct / Mt as named",outputs/agriculture_urea_basis.csv,"NFDC Annex-5 printed national offtake, Jul-Jun window"
 3_correction,20,"which urea basis each year uses, and what the alternative would have given",FY2023-24,co2_Mt,reading,4.824481,"t, or pct / Mt as named",outputs/agriculture_urea_basis.csv,"NFDC Annex-5 printed national offtake, Jul-Jun window"
-3_correction,30,the crop-residue ledger: where every tonne of straw goes,,cotton,fate,9.934,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
-3_correction,30,the crop-residue ledger: where every tonne of straw goes,,maize,fate,9.847,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
-3_correction,30,the crop-residue ledger: where every tonne of straw goes,,rice,fate,9.869,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
+3_correction,20,"which urea basis each year uses, and what the alternative would have given",FY2024-25,urea_mass_t,reading,5890000.0,"t, or pct / Mt as named",outputs/agriculture_urea_basis.csv,"NFDC Annex-5 printed national offtake, Jul-Jun window"
+3_correction,20,"which urea basis each year uses, and what the alternative would have given",FY2024-25,reconstruction_t,reading,5890434.783,"t, or pct / Mt as named",outputs/agriculture_urea_basis.csv,"NFDC Annex-5 printed national offtake, Jul-Jun window"
+3_correction,20,"which urea basis each year uses, and what the alternative would have given",FY2024-25,shortfall_of_reconstruction_pct,reading,-0.007382,"t, or pct / Mt as named",outputs/agriculture_urea_basis.csv,"NFDC Annex-5 printed national offtake, Jul-Jun window"
+3_correction,20,"which urea basis each year uses, and what the alternative would have given",FY2024-25,co2_Mt,reading,4.319333,"t, or pct / Mt as named",outputs/agriculture_urea_basis.csv,"NFDC Annex-5 printed national offtake, Jul-Jun window"
+3_correction,30,the crop-residue ledger: where every tonne of straw goes,,cotton,fate,9.934711,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
+3_correction,30,the crop-residue ledger: where every tonne of straw goes,,maize,fate,9.739,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
+3_correction,30,the crop-residue ledger: where every tonne of straw goes,,rice,fate,9.859,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
 3_correction,30,the crop-residue ledger: where every tonne of straw goes,,sugarcane,fate,21.9095,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
-3_correction,30,the crop-residue ledger: where every tonne of straw goes,,wheat,fate,34.5818,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
-3_correction,30,the crop-residue ledger: where every tonne of straw goes,,TOTAL,fate,86.1413,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,
+3_correction,30,the crop-residue ledger: where every tonne of straw goes,,wheat,fate,34.9954,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,residential 1.A.4.b (configuration L and S alike)
+3_correction,30,the crop-residue ledger: where every tonne of straw goes,,TOTAL,fate,86.437611,Mt dry,outputs/agriculture_crop_residue_ledger_2024.csv,
 3_correction,40,the fertiliser product mix behind the nitrogen,,Urea,composition,3026265.48,t N,outputs/agriculture_fertiliser_composition_2024.csv,
 3_correction,40,the fertiliser product mix behind the nitrogen,,DAP,composition,290777.4,t N,outputs/agriculture_fertiliser_composition_2024.csv,
 3_correction,40,the fertiliser product mix behind the nitrogen,,CAN,composition,206058.32,t N,outputs/agriculture_fertiliser_composition_2024.csv,
@@ -76,14 +80,14 @@ stage,step,section,subject,item,kind,value,unit,evidence_file,note
 4_final,90,"every category and gas, on the national table",CH4,Enteric fermentation,final,151.65765,Mt CO2e AR5,outputs/national_category_gas.csv,
 4_final,90,"every category and gas, on the national table",CH4,Manure management,final,13.18202,Mt CO2e AR5,outputs/national_category_gas.csv,
 4_final,90,"every category and gas, on the national table",N2O,Manure management,final,6.14799,Mt CO2e AR5,outputs/national_category_gas.csv,
-4_final,90,"every category and gas, on the national table",CH4,Biomass burning in croplands,final,0.53763,Mt CO2e AR5,outputs/national_category_gas.csv,
-4_final,90,"every category and gas, on the national table",N2O,Biomass burning in croplands,final,0.13192,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",CH4,Biomass burning in croplands,final,0.53842,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Biomass burning in croplands,final,0.13211,Mt CO2e AR5,outputs/national_category_gas.csv,
 4_final,90,"every category and gas, on the national table",CO2,Urea application,final,4.82448,Mt CO2e AR5,outputs/national_category_gas.csv,
-4_final,90,"every category and gas, on the national table",N2O,Direct N2O emissions from managed soils,final,16.43447,Mt CO2e AR5,outputs/national_category_gas.csv,
-4_final,90,"every category and gas, on the national table",N2O,Indirect N2O emissions from managed soils,final,12.09148,Mt CO2e AR5,outputs/national_category_gas.csv,
-4_final,90,"every category and gas, on the national table",N2O,Indirect N2O emissions from manure management,final,1.89847,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Direct N2O emissions from managed soils,final,16.8218,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Indirect N2O emissions from managed soils,final,11.67192,Mt CO2e AR5,outputs/national_category_gas.csv,
+4_final,90,"every category and gas, on the national table",N2O,Indirect N2O emissions from manure management,final,1.51326,Mt CO2e AR5,outputs/national_category_gas.csv,
 4_final,90,"every category and gas, on the national table",CH4,Rice cultivation,final,16.54835,Mt CO2e AR5,outputs/national_category_gas.csv,
-4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR5,reading,223.45447,Mt CO2e / pct,outputs/national_all_sectors.csv,
-4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR6,reading,218.06518,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR5,reading,223.03802,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,co2e_Mt_AR6,reading,217.6361,Mt CO2e / pct,outputs/national_all_sectors.csv,
 4_final,99,the sector's line in the national inventory,FY2023-24,uncert_pct_95,reading,19.1,Mt CO2e / pct,outputs/national_all_sectors.csv,
-4_final,99,the sector's line in the national inventory,FY2023-24,share_pct,reading,50.22,Mt CO2e / pct,outputs/national_all_sectors.csv,
+4_final,99,the sector's line in the national inventory,FY2023-24,share_pct,reading,50.17,Mt CO2e / pct,outputs/national_all_sectors.csv,

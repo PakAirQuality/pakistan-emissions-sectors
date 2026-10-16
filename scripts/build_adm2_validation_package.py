@@ -49,8 +49,8 @@ PAYLOAD = [
      "outputs/pakemis_spatial_weights_by_year.csv"),
     ("provenance/pakemis_grid_fallbacks_by_year.csv",
      "outputs/pakemis_grid_fallbacks_by_year.csv"),
-    ("control/pakemis_annual_fy2015_16_fy2023_24.csv",
-     "outputs/pakemis_annual_fy2015_16_fy2023_24.csv"),
+    ("control/pakemis_annual_fy2015_16_fy2024_25.csv",
+     "outputs/pakemis_annual_fy2015_16_fy2024_25.csv"),
     ("control/national_all_sectors.csv", "outputs/national_all_sectors.csv"),
     ("geometry/PAK_ADM2.geojson", "data/gis/PAK_ADM2.geojson"),
     ("geometry/adm2_canonical.csv", "data/adm2_canonical.csv"),
@@ -215,7 +215,7 @@ def main():
     sector = rows("maps/pakemis_adm2_sector_by_year.csv")
     weights = rows("provenance/pakemis_spatial_weights_by_year.csv")
     fallbacks = rows("provenance/pakemis_grid_fallbacks_by_year.csv")
-    control = rows("control/pakemis_annual_fy2015_16_fy2023_24.csv")
+    control = rows("control/pakemis_annual_fy2015_16_fy2024_25.csv")
     periods = [r["period_id"] for r in rows("geometry/periods.csv")]
 
     # ---- 1. every product covers every registered period -----------------------------
@@ -230,7 +230,7 @@ def main():
     # spatial product: the maps must reproduce it, not restate it.
     national = collections.defaultdict(float)
     for r in control:
-        if r["configuration_id"] == "REF_2023_24" and r["grain"] == "category_gas":
+        if r["configuration_id"] == "S_TAN" and r["grain"] == "category_gas":
             national[r["period_label"]] += float(r["co2e_Mt_AR5"])
     adm1_total = collections.defaultdict(float)
     for r in adm1:

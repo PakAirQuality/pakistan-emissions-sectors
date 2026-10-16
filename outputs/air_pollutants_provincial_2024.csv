@@ -34,11 +34,11 @@ Sindh,Managed soils,NH3 - synthetic fertiliser (MAP),fertilizer_N,NH3,0.006
 Khyber Pakhtunkhwa,Managed soils,NH3 - synthetic fertiliser (MAP),fertilizer_N,NH3,0.001
 Balochistan,Managed soils,NH3 - synthetic fertiliser (MAP),fertilizer_N,NH3,0.001
 Other,Managed soils,NH3 - synthetic fertiliser (MAP),fertilizer_N,NH3,0.0
-Punjab,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,173.598
-Sindh,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,66.953
-Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,10.503
-Balochistan,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,5.278
-Other,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,0.362
+Punjab,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,162.841
+Sindh,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,62.804
+Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,9.852
+Balochistan,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,4.951
+Other,Managed soils,NH3 - manure applied to soils (buffalo),manure_applied,NH3,0.34
 Punjab,Managed soils,NH3 - pasture deposition (cattle-type) (buffalo),livestock_total,NH3,14.942
 Sindh,Managed soils,NH3 - pasture deposition (cattle-type) (buffalo),livestock_total,NH3,7.147
 Khyber Pakhtunkhwa,Managed soils,NH3 - pasture deposition (cattle-type) (buffalo),livestock_total,NH3,7.023
@@ -49,20 +49,20 @@ Sindh,Manure management,NH3 - housing (buffalo),livestock_total,NH3,20.421
 Khyber Pakhtunkhwa,Manure management,NH3 - housing (buffalo),livestock_total,NH3,20.065
 Balochistan,Manure management,NH3 - housing (buffalo),livestock_total,NH3,19.586
 Other,Manure management,NH3 - housing (buffalo),livestock_total,NH3,0.15
-Punjab,Manure management,NH3 - storage (buffalo),livestock_total,NH3,14.515
-Sindh,Manure management,NH3 - storage (buffalo),livestock_total,NH3,6.943
-Khyber Pakhtunkhwa,Manure management,NH3 - storage (buffalo),livestock_total,NH3,6.822
-Balochistan,Manure management,NH3 - storage (buffalo),livestock_total,NH3,6.659
-Other,Manure management,NH3 - storage (buffalo),livestock_total,NH3,0.051
+Punjab,Manure management,NH3 - storage (buffalo),livestock_total,NH3,14.324
+Sindh,Manure management,NH3 - storage (buffalo),livestock_total,NH3,6.852
+Khyber Pakhtunkhwa,Manure management,NH3 - storage (buffalo),livestock_total,NH3,6.732
+Balochistan,Manure management,NH3 - storage (buffalo),livestock_total,NH3,6.571
+Other,Manure management,NH3 - storage (buffalo),livestock_total,NH3,0.05
 Punjab,Manure management,NH3 - yard (buffalo),livestock_total,NH3,16.009
 Sindh,Manure management,NH3 - yard (buffalo),livestock_total,NH3,7.658
 Khyber Pakhtunkhwa,Manure management,NH3 - yard (buffalo),livestock_total,NH3,7.524
 Balochistan,Manure management,NH3 - yard (buffalo),livestock_total,NH3,7.345
 Other,Manure management,NH3 - yard (buffalo),livestock_total,NH3,0.056
-Punjab,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,2.528
-Sindh,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,0.975
-Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,0.153
-Balochistan,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,0.077
+Punjab,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,2.313
+Sindh,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,0.892
+Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,0.14
+Balochistan,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,0.07
 Other,Managed soils,NH3 - manure applied to soils (camels),manure_applied,NH3,0.005
 Punjab,Managed soils,NH3 - pasture deposition (sheep/goat/other) (camels),livestock_smallrum,NH3,1.907
 Sindh,Managed soils,NH3 - pasture deposition (sheep/goat/other) (camels),livestock_smallrum,NH3,1.013
@@ -74,16 +74,16 @@ Sindh,Manure management,NH3 - housing (camels),livestock_total,NH3,0.323
 Khyber Pakhtunkhwa,Manure management,NH3 - housing (camels),livestock_total,NH3,0.317
 Balochistan,Manure management,NH3 - housing (camels),livestock_total,NH3,0.31
 Other,Manure management,NH3 - housing (camels),livestock_total,NH3,0.002
-Punjab,Manure management,NH3 - storage (camels),livestock_total,NH3,0.67
-Sindh,Manure management,NH3 - storage (camels),livestock_total,NH3,0.32
-Khyber Pakhtunkhwa,Manure management,NH3 - storage (camels),livestock_total,NH3,0.315
-Balochistan,Manure management,NH3 - storage (camels),livestock_total,NH3,0.307
+Punjab,Manure management,NH3 - storage (camels),livestock_total,NH3,0.66
+Sindh,Manure management,NH3 - storage (camels),livestock_total,NH3,0.316
+Khyber Pakhtunkhwa,Manure management,NH3 - storage (camels),livestock_total,NH3,0.31
+Balochistan,Manure management,NH3 - storage (camels),livestock_total,NH3,0.303
 Other,Manure management,NH3 - storage (camels),livestock_total,NH3,0.002
-Punjab,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,121.333
-Sindh,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,46.795
-Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,7.341
-Balochistan,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,3.689
-Other,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,0.253
+Punjab,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,113.94
+Sindh,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,43.944
+Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,6.894
+Balochistan,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,3.464
+Other,Managed soils,NH3 - manure applied to soils (dairy cattle),manure_applied,NH3,0.238
 Punjab,Managed soils,NH3 - pasture deposition (cattle-type) (dairy cattle),livestock_total,NH3,14.354
 Sindh,Managed soils,NH3 - pasture deposition (cattle-type) (dairy cattle),livestock_total,NH3,6.866
 Khyber Pakhtunkhwa,Managed soils,NH3 - pasture deposition (cattle-type) (dairy cattle),livestock_total,NH3,6.747
@@ -94,21 +94,21 @@ Sindh,Manure management,NH3 - housing (dairy cattle),livestock_total,NH3,4.185
 Khyber Pakhtunkhwa,Manure management,NH3 - housing (dairy cattle),livestock_total,NH3,4.112
 Balochistan,Manure management,NH3 - housing (dairy cattle),livestock_total,NH3,4.014
 Other,Manure management,NH3 - housing (dairy cattle),livestock_total,NH3,0.031
-Punjab,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,15.093
-Sindh,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,7.219
-Khyber Pakhtunkhwa,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,7.094
-Balochistan,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,6.924
+Punjab,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,15.024
+Sindh,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,7.186
+Khyber Pakhtunkhwa,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,7.061
+Balochistan,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,6.892
 Other,Manure management,NH3 - storage (dairy cattle),livestock_total,NH3,0.053
 Punjab,Manure management,NH3 - yard (dairy cattle),livestock_total,NH3,10.253
 Sindh,Manure management,NH3 - yard (dairy cattle),livestock_total,NH3,4.904
 Khyber Pakhtunkhwa,Manure management,NH3 - yard (dairy cattle),livestock_total,NH3,4.819
 Balochistan,Manure management,NH3 - yard (dairy cattle),livestock_total,NH3,4.704
 Other,Manure management,NH3 - yard (dairy cattle),livestock_total,NH3,0.036
-Punjab,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,31.823
-Sindh,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,12.273
-Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,1.925
-Balochistan,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,0.968
-Other,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,0.066
+Punjab,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,29.116
+Sindh,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,11.229
+Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,1.762
+Balochistan,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,0.885
+Other,Managed soils,NH3 - manure applied to soils (goats),manure_applied,NH3,0.061
 Punjab,Managed soils,NH3 - pasture deposition (sheep/goat/other) (goats),livestock_smallrum,NH3,24.003
 Sindh,Managed soils,NH3 - pasture deposition (sheep/goat/other) (goats),livestock_smallrum,NH3,12.758
 Khyber Pakhtunkhwa,Managed soils,NH3 - pasture deposition (sheep/goat/other) (goats),livestock_smallrum,NH3,16.182
@@ -119,16 +119,16 @@ Sindh,Manure management,NH3 - housing (goats),livestock_total,NH3,4.064
 Khyber Pakhtunkhwa,Manure management,NH3 - housing (goats),livestock_total,NH3,3.993
 Balochistan,Manure management,NH3 - housing (goats),livestock_total,NH3,3.898
 Other,Manure management,NH3 - housing (goats),livestock_total,NH3,0.03
-Punjab,Manure management,NH3 - storage (goats),livestock_total,NH3,8.435
-Sindh,Manure management,NH3 - storage (goats),livestock_total,NH3,4.035
-Khyber Pakhtunkhwa,Manure management,NH3 - storage (goats),livestock_total,NH3,3.964
-Balochistan,Manure management,NH3 - storage (goats),livestock_total,NH3,3.87
-Other,Manure management,NH3 - storage (goats),livestock_total,NH3,0.03
-Punjab,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,109.517
-Sindh,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,42.238
-Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,6.626
-Balochistan,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,3.33
-Other,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,0.228
+Punjab,Manure management,NH3 - storage (goats),livestock_total,NH3,8.309
+Sindh,Manure management,NH3 - storage (goats),livestock_total,NH3,3.975
+Khyber Pakhtunkhwa,Manure management,NH3 - storage (goats),livestock_total,NH3,3.905
+Balochistan,Manure management,NH3 - storage (goats),livestock_total,NH3,3.812
+Other,Manure management,NH3 - storage (goats),livestock_total,NH3,0.029
+Punjab,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,102.643
+Sindh,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,39.587
+Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,6.21
+Balochistan,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,3.121
+Other,Managed soils,NH3 - manure applied to soils (other cattle),manure_applied,NH3,0.214
 Punjab,Managed soils,NH3 - pasture deposition (cattle-type) (other cattle),livestock_total,NH3,13.959
 Sindh,Managed soils,NH3 - pasture deposition (cattle-type) (other cattle),livestock_total,NH3,6.677
 Khyber Pakhtunkhwa,Managed soils,NH3 - pasture deposition (cattle-type) (other cattle),livestock_total,NH3,6.561
@@ -139,36 +139,36 @@ Sindh,Manure management,NH3 - housing (other cattle),livestock_total,NH3,4.07
 Khyber Pakhtunkhwa,Manure management,NH3 - housing (other cattle),livestock_total,NH3,3.999
 Balochistan,Manure management,NH3 - housing (other cattle),livestock_total,NH3,3.903
 Other,Manure management,NH3 - housing (other cattle),livestock_total,NH3,0.03
-Punjab,Manure management,NH3 - storage (other cattle),livestock_total,NH3,14.677
-Sindh,Manure management,NH3 - storage (other cattle),livestock_total,NH3,7.021
-Khyber Pakhtunkhwa,Manure management,NH3 - storage (other cattle),livestock_total,NH3,6.898
-Balochistan,Manure management,NH3 - storage (other cattle),livestock_total,NH3,6.733
-Other,Manure management,NH3 - storage (other cattle),livestock_total,NH3,0.052
+Punjab,Manure management,NH3 - storage (other cattle),livestock_total,NH3,14.61
+Sindh,Manure management,NH3 - storage (other cattle),livestock_total,NH3,6.988
+Khyber Pakhtunkhwa,Manure management,NH3 - storage (other cattle),livestock_total,NH3,6.867
+Balochistan,Manure management,NH3 - storage (other cattle),livestock_total,NH3,6.702
+Other,Manure management,NH3 - storage (other cattle),livestock_total,NH3,0.051
 Punjab,Manure management,NH3 - yard (other cattle),livestock_total,NH3,17.615
 Sindh,Manure management,NH3 - yard (other cattle),livestock_total,NH3,8.426
 Khyber Pakhtunkhwa,Manure management,NH3 - yard (other cattle),livestock_total,NH3,8.279
 Balochistan,Manure management,NH3 - yard (other cattle),livestock_total,NH3,8.081
 Other,Manure management,NH3 - yard (other cattle),livestock_total,NH3,0.062
-Punjab,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,134.387
-Sindh,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,51.83
-Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,8.131
-Balochistan,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,4.086
-Other,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,0.28
+Punjab,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,128.748
+Sindh,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,49.655
+Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,7.79
+Balochistan,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,3.914
+Other,Managed soils,NH3 - manure applied to soils (poultry),manure_applied,NH3,0.269
 Punjab,Manure management,NH3 - housing (poultry),livestock_total,NH3,82.377
 Sindh,Manure management,NH3 - housing (poultry),livestock_total,NH3,39.404
 Khyber Pakhtunkhwa,Manure management,NH3 - housing (poultry),livestock_total,NH3,38.717
 Balochistan,Manure management,NH3 - housing (poultry),livestock_total,NH3,37.792
 Other,Manure management,NH3 - housing (poultry),livestock_total,NH3,0.29
-Punjab,Manure management,NH3 - storage (poultry),livestock_total,NH3,92.969
-Sindh,Manure management,NH3 - storage (poultry),livestock_total,NH3,44.471
-Khyber Pakhtunkhwa,Manure management,NH3 - storage (poultry),livestock_total,NH3,43.695
-Balochistan,Manure management,NH3 - storage (poultry),livestock_total,NH3,42.651
-Other,Manure management,NH3 - storage (poultry),livestock_total,NH3,0.327
-Punjab,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,13.062
-Sindh,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,5.038
-Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,0.79
-Balochistan,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,0.397
-Other,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,0.027
+Punjab,Manure management,NH3 - storage (poultry),livestock_total,NH3,91.668
+Sindh,Manure management,NH3 - storage (poultry),livestock_total,NH3,43.849
+Khyber Pakhtunkhwa,Manure management,NH3 - storage (poultry),livestock_total,NH3,43.084
+Balochistan,Manure management,NH3 - storage (poultry),livestock_total,NH3,42.054
+Other,Manure management,NH3 - storage (poultry),livestock_total,NH3,0.323
+Punjab,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,11.884
+Sindh,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,4.583
+Khyber Pakhtunkhwa,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,0.719
+Balochistan,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,0.361
+Other,Managed soils,NH3 - manure applied to soils (sheep),manure_applied,NH3,0.025
 Punjab,Managed soils,NH3 - pasture deposition (sheep/goat/other) (sheep),livestock_smallrum,NH3,10.432
 Sindh,Managed soils,NH3 - pasture deposition (sheep/goat/other) (sheep),livestock_smallrum,NH3,5.544
 Khyber Pakhtunkhwa,Managed soils,NH3 - pasture deposition (sheep/goat/other) (sheep),livestock_smallrum,NH3,7.033
@@ -179,26 +179,41 @@ Sindh,Manure management,NH3 - housing (sheep),livestock_total,NH3,1.766
 Khyber Pakhtunkhwa,Manure management,NH3 - housing (sheep),livestock_total,NH3,1.735
 Balochistan,Manure management,NH3 - housing (sheep),livestock_total,NH3,1.694
 Other,Manure management,NH3 - housing (sheep),livestock_total,NH3,0.013
-Punjab,Manure management,NH3 - storage (sheep),livestock_total,NH3,4.189
-Sindh,Manure management,NH3 - storage (sheep),livestock_total,NH3,2.004
-Khyber Pakhtunkhwa,Manure management,NH3 - storage (sheep),livestock_total,NH3,1.969
-Balochistan,Manure management,NH3 - storage (sheep),livestock_total,NH3,1.922
+Punjab,Manure management,NH3 - storage (sheep),livestock_total,NH3,4.127
+Sindh,Manure management,NH3 - storage (sheep),livestock_total,NH3,1.974
+Khyber Pakhtunkhwa,Manure management,NH3 - storage (sheep),livestock_total,NH3,1.94
+Balochistan,Manure management,NH3 - storage (sheep),livestock_total,NH3,1.893
 Other,Manure management,NH3 - storage (sheep),livestock_total,NH3,0.015
 Punjab,Managed soils,Soil NOx - synthetic fertiliser,fertilizer_N,NOx,60.257
 Sindh,Managed soils,Soil NOx - synthetic fertiliser,fertilizer_N,NOx,20.057
 Khyber Pakhtunkhwa,Managed soils,Soil NOx - synthetic fertiliser,fertilizer_N,NOx,3.647
 Balochistan,Managed soils,Soil NOx - synthetic fertiliser,fertilizer_N,NOx,2.692
 Other,Managed soils,Soil NOx - synthetic fertiliser,fertilizer_N,NOx,0.174
-Punjab,Managed soils,Soil NOx - organic manure,manure_applied,NOx,36.32
-Sindh,Managed soils,Soil NOx - organic manure,manure_applied,NOx,14.008
-Khyber Pakhtunkhwa,Managed soils,Soil NOx - organic manure,manure_applied,NOx,2.197
-Balochistan,Managed soils,Soil NOx - organic manure,manure_applied,NOx,1.104
-Other,Managed soils,Soil NOx - organic manure,manure_applied,NOx,0.076
-Punjab,Managed soils,Soil NOx - crop residues,crop_total,NOx,3.704
-Sindh,Managed soils,Soil NOx - crop residues,crop_total,NOx,0.833
-Khyber Pakhtunkhwa,Managed soils,Soil NOx - crop residues,crop_total,NOx,0.235
-Balochistan,Managed soils,Soil NOx - crop residues,crop_total,NOx,0.127
+Punjab,Managed soils,Soil NOx - organic manure,manure_applied,NOx,39.198
+Sindh,Managed soils,Soil NOx - organic manure,manure_applied,NOx,15.118
+Khyber Pakhtunkhwa,Managed soils,Soil NOx - organic manure,manure_applied,NOx,2.372
+Balochistan,Managed soils,Soil NOx - organic manure,manure_applied,NOx,1.192
+Other,Managed soils,Soil NOx - organic manure,manure_applied,NOx,0.082
+Punjab,Managed soils,Soil NOx - crop residues,crop_total,NOx,3.722
+Sindh,Managed soils,Soil NOx - crop residues,crop_total,NOx,0.837
+Khyber Pakhtunkhwa,Managed soils,Soil NOx - crop residues,crop_total,NOx,0.236
+Balochistan,Managed soils,Soil NOx - crop residues,crop_total,NOx,0.128
 Other,Managed soils,Soil NOx - crop residues,crop_total,NOx,0.0
+Punjab,Manure management,NOx - manure management,livestock_total,NOx,49.531
+Sindh,Manure management,NOx - manure management,livestock_total,NOx,23.692
+Khyber Pakhtunkhwa,Manure management,NOx - manure management,livestock_total,NOx,23.279
+Balochistan,Manure management,NOx - manure management,livestock_total,NOx,22.723
+Other,Manure management,NOx - manure management,livestock_total,NOx,0.174
+Punjab,Managed soils,NOx - pasture_cattle,livestock_total,NOx,6.16
+Sindh,Managed soils,NOx - pasture_cattle,livestock_total,NOx,2.947
+Khyber Pakhtunkhwa,Managed soils,NOx - pasture_cattle,livestock_total,NOx,2.895
+Balochistan,Managed soils,NOx - pasture_cattle,livestock_total,NOx,2.826
+Other,Managed soils,NOx - pasture_cattle,livestock_total,NOx,0.022
+Punjab,Managed soils,NOx - pasture_other,livestock_smallrum,NOx,5.176
+Sindh,Managed soils,NOx - pasture_other,livestock_smallrum,NOx,2.751
+Khyber Pakhtunkhwa,Managed soils,NOx - pasture_other,livestock_smallrum,NOx,3.489
+Balochistan,Managed soils,NOx - pasture_other,livestock_smallrum,NOx,4.829
+Other,Managed soils,NOx - pasture_other,livestock_smallrum,NOx,0.015
 Punjab,Managed soils,NH3 - crop residues left in field,crop_total,NH3,0.0
 Sindh,Managed soils,NH3 - crop residues left in field,crop_total,NH3,0.0
 Khyber Pakhtunkhwa,Managed soils,NH3 - crop residues left in field,crop_total,NH3,0.0
@@ -209,8 +224,8 @@ Sindh,Field burning of residues,Residue burning PM2.5 (cotton),crop_total,PM2.5,
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning PM2.5 (cotton),crop_total,PM2.5,0.308
 Balochistan,Field burning of residues,Residue burning PM2.5 (cotton),crop_total,PM2.5,0.167
 Other,Field burning of residues,Residue burning PM2.5 (cotton),crop_total,PM2.5,0.0
-Punjab,Field burning of residues,Residue burning CO (cotton),crop_total,CO,58.729
-Sindh,Field burning of residues,Residue burning CO (cotton),crop_total,CO,13.206
+Punjab,Field burning of residues,Residue burning CO (cotton),crop_total,CO,58.733
+Sindh,Field burning of residues,Residue burning CO (cotton),crop_total,CO,13.207
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning CO (cotton),crop_total,CO,3.729
 Balochistan,Field burning of residues,Residue burning CO (cotton),crop_total,CO,2.02
 Other,Field burning of residues,Residue burning CO (cotton),crop_total,CO,0.0
@@ -239,72 +254,72 @@ Sindh,Field burning of residues,Residue burning NH3 (cotton),crop_total,NH3,0.18
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning NH3 (cotton),crop_total,NH3,0.053
 Balochistan,Field burning of residues,Residue burning NH3 (cotton),crop_total,NH3,0.029
 Other,Field burning of residues,Residue burning NH3 (cotton),crop_total,NH3,0.0
-Punjab,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,2.405
-Sindh,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,0.541
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,0.153
-Balochistan,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,0.083
+Punjab,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,2.378
+Sindh,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,0.535
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,0.151
+Balochistan,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,0.082
 Other,Field burning of residues,Residue burning PM2.5 (maize),crop_total,PM2.5,0.0
-Punjab,Field burning of residues,Residue burning CO (maize),crop_total,CO,29.107
-Sindh,Field burning of residues,Residue burning CO (maize),crop_total,CO,6.545
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning CO (maize),crop_total,CO,1.848
-Balochistan,Field burning of residues,Residue burning CO (maize),crop_total,CO,1.001
+Punjab,Field burning of residues,Residue burning CO (maize),crop_total,CO,28.788
+Sindh,Field burning of residues,Residue burning CO (maize),crop_total,CO,6.474
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning CO (maize),crop_total,CO,1.828
+Balochistan,Field burning of residues,Residue burning CO (maize),crop_total,CO,0.99
 Other,Field burning of residues,Residue burning CO (maize),crop_total,CO,0.0
-Punjab,Field burning of residues,Residue burning NOx (maize),crop_total,NOx,0.791
-Sindh,Field burning of residues,Residue burning NOx (maize),crop_total,NOx,0.178
+Punjab,Field burning of residues,Residue burning NOx (maize),crop_total,NOx,0.782
+Sindh,Field burning of residues,Residue burning NOx (maize),crop_total,NOx,0.176
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning NOx (maize),crop_total,NOx,0.05
 Balochistan,Field burning of residues,Residue burning NOx (maize),crop_total,NOx,0.027
 Other,Field burning of residues,Residue burning NOx (maize),crop_total,NOx,0.0
-Punjab,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,2.215
-Sindh,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,0.498
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,0.141
-Balochistan,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,0.076
+Punjab,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,2.19
+Sindh,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,0.493
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,0.139
+Balochistan,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,0.075
 Other,Field burning of residues,Residue burning NMVOC (maize),crop_total,NMVOC,0.0
-Punjab,Field burning of residues,Residue burning BC (maize),crop_total,BC,0.158
-Sindh,Field burning of residues,Residue burning BC (maize),crop_total,BC,0.036
+Punjab,Field burning of residues,Residue burning BC (maize),crop_total,BC,0.156
+Sindh,Field burning of residues,Residue burning BC (maize),crop_total,BC,0.035
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning BC (maize),crop_total,BC,0.01
 Balochistan,Field burning of residues,Residue burning BC (maize),crop_total,BC,0.005
 Other,Field burning of residues,Residue burning BC (maize),crop_total,BC,0.0
-Punjab,Field burning of residues,Residue burning SO2 (maize),crop_total,SO2,0.127
+Punjab,Field burning of residues,Residue burning SO2 (maize),crop_total,SO2,0.125
 Sindh,Field burning of residues,Residue burning SO2 (maize),crop_total,SO2,0.028
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning SO2 (maize),crop_total,SO2,0.008
 Balochistan,Field burning of residues,Residue burning SO2 (maize),crop_total,SO2,0.004
 Other,Field burning of residues,Residue burning SO2 (maize),crop_total,SO2,0.0
-Punjab,Field burning of residues,Residue burning NH3 (maize),crop_total,NH3,0.411
-Sindh,Field burning of residues,Residue burning NH3 (maize),crop_total,NH3,0.092
+Punjab,Field burning of residues,Residue burning NH3 (maize),crop_total,NH3,0.407
+Sindh,Field burning of residues,Residue burning NH3 (maize),crop_total,NH3,0.091
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning NH3 (maize),crop_total,NH3,0.026
 Balochistan,Field burning of residues,Residue burning NH3 (maize),crop_total,NH3,0.014
 Other,Field burning of residues,Residue burning NH3 (maize),crop_total,NH3,0.0
-Punjab,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,14.459
-Sindh,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,3.251
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,0.918
+Punjab,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,14.445
+Sindh,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,3.248
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,0.917
 Balochistan,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,0.497
 Other,Field burning of residues,Residue burning PM2.5 (rice),crop_total,PM2.5,0.0
-Punjab,Field burning of residues,Residue burning CO (rice),crop_total,CO,175.034
-Sindh,Field burning of residues,Residue burning CO (rice),crop_total,CO,39.36
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning CO (rice),crop_total,CO,11.113
-Balochistan,Field burning of residues,Residue burning CO (rice),crop_total,CO,6.02
+Punjab,Field burning of residues,Residue burning CO (rice),crop_total,CO,174.857
+Sindh,Field burning of residues,Residue burning CO (rice),crop_total,CO,39.32
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning CO (rice),crop_total,CO,11.102
+Balochistan,Field burning of residues,Residue burning CO (rice),crop_total,CO,6.014
 Other,Field burning of residues,Residue burning CO (rice),crop_total,CO,0.0
-Punjab,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,4.756
-Sindh,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,1.07
+Punjab,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,4.752
+Sindh,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,1.068
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,0.302
-Balochistan,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,0.164
+Balochistan,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,0.163
 Other,Field burning of residues,Residue burning NOx (rice),crop_total,NOx,0.0
-Punjab,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,13.318
-Sindh,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,2.995
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,0.846
+Punjab,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,13.304
+Sindh,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,2.992
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,0.845
 Balochistan,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,0.458
 Other,Field burning of residues,Residue burning NMVOC (rice),crop_total,NMVOC,0.0
-Punjab,Field burning of residues,Residue burning BC (rice),crop_total,BC,0.951
+Punjab,Field burning of residues,Residue burning BC (rice),crop_total,BC,0.95
 Sindh,Field burning of residues,Residue burning BC (rice),crop_total,BC,0.214
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning BC (rice),crop_total,BC,0.06
 Balochistan,Field burning of residues,Residue burning BC (rice),crop_total,BC,0.033
 Other,Field burning of residues,Residue burning BC (rice),crop_total,BC,0.0
-Punjab,Field burning of residues,Residue burning SO2 (rice),crop_total,SO2,0.761
+Punjab,Field burning of residues,Residue burning SO2 (rice),crop_total,SO2,0.76
 Sindh,Field burning of residues,Residue burning SO2 (rice),crop_total,SO2,0.171
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning SO2 (rice),crop_total,SO2,0.048
 Balochistan,Field burning of residues,Residue burning SO2 (rice),crop_total,SO2,0.026
 Other,Field burning of residues,Residue burning SO2 (rice),crop_total,SO2,0.0
-Punjab,Field burning of residues,Residue burning NH3 (rice),crop_total,NH3,2.473
+Punjab,Field burning of residues,Residue burning NH3 (rice),crop_total,NH3,2.471
 Sindh,Field burning of residues,Residue burning NH3 (rice),crop_total,NH3,0.556
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning NH3 (rice),crop_total,NH3,0.157
 Balochistan,Field burning of residues,Residue burning NH3 (rice),crop_total,NH3,0.085
@@ -344,38 +359,38 @@ Sindh,Field burning of residues,Residue burning NH3 (sugarcane),crop_total,NH3,0
 Khyber Pakhtunkhwa,Field burning of residues,Residue burning NH3 (sugarcane),crop_total,NH3,0.116
 Balochistan,Field burning of residues,Residue burning NH3 (sugarcane),crop_total,NH3,0.063
 Other,Field burning of residues,Residue burning NH3 (sugarcane),crop_total,NH3,0.0
-Punjab,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,8.444
-Sindh,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,1.899
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,0.536
-Balochistan,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,0.29
+Punjab,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,8.545
+Sindh,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,1.922
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,0.543
+Balochistan,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,0.294
 Other,Field burning of residues,Residue burning PM2.5 (wheat),crop_total,PM2.5,0.0
-Punjab,Field burning of residues,Residue burning CO (wheat),crop_total,CO,102.222
-Sindh,Field burning of residues,Residue burning CO (wheat),crop_total,CO,22.987
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning CO (wheat),crop_total,CO,6.49
-Balochistan,Field burning of residues,Residue burning CO (wheat),crop_total,CO,3.516
+Punjab,Field burning of residues,Residue burning CO (wheat),crop_total,CO,103.445
+Sindh,Field burning of residues,Residue burning CO (wheat),crop_total,CO,23.261
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning CO (wheat),crop_total,CO,6.568
+Balochistan,Field burning of residues,Residue burning CO (wheat),crop_total,CO,3.558
 Other,Field burning of residues,Residue burning CO (wheat),crop_total,CO,0.0
-Punjab,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,2.778
-Sindh,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,0.625
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,0.176
-Balochistan,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,0.096
+Punjab,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,2.811
+Sindh,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,0.632
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,0.178
+Balochistan,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,0.097
 Other,Field burning of residues,Residue burning NOx (wheat),crop_total,NOx,0.0
-Punjab,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,7.778
-Sindh,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,1.749
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,0.494
-Balochistan,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,0.267
+Punjab,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,7.871
+Sindh,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,1.77
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,0.5
+Balochistan,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,0.271
 Other,Field burning of residues,Residue burning NMVOC (wheat),crop_total,NMVOC,0.0
-Punjab,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.556
-Sindh,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.125
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.035
+Punjab,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.562
+Sindh,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.126
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.036
 Balochistan,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.019
 Other,Field burning of residues,Residue burning BC (wheat),crop_total,BC,0.0
-Punjab,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.444
-Sindh,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.1
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.028
+Punjab,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.45
+Sindh,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.101
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.029
 Balochistan,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.015
 Other,Field burning of residues,Residue burning SO2 (wheat),crop_total,SO2,0.0
-Punjab,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,1.444
-Sindh,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,0.325
-Khyber Pakhtunkhwa,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,0.092
+Punjab,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,1.462
+Sindh,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,0.329
+Khyber Pakhtunkhwa,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,0.093
 Balochistan,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,0.05
 Other,Field burning of residues,Residue burning NH3 (wheat),crop_total,NH3,0.0

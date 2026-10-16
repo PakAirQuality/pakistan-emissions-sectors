@@ -1,13 +1,13 @@
-"""The engine's industrial series against EDGAR's, every fiscal year - a DIAGNOSTIC of shape.
+"""The engine's industrial series against EDGAR's where fiscal blends exist.
 
-Two comparisons per fiscal year, both at EDGAR's fiscal blend (half of each adjacent calendar
-column, the transport lane's convention):
+Two comparisons per supported fiscal year, using the declared half-weighted blend of
+adjacent EDGAR calendar years:
   * 1.A.2: the engine's industry module + the captive generation the power module computes
     (both IPCC 1.A.2) against EDGAR 'Industrial Combustion';
   * the covered industrial aggregate: the above + cement 2.A.1 against EDGAR 'Industrial
     Combustion' + 'Processes' WITHOUT the F-gases (the engine prices no F-gas; EDGAR's Processes
-    also hold ammonia, nitric acid, lime, glass, steel and non-energy products the engine
-    screens or lacks - so the second comparison brackets the engine LOW by construction).
+    also covers processes outside this *comparison*, including some PakEmis estimates
+    such as ammonia and steel. The comparison is not an upper or lower bound).
 What the table shows (rc50 atoms): from FY2015-16 through FY2021-22 the two 1.A.2 series differ
 by -4.6..+6.6 Mt with ALTERNATING sign (the engine's FY2020-21 peak sits 6.6 Mt above EDGAR's);
 in FY2022-23 and FY2023-24 the engine falls 17.9 and 17.5 Mt BELOW EDGAR - the two years in
@@ -33,19 +33,20 @@ from pkinv.paths import DATA, OUTPUTS  # noqa: E402
 FACTS = asset_path(OUTPUTS, "semantic", "fact_annual.csv")
 SERIES = asset_path(DATA, "activity", "industry", "edgar_pak_industry_series.csv")
 OUT = asset_path(OUTPUTS, "pakemis_industry_edgar_divergence.csv")
-REF = "REF_2023_24"
+REF = "S_TAN"
 FIELDS = ("period_id", "engine_industry_module_mt", "engine_captive_1a2_mt", "engine_1a2_mt",
           "engine_cement_2a1_mt", "engine_covered_industrial_mt",
           "edgar_basis", "edgar_industrial_combustion_mt", "edgar_processes_excl_fgas_mt",
           "edgar_fgas_mt", "edgar_industrial_total_mt",
           "divergence_1a2_mt", "divergence_1a2_pct", "divergence_covered_excl_fgas_mt", "reading")
 HEADER = """\
-# THE ENGINE'S INDUSTRIAL SERIES AGAINST EDGAR'S, EVERY FISCAL YEAR - a diagnostic of SHAPE, never a
-# residual. divergence = engine - EDGAR at EDGAR's fiscal blend (0.5 x CY(Y-1) + 0.5 x CY(Y) for FYY-1/Y).
+# THE ENGINE'S INDUSTRIAL SERIES AGAINST EDGAR'S WHERE A FISCAL BLEND EXISTS - a diagnostic,
+# never a residual. divergence = engine - EDGAR at 0.5 x CY(Y-1) + 0.5 x CY(Y) for FYY-1/Y.
 # 1.A.2 = industry module + captive generation (power module, IPCC 1.A.2). covered = 1.A.2 + cement 2.A.1.
-# EDGAR 'Processes' is ALL of IPPU; its F-gases are kept apart and the covered comparison excludes them,
-# so that comparison brackets the engine LOW by construction (ammonia, nitric, lime, glass, steel,
-# non-energy products are screened or absent here). EDGAR is IEA-balance-derived and HDIP-fed upstream;
+# EDGAR 'Processes' covers more IPPU than the cement-only PakEmis comparison; its F-gases are
+# kept apart. Some excluded processes (including ammonia and steel) are estimated elsewhere in
+# PakEmis, while others remain unestimated. This difference does not define a bound.
+# EDGAR is IEA-balance-derived and HDIP-fed upstream;
 # 2023-2024 preliminary. scripts/build_industry_edgar_divergence.py
 """
 
@@ -97,6 +98,18 @@ def build():
         t = eng[p]
         e_1a2 = t["industry"] + t["captive"]
         e_cov = e_1a2 + t["cement"]
+        if any((sector, year) not in ed for sector in ("Industrial Combustion", "Processes")
+               for year in (y - 1, y)):
+            out.append(dict.fromkeys(FIELDS, "") | {
+                "period_id": p,
+                "engine_industry_module_mt": "%.3f" % t["industry"],
+                "engine_captive_1a2_mt": "%.3f" % t["captive"],
+                "engine_1a2_mt": "%.3f" % e_1a2,
+                "engine_cement_2a1_mt": "%.3f" % t["cement"],
+                "engine_covered_industrial_mt": "%.3f" % e_cov,
+                "edgar_basis": "NE: adjacent calendar years not both available",
+                "reading": "No matched fiscal comparator; held EDGAR series is not extrapolated"})
+            continue
         ic = blend(ed, "Industrial Combustion", y, "total_Mt_co2e_AR5")
         pr_total = blend(ed, "Processes", y, "total_Mt_co2e_AR5")
         fgas = blend(ed, "Processes", y, "fgas_co2e_Mt")

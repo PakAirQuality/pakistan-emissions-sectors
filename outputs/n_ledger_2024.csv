@@ -2,26 +2,28 @@ stage,flow,kg_N,Mt_N,pct_of_excreted,kind
 A. Excretion,Total N excreted,7.783403e+09,7.7834,100.0,opening
 A. Excretion,to grazing (pasture/range/paddock -> soils FPRP),3.182343e+09,3.1823,40.886,flow
 A. Excretion,to managed manure systems,3.340875e+09,3.3409,42.923,flow
-A. Excretion,diverted as dung-cake fuel (reported under Energy/Waste),1.260185e+09,1.2602,16.191,flow
+A. Excretion,diverted as dung-cake material (destinations unresolved),1.260185e+09,1.2602,16.191,flow
 A. Excretion,partition residual,0.000000e+00,0.0,0.0,residual
 B. Pre-field MMS,Managed N entering housing and storage,3.340875e+09,3.3409,42.923,opening
-B. Pre-field MMS,"NH3-N + NOx-N volatilised (FracGasMS, Table 10.22)",9.117883e+08,0.9118,11.715,flow
+B. Pre-field MMS,NH3-N + NOx-N volatilised (tan formulation),7.267800e+08,0.7268,9.338,flow
 B. Pre-field MMS,"leached/run-off (FracLeachMS, Table 10.22)",3.503254e+07,0.035,0.45,flow
 B. Pre-field MMS,"lost as N2 (FracN2MS = RN2 x EF3, Eq 10.34b)",4.429084e+07,0.0443,0.569,flow
 B. Pre-field MMS,"emitted as direct N2O-N (EF3, Table 10.21)",1.476361e+07,0.0148,0.19,flow
-B. Pre-field MMS,"= N available for application to soils (FON, Eq 10.34)",2.335000e+09,2.335,30.0,closing
+B. Pre-field MMS,"= N available for application to soils (FON, Eq 10.34)",2.520008e+09,2.52,32.377,closing
 B. Pre-field MMS,balance residual,-4.768372e-07,-0.0,-0.0,residual
 B'. Same pool as TAN,TAN in managed manure (species-specific TAN fractions),1.986618e+09,1.9866,25.524,opening
 B'. Same pool as TAN,NH3-N lost in housing and yards,3.951946e+08,0.3952,5.077,flow
-B'. Same pool as TAN,NH3-N lost in storage,2.988699e+08,0.2989,3.84,flow
-B'. Same pool as TAN,= TAN reaching the field,1.292553e+09,1.2926,16.607,closing
-B'. Same pool as TAN,NH3-N lost on field application,7.138890e+08,0.7139,9.172,flow
-B'. Same pool as TAN,TAN balance residual,0.000000e+00,0.0,0.0,residual
-C. Field application,Manure N applied to soils (gross FON),2.335000e+09,2.335,30.0,opening
-C. Field application,"direct soil N2O-N (EF1 x GROSS FON, Eq 11.1)",1.167500e+07,0.0117,0.15,flow
-C. Field application,"NH3-N + NOx-N volatilised (FracGASM, Table 11.3)",4.903499e+08,0.4903,6.3,flow
-C. Field application,"leached/run-off (FracLEACH, Eq 11.10)",4.483199e+08,0.4483,5.76,flow
-C. Field application,remaining in the soil N pool,1.384655e+09,1.3847,17.79,closing
+B'. Same pool as TAN,NH3-N lost in storage,2.952463e+08,0.2952,3.793,flow
+B'. Same pool as TAN,NOx-N lost during management,3.633900e+07,0.0363,0.467,flow
+B'. Same pool as TAN,TAN removed in other management losses,4.026737e+07,0.0403,0.517,flow
+B'. Same pool as TAN,= TAN reaching the field,1.219570e+09,1.2196,15.669,closing
+B'. Same pool as TAN,NH3-N lost on field application,6.715572e+08,0.6716,8.628,flow
+B'. Same pool as TAN,TAN balance residual,-2.384186e-07,-0.0,-0.0,residual
+C. Field application,Manure N applied to soils (gross FON),2.520008e+09,2.52,32.377,opening
+C. Field application,"direct soil N2O-N (EF1 x GROSS FON, Eq 11.1)",1.260004e+07,0.0126,0.162,flow
+C. Field application,NH3-N + NOx-N volatilised (tan formulation),6.891972e+08,0.6892,8.855,flow
+C. Field application,"leached/run-off (FracLEACH, Eq 11.10)",4.838415e+08,0.4838,6.216,flow
+C. Field application,remaining in the soil N pool,1.334369e+09,1.3344,17.144,closing
 D. Closure,Total N excreted,7.783403e+09,7.7834,100.0,opening
 D. Closure,all named sinks and remaining soil pool,7.783403e+09,7.7834,100.0,closing
-D. Closure,closing residual,0.000000e+00,0.0,0.0,residual
+D. Closure,closing residual,-9.536743e-07,-0.0,-0.0,residual

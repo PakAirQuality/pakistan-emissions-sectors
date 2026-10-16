@@ -14,7 +14,8 @@ WHAT EACH ROW SAYS.
   share_before/after   each as a fraction of the fuel's national total that year
   basis                what the applied split rests on: station fuel quantities, booked coal
                        energy, generation, or the reference-year vector
-  coverage             station energy over the national control the fuel is booked from
+  coverage             station energy over the national control for fossil fuels;
+                       located generation over listed generation for bagasse
   fallback_reason      non-empty exactly where the reference vector is still applied
 
 EVERY QUANTITY IS EMISSIONS, in Mt CO2e on the AR5 basis, all three gases of the fuel summed.
@@ -58,7 +59,8 @@ TOLERANCE_MT = 1e-6
 FIELDS = ("period_id", "stream", "fuel", "province", "co2e_Mt_AR5_before",
           "co2e_Mt_AR5_after", "difference_Mt_CO2e", "share_before", "share_after",
           "national_co2e_Mt_AR5", "basis_class", "basis", "coverage_of_national_control",
-          "stations", "generation_derived_share", "fallback_reason", "flags")
+          "stations", "generation_derived_share", "fallback_reason", "flags",
+          "prior_release_national_Mt_AR5", "activity_revision_Mt_AR5", "comparison_basis")
 
 
 def _mass(path):
@@ -110,32 +112,44 @@ def build():
     rows, problems = [], []
     for period_id, year in sorted(periods):
         for stream in province_panel.STREAMS:
-            old, new = before.get((period_id, stream), {}), after.get((period_id, stream), {})
+            previous = before.get((period_id, stream))
+            old = previous or before.get(("FY2023-24", stream), {})
+            new = after.get((period_id, stream), {})
             total_old, total_new = sum(old.values()), sum(new.values())
-            if abs(total_old - total_new) > TOLERANCE_MT:
-                problems.append("%s %s: national %.6f Mt before, %.6f after"
-                                % (period_id, stream, total_old, total_new))
+            prior_total = sum(previous.values()) if previous is not None else None
             if total_new <= 0 and total_old <= 0:
                 continue
             found = province_panel.record(stream, year)
             for province in PROVINCES:
-                a, b = old.get(province, 0.0), new.get(province, 0.0)
+                # Hold current national mass fixed to isolate geographic allocation.
+                # Source revisions are a separate quantity, not a failed allocation check.
+                old_share = old.get(province, 0.0) / total_old if total_old else 0.0
+                a, b = old_share * total_new, new.get(province, 0.0)
                 rows.append({
                     "period_id": period_id, "stream": stream, "fuel": FUEL_LABEL[stream],
                     "province": province,
                     "co2e_Mt_AR5_before": "%.6f" % a, "co2e_Mt_AR5_after": "%.6f" % b,
                     "difference_Mt_CO2e": "%.6f" % (b - a),
-                    "share_before": "%.6f" % (a / total_old if total_old else 0.0),
+                    "share_before": "%.6f" % old_share,
                     "share_after": "%.6f" % (b / total_new if total_new else 0.0),
                     "national_co2e_Mt_AR5": "%.6f" % total_new,
                     "basis_class": basis_class(stream, year, found),
-                    "basis": found["basis"],
+                    "basis": found["basis"] + (
+                        "; allocation quantities are net generation in GWh, not fuel energy in TJ; "
+                        "coverage is located over listed station generation"
+                        if stream == "bagasse_grid" else ""),
                     "coverage_of_national_control":
                         "" if found["coverage"] is None else "%.4f" % found["coverage"],
                     "stations": found["stations"],
                     "generation_derived_share": "%.4f" % found["derived_share"],
                     "fallback_reason": found["fallback"],
-                    "flags": "; ".join(found["flags"])})
+                    "flags": "; ".join(found["flags"]),
+                    "prior_release_national_Mt_AR5": "" if prior_total is None else "%.6f" % prior_total,
+                    "activity_revision_Mt_AR5": "" if prior_total is None else "%.6f" % (total_new-prior_total),
+                    "comparison_basis": ("current national mass on prior period's allocation" if previous is not None
+                                         else "current national mass on prior reference-year allocation; no prior annual estimate")})
+            if total_new > 0 and total_old <= 0:
+                problems.append("%s %s: no prior allocation pattern" % (period_id, stream))
     if problems:
         raise SystemExit("the provincial split changed a national total, which it may not:\n  "
                          + "\n  ".join(problems))
@@ -145,11 +159,11 @@ def build():
 def main():
     rows = build()
     write_table(OUT, FIELDS, rows, banner=(
-        "# Grid power by fuel, fiscal year and province: emissions before (release 1.0.0rc65,",
-        "# one reference-year provincial vector per fuel) and after (each year's own stations).",
+        "# Grid power geographic counterfactual: current national mass on the prior release's",
+        "# province pattern versus current allocation. Source revisions are reported separately.",
         "# Every quantity is Mt CO2e on the AR5 basis, the fuel's three gases summed. The",
-        "# national total of each fuel-year is the same before and after; the build refuses to",
-        "# write otherwise. pkinv.report.power_provincial_basis. COMPARATOR ONLY.",))
+        "# before/after columns hold national mass fixed; they are not two release totals.",
+        "# pkinv.report.power_provincial_basis. COMPARATOR ONLY.",))
     worst = max(rows, key=lambda r: abs(float(r["difference_Mt_CO2e"])))
     borrowed = sorted({(r["period_id"], r["fuel"]) for r in rows
                        if r["basis_class"] == "reference_vector_fallback"})

@@ -352,17 +352,13 @@ class TestCompletenessIsTheFifthKind(unittest.TestCase):
     never a distribution inside it - and its national composition is anchored
     to the registers it reads."""
 
-    def test_bounded_categories_carry_a_bound_and_a_source(self):
+    def test_comparator_differences_do_not_become_absent_mass_bounds(self):
         rows = _rows("pakemis_joint_uncertainty.csv")
         bounded = {r["category"] for r in rows if r["completeness_bound_Mt"]}
-        self.assertEqual(bounded, {"Industrial fuel combustion (1A2)",
-                                   "Cement production",
-                                   "Residential fuel combustion",
-                                   "Managed soils"})
+        self.assertFalse(bounded, "inventory disagreements are not bounds on missing sources")
         for r in rows:
             if r["completeness_bound_Mt"]:
-                self.assertIn("national_priority_rankings.csv",
-                              r["completeness_bound_source"], r["category"])
+                self.fail("unsupported numerical completeness bound at " + r["category"])
             else:
                 self.assertEqual(r["completeness_bound_source"],
                                  "no_bound_declared", r["category"])
@@ -391,16 +387,12 @@ class TestCompletenessIsTheFifthKind(unittest.TestCase):
         self.assertIsNotNone(m)
         self.assertEqual(float(m.group(1)), ju.FGAS_BOUND_MT)
 
-    def test_the_national_composition_sums_only_disjoint_bounds(self):
+    def test_the_national_missing_mass_is_unknown_rather_than_zero_or_a_comparator_sum(self):
         from pkinv.report import joint_uncertainty as ju
         national = ju.completeness_national()
-        industry = next(float(r["completeness_bound_Mt"])
-                        for r in _rows("pakemis_joint_uncertainty.csv")
-                        if r["category"] == "Industrial fuel combustion (1A2)"
-                        and r["completeness_bound_Mt"])
-        self.assertAlmostEqual(national["composable_bound_Mt"],
-                               industry + ju.FGAS_BOUND_MT, places=6)
-        self.assertIn("not summed", national["not_composed"])
+        self.assertEqual(national["composable_bound_Mt"], "")
+        self.assertEqual(national["kind"], "no_numerical_completeness_bound_declared")
+        self.assertIn("unestimated categories retain NE status", national["not_composed"])
 
     def test_the_screened_state_is_populated(self):
         """The state built for the screenings sat EMPTY for two releases: the

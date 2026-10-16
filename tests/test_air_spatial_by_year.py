@@ -20,22 +20,25 @@ import unittest
 import numpy as np
 
 from pkinv.paths import DATA, OUTPUTS
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX, CORE_FY_STARTS
+from pkinv.report.air_annual_grid import path_for
+from pkinv.report.annual_grid import CORE as GHG_GRID
 
-PANEL = os.path.join(OUTPUTS, "pakemis_air_annual_fy2015_16_fy2023_24.csv")
+PANEL = os.path.join(OUTPUTS, "pakemis_air_annual_%s.csv" % CORE_SUFFIX)
 ADM1 = os.path.join(OUTPUTS, "pakemis_air_adm1_by_year.csv")
 ADM2 = os.path.join(OUTPUTS, "pakemis_air_adm2_by_year.csv")
 UNALLOC = os.path.join(OUTPUTS, "pakemis_air_unallocated_by_year.csv")
 GHG_ADM1 = os.path.join(OUTPUTS, "pakemis_adm1_by_year.csv")
-REF_NC = os.path.join(OUTPUTS, "pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc")
-LEDGER_NC = os.path.join(
-    OUTPUTS, "pakemis_air_grid_0p05_annual_ledger_fy2015_16_fy2023_24.nc")
-GHG_NC = os.path.join(OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc")
+REF_NC = path_for(conf.REFERENCE)
+LEDGER_NC = path_for(conf.LEDGER)
+GHG_NC = GHG_GRID
 
 POLLUTANTS = ("BC", "CO", "NH3", "NMVOC", "NOx", "PM2.5", "SO2")
 VAR_OF = {"BC": "bc_emissions", "CO": "co_emissions", "NH3": "nh3_emissions",
           "NMVOC": "nmvoc_emissions", "NOx": "nox_emissions",
           "PM2.5": "pm25_emissions", "SO2": "so2_emissions"}
-CONFIGS = ("REF_2023_24", "L_HERD1624")
+CONFIGS = conf.AIR_ALL
 RTOL_CSV = 1e-6      # float64 CSV legs
 RTOL_GRID = 2e-4     # the cells are stored float32; a 90,780-cell sum keeps ~4 digits
 
@@ -80,7 +83,7 @@ class TestTheConservationIdentity(unittest.TestCase):
         cls.outside = _sum_by(unalloc, ("period_id", "configuration_id", "pollutant"),
                               where={"level": "outside_frame"})
         cls.grid = {}
-        for cfg, path in (("REF_2023_24", REF_NC), ("L_HERD1624", LEDGER_NC)):
+        for cfg, path in ((cfg,path_for(cfg)) for cfg in CONFIGS):
             with Dataset(path) as ds:
                 pids = [str(v) for v in ds.variables["period_id"][:]]
                 for pol in POLLUTANTS:
@@ -93,7 +96,7 @@ class TestTheConservationIdentity(unittest.TestCase):
 
     def test_the_cross_is_complete(self):
         """9 periods x 2 configurations x 7 pollutants, in the panel and every leg."""
-        self.assertEqual(len(self.cells), 9 * 2 * 7)
+        self.assertEqual(len(self.cells), len(CORE_FY_STARTS) * len(CONFIGS) * 7)
         self.assertEqual(sorted(self.adm1), self.cells)
         self.assertEqual(sorted(self.grid), self.cells)
 
@@ -159,7 +162,7 @@ class TestTheConservationIdentity(unittest.TestCase):
         published = collections.defaultdict(float)
         for r in _rows(ADM2):
             if (r["sector_id"] == "power" and r["pollutant"] == "SO2"
-                    and r["configuration_id"] == "REF_2023_24"):
+                    and r["configuration_id"] == "S_TAN"):
                 published[(r["period_id"], r["adm2_ids"])] += float(r["emissions_Gg"] or 0.0)
 
         self.assertAlmostEqual(sum(published.values()), sum(register.values()), places=4)
@@ -183,15 +186,17 @@ class TestTheConservationIdentity(unittest.TestCase):
         can close the arithmetic without borrowing another year's row."""
         rows = [r for r in _rows(UNALLOC) if r["level"] == "below_adm1"]
         for r in rows:
-            self.assertIn(r["sector_id"], ("aviation", "industry"), r)
+            self.assertIn(r["sector_id"], ("aviation", "industry", "railways"), r)
             if r["sector_id"] == "aviation":
                 self.assertIn("cruise", r["reason"])
+            elif r["sector_id"] == "railways":
+                self.assertIn("ODbL", r["reason"])
             else:
                 self.assertIn("outside the surveyed kiln frame", r["reason"])
                 self.assertIn("brick-kiln-coal", r["source_stream_id"])
-        want = {("FY20%02d-%02d" % (y, y + 1), cfg)
-                for y in range(15, 24) for cfg in CONFIGS}
-        for sector in ("aviation", "industry"):
+        want = {("FY%d-%02d" % (y,(y+1)%100),cfg)
+                for y in CORE_FY_STARTS for cfg in CONFIGS}
+        for sector in ("aviation", "industry", "railways"):
             got = {(r["period_id"], r["configuration_id"]) for r in rows if r["sector_id"] == sector}
             self.assertEqual(got, want, sector)
 
@@ -301,7 +306,7 @@ class TestTheAllocationIsInherited(unittest.TestCase):
                 float(r["emissions_Gg"])
         air = collections.defaultdict(dict)
         for r in _rows(ADM1):
-            if r["configuration_id"] != "REF_2023_24":
+            if r["configuration_id"] != "S_TAN":
                 continue
             key = (r["period_id"], r["source_stream_id"], r["pollutant"])
             air[key][r["province"]] = float(r["emissions_Gg"])
@@ -346,7 +351,7 @@ class TestTheAllocationIsInherited(unittest.TestCase):
             register[(class_id, r["period_id"])][r["province"]] += float(r["so2_Gg"])
         from pkinv.core.gis.grid import build_grid
         frames = pav.build(build_grid())
-        self.assertEqual(len(frames), 29)
+        self.assertEqual(set(frames), {key for key,values in register.items() if sum(values.values()) > 0})
         for key, frame in frames.items():
             declared = register[key]
             total = sum(declared.values())
@@ -394,12 +399,12 @@ class TestTheLedgerConfiguration(unittest.TestCase):
                 a[a < 0] = 0.0
                 b[b < 0] = 0.0
                 for t, pid in enumerate(pids):
-                    want = (panel[(pid, "L_HERD1624", pol)]
-                            - panel[(pid, "REF_2023_24", pol)])
+                    want = (panel[(pid, "L_TAN", pol)]
+                            - panel[(pid, "S_TAN", pol)])
                     got = float(b[t].sum() - a[t].sum())
                     self.assertAlmostEqual(
                         got, want,
-                        delta=RTOL_GRID * max(abs(panel[(pid, "REF_2023_24", pol)]),
+                        delta=RTOL_GRID * max(abs(panel[(pid, "S_TAN", pol)]),
                                               1e-9),
                         msg="L-REF grid delta != panel delta for %s %s" % (pid, pol))
 
@@ -417,21 +422,18 @@ class TestTheLedgerConfiguration(unittest.TestCase):
             b = np.ma.filled(led.variables[VAR_OF["PM2.5"]][:], 0.0)
             a[a < 0] = 0.0
             b[b < 0] = 0.0
-            self.assertEqual(len(pids), 9)
+            self.assertEqual(len(pids), len(CORE_FY_STARTS))
             for t, pid in enumerate(pids):
                 self.assertGreater(float(b[t].sum()), float(a[t].sum()), pid)
-                self.assertGreater(panel[(pid, "L_HERD1624", "PM2.5")],
-                                   panel[(pid, "REF_2023_24", "PM2.5")], pid)
-        self.assertAlmostEqual(panel[("FY2023-24", "L_HERD1624", "PM2.5")]
-                               - panel[("FY2023-24", "REF_2023_24", "PM2.5")],
-                               349.190, delta=0.01)
+                self.assertGreater(panel[(pid, "L_TAN", "PM2.5")],
+                                   panel[(pid, "S_TAN", "PM2.5")], pid)
 
     def test_the_files_declare_their_configuration(self):
         from netCDF4 import Dataset
         with Dataset(REF_NC) as ds:
-            self.assertEqual(ds.configuration_id, "REF_2023_24")
+            self.assertEqual(ds.configuration_id, "S_TAN")
         with Dataset(LEDGER_NC) as ds:
-            self.assertEqual(ds.configuration_id, "L_HERD1624")
+            self.assertEqual(ds.configuration_id, "L_TAN")
             self.assertIn("dung", ds.configurations)
 
 

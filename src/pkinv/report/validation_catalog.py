@@ -74,7 +74,7 @@ def _verified_outputs():
     """Ephemeral evidence from producers verified in this developer invocation."""
     path = os.environ.get("PKINV_BUILD_VERIFIED_OUTPUTS")
     if not path:
-        return {}
+        return _seeded_outputs()
     try:
         with open(path, encoding="utf-8") as handle:
             proof = json.load(handle)
@@ -85,6 +85,21 @@ def _verified_outputs():
     except (OSError, ValueError, AttributeError):
         pass
     return {}
+
+
+def _seeded_outputs():
+    """A clean reproduction's seeded products, each verified against its release digest
+    before the build began (logs/seeded_products.json, written by the seeder). A seeded
+    product keeps the mtime of the release it came from, so the age gate alone would call a
+    source-phase product such as the HTAP comparison stale in every clean rebuild; its
+    digest is the proof it is the released bytes. Absent outside a reproduction tree."""
+    receipt = os.path.join(os.path.dirname(OUTPUTS), "logs", "seeded_products.json")
+    try:
+        with open(receipt, encoding="utf-8") as handle:
+            return {row["path"]: row["sha256"] for row in json.load(handle)
+                    if row.get("path") and row.get("sha256")}
+    except (OSError, ValueError, TypeError, KeyError):
+        return {}
 
 
 def _content_verified(path, proof):

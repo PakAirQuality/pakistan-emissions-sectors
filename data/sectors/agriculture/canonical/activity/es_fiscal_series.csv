@@ -1,100 +1,111 @@
 Fiscal year (ending year),Fiscal label,Item,Value,Unit,Source table,Basis,Record ID,Source row
-2016,FY2015-16,wheat_area_ha,9224000,ha,ES Table 2.3,observed_fiscal,1385d8987b5423f5f7b1f259,1
-2016,FY2015-16,rice_area_ha,2739000,ha,ES Table 2.3,observed_fiscal,9878b140faf6ffea18583d4c,2
-2016,FY2015-16,maize_area_ha,1191000,ha,ES Table 2.3,observed_fiscal,04c8cacfaf62c5b294e4d9d7,3
-2016,FY2015-16,sugarcane_area_ha,1131000,ha,ES Table 2.3,observed_fiscal,4c530b5ea23571e7b4f8acee,4
-2016,FY2015-16,cotton_area_ha,2902000,ha,ES Table 2.3,observed_fiscal,c71edaea2571dc4d899dec73,5
-2016,FY2015-16,wheat_production_t,25633000,t,ES Table 2.4,observed_fiscal,9ac220ded3fde3649026a7f5,6
-2016,FY2015-16,rice_production_t,6801000,t,ES Table 2.4,observed_fiscal,b6d8edaa04ffbfd7dee25307,7
-2016,FY2015-16,maize_production_t,5271000,t,ES Table 2.4,observed_fiscal,d4d3abcda4bb64d8229fd88a,8
-2016,FY2015-16,sugarcane_production_t,65482000,t,ES Table 2.4,observed_fiscal,c05f22d735b7d963540543ed,9
-2016,FY2015-16,cotton_bales_000,9917,000 bales,ES Table 2.4,observed_fiscal,f84ce6f0e8ae94543d978dad,10
-2016,FY2015-16,nitrogen_N_offtake_t,2672000,t N,ES Table 2.9,observed_fiscal,7430ed738f0f4347071f0673,11
-2017,FY2016-17,wheat_area_ha,8972000,ha,ES Table 2.3,observed_fiscal,8d43a04a6b4fdd9c0b6c39ce,12
-2017,FY2016-17,rice_area_ha,2724000,ha,ES Table 2.3,observed_fiscal,699c3f84da57af57360f7d41,13
-2017,FY2016-17,maize_area_ha,1348000,ha,ES Table 2.3,observed_fiscal,33ecb27d04d23880d7ee9c16,14
-2017,FY2016-17,sugarcane_area_ha,1218000,ha,ES Table 2.3,observed_fiscal,f16fa111d80e1a689252c655,15
-2017,FY2016-17,cotton_area_ha,2489000,ha,ES Table 2.3,observed_fiscal,083c68cdf8c4e4ffa803c191,16
-2017,FY2016-17,wheat_production_t,26674000,t,ES Table 2.4,observed_fiscal,0f73b6d01490dc7709f5f237,17
-2017,FY2016-17,rice_production_t,6849000,t,ES Table 2.4,observed_fiscal,6ba75dbfc35944c93d7d21b7,18
-2017,FY2016-17,maize_production_t,6134000,t,ES Table 2.4,observed_fiscal,3e3778dcf1dc2042e966a7ed,19
-2017,FY2016-17,sugarcane_production_t,75482000,t,ES Table 2.4,observed_fiscal,8e0e3ac1e0de0e0b53554a03,20
-2017,FY2016-17,cotton_bales_000,10671,000 bales,ES Table 2.4,observed_fiscal,f80e5ebb06d861c09e64d62f,21
-2017,FY2016-17,nitrogen_N_offtake_t,3730000,t N,ES Table 2.9,observed_fiscal,a489f991f6aff29d6b7c4e58,22
-2018,FY2017-18,wheat_area_ha,8797000,ha,ES Table 2.3,observed_fiscal,dae8adfcd7402f6901101116,23
-2018,FY2017-18,rice_area_ha,2901000,ha,ES Table 2.3,observed_fiscal,ea98b5ca8035f2448ab94f25,24
-2018,FY2017-18,maize_area_ha,1251000,ha,ES Table 2.3,observed_fiscal,68219fb4d80c6a6d44a0fc7b,25
-2018,FY2017-18,sugarcane_area_ha,1342000,ha,ES Table 2.3,observed_fiscal,d33387825f30037388a656f6,26
-2018,FY2017-18,cotton_area_ha,2700000,ha,ES Table 2.3,observed_fiscal,8d44263aff76d6f9ecb1ba5e,27
-2018,FY2017-18,wheat_production_t,25076000,t,ES Table 2.4,observed_fiscal,272f647340e9f2a9da31e9ab,28
-2018,FY2017-18,rice_production_t,7450000,t,ES Table 2.4,observed_fiscal,066737a39d74322ebd69b667,29
-2018,FY2017-18,maize_production_t,5902000,t,ES Table 2.4,observed_fiscal,0955c77aec269512dd4cebbf,30
-2018,FY2017-18,sugarcane_production_t,83333000,t,ES Table 2.4,observed_fiscal,3fee05eb276b5c5a0e8681be,31
-2018,FY2017-18,cotton_bales_000,11946,000 bales,ES Table 2.4,observed_fiscal,de4206def77243d604083c9e,32
-2018,FY2017-18,nitrogen_N_offtake_t,3435000,t N,ES Table 2.9,observed_fiscal,16703d6a5eb1c0017d0da5ea,33
-2019,FY2018-19,wheat_area_ha,8678000,ha,ES Table 2.3,observed_fiscal,3f51e4044cf37fbe9488370c,34
-2019,FY2018-19,rice_area_ha,2810000,ha,ES Table 2.3,observed_fiscal,a3dbb581f70cb57d8efdd5c0,35
-2019,FY2018-19,maize_area_ha,1374000,ha,ES Table 2.3,observed_fiscal,87b442fb0c283d7ae14157e1,36
-2019,FY2018-19,sugarcane_area_ha,1102000,ha,ES Table 2.3,observed_fiscal,32b2f074ba1ed7c54e7692d1,37
-2019,FY2018-19,cotton_area_ha,2373000,ha,ES Table 2.3,observed_fiscal,bd61ade1bc45fc5568eb1255,38
-2019,FY2018-19,wheat_production_t,24349000,t,ES Table 2.4,observed_fiscal,31fcc10bdcfdb789a6899f1f,39
-2019,FY2018-19,rice_production_t,7202000,t,ES Table 2.4,observed_fiscal,06e95328e41ce8f47650646b,40
-2019,FY2018-19,maize_production_t,6826000,t,ES Table 2.4,observed_fiscal,021f3187c70e9656abaf7628,41
-2019,FY2018-19,sugarcane_production_t,67174000,t,ES Table 2.4,observed_fiscal,40b7252bc12fce24568d9372,42
-2019,FY2018-19,cotton_bales_000,9861,000 bales,ES Table 2.4,observed_fiscal,0f1e6077c76a97e6f43e3006,43
-2019,FY2018-19,nitrogen_N_offtake_t,3408000,t N,ES Table 2.9,observed_fiscal,1195323ab8ec0c5e3041f99e,44
-2020,FY2019-20,wheat_area_ha,8805000,ha,ES Table 2.3,observed_fiscal,6f09ddee6afc922fbdc24441,45
-2020,FY2019-20,rice_area_ha,3034000,ha,ES Table 2.3,observed_fiscal,ae7791966ae4489f88eb65dd,46
-2020,FY2019-20,maize_area_ha,1404000,ha,ES Table 2.3,observed_fiscal,8ef6da7f9faf25e0e165c6a7,47
-2020,FY2019-20,sugarcane_area_ha,1040000,ha,ES Table 2.3,observed_fiscal,cf1bbd16c561a13e1f1e1949,48
-2020,FY2019-20,cotton_area_ha,2517000,ha,ES Table 2.3,observed_fiscal,15d5bfc9efe1d334d445146f,49
-2020,FY2019-20,wheat_production_t,25248000,t,ES Table 2.4,observed_fiscal,937b5f7829e677a964485a46,50
-2020,FY2019-20,rice_production_t,7414000,t,ES Table 2.4,observed_fiscal,3857e90b1450a33e03e5fc74,51
-2020,FY2019-20,maize_production_t,7883000,t,ES Table 2.4,observed_fiscal,488c41f25661889bb99358a2,52
-2020,FY2019-20,sugarcane_production_t,66380000,t,ES Table 2.4,observed_fiscal,9fc0d89b93e7c6c7f0627035,53
-2020,FY2019-20,cotton_bales_000,9148,000 bales,ES Table 2.4,observed_fiscal,29c243b9bbcafdb434b15b93,54
-2020,FY2019-20,nitrogen_N_offtake_t,3415000,t N,ES Table 2.9,observed_fiscal,89b8dc6de2054eb7d8cd10b4,55
-2021,FY2020-21,wheat_area_ha,9168000,ha,ES Table 2.3,observed_fiscal,ff9ebdfaef01decdacdbda30,56
-2021,FY2020-21,rice_area_ha,3335000,ha,ES Table 2.3,observed_fiscal,91684531e13694ca54597f9e,57
-2021,FY2020-21,maize_area_ha,1418000,ha,ES Table 2.3,observed_fiscal,7bf5981dcf6f5fce5541ecfa,58
-2021,FY2020-21,sugarcane_area_ha,1165000,ha,ES Table 2.3,observed_fiscal,ec9a292fb2e13d282e54a22a,59
-2021,FY2020-21,cotton_area_ha,2079000,ha,ES Table 2.3,observed_fiscal,03ecda8134ed395657377deb,60
-2021,FY2020-21,wheat_production_t,27464000,t,ES Table 2.4,observed_fiscal,5bc69dc02f4e508c97a59ee7,61
-2021,FY2020-21,rice_production_t,8420000,t,ES Table 2.4,observed_fiscal,bb7ec2b0306a1b822eff87a2,62
-2021,FY2020-21,maize_production_t,8940000,t,ES Table 2.4,observed_fiscal,31226bb6774296faac5a7703,63
-2021,FY2020-21,sugarcane_production_t,81009000,t,ES Table 2.4,observed_fiscal,c7c52fef51334891c585e6ae,64
-2021,FY2020-21,cotton_bales_000,7064,000 bales,ES Table 2.4,observed_fiscal,bf6ecb5a8263c9521daaca25,65
-2021,FY2020-21,nitrogen_N_offtake_t,3711000,t N,ES Table 2.9 (NFDC AFR Table 3 agrees),observed_fiscal,aeeca2b6e794eeb206f686ce,66
-2022,FY2021-22,wheat_area_ha,8977000,ha,ES Table 2.3,observed_fiscal,865346a7ad5ecadf0f2ff801,67
-2022,FY2021-22,rice_area_ha,3537000,ha,ES Table 2.3,observed_fiscal,9502eec07fe0d2532a5ee8bf,68
-2022,FY2021-22,maize_area_ha,1653000,ha,ES Table 2.3,observed_fiscal,8e90604cf893c4395d58dbef,69
-2022,FY2021-22,sugarcane_area_ha,1260000,ha,ES Table 2.3,observed_fiscal,3f09c31d8d870e01c802c991,70
-2022,FY2021-22,cotton_area_ha,1937000,ha,ES Table 2.3,observed_fiscal,4ad8b1a76232c9c922d2da37,71
-2022,FY2021-22,wheat_production_t,26209000,t,ES Table 2.4,observed_fiscal,4dd31a24548adeb237afe404,72
-2022,FY2021-22,rice_production_t,9323000,t,ES Table 2.4,observed_fiscal,e50a689edcf4f563f2d602c8,73
-2022,FY2021-22,maize_production_t,9525000,t,ES Table 2.4,observed_fiscal,151722661e80b16574660441,74
-2022,FY2021-22,sugarcane_production_t,88651000,t,ES Table 2.4,observed_fiscal,5005976cf29795af7e12eff0,75
-2022,FY2021-22,cotton_bales_000,8329,000 bales,ES Table 2.4,observed_fiscal,3887d46358a21996caa1dfd2,76
-2022,FY2021-22,nitrogen_N_offtake_t,3838000,t N,ES Table 2.9 (NFDC AFR Table 3 agrees),observed_fiscal,26c3957a3b534a862b16d2e7,77
-2023,FY2022-23,wheat_area_ha,9033000,ha,ES Table 2.3,observed_fiscal,0aba78c5360d28083597c07d,78
-2023,FY2022-23,rice_area_ha,2976000,ha,ES Table 2.3,observed_fiscal,4f88d871b5ef711c6350edd8,79
-2023,FY2022-23,maize_area_ha,1719000,ha,ES Table 2.3,observed_fiscal,95c84678fb0e74efce2f94ae,80
-2023,FY2022-23,sugarcane_area_ha,1319000,ha,ES Table 2.3,observed_fiscal,1e09d9d8e9ff0b4b26660286,81
-2023,FY2022-23,cotton_area_ha,2144000,ha,ES Table 2.3,observed_fiscal,df8b844ac367ad27ace02fc5,82
-2023,FY2022-23,wheat_production_t,28161000,t,ES Table 2.4,observed_fiscal,7ff22de8b8fe2155fd7df774,83
-2023,FY2022-23,rice_production_t,7322000,t,ES Table 2.4,observed_fiscal,f616cf752d415da0d44d1537,84
-2023,FY2022-23,maize_production_t,10985000,t,ES Table 2.4,observed_fiscal,2af2415e35c1dbd3378d6384,85
-2023,FY2022-23,sugarcane_production_t,87981000,t,ES Table 2.4,observed_fiscal,48fb2cacf94959e0730ff600,86
-2023,FY2022-23,cotton_bales_000,4910,000 bales,ES Table 2.4,observed_fiscal,deb73e7c202af2f8f7308b43,87
-2023,FY2022-23,nitrogen_N_offtake_t,3604000,t N,ES Table 2.9 (NFDC AFR Table 3 agrees),observed_fiscal,5d4673c7180050c0d096da43,88
-2024,FY2023-24,wheat_area_ha,9632000,ha,ES Table 2.3,observed_fiscal,05b67ddbde5385b32d9559ac,89
-2024,FY2023-24,rice_area_ha,3637000,ha,ES Table 2.3,observed_fiscal,eb5da5cb36d35d9bfbc00c71,90
-2024,FY2023-24,maize_area_ha,1641000,ha,ES Table 2.3,observed_fiscal,a0aa521f9c553a4d58505e65,91
-2024,FY2023-24,sugarcane_area_ha,1180000,ha,ES Table 2.3,observed_fiscal,58cd1a0543459b346dd7e0de,92
-2024,FY2023-24,cotton_area_ha,2424000,ha,ES Table 2.3,observed_fiscal,8ad14a672f5ddfcf2959f147,93
-2024,FY2023-24,wheat_production_t,31438000,t,ES Table 2.4,observed_fiscal,85fdbf72888b0b9f4a289b08,94
-2024,FY2023-24,rice_production_t,9869000,t,ES Table 2.4,observed_fiscal,28af3c2d4fb745ef746449c9,95
-2024,FY2023-24,maize_production_t,9847000,t,ES Table 2.4,observed_fiscal,dc52b8bc6a8d828818011d15,96
-2024,FY2023-24,sugarcane_production_t,87638000,t,ES Table 2.4,observed_fiscal,68609a1d53acf6d173c587dc,97
-2024,FY2023-24,cotton_bales_000,10223,000 bales,ES Table 2.4,observed_fiscal,1d09401ea5a72a5edb74c25c,98
-2024,FY2023-24,nitrogen_N_offtake_t,3775000,t N,NFDC Fertilizer Review 2023-24 Table 3,observed_fiscal_full_year,215a94fbe0f449ccba250366,99
+2016,FY2015-16,wheat_area_ha,9224000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,1385d8987b5423f5f7b1f259,1
+2016,FY2015-16,rice_area_ha,2739000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,9878b140faf6ffea18583d4c,2
+2016,FY2015-16,maize_area_ha,1191000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,04c8cacfaf62c5b294e4d9d7,3
+2016,FY2015-16,sugarcane_area_ha,1131000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,4c530b5ea23571e7b4f8acee,4
+2016,FY2015-16,cotton_area_ha,2902000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,c71edaea2571dc4d899dec73,5
+2016,FY2015-16,wheat_production_t,25633000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,9ac220ded3fde3649026a7f5,6
+2016,FY2015-16,rice_production_t,6801000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,b6d8edaa04ffbfd7dee25307,7
+2016,FY2015-16,maize_production_t,5271000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,d4d3abcda4bb64d8229fd88a,8
+2016,FY2015-16,sugarcane_production_t,65482000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,c05f22d735b7d963540543ed,9
+2016,FY2015-16,cotton_bales_000,9917,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,f84ce6f0e8ae94543d978dad,10
+2016,FY2015-16,nitrogen_N_offtake_t,2672000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,7430ed738f0f4347071f0673,11
+2017,FY2016-17,wheat_area_ha,8972000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,8d43a04a6b4fdd9c0b6c39ce,12
+2017,FY2016-17,rice_area_ha,2724000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,699c3f84da57af57360f7d41,13
+2017,FY2016-17,maize_area_ha,1348000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,33ecb27d04d23880d7ee9c16,14
+2017,FY2016-17,sugarcane_area_ha,1218000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,f16fa111d80e1a689252c655,15
+2017,FY2016-17,cotton_area_ha,2489000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,083c68cdf8c4e4ffa803c191,16
+2017,FY2016-17,wheat_production_t,26674000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,0f73b6d01490dc7709f5f237,17
+2017,FY2016-17,rice_production_t,6849000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,6ba75dbfc35944c93d7d21b7,18
+2017,FY2016-17,maize_production_t,6134000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,3e3778dcf1dc2042e966a7ed,19
+2017,FY2016-17,sugarcane_production_t,75482000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,8e0e3ac1e0de0e0b53554a03,20
+2017,FY2016-17,cotton_bales_000,10671,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,f80e5ebb06d861c09e64d62f,21
+2017,FY2016-17,nitrogen_N_offtake_t,3730000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,a489f991f6aff29d6b7c4e58,22
+2018,FY2017-18,wheat_area_ha,8797000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,dae8adfcd7402f6901101116,23
+2018,FY2017-18,rice_area_ha,2901000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,ea98b5ca8035f2448ab94f25,24
+2018,FY2017-18,maize_area_ha,1251000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,68219fb4d80c6a6d44a0fc7b,25
+2018,FY2017-18,sugarcane_area_ha,1342000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,d33387825f30037388a656f6,26
+2018,FY2017-18,cotton_area_ha,2700000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,8d44263aff76d6f9ecb1ba5e,27
+2018,FY2017-18,wheat_production_t,25076000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,272f647340e9f2a9da31e9ab,28
+2018,FY2017-18,rice_production_t,7450000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,066737a39d74322ebd69b667,29
+2018,FY2017-18,maize_production_t,5902000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,0955c77aec269512dd4cebbf,30
+2018,FY2017-18,sugarcane_production_t,83333000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,3fee05eb276b5c5a0e8681be,31
+2018,FY2017-18,cotton_bales_000,11946,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,de4206def77243d604083c9e,32
+2018,FY2017-18,nitrogen_N_offtake_t,3435000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,16703d6a5eb1c0017d0da5ea,33
+2019,FY2018-19,wheat_area_ha,8678000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,3f51e4044cf37fbe9488370c,34
+2019,FY2018-19,rice_area_ha,2810000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,a3dbb581f70cb57d8efdd5c0,35
+2019,FY2018-19,maize_area_ha,1374000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,87b442fb0c283d7ae14157e1,36
+2019,FY2018-19,sugarcane_area_ha,1102000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,32b2f074ba1ed7c54e7692d1,37
+2019,FY2018-19,cotton_area_ha,2373000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,bd61ade1bc45fc5568eb1255,38
+2019,FY2018-19,wheat_production_t,24349000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,31fcc10bdcfdb789a6899f1f,39
+2019,FY2018-19,rice_production_t,7202000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,06e95328e41ce8f47650646b,40
+2019,FY2018-19,maize_production_t,6826000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,021f3187c70e9656abaf7628,41
+2019,FY2018-19,sugarcane_production_t,67174000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,40b7252bc12fce24568d9372,42
+2019,FY2018-19,cotton_bales_000,9861,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,0f1e6077c76a97e6f43e3006,43
+2019,FY2018-19,nitrogen_N_offtake_t,3408000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,1195323ab8ec0c5e3041f99e,44
+2020,FY2019-20,wheat_area_ha,8805000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,6f09ddee6afc922fbdc24441,45
+2020,FY2019-20,rice_area_ha,3034000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,ae7791966ae4489f88eb65dd,46
+2020,FY2019-20,maize_area_ha,1404000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,8ef6da7f9faf25e0e165c6a7,47
+2020,FY2019-20,sugarcane_area_ha,1040000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,cf1bbd16c561a13e1f1e1949,48
+2020,FY2019-20,cotton_area_ha,2517000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,15d5bfc9efe1d334d445146f,49
+2020,FY2019-20,wheat_production_t,25248000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,937b5f7829e677a964485a46,50
+2020,FY2019-20,rice_production_t,7414000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,3857e90b1450a33e03e5fc74,51
+2020,FY2019-20,maize_production_t,7883000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,488c41f25661889bb99358a2,52
+2020,FY2019-20,sugarcane_production_t,66380000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,9fc0d89b93e7c6c7f0627035,53
+2020,FY2019-20,cotton_bales_000,9148,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,29c243b9bbcafdb434b15b93,54
+2020,FY2019-20,nitrogen_N_offtake_t,3415000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,89b8dc6de2054eb7d8cd10b4,55
+2021,FY2020-21,wheat_area_ha,9168000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,ff9ebdfaef01decdacdbda30,56
+2021,FY2020-21,rice_area_ha,3335000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,91684531e13694ca54597f9e,57
+2021,FY2020-21,maize_area_ha,1418000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,7bf5981dcf6f5fce5541ecfa,58
+2021,FY2020-21,sugarcane_area_ha,1165000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,ec9a292fb2e13d282e54a22a,59
+2021,FY2020-21,cotton_area_ha,2079000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,03ecda8134ed395657377deb,60
+2021,FY2020-21,wheat_production_t,27464000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,5bc69dc02f4e508c97a59ee7,61
+2021,FY2020-21,rice_production_t,8420000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,bb7ec2b0306a1b822eff87a2,62
+2021,FY2020-21,maize_production_t,8940000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,31226bb6774296faac5a7703,63
+2021,FY2020-21,sugarcane_production_t,81009000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,c7c52fef51334891c585e6ae,64
+2021,FY2020-21,cotton_bales_000,7064,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,bf6ecb5a8263c9521daaca25,65
+2021,FY2020-21,nitrogen_N_offtake_t,3711000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,aeeca2b6e794eeb206f686ce,66
+2022,FY2021-22,wheat_area_ha,8977000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,865346a7ad5ecadf0f2ff801,67
+2022,FY2021-22,rice_area_ha,3537000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,9502eec07fe0d2532a5ee8bf,68
+2022,FY2021-22,maize_area_ha,1653000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,8e90604cf893c4395d58dbef,69
+2022,FY2021-22,sugarcane_area_ha,1260000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,3f09c31d8d870e01c802c991,70
+2022,FY2021-22,cotton_area_ha,1937000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,4ad8b1a76232c9c922d2da37,71
+2022,FY2021-22,wheat_production_t,26209000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,4dd31a24548adeb237afe404,72
+2022,FY2021-22,rice_production_t,9323000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,e50a689edcf4f563f2d602c8,73
+2022,FY2021-22,maize_production_t,9525000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,151722661e80b16574660441,74
+2022,FY2021-22,sugarcane_production_t,88651000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,5005976cf29795af7e12eff0,75
+2022,FY2021-22,cotton_bales_000,8329,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,3887d46358a21996caa1dfd2,76
+2022,FY2021-22,nitrogen_N_offtake_t,3838000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,26c3957a3b534a862b16d2e7,77
+2023,FY2022-23,wheat_area_ha,9033000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,0aba78c5360d28083597c07d,78
+2023,FY2022-23,rice_area_ha,2976000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,4f88d871b5ef711c6350edd8,79
+2023,FY2022-23,maize_area_ha,1719000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,95c84678fb0e74efce2f94ae,80
+2023,FY2022-23,sugarcane_area_ha,1319000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,1e09d9d8e9ff0b4b26660286,81
+2023,FY2022-23,cotton_area_ha,2144000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,df8b844ac367ad27ace02fc5,82
+2023,FY2022-23,wheat_production_t,28161000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,7ff22de8b8fe2155fd7df774,83
+2023,FY2022-23,rice_production_t,7322000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,f616cf752d415da0d44d1537,84
+2023,FY2022-23,maize_production_t,10985000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,2af2415e35c1dbd3378d6384,85
+2023,FY2022-23,sugarcane_production_t,87981000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,48fb2cacf94959e0730ff600,86
+2023,FY2022-23,cotton_bales_000,4910,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,deb73e7c202af2f8f7308b43,87
+2023,FY2022-23,nitrogen_N_offtake_t,3604000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,5d4673c7180050c0d096da43,88
+2024,FY2023-24,wheat_area_ha,9734000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,05b67ddbde5385b32d9559ac,89
+2024,FY2023-24,rice_area_ha,3637000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,eb5da5cb36d35d9bfbc00c71,90
+2024,FY2023-24,maize_area_ha,1641000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,a0aa521f9c553a4d58505e65,91
+2024,FY2023-24,sugarcane_area_ha,1180000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,58cd1a0543459b346dd7e0de,92
+2024,FY2023-24,cotton_area_ha,2424000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,8ad14a672f5ddfcf2959f147,93
+2024,FY2023-24,wheat_production_t,31814000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,85fdbf72888b0b9f4a289b08,94
+2024,FY2023-24,rice_production_t,9859000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,28af3c2d4fb745ef746449c9,95
+2024,FY2023-24,maize_production_t,9739000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,dc52b8bc6a8d828818011d15,96
+2024,FY2023-24,sugarcane_production_t,87638000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,68609a1d53acf6d173c587dc,97
+2024,FY2023-24,cotton_bales_000,10223,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,1d09401ea5a72a5edb74c25c,98
+2024,FY2023-24,nitrogen_N_offtake_t,3775000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,215a94fbe0f449ccba250366,99
+2025,FY2024-25,wheat_area_ha,9075000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,25c17558c76554d996f0c2f1,100
+2025,FY2024-25,rice_area_ha,3899000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,abcd0f9eefe368d5c119233c,101
+2025,FY2024-25,maize_area_ha,1588000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,fa01471f46dc83023ed31dc4,102
+2025,FY2024-25,sugarcane_area_ha,1193000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,fd9a4c78b8e0d20df49d3be7,103
+2025,FY2024-25,cotton_area_ha,2043000,ha,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.3 PDFp26,observed_fiscal_revised,666053e2ed29f39124838284,104
+2025,FY2024-25,wheat_production_t,28396000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,4275673108d9f52fa44e9190,105
+2025,FY2024-25,rice_production_t,9723000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,c579e6e9b8e1cdcc1de494dd,106
+2025,FY2024-25,maize_production_t,9037000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,4a719d44bf9e9852986a7f7f,107
+2025,FY2024-25,sugarcane_production_t,84239000,t,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,b8a9a42b0ebcf35bb8d01313,108
+2025,FY2024-25,cotton_bales_000,7084,000 bales,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.4 PDFp27,observed_fiscal_revised,3d2fca49e85f487c95ebc4ba,109
+2025,FY2024-25,nitrogen_N_offtake_t,3387000,t N,Pakistan Economic Survey 2025-26 data/raw/finance_division/survey_2025_26/2_Agriculture.pdf appendix Table2.9 PDFp32,observed_fiscal_full_year,01f375935f11ada151ba9031,110

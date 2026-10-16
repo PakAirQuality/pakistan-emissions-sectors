@@ -1,43 +1,10 @@
-"""The agriculture history on a fiscal basis, and the price of moving it there.
+"""Agriculture on fiscal crops/nutrients and a consistent livestock-anchor bridge.
 
-WHAT THIS IS. The unchanged Tier-2 engine driven over nine PAKISTANI FISCAL YEARS, with crops
-and nitrogen on the Economic Survey's own fiscal tables and livestock still on the FAOSTAT
-projection, each category carrying the basis of ITS OWN driver rather than one word for the
-whole sector. It replaces the FAOSTAT-calendar history that
-src/pkinv/report/national_series.py published for eight of its nine years.
-
-The method does not move. Nothing here re-derives an emission factor, a parameter or a
-category definition; `run_inventory.build_components` is called exactly as the reference year
-calls it. Only the activity changes, which is the whole point: a trend built by varying method
-and activity together is not a trend.
-
-WHY A PER-CATEGORY BASIS. Two of the six categories - enteric fermentation and manure
-management, 77.4 percent of the sector - are driven by livestock stocks, and Pakistan has no
-fiscal-year livestock ENUMERATION to move them to (see fiscal_activity's header for the
-Economic Survey footnote that settles it). Declaring the whole sector fiscal would be false;
-declaring the whole sector calendar would throw away the four categories that can be fixed.
-So the basis is a property of the driver, and it is published per row.
-
-THREE MEASUREMENTS, NOT THREE ASSERTIONS. Each of the three claims this module needs is
-computed rather than stated:
-
-  basis_change()            what re-basing cost, per year and category, with the CALENDAR
-                            HISTORY'S MISSING COTTON separated from the timing change so
-                            that a source break and a scope break are never one number
-  livestock_phase_envelope() what the six-month calendar-to-fiscal phase shift is worth on
-                            the two categories that keep it - the number that licenses
-                            keeping them, and the number that would withdraw the licence
-  managed_soils_n_split()   the fiscal share of managed-soils nitrogen, which is what the
-                            word `observed_fiscal_mixed` means
-
-  crop_calendar_alignment() WHICH FAOSTAT year each fiscal crop cell actually is - the
-                            finding this pass did not expect, and the one that turns "a
-                            different basis" into "an off-by-one for four crops in five"
-
-Usage:  python3 -m pkinv.sectors.agriculture.fiscal_series
-Writes: outputs/pakemis_agriculture_fiscal_series.csv
-        outputs/pakemis_agriculture_basis_change.csv
-        outputs/pakemis_agriculture_crop_calendar.csv
+The ten-year July2015-June2025 core uses the maintained source activity and
+unchanged sector calculation methods. Crop/nutrient flows, reconstructed stock
+activity and mixed nitrogen sources carry their own driver provenance. The
+archived FAOSTAT-level/calendar history is retained as an explicit source/basis
+comparison, not described as the current stock series.
 """
 
 from pkinv.assets import asset_path
@@ -82,9 +49,8 @@ LIVESTOCK_N_POOLS = ("organic manure", "pasture deposition", "manure")
 #
 #   observed_fiscal      -> E2  "published statistic for this source and period" - the
 #                               Economic Survey's own fiscal tables for that year
-#   calendar_projection  -> E3  "derived from a related published quantity" - FAOSTAT
-#                               calendar-year stocks projected onto a fiscal year, which is a
-#                               related quantity and not this period's own count
+#   census_anchored_reconstruction -> E3: relative stock changes rescaled to
+#                               adopted anchors, not a new enumerated annual count
 #
 # AND IT IS NOT THE REFERENCE YEAR'S GRADE. The census year is E2 on a livestock ENUMERATION;
 # these years are a projection of it. Stamping the reference class here - which is what
@@ -150,8 +116,9 @@ def _label(fy_end):
     return "FY%d-%02d" % (fy_end - 1, fy_end % 100)
 
 
-def _components(fy_end, table=None, stocks=None):
-    return build_components(fa.data_for_fiscal_year(fy_end, table=table, stocks=stocks))
+def _components(fy_end, table=None, stocks=None, nitrogen_method=None):
+    return build_components(fa.data_for_fiscal_year(fy_end, table=table, stocks=stocks),
+                            nitrogen_method=nitrogen_method)
 
 
 def _co2e(gas, gg):
@@ -192,9 +159,10 @@ def build(table=None, stocks=None):
                     "co2e_Mt_AR6": round(ar6, 6),
                     "activity_basis": basis,
                     "driver": driver,
-                    "driver_source": ("Economic Survey Tables 2.3/2.4/2.9, NFDC"
-                                      if basis != fa.CALENDAR_BASIS
-                                      else "FAOSTAT livestock stocks (calendar year)"),
+                    "driver_source": (fa.livestock_provenance(fy_end) if basis == fa.CALENDAR_BASIS else
+                                      "Economic Survey Tables2.3/2.4/2.9; NFDC" +
+                                      ("; " + fa.livestock_provenance(fy_end)
+                                       if basis == fa.MIXED_BASIS else "")),
                 })
     return rows
 
@@ -218,7 +186,7 @@ def series_by_gas(rows=None):
     return out
 
 
-def components_for_year(fy_end, table=None, stocks=None):
+def components_for_year(fy_end, table=None, stocks=None, nitrogen_method=None):
     """The engine's own COMPONENT rows for one fiscal year - the grain `build()` throws away.
 
     THE THIRD SIBLING, and it exists because the first two were not enough. `build()` has
@@ -254,7 +222,7 @@ def components_for_year(fy_end, table=None, stocks=None):
     """
     from pkinv.sectors.agriculture.engine import ENUMERATED_CATEGORIES
 
-    rows = _components(fy_end, table=table, stocks=stocks)
+    rows = _components(fy_end, table=table, stocks=stocks, nitrogen_method=nitrogen_method)
     for row in rows:
         row["activity_year"] = fy_end
         row["activity_period_kind"] = ("enumeration"
@@ -320,7 +288,8 @@ def basis_change(rows=None, table=None, stocks=None):
         for category in CATEGORIES:
             driver, basis = fa.DRIVER[category]
             fiscal_mt = fiscal[fy_end].get(category, (0.0, 0.0))[0]
-            calendar_mt = calendar.get(fy_end, {}).get(category, 0.0)
+            calendar_mt = calendar.get(fy_end, {}).get(category)
+            compared = calendar_mt is not None
             without = sum(_co2e(gas, no_cotton.get((category, gas), 0.0))[0]
                           for gas in GASES)
             scope = fiscal_mt - without
@@ -328,13 +297,15 @@ def basis_change(rows=None, table=None, stocks=None):
                 "fiscal_end_year": fy_end,
                 "fiscal_label": _label(fy_end),
                 "category": category,
-                "calendar_faostat_Mt": round(calendar_mt, 6),
+                "calendar_faostat_Mt": round(calendar_mt, 6) if compared else "",
                 "fiscal_Mt": round(fiscal_mt, 6),
-                "difference_Mt": round(fiscal_mt - calendar_mt, 6),
-                "basis_term_Mt": round(without - calendar_mt, 6),
+                "difference_Mt": round(fiscal_mt - calendar_mt, 6) if compared else "",
+                "basis_term_Mt": round(without - calendar_mt, 6) if compared else "",
                 "scope_term_Mt": round(scope, 6),
                 "driver": driver,
                 "driver_basis": basis,
+                "comparison_status": ("compared_to_archived_calendar" if compared else
+                                      "archived_calendar_comparator_absent"),
             })
     return out
 
@@ -425,10 +396,12 @@ def livestock_phase_envelope(stocks=None):
     table = fa.activity()
     out = []
     for fy_end in fa.FISCAL_YEARS:
-        if fy_end == 2024 or (fy_end - 1) not in live:
+        if fy_end == 2024:
             continue
         shifted = dict(live)
-        shifted[fy_end] = {species: 0.5 * (live[fy_end - 1][species] + live[fy_end][species])
+        previous = fa.proxy_stocks_for_year(live, fy_end - 1)
+        current = fa.proxy_stocks_for_year(live, fy_end)
+        shifted[fy_end] = {species: 0.5 * (previous[species] + current[species])
                            for species in calendar_ts.SPECIES}
         as_published = _by_category_gas(_components(fy_end, table, (live, _crops, _nitro)))
         as_shifted = _by_category_gas(_components(fy_end, table, (shifted, _crops, _nitro)))
@@ -534,9 +507,9 @@ def main():
     stocks = calendar_ts._load_history()
     rows = build(table, stocks)
     _write(SERIES_OUT, rows, [
-        "Agriculture on a PAKISTANI FISCAL basis, FY2015-16 to FY2023-24.",
-        "Crops and nitrogen from the Economic Survey's fiscal tables; livestock stocks "
-        "remain the FAOSTAT calendar projection, which has no fiscal enumeration to move to.",
+        "Agriculture fiscal activity, %s to %s." % (_label(min(fa.FISCAL_YEARS)), _label(max(fa.FISCAL_YEARS))),
+        "Crops/nitrogen use Economic Survey/NFDC fiscal records; livestock use adopted2024 "
+        "anchors and FAOSTAT relative stock changes, with explicit post2024 extrapolation.",
         "activity_basis is a property of each category's DRIVER, not of the sector.",
         "The method is untouched: run_inventory.build_components, as the reference year "
         "calls it. Only the activity varies.",
@@ -544,9 +517,11 @@ def main():
 
     change = basis_change(rows, table, stocks)
     _write(BASIS_OUT, change, [
-        "What moving agriculture from a FAOSTAT-calendar basis to a Pakistani fiscal basis "
-        "cost, per year and category.",
-        "difference_Mt = basis_term_Mt + scope_term_Mt, exactly.",
+        "Source/basis change from archived FAOSTAT-level/calendar activity to current "
+        "fiscal crops/nutrients and adopted-anchor livestock reconstruction, by year/category.",
+        "Where a calendar comparator exists, difference_Mt = basis_term_Mt + scope_term_Mt.",
+        "A missing archived calendar comparator is typed, not zero; fiscal mass and the "
+        "within-fiscal cotton scope term remain available.",
         "scope_term_Mt is COTTON: the calendar history carried four crops and the reference "
         "year carried five, so cotton's residue burning and residue nitrogen appeared at the "
         "join from nowhere. A source break and a scope break are different claims and are "
@@ -570,16 +545,21 @@ def main():
     calendar = _calendar_by_category()
     for fy_end in fa.FISCAL_YEARS:
         fiscal_total = sum(a for a, _ in by_category[fy_end].values())
-        calendar_total = sum(calendar.get(fy_end, {}).values())
-        print("  %-11s %10.5f %10.5f %+9.5f"
-              % (_label(fy_end), fiscal_total, calendar_total,
-                 fiscal_total - calendar_total))
+        if fy_end in calendar:
+            calendar_total = sum(calendar[fy_end].values())
+            print("  %-11s %10.5f %10.5f %+9.5f"
+                  % (_label(fy_end), fiscal_total, calendar_total,
+                     fiscal_total - calendar_total))
+        else:
+            print("  %-11s %10.5f calendar comparator absent" % (_label(fy_end), fiscal_total))
 
     print("\nbasis change -> %s" % os.path.relpath(BASIS_OUT))
-    basis_total = sum(r["basis_term_Mt"] for r in change if r["fiscal_end_year"] != 2024)
-    scope_total = sum(r["scope_term_Mt"] for r in change if r["fiscal_end_year"] != 2024)
-    print("  eight backcast years: basis %+.4f Mt, cotton scope %+.4f Mt"
-          % (basis_total, scope_total))
+    backcast = [r for r in change if r["fiscal_end_year"] < 2024
+                and r["comparison_status"] == "compared_to_archived_calendar"]
+    basis_total = sum(r["basis_term_Mt"] for r in backcast)
+    scope_total = sum(r["scope_term_Mt"] for r in backcast)
+    print("  %d matched backcast years: basis %+.4f Mt, cotton scope %+.4f Mt"
+          % (len({r["fiscal_end_year"] for r in backcast}), basis_total, scope_total))
 
     alignment = crop_calendar_alignment()
     _write(CALENDAR_OUT, alignment, [
@@ -590,8 +570,8 @@ def main():
         "the preceding calendar year).",
         "The evidence is not an argument about growing seasons: the cells agree to 0.01-0.02 "
         "percent at the other offset and disagree by 7-9 percent at the one that was used.",
-        "Rice production is compared after the 0.667 paddy-to-milled outturn, which holds to "
-        "three figures in all nine years - a unit, not a disagreement.",
+        "Rice production is compared after the declared0.667 paddy-to-milled outturn; "
+        "differences from later revised fiscal cells remain explicit.",
     ])
     print("\ncrop calendar -> %s" % os.path.relpath(CALENDAR_OUT))
     print("  %-10s %-14s %-8s %10s %10s  %s"

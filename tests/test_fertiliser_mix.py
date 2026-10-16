@@ -148,9 +148,12 @@ class TestChemicalBasis(unittest.TestCase):
 
     def test_ipcc_streams_do_take_the_nh3_share(self):
         """Conversely FracGASM covers NH3+NOx, so the organic and pasture streams must be reduced."""
+        _, pools = manure.compute(self.data, method="ipcc")
+        total = soils.volatilised_n(self.data, pools)
+        nh3 = soils.volatilised_n(self.data, pools, basis="NH3")
         share = self.data.efv("soils", "NH3_frac_of_volat")
         for stream in ("organic", "pasture_cattle", "pasture_other"):
-            self.assertAlmostEqual(self.nh3[stream], self.total[stream] * share, places=3)
+            self.assertAlmostEqual(nh3[stream], total[stream] * share, places=3)
 
     def test_basis_argument_is_explicit(self):
         with self.assertRaises(ValueError):

@@ -40,6 +40,7 @@ import os
 
 from pkinv.assets import asset_path
 from pkinv.core.io import write_table
+from pkinv.core.reporting_window import REFERENCE_PERIOD
 from pkinv.paths import DATA, OUTPUTS
 
 OUT = os.path.join(OUTPUTS, "pakemis_dung_fate_by_year.csv")
@@ -112,15 +113,14 @@ def build():
 
     # the reference year must be the reference-year file, row for row
     shipped = {r["variant_id"]: r for r in _rows(REFERENCE_YEAR_FILE)}
-    last = periods[-1][1]
     for r in rows:
-        if r["period_id"] != last:
+        if r["period_id"] != REFERENCE_PERIOD:
             continue
         other = shipped.get(r["variant_id"])
         if other is None or abs(float(other["national_total_Mt_co2e_AR5"])
                                 - float(r["national_total_Mt_co2e_AR5"])) > 2e-5:
             problems.append("%s %s: %s here, %s in national_dung_variants.csv"
-                            % (last, r["variant_id"], r["national_total_Mt_co2e_AR5"],
+                            % (REFERENCE_PERIOD, r["variant_id"], r["national_total_Mt_co2e_AR5"],
                                other and other["national_total_Mt_co2e_AR5"]))
     if problems:
         raise SystemExit("the dung fate account does not close:\n  " + "\n  ".join(problems))

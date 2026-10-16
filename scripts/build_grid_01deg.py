@@ -31,7 +31,7 @@ import numpy as np  # noqa: E402
 
 from pkinv.paths import OUTPUTS  # noqa: E402
 
-SRC = asset_path(OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc")
+SRC = asset_path(OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc")
 OUT = asset_path(OUTPUTS, "pakemis_grid_0p1_edgar_aligned.nc")
 GASES = ("co2", "ch4", "n2o")
 

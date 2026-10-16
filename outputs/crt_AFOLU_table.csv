@@ -1,25 +1,25 @@
 year,code,category,activity_data,AD_unit,CO2_kt,CH4_kt,N2O_kt,CO2e_kt_AR5,implied_EF,EF_unit
 1990,3.A,Enteric Fermentation,97229016,head,0.0,1947.8,0.0,54538,20.0,kg CH4/head/yr
-1990,3.B,Manure Management,176229016,head incl. poultry,0.0,152.5,8.97,6646,,CH4+N2O
+1990,3.B,Manure Management,176229016,head incl. poultry,0.0,152.5,8.69,6572,,CH4+N2O
 1990,3.C,Rice Cultivation,2112700,ha,0.0,343.3,0.0,9613,162.5,kg CH4/ha/yr
-1990,3.D,Agricultural Soils,1471642,t N synthetic,0.0,0.0,38.75,10270,0.03,kg N2O/t N (implied)
+1990,3.D,Agricultural Soils,1471642,t N synthetic,0.0,0.0,38.07,10087,0.03,kg N2O/t N (implied)
 1990,3.F,Field Burning of Residues,,residue dry matter,0.0,7.35,0.19,256,,CH4+N2O
 1990,3.G,Liming,NE,t CaCO3/dolomite,NE,NE,NE,NE,,NE: not estimated (alkaline soils; see completeness.csv)
 1990,3.H,Urea Application,,t urea (from N),1876.9,0.0,0.0,1877,,CO2
-1990,3,Agriculture TOTAL,,,,,,83200,,
+1990,3,Agriculture TOTAL,,,,,,82943,,
 2023,3.A,Enteric Fermentation,218657000,head,0.0,5116.0,0.0,143249,23.4,kg CH4/head/yr
-2023,3.B,Manure Management,2105657000,head incl. poultry,0.0,447.5,28.81,20163,,CH4+N2O
+2023,3.B,Manure Management,2105657000,head incl. poultry,0.0,447.5,27.41,19792,,CH4+N2O
 2023,3.C,Rice Cultivation,3636994,ha,0.0,591.0,0.0,16548,162.5,kg CH4/ha/yr
-2023,3.D,Agricultural Soils,3808775,t N synthetic,0.0,0.0,102.29,27106,0.03,kg N2O/t N (implied)
+2023,3.D,Agricultural Soils,3808775,t N synthetic,0.0,0.0,102.5,27162,0.03,kg N2O/t N (implied)
 2023,3.F,Field Burning of Residues,,residue dry matter,0.0,19.88,0.515,693,,CH4+N2O
 2023,3.G,Liming,NE,t CaCO3/dolomite,NE,NE,NE,NE,,NE: not estimated (alkaline soils; see completeness.csv)
 2023,3.H,Urea Application,,t urea (from N),4857.6,0.0,0.0,4858,,CO2
-2023,3,Agriculture TOTAL,,,,,,212617,,
+2023,3,Agriculture TOTAL,,,,,,212303,,
 2024,3.A,Enteric Fermentation,245524371,head,0.0,5416.3,0.0,151658,22.1,kg CH4/head/yr
-2024,3.B,Manure Management,2310524371,head incl. poultry,0.0,470.8,30.36,21228,,CH4+N2O
+2024,3.B,Manure Management,2310524371,head incl. poultry,0.0,470.8,28.91,20843,,CH4+N2O
 2024,3.C,Rice Cultivation,3637000,ha,0.0,591.0,0.0,16548,162.5,kg CH4/ha/yr
-2024,3.D,Agricultural Soils,3775000,t N synthetic,0.0,0.0,107.65,28526,0.03,kg N2O/t N (implied)
-2024,3.F,Field Burning of Residues,,residue dry matter,0.0,19.2,0.498,670,,CH4+N2O
+2024,3.D,Agricultural Soils,3775000,t N synthetic,0.0,0.0,107.52,28494,0.03,kg N2O/t N (implied)
+2024,3.F,Field Burning of Residues,,residue dry matter,0.0,19.23,0.499,671,,CH4+N2O
 2024,3.G,Liming,NE,t CaCO3/dolomite,NE,NE,NE,NE,,NE: not estimated (alkaline soils; see completeness.csv)
 2024,3.H,Urea Application,,t urea (from N),4824.5,0.0,0.0,4824,,CO2
-2024,3,Agriculture TOTAL,,,,,,223454,,
+2024,3,Agriculture TOTAL,,,,,,223038,,

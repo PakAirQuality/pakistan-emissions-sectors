@@ -161,7 +161,9 @@ def sector_shapes(sector, fy_start):
 def timing_target_for(sector, category, subitem, classes):
     if set(classes.values()) == {"TE4"}:
         return FALLBACK_TARGET.get(sector, "proxy_only")
-    if sector in ("transport", "railways", "power", "industry", "aviation"):
+    if sector == "aviation":
+        return "proxy_only"
+    if sector in ("transport", "railways", "power", "industry"):
         return "fuel_sale"
     if sector == "ippu":
         return "production"
@@ -298,6 +300,8 @@ BASIS_SOURCE = (
                        "Table 3.4, consolidated volume)"),
     ("AFR 2023-24 Annex-5", "nfdc_month_product_offtake.csv (Annual Fertilizer Review "
                             "2023-24 Annex-5, the reference year's own twelve months)"),
+    ("AFR 2024-25 Annex-5", "annex5_national_month_product.csv (Annual Fertilizer Review "
+                            "2024-25 Annex-5, own July2024-June2025 months)"),
     ("NFDC Annex-7", "nfdc_annex7 urea offtake"),
     ("degree day", "monthly_degree_days.csv (NASA POWER)"),
     # Both are PBS QIM, so the needle for the borrowed one must name the VINTAGE and not the
@@ -334,6 +338,8 @@ BASIS_SOURCE = (
 
 def source_of(sector, bases):
     """The source id for a spec, from the basis lines its own months carry."""
+    if sector == "aviation" and any("OCAC" in basis for basis in bases):
+        return "aviation_ocac_monthly.csv (resident-airline customer sales; domestic-flight proxy)"
     found = []
     for basis in sorted(bases):
         for needle, source in BASIS_SOURCE:
@@ -442,7 +448,9 @@ def resolve(row, fy_start):
     return Spec("%s_%s" % (sector, _slug(row["category"])), weights, classes,
                 timing_target_for(sector, row["category"], row["subitem"], classes),
                 source_of(sector, bases),
-                "shape from the %s monthly layer for this fiscal year" % sector,
+                ("OCAC resident-airline sales proxy for domestic flight activity; purchaser "
+                 "and flight-geography boundaries differ" if sector == "aviation" else
+                 "shape from the %s monthly layer for this fiscal year" % sector),
                 observed_month_count=sum(1 for c in classes.values()
                                          if c in ("TE1", "TE2")),
                 borrowed_from_year=borrowed,

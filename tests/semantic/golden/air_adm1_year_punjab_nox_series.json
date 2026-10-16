@@ -2,22 +2,28 @@
  "expect": [
   {
    "cell": 0,
-   "display": "341.674",
+   "display": "382.552",
+   "exact": "382.5524876663703",
    "group": {
     "period_id": "FY2015-16"
    },
-   "note_dung_reference_2026_10_13": "2026-10-13, rc67: household dung follows the survey in every year. The reference burned in households all the dung agriculture diverts (configuration L) through rc66; it now burns what the two HIES rounds report, a per-household quantity interpolated between 2018-19 and 2024-25 and held at the first round's rate before it. Punjab NOx in FY2015-16: 450.581 -> 341.674 Gg. The whole of the step is residential (162.302 -> 53.396); no other sector's Punjab NOx moved."
+   "note_dung_reference_2026_10_13": "2026-10-13, rc67: household dung follows the survey in every year. The reference burned in households all the dung agriculture diverts (configuration L) through rc66; it now burns what the two HIES rounds report, a per-household quantity interpolated between 2018-19 and 2024-25 and held at the first round's rate before it. Punjab NOx in FY2015-16: 450.581 -> 341.674 Gg. The whole of the step is residential (162.302 -> 53.396); no other sector's Punjab NOx moved.",
+   "note_rc68": "Reconciled independently against pakemis_air_adm1_by_year.csv after the integrated source/accounting revision; previous notes describe historical releases.",
+   "tolerance": "0.000001"
   },
   {
    "cell": 8,
-   "display": "415.040",
+   "display": "471.113",
+   "exact": "471.11327750028998",
    "group": {
     "period_id": "FY2021-22"
    },
-   "note_dung_reference_2026_10_13": "2026-10-13, rc67: household dung follows the survey in every year. The reference burned in households all the dung agriculture diverts (configuration L) through rc66; it now burns what the two HIES rounds report, a per-household quantity interpolated between 2018-19 and 2024-25 and held at the first round's rate before it. Punjab NOx in FY2021-22: 543.250 -> 415.040 Gg, residential 195.035 -> 66.825 and nothing else. FY2021-22 is still the largest of the nine periods and FY2015-16 still the smallest, so the two cells keep their positions."
+   "note_dung_reference_2026_10_13": "2026-10-13, rc67: household dung follows the survey in every year. The reference burned in households all the dung agriculture diverts (configuration L) through rc66; it now burns what the two HIES rounds report, a per-household quantity interpolated between 2018-19 and 2024-25 and held at the first round's rate before it. Punjab NOx in FY2021-22: 543.250 -> 415.040 Gg, residential 195.035 -> 66.825 and nothing else. FY2021-22 is still the largest of the nine periods and FY2015-16 still the smallest, so the two cells keep their positions.",
+   "note_rc68": "Reconciled independently against pakemis_air_adm1_by_year.csv after the integrated source/accounting revision; previous notes describe historical releases.",
+   "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "b16dbcecf81502fb81132e7217f66fdb",
+ "expect_receipt": "4bb83039892abc54a34db50f17bf02ed",
  "function": "query_air",
  "golden_id": "air_adm1_year_punjab_nox_series",
  "note": "rc67: moved by the dung reference (see note_dung_reference_2026_10_13 on each cell). The reference configuration's residential dung is the household survey series; the pre-rc67 values are served under the ledger series L_HERD1624. PREVIOUS NOTE | rc62: the industrial liquid province vectors were split by product and re-based on OCAC's own Total Industry area pages. One blended row had given furnace oil the retail geography of fuels it does not burn (Punjab 0.657 against furnace oil's own 0.784) and diesel the reverse (0.657 against 0.431 - industrial diesel is very nearly half Sindh). Punjab NOx falls because diesel carries NOx and diesel left Punjab; Lahore PM2.5 rises slightly because furnace oil arrived. No national number moved and no pin moved - this is a provincial re-base, sized per province and period in the round's record.",

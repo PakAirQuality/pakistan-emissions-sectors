@@ -326,7 +326,7 @@ ROWS = [
      # across three papers; a word is invisible to quantity_policy and unanchorable by
      # DOC_CLAIMS, and the sibling railway ratio published the same way sat 13 per cent
      # low for four releases. See tests/test_word_number_policy.py.
-     r"\\num{7.3} times the road value (and identical between the table's Agriculture and Industry "
+     r"7.3 times the road value (and identical between the table's Agriculture and Industry "
      "rows, so the class's mixed composition is factor-invariant under the correct "
      "table). KNOWN FLAW: the class is the source workbook's residual bucket as well as "
      "its tractor class, is modelled as 100% diesel, and its exact share is priced by "
@@ -427,9 +427,8 @@ ROWS = [
      "emissions out of 4.A, not add them. See waste-biological-treatment."),
     ("4.C.1", "Waste incineration", "CO2/CH4/N2O", "NE", "",
      "No municipal-scale incineration operates in Pakistan, but hospital and "
-     "clinical-waste incinerators do; their throughput has not been obtained here. "
-     "Bounded far below 4.C.2, whose 3.83 Mt of open burning dwarfs any clinical "
-     "stream. See waste-incineration."),
+     "clinical-waste incinerators do; their throughput has not been obtained here, "
+     "so no magnitude is stated. See waste-incineration."),
     ("4.C.2", "Open burning of waste", "CO2/CH4/N2O", "E", "Open burning of waste",
      "IPCC Eq 5.7 over the UNCOLLECTED stream x a 0.60 burned fraction. Only fossil CO2 "
      "counts; biogenic CO2 is a memo item."),
@@ -439,11 +438,13 @@ ROWS = [
      "stratification matters. THE JUDGEMENT THAT DECIDES THIS CATEGORY is the sewer MCF: "
      "IPCC gives stagnant open warm sewers 0.5 and river discharge 0.1, Pakistani urban "
      "drainage is open, warm and untreated so 0.5 is central, and the runner publishes the "
-     "0.1 reading alongside it (24.28 Mt against 15.45 Mt). N2O runs on FAOSTAT protein "
-     "supply and is the softest number here - its effluent factor spans a factor of 500."),
+     "0.1 reading alongside it. N2O follows the 2019 Refinement: nitrogen from protein "
+     "consumed is allocated to the same sanitation pathways, reduced by treatment removal "
+     "and emitted at plants and from effluent; the effluent factor's published range spans "
+     "a factor of 150."),
     ("4.D", "Industrial wastewater", "CH4", "NE", "",
-     "Needs industrial output by sector and wastewater organic loading, neither of which "
-     "is available; blocked with 1.A.2 on the same HDIP/industry data."),
+     "Needs industrial output by sector and the organic load of each sector's wastewater; "
+     "neither is held."),
 
     # --- Energy, fuel combustion: the categories that carry the national total ---
     ("1.A.1.a", "Electricity and heat production", "CO2/CH4/N2O", "E",
@@ -578,7 +579,7 @@ ROWS = [
      "detail table splits locomotive from other-than-locomotive fuel, and the measured "
      "non-traction share books at its own category row below. "
      "Pakistan Railways Year Book metered fuel consumption x IPCC Vol 2 Ch 3 Table 3.4.1, "
-     r"the RAIL table - its N2O factor is \\num{7.3} times the road value. Railway diesel is "
+     r"the RAIL table - its N2O factor is 7.3 times the road value. Railway diesel is "
      "its own OCAC customer-class row, outside the road control by the source's "
      "structure, and the Year Book figure serves as an independent cross-check on that "
      "row (3.8 percent apart at the matched year) rather than a deduction. "
@@ -653,18 +654,19 @@ ROWS = [
      "BC - about twenty-five times road transport's exhaust PM2.5, which is why this "
      "layer was built first."),
     ("(air)", "Air pollutants - road transport", "PM2.5/PM10/CO/NOx/NMVOC/SO2/NH3", "E", "",
-     "Per-kilometre factors on the same survival-weighted vehicle-kilometres that "
-     "distribute the fuel control total. Unlike the greenhouse-gas side this layer does "
-     "NOT inherit the fuel anchor, so its magnitude rides the fleet model. PROVENANCE "
-     "FLAW, declared: the g/km factors are Punjab-workbook transcriptions with no "
-     "primary citation located (emission_factors_gkm.csv has no provenance column), and the "
-     "layer is exhaust-only - read it as order-of-magnitude."),
+     "EMEP/EEA 2023 Tier 1 factors per class and process on the OCAC road fuel the "
+     "greenhouse-gas side burns, so modelled fuel equals sold fuel: exhaust (g/kg fuel), "
+     "petrol evaporation (g/vehicle/day), tyre and brake wear and road-surface wear "
+     "(g/vkm). SO2 from declared fuel sulfur by year, a policy-date assumption rather "
+     "than an assay. Resuspended road dust is not estimated. Off-road machinery is 1A4c, "
+     "outside this layer. The factors describe an EU-27 2010 fleet, not Pakistan's."),
     ("(air)", "Air pollutants - road transport cold-start excess", "CO/NMVOC/NOx/PM2.5",
-     "NE", "",
-     "Excess emissions during engine warm-up are a separate EMEP/EEA process (2023 "
-     "guidebook ch 1.A.3.b hot/cold methodology) requiring trip counts, trip lengths "
-     "and ambient temperature on top of the hot-exhaust factors; none of those inputs "
-     "has been assembled here. The exploratory diagnostic is hot-exhaust-only. See "
+     "IE", "",
+     "Included in the exhaust row: the Tier 1 factors are derived from the guidebook's "
+     "hot plus cold Tier 3 method for a typical EU-27 2010 fleet (2023 guidebook "
+     "1.A.3.b, section 3.2.2), so warm-up excess is inside them at European trip and "
+     "temperature conditions. No Pakistan-specific cold-start treatment is applied; "
+     "that would need trip counts, trip lengths and ambient temperature. See "
      "transport-cold-start."),
     ("(air)", "Air pollutants - aviation NMVOC speciation", "NMVOC", "NE", "",
      "The EEDB publishes HC (unspeciated exhaust hydrocarbons); the vocabulary rule "

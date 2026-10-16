@@ -1,17 +1,20 @@
 pollutant,source,level_pct,cum_level_pct,key_by_level,trend_pct,cum_trend_pct,key_by_trend,key,level_pct_p2_5,level_pct_p97_5,rank_stability_pct,note
 BC,Residue burning BC,100.0,100.0,YES,n/a,n/a,n/a,YES,100.0,100.0,100.0,"single estimated stream: the 100 percent share and stability measure COVERAGE, not certainty - nothing else is estimated for this pollutant"
 CO,Residue burning CO,100.0,100.0,YES,n/a,n/a,n/a,YES,100.0,100.0,100.0,"single estimated stream: the 100 percent share and stability measure COVERAGE, not certainty - nothing else is estimated for this pollutant"
-NH3,NH3 - manure applied to soils,32.41,32.41,YES,7.15,97.33,YES,YES,21.68,44.47,45.6,
-NH3,NH3 - housing and storage,31.51,63.92,YES,42.85,42.85,YES,YES,21.11,43.43,32.2,
-NH3,NH3 - synthetic fertiliser,27.56,91.49,YES,38.05,80.9,YES,YES,20.01,36.49,50.2,
-NH3,NH3 - pasture deposition (sheep/goat/other),4.27,95.76,YES,9.28,90.18,YES,YES,2.36,7.26,58.9,
-NH3,NH3 - pasture deposition (cattle-type),3.9,99.65,no,2.23,99.56,no,no,2.16,6.65,58.9,
-NH3,Residue burning NH3,0.35,100.0,no,0.44,100.0,no,no,0.16,0.69,100.0,
+NH3,NH3 - housing and storage,32.02,32.02,YES,42.57,42.57,YES,YES,20.85,44.83,44.2,
+NH3,NH3 - manure applied to soils,31.14,63.15,YES,7.43,97.33,YES,YES,19.94,43.97,30.9,
+NH3,NH3 - synthetic fertiliser,28.15,91.3,YES,38.05,80.62,YES,YES,20.28,37.62,42.2,
+NH3,NH3 - pasture deposition (sheep/goat/other),4.36,95.66,YES,9.28,89.9,YES,YES,2.31,7.66,58.0,
+NH3,NH3 - pasture deposition (cattle-type),3.98,99.65,no,2.23,99.56,no,no,2.15,6.94,58.0,
+NH3,Residue burning NH3,0.35,100.0,no,0.44,100.0,no,no,0.16,0.71,100.0,
 NH3,NH3 - crop residues left in field,0.0,100.0,no,0.0,100.0,no,no,n/a,n/a,n/a,
 NMVOC,Residue burning NMVOC,100.0,100.0,YES,n/a,n/a,n/a,YES,100.0,100.0,100.0,"single estimated stream: the 100 percent share and stability measure COVERAGE, not certainty - nothing else is estimated for this pollutant"
-NOx,Soil NOx - synthetic fertiliser,53.2,53.2,YES,42.59,92.59,YES,YES,24.97,77.18,75.7,
-NOx,Soil NOx - organic manure,32.91,86.1,YES,50.0,50.0,YES,YES,12.46,61.08,72.5,
-NOx,Residue burning NOx,10.89,97.0,YES,7.27,99.86,YES,YES,4.84,23.26,95.4,
-NOx,Soil NOx - crop residues,3.0,100.0,no,0.14,100.0,no,no,0.93,8.18,99.0,
+NOx,NOx - manure management,37.54,37.54,YES,42.72,42.72,YES,YES,15.3,61.76,62.2,
+NOx,Soil NOx - synthetic fertiliser,27.3,64.85,YES,31.52,74.25,YES,YES,10.36,50.71,46.3,
+NOx,Soil NOx - organic manure,18.23,83.07,YES,7.28,90.82,YES,YES,6.41,38.37,59.7,
+NOx,Residue burning NOx,5.6,88.67,YES,5.95,96.77,YES,YES,2.54,11.45,43.0,
+NOx,NOx - pasture_other,5.11,93.78,YES,9.3,83.55,YES,YES,1.67,12.98,31.0,
+NOx,NOx - pasture_cattle,4.67,98.45,YES,2.23,98.99,no,YES,1.5,11.69,42.5,
+NOx,Soil NOx - crop residues,1.55,100.0,no,1.01,100.0,no,no,0.49,4.03,90.3,
 PM2.5,Residue burning PM2.5,100.0,100.0,YES,n/a,n/a,n/a,YES,100.0,100.0,100.0,"single estimated stream: the 100 percent share and stability measure COVERAGE, not certainty - nothing else is estimated for this pollutant"
 SO2,Residue burning SO2,100.0,100.0,YES,n/a,n/a,n/a,YES,100.0,100.0,100.0,"single estimated stream: the 100 percent share and stability measure COVERAGE, not certainty - nothing else is estimated for this pollutant"

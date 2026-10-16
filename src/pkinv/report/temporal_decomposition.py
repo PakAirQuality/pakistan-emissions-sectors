@@ -58,7 +58,7 @@ from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 
 OUT = asset_path(OUTPUTS, "pakemis_temporal_decomposition.csv")
-MONTHLY = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2023_24.csv")
+MONTHLY = asset_path(OUTPUTS, "pakemis_monthly_fy2015_16_fy2024_25.csv")
 SEARCH_LOG = asset_path(DATA, "source_search_log.csv")
 
 FIELDS = ("sector_id", "component", "flatness_class", "flatness_physically_appropriate",
@@ -97,23 +97,17 @@ PHYSICS = {
         "already carried on the crop calendar: flooding starts and drains on dates"),
     ("agriculture", "Managed soils"): (
         TIME_VARIABLE, "fertiliser offtake and application calendar",
-        "SPLIT IN TWO, AND ONLY ONE HALF IS TIMED. The synthetic-fertiliser share now rides "
-        "NFDC Table 3.4 offtake in all nine years and is fully observed - 90 Mt that was flat "
-        "one release ago. It was never blocked by missing data: the annual table claimed "
-        "agriculture had no component split before the reference year while the engine was "
-        "computing all thirty-five components every run and discarding them, and removing "
-        "that false absence was the whole fix. What remains unobserved here is the "
-        "DEPOSITED AND APPLIED CENSUS NITROGEN - pasture, organic manure, crop residues - "
-        "which rides a livestock count and a harvest rather than a dealer's depot, and which "
-        "the offtake shape must never be allowed to reach. The timing target stays the "
-        "depot, not the soil"),
+        "Synthetic-fertiliser timing uses supported monthly offtake profiles. Offtake "
+        "records product transfer at the dealer/depot boundary, not application at the soil. "
+        "Deposited and applied livestock nitrogen, organic manure and crop residues have "
+        "different pathways and retain their separately documented timing; the offtake "
+        "profile is not evidence for those flows"),
     ("agriculture", "Field burning"): (
         TIME_VARIABLE, "VIIRS active-fire acquisition dates (held), FAO calendar as comparator",
-        "since rc20 EVERY YEAR's profile IS its own fire record - nine distinct FRP-weighted "
-        "monthly shares from the 109,693 held detections, none borrowed between years; T3 "
-        "rather than T2 because the two fetched windows are "
-        "the calendar's claim; the FAO-calendar crosscheck in monthly_crosschecks.csv "
-        "bounds what those windows cannot see (cotton, maize and cane residues)"),
+        "Year-specific FRP-weighted VIIRS profiles are used where held detections cover "
+        "the relevant crop-season windows. Fire detection is a proxy for residue-burning "
+        "emissions, so the evidence class remains T3; source coverage and any substituted "
+        "year are recorded by the temporal profile producer"),
     # rc39 A4: keyed on "Liming" until the category split, while its own driver and basis
     # named the fertiliser calendar and urea offtake - the classification was describing the
     # urea half all along, under the liming half's name. 3.G is NE and has no timing because

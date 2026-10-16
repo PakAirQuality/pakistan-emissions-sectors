@@ -1,0 +1,52 @@
+Fiscal year,System,Plant,Fuel,Fuel origin,Quantity,Quantity unit,Net generation gwh,Source table,Estimate status,Printed quantity,Note,Record ID,Source row
+2024,GENCO,TPS Guddu (Units 14-16) (GENCO-II),Gas,,32377.65,MMCFT,2355.88,NEPRA SoIR 2025 Table 18 p153,verified,32377.65,,2c24a8a298e5ed1201fc1f98,1
+2024,GENCO,TPS Nandipur (GENCO-III),RLNG,,8140.66,MMCFT,949.54,NEPRA SoIR 2025 Table 18 p153,verified,8140.66,,781d61fdd8550efb3cbc546b,2
+2024,GENCO,Jamshoro Coal Power Unit-1,Coal,imported,158.031,000 t,368.28,NEPRA SoIR 2025 Table 18 p153,verified,158031.00,Printed metric tonnes converted to kt; unit testing period with COD 1 May 2025; rank-default bituminous assumption,ad13e3a81c2ab4911d716a97,3
+2024,IPP,Kohinoor Energy,RFO,,14.74,000 t,76.16,NEPRA SoIR 2025 Table 21 p155,verified,14.74,,18881bfc34ed753340a3e879,4
+2024,IPP,Attock Gen.,RFO,,17.84,000 t,92.42,NEPRA SoIR 2025 Table 21 p155,verified,17.84,,ea63dad46bb633d0548dc28e,5
+2024,IPP,Nishat Power,RFO,,17.05,000 t,86.66,NEPRA SoIR 2025 Table 21 p155,verified,17.05,,0eb5b11afaa377ce85e50c02,6
+2024,IPP,Nishat Chunian,RFO,,11.42,000 t,57.21,NEPRA SoIR 2025 Table 21 p155,verified,11.42,,ba4133efadc61b839c17ad76,7
+2024,IPP,Liberty Power Tech.,RFO,,15.33,000 t,77.84,NEPRA SoIR 2025 Table 21 p155,verified,15.33,,46ad522ad0ab5b3e7d6d6a33,8
+2024,IPP,Narowal Energy,RFO,,7.70,000 t,37.93,NEPRA SoIR 2025 Table 21 p155,verified,7.70,,b7a5b161f078f5271dc0ec0e,9
+2024,IPP,Liberty Daharki Power,Gas,,6735784,MMBTU,817.72,NEPRA SoIR 2025 Table 21 p156,verified,6735784,,9297b84959ea4e44b5715b54,10
+2024,IPP,Engro Powergen Qadirpur,Gas,,7006028,MMBTU,774.31,NEPRA SoIR 2025 Table 21 p156,verified,7006028,,d141336302cb74cd825002ae,11
+2024,IPP,Foundation Power,Gas,,9261513,MMBTU,1122.64,NEPRA SoIR 2025 Table 21 p156,verified,9261513,,10cd8ecfd1940c1c7f7f36d0,12
+2024,IPP,Uch Power,Gas,,30697693,MMBTU,3885.78,NEPRA SoIR 2025 Table 21 p156,verified,30697693,,86fbe1a92901793ca2c22a50,13
+2024,IPP,Uch-II Power,Gas,,16910239,MMBTU,2233.47,NEPRA SoIR 2025 Table 21 p156,verified,16910239,,110b140434024fd1d3ff9378,14
+2024,IPP,Fauji Kabirwala,RLNG,,643315,MMBTU,68.96,NEPRA SoIR 2025 Table 21 p156,verified,643315,,06908e09f0ff529a8d47f241,15
+2024,IPP,Punjab Thermal Power,RLNG,,12307970,MMBTU,1757.27,NEPRA SoIR 2025 Table 21 p156,verified,12307970,,f40b9858f5ce6c068ebbd16d,16
+2024,IPP,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal,imported,1560.00,000 t,4255.19,NEPRA SoIR 2025 Table 21 p157,verified,1560.00,,3ce1624c39b864eb47a38ca3,17
+2024,IPP,Port Qasim Electric Power,Coal,imported,1204.60,000 t,2751.20,NEPRA SoIR 2025 Table 21 p157,verified,1204.60,,d757e0c6a72107586e439a3c,18
+2024,IPP,China Power Hub,Coal,imported,313.68,000 t,671.65,NEPRA SoIR 2025 Table 21 p157,verified,313.68,,1d26856bc6e53c6aaf580dcc,19
+2024,IPP,Lucky Electric,Coal,unknown,800.35,000 t,1018.68,NEPRA SoIR 2025 Table 21 p157,verified,800.35,Imported origin heading does not identify rank; reference retains documented lignite NCV and rank alternative remains separate,19cb74ba45f69fbf96bee331,20
+2024,IPP,Engro Powergen Thar,Coal,Thar lignite,3471.04,000 t,3852.90,NEPRA SoIR 2025 Table 21 p157,verified,3471.04,,977cb467ab663e587d595c34,21
+2024,IPP,Thar Coal Block-I,Coal,Thar lignite,6851.22,000 t,8315.01,NEPRA SoIR 2025 Table 21 p157,verified,6851.22,,d923ea95d49818903346e252,22
+2024,IPP,Thar Energy,Coal,Thar lignite,1397.04,000 t,1601.32,NEPRA SoIR 2025 Table 21 p157,verified,1397.04,,1d9ca9f66c0feb70efb327ef,23
+2024,IPP,ThalNova,Coal,Thar lignite,1554.77,000 t,1778.36,NEPRA SoIR 2025 Table 21 p157,verified,1554.77,,6fe88ad27559348265195d9d,24
+2024,IPP,Sapphire Electric,RLNG,,2232639,MMBTU,268.93,NEPRA SoIR 2025 Table 21 p158,verified,2232639,,9c99ec525f6af1bea45829d8,25
+2024,IPP,Halmore,RLNG,,3024543,MMBTU,364.55,NEPRA SoIR 2025 Table 21 p158,verified,3024543,,498ed4b02eaf1776076ac9c1,26
+2024,IPP,Saif,RLNG,,1916880,MMBTU,234.41,NEPRA SoIR 2025 Table 21 p158,verified,1916880,,bc1fe26d9168aab591015dc8,27
+2024,IPP,Orient,RLNG,,3756498,MMBTU,459.13,NEPRA SoIR 2025 Table 21 p158,verified,3756498,,338081fe9f6b01fe7b36392f,28
+2024,IPP,QATPL (Bhikki),RLNG,,40256706,MMBTU,6098.15,NEPRA SoIR 2025 Table 21 p158,verified,40256706,,a26bb4d4988214c8d768573e,29
+2024,IPP,NPPMCL (Haveli Bahadur Shah),RLNG,,41536438,MMBTU,6515.65,NEPRA SoIR 2025 Table 21 p158,verified,41536438,,f38c71ccc6094d458a308202,30
+2024,IPP,NPPMCL (Balloki),RLNG,,35554291,MMBTU,5479.91,NEPRA SoIR 2025 Table 21 p158,verified,35554291,,cdef696262838a6a7d47dc1d,31
+2024,IPP,KAPCO,RFO,,11.03,000 t,52.71,NEPRA SoIR 2025 Table 21 p158,verified,11.03,,6f51266bbae25abdf35360ae,32
+2024,IPP,KAPCO,HSD,,1045.93,000 L,0.00,NEPRA SoIR 2025 Table 21 p158,verified,1045.93,Reported fuel despite zero net generation; do not zero consumption from electricity alone,6bbf95ef73b9ee08396e057a,33
+2024,K-Electric,Bin Qasim TPS-I,Gas,,1073.97,MMCFT,85.45,NEPRA SoIR 2025 Table 26 p167,verified,1073.97,,c56d0a117cbe729eee7b4be7,34
+2024,K-Electric,Bin Qasim TPS-I,RFO,,55.41,000 t,199.77,NEPRA SoIR 2025 Table 26 p167,verified,55.41,,2aaa0d6d7a6f4f31e3d40611,35
+2024,K-Electric,Bin Qasim TPS-I,RLNG,,1223.21,MMCFT,100.91,NEPRA SoIR 2025 Table 26 p167,verified,1223.21,,050ed0b69bdd9210b33d94ea,36
+2024,K-Electric,Bin Qasim TPS-II,Gas,,3844.40,MMCFT,423.76,NEPRA SoIR 2025 Table 26 p168,verified,3844.40,,36f04af64b18c9a3876e5062,37
+2024,K-Electric,Bin Qasim TPS-II,RLNG,,9792.85,MMCFT,1156.78,NEPRA SoIR 2025 Table 26 p168,verified,9792.85,,beea2a47e4d0f8952332b25e,38
+2024,K-Electric,Korangi Town GTPS-II,Gas,,0.13,MMCFT,0.01,NEPRA SoIR 2025 Table 26 p168,verified,0.13,,2243c04e1d746c61e64b53db,39
+2024,K-Electric,Korangi Town GTPS-II,RLNG,,44.29,MMCFT,4.25,NEPRA SoIR 2025 Table 26 p168,verified,44.29,,6bea4aaf7eda4b4ff38e64e1,40
+2024,K-Electric,Site GTPS-II,Gas,,0,MMCFT,0,NEPRA SoIR 2025 Table 26 p168,verified,0,,244ab8fde419beb38f6110b0,41
+2024,K-Electric,Site GTPS-II,RLNG,,0,MMCFT,0,NEPRA SoIR 2025 Table 26 p168,verified,0,,1d1eb6112efb723f31111fcd,42
+2024,K-Electric,Korangi CCPP,Gas,,73.02,MMCFT,7.70,NEPRA SoIR 2025 Table 26 p168,verified,73.02,,f95c8903fed025832c08280f,43
+2024,K-Electric,Korangi CCPP,RLNG,,1132.5366,MMCFT,119.34,NEPRA SoIR 2025 Table 26 p168,reconstructed,73.02,Printed quantity repeats gas cell and implies implausible efficiency; reconstructed from printed 9.49 CFT/kWh ×119.34GWh,e6148b31e01de20c08e8f45e,44
+2024,K-Electric,Korangi CCPP,HSD,,1293.02,000 L,5.00,NEPRA SoIR 2025 Table 26 p168,verified,1293.02,,f3c26be100786cad503cfcfc,45
+2024,K-Electric,Bin Qasim TPS-III,RLNG,,27754.18,MMCFT,4329.65,NEPRA SoIR 2025 Table 26 p168,verified,27754.18,,e28f0ca6a0fc5eae6a6eceb1,46
+2024,K-Electric,Bin Qasim TPS-III,HSD,,0,000 L,0,NEPRA SoIR 2025 Table 26 p168,verified,0,,6f238a8e56101ec54f48ea2e,47
+2024,K-Electric,Gul Ahmed,RFO,,15.98308339,000 t,73.27,NEPRA SoIR 2025 Table 26 p168,reconstructed,0,Source reports positive net generation but zero fuel; adjacent FY2023-24 own-station58.59kt/268.59GWh intensity fallback,68a0a6c34a868fc7ac578522,48
+2024,K-Electric,Tapal Energy,RFO,,0,000 t,0,NEPRA SoIR 2025 Table 26 p168,verified,0,,421105d2864b147295f9c60a,49
+2024,K-Electric,Sindh Nooriabad-I,Gas,,2107505,MMBTU,254.29,NEPRA SoIR 2025 Table 26 p168,verified,2107505,,0d285f0de0a7319d449beb28,50
+2024,K-Electric,Sindh Nooriabad-II,Gas,,2289027,MMBTU,272.43,NEPRA SoIR 2025 Table 26 p168,verified,2289027,,91ea174c7b9970bfd334c70f,51

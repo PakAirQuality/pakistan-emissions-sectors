@@ -255,13 +255,21 @@ def main(src=DEFAULT_SRC, check=False):
                                       "fuel": r["fuel"], "toe": float(r["toe"]),
                                       "source": r["source"]}
 
-    out = sorted(rows.values(), key=lambda r: (r["fiscal_year"], r["fuel"], r["system"]))
+    extension_fuel, extension_generation = [], []
+    if os.path.abspath(src) == os.path.abspath(DEFAULT_SRC):
+        sys.path.insert(0, os.path.dirname(__file__))
+        from ingest_release_extension import power_products
+        _ledger, all_fuel, extension_generation, _controls, _bagasse = power_products()
+        extension_fuel = [r for r in all_fuel if int(r["fiscal_year"]) == 2024]
+    out = sorted((r for r in rows.values() if not extension_generation or int(r["fiscal_year"]) != 2024),
+                 key=lambda r: (r["fiscal_year"], r["fuel"], r["system"])) + extension_generation
     os.makedirs(OUT_DIR, exist_ok=True)
     if write_or_check(OUT, ["fiscal_year", "fuel", "system", "gwh_net", "source"],
                       out, check):
         return 1
 
-    fuel_out = sorted(fuel_rows.values(), key=lambda r: (r["fiscal_year"], r["fuel"]))
+    fuel_out = sorted((r for r in fuel_rows.values() if not extension_fuel or int(r["fiscal_year"]) != 2024),
+                      key=lambda r: (r["fiscal_year"], r["fuel"])) + extension_fuel
     if fuel_out:
         if write_or_check(OUT_FUEL, ["fiscal_year", "fuel", "toe", "source"],
                           fuel_out, check):

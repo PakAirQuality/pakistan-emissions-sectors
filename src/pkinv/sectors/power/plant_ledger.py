@@ -82,6 +82,16 @@ def rows(year, path=LEDGER):
     return [r for r in read_rows(path, comments=False) if int(r["fiscal_year"]) == year]
 
 
+def gas_energy_scale(data, year):
+    """Basis of gas energy in the adopted reference, separately by source vintage.
+
+    Earlier TOE comparisons retain their published convention. FY2024–25 is
+    reconstructed from station physical quantities on the explicitly assumed
+    NCV/GCV basis; the raw quantities themselves are never converted twice.
+    """
+    return data.p("captive_gross_to_net") if int(year) >= 2024 else 1.0
+
+
 def legs(data, year=None, hhv_btu=None):
     """{exact_TJ, assumed_TJ, default_TJ, ...} - plant energy by evidence class, never pooled."""
     year = data.year if year is None else year
@@ -123,9 +133,10 @@ def gas_closure(data, year=None, hhv_btu=None):
     L = legs(data, year, hhv)
     national = data.fuel_for(year)["Gas"] * data.p("toe_to_tj")
     mmcft = sum(float(r["quantity"]) for r in rows(year) if r["quantity_unit"] == "MMCFT")
-    plant = L["exact_TJ"] + L["assumed_TJ"]
+    scale = gas_energy_scale(data, year)
+    plant = (L["exact_TJ"] + L["assumed_TJ"]) * scale
     # The Btu/scf that would make the two agree, given the exact leg is fixed.
-    implied_hhv = ((national - L["exact_TJ"]) / (mmcft * TJ_PER_MMCF_PER_BTU)
+    implied_hhv = ((national - L["exact_TJ"] * scale) / (mmcft * TJ_PER_MMCF_PER_BTU * scale)
                    if mmcft else None)
     return {"plant_TJ": plant, "national_TJ": national,
             "ratio": plant / national if national else None,
@@ -244,8 +255,9 @@ def ke_boundary_audit(data):
             side = "KE" if r["system"] == "K-Electric" else "CPPA"
             q = float(r["quantity"])
             if r["fuel"] in ("Gas", "RLNG"):
-                gas[side] += (q * TJ_PER_MMBTU if r["quantity_unit"] == "MMBTU"
+                gas[side] += ((q * TJ_PER_MMBTU if r["quantity_unit"] == "MMBTU"
                               else q * hhv * TJ_PER_MMCF_PER_BTU)
+                             * gas_energy_scale(data, year))
             elif r["fuel"] == "RFO":
                 rfo[side] += q * NCV_DEFAULT["RFO"]
         out.append({"fiscal_year": year,

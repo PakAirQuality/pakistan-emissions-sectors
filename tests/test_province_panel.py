@@ -241,5 +241,44 @@ class TestTheJudgementsStillHaveTheirEvidence(unittest.TestCase):
         self.assertIn("checked: ", done.stdout)
 
 
+class TestLatestPhysicalExtension(unittest.TestCase):
+    def test_every_latest_fuel_stream_uses_supported_own_year_stations(self):
+        for stream in panel.STREAMS:
+            row = panel.record(stream, 2024)
+            self.assertTrue(row["shares"], stream)
+            self.assertEqual("", row["fallback"], stream)
+            self.assertEqual(0, row["unplaced_TJ"], stream)
+            self.assertAlmostEqual(1, sum(row["shares"].values()), places=12)
+            self.assertIn("station", row["basis"])
+        self.assertGreater(panel.record("power_coal", 2024)["shares"]["Sindh"], .8)
+        self.assertGreater(panel.record("power_gas", 2024)["shares"]["Balochistan"], .1)
+
+    def test_missing_heat_evidence_uses_same_documented_coal_account(self):
+        from pkinv.sectors.power import point_sources, coal_booking
+        from pkinv.sectors.power.data import PowerData
+        sources = {r["plant"]: r for r in coal_booking.station_accounts()
+                   if r["period_id"] == "FY2024-25"}
+        points = [r for r in point_sources.rows(PowerData(), 2024)
+                  if r["fuel"] == "Coal" and r["system"] != "K-Electric"]
+        self.assertEqual(9, len(points))
+        for row in points:
+            source = sources[row["plant"]]
+            self.assertAlmostEqual(float(source["mass_kt"]) * float(source["ncv_TJ_per_Gg"]), row["energy_TJ"], places=9)
+            self.assertIn("rank-default NCV", row["energy_evidence"])
+
+    def test_new_gas_basis_and_generation_gap_are_separate(self):
+        from pkinv.sectors.power import point_sources
+        from pkinv.sectors.power.data import PowerData
+        data = PowerData()
+        point = next(r for r in point_sources.rows(data, 2024) if r["plant"] == "Engro Powergen Qadirpur")
+        self.assertAlmostEqual(7006028 * point_sources.TJ_PER_MMBTU * data.p("captive_gross_to_net"), point["energy_TJ"], places=9)
+        self.assertEqual("Sindh", point["province"])
+        for stream in ("power_gas", "power_rfo"):
+            row = panel.record(stream, 2024)
+            self.assertGreater(row["derived_share"], 0)
+            self.assertAlmostEqual(1, row["coverage"] + row["derived_share"], places=12)
+            self.assertIn("generation-gap reconstruction", row["basis"])
+
+
 if __name__ == "__main__":
     unittest.main()

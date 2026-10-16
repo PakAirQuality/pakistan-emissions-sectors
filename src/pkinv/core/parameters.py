@@ -421,6 +421,8 @@ def groups_for(component, scopes=None):
     alternative - one file listing both - would be a second copy of the fuel table, and two
     copies of a mapping is how the manuscript came to print two category hierarchies.
     """
+    if component.get("uncertainty_driver_widths") is not None:
+        return sorted(component["uncertainty_driver_widths"])
     from pkinv.core import factors
     scopes = scope_map() if scopes is None else scopes
     exclusions = load_scope_exclusions()
@@ -576,6 +578,10 @@ def decompose(components, params=None, scopes=None, dispositions=None):
         shared = {}
         for g in groups_for(c, scopes):
             members = by_g.get(g)
+            explicit = c.get("uncertainty_driver_widths", {})
+            if g in explicit:
+                shared[g] = sigma_log(float(explicit[g]))
+                continue
             if not members:
                 continue
             # ONE SIGMA PER GROUP, not the quadrature of its members. A dependency group is
@@ -620,13 +626,41 @@ def decompose(components, params=None, scopes=None, dispositions=None):
 def registry():
     """Every parameter, deduplicated by id, in a stable order."""
     seen, out = set(), []
-    for source in (from_emission_factors(), from_sector_inputs(), from_activity_files()):
+    for source in (from_emission_factors(), from_sector_inputs(), from_activity_files(), from_coal_controls()):
         for p in source:
             if p["parameter_id"] in seen:
                 continue
             seen.add(p["parameter_id"])
             out.append(p)
     out.sort(key=lambda p: (p["module"], p["parameter_id"]))
+    return out
+
+
+def from_coal_controls():
+    """Physical activity drivers missing from the old emission-row residuals."""
+    from pkinv.sectors.industry.data import IndustryData
+    from pkinv.sectors.industry import solid_fuels
+    data = IndustryData()
+    out = []
+    for consumer in ("brick_kilns", "cement"):
+        identity = "activity:coal:" + consumer
+        out.append({"parameter_id": identity, "module": "industry", "kind": "parametric",
+                    "value": solid_fuels.coal_kt(solid_fuels._fiscal_label(data.year), consumer),
+                    "unit": "kt", "distribution": "lognormal",
+                    "uncert_pct_95": data.p("industry_coal_activity_uncert"),
+                    "confidence_interpretation": "95pct_relative_halfwidth",
+                    "dependency_group": identity, "source": data.ps("industry_coal_activity_uncert"),
+                    "note": "conditional activity width; shared by every gas/species using this coal; structural allocations separate"})
+    for identity, role, value, width in (
+            ("activity:coal:power_station_mass", "activity", 1, 5),
+            ("power:coal_factor_rank_share", "factor", 1, 12),
+            ("factor:ncv:Lignite", "conversion", 11.9, (21.6 - 5.5) / (2 * 11.9) * 100)):
+        out.append({"parameter_id": identity, "module": "power", "kind": "parametric",
+                    "value": value, "unit": "multiplier" if value == 1 else "TJ/Gg",
+                    "distribution": "lognormal", "uncert_pct_95": width,
+                    "confidence_interpretation": "95pct_relative_halfwidth",
+                    "dependency_group": identity, "source": "station mass inputs and IPCC 2006 Vol2 Ch1 Table1.2",
+                    "note": role + "; component-specific derivative weights are published in decomposition"})
     return out
 
 
@@ -656,13 +690,24 @@ def by_group(params=None):
     return out
 
 
-def write_decomposition(components, path=None):
-    """Publish the per-component split, with the declared width kept as a comparator.
+def decomposition_sampling_method(component):
+    """Actual reference uncertainty route, independent of the analytical audit."""
+    sector, category = component.get("_sector"), component.get("category", "")
+    if sector == "agriculture" and (category == "Field burning of residues" or
+            component.get("gas") == "N2O" and category in ("Manure management", "Managed soils")):
+        return "native_material_flow_replay"
+    if sector in ("waste", "fugitives") or (sector == "power" and component.get("subitem", "").startswith("Coal ")):
+        return "native_material_flow_replay"
+    return "shared_lognormal_parameter_graph"
 
-    derived_uncert_pct is the marginal the simulation actually samples -- named parameters
-    plus residual, which equals the declared width wherever the row reconciles and the
-    recomposed parameter width where the graph is authoritative. divergence_pct is the gap
-    between the two, and disposition names the audited cause for every derived row.
+
+def write_decomposition(components, path=None):
+    """Publish the analytical graph audit; it is not every native sampled marginal.
+
+    For ordinary graph rows, derived_uncert_pct is its sampled graph marginal.
+    Native nitrogen, crop burning, waste, fugitives and coal replay their physical
+    inputs instead; this scalar is only an analytical comparator for those rows.
+    The sampling_method and analytical_width_role columns distinguish them.
     """
     path = path or asset_path(OUTPUTS, "national_uncertainty_decomposition.csv")
     rows = decompose(components)
@@ -679,7 +724,8 @@ def write_decomposition(components, path=None):
                     # arithmetic error, and a column called a "share" made a diagnostic
                     # look like a bug.
                     "named_sigma", "residual_sigma", "named_var_over_declared_var",
-                    "reconciles", "disposition", "dependency_groups"])
+                    "reconciles", "disposition", "dependency_groups",
+                    "sampling_method", "analytical_width_role"])
         for c, shared, residual, derived in rows:
             total = sigma_log(c["uncert_pct"]) if c.get("uncert_pct") else 0.0
             named = math.sqrt(sum(s * s for s in shared.values()))
@@ -696,7 +742,10 @@ def write_decomposition(components, path=None):
                         "no" if derived else "yes",
                         dispositions.get(key, "") if derived else "",
                         "; ".join("%s=%.4f" % (g, s)
-                                  for g, s in sorted(shared.items(), key=lambda kv: -kv[1]))])
+                                  for g, s in sorted(shared.items(), key=lambda kv: -kv[1])),
+                        decomposition_sampling_method(c),
+                        "analytical_comparator_not_sampled" if decomposition_sampling_method(c) == "native_material_flow_replay"
+                        else "sampled_graph_marginal"])
     return rows
 
 
@@ -730,9 +779,9 @@ def main():
                 if c.get("uncert_pct"))
     unreconciled = [r for r in rows if r[3]]
     print("  %.1f%% of the summed component log-variance is now named" % (100 * named / total))
-    print("  %d of %d rows do not reconcile - their inputs imply more variance than the"
+    print("  %d of %d analytical rows have named input variance above the scalar comparator"
           % (len(unreconciled), len(rows)))
-    print("    component declares, which is a disagreement inside a sector, not a rounding:")
+    print("    (audited graph overrides; native material-flow routes bypass that scalar):")
     for c, sh, _r, _o in unreconciled[:6]:
         print("      %-11s %-32s %.1f%% declared" % (c["_sector"], c["subitem"][:32],
                                                      c["uncert_pct"]))

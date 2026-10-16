@@ -44,7 +44,8 @@ HISTORY = asset_path(DATA, "activity", "residential", "fuel_supply_history.csv")
 POP_CSV = asset_path(DATA, "activity", "waste", "population_district.csv")
 CROPS = asset_path(DATA, "activity", "historical", "crops.csv")
 
-YEARS = tuple(range(2016, 2025))     # FY2015-16 .. FY2023-24, the OGRA archive's span
+from pkinv.core.reporting_window import CORE_FY_ENDS
+YEARS = CORE_FY_ENDS
 # HIES anchors: fiscal-year label of each round, weighted households, firewood kg.
 HIES_ANCHORS = {2019: {"households": 33.2e6}, 2025: {"households": 39.9e6}}
 
@@ -130,6 +131,8 @@ def dung_survey_air_dry_kg(year):
 
 def dung_survey_basis(year):
     """The activity-basis label the survey dung series carries for one year."""
+    if year == 2025:
+        return "survey_observed_reference_round"
     if year <= 2019:
         return "survey_anchored_extrapolated_flat"
     return "survey_anchored_interpolation"
@@ -150,7 +153,7 @@ def herd_scale(year):
     volatile solids agriculture diverts as fuel in that year. Beyond the reference year
     the reference herd is held."""
     data = ResidentialData()
-    y = min(int(year), data.year)
+    y = int(year)
     if y == data.year:
         return 1.0
     if y not in _HERD_SCALE:
@@ -164,13 +167,20 @@ def herd_scale(year):
 
 def residue_scale(year):
     """Ledger fuel mass relative to the reference year: production is the only lever."""
-    from pkinv.sectors.agriculture import residue_ledger
+    from pkinv.sectors.agriculture import residue_ledger, fiscal_activity
     from pkinv.sectors.agriculture.ef_library import InventoryData
     agri = InventoryData()
     led = residue_ledger.ledger(agri)
     crops = {}
     for r in _read(CROPS):
         crops.setdefault(int(r["year"]), {})[r["crop"]] = float(r["production_t"])
+    if year > 2024:
+        controls = fiscal_activity.activity()
+        fiscal_crops = fiscal_activity.crops_for_year(controls, year)
+        reference_crops = fiscal_activity.crops_for_year(controls, 2024)
+        return sum(row["fuel"] * fiscal_crops[crop]["production_t"] /
+                   reference_crops[crop]["production_t"] for crop, row in led.items()) / sum(
+                       row["fuel"] for row in led.values())
     y = min(year, max(crops))
     ref_y = max(crops)
     num = den = 0.0

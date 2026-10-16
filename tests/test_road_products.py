@@ -76,35 +76,20 @@ class TestRoadProducts(unittest.TestCase):
         self.assertAlmostEqual(float(arr.sum()), self.provenance["total_km"],
                                delta=2.0)
 
-    def test_only_road_transport_allocates_on_the_road_raster(self):
-        """The discipline line, INVERTED DELIBERATELY at rc47 Wave 5. Its predecessor
-        held that road geometry was a diagnostic until a traffic basis existed, and
-        that was right for two releases while the bracket priced the difference
-        (<=3.95pp per district against builtup). The promotion is the audited answer
-        to the twenty-first review's "held but not operational": combustion happens
-        on roads, the raster is a committed sha-pinned product with its build total
-        as control, and builtup remains the priced comparator so the decision stays
-        reversible by the same bracket that justified it.
-
-        What the discipline line still holds: ONLY road-transport petrol and diesel
-        may rasterise on it (CNG's urban fleet stays on builtup, and any other
-        module's stream appearing here is mapping effort moving mass); the building
-        diagnostic stays out entirely; and no stream claims the road NETWORK as
-        native geometry - the raster is a density basis, not a line inventory."""
+    def test_primary_allocation_excludes_odbl_road_and_building_diagnostics(self):
+        """The compatible primary uses settlement weights, while ODbL-derived
+        road products remain separately identified diagnostics/alternatives.
+        A preserved raster's existence cannot admit it into primary allocation.
+        """
         with open(asset_path(ROOT, "data", "stream_grid_proxy.csv"),
                   encoding="utf-8") as handle:
             rows = [row for row in csv.DictReader(
                 line for line in handle if not line.startswith("#"))]
         road_rows = [r for r in rows if "road" in r["raster_proxy"]]
-        self.assertTrue(road_rows, "the promoted basis vanished; if that is a "
-                                   "deliberate demotion, restore the old guard")
-        for r in road_rows:
-            self.assertEqual((r["module"], r["category"], r["raster_proxy"]),
-                             ("transport", "Road transport", "road_density"),
-                             "a stream outside road transport rasterises on road "
-                             "geometry: %r" % r)
-            self.assertNotEqual(r.get("subitem_prefix", ""), "CNG",
-                                "CNG's declared basis is builtup, not the road raster")
+        self.assertFalse(road_rows, "ODbL road weights entered compatible primary allocation")
+        transport = [r for r in rows if r["module"] == "transport" and r["category"] == "Road transport"]
+        self.assertTrue(transport)
+        self.assertEqual({r["raster_proxy"] for r in transport}, {"builtup"})
         for r in rows:
             self.assertNotIn("building", r["raster_proxy"],
                              "a stream rasterises on the OSM building diagnostic")

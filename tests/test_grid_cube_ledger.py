@@ -112,19 +112,26 @@ class TestConfigurationLOnTheGrid(unittest.TestCase):
         except ImportError:
             self.skipTest("netCDF4 not installed")
         with Dataset(os.path.join(OUT, "pakemis_grid_0p05_monthly.nc")) as ds:
-            self.assertEqual(ds.scenario_id, "REF_2023_24")
+            self.assertEqual(ds.scenario_id, "S_TAN")
             self.assertEqual(ds.residential_dung_axis, "S")
             reference_delta = float(ds.ledger_configuration_delta_Mt_co2e_AR5)
             self.assertFalse(hasattr(ds, "survey_configuration_delta_Mt_co2e_AR5"))
         with Dataset(os.path.join(OUT, "pakemis_grid_0p05_monthly_ledger.nc")) as ds:
-            self.assertEqual(ds.scenario_id, "L_2023_24")
+            self.assertEqual(ds.scenario_id, "L_TAN")
             self.assertEqual(ds.residential_dung_axis, "L")
             self.assertIn("configuration L", ds.title)
             self.assertFalse(hasattr(ds, "survey_configuration_delta_Mt_co2e_AR5"))
             self.assertEqual(float(ds.ledger_configuration_delta_Mt_co2e_AR5),
                              reference_delta)
         self.assertGreater(reference_delta, 0.0)
-        self.assertAlmostEqual(reference_delta, 5.24626, places=5)
+        from pkinv.report.grid_cube import _gwp_for
+        ref = {s["source_stream_id"]: s for s in self.ref["streams"]}
+        native_delta = sum((s["emissions_Gg"] - ref[s["source_stream_id"]]["emissions_Gg"])
+                           * _gwp_for(s) / 1000.0 for s in self.led["streams"])
+        # The attribute subtracts two national controls, each printed to five decimal
+        # places in Mt; their combined half-unit rounding budget is 1e-5 Mt.
+        # The independently accumulated native streams retain greater precision.
+        self.assertAlmostEqual(reference_delta, native_delta, delta=1.01e-5)
 
     def test_co2_is_bit_identical(self):
         self.assertTrue(np.array_equal(self.led["gas_month"]["CO2"], self.ref["gas_month"]["CO2"]))
@@ -156,7 +163,7 @@ class TestConfigurationLOnTheGrid(unittest.TestCase):
         for r in _rows("pakemis_spatial_unallocated.csv"):
             unallocated[(r["gas"], r["month"])] = unallocated.get((r["gas"], r["month"]), 0.0) + float(r["emissions_Gg"])
         with Dataset(os.path.join(OUT, "pakemis_grid_0p05_monthly_ledger.nc")) as ds:
-            self.assertEqual(ds.scenario_id, "L_2023_24")
+            self.assertEqual(ds.scenario_id, "L_TAN")
             self.assertIn("dung-cake", ds.differs_from_reference)
             for gas in self.gc.GASES:
                 layer = ds.variables[gas.lower() + "_Gg"][:]

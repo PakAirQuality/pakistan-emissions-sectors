@@ -30,9 +30,11 @@ import sys
 sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "src"))
 
 from pkinv.core.io import read_rows                                      # noqa: E402
+from pkinv.assets import asset_path                                      # noqa: E402
+from pkinv.core.configurations import REFERENCE                         # noqa: E402
+from pkinv.core.reporting_window import REFERENCE_PERIOD                # noqa: E402
 
-# The period every row in this file describes, named once.
-REFERENCE_PERIOD = "FY2023-24"
+# Reference compositions and uncertainty remain independent of the latest annual year.
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(PAPER_NATIONAL_FIGURES, "rewrite_inputs", "data")
@@ -46,7 +48,7 @@ MODULES = [("Agriculture", "agriculture"), ("Power", "power"), ("Transport", "tr
            ("Oil and gas fugitives", "fugitives"), ("Industrial fuel", "industry"),
            ("Railways", "railways"), ("Domestic aviation", "aviation")]
 
-REF = "REF_2023_24 (residential L)"
+REF = REFERENCE
 
 
 def _sector_rows():
@@ -84,7 +86,12 @@ def annual_series():
                           "complete-coverage claim",
         })
     rows.sort(key=lambda r: r["period"])
-    assert len(rows) == 9, "expected nine fiscal years, got %d" % len(rows)
+    periods = read_rows(asset_path(ROOT, "data/periods.csv"))
+    expected = sorted(r["period_id"] for r in periods if r["time_basis"] == "fiscal-july-june")
+    actual = [r["period"] for r in rows]
+    assert actual == expected, "annual figure periods differ from registry: %s versus %s" % (actual, expected)
+    reference = [r["period_id"] for r in periods if r["is_reference"].lower() == "true"]
+    assert reference == [REFERENCE_PERIOD], "detailed reference changed: %s" % reference
     return ("annual_national_series.csv",
             ["period", "emissions_Mt_CO2e", "gwp", "configuration", "source_location",
              "provenance"], rows)
@@ -441,11 +448,11 @@ def construction_quantities():
 
 
 def period_change_intervals():
-    """The full-panel change FY2015-16 -> FY2023-24 under the three dependence settings,
-    from pakemis_trend_uncertainty.csv - the ONLY uncertainty the panel can state about a
-    change. No per-year interval exists (the longitudinal product says the panel cannot
-    resolve a year-on-year change), so Figure 2 shows the change interval in its own panel
-    rather than attaching bands to the annual points."""
+    """Legacy full-window dependence comparison from the published trend product.
+
+    The joint paper uses the native conditional ensembles instead. This diagnostic
+    retains its own three dependence settings and explicitly published endpoints.
+    """
     rows = []
     LABEL = {"time_correlated": "Time-correlated parameters",
              "parameter_typed": "Parameter-typed dependence",

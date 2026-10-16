@@ -114,7 +114,7 @@ def ar5_ar6_bridge(root, out):
 def annual_closure_report(root, out):
     """Per period and configuration: the atomic sum against the annual panel and the national series."""
     atoms = _atomic(root)
-    panel = rows_of(asset_path(root, "outputs", "pakemis_annual_fy2015_16_fy2023_24.csv"))
+    panel = rows_of(asset_path(root, "outputs", "pakemis_annual_fy2015_16_fy2024_25.csv"))
     series = rows_of(asset_path(root, "outputs", "pakemis_national_series.csv"))
     atomic = defaultdict(float)
     for r in atoms:
@@ -131,7 +131,7 @@ def annual_closure_report(root, out):
     rows = []
     for (period, cfg), value in sorted(atomic.items()):
         p = panel_sum.get((period, cfg))
-        s = series_total.get(period) if cfg == "REF_2023_24" else None
+        s = series_total.get(period) if cfg == "S_TAN" else None
         rows.append({"period_id": period, "configuration_id": cfg, "atomic_sum_Mt_AR5": fmt(value),
                      "annual_panel_sum_Mt_AR5": fmt(p) if p is not None else "",
                      "panel_minus_atomic_Mt": fmt(p - value) if p is not None else "",
@@ -147,7 +147,7 @@ def annual_closure_report(root, out):
 # ----------------------------------------------------------------------------- monthly
 
 def _monthly(root):
-    return rows_of(asset_path(root, "outputs", "pakemis_monthly_fy2015_16_fy2023_24.csv"))
+    return rows_of(asset_path(root, "outputs", "pakemis_monthly_fy2015_16_fy2024_25.csv"))
 
 
 def annual_monthly_closure(root, out):
@@ -218,7 +218,7 @@ def grid_closure(root, out):
                      "tests/test_grid_cube.py for the asserted identity"}])
     monthly = defaultdict(float)
     for r in _monthly(root):
-        if r["period_id"] == "FY2023-24" and r["configuration_id"] == "REF_2023_24":
+        if r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN":
             monthly[(r["month"], r["gas"].upper())] += float(r["emission_native_mass"] or 0)
     unalloc = defaultdict(float)
     for r in rows_of(asset_path(root, "outputs", "pakemis_spatial_unallocated.csv")):
@@ -465,7 +465,7 @@ def sectors_registry(root, out):
     atoms = _atomic(root)
     per = defaultdict(lambda: {"atoms": 0, "Mt": 0.0, "codes": set()})
     for r in atoms:
-        if r["period_id"] == "FY2023-24" and r["configuration_id"] == "REF_2023_24":
+        if r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN":
             d = per[r["sector_id"]]
             d["atoms"] += 1
             d["Mt"] += float(r["co2e_Mt_AR5"] or 0)

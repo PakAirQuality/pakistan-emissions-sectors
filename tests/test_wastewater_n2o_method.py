@@ -22,6 +22,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.sectors.waste import uncertainty, wastewater          # noqa: E402
 from pkinv.sectors.waste.data import WasteData                   # noqa: E402
+from pkinv.core.reporting_window import CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
 
 CHAPTER = os.path.join(ROOT, "data", "raw", "ipcc", "19R_V5_6_Ch06_Wastewater.pdf")
 COMPARISON = os.path.join(ROOT, "outputs", "pakemis_wastewater_method_comparison.csv")
@@ -226,16 +227,16 @@ class TestTheMethodComparison(unittest.TestCase):
         cls.rows = _rows(COMPARISON)
         cls.by = {(r["scope"], r["period_id"], r["method"]): r for r in cls.rows}
 
-    def test_both_methods_for_all_nine_years(self):
+    def test_both_methods_for_every_core_fiscal_year(self):
         gas = [r for r in self.rows if r["scope"] == "wastewater_n2o"]
-        self.assertEqual(len(gas), 18)
-        self.assertEqual(len({r["period_id"] for r in gas}), 9)
+        self.assertEqual(len(gas), 2 * len(CORE_PERIOD_IDS))
+        self.assertEqual({r["period_id"] for r in gas}, set(CORE_PERIOD_IDS))
         for r in gas:
             self.assertEqual(r["is_reference"], "yes" if r["method"] == "ipcc2019" else "no")
 
     def test_the_gas_rows_are_the_engines(self):
         data = WasteData()
-        for year in range(2016, 2025):
+        for year in CORE_FY_ENDS:
             period = "FY%d-%02d" % (year - 1, year % 100)
             for method in ("ipcc2019", "ipcc2006"):
                 self.assertAlmostEqual(
@@ -251,6 +252,14 @@ class TestTheMethodComparison(unittest.TestCase):
             det("national_total", "ipcc2006") - det("national_total", "ipcc2019"),
             det("wastewater_category", "ipcc2006") - det("wastewater_category", "ipcc2019"),
             places=4)
+
+    def test_reference_draws_keep_their_reference_period_when_core_is_extended(self):
+        intervals = [r for r in self.rows if r["scope"] != "wastewater_n2o"]
+        self.assertEqual({r["period_id"] for r in intervals}, {REFERENCE_PERIOD})
+        national = next(r for r in _rows(os.path.join(ROOT, "outputs", "national_all_sectors.csv"))
+                        if r["row_kind"] == "national_total")
+        self.assertAlmostEqual(float(self.by[("national_total", REFERENCE_PERIOD, "ipcc2019")][
+            "deterministic"]), float(national["co2e_Mt_AR5"]), places=5)
 
     def test_the_upper_tail_is_shorter_under_the_reference(self):
         ref = self.by[("national_total", "FY2023-24", "ipcc2019")]

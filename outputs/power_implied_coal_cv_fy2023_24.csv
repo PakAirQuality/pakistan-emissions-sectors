@@ -28,6 +28,15 @@ fiscal_year,plant,fuel_origin,mass_kt,net_generation_GWh,hr_btu_kwh,hr_basis_use
 2023,ThalNova,Thar lignite,1733.37,1979.84,9436.37,net-export,11.37,operational-net,
 2023,Thar Coal Block-I,Thar lignite,6372.81,7500.33,8648.63,net-export,10.74,design-flat,"net HR below gross - physically impossible, kept as printed"
 2023,Thar Energy,Thar lignite,1702.98,1948.5,9401.53,net-export,11.35,operational-net,
+2024,Jamshoro Coal Power Unit-1,imported,158.031,368.28,,,,no-hr,
+2024,Huaneng Shandong Ruyi (Sahiwal Imported Coal),imported,1560.0,4255.19,,,,no-hr,
+2024,Port Qasim Electric Power,imported,1204.6,2751.2,,,,no-hr,
+2024,China Power Hub,imported,313.68,671.65,,,,no-hr,
+2024,Lucky Electric,unknown,800.35,1018.68,,,,no-hr,
+2024,Engro Powergen Thar,Thar lignite,3471.04,3852.9,,,,no-hr,
+2024,Thar Coal Block-I,Thar lignite,6851.22,8315.01,,,,no-hr,
+2024,Thar Energy,Thar lignite,1397.04,1601.32,,,,no-hr,
+2024,ThalNova,Thar lignite,1554.77,1778.36,,,,no-hr,
 2019,FLEET (mass-weighted),,8547.0,,,,23.03,summary,Table 3 implies 16.56 TJ/Gg (x0.72) over ALL ledger mass; the fleet CV covers 69% of it
 2019,Thar lignite only,,,,,,,summary,
 2019,imported only,,,,,,23.03,summary,
@@ -48,3 +57,7 @@ fiscal_year,plant,fuel_origin,mass_kt,net_generation_GWh,hr_btu_kwh,hr_basis_use
 2023,Thar lignite only,,,,,,11.06,summary,
 2023,imported only,,,,,,22.99,summary,
 2023,Table 3 implied NCV,,,,,,24.2,summary,
+2024,FLEET (mass-weighted),,0.0,,,,,summary,Table 3 implies - TJ/Gg (x-) over ALL ledger mass; the fleet CV covers 0% of it
+2024,Thar lignite only,,,,,,,summary,
+2024,imported only,,,,,,,summary,
+2024,Table 3 implied NCV,,,,,,,summary,

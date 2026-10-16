@@ -7,5 +7,5 @@ industry,diffuse;facilities;points,0.0,S2,brick_coal;cement_coal;industry_diesel
 ippu,diffuse;facilities,0.0,S2,ippu_ammonia_capacity;ippu_cement_prod;ippu_steel_establishments;transport_vkt,provincial,TE2
 waste,diffuse;points,0.0,S2,waste_burned_pop;waste_disposed_pop;wastewater_load,provincial+district,TE4
 fugitives,diffuse;facilities;points,0.0,S3,fugitive_gas_consumption;fugitive_gas_distribution;fugitive_gas_prod;fugitive_gas_transmission;fugitive_lng_terminal;fugitive_oil_prod;fugitive_oil_refining,provincial,TE4
-railways,network;points,0.0,S2,railways_freight_div;railways_route_model,provincial+district+grid,TE2
-aviation,S4;facilities,83.47,NA,aviation_lto_domestic,provincial,TE2
+railways,S4,100.0,NA,railways_freight_div,provincial+district+grid,TE2
+aviation,S4;facilities,83.47,NA,aviation_lto_domestic,provincial,TE3

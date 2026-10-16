@@ -27,10 +27,8 @@ PATH = os.path.join(OUT, "national_configurations.csv")
 # rc39..rc46w1: L 452.34662 / S 447.21383.
 # The NAME is historical: through rc66 the baseline was configuration L. Since rc67 it is
 # the survey reading (S), and this constant is the reference total whatever its letter.
-BASELINE_L = 444.95542   # rc67 reference re-base (was 451.85782 at rc66; 469.63822 before the coal re-base)
 # 447.20152 is the PUBLISHED S vintage (national_all_sectors_ledger.csv, summed from components). national_configurations composes S as L + delta from already-rounded parts and prints 447.20153; the re-base put the number on a rounding boundary and split the last digit, the same composed-vs-summed effect rc19 recorded at 447.71689/447.71688. The summed vintage is authoritative.
 # Likewise historical: this is the SECOND configuration's total, which since rc67 is L.
-SURVEY_S = 450.20168   # rc67: configuration L, all diverted dung burned in households (the second configuration was S at 446.72502 through rc66)
 
 FORBIDDEN_COLUMN_WORDS = ("probability", "prob", "weight", "likelihood", "prior",
                           "confidence")
@@ -38,6 +36,17 @@ FORBIDDEN_COLUMN_WORDS = ("probability", "prob", "weight", "likelihood", "prior"
 
 def _rows():
     return read_rows(PATH, comments=False)
+
+
+def native_configuration_total(configuration):
+    """Independent source-component sum, before the structural bridge composes cases."""
+    from pkinv.core.io import seq_sum
+    rows = read_rows(os.path.join(OUT, "pakemis_ghg_configuration_atoms.csv"), comments=False)
+    selected = [row for row in rows if row["period_id"] == "FY2023-24"
+                and row["configuration_id"] == configuration]
+    if not selected:
+        raise AssertionError("configuration native atoms missing: " + configuration)
+    return seq_sum(float(row["co2e_Mt_AR5"]) for row in selected)
 
 
 def _bridge():
@@ -88,7 +97,7 @@ class TestNationalConfigurations(unittest.TestCase):
     def test_the_reference_row_is_the_deterministic_baseline(self):
         ref = next(r for r in _rows()
                    if r["configuration_id"] == "inventory_reference")
-        self.assertEqual(float(ref["national_total_Mt"]), BASELINE_L)
+        self.assertAlmostEqual(float(ref["national_total_Mt"]), native_configuration_total("S_TAN"), places=4)
         self.assertEqual(float(ref["national_delta_Mt"]), 0.0)
 
     def test_the_residential_configuration_is_the_survey_total(self):
@@ -96,7 +105,7 @@ class TestNationalConfigurations(unittest.TestCase):
         configuration S's national total, to the rounding this file prints."""
         row = next(r for r in _rows()
                    if r["configuration_id"] == "all_diverted_dung_household_fuel")
-        self.assertAlmostEqual(float(row["national_total_Mt"]), SURVEY_S, places=3)
+        self.assertAlmostEqual(float(row["national_total_Mt"]), native_configuration_total("L_TAN"), places=3)
 
     def test_every_priced_row_agrees_with_the_structural_bridge(self):
         bridge = {r["axis"]: r for r in _bridge()}
@@ -125,38 +134,26 @@ class TestNationalConfigurations(unittest.TestCase):
                          "rail_ie_summary"):
             self.assertIn(expected, ids)
 
-    def test_the_prose_count_matches_the_file(self):
-        """The ninth review found "twelve single-axis configurations" printed
-        against thirteen rows - the rc13 kiln configuration landed and the
-        sentence froze. The counted words are now derived-checked: the prose
-        decomposition (reference + N single-axis alternatives + recode + M
-        joint exceptions) must equal the file's own row kinds."""
+    def test_the_prose_names_the_integrated_native_configurations(self):
+        """The maintained paper names four complete configurations. The older
+        single-axis reference-year case register is a separate product, so its
+        number of scenarios must not be substituted for that native vocabulary.
+        Check the actual named identifiers against the exported annual records.
+        """
         import re
-        rows = _rows()
-        reference = [r for r in rows if not r["axis"]]
-        joint = [r for r in rows
-                 if r["axis"].startswith(("JOINT", "READING"))]
-        recode = [r for r in rows
-                  if r["axis"] and not r["axis"].startswith(("JOINT", "READING"))
-                  and abs(float(r["national_delta_Mt"])) < 1e-9]
-        single_alt = [r for r in rows
-                      if r["axis"] and not r["axis"].startswith(("JOINT", "READING"))
-                      and abs(float(r["national_delta_Mt"])) >= 1e-9]
-        self.assertEqual(len(reference), 1)
+        from pkinv.core import configurations
+        from pkinv.core.reporting_window import CORE_PERIOD_IDS
         path = os.path.join(PAPER_NATIONAL_SECTIONS,
                             "07_uncertainty.tex")
         text = " ".join(open(path, encoding="utf-8").read().split())
-        m = re.search(r"names (\w+) single-axis configurations---the reference, "
-                      r"(\w+) alternatives", text)
-        self.assertIsNotNone(m, "the configurations-count sentence moved; "
-                                "re-anchor this guard")
-        words = {"ten": 10, "eleven": 11, "twelve": 12, "thirteen": 13,
-                 "fourteen": 14, "fifteen": 15, "sixteen": 16,
-                 "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20}
-        self.assertEqual(words[m.group(1)], 1 + len(single_alt) + len(recode),
-                         "the single-axis count in prose disagrees with the file")
-        self.assertEqual(words[m.group(2)], len(single_alt),
-                         "the alternatives count in prose disagrees with the file")
+        self.assertIn("four integrated configurations", text)
+        named = {household + "_" + nitrogen for household, nitrogen
+                 in re.findall(r"([SL])\\_(TAN|IPCC)", text)}
+        self.assertEqual(named, set(configurations.ALL))
+        exported = read_rows(os.path.join(OUT, "pakemis_ghg_configuration_atoms.csv"), comments=False)
+        support = {(r["period_id"], r["configuration_id"]) for r in exported}
+        self.assertEqual(support, {(period, configuration) for period in CORE_PERIOD_IDS
+                                   for configuration in named})
 
     def test_the_fugitives_envelope_is_a_family(self):
         """The ninth review: the reference must not read as a neutral centre
@@ -202,7 +199,7 @@ class TestNationalConfigurations(unittest.TestCase):
         moved quantity must equal the claimant ledger's RESOLVED-RECODED rows."""
         row = next(r for r in _rows()
                    if r["configuration_id"] == "rail_ie_summary")
-        self.assertEqual(float(row["national_total_Mt"]), BASELINE_L)
+        self.assertAlmostEqual(float(row["national_total_Mt"]), native_configuration_total("S_TAN"), places=4)
         self.assertEqual(float(row["national_delta_Mt"]), 0.0)
         with open(os.path.join(OUT, "railways_fuel_claimants_2024.csv"), newline="",
                   encoding="utf-8") as f:

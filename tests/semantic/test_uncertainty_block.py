@@ -1,29 +1,57 @@
-"""The envelope's uncertainty block: what it carries, and what it REFUSES to carry.
-
-THE DEFECT THIS FILE EXISTS BECAUSE OF. `Engine._uncertainty_for` selected
-`resolution = 'annual'` for a national request and the bare geography level otherwise, producing
-'annual', 'adm1' or 'adm2'. The vocabulary is annual_national / monthly_national / annual_adm2 /
-monthly_adm2, so none of the three ever matched and EVERY envelope this engine produced carried an
-empty block. Nothing failed, because nothing asserted that a row ever came back - the block was
-optional-looking and an empty one reads as "no uncertainty at this grain". So the first test here
-is the boring one that was missing: rows exist.
-
-THE REFUSALS. fact_uncertainty is keyed on (category, module, resolution) and nothing else. It
-carries the reference period and the reference configuration only, and it has no gas column. Every
-axis a caller can filter on that the table does not carry is a refusal, because returning the
-category envelope for a request about one gas, one other year, one other configuration or one
-stream would answer a question the release has not answered - in a block indistinguishable from a
-real one. Each refusal names the axis that is missing; an empty block with no reason is what let
-the resolution defect hide.
-"""
+"""Matched uncertainty blocks: native annual ensembles and legacy category envelopes."""
 import unittest
 
 from pakemis_query.models import QueryEmissions
-
+from pkinv.core import configurations as conf
+from pkinv.core.io import read_rows
+from pkinv.paths import OUTPUTS
 from semantic._golden import open_engine
 
 
-class TheBlockCarriesRows(unittest.TestCase):
+class ConditionalAnnualBlocks(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.engine = open_engine()
+        cls.reference = cls.engine.release.defaults["period_id"]
+        cls.source = read_rows(OUTPUTS + "/pakemis_ghg_conditional_uncertainty.csv")
+
+    def query(self, **kw):
+        kw.setdefault("periods", (self.reference,))
+        return self.engine.query_emissions(QueryEmissions(**kw))
+
+    def test_annual_block_reads_the_actual_configuration_period_and_metric(self):
+        for cfg, period in (("S_TAN", self.reference), ("L_2023_24", "FY2019-20"),
+                            ("S_IPCC", "FY2024-25"), ("L_IPCC", "FY2015-16")):
+            with self.subTest(cfg=cfg, period=period):
+                output = self.query(configuration_id=cfg, periods=(period,))
+                block = output["uncertainty"]
+                self.assertTrue(block["available"])
+                self.assertEqual(block["kind"], "conditional_parameter_percentiles")
+                self.assertEqual(block["table"], "fact_ghg_conditional")
+                self.assertEqual({r["dependence_case"] for r in block["rows"]},
+                                 {"persistent_parameters", "annual_activity_errors"})
+                expected = {r["dependence_case"]: r for r in self.source
+                            if r["period_id"] == period and r["configuration_id"] == conf.canonical(cfg)
+                            and r["sector_id"] == "national_covered" and r["species_or_metric"] == "CO2e_AR5"}
+                for row in block["rows"]:
+                    self.assertEqual(row["period_id"], period)
+                    self.assertEqual(row["configuration_id"], conf.canonical(cfg))
+                    for key in ("deterministic_quantity", "P2_5_quantity", "P50_quantity", "P97_5_quantity", "draws", "seed"):
+                        self.assertEqual(row[key], expected[row["dependence_case"]][key])
+                self.assertIn("not additive", block["note"])
+
+    def test_sector_filter_selects_its_own_conditional_mass(self):
+        for sector in ("agriculture", "residential", "power"):
+            output = self.query(sectors=(sector,))
+            rows = output["uncertainty"]["rows"]
+            self.assertEqual({r["sector_id"] for r in rows}, {sector})
+            self.assertEqual(len(rows), 2)
+            exact = sum(float(v["exact"]) for v in output["values"])
+            for row in rows:
+                self.assertAlmostEqual(float(row["deterministic_quantity"]), exact, delta=1e-5)
+
+
+class CategoryAllocationEnvelopes(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.engine = open_engine()
@@ -33,90 +61,45 @@ class TheBlockCarriesRows(unittest.TestCase):
         kw.setdefault("periods", (self.reference,))
         return self.engine.query_emissions(QueryEmissions(**kw))["uncertainty"]
 
-    def test_each_real_resolution_returns_rows(self):
-        """The assertion whose absence let an always-empty block ship."""
-        for label, kw, expected in (
-                ("national annual", {}, "annual_national"),
-                ("national monthly", {"months": ("202307",)}, "monthly_national"),
+    def test_supported_category_and_allocation_resolutions_return_typed_rows(self):
+        for label, kw, resolution in (
+                ("national category", {"categories": ("Enteric fermentation",)}, "annual_national"),
+                ("national month", {"months": ("202307",)}, "monthly_national"),
                 ("district annual", {"geography_level": "adm2"}, "annual_adm2"),
-                ("district monthly", {"geography_level": "adm2", "months": ("202307",)}, "monthly_adm2")):
+                ("district month", {"geography_level": "adm2", "months": ("202307",)}, "monthly_adm2")):
             with self.subTest(label):
                 block = self.block(**kw)
-                self.assertEqual(block["resolution"], expected)
-                self.assertTrue(block["rows"], "%s carries no uncertainty row" % label)
-                self.assertIn(expected, block["interpretation"])
+                self.assertEqual(block["resolution"], resolution)
+                self.assertTrue(block["rows"])
+                self.assertTrue(all(r.get("category") for r in block["rows"]))
+                self.assertIn("NEVER combined", block["interpretation"])
+                self.assertTrue(all("never" in r["aggregation_rule"].lower() for r in block["rows"]))
 
-    def test_the_rows_are_categories_and_say_they_do_not_add_up(self):
-        rows = self.block()["rows"]
-        self.assertTrue(all(r.get("category") for r in rows))
-        self.assertIn("quadrature", self.block()["interpretation"])
-        self.assertTrue(all("never add" in (r.get("aggregation_rule") or "").lower()
-                            or "never" in (r.get("aggregation_rule") or "").lower() for r in rows))
-
-    def test_a_category_filter_narrows_to_that_category(self):
-        """The block must answer the question that was asked. The Explorer's sidecar used to do
-        this filtering itself, because this block was always empty; a fixed block that returned
-        all 23 categories would be less useful than the workaround it replaced."""
-        one = self.block(categories=("Enteric fermentation",))["rows"]
-        self.assertEqual([r["category"] for r in one], ["Enteric fermentation"])
-
-    def test_a_sector_filter_narrows_the_rows(self):
-        everything = self.block()["rows"]
-        one = self.block(sectors=("agriculture",))["rows"]
-        self.assertTrue(one)
-        self.assertLess(len(one), len(everything))
-        self.assertEqual({r["module"] for r in one}, {"agriculture"})
-
-
-class TheBlockRefusesWhatTheReleaseDoesNotPublish(unittest.TestCase):
-    @classmethod
-    def setUpClass(cls):
-        cls.engine = open_engine()
-        cls.reference = cls.engine.release.defaults["period_id"]
+    def test_category_and_sector_filters_narrow_the_envelope(self):
+        block = self.block(categories=("Enteric fermentation",), sectors=("agriculture",))
+        self.assertEqual([r["category"] for r in block["rows"]], ["Enteric fermentation"])
+        self.assertEqual({r["module"] for r in block["rows"]}, {"agriculture"})
 
     def refusal(self, **kw):
-        kw.setdefault("periods", (self.reference,))
-        block = self.engine.query_emissions(QueryEmissions(**kw))["uncertainty"]
-        self.assertEqual(block["rows"], [], "this grain has no published interval and returned rows")
+        block = self.block(**kw)
+        self.assertEqual(block["rows"], [])
         self.assertIsNone(block["resolution"])
+        self.assertGreater(len(block["interpretation"]), 60)
         return block["interpretation"].lower()
 
-    def test_no_provincial_interval_exists(self):
-        """The one a reader is most likely to want. There is no adm1 resolution at any grain, and
-        the national interval may not stand in for a province."""
-        self.assertIn("adm1", self.refusal(geography_level="adm1"))
+    def test_an_aggregate_interval_cannot_substitute_for_an_unsupported_grain(self):
+        checks = (({"geography_level": "adm1"}, "adm1"),
+                  ({"gases": ("CH4",)}, "gas"),
+                  ({"categories": ("Enteric fermentation",), "configuration_id": "L_TAN"}, "configuration"),
+                  ({"categories": ("Enteric fermentation",), "periods": ("FY2019-20",)}, "category"),
+                  ({"spatial_view": "physical"}, "view"))
+        for request, word in checks:
+            with self.subTest(request):
+                self.assertIn(word, self.refusal(**request))
 
-    def test_no_per_gas_interval_exists(self):
-        self.assertIn("gas", self.refusal(gases=("CH4",)))
-
-    def test_no_interval_for_another_configuration(self):
-        """The refusal names the configuration it was asked for. Since rc67 that is
-        L_2023_24, the ledger dung basis; S_2023_24 is retired (what it named is the
-        reference, which does have an interval) and must not be what the reason says."""
-        reason = self.refusal(configuration_id="L_2023_24")
-        self.assertIn("configuration", reason)
-        self.assertIn("l_2023_24", reason)
-        self.assertNotIn("s_2023_24", reason)
-
-    def test_no_category_interval_for_another_period(self):
-        """Only the national covered total has a per-year interval, and it lives in a different
-        table. Handing back the reference year's category envelope for FY2019-20 would be a
-        different year's answer wearing this one's label."""
-        reason = self.refusal(periods=("FY2019-20",))
-        self.assertIn(self.reference.lower(), reason)
-        self.assertIn("fact_uncertainty_series", reason)
-
-    def test_no_per_stream_interval_exists(self):
-        streams = [s["source_stream_id"] for s in self.engine.release.dim("dim_stream")][:1]
-        self.assertIn("category", self.refusal(streams=tuple(streams)))
-
-    def test_every_refusal_says_what_is_missing(self):
-        """A refusal with no reason is indistinguishable from a lookup miss, which is how the
-        resolution defect survived."""
-        for kw in ({"geography_level": "adm1"}, {"gases": ("CH4",)},
-                   {"configuration_id": "L_2023_24"}, {"periods": ("FY2019-20",)}):
-            with self.subTest(str(kw)):
-                self.assertGreater(len(self.refusal(**kw)), 60)
+    def test_no_per_stream_envelope_is_inferred_from_a_category(self):
+        stream = self.engine.release.dim("dim_stream")[0]["source_stream_id"]
+        self.assertIn("stream", self.refusal(streams=(stream,)))
 
 
 if __name__ == "__main__":

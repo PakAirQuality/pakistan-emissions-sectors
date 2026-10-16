@@ -4,7 +4,7 @@
   "control_totals": "petrol 7209.4 kt/yr (Road MS+HOBC) and HSD 5551.4 kt/yr (Road row), OCAC Sectoral Sales FY2023-24; CNG 62 MMCFD FY2023-24 (OGRA Tables 3.31/6.1)",
   "methods": {
     "ghg": "IPCC 2006 Vol 2 Ch 3 Tier 1, fuel-anchored: Table 3.2.1/3.2.2 road, Table 3.3.1 off-road; CNG on OGRA metered gas",
-    "air": "per-kilometre factors inherited from the Punjab workbook, no primary citation located (air_pollutants.py); exhaust only",
+    "air": "EMEP/EEA 2023 Tier 1 per class and process on the OCAC road fuel (exhaust, evaporation, tyre and brake wear, road wear); SO2 from declared fuel sulfur; resuspended dust not estimated (air_pollutants.py)",
     "spatial": "province proxies in data/province_shares.csv (transport_vkt, transport_offroad, transport_cng_vkt)",
     "ledger": "fuel-claimant ledger over both petroleum controls, unresolved claimants carried as status (fuel_ledger.py)"
   },
@@ -340,7 +340,7 @@
     },
     {
       "path": "data/activity/transport/cng_gas.csv",
-      "sha256": "37309034d113c68b97ae90943033606b81d2e6374ec2c7d8b76a3be48f2bd3d3"
+      "sha256": "2d968f71f2ed7ff977ffa38a0b410d69cfc0c2a5c7086c9d9339c1f2bde8eac3"
     },
     {
       "path": "data/activity/transport/edgar_pak_transport_categories.csv",
@@ -368,7 +368,7 @@
     },
     {
       "path": "data/activity/transport/fuel_sulfur_by_year.csv",
-      "sha256": "9a42cb8753606a3052076975014900892f9e9203380ec5f978fceebbec408a75"
+      "sha256": "ef83be9627d0d62d0ac125786749074c1e6e77a75890012757da3c1729b2e1b3"
     },
     {
       "path": "data/activity/transport/ocac_fy2015_16_transcription.csv",
@@ -376,7 +376,7 @@
     },
     {
       "path": "data/activity/transport/ocac_sectoral_annual.csv",
-      "sha256": "2d2c72be51af642020e1013f9ca80a605e29bb51d815f8cb7d385407600708d4"
+      "sha256": "adc8a7af85f38c73eff651740b23d7a7dec100e6569a1a1556364f23354eebe9"
     },
     {
       "path": "data/activity/transport/ocac_sectoral_provincial.csv",

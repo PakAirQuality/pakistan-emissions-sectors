@@ -467,10 +467,19 @@ class TestFuelSeries(unittest.TestCase):
         series = self.rows[sector.YEAR]["co2e_Mt_AR5_petroleum"]
         self.assertAlmostEqual(series, petroleum + gen_mt - uplift_mt, places=3)
 
-    def test_the_2025_row_declares_its_missing_cng(self):
-        self.assertEqual(self.rows[2025]["cng_co2e_Mt_AR5"], "")
-        self.assertEqual(self.rows[2025]["co2e_Mt_AR5_incl_cng"], "")
-        self.assertNotEqual(self.rows[2024]["cng_co2e_Mt_AR5"], "")
+    def test_cng_is_present_exactly_where_source_activity_supports_it(self):
+        from pkinv.core.components import enrich_co2e
+        from pkinv.sectors.transport import cng
+        self.assertIn(2025, self.data.cng)
+        for year, row in self.rows.items():
+            if year not in self.data.cng:
+                self.assertEqual(row["cng_co2e_Mt_AR5"], "")
+                self.assertEqual(row["co2e_Mt_AR5_incl_cng"], "")
+                continue
+            expected = sum(c["co2e_Mt_AR5"] for c in enrich_co2e(cng.compute(self.data, year)))
+            self.assertAlmostEqual(row["cng_co2e_Mt_AR5"], expected, delta=0.00005)
+            self.assertAlmostEqual(row["co2e_Mt_AR5_incl_cng"],
+                                   row["co2e_Mt_AR5_petroleum"] + expected, delta=0.0001)
 
     def test_road_share_column_matches_the_ocac_identity(self):
         for year, r in self.rows.items():

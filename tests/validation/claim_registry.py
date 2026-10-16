@@ -7,9 +7,11 @@ The registry is tests/paper_numbers/doc_claims.py (DOC_CLAIMS: label, document, 
 regex with one capture group, getter, extra tolerance) plus data/claims_registry.csv. For each
 claim the getter is evaluated against the shipped products, the section is searched with the
 regex, and the printed value is compared at the printed number of decimals with the same rule
-tests/paper_numbers/test_claims.py uses. Status is one of: agrees, disagrees, unmatched (the
-regex finds nothing), error (the getter raised). This is a record of one evaluation, written
-so a reviewer can see every claim and its evidence without running the suite.
+tests/paper_numbers/test_claims.py uses. For printed quantities, test_status is agrees,
+disagrees, unmatched (the regex finds nothing), or error (the getter raised). Semantic
+registry rows also retain their claim_status and reason, so product-only diagnostics
+cannot be read as manuscript claims. This is a record of one evaluation, written so a
+reviewer can see every claim and its evidence without running the suite.
 """
 
 from pkinv.assets import asset_path
@@ -32,7 +34,8 @@ def main(root, registry_out, report_out):
         record = {"claim_id": "doc_claim_%04d" % i, "document": doc, "page_or_section": section,
                   "claim_type": "registered_quantity", "displayed_text_or_value": "", "canonical_product_id": "",
                   "canonical_key": label, "rounding_rule": "printed decimals; |printed - value| <= tol + half-ulp",
-                  "expected_value": "", "tolerance": repr(tol), "test_status": ""}
+                  "expected_value": "", "tolerance": repr(tol), "test_status": "",
+                  "claim_status": "current_manuscript", "status_reason": "Registered printed quantity."}
         try:
             value = getter()
             record["expected_value"] = repr(value)
@@ -70,7 +73,8 @@ def main(root, registry_out, report_out):
                          "claim_type": "semantic_claim", "displayed_text_or_value": "",
                          "canonical_product_id": r["authoritative_output"], "canonical_key": r["numerator"],
                          "rounding_rule": r["rounding"], "expected_value": "", "tolerance": "",
-                         "test_status": "asserted by tests/test_claims_registry.py"})
+                         "test_status": "asserted by tests/test_claims_registry.py",
+                         "claim_status": r["claim_status"], "status_reason": r["status_reason"]})
     for r in rows:
         key = (r["document"].split(";")[0], r["test_status"].split(":")[0])
         tally[key] = tally.get(key, 0) + 1
@@ -85,7 +89,7 @@ def main(root, registry_out, report_out):
             writer.writerow([doc, status, n])
     bad = sum(n for (d, s), n in tally.items() if s in ("disagrees", "error", "unmatched"))
     print("claims: %d evaluated, %d not agreeing" % (len(rows), bad))
-    return 0
+    return 1 if bad else 0
 
 
 if __name__ == "__main__":

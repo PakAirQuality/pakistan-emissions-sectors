@@ -120,7 +120,11 @@ STEMS = {
     "Roush Power": ("Rousch Power", GRID, ""), "Rousch Power": ("Rousch Power", GRID, ""),
     "ROUSCH Power Plant": ("Rousch Power", GRID, ""),
     "TNB Liberty Power": ("Liberty Daharki Power", GRID, "the Daharki station"),
-    "Liberty Power Limited.": ("Liberty Daharki Power", GRID, ""),
+    "Liberty Power Limited.": ("Liberty Daharki Power", GRID,
+        "Company identity and 225/212 MW capacity support Daharki, while the SIR "
+        "prints RFO. NEPRA CPPA Dec2019 separately lists Liberty GAS 212 MW and "
+        "Liberty Power RFO 196 MW (the Tech station). Retain the source fuel-label "
+        "conflict explicitly; the alias alone does not admit RFO emissions."),
     "Liberty Power Tech": ("Liberty Power Tech.", GRID, ""),
     "Liberty Power Tech Ltd. (LPTL)": ("Liberty Power Tech.", GRID, ""),
     "FKPCL": ("Fauji Kabirwala", GRID, ""), "Fauji Kabirwala": ("Fauji Kabirwala", GRID, ""),

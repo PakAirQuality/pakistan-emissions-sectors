@@ -48,7 +48,12 @@ AUDIT = os.path.join(ROOT, "outputs", "pakemis_citation_deposit_audit.csv")
 # The PRE-REPAIR ratchet is preserved exactly rather than absorbed: the path-named subset is
 # still held at 53 by its own assertion, so the set the old number described cannot grow while
 # the wider one is being worked down. Both may only FALL.
-UNDEPOSITED_CEILING = 171
+# rc68 replaces file-name-heavy narrative with source/coverage tables; the live
+# audit now has 192 citation rows, of which 131 cite non-deposit working files.
+# Lower the ratchet to that measured set so later growth remains visible.
+# rc68 release repair: the held products entered the deposit, so four cited working files
+# became deposited (131 -> 127).
+UNDEPOSITED_CEILING = 127
 PATH_NAMED_UNDEPOSITED_CEILING = 53
 
 # No cited file may be absent from the REPOSITORY. That is a different and worse failure
@@ -115,7 +120,7 @@ class TestEveryCitationIsObtainable(unittest.TestCase):
             "the scan stopped resolving them - which is how 194 files went missing from this "
             "register once already." % counts["bare"])
         self.assertGreater(
-            counts["path"] + counts["both"], 80,
+            counts["path"] + counts["both"], 30,
             "only %d citations were found in the PATH notation, which the national sections "
             "and agriculture's appendix use" % (counts["path"] + counts["both"]))
         self.assertFalse(

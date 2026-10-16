@@ -6,12 +6,10 @@ where the two disagree. It never spreads this sector's components, so aviation h
 layer at all despite holding the best monthly evidence in the inventory. This file is the
 layer; the study stays what it is.
 
-THE ONE DIRECTLY OBSERVED SERIES. Every other module's monthly shape is either differenced out
-of cumulative columns, borrowed from a process calendar, or flat. Aviation's is jet fuel sold
-to domestic carriers, month by month, already extracted and already checked against a second
-source. It is as close to T1 as this inventory gets - and even here the class is per month
-rather than per sector, because five of the sixty editions are direct and fifty-five are
-cumulative.
+The source series describes jet fuel sold to resident airline customers, whose flights
+include international services. It is not an observed monthly series of domestic airport
+movements or flight-stage fuel. The source cells retain their direct/differenced status,
+while their use to allocate domestic-flight emissions is explicitly a T3 timing proxy.
 
 The profile is remarkably flat - a nine percent spread between the busiest and quietest months
 - which is a real property of a scheduled domestic network rather than an artefact of the
@@ -41,7 +39,8 @@ from pkinv.sectors.aviation.data import AviationData
 FY_START = 2023
 SERIES = asset_path(OUTPUTS, "aviation_ocac_monthly.csv")
 OUT = asset_path(OUTPUTS, "aviation_monthly_fy2023_24.csv")
-BASIS = "OCAC monthly jet-fuel sales to domestic carriers (PIA and others)"
+BASIS = ("OCAC resident-airline jet-fuel sales proxy for domestic flight activity; "
+         "customer and flight-geography boundaries differ")
 
 
 def domestic_series(fy_start=FY_START):
@@ -81,7 +80,7 @@ def rows(data=None, fy_start=FY_START):
     shares = core_monthly.normalise(values)
     return components, core_monthly.apply_profile(
         components, shares, fy_start,
-        temporal_method=lambda _c, m: kinds[m], basis=BASIS)
+        temporal_method="T3", basis=BASIS)
 
 
 def main():

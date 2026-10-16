@@ -28,6 +28,7 @@ import csv
 import fnmatch
 import glob
 import os
+import re
 
 from pkinv.paths import DATA, OUTPUTS
 from pkinv.core.io import read_rows, write_table
@@ -122,6 +123,19 @@ def documents():
     return out
 
 
+def _named_pattern(base, stem):
+    """The file's name as a WHOLE token: its basename, or its stem with any extension.
+
+    A bare substring test cited every activity/activity_*.csv working file because the papers
+    name semantic/fact_activity_*.csv, and cited the spatial ensemble draws because a paper
+    names pakemis_ensemble_spatial_conditionals.csv - 26 false citations in rc68, each one a
+    working file the register then reported as a claim-bearing file. A name continues past a
+    letter, digit or underscore and nowhere else; a slash or a dot ends it.
+    """
+    return re.compile(r"(?<![A-Za-z0-9_])(?:%s|%s)(?![A-Za-z0-9_])"
+                      % (re.escape(base), re.escape(stem)))
+
+
 def manifest_products():
     """What the manifest WILL hash, from its own patterns - not from the file it last wrote.
 
@@ -169,12 +183,16 @@ def written_later():
 
 
 def universe():
-    """Every file under outputs/ on disk, plus the ones declared to be written later."""
+    """Every file under outputs/ on disk, plus the ones declared to be written later or by the
+    release fixpoint."""
     names = set()
     for path in glob.glob(asset_path(OUTPUTS, "**", "*"), recursive=True):
         if os.path.isfile(path):
             names.add(os.path.relpath(path, OUTPUTS).replace(os.sep, "/"))
-    return names | written_later()
+    # rc68: the committed copies (outputs/SHA256SUMS) are written by the release fixpoint,
+    # after every phase, and a tree unpacked from the deposit has none. Listed by
+    # declaration, like the files written later, the inventory is the same in both trees.
+    return names | written_later() | committed_copies()
 
 
 # RELEASE TIER, derived from role and seeded now so the catalog migration inherits a
@@ -227,8 +245,8 @@ def build():
         matching = [p for p, _r, _o, _d in table if fnmatch.fnmatch(name, p)]
         base = os.path.basename(name)
         stem = base.rsplit(".", 1)[0]
-        cited = sorted(label for label, text in docs.items()
-                       if base in text or stem in text)
+        named = _named_pattern(base, stem)
+        cited = sorted(label for label, text in docs.items() if named.search(text))
         # THE CATCH-ALL DEFERS INSTEAD OF ASSERTING (rc64). Its row types an unmatched file
         # `intermediate`, whose declared meaning is "a working file ... no reader-facing claim
         # rests on it" - a substantive claim about every file nobody has classified. 262 of the

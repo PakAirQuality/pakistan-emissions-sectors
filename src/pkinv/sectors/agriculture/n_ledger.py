@@ -42,11 +42,11 @@ OUT_DIR = asset_path(ROOT, "outputs")
 TOL = 1e-9          # relative closure tolerance for each stage
 
 
-def build(data=None):
+def build(data=None, method=None):
     """Return (rows, checks). rows are ledger lines; checks are the closure residuals."""
     if data is None:
         data = InventoryData()
-    _, np_ = manure.compute(data)
+    _, np_ = manure.compute(data, method=method)
 
     excreted = np_["excreted_N"]
     grazing = np_["FPRP_cattle_N"] + np_["FPRP_other_N"]
@@ -64,7 +64,7 @@ def build(data=None):
     add("A. Excretion", "Total N excreted", excreted, "opening")
     add("A. Excretion", "to grazing (pasture/range/paddock -> soils FPRP)", grazing)
     add("A. Excretion", "to managed manure systems", managed)
-    add("A. Excretion", "diverted as dung-cake fuel (reported under Energy/Waste)", diverted)
+    add("A. Excretion", "diverted as dung-cake material (destinations unresolved)", diverted)
     res_a = excreted - (grazing + managed + diverted)
     add("A. Excretion", "partition residual", res_a, "residual")
 
@@ -75,7 +75,7 @@ def build(data=None):
     n2o = np_["n2o_managed_N"]
     fon = np_["FON_N"]
     add("B. Pre-field MMS", "Managed N entering housing and storage", managed, "opening")
-    add("B. Pre-field MMS", "NH3-N + NOx-N volatilised (FracGasMS, Table 10.22)", volat)
+    add("B. Pre-field MMS", "NH3-N + NOx-N volatilised (%s formulation)" % np_["nitrogen_method"], volat)
     add("B. Pre-field MMS", "leached/run-off (FracLeachMS, Table 10.22)", leach)
     add("B. Pre-field MMS", "lost as N2 (FracN2MS = RN2 x EF3, Eq 10.34b)", n2)
     add("B. Pre-field MMS", "emitted as direct N2O-N (EF3, Table 10.21)", n2o)
@@ -94,14 +94,18 @@ def build(data=None):
     housing = f["housing"] + f["yard"]
     storage = f["storage"]
     application = f["application"]
-    tan_applied = tan - housing - storage
+    tan_applied = sum(r["TAN_after_management_N"] for r in np_["by_system"]
+                      if r["TAN_after_management_N"] is not None)
+    tan_other = tan - housing - storage - np_["managed_NOx_N"] - tan_applied
     add("B'. Same pool as TAN", "TAN in managed manure (species-specific TAN fractions)", tan,
         "opening")
     add("B'. Same pool as TAN", "NH3-N lost in housing and yards", housing)
     add("B'. Same pool as TAN", "NH3-N lost in storage", storage)
+    add("B'. Same pool as TAN", "NOx-N lost during management", np_["managed_NOx_N"])
+    add("B'. Same pool as TAN", "TAN removed in other management losses", tan_other)
     add("B'. Same pool as TAN", "= TAN reaching the field", tan_applied, "closing")
     add("B'. Same pool as TAN", "NH3-N lost on field application", application)
-    res_bp = tan - (housing + storage + tan_applied)
+    res_bp = tan - (housing + storage + np_["managed_NOx_N"] + tan_other + tan_applied)
     add("B'. Same pool as TAN", "TAN balance residual", res_bp, "residual")
 
     # ---- C. Field application of FON (Ch11; GROSS basis) -------------------------------
@@ -109,11 +113,11 @@ def build(data=None):
     fracgasm = data.efv("soils", "FracGASM")
     fracleach = data.efv("soils", "FracLEACH") * data.p("leach_applicable_fraction")
     c_n2o = fon * ef1
-    c_volat = fon * fracgasm
+    c_volat = soils.volatilised_n(data, np_)["organic"]
     c_leach = fon * fracleach
     add("C. Field application", "Manure N applied to soils (gross FON)", fon, "opening")
     add("C. Field application", "direct soil N2O-N (EF1 x GROSS FON, Eq 11.1)", c_n2o)
-    add("C. Field application", "NH3-N + NOx-N volatilised (FracGASM, Table 11.3)", c_volat)
+    add("C. Field application", "NH3-N + NOx-N volatilised (%s formulation)" % np_["nitrogen_method"], c_volat)
     add("C. Field application", "leached/run-off (FracLEACH, Eq 11.10)", c_leach)
     add("C. Field application", "remaining in the soil N pool", fon - c_n2o - c_volat - c_leach,
         "closing")
@@ -127,7 +131,7 @@ def build(data=None):
     add("D. Closure", "all named sinks and remaining soil pool", accounted, "closing")
     add("D. Closure", "closing residual", res_all, "residual")
 
-    checks = {"partition_residual": res_a, "mms_residual": res_b, "tan_residual": res_bp,
+    checks = {"nitrogen_method": np_["nitrogen_method"], "partition_residual": res_a, "mms_residual": res_b, "tan_residual": res_bp,
               "field_residual": res_c, "closing_residual": res_all, "excreted_N": excreted,
               "ipcc_prefield_volat_frac": volat / managed,
               "emep_prefield_volat_frac": (housing + storage) / managed,
@@ -146,7 +150,8 @@ def stage_comparison(data=None):
     """
     if data is None:
         data = InventoryData()
-    _, np_ = manure.compute(data)
+    _, np_ = manure.compute(data, method="ipcc")
+    _, tan_ = manure.compute(data, method="tan")
     share = data.efv("soils", "NH3_frac_of_volat")
     fracgasm = data.efv("soils", "FracGASM")
 
@@ -154,7 +159,7 @@ def stage_comparison(data=None):
     # EMEP side is now resolved per species and manure system (air_pollutants.livestock_nh3_flows),
     # so the comparison is against that rather than against a single national chain.
     from pkinv.sectors.agriculture import air_pollutants as ap
-    f = ap.livestock_nh3_flows(data, np_)
+    f = ap.livestock_nh3_flows(data, tan_)
 
     stages = [
         ("housing + storage", np_["volat_managed_N"] * share,

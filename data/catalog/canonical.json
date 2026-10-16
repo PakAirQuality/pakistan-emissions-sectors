@@ -120,10 +120,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 99,
-      "sha256": "2033366b7887a3bd5546d36ec9cd8cb8516f5ee785e84abbae37a58efab22af0",
+      "row_count": 110,
+      "sha256": "b91beae25a198010eedeb059e7b1fea95de88fe6e2c55c9bed2db369d94e1871",
       "source_path": "data/activity/agriculture/es_fiscal_series.csv",
-      "source_sha256": "b9fb2c6a5c6e3be65c02ce1222d94aed75e763d2835a1a7fd4e0e953a72253cb",
+      "source_sha256": "cb031f00b7ecd961914cd3b11e6679c478248cf728d60d628c8eab041a4ea930",
       "storage_path": "data/sectors/agriculture/activity/es_fiscal_series.csv",
       "table_id": "activity.agriculture.es_fiscal_series",
       "title": "Pakistan Economic Survey annual series",
@@ -1290,10 +1290,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 15,
-      "sha256": "0163469279b4d840befcae4db0b754325982b4dbeeb15655fb34c711cf4185cf",
+      "row_count": 30,
+      "sha256": "71b14e471a4479970ad5723cfbbdf7c078d154405b4ab9f5cf12d1fc04c5c06b",
       "source_path": "data/activity/aviation/fuel_sales.csv",
-      "source_sha256": "932ab784a83cc2bdaa6a00117a8a382b9acc15aaed3238f535e69af6b57cd594",
+      "source_sha256": "b1660553f348a018b577a52965d2ad23d3f31eedbf246178e26c3e75c0c05880",
       "storage_path": "data/sectors/aviation/activity/fuel_sales.csv",
       "table_id": "activity.aviation.fuel_sales",
       "title": "Fuel sales",
@@ -1470,10 +1470,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 605,
-      "sha256": "14b0f8919e9788ac3c7f0aa9774266b493e4795f54ca3b4e6d49f8520d8a1d10",
+      "row_count": 640,
+      "sha256": "36985cf4608c009e93b0ce1f06e130bf6085b06da57565f343360a074944e941",
       "source_path": "data/activity/aviation/movements_airport.csv",
-      "source_sha256": "8e4f513b666be22f4ca3a25a500bbd857a07566364a068e08b870de5e6b20f88",
+      "source_sha256": "fa648d99f60e93b670038775caa4acf541ab5d5c3936c79a6711e1737e2fd099",
       "storage_path": "data/sectors/aviation/activity/movements_airport.csv",
       "table_id": "activity.aviation.movements_airport",
       "title": "PCAA airport traffic",
@@ -2119,9 +2119,9 @@
       ],
       "role": "input",
       "row_count": 5,
-      "sha256": "c18b611a17c17e8c87617c12e2c4ee9332629e1ab233f5121b26ac94b86562e5",
+      "sha256": "d38263e7703e51b5ec46c67d9f2c50f47c0208d2e404202dc8c81e4d40a010a0",
       "source_path": "data/activity/crops_2024.csv",
-      "source_sha256": "627d271c1318c729838c6e90e8cd38bf53a7e2888ea2266040302c0c2eaeeae2",
+      "source_sha256": "8b59191332ace1134a2b29acb2702a2f9d49a130e4efa042a3593885776fcd71",
       "storage_path": "data/sectors/agriculture/activity/crops_2024.csv",
       "table_id": "activity.crops_2024",
       "title": "Pakistan Economic Survey crops, 2023-24",
@@ -2994,10 +2994,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 3,
-      "sha256": "f54262a1f9045aecece476c497706c22b96329c6065d2677a7dd493b6082aee7",
+      "row_count": 4,
+      "sha256": "7906da646f38665efcd855c353b082eac970df8ee4853b13b9052d0d681165f4",
       "source_path": "data/activity/fugitives/gas_flow_controls_2021_24.csv",
-      "source_sha256": "1ddbbb7acf85fd49c66ae95fece0b08ee5f716661b7be39eafe50973e80836f7",
+      "source_sha256": "7821f478277f5115b24b19f672c0647a6ed5f1e545d63582575848ff6800d8d9",
       "storage_path": "data/sectors/fugitives/activity/gas_flow_controls_2021_24.csv",
       "table_id": "activity.fugitives.gas_flow_controls_2021_24",
       "title": "Gas flow controls 2021 24",
@@ -3198,10 +3198,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 6,
-      "sha256": "da78cff0e81be288a4ce2c4db75606b949f717d82185209e8024816c0dff809a",
+      "row_count": 7,
+      "sha256": "c05fa650d8f4ca92712a48b304e6b32838e6490fe06b1ee7c18e40cb96b92c43",
       "source_path": "data/activity/fugitives/infrastructure_history_2015_21.csv",
-      "source_sha256": "36ddc577db8416f7cd4e0f6268af9abf8e3e62c539f9a07a1d818dcb1b1d8bb3",
+      "source_sha256": "085fd19cea7e0f78ce3fbb2949e9738076d092865623615e120c263277b2d0b7",
       "storage_path": "data/sectors/fugitives/activity/infrastructure_history_2015_21.csv",
       "table_id": "activity.fugitives.infrastructure_history_2015_21",
       "title": "Infrastructure history 2015 21",
@@ -4987,9 +4987,9 @@
       ],
       "role": "reference",
       "row_count": 7,
-      "sha256": "7fd849bf6c8243e1d72dfc44c96babfe8f83eee9a8dfe0ddfd2251ea746dd325",
+      "sha256": "94af0f9ce74c7a3ffdd053b312a721e82018c420fa7f5773eb9555da2a14a32a",
       "source_path": "data/activity/industry/fuel_sulfur_evidence.csv",
-      "source_sha256": "aa81715bf125c97cda5f1ceda782fb763d43af87ec1beb422851127d86eaf08f",
+      "source_sha256": "af188b9678f3b8ae51fef789fb5cb930c107a5b2b024f7544aabb3d9a5d2a86a",
       "storage_path": "data/sectors/industry/evidence/fuel_sulfur_evidence.csv",
       "table_id": "activity.industry.fuel_sulfur_evidence",
       "title": "Fuel sulfur evidence",
@@ -5250,10 +5250,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 17,
-      "sha256": "5ecad776d85dc365be3a55dceeec74166387f7d8d05e570d8743192ea55a0f98",
+      "row_count": 19,
+      "sha256": "f88f4fde37a02552aa5bf827fe6cdf56ec5b0c9b82cb6eed8c2ef0e527f90f65",
       "source_path": "data/activity/industry/gas_consumption.csv",
-      "source_sha256": "e5c169589bddb72371623c69607e8add43cdddb334c5b9f5bb2dd42751752827",
+      "source_sha256": "9348ef75143b9391cf12c111e772b8cb924e1729ae96dc2fc00fa4176fd2e456",
       "storage_path": "data/sectors/industry/activity/gas_consumption.csv",
       "table_id": "activity.industry.gas_consumption",
       "title": "Gas consumption by sector",
@@ -6180,10 +6180,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 22,
-      "sha256": "1106ab51303599d7285d911918dc232e82796be721d89c930d1241fc2fc7304c",
+      "row_count": 24,
+      "sha256": "af36008e02ccf575d037699dbec4b7a576f51969d182d29d9bc61387ab7cbd7f",
       "source_path": "data/activity/ippu/clinker_trade_annual_controls.csv",
-      "source_sha256": "d2dd00a1325294173d32e8bfdc771e4bf810ee05f569860ace39c9ce0f9a3995",
+      "source_sha256": "df74f504cd0d14989dd4b0e597402819b07267f5aa7e6d8007fbc00862166df2",
       "storage_path": "data/sectors/ippu/activity/clinker_trade_annual_controls.csv",
       "table_id": "activity.ippu.clinker_trade_annual_controls",
       "title": "Annual clinker trade controls",
@@ -6252,10 +6252,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 218,
-      "sha256": "906b873f5d2b8fa78070f73015f34004aafcff525e5e60707762b86deac76a71",
+      "row_count": 242,
+      "sha256": "d80ab30c173b5777e30ef06689b26665a397591db959d5e3291052410ce930d9",
       "source_path": "data/activity/ippu/clinker_trade_monthly.csv",
-      "source_sha256": "411d0bfa0f2e8469300b9e0f0df87450bab8ebf437a3d3d71012fd04d5ca17d2",
+      "source_sha256": "4b078057740b81b987524cc9e43d26c21bf3de7ddad95df7ee5613a0f97e91ac",
       "storage_path": "data/sectors/ippu/activity/clinker_trade_monthly.csv",
       "table_id": "activity.ippu.clinker_trade_monthly",
       "title": "Monthly clinker trade",
@@ -7099,9 +7099,9 @@
       ],
       "role": "input",
       "row_count": 24,
-      "sha256": "291fd5007734275ba09968efb2d1730de42447d0483e4642ede996edbbaba161",
+      "sha256": "962212e4909734b154bf4acccceff69f4de73fb138657b72f908838e5a3e60fd",
       "source_path": "data/activity/ippu/facility_geocoding_overrides.csv",
-      "source_sha256": "0d8dd89c0f916d687602a50c2e848d13ee34fad43550a8185ebbc7a2bf5a0cd3",
+      "source_sha256": "6fc670b1f0e3291d4aea874bb08b7d369792eaa35234f8789a08acada6b79be3",
       "storage_path": "data/sectors/ippu/lookups/facility_geocoding_overrides.csv",
       "table_id": "activity.ippu.facility_geocoding_overrides",
       "title": "Facility geocoding overrides",
@@ -7572,10 +7572,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 16,
-      "sha256": "1419820c7ce6e17adc7f633fda6b903d82986da708078fbbec46814ca54896c7",
+      "row_count": 19,
+      "sha256": "da25ed8854f27c7c13532bf33ec7fa83262a50cf1c23ebd970dd0d619b5f7740",
       "source_path": "data/activity/ippu/national_activity.csv",
-      "source_sha256": "a787d28ec4e39edb9c47e9d7070adf70cfeb51f8d1e6270d7d9cfd64fc260a5f",
+      "source_sha256": "747f6ed64c51a22dbbe6422f0e9664bf7008550dd08361700738a9fca25f01d9",
       "storage_path": "data/sectors/ippu/activity/national_activity.csv",
       "table_id": "activity.ippu.national_activity",
       "title": "National industrial activity controls",
@@ -8332,6 +8332,90 @@
           "name": "Source file",
           "storage_type": "string",
           "unit": ""
+        },
+        {
+          "field_id": "quantity_unit",
+          "name": "Quantity unit",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "observation_status",
+          "name": "Observation status",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "source_sheet",
+          "name": "Source worksheet",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "source_row",
+          "name": "Source document row",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "source_header",
+          "name": "Printed source header",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "publication_status",
+          "name": "Publication status",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "group_id",
+          "name": "Source group ID",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "source_national_month_quantity",
+          "name": "Source national monthly control",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "source_expected_provinces",
+          "name": "Source reporting areas",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "group_month_control",
+          "name": "Exported monthly group control",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "annual_control",
+          "name": "Exported annual control",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "national_coverage",
+          "name": "National source coverage",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "timing_usable",
+          "name": "Usable for production timing",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "quality_note",
+          "name": "Source quality note",
+          "storage_type": "string",
+          "unit": ""
         }
       ],
       "path": "data/shared/canonical/activity/monthly/pbs_minerals_month_province.csv",
@@ -8340,10 +8424,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 36084,
-      "sha256": "c01549e6c79844fe1208b9b401ef66f1e1c271abee9c2ae666d5fd6c9ec4c62c",
+      "row_count": 1656,
+      "sha256": "22d5311485fa30f926879aebbf1945a2154ace9724e06132ac07628d8a643032",
       "source_path": "data/activity/monthly/pbs_minerals_month_province.csv",
-      "source_sha256": "06a9f265ba7b50dec99ce73ac4d279f68674aea29eeef88ab87343caa36e1b02",
+      "source_sha256": "ec803a4e2ccfc6fdb13505403649457d711e61c79ad3dfa3c8f310081a00f098",
       "storage_path": "data/shared/activity/monthly/pbs_minerals_month_province.csv",
       "table_id": "activity.monthly.pbs_minerals_month_province",
       "title": "Pbs minerals month province",
@@ -8454,10 +8538,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 12204,
-      "sha256": "b41f537e61a8b73b7544b5177bf2ff9a18c07e2911490312cdc90b5342e6e427",
+      "row_count": 13536,
+      "sha256": "83019d0691df34d59a9861b0c801f54b38e7ce4c91ea5e3f6a02f95d7a617996",
       "source_path": "data/activity/monthly/pbs_qim_month_item.csv",
-      "source_sha256": "5cf7f90baa0bd00a74527d96a957bfd6d91d1ca8b4ad0d31cde302a2e60a65de",
+      "source_sha256": "011482bb9a10c56ddd5745fa1d22dabc98db8c4d9b9aeb2811e52fc77249e691",
       "storage_path": "data/shared/activity/monthly/pbs_qim_month_item.csv",
       "table_id": "activity.monthly.pbs_qim_month_item",
       "title": "PBS monthly industrial production",
@@ -8508,10 +8592,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 40,
-      "sha256": "3ced0f9be712f2001b433296c22ece5177017e7de0eb698c696bef50e080d150",
+      "row_count": 49,
+      "sha256": "6f09c48421566126253ab8a4911ff6950dbb52cbeb256b197c106a14aec00904",
       "source_path": "data/activity/power/bagasse_generation.csv",
-      "source_sha256": "bc18c584a7988ce33ed513b04b51882cac1d18459678429e8d7b12c0a659f10f",
+      "source_sha256": "ff5e1199018259f8119b916f7ac961eef347b4303cecbc19cd49e903ec5bb62d",
       "storage_path": "data/sectors/power/activity/bagasse_generation.csv",
       "table_id": "activity.power.bagasse_generation",
       "title": "Bagasse generation",
@@ -8580,10 +8664,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 9,
-      "sha256": "39f8136e2fddeb87af7280c0846d331561ec59b62aa622090a02145247ff927f",
+      "row_count": 10,
+      "sha256": "b0134fb4b4b9306808f46cc9603e29c8d493b4f809247cd594ebb778e06a90c9",
       "source_path": "data/activity/power/captive_gas.csv",
-      "source_sha256": "77a230c1467d9b82e8dded3f7331dbd43d9619122173523bf591abbf8496f2b4",
+      "source_sha256": "87b18fcb32b865f9eb812f6a13f8986dccbdd1ce4bec1620f31ef0f85c877cda",
       "storage_path": "data/sectors/power/activity/captive_gas.csv",
       "table_id": "activity.power.captive_gas",
       "title": "Captive gas",
@@ -8922,10 +9006,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 44,
-      "sha256": "8795777c718cfc11b87e4b3949861e12a885544840668cfa785b43d8679e7ecb",
+      "row_count": 48,
+      "sha256": "6a8a8ed0367640f53ab7f7870bfbc72bc52834a8c2af6ebe739b19e82af038e9",
       "source_path": "data/activity/power/fuel_consumed.csv",
-      "source_sha256": "9cdfe50a6300caf865135f6c251736864fe2f655bbf5af0358f723f61cc0358f",
+      "source_sha256": "3b6affdfa95a22666acbcceb72253573e90ca78bd937674590550aa2fd278e40",
       "storage_path": "data/sectors/power/activity/fuel_consumed.csv",
       "table_id": "activity.power.fuel_consumed",
       "title": "Power-sector fuel consumption",
@@ -9930,10 +10014,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 90,
-      "sha256": "8e571831c3f915d2b9e2b9d3051280aa2669e1573fcb54216394bfdb5b6e7704",
+      "row_count": 100,
+      "sha256": "3c92bf408cc929a9f51bd60fa1f9c2c67bc6d2a8f143579c791dda7f3721d1c8",
       "source_path": "data/activity/power/generation_by_fuel.csv",
-      "source_sha256": "c01880d290da2f53094b4ae62ab9b31ae41bec719b0bd450049ec29bde7cbf67",
+      "source_sha256": "86fe4c61d3f9c925d4c6e67883aae966e90a703918966759f09c28a3bea8eaf6",
       "storage_path": "data/sectors/power/activity/generation_by_fuel.csv",
       "table_id": "activity.power.generation_by_fuel",
       "title": "Electricity generation by fuel and system",
@@ -10566,10 +10650,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 297,
-      "sha256": "a5c17d9402b222b50bf4edc92e93c348d394ffd1455d09bc531f1c06378eed70",
+      "row_count": 348,
+      "sha256": "8b99ab5d83411410498754f5d58dab0b6a940b5df5d4a72340b73501c7e9bd66",
       "source_path": "data/activity/power/plant_fuel_ledger.csv",
-      "source_sha256": "f45d92053f3d40d1aac086b69f2bc763a8f079775457ff7e4301e2999b4f4362",
+      "source_sha256": "dd14240e8cc98883f820821c673f37fce43c2d8cad202c3fa8dbb202e8407caf",
       "storage_path": "data/sectors/power/activity/plant_fuel_ledger.csv",
       "table_id": "activity.power.plant_fuel_ledger",
       "title": "Plant fuel and generation calculations",
@@ -10753,9 +10837,9 @@
       ],
       "role": "reference",
       "row_count": 547,
-      "sha256": "e504c8f4e6516db1f6bd29bbc481e9bf8c17bfb98c011de15bc68016b05b9514",
+      "sha256": "ec1c1060ffae12a5cd92015bc96bf117554f42c476c73828f893c7ec1ee1ef02",
       "source_path": "data/activity/power/plant_name_crosswalk.csv",
-      "source_sha256": "25ad8c533e112d32609d1c6d9a2359aef8f11779a7ad22e6abc64f30af7d47a2",
+      "source_sha256": "3bcc2e4e3bd2b2b78ae58f83ad883a80cfedb3ee8444d5bf7694bdb667d9e19c",
       "storage_path": "data/sectors/power/lookups/plant_name_crosswalk.csv",
       "table_id": "activity.power.plant_name_crosswalk",
       "title": "Plant name crosswalk",
@@ -10998,10 +11082,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 181,
-      "sha256": "02e2d0b5d8badb03bd51e3921cef48363d201b6813597ebacee24f06d3335f03",
+      "row_count": 194,
+      "sha256": "9b584b85b8cfb385f07f80b4c7a83ef48040989ca1dc659e7accbec98b1ad9aa",
       "source_path": "data/activity/power/power_so2_admission.csv",
-      "source_sha256": "9c7647fd578f217c413bbbcc726615545ca9888c68378afa9ab1f5ac95f63f10",
+      "source_sha256": "e614c239b20a2df3e3ccf4023ac1e29ae3ff5fa670749b588e80a5e609ad3985",
       "storage_path": "data/sectors/power/activity/power_so2_admission.csv",
       "table_id": "activity.power.power_so2_admission",
       "title": "Power so2 admission",
@@ -11478,10 +11562,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 9,
-      "sha256": "868730682c1c71681579e7a186f36ee63b0d94aa98b30f58d23ce17f63f79e18",
+      "row_count": 10,
+      "sha256": "3076b02418de95d5829f115032f3f69e62077b0048087cbe7ef381e09fe9db2a",
       "source_path": "data/activity/railways/diesel_sulfur_regime.csv",
-      "source_sha256": "1e1438ed5dc3b07c53c49845815d8fae330cc9d99911fcd42dbf4b135e3d118c",
+      "source_sha256": "df3abdafa3357a6b045aeee9e2329a89cdfee39a0f72879ea1e10365becf8ba1",
       "storage_path": "data/sectors/railways/activity/diesel_sulfur_regime.csv",
       "table_id": "activity.railways.diesel_sulfur_regime",
       "title": "Diesel sulfur regime",
@@ -12054,10 +12138,10 @@
         "Record ID"
       ],
       "role": "reference",
-      "row_count": 12,
-      "sha256": "071475bfd45dc579bd4ca3e6e3e3da61b7d7fb03aac2e41771ad34bf3fcaa119",
+      "row_count": 13,
+      "sha256": "d11b73c0d4fcce4d1be536e2700f0a501a090e3754e40decd9ebd5e32f53dac7",
       "source_path": "data/activity/residential/fuel_supply_annotations.csv",
-      "source_sha256": "f51069d4cb37deddd5c7590634ce4ff44aaf96dc62a0a1b945a83ceaa5d07ba2",
+      "source_sha256": "86005251cda54d0afbb2f088225104c52c4ea68fee195f9aac6a9a6d37c2d769",
       "storage_path": "data/sectors/residential/activity/fuel_supply_annotations.csv",
       "table_id": "activity.residential.fuel_supply_annotations",
       "title": "Fuel supply annotations",
@@ -12114,10 +12198,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 9,
-      "sha256": "b8d364ea2d3431bb2e2c690ff3efb12f212e285f08fd4b791f91c9f1ec828574",
+      "row_count": 10,
+      "sha256": "96a0300f32da55ef50f9261829367f1593505bb04a63907f62fc7f2075da2603",
       "source_path": "data/activity/residential/fuel_supply_history.csv",
-      "source_sha256": "fabab9bfba93aa07854488a4448c93e7ac3500980d83503040857c0f0643b32d",
+      "source_sha256": "7ea947ab270b9ebcb24d013dd6adee6bc3c6a5ea22ce8e10512038d969b47245",
       "storage_path": "data/sectors/residential/activity/fuel_supply_history.csv",
       "table_id": "activity.residential.fuel_supply_history",
       "title": "Fuel supply history",
@@ -12156,10 +12240,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 11,
-      "sha256": "6ea61b67a301a01826730858ff46b90c9d3cc19177b98a8f0cfa43899a359af5",
+      "row_count": 12,
+      "sha256": "06e8c9e84d6527c63ed1ccdc890bceb46f44fdff17ee9a446b41578639925168",
       "source_path": "data/activity/residential/fuel_supply_observations.csv",
-      "source_sha256": "99a94d372c632047c03220e1f7fdad158b1ce427ac6aaca8e81c14756cfaa308",
+      "source_sha256": "06cc74eca6f5464675df9224dc31d50a5713b04463eaee4ba1d30cf26898cc47",
       "storage_path": "data/sectors/residential/activity/fuel_supply_observations.csv",
       "table_id": "activity.residential.fuel_supply_observations",
       "title": "Fuel supply observations",
@@ -12474,10 +12558,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 600,
-      "sha256": "dc5f0e2b7899f614fa81d36ecc63881101f05cddc2f3eebf3f9b1b87e5f040ce",
+      "row_count": 660,
+      "sha256": "a8df6b4afe5057cb09508a614cbce33f6cd4b026d8d1d42f1360a63990841628",
       "source_path": "data/activity/residential/monthly_degree_days.csv",
-      "source_sha256": "3cf05dcccb43574a892d5fd5bbbaa8953f989f5ebf2f6262fa65def0a80d488a",
+      "source_sha256": "0525add6ab1240e9da5d99cead5fbd8ba0f67db2e85276e1eafa78eb7d3cc08f",
       "storage_path": "data/sectors/residential/activity/monthly_degree_days.csv",
       "table_id": "activity.residential.monthly_degree_days",
       "title": "Monthly degree days",
@@ -12672,10 +12756,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 13,
-      "sha256": "ef77bef76ef8c9ef734a583056790fbb636753355b366aa0ebce2405f6b9460a",
+      "row_count": 14,
+      "sha256": "a70fdba314eaf8d1ed2006a4eaf87d01f493e777b9cabdd50ea4e90dacb5ae0b",
       "source_path": "data/activity/transport/cng_gas.csv",
-      "source_sha256": "37309034d113c68b97ae90943033606b81d2e6374ec2c7d8b76a3be48f2bd3d3",
+      "source_sha256": "2d968f71f2ed7ff977ffa38a0b410d69cfc0c2a5c7086c9d9339c1f2bde8eac3",
       "storage_path": "data/sectors/transport/activity/cng_gas.csv",
       "table_id": "activity.transport.cng_gas",
       "title": "National CNG consumption",
@@ -13146,10 +13230,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 18,
-      "sha256": "ceb6a7fb881a1a167ec577403a9a52c0bca09b6c66e68c4b3b16137d23d340a6",
+      "row_count": 20,
+      "sha256": "180792c06982a63e0d8b77e60cda105b1aca4ccccb8c3b1bb2c59d4beaaedae2",
       "source_path": "data/activity/transport/fuel_sulfur_by_year.csv",
-      "source_sha256": "9a42cb8753606a3052076975014900892f9e9203380ec5f978fceebbec408a75",
+      "source_sha256": "ef83be9627d0d62d0ac125786749074c1e6e77a75890012757da3c1729b2e1b3",
       "storage_path": "data/sectors/transport/activity/fuel_sulfur_by_year.csv",
       "table_id": "activity.transport.fuel_sulfur_by_year",
       "title": "Fuel sulfur by year",
@@ -13273,9 +13357,9 @@
       ],
       "role": "input",
       "row_count": 1090,
-      "sha256": "30cb7c5b951dff636444e7d03c7a92d152fe1e61345136c55d35a2573c4eea25",
+      "sha256": "022d8008e457dfe67551d7d055de884b76014c62ec7269ad1d4aa29dfb445de9",
       "source_path": "data/activity/transport/ocac_sectoral_annual.csv",
-      "source_sha256": "2d2c72be51af642020e1013f9ca80a605e29bb51d815f8cb7d385407600708d4",
+      "source_sha256": "adc8a7af85f38c73eff651740b23d7a7dec100e6569a1a1556364f23354eebe9",
       "storage_path": "data/sectors/transport/activity/ocac_sectoral_annual.csv",
       "table_id": "activity.transport.ocac_sectoral_annual",
       "title": "OCAC annual customer-group sales",
@@ -13890,10 +13974,10 @@
         "Record ID"
       ],
       "role": "input",
-      "row_count": 3350,
-      "sha256": "f20d3be2eb25259f2ac862757bb49c23f436491defb4bdbbb80ccfafbbb89c98",
+      "row_count": 3484,
+      "sha256": "6cedcb3871436bdfcf385d22b06623015b33e2ea982b6910317d1a2a476636b3",
       "source_path": "data/activity/waste/population_district.csv",
-      "source_sha256": "9845de1ad07454fdabfe9c9d813937f8cebb5952788ffb8842b64032b8c2f39d",
+      "source_sha256": "b7668f3cb2b653817169cbbd43c096a899955b6df8576897579225644cea63d4",
       "storage_path": "data/sectors/waste/activity/population_district.csv",
       "table_id": "activity.waste.population_district",
       "title": "Population district",
@@ -16351,9 +16435,9 @@
       ],
       "role": "parameter",
       "row_count": 19,
-      "sha256": "2bfe8562f34768c42e684026346dd79e75ba99e8a149504baf35c1b278decc96",
+      "sha256": "a56b0879f77134e60ebf641d7e6f4ef5b9baa772bd2f2d4ec00d7e87153ca39e",
       "source_path": "data/aviation_fleet_mix.csv",
-      "source_sha256": "255bf6b5f73f20c6c20de005f3bde8e87800f9a4853e70e53a057871a68c872c",
+      "source_sha256": "51b2b445ac9a67d3d71668d75154d9859ac86cdc8f79f5295bfe3376bfd7895d",
       "storage_path": "data/sectors/aviation/parameters/aviation_fleet_mix.csv",
       "table_id": "parameters.aviation_fleet_mix",
       "title": "Aviation fleet mix",
@@ -16543,9 +16627,9 @@
       ],
       "role": "reference",
       "row_count": 27,
-      "sha256": "078dc58ee4d6e2e09a76484b2dbc53e5bd656e3732b36ee059b828043af8529a",
+      "sha256": "75e82002ec3fd3bcf410e4a49da657bad6f93423896b111589b6c7a13e23f2b5",
       "source_path": "data/benchmarks.csv",
-      "source_sha256": "2fe051529d154ec88e23115082636b794db5250f14a51265836817ce17ad0ab3",
+      "source_sha256": "4089e85e11bae4915d8601e0a5988c8ecb57d1da05aa9d1f6ff45376c2afd6bc",
       "storage_path": "data/shared/evidence/benchmarks.csv",
       "table_id": "parameters.benchmarks",
       "title": "Benchmarks",
@@ -16609,9 +16693,9 @@
       ],
       "role": "reference",
       "row_count": 9,
-      "sha256": "7465147149fb3b66f7a2f67221007144f5de5d283df5fc11bf25d4546a3c7405",
+      "sha256": "4e46649d6cb297659719673a950d5e2148988c5fd889bc61f634721a05224ed1",
       "source_path": "data/benchmarks_air.csv",
-      "source_sha256": "a470fa042ad7d53c9a5ff6fc4602dd00eaed6bc7fb2fde066f3d915c17e246d5",
+      "source_sha256": "8d1eed668a64931597e28f48bf0f058b0ea1d5ce6c732604dd219b0c96d9c0b3",
       "storage_path": "data/shared/evidence/benchmarks_air.csv",
       "table_id": "parameters.benchmarks_air",
       "title": "Benchmarks air",
@@ -16704,10 +16788,10 @@
         "Record ID"
       ],
       "role": "parameter",
-      "row_count": 18,
-      "sha256": "af9d29b4242e9c899c43246926591ca89d0cf40d063ff3c7348a20da48c3ba7b",
+      "row_count": 20,
+      "sha256": "4a54cf2b39dd3a9f994b58ec56341f1335553897277f2f3a810d3caf638b73c8",
       "source_path": "data/coal_booking_policy.csv",
-      "source_sha256": "8bf335d1c9cf1e637d2dbcb17646863e444384d39e90948767c61db756767c81",
+      "source_sha256": "c83d95bd2d60e18a8747a0c4a8b860bdd972f586aa962281bd4a874217b6a50c",
       "storage_path": "data/shared/parameters/coal_booking_policy.csv",
       "table_id": "parameters.coal_booking_policy",
       "title": "Coal booking policy",
@@ -16777,9 +16861,9 @@
       ],
       "role": "parameter",
       "row_count": 427,
-      "sha256": "5fdd316755f72b18769017ef239599de01bca25f61a8d90f0ba3a4a3df333dff",
+      "sha256": "c60ee9c6b083f5c13511d2abe36d517631be92ad9b2c68586b2fab88c13ef542",
       "source_path": "data/emission_factors.csv",
-      "source_sha256": "60c4c42e53ffb4b24377293ed8c16d2307ed2ecebad592b5d0b49aa9f0202ef7",
+      "source_sha256": "2c1e2863425d1a631dc6909f9fd83302de637c151a97e0b6bdfe8787e996d36b",
       "storage_path": "data/shared/parameters/emission_factors.csv",
       "table_id": "parameters.emission_factors",
       "title": "Emission factors",
@@ -16957,9 +17041,9 @@
       ],
       "role": "reference",
       "row_count": 12680,
-      "sha256": "44ec80ae51ef837330ab3613754c29333be9d6e55c1da516c494aba6c49e89bd",
+      "sha256": "1b62c568b08169c2d56b49bd2938fcc6945991d301fe4faf463485e45cb9c40c",
       "source_path": "data/facility_registry.csv",
-      "source_sha256": "f59b27acf8bde7d75dc3ffa70822a07bf8e0e1a12f927a4d82189965aee6865d",
+      "source_sha256": "0c897fd6a0849b33f8f26a5eacf060042155590bcaf06e8323ffd51c6580997a",
       "storage_path": "data/shared/lookups/facility_registry.csv",
       "table_id": "parameters.facility_registry",
       "title": "Facility registry",
@@ -17437,9 +17521,9 @@
       ],
       "role": "parameter",
       "row_count": 28,
-      "sha256": "7cd64d60453e8a68c47134df11b19cccc1d1a891a72e245123fd2a70536a9a2f",
+      "sha256": "4ee04761258b2b3c2e0e574e05556ae4b25dea0106bd4bfd7dafbdaa16464c81",
       "source_path": "data/parameters.csv",
-      "source_sha256": "31e5f495842d6cf3dab6e550fcc718c2ac64fa0aec6eda5ebfb9cee097ae900a",
+      "source_sha256": "59b04b77d5f45c855243d74ef61d5cd583b147fecdfb69afde8fb9440ca4949e",
       "storage_path": "data/sectors/agriculture/parameters/parameters.csv",
       "table_id": "parameters.parameters",
       "title": "Parameters",
@@ -17683,9 +17767,9 @@
       ],
       "role": "parameter",
       "row_count": 43,
-      "sha256": "f3c2c9e642f70593627e94e151497f2cd83830e2e5a533a93c6ba129a123c3da",
+      "sha256": "bf12bb95f8e0346079aa5d17831771fd6398cb8037eca82bfb9a888a7289c568",
       "source_path": "data/province_shares.csv",
-      "source_sha256": "3f166dbe2c0ba2eccf7c0c774b67d1b469d85b338c309acb31de373500fb31b2",
+      "source_sha256": "e3f4f5baeec9822ae9b7bd35f6dec51ddbbde0b83b2d6523d3b21d9fa9b84567",
       "storage_path": "data/shared/lookups/province_shares.csv",
       "table_id": "parameters.province_shares",
       "title": "Province shares",
@@ -17983,9 +18067,9 @@
       ],
       "role": "parameter",
       "row_count": 32,
-      "sha256": "3dbe48f968a5369b49a03abfc0266f364f57fcd4d2a3d967065c40f2bcf40df8",
+      "sha256": "681f55136fde1d8abc4f3624b0e2aa26fa2ae7e450d2e7f5d9f1bcc3fe05c17f",
       "source_path": "data/stream_grid_proxy.csv",
-      "source_sha256": "1889323f11c0da4fca5231dd0bebb118ae7ddacfdccbd08b61c5423a6e26b62a",
+      "source_sha256": "a32df5e65d6298c53f79f35d34cbdc7a1ba0f44e4f37bcb5cb616ee01699b7b8",
       "storage_path": "data/shared/gis/stream_grid_proxy.csv",
       "table_id": "parameters.stream_grid_proxy",
       "title": "Stream grid proxy",
@@ -18110,6 +18194,438 @@
       "table_id": "parameters.waste_params",
       "title": "Waste params",
       "year_convention": ""
+    },
+    {
+      "columns": [
+        {
+          "field_id": "fiscal_year",
+          "name": "Fiscal year (starting year)",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "fuel_rank",
+          "name": "Coal rank",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "mass_kt",
+          "name": "Fuel mass (thousand tonnes)",
+          "storage_type": "string",
+          "unit": "kt"
+        },
+        {
+          "field_id": "ncv_TJ_per_Gg",
+          "name": "Net calorific value (TJ per Gg)",
+          "storage_type": "string",
+          "unit": "TJ/Gg"
+        },
+        {
+          "field_id": "energy_TJ",
+          "name": "Fuel energy (TJ)",
+          "storage_type": "string",
+          "unit": "TJ"
+        },
+        {
+          "field_id": "energy_share",
+          "name": "Share of coal energy",
+          "storage_type": "string",
+          "unit": "fraction"
+        },
+        {
+          "field_id": "ncv_uncert_pct_95",
+          "name": "NCV conditional uncertainty (%)",
+          "storage_type": "string",
+          "unit": "percent"
+        },
+        {
+          "field_id": "source",
+          "name": "Source",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "basis",
+          "name": "Basis",
+          "storage_type": "string",
+          "unit": ""
+        }
+      ],
+      "path": "data/sectors/power/canonical/activity/coal_rank_account.csv",
+      "period_basis": "fiscal",
+      "primary_key": [
+        "Record ID"
+      ],
+      "role": "input",
+      "row_count": 21,
+      "sha256": "dcc423367374c9a670fcb4ffa410b0d50189d9dd63e512ab72e0936f4f2d8233",
+      "source_path": "data/activity/power/coal_rank_account.csv",
+      "source_sha256": "c44d55582ecee03a039e6b5d40111317341fd3e0b680f8c85e00a2da691ce1d0",
+      "storage_path": "data/sectors/power/activity/coal_rank_account.csv",
+      "table_id": "activity.power.coal_rank_account",
+      "title": "Station coal by rank and fiscal year",
+      "year_convention": "fiscal-start"
+    },
+    {
+      "columns": [
+        {
+          "field_id": "fiscal_year",
+          "name": "Fiscal year",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "system",
+          "name": "System",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "plant",
+          "name": "Plant",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "fuel",
+          "name": "Fuel",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "fuel_origin",
+          "name": "Fuel origin",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "quantity",
+          "name": "Quantity",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "quantity_unit",
+          "name": "Quantity unit",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "net_generation_GWh",
+          "name": "Net generation gwh",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "source_table",
+          "name": "Source table",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "estimate_status",
+          "name": "Estimate status",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "printed_quantity",
+          "name": "Printed quantity",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "note",
+          "name": "Note",
+          "storage_type": "string",
+          "unit": ""
+        }
+      ],
+      "path": "data/sectors/power/canonical/activity/plant_fuel_2024_25.csv",
+      "period_basis": "fiscal",
+      "primary_key": [
+        "Record ID"
+      ],
+      "role": "input",
+      "row_count": 51,
+      "sha256": "85ca3268f4f29429339f569c63c356009deb1080f27ae0332b9e0187c1c6cb35",
+      "source_path": "data/activity/power/plant_fuel_2024_25.csv",
+      "source_sha256": "b602ea071cbb2ce0ecae87c618858a59cd3c2bdbb80c1fd11d388c807c17cb63",
+      "storage_path": "data/sectors/power/activity/plant_fuel_2024_25.csv",
+      "table_id": "activity.power.plant_fuel_2024_25",
+      "title": "Physical station fuel and generation FY2024-25",
+      "year_convention": "fiscal-start"
+    },
+    {
+      "columns": [
+        {
+          "field_id": "period_id",
+          "name": "Period id",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "fiscal_start_year_key",
+          "name": "Fiscal start year key",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "system",
+          "name": "System",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "plant",
+          "name": "Plant",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "fuel",
+          "name": "Fuel",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "fuel_origin",
+          "name": "Fuel origin",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "origin_evidence",
+          "name": "Origin evidence",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "quantity_printed",
+          "name": "Quantity printed",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "quantity_unit",
+          "name": "Quantity unit",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "mass_kt",
+          "name": "Mass kt",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "mass_semantics",
+          "name": "Mass semantics",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "mass_quantity_class",
+          "name": "Mass quantity class",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "mass_source_pointer",
+          "name": "Mass source pointer",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "net_generation_GWh",
+          "name": "Net generation gwh",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "generation_basis",
+          "name": "Generation basis",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "generation_source_pointer",
+          "name": "Generation source pointer",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "gwh_per_kt",
+          "name": "Gwh per kt",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "hr_gross_btu_per_kWh",
+          "name": "Hr gross btu per kwh",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "hr_net_export_btu_per_kWh",
+          "name": "Hr net export btu per kwh",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "hr_printed_eff_gross_pct",
+          "name": "Hr printed eff gross pct",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "hr_printed_eff_net_pct",
+          "name": "Hr printed eff net pct",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "hr_gross_constant_across_panel",
+          "name": "Hr gross constant across panel",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "hr_source_pointer",
+          "name": "Hr source pointer",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "energy_TJ_at_gross_hr",
+          "name": "Energy tj at gross hr",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "energy_TJ_at_net_export_hr",
+          "name": "Energy tj at net export hr",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "implied_ncv_at_gross_hr_TJ_per_Gg",
+          "name": "Implied ncv at gross hr tj per gg",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "implied_ncv_at_net_hr_TJ_per_Gg",
+          "name": "Implied ncv at net hr tj per gg",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "ipcc_default_ncv_TJ_per_Gg",
+          "name": "Ipcc default ncv tj per gg",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "ncv_vs_rank_default",
+          "name": "Ncv vs rank default",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "public_or_captive",
+          "name": "Public or captive",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "ke_treatment",
+          "name": "Ke treatment",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "flags",
+          "name": "Flags",
+          "storage_type": "string",
+          "unit": ""
+        }
+      ],
+      "path": "data/sectors/power/canonical/activity/plant_fuel_year_controls.csv",
+      "period_basis": "fiscal",
+      "primary_key": [
+        "Record ID"
+      ],
+      "role": "input",
+      "row_count": 39,
+      "sha256": "8fa117105d8bf8aea80dcaf8100b38652248833f7b18d5680287f04635ab3de3",
+      "source_path": "data/activity/power/plant_fuel_year_controls.csv",
+      "source_sha256": "9d5963f91aa446848f859f0389c5f87bbefd4f82a73608ecfd2e8fa950e05a2b",
+      "storage_path": "data/sectors/power/activity/plant_fuel_year_controls.csv",
+      "table_id": "activity.power.plant_fuel_year_controls",
+      "title": "Physical station fuel controls FY2019-20 to FY2023-24",
+      "year_convention": "fiscal-start"
+    },
+    {
+      "columns": [
+        {
+          "field_id": "fiscal_end_year",
+          "name": "Fiscal end year",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "fiscal_label",
+          "name": "Fiscal label",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "item",
+          "name": "Item",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "value",
+          "name": "Value",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "unit",
+          "name": "Unit",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "source_table",
+          "name": "Source table",
+          "storage_type": "string",
+          "unit": ""
+        },
+        {
+          "field_id": "basis",
+          "name": "Basis",
+          "storage_type": "string",
+          "unit": ""
+        }
+      ],
+      "path": "data/shared/canonical/activity/extension/rc67_agricultural_revision_controls.csv",
+      "period_basis": "fiscal",
+      "primary_key": [
+        "Record ID"
+      ],
+      "role": "input",
+      "row_count": 99,
+      "sha256": "144431ca181932c8d38be5eea6cd548aaa8464a04e7ac3f551f2ce0c06d8fc9e",
+      "source_path": "data/shared/activity/extension/rc67_agricultural_revision_controls.csv",
+      "source_sha256": "e25e1a936d3dfdaea4083e6dd83306339ab0d900906a2b22dc08a1f3d464d122",
+      "storage_path": "data/shared/activity/extension/rc67_agricultural_revision_controls.csv",
+      "table_id": "activity.extension.rc67_agricultural_revision_controls",
+      "title": "Preserved agriculture revision controls",
+      "year_convention": "fiscal-end"
     }
   ]
 }

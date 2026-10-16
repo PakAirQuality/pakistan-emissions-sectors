@@ -14,7 +14,7 @@ src/pkinv/inventory/mms_sensitivity.py.
                        rest of Eq 10.34a still missing. Isolates the fraction substitution
                        from the completion of the loss equation.
   B  Stage-aligned     Full Eq 10.34a: FracGasMS + FracLeachMS + FracN2MS + EF3.
-                       THIS IS THE SHIPPED CONFIGURATION.
+                       Complete IPCC structural alternative; the central reference is TAN.
   C  EMEP-linked       Pre-field volatilisation from the EMEP/EEA TAN chain (housing then
                        storage) instead of Table 10.22, other Eq 10.34a terms retained.
   D  Buffalo as Other  As B, but buffalo take the Other Cattle column of Table 10.22 instead
@@ -60,7 +60,7 @@ def _emep_prefield_frac(data):
     """
     from pkinv.sectors.agriculture import air_pollutants as ap
     from pkinv.sectors.agriculture import manure as _manure
-    _, npools = _manure.compute(data)
+    _, npools = _manure.compute(data, method="tan")
     f = ap.livestock_nh3_flows(data, npools)
     return (f["housing"] + f["yard"] + f["storage"]) / npools["managed_N"]
 
@@ -73,6 +73,10 @@ def _rebuild(data, npools, gas_fn, loss_fn):
     Returns (npools2, mms_indirect_Gg, volat_uncert_pct).
     """
     out = dict(npools)
+    # Legacy diagnostic substitutions explicitly use the IPCC field formulation.
+    # Do not retain reference TAN field-loss metadata while replacing FON.
+    out.pop("field_volat_NH3_N", None)
+    out.pop("field_volat_NOx_N", None)
     volat = fon = 0.0
     terms = []
     for r in npools["by_system"]:
@@ -99,7 +103,7 @@ def _run(data, label, gas_fn, loss_fn):
     base += residue_burning.compute(data)
     base += liming_urea.compute(data)
 
-    mcomp, npools = manure.compute(data)
+    mcomp, npools = manure.compute(data, method="ipcc")
     npools2, indirect_gg, volat_u = _rebuild(data, npools, gas_fn, loss_fn)
     mcomp = copy.deepcopy(mcomp)
     for c in mcomp:
@@ -130,8 +134,8 @@ def _run(data, label, gas_fn, loss_fn):
         "MMS_indirect_N2O_Gg": gg("Manure management", "Indirect N2O (volatilisation)"),
         "manure_N_applied_Mt_N": npools2["FON_N"] / 1e9,
         "soil_direct_N2O_manure_Gg": gg("Managed soils", "Direct N2O - organic manure"),
-        "soil_indirect_volat_N2O_Gg": gg("Managed soils", "Indirect N2O - volatilisation"),
-        "soil_indirect_leach_N2O_Gg": gg("Managed soils", "Indirect N2O - leaching/runoff"),
+        "soil_indirect_volat_N2O_Gg": sum(c["emissions_Gg"] for c in scomp if c["subitem"].startswith("Indirect N2O - volatilisation")),
+        "soil_indirect_leach_N2O_Gg": sum(c["emissions_Gg"] for c in scomp if c["subitem"].startswith("Indirect N2O - leaching/runoff")),
         "managed_soils_Mt": sum(c["co2e_Mt_AR5"] for c in comps
                                 if c["category"] == "Managed soils"),
         "national_total_Mt": sum(c["co2e_Mt_AR5"] for c in comps),
@@ -155,7 +159,7 @@ def all_runs(data=None):
              lambda r: legacy, lambda r: legacy),
         _run(data, "A2. Correct fraction only (FracGasMS, Eq 10.34a incomplete)",
              lambda r: r["FracGasMS"], lambda r: r["FracGasMS"]),
-        _run(data, "B. Stage-aligned IPCC, full Eq 10.34a  [SHIPPED]",
+        _run(data, "B. Complete IPCC alternative, full Eq 10.34a",
              lambda r: r["FracGasMS"], lambda r: r["FracLossMS"]),
         _run(data, "C. EMEP-linked pre-field volatilisation",
              lambda r: emep,
@@ -167,6 +171,27 @@ def all_runs(data=None):
                                  other_cattle_class(r) + "_" + r["system"])
                         + r["FracLeachMS"] + r["FracN2MS"] + r["EF3"])),
     ]
+    # The reference is a complete engine rerun, not a national-average fraction
+    # substituted into an otherwise different nitrogen formulation.
+    comps, pools = manure.rerun_nitrogen(data, method="tan")
+    extra = enteric.compute(data) + rice.compute(data) + residue_burning.compute(data) + liming_urea.compute(data)
+    all_components = comps + extra
+    def gg(category, prefix):
+        return sum(c["emissions_Gg"] for c in comps if c["category"] == category and c["subitem"].startswith(prefix))
+    runs.append({
+        "run": "R. Coherent species-specific TAN reference [SHIPPED]",
+        "livestock_NH3_kt_implied": (pools["managed_NH3_N"] + sum(pools["field_volat_NH3_N"].values())) * NH3_PER_N / 1e6,
+        "MMS_direct_N2O_Gg": gg("Manure management", "Direct N2O"),
+        "MMS_indirect_N2O_Gg": gg("Manure management", "Indirect N2O (volatilisation)"),
+        "manure_N_applied_Mt_N": pools["FON_N"] / 1e9,
+        "soil_direct_N2O_manure_Gg": gg("Managed soils", "Direct N2O - organic manure"),
+        "soil_indirect_volat_N2O_Gg": gg("Managed soils", "Indirect N2O - volatilisation"),
+        "soil_indirect_leach_N2O_Gg": gg("Managed soils", "Indirect N2O - leaching/runoff"),
+        "managed_soils_Mt": sum(gwp.to_co2e(c["gas"], c["emissions_Gg"], "AR5") / 1000 for c in comps if c["category"] == "Managed soils"),
+        "national_total_Mt": sum(gwp.to_co2e(c["gas"], c["emissions_Gg"], "AR5") / 1000 for c in all_components),
+        "prefield_volat_pct_of_managed": 100 * pools["volat_managed_N"] / pools["managed_N"],
+        "closing_N_residual_kg": pools["excreted_N"] - pools["FPRP_cattle_N"] - pools["FPRP_other_N"] - pools["managed_N"] - pools["diverted_N"],
+    })
     return runs
 
 
@@ -211,14 +236,15 @@ def main():
     print("    A  legacy                                        %8.2f" % a)
     print("    +  substitute FracGASM -> per-system FracGasMS   %+8.2f" % (a2 - a))
     print("    +  complete Eq 10.34a (leaching, N2, N2O-N)      %+8.2f" % (b - a2))
-    print("    =  B shipped                                     %8.2f" % b)
+    print("    =  B complete IPCC alternative                   %8.2f" % b)
 
     shipped = _shipped_total_mt()
-    if abs(b - shipped) > SHIPPED_TOL:
-        raise SystemExit("Run B no longer reproduces the shipped agriculture total %.2f (got %.2f)"
-                         % (shipped, b))
+    reference = runs[-1]["national_total_Mt"]
+    if abs(reference - shipped) > SHIPPED_TOL:
+        raise SystemExit("Run R no longer reproduces the shipped agriculture total %.2f (got %.2f)"
+                         % (shipped, reference))
     print()
-    print("  Run B reproduces the shipped agriculture total %.2f Mt (national_totals_2024.csv),"
+    print("  Run R reproduces the shipped agriculture total %.2f Mt (national_totals_2024.csv),"
           % shipped)
     print("  so the A -> B attribution above is a decomposition of the inventory's own number;")
     print("  Run A on today's herd is %.2f Mt (the pre-re-base edition printed %.1f)."

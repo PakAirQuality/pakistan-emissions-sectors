@@ -162,9 +162,9 @@ def benchmark_comparison(prebuilt=None):
     AGRICULTURE total and printed a ratio of 12.61. This resolves by category first, then
     by sector name, then TOTAL, so every benchmark lands against the thing it measures.
 
-    Rows deliberately left unresolved: those whose engine_category is "(not estimated)",
-    which is how a benchmark for a category this inventory does not compute - industrial
-    combustion at 43.98 Mt - stays visible instead of disappearing.
+    Rows whose engine_category is "(not estimated)" remain explicitly unresolved.
+    Estimated industrial combustion is compared at its admitted source boundary;
+    the comparator difference is not a missing-emissions quantity.
 
     THE ENGINE SIDE IS RESOLVED IN THE ROW'S OWN GWP. Until rc10 this emitted the AR5
     engine value unconditionally, so the seven Climate TRACE rows - published under AR6 -
@@ -193,7 +193,8 @@ def benchmark_comparison(prebuilt=None):
         # EDGAR publishes 1A2 as one number; this inventory splits the same category
         # across two sectors - captive self-generation lives in power, process heat and
         # boilers in industry - so a benchmark pointed at either one alone understates
-        # coverage by roughly half and reads as a discrepancy rather than as the gap it is.
+        # the compared activity boundary. The resulting difference can reflect
+        # activity, factors, coverage and fiscal/calendar period choices.
         e["1A2 (all estimated)"] = sum(
             v for k, v in e.items() if k.endswith("(1A2)"))
         engine[basis] = e

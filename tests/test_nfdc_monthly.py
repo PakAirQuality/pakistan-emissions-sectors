@@ -20,6 +20,8 @@ import csv
 import os
 import sys
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 from pkinv.core.io import read_rows
 from _support import ROOT
 
@@ -177,7 +179,83 @@ class TheGrainThatUnblockedIt(unittest.TestCase):
         split = {r["period_id"] for r in rows if r["subitem"] != "(no component split)"}
         self.assertEqual(set(), undivided,
                          "agriculture fell back to the coarse grain for %s" % sorted(undivided))
-        self.assertEqual(9, len(split))
+        self.assertEqual(set(CORE_PERIOD_IDS), split)
+
+    def test_latest_urea_profile_reads_the_held_source_months_and_annual_control(self):
+        from pkinv.sectors.agriculture import nfdc_monthly
+        from pkinv.core.monthly import normalise
+        source = _rows(nfdc_monthly.ANNEX5)
+        observations = {r["calendar_year"] + "%02d" % MONTH_NUMBER[r["month"]]:
+                        float(r["offtake_product_tonnes"]) for r in source
+                        if r["fiscal_year"] == "2024-25" and r["product"] == "Urea"}
+        self.assertEqual(len(observations), 12)
+        self.assertEqual(nfdc_monthly.series(2024), observations)
+        profile, classes = nfdc_monthly.profile(2024)
+        self.assertEqual(profile, normalise(observations))
+        self.assertEqual(set(classes.values()), {"T2"})
+        self.assertEqual(nfdc_monthly.source_name(2024), "AFR 2024-25 Annex-5")
+        annual = _rows(asset_path(ROOT, "data", "nfdc", "afr2025_offtake_by_product.csv"))
+        total = sum(float(r["offtake_kt"]) * 1000 for r in annual
+                    if r["fiscal_year"] == "2024-25" and r["product"] == "Urea" and r["offtake_kt"])
+        # Independent annual table prints whole kt; its half-unit is 500 tonnes.
+        self.assertAlmostEqual(sum(observations.values()), total, delta=500)
+
+    def test_annex5_vintage_overlap_is_compared_without_replacing_older_agency_rows(self):
+        from pkinv.sectors.agriculture import nfdc_monthly
+        previous = nfdc_monthly.series(2023)
+        newer = {r["calendar_year"] + "%02d" % MONTH_NUMBER[r["month"]]:
+                 float(r["offtake_product_tonnes"]) for r in _rows(nfdc_monthly.ANNEX5)
+                 if r["fiscal_year"] == "2023-24" and r["product"] == "Urea"}
+        self.assertEqual(set(previous), set(newer))
+        self.assertLessEqual(max(abs(previous[m] - newer[m]) for m in previous), 1)
+        self.assertEqual(nfdc_monthly.source_name(2023), "AFR 2023-24 Annex-5")
+
+    def test_final_latest_synthetic_months_have_source_weights_and_source_identity(self):
+        from pkinv.sectors.agriculture import nfdc_monthly
+        expected, _classes = nfdc_monthly.profile(2024)
+        rows = [r for r in _rows(os.path.join(ROOT, "outputs", "pakemis_temporal_profiles.csv"))
+                if r["fiscal_year"] == "FY2024-25" and r["sector"] == "agriculture"
+                and r["category"] == "Managed soils" and "synthetic" in r["subitem"].lower()]
+        self.assertEqual(len(rows), 4 * 12)
+        for row in rows:
+            self.assertAlmostEqual(float(row["weight"]), expected[row["month"]], places=11)
+            self.assertEqual(row["temporal_evidence_class"], "TE2")
+            self.assertIn("annex5_national_month_product.csv", row["source_id"])
+
+    def test_final_latest_fertiliser_nh3_closes_by_source_and_keeps_application_proxy_class(self):
+        from collections import defaultdict
+        from pkinv.sectors.agriculture import nfdc_monthly
+        from pkinv.core.configurations import ALL
+        from pkinv.report.air_annual import atom_configuration
+        expected, _classes = nfdc_monthly.profile(2024)
+        atoms = [r for r in _rows(os.path.join(ROOT, "outputs", "pakemis_air_atomic_annual.csv"))
+                 if r["period_id"] == "FY2024-25" and r["pollutant"] == "NH3"
+                 and r["source_class_id"].startswith("agriculture:fertiliser:")]
+        # Annual atoms store shared agriculture under its nitrogen case once;
+        # monthly products materialise each complete S/L × TAN/IPCC configuration.
+        annual = {(cfg, r["source_class_id"]): float(r["emissions_Gg"])
+                  for cfg in ALL for r in atoms
+                  if r["configuration_id"] == atom_configuration(cfg, "agriculture")}
+        placed = defaultdict(float)
+        months = defaultdict(set)
+        for row in _rows(os.path.join(ROOT, "outputs", "pakemis_air_monthly.csv")):
+            if row["period_id"] != "FY2024-25" or row["pollutant"] != "NH3":
+                continue
+            key = row["configuration_id"], row["source_class_id"]
+            if key not in annual:
+                continue
+            self.assertEqual(row["temporal_evidence_class"], "TE3")
+            self.assertAlmostEqual(float(row["month_share"]), expected[row["month"]], places=11)
+            self.assertAlmostEqual(float(row["emissions_Gg"]),
+                                   annual[key] * expected[row["month"]], delta=1e-8)
+            placed[key] += float(row["emissions_Gg"])
+            self.assertNotIn(row["month"], months[key], key)
+            months[key].add(row["month"])
+        self.assertEqual(set(placed), set(annual))
+        self.assertEqual({key[0] for key in annual}, set(ALL))
+        for key, amount in annual.items():
+            self.assertEqual(len(months[key]), 12)
+            self.assertAlmostEqual(placed[key], amount, delta=1e-8)
 
     def test_the_synthetic_share_carries_the_offtake_shape_in_every_year(self):
         """The 90 Mt. Synthetic-fertiliser nitrogen is TE2 in all nine years."""
@@ -185,7 +263,7 @@ class TheGrainThatUnblockedIt(unittest.TestCase):
                                               "pakemis_temporal_profiles.csv"))
                 if r["sector"] == "agriculture" and r["category"] == "Managed soils"
                 and "synthetic" in r["subitem"].lower()]
-        self.assertEqual(9, len({r["fiscal_year"] for r in rows}))
+        self.assertEqual(set(CORE_PERIOD_IDS), {r["fiscal_year"] for r in rows})
         self.assertEqual({"TE2"}, {r["temporal_evidence_class"] for r in rows},
                          "the synthetic share stopped carrying the offtake shape - all "
                          "nine years are own-months TE2 since the Annex-5 lane landed")

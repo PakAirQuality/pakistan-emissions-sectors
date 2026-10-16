@@ -2,11 +2,17 @@
  "expect": [
   {
    "cell": 0,
-   "display": "771.873",
-   "note_dung_reference_2026_10_13": "2026-10-13, rc67: the roles swapped and this golden changed sides. It was air_panel_survey_pm25_2024, requested S_HIES1925 (the survey-anchored series, then the alternative) and returned 430.235 Gg. S_HIES1925 is retired because what it named is the reference; the air panel's alternative is the ledger series L_HERD1624, every year's diverted dung burned in households, and it returns 771.873 Gg - the figure the reference returned through rc66. The reference itself now returns 422.683, not the old 430.235: the rc66 survey series carried the 2024-25 round's own 11.97 Mt in its reference-year dung PM2.5 beside a mass column that said 10.93, and the reference burns the interpolated 10.93 Mt in both."
+   "display": "772.021",
+   "exact": "772.021147",
+   "group": {
+    "pollutant": "PM2.5"
+   },
+   "note_dung_reference_2026_10_13": "2026-10-13, rc67: the roles swapped and this golden changed sides. It was air_panel_survey_pm25_2024, requested S_HIES1925 (the survey-anchored series, then the alternative) and returned 430.235 Gg. S_HIES1925 is retired because what it named is the reference; the air panel's alternative is the ledger series L_HERD1624, every year's diverted dung burned in households, and it returns 771.873 Gg - the figure the reference returned through rc66. The reference itself now returns 422.683, not the old 430.235: the rc66 survey series carried the 2024-25 round's own 11.97 Mt in its reference-year dung PM2.5 beside a mass column that said 10.93, and the reference burns the interpolated 10.93 Mt in both.",
+   "note_rc68": "Reconciled independently against pakemis_air_annual_fy2015_16_fy2024_25.csv after the integrated source/accounting revision; previous notes describe historical releases.",
+   "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "cbc17b3aaf695539b5a9e5e255bab9bb",
+ "expect_receipt": "ee38dde36234326181adcb81403ebef2",
  "function": "query_air",
  "golden_id": "air_panel_ledger_pm25_2024",
  "note": "rc67: renamed from air_panel_survey_pm25_2024 and re-pointed at the ledger series (see note_dung_reference_2026_10_13 on the cell).",

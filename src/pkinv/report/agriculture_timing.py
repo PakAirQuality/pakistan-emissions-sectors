@@ -13,18 +13,11 @@ different questions, so quoting either alone misleads.
   field burning are genuinely time-variable and are resolved. Managed soils is genuinely
   time-variable and only partly observed.
 
-Read together, the honest figure for "timing this inventory should resolve and has not" is
-6.67% of nine years and 7.00% of the reference year - not 87.3%. Read apart, the first number
-overstates the problem by more than an order of magnitude and the second hides that a real
-gap exists. Both classes have been computed for several releases; they lived in two products
-at two grains, so a reader had to know to join them. This publishes the join.
-
-NOT THE NATIONAL CROSSWALK. pakemis_flatness_crosswalk.csv already cross-tabulates TE class
-against flatness bucket for the whole inventory - thirteen cells, no sector split. It answers
-"how do the two classifications overlap nationally". This answers "which agriculture category
-is which, and how much of the sector's timing is genuinely unresolved", per category and for
-the reference year as well as the panel. The national table cannot produce 6.67% or 7.00%
-because it has no sector dimension, and this one cannot produce the national overlap.
+The joint table distinguishes unresolved timing of genuinely variable processes from
+calendar allocation of continuous processes. It reports mass-weighted shares for the
+complete supported fiscal panel and separately for the declared reference year. The
+national flatness crosswalk has no sector dimension, so these agriculture-specific
+shares are calculated here rather than inferred from the national table.
 
 THE NFDC RESIDUAL, published rather than renormalised. NFDC's national monthly offtake and
 its provincial table do not sum to each other: 15,918 t of product over the fiscal year,
@@ -79,18 +72,18 @@ def timing_rows():
         dec = decomposition.get(category, {})
         should_vary = dec.get("activity_should_vary_but_unobserved", "") == "yes"
         classes = collections.Counter(r["temporal_evidence_class"] for r in rows)
-        nine = sum(float(r["co2e_Mt_AR5"] or 0) for r in rows)
+        panel = sum(float(r["co2e_Mt_AR5"] or 0) for r in rows)
         ref = sum(float(r["co2e_Mt_AR5"] or 0) for r in rows if r["period_id"] == REFERENCE)
         # Unobserved means BOTH: the activity should vary, and this month's timing rests on
         # no evidence. A TE4 month of a continuous process is not unobserved timing.
-        unobs_nine = sum(float(r["co2e_Mt_AR5"] or 0) for r in rows
+        unobs_panel = sum(float(r["co2e_Mt_AR5"] or 0) for r in rows
                          if should_vary and r["temporal_evidence_class"] == "TE4")
         unobs_ref = sum(float(r["co2e_Mt_AR5"] or 0) for r in rows
                         if should_vary and r["temporal_evidence_class"] == "TE4"
                         and r["period_id"] == REFERENCE)
-        totals["nine"] += nine
+        totals["panel"] += panel
         totals["ref"] += ref
-        totals["unobs_nine"] += unobs_nine
+        totals["unobs_panel"] += unobs_panel
         totals["unobs_ref"] += unobs_ref
         out.append([
             rows[0]["ipcc_code"], category,
@@ -98,8 +91,8 @@ def timing_rows():
             dec.get("flatness_class", "unclassified"),
             dec.get("flatness_physically_appropriate", ""),
             "yes" if should_vary else "no",
-            round(nine, 6), round(unobs_nine, 6),
-            round(100.0 * unobs_nine / nine, 4) if nine else "",
+            round(panel, 6), round(unobs_panel, 6),
+            round(100.0 * unobs_panel / panel, 4) if panel else "",
             round(ref, 6), round(unobs_ref, 6),
             round(100.0 * unobs_ref / ref, 4) if ref else "",
             dec.get("expected_temporal_driver", ""),
@@ -107,8 +100,8 @@ def timing_rows():
         ])
     out.append([
         "3", "TOTAL", "", "", "", "",
-        round(totals["nine"], 6), round(totals["unobs_nine"], 6),
-        round(100.0 * totals["unobs_nine"] / totals["nine"], 4),
+        round(totals["panel"], 6), round(totals["unobs_panel"], 6),
+        round(100.0 * totals["unobs_panel"] / totals["panel"], 4),
         round(totals["ref"], 6), round(totals["unobs_ref"], 6),
         round(100.0 * totals["unobs_ref"] / totals["ref"], 4),
         "", "the share of agriculture whose timing this inventory should resolve and has not",
@@ -164,7 +157,7 @@ def _as_dicts(fieldnames, rows):
 TIMING_FIELDS = ["ipcc_code", "category", "temporal_evidence_classes",
                  "physical_timing_class", "flatness_physically_appropriate",
                  "activity_should_vary_but_unobserved",
-                 "co2e_Mt_nine_years", "unobserved_Mt_nine_years", "unobserved_pct_nine_years",
+                 "co2e_Mt_panel", "unobserved_Mt_panel", "unobserved_pct_panel",
                  "co2e_Mt_reference_year", "unobserved_Mt_reference_year",
                  "unobserved_pct_reference_year", "expected_temporal_driver", "basis"]
 RESIDUAL_FIELDS = ["calendar_year", "month", "product", "national_tonnes",
@@ -181,8 +174,8 @@ def main(argv=()):
                     "physical_timing_class: whether being flat is CORRECT for the process.",
                     "A TE4 month of a continuous stock-driven process is not unresolved timing;",
                     "a TE4 month of a genuinely variable process is. Only the second is counted",
-                    "as unobserved, which is why the honest figure is 6.67% of nine years and",
-                    "7.00% of the reference year rather than the 87.3% a TE count alone gives.",
+                    "as unobserved. Panel and reference-year shares are calculated from the",
+                    "current exported monthly coverage records; neither is a fixed percentage.",
                 ))
     residual = residual_rows()
     write_table(RESIDUAL_OUT, RESIDUAL_FIELDS, _as_dicts(RESIDUAL_FIELDS, residual),
@@ -197,7 +190,7 @@ def main(argv=()):
                 ))
     total = timing[-1]
     print("agriculture timing classes -> %s" % os.path.relpath(TIMING_OUT, ROOT))
-    print("  unobserved timing: %.2f%% over nine years, %.2f%% in the reference year"
+    print("  unobserved timing: %.2f%% over the supported fiscal panel, %.2f%% in the reference year"
           % (total[8], total[11]))
     print("NFDC national-province residual -> %s" % os.path.relpath(RESIDUAL_OUT, ROOT))
     print("  %s t over the year (%s%% of national), assigned to Other/unallocated"

@@ -80,7 +80,8 @@ def compute(data, year=None):
                      "subitem": "Domestic aviation %s BC" % stage,
                      "ghg_subitem": stage_anchor[stage], "pollutant": "BC",
                      "emissions_kt": pm25[stage] * frac,
-                     "uncert_pct": product(ad_u, data.efu("aviation_fuel_ef", "BC_fraction")),
+                     "uncert_pct": product(ad_u, data.efu("aviation_fuel_ef", "PM2.5"),
+                                           data.efu("aviation_fuel_ef", "BC_fraction")),
                      "method": "fraction of PM2.5", "engine_coverage_share": "",
                      "imputed": True})
     return rows

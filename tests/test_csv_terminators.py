@@ -33,6 +33,32 @@ LF_TERMINATED = (
     "pakemis_minerals_panel_screening.csv",
     "pakemis_btr_comparison.csv",
     "pakemis_air_atomic_annual.csv",
+    # rc68 integrated producers pin LF, or write an LF provenance banner via
+    # core.io before CSV rows. Historical compatibility views keep their pins.
+    "pakemis_air_annual_fy2015_16_fy2024_25.csv",
+    "pakemis_air_source_classes_fy2015_16_fy2024_25.csv",
+    "power_air_screening_fy2015_16_fy2024_25.csv",
+    "pakemis_air_source_coverage.csv",
+    "pakemis_air_monthly.csv",
+    "pakemis_air_monthly_unallocated.csv",
+    "pakemis_air_temporal_support.csv",
+    "pakemis_air_conditional_uncertainty.csv",
+    "pakemis_air_trend_uncertainty.csv",
+    "pakemis_air_uncertainty_drivers.csv",
+    "pakemis_air_uncertainty_parameters.csv",
+    "pakemis_ghg_conditional_uncertainty.csv",
+    "pakemis_ghg_trend_uncertainty.csv",
+    "pakemis_ghg_uncertainty_drivers.csv",
+    "pakemis_ghg_uncertainty_parameters.csv",
+    "pakemis_air_structural_sensitivities.csv",
+    "pakemis_nitrogen_partition_sensitivity.csv",
+    "pakemis_air_htap_comparison.csv",
+    "pakemis_air_htap_species_comparison.csv",
+    "pakemis_htap_nh3_annual.csv",
+    "pakemis_htap_nh3_monthly.csv",
+    "pakemis_coal_allocation_cases.csv",
+    "pakemis_release_change_summary.csv",
+    "pakemis_primary_geography_licence_audit.csv",
     "pakemis_air_annual_fy2015_16_fy2023_24.csv",
     "pakemis_air_coverage_matrix.csv",
     "power_air_screening_fy2015_16_fy2023_24.csv",
@@ -250,8 +276,8 @@ LF_TERMINATED = (
     "pakemis_validation_scorecard.csv",
     "pakemis_validation_sector_scorecard.csv",   # rc37, the same writer as its siblings
     "pakemis_data_provenance.csv",               # rc37, pkinv.report.data_provenance
-    "pbs_minerals_parse_summary.csv",
-    "pbs_minerals_quarantine.csv",
+    # The repaired PBS summary/quarantine controls have no LF banner and use
+    # write_or_check's CRLF CSV default; source replay holds their exact bytes.
     "pbs_qim_parse_summary.csv",
     "pbs_qim_quarantine.csv",
     "power_gem_audit.csv",

@@ -37,7 +37,7 @@ import io
 import json
 import os
 from pkinv.paths import PAPER_NATIONAL_QUERIES  # noqa: E402
-from pkinv.paths import PAPER_NATIONAL_MAIN_REL, PAPER_NATIONAL_REL  # noqa: E402
+from pkinv.paths import PAPER_NATIONAL_REPORT_REL, PAPER_NATIONAL_REL  # noqa: E402
 import re
 import shutil
 import sys
@@ -64,13 +64,13 @@ FIGURES = asset_path("outputs", "paper_figures")
 # sections/gen_tab_x.tex belongs to the SHIPPED VERSION, while one writing
 # figures/fig_x.png belongs to the shared figures directory every version draws from.
 # One string served both while the article sat at paper_national/; it cannot now.
-PAPER = PAPER_NATIONAL_MAIN_REL
+PAPER = PAPER_NATIONAL_REPORT_REL
 PAPER_SHARED = PAPER_NATIONAL_REL
 
 
 def _paper_root(relative):
     """Which of the two roots a registry path belongs under."""
-    return PAPER_SHARED if relative.startswith("figures/") else PAPER
+    return PAPER_SHARED if relative.startswith(("figures/", "versions/")) else PAPER
 SIDECAR_FIELDS = ("artefact_id", "kind", "query_function", "params_sha256", "result_sha256",
                   "receipt", "output_file", "output_sha256", "image_sha256")
 DATA_FIELDS = ("artefact_id", "query_index", "cell_index", "group_json", "exact", "display",

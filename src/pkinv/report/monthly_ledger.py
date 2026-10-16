@@ -58,7 +58,7 @@ def main():
         f.write("# Configuration L at monthly grain. ONLY the residential sector is here,\n"
                 "# because L differs from the reference in the residential dung basis and\n"
                 "# nowhere else: every other sector's monthly rows are bit-identical to\n"
-                "# pakemis_monthly_fy2015_16_fy2023_24.csv's reference-configuration rows\n"
+                "# pakemis_monthly_fy2015_16_fy2024_25.csv's reference-configuration rows\n"
                 "# for FY2023-24, and republishing them would present sameness as data.\n")
         w = csv.DictWriter(f, fieldnames=["configuration_id", "category", "subitem",
                                           "gas", "month", "share", "emissions_Gg",

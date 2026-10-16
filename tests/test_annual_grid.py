@@ -28,7 +28,7 @@ from pkinv.paths import OUTPUTS
 from pkinv.core.gis.grid import GRID_SPEC, GRID_SPEC_ID
 from pkinv.report.annual_grid import CORE, FILL, GASES, VIEWS, period_bounds
 
-NATIONAL = os.path.join(OUTPUTS, "pakemis_monthly_fy2015_16_fy2023_24.csv")
+NATIONAL = os.path.join(OUTPUTS, "pakemis_monthly_fy2015_16_fy2024_25.csv")
 UNALLOC = os.path.join(OUTPUTS, "pakemis_spatial_unallocated_by_year.csv")
 
 
@@ -137,7 +137,7 @@ class TestTheCubeSaysWhatItIs(unittest.TestCase):
         epoch = datetime.date(1970, 1, 1)
         expected = {row[0]: row for row in period_bounds()}
         pids = [str(p) for p in self.ds.variables["period_id"][:]]
-        self.assertEqual(len(pids), 9)
+        self.assertEqual(pids, [r[0] for r in period_bounds()])
         previous_end = None
         for index, pid in enumerate(pids):
             lower = epoch + datetime.timedelta(days=float(bounds[index][0]))
@@ -229,32 +229,30 @@ class TestTheCubeSaysWhatItIs(unittest.TestCase):
                         "fallback is splitting the non-physical views into a companion file, "
                         "not raising this bound" % (size / 1e6))
 
-    def test_the_period_named_alternative_is_not_manufactured_for_history(self):
-        """Only FY2023-24 has the period-named alternative, and the annual cube must not
-        imply nine.
+    def test_each_maintained_configuration_has_its_own_complete_cube(self):
+        """The four released configurations have independent, explicitly labelled cubes.
 
-        L_2023_24 names one period: the residential re-run with all the diverted dung
-        burned in households, for the reference year. A nine-year series on that basis
-        is a different claim with its own id (L_HERD1624, the air panel's), so this cube
-        declares itself REF and carries no configuration axis, and the annual product has
-        L_2023_24 rows for FY2023-24 alone.
-
-        rc67 (2026-10-13): this guard was test_configuration_s_is_not_manufactured_for_
-        history and its reason was that the survey was run in the reference year only.
-        The survey series is the reference in all nine years now, built from two rounds,
-        and the id that must not spread across history is the ledger's.
+        The former period-only dung alternative was replaced by a consistently applied
+        structural configuration. It must have every core period without becoming a
+        second scenario axis that could be accidentally summed into the reference.
         """
         from pkinv.core import configurations as conf
-        self.assertEqual(conf.LEDGER, "L_2023_24")
+        self.assertEqual(conf.LEDGER, "L_TAN")
         self.assertEqual(getattr(self.ds, "configuration_id", None), conf.REFERENCE)
-        self.assertNotEqual(getattr(self.ds, "configuration_id", None), conf.LEDGER)
         self.assertNotIn("spatial_configuration", self.ds.dimensions)
         self.assertEqual([str(v) for v in self.ds.variables["spatial_view"][:]], list(VIEWS))
-        annual = _read(os.path.join(OUTPUTS, "pakemis_annual_fy2015_16_fy2023_24.csv"))
-        periods = {r["period_label"] for r in annual if r["configuration_id"] == conf.LEDGER}
-        self.assertEqual(periods, {"FY2023-24"})
-        self.assertEqual(len({r["period_label"] for r in annual
-                              if r["configuration_id"] == conf.REFERENCE}), 9)
+        from pkinv.report.spatial_by_year import configuration_grid_path
+        annual = _read(os.path.join(OUTPUTS, "pakemis_annual_fy2015_16_fy2024_25.csv"))
+        expected_periods = {p[0] for p in period_bounds()}
+        for cfg in conf.ALL:
+            periods = {r["period_label"] for r in annual if r["configuration_id"] == cfg}
+            self.assertEqual(periods, expected_periods, cfg)
+            path = CORE if cfg == conf.REFERENCE else configuration_grid_path(cfg)
+            with netCDF4.Dataset(path) as cube:
+                self.assertEqual(cube.configuration_id, cfg)
+                self.assertEqual(set(str(p) for p in cube.variables["period_id"][:]),
+                                 expected_periods, cfg)
+                self.assertNotIn("configuration_id", cube.dimensions)
 
 
 if __name__ == "__main__":

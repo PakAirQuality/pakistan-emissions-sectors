@@ -28,37 +28,37 @@
       "hashed_in": "outputs/release_manifest.json",
       "on_disk": true,
       "path": "outputs/pakemis_btr_comparison.csv",
-      "sha256": "20246434cec7431f8a150ea590ee50798fdabaec6db2c21de09652c29cf39eb6",
+      "sha256": "2565d1f0498b4a49129a851ad60a3a65896b311a322774b795e574ccb601d99e",
       "task": "T-VAL-BTR",
       "what": "year-matched comparison with Pakistan's first BTR, tiered"
     },
     {
-      "bytes": 16743,
+      "bytes": 16747,
       "guard": "tests/test_release_axis_fingerprints.py",
       "hashed_in": "outputs/release_manifest.json",
       "on_disk": true,
       "path": "outputs/pakemis_release_axis_fingerprints.csv",
-      "sha256": "ea490c9c084bb63479e825fd6a1638eda799624c296c4d325f2d0d6d89a60a8f",
+      "sha256": "570de3df1e5b5b944d57a3de410bd988aa28844ae64a3cdbe5c9bea1d87f5999",
       "task": "T-VINTAGE-AXES, T-AXIS-TIME",
       "what": "coarse and fine digests per disaggregated table per published vintage"
     },
     {
-      "bytes": 55826,
+      "bytes": 56632,
       "guard": "tests/test_citation_pointer_audit.py",
       "hashed_in": "outputs/release_manifest.json",
       "on_disk": true,
       "path": "outputs/pakemis_citation_pointer_audit.csv",
-      "sha256": "df964f7f46a2ff06d86f3216103aa05b57bcb5c0c38c47f77433fa5de3bc4572",
+      "sha256": "64acf75f4211d8a1c72e8deda5fb98f395759985b24226d8bfd587724f0d59e5",
       "task": "T-CITATION-POINTERS, T-POINTERS-PBS",
       "what": "whether a reader can find the figure in the document, per registered source"
     },
     {
-      "bytes": 17855,
+      "bytes": 13285,
       "guard": "tests/test_minerals_panel_screening.py",
       "hashed_in": "outputs/release_manifest.json",
       "on_disk": true,
       "path": "outputs/pakemis_minerals_panel_screening.csv",
-      "sha256": "b55396e32f170ad2e4c702ae08bf6867e0609863007fea7ea7d3d002a9ae6256",
+      "sha256": "fc2bf314116e123d866c6b2b9b304a15bb417d1e4dcf449ec34c11290117e1ac",
       "task": "T-MINERALS-PANEL, T-MINERALS-MECHANISM",
       "what": "which province-years of the minerals panel are whole, what a hole costs the served shape, and where a closing control does not describe the panel"
     },
@@ -93,5 +93,5 @@
       "what": "proves the three release commits are in order; cannot live in the suite because the record is produced BY the suite"
     }
   ],
-  "release": "1.0.0rc67"
+  "release": "1.0.0rc68"
 }

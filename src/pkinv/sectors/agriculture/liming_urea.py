@@ -39,6 +39,8 @@ def urea_mass_t(data):
     A backcast year is stamped with faostat_basis_year by timeseries._apply_year; the anchor is
     a fresh InventoryData and carries no stamp. The basis is READ, never inferred: the two
     masses differ by 0.207%, so a wrong choice would not be visible in the output."""
+    if getattr(data, "urea_offtake_product_t", None) is not None:
+        return data.urea_offtake_product_t, "direct_product_offtake"
     if getattr(data, "faostat_basis_year", None) is not None:
         n_total = data.fertilizer["nitrogen_N_offtake"]["value_t"]
         return (n_total * data.p("urea_N_share") / data.p("urea_N_content"),

@@ -75,6 +75,10 @@ def _data_citations():
     """{(surname, year): {files}} over every CSV under data/."""
     found = {}
     for path in sorted(glob.glob(os.path.join(ROOT, "data", "**", "*.csv"), recursive=True)):
+        # A preserved release has its own source vintage and bibliography. It is
+        # not a current source record; live data still receive the full sweep.
+        if os.path.relpath(path, ROOT).replace(os.sep, "/").startswith("data/baselines/"):
+            continue
         try:
             rows = list(csv.DictReader(open(path, newline="", encoding="utf-8")))
         except Exception:

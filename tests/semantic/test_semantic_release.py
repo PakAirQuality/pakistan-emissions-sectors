@@ -174,104 +174,57 @@ class TestEveryTableIsWhatTheContractSays(unittest.TestCase):
 
 
 class TestTheClosuresTheContractStates(unittest.TestCase):
-    """The two computed tables against the closures the release already publishes."""
+    """The released four-configuration account closes at its actual boundaries."""
 
     @classmethod
     def setUpClass(cls):
         if not os.path.exists(RELEASE):
             raise unittest.SkipTest("semantic release not built")
 
-    def test_adm1_sums_back_to_the_stream_month(self):
+    def test_adm1_sums_back_to_a_fully_placed_stream_month(self):
         from decimal import Decimal
-        monthly = {(r["component_id"], r["month"]): Decimal(r["native_mass"])
+        stream = "agriculture|enteric-fermentation|buffalo|ch4"
+        monthly = {r["month"]: Decimal(r["native_mass"])
                    for r in read_rows(os.path.join(OUT_DIR, "fact_monthly.csv"), comments=False)
-                   if r["period_id"] == "FY2023-24" and r["configuration_id"] == "REF_2023_24"}
+                   if r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN"
+                   and r["component_id"] == stream}
         sums = {}
         for r in read_rows(os.path.join(OUT_DIR, "fact_adm1_month.csv"), comments=False):
-            if r["configuration_id"] != "REF_2023_24":
+            if r["period_id"] != "FY2023-24" or r["configuration_id"] != "S_TAN" or r["source_stream_id"] != stream:
                 continue
-            k = (r["source_stream_id"], r["month"])
-            sums[k] = sums.get(k, Decimal(0)) + Decimal(r["emissions_Gg"])
-        # the declared shares carry five decimals, so a stream's provinces sum back to its
-        # month to the precision of those shares: relative, not absolute
-        worst = max((abs(sums[k] - monthly[k]) / monthly[k]) if monthly[k] else Decimal(0) for k in sums)
-        self.assertLess(worst, Decimal("1e-4"), "ADM1 does not sum back to the stream month (worst rel %s)" % worst)
-        self.assertEqual(set(sums), set(monthly), "a reference stream-month has no ADM1 rows")
+            sums[r["month"]] = sums.get(r["month"], Decimal(0)) + Decimal(r["emissions_Gg"])
+        self.assertEqual(set(monthly), set(sums))
+        self.assertEqual(len(monthly), 12)
+        self.assertLess(max(abs(sums[k] - v) / v for k, v in monthly.items()), Decimal("1e-8"))
 
-    def test_configuration_l_composes_to_the_published_ledger_total(self):
-        """REF - residential(REF) + residential(L) is the configuration-L national total.
-
-        rc67: the roles swapped. The reference carries the household survey's dung and
-        the period-named second configuration is L_2023_24, all the diverted dung burned
-        in households, so the composition lands on national_all_sectors_ledger.csv and
-        the reference on national_all_sectors.csv. The pinned form of this test, below,
-        keeps the rc66 totals until the national total settles; this one joins the same
-        closure to the published files and pins only the residential pair, which does not
-        depend on any other sector (24.22042 under the reference, was 29.46668; 29.46668
-        under L, where S_2023_24 was 24.33389)."""
+    def test_each_configuration_composes_to_its_published_total(self):
         from decimal import Decimal
+        dim = {r["configuration_id"]: r for r in read_rows(os.path.join(OUT_DIR, "dim_configuration.csv"))
+               if r["queryable"] == "yes"}
+        self.assertEqual(set(dim), {"S_TAN", "L_TAN", "S_IPCC", "L_IPCC"})
+        sums = {cid: Decimal(0) for cid in dim}
+        for r in read_rows(os.path.join(OUT_DIR, "fact_annual.csv"), comments=False):
+            if r["period_id"] == "FY2023-24" and r["configuration_id"] in sums:
+                sums[r["configuration_id"]] += Decimal(r["co2e_Mt_AR5"])
+        for cid, value in sums.items():
+            self.assertAlmostEqual(float(value), float(dim[cid]["national_total_Mt"]), places=4, msg=cid)
+        self.assertAlmostEqual(float(sums["L_TAN"] - sums["S_TAN"]),
+                               float(dim["L_TAN"]["national_delta_Mt"]), places=4)
+        self.assertAlmostEqual(float(sums["S_IPCC"] - sums["S_TAN"]),
+                               float(dim["S_IPCC"]["national_delta_Mt"]), places=4)
 
-        def published(name):
-            return next(Decimal(r["co2e_Mt_AR5"])
-                        for r in read_rows(os.path.join(OUTPUTS, name))
-                        if r["row_kind"] == "national_total")
-
-        rows = read_rows(os.path.join(OUT_DIR, "fact_annual.csv"), comments=False)
-        self.assertFalse({r["configuration_id"] for r in rows} & {"S_2023_24", "S_HIES1925"})
-        ref = sum(Decimal(r["co2e_Mt_AR5"]) for r in rows if r["period_id"] == "FY2023-24"
-                  and r["configuration_id"] == "REF_2023_24")
-        ref_res = sum(Decimal(r["co2e_Mt_AR5"]) for r in rows if r["period_id"] == "FY2023-24"
-                      and r["configuration_id"] == "REF_2023_24" and r["sector_id"] == "residential")
-        l_rows = [r for r in rows if r["configuration_id"] == "L_2023_24"]
-        self.assertEqual({r["period_id"] for r in l_rows}, {"FY2023-24"})
-        self.assertEqual({r["sector_id"] for r in l_rows}, {"residential"})
-        l_res = sum(Decimal(r["co2e_Mt_AR5"]) for r in l_rows)
-        self.assertAlmostEqual(float(ref_res), 24.22042, places=4)
-        self.assertAlmostEqual(float(l_res), 29.46668, places=4)
-        self.assertAlmostEqual(float(ref), float(published("national_all_sectors.csv")),
-                               places=4)
-        self.assertAlmostEqual(float(ref - ref_res + l_res),
-                               float(published("national_all_sectors_ledger.csv")), places=4)
-
-    def test_the_configuration_dimension_names_the_ledger(self):
-        """dim_configuration after rc67: REF_2023_24 is the reference and says its dung is
-        the survey's; L_2023_24 (queryable, FY2023-24) and L_HERD1624 (the air panel's
-        nine-year series) are of kind "ledger"; the retired survey ids are gone, and the
-        ledger's national delta is positive."""
-        dim = {r["configuration_id"]: r
-               for r in read_rows(os.path.join(OUT_DIR, "dim_configuration.csv"))}
-        self.assertNotIn("S_2023_24", dim)
-        self.assertNotIn("S_HIES1925", dim)
-        self.assertEqual(dim["REF_2023_24"]["kind"], "reference")
-        self.assertIn("survey", dim["REF_2023_24"]["note"])
-        for cid in ("L_2023_24", "L_HERD1624"):
-            self.assertEqual(dim[cid]["kind"], "ledger", cid)
-            self.assertEqual(dim[cid]["substitutes_module"], "residential", cid)
-        self.assertNotIn("survey", {r["kind"] for r in dim.values()})
-        self.assertEqual(dim["L_2023_24"]["queryable"], "yes")
-        self.assertEqual(dim["L_2023_24"]["available_periods"], "FY2023-24")
-        self.assertEqual(dim["L_2023_24"]["display_name"], "all_diverted_dung_household_fuel")
-        self.assertEqual(dim["L_HERD1624"]["available_periods"], "FY2015-16..FY2023-24")
-        self.assertAlmostEqual(float(dim["L_2023_24"]["national_delta_Mt"]), 5.24626, places=5)
-        self.assertEqual(float(dim["REF_2023_24"]["national_delta_Mt"]), 0.0)
-        limitations = {l["id"] for l in _load()["known_limitations"]}
-        self.assertIn("config_L_residential_only", limitations)
-        self.assertNotIn("config_S_residential_only", limitations)
-        self.assertEqual(_load()["release"]["ledger_configuration"], "L_2023_24")
-        self.assertNotIn("survey_configuration", _load()["release"])
-
-    def test_configuration_s_composes_to_the_survey_pin(self):
-        from decimal import Decimal
-        rows = read_rows(os.path.join(OUT_DIR, "fact_annual.csv"), comments=False)
-        ref = sum(Decimal(r["co2e_Mt_AR5"]) for r in rows if r["period_id"] == "FY2023-24"
-                  and r["configuration_id"] == "REF_2023_24")
-        ref_res = sum(Decimal(r["co2e_Mt_AR5"]) for r in rows if r["period_id"] == "FY2023-24"
-                      and r["configuration_id"] == "REF_2023_24" and r["sector_id"] == "residential")
-        s_res = sum(Decimal(r["co2e_Mt_AR5"]) for r in rows if r["configuration_id"] == "L_2023_24")
-        # rc46 Wave 2 pins (previous: 452.34662 / 447.21383)
-        # rc67 reference re-base: the reference (survey dung) and configuration L
-        self.assertAlmostEqual(float(ref), 444.95542, places=4)   # was 451.85782 at rc66
-        self.assertAlmostEqual(float(ref - ref_res + s_res), 450.20168, places=4)   # was 446.72502 (then S)
+    def test_the_dimension_identifies_the_reference_and_structural_axes(self):
+        dim = {r["configuration_id"]: r for r in read_rows(os.path.join(OUT_DIR, "dim_configuration.csv"))}
+        self.assertEqual(dim["S_TAN"]["kind"], "reference")
+        self.assertEqual(dim["L_TAN"]["kind"], "structural_alternative")
+        self.assertEqual(dim["S_IPCC"]["kind"], "structural_alternative")
+        self.assertEqual(dim["L_IPCC"]["kind"], "structural_alternative")
+        for cid in ("S_TAN", "L_TAN", "S_IPCC", "L_IPCC"):
+            self.assertEqual(dim[cid]["available_periods"], "FY2015-16..FY2024-25")
+            self.assertEqual(dim[cid]["queryable"], "yes")
+        release = _load()
+        self.assertEqual(release["defaults"]["configuration_id"], "S_TAN")
+        self.assertEqual(release["release"]["ledger_configuration"], "L_TAN")
 
 
 if __name__ == "__main__":

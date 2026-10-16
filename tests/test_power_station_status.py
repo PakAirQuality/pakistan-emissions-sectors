@@ -50,6 +50,17 @@ class TestTheCommissioningCheck(unittest.TestCase):
         unseen = [(r["period_id"], r["station"]) for r in self.status
                   if r["window_check"] == "no_gem_window" and float(r["pool_share"]) > 0]
         self.assertEqual(unseen, [])
+        # Jamshoro Coal Power Unit-1 burned testing coal in FY2024-25. Until rc68 GEM's
+        # "Jamshoro power station" was not joined to NEPRA's unit name and the station had
+        # no window; the join is now declared (gem_audit.GEM_TO_LEDGER) and the unit sits
+        # inside GEM's operating window. Keep the independently sourced consumption.
+        from pkinv.assets import asset_path
+        from pkinv.paths import DATA
+        from pkinv.core.io import read_rows
+        held = read_rows(asset_path(DATA, "activity", "power", "plant_fuel_2024_25.csv"))
+        jamshoro = [r for r in held if "Jamshoro" in r["plant"] and r["fuel"] == "Coal"]
+        self.assertEqual(len(jamshoro), 1)
+        self.assertAlmostEqual(float(jamshoro[0]["quantity"]), 158.031, places=3)
 
     def test_pool_shares_sum_to_one_per_period(self):
         for p in self.periods:

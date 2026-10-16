@@ -13,6 +13,8 @@ import os
 import subprocess
 import sys
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 
 from _support import OUTPUTS, ROOT
 
@@ -61,7 +63,7 @@ class TestTheBand(unittest.TestCase):
         self.by = {r["fiscal_year"]: r for r in rows()}
 
     def test_nine_years_and_the_bands_are_ordered(self):
-        self.assertEqual(len(self.by), 9)
+        self.assertEqual(set(self.by), {p[2:] for p in CORE_PERIOD_IDS})
         for fy, r in self.by.items():
             lo, ce, hi = (float(r[k]) for k in ("coal_kt_low", "coal_kt_central", "coal_kt_high"))
             self.assertLess(lo, ce, fy)

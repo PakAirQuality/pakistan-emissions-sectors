@@ -1,19 +1,21 @@
 variable,central_value,unit,uncert_pct_95,distribution,source,applies_to,correlation_group,uncertainty_class,note
 Gas TOE row,313243,TJ,10.0,lognormal,NEPRA SIR Table 3,Gas CO2/CH4/N2O,1a1a_toe_activity,parametric,corroborated by exact-MMBTU plant meters; bracketing spread 0.89-1.09
-Coal TOE row,206606,TJ,5.0,lognormal,NEPRA SIR Table 3,Coal CO2/CH4/N2O,1a1a_toe_activity,parametric,"metered mass + CRT 2% agreement, conditional on Table 3 as control total"
+Coal station consumption mass,15876.220000000001,kt,5.0,lognormal,NEPRA station coal consumption; maintained rank account,Coal CO2/CH4/N2O,activity:coal:power_station_mass,parametric,shared station-mass error; heat is rank mass times sampled rank NCV; commissioning reconstruction endpoints remain structural bounds
 Furnace oil TOE row,23072,TJ,12.0,lognormal,NEPRA SIR Table 3,Furnace Oil CO2/CH4/N2O,1a1a_toe_activity,parametric,no exact meter anywhere on this fuel
 Diesel TOE row,1811,TJ,10.0,lognormal,NEPRA SIR Table 3,Diesel Oil CO2/CH4/N2O,1a1a_toe_activity,parametric,"uncorroborated, immaterial"
 TOE net-calorific basis,0.041868,TJ/toe,,not sampled,Eurostat definition; HDIP convention unverified,all grid streams,,structural,"one-sided; scenario toe_gross_basis. Evidence for net: 48.7% implied efficiency, CRT states NCV"
-Coal conversion/scope (Table 3 vs ledger x implied CV),2.01,ratio,,not sampled,SIR Tables 20/23/28 vs Table 3,Coal CO2/CH4/N2O,,structural,"one-sided, 19.4 Mt; scenario coal_at_implied_cv; CRT 2% solid-fuel agreement is the counter-evidence"
+Superseded Table 3 / station rank energy,1.859878110031691,ratio,,not sampled,NEPRA Table 3 versus station mass times rank NCV,Coal CO2/CH4/N2O,,structural,"comparison with superseded aggregate account; generation-derived heat is a separate diagnostic, not the reference"
 K-Electric coverage of Table 3,4.013931624600486,Mt CO2,,not sampled,ledger boundary audit,grid scope,,structural,one-sided; scenario grid_plus_ke_ledger_fuel; a trend 7.1->4.0 Mt FY2019-23
-Lignite share of coal,0.79,fraction,12.0,lognormal,plant ledger origin split,Coal CO2,,parametric,delta-method sensitivity ~0.6% on the factor; endpoints also published as scenarios
+Lignite heat share of coal,0.8411759177880482,fraction,,derived; not independently sampled,station mass times rank NCV,Coal CO2,,derived,rank heat share recomputed from shared mass and NCV realizations; includes pre-Thar Lakhra where present; no independent generation-share factor
 Lignite CO2 factor,101000.0,kg/TJ,12.0,lognormal,IPCC Table 2.2,Coal CO2,,parametric,
 Bituminous CO2 factor,94600.0,kg/TJ,6.0,lognormal,IPCC Table 2.2,Coal CO2,,parametric,
 Gas CO2 factor,56100.0,kg/TJ,4.0,lognormal,IPCC Table 2.2,Gas CO2,,parametric,
 RFO CO2 factor,77400.0,kg/TJ,3.0,lognormal,IPCC Table 2.2,Furnace Oil CO2,,parametric,
 HSD CO2 factor,74100.0,kg/TJ,2.0,lognormal,IPCC Table 2.2,Diesel Oil CO2,,parametric,
-CH4 and N2O factors,Table 2.2 values,kg/TJ,150,lognormal,IPCC Table 2.2,all CH4/N2O streams,,parametric,0.07% of grid variance combined
+CH4 and N2O factors,Table 2.2 values,kg/TJ,150,lognormal,IPCC Table 2.2,all CH4/N2O streams,,parametric,rank NCV and station mass remain shared across gases
 Captive gas volume,288.0,MMCFD,12.0,lognormal,OGRA,captive streams,delivered_gas_ogra_3_31,parametric,"SHARED GROUP (rc19): one OGRA Table 3.31 publication behind the residential, CNG, industrial and captive delivered volumes (the captive module reads 288 MMCFD against the closure ledger's Table 3.31 print of 287 - reconciled in the gas closure, same publication). The GRID gas volume is deliberately outside the group: NEPRA's TOE account is a different meter"
 Captive heating value,1000.0,Btu/scf,8.0,lognormal,"nominal billing value; 900-1,000 plausible",captive streams,,parametric,the 900 case is also the captive_hhv_900 scenario
 Captive gross-to-net,0.9,fraction,3.0,lognormal,engineering estimate,captive streams,,parametric,
 Bagasse heat rate,15000.0,kJ/kWh,20.0,lognormal,assumed; declared structurally weaker,Bagasse CH4/N2O,,parametric,
+Coal rank NCV: Lignite,11.9,TJ/Gg,67.647059,lognormal,IPCC 2006 Vol.2 Ch.1 Table 1.2 rank NCV confidence ranges; station fuel reconciliation,same-rank power and industrial coal,factor:ncv:Lignite,parametric,published rank range summarized as conditional parameter width; distinct from reconstruction endpoints
+Coal rank NCV: Other Bituminous Coal,25.8,TJ/Gg,21.0,lognormal,IPCC 2006 Vol.2 Ch.1 Table 1.2 rank NCV confidence ranges; station fuel reconciliation,same-rank power and industrial coal,factor:ncv:Other Bituminous Coal,parametric,published rank range summarized as conditional parameter width; distinct from reconstruction endpoints

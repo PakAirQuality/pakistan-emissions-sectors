@@ -28,6 +28,7 @@ import unittest
 from pkinv.paths import DATA, OUTPUTS
 from pkinv.report import atomic_annual as aa
 from pkinv.core.io import read_rows
+from pkinv.core.reporting_window import CORE_PERIOD_IDS
 
 
 def _rows(name, base=OUTPUTS):
@@ -210,7 +211,9 @@ class TestTheLegacyProductsAreTypedAndDerivable(unittest.TestCase):
         kinds = collections.Counter(r["row_kind"]
                                     for r in _rows("pakemis_national_series.csv"))
         self.assertEqual(set(kinds), {"sector", "covered_total"})
-        self.assertEqual(kinds["covered_total"], 9)
+        self.assertEqual(kinds["covered_total"], len(CORE_PERIOD_IDS))
+        self.assertEqual({r["period_label"] for r in _rows("pakemis_national_series.csv")
+                          if r["row_kind"] == "covered_total"}, set(CORE_PERIOD_IDS))
 
     def test_the_total_row_is_the_sum_of_the_rows_typed_as_parts(self):
         """What the mixed shape costs: this is the sum a naive reader would get wrong."""

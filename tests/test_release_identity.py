@@ -230,7 +230,7 @@ class TestTheReleaseIsNamedTheSameThingEverywhere(unittest.TestCase):
         availability sections said "the repository" without naming it, so a reader of
         any paper but transport's could not find the software. Every main manuscript
         must print the canonical URL as a \\url{} in its availability text."""
-        mains = [os.path.join(PAPER_NATIONAL_MAIN, "paper_national.tex")]
+        mains = [os.path.join(PAPER_NATIONAL_MAIN, "paper.tex")]
         mains += sorted(glob.glob(os.path.join(ROOT, "papers", "*", "paper.tex")))
         self.assertGreaterEqual(len(mains), 10, "manuscript resolver went blind")
         needle = "\\url{%s}" % release.REPO_URL
@@ -471,8 +471,9 @@ class TestNoUnmadeSubmissionIsClaimed(unittest.TestCase):
                     encoding="utf-8").read()
         entry = text[text.index("@unpublished{ahmad2026national"):]
         entry = entry[:entry.index("\n}")]
-        self.assertNotIn("Submitted", entry)
-        self.assertIn("in preparation", entry.lower())
+        self.assertNotIn("submitted", entry.lower())
+        self.assertIn("local review package prepared", entry.lower())
+        self.assertIn("pending", entry.lower())
 
     def test_no_readme_claims_a_submission_the_status_constant_denies(self):
         """The fourteenth review found the SAME defect class one directory over:

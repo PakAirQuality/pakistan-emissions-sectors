@@ -107,7 +107,13 @@ def implied(data, year=None, basis="booked"):
         raise ValueError("basis is 'booked' or 'table3', not %r" % (basis,))
     fuel = dict(data.fuel_for(year))
     if basis == "table3" and "Coal" in fuel:
-        fuel["Coal"] = data.table3_coal_toe(year)
+        try:
+            fuel["Coal"] = data.table3_coal_toe(year)
+        except KeyError:
+            # A reconstructed station reference is not a published Table 3
+            # control. Preserve other supported fuels; omit this unavailable
+            # coal comparison rather than recycling the booked value.
+            fuel.pop("Coal")
     gen = data.generation_for(year)
     rows = []
     for f, gen_fuels in FUEL_MAP.items():

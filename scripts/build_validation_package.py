@@ -257,7 +257,11 @@ def tracked_files():
     partition (adm2_intersections_267x340.csv) is consumed by the cube, listed in the deposit
     as this project's own compilation, and gitignored - so a git-only universe left the
     package unable to build its ADM2 marginals."""
-    files = [p for p in git("ls-files").splitlines() if p]
+    # An unstaged deletion is absent from this working-tree snapshot, even
+    # though git's index still lists its former path. Required declared assets
+    # added below retain their normal missing-input checks.
+    files = [p for p in git("ls-files").splitlines()
+             if p and os.path.lexists(os.path.join(ROOT, p))]
     # An authorized working-tree rehearsal must include new modules before the
     # user stages them. Reuse the deposit's explicit owned-file patterns; never
     # sweep arbitrary untracked files into a package.
@@ -412,7 +416,7 @@ def layout(pkg):
 
     # outputs/annual
     for name in ("pakemis_atomic_annual.csv", "pakemis_atomic_annual.parquet", "pakemis_atomic_annual_aggregates.csv",
-                 "pakemis_annual_fy2015_16_fy2023_24.csv", "pakemis_annual_fy2015_16_fy2023_24.parquet",
+                 "pakemis_annual_fy2015_16_fy2024_25.csv", "pakemis_annual_fy2015_16_fy2024_25.parquet",
                  "pakemis_national_series.csv", "pakemis_national_series_coverage.csv", "national_all_sectors.csv",
                  "national_all_sectors_ledger.csv", "pakemis_agriculture_basis_change.csv",
                  "pakemis_series_splice_agriculture.csv", "pakemis_coverage_summary.csv"):
@@ -426,7 +430,7 @@ def layout(pkg):
     copy("outputs/annual/annual_method_basis_seams.csv", "outputs/pakemis_agriculture_basis_change.csv")
 
     # outputs/monthly
-    for name in ("pakemis_monthly_fy2015_16_fy2023_24.csv", "pakemis_monthly_fy2015_16_fy2023_24.parquet",
+    for name in ("pakemis_monthly_fy2015_16_fy2024_25.csv", "pakemis_monthly_fy2015_16_fy2024_25.parquet",
                  "pakemis_monthly_coverage.csv", "pakemis_monthly_coverage_summary.csv", "pakemis_monthly_controls.csv",
                  "pakemis_temporal_profiles.csv", "pakemis_monthly_evidence.csv", "pakemis_temporal_decomposition.csv",
                  "pakemis_monthly_data_requests.csv", "pakemis_flatness_crosswalk.csv", "monthly_crosschecks.csv",
@@ -821,7 +825,7 @@ def known_exceptions(pkg, registered, execution, custody):
     atoms = data_rows(os.path.join(pkg, "outputs", "pakemis_atomic_annual.csv"))
     unresolved = [r for r in atoms if r["estimate_status"] == "E" and
                   (r["method_id"] in ("", "unresolved") or r["uncertainty_model_id"] in ("", "unresolved"))]
-    ref_unres = [r for r in unresolved if r["period_id"] == "FY2023-24" and r["configuration_id"] == "REF_2023_24"]
+    ref_unres = [r for r in unresolved if r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN"]
     sectors_unres = sorted({r["sector_id"] for r in unresolved})
     docs = data_rows(os.path.join(pkg, "data", "source_documents.csv"))
     not_archived = [d["data_file"] for d in docs if d["archival_state"] == "not-archived"]
@@ -1469,7 +1473,7 @@ def main(argv):
             "expected_dimensions": {
                 "fiscal_years": len(data_rows(resolve(os.path.join(pkg, "data", "periods.csv"), root=pkg))), "months": len(months),
                 "sectors": len(rm["sectors"]), "annual_atomic_rows": len(atoms),
-                "monthly_rows": len(data_rows(os.path.join(pkg, "outputs", "pakemis_monthly_fy2015_16_fy2023_24.csv"))),
+                "monthly_rows": len(data_rows(os.path.join(pkg, "outputs", "pakemis_monthly_fy2015_16_fy2024_25.csv"))),
                 "source_streams": len(data_rows(os.path.join(pkg, "outputs", "pakemis_source_streams.csv"))),
                 "completeness_rows": len(data_rows(os.path.join(pkg, "outputs", "completeness.csv"))),
                 "structural_axes": len(data_rows(os.path.join(pkg, "outputs", "national_axis_register.csv"))),

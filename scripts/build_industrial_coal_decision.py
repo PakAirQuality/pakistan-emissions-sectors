@@ -372,15 +372,15 @@ def build():
         floor = fleet_low_national_kt()
         official_kt = float(a["official_kt"]) if a.get("official_kt") else None
         if floor and official_kt and official_kt < floor:
-            add("Brick-kiln coal", fy, "counted fleet's physical floor", "constraint",
+            add("Brick-kiln coal", fy, "dated fleet operating-season case", "validation",
                 "the OFFICIAL series",
-                "%.0f kt booked against a fleet floor of %.0f kt" % (official_kt, floor),
-                "the counted fleet cannot fire on this much coal even at the SHORTER of the two "
-                "held operating seasons (73.9 days, implied by ICIMOD's own per-kiln figure). "
-                "The floor is not an estimate of consumption - it is what the fleet the survey "
-                "counted would need, and the official column is below it")
+                "%.0f kt published against a conditional fleet case of %.0f kt" % (official_kt, floor),
+                "Hamdani's satellite detections cannot distinguish active from inactive kiln structures. "
+                "Operating days are assumptions: 73.9 is inferred by combining separate surveys and "
+                "215 is the study's declared season. This comparison is conditional and does not "
+                "establish an annual physical floor or a violated accounting constraint.")
         else:
-            add("Brick-kiln coal", fy, "counted fleet's physical floor", "untested", "both",
+            add("Brick-kiln coal", fy, "dated fleet operating-season case", "untested", "both",
                 "SEASON OPEN BY 2.9x",
                 "the fleet's coal demand runs 3,301-9,603 kt for Punjab alone, and the two held "
                 "sources for the operating season differ by a factor of 2.9 (73.9 days implied "

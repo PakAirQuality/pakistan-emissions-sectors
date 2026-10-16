@@ -1,14 +1,12 @@
-"""The engine: DuckDB over the verified tables, every aggregate an exact DECIMAL sum.
+"""Read-only queries over verified emissions facts and dimensions.
 
-Rules the models cannot express alone live here: a request names one basis, one configuration
-and one GWP basis; a calendar basis outside agriculture, AR6 at ADM2 and configuration S outside
-FY2023-24 are typed refusals; configuration S totals are composed as REF minus residential(REF)
-plus residential(S) with the formula stated; a spatial aggregate always reports the unallocated
-mass at its level; ADM2 CO2e is EXACT since the stream-priced round (each stream's CH4
-carries its own origin before the module aggregation - the interval the module grain used
-to force is retired, not midpointed)."""
+The fiscal core comprises ten years and four named configurations. Unsupported
+periods, mixed species sums and unavailable uncertainty grains receive typed
+refusals. Native air mass is distinct from GWP-weighted greenhouse-gas quantities.
+"""
 import dataclasses
 import os
+from pakemis_query import configurations
 
 from pakemis_query import errors as E
 from pakemis_query.envelope import envelope, value
@@ -69,6 +67,7 @@ class Engine:
         if not fields["periods"]:
             fields["periods"] = (d["period_id"],)
             applied.append("periods")
+        fields["configuration_id"] = configurations.canonical(fields["configuration_id"])
         fields["defaults_applied"] = tuple(applied)
         return QueryEmissions(**fields)
 
@@ -90,33 +89,14 @@ class Engine:
                                  "calendar_basis_ne")
         configurations = {c["configuration_id"]: c for c in r.dim("dim_configuration")}
         if q.configuration_id not in configurations or configurations[q.configuration_id]["queryable"] != "yes":
-            raise E.UnknownDimensionValue("%r is not a queryable configuration (REF_2023_24, L_2023_24)"
+            raise E.UnknownDimensionValue("%r is not a queryable configuration (S_TAN, L_TAN, S_IPCC, L_IPCC)"
                                           % q.configuration_id, dimension="configuration_id")
-        if q.configuration_id == "L_2023_24" and set(q.periods) != {REFERENCE_PERIOD}:
-            raise E.GrainUnavailable("configuration L exists for FY2023-24 only", "config_L_residential_only")
         if q.gwp_basis not in ("AR5", "AR6"):
             raise E.UnknownDimensionValue("%r is not a GWP basis" % q.gwp_basis, dimension="gwp_basis")
         if q.geography_level not in GEOGRAPHY_LEVELS:
             raise E.UnknownDimensionValue("%r is not a geography level" % q.geography_level, dimension="geography_level")
         if q.geography_level == "adm2" and q.gwp_basis == "AR6":
             raise E.NotEstimated("AR6 CO2e is not carried at ADM2", "ar6_adm2_ne")
-        # THE SPATIAL LAYER IS NINE YEARS NOW, AT BOTH LEVELS. This block has shed two
-        # stale refusals in two releases: first "spatial products exist for FY2023-24
-        # only" (true until the by-year district table landed), then "ADM1 is published
-        # monthly for FY2023-24" (true until fact_adm1_year landed - the nine-year ADM1
-        # product existed in the release all along, and the semantic layer had simply
-        # never consumed it; the Explorer's provinces slider is what finally asked).
-        # What remains period-limited is the MONTH: the historical periods are published
-        # ANNUALLY at both levels, and the year tables carry AR5 only.
-        if q.geography_level != "national" and set(q.periods) != {REFERENCE_PERIOD}:
-            if q.months:
-                raise E.GrainUnavailable(
-                    "the historical periods are published ANNUALLY; a monthly request "
-                    "outside FY2023-24 is refused rather than computed",
-                    "adm2_history_annual_only")
-            if q.geography_level == "adm1" and q.gwp_basis == "AR6":
-                raise E.NotEstimated(
-                    "AR6 CO2e is not carried in the historical ADM1 table", "ar6_adm2_ne")
         if q.spatial_view not in VIEWS:
             raise E.UnknownDimensionValue("%r is not a spatial view" % q.spatial_view, dimension="spatial_view")
         return q
@@ -184,21 +164,11 @@ class Engine:
         select_cols = [ECONOMIC_SECTOR_SQL + " AS " + ECONOMIC_SECTOR_KEY if g == ECONOMIC_SECTOR_KEY else g for g in groups]
         group_cols = ", ".join(select_cols) + ", " if groups else ""
         formula = ""
-        if q.configuration_id == "L_2023_24" and q.basis == "fiscal":
-            # L = REF - residential(REF) + residential(L): the residential atoms of the
-            # reference are replaced by configuration L's category x gas rows
-            where_ref = where + ["configuration_id = 'REF_2023_24'", "sector_id <> 'residential'"]
-            where_s = where + ["configuration_id = 'L_2023_24'"]
-            sql = ("SELECT %s SUM(CAST(%s AS %s)) AS exact, string_agg(result_row_id, ';' ORDER BY result_row_id) AS ids, COUNT(*) AS n "
-                   "FROM (SELECT * FROM %s WHERE %s UNION ALL SELECT * FROM %s WHERE %s) GROUP BY %s"
-                   % (group_cols, col, DECIMAL, table, " AND ".join(where_ref), table, " AND ".join(where_s), group_sql))
-            formula = "SUM(%s) over REF atoms outside residential + SUM(%s) over configuration L's residential rows (L = REF - residential(REF) + residential(L))" % (col, col)
-        else:
-            if table != "fact_annual_calendar":          # the calendar table carries no configuration
-                where.append("configuration_id = '%s'" % q.configuration_id)
-            sql = ("SELECT %s SUM(CAST(%s AS %s)) AS exact, string_agg(result_row_id, ';' ORDER BY result_row_id) AS ids, COUNT(*) AS n "
-                   "FROM %s WHERE %s GROUP BY %s" % (group_cols, col, DECIMAL, table, " AND ".join(where), group_sql))
-            formula = "SUM(%s) over %d %s rows" % (col, 0, table)
+        if table != "fact_annual_calendar":
+            where.append("configuration_id = '%s'" % q.configuration_id)
+        sql = ("SELECT %s SUM(CAST(%s AS %s)) AS exact, string_agg(result_row_id, ';' ORDER BY result_row_id) AS ids, COUNT(*) AS n "
+               "FROM %s WHERE %s GROUP BY %s" % (group_cols, col, DECIMAL, table, " AND ".join(where), group_sql))
+        formula = "SUM(%s) over native component rows for %s" % (col, q.configuration_id)
         rows = self._fetch(sql + self._order(q))
         decimals = self._decimals_for(q, groups)
         values = []
@@ -217,29 +187,15 @@ class Engine:
                         limitations_hit=self._limitations_for(q), defaults_applied=q.defaults_applied)
 
     def _spatial(self, q):
-        if q.geography_level == "adm1" and set(q.periods) != {REFERENCE_PERIOD}:
-            # the nine-year provincial table: period-keyed, exact, AR5 (validated above)
-            table, col = "fact_adm1_year", "co2e_Mt_AR5"
-            geo_col = "province"
-        elif q.geography_level == "adm1":
-            table, col = "fact_adm1_month", "co2e_Mt_%s" % q.gwp_basis
-            geo_col = "province"
-        elif set(q.periods) == {REFERENCE_PERIOD}:
-            # exact since the stream-priced round: each stream's CH4 carries its own
-            # origin BEFORE the module aggregation, so the interval the module grain
-            # used to force ([x28, x30]) is replaced by the same exact sum the
-            # national total has always made
-            table, col = "fact_adm2_month", "co2e_Mt_AR5"
-            geo_col = "shape_id"
+        if q.geography_level == "adm1":
+            # Monthly provincial rows also supply AR6 annual sums.
+            table, col, geo_col = "fact_adm1_month", "co2e_Mt_%s" % q.gwp_basis, "province"
         else:
-            # The historical periods live in the annual table, keyed on period_id rather than
-            # month. Same columns, same closure, same module grain - a different time key.
-            table, col = "fact_adm2_year", "co2e_Mt_AR5"
-            geo_col = "shape_id"
-        where = ["configuration_id = '%s'" % q.configuration_id]
-        if table in ("fact_adm2_year", "fact_adm1_year"):
-            where.append(self._in("period_id", q.periods))
-        elif q.months:
+            table = "fact_adm2_month" if q.months else "fact_adm2_year"
+            col, geo_col = "co2e_Mt_AR5", "shape_id"
+        where = ["configuration_id = '%s'" % q.configuration_id,
+                 self._in("period_id", q.periods)]
+        if q.months:
             where.append(self._in("month", q.months))
         if q.geography_ids:
             where.append(self._in(geo_col, q.geography_ids))
@@ -263,7 +219,7 @@ class Engine:
         values = []
         for r in rows:
             label = {g: r[g] for g in groups}
-            values.append(value(str(r["exact_low"]), "Mt CO2e AR5", decimals,
+            values.append(value(str(r["exact_low"]), "Mt CO2e %s" % q.gwp_basis, decimals,
                                 row_ids=(r["ids"] or "").split(";"), formula="SUM(%s) over %d rows" % (col, r["n"]),
                                 group=label, n_rows=r["n"], exactness=r["exactness"], gg=str(r["gg"])))
         unallocated, read_from = self._unallocated_for(q, table, col)
@@ -279,7 +235,7 @@ class Engine:
         from pakemis_query.envelope import display
         return display(exact, decimals)
 
-    # --- query_air (the air beta) ---------------------------------------------------------
+    # --- query_air (native pollutant masses) ---------------------------------------------------------
 
     AIR_GROUPS = ("pollutant", "sector_id", "category", "subitem", "province", "shape_id", "year", "period_id")
     AIR_SECTORS = ("agriculture", "aviation", "fugitives", "industry", "ippu", "power", "railways", "residential", "transport", "waste")
@@ -288,7 +244,7 @@ class Engine:
         """Native kt of a named species from the PakEmis-Air tables; never CO2e, and never a
         sum across pollutants (the particulate strata contain one another).
 
-        ONE PRODUCT, TWO TIME BASES. `periods` (fiscal, FY2015-16..FY2023-24) answers from the
+        ONE PRODUCT, TWO TIME BASES. `periods` (fiscal, FY2015-16..FY2024-25) answers from the
         covered-sources family - the national panel and its province and district marginals -
         in which a source that is only SCREENED travels beside the values in `completeness`,
         never inside them. `years` (calendar, 1990..2024) answers from the agriculture series,
@@ -319,7 +275,7 @@ class Engine:
         pollutants = {r["pollutant"] for r in self.release.dim("dim_pollutant")}
         for pl in q.pollutants:
             if pl not in pollutants:
-                raise E.UnknownDimensionValue("%r is not a pollutant of the air beta (%s)"
+                raise E.UnknownDimensionValue("%r is not a pollutant of the integrated air panel (%s)"
                                               % (pl, ", ".join(sorted(pollutants))), dimension="pollutant", value=pl)
         for sec in q.sectors:
             if sec not in self.AIR_SECTORS:
@@ -359,7 +315,7 @@ class Engine:
                                      "for one", "air_two_time_bases")
         if "period_id" in q.group_by and not q.periods:
             raise E.GrainUnavailable("a period_id grouping needs the covered panel: name "
-                                     "the fiscal periods (FY2015-16..FY2023-24)",
+                                     "the fiscal periods (FY2015-16..FY2024-25)",
                                      "air_panel_national_only")
         # table choice
         if q.years:
@@ -374,14 +330,18 @@ class Engine:
             # the source's own TOTAL rows are its sums; a category grouping must not add them in
             base.append("category <> 'TOTAL'" if ("category" in q.group_by or q.categories) else "category = 'TOTAL'")
         elif q.periods and q.geography_level in ("adm1", "adm2"):
-            # the nine-year spatial family (rc49): the same one allocation the panel,
+            # the ten-year spatial family (rc49): the same one allocation the panel,
             # the grid and both ADM tables are marginals of. Two configurations, like
             # the panel and for the same reason - an unfiltered sum adds them.
-            cfg = q.configuration_id or "REF_2023_24"
-            if cfg not in ("REF_2023_24", "L_HERD1624"):
+            cfg = configurations.canonical(q.configuration_id or configurations.REFERENCE)
+            if cfg not in configurations.AIR_ALL:
                 raise E.UnknownDimensionValue(
-                    "%r is not a configuration of the air panel (REF_2023_24, "
-                    "L_HERD1624)" % cfg, dimension="configuration_id", value=cfg)
+                    "%r is not a configuration of the air panel (S_TAN, "
+                    "L_TAN, S_IPCC, L_IPCC)" % cfg, dimension="configuration_id", value=cfg)
+            if not q.configuration_id:
+                applied.append("configuration_id")
+            q = dataclasses.replace(q, configuration_id=cfg,
+                                    defaults_applied=tuple(applied))
             if q.geography_level == "adm1":
                 table, geo_col = "fact_air_adm1_year", "province"
                 allowed = ("period_id", "pollutant", "sector_id", "province")
@@ -391,12 +351,12 @@ class Engine:
             bad = [g for g in q.group_by if g not in allowed]
             if bad:
                 raise E.GrainUnavailable(
-                    "%r is not a grouping of the nine-year spatial air family (%s); "
+                    "%r is not a grouping of the ten-year spatial air family (%s); "
                     "category and subitem live at the national grains"
                     % (bad[0], ", ".join(allowed)), "grain_unavailable")
             if q.categories:
                 raise E.GrainUnavailable(
-                    "the nine-year spatial air family carries sector grain, not "
+                    "the ten-year spatial air family carries sector grain, not "
                     "categories; filter by sector or ask the national panel",
                     "grain_unavailable")
             base = [self._in("period_id", q.periods),
@@ -406,14 +366,17 @@ class Engine:
         else:
             # every request that reaches here names periods: its own, or the default above
             table, geo_col = "fact_air_panel", ""
-            # the panel carries two configurations (REF_2023_24 and the air-only
-            # L_HERD1624 herd-scaled ledger dung series); an unfiltered sum would add
-            # them - the defect the panel golden caught the day the column landed
-            cfg = q.configuration_id or "REF_2023_24"
-            if cfg not in ("REF_2023_24", "L_HERD1624"):
+            # The panel carries four structural configurations; an unfiltered sum
+            # would add incompatible alternatives.
+            cfg = configurations.canonical(q.configuration_id or configurations.REFERENCE)
+            if cfg not in configurations.AIR_ALL:
                 raise E.UnknownDimensionValue(
-                    "%r is not a configuration of the air panel (REF_2023_24, "
-                    "L_HERD1624)" % cfg, dimension="configuration_id", value=cfg)
+                    "%r is not a configuration of the air panel (S_TAN, "
+                    "L_TAN, S_IPCC, L_IPCC)" % cfg, dimension="configuration_id", value=cfg)
+            if not q.configuration_id:
+                applied.append("configuration_id")
+            q = dataclasses.replace(q, configuration_id=cfg,
+                                    defaults_applied=tuple(applied))
             base = [self._in("period_id", q.periods),
                     "configuration_id = '%s'" % cfg]
             allowed = ("period_id", "pollutant", "sector_id", "category")
@@ -427,6 +390,15 @@ class Engine:
                 base.append(self._in("sector_id", q.sectors))
         if q.pollutants:
             base.append(self._in("pollutant", q.pollutants))
+        if q.periods:
+            available = {row["period_id"] for row in self._fetch(
+                "SELECT DISTINCT period_id FROM %s" % table)}
+            unknown = set(q.periods) - available
+            if unknown:
+                raise E.UnknownDimensionValue(
+                    "Air period %r is outside this product's supported fiscal core; "
+                    "provisional source extensions do not form a national total" % sorted(unknown)[0],
+                    dimension="period_id", value=sorted(unknown)[0])
         if q.categories:
             base.append(self._in("category", q.categories))
         if q.geography_ids and geo_col:
@@ -518,11 +490,28 @@ class Engine:
         def none(reason):
             return {"rows": [], "resolution": None, "interpretation": reason}
 
+        if q.spatial_view != "all":
+            return none("uncertainty is published for the complete source boundary only; "
+                        "no interval is available for the %s spatial view" % q.spatial_view)
+
         # THE RESOLUTION DEFECT. This selected `resolution = 'annual'` for a national request and
         # the bare geography level otherwise, producing 'annual', 'adm1' or 'adm2'. The vocabulary
         # is annual_national / monthly_national / annual_adm2 / monthly_adm2, so NONE of the three
         # ever matched and every envelope this engine has ever produced carried an empty block.
         # Nothing failed, because nothing asserted that a row ever came back.
+        if (q.geography_level == "national" and not q.months and not q.categories
+                and not q.streams and not q.ipcc_codes and not q.gases and not q.reporting_sectors
+                and "fact_ghg_conditional" in self.release.tables):
+            sector = q.sectors[0] if len(q.sectors) == 1 else "national_covered"
+            if len(q.sectors) <= 1:
+                where = [self._in("period_id", q.periods),
+                         "configuration_id = '%s'" % q.configuration_id,
+                         "sector_id = '%s'" % sector,
+                         "species_or_metric = 'CO2e_%s'" % q.gwp_basis]
+                rows = self._fetch("SELECT * FROM fact_ghg_conditional WHERE " + " AND ".join(where))
+                return {"available": bool(rows), "kind": "conditional_parameter_percentiles",
+                        "table": "fact_ghg_conditional", "rows": rows,
+                        "note": "Separate temporal dependence cases; missing sources and structural alternatives excluded; intervals are not additive."}
         resolution = self.RESOLUTIONS.get((q.geography_level, bool(q.months)))
         if q.geography_level == "adm1":
             return none("the release publishes no provincial uncertainty: fact_uncertainty carries "
@@ -530,11 +519,13 @@ class Engine:
         if resolution is None:
             return none("no uncertainty resolution exists for geography level %r" % q.geography_level)
         if q.gases:
-            return none("the release publishes no per-gas uncertainty: fact_uncertainty has no gas "
-                        "column, and the category envelope covers every gas in that category")
+            return none("this GWP-contribution query has no matched per-gas uncertainty: "
+                        "fact_uncertainty has no gas column and covers all gases in each category; "
+                        "native-gas conditional intervals are published separately")
         if q.configuration_id and q.configuration_id != self.release.defaults.get("configuration_id"):
-            return none("uncertainty is published for the reference configuration only; %s carries "
-                        "no interval, and the reference's may not stand in for it" % q.configuration_id)
+            return none("these category/allocation envelopes are published for the reference "
+                        "configuration only; no matched envelope is available for %s; its "
+                        "annual conditional intervals are published separately" % q.configuration_id)
         reference = self.release.defaults.get("period_id")
         if reference and set(q.periods or ()) - {reference}:
             return none("per-category uncertainty is published for %s only; for another period the "
@@ -570,38 +561,22 @@ class Engine:
         return self._fetch(sql)
 
     def _unallocated_for(self, q, table, column):
-        """The mass retained at ADM1 and placed no finer, FOR THE SCOPE ASKED: the request's
-        periods, gases, spatial view, sectors and streams. `table` and `column` are the cells'
-        own, and decide where the block is read from:
-
-            reference year, AR5        fact_unallocated - the release's own table of it
-            reference year, other GWP  fact_adm1_month, the cells' column (the block in the
-                                       cells' basis; fact_unallocated is AR5 only)
-            any other year             fact_adm1_year, the request's periods
-
-        The streams the release retains are the ones fact_unallocated names, and they are
-        ordinary rows of the province tables - the closure "ADM1 == ADM2 + unallocated, per
-        gas, view and period" is exactly that statement - so another year's block needs no
-        table of its own.
-
-        THIS USED TO READ fact_unallocated FOR EVERY REQUEST, and that table has no period
-        column: it is the reference year's. A FY2015-16 province answer therefore carried
-        0.25 Mt retained (that year's own figure is 0.40) and every year read the same. It
-        also filtered on neither gas nor spatial view, so a methane answer, and one restricted
-        to the `physical` view in which nothing is retained at all, carried the all-gas,
-        all-view block. Returns the block and the table it was read from."""
+        """Return ADM1 mass placed no finer for the requested period, configuration,
+        gas, spatial view and source scope. The all-year, all-configuration
+        ``fact_unallocated`` table supplies AR5. For AR6, the same retained stream
+        identities select the corresponding ``fact_adm1_month`` masses. These rows
+        are part of the province total and close the ADM1-to-ADM2 allocation.
+        Return both the scoped block and the table from which it was read."""
         cfg = "configuration_id = '%s'" % q.configuration_id
-        retained = "source_stream_id IN (SELECT DISTINCT source_stream_id FROM fact_unallocated WHERE %s)" % cfg
-        if table in ("fact_adm1_year", "fact_adm2_year"):
-            source, col = "fact_adm1_year", "co2e_Mt_AR5"
-            where = [cfg, self._in("period_id", q.periods), retained]
-        else:
-            if table == "fact_adm1_month" and column != "co2e_Mt_AR5":
-                source, col, where = "fact_adm1_month", column, [cfg, retained]
-            else:
-                source, col, where = "fact_unallocated", "co2e_Mt_AR5", [cfg]
-            if q.months:
-                where.append(self._in("month", q.months))
+        source, col = "fact_unallocated", "co2e_Mt_AR5"
+        where = [cfg, self._in("period_id", q.periods)]
+        if q.months:
+            where.append(self._in("month", q.months))
+        if q.gwp_basis == "AR6":
+            # Preserve the requested GWP basis using the same retained streams.
+            source, col = "fact_adm1_month", "co2e_Mt_AR6"
+            where.append("source_stream_id IN (SELECT DISTINCT source_stream_id FROM fact_unallocated WHERE " +
+                         cfg + " AND " + self._in("period_id", q.periods) + ")")
         if q.geography_level == "adm1" and q.geography_ids:
             where.append(self._in("province", q.geography_ids))
         if q.spatial_view != "all":
@@ -624,8 +599,6 @@ class Engine:
             hit.append("reporting_sector_view")
         if q.geography_level == "adm2":
             hit += ["ar6_adm2_ne", "no_polygon_units"]
-        if q.configuration_id == "L_2023_24":
-            hit.append("config_L_residential_only")
         if q.basis == "calendar":
             hit.append("calendar_basis_ne")
         return hit

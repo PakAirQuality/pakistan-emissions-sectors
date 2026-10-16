@@ -10,7 +10,8 @@ once per state: PRICED rows carry the reference estimate per period and gas
 (read from the semantic atom table, never re-derived); SCREENED rows carry the
 release's own scenario brackets (read from the screening products' own values);
 TYPED-ABSENT rows carry the reason and the named acquisition that would close
-them; the one DIAGNOSTIC row carries the registered EDGAR 1.A.2 coverage gap -
+them; the one DIAGNOSTIC row carries the registered EDGAR 1.A.2 comparison difference (a signed
+comparator difference since rc68, not a measure of absent emissions) -
 a diagnostic, never a residual to be inserted.
 
 THE LABEL RULE. Until every added category is back-calculated through
@@ -47,10 +48,11 @@ from pkinv.assets import asset_path
 from pkinv.paths import OUTPUTS  # noqa: E402
 
 OUT = asset_path(OUTPUTS, "pakemis_industry_boundary_ledger.csv")
-REF = "REF_2023_24"
+REF = "S_TAN"
 
 FIELDS = ("ipcc_code", "component", "detail", "gas", "period_id", "module_home",
           "boundary_status", "co2e_Mt", "bound_low_Mt", "bound_high_Mt",
+          "comparison_difference_Mt", "comparison_basis",
           "source", "acquisition", "note")
 
 HEADER = """\
@@ -99,6 +101,7 @@ def priced_rows():
             "gas": gas, "period_id": period, "module_home": module,
             "boundary_status": "priced", "co2e_Mt": "%.6f" % mt,
             "bound_low_Mt": "", "bound_high_Mt": "",
+            "comparison_difference_Mt": "", "comparison_basis": "",
             "source": "outputs/semantic/fact_annual.csv (%s)" % REF,
             "acquisition": "",
             "note": ("the 1.A.2 definition includes industry's own generation, so this row "
@@ -108,10 +111,15 @@ def priced_rows():
     return out
 
 
-def row(ipcc, comp, detail, status, low="", high="", source="", acquisition="", note="", module="", gas=""):
+def row(ipcc, comp, detail, status, low="", high="", source="", acquisition="", note="", module="", gas="", comparison_basis=""):
+    if status == "diagnostic" and comparison_basis not in ("engine_minus_comparator", "comparator_minus_engine"):
+        raise ValueError("diagnostic comparison direction is required for " + comp)
     return {"ipcc_code": ipcc, "component": comp, "detail": detail, "gas": gas,
             "period_id": "", "module_home": module, "boundary_status": status,
-            "co2e_Mt": "", "bound_low_Mt": low, "bound_high_Mt": high,
+            "co2e_Mt": "", "bound_low_Mt": "" if status == "diagnostic" else low,
+            "bound_high_Mt": "" if status == "diagnostic" else high,
+            "comparison_difference_Mt": high if status == "diagnostic" else "",
+            "comparison_basis": comparison_basis,
             "source": source, "acquisition": acquisition, "note": note}
 
 
@@ -201,27 +209,33 @@ def diagnostic_row():
     bench = _rows(asset_path(OUTPUTS, "national_benchmark_comparison.csv"))
     r = next(b for b in bench if b["engine_category"] == "1A2 (all estimated)")
     gap = float(r["benchmark_Mt_co2e"]) - float(r["engine_Mt_co2e"])
-    return [row("1.A.2", "EDGAR 1.A.2 coverage gap", "benchmark %s vs engine %s Mt" % (r["benchmark_Mt_co2e"], r["engine_Mt_co2e"]),
+    return [row("1.A.2", "EDGAR 1.A.2 comparison difference", "benchmark %s vs engine %s Mt" % (r["benchmark_Mt_co2e"], r["engine_Mt_co2e"]),
                 "diagnostic", "", "%.2f" % gap,
-                "outputs/national_benchmark_comparison.csv (comparison_role=coverage)",
-                "the HDIP energy balance as the 1.A.2 control total, with OGRA's sector-wise gas "
-                "classes (outputs/ogra_gas_class_series.csv) separating fertilizer feedstock, "
-                "captive and general industry - roadmap step 1",
-                "a DIAGNOSTIC of coverage, never an EDGAR residual to insert; the cement-kiln-fuel "
-                "screening is a replacement comparator for the booked cement coal (net +2.80), "
-                "not a part of this gap"),
+                "outputs/national_benchmark_comparison.csv (comparison_role=diagnostic)",
+                "public coal supply/use controls, station consumption and OGRA's sector-wise gas "
+                "classes distinguish feedstock, captive and general industry; remaining source "
+                "differences require matched periods and activity/factor/coverage reconciliation",
+                "Signed comparator minus estimated-source difference, not absent emissions, a floor "
+                "or an upper bound. Fiscal/calendar periods, fuel allocations, factors and source "
+                "coverage differ; never insert the difference as residual activity.",
+                comparison_basis="comparator_minus_engine"),
             _unsd_diagnostic()]
 
 
-def _engine_1a2_by_period():
+def _engine_1a2_by_period(native_co2=False):
     """The engine's 1.A.2 per period: the industry module plus the captive generation the
     power module computes (both IPCC 1.A.2), from the priced atoms."""
     out = collections.defaultdict(float)
     for r in _rows(asset_path(OUTPUTS, "semantic", "fact_annual.csv")):
         if r["configuration_id"] != REF or r["geography_id"] != "PK":
             continue
+        if native_co2 and r["gas"] != "CO2":
+            continue
         if r["sector_id"] == "industry" or (r["sector_id"] == "power" and r["ipcc_code"] == "1.A.2"):
-            out[r["period_id"]] += float(r["co2e_Mt_AR5"])
+            if native_co2 and r["native_unit"] != "Gg":
+                raise ValueError("industrial native CO2 comparison requires Gg atoms")
+            out[r["period_id"]] += (float(r["native_mass"]) / 1000 if native_co2
+                                    else float(r["co2e_Mt_AR5"]))
     return out
 
 
@@ -232,7 +246,7 @@ def _unsd_series_diagnostics():
     by construction; the sign and size of the gap per year is the diagnostic, never a residual."""
     rows = _rows(asset_path(OUTPUTS, "unsd_industry_combustion_control.csv"))
     totals = {int(r["year"]): float(r["co2_Mt"]) for r in rows if r["fuel"] == "FOSSIL_COMBUSTION_TOTAL"}
-    engine = _engine_1a2_by_period()
+    engine = _engine_1a2_by_period(native_co2=True)
     out = []
     for period in sorted(engine):
         y = int(period[2:6]) + 1
@@ -240,13 +254,13 @@ def _unsd_series_diagnostics():
             continue
         blend = 0.5 * totals[y - 1] + 0.5 * totals[y]
         d = row("1.A.2", "UNSD 1.A.2 series benchmark",
-                "engine %.3f vs UNSD manufacturing %.3f Mt at 0.5 x CY%d + 0.5 x CY%d" % (engine[period], blend, y - 1, y),
+                "native CO2: engine %.3f vs UNSD manufacturing %.3f Mt at 0.5 x CY%d + 0.5 x CY%d" % (engine[period], blend, y - 1, y),
                 "diagnostic", "", "%.3f" % (engine[period] - blend),
                 "outputs/unsd_industry_combustion_control.csv",
                 "the HDIP energy balance as the 1.A.2 control total - roadmap step 1",
-                "a SECOND independent benchmark's shape beside EDGAR's; UNSD manufacturing excludes captive "
-                "generation and includes cement kiln coal, so it brackets the gap high; engine minus UNSD, "
-                "never a residual to insert")
+                "UNSD manufacturing excludes captive generation, while fuel and source boundaries differ; "
+                "shared national energy statistics limit independence. Engine minus UNSD is a signed "
+                "diagnostic, not missing emissions or a bound.", gas="CO2", comparison_basis="engine_minus_comparator")
         d["period_id"] = period
         out.append(d)
     return out
@@ -254,21 +268,21 @@ def _unsd_series_diagnostics():
 
 def _unsd_diagnostic():
     """The second, independent 1.A.2 benchmark: UNSD's manufacturing combustion at the
-    release's own IPCC factors. Bounds the same gap EDGAR does, from a different source."""
+    release's own IPCC factors, with a distinct fuel/source/calendar boundary."""
     rows = _rows(asset_path(OUTPUTS, "unsd_industry_combustion_control.csv"))
     totals = {r["year"]: float(r["co2_Mt"]) for r in rows if r["fuel"] == "FOSSIL_COMBUSTION_TOTAL"}
     latest = max(totals)
-    engine = _engine_1a2_by_period()["FY2023-24"]   # the engine's 1.A.2 (industry combustion + captive)
+    engine = _engine_1a2_by_period(native_co2=True)["FY2023-24"]
     return row("1.A.2", "UNSD 1.A.2 combustion benchmark",
-               "UNSD manufacturing %g Mt (CY%s) vs engine %.2f Mt" % (totals[latest], latest, engine),
+               "native CO2: UNSD manufacturing %g Mt (CY%s) vs engine %.2f Mt" % (totals[latest], latest, engine),
                "diagnostic", "", "%.2f" % (totals[latest] - engine),
                "outputs/unsd_industry_combustion_control.csv",
                "already held - UNSD energy balances (the public HDIP stand-in), the release's "
                "own IPCC 2006 CO2 factors applied - roadmap step 1",
-               "a SECOND independent benchmark beside EDGAR; UNSD manufacturing excludes captive "
-               "generation and includes cement kiln coal (its %g Mt coal line is the kiln fuel the "
-               "engine screens), so it brackets the gap high; full nine-year series in the product"
-               % next(float(r["co2_Mt"]) for r in rows if r["year"] == str(latest) and r["fuel"] == "primary_coal"))
+               "UNSD manufacturing excludes captive generation and shares national energy statistics "
+               "with other comparators. Comparator minus engine is a scope-approximate signed "
+               "difference, not a missing-emissions floor or upper bound.",
+               gas="CO2", comparison_basis="comparator_minus_engine")
 
 
 def _edgar_series_diagnostics():
@@ -281,10 +295,11 @@ def _edgar_series_diagnostics():
                 "engine %s vs EDGAR %s Mt at %s" % (r["engine_1a2_mt"], r["edgar_industrial_combustion_mt"], r["edgar_basis"]),
                 "diagnostic", "", r["divergence_1a2_mt"],
                 "outputs/pakemis_industry_edgar_divergence.csv",
-                "the same closure as the coverage row - roadmap step 1; by-field coal production and "
-                "NEPRA-metered burn resolve the FY2022-23/FY2023-24 power seam the break coincides with",
+                "reconcile public coal production/imports, documented station consumption and "
+                "industrial allocations before attributing a comparator difference to missing sources",
                 "a DIAGNOSTIC of shape (engine minus EDGAR at the fiscal blend), never an EDGAR residual to "
-                "insert; EDGAR is IEA-balance-derived and HDIP-fed upstream, 2023-2024 preliminary; %s" % r["reading"])
+                "insert; EDGAR is IEA-balance-derived and HDIP-fed upstream, 2023-2024 preliminary; %s" % r["reading"],
+                comparison_basis="engine_minus_comparator")
         d["period_id"] = r["period_id"]
         out.append(d)
     return out

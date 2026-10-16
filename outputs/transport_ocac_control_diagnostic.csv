@@ -19,7 +19,7 @@ classes vs printed total,2016,HOBC,TOTAL_INTERNAL,90595.0,90595.0,0.0,0.0,yes,AD
 classes vs printed total,2016,HSD,TOTAL_INTERNAL,8484280.0,8484280.0,0.0,0.0,yes,ADDITIVE,
 classes vs printed total,2017,MS,TOTAL_INTERNAL,7386362.0,7386362.0,0.0,0.0,yes,ADDITIVE,
 classes vs printed total,2017,HOBC,TOTAL_INTERNAL,124918.0,124918.0,0.0,0.0,yes,ADDITIVE,
-classes vs printed total,2017,HSD,TOTAL_INTERNAL,8516476.0,9038298.0,-521822.0,-5.7735,yes,NON-ADDITIVE,"the edition's own customer classes do not sum to the total it prints; this is a source inconsistency, carried rather than corrected"
+classes vs printed total,2017,HSD,TOTAL_INTERNAL,8516476.0,9038298.0,-521822.0,-5.7735,yes,NON-ADDITIVE,"as first printed, the edition's customer classes fall 521822 t short of the total it prints; OCAC_FY2018_19.pdf restores exactly that amount to Road, and the core carries the restated figure (a declared publisher correction, pkinv.sectors.transport.ocac_corrections)"
 classes vs printed total,2018,MS,TOTAL_INTERNAL,7599364.0,7599364.0,0.0,0.0,yes,ADDITIVE,
 classes vs printed total,2018,HOBC,TOTAL_INTERNAL,86621.0,86621.0,0.0,0.0,yes,ADDITIVE,
 classes vs printed total,2018,HSD,TOTAL_INTERNAL,7354409.0,7354409.0,0.0,0.0,yes,ADDITIVE,

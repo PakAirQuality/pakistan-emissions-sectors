@@ -41,14 +41,18 @@ class TestTheAuditIsACensus(unittest.TestCase):
         self.assertEqual([r["ledger_plant"] for r in _rows()
                           if r["match_class"] == "ledger_only"], [])
 
-    def test_the_jamshoro_finding_is_stated(self):
-        """The one census finding: GEM carries Jamshoro Unit 5 operating on
-        coal while the per-plant ledger holds Jamshoro on RFO alone. The row
-        must exist AND say it is a finding to state, never a quantity."""
-        gem_only = [r for r in _rows() if r["match_class"] == "gem_only"]
-        self.assertEqual([r["gem_plant"] for r in gem_only],
-                         ["Jamshoro power station"])
-        self.assertIn("never a quantity", gem_only[0]["note"])
+    def test_the_jamshoro_finding_is_closed_by_the_ledger(self):
+        """Through rc67 the one census finding: GEM carried Jamshoro Unit 5
+        operating on coal while the per-plant ledger held Jamshoro on RFO alone.
+        The FY2024-25 extension reads NEPRA's own coal account for the unit, so
+        it is now a matched row and nothing is GEM-only. Any future gem_only row
+        must still say it is a finding to state, never a quantity."""
+        jamshoro = [r for r in _rows() if r["gem_plant"] == "Jamshoro power station"]
+        self.assertEqual([r["match_class"] for r in jamshoro], ["matched_grid_ledger"])
+        self.assertEqual(jamshoro[0]["ledger_plant"], "Jamshoro Coal Power Unit-1")
+        for r in _rows():
+            if r["match_class"] == "gem_only":
+                self.assertIn("never a quantity", r["note"])
 
     def test_the_product_regenerates_identically(self):
         fresh = gem_audit.build()

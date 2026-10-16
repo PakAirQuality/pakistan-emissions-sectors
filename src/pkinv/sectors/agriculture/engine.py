@@ -240,12 +240,13 @@ def parameter_overrides():
 # this sector and nothing here recomputes anything.
 
 
-def components_for_fiscal_year(fy_end):
+def components_for_fiscal_year(fy_end, nitrogen_method=None):
     """The BACKCAST build for one fiscal year - the runner's own build on the
     fiscal activity data, exactly as the longitudinal ensemble consumed it. Not
     the reference-year build_components(), whose year guard is deliberate."""
     from pkinv.sectors.agriculture import fiscal_activity
-    return run_inventory.build_components(fiscal_activity.data_for_fiscal_year(fy_end))
+    return run_inventory.build_components(fiscal_activity.data_for_fiscal_year(fy_end),
+                                          nitrogen_method=nitrogen_method)
 
 
 def activity_basis(category):
@@ -254,8 +255,8 @@ def activity_basis(category):
     return fiscal_activity.DRIVER[category][1]
 
 
-def series_components_for_year(fy_end):
+def series_components_for_year(fy_end, nitrogen_method=None):
     """The published fiscal-series components for one year (nothing recomputed) -
     what the annual product carries for backcast years."""
     from pkinv.sectors.agriculture import fiscal_series
-    return fiscal_series.components_for_year(fy_end)
+    return fiscal_series.components_for_year(fy_end, nitrogen_method=nitrogen_method)

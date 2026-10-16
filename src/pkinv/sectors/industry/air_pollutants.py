@@ -42,7 +42,7 @@ Reads:  data/air_source_classes.csv, data/air_emission_factors.csv,
         data/activity/industry/fuel_sulfur_evidence.csv, data/physical_sources.csv,
         outputs/pakemis_kiln_allocation_adm2.csv, data/gis/kilns/pak_brick_kiln_assets.csv,
         outputs/pakemis_cement_kiln_coal_reconstruction.csv (+ the sector data libraries)
-Writes: outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv (every class x year x species,
+Writes: outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv (every class x year x species,
         estimates, typed absences and IE pointers alike, with the reporting sector)
         outputs/pakemis_air_source_class_uncertainty_by_year.csv (per sector x period x species)
 """
@@ -57,6 +57,7 @@ from pkinv.core import air_factors, sulfur
 from pkinv.activity.store import read_rows
 from pkinv.core.uncertainty import combine_sum, product
 from pkinv.paths import DATA, OUTPUTS
+from pkinv.core.reporting_window import CORE_FY_ENDS, CORE_SUFFIX
 from pkinv.sectors.industry import combustion, solid_fuels
 from pkinv.sectors.industry.data import IndustryData
 
@@ -69,7 +70,7 @@ OCAC_SECTORAL = asset_path(DATA, "activity", "transport", "ocac_sectoral_annual.
 FLARE_GAS_DENSITY_KG_M3 = 0.85          # EMEP/EEA 2023 1.B.2.c Table 3-1 note (flare gas)
 FLARE_DENSITY_UNCERT_PCT = 15.0         # declared: associated-gas composition varies by field
 FLARE_BLEND_UNCERT_PCT = 10.0           # declared: calendar-to-fiscal half-year blend
-OUT = asset_path(OUTPUTS, "pakemis_air_source_classes_fy2015_16_fy2023_24.csv")
+OUT = asset_path(OUTPUTS, "pakemis_air_source_classes_%s.csv" % CORE_SUFFIX)
 UNCERT_OUT = asset_path(OUTPUTS, "pakemis_air_source_class_uncertainty_by_year.csv")
 # reporting_sector vocabulary of the register. `power` joined at rc60 with the oil and diesel
 # grid classes: SO2 only, on a reviewed plant-fuel-year register, with coal and gas still in the
@@ -79,7 +80,7 @@ UNCERT_OUT = asset_path(OUTPUTS, "pakemis_air_source_class_uncertainty_by_year.c
 MODULES = ("industry", "ippu", "fugitives", "power")
 COMPUTING_MODULES = tuple(dict.fromkeys(MODULES + ("power",)))
 
-YEARS = tuple(range(2016, 2025))          # fiscal-END keys, FY2015-16..FY2023-24
+YEARS = CORE_FY_ENDS
 STATUSES = ("estimate", "typed_absent", "IE")
 CAPTIVE_CATEGORY = "Captive gas self-generation (1A2)"
 # the power module's own name for main-activity generation, so the admitted grid rows
@@ -332,7 +333,8 @@ def activity(cls, fy_end, ctx):
         stream = fn.split(":", 1)[1]
         if stream not in d.streams(fy_end):
             return None
-        tj = combustion.gas_TJ(d, stream, fy_end) * share
+        from pkinv.sectors.fugitives import post_meter
+        tj = combustion.gas_TJ(d, stream, fy_end) * share * post_meter.combusted_fraction()
         if tj == 0.0:
             return None
         m.update(TJ_ncv=tj, TJ_hhv=tj / d.p("industry_gross_to_net"), value=tj, unit="TJ",
@@ -371,7 +373,10 @@ def activity(cls, fy_end, ctx):
     elif fn == "power.captive_gas_TJ":
         from pkinv.sectors.power import captive
         p = ctx.power
-        tj = captive.gas_TJ(p, year=fy_end) * share            # the captive panel is fiscal-END keyed
+        from pkinv.sectors.fugitives import post_meter
+        # AP combustion factors describe burned gas, matching the GHG boundary;
+        # delivered gas remains the separate activity control.
+        tj = captive.gas_TJ(p, year=fy_end) * share * post_meter.combusted_fraction()
         m.update(TJ_ncv=tj, TJ_hhv=tj / p.p("captive_gross_to_net"), value=tj, unit="TJ",
                  uncert_pct=product(p.p("captive_activity_uncert"), p.pu("captive_hhv_btu_per_scf"),
                                     p.pu("captive_gross_to_net"), share_u))
@@ -645,6 +650,15 @@ def main():
             w.writerow(dict(r, emissions_kt="" if r["emissions_kt"] == "" else "%.6f" % r["emissions_kt"],
                             uncert_pct="" if r["uncert_pct"] == "" else "%.1f" % r["uncert_pct"],
                             activity_value="" if r["activity_value"] == "" else "%.4f" % r["activity_value"]))
+    with open(asset_path(OUTPUTS, "pakemis_air_source_classes_fy2015_16_fy2023_24.csv"),
+              "w", newline="", encoding="utf-8") as h:
+        writer = csv.DictWriter(h, fieldnames=list(FIELDS), lineterminator="\n")
+        writer.writeheader()
+        for r in detail:
+            if r["fiscal_end_year"] <= 2024:
+                writer.writerow(dict(r, emissions_kt="" if r["emissions_kt"] == "" else "%.6f" % r["emissions_kt"],
+                                     uncert_pct="" if r["uncert_pct"] == "" else "%.1f" % r["uncert_pct"],
+                                     activity_value="" if r["activity_value"] == "" else "%.4f" % r["activity_value"]))
     unc = uncertainty_rows(detail)
     with open(UNCERT_OUT, "w", newline="", encoding="utf-8") as h:
         w = csv.DictWriter(h, fieldnames=list(UNCERT_FIELDS), lineterminator="\n")

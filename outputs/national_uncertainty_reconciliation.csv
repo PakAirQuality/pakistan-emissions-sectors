@@ -1,11 +1,11 @@
 module,deterministic_Mt,national_p50_Mt,national_distribution,sector_p50_Mt,sector_distribution,sector_scope,median_gap_Mt,why
-agriculture,223.45447,221.75,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
-aviation,0.30113,0.287,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
+agriculture,223.03802,221.491,native_conserved_nitrogen_plus_shared_parameter_multipliers,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
+aviation,0.30113,0.286,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
 fugitives,23.49937,24.153,bounded_split_triangular,24.141,bounded_split_triangular,module total,-0.012,"SAME DRAWS BY CONSTRUCTION (rc12): the national row consumes the sector engine's persisted draw file (outputs/mc_draws/), whose first 10,000 draws are bit-identical to the sector table's; the residual median gap is the draw-count difference (sector 10k vs national 100k), bounded by the convergence table"
-industry,22.58165,22.388,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
-ippu,25.53536,25.509,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
-power,45.58957,45.555,mean_preserving_lognormal,39.998,mean_preserving_lognormal,"grid (1A1a) only - narrower than the national module row, which includes captive gas",,"same family; the medians differ by SCOPE (the sector product samples grid generation only), so no gap is printed"
+industry,22.58165,22.397,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
+ippu,25.53536,25.508,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
+power,45.65722,44.69,mean_preserving_lognormal,39.32,mean_preserving_lognormal,"grid (1A1a) only - narrower than the national module row, which includes captive gas",,"same family; the medians differ by SCOPE (the sector product samples grid generation only), so no gap is printed"
 railways,0.39437,0.388,mean_preserving_lognormal,0.388,mean_preserving_lognormal,module total,0.0,same family; the residual gap is sampling noise plus the mean-median offset at the module's sigma
-residential,24.22042,23.458,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
-transport,41.92617,41.816,mean_preserving_lognormal,41.841,mean_preserving_lognormal,module total,0.025,same family; the residual gap is sampling noise plus the mean-median offset at the module's sigma
+residential,24.22155,23.449,mean_preserving_lognormal,,,,,no sector-level sampled product on the module total; the national row is the only Monte Carlo treatment
+transport,41.92617,41.813,mean_preserving_lognormal,41.841,mean_preserving_lognormal,module total,0.028,same family; the residual gap is sampling noise plus the mean-median offset at the module's sigma
 waste,37.45291,38.209,parameter_rerun_ledger_true,38.3,parameter_rerun_ledger_true,module total,0.091,"SAME DRAWS BY CONSTRUCTION (rc12): the national row consumes the sector engine's persisted draw file (outputs/mc_draws/), whose first 10,000 draws are bit-identical to the sector table's; the residual median gap is the draw-count difference (sector 10k vs national 100k), bounded by the convergence table"

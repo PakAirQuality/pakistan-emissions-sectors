@@ -1,10 +1,10 @@
 """Fetch monthly 2-metre temperature for the five provincial anchor cities and derive
 degree-days - the shape behind the residential monthly profiles.
 
-NASA POWER (power.larc.nasa.gov) rather than ERA5: same reanalysis family
-(MERRA-2-based), an open JSON API with no CDS account, and monthly points are all the
+NASA POWER (power.larc.nasa.gov), based on MERRA-2 reanalysis, provides
+an open JSON API with no CDS account, and monthly points are all the
 profile layer needs. One point per province (the largest city, where the households
-are), every month of the nine-year series. HDD base 18 C and CDD base 24 C on monthly
+are), every month of the ten-year core series. HDD base 18 C and CDD base 24 C on monthly
 means - a monthly-mean degree-day understates threshold crossings within a month, which
 is fine for a SHAPE (the annual totals never depend on it; monthly.py normalises).
 
@@ -16,9 +16,10 @@ defensible place to borrow. The window runs July 2014 so that a fiscal year befo
 series can still be assembled if one is ever needed.
 
 Usage:  python3 scripts/fetch_hdd.py [--check]
-Writes: data/raw/nasa_power/T2M_monthly_<city>_2014_2024.json  (each response, kept first)
-        data/activity/residential/monthly_degree_days.csv  (5 provinces x 114 months)
---check keeps the responses, re-derives the table and compares; it writes no table.
+Writes: data/raw/nasa_power/T2M_monthly_<city>_2024_2025.json (each response kept first)
+        data/activity/residential/monthly_degree_days.csv (5 provinces x 132 months)
+Earlier July2014-June2024 weather uses the held2014_2024 source vintage.
+--check re-derives offline from retained responses and writes no table.
 """
 
 from pkinv.assets import asset_path
@@ -41,9 +42,9 @@ CITIES = {
     "Balochistan": ("Quetta", 30.18, 66.99),
     "Other": ("Islamabad", 33.68, 73.05),
 }
-# July 2014 through June 2024: the nine fiscal years of the series, plus the months of
-# FY2014-15 that a tenth would need. Calendar years are what the API takes.
-FIRST_YEAR, LAST_YEAR = 2014, 2024
+# July2014 through June2025: ten core fiscal years plus FY2014-15 precursor weather.
+# Calendar years are what the API takes; earlier observed-source vintage is retained.
+FIRST_YEAR, LAST_YEAR = 2014, 2025
 MONTHS = ["%d%02d" % (y, m) for y in range(FIRST_YEAR, LAST_YEAR + 1)
           for m in range(1, 13)][6:-6]
 HDD_BASE, CDD_BASE = 18.0, 24.0
@@ -67,19 +68,30 @@ def _days(ym):
     return DAYS[month]
 
 
-def table():
+def table(retrieve=True):
     rows = []
     for prov, (city, lat, lon) in CITIES.items():
-        kept = retention.fetch_and_keep(
-            URL % (lon, lat), "nasa_power",
-            "T2M_monthly_%s_%d_%d.json" % (city, FIRST_YEAR, LAST_YEAR), timeout=60)
-        with open(kept, encoding="utf-8") as handle:
-            t2m = json.load(handle)["properties"]["parameter"]["T2M"]
+        vintages = {}
+        for first, last in ((2014, 2024), (2024, 2025)):
+            name = "T2M_monthly_%s_%d_%d.json" % (city, first, last)
+            kept = os.path.join(ROOT, "data/raw/nasa_power", name)
+            if not os.path.exists(kept):
+                if not retrieve:
+                    raise FileNotFoundError("Retain the own-year NASA POWER response before offline check: " + name)
+                url = ("https://power.larc.nasa.gov/api/temporal/monthly/point?parameters=T2M"
+                       "&community=RE&longitude=%s&latitude=%s&start=%d&end=%d&format=JSON"
+                       % (lon, lat, first, last))
+                kept = retention.fetch_and_keep(url, "nasa_power", name, timeout=60)
+            with open(kept, encoding="utf-8") as handle:
+                vintages[first,last] = json.load(handle)["properties"]["parameter"]["T2M"]
         for ym in MONTHS:
+            t2m = vintages[(2014,2024) if ym <= "202406" else (2024,2025)]
             if ym not in t2m:
                 raise SystemExit("NASA POWER returned no T2M for %s at %s; nothing written"
                                  % (ym, city))
             t = t2m[ym]
+            if t is None or not -90 < float(t) < 65:
+                raise ValueError("NASA POWER missing-value sentinel or invalid temperature at %s %s" % (city, ym))
             days = _days(ym)
             rows.append({
                 "province": prov, "city": city, "month": ym,
@@ -97,8 +109,10 @@ def table():
 
 
 def main(argv=None):
-    text, count = table()
-    if "--check" in (sys.argv[1:] if argv is None else argv):
+    checking = "--check" in (sys.argv[1:] if argv is None else argv)
+    offline = "--offline" in (sys.argv[1:] if argv is None else argv)
+    text, count = table(retrieve=not (checking or offline))
+    if checking:
         return retention.report_check("NASA POWER degree days", OUT, text)
     os.makedirs(os.path.dirname(OUT), exist_ok=True)
     with open(OUT, "w", newline="", encoding="utf-8") as f:

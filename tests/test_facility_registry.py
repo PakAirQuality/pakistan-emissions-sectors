@@ -194,7 +194,10 @@ class TestHonesty(unittest.TestCase):
                 self.assertTrue(row["licence"].startswith("odbl"),
                                 "%s has OSM geometry under %r"
                                 % (row["facility_id"], row["licence"]))
-        self.assertEqual(osm, 71,
+        # 71 -> 63 at rc68: eight cement works moved to the GEM cement tracker's exact
+        # coordinates (CC BY), because the primary geography cannot use ODbL-derived points
+        # and dropping them had left 42.3 percent of census clinker unplaced.
+        self.assertEqual(osm, 63,
                          "the OSM-derived row count moved (%d) - re-audit the "
                          "licence derivation in build_facility_registry.py" % osm)
 

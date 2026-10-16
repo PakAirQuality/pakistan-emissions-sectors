@@ -11,7 +11,7 @@
           "title": "Annual emissions",
           "icon": "BarChart3",
           "dek": "By sector, source category and greenhouse gas, with the evidence grade on every row.",
-          "coverage": "Nine fiscal years",
+          "coverage": "Ten fiscal years",
           "files": [
             "fact_annual.csv"
           ],
@@ -31,7 +31,7 @@
           "title": "Provincial emissions",
           "icon": "MapPin",
           "dek": "Annual estimates for each province. Emissions are not measured provincially, so these are allocations — but the road-fuel split rides OCAC's own provincial sales, not a proxy.",
-          "coverage": "Nine fiscal years · five provinces",
+          "coverage": "Ten fiscal years · five provinces",
           "files": [
             "fact_adm1_year.csv"
           ],
@@ -49,7 +49,7 @@
           "title": "District emissions",
           "icon": "LayoutGrid",
           "dek": "Annual estimates by district, with the allocation status and boundary each rests on.",
-          "coverage": "Nine fiscal years · districts",
+          "coverage": "Ten fiscal years · districts",
           "files": [
             "fact_adm2_year.csv",
             "fact_spatial_basis_year.csv"
@@ -67,7 +67,7 @@
           "title": "Monthly emissions",
           "icon": "CalendarDays",
           "dek": "Every month of the record, saying for each whether the timing is observed, modelled or evenly spread.",
-          "coverage": "108 months",
+          "coverage": "120 months",
           "files": [
             "fact_monthly.csv"
           ],
@@ -90,7 +90,7 @@
           "title": "Petroleum sales by fuel and customer group",
           "icon": "Fuel",
           "dek": "Petrol, diesel, furnace oil, kerosene and aviation fuel as OCAC publishes them, by customer class. Sales into a class, not fuel burned in it.",
-          "coverage": "Nine fiscal years · OCAC",
+          "coverage": "Ten fiscal years · OCAC",
           "files": [
             "fact_activity_fuel_sales_national.csv"
           ],
@@ -149,7 +149,7 @@
           "title": "Crop area & production",
           "icon": "Wheat",
           "dek": "Area and production by crop, year and district. A district figure split from a pooled parent is marked an allocation, not an observation.",
-          "coverage": "Nine fiscal years · districts",
+          "coverage": "Ten fiscal years · districts",
           "files": [
             "fact_activity_crops.csv"
           ],
@@ -188,7 +188,7 @@
           "title": "Power plant fuel & generation",
           "icon": "Zap",
           "dek": "Plant-level fuel quantity and net generation from the regulator's own tables, with the implied heat rate marked as derived.",
-          "coverage": "Nine fiscal years · NEPRA",
+          "coverage": "Ten fiscal years · NEPRA",
           "files": [
             "fact_activity_power_plants.csv"
           ],
@@ -243,7 +243,7 @@
           "title": "Industrial fuel use",
           "icon": "Factory",
           "dek": "Coal and gas by published customer group, and the gas a fertiliser plant turns into ammonia kept apart from the gas it burns.",
-          "coverage": "Nine fiscal years · HDIP · OGRA · NFDC",
+          "coverage": "Ten fiscal years · HDIP · OGRA · NFDC",
           "files": [
             "fact_activity_industry_fuel.csv"
           ],
@@ -455,7 +455,7 @@
           "title": "Annual estimates",
           "icon": "Wind",
           "dek": "Seven pollutants by sector and year, each in its own mass unit and never converted to CO₂-equivalent.",
-          "coverage": "Nine fiscal years",
+          "coverage": "Ten fiscal years",
           "files": [
             "fact_air_panel.csv"
           ],
@@ -474,7 +474,7 @@
           "title": "Provincial estimates",
           "icon": "MapPin",
           "dek": "The same seven pollutants allocated to each province, for every year of the record.",
-          "coverage": "Nine fiscal years · five provinces",
+          "coverage": "Ten fiscal years · five provinces",
           "files": [
             "fact_air_adm1_year.csv"
           ],
@@ -490,7 +490,7 @@
           "title": "District estimates",
           "icon": "LayoutGrid",
           "dek": "The same allocation carried down to districts, with the status each district's share rests on.",
-          "coverage": "Nine fiscal years · districts",
+          "coverage": "Ten fiscal years · districts",
           "files": [
             "fact_air_adm2_year.csv"
           ],
@@ -506,7 +506,7 @@
           "title": "Air pollutants by source class",
           "icon": "Factory",
           "dek": "Boilers, furnaces, engines, kilns and captive generators; ammonia, steel and soda ash processes; oil and gas segments, refineries and flares — each with its factor rows, activity and uncertainty, and the typed absences beside them.",
-          "coverage": "Nine fiscal years · provisional",
+          "coverage": "Ten fiscal years · provisional",
           "files": [
             "fact_air_source_classes.csv"
           ],
@@ -531,7 +531,7 @@
           "title": "Lahore District by sector",
           "icon": "MapPin",
           "dek": "The district's share of each sector's allocation, year by year, beside the national mass no geometry could place below a province.",
-          "coverage": "Nine fiscal years · one district",
+          "coverage": "Ten fiscal years · one district",
           "files": [
             "fact_air_lahore.csv"
           ],
@@ -547,7 +547,7 @@
           "title": "Coverage & screening",
           "icon": "ListChecks",
           "dek": "What is covered, what is not, and the screening scenarios — which are kept apart from the estimates.",
-          "coverage": "Nine fiscal years",
+          "coverage": "Ten fiscal years",
           "files": [
             "fact_air_absence_screening.csv"
           ],
@@ -604,7 +604,7 @@
           "title": "Uncertainty intervals",
           "icon": "Gauge",
           "dek": "The interval around each year's total, and around the change from one year to the next.",
-          "coverage": "Nine fiscal years",
+          "coverage": "Ten fiscal years",
           "files": [
             "fact_uncertainty_series.csv"
           ],
@@ -747,10 +747,13 @@
           "id": "grid-annual",
           "title": "Annual emissions grid",
           "icon": "Globe",
-          "dek": "The three greenhouse gases on a 0.05° grid, one layer per year.",
-          "coverage": "Nine fiscal years · NetCDF",
+          "dek": "Native greenhouse-gas cell masses, one file per structural configuration.",
+          "coverage": "Ten fiscal years · NetCDF",
           "files": [
-            "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc"
+            "pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
+            "pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
+            "pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
+            "pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc"
           ],
           "finds": [
             "grid",
@@ -797,10 +800,17 @@
           "id": "grid-air",
           "title": "Air pollutant grid",
           "icon": "Wind",
-          "dek": "Seven pollutants on the same grid, for every year.",
-          "coverage": "Nine fiscal years · NetCDF",
+          "dek": "Seven covered-source pollutants, with separate annual and monthly files for each configuration; species and configurations must not be added.",
+          "coverage": "Ten fiscal years · NetCDF",
           "files": [
-            "pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc"
+            "pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
+            "pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
+            "pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
+            "pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc",
+            "pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc",
+            "pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc",
+            "pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc",
+            "pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc"
           ],
           "finds": [
             "air",
@@ -814,7 +824,7 @@
           "title": "EDGAR-aligned grid",
           "icon": "Grid3x3",
           "dek": "The same emissions on EDGAR's 0.1° lattice, so the two can be compared cell for cell.",
-          "coverage": "Nine fiscal years · NetCDF",
+          "coverage": "Ten fiscal years · NetCDF",
           "files": [
             "pakemis_grid_0p1_edgar_aligned.nc"
           ],

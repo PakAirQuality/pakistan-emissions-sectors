@@ -9,9 +9,9 @@ A **key category** has a significant influence on the national inventory's total
 
 | Category | Level % | Cumulative % | Key (level) |
 |---|---:|---:|:--:|
-| Enteric fermentation | 67.9 | 67.9 | **KEY** |
-| Managed soils | 12.8 | 80.6 | **KEY** |
-| Manure management | 9.5 | 90.1 | **KEY** |
+| Enteric fermentation | 68.0 | 68.0 | **KEY** |
+| Managed soils | 12.8 | 80.8 | **KEY** |
+| Manure management | 9.3 | 90.1 | **KEY** |
 | Rice cultivation | 7.4 | 97.5 | **KEY** |
 | Urea application | 2.2 | 99.7 | - |
 | Field burning of residues | 0.3 | 100.0 | - |
@@ -21,11 +21,11 @@ A **key category** has a significant influence on the national inventory's total
 | Category | Trend contribution % | Cumulative % | Key (trend) |
 |---|---:|---:|:--:|
 | Rice cultivation | 48.6 | 48.6 | **KEY** |
-| Enteric fermentation | 27.3 | 75.9 | **KEY** |
-| Manure management | 17.7 | 93.7 | **KEY** |
-| Managed soils | 5.0 | 98.6 | **KEY** |
-| Urea application | 1.2 | 99.9 | - |
-| Field burning of residues | 0.1 | 100.0 | - |
+| Enteric fermentation | 26.3 | 74.9 | **KEY** |
+| Manure management | 16.6 | 91.5 | **KEY** |
+| Managed soils | 7.1 | 98.6 | **KEY** |
+| Urea application | 1.2 | 99.8 | - |
+| Field burning of residues | 0.2 | 100.0 | - |
 
 ## Key categories (level OR trend)
 

@@ -176,7 +176,8 @@ def weighted_fracgasf(data=None, ph_class=None, urea_override=None, seasons=FY_S
     return weighted, detail, total_n
 
 
-_CACHE = {}
+from weakref import WeakKeyDictionary
+_CACHE = WeakKeyDictionary()
 
 
 def fracgasf(data=None):
@@ -191,7 +192,9 @@ def fracgasf(data=None):
     """
     if data is None:
         data = InventoryData()
-    key = id(data)
+    if hasattr(data, "nitrogen_fracgasf"):
+        return data.nitrogen_fracgasf, "shared native nitrogen parameter realisation"
+    key = data
     if key in _CACHE:
         return _CACHE[key]
     try:

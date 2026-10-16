@@ -16,7 +16,8 @@ from _support import OUTPUTS
 OUT = os.path.join(OUTPUTS, "pakemis_adm2_stream_by_year.csv")
 REFERENCE = os.path.join(OUTPUTS, "pakemis_adm2_stream_reference.csv")
 ADM1 = os.path.join(OUTPUTS, "pakemis_adm1_by_year.csv")
-PERIODS = ["FY%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024)]
+from pkinv.core.reporting_window import CORE_PERIOD_IDS
+PERIODS = CORE_PERIOD_IDS
 RTOL = 1e-9
 
 

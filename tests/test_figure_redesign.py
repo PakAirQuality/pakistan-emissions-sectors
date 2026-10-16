@@ -1,4 +1,4 @@
-"""The eight main figures are drawn at their printed size, and say what their tables say.
+"""The main figures are drawn at their printed size, and say what their tables say.
 
 WHY THIS FILE EXISTS. Two size failures reached a reviewer and no test could see either. A
 single-column figure was included at \\columnwidth, which is the whole text block in the review
@@ -23,6 +23,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.report import manuscript_style as S                          # noqa: E402
+from pkinv.core.reporting_window import CORE_PERIOD_IDS
 
 FIGDIR = os.path.join(ROOT, "paper_national", "figures")
 V3 = os.path.join(ROOT, "paper_national", "versions", "v3")
@@ -97,16 +98,16 @@ class TestEveryFigureIsDrawnAtItsPrintedSize(unittest.TestCase):
     def test_both_layouts_place_every_figure_at_the_size_it_was_drawn(self):
         """The two-column paper and the one-column review manuscript share one set of figure
         blocks. Neither may rescale a figure, in either direction."""
-        pattern = re.compile(r"<\.\./\.\./figures/(f0\d_[a-z0-9_]+)\.pdf, id=\d+, ([\d.]+)pt x "
+        pattern = re.compile(r"<\.\./\.\./figures/(f\d{2}_[a-z0-9_]+)\.pdf, id=\d+, ([\d.]+)pt x "
                              r"([\d.]+)pt>.*?Requested size: ([\d.]+)pt x ([\d.]+)pt")
-        for doc in ("paper", "submission"):
+        for doc in ("paper_national", "submission"):
             log = os.path.join(V3, doc + ".log")
             self.assertTrue(os.path.exists(log), "%s.log is absent: run `make paper-v3 paper-v3-review`" % doc)
             with open(log, encoding="utf-8", errors="ignore") as handle:
                 text = handle.read().replace("\n", "")
             placed = {m.group(1): float(m.group(4)) / float(m.group(2)) for m in pattern.finditer(text)}
             self.assertEqual(sorted(placed), sorted(S.FIGURES),
-                             "%s.pdf does not include exactly the eight figures" % doc)
+                             "%s.pdf does not include exactly the declared main figures" % doc)
             for stem, scale in placed.items():
                 self.assertAlmostEqual(scale, 1.0, places=2,
                                        msg="%s is placed at %.3f of its drawn size in %s.pdf"
@@ -120,7 +121,7 @@ class TestTheManuscriptCitesEveryFigureInOrder(unittest.TestCase):
         with open(os.path.join(V3, "paper.tex"), encoding="utf-8") as handle:
             cls.tex = handle.read()
 
-    def test_eight_figures_each_with_one_label_and_one_file(self):
+    def test_declared_figures_each_with_one_label_and_one_file(self):
         files = re.findall(r"\\includegraphics\[width=([^\]]+)\]\{\.\./\.\./figures/([a-z0-9_]+)\.pdf\}", self.tex)
         self.assertEqual([f for _, f in files], list(S.FIGURES))
         for width, stem in files:
@@ -130,7 +131,7 @@ class TestTheManuscriptCitesEveryFigureInOrder(unittest.TestCase):
 
     def test_every_figure_label_is_cited_in_the_text_before_or_at_its_number(self):
         labels = re.findall(r"\\label\{(fig:[a-z_]+)\}", self.tex)
-        self.assertEqual(len(labels), 8)
+        self.assertEqual(len(labels), len(S.FIGURES))
         body = re.sub(r"\\caption\{.*?\}\n\\label", "", self.tex, flags=re.S)
         first = {label: body.find("\\ref{%s}" % label) for label in labels}
         for label, at in first.items():
@@ -149,7 +150,10 @@ class TestTheCompanionTablesHoldTheCaptionsIdentities(unittest.TestCase):
     def test_evidence_shares_are_a_partition_of_each_gas_year(self):
         classes = [label for _, label, _, _ in S.EVIDENCE]
         rows = _rows("fig_ghg_grid_evidence.csv")
-        self.assertEqual(len(rows), 27, "nine fiscal years by three gases")
+        self.assertEqual({(r["period_id"], r["gas"]) for r in rows},
+                         {(period, gas) for period in CORE_PERIOD_IDS
+                          for gas in ("CO2", "CH4", "N2O")})
+        self.assertEqual(len(rows), 3 * len(CORE_PERIOD_IDS))
         for r in rows:
             self.assertAlmostEqual(sum(float(r[c]) for c in classes), 100.0, places=6,
                                    msg="%s %s" % (r["gas"], r["period_id"]))
@@ -177,7 +181,9 @@ class TestTheCompanionTablesHoldTheCaptionsIdentities(unittest.TestCase):
                 # float32 cells summed in float64: parts per million, not a disagreement
                 self.assertLess(abs(r["residual_ppm_of_ledger"]), 0.5, "%s %s" % (gas, r["period_id"]))
                 checked += 1
-        self.assertEqual(checked, 27)
+        self.assertEqual(checked, 3 * len(CORE_PERIOD_IDS))
+        self.assertEqual({r["period_id"] for values in blob["closure_detail"].values()
+                          for r in values}, set(CORE_PERIOD_IDS))
         for gas in ("CO2", "CH4", "N2O"):
             facts = blob["maps"][gas]
             self.assertAlmostEqual(facts["placed_Gg"] + blob["unallocated_not_on_map"][gas.lower() + "_Gg"],

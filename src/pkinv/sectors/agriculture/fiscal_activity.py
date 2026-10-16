@@ -1,44 +1,16 @@
-"""Pakistani FISCAL-year agricultural activity, FY2015-16 to FY2023-24.
+"""Pakistani fiscal agricultural activity, July2015-June2025.
 
-WHY THIS EXISTS. The nine-year agriculture history rode FAOSTAT, and FAOSTAT is a CALENDAR
-series. `national_series.py` indexed it by fiscal-END year, so FY2015-16 - published with
-`year_convention = fiscal-end` over 2015-07-01 to 2016-06-30 - was driven by calendar-2016
-activity. Six months of overlap between a declared period and its own drivers. The eleventh
-review called that a structural seam rather than a source citation, and it was right.
+Crop area/production and nitrogen offtake use the Economic Survey fiscal tables
+and NFDC product records. The five census livestock species retain the adopted
+PBS2024 levels; poultry retains its separately identified Survey projection.
+Other years use FAOSTAT relative stock changes rescaled to those adopted anchors.
+Beyond2024 the species-specific2019-2024 geometric relative trend is continued.
+This is an explicit reconstruction/extrapolation, not a new annual enumeration.
 
-The replacement was transcribed into data/activity/agriculture/es_fiscal_series.csv in August
-2026 from the Economic Survey statistical appendix, registered as a source document - AND THEN
-READ BY NOTHING for eighty-eight commits. That is this project's recurring defect wearing a new
-coat: not a declared value nothing can contradict, but a declared SOURCE nothing consumes. This
-module is the consumer, and tests/test_agriculture_fiscal.py is the guard that it stays one.
-
-WHAT IS FISCAL HERE AND WHAT IS NOT, per driver rather than per sector.
-
-  crops (area, production)   ES Tables 2.3 / 2.4     observed_fiscal
-  nitrogen offtake           ES Table 2.9 / NFDC     observed_fiscal
-  livestock stocks           FAOSTAT                 calendar_projection
-
-Livestock is NOT re-based, and the reason is a fact about the source rather than an appetite
-for work. Economic Survey Table 2.14 does publish fiscal head counts; its own footnote calls
-them "estimated figures based on inter-census growth rate of Livestock Census 1996 & 2006",
-and they are numerically the FAOSTAT series they would replace. Transcribing them would buy a
-fiscal label and an honest citation and ZERO new observation. Only two real enumerations exist
-for Pakistan (Livestock Census 2006, PBS 7th Agricultural Census 2024) and the 2006 national
-counts are not held here, so no two-enumeration interpolation can be built either.
-
-That split is not a compromise, and it is worth saying why: the drivers that CAN be re-based
-are the volatile ones (cotton fell 51 percent between FY2021-22 and FY2022-23 and then doubled),
-and the driver that cannot is a smooth geometric projection, where a six-month phase shift is a
-level offset of about one percent and very little trend error. The seam did its damage in the
-crop categories, and those are exactly the ones this closes. The residual phase error is
-MEASURED rather than asserted, in fiscal_series.livestock_phase_envelope().
-
-THE SCOPE BREAK THIS ALSO CLOSES. data/activity/historical/crops.csv carries four crops; the
-FY2023-24 anchor carries five. Cotton was absent from all eight history years and present at
-the anchor - 0.150 Mt CO2e of residue burning and residue nitrogen appearing from nowhere at
-the join, declared nowhere. The fiscal file carries cotton in all nine years.
-
-Usage:  python3 -m pkinv.sectors.agriculture.fiscal_activity
+The fiscal crop panel includes all five admitted crops. Driver-specific bases
+remain distinct: reported crop/nutrient flows, reconstructed livestock stocks,
+and mixed nitrogen sources. The detailed FY2023-24 anchor is independent of the
+latest common-core year.
 """
 
 from pkinv.assets import asset_path
@@ -51,7 +23,8 @@ from pkinv.sectors.agriculture import timeseries as calendar_ts
 from pkinv.activity.store import read_rows
 
 SERIES = asset_path(DATA, "activity", "agriculture", "es_fiscal_series.csv")
-FISCAL_YEARS = tuple(range(2016, 2025))          # fiscal-END keys: 2016 = FY2015-16
+from pkinv.core.reporting_window import CORE_FY_ENDS
+FISCAL_YEARS = CORE_FY_ENDS
 CROPS = ("wheat", "rice", "maize", "sugarcane", "cotton")
 
 # SEED COTTON PER THOUSAND BALES. The Economic Survey publishes cotton as lint BALES; every
@@ -69,15 +42,15 @@ COTTON_FACTOR_TOL = 0.001                        # 0.1 percent: the Survey round
 # The drivers, per engine category, and what they are keyed on. Published so the annual
 # product's per-category `activity_basis` is read from one place rather than restated in three.
 DRIVER = {
-    "Enteric fermentation":       ("livestock stocks", "calendar_projection"),
-    "Manure management":          ("livestock stocks", "calendar_projection"),
+    "Enteric fermentation":       ("livestock stocks", "census_anchored_reconstruction"),
+    "Manure management":          ("livestock stocks", "census_anchored_reconstruction"),
     "Rice cultivation":           ("rice area", "observed_fiscal"),
     "Managed soils":              ("N offtake, crop residues, manure N",
                                    "observed_fiscal_mixed"),
     "Urea application":        ("N offtake", "observed_fiscal"),
     "Field burning of residues":  ("crop production", "observed_fiscal"),
 }
-CALENDAR_BASIS = "calendar_projection"
+CALENDAR_BASIS = "census_anchored_reconstruction"
 FISCAL_BASIS = "observed_fiscal"
 MIXED_BASIS = "observed_fiscal_mixed"
 
@@ -123,8 +96,29 @@ def crops_for_year(table, fy_end):
     return out
 
 
+def proxy_stocks_for_year(live, year):
+    """Held relative stocks, or the declared species-specific post-2024 trend."""
+    if year in live:
+        return live[year]
+    if year < 2024 or 2019 not in live or 2024 not in live:
+        raise ValueError("livestock proxy bridge requires held year or 2019/2024 endpoints")
+    return {species: live[2024][species] * (live[2024][species] / live[2019][species]) ** ((year - 2024) / 5.)
+            for species in calendar_ts.SPECIES}
+
+
+def livestock_provenance(fy_end):
+    """Textual provenance of the existing reconstruction; no activity calculation."""
+    anchor = ("adopted FY2023-24 stock anchors (five PBS2024 census species; "
+              "Survey-projected poultry)")
+    if fy_end == 2024:
+        return anchor
+    if fy_end < 2024:
+        return anchor + "; FAOSTAT relative annual stock shape, fiscal-end-year mapping; reconstructed, not enumerated"
+    return anchor + "; species-specific2019-2024 relative geometric trend continued after2024; modelled extrapolation, not enumeration"
+
+
 def data_for_fiscal_year(fy_end, table=None, stocks=None):
-    """An InventoryData on FISCAL crops and nitrogen, with FAOSTAT livestock stocks.
+    """Fiscal crops/nitrogen and the adopted stock-anchor relative reconstruction.
 
     The mutation shape is timeseries._apply_year's, deliberately: the engine reads activity
     only from .livestock / .crops / .fertilizer, so a year is a mutation and not a refactor,
@@ -143,17 +137,22 @@ def data_for_fiscal_year(fy_end, table=None, stocks=None):
     if fy_end not in table:
         raise ValueError("no fiscal activity for fiscal-end %d (have %s)"
                          % (fy_end, sorted(table)))
-    # The FAOSTAT stock year is the fiscal-END year, the same mapping the calendar history
-    # used. It is kept ON PURPOSE so that the basis-change measurement isolates ONE variable:
-    # everything that moves between the two series moves because the crops and nitrogen moved.
-    # The phase error this mapping leaves on the livestock half is measured separately.
-    if fy_end not in live:
-        raise ValueError("no FAOSTAT livestock stocks for %d" % fy_end)
-
+    # The relative stock-shape year is the fiscal-end year. Its level is rescaled
+    # to the adopted2024 anchor below; it is not the old FAOSTAT stock level.
     anchor = InventoryData()
     data = InventoryData()
-    data.livestock = {s: {"head": live[fy_end][s], "uncert_pct": 15}
+    # One census basis throughout the core. FAOSTAT contributes relative annual
+    # changes, not an incompatible level spliced directly onto the new census.
+    # Beyond the last proxy stock year, continue the 2019-2024 geometric trend;
+    # this is a modelled extrapolation, explicitly distinguished from enumeration.
+    if 2024 not in live or 2019 not in live:
+        raise ValueError("livestock bridge requires held 2019 and 2024 proxy stocks")
+    relative = proxy_stocks_for_year(live, fy_end)
+    data.livestock = {s: {"head": anchor.livestock[s]["head"] * relative[s] / live[2024][s], "uncert_pct": 15}
                       for s in calendar_ts.SPECIES}
+    data.livestock_basis = ("census_anchored_extrapolation" if fy_end > 2024
+                           else "census_anchored_relative_stock_reconstruction")
+    data.fiscal_activity_year = fy_end
     fiscal_crops = crops_for_year(table, fy_end)
     # Activity uncertainty per crop comes from the anchor rather than a fresh literal: the
     # widths encode how each cell was published (cotton widest because of the bale
@@ -171,6 +170,8 @@ def data_for_fiscal_year(fy_end, table=None, stocks=None):
     # by up to 1.42 Mt while the reference year moved by 0.01. The docstring above already says
     # the mutation shape is shared on purpose; the declaration is part of that shape.
     data.faostat_basis_year = fy_end
+    if fy_end == 2025:
+        data.urea_offtake_product_t = 5890000.0
     return data
 
 

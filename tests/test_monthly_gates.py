@@ -1,4 +1,5 @@
-"""The gates an external reviewer set for the 108-month product, as executable checks.
+"""The gates an external reviewer set for the monthly product (108 months then, 120 since
+rc68), as executable checks.
 
 WHY A SEPARATE FILE. The monthly product already has tests, and they check that it builds and
 closes. These check the things a REVIEWER would refuse it for, which is a different list: that
@@ -29,13 +30,16 @@ from pkinv.paths import OUTPUTS
 from pkinv.report import temporal_profiles
 from pkinv.core.io import read_rows
 
-MONTHLY = "pakemis_monthly_fy2015_16_fy2023_24.csv"
+MONTHLY = "pakemis_monthly_fy2015_16_fy2024_25.csv"
 PROFILES = "pakemis_temporal_profiles.csv"
-ANNUAL = "pakemis_annual_fy2015_16_fy2023_24.csv"
+ANNUAL = "pakemis_annual_fy2015_16_fy2024_25.csv"
 
-# The window this product declares, in months. Not a tolerance: a 108-month product with 107
-# months is a different product.
-EXPECTED_MONTHS = 108
+# The window this product declares, in months. Not a tolerance: a 120-month product with 119
+# months is a different product. Read from the reporting window (ten fiscal years since rc68)
+# so the next extension moves it with the product rather than by hand.
+from pkinv.core import configurations as _conf                     # noqa: E402
+from pkinv.core.reporting_window import CORE_PERIOD_IDS            # noqa: E402
+EXPECTED_MONTHS = 12 * len(CORE_PERIOD_IDS)
 
 # Global inventories and reanalysis-derived profile products. They are legitimate VALIDATION
 # and must never become the allocator: EDGAR's monthly values are themselves computed from
@@ -54,11 +58,12 @@ class TestTheWindowIsExactlyWhatItClaims(unittest.TestCase):
         cls.monthly = _rows(MONTHLY)
         cls.profiles = _rows(PROFILES)
 
-    def test_exactly_108_distinct_months(self):
+    def test_exactly_the_declared_number_of_months(self):
         months = {r["month"] for r in self.monthly}
         self.assertEqual(len(months), EXPECTED_MONTHS)
         self.assertEqual(min(months), "201507")
-        self.assertEqual(max(months), "202406")
+        last_start = int(CORE_PERIOD_IDS[-1][2:6])
+        self.assertEqual(max(months), "%d06" % (last_start + 1))
 
     def test_no_duplicate_component_month_configuration(self):
         seen = collections.Counter(
@@ -120,14 +125,16 @@ class TestTheMonthsCloseToTheYear(unittest.TestCase):
     def test_every_twelve_month_sequence_equals_its_annual_row(self):
         monthly = collections.defaultdict(float)
         for row in _rows(MONTHLY):
+            if row.get("configuration_id", _conf.REFERENCE) != _conf.REFERENCE:
+                continue     # rc68: four configurations share the file; close the reference
             key = (row["period_id"], row["sector_id"], row["category"], row["gas"])
             monthly[key] += float(row["co2e_Mt_AR5"] or 0.0)
         annual = collections.defaultdict(float)
         for row in _rows(ANNUAL):
             if row["grain"] != "category_gas":
                 continue
-            if row["configuration_id"] != "REF_2023_24":
-                continue     # rc31: the S rows close in their own file, not here
+            if row["configuration_id"] != _conf.REFERENCE:
+                continue     # the reference closes here; the other configurations alike
             key = (row["period_label"], row["sector"], row["category"], row["gas"])
             annual[key] += float(row["co2e_Mt_AR5"] or 0.0)
         shared = set(monthly) & set(annual)

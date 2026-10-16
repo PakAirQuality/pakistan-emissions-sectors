@@ -1,19 +1,8 @@
-"""rc39 A6: every tonne of crop residue has a destination, including the one nobody named.
+"""The published crop-residue ledger closes against adopted source activity.
 
-Residue was split across three modules that each took the fraction they needed:
-residue_burning took frac_burned, soils took frac_returned, residential combustion took
-frac_fuel. Each was right on its own and none of them published production x RPR, so the
-residue that is NEITHER returned, burned nor used as fuel had no name, no number and no owner.
-
-It is 48.10 Mt - 55.8% of the 86.14 Mt the crops produce, and the largest destination of all.
-It is not a defect: it is fodder, bedding, industrial use and straw left standing, none of
-which this inventory prices. But an inventory that cannot say how big that pool is cannot say
-how much room there is for the destinations it does price, and a residue-burning fraction is
-much easier to argue about when the denominator is on the page.
-
-The ledger closes exactly, and that is asserted unrounded in the producer before the file is
-written; these tests hold the PUBLISHED table to the same identity, since what a reader can
-check is what was published.
+Historical audit totals used a superseded crop vintage. Current checks retain the
+four material destinations and independently recompute quantities from maintained
+activity, residue/fate parameters and moisture; no old national pin controls a revision.
 """
 import csv
 import os
@@ -23,12 +12,26 @@ from _support import OUTPUTS, read_rows
 
 LEDGER = "agriculture_crop_residue_ledger_2024.csv"
 
-# The external audit's expected values for this pass.
-DRY_TOTAL = 86.1413
-TO_FIRE = 8.366490
-COMBUSTED = 7.111517
-FUEL_DRY = 9.269715
-FUEL_AIR_DRY = 10.533767
+def _source_accounts():
+    from pkinv.assets import asset_path
+    from pkinv.paths import DATA
+    source = read_rows(asset_path(DATA, "activity", "crops_2024.csv"))
+    residue = {r["crop"]: r for r in read_rows(asset_path(DATA, "residue_params.csv"))}
+    burning = {r["crop"]: r for r in read_rows(asset_path(DATA, "burning_params.csv"))}
+    totals = dict(dry=0., fire=0., fuel=0., other=0.)
+    for r in source:
+        crop = r["crop"]
+        if crop not in residue:
+            continue
+        p = residue[crop]
+        dry = float(r["production_t"]) * float(p["residue_ratio_ag"]) / 1e6
+        fire = dry * float(burning[crop]["frac_burned"])
+        fuel = dry * float(p["frac_fuel"])
+        totals["dry"] += dry
+        totals["fire"] += fire
+        totals["fuel"] += fuel
+        totals["other"] += dry - fire - fuel - dry * float(p["frac_returned"])
+    return totals
 
 
 def _rows():
@@ -72,17 +75,29 @@ class TestTheLedgerCloses(unittest.TestCase):
                 float(r["dry_residue_Mt"]), places=6, msg=r["crop"])
 
 
-class TestItMatchesTheEngineAndTheAudit(unittest.TestCase):
+class TestItMatchesSourceAccountsAndEngine(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.total = next(r for r in _rows() if r["crop"] == "TOTAL")
 
-    def test_the_dry_residue_matches_the_audit(self):
-        self.assertAlmostEqual(float(self.total["dry_residue_Mt"]), DRY_TOTAL, places=4)
+    def test_the_dry_residue_matches_source_activity(self):
+        self.assertAlmostEqual(float(self.total["dry_residue_Mt"]), _source_accounts()["dry"], delta=0.5e-6)
 
-    def test_the_fire_stream_matches_the_engine_and_the_audit(self):
-        self.assertAlmostEqual(float(self.total["to_fire_Mt"]), TO_FIRE, places=5)
-        self.assertAlmostEqual(float(self.total["combusted_Mt"]), COMBUSTED, places=5)
+    def test_exported_production_retains_source_precision(self):
+        from pkinv.assets import asset_path
+        from pkinv.paths import DATA
+        source = {r["crop"]: float(r["production_t"])
+                  for r in read_rows(asset_path(DATA, "activity", "crops_2024.csv"))}
+        for row in _rows():
+            if row["crop"] != "TOTAL":
+                self.assertEqual(float(row["production_t"]), source[row["crop"]])
+
+    def test_the_fire_stream_matches_the_source_activity_and_factor(self):
+        from pkinv.sectors.agriculture.ef_library import InventoryData
+        expected = _source_accounts()["fire"]
+        self.assertAlmostEqual(float(self.total["to_fire_Mt"]), expected, delta=0.5e-6)
+        self.assertAlmostEqual(float(self.total["combusted_Mt"]),
+                               expected * InventoryData().efv("burning", "combustion_factor"), delta=0.5e-6)
 
     def test_the_combusted_mass_is_the_fire_stream_times_cf(self):
         cf = float(self.total["combustion_factor"])
@@ -100,9 +115,12 @@ class TestItMatchesTheEngineAndTheAudit(unittest.TestCase):
         self.assertAlmostEqual(residue_burning.mass_burnt(InventoryData()) / 1e6,
                                float(self.total["to_fire_Mt"]), places=6)
 
-    def test_the_fuel_stream_matches_the_audit(self):
-        self.assertAlmostEqual(float(self.total["fuel_dry_Mt"]), FUEL_DRY, places=5)
-        self.assertAlmostEqual(float(self.total["fuel_air_dry_Mt"]), FUEL_AIR_DRY, places=5)
+    def test_the_fuel_stream_matches_source_activity_and_moisture(self):
+        from pkinv.sectors.residential.data import ResidentialData
+        expected = _source_accounts()["fuel"]
+        self.assertAlmostEqual(float(self.total["fuel_dry_Mt"]), expected, delta=0.5e-6)
+        self.assertAlmostEqual(float(self.total["fuel_air_dry_Mt"]),
+                               expected / (1 - ResidentialData().p("residue_moisture_ar")), delta=0.5e-6)
 
 
 class TestOneLedgerServesBothSectors(unittest.TestCase):
@@ -121,23 +139,13 @@ class TestOneLedgerServesBothSectors(unittest.TestCase):
                                float(total["fuel_air_dry_Mt"]), places=5)
 
     def test_the_energy_is_the_air_dry_mass_at_the_declared_ncv(self):
-        """AND THE AUDIT'S ENERGY FIGURE COULD NOT BE REPRODUCED, which is recorded here
-        rather than quietly adopted or quietly ignored.
-
-        The audit asked for 122,082.15 TJ and asked that a claim of 122,192 TJ be removed as
-        stale. But 122,192 is what its OWN air-dry mass gives at the held NCV: 10.533767 Mt x
-        11.6 TJ/Gg = 122,191.70 TJ. Reaching 122,082.15 would need either 9.45 Gg less mass
-        or an NCV of 11.5896, and neither is a held value. The residue stream is driven by
-        crops and is untouched by A1-A5, so the figure was not stale in the first place.
-
-        The engine's derivation is published and the audit's figure is not adopted. If the
-        audit intends a crop-weighted calorific value, that is a change to the energy method
-        and belongs in a pass that makes it, with the per-crop values it would need."""
+        """A mass-basis conversion must use the held moisture and calorific basis."""
         total = next(r for r in _rows() if r["crop"] == "TOTAL")
         air_dry_gg = float(total["fuel_air_dry_Mt"]) * 1000.0
         ncv = float(total["ncv_TJ_per_Gg"])
         self.assertAlmostEqual(air_dry_gg * ncv, float(total["energy_TJ"]), places=2)
-        self.assertAlmostEqual(float(total["energy_TJ"]), 122191.70, places=1)
+        expected = _source_accounts()["fuel"] / (1 - float(total["moisture_air_dry"])) * 1000 * ncv
+        self.assertAlmostEqual(float(total["energy_TJ"]), expected, delta=0.00005)
 
 
 class TestTheUnresolvedPoolIsPublished(unittest.TestCase):
@@ -146,8 +154,9 @@ class TestTheUnresolvedPoolIsPublished(unittest.TestCase):
         other = float(total["other_unresolved_Mt"])
         for column in ("returned_to_soil_Mt", "to_fire_Mt", "fuel_dry_Mt"):
             self.assertGreater(other, float(total[column]), column)
-        self.assertAlmostEqual(other, 48.101185, places=4)
-        self.assertAlmostEqual(float(total["other_pct_of_dry"]), 55.8399, places=3)
+        self.assertAlmostEqual(other, _source_accounts()["other"], delta=0.5e-6)
+        self.assertAlmostEqual(float(total["other_pct_of_dry"]),
+                               100 * other / float(total["dry_residue_Mt"]), delta=0.00005)
 
     def test_no_crop_has_a_negative_remainder(self):
         """A negative remainder would mean the declared fractions claim more residue than the

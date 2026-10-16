@@ -10,7 +10,7 @@ import sys
 import tempfile
 
 from pkinv.semantic import OUT_DIR
-from pkinv.semantic.canonical import canonical_csv_text, canonical_json_text, sha256_text, with_row_ids
+from pkinv.semantic.canonical import canonical_csv_text, canonical_csv_external, canonical_json_text, sha256_text, with_row_ids
 from pkinv.semantic.dimensions import DIMENSIONS
 from pkinv.semantic.downloads import build as build_downloads
 from pkinv.semantic.facts import FACTS
@@ -19,7 +19,18 @@ from pkinv.semantic.sources import Sources
 
 
 def _table(name, kind, fieldnames, key, rows, aggregation):
-    rows = [dict(r) for r in rows]
+    if not isinstance(rows, (list, tuple)) and not aggregation.get("id_column"):
+        fields = ("result_row_id",) + tuple(f for f in fieldnames if f != "result_row_id")
+        count, text = canonical_csv_external(fields, rows, key, name)
+        return {"kind": kind, "path": "outputs/semantic/%s.csv" % name,
+                "parquet": {"path": "outputs/semantic/%s.parquet" % name,
+                            "representation_of": "outputs/semantic/%s.csv" % name, "hashed": False,
+                            "note": "all-string Parquet written from the CSV text; the CSV is the identity"},
+                "sha256_csv": sha256_text(text), "rows": count, "primary_key": list(key),
+                "columns": list(fields), "aggregation": aggregation}, text
+    # Builders already return mutable dictionaries for the large spatial facts.
+    # Avoid a second full copy of ten years of monthly district records.
+    rows = [r if isinstance(r, dict) else dict(r) for r in rows]
     id_column = aggregation.get("id_column")
     if id_column:
         # rc59: a table whose rows already carry a content-derived id (the seventeen readable
@@ -55,15 +66,19 @@ def _write_parquet(path, fieldnames, text):
     except ImportError:              # the twin is a representation; its absence is not a failure
         return False
     reader = csv.DictReader(io.StringIO(text))
-    columns = {f: [] for f in fieldnames}
-    for row in reader:
-        for f in fieldnames:
-            columns[f].append(row[f])
-    table = pa.table({f: pa.array(columns[f], type=pa.string()) for f in fieldnames})
+    schema = pa.schema([(f, pa.string()) for f in fieldnames])
     fd, temporary = tempfile.mkstemp(dir=os.path.dirname(path), suffix=".parquet")
     os.close(fd)
     try:
-        pq.write_table(table, temporary, compression="snappy")
+        with pq.ParquetWriter(temporary, schema, compression="snappy") as writer:
+            batch = []
+            for row in reader:
+                batch.append(row)
+                if len(batch) == 10000:
+                    writer.write_table(pa.Table.from_pylist(batch, schema=schema))
+                    batch.clear()
+            if batch:
+                writer.write_table(pa.Table.from_pylist(batch, schema=schema))
         os.replace(temporary, path)
     finally:
         if os.path.exists(temporary):
@@ -79,14 +94,26 @@ def _parquet_matches(path, table, text):
     except ImportError:
         return None
     try:
-        held = pq.read_table(path)
-        if held.column_names != table["columns"] or any(
-                not pa.types.is_string(field.type) for field in held.schema):
+        import csv
+        import io
+        held = pq.ParquetFile(path)
+        if held.schema_arrow.names != table["columns"] or any(
+                not pa.types.is_string(field.type) for field in held.schema_arrow):
             return False
-        if any(column.null_count for column in held.columns):
+        # The layout is part of the bytes: _write_parquet writes one row group per 10,000
+        # rows. rc68 kept single-group twins from an older writer because their CELLS
+        # matched, and the clean rebuild's artifact inventory (which records twin sizes)
+        # differed from the release on exactly those three files.
+        if held.metadata.num_row_groups != max(1, -(-table["rows"] // 10000)):
             return False
-        return canonical_csv_text(table["columns"], held.to_pylist(),
-                                  table["primary_key"]) == text
+        expected = iter(csv.DictReader(io.StringIO(text)))
+        for batch in held.iter_batches(batch_size=10000):
+            if any(column.null_count for column in batch.columns):
+                return False
+            for row in batch.to_pylist():
+                if row != next(expected, None):
+                    return False
+        return next(expected, None) is None
     except (pa.ArrowException, OSError, KeyError, ValueError, TypeError):
         return False
 
@@ -104,6 +131,7 @@ def build_all(consume=None):
             table, text = _table(name, kind, fields, key, rows, aggregation)
         table["derived_from"] = src.digests(dependencies)
         tables[name] = table
+        del rows
         if consume is None:
             texts[name] = text
         else:

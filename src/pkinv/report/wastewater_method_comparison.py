@@ -45,6 +45,7 @@ import os
 
 from pkinv.assets import asset_path
 from pkinv.core.io import write_table
+from pkinv.core.reporting_window import REFERENCE_PERIOD
 from pkinv.paths import DATA, OUTPUTS
 
 OUT = os.path.join(OUTPUTS, "pakemis_wastewater_method_comparison.csv")
@@ -108,7 +109,9 @@ def build():
     waste = registry.get("waste")
     data = waste.load_data()
     periods = sorted((int(r["fiscal_end_year"]), r["period_id"]) for r in _rows(PERIODS))
-    reference_period = periods[-1][1]
+    # The paired stored draws remain tied to the detailed reference year even
+    # when another annual activity year is admitted to the common core.
+    reference_period = REFERENCE_PERIOD
     rows = []
 
     def row(scope, period, method, is_ref, source, unit, det, stats=None, tail="", n="",

@@ -13,6 +13,7 @@ import csv
 import os
 import sys
 import unittest
+from unittest.mock import patch
 
 
 from pkinv.report import completeness_mass as cm  # noqa: E402
@@ -35,51 +36,42 @@ class TheLedger(unittest.TestCase):
         for ours, theirs in zip(self.rebuilt, self.committed):
             self.assertEqual({k: str(v) for k, v in ours.items()}, dict(theirs))
 
-    def test_the_summary_band_is_the_stream_rows_recomputed(self):
-        """The bound sum is exactly the composable rows' upper bounds; the floor is
-        strictly below it and excludes the floorless bases (external benchmark,
-        ceiling) - the sums cannot drift from the rows they summarize."""
+    def test_missing_source_aggregate_is_unknown_not_a_composed_benchmark_range(self):
+        summary = next(r for r in self.committed if r["row_type"] == "summary")
+        self.assertEqual(summary["mass_basis"], "no_numerical_completeness_bound_declared")
+        self.assertEqual(summary["mass_low_Mt"], "")
+        self.assertEqual(summary["mass_high_Mt"], "")
+        self.assertEqual(summary["composable"], "False")
+        self.assertIn("unknown, not zero", summary["note"])
+
+    def test_comparator_differences_are_not_missing_source_floors_or_bounds(self):
+        diagnostics = [r for r in self.committed if r["row_type"] == "diagnostic"]
+        self.assertEqual({r["ipcc_code"] for r in diagnostics}, {"1.A.2", "2.F"})
+        for row in diagnostics:
+            self.assertEqual(row["mass_low_Mt"], "")
+            self.assertEqual(row["mass_high_Mt"], "")
+            self.assertEqual(row["composable"], "False")
+            self.assertEqual(row["mass_basis"], "comparison_not_missing_mass")
+
+    def test_source_cases_stay_conditional_and_cannot_be_summed_as_missing_mass(self):
+        cases = [r for r in self.committed if r["row_type"] == "case"]
+        self.assertTrue(cases)
+        for row in cases:
+            self.assertEqual(row["composable"], "False", row["stream"])
+            self.assertEqual(row["coverage_state"], "scenario_only")
+            self.assertNotEqual(row["mass_basis"], "measured_band")
+            self.assertNotIn("floor", row["mass_basis"])
+            self.assertEqual(row["contained_in"], "")
+            self.assertEqual(row["notation_key"], "")
+
+    def test_ne_streams_keep_typed_absence_and_do_not_relabel_admitted_steel(self):
         streams = [r for r in self.committed if r["row_type"] == "stream"]
-        summary = [r for r in self.committed if r["row_type"] == "summary"][0]
-        bound = sum(float(r["mass_high_Mt"]) for r in streams
-                    if r["composable"] == "True" and r["mass_high_Mt"])
-        self.assertAlmostEqual(float(summary["mass_high_Mt"]), round(bound, 2),
-                               places=2)
-        floorless = ("external_benchmark_bound", "ceiling", "no_bound")
-        floor_cap = sum(float(r["mass_low_Mt"]) for r in streams
-                        if r["composable"] == "True" and r["mass_low_Mt"]
-                        and r["mass_basis"] not in floorless)
-        self.assertAlmostEqual(float(summary["mass_low_Mt"]),
-                               round(floor_cap, 2), places=2)
-        self.assertLess(float(summary["mass_low_Mt"]),
-                        float(summary["mass_high_Mt"]))
-
-    def test_contained_claimants_are_excluded_from_the_sums(self):
-        """The not_composed rule: a claimant inside the 1A2 residual must never be
-        summed beside its container."""
-        for r in self.committed:
-            if r["contained_in"]:
-                self.assertEqual(r["composable"], "False", r["stream"])
-
-    def test_the_directive_target_is_bracketed_once_activated_mass_is_added_back(self):
-        """Rewritten at rc46 Wave 2, whose activation retired the old containment.
-
-        The band used to contain the ~47 Mt directive target directly. Then 13.57 Mt of it -
-        brick and cement coal - was activated into the reference estimate, so the REMAINING
-        band tops out below the target, and that is the directive being paid down rather
-        than lost. What must now hold: the remaining band sits strictly below the target
-        (if it ever contains 47 again, either mass was de-activated or a new gap grew),
-        and adding the activated mass back re-brackets it (the accounting still reaches
-        the directive; nothing fell out of the ledger)."""
-        summary = [r for r in self.committed if r["row_type"] == "summary"][0]
-        low, high = float(summary["mass_low_Mt"]), float(summary["mass_high_Mt"])
-        activated = cm.activated_reference_mt()
-        self.assertGreater(activated, 13.0)
-        self.assertLess(high, cm.DIRECTIVE_TARGET_MT,
-                        "the remaining band contains the directive again: was mass "
-                        "de-activated, or did a new gap grow?")
-        self.assertLess(low + activated, cm.DIRECTIVE_TARGET_MT)
-        self.assertGreater(high + activated, cm.DIRECTIVE_TARGET_MT)
+        for row in streams:
+            self.assertEqual(row["notation_key"], "NE")
+            self.assertEqual(row["mass_low_Mt"], "")
+            self.assertEqual(row["mass_high_Mt"], "")
+            self.assertEqual(row["composable"], "False")
+        self.assertFalse([r for r in streams if r["stream"] == "Iron and steel (electric route)"])
 
     def test_every_named_configuration_ships(self):
         shipped = {r["configuration_id"] for r in _rows(
@@ -108,6 +100,14 @@ class TheValidator(unittest.TestCase):
             if "in_scope" not in r["configuration_id"]]
         with self.assertRaises(SystemExit):
             cm.validate_scope_registry(configurations, residual_mt=29.42)
+
+    def test_an_unrelated_comparator_residual_cannot_satisfy_a_screening_case(self):
+        registry = [dict(category_id="test", current_status="screening", ipcc_code="2.F",
+                         available_open_data="test_case", current_mass_Mt="3")]
+        with patch.object(cm, "_rows", return_value=registry):
+            with self.assertRaises(SystemExit):
+                cm.validate_scope_registry([dict(configuration_id="test_case", national_delta_Mt="7")],
+                                           residual_mt=3, stream_masses={})
 
     def test_a_drifted_mass_fails(self):
         """Rewritten at rc46 Wave 2 with the anchor it now guards.

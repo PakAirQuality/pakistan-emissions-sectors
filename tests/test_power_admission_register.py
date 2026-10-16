@@ -37,6 +37,8 @@ import os
 import statistics
 import sys
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 from collections import defaultdict
 
 from _support import DATA, data_rows, scripts_on_path
@@ -271,6 +273,29 @@ class TestTheBackcastIsMeasuredAgainstMeteredFuel(unittest.TestCase):
     def test_there_are_enough_overlapping_years_to_conclude_anything(self):
         self.assertGreaterEqual(len(self.ratios), 55)
 
+    def test_liberty_heat_rate_spelling_resolves_to_its_physical_fuel_station(self):
+        names = self.reg.canonical_names()
+        rates = self.reg.plant_heat_rates(names)
+        for year in range(2019, 2024):
+            self.assertIn(("Liberty Power Tech.", year), rates)
+            self.assertNotIn(("Liberty Tech.", year), rates)
+        self.assertEqual(self.reg.station("Liberty Daharki", names), "Liberty Daharki Power")
+
+    def test_liberty_company_alias_does_not_override_the_source_fuel_conflict(self):
+        names = self.reg.canonical_names()
+        self.assertEqual(self.reg.station("Liberty Power Limited.", names),
+                         "Liberty Daharki Power")
+        disputed = [r for r in rows() if r["plant"] == "Liberty Daharki Power"
+                    and r["fuel"] == "RFO"]
+        self.assertEqual({r["period_id"] for r in disputed},
+                         {"FY2021-22", "FY2022-23", "FY2023-24"})
+        for row in disputed:
+            self.assertEqual(row["disposition"], "scenario_only")
+            self.assertEqual(row["so2_Gg"], "")
+        observed_fuels = self.reg.ledger_fuels_by_station(names)
+        self.assertEqual({fuel.upper() for fuel in observed_fuels["Liberty Daharki Power"]},
+                         {"GAS"})
+
     def test_the_reconstruction_reproduces_the_metered_quantity(self):
         median = statistics.median(self.ratios)
         self.assertAlmostEqual(median, 1.011, delta=0.03,
@@ -314,7 +339,7 @@ class TestTheRegisterIsDeterministicAndPlaced(unittest.TestCase):
         power = [r for r in data_rows(os.path.join("..", "outputs",
                                                    "pakemis_air_coverage_matrix.csv"))
                  if r.get("sector_id") == "power" and r.get("pollutant") == "SO2"]
-        self.assertEqual(len(power), 9)
+        self.assertEqual({r["period_id"] for r in power}, set(CORE_PERIOD_IDS))
 
 
 if __name__ == "__main__":

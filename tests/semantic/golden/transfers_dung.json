@@ -1,9 +1,38 @@
 {
- "expect": [],
- "expect_receipt": "350c944017d12e7243b979675050be6c",
+ "expect": [
+  {
+   "cell": 0,
+   "display": "58.7414",
+   "exact": "58.7414",
+   "note": "L household combustion, both diverted material and source ledger control"
+  },
+  {
+   "cell": 4,
+   "display": "10.9327",
+   "exact": "10.9327",
+   "note": "S survey household combustion"
+  },
+  {
+   "cell": 5,
+   "display": "47.8088",
+   "exact": "47.8088",
+   "note": "S destination unresolved rather than inferred combustion"
+  },
+  {
+   "cell": 7,
+   "display": "10.9327",
+   "exact": "10.9327"
+  },
+  {
+   "cell": 8,
+   "display": "47.8088",
+   "exact": "47.8088"
+  }
+ ],
+ "expect_receipt": "43318fc010c82b0c12acf73ae6500804",
  "function": "get_cross_sector_transfer",
  "golden_id": "transfers_dung",
  "request": {
-  "ledger_id": "residential_dung_ledger"
+  "ledger_id": "dung_transfer"
  }
 }

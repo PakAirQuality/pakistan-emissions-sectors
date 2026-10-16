@@ -94,12 +94,16 @@ retires). `scripts/make_paper_artefacts.py` opens the release with its identity 
 every row through `pakemis_query`, and writes the table bodies
 (`paper_national/sections/gen_tab_categorygas.tex`, `gen_tab_completeness.tex` - every number a
 `display` string of an envelope, the first line naming the query, the params and result digests,
-the release and the receipt), the cells each figure draws
-(`outputs/paper_figure_data/fig_trend.csv`, `fig_sectors.csv`, `fig_months.csv`,
-`fig_uncertainty.csv`; canonical CSV, hashed by the release manifest), the figures themselves
-(`outputs/paper_figures/`, PNG and PDF with deterministic bytes) and the sidecar
+the release and the receipt), the cells each figure query draws
+(`outputs/paper_figure_data/<id>.csv`; canonical CSV, hashed by the release manifest), the
+figures themselves (`outputs/paper_figures/`, PNG and PDF with deterministic bytes) and the sidecar
 `outputs/pakemis_paper_artefact_hashes.csv` (per artefact: params and result digests, receipt,
 output and image hashes). Rows of kind `static` are the tables and figures the contract cannot
 answer yet; the registry names what blocks each, and the sidecar hashes their inline source.
+Since rc68 every registered artefact is `static` (the v3 integrated figures and tables), so no
+figure-data file is written; the four rc67 query figures (`fig_trend`, `fig_sectors`,
+`fig_months`, `fig_uncertainty`) were retired with their data, because no manuscript drew them
+and their cells were rc67's nine-year values. Their bytes stay in git history and their hashes
+in `data/baselines/rc67_integrated_campaign/outputs/release_manifest.json`.
 `tests/paper_numbers/test_paper_artefacts.py` replays every query and holds the bytes; the
 generated sections are exempt from the every-digit rule by reading the registry.

@@ -32,7 +32,10 @@ class TestTheLedgerIsRectangularAndComplete(unittest.TestCase):
         periods = {r["period_id"] for r in self.rows}
         self.assertEqual(len(self.rows), len(streams) * len(periods),
                          "the panel is not rectangular")
-        self.assertEqual(len(periods), 9)
+        from pkinv.assets import asset_path
+        from pkinv.paths import DATA
+        self.assertEqual(periods, {r["period_id"] for r in
+                                   read_rows(asset_path(DATA, "periods.csv"))})
         self.assertEqual(len(streams), 202)   # rc52: + ammonia, steel, lubricating oil, grease
         for r in self.rows:
             self.assertIn(r["status"], ("present", "not_present"))
@@ -82,15 +85,20 @@ class TestTheLedgerIsRectangularAndComplete(unittest.TestCase):
         self.assertEqual(weights, here)
 
     def test_the_retained_mass_is_exactly_the_unplaced_streams(self):
-        retained = {(r["period_id"], r["source_stream_id"])
-                    for r in self.rows
-                    if r["status"] == "present" and float(r["adm1_retained_Mt"] or 0) > 0}
-        unallocated = {(r["period_id"], r["source_stream_id"])
-                       for r in self.rows
-                       if r["spatial_time_basis"] == "unallocated"}
-        self.assertEqual(retained, unallocated,
-                         "retained mass and the unallocated basis disagree about "
-                         "which stream-years stay at ADM1")
+        from collections import defaultdict
+        source = defaultdict(float)
+        for row in _rows("pakemis_spatial_unallocated_by_year.csv"):
+            source[(row["period_id"], row["source_stream_id"])] += \
+                float(row["co2e_Mt_AR5"])
+        for row in self.rows:
+            # A declared stream with genuine zero activity can still have no geometry.
+            # Test its retained quantity, not whether the rounded quantity is positive.
+            key = (row["period_id"], row["source_stream_id"])
+            expected = source[key]
+            if row["spatial_time_basis"] != "unallocated":
+                self.assertEqual(expected, 0.0, str(key))
+            self.assertAlmostEqual(float(row["adm1_retained_Mt"] or 0), expected,
+                                   delta=5.1e-9, msg=str(key))
 
     def test_located_and_substituted_shares_are_shares(self):
         for r in self.rows:
@@ -102,11 +110,30 @@ class TestTheLedgerIsRectangularAndComplete(unittest.TestCase):
                     self.assertGreaterEqual(v, -1e-9, (col, r["source_stream_id"]))
                     self.assertLessEqual(v, 1.0 + 1e-9, (col, r["source_stream_id"]))
 
-    def test_the_monthly_refusal_is_per_row_not_per_dataset(self):
+    def test_the_monthly_support_distinguishes_raster_from_administrative_products(self):
         for r in self.rows:
             if r["status"] != "present":
                 continue
             if r["period_id"] == "FY2023-24":
                 self.assertEqual(r["monthly_support"], "gridded_monthly")
             else:
-                self.assertIn("none is invented", r["monthly_support"])
+                self.assertEqual(r["monthly_support"],
+                                 "monthly_administrative_allocation; "
+                                 "no_published_ghg_monthly_raster")
+
+    def test_the_advertised_monthly_products_cover_the_ledger_periods(self):
+        from pkinv.core import configurations as conf
+        from pkinv.report.air_monthly_grid import path_for as monthly_path_for
+        from pkinv.report.grid_cube import period_keys
+        from netCDF4 import Dataset
+        periods = {r["period_id"] for r in self.rows}
+        adm = _rows("pakemis_ghg_configuration_adm2_monthly.csv")
+        for cfg in conf.ALL:
+            self.assertEqual({r["period_id"] for r in adm
+                              if r["configuration_id"] == cfg}, periods, cfg)
+            # Separate AP cubes are available for the full core and all four cases.
+            # This says nothing about whether each GHG stream has an AP estimate.
+            with Dataset(monthly_path_for(cfg)) as cube:
+                self.assertEqual(cube.configuration_id, cfg)
+                self.assertEqual(set(str(p) for p in cube.variables["period_id"][:]),
+                                 {m for p in periods for m in period_keys(p).months}, cfg)

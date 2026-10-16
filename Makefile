@@ -105,7 +105,7 @@ aviation-anchor:
 power:
 	python3 -m pkinv.build --sector power $(BUILD_ARGS)
 
-# The nine-year station/fuel/year coal account an outside reader re-derives the series from,
+# The ten-year station/fuel/year coal account an outside reader re-derives the series from,
 # and the four candidate coal-energy readings built on top of it. Both are in the release
 # build; these targets are for running them alone while the coal account is under revision.
 power-fuel-reconciliation:
@@ -144,7 +144,7 @@ residential:
 
 # Air-pollutant co-emissions: mass only, never CO2e, never in the GHG totals.
 air:
-	python3 -m pkinv.build --target "Air source classes (nine fiscal years)" $(BUILD_ARGS)
+	python3 -m pkinv.build --target "Air source classes (supported fiscal panel)" $(BUILD_ARGS)
 
 # Cross-sector rollup, key-category screen, pooled Monte Carlo and completeness.
 national:
@@ -265,36 +265,37 @@ COPERNICUS = TEXINPUTS=$(CURDIR)/paper_common/copernicus//: BSTINPUTS=$(CURDIR)/
 # To promote a version: change NATIONAL_VERSION here and PAPER_NATIONAL_CURRENT in
 # src/pkinv/paths.py, repoint CURRENT, and run the release dance. Those are the only two
 # strings; everything else resolves through them.
-NATIONAL_VERSION ?= v1
+NATIONAL_VERSION ?= v3
 NATIONAL_DIR = paper_national/versions/$(NATIONAL_VERSION)
 
-paper-national: sync-figures
+paper-national: figures-v3 sync-figures
 	@mkdir -p papers/pdf
 	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper_national.tex
-	cd $(NATIONAL_DIR) && latexmk -pdf -interaction=nonstopmode supplement.tex
+	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode supplement.tex
 	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper_national.tex
+	cd $(NATIONAL_DIR) && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode submission.tex
 	cp $(NATIONAL_DIR)/paper_national.pdf papers/pdf/national_paper.pdf
 	cp $(NATIONAL_DIR)/supplement.pdf papers/pdf/national_supplement.pdf
+	cp $(NATIONAL_DIR)/submission.pdf papers/pdf/national_submission.pdf
+	# v1, the long report, reads v3's generated facts and was rewritten for rc68; until then this
+	# target only copied its PDF, so an edit to v1 or to those facts shipped a stale long report.
+	cd paper_national/versions/v1 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper_national.tex
+	cd paper_national/versions/v1 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode supplement.tex
+	@if [ -f paper_national/versions/v1/paper_national.pdf ]; then cp paper_national/versions/v1/paper_national.pdf papers/pdf/national_long_report.pdf; fi
 
-# v3, the compact editorial rewrite, built BESIDE the shipped version rather than in place
-# of it. (It was versions/v2 through rc63. v2 is now the frozen rc62 record: nothing here
-# builds it, and tests/test_frozen_versions.py holds it to its recorded bytes.) It is one
-# self-contained file: no sections/, no xr pairing with a supplement, so one latexmk pass
-# is enough. paper-v3-review goes through submission.tex, which
-# defines \reviewversion and makes the file choose the one-column [essd,manuscript] layout
-# a reviewer reads.
-#
-# Not wired into `papers`, deliberately: these targets do not copy into papers/pdf/,
-# because pakemis_paper_hashes.csv hashes what is there and a second national article
-# appearing in the release set is a decision to take at the promotion, not a side effect of
-# a build target.
-# THE EIGHT MAIN FIGURES OF v3, FROM THE RELEASED PRODUCTS, IN ONE COMMAND. Plot tables and the
-# two tables generated from them, then figures 1, 2, 3, 7, 8; then the gridded figures 4, 5, 6.
+# v3 is the current integrated article and technical supplement. The stable
+# paper-national entry points copy these current PDFs into the release directory;
+# the maintained v1 long report is preserved separately. Frozen v2 sources remain
+# historical records and are never rebuilt by these targets.
+# The five integrated main figures and their generated facts use the released
+# GHG and pollutant products. Legacy technical-note figures are maintained first.
 # All are drawn at their printed size by src/pkinv/report/manuscript_style.py. `make papers-v3`
 # rebuilds the figures and all three documents.
 figures-v3:
 	python3 scripts/build_manuscript_figures.py
 	python3 scripts/make_fig_ghg_grid.py
+	python3 scripts/build_integrated_figures.py
+	python3 scripts/make_v3_product_list.py
 	python3 scripts/verify_manuscript_figures.py
 
 papers-v3: figures-v3 paper-v3 paper-v3-review paper-v3-supplement
@@ -305,12 +306,8 @@ paper-v3: sync-figures
 paper-v3-review: sync-figures
 	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode submission.tex
 
-# THE TECHNICAL COMPANION, WHICH NOTHING BUILT UNTIL 2026-10-07. The comment above says it
-# is "one self-contained file: no sections/, no xr pairing with a supplement", and that was
-# true when it was written. technical_supplement.tex now exists, is substantial and is
-# where the review's items 5, 8, 9 and 10 are answered - and its PDF was nine hours older
-# than its own source, because no target compiled it. It is a standalone copernicus
-# document, so one latexmk pass is enough, the same as its two siblings.
+# The technical supplement uses the same unmodified Copernicus class and
+# generated release facts as the article and review-layout source.
 paper-v3-supplement: sync-figures
 	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode technical_supplement.tex
 

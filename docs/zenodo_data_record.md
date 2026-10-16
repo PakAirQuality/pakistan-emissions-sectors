@@ -1,35 +1,36 @@
 # The data record, prepared and NOT YET DEPOSITED
 
-This page is the metadata for the **data DOI** — the second of the three identifiers
-the release plan mints (software / data / documentation). Nothing here has been
-submitted anywhere: it exists so that the deposit, when the user makes it, is a
-copy-paste rather than a reconstruction, and so the licence split is decided before
-the form asks for one licence.
+This page drafts metadata for a future **primary data record**. Nothing has been
+submitted or assigned a DOI. The [ESSD submission guidance](https://www.earth-system-science-data.net/submission.html)
+requires the dataset to be accessible at the selected repository for review, while
+its [FAQ](https://www.earth-system-science-data.net/about/faqs.html) allows the DOI
+to remain pending until acceptance.
+The ODbL companion is a separate package and cannot be presented as CC BY data.
 
 ## What the record deposits
 
-The **product tree**, not the repository: the files
-`outputs/pakemis_deposit_manifest.csv` enumerates with `derived_file_in_deposit=yes`,
-which is the deposit the licensing round already scoped — products and own-work
-registers, never third-party source documents (their absence is per-row explained in
-`outputs/pakemis_source_register.csv`).
+The primary package comprises the rows of `outputs/pakemis_deposit_manifest.csv`
+whose `package_group` is `primary`. It contains the independently sourced core
+products, own-work registers and reproduction assets, never third-party source
+documents. Rows marked `odbl-companion` are excluded from this record and can be
+distributed only with their own ODbL notices and attribution.
 
 ## Metadata
 
 | field | value |
 |---|---|
 | upload_type | dataset |
-| title | PakEmis: a reproducible national GHG inventory for Pakistan — data products |
+| title | PakEmis 1.0.0rc68: greenhouse gas and air pollutant emissions in Pakistan, July 2015–June 2025 — data products |
 | creators | as in `CITATION.cff` |
 | version | the release being deposited (the manifest's `version`) |
-| licence | **CC-BY-4.0, with the ODbL carve-outs below** — Zenodo's single-licence field takes CC-BY-4.0 and the description must state the carve-outs |
-| related identifiers | isSupplementTo → the software DOI; isDocumentedBy → the documentation DOI |
+| licence | CC BY 4.0 for the project-owned primary data, with per-file upstream terms recorded in the manifest; ODbL material is excluded |
+| related identifiers | add software/documentation identifiers only when those records actually exist |
 
-## The licence statement the description must carry
+## Excluded ODbL companion
 
-Code is MIT (not in this record). Data and text are CC-BY-4.0 **except** the
-OpenStreetMap-derived databases, which remain ODbL 1.0 (© OpenStreetMap
-contributors; attribution + share-alike, which CC-BY cannot waive):
+Code is MIT. The following OpenStreetMap-derived databases remain ODbL 1.0
+(© OpenStreetMap contributors, with attribution and share-alike obligations)
+and belong to the separate companion, not the CC BY primary record:
 
 - `data/sectors/waste/gis/pak_landfill_assets.csv`
 - `data/sectors/waste/gis/pak_landfill_coverage.csv`
@@ -41,9 +42,11 @@ contributors; attribution + share-alike, which CC-BY cannot waive):
 - the `odbl-1.0` rows of `data/facility_registry.csv` and
   `outputs/pakemis_facility_registry.csv`
 
-This list is the manifest's `licences.odbl_carveouts` block, and
-`tests/test_deposit_licensing.py` asserts the two stay identical — update the
-manifest, and this page follows it, never the other way around.
+The manifest's `package_group` and row-level terms, rather than a blanket label,
+govern the actual archive selection. ESSD's current FAQ does not accept ODbL as
+the licence for its reviewed dataset. The primary data must be reviewable on
+its own; if the companion is discussed as a separately published dataset, its
+repository, licence and citation require an explicit editorial decision.
 
 ## Integrity
 

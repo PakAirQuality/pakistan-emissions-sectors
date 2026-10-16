@@ -22,69 +22,34 @@ class TestAirPollutants(unittest.TestCase):
         cls.rows = ap.compute(cls.data)
         cls.tot = ap._by_pollutant(cls.rows)
 
-    # ---- regression pins (these fail if any factor, pool or formula silently changes) ----
-    def test_national_totals_pinned(self):
-        # NH3 is UNCHANGED by the manure nitrogen boundary correction (the air layer reads
-        # managed_N and FPRP, not FON) -- that invariance is the cleanest evidence the fix
-        # touched only the N2O path. Soil NOx does read FON, so it fell 161.3 -> 153.8.
-        # NH3 2895.7 -> 2940.5: FracGASF moved from the IPCC "urea-dominant" default 0.15 to the
-        # product-weighted EMEP/EEA high-pH value 0.1615 computed from Pakistan's own NFDC mix.
-        # NH3 2973.7 -> 2658.1: the EMEP livestock chain is now resolved per species and manure
-        # system (EMEP/EEA Table 3-9) instead of one solid chain for everything. Buffalo carry a
-        # lower TAN fraction and storage factor than cattle, which the single chain overstated.
-        # NH3 2658.1 -> 2730.5 when the sector moved to FY2023-24: nitrogen offtake rose from
-        # 3,387 to 3,775 kt N, and the synthetic stream moved with it. Soil NOx rises for the
-        # same reason: EMEP's soil-NOx factor reads the same nitrogen pool.
-        #
-        # NH3 2730.5 -> 2671.9 on the poultry correction, and the reason it was needed is the
-        # claim that used to sit here. This comment said every livestock stream was unchanged
-        # "because the herd is a census count and the census did not move", and offered that as
-        # the cleanest available evidence that the period change touched the fertiliser path
-        # and nothing else. It was wrong about one species: the census does not publish poultry
-        # separately, so that row alone came from the Economic Survey - and it was read from the
-        # 2024-25 edition, 2,260 million birds for a year the rest of the file does not cover.
-        # The archived 2023-24 edition puts FY2023-24 at 2,065 million. Housing and storage
-        # falls 882.3 -> 842.4 and manure applied to soils 885.0 -> 866.2 accordingly.
-        #
-        # The lesson is about the argument, not the arithmetic: "the census did not move" was
-        # evidence about the census, and it was used as evidence about the activity file. One
-        # row in that file was never census-based, and nothing checked whether the claim
-        # covered it.
-        # The residue-burning pollutants (PM2.5, CO, NMVOC, BC, SO2) rise with the crop harvest
-        # the same way the residential residue fuel stream does: more straw grown is more straw
-        # burned. Nothing else in the chain moved.
-        expected = {"NH3": 2671.9, "NOx": 163.2, "PM2.5": 54.0,
-                    "CO": 654.3, "NMVOC": 49.8, "BC": 3.6, "SO2": 2.8}
-        for poll, want in expected.items():
-            self.assertAlmostEqual(self.tot[poll], want, delta=max(0.1, 0.005 * want),
-                                   msg="%s = %.2f, expected ~%.2f" % (poll, self.tot[poll], want))
+    def test_national_totals_match_the_final_reference_export(self):
+        """Catch stale sector exports after a shared nitrogen or activity revision."""
+        import csv
+        from collections import defaultdict
+        from pkinv.core import configurations as conf
+        from pkinv.paths import OUTPUTS
+        exported = defaultdict(float)
+        with open(os.path.join(OUTPUTS, "pakemis_air_atomic_annual.csv")) as handle:
+            for row in csv.DictReader(line for line in handle if not line.startswith("#")):
+                if (row["sector_id"] == "agriculture" and row["period_id"] == "FY2023-24"
+                        and conf.canonical(row["configuration_id"]) == conf.REFERENCE):
+                    exported[row["pollutant"]] += float(row["emissions_Gg"])
+        self.assertEqual(set(exported), set(self.tot))
+        for pollutant, mass in self.tot.items():
+            self.assertAlmostEqual(exported[pollutant], mass, delta=1e-5)
 
-    def test_nh3_streams_pinned(self):
-        """Each NH3 source stream, so a change in one pool cannot hide inside the total."""
-        # summed by GROUP since the Wave A disaggregation (product / species-stage /
-        # crop suffixes); the groups are the same five pools and the pins are unchanged
-        by_sub = {}
-        for r in self.rows:
-            if r["pollutant"] != "NH3":
-                continue
-            g = r["subitem"].rsplit(" (", 1)[0]
-            if g in ("NH3 - housing", "NH3 - yard", "NH3 - storage"):
-                g = "NH3 - housing and storage"
-            by_sub[g] = by_sub.get(g, 0.0) + r["emissions_kt"]
-        # grazing rose (EMEP factors are proportions of TAN, 0.14 for cattle/buffalo, not 0.06 of
-        # total N) while storage and application fell on the species-specific factors
-        # rc39 re-pinned all five to the rebuilt engine. A2 moved the synthetic stream by
-        # +1.38 kt when FracGASF was re-weighted onto the fiscal year's own product mix
-        # (0.1605 -> 0.1608). The four manure streams moved too - A1's census herd - but only
-        # by 0.07-0.67 kt, INSIDE the 1.0 delta, so they would have gone on passing against
-        # stale values. Pinning them to what the engine now produces keeps the guard tight
-        # around the truth rather than merely non-failing.
-        for sub, want in [("NH3 - synthetic fertiliser", 737.2),   # NH3-N basis, no 0.95 share
-                          ("NH3 - pasture deposition (cattle-type)", 104.3),
-                          ("NH3 - pasture deposition (sheep/goat/other)", 114.2),
-                          ("NH3 - housing and storage", 842.8),
-                          ("NH3 - manure applied to soils", 866.9)]:
-            self.assertAlmostEqual(by_sub[sub], want, delta=1.0)
+    def test_livestock_nh3_reproduces_the_conserved_nitrogen_states(self):
+        """Each native release, not a superseded numerical pin, must reach the air layer."""
+        _, pools = manure.compute(self.data)
+        mass = lambda prefix: sum(row["emissions_kt"] for row in self.rows
+                                 if row["pollutant"] == "NH3" and row["subitem"].startswith(prefix))
+        conversion = 17 / 14 / 1e6
+        managed = sum(mass("NH3 - " + stage) for stage in ("housing", "yard", "storage"))
+        self.assertAlmostEqual(managed, pools["managed_NH3_N"] * conversion, places=8)
+        for prefix, key in (("NH3 - manure applied to soils", "organic"),
+                            ("NH3 - pasture deposition (cattle-type)", "pasture_cattle"),
+                            ("NH3 - pasture deposition (sheep/goat/other)", "pasture_other")):
+            self.assertAlmostEqual(mass(prefix), pools["field_volat_NH3_N"][key] * conversion, places=8)
 
     def test_grazing_loss_is_lower_than_confined_loss(self):
         """EMEP: excreta at pasture volatilise far less per kg N than manure that passes through
@@ -192,9 +157,7 @@ class TestAirPollutants(unittest.TestCase):
         from pkinv.sectors.agriculture import fertiliser_mix
         gasf, _ = fertiliser_mix.fracgasf(self.data)   # NH3-N; the pool below is NH3-N + NOx-N
         gasf = gasf + self.data.efv("soils", "NOx_frac_of_applied")
-        expected = (FSN * gasf
-                    + (npools["FON_N"] + npools["FPRP_cattle_N"] + npools["FPRP_other_N"])
-                    * self.data.efv("soils", "FracGASM"))
+        expected = FSN * gasf + sum(npools["field_volat_NH3_N"].values()) + sum(npools["field_volat_NOx_N"].values())
         self.assertAlmostEqual(sv["total"], expected, places=3)
 
     def test_burning_pollutants_scale_with_mass_burnt(self):

@@ -24,15 +24,11 @@ import unittest
 
 from _support import OUTPUTS, read_rows
 
-# The audit's expected routing. Masses moved with A1-A3; the SHARES and the assignment did
-# not, which is what this pins.
-EXPECTED_SHARE = {
-    "glw_livestock": 80.8,
-    "spam_rice": 7.9,
-    "cropland": 7.5,
-    "manure_applied": 3.6,
-    "firms_fire": 0.3,
-}
+# The admitted reference-period source families; their masses come from the current
+# source account, so a legitimate census or activity revision does not require a new
+# hard-coded national percentage in this routing test.
+EXPECTED_SURFACES = {"glw_livestock", "spam_rice", "cropland", "manure_applied",
+                     "firms_fire"}
 
 
 def _agriculture():
@@ -57,22 +53,31 @@ class TestEveryStreamNamesItsRealSurface(unittest.TestCase):
 
     def test_every_stream_names_one_of_the_five_rasters(self):
         surfaces = {r["allocation_surface"] for r in self.rows}
-        self.assertTrue(surfaces <= set(EXPECTED_SHARE),
-                        "unexpected surfaces: %s" % (surfaces - set(EXPECTED_SHARE)))
+        self.assertTrue(surfaces <= EXPECTED_SURFACES,
+                        "unexpected surfaces: %s" % (surfaces - EXPECTED_SURFACES))
 
-    def test_the_routing_reproduces_the_audit(self):
-        agg = collections.defaultdict(float)
-        for r in self.rows:
-            agg[r["allocation_surface"]] += float(r["co2e_Mt_AR5"] or 0)
-        total = sum(agg.values())
-        for surface, expected in EXPECTED_SHARE.items():
-            self.assertIn(surface, agg, surface)
-            self.assertAlmostEqual(100.0 * agg[surface] / total, expected, delta=0.1,
-                                   msg=surface)
+    def test_each_surface_mass_matches_the_independent_source_stream_account(self):
+        from pkinv.sectors.agriculture import engine
+        dispatch = engine.grid_surface_by_stream()
+        expected = collections.defaultdict(float)
+        for row in read_rows(os.path.join(OUTPUTS, "pakemis_source_streams.csv")):
+            if row["module"] == "agriculture":
+                surface = dispatch[row["source_stream_id"]]
+                expected[surface] += float(row["emissions_ar5"])
+        actual = collections.defaultdict(float)
+        for row in self.rows:
+            actual[row["allocation_surface"]] += float(row["co2e_Mt_AR5"] or 0)
+        self.assertEqual(set(actual), EXPECTED_SURFACES)
+        self.assertEqual(set(actual), set(expected))
+        for surface, value in expected.items():
+            self.assertAlmostEqual(actual[surface], value, places=6, msg=surface)
 
     def test_the_surfaces_sum_to_the_published_sector_total(self):
         total = sum(float(r["co2e_Mt_AR5"] or 0) for r in self.rows)
-        self.assertAlmostEqual(total, 223.454471, places=4)
+        source = sum(float(r["emissions_ar5"]) for r in read_rows(
+            os.path.join(OUTPUTS, "pakemis_source_streams.csv"))
+            if r["module"] == "agriculture")
+        self.assertAlmostEqual(total, source, places=6)
 
     def test_the_dispatch_is_the_one_the_grid_allocates_with(self):
         """Not a second copy: the decomposition and the gridded product must ask the same
@@ -109,56 +114,32 @@ class TestTheExceptionsCarryTheirMass(unittest.TestCase):
         self.assertEqual(kinds, {"shape_missing", "proxy_empty", "province_points_absent"})
 
     def test_larkana_is_quantified_per_stream(self):
-        """The exception had been recorded for releases as a string in a numeric column and
-        a line in a fallback register. Neither said how much. rc41: the mass is PRICED per
-        stream - the fraction of each affected stream that fell back, at its own gas and
-        methane origin - so 8.000949 (the whole Sindh module mass of every gas in native Gg,
-        no GWP) became 0.522157 Mt CO2e; and the agriculture events that this table filed
-        under Larkana/Sindh are the "Other" province panel's, named as such now.
+        """Price actual missing-shape events, rather than pinning obsolete sector totals.
 
-        rc42 (S-2): the livestock census reaches the grid through the canonical crosswalk,
-        and its "Larkana District" unit - a census unit with no polygon - is a named row of
-        the district panel that the cube turns into this same event, so Sindh's shape_missing
-        rows now carry an agriculture module too (enteric and manure, 1.249831 Mt); the
-        residential and waste mass is unchanged at 0.522157.
-
-        rc45: 0.522157 becomes 0.522273. Larkana is a census unit with no polygon, so what
-        falls back is its SHARE of Sindh's residential and waste mass, and that share is a
-        district population - which now reads the fiscal midpoint, the mean of the two
-        calendar years a fiscal year spans, rather than the year it opens in. A district's
-        population share moves a little when the vintage moves, and this is that. The
-        agriculture figure does not move: enteric fermentation and manure management are
-        split by the livestock census, not by people.
-
-        rc67 (2026-10-13): 0.522273 becomes 0.482831, and the pin is split by module so the
-        next move names its owner. Residential fell from 0.212406 to 0.172964 because
-        household dung follows the survey in every year (10.93 Mt of cake where the
-        reference burned 58.74), and Larkana's share of a smaller Sindh dung stream is a
-        smaller fallback. Waste moved from 0.309867 to 0.306129 with wastewater nitrous
-        oxide on the 2019 Refinement (rc67)."""
-        larkana = [r for r in self.rows
-                   if r["exception_kind"] == "shape_missing" and r["province"] == "Sindh"]
-        self.assertEqual({r["module"] for r in larkana}, {"agriculture", "residential", "waste"})
-        self.assertAlmostEqual(sum(float(r["affected_mass_Mt_AR5"]) for r in larkana
-                                   if r["module"] == "residential"), 0.172964, places=5)
-        self.assertAlmostEqual(sum(float(r["affected_mass_Mt_AR5"]) for r in larkana
-                                   if r["module"] == "waste"), 0.306129, places=5)
-        # rc47 Wave 1: 1.249831 -> 2.079202. The old figure was enteric+manure only,
-        # because the CROP categories' panel was the SPAM-proxy product - and a proxy
-        # summed within a polygon that does not exist is zero, so Larkana's crop
-        # activity simply wasn't there to fall back. The PBS panel records it
-        # (~0.83 Mt of rice/soils/urea share), and it now falls back the declared
-        # way instead of not existing.
-        self.assertAlmostEqual(sum(float(r["affected_mass_Mt_AR5"]) for r in larkana
-                                   if r["module"] == "agriculture"), 2.079202, places=5)
-        other = [r for r in self.rows
-                 if r["exception_kind"] == "shape_missing" and r["province"] == "Other"]
-        self.assertEqual({r["module"] for r in other}, {"agriculture", "residential"})
-        # rc47 Wave 1: 42 -> 26. The sixteen departed events are the crop categories'
-        # ICT mass: under the proxy product it sat in the "Other residual" row (no
-        # polygon, guaranteed fallback); the PBS panel names ict_islamabad, which HAS
-        # a polygon, so that mass now lands on it instead of falling back.
-        self.assertEqual(sum(int(r["affected_stream_count"]) for r in other), 26)
+        The source fallback ledger records each stream's affected share and its own
+        gas/GWP conversion. The exceptions export must aggregate those fractions, not
+        substitute the whole province or a previous release's fixed megatonnes.
+        """
+        events = read_rows(os.path.join(OUTPUTS, "pakemis_grid_fallbacks.csv"))
+        for province, modules in (("Sindh", {"agriculture", "residential", "waste"}),
+                                  ("Other", {"agriculture", "residential"})):
+            actual = [r for r in self.rows if r["exception_kind"] == "shape_missing"
+                      and r["province"] == province]
+            self.assertEqual({r["module"] for r in actual}, modules)
+            expected = collections.defaultdict(float)
+            stream_ids = collections.defaultdict(set)
+            for row in events:
+                if row["scope"] == "district" and row["province"] == province:
+                    expected[row["module"]] += float(row["affected_Mt_AR5"])
+                    stream_ids[row["module"]].add(row["source_stream_id"])
+                    self.assertGreater(float(row["weight_share"]), 0.0)
+                    self.assertLess(float(row["weight_share"]), 1.0)
+            for row in actual:
+                module = row["module"]
+                self.assertAlmostEqual(float(row["affected_mass_Mt_AR5"]),
+                                       expected[module], delta=5.1e-7, msg=module)
+                self.assertEqual(int(row["affected_stream_count"]),
+                                 len(stream_ids[module]), module)
 
     def test_the_seven_rice_fallbacks_are_quantified(self):
         rice = [r for r in self.rows

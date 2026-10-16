@@ -1,56 +1,23 @@
-"""Air-pollutant co-emissions from residential solid-fuel burning.
+"""Residential primary air-pollutant masses on the common household fuel account.
 
-Reported in mass (kt), never converted to CO2e and never part of the greenhouse-gas
-reconciliation. Row schema matches the other sectors' air layers so they concatenate.
+Reference S uses the survey-anchored household dung series. Alternative L assumes
+all ledger-diverted dung is burned in households; material diversion alone does
+not establish that destination. Field and household residue burning are separate
+flows. Biomass factors use dry fuel including ash: oven-dry firewood, total dry
+dung solids and crop-residue dry matter. Historical activity allocation follows
+the documented household reconstruction, with interpolation/extrapolation typed.
 
-THIS IS PROBABLY THE MOST IMPORTANT AIR-QUALITY LAYER IN THE INVENTORY. On the
-greenhouse-gas side, household fuel is about six percent of the national total and the
-sector is a minor one. On the air-quality side, residential biomass is repeatedly identified as the
-largest single source of primary PM2.5 and black carbon in Pakistan and across South Asia -
-larger than transport, larger than industry. The same two streams that contribute a few
-megatonnes of CO2e here contribute most of the country's household and ambient particulate
-exposure.
+Andreae/Akagi source-specific biomass factors are retained. Natural gas, LPG,
+kerosene and coal use applicable EMEP small-combustion factors on fuel energy.
+The gaseous-fuel table is a declared LPG appliance proxy. Missing household
+engine/genset factors and unusable charcoal sulfur factors remain omissions.
+Particulate definitions are retained where the sources do not permit harmonising
+filterable and condensable mass. BC and OC are components of PM2.5, not additions.
 
-DUNG AND WOOD ARE KEPT APART BECAUSE THEY BURN DIFFERENTLY. Andreae (2019) tabulates dung
-as its own category rather than folding it into biofuels, and the difference is real: 24%
-more PM2.5 per kilogram and half again the ammonia. Pakistan burns a great deal of dung -
-this inventory derives 38.7 Mt of it a year from the agriculture sector's own nitrogen
-flow - so collapsing the two would lose a distinction the measurements support.
-
-SAME SOURCE FAMILY AS THE OTHER BURNING LAYERS, DELIBERATELY. Crop-residue burning
-(agriculture) and open waste burning (waste) already take their pollutant factors from
-Andreae 2019 and Akagi 2011. Using the same compilation for household fuel means Pakistan's
-three combustion inventories rest on one set of field measurements and can be compared
-against each other without a methods caveat.
-
-THE MASS BASIS IS STATED, NOT ASSUMED - the August 2026 correction. Andreae's factors are
-per kilogram of DRY FUEL INCLUDING ASH. Dung burns combustion.dung_ts_kg - total dry
-solids, VS plus the cake's mineral ash, not the ash-free volatile solids this layer once
-used (that conflation understated dung PM by the ash fraction; a test pins the pairing).
-Firewood burns combustion.firewood_oven_dry_kg - the HIES air-dry survey quantity less
-its equilibrium moisture - since the survey re-anchoring; the superseded FAOSTAT path was
-already oven-dry through IPCC's BCEF_R, so the basis is unchanged even though the anchor
-moved. The same fuel chain that drives the greenhouse-gas side drives the pollutants; the
-two layers differ only by the moisture the energy basis adds.
-
-FOSSIL HOUSEHOLD FUELS ARE COVERED - the August 2026 extension. Gas, LPG and kerosene
-carry the EMEP/EEA 1.A.4 Small Combustion Tier 1 factors (sources/EMEP/, the chapter this
-layer was once recorded as blocked on), on the same fuel energies the greenhouse-gas side
-burns; household coal joined them in the August 2026 new-streams round on the chapter's
-hard-coal table. Generators carry no air rows: the chapter has no household-genset class,
-and road exhaust factors would cross the mobile/stationary boundary - a declared omission
-bounded by the stream's 56 kt of fuel. Their basis is energy (g/GJ), unlike Andreae's per-kilogram, and the difference is
-carried on the rows, not assumed away. LPG is assigned the gaseous-fuel table (a
-premixed-flame appliance class, no separate LPG column exists) and the assignment is noted
-on its rows. NH3 is 'not applicable' in the chapter's own tables for these fuels and is
-omitted rather than zero-filled. The chapter's own review note - that it is unclear
-whether its PM factors are filterable-only or include condensables - is quoted on the PM
-rows; the fossil PM contribution is under one percent of the biomass PM either way.
-
-ONE NOX BASIS. Every NOx row is NO2-equivalent: EMEP publishes as NO2, and the Andreae
-rows (published as NO) are converted x46/30 on the factor rows themselves - mass as NO
-cannot be added to mass as NO2, and the road-transport comparison is on the NO2 basis.
-The August 2026 correction; the previous edition summed mixed bases.
+Every NOx row is NO2-equivalent; original biomass NO factors are converted by
+46/30. Reported kt are native pollutant masses, never CO2-equivalent. These are
+gross appliance emissions. An outdoor escape fraction is not estimated, so the
+product is not a measured outdoor release or an ambient concentration product.
 """
 from pkinv.core.uncertainty import product
 from pkinv.sectors.residential import combustion, hies
@@ -143,6 +110,7 @@ def compute(data, year=None, agri=None, dung_basis=None):
             "ghg_subitem": ghg_subitem, "pollutant": "BC",
             "emissions_kt": pm25_kt * data.efv("residential_air_fossil_frac", bc_item),
             "uncert_pct": product(
+                ad_u,
                 data.efu("residential_air_fossil", "Gef_PM25_%s" % fuel),
                 data.efu("residential_air_fossil_frac", bc_item)),
         })

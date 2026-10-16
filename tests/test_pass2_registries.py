@@ -113,15 +113,19 @@ class TestTheScopeRegistry(unittest.TestCase):
                             % row["category_id"])
 
     def test_no_screening_mass_is_inside_the_reference(self):
-        """Rule 3: the reference total must not move when a screening row exists.
-        The reference is pinned elsewhere; here we assert every screening row SAYS
-        it is outside (the phrase is load-bearing for a reader)."""
+        """Source cases are separate configurations, never primary atomic rows."""
+        from pkinv.core.configurations import ALL
+        configurations = _rows(os.path.join(ROOT, "outputs", "national_configurations.csv"))
+        shipped = {r["configuration_id"] for r in configurations}
+        atomic_ids = {r["configuration_id"] for r in _rows(os.path.join(
+            ROOT, "outputs", "pakemis_ghg_configuration_atoms.csv"))}
+        self.assertEqual(atomic_ids, set(ALL))
         for row in self.rows:
             if row["current_status"] == "screening":
-                text = (row["available_open_data"] + row["annual_activation_gate"]
-                        + row["double_counting_exclusions"]).lower()
-                self.assertTrue("outside" in text or "configuration" in text
-                                or "screening" in text, row["category_id"])
+                named = {token.strip("() ") for token in row["available_open_data"]
+                         .replace("(", " ").replace(")", " ").split()} & shipped
+                self.assertTrue(named, row["category_id"])
+                self.assertFalse(named & atomic_ids, row["category_id"])
 
 
 class TestTheDriverRegistry(unittest.TestCase):

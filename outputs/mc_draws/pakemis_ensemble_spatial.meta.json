@@ -5,6 +5,6 @@
   "note": "draw_id x category x province x placement (gridded | retained_at_adm1); every draw's cells sum exactly to its annual draw, and the reviewer's identity national = gridded + unallocated holds per draw as the placement split",
   "rng": "prefix of the published national pool (identity-seeded parameter streams + injected sector draw files); profile noise on dedicated blake2b-keyed streams",
   "scenario": "within_sector",
-  "seed": 42,
-  "sha256": "d62c4e2032676a6d7c846e235947ed297e6dcc1224e589472a4ea8639a621e70"
+  "seed": 20261014,
+  "sha256": "4c4b01e9c87a1e6e78dc1f950e18103c2251aacce7bf88b38993f3c2e78caed3"
 }

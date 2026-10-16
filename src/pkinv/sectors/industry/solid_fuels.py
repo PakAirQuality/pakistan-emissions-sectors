@@ -162,6 +162,10 @@ def compute(data, year=None):
                    "temporal_method": "T3" if consumer == "cement" else "T4",
                    "spatial_method": "S2",
                    "source_id": "finance_division_supplement_coal"}
+            row["uncertainty_driver_widths"] = {
+                "activity:coal:" + consumer: ad_u,
+                "factor:ncv:" + ITEM: ncv_u,
+                "factor:%s:%s" % (gas.lower(), ITEM): data.efu(cat, ITEM)}
             if gas == "CH4":
                 row["fossil"] = True
             out.append(row)

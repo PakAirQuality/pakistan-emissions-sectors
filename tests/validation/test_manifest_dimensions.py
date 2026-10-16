@@ -37,7 +37,7 @@ class TestTheManifestCountsAreReproducible(unittest.TestCase):
     def test_row_counts(self):
         self.assertEqual(self.dims["annual_atomic_rows"], len(self.rows("outputs/pakemis_atomic_annual.csv")))
         self.assertEqual(self.dims["monthly_rows"],
-                         len(self.rows("outputs/pakemis_monthly_fy2015_16_fy2023_24.csv")))
+                         len(self.rows("outputs/pakemis_monthly_fy2015_16_fy2024_25.csv")))
         self.assertEqual(self.dims["source_streams"], len(self.rows("outputs/pakemis_source_streams.csv")))
         self.assertEqual(self.dims["completeness_rows"], len(self.rows("outputs/completeness.csv")))
         self.assertEqual(self.dims["structural_axes"], len(self.rows("outputs/national_axis_register.csv")))
@@ -48,7 +48,7 @@ class TestTheManifestCountsAreReproducible(unittest.TestCase):
         atoms = {(r["period_id"], r["component_id"], r["configuration_id"], r["geography_id"])
                  for r in self.rows("outputs/pakemis_atomic_annual.csv") if r["estimate_status"] == "E"}
         months = {}
-        for r in self.rows("outputs/pakemis_monthly_fy2015_16_fy2023_24.csv"):
+        for r in self.rows("outputs/pakemis_monthly_fy2015_16_fy2024_25.csv"):
             months.setdefault((r["period_id"], r["component_id"], r["configuration_id"],
                                r["geography_id"]), set()).add(r["month"])
         self.assertEqual(self.dims["monthly_rows"], 12 * len(months))

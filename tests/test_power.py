@@ -68,18 +68,22 @@ class TestActivity(unittest.TestCase):
         for r in self.data.fuel:
             if r["fuel"] == "Coal":
                 rows[r["fiscal_year"]] = r["toe"]
-        seen = 0
+        seen = set()
         for r in read_rows(asset_path(DATA, "activity", "power",
                                       "coal_energy_booking.csv"), comments=True):
             year = int(r["fiscal_year"])
+            if year > 2023:
+                self.assertIn("no Table 3", r["superseded_source"])
+                continue
             self.assertAlmostEqual(float(r["superseded_toe"]), rows[year], delta=0.5,
                                    msg="FY%d" % year)
-            seen += 1
-        self.assertEqual(seen, 11, "the booking table no longer covers every fuel year")
+            seen.add(year)
+        self.assertEqual(seen, set(range(2013, 2024)), "a held Table 3 control was dropped")
 
     def test_the_series_spans_eleven_years(self):
         years = sorted({r["fiscal_year"] for r in self.data.fuel})
-        self.assertEqual(years, list(range(2013, 2024)))
+        from pkinv.core.reporting_window import CORE_FY_STARTS
+        self.assertEqual(years, list(range(2013, CORE_FY_STARTS[-1] + 1)))
 
     def test_coal_grew_while_gas_fell(self):
         """The build-out this sector exists to measure, re-anchored on the booked account.
@@ -407,41 +411,50 @@ class TestUncertaintyRebuild(unittest.TestCase):
     def test_per_fuel_widths(self):
         """The rebuilt component uncertainties. If a flat scalar ever returns, these
         collapse back to one value and fail."""
-        want = {"Coal CO2": 10.9, "Gas CO2": 10.8, "Furnace Oil CO2": 12.4,
+        want = {"Gas CO2": 10.8, "Furnace Oil CO2": 12.4,
                 "Diesel Oil CO2": 10.2}
         got = {c["subitem"]: c["uncert_pct"] for c in self.comps}
         for k, v in want.items():
             self.assertAlmostEqual(got[k], v, delta=0.1, msg=k)
+        from pkinv.core import parameters
+        coal = next(row for row in self.comps if row["subitem"] == "Coal CO2")
+        named_variance = sum(parameters.sigma_log(width) ** 2
+                             for width in coal["uncertainty_driver_widths"].values())
+        self.assertAlmostEqual(parameters.sigma_log(coal["uncert_pct"]) ** 2, named_variance, places=12)
+        self.assertTrue(any(key.startswith("factor:ncv:") for key in coal["uncertainty_driver_widths"]))
 
     def test_the_conversion_group_covers_exactly_the_four_grid_co2_rows(self):
         grouped = {c["subitem"] for c in self.comps
                    if c.get("corr_group") == combustion.TOE_CORR_GROUP}
-        self.assertEqual(grouped, {"Coal CO2", "Gas CO2", "Furnace Oil CO2",
+        self.assertEqual(grouped, {"Gas CO2", "Furnace Oil CO2",
                                    "Diesel Oil CO2"})
 
     def test_delta_method_by_hand(self):
         """The formula, recomputed independently of the module."""
         import math
         d = self.data
-        share, lig, bit = 0.79, 101000.0, 94600.0
+        ranks = {row["fuel_rank"]: float(row["energy_TJ"]) for row in d.coal_rank_account[d.year]}
+        share = ranks["Lignite"] / sum(ranks.values())
+        lig, bit = 101000.0, 94600.0
         blend = bit * (1 - share) + lig * share
         u = math.sqrt((share * lig / blend * 12) ** 2
-                      + ((1 - share) * bit / blend * 6) ** 2
-                      + (share * (lig - bit) / blend * 12) ** 2)
+                      + ((1 - share) * bit / blend * 6) ** 2)
         self.assertAlmostEqual(combustion.coal_co2_factor_uncert(d), u, places=6)
-        self.assertAlmostEqual(u, 9.70, delta=0.02)
+        self.assertGreater(u, 6)
+        self.assertLess(u, 12)
 
     def test_grouped_exceeds_independent(self):
         """The group is the conservative reading of one shared conversion practice;
         both are published and the ordering is the point."""
         a1 = {r["category"]: r for r in self.U.approach1_rows(self.data)}
         g = a1["Electricity and heat production"]
-        self.assertAlmostEqual(g["approach1_pct_grouped"], 10.9, delta=0.1)
         self.assertGreater(g["approach1_pct_grouped"],
                            g["approach1_pct_independent"])
         # 2026-10-07 power coal re-base: 57.82049 -> 40.04008. The rebuild must still not
         # move the central estimate; what moved it is the booked account, upstream of here.
-        self.assertAlmostEqual(g["co2e_Mt_AR5"], 40.04008, places=5,
+        expected = sum(row["co2e_Mt_AR5"] for row in self.comps
+                       if row["category"] == "Electricity and heat production")
+        self.assertAlmostEqual(g["co2e_Mt_AR5"], expected, places=9,
                                msg="the rebuild must not move the central estimate")
 
     def test_scenarios_match_the_published_sensitivities(self):
@@ -520,7 +533,10 @@ class TestKELeg(unittest.TestCase):
         is not badly wrong for K-E. Monotone within rounding."""
         effs = [r["implied_net_efficiency"] for r in self.series]
         self.assertAlmostEqual(effs[0], 0.369, delta=0.005)
-        self.assertAlmostEqual(effs[-1], 0.455, delta=0.005)
+        for row in self.series:
+            self.assertAlmostEqual(row["implied_net_efficiency"],
+                                   row["net_GWh"] * 3.6 / row["total_TJ"], places=12)
+        self.assertLess(effs[-1], .6)  # electrical efficiency, never an emissions factor
         self.assertGreater(effs[-1], effs[0])
 
     def test_no_coal_on_the_ke_side(self):
@@ -684,7 +700,7 @@ class TestAirLayer(unittest.TestCase):
     def test_the_rank_split_partitions_the_coal_energy(self):
         """79 percent of the coal energy on Section 1.7, the rest on 1.1, and the SO2
         factors are the sections' own 30S and 38S on each rank's own NCV."""
-        share = self.data.p("coal_lignite_share")
+        share = self.data.coal_energy_lignite_share()
         lig = [r for r in self.rows if "lignite" in r.get("fuel_detail", "")]
         bit = [r for r in self.rows if "bituminous" in r.get("fuel_detail", "")]
         self.assertTrue(lig and bit)

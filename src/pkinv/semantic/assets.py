@@ -47,6 +47,24 @@ def _path(root, relative):
     return root / path
 
 
+def _travels(storage):
+    """Whether a reader's tree can hold this file: the deposit carries it, or it is not data.
+
+    A digest recorded only because a file happened to be on the maintainer's disk is a fact
+    about one checkout. rc68's clean rebuild lacked three undeposited internal assets (an
+    OCHA boundary zip, the GCD-Rice raster, sources_freeze.txt) and its contract differed
+    from the release on exactly those digests.
+    """
+    import fnmatch
+    from pkinv.report import deposit_manifest
+    if not storage.startswith("data/"):
+        return True
+    if deposit_manifest._excluded(storage):
+        return False
+    return any(fnmatch.fnmatch(storage, pattern)
+               for _kind, patterns in deposit_manifest.DEPOSIT_PATTERNS for pattern in patterns)
+
+
 def build(inputs, root=ROOT):
     """One asset inventory drives fetching, serving, library metadata, and internal readers."""
     root = Path(root)
@@ -87,7 +105,7 @@ def build(inputs, root=ROOT):
                  "producer": row.get("producer") or "", "bundle_id": row.get("bundle_id") or "",
                  "downloadable": downloadable, "packaged": packaged,
                  "aliases": []}
-        if not path.is_file():
+        if not path.is_file() or not (packaged or _travels(row["path"])):
             if packaged:
                 raise ValueError("required release asset is absent: %s" % relative)
             assets.append(asset)

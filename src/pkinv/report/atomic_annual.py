@@ -69,6 +69,7 @@ from pkinv.report import annual_product, method_registry, national_series
 
 OUT = asset_path(OUTPUTS, "pakemis_atomic_annual.csv")
 AGGREGATES = asset_path(OUTPUTS, "pakemis_atomic_annual_aggregates.csv")
+CONFIGURATIONS_OUT = asset_path(OUTPUTS, "pakemis_ghg_configuration_atoms.csv")
 
 NATIONAL_GEOGRAPHY = "PK"
 from pkinv.core import configurations as _conf
@@ -107,7 +108,7 @@ def _component_code():
     return category_ledger.component_code
 
 
-def build():
+def build(configuration_id=REFERENCE_CONFIGURATION):
     import pkinv
     component_code = _component_code()
     series = {(r["sector"], int(r["fiscal_end_year"])): r
@@ -131,7 +132,7 @@ def build():
             if year != fy_end or series[sector_row]["row_kind"] != "sector":
                 continue
             s = series[sector_row]
-            base = {"period_id": period_id, "configuration_id": REFERENCE_CONFIGURATION,
+            base = {"period_id": period_id, "configuration_id": configuration_id,
                     "geography_id": NATIONAL_GEOGRAPHY, "sector_id": name,
                     "release_id": pkinv.__version__,
                     # rc39 A7: resolved per atom below from data/method_registry.csv. These
@@ -150,7 +151,7 @@ def build():
                              "co2e_Mt_AR6": "", "source_stream_id": "",
                              })
                 continue
-            for c in _components(name, fy_end, context):
+            for c in _components(name, fy_end, context, configuration_id):
                 method, model = method_registry.lookup(c["category"], c["subitem"], rules,
                                                        sector=name, gas=c["gas"])
                 rows.append({
@@ -181,7 +182,7 @@ COARSE_GRAIN = ("no component split exists for this sector-period: the pre-refer
                 "the rest of the table and says so rather than being dropped")
 
 
-def _components(name, fy_end, context):
+def _components(name, fy_end, context, configuration_id=REFERENCE_CONFIGURATION):
     """Component rows for one sector-period, through the annual product's own dispatch.
 
     WHERE THERE IS NO COMPONENT SPLIT, THE ROWS STILL EXIST. Agriculture before the
@@ -191,7 +192,7 @@ def _components(name, fy_end, context):
     305.42. That is precisely the silence this table was built to remove, reintroduced by
     the table itself. Coarser rows are emitted with their grain declared.
     """
-    comps = annual_product.components_for(name, fy_end, context)
+    comps = annual_product.components_for(name, fy_end, context, configuration_id)
     if comps is not None:
         return comps
     out = []
@@ -275,6 +276,10 @@ def aggregates(rows):
 def main():
     rows = build()
     write_table(OUT, FIELDS, rows, extrasaction="ignore")
+    configured = rows + [row for configuration_id in _conf.ALL
+                         if configuration_id != REFERENCE_CONFIGURATION
+                         for row in build(configuration_id)]
+    write_table(CONFIGURATIONS_OUT, FIELDS, configured, extrasaction="ignore")
 
     agg = aggregates(rows)
     fields = ["aggregation_level", "period_id", "sector_id", "category", "gas",

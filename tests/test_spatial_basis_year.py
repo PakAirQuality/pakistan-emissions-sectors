@@ -16,12 +16,15 @@ import unittest
 from decimal import Decimal
 
 from pkinv.core.io import read_rows
+from pkinv.assets import asset_path
+from pkinv.paths import DATA
+from pkinv.core.configurations import ALL
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 SEMANTIC = os.path.join(ROOT, "outputs", "semantic")
 REGISTRY = os.path.join(ROOT, "outputs", "pakemis_spatial_weights_by_year.csv")
 BASES = {"annual_observed_activity", "static_structural", "reference_shape_backcast",
-         "substituted_surface", "unallocated"}
+         "substituted_surface", "unallocated", "modelled_population_proxy", "calendar_activity_proxy", "reference_shape_forward"}
 
 
 def _fact(name):
@@ -36,18 +39,19 @@ class TestTheBasisTableIsTheRegistryWeightedByMass(unittest.TestCase):
         cls.registry = {(r["source_stream_id"], r["period_id"]): r["spatial_time_basis"]
                         for r in read_rows(REGISTRY)}
 
-    def test_nine_periods_and_a_closed_vocabulary(self):
-        self.assertEqual(len({r["period_id"] for r in self.basis}), 9)
+    def test_registered_periods_and_a_closed_vocabulary(self):
+        periods = {r["period_id"] for r in read_rows(asset_path(DATA, "periods.csv"))}
+        self.assertEqual({r["period_id"] for r in self.basis}, periods)
         self.assertLessEqual({r["spatial_time_basis"] for r in self.basis}, BASES)
-        self.assertEqual({r["configuration_id"] for r in self.basis}, {"REF_2023_24"})
+        self.assertEqual({r["configuration_id"] for r in self.basis}, set(ALL))
 
     def test_each_period_sums_to_the_province_table(self):
         want = collections.defaultdict(Decimal)
         for r in self.adm1:
-            want[r["period_id"]] += Decimal(r["co2e_Mt_AR5"])
+            want[(r["configuration_id"], r["period_id"])] += Decimal(r["co2e_Mt_AR5"])
         got = collections.defaultdict(Decimal)
         for r in self.basis:
-            got[r["period_id"]] += Decimal(r["co2e_Mt_AR5"])
+            got[(r["configuration_id"], r["period_id"])] += Decimal(r["co2e_Mt_AR5"])
         self.assertEqual(set(got), set(want))
         for period in want:
             self.assertLess(abs(got[period] - want[period]), Decimal("0.000001"), period)
@@ -55,10 +59,10 @@ class TestTheBasisTableIsTheRegistryWeightedByMass(unittest.TestCase):
     def test_each_sector_sums_to_its_own_province_total(self):
         want = collections.defaultdict(Decimal)
         for r in self.adm1:
-            want[(r["period_id"], r["module"], r["reporting_sector"])] += Decimal(r["co2e_Mt_AR5"])
+            want[(r["configuration_id"], r["period_id"], r["module"], r["reporting_sector"])] += Decimal(r["co2e_Mt_AR5"])
         got = collections.defaultdict(Decimal)
         for r in self.basis:
-            got[(r["period_id"], r["module"], r["reporting_sector"])] += Decimal(r["co2e_Mt_AR5"])
+            got[(r["configuration_id"], r["period_id"], r["module"], r["reporting_sector"])] += Decimal(r["co2e_Mt_AR5"])
         self.assertEqual(set(got), set(want))
         for key in want:
             self.assertLess(abs(got[key] - want[key]), Decimal("0.000001"), key)
@@ -71,8 +75,8 @@ class TestTheBasisTableIsTheRegistryWeightedByMass(unittest.TestCase):
             basis = self.registry.get((r["source_stream_id"], r["period_id"]))
             self.assertIsNotNone(basis, "a stream-year with province mass and no registry row: %s %s"
                                  % (r["source_stream_id"], r["period_id"]))
-            want[(r["period_id"], r["module"], r["reporting_sector"], basis)] += Decimal(r["co2e_Mt_AR5"])
-        got = {(r["period_id"], r["module"], r["reporting_sector"], r["spatial_time_basis"]): Decimal(r["co2e_Mt_AR5"])
+            want[(r["configuration_id"], r["period_id"], r["module"], r["reporting_sector"], basis)] += Decimal(r["co2e_Mt_AR5"])
+        got = {(r["configuration_id"], r["period_id"], r["module"], r["reporting_sector"], r["spatial_time_basis"]): Decimal(r["co2e_Mt_AR5"])
                for r in self.basis}
         self.assertEqual(set(got), set(want))
         for key, value in want.items():
@@ -90,7 +94,7 @@ class TestTheBasisTableIsTheRegistryWeightedByMass(unittest.TestCase):
         for r in self.basis:
             if r["spatial_time_basis"] == "unallocated":
                 retained[r["period_id"]] += Decimal(r["co2e_Mt_AR5"])
-        self.assertEqual(len(retained), 9)
+        self.assertEqual(set(retained), {r["period_id"] for r in read_rows(asset_path(DATA, "periods.csv"))})
         self.assertTrue(all(v > 0 for v in retained.values()))
 
     def test_it_is_a_table_of_the_contract(self):
@@ -99,8 +103,8 @@ class TestTheBasisTableIsTheRegistryWeightedByMass(unittest.TestCase):
             contract = json.load(handle)
         table = contract["facts"]["fact_spatial_basis_year"]
         self.assertEqual(table["primary_key"], ["configuration_id", "period_id", "module", "reporting_sector", "spatial_time_basis"])
-        text = " ".join(l["message"] for l in contract["known_limitations"] if l["id"] == "adm2_history_annual_only")
-        self.assertIn("fact_spatial_basis_year", text)
+        self.assertEqual(table["aggregation"]["rule"], "additive")
+        self.assertIn("fact_adm1_year", table["aggregation"]["closure"])
 
 
 if __name__ == "__main__":

@@ -46,12 +46,12 @@ HSD_KG_PER_L = 0.84
 CO2_KG_PER_TJ = {"Gas": 56100.0, "RLNG": 56100.0, "RFO": 77400.0, "HSD": 74100.0}
 
 
-def _energy_TJ(r, hhv):
+def _energy_TJ(r, hhv, gas_scale=1.0):
     q, unit = float(r["quantity"]), r["quantity_unit"]
     if unit == "MMBTU":
-        return q * TJ_PER_MMBTU, "exact"
+        return q * TJ_PER_MMBTU * gas_scale, "exact conversion" if gas_scale == 1 else "conditional NCV/GCV conversion"
     if unit == "MMCFT":
-        return q * hhv * TJ_PER_MMCF_PER_BTU, "assumed HHV"
+        return q * hhv * TJ_PER_MMCF_PER_BTU * gas_scale, "assumed heating value and reference basis"
     if unit == "000 t":
         return q * RFO_NCV_TJ_PER_GG, "default NCV"
     if unit == "000 L":
@@ -64,15 +64,20 @@ def series(data):
     hhv = data.p("captive_hhv_btu_per_scf")
     out = []
     for year in sorted({int(r["fiscal_year"]) for r in plant_ledger._all_rows()}):
-        tj_by_fuel, co2_kt, gwh = {}, 0.0, 0.0
+        tj_by_fuel, co2_kt, gwh, printed_co2, reconstructed = {}, 0.0, 0.0, 0.0, []
         for r in plant_ledger.rows(year):
             if plant_ledger.in_boundary(r):   # this leg IS the complement
                 continue
-            tj, _cls = _energy_TJ(r, hhv)
+            tj, _cls = _energy_TJ(r, hhv, plant_ledger.gas_energy_scale(data, year))
             if tj is None:
                 continue
             tj_by_fuel[r["fuel"]] = tj_by_fuel.get(r["fuel"], 0.0) + tj
             co2_kt += tj * CO2_KG_PER_TJ[r["fuel"]] / 1e6
+            if "; reconstructed" in r.get("source_table", ""):
+                reconstructed.append("%s %s (reconstructed physical fuel; see source-table note)"
+                                     % (r["plant"], r["fuel"]))
+            else:
+                printed_co2 += tj * CO2_KG_PER_TJ[r["fuel"]] / 1e9
             gwh += float(r["net_generation_GWh"])
         total_tj = sum(tj_by_fuel.values())
         # A YEAR WITH NO K-ELECTRIC FUEL IS NOT A K-ELECTRIC YEAR. This used to emit a row for
@@ -90,6 +95,8 @@ def series(data):
                     "hsd_TJ": tj_by_fuel.get("HSD", 0.0),
                     "total_TJ": total_tj,
                     "co2_Mt": co2_kt / 1000.0,
+                    "co2_Mt_printed_fuel_only": printed_co2,
+                    "estimated_cells": "; ".join(reconstructed),
                     "net_GWh": gwh,
                     "implied_net_efficiency": (gwh * 3600e3) / (total_tj * 1e6)
                     if total_tj else None})
@@ -173,13 +180,13 @@ def coverage_series(data):
         for r in plant_ledger.rows(row["fiscal_year"]):
             if plant_ledger.in_boundary(r) or r["plant"] not in OWN_STATIONS:
                 continue
-            tj, _cls = _energy_TJ(r, hhv)
+            tj, _cls = _energy_TJ(r, hhv, plant_ledger.gas_energy_scale(data, row["fiscal_year"]))
             if tj is not None:
                 own += tj * CO2_KG_PER_TJ[r["fuel"]] / 1e9
         out.append({"fiscal_year": row["fiscal_year"],
-                    "co2_Mt_printed_fuel_only": row["co2_Mt"], "co2_Mt": row["co2_Mt"],
-                    "co2_Mt_own_stations": own, "estimated_cells": "",
-                    "basis": "plant fuel ledger (NEPRA SoIR 2024 and 2025)"})
+                    "co2_Mt_printed_fuel_only": row["co2_Mt_printed_fuel_only"], "co2_Mt": row["co2_Mt"],
+                    "co2_Mt_own_stations": own, "estimated_cells": row["estimated_cells"],
+                    "basis": "plant fuel ledger; FY2024–25 gas uses declared NCV/GCV ratio; reconstructed cells remain separate"})
     return out
 
 

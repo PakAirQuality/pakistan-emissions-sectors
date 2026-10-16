@@ -1,61 +1,10 @@
-"""An interval on every fiscal year, and - the point of the exercise - on the DIFFERENCES.
+"""Legacy analytical sensitivity to component and parameter dependence over time.
 
-WHAT WAS MISSING. The Monte Carlo is mature at the reference year: 100,000 draws, correlation
-within and across sectors, common random numbers, native draw files, convergence and
-decomposition published, a national interval of -10.0/+15.7 percent. It stops at FY2023-24.
-None of the other eight fiscal years carries a band at all, so the nine-year panel - the
-product a reader is most likely to trend - is the one product with no uncertainty on it.
-
-AND THE NUMBER THAT IS MISSING IS NOT A LEVEL. A reader watching FY2021-22 fall to FY2022-23
-has exactly one bound available, the national plus-or-minus eleven percent, and applying it to
-a CHANGE is wrong by a wide margin. The emission-factor error that dominates that band is
-largely the same number in both years and cancels in the subtraction. An inventory that
-publishes only level uncertainty hands the trend reader the one interval that does not apply
-to what they are doing.
-
-HOW THE CORRELATION IS EXPRESSED, which is the whole design. Nothing new is invented.
-core.montecarlo already lets a caller pin a component's RNG identity through `_mc_key`, and
-uncertainty_all already uses that to make a by-sector run and a by-category run draw the same
-numbers. Time correlation is the same mechanism with the fiscal year in or out of the key:
-
-  time_correlated     the key omits the year -> one z-stream per component for all nine
-                      years -> a factor bias moves every year together and cancels in a
-                      difference. The NARROW end of the trend bracket.
-
-  time_independent    the key carries the component's PIN YEAR - the first year holding its
-                      exact value - so a component whose value moved between two years
-                      draws afresh in each. The WIDE end.
-
-NEITHER IS CLAIMED AS THE ANSWER. What fraction of a component's declared uncert_pct is a
-persistent factor bias and what fraction is a resampled activity error is not resolved by any
-evidence in this repository, and inventing that split to manufacture one narrower number would
-be exactly the kind of forcing this project has refused elsewhere. The truth is inside the
-bracket, and the width of the bracket is itself a statement about how much the inventory knows.
-
-THE ONE PART THAT IS MEASURED RATHER THAN CHOSEN. `time_independent` keys on whether the
-value MOVED, not on the year, and that is deliberate: where a component is BIT-IDENTICAL in two
-years, its error is not a modelling choice - it is provably the same draw, because it is the
-same number. Since rc41 no key carries the float itself: equality is decided in-process and
-the key carries the pin year (pin_years), so a one-ulp platform difference in a computed
-value cannot re-seed a stream (the nineteenth review's T-2).
-Residential holds five sub-four-percent streams at reference values, waste holds the 2023 JMP
-sanitation split, and several sectors hold parameters at reference vintage. Those components
-share a stream in BOTH scenarios and the share of each year's mass they carry is published, so
-the bracket is narrowed by evidence rather than by assumption - and so a reader can see how
-much of a backcast year is literally the reference year's number.
-
-WHAT THIS DOES NOT COVER, said here rather than left to be discovered. The month and the
-scenario axes. Monthly would be the annual interval redistributed - 80 percent of monthly mass
-sits on a declared-flat profile, so a monthly band would look like new information and would
-not be - and pakemis_joint_uncertainty.csv already treats month as a RESOLUTION carrying timing
-brackets, which is the truthful treatment. The seventeen structural configuration axes carry no
-probability by construction, and crossing them into a probabilistic ensemble would manufacture
-a distribution nobody measured.
-
-Usage:  python3 -m pkinv.report.longitudinal_uncertainty
-Writes: outputs/pakemis_longitudinal_uncertainty.csv
-        outputs/pakemis_trend_uncertainty.csv
-        outputs/pakemis_longitudinal_prefix.csv   (the first 200 draws per stream, T-2)
+This product keeps the historical component/parameter graph for comparison. It
+is not the current conserved native nitrogen, crop-burning, waste or fugitive
+replay, and its scenario endpoints do not bound the true trend uncertainty.
+The current paired native levels/trends are the separately named GHG conditional
+and trend products. No probability attaches to the choice among legacy cases.
 """
 
 from pkinv.assets import asset_path
@@ -196,6 +145,8 @@ GROUP_TYPE_PREFIXES = (
     ("ef:", "persists", "an emission factor"),
     ("crop:", "resamples", "the year's crop area or production"),
     ("livestock:", "resamples", "the year's livestock head count"),
+    ("activity:", "resamples", "the year's source-specific physical activity"),
+    ("power:coal_factor_rank_share", "persists", "rank factor composition sensitivity"),
 )
 
 
@@ -626,8 +577,12 @@ def differences(by_year, draws, n_iter=N_ITER, seed=SEED):
 def _write(path, rows, header_lines):
     os.makedirs(OUTPUTS, exist_ok=True)
     with open(path, "w", newline="", encoding="utf-8") as handle:
+        header_lines = ["LEGACY ANALYTICAL SENSITIVITY: not the current native material-flow uncertainty; "
+                        "scenario endpoints are not uncertainty bounds."] + list(header_lines)
         for line in header_lines:
             handle.write("# %s\n" % line)
+        rows = [dict(row, model_basis="legacy_parameter_graph_sensitivity_not_native_material_flow")
+                for row in rows]
         writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
         writer.writeheader()
         writer.writerows(rows)
@@ -661,48 +616,21 @@ def main():
     level_rows, draws = levels(by_year)
     trend_rows = differences(by_year, draws)
     _write(PREFIX_OUT, prefix_rows(draws), [
-        "The first %d national-total draws of every (scenario, fiscal year) stream of the "
-        "longitudinal ensemble - a prefix of the 20,000-draw pool the level and difference "
-        "products summarise, shipped so a rerun on another platform can be compared with "
-        "this one (rc41, T-2). covered_total_Mt is the full-precision float." % PREFIX_N_ITER,
-        "Stream keys carry no float strings since rc41: a component's seed is its identity "
-        "and the first fiscal year that carries its exact value (pin_years), so a one-ulp "
-        "platform difference in a computed value cannot re-seed a stream.",
+        "First %d draws per legacy scenario/year, for reproducibility only." % PREFIX_N_ITER,
+        "Parameter/row identities and pin years determine the shared random streams.",
     ])
-
     _write(LEVELS_OUT, level_rows, [
-        "A 95 percent interval on the COVERED TOTAL of every fiscal year, under two "
-        "time-correlation scenarios.",
-        "The scenarios bracket a quantity no evidence here resolves: how much of each "
-        "component's error is a persistent factor bias and how much resamples each year. "
-        "Neither end is the answer; the truth is inside, and the width is a statement about "
-        "how much the inventory knows.",
-        "A year's covered total sums the sectors that EXIST in it. FY2015-16 carries eight "
-        "sectors and the rest carry ten, so levels are not comparable across that boundary - "
-        "which is what the difference product's comparable_sectors column is for.",
-        "pinned_mass_share_pct is measured, not declared: mass whose component value is "
-        "bit-identical in more than one year, and which therefore shares a draw in BOTH "
-        "scenarios because it is the same number rather than a modelling choice.",
-        "THE VARIANCE SHARES EXPLAIN THE RESULT. Since the agriculture factors were named "
-        "(rc39), about three quarters of the national variance sits in parameters that "
-        "persist across years, about one fifth in activity that resamples each year, and a "
-        "few percent is row-private residual the parameter graph attributes to no named "
-        "quantity (the live figures are the variance_share_* columns). rc42: the shares are "
-        "covariance-aware - members of one dependency group draw one factor, so their "
-        "first-order terms add before squaring; rc41 summed the squares and understated the "
-        "resampling share by half. Persistent error is what a difference cancels, which is "
-        "why the typed scenario resolves the multi-year windows and no consecutive step.",
+        "Conditional percentiles under the named legacy component/parameter dependence cases.",
+        "Conserved native source engines are not replayed here. Use the separate GHG "
+        "conditional and paired-trend products for the current native uncertainty.",
+        "Cases have no assigned probabilities and their endpoints do not bound true uncertainty.",
+        "pinned_mass_share_pct records repeated deterministic component values. "
+        "variance_share_* describes the analytical graph, not native source-driver importance.",
     ])
     _write(TREND_OUT, trend_rows, [
-        "THE INTERVAL ON A CHANGE, which this release has never published and which is the "
-        "one a trend reader actually needs.",
-        "Differenced draw by draw so that shared error cancels the way the real quantity "
-        "does. Combining two published intervals in quadrature instead would reproduce "
-        "exactly the overstatement this product exists to correct.",
-        "significant_at_95 is stated PER SCENARIO. A change significant under both ends of "
-        "the bracket is resolved by this inventory; one significant under neither is not; "
-        "one that differs between them is resolved only if you are willing to assert a "
-        "correlation structure nobody has measured.",
+        "Legacy case differences are paired by draw identity and restricted to comparable sectors.",
+        "significant_at_95 is conditional on the selected analytical sensitivity case; "
+        "it does not establish a universally resolved trend or bound the current native interval.",
     ])
 
     print("longitudinal uncertainty -> %s" % os.path.relpath(LEVELS_OUT))
@@ -720,7 +648,7 @@ def main():
 
     print("\ntrend intervals -> %s" % os.path.relpath(TREND_OUT))
     print("  %-22s %9s  %-26s %-26s"
-          % ("change", "Mt", "PARAMETER-TYPED", "independent (impossible bound)"))
+          % ("change", "Mt", "PARAMETER-TYPED", "independent sensitivity case"))
     trend = {(r["scenario"], r["from_period"], r["to_period"]): r for r in trend_rows}
     for row in trend_rows:
         if row["scenario"] != "parameter_typed":

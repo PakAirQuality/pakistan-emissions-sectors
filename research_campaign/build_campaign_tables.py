@@ -420,7 +420,10 @@ def completeness():
 # a claim with no published home reads "not in any manuscript", which is the state a
 # reader should be able to see without inferring it.
 def _power_coal_ch4_ledger_cells():
-    """(emission Gg, coal activity TJ) as the power activity-factor ledger prints them.
+    """(emission Gg, station coal mass kt) as the power activity-factor ledger prints them.
+
+    rc68: the ledger books power coal as station mass times rank NCV, so the row no longer
+    prints a single TOE-derived TJ figure; the mass is what it prints.
 
     Read rather than typed: tests/test_campaign_handoff.py scans numerical_output for any
     figure with two or more decimals and checks each against the product the claim names,
@@ -432,8 +435,9 @@ def _power_coal_ch4_ledger_cells():
     with open(path, encoding="utf-8") as handle:
         for row in _csv.DictReader(l for l in handle if not l.startswith("#")):
             if row["subitem"] == "Coal CH4":
-                tj = row["activity"].split("power:Coal TOE row=")[1].split(" TJ")[0]
-                return (row["emissions_Gg"], tj)
+                mass = row["activity"].split("power:Coal station consumption mass=")[1]
+                mass = "%.2f" % float(mass.split(" kt")[0])
+                return (row["emissions_Gg"], mass)
     raise SystemExit("no Coal CH4 row in the power activity-factor ledger")
 
 
@@ -543,11 +547,12 @@ CLAIMS = (
      "served shares 2.78/2.71/2.55/2.66/2.61/1.11/0.86/0.91/78.76/1.51/1.74/1.81 percent",
      "pkinv.core.pbs_minerals.profile_or_flat over the shipped panel",
      "python3 scripts/build_minerals_panel_screening.py",
-     "SUPPORTED; 13 of 28 mineral-years are served as covered from an incomplete "
-     "province set",
-     "paper_national/versions/v1/sections/12_limitations.tex",
-     "not repaired: making covers() require the country moves a published monthly shape "
-     "for ten mineral-years, which is a declared decision"),
+     "SUPPORTED at rc67; REPAIRED at rc68 - the parser keeps the vertically centred "
+     "province labels, the FY2021-22 oil table holds all four producing provinces, and "
+     "the anomalous oil and gas years are served on calendar-day (T4) timing",
+     "CHANGELOG.md (1.0.0rc68)",
+     "the figures are the rc67 product's, preserved under data/baselines/"
+     "rc67_integrated_campaign; the current screening no longer contains them"),
     ("CE-MIN-002",
      "PBS prints all four provinces; the parse loses two, and the parse's own group "
      "control cannot see it",
@@ -570,7 +575,8 @@ CLAIMS = (
      "outputs/power_activity_factor_ledger.csv, the power coal CH4 stream",
      # Both figures are READ from the ledger - see _power_coal_ch4_ledger_cells above.
      "the row prints ef:ind_coal_ch4=10.0 and ef:res_ch4_coal=300.0 beside an emission of "
-     "%s Gg on %s TJ, which is 1 kg/TJ - the registry's pow_ch4_coal"
+     "%s Gg on %s kt of station coal at rank NCVs, which is 1 kg/TJ - the registry's "
+     "pow_ch4_coal"
      % _power_coal_ch4_ledger_cells(),
      "data/shared/parameters/emission_factors.csv and "
      "data/shared/parameters/parameter_scope.csv",
@@ -641,7 +647,8 @@ EVIDENCE_PRODUCT = {
     "CE-LAND-002": "outputs/pakemis_forest_flux_adjudication.csv",
     "CE-LAND-003": "outputs/pakemis_forest_flux_adjudication.csv",
     "CE-LIC-001": "outputs/pakemis_deposit_manifest.csv",
-    "CE-MIN-001": "outputs/pakemis_minerals_panel_screening.csv",
+    # rc68: the claim describes the rc67 defect, so its evidence is the preserved rc67 product
+    "CE-MIN-001": "data/baselines/rc67_integrated_campaign/outputs/pakemis_minerals_panel_screening.csv",
     "CE-MIN-002": "outputs/pakemis_minerals_panel_screening.csv",
     "CE-REL-001": "STRUCTURAL: the national totals agree and the allocation does not; "
                   "outputs/pakemis_release_axis_fingerprints.csv carries the two digests "

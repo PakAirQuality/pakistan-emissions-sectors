@@ -60,11 +60,12 @@ def rows():
          "test). The class absorbs the source workbook's residual bucket, so its "
          "composition is soft - though factor-invariant under Table 3.3.1, whose "
          "Agriculture and Industry diesel rows are identical."),
-        ("Air-pollutant layer", "Inherited per-km factors (below Tier 1 assurance)",
-         "Punjab-workbook g/km transcriptions with no primary citation located, "
-         "exhaust only. Not an EMEP/EEA tier: the guidebook's road chapter has not "
-         "been acquired here (gap register, transport-evaporative-nmvoc and "
-         "transport-nonexhaust-pm name the missing process families)."),
+        ("Air-pollutant layer", "EMEP/EEA 2023 Tier 1",
+         "Per class and process on the OCAC road fuel: exhaust in g/kg fuel (hot and "
+         "cold running inside the factor, for an EU-27 2010 fleet), petrol evaporation, "
+         "tyre and brake wear and road-surface wear. SO$_2$ from declared fuel sulfur by "
+         "year. Resuspended road dust is not estimated; no Pakistan-specific cold-start "
+         "or fleet-technology treatment is applied."),
         ("Spatial allocation", "Country-specific proxies (not a tier)",
          "Petroleum streams ride provincial fuel sales from OCAC's monthly area "
          "editions (petrol and diesel separately); CNG rides its own fleet "

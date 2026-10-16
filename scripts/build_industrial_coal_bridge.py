@@ -112,7 +112,7 @@ def build():
     # the official atoms: brick, cement coal (CO2e AR5, all gases) and 2.A.1 clinker per FY
     atoms = defaultdict(lambda: defaultdict(float))
     for r in _rows(ATOMS):
-        if r.get("configuration_id", "REF_2023_24") != "REF_2023_24":
+        if r.get("configuration_id", "S_TAN") != "S_TAN":
             continue
         fy = r["period_label"] if "period_label" in r else r.get("period_id", "")
         fy = fy.replace("FY", "")

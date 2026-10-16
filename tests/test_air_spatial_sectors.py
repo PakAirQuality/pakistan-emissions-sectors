@@ -21,10 +21,14 @@ class TestAirSpatialSectors(unittest.TestCase):
         cls.adm1 = read("air_pollutants_adm1.csv")
         cls.adm2 = read("air_pollutants_adm2.csv")
 
-    def test_every_sector_is_present_at_both_levels(self):
+    def test_covered_sectors_are_placed_only_at_supported_levels(self):
         want = {"agriculture", "aviation", "power", "railways", "residential", "transport", "waste"}
         self.assertEqual({r["sector_id"] for r in self.adm1}, want)
-        self.assertEqual({r["sector_id"] for r in self.adm2}, want)
+        self.assertEqual({r["sector_id"] for r in self.adm2}, want - {"railways"})
+        rail = [r for r in self.adm1 if r["sector_id"] == "railways"]
+        self.assertTrue(rail)
+        self.assertTrue(all(r["share_status"] == "unallocated_below_adm1" for r in rail))
+        self.assertGreater(sum(float(r["emissions_kt"]) for r in rail), 0)
 
     def test_adm1_closes_to_the_national_layer_per_sector_pollutant(self):
         from pkinv.report import air_spatial_sectors as asx

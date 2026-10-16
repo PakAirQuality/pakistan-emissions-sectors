@@ -96,7 +96,7 @@ class TheFactorIsTheEnginesOwn(unittest.TestCase):
         shipped = 0.0
         with open(atoms, encoding="utf-8") as handle:
             for r in _csv.DictReader(l for l in handle if not l.startswith("#")):
-                if (r["configuration_id"] == "REF_2023_24" and r["period_id"] == "FY2023-24"
+                if (r["configuration_id"] == "S_TAN" and r["period_id"] == "FY2023-24"
                         and r["subitem"].startswith(("Brick-kiln coal", "Cement-sector coal"))):
                     shipped += float(r["co2e_Mt_AR5"] or 0.0)
         self.assertAlmostEqual(mass * expected, shipped, places=6)

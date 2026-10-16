@@ -2,7 +2,7 @@
 
 Usage: python3 tests/validation/seed_held_products.py <package root> <reproduction tree>
 
-Reads data/held_products.csv in the package, copies each listed file from the package into
+Reads data/catalog/held_products.csv in the package, copies each listed file from the package into
 the reproduction tree (creating outputs/ as needed), verifies the copied bytes against
 sha256_at_release, and writes <tree>/logs/seeded_products.json - the list run_all's ledger
 carries under "seeded" so compare_outputs can classify those products as `seeded` rather
@@ -28,7 +28,11 @@ def sha256(path):
 
 
 def main(root, tree):
-    registry = asset_path(root, "data", "held_products.csv")
+    # The registry's current home, named directly: asset_path resolves a legacy path through
+    # the asset catalog of the tree this module was imported from, which in a clean
+    # reproduction is the NEW tree, not `root`, so the legacy data/held_products.csv was
+    # joined to the package root unresolved and the first rc68 clean rebuild stopped here.
+    registry = asset_path(root, "data", "catalog", "held_products.csv")
     with open(registry, encoding="utf-8") as handle:
         rows = list(csv.DictReader(line for line in handle if not line.startswith("#")))
     seeded, problems = [], []

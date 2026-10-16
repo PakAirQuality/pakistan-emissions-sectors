@@ -36,7 +36,7 @@ from pkinv.paths import OUTPUTS, ROOT
 from pkinv.core.io import read_rows
 
 SERIES = "pakemis_national_series.csv"
-ANNUAL = "pakemis_annual_fy2015_16_fy2023_24.csv"
+ANNUAL = "pakemis_annual_fy2015_16_fy2024_25.csv"
 
 # Where a reader meets a claim about the national panel. Sector papers are excluded on
 # purpose: agriculture's own 1990-2024 diagnostic series IS still FAOSTAT-calendar driven and
@@ -150,15 +150,10 @@ class TestThePanelIsDescribedAsItIsBuilt(unittest.TestCase):
     def setUpClass(cls):
         cls.text = " ".join(_documents().values()).lower()
 
-    def test_the_calendar_driven_half_is_still_disclosed(self):
-        """The rewrite must not turn a limitation into good news. Enteric fermentation and
-        manure management remain on a calendar projection, and a manuscript that stopped
-        saying so would be cleaner and wronger."""
-        self.assertIn("livestock", self.text)
-        for phrase in ("no fiscal", "calendar"):
-            self.assertIn(phrase, self.text,
-                          "the panel documents no longer disclose that part of agriculture "
-                          "keeps a calendar-year driver")
+    def test_the_census_reconstruction_and_extrapolation_are_disclosed(self):
+        """Stocks retain source/anchor limitations; the old projection level is not current."""
+        for phrase in ("livestock", "census", "reconstruct", "extrapolat"):
+            self.assertIn(phrase, self.text)
 
     def test_agriculture_is_not_called_wholly_fiscal(self):
         for claim in ("agriculture is reconstructed on fiscal activity in every category",

@@ -83,13 +83,11 @@ PLAN = {
         "TE2", "PBS Energy & Mining bulletin vintages (revision-resolved)",
         "open_data_wave2"),
     ("agriculture", "Field burning of residues"): (
-        "TE3", "DELIVERED (Wave 3): the nine-year VIIRS active-fire record over "
-        "FAO-derived per-crop windows, attribution-laddered (national mask, "
-        "cropland, kiln exclusion), unattributed counts published. The earlier "
-        "driver string named MCD64A1 burned area - an instrument never acquired "
-        "(no Earthdata account; acquisition_attempts.csv types it) - and the "
-        "correction is the freeze's stale-driver repair, not a science change",
-        "no_action_needed"),
+        "TE3", "Held VIIRS crop-window detections cover FY2015-16 through FY2023-24 "
+        "with the shared national/cropland/kiln attribution ladder. FY2024-25 "
+        "has no held detection window and retains TE4 elapsed-days timing; its "
+        "open source-evidence gap is not an observed fire profile or a promised acquisition.",
+        "open_data_wave3"),
     ("waste", "Solid waste disposal"): (
         "TE3", "DELIVERED (Wave 3): the continuous monthly FOD state engine "
         "(single-pool recursion from the 1960 spin-up, own-year deposits, "

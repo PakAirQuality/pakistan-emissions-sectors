@@ -1,8 +1,8 @@
 """Ingest Pakistan CAA airport traffic into the aviation activity panel.
 
-Source: the 18 "MAJOR TRAFFIC FLOWS BY AIRPORTS DURING THE YEAR" PDFs published by the
-CAA Statistics Branch, FY2006-07 through FY2023-24, in the pakistan-emissions-sectors
-repository under Aviation/.
+Source: the 19 "MAJOR TRAFFIC FLOWS BY AIRPORTS DURING THE YEAR" PDFs published by the
+CAA Statistics Branch, FY2006-07 through FY2024-25, held under sources/Aviation/
+and data/raw/pcaa/extension_2025/.
 
 We parse the PDFs rather than the accompanying spreadsheet. The spreadsheet reconciles to
 the PDF grand totals exactly for 2006-2015, but from 2016 it silently dropped the smaller
@@ -19,13 +19,14 @@ is FY2020, not FY2019 (FY2019 already contains the March-June 2020 shutdown).
 
 Two PDF layouts:
   2006-07 .. 2015-16   airport name only, marked PROVISIONAL DATA
-  2016-17 .. 2023-24   "IATA - ICAO - NAME" per row
+  2016-17 .. 2024-25   "IATA - ICAO - NAME" per row
 
 Usage:  python3 scripts/ingest_aviation.py [path/to/Aviation]
 Writes: data/activity/aviation/movements_airport.csv
 """
 
 from pkinv.assets import asset_path
+from pkinv.core.io import write_or_check
 import csv
 import os
 import re
@@ -38,6 +39,9 @@ DEFAULT_SRC = asset_path(ROOT, "sources", "Aviation")   # rc37: the held directo
 OUT_DIR = asset_path(DATA, "activity", "aviation")
 OUT = asset_path(OUT_DIR, "movements_airport.csv")
 ALIASES = asset_path(OUT_DIR, "airport_aliases.csv")
+EXTENSION_SOURCE = os.path.join(ROOT, "data/raw/pcaa/extension_2025/major-traffic-flows-by-airports-during-the-year-2024-25.pdf")
+FIELDS = ("year", "icao", "iata", "airport", "province", "com_dom_mv", "com_intl_mv", "noncom_mv",
+          "pax_dom", "pax_intl", "cargo_dom_t", "cargo_intl_t", "mail_dom_t", "mail_intl_t", "source")
 
 # "From July 2023" in the header block gives the fiscal year.
 FY_RE = re.compile(r"From\s+July\s+(\d{4})")
@@ -105,14 +109,19 @@ def parse_pdf(path):
     return year, rows, grand
 
 
-def main(src=DEFAULT_SRC):
+def source_rows(src=DEFAULT_SRC):
     by_name, by_icao = _aliases()
     pdfs = sorted(f for f in os.listdir(src) if f.lower().endswith("-apt.pdf")
                   or f.lower().startswith("major-traffic-flow-airports-"))
     out, unresolved, recon = [], set(), []
 
-    for fn in pdfs:
-        year, rows, grand = parse_pdf(asset_path(src, fn))
+    paths = [asset_path(src, fn) for fn in pdfs]
+    if os.path.abspath(src) == os.path.abspath(DEFAULT_SRC):
+        if not os.path.exists(EXTENSION_SOURCE):
+            raise FileNotFoundError("Retain the PCAA FY2024-25 source with scripts/fetch_release_extension.py")
+        paths.append(EXTENSION_SOURCE)
+    for path in paths:
+        year, rows, grand = parse_pdf(path)
         for r in rows:
             a = by_icao.get(r["icao"]) or by_name.get(r["name"].upper())
             if a is None:
@@ -136,16 +145,38 @@ def main(src=DEFAULT_SRC):
     if unresolved:
         raise SystemExit("airports not in %s:\n  %s" % (ALIASES, "\n  ".join(sorted(unresolved))))
 
-    out.sort(key=lambda r: (r["year"], r["icao"]))
-    os.makedirs(OUT_DIR, exist_ok=True)
-    with open(OUT, "w", newline="", encoding="utf-8") as f:
-        w = csv.DictWriter(f, lineterminator="\n", fieldnames=["year", "icao", "iata", "airport", "province",
-                                          "com_dom_mv", "com_intl_mv", "noncom_mv",
-                                          "pax_dom", "pax_intl", "cargo_dom_t",
-                                          "cargo_intl_t", "mail_dom_t", "mail_intl_t",
-                                          "source"])
-        w.writeheader()
-        w.writerows(out)
+    # FY2006-07 and FY2009-10 tabulate commercial Islamabad and noncommercial
+    # Rawalpindi separately at the same physical OPRN airport. These are genuine
+    # distinct records, so aggregate their quantities rather than deduplicating
+    # on equal values or dropping a row. The source controls include both.
+    grouped = {}
+    for row in out:
+        key = row["year"], row["icao"]
+        if key not in grouped:
+            grouped[key] = row
+            continue
+        existing = grouped[key]
+        if any(existing[k] != row[k] for k in ("iata", "airport", "province", "source")):
+            raise ValueError("Incompatible records at airport-year " + str(key))
+        for field in FIELDS[5:14]:
+            existing[field] += row[field]
+    out = sorted(grouped.values(), key=lambda r: (r["year"], r["icao"]))
+    for year, grand, got, count in recon:
+        for k in WANTED:
+            # Cargo/mail are independently rounded to integer tonnes at each
+            # airport and at the printed subtotal. Their precision bound is
+            # (N+1)/2 tonnes; actual source residuals are retained, never fixed.
+            # Movement and passenger counts are integer counts, not rounded.
+            tolerance = (count + 1) / 2 if k.startswith(("cargo_", "mail_")) else .5
+            if abs(grand[k] - got[k]) > tolerance:
+                raise ValueError("CAA FY%d %s source control differs by %g" % (year, k, got[k] - grand[k]))
+    return out, recon
+
+
+def main(src=DEFAULT_SRC, check=False):
+    out, recon = source_rows(src)
+    if write_or_check(OUT, FIELDS, out, check):
+        return 1
 
     print("wrote %s" % os.path.relpath(OUT, os.path.dirname(DATA)))
     print("  %d rows | %d airports | FY%d-FY%d"
@@ -159,8 +190,9 @@ def main(src=DEFAULT_SRC):
         if diffs:
             bad += 1
         print("    FY%d  %2d airports  %s" % (year, n, flag))
-    print("  %d of %d years reconcile exactly" % (len(recon) - bad, len(recon)))
+    print("  %d of %d years reconcile exactly; remaining tonnage residuals are within source integer-cell precision" % (len(recon) - bad, len(recon)))
 
 
 if __name__ == "__main__":
-    main(sys.argv[1] if len(sys.argv) > 1 else DEFAULT_SRC)
+    args = [a for a in sys.argv[1:] if a != "--check"]
+    sys.exit(main(args[0] if args else DEFAULT_SRC, check="--check" in sys.argv))

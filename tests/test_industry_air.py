@@ -24,13 +24,14 @@ import os
 import unittest
 from collections import defaultdict
 
-from pkinv.core import air_factors, sulfur
+from pkinv.core import air_factors, sulfur, configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX
 from pkinv.core.io import read_rows
 from pkinv.paths import OUTPUTS
 from pkinv.sectors.industry import air_pollutants as ind
 from pkinv.sectors.industry import solid_fuels
 
-DETAIL = os.path.join(OUTPUTS, "pakemis_air_source_classes_fy2015_16_fy2023_24.csv")
+DETAIL = os.path.join(OUTPUTS, "pakemis_air_source_classes_%s.csv" % CORE_SUFFIX)
 ATOMS = os.path.join(OUTPUTS, "pakemis_air_atomic_annual.csv")
 POWER_SINGLE = os.path.join(OUTPUTS, "power_air_pollutants_fy2023_24.csv")
 POWER_SCREEN = os.path.join(OUTPUTS, "power_air_screening_fy2015_16_fy2023_24.csv")
@@ -140,7 +141,7 @@ class TestTheRegister(unittest.TestCase):
         panel = defaultdict(float)
         for a in read_rows(ATOMS):
             if (a["sector_id"] in ("industry", "ippu", "fugitives", "power")
-                    and a["configuration_id"] == "REF_2023_24"):
+                    and conf.canonical(a["configuration_id"]) == conf.REFERENCE):
                 panel[(a["sector_id"], a["period_id"], a["pollutant"])] += float(a["emissions_Gg"])
         self.assertEqual({k[0] for k in detail}, {"industry", "ippu", "fugitives", "power"})
         self.assertEqual({k[2] for k in detail if k[0] == "power"}, {"SO2"},

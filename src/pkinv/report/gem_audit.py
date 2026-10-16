@@ -46,6 +46,10 @@ GEM_TO_LEDGER = {
     "Thar Block II power station": "Engro Powergen Thar",
     "Thar Energy Limited power station": "Thar Energy",
     "ThalNova power station": "ThalNova",
+    # rc68: the census finding of every release through rc67 - GEM's operating coal Unit 5 at
+    # Jamshoro with no NEPRA coal account - closed when the FY2024-25 extension read NEPRA's
+    # own account for the unit ("Jamshoro Coal Power Unit-1", 660 MW).
+    "Jamshoro power station": "Jamshoro Coal Power Unit-1",
 }
 
 # GEM operating units that are industrial SELF-GENERATION (cement, chemical,

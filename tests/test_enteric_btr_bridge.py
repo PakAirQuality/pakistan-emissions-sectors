@@ -35,21 +35,23 @@ class TestTheBridge(unittest.TestCase):
         self.assertAlmostEqual(ours, float(self.total["pakemis_Mt_co2e_AR5"]), places=2)
         self.assertAlmostEqual(btr, float(self.total["btr_Mt_co2e"]), places=2)
 
-    def test_the_gap_is_located_in_two_species_and_four_agree(self):
-        by = {r["species"]: r for r in self.rows}
-        for sp in ("dairy_cattle", "goats", "sheep", "camels"):
-            self.assertTrue(by[sp]["verdict"].startswith("agree"), sp)
-        for sp in ("buffalo", "other_cattle"):
-            self.assertEqual(by[sp]["verdict"], "inventory higher", sp)
-        for sp in ("mules_and_asses", "horses"):
-            self.assertEqual(by[sp]["pakemis_Mt_co2e_AR5"], "NE", sp)
+    def test_each_species_verdict_follows_its_matched_native_difference(self):
+        from pkinv.report import enteric_btr_bridge as bridge
+        for r in self.rows:
+            if r["species"] in ("TOTAL", "mules_and_asses", "horses"):
+                continue
+            difference = float(r["pakemis_Mt_co2e_AR5"]) - float(r["btr_Mt_co2e"])
+            self.assertAlmostEqual(float(r["difference_Mt"]), difference, delta=.001)
+            expected = ("agree to the printed precision" if abs(difference) <= bridge.AGREE_MT
+                        else "inventory higher" if difference > 0 else "inventory lower")
+            self.assertEqual(r["verdict"], expected, r["species"])
+        for r in self.rows:
+            if r["species"] in ("mules_and_asses", "horses"):
+                self.assertEqual(r["pakemis_Mt_co2e_AR5"], "NE")
 
     def test_it_regenerates_identically(self):
-        before = open(OUT, "rb").read()
-        run = subprocess.run([sys.executable, "-m", "pkinv.report.enteric_btr_bridge"],
-                             cwd=ROOT, capture_output=True, text=True)
-        self.assertEqual(run.returncode, 0, run.stderr[-2000:])
-        self.assertEqual(before, open(OUT, "rb").read())
+        from pkinv.report import enteric_btr_bridge as bridge
+        self.assertEqual(bridge.build(), self.rows)
 
 
 if __name__ == "__main__":

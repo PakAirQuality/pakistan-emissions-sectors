@@ -71,6 +71,42 @@ class TestNothingShipsWithoutTheRightToShipIt(unittest.TestCase):
             self.assertTrue(os.path.isfile(asset_path(ROOT, row["path"])),
                             "%s is in the deposit manifest and not on disk" % row["path"])
 
+    def test_every_held_product_a_reader_must_seed_is_deposited(self):
+        """rc68: 66 held products were seeded by the clean rebuild from the maintainer's
+        checkout and absent from the deposit, so unpacking the archives could not build."""
+        shipped = {row["path"] for row in self.deposit}
+        # A declared exclusion stays out (outputs/figures/ is regenerable presentation; the
+        # four held figures there are read by nothing the deposit build runs).
+        missing = [path for path in deposit.held_product_paths()
+                   if path not in shipped and not deposit._excluded(path)]
+        self.assertEqual(missing, [])
+
+    def test_a_held_document_location_does_not_depend_on_the_disk(self):
+        """The rc68 clean rebuild has no data/pbs_census (documents are not deposited), and
+        the disk-dependent resolver sent the register to the migrated CSV folder instead."""
+        deposit._held_manifest_hashes()  # the manifest's own keys; then no further resolution
+        with patch.object(deposit, "storage_path", side_effect=AssertionError("read the disk")):
+            self.assertEqual(deposit.document_location("data/pbs_census"), "data/pbs_census")
+            self.assertEqual(deposit.document_location("data/district_records/"),
+                             "data/district_records")
+
+    def test_every_deposited_checksum_list_names_only_deposited_files(self):
+        """A SHA256SUMS a reader cannot run is a broken promise inside the package.
+
+        The rc68 companion shipped the rc67 baseline's list and PDFs without its three .tex
+        sources, which no input pattern matched; `shasum -c` failed on the deposited copy.
+        """
+        shipped = {row["path"] for row in self.deposit}
+        for listed in sorted(path for path in shipped if path.endswith("/SHA256SUMS")):
+            base = os.path.dirname(listed)
+            with open(asset_path(ROOT, listed), encoding="utf-8") as handle:
+                for line in handle:
+                    if not line.strip():
+                        continue
+                    named = line.split(None, 1)[1].strip().lstrip("*")
+                    self.assertTrue(base + "/" + named in shipped, "%s names %s, which the "
+                                    "deposit does not ship" % (listed, named))
+
     def test_every_deposited_file_is_hashed_or_says_where_its_hash_lives(self):
         """A deposit a reader cannot verify is a deposit they have to trust.
 
@@ -99,7 +135,15 @@ class TestNothingShipsWithoutTheRightToShipIt(unittest.TestCase):
         """It is the one exemption in this file, so it is bounded. Twenty rows today: the
         manifest, the register, the release manifest, two sidecars and sixteen PDFs."""
         undigested = [r for r in self.deposit if len(r["sha256"]) != 64]
-        self.assertLessEqual(len(undigested), 25,
+        # 25 -> 26 (rc68): paper_common/release_cover.tex. The release fixpoint writes it
+        # after this manifest and it prints the commit it describes, so the digest here was
+        # always one fixpoint stale; the first clean rebuild of rc68 refused it as a stale
+        # deposited input. It cannot be hashed here, which is the class's definition.
+        # 26 -> 27 (rc68): outputs/pakemis_citation_deposit_audit.csv. It reads this
+        # manifest, so its phase follows this one; on a warm tree the previous build's copy
+        # was hashed (one generation stale) and from an empty outputs/ the declaration guard
+        # refused it. Its digest lives in the release manifest.
+        self.assertLessEqual(len(undigested), 27,
                              "the undigested class grew to %d; something that COULD be "
                              "hashed has been declared context-stamped instead"
                              % len(undigested))
@@ -338,7 +382,7 @@ class TestTheMetadataFilesAgree(unittest.TestCase):
         with open(os.path.join(ROOT, ".zenodo.json"), encoding="utf-8") as handle:
             record = json.load(handle)
         description = record["description"].lower()
-        self.assertIn("source document", description,
+        self.assertRegex(description, r"source (?:documents|publications).*excluded",
                       ".zenodo.json does not tell a depositor that the source documents are "
                       "not in the deposit, which is the single most surprising thing about it")
 
@@ -365,7 +409,13 @@ class TestTheMetadataFilesAgree(unittest.TestCase):
     # remains as a second net for a leak with some OTHER prefix, and 750 MB still catches
     # that: the three largest single entries are 72.8, 47.9 and 44.4 MB, so an unnoticed
     # bulk import would have to be several of them to pass unremarked.
-    DEPOSIT_CEILING_BYTES = 750e6
+    # The completed rc68 manifest is 2,198 MB versus 506 MB at rc67 (2,288 versus
+    # 1,761 paths). The largest measured increases are the four-configuration
+    # ADM2-month semantic fact (+317 MB), native ADM2-month CSV (+250 MB), ADM1-month
+    # fact (+121 MB), four 120-month air cubes (+375 MB), and licensed SPAM inputs
+    # (+114 MB). These are named release products/inputs, not a sources/ leak.
+    # Raw-document exclusion is checked separately; retain 202 MB headroom here.
+    DEPOSIT_CEILING_BYTES = 2.4e9
 
     def test_the_published_deposit_count_matches_the_published_manifest(self):
         """The number the paper prints must be the number of rows in the file it cites.
@@ -483,7 +533,7 @@ class TestCanonicalInputLicensing(unittest.TestCase):
             licence, reason = deposit.licence_of_deposited(
                 canonical, {source: {"licence_status": "odbl"}})
         self.assertEqual(licence, deposit.PUBLIC_LICENCE)
-        self.assertIn("odbl", reason)
+        self.assertIn("odbl", reason.lower())
 
     def test_metadata_and_verified_crt_extracts_are_explicitly_classified(self):
         for name in ("canonical_tables.csv", "canonical_columns.csv", "canonical_consumers.csv",

@@ -113,7 +113,7 @@ def main():
     print("Lahore air view -> %s (%d district rows, %d unplaced rows)" % (os.path.relpath(OUT), n_d, len(rows) - n_d))
     tot = defaultdict(float)
     for r in rows:
-        if r["row_kind"] == "district" and r["period_id"] == "FY2023-24" and r["configuration_id"] == "REF_2023_24":
+        if r["row_kind"] == "district" and r["period_id"] == "FY2023-24" and r["configuration_id"] == "S_TAN":
             tot[(r["pollutant"], r["sector_id"])] += float(r["emissions_Gg"])
     for pol in ("PM2.5", "SO2", "NOx"):
         by = sorted(((s, v) for (p, s), v in tot.items() if p == pol), key=lambda kv: -kv[1])

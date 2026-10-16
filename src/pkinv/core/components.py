@@ -30,7 +30,9 @@ from pkinv.core import gwp
 # where absent cells can carry it; activity_status varies by PERIOD and this row is
 # period-free. All three belong on the atomic annual table, which is period-scoped and sits
 # in the report layer where those joins are legal.
-SCHEMA_VERSION = "pkinv.component/v3"
+# v4 registers the optional uncertainty-driver/reconstruction metadata now emitted
+# by the reconciled coal calculation; required native-mass fields are unchanged.
+SCHEMA_VERSION = "pkinv.component/v4"
 
 REQUIRED_KEYS = frozenset({
     "category", "subitem", "gas", "emissions_Gg", "uncert_pct",
@@ -82,7 +84,12 @@ REQUIRED_KEYS = frozenset({
 # NET of the post-meter gas leak share, so the national MC can scale it by
 # each draw's own combusted fraction (the per-draw gas identity). A flag like
 # fossil: declared where the engine nets, consumed by uncertainty_all.
-OPTIONAL_KEYS = frozenset({"corr_group", "fossil", "net_of_leak"})
+# Optional uncertainty metadata: driver widths describe the existing decomposition;
+# the Approach-1 width remains distinct from the sampled lognormal marginal, and
+# reconstruction endpoints remain structural cases rather than 95% parameters.
+OPTIONAL_KEYS = frozenset({"corr_group", "fossil", "net_of_leak",
+                           "uncertainty_driver_widths", "approach1_uncert_pct",
+                           "reconstruction_interval_kind"})
 DERIVED_KEYS = frozenset({"co2e_Mt_AR5", "co2e_Mt_AR6", "component_id", "sector_id"})
 ALL_KEYS = REQUIRED_KEYS | OPTIONAL_KEYS | DERIVED_KEYS
 

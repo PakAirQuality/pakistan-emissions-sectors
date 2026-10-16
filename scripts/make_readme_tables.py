@@ -40,7 +40,7 @@ LABEL = {
     "agriculture": "Agriculture", "power": "Electricity + captive generation",
     "transport": "Road transport + mixed off-road", "waste": "Waste",
     "residential": "Residential fuel", "fugitives": "Oil & gas fugitives",
-    "ippu": "Cement (process CO2)", "industry": "Industrial gas combustion",
+    "ippu": "Industrial processes", "industry": "Industrial combustion",
     "railways": "Railways", "aviation": "Domestic aviation",
 }
 
@@ -91,47 +91,33 @@ def sector_table():
 
 
 def headline():
-    rows = {r["sector"]: r for r in _rows("national_all_sectors.csv")}
-    alt = {r["sector"]: r for r in _rows("national_all_sectors_ledger.csv")}
-    t, a = rows["TOTAL"], alt["TOTAL"]
-    return ("A reproducible ten-sector national emissions inventory for Pakistan: "
-            "**%.2f Mt CO2e (AR5) +/- %.1f%%** under the reference, which burns in households "
-            "the dung the household survey observes, or **%.2f Mt** under configuration L, "
-            "which burns all the dung agriculture diverts. Under the reference most of the "
-            "diverted dung has no observed destination and is outside the total (each "
-            "candidate priced in outputs/national_dung_variants.csv) -- built from "
-            "Pakistani national statistics under the IPCC Guidelines."
-            % (float(t["co2e_Mt_AR5"]), float(t["uncert_pct_95"]),
-               float(a["co2e_Mt_AR5"])))
+    atoms = [r for r in _rows("pakemis_ghg_configuration_atoms.csv")
+             if r["configuration_id"] == "S_TAN" and r["period_id"] == "FY2024-25"]
+    total = sum(float(r["co2e_Mt_AR5"]) for r in atoms)
+    air = [r for r in _rows("pakemis_air_annual_fy2015_16_fy2024_25.csv")
+           if r["configuration_id"] == "S_TAN" and r["period_id"] == "FY2024-25"]
+    mass = {p: sum(float(r["emissions_Gg"]) for r in air if r["pollutant"] == p)
+            for p in ("PM2.5", "NOx", "NH3")}
+    return ("A shared activity and material-flow inventory for Pakistan covering ten fiscal years, "
+            "**July 2015–June 2025**. The latest covered-source estimates are **%.2f Mt CO2e "
+            "(AR5)**, **%.1f Gg primary PM2.5**, **%.1f Gg NOx as NO2** and **%.1f Gg NH3**, "
+            "under configuration S_TAN. Native CO2, CH4 and N2O are supplied separately from "
+            "warming-potential aggregates. Other core air species are BC, SO2, CO and NMVOC. "
+            "These totals exclude unestimated sources and LULUCF."
+            % (total, mass["PM2.5"], mass["NOx"], mass["NH3"]))
 
 
 def coverage():
     comp = _rows("completeness.csv")
-    counts = {}
-    for r in comp:
-        counts[r["notation_key"]] = counts.get(r["notation_key"], 0) + 1
-    bench = _rows("national_benchmark_comparison.csv")
-    nat = next(r for r in bench if r["engine_category"] == "NATIONAL")
-    # No `or 33` fallback. This looked up a benchmark key that later moved, silently fell
-    # through to a hard-coded 33 Mt, and kept printing it into the README after the real
-    # figure became 29 - the same shape as the three silent-failure traps in the sectors.
-    # A missing key is a broken generator and must say so.
-    ind = next((r for r in bench if r["engine_category"] == "1A2 (all estimated)"), None)
-    if ind is None:
-        raise SystemExit("no '1A2 (all estimated)' row in national_benchmark_comparison.csv: "
-                         "the benchmark key moved and this block would print a stale figure")
-    absent_1a2 = float(ind["benchmark_Mt_co2e"]) - float(ind["engine_Mt_co2e"])
-    return ("Against EDGAR's Pakistani sectors summed (%.2f Mt), this inventory reports "
-            "%.0f%%. The shortfall is not spread thinly: roughly %.0f Mt of industrial "
-            "combustion (1A2) is still absent and F-gases (2F, 11.54 Mt) entirely so. "
-            "`outputs/completeness.csv` carries an IPCC notation key and a justification "
-            "for all %d category-gas combinations — %d estimated, %d not, %d included "
-            "elsewhere, %d not occurring."
-            % (float(nat["benchmark_Mt_co2e"]),
-               100 * float(nat["ratio_engine_over_benchmark"]),
-               absent_1a2, len(comp),
-               counts.get("E", 0), counts.get("NE", 0), counts.get("IE", 0),
-               counts.get("NO", 0)))
+    counts = {key: sum(r["notation_key"] == key for r in comp)
+              for key in ("E", "NE", "IE", "NO", "NA")}
+    return ("The GHG completeness register contains %d category–gas records: %d estimated, "
+            "%d not estimated, %d included elsewhere, %d not occurring and %d not applicable. "
+            "The separate air coverage matrix reports source/process × species × year. "
+            "Missing estimates are notation statuses, not zero. Differences from EDGAR or "
+            "another inventory are matched-boundary comparisons; their residuals are not "
+            "automatically estimates of missing PakEmis emissions."
+            % (len(comp), counts["E"], counts["NE"], counts["IE"], counts["NO"], counts["NA"]))
 
 
 # The sector-paper index in papers/pdf/README.md. The ARGUMENT column is editorial and stays
@@ -142,36 +128,27 @@ def coverage():
 PAPER_ARGUMENT = {
     "agriculture": "One nitrogen ledger serving two inventories, with mass-conserving "
                    "allocation to a 0.05\u00b0 grid and 114 districts plus a declared residual unit",
-    "power": "A plant-resolved, fuel-constrained inventory: 99% of the thermal fleet "
-             "reconstructed under the national control total, the coal blend read from "
-             "plant identity, two control-total findings published rather than absorbed",
-    "transport": "Fuel anchoring as reconciliation by construction; a factor-table trap "
-                 "that leaves CO\u2082 exactly right and the category 8% low",
-    "waste": "Three categories partitioning one waste stream; the sewer MCF that moves the "
-             "sector by a third, published rather than resolved",
-    "residential": "Minor for climate, large for exposure: 283 kt PM\u2082.\u2085 "
-                   "against road transport's 22 under the reference (632 kt under "
-                   "configuration L, which burns all diverted dung in households), from "
-                   "a sector three-fifths its size; household dung read from the survey, with "
-                   "the diverted remainder carried as unresolved",
+    "power": "Physical station fuel and rank-specific calorific values, with public/captive "
+             "and K-Electric boundaries and control assumptions kept explicit",
+    "transport": "Product-specific fuel balances with exhaust, evaporation and wear; "
+                 "transferred fleet factors tested separately from the carbon balance",
+    "waste": "Disposal history, wastewater and open burning with shared activity "
+             "and separate method and treatment alternatives",
+    "residential": "Survey-based household fuel and an explicit diverted-dung alternative; "
+                   "gross appliance emissions, with no assumed outdoor escape fraction",
     # Filled by _fugitives_argument() at render time - the shares went stale
     # twice as literals (5.4/3.4 against the paper's 5.5/3.2).
     "fugitives": None,
-    "ippu": "One equation, one unsettled ratio: IPCC's two clinker defaults are 4.1 Mt "
-            "apart, published as cases rather than compressed into a band; calcination "
-            "only, with cement-kiln fuel a declared unpriced claimant in the "
-            "industrial fuel ledger",
-    "railways": "Pakistan's own BUR-1 refuted on arithmetic \u2014 a tenth of the "
-                "submitted figure, bounded twice by metered fuel and by litres per "
-                "train-kilometre; the operator's fuel account as an independent "
-                "cross-source check",
-    "aviation": "Three definitional traps each worth a factor of two and each invisible in "
-                "the output; a divisor settled against a load factor rather than against a "
-                "glossary",
+    "ippu": "Physical cement, ammonia, steel and lubricant accounts; process carbon "
+            "separated from fuel, and admitted air-process boundaries recorded explicitly",
+    "railways": "Operator diesel and traction accounts checked against traffic; "
+                "national fuel, network allocation and unplaced mass kept distinct",
+    "aviation": "Domestic airport movements and modelled stage fuel, with landing/take-off, "
+                "cruise and international-bunker boundaries stated separately",
 }
 
 PAPER_LABEL = {"transport": "Road + off-road", "power": "Electricity",
-               "ippu": "Cement", "aviation": "Domestic aviation"}
+               "ippu": "Industrial processes", "aviation": "Domestic aviation"}
 
 
 def paper_table():
@@ -222,14 +199,15 @@ def release():
     n_config = sum(1 for r in _rows("national_configurations.csv"))
     n_axes = sum(1 for r in _rows("national_axis_register.csv"))
     return ("**Release** `%s` | reporting period **%s** (%s to %s) | "
-            "**%.2f Mt CO2e** (AR5, reference) / **%.2f Mt** (configuration L) | "
+            "reference FY2023–24: **%.2f Mt CO2e** (AR5, S_TAN) / **%.2f Mt** (L_TAN) | "
             "%d structural axes, %d named configurations | completeness "
-            "%d E / %d NE / %d IE / %d NO | code %s, data and text %s. "
+            "%d E / %d NE / %d IE / %d NO | code %s; %s. ODbL-derived components are packaged separately. "
             "Commit and manifest digest: `paper_common/release_cover.tex` and "
             "`outputs/release_manifest.json`."
             % (m["version"], m["reporting_period"]["label"],
                m["reporting_period"]["start"], m["reporting_period"]["end"],
-               totals["S"]["co2e_Mt_AR5"], totals["L"]["co2e_Mt_AR5"],
+               totals[m["baseline_configuration"]["code"]]["co2e_Mt_AR5"],
+               totals["L"]["co2e_Mt_AR5"],
                n_axes, n_config,
                comp.get("E", 0), comp.get("NE", 0), comp.get("IE", 0),
                comp.get("NO", 0),

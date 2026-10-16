@@ -124,11 +124,11 @@ def build():
              if r["plant_coverage_class"] in ("enumerated station", "reconstructed lane")]
     t3 = {int(r["fiscal_year"]): _num(r["toe"])
           for r in read_rows(asset_path(DATA, "activity", "power", "fuel_consumed.csv"))
-          if "oal" in r["fuel"]}
+          if "oal" in r["fuel"] and "Table 3" in r["source"]}
     hdip = {int(r["fiscal_year"].split("-")[0]): _num(r["coal_kt"])
             for r in read_rows(asset_path(DATA, "activity", "industry",
                                           "coal_by_consumer.csv"), comments=True)
-            if r["consumer"] == "power" and r["coal_kt"] and r["revision_status"] == "final"}
+            if r["consumer"] == "power" and r["coal_kt"] and r["revision_status"] in ("final", "provisional")}
     # the heat-rate route, where it exists at all
     hr_cv = {}
     for r in read_rows(asset_path(OUTPUTS, "power_implied_coal_cv_fy2023_24.csv")):
@@ -216,7 +216,8 @@ def build():
              "implied by the published energy over HDIP's tonnage",
              "NEPRA SoIR Table 3 'Fuel consumed' (TOE)", "no",
              c0_tj, None, None,
-             "the flat %.4f TOE per tonne (%.2f TJ/Gg) held for six consecutive years to "
+             "no published Table 3 energy control for this period; the physical-station reconstruction is C1"
+             if c0_tj is None else "the flat %.4f TOE per tonne (%.2f TJ/Gg) held for six consecutive years to "
              "0.016 per cent while the fleet's rank composition changed completely"
              % (FLAT_TOE_PER_T, FLAT_TOE_PER_T * 41.868))
         emit("C1_stations_rank_default",

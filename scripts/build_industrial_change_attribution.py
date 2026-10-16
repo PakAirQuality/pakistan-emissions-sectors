@@ -46,7 +46,7 @@ CAPTIVE = asset_path(OUTPUTS, "industry_captive_screening_2024.csv")
 OUT = asset_path(OUTPUTS, "pakemis_industrial_change_attribution.csv")
 
 START, END = "FY2015-16", "FY2023-24"
-CONFIG = "REF_2023_24"
+CONFIG = "S_TAN"
 FIELDS = ("stream", "module", "ipcc_code", "channel", "kind", "start_Mt", "end_Mt",
           "change_Mt", "effect_on_change_Mt", "low_Mt", "high_Mt", "evidence", "reading")
 # kt of coal -> Mt CO2e at the engine's single industrial-coal bucket (Other Bituminous Coal)

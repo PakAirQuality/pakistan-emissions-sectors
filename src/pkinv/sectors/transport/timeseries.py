@@ -1,9 +1,9 @@
-"""A fuel-based national road-transport series, FY2016-17 to FY2024-25.
+"""A fuel-based national road-transport series, FY2015-16 to FY2024-25.
 
 THE SERIES THE SECTOR'S OWN PHILOSOPHY DEMANDS. This paper's central claim is that
 the national total does not require a reliable fleet model - fuel controls set the
 magnitude. It follows that an incomplete historical fleet cannot excuse the absence
-of a national series: OCAC's Road customer-class rows exist for nine fiscal years,
+of a national series: OCAC's Road customer-class rows cover ten fiscal years,
 and the same NCVs and IPCC factors that build the reference year build every other
 year. This module does exactly that and nothing more.
 
@@ -12,9 +12,10 @@ DECLARED BASIS - WHOLE-ROAD-CLASS, PER YEAR:
   - NO household-generator back-cast (the HIES survey exists for 2024-25 only);
   - NO off-road partition (the fleet model is reference-year);
   - class composition NOT reconstructed;
-  - CNG from the same OGRA series the reference year uses, where it exists
-    (FY2012-FY2024 in cng_gas.csv; the FY2025 row carries an empty CNG cell).
-The reference-year (2022) row of this series therefore differs from the sector's
+  - CNG from the same OGRA series the reference year uses, through FY2024-25;
+    that latest row retains the sector-partition control and its documented
+    difference from the chapter narrative as separate source evidence.
+The reference-year (FY2023-24) row of this series therefore differs from the sector's
 reported figure by exactly those refinements - the generator carve-out and the
 off-road category split - and a test asserts that identity, so the series and the
 inventory cannot quietly diverge.

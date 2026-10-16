@@ -1,0 +1,21 @@
+{
+ "expect": [
+  {
+   "cell": 0,
+   "exact": "492.75414347",
+   "group": {},
+   "note_rc68": "Reconciled independently against pakemis_ghg_configuration_atoms.csv after the integrated source/accounting revision; previous notes describe historical releases.",
+   "tolerance": "0.000001"
+  }
+ ],
+ "expect_receipt": "6f1015d07f09ecdc5bc590479adcd94d",
+ "function": "query_emissions",
+ "golden_id": "ledger_history_fy2020_21",
+ "note": "rc68: all four configurations are reconstructed for all ten fiscal years; the earlier refusal is retired.",
+ "request": {
+  "configuration_id": "L_2023_24",
+  "periods": [
+   "FY2020-21"
+  ]
+ }
+}

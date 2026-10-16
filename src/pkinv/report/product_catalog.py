@@ -12,7 +12,7 @@ Patching that sentence would have fixed the instance. Generating the table fixes
 a product cannot be in the release and absent from the table, and cannot be described by a
 status the catalogue does not hold.
 
-WHAT A ROW IS. A LOGICAL product, not a file. `pakemis_annual_fy2015_16_fy2023_24.csv` and its
+WHAT A ROW IS. A LOGICAL product, not a file. `pakemis_annual_fy2015_16_fy2024_25.csv` and its
 `.parquet` twin are one product in two representations, which is why counting citation coverage
 over file extensions has always been slightly wrong.
 
@@ -79,42 +79,39 @@ CATALOG = (
                                "executable cross-boundary ledgers."),
     dict(product_id="annual.panel", product_family="annual", release_tier="core",
          artifact_kind="estimate", ship="yes",
-         primary_artifact="pakemis_annual_fy2015_16_fy2023_24.csv",
+         primary_artifact="pakemis_annual_fy2015_16_fy2024_25.csv",
          representations="csv;parquet",
          documentation_anchor="main:results", generated_by="pkinv.report.annual_product",
          # "partial by declaration" survived here for two releases after the FY2015-16
          # recovery made it false - the sixteenth review read it beside the main paper's
-         # "complete 90-sector-year rectangle" and correctly called the pair a
+         # "complete 100-sector-year rectangle" and correctly called the pair a
          # contradiction. Sector-year coverage is complete; what remains partial is
          # CATEGORY SCOPE (the NE categories), which is the completeness matrix's
          # statement to make, not this status word's.
          status="mature",
-         what_it_is_and_is_not="Sector, category and gas for all 90 sector-years - the "
+         what_it_is_and_is_not="Sector, category and gas for all 100 sector-years - the "
                                "rectangle is complete since the FY2015-16 recovery; "
                                "category scope stays partial and the completeness matrix "
                                "says where. TWO views; only the harmonized common scope "
                                "may be differenced."),
     dict(product_id="annual.pass2_scorecard", product_family="annual",
-         release_tier="core", artifact_kind="register", ship="yes",
+         release_tier="supporting", artifact_kind="register", ship="yes",
          primary_artifact="pakemis_pass2_scorecard.csv", representations="csv",
          documentation_anchor="main:limitations",
-         generated_by="pkinv.report.pass2_scorecard", status="new",
-         what_it_is_and_is_not="The Pass-2 exit gate scored from shipped products: "
-                               "two outcomes met, one met with named exclusions, "
-                               "and the monthly outcome refused by type with its "
-                               "arithmetic printed. A verdict register, never an "
-                               "estimate."),
+         generated_by="pkinv.report.pass2_scorecard", status="historical diagnostic",
+         what_it_is_and_is_not="Earlier internal campaign targets retained beside current "
+                               "coverage, timing and allocation diagnostics. Their historical "
+                               "grades are not scientific quality scores or release-completion "
+                               "verdicts for this dataset."),
     dict(product_id="annual.completeness_mass", product_family="annual",
          release_tier="core", artifact_kind="register", ship="yes",
          primary_artifact="pakemis_completeness_mass.csv", representations="csv",
          documentation_anchor="main:limitations",
          generated_by="pkinv.report.completeness_mass", status="new",
-         what_it_is_and_is_not="Every absent stream joined to the bound the shipped "
-                               "arithmetic supports - a measured completeness band "
-                               "with contained claimants excluded from its sums. A "
-                               "register of what is missing and what it would "
-                               "weigh, never a distribution and never part of any "
-                               "total."),
+         what_it_is_and_is_not="Unestimated streams joined to available activity-based "
+                               "screening quantities, with overlap and scenario assumptions "
+                               "retained. These do not measure national completeness, form "
+                               "a probability interval or enter the central total."),
     dict(product_id="spatial.rice_geography_crosscheck", product_family="spatial",
          release_tier="core", artifact_kind="crosscheck", ship="yes",
          primary_artifact="pakemis_rice_geography_crosscheck.csv",
@@ -167,7 +164,7 @@ CATALOG = (
          representations="csv", documentation_anchor="main:results",
          generated_by="scripts.build_agri_panel_divergence", status="new",
          what_it_is_and_is_not="The reference-year crop split measured proxy-vs-panel "
-                               "(rc47 Wave 1): within-province shares per (category, "
+                               ": within-province shares per (category, "
                                "shape) under the MapSPAM/cropland proxy product and "
                                "the PBS district crop panel the allocation reads. "
                                "The record of what putting FY2023-24 on the panel "
@@ -177,17 +174,17 @@ CATALOG = (
     dict(product_id="annual.atomic", product_family="annual", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_atomic_annual.csv", representations="csv",
-         documentation_anchor="main:products", generated_by="pkinv.report.atomic_annual",
+         documentation_anchor="main:data", generated_by="pkinv.report.atomic_annual",
          status="mature",
          what_it_is_and_is_not="The component grain beneath the panel: every priced stream, "
-                               "with its evidence class, for all nine periods."),
+                               "with its evidence class, for all ten periods."),
     dict(product_id="monthly.panel", product_family="monthly", release_tier="core",
          artifact_kind="estimate", ship="yes",
-         primary_artifact="pakemis_monthly_fy2015_16_fy2023_24.csv",
+         primary_artifact="pakemis_monthly_fy2015_16_fy2024_25.csv",
          representations="csv;parquet",
          documentation_anchor="main:monthly", generated_by="pkinv.report.monthly_all_years",
          status="allocation, not observation",
-         what_it_is_and_is_not="{months} months, July 2015 to June 2024, every non-absent "
+         what_it_is_and_is_not="{months} months, July 2015 to June 2025, every non-absent "
                                "component resolved into twelve months closing exactly to its "
                                "annual figure. {flat_share} per cent of the published monthly "
                                "mass sits on a flat profile, against {reference_flat_share} "
@@ -198,7 +195,7 @@ CATALOG = (
          primary_artifact="pakemis_monthly_coverage_summary.csv", representations="csv",
          documentation_anchor="main:monthly", generated_by="pkinv.report.monthly_coverage",
          status="complete",
-         what_it_is_and_is_not="Exactly 108 rows: what each month's timing rests on, and which "
+         what_it_is_and_is_not="Exactly 120 rows: what each month's timing rests on, and which "
                                "sectors a month does not have at all."),
     dict(product_id="spatial.cube", product_family="spatial", release_tier="core",
          artifact_kind="estimate", ship="yes",
@@ -207,18 +204,18 @@ CATALOG = (
          status="allocation, partly observed",
          what_it_is_and_is_not="The 0.05 degree MONTHLY cube in native gas mass, with district "
                                "and provincial views, for the reference year. The monthly grain "
-                               "is the reference year's alone; the nine fiscal years are "
+                               "is the reference year's alone; the ten fiscal years are "
                                "gridded ANNUALLY in "
-                               "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc and "
+                               "pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc and "
                                "tabulated at ADM1 and ADM2 in pakemis_adm1_by_year.csv and "
                                "pakemis_adm2_by_year.csv."),
     dict(product_id="spatial.cube_annual", product_family="spatial", release_tier="core",
          artifact_kind="estimate", ship="yes",
-         primary_artifact="pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc",
+         primary_artifact="pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
          representations="netcdf",
          documentation_anchor="main:cube", generated_by="pkinv.report.spatial_by_year",
          status="allocation, evidence-graded per stream and period",
-         what_it_is_and_is_not="Nine fiscal periods at 0.05 degrees, three spatial views, three "
+         what_it_is_and_is_not="Ten fiscal periods at 0.05 degrees, three spatial views, three "
                                "gases, in native mass. Each period is generated from its own "
                                "atomic streams, NOT by rescaling the reference year's map. "
                                "Cells plus pakemis_spatial_unallocated_by_year.csv reproduce "
@@ -226,20 +223,17 @@ CATALOG = (
                                "mass and must not be added to one another's totals. Whether a "
                                "period's within-province pattern is its own or borrowed is "
                                "stated per stream in pakemis_spatial_weights_by_year.csv. "
-                               "There is no historical configuration S and no historical "
-                               "monthly grain."),
+                               "Four configuration-specific annual cubes and monthly administrative "
+                               "tables are published; the GHG monthly cube is reference-year only."),
     dict(product_id="spatial.by_year", product_family="spatial", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_adm1_by_year.csv", representations="csv",
          documentation_anchor="main:cube", generated_by="pkinv.report.spatial_by_year",
-         status="allocation, geography borrowed outside the reference year",
-         what_it_is_and_is_not="Nine fiscal years at ADM1 and ADM2, annually. Each year's "
-                               "national mass is evidenced for that year; the within-province "
-                               "geography is the reference year's, rescaled - so this is a "
-                               "reconstruction of where past emissions most likely sat, not "
-                               "nine years of observed district data. It is also the only "
-                               "ADM1 table configuration L has: "
-                               "pakemis_grid_provincial_check.csv is a share check."),
+         status="allocation, source-specific temporal evidence",
+         what_it_is_and_is_not="Ten fiscal years at ADM1 and ADM2, annually and monthly, "
+                               "under four configurations. Each stream records whether its "
+                               "geography is own-year evidence, fixed, borrowed or substituted. "
+                               "Allocation at district scale is not an observed district series."),
     dict(product_id="spatial.unallocated", product_family="spatial", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_spatial_unallocated.csv", representations="csv",
@@ -251,10 +245,13 @@ CATALOG = (
          release_tier="core", artifact_kind="estimate", ship="yes",
          primary_artifact="national_uncertainty_montecarlo.csv", representations="csv",
          documentation_anchor="main:uncertainty", generated_by="pkinv.eval.uncertainty",
-         status="mature",
-         what_it_is_and_is_not="A 100,000-draw national Monte Carlo consuming two sectors' own "
-                               "engines, plus twenty structural axes priced as named "
-                               "configurations."),
+         status="legacy, reference year",
+         what_it_is_and_is_not="The 100,000-draw national Monte Carlo for the FY2023-24 "
+                               "reference year, by module and sector, retained for "
+                               "continuity. The conditional native-gas intervals for every "
+                               "year and configuration, with paired trends, are "
+                               "pakemis_ghg_conditional_uncertainty.csv and "
+                               "pakemis_ghg_trend_uncertainty.csv."),
     dict(product_id="uncertainty.common_ensemble", product_family="uncertainty",
          release_tier="core", artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_ensemble_summary.csv",
@@ -269,30 +266,29 @@ CATALOG = (
                                "measured dispersion exists; allocation is "
                                "conditional, never mixed."),
     dict(product_id="uncertainty.longitudinal", product_family="uncertainty",
-         release_tier="core", artifact_kind="estimate", ship="yes",
+         release_tier="supporting", artifact_kind="sensitivity", ship="yes",
          primary_artifact="pakemis_longitudinal_uncertainty.csv", representations="csv",
          documentation_anchor="main:uncertainty",
          generated_by="pkinv.report.longitudinal_uncertainty",
-         status="published, and negative",
-         what_it_is_and_is_not="Nine annual bands under three temporal-correlation "
-                               "assumptions, typed persistent against redrawn. It exists; an "
-                               "earlier edition of this table said it did not."),
-    dict(product_id="uncertainty.trend", product_family="uncertainty", release_tier="core",
-         artifact_kind="estimate", ship="yes",
+         status="legacy analytical sensitivity",
+         what_it_is_and_is_not="Ten annual analytical bands under three temporal-dependence "
+                               "assumptions. They do not replay every native material flow; current "
+                               "conditional level and paired-trend ensembles are published separately."),
+    dict(product_id="uncertainty.trend", product_family="uncertainty", release_tier="supporting",
+         artifact_kind="sensitivity", ship="yes",
          primary_artifact="pakemis_trend_uncertainty.csv", representations="csv",
          documentation_anchor="main:uncertainty",
          generated_by="pkinv.report.longitudinal_uncertainty",
-         status="published, and negative",
-         what_it_is_and_is_not="Draw-wise year-on-year and window differences, each pair "
-                               "restricted to the sectors both years report. No "
-                               "year-on-year change is resolved at 95 per cent; the "
-                               "multi-year windows now are, under the typed scenario."),
+         status="legacy analytical sensitivity",
+         what_it_is_and_is_not="Draw-wise paired differences from the legacy analytical graph, "
+                               "restricted to sectors reported in both years. These are sensitivity "
+                               "cases, not substitutes for the current native paired-trend intervals."),
     # v1.0.0: the semantic layer - the four families above re-expressed as typed fact and
     # dimension tables under one contract, the layer every consumer reads by hash
     dict(product_id="semantic.release", product_family="semantic", release_tier="core",
          artifact_kind="contract", ship="yes",
          primary_artifact="semantic/semantic_release.json", representations="json",
-         documentation_anchor="main:products", generated_by="pkinv.semantic.build",
+         documentation_anchor="main:data", generated_by="pkinv.semantic.build",
          status="mature",
          what_it_is_and_is_not="The semantic contract: release identity, the dimensions and "
                                "their values, the defaults, the rounding and aggregation rules, "
@@ -301,21 +297,41 @@ CATALOG = (
     dict(product_id="semantic.facts", product_family="semantic", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="semantic/fact_annual.csv", representations="csv;parquet",
-         documentation_anchor="main:products", generated_by="pkinv.semantic.build",
+         documentation_anchor="main:data", generated_by="pkinv.semantic.build",
          status="mature",
-         what_it_is_and_is_not="Twelve fact tables (annual, calendar, monthly, ADM1, ADM2, "
+         what_it_is_and_is_not="Typed fact tables (annual, calendar, monthly, ADM1, ADM2, "
                                "unallocated, uncertainty, completeness, transfers, evidence) "
                                "whose values are the products' own strings; the only arithmetic "
                                "is exact decimal products of two shipped numbers, closure-tested."),
     dict(product_id="semantic.dimensions", product_family="semantic", release_tier="core",
          artifact_kind="registry", ship="yes",
          primary_artifact="semantic/dim_period.csv", representations="csv;parquet",
-         documentation_anchor="main:products", generated_by="pkinv.semantic.build",
+         documentation_anchor="main:data", generated_by="pkinv.semantic.build",
          status="mature",
-         what_it_is_and_is_not="Ten dimension tables: the closed vocabularies every fact row "
+         what_it_is_and_is_not="Dimension tables: the closed vocabularies every fact row "
                                "keys into (periods on both bases, months, configurations, GWP "
                                "factors, gases, IPCC categories, geographies, streams, evidence "
                                "grades, notation keys)."),
+)
+
+
+# Integrated GHG and air families use the same release and configuration vocabulary.
+CATALOG += (
+    dict(product_id="uncertainty.nitrogen_partition", product_family="uncertainty",
+         release_tier="supporting", artifact_kind="sensitivity", ship="yes",
+         primary_artifact="pakemis_nitrogen_partition_sensitivity.csv", representations="csv",
+         documentation_anchor="main:uncertainty", generated_by="pkinv.report.air_sensitivities",
+         status="current", what_it_is_and_is_not="Native nitrogen-ledger replay with no NOx remainder "
+         "assigned to management/grazing volatilisation. A chemical-attribution diagnostic with "
+         "downstream NH3 and N2O consequences; no probability, confidence limit or measured alternative."),
+    {'product_id': 'annual.configurations', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_atoms.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.atomic_annual', 'status': 'current', 'what_it_is_and_is_not': 'Native GHG emissions for S_TAN, L_TAN, S_IPCC and L_IPCC; configurations are alternatives and must never be added.'},
+    {'product_id': 'monthly.configurations', 'product_family': 'monthly', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_monthly.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.monthly_all_years', 'status': 'current', 'what_it_is_and_is_not': 'Twelve process allocation months per source and fiscal year; no claim of observed monthly emissions.'},
+    {'product_id': 'annual.air', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_annual_fy2015_16_fy2024_25.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.air_annual', 'status': 'current', 'what_it_is_and_is_not': 'Seven core pollutants in native mass with narrower additional species; covered sources only; screening excluded.'},
+    {'product_id': 'monthly.air', 'product_family': 'monthly', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_monthly.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.air_monthly', 'status': 'current', 'what_it_is_and_is_not': 'Process-specific pollutant profiles with native mass and temporal evidence.'},
+    {'product_id': 'uncertainty.ghg_native', 'product_family': 'uncertainty', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_conditional_uncertainty.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.ghg_conditional_uncertainty', 'status': 'current', 'what_it_is_and_is_not': 'Configuration-conditional native gases and separate GWP aggregates; paired trend ensemble; structural gaps excluded.'},
+    {'product_id': 'uncertainty.air', 'product_family': 'uncertainty', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_conditional_uncertainty.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.air_uncertainty', 'status': 'current', 'what_it_is_and_is_not': 'Conditional pollutant intervals with shared nitrogen, waste and combustion inputs; no probability assigned to structural scenarios.'},
+    {'product_id': 'annual.extension_provisional', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_fy2025_26_provisional_emissions.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'scripts/ingest_release_extension.py', 'status': 'current', 'what_it_is_and_is_not': 'FY2025-26 source estimates with explicit partial coverage; cannot be summed into a common-scope national total.'},
+    {'product_id': 'spatial.configurations', 'product_family': 'spatial', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_adm2.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.spatial_by_year', 'status': 'current', 'what_it_is_and_is_not': 'All four configurations at ADM2; fixed within-year geography with source-period evidence and unallocated ledger.'},
 )
 
 

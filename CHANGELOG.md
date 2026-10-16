@@ -1,9 +1,157 @@
-# Changelog — PakEmis-GHG
+# Changelog — PakEmis
 
 All release-cycle history lives here, not in the manuscripts: the papers describe the
 current method, and this file records how it got there. Each release candidate below
 answers an external review round. Historical totals appear here labelled as history — the only
 current national figures are the manifest's.
+
+## [1.0.0rc68] — 14 October 2026
+
+The integrated national greenhouse-gas and air-pollutant release now covers ten fiscal
+years, July 2015–June 2025, with a separately labelled source-only FY2025–26
+provisional extension. The survey/TAN reference is 457.239832 Mt CO2e (AR5) in
+FY2024–25 and 444.607755 Mt in the FY2023–24 detailed reference year. The latter
+is 0.347666 Mt below rc67. FY2024–25 core air totals include 422.696 Gg primary
+PM2.5, 833.128 Gg NOx as NO2 and 2690.089 Gg NH3.
+
+The PBS minerals parser now preserves vertically centred province labels and selects
+distinct worksheets. FY2021–22 oil activity changes from a 12-row Balochistan-only
+export to the source-controlled 48 province-month records; FY2020–21 gas changes
+from 372 duplicate-inflated rows to 48. This materially repairs fugitive monthly
+timing but leaves its annual totals unchanged. The coal account keeps station fuel
+mass times rank-specific NCV, exposes unresolved industrial allocation, and separates
+K-Electric and kiln structural cases. Conditional native-gas and air-pollutant
+uncertainty, paired trends and nitrogen-pathway sensitivity are provided separately
+from unestimated sources. The spatial evidence register now marks borrowed crop
+district shapes, projected-population geography and calendar-year flare proxies.
+
+The previous release and product hashes are preserved in
+`data/baselines/rc67_integrated_campaign`; the repair register and numerical change
+table accompany this candidate. The package is prepared locally for review. No
+external deposit, DOI or journal submission is claimed.
+
+
+### Integration review (15 October 2026)
+
+The first full test run of the integrated tree, and three review workstreams, found these;
+each is in `campaign/v3_readiness/repair_register.csv`.
+- **A road-diesel print that did not add up.** OCAC's FY2017-18 edition prints an HSD total
+  of 9,038,298 t while its customer classes sum to 8,516,476 t. The FY2018-19 edition
+  restores exactly the 521,822 t difference to Road. The core had carried the short
+  figure; it now books the correction under a fail-closed rule with the amount declared.
+  Road diesel in FY2017-18 is 7,988,245 t (was 7,466,423). The national total for
+  FY2017-18 rises 1.698 Mt CO2e in every configuration (S_TAN 453.009 to 454.708 Mt), all of
+  it road and off-road transport; FY2017-18 NOx rises 11.6 Gg, CO 3.0 Gg and PM2.5 0.32 Gg.
+  No other year moves.
+- **Cement placement lost to the licence rule.** Eight works had only OpenStreetMap
+  coordinates, which the primary geography cannot use, so 42.3 percent of census clinker
+  went unplaced. They carry the GEM cement tracker's exact coordinates (CC BY), 0.02 to
+  0.74 km from the old points; no district changes, and unplaced clinker is 0.77 percent.
+  Mass the shared provincial shape had spread elsewhere is now at the works: Lahore, which
+  has no cement works, falls 0.082 Mt CO2e in July 2018 and 0.125 Gg PM2.5 in FY2019-20, and
+  the two semantic goldens that pin those cells record the reason.
+- **Kiln counts as annual series.** Fleets counted in November 2020 and July 2023 (Punjab)
+  were compared with the national booked brick column in every year. A count is now
+  compared only in its own fiscal year, scaled to national: inside the fleet case in
+  FY2020-21, below it in FY2023-24 (1,129 against 3,571 kt).
+- **Coal allocation measured.** The HDIP allocation seam is 1.1 percent of the
+  FY2015-16 to FY2024-25 rise in the national total, and 69 percent of the one-year rise
+  to FY2024-25.
+- **Air records.** Every air atom states its mass basis; the legacy FY2023-24 ADM1/ADM2
+  layers label their 213.55 Gg of screened power SO2, which had sat unmarked beside
+  39.40 Gg covered; SO2 records state their sulfur boundary. The EDGAR industry comparison
+  is on the matched 1A2 + 2A1 boundary, and HTAPv3.2 is compared process by process for
+  seven species. CAMS-GLOB-ANT has no keyless download and is not used.
+- **Smaller.** Aviation declares the T3 timing its layer uses; GEM's Jamshoro coal unit is
+  matched to NEPRA's FY2024-25 account; the AR6 limitation names the table that holds AR6;
+  the HTAP NH3 benchmark is read from the held workbook (1,489.4 Gg, not a derived
+  1,372.5); cold-start excess is IE inside the Tier 1 factors, not NE; the retired nine-year
+  GHG panels are removed from outputs/ (kept in the rc67 baseline) after seven tests were
+  found reading them.
+- **Method text the tables still carried.** The transport tier table, the runner's method
+  note and three waste completeness rows described superseded methods (a Punjab g/km exhaust
+  layer, a retired open-burning bound, the 2006 wastewater equation); each is corrected where
+  it is generated. The national Monte Carlo is described as the legacy reference-year run.
+- **Citations counted by substring.** The artifact register counted
+  `semantic/fact_activity_*.csv` as citing every `activity/activity_*.csv` working file. It
+  now matches whole names; every canonical product is named in the technical supplement's
+  generated list, and the evidence tables behind the source checks are named where those
+  checks are described. Twelve diagnostics whose subjects the rewritten texts no longer
+  discuss stay uncited, and the ceiling says so.
+- **FY2025-26** stays provisional: power station fuel, gas and coal have no full-year
+  observation. Full-year NFDC nitrogen offtake is added to the provisional activity.
+- **What the clean rebuild found.** Rebuilding from the deposit's compiled inputs in an empty
+  directory exposed defects a warm tree hides, none of which moved a number. The ADM2 spatial
+  brackets read the ten-year monthly panel three phases before it was written, so each build
+  priced them on the previous build's panel; the phase now follows the panel. The citation
+  deposit audit is written after the deposit manifest that hashed it and is now
+  context-stamped. The Table 3 hypotheses register was wrongly registered as hand-run; the power
+  runner writes it, and the phase now declares it. The deposit gained the proxy-grid
+  provenance notes, the stored-query registry and the v3 figure scripts. Five more phases that
+  open retained raw archives (FAOSTAT forests and nitrogen, UNFCCC CRT, EDGAR gridmaps) are
+  seeded at their released digests, so the clean rebuild is at the compiled-input level.
+  Declared `prior:` reads are seeded from the release and must be rewritten to the same bytes.
+  Verifying the built deposit found the rc67 campaign baseline's checksum list naming three
+  v3 `.tex` sources that no input pattern deposited; they now ship, and a test requires every
+  deposited `SHA256SUMS` to name only deposited files.
+  The second clean rebuild built every phase and its comparison found five more, again with no
+  emission number moved. The four rc67 query figures (`fig_trend`, `fig_sectors`, `fig_months`,
+  `fig_uncertainty`), with their data and images, were still hashed and shipped although the
+  rewritten query registry no longer writes them and no manuscript draws them; `fig_trend`
+  carried rc67's nine-year values. They are retired with their schema rows. The five-class
+  regrouping of the validation catalogue was stale at 103 entries against the catalogue's 104
+  (the HTAP species comparison): it now reads 64 partially independent benchmarks and 104
+  entries, and a test checks the product against the catalogue rather than only the table
+  against the product. The source register named a document's folder by asking the disk, so
+  a tree without the documents named the migrated CSV folder; it now asks the raw manifest.
+  The two release-history phases read earlier releases from git and are seeded at their
+  released digests (fifteen seeded phases). The ADM2 partition's provenance note now ships
+  beside the partition.
+  A third clean rebuild left two: three Parquet twins kept an older single-row-group layout
+  because their cells matched (the twin check now compares the layout too), and the semantic
+  contract recorded digests for three undeposited internal files because they sat on the
+  maintainer's disk (a data file now carries a digest only if the deposit can carry it).
+  Unpacking the built release with its own helper, as `docs/deposit_rebuild_limits.md`
+  instructs, failed twice: `scripts/unpack_deposit.py` verified each archive against the first
+  `SHA256SUMS` in name order, which in the data archive and the ODbL companion is a nested
+  list (the campaign reproduction folder, a preserved baseline), and it refused the
+  companion's top-level `docs/` note. It now verifies against the archive's own list and
+  restores that note in place. Building from the unpacked tree then stopped at "Derivation
+  chains": 66 of the 97 held products (13.7 MB) were seeded by the clean rebuild from the
+  maintainer's checkout and were never in the deposit. Every held product under `outputs/`
+  now ships, with the legacy spatial ones conservatively in the ODbL companion, and a test
+  requires it. The build from the unpacked release then passed every phase; its artifact
+  inventory still differed by five files, the four hand-run figures (excluded as
+  "regenerable", which no phase makes them) and the fixpoint's `outputs/SHA256SUMS`. The
+  figures now ship and the checksum list is inventoried by declaration.
+
+### The public repository and the explorer
+
+**The repository a reader can open, and the explorer.** No emission estimate changes with
+this part.
+- **The defect.** Every manuscript, the citation file and the release manifest gave the
+  repository as `github.com/RehanAhmad13/pakistan-emissions-sectors`, which is private and
+  returned 404 to an anonymous reader. It could not simply be opened: it holds 6,193
+  third-party documents, among them household survey microdata PBS forbids redistributing.
+- **The public repository** is `github.com/PakAirQuality/pakistan-emissions-sectors`, a copy
+  of each release without those documents. `scripts/make_public_copy.py` holds the rule for
+  what is left out (the two document trees, a download cache, five older document folders,
+  thirteen third-party rasters, working notes) and writes `PUBLIC_MIRROR.md` into the copy.
+  The copy carries no history, so the commits a release manifest names do not exist in it;
+  the manifest now says so beside the address (`repository_note`).
+  `tests/test_public_copy.py` holds the rule to the tracked tree: no path of the retention
+  ledger ships, no record-level survey file, no raster under `data/` that was not judged.
+- **One place.** `pkinv.release` names the public repository, the explorer and the
+  initiative's website. The companion repository keeps its own owner; it did not move.
+- **The explorer** at `https://emissions.hawanama.org`, a website of the Pakistan Air Quality
+  Initiative (`https://pakairquality.com`), is named in the article's data availability
+  statement, the README, the citation file (`url`) and the manifest. It is deployed
+  separately and can serve an earlier release, so nothing says which release it serves; the
+  archived release is the version of record.
+- **The README** no longer says the repository holds the government source documents without
+  saying which repository.
+- **Not done.** The DOI, the anonymous review link and the deposit itself. The explorer was
+  last pinned to rc59 and is not redeployed here.
 
 
 ## [1.0.0rc67] — October 2026

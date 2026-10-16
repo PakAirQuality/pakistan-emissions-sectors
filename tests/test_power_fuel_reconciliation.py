@@ -19,6 +19,7 @@ import io
 import os
 import sys
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -78,7 +79,7 @@ class TestTheReconciliation(unittest.TestCase):
     def test_it_found_rows(self):
         """A closure test over an empty read passes; this is what stops that."""
         self.assertGreater(len(self.station), 20)
-        self.assertEqual(len(self.booked), 9, "one booked-account row per panel year")
+        self.assertEqual(len(self.booked), len(CORE_FY_STARTS), "one booked-account row per panel year")
         self.assertEqual(sorted(r["period_id"] for r in self.booked),
                          sorted({r["period_id"] for r in self.station}),
                          "a year with stations but no booked total, or the reverse")
@@ -261,7 +262,7 @@ class TestTheReconciliation(unittest.TestCase):
         rows = coal_configurations.build()
         self.assertTrue(rows, "the configurations consumer produced no rows")
         periods = {r["period_id"] for r in rows if r.get("period_id")}
-        self.assertEqual(len(periods), 9,
+        self.assertEqual(len(periods), len(CORE_FY_STARTS),
                          "the consumer resolved %d periods, not the panel's nine - it is "
                          "reading a key this product no longer carries" % len(periods))
         configs = {r["configuration_id"] for r in rows}

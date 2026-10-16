@@ -6,6 +6,8 @@ Run:  python3 -m unittest discover tests
 import csv
 import os
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 from pkinv.core.io import read_rows
 from _support import ROOT
 
@@ -27,7 +29,7 @@ class TheTrajectories(unittest.TestCase):
             axes = {r["axis"] for r in csv.DictReader(
                 line for line in f if not line.startswith("#"))}
         cells = {(r["axis"], r["fiscal_end_year"]) for r in self.rows}
-        expected = {(a, str(y)) for a in axes for y in range(2016, 2025)}
+        expected = {(a, str(y)) for a in axes for y in CORE_FY_ENDS}
         self.assertEqual(cells, expected)
 
     def test_statuses_are_closed_and_every_refusal_has_a_reason(self):
@@ -64,7 +66,7 @@ class TheTrajectories(unittest.TestCase):
         for axis in ("fugitive practice", "fugitive activity basis"):
             priced = [r["fiscal_end_year"] for r in self.rows
                       if r["axis"] == axis and r["status"] == "priced"]
-            self.assertEqual(sorted(priced), [str(y) for y in range(2016, 2024)],
+            self.assertEqual(sorted(priced), [str(y) for y in CORE_FY_ENDS if y != 2024],
                              axis)
 
     def test_the_feedstock_axis_prices_every_historical_year(self):
@@ -77,7 +79,7 @@ class TheTrajectories(unittest.TestCase):
                 if r["axis"] == "post-meter feedstock scope"
                 and r["fiscal_end_year"] != "2024"]
         self.assertEqual(sorted(r["fiscal_end_year"] for r in rows),
-                         [str(y) for y in range(2016, 2024)])
+                         [str(y) for y in CORE_FY_ENDS if y != 2024])
         for r in rows:
             self.assertEqual(r["status"], "priced", r["fiscal_end_year"])
             self.assertGreater(float(r["delta_Mt"]), 0.9, r["fiscal_end_year"])

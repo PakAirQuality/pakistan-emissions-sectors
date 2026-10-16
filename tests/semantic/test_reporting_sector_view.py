@@ -22,6 +22,7 @@ from decimal import Decimal
 import pakemis_query.errors as E
 from pakemis_query.models import QueryEmissions
 from pkinv.paths import DATA, OUTPUTS
+from pkinv.core import configurations as conf
 from pkinv.report import reporting_sectors
 
 from semantic._golden import open_engine
@@ -88,7 +89,7 @@ class Conservation(unittest.TestCase):
     def _captive(self):
         captive = defaultdict(Decimal)
         for r in atom_rows():
-            if r["category"] == CAPTIVE_CATEGORY and r["configuration_id"] == "REF_2023_24":
+            if r["category"] == CAPTIVE_CATEGORY and conf.canonical(r["configuration_id"]) == conf.REFERENCE:
                 captive[r["period_id"]] += Decimal(r["co2e_Mt_AR5"] or "0")
         return captive
 
@@ -112,17 +113,20 @@ class Conservation(unittest.TestCase):
             for sector in {s for (_, s) in mods} - {"industry", "power"}:
                 self.assertEqual(mods[(period, sector)], reps[(period, sector)], "%s %s" % (period, sector))
 
-    def test_the_reference_and_start_year_levels(self):
+    def test_reference_start_and_latest_levels_match_current_source_atoms(self):
         reps, _ = self._cells("reporting_sector")
-        self.assertAlmostEqual(float(reps[("FY2023-24", "industry")]), 28.131, places=2)
-        # The grid category, which the coal re-base moved: 57.820 -> 40.040. The legacy
-        # account is retained as a named configuration, not as this view's value.
-        self.assertAlmostEqual(float(reps[("FY2023-24", "power")]), 40.040, places=2)
-        self.assertAlmostEqual(float(reps[("FY2015-16", "industry")]), 41.764, places=2)
-        # 2026-10-07 power coal re-base: FY2015-16 grid falls 44.941 -> 44.750, the
-        # smallest move of the panel (-0.19 Mt) because the coal account barely
-        # existed in that year. The reference year moves -17.78.
-        self.assertAlmostEqual(float(reps[("FY2015-16", "power")]), 44.750, places=2)
+        controls = defaultdict(Decimal)
+        for row in atom_rows():
+            if conf.canonical(row["configuration_id"]) != conf.REFERENCE:
+                continue
+            module = row["sector_id"]
+            if module not in ("industry", "power"):
+                continue
+            reported = "industry" if row["category"] == CAPTIVE_CATEGORY else module
+            controls[row["period_id"], reported] += Decimal(row["co2e_Mt_AR5"] or "0")
+        for period in ("FY2015-16", "FY2023-24", "FY2024-25"):
+            for sector in ("industry", "power"):
+                self.assertEqual(reps[period, sector], controls[period, sector])
 
     def test_filing_captive_where_the_guidelines_file_it_makes_the_decline_larger(self):
         """The finding the axis exists to expose, asserted so it cannot quietly reverse: the narrow
@@ -132,8 +136,9 @@ class Conservation(unittest.TestCase):
         module_change = mods[("FY2023-24", "industry")] - mods[("FY2015-16", "industry")]
         reporting_change = reps[("FY2023-24", "industry")] - reps[("FY2015-16", "industry")]
         self.assertLess(reporting_change, module_change)
-        self.assertAlmostEqual(float(module_change), -11.69, places=1)
-        self.assertAlmostEqual(float(reporting_change), -13.63, places=1)
+        captive = self._captive()
+        self.assertEqual(reporting_change - module_change,
+                         captive["FY2023-24"] - captive["FY2015-16"])
 
     def test_the_economic_view_is_built_on_the_axis_not_a_second_rule(self):
         reps, _ = self._cells("reporting_sector")

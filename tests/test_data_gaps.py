@@ -309,6 +309,11 @@ class TestLeadsCannotLeakIntoData(unittest.TestCase):
         needles = {"PSLM", "Urban Unit", "PPIS", "PCRWR", "HDIP"}
         cited = []
         for path in glob.glob(os.path.join(ROOT, "data", "**", "*.csv"), recursive=True):
+            # Immutable prior-release evidence records what the earlier release
+            # claimed. It is retained for numerical comparison, not admitted as
+            # a current activity input or a new verified-source assertion.
+            if os.path.relpath(path, os.path.join(ROOT, "data")).split(os.sep)[0] == "baselines":
+                continue
             if os.path.basename(path) == "data_gaps.csv":
                 continue
             with open(path, newline="", encoding="utf-8") as f:

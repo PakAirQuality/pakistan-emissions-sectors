@@ -37,6 +37,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.assets import asset_path                                     # noqa: E402
 from pkinv.core.io import read_rows                                     # noqa: E402
+from pkinv.core.configurations import REFERENCE                         # noqa: E402
 from pkinv.paths import DATA, OUTPUTS                                   # noqa: E402
 
 PRODUCT = "pakemis_btr_comparison.csv"
@@ -115,7 +116,7 @@ class TestTheComparisonIsHonest(unittest.TestCase):
         mapped = {c for r in self.entries for c in r["pakemis_codes"].split("+") if c}
         present = {r["ipcc_code"] for r in read_rows(
             asset_path(OUTPUTS, "pakemis_atomic_annual.csv"))
-            if r["period_id"] == "FY2020-21" and r["configuration_id"] == "REF_2023_24"}
+            if r["period_id"] == "FY2020-21" and r["configuration_id"] == REFERENCE}
         self.assertTrue(present, "no FY2020-21 reference rows to compare against")
         self.assertFalse(sorted(present - mapped),
                          "these PakEmis codes face no crosswalk entry and would be dropped "

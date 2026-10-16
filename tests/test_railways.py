@@ -359,7 +359,7 @@ class TestDownscale(unittest.TestCase):
         fuel burnt hauling Karachi-origin freight up-country; constrained to the network,
         the fuel burns mostly along Punjab's trunk corridors. If this flips back, either
         the corridor weights changed or the wrong proxy row is wired in."""
-        s = self.shares[downscale.PROXY]
+        s = self.shares["railways_route_model"]
         self.assertGreater(s["Punjab"], s["Sindh"])
         self.assertGreater(s["Sindh"], s["Khyber Pakhtunkhwa"])
 
@@ -375,9 +375,13 @@ class TestDownscale(unittest.TestCase):
 
     def test_the_route_model_declares_its_judgment(self):
         row = next(r for r in _load("province_shares.csv")
-                   if r["proxy"] == downscale.PROXY)
+                   if r["proxy"] == "railways_route_model")
         self.assertIn("DECLARED JUDGMENT", row["note"])
         self.assertIn("rail-timetable", row["note"])
+
+    def test_primary_uses_published_divisional_origin_without_odbl_route_geometry(self):
+        self.assertEqual(downscale.PROXY, "railways_freight_div")
+        self.assertEqual(self.shares[downscale.PROXY], self.shares[downscale.WAGONS_PROXY])
 
     def test_an_unknown_category_raises(self):
         with self.assertRaises(KeyError):

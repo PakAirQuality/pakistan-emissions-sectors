@@ -127,7 +127,11 @@ VIEWS = ("physical", "origin", "accounting")
 
 
 def _rows(name, root=OUTPUTS):
-    return read_rows(asset_path(root, name))
+    rows = read_rows(asset_path(root, name))
+    if os.path.basename(name) == "facility_registry.csv":
+        from pkinv.core.primary_geography import compatible_facilities
+        rows = compatible_facilities(rows)
+    return rows
 
 
 def population_years(fiscal_start_year):
@@ -185,46 +189,35 @@ REFERENCE = period_keys()
 MONTHS = REFERENCE.months
 
 
-PANEL = "pakemis_monthly_fy2015_16_fy2023_24.csv"
+PANEL = "pakemis_monthly_fy2015_16_fy2024_25.csv"
 
 
 def monthly_layer(period):
-    """{stream_id: {identity, months, annual}} for one period.
+    """Use the canonical monthly native mass and shares for every fiscal period.
 
-    THE REFERENCE YEAR IS READ FROM THE FILE THE CUBE HAS ALWAYS READ and every other year
-    from the nine-year panel. The two carry the same numbers - the tests assert agreement to
-    1e-8 over all 2,268 stream-months they share, and their raw identity strings are identical
-    for all 189 streams - but national_monthly_2024.csv prints eight decimals where the panel
-    prints twelve. Handing the cube four more decimals for the reference year would re-base
-    every published reference-year product in its trailing digits to gain nothing evidential,
-    so the split is a precision decision, not a doubt about the panel.
-
-    `annual` is the period's own control total, and it is None for the reference year because
-    the stream ledger IS that year's published control. For every other year the panel's summed
-    native mass is the only control there is.
+    The old reference-only path read rounded shares from a presentation table;
+    multiplying those shares into annual mass lost mass at ADM1 and grid grain.
+    A common monthly source avoids that separate numerical vintage.
     """
     from pkinv.report.source_streams import stream_id
     out = {}
-    reference = period.period_id == REFERENCE_PERIOD
-    if reference:
-        rows, keys = _rows("national_monthly_2024.csv"), ("sector", "category", "subitem", "gas")
-    else:
-        rows = [r for r in _rows(PANEL) if r["period_id"] == period.period_id]
-        keys = ("sector_id", "category", "subitem", "gas")
-        if not rows:
-            raise ValueError("the nine-year panel carries no row for %s" % period.period_id)
+    rows = [r for r in _rows(PANEL) if r["period_id"] == period.period_id]
+    if not rows:
+        raise ValueError("the monthly panel carries no row for " + period.period_id)
     for row in rows:
-        module, category, subitem, gas = (row[k] for k in keys)
+        module, category, subitem, gas = (row[k] for k in
+                                         ("sector_id", "category", "subitem", "gas"))
         sid = stream_id(module, category, subitem, gas)
         entry = out.setdefault(sid, {"module": module, "engine_category": category,
                                      "sub_category": subitem, "gas": gas,
-                                     "months": {}, "annual": None if reference else 0.0})
+                                     "months": {}, "annual": 0.0})
+        if row["month"] in entry["months"]:
+            raise ValueError("duplicate source-stream month: " + sid + " " + row["month"])
         entry["months"][row["month"]] = float(row["share"])
-        if not reference:
-            if row["native_unit"] != "Gg":
-                raise ValueError("%s carries %s in %s; the cube's mass is Gg"
-                                 % (sid, row["native_unit"], period.period_id))
-            entry["annual"] += float(row["emission_native_mass"])
+        if row["native_unit"] != "Gg":
+            raise ValueError("%s carries %s in %s; the cube's mass is Gg"
+                             % (sid, row["native_unit"], period.period_id))
+        entry["annual"] += float(row["emission_native_mass"])
     return out
 
 
@@ -287,7 +280,8 @@ def load_streams(period=None):
         if abs(total - 1.0) > 1e-6:
             raise ValueError("monthly shares for %s sum to %.8f"
                              % (s["source_stream_id"], total))
-    return list(streams.values())
+    from pkinv.core.primary_geography import primary_stream
+    return [primary_stream(stream) for stream in streams.values()]
 
 
 # --- panels ------------------------------------------------------------------------------
@@ -1714,7 +1708,8 @@ def _new_accumulator(grid):
     return acc
 
 
-def build(with_district_factors=True, ledger=True, period=None, capture_cells=None):
+def build(with_district_factors=True, ledger=True, period=None, capture_cells=None,
+          configuration_id=None):
     """The reference cube and, with `ledger`, configuration L beside it under
     result["ledger"] - the same accumulators, the same weights (cache hits by
     construction), the residential streams swapped for their L magnitudes.
@@ -1736,6 +1731,27 @@ def build(with_district_factors=True, ledger=True, period=None, capture_cells=No
     # and it is passed at CONSTRUCTION because the context builds period-dependent rasters.
     ctx = cube_core.Context(grid, period)
     streams = load_streams(period)
+    from pkinv.core import configurations as conf
+    configuration_id = conf.canonical(configuration_id or conf.REFERENCE)
+    if configuration_id not in conf.ALL:
+        raise ValueError("unknown GHG spatial configuration " + configuration_id)
+    if configuration_id != conf.REFERENCE:
+        ledger = False
+        configured = {}
+        for row in _rows("pakemis_ghg_configuration_monthly.csv"):
+            if row["period_id"] != period.period_id or row["configuration_id"] != configuration_id:
+                continue
+            entry = configured.setdefault(row["component_id"], {"mass": 0.0, "months": {}})
+            entry["mass"] += float(row["emission_native_mass"])
+            entry["months"][row["month"]] = float(row["share"])
+        expected = {stream["source_stream_id"] for stream in streams}
+        if set(configured) != expected:
+            raise ValueError("configuration stream identities differ: " + str(sorted(set(configured) ^ expected)))
+        for stream in streams:
+            values = configured[stream["source_stream_id"]]
+            stream["emissions_Gg"] = values["mass"]
+            stream["monthly_share"] = values["months"]
+            stream["configuration_id"] = configuration_id
 
     agri = agriculture_panels(period)
     resi = residential_panels(period)
@@ -1829,10 +1845,9 @@ def build(with_district_factors=True, ledger=True, period=None, capture_cells=No
         import numpy as np
         base = base.astype(np.float64).copy()
         sites = []
-        for row in _rows(asset_path(DATA, "gis", "landfills",
-                                      "pak_landfill_assets.csv"), root="/"):
-            sites.append((float(row["longitude"]), float(row["latitude"]),
-                          max(float(row.get("area_m2") or 0.0), 1.0)))
+        # OSM disposal polygons are retained as a separate historical alternative.
+        # The compatible primary uses independently sourced sites only; uncovered
+        # mass retains its declared origin geography rather than a invented landfill.
         for row in _rows(asset_path(DATA, "activity", "waste",
                                       "climatetrace_waste_sites_pak.csv"), root="/"):
             # solid-waste sites only: 25 of the 27 TRACE rows are wastewater
@@ -1988,8 +2003,9 @@ def build(with_district_factors=True, ledger=True, period=None, capture_cells=No
     def flare_points_for_year(fiscal_start, field_types=None):
         """(lon, lat, bcm) per flare site for the period's own calendar year.
 
-        The fiscal year FYn-(n+1) reads calendar year n - the majority-overlap choice,
-        declared; the product's columns run 2012-2025 so every period resolves. A site
+        The fiscal year FYn-(n+1) reads calendar year n as a spatial proxy;
+        the periods overlap for six months, with no strict majority. This is
+        labelled calendar_activity_proxy in the spatial evidence register; the product's columns run 2012-2025 so every period resolves. A site
         with zero volume that year carries zero weight and its cell gets nothing, which
         is the honest reading of a flare that did not burn.
 
@@ -2437,6 +2453,7 @@ def build(with_district_factors=True, ledger=True, period=None, capture_cells=No
         return acc
 
     reference = _new_accumulator(grid)
+    reference["configuration_id"] = configuration_id
     for stream in streams:
         place(stream, reference)
     finish(reference)
@@ -2481,7 +2498,9 @@ def write_netcdf(result, path, ledger=False):
         ds.title = "PakEmis 0.05 degree monthly emissions, %s" % result["period"].label + (
             " - configuration L" if ledger else "")
         ds.release_version = pkinv.__version__
-        ds.scenario_id = "L_2023_24" if ledger else "REF_2023_24"
+        from pkinv.core import configurations as conf
+        ds.scenario_id = conf.LEDGER if ledger else conf.REFERENCE
+        ds.configuration_id = ds.scenario_id
         if ledger:
             # rc41 (S-1): L is GRIDDED at stream x gas x month through the same dispatch as
             # the reference, not rescaled per province; it differs from the reference cube
@@ -2493,7 +2512,7 @@ def write_netcdf(result, path, ledger=False):
         # rc31 stated the configuration axis as a per-province rescale; rc41 grids L through
         # the same dispatch as the reference (pakemis_grid_0p05_monthly_ledger.nc and the
         # ADM1/ADM2 L views), so the two cubes are siblings, not a cube and a ratio.
-        ds.configurations = ("REF_2023_24 and L_2023_24 both gridded at stream x gas x month "
+        ds.configurations = ("S_TAN and L_TAN both gridded at stream x gas x month "
                              "through one dispatch; L differs in the two residential dung-cake "
                              "streams' masses only - see pakemis_grid_0p05_monthly_ledger.nc, "
                              "pakemis_adm1_ledger_2024.csv, pakemis_adm2_ledger_2024.csv")
@@ -2535,6 +2554,7 @@ def write_netcdf(result, path, ledger=False):
                       "published temporal layer p(s,m) only - no stream carries "
                       "seasonal-geography evidence")
         ds.licence = "CC-BY-4.0"
+        ds.geographic_licence_basis = "independent_primary_geography; ODbL alternatives excluded"
         ds.institution = "Pakistan Air Quality Initiative (PAQI)"
 
         ds.createDimension("time", 12)
@@ -3025,7 +3045,7 @@ def _adm2_stream_rows(acc, precision=12):
             continue
         shape_annual = acc["stream_shape"][sid]
         outside_annual = acc["stream_outside"][sid]
-        base = {"configuration_id": acc.get("configuration_id", "REF_2023_24"), "module": stream["module"],
+        base = {"configuration_id": acc["configuration_id"], "module": stream["module"],
                 "reporting_sector": stream["reporting_sector"],
                 "source_stream_id": sid, "sub_category": stream["sub_category"],
                 "gas": stream["gas"], "spatial_view": stream["spatial_view"]}

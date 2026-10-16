@@ -57,8 +57,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 #   -5.24626   household dung on the HIES survey series in place of all diverted dung
 #   -0.46141   domestic wastewater nitrous oxide on the 2019 Refinement
 #   444.95542  rc67 reference
-PINS = {"S": ("outputs/national_all_sectors.csv", 444.95542),
-        "L": ("outputs/national_all_sectors_ledger.csv", 450.20168)}
+# rc68: heat-weighted station coal + adopted revised crop/residue activity.
+# Prior release controls remain in data/baselines/rc67_integrated_campaign.
+PINS = {"S": ("outputs/national_all_sectors.csv", 444.60776),
+        "L": ("outputs/national_all_sectors_ledger.csv", 449.85410)}
 
 
 def national_total(path):

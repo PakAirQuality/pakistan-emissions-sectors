@@ -16,8 +16,10 @@ import unittest
 from collections import defaultdict
 
 from _support import DATA, OUTPUTS, data_rows, rows, scripts_on_path
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_SUFFIX
 
-PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024))
+PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS)
 
 
 def admission():
@@ -56,7 +58,7 @@ class TestTheIncrementEqualsItsSources(unittest.TestCase):
     def test_the_panel_atoms_reproduce_the_register(self):
         panel = defaultdict(float)
         for a in self.atoms:
-            if a["sector_id"] == "power" and a["configuration_id"] == "REF_2023_24":
+            if a["sector_id"] == "power" and conf.canonical(a["configuration_id"]) == conf.REFERENCE:
                 panel[a["period_id"]] += float(a["emissions_Gg"])
         register = defaultdict(float)
         for a in self.admission:
@@ -113,7 +115,7 @@ class TestTheScreeningWasActuallyNarrowed(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.screening = rows("power_air_screening_fy2015_16_fy2023_24.csv")
+        cls.screening = rows("power_air_screening_%s.csv" % CORE_SUFFIX)
 
     def test_the_narrowed_rows_say_they_are_a_remainder(self):
         """Only where something WAS admitted that year. Diesel is not burned at grid scale

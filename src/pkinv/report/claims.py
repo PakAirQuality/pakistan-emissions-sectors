@@ -74,6 +74,18 @@ def resolve_pointer(root, pointer):
 def resolve_expression(root, expr):
     """The registry's numerator/denominator grammar plus the two counting forms -> float."""
     expr = expr.strip()
+    if expr.startswith("scale:"):
+        factor, inner = expr[len("scale:"):].split("|", 1)
+        return float(factor) * resolve_expression(root, inner)
+    if expr.startswith("change_pct:"):
+        first, last = expr[len("change_pct:"):].split("|", 1)
+        return 100 * (resolve_expression(root, last) / resolve_expression(root, first) - 1)
+    if expr.startswith("sum_where:"):
+        name, key, column = expr[len("sum_where:"):].split("#")
+        matches = matching_rows(root, name, key)
+        if not matches:
+            raise AssertionError("No observations for " + expr)
+        return sum(float(row[column]) for row in matches)
     if expr.startswith("count:"):
         path = expr[len("count:"):]
         full = path if os.path.isabs(path) else asset_path(root, path)

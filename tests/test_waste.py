@@ -33,8 +33,9 @@ class TestActivity(unittest.TestCase):
         self.assertEqual({r["province"] for r in rows}, set(PROVINCES))
         years = {r["year"] for r in rows}
         self.assertEqual(min(years), 2000)
-        self.assertEqual(max(years), self.data.year,
-                         "the panel must reach the sector's reference period")
+        from pkinv.core.reporting_window import CORE_FY_ENDS
+        self.assertEqual(max(years), max(CORE_FY_ENDS),
+                         "the disposal-history activity must reach the annual core endpoint")
         # gapless: every district present in every year
         districts = {r["district"] for r in rows}
         self.assertEqual(len(rows), len(districts) * len(years))

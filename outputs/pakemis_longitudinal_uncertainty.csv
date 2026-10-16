@@ -1,33 +1,36 @@
-# A 95 percent interval on the COVERED TOTAL of every fiscal year, under two time-correlation scenarios.
-# The scenarios bracket a quantity no evidence here resolves: how much of each component's error is a persistent factor bias and how much resamples each year. Neither end is the answer; the truth is inside, and the width is a statement about how much the inventory knows.
-# A year's covered total sums the sectors that EXIST in it. FY2015-16 carries eight sectors and the rest carry ten, so levels are not comparable across that boundary - which is what the difference product's comparable_sectors column is for.
-# pinned_mass_share_pct is measured, not declared: mass whose component value is bit-identical in more than one year, and which therefore shares a draw in BOTH scenarios because it is the same number rather than a modelling choice.
-# THE VARIANCE SHARES EXPLAIN THE RESULT. Since the agriculture factors were named (rc39), about three quarters of the national variance sits in parameters that persist across years, about one fifth in activity that resamples each year, and a few percent is row-private residual the parameter graph attributes to no named quantity (the live figures are the variance_share_* columns). rc42: the shares are covariance-aware - members of one dependency group draw one factor, so their first-order terms add before squaring; rc41 summed the squares and understated the resampling share by half. Persistent error is what a difference cancels, which is why the typed scenario resolves the multi-year windows and no consecutive step.
-fiscal_end_year,period_label,scenario,covered_total_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,rel_down_pct_95,rel_up_pct_95,half_width_se_pp,p50_se_Mt,pinned_mass_share_pct,variance_share_persists_pct,variance_share_resamples_pct,variance_share_residual_pct,n_iter
-2016,FY2015-16,time_correlated,393.83627,359.105,392.4679,434.4344,8.501,10.693,0.0422,0.2474,0.64,74.92,21.59,3.49,20000
-2017,FY2016-17,time_correlated,419.43997,382.9258,418.0306,462.0726,8.398,10.536,0.0301,0.2582,0.61,74.86,21.01,4.12,20000
-2018,FY2017-18,time_correlated,447.91006,409.6624,446.5154,492.3446,8.253,10.264,0.0363,0.287,0.58,73.99,20.72,5.28,20000
-2019,FY2018-19,time_correlated,444.0806,404.7293,442.6534,489.7178,8.567,10.632,0.0386,0.3035,0.58,74.4,19.95,5.65,20000
-2020,FY2019-20,time_correlated,445.51419,405.2948,444.0257,492.4142,8.723,10.898,0.0422,0.2884,0.58,75.13,20.03,4.84,20000
-2021,FY2020-21,time_correlated,483.44611,440.8809,481.9392,532.9673,8.519,10.588,0.0409,0.338,0.53,74.39,19.34,6.27,20000
-2022,FY2021-22,time_correlated,483.44854,440.3655,481.8462,533.8257,8.609,10.788,0.0433,0.3421,0.53,74.94,20.02,5.04,20000
-2023,FY2022-23,time_correlated,438.34095,395.6513,436.6838,488.8587,9.396,11.948,0.0521,0.2991,0.59,76.24,20.67,3.09,20000
-2024,FY2023-24,time_correlated,444.95542,400.3082,443.2621,497.7091,9.69,12.283,0.0562,0.2967,0.58,76.56,20.96,2.48,20000
-2016,FY2015-16,parameter_typed,393.83627,354.5823,392.5709,439.3455,9.677,11.915,0.0715,0.144,0.64,74.92,21.59,3.49,20000
-2017,FY2016-17,parameter_typed,419.43997,378.8475,418.1316,467.8978,9.395,11.902,0.071,0.1473,0.61,74.86,21.01,4.12,20000
-2018,FY2017-18,parameter_typed,447.91006,404.7137,446.6432,496.9258,9.388,11.258,0.0799,0.1582,0.58,73.99,20.72,5.28,20000
-2019,FY2018-19,parameter_typed,444.0806,399.3207,442.8332,495.7004,9.826,11.938,0.1176,0.1414,0.58,74.4,19.95,5.65,20000
-2020,FY2019-20,parameter_typed,445.51419,401.2017,444.3636,497.9302,9.713,12.055,0.0819,0.1568,0.58,75.13,20.03,4.84,20000
-2021,FY2020-21,parameter_typed,483.44611,436.0472,482.0192,538.4589,9.537,11.709,0.0677,0.2313,0.53,74.39,19.34,6.27,20000
-2022,FY2021-22,parameter_typed,483.44854,435.4323,481.9703,540.0709,9.656,12.055,0.0297,0.2204,0.53,74.94,20.02,5.04,20000
-2023,FY2022-23,parameter_typed,438.34095,390.4717,436.5648,494.518,10.558,13.275,0.1117,0.1154,0.59,76.24,20.67,3.09,20000
-2024,FY2023-24,parameter_typed,444.95542,394.2305,443.3786,504.2321,11.085,13.725,0.0522,0.1735,0.58,76.56,20.96,2.48,20000
-2016,FY2015-16,time_independent,393.83627,359.016,392.4287,433.9501,8.514,10.581,0.0818,0.1758,0.64,74.92,21.59,3.49,20000
-2017,FY2016-17,time_independent,419.43997,383.3911,418.481,462.8096,8.385,10.593,0.0529,0.1088,0.61,74.86,21.01,4.12,20000
-2018,FY2017-18,time_independent,447.91006,409.5118,446.7379,491.9069,8.333,10.111,0.0583,0.18,0.58,73.99,20.72,5.28,20000
-2019,FY2018-19,time_independent,444.0806,404.8289,442.51,489.5019,8.515,10.619,0.0662,0.1139,0.58,74.4,19.95,5.65,20000
-2020,FY2019-20,time_independent,445.51419,405.2461,444.6362,491.9183,8.859,10.634,0.0824,0.1782,0.58,75.13,20.03,4.84,20000
-2021,FY2020-21,time_independent,483.44611,441.0687,482.4327,532.5066,8.574,10.379,0.0683,0.2897,0.53,74.39,19.34,6.27,20000
-2022,FY2021-22,time_independent,483.44854,440.2747,482.2126,532.8115,8.697,10.493,0.0713,0.2361,0.53,74.94,20.02,5.04,20000
-2023,FY2022-23,time_independent,438.34095,395.3454,437.0207,488.2,9.536,11.711,0.0656,0.146,0.59,76.24,20.67,3.09,20000
-2024,FY2023-24,time_independent,444.95542,400.0576,443.4669,497.4255,9.789,12.167,0.0652,0.2111,0.58,76.56,20.96,2.48,20000
+# LEGACY ANALYTICAL SENSITIVITY: not the current native material-flow uncertainty; scenario endpoints are not uncertainty bounds.
+# Conditional percentiles under the named legacy component/parameter dependence cases.
+# Conserved native source engines are not replayed here. Use the separate GHG conditional and paired-trend products for the current native uncertainty.
+# Cases have no assigned probabilities and their endpoints do not bound true uncertainty.
+# pinned_mass_share_pct records repeated deterministic component values. variance_share_* describes the analytical graph, not native source-driver importance.
+fiscal_end_year,period_label,scenario,covered_total_Mt,P2.5_Mt,P50_Mt,P97.5_Mt,rel_down_pct_95,rel_up_pct_95,half_width_se_pp,p50_se_Mt,pinned_mass_share_pct,variance_share_persists_pct,variance_share_resamples_pct,variance_share_residual_pct,n_iter,model_basis
+2016,FY2015-16,time_correlated,397.83709,363.2273,396.5161,439.1141,8.395,10.743,0.044,0.2344,0.64,74.75,23.09,2.16,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2017,FY2016-17,time_correlated,423.58082,387.0504,422.191,466.8567,8.323,10.58,0.0471,0.2377,0.6,74.75,22.97,2.28,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2018,FY2017-18,time_correlated,454.70753,416.4289,453.3366,499.7609,8.141,10.241,0.0443,0.2961,0.57,74.54,23.01,2.46,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2019,FY2018-19,time_correlated,448.48344,409.1026,447.0428,494.8854,8.487,10.702,0.0539,0.3236,0.57,75.09,22.65,2.25,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2020,FY2019-20,time_correlated,449.78897,409.2362,448.279,497.3282,8.709,10.942,0.0436,0.2872,0.57,76.2,21.65,2.15,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2021,FY2020-21,time_correlated,487.80518,444.8106,486.3057,538.0752,8.533,10.645,0.0417,0.3512,0.53,75.73,22.02,2.25,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2022,FY2021-22,time_correlated,487.98948,444.4302,486.3099,539.156,8.612,10.867,0.0488,0.3315,0.53,75.82,21.74,2.44,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2023,FY2022-23,time_correlated,442.86487,399.0775,441.1718,494.4881,9.541,12.085,0.0425,0.2995,0.58,76.99,20.91,2.1,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2024,FY2023-24,time_correlated,444.60776,398.7316,442.8765,498.5388,9.968,12.568,0.0491,0.3424,1.35,77.79,20.28,1.93,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2025,FY2024-25,time_correlated,457.23983,410.0945,455.5196,512.4454,9.972,12.497,0.0397,0.3539,1.31,77.38,20.66,1.97,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2016,FY2015-16,parameter_typed,397.83709,358.0414,396.5822,443.969,9.718,11.949,0.0797,0.1619,0.64,74.75,23.09,2.16,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2017,FY2016-17,parameter_typed,423.58082,382.7968,422.3736,472.2095,9.37,11.799,0.0729,0.148,0.6,74.75,22.97,2.28,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2018,FY2017-18,parameter_typed,454.70753,411.0728,453.3755,504.8155,9.331,11.346,0.0793,0.1048,0.57,74.54,23.01,2.46,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2019,FY2018-19,parameter_typed,448.48344,402.1696,447.155,501.488,10.06,12.151,0.0742,0.1838,0.57,75.09,22.65,2.25,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2020,FY2019-20,parameter_typed,449.78897,403.9191,448.6065,504.4651,9.961,12.452,0.0902,0.1714,0.57,76.2,21.65,2.15,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2021,FY2020-21,parameter_typed,487.80518,437.7238,486.2889,544.4159,9.987,11.953,0.0801,0.1946,0.53,75.73,22.02,2.25,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2022,FY2021-22,parameter_typed,487.98948,437.9333,486.6011,545.6116,10.002,12.127,0.0467,0.1878,0.53,75.82,21.74,2.44,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2023,FY2022-23,parameter_typed,442.86487,392.8406,441.1682,500.678,10.954,13.489,0.1119,0.206,0.58,76.99,20.91,2.1,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2024,FY2023-24,parameter_typed,444.60776,392.2058,443.2994,505.5191,11.526,14.036,0.0884,0.2175,1.35,77.79,20.28,1.93,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2025,FY2024-25,parameter_typed,457.23983,404.6848,455.5969,518.7585,11.175,13.863,0.0891,0.2421,1.31,77.38,20.66,1.97,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2016,FY2015-16,time_independent,397.83709,362.9231,396.3845,439.1696,8.442,10.794,0.079,0.1911,0.64,74.75,23.09,2.16,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2017,FY2016-17,time_independent,423.58082,387.5079,422.6063,467.7902,8.305,10.692,0.0576,0.0934,0.6,74.75,22.97,2.28,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2018,FY2017-18,time_independent,454.70753,415.8662,453.5412,499.3084,8.307,10.091,0.0694,0.2352,0.57,74.54,23.01,2.46,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2019,FY2018-19,time_independent,448.48344,408.6822,446.9996,494.6083,8.572,10.651,0.0564,0.159,0.57,75.09,22.65,2.25,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2020,FY2019-20,time_independent,449.78897,409.1445,448.7761,496.8277,8.831,10.707,0.0772,0.1542,0.57,76.2,21.65,2.15,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2021,FY2020-21,time_independent,487.80518,444.7688,486.9285,537.3831,8.658,10.362,0.069,0.282,0.53,75.73,22.02,2.25,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2022,FY2021-22,time_independent,487.98948,444.1477,486.6269,538.1476,8.729,10.587,0.0751,0.2551,0.53,75.82,21.74,2.44,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2023,FY2022-23,time_independent,442.86487,398.7491,441.5884,494.2565,9.701,11.927,0.0719,0.1948,0.58,76.99,20.91,2.1,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2024,FY2023-24,time_independent,444.60776,397.5931,443.2829,497.941,10.307,12.33,0.0589,0.238,1.35,77.79,20.28,1.93,20000,legacy_parameter_graph_sensitivity_not_native_material_flow
+2025,FY2024-25,time_independent,457.23983,410.0191,455.6191,511.7395,10.008,12.317,0.0834,0.2652,1.31,77.38,20.66,1.97,20000,legacy_parameter_graph_sensitivity_not_native_material_flow

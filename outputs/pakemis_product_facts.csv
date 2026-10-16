@@ -2,74 +2,74 @@
 # Derived from the products; the claims registry reads this, so a sentence that disagrees fails the build.
 # No grades here: a maturity grade is an opinion, and an opinion in a register stops being re-argued.
 fact_id,value,source_output,basis
-release_id,1.0.0rc67,src/pkinv/__init__.py,the release this file describes
+release_id,1.0.0rc68,src/pkinv/__init__.py,the release this file describes
 commit,see release_manifest.json describes_commit,release_manifest.json,"the content commit is cut by the fixpoint after this file is committed, so the manifest holds it and this row points there"
-annual_fy_count,9,pakemis_annual_fy2015_16_fy2023_24.csv,distinct fiscal years in the nine-year annual product
-annual_first_fy,FY2015-16,pakemis_annual_fy2015_16_fy2023_24.csv,earliest period in the annual product
-annual_last_fy,FY2023-24,pakemis_annual_fy2015_16_fy2023_24.csv,latest period in the annual product
-common_scope_sector_count,10,pakemis_annual_fy2015_16_fy2023_24.csv,"sectors with no absent year in the harmonized window, derived from the rows"
-common_scope_sector_ids,agriculture;aviation;fugitives;industry;ippu;power;railways;residential;transport;waste,pakemis_annual_fy2015_16_fy2023_24.csv,"the membership itself, sorted so it is diffable"
-annual_ne_sector_years,0,pakemis_annual_fy2015_16_fy2023_24.csv,sector-years carrying a notation key rather than an estimate
-annual_ne_detail,,pakemis_annual_fy2015_16_fy2023_24.csv,which sector-years those are
-first_fy_estimated_sector_count,10,pakemis_annual_fy2015_16_fy2023_24.csv,sectors carrying an estimate in the earliest year; the rest are declared NE
-agriculture_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which agriculture carries an estimate rather than a notation key
-aviation_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which aviation carries an estimate rather than a notation key
-fugitives_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which fugitives carries an estimate rather than a notation key
-industry_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which industry carries an estimate rather than a notation key
-ippu_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which ippu carries an estimate rather than a notation key
-power_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which power carries an estimate rather than a notation key
-railways_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which railways carries an estimate rather than a notation key
-residential_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which residential carries an estimate rather than a notation key
-transport_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which transport carries an estimate rather than a notation key
-waste_years_estimated,9,pakemis_annual_fy2015_16_fy2023_24.csv,fiscal years in which waste carries an estimate rather than a notation key
-monthly_months_published,108,pakemis_monthly_fy2015_16_fy2023_24.csv,distinct months in the published monthly product - the answer to whether a 108-month product exists
-monthly_first_month,201507,pakemis_monthly_fy2015_16_fy2023_24.csv,earliest month published
-monthly_last_month,202406,pakemis_monthly_fy2015_16_fy2023_24.csv,latest month published
-monthly_rows,21468,pakemis_monthly_fy2015_16_fy2023_24.csv,component-months published
-monthly_evidence_vocabulary,TE1;TE2;TE3;TE4,pakemis_monthly_fy2015_16_fy2023_24.csv,the timing-evidence letters the nine-year product uses; the reference-year layer uses T1-T4 for the same four classes
-monthly_flat_share_pct,60.8,pakemis_monthly_fy2015_16_fy2023_24.csv,"share of published monthly mass on a declared-flat profile (TE4) - the months exist; this is how much of them is allocation rather than record. SUPERSEDED AS A HEADLINE by monthly_observed_share_pct / monthly_physical_share_pct / monthly_weakly_timed_share_pct: this figure is true but says nothing about how much of that flatness is the physical answer, and most of it is"
-monthly_flat_rows,11520,pakemis_monthly_fy2015_16_fy2023_24.csv,component-months carrying the weakest timing class
-artifact_count,920,pakemis_artifact_inventory.csv,physical files this release ships
-canonical_count,192,pakemis_artifact_inventory.csv,artefacts declared canonical - a product the release is for
-canonical_uncited,47,pakemis_artifact_inventory.csv,canonical artefacts no manuscript names; ratcheted in tests/test_artifact_inventory.py with the list in the failure message
-artifacts_tier_audit,280,pakemis_artifact_inventory.csv,artefacts in the audit release tier
-artifacts_tier_build,153,pakemis_artifact_inventory.csv,artefacts in the build release tier
-artifacts_tier_core,251,pakemis_artifact_inventory.csv,artefacts in the core release tier
-artifacts_tier_research,51,pakemis_artifact_inventory.csv,artefacts in the research release tier
-artifacts_tier_supporting,185,pakemis_artifact_inventory.csv,artefacts in the supporting release tier
-agriculture_fiscal_basis_categories,4,pakemis_agriculture_fiscal_series.csv,agriculture categories reconstructed on observed Pakistani fiscal activity
-agriculture_calendar_basis_share_pct,77.37,pakemis_agriculture_fiscal_series.csv,"share of agriculture's reference-year mass whose driver is the FAOSTAT livestock projection, for which no fiscal enumeration exists"
-agriculture_basis_change_Mt,-7.6969,pakemis_agriculture_basis_change.csv,"what moving eight backcast years from the FAOSTAT-calendar basis to the fiscal basis was worth, cumulative, excluding the cotton scope term"
+annual_fy_count,10,pakemis_annual_fy2015_16_fy2024_25.csv,distinct fiscal years in the nine-year annual product
+annual_first_fy,FY2015-16,pakemis_annual_fy2015_16_fy2024_25.csv,earliest period in the annual product
+annual_last_fy,FY2024-25,pakemis_annual_fy2015_16_fy2024_25.csv,latest period in the annual product
+common_scope_sector_count,10,pakemis_annual_fy2015_16_fy2024_25.csv,"sectors with no absent year in the harmonized window, derived from the rows"
+common_scope_sector_ids,agriculture;aviation;fugitives;industry;ippu;power;railways;residential;transport;waste,pakemis_annual_fy2015_16_fy2024_25.csv,"the membership itself, sorted so it is diffable"
+annual_ne_sector_years,0,pakemis_annual_fy2015_16_fy2024_25.csv,sector-years carrying a notation key rather than an estimate
+annual_ne_detail,,pakemis_annual_fy2015_16_fy2024_25.csv,which sector-years those are
+first_fy_estimated_sector_count,10,pakemis_annual_fy2015_16_fy2024_25.csv,sectors carrying an estimate in the earliest year; the rest are declared NE
+agriculture_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which agriculture carries an estimate rather than a notation key
+aviation_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which aviation carries an estimate rather than a notation key
+fugitives_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which fugitives carries an estimate rather than a notation key
+industry_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which industry carries an estimate rather than a notation key
+ippu_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which ippu carries an estimate rather than a notation key
+power_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which power carries an estimate rather than a notation key
+railways_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which railways carries an estimate rather than a notation key
+residential_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which residential carries an estimate rather than a notation key
+transport_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which transport carries an estimate rather than a notation key
+waste_years_estimated,10,pakemis_annual_fy2015_16_fy2024_25.csv,fiscal years in which waste carries an estimate rather than a notation key
+monthly_months_published,120,pakemis_monthly_fy2015_16_fy2024_25.csv,distinct months in the published monthly product - the answer to whether a 108-month product exists
+monthly_first_month,201507,pakemis_monthly_fy2015_16_fy2024_25.csv,earliest month published
+monthly_last_month,202506,pakemis_monthly_fy2015_16_fy2024_25.csv,latest month published
+monthly_rows,23892,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months published
+monthly_evidence_vocabulary,TE1;TE2;TE3;TE4,pakemis_monthly_fy2015_16_fy2024_25.csv,the timing-evidence letters the nine-year product uses; the reference-year layer uses T1-T4 for the same four classes
+monthly_flat_share_pct,61.6,pakemis_monthly_fy2015_16_fy2024_25.csv,"share of published monthly mass on a declared-flat profile (TE4) - the months exist; this is how much of them is allocation rather than record. SUPERSEDED AS A HEADLINE by monthly_observed_share_pct / monthly_physical_share_pct / monthly_weakly_timed_share_pct: this figure is true but says nothing about how much of that flatness is the physical answer, and most of it is"
+monthly_flat_rows,12468,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months carrying the weakest timing class
+artifact_count,968,pakemis_artifact_inventory.csv,physical files this release ships
+canonical_count,229,pakemis_artifact_inventory.csv,artefacts declared canonical - a product the release is for
+canonical_uncited,0,pakemis_artifact_inventory.csv,canonical artefacts no manuscript names; ratcheted in tests/test_artifact_inventory.py with the list in the failure message
+artifacts_tier_audit,272,pakemis_artifact_inventory.csv,artefacts in the audit release tier
+artifacts_tier_build,169,pakemis_artifact_inventory.csv,artefacts in the build release tier
+artifacts_tier_core,294,pakemis_artifact_inventory.csv,artefacts in the core release tier
+artifacts_tier_research,56,pakemis_artifact_inventory.csv,artefacts in the research release tier
+artifacts_tier_supporting,177,pakemis_artifact_inventory.csv,artefacts in the supporting release tier
+agriculture_fiscal_basis_categories,6,pakemis_agriculture_fiscal_series.csv,agriculture categories reconstructed on observed Pakistani fiscal activity
+agriculture_calendar_basis_share_pct,0.0,pakemis_agriculture_fiscal_series.csv,"share of agriculture's reference-year mass whose driver is the FAOSTAT livestock projection, for which no fiscal enumeration exists"
+agriculture_basis_change_Mt,28.7534,pakemis_agriculture_basis_change.csv,"what moving eight backcast years from the FAOSTAT-calendar basis to the fiscal basis was worth, cumulative, excluding the cotton scope term"
 agriculture_cotton_scope_Mt,1.055,pakemis_agriculture_basis_change.csv,"cotton, absent from the calendar history and present at the reference year; a scope break, kept apart from the basis change because they are different claims"
 agriculture_crops_misaligned_by_one_year,3,pakemis_agriculture_crop_calendar.csv,crops the former history read a full calendar year late: kharif crops are harvested in the year before the fiscal year they belong to
-trend_consecutive_changes_tested,8,pakemis_trend_uncertainty.csv,consecutive year-on-year changes in the nine-year panel
+trend_consecutive_changes_tested,9,pakemis_trend_uncertainty.csv,consecutive year-on-year changes in the nine-year panel
 trend_consecutive_changes_resolved,2,pakemis_trend_uncertainty.csv,consecutive changes whose 95 percent interval excludes zero under the parameter-typed correlation scenario
-trend_window_change_Mt,51.11915,pakemis_trend_uncertainty.csv,FY2015-16 to FY2023-24 change over the full ten-sector panel - like-for-like since rc20's recovery of the FY2015-16 product splits
+trend_window_change_Mt,59.40275,pakemis_trend_uncertainty.csv,FY2015-16 to FY2023-24 change over the full ten-sector panel - like-for-like since rc20's recovery of the FY2015-16 product splits
 trend_window_significant,yes,pakemis_trend_uncertainty.csv,whether the full-panel window is resolved at 95 percent under the typed scenario
-trend_common_window_change_Mt,51.11915,pakemis_trend_uncertainty.csv,"FY2015-16 to FY2023-24 change, the window in which every sector reports throughout (the full panel, since rc20); the primary trend result"
+trend_common_window_change_Mt,59.40275,pakemis_trend_uncertainty.csv,"FY2015-16 to FY2023-24 change, the window in which every sector reports throughout (the full panel, since rc20); the primary trend result"
 trend_common_window_significant,yes,pakemis_trend_uncertainty.csv,whether the primary trend is resolved at 95 percent under the typed scenario
-uncertainty_variance_share_residual_pct,2.48,pakemis_longitudinal_uncertainty.csv,"share of national variance the parameter graph attributes to no named quantity; correlation cannot cancel what it cannot name, so this is what keeps the trend band wide"
-uncertainty_variance_share_persists_pct,76.56,pakemis_longitudinal_uncertainty.csv,share of national variance in parameters that persist across fiscal years
-monthly_observed_share_pct,37.3,pakemis_temporal_decomposition.csv,X: monthly mass whose within-year variation is carried by an observed monthly series
-monthly_physical_share_pct,41.0,pakemis_temporal_decomposition.csv,"Y: monthly mass whose flat profile is the PHYSICAL answer - continuous or stock-driven processes, where obtaining a monthly series would not change the shape"
-monthly_weakly_timed_share_pct,21.8,pakemis_temporal_decomposition.csv,"Z: monthly mass that genuinely varies within the year and is carried flat because no monthly evidence was obtained. THIS is the gap, and the only one of the three that acquiring data would close"
-deposit_files,1761,pakemis_deposit_manifest.csv,"files in the archive deposit, assembled from an explicit allowlist"
-deposit_megabytes,506.1,pakemis_deposit_manifest.csv,"size of the archive deposit, EXCLUDING the context-stamped artefacts whose size this manifest cannot record without describing itself - the PDFs, the manifest and the sidecars. The deposit is larger than this number by those files"
+uncertainty_variance_share_residual_pct,1.93,pakemis_longitudinal_uncertainty.csv,"share of national variance the parameter graph attributes to no named quantity; correlation cannot cancel what it cannot name, so this is what keeps the trend band wide"
+uncertainty_variance_share_persists_pct,77.79,pakemis_longitudinal_uncertainty.csv,share of national variance in parameters that persist across fiscal years
+monthly_observed_share_pct,36.5,pakemis_temporal_decomposition.csv,X: monthly mass whose within-year variation is carried by an observed monthly series
+monthly_physical_share_pct,41.9,pakemis_temporal_decomposition.csv,"Y: monthly mass whose flat profile is the PHYSICAL answer - continuous or stock-driven processes, where obtaining a monthly series would not change the shape"
+monthly_weakly_timed_share_pct,21.7,pakemis_temporal_decomposition.csv,"Z: monthly mass that genuinely varies within the year and is carried flat because no monthly evidence was obtained. THIS is the gap, and the only one of the three that acquiring data would close"
+deposit_files,2413,pakemis_deposit_manifest.csv,"files in the archive deposit, assembled from an explicit allowlist"
+deposit_megabytes,2215.4,pakemis_deposit_manifest.csv,"size of the archive deposit, EXCLUDING the context-stamped artefacts whose size this manifest cannot record without describing itself - the PDFs, the manifest and the sidecars. The deposit is larger than this number by those files"
 deposit_source_documents,0,pakemis_deposit_manifest.csv,"third-party source documents in the deposit; the register names them and says where to obtain them instead, because their redistribution terms are mostly not established and this project cannot license what it does not own"
-source_documents_archived,153,pakemis_source_register.csv,third-party publications archived in the repository and excluded from the deposit; the register hashes each and says where to obtain it
-source_register_entries,217,pakemis_source_register.csv,"registered sources, each with its inbound-use and redistribution answers"
-source_documents_not_redistributable,126,pakemis_source_register.csv,"sources whose publisher states no redistribution terms; the correct answer for a government publication, and the deposit is built so it costs nothing"
+source_documents_archived,154,pakemis_source_register.csv,third-party publications archived in the repository and excluded from the deposit; the register hashes each and says where to obtain it
+source_register_entries,220,pakemis_source_register.csv,"registered sources, each with its inbound-use and redistribution answers"
+source_documents_not_redistributable,128,pakemis_source_register.csv,"sources whose publisher states no redistribution terms; the correct answer for a government publication, and the deposit is built so it costs nothing"
 grid_streams,202,pakemis_source_streams.csv,source streams in the release
-grid_streams_allocated,199,pakemis_source_streams.csv,streams the cube places in cells
-grid_streams_unallocated,3,pakemis_spatial_unallocated.csv,streams held at ADM1 because no geometry exists below the provincial control; they are NOT spread over the grid
+grid_streams_allocated,187,pakemis_source_streams.csv,streams the cube places in cells
+grid_streams_unallocated,15,pakemis_spatial_unallocated.csv,streams held at ADM1 because no geometry exists below the provincial control; they are NOT spread over the grid
 structural_axes,23,national_axis_register.csv,registered structural axes
 named_configurations,28,national_configurations.csv,"named national configurations, families and joint rows included"
 fugitives_structural_configurations,280,fugitives_structural_factorial_2024.csv,the fugitives factorial's joint configurations
 fugitives_conditional_configurations,5,fugitives_conditional_intervals_2024.csv,configurations carrying their own conditional Monte Carlo interval
-air_atomic_rows,5276,pakemis_air_atomic_annual.csv,"one atom per period x sector x category x process x species, covered sources only"
-air_coverage_cells,630,pakemis_air_coverage_matrix.csv,"9 periods x 10 modules x 7 core species, every cell typed E/NE/IE/NO/NA"
-air_coverage_estimated_cells,540,pakemis_air_coverage_matrix.csv,"cells the covered panel estimates; the rest are typed absences, never zeros"
-air_panel_rollup_rows,1476,pakemis_air_annual_fy2015_16_fy2023_24.csv,the covered-sources rollup at period x sector x category x species
-air_grid_periods,9,pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc,fiscal periods in the air cube's time axis; the survey-anchored file carries the same nine
-air_grid_species,7,pakemis_air_grid_0p05_annual_fy2015_16_fy2023_24.nc,"pollutant layers per period, native mass, never summable across species"
-air_unallocated_rows,144,pakemis_air_unallocated_by_year.csv,"typed air mass placed at ADM1 and nowhere finer (the aviation cruise class), per period and configuration - the closure identity's third term"
+air_atomic_rows,6618,pakemis_air_atomic_annual.csv,"one atom per period x sector x category x process x species, covered sources only"
+air_coverage_cells,700,pakemis_air_coverage_matrix.csv,"9 periods x 10 modules x 7 core species, every cell typed E/NE/IE/NO/NA"
+air_coverage_estimated_cells,600,pakemis_air_coverage_matrix.csv,"cells the covered panel estimates; the rest are typed absences, never zeros"
+air_panel_rollup_rows,3320,pakemis_air_annual_fy2015_16_fy2024_25.csv,the covered-sources rollup at period x sector x category x species
+air_grid_periods,10,pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc,fiscal periods in the air cube's time axis; the survey-anchored file carries the same nine
+air_grid_species,7,pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc,"pollutant layers per period, native mass, never summable across species"
+air_unallocated_rows,1272,pakemis_air_unallocated_by_year.csv,"typed air mass placed at ADM1 and nowhere finer (the aviation cruise class), per period and configuration - the closure identity's third term"

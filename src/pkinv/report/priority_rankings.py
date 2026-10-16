@@ -1,34 +1,13 @@
-"""Measurement-priority rankings, kept apart because they answer different questions.
+"""Structural sensitivities and separately typed inventory comparisons.
 
-The rc2 review's 3.8: the Approach-1 variance ranking was being read as a universal guide
-to what to measure next, and it cannot be one. Which parameter would narrow the conditional
-interval (parametric leverage), which unresolved model choice most moves the deterministic
-total (structural leverage), and which missing category most changes completeness (coverage
-leverage) are three different questions with three different top answers -- the buffalo
-census, the sewer methane correction factor, and industrial solid fuel -- and treating any
-one ranking as the priority list silently answers the other two questions with it.
+Structural cases rank deterministic consequences within their named assumptions.
+Signed comparator-minus-estimate differences identify activity, factor, coverage
+and period questions; their absolute sizes order those questions, not missing
+emissions. Comparators without a common engine metric remain unmatched context.
+None of these quantities establishes a floor, upper bound or distribution for
+unestimated sources. The coverage registers retain their notation statuses.
 
-TWO OF THE THREE ARE RANKED HERE (rc67). The parametric question used to be answered in
-this file from a Sobol decomposition of a SURROGATE of the model
-(national_variance_attribution.csv), whose named top parameter, the buffalo enteric
-factor, the released ensemble does not support as stated: the ensemble's variance is led
-by enteric fermentation as a category and by domestic wastewater, and it cannot rank
-individual parameters because the sampled parameter values are not stored. The surrogate
-product is retired. What drives the interval is read from the ensemble itself, in
-outputs/pakemis_uncertainty_drivers.csv (category and sector shares of variance and of
-the upper tail), which is built after this file and therefore not joined into it.
-
-Everything here is a JOIN of already-published outputs; nothing is recomputed:
-  structural  outputs/national_structural_bridge.csv axes by |national delta|
-  coverage    outputs/national_benchmark_comparison.csv coverage/diagnostic rows by the
-              magnitude the comparator carries and the engine does not
-
-The coverage ranking inherits its comparators' limits: EDGAR's 11.54 Mt of F-gases sits in
-no comparison row (it is excluded from the cement row by its note) and therefore appears in
-the completeness register rather than here; a ranking can only rank what its sources
-quantify, and saying so beats a silently partial list.
-
-Usage:  python3 -m pkinv.report.priority_rankings
+Usage: python3 -m pkinv.report.priority_rankings
 Writes: outputs/national_priority_rankings.csv
 """
 
@@ -96,7 +75,7 @@ def build():
             "source_output": "national_structural_bridge.csv",
             "note": r["note"]})
 
-    gaps = []
+    comparisons, unmatched = [], []
     for r in _rows("national_benchmark_comparison.csv"):
         if r["comparison_role"] not in ("coverage", "diagnostic"):
             continue
@@ -111,21 +90,32 @@ def build():
                              "non-numeric benchmark %r" % (r["source"], r["engine_category"],
                                                             r["benchmark_Mt_co2e"]))
         try:
-            gap = benchmark - float(r["engine_Mt_co2e"])
+            difference = benchmark - float(r["engine_Mt_co2e"])
         except ValueError:
-            gap = benchmark      # nothing estimated: the whole magnitude is the gap
-        if gap <= 0.5:
+            # An unresolved common metric can mean a period/species mismatch,
+            # not an absent category (the native-CO2 ammonia comparator is one).
+            unmatched.append((benchmark, r))
             continue
-        gaps.append((gap, r))
-    gaps.sort(key=lambda t: -t[0])
-    for rank, (gap, r) in enumerate(gaps, 1):
+        if abs(difference) <= 0.5:
+            continue
+        comparisons.append((difference, r))
+    comparisons.sort(key=lambda t: -abs(t[0]))
+    for rank, (difference, r) in enumerate(comparisons, 1):
         out.append({
-            "ranking": "coverage", "rank": rank,
+            "ranking": "comparison", "rank": rank,
             "name": "%s (%s)" % (r["engine_category"], r["source"]),
-            "metric": round(gap, 2), "unit": "Mt CO2e, comparator magnitude unestimated here",
-            "question": "which missing or partial category most changes completeness",
+            "metric": round(difference, 2), "unit": "Mt CO2e (%s), comparator minus estimated sources" % r["gwp"],
+            "question": "which magnitude differences require activity, factor, coverage and period reconciliation",
             "source_output": "national_benchmark_comparison.csv",
-            "note": r["note"][:240]})
+            "note": "Signed comparison difference, not missing emissions or a bound. " + r["note"]})
+    for rank, (benchmark, r) in enumerate(sorted(unmatched, key=lambda t: -abs(t[0])), 1):
+        out.append({
+            "ranking": "unmatched_comparator", "rank": rank,
+            "name": "%s (%s)" % (r["engine_category"], r["source"]),
+            "metric": benchmark, "unit": "Mt on comparator's %s basis; no common-metric difference" % r["gwp"],
+            "question": "which source comparator needs a matched period, species and boundary before comparison",
+            "source_output": "national_benchmark_comparison.csv",
+            "note": "Comparator magnitude only; no inference of absent mass, floor or bound. " + r["note"]})
     return out
 
 
@@ -142,8 +132,10 @@ def main():
         for r in rows:
             w.writerow(r)
     print("priority rankings -> %s" % path)
-    for ranking in ("structural", "coverage"):
-        top = next(r for r in rows if r["ranking"] == ranking and r["rank"] == 1)
+    for ranking in ("structural", "comparison", "unmatched_comparator"):
+        top = next((r for r in rows if r["ranking"] == ranking and r["rank"] == 1), None)
+        if top is None:
+            continue
         print("  %-11s #1  %-46s %s %s"
               % (ranking, top["name"][:46], top["metric"], top["unit"].split(",")[0]))
     return 0

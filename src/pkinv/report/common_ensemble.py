@@ -68,7 +68,7 @@ from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 
 ENSEMBLE_N = 10000
-SEED = mc_core.SEED                      # 42, the published pool's seed
+SEED = uncertainty_all.NATIONAL_SEED
 SCENARIO = "within_sector"               # the published headline's scenario
 DRAW_DIR = asset_path(OUTPUTS, "mc_draws")
 
@@ -117,10 +117,12 @@ def annual_draws(prebuilt=None, n_iter=ENSEMBLE_N):
     # fugitives parameter channel, so draw d here is still bit-identically draw
     # d of the published 100k run.
     scalers = uncertainty_all.gas_coupling_scalers(components, coupling, n_iter)
+    native, shared = uncertainty_all.native_components(components, n_iter, SEED)
     _stats, total_samples, cat_samples = mc_core.run(
         components, categories, n_iter=n_iter, seed=SEED, has_sinks=False,
         stream=uncertainty_all.NATIONAL_STREAM, return_samples=True,
-        cross_sector=False, injected=injected, component_scalers=scalers)
+        cross_sector=False, injected=injected, component_scalers=scalers,
+        component_values=native, parameter_draws=shared)
     deterministic = {}
     for c in components:
         deterministic[c["category"]] = (deterministic.get(c["category"], 0.0)
@@ -615,21 +617,13 @@ def write_spatial_conditionals(built):
 
 
 def write_ledger_summary(built):
-    """Configuration L per draw, on the SAME draw_id (rc31; roles swapped at rc67).
+    """Configuration L on shared parameter identities, with actual ledger components.
 
-    The L difference is structural, not stochastic: the residential dung
-    components scale by the constant ledger/survey ratio in every draw, so
-    total_L(d) = total_ref(d) + (k-1) * dung_ref(d), paired draw by draw through
-    the component_scalers channel - the rc27 mechanism, no RNG consumed, the
-    bit-identical-prefix property untouched. Publishing the pair makes the
-    configuration delta a per-draw quantity a reader can difference, instead of
-    two unrelated intervals.
-
-    WHAT THE SCALING DOES NOT DO. The dung rows keep the reference's draw, whose width
-    is the survey's (35 per cent); configuration L's own chain is wider (50 per cent on
-    the diverted nitrogen). The published L interval is therefore the reference's
-    uncertainty carried to L's level, which is what a paired difference needs, and not
-    L's own parametric interval."""
+    Other sources retain their reference realisations. Dung follows the same
+    sampled livestock as the nitrogen ledger; VS, excretion and fate assumptions
+    are held conditional. The printed deterministic dung ratio is not used as a
+    replacement for L's activity uncertainty.
+    """
     from pkinv.core import configurations as conf
     from pkinv.core import montecarlo as mc_core
     components, categories, _sector_of = uncertainty_all.pooled(False)
@@ -649,23 +643,25 @@ def write_ledger_summary(built):
         data, dung_basis=conf.ALTERNATIVE_DUNG_BASIS)
     dung_ref = sum(c["co2e_Mt_AR5"] for c in ref_comps if "dung" in c["subitem"].lower())
     dung_alt = sum(c["co2e_Mt_AR5"] for c in alt_comps if "dung" in c["subitem"].lower())
-    k = dung_alt / dung_ref
+    k = dung_alt / dung_ref  # deterministic level ratio only; not an uncertainty multiplier
     n_scaled = 0
+    alternatives = {(row["subitem"], row["gas"]): row for row in alt_comps}
     for c in components:
         if c["category"] == "Residential fuel combustion" and "dung" in c["subitem"].lower():
-            ident = c["_mc_key"]
-            base = scalers.get(ident, [1.0] * ENSEMBLE_N)
-            scalers[ident] = [b * k for b in base]
+            alternate = alternatives[(c["subitem"], c["gas"])]
+            c.update(alternate)
             n_scaled += 1
     if not n_scaled:
         raise SystemExit("ledger ensemble: no dung component found to scale - "
                          "the configuration would silently equal the reference")
+    native, shared = uncertainty_all.native_components(components, ENSEMBLE_N, SEED, dung_basis="ledger")
     _stats, total_samples, _cats = mc_core.run(
         components, categories, n_iter=ENSEMBLE_N, seed=SEED, has_sinks=False,
         stream=uncertainty_all.NATIONAL_STREAM, return_samples=True,
-        cross_sector=False, injected=injected, component_scalers=scalers)
+        cross_sector=False, injected=injected, component_scalers=scalers,
+        component_values=native, parameter_draws=shared)
     ordered = sorted(total_samples)
-    det = sum(c["co2e_Mt_AR5"] for c in components) - dung_ref + dung_alt
+    det = sum(c["co2e_Mt_AR5"] for c in components)
     out = asset_path(OUTPUTS, "pakemis_ensemble_ledger_summary.csv")
     with open(out, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
@@ -678,8 +674,8 @@ def write_ledger_summary(built):
                     round(mc_core.percentile(ordered, 0.5), 4),
                     round(mc_core.percentile(ordered, 0.975), 4),
                     len(ordered), round(k, 6),
-                    "same draw_id as the reference ensemble: the dung components "
-                    "scale deterministically per draw, no RNG consumed"])
+                    "same shared parameter identities; ledger dung follows sampled herd; "
+                    "fate/excretion fixed; dung_scale is deterministic level ratio only"])
     print("ledger ensemble -> %s (L deterministic %.5f, dung scale %.4f, "
           "%d scaled components)" % (out, det, k, n_scaled))
     return out

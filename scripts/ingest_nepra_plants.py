@@ -476,9 +476,13 @@ def main(check=False):
     cols = ["fiscal_year", "system", "plant", "fuel", "fuel_origin", "quantity",
             "quantity_unit", "energy_TJ", "net_generation_GWh",
             "implied_heat_rate_kJ_per_kWh", "source_table"]
+    sys.path.insert(0, os.path.dirname(__file__))
+    from ingest_release_extension import power_products
+    extension = power_products()
+    extension_rows = [r for r in extension[0] if int(r["fiscal_year"]) == 2024]
+    rows = sorted(rows, key=lambda r: (r["system"], r["fuel"], r["plant"], r["fiscal_year"])) + extension_rows
     if write_or_check(OUT, cols,
-                      sorted(rows, key=lambda r: (r["system"], r["fuel"], r["plant"],
-                                            r["fiscal_year"])), check):
+                      rows, check):
         return 1
     if check:
         print("the plant fuel ledger reproduces from the held document.")
@@ -487,8 +491,8 @@ def main(check=False):
     plants = {(r["system"], r["plant"], r["fuel"]) for r in rows}
     print("wrote %s" % os.path.relpath(OUT, ROOT))
     print("  %d rows, %d plant-fuel series, FY%d-FY%d"
-          % (len(rows), len(plants), min(r["fiscal_year"] for r in rows),
-             max(r["fiscal_year"] for r in rows)))
+          % (len(rows), len(plants), min(int(r["fiscal_year"]) for r in rows),
+             max(int(r["fiscal_year"]) for r in rows)))
     for system in sorted(TABLES.values()):
         sub = [r for r in rows if r["system"] == system]
         by_fuel = {}
@@ -496,21 +500,24 @@ def main(check=False):
             by_fuel[r["fuel"]] = by_fuel.get(r["fuel"], 0) + 1
         print("  %-11s %3d rows  %s" % (system, len(sub),
                                         ", ".join("%s %d" % kv for kv in sorted(by_fuel.items()))))
-    # COVERAGE, STATED RATHER THAN IMPLIED. The multi-fuel sections are not parsed, so this
-    # ledger is a subset of the fleet and every downstream use has to know by how much.
-    latest = max(r["fiscal_year"] for r in rows)
-    parsed_gwh = sum(r["net_generation_GWh"] for r in rows if r["fiscal_year"] == latest)
+    # Station evidence and the matching edition's generation controls have the
+    # same year and boundary. A gap is reported rather than treated as zero fuel.
+    latest = max(int(r["fiscal_year"]) for r in rows)
+    parsed_gwh = sum(float(r["net_generation_GWh"]) for r in rows if int(r["fiscal_year"]) == latest)
+    thermal_control = sum(float(r["control_generation_GWh"]) for r in extension[3])
     print("  FY%d-%d coverage: %.0f GWh of %.0f GWh total thermal (Table 17) = %.1f%%"
-          % (latest, (latest + 1) % 100, parsed_gwh, TABLE17_THERMAL_GWH,
-             100 * parsed_gwh / TABLE17_THERMAL_GWH))
-    coal = sum(r["net_generation_GWh"] for r in rows
-               if r["fiscal_year"] == latest and r["fuel"] == "Coal")
-    print("  coal is effectively complete: %.1f GWh against CPPA-G's %.1f GWh (Table 17)"
-          % (coal, TABLE17_COAL_CPPAG_GWH))
+          % (latest, (latest + 1) % 100, parsed_gwh, thermal_control,
+             100 * parsed_gwh / thermal_control))
+    coal = sum(float(r["net_generation_GWh"]) for r in rows
+               if int(r["fiscal_year"]) == latest and r["fuel"] == "Coal")
+    coal_control = sum(float(r["control_generation_GWh"]) for r in extension[3]
+                       if r["fuel"] == "Coal")
+    print("  coal station coverage: %.1f GWh against CPPA-G + KE %.1f GWh (Table 17)"
+          % (coal, coal_control))
     origins = {}
     for r in rows:
-        if r["fuel"] == "Coal" and r["fiscal_year"] == latest:
-            origins[r["fuel_origin"]] = origins.get(r["fuel_origin"], 0.0) + r["net_generation_GWh"]
+        if r["fuel"] == "Coal" and int(r["fiscal_year"]) == latest:
+            origins[r["fuel_origin"]] = origins.get(r["fuel_origin"], 0.0) + float(r["net_generation_GWh"])
     for o, v in sorted(origins.items(), key=lambda kv: -kv[1]):
         print("      %-14s %8.1f GWh  %4.1f%%" % (o, v, 100 * v / coal))
     print("  duplicates: %d" % len(dupes))

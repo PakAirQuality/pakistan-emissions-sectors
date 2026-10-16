@@ -107,8 +107,9 @@ GWH_TJ = 3.6
 # blank in the ledger; its own implied CV is 11.4-12.1, which is lignite, and the coal-blend
 # table already carries it as the declared residual - so it is weighted as lignite here and
 # the row says so.
-NCV_BY_RANK = {"Thar lignite": 11.9, "unknown": 11.9, "imported": 25.8}
-LIGNITE_RANKS = ("Thar lignite", "unknown")
+NCV_BY_RANK = {"Thar lignite": 11.9, "Lakhra coal (lignite default)": 11.9,
+               "unknown": 11.9, "imported": 25.8}
+LIGNITE_RANKS = ("Thar lignite", "Lakhra coal (lignite default)", "unknown")
 
 # What a coal station can physically do. Not a tuning knob: the lower bound is a poor
 # subcritical unit and the upper is an ultra-supercritical one, and the point of the test is
@@ -203,7 +204,7 @@ def build():
     consumed = {r["fiscal_year"]: _num(r["toe"])
                 for r in read_rows(asset_path(DATA, "activity", "power",
                                               "fuel_consumed.csv"))
-                if "oal" in r["fuel"]}
+                if "oal" in r["fuel"] and "Table 3" in r.get("source", "")}
     # Table 3 names the HDIP Pakistan Energy Yearbook as its source, and HDIP's own
     # power-sector coal mass is held - republished in the Economic Survey supplement. It is
     # the account Table 3's TOE is computed from, so it belongs beside the other two.

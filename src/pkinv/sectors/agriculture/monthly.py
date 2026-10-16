@@ -36,10 +36,9 @@ reads their acquisition dates: FRP-weighted monthly shares inside the two season
 not T2, deliberately: the within-window weights are satellite-OBSERVED, but the windows
 themselves are the crop calendar's claim - the fetch was season-scoped, so an out-of-window
 zero is calendar-asserted rather than observed. One year's fire record is never carried to
-another: a year without a fetched season would stay flat at T4. That branch has not fired
-since the archive was extended - all nine fiscal years carry their own FRP-weighted profile
-at TE3 - and it is kept because it is the honest behaviour if a season were ever missing,
-not because it describes the current product.
+another: a year without a fetched season uses elapsed-day weights at T4. The held
+archive supports own-year profiles through FY2023–24. FY2024–25 uses that explicitly
+labelled fallback; its annual burned mass is estimated independently of monthly timing.
 
 Usage:  python3 -m pkinv.sectors.agriculture.monthly
 Writes: outputs/agriculture_monthly_2024.csv

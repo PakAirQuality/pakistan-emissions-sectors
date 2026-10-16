@@ -8,9 +8,8 @@ other. A lookup that answers confidently is the worst kind to leave unguarded, s
 tested here is mostly the REFUSALS: outside the grid, outside the country, the period-named
 second configuration outside its own year, and a historical month that does not exist.
 
-rc67: the second configuration was S (the survey reading, "outside the year it was
-surveyed") through rc66. The survey series is the reference now and the second cube is
-configuration L, the ledger dung basis, which exists for FY2023-24 alone.
+Annual configuration alternatives have their own files throughout the core period;
+historical monthly requests remain unsupported.
 """
 import os
 import unittest
@@ -29,10 +28,13 @@ from pakemis_query.models import GridCellRequest
 
 from semantic._golden import open_engine
 
-ANNUAL = os.path.join(OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc")
+ANNUAL = os.path.join(OUTPUTS, "pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc")
 MONTHLY = os.path.join(OUTPUTS, "pakemis_grid_0p05_monthly.nc")
 LEDGER = os.path.join(OUTPUTS, "pakemis_grid_0p05_monthly_ledger.nc")
-PATHS = {"REF_2023_24": MONTHLY, "L_2023_24": LEDGER, "ANNUAL": ANNUAL}
+PATHS = {"S_TAN": MONTHLY, "L_TAN": LEDGER, "ANNUAL": ANNUAL}
+PATHS.update({"ANNUAL_" + cfg: os.path.join(OUTPUTS,
+             "pakemis_ghg_grid_0p05_annual_%s_fy2015_16_fy2024_25.nc" % cfg.lower())
+             for cfg in ("L_TAN", "S_IPCC", "L_IPCC")})
 
 
 @unittest.skipIf(netCDF4 is None, "netCDF4 is not installed")
@@ -89,14 +91,18 @@ class TestTheGridLookupAnswersAndRefuses(unittest.TestCase):
             get_grid_cell(self.engine, self._req(period_id="FY2015-16", month="201507"), PATHS)
         self.assertIn("reference year", str(caught.exception))
 
-    def test_configuration_l_is_refused_outside_its_reference_year(self):
-        with self.assertRaises(E.NotEstimated) as caught:
-            get_grid_cell(self.engine, self._req(period_id="FY2015-16",
-                                                 configuration_id="L_2023_24"), PATHS)
-        self.assertIn("FY2023-24", str(caught.exception))
-        self.assertIn("L_2023_24", str(caught.exception))
-        self.assertEqual(caught.exception.limitation_id,
-                         "configuration_l_reference_year_only")
+    def test_configuration_l_reads_its_own_historical_annual_file(self):
+        path = PATHS["ANNUAL_L_TAN"]
+        with netCDF4.Dataset(path) as ds:
+            periods = [str(p) for p in ds["period_id"][:]]
+            lats, lons = ds["lat"][:], ds["lon"][:]
+            i = int(abs(lats-self.inside[0]).argmin())
+            j = int(abs(lons-self.inside[1]).argmin())
+            expected = float(ds["co2_emissions"][periods.index("FY2015-16"), :, i, j].sum())
+        output = get_grid_cell(self.engine, self._req(period_id="FY2015-16",
+                              configuration_id="L_2023_24"), PATHS)
+        self.assertAlmostEqual(expected, output["values"][0]["value"], places=6)
+        self.assertEqual("L_TAN", output["context"]["configuration_id"])
 
     def test_a_point_outside_the_grid_is_not_snapped_to_the_nearest_edge(self):
         """argmin always succeeds, which is the whole problem.
@@ -117,7 +123,7 @@ class TestTheGridLookupAnswersAndRefuses(unittest.TestCase):
                           PATHS)
         self.assertIn("outside Pakistan", str(caught.exception))
 
-    def test_an_unknown_period_is_named_against_the_nine_that_exist(self):
+    def test_an_unknown_period_is_named_against_the_supported_fiscal_core(self):
         with self.assertRaises(E.UnknownDimensionValue) as caught:
             get_grid_cell(self.engine, self._req(period_id="FY2009-10"), PATHS)
         self.assertIn("FY2015-16", str(caught.exception))

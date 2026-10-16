@@ -19,10 +19,14 @@ from pkinv.core import evidence, monthly as core_monthly
 from pkinv.paths import DATA, OUTPUTS
 from pkinv.report import monthly_all_years, months, temporal_profiles
 from pkinv.core.io import read_rows
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS
 
 
 def _rows(name, base=OUTPUTS):
-    return read_rows(os.path.join(base, name), comments=False)
+    from pkinv.assets import asset_path
+    if name.startswith("pakemis_monthly_fy"):
+        name = os.path.basename(monthly_all_years.OUT)
+    return read_rows(asset_path(base, name), comments=False)
 
 
 class TestTheMonthRegistry(unittest.TestCase):
@@ -31,7 +35,7 @@ class TestTheMonthRegistry(unittest.TestCase):
         core/period.py. If the two drift, every profile row's month key stops meaning what
         the code says it means."""
         table = _rows("months.csv", base=DATA)
-        self.assertEqual(len(table), 108)
+        self.assertEqual(len(table), 12 * len(CORE_FY_STARTS))
         from pkinv.report import periods
         expected = []
         for start_year in range(periods.FIRST_START_YEAR, periods.LAST_START_YEAR + 1):
@@ -178,8 +182,8 @@ class TestEveryLayerServesEveryYearItself(unittest.TestCase):
         years = {r["fiscal_year"] for r in rows
                  if r["sector"] == "agriculture" and r["category"].startswith("Rice")
                  and r["temporal_evidence_class"] != "TE4"}
-        self.assertEqual(len(years), 9, "rice carries a flooded window in only %d years"
-                                        % len(years))
+        from pkinv.core.reporting_window import fiscal_label
+        self.assertEqual(years, {fiscal_label(start) for start in CORE_FY_STARTS})
 
     def test_no_year_borrows_a_fertiliser_shape_it_has_no_edition_for(self):
         """The other half of the same decision. A crop calendar has no year and travels; one
@@ -209,7 +213,7 @@ class TestEveryLayerServesEveryYearItself(unittest.TestCase):
 class TestTheMonthlyProductCloses(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.rows = _rows("pakemis_monthly_fy2015_16_fy2023_24.csv")
+        cls.rows = _rows("pakemis_monthly_fy2015_16_fy2024_25.csv")
         cls.atom = [r for r in _rows("pakemis_atomic_annual.csv") if r["co2e_Mt_AR5"]]
 
     def test_it_closes_on_native_mass_and_on_co2e(self):
@@ -237,8 +241,8 @@ class TestTheMonthlyProductCloses(unittest.TestCase):
         annual = {(r["component_id"], r["period_id"]) for r in self.atom}
         self.assertEqual(monthly, annual)
 
-    def test_all_108_months_are_present(self):
-        self.assertEqual(len({r["month"] for r in self.rows}), 108)
+    def test_all_core_months_are_present(self):
+        self.assertEqual(len({r["month"] for r in self.rows}), 12 * len(CORE_FY_STARTS))
         by_year = collections.defaultdict(set)
         for row in self.rows:
             by_year[row["period_id"]].add(row["month"])
@@ -272,7 +276,7 @@ class TestDaysWeightingIsRealAndDeclared(unittest.TestCase):
     def test_an_unshaped_month_is_its_own_length(self):
         """The change this pass made to every flat profile. February must be shorter than
         July, in the data and not only in the docstring."""
-        rows = [r for r in _rows("pakemis_monthly_fy2015_16_fy2023_24.csv")
+        rows = [r for r in _rows("pakemis_monthly_fy2015_16_fy2024_25.csv")
                 if r["profile_id"] == "days_weighted" and r["period_id"] == "FY2023-24"]
         self.assertTrue(rows)
         shares = {r["month"]: float(r["share"]) for r in rows}
@@ -284,7 +288,7 @@ class TestDaysWeightingIsRealAndDeclared(unittest.TestCase):
     def test_the_leap_day_reaches_the_product(self):
         """FY2015-16 and FY2019-20 contain a 29-day February, and it must be worth more
         than the 28-day ones."""
-        rows = [r for r in _rows("pakemis_monthly_fy2015_16_fy2023_24.csv")
+        rows = [r for r in _rows("pakemis_monthly_fy2015_16_fy2024_25.csv")
                 if r["profile_id"] == "days_weighted"]
         by_month = {r["month"]: float(r["share"]) for r in rows}
         self.assertGreater(by_month["201602"], by_month["201702"])
@@ -297,7 +301,7 @@ class TestAWeakProfileIsAlwaysGradedAsOne(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.rows = _rows("pakemis_monthly_fy2015_16_fy2023_24.csv")
+        cls.rows = _rows("pakemis_monthly_fy2015_16_fy2024_25.csv")
 
     def test_every_calendar_only_profile_is_graded_TE4(self):
         days = [r for r in self.rows if r["profile_id"] == "days_weighted"]
@@ -373,7 +377,7 @@ class TestItAgreesWithTheShippedReferenceYear(unittest.TestCase):
             key = (row["sector"], row["category"], row["subitem"], row["gas"])
             shipped[key][row["month"]] = float(row["share"])
         fresh = collections.defaultdict(dict)
-        for row in _rows("pakemis_monthly_fy2015_16_fy2023_24.csv"):
+        for row in _rows("pakemis_monthly_fy2015_16_fy2024_25.csv"):
             if row["period_id"] != "FY2023-24":
                 continue
             key = (row["sector_id"], row["category"], row["subitem"], row["gas"])
@@ -400,7 +404,7 @@ class TestItAgreesWithTheShippedReferenceYear(unittest.TestCase):
             shipped[(row["sector"], row["category"], row["subitem"], row["gas"],
                      row["month"])] = row["temporal_method"]
         moved = collections.Counter()
-        for row in _rows("pakemis_monthly_fy2015_16_fy2023_24.csv"):
+        for row in _rows("pakemis_monthly_fy2015_16_fy2024_25.csv"):
             if row["period_id"] != "FY2023-24":
                 continue
             key = (row["sector_id"], row["category"], row["subitem"], row["gas"],
@@ -478,7 +482,7 @@ class TestTheDecompositionSeparatesPhysicsFromIgnorance(unittest.TestCase):
     def test_the_gap_is_the_TE4_mass_of_the_time_variable_components(self):
         """Recomputed from the monthly product itself rather than from this table, because
         the whole value of the split is that it is a measurement."""
-        rows = _rows("pakemis_monthly_fy2015_16_fy2023_24.csv")
+        rows = _rows("pakemis_monthly_fy2015_16_fy2024_25.csv")
         physical = {(r["sector_id"], r["component"]) for r in self.rows
                     if r["flatness_class"] != self.module.TIME_VARIABLE}
         expected = sum(

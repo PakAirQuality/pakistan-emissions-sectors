@@ -178,7 +178,7 @@ def screening_so2():
     """{period_id: (controlled_case_kt, uncontrolled_kt)} for power, the release's own bounds."""
     agg = collections.defaultdict(float)
     for r in read_rows(asset_path(ROOT, "outputs",
-                                  "power_air_screening_fy2015_16_fy2023_24.csv")):
+                                  "power_air_screening_fy2015_16_fy2024_25.csv")):
         if r["pollutant"] == "SO2":
             agg[(r["period_id"], r["scenario"])] += float(r["emissions_kt"] or 0)
     return {p: (agg.get((p, "controlled_case"), 0.0), agg.get((p, "uncontrolled"), 0.0))

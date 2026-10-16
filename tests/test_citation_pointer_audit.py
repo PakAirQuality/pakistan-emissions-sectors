@@ -40,7 +40,10 @@ VERDICTS = {"pointed", "unpointed", "not-applicable", "unverifiable"}
 # to improve the headline: the four had been scored `unverifiable`, which is not a failure
 # the headline counts either.
 UNPOINTED_CEILING = 16
-NOT_APPLICABLE_CEILING = 82
+# rc68 adds plant_fuel_year_controls.csv, an internally compiled control table.
+# Its provenance is the derivation/verified source chain, not a single page
+# pointer into an external publication. The other 82 exemptions are unchanged.
+NOT_APPLICABLE_CEILING = 83
 
 
 def rows():

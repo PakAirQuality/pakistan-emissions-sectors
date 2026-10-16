@@ -20,6 +20,7 @@ import unittest
 from collections import defaultdict
 
 from pkinv.core.io import read_rows
+from pkinv.core import configurations as conf
 from pkinv.paths import DATA, OUTPUTS
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
@@ -46,7 +47,7 @@ def published_change():
     """The nine-year change in Lahore District SO2, read from the shipped district view."""
     total = defaultdict(float)
     for r in read_rows(LAHORE_VIEW):
-        if (r["pollutant"] == "SO2" and r["configuration_id"] == "REF_2023_24"
+        if (r["pollutant"] == "SO2" and conf.canonical(r["configuration_id"]) == conf.REFERENCE
                 and r["row_kind"] == "district"):
             total[r["period_id"]] += float(r["emissions_Gg"])
     return total[END] - total[START], total
@@ -147,14 +148,14 @@ class TestComparisonDoesNotFit(unittest.TestCase):
         for r in self.rows:
             if r["row_kind"] != "comparison":
                 continue
-            if r["period_id"] in ("FY2022-23", "FY2023-24"):
+            if r["period_id"] in ("FY2022-23", "FY2023-24", "FY2024-25"):
                 self.assertEqual(r["edgar_Gg"], "", r)
                 self.assertEqual(r["ratio_engine_over_edgar"], "", r)
                 self.assertIn("not compared", r["reading"])
 
     def test_the_inventories_it_cannot_use_are_rows_not_silence(self):
         named = {r["edgar_stream"] for r in self.rows if r["row_kind"] == "not_compared"}
-        for name in ("CEDS", "CAMS-GLOB-ANT", "HTAP v3"):
+        for name in ("CEDS", "CAMS-GLOB-ANT", "HTAP v3.2"):
             self.assertIn(name, named,
                           "an inventory that cannot answer the question is a typed row, not a gap")
         for r in self.rows:
@@ -214,12 +215,21 @@ class TestComparisonDoesNotFit(unittest.TestCase):
             self.assertIn("July", r["calendar_basis"])
             self.assertIn("exact", r["reading"])
 
-    def test_the_withdrawn_finding_stays_on_the_record(self):
-        """A correction that deletes the wrong claim leaves no trace of having been wrong."""
+    def test_mineral_process_and_firing_fuel_boundaries_are_explicit(self):
+        """The current data description explains the emitting boundary, not debugging history."""
         nmm = [r for r in self.rows if r["row_kind"] == "finding" and r["edgar_stream"] == "NMM"]
         self.assertEqual(len(nmm), 1)
-        self.assertIn("WITHDRAWN", nmm[0]["reading"])
-        self.assertIn("2.A.1", nmm[0]["reading"])
+        self.assertIn("mineral process", nmm[0]["reading"])
+        self.assertIn("brick firing fuel", nmm[0]["reading"])
+        self.assertIn("not a fully matched", nmm[0]["reading"])
+
+    def test_policy_and_boundary_differences_are_not_claimed_as_validation(self):
+        readings = {row["edgar_stream"]: row["reading"] for row in self.rows
+                    if row["row_kind"] == "finding"}
+        self.assertIn("not measured universal pump compliance", readings["TRO"])
+        self.assertIn("integrated cement-stack", readings["IND"])
+        self.assertIn("different source boundaries", readings["RCO"])
+        self.assertNotIn("DEFENSIBLE SIDE", readings["TRO"])
 
 
     def test_a_plant_derived_row_may_not_describe_itself_as_a_borrowed_share(self):

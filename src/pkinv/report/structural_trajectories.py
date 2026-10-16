@@ -32,7 +32,8 @@ from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 
 OUT = asset_path(OUTPUTS, "pakemis_structural_trajectories.csv")
-YEARS = tuple(range(2016, 2025))          # fiscal end years
+from pkinv.core.reporting_window import CORE_FY_ENDS
+YEARS = CORE_FY_ENDS
 REFERENCE_YEAR = 2024
 
 FIELDS = ("axis", "module", "fiscal_end_year", "status", "reference_Mt",
@@ -223,8 +224,8 @@ def _kelectric_pricer():
                   if c["category"] == "Electricity and heat production")
         out = {"status": PRICED, "reference_Mt": ref, "alternative_Mt": ref + row["co2_Mt"]}
         if row["estimated_cells"]:
-            out["reason"] = ("%.3f Mt of the %.3f Mt rests on cells the source prints as "
-                             "not provided, estimated from the station's own rate: %s"
+            out["reason"] = ("%.3f Mt of the %.3f Mt rests on explicitly reconstructed "
+                             "fuel cells rather than verified printed quantities: %s"
                              % (row["co2_Mt"] - row["co2_Mt_printed_fuel_only"],
                                 row["co2_Mt"], row["estimated_cells"]))
         return out

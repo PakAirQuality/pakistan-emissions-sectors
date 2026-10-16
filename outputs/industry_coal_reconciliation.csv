@@ -13,4 +13,4 @@ fiscal_year,hdip_power_kt,nepra_named_plant_kt,unmatched_kt,unmatched_direction,
 2021-22,12808.0,12158.9,649.1,hdip_exceeds_named_plants,5643.0,"published, never spread: no station receives a share of a national residual"
 2022-23,15493.0,14009.0,1484.0,hdip_exceeds_named_plants,2991.0,"published, never spread: no station receives a share of a national residual"
 2023-24,19196.0,15876.2,3319.8,hdip_exceeds_named_plants,1129.0,"published, never spread: no station receives a share of a national residual"
-2024-25,17087.0,,,no_nepra_lane,3483.0,beyond the plant-fuel ledger's last ingested year
+2024-25,17087.0,17310.7,-223.7,named_plants_exceed_hdip,3483.0,"NEPRA's named stations report more coal than HDIP books to power; HDIP's exhaustive categories put the difference somewhere, and the brick column's spike this year is where"

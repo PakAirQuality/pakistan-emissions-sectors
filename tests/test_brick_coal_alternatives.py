@@ -2,6 +2,8 @@
 import csv
 import os
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 
 from pkinv.paths import OUTPUTS
 
@@ -16,7 +18,7 @@ def rows():
 class BrickAlternatives(unittest.TestCase):
     def test_nine_years_no_preferred_estimate(self):
         r = rows()
-        self.assertEqual([x["fiscal_year"] for x in r], ["%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024)])
+        self.assertEqual([x["fiscal_year"] for x in r], ["%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS])
         for x in r:
             self.assertEqual(x["preferred_estimate"], "", x["fiscal_year"])
             self.assertTrue(x["decision_rule_row"].startswith("3"))

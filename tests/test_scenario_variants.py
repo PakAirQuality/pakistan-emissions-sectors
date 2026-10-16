@@ -10,10 +10,9 @@ engines it claims to reuse.
 rc67 (2026-10-13): configuration S is the REFERENCE now (the two-round survey series,
 10.93 Mt of household cake in FY2023-24), so the unresolved mass is the reference's own
 47.81 Mt, the base variant is the published reference total (national_all_sectors.csv),
-and the non-household-combustion variant lands on the configuration-L total
-(national_all_sectors_ledger.csv). The two tests that pin those totals as numbers keep
-their rc66 values until the national total settles; the two beside them join the same
-claims to the live files.
+and the non-household-combustion variant lands on the configuration-L total.
+Both are checked independently against the native four-configuration atoms and
+the exposed rollups; obsolete release constants remain in the preserved baseline.
 """
 
 from pkinv.assets import asset_path
@@ -31,6 +30,13 @@ from _support import ROOT
 def _published():
     path = os.path.join(ROOT, "outputs", "national_dung_variants.csv")
     return read_rows(path, comments=False)
+
+
+def _native_total(configuration):
+    return sum(float(r["co2e_Mt_AR5"]) for r in read_rows(
+        os.path.join(ROOT, "outputs", "pakemis_ghg_configuration_atoms.csv"))
+        if r["period_id"] == "FY2023-24" and r["configuration_id"] == configuration
+        and r["co2e_Mt_AR5"])
 
 
 class TestTheVariantRegistry(unittest.TestCase):
@@ -76,8 +82,8 @@ class TestTheVariantRegistry(unittest.TestCase):
     def test_the_base_variant_is_the_published_S_total_exactly(self):
         base = next(r for r in self.published
                     if r["variant_id"] == "S_household_only_unallocated")
-        # 447.20152 is the PUBLISHED S vintage (national_all_sectors_survey.csv through rc66; since rc67 S is the reference and its vintage is national_all_sectors.csv; summed from components). national_configurations composes S as L + delta from already-rounded parts and prints 447.20153; the re-base put the number on a rounding boundary and split the last digit, the same composed-vs-summed effect rc19 recorded at 447.71689/447.71688. The summed vintage is authoritative.
-        self.assertEqual(base["national_total_Mt_co2e_AR5"], "444.95542")  # rc67 reference re-base: the base variant IS the reference (446.72502 at rc66)
+        self.assertAlmostEqual(float(base["national_total_Mt_co2e_AR5"]),
+                               _native_total("S_TAN"), delta=2e-5)
         self.assertEqual(float(base["delta_vs_S_Mt_co2e_AR5"]), 0.0)
 
     def test_the_base_variant_is_the_published_reference_total(self):
@@ -125,9 +131,8 @@ class TestTheVariantRegistry(unittest.TestCase):
         orders of magnitude above this tolerance."""
         row = next(r for r in self.published
                    if r["variant_id"] == "S_residual_nonhousehold_combustion")
-        # rc39 A1 re-base: the reference herd became the census's exact enumeration, so the pins moved for the first time since rc30 (L 452.14350 -> 452.33432, S 447.01683 -> 447.20153; agriculture +0.184699 and residential +0.006121 through the dung handoff)
-        self.assertAlmostEqual(float(row["national_total_Mt_co2e_AR5"]), 450.20168,   # rc67: configuration L (451.85782 at rc66)
-                               delta=2e-5)
+        self.assertAlmostEqual(float(row["national_total_Mt_co2e_AR5"]),
+                               _native_total("L_TAN"), delta=2e-5)
 
     def test_return_and_revision_price_identically_and_say_so(self):
         """Same arithmetic, different reading of evidence -- the note must draw the

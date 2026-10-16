@@ -1,61 +1,28 @@
-"""The nine-fiscal-year air-pollutant panel: atoms, rollup, coverage (air program Wave 3).
+"""The covered-source fiscal air inventory on shared activity and material flows.
 
-One covered-sources panel, FY2015-16..FY2023-24, built the way the greenhouse-gas
-national series is built: each sector's own air engine called for each year under the
-sector's own fiscal convention (power and aviation are fiscal-START keyed; everything
-else fiscal-END), never a national total distributed downward. Three products:
+The period window is declared in core.reporting_window. Sector engines supply
+native pollutant masses; no greenhouse-gas mass is converted into an air emission.
+Core species are BC, CO, NH3, NMVOC, NOx (as NO2), primary PM2.5 and SO2. Supported
+PM10, TSP, OC, HC and HCl remain separate supplemental records; nested particles
+and incompatible hydrocarbon definitions are never added or renamed.
 
-  pakemis_air_atomic_annual.csv     one row per period x sector x category x process x
-                                    subitem x pollutant, Gg (1 kt == 1 Gg), each atom
-                                    carrying its activity basis, its factor source and
-                                    its own stream anchor (air_join.stream_for,
-                                    fail-closed - a row that cannot name its stream
-                                    does not enter the panel)
-  pakemis_air_annual_fy2015_16_fy2023_24.csv
-                                    the rollup (period x sector x category x
-                                    pollutant), coverage_scope=covered_sources_only in
-                                    every row - this is NOT a complete national
-                                    seven-species inventory and does not claim to be
-  pakemis_air_coverage_matrix.csv   630 rows = 9 periods x 10 modules x 7 core
-                                    species, closed E/NE/IE/NO/NA vocabulary
-                                    (pkinv.core.notation): a missing estimate is
-                                    written as its key, never as a zero
+Canonical atoms retain emitting source/process, activity and factor provenance,
+control assumptions, chemical mass convention, estimate maturity and conditional
+parameter identities. The two independent configuration axes select household
+survey or all-diverted-dung combustion and TAN or IPCC nitrogen fate. Structural
+cases carry no probabilities.
 
-POWER IS NOT IN THE PANEL. Its air layer is an uncontrolled screening scenario by its
-own declaration, so it ships beside the panel as
-power_air_screening_fy2015_16_fy2023_24.csv and the coverage matrix writes power NE
-with the scenario named in the basis - publishing a bound under a coverage flag would
-launder it into an estimate. Since rc58 that screening is GRID-ONLY: captive
-self-generation is IPCC 1.A.2 and is priced once, in the industrial layer, inside the
-panel.
+Power oil/diesel SO2 from admitted station records enters the panel. Unresolved
+power coal/gas/control cases remain separate screening products, with admitted
+activity removed once. Industry, IPPU and fugitives enter only for the processes
+and species their source-class register estimates. Module-level E notation does
+not establish complete source coverage: the source/process coverage file retains
+known omissions separately. Missing sources are not zeros.
 
-INDUSTRY IS IN THE PANEL (rc58). pkinv.sectors.industry.air_pollutants executes the
-source-class register (data/air_source_classes.csv) - the same
-terajoules, tonnes and clinker the greenhouse-gas streams book, on factors transcribed
-with page and digest, SO2 from a sulfur balance on dated evidence, source-class-typical
-controls, every class a stream anchor - and its estimate rows are atoms here; its typed
-absences (NH3 everywhere, other-industry coal, captive solids, bagasse) stay in its own
-detail file and in the coverage matrix's absence register.
-
-THE ABSENCES ARE DATA. Every (module, species) cell the panel does not fill is typed by
-data/air_coverage_absences.csv (or by the two code branches power and aviation keep);
-a cell nobody types fails the build.
-
-SUPPLEMENTAL SPECIES STAY OUT OF THE PANEL'S CORE. The seven are BC, CO, NH3, NMVOC,
-NOx (as NO2), PM2.5, SO2 (dim_pollutant core7). Aviation's HC is not NMVOC, power's
-VOC is not NMVOC, wear TSP/PM10 are strata of the particulate containment chain -
-atoms for supplemental species ARE written (they are real emissions of real processes)
-with core7=no, and the rollup and coverage matrix count only the core.
-
-Period honesty: agriculture is REBUILT per year from its own fiscal activity
-(fa.data_for_fiscal_year - Economic Survey crops and nitrogen), NOT the calendar
-FAOSTAT series the 1990-2024 product uses; its livestock-driven atoms ride the
-inter-census calendar projection and say so (activity_basis=calendar_projection).
-Residential scales each stream's reference rows by the stream's own fuel ratio
-(timeseries.fuel_TJ_series), with the five held fuels labelled held. Waste moves on
-its population panel alone (parameters declared held). Railways and transport burn
-their year's own fuel under the year's own declared sulfur regime. Aviation flies its
-year's own movements on its era's own fleet mix.
+Agriculture is reconstructed using fiscal crop/fertiliser activity and the
+census-anchored livestock series. Residential fuel histories retain interpolation
+and extrapolation labels. Waste treatment parameters remain held while population
+advances. Each sector's fiscal-start/end convention is converted explicitly.
 """
 
 from pkinv.assets import asset_path
@@ -65,10 +32,11 @@ import os
 from collections import defaultdict
 
 from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_FY_ENDS, CORE_SUFFIX
 from pkinv.paths import OUTPUTS
 from pkinv.report import air_join
 
-YEARS = tuple(range(2016, 2025))            # fiscal-END keys, FY2015-16..FY2023-24
+YEARS = CORE_FY_ENDS
 CORE7 = ("BC", "CO", "NH3", "NMVOC", "NOx", "PM2.5", "SO2")
 MODULES = ("agriculture", "aviation", "fugitives", "industry", "ippu", "power",
            "railways", "residential", "transport", "waste")
@@ -78,7 +46,11 @@ ATOM_FIELDS = ("period_id", "configuration_id", "sector_id", "category", "proces
                "fuel_or_material", "subitem", "pollutant", "core7",
                "pollutant_mass_basis", "estimate_status", "activity_basis",
                "emission_factor_source", "emissions_Gg", "support_anchor_id",
-               "coverage_scope")
+               "coverage_scope", "source_id", "source_class_id", "calculation_module",
+               "maturity", "activity_value", "activity_unit", "activity_provenance",
+               "factor_ids", "factor_unit", "control_state", "control_evidence",
+               "pm_definition", "release_boundary", "uncertainty_model",
+               "parameter_drivers", "structural_sensitivity", "nitrogen_recipe")
 ROLLUP_FIELDS = ("period_id", "fiscal_end_year", "configuration_id", "sector_id",
                  "category", "pollutant", "emissions_Gg", "coverage_scope")
 COVERAGE_FIELDS = ("period_id", "fiscal_end_year", "sector_id", "pollutant", "state",
@@ -88,29 +60,62 @@ POWER_FIELDS = ("period_id", "fiscal_end_year", "category", "fuel", "fuel_detail
                 "basis")
 
 ATOMS_OUT = asset_path(OUTPUTS, "pakemis_air_atomic_annual.csv")
-ROLLUP_OUT = asset_path(OUTPUTS, "pakemis_air_annual_fy2015_16_fy2023_24.csv")
+ROLLUP_OUT = asset_path(OUTPUTS, "pakemis_air_annual_%s.csv" % CORE_SUFFIX)
 COVERAGE_OUT = asset_path(OUTPUTS, "pakemis_air_coverage_matrix.csv")
-POWER_OUT = asset_path(OUTPUTS, "power_air_screening_fy2015_16_fy2023_24.csv")
+POWER_OUT = asset_path(OUTPUTS, "power_air_screening_%s.csv" % CORE_SUFFIX)
+SOURCE_COVERAGE_OUT = asset_path(OUTPUTS, "pakemis_air_source_coverage.csv")
+SOURCE_COVERAGE_FIELDS = ("period_id", "sector_id", "source_class_id", "process",
+                          "pollutant", "state", "maturity", "coverage_scope", "note")
 
 
 def period_id(fy_end):
     return "FY%d-%s" % (fy_end - 1, str(fy_end)[2:])
 
 
+def atom_configuration(configuration, sector):
+    """The engine case supplying one axis of a complete configuration."""
+    ipcc = configuration in (getattr(conf, "IPCC_REFERENCE", "S_IPCC"),
+                             getattr(conf, "IPCC_LEDGER", "L_IPCC"))
+    ledger = configuration in (conf.LEDGER_SERIES, getattr(conf, "IPCC_LEDGER", "L_IPCC"))
+    if sector == "agriculture" and ipcc:
+        return getattr(conf, "IPCC_REFERENCE", "S_IPCC")
+    if sector == "residential" and ledger:
+        return conf.LEDGER_SERIES
+    return conf.REFERENCE
+
+
+# The chemical mass convention of every species, stated on each canonical atom (rc68 air
+# review, criterion 1). "native mass" alone left the reader to guess whether NH3 was NH3 or
+# NH3-N and SO2 SO2 or S; the nitrogen and sulfur balances convert explicitly (17/14, 46/14,
+# 2 kg SO2 per kg S), so the record now says which mass it carries. Never CO2e.
+MASS_BASIS = {
+    "NOx": "NO2-equivalent",
+    "NH3": "NH3 mass (N-basis factors converted by 17/14; not NH3-N)",
+    "SO2": "SO2 mass (sulfur balances at 2 kg SO2 per kg S; not S)",
+    "CO": "CO mass",
+    "NMVOC": "NMVOC mass as reported by the factor source (not carbon-equivalent; methane excluded)",
+    "PM2.5": "primary PM2.5 mass (filterable/condensable as recorded in pm_definition)",
+    "BC": "component of PM2.5",
+    "OC": "component of PM2.5",
+    "PM": "particulate stratum (contains PM2.5)",
+    "PM10": "particulate stratum (contains PM2.5)",
+    "TSP": "particulate stratum (contains PM2.5)",
+    "HC": "unspeciated hydrocarbon mass as reported (not NMVOC)",
+    "HCl": "HCl mass",
+}
+
+
 def _basis_note(pollutant):
-    if pollutant == "NOx":
-        return "NO2-equivalent"
-    if pollutant in ("BC", "OC"):
-        return "component of PM2.5"
-    if pollutant in ("PM", "PM10", "TSP"):
-        return "particulate stratum (contains PM2.5)"
-    return "native mass"
+    try:
+        return MASS_BASIS[pollutant]
+    except KeyError:
+        raise ValueError("no declared chemical mass convention for air species %r" % pollutant)
 
 
 def _atom(fy_end, sector, row, kt, activity_basis, factor_source, process="",
           fuel=""):
     sid = air_join.stream_for(sector, row, _atom.index)
-    return {
+    result = {
         "period_id": period_id(fy_end), "configuration_id": conf.REFERENCE,
         "sector_id": sector,
         "category": row.get("category", ""), "process": process,
@@ -126,6 +131,14 @@ def _atom(fy_end, sector, row, kt, activity_basis, factor_source, process="",
         "support_anchor_id": sid,
         "coverage_scope": SCOPE,
     }
+    from pkinv.report.air_records import enrich
+    result.update(enrich(sector, fy_end, row, process, fuel or row.get("fuel", "")))
+    result.setdefault("nitrogen_recipe", "")
+    # The quantity and factor boundary travel alongside notation E. Maturity is
+    # independent: a defensible provisional estimate is not a measured release.
+    if "activity_scale" in row and result["activity_value"] != "":
+        result["activity_value"] *= row["activity_scale"]
+    return result
 
 
 # --- the seven covered sectors ---------------------------------------------------
@@ -133,15 +146,20 @@ def _atom(fy_end, sector, row, kt, activity_basis, factor_source, process="",
 def agriculture_atoms(fy_end):
     from pkinv.sectors.agriculture import air_pollutants as ap
     from pkinv.sectors.agriculture import fiscal_activity as fa
-    data = fa.data_for_fiscal_year(fy_end)
     out = []
-    for r in ap.compute(data):
-        sub = r["subitem"].lower()
-        livestock = any(w in sub for w in ("cattle", "buffalo", "pasture", "manure",
-                                           "housing", "storage", "application"))
-        basis = "calendar_projection" if livestock else "observed_fiscal"
-        out.append(_atom(fy_end, "agriculture", r, r["emissions_kt"], basis,
-                         "agriculture EF registry (EMEP/IPCC per stream)"))
+    for method, configuration in (("tan", conf.REFERENCE),
+                                  ("ipcc", getattr(conf, "IPCC_REFERENCE", "S_IPCC"))):
+        data = fa.data_for_fiscal_year(fy_end)
+        data.nitrogen_method = method
+        for r in ap.compute(data):
+            sub = r["subitem"].lower()
+            livestock = any(w in sub for w in ("cattle", "buffalo", "pasture", "manure",
+                                               "housing", "storage", "application"))
+            basis = "census_anchored_reconstruction" if livestock else "observed_fiscal"
+            atom = _atom(fy_end, "agriculture", r, r["emissions_kt"], basis,
+                         "agriculture EF registry (EMEP/IPCC per stream)")
+            atom["configuration_id"] = configuration
+            out.append(atom)
     return out
 
 
@@ -184,6 +202,7 @@ def residential_atoms(fy_end):
         kt = r["emissions_kt"] * series[stream] / ref[stream]
         basis = (ts.dung_survey_basis(fy_end) if stream == "Dung cake"
                  else word(stream))
+        r = dict(r, activity_scale=series[stream] / ref[stream])
         out.append(_atom(fy_end, "residential", r, kt, basis,
                          "Andreae 2019 biofuel / EMEP 1.A.4 fossil", fuel=stream))
     # configuration L: dung rows on the herd-scaled nitrogen ledger, every other
@@ -195,6 +214,8 @@ def residential_atoms(fy_end):
             kt, basis = r["emissions_kt"] * herd, "reconstructed"
         else:
             kt, basis = r["emissions_kt"] * series[stream] / ref[stream], word(stream)
+        r = dict(r, activity_scale=kt / r["emissions_kt"] if r["emissions_kt"] else 1.0,
+                 dung_basis=conf.ALTERNATIVE_DUNG_BASIS)
         a = _atom(fy_end, "residential", r, kt, basis,
                   "Andreae 2019 biofuel / EMEP 1.A.4 fossil", fuel=stream)
         a["configuration_id"] = conf.LEDGER_SERIES
@@ -322,8 +343,8 @@ def admitted_remainder_fraction(fy_end, screening_fuel):
 def power_screening_rows(fy_end):
     """BOTH scenario ends since the absence-screening round: the uncontrolled
     default and the controlled case (every unit credited with the named held-table
-    control). The pair brackets what the fleet emits GIVEN the control inventory is
-    unknown; neither is an estimate (see power.air_pollutants.CONTROLLED_BASIS).
+    control). These are conditional technology cases; unresolved operating controls
+    prevent treating them as mathematical bounds or central estimates.
     GRID ONLY since rc58: captive gas is priced once, in the industry atoms.
 
     NARROWED AT rc60. Oil and diesel SO2 is now estimated per station, so those two cells no
@@ -424,10 +445,10 @@ def coverage_rows(atoms):
                         gap_id="air-power-controlled",
                         note=("the screening PAIR (uncontrolled and controlled-case "
                               "scenario ends) prices this species in power_air_"
-                              "screening_fy2015_16_fy2023_24.csv, joined per period in "
-                              "pakemis_air_absence_screening_by_year.csv; the control "
-                              "inventory exists at NEPRA unpublished, so no estimate "
-                              "enters the covered panel" if screened else
+                              "screening_fy2015_16_fy2024_25.csv, joined per period in "
+                              "pakemis_air_absence_screening_by_year.csv; public plant "
+                              "design evidence does not establish annual control operation, "
+                              "so no central estimate enters the covered panel" if screened else
                               "not in the AP-42 screening set (power VOC is not NMVOC; "
                               "no BC or NH3 factor screened)"))
                 elif module == "aviation" and pol == "NMVOC":
@@ -450,6 +471,57 @@ def coverage_rows(atoms):
                         % ((pid, module, pol), os.path.relpath(ABSENCES)))
                 rows.append(cell)
     return rows
+
+
+def source_coverage_rows(atoms):
+    """Coverage at an emitting-process boundary, including known omitted classes.
+
+    A module cell can contain an estimate and a material omission simultaneously.
+    This table retains both; the module rectangle remains a navigation summary.
+    """
+    from pkinv.sectors.industry import air_pollutants as classes
+    from pkinv.core.air_factors import factor
+    ref = [a for a in atoms if a["configuration_id"] == conf.REFERENCE]
+    sources = {(a["sector_id"], a["source_class_id"]): a["process"] for a in ref}
+    register = {(c["reporting_sector"], c["source_class_id"]): c for c in classes.classes()}
+    sources.update({key: c["equipment_type"] for key, c in register.items()})
+    omissions = {
+        ("transport", "transport:off_road_machinery"): "separate 1.A.4.c activity; no admitted air factor layer",
+        ("transport", "transport:resuspended_road_dust"): "not estimated; tyre/brake and surface wear do not include resuspension",
+        ("residential", "residential:household_generators"): "stationary generator air factors not admitted",
+        ("waste", "waste:incineration_treatment"): "no supported national treatment/incineration air estimate",
+        ("power", "power:coal_stack"): "coal controls/fuel analyses unresolved; separate screening scenarios",
+        ("power", "power:gas_stack"): "gas fleet control/technology detail unresolved; separate screening scenarios",
+        ("power", "power:bagasse_stack"): "control and size-resolved stack release unresolved; separate screening scenarios",
+    }
+    sources.update({key: "omitted_process" for key in omissions})
+    measured = {(a["period_id"], a["sector_id"], a["source_class_id"], a["pollutant"]): a for a in ref}
+    out = []
+    for year in YEARS:
+        pid = period_id(year)
+        for (sector, source), process in sorted(sources.items()):
+            c = register.get((sector, source))
+            applicable = {factor(e)["pollutant"] for e in c["ef_ids"].split(";") if e} if c else set()
+            for pol in CORE7:
+                a = measured.get((pid, sector, source, pol))
+                state, maturity, note = "NE", "not_estimated", "no admitted estimate for this source-process/species/year"
+                if a:
+                    state, maturity = "E", a["maturity"]
+                    note = "supported estimate; other source classes are independent coverage cells"
+                elif (sector, source) in omissions:
+                    note = omissions[(sector, source)]
+                elif c and c["status"] == "IE":
+                    state, maturity, note = "IE", "included_elsewhere", "included in " + c["ie_target_class"]
+                elif c and c["status"] == "typed_absent":
+                    note = "%s: %s" % (c["gap_id"], c["note"])
+                elif c and pol not in applicable:
+                    note = "the admitted factors for this class do not estimate this species"
+                elif sector == "residential" and source.endswith(("Natural gas", "LPG", "Kerosene")) and pol == "NH3":
+                    state, maturity, note = "NA", "not_applicable", "EMEP small-combustion table marks NH3 not applicable"
+                out.append(dict(period_id=pid, sector_id=sector, source_class_id=source,
+                                process=process, pollutant=pol, state=state,
+                                maturity=maturity, coverage_scope=SCOPE, note=note))
+    return out
 
 
 # --- build + closures ------------------------------------------------------------
@@ -500,9 +572,7 @@ def build():
         for a in atoms:
             if a["core7"] != "yes":
                 continue
-            use = (a["configuration_id"] == cfg
-                   or (a["configuration_id"] == conf.REFERENCE
-                       and a["sector_id"] not in own_sectors[cfg]))
+            use = a["configuration_id"] == atom_configuration(cfg, a["sector_id"])
             if not use:
                 continue
             rollup[(a["period_id"], cfg, a["sector_id"], a["category"],
@@ -518,6 +588,7 @@ def build():
 
 
 def check(atoms, rollup_rows, coverage, power):
+    check_species_containment(atoms)
     # 1. each configuration's rollup is exactly its own core atoms plus the
     #    configuration-invariant reference atoms, per (period, sector, pollutant)
     own_sectors = defaultdict(set)
@@ -528,9 +599,7 @@ def check(atoms, rollup_rows, coverage, power):
         for a in atoms:
             if a["core7"] != "yes":
                 continue
-            if (a["configuration_id"] == cfg
-                    or (a["configuration_id"] == conf.REFERENCE
-                        and a["sector_id"] not in own_sectors[cfg])):
+            if a["configuration_id"] == atom_configuration(cfg, a["sector_id"]):
                 want[(a["period_id"], cfg, a["sector_id"],
                       a["pollutant"])] += a["emissions_Gg"]
     got = defaultdict(float)
@@ -546,7 +615,7 @@ def check(atoms, rollup_rows, coverage, power):
         if cfg == conf.LEDGER_SERIES and sec != "residential":
             assert abs(v - want[(pid, conf.REFERENCE, sec, pol)]) < 1e-12, (pid, sec, pol)
     # 2. the coverage matrix is exactly 630 typed cells and every E has mass rows
-    assert len(coverage) == 9 * len(MODULES) * len(CORE7), len(coverage)
+    assert len(coverage) == len(YEARS) * len(MODULES) * len(CORE7), len(coverage)
     for c in coverage:
         assert c["state"] in ("E", "NE", "IE", "NO", "NA"), c
         key = (c["period_id"], conf.REFERENCE, c["sector_id"], c["pollutant"])
@@ -572,6 +641,31 @@ def check(atoms, rollup_rows, coverage, power):
                 assert (c["state"] == "E") == (c["pollutant"] in covered), c
 
 
+def check_species_containment(atoms):
+    """Check nested species only where the same emitting process supplies both.
+
+    A source lacking coarse PM has no invented PM10 value. Aviation LTO and cruise,
+    road wear and exhaust, and the two residential configurations remain distinct.
+    """
+    groups = defaultdict(lambda: defaultdict(float))
+    for row in atoms:
+        mass = float(row["emissions_Gg"])
+        if mass < 0:
+            raise ValueError("negative native air mass at " + str(row))
+        key = tuple(row.get(k, "") for k in
+                    ("period_id", "configuration_id", "sector_id", "source_class_id", "process"))
+        groups[key][row["pollutant"]] += mass
+    for key, species in groups.items():
+        for small, large in (("PM2.5", "PM10"), ("PM10", "TSP"), ("PM2.5", "TSP")):
+            if small in species and large in species:
+                if species[small] > species[large] + 1e-9 * max(1, species[large]):
+                    raise ValueError("inconsistent nested particulate masses %s>%s at %r" % (small, large, key))
+        if "PM2.5" in species:
+            components = species.get("BC", 0) + species.get("OC", 0)
+            if components > species["PM2.5"] + 1e-9 * max(1, species["PM2.5"]):
+                raise ValueError("BC+OC exceeds matched primary PM2.5 at %r" % (key,))
+
+
 def _write(path, fields, rows, fmt):
     with io.open(path, "w", newline="", encoding="utf-8") as f:
         w = csv.DictWriter(f, fields, lineterminator="\n")
@@ -589,9 +683,20 @@ def main():
     _write(ROLLUP_OUT, ROLLUP_FIELDS, rollup_rows,
            lambda r: dict(r, emissions_Gg="%.6f" % r["emissions_Gg"]))
     _write(COVERAGE_OUT, COVERAGE_FIELDS, coverage, lambda r: r)
+    _write(SOURCE_COVERAGE_OUT, SOURCE_COVERAGE_FIELDS,
+           source_coverage_rows(atoms), lambda r: r)
     _write(POWER_OUT, POWER_FIELDS, power,
            lambda r: dict(r, emissions_kt="%.6f" % r["emissions_kt"],
                           uncert_pct="%.1f" % r["uncert_pct"]))
+    # Explicit old-period compatibility views. Their filenames still describe
+    # their contents; new core rows are never appended to a nine-year filename.
+    old = lambda r: int(r["period_id"][-2:]) <= 24
+    _write(asset_path(OUTPUTS, "pakemis_air_annual_fy2015_16_fy2023_24.csv"),
+           ROLLUP_FIELDS, [r for r in rollup_rows if old(r)],
+           lambda r: dict(r, emissions_Gg="%.6f" % r["emissions_Gg"]))
+    _write(asset_path(OUTPUTS, "power_air_screening_fy2015_16_fy2023_24.csv"),
+           POWER_FIELDS, [r for r in power if old(r)],
+           lambda r: dict(r, emissions_kt="%.6f" % r["emissions_kt"], uncert_pct="%.1f" % r["uncert_pct"]))
     n_e = sum(1 for c in coverage if c["state"] == "E")
     print("air panel: %d atoms, %d rollup rows over %d periods; coverage %d cells "
           "(%d E, %d NE); screening %d rows"

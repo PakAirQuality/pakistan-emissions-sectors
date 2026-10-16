@@ -18,19 +18,19 @@ activity,livestock head: goats,"PakEmis: the census re-base. FAOSTAT: stocks pan
 activity,livestock head: camels,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",1511340,1163000,head,1.300,PakEmis higher by 30 per cent
 activity,livestock head: poultry,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",2065000000,2064210000,head,1.000,PakEmis higher by 0 per cent
 activity,livestock head: all six species,summed over the species both carry,2310524371,2288990000,head,1.009,"AGREES to 0.9 per cent, and the residual runs the WRONG WAY for the headline: more animals means more excreted nitrogen, not less"
-pool,manure on pasture,"PakEmis pool against FAOSTAT item 5063, CO2eq AR5, calendar 2023",7.7109,27.2912,Mt CO2e AR5,0.283,"+19.580 Mt, 65.3 per cent of the gap"
-pool,synthetic fertiliser,"PakEmis pool against FAOSTAT item 5061, CO2eq AR5, calendar 2023",12.2477,21.0156,Mt CO2e AR5,0.583,"+8.768 Mt, 29.3 per cent of the gap"
-pool,crop residues,"PakEmis pool against FAOSTAT item 5064, CO2eq AR5, calendar 2023",0.6309,3.3284,Mt CO2e AR5,0.190,"+2.697 Mt, 9.0 per cent of the gap"
-pool,manure applied to soils,"PakEmis pool against FAOSTAT item 5062, CO2eq AR5, calendar 2023",7.9364,6.8645,Mt CO2e AR5,1.156,"-1.072 Mt, -3.6 per cent of the gap - PakEmis is HIGHER here, which the factor vintage cannot explain and the nitrogen partition can"
+pool,manure on pasture,"PakEmis pool against FAOSTAT item 5063, CO2eq AR5, calendar 2023",6.7137,27.2912,Mt CO2e AR5,0.246,"+20.577 Mt, 68.6 per cent of the gap"
+pool,synthetic fertiliser,"PakEmis pool against FAOSTAT item 5061, CO2eq AR5, calendar 2023",12.2477,21.0156,Mt CO2e AR5,0.583,"+8.768 Mt, 29.2 per cent of the gap"
+pool,crop residues,"PakEmis pool against FAOSTAT item 5064, CO2eq AR5, calendar 2023",0.6339,3.3284,Mt CO2e AR5,0.190,"+2.694 Mt, 9.0 per cent of the gap"
+pool,manure applied to soils,"PakEmis pool against FAOSTAT item 5062, CO2eq AR5, calendar 2023",8.8984,6.8645,Mt CO2e AR5,1.296,"-2.034 Mt, -6.8 per cent of the gap - PakEmis is HIGHER here, which the factor vintage cannot explain and the nitrogen partition can"
 pool_leg,synthetic fertiliser (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,7.6086,,Mt CO2e AR5,,
-pool_leg,manure applied to soils (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,4.8618,,Mt CO2e AR5,,
+pool_leg,manure applied to soils (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,5.2470,,Mt CO2e AR5,,
 pool_leg,synthetic fertiliser (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,4.6392,,Mt CO2e AR5,,
-pool_leg,manure on pasture (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,4.1903,,Mt CO2e AR5,,
+pool_leg,manure applied to soils (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,3.6513,,Mt CO2e AR5,,
 pool_leg,manure on pasture (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,3.5205,,Mt CO2e AR5,,
-pool_leg,manure applied to soils (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,3.0746,,Mt CO2e AR5,,
-pool_leg,crop residues (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,0.4436,,Mt CO2e AR5,,
-pool_leg,crop residues (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,0.1874,,Mt CO2e AR5,,
+pool_leg,manure on pasture (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,3.1931,,Mt CO2e AR5,,
+pool_leg,crop residues (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,0.4457,,Mt CO2e AR5,,
+pool_leg,crop residues (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,0.1883,,Mt CO2e AR5,,
 attribution,"managed soils, as reported",PakEmis main case against FAOSTAT,28.5300,58.5000,Mt CO2e AR5,0.488,the headline ratio; the gap to account for is 29.97 Mt
 attribution,"managed soils, at FAOSTAT's EF1 vintage",the repository's own named scenario: 2006 aggregate EF1 0.010 in place of the 2019 Refinement's 0.005 for dry climates,40.4300,58.5000,Mt CO2e AR5,0.691,"closes 11.90 Mt, 40 per cent of the gap - the single largest identified term"
 attribution,"managed soils, at BOTH of FAOSTAT's 2006 direct factors","the EF1 scenario above plus the pasture factor at its 2006 aggregate; the two are DISJOINT - EF1 scales synthetic fertiliser, organic manure and crop residues, EF3PRP scales the two pasture rows, and no subitem is in both sets",54.7200,58.5000,Mt CO2e AR5,0.935,"closes 26.19 Mt, 87 per cent of the gap. The comparator's direct-factor vintage is therefore almost the whole story; what is left is 3.78 Mt in the indirect factors (EF4 and EF5 also changed between vintages) and the nitrogen partition"
-attribution,unexplained after activity and EF1 vintage,neither nitrogen nor the EF1 vintage; localised by pool since the four FAOSTAT items were acquired (2026-09-30),18.0700,,Mt CO2e AR5,,"LOCALISED: manure on pasture carries +19.580 Mt, 65.3 per cent of the whole gap, and its factor is the same climate disaggregation - EF3PRP for cattle 0.002 dry here against the 2006 default 0.02. The EF1 scenario above moves only the EF1 pools, which is why it left a remainder this size"
+attribution,unexplained after activity and EF1 vintage,neither nitrogen nor the EF1 vintage; localised by pool since the four FAOSTAT items were acquired (2026-09-30),18.0700,,Mt CO2e AR5,,"LOCALISED: manure on pasture carries +20.577 Mt, 68.6 per cent of the whole gap, and its factor is the same climate disaggregation - EF3PRP for cattle 0.002 dry here against the 2006 default 0.02. The EF1 scenario above moves only the EF1 pools, which is why it left a remainder this size"

@@ -6,7 +6,7 @@ READ-AND-PLOT ONLY. Every number drawn is read from a released product; the only
 summing cells, summing stream masses and dividing by a total.
 
 Inputs (products of the release this is run against):
-  outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc   the nine-period cube
+  outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc   the nine-period cube
   outputs/pakemis_stream_support_ledger.csv                     mass x spatial support
   outputs/pakemis_spatial_weights_by_year.csv                   surface and vintage per stream
   outputs/pakemis_spatial_unallocated_by_year.csv               the mass NOT on the map
@@ -63,7 +63,7 @@ OUT = REPO / "paper_national" / "figures"
 PREVIEWS = OUT / "rewrite_inputs" / "previews"
 SCRIPT = "scripts/make_fig_ghg_grid.py"
 
-CUBE = REPO / "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2023_24.nc"
+CUBE = REPO / "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc"
 LEDGER = REPO / "outputs/pakemis_stream_support_ledger.csv"
 WEIGHTS = REPO / "outputs/pakemis_spatial_weights_by_year.csv"
 UNALLOC = REPO / "outputs/pakemis_spatial_unallocated_by_year.csv"
@@ -368,7 +368,7 @@ def stack_panel(ax, df, gas, letter, first):
                 ax.text(x, b + v / 2, "%.0f" % v, ha="center", va="center",
                         fontsize=S.SIZE_FLOOR, color=S.PAPER if dark else S.INK, zorder=4)
         bottom = bottom + vals
-    ax.set_xticks(xs, [S.fiscal(p) if i % 4 == 0 else "" for i, p in enumerate(df.period_id)])
+    ax.set_xticks(xs, [S.fiscal(p) if i in (0, len(df) // 2, len(df) - 1) else "" for i, p in enumerate(df.period_id)])
     ax.set_xlim(-0.6, len(df) - 0.4)
     ax.set_ylim(0, 100)
     ax.set_yticks([0, 25, 50, 75, 100], None if first else ["", "", "", "", ""])
@@ -490,10 +490,11 @@ bsrc = json.load(open(BSRC))
 
 def not_own(df, row):
     """The share placed by a weight that is NOT the period's own observed activity."""
-    return 100.0 - df.iloc[row]["That year's observed activity"] - df.iloc[row]["Retained at province level"]
+    return 100.0 - df.iloc[row]["Observed own-period activity"] - df.iloc[row]["Retained at province level"]
 
 
-ref_not_own = {"CO2": not_own(basis_co2, -1), "CH4": not_own(basis_ch4, -1), "N2O": not_own(basis_n2o, -1)}
+reference_row = next(i for i, p in enumerate(periods) if p == YEAR)
+ref_not_own = {"CO2": not_own(basis_co2, reference_row), "CH4": not_own(basis_ch4, reference_row), "N2O": not_own(basis_n2o, reference_row)}
 first_not_own = {"CO2": not_own(basis_co2, 0), "CH4": not_own(basis_ch4, 0), "N2O": not_own(basis_n2o, 0)}
 zero_text = "; ".join("%s %s" % (g, "{:,}".format(map_facts[g]["zero_cells"])) for g in GASES)
 below_text = "; ".join("%s %s" % (g, "{:,}".format(map_facts[g]["cells_below_lower_limit"])) for g in GASES)

@@ -22,6 +22,8 @@ from pkinv.paths import OUTPUTS
 from pkinv.sectors.ippu import cement, trade_evidence as te
 from pkinv.sectors.ippu.data import IppuData
 from pkinv.core.io import read_rows
+from pkinv.core.reporting_window import CORE_FY_ENDS, CORE_PERIOD_IDS
+from pkinv.core.configurations import REFERENCE
 
 
 def _rows(name):
@@ -139,7 +141,7 @@ class TestTheGateGovernsTheBalance(unittest.TestCase):
     def test_every_built_year_carries_an_observed_trade_term(self):
         """Every built year. A built cement year with trade_status anything but observed
         would be the failure this module exists for."""
-        for year in range(2016, 2025):
+        for year in CORE_FY_ENDS:
             balance = cement.clinker_balance(self.data, year=year,
                                              activity_source=self.data
                                              .cement_activity_source(year))
@@ -193,7 +195,7 @@ class TestTheBenchmarksStayOutOfEveryTotal(unittest.TestCase):
         values = {round(float(r["co2e_Mt_AR5"]), 5) for r in self.benchmarks}
         products = ("national_all_sectors.csv", "national_all_sectors_ledger.csv",
                     "pakemis_national_series.csv", "pakemis_atomic_annual.csv",
-                    "pakemis_annual_fy2015_16_fy2023_24.csv")
+                    "pakemis_annual_fy2015_16_fy2024_25.csv")
         for name in products:
             for row in _rows(name):
                 raw = row.get("co2e_Mt_AR5") or ""
@@ -223,7 +225,7 @@ class TestTheCoverageMatrixSaysNE(unittest.TestCase):
     def setUp(self):
         self.cells = [r for r in _rows("pakemis_coverage_matrix.csv")
                       if r["ipcc_code"] == "2.A.1"
-                      and r["configuration_id"] == "REF_2023_24"]
+                      and r["configuration_id"] == REFERENCE]
 
     def test_cement_is_estimated_in_every_year_now(self):
         """Both halves are held in all nine years, so there is no split left to show.
@@ -236,7 +238,7 @@ class TestTheCoverageMatrixSaysNE(unittest.TestCase):
         are.
         """
         by_year = {r["period_label"]: r["state"] for r in self.cells}
-        self.assertEqual(len(by_year), 9)
+        self.assertEqual(set(by_year), set(CORE_PERIOD_IDS))
         self.assertEqual({s for s in by_year.values()}, {"estimated"})
 
     def test_every_NE_year_names_the_gap_that_would_close_it(self):
@@ -274,7 +276,8 @@ class TestTheSourcesAreBridgedRatherThanJoined(unittest.TestCase):
         import collections
         activity = collections.Counter(r["period_id"] for r in self.rows
                                        if not r["overlap_with"])
-        self.assertEqual(len(activity), 8)          # nine years, one of them the overlap
+        overlap_periods = {r["period_id"] for r in self.rows if r["overlap_with"]}
+        self.assertEqual(set(activity) | overlap_periods, set(CORE_PERIOD_IDS))
         self.assertEqual(set(activity.values()), {1})
 
     def test_the_committed_activity_matches_the_document(self):

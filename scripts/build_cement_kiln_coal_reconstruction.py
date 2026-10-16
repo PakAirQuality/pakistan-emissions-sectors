@@ -79,7 +79,8 @@ COAL_SHARE = (0.85, 0.95, 1.00)    # of kiln heat, national band, declared
 NCV = (24.0, 25.8, 27.0)           # TJ/Gg, imported bituminous around IPCC OBC
 CO2_KG_TJ = 94600.0                # IPCC 2006 Table 2.3 Other Bituminous Coal
 LEGACY_FRACTION = 0.75
-YEARS = list(range(2016, 2025))
+from pkinv.core.reporting_window import CORE_FY_ENDS
+YEARS = CORE_FY_ENDS
 
 PRODUCER_SERIES = asset_path(DATA, "activity", "ippu", "company_clinker_series.csv")
 # A kiln cannot fire below its own physics. The lowest figure any held source names for a Pakistani

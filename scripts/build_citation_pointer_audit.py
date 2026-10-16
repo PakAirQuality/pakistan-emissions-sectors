@@ -90,8 +90,8 @@ POINTER = re.compile(
     r"Fig[-. ]|Statement|Chapter|Section|Sec[. ]|Mod\s|Exhibit|Schedule|[Pp]ara|"
     r"Part\s+[IVX0-9]|row\s+\d|line\s+\d)")
 # The per-row citation columns this project's ingests use.
-SOURCE_COLUMNS = ("source", "source_reference", "source_ref", "primary_source",
-                  "citation", "source_note", "reference")
+SOURCE_COLUMNS = ("source", "source_reference", "source_ref", "source_table",
+                  "primary_source", "citation", "source_note", "reference")
 # A source whose document IS a dataset: the pointer notion is a file and a variable.
 DATASET_MARKERS = (".csv", ".json", ".geojson", ".npy", ".nc", ".zip", ".xlsx",
                    "api", "ourairports", "climate trace", "climatetrace", "era5",

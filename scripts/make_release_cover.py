@@ -86,15 +86,13 @@ def render():
         r"\begin{center}\small",
         r"\setlength{\fboxsep}{4pt}%",
         r"\fbox{\begin{minipage}{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}\footnotesize",
-        r"\textbf{Release provenance.} This report documents one release of %s "
-        r"and is generated against it. Where a sector report and the release's generated "
-        r"product catalogue (\texttt{outputs/pakemis\_product\_catalog.csv}) disagree, "
-        r"the catalogue is authoritative: sector reports are revised on their own cadence "
-        r"and may lag the products.\\[2pt]" % release.PRODUCT,
+        r"\textbf{Release provenance.} This document describes %s under the period, "
+        r"configuration and source boundaries specified in its methods. The identifiers "
+        r"below link it to the accompanying products and source register.\\[2pt]" % release.PRODUCT,
         # The value column WRAPS. Fixed-width `l` made the tabular wider than the box in a
         # two-column layout - "448.00 Mt CO2e (AR5) under L; 442.88 Mt under S" does not fit a
         # 3.4-inch column - so the frame fitted and its contents did not.
-        r"\begin{tabular}{@{}l@{\hspace{1em}}p{0.62\linewidth}@{}}",
+        r"\begin{tabular}{@{}p{0.32\linewidth}@{\hspace{0.03\linewidth}}p{0.65\linewidth}@{}}",
         r"Release version & \texttt{%s} \\" % _tex(m["version"]),
         r"Commit & \texttt{%s}%s \\" % (_tex(commit[:12]),
                                         " (working tree modified)" if dirty else ""),
@@ -103,11 +101,9 @@ def render():
            "" if period["harmonised"] else ", not harmonised"),
         # The full description is a sentence and overflows the box; the code and basis are
         # what a reader needs to know which of the two national results this report is.
-        r"Baseline configuration & %s (%s basis) \\"
-        % (_tex(m["baseline_configuration"]["code"].split(":")[0]),
-           _tex(m["baseline_configuration"]["basis"])),
+        r"Reference & S\_TAN (household survey; TAN nitrogen) \\",
         # the reference first, each under its own letter: S (survey dung) since rc67
-        r"National total & %.2f Mt \COe{} (AR5) under S, the reference; %.2f Mt under L \\"
+        r"FY2023--24 total & %.2f Mt \COe{} (AR5) under S\_TAN, the reference; %.2f Mt under L\_TAN \\"
         % (totals["S"]["co2e_Mt_AR5"], totals["L"]["co2e_Mt_AR5"]),
         r"Release manifest & \texttt{%s} (SHA-256 of "
         r"\texttt{outputs/release\_manifest.json}, first 16) \\" % manifest_digest()[:16],

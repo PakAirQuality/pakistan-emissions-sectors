@@ -8,6 +8,8 @@ import csv
 import os
 import sys
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from pkinv.core.configurations import REFERENCE
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
@@ -42,9 +44,12 @@ class AmmoniaTier1(unittest.TestCase):
         lane keeps the screening's pathway rows as diagnostics."""
         rows = _rows("outputs/semantic/fact_annual.csv")
         total = sum(float(r["co2e_Mt_AR5"]) for r in rows
-                    if r["period_id"] == "FY2023-24" and r["configuration_id"] == "REF_2023_24")
-        self.assertAlmostEqual(total, 444.95542, places=4)   # rc67 reference re-base (was 451.85782)
-        ammonia_in_ref = [r for r in rows if r["configuration_id"] == "REF_2023_24"
+                    if r["period_id"] == "FY2023-24" and r["configuration_id"] == REFERENCE)
+        expected = sum(float(r["co2e_Mt_AR5"]) for r in _rows("outputs/pakemis_atomic_annual.csv")
+                       if r["period_id"] == REFERENCE_PERIOD and r["co2e_Mt_AR5"])
+        self.assertGreater(total, 0)
+        self.assertAlmostEqual(total, expected, places=5)
+        ammonia_in_ref = [r for r in rows if r["configuration_id"] == REFERENCE
                           and r["ipcc_code"] == "2.B.1" and r["period_id"] == "FY2023-24"]
         self.assertEqual(len(ammonia_in_ref), 1)
         self.assertAlmostEqual(float(ammonia_in_ref[0]["co2e_Mt_AR5"]), 3.243, places=2)

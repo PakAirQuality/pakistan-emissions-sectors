@@ -54,7 +54,7 @@ from pkinv.core.io import read_rows
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = asset_path(ROOT, "outputs", "pakemis_air_lahore_so2_attribution.csv")
-CFG = "REF_2023_24"
+CFG = "S_TAN"
 ADM2 = "punjab_lahore"
 POLLUTANT = "SO2"
 PERIODS = tuple("FY%d-%02d" % (y, (y + 1) % 100) for y in range(2015, 2024))

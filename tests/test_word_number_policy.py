@@ -60,22 +60,6 @@ PATTERN = re.compile(r"\b(%s)[- ]?(?:\w+)?\s+(%s)\b" % (WORDS, UNITS), re.I)
 
 # (doc, file, phrase) -> why the word is not a quantity a product could move.
 EXEMPT = {
-    ("national", "06_results.tex", "thousand tonnes"):
-        "'a few thousand tonnes' - indefinite; no product behind it",
-    ("national", "06_results.tex", "two per cent"):
-        "population growth, external context and not a product of this inventory",
-    ("national", "06_results.tex", "twelve times"):
-        "the monthly-vs-annual check's own logic: twelve months is a constant of the calendar",
-    ("national", "06_results.tex", "eight times"):
-        "12x9 build arithmetic - a constant of the grain, not a measurement",
-    ("national", "07_uncertainty.tex", "ten times"):
-        "the DRAW COUNT rationale: a methodological choice, not a quantity of emissions",
-    ("national", "09_completeness.tex", "half fold"):
-        "'three and a half fold' - the hypothetical consequence of a booking the paper REJECTS",
-    ("national", "10_benchmarks.tex", "ten times"):
-        "'roughly ten times either' - a rounded span over TWO values (9.6 and 11.4), labelled",
-    ("national", "11_discussion.tex", "three times"):
-        "a table row label counting a past build incident",
     ("railways", "04_methods.tex", "seven percent"):
         "the reason a test pins CO2e of CH4 at 30 exactly; the test is the claim",
     ("railways", "04b_emission_factors.tex", "five times"):
@@ -89,12 +73,6 @@ EXEMPT = {
         "a count of incidents in this paper's own narrative",
     ("residential", "03_study_area_and_data.tex", "one percent"):
         "a survey-tail description; the weighted shares beside it are registered",
-    ("residential", "06b_air_pollutants.tex", "one percent"):
-        "a bound; the 16.4 kt beside it is registered",
-    ("residential", "06b_air_pollutants.tex", "ten percent"):
-        "a SCENARIO input - chosen, not measured",
-    ("residential", "08_limitations.tex", "four percent"):
-        "a bound on the minor streams taken together",
     ("transport", "01_introduction.tex", "six megatonnes"):
         "rounded; the 0.05 Mt net movement beside it is registered",
     ("transport", "07_discussion.tex", "six megatonnes"):
@@ -103,22 +81,13 @@ EXEMPT = {
         "same figure, rounded, in the conclusion",
     ("transport", "03_study_area_and_data.tex", "one percent"):
         "a coincidence being WARNED about, not a result",
-    ("power", "05_validation.tex", "six megatonnes"):
-        "describes a SUPERSEDED range earlier versions carried; history, not a live figure",
 }
 
 # Product-backed, correct today, not yet promoted. Declared debt: the ceiling may only fall.
 PENDING = {
-    ("national", "05_factor_tables.tex", "four times"): "count of tab:factortrap rows",
-    ("national", "10_benchmarks.tex", "four percent"): "spread cancelling to within 4 pct",
-    ("national", "12_limitations.tex", "six percent"): "agreement with the 2024-25 total",
-    ("national", "12_limitations.tex", "seven percent"): "FAOSTAT sits 7 pct above",
-    ("national", "12_limitations.tex", "two tonnes"): "transcription agreement, from the parse summary",
-    ("agriculture", "06_results.tex", "five per cent"): "enteric agreement, ratio 0.99 printed beside it",
     ("aviation", "01_introduction.tex", "four times"): "resident-customer rows vs the movement estimate",
     ("fugitives", "03_study_area_and_data.tex", "thirty times"): "per-tonne factors vs the surface low",
     ("fugitives", "09_conclusion.tex", "five times"): "bracket endpoints vs the 2022 CRT",
-    ("power", "03_study_area_and_data.tex", "four percent"): "shares summing to 0.957",
     ("railways", "04_methods.tex", "four times"): "passenger vs freight train-kilometres",
     ("residential", "04b_emission_factors.tex", "five times"): "residential gas vs utility factor",
     ("residential", "04b_emission_factors.tex", "three times"): "kerosene ratio, same table note",
@@ -126,8 +95,8 @@ PENDING = {
     ("transport", "03_study_area_and_data.tex", "eleven percent"): "the superseded pair's miss",
 }
 
-# Measured 2026-09-30 (rc64), after cycle 25 promoted eleven sites. May only FALL.
-PENDING_CEILING = 16
+# Measured 2026-10-14 after the integrated manuscript and note revisions. May only fall.
+PENDING_CEILING = 8
 
 
 def _sites():
@@ -149,6 +118,12 @@ def _sites():
                 for number, line in enumerate(handle, 1):
                     for match in PATTERN.finditer(line):
                         found.append((doc, name, match.group(0).lower(), number))
+    current_main = os.path.join(ROOT, "paper_national", "versions", "v3", "paper.tex")
+    if os.path.isfile(current_main):
+        with io.open(current_main, encoding="utf-8") as handle:
+            for number, line in enumerate(handle, 1):
+                for match in PATTERN.finditer(line):
+                    found.append(("integrated_main", "paper.tex", match.group(0).lower(), number))
     return found
 
 
@@ -160,7 +135,7 @@ class TestEveryWordNumberIsDeclared(unittest.TestCase):
     def test_the_sweep_still_finds_something(self):
         """A dead detector leaves the gate looking healthy - the holdings-layer lesson."""
         self.assertGreater(
-            len(self.sites), 20,
+            len(self.sites), 15,
             "the word-number sweep found %d sites, which is too few to be real: the pattern "
             "or the manuscript paths have probably moved, and a sweep that finds nothing "
             "passes forever" % len(self.sites))

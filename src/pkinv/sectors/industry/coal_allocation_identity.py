@@ -30,16 +30,19 @@ brick column's 81 per cent fall - 8,184 to 1,564 kt - happens inside that constr
 exactly the years the Thar fleet ramped. The product emits both windows so the claim carries
 its own scope.
 
-THIRD, THE BOOKED COLUMN AGAINST THE FLEET'S OWN EVIDENCE. The brick fleet was counted once,
-in late 2020, at 10,394 kilns on one reading and 9,486 on the other, and the fleet product
-publishes coal bounds from that count under two declared firing seasons. HDIP's booked column
-sits inside those bounds from FY2017-18 to FY2021-22, and BELOW the lower of them in
-FY2016-17, FY2022-23 and FY2023-24. At the reference year it is below by more than half.
+THIRD, THE BOOKED COLUMN AGAINST THE FLEET'S OWN EVIDENCE. The brick fleet was counted
+twice, in Punjab: 10,394 kilns in November 2020 on one reading and the July 2023 census on the
+other. A count is compared with the booked national column only in the fiscal year it was made,
+scaled to national by the Punjab kiln-count share (since rc68; until then both counts were
+carried into every year and set, Punjab-only, against the national column). In FY2020-21 the
+booked 8,678 kt sits inside the fleet's conditional range; in FY2023-24 the booked 1,129 kt is
+below the low case of 3,571 kt by about two thirds. In the other years nothing is compared,
+because nothing was counted.
 
 Read in kilns, at the survey's own 328.2 tonnes of coal per kiln-year, the booked column
-supports 24,936 firing kiln-years in FY2019-20 and 4,765 in FY2023-24 - from 2.4 times the
-counted fleet down to about half of it. A fleet counted once cannot have moved by that
-factor, so at least one end of the booked series is not a count of kilns burning coal.
+supports about 2.2 times the counted fleet in FY2020-21 and about 0.3 times it in FY2023-24.
+A fleet that size cannot have shrunk by that factor in three years, so at least one end of the
+booked series is not a count of kilns burning coal.
 
 WHAT THIS DOES NOT ESTABLISH. It does not say what brick coal was, and it does not license
 swapping the fleet estimate into the books - the fleet has no time axis at all, which is why
@@ -106,7 +109,7 @@ def _num(x):
 def build():
     supply = {r["fiscal_year"]: r for r in
               read_rows(asset_path(DATA, "activity", "industry", "coal_supply.csv"))
-              if r["period_coverage"] == "full_year" and r["revision_status"] == "final"}
+              if r["period_coverage"] == "full_year" and r["revision_status"] in ("final", "provisional")}
     # THE VINTAGE FILTER IS NOT OPTIONAL, and the supply reader above already has one.
     # coal_by_consumer.csv deliberately RETAINS superseded prints (its own banner: FY2023-24
     # brick kilns "1,564 kt provisional -> 1,129 kt final; the superseded provisional row is
@@ -121,13 +124,23 @@ def build():
         if r["coal_kt"] and r["revision_status"] in ("final", "provisional"):
             cons[r["fiscal_year"]][r["consumer"]] = float(r["coal_kt"])
 
+    # A DATED COUNT, COMPARED ONLY IN ITS OWN PERIOD AND AT NATIONAL SCOPE (rc68). Through rc67
+    # every period of the fleet-by-year product was read here, including the periods it marks
+    # "carried from 2020-11 - the fleet was counted once and this period is not that year",
+    # and the Punjab-only fleet was set against the NATIONAL booked column. That turned one
+    # count into an annual series and mixed two geographic scopes. The carried periods are a
+    # spatial frame, not activity; only the observation's own period is compared, scaled to
+    # national by the declared Punjab kiln-count share (the same scale-out as the cases).
+    from pkinv.sectors.industry.coal_reallocation import PUNJAB_KILN_SHARE
     fleet_bounds = collections.defaultdict(lambda: collections.defaultdict(
         lambda: [0.0, 0.0, 0.0]))
     for r in read_rows(asset_path(OUTPUTS, "pakemis_brick_kiln_fleet_by_year.csv")):
+        if not r["year_basis"].startswith("the observation's OWN period"):
+            continue
         acc = fleet_bounds[r["period_id"]][r["reading"]]
-        acc[0] += _num(r["coal_kt_low"]) or 0.0
-        acc[1] += _num(r["coal_kt_high"]) or 0.0
-        acc[2] += _num(r["kilns_total"]) or 0.0
+        acc[0] += (_num(r["coal_kt_low"]) or 0.0) / PUNJAB_KILN_SHARE
+        acc[1] += (_num(r["coal_kt_high"]) or 0.0) / PUNJAB_KILN_SHARE
+        acc[2] += (_num(r["kilns_total"]) or 0.0) / PUNJAB_KILN_SHARE
 
     years = sorted(y for y in supply if y in cons and "total" in cons[y])
     rows = []
@@ -181,6 +194,13 @@ def build():
     recent = [y for y in years if y >= "2019-20"]
     if len(recent) >= 2:
         windows.append((recent[0], recent[-1]))
+    if "2023-24" in cons:
+        # Retain the reviewed reference windows beside the extended endpoints;
+        # a new year must not silently erase the historical comparison.
+        windows.append((years[0], "2023-24"))
+        if "2019-20" in cons:
+            windows.append(("2019-20", "2023-24"))
+    windows = list(dict.fromkeys(windows))
     for first, last in windows:
         span = "FY%s..FY%s" % (first, last)
         tot_delta = cons[last]["total"] - cons[first]["total"]
@@ -208,18 +228,22 @@ def build():
 
     for period in sorted(fleet_bounds):
         y = period.replace("FY", "")
-        booked = cons.get(y, {}).get("brick_kilns")
+        from pkinv.sectors.industry import solid_fuels
+        try:
+            booked = solid_fuels.coal_kt(y, "brick_kilns")
+        except KeyError:
+            booked = None
         for reading, (lo, hi, kilns) in sorted(fleet_bounds[period].items()):
             implied = (booked * 1000.0 / ICIMOD_T_PER_KILN_YEAR) if booked else None
             if booked is None:
                 where = "the booked column has no value for this period"
             elif booked < lo:
-                where = ("BELOW the fleet's low bound by %.0f kt (%.0f%% of it)"
+                where = ("BELOW conditional fleet case by %.0f kt (%.0f%% of it); no annual physical floor"
                          % (lo - booked, 100 * booked / lo))
             elif booked > hi:
-                where = "ABOVE the fleet's high bound by %.0f kt" % (booked - hi)
+                where = "ABOVE conditional fleet case by %.0f kt; no annual physical ceiling" % (booked - hi)
             else:
-                where = "inside the fleet's bounds"
+                where = "inside the conditional fleet range; activity/operating status are not observed annually"
             rows.append({
                 "period_id": period, "row_kind": "brick_bound", "subject": reading,
                 "coal_imports_kt": "", "coal_production_kt": "", "supply_kt": "",

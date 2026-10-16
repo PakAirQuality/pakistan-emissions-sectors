@@ -136,7 +136,18 @@ class WasteData:
         multi-year loop over sectors would have hit it on the first year past the panel.
         """
         year = self.year if year is None else year
-        rows = [r for r in self.population if r["year"] == year]
+        # Population is fixed within a parameter ensemble. Index its rows once,
+        # preserving their order and references; uncertain fate parameters are
+        # still evaluated afresh in every draw. Replacing/extending the panel
+        # invalidates the index.
+        token = (id(self.population), len(self.population))
+        if getattr(self, "_population_index_token", None) != token:
+            index = {}
+            for row in self.population:
+                index.setdefault(row["year"], []).append(row)
+            self._population_index = index
+            self._population_index_token = token
+        rows = self._population_index.get(year, [])
         if not rows:
             years = sorted({r["year"] for r in self.population})
             raise KeyError(

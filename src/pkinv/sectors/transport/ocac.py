@@ -132,7 +132,12 @@ def parse_page(text, critical=CRITICAL_ROWS):
             continue
         tokens = re.split(r"\s{2,}", line)
         if tokens[0] == "SECTOR":
-            products = tokens[1:]
+            # FY2025-26 national pages print these two distinct headings with
+            # only one intervening space. Split the known pair, preserving
+            # genuine multiword headings such as 100 LL and TOTAL PRIOR.
+            products = [part for heading in tokens[1:]
+                        for part in (("HOBC", "NAPHTHA")
+                                     if heading == "HOBC NAPHTHA" else (heading,))]
             # Annual tables carry the prior-year grand total as a second TOTAL
             # column; monthly tables carry one.
             if products.count("TOTAL") == 2:

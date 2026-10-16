@@ -10,6 +10,7 @@ import csv
 import io
 import os
 import unittest
+from pkinv.core.reporting_window import CORE_FY_STARTS, fiscal_label
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "outputs", "pakemis_power_coal_configurations.csv")
@@ -30,7 +31,7 @@ class TestTheConfigurations(unittest.TestCase):
     def test_it_found_rows(self):
         """A closure test over an empty read passes; this is what stops that."""
         self.assertGreater(len(self.rows), 25)
-        self.assertEqual(len({r["period_id"] for r in self.rows}), 9)
+        self.assertEqual({r["period_id"] for r in self.rows}, {fiscal_label(y) for y in CORE_FY_STARTS})
 
     def test_exactly_one_candidate_is_circular_and_it_is_named(self):
         circular = {r["configuration_id"] for r in self.rows
@@ -43,7 +44,7 @@ class TestTheConfigurations(unittest.TestCase):
         """A route that is honest but only covers half the years cannot carry a re-base."""
         years = {r["period_id"] for r in self.rows
                  if r["configuration_id"] == "C1_stations_rank_default"}
-        self.assertEqual(len(years), 9, "C1 no longer spans the panel")
+        self.assertEqual(years, {fiscal_label(y) for y in CORE_FY_STARTS}, "C1 no longer spans the panel")
 
     def test_circularity_matches_how_the_value_was_DERIVED(self):
         """Not whether the words "heat rate" appear - C1's basis says "NO heat rate", which
@@ -151,7 +152,7 @@ class TestTheConfigurations(unittest.TestCase):
                 r["efficiency_band_verdict"].startswith("inside"))
         self.assertEqual(sum(inside["C0_table3"]), 2,
                          "Table 3's in-band year count moved")
-        self.assertEqual(len(inside["C1_stations_rank_default"]), 9)
+        self.assertEqual(len(inside["C1_stations_rank_default"]), len(CORE_FY_STARTS))
         # SEVEN, NOT NINE, and the change is a correction rather than a regression. The
         # station account's two bounded years (FY2016-17 and FY2017-18) STRADDLE the envelope
         # instead of sitting wholly inside it, because the commissioning lane's interval is
@@ -160,7 +161,7 @@ class TestTheConfigurations(unittest.TestCase):
         # plant, so that is the relevant end of the range, not an outlier to discard. The
         # previous 9-of-9 rested on a narrower band whose exclusions no reader could
         # reconstruct; narrowing it back would be choosing the bound that closes.
-        self.assertEqual(sum(inside["C1_stations_rank_default"]), 7,
+        self.assertEqual(sum(inside["C1_stations_rank_default"]), len(CORE_FY_STARTS) - 2,
                          "the station account's in-band year count moved")
         straddle = [r["period_id"] for r in self.rows
                     if r["configuration_id"] == "C1_stations_rank_default"

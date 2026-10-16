@@ -26,7 +26,7 @@ def canonical_json(request):
 class QueryEmissions:
     periods: tuple = ()                 # ("FY2023-24",); empty -> the default period
     basis: str = ""                     # fiscal | calendar; empty -> default
-    configuration_id: str = ""          # REF_2023_24 | L_2023_24
+    configuration_id: str = ""          # S_TAN | L_TAN | S_IPCC | L_IPCC
     gwp_basis: str = ""                 # AR5 | AR6
     gases: tuple = ()                   # subset of CO2 CH4 N2O; empty -> all
     sectors: tuple = ()                 # sector_id filter (the module that computed the stream)
@@ -59,10 +59,10 @@ class QueryAir:
     geography_level: str = ""           # national | adm1 | adm2; empty -> national
     geography_ids: tuple = ()           # province names or district labels
     years: tuple = ()                   # 1990..2024 -> the agriculture timeseries grain
-    periods: tuple = ()                 # FY2015-16..FY2023-24 -> the covered-sources panel;
+    periods: tuple = ()                 # FY2015-16..FY2024-25 -> the covered-sources panel;
                                         # empty with no years -> the reference period,
                                         # national or (rc49) adm1/adm2 spatial by-year
-    configuration_id: str = ""          # panel + spatial by-year: REF_2023_24 (default) | L_HERD1624
+    configuration_id: str = ""          # panel + spatial by-year: S_TAN (default) | L_TAN | S_IPCC | L_IPCC
     group_by: tuple = ()                # subset of pollutant sector_id category subitem province district year
     order_by: str = ""
     limit: int = 0

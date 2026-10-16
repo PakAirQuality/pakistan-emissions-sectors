@@ -94,6 +94,20 @@ class TestShape(unittest.TestCase):
         """MMBTU converts to TJ by definition. Coal and RFO masses need a calorific value,
         which is a downstream choice and must not be smuggled into a parser."""
         for r in self.rows:
+            if int(r["fiscal_year"]) >= 2024:
+                unit, fuel, q = r["quantity_unit"], r["fuel"], float(r["quantity"])
+                if fuel in ("Gas", "RLNG"):
+                    expected = q * 0.00105505585262 * .90 * (1000 if unit == "MMCFT" else 1)
+                elif fuel == "RFO":
+                    expected = q * 40.4
+                elif fuel == "HSD":
+                    expected = q * .84 / 1000 * 43
+                else:
+                    self.assertEqual(r["energy_TJ"], "")
+                    continue
+                self.assertIn("derived NCV energy", r["source_table"])
+                self.assertAlmostEqual(float(r["energy_TJ"]), expected, delta=1e-7)
+                continue
             if r["quantity_unit"] == "MMBTU":
                 self.assertTrue(r["energy_TJ"], "gas row without energy: %s" % r["plant"])
             elif r["quantity_unit"] == "MMCFT":

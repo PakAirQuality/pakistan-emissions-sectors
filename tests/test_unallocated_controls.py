@@ -14,8 +14,8 @@ TWO-DOCUMENT gate. Everything here defends the closed state's honesty:
   * the bridge that could have modelled the year stays declared-and-unpopulated forever
     (the observed split made every modelled alternative moot, which is the strongest
     possible argument for never populating it);
-  * and the eight years that were already complete are NUMERICALLY unmoved, because the
-    cheapest way to fake a recovery is to disturb the years that already worked.
+  * and the preserved historical release remains unchanged while later scientific repairs
+    are reconciled explicitly against native atoms and the numerical change register.
 
 Run:  python3 -m unittest discover tests -p "test_unallocated_controls.py"
 """
@@ -28,6 +28,7 @@ from pkinv.paths import DATA, OUTPUTS
 from pkinv.report import atomic_annual, bridge_configurations, unallocated_controls
 from pkinv.sectors.transport import ocac_image_edition
 from pkinv.core.io import read_rows
+from pkinv.core.reporting_window import CORE_PERIOD_IDS
 
 
 def _rows(name, base=OUTPUTS):
@@ -35,8 +36,7 @@ def _rows(name, base=OUTPUTS):
 
 
 RECOVERED_SECTOR_YEARS = {("transport", "FY2015-16"), ("industry", "FY2015-16")}
-COMPLETE_YEARS = ("FY2015-16", "FY2016-17", "FY2017-18", "FY2018-19", "FY2019-20",
-                  "FY2020-21", "FY2021-22", "FY2022-23", "FY2023-24")
+COMPLETE_YEARS = CORE_PERIOD_IDS
 PRE_RECOVERY_YEARS = COMPLETE_YEARS[1:]
 
 
@@ -119,7 +119,7 @@ class TestTheRecoveredYearIsReal(unittest.TestCase):
                          "must be declared in national_series.GAPS")
         for row in _rows("pakemis_national_series.csv"):
             self.assertNotEqual(row["activity_basis"], "absent", row["sector"])
-        for row in _rows("pakemis_annual_fy2015_16_fy2023_24.csv"):
+        for row in _rows("pakemis_annual_fy2015_16_fy2024_25.csv"):
             self.assertNotEqual(row.get("grain"), "absent")
 
     def test_the_recovered_sector_years_carry_values(self):
@@ -181,7 +181,7 @@ class TestTheBridgeIsDeclaredAndUnreachable(unittest.TestCase):
         """The reference configuration is not a bridge, and no published row carries one."""
         ids = set(bridge_configurations.declared_ids(self.registry))
         self.assertNotIn(atomic_annual.REFERENCE_CONFIGURATION, ids)
-        for name in ("pakemis_atomic_annual.csv", "pakemis_monthly_fy2015_16_fy2023_24.csv",
+        for name in ("pakemis_atomic_annual.csv", "pakemis_monthly_fy2015_16_fy2024_25.csv",
                      "pakemis_atomic_annual_aggregates.csv"):
             for row in _rows(name):
                 self.assertNotIn(row["configuration_id"], ids,
@@ -223,95 +223,63 @@ class TestTheBridgeIsDeclaredAndUnreachable(unittest.TestCase):
             self.assertFalse(set(row.values()) & ids)
 
 
-class TestThePreRecoveryYearsDidNotMove(unittest.TestCase):
-    """The cheapest way to fake a recovery is to disturb the years that already
-    worked. These are the numbers that must not move when FY2015-16 opens."""
+class TestTheHistoricalReleaseAndDeclaredRepairs(unittest.TestCase):
+    """The original recovery controls remain fixed in the preserved release.
 
-    def test_all_nine_years_are_ten_sector_and_full_scope(self):
+    Subsequent source and method repairs are authorised numerical revisions; a
+    current release must reconcile them, rather than pretend its totals cannot
+    change. Keep the old independent pins on the immutable baseline and verify
+    the declared differences against both releases' native annual records.
+    """
+
+    def test_all_core_years_are_ten_sector_and_full_module_scope(self):
         coverage = {r["period_label"]: r
                     for r in _rows("pakemis_national_series_coverage.csv")}
+        self.assertEqual(set(coverage), set(COMPLETE_YEARS))
         for year in COMPLETE_YEARS:
             self.assertEqual(int(coverage[year]["sectors_covered"]), 10, year)
             self.assertEqual(float(coverage[year]["coverage_share_pct_of_reference"]),
                              100.0, year)
             self.assertEqual(coverage[year]["sectors_absent"], "none", year)
 
-    def test_the_reference_year_is_unmoved(self):
+    def test_the_reference_rollup_reconciles_to_native_atoms(self):
         national = next(float(r["co2e_Mt_AR5"]) for r in _rows("national_all_sectors.csv")
                         if r["row_kind"] == "national_total")
-        # rc39 A1 re-base: the reference herd became the census's exact enumeration, so the pins moved for the first time since rc30 (L 452.14350 -> 452.33432, S 447.01683 -> 447.20153; agriculture +0.184699 and residential +0.006121 through the dung handoff)
-        # rc39 A2: FracGASF is one global factor, so re-weighting it onto the fiscal year's own product mix lifts managed soils in EVERY year by ~0.0021-0.0023 Mt
-        # 2026-10-07 THE POWER COAL RE-BASE: public-power coal energy is booked on the
-        # stations' own metered coal at IPCC rank defaults instead of NEPRA Table 3's
-        # published energy, and grid 1.A.1.a falls 57.82049 -> 40.04008. Previous pin,
-        # rc52..this: 469.63822, which the retained legacy control reproduces to the
-        # fifth decimal (national_configurations.csv, power_table3_legacy_control).
-        self.assertAlmostEqual(national, 444.95542, places=5)   # rc67 reference re-base (was 451.85782)
+        native = sum(float(r["co2e_Mt_AR5"]) for r in _rows("pakemis_atomic_annual.csv")
+                     if r["period_id"] == "FY2023-24" and r["co2e_Mt_AR5"])
+        self.assertAlmostEqual(national, native, delta=0.00005)
 
-    def test_the_eight_pre_recovery_years_are_unmoved(self):
-        """Pinned totals - the recovery may only ADD FY2015-16.
-
-        RE-BASED IN rc39 A1, and the shape of the move is the point. The census herd
-        reaches the history through ONE channel only: the dung handoff, which derives the
-        residential dung basis from the reference-year ledger and applies it across the
-        panel. So every historical year rises by 0.0047-0.0059 Mt - a smooth ramp, all of
-        it residential - while agriculture's own historical years do not move at all,
-        because each reads its own year's activity. The reference year moves by 0.19082,
-        which is agriculture's 0.18470 plus the same handoff's 0.00612.
-
-        Pinned at 4 places rather than the old 2. These were rc19 values carried at two
-        decimals, which is a tolerance of 5e-3 - wider than every historical movement the
-        re-base actually caused. A guard whose whole purpose is to catch unintended
-        movement should not be blind to a move of this size, and at 4 places it is not."""
-        # The composed-vs-summed ulp split that separated these two pins at A2 (452.33663 here
-        # against 452.33664 above) closed at A3: both files now print 452.34662. The split is a
-        # property of where the digits fall, not of the arithmetic, so it can reopen - each pin
-        # is still read from its own file rather than assumed equal to the other.
-        # rc46 Wave 2: every year re-priced on its OWN brick and cement coal (the HDIP
-        # series covers the whole window), so all eight moved together with the reference -
-        # the per-year delta IS that year's activated coal, largest where the brick column
-        # spikes (FY2020-21 +46.38, the year the reconciliation shows HDIP's brick residual
-        # absorbing the power-lane disagreement).
-        # rc50: THE CLINKER RE-BASE - the eight historical years ride the clinker balance at the
-        # census-implied fraction (0.965, cement.census_implied_fraction) instead of the IPCC
-        # blended default 0.75; 2.A.1 rises +3.96..+5.57 Mt a year (+37.13 in total) and closes
-        # the +9,027 kt FY2022-23 -> FY2023-24 method break to +109 kt. FY2023-24 is the census
-        # and did not move, so the L/S pins hold; the bridge is pakemis_industrial_coal_bridge.csv.
-        # rc52: THREE CATEGORIES ENTER THE REFERENCE (the boundary program's Wave C) - ammonia
-        # (Tier 1 calibrated on NFDC production), iron and steel (Tier 1 EAF on QIM billets) and
-        # lubricant use (Tier 1 ODU on OCAC sales), each a full nine-year series BEFORE it
-        # entered. Every year moves by exactly its activated atoms: +3.04 (FY2015-16), +3.23,
-        # +2.97, +2.98, +3.09, +3.58, +3.80, +3.41, +3.72 (FY2023-24); the L/S pins move with
-        # FY2023-24 in scripts/check_pins.py. Previous (rc50) pins: 423.84615, 447.77589,
-        # 443.86472, 443.63919, 475.92647, 493.97688, 453.20894, 465.91851.
-        # 2026-10-07 THE POWER COAL RE-BASE. Every year moves by its own coal account, and
-        # the moves CHANGE SIGN twice: -0.49, +4.20, +4.20, +5.89, +11.07, -7.29, -11.38,
-        # -17.78 (FY2016-17..FY2023-24). That is why no constant correction was admissible.
-        # The per-year cause - the mass term and the calorific term whose product is the
-        # ratio - is published in outputs/pakemis_power_coal_rebase_ledger.csv, and the
-        # previous series is reachable through the legacy axis in
-        # outputs/pakemis_structural_trajectories.csv. Previous (rc52) pins: 427.07446,
-        # 450.74216, 446.84585, 446.73310, 479.51051, 497.77448, 456.62081, 469.63822.
-        #
-        # THE PEAK MOVED, which is the one qualitative consequence: it was FY2021-22 and is
-        # now FY2020-21, by 0.095 Mt. A test asserting the peak's location would be asserting
-        # a difference smaller than the structural fork it rides on, so there is none - the
-        # manuscript says the position is not robust instead.
-        #
-        # rc67 REFERENCE RE-BASE, declared: fertiliser feedstock out of the gas leakage base,
-        # household dung on the survey series, wastewater nitrous oxide on the 2019
-        # Refinement with each year's own sanitation shares. Previous (rc66) pins:
-        # 426.58053, 454.94353, 451.04843, 452.62773, 490.58301, 490.48805, 445.23595,
-        # 451.85781. FY2020-21 and FY2021-22 are within 0.003 Mt of each other and FY2021-22
-        # is now marginally the higher: the peak's position is not robust, as before.
+    def test_the_preserved_history_and_declared_changes_reconcile(self):
         pinned = {"FY2016-17": 419.43996, "FY2017-18": 447.91008, "FY2018-19": 444.08059,
                   "FY2019-20": 445.51419, "FY2020-21": 483.44611, "FY2021-22": 483.44854,
                   "FY2022-23": 438.34095, "FY2023-24": 444.95542}
-        totals = {r["period_label"]: float(r["co2e_Mt_AR5"])
-                  for r in _rows("pakemis_national_series.csv")
-                  if r["row_kind"] == "covered_total"}
-        for year, want in pinned.items():
-            self.assertAlmostEqual(totals[year], want, places=4, msg=year)
+        baseline = os.path.join(DATA, "baselines", "rc67_integrated_campaign", "outputs")
+        preserved = {r["period_label"]: float(r["co2e_Mt_AR5"])
+                     for r in _rows("pakemis_national_series.csv", baseline)
+                     if r["row_kind"] == "covered_total"}
+        for period, expected in pinned.items():
+            self.assertAlmostEqual(preserved[period], expected, places=4, msg=period)
+        totals = []
+        for directory in (baseline, OUTPUTS):
+            values = collections.defaultdict(float)
+            for row in _rows("pakemis_atomic_annual.csv", directory):
+                if row["co2e_Mt_AR5"]:
+                    values[row["period_id"]] += float(row["co2e_Mt_AR5"])
+            totals.append(values)
+        changes = {r["period_id"]: r for r in _rows("pakemis_release_change_summary.csv")
+                   if r["panel"] == "GHG" and r["sector_id"] == "national_covered"
+                   and r["species_or_metric"] == "AR5" and r["comparison_status"] == "matched_period"}
+        self.assertEqual(set(changes), set(preserved))
+        current = {r["period_label"]: float(r["co2e_Mt_AR5"])
+                   for r in _rows("pakemis_national_series.csv") if r["row_kind"] == "covered_total"}
+        for period, row in changes.items():
+            before, after = (v[period] for v in totals)
+            self.assertAlmostEqual(float(row["baseline_quantity"]), before, places=9, msg=period)
+            self.assertAlmostEqual(float(row["current_quantity"]), after, places=9, msg=period)
+            self.assertAlmostEqual(float(row["change"]), after - before, places=9, msg=period)
+            # Ten sector values are printed to five decimal places in the
+            # series, unlike the finer native atom sum: allow their half-ulps.
+            self.assertAlmostEqual(current[period], after, delta=0.00005, msg=period)
 
 
 if __name__ == "__main__":

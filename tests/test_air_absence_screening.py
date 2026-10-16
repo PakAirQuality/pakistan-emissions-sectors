@@ -14,11 +14,13 @@ import os
 import unittest
 
 from pkinv.paths import OUTPUTS
+from pkinv.core import configurations as conf
+from pkinv.core.reporting_window import CORE_SUFFIX
 
 LEDGER = os.path.join(OUTPUTS, "pakemis_air_absence_screening_by_year.csv")
-POWER = os.path.join(OUTPUTS, "power_air_screening_fy2015_16_fy2023_24.csv")
+POWER = os.path.join(OUTPUTS, "power_air_screening_%s.csv" % CORE_SUFFIX)
 COVERAGE = os.path.join(OUTPUTS, "pakemis_air_coverage_matrix.csv")
-PANEL = os.path.join(OUTPUTS, "pakemis_air_annual_fy2015_16_fy2023_24.csv")
+PANEL = os.path.join(OUTPUTS, "pakemis_air_annual_%s.csv" % CORE_SUFFIX)
 
 
 def _rows(path):
@@ -222,18 +224,17 @@ class TestTheEnvelopeBlock(unittest.TestCase):
         self.assertEqual(power["gap_id"], "air-power-controlled")
         # and the headline is the covered sum alone - nowhere near covered+screening
         covered = float(env["values"][0]["exact"])
-        # rc58: the covered NOx headline gained industry's 137.3 kt (676.75 -> 814.03);
-        # rc59: ippu's 5.2 and fugitives' 0.6 kt (814.03 -> 819.81)
-        # rc67: household dung follows the survey in every year, so residential NOx in
-        # FY2022-23 fell from 328.42 to 151.45 kt (819.81 -> 642.84). 819.81 is still
-        # served, under the ledger series L_HERD1624.
-        self.assertLess(abs(covered - 642.84) / 642.84, 0.02,
-                        "the headline must remain the covered panel's own sum")
+        def panel_total(configuration):
+            return sum(float(row["emissions_Gg"]) for row in _rows(PANEL)
+                       if row["period_id"] == "FY2022-23" and row["pollutant"] == "NOx"
+                       and conf.canonical(row["configuration_id"]) == configuration)
+        self.assertAlmostEqual(covered, panel_total(conf.REFERENCE), places=6,
+                               msg="the headline must remain the current covered panel sum")
         ledger = self.engine.query_air(QueryAir(pollutants=("NOx",),
                                                 periods=("FY2022-23",),
-                                                configuration_id="L_HERD1624"))
-        self.assertLess(abs(float(ledger["values"][0]["exact"]) - 819.81) / 819.81, 0.02,
-                        "the ledger series must still carry the pre-rc67 headline")
+                                                configuration_id=conf.LEDGER))
+        self.assertAlmostEqual(float(ledger["values"][0]["exact"]),
+                               panel_total(conf.LEDGER), places=6)
 
 
 if __name__ == "__main__":

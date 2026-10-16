@@ -294,7 +294,7 @@ Laraib Hy,Laraib Hy,,non_emitting,465.286,every panel fuel label is Hydel - the 
 Laraib Hydropower Project / New Bong Escape,Laraib Hydropower Project / New Bong Escape,,non_emitting,412.430,every panel fuel label is Hydel - the panel's own fuel column is the typing evidence,df8ee64b9fbb895f53a75ccd,293
 Layyah Sugar Mill,Layyah Sugar Mill,,captive_lane,190.422,sugar-mill captive,e8dd5f25562be8c9745e253e,294
 Layyah Sugar Mill Ba,Layyah Sugar Mill,,captive_lane,46.369,sugar-mill captive,ce64fb40e1a8b1e5b99b3e37,295
-Liberty Power Limited.,Liberty Power Limited.,Liberty Daharki Power,grid_station,2955.270,,d108aeac1cbdafccbaec3b14,296
+Liberty Power Limited.,Liberty Power Limited.,Liberty Daharki Power,grid_station,2955.270,"Company identity and 225/212 MW capacity support Daharki, while the SIR prints RFO. NEPRA CPPA Dec2019 separately lists Liberty GAS 212 MW and Liberty Power RFO 196 MW (the Tech station). Retain the source fuel-label conflict explicitly; the alias alone does not admit RFO emissions.",d108aeac1cbdafccbaec3b14,296
 Liberty Power Tech,Liberty Power Tech,Liberty Power Tech.,grid_station,3755.978,,d412a2e9365c9b3c192c423d,297
 Liberty Power Tech Ltd. (LPTL),Liberty Power Tech Ltd. (LPTL),Liberty Power Tech.,grid_station,1704.620,,32fc8e5caf4a5259c4e7e0ab,298
 Liberty Power Tech RF,Liberty Power Tech,Liberty Power Tech.,grid_station,606.656,,7343d91ffa17dfe25afe2fe4,299

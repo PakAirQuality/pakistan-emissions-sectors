@@ -3,13 +3,13 @@
 and pollutant, published BESIDE the covered panel and never inside it.
 
 THE COMPLETENESS-MASS RULE, APPLIED TO AIR. The covered panel types power NE; this ledger prices
-that absence as SCENARIO ENDS - power's controlled-case and uncontrolled screenings, the two ends
-the grid fleet lies between given its control inventory is unknown. Scenario ends, NOT
+that absence as SCENARIO ENDS - power's controlled-case and uncontrolled screenings under
+different technology assumptions. They do not demonstrate where actual releases lie. They are NOT
 mathematical bounds (AP-42 defaults are typical rates, not worst cases), and NEVER summed into
 the covered panel - a panel total plus an uncontrolled end would be a number that is neither an
 estimate nor a bound, which is the laundering this ledger exists to prevent. The acquisition
 that would replace power's pair with an estimate is named per row (gap air-power-controlled:
-NEPRA licensee environmental submissions, unpublished rather than unmeasured).
+source-specific control and operation evidence).
 
 INDUSTRY SINCE rc58. Industry is no longer a screened absence: its combustion layer is a covered
 estimate inside the panel (pkinv.sectors.industry.air_pollutants). What remains typed NE for
@@ -18,7 +18,7 @@ carries NO scenario number, only the reason and the gap: a ledger row for a cell
 invite exactly the double count the rule forbids. The rc55-rc57 uncontrolled industry screening
 file is retired; its rows were floors on three fuels and the estimate supersedes them.
 
-Reads:  outputs/power_air_screening_fy2015_16_fy2023_24.csv (both scenarios, grid only)
+Reads:  outputs/power_air_screening_fy2015_16_fy2024_25.csv (both scenarios, grid only)
         outputs/pakemis_air_coverage_matrix.csv (which industry cells are still NE, and why)
         data/data_gaps.csv (the acquisition that would close the power pair, so the reason
         the ledger publishes is the register's own words and not a second copy of them)
@@ -36,7 +36,7 @@ from pkinv.assets import asset_path
 from pkinv.core.io import read_rows     # noqa: E402
 from pkinv.paths import DATA, OUTPUTS    # noqa: E402
 
-POWER_IN = asset_path(OUTPUTS, "power_air_screening_fy2015_16_fy2023_24.csv")
+POWER_IN = asset_path(OUTPUTS, "power_air_screening_fy2015_16_fy2024_25.csv")
 COVERAGE_IN = asset_path(OUTPUTS, "pakemis_air_coverage_matrix.csv")
 GAPS_IN = asset_path(DATA, "data_gaps.csv")
 OUT = asset_path(OUTPUTS, "pakemis_air_absence_screening_by_year.csv")
@@ -73,8 +73,8 @@ def _paired_reason():
         raise SystemExit("data_gaps.csv has no %s row, so the paired-absence reason cannot "
                          "be built from the register that owns it" % POWER_GAP)
     return ("both ends are priced and NEITHER IS THE ESTIMATE: %s is recorded NE because the "
-            "grid fleet's control inventory is unpublished, so these two rows bracket the "
-            "absence rather than reporting it. What would close it: %s (%s, held by %s)."
+            "annual control operation is unresolved; these are separate technology cases, "
+            "not bounds or a central estimate. The evidence gap is recorded as: %s (%s, holder %s)."
             % (row["category"], row["unblocks"], row["access"], row["holder"]))
 
 
@@ -125,7 +125,7 @@ def main():
                 "factor_basis": ("" if un is None else
                                  "AP-42 held-table pair, GRID ONLY (captive generation is "
                                  "priced in the industry layer); see power_air_screening_"
-                                 "fy2015_16_fy2023_24.csv per fuel and table"),
+                                 "fy2015_16_fy2024_25.csv per fuel and table"),
                 "gap_id": POWER_GAP})
             for sector in REGISTER_MODULES:
                 if (pid, sector, pol) not in industry_ne:
@@ -143,9 +143,9 @@ def main():
             "# WHAT THE PANEL'S TYPED ABSENCES PLAUSIBLY HOLD, per period and species -\n"
             "# SCENARIO ENDS, NOT MATHEMATICAL BOUNDS, and NEVER summed into the covered\n"
             "# panel: a covered total plus an uncontrolled end is neither an estimate nor\n"
-            "# a bound. Power's pair (controlled_case..uncontrolled, grid only) brackets a\n"
-            "# fleet whose control inventory exists at NEPRA unpublished (gap air-power-\n"
-            "# controlled). Industry (rc58), IPPU and fugitives (rc59) are COVERED estimates\n"
+            "# a bound. Power's pair (controlled_case..uncontrolled, grid only) comprises\n"
+            "# separate technology cases; public design evidence does not establish annual\n"
+            "# control operation (air-power-controlled). Industry, IPPU and fugitives are estimates\n"
             "# from the source-class register; their rows here are the remaining typed\n"
             "# absences per species (no number, a reason and a gap).\n"
             "# Empty numeric cells are typed absences, never zeros.\n")
