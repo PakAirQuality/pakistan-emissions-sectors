@@ -16,7 +16,7 @@ the check runs one way: every country-file detection dated inside a fetched wind
 in the fire layer. It reports the share that is. It cannot vouch for the layer's detections
 outside Pakistan, and it says so in its output.
 
-Usage:  python3 scripts/fetch_firms_country_archive.py [--check]
+Usage:  python3 scripts/fetch_firms_country_archive.py [--check] [--years 2025,...]
 Writes: data/raw/firms/country_archive/viirs-snpp_<year>_Pakistan.csv
 """
 import csv
@@ -43,8 +43,15 @@ def key(row):
 
 
 def main(argv=None):
+    argv = sys.argv[1:] if argv is None else argv
     spans = windows()
-    years = range(int(spans[0][0][:4]), int(spans[-1][1][:4]) + 1)
+    years = list(range(int(spans[0][0][:4]), int(spans[-1][1][:4]) + 1))
+    # rc69: --years also keeps calendar years the fire layer does not reach yet (the
+    # FY2024-25 seasons fall in 2024 and 2025), so their country files are held before any
+    # use of them is decided.
+    if "--years" in argv:
+        extra = argv[argv.index("--years") + 1].split(",")
+        years = sorted(set(years) | {int(y) for y in extra})
     held = {}
     for year in years:
         name = "country_archive/viirs-snpp_%d_Pakistan.csv" % year

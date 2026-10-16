@@ -90,16 +90,25 @@ def reads_restricted(phase):
     return False
 
 
+def absent_seeded(phases=None):
+    """Labels a public clone without the restricted layers seeds beyond the fifteen source
+    phases: every other phase that declares a restricted read. Empty where the layers are
+    mounted, so the deposit group is unchanged there."""
+    phases = registry.PHASES if phases is None else phases
+    if layers.mode(registry.ROOT) != "absent":
+        return frozenset()
+    return frozenset(p.label for p in phases
+                     if p.label not in DEPOSIT_EXCLUDED and reads_restricted(p))
+
+
 def phases_for_group(group, phases=None):
     phases = registry.PHASES if phases is None else phases
     if group == "deposit":
-        selected = [p for p in phases if p.label not in DEPOSIT_EXCLUDED]
-        if layers.mode(registry.ROOT) == "absent":
-            # The deposit ships the documents these read (the COD-AB boundaries, rc69); a
-            # public clone does not, so their committed products stand in, as the fifteen
-            # source phases' do. The final comparison still covers every other product.
-            selected = [p for p in selected if not reads_restricted(p)]
-        return selected
+        # The deposit ships the documents absent_seeded() phases read (the COD-AB boundaries,
+        # rc69); a public clone does not, so their committed products stand in, as the
+        # fifteen source phases' do. The final comparison still covers every other product.
+        seeded = absent_seeded(phases)
+        return [p for p in phases if p.label not in DEPOSIT_EXCLUDED and p.label not in seeded]
     if group == "dev":
         return [p for p in phases if p.label not in FINALIZATION and not p.network
                 and p.category in DEV_CATEGORIES + (None,)]

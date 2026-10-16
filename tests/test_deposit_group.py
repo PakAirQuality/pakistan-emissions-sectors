@@ -15,8 +15,10 @@ class TestTheDepositGroup(unittest.TestCase):
         from pkinv import build, run_all
         full = [p.label for p in build.phases_for_group("full")]
         deposit = [p.label for p in build.phases_for_group("deposit")]
+        # rc69: a public clone without the restricted layers also seeds the phases that
+        # declare a restricted read (build.absent_seeded; empty where the layers are mounted)
         self.assertEqual(sorted(set(full) - set(deposit)),
-                         sorted(build.DEPOSIT_EXCLUDED))
+                         sorted(set(build.DEPOSIT_EXCLUDED) | build.absent_seeded()))
         self.assertEqual(set(build.DEPOSIT_EXCLUDED), set(build.DEPOSIT_SOURCE_PHASES))
         self.assertTrue(all(build.DEPOSIT_SOURCE_PHASES.values()))
         self.assertTrue(set(build.DEPOSIT_EXCLUDED) <= {p.label for p in run_all.PHASES})

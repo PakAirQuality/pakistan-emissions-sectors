@@ -74,7 +74,9 @@ class CleanTargetOwnership(unittest.TestCase):
 
     def test_every_clean_comparison_target_is_written_or_explicitly_seeded(self):
         held = {r["path"] for r in read_rows(str(Path(ROOT) / "data/catalog/held_products.csv"))}
-        seeded = held | {path for p in PHASES if p.label in DEPOSIT_SOURCE_PHASES
+        from pkinv.build import absent_seeded
+        seeded = held | {path for p in PHASES
+                         if p.label in DEPOSIT_SOURCE_PHASES or p.label in absent_seeded()
                          for path in p.writes if path.startswith("outputs/")}
         written = {path for p in phases_for_group("deposit") for path in p.writes}
         uncovered = [path for path in targets(ROOT, seeded)

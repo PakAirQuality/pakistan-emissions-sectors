@@ -1936,6 +1936,7 @@ PHASES = [
                  "outputs/pakemis_ghg_conditional_uncertainty.csv", "outputs/pakemis_air_conditional_uncertainty.csv",
                  "outputs/pakemis_nitrogen_partition_sensitivity.csv",
                  "outputs/pakemis_coal_change_decomposition.csv",
+                 "outputs/pakemis_air_source_coverage.csv", "outputs/pakemis_air_coverage_matrix.csv",
                  "outputs/pakemis_air_structural_sensitivities.csv", "outputs/pakemis_industry_air_edgar_comparison.csv",
                  "outputs/pakemis_air_htap_comparison.csv", "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
                  "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
