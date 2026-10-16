@@ -2,7 +2,7 @@
 
 One row per headline claim of the national manuscript (data/claim_matrix.csv), held to the release: `printed` is what the section prints today, `resolved` is what the release answers (through pakemis_query where a stored query exists, else through the pointer, else through the DOC_CLAIMS getter). `agrees` applies the DOC_CLAIMS rule (half an ulp at the printed precision plus the claim's registered tolerance); `strict` is half an ulp alone. Nothing here is repaired: a `no` is a finding for tests/paper_numbers/test_claim_matrix.py.
 
-Rows: 78; agree: 78; disagree: 0; via query: 0, pointer: 78, getter: 0.
+Rows: 85; agree: 85; disagree: 0; via query: 0, pointer: 85, getter: 0.
 
 ## 4 Dataset generation
 
@@ -86,4 +86,11 @@ Rows: 78; agree: 78; disagree: 0; via query: 0, pointer: 78, getter: 0.
 | technical_supplement_AirReferenceNOx | 816.6 | 816.638272 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRefNOx |
 | technical_supplement_AirReferencePM | 422.8 | 422.8257290000001 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRefPMfine |
 | technical_supplement_GHGReferenceTotal | 444.6 | 444.6077554900002 | Mt | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakRefARfive |
+| paper_PakLatestCoalSOtwoChangeGg | 173 | 173.207115 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoChangeGg |
+| paper_PakLatestCoalSOtwoSupplyGg | -6.08 | -6.082368 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoSupplyGg |
+| paper_PakLatestCoalSOtwoSeamGg | 50.5 | 50.496473 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoSeamGg |
+| paper_PakLatestCoalSOtwoSplitGg | 120 | 119.530225 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoSplitGg |
+| paper_PakLatestCoalSOtwoVintageGg | 9.26 | 9.262785 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoVintageGg |
+| paper_PakLatestCoalSOtwoWithoutAllocationGg | -24 | -23.998507 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalSOtwoWithoutAllocationGg |
+| paper_PakLatestCoalPMfineWithoutAllocationGg | -8.71 | -8.714733 | Gg | yes | yes | estimated-mixed | pointer | sec:scope |  | macro:PakLatestCoalPMfineWithoutAllocationGg |
 

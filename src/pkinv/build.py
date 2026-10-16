@@ -77,10 +77,29 @@ DEPOSIT_SOURCE_PHASES = {
 DEPOSIT_EXCLUDED = tuple(DEPOSIT_SOURCE_PHASES)
 
 
+def reads_restricted(phase):
+    """The phase declares a read of the restricted layers (pkinv.core.layers), by its own
+    path or by where the asset catalog stores it. rc69: a public clone without the layers
+    cannot run such a phase; the deposit group reuses its committed product instead."""
+    from pkinv.assets import asset_path
+    for read in phase.reads or ():
+        path = read.split(":", 1)[-1] if read.startswith(("held:", "prior:", "glob:")) else read
+        physical = os.path.relpath(asset_path(registry.ROOT, path), registry.ROOT)
+        if layers.is_restricted(path) or layers.is_restricted(physical):
+            return True
+    return False
+
+
 def phases_for_group(group, phases=None):
     phases = registry.PHASES if phases is None else phases
     if group == "deposit":
-        return [p for p in phases if p.label not in DEPOSIT_EXCLUDED]
+        selected = [p for p in phases if p.label not in DEPOSIT_EXCLUDED]
+        if layers.mode(registry.ROOT) == "absent":
+            # The deposit ships the documents these read (the COD-AB boundaries, rc69); a
+            # public clone does not, so their committed products stand in, as the fifteen
+            # source phases' do. The final comparison still covers every other product.
+            selected = [p for p in selected if not reads_restricted(p)]
+        return selected
     if group == "dev":
         return [p for p in phases if p.label not in FINALIZATION and not p.network
                 and p.category in DEV_CATEGORIES + (None,)]
@@ -662,7 +681,8 @@ def main(argv=None):
         # rc69: a public clone without the restricted layers. The phases that read primary
         # documents or the release history cannot run, and dropping them quietly would
         # publish their stale products as if rebuilt. The deposit group seeds them instead.
-        needs = [p.label for p in selected if p.label in DEPOSIT_SOURCE_PHASES]
+        needs = [p.label for p in selected
+                 if p.label in DEPOSIT_SOURCE_PHASES or reads_restricted(p)]
         if needs:
             parser.error("the restricted layers are not mounted here, and these tasks read "
                          "them: %s. Use --group deposit, or mount them with "

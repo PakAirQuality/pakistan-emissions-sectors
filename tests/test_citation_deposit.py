@@ -27,6 +27,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.core.io import read_rows                                      # noqa: E402
+from _support import release_time_check  # noqa: E402
 
 AUDIT = os.path.join(ROOT, "outputs", "pakemis_citation_deposit_audit.csv")
 
@@ -157,6 +158,7 @@ class TestEveryCitationIsObtainable(unittest.TestCase):
         self.assertFalse(blank, "citations with no citing section recorded: %s" % blank)
 
     def test_the_shipped_audit_matches_a_fresh_build(self):
+        release_time_check("the citation deposit audit is regenerated at the release fixpoint")
         r = subprocess.run(
             [sys.executable,
              os.path.join(ROOT, "scripts", "build_citation_deposit_audit.py"), "--check"],
