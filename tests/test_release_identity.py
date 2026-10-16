@@ -453,6 +453,13 @@ class TestTheChangelogNamesThisRelease(unittest.TestCase):
         path = os.path.join(ROOT, "CHANGELOG.md")
         with open(path, encoding="utf-8") as handle:
             sections = [line for line in handle if line.startswith("## [")]
+        # rc69: work is committed publicly between releases, under one "## [Unreleased]"
+        # section at the very top that the next mint renames. Anywhere else it is a section
+        # a mint forgot to rename.
+        unreleased = [i for i, line in enumerate(sections) if line.startswith("## [Unreleased]")]
+        self.assertIn(unreleased, ([], [0]),
+                      "an [Unreleased] CHANGELOG section may appear once, at the top")
+        sections = sections[len(unreleased):]
         self.assertTrue(sections, "CHANGELOG.md carries no release sections")
         self.assertTrue(sections[0].startswith("## [%s]" % pkinv.__version__),
                         "the topmost CHANGELOG section is %r, not the current release %s"

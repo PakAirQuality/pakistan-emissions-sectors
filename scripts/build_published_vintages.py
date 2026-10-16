@@ -63,6 +63,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 import pkinv                                                        # noqa: E402
 from pkinv.core.io import write_table                               # noqa: E402
+from pkinv.core import layers                                       # noqa: E402
 
 OUT = os.path.join(ROOT, "data", "catalog", "published_release_vintages.csv")
 CONTRACT = "outputs/semantic/semantic_release.json"
@@ -117,11 +118,10 @@ PUBLISHED = (
 
 def blob_sha256(commit, path):
     """sha256 of the bytes `commit` held at `path`, or None if it held nothing there."""
-    run = subprocess.run(["git", "show", "%s:%s" % (commit, path)],
-                         cwd=ROOT, capture_output=True)
-    if run.returncode:
-        return None
-    return hashlib.sha256(run.stdout).hexdigest()
+    # rc69: releases through rc68 exist only in the private history, which the restricted
+    # layers' checkout holds (pkinv.core.layers asks the public repository first).
+    held = layers.git_show(commit, path, root=ROOT)
+    return None if held is None else hashlib.sha256(held).hexdigest()
 
 
 def disk_sha256(path):
@@ -130,9 +130,7 @@ def disk_sha256(path):
 
 
 def blob(commit, path):
-    run = subprocess.run(["git", "show", "%s:%s" % (commit, path)],
-                         cwd=ROOT, capture_output=True)
-    return None if run.returncode else run.stdout
+    return layers.git_show(commit, path, root=ROOT)
 
 
 def commits_since(commit, path=None):

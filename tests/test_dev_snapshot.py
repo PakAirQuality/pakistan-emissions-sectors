@@ -7,6 +7,7 @@ import subprocess
 import sys
 import tempfile
 import unittest
+from _support import release_time_check  # noqa: E402
 import zipfile
 from unittest.mock import patch
 
@@ -125,6 +126,7 @@ class DevSnapshot(unittest.TestCase):
 class DepositZips(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        release_time_check("the deposit archives are laid out from the release's deposit manifest")
         cls.mod = _load("build_deposit_zip")
         cls.rows = cls.mod.deposit_rows()
 

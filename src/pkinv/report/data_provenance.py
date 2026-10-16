@@ -137,7 +137,13 @@ def universe():
     """
     files = []
     copies = presentation.layer()
-    for folder, _dirs, names in os.walk(os.path.join(ROOT, "data")):
+    # rc69: the restricted layers are symlinks into the private checkout
+    # (pkinv.core.layers), and os.walk does not enter a linked folder unless told to. The
+    # excluded trees are pruned before descent, so following links walks the same files
+    # the monorepo walked.
+    for folder, dirs, names in os.walk(os.path.join(ROOT, "data"), followlinks=True):
+        here = os.path.relpath(folder, ROOT).replace(os.sep, "/")
+        dirs[:] = [d for d in dirs if not (here + "/" + d + "/").startswith(EXCLUDED_TREES)]
         for name in names:
             rel = os.path.relpath(os.path.join(folder, name), ROOT).replace(os.sep, "/")
             if rel.startswith(EXCLUDED_TREES) or rel in copies:

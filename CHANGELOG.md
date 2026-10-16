@@ -5,6 +5,55 @@ current method, and this file records how it got there. Each release candidate b
 answers an external review round. Historical totals appear here labelled as history — the only
 current national figures are the manifest's.
 
+## [Unreleased] — development after 1.0.0rc68
+
+### Development moves to the public repository
+
+Through rc68 the work was done in a private repository and each release was then COPIED
+here without its third-party source documents. From now on the work is committed here
+directly. The documents stay in the private checkout and become the **restricted layers**.
+`src/pkinv/core/layers.py` lists them, `docs/restricted_layers.md` explains them, and a
+clone mounts them as ignored symlinks with `scripts/overlay.py`.
+
+- Every question put to git about a document goes to the repository that owns it: whether it
+  is tracked, whether it is in LFS, and what an old release held. This covers
+  `raw_data_manifest.py`, the frozen `sources/` guard, the retention-ledger history, the two
+  release-history phases and the LFS test. The release manifest and the test record now name
+  the private checkout's commit beside this repository's. Without the layers:
+  - the raw manifest refuses to run;
+  - the release manifest refuses to build;
+  - `pkinv.build` refuses any group but `deposit` when the selection reads documents;
+  - `holdings.py` says NOT MOUNTED instead of reporting zero hits.
+- A public clone without the layers skips the document tests with the fixed reason
+  `restricted layers absent:`. The runner fails if that set differs, in either direction,
+  from `data/catalog/restricted_gated_tests.txt`, and a run with the layers mounted fails on
+  any such skip. `tests/test_layers_exercised.py` asserts counts only a real mount can produce,
+  and treats a configured overlay that does not resolve as an error, not as absence.
+- `scripts/make_public_copy.py` became `scripts/check_public_tree.py`, which copies nothing. It
+  fails on any of these:
+  - a tracked restricted path;
+  - a file over GitHub's size limit;
+  - a restricted name `.gitignore` does not ignore (without a trailing slash, since a mount is a
+    symlink);
+  - a stale `NOTICE-ODbL.md`.
+- **Two defects of the rc68 public copy, fixed:**
+  - Its note said the data were under CC BY 4.0, while 198 files it carried are ODbL-derived or
+    were packaged with the deposit's ODbL companion. `NOTICE-ODbL.md` now lists them, using the
+    deposit's rule.
+  - It shipped the agent instructions (`CLAUDE.md`) and 41 working notes (`research_campaign/`).
+    Both are now restricted.
+
+  They remain in the history of the two copy commits.
+- Smaller fixes:
+  - `pkinv.assets` keeps the lexical path before resolving symlinks, so a mounted raster keeps
+    its catalog identity, and it never aliases a restricted directory.
+  - The data provenance audit follows mounted folders.
+  - The PDF-age test reads commit times for files git holds unmodified, because a fresh clone
+    stamps every file with the moment of checkout.
+- Tests that hold only at a release commit (the committed release and deposit manifests, the
+  deposit archives, the shipped PDFs) skip with the reason `release-time check:` when
+  `PKINV_RELEASE_CHECKS=0`. Only the public CI sets that variable; the release path never does.
+
 ## [1.0.0rc68] — 14 October 2026
 
 The integrated national greenhouse-gas and air-pollutant release now covers ten fiscal

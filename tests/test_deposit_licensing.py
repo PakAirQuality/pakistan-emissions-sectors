@@ -26,6 +26,7 @@ from pathlib import Path
 import shutil
 import tempfile
 import unittest
+from _support import release_time_check  # noqa: E402
 from unittest.mock import patch
 
 from pkinv.paths import OUTPUTS, ROOT
@@ -65,6 +66,7 @@ class TestNothingShipsWithoutTheRightToShipIt(unittest.TestCase):
             self.assertGreater(len(row["licence_reason"]), 20, row["path"])
 
     def test_the_deposit_and_the_working_tree_agree(self):
+        release_time_check("the deposit manifest is regenerated at the release fixpoint")
         if not os.path.isdir(os.path.join(ROOT, ".git")):
             self.skipTest("compares the deposit with a git working tree; a validation package has none")
         for row in self.deposit:
@@ -345,6 +347,7 @@ class TestTheShareAlikeTrap(unittest.TestCase):
         Regeneration enumerates the git index, so this runs only in a checkout.
         The release manifest has carried this guard since rc10; the deposit manifest
         never did. Regenerate in memory and compare."""
+        release_time_check("the deposit manifest is regenerated at the release fixpoint")
         if not os.path.isdir(os.path.join(ROOT, ".git")):
             self.skipTest("regenerates from the git index; a validation package has none")
         from pkinv.report import deposit_manifest as dm

@@ -159,3 +159,40 @@ scratch/
 
 # Other authors' figures, kept locally for the design study only (see figure_design_study.md)
 /paper_national/figures/redesign/reference_board/
+
+# ---------------------------------------------------------------------------
+# THE RESTRICTED LAYERS (rc69). Development happens in this public repository; the
+# third-party documents, rasters and working notes it was built from stay in the private
+# checkout and are mounted here as symlinks by scripts/overlay.py. Each name is ignored
+# WITHOUT a trailing slash: a symlink is a file to git, so "/sources/" would not match the
+# mount and the link itself would be committed. src/pkinv/core/layers.py is the list;
+# tests/test_public_tree.py holds this block to it.
+# ---------------------------------------------------------------------------
+/.pkinv-overlay
+/sources
+/data/raw
+/data/cache
+/data/nfdc
+/data/gleam
+/data/gmw
+/data/pbs_census
+/data/district_records
+/data/shared/gis/cod_ab
+/campaign
+/research_campaign
+/.claude
+/CLAUDE.md
+/data/shared/gis/worldpop_pak_2020_1km.tif
+/data/sectors/agriculture/gis/manual/gcd_rice_2023.tif
+/data/sectors/agriculture/gis/manual/spam2020_V2r2_global_A_RICE_I.tif
+/data/sectors/agriculture/gis/manual/spam2020_V2r2_global_A_RICE_R.tif
+/data/sectors/agriculture/gis/manual/spam_rice.tif
+/data/shared/gis/manual/ghsl_built_1km/*.tif
+*.sav
+*.dta
+*.por
+*.zsav
+# This project's own products over GitHub's 100 MB limit: built here, shipped in the deposit.
+/outputs/pakemis_ghg_configuration_adm2_monthly.csv
+/outputs/semantic/fact_adm1_month.csv
+/outputs/semantic/fact_adm2_month.csv

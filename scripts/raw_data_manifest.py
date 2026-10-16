@@ -33,10 +33,10 @@ import argparse
 import csv
 import hashlib
 import os
-import subprocess
 import sys
 from pkinv.core.io import read_rows
 from pkinv.assets import catalog as asset_catalog, resolve, legacy_path
+from pkinv.core import layers
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = resolve(os.path.join(ROOT, "data", "raw_manifest.csv"), root=ROOT)
@@ -134,20 +134,13 @@ def _rules_for(relative):
 
 
 def _lfs_paths():
-    try:
-        out = subprocess.run(["git", "lfs", "ls-files", "-n"], cwd=ROOT, check=True,
-                             stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        return set()
-    return {line.strip() for line in out.stdout.decode("utf-8", "replace").splitlines()
-            if line.strip()}
+    """LFS paths from whichever repository owns each one (src/pkinv/core/layers.py): from
+    rc69 the documents are tracked by the private checkout mounted beside a public clone."""
+    return layers.lfs_files(root=ROOT)
 
 
 def _git_paths():
-    out = subprocess.run(["git", "ls-files"], cwd=ROOT, check=True,
-                         stdout=subprocess.PIPE, stderr=subprocess.DEVNULL)
-    return {line.strip() for line in out.stdout.decode("utf-8", "replace").splitlines()
-            if line.strip()}
+    return set(layers.ls_files(root=ROOT))
 
 
 def _previous():
@@ -225,6 +218,10 @@ def main(argv=None):
     parser.add_argument("--rehash", action="store_true",
                         help="re-hash every file rather than reusing unchanged digests")
     args = parser.parse_args(argv)
+    if not layers.present(ROOT):
+        raise SystemExit("the restricted layers are not mounted here (mode %s), so this "
+                         "manifest would list none of the documents it exists to hold. "
+                         "Run python3 scripts/overlay.py link PATH first." % layers.mode(ROOT))
 
     rows, hashed, reused = build(args.rehash)
     # THE MANIFEST MAY NOT FORGET A DOCUMENT. This script rebuilds its list from the disk,
