@@ -39,7 +39,19 @@ def _index_outputs():
     return idx
 
 
-def _sync(figs):
+def generated_tex():
+    """The .tex files a build phase writes. They are skipped when collecting figure names
+    (rc69): a generated fragment is not where a paper names its figures, and nine of them are
+    written by phases that run AFTER this one, so reading them made the strict build's order
+    check refuse to start. tests/test_sync_figures.py holds that none includes a PNG."""
+    import sys
+    sys.path.insert(0, os.path.join(ROOT, "src"))
+    from pkinv import run_all
+    return {os.path.normpath(asset_path(ROOT, w)) for p in run_all.PHASES for w in p.writes
+            if w.endswith(".tex")}
+
+
+def _sync(figs, skip=frozenset()):
     idx = _index_outputs()
     synced, missing, current = [], [], 0
     names = {fn for fn in os.listdir(figs) if fn.endswith(".png")}
@@ -48,7 +60,7 @@ def _sync(figs):
         if os.path.abspath(dp).startswith(os.path.abspath(figs)):
             continue
         for fn in files:
-            if not fn.endswith(".tex"):
+            if not fn.endswith(".tex") or os.path.normpath(asset_path(dp, fn)) in skip:
                 continue
             with open(asset_path(dp, fn), encoding="utf-8") as handle:
                 names.update(re.findall(r"\\includegraphics(?:\[[^]]*\])?\{([^}]+\.png)\}",
@@ -66,11 +78,12 @@ def _sync(figs):
 
 
 def main():
+    skip = generated_tex()
     for figs in FIG_DIRS:
         if not os.path.isdir(figs):
             continue
         label = os.path.relpath(figs, ROOT)
-        synced, current, missing = _sync(figs)
+        synced, current, missing = _sync(figs, skip)
         print("%s: %d refreshed, %d already current, %d paper-only (no output source)"
               % (label, len(synced), current, len(missing)))
         if synced:
