@@ -1,8 +1,15 @@
-# PakEmis: greenhouse gases and air pollutants in Pakistan
+# PakEmis: Pakistan greenhouse gas and air pollutant emissions inventory
 
 <!-- BEGIN GENERATED: headline -->
 A shared activity and material-flow inventory for Pakistan covering ten fiscal years, **July 2015–June 2025**. The latest covered-source estimates are **457.24 Mt CO2e (AR5)**, **422.7 Gg primary PM2.5**, **833.1 Gg NOx as NO2** and **2690.1 Gg NH3**, under configuration S_TAN. Native CO2, CH4 and N2O are supplied separately from warming-potential aggregates. Other core air species are BC, SO2, CO and NMVOC. These totals exclude unestimated sources and LULUCF.
 <!-- END GENERATED: headline -->
+
+Interactive explorer: [emissions.hawanama.org](https://emissions.hawanama.org). PakEmis is a project of the
+[Pakistan Air Quality Initiative (PAQI)](https://pakairquality.com); see also
+[Hawanama](https://hawanama.org) ([code](https://github.com/PakAirQuality/paqi_hawanama)), PAQI's real-time air
+quality map and open PM2.5 data, and
+[pak_quality_estimation](https://github.com/PakAirQuality/pak_quality_estimation), satellite-supported daily
+PM2.5 mapping for Pakistan.
 
 <!-- BEGIN GENERATED: release -->
 **Release** `1.0.0rc68` | reporting period **July 2015--June 2025 (ten fiscal years)** (2015-07-01 to 2025-06-30) | reference FY2023–24: **444.61 Mt CO2e** (AR5, S_TAN) / **449.85 Mt** (L_TAN) | 23 structural axes, 28 named configurations | completeness 54 E / 70 NE / 9 IE / 4 NO | code MIT; CC-BY-4.0 for project-owned primary products and text; per-file upstream terms retained. ODbL-derived components are packaged separately. Commit and manifest digest: `paper_common/release_cover.tex` and `outputs/release_manifest.json`.
