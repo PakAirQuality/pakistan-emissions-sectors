@@ -308,10 +308,13 @@ class TestTheScannedTableIsReadNotTyped(unittest.TestCase):
         import shutil
         import subprocess
         import sys
+        # The document first (rc69): without the layers this must skip with the pinned
+        # "restricted layers absent:" reason whatever tools the machine has. The public CI
+        # runner has no tesseract, skipped here for that reason, and the pinned set failed.
+        require_documents("sources/OGRA/ogra_state_of_industry_2020-21.pdf")
         for tool in ("pdftoppm", "tesseract"):
             if not shutil.which(tool):
                 self.skipTest("%s not installed" % tool)
-        require_documents("sources/OGRA/ogra_state_of_industry_2020-21.pdf")
         script = os.path.join(os.path.dirname(__file__), "..", "scripts",
                               "ocr_ogra_2020_21.py")
         result = subprocess.run([sys.executable, script], capture_output=True, text=True)

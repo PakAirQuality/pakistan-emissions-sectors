@@ -139,14 +139,30 @@ class TestTheControlIsNotSelfReferential(unittest.TestCase):
         from pkinv.paths import ROOT
         needles = ["151.657650", "21.228487", "16.548350",
                    "28.525954", "0.669549", "4.824481", "223.454471"]
-        hits = []
-        for needle in needles:
-            out = subprocess.run(
-                ["rg", "-l", "-g", "*.csv", "-g", "*.json", "-g", "!**/baselines/**", needle,
-                 asset_path(ROOT, "data")], capture_output=True, text=True)
-            if out.stdout.strip():
-                hits.append((needle, out.stdout.split()))
-        self.assertFalse(hits, "a historical audit control appears in active model inputs: %s" % hits)
+        # The files ripgrep searched: CSV and JSON under data/ that git does not ignore, none
+        # under a baselines/ folder. In Python since rc69, because the public CI runner has no
+        # rg and the test errored there instead of checking anything.
+        data = asset_path(ROOT, "data")
+        try:
+            listed = subprocess.run(
+                ["git", "ls-files", "--cached", "--others", "--exclude-standard", "-z", "--",
+                 os.path.relpath(data, ROOT)], cwd=ROOT, capture_output=True, check=True
+            ).stdout.decode("utf-8").split("\0")
+        except (OSError, subprocess.CalledProcessError):
+            listed = [os.path.relpath(os.path.join(d, n), ROOT)
+                      for d, _, names in os.walk(data) for n in names]
+        hits = collections.defaultdict(list)
+        for rel in sorted(p for p in listed if p.endswith((".csv", ".json"))):
+            if "/baselines/" in "/" + rel or not os.path.isfile(os.path.join(ROOT, rel)):
+                continue
+            with open(os.path.join(ROOT, rel), encoding="utf-8", errors="replace") as handle:
+                text = handle.read()
+            for needle in needles:
+                if needle in text:
+                    hits[needle].append(rel)
+        self.assertFalse(dict(hits),
+                         "a historical audit control appears in active model inputs: %s"
+                         % dict(hits))
 
 
 if __name__ == "__main__":
