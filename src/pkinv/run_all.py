@@ -2196,6 +2196,12 @@ PHASES = [
                  # held: pkinv.eval.sensitivity_table is a hand-run evaluation, as it is for the
                  # nitrogen-flow phase above
                  "held:outputs/eval/sensitivity.csv",
+                 # held (rc69): the plotting modules the script imports are tracked source
+                 # beside the figures, not products. Sync paper figures declares the whole
+                 # folder as its output, so without this the full group's order check read
+                 # an import as a read of a later phase's product and refused to start.
+                 "held:paper_national/figures/rewrite_inputs/plot_construction.py",
+                 "held:paper_national/figures/rewrite_inputs/plot_figures.py",
                  "outputs/pakemis_air_provincial_external_comparison.csv",
                  "outputs/pakemis_stream_support_ledger.csv",
                  "outputs/pakemis_spatial_unallocated.csv")),
@@ -2294,7 +2300,19 @@ PHASES = [
     # after the four figure stages the registry already held. It reads the artifact
     # inventory's roles and every product's leading comment, so it follows that phase.
     Phase("Supplement product list", "scripts/make_v3_product_list.py", False,
-          writes=("paper_national/versions/v3/products_appendix.tex",)),
+          writes=("paper_national/versions/v3/products_appendix.tex",),
+          # rc69: the list is drawn from the artifact inventory, which reads the release
+          # registers below and scans the manuscripts, this list included. The circle closes
+          # at the release fixpoint; until then the registers are the previous cut's, by
+          # design, and are declared so the strict build's order check accepts them.
+          reads=("outputs/pakemis_product_catalog.csv",
+                 "data/catalog/artifact_roles.csv",
+                 "prior:outputs/pakemis_claim_matrix.csv",
+                 "prior:outputs/pakemis_deposit_manifest.csv",
+                 "prior:outputs/pakemis_product_coverage.csv",
+                 "prior:outputs/pakemis_product_facts.csv",
+                 "prior:outputs/pakemis_source_register.csv",
+                 "prior:paper_national/versions/v1/sections/generated_coverage.tex")),
     Phase("Product coverage", "scripts/make_product_coverage.py", True,
           writes=("outputs/pakemis_product_coverage.csv",
                   "paper_national/versions/v1/sections/generated_coverage.tex"),
