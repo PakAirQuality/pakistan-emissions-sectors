@@ -26,6 +26,7 @@ import re
 import subprocess
 import sys
 import unittest
+from _support import release_time_check  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 V3 = os.path.join(ROOT, "paper_national", "versions", "v3")
@@ -54,6 +55,7 @@ class TestEveryV2DocumentIsBuilt(unittest.TestCase):
     def test_no_pdf_predates_its_own_source(self):
         """The defect exactly: technical_supplement.pdf was from 07:27 and its .tex from
         17:44, with every correction of the day present only in the source."""
+        release_time_check("the shipped PDFs are compiled at the release")
         stale = []
         for name in DOCUMENTS:
             tex = os.path.join(V3, "%s.tex" % name)

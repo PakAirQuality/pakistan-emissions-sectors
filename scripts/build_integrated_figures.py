@@ -182,6 +182,19 @@ def facts(ghg, air):
         command = "Pak" + tag + "NPartition" + metric
         output.append(r"\newcommand{\%s}{%s}" % (command, format(float(row["change_quantity"]), ".4g")))
         table.append({"macro": command, "period": row["period_id"], "species": row["metric"], "value": row["change_quantity"], "unit": row["unit"]})
+    # rc69: the latest-year coal change split into source vintage, supply balance, allocation
+    # seam and consumer split (pakemis_coal_change_decomposition.csv), for the trend text
+    for row in rows("pakemis_coal_change_decomposition.csv", optional=True):
+        if row["period_id"] != LATEST or row["species"] not in ("SO2", "PM2.5"):
+            continue
+        for suffix, key in (("ChangeGg", "d_coal_emissions"), ("VintageGg", "d_source_vintage"),
+                            ("SupplyGg", "d_supply_balance"), ("SeamGg", "d_allocation_seam"),
+                            ("SplitGg", "d_consumer_split"), ("AllocationGg", "allocation_effect"),
+                            ("WithoutAllocationGg", "national_change_without_allocation")):
+            command = "PakLatestCoal" + macro_species[row["species"]] + suffix
+            output.append(r"\newcommand{\%s}{%s}" % (command, format(float(row[key]), ".3g")))
+            table.append({"macro": command, "period": LATEST, "species": row["species"],
+                          "value": row[key], "unit": "Gg"})
     aliases = {"GHGReferenceTotal": "PakRefARfive", "GHGLatestTotal": "PakLatestARfive",
                "GHGReferenceLow": "PakRefARfiveLow", "GHGReferenceHigh": "PakRefARfiveHigh",
                "GHGLatestLow": "PakLatestARfiveLow", "GHGLatestHigh": "PakLatestARfiveHigh"}

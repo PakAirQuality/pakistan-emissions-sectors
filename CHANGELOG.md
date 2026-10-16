@@ -54,6 +54,37 @@ clone mounts them as ignored symlinks with `scripts/overlay.py`.
   deposit archives, the shipped PDFs) skip with the reason `release-time check:` when
   `PKINV_RELEASE_CHECKS=0`. Only the public CI sets that variable; the release path never does.
 
+### What moved coal emissions in the latest year
+
+The review asked how much of the FY2024–25 coal revision is physical activity and how much
+is source vintage or consumer allocation. `pakemis_coal_change_decomposition.csv`
+(`pkinv.sectors.industry.coal_change_decomposition`) splits every year-on-year coal change,
+per species and for GHG, into the supply balance, the allocation seam, the consumer split,
+the source vintage, the emission factor, and power-station and household coal. The split is
+an additive identity on the final exports, closing to within 2×10⁻⁵, and its GHG terms
+reproduce the published supply-balance and seam split to within the whole-kilotonne
+rounding of that file.
+
+- **SO2.** Brick-kiln SO2 rises by 173.2 Gg from FY2023–24 to FY2024–25:
+  - −6.1 Gg follows the physical supply balance;
+  - +50.5 Gg follows the seam between HDIP's power column and metered station burn;
+  - +119.5 Gg follows the shift of the published consumer split towards brick kilns;
+  - +9.3 Gg follows the choice of the Economic Survey 2025–26 print over the Statistical
+    Supplement 2024–25 one.
+
+  Without the three allocation terms national SO2 would have changed by −24.0 Gg rather than
+  rising by 155.3 Gg.
+- **Other species.** PM2.5 would have changed by −8.7 Gg, BC by −0.5 Gg and CO by −9.5 Gg.
+- **GHG.** The GHG seam is 69.0 percent of the national one-year change, as printed.
+
+The mechanism is that cement-kiln air pollutants follow clinker, not booked cement coal, so a
+reallocation from cement to brick kilns adds air emissions with no change in coal burned.
+The paper's trend section now says so with these numbers. No total moved.
+
+A public clone's deposit build also reuses the committed product of any phase that declares
+a restricted read (the ADM2 2022 frame crosswalk reads the OCHA COD-AB boundaries), as the
+fifteen source phases already do.
+
 ## [1.0.0rc68] — 14 October 2026
 
 The integrated national greenhouse-gas and air-pollutant release now covers ten fiscal
