@@ -102,6 +102,13 @@ PRODUCER_OVERRIDES = {
     # (data/gis/manual/gcd_rice_2023.tif) by proxies.build_gcd_rice_proxy on a cache miss
     "data/gis/proxy_gcd_rice_267x340.npy":
         "src/pkinv/core/gis/proxies.py (get_proxy; reads data/gis/manual/gcd_rice_2023.tif)",
+    # rc69: the SPAM rasters' grid caches, named by proxies.manual_cache_path at run time
+    "data/sectors/agriculture/gis/proxy_manual_spam_rice_267x340.npy":
+        "scripts/build_manual_proxy_caches.py (resamples the held SPAM raster)",
+    "data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_I_267x340.npy":
+        "scripts/build_manual_proxy_caches.py (resamples the held SPAM raster)",
+    "data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_R_267x340.npy":
+        "scripts/build_manual_proxy_caches.py (resamples the held SPAM raster)",
 }
 
 # Readers that build the name at run time, so the search cannot see them.
@@ -112,6 +119,12 @@ READER_OVERRIDES = {
     "data/benchmark_splits/spatial_road_transport.csv":
         "src/pkinv/eval/benchmark_spatial.py (task id; pending_record)",
     "data/gis/proxy_manure_applied_267x340.npy": "src/pkinv/core/gis/proxies.py (get_proxy by name)",
+    "data/sectors/agriculture/gis/proxy_manual_spam_rice_267x340.npy":
+        "src/pkinv/core/gis/proxies.py (build_manual_proxy, when the raster is not mounted)",
+    "data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_I_267x340.npy":
+        "src/pkinv/core/gis/proxies.py (build_manual_proxy, when the raster is not mounted)",
+    "data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_R_267x340.npy":
+        "src/pkinv/core/gis/proxies.py (build_manual_proxy, when the raster is not mounted)",
 }
 
 WRITE_IDIOM = re.compile(r"write_table\(|write_dicts\(|\.to_csv\(|csv\.writer\(|"

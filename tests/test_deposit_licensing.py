@@ -492,6 +492,7 @@ class TestTheAllowlistHasNoCatchAll(unittest.TestCase):
     def test_every_family_pattern_still_matches_something(self):
         """A pattern matching nothing is a rule about a file that no longer exists, and it
         would go on looking correct forever."""
+        release_time_check("the deposit manifest is regenerated at the release fixpoint")
         import fnmatch
         from pkinv.assets import legacy_path
         paths = [legacy_path(r["path"], root=ROOT) for r in _rows("pakemis_deposit_manifest.csv")]

@@ -162,7 +162,8 @@ class TestSpatialContract(unittest.TestCase):
         for group in ("dev", "ci", "full"):
             self.assertIn("pkinv.sectors.agriculture.gis.district_downscale",
                           {p.target for p in phases_for_group(group)}, group)
-        for path in (".github/workflows/ci.yml", "Makefile"):
+        for path in (".github/workflows/public-checks.yml", ".github/workflows/reproduce.yml",
+                     "Makefile"):
             with open(asset_path(ROOT, path), encoding="utf-8") as handle:
                 self.assertIn("python3 -m pkinv.build", handle.read(), path)
 

@@ -1,0 +1,61 @@
+# PUBLIC CHECKS: what this repository can verify on its own, without the restricted layers.
+#
+# The third-party documents the inventory was built from are not in this repository
+# (docs/restricted_layers.md), so this job cannot re-extract a table from its document or
+# re-read the private release history. What it can do, and does:
+#   1. refuse a tracked file that may not be published (scripts/check_public_tree.py);
+#   2. run the whole test suite in restricted-layers-absent mode, where the document tests
+#      skip with the reason "restricted layers absent:" and the runner fails if that set
+#      differs from data/catalog/restricted_gated_tests.txt in either direction;
+#   3. rebuild the inventory from the verified tables with the deposit group, which reuses
+#      the published products of the fifteen document-reading phases, and require every
+#      rebuilt product to match the committed one.
+# Its summary line states how many tests ran, skipped for absent layers, and skipped
+# because the manuscripts are not compiled here, so its coverage is explicit.
+# The complete reproduction is .github/workflows/reproduce.yml.
+name: public checks
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      # The manuscript layout tests read LaTeX logs; this job does not compile LaTeX.
+      PKINV_NO_LATEX: "1"
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11.10"
+          cache: pip
+          cache-dependency-path: requirements.lock
+
+      - name: Install the pinned environment
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq poppler-utils
+          python3 -m pip install -r requirements.lock
+          python3 -m pip install --no-deps -e .
+
+      - name: Nothing tracked here may be unpublishable
+        run: python3 scripts/check_public_tree.py
+
+      - name: The restricted layers are absent, and say so
+        run: python3 -m pkinv.core.layers
+
+      - name: Derived inputs that are rebuilt rather than committed
+        run: python3 scripts/build_adm2_intersections.py
+
+      - name: Test suite (restricted layers absent)
+        run: python3 scripts/run_tests.py -j 4
+
+      - name: Rebuild from the verified tables (deposit group)
+        run: python3 -m pkinv.build --group deposit --full --ledger logs/public_build.json
+
+      - name: Every rebuilt product matches the committed one
+        run: git diff --stat --exit-code -- outputs data

@@ -1,0 +1,54 @@
+# COMPLETE REPRODUCTION: the whole build, strict, with the restricted layers mounted.
+#
+# The documents are not on GitHub, so this cannot run on a hosted runner. It is kept as the
+# exact, versioned definition of the full check, run by hand (workflow_dispatch) on a
+# self-hosted runner that holds the private checkout, and step for step by the maintainer
+# before a release (make release-check). docs/restricted_layers.md explains the layers.
+name: complete reproduction
+
+on:
+  workflow_dispatch:
+    inputs:
+      overlay:
+        description: "Path of the private checkout that holds the restricted layers"
+        required: true
+
+jobs:
+  reproduce:
+    runs-on: self-hosted
+    timeout-minutes: 600
+    env:
+      PKINV_OVERLAY: ${{ inputs.overlay }}
+      MPLBACKEND: Agg
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install the pinned environment
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements.lock
+          .venv/bin/python -m pip install --no-deps -e .
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+
+      - name: Mount and check the restricted layers
+        run: |
+          python3 scripts/overlay.py link "$PKINV_OVERLAY"
+          python3 scripts/overlay.py check
+
+      - name: Nothing tracked here may be unpublishable
+        run: python3 scripts/check_public_tree.py
+
+      - name: Strict full build
+        run: python3 -m pkinv.build --group full --full --strict --ledger logs/reproduce_build.json 2>&1 | tee logs/reproduce_build.log
+
+      - name: No phase failed anywhere in the log
+        run: "! grep -E '\\[(FAIL|ERROR)\\]' logs/reproduce_build.log"
+
+      - name: Every rebuilt product matches the committed one
+        run: git diff --stat --exit-code -- outputs data
+
+      - name: Manuscripts
+        run: make papers
+
+      - name: Canonical test record (zero restricted-layer skips)
+        run: python3 scripts/record_test_run.py
