@@ -870,6 +870,7 @@ MANUSCRIPT_CONSTANTS = {
 
 
 MANUSCRIPT_CONSTANTS[("national-v3", "0.05")] = "declared grid spacing in degrees, a spatial resolution rather than an emission mass"
+MANUSCRIPT_CONSTANTS[("national-v3", "0.01")] = "the EMEP/EEA 2023 3.B Table 3-10 solid-storage NO-N factor as printed (kg NO-N per kg TAN), a cited published constant; nitrogen_no_pathways.EMEP_STORAGE_SOLID holds the same value and its test pins it"
 
 def _sector_macro_values(doc, section, registered_only=False):
     """Current note macros independently resolve native inventory quantities."""

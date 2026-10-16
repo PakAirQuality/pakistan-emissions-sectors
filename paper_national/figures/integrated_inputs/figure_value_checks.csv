@@ -442,6 +442,11 @@ figure,quantity,product,product_value,plotted_value,tolerance,agrees
 12,NOx/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,0.8166177019413369,0.8166177019413369,1e-10,yes
 12,SO2/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,1.0,1.0,1e-10,yes
 12,NH3/nitrogen_all_volatilised_n_as_nh3_diagnostic,released structural case,1.0092304667526317,1.0092304667526315,1e-10,yes
+12,PM2.5/nitrogen_no_emep2023_process_factors,released structural case,1.0,1.0,1e-10,yes
+12,BC/nitrogen_no_emep2023_process_factors,released structural case,1.0,1.0,1e-10,yes
+12,NOx/nitrogen_no_emep2023_process_factors,released structural case,1.144737415570885,1.144737415570885,1e-10,yes
+12,SO2/nitrogen_no_emep2023_process_factors,released structural case,1.0,1.0,1e-10,yes
+12,NH3/nitrogen_no_emep2023_process_factors,released structural case,1.0,1.0,1e-10,yes
 13,FY2021-22/PM2.5/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.4892202821749666,0.4892202821749666,1e-10,yes
 13,FY2021-22/PM2.5/industry/EDGAR fossil+biomass 1.A.2 + cement process 2.A.1,released matched-boundary comparison,0.21685509030639422,0.2168550903063942,1e-10,yes
 13,FY2021-22/BC/industry/EDGAR fossil 1.A.2 + cement process 2.A.1,released matched-boundary comparison,4.834060307225489,4.834060307225489,1e-10,yes

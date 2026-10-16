@@ -26,7 +26,6 @@ dist/
 # The COD-AB administrative bundle (28 MB archive + 9.7 MB extracted admin2 geometry, plus
 # its sidecar): a humanitarian-data download, re-fetchable, and not read by any published
 # number - PAK_ADM1/ADM2 are the versioned controls the manuscript spatial joins use.
-/data/shared/gis/cod_ab/
 # The exact-area ADM2 x grid partition (3.6 MB), re-derived by the GIS extra from the
 # versioned boundaries. scripts/raw_data_manifest.py skips it for this reason and
 # pkinv.report.data_provenance.universe() names it; keep those three in step.
@@ -177,7 +176,8 @@ scratch/
 /data/gmw
 /data/pbs_census
 /data/district_records
-/data/shared/gis/cod_ab
+/data/shared/gis/cod_ab/pak_admin2.geojson
+/data/shared/gis/cod_ab/pak_admin_boundaries.geojson.zip
 /campaign
 /research_campaign
 /.claude

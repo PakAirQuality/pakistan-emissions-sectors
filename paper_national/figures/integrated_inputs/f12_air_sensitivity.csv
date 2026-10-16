@@ -63,3 +63,8 @@ BC,attribution_diagnostic_no_probability,nitrogen_all_volatilised_n_as_nh3_diagn
 NOx,attribution_diagnostic_no_probability,nitrogen_all_volatilised_n_as_nh3_diagnostic,0.8166177019413369,,,S_TAN,1.0.0rc68
 SO2,attribution_diagnostic_no_probability,nitrogen_all_volatilised_n_as_nh3_diagnostic,1.0,,,S_TAN,1.0.0rc68
 NH3,attribution_diagnostic_no_probability,nitrogen_all_volatilised_n_as_nh3_diagnostic,1.0092304667526317,,,S_TAN,1.0.0rc68
+PM2.5,structural_case_no_probability,nitrogen_no_emep2023_process_factors,1.0,,,S_TAN,1.0.0rc68
+BC,structural_case_no_probability,nitrogen_no_emep2023_process_factors,1.0,,,S_TAN,1.0.0rc68
+NOx,structural_case_no_probability,nitrogen_no_emep2023_process_factors,1.144737415570885,,,S_TAN,1.0.0rc68
+SO2,structural_case_no_probability,nitrogen_no_emep2023_process_factors,1.0,,,S_TAN,1.0.0rc68
+NH3,structural_case_no_probability,nitrogen_no_emep2023_process_factors,1.0,,,S_TAN,1.0.0rc68

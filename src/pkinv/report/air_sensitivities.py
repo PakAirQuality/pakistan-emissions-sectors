@@ -250,6 +250,12 @@ def main():
     rows = build()
     air_cases, ghg_cases = nitrogen_partition_rows()
     rows.extend(air_cases)
+    # rc69: the EMEP/EEA 2023 process factors as an alternative to the central partition,
+    # pathway by pathway (pkinv.report.nitrogen_no_pathways), carried into national totals
+    from pkinv.report import nitrogen_no_pathways as pathways
+    pathway_rows, change = pathways.build()
+    rows.extend(pathways.structural_rows(change))
+    pathways.write_or_check(pathways.OUT, pathways.FIELDS, pathway_rows, banner=pathways.BANNER)
     with open(OUT, "w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, FIELDS, lineterminator="\n")
         writer.writeheader()

@@ -114,6 +114,14 @@ The alternative IPCC formulation applies its complete pre-field and field volati
 
 A separate chemical-attribution diagnostic replaces the mixed-loss NH$_3$-N share by 1.0 and reruns manure fate, field inputs, NH$_3$, NO$_x$ and native greenhouse gases for each of the four configurations and all core years. In the TAN case this removes inferred management and grazing NO$_x$-N, changes the surviving manure nitrogen and thereby changes later NH$_3$ and N$_2$O. Separately factored applied-nitrogen and burning NO$_x$ are retained. In the IPCC formulation the same diagnostic repartitions fixed mixed volatilisation losses, including application, while retaining their total nitrogen loss. The diagnostic is neither a measured alternative nor a plausible bound and has no probability. Air-pollutant masses and native-gas/AR5/AR6 consequences occupy separately typed tables; other sources are held at their configuration's central values.
 
+\paragraph{The nitrogen partition against the EMEP/EEA 2023 process factors.} \texttt{pakemis\_\allowbreak nitrogen\_\allowbreak no\_\allowbreak pathways.\allowbreak csv} compares each agricultural NO$_x$ pathway with the factor the EMEP/EEA 2023 Guidebook publishes for it \citep{EMEPEEA2023}. For each pathway it gives the nitrogen the factor applies to, the central NO$_x$ and its implied NO$_2$ per kilogram of nitrogen, the guidebook factor and table, and the case NO$_x$.
+\begin{itemize}
+\item Synthetic fertiliser, applied manure and grazing excreta take the 3.D Tier~1 factor for N applied in fertiliser, manure and excreta, \SI{0.04}{\kilo\gram} NO$_2$ per kilogram of N (95\,\% interval 0.005--0.104), in place of the central 0.007 kg NO-N per kilogram of applied N and the 5\,\% NO$_x$ share of grazing volatilisation.
+\item Manure management takes the 3.B Tier~2 storage factor, \SI{0.01}{\kilo\gram} NO-N per kilogram of ammoniacal nitrogen entering solid storage or litter, in place of the 5\,\% share of every management stage's mixed loss; the guidebook gives no NO factor for housing or yards.
+\item Crop-residue and burning NO$_x$ are retained, because the guidebook gives no residue factor.
+\end{itemize}
+The resulting case, \texttt{nitrogen\_no\_emep2023\_process\_factors} in \texttt{pakemis\_air\_structural\_sensitivities.csv}, is carried through national totals for every year and configuration. It is a documented alternative factor set, not a bound and not a probability. It changes NO$_x$ only, and the greenhouse-gas pools are unchanged. NO from applied nitrogen is computed on that nitrogen, as the guidebook does, outside the volatilisation pool.
+
 \subsection{Survey-based and diverted-dung household activity}
 The household reference estimates fuel use from quantities in the Household Integrated Economic Survey (HIES), household counts from the 2023 census and supported fuel sales \citep{HIES2019,PBSHIES2026,PBSCensus2023}. Interpolation and extrapolation between surveys are labelled. The alternative burns all the material diverted from manure management in households; it is a destination assumption. Under that alternative the uncertain herd drives both diverted dung and household emissions in the same realisation. Volatile solids, dry solids including ash, air-dry fuel and moisture remain distinct mass bases.
 
@@ -212,6 +220,9 @@ A dataset DOI and external review-access deposit are pending. Neither this docum
 
 \bibitem[Crippa et~al.(2020)]{Crippa2020}
 Crippa, M., Solazzo, E., Huang, G., Guizzardi, D., Koffi, E., Muntean, M., Schieberle, C., Friedrich, R., and Janssens-Maenhout, G.: High resolution temporal profiles in the Emissions Database for Global Atmospheric Research, Scientific Data, 7, 121, \doi{10.1038/s41597-020-0462-2}, 2020.
+
+\bibitem[EEA(2023)]{EMEPEEA2023}
+EEA: EMEP/EEA air pollutant emission inventory guidebook 2023, European Environment Agency, Copenhagen, \url{https://www.eea.europa.eu/publications/emep-eea-guidebook-2023}, 2023.
 
 \bibitem[FAO(2025)]{FAOSTAT2025}
 FAO: FAOSTAT: emissions totals, crops and livestock, fertilisers by nutrient, and forestry production and trade, Food and Agriculture Organization of the United Nations, Rome [data sets], \url{https://www.fao.org/faostat/}, 2025 snapshot used in the source inventory; catalogue checked 30 September 2026, 2025.
