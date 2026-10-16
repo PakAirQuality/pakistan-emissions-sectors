@@ -25,6 +25,7 @@ import hashlib
 import json
 import os
 import unittest
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAMPAIGN = os.path.join(ROOT, "research_campaign")
@@ -37,6 +38,11 @@ def rows(name):
 
 
 class TestTheHandoffIsPopulated(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        # rc69: research_campaign/ is working notes, a restricted layer (pkinv.core.layers)
+        require_layers("the research campaign's working notes")
+
     # Floors, not exact counts: the campaign may add rows and must not lose them.
     FLOORS = {"source_register.csv": 20, "claim_evidence.csv": 10,
               "comparison_results.csv": 25, "completeness.csv": 80}

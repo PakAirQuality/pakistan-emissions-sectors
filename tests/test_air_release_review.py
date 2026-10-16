@@ -10,6 +10,7 @@ import csv
 import io
 import os
 import unittest
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, "outputs")
@@ -307,6 +308,7 @@ class HtapSpeciesComparison(unittest.TestCase):
             self.assertAlmostEqual(got[key], value, delta=1e-5, msg=key)
 
     def test_htap_side_equals_the_held_publisher_workbook(self):
+        require_layers("the HTAP workbook archive")
         import zipfile
         import openpyxl
         path = os.path.join(ROOT, "data", "raw", "htap", "edgar_HTAPv32_SO2.zip")

@@ -16,6 +16,7 @@ from pkinv.assets import asset_path
 import csv
 import os
 import unittest
+from _support import readable  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OBSERVATIONS = asset_path(ROOT, "data", "activity", "industry", "brick_kiln_fleet_observations.csv")
@@ -67,7 +68,8 @@ class TestTheObservations(unittest.TestCase):
     def test_every_row_cites_a_held_document_and_says_what_it_cannot_measure(self):
         for row in self.rows:
             self.assertTrue(row["source_file"], row["observation_id"])
-            self.assertTrue(os.path.exists(asset_path(ROOT, row["source_file"])),
+            self.assertTrue(os.path.exists(asset_path(ROOT, row["source_file"]))
+                            or not readable(row["source_file"]),
                             "%s cites %s, which is not held" % (row["observation_id"], row["source_file"]))
             self.assertTrue(row["what_it_does_not_measure"].strip(),
                             "%s claims a count without stating its blind spot" % row["observation_id"])

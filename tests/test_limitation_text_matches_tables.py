@@ -25,6 +25,7 @@ import re
 import unittest
 
 from pkinv.core.io import read_rows
+from _support import require_built  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 SEMANTIC = os.path.join(ROOT, "outputs", "semantic")
@@ -43,6 +44,7 @@ def _distinct(name, column):
 class TestLimitationsAgreeWithTheTables(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        require_built()
         from pkinv.semantic import release_json
         cls.text = {l["id"]: l["message"] for l in release_json.BASE_LIMITATIONS}
         cls.air = [m for i, m in cls.text.items() if i.startswith("air_")]

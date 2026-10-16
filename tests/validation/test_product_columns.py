@@ -12,6 +12,7 @@ import unittest
 
 from _support import ROOT
 from validation._package import data_rows
+from _support import require_built  # noqa: E402
 
 SCHEMAS = asset_path(ROOT, "data", "product_schemas.csv")
 COLUMNS = asset_path(ROOT, "data", "product_columns.csv")
@@ -37,6 +38,7 @@ class TestTheTypedColumns(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
+        require_built()
         cls.schemas = {r["product_id"]: r["relative_path"] for r in data_rows(SCHEMAS)}
         cls.registry = data_rows(COLUMNS)
         cls.by_product = {}

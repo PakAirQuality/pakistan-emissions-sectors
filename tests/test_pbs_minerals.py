@@ -9,6 +9,7 @@ from pkinv.assets import asset_path
 from pkinv.core.io import read_rows
 from pkinv.core import pbs_minerals as pm
 from _support import ROOT
+from _support import require_layers  # noqa: E402
 
 PANEL = asset_path(ROOT, "data/activity/monthly/pbs_minerals_month_province.csv")
 RAW = asset_path(ROOT, "data/raw/pbs/minerals")
@@ -21,6 +22,7 @@ def ingest():
 class SourceToExport(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        require_layers("the PBS minerals workbooks")
         cls.rows = read_rows(PANEL)
         cls.module = ingest()
         cls.book = openpyxl.load_workbook(asset_path(RAW, "pbs_minerals_2020_21.xlsx"), data_only=True, read_only=True)

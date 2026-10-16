@@ -21,12 +21,12 @@ import subprocess
 import sys
 import unittest
 
-from _support import ROOT, require_documents
+from _support import ROOT, require_built, require_documents
 
 SCRIPTS = os.path.join(ROOT, "scripts")
 
-# (script, what it writes, requirement) - requirement is None, "gis" (geopandas+shapely) or
-# "slow" (PKINV_SLOW=1). Every entry with a requirement may skip; nothing else may.
+# (script, what it writes, requirement) - requirement is None, "gis" (geopandas+shapely),
+# "slow" (PKINV_SLOW=1), "built" (the large products exist) or "document:<paths>". Every entry with a requirement may skip; nothing else may.
 PRODUCERS = (
     ("build_adm2_package.py", "data/adm2_canonical.csv + data/adm2_crosswalk.csv", None),
     ("build_facility_registry.py", "data/facility_registry.csv", None),
@@ -35,7 +35,8 @@ PRODUCERS = (
     # rc38, the agriculture pass: both read held NFDC documents and need no network.
     ("ingest_nfdc_annex7.py",
      "data/nfdc/annex7_province_month_product_2023-24.csv", "document:sources/Agriculture/NFDC_Fertilizer_Review_2023-24.pdf"),
-    ("ingest_nfdc_afr2025_fertilizer.py", "data/nfdc/afr2025_*.csv (four tables)", None),
+    ("ingest_nfdc_afr2025_fertilizer.py", "data/nfdc/afr2025_*.csv (four tables)",
+     "document:data/nfdc/AFR_2024-25.txt"),
     # The nine-year production series. It was absent from this registry, and that absence
     # cost a real defect: after the sector layout moved its input and its output, the
     # script still named the old locations, so it read a file that was gone and would have
@@ -71,7 +72,7 @@ PRODUCERS = (
     ("build_building_fraction.py", "data/gis/osm_building_fraction_267x340.npy", "gis|document:sources/OSM/pakistan-20260809"),
     ("build_road_network.py", "data/gis/roads/pak_road_density_267x340.npy", "slow"),
     # rc41: the typed column registry, inferred from the shipped products and frozen
-    ("build_product_columns.py", "data/product_columns.csv", None),
+    ("build_product_columns.py", "data/product_columns.csv", "built"),
     # rc41: the consumed derivatives (data/consumed_derivatives.csv) - each re-derived from
     # its document where the document is held, skipped by name where it is not.
     ("ingest_climatetrace_power.py", "data/activity/power/climatetrace_power_assets_pak.csv",
@@ -121,6 +122,10 @@ class TestProducersRederiveByteIdentically(unittest.TestCase):
         if requirement == "gis" and not _gis_available():
             SKIPPED[script] = "geopandas/shapely not installed"
             self.skipTest("%s: geopandas/shapely not installed (writes %s)" % (script, writes))
+        if requirement == "built":
+            # rc69: the registry is inferred from every shipped product, three of which are
+            # too large for GitHub and absent from a clone until built
+            require_built()
         if requirement == "slow" and os.environ.get("PKINV_SLOW") != "1":
             SKIPPED[script] = "PKINV_SLOW unset"
             self.skipTest("%s: set PKINV_SLOW=1 to run (317 MB shapefile; writes %s)"

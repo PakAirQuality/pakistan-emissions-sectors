@@ -7,6 +7,7 @@ import os
 import unittest
 
 from pkinv.core import air_factors
+from _support import readable  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 
@@ -34,6 +35,8 @@ class TestTheRegister(unittest.TestCase):
         for r in self.reg.values():
             if r["status"] == "absent" or r["activity_basis"] == "sulfur_balance":
                 continue
+            if not readable(r["source_path"]):
+                continue   # rc69: a restricted document this clone does not mount
             path = asset_path(ROOT, r["source_path"])
             self.assertTrue(os.path.exists(path), "%s cites %s, not on disk" % (r["ef_id"], r["source_path"]))
             if path not in seen:

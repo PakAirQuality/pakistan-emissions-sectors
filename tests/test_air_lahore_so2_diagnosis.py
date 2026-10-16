@@ -22,6 +22,7 @@ from collections import defaultdict
 from pkinv.core.io import read_rows
 from pkinv.core import configurations as conf
 from pkinv.paths import DATA, OUTPUTS
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 ATTRIBUTION = os.path.join(OUTPUTS, "pakemis_air_lahore_so2_attribution.csv")
@@ -125,6 +126,7 @@ class TestComparisonDoesNotFit(unittest.TestCase):
         self.rows = read_rows(COMPARISON)
 
     def test_the_registers_are_byte_identical_across_a_run(self):
+        require_layers("the EDGAR gridmap archives")
         before = {p: _digest(p) for p in REGISTERS}
         subprocess.run([sys.executable,
                         os.path.join(ROOT, "scripts", "build_air_lahore_external_comparison.py")],

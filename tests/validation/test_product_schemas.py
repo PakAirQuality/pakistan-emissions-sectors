@@ -12,6 +12,7 @@ import unittest
 
 from _support import ROOT
 from validation._package import data_rows, parquet_column_values
+from _support import require_built  # noqa: E402
 
 REGISTRY = asset_path(ROOT, "data", "product_schemas.csv")
 
@@ -29,6 +30,7 @@ def key_tuples(path, key):
 class TestTheDeclaredKeys(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
+        require_built()
         cls.rows = data_rows(REGISTRY)
 
     def test_the_registry_is_not_empty_and_has_the_atomic_key(self):

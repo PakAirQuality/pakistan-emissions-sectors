@@ -28,6 +28,7 @@ import unittest
 from pkinv.paths import OUTPUTS
 from pkinv.report import artifact_inventory as inventory
 from pkinv.core.io import read_rows
+from _support import require_built  # noqa: E402
 
 # The debt as it stood when this guard was written. Each may only fall. Lowering one of these
 # means a file was cited or re-roled; raising one means a product was shipped without a home,
@@ -682,6 +683,7 @@ class TestEveryShippedFileHasARole(unittest.TestCase):
         Until rc36 the scan saw only top-level csv/nc/json/parquet and this test agreed
         with it, so 203 shipped files - every .md, .png, .html and every subdirectory -
         had no role and no test noticed. The universe is now the directory itself."""
+        require_built()
         from _support import ROOT, presentation_layer
         index = presentation_layer()        # a validation package's reading index; empty here
         on_disk = set()

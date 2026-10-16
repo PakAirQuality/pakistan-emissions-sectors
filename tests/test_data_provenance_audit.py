@@ -47,8 +47,12 @@ class TestTheAuditCoversEveryProduct(unittest.TestCase):
         if not os.path.isdir(os.path.join(ROOT, ".git")):
             self.skipTest("the universe is enumerated from the git index; a validation package has none")
         index = presentation_layer()        # a validation package's reading index; empty here
+        from _support import readable
         universe = [p for p in audit.universe() if os.path.normpath(p) not in index]
-        self.assertEqual([r["data_file"] for r in self.rows], universe,
+        # rc69: a clone without the restricted layers cannot see their files; it still holds
+        # every other row of the shipped audit to the disk
+        self.assertEqual([r["data_file"] for r in self.rows if readable(r["data_file"])],
+                         [p for p in universe if readable(p)],
                          "the shipped audit and the tracked data products disagree; "
                          "run python3 -m pkinv.report.data_provenance")
 

@@ -23,6 +23,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 from pkinv.sectors.waste import uncertainty, wastewater          # noqa: E402
 from pkinv.sectors.waste.data import WasteData                   # noqa: E402
 from pkinv.core.reporting_window import CORE_FY_ENDS, CORE_PERIOD_IDS, REFERENCE_PERIOD
+from _support import require_layers  # noqa: E402
 
 CHAPTER = os.path.join(ROOT, "data", "raw", "ipcc", "19R_V5_6_Ch06_Wastewater.pdf")
 COMPARISON = os.path.join(ROOT, "outputs", "pakemis_wastewater_method_comparison.csv")
@@ -135,6 +136,7 @@ class TestTheFactorsAreTheChaptersOwn(unittest.TestCase):
             self.assertIn(table, source, name)
 
     def test_the_chapter_is_held_and_its_retrieval_is_logged(self):
+        require_layers("the IPCC chapter")
         self.assertTrue(os.path.exists(CHAPTER))
         log = _rows(os.path.join(os.path.dirname(CHAPTER), "RETRIEVALS.csv"))
         row = next(r for r in log if r["file"] == os.path.basename(CHAPTER))
@@ -179,6 +181,7 @@ class TestThePathwaySharesAreEachYearsOwn(unittest.TestCase):
             self.assertAlmostEqual(sewered, expected, delta=1e-6 * expected)
 
     def test_the_ingest_re_derives_the_table_from_the_held_workbook(self):
+        require_layers("the JMP workbook")
         run = subprocess.run(
             [sys.executable, os.path.join(ROOT, "scripts", "ingest_jmp_sanitation.py"),
              "--check"], cwd=ROOT, capture_output=True, text=True,

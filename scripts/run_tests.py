@@ -298,7 +298,12 @@ def _summary(results, wall, gated=None):
                      if why.startswith(LAYERS_ABSENT))
     release_time = sum(1 for r in results for _n, why in r["skipped"]
                        if why.startswith("release-time check:"))
-    print("restricted-layer skips: %d; release-time skips: %d" % (restricted, release_time))
+    counted = {prefix: sum(1 for r in results for _n, why in r["skipped"] if why.startswith(prefix))
+               for prefix in ("large product not built:", "manuscripts not compiled:")}
+    print("restricted-layer skips: %d; release-time skips: %d; large products not built: %d; "
+          "manuscripts not compiled: %d" % (restricted, release_time,
+                                             counted["large product not built:"],
+                                             counted["manuscripts not compiled:"]))
     for name, why in gated or ():
         print("\n%s restricted layers :: %s %s" % (FAIL_MARKER, name, why))
     return 1 if failures or errors or unexpected or gated else 0

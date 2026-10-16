@@ -13,6 +13,7 @@ import os
 import subprocess
 import sys
 import unittest
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRODUCT = os.path.join(ROOT, "outputs", "pakemis_fgas_leak_rate_adjudication.csv")
@@ -137,6 +138,7 @@ class TestTheScreening(unittest.TestCase):
         self.assertIn("2.F.1.a", crt["stratum"])
 
     def test_it_regenerates_identically(self):
+        require_layers("the UNFCCC CRT tables")
         before = open(PRODUCT, "rb").read()
         run = subprocess.run([sys.executable, BUILDER], cwd=ROOT,
                              capture_output=True, text=True)

@@ -20,6 +20,7 @@ LEDGER = os.path.join(OUTPUTS, "pakemis_coal_vintage_ledger.csv")
 POLICY = asset_path(DATA, "coal_booking_policy.csv")
 CONSUMERS = asset_path(DATA, "activity", "industry", "coal_by_consumer.csv")
 from pkinv.core.reporting_window import CORE_FY_STARTS
+from _support import readable  # noqa: E402
 PERIODS = ["%d-%02d" % (y, (y + 1) % 100) for y in CORE_FY_STARTS]
 
 
@@ -31,7 +32,8 @@ def rows(path):
 class Vintages(unittest.TestCase):
     def test_every_print_cites_a_held_file_or_is_typed_secondary(self):
         for r in rows(VINTAGES):
-            self.assertTrue(os.path.exists(asset_path(ROOT, r["source_file"])), r["estimate_id"])
+            self.assertTrue(os.path.exists(asset_path(ROOT, r["source_file"]))
+                            or not readable(r["source_file"]), r["estimate_id"])
             if r["status"] == "transcribed_from_secondary":
                 self.assertIn("not held", r["note"])
             else:

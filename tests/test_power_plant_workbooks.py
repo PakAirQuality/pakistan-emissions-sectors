@@ -33,6 +33,7 @@ from collections import defaultdict
 from pkinv.core import air_factors
 from pkinv.core.io import read_rows
 from pkinv.paths import DATA, OUTPUTS
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.join(os.path.dirname(__file__), "..")
 DISTRICT = asset_path(DATA, "activity", "power", "grid_plant_district.csv")
@@ -56,6 +57,7 @@ def _digest(path):
 
 class TestTheIngestIsDeterministic(unittest.TestCase):
     def test_check_mode_says_the_files_are_current(self):
+        require_layers("the NEPRA workbooks")
         done = subprocess.run(
             [sys.executable, os.path.join(ROOT, "scripts", "ingest_power_plant_workbooks.py"),
              "--check"], capture_output=True, text=True)

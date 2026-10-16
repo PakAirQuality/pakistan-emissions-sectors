@@ -19,6 +19,7 @@ import os
 import subprocess
 import sys
 import unittest
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PRODUCT = os.path.join(ROOT, "outputs", "pakemis_release_axis_fingerprints.csv")
@@ -233,6 +234,7 @@ class TestTheAxisFingerprints(unittest.TestCase):
             "this tree and the fingerprint product has stopped measuring anything")
 
     def test_it_regenerates_identically(self):
+        require_layers("the release history through rc68")
         before = open(PRODUCT, "rb").read()
         run = subprocess.run([sys.executable, BUILDER], cwd=ROOT,
                              capture_output=True, text=True)

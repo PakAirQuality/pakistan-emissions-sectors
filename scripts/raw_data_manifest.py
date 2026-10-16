@@ -196,12 +196,19 @@ def build(rehash=False):
             digest, reused = old["sha256"], reused + 1
         else:
             digest, hashed = sha256(full), hashed + 1
+        # The mtime is a cache key for the digest, not a property of the document. A fresh
+        # clone (rc69: development moved to the public repository) stamps every tracked file
+        # with the moment of checkout; unchanged content keeps the time it was recorded with,
+        # so the manifest regenerates byte for byte in any checkout.
+        mtime = int(stat.st_mtime)
+        if old and old["sha256"] == digest and old["bytes"] == str(stat.st_size) and old["mtime"]:
+            mtime = int(old["mtime"])
         licence, package, origin, note = _rules_for(relative.replace("/", os.sep))
         rows.append({
             "path": relative,
             "bytes": stat.st_size,
             "sha256": digest,
-            "mtime": int(stat.st_mtime),
+            "mtime": mtime,
             "tracked": ("lfs" if relative in lfs else
                         "git" if relative in tracked else "external"),
             "package": package,

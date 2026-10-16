@@ -16,6 +16,8 @@ from pkinv.core.io import read_rows
 from pkinv.core import reporting_window as window
 from pkinv.report import periods
 from _support import ROOT
+from _support import require_layers  # noqa: E402
+from _support import readable  # noqa: E402
 
 AVAILABILITY = "outputs/pakemis_extension_source_availability.csv"
 PROVISIONAL = "outputs/pakemis_fy2025_26_provisional_activity.csv"
@@ -62,6 +64,7 @@ class Candidacy(unittest.TestCase):
                 if not row["source_process"].startswith("Billets") else None
 
     def test_nfdc_full_year_nitrogen_against_independent_reads(self):
+        require_layers("the NFDC monthly reviews")
         text = pdf_text(NFDC)
         block = text[text.index("FISCAL YEAR 2026-27 COMPARED"):]
         block = block[block.index("NITROGEN"):block.index("PHOSPHATE")]
@@ -107,7 +110,8 @@ class Candidacy(unittest.TestCase):
     def test_availability_register_is_exact_about_partial_and_absent_sources(self):
         rows = table(AVAILABILITY)
         for row in rows:
-            self.assertTrue(os.path.exists(asset_path(ROOT, row["source_location"])), row["source_location"])
+            self.assertTrue(os.path.exists(asset_path(ROOT, row["source_location"]))
+                            or not readable(row["source_location"]), row["source_location"])
             if row["period"] == "FY2025-26":
                 self.assertEqual("separate_provisional_extension", row["release_class"])
             if "2026-03 (9months)" in row["covered_months"] and "through2026-06" not in row["covered_months"]:

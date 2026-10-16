@@ -29,6 +29,7 @@ import os
 import subprocess
 import sys
 import unittest
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -119,6 +120,7 @@ class TestTheScreening(unittest.TestCase):
                             "%s / %s cites no source" % (row["account"], row["quantity"]))
 
     def test_it_regenerates_identically(self):
+        require_layers("the FAOSTAT forests archive")
         r = subprocess.run([sys.executable,
                             os.path.join(ROOT, "scripts",
                                          "build_forest_flux_adjudication.py"), "--check"],

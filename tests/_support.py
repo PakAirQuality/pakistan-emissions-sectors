@@ -124,6 +124,50 @@ def require_layers(what):
         raise unittest.SkipTest("%s %s" % (LAYERS_ABSENT, what))
 
 
+LARGE_NOT_BUILT = "large product not built:"
+NOT_COMPILED = "manuscripts not compiled:"
+
+
+def readable(rel_path):
+    """True unless the path belongs to restricted layers this checkout does not mount (rc69).
+    For tests that check a list of cited documents: the public rows are still checked in a
+    public clone, and only the rows naming a document it cannot hold are passed over."""
+    return layers.present(ROOT) or layers.mode(ROOT) == "package" \
+        or not restricted(rel_path)
+
+
+def restricted(rel_path):
+    """Restricted by its own path or by where the asset catalog stores it: documents are
+    still cited by historical paths (data/gis/cod_ab/... for data/shared/gis/cod_ab/...)."""
+    if layers.is_restricted(rel_path):
+        return True
+    physical = os.path.relpath(asset_path(ROOT, rel_path), ROOT)
+    return layers.is_restricted(physical)
+
+
+def require_built(*rel_paths):
+    """Skip a test that reads one of this project's own products too large for GitHub when a
+    clone has not built it (rc69): the three are ignored by git and ship in the deposit
+    (layers.TOO_LARGE). Any other missing product still fails."""
+    import unittest
+    paths = rel_paths or layers.TOO_LARGE
+    missing = [p for p in paths if not os.path.exists(os.path.join(ROOT, p))]
+    if not missing:
+        return
+    unexpected = [p for p in missing if p not in layers.TOO_LARGE]
+    if unexpected:
+        raise AssertionError("products missing: %s" % "; ".join(unexpected))
+    raise unittest.SkipTest("%s %s" % (LARGE_NOT_BUILT, "; ".join(missing)))
+
+
+def require_compiled_manuscripts():
+    """Skip a test that reads LaTeX logs when PKINV_NO_LATEX=1 (the public CI, which does
+    not compile the papers). Everywhere else a missing log still fails and says to compile."""
+    import unittest
+    if os.environ.get("PKINV_NO_LATEX") == "1":
+        raise unittest.SkipTest("%s the layout checks read LaTeX logs" % NOT_COMPILED)
+
+
 RELEASE_TIME = "release-time check:"
 
 
@@ -164,7 +208,7 @@ def require_documents(*rel_paths):
         # rc69: a public clone without the restricted layers holds none of the documents,
         # by design. Absent only if layers says so - a missing document in a checkout
         # that HAS the layers still fails, as it always did.
-        if layers.mode(ROOT) == "absent" and all(layers.is_restricted(p) for p in missing):
+        if layers.mode(ROOT) == "absent" and all(restricted(p) for p in missing):
             raise unittest.SkipTest("%s %s" % (LAYERS_ABSENT, "; ".join(missing)))
         return
     unshipped = unshipped_registered()

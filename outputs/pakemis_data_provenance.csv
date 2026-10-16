@@ -37,7 +37,7 @@ data/catalog/not_retained_register.csv,data/catalog,producer,scripts/make_rebuil
 data/catalog/product_columns.csv,data/catalog,producer,scripts/build_product_columns.py,,,6,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/catalog/product_schemas.csv,data/catalog,hand:parameter,,,,1,no,Maintained catalog or schema registry.
 data/catalog/public_documents.csv,data/catalog,hand:parameter,,,,1,no,Maintained catalog or schema registry.
-data/catalog/published_release_vintages.csv,data/catalog,producer,scripts/build_published_vintages.py,,,5,no,Producer and storage binding declared in data/catalog/assets.csv.
+data/catalog/published_release_vintages.csv,data/catalog,producer,scripts/build_published_vintages.py,,,6,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/catalog/raw_manifest.csv,data/catalog,producer,scripts/raw_data_manifest.py,,,27,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/catalog/schemas/semantic_release.schema.json,data/catalog/schemas,schema,,,,1,no,Maintained catalog or schema registry.
 data/catalog/source_documents.csv,data/catalog,producer,scripts/make_source_register.py,,,20,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -89,6 +89,9 @@ data/sectors/agriculture/gis/proxy_gcd_rice_267x340.npy,data/sectors/agriculture
 data/sectors/agriculture/gis/proxy_gcd_rice_267x340.npy.txt,data/sectors/agriculture/gis,sidecar,,,,0,yes,
 data/sectors/agriculture/gis/proxy_glw_livestock_267x340.npy,data/sectors/agriculture/gis,producer,src/pkinv/core/gis/proxies.py (get_proxy; network),,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/gis/proxy_glw_livestock_267x340.npy.txt,data/sectors/agriculture/gis,sidecar,,,,0,yes,
+data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_I_267x340.npy,data/sectors/agriculture/gis,unregistered,,,,0,yes,
+data/sectors/agriculture/gis/proxy_manual_spam2020_V2r2_global_A_RICE_R_267x340.npy,data/sectors/agriculture/gis,unregistered,,,,0,yes,
+data/sectors/agriculture/gis/proxy_manual_spam_rice_267x340.npy,data/sectors/agriculture/gis,unregistered,,,,0,yes,
 data/sectors/agriculture/gis/proxy_manure_applied_267x340.npy,data/sectors/agriculture/gis,producer,src/pkinv/sectors/agriculture/gis/derive_manure_proxy.py via proxies.get_proxy,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/gis/proxy_manure_applied_267x340.npy.txt,data/sectors/agriculture/gis,sidecar,,,,0,yes,
 data/sectors/agriculture/parameters/burning_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,5,no,

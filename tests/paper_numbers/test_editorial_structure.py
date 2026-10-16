@@ -32,6 +32,7 @@ from paper_numbers._common import (
     _main_tex)
 from paper_numbers.doc_claims import (
     _bench)
+from _support import require_compiled_manuscripts  # noqa: E402
 
 
 class TestFugitivesEditorialStructure(unittest.TestCase):
@@ -163,6 +164,7 @@ class TestTableLayout(unittest.TestCase):
 
         The compiler already reports it. This reads what it reported.
         """
+        require_compiled_manuscripts()
         offenders = set()
         seen = set()
         roots = set()

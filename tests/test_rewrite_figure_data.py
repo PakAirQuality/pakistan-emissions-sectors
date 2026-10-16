@@ -32,6 +32,7 @@ from pkinv.paths import PAPER_NATIONAL_FIGURES  # noqa: E402
 import subprocess
 import sys
 import unittest
+from _support import require_layers  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
@@ -101,6 +102,7 @@ class TestTheFigureInputsComeFromTheProducts(unittest.TestCase):
                       "--check reported nothing as checked, so it compared nothing")
 
     def test_every_generated_value_still_matches_the_transcription(self):
+        require_layers("the campaign repair register")
         problems = []
         reviewed = _reviewed_revisions()
         used = set()

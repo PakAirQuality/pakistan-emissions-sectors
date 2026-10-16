@@ -24,6 +24,7 @@ from rasterio.warp import reproject, Resampling
 from rasterio.windows import from_bounds as window_from_bounds
 
 from pkinv.core.gis.grid import DATA_GIS, RES
+from pkinv.paths import ROOT
 
 os.environ.setdefault("GDAL_DISABLE_READDIR_ON_OPEN", "EMPTY_DIR")
 os.environ.setdefault("CPL_VSIL_CURL_ALLOWED_EXTENSIONS", ".tif")
@@ -228,12 +229,43 @@ def build_firms_fire_proxy(grid, period=None):
                  "away from kilns; FRP-weighted)" % (n, fetched))
 
 
+# THE GRID-RESOLUTION CACHES OF THE MANUAL RASTERS (rc69). The three SPAM 2020 rice
+# rasters (CC BY 4.0, RICE_SOURCES.json) are restricted layers: a public clone does not hold
+# the 38 MB global files. Without them the cube placed rice on its declared fallback and the
+# agriculture water-regime axis refused to run, so a public clone could not rebuild what
+# the release publishes. Each raster's resample to the inventory grid - the only thing any
+# reader takes from it - is committed beside the other proxy caches. The raster wins when it
+# is mounted; tests/test_manual_proxy_caches.py holds every cache byte-identical to a fresh
+# resample whenever the raster is present.
+MANUAL_CACHED = ("spam_rice.tif", "spam2020_V2r2_global_A_RICE_I.tif",
+                 "spam2020_V2r2_global_A_RICE_R.tif")
+MANUAL_CACHE_DIR = os.path.join(ROOT, "data", "sectors", "agriculture", "gis")
+
+
+def manual_cache_path(grid, filename):
+    stem = os.path.splitext(filename)[0]
+    return os.path.join(MANUAL_CACHE_DIR, "proxy_manual_%s_%dx%d.npy"
+                        % (stem, grid.height, grid.width))
+
+
 def build_manual_proxy(grid, filename):
     """Load a user-supplied raster from data/gis/manual/<filename>, resampled to the grid.
-    Returns (array, desc) or None if the file is absent."""
+    Returns (array, desc) or None if the file is absent and has no committed grid cache."""
     path = asset_path(MANUAL_DIR, filename)
     if not os.path.exists(path):
+        cache = manual_cache_path(grid, filename)
+        if filename in MANUAL_CACHED and os.path.exists(cache):
+            cached = np.load(cache)
+            if cached.shape != (grid.height, grid.width):
+                raise ValueError("manual proxy cache %s has shape %s against a %dx%d grid"
+                                 % (os.path.basename(cache), cached.shape, grid.height,
+                                    grid.width))
+            return cached, "manual: data/gis/manual/%s" % filename
         return None
+    return _resample_manual(grid, path, filename)
+
+
+def _resample_manual(grid, path, filename):
     dst = np.zeros((grid.height, grid.width), dtype=np.float32)
     with rasterio.open(path) as src:
         data = src.read(1).astype(np.float32)
