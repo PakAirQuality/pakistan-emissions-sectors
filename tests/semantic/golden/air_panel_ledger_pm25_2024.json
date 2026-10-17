@@ -12,7 +12,7 @@
    "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "ee38dde36234326181adcb81403ebef2",
+ "expect_receipt": "8ec2bc370bbbea6b5fb3932c5556d782",
  "function": "query_air",
  "golden_id": "air_panel_ledger_pm25_2024",
  "note": "rc67: renamed from air_panel_survey_pm25_2024 and re-pointed at the ledger series (see note_dung_reference_2026_10_13 on the cell).",

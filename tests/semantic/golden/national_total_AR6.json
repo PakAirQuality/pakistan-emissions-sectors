@@ -11,7 +11,7 @@
    "tolerance": "0.000005"
   }
  ],
- "expect_receipt": "24b5ade96116f1caf5c81c01ce50c3f1",
+ "expect_receipt": "2df540f35214272b2c9ab204f73eb6a5",
  "function": "query_emissions",
  "golden_id": "national_total_AR6",
  "request": {

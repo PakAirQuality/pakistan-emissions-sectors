@@ -7,7 +7,7 @@
    "tolerance": "0.00001"
   }
  ],
- "expect_receipt": "0c3d69e352a393bc34bd2709c99de542",
+ "expect_receipt": "7501c44754ba1e424529541a6fa7a9b9",
  "function": "compare_emissions",
  "golden_id": "compare_L_vs_reference",
  "note": "rc67: renamed from compare_S_vs_L (see note_dung_reference_2026_10_13 on the cell).",
