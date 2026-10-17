@@ -23,7 +23,7 @@
     "software": ""
   },
   "git": {
-    "describes_commit": "f3f7faec9d6ab52115485f92ed4f443f0a6ba4a8",
+    "describes_commit": "a22d5444d9afac75d585709dfad6ebc5d98c4753",
     "restricted_layers": {
       "commit": "e891f19b27c1d7d58f501e7237a8411599e12d51",
       "dirty": false,
@@ -144,7 +144,7 @@
     "name": "PakEmis",
     "package": "pkinv",
     "repository": "https://github.com/PakAirQuality/pakistan-emissions-sectors",
-    "repository_note": "the public development repository, without the third-party source documents, whose checksums it lists; the git block names its commit, and restricted_layers the commit of the private checkout that holds the documents. Releases through 1.0.0rc68 were made in that private repository and their commits are not in the public history",
+    "repository_note": "the public development repository, without the third-party source documents, whose checksums it lists; the git block names its commit, and restricted_layers the commit of the private checkout that holds the documents. Every release candidate through 1.0.0rc68 was made in that private repository, and their commits are not in the public history",
     "submission_identifier": null
   },
   "products": [
@@ -1956,7 +1956,7 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/semantic_release.json",
-      "sha256": "c5a928319e45176ca1bfbfcea3aa1003c1487b63d0cad746287dc0f4fe372c07"
+      "sha256": "cdab6be98719af5aab8c72d6e31f9d239fe5ce4326a558c2def01cc06986dbf5"
     },
     {
       "byte_stable": true,
