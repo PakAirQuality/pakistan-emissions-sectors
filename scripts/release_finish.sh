@@ -29,9 +29,21 @@ V=$(python3 -c "import sys; sys.path.insert(0,'src'); import pkinv; print(pkinv.
 echo "== release finish for $V"
 
 echo "== receipts (deposit last)"
-python3 -m pkinv.report.artifact_inventory > /dev/null 2>&1
-python3 -m pkinv.report.product_facts > /dev/null 2>&1
-python3 -m pkinv.report.data_provenance > /dev/null 2>&1
+# rc69: the release tail in its registry order, repeated until a pass changes nothing. One
+# pass left product_facts quoting a deposit count from before the deposit manifest grew by
+# ten rows, and the citation audit a byte count from before validation_measured changed.
+for pass in 1 2 3 4; do
+  before=$(git diff | git hash-object --stdin)
+  python3 -m pkinv.report.artifact_inventory > /dev/null 2>&1
+  python3 scripts/make_product_coverage.py > /dev/null 2>&1
+  python3 -m pkinv.report.deposit_manifest > /dev/null 2>&1
+  python3 scripts/build_citation_deposit_audit.py > /dev/null 2>&1
+  python3 -m pkinv.report.product_facts > /dev/null 2>&1
+  python3 scripts/make_claim_matrix.py > /dev/null 2>&1
+  python3 -m pkinv.report.data_provenance > /dev/null 2>&1
+  [ "$(git diff | git hash-object --stdin)" = "$before" ] && break
+  [ $pass = 4 ] && { echo "RECEIPTS DID NOT CONVERGE"; exit 1; }
+done
 python3 -m pkinv.report.release_manifest > /dev/null 2>&1
 python3 -m pkinv.report.deposit_manifest > /dev/null 2>&1
 if ! git diff --quiet || ! git diff --cached --quiet; then
