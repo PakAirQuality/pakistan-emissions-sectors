@@ -17,7 +17,7 @@ citation,outputs/agriculture_fertiliser_composition_2024.csv,diagnostic,audit,no
 citation,outputs/agriculture_livestock_reconciliation_2024.csv,diagnostic,audit,no,path,5,639,papers/agriculture/sections/03_study_area_and_data.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
 citation,outputs/agriculture_monthly_2024.csv,sector_headline,supporting,yes,path,408,93830,papers/agriculture/sections/10_appendix.tex,deposited
 citation,outputs/agriculture_nfdc_province_residual.csv,diagnostic,audit,no,path,121,7564,papers/agriculture/sections/04c_shared_ledger.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
-citation,outputs/agriculture_timing_classes.csv,diagnostic,audit,yes,path,7,2912,papers/agriculture/sections/10_appendix.tex,deposited
+citation,outputs/agriculture_timing_classes.csv,diagnostic,audit,yes,path,7,2892,papers/agriculture/sections/10_appendix.tex,deposited
 citation,outputs/agriculture_urea_basis.csv,diagnostic,audit,no,path,10,2322,papers/agriculture/sections/04_methods.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
 citation,outputs/air_pollutants_2024.csv,diagnostic,audit,yes,path,79,5419,papers/agriculture/sections/06b_air_pollutants.tex,deposited
 citation,outputs/air_pollutants_adm1.csv,canonical,core,yes,bare,2095,338896,paper_national/versions/v3/products_appendix.tex,deposited
@@ -124,46 +124,47 @@ citation,outputs/ocac_edition_currency.csv,diagnostic,audit,yes,bare,36,5565,pap
 citation,outputs/ocac_edition_inventory.csv,diagnostic,audit,yes,path,4,876,papers/transport/sections/03_study_area_and_data.tex,deposited
 citation,outputs/ocac_parse_summary.csv,diagnostic,audit,yes,bare,1,706,paper_national/versions/v3/technical_supplement.tex,deposited
 citation,outputs/ogra_gas_class_series.csv,canonical,core,yes,bare,80,14055,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_adm1_by_year.csv,canonical,core,yes,bare,8644,1442752,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_adm1_by_year.csv,canonical,core,yes,bare,8644,1442733,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm1_ledger_2024.csv,canonical,core,yes,bare,1380,205001,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_by_year.csv,canonical,core,yes,bare,11500,1158088,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_crosswalk.csv,canonical,core,yes,bare,152,24956,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_frame_2022.csv,canonical,core,yes,bare,179,21864,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_ledger_2024.csv,canonical,core,yes,bare,35075,6862149,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_monthly.csv,canonical,core,yes,bare,13624,1330154,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_adm2_monthly_by_year.csv,canonical,core,yes,bare,136240,14658318,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_adm2_monthly_by_year.csv,canonical,core,yes,bare,136240,14658286,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_monthly_sector.csv,canonical,core,yes,bare,43886,5513194,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_nesting_check.csv,canonical,core,yes,bare,6,1029,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_adm2_sector_by_year.csv,canonical,core,yes,bare,36920,4737795,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_adm2_stream_by_year.csv,canonical,core,yes,bare,236093,49071443,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_adm2_sector_by_year.csv,canonical,core,yes,bare,36920,4737802,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_adm2_stream_by_year.csv,canonical,core,yes,bare,236093,49071332,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_adm2_stream_reference.csv,canonical,core,yes,bare,23749,4729430,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_agriculture_basis_change.csv,canonical,core,yes,bare,60,9682,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_agriculture_crop_calendar.csv,canonical,core,yes,bare,10,1236,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_agriculture_fiscal_series.csv,canonical,core,yes,bare,80,18235,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_absence_screening_by_year.csv,canonical,core,yes,bare,90,34893,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_adm1_by_year.csv,canonical,core,yes,bare,50008,5654994,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_adm2_by_year.csv,canonical,core,yes,bare,267120,28624557,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_adm2_by_year.csv,canonical,core,yes,bare,267120,28623335,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv,canonical,core,yes,bare,3320,318326,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_atomic_annual.csv,canonical,core,yes,bare,6618,7316706,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_conditional_uncertainty.csv,canonical,core,yes,bare,5360,3214412,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_coverage_matrix.csv,canonical,core,yes,bare,700,66650,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9204793,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9209411,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9253333,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9258292,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,93575536,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,93609418,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,94117875,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,94159511,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_lahore_by_year.csv,canonical,core,yes,bare,2720,800931,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_monthly.csv,canonical,core,yes,bare,207120,59298834,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9205271,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9209934,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9253882,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9258926,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,93580419,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,93614392,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,94125736,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,94167479,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_lahore_by_year.csv,canonical,core,yes,bare,2720,801067,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_monthly.csv,canonical,core,yes,bare,207120,59396374,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_monthly_unallocated.csv,canonical,core,yes,bare,15264,3860536,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_power_control_evidence.csv,diagnostic,audit,yes,bare,5,3350,paper_national/versions/v3/technical_supplement.tex,deposited
+citation,outputs/pakemis_air_power_omission.csv,canonical,core,yes,bare,40,4742,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv,canonical,core,yes,bare,1810,793093,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_source_coverage.csv,canonical,core,yes,bare,11900,2076081,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_spatial_support_by_year.csv,canonical,core,yes,bare,11560,2718120,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_structural_sensitivities.csv,canonical,core,yes,bare,2396,993463,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_air_temporal_support.csv,canonical,core,yes,bare,952,60010,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_spatial_support_by_year.csv,canonical,core,yes,bare,11560,2718316,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_air_structural_sensitivities.csv,canonical,core,yes,bare,2536,1093522,paper_national/versions/v3/products_appendix.tex; paper_national/versions/v3/technical_supplement.tex,deposited
+citation,outputs/pakemis_air_temporal_support.csv,canonical,core,yes,bare,952,60007,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_trend_uncertainty.csv,canonical,core,yes,bare,5360,3194631,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_unallocated_by_year.csv,canonical,core,yes,bare,1272,302666,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_air_uncertainty_drivers.csv,canonical,core,yes,bare,4480,884333,paper_national/versions/v3/products_appendix.tex,deposited
@@ -186,6 +187,7 @@ citation,outputs/pakemis_claim_matrix.csv,canonical,core,yes,bare,,,paper_nation
 citation,outputs/pakemis_coal_allocation_cases.csv,canonical,core,yes,bare,14,3841,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_coal_allocation_identity.csv,diagnostic,audit,yes,bare,86,10426,paper_national/versions/v3/technical_supplement.tex,deposited
 citation,outputs/pakemis_coal_balance.csv,canonical,core,yes,bare,10,16571,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_coal_change_decomposition.csv,canonical,core,yes,bare,54,28457,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_coal_source_reconciliation.csv,canonical,core,yes,bare,40,30903,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_coal_vintage_ledger.csv,canonical,core,yes,bare,191,53496,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_comparison_crosswalk.csv,canonical,core,yes,bare,64,49764,paper_national/versions/v3/products_appendix.tex,deposited
@@ -204,34 +206,34 @@ citation,outputs/pakemis_extension_source_controls.csv,canonical,core,yes,bare,1
 citation,outputs/pakemis_facility_registry.csv,canonical,core,yes,bare,12684,6461879,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_faostat_nitrogen_flows.csv,diagnostic,audit,yes,bare,24,5592,paper_national/versions/v3/technical_supplement.tex,deposited
 citation,outputs/pakemis_fgas_leak_rate_adjudication.csv,diagnostic,audit,yes,path,6,4732,papers/ippu/sections/07_discussion.tex,deposited
-citation,outputs/pakemis_flatness_crosswalk.csv,canonical,core,yes,bare,13,1561,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_flatness_crosswalk.csv,canonical,core,yes,bare,13,1563,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_fuel_sulfur_decision.csv,canonical,core,yes,bare,13,12285,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_fy2025_26_provisional_activity.csv,canonical,core,yes,bare,26344,8558235,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_fy2025_26_provisional_emissions.csv,canonical,core,yes,bare,36,18864,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_fy2025_26_provisional_monthly.csv,canonical,core,yes,bare,432,227176,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_gas_flow_crosswalk.csv,diagnostic,audit,yes,bare,125,66512,paper_national/versions/v3/technical_supplement.tex,deposited
 citation,outputs/pakemis_ghg_conditional_uncertainty.csv,canonical,core,yes,bare,4240,2104542,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_configuration_adm1.csv,canonical,core,yes,bare,34576,5984193,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_configuration_adm1_monthly.csv,canonical,core,yes,bare,414912,79227515,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_configuration_adm2.csv,canonical,core,yes,bare,147680,19910618,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_configuration_adm2_monthly.csv,canonical,core,yes,bare,1755440,249545842,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_configuration_adm1.csv,canonical,core,yes,bare,34576,5984129,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_configuration_adm1_monthly.csv,canonical,core,yes,bare,414912,79225342,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_configuration_adm2.csv,canonical,core,yes,bare,147680,19910622,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_configuration_adm2_monthly.csv,canonical,core,yes,bare,1755440,249545878,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_ghg_configuration_atoms.csv,canonical,core,yes,bare,7964,2923322,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_configuration_monthly.csv,canonical,core,yes,bare,95568,34596589,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_configuration_monthly.csv,canonical,core,yes,bare,95568,34601633,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_ghg_configuration_unallocated.csv,canonical,core,yes,bare,26400,8192866,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9886952,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9887714,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9887717,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9886970,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9887735,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9887709,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_ghg_trend_uncertainty.csv,canonical,core,yes,bare,4240,2087369,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_ghg_uncertainty_drivers.csv,canonical,core,yes,bare,640,102306,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_ghg_uncertainty_parameters.csv,canonical,core,yes,bare,653,94215,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9888433,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc,canonical,core,yes,bare,,9888423,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_grid_0p05_monthly.nc,canonical,core,yes,bare,,6143952,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_grid_0p05_monthly_ledger.nc,canonical,core,yes,bare,,3825141,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_grid_0p1_edgar_aligned.nc,canonical,core,yes,bare,,3205167,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_grid_0p1_edgar_aligned.nc,canonical,core,yes,bare,,3205140,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_grid_fallbacks.csv,canonical,core,yes,bare,221,71245,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_grid_fallbacks_by_year.csv,canonical,core,yes,bare,2284,764743,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_grid_fallbacks_by_year.csv,canonical,core,yes,bare,2282,764309,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_grid_provincial_check.csv,canonical,core,yes,bare,1010,174161,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_grid_stream_surfaces_by_year.csv,canonical,core,yes,bare,1991,364070,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_grid_stream_surfaces_by_year.csv,canonical,core,yes,bare,1991,364074,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_hfc_bank_series.csv,canonical,core,yes,bare,36,19851,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_industrial_change_attribution.csv,canonical,core,yes,bare,25,9532,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_industrial_coal_bridge.csv,canonical,core,yes,bare,40,24177,paper_national/versions/v3/products_appendix.tex,deposited
@@ -246,13 +248,14 @@ citation,outputs/pakemis_longitudinal_uncertainty.csv,canonical,core,yes,bare,30
 citation,outputs/pakemis_minerals_controls.csv,canonical,core,yes,bare,1016,443527,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_minerals_panel_screening.csv,diagnostic,audit,yes,bare,36,13285,paper_national/versions/v3/technical_supplement.tex,deposited
 citation,outputs/pakemis_monthly_controls.csv,canonical,core,yes,bare,288,47851,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_monthly_coverage.csv,canonical,core,yes,bare,3494,472485,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_monthly_coverage_summary.csv,canonical,core,yes,bare,120,10753,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_monthly_data_requests.csv,canonical,core,yes,bare,31,30264,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_monthly_evidence.csv,canonical,core,yes,bare,38,1202,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_monthly_fy2015_16_fy2024_25.csv,canonical,core,yes,bare,23892,8230560,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_monthly_coverage.csv,canonical,core,yes,bare,3494,472939,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_monthly_coverage_summary.csv,canonical,core,yes,bare,120,10752,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_monthly_data_requests.csv,canonical,core,yes,bare,31,30260,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_monthly_evidence.csv,canonical,core,yes,bare,38,1203,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_monthly_fy2015_16_fy2024_25.csv,canonical,core,yes,bare,23892,8231875,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_national_series.csv,canonical,core,yes,bare,110,30010,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_national_series_coverage.csv,canonical,core,yes,bare,10,871,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_nitrogen_no_pathways.csv,canonical,core,yes,bare,100,38232,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_nitrogen_partition_sensitivity.csv,diagnostic,audit,yes,bare,200,123197,paper_national/versions/v3/technical_supplement.tex,deposited
 citation,outputs/pakemis_ocac_extension_revisions.csv,canonical,core,yes,bare,99,36705,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_paper_artefact_hashes.csv,canonical,core,yes,bare,7,2253,paper_national/versions/v3/products_appendix.tex,deposited
@@ -268,6 +271,7 @@ citation,outputs/pakemis_product_facts.csv,canonical,core,yes,bare,,,paper_natio
 citation,outputs/pakemis_rice_geography_crosscheck.csv,canonical,core,yes,bare,131,19008,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_road_length_adm2.csv,canonical,core,yes,both,508,22766,paper_national/versions/v3/products_appendix.tex; papers/transport/sections/08_limitations.tex,deposited
 citation,outputs/pakemis_road_links.csv,canonical,core,yes,bare,45777,5396773,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_road_technology_case.csv,canonical,core,yes,bare,40,9708,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_road_weights_adm2.csv,canonical,core,yes,bare,126,51432,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_series_splice_agriculture.csv,canonical,core,yes,bare,6,1315,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_source_register.csv,canonical,core,yes,bare,,,paper_national/versions/v3/products_appendix.tex,deposited
@@ -281,17 +285,18 @@ citation,outputs/pakemis_spatial_decomposition.csv,canonical,core,yes,bare,202,7
 citation,outputs/pakemis_spatial_exceptions.csv,canonical,core,yes,bare,40,39964,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_spatial_unallocated.csv,canonical,core,yes,bare,756,210792,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_spatial_unallocated_by_year.csv,canonical,core,yes,bare,6600,2005376,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_spatial_weights_by_year.csv,canonical,core,yes,bare,2020,1818344,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_stream_support_ledger.csv,canonical,core,yes,bare,2020,1679430,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_spatial_weights_by_year.csv,canonical,core,yes,bare,2020,1818206,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_stream_support_ledger.csv,canonical,core,yes,bare,2020,1679244,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_structural_trajectories.csv,canonical,core,yes,bare,230,35170,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_sulfur_adoption_effect.csv,canonical,core,yes,bare,141,58526,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_temporal_decomposition.csv,canonical,core,yes,bare,38,16625,paper_national/versions/v3/products_appendix.tex,deposited
-citation,outputs/pakemis_temporal_profiles.csv,canonical,core,yes,bare,23892,11893616,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_temporal_decomposition.csv,canonical,core,yes,bare,38,16621,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_temporal_profiles.csv,canonical,core,yes,bare,23892,11893472,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_trend_uncertainty.csv,canonical,core,yes,bare,30,6640,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_unallocated_activity_controls.csv,canonical,core,yes,bare,2,2307,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_validation_catalog.csv,canonical,core,yes,bare,104,92221,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_validation_five_classes.csv,canonical,core,yes,both,104,15746,paper_national/versions/v3/generated/tab_five_classes.tex; paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_validation_five_classes_summary.csv,canonical,core,yes,bare,8,810,paper_national/versions/v3/products_appendix.tex,deposited
+citation,outputs/pakemis_validation_measured.csv,canonical,core,yes,bare,13,3047,paper_national/versions/v3/generated/tab_validation_measured.tex; paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_validation_scorecard.csv,canonical,core,yes,bare,36,4295,paper_national/versions/v3/products_appendix.tex,deposited
 citation,outputs/pakemis_wastewater_method_comparison.csv,diagnostic,audit,yes,bare,24,8024,paper_national/versions/v3/technical_supplement.tex,deposited
 citation,outputs/pbs_minerals_parse_summary.csv,diagnostic,audit,yes,bare,1,378,paper_national/versions/v3/technical_supplement.tex,deposited
@@ -387,7 +392,7 @@ citation,outputs/transport_ocac_control_diagnostic.csv,diagnostic,audit,no,bare,
 citation,outputs/transport_provincial_2024.csv,sector_headline,supporting,yes,bare,5,118,papers/transport/sections/10_appendix.tex,deposited
 citation,outputs/transport_provincial_proxy_comparison_2024.csv,sector_headline,supporting,yes,both,5,356,papers/transport/sections/06_results.tex; papers/transport/sections/10_appendix.tex,deposited
 citation,outputs/transport_provincial_shape_brackets.csv,sector_headline,supporting,yes,path,20,1355,papers/transport/sections/06_results.tex,deposited
-citation,outputs/transport_run_manifest_2024.json,intermediate,build,no,bare,,17414,papers/transport/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: intermediate)
+citation,outputs/transport_run_manifest_2024.json,intermediate,build,no,bare,,17588,papers/transport/sections/10_appendix.tex,CITED BUT NOT DEPOSITED (role: intermediate)
 citation,outputs/transport_totals_2024.csv,sector_headline,supporting,yes,bare,5,1247,papers/transport/sections/10_appendix.tex,deposited
 citation,outputs/transport_uncertainty_2024.csv,sector_headline,supporting,yes,bare,1,142,papers/transport/sections/10_appendix.tex,deposited
 citation,outputs/transport_uncertainty_inputs_2024.csv,diagnostic,audit,no,path,20,5650,papers/transport/sections/S1_uncertainty.tex,CITED BUT NOT DEPOSITED (role: diagnostic)
@@ -410,4 +415,4 @@ citation,outputs/waste_uncertainty_scenarios_2024.csv,diagnostic,audit,yes,bare,
 summary_by_role,,diagnostic,,no,,,,,124 cited file(s) typed diagnostic are not in the deposit
 summary_by_role,,intermediate,,no,,,,,2 cited file(s) typed intermediate are not in the deposit
 summary_by_role,,eval_lane,,no,,,,,1 cited file(s) typed eval_lane are not in the deposit
-summary_total,,,,,,395,,,"395 distinct output files named; 268 deposited, 127 not"
+summary_total,,,,,,400,,,"400 distinct output files named; 273 deposited, 127 not"

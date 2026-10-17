@@ -23,8 +23,13 @@
     "software": ""
   },
   "git": {
-    "describes_commit": "6d8e8669a46039f1a98d85f38338878b88977d14",
-    "tree_dirty": false
+    "describes_commit": "140f9abadad3610f9dab5dedf1933d21ea48bf81",
+    "restricted_layers": {
+      "commit": "e891f19b27c1d7d58f501e7237a8411599e12d51",
+      "dirty": false,
+      "mode": "overlay"
+    },
+    "tree_dirty": true
   },
   "gwp_basis": {
     "note": "fossil and biogenic CH4 carry distinct AR5 values; see pkinv.core.gwp",
@@ -132,14 +137,14 @@
     "period_id": "FY2023-24"
   },
   "product": {
-    "cite_as": "PakEmis 1.0.0rc68",
+    "cite_as": "PakEmis 1.0.0rc69",
     "explorer": "https://emissions.hawanama.org",
     "family": "PakEmis",
     "manuscript_status": "preparation",
     "name": "PakEmis",
     "package": "pkinv",
     "repository": "https://github.com/PakAirQuality/pakistan-emissions-sectors",
-    "repository_note": "a public copy of the release without the third-party source documents, whose checksums it lists; the commits named in the git block are those of the private working repository and do not exist in the copy",
+    "repository_note": "the public development repository, without the third-party source documents, whose checksums it lists; the git block names its commit, and restricted_layers the commit of the private checkout that holds the documents. Releases through 1.0.0rc68 were made in that private repository and their commits are not in the public history",
     "submission_identifier": null
   },
   "products": [
@@ -156,7 +161,7 @@
     {
       "byte_stable": true,
       "path": "outputs/agriculture_timing_classes.csv",
-      "sha256": "194f8e5ba76a1907c2053b384a93704fd331dbdf28433eb2734e5ffcc4b7bbf3"
+      "sha256": "b099b591b1692760f6ca54f3b3827fd103c70ef16c7870827d0c193aab1dcd69"
     },
     {
       "byte_stable": true,
@@ -421,7 +426,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_adm1_by_year.csv",
-      "sha256": "70ce8deb6a28fec61ee4ae7d95d3331543131c348a58008743bf84ad5e7b2fe5"
+      "sha256": "a35de7a65be498948f43598779eb597913cdd26ff6925f02e2b9fc8915beb7d4"
     },
     {
       "byte_stable": true,
@@ -431,7 +436,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_adm2_by_year.csv",
-      "sha256": "f07d1562390325c8d4708593262adaa7f92484d398d344bd4bbee0bea3e53814"
+      "sha256": "7554ee6cdb5b22185949bc52a1d4a2e971cfc301af620f4f6f14423afd7fc405"
     },
     {
       "byte_stable": true,
@@ -456,7 +461,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_adm2_monthly_by_year.csv",
-      "sha256": "cead6e3410498b68848dd5ed0a0aa993b039ec02b2c2700e157a8ab09a71ce90"
+      "sha256": "187b3d418bcf99228c7b33047acace047a8598b30de48357bad3c1a327d39672"
     },
     {
       "byte_stable": true,
@@ -471,12 +476,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_adm2_sector_by_year.csv",
-      "sha256": "bda24f22680eaca4799941d2c4bd796cbab8df3bbe459e60dd50e39e015f93ef"
+      "sha256": "5bb5d554360c893304805987800dafaa675a0875401883b33d978520eaa08d9a"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_adm2_stream_by_year.csv",
-      "sha256": "977f72364ad79475058ab4de35def86ffe252f0d28484732f18509fba6139b65"
+      "sha256": "34524a90b3517ed7080200d047af95b898b08558ac39bf0f669ec413c0922fd8"
     },
     {
       "byte_stable": true,
@@ -511,7 +516,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_adm2_by_year.csv",
-      "sha256": "1f8707f4abd87eb36c73f2efd914c73661c72ba4147d7a742946f391f878071d"
+      "sha256": "54f5d95ce87b064be1ac297727211b73254a9aed313cc95b04203363d98a8aed"
     },
     {
       "byte_stable": true,
@@ -541,42 +546,42 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "431fb243b01947919680593f5b3daeed24022c79df49083d5b70acc0fdff9351"
+      "sha256": "14f09df56fc3b825717b410df8925a9eadafeedc4531415d3120251e17e551d7"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "eb137d6ab28059e5bc5a4acf250be1b9f8f66cf8bcb7c74c2522f923e42392f2"
+      "sha256": "2b45606fd1cc0e350a07c6a6dc3971de6c6cef94ca7e0b70fb1ceef8440b37e3"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "e00b5e0102370555b4923229fb95a3d8b5756bc9939ca7045e248db469b90520"
+      "sha256": "60461ab1f930c1845f04a428606ed5c4c5c87765e6d398c1834bd90c7c6ae6ab"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "95f7cfadfeafa1096e46466c1c90b9ef7614c9fd825db94ba5f7c40215a0901d"
+      "sha256": "001e65a7b2ca9f49dd7e852efaea91207a1408f37bb66c5aae2a0c02a4b880b1"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "8d14ff4ef0b1a117a1a6aee56bf3182377cd2ebc394e49197b29d0a5e94937dc"
+      "sha256": "aaf84bac467e2dcf4def634a0df3bf9f59640dc399654094ee027b7793063e1c"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "30d2e96d39aa892ea80d07d15f259d1ad6296040c6f4cb9eeeecd9705e323f29"
+      "sha256": "11f07117b868b763134d6e119b8ee0226eedcb3a15bcb36e0da3d2a8b8702859"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "d00c21a93716a643d393309f20ed04caa5a0c7d4509bb1c6e8dfe45a2c036704"
+      "sha256": "603408eba253f17f3944861681c048cbb2ff5c76ce0d7e15c8bc46111f798349"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "f8df8abc7d6e8370dba7032ee94ac91c73a1e0dc676f6101b251b8ae55c8ae1f"
+      "sha256": "3ac2ff0e47557ab397043ac6864b9a60fcd3be90ccd3ed599867aa2928940de3"
     },
     {
       "byte_stable": true,
@@ -596,12 +601,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_lahore_by_year.csv",
-      "sha256": "fcd0d0f49c68161930157bcf9d0d30aaad291c6cb227de5d3b2d6b6ff10fcb1f"
+      "sha256": "92c793e0d0895430e803b865fa8cc5d3dc4e7db9296e15f7575b3058b207c91c"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_lahore_external_comparison.csv",
-      "sha256": "443df766706eb81b3556e25e1855fde87299bb3a31bb3d57225ccb6d3d9b16b8"
+      "sha256": "5ab5c87442736ce70e9aa6a9516c4966b88b1706852f1e78396e8bf66a9b809d"
     },
     {
       "byte_stable": true,
@@ -616,7 +621,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_monthly.csv",
-      "sha256": "1fb447100c9bf41556dd67cf71ab7454174a3f51be6cd840dd47e7fc8509fdd7"
+      "sha256": "edde2e2225771d8fe653a48191d9e1695d9fdda59d7c0c093f5a2541549b0117"
     },
     {
       "byte_stable": true,
@@ -637,6 +642,11 @@
       "byte_stable": true,
       "path": "outputs/pakemis_air_power_design_cases.csv",
       "sha256": "078df0fe70c26d0ad496cf5e53cd072352e9cb9185c683cc0481a419bdf24f81"
+    },
+    {
+      "byte_stable": true,
+      "path": "outputs/pakemis_air_power_omission.csv",
+      "sha256": "15aa2a5a38c6311f1ff859b8aa4325309c6a7e95818c7af607f8c3b8d796c5ec"
     },
     {
       "byte_stable": true,
@@ -666,17 +676,17 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_spatial_support_by_year.csv",
-      "sha256": "fe90afaa2beca4a9b07eb04159e2878cb46fc86b067061b06e62e1a5e4b4112a"
+      "sha256": "0ba1898ca19d7b974c3613492c1c62fb6c28f692a21bfb3a7ec9eb4f07b1cf10"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_structural_sensitivities.csv",
-      "sha256": "a97bf2991308aaaded2aa72fa402fa5da196e97ce0faa3d08a5a2373f43c3a9f"
+      "sha256": "3d14a2b9c8f91f47d2292e8fd94fb22683b22a16c2087f54fe97e9d9a15f2bc0"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_temporal_support.csv",
-      "sha256": "f3f906bcd6fdddefe02d72c13dead21a21dabc45c1ef03e5fa9bc737a55b4fee"
+      "sha256": "5cf92ee2bd95c7f759a2512af9e06417bafebcd615f7fdae5f82b4927f0229b3"
     },
     {
       "byte_stable": true,
@@ -701,7 +711,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_uncertainty_split_by_year.csv",
-      "sha256": "ea3af18e2601ddfbd9e9d4940736ffedba089b29229b5f27fc6c4cc7e9ecc939"
+      "sha256": "e9e241622392fdf8672f31fcdb3a9e373bdaddc9fd34a3a741a54e8b19b6231d"
     },
     {
       "byte_stable": true,
@@ -716,12 +726,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_artifact_inventory.csv",
-      "sha256": "2025d2f4c4c695093ca7ba4ecb411b6044e4b4bdb050cd24bcc245f76d2449a1"
+      "sha256": "c966a3cc301e0ea7b3ebec96e9da9195a8408b80216db71de3657bc798978e6d"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_atomic_annual.csv",
-      "sha256": "0ed8e697cab34f878748e398e31a9d53e901466e00cddc5ea7d54cca684688c7"
+      "sha256": "3700c97a69b4e6f9236c2e4fd1b3bcbd312efbd71baacc4b0b5b92888a223dba"
     },
     {
       "byte_stable": true,
@@ -781,17 +791,17 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_citation_deposit_audit.csv",
-      "sha256": "feaa97f2d31f007e8ef50777ae89d1547904a16748a059e9e1f49409b2c1467a"
+      "sha256": "65565b6d6117c11b6b18e282f3280de96b7a5d02191891a5b5dfa1b106ecad45"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_citation_pointer_audit.csv",
-      "sha256": "64acf75f4211d8a1c72e8deda5fb98f395759985b24226d8bfd587724f0d59e5"
+      "sha256": "08a2b4c1d51370c8d31c832e107342fe77ae69e93dac3345cd62c35ebc9716ff"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_claim_matrix.csv",
-      "sha256": "e610dd1fdf197020595b57da0c3d30ae0a17a74214dae64b4a98db4d7ccc3c19"
+      "sha256": "c1835ca44a4bf64b026eae55f166792fddc8cd99f1430b4984280d2145b59069"
     },
     {
       "byte_stable": true,
@@ -807,6 +817,11 @@
       "byte_stable": true,
       "path": "outputs/pakemis_coal_balance.csv",
       "sha256": "269457def57e8966fb325f4d4af17445781e9ea9b9bfe8a3051fef486e608116"
+    },
+    {
+      "byte_stable": true,
+      "path": "outputs/pakemis_coal_change_decomposition.csv",
+      "sha256": "49e0f0e320d0e4623fc90f0df22d2bb2253419fb8867ba6670ccecf4675527e3"
     },
     {
       "byte_stable": true,
@@ -846,12 +861,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_data_provenance.csv",
-      "sha256": "835d75f9e1ab004e7228368b3ceafd7cc92df7b51aad219599e695a672f52d9b"
+      "sha256": "4b616ab623fa9dac293f25b423140418b533c63dbc57df7d9aa173fdfdc11218"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_deposit_manifest.csv",
-      "sha256": "b3b2d1a60859761c988a7f06ac8ae9d816022034f7a09d3f139f1c8f91c4280e"
+      "sha256": "d9d62f6f6f5ae1be4a3f81c60a72e11d86fc8f59417e433e806f27604b9e8648"
     },
     {
       "byte_stable": true,
@@ -906,7 +921,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_facility_registry.csv",
-      "sha256": "87402eaa25cc38f12c7ac4bc6e889d1eec90b86f422114e8f921fbff038f4bb7"
+      "sha256": "7abe16b489f633c11a9a96e92767b950984d3d8fc7b5b8b026a7323b387606b3"
     },
     {
       "byte_stable": true,
@@ -926,7 +941,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_flatness_crosswalk.csv",
-      "sha256": "73c465b02545c4582e27b9eafce0bca9f0bfb0e4fa1c76877323950245771282"
+      "sha256": "bec82ad5e10573eefe97a490ba09d5add18ab38d090b60dbed505e59114f4db2"
     },
     {
       "byte_stable": true,
@@ -966,32 +981,32 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_adm1.csv",
-      "sha256": "c9374ffd710979e1d970e37252e2af50b3396fb42bd20d30b6a2599f82e0855e"
+      "sha256": "d3561e2ed17b33ef6038c9f5fd9bd6564a210a17b44f6d215070a66b284e25e7"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_adm1_monthly.csv",
-      "sha256": "52c30787237d90b3365be51968c410cb5a046cf21222b4a372ecf06d4e3d7146"
+      "sha256": "a8638e41a2fd70e54f7419c84ac03a47be0addd6ce4b100c8189cdf2fea70e5d"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_adm2.csv",
-      "sha256": "6b63aac493080d5ca0021df0dcfb1803a0cc4bb95ab7ea06465d787b2fd4745e"
+      "sha256": "667b1af0ecbe8b81022a208a253eeeb528c9f6e7144bb34986e945cbc1430bc7"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_adm2_monthly.csv",
-      "sha256": "5f2a3716c0f9665b8a95158929be8363ae9c62b982a7aebcf5f8ba41671eaa09"
+      "sha256": "c78fa584dbf0b6761e3a111b6c519a94eeefd1f80ca3f41da79c487c0cc93cb1"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_atoms.csv",
-      "sha256": "8e57f4bf76c21c12a5b58bfc982dd00bdc61a15729e17a329cd50e3cd3f6b9e3"
+      "sha256": "2241e5d7a13d2aaaff8992f4aada2ce7ac1f3833d1eb2695b5d7b1e90e2f55f0"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_monthly.csv",
-      "sha256": "b4e2c3163f36b07f1b59bd6008db2755093464d68aa2f2ff9e013564ae185cfb"
+      "sha256": "9607bc7472cc7ba251a3f1b4ed194a76350fad0ce808f871967ad7a016b8e0d3"
     },
     {
       "byte_stable": true,
@@ -1001,17 +1016,17 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "dbd0cf94290436792468df4589bcb3b6aa9ae1d6091ad4e9ff4816cea7ac588b"
+      "sha256": "43424022becb4d3b208968bb6a5cacae4f5e0b5f4c21ae8f91582107c1bc1b56"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "046df9e94316c9463067d6fd5ac2c459de08831d74b4fa3aa33f794ca34403d5"
+      "sha256": "3cf1c2ea539e701f46d691d6ef222ecfa5d2315ffafe1a58a00bbbcc1cca60cc"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "e8717477585d39e9bed942af10607f90b17ff862a91c89dee2ed94f302c614bb"
+      "sha256": "a0871c12678732e9052308cf4b503f422c46654b8d59557ec5e47e3890e509ce"
     },
     {
       "byte_stable": true,
@@ -1031,22 +1046,22 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
-      "sha256": "dee104d30af1fff8828c416dda7e961a4a6abdfee3ee14630b356bb5dab24df7"
+      "sha256": "4c0c5117cf0b056541c44b1aef43119abbb8d562a01267980e0f81d4a35d4f65"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_0p05_monthly.nc",
-      "sha256": "1a74381db60749caa20ab8dd01a79438421066fbee8cdaf849742d95ecd0e9cc"
+      "sha256": "d7faa6c883108e3b3c8e7c3588b4137e256b3f44988fb5d26fec7a6523dd3806"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_0p05_monthly_ledger.nc",
-      "sha256": "3c9cb7f98090e03102856313a14fe0598c45c488f8cbae958522e82c10628610"
+      "sha256": "4229427963b3edb3f2b02476ca5fdae6775fe85b2d2e3972fd7e69603f1ab843"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_0p1_edgar_aligned.nc",
-      "sha256": "93c12943211449262ea2adb57ad5311ba03beee8f23882eeef2def6f80d293fa"
+      "sha256": "7eaf23bcbc408926b71d41b1fa587aed95cc948a88242f2dd8646e831516ed07"
     },
     {
       "byte_stable": true,
@@ -1056,7 +1071,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_fallbacks_by_year.csv",
-      "sha256": "7c4db7dc48e49f9942dfbd91d60e48d1891b840417da9885878becb304fd5981"
+      "sha256": "891035ce2ae1de73dcb4b33a2a4d62c819e1a7849decee1dfbf766a34af852e7"
     },
     {
       "byte_stable": true,
@@ -1071,7 +1086,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_stream_surfaces_by_year.csv",
-      "sha256": "e98842ea932992d57556360e07945fba422e6bc372eb2e9caccf1c661d97743e"
+      "sha256": "63f9bfcdf33ea2cd264a6c77cd37597f35639be0ec865a3df2549f4931ed1b5e"
     },
     {
       "byte_stable": true,
@@ -1171,27 +1186,27 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_monthly_coverage.csv",
-      "sha256": "3816c8e00fbb62f3825f2d326435181281b9ff7afb436fa12ecb2b36d383c5e7"
+      "sha256": "c6476129b3784230ed39e4a1bdca98a032ed0150598627b5386db08a8ab2a273"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_monthly_coverage_summary.csv",
-      "sha256": "03aa03838090d259bbaaaf8a4a3b3b843da318012140e934f88178ca0b0d1b49"
+      "sha256": "46f5e4ca78d79591762f37014e0b3f83273f4459d9ed06e5572c7e3da8578f4f"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_monthly_data_requests.csv",
-      "sha256": "e1d26b59f51345691a2e8ce1ce3692b7dfdccb9011a3ee42d032b335fba15f35"
+      "sha256": "2b01a0bc745a53bf68314b3a921de24c2029ebf42b33f92aa90060727900efcd"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_monthly_evidence.csv",
-      "sha256": "8e533af6b5223cceacb0420265c186e55657d070664aea30f1775ed1707bc376"
+      "sha256": "07bf998c1c1402760fc922dbf0190bc9a224346d3d99e0d947b550f1c9d6d76c"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
-      "sha256": "752251ed8a1e175f17c6211fc29b5ed1da0289a40c464829f953b484390e5d40"
+      "sha256": "eb1c72c653269c75a9c8089944cc1202ab2f9c14487848bfc58757c94b642909"
     },
     {
       "byte_stable": true,
@@ -1210,6 +1225,11 @@
     },
     {
       "byte_stable": true,
+      "path": "outputs/pakemis_nitrogen_no_pathways.csv",
+      "sha256": "9841f47b53ad11bec8d70e18d6223ecfa50b14fcce11f6a215fe01e07113d22c"
+    },
+    {
+      "byte_stable": true,
       "path": "outputs/pakemis_nitrogen_partition_sensitivity.csv",
       "sha256": "98d1b5847d9e5bc5273ff8a03687143ab0614a3ff31b9234fc77f91ba6cb8f16"
     },
@@ -1221,12 +1241,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_paper_artefact_hashes.csv",
-      "sha256": "8d8ece9e5869cb3d03d1527690f1b970d49cd1eab51f4e4471171fc58d9ed280"
+      "sha256": "33679ed3160f7e4348476618a5f864b04baf548b95c4d53eaea71bd3235ce213"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_pass2_scorecard.csv",
-      "sha256": "ef9c5e1a42bc02bf37b360a0d2232a55e028f3dc5527217e42958cc3b2a54ea2"
+      "sha256": "319ef9fc1dfd7f395444b527c35efe4434ed23554d9cfee917276ca75070c11e"
     },
     {
       "byte_stable": true,
@@ -1291,7 +1311,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_primary_geography_licence_audit.csv",
-      "sha256": "18b61634f1b1fbcf4461ea24c928a0dc23a5543b39fb6e576ce4aa63f8236e87"
+      "sha256": "34bdcfced8dab06d2766d71b8da65249315557cef236f2e48b0d7b8de2b2ced8"
     },
     {
       "byte_stable": true,
@@ -1306,12 +1326,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_product_facts.csv",
-      "sha256": "bd28b21253f1b82e3c4a7f383ee9dcd427aad2a5fd14bffd15ade7a54a587b7a"
+      "sha256": "3df3428eea15af6750960bb77f42872509a9429728f80ac7ee8a3f13d2869da4"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_release_axis_fingerprints.csv",
-      "sha256": "570de3df1e5b5b944d57a3de410bd988aa28844ae64a3cdbe5c9bea1d87f5999"
+      "sha256": "71681050decfcd844e03336c7c2f38d9050e7ac15d138d76343d1f8781818b63"
     },
     {
       "byte_stable": true,
@@ -1335,6 +1355,11 @@
     },
     {
       "byte_stable": true,
+      "path": "outputs/pakemis_road_technology_case.csv",
+      "sha256": "31745d0b29d0211da36dd52ea92ee61e642dd83557e78008ef0f42bd6e576788"
+    },
+    {
+      "byte_stable": true,
       "path": "outputs/pakemis_road_weights_adm2.csv",
       "sha256": "ccdda68cf7293e303a79731fb7b005fc59b2192e86a3f8a95e30a17e9f99ccc6"
     },
@@ -1351,12 +1376,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_source_register.csv",
-      "sha256": "52e70757a7f56ab870efafbb5610f62ed9a52145d6054cb6e2435ff93cf4b671"
+      "sha256": "e6728eea720a08ef7bbe9f47dad304aac3df98ca593acee50f7d6cce2fee46ee"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_source_streams.csv",
-      "sha256": "8d0c50d187e50819890c7335325419082505b428a0ebf693a85d4dca3b828a8e"
+      "sha256": "5dec7f142934a046c5f4bfeed6c259484d73a23e3f2356675490fb992fc0c705"
     },
     {
       "byte_stable": true,
@@ -1366,12 +1391,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_spatial_basis_shares.csv",
-      "sha256": "52e774c1b5671f8b05befdb1d5a08156b831ff692bde0af90e5f8674eef048e2"
+      "sha256": "ed8fc2ad9f4e4747dcea05463ff42f208e17c5fba7e224821e817ca2034753d2"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_spatial_basis_shares_by_sector.csv",
-      "sha256": "b970c33600d2f09f8560a8337e507706fbb8fbe6188c2d1474b015caecba2b83"
+      "sha256": "6e0a2996f7dfb2ba4ca580bb77636224a97230883c67dfdb69b3927c4b6c6a1e"
     },
     {
       "byte_stable": true,
@@ -1416,12 +1441,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_spatial_weights_by_year.csv",
-      "sha256": "d412f872fd62db01fd8754aa2810c62bb1b4608af377d1892506e3325343f198"
+      "sha256": "89931075a7575144451be1901180183dafcdce4c1ad733bb66c2abe23e73bc1e"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_stream_support_ledger.csv",
-      "sha256": "41dc0e5b992291d6617334cc4a488e9c0e66458c87c9d9d380f4a1e1da49b02e"
+      "sha256": "67f3504bc70016075b448f75e4abf07a9d774ddb82b0fdc35bf5d2b672877a96"
     },
     {
       "byte_stable": true,
@@ -1436,12 +1461,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_temporal_decomposition.csv",
-      "sha256": "f3f79182094c2de30b223bbdca3d5d1b9358a5bb66fd120490df2e9d16479e7f"
+      "sha256": "12bb76043fc1680eac4b4584d3d5ce4c3f98951e2c9a5bcae84f597894402270"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_temporal_profiles.csv",
-      "sha256": "d83439aceeb1b3ace2a04be79ef8013a9432c6c5d7df8341d0421523fdbb0907"
+      "sha256": "ca57f0a9cf0798664baf3a8fc988d22563bb69584a1da9f13259fc27981f48fe"
     },
     {
       "byte_stable": true,
@@ -1472,6 +1497,11 @@
       "byte_stable": true,
       "path": "outputs/pakemis_validation_five_classes_summary.csv",
       "sha256": "d435b14be2ec3db4656765be6188bebb07e0cdf9288a6792c531624b39e19c09"
+    },
+    {
+      "byte_stable": true,
+      "path": "outputs/pakemis_validation_measured.csv",
+      "sha256": "2cda191319d9113eb634a67dc29d83e694a3a10237bdaa6991ca5a1169ecf3d6"
     },
     {
       "byte_stable": true,
@@ -1781,22 +1811,22 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_adm1_month.csv",
-      "sha256": "95341d9d037cd2fe3d71461085edb47fbdb1ea1ab89e80163518d36c52f7e9f5"
+      "sha256": "6473fc1240fb25495f46486d0e9d13c6d071f678f397142c23a79858830c6f0d"
     },
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_adm1_year.csv",
-      "sha256": "363e0e641f3cff5593193a849ea20f2a1e232875c676c593b93c568c7beecfcb"
+      "sha256": "7efa8a27c98d7a2dbd2dc01f3ba470c061f05b65a0a8538acfc97ef6da7a9be8"
     },
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_adm2_month.csv",
-      "sha256": "628dbceeb3a738c025d047c2539c01266714717fe8dcaed8904c3164b33fbc7f"
+      "sha256": "ff18305798491c3ffd8851878f808f999c8afda31fa97c15a6eb698848531c1c"
     },
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_adm2_year.csv",
-      "sha256": "a3d33a4c0bde2458d9bfff82d76e536a8d4b15d427413ba6d1acc85cfefb5feb"
+      "sha256": "a82d1b87560441ded3f4049abb730fb864fc64452c875ebca7f2ed70d44ed3ea"
     },
     {
       "byte_stable": true,
@@ -1821,7 +1851,7 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_air_adm2_year.csv",
-      "sha256": "6612bab6fa195866160c87141250299a6b4fc02eff15822ac0a41eef4314f7e8"
+      "sha256": "27df0909f60faf590a2f611bfce85dc42977711c381d5c531a24b0a79de3c547"
     },
     {
       "byte_stable": true,
@@ -1836,7 +1866,7 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_air_lahore.csv",
-      "sha256": "92fa61692725b42126d1d15ef333c81c84e42f53a354d0f5e47d493466a1abad"
+      "sha256": "a431ad17b14efb735bbcc3b21353ccad2a8e02313cbf24a933ef3670b00ce055"
     },
     {
       "byte_stable": true,
@@ -1896,12 +1926,12 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_monthly.csv",
-      "sha256": "e97a1f644e3e7cc6ed12a7f18a8240386359876f0a0e68a07842e372a23aa0d8"
+      "sha256": "7aeb32a612d60a40621ac692fd302735dab4b43d63797f82ea531897398e1161"
     },
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_spatial_basis_year.csv",
-      "sha256": "4f0d6137b1be5138ce01a53001fea6737e0a87ea5e05ef169e30839045864a01"
+      "sha256": "3f4b7f52cf5ed0e2d7a685675fad161f56f181988e353b327f557a190bf64534"
     },
     {
       "byte_stable": true,
@@ -1926,7 +1956,7 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/semantic_release.json",
-      "sha256": "27c797cc3c6d58614945a1a5a19a3ed7f9b37c05de00c81bdc6062aedce786c9"
+      "sha256": "c5a928319e45176ca1bfbfcea3aa1003c1487b63d0cad746287dc0f4fe372c07"
     },
     {
       "byte_stable": true,
@@ -4265,6 +4295,10 @@
       "sha256": "84f757f315f33648af16a5c943558090a79071203ffb8b3b1f6d20a5b7bccbae"
     },
     {
+      "path": "data/activity/transport/emep_tier2_road_pm_by_technology.csv",
+      "sha256": "348ca9850e23fe3f33b11a990b52f4b23504b36d2022088475c7e11030b8d82b"
+    },
+    {
       "path": "data/activity/transport/emission_factors_gkm.csv",
       "sha256": "fa24ae8e21bb2fea42bdf65bb042b88c2a59dffbeda0954a6c2a5a4dc93701da"
     },
@@ -4394,7 +4428,7 @@
     },
     {
       "path": "data/artifact_roles.csv",
-      "sha256": "ad2170b3f97ec5c864bf57a3f2e3abbd1fa7d88bd249b6ec8dfe1b70f6c04c57"
+      "sha256": "23f78e0795112e1bd71af997f1b3d7f7da82b8db1b1cb6531097f4548b4ee13e"
     },
     {
       "path": "data/availability_matrix.csv",
@@ -4450,7 +4484,7 @@
     },
     {
       "path": "data/catalog/assets.csv",
-      "sha256": "679ff167a85ba9bb315bd456825f94444770bacba4d951cea52d477cc23c19c6"
+      "sha256": "b0ef0d43a5752132d28918dd5889b85ee1aa5e19b7306614826c77467a59cd94"
     },
     {
       "path": "data/catalog/canonical.json",
@@ -4494,15 +4528,15 @@
     },
     {
       "path": "data/cited_documents.csv",
-      "sha256": "0912215d494786d6960539f84d3a4ceb72f9d6a844e5a99b133fd24503b718ec"
+      "sha256": "022b5877afbf60cdacfe0e40f0c8ff8d58119140db0c6c2b713970b612797b5d"
     },
     {
       "path": "data/claim_matrix.csv",
-      "sha256": "99eaf552e2ad4e3710f82e6e58c7ddc464cdc067f506a00986a50d4da3079cc8"
+      "sha256": "76c7c8a9a6624261f1fcff2dbf677390cb9c5de7d405a3022850023df22518a2"
     },
     {
       "path": "data/claims_registry.csv",
-      "sha256": "bbd3202b0d405b3ed4abbbd144e092ddfd5944c01ccc2e641fe73d47135a29bf"
+      "sha256": "e73d5bc0d9343960e790aece15ba9e78d0522106b71cf2d69deeede958b5ce60"
     },
     {
       "path": "data/coal_booking_policy.csv",
@@ -4534,7 +4568,7 @@
     },
     {
       "path": "data/document_retention.csv",
-      "sha256": "4cafcd220517732cd2e6b13a7dcb97f20c36ec683d5ba57f49ed5f93e8537f33"
+      "sha256": "6f7c4f36169ea5f3d2a1fe57579040f07674f8a509db4fa60ac938a9acb874be"
     },
     {
       "path": "data/edgar_domain_map.csv",
@@ -4578,7 +4612,7 @@
     },
     {
       "path": "data/gis/PROXY_SOURCES.md",
-      "sha256": "8235a2fa7ccb0f77c0ee3a66a52aa2813b6db097e60652b3e90a1c6c6b8f6683"
+      "sha256": "a8b4256daffee569e75f42d0a258e2be19f0e1514352cd7a128c67942d34cf9a"
     },
     {
       "path": "data/gis/adm2_intersections_267x340.csv",
@@ -4610,7 +4644,7 @@
     },
     {
       "path": "data/gis/manual/FIRMS_SOURCES.json",
-      "sha256": "5f84cb9fdbd5a3f85976e02a2e720bb399ce3cbd9fa8d2f58d0fb27378296232"
+      "sha256": "8005e3f48b1ec894c275b9bad7ce05d34a135807aa51c2c729cefc8635ee2dbd"
     },
     {
       "path": "data/gis/manual/RICE_SOURCES.json",
@@ -4618,7 +4652,7 @@
     },
     {
       "path": "data/gis/manual/firms_fire.csv",
-      "sha256": "2d26b95ad76bccc049ccba9ec9fc277143df631728cf08063127966d88079a59"
+      "sha256": "9d45b25162f4e72a39b0222e6cb709e3611d809a16d9d1eefe25068d6c2cd06f"
     },
     {
       "path": "data/gis/manual/gcd_rice_2023.tif",
@@ -4818,7 +4852,7 @@
     },
     {
       "path": "data/product_columns.csv",
-      "sha256": "0b23b2bb4315d9aa195f6024361d7acd6080bcadb6e84c4b5f8df9fd5fc690ea"
+      "sha256": "89aec3ceb1c99725f9b01a9d7cea3392286aeb03ebee0ad0d295721cf31b6426"
     },
     {
       "path": "data/product_schemas.csv",
@@ -4834,7 +4868,7 @@
     },
     {
       "path": "data/published_release_vintages.csv",
-      "sha256": "43f14e3e1ffa1cc16adf803f0cffe3c9ce7a9b56269b24c84297757495e989f5"
+      "sha256": "e45d7dc2b1e2c0b655b2899c8ce36afead9861601e58a1c05b021cc7e0d8495f"
     },
     {
       "path": "data/railways_params.csv",
@@ -4842,7 +4876,7 @@
     },
     {
       "path": "data/raw_manifest.csv",
-      "sha256": "af38eaa0213b137ad78b213f84cce0fb4c709b57f4888878e1f665ad8f05e631"
+      "sha256": "e257cd4910c4a4db62c8102fa6c2a46c441a21bb64fff2d57b62c95d0b39e283"
     },
     {
       "path": "data/release_heights.csv",
@@ -6034,7 +6068,7 @@
     },
     {
       "path": "data/source_documents.csv",
-      "sha256": "34cfa826089058eea540f139eb0ddd103c2d57a39ca7ab84f6ca3a2f004b11f5"
+      "sha256": "7c5859b8192a71e95539cf64182083415ccd0767717f498852153714dbbf0f23"
     },
     {
       "path": "data/source_keys.csv",
@@ -6062,7 +6096,7 @@
     },
     {
       "path": "data/temporal_driver_registry.csv",
-      "sha256": "1d7208302f9b29f7abaa1489d7b2f588be834c5eebb4919a213612f46dee6319"
+      "sha256": "25cd51d6a42942375ecc36e9e2903257bea09bc7f70d0477f3ff226381871759"
     },
     {
       "path": "data/temporal_profiles.csv",
@@ -6101,5 +6135,5 @@
       "sha256": "c560b9202fa2cd91db48c5fe3fa221ee50f3bb84e4652eb053cba2bd9f40dee9"
     }
   ],
-  "version": "1.0.0rc68"
+  "version": "1.0.0rc69"
 }
