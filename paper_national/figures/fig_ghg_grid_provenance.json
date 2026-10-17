@@ -5,7 +5,7 @@
     "f06_proxy_concentration.pdf"
   ],
   "built_by": "scripts/make_fig_ghg_grid.py",
-  "release_version": "1.0.0rc68",
+  "release_version": "1.0.0rc69",
   "configuration_id": "S_TAN",
   "grid_spec_id": "pk_0p05_epsg4326_v1",
   "period_plotted": "FY2023-24",
@@ -388,7 +388,7 @@
     ]
   },
   "input_digests": {
-    "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc": "2d48617d39ecc6af3e70ef1a67b7b35d2e34a1ec49a5ee4e7e4759fe628fa007",
+    "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc": "4c0c5117cf0b056541c44b1aef43119abbb8d562a01267980e0f81d4a35d4f65",
     "outputs/pakemis_stream_support_ledger.csv": "67f3504bc70016075b448f75e4abf07a9d774ddb82b0fdc35bf5d2b672877a96",
     "outputs/pakemis_spatial_weights_by_year.csv": "89931075a7575144451be1901180183dafcdce4c1ad733bb66c2abe23e73bc1e",
     "outputs/pakemis_spatial_unallocated_by_year.csv": "6fde160053b6610a00b1067e8395d06fb571f061e99aef3b56cb08b3da1ea200",

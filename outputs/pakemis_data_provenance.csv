@@ -15,7 +15,7 @@ data/catalog/activity_labels.csv,data/catalog,hand:parameter,,,,1,no,Maintained 
 data/catalog/activity_measures.csv,data/catalog,hand:parameter,,,,1,no,Maintained catalog or schema registry.
 data/catalog/activity_units.csv,data/catalog,hand:parameter,,,,1,no,Maintained catalog or schema registry.
 data/catalog/activity_use_notes.csv,data/catalog,hand:parameter,,,,1,no,Maintained catalog or schema registry.
-data/catalog/artifact_roles.csv,data/catalog,producer,src/pkinv/report/artifact_inventory.py,,,6,no,Producer and storage binding declared in data/catalog/assets.csv.
+data/catalog/artifact_roles.csv,data/catalog,producer,src/pkinv/report/artifact_inventory.py,,,7,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/catalog/assets.csv,data/catalog,hand:parameter,,,,27,no,
 data/catalog/canonical.json,data/catalog,producer,src/pkinv/activity/build.py,,,2,no,"Canonical input schemas, source digests, row counts and CSV digests."
 data/catalog/canonical_columns.csv,data/catalog,producer,src/pkinv/activity/build.py,,,6,no,Producer and storage binding declared in data/catalog/assets.csv.

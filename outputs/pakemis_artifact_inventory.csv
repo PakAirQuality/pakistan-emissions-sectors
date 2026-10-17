@@ -945,7 +945,7 @@ transport_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*
 transport_provincial_proxy_comparison_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,356,5,supporting,yes,transport,a sector's provincial allocation
 transport_provincial_shape_brackets.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,1355,20,supporting,yes,transport,a sector's provincial allocation
 transport_qa_2024.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,128,1,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
-transport_run_manifest_2024.json,intermediate,varies,*.json,*.json;*,17414,,build,no,transport,a run manifest or fallback record the build writes
+transport_run_manifest_2024.json,intermediate,varies,*.json,*.json;*,17588,,build,no,transport,a run manifest or fallback record the build writes
 transport_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,1247,5,supporting,yes,transport,a sector's own reported totals
 transport_uncertainty_2024.csv,sector_headline,sector runner,*_uncertainty_2*.csv,*_uncertainty_2*.csv;*,142,1,supporting,yes,transport,a sector's reported uncertainty
 transport_uncertainty_inputs_2024.csv,diagnostic,varies,*,*,5650,20,audit,no,transport,a working file the build needs and no reader-facing claim rests on
