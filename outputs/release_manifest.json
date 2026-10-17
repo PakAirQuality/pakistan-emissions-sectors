@@ -23,13 +23,13 @@
     "software": ""
   },
   "git": {
-    "describes_commit": "88b97dcaa82e35d8e3ffa4171fe05d20a717641e",
+    "describes_commit": "94aec6bbb484f5002daf3ec859a44e1abca40e5f",
     "restricted_layers": {
       "commit": "f0abaca30c9d1c1ff80c6cf3793674a8ce6ff6b1",
       "dirty": false,
       "mode": "overlay"
     },
-    "tree_dirty": true
+    "tree_dirty": false
   },
   "gwp_basis": {
     "note": "fossil and biogenic CH4 carry distinct AR5 values; see pkinv.core.gwp",
@@ -866,7 +866,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_deposit_manifest.csv",
-      "sha256": "b61e834e6d918201ce16dfcf6b4e1169fe6ac3e2b5d9aae92116001b8d228e35"
+      "sha256": "739fca968d0b687a8d6007b2e4dcb6af2b035b2ea136e971244770d40781fd0f"
     },
     {
       "byte_stable": true,
