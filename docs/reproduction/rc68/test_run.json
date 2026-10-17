@@ -1,0 +1,15 @@
+{
+  "command": "python3 -m unittest discover tests",
+  "executed": 4057,
+  "expected_failures": 0,
+  "failed": 0,
+  "failing": [],
+  "note": "`executed` counts what the runner ran on this machine and is lower than the published count of defined test functions: classes that skip in setUpClass are recorded as skipped without being counted as run, and which ones skip depends on what is staged in the checkout.",
+  "outcome": "OK",
+  "passed": 4040,
+  "platform": "macOS-15.6",
+  "python": "3.11.10",
+  "schema": "pkinv.test_run/v1",
+  "seconds": 2851.618,
+  "skipped": 17
+}

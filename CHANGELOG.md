@@ -245,6 +245,28 @@ It showed up as a difference between a public-clone rebuild and a full build of 
 commit. The sum is now `math.fsum`, which gives the same correctly rounded result in any
 order, and a test runs it under two seeds.
 
+### What the rc69 rebuilds found
+
+The first rc69 cut passed its test record (4,111 executed, 0 failed) and its archive
+checksums, and the two reproductions then failed, as did the public-checks run on the
+release commit. None of the four defects moved a number:
+- The measured-validation table read `docs/reproduction/rc68/`, which the deposit did not
+  carry, so both the clean rebuild and a reader's unpacked deposit stopped there. The
+  reproduction records are now deposited with the documentation.
+- That table's test-run row read the live test record, which the suite writes after the
+  table is built, so the table was stale on every release commit and put the new count
+  under an "rc68" label. It now reads rc68's own record, published byte for byte as
+  `docs/reproduction/rc68/test_run.json`.
+- The rule that a tree without the restricted layers reuses the committed release products
+  and the 2022 ADM2 frame applied to deposit trees as well as to public clones. A deposit
+  tree carries the boundaries and every deposited file, so at rc68 those phases rebuilt
+  there byte for byte; under the rule ten products went unbuilt. It now applies only to a
+  git checkout without the layers (`layers.public_clone_without_layers`).
+- The strict build's order check, the sync's figure scan and the release finish needed the
+  repairs listed under the build workflow above; the validation package, which
+  `release_finish.sh` still builds, is no longer on the release path (rc68 shipped through
+  `scripts/build_deposit_zip.py`).
+
 ## [1.0.0rc68] — 14 October 2026
 
 The integrated national greenhouse-gas and air-pollutant release now covers ten fiscal

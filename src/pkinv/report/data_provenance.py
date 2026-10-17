@@ -167,7 +167,7 @@ def universe():
     # audit is of the release, which holds them. Restricted paths the shipped audit lists stay
     # in the universe; every row is computed from code and registers, not from the file.
     from pkinv.core import layers
-    if layers.mode(ROOT) == "absent" and os.path.exists(OUT):
+    if layers.public_clone_without_layers(ROOT) and os.path.exists(OUT):
         from pkinv.core.io import read_rows
         present = set(files)
         files += [r["data_file"] for r in read_rows(OUT)

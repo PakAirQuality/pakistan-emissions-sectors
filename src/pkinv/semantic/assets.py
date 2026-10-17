@@ -49,7 +49,7 @@ def _path(root, relative):
 
 def _restricted_absent(root, relative):
     from pkinv.core import layers
-    return layers.mode(os.fspath(root)) == "absent" and layers.is_restricted(relative)
+    return layers.public_clone_without_layers(os.fspath(root)) and layers.is_restricted(relative)
 
 
 def _prior_digested(root):

@@ -391,7 +391,9 @@ DEPOSIT_PATTERNS = (
               "tests/fixtures/rc68_legacy_figure_revisions.csv")),
     # what a reader needs to interpret and rebuild
     ("build", ("Makefile", "pyproject.toml", "requirements.txt", "requirements.lock", "reproduce.sh", ".github/workflows/*.yml")),
-    ("documentation", ("README.md", "docs/*.md", "CITATION.cff", ".zenodo.json",
+    # rc69: docs/reproduction/<release>/ holds the published rebuild records, which the
+    # measured-validation table reads; undeposited, a reader's build of it failed.
+    ("documentation", ("README.md", "docs/*.md", "docs/reproduction/*/*", "CITATION.cff", ".zenodo.json",
                        "LICENSE", "LICENSE-data", "LICENSE-ODbL",
                        "campaign/v3_readiness/repair_register.csv",
                        "campaign/v3_readiness/numerical_changes.csv",

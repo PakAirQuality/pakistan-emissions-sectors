@@ -161,10 +161,17 @@ def _reproduction_rows():
         out.append(_row(check_id, "reproduction", label, len(rows), "files", differing,
                         identical, len(rows), "", "", "docs/reproduction/rc68/" + name,
                         "; ".join("%s %d" % kv for kv in sorted(statuses.items()))))
-    record = json.load(open(asset_path(OUTPUTS, "pakemis_test_run.json"), encoding="utf-8"))
+    # rc69: the rc68 record as published with the other rc68 runs, not the live
+    # outputs/pakemis_test_run.json. That file is written by running the suite on the
+    # fixpoint tree, AFTER this table is built, so reading it made the table stale on every
+    # release commit (public-checks run 38989549784) and put the new release's count under
+    # an "rc68" label.
+    record_path = os.path.join(ROOT, "docs", "reproduction", "rc68", "test_run.json")
+    with open(record_path, encoding="utf-8") as handle:
+        record = json.load(handle)
     out.append(_row("tests_release", "reproduction", "rc68 canonical test run",
                     record["executed"], "tests executed", record["failed"], record["passed"],
-                    record["executed"], "", "", "outputs/pakemis_test_run.json",
+                    record["executed"], "", "", "docs/reproduction/rc68/test_run.json",
                     "%d skipped" % record["skipped"]))
     return out
 

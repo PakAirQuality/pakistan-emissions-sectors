@@ -16,4 +16,4 @@ closure_nitrogen,closure,"Nitrogen ledger, every year and configuration",200,led
 closure_coal_change,closure,Coal change decomposition,54,year-species rows,,,,1.64e-05,Gg / Mt CO2e,outputs/pakemis_coal_change_decomposition.csv,
 rebuild_clean_rc68,reproduction,"rc68 clean rebuild, compiled inputs",465,files,0,346,465,,,docs/reproduction/rc68/clean_rebuild_comparison.csv,rebuilt_identical 339; seeded 118; seeded_then_rewritten_identical 7; skipped_by_flag 1
 rebuild_unpack_rc68,reproduction,"rc68 deposit, unpacked and built",395,files,0,394,395,,,docs/reproduction/rc68/unpack_build_comparison.csv,not_rebuilt 110; rebuilt_identical 284; skipped_by_flag 1
-tests_release,reproduction,rc68 canonical test run,4057,tests executed,0,4040,4057,,,outputs/pakemis_test_run.json,17 skipped
+tests_release,reproduction,rc68 canonical test run,4057,tests executed,0,4040,4057,,,docs/reproduction/rc68/test_run.json,17 skipped

@@ -180,6 +180,15 @@ def mode(root=ROOT):
     return "overlay"
 
 
+def public_clone_without_layers(root=ROOT):
+    """A git checkout of the public repository with no layers mounted (rc69). Distinct from a
+    DEPOSIT tree (a clean rebuild or an unpacked deposit), which is also "absent" but carries
+    every file the deposit lists, the COD-AB boundaries included, so its release phases and
+    its ADM2 2022 frame rebuild as they did at rc68. Only a public clone lacks those files,
+    and only there do the build and the release manifest seed or refuse."""
+    return mode(root) == "absent" and os.path.exists(os.path.join(root, ".git"))
+
+
 def present(root=ROOT):
     """True when the restricted layers can be read and asked about: monorepo or overlay."""
     return mode(root) in ("monorepo", "overlay")

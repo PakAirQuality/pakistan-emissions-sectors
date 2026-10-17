@@ -277,7 +277,7 @@ def _one(rows, field):
 
 
 def build():
-    if layers.mode(ROOT) == "absent":
+    if layers.public_clone_without_layers(ROOT):
         # The documents block would hash nothing and still look like a manifest.
         raise SystemExit("the restricted layers are not mounted here, so a release manifest "
                          "built now would list none of its source documents. Run "

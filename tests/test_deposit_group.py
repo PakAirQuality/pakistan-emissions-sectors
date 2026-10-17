@@ -38,6 +38,18 @@ class TestTheDepositGroup(unittest.TestCase):
         science = {p.label for p in run_all.PHASES if p.category == "science"}
         self.assertTrue(science & deposit)
 
+    def test_a_deposit_tree_is_not_a_public_clone(self):
+        """rc69: the clean rebuild and a reader's unpacked deposit have no layers either, but
+        they carry every deposited file, the COD-AB boundaries included. Seeding the release
+        category there left ten products unbuilt in the first rc69 clean rebuild."""
+        import tempfile
+        from pkinv.core import layers
+        with tempfile.TemporaryDirectory() as tree:
+            self.assertEqual(layers.mode(tree), "absent")
+            self.assertFalse(layers.public_clone_without_layers(tree))
+            os.mkdir(os.path.join(tree, ".git"))
+            self.assertTrue(layers.public_clone_without_layers(tree))
+
     def test_the_excluded_phases_products_are_tracked_inputs_or_shipped(self):
         """Their outputs must exist in the tree the deposit is cut from."""
         from pkinv import build, run_all

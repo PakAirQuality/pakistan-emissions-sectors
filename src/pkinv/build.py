@@ -102,7 +102,7 @@ def absent_seeded(phases=None):
     products differed and the release manifest stopped the build). They are verified where
     the layers are mounted: make release-check and .github/workflows/reproduce.yml."""
     phases = registry.PHASES if phases is None else phases
-    if layers.mode(registry.ROOT) != "absent":
+    if not layers.public_clone_without_layers(registry.ROOT):
         return frozenset()
     return frozenset(p.label for p in phases
                      if p.label not in DEPOSIT_EXCLUDED
@@ -694,7 +694,7 @@ def main(argv=None):
         selected, graph = select(phases, targets, cache)
     except ValueError as exc:
         parser.error(str(exc))
-    if layers.mode(registry.ROOT) == "absent":
+    if layers.public_clone_without_layers(registry.ROOT):
         # rc69: a public clone without the restricted layers. The phases that read primary
         # documents or the release history cannot run, and dropping them quietly would
         # publish their stale products as if rebuilt. The deposit group seeds them instead.

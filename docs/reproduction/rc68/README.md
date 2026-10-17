@@ -67,5 +67,9 @@ were afterwards compared byte for byte with the release commit and are identical
   none of which moved a number; `CHANGELOG.md` (1.0.0rc68, "What the clean rebuild found")
   lists them.
 
+`test_run.json` is the rc68 canonical test record (4,057 executed, 0 failed), byte for byte as
+committed with that release (public commit 3cef2f3). It was added in rc69, when the measured-
+validation table stopped reading the live record, which each release overwrites.
+
 The paths inside the logs and `clean_rebuild_result.json` (`/private/tmp/...`) are the
 temporary directories the runs used on the maintainer's machine.
