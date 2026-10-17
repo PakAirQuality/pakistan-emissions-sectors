@@ -23,7 +23,7 @@
     "software": ""
   },
   "git": {
-    "describes_commit": "a8efa650304cf37f7aeb0dcb5805580ef0c990f9",
+    "describes_commit": "f3f7faec9d6ab52115485f92ed4f443f0a6ba4a8",
     "restricted_layers": {
       "commit": "e891f19b27c1d7d58f501e7237a8411599e12d51",
       "dirty": false,
@@ -866,7 +866,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_deposit_manifest.csv",
-      "sha256": "d9d62f6f6f5ae1be4a3f81c60a72e11d86fc8f59417e433e806f27604b9e8648"
+      "sha256": "e17cb5a43ee630d8f6485acf124e196bed66599cc2d763ccd4961e56d559b2ee"
     },
     {
       "byte_stable": true,
