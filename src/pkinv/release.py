@@ -54,8 +54,8 @@ LICENCE_URL = "%s/blob/main/LICENSE" % REPO_URL
 REPOSITORY_NOTE = ("the public development repository, without the third-party source "
                    "documents, whose checksums it lists; the git block names its commit, and "
                    "restricted_layers the commit of the private checkout that holds the "
-                   "documents. Releases through 1.0.0rc68 were made in that private "
-                   "repository and their commits are not in the public history")
+                   "documents. Every release candidate through 1.0.0rc68 was made in that "
+                   "private repository, and their commits are not in the public history")
 
 # Where the dataset can be explored interactively, and whose project it is. The explorer is
 # deployed separately from the archive and can serve an earlier release than the one a

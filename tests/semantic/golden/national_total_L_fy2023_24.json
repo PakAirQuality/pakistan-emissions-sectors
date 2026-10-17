@@ -12,7 +12,7 @@
    "tolerance": "0.000005"
   }
  ],
- "expect_receipt": "cbc971e6574bf61d8c15407813492fab",
+ "expect_receipt": "10626036b5f44036f9b7d00c75deedde",
  "function": "query_emissions",
  "golden_id": "national_total_L_fy2023_24",
  "request": {

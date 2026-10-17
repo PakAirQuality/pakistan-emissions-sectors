@@ -13,7 +13,7 @@
    "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "cc366c3802dff755c682c997674b447d",
+ "expect_receipt": "d766f2ff1b839e1333fb0c72a8ca7e79",
  "function": "query_air",
  "golden_id": "air_adm2_year_lahore_pm25_2020",
  "note": "rc67: moved by the dung reference (see note_dung_reference_2026_10_13 on the cell). PREVIOUS NOTE | rc62: the industrial liquid province vectors were split by product and re-based on OCAC's own Total Industry area pages. One blended row had given furnace oil the retail geography of fuels it does not burn (Punjab 0.657 against furnace oil's own 0.784) and diesel the reverse (0.657 against 0.431 - industrial diesel is very nearly half Sindh). Punjab NOx falls because diesel carries NOx and diesel left Punjab; Lahore PM2.5 rises slightly because furnace oil arrived. No national number moved and no pin moved - this is a provincial re-base, sized per province and period in the round's record.",

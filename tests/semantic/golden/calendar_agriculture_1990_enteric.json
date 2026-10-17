@@ -8,7 +8,7 @@
    "tolerance": "0.005"
   }
  ],
- "expect_receipt": "663a0399ceb03dc055752de613788467",
+ "expect_receipt": "bb7b9b8626b598c4bee725c08391c59e",
  "function": "query_emissions",
  "golden_id": "calendar_agriculture_1990_enteric",
  "request": {

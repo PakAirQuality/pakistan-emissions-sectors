@@ -18,7 +18,7 @@
    "tolerance": "0.005"
   }
  ],
- "expect_receipt": "97b93a9ab714a0119a993d50f410af6b",
+ "expect_receipt": "4cbac2aed51955564f6056cb385846a8",
  "function": "query_emissions",
  "golden_id": "reporting_sector_breakdown_reference",
  "note": "rc67 (2026-10-13): renamed from reporting_sector_breakdown_L. The suffix named the reference configuration by its dung letter, and the reference is no longer L: it carries the household survey's dung (S) in every year, and L is the alternative. The request is unchanged - it asks for the reference by default. No value moved: neither reporting sector depends on the dung basis.",

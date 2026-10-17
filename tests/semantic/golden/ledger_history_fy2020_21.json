@@ -8,7 +8,7 @@
    "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "6f1015d07f09ecdc5bc590479adcd94d",
+ "expect_receipt": "b9098717c111a4106ff75c98bf4caf9b",
  "function": "query_emissions",
  "golden_id": "ledger_history_fy2020_21",
  "note": "rc68: all four configurations are reconstructed for all ten fiscal years; the earlier refusal is retired.",

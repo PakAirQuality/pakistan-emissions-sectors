@@ -22,7 +22,7 @@
    "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "2cfe441445e64878effe8e93c6e5336b",
+ "expect_receipt": "95a1055e45fe5ada78208840bbd31cf3",
  "function": "query_air",
  "golden_id": "air_panel_fy2015_16_sectors",
  "note": "rc67: cell 0 moved by the dung reference (see its note_dung_reference_2026_10_13). Cell 5 (fugitives, 0.401) did not move.",
