@@ -4,7 +4,9 @@ WHY (rc69). The sync collects the PNG names a paper uses from its \\includegraph
 read every .tex file, including nine generated fragments written by phases that run after it,
 so the strict build's order check refused to start: a read of a later phase's product. The
 generated fragments now are skipped. That is only safe while none of them names a PNG, which
-is what this asserts.
+is what this asserts. The skip covers the phases' declared .tex writes and every file
+under a generated/ folder (three supplement tables there are hand-run, kept current by their
+own --check tests, and were missed by a declared-writes-only rule).
 """
 import importlib.util
 import os

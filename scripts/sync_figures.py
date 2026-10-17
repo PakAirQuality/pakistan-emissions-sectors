@@ -40,15 +40,23 @@ def _index_outputs():
 
 
 def generated_tex():
-    """The .tex files a build phase writes. They are skipped when collecting figure names
-    (rc69): a generated fragment is not where a paper names its figures, and nine of them are
-    written by phases that run AFTER this one, so reading them made the strict build's order
-    check refuse to start. tests/test_sync_figures.py holds that none includes a PNG."""
+    """The generated .tex files: those a build phase declares writing, and everything under a
+    generated/ folder (three supplement tables there are made by hand-run scripts that their
+    own --check tests keep current). They are skipped when collecting figure names (rc69): a
+    generated fragment is not where a paper names its figures, and several are written by
+    phases that run AFTER this one, so reading them made the strict build's order check
+    refuse to start. tests/test_sync_figures.py holds that none includes a PNG."""
+    import glob
     import sys
     sys.path.insert(0, os.path.join(ROOT, "src"))
     from pkinv import run_all
-    return {os.path.normpath(asset_path(ROOT, w)) for p in run_all.PHASES for w in p.writes
-            if w.endswith(".tex")}
+    found = {os.path.normpath(asset_path(ROOT, w)) for p in run_all.PHASES for w in p.writes
+             if w.endswith(".tex")}
+    for figs in FIG_DIRS:
+        paper = os.path.dirname(figs)
+        found.update(os.path.normpath(p) for p in glob.glob(
+            os.path.join(paper, "**", "generated", "*.tex"), recursive=True))
+    return found
 
 
 def _sync(figs, skip=frozenset()):
