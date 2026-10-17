@@ -23,13 +23,13 @@
     "software": ""
   },
   "git": {
-    "describes_commit": "d14af798a61e27063deb35266c4ef13f9cbbff00",
+    "describes_commit": "169811a40abd7e1929a525b23a6b90290db4fd9c",
     "restricted_layers": {
       "commit": "f0abaca30c9d1c1ff80c6cf3793674a8ce6ff6b1",
       "dirty": false,
       "mode": "overlay"
     },
-    "tree_dirty": true
+    "tree_dirty": false
   },
   "gwp_basis": {
     "note": "fossil and biogenic CH4 carry distinct AR5 values; see pkinv.core.gwp",
