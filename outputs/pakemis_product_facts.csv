@@ -53,8 +53,8 @@ uncertainty_variance_share_persists_pct,77.79,pakemis_longitudinal_uncertainty.c
 monthly_observed_share_pct,36.5,pakemis_temporal_decomposition.csv,X: monthly mass whose within-year variation is carried by an observed monthly series
 monthly_physical_share_pct,41.9,pakemis_temporal_decomposition.csv,"Y: monthly mass whose flat profile is the PHYSICAL answer - continuous or stock-driven processes, where obtaining a monthly series would not change the shape"
 monthly_weakly_timed_share_pct,21.6,pakemis_temporal_decomposition.csv,"Z: monthly mass that genuinely varies within the year and is carried flat because no monthly evidence was obtained. THIS is the gap, and the only one of the three that acquiring data would close"
-deposit_files,2445,pakemis_deposit_manifest.csv,"files in the archive deposit, assembled from an explicit allowlist"
-deposit_megabytes,2220.1,pakemis_deposit_manifest.csv,"size of the archive deposit, EXCLUDING the context-stamped artefacts whose size this manifest cannot record without describing itself - the PDFs, the manifest and the sidecars. The deposit is larger than this number by those files"
+deposit_files,2455,pakemis_deposit_manifest.csv,"files in the archive deposit, assembled from an explicit allowlist"
+deposit_megabytes,2220.6,pakemis_deposit_manifest.csv,"size of the archive deposit, EXCLUDING the context-stamped artefacts whose size this manifest cannot record without describing itself - the PDFs, the manifest and the sidecars. The deposit is larger than this number by those files"
 deposit_source_documents,0,pakemis_deposit_manifest.csv,"third-party source documents in the deposit; the register names them and says where to obtain them instead, because their redistribution terms are mostly not established and this project cannot license what it does not own"
 source_documents_archived,155,pakemis_source_register.csv,third-party publications archived in the repository and excluded from the deposit; the register hashes each and says where to obtain it
 source_register_entries,221,pakemis_source_register.csv,"registered sources, each with its inbound-use and redistribution answers"
