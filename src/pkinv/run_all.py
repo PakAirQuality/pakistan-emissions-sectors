@@ -2235,7 +2235,10 @@ PHASES = [
                  tuple("paper_national/figures/integrated_inputs/previews/" + name + ".png" for name in (
                      "f09_integrated_composition", "f10_integrated_trends", "f11_integrated_maps",
                      "f12_air_sensitivity", "f13_air_evaluation")) +
-                 ("paper_national/versions/v3/generated/integrated_facts.tex",),
+                 ("paper_national/versions/v3/generated/integrated_facts.tex",
+                  # rc69: written since the Table 2 split and never declared, so the sync's
+                  # skip list missed it and the fixpoint's order check stopped
+                  "paper_national/versions/v3/generated/tab_integrated_coverage.tex"),
           reads=("outputs/pakemis_atomic_annual.csv", "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
                  "outputs/pakemis_ghg_conditional_uncertainty.csv", "outputs/pakemis_air_conditional_uncertainty.csv",
                  "outputs/pakemis_nitrogen_partition_sensitivity.csv",
