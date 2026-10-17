@@ -54,6 +54,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 import pkinv                                           # noqa: E402
 from pkinv.report import deposit_manifest as deposit   # noqa: E402
+from pkinv.core import layers                            # noqa: E402
 from pkinv.report import validation_views as views     # noqa: E402
 from pkinv.assets import catalog as asset_catalog, resolve, legacy_path
 
@@ -344,7 +345,10 @@ def copy_runnable_tree(pkg, custody):
             pass
         action, licence, redistribution, reason = custody.disposition(rel)
         src = os.path.join(ROOT, rel)
-        if os.path.islink(src):
+        # rc69: a restricted file is an overlay mount in the public clone (scripts/overlay.py),
+        # so its link is expected; the custody answer below decides it exactly as it did the
+        # real file, and copy2 follows the link to the bytes. Any other link is still refused.
+        if os.path.islink(src) and not layers.is_restricted(rel):
             raise RuntimeError("symlink in the tree: %s" % rel)
         if not os.path.exists(src):
             continue
