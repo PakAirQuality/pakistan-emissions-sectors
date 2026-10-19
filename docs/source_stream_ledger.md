@@ -2,7 +2,7 @@
 
 `outputs/pakemis_source_streams.csv` — 190 rows, 36 fields, one row per emitting stream.
 
-This is the first object in the release meant to be read *instead of* the manuscript. Everything
+This is the first object in the release meant to be read *instead of* a prose description. Everything
 else the inventory publishes is an aggregate of something: a module total, an IPCC category, a
 province, a month. The ledger is the thing those are aggregates **of**, and it exists to answer
 one question without a join:

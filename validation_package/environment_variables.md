@@ -8,7 +8,7 @@ detections) is skipped by `run_all.py --quick`, and its cached product ships in
 | variable | read by | purpose | needed for validate.sh / reproduce.sh |
 |---|---|---|---|
 | `PKINV_ROOT` | `src/pkinv/paths.py` | the tree to treat as the repository root; every data, output and document path derives from it | **set by both scripts** to the package root (reproduce.sh points it at the temporary copy) |
-| `PYTHONPATH` | the interpreter | `src/`, `tests/`, `tests/paper_numbers/` so the package needs no `pip install -e .` | set by both scripts |
+| `PYTHONPATH` | the interpreter | `src/`, `tests/` so the package needs no `pip install -e .` | set by both scripts |
 | `PYTHON` | both scripts | interpreter to use (default `python3`) | optional |
 | `FIRMS_MAP_KEY` | `src/pkinv/sectors/agriculture/gis/fetch_firms.py` | NASA FIRMS API key for the one network phase | **not needed**; unset by both scripts |
 | `OPENSKY_TRINO_HOST`, `OPENSKY_TRINO_PORT`, `OPENSKY_TRINO_CATALOG`, `OPENSKY_TRINO_SCHEMA` (+ credentials) | `src/pkinv/sectors/aviation/opensky.py` | hand-run OpenSky acquisition, not a build phase | not needed |

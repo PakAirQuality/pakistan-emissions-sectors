@@ -3,7 +3,7 @@
 This note describes the rc68 non-LULUCF greenhouse-gas and air-pollutant release.
 Its common core is July 2015–June 2025; reference-year analyses and provisional
 FY2025–26 sources retain distinct labels. Historical agricultural recalculations
-remain in the maintained technical note and preserved release evidence.
+remain in the preserved release evidence.
 
 ## Source and calculation checks
 

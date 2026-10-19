@@ -95,7 +95,7 @@ findings require separate scientific review, not updates to parity-test expectat
 The contract checks compare staging-to-canonical rows, sector components, semantic CSV
 bytes, query envelopes, downloadable payloads and Parquet representations. Build tests
 cover invalidation, missing outputs, interrupted execution, ownership and targeted
-prerequisites. Full release and manuscript checks remain distinct from developer cache
+prerequisites. Full release checks remain distinct from developer cache
 tests.
 
 See [the migration measurements and validation record](build_performance.md) for

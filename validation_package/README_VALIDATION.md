@@ -37,9 +37,8 @@ the documents gate.
 ## The two layers of this tree
 
 **The runnable tree.** The package root is shaped like the repository — `src/`, `scripts/`,
-`data/`, `outputs/`, `tests/`, `docs/`, `paper_national/`, `papers/`, `paper_common/`,
-`Makefile`, `pyproject.toml`, `run_all.py` — because the engine, the test suite and the
-manuscripts resolve every path from one root (`src/pkinv/paths.py`; `PKINV_ROOT`). The two
+`data/`, `outputs/`, `tests/`, `docs/`, `Makefile`, `pyproject.toml`, `run_all.py` — because
+the engine and the test suite resolve every path from one root (`src/pkinv/paths.py`; `PKINV_ROOT`). The two
 shipped scripts set that root to this folder and run the release suite **unmodified**.
 
 The compact data deposit stores source extracts, field schemas and the canonical
@@ -55,7 +54,7 @@ keys reproduce with the retained catalog hashes.
 `registries/`, `outputs/{annual,monthly,spatial,uncertainty,configurations,cross_sector,
 completeness,validation}/`, `data/{parameters,emission_factors,source_documents,
 source_extracts,transcription_registers,acquisition_records,boundaries,crosswalks,
-restricted_sources}/`, `manuscripts/`, `code/`, `environment/` — sit on top of that tree.
+restricted_sources}/`, `figures/`, `code/`, `environment/` — sit on top of that tree.
 Every file in them is one of:
 
 - a **presentation copy**: a byte copy of a canonical file under the specification's name.
@@ -113,7 +112,7 @@ and hash.
 ./validate.sh --quick            # integrity, identity, schemas and keys, arithmetic closure (minutes)
 ./validate.sh --full             # the complete release suite, self-contained (document tests skip by name)
 ./validate.sh --documents DIR    # the document tests over a mounted source vault (DIR/sources, DIR/data/raw, DIR/data/cache)
-./reproduce.sh [--papers] [--sources DIR]   # rebuild every canonical output from an EMPTY outputs/ and compare
+./reproduce.sh [--sources DIR]   # rebuild every canonical output from an EMPTY outputs/ and compare
 ```
 
 `reproduce.sh` copies the runnable tree **without `outputs/`** into a temporary directory,

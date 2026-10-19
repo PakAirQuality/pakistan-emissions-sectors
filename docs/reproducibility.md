@@ -125,7 +125,7 @@ PYTHONPATH=src:tests python3 -m unittest discover -s tests
 ```
 
 `outputs/pakemis_test_run.json` records the actual run, skips and failures. Test
-counts are not maintained as manuscript literals. Focused tests check source
+counts are not maintained as literals in prose. Focused tests check source
 transcription, shared balances, native units, non-additivity, all four
 configurations, annual/monthly/spatial closure and query/product identity.
 

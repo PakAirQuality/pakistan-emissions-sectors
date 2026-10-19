@@ -1,7 +1,7 @@
 # What this repository does not hold, and how the full build reads it
 
 After release 1.0.0rc68 the inventory is developed in this public repository. It holds the
-code, the verified data tables, the released products, the manuscripts and the tests.
+code, the verified data tables, the released products, the documentation and the tests.
 
 Releases through 1.0.0rc68 were made in a private working repository. Commits 383f939
 (rc67) and 3cef2f3 (rc68) here are whole-tree copies of those releases. The commits their

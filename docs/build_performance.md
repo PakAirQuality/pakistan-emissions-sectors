@@ -19,7 +19,7 @@ September and had grown to 201, figures included, before the categories.
 | Re-populate after a data commit (ab97d51), `--jobs 4`, another build running alongside | 161 / 29 | 1,313.4 s |
 | One code edit (`report/grid_cube.py`), `--jobs 4` | 9 / 181 | 240.8 s |
 | Unchanged tree, `--jobs 4` | 0 / 190 | 1.21 s |
-| Manuscript group (`make figures-v3`), 12 phases | 12 / 0 | 63 s |
+| Figure and table group (at the time `make figures-v3`), 12 phases | 12 / 0 | 63 s |
 
 Notes on reading the table:
 - The data commit invalidated 161 phases because an unaudited phase outside the sector
@@ -265,7 +265,7 @@ reconstructs the same canonical input bytes before running models.
 
 Five assertions still concern release state: two comparisons of existing grid
 products against Git HEAD, two checks of the unfinalized release manifest, and
-the manuscript's frozen test-count claim. These are not new scientific golden
+a frozen test-count claim. These are not new scientific golden
 values. Release finalization remains separate from this development migration.
 
 Focused tests additionally exercise corrupted/deleted outputs, parser changes,

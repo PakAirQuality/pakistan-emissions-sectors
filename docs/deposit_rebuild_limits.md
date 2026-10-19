@@ -1,7 +1,7 @@
 # Reproduction from the local review package
 
 The current package is one local release collection containing primary data,
-software, manuscript sources and an ODbL companion. Each constituent archive has
+software, documentation and an ODbL companion. Each constituent archive has
 SHA256SUMS; the outer collection includes checksums for all four archives. The
 software snapshot records its release version, HEAD, dirty status and content
 hash. A dirty snapshot is not described as an exact clean commit.
@@ -77,8 +77,8 @@ seeds the released copy of each such file, records it in the seeded-product
 receipt as rewritable, and the later phase must rewrite it to the same bytes.
 
 The fresh-directory harness is `python3 scripts/clean_rebuild.py --work DIR`.
-It copies only manifest-listed code, dependencies, inputs, documentation and
-manuscript assets into a new tree, creates an isolated pinned environment, starts
+It copies only manifest-listed code, dependencies, inputs and documentation into a
+new tree, creates an isolated pinned environment, starts
 the production outputs directory empty apart from explicitly held/seeded inputs,
 and runs the strict compiled-input deposit group. The resulting `result.json`,
 `comparison.csv`, input snapshot, seeded-product receipt and build log retain the
@@ -102,4 +102,4 @@ campaign/v3_readiness/all_phases_from_deposit.json and deposit_failure_classes.j
 They describe that historical package, not the current corrected release.
 
 An external review deposit and DOI remain pending. Nothing in this packaging
-workflow uploads files or submits the manuscript.
+workflow uploads files.

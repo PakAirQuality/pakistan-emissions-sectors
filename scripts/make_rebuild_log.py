@@ -33,10 +33,6 @@ OUT_JSON = asset_path(ROOT, "docs", "rebuild_log.json")
 OUT_MD = asset_path(ROOT, "docs", "rebuild_log.md")
 
 STANDING = [
-    {"item": "papers/pdf/*.pdf",
-     "reason": "declared non-byte-stable: LaTeX embeds a CreationDate; the run "
-               "records build success and hashes, and outputs/pakemis_paper_hashes.csv "
-               "is the sidecar a holder verifies against"},
     {"item": "outputs/pakemis_grid_0p05_monthly.nc",
      "reason": "declared byte-churn: the NetCDF byte stream varies per code path "
                "while its content is deterministic (docs/spatial_products_contract.md); "

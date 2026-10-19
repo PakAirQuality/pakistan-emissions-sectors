@@ -105,22 +105,17 @@ contains a file; removing an input alone cannot clear a derived product.
 scientific build -> catalog + classification -> allowlists
    -> artifact manifest (sha256 of every shipped file)
    -> data release manifest
-   -> manuscripts generated against the data-manifest identity
-   -> documentation manifest (hashes the final PDFs)
 ```
 
-The split is not tidiness. A PDF cannot contain the hash of a manifest that changes when that
-PDF's hash is added to it — the release cover prints the manifest digest and every paper inputs
-the cover. The repository already meets this with a paper-hash sidecar written after the build;
-the design names it as the rule rather than the workaround it currently looks like.
+The split is not tidiness. A document cannot contain the hash of a manifest that changes when
+that document's hash is added to it, so anything typeset from the release is hashed after it,
+outside the manifest (rc70: such documents are no longer built in this repository).
 
 ## Documentation rule
 
-**Do not require canonical filenames in the main manuscript.** Require each core *logical
-product* to have one `documentation_anchor` in any of: the main manuscript, the supplement
-product table, the release README, or the data dictionary. The main paper should name only the
-four families, their primary entry points, the coverage/completeness product, the spatially
-unallocated mass, and the uncertainty and scenario entry points. The detailed table is
+**Do not require canonical filenames in prose.** Require each core *logical product* to have
+one `documentation_anchor`: a heading in the release README or a document under docs/
+(`tests/test_product_catalog_anchors.py` resolves every one). The detailed product table is
 generated from the catalog.
 
 Then *core-but-undocumented* becomes a zero-tolerance release gate without inventing a dozen

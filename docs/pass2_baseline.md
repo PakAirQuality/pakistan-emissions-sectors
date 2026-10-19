@@ -9,7 +9,7 @@ commit is created by the maintainer, not by the build.
 Prompted by the sixteenth review (August 2026), whose Pass-2 program this baseline
 opens: evidence acquisition → annual scope decisions → monthly reconstruction →
 spatial allocation → joint uncertainty → science freeze → journal conversion.
-Manuscript restructuring and journal packaging are deferred until the science freeze.
+Restructuring the published description is deferred until the science freeze.
 
 ## The four measurable Pass-2 outcomes
 

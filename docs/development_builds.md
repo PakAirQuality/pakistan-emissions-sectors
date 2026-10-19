@@ -2,8 +2,8 @@
 
 `make dev` (also the default `make`) builds canonical activity inputs, scientific
 products, and the semantic release. It reuses successful tasks whose inputs,
-command, code, environment, and complete recorded outputs still match. Manuscript
-rendering and release manifests are separate from this everyday path.
+command, code, environment, and complete recorded outputs still match. Figures and
+release manifests are separate from this everyday path.
 
 ```sh
 make build-plan
@@ -20,17 +20,17 @@ Every task in `pkinv.run_all.PHASES` declares one of four kinds in `run_all.CATE
 
 - `science`: sources, engines, national, uncertainty, spatial.
 - `validation`: comparisons, benchmarks and audits.
-- `manuscript`: figures, generated tables and TeX facts, and the dashboard.
+- `figures`: the inventory's figures (`outputs/figures/`) and the dashboard.
 - `release`: inventories, manifests, deposit and provenance bookkeeping.
 
 A task with no kind stops the registry from importing, so nothing joins a group by being
-left off a list. Until rc68 `make dev` was "every task except eleven named ones", and the v3
+left off a list. Until rc68 `make dev` was "every task except eleven named ones", and the
 figure stages added later ran in every development build.
 
 | Group | Kinds | Make |
 |---|---|---|
 | `dev` | science, validation | `make dev` |
-| `manuscript` | manuscript | `make figures` (each paper target depends on it) |
+| `figures` | figures | `make figures` |
 | `full` | all four | `make full`, `make release-check` |
 | `deposit` | all but the 15 phases that read documents or history | public CI, the deposit reader |
 
@@ -54,7 +54,7 @@ before the canonical snapshot because they produce some of its inputs.
 
 `make release-check` and CI use full strict execution. They execute producers even
 when the developer cache is current and retain the reproduction ledger. The
-release-fixpoint and manuscript commands retain their existing release workflow.
+release-fixpoint command retains its existing release workflow.
 
 ## Cache integrity and concurrency
 

@@ -33,7 +33,7 @@ mass-balance reconciliation, the IPCC formulas, Monte-Carlo) is missing.
 | Desk-based first-pass feasible without new fieldwork | ✅ | Entire repo built from official stats + open data |
 | Priority-four first (enteric, manure, soils, rice) | ✅ | `src/pkinv/sectors/agriculture/{enteric,manure,soils,rice}.py` |
 | Residue burning as first extension | ✅ | `src/pkinv/sectors/agriculture/residue_burning.py` (added after the four) |
-| Fieldwork deferred to Tier 2/3 | ✅ | Documented as future work in `docs/methods_note.md` and the sector manuscripts |
+| Fieldwork deferred to Tier 2/3 | ✅ | Documented as future work in `docs/methods_note.md` |
 
 ## B. Phased workplan — ✅ mostly
 

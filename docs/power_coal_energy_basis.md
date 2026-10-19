@@ -198,8 +198,8 @@ larger, and the national move taken from the legacy axis in the structural traje
 Three claims got weaker and all three are corrected rather than absorbed.
 
 1. **The peak moved** from FY2021-22 (497.77) to FY2020-21 (490.58), with FY2021-22 at 490.49
-   — 0.095 Mt below. The position is not robust and the manuscript says that instead of
-   naming a year.
+   — 0.095 Mt below. The position is not robust, and the published description says that
+   instead of naming a year.
 2. **The nine-year increase fell** from 68.55 Mt (17.1%) to 50.96 Mt (12.7%), because the
    reference year moves 17.78 Mt and FY2015-16 only 0.19.
 3. **The trend no longer resolves under every dependence setting.** Reference 12.75–93.01 and

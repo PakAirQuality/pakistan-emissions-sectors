@@ -206,9 +206,9 @@ UNCITED_CEILING = {"canonical": 156, "sector_headline": 54, "diagnostic": 100}
 # per file, not a sweep, and the wrong sweep would make the register less true rather than
 # more. The ceiling stops the set growing while that happens. Lowering it is free.
 # 77 -> 84 (rc64). THIS RAISE IS THE DETECTOR GETTING BETTER, NOT THE TREE GETTING WORSE,
-# which is the only reason a raise here is defensible. artifact_inventory.DOC_GLOBS scanned
-# papers/*/sections/*.tex and not papers/*/*.tex, so anything named only in a sector
-# supplement's own body was recorded as cited by nobody - and four of the five supplements are
+# which is the only reason a raise here is defensible. artifact_inventory.DOC_GLOBS scanned the
+# sector sections and not the sector supplements' own bodies, so anything named only there
+# was recorded as cited by nobody - and four of the five supplements are
 # partly monolithic. Seventeen artifacts were affected, seven of them intermediates, so seven
 # files that were always cited are now counted as cited. Not one citation was added and not
 # one file changed role. The honest reading is that this ceiling was set on under-counted data
@@ -337,7 +337,7 @@ class TestTheCountsReconcile(unittest.TestCase):
                       and r["cited_in"] and r["cited_in"] != "none")
         self.assertLessEqual(
             len(live), CITED_INTERMEDIATE_CEILING,
-            "files typed `intermediate` that a manuscript names rose to %d (ceiling %d). "
+            "files typed `intermediate` that the documentation names rose to %d (ceiling %d). "
             "Either the role is wrong or the citation is - re-type the file, or stop naming "
             "it. Raising this ceiling needs a written reason.\n  %s"
             % (len(live), CITED_INTERMEDIATE_CEILING, "\n  ".join(live)))
@@ -725,7 +725,7 @@ class TestEveryShippedFileHasARole(unittest.TestCase):
                              if r["role"] == role and r["cited_in"] == "none")
             self.assertLessEqual(
                 len(uncited), ceiling,
-                "%s files no manuscript names rose to %d (ceiling %d). Either cite them or "
+                "%s files the documentation does not name rose to %d (ceiling %d). Either cite them or "
                 "re-declare the role honestly:\n  %s"
                 % (role, len(uncited), ceiling, "\n  ".join(uncited)))
 
