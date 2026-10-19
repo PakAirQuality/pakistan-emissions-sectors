@@ -14,6 +14,6 @@ closure_grid_provincial,closure,Grid against provincial shares,1010,stream-provi
 closure_adm2_nesting,closure,Districts against provinces,6,provinces,,6,6,0,Mt CO2e (AR5),outputs/pakemis_adm2_nesting_check.csv,
 closure_nitrogen,closure,"Nitrogen ledger, every year and configuration",200,ledger replays,,,,9.54e-07,kg N,outputs/pakemis_nitrogen_partition_sensitivity.csv,
 closure_coal_change,closure,Coal change decomposition,54,year-species rows,,,,1.64e-05,Gg / Mt CO2e,outputs/pakemis_coal_change_decomposition.csv,
-rebuild_clean_rc68,reproduction,"rc68 clean rebuild, compiled inputs",465,files,0,346,465,,,docs/reproduction/rc68/clean_rebuild_comparison.csv,rebuilt_identical 339; seeded 118; seeded_then_rewritten_identical 7; skipped_by_flag 1
-rebuild_unpack_rc68,reproduction,"rc68 deposit, unpacked and built",395,files,0,394,395,,,docs/reproduction/rc68/unpack_build_comparison.csv,not_rebuilt 110; rebuilt_identical 284; skipped_by_flag 1
-tests_release,reproduction,rc68 canonical test run,4057,tests executed,0,4040,4057,,,docs/reproduction/rc68/test_run.json,17 skipped
+rebuild_clean_rc69,reproduction,"rc69 clean rebuild, compiled inputs",470,files,0,351,470,,,docs/reproduction/rc69/clean_rebuild_comparison.csv,rebuilt_identical 340; seeded 118; seeded_then_rewritten_identical 11; skipped_by_flag 1
+rebuild_unpack_rc69,reproduction,"rc69 deposit, unpacked and built",400,files,0,399,400,,,docs/reproduction/rc69/unpack_build_comparison.csv,not_rebuilt 110; rebuilt_identical 289; skipped_by_flag 1
+tests_release,reproduction,rc69 canonical test run,4112,tests executed,0,4092,4112,,,docs/reproduction/rc69/test_run.json,20 skipped

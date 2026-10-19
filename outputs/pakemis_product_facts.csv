@@ -1,8 +1,8 @@
-# One authoritative answer per fact a manuscript states about the shape of this release.
-# Derived from the products; the claims registry reads this, so a sentence that disagrees fails the build.
+# One authoritative answer per fact a document states about the shape of this release.
+# Derived from the products, so a published count can be checked against it.
 # No grades here: a maturity grade is an opinion, and an opinion in a register stops being re-argued.
 fact_id,value,source_output,basis
-release_id,1.0.0rc69,src/pkinv/__init__.py,the release this file describes
+release_id,1.0.0rc70,src/pkinv/__init__.py,the release this file describes
 commit,see release_manifest.json describes_commit,release_manifest.json,"the content commit is cut by the fixpoint after this file is committed, so the manifest holds it and this row points there"
 annual_fy_count,10,pakemis_annual_fy2015_16_fy2024_25.csv,distinct fiscal years in the nine-year annual product
 annual_first_fy,FY2015-16,pakemis_annual_fy2015_16_fy2024_25.csv,earliest period in the annual product
@@ -29,14 +29,14 @@ monthly_rows,23892,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months publ
 monthly_evidence_vocabulary,TE1;TE2;TE3;TE4,pakemis_monthly_fy2015_16_fy2024_25.csv,the timing-evidence letters the nine-year product uses; the reference-year layer uses T1-T4 for the same four classes
 monthly_flat_share_pct,61.6,pakemis_monthly_fy2015_16_fy2024_25.csv,"share of published monthly mass on a declared-flat profile (TE4) - the months exist; this is how much of them is allocation rather than record. SUPERSEDED AS A HEADLINE by monthly_observed_share_pct / monthly_physical_share_pct / monthly_weakly_timed_share_pct: this figure is true but says nothing about how much of that flatness is the physical answer, and most of it is"
 monthly_flat_rows,12444,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months carrying the weakest timing class
-artifact_count,973,pakemis_artifact_inventory.csv,physical files this release ships
-canonical_count,234,pakemis_artifact_inventory.csv,artefacts declared canonical - a product the release is for
-canonical_uncited,0,pakemis_artifact_inventory.csv,canonical artefacts no manuscript names; ratcheted in tests/test_artifact_inventory.py with the list in the failure message
-artifacts_tier_audit,272,pakemis_artifact_inventory.csv,artefacts in the audit release tier
-artifacts_tier_build,169,pakemis_artifact_inventory.csv,artefacts in the build release tier
-artifacts_tier_core,299,pakemis_artifact_inventory.csv,artefacts in the core release tier
+artifact_count,967,pakemis_artifact_inventory.csv,physical files this release ships
+canonical_count,232,pakemis_artifact_inventory.csv,artefacts declared canonical - a product the release is for
+canonical_uncited,156,pakemis_artifact_inventory.csv,canonical artefacts README.md and docs/ do not name; ratcheted in tests/test_artifact_inventory.py with the list in the failure message
+artifacts_tier_audit,147,pakemis_artifact_inventory.csv,artefacts in the audit release tier
+artifacts_tier_build,291,pakemis_artifact_inventory.csv,artefacts in the build release tier
+artifacts_tier_core,297,pakemis_artifact_inventory.csv,artefacts in the core release tier
 artifacts_tier_research,56,pakemis_artifact_inventory.csv,artefacts in the research release tier
-artifacts_tier_supporting,177,pakemis_artifact_inventory.csv,artefacts in the supporting release tier
+artifacts_tier_supporting,176,pakemis_artifact_inventory.csv,artefacts in the supporting release tier
 agriculture_fiscal_basis_categories,6,pakemis_agriculture_fiscal_series.csv,agriculture categories reconstructed on observed Pakistani fiscal activity
 agriculture_calendar_basis_share_pct,0.0,pakemis_agriculture_fiscal_series.csv,"share of agriculture's reference-year mass whose driver is the FAOSTAT livestock projection, for which no fiscal enumeration exists"
 agriculture_basis_change_Mt,28.7534,pakemis_agriculture_basis_change.csv,"what moving eight backcast years from the FAOSTAT-calendar basis to the fiscal basis was worth, cumulative, excluding the cotton scope term"
@@ -53,8 +53,8 @@ uncertainty_variance_share_persists_pct,77.79,pakemis_longitudinal_uncertainty.c
 monthly_observed_share_pct,36.5,pakemis_temporal_decomposition.csv,X: monthly mass whose within-year variation is carried by an observed monthly series
 monthly_physical_share_pct,41.9,pakemis_temporal_decomposition.csv,"Y: monthly mass whose flat profile is the PHYSICAL answer - continuous or stock-driven processes, where obtaining a monthly series would not change the shape"
 monthly_weakly_timed_share_pct,21.6,pakemis_temporal_decomposition.csv,"Z: monthly mass that genuinely varies within the year and is carried flat because no monthly evidence was obtained. THIS is the gap, and the only one of the three that acquiring data would close"
-deposit_files,2455,pakemis_deposit_manifest.csv,"files in the archive deposit, assembled from an explicit allowlist"
-deposit_megabytes,2220.6,pakemis_deposit_manifest.csv,"size of the archive deposit, EXCLUDING the context-stamped artefacts whose size this manifest cannot record without describing itself - the PDFs, the manifest and the sidecars. The deposit is larger than this number by those files"
+deposit_files,2052,pakemis_deposit_manifest.csv,"files in the archive deposit, assembled from an explicit allowlist"
+deposit_megabytes,2194.0,pakemis_deposit_manifest.csv,"size of the archive deposit, EXCLUDING the context-stamped artefacts whose size this manifest cannot record without describing itself - the PDFs, the manifest and the sidecars. The deposit is larger than this number by those files"
 deposit_source_documents,0,pakemis_deposit_manifest.csv,"third-party source documents in the deposit; the register names them and says where to obtain them instead, because their redistribution terms are mostly not established and this project cannot license what it does not own"
 source_documents_archived,155,pakemis_source_register.csv,third-party publications archived in the repository and excluded from the deposit; the register hashes each and says where to obtain it
 source_register_entries,221,pakemis_source_register.csv,"registered sources, each with its inbound-use and redistribution answers"

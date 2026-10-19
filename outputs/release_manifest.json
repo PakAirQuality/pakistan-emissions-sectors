@@ -23,13 +23,13 @@
     "software": ""
   },
   "git": {
-    "describes_commit": "169811a40abd7e1929a525b23a6b90290db4fd9c",
+    "describes_commit": "53395a080ab028007e30b55d47128e67971516d0",
     "restricted_layers": {
       "commit": "f0abaca30c9d1c1ff80c6cf3793674a8ce6ff6b1",
       "dirty": false,
       "mode": "overlay"
     },
-    "tree_dirty": false
+    "tree_dirty": true
   },
   "gwp_basis": {
     "note": "fossil and biogenic CH4 carry distinct AR5 values; see pkinv.core.gwp",
@@ -137,15 +137,13 @@
     "period_id": "FY2023-24"
   },
   "product": {
-    "cite_as": "PakEmis 1.0.0rc69",
+    "cite_as": "PakEmis 1.0.0rc70",
     "explorer": "https://emissions.hawanama.org",
     "family": "PakEmis",
-    "manuscript_status": "preparation",
     "name": "PakEmis",
     "package": "pkinv",
     "repository": "https://github.com/PakAirQuality/pakistan-emissions-sectors",
-    "repository_note": "the public development repository, without the third-party source documents, whose checksums it lists; the git block names its commit, and restricted_layers the commit of the private checkout that holds the documents. Every release candidate through 1.0.0rc68 was made in that private repository, and their commits are not in the public history",
-    "submission_identifier": null
+    "repository_note": "the public development repository, without the third-party source documents, whose checksums it lists; the git block names its commit, and restricted_layers the commit of the private checkout that holds the documents. Every release candidate through 1.0.0rc68 was made in that private repository, and their commits are not in the public history"
   },
   "products": [
     {
@@ -546,42 +544,42 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "14f09df56fc3b825717b410df8925a9eadafeedc4531415d3120251e17e551d7"
+      "sha256": "1aaf4e1e7f74afb2c530c96fdf28f6d16efbaaa7f9b4cc9c18447df098458af3"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "2b45606fd1cc0e350a07c6a6dc3971de6c6cef94ca7e0b70fb1ceef8440b37e3"
+      "sha256": "c367f8c5c5fca49e9268626deab908345a3c16ef14707c427e75c596a50109a6"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "60461ab1f930c1845f04a428606ed5c4c5c87765e6d398c1834bd90c7c6ae6ab"
+      "sha256": "74c941225b0c383073312c8ca44eeffe6e1ac59f259240dda5b73811897b7b87"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "001e65a7b2ca9f49dd7e852efaea91207a1408f37bb66c5aae2a0c02a4b880b1"
+      "sha256": "cc825700e72a317d6d18076fe424b2e5fb48033bc236d5b7c480c56ff2424cd9"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "aaf84bac467e2dcf4def634a0df3bf9f59640dc399654094ee027b7793063e1c"
+      "sha256": "3ef5d8d392005260110560bcac51e9ee5ff9c1c1c241f958832f56445f6d6bb0"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "11f07117b868b763134d6e119b8ee0226eedcb3a15bcb36e0da3d2a8b8702859"
+      "sha256": "4a983064df057265e22b615f0145048dc593ac82e354d8b5b3c496881c8fed12"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "603408eba253f17f3944861681c048cbb2ff5c76ce0d7e15c8bc46111f798349"
+      "sha256": "094ce8a72d9fc38c51b6fb5504769f119dd73e960ac6dbfd58b29e2c732d41a4"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "3ac2ff0e47557ab397043ac6864b9a60fcd3be90ccd3ed599867aa2928940de3"
+      "sha256": "6feb2837f21faf5c84f20a3deed7c6c65515b1b193fdc17e79c29779b0c577ae"
     },
     {
       "byte_stable": true,
@@ -726,12 +724,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_artifact_inventory.csv",
-      "sha256": "108b25785ad6ae5b17f3ac2ad427d4dec4aa73f61a758cae44635522f5e98430"
+      "sha256": "fe29e32b31a4b180bf28e23f55782a0c8854ef90d56e07fed3245701364b5e46"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_atomic_annual.csv",
-      "sha256": "3700c97a69b4e6f9236c2e4fd1b3bcbd312efbd71baacc4b0b5b92888a223dba"
+      "sha256": "77b819044822aff3df2d324bd8115341d252546962e6690060567848adf6f416"
     },
     {
       "byte_stable": true,
@@ -790,18 +788,8 @@
     },
     {
       "byte_stable": true,
-      "path": "outputs/pakemis_citation_deposit_audit.csv",
-      "sha256": "3e6dd7a2bf63a7c5ebfb8ffa361560736d3868514a013d5f892d97afe0e652b4"
-    },
-    {
-      "byte_stable": true,
       "path": "outputs/pakemis_citation_pointer_audit.csv",
       "sha256": "08a2b4c1d51370c8d31c832e107342fe77ae69e93dac3345cd62c35ebc9716ff"
-    },
-    {
-      "byte_stable": true,
-      "path": "outputs/pakemis_claim_matrix.csv",
-      "sha256": "c1835ca44a4bf64b026eae55f166792fddc8cd99f1430b4984280d2145b59069"
     },
     {
       "byte_stable": true,
@@ -861,12 +849,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_data_provenance.csv",
-      "sha256": "4b616ab623fa9dac293f25b423140418b533c63dbc57df7d9aa173fdfdc11218"
+      "sha256": "155d574607a287db3a1a95eba792ff9360b949d1e5956fc0bad66cfe710766e5"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_deposit_manifest.csv",
-      "sha256": "739fca968d0b687a8d6007b2e4dcb6af2b035b2ea136e971244770d40781fd0f"
+      "sha256": "7c492a78912e76bff73c3b1566ea75f1a60464458d4da81e63656ad282ab61fc"
     },
     {
       "byte_stable": true,
@@ -921,7 +909,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_facility_registry.csv",
-      "sha256": "7abe16b489f633c11a9a96e92767b950984d3d8fc7b5b8b026a7323b387606b3"
+      "sha256": "9bcddf22c9c073beeac6686c7874cb905b7fdbd0e71a1bd7de345015f0d0c2d9"
     },
     {
       "byte_stable": true,
@@ -1001,12 +989,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_atoms.csv",
-      "sha256": "2241e5d7a13d2aaaff8992f4aada2ce7ac1f3833d1eb2695b5d7b1e90e2f55f0"
+      "sha256": "7a02726cf8adfa0b19ee5407f0bae3ff475bc3738803c740c6241459f38ae33f"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_configuration_monthly.csv",
-      "sha256": "9607bc7472cc7ba251a3f1b4ed194a76350fad0ce808f871967ad7a016b8e0d3"
+      "sha256": "dcf366fc5b91c53e2aac28ff7fc0d0017f420cc51a5d0baa37ddda6f97daadb9"
     },
     {
       "byte_stable": true,
@@ -1016,17 +1004,17 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "43424022becb4d3b208968bb6a5cacae4f5e0b5f4c21ae8f91582107c1bc1b56"
+      "sha256": "a908a2de986f4866d523e51b5f3008b659789cc690a4a6737cc8d9abc58dd369"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc",
-      "sha256": "3cf1c2ea539e701f46d691d6ef222ecfa5d2315ffafe1a58a00bbbcc1cca60cc"
+      "sha256": "0362226c55a4cc492b30b0ef151eff30e5750c8da7f6e6125bac40e549c220e6"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc",
-      "sha256": "a0871c12678732e9052308cf4b503f422c46654b8d59557ec5e47e3890e509ce"
+      "sha256": "1fcde408759d46b1548e61c66204fb4c5aa2085be87bce50b96f87b725db59de"
     },
     {
       "byte_stable": true,
@@ -1046,17 +1034,17 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
-      "sha256": "4c0c5117cf0b056541c44b1aef43119abbb8d562a01267980e0f81d4a35d4f65"
+      "sha256": "990f480de623ee0b18df3f1613e8a27e08000bf8263cef1c2cd6c8b8aa017668"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_0p05_monthly.nc",
-      "sha256": "d7faa6c883108e3b3c8e7c3588b4137e256b3f44988fb5d26fec7a6523dd3806"
+      "sha256": "39ed1404a8573286c2733274b454ac2f5f3c785e31aa9ece76e8db4a2e078df8"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_grid_0p05_monthly_ledger.nc",
-      "sha256": "4229427963b3edb3f2b02476ca5fdae6775fe85b2d2e3972fd7e69603f1ab843"
+      "sha256": "7912457e41973393d6825c7fae3bff4527bd31b5169ed2d31bc6dbacc082e049"
     },
     {
       "byte_stable": true,
@@ -1206,7 +1194,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_monthly_fy2015_16_fy2024_25.csv",
-      "sha256": "eb1c72c653269c75a9c8089944cc1202ab2f9c14487848bfc58757c94b642909"
+      "sha256": "ae287271426add8b61dfc719bf52fad482b4efef784b5d2f464e25694c6fe831"
     },
     {
       "byte_stable": true,
@@ -1237,11 +1225,6 @@
       "byte_stable": true,
       "path": "outputs/pakemis_ocac_extension_revisions.csv",
       "sha256": "4405f2f638a4d7ab39c9826289883156b25f7e07546de32722bf9dde795e97c3"
-    },
-    {
-      "byte_stable": true,
-      "path": "outputs/pakemis_paper_artefact_hashes.csv",
-      "sha256": "33679ed3160f7e4348476618a5f864b04baf548b95c4d53eaea71bd3235ce213"
     },
     {
       "byte_stable": true,
@@ -1316,7 +1299,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_product_catalog.csv",
-      "sha256": "37467074da4f4cbfe084916426bb80c5e69a49f8de3763f0d22ff52fb28bc029"
+      "sha256": "820a685ebca24d3af2a731d65ab65b8120af141c80dc5412b8ea78c48e778ea3"
     },
     {
       "byte_stable": true,
@@ -1326,12 +1309,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_product_facts.csv",
-      "sha256": "7862ebdffeb0d114e038a041c0ae9647abf23200727d4b8900726db80294be84"
+      "sha256": "c38c1342dfed6326a0c8d6d52f21c52c5d52c9198e82bf116b46c231707375c0"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_release_axis_fingerprints.csv",
-      "sha256": "71681050decfcd844e03336c7c2f38d9050e7ac15d138d76343d1f8781818b63"
+      "sha256": "d0f22ea01b29f7484fb69893420a92beba42c57295e71e6790632f0004e855e5"
     },
     {
       "byte_stable": true,
@@ -1365,11 +1348,6 @@
     },
     {
       "byte_stable": true,
-      "path": "outputs/pakemis_sector_note_facts.csv",
-      "sha256": "3a7d1a8328ae986639434e94072a4cace041a931091f4a0f747fe4ea9c2a2ff3"
-    },
-    {
-      "byte_stable": true,
       "path": "outputs/pakemis_series_splice_agriculture.csv",
       "sha256": "554a87904919da310e75036bc156ed25d0b86237e1b0ab3e26788369f9921427"
     },
@@ -1381,7 +1359,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_source_streams.csv",
-      "sha256": "5dec7f142934a046c5f4bfeed6c259484d73a23e3f2356675490fb992fc0c705"
+      "sha256": "60f3165beefefa400f89faac2e82c9ba925adbc4ad01eb5268eec46b6a78d9f4"
     },
     {
       "byte_stable": true,
@@ -1501,7 +1479,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_validation_measured.csv",
-      "sha256": "e1b252c402f8fac522af26c073a5f910e0cf7aa6b082b18a9139924b4646bbba"
+      "sha256": "b015834909a93ae0ac5201235822902a7d7e9ea2ff279e19a7d79947e1b2370b"
     },
     {
       "byte_stable": true,
@@ -1791,7 +1769,7 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/fact_activity_source_details.csv",
-      "sha256": "38a652ff90d4741d7ab6c06734a12ddfb71bec4390d0afc552693f696d4e418b"
+      "sha256": "ab75394383b3d0e6ce5cd60f3fc010f7e1b2c073e04f58a42930ca83bd7b118a"
     },
     {
       "byte_stable": true,
@@ -1956,7 +1934,7 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/semantic_release.json",
-      "sha256": "cdab6be98719af5aab8c72d6e31f9d239fe5ce4326a558c2def01cc06986dbf5"
+      "sha256": "f11e4d8f4a16947ceb824d52e5109937b1f563b827df9a17be8419939a2a868b"
     },
     {
       "byte_stable": true,
@@ -3980,7 +3958,7 @@
     },
     {
       "path": "data/activity/ippu/national_activity.csv",
-      "sha256": "747f6ed64c51a22dbbe6422f0e9664bf7008550dd08361700738a9fca25f01d9"
+      "sha256": "a2a07ca8e888de47c63b4536c452c73b5f5692faa0dafd8e672dbfd913d5920f"
     },
     {
       "path": "data/activity/ippu/nitric_acid_monitoring.csv",
@@ -4428,7 +4406,7 @@
     },
     {
       "path": "data/artifact_roles.csv",
-      "sha256": "23f78e0795112e1bd71af997f1b3d7f7da82b8db1b1cb6531097f4548b4ee13e"
+      "sha256": "1dbbc80112404c27c0523d3ccf11d95003b9a43fac0027497acd1f07432a1665"
     },
     {
       "path": "data/availability_matrix.csv",
@@ -4484,11 +4462,11 @@
     },
     {
       "path": "data/catalog/assets.csv",
-      "sha256": "b0ef0d43a5752132d28918dd5889b85ee1aa5e19b7306614826c77467a59cd94"
+      "sha256": "356fe2bc402e93d718cc16f165e5d867d4b7884a2d2977b8e5aa5849a1940a78"
     },
     {
       "path": "data/catalog/canonical.json",
-      "sha256": "c251c598bd076e5765d2769159967d089490da0ed24dfb419ace5d79325f4eb4"
+      "sha256": "1796174a1ca34ab211093863aaf5591e814e45ec7077483731ec745c39d55a01"
     },
     {
       "path": "data/catalog/compatibility_view_formats.json",
@@ -4531,14 +4509,6 @@
       "sha256": "022b5877afbf60cdacfe0e40f0c8ff8d58119140db0c6c2b713970b612797b5d"
     },
     {
-      "path": "data/claim_matrix.csv",
-      "sha256": "76c7c8a9a6624261f1fcff2dbf677390cb9c5de7d405a3022850023df22518a2"
-    },
-    {
-      "path": "data/claims_registry.csv",
-      "sha256": "e73d5bc0d9343960e790aece15ba9e78d0522106b71cf2d69deeede958b5ce60"
-    },
-    {
       "path": "data/coal_booking_policy.csv",
       "sha256": "c83d95bd2d60e18a8747a0c4a8b860bdd972f586aa962281bd4a874217b6a50c"
     },
@@ -4560,7 +4530,11 @@
     },
     {
       "path": "data/data_gaps.csv",
-      "sha256": "10a0b9d1a23ea76779444046ce3532996bab531db2712faea42948b487060c79"
+      "sha256": "5b9339bfc91adfc68d5915f0708464ea234ccbb1f1a18056a59df22fde34e2cb"
+    },
+    {
+      "path": "data/data_references.csv",
+      "sha256": "a691dc817fefa3d780701a41e48858921cf55160cbe07b20012125d30cdc286b"
     },
     {
       "path": "data/dependency_group_rules.csv",
@@ -4764,7 +4738,7 @@
     },
     {
       "path": "data/held_products.csv",
-      "sha256": "e318b87d3f4e648bba7b7f3f6c81bf1736cb11374288823ec291d04147b3f263"
+      "sha256": "ed2013c5d468bdc0423689117424b0c273253354ba7ca588dd7a72ba51dce2c5"
     },
     {
       "path": "data/industry_params.csv",
@@ -4852,11 +4826,11 @@
     },
     {
       "path": "data/product_columns.csv",
-      "sha256": "89aec3ceb1c99725f9b01a9d7cea3392286aeb03ebee0ad0d295721cf31b6426"
+      "sha256": "f28c08062144ed575a3a11d56d040c3cecea429b2b0e63d4c60d6ba00be33d26"
     },
     {
       "path": "data/product_schemas.csv",
-      "sha256": "8b996bb50bda1bb852d37dcffc8780aebb54aa7221188c11e0dbf8fc7b48ad05"
+      "sha256": "eed56d52a09b8010df36c46ad661279f3b2bd1c6be71646a834e7d795ce8f478"
     },
     {
       "path": "data/province_shares.csv",
@@ -4868,7 +4842,7 @@
     },
     {
       "path": "data/published_release_vintages.csv",
-      "sha256": "e45d7dc2b1e2c0b655b2899c8ce36afead9861601e58a1c05b021cc7e0d8495f"
+      "sha256": "5a2849702bfa51af3ba4742c31ebf4bfaf9f7e0b2bd86824a0a8a1e374209d21"
     },
     {
       "path": "data/railways_params.csv",
@@ -5384,7 +5358,7 @@
     },
     {
       "path": "data/sectors/ippu/canonical/activity/national_activity.csv",
-      "sha256": "da25ed8854f27c7c13532bf33ec7fa83262a50cf1c23ebd970dd0d619b5f7740"
+      "sha256": "2a2c8b2f972f82b3bfd0fac2ccc86f502135db2aff42c38f57b6e5e6fc78ddfc"
     },
     {
       "path": "data/sectors/ippu/canonical/activity/nitric_acid_monitoring.csv",
@@ -6096,7 +6070,7 @@
     },
     {
       "path": "data/temporal_driver_registry.csv",
-      "sha256": "25cd51d6a42942375ecc36e9e2903257bea09bc7f70d0477f3ff226381871759"
+      "sha256": "8c16d8424923bbcf4969e53e0b74b46d224b37a8ba48b8098872dc85660aaf27"
     },
     {
       "path": "data/temporal_profiles.csv",
@@ -6135,5 +6109,5 @@
       "sha256": "c560b9202fa2cd91db48c5fe3fa221ee50f3bb84e4652eb053cba2bd9f40dee9"
     }
   ],
-  "version": "1.0.0rc69"
+  "version": "1.0.0rc70"
 }

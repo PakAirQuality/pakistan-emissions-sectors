@@ -163,7 +163,7 @@ def build():
     _fact(out, "canonical_uncited",
           sum(1 for r in canonical if r["cited_in"] == "none"),
           "pakemis_artifact_inventory.csv",
-          "canonical artefacts no manuscript names; ratcheted in "
+          "canonical artefacts README.md and docs/ do not name; ratcheted in "
           "tests/test_artifact_inventory.py with the list in the failure message")
     for tier in sorted({r["release_tier"] for r in inventory}):
         _fact(out, "artifacts_tier_%s" % tier,
@@ -391,7 +391,7 @@ def main():
     rows = build()
     os.makedirs(OUTPUTS, exist_ok=True)
     path = asset_path(OUTPUTS, "pakemis_product_facts.csv")
-    write_table(path, list(rows[0]), rows, banner=('# One authoritative answer per fact a manuscript states about the shape of this release.', '# Derived from the products; the claims registry reads this, so a sentence that disagrees fails the build.', '# No grades here: a maturity grade is an opinion, and an opinion in a register stops being re-argued.',))
+    write_table(path, list(rows[0]), rows, banner=('# One authoritative answer per fact a document states about the shape of this release.', '# Derived from the products, so a published count can be checked against it.', '# No grades here: a maturity grade is an opinion, and an opinion in a register stops being re-argued.',))
     print("product facts -> %s" % path)
     print("  %d facts" % len(rows))
     for key in ("common_scope_sector_count", "monthly_months_published",
