@@ -32,6 +32,12 @@ echo "== receipts (deposit last)"
 # rc69: the release tail in its registry order, repeated until a pass changes nothing. One
 # pass left product_facts quoting a deposit count from before the deposit manifest grew by
 # ten rows.
+# rc70: the semantic release digests the asset catalog, so a catalog edit made after the
+# strict build (a held product's new digest) left it stale; it is rebuilt first, and the
+# golden receipts must not move with it.
+python3 -m pkinv.semantic.build > /dev/null 2>&1
+python3 scripts/freeze_goldens.py --check > /dev/null 2>&1 \
+  || { echo "GOLDEN RECEIPTS MOVED: run scripts/freeze_goldens.py and commit"; exit 1; }
 for pass in 1 2 3 4; do
   before=$(git diff | git hash-object --stdin)
   python3 -m pkinv.report.artifact_inventory > /dev/null 2>&1
