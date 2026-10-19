@@ -36,7 +36,9 @@ repository builds, tests and releases the inventory alone, and names no other re
   `docs/`, resolved by `tests/test_product_catalog_anchors.py`.
 - **What counts as cited:** the artifact inventory reads `README.md` and `docs/`. Products
   named only in the papers are now recorded `cited_in=none`; the uncited ceilings were raised
-  to the live counts (canonical 156, sector headline 54, diagnostic 100) with that reason.
+  to the live counts (canonical 156, sector headline 54, diagnostic 222) with that reason. The
+  122 evidence tables whose `diagnostic` role the catch-all used to derive from those texts are
+  declared `diagnostic` by name, so no shipped file changed role.
 - **Author-year citations in `data/`** resolve against `data/catalog/data_references.csv`
   (16 references), extracted from the bibliography that left with the papers.
 - **Tests:** the inventory half of the release-integrity suite is

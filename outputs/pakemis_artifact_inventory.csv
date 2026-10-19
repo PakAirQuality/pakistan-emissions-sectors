@@ -55,7 +55,7 @@ agriculture_urea_basis.csv,diagnostic,sector runner,agriculture_urea_basis.csv,a
 agriculture_water_regime_2024.csv,intermediate,varies,*,*,1289,3,build,no,none,a working file the build needs and no reader-facing claim rests on
 air_key_categories.csv,intermediate,varies,*,*,2398,19,build,no,none,a working file the build needs and no reader-facing claim rests on
 air_key_categories.md,report_prose,varies,*.md,*.md;*,2269,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
-air_pollutants_2024.csv,intermediate,varies,*,*,5419,79,build,yes,none,a working file the build needs and no reader-facing claim rests on
+air_pollutants_2024.csv,diagnostic,varies,air_pollutants_2024.csv,air_pollutants_2024.csv;*,5419,79,audit,yes,none,evidence behind a published claim (role as at rc69)
 air_pollutants_adm1.csv,canonical,pkinv.report.air_spatial_sectors,air_pollutants_adm1.csv,air_pollutants_adm1.csv;*,338896,2095,core,yes,none,"LEGACY FY2023-24 provincial air layer of seven sectors (no industry, IPPU or fugitives; power rows are screening, labelled by estimate_kind) - the ten-year panel is pakemis_air_adm1_by_year.csv. Formerly: the all-sector provincial air layer: every pollutant row times its own stream's declared province vector, the vector's status and the stream's evidence grade on the row; hashed by the release manifest"
 air_pollutants_adm2.csv,canonical,pkinv.report.air_spatial_sectors,air_pollutants_adm2.csv,air_pollutants_adm2.csv;*,8082410,39911,core,yes,none,"LEGACY FY2023-24 district air layer of seven sectors (power rows are screening, labelled by estimate_kind). Formerly: the all-sector district air layer on the canonical shape frame: each row its stream's normalized shape vector (agriculture by its own allocator, re-keyed); cruise held at ADM1; hashed by the release manifest"
 air_pollutants_district_2024.csv,diagnostic,varies,*,*,88431,1335,audit,yes,documentation,a working file the build needs and no reader-facing claim rests on
@@ -63,7 +63,7 @@ air_pollutants_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.
 air_pollutants_timeseries_1990_2024.csv,diagnostic,pkinv.report.air_timeseries,air_pollutants_timeseries_1990_2024.csv,air_pollutants_timeseries_1990_2024.csv;*,21629,630,audit,yes,none,"the 1990-2024 air-pollutant series. TYPED FROM THE MANIFEST'S OWN DECISION (rc64): release_manifest.PRODUCT_PATTERNS names this file LITERALLY, with the reason beside it - the rc48 lane was added because a companion product stayed unhashed while the manifest described an air-pollutant inventory. A product the release deliberately hashes is not a working file, and while it was typed intermediate its build tier excluded it from the data deposit the manifest says it is in."
 air_trend_chart.png,figure,varies,*.png,*.png;*,99029,,supporting,no,none,a generated chart a runner writes beside its tables
 air_uncertainty_distribution.png,figure,varies,*.png,*.png;*,72079,,supporting,no,none,a generated chart a runner writes beside its tables
-air_uncertainty_montecarlo.csv,intermediate,varies,*,*,362,7,build,yes,none,a working file the build needs and no reader-facing claim rests on
+air_uncertainty_montecarlo.csv,diagnostic,varies,air_uncertainty_montecarlo.csv,air_uncertainty_montecarlo.csv;*,362,7,audit,yes,none,evidence behind a published claim (role as at rc69)
 apcma_dispatch_parse_summary.csv,diagnostic,scripts/ingest_apcma_dispatches.py,apcma_dispatch_parse_summary.csv,apcma_dispatch_parse_summary.csv;*,408,1,audit,yes,none,the APCMA parse's denominators and its duplicate-year control
 apcma_dispatch_quarantine.csv,diagnostic,scripts/ingest_apcma_dispatches.py,apcma_dispatch_quarantine.csv,apcma_dispatch_quarantine.csv;*,6572,50,audit,yes,none,"APCMA cells failing one of three controls - row, column or duplicate-year - kept unrepaired"
 apcma_qim_cement_crosscheck.csv,diagnostic,scripts/ingest_apcma_dispatches.py,apcma_qim_cement_crosscheck.csv,apcma_qim_cement_crosscheck.csv;*,6037,60,audit,yes,none,"APCMA despatch shape against PBS QIM production shape, normalised twelve-month shares"
@@ -77,9 +77,9 @@ aviation_adsblol_route_pilot.csv,intermediate,varies,*,*,2651,28,build,no,none,a
 aviation_air_pollutants_fy2023_24.csv,diagnostic,pkinv.sectors.aviation.air_pollutants,aviation_air_pollutants_fy2023_24.csv,aviation_air_pollutants_fy2023_24.csv;*,1200,9,audit,yes,none,"aviation air pollutants. Literally named in PRODUCT_PATTERNS, same reason as the series above; it is uncited, which is a separate debt, but an uncited product is still not a build artifact."
 aviation_aircraft_assignment_fy2023_24.csv,intermediate,varies,*,*,1163,10,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_aircraft_ledger_fy2023_24.csv,intermediate,varies,*,*,46200,107,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_annual_component_comparison.csv,intermediate,varies,*,*,975,6,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_annual_component_comparison.csv,diagnostic,varies,aviation_annual_component_comparison.csv,aviation_annual_component_comparison.csv;*,975,6,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_benchmark_summary_fy2023_24.csv,intermediate,varies,*,*,396,1,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_bridge_source_rows_all_scenarios.csv,intermediate,varies,*,*,12164,69,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_bridge_source_rows_all_scenarios.csv,diagnostic,varies,aviation_bridge_source_rows_all_scenarios.csv,aviation_bridge_source_rows_all_scenarios.csv;*,12164,69,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_by_stream_fy2023_24.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,577,6,supporting,yes,none,a sector's totals resolved to source streams
 aviation_carrier_share_scenarios.csv,intermediate,varies,*,*,1433,6,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_climatetrace_airport_comparison.csv,intermediate,varies,*,*,2497,25,build,no,none,a working file the build needs and no reader-facing claim rests on
@@ -87,7 +87,7 @@ aviation_climatetrace_airport_monthly.csv,intermediate,varies,*,*,239175,1968,bu
 aviation_climatetrace_national_monthly.csv,intermediate,varies,*,*,31754,240,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_climatetrace_periods.csv,intermediate,varies,*,*,1783,21,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_climatetrace_spatial_diagnostics.csv,intermediate,varies,*,*,317,2,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_common_support_ladder.csv,intermediate,varies,*,*,1209,8,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_common_support_ladder.csv,diagnostic,varies,aviation_common_support_ladder.csv,aviation_common_support_ladder.csv;*,1209,8,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_completeness_fy2023_24.csv,sector_headline,sector runner,*_completeness_*.csv,*_completeness_*.csv;*,717,10,supporting,yes,none,a sector's notation-key coverage
 aviation_departure_control_comparison.csv,intermediate,varies,*,*,475,2,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,18090,86,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
@@ -97,24 +97,24 @@ aviation_era5_route_weather.csv,intermediate,varies,*,*,1413,6,build,no,none,a w
 aviation_fallback_manifest_fy2023_24.json,intermediate,varies,*.json,*.json;*,1766,,build,no,none,a run manifest or fallback record the build writes
 aviation_fallback_qa_fy2023_24.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,897,7,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
 aviation_fuel_bridge_anchor_fy2023_24.csv,intermediate,varies,*,*,7259,32,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_fuel_bridge_fy2023_24.csv,intermediate,varies,*,*,4027,24,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_fuel_bridge_fy2023_24.csv,diagnostic,varies,aviation_fuel_bridge_fy2023_24.csv,aviation_fuel_bridge_fy2023_24.csv;*,4027,24,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_fuel_closure_fy2023_24.csv,intermediate,varies,*,*,373,4,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_fuel_constrained_by_stream_fy2023_24.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,370,3,supporting,yes,none,a sector's totals resolved to source streams
 aviation_independence_matrix.csv,intermediate,varies,*,*,847,8,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_m2_structural_envelope.csv,intermediate,varies,*,*,1073,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_m2_uncertainty_contributions.csv,intermediate,varies,*,*,808,5,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_m2_uncertainty_intervals.csv,intermediate,varies,*,*,11130,36,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_model_resolution_fy2023_24.csv,intermediate,varies,*,*,1277,7,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_m2_uncertainty_contributions.csv,diagnostic,varies,aviation_m2_uncertainty_contributions.csv,aviation_m2_uncertainty_contributions.csv;*,808,5,audit,no,none,evidence behind a published claim (role as at rc69)
+aviation_m2_uncertainty_intervals.csv,diagnostic,varies,aviation_m2_uncertainty_intervals.csv,aviation_m2_uncertainty_intervals.csv;*,11130,36,audit,no,none,evidence behind a published claim (role as at rc69)
+aviation_model_resolution_fy2023_24.csv,diagnostic,varies,aviation_model_resolution_fy2023_24.csv,aviation_model_resolution_fy2023_24.csv;*,1277,7,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_monthly_fy2023_24.csv,sector_headline,sector runner,*_monthly_fy*.csv,*_monthly_fy*.csv;*,16438,72,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
-aviation_monthly_reconciliation.csv,intermediate,varies,*,*,11095,42,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_monthly_reconciliation.csv,diagnostic,varies,aviation_monthly_reconciliation.csv,aviation_monthly_reconciliation.csv;*,11095,42,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_monthly_summary.csv,intermediate,varies,*,*,979,12,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_movement_balance_fy2023_24.csv,intermediate,varies,*,*,2107,37,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_ocac_annual_source_rows.csv,intermediate,varies,*,*,38692,135,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_ocac_annual_summary.csv,intermediate,varies,*,*,874,9,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_ocac_cumulative_monthly.csv,intermediate,varies,*,*,58095,240,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_ocac_monthly.csv,intermediate,varies,*,*,59159,240,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_ocac_annual_summary.csv,diagnostic,varies,aviation_ocac_annual_summary.csv,aviation_ocac_annual_summary.csv;*,874,9,audit,no,none,evidence behind a published claim (role as at rc69)
+aviation_ocac_cumulative_monthly.csv,diagnostic,varies,aviation_ocac_cumulative_monthly.csv,aviation_ocac_cumulative_monthly.csv;*,58095,240,audit,no,none,evidence behind a published claim (role as at rc69)
+aviation_ocac_monthly.csv,diagnostic,varies,aviation_ocac_monthly.csv,aviation_ocac_monthly.csv;*,59159,240,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_ocac_monthly_annual_closure.csv,intermediate,varies,*,*,1281,20,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_ocac_oecd_annual_comparison.csv,intermediate,varies,*,*,1799,7,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_ocac_oecd_annual_comparison.csv,diagnostic,varies,aviation_ocac_oecd_annual_comparison.csv,aviation_ocac_oecd_annual_comparison.csv;*,1799,7,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_oecd_monthly.csv,intermediate,varies,*,*,7367,72,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_openap_lookup_fy2023_24.csv,intermediate,varies,*,*,111132,213,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_openap_unsupported_fy2023_24.csv,intermediate,varies,*,*,2773,31,build,no,none,a working file the build needs and no reader-facing claim rests on
@@ -122,7 +122,7 @@ aviation_payload_capacity_airlines.csv,intermediate,varies,*,*,2494,10,build,no,
 aviation_payload_capacity_airports.csv,intermediate,varies,*,*,3959,37,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_provincial_fy2023_24.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,111,5,supporting,yes,none,a sector's provincial allocation
 aviation_qa_fy2023_24.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,128,1,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
-aviation_reconciliation_fy2023_24.csv,intermediate,varies,*,*,648,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_reconciliation_fy2023_24.csv,diagnostic,varies,aviation_reconciliation_fy2023_24.csv,aviation_reconciliation_fy2023_24.csv;*,648,3,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_reconciliation_manifest.json,intermediate,varies,*.json,*.json;*,6579,,build,no,none,a run manifest or fallback record the build writes
 aviation_reconciliation_qa.csv,intermediate,varies,*,*,1664,30,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_report.md,report_prose,varies,*.md,*.md;*,2199,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
@@ -133,15 +133,15 @@ aviation_route_evidence_manifest_fy2023_24.csv,intermediate,varies,*,*,2362,15,b
 aviation_route_ledger_fy2023_24.csv,intermediate,varies,*,*,9808,35,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_run_manifest_fy2023_24.csv,intermediate,varies,*,*,5940,24,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_source_tiers_fy2023_24.csv,intermediate,varies,*,*,172,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_timeseries_2006_fy2023_24.csv,intermediate,varies,*,*,414,19,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_timeseries_2006_fy2023_24.csv,diagnostic,varies,aviation_timeseries_2006_fy2023_24.csv,aviation_timeseries_2006_fy2023_24.csv;*,414,19,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_totals_fy2023_24.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,2623,11,supporting,no,documentation,a sector's own reported totals
-aviation_two_year_replication.csv,intermediate,varies,*,*,737,2,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_two_year_replication.csv,diagnostic,varies,aviation_two_year_replication.csv,aviation_two_year_replication.csv;*,737,2,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_unallocated_fuel_fy2023_24.csv,diagnostic,varies,*,*,972,4,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
 aviation_uncertainty_factors_fy2023_24.csv,intermediate,varies,*,*,709,5,build,no,none,a working file the build needs and no reader-facing claim rests on
 aviation_uncertainty_fallback_fy2023_24.csv,intermediate,varies,*,*,340,2,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_uncertainty_inputs_complete.csv,intermediate,varies,*,*,3032,15,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_uncertainty_inputs_complete.csv,diagnostic,varies,aviation_uncertainty_inputs_complete.csv,aviation_uncertainty_inputs_complete.csv;*,3032,15,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_uncertainty_scenarios_fy2023_24.csv,intermediate,varies,*,*,741,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-aviation_uncertainty_sensitivity.csv,intermediate,varies,*,*,997,5,build,no,none,a working file the build needs and no reader-facing claim rests on
+aviation_uncertainty_sensitivity.csv,diagnostic,varies,aviation_uncertainty_sensitivity.csv,aviation_uncertainty_sensitivity.csv;*,997,5,audit,no,none,evidence behind a published claim (role as at rc69)
 aviation_unfccc_crt_cell_audit.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,5992,21,audit,no,none,the official-filing audit behind a benchmark row
 aviation_unfccc_crt_extracted.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,889,2,audit,no,none,the official-filing audit behind a benchmark row
 aviation_unfccc_official_comparison.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_official_comparison*.csv;*,2984,6,audit,no,none,the official-filing audit behind a benchmark row
@@ -262,48 +262,48 @@ figures/waste_sensitivity.png,figure,pkinv.report.figures,figures/*.png,figures/
 figures/waste_streams.png,figure,pkinv.report.figures,figures/*.png,figures/*.png;*.png;*,59488,,supporting,no,none,a generated figure; scripts/sync_figures.py copies the ones a manuscript includes
 fugitives_activity_factor_ledger.csv,derivation,pkinv.report.derivation_chain,*_activity_factor_ledger.csv,*_activity_factor_ledger.csv;*,21866,30,supporting,no,none,"per source stream: the activity quantities, the conversions, the emission factors and the published emission on one row - the join nothing but the fugitives segment ledger published before. reproduces is yes ONLY where one distinct activity value times one distinct factor value lands on the published mass; 8 of 198 streams do"
 fugitives_assumption_audit_2024.csv,intermediate,varies,*,*,1396,6,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_benchmark_crosswalk.csv,intermediate,varies,*,*,1342,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_benchmark_crosswalk.csv,diagnostic,varies,fugitives_benchmark_crosswalk.csv,fugitives_benchmark_crosswalk.csv;*,1342,3,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_by_stream_2024.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,6652,30,supporting,yes,none,a sector's totals resolved to source streams
 fugitives_coal_screen_2024.csv,diagnostic,varies,*,*,1058,4,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
 fugitives_completeness_2024.csv,sector_headline,sector runner,*_completeness_*.csv,*_completeness_*.csv;*,5658,19,supporting,yes,none,a sector's notation-key coverage
-fugitives_conditional_intervals_2024.csv,intermediate,varies,*,*,1562,5,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_data_priorities_2024.csv,intermediate,varies,*,*,2938,15,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_conditional_intervals_2024.csv,diagnostic,varies,fugitives_conditional_intervals_2024.csv,fugitives_conditional_intervals_2024.csv;*,1562,5,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_data_priorities_2024.csv,diagnostic,varies,fugitives_data_priorities_2024.csv,fugitives_data_priorities_2024.csv;*,2938,15,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,15691,84,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
-fugitives_distribution_practice_evidence_2024.csv,intermediate,varies,*,*,2550,6,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_distribution_practice_evidence_2024.csv,diagnostic,varies,fugitives_distribution_practice_evidence_2024.csv,fugitives_distribution_practice_evidence_2024.csv;*,2550,6,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_distribution_shape_sensitivity_2024.csv,intermediate,varies,*,*,559,3,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_gas_flow_balance_2022_2024.csv,intermediate,varies,*,*,2273,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_infrastructure_segment_timeseries_2016_2024.csv,intermediate,varies,*,*,17963,108,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_infrastructure_timeseries_2016_2024.csv,intermediate,varies,*,*,1500,9,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_gas_flow_balance_2022_2024.csv,diagnostic,varies,fugitives_gas_flow_balance_2022_2024.csv,fugitives_gas_flow_balance_2022_2024.csv;*,2273,4,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_infrastructure_segment_timeseries_2016_2024.csv,diagnostic,varies,fugitives_infrastructure_segment_timeseries_2016_2024.csv,fugitives_infrastructure_segment_timeseries_2016_2024.csv;*,17963,108,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_infrastructure_timeseries_2016_2024.csv,diagnostic,varies,fugitives_infrastructure_timeseries_2016_2024.csv,fugitives_infrastructure_timeseries_2016_2024.csv;*,1500,9,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_mars_flare_matches_2024.csv,intermediate,varies,*,*,3585,20,build,no,none,a working file the build needs and no reader-facing claim rests on
 fugitives_mars_plumes.csv,intermediate,varies,*,*,54142,174,build,no,none,a working file the build needs and no reader-facing claim rests on
 fugitives_mars_sources.csv,intermediate,varies,*,*,4113,20,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_mars_summary.csv,intermediate,varies,*,*,336,1,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_method_ladder_2024.csv,intermediate,varies,*,*,748,5,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_mars_summary.csv,diagnostic,varies,fugitives_mars_summary.csv,fugitives_mars_summary.csv;*,336,1,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_method_ladder_2024.csv,diagnostic,varies,fugitives_method_ladder_2024.csv,fugitives_method_ladder_2024.csv;*,748,5,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,102867,360,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
 fugitives_observation_field_evaluation_2024.csv,intermediate,varies,*,*,14995,73,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_observation_field_statistics_2024.csv,intermediate,varies,*,*,890,3,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_observation_match_audit_2024.csv,intermediate,varies,*,*,7905,20,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_observation_permutation_2024.csv,intermediate,varies,*,*,1676,6,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_observation_field_statistics_2024.csv,diagnostic,varies,fugitives_observation_field_statistics_2024.csv,fugitives_observation_field_statistics_2024.csv;*,890,3,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_observation_match_audit_2024.csv,diagnostic,varies,fugitives_observation_match_audit_2024.csv,fugitives_observation_match_audit_2024.csv;*,7905,20,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_observation_permutation_2024.csv,diagnostic,varies,fugitives_observation_permutation_2024.csv,fugitives_observation_permutation_2024.csv;*,1676,6,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_observation_provincial_evaluation_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,722,4,supporting,yes,none,a sector's provincial allocation
 fugitives_observation_statistics_2024.csv,intermediate,varies,*,*,781,3,build,no,none,a working file the build needs and no reader-facing claim rests on
 fugitives_official_matched_2022.csv,intermediate,varies,*,*,496,1,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_post_meter_end_use_2024.csv,intermediate,varies,*,*,3019,10,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_post_meter_factor_lineage_2024.csv,intermediate,varies,*,*,475,1,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_post_meter_end_use_2024.csv,diagnostic,varies,fugitives_post_meter_end_use_2024.csv,fugitives_post_meter_end_use_2024.csv;*,3019,10,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_post_meter_factor_lineage_2024.csv,diagnostic,varies,fugitives_post_meter_factor_lineage_2024.csv,fugitives_post_meter_factor_lineage_2024.csv;*,475,1,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,169,5,supporting,yes,none,a sector's provincial allocation
 fugitives_qa_2024.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,2880,24,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
 fugitives_report.md,report_prose,varies,*.md,*.md;*,641,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
 fugitives_run_manifest_2024.json,intermediate,varies,*.json,*.json;*,5532,,build,no,none,a run manifest or fallback record the build writes
 fugitives_segment_ledger_2024.csv,intermediate,varies,*,*,20540,30,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_segment_native_gases_2024.csv,intermediate,varies,*,*,1450,12,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_structural_factorial_2024.csv,intermediate,varies,*,*,64166,280,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_structural_scenarios_2024.csv,intermediate,varies,*,*,1930,14,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_segment_native_gases_2024.csv,diagnostic,varies,fugitives_segment_native_gases_2024.csv,fugitives_segment_native_gases_2024.csv;*,1450,12,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_structural_factorial_2024.csv,diagnostic,varies,fugitives_structural_factorial_2024.csv,fugitives_structural_factorial_2024.csv;*,64166,280,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_structural_scenarios_2024.csv,diagnostic,varies,fugitives_structural_scenarios_2024.csv,fugitives_structural_scenarios_2024.csv;*,1930,14,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_timeseries_2011_2025.csv,intermediate,varies,*,*,1289,15,build,no,none,a working file the build needs and no reader-facing claim rests on
 fugitives_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,516,2,supporting,yes,none,a sector's own reported totals
 fugitives_ufg_diagnostic_2024.csv,intermediate,varies,*,*,536,5,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_ufg_network_compatibility_2024.csv,intermediate,varies,*,*,1458,6,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_ufg_network_compatibility_2024.csv,diagnostic,varies,fugitives_ufg_network_compatibility_2024.csv,fugitives_ufg_network_compatibility_2024.csv;*,1458,6,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_uncertainty_2024.csv,sector_headline,sector runner,*_uncertainty_2*.csv,*_uncertainty_2*.csv;*,2710,14,supporting,yes,none,a sector's reported uncertainty
-fugitives_uncertainty_attribution_2024.csv,intermediate,varies,*,*,5086,24,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_uncertainty_inputs_2024.csv,intermediate,varies,*,*,12676,42,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_uncertainty_attribution_2024.csv,diagnostic,varies,fugitives_uncertainty_attribution_2024.csv,fugitives_uncertainty_attribution_2024.csv;*,5086,24,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_uncertainty_inputs_2024.csv,diagnostic,varies,fugitives_uncertainty_inputs_2024.csv,fugitives_uncertainty_inputs_2024.csv;*,12676,42,audit,no,none,evidence behind a published claim (role as at rc69)
 fugitives_unfccc_crt_cell_audit.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,32957,184,audit,no,none,the official-filing audit behind a benchmark row
 fugitives_unfccc_crt_common_metric.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,665,1,audit,no,none,the official-filing audit behind a benchmark row
 fugitives_unfccc_crt_fiscal_bracket_2022.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,448,2,audit,no,none,the official-filing audit behind a benchmark row
@@ -313,8 +313,8 @@ fugitives_unfccc_crt_total.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_
 fugitives_unfccc_crt_waterfall_2022.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,3217,13,audit,no,none,the official-filing audit behind a benchmark row
 fugitives_upstream_gas_disposition_2022_2024.csv,intermediate,varies,*,*,1295,4,build,no,none,a working file the build needs and no reader-facing claim rests on
 fugitives_viirs_flare_memo_2024.csv,intermediate,varies,*,*,244,1,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_viirs_flare_sites.csv,intermediate,varies,*,*,34522,130,build,no,none,a working file the build needs and no reader-facing claim rests on
-fugitives_viirs_flaring_2012_2025.csv,intermediate,varies,*,*,2626,14,build,no,none,a working file the build needs and no reader-facing claim rests on
+fugitives_viirs_flare_sites.csv,diagnostic,varies,fugitives_viirs_flare_sites.csv,fugitives_viirs_flare_sites.csv;*,34522,130,audit,no,none,evidence behind a published claim (role as at rc69)
+fugitives_viirs_flaring_2012_2025.csv,diagnostic,varies,fugitives_viirs_flaring_2012_2025.csv,fugitives_viirs_flaring_2012_2025.csv;*,2626,14,audit,no,none,evidence behind a published claim (role as at rc69)
 gis/air/bc_2024.tif,tier3_research,sector gis runners,gis/air/*,gis/air/*;gis/*;*,36970,,research,no,none,"Tier 3 research products per docs/spatial_products_contract.md, the air-pollutant surfaces: hand-run, real, citable, not authoritative"
 gis/air/co_2024.tif,tier3_research,sector gis runners,gis/air/*,gis/air/*;gis/*;*,36984,,research,no,none,"Tier 3 research products per docs/spatial_products_contract.md, the air-pollutant surfaces: hand-run, real, citable, not authoritative"
 gis/air/nh3_2024.tif,tier3_research,sector gis runners,gis/air/*,gis/air/*;gis/*;*,123365,,research,no,none,"Tier 3 research products per docs/spatial_products_contract.md, the air-pollutant surfaces: hand-run, real, citable, not authoritative"
@@ -357,32 +357,32 @@ industry_solid_screenings_2024.csv,diagnostic,pkinv.sectors.industry.solid_scree
 industry_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,4251,8,supporting,yes,none,a sector's own reported totals
 industry_uncertainty_inputs_2024.csv,intermediate,varies,*,*,1208,4,build,no,none,a working file the build needs and no reader-facing claim rests on
 inventory_report.md,report_prose,varies,*.md,*.md;*,5929,,supporting,no,documentation,a runner's Markdown summary of its own tables; the CSVs are the product
-ippu_activity_controls_2024.csv,intermediate,varies,*,*,7621,19,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_activity_controls_2024.csv,diagnostic,varies,ippu_activity_controls_2024.csv,ippu_activity_controls_2024.csv;*,7621,19,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_activity_factor_ledger.csv,derivation,pkinv.report.derivation_chain,*_activity_factor_ledger.csv,*_activity_factor_ledger.csv;*,3771,5,supporting,no,none,"per source stream: the activity quantities, the conversions, the emission factors and the published emission on one row - the join nothing but the fugitives segment ledger published before. reproduces is yes ONLY where one distinct activity value times one distinct factor value lands on the published mass; 8 of 198 streams do"
-ippu_ammonia_activity_reconciliation.csv,intermediate,varies,*,*,4699,7,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_ammonia_activity_reconciliation.csv,diagnostic,varies,ippu_ammonia_activity_reconciliation.csv,ippu_ammonia_activity_reconciliation.csv;*,4699,7,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_by_stream_2024.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,1005,5,supporting,yes,none,a sector's totals resolved to source streams
 ippu_cdm_access_manifest.csv,intermediate,varies,*,*,1209,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_cement_activity_reconciliation.csv,intermediate,varies,*,*,293,2,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_cement_conditional_intervals_2024.csv,intermediate,varies,*,*,897,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_cement_activity_reconciliation.csv,diagnostic,varies,ippu_cement_activity_reconciliation.csv,ippu_cement_activity_reconciliation.csv;*,293,2,audit,no,none,evidence behind a published claim (role as at rc69)
+ippu_cement_conditional_intervals_2024.csv,diagnostic,varies,ippu_cement_conditional_intervals_2024.csv,ippu_cement_conditional_intervals_2024.csv;*,897,3,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_cement_crt_bridge_2022.csv,diagnostic,sector runner,*_crt_*.csv,*_crt_*.csv;*,566,4,audit,no,none,the CRT cell audit behind a benchmark row
-ippu_cement_matched_calendar_2022.csv,intermediate,varies,*,*,913,2,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_cement_material_balance_2024.csv,intermediate,varies,*,*,618,5,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_cement_method_benchmarks_2024.csv,intermediate,varies,*,*,497,2,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_cement_matched_calendar_2022.csv,diagnostic,varies,ippu_cement_matched_calendar_2022.csv,ippu_cement_matched_calendar_2022.csv;*,913,2,audit,no,none,evidence behind a published claim (role as at rc69)
+ippu_cement_material_balance_2024.csv,diagnostic,varies,ippu_cement_material_balance_2024.csv,ippu_cement_material_balance_2024.csv;*,618,5,audit,no,none,evidence behind a published claim (role as at rc69)
+ippu_cement_method_benchmarks_2024.csv,diagnostic,varies,ippu_cement_method_benchmarks_2024.csv,ippu_cement_method_benchmarks_2024.csv;*,497,2,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_cement_method_ladder_2024.csv,intermediate,varies,*,*,1368,5,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_cement_producer_census_2024.csv,intermediate,varies,*,*,3096,16,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_cement_producer_census_2024.csv,diagnostic,varies,ippu_cement_producer_census_2024.csv,ippu_cement_producer_census_2024.csv;*,3096,16,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_cement_structural_oat_2024.csv,intermediate,varies,*,*,176,1,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_cement_tier_comparison_2024.csv,intermediate,varies,*,*,570,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_cement_tier_comparison_2024.csv,diagnostic,varies,ippu_cement_tier_comparison_2024.csv,ippu_cement_tier_comparison_2024.csv;*,570,3,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_cement_uncertainty_inputs_2024.csv,intermediate,varies,*,*,3280,13,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_cement_valid_structural_2024.csv,intermediate,varies,*,*,854,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_cement_valid_structural_2024.csv,diagnostic,varies,ippu_cement_valid_structural_2024.csv,ippu_cement_valid_structural_2024.csv;*,854,3,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_chemical_activation_status_2024.csv,diagnostic,pkinv.sectors.ippu.completeness,ippu_chemical_activation_status_2024.csv,ippu_chemical_activation_status_2024.csv;*,470,2,audit,no,none,"per-category machine-declared NE states for the chemical estimators: what exists, what activity is held, what evidence would activate it"
 ippu_chemical_activation_status_calendar_2022.csv,intermediate,varies,*,*,477,2,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_chemical_plant_activity.csv,intermediate,varies,*,*,3810,10,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_chemical_plant_activity.csv,diagnostic,varies,ippu_chemical_plant_activity.csv,ippu_chemical_plant_activity.csv;*,3810,10,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_chemical_plant_evidence.csv,intermediate,varies,*,*,1486,4,build,no,none,a working file the build needs and no reader-facing claim rests on
 ippu_chemical_tier_gate_2024.csv,diagnostic,pkinv.sectors.ippu.completeness,ippu_chemical_tier_gate_2024.csv,ippu_chemical_tier_gate_2024.csv;*,1340,6,audit,no,none,why each chemical category's tier is not ready; the gates are the authority the completeness prose points at
 ippu_chemicals_screening_2024.csv,intermediate,varies,*,*,4201,8,build,no,none,a working file the build needs and no reader-facing claim rests on
 ippu_company_boundary_audit_2024.csv,intermediate,varies,*,*,8461,16,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_company_clinker_2024.csv,intermediate,varies,*,*,6187,16,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_company_clinker_coverage_2024.csv,intermediate,varies,*,*,775,1,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_company_clinker_2024.csv,diagnostic,varies,ippu_company_clinker_2024.csv,ippu_company_clinker_2024.csv;*,6187,16,audit,no,none,evidence behind a published claim (role as at rc69)
+ippu_company_clinker_coverage_2024.csv,diagnostic,varies,ippu_company_clinker_coverage_2024.csv,ippu_company_clinker_coverage_2024.csv;*,775,1,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_company_clinker_flow_audit_2024.csv,intermediate,varies,*,*,3122,16,build,no,none,a working file the build needs and no reader-facing claim rests on
 ippu_completeness_2024.csv,sector_headline,sector runner,*_completeness_*.csv,*_completeness_*.csv;*,8143,36,supporting,yes,documentation,a sector's notation-key coverage
 ippu_data_acquisition_requests.csv,intermediate,varies,*,*,4072,31,build,no,none,a working file the build needs and no reader-facing claim rests on
@@ -390,9 +390,9 @@ ippu_data_request_packets.csv,intermediate,varies,*,*,2482,4,build,no,none,a wor
 ippu_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,10792,48,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
 ippu_evidence_maturity.csv,intermediate,varies,*,*,7410,36,build,no,none,a working file the build needs and no reader-facing claim rests on
 ippu_facility_coordinate_agreement.csv,intermediate,varies,*,*,6341,19,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_facility_coverage.csv,intermediate,varies,*,*,1628,20,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_facility_registry.csv,intermediate,varies,*,*,23387,34,build,no,none,a working file the build needs and no reader-facing claim rests on
-ippu_fertilizer_gas_cross_source_2024.csv,intermediate,varies,*,*,1633,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+ippu_facility_coverage.csv,diagnostic,varies,ippu_facility_coverage.csv,ippu_facility_coverage.csv;*,1628,20,audit,no,none,evidence behind a published claim (role as at rc69)
+ippu_facility_registry.csv,diagnostic,varies,ippu_facility_registry.csv,ippu_facility_registry.csv;*,23387,34,audit,no,none,evidence behind a published claim (role as at rc69)
+ippu_fertilizer_gas_cross_source_2024.csv,diagnostic,varies,ippu_fertilizer_gas_cross_source_2024.csv,ippu_fertilizer_gas_cross_source_2024.csv;*,1633,3,audit,no,none,evidence behind a published claim (role as at rc69)
 ippu_fertilizer_gas_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,8660,24,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
 ippu_fgas_bounded_bank_2024.csv,diagnostic,pkinv.sectors.ippu.fgas_screening,ippu_fgas_bounded_bank_2024.csv,ippu_fgas_bounded_bank_2024.csv;*,1502,6,audit,no,none,"the one-stratum CO2e-weighted bank ledger behind scope_plus_fgas_bounded_bank; every assumption declared, screening grade, outside every reference total (rc30)"
 ippu_fgas_screening_2024.csv,diagnostic,pkinv.sectors.ippu.fgas_screening,ippu_fgas_screening_2024.csv,ippu_fgas_screening_2024.csv;*,2970,7,audit,no,none,the F-gas potential-consumption-equivalent screening and its three typed evidence lanes; outside every reference total (rc20)
@@ -416,7 +416,7 @@ ippu_unfccc_crt_fgas_species_2022.csv,diagnostic,sector runner,*_unfccc_*.csv,*_
 ippu_unfccc_crt_reproduction_2022.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,1328,7,audit,no,none,the official-filing audit behind a benchmark row
 ippu_unfccc_crt_summary_2022.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,12428,52,audit,no,none,the official-filing audit behind a benchmark row
 ippu_urea_co2_bridge_2025.csv,diagnostic,varies,*,*,2766,11,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-key_categories.csv,intermediate,varies,*,*,483,6,build,yes,none,a working file the build needs and no reader-facing claim rests on
+key_categories.csv,diagnostic,varies,key_categories.csv,key_categories.csv;*,483,6,audit,yes,none,evidence behind a published claim (role as at rc69)
 key_categories_report.md,report_prose,varies,*.md,*.md;*,1727,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
 limestone_qim_cement_crosscheck.csv,diagnostic,scripts/crosscheck_limestone_cement.py,limestone_qim_cement_crosscheck.csv,limestone_qim_cement_crosscheck.csv;*,13813,108,audit,yes,none,"PBS limestone production shape against QIM cement output shape, with the FY2016-17 source anomaly flagged"
 lulucf_report.md,report_prose,varies,*.md,*.md;*,1540,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
@@ -434,9 +434,9 @@ mc_draws/waste_parameter_rerun.meta.json,intermediate,pkinv.core.mc_draws,mc_dra
 mc_draws/waste_parameter_rerun_ipcc2006.csv,intermediate,pkinv.core.mc_draws,mc_draws/*,mc_draws/*;*,792502,10000,build,no,none,the injected engines' persisted draw files and their .meta.json sidecars
 mc_draws/waste_parameter_rerun_ipcc2006.meta.json,intermediate,pkinv.core.mc_draws,mc_draws/*,mc_draws/*;*.json;*,953,,build,no,none,the injected engines' persisted draw files and their .meta.json sidecars
 monthly_crosschecks.csv,intermediate,varies,*,*,16614,78,build,no,none,a working file the build needs and no reader-facing claim rests on
-n_ledger_2024.csv,intermediate,varies,*,*,2452,28,build,yes,none,a working file the build needs and no reader-facing claim rests on
+n_ledger_2024.csv,diagnostic,varies,n_ledger_2024.csv,n_ledger_2024.csv;*,2452,28,audit,yes,none,evidence behind a published claim (role as at rc69)
 n_ledger_2024.md,report_prose,varies,*.md,*.md;*,2505,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
-n_ledger_stage_comparison.csv,intermediate,varies,*,*,169,4,build,yes,none,a working file the build needs and no reader-facing claim rests on
+n_ledger_stage_comparison.csv,diagnostic,varies,n_ledger_stage_comparison.csv,n_ledger_stage_comparison.csv;*,169,4,audit,yes,none,evidence behind a published claim (role as at rc69)
 national_all_sectors.csv,canonical,pkinv.report.national_rollup,national_all_sectors*.csv,national_all_sectors*.csv;*,2402,11,core,yes,documentation,the national roll-up under each configuration
 national_all_sectors_ledger.csv,canonical,pkinv.report.national_rollup,national_all_sectors*.csv,national_all_sectors*.csv;*,2072,11,core,yes,none,the national roll-up under each configuration
 national_axis_register.csv,diagnostic,varies,*,*,16374,23,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
@@ -447,9 +447,9 @@ national_category_gas_ledger.csv,intermediate,varies,*,*,5926,52,build,no,none,a
 national_configurations.csv,diagnostic,varies,*,*,23657,28,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
 national_crt_crosswalk.csv,diagnostic,sector runner,*_crt_*.csv,*_crt_*.csv;*,1063,4,audit,no,none,the CRT cell audit behind a benchmark row
 national_dung_variants.csv,diagnostic,varies,*,*,2422,5,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-national_edgar_transport_comparison.csv,intermediate,varies,*,*,2832,7,build,no,none,a working file the build needs and no reader-facing claim rests on
+national_edgar_transport_comparison.csv,diagnostic,varies,national_edgar_transport_comparison.csv,national_edgar_transport_comparison.csv;*,2832,7,audit,no,none,evidence behind a published claim (role as at rc69)
 national_gas_closure.csv,diagnostic,varies,*,*,6762,15,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-national_gas_closure_variant.csv,intermediate,varies,*,*,930,2,build,yes,none,a working file the build needs and no reader-facing claim rests on
+national_gas_closure_variant.csv,diagnostic,varies,national_gas_closure_variant.csv,national_gas_closure_variant.csv;*,930,2,audit,yes,none,evidence behind a published claim (role as at rc69)
 national_key_categories.csv,diagnostic,varies,*,*,2699,24,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
 national_key_categories_report.md,report_prose,varies,*.md,*.md;*,5345,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
 national_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,567630,2424,supporting,no,none,"a sector's own monthly layer, closing to its annual figure"
@@ -467,7 +467,7 @@ nfdc_monthly_quarantine.csv,diagnostic,scripts/ingest_nfdc_monthly.py,nfdc_month
 ocac_direct_edition_crosscheck.csv,diagnostic,scripts/ingest_ocac_monthly.py,ocac_direct_edition_crosscheck.csv,ocac_direct_edition_crosscheck.csv;*,8916,144,audit,yes,none,the panel's differenced months against OCAC's own directly published single-month editions
 ocac_direct_edition_quarantine.csv,diagnostic,scripts/ingest_ocac_monthly.py,ocac_direct_edition_quarantine.csv,ocac_direct_edition_quarantine.csv;*,313,2,audit,yes,none,"rows where OCAC's own products do not sum to the total the same row prints, kept unrepaired"
 ocac_edition_currency.csv,diagnostic,scripts/ingest_ocac_monthly.py,ocac_edition_currency.csv,ocac_edition_currency.csv;*,5565,36,audit,yes,none,which edition of each month the shipped panel is built on; SUPERSEDED marks one OCAC has restated
-ocac_edition_inventory.csv,intermediate,varies,*,*,876,4,build,no,none,a working file the build needs and no reader-facing claim rests on
+ocac_edition_inventory.csv,diagnostic,varies,ocac_edition_inventory.csv,ocac_edition_inventory.csv;*,876,4,audit,no,none,evidence behind a published claim (role as at rc69)
 ocac_parse_summary.csv,diagnostic,scripts/ingest_ocac_monthly.py,ocac_parse_summary.csv,ocac_parse_summary.csv;*,706,1,audit,yes,none,the parse's own denominators and its positive control: how many comparisons a one-month shift would break
 ogra_gas_class_series.csv,canonical,scripts.build_ogra_gas_class_series,ogra_gas_class_series.csv,ogra_gas_class_series.csv;*,14055,80,core,yes,none,"OGRA's sector-wise gas classes per fiscal year (MMCFD) from the State of the Regulated Petroleum Industry editions - fertilizer feedstock, captive power and general industry kept apart for the 1.A.2 balance closure; FY2020-21 is a typed gap (scanned edition); hashed by the release manifest"
 pakemis_adm1_by_year.csv,canonical,pkinv.report,pakemis_*.csv,pakemis_*.csv;*,1442733,8644,core,yes,documentation,"the cross-sector published family: ledgers, panels, registries and contracts"
@@ -695,37 +695,37 @@ pbs_minerals_quarantine.csv,diagnostic,scripts/ingest_pbs_minerals.py,pbs_minera
 pbs_qim_parse_summary.csv,diagnostic,scripts/ingest_pbs_qim.py,pbs_qim_parse_summary.csv,pbs_qim_parse_summary.csv;*,520,1,audit,yes,none,"the QIM parse's denominators, closure rate and rotation positive control"
 pbs_qim_quarantine.csv,diagnostic,scripts/ingest_pbs_qim.py,pbs_qim_quarantine.csv,pbs_qim_quarantine.csv;*,1115,9,audit,yes,none,"item-years whose twelve months did not sum to the annual total the same row prints, kept unrepaired"
 power_activity_factor_ledger.csv,derivation,pkinv.report.derivation_chain,*_activity_factor_ledger.csv,*_activity_factor_ledger.csv;*,11215,17,supporting,no,none,"per source stream: the activity quantities, the conversions, the emission factors and the published emission on one row - the join nothing but the fugitives segment ledger published before. reproduces is yes ONLY where one distinct activity value times one distinct factor value lands on the published mass; 8 of 198 streams do"
-power_air_pollutants_fy2023_24.csv,intermediate,varies,*,*,7872,26,build,yes,none,a working file the build needs and no reader-facing claim rests on
+power_air_pollutants_fy2023_24.csv,diagnostic,varies,power_air_pollutants_fy2023_24.csv,power_air_pollutants_fy2023_24.csv;*,7872,26,audit,yes,none,evidence behind a published claim (role as at rc69)
 power_air_screening_fy2015_16_fy2023_24.csv,intermediate,varies,*,*,66838,443,build,no,none,a working file the build needs and no reader-facing claim rests on
 power_air_screening_fy2015_16_fy2024_25.csv,canonical,pkinv.report.air_annual,power_air_screening_fy2015_16_fy2024_25.csv,power_air_screening_fy2015_16_fy2024_25.csv;*,74614,494,core,yes,none,"power's UNCONTROLLED screening scenario for the same ten years, shipped BESIDE the covered panel and never inside it; hashed by the release manifest"
-power_bagasse_fy2023_24.csv,intermediate,varies,*,*,433,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-power_boundary_audit_fy2023_24.csv,intermediate,varies,*,*,2584,6,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_bagasse_fy2023_24.csv,diagnostic,varies,power_bagasse_fy2023_24.csv,power_bagasse_fy2023_24.csv;*,433,4,audit,no,none,evidence behind a published claim (role as at rc69)
+power_boundary_audit_fy2023_24.csv,diagnostic,varies,power_boundary_audit_fy2023_24.csv,power_boundary_audit_fy2023_24.csv;*,2584,6,audit,no,none,evidence behind a published claim (role as at rc69)
 power_by_stream_fy2023_24.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,1547,17,supporting,yes,none,a sector's totals resolved to source streams
 power_climatetrace_plants_fy2023_24.csv,diagnostic,varies,*,*,7307,72,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-power_coal_blend_fy2023_24.csv,intermediate,varies,*,*,1086,7,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_coal_blend_fy2023_24.csv,diagnostic,varies,power_coal_blend_fy2023_24.csv,power_coal_blend_fy2023_24.csv;*,1086,7,audit,no,none,evidence behind a published claim (role as at rc69)
 power_crt_comparison.csv,diagnostic,sector runner,*_crt_*.csv,*_crt_*.csv;*,1298,7,audit,no,none,the CRT cell audit behind a benchmark row
 power_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,49984,139,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
-power_energy_closure_fy2023_24.csv,intermediate,varies,*,*,999,6,build,no,none,a working file the build needs and no reader-facing claim rests on
-power_fuel_fy2023_24.csv,intermediate,varies,*,*,109,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-power_gas_technology_fy2023_24.csv,intermediate,varies,*,*,830,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_energy_closure_fy2023_24.csv,diagnostic,varies,power_energy_closure_fy2023_24.csv,power_energy_closure_fy2023_24.csv;*,999,6,audit,no,none,evidence behind a published claim (role as at rc69)
+power_fuel_fy2023_24.csv,diagnostic,varies,power_fuel_fy2023_24.csv,power_fuel_fy2023_24.csv;*,109,4,audit,no,none,evidence behind a published claim (role as at rc69)
+power_gas_technology_fy2023_24.csv,diagnostic,varies,power_gas_technology_fy2023_24.csv,power_gas_technology_fy2023_24.csv;*,830,3,audit,no,none,evidence behind a published claim (role as at rc69)
 power_gem_audit.csv,intermediate,varies,*,*,5084,22,build,no,none,a working file the build needs and no reader-facing claim rests on
-power_heat_rate_fy2023_24.csv,intermediate,varies,*,*,5065,40,build,no,none,a working file the build needs and no reader-facing claim rests on
-power_heat_rate_stability_fy2023_24.csv,intermediate,varies,*,*,222,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-power_hr_circularity_fy2023_24.csv,intermediate,varies,*,*,6167,82,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_heat_rate_fy2023_24.csv,diagnostic,varies,power_heat_rate_fy2023_24.csv,power_heat_rate_fy2023_24.csv;*,5065,40,audit,no,none,evidence behind a published claim (role as at rc69)
+power_heat_rate_stability_fy2023_24.csv,diagnostic,varies,power_heat_rate_stability_fy2023_24.csv,power_heat_rate_stability_fy2023_24.csv;*,222,4,audit,no,none,evidence behind a published claim (role as at rc69)
+power_hr_circularity_fy2023_24.csv,diagnostic,varies,power_hr_circularity_fy2023_24.csv,power_hr_circularity_fy2023_24.csv;*,6167,82,audit,no,none,evidence behind a published claim (role as at rc69)
 power_implied_coal_cv_fy2023_24.csv,diagnostic,varies,*,*,5078,62,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-power_ke_leg_fy2023_24.csv,intermediate,varies,*,*,589,6,build,no,none,a working file the build needs and no reader-facing claim rests on
-power_lmdi_fy2023_24.csv,intermediate,varies,*,*,1071,12,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_ke_leg_fy2023_24.csv,diagnostic,varies,power_ke_leg_fy2023_24.csv,power_ke_leg_fy2023_24.csv;*,589,6,audit,no,none,evidence behind a published claim (role as at rc69)
+power_lmdi_fy2023_24.csv,diagnostic,varies,power_lmdi_fy2023_24.csv,power_lmdi_fy2023_24.csv;*,1071,12,audit,no,none,evidence behind a published claim (role as at rc69)
 power_monthly_fy2023_24.csv,sector_headline,sector runner,*_monthly_fy*.csv,*_monthly_fy*.csv;*,52744,204,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
-power_point_sources_fy2023_24.csv,intermediate,varies,*,*,4680,56,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_point_sources_fy2023_24.csv,diagnostic,varies,power_point_sources_fy2023_24.csv,power_point_sources_fy2023_24.csv;*,4680,56,audit,no,none,evidence behind a published claim (role as at rc69)
 power_provincial_fy2023_24.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,119,5,supporting,yes,none,a sector's provincial allocation
 power_qa_fy2023_24.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,130,1,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
 power_sir_pbs_overlap.csv,diagnostic,scripts/ingest_sir_generation.py,power_sir_pbs_overlap.csv,power_sir_pbs_overlap.csv;*,9579,144,audit,no,none,"the PBS-overlap validation: NEPRA listing months beside PBS plant-months for FY2017-18..FY2020-21, per fuel subitem; two vintages compared and never summed (Pass 2 Wave 2)"
 power_sir_verification_sample.csv,intermediate,varies,*,*,19806,68,build,no,none,a working file the build needs and no reader-facing claim rests on
 power_table3_hypotheses.csv,diagnostic,pkinv.sectors.power.table3_hypotheses,power_table3_hypotheses.csv,power_table3_hypotheses.csv;*,6297,8,audit,yes,none,"the Table 3 coal question enumerated: one row per candidate explanation, scored against the held diagnostics; the register selects nothing"
-power_timeseries_fy2023_24.csv,intermediate,varies,*,*,193,12,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_timeseries_fy2023_24.csv,diagnostic,varies,power_timeseries_fy2023_24.csv,power_timeseries_fy2023_24.csv;*,193,12,audit,no,none,evidence behind a published claim (role as at rc69)
 power_toe_reconciliation.csv,diagnostic,scripts/make_power_toe_reconciliation.py,power_toe_reconciliation.csv,power_toe_reconciliation.csv;*,3985,17,audit,yes,none,"the NEPRA/K-Electric reconciliation ladder per year and fuel, assembled from shipped outputs only; the three power configurations stay co-published and the HDIP metadata remains the closing acquisition (rc30)"
 power_totals_fy2023_24.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,3096,10,supporting,yes,none,a sector's own reported totals
-power_tropomi_crosscheck.csv,intermediate,varies,*,*,3031,59,build,no,none,a working file the build needs and no reader-facing claim rests on
+power_tropomi_crosscheck.csv,diagnostic,varies,power_tropomi_crosscheck.csv,power_tropomi_crosscheck.csv;*,3031,59,audit,no,none,evidence behind a published claim (role as at rc69)
 power_tropomi_extraction_manifest.json,intermediate,varies,*.json,*.json;*,1789,,build,no,none,a run manifest or fallback record the build writes
 power_uncertainty_fy2023_24.csv,sector_headline,sector runner,*_uncertainty_fy*.csv,*_uncertainty_fy*.csv;*,207,3,supporting,yes,none,a sector's reported uncertainty
 power_uncertainty_inputs_fy2023_24.csv,intermediate,varies,*,*,3958,20,build,no,none,a working file the build needs and no reader-facing claim rests on
@@ -735,60 +735,60 @@ provincial_report.md,report_prose,varies,*.md,*.md;*,1499,,supporting,no,none,a 
 provincial_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,468,6,supporting,no,documentation,a sector's own reported totals
 railways_activity_factor_ledger.csv,derivation,pkinv.report.derivation_chain,*_activity_factor_ledger.csv,*_activity_factor_ledger.csv;*,9444,12,supporting,no,none,"per source stream: the activity quantities, the conversions, the emission factors and the published emission on one row - the join nothing but the fugitives segment ledger published before. reproduces is yes ONLY where one distinct activity value times one distinct factor value lands on the published mass; 8 of 198 streams do"
 railways_air_pollutants_2024.csv,diagnostic,varies,*,*,8675,36,audit,yes,documentation,a working file the build needs and no reader-facing claim rests on
-railways_air_sulfur_cases_2024.csv,intermediate,varies,*,*,252,4,build,no,none,a working file the build needs and no reader-facing claim rests on
+railways_air_sulfur_cases_2024.csv,diagnostic,varies,railways_air_sulfur_cases_2024.csv,railways_air_sulfur_cases_2024.csv;*,252,4,audit,no,none,evidence behind a published claim (role as at rc69)
 railways_by_stream_2024.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,1096,12,supporting,yes,none,a sector's totals resolved to source streams
 railways_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,17228,75,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
-railways_efficiency_2024.csv,intermediate,varies,*,*,274,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_elk_crosscheck_2024.csv,intermediate,varies,*,*,483,6,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_fuel_2024.csv,intermediate,varies,*,*,66,2,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_fuel_claimants_2024.csv,intermediate,varies,*,*,1924,4,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_fuel_history.csv,intermediate,varies,*,*,2378,14,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_fuel_reconciliation_2024.csv,intermediate,varies,*,*,695,10,build,no,none,a working file the build needs and no reader-facing claim rests on
+railways_efficiency_2024.csv,diagnostic,varies,railways_efficiency_2024.csv,railways_efficiency_2024.csv;*,274,4,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_elk_crosscheck_2024.csv,diagnostic,varies,railways_elk_crosscheck_2024.csv,railways_elk_crosscheck_2024.csv;*,483,6,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_fuel_2024.csv,diagnostic,varies,railways_fuel_2024.csv,railways_fuel_2024.csv;*,66,2,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_fuel_claimants_2024.csv,diagnostic,varies,railways_fuel_claimants_2024.csv,railways_fuel_claimants_2024.csv;*,1924,4,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_fuel_history.csv,diagnostic,varies,railways_fuel_history.csv,railways_fuel_history.csv;*,2378,14,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_fuel_reconciliation_2024.csv,diagnostic,varies,railways_fuel_reconciliation_2024.csv,railways_fuel_reconciliation_2024.csv;*,695,10,audit,no,none,evidence behind a published claim (role as at rc69)
 railways_gis_cells_2024.csv,intermediate,varies,*,*,53797,1492,build,no,none,a working file the build needs and no reader-facing claim rests on
 railways_gis_district_2024.csv,intermediate,varies,*,*,2657,66,build,no,none,a working file the build needs and no reader-facing claim rests on
 railways_gis_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,270,5,supporting,yes,none,a sector's provincial allocation
 railways_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,34147,144,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
-railways_network_audit_2024.csv,intermediate,varies,*,*,398,12,build,no,none,a working file the build needs and no reader-facing claim rests on
+railways_network_audit_2024.csv,diagnostic,varies,railways_network_audit_2024.csv,railways_network_audit_2024.csv;*,398,12,audit,no,none,evidence behind a published claim (role as at rc69)
 railways_official_comparison_2024.csv,diagnostic,sector runner,*_official_comparison*.csv,*_official_comparison*.csv;*,1253,5,audit,no,none,comparison against an official published figure
 railways_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,112,5,supporting,yes,none,a sector's provincial allocation
 railways_qa_2024.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,128,1,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
-railways_route_province_shares_2024.csv,intermediate,varies,*,*,168,5,build,no,none,a working file the build needs and no reader-facing claim rests on
+railways_route_province_shares_2024.csv,diagnostic,varies,railways_route_province_shares_2024.csv,railways_route_province_shares_2024.csv;*,168,5,audit,no,none,evidence behind a published claim (role as at rc69)
 railways_run_manifest_2024.json,intermediate,varies,*.json,*.json;*,3668,,build,no,none,a run manifest or fallback record the build writes
-railways_tier2_air_diagnostic_2024.csv,intermediate,varies,*,*,271,7,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_tier2_split_2024.csv,intermediate,varies,*,*,422,5,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_timeseries_2024.csv,intermediate,varies,*,*,944,12,build,no,none,a working file the build needs and no reader-facing claim rests on
+railways_tier2_air_diagnostic_2024.csv,diagnostic,varies,railways_tier2_air_diagnostic_2024.csv,railways_tier2_air_diagnostic_2024.csv;*,271,7,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_tier2_split_2024.csv,diagnostic,varies,railways_tier2_split_2024.csv,railways_tier2_split_2024.csv;*,422,5,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_timeseries_2024.csv,diagnostic,varies,railways_timeseries_2024.csv,railways_timeseries_2024.csv;*,944,12,audit,no,none,evidence behind a published claim (role as at rc69)
 railways_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,2833,7,supporting,yes,none,a sector's own reported totals
 railways_uncertainty_2024.csv,sector_headline,sector runner,*_uncertainty_2*.csv,*_uncertainty_2*.csv;*,106,1,supporting,yes,none,a sector's reported uncertainty
-railways_uncertainty_inputs_2024.csv,intermediate,varies,*,*,3616,15,build,no,none,a working file the build needs and no reader-facing claim rests on
-railways_uncertainty_scenarios_2024.csv,intermediate,varies,*,*,2883,10,build,no,none,a working file the build needs and no reader-facing claim rests on
+railways_uncertainty_inputs_2024.csv,diagnostic,varies,railways_uncertainty_inputs_2024.csv,railways_uncertainty_inputs_2024.csv;*,3616,15,audit,no,none,evidence behind a published claim (role as at rc69)
+railways_uncertainty_scenarios_2024.csv,diagnostic,varies,railways_uncertainty_scenarios_2024.csv,railways_uncertainty_scenarios_2024.csv;*,2883,10,audit,no,none,evidence behind a published claim (role as at rc69)
 railways_unfccc_crt_cell_audit_2024.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,1376,17,audit,no,none,the official-filing audit behind a benchmark row
-railways_wear_pm_2024.csv,intermediate,varies,*,*,712,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+railways_wear_pm_2024.csv,diagnostic,varies,railways_wear_pm_2024.csv,railways_wear_pm_2024.csv;*,712,3,audit,no,none,evidence behind a published claim (role as at rc69)
 release_manifest.json,intermediate,varies,*.json,*.json;*,,,build,no,documentation,a run manifest or fallback record the build writes
 residential_activity_factor_ledger.csv,derivation,pkinv.report.derivation_chain,*_activity_factor_ledger.csv,*_activity_factor_ledger.csv;*,13763,23,supporting,no,none,"per source stream: the activity quantities, the conversions, the emission factors and the published emission on one row - the join nothing but the fugitives segment ledger published before. reproduces is yes ONLY where one distinct activity value times one distinct factor value lands on the published mass; 8 of 198 streams do"
 residential_air_pollutants_2024.csv,diagnostic,pkinv.sectors.residential.air_pollutants,residential_air_pollutants_2024.csv,residential_air_pollutants_2024.csv;*,4173,58,audit,yes,none,"residential air pollutants. Literally named in PRODUCT_PATTERNS; the sector paper discusses this layer at length and names its uncertainty register rather than this table, which is the citation debt, not a reason to call it a working file."
 residential_by_stream_2024.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,1936,23,supporting,yes,none,a sector's totals resolved to source streams
-residential_ccac_bridge_2024.csv,intermediate,varies,*,*,1177,6,build,no,none,a working file the build needs and no reader-facing claim rests on
-residential_configurations_2024.csv,intermediate,varies,*,*,641,2,build,no,none,a working file the build needs and no reader-facing claim rests on
+residential_ccac_bridge_2024.csv,diagnostic,varies,residential_ccac_bridge_2024.csv,residential_ccac_bridge_2024.csv;*,1177,6,audit,no,none,evidence behind a published claim (role as at rc69)
+residential_configurations_2024.csv,diagnostic,varies,residential_configurations_2024.csv,residential_configurations_2024.csv;*,641,2,audit,no,none,evidence behind a published claim (role as at rc69)
 residential_configurations_by_year.csv,sector_headline,pkinv.sectors.residential.timeseries,residential_configurations_by_year.csv,residential_configurations_by_year.csv;*,1197,20,supporting,yes,none,"the ten-year sibling of the reference-year configurations register: per (fiscal year, configuration) the dung mass, its basis label and the dung-stream PM2.5 - the shipped register the air panel's L_HERD1624 totals reconcile against"
 residential_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,25030,78,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
 residential_district_2024.csv,diagnostic,varies,*,*,145445,1201,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-residential_district_map_audit_2024.csv,intermediate,varies,*,*,14490,126,build,no,none,a working file the build needs and no reader-facing claim rests on
-residential_dung_ledger_2024.csv,intermediate,varies,*,*,1253,4,build,no,none,a working file the build needs and no reader-facing claim rests on
+residential_district_map_audit_2024.csv,diagnostic,varies,residential_district_map_audit_2024.csv,residential_district_map_audit_2024.csv;*,14490,126,audit,no,none,evidence behind a published claim (role as at rc69)
+residential_dung_ledger_2024.csv,diagnostic,varies,residential_dung_ledger_2024.csv,residential_dung_ledger_2024.csv;*,1253,4,audit,no,none,evidence behind a published claim (role as at rc69)
 residential_emissions_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,40839,276,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
-residential_fuel_2024.csv,intermediate,varies,*,*,231,9,build,no,none,a working file the build needs and no reader-facing claim rests on
+residential_fuel_2024.csv,diagnostic,varies,residential_fuel_2024.csv,residential_fuel_2024.csv;*,231,9,audit,no,none,evidence behind a published claim (role as at rc69)
 residential_gis_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,201,5,supporting,no,documentation,a sector's provincial allocation
 residential_hies_comparison_2024.csv,diagnostic,varies,*,*,2400,11,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
 residential_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,10930,108,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
 residential_official_comparison_2024.csv,diagnostic,sector runner,*_official_comparison*.csv,*_official_comparison*.csv;*,1770,5,audit,no,none,comparison against an official published figure
-residential_pm_ratio_2024.csv,intermediate,varies,*,*,815,3,build,no,none,a working file the build needs and no reader-facing claim rests on
+residential_pm_ratio_2024.csv,diagnostic,varies,residential_pm_ratio_2024.csv,residential_pm_ratio_2024.csv;*,815,3,audit,no,none,evidence behind a published claim (role as at rc69)
 residential_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,118,5,supporting,yes,none,a sector's provincial allocation
 residential_qa_2024.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,128,1,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
-residential_strata_2024.csv,intermediate,varies,*,*,6776,73,build,no,none,a working file the build needs and no reader-facing claim rests on
-residential_timeseries.csv,intermediate,varies,*,*,2652,10,build,no,none,a working file the build needs and no reader-facing claim rests on
+residential_strata_2024.csv,diagnostic,varies,residential_strata_2024.csv,residential_strata_2024.csv;*,6776,73,audit,no,none,evidence behind a published claim (role as at rc69)
+residential_timeseries.csv,diagnostic,varies,residential_timeseries.csv,residential_timeseries.csv;*,2652,10,audit,no,none,evidence behind a published claim (role as at rc69)
 residential_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,2285,10,supporting,yes,none,a sector's own reported totals
 residential_uncertainty_2024.csv,sector_headline,sector runner,*_uncertainty_2*.csv,*_uncertainty_2*.csv;*,126,1,supporting,yes,none,a sector's reported uncertainty
-residential_uncertainty_inputs_2024.csv,intermediate,varies,*,*,6638,25,build,no,none,a working file the build needs and no reader-facing claim rests on
-residential_uncertainty_scenarios_2024.csv,intermediate,varies,*,*,5464,13,build,no,none,a working file the build needs and no reader-facing claim rests on
+residential_uncertainty_inputs_2024.csv,diagnostic,varies,residential_uncertainty_inputs_2024.csv,residential_uncertainty_inputs_2024.csv;*,6638,25,audit,no,none,evidence behind a published claim (role as at rc69)
+residential_uncertainty_scenarios_2024.csv,diagnostic,varies,residential_uncertainty_scenarios_2024.csv,residential_uncertainty_scenarios_2024.csv;*,5464,13,audit,no,none,evidence behind a published claim (role as at rc69)
 residential_unfccc_crt_cell_audit_2024.csv,diagnostic,sector runner,*_unfccc_*.csv,*_unfccc_*.csv;*_crt_*.csv;*,2145,40,audit,no,none,the official-filing audit behind a benchmark row
 residential_variance_decomposition_2024.csv,intermediate,varies,*,*,536,18,build,no,none,a working file the build needs and no reader-facing claim rests on
 semantic/dim_activity_columns.csv,canonical,pkinv.semantic,semantic/*.csv,semantic/*.csv;*,38597,250,core,yes,none,"a semantic fact or dimension table - the one numerical truth layer the paper's stored queries, the Explorer and the downloads consume; the canonical CSV is the identity"
@@ -918,23 +918,23 @@ timeseries_1990_2024.csv,intermediate,varies,*,*,14657,245,build,no,none,a worki
 timeseries_report.md,report_prose,varies,*.md,*.md;*,1582,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
 timeseries_validation.csv,diagnostic,varies,*,*,9328,204,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
 transport_activity_factor_ledger.csv,derivation,pkinv.report.derivation_chain,*_activity_factor_ledger.csv,*_activity_factor_ledger.csv;*,22075,39,supporting,no,none,"per source stream: the activity quantities, the conversions, the emission factors and the published emission on one row - the join nothing but the fugitives segment ledger published before. reproduces is yes ONLY where one distinct activity value times one distinct factor value lands on the published mass; 8 of 198 streams do"
-transport_air_pollutants_2024.csv,intermediate,varies,*,*,31642,203,build,yes,none,a working file the build needs and no reader-facing claim rests on
+transport_air_pollutants_2024.csv,diagnostic,varies,transport_air_pollutants_2024.csv,transport_air_pollutants_2024.csv;*,31642,203,audit,yes,none,evidence behind a published claim (role as at rc69)
 transport_by_stream_2024.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,2828,39,supporting,yes,none,a sector's totals resolved to source streams
-transport_calendar_year_controls_2024.csv,intermediate,varies,*,*,488,5,build,no,none,a working file the build needs and no reader-facing claim rests on
+transport_calendar_year_controls_2024.csv,diagnostic,varies,transport_calendar_year_controls_2024.csv,transport_calendar_year_controls_2024.csv;*,488,5,audit,no,none,evidence behind a published claim (role as at rc69)
 transport_class_fuel_weights_2024.csv,intermediate,scripts/make_transport_class_table.py,transport_class_fuel_weights_2024.csv,transport_class_fuel_weights_2024.csv;*,960,17,build,no,none,"the within-fuel vehicle-kilometre weights of the class split (rc41: split out of transport_class_parameters_2024.csv, which carried two tables)"
-transport_class_parameters_2024.csv,intermediate,varies,*,*,923,9,build,no,none,a working file the build needs and no reader-facing claim rests on
-transport_cng_2024.csv,intermediate,varies,*,*,425,14,build,yes,none,a working file the build needs and no reader-facing claim rests on
-transport_cng_crosscheck_2024.csv,intermediate,varies,*,*,717,8,build,yes,none,a working file the build needs and no reader-facing claim rests on
+transport_class_parameters_2024.csv,diagnostic,varies,transport_class_parameters_2024.csv,transport_class_parameters_2024.csv;*,923,9,audit,no,none,evidence behind a published claim (role as at rc69)
+transport_cng_2024.csv,diagnostic,varies,transport_cng_2024.csv,transport_cng_2024.csv;*,425,14,audit,yes,none,evidence behind a published claim (role as at rc69)
+transport_cng_crosscheck_2024.csv,diagnostic,varies,transport_cng_crosscheck_2024.csv,transport_cng_crosscheck_2024.csv;*,717,8,audit,yes,none,evidence behind a published claim (role as at rc69)
 transport_cng_proxy_2024.csv,intermediate,varies,*,*,814,5,build,no,none,a working file the build needs and no reader-facing claim rests on
 transport_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,16336,75,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
-transport_fleet_fuel_diagnostic_2024.csv,intermediate,varies,*,*,821,3,build,no,none,a working file the build needs and no reader-facing claim rests on
-transport_fuel_2024.csv,intermediate,varies,*,*,65,2,build,no,none,a working file the build needs and no reader-facing claim rests on
-transport_fuel_bridge_2024.csv,intermediate,varies,*,*,1867,11,build,no,none,a working file the build needs and no reader-facing claim rests on
+transport_fleet_fuel_diagnostic_2024.csv,diagnostic,varies,transport_fleet_fuel_diagnostic_2024.csv,transport_fleet_fuel_diagnostic_2024.csv;*,821,3,audit,no,none,evidence behind a published claim (role as at rc69)
+transport_fuel_2024.csv,diagnostic,varies,transport_fuel_2024.csv,transport_fuel_2024.csv;*,65,2,audit,no,none,evidence behind a published claim (role as at rc69)
+transport_fuel_bridge_2024.csv,diagnostic,varies,transport_fuel_bridge_2024.csv,transport_fuel_bridge_2024.csv;*,1867,11,audit,no,none,evidence behind a published claim (role as at rc69)
 transport_fuel_ledger_2024.csv,diagnostic,varies,*,*,5128,21,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-transport_fuel_series.csv,intermediate,varies,*,*,995,10,build,no,none,a working file the build needs and no reader-facing claim rests on
+transport_fuel_series.csv,diagnostic,varies,transport_fuel_series.csv,transport_fuel_series.csv;*,995,10,audit,no,none,evidence behind a published claim (role as at rc69)
 transport_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,73548,468,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
 transport_navigation_screen_2024.csv,diagnostic,varies,*,*,1867,10,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-transport_ocac_control_diagnostic.csv,intermediate,varies,*,*,6769,48,build,no,none,a working file the build needs and no reader-facing claim rests on
+transport_ocac_control_diagnostic.csv,diagnostic,varies,transport_ocac_control_diagnostic.csv,transport_ocac_control_diagnostic.csv;*,6769,48,audit,no,none,evidence behind a published claim (role as at rc69)
 transport_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,118,5,supporting,yes,none,a sector's provincial allocation
 transport_provincial_proxy_comparison_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,356,5,supporting,yes,none,a sector's provincial allocation
 transport_provincial_shape_brackets.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,1355,20,supporting,yes,none,a sector's provincial allocation
@@ -942,29 +942,29 @@ transport_qa_2024.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,128,1,aud
 transport_run_manifest_2024.json,intermediate,varies,*.json,*.json;*,17588,,build,no,none,a run manifest or fallback record the build writes
 transport_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,1247,5,supporting,yes,none,a sector's own reported totals
 transport_uncertainty_2024.csv,sector_headline,sector runner,*_uncertainty_2*.csv,*_uncertainty_2*.csv;*,142,1,supporting,yes,none,a sector's reported uncertainty
-transport_uncertainty_inputs_2024.csv,intermediate,varies,*,*,5650,20,build,no,none,a working file the build needs and no reader-facing claim rests on
-transport_uncertainty_scenarios_2024.csv,intermediate,varies,*,*,14821,25,build,no,none,a working file the build needs and no reader-facing claim rests on
+transport_uncertainty_inputs_2024.csv,diagnostic,varies,transport_uncertainty_inputs_2024.csv,transport_uncertainty_inputs_2024.csv;*,5650,20,audit,no,none,evidence behind a published claim (role as at rc69)
+transport_uncertainty_scenarios_2024.csv,diagnostic,varies,transport_uncertainty_scenarios_2024.csv,transport_uncertainty_scenarios_2024.csv;*,14821,25,audit,no,none,evidence behind a published claim (role as at rc69)
 transport_variance_decomposition_2024.csv,intermediate,varies,*,*,250,6,build,no,none,a working file the build needs and no reader-facing claim rests on
 trend_chart.png,figure,varies,*.png,*.png;*,105369,,supporting,no,documentation,a generated chart a runner writes beside its tables
 uncertainty_distribution.png,figure,varies,*.png,*.png;*,57917,,supporting,no,documentation,a generated chart a runner writes beside its tables
-uncertainty_montecarlo.csv,intermediate,varies,*,*,441,7,build,yes,none,a working file the build needs and no reader-facing claim rests on
+uncertainty_montecarlo.csv,diagnostic,varies,uncertainty_montecarlo.csv,uncertainty_montecarlo.csv;*,441,7,audit,yes,none,evidence behind a published claim (role as at rc69)
 unsd_coal_supply_control.csv,canonical,scripts.build_unsd_coal_supply,unsd_coal_supply_control.csv,unsd_coal_supply_control.csv;*,3452,16,core,yes,none,"the UNSD energy balance's Pakistan PRIMARY COAL supply block (TJ, per edition x calendar year): exports, stock changes ('..' carried typed, never zero), statistical difference and final consumption by branch - the only independent supply-side control on HDIP's coal-by-consumer allocation; a control, never an estimate (industrial-coal reconstruction Wave 1)"
 unsd_industry_combustion_control.csv,canonical,scripts.build_unsd_industry_combustion,unsd_industry_combustion_control.csv,unsd_industry_combustion_control.csv;*,11173,50,core,yes,none,"an independent 1.A.2 industrial-combustion control total from the UNSD energy balances (the public HDIP stand-in), the release's own IPCC 2006 CO2 factors applied to Pakistan's manufacturing fuel use - a second benchmark beside EDGAR in the boundary ledger's diagnostic lane; biofuels a biogenic memo; hashed by the release manifest"
 verification_bundle_contents.csv,build_record,scripts/build_verification_bundle.py,verification_bundle_contents.csv,verification_bundle_contents.csv;*,194339,3047,audit,no,none,"what each pakemis_verification_external/<sector>.zip contains - one row per member with its part and role. A RECORD, not a product: the bundle is 8.5 GB and gitignored, so before this file existed the bundle was its own registry and nothing could say whether it still matched the tree. Deliberately NOT named pakemis_*, which release_manifest.PRODUCT_PATTERNS sweeps as a product"
 waste_activity_factor_ledger.csv,derivation,pkinv.report.derivation_chain,*_activity_factor_ledger.csv,*_activity_factor_ledger.csv;*,4640,6,supporting,no,none,"per source stream: the activity quantities, the conversions, the emission factors and the published emission on one row - the join nothing but the fugitives segment ledger published before. reproduces is yes ONLY where one distinct activity value times one distinct factor value lands on the published mass; 8 of 198 streams do"
-waste_air_pollutants_2024.csv,intermediate,varies,*,*,749,8,build,yes,none,a working file the build needs and no reader-facing claim rests on
+waste_air_pollutants_2024.csv,diagnostic,varies,waste_air_pollutants_2024.csv,waste_air_pollutants_2024.csv;*,749,8,audit,yes,none,evidence behind a published claim (role as at rc69)
 waste_by_stream_2024.csv,sector_headline,sector runner,*_by_stream_*.csv,*_by_stream_*.csv;*,562,6,supporting,yes,none,a sector's totals resolved to source streams
 waste_derivation_chain.csv,derivation,pkinv.report.derivation_chain,*_derivation_chain.csv,*_derivation_chain.csv;*,10521,47,supporting,no,none,"the sector's source-to-result walk in four stages - the numbers as the publisher printed them, the corrections and why, what the engine finally used, and the emissions. Every row names the file it was READ from and nothing in it is recomputed, so a chain row and its source agree by construction. Declared per sector in data/verification_chain.csv"
 waste_district_2024.csv,diagnostic,varies,*,*,102009,402,audit,no,documentation,a working file the build needs and no reader-facing claim rests on
-waste_ledger_2024.csv,intermediate,varies,*,*,1160,5,build,no,none,a working file the build needs and no reader-facing claim rests on
+waste_ledger_2024.csv,diagnostic,varies,waste_ledger_2024.csv,waste_ledger_2024.csv;*,1160,5,audit,no,none,evidence behind a published claim (role as at rc69)
 waste_monthly_2024.csv,sector_headline,sector runner,*_monthly_2*.csv,*_monthly_2*.csv;*,19357,72,supporting,yes,none,"a sector's own monthly layer, closing to its annual figure"
 waste_parameter_mc_2024.csv,intermediate,varies,*,*,1219,4,build,no,none,a working file the build needs and no reader-facing claim rests on
 waste_provincial_2024.csv,sector_headline,sector runner,*_provincial_*.csv,*_provincial_*.csv;*,113,5,supporting,yes,none,a sector's provincial allocation
 waste_qa_2024.csv,diagnostic,sector runner,*_qa_*.csv,*_qa_*.csv;*,128,1,audit,no,none,"a sector's self-checks, asserted by tests/test_sector_qa_checks.py"
-waste_release_assignment_2024.csv,intermediate,varies,*,*,43470,134,build,yes,none,a working file the build needs and no reader-facing claim rests on
-waste_release_candidates_2024.csv,intermediate,varies,*,*,87674,108,build,no,none,a working file the build needs and no reader-facing claim rests on
+waste_release_assignment_2024.csv,diagnostic,varies,waste_release_assignment_2024.csv,waste_release_assignment_2024.csv;*,43470,134,audit,yes,none,evidence behind a published claim (role as at rc69)
+waste_release_candidates_2024.csv,diagnostic,varies,waste_release_candidates_2024.csv,waste_release_candidates_2024.csv;*,87674,108,audit,no,none,evidence behind a published claim (role as at rc69)
 waste_report.md,report_prose,varies,*.md,*.md;*,1069,,supporting,no,none,a runner's Markdown summary of its own tables; the CSVs are the product
 waste_totals_2024.csv,sector_headline,sector runner,*_totals_*.csv,*_totals_*.csv;*,1243,8,supporting,yes,none,a sector's own reported totals
 waste_uncertainty_2024.csv,sector_headline,sector runner,*_uncertainty_2*.csv,*_uncertainty_2*.csv;*,553,4,supporting,yes,none,a sector's reported uncertainty
-waste_uncertainty_inputs_2024.csv,intermediate,varies,*,*,14109,52,build,yes,none,a working file the build needs and no reader-facing claim rests on
-waste_uncertainty_scenarios_2024.csv,intermediate,varies,*,*,7162,19,build,yes,none,a working file the build needs and no reader-facing claim rests on
+waste_uncertainty_inputs_2024.csv,diagnostic,varies,waste_uncertainty_inputs_2024.csv,waste_uncertainty_inputs_2024.csv;*,14109,52,audit,yes,none,evidence behind a published claim (role as at rc69)
+waste_uncertainty_scenarios_2024.csv,diagnostic,varies,waste_uncertainty_scenarios_2024.csv,waste_uncertainty_scenarios_2024.csv;*,7162,19,audit,yes,none,evidence behind a published claim (role as at rc69)

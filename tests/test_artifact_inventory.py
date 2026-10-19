@@ -179,13 +179,15 @@ from _support import require_built  # noqa: E402
 # surfaces, the citation pointer audit and the sector-note fact file - and naming a table in
 # prose that makes no claim on it would be a citation without a claim. One more is the rc42
 # re-base re-typed above. Lowering it is free.
-# canonical 0 -> 156, sector_headline 0 -> 54, diagnostic 53 -> 100 (rc70, 19 October 2026).
+# canonical 0 -> 156, sector_headline 0 -> 54, diagnostic 53 -> 222 (rc70, 19 October 2026).
 # NOT A LOSS OF CITATIONS BUT OF THE TEXTS THAT HELD THEM. The papers moved out of this
 # repository, and artifact_inventory.DOC_GLOBS now reads what remains a reader's text here -
 # README.md and docs/*.md. Every file counted above was named only in the papers; none changed
-# role, none stopped shipping and no number moved. Naming them in docs/ is the way down, file
+# role (the 122 evidence tables whose role the catch-all used to derive from those texts are
+# declared diagnostic by name in data/catalog/artifact_roles.csv), none stopped shipping and no
+# number moved. Naming them in docs/ is the way down, file
 # by file, where a document makes a claim that rests on one. Lowering it is free.
-UNCITED_CEILING = {"canonical": 156, "sector_headline": 54, "diagnostic": 100}
+UNCITED_CEILING = {"canonical": 156, "sector_headline": 54, "diagnostic": 222}
 # THE OTHER DIRECTION OF THE SAME RULE, which nothing checked until rc64.
 #
 # The register enforces that a `canonical` artifact must be named in a manuscript - that is
