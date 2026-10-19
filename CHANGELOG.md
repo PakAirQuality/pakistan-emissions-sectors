@@ -43,6 +43,14 @@ repository builds, tests and releases the inventory alone, and names no other re
   `tests/test_release_integrity.py`. Tests that checked a paper's text moved with the papers;
   the inventory checks beside them stayed.
 
+### The history no longer carries the papers
+
+The repository's history was rewritten on 19 October 2026 to remove the same paths from every
+earlier commit: the papers, their sources and PDFs, the baseline's paper copies and the tests
+of their text. Nothing else in any commit changed, but every commit identifier did.
+`docs/history_rewrite.md` maps each old identifier, which earlier records still quote, to the
+commit that now carries the same content.
+
 ### The rc69 reproduction record
 
 `docs/reproduction/rc69/` publishes the two rebuilds of rc69, run in empty directories on

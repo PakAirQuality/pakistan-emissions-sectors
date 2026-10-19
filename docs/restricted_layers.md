@@ -3,8 +3,10 @@
 After release 1.0.0rc68 the inventory is developed in this public repository. It holds the
 code, the verified data tables, the released products, the documentation and the tests.
 
-Releases through 1.0.0rc68 were made in a private working repository. Commits 383f939
-(rc67) and 3cef2f3 (rc68) here are whole-tree copies of those releases. The commits their
+Releases through 1.0.0rc68 were made in a private working repository. Commits 3a93b49
+(rc67) and 3dcbe2a (rc68) here are whole-tree copies of those releases, without the papers
+that accompanied them (383f939 and 3cef2f3 before the history rewrite of 19 October 2026;
+[history_rewrite.md](history_rewrite.md) maps every old identifier). The commits their
 manifests name are in the private history, not this one.
 
 ## What is not here, and why

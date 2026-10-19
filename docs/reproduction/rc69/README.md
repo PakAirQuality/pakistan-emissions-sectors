@@ -2,7 +2,9 @@
 
 Two reproductions of release 1.0.0rc69 were run in empty directories on 19 October 2026, on the
 maintainer's machine (macOS, Python 3.11.10, the environment pinned in `requirements.lock`),
-after the release record (commit `d93ddc7`). This folder publishes their results unchanged.
+after the release record (commit `d93ddc7`, now `4935194`: the identifiers in this folder
+predate the history rewrite of 19 October 2026, which `docs/history_rewrite.md` maps). This
+folder publishes their results unchanged.
 rc69 still carried the manuscripts; the logs therefore name their build phases, which rc70
 removed.
 
