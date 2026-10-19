@@ -43,6 +43,14 @@ repository builds, tests and releases the inventory alone, and names no other re
   `tests/test_release_integrity.py`. Tests that checked a paper's text moved with the papers;
   the inventory checks beside them stayed.
 
+### The rc69 reproduction record
+
+`docs/reproduction/rc69/` publishes the two rebuilds of rc69, run in empty directories on
+19 October after its record (`d93ddc7`): the clean rebuild from compiled inputs (470 files,
+0 differences) and the reader's unpack-and-build of its deposit (400 files, 0 differences; the
+110 not rebuilt were checked byte-identical). Every file in the four rc69 archives matches its
+archive's checksums. The measured-validation table now reads this record.
+
 ## [1.0.0rc69] — 17 October 2026
 
 The first release developed in this repository, and the answer to the review of the rc68

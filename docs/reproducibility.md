@@ -104,10 +104,14 @@ from manifest-listed code, inputs and dependencies in an isolated pinned
 environment. Explicitly held or source-extracted products have named reasons and
 verified hashes. The result distinguishes build status, product comparison and
 source re-extraction. See [the exact reproduction levels](deposit_rebuild_limits.md).
-The recorded rc68 runs are in [docs/reproduction/rc68](reproduction/rc68/README.md):
-- the clean rebuild compared 465 files with 0 differences;
-- the reader's unpack-and-build compared 395 files with 0 differences, and its 110
+The recorded runs are in [docs/reproduction/](reproduction/). For rc69
+([docs/reproduction/rc69](reproduction/rc69/README.md)):
+- the clean rebuild compared 470 files with 0 differences;
+- the reader's unpack-and-build compared 400 files with 0 differences, and its 110
   not-rebuilt files were checked byte-identical.
+
+rc68's runs ([docs/reproduction/rc68](reproduction/rc68/README.md)) compared 465 and 395
+files, also with 0 differences.
 
 A successful level is claimed only after its actual result is recorded.
 

@@ -1,0 +1,24 @@
+{
+  "level": "compiled_inputs",
+  "source_extraction_repeated": false,
+  "build_exit": 0,
+  "comparison_exit": 0,
+  "seeded_source_phases": {
+    "Power plant workbooks": "retained NEPRA primary spreadsheets",
+    "OGRA gas-class series": "retained OGRA primary report",
+    "Fiscal extension source tables": "retained official PDFs, XLSX and monthly source records",
+    "Residential own-year degree-days": "retained NASA POWER monthly responses",
+    "HTAP air comparison": "retained HTAP source workbook archive",
+    "Power air-control evidence": "retained plant licence application PDFs",
+    "UNSD industrial-combustion control": "retained UNSD energy-balance PDF",
+    "UNSD coal supply control": "retained UNSD energy-balance PDF",
+    "Forest flux adjudication": "retained FAOSTAT land-use forests bulk archive",
+    "F-gas leak-rate adjudication": "retained UNFCCC CRT tables",
+    "Lahore SO2 vs EDGAR gridmaps": "retained EDGAR v8.1 air-pollutant gridmap archives",
+    "Provincial SO2 vs EDGAR gridmaps": "retained EDGAR v8.1 air-pollutant gridmap archives",
+    "FAOSTAT nitrogen flows": "retained FAOSTAT bulk emissions archives",
+    "Published release vintages": "published release manifests read from git history",
+    "Release axis fingerprints": "published release products read from git history"
+  },
+  "work": "/private/tmp/claude-501/-Users-rehanahmad-Desktop-emissions/ab053e8a-96e8-4c3b-9a00-08d186f9707e/scratchpad/clean_rc69"
+}

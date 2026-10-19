@@ -1,0 +1,471 @@
+path,status,detail,max_rel_diff,writer_phase,phase_status
+outputs/SHA256SUMS,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/agriculture_crop_residue_ledger_2024.csv,rebuilt_identical,bytewise,,Agriculture,OK
+outputs/agriculture_monthly_2024.csv,rebuilt_identical,bytewise,,Agriculture,OK
+outputs/agriculture_timing_classes.csv,rebuilt_identical,bytewise,,Agriculture timing classes + NFDC residual,OK
+outputs/air_pollutants_2024.csv,rebuilt_identical,bytewise,,Agriculture air pollutants,OK
+outputs/air_pollutants_adm1.csv,rebuilt_identical,bytewise,,Air spatial (all sectors),OK
+outputs/air_pollutants_adm2.csv,rebuilt_identical,bytewise,,Air spatial (all sectors),OK
+outputs/air_pollutants_district_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/air_pollutants_provincial_2024.csv,rebuilt_identical,bytewise,,Agriculture air pollutants,OK
+outputs/air_pollutants_timeseries_1990_2024.csv,rebuilt_identical,bytewise,,Agriculture air time series,OK
+outputs/air_uncertainty_montecarlo.csv,rebuilt_identical,bytewise,,Agriculture air uncertainty,OK
+outputs/apcma_dispatch_parse_summary.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/apcma_dispatch_quarantine.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/apcma_qim_cement_crosscheck.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/aviation_adsblol_pilot_summary.json,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/aviation_adsblol_route_pilot.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/aviation_air_pollutants_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_by_stream_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_completeness_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_fuel_constrained_by_stream_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_monthly_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/aviation_provincial_fy2023_24.csv,rebuilt_identical,bytewise,,Aviation,OK
+outputs/benchmark_air_comparison.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Agriculture air pollutants' to the same bytes",,Agriculture air pollutants,OK
+outputs/completeness.csv,rebuilt_identical,bytewise,,Completeness table,OK
+outputs/districts/district_totals.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/districts/fire_by_district.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/districts/livestock_by_district.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/districts/rice_by_district.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/districts/soil_n2o_by_district.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/era5_degree_day_crosscheck.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/buffalo_implied_ef.json,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/mms_sensitivity.json,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/mms_structural_uncertainty.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/n_ledger_runs.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/nh3_spatial_comparison.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/proxy_attribution.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/sensitivity.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/spatial_nh3_validation.json,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/uncertainty_derived.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/eval/validation/livestock_validation.json,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/fao_crop_calendar_crosscheck.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/figures/fugitives_sensitivity.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/figures/ippu_sensitivity.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/figures/residential_map_co2e.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/figures/residential_map_pm25.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/fugitives_by_stream_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_completeness_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_monthly_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_observation_provincial_evaluation_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_provincial_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_totals_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/fugitives_uncertainty_2024.csv,rebuilt_identical,bytewise,,Fugitive oil and gas,OK
+outputs/gis/air/bc_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/air/co_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/air/nh3_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/air/nh3_map.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/air/nmvoc_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/air/nox_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/air/pm25_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/air/so2_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/enteric_ch4_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/fire_occurrence.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/gis_report.md,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/grid_emissions_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/hotspot_by_category.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/hotspot_total.png,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/liming_urea_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/managed_soils_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/manure_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/railways_NOx_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/railways_PM25_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/railways_SO2_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/railways_co2e_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/residential_bc.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/residential_co2e.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/residential_pm25.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/residue_burning_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/rice_ch4_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/gis/total_co2e_2024.tif,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/industry_by_stream_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_captive_screening_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_monthly_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_provincial_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/industry_totals_2024.csv,rebuilt_identical,bytewise,,Industrial combustion,OK
+outputs/ippu_by_stream_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_completeness_2024.csv,rebuilt_identical,bytewise,,IPPU metadata,OK
+outputs/ippu_facility_coordinate_agreement.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/ippu_fertilizer_gas_monthly_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_monthly_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_provincial_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/ippu_totals_2024.csv,rebuilt_identical,bytewise,,Industrial processes,OK
+outputs/key_categories.csv,rebuilt_identical,bytewise,,Agriculture key categories,OK
+outputs/limestone_qim_cement_crosscheck.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/mc_draws/fugitives_bounded.csv,rebuilt_identical,bytewise,,Fugitives MC draw file,OK
+outputs/mc_draws/fugitives_bounded.meta.json,rebuilt_identical,bytewise,,Fugitives MC draw file,OK
+outputs/mc_draws/pakemis_ensemble_annual.meta.json,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_annual.parquet,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_monthly.meta.json,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_monthly.parquet,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_spatial.meta.json,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/pakemis_ensemble_spatial.parquet,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/mc_draws/waste_parameter_rerun.csv,rebuilt_identical,bytewise,,Waste MC draw file,OK
+outputs/mc_draws/waste_parameter_rerun.meta.json,rebuilt_identical,bytewise,,Waste MC draw file,OK
+outputs/mc_draws/waste_parameter_rerun_ipcc2006.csv,rebuilt_identical,bytewise,,Waste MC alternative draw file,OK
+outputs/mc_draws/waste_parameter_rerun_ipcc2006.meta.json,rebuilt_identical,bytewise,,Waste MC alternative draw file,OK
+outputs/n_ledger_2024.csv,rebuilt_identical,bytewise,,Agriculture nitrogen ledger,OK
+outputs/n_ledger_stage_comparison.csv,rebuilt_identical,bytewise,,Agriculture nitrogen ledger,OK
+outputs/national_all_sectors.csv,rebuilt_identical,bytewise,,National rollup,OK
+outputs/national_all_sectors_ledger.csv,rebuilt_identical,bytewise,,National rollup,OK
+outputs/national_gas_closure_variant.csv,rebuilt_identical,bytewise,,National gas closure,OK
+outputs/national_uncertainty_decomposition.csv,rebuilt_identical,bytewise,,Parameter decomposition,OK
+outputs/nfdc_monthly_parse_summary.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/nfdc_monthly_quarantine.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/ocac_direct_edition_crosscheck.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/ocac_direct_edition_quarantine.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/ocac_edition_currency.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/ocac_edition_inventory.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/ocac_parse_summary.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/ogra_gas_class_series.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_adm1_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm1_ledger_2024.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_crosswalk.csv,rebuilt_identical,bytewise,,ADM2 reporting units,OK
+outputs/pakemis_adm2_frame_2022.csv,rebuilt_identical,bytewise,,ADM2 frame 2022 crosswalk,OK
+outputs/pakemis_adm2_ledger_2024.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_monthly.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_monthly_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_monthly_sector.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_adm2_nesting_check.csv,rebuilt_identical,bytewise,,Spatial exceptions + ADM2 nesting,OK
+outputs/pakemis_adm2_sector_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_stream_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_adm2_stream_reference.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_agriculture_basis_change.csv,rebuilt_identical,bytewise,,Agriculture fiscal history,OK
+outputs/pakemis_agriculture_crop_calendar.csv,rebuilt_identical,bytewise,,Agriculture fiscal history,OK
+outputs/pakemis_agriculture_fiscal_series.csv,rebuilt_identical,bytewise,,Agriculture fiscal history,OK
+outputs/pakemis_air_absence_screening_by_year.csv,rebuilt_identical,bytewise,,Air absence-screening ledger,OK
+outputs/pakemis_air_adm1_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_adm2_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_annual_fy2015_16_fy2023_24.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_atomic_annual.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_conditional_uncertainty.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_coverage_matrix.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_htap_comparison.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_air_htap_species_comparison.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_air_industry_cy2023.csv,rebuilt_identical,bytewise,,"Industry air, calendar 2023",OK
+outputs/pakemis_air_lahore_by_year.csv,rebuilt_identical,bytewise,,Lahore air view,OK
+outputs/pakemis_air_lahore_external_comparison.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_air_lahore_power_register.csv,rebuilt_identical,bytewise,,Lahore power register,OK
+outputs/pakemis_air_lahore_so2_attribution.csv,rebuilt_identical,bytewise,,Lahore SO2 attribution,OK
+outputs/pakemis_air_monthly.csv,rebuilt_identical,bytewise,,Air monthly allocation,OK
+outputs/pakemis_air_monthly_unallocated.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_power_admission_bridge.csv,rebuilt_identical,bytewise,,Power SO2 admission bridge,OK
+outputs/pakemis_air_power_control_evidence.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_air_power_design_cases.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_air_power_omission.csv,rebuilt_identical,bytewise,,Air power-stack omission,OK
+outputs/pakemis_air_provincial_external_comparison.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_air_source_class_uncertainty_by_year.csv,rebuilt_identical,bytewise,,Air source classes (supported fiscal panel),OK
+outputs/pakemis_air_source_classes_fy2015_16_fy2023_24.csv,rebuilt_identical,bytewise,,Air source classes (supported fiscal panel),OK
+outputs/pakemis_air_source_classes_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Air source classes (supported fiscal panel),OK
+outputs/pakemis_air_source_coverage.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/pakemis_air_spatial_support_by_year.csv,rebuilt_identical,bytewise,,Air spatial support ledger,OK
+outputs/pakemis_air_structural_sensitivities.csv,rebuilt_identical,bytewise,,Air structural sensitivities,OK
+outputs/pakemis_air_temporal_support.csv,rebuilt_identical,bytewise,,Air monthly allocation,OK
+outputs/pakemis_air_trend_uncertainty.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_unallocated_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_air_uncertainty_drivers.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_uncertainty_parameters.csv,rebuilt_identical,bytewise,,Air conditional uncertainty,OK
+outputs/pakemis_air_uncertainty_split_by_year.csv,rebuilt_identical,bytewise,,Air spatial support ledger,OK
+outputs/pakemis_ammonia_nitric_series.csv,rebuilt_identical,bytewise,,Ammonia and nitric acid series,OK
+outputs/pakemis_annual_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Annual product (supported fiscal panel),OK
+outputs/pakemis_annual_fy2015_16_fy2024_25.parquet,rebuilt_identical,bytewise,,Annual product (supported fiscal panel),OK
+outputs/pakemis_artifact_inventory.csv,rebuilt_identical,bytewise,,Artifact inventory,OK
+outputs/pakemis_atomic_annual.csv,rebuilt_identical,bytewise,,Atomic annual table,OK
+outputs/pakemis_atomic_annual.parquet,rebuilt_identical,bytewise,,Parquet twins,OK
+outputs/pakemis_atomic_annual_aggregates.csv,rebuilt_identical,bytewise,,Atomic annual table,OK
+outputs/pakemis_bagasse_timing_variant.csv,rebuilt_identical,bytewise,,Bagasse timing variant,OK
+outputs/pakemis_brick_activity_reconstruction.csv,rebuilt_identical,bytewise,,Brick activity reconstruction,OK
+outputs/pakemis_brick_coal_alternatives.csv,rebuilt_identical,bytewise,,Brick coal alternatives,OK
+outputs/pakemis_brick_kiln_fleet_by_year.csv,rebuilt_identical,bytewise,,Brick kiln fleet by year,OK
+outputs/pakemis_bridge_configurations.csv,rebuilt_identical,bytewise,,"Bridge configurations (declared, unpopulated)",OK
+outputs/pakemis_btr_comparison.csv,rebuilt_identical,bytewise,,BTR comparison (year-matched),OK
+outputs/pakemis_builtup_comparison_adm2.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_category_crosswalk.csv,rebuilt_identical,bytewise,,Category crosswalk,OK
+outputs/pakemis_cement_activity_sources.csv,rebuilt_identical,bytewise,,Cement activity sources and their overlap,OK
+outputs/pakemis_cement_kiln_coal_reconstruction.csv,rebuilt_identical,bytewise,,Cement kiln coal reconstruction,OK
+outputs/pakemis_citation_deposit_audit.csv,rebuilt_identical,bytewise,,Citation deposit audit,OK
+outputs/pakemis_citation_pointer_audit.csv,rebuilt_identical,bytewise,,Citation pointer audit,OK
+outputs/pakemis_claim_matrix.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Claim matrix' to the same bytes",,Claim matrix,OK
+outputs/pakemis_coal_allocation_cases.csv,rebuilt_identical,bytewise,,Coal sector reallocation,OK
+outputs/pakemis_coal_allocation_identity.csv,rebuilt_identical,bytewise,,Coal allocation identity,OK
+outputs/pakemis_coal_balance.csv,rebuilt_identical,bytewise,,Coal balance,OK
+outputs/pakemis_coal_change_decomposition.csv,rebuilt_identical,bytewise,,Coal change decomposition,OK
+outputs/pakemis_coal_sector_reallocation.csv,rebuilt_identical,bytewise,,Coal sector reallocation,OK
+outputs/pakemis_coal_source_reconciliation.csv,rebuilt_identical,bytewise,,Coal source reconciliation,OK
+outputs/pakemis_coal_vintage_ledger.csv,rebuilt_identical,bytewise,,Coal vintage ledger,OK
+outputs/pakemis_comparison_crosswalk.csv,rebuilt_identical,bytewise,,Comparison crosswalk,OK
+outputs/pakemis_completeness_mass.csv,rebuilt_identical,bytewise,,Completeness-mass ledger,OK
+outputs/pakemis_coverage_matrix.csv,rebuilt_identical,bytewise,,Coverage matrix (year x category x gas x configuration),OK
+outputs/pakemis_coverage_summary.csv,rebuilt_identical,bytewise,,Coverage matrix (year x category x gas x configuration),OK
+outputs/pakemis_data_provenance.csv,rebuilt_identical,bytewise,,Data provenance audit,OK
+outputs/pakemis_deposit_manifest.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Deposit manifest' to the same bytes",,Deposit manifest,OK
+outputs/pakemis_dung_balance.csv,rebuilt_identical,bytewise,,Dung balance,OK
+outputs/pakemis_dung_fate_by_year.csv,rebuilt_identical,bytewise,,Dung fate by year,OK
+outputs/pakemis_dung_residual_ledger.csv,rebuilt_identical,bytewise,,Dung residual ledger,OK
+outputs/pakemis_ensemble_ledger_summary.csv,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/pakemis_ensemble_spatial_conditionals.csv,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/pakemis_ensemble_summary.csv,rebuilt_identical,bytewise,,Common draw ensemble,OK
+outputs/pakemis_enteric_btr_bridge.csv,rebuilt_identical,bytewise,,Enteric BTR bridge,OK
+outputs/pakemis_extension_activity_revisions.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_extension_source_availability.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_extension_source_controls.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_facility_registry.csv,rebuilt_identical,bytewise,,Facility registry,OK
+outputs/pakemis_faostat_nitrogen_flows.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_fertilizer_timing_variant.csv,rebuilt_identical,bytewise,,Fertilizer timing variant,OK
+outputs/pakemis_fgas_leak_rate_adjudication.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_flatness_crosswalk.csv,rebuilt_identical,bytewise,,Flatness crosswalk (TE class vs physics),OK
+outputs/pakemis_forest_flux_adjudication.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_fuel_sulfur_decision.csv,rebuilt_identical,bytewise,,Industrial coal decision,OK
+outputs/pakemis_fy2025_26_provisional_activity.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_fy2025_26_provisional_emissions.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_fy2025_26_provisional_monthly.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_gas_flow_crosswalk.csv,rebuilt_identical,bytewise,,Gas-flow crosswalk,OK
+outputs/pakemis_ghg_conditional_uncertainty.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_ghg_configuration_adm1.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_adm1_monthly.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_adm2.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_adm2_monthly.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_configuration_atoms.csv,rebuilt_identical,bytewise,,Atomic annual table,OK
+outputs/pakemis_ghg_configuration_monthly.csv,rebuilt_identical,bytewise,,"Monthly layer, supported fiscal panel",OK
+outputs/pakemis_ghg_configuration_unallocated.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_ghg_trend_uncertainty.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_ghg_uncertainty_drivers.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_ghg_uncertainty_parameters.csv,rebuilt_identical,bytewise,,GHG conditional uncertainty,OK
+outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_grid_0p05_monthly.nc,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_0p05_monthly_ledger.nc,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_0p1_edgar_aligned.nc,rebuilt_identical,bytewise,,EDGAR-aligned 0.1-degree grid,OK
+outputs/pakemis_grid_fallbacks.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_fallbacks_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_grid_provincial_check.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_stream_surfaces.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_grid_stream_surfaces_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_hfc_bank_series.csv,rebuilt_identical,bytewise,,HFC household bank series,OK
+outputs/pakemis_htap_nh3_annual.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_htap_nh3_monthly.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_industrial_change_attribution.csv,rebuilt_identical,bytewise,,Industrial change attribution,OK
+outputs/pakemis_industrial_coal_bridge.csv,rebuilt_identical,bytewise,,Industrial coal bridge,OK
+outputs/pakemis_industrial_coal_decision.csv,rebuilt_identical,bytewise,,Industrial coal decision,OK
+outputs/pakemis_industrial_coal_scenarios.csv,rebuilt_identical,bytewise,,Industrial coal scenarios,OK
+outputs/pakemis_industrial_screening_series.csv,rebuilt_identical,bytewise,,Industrial screening series,OK
+outputs/pakemis_industry_air_edgar_comparison.csv,rebuilt_identical,bytewise,,Industry air vs EDGAR,OK
+outputs/pakemis_industry_boundary_ledger.csv,rebuilt_identical,bytewise,,Industrial boundary ledger,OK
+outputs/pakemis_industry_edgar_divergence.csv,rebuilt_identical,bytewise,,Industry vs EDGAR divergence,OK
+outputs/pakemis_joint_uncertainty.csv,rebuilt_identical,bytewise,,Joint uncertainty by resolution,OK
+outputs/pakemis_kiln_allocation_adm2.csv,rebuilt_identical,bytewise,,Kiln allocation product,OK
+outputs/pakemis_kiln_frame_adm2_by_type.csv,rebuilt_identical,bytewise,,Kiln frame vectors,OK
+outputs/pakemis_longitudinal_prefix.csv,rebuilt_identical,bytewise,,Longitudinal uncertainty,OK
+outputs/pakemis_longitudinal_uncertainty.csv,rebuilt_identical,bytewise,,Longitudinal uncertainty,OK
+outputs/pakemis_minerals_controls.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_minerals_panel_screening.csv,rebuilt_identical,bytewise,,Minerals panel screening,OK
+outputs/pakemis_monthly_controls.csv,rebuilt_identical,bytewise,,Monthly controls register,OK
+outputs/pakemis_monthly_coverage.csv,rebuilt_identical,bytewise,,"Monthly coverage, all 120 months",OK
+outputs/pakemis_monthly_coverage_summary.csv,rebuilt_identical,bytewise,,"Monthly coverage, all 120 months",OK
+outputs/pakemis_monthly_data_requests.csv,rebuilt_identical,bytewise,,"Monthly data requests (the gap, priced)",OK
+outputs/pakemis_monthly_evidence.csv,rebuilt_identical,bytewise,,"Monthly layer, supported fiscal panel",OK
+outputs/pakemis_monthly_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,"Monthly layer, supported fiscal panel",OK
+outputs/pakemis_monthly_fy2015_16_fy2024_25.parquet,rebuilt_identical,bytewise,,Parquet twins,OK
+outputs/pakemis_monthly_ledger_2024.csv,rebuilt_identical,bytewise,,Survey monthly (configuration S),OK
+outputs/pakemis_national_series.csv,rebuilt_identical,bytewise,,National series,OK
+outputs/pakemis_national_series_coverage.csv,rebuilt_identical,bytewise,,National series,OK
+outputs/pakemis_nitrogen_no_pathways.csv,rebuilt_identical,bytewise,,Air structural sensitivities,OK
+outputs/pakemis_nitrogen_partition_sensitivity.csv,rebuilt_identical,bytewise,,Air structural sensitivities,OK
+outputs/pakemis_ocac_extension_revisions.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_paper_artefact_hashes.csv,rebuilt_identical,bytewise,,Paper artefacts (stored queries),OK
+outputs/pakemis_paper_hashes.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_pass2_scorecard.csv,rebuilt_identical,bytewise,,Pass-2 exit scorecard,OK
+outputs/pakemis_power_admission_adm2_by_class.csv,rebuilt_identical,bytewise,,Power admission vectors,OK
+outputs/pakemis_power_coal_configurations.csv,rebuilt_identical,bytewise,,Power coal configurations,OK
+outputs/pakemis_power_coal_energy_adjudication.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/pakemis_power_coal_rebase_ledger.csv,rebuilt_identical,bytewise,,Power coal re-base ledger,OK
+outputs/pakemis_power_extension_controls.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_power_fuel_reconciliation.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Power fuel reconciliation' to the same bytes",,Power fuel reconciliation,OK
+outputs/pakemis_power_grid_basis_change.csv,rebuilt_identical,bytewise,,Power grid basis change,OK
+outputs/pakemis_power_profile_variant.csv,rebuilt_identical,bytewise,,Power profile variant,OK
+outputs/pakemis_power_province_boundary_audit.csv,rebuilt_identical,bytewise,,Power province boundary audit,OK
+outputs/pakemis_power_provincial_basis_by_year.csv,rebuilt_identical,bytewise,,Power provincial basis by year,OK
+outputs/pakemis_power_reference_audit.csv,rebuilt_identical,bytewise,,Power reference audit,OK
+outputs/pakemis_power_station_status.csv,rebuilt_identical,bytewise,,Power station commissioning check,OK
+outputs/pakemis_primary_geography_licence_audit.csv,rebuilt_identical,bytewise,,Deposit manifest,OK
+outputs/pakemis_product_catalog.csv,rebuilt_identical,bytewise,,Product catalog,OK
+outputs/pakemis_product_coverage.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Product coverage' to the same bytes",,Product coverage,OK
+outputs/pakemis_product_facts.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Product facts registry' to the same bytes",,Product facts registry,OK
+outputs/pakemis_release_axis_fingerprints.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_release_change_summary.csv,rebuilt_identical,bytewise,,Release numerical changes,OK
+outputs/pakemis_rice_geography_crosscheck.csv,rebuilt_identical,bytewise,,Rice geography crosscheck,OK
+outputs/pakemis_road_length_adm2.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_road_links.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_road_links.parquet,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_road_technology_case.csv,rebuilt_identical,bytewise,,Road technology case,OK
+outputs/pakemis_road_weights_adm2.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_sector_note_facts.csv,rebuilt_identical,bytewise,,Sector technical-note facts,OK
+outputs/pakemis_series_splice_agriculture.csv,rebuilt_identical,bytewise,,National series,OK
+outputs/pakemis_source_register.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Deposit manifest' to the same bytes",,Deposit manifest,OK
+outputs/pakemis_source_streams.csv,rebuilt_identical,bytewise,,Source-stream ledger,OK
+outputs/pakemis_spatial_basis_classes.csv,rebuilt_identical,bytewise,,Spatial basis taxonomy,OK
+outputs/pakemis_spatial_basis_shares.csv,rebuilt_identical,bytewise,,Spatial basis taxonomy,OK
+outputs/pakemis_spatial_basis_shares_by_sector.csv,rebuilt_identical,bytewise,,Spatial basis taxonomy,OK
+outputs/pakemis_spatial_brackets.csv,rebuilt_identical,bytewise,,Spatial-allocation brackets,OK
+outputs/pakemis_spatial_brackets_adm2.csv,rebuilt_identical,bytewise,,Spatial brackets (ADM2),OK
+outputs/pakemis_spatial_decomposition.csv,rebuilt_identical,bytewise,,Spatial decomposition (geometry vs ignorance),OK
+outputs/pakemis_spatial_exceptions.csv,rebuilt_identical,bytewise,,Spatial exceptions + ADM2 nesting,OK
+outputs/pakemis_spatial_rebase_rc42.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_spatial_rebase_rc44.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_spatial_unallocated.csv,rebuilt_identical,bytewise,,Gridded monthly cube,OK
+outputs/pakemis_spatial_unallocated_by_year.csv,rebuilt_identical,bytewise,,Fiscal-panel spatial products (ADM1 and ADM2),OK
+outputs/pakemis_spatial_weights_by_year.csv,rebuilt_identical,bytewise,,Spatial weight registry (per stream-year),OK
+outputs/pakemis_stream_support_ledger.csv,rebuilt_identical,bytewise,,Stream-to-support ledger,OK
+outputs/pakemis_structural_trajectories.csv,rebuilt_identical,bytewise,,Structural trajectories,OK
+outputs/pakemis_sulfur_adoption_effect.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_temporal_decomposition.csv,rebuilt_identical,bytewise,,Temporal decomposition (physics vs ignorance),OK
+outputs/pakemis_temporal_profiles.csv,rebuilt_identical,bytewise,,Temporal profile registry,OK
+outputs/pakemis_test_run.json,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pakemis_trend_uncertainty.csv,rebuilt_identical,bytewise,,Longitudinal uncertainty,OK
+outputs/pakemis_unallocated_activity_controls.csv,rebuilt_identical,bytewise,,Unallocated activity controls,OK
+outputs/pakemis_uncertainty_drivers.csv,rebuilt_identical,bytewise,,Uncertainty drivers,OK
+outputs/pakemis_validation_catalog.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Validation catalog + scorecard' to the same bytes",,Validation catalog + scorecard,OK
+outputs/pakemis_validation_five_classes.csv,rebuilt_identical,bytewise,,Validation five classes,OK
+outputs/pakemis_validation_five_classes_summary.csv,rebuilt_identical,bytewise,,Validation five classes,OK
+outputs/pakemis_validation_measured.csv,rebuilt_identical,bytewise,,Measured validation,OK
+outputs/pakemis_validation_scorecard.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Validation catalog + scorecard' to the same bytes",,Validation catalog + scorecard,OK
+outputs/pakemis_validation_sector_scorecard.csv,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Validation catalog + scorecard' to the same bytes",,Validation catalog + scorecard,OK
+outputs/pakemis_wastewater_method_comparison.csv,rebuilt_identical,bytewise,,Wastewater method comparison,OK
+outputs/pbs_minerals_parse_summary.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pbs_minerals_quarantine.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pbs_qim_parse_summary.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/pbs_qim_quarantine.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/power_air_pollutants_fy2023_24.csv,rebuilt_identical,bytewise,,Power air pollutants,OK
+outputs/power_air_screening_fy2015_16_fy2024_25.csv,rebuilt_identical,bytewise,,Air annual panel (supported fiscal panel),OK
+outputs/power_by_stream_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_monthly_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_provincial_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_sir_pbs_overlap.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/power_sir_verification_sample.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/power_table3_hypotheses.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_toe_reconciliation.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/power_totals_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/power_tropomi_extraction_manifest.json,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/power_uncertainty_fy2023_24.csv,rebuilt_identical,bytewise,,Power generation,OK
+outputs/railways_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Railways air pollutants,OK
+outputs/railways_by_stream_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_gis_cells_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/railways_gis_district_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/railways_gis_provincial_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/railways_monthly_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_network_audit_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/railways_provincial_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_route_province_shares_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/railways_totals_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/railways_uncertainty_2024.csv,rebuilt_identical,bytewise,,Railways,OK
+outputs/release_manifest.json,seeded_then_rewritten_identical,"seeded from the registry, then rewritten by phase 'Release manifest' to the same bytes outside the blocks that describe the release checkout (git, source_documents, sources), which a package cannot carry: no .git, no source vault, and a source manifest of its own",,Release manifest,OK
+outputs/residential_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_by_stream_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_configurations_by_year.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_emissions_monthly_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_gis_provincial_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/residential_monthly_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_provincial_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_totals_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/residential_uncertainty_2024.csv,rebuilt_identical,bytewise,,Residential fuel,OK
+outputs/semantic/dim_activity_columns.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_category.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_configuration.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_evidence_class.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_gas.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_geography.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_gwp.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_month.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_notation_key.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_period.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_pollutant.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/dim_stream.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_aviation.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_crops.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_fertiliser.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_fuel_sales_area.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_fuel_sales_national.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_gas_network.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_gas_supply.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_household_fuel.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_industry_fuel.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_industry_production.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_livestock.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_power_monthly.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_power_plants.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_railways.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_source_details.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_vehicles.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_waste_flows.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_activity_waste_services.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_adm1_month.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_adm1_year.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_adm2_month.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_adm2_year.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_absence_screening.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_adm1.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_adm1_year.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_adm2.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_adm2_year.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_annual.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_conditional.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_lahore.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_panel.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_source_classes.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_timeseries.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_air_trend.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_annual.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_annual_calendar.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_completeness.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_completeness_mass.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_evidence.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_ghg_conditional.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_ghg_trend.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_monthly.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_spatial_basis_year.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_transfer.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_unallocated.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_uncertainty.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/fact_uncertainty_series.csv,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/semantic/semantic_release.json,rebuilt_identical,bytewise,,Semantic release,OK
+outputs/sir_archive_download_log.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/transport_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Transport air pollutants,OK
+outputs/transport_by_stream_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_class_fuel_weights_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/transport_class_parameters_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/transport_cng_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_cng_crosscheck_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_cng_proxy_2024.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/transport_monthly_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_provincial_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_provincial_proxy_comparison_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_provincial_shape_brackets.csv,rebuilt_identical,bytewise,,Transport provincial shape,OK
+outputs/transport_totals_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/transport_uncertainty_2024.csv,rebuilt_identical,bytewise,,Road transport,OK
+outputs/uncertainty_montecarlo.csv,rebuilt_identical,bytewise,,Agriculture Monte Carlo,OK
+outputs/unsd_coal_supply_control.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/unsd_industry_combustion_control.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/verification_bundle_contents.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+outputs/waste_air_pollutants_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_by_stream_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_monthly_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_provincial_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_release_assignment_2024.csv,rebuilt_identical,bytewise,,Waste release objects,OK
+outputs/waste_totals_2024.csv,rebuilt_identical,bytewise,,Waste,OK
+outputs/waste_uncertainty_2024.csv,rebuilt_identical,bytewise,,Waste uncertainty,OK
+outputs/waste_uncertainty_inputs_2024.csv,rebuilt_identical,bytewise,,Waste uncertainty,OK
+outputs/waste_uncertainty_scenarios_2024.csv,rebuilt_identical,bytewise,,Waste uncertainty,OK
+research_campaign/energy/plant_fuel_year.csv,seeded,"held product (data/held_products.csv), seeded into the empty outputs/ and verified against its release digest; not rebuilt",,,
+manuscripts,skipped_by_flag,make papers exit skipped,,make papers,skipped

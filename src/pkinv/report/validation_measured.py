@@ -138,40 +138,47 @@ def _closure_rows():
     return out
 
 
+# The newest release whose reproduction record is published under docs/reproduction/. A
+# release's own record is published with the NEXT release (the runs need the finished
+# deposit), so rc70 reads rc69's.
+RECORD = "rc69"
+
+
 def _reproduction_rows():
     out = []
     for check_id, name, label in (
-            ("rebuild_clean_rc68", "clean_rebuild_comparison.csv",
-             "rc68 clean rebuild, compiled inputs"),
-            ("rebuild_unpack_rc68", "unpack_build_comparison.csv",
-             "rc68 deposit, unpacked and built")):
-        path = os.path.join(ROOT, "docs", "reproduction", "rc68", name)
+            ("rebuild_clean_" + RECORD, "clean_rebuild_comparison.csv",
+             RECORD + " clean rebuild, compiled inputs"),
+            ("rebuild_unpack_" + RECORD, "unpack_build_comparison.csv",
+             RECORD + " deposit, unpacked and built")):
+        path = os.path.join(ROOT, "docs", "reproduction", RECORD, name)
         rows = read_rows(path)
         statuses = collections.Counter(r["status"] for r in rows)
         differing = sum(v for k, v in statuses.items() if k.startswith("diff"))
         identical = sum(v for k, v in statuses.items() if "identical" in k)
-        verified = os.path.join(ROOT, "docs", "reproduction", "rc68",
+        verified = os.path.join(ROOT, "docs", "reproduction", RECORD,
                                 "unpack_not_rebuilt_check.csv")
-        if check_id == "rebuild_unpack_rc68" and os.path.exists(verified):
+        if check_id == "rebuild_unpack_" + RECORD and os.path.exists(verified):
             # the files the strict build did not rewrite, compared byte for byte afterwards
             checked = read_rows(verified)
-            same = [r for r in checked if r["bytes_versus_release_commit_6d8e8669"] == "identical"]
+            column = next(c for c in checked[0] if c.startswith("bytes_versus_release_commit"))
+            same = [r for r in checked if r[column] == "identical"]
             differing += len(checked) - len(same)
             identical += len(same)
         out.append(_row(check_id, "reproduction", label, len(rows), "files", differing,
-                        identical, len(rows), "", "", "docs/reproduction/rc68/" + name,
+                        identical, len(rows), "", "", "docs/reproduction/%s/%s" % (RECORD, name),
                         "; ".join("%s %d" % kv for kv in sorted(statuses.items()))))
-    # rc69: the rc68 record as published with the other rc68 runs, not the live
+    # rc69: the record as published with the other runs of its release, not the live
     # outputs/pakemis_test_run.json. That file is written by running the suite on the
     # fixpoint tree, AFTER this table is built, so reading it made the table stale on every
     # release commit (public-checks run 38989549784) and put the new release's count under
     # an "rc68" label.
-    record_path = os.path.join(ROOT, "docs", "reproduction", "rc68", "test_run.json")
+    record_path = os.path.join(ROOT, "docs", "reproduction", RECORD, "test_run.json")
     with open(record_path, encoding="utf-8") as handle:
         record = json.load(handle)
-    out.append(_row("tests_release", "reproduction", "rc68 canonical test run",
+    out.append(_row("tests_release", "reproduction", RECORD + " canonical test run",
                     record["executed"], "tests executed", record["failed"], record["passed"],
-                    record["executed"], "", "", "docs/reproduction/rc68/test_run.json",
+                    record["executed"], "", "", "docs/reproduction/%s/test_run.json" % RECORD,
                     "%d skipped" % record["skipped"]))
     return out
 

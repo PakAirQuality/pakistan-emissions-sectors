@@ -91,11 +91,12 @@ acquisitions, GCD-Rice, a Git checkout or contextual paper hashes.
 Success at one level does not establish success at the others. Use the current
 verification record for the exact tested command, dependencies, phase list,
 failures and numerical/byte comparison. This document does not assert a successful
-full clean rebuild before that record exists. For rc68 it exists:
-[docs/reproduction/rc68](reproduction/rc68/README.md) publishes the clean
-rebuild (level `compiled_inputs`, 15 seeded phases, 0 differences in 465
-files) and the reader's unpack-and-build (0 differences in 395 files). Neither
-re-extracted a primary document.
+full clean rebuild before that record exists. For rc69 it exists:
+[docs/reproduction/rc69](reproduction/rc69/README.md) publishes the clean
+rebuild (level `compiled_inputs`, 15 seeded phases, 0 differences in 470
+files) and the reader's unpack-and-build (0 differences in 400 files), as
+[docs/reproduction/rc68](reproduction/rc68/README.md) does for rc68 (465 and 395
+files). Neither re-extracted a primary document.
 
 Earlier rc62 deposit failure measurements remain in
 campaign/v3_readiness/all_phases_from_deposit.json and deposit_failure_classes.json.
