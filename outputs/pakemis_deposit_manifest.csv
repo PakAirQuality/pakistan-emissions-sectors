@@ -1027,7 +1027,7 @@ outputs/semantic/fact_transfer.csv,product,own-work,"this project's own code, pr
 outputs/semantic/fact_unallocated.csv,product,own-work,"this project's own code, product or prose",primary,,8826479,d0c4a9f7e654e52c94b4a7edfeb3818f223f01cd4a51724ba001239b3c71c82b,,
 outputs/semantic/fact_uncertainty.csv,product,own-work,"this project's own code, product or prose",primary,,65987,3165d515d93c4e0a8c1d8473a0db3b74f376636a7194568744484fabd1ed22c3,,
 outputs/semantic/fact_uncertainty_series.csv,product,own-work,"this project's own code, product or prose",primary,,23706,f59ef7a3eeb2992a2eb645437eddeb4b7ab6cce4bb30fb83ba1d695d253f0bc1,,
-outputs/semantic/semantic_release.json,product,own-work,"this project's own code, product or prose",primary,,1147177,610e4bae16ee2c6f74e5ae34dd66bcc661056a4079056fe4632219a30224613c,,
+outputs/semantic/semantic_release.json,product,own-work,"this project's own code, product or prose",primary,,1147177,1609c74527df7016d4b4de1ed779d42e040dd455a967831f1f7d1f61e969fb8b,,
 outputs/sir_archive_download_log.csv,product,own-work,"this project's own code, product or prose",primary,,797066,7997ac3248422cdb36747a25dd51b981b91b9111c826bcb86aabfc25ffa5bb1d,,
 outputs/transport_air_pollutants_2024.csv,product,own-work,"this project's own code, product or prose",primary,,31642,5b8f6f8b86c14aebb020dfaa4d4c97df2d2f411d6b9ec971b1d53ab25727f734,,
 outputs/transport_by_stream_2024.csv,product,own-work,"this project's own code, product or prose",primary,,2828,d32ff0d0434f71b057496b065814916301fa4b519e0280625c5ba73b7355eb5e,,
