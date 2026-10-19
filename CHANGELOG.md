@@ -1,9 +1,47 @@
 # Changelog — PakEmis
 
-All release-cycle history lives here, not in the manuscripts: the papers describe the
-current method, and this file records how it got there. Each release candidate below
+All release-cycle history lives here: the documentation describes the current method, and
+this file records how it got there. Each release candidate below
 answers an external review round. Historical totals appear here labelled as history — the only
 current national figures are the manifest's.
+
+## [1.0.0rc70] — 19 October 2026
+
+The inventory-only release. No number moves: every emissions product, the four configuration
+pins and the uncertainty products are byte-identical to rc69 apart from version stamps.
+
+### The papers leave this repository
+
+The national article, its supplement, the long report, the sector technical notes, their
+LaTeX, figure and table generators, their tests and the release steps that built them now live
+in a separate repository that reads this one's outputs and never writes into it. This
+repository builds, tests and releases the inventory alone, and names no other repository.
+
+- **Removed:** `paper_national/`, `papers/`, `paper_common/`, `tests/paper_numbers/`, the paper
+  copies in the rc67 baseline, the claim matrix and claims registry, 31 paper-only scripts, the
+  paper modules, 24 paper-only test modules and the 19 historical `mint_rc*.py` scripts.
+- **Products no longer published here:** `pakemis_claim_matrix.csv/.md`,
+  `pakemis_citation_deposit_audit.csv`, `pakemis_paper_hashes.csv`,
+  `pakemis_paper_artefact_hashes.csv` and `pakemis_sector_note_facts.csv`. Each described the
+  papers; none carried an inventory quantity of its own.
+- **The build:** the `manuscript` build kind is now `figures` (the inventory's
+  `outputs/figures/` and the dashboard; `make figures`). The release fixpoint regenerates the
+  manifest and `SHA256SUMS` only.
+- **The deposit:** no manuscript rows. The documentation archive carries the README, `docs/`,
+  the licences and `CITATION.cff`.
+- **The release manifest:** the product block no longer carries a manuscript status or
+  submission identifier.
+- **Where a product is documented:** every `documentation_anchor` in
+  `pakemis_product_catalog.csv` now names a heading of `README.md` or a document under
+  `docs/`, resolved by `tests/test_product_catalog_anchors.py`.
+- **What counts as cited:** the artifact inventory reads `README.md` and `docs/`. Products
+  named only in the papers are now recorded `cited_in=none`; the uncited ceilings were raised
+  to the live counts (canonical 156, sector headline 54, diagnostic 100) with that reason.
+- **Author-year citations in `data/`** resolve against `data/catalog/data_references.csv`
+  (16 references), extracted from the bibliography that left with the papers.
+- **Tests:** the inventory half of the release-integrity suite is
+  `tests/test_release_integrity.py`. Tests that checked a paper's text moved with the papers;
+  the inventory checks beside them stayed.
 
 ## [1.0.0rc69] — 17 October 2026
 
