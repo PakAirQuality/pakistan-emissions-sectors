@@ -130,8 +130,7 @@ class TestTheReconciliationIsPublished(unittest.TestCase):
         camels are out by eight, so the claim was false and may not return."""
         import glob
         offenders = []
-        for pattern in ("scripts/*.py", "src/pkinv/**/*.py", "papers/**/*.tex",
-                        "data/*.csv", "docs/*.md"):
+        for pattern in ("scripts/*.py", "src/pkinv/**/*.py", "data/*.csv", "docs/*.md"):
             for path in glob.glob(os.path.join(os.path.dirname(DATA), pattern),
                                   recursive=True):
                 with open(path, encoding="utf-8", errors="replace") as handle:

@@ -14,7 +14,6 @@ probability, and a column suggesting one is a build failure, not a modelling cho
 from pkinv.assets import asset_path
 import csv
 import os
-from pkinv.paths import PAPER_NATIONAL_SECTIONS  # noqa: E402
 import unittest
 from pkinv.core.io import read_rows
 from _support import OUT, ROOT
@@ -133,27 +132,6 @@ class TestNationalConfigurations(unittest.TestCase):
                          "unresolved_jp1_in_scope",
                          "rail_ie_summary"):
             self.assertIn(expected, ids)
-
-    def test_the_prose_names_the_integrated_native_configurations(self):
-        """The maintained paper names four complete configurations. The older
-        single-axis reference-year case register is a separate product, so its
-        number of scenarios must not be substituted for that native vocabulary.
-        Check the actual named identifiers against the exported annual records.
-        """
-        import re
-        from pkinv.core import configurations
-        from pkinv.core.reporting_window import CORE_PERIOD_IDS
-        path = os.path.join(PAPER_NATIONAL_SECTIONS,
-                            "07_uncertainty.tex")
-        text = " ".join(open(path, encoding="utf-8").read().split())
-        self.assertIn("four integrated configurations", text)
-        named = {household + "_" + nitrogen for household, nitrogen
-                 in re.findall(r"([SL])\\_(TAN|IPCC)", text)}
-        self.assertEqual(named, set(configurations.ALL))
-        exported = read_rows(os.path.join(OUT, "pakemis_ghg_configuration_atoms.csv"), comments=False)
-        support = {(r["period_id"], r["configuration_id"]) for r in exported}
-        self.assertEqual(support, {(period, configuration) for period in CORE_PERIOD_IDS
-                                   for configuration in named})
 
     def test_the_fugitives_envelope_is_a_family(self):
         """The ninth review: the reference must not read as a neutral centre

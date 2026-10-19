@@ -40,7 +40,7 @@ def main():
     manifest = read_rows(str(ROOT / "outputs/pakemis_deposit_manifest.csv"))
     copied = []
     for row in manifest:
-        if row["kind"] not in {"code", "build", "input", "documentation", "manuscript", "manuscript_source"}:
+        if row["kind"] not in {"code", "build", "input", "documentation"}:
             continue
         source = ROOT / row["path"]
         if row["sha256"] and sha(source) != row["sha256"]:
@@ -104,7 +104,7 @@ def main():
             "--seeded", "logs/seeded_products.json"], cwd=tree, env=environment,
             stdout=log, stderr=subprocess.STDOUT)
     result = subprocess.run([python, str(tree / "tests/validation/compare_outputs.py"),
-        str(ROOT), str(tree), str(work / "comparison.csv"), "skipped"], env=environment)
+        str(ROOT), str(tree), str(work / "comparison.csv")], env=environment)
     summary = dict(level="compiled_inputs", source_extraction_repeated=False,
         build_exit=process.returncode, comparison_exit=result.returncode,
         seeded_source_phases=DEPOSIT_SOURCE_PHASES, work=str(work))

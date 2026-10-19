@@ -25,9 +25,7 @@ class IntegratedDeposit(unittest.TestCase):
     def test_reproduction_fixtures_and_plotted_data_are_in_package_selection(self):
         patterns = dict(manifest.DEPOSIT_PATTERNS)
         required = {
-            "code": ("tests/paper_numbers/retired_sentence_claims_rc68.json",
-                     "tests/semantic/golden/national_total_reference_fy2023_24.json"),
-            "manuscript_source": ("paper_national/figures/integrated_inputs/integrated_facts.csv",),
+            "code": ("tests/semantic/golden/national_total_reference_fy2023_24.json",),
             "documentation": ("campaign/v3_readiness/repair_register.csv",
                               "campaign/v3_readiness/reproduction_rc68/result.json"),
         }
@@ -70,15 +68,17 @@ class IntegratedDeposit(unittest.TestCase):
                 self.assertEqual(64, len(metadata["software_content_sha256"]))
                 self.assertIn("working_tree_modified", metadata)
 
-    def test_documentation_contains_full_source_and_retains_third_party_terms(self):
+    def test_documentation_carries_the_documentation_rows_and_the_licences(self):
         builder = load("deposit_docs", "scripts/build_deposit_zip.py")
-        rows = [{"kind": "manuscript_source", "path": "paper_national/versions/v3/paper.tex"},
-                {"kind": "manuscript_source", "path": "paper_common/copernicus/copernicus.cls"}]
+        rows = [{"kind": "documentation", "path": "docs/reproducibility.md",
+                 "package_group": "primary"},
+                {"kind": "product", "path": "outputs/national_all_sectors.csv",
+                 "package_group": "primary"}]
         paths = dict(builder.documentation_layout(rows))
-        self.assertIn(rows[0]["path"], paths)
-        licence, reason = manifest.licence_of_deposited(rows[1]["path"], {})
-        self.assertEqual(manifest.PUBLIC_LICENCE, licence)
-        self.assertIn("LPPL", reason)
+        self.assertIn("docs/reproducibility.md", paths)
+        self.assertNotIn("outputs/national_all_sectors.csv", paths)
+        for name in ("LICENSE-data", "LICENSE-ODbL", "CITATION.cff"):
+            self.assertIn(name, paths)
 
     def test_restore_layout_preserves_inputs_and_reproduction_outputs(self):
         unpacker = load("deposit_layout", "scripts/unpack_deposit.py")

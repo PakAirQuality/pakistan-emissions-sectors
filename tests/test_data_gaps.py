@@ -23,7 +23,6 @@ Run:  python3 -m unittest discover tests -p "test_data_gaps.py"
 import csv
 import glob
 import os
-from pkinv.paths import PAPER_NATIONAL_SECTIONS  # noqa: E402
 import re
 import unittest
 
@@ -32,11 +31,11 @@ from _support import ROOT
 
 GAPS = completeness.load_data_gaps()
 
-# Sections whose prose is checked for absolute claims. The manuscripts are the surface a reader
-# actually meets, so a claim corrected in the completeness table and left standing in a paper is
-# only half corrected - which is the state the audit found this inventory in.
-MANUSCRIPTS = sorted(glob.glob(os.path.join(ROOT, "papers", "*", "sections", "*.tex"))
-                     + glob.glob(os.path.join(PAPER_NATIONAL_SECTIONS, "*.tex")))
+# The prose checked for absolute claims: the README is the surface a reader of this repository
+# meets first, so a claim corrected in the completeness table and left standing there is only
+# half corrected - which is the state the audit found this inventory in. (rc70: the papers this
+# guard was written for are checked where they now live; docs/ was never under it.)
+MANUSCRIPTS = [os.path.join(ROOT, "README.md")]
 
 # Absolute wording is legitimate about things other than data availability - "no memo stream",
 # "no electric traction", "no external comparator". The guard fires on a phrase only when it is
@@ -208,14 +207,14 @@ class TestAbsoluteClaims(unittest.TestCase):
                 problems.append("%s: %r\n      %s"
                                 % (os.path.relpath(path, ROOT), phrase, window.strip()))
         self.assertFalse(problems,
-                         "manuscript prose asserts a datum does not exist. Either say what "
+                         "documentation prose asserts a datum does not exist. Either say what "
                          "this inventory did (\"not obtained here\"), or add the sentence to "
                          "the allowlist with a no-data-exists register row behind it:\n  "
                          + "\n  ".join(problems))
 
     # Claims stronger than the inventory's own evidence, each with the phrasing that is
-    # supportable. These are not vocabulary bans: every one was in the flagship manuscript
-    # while the same manuscript's limitations section contradicted it.
+    # supportable. These are not vocabulary bans: every one was once published while the same
+    # document's limitations section contradicted it.
     OVERREACH = [
         (r"\bcomplete ten-sector\b",
          "the completeness table names ~45 Mt of absent sources - say which sources are "

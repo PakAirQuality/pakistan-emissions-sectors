@@ -8,7 +8,7 @@ urea, with the emission-factor library and the provincial downscale behind them.
 residential sector's dung-cake closure reads `manure` directly, so this is load-bearing well
 outside agriculture.
 
-THE MANUSCRIPT LAYERS, which the sector paper in papers/agriculture/ reports and nothing else
+THE SECTOR-ONLY LAYERS, which the sector's own documentation reports and nothing else
 depends on: the nitrogen ledger, the agriculture-scoped Monte Carlo and key-category screen,
 the 1990-2024 trend, the air-pollutant trend and uncertainty tables, the manure-management
 sensitivity, and the gridded and district surfaces under gis/.

@@ -50,7 +50,7 @@ class TestWhatThisRepositoryTracks(unittest.TestCase):
                      "outputs/release_manifest.json", "data/catalog/document_retention.csv",
                      "data/catalog/raw_manifest.csv", "NOTICE-ODbL.md", "LICENSE-ODbL",
                      "data/shared/gis/manual/ghsl_built_1km/GHSL_SOURCES.json",
-                     "paper_national/versions/v3/paper.tex", "docs/restricted_layers.md"):
+                     "docs/restricted_layers.md"):
             self.assertTrue(path in self.tracked, "%s is this project's own and is not tracked" % path)
 
 
@@ -90,19 +90,18 @@ class TestTheAddressesAReaderIsGiven(unittest.TestCase):
         self.assertEqual(release.OWNER, "PakAirQuality")
         self.assertNotIn("RehanAhmad13/%s" % release.REPO, self._text("CITATION.cff"))
 
-    def test_the_article_and_the_readme_name_the_explorer(self):
-        article = self._text("paper_national", "versions", "v3", "paper.tex")
-        self.assertIn("\\url{%s}" % release.EXPLORER_URL, article)
-        self.assertIn("\\url{%s}" % release.INITIATIVE_URL, article)
-        self.assertIn(release.EXPLORER_URL, self._text("README.md"))
+    def test_the_readme_names_the_explorer(self):
+        readme = self._text("README.md")
+        self.assertIn(release.EXPLORER_URL, readme)
+        self.assertIn(release.INITIATIVE_URL, readme)
 
     def test_nothing_says_which_release_the_explorer_serves(self):
         """It is deployed separately. A sentence saying it serves this release goes false
         the day either one moves."""
-        article = self._text("paper_national", "versions", "v3", "paper.tex")
-        sentence = article[article.index(release.EXPLORER_URL) - 200:
-                           article.index(release.EXPLORER_URL) + 400]
-        self.assertIn("version of record", sentence)
+        readme = self._text("README.md")
+        sentence = readme[readme.index(release.EXPLORER_URL) - 200:
+                          readme.index(release.EXPLORER_URL) + 400]
+        self.assertIn("can serve an earlier release", sentence)
         self.assertNotRegex(sentence, r"serves (this|the current) release")
 
     def test_the_repository_explains_what_it_does_not_hold(self):

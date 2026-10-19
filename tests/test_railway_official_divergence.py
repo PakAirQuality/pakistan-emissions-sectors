@@ -132,45 +132,6 @@ class TestTheRailwayDivergenceIsPlaced(unittest.TestCase):
             "which is the defect the matched-year table was built to fix."
             % peak["period"])
 
-    def test_the_paper_and_the_product_use_ONE_denominator_for_the_crt_ratio(self):
-        """The defect this file was written for.
-
-        Four sites printed "eleven times the metered fuel" as a WORD - which
-        quantity_policy cannot see, since it sweeps siunitx arguments and numeric tabular
-        cells - against FY2021-22's metered mass alone. The product declares the mean of the
-        two fiscal years calendar 2022 straddles. Same comparison, two denominators, and the
-        word was the smaller of them.
-        """
-        import io as _io
-        import re as _re
-        printed = []
-        for name in ("00_abstract", "01_introduction", "07_discussion", "09_conclusion"):
-            path = os.path.join(ROOT, "papers", "railways", "sections", "%s.tex" % name)
-            if not os.path.exists(path):
-                continue
-            with _io.open(path, encoding="utf-8") as handle:
-                text = handle.read()
-            self.assertNotIn(
-                "eleven times", text,
-                "%s prints the CRT activity ratio as a spelled-out word again. A word-number "
-                "is invisible to the quantity sweep, which is how this one stayed 12 per cent "
-                "low across four sites including the abstract." % name)
-            printed += [float(v) for v in
-                        _re.findall(r"\\num\{([\d.]+)\} times the metered", text)]
-            printed += [float(v) for v in
-                        _re.findall(r"activity cell is \\num\{([\d.]+)\} times", text)]
-        self.assertTrue(printed, "no site prints the CRT activity ratio any more")
-        declared = float(self.by["crt2022"]["implied_over_metered"])
-        self.assertIn("mean", self.by["crt2022"]["match_basis"],
-                      "the CRT row no longer declares which denominator it uses, which is "
-                      "the whole reason the paper and the product could disagree")
-        for value in printed:
-            self.assertAlmostEqual(
-                value, declared, delta=0.05,
-                msg="a site prints %.2f where the product computes %.3f against its own "
-                    "declared basis. If the basis changed, change it in the product and let "
-                    "the claims move the prose." % (value, declared))
-
 
 if __name__ == "__main__":
     unittest.main()

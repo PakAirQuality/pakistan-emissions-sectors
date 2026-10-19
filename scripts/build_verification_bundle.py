@@ -33,7 +33,7 @@ WHERE EACH SIDE COMES FROM, and why neither is hand-listed here.
             write, or none, is national and is reported, never guessed at.
 
   RESULTS   Computed through the published query core (src/pakemis_query) against the
-            semantic release, so a view in the bundle and the same figure in the manuscript
+            semantic release, so a view in the bundle and the same figure published elsewhere
             are the same arithmetic, carrying the same receipt. The activity views are
             declared in data/verification_activity_views.csv.
 
@@ -495,9 +495,9 @@ def readme(sector, sources, outputs, results, drift):
         "## What a view may be used to claim",
         "",
         "The `results/` tables are not a second inventory. Each is a query against the same",
-        "semantic release the manuscripts cite, and each carries its receipt in the `.receipt.json`",
+        "semantic release the products come from, and each carries its receipt in the `.receipt.json`",
         "beside it: the release id, the exact request, and the SHA-256 of the result. A number",
-        "here and the same number in the paper are the same arithmetic or one of them is a bug.",
+        "here and the same number in a product are the same arithmetic or one of them is a bug.",
         "",
         "Sums are exact decimal sums; `exact` is the full-precision value and `display` is the",
         "release's own rounding. Air species are kilotonnes of that species - never CO2e, and",
@@ -516,7 +516,7 @@ def readme(sector, sources, outputs, results, drift):
         "",
         "## Roles in `outputs/manifest.csv`",
         "",
-        "`sector_headline` is a result the manuscripts quote; `canonical` is a published product;",
+        "`sector_headline` is a sector's headline result; `canonical` is a published product;",
         "`diagnostic` is a check the build runs on itself; `intermediate` is a working file that",
         "no reader-facing claim rests on. The vocabulary is `data/artifact_roles.csv`.",
     ]
@@ -537,8 +537,7 @@ COMMON = "_common"
 # a writer moves, a new subdirectory appears - and the failure mode is a shipped product in no
 # zip, which is the exact defect this round exists to fix. 380 files, 222 MB, were in that
 # state: 86 CANONICAL products including the nine-year national panel, all four grid cubes,
-# every Monte Carlo draw file, the validation catalog, and the claim matrix - the table saying
-# which number backs each claim in the papers.
+# every Monte Carlo draw file and the validation catalog.
 #
 # Shipping every output once makes the guarantee structural instead of arithmetic: "every file
 # in outputs/ is in _common.zip" cannot be true-except-for-one. The sector zips keep their own
@@ -570,8 +569,8 @@ def _tracked():
 
     `git ls-files` exits 128 with an empty stdout when there is no repository, and the first
     version of this function passed that straight through: common_members() would then have
-    built a _common.zip containing outputs/ and NOTHING ELSE - no code, no data, no docs, no
-    papers - and said nothing. A package that silently omits the half a reviewer needs is worse
+    built a _common.zip containing outputs/ and NOTHING ELSE - no code, no data, no docs -
+    and said nothing. A package that silently omits the half a reviewer needs is worse
     than a build that stops, and the validation package tree is exactly a place this runs
     outside a checkout.
     """
@@ -647,9 +646,6 @@ def common_members():
             members.append((rel, rel))
         elif top == "validation_package":
             members.append(("validation/" + rel[len("validation_package/"):], rel))
-        elif rel.startswith("papers/pdf/") or (rel.startswith("paper_national/")
-                                               and rel.endswith(".pdf")):
-            members.append(("papers/" + os.path.basename(rel), rel))
     seen, out = set(), []
     for arc, rel in sorted(members):
         if arc not in seen and os.path.isfile(asset_path(ROOT, rel)):
@@ -665,7 +661,7 @@ def common_readme(members, roles):
         "",
         "The ten sector archives beside this one carry the documents each sector rests on and",
         "the results it reached. This one carries everything they share: every file the release",
-        "writes, the code that wrote it, the data it reads, the method notes and the papers.",
+        "writes, the code that wrote it, the data it reads and the method notes.",
         "",
         "| part | files | what it is |",
         "| --- | --- | --- |",
@@ -673,11 +669,10 @@ def common_readme(members, roles):
     for prefix, description in (
             ("outputs", "EVERY file this release writes - the national roll-ups, the semantic "
                         "layer, the four grid cubes, the Monte Carlo draws, the validation "
-                        "catalog and the claim matrix included"),
+                        "catalog included"),
             ("code", "src/, scripts/ and tests/ as committed, with the Makefile and run_all.py"),
             ("data", "the activity tables, parameters and registries the engines read"),
             ("docs", "the method note, the QA/QC note, completeness, and the contracts"),
-            ("papers", "the built manuscripts and supplements"),
             ("validation", "reproduce.sh, validate.sh and the Dockerfile")):
         lines.append("| `%s/` | %d | %s |" % (prefix, counts.get(prefix, 0), description))
     lines += [
@@ -756,7 +751,7 @@ landed nearest would manufacture agreement rather than test it, so it is not don
 
 ## Roles in `outputs/manifest.csv`
 
-`sector_headline` is a result the manuscripts quote; `canonical` is a published product;
+`sector_headline` is a sector's headline result; `canonical` is a published product;
 `derivation` is the audit chain; `diagnostic` is a check the build runs on itself;
 `intermediate` is a working file no reader-facing claim rests on. The vocabulary is
 `data/artifact_roles.csv`, shipped in `_common.zip`.
@@ -894,8 +889,8 @@ evidence: the register lets anyone prove they hold the same document.
 4. `<sector>.zip` -> `process/METHOD.md` - what each of those may be used to claim.
 5. `<sector>.zip` -> `manifest.csv` and `sources/` - the documents, each with a SHA-256.
 6. `_common.zip` -> `outputs/` - every product the release writes, the sector files included.
-7. `_common.zip` -> `code/`, `docs/`, `papers/`, `validation/` - the software, the method
-   notes, the manuscripts, and the scripts that re-run both.
+7. `_common.zip` -> `code/`, `docs/`, `validation/` - the software, the method
+   notes, and the scripts that re-run them.
 
 ## Checking it
 
@@ -1061,7 +1056,7 @@ def main(argv=None):
 
     if set(sectors) == set(SECTORS):
         common, withheld = build_common(args.out, roles, dry_run=args.dry_run)
-        print("%-12s %5d members  (every output once, plus code, data, docs and papers)"
+        print("%-12s %5d members  (every output once, plus code, data and docs)"
               % (COMMON, len(common)))
         if withheld:
             print("%-12s %5d withheld and registered in WITHHELD.csv (no redistribution answer)"

@@ -1,10 +1,10 @@
-"""One authoritative answer per fact a manuscript might state about the products.
+"""One authoritative answer per fact a document might state about the products.
 
 WHY THIS EXISTS. An external reviewer graded the 108-month product D - "it still does not
 exist; only the reference year has twelve allocated months" - and made building it the
 highest-leverage next task. It exists: outputs/pakemis_monthly_fy2015_16_fy2024_25.csv holds
-16,824 rows over 108 distinct months, 201507 to 202406. The reviewer had read the manuscripts,
-and paper_national/supplement.tex said in as many words that the product did not exist.
+16,824 rows over 108 distinct months, 201507 to 202406. The reviewer had read the published
+description, and it said in as many words that the product did not exist.
 
 That sentence was written to keep an allocated month from being read as an observed one, which
 is the distinction this whole programme insists on. It was true about the EVIDENCE and false

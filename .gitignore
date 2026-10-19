@@ -65,43 +65,16 @@ data/private/aviation/
 # (nothing under sources/ is excluded)
 
 # ---------------------------------------------------------------------------
-# LaTeX build artefacts (regenerable; .tex/.bib/.bbl/.pdf are kept)
+# Hand-made archives and build logs
 # ---------------------------------------------------------------------------
-# Each paper compiles to paper.pdf beside its source; `make sector-papers` then copies it
-# to papers/pdf/<sector>_paper.pdf, which is the tracked artefact. Committing both would
-# version the same document twice under two names.
-papers/*/paper.pdf
-papers/*/supplement.pdf
-# rc36: three PDFs committed under other names slipped the two rules above and
-# went three weeks stale beside the papers/pdf/ copies. Any PDF under a paper's
-# own directory is a build artefact; only papers/pdf/ is tracked.
-papers/*/*.pdf
-!papers/pdf/*.pdf
-# The national supplement compiles beside its source and `make paper-national` copies it to
-# papers/pdf/national_supplement.pdf, which is the tracked artefact. paper_national.pdf itself
-# is tracked for historical reasons and is left alone; this stops the SECOND copy appearing.
-paper_national/versions/*/supplement.pdf
-# A zip of papers/pdf/, made by hand to send somewhere. Every file inside it is already
-# versioned, and an 8 MB archive of tracked files is a second vintage waiting to be quoted.
-papers/pdf.zip
-# Same reasoning, same shape: hand-made bundles of a sector's raw documents and parsed
-# activity files, for sending to someone who does not have the repository. Every file
-# inside is tracked, so the archive is a second vintage the moment it is quoted from.
+# Hand-made bundles of a sector's raw documents and parsed activity files, for sending to
+# someone who does not have the repository. Every file inside is tracked, so the archive is a
+# second vintage the moment it is quoted from.
 /agriculture.zip
 /*_bundle.zip
 /*_audit.zip
 /agriculture_*.zip
-*.aux
 *.log
-*.out
-*.blg
-*.fls
-*.fdb_latexmk
-*.synctex.gz
-*.spl
-*.toc
-*.lof
-*.lot
 .venv/
 
 # The rail, kiln, landfill and road networks, and the FIRMS extraction, were whitelisted
@@ -155,9 +128,6 @@ scratch/
 # instructions require that location. Local campaign scaffolding, not project documentation.
 /PakEmis_24h_Claude_Master_Prompt.md
 /PakEmis_24_hour_prompt.txt
-
-# Other authors' figures, kept locally for the design study only (see figure_design_study.md)
-/paper_national/figures/redesign/reference_board/
 
 # ---------------------------------------------------------------------------
 # THE RESTRICTED LAYERS (rc69). Development happens in this public repository; the

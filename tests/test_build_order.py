@@ -33,7 +33,7 @@ class TestTheRealBuildIsConsistent(unittest.TestCase):
     def test_every_phase_has_a_key_output(self):
         for p in run_all.PHASES:
             self.assertTrue(p.writes, p.label)
-            self.assertTrue(p.key_output.startswith(("outputs/", "data/", "paper_national/")),
+            self.assertTrue(p.key_output.startswith(("outputs/", "data/")),
                             p.label)
 
     def test_labels_are_unique_and_the_flags_are_where_the_side_tuples_were(self):
@@ -46,11 +46,11 @@ class TestTheRealBuildIsConsistent(unittest.TestCase):
                           "Residential air pollutants", "Railways air pollutants",
                           "Aviation air pollutants"])
         # rc41: the ADM2 registry phase rewrites only what differs (a rerun is byte-identical
-        # and touches nothing), so like the figure sync it is checked for existence only
+        # and touches nothing), so it is checked for existence only
         self.assertEqual([p.label for p in run_all.PHASES if p.idempotent],
                          ["ADM2 reporting units", "Residential own-year degree-days",
                           "Compatibility input views", "Canonical activity tables",
-                          "Semantic release", "Sync paper figures"])
+                          "Semantic release"])
 
 
 class TestTheCheckerCatchesSabotage(unittest.TestCase):

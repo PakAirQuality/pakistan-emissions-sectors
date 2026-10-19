@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := build
-.PHONY: dev release-check layers public-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national sync-figures paper-national paper-v3 paper-v3-review sector-papers papers figures clean
+.PHONY: dev release-check layers public-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national figures clean
 
 # Full national pipeline: nine sectors, then the cross-sector layer.
 all: full
@@ -214,19 +214,19 @@ clinker-trade:
 	python3 scripts/fetch_comtrade_clinker.py
 	python3 -m pkinv.sectors.ippu.trade_evidence
 
-# Optional, network. Tries to replace the transport paper's air-pollutant-derived
+# Optional, network. Tries to replace the transport sector's air-pollutant-derived
 # EDGAR scope inference with direct GHG category data. Exits non-zero and writes
 # nothing when the product is unavailable, which is the current state.
 edgar-ghg-categories:
 	python3 scripts/fetch_edgar_ghg_categories.py
 
-# The release dance: commit content first, then this regenerates manifest + cover + PDFs
-# on the clean tree so the shipped provenance box names the content commit with no
-# "(working tree modified)" suffix. Finish with the artifacts-only commit it prints.
+# The release dance: commit content first, then this regenerates the manifest and checksums
+# on the clean tree so the release names the content commit with no "(working tree
+# modified)" flag. Finish with the artifacts-only commit it prints.
 release-fixpoint:
 	python3 scripts/release_fixpoint.py
 
-# The hand-run evaluation lane (rc36): products the manuscripts and the uncertainty
+# The hand-run evaluation lane (rc36): products the documentation and the uncertainty
 # contract cite, whose writers are in this repository but outside `national` by design
 # (research-grade, slow, or waiting on an acquisition). Runnable by name, never orphaned.
 eval:
@@ -239,116 +239,9 @@ eval:
 	python3 -m pkinv.eval.buffalo_implied_ef
 	python3 -m pkinv.eval.spatial_nh3_validation
 
-sync-figures: figures-v3
-
-# --- Manuscripts ------------------------------------------------------------
-# All share paper_common/{preamble,references}. Every target syncs figures from
-# outputs/ first, so a manuscript cannot quietly ship a stale chart.
-#
-# These target names collide with the directories of the same name, which is why
-# they are all in .PHONY above - without that, make sees the directory, decides
-# there is nothing to be done, and silently does nothing.
-# The copy into papers/pdf/ is not cosmetic. This target compiled in place and stopped,
-# so papers/pdf/national_paper.pdf was whatever an earlier manual copy had left there -
-# a distributed PDF that could disagree with the tested manuscript indefinitely, with no
-# test able to see it. The same directory had already shipped a stale README to a reviewer.
-# The national article is a Copernicus (ESSD) manuscript; the class is vendored under
-# paper_common/copernicus/ and reached through TEXINPUTS/BSTINPUTS rather than installed.
-# Article, then supplement, then the article again: the two resolve each other's labels
-# through xr (.aux files), so the first pass of the article runs before the supplement's
-# .aux exists and the third pass picks it up. latexmk makes the extra pass a no-op when
-# nothing changed.
-# ABSOLUTE, not ../: the national paper now lives one version directory deeper
-# (paper_national/versions/<v>/), and a relative TEXINPUTS would have to be recounted for
-# every version. $(CURDIR) is the repository root whatever the target's cwd is, so a v3 at
-# any depth needs no Makefile edit.
-COPERNICUS = TEXINPUTS=$(CURDIR)/paper_common/copernicus//: BSTINPUTS=$(CURDIR)/paper_common/copernicus//:
-
-# THE NATIONAL PAPER IS VERSIONED. paper_national/versions/<v>/ holds one self-contained
-# version; NATIONAL_VERSION names the one the release builds, hashes and ships, and
-# paper_national/CURRENT is a symlink to it for a reader arriving at the directory. The
-# figures and the stored-query registry are shared at paper_national/ because they are
-# inputs to every version rather than part of any one.
-#
-# To promote a version: change NATIONAL_VERSION here and PAPER_NATIONAL_CURRENT in
-# src/pkinv/paths.py, repoint CURRENT, and run the release dance. Those are the only two
-# strings; everything else resolves through them.
-NATIONAL_VERSION ?= v3
-NATIONAL_DIR = paper_national/versions/$(NATIONAL_VERSION)
-
-# ONE COMPILE PER DELIVERABLE (rc69). The v3 article, its review layout and the technical
-# supplement are each compiled once, from their maintained sources, and copied to the
-# release filenames. Until rc68 the wrappers paper_national.tex and supplement.tex (one
-# \input line each) were compiled as well, producing byte-for-byte the same PDFs a second
-# time, and submission.tex was compiled by two targets. The wrappers stay as stable entry
-# points for a reader; nothing builds them. v3 has no cross-document references, so no
-# article-supplement-article pass is needed; v1 keeps its own in its own directory.
-paper-national: paper-v3 paper-v3-review paper-v3-supplement
-	@mkdir -p papers/pdf
-	cp $(NATIONAL_DIR)/paper_national.pdf papers/pdf/national_paper.pdf
-	cp $(NATIONAL_DIR)/supplement.pdf papers/pdf/national_supplement.pdf
-	cp $(NATIONAL_DIR)/submission.pdf papers/pdf/national_submission.pdf
-	# v1, the long report, reads v3's generated facts and was rewritten for rc68; until then this
-	# target only copied its PDF, so an edit to v1 or to those facts shipped a stale long report.
-	cd paper_national/versions/v1 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper_national.tex
-	cd paper_national/versions/v1 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode supplement.tex
-	@if [ -f paper_national/versions/v1/paper_national.pdf ]; then cp paper_national/versions/v1/paper_national.pdf papers/pdf/national_long_report.pdf; fi
-
-# v3 is the current integrated article and technical supplement. Frozen v2 sources remain
-# historical records and are never rebuilt by these targets.
-#
-# ONE FIGURE STAGE. Every figure, generated table and TeX fact file the manuscripts read is
-# a registered build phase of kind `manuscript` (src/pkinv/run_all.py, CATEGORIES), run in
-# registry order by the build with its cache. Until rc68 this target ran five scripts by
-# hand, four of which were also registry phases, and the paper targets depended only on
-# sync-figures, so under `make -j` a compile could start while a figure was being redrawn.
-# Every compile now depends on this one stage. All figures are drawn at their printed size
-# by src/pkinv/report/manuscript_style.py.
-figures-v3:
-	python3 -m pkinv.build --group manuscript $(BUILD_ARGS)
-
-papers-v3: paper-v3 paper-v3-review paper-v3-supplement
-
-paper-v3: figures-v3
-	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode paper.tex
-	cp paper_national/versions/v3/paper.pdf paper_national/versions/v3/paper_national.pdf
-
-paper-v3-review: figures-v3
-	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode submission.tex
-
-# The technical supplement uses the same unmodified Copernicus class and
-# generated release facts as the article and review-layout source.
-paper-v3-supplement: figures-v3
-	cd paper_national/versions/v3 && $(COPERNICUS) latexmk -pdf -interaction=nonstopmode technical_supplement.tex
-	cp paper_national/versions/v3/technical_supplement.pdf paper_national/versions/v3/supplement.pdf
-
-# One self-contained manuscript per sector. Skips papers not yet written, so this target is
-# usable from the first one onwards rather than only when all nine exist.
-SECTORS = agriculture waste transport power residential ippu fugitives railways aviation
-
-# Each paper compiles in its own directory - LaTeX needs \graphicspath and the aux files
-# beside the source - then lands in papers/pdf/ under its sector's name. Nine files called
-# paper.pdf in nine directories is not something you can hand to anyone; one folder of
-# <sector>_paper.pdf is. The in-place paper.pdf is the intermediate and is gitignored.
-sector-papers: figures-v3
-	@mkdir -p papers/pdf
-	@for s in $(SECTORS); do \
-		if [ -f papers/$$s/paper.tex ]; then \
-			echo "-> papers/$$s"; \
-			( cd papers/$$s && latexmk -pdf -interaction=nonstopmode paper.tex ) || exit 1; \
-			cp papers/$$s/paper.pdf papers/pdf/$$s\_paper.pdf; \
-			if [ -f papers/$$s/supplement.tex ]; then \
-				( cd papers/$$s && latexmk -pdf -interaction=nonstopmode supplement.tex ) || exit 1; \
-				cp papers/$$s/supplement.pdf papers/pdf/$$s\_supplement.pdf; \
-			fi; \
-		fi; \
-	done
-	@echo "collected $$(ls papers/pdf/*.pdf 2>/dev/null | wc -l | tr -d ' ') PDFs in papers/pdf/"
-
-papers: paper-national paper-v3 paper-v3-review paper-v3-supplement sector-papers
-
-# Regenerate every figure the manuscripts use, straight from the engine outputs.
-figures: figures-v3
+# The inventory's own figures (outputs/figures/) and the dashboard: the `figures` build kind.
+figures:
+	python3 -m pkinv.build --group figures $(BUILD_ARGS)
 
 clean:
 	rm -f outputs/*.csv outputs/*.md outputs/*.html outputs/*.png

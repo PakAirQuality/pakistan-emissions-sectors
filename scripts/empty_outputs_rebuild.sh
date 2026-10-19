@@ -34,7 +34,7 @@ TREE="$WORK/tree"
 echo "empty-outputs rebuild of $ROOT in $TREE" | tee -a "$LOG"
 
 mkdir -p "$TREE"
-for item in src scripts data tests docs paper_national papers paper_common sources capsule \
+for item in src scripts data tests docs sources capsule \
             validation_package .github Makefile pyproject.toml run_all.py CHANGELOG.md CITATION.cff README.md \
             requirements.txt requirements.lock LICENSE LICENSE-data .zenodo.json .gitignore; do
   [ -e "$ROOT/$item" ] && cp -R "$ROOT/$item" "$TREE/$item"
@@ -55,7 +55,7 @@ echo "build exit $BUILD after $(( $(date +%s) - start )) s" | tee -a "$LOG"
 cp "$TREE/logs/pakemis_run_ledger.json" "$ROOT/logs/empty_outputs_rebuild_ledger.json" 2>/dev/null
 
 PKINV_ROOT="$ROOT" PYTHONPATH="$ROOT/src" $PYTHON "$ROOT/tests/validation/compare_outputs.py" \
-  "$ROOT" "$TREE" "$REPORT" skipped >> "$LOG" 2>&1
+  "$ROOT" "$TREE" "$REPORT" >> "$LOG" 2>&1
 COMPARE=$?
 tail -15 "$LOG"
 [ "$KEEP" -eq 1 ] && echo "tree kept at $TREE" || rm -rf "$WORK"

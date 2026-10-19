@@ -24,8 +24,7 @@ def main(root):
     env = dict(os.environ)
     env["PKINV_ROOT"] = root
     env["PYTHONPATH"] = os.pathsep.join(p for p in (
-        os.path.join(root, "src"), os.path.join(root, "tests"),
-        os.path.join(root, "tests", "paper_numbers"), env.get("PYTHONPATH", "")) if p)
+        os.path.join(root, "src"), os.path.join(root, "tests"), env.get("PYTHONPATH", "")) if p)
     start = time.time()
     proc = subprocess.run([sys.executable, "-m", "unittest", "discover", "tests", "-v"],
                           cwd=root, env=env, capture_output=True, text=True)

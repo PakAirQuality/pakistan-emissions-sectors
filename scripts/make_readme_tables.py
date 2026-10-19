@@ -23,7 +23,6 @@ from pkinv.core.io import read_rows
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUTPUTS = asset_path(ROOT, "outputs")
 README = asset_path(ROOT, "README.md")
-PDF_README = asset_path(ROOT, "papers", "pdf", "README.md")
 
 BEGIN = "<!-- BEGIN GENERATED: %s -->"
 END = "<!-- END GENERATED: %s -->"
@@ -120,77 +119,13 @@ def coverage():
             % (len(comp), counts["E"], counts["NE"], counts["IE"], counts["NO"], counts["NA"]))
 
 
-# The sector-paper index in papers/pdf/README.md. The ARGUMENT column is editorial and stays
-# hand-written here; the sector, code and magnitude columns are read from the release, because
-# that is what went stale. It carried agriculture at 221.22 and waste at 36.96 - two rounds
-# behind - alongside a residential PM figure from before the configuration split and a
-# railways line still advertising a diesel carve-out that has been retired.
-PAPER_ARGUMENT = {
-    "agriculture": "One nitrogen ledger serving two inventories, with mass-conserving "
-                   "allocation to a 0.05\u00b0 grid and 114 districts plus a declared residual unit",
-    "power": "Physical station fuel and rank-specific calorific values, with public/captive "
-             "and K-Electric boundaries and control assumptions kept explicit",
-    "transport": "Product-specific fuel balances with exhaust, evaporation and wear; "
-                 "transferred fleet factors tested separately from the carbon balance",
-    "waste": "Disposal history, wastewater and open burning with shared activity "
-             "and separate method and treatment alternatives",
-    "residential": "Survey-based household fuel and an explicit diverted-dung alternative; "
-                   "gross appliance emissions, with no assumed outdoor escape fraction",
-    # Filled by _fugitives_argument() at render time - the shares went stale
-    # twice as literals (5.4/3.4 against the paper's 5.5/3.2).
-    "fugitives": None,
-    "ippu": "Physical cement, ammonia, steel and lubricant accounts; process carbon "
-            "separated from fuel, and admitted air-process boundaries recorded explicitly",
-    "railways": "Operator diesel and traction accounts checked against traffic; "
-                "national fuel, network allocation and unplaced mass kept distinct",
-    "aviation": "Domestic airport movements and modelled stage fuel, with landing/take-off, "
-                "cruise and international-bunker boundaries stated separately",
-}
-
-PAPER_LABEL = {"transport": "Road + off-road", "power": "Electricity",
-               "ippu": "Industrial processes", "aviation": "Domestic aviation"}
-
-
-def paper_table():
-    """One row per sector manuscript, ordered as the papers are built."""
-    rows = {r["sector"]: r for r in _rows("national_all_sectors.csv")}
-    from pkinv import release as _release
-    out = ["| TN | PDF | Sector | IPCC | Mt CO\u2082e | The argument |", "|---|---|---|---|---:|---|"]
-    for sector, argument in PAPER_ARGUMENT.items():
-        if argument is None:
-            argument = _fugitives_argument()
-        row = rows.get(sector)
-        if row is None:
-            raise SystemExit("no %s row in national_all_sectors.csv: the sector-paper index "
-                             "would print a magnitude with nothing behind it" % sector)
-        out.append("| %s | `%s_paper.pdf` | %s | %s | %.2f | %s |"
-                   % (_release.TECHNICAL_NOTES[sector], sector, PAPER_LABEL.get(sector, LABEL[sector]),
-                      IPCC[sector].replace("+", "+"), float(row["co2e_Mt_AR5"]), argument))
-    return "\n".join(out)
-
-
-def _fugitives_argument():
-    """The fugitives index line, with both shares read from the engine."""
-    rows = {r["sector"]: r for r in _rows("national_all_sectors.csv")}
-    share = float(rows["fugitives"]["share_pct"])
-    var = next(float(r["variance_share_pct_independent_approx"])
-               for r in _rows("national_key_categories.csv")
-               if r["category"] == "Fugitive emissions from oil and natural gas")
-    # COUNTED, not remembered: the thirteenth review caught this string still
-    # saying 168 after the excluding-feedstock leg grew the factorial to 224.
-    configurations = len(_rows("fugitives_structural_factorial_2024.csv"))
-    return ("The published envelope spans 9.60-24.69 Mt across %d structural "
-            "configurations; %.1f%% of emissions and %.1f%% of national "
-            "Approach-1 variance" % (configurations, share, var))
-
-
 def release():
     """The README's release identity, from the manifest - STABLE fields only.
 
     The commit hash and manifest digest are deliberately absent: README.md is
     content, not a fixpoint artifact, so embedding the volatile git block here
-    would make the release fixpoint unreachable. Those two live in the release
-    cover and the manifest itself."""
+    would make the release fixpoint unreachable. Those two live in the manifest
+    itself."""
     import json
     with open(asset_path(OUTPUTS, "release_manifest.json"), encoding="utf-8") as f:
         m = json.load(f)
@@ -202,8 +137,7 @@ def release():
             "reference FY2023–24: **%.2f Mt CO2e** (AR5, S_TAN) / **%.2f Mt** (L_TAN) | "
             "%d structural axes, %d named configurations | completeness "
             "%d E / %d NE / %d IE / %d NO | code %s; %s. ODbL-derived components are packaged separately. "
-            "Commit and manifest digest: `paper_common/release_cover.tex` and "
-            "`outputs/release_manifest.json`."
+            "Commit and manifest digest: `outputs/release_manifest.json`."
             % (m["version"], m["reporting_period"]["label"],
                m["reporting_period"]["start"], m["reporting_period"]["end"],
                totals[m["baseline_configuration"]["code"]]["co2e_Mt_AR5"],
@@ -254,7 +188,6 @@ def products():
 
 BLOCKS = {"headline": headline, "sectors": sector_table, "coverage": coverage,
           "release": release, "movers": movers, "products": products}
-PDF_BLOCKS = {"papers": paper_table}
 
 
 def render(text, blocks=None):
@@ -272,7 +205,7 @@ def render(text, blocks=None):
 def main(argv=None):
     argv = sys.argv[1:] if argv is None else argv
     stale, written = [], []
-    for path, blocks in ((README, BLOCKS), (PDF_README, PDF_BLOCKS)):
+    for path, blocks in ((README, BLOCKS),):
         with open(path, encoding="utf-8") as f:
             current = f.read()
         updated = render(current, blocks)

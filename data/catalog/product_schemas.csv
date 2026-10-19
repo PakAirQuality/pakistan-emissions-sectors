@@ -91,8 +91,6 @@ provenance.deposit_manifest,outputs/pakemis_deposit_manifest.csv,pkinv.deposit_m
 provenance.artifact_inventory,outputs/pakemis_artifact_inventory.csv,pkinv.artifact_inventory/v1,artifact,bytes;rows,none,all,all,PK
 provenance.product_catalog,outputs/pakemis_product_catalog.csv,pkinv.product_catalog/v1,product_id,none,none,all,all,PK
 provenance.product_facts,outputs/pakemis_product_facts.csv,pkinv.product_facts/v1,fact_id,as stated,none,all,all,PK
-provenance.claim_matrix,outputs/pakemis_claim_matrix.csv,pkinv.claim_matrix/v1,claim_id,as printed,none,all,all,PK
-provenance.paper_hashes,outputs/pakemis_paper_hashes.csv,pkinv.paper_hashes/v1,path,bytes,none,all,all,PK
 validation.catalog,outputs/pakemis_validation_catalog.csv,pkinv.validation_catalog/v1,validation_id,as stated,none,all,all,PK
 validation.scorecard,outputs/pakemis_validation_scorecard.csv,pkinv.validation_scorecard/v1,property_tested;grain,count,none,all,all,PK
 validation.sector_scorecard,outputs/pakemis_validation_sector_scorecard.csv,pkinv.validation_sector_scorecard/v1,module;property_tested,count,none,all,all,PK
@@ -172,7 +170,6 @@ semantic.fact_transfer,outputs/semantic/fact_transfer.csv,pkinv.semantic_fact_tr
 semantic.fact_unallocated,outputs/semantic/fact_unallocated.csv,pkinv.semantic_fact_unallocated/v2,period_id;configuration_id;source_stream_id;month;level;province,co2e Mt; native Gg,AR5,S_TAN;L_TAN;S_IPCC;L_IPCC,FY2015-16..FY2024-25,PK;ADM1
 semantic.fact_uncertainty,outputs/semantic/fact_uncertainty.csv,pkinv.semantic_fact_uncertainty/v1,category;module;resolution,n/a,AR5,n/a,FY2023-24,PK
 semantic.fact_uncertainty_series,outputs/semantic/fact_uncertainty_series.csv,pkinv.semantic_fact_uncertainty_series/v1,kind;scope;key;scenario,n/a,AR5,n/a,FY2015-16..FY2024-25,PK
-paper.artefact_hashes,outputs/pakemis_paper_artefact_hashes.csv,pkinv.paper_artefact_hashes/v1,artefact_id,n/a,n/a,n/a,FY2023-24,PK
 spatial.adm1_by_year,outputs/pakemis_adm1_by_year.csv,pkinv.adm1_by_year/v1,period_id;source_stream_id;province,Gg; co2e Mt,AR5,S_TAN,FY2015-16..FY2024-25,ADM1 provinces
 spatial.adm2_by_year,outputs/pakemis_adm2_by_year.csv,pkinv.adm2_by_year/v1,period_id;shape_id;adm2_ids;province;gas;spatial_view,Gg,native gas mass,S_TAN,FY2015-16..FY2024-25,ADM2 shapes
 spatial.grid_fallbacks_by_year,outputs/pakemis_grid_fallbacks_by_year.csv,pkinv.grid_fallbacks_by_year/v1,period_id;source_stream_id;scope;province;shape;reason,Gg; co2e Mt,AR5,S_TAN,FY2015-16..FY2024-25,ADM1 provinces
@@ -270,7 +267,6 @@ release.changes,outputs/pakemis_release_change_summary.csv,pkinv.release_changes
 release.geography_licence_audit,outputs/pakemis_primary_geography_licence_audit.csv,pkinv.geography_licence_audit/v1,row_kind;component;scope,none,none,all,rc68,PK
 air.grid_annual_s_ipcc,outputs/pakemis_air_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,pkinv.air_grid_annual/v1,time;lat;lon (netCDF dimensions),Gg per fiscal period per cell,none,S_IPCC,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
 air.grid_annual_l_ipcc,outputs/pakemis_air_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,pkinv.air_grid_annual/v1,time;lat;lon (netCDF dimensions),Gg per fiscal period per cell,none,L_IPCC,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
-documentation.sector_note_facts,outputs/pakemis_sector_note_facts.csv,pkinv.sector_note_facts/v1,sector;period_id;configuration_id;species,native mass in unit,none,S_TAN,FY2023-24;FY2024-25,PK
 air.grid_monthly_s_tan,outputs/pakemis_air_grid_0p05_monthly_s_tan_fy2015_16_fy2024_25.nc,pkinv.air_grid_monthly/v1,time;lat;lon (netCDF dimensions),Gg per month per cell,none,S_TAN,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
 air.grid_monthly_l_tan,outputs/pakemis_air_grid_0p05_monthly_l_tan_fy2015_16_fy2024_25.nc,pkinv.air_grid_monthly/v1,time;lat;lon (netCDF dimensions),Gg per month per cell,none,L_TAN,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
 spatial.grid_annual_l_tan,outputs/pakemis_ghg_grid_0p05_annual_l_tan_fy2015_16_fy2024_25.nc,pkinv.grid_annual/v1,time;spatial_view;lat;lon (netCDF dimensions),Gg per fiscal period per cell,AR5;AR6,L_TAN,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
@@ -278,7 +274,6 @@ air.grid_monthly_s_ipcc,outputs/pakemis_air_grid_0p05_monthly_s_ipcc_fy2015_16_f
 spatial.grid_annual_s_ipcc,outputs/pakemis_ghg_grid_0p05_annual_s_ipcc_fy2015_16_fy2024_25.nc,pkinv.grid_annual/v1,time;spatial_view;lat;lon (netCDF dimensions),Gg per fiscal period per cell,AR5;AR6,S_IPCC,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
 air.grid_monthly_l_ipcc,outputs/pakemis_air_grid_0p05_monthly_l_ipcc_fy2015_16_fy2024_25.nc,pkinv.air_grid_monthly/v1,time;lat;lon (netCDF dimensions),Gg per month per cell,none,L_IPCC,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
 spatial.grid_annual_l_ipcc,outputs/pakemis_ghg_grid_0p05_annual_l_ipcc_fy2015_16_fy2024_25.nc,pkinv.grid_annual/v1,time;spatial_view;lat;lon (netCDF dimensions),Gg per fiscal period per cell,AR5;AR6,L_IPCC,FY2015-16..FY2024-25 (10 fiscal periods),PK 0.05 degree grid 267x340
-validation.integrated_figure_values,paper_national/figures/integrated_inputs/figure_value_checks.csv,pkinv.integrated_figure_values/v1,figure;quantity,native plotted quantities or dimensionless shares/ratios; per-row tolerance,native; AR5 only where plotted,S_TAN; named structural cases,FY2015-16..FY2024-25; exact matched comparator years,PK; allocated 0.05 degree cells
 air.htap_comparison,outputs/pakemis_air_htap_comparison.csv,pkinv.air.htap_comparison/v1,period_id;configuration_id;pollutant;comparison_sector,Gg; ratio,none,S_TAN;L_TAN;S_IPCC;L_IPCC,FY2015-16..FY2024-25,PK
 air.monthly,outputs/pakemis_air_monthly.csv,pkinv.air.monthly/v1,period_id;configuration_id;sector_id;source_class_id;support_anchor_id;process;pollutant;month,Gg pollutant; fraction,none,S_TAN;L_TAN;S_IPCC;L_IPCC,FY2015-16..FY2024-25,PK
 air.monthly_unallocated,outputs/pakemis_air_monthly_unallocated.csv,pkinv.air.monthly_unallocated/v1,month;period_id;configuration_id;sector_id;source_stream_id;pollutant;level,Gg pollutant,none,S_TAN;L_TAN;S_IPCC;L_IPCC,FY2015-16..FY2024-25,PK

@@ -1,23 +1,23 @@
 """Every file this release ships, with its declared role and who names it.
 
-WHY. 406 files live in outputs/. Most are named in no manuscript, README or doc, and the
+WHY. 406 files live in outputs/. Most are named in no README or document, and the
 release manifest hashed 42 of them. So most shipped files had no declared role anywhere, and a
 reader downloading the release could not tell a product from a working file. Neither could a
 test: two defects found by hand in consecutive passes - a validation registry cited nowhere,
 and an IPPU two-register agreement computed on every run and never written down - were
 instances of a class nobody could enumerate.
 
-Most of those 280 SHOULD be uncited. A paper naming aviation_openap_lookup_fy2023_24.csv
+Most of those 280 SHOULD be uncited. A document naming aviation_openap_lookup_fy2023_24.csv
 would be worse, not better. The defect was never the silence; it was that the silence was
 indistinguishable from an omission.
 
 WHAT THIS IS. One row per file, joined to data/artifact_roles.csv by first-matching pattern,
-carrying what the release manifest knows and which manuscripts name it. The tests then hold
-the promises each role makes: canonical implies hashed AND cited, sector_headline implies
-cited in its own sector's paper, diagnostic implies cited somewhere.
+carrying what the release manifest knows and whether the documentation names it. The tests
+then hold the promises each role makes: canonical implies hashed, diagnostic implies a role
+someone declared.
 
 RECOMPUTES NOTHING it can read. Sizes and row counts come from the files; citation comes from
-the manuscripts; hashing comes from the manifest that already did it.
+README.md and docs/; hashing comes from the manifest that already did it.
 
 Usage:  python3 -m pkinv.report.artifact_inventory
 Writes: outputs/pakemis_artifact_inventory.csv
@@ -43,24 +43,10 @@ ROLES = asset_path(DATA, "artifact_roles.csv")
 # with no declared role at all.
 SUFFIXES = None
 
-# Where a reader could meet a file by name. The sector papers are included because a
-# sector_headline file's promise is about ITS OWN paper, not about any paper.
-# EVERY .tex A READER GETS, not only the ones under sections/. Until rc64 this listed
-# papers/*/sections/*.tex and stopped, so anything named in a sector supplement's own body was
-# invisible: four of the five supplements are partly monolithic (railways carries 153 lines and
-# two \input directives, aviation 278 and four), and 17 artifacts were recorded cited_in=none
-# while a supplement named them - every aviation figure, the fugitives and railways CRT cell
-# audits, and railways_fuel_history.csv, which a registered claim reads for the steam-era peak.
-# The consequence was not cosmetic: the register's whole argument is that a product cited
-# nowhere is indistinguishable from a diagnostic nobody needed, and "cited nowhere" was partly
-# the scanner's opinion rather than the paper's. The escaped underscore is handled below and
-# was NOT the cause.
-# VERSION-WILDCARDED, not pinned to the shipped version: before the national paper was
-# versioned the flat "paper_national/*.tex" glob caught the compact rewrite as well as the
-# article, and pinning these to versions/v1 would have dropped a whole manuscript out of
-# the citation scan without anything failing.
-DOC_GLOBS = ("paper_national/versions/*/sections/*.tex", "paper_national/versions/*/*.tex",
-             "papers/*/sections/*.tex", "papers/*/*.tex", "README.md", "docs/*.md")
+# Where a reader could meet a file by name: this repository's own documentation. (rc70 narrowed
+# the scan to these two globs; the ratchets in tests/test_artifact_inventory.py were re-based
+# that day, with the reason written beside them.)
+DOC_GLOBS = ("README.md", "docs/*.md")
 
 
 def _rows(path):
@@ -81,16 +67,13 @@ def role_of(name, table=None):
 
 
 def as_a_reader_sees_it(text):
-    """Strip the LaTeX devices a filename must carry, so the search sees the plain name.
+    """Strip the typesetting devices a printed filename can carry, so the search sees the
+    plain name (escaped underscores, break hints, `\%`, `\&`, `~`).
 
-    ONE code path. Used by documents(), by tests/test_citation_scan_normalisation.py, by the
-    citation-deposit audit builder, by the module-credit sweep and by the supplement-citation
-    getter - every reader of a printed name in the repository. A second implementation of this
-    is the defect it guards against, and it has now bitten TWICE: cycle 32 found the escape
-    normalised and the break hints not (seven files silently un-cited), and cycle 36 found
-    three MORE readers with their own `replace("\\_", "_")`, which reported three freshly
-    cited files as absent from the repository. `\%`, `\&` and `~` join the list for the same
-    reason: a reader that needs one extra escape adds it here, not locally.
+    ONE code path for every reader of a printed name. A second implementation of this is the
+    defect it guards against, and it bit twice: once with the escape normalised and the break
+    hints not (seven files silently un-cited), once with three readers carrying their own
+    `replace("\\_", "_")`.
     """
     for device, replacement in (("\\_", "_"), ("\\allowbreak ", ""), ("\\allowbreak", ""),
                                 ("\\-", ""), ("\\/", ""), ("\\%", "%"), ("\\&", "&"),
@@ -100,35 +83,24 @@ def as_a_reader_sees_it(text):
 
 
 def documents():
-    """{document label: text}. The label is what a sector-scoped promise is checked against."""
+    """{document label: text}. One label since rc70: the repository's documentation."""
     out = {}
     for pattern in DOC_GLOBS:
         for path in sorted(glob.glob(asset_path(ROOT, pattern))):
-            relative = os.path.relpath(path, ROOT)
-            label = (relative.split(os.sep)[1] if relative.startswith("papers" + os.sep)
-                     else "national")
             try:
                 text = open(path, encoding="utf-8").read()
             except OSError:
                 continue
-            # LaTeX escapes the underscore in a filename, and a long monospace name needs
-            # break hints or it prints outside the page; a reader sees the same name through
-            # both. Normalising only the underscore was a live defect: the rc64 appendix
-            # rewrites added \allowbreak after each escaped underscore in names over 40
-            # characters - the fix for a real overfull-box failure - and that silently
-            # un-cited seven files this scanner had just been taught to see. One
-            # normalisation without the other is worse than neither, because it makes the
-            # citation register's answer depend on how the filename had to be typeset.
-            out[label] = out.get(label, "") + as_a_reader_sees_it(text)
+            out["documentation"] = out.get("documentation", "") + as_a_reader_sees_it(text)
     return out
 
 
 def _named_pattern(base, stem):
     """The file's name as a WHOLE token: its basename, or its stem with any extension.
 
-    A bare substring test cited every activity/activity_*.csv working file because the papers
-    name semantic/fact_activity_*.csv, and cited the spatial ensemble draws because a paper
-    names pakemis_ensemble_spatial_conditionals.csv - 26 false citations in rc68, each one a
+    A bare substring test cited every activity/activity_*.csv working file because the text
+    named semantic/fact_activity_*.csv, and cited the spatial ensemble draws because it
+    named pakemis_ensemble_spatial_conditionals.csv - 26 false citations in rc68, each one a
     working file the register then reported as a claim-bearing file. A name continues past a
     letter, digit or underscore and nowhere else; a slash or a dot ends it.
     """
@@ -151,9 +123,7 @@ def manifest_products():
             # the name as the inventory keys it: relative to outputs/, so a product in a
             # subdirectory (v1.0.0: semantic/) is matched by the same name it is listed under
             names.add(name)
-    # The paper-hash sidecar matches the pattern and is excluded by the manifest itself,
-    # because it is written after the papers that are built after the manifest.
-    return names - {"pakemis_paper_hashes.csv"}
+    return names
 
 
 def committed_copies():
@@ -209,7 +179,7 @@ TIER_OF_ROLE = {
     "build_record": "audit",
     "intermediate": "build",
     # rc36: the classes the recursive scan brought into view
-    "figure": "supporting",         # a generated PNG a manuscript or the dashboard shows
+    "figure": "supporting",         # a generated PNG the documentation or the dashboard shows
     "report_prose": "supporting",   # a runner's Markdown summary of its own tables
     "dashboard": "supporting",
     "tier3_research": "research",   # docs/spatial_products_contract.md: real, citable, not authoritative
@@ -257,7 +227,7 @@ def build():
         # shared naming structure - a validated cover needed 61 patterns for 74 files, with
         # names like *bridge.csv - which is WHY they fall through in the first place. So the
         # role is derived from the one fact that is already in scope here instead: a
-        # fall-through file a manuscript names is evidence behind a claim, which is
+        # fall-through file the documentation names is evidence behind a claim, which is
         # `diagnostic`; one nothing names is a working file, and `intermediate` is honest.
         #
         # Deliberately NOT in role_of(): that function is the pure pattern lookup, has no

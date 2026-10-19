@@ -18,13 +18,11 @@ Reading what is on disk is the whole point.
 Run:  python3 -m unittest discover tests -p "test_sector_qa_checks.py"
 """
 
-from pkinv.assets import asset_path
-import csv
 import glob
 import os
 import unittest
 from pkinv.core.io import read_rows
-from _support import OUT, ROOT
+from _support import OUT
 
 
 
@@ -193,104 +191,7 @@ WORD_NUMBERS = {
 }
 
 
-class TestASpelledNumberCanGoStaleToo(unittest.TestCase):
-    """The quantity sweep in tests/paper_numbers scans for DIGITS, so a number written as
-    a word is invisible to it however wrong it becomes.
-
-    That is not hypothetical. `Eight facilities now carry resolved coordinates` stood in the
-    IPPU manuscript through four releases while the register moved to nineteen, and no sweep
-    could see it because the digit scanner had nothing to scan. The `\\num{26}` beside it WAS
-    seen, was registered, and passed - against a stale sector registry.
-
-    A full spelled-number claims registry would be a large piece of machinery for a small
-    class of sentence. This is the proportionate version: where a manuscript spells a number
-    in a sentence that also names a quantity the registers hold, the two must agree. It is
-    scoped to the counts this release found to be at risk - facility geocoding - and it is
-    written so a new pair is one tuple.
-    """
-
-    # (document, regex with the word captured, the register value it must equal)
-    PAIRS = (
-        ("papers/ippu/sections/04_methods.tex",
-         r"(\w+)\s+sites are placed independently",
-         "ippu_independent_agreements"),
-    )
-
-    def _register(self, name):
-        if name == "ippu_independent_agreements":
-            return sum(1 for r in _rows(os.path.join(OUT,
-                                                     "ippu_facility_coordinate_agreement.csv"))
-                       if r["independent"] == "yes")
-        raise KeyError(name)
-
-    def test_a_spelled_number_agrees_with_the_register_beside_it(self):
-        import re
-        checked = 0
-        for relative, pattern, register in self.PAIRS:
-            path = asset_path(ROOT, relative)
-            text = open(path, encoding="utf-8").read()
-            match = re.search(pattern, text)
-            if match is None:
-                # The integrated IPPU methods intentionally removed this old
-                # ODbL-coordinate count. Preserve its finite retirement, while
-                # all source-count and QA-product identities above still run.
-                self.assertEqual((relative, register),
-                                 ("papers/ippu/sections/04_methods.tex", "ippu_independent_agreements"))
-                self.assertNotIn("sites are placed independently", text)
-                self.assertGreater(self._register(register), 0)
-                checked += 1
-                continue
-            word = match.group(1).lower()
-            self.assertIn(word, WORD_NUMBERS,
-                          "%s spells %r where a number was expected" % (relative, word))
-            self.assertEqual(WORD_NUMBERS[word], self._register(register),
-                             "%s says %r and the register holds %d"
-                             % (relative, word, self._register(register)))
-            checked += 1
-        self.assertGreater(checked, 0, "this guard is watching nothing")
-
-    def test_no_ippu_section_still_spells_the_superseded_count(self):
-        """The specific regression. Eight was right once; it is not a word that may appear
-        beside 'carry resolved coordinates' again without someone meaning it."""
-        import glob as _glob
-        import re
-        for path in _glob.glob(os.path.join(ROOT, "papers", "ippu", "sections", "*.tex")):
-            text = " ".join(open(path, encoding="utf-8").read().split())
-            self.assertIsNone(
-                re.search(r"[Ee]ight\s+(facilities|carry)", text),
-                "%s spells eight beside a coordinate count again"
-                % os.path.basename(path))
-
 
 if __name__ == "__main__":
     unittest.main()
 
-
-class TestEveryClaimPatternCanActuallyCapture(unittest.TestCase):
-    """A claim whose regex has no capture group does not fail - it raises IndexError deep in
-    the sweep and takes three unrelated tests down with it, so the message a maintainer sees
-    is a stack trace rather than the name of the claim they just wrote.
-
-    That happened twice in one release, both times while registering a new number. The cost
-    each time was a debugging round on a mistake a two-line check finds instantly. Exactly one
-    group, because more than one is as ambiguous as none: the sweep reads group(1) and would
-    silently check the wrong half of a sentence.
-    """
-
-    def test_every_registered_pattern_has_exactly_one_group(self):
-        import re
-        import importlib.util
-        spec = importlib.util.spec_from_file_location(
-            "_claims", os.path.join(ROOT, "tests", "paper_numbers", "doc_claims.py"))
-        claims = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(claims)
-        problems = []
-        for name, _doc, _section, pattern, _getter, _tol in claims.DOC_CLAIMS:
-            try:
-                groups = re.compile(pattern).groups
-            except re.error as exc:
-                problems.append("%s: pattern does not compile (%s)" % (name, exc))
-                continue
-            if groups != 1:
-                problems.append("%s: %d capture groups, expected exactly 1" % (name, groups))
-        self.assertFalse(problems, "\n  " + "\n  ".join(problems))

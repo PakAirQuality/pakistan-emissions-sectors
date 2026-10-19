@@ -2,15 +2,14 @@
 
 The manifest's git block names the commit that was HEAD when it was GENERATED -- by
 construction the parent of the commit that carries it -- and its tree_dirty flag records
-whether anything uncommitted was present at that moment. The rc3 release shipped every PDF
-with "Commit feb9fac (working tree modified)" in its provenance box, because the manifest
-was regenerated mid-work and committed as-is: the printed commit did not identify the tree
-that built the papers, which an external reviewer correctly called a release-integrity
-failure.
+whether anything uncommitted was present at that moment. The rc3 release shipped
+"Commit feb9fac (working tree modified)" as its provenance, because the manifest was
+regenerated mid-work and committed as-is: the printed commit did not identify the tree that
+built the release, which an external reviewer correctly called a release-integrity failure.
 
-The fixpoint: commit ALL content first (engine, prose, outputs), so the tree is clean;
-then this script regenerates the manifest (tree_dirty=False, describes_commit=HEAD), the
-cover, and every PDF; then a second, artifacts-only commit carries them. Regenerating
+The fixpoint: commit ALL content first (engine, documentation, outputs), so the tree is
+clean; then this script regenerates the manifest (tree_dirty=False, describes_commit=HEAD)
+and the flat checksum file; then a second, artifacts-only commit carries them. Regenerating
 after that second commit changes only the VOLATILE git block, which every check excludes,
 so the fixpoint is stable. This script enforces the precondition: if anything OTHER than
 the regenerable artifacts is modified, it stops and says commit your content first.
@@ -31,18 +30,10 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ARTIFACT_PATTERNS = (
     r"^outputs/release_manifest\.json$",
-    # Both are written BY this script, after the checks below, so a tree carrying only
-    # their previous run's output is clean content as far as the freeze is concerned.
-    r"^outputs/pakemis_paper_hashes\.csv$",
+    # Written BY this script (or by the record after it), so a tree carrying only their
+    # previous run's output is clean content as far as the freeze is concerned.
     r"^outputs/pakemis_test_run\.json$",
     r"^outputs/SHA256SUMS$",
-    r"^paper_common/release_cover\.tex$",
-    r"^papers/pdf/",
-    # NESTED: the national paper's PDFs and bibliographies moved into
-    # paper_national/versions/<v>/, and [^/]+ would no longer match them - the fixpoint
-    # would have stopped recognising the article's own output as a release artefact.
-    r"^paper_national/versions/[^/]+/[^/]+\.(pdf|bbl)$",
-    r"^papers/[^/]+/(paper|supplement)\.(pdf|bbl)$",
 )
 
 
@@ -105,11 +96,11 @@ def check_spatial_inputs():
                             "unplaceable" % gas)
 
     # A PUBLISHED OUTPUT MAY NOT BE OLDER THAN THE DATA IT IS BUILT FROM. This is the
-    # general form of the defect that shipped a wrong number in the IPPU manuscript:
+    # general form of the defect that shipped a wrong number in the IPPU description:
     # `make national` builds the cross-sector layer only, so a sector's own products can lag
     # its inputs indefinitely while the roll-up moves on. outputs/ippu_facility_registry.csv
     # lagged data/activity/ippu/facility_geocoding_overrides.csv through four releases,
-    # reporting eight geocoded facilities against nineteen held, and the manuscript's claim
+    # reporting eight geocoded facilities against nineteen held, and a published claim
     # was anchored to it. Nothing in the release path noticed, because nothing compared a
     # product's age with its source's.
     #
@@ -152,65 +143,19 @@ def check_spatial_inputs():
     return problems
 
 
-# EVERY VERSION'S PDFs BY GLOB (2026-10-07). This list used to name the MAIN version's two
-# filenames literally - paper_national.pdf and supplement.pdf - so v2, the version going to
-# the journal, whose files are paper.pdf, submission.pdf and technical_supplement.pdf, was
-# hashed nowhere in the release record. The review's item 1 asked for a hash-locked archive
-# and named the supplement; measured, it was all three files.
-#
-# THE TWO LITERALS ARE GONE, not kept beside the glob. Keeping both duplicated v1's two
-# rows - 23 rows carrying 21 distinct paths - and `path` is a declared unique key, so
-# validation/test_product_schemas caught it. A glob that subsumes a literal must replace
-# it; adding one beside the other means every file matched by both is written twice.
-PAPER_GLOBS = ("papers/pdf/*.pdf",
-               "paper_national/versions/*/*.pdf")
-PAPER_HASHES = "outputs/pakemis_paper_hashes.csv"
-
-
-def _write_paper_hashes():
-    """Hash the shipped papers AFTER they are built, in a file they do not quote.
-
-    The release manifest cannot carry these. It is quoted by the release cover, the cover
-    is inputted by every paper, so a manifest containing PDF hashes would change the
-    cover, which changes the PDFs, which changes their hashes - no fixpoint. Writing them
-    here, one step after `make papers`, is the only ordering that closes.
-
-    These hashes are NOT a rebuild target. LaTeX stamps /CreationDate into every file, so
-    two builds of identical sources differ byte for byte; the digest identifies the
-    artifact a reader downloaded, and that is all it can honestly do.
-    """
-    import glob
-    rows = []
-    for pattern in PAPER_GLOBS:
-        for path in sorted(glob.glob(os.path.join(ROOT, pattern))):
-            with open(path, "rb") as handle:
-                digest = hashlib.sha256(handle.read()).hexdigest()
-            rows.append((os.path.relpath(path, ROOT), digest,
-                         os.path.getsize(path)))
-    out = os.path.join(ROOT, PAPER_HASHES)
-    with open(out, "w", newline="", encoding="utf-8") as handle:
-        w = csv.writer(handle)
-        w.writerow(["path", "sha256", "bytes", "byte_stable", "note"])
-        for path, digest, size in rows:
-            w.writerow([path, digest, size, "false",
-                        "LaTeX stamps a build date, so this identifies the distributed "
-                        "artifact and is not a reproducible target"])
-    print("-> %s (%d papers)" % (PAPER_HASHES, len(rows)))
-
-
 SHA256SUMS = "outputs/SHA256SUMS"
 
 
 def _write_sha256sums():
     """The flat checksum file a downloader verifies with `shasum -a 256 -c` (rc29,
     a FAIR fix): every file in outputs/, one line each, EXCEPT itself and the
-    files written after it in the release dance (the paper-hash sidecar and the
-    test-run record are written later by design; the rebuild log describes a run
+    files written after it in the release dance (the test-run record is written
+    later by design; the rebuild log describes a run
     that compares the manifest). The release manifest remains the structured
     record; this is the same facts in the one format every platform's tooling
     already reads."""
     import glob
-    skip = {SHA256SUMS, PAPER_HASHES, "outputs/pakemis_test_run.json"}
+    skip = {SHA256SUMS, "outputs/pakemis_test_run.json"}
     lines = []
     for path in sorted(glob.glob(os.path.join(ROOT, "outputs", "**", "*"),
                                  recursive=True)):
@@ -242,8 +187,8 @@ def main():
                     if not any(re.match(pat, p) for pat in ARTIFACT_PATTERNS)]
     if non_artifact:
         print("REFUSING: the tree carries uncommitted CONTENT, so the regenerated "
-              "manifest would say tree_dirty and the cover would ship '(working tree "
-              "modified)' -- the exact defect this script exists to prevent.")
+              "manifest would say tree_dirty -- the exact defect this script exists to "
+              "prevent.")
         print("Commit these first:")
         for p in non_artifact[:20]:
             print("  %s" % p)
@@ -251,8 +196,8 @@ def main():
 
     if dirty:
         # rc68: artifacts left over from an EARLIER fixpoint passed the check above, but the
-        # manifest computes tree_dirty from the whole of `git status`, so the regenerated cover
-        # still printed "(working tree modified)". A fixpoint rerun after a further content
+        # manifest computes tree_dirty from the whole of `git status`, so the regenerated
+        # manifest still recorded a modified tree. A fixpoint rerun after a further content
         # commit must start from a tree with nothing uncommitted at all.
         print("REFUSING: the tree carries uncommitted artifacts from an earlier run; the "
               "manifest would record tree_dirty. Commit them (or restore them from HEAD) "
@@ -263,16 +208,12 @@ def main():
 
     _run([sys.executable, "-m", "pkinv.report.release_manifest"])
     _write_sha256sums()
-    _run([sys.executable, "scripts/make_release_cover.py"])
-    _run([sys.executable, "scripts/make_availability.py"])
-    _run(["make", "papers"])
-    _write_paper_hashes()
 
     print()
     print("Artifacts regenerated on a clean content tree. Finish with the artifacts-only")
-    print("commit so the shipped cover names the content commit:")
+    print("commit so the shipped manifest names the content commit:")
     print("  git add -A && git commit -m "
-          "'Release manifest, cover and PDFs: regenerate against the clean tree'")
+          "'Release manifest and SHA256SUMS: regenerate against the clean tree'")
     print()
     print("THEN, and not before, record what the released tree's suite does:")
     print("  python3 scripts/record_test_run.py && git add outputs/pakemis_test_run.json "

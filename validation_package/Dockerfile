@@ -10,9 +10,7 @@
 #
 # The image carries the pinned Python closure from environment/requirements.lock (the
 # gridded, parquet and common-draw tests need it), poppler-utils (pdftotext, used by three
-# source-extraction tests that otherwise skip) and git-lfs (one raw-data test). It does NOT
-# carry a TeX distribution: reproduce.sh --papers is a host-side step and the manuscripts
-# are compared as shipped.
+# source-extraction tests that otherwise skip) and git-lfs (one raw-data test).
 FROM python:3.11-slim
 
 # libgdal-dev and a compiler: fiona 1.10.1 (pinned in requirements.lock) ships no wheel for

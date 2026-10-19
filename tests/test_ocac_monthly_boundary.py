@@ -24,7 +24,6 @@ NOT ASSERTED: that OCAC will never publish them. The claim is about what the arc
 a stated date, and the acquisition log carries that date.
 """
 import os
-from pkinv.paths import PAPER_NATIONAL_SECTIONS  # noqa: E402
 import re
 import unittest
 
@@ -33,7 +32,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 MONTHLY_DIR = os.path.join(ROOT, "sources", "Aviation", "ocac_monthly")
 LOG = os.path.join(ROOT, "data", "raw", "ACQUISITION_LOG_ocac_monthly_pre2021.csv")
 REGISTER = os.path.join(ROOT, "data", "shared", "requests", "monthly_request_register.csv")
-SECTION = os.path.join(PAPER_NATIONAL_SECTIONS, "12_limitations.tex")
 
 FIRST_HELD = (2021, 7)
 
@@ -105,16 +103,6 @@ class TestTheMonthlyBoundaryIsTheSources(unittest.TestCase):
             "MON-OCAC-01 no longer records that OCAC's archive begins at July 2021. Without "
             "it the row says only that later editions are held, which reads as a request "
             "nobody has sent rather than a request that is the only route.")
-
-    def test_the_section_states_the_boundary_rather_than_implying_it(self):
-        if not os.path.exists(SECTION):
-            self.skipTest("the limitations section is not in this checkout")
-        with open(SECTION, encoding="utf-8") as handle:
-            text = handle.read()
-        # The main limitations now states the shared export/source-control rule;
-        # exact OCAC archive dates are checked against source records above.
-        self.assertIn("Monthly availability is assessed", text)
-        self.assertIn("Twelve months alone never establish national observed activity", text)
 
 
 if __name__ == "__main__":

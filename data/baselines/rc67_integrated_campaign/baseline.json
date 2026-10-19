@@ -195,46 +195,6 @@
       "bytes": 3036069,
       "path": "outputs/pakemis_grid_0p1_edgar_aligned.nc",
       "sha256": "c8f87e2bb3ade04e7d8de161d9045e813ec2194defcbbe981e13fdb9b46f32e8"
-    },
-    {
-      "bytes": 67937,
-      "path": "paper_national/versions/v3/paper.tex",
-      "sha256": "9ad5dce2b73828485186212a53baffda0ec6ccf48cc55522b664b495b00a08ce"
-    },
-    {
-      "bytes": 613418,
-      "path": "paper_national/versions/v3/paper.pdf",
-      "sha256": "8af55e4a150ad580b103ba9312500cdb73a675cb4cf04fe10e4a072b59a9bb83"
-    },
-    {
-      "bytes": 564,
-      "path": "paper_national/versions/v3/submission.tex",
-      "sha256": "ec5da001969981e10ed3898dfc51d006e2022ee850be3fa2a21be797e6762eab"
-    },
-    {
-      "bytes": 610927,
-      "path": "paper_national/versions/v3/submission.pdf",
-      "sha256": "070f872913fa81c8547793dae8cbed2a6c43feca7e7d360b04ece9e910a7d79e"
-    },
-    {
-      "bytes": 76188,
-      "path": "paper_national/versions/v3/technical_supplement.tex",
-      "sha256": "485c16094a3ed94a7552ccd9f6033b70eed5c8dd9467348b0257b2c1c0944592"
-    },
-    {
-      "bytes": 298747,
-      "path": "paper_national/versions/v3/technical_supplement.pdf",
-      "sha256": "934c7d7dc811852246e94ab3841b4b963b9486a44de12ad9dc1f83ceca7c07dd"
-    },
-    {
-      "bytes": 998427,
-      "path": "papers/pdf/national_paper.pdf",
-      "sha256": "8c48b732222c1d90151fa3f2fb3db17f7d3cd70ddb584b930586c86d919aea36"
-    },
-    {
-      "bytes": 524356,
-      "path": "papers/pdf/national_supplement.pdf",
-      "sha256": "d359ed02cada356d3e45f3ab422bc61db751ca7c772379d3e5c7f220d7705700"
     }
   ],
   "not_present": [

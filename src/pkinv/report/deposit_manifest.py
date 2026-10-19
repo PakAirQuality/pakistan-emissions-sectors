@@ -3,7 +3,7 @@
 THE PROBLEM THIS EXISTS TO FIX. sources/ holds 357 tracked files - 3.8 GB of OGRA, NEPRA, PBS,
 NFDC and PCAA publications plus 580 MB of HIES microdata - and sixty of the sixty-five archived
 documents in data/source_documents.csv carry a licence nobody has established. Meanwhile
-LICENSE-data opens "Data, figures, model cards, and the paper text in this repository are
+LICENSE-data opened "Data, figures, model cards, and the text in this repository are
 licensed under CC-BY-4.0" and .zenodo.json declares the deposit open. Read literally, publishing
 that tree REDISTRIBUTES SIXTY THIRD-PARTY DOCUMENTS UNDER A LICENCE THIS PROJECT CANNOT GRANT,
 and nothing in the release could see it. The OpenStreetMap ODbL carve-out beside it is handled
@@ -21,7 +21,7 @@ away and becomes the correct, evidence-backed answer - and the deposit is design
 answer COSTS NOTHING. That reframing is the substance of this module: the fix is architectural,
 not a campaign to chase sixty publishers for permissions the deposit does not need.
 
-WHAT IS DEPOSITED. Code, derived products, manuscripts, and a SOURCE REGISTER: publisher,
+WHAT IS DEPOSITED. Code, derived products, documentation, and a SOURCE REGISTER: publisher,
 title, retrieval instructions and sha256 for every document the deposit does not ship. Facts
 are not copyrightable and the derived estimates are this project's to license; the documents
 are not. A reader can therefore verify they hold the same document as this release without the
@@ -29,7 +29,8 @@ release having redistributed it.
 
 THE COST, STATED RATHER THAN ABSORBED. A stranger cannot rebuild end to end without
 re-acquiring the documents. The register with its hashes is what turns that from guesswork
-into a procedure, and the manuscript says so rather than leaving a reader to discover it.
+into a procedure, and docs/deposit_rebuild_limits.md says so rather than leaving a reader
+to discover it.
 
 ASSEMBLED FROM AN ALLOWLIST, NEVER BY COPYING A DIRECTORY. docs/product_catalog_design.md
 already recorded the rule - "no catch-all outside build/" - because a catch-all is precisely
@@ -191,7 +192,6 @@ DATA_FAMILIES = (
      "preserved prior release; ODbL-sensitive companion database with original contents licences retained"),
     # v1.0.0: the JSON Schemas under data/schemas/ are this project's own contracts
     ("data/schemas/*.schema.json", OWN_WORK, "this project's own contract (a JSON Schema)"),
-    ("data/claim_matrix.csv", OWN_WORK, "this project's own registry of the national manuscript's headline claims"),
     # 2026-09-16: the four registries that define what the published activity tables mean. They are
     # read from no document: each row is this project's own judgement about what a source status
     # signifies, what unit a column name hides, and whether a figure may be added to its neighbours -
@@ -387,7 +387,7 @@ DEPOSIT_PATTERNS = (
     ("product", release_manifest.PRODUCT_PATTERNS),
     # the engine that produced them, and the contract it is held to
     ("code", ("src/pkinv/**/*.py", "src/pakemis_query/**/*.py", "scripts/*.py", "run_all.py", "tests/**/*.py",
-              "tests/paper_numbers/retired_sentence_claims_rc68.json", "tests/semantic/golden/*.json",
+              "tests/semantic/golden/*.json",
               "tests/fixtures/rc68_legacy_figure_revisions.csv")),
     # what a reader needs to interpret and rebuild
     ("build", ("Makefile", "pyproject.toml", "requirements.txt", "requirements.lock", "reproduce.sh", ".github/workflows/*.yml")),
@@ -406,20 +406,6 @@ DEPOSIT_PATTERNS = (
                        "campaign/v3_readiness/scientific_changes.md",
                        "campaign/v3_readiness/INTEGRATED_WORK_LOG.md",
                        "campaign/v3_readiness/reproduction_rc68/*")),
-    ("manuscript", ("papers/pdf/*.pdf",)),
-    # rc68: paper_national/queries/*.csv, the stored-query registry make_paper_artefacts.py
-    # reads, and the v3 figure scripts under figures/rewrite_inputs/ with their README and
-    # the transcription record a test compares against; the first rc68 clean rebuild
-    # stopped at "Paper artefacts" and at "Manuscript figures, v3" without them.
-    ("manuscript_source", ("paper_national/**/*.tex", "paper_national/**/*.bib",
-         "paper_national/queries/*.csv",
-         "paper_national/figures/rewrite_inputs/*.py", "paper_national/figures/rewrite_inputs/README.md",
-         "paper_national/figures/rewrite_inputs/transcribed_csv/*.csv",
-         "paper_national/versions/v3/short_summary.txt",
-         "paper_national/figures/*.pdf", "paper_national/figures/*.csv", "paper_national/figures/*.json",
-         "paper_national/figures/integrated_inputs/*.csv",
-         "papers/**/*.tex", "paper_common/**/*.tex", "paper_common/**/*.bib",
-         "paper_common/copernicus/*", "paper_common/*.sty")),
     # The provenance record. It was missing, which was incoherent: the deposit pointed at
     # release_manifest.json as the artefact holding the digests of everything this file
     # cannot digest, and then did not ship it. Both are context-stamped, so neither is
@@ -454,15 +440,13 @@ DEPOSIT_PATTERNS = (
 # THE CIRCULARITY, WHICH I INTRODUCED AND THE CLEAN-ROOM REBUILD CAUGHT. This manifest listed
 # ITSELF with its own bytes and sha256 - a fixpoint that cannot close, because writing the row
 # changes the file the row describes. The same applies to everything written AFTER this step:
-# the sixteen PDFs that `make release-fixpoint` builds, the paper-hash sidecar written after
-# them, and release_manifest.json, which stamps the commit it describes and therefore differs
-# between a maintainer's tree and a fresh clone by construction.
+# release_manifest.json, which stamps the commit it describes and therefore differs between a
+# maintainer's tree and a fresh clone by construction, and the test record.
 #
 # release_manifest.py already states the rule this violated - "everything listed here is
-# byte-stable and is a rebuild target" - and already solves the same problem the same way, by
-# moving the PDF digests into a sidecar written after the build. So these rows keep their
-# place in the deposit (a reader needs the papers and the manifest) and carry no digest of
-# their own; `hash_recorded_in` says which artefact does hold it.
+# byte-stable and is a rebuild target". So these rows keep their place in the deposit (a
+# reader needs the manifest) and carry no digest of their own; `hash_recorded_in` says which
+# artefact does hold it.
 CONTEXT_STAMPED = (
     ("outputs/pakemis_deposit_manifest.csv", "release_manifest.json",
      "this file; a row describing itself changes the file it describes"),
@@ -471,8 +455,6 @@ CONTEXT_STAMPED = (
     ("outputs/release_manifest.json", "itself",
      "stamps the commit it describes, so it differs between a working tree and a clone by "
      "construction and is not a rebuild target"),
-    ("outputs/pakemis_paper_hashes.csv", "itself",
-     "written after the papers, which are built after this file"),
     ("outputs/pakemis_test_run.json", "itself",
      "written after the suite that tests this file"),
     # rc41: the product facts read THIS manifest (deposited-file counts), so they are
@@ -480,30 +462,6 @@ CONTEXT_STAMPED = (
     ("outputs/pakemis_product_facts.csv", "release_manifest.json",
      "written after this step (the product facts read this manifest), so its digest is "
      "one generation stale here"),
-    # rc43: the same position as the product facts above, and found the same way - by a
-    # reproduction from an EMPTY outputs/. The claim matrix is written at phase 115 and this
-    # manifest at 113, so its digest here is one generation stale; on a warm tree the file
-    # already exists and is hashed by the ordinary enumeration, so the guard never fires and
-    # the ordering never shows. Its digest lives in the release manifest, which is the whole
-    # point of the context-stamped class.
-    ("outputs/pakemis_claim_matrix.csv", "release_manifest.json",
-     "written after this step (phase 115 against 113), so its digest is one generation "
-     "stale here"),
-    # rc68: the same class again, found the same way. The citation deposit audit reads this
-    # manifest, so its phase must follow it, and on a warm tree its previous copy was hashed.
-    ("outputs/pakemis_citation_deposit_audit.csv", "release_manifest.json",
-     "written after this step (the audit reads this manifest), so its digest is one "
-     "generation stale here"),
-    # rc68: found by the first clean rebuild of this release, which refuses a deposited input
-    # whose digest does not match. The release fixpoint writes the cover from the release
-    # manifest AFTER this file, and the cover prints the commit it describes, so the digest
-    # recorded here was always the previous fixpoint's.
-    ("paper_common/release_cover.tex", "itself",
-     "written by the release fixpoint after this file and prints the commit it describes, so "
-     "a digest recorded here is one fixpoint stale by construction"),
-    ("papers/pdf/*.pdf", "outputs/pakemis_paper_hashes.csv",
-     "built by the release fixpoint after this file, and LaTeX stamps a creation date into "
-     "every one, so no digest recorded here could ever be reproduced"),
 )
 
 
@@ -690,8 +648,6 @@ def licence_of_deposited(relative, by_data_file):
     if dependencies:
         return PUBLIC_LICENCE, ("ODbL-1.0 companion database; original contents licences retained; "
                                 "upstream dependencies: " + ";".join(dependencies))
-    if relative.startswith("paper_common/copernicus/"):
-        return PUBLIC_LICENCE, "third-party Copernicus typesetting files; original LPPL notices retained"
     if legacy_path(relative, root=ROOT).startswith("data/extracted/unfccc/"):
         return _extract_licences()[relative]
     row = by_data_file.get(relative)

@@ -64,7 +64,7 @@ echo "== running the agriculture suite =="
 echo "$MODULES" | while read -r module _rest; do
   [ -n "$module" ] || continue
   printf '  %-34s ' "$module"
-  if PYTHONPATH="$ROOT/src:$ROOT/tests:$ROOT/tests/paper_numbers" \
+  if PYTHONPATH="$ROOT/src:$ROOT/tests" \
      "$VENV/bin/python" -m unittest discover "$ROOT/tests" -p "$module.py" > "$VENV/$module.log" 2>&1
   then
     printf 'OK   %s\n' "$(grep -o 'Ran [0-9]* test[s]*' "$VENV/$module.log" | tail -1)"

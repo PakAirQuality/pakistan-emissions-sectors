@@ -5,7 +5,7 @@ A shared activity and material-flow inventory for Pakistan covering ten fiscal y
 <!-- END GENERATED: headline -->
 
 <!-- BEGIN GENERATED: release -->
-**Release** `1.0.0rc69` | reporting period **July 2015--June 2025 (ten fiscal years)** (2015-07-01 to 2025-06-30) | reference FY2023–24: **444.61 Mt CO2e** (AR5, S_TAN) / **449.85 Mt** (L_TAN) | 23 structural axes, 28 named configurations | completeness 54 E / 70 NE / 9 IE / 4 NO | code MIT; CC-BY-4.0 for project-owned primary products and text; per-file upstream terms retained. ODbL-derived components are packaged separately. Commit and manifest digest: `paper_common/release_cover.tex` and `outputs/release_manifest.json`.
+**Release** `1.0.0rc69` | reporting period **July 2015--June 2025 (ten fiscal years)** (2015-07-01 to 2025-06-30) | reference FY2023–24: **444.61 Mt CO2e** (AR5, S_TAN) / **449.85 Mt** (L_TAN) | 23 structural axes, 28 named configurations | completeness 54 E / 70 NE / 9 IE / 4 NO | code MIT; CC-BY-4.0 for project-owned primary products and text; per-file upstream terms retained. ODbL-derived components are packaged separately. Commit and manifest digest: `outputs/release_manifest.json`.
 <!-- END GENERATED: release -->
 
 **Explore the data:** <https://emissions.hawanama.org> is an interactive explorer of this
@@ -18,10 +18,9 @@ their checksums are, and `NOTICE-ODbL.md` lists the files that carry ODbL obliga
 
 The common account reconciles Pakistani fuel consumption, physical production, household fuel,
 biomass and nitrogen flows before applying source-specific emissions methods. It distinguishes
-activity, factor, control, coverage and allocation assumptions. The maintained main article is
-[the integrated national manuscript](paper_national/versions/v3/paper.tex); the longer report
-and sector technical notes supply detailed methods. This is a research inventory, not an
-official national submission.
+activity, factor, control, coverage and allocation assumptions. The methods are documented
+in [docs/](docs/), starting with [the methods note](docs/methods_note.md). This is a research
+inventory, not an official national submission.
 
 ## Products and configurations
 
@@ -145,7 +144,6 @@ previous release controls remain preserved under `data/baselines/rc67_integrated
    processing-plant and well records are the binding evidence.
 <!-- END GENERATED: movers -->
 
-No external deposit or journal submission is claimed. The local review package contains
-products, code, manuscript sources/PDFs, plotted data, metadata, checksums and reproduction
-evidence. A public review deposit and persistent identifiers remain subsequent actions.
+No external deposit is claimed. The local review package contains products, code,
+documentation, figures, metadata, checksums and reproduction evidence. A public review deposit and persistent identifiers remain subsequent actions.
 See [CITATION.cff](CITATION.cff) for the current title, version and attribution.

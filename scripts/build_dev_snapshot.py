@@ -4,7 +4,7 @@
     python3 scripts/build_dev_snapshot.py [--out DIR] [--with-surfaces] [--with-activity]
 
 NOT a validation package: no gate runs to build it, nothing is verified, and README_DEV.md
-says so. It is the repository laid out the way the collaborator asked for it - paper/,
+says so. It is the repository laid out the way the collaborator asked for it -
 outputs/, registries/, schemas/, data/geometry/, src/, tests/ and the release metadata -
 deterministic (fixed entry times, sorted entries, one top-level folder), with a plain
 SHA256SUMS. Source documents (sources/, data/raw/, data/cache/) never enter it; the source
@@ -33,10 +33,6 @@ NAME = "pakemis_%s_dev_snapshot" % pkinv.__version__
 # (destination prefix inside the snapshot, source prefix in the repository, predicate on the
 # repository-relative path). Order matters only for the reader; every source is tracked.
 MAP = [
-    ("paper/national/", "paper_national/", None),
-    ("paper/common/", "paper_common/", None),
-    ("paper/technical_notes/", "papers/", lambda rel: not rel.startswith("papers/pdf") and rel != "papers/pdf.zip"),
-    ("paper/pdf/", "papers/pdf/", None),
     ("outputs/", "outputs/", None),
     ("src/", "src/", None),
     ("tests/", "tests/", None),
@@ -47,7 +43,7 @@ MAP = [
 GEOMETRY_SRC = "data/gis/"
 SURFACES = "data/gis/manual/"
 RELEASE_FILES = ("outputs/release_manifest.json", "outputs/pakemis_test_run.json", "outputs/SHA256SUMS",
-                 "outputs/pakemis_paper_hashes.csv", "outputs/pakemis_deposit_manifest.csv",
+                 "outputs/pakemis_deposit_manifest.csv",
                  "outputs/pakemis_source_register.csv", "CITATION.cff", ".zenodo.json", "CHANGELOG.md",
                  "LICENSE", "LICENSE-data", "pyproject.toml", "requirements.lock")
 SCHEMA_FILES = ("data/product_schemas.csv", "data/product_columns.csv",
@@ -61,10 +57,9 @@ def _copy(src, dst):
 
     The blanket refusal below was right about what it feared - a link out of the tree, or
     a dangling one, would snapshot something the snapshot does not describe - and wrong
-    about one case it could not have known: paper_national/CURRENT is a relative link to
-    the national paper's shipped version, and it is structure a reader needs, not a file.
-    Following it would duplicate a whole version under a second name; refusing it stopped
-    the snapshot entirely. So a relative link that stays inside the tree is recreated as a
+    about one case it could not have known: a relative link to a sibling inside the tree is
+    structure a reader needs, not a file. Following it would duplicate the target under a
+    second name; refusing it stopped the snapshot entirely. So a relative link that stays inside the tree is recreated as a
     link, and everything else still refuses.
     """
     os.makedirs(os.path.dirname(dst), exist_ok=True)
@@ -108,7 +103,7 @@ def stage(out_dir, with_surfaces=False, with_activity=False):
                 _copy(asset_path(ROOT, rel), asset_path(top, "data/activity_inputs/", rel[len("data/"):]))
                 copied.append(rel)
     # the validation package's registries block, verbatim
-    for dst, kind, src in bvp.layout(ROOT):        # layout() lists papers/pdf under its argument; only its registries/ block is used
+    for dst, kind, src in bvp.layout(ROOT):        # only layout()'s registries/ block is used
         if not dst.startswith("registries/"):
             continue
         target = asset_path(top, dst)
@@ -156,8 +151,6 @@ scripts/build_dev_snapshot.py. **This is not a validation package**: no gate ran
 nothing in it was verified by its construction; the reviewer-facing artefact with its own gates
 is `pakemis_%(version)s_full_validation.zip`. It is the tree laid out for a collaborator:
 
-- `paper/` - the national manuscript (`national/`), the shared preamble and bibliography
-  (`common/`), the sector technical notes (`technical_notes/<sector>/`) and the built PDFs (`pdf/`)
 - `outputs/` - every tracked output, including the semantic release (`outputs/semantic/`)
 - `registries/` - the validation package's registries block (periods, months, sectors,
   components, configurations, methods, parameters, ...)
@@ -165,7 +158,7 @@ is `pakemis_%(version)s_full_validation.zip`. It is the tree laid out for a coll
 - `data/geometry/` - the boundary files and proxy grids the allocation reads (surfaces under
   `manual/` %(surfaces)s), the ADM2 tables under `tables/`, and `LICENSES.md` naming the ODbL files
 - `src/`, `tests/` - the engine and its suite
-- `release/` - the release manifest, the recorded test run, SHA256SUMS, the paper hashes,
+- `release/` - the release manifest, the recorded test run, SHA256SUMS,
   the deposit manifest and the source register, CITATION.cff, .zenodo.json, CHANGELOG, licences
 
 Source documents (`sources/`, `data/raw/`, `data/cache/`) are not included; `release/

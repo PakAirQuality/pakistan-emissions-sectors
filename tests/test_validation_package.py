@@ -206,7 +206,7 @@ class TestTheRegistriesTheBuilderDependsOn(unittest.TestCase):
     def test_the_package_tests_ship_with_the_repository_suite(self):
         folder = os.path.join(ROOT, "tests", "validation")
         for name in ("__init__.py", "_package.py", "check_sha256sums.py", "run_suite.py", "summarise_logs.py",
-                     "compare_outputs.py", "claim_registry.py", "test_presentation_identity.py",
+                     "compare_outputs.py", "test_presentation_identity.py",
                      "test_product_schemas.py", "test_manifest_dimensions.py", "test_sha256sums_coverage.py",
                      "test_cross_sector_ledger.py"):
             self.assertTrue(os.path.exists(os.path.join(folder, name)), name)

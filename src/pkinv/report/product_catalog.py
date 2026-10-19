@@ -1,16 +1,14 @@
-"""The product catalogue: one row per logical scientific product, and the table it generates.
+"""The product catalogue: one row per logical scientific product.
 
-WHY THIS EXISTS NOW. The supplement's product table was maintained by hand, and it drifted:
-its uncertainty row read "reference year only ... There is no time-correlated ensemble ... and
+WHY THIS EXISTS. The product descriptions were maintained by hand in prose, and they drifted:
+the uncertainty row read "reference year only ... There is no time-correlated ensemble ... and
 none is published" while `pakemis_longitudinal_uncertainty.csv` and
-`pakemis_trend_uncertainty.csv` had been shipping for releases and the main paper described
-their three scenarios. A reviewer reading both could not tell which document was authoritative,
-and no test could see the contradiction because the sentence was prose and the products were
-files.
+`pakemis_trend_uncertainty.csv` had been shipping for releases. No test could see the
+contradiction because the sentence was prose and the products were files.
 
-Patching that sentence would have fixed the instance. Generating the table fixes the class:
-a product cannot be in the release and absent from the table, and cannot be described by a
-status the catalogue does not hold.
+Patching that sentence would have fixed the instance. Holding the descriptions here fixes the
+class: a product cannot be in the release and absent from the catalogue, and cannot be
+described by a status the catalogue does not hold.
 
 WHAT A ROW IS. A LOGICAL product, not a file. `pakemis_annual_fy2015_16_fy2024_25.csv` and its
 `.parquet` twin are one product in two representations, which is why counting citation coverage
@@ -18,8 +16,8 @@ over file extensions has always been slightly wrong.
 
 THE SCHEMA IS NOT INVENTED HERE. docs/product_catalog_design.md specified these fields and
 their vocabularies, and said in its own first paragraph that it existed "so the next pass
-implements a decided design rather than re-deriving one". This is that pass, for the slice the
-supplement's table needs.
+implements a decided design rather than re-deriving one". This is that pass, for the slice a
+product table needs.
 
 WHAT THIS IS NOT, and the design document keeps the rest as declared-not-built: there is no
 artifact_manifest.csv, no packaging allowlist, and the `*` catch-all in data/artifact_roles.csv
@@ -28,7 +26,6 @@ exactly one family, a documentation anchor and an existing artifact - and the ot
 
 Usage:  python3 -m pkinv.report.product_catalog
 Writes: outputs/pakemis_product_catalog.csv
-        paper_national/sections/generated_products.tex
 """
 
 from pkinv.assets import asset_path
@@ -36,12 +33,10 @@ import csv
 import os
 
 from pkinv.paths import OUTPUTS, ROOT
-from pkinv.paths import PAPER_NATIONAL_SECTIONS  # noqa: E402
 from pkinv.activity.store import read_rows
 from pkinv.core.io import write_table
 
 OUT = asset_path(OUTPUTS, "pakemis_product_catalog.csv")
-TEX = asset_path(PAPER_NATIONAL_SECTIONS, "generated_products.tex")
 
 FIELDS = ("product_id", "product_family", "release_tier", "artifact_kind", "ship",
           "primary_artifact", "representations", "documentation_anchor", "generated_by",
@@ -51,29 +46,24 @@ FAMILY_ORDER = ("annual", "monthly", "spatial", "uncertainty", "semantic")
 FAMILY_LABEL = {"annual": "Annual", "monthly": "Monthly", "spatial": "Spatial",
                 "uncertainty": "Uncertainty", "semantic": "Semantic layer"}
 
-# One row per logical product. `status` is the word the supplement prints, and it is a property
-# of the product rather than a sentence about it: a product whose status and description live
-# here cannot be described differently in the manuscript, because the manuscript no longer
-# contains the description.
+# One row per logical product. `status` is a property of the product rather than a sentence
+# about it: a product whose status and description live here cannot be described differently
+# elsewhere, because nothing else holds the description.
 # WHAT A documentation_anchor HAS TO DO, since for several releases it did not have to do
 # anything. The design in docs/product_catalog_design.md replaced "every shipped filename must
 # be cited" with "every core logical product must have one documentation_anchor", and the only
 # guard on it asserted the field was non-empty. On 2026-10-05, 8 of the 23 anchors resolved to
-# nothing: four said supp:products, and the supplement has no product table - the table is
-# tab:products in sections/50_data_records.tex, in the MAIN document - and four said
-# main:spatial, where no label ending :spatial is reachable from paper_national.tex, because
-# the only sec:spatial in the tree belongs to the technical supplement. A pointer nobody
-# dereferences is the same defect as a citation nobody checks, one level out, and it replaced
-# a mechanism that WAS checked.
+# nothing. A pointer nobody dereferences is the same defect as a citation nobody checks, one
+# level out.
 #
-# The form is <doc>:<label-suffix>, where doc is main (paper_national.tex) or supp
-# (supplement.tex) and the suffix is what follows the colon in a \label{} reachable through
-# that document's \input tree. tests/test_product_catalog_anchors.py resolves every one.
+# The form is <file>[#<heading-slug>]: a tracked Markdown file in this repository, and
+# optionally the GitHub slug of one of its headings. tests/test_product_catalog_anchors.py
+# resolves every one. (rc70 moved every anchor onto this repository's own documentation.)
 CATALOG = (
     dict(product_id="annual.reference_year", product_family="annual", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="national_all_sectors.csv", representations="csv",
-         documentation_anchor="main:results", generated_by="pkinv.report.national_rollup",
+         documentation_anchor="README.md#reference-year-ghg-results", generated_by="pkinv.report.national_rollup",
          status="mature",
          what_it_is_and_is_not="Ten sectors on one reporting period, exact mass closure and "
                                "executable cross-boundary ledgers."),
@@ -81,9 +71,9 @@ CATALOG = (
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_annual_fy2015_16_fy2024_25.csv",
          representations="csv;parquet",
-         documentation_anchor="main:results", generated_by="pkinv.report.annual_product",
+         documentation_anchor="README.md#reference-year-ghg-results", generated_by="pkinv.report.annual_product",
          # "partial by declaration" survived here for two releases after the FY2015-16
-         # recovery made it false - the sixteenth review read it beside the main paper's
+         # recovery made it false - the sixteenth review read it beside a published
          # "complete 100-sector-year rectangle" and correctly called the pair a
          # contradiction. Sector-year coverage is complete; what remains partial is
          # CATEGORY SCOPE (the NE categories), which is the completeness matrix's
@@ -97,7 +87,7 @@ CATALOG = (
     dict(product_id="annual.pass2_scorecard", product_family="annual",
          release_tier="supporting", artifact_kind="register", ship="yes",
          primary_artifact="pakemis_pass2_scorecard.csv", representations="csv",
-         documentation_anchor="main:limitations",
+         documentation_anchor="README.md#coverage-and-fitness-for-use",
          generated_by="pkinv.report.pass2_scorecard", status="historical diagnostic",
          what_it_is_and_is_not="Earlier internal campaign targets retained beside current "
                                "coverage, timing and allocation diagnostics. Their historical "
@@ -106,7 +96,7 @@ CATALOG = (
     dict(product_id="annual.completeness_mass", product_family="annual",
          release_tier="core", artifact_kind="register", ship="yes",
          primary_artifact="pakemis_completeness_mass.csv", representations="csv",
-         documentation_anchor="main:limitations",
+         documentation_anchor="README.md#coverage-and-fitness-for-use",
          generated_by="pkinv.report.completeness_mass", status="new",
          what_it_is_and_is_not="Unestimated streams joined to available activity-based "
                                "screening quantities, with overlap and scenario assumptions "
@@ -115,7 +105,7 @@ CATALOG = (
     dict(product_id="spatial.rice_geography_crosscheck", product_family="spatial",
          release_tier="core", artifact_kind="crosscheck", ship="yes",
          primary_artifact="pakemis_rice_geography_crosscheck.csv",
-         representations="csv", documentation_anchor="main:results",
+         representations="csv", documentation_anchor="README.md#reference-year-ghg-results",
          generated_by="pkinv.report.rice_geography_crosscheck", status="new",
          what_it_is_and_is_not="The declared MapSPAM rice surface measured against "
                                "the own-year GCD-Rice 2023 30 m classification, as "
@@ -126,7 +116,7 @@ CATALOG = (
     dict(product_id="spatial.stream_support_ledger", product_family="spatial",
          release_tier="core", artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_stream_support_ledger.csv",
-         representations="csv", documentation_anchor="main:results",
+         representations="csv", documentation_anchor="README.md#reference-year-ghg-results",
          generated_by="scripts.build_stream_support_ledger", status="new",
          what_it_is_and_is_not="One row per (period, stream): the mass beside the "
                                "support that placed it - geometry, surface, panel, "
@@ -138,7 +128,7 @@ CATALOG = (
     dict(product_id="spatial.adm2_frame_2022", product_family="spatial",
          release_tier="core", artifact_kind="crosswalk", ship="yes",
          primary_artifact="pakemis_adm2_frame_2022.csv",
-         representations="csv", documentation_anchor="main:results",
+         representations="csv", documentation_anchor="README.md#reference-year-ghg-results",
          generated_by="scripts.build_adm2_frame_2022", status="new",
          what_it_is_and_is_not="The OCHA COD-AB 2022 ADM2 frame (160 units, CC BY-IGO) "
                                "crosswalked to the canonical 152-unit set: twelve of the "
@@ -150,7 +140,7 @@ CATALOG = (
     dict(product_id="spatial.grid_0p1_edgar_aligned", product_family="spatial",
          release_tier="core", artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_grid_0p1_edgar_aligned.nc",
-         representations="netcdf", documentation_anchor="main:results",
+         representations="netcdf", documentation_anchor="README.md#reference-year-ghg-results",
          generated_by="scripts.build_grid_01deg", status="new",
          what_it_is_and_is_not="The annual 0.05-degree cube aggregated 2x2 at the ODD "
                                "parity that tiles EDGAR's 0.1-degree lattice exactly "
@@ -161,7 +151,7 @@ CATALOG = (
     dict(product_id="spatial.agri_reference_panel_divergence", product_family="spatial",
          release_tier="core", artifact_kind="crosscheck", ship="yes",
          primary_artifact="agri_reference_panel_divergence.csv",
-         representations="csv", documentation_anchor="main:results",
+         representations="csv", documentation_anchor="README.md#reference-year-ghg-results",
          generated_by="scripts.build_agri_panel_divergence", status="new",
          what_it_is_and_is_not="The reference-year crop split measured proxy-vs-panel "
                                ": within-province shares per (category, "
@@ -174,7 +164,7 @@ CATALOG = (
     dict(product_id="annual.atomic", product_family="annual", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_atomic_annual.csv", representations="csv",
-         documentation_anchor="main:data", generated_by="pkinv.report.atomic_annual",
+         documentation_anchor="README.md#products-and-configurations", generated_by="pkinv.report.atomic_annual",
          status="mature",
          what_it_is_and_is_not="The component grain beneath the panel: every priced stream, "
                                "with its evidence class, for all ten periods."),
@@ -182,7 +172,7 @@ CATALOG = (
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_monthly_fy2015_16_fy2024_25.csv",
          representations="csv;parquet",
-         documentation_anchor="main:monthly", generated_by="pkinv.report.monthly_all_years",
+         documentation_anchor="docs/monthly_lane.md", generated_by="pkinv.report.monthly_all_years",
          status="allocation, not observation",
          what_it_is_and_is_not="{months} months, July 2015 to June 2025, every non-absent "
                                "component resolved into twelve months closing exactly to its "
@@ -193,14 +183,14 @@ CATALOG = (
     dict(product_id="monthly.coverage", product_family="monthly", release_tier="core",
          artifact_kind="diagnostic", ship="yes",
          primary_artifact="pakemis_monthly_coverage_summary.csv", representations="csv",
-         documentation_anchor="main:monthly", generated_by="pkinv.report.monthly_coverage",
+         documentation_anchor="docs/monthly_lane.md", generated_by="pkinv.report.monthly_coverage",
          status="complete",
          what_it_is_and_is_not="Exactly 120 rows: what each month's timing rests on, and which "
                                "sectors a month does not have at all."),
     dict(product_id="spatial.cube", product_family="spatial", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_grid_0p05_monthly.nc", representations="netcdf",
-         documentation_anchor="main:cube", generated_by="pkinv.report.grid_cube",
+         documentation_anchor="docs/spatial_products_contract.md", generated_by="pkinv.report.grid_cube",
          status="allocation, partly observed",
          what_it_is_and_is_not="The 0.05 degree MONTHLY cube in native gas mass, with district "
                                "and provincial views, for the reference year. The monthly grain "
@@ -213,7 +203,7 @@ CATALOG = (
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
          representations="netcdf",
-         documentation_anchor="main:cube", generated_by="pkinv.report.spatial_by_year",
+         documentation_anchor="docs/spatial_products_contract.md", generated_by="pkinv.report.spatial_by_year",
          status="allocation, evidence-graded per stream and period",
          what_it_is_and_is_not="Ten fiscal periods at 0.05 degrees, three spatial views, three "
                                "gases, in native mass. Each period is generated from its own "
@@ -228,7 +218,7 @@ CATALOG = (
     dict(product_id="spatial.by_year", product_family="spatial", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_adm1_by_year.csv", representations="csv",
-         documentation_anchor="main:cube", generated_by="pkinv.report.spatial_by_year",
+         documentation_anchor="docs/spatial_products_contract.md", generated_by="pkinv.report.spatial_by_year",
          status="allocation, source-specific temporal evidence",
          what_it_is_and_is_not="Ten fiscal years at ADM1 and ADM2, annually and monthly, "
                                "under four configurations. Each stream records whether its "
@@ -237,14 +227,14 @@ CATALOG = (
     dict(product_id="spatial.unallocated", product_family="spatial", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_spatial_unallocated.csv", representations="csv",
-         documentation_anchor="main:cube", generated_by="pkinv.report.spatial_unallocated",
+         documentation_anchor="docs/spatial_products_contract.md", generated_by="pkinv.report.spatial_unallocated",
          status="declared, not gridded",
          what_it_is_and_is_not="The mass with no defensible placement below ADM1, retained "
                                "rather than spread. National closure is raster plus this."),
     dict(product_id="uncertainty.reference_year", product_family="uncertainty",
          release_tier="core", artifact_kind="estimate", ship="yes",
          primary_artifact="national_uncertainty_montecarlo.csv", representations="csv",
-         documentation_anchor="main:uncertainty", generated_by="pkinv.eval.uncertainty",
+         documentation_anchor="docs/uncertainty_contract.md", generated_by="pkinv.eval.uncertainty",
          status="legacy, reference year",
          what_it_is_and_is_not="The 100,000-draw national Monte Carlo for the FY2023-24 "
                                "reference year, by module and sector, retained for "
@@ -256,7 +246,7 @@ CATALOG = (
          release_tier="core", artifact_kind="estimate", ship="yes",
          primary_artifact="pakemis_ensemble_summary.csv",
          representations="csv;parquet",
-         documentation_anchor="main:uncertainty",
+         documentation_anchor="docs/uncertainty_contract.md",
          generated_by="pkinv.report.common_ensemble",
          status="joinable, reference year",
          what_it_is_and_is_not="A 10,000-draw prefix of the national Monte Carlo "
@@ -268,7 +258,7 @@ CATALOG = (
     dict(product_id="uncertainty.longitudinal", product_family="uncertainty",
          release_tier="supporting", artifact_kind="sensitivity", ship="yes",
          primary_artifact="pakemis_longitudinal_uncertainty.csv", representations="csv",
-         documentation_anchor="main:uncertainty",
+         documentation_anchor="docs/uncertainty_contract.md",
          generated_by="pkinv.report.longitudinal_uncertainty",
          status="legacy analytical sensitivity",
          what_it_is_and_is_not="Ten annual analytical bands under three temporal-dependence "
@@ -277,7 +267,7 @@ CATALOG = (
     dict(product_id="uncertainty.trend", product_family="uncertainty", release_tier="supporting",
          artifact_kind="sensitivity", ship="yes",
          primary_artifact="pakemis_trend_uncertainty.csv", representations="csv",
-         documentation_anchor="main:uncertainty",
+         documentation_anchor="docs/uncertainty_contract.md",
          generated_by="pkinv.report.longitudinal_uncertainty",
          status="legacy analytical sensitivity",
          what_it_is_and_is_not="Draw-wise paired differences from the legacy analytical graph, "
@@ -288,7 +278,7 @@ CATALOG = (
     dict(product_id="semantic.release", product_family="semantic", release_tier="core",
          artifact_kind="contract", ship="yes",
          primary_artifact="semantic/semantic_release.json", representations="json",
-         documentation_anchor="main:data", generated_by="pkinv.semantic.build",
+         documentation_anchor="README.md#products-and-configurations", generated_by="pkinv.semantic.build",
          status="mature",
          what_it_is_and_is_not="The semantic contract: release identity, the dimensions and "
                                "their values, the defaults, the rounding and aggregation rules, "
@@ -297,7 +287,7 @@ CATALOG = (
     dict(product_id="semantic.facts", product_family="semantic", release_tier="core",
          artifact_kind="estimate", ship="yes",
          primary_artifact="semantic/fact_annual.csv", representations="csv;parquet",
-         documentation_anchor="main:data", generated_by="pkinv.semantic.build",
+         documentation_anchor="README.md#products-and-configurations", generated_by="pkinv.semantic.build",
          status="mature",
          what_it_is_and_is_not="Typed fact tables (annual, calendar, monthly, ADM1, ADM2, "
                                "unallocated, uncertainty, completeness, transfers, evidence) "
@@ -306,7 +296,7 @@ CATALOG = (
     dict(product_id="semantic.dimensions", product_family="semantic", release_tier="core",
          artifact_kind="registry", ship="yes",
          primary_artifact="semantic/dim_period.csv", representations="csv;parquet",
-         documentation_anchor="main:data", generated_by="pkinv.semantic.build",
+         documentation_anchor="README.md#products-and-configurations", generated_by="pkinv.semantic.build",
          status="mature",
          what_it_is_and_is_not="Dimension tables: the closed vocabularies every fact row "
                                "keys into (periods on both bases, months, configurations, GWP "
@@ -320,18 +310,18 @@ CATALOG += (
     dict(product_id="uncertainty.nitrogen_partition", product_family="uncertainty",
          release_tier="supporting", artifact_kind="sensitivity", ship="yes",
          primary_artifact="pakemis_nitrogen_partition_sensitivity.csv", representations="csv",
-         documentation_anchor="main:uncertainty", generated_by="pkinv.report.air_sensitivities",
+         documentation_anchor="docs/uncertainty_contract.md", generated_by="pkinv.report.air_sensitivities",
          status="current", what_it_is_and_is_not="Native nitrogen-ledger replay with no NOx remainder "
          "assigned to management/grazing volatilisation. A chemical-attribution diagnostic with "
          "downstream NH3 and N2O consequences; no probability, confidence limit or measured alternative."),
-    {'product_id': 'annual.configurations', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_atoms.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.atomic_annual', 'status': 'current', 'what_it_is_and_is_not': 'Native GHG emissions for S_TAN, L_TAN, S_IPCC and L_IPCC; configurations are alternatives and must never be added.'},
-    {'product_id': 'monthly.configurations', 'product_family': 'monthly', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_monthly.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.monthly_all_years', 'status': 'current', 'what_it_is_and_is_not': 'Twelve process allocation months per source and fiscal year; no claim of observed monthly emissions.'},
-    {'product_id': 'annual.air', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_annual_fy2015_16_fy2024_25.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.air_annual', 'status': 'current', 'what_it_is_and_is_not': 'Seven core pollutants in native mass with narrower additional species; covered sources only; screening excluded.'},
-    {'product_id': 'monthly.air', 'product_family': 'monthly', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_monthly.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.air_monthly', 'status': 'current', 'what_it_is_and_is_not': 'Process-specific pollutant profiles with native mass and temporal evidence.'},
-    {'product_id': 'uncertainty.ghg_native', 'product_family': 'uncertainty', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_conditional_uncertainty.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.ghg_conditional_uncertainty', 'status': 'current', 'what_it_is_and_is_not': 'Configuration-conditional native gases and separate GWP aggregates; paired trend ensemble; structural gaps excluded.'},
-    {'product_id': 'uncertainty.air', 'product_family': 'uncertainty', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_conditional_uncertainty.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.air_uncertainty', 'status': 'current', 'what_it_is_and_is_not': 'Conditional pollutant intervals with shared nitrogen, waste and combustion inputs; no probability assigned to structural scenarios.'},
-    {'product_id': 'annual.extension_provisional', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_fy2025_26_provisional_emissions.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'scripts/ingest_release_extension.py', 'status': 'current', 'what_it_is_and_is_not': 'FY2025-26 source estimates with explicit partial coverage; cannot be summed into a common-scope national total.'},
-    {'product_id': 'spatial.configurations', 'product_family': 'spatial', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_adm2.csv', 'representations': 'csv', 'documentation_anchor': 'main:data', 'generated_by': 'pkinv.report.spatial_by_year', 'status': 'current', 'what_it_is_and_is_not': 'All four configurations at ADM2; fixed within-year geography with source-period evidence and unallocated ledger.'},
+    {'product_id': 'annual.configurations', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_atoms.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'pkinv.report.atomic_annual', 'status': 'current', 'what_it_is_and_is_not': 'Native GHG emissions for S_TAN, L_TAN, S_IPCC and L_IPCC; configurations are alternatives and must never be added.'},
+    {'product_id': 'monthly.configurations', 'product_family': 'monthly', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_monthly.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'pkinv.report.monthly_all_years', 'status': 'current', 'what_it_is_and_is_not': 'Twelve process allocation months per source and fiscal year; no claim of observed monthly emissions.'},
+    {'product_id': 'annual.air', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_annual_fy2015_16_fy2024_25.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'pkinv.report.air_annual', 'status': 'current', 'what_it_is_and_is_not': 'Seven core pollutants in native mass with narrower additional species; covered sources only; screening excluded.'},
+    {'product_id': 'monthly.air', 'product_family': 'monthly', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_monthly.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'pkinv.report.air_monthly', 'status': 'current', 'what_it_is_and_is_not': 'Process-specific pollutant profiles with native mass and temporal evidence.'},
+    {'product_id': 'uncertainty.ghg_native', 'product_family': 'uncertainty', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_conditional_uncertainty.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'pkinv.report.ghg_conditional_uncertainty', 'status': 'current', 'what_it_is_and_is_not': 'Configuration-conditional native gases and separate GWP aggregates; paired trend ensemble; structural gaps excluded.'},
+    {'product_id': 'uncertainty.air', 'product_family': 'uncertainty', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_air_conditional_uncertainty.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'pkinv.report.air_uncertainty', 'status': 'current', 'what_it_is_and_is_not': 'Conditional pollutant intervals with shared nitrogen, waste and combustion inputs; no probability assigned to structural scenarios.'},
+    {'product_id': 'annual.extension_provisional', 'product_family': 'annual', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_fy2025_26_provisional_emissions.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'scripts/ingest_release_extension.py', 'status': 'current', 'what_it_is_and_is_not': 'FY2025-26 source estimates with explicit partial coverage; cannot be summed into a common-scope national total.'},
+    {'product_id': 'spatial.configurations', 'product_family': 'spatial', 'release_tier': 'core', 'artifact_kind': 'estimate', 'ship': 'yes', 'primary_artifact': 'pakemis_ghg_configuration_adm2.csv', 'representations': 'csv', 'documentation_anchor': 'README.md#products-and-configurations', 'generated_by': 'pkinv.report.spatial_by_year', 'status': 'current', 'what_it_is_and_is_not': 'All four configurations at ADM2; fixed within-year geography with source-period evidence and unallocated ledger.'},
 )
 
 
@@ -365,35 +355,6 @@ def catalog():
             for row in CATALOG]
 
 
-def _escape(text):
-    return text.replace("_", r"\_").replace("&", r"\&").replace("%", r"\%")
-
-
-def render(rows):
-    """The supplement's product table, generated. One row per catalogued core product."""
-    lines = [
-        "% GENERATED by pkinv.report.product_catalog -- do not edit.",
-        "% The supplement's product table was hand-maintained and drifted: it described the",
-        "% uncertainty family as reference-year only while two longitudinal products shipped.",
-        "% It is generated now so a product cannot be in the release and absent from the table.",
-        r"\begin{tabular}{@{}p{0.20\linewidth}p{0.16\linewidth}p{0.56\linewidth}@{}}",
-        r"\toprule",
-        r"\textbf{Product} & \textbf{Status} & \textbf{What it is, and what it is not} \\",
-        r"\midrule",
-    ]
-    for family in FAMILY_ORDER:
-        for row in [r for r in rows if r["product_family"] == family
-                    and r["release_tier"] == "core"]:
-            lines.append("%s &\n%s &\n%s \\texttt{%s}. \\\\" % (
-                _escape("%s: %s" % (FAMILY_LABEL[family],
-                                    row["product_id"].split(".", 1)[1].replace("_", " "))),
-                _escape(row["status"]),
-                _escape(row["what_it_is_and_is_not"]),
-                _escape(row["primary_artifact"])))
-    lines += [r"\bottomrule", r"\end{tabular}"]
-    return "\n".join(lines) + "\n"
-
-
 def missing_artifacts(rows=None):
     """Catalogued products whose primary artifact is not on disk - exit criterion 6."""
     return [row["product_id"] for row in (rows or catalog())
@@ -407,10 +368,7 @@ def main():
         raise SystemExit("catalogued products with no artifact on disk: %s" % absent)
 
     os.makedirs(OUTPUTS, exist_ok=True)
-    write_table(OUT, FIELDS, rows, banner=('# ONE ROW PER LOGICAL PRODUCT, not per file: a CSV and its Parquet twin are one product in two representations.', "# The supplement's product table is GENERATED from this, so a product cannot ship and be absent from the table, and", '# cannot be described there by a status this file does not hold.',))
-
-    with open(TEX, "w", encoding="utf-8") as handle:
-        handle.write(render(rows))
+    write_table(OUT, FIELDS, rows, banner=('# ONE ROW PER LOGICAL PRODUCT, not per file: a CSV and its Parquet twin are one product in two representations.', "# Every published description of a product is taken from this file, so a product cannot ship and be absent from it,", '# and cannot be described by a status this file does not hold.',))
 
     import collections
     print("product catalog -> %s" % os.path.relpath(OUT, ROOT))
@@ -420,7 +378,6 @@ def main():
                                                     for r in rows).items()):
         print("    %-12s %d" % (family, count))
     print("  every primary artifact resolves on disk")
-    print("  table -> %s" % os.path.relpath(TEX, ROOT))
     return 0
 
 

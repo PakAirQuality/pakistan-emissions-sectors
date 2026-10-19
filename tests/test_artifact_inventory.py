@@ -179,7 +179,13 @@ from _support import require_built  # noqa: E402
 # surfaces, the citation pointer audit and the sector-note fact file - and naming a table in
 # prose that makes no claim on it would be a citation without a claim. One more is the rc42
 # re-base re-typed above. Lowering it is free.
-UNCITED_CEILING = {"canonical": 0, "sector_headline": 0, "diagnostic": 53}
+# canonical 0 -> 156, sector_headline 0 -> 54, diagnostic 53 -> 100 (rc70, 19 October 2026).
+# NOT A LOSS OF CITATIONS BUT OF THE TEXTS THAT HELD THEM. The papers moved out of this
+# repository, and artifact_inventory.DOC_GLOBS now reads what remains a reader's text here -
+# README.md and docs/*.md. Every file counted above was named only in the papers; none changed
+# role, none stopped shipping and no number moved. Naming them in docs/ is the way down, file
+# by file, where a document makes a claim that rests on one. Lowering it is free.
+UNCITED_CEILING = {"canonical": 156, "sector_headline": 54, "diagnostic": 100}
 # THE OTHER DIRECTION OF THE SAME RULE, which nothing checked until rc64.
 #
 # The register enforces that a `canonical` artifact must be named in a manuscript - that is
@@ -431,9 +437,6 @@ class TestTheCountsReconcile(unittest.TestCase):
         "pakemis_release_change_summary.csv":
             "matches pakemis_*.csv too; diagnostic wins because it compares this release with "
             "the preserved previous one; read as canonical it would be a second, older account",
-        "pakemis_sector_note_facts.csv":
-            "matches pakemis_*.csv too; diagnostic wins because it is generated text facts for "
-            "the sector notes, every value of which is read from a canonical product elsewhere",
         "pakemis_power_provincial_basis_by_year.csv":
             "matches pakemis_*.csv too; the explicit diagnostic rule must win because this "
             "table books no emission: it sets the provincial split of grid power under the "
@@ -532,10 +535,6 @@ class TestTheCountsReconcile(unittest.TestCase):
             "diagnostic rule must win because this adjudicates between two published "
             "readings and books nothing - the sector family is for the power module's "
             "own reported numbers, which this is not (rc64)",
-        "pakemis_citation_deposit_audit.csv":
-            "matches pakemis_*.csv too; the explicit diagnostic rule must win because "
-            "this audits the PACKAGING - which cited paths the archive contains - and "
-            "carries no emissions quantity at all (rc64)",
         "pakemis_power_province_boundary_audit.csv":
             "matches pakemis_*.csv too; the explicit diagnostic rule must win because "
             "this is a metadata audit of where stations are placed, not a product any "
@@ -612,9 +611,6 @@ class TestTheCountsReconcile(unittest.TestCase):
         "pakemis_monthly_fy2015_16_fy2024_25.csv":
             "matches *_monthly_fy* too; it is the ten-year cross-sector layer, not a "
             "sector's monthly file",
-        "pakemis_paper_hashes.csv":
-            "matches pakemis_*.csv too; its explicit rule must win because it is written "
-            "after the manifest and cannot be a canonical hashed product",
         "pakemis_completeness_mass.csv":
             "matches *_completeness_*.csv too; the pakemis_ rule must win because the "
             "Wave-4 ledger is the cross-sector completeness product itself, not a "

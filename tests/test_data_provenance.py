@@ -38,9 +38,10 @@ def _load_script(name):
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
     return mod
-# The bibliography is shared across every manuscript now; it used to live under
-# paper/ when paper/ was the only manuscript.
-BIB = os.path.join(ROOT, "paper_common", "references.bib")
+# The references the data tables cite (key, authors, year, title). rc70: extracted from the
+# project bibliography, which no longer lives in this repository, for exactly the author-year
+# strings data/ carries; a new citation in data/ needs its row here.
+BIB = os.path.join(ROOT, "data", "catalog", "data_references.csv")
 FIELDS = ("source", "note", "scope_detail", "justification")
 
 # "Surname et al. 2020", "Surname & Other 2020", "Surname and Other (2020)"
@@ -96,14 +97,14 @@ class TestDataProvenance(unittest.TestCase):
     def test_every_author_year_resolves_or_is_declared_informal(self):
         bib = _bib_surnames()
         if bib is None:
-            self.skipTest("references.bib not present")
+            self.skipTest("data_references.csv not present")
         unresolved = []
         for (name, year), files in sorted(_data_citations().items()):
             if name in INFORMAL or name.lower() in bib:
                 continue
             unresolved.append("%s %s (%s)" % (name, year, ", ".join(sorted(files))))
         self.assertFalse(unresolved,
-                         "author-year strings in data/ that are neither in references.bib nor "
+                         "author-year strings in data/ that are neither in data_references.csv nor "
                          "declared informal:\n  " + "\n  ".join(unresolved))
 
     def test_the_corrected_attribution_has_not_regressed(self):

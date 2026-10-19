@@ -6,8 +6,8 @@ abstract: >-
   national, provincial, district and gridded products. Sector modules satisfy a common
   software contract; cross-sector fuel and material transfers close by construction;
   structural choices are reported as named scenarios rather than folded into parametric
-  uncertainty; and every figure and table in the accompanying manuscripts is generated
-  from the calculation engine. Excludes LULUCF, which is carried as an exploratory module
+  uncertainty; and every figure and table it publishes is generated from the
+  calculation engine. Excludes LULUCF, which is carried as an exploratory module
   outside all totals.
 type: software
 version: 1.0.0rc69

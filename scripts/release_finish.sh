@@ -7,7 +7,7 @@
 #
 # WHY THIS ORDER (each clause is a defect this sequence has actually caught):
 # - receipts BEFORE the fixpoint, deposit LAST: release_fixpoint regenerates only the
-#   manifest/cover/availability/papers, so a manifest older than the deposit describes
+#   manifest and checksums, so a manifest older than the deposit describes
 #   a tree that no longer exists.
 # - receipts COMMITTED before the fixpoint: the manifest records tree_dirty, and a
 #   manifest that admits a dirty build tree may never be committed
@@ -31,15 +31,13 @@ echo "== release finish for $V"
 echo "== receipts (deposit last)"
 # rc69: the release tail in its registry order, repeated until a pass changes nothing. One
 # pass left product_facts quoting a deposit count from before the deposit manifest grew by
-# ten rows, and the citation audit a byte count from before validation_measured changed.
+# ten rows.
 for pass in 1 2 3 4; do
   before=$(git diff | git hash-object --stdin)
   python3 -m pkinv.report.artifact_inventory > /dev/null 2>&1
   python3 scripts/make_product_coverage.py > /dev/null 2>&1
   python3 -m pkinv.report.deposit_manifest > /dev/null 2>&1
-  python3 scripts/build_citation_deposit_audit.py > /dev/null 2>&1
   python3 -m pkinv.report.product_facts > /dev/null 2>&1
-  python3 scripts/make_claim_matrix.py > /dev/null 2>&1
   python3 -m pkinv.report.data_provenance > /dev/null 2>&1
   [ "$(git diff | git hash-object --stdin)" = "$before" ] && break
   [ $pass = 4 ] && { echo "RECEIPTS DID NOT CONVERGE"; exit 1; }
@@ -55,7 +53,7 @@ fi
 echo "== fixpoint"
 python3 scripts/release_fixpoint.py > "$G/fixpoint_$V.log" 2>&1
 git add -A
-git commit -q -m "Release manifest, cover, SHA256SUMS and PDFs: regenerate against the clean $V tree" "${TRAILER[@]}"
+git commit -q -m "Release manifest and SHA256SUMS: regenerate against the clean $V tree" "${TRAILER[@]}"
 echo "artifacts: $(git log --oneline -1)"
 
 # rc69: the campaign hand-off manifest takes its digests from the release manifest, so it

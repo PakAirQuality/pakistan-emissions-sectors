@@ -4,13 +4,12 @@ WHY THIS FILE EXISTS. Before this round the release called itself four things, a
 files Zenodo actually reads pointed at the wrong repository:
 
     CITATION.cff / .zenodo.json   "Pakistan Emissions Inventory (pkinv)"
-    paper_national.tex            "the PakEmis inventory"
-    references.bib                "{PakEmis} v1.0" -- beside its own note saying "1.0.0rc1"
+    the national description      "the PakEmis inventory"
+    the bibliography              "{PakEmis} v1.0" -- beside its own note saying "1.0.0rc1"
     README.md                     "Pakistan National Greenhouse Gas Inventory"
     CITATION.cff repository-code  .../pakistan-emissions-nowcast   <- the COMPANION repo
 
-None of it is a number, so the whole numeric apparatus in tests/paper_numbers/ was
-blind to it. The bibliography case is the sharpest: one entry claimed version 1.0 in its title
+None of it is a number, so every numeric check was blind to it. The bibliography case is the sharpest: one entry claimed version 1.0 in its title
 and 1.0.0rc1 in its note, and a reader citing this work would have propagated the wrong one.
 
 The identity now resolves through src/pkinv/release.py, and this file asserts that every
@@ -22,9 +21,7 @@ from pkinv.assets import asset_path
 import glob
 import json
 import os
-from pkinv.paths import PAPER_NATIONAL_GENERATED, PAPER_NATIONAL_MAIN, PAPER_NATIONAL_SECTIONS  # noqa: E402
 import re
-import sys
 import unittest
 
 
@@ -59,23 +56,6 @@ ARTEFACTS = [
     # exactly the kind of statement a reader could take for a statement about which
     # release this is. Like the three above it, it deliberately states no version.
     "docs/power_station_geography.md",
-    "paper_common/references.bib",
-    "paper_common/release_cover.tex",
-    "paper_national/versions/v1/paper_national.tex",
-    "paper_national/versions/v1/sections/00_abstract.tex",
-    "paper_national/versions/v1/supplement.tex",
-    # The compact editorial rewrite of the national article (1 October 2026), which states
-    # the candidate release in its availability text. It is registered here before it is
-    # anything else in this repository, because this registry's own question - "a new
-    # artefact cannot quietly become a seventh answer" - is the first one a second
-    # manuscript of the same inventory raises. It names the canonical repository rather
-    # than the companion, and the release it states is the package version.
-    "paper_national/versions/v3/paper.tex",
-    # Its technical documentation, installed from the author's source package on 2026-10-05.
-    # It names the product and deliberately states NO version: its identity is the release
-    # record it accompanies, and a literal here would go stale between releases - the same
-    # reasoning as docs/zenodo_data_record.md above. Registered so the sweep reads it.
-    "paper_national/versions/v3/technical_supplement.tex",
     "outputs/release_manifest.json",
     # A design specification names the project and states no release, which is exactly the
     # case this registry exists to make someone think about rather than skip.
@@ -91,19 +71,8 @@ ARTEFACTS = [
     # data serves; they deliberately state no version - a letter sent months later must
     # not carry a stale release claim.
     "docs/data_request_letters.md",
-    # The ESSD outline (v1.0.0 program) names the product as "PakEmis v1.0" in the title of
-    # the data-description article: the two-component PRODUCT NAME of the 1.0 line, accepted
-    # only while the release is 1.0.x (see _same_release).
-    "docs/essd_outline.md",
     # The semantic contract's prose names the product and the frozen release's identity rule.
     "docs/semantic_contract.md",
-    # The availability statements are GENERATED from the manifest by
-    # scripts/make_availability.py, so they name the release by construction; registered
-    # so that the sweep reads what the article and the technical notes actually print.
-    "paper_national/versions/v1/generated/availability.tex",
-    "paper_national/versions/v1/generated/abstract_doi.tex",
-    "paper_common/generated_availability_tn.tex",
-    "paper_common/tn_banner.tex",
 ]
 
 
@@ -112,7 +81,7 @@ def _same_release(found, current):
 
     Exact equality, or the two-component PRODUCT NAME of a release line ("PakEmis v1.0")
     while the release is on that line ("1.0.0", "1.0.0rc42", "1.0.3"). The name form is the
-    one the ESSD article's title uses; it is not a version, and a full version beside the
+    one a citation title uses; it is not a version, and a full version beside the
     product name must still match exactly. "PakEmis v1.0" beside release 1.1.0 is the
     bibliography defect this file was written for, and it still fails."""
     if found == current:
@@ -157,7 +126,7 @@ COMPANION_MARKERS = ("companion", "nowcast", "different question", "depends on t
 # force history out of the changelog or fail on every legitimate entry. Its
 # current-release section is the [unreleased]/topmost one, checked by eye at the
 # version bump, and historical totals there are labelled as history.
-SKIP = ("papers/pdf", ".git", "outputs/figures", "Code_files_", ".venv", "node_modules",
+SKIP = (".git", "outputs/figures", "Code_files_", ".venv", "node_modules",
         "CHANGELOG.md", "CLAUDE.md")
 
 
@@ -225,25 +194,10 @@ class TestTheReleaseIsNamedTheSameThingEverywhere(unittest.TestCase):
         self.assertIn("repository-code: \"%s\"" % release.REPO_URL, citation)
         self.assertIn("license-url: \"%s\"" % release.LICENCE_URL, citation)
 
-    def test_every_manuscript_prints_the_repository_url(self):
-        """The fifth review found the URL in exactly one of eleven manuscripts: ten
-        availability sections said "the repository" without naming it, so a reader of
-        any paper but transport's could not find the software. Every main manuscript
-        must print the canonical URL as a \\url{} in its availability text."""
-        mains = [os.path.join(PAPER_NATIONAL_MAIN, "paper.tex")]
-        mains += sorted(glob.glob(os.path.join(ROOT, "papers", "*", "paper.tex")))
-        self.assertGreaterEqual(len(mains), 10, "manuscript resolver went blind")
-        needle = "\\url{%s}" % release.REPO_URL
-        missing = [os.path.relpath(m, ROOT) for m in mains
-                   if needle not in open(m, encoding="utf-8").read()]
-        self.assertFalse(missing, "manuscripts that never name the repository:\n  "
-                         + "\n  ".join(missing))
-
     def test_the_product_name_is_the_declared_one(self):
         """The citation metadata carried no product name at all, which is why it could drift
         without contradicting anything."""
-        for relative in ("CITATION.cff", ".zenodo.json", "README.md",
-                         "paper_national/versions/v1/paper_national.tex", "paper_common/release_cover.tex"):
+        for relative in ("CITATION.cff", ".zenodo.json", "README.md"):
             self.assertIn(release.PRODUCT, _text(relative),
                           "%s does not name the product" % relative)
 
@@ -263,8 +217,7 @@ class TestTheReleaseIsNamedTheSameThingEverywhere(unittest.TestCase):
         unregistered = []
         from _support import presentation_layer
         index = presentation_layer()        # a validation package's own records; empty here
-        for pattern in ("*.md", "*.cff", "*.json", "docs/*.md", "paper_common/*.tex",
-                        "paper_common/*.bib", "paper_national/versions/v1/*.tex"):
+        for pattern in ("*.md", "*.cff", "*.json", "docs/*.md"):
             for path in glob.glob(asset_path(ROOT, pattern)):
                 relative = os.path.relpath(path, ROOT)
                 if any(s in relative for s in SKIP) or os.path.normpath(relative) in registered:
@@ -297,7 +250,7 @@ class TestTheReleaseIsNamedTheSameThingEverywhere(unittest.TestCase):
     def test_the_final_version_guard_has_its_controls(self):
         """Stored controls for RELEASE_CLAIM (v1.0.0): a release word before a full version is
         a claim; a schema or interpreter version is not."""
-        positive = "| Version | **1.0.0rc42** |", "This paper describes release \\texttt{1.0.0} of PakEmis", \
+        positive = "| Version | **1.0.0rc42** |", "This dataset describes release \\texttt{1.0.0} of PakEmis", \
                    "git tag -a v1.0.0 -m", "version: 1.0.0"
         for text in positive:
             self.assertIsNotNone(RELEASE_CLAIM.search(text), text)
@@ -310,11 +263,7 @@ class TestTheReleaseIsNamedTheSameThingEverywhere(unittest.TestCase):
         from pkinv.report import release_manifest as rm
         minted = {v for v in rm.DOI.values() if v}
         problems = []
-        files = list(ARTEFACTS) + sorted(glob.glob(os.path.join(ROOT, "papers", "*", "*.tex"))
-                                         + glob.glob(os.path.join(ROOT, "papers", "*", "sections", "*.tex"))
-                                         + glob.glob(os.path.join(PAPER_NATIONAL_MAIN, "*.tex"))
-                                         + glob.glob(os.path.join(PAPER_NATIONAL_SECTIONS, "*.tex"))
-                                         + glob.glob(os.path.join(PAPER_NATIONAL_GENERATED, "*.tex")))
+        files = list(ARTEFACTS)
         for relative in files:
             path = relative if os.path.isabs(relative) else asset_path(ROOT, relative)
             own_entry = True
@@ -386,52 +335,6 @@ class TestTheReleaseIsNamedTheSameThingEverywhere(unittest.TestCase):
 
 
 
-class TestTheCoverPrintsBothDigestsUnderTheirOwnNames(unittest.TestCase):
-    """rc9-rc40 printed ONE digest - the release manifest's - under the label "Source
-    manifest", on every PDF that carries the cover (the nineteenth review's M-7). The two
-    files are different things with different lifetimes, and the cover now prints both.
-    The release-manifest line stays VOLATILE (its digest changes with the commit); the
-    source-manifest digest is a property of the acquisition register and is checked."""
-
-    def setUp(self):
-        self.cover = _text("paper_common/release_cover.tex")
-
-    def _line(self, label):
-        lines = [l for l in self.cover.split("\n") if l.startswith(label)]
-        self.assertEqual(len(lines), 1, "%r printed %d times" % (label, len(lines)))
-        return lines[0]
-
-    def test_both_labels_are_present_and_name_their_file(self):
-        release = self._line("Release manifest &")
-        source = self._line("Source manifest &")
-        self.assertIn("release\\_manifest.json", release)
-        self.assertIn("source\\_manifest.csv", source)
-        self.assertNotIn("release\\_manifest", source)
-
-    def test_the_source_digest_is_the_registers(self):
-        import hashlib
-        sys.path.insert(0, os.path.join(ROOT, "scripts"))
-        import make_release_cover
-        with open(asset_path(ROOT, "data", "manifests", "source_manifest.csv"), "rb") as f:
-            want = hashlib.sha256(f.read()).hexdigest()[:16]
-        printed = re.search(r"\\texttt\{([0-9a-f]{16})\}", self._line("Source manifest &"))
-        self.assertIsNotNone(printed, "no 16-hex digest on the source-manifest line")
-        self.assertEqual(printed.group(1), want)
-        self.assertEqual(make_release_cover.source_manifest_digest()[:16], want)
-
-    def test_the_two_digests_differ(self):
-        rel = re.search(r"\\texttt\{([0-9a-f]{16})\}", self._line("Release manifest &"))
-        src = re.search(r"\\texttt\{([0-9a-f]{16})\}", self._line("Source manifest &"))
-        self.assertIsNotNone(rel)
-        self.assertNotEqual(rel.group(1), src.group(1),
-                            "the same digest is printed under both labels - the rc40 defect")
-
-    def test_only_the_release_manifest_line_is_volatile(self):
-        sys.path.insert(0, os.path.join(ROOT, "scripts"))
-        import make_release_cover
-        self.assertIn("Release manifest &", make_release_cover.VOLATILE)
-        self.assertNotIn("Source manifest &", make_release_cover.VOLATILE)
-
 
 class TestTheChangelogNamesThisRelease(unittest.TestCase):
     """CHANGELOG.md is exempt from the version-consistency sweep by design, because it is
@@ -465,72 +368,6 @@ class TestTheChangelogNamesThisRelease(unittest.TestCase):
                         "the topmost CHANGELOG section is %r, not the current release %s"
                         % (sections[0].strip(), pkinv.__version__))
 
-
-class TestNoUnmadeSubmissionIsClaimed(unittest.TestCase):
-    """The eleventh review found the bibliography asserting the national article was
-    Submitted. It is not - ROADMAP Stage 11 records the rewrite as correctly not
-    started, no DOI exists, no journal is named, the branch has never been pushed -
-    and the claim had propagated into five compiled .bbl files and the shipped PDFs
-    through one shared entry. A status a reader cannot verify must not be asserted."""
-
-    def test_the_shared_bibliography_claims_no_submission(self):
-        text = open(os.path.join(ROOT, "paper_common", "references.bib"),
-                    encoding="utf-8").read()
-        entry = text[text.index("@unpublished{ahmad2026national"):]
-        entry = entry[:entry.index("\n}")]
-        self.assertNotIn("submitted", entry.lower())
-        self.assertIn("local review package prepared", entry.lower())
-        self.assertIn("pending", entry.lower())
-
-    def test_no_readme_claims_a_submission_the_status_constant_denies(self):
-        """The fourteenth review found the SAME defect class one directory over:
-        papers/pdf/README.md said the national article 'is submitted' - written
-        when submission was imminent, false at the release it shipped with, and
-        unreachable by the vintage sweep because papers/pdf sits in its SKIP
-        list (compiled PDFs, deliberately). The status is now a constant
-        (release.MANUSCRIPT_STATUS), the manifest carries it, and BOTH READMEs
-        are swept here explicitly - the SKIP list no longer shelters the claim."""
-        from pkinv import release
-        pattern = re.compile(r"\bis submitted\b|\bwas submitted\b"
-                             r"|\bhas been submitted to\b")
-        for relative in ("README.md", os.path.join("papers", "pdf", "README.md")):
-            text = open(asset_path(ROOT, relative), encoding="utf-8").read()
-            # a DENIAL is not a claim: "No manuscript here has been submitted"
-            # is the truthful status sentence and must keep passing
-            hits = [m.group(0) for m in pattern.finditer(text)
-                    if not re.search(r"\b(?:no|none|nothing)\b[^.]*$",
-                                     text[max(0, m.start() - 80):m.start()],
-                                     re.IGNORECASE)]
-            if release.MANUSCRIPT_STATUS != "submitted":
-                self.assertFalse(
-                    hits,
-                    "%s asserts a submission (%s) while release.MANUSCRIPT_STATUS "
-                    "is %r - either the sentence or the constant is lying"
-                    % (relative, hits, release.MANUSCRIPT_STATUS))
-
-    def test_the_manifest_carries_the_manuscript_status(self):
-        import json
-        from pkinv import release
-        manifest = json.load(open(os.path.join(ROOT, "outputs",
-                                               "release_manifest.json"),
-                                  encoding="utf-8"))
-        self.assertEqual(manifest["product"]["manuscript_status"],
-                         release.MANUSCRIPT_STATUS)
-        self.assertEqual(manifest["product"]["submission_identifier"],
-                         release.SUBMISSION_IDENTIFIER)
-
-    def test_no_manuscript_claims_a_doi_at_submission(self):
-        import glob as _glob
-        for pattern in (os.path.join(ROOT, "papers", "*", "*.tex"),
-                        os.path.join(ROOT, "papers", "*", "sections", "*.tex"),
-                        os.path.join(PAPER_NATIONAL_MAIN, "*.tex"),
-                        os.path.join(PAPER_NATIONAL_SECTIONS, "*.tex")):
-            for path in _glob.glob(pattern):
-                text = " ".join(open(path, encoding="utf-8").read().split())
-                self.assertNotIn("DOI minted at submission", text,
-                                 os.path.basename(path))
-                self.assertNotIn("archived with a DOI \\emph{at submission}", text,
-                                 os.path.basename(path))
 
 
 class TestTheManifestDeclaresTheLicenceCarveouts(unittest.TestCase):

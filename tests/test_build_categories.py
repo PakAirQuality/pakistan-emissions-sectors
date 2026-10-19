@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv import build, run_all                                       # noqa: E402
 
-KINDS = ("science", "validation", "manuscript", "release")
+KINDS = ("science", "validation", "figures", "release")
 
 
 class TestEveryPhaseHasAKind(unittest.TestCase):
@@ -34,14 +34,10 @@ class TestEveryPhaseHasAKind(unittest.TestCase):
         with self.assertRaises(ValueError):
             run_all._with_categories(list(run_all.PHASES) + [stray])
 
-    def test_a_manuscript_phase_writes_only_presentation(self):
-        allowed = ("paper_national/", "papers/", "paper_common/", "outputs/figures/",
-                   "outputs/paper_figure_data/",
-                   "outputs/paper_figures/", "outputs/dashboard.html",
-                   "outputs/pakemis_paper_artefact_hashes.csv",
-                   "outputs/pakemis_sector_note_facts.csv")
+    def test_a_figures_phase_writes_only_presentation(self):
+        allowed = ("outputs/figures/", "outputs/dashboard.html")
         for phase in run_all.PHASES:
-            if phase.category == "manuscript":
+            if phase.category == "figures":
                 for path in phase.writes:
                     self.assertTrue(path.startswith(allowed), "%s writes %s" % (phase.label, path))
 
@@ -56,21 +52,19 @@ class TestTheGroupsFollowTheKinds(unittest.TestCase):
 
     def test_no_figure_stage_is_in_dev(self):
         labels = {p.label for p in build.phases_for_group("dev")}
-        for label in ("Manuscript figures, v3 (tables and charts)", "Gridded figures",
-                      "Integrated GHG and air manuscript figures",
-                      "Integrated manuscript figure verification", "Sector technical-note facts"):
+        for label in ("Inventory figures", "Dashboard"):
             self.assertNotIn(label, labels)
 
-    def test_the_manuscript_group_is_the_manuscript_kind(self):
-        self.assertEqual([p.label for p in build.phases_for_group("manuscript")],
-                         [p.label for p in run_all.PHASES if p.category == "manuscript"])
+    def test_the_figures_group_is_the_figures_kind(self):
+        self.assertEqual([p.label for p in build.phases_for_group("figures")],
+                         [p.label for p in run_all.PHASES if p.category == "figures"])
 
     def test_no_development_phase_reads_a_later_kind_except_by_design(self):
-        """A dev phase that read a manuscript or release product would read a stale copy.
+        """A dev phase that read a figures or release product would read a stale copy.
         The only such reads are declared prior: (the previous release's artefact)."""
         later = {}
         for phase in run_all.PHASES:
-            if phase.category in ("manuscript", "release"):
+            if phase.category in ("figures", "release"):
                 for path in phase.writes:
                     later[path] = phase.label
         for phase in build.phases_for_group("dev"):
@@ -85,7 +79,7 @@ class TestTheGroupsFollowTheKinds(unittest.TestCase):
     def test_finalization_is_derived_from_the_kinds(self):
         self.assertEqual(build.FINALIZATION,
                          {p.label for p in run_all.PHASES
-                          if p.category in ("manuscript", "release")})
+                          if p.category in ("figures", "release")})
 
 
 class TestTheUncertaintyPairRunsSideBySide(unittest.TestCase):

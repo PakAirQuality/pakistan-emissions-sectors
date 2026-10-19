@@ -1,9 +1,9 @@
-PakEmis data and manuscript licensing
+PakEmis data licensing
 
-Project-created emissions records, figures and manuscript text in the compatible
+Project-created emissions records, figures and documentation in the compatible
 primary package are licensed under Creative Commons Attribution 4.0 International
 (CC-BY-4.0). Code is licensed under MIT in LICENSE. Neither grant replaces the
-terms of upstream data or third-party typesetting files.
+terms of upstream data.
 
 Attribution: Rehan Ahmad (Pakistan Air Quality Initiative), "PakEmis: greenhouse
 gas and air pollutant emissions in Pakistan, July 2015–June 2025" (2026), with
@@ -68,8 +68,6 @@ companion and reproducible algorithms are prepared together for that purpose.
 Other upstream inputs retain their specific terms and required citations,
 including NASA, ESA, FAO, WorldPop, IFPRI MapSPAM, JRC GHSL/EDGAR and HTAP.
 Do not assume that every raster or extracted table has the same licence.
-paper_common/copernicus/ contains third-party LaTeX files with original LPPL
-and copyright notices; paper_common/copernicus/VENDORED.md records provenance.
 
-This local package is prepared for review. No DOI, public archival deposit or
-journal submission is asserted by this licence file.
+This local package is prepared for review. No DOI or public archival deposit
+is asserted by this licence file.

@@ -13,8 +13,8 @@
 #      inventory: they describe the release with its documents), and require every rebuilt
 #      product to match the committed one: text exactly, numbers to the platform tolerance
 #      scripts/compare_rebuild.py declares (the products are committed from macOS).
-# Its summary line states how many tests ran, skipped for absent layers, and skipped
-# because the manuscripts are not compiled here, so its coverage is explicit.
+# Its summary line states how many tests ran and how many skipped for absent layers, so its
+# coverage is explicit.
 # The complete reproduction is .github/workflows/reproduce.yml.
 name: public checks
 
@@ -28,10 +28,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 120
     env:
-      # The manuscript layout tests read LaTeX logs; this job does not compile LaTeX.
-      PKINV_NO_LATEX: "1"
-      # Checks that hold only at a release fixpoint (the regenerated manifest, the PDF ages,
-      # the deposit audit) skip with "release-time check:" on an ordinary push; the release
+      # Checks that hold only at a release fixpoint (the regenerated manifest, the deposit
+      # archives) skip with "release-time check:" on an ordinary push; the release
       # sequence and reproduce.yml run them.
       PKINV_RELEASE_CHECKS: "0"
       MPLBACKEND: Agg

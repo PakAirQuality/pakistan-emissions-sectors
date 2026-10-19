@@ -3,8 +3,7 @@
 A sector is a *module* exposing the attributes below — matching how this codebase already
 works (`enteric.compute(data)`), rather than introducing classes it has no other use for.
 
-The manifest is hand-maintained, not scraped. Same reasoning as tests/paper_numbers/:
-a scraper that silently stops matching covers nothing while still passing, which is
+The manifest is hand-maintained, not scraped: a scraper that silently stops matching covers nothing while still passing, which is
 indistinguishable from having no check at all.
 
     NAME: str               registry key, e.g. "agriculture"

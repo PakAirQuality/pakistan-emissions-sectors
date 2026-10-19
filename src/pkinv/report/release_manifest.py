@@ -389,11 +389,7 @@ def build():
                     "package": release.PACKAGE, "repository": release.REPO_URL,
                     "repository_note": release.REPOSITORY_NOTE,
                     "explorer": release.EXPLORER_URL,
-                    "cite_as": release.cite_name(),
-                    # data, not prose: the READMEs' submission sentences are
-                    # sweep-checked against these two fields (rc19)
-                    "manuscript_status": release.MANUSCRIPT_STATUS,
-                    "submission_identifier": release.SUBMISSION_IDENTIFIER},
+                    "cite_as": release.cite_name()},
         "sectors": sectors,
         "completeness": _completeness(),
         "doi": DOI,
@@ -507,9 +503,6 @@ PRODUCT_PATTERNS = (
     # the annual and monthly twins do
     "outputs/semantic/*.csv",
     "outputs/semantic/semantic_release.json",
-    # v1.0.0 Wave 4: the cells the national manuscript's figures draw - stored queries
-    # against the semantic layer, one canonical CSV per registered figure
-    "outputs/paper_figure_data/*.csv",
     # rc64: three tables the SECTOR PAPERS cite as evidence in a results or supplement
     # section while the deposit did not ship them, found by comparing every \texttt{outputs/...}
     # citation against the deposit manifest (outputs/pakemis_citation_deposit_audit.csv).
@@ -661,25 +654,14 @@ def _products():
     The manifest hashed its INPUTS and nothing else, so a reader could verify the
     activity data behind a release and had no way to check that the data product in their
     hands was the one this release shipped. An external review asked for hashes on every
-    paper and data artifact; the data half is here.
-
-    THE PAPERS CANNOT BE. Hashing a PDF into this file would be circular: the release
-    cover prints THIS file's digest, every paper inputs that cover, so a manifest
-    containing PDF hashes changes the cover, which changes the PDFs, which changes their
-    hashes. No fixpoint exists. The papers are hashed in outputs/pakemis_paper_hashes.csv
-    instead, written after the build that produces them - and because LaTeX stamps a
-    /CreationDate into every file, those hashes identify the DISTRIBUTED artifact rather
-    than a target anyone can rebuild to. Everything listed here is byte-stable and is a
-    rebuild target.
+    data artifact; they are here. Everything listed here is byte-stable and is a rebuild
+    target.
     """
     rows = [r for r in manifest_core.sha256_sources(PRODUCT_PATTERNS)
-            # The paper-hash sidecar is written AFTER the papers, which are built after
-            # this manifest - hashing it here reopens the same circle one level down and
-            # the manifest can never describe its own tree. It is a product of the
-            # release dance, not an input to it. pakemis_test_run.json is excluded for the
-            # same reason and it is the sharper case: the suite tests this manifest, so a
-            # manifest carrying the suite's result would depend on a run that depends on it.
-            if not r["path"].endswith(("pakemis_paper_hashes.csv", "pakemis_test_run.json"))
+            # pakemis_test_run.json is a product of the release dance, not an input to it:
+            # the suite tests this manifest, so a manifest carrying the suite's result would
+            # depend on a run that depends on it.
+            if not r["path"].endswith("pakemis_test_run.json")
             and r["path"] not in RETIRED_GHG_PANEL_PRODUCTS]
     for row in rows:
         row["byte_stable"] = True

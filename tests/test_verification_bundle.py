@@ -275,9 +275,9 @@ class TheCommonPart(unittest.TestCase):
         self.assertGreater(len(semantic), 20)
         self.assertIn("outputs/semantic/semantic_release.json", self.members)
 
-    def test_the_code_the_docs_and_the_papers_ship(self):
+    def test_the_code_and_the_docs_ship(self):
         for prefix, least in (("code/src/", 100), ("code/tests/", 100), ("code/scripts/", 50),
-                              ("docs/", 20), ("papers/", 10), ("validation/", 4), ("data/", 100)):
+                              ("docs/", 20), ("validation/", 4), ("data/", 100)):
             with self.subTest(prefix=prefix):
                 self.assertGreaterEqual(
                     len([a for a in self.members if a.startswith(prefix)]), least)

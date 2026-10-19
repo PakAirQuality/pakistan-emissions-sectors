@@ -316,7 +316,7 @@ class TestNoNewReaderPatternMatchesTheName(unittest.TestCase):
     WRITERS = ("src/pkinv/report/national_rollup.py", "src/pkinv/report/national_series.py")
     TEST_FILES = ("tests/test_annual_product.py", "tests/test_atomic_annual.py",
                   "tests/test_category_ledger.py", "tests/test_national_rollup.py",
-                  "tests/test_national_series.py", "tests/paper_numbers/test_release_integrity.py",
+                  "tests/test_national_series.py", "tests/test_release_integrity.py",
                   "tests/test_source_streams.py", "tests/test_uncertainty_reconciliation.py")
 
     def _hits(self, *trees):

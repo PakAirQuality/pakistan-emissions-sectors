@@ -4,9 +4,9 @@
     dist/pakemis_<version>_validation_manifest.json        (byte-identical to the copy inside)
 
 WHAT THE PACKAGE IS. The package root is a repo-shaped tree - src/, scripts/, data/, outputs/,
-tests/, docs/, the manuscripts - filtered by the deposit manifest, so the engine and the
+tests/, docs/ - filtered by the deposit manifest, so the engine and the
 release suite run in it unmodified with PKINV_ROOT pointing at it. On top of that tree sit the
-folders the reviewer's specification names by role (registries/, outputs/annual/, manuscripts/,
+folders the reviewer's specification names by role (registries/, outputs/annual/, figures/,
 code/, environment/, logs/). Every file in those folders is either a byte COPY of a canonical
 file (recorded as presentation_copy with its source) or a VIEW computed from canonical files by
 pkinv.report.validation_views (recorded with its generator). A slot in the specification that
@@ -62,7 +62,7 @@ NAME = "pakemis_%s_validation" % VERSION
 TEMPLATES = os.path.join(ROOT, "validation_package")
 
 # The runnable tree: every tracked file under these, minus the hash-only trees below.
-OWN_TREES = ("src", "scripts", "tests", "docs", "paper_national", "papers", "paper_common",
+OWN_TREES = ("src", "scripts", "tests", "docs",
              "outputs", "validation_package", "capsule", ".github")
 ROOT_FILES = ("Makefile", "pyproject.toml", "run_all.py", "CHANGELOG.md", "CITATION.cff", "README.md",
               "requirements.txt", "requirements.lock", "LICENSE", "LICENSE-data", ".zenodo.json",
@@ -90,7 +90,6 @@ THEMES = (("integrity", r"release_identity|release_integrity|build_definition|ar
                            r"cross_sector"),
           ("completeness", r"completeness|coverage_matrix|ne_categories|data_gaps|key_categories|"
                            r"validation_registry|validation_catalog|sector_contract|sector_qa|deferred"),
-          ("manuscripts", r"paper_numbers|claims|figure_text|manuscript|_paper|table3"),
           ("clean_room", r"clean_room"))
 
 
@@ -560,30 +559,11 @@ def layout(pkg):
                  "benchmark_air_comparison.csv", "aviation_independence_matrix.csv"):
         copy("outputs/validation/%s" % name, "outputs/%s" % name)
 
-    # manuscripts/
-    for name in os.listdir(os.path.join(pkg, "papers", "pdf")):
-        if name.endswith(".pdf"):
-            dst = "manuscripts/%s" % name if name.startswith("national_") else "manuscripts/sector_reports/%s" % name
-            copy(dst, "papers/pdf/%s" % name)
-    copy("manuscripts/README.md", "papers/pdf/README.md")
-    copy("manuscripts/paper_hashes.csv", "outputs/pakemis_paper_hashes.csv")
-    copy("manuscripts/release_cover.tex", "paper_common/release_cover.tex")
-    for folder, _dirs, names in os.walk(os.path.join(pkg, "paper_national")):
-        for name in names:
-            if name.endswith((".tex", ".bib")):
-                rel = os.path.relpath(os.path.join(folder, name), pkg)
-                copy("manuscripts/paper_sources/%s" % rel, rel)
-    for folder, _dirs, names in os.walk(os.path.join(pkg, "papers")):
-        for name in names:
-            if name.endswith((".tex", ".bib")):
-                rel = os.path.relpath(os.path.join(folder, name), pkg)
-                copy("manuscripts/paper_sources/%s" % rel, rel)
-    for name in ("preamble.tex", "references.bib"):
-        copy("manuscripts/paper_sources/paper_common/%s" % name, "paper_common/%s" % name)
+    # figures/
     figures = os.path.join(pkg, "outputs", "figures")
     if os.path.isdir(figures):
         for name in sorted(os.listdir(figures)):
-            copy("manuscripts/generated_figures/%s" % name, "outputs/figures/%s" % name)
+            copy("figures/%s" % name, "outputs/figures/%s" % name)
 
     # code/
     for tree in ("src", "scripts"):
@@ -596,7 +576,6 @@ def layout(pkg):
         copy("code/%s" % name, name)
     for name in ("requirements.txt", "requirements.lock", ".github/workflows/ci.yml"):
         copy("code/configs/%s" % os.path.basename(name), name)
-    copy("code/paper_sources/README.md", "papers/pdf/README.md")
     return P
 
 
@@ -681,19 +660,18 @@ def write_inventory(pkg, presentation, inventory_rows):
                            generation_command="written by validate.sh / reproduce.sh / the packager")
             elif rel.startswith("environment/"):
                 row.update(artifact_role="environment", generated_or_source="generated", generation_command="scripts/build_validation_package.py")
-            elif rel.startswith(("data/SOURCE_MANIFEST", "data/restricted_sources/", "data/source_extracts/", "tests/test_catalogue", "manuscripts/paper_claim")):
+            elif rel.startswith(("data/SOURCE_MANIFEST", "data/restricted_sources/", "data/source_extracts/", "tests/test_catalogue")):
                 inputs = {"data/SOURCE_MANIFEST": "data/source_documents.csv;outputs/pakemis_source_register.csv;data/raw_manifest.csv;data/manifests/source_manifest.csv;outputs/release_manifest.json",
                           "data/restricted_sources/": "data/source_documents.csv;outputs/pakemis_source_register.csv",
                           "data/source_extracts/": "outputs/pakemis_data_provenance.csv;data/transcription_checks.csv",
-                          "tests/test_catalogue": "tests/",
-                          "manuscripts/paper_claim": "tests/paper_numbers/doc_claims.py;data/claims_registry.csv"}
+                          "tests/test_catalogue": "tests/"}
                 source = next(v for k, v in inputs.items() if rel.startswith(k))
                 row.update(artifact_role="register", generated_or_source="view", source_or_product_id=source,
                            required_for_validation="yes" if "SOURCE_MANIFEST" in rel else "no",
                            generation_command="scripts/build_validation_package.py (%s)" % (
                                "restricted_and_source_manifest" if rel.startswith("data/") and "extract" not in rel
                                else "source_extract_index" if "extract" in rel
-                               else "tests/validation/claim_registry.py" if "claim" in rel else "validation_views.test_catalogue"))
+                               else "validation_views.test_catalogue"))
             else:
                 row.update(artifact_role="record", generated_or_source="generated", generation_command="scripts/build_validation_package.py")
             inv.append(row)
@@ -747,7 +725,7 @@ def classify_failing_tests(pkg, failing):
     for name in failing:
         block = blocks.get(name, "")
         module = name.split(".")[0]
-        if module in ("paper_numbers", "validation"):
+        if module == "validation":
             module = ".".join(name.split(".")[:2])
         try:
             with open(os.path.join(pkg, "tests", module.replace(".", os.sep) + ".py"), encoding="utf-8") as h:
@@ -812,9 +790,8 @@ def environment_folder(pkg):
         h.write("python >= 3.10 (verified with CPython %s)\n" % platform.python_version())
         h.write("poppler-utils (pdftotext): source-extraction re-checks only; three tests skip without it\n")
         h.write("git-lfs: one raw-data test skips without it; the package itself needs no git\n")
-        h.write("latexmk + TeX Live, or tectonic: reproduce.sh --papers only; CI uses tectonic\n")
         h.write("GDAL: transitively via rasterio/fiona in requirements.lock; not needed for the shipped .npy proxies\n")
-        for tool in ("latexmk", "tectonic", "pdftotext", "git-lfs", "docker"):
+        for tool in ("pdftotext", "git-lfs", "docker"):
             h.write("%-10s on the packaging machine: %s\n" % (tool, shutil.which(tool) or "absent"))
     for name in ("environment_variables.md",):
         shutil.copy2(os.path.join(TEMPLATES, name), os.path.join(env, name))
@@ -1319,29 +1296,6 @@ def main(argv):
                 "compared with the packaged outputs). The two scripts here are the repository's own clean-room "
                 "gates, which need a git clone; the package needs none.\n")
 
-    # 3. claim registry
-    env = dict(os.environ, PKINV_ROOT=pkg, PYTHONPATH=os.pathsep.join(
-        [os.path.join(pkg, "src"), os.path.join(pkg, "tests"), os.path.join(pkg, "tests", "paper_numbers")]))
-    os.makedirs(os.path.join(pkg, "manuscripts"), exist_ok=True)
-    code, secs = run([sys.executable, os.path.join(pkg, "tests", "validation", "claim_registry.py"), pkg,
-                      os.path.join(pkg, "manuscripts", "paper_claim_registry.csv"),
-                      os.path.join(pkg, "manuscripts", "paper_claim_test_report.csv")],
-                     cwd=pkg, log_path=os.path.join(pkg, "logs", "claim_registry.log"), env=env)
-    timings.append(("claim registry", secs))
-    log("claim registry exit %d (%.1f s)" % (code, secs))
-    for src_tex in ("paper_national/versions/v1/sections/generated_coverage.tex", "paper_national/versions/v1/sections/generated_products.tex"):
-        if os.path.exists(os.path.join(pkg, src_tex)):
-            os.makedirs(os.path.join(pkg, "manuscripts", "generated_tables"), exist_ok=True)
-            shutil.copy2(os.path.join(pkg, src_tex), os.path.join(pkg, "manuscripts", "generated_tables", os.path.basename(src_tex)))
-            presentation.append(("manuscripts/generated_tables/%s" % os.path.basename(src_tex), "copy", src_tex))
-    for folder, _d, names in os.walk(os.path.join(pkg, "papers")):
-        for n in names:
-            if n.startswith("S") and n.endswith(".tex") and "sections" in folder:
-                rel = os.path.relpath(os.path.join(folder, n), pkg)
-                dst = "manuscripts/generated_tables/%s_%s" % (rel.split("/")[1], n)
-                shutil.copy2(os.path.join(pkg, rel), os.path.join(pkg, dst))
-                presentation.append((dst, "copy", rel))
-
     # 4/5. RECORDS FIRST, THEN THE VALIDATIONS, THEN THE RECORDS AGAIN (rc42, the twentieth
     #    review's R3/R5/R6). rc41 wrote VALIDATION_MANIFEST.json last, so tests/validation's
     #    IN_PACKAGE was False during every packaged run and six package-only test classes
@@ -1565,10 +1519,9 @@ def main(argv):
             execution[key] = {"result": "not_executed", "reason": "--rehearse"}
         log("REHEARSAL: validations not run")
     else:
-        papers = "--papers" if shutil.which("latexmk") or shutil.which("tectonic") else ""
-        cmd = ["sh", os.path.join(pkg, "reproduce.sh")] + ([papers] if papers else [])
+        cmd = ["sh", os.path.join(pkg, "reproduce.sh")]
         code, secs = run(cmd, cwd=pkg, log_path=os.path.join(pkg, "logs", "reproduce.stdout"))
-        execution["reproduce"] = {"command": " ".join(["./reproduce.sh"] + ([papers] if papers else [])),
+        execution["reproduce"] = {"command": "./reproduce.sh",
                                   "exit_code": code, "result": "passed" if code == 0 else "failed", "seconds": secs,
                                   "log": "logs/reproduction.log", "report": "logs/reproduction_report.csv"}
         timings.append(("reproduce", secs))
@@ -1637,7 +1590,7 @@ def main(argv):
     # the records gate: the package's own tests over the FINISHED tree, with the final
     # records in place; its log is one of the three SHA256SUMS does not list
     env = dict(os.environ, PKINV_ROOT=pkg, PYTHONPATH=os.pathsep.join(
-        [os.path.join(pkg, "src"), os.path.join(pkg, "tests"), os.path.join(pkg, "tests", "paper_numbers")]))
+        [os.path.join(pkg, "src"), os.path.join(pkg, "tests")]))
     code, secs = run([sys.executable, "-m", "unittest", "discover", "-s", os.path.join(pkg, "tests", "validation"),
                       "-t", os.path.join(pkg, "tests"), "-p", "test_*.py"], cwd=pkg,
                      log_path=os.path.join(pkg, "logs", "records_gate.log"), env=env)

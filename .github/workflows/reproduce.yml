@@ -47,8 +47,5 @@ jobs:
       - name: Every rebuilt product matches the committed one
         run: git diff --stat --exit-code -- outputs data
 
-      - name: Manuscripts
-        run: make papers
-
       - name: Canonical test record (zero restricted-layer skips)
         run: python3 scripts/record_test_run.py

@@ -34,7 +34,7 @@ MODE="${1:---quick}"
 VAULT="${2:-}"
 PYTHON="${PYTHON:-python3}"
 export PKINV_ROOT="$ROOT"
-export PYTHONPATH="$ROOT/src:$ROOT/tests:$ROOT/tests/paper_numbers${PYTHONPATH:+:$PYTHONPATH}"
+export PYTHONPATH="$ROOT/src:$ROOT/tests${PYTHONPATH:+:$PYTHONPATH}"
 export PYTHONDONTWRITEBYTECODE=1
 export http_proxy="http://127.0.0.1:9" https_proxy="http://127.0.0.1:9"
 export HTTP_PROXY="$http_proxy" HTTPS_PROXY="$https_proxy" no_proxy="" NO_PROXY=""
@@ -70,7 +70,7 @@ if [ "$MODE" = "--documents" ]; then
   [ -d "$VAULT/data/raw" ] && ln -s "$VAULT/data/raw" "$OVERLAY/data/raw"
   [ -d "$VAULT/data/cache" ] && ln -s "$VAULT/data/cache" "$OVERLAY/data/cache"
   export PKINV_ROOT="$OVERLAY"
-  export PYTHONPATH="$OVERLAY/src:$OVERLAY/tests:$OVERLAY/tests/paper_numbers${PYTHONPATH:+:$PYTHONPATH}"
+  export PYTHONPATH="$OVERLAY/src:$OVERLAY/tests${PYTHONPATH:+:$PYTHONPATH}"
   echo "DOCUMENTS GATE over $OVERLAY (vault: $VAULT)" | tee -a "$LOG"
   $PYTHON "$OVERLAY/tests/validation/verify_vault.py" "$OVERLAY" >> "$LOG" 2>&1 || { echo "vault does not verify against data/raw_manifest.csv - see logs/documents_validation.log" | tee -a "$LOG"; exit 1; }
   $PYTHON -m pkinv.activity.build >> "$LOG" 2>&1 || { echo "canonical input bootstrap failed" | tee -a "$LOG"; exit 1; }

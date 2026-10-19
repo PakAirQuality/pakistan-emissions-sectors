@@ -162,8 +162,8 @@ def structural_scenarios(data, n_iter=10000, seed=SCENARIO_SEED):
         # It used to be `seed + i`. Adding the non-circular coal case in its natural place -
         # beside the circular one it is the counterpart to - shifted every later case's seed
         # by one and moved three published interval endpoints, with nothing about those
-        # scenarios having changed. The guard caught it (tests/paper_numbers/test_tables.py
-        # compares the printed table against the output), but a published interval that moves
+        # scenarios having changed. A guard comparing the printed table against the output
+        # caught it, but a published interval that moves
         # because a list was reordered is a property no reader could predict, and a reader
         # who reordered the list for readability would have been publishing new numbers.
         # mc_core.stream_seed is the repository's existing answer to exactly this, and it is

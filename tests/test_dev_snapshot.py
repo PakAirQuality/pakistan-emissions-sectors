@@ -56,7 +56,7 @@ class DevSnapshot(unittest.TestCase):
         # THE SNAPSHOT IS BUILT FROM A GIT CHECKOUT, so it cannot be built inside a
         # distributed package, which carries no .git by design: build_dev_snapshot.stage()
         # enumerates `git ls-files`, and with no repository that list is empty, so every
-        # folder this class asserts is absent and the failure says "paper/national" rather
+        # folder this class asserts is absent and the failure says "outputs/semantic" rather
         # than "there is no git here". rc43 is the first release to SHIP this test inside
         # the validation package - it arrived with the snapshot in Wave 4, after rc42 was
         # cut - and it failed there for exactly that reason. Skipping is the honest answer:
@@ -76,7 +76,7 @@ class DevSnapshot(unittest.TestCase):
         shutil.rmtree(cls.tmp, ignore_errors=True)
 
     def test_layout_has_every_requested_folder(self):
-        for folder in ("paper/national", "paper/common", "paper/technical_notes", "paper/pdf", "outputs/semantic",
+        for folder in ("outputs/semantic",
                        "registries", "schemas", "data/geometry", "src/pkinv", "src/pakemis_query", "tests", "release"):
             self.assertTrue(os.path.isdir(os.path.join(self.top, folder)), folder)
         for name in ("README_DEV.md", "SHA256SUMS", "data/geometry/LICENSES.md", "release/release_manifest.json",
@@ -139,7 +139,7 @@ class DepositZips(unittest.TestCase):
         entries = self.mod.data_layout(self.rows)
         arcs = [a for a, _ in entries]
         self.assertEqual(len(arcs), len(set(arcs)))
-        manifest_paths = {r["path"] for r in self.rows if r["kind"] in self.mod.DATA_KINDS and not r["path"].startswith("papers/")}
+        manifest_paths = {r["path"] for r in self.rows if r["kind"] in self.mod.DATA_KINDS}
         placed = {rel for _, rel in entries}
         self.assertTrue(placed <= manifest_paths | {"outputs/pakemis_deposit_manifest.csv"}, placed - manifest_paths)
 
@@ -199,10 +199,11 @@ class DepositZips(unittest.TestCase):
                 if tier.get(rel[len("outputs/"):]) == "build":
                     self.assertTrue(arc.startswith("pakemis-support/reproduction/"), rel)
 
-    def test_documentation_layout_is_the_pdfs_with_their_hash_sidecar(self):
+    def test_documentation_layout_is_the_documentation_with_the_licences(self):
         entries = dict(self.mod.documentation_layout(self.rows))
-        self.assertIn("outputs/pakemis_paper_hashes.csv", entries)
-        self.assertTrue(any(rel.startswith("papers/pdf/") for rel in entries), entries)
+        for rel in ("README.md", "CITATION.cff", "LICENSE-data"):
+            self.assertIn(rel, entries)
+        self.assertTrue(any(rel.startswith("docs/") for rel in entries), entries)
 
     def test_a_deposit_zip_is_deterministic(self):
         tmp = tempfile.mkdtemp(prefix="pakemis-deposit-")

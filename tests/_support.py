@@ -1,9 +1,7 @@
 """Shared test infrastructure - NOT a test module.
 
 unittest has no conftest hook, so the shared pieces live in an ordinary
-module that discover neither collects (the name does not match test*.py)
-nor counts (paper_numbers.doc_claims._test_function_count only reads
-test_*.py). Everything a test file used to hand-roll is here:
+module that discover never collects (the name does not match test*.py). Everything a test file used to hand-roll is here:
 
   ROOT, DATA, OUTPUTS, DOCS   from pkinv.paths - the repo root found by marker
                               search, never by counting ".." (which broke one
@@ -125,7 +123,6 @@ def require_layers(what):
 
 
 LARGE_NOT_BUILT = "large product not built:"
-NOT_COMPILED = "manuscripts not compiled:"
 
 
 def readable(rel_path):
@@ -158,14 +155,6 @@ def require_built(*rel_paths):
     if unexpected:
         raise AssertionError("products missing: %s" % "; ".join(unexpected))
     raise unittest.SkipTest("%s %s" % (LARGE_NOT_BUILT, "; ".join(missing)))
-
-
-def require_compiled_manuscripts():
-    """Skip a test that reads LaTeX logs when PKINV_NO_LATEX=1 (the public CI, which does
-    not compile the papers). Everywhere else a missing log still fails and says to compile."""
-    import unittest
-    if os.environ.get("PKINV_NO_LATEX") == "1":
-        raise unittest.SkipTest("%s the layout checks read LaTeX logs" % NOT_COMPILED)
 
 
 RELEASE_TIME = "release-time check:"

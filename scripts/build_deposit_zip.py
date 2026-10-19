@@ -62,7 +62,7 @@ def data_layout(rows, package_group="primary"):
         rel, kind = row["path"], row["kind"]
         if row.get("package_group", "primary") != package_group:
             continue
-        if kind not in DATA_KINDS or rel.startswith("papers/"):
+        if kind not in DATA_KINDS:
             continue
         if kind == "product":
             name = rel[len("outputs/"):] if rel.startswith("outputs/") else rel
@@ -102,10 +102,12 @@ def companion_layout(rows):
 
 
 def documentation_layout(rows):
-    out = [(rel, rel) for rel in ("outputs/pakemis_paper_hashes.csv", "paper_common/release_cover.tex",
-                                  "LICENSE-data", "LICENSE-ODbL", "CITATION.cff")]
+    """The documentation record: the repository's own documentation (README, docs/) with the
+    licences and the citation file. Until rc69 it carried the manuscripts; they are no longer
+    part of this repository (rc70)."""
+    out = [(rel, rel) for rel in ("LICENSE-data", "LICENSE-ODbL", "CITATION.cff")]
     for row in rows:
-        if row["kind"] in ("manuscript", "manuscript_source"):
+        if row["kind"] == "documentation" and row.get("package_group", "primary") == "primary":
             out.append((row["path"], row["path"]))
     return sorted(set(out))
 

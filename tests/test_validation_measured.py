@@ -32,10 +32,6 @@ class TestTheMeasuredValidation(unittest.TestCase):
         run = _run("-m", module.__name__, "--check")
         self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
 
-    def test_the_table_is_rendered_from_the_product(self):
-        run = _run(os.path.join("scripts", "make_validation_table.py"), "--check")
-        self.assertEqual(run.returncode, 0, run.stdout + run.stderr)
-
     def test_every_source_named_exists(self):
         for row in self.rows:
             for source in row["source_file"].split("; "):

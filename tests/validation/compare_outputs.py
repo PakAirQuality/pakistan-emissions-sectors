@@ -1,6 +1,8 @@
 """Compare a rebuilt outputs/ tree with the packaged one, bytewise first, numerically second.
 
-Usage: python3 tests/validation/compare_outputs.py <package root> <rebuilt tree> <report csv> <paper status>
+Usage: python3 tests/validation/compare_outputs.py <package root> <rebuilt tree> <report csv>
+
+(A fourth argument, the paper-build status of releases up to rc69, is accepted and ignored.)
 
 Every product the release manifest hashes, every common-draw file and every parquet twin is
 compared. A file whose bytes match is `identical`. A CSV whose bytes differ is compared cell
@@ -217,7 +219,7 @@ def load_rewritable(tree):
             for entry in ledger.get("seeded", [])}
 
 
-def main(root, tree, report, paper_status):
+def main(root, tree, report, _ignored=None):
     rows, failed = [], 0
     writers, seeded = load_ledger(tree)
     rewritable = load_rewritable(tree)
@@ -290,12 +292,6 @@ def main(root, tree, report, paper_status):
             row.update(status="difference", detail="bytes differ (binary; no numeric comparison)")
             failed += 1
         rows.append(row)
-    # The papers are rebuilt only under --papers (LaTeX is not a requirement of the
-    # engine); a run without the flag is recorded as skipped_by_flag, informational,
-    # not as not_rebuilt - the manuscript gate is the label+value tests, not this row.
-    rows.append({"path": "manuscripts", "status": {"0": "rebuilt", "skipped": "skipped_by_flag"}.get(
-        str(paper_status), "build_failed"), "detail": "make papers exit %s" % paper_status,
-        "max_rel_diff": "", "writer_phase": "make papers", "phase_status": str(paper_status)})
     with open(report, "w", newline="", encoding="utf-8") as handle:
         writer = csv.DictWriter(handle, fieldnames=("path", "status", "detail", "max_rel_diff",
                                                     "writer_phase", "phase_status"))
@@ -304,7 +300,7 @@ def main(root, tree, report, paper_status):
     tally = {}
     for r in rows:
         tally[r["status"]] = tally.get(r["status"], 0) + 1
-    print("compared %d files: %s" % (len(rows) - 1, ", ".join("%s=%d" % kv for kv in sorted(tally.items()))))
+    print("compared %d files: %s" % (len(rows), ", ".join("%s=%d" % kv for kv in sorted(tally.items()))))
     for r in rows:
         if r["status"] in ("difference", "missing_in_rebuild", "not_rebuilt"):
             print("  %s %s: %s" % (r["status"].upper(), r["path"], r["detail"]))

@@ -33,7 +33,7 @@ from pkinv.build_support import (FileDigests, dump_atomic, file_identity, input_
 DEV_CATEGORIES = ("science", "validation")
 FINALIZATION = frozenset(p.label for p in registry.PHASES
                          if p.category not in DEV_CATEGORIES)
-CI_EXCLUDED = frozenset({"Manuscript figures", "Dashboard", "Sync paper figures"})
+CI_EXCLUDED = frozenset({"Inventory figures", "Dashboard"})
 
 # Native readers can bypass Python's file-open audit event. These explicit source
 # boundaries supplement the exact canonical rows and Python reads in each receipt.
@@ -120,9 +120,9 @@ def phases_for_group(group, phases=None):
     if group == "dev":
         return [p for p in phases if p.label not in FINALIZATION and not p.network
                 and p.category in DEV_CATEGORIES + (None,)]
-    if group == "manuscript":
-        # figures, tables and TeX only; their science inputs are this checkout's products
-        return [p for p in phases if p.category == "manuscript"]
+    if group == "figures":
+        # the inventory's figures and dashboard only; their inputs are this checkout's products
+        return [p for p in phases if p.category == "figures"]
     if group == "ci":
         return [p for p in phases if p.label not in CI_EXCLUDED]
     if group == "full":
@@ -666,7 +666,7 @@ def execute(phases, graph, cache, *, full=False, strict=False, jobs=1, explain=F
 
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--group", choices=("dev", "ci", "full", "ingest", "sectors", "deposit", "manuscript"), default="dev")
+    parser.add_argument("--group", choices=("dev", "ci", "full", "ingest", "sectors", "deposit", "figures"), default="dev")
     parser.add_argument("--target", action="append", help="task label, command or product; includes prerequisites")
     parser.add_argument("--sector", action="append", choices=sorted(SECTOR_SOURCE_TREES),
                         help="all registered tasks for this sector, with prerequisites")

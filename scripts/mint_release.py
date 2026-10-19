@@ -4,9 +4,9 @@
     python3 scripts/mint_release.py OLD NEW [--dry-run]      e.g. 1.0.0rc61 1.0.0rc62
 
 Idempotent: a site already carrying NEW is reported, not refused. The CHANGELOG section for
-NEW is written beforehand and is not patched here. The four GENERATED version sites follow the
-build (outputs/release_manifest.json, paper_common/release_cover.tex, the two generated
-availability fragments). After this script: the FULL build, then the release fixpoint.
+NEW is written beforehand and is not patched here. The GENERATED version site
+(outputs/release_manifest.json) follows the build. After this script: the FULL build, then the
+release fixpoint.
 """
 import os
 import sys
@@ -58,27 +58,8 @@ patch("CITATION.cff", [('title: "PakEmis %s:' % OLD, 'title: "PakEmis %s:' % NEW
 patch(".zenodo.json", [('"title": "PakEmis %s:' % OLD, '"title": "PakEmis %s:' % NEW)])
 patch("docs/reproducibility.md", [("dist/pakemis-%s-" % OLD, "dist/pakemis-%s-" % NEW)])
 patch("docs/zenodo_data_record.md", [("PakEmis %s:" % OLD, "PakEmis %s:" % NEW)])
-# THE v1 PAPER MOVED under paper_national/versions/ after rc59, so the paths the previous
-# mint used no longer exist. The four GENERATED sites are deliberately not here and follow
-# the build: outputs/release_manifest.json, paper_common/release_cover.tex,
-# paper_common/generated_availability_tn.tex and versions/v1/generated/availability.tex.
-# rc69: the v1 report's main file and abstract, and the v3 article, no longer name the version
-# in their own text - it reaches them through the generated availability fragments and the
-# release cover - so those three sites were dropped. The v1 short summary is still written
-# by hand and still names it.
-patch("paper_national/versions/v1/short_summary.txt", [(OLD, NEW)])
 patch("README.md", [(OLD, NEW)])
 patch("docs/reproducibility.md", [("**%s**" % OLD, "**%s**" % NEW)])
-patch("paper_common/references.bib", [(OLD, NEW)])
-# RESOLVED THROUGH THE ASSET CATALOG, not hardcoded: the 2026-09 layout migration moved
-# this under data/catalog/, and the previous mint's literal path no longer exists. The shim
-# exists for exactly this, and a bare path is what it cannot see.
-sys.path.insert(0, os.path.join(R, "src"))
-from pkinv.assets import asset_path                                   # noqa: E402
-from pkinv.paths import DATA                                          # noqa: E402
-
-patch(os.path.relpath(asset_path(DATA, "claims_registry.csv"), R),
-      [(",%s," % OLD, ",%s," % NEW)])
 
 print("\n%d site group(s) patched now, %d already applied, %d not found"
       % (len(applied), len(done), len(missing)))

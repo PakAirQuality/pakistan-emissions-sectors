@@ -13,13 +13,10 @@ in the drawing code.
 
 EVERY FIGURE IS DERIVED, NEVER TYPED. Each function reads a CSV that the engine wrote and
 draws exactly what is in it. Nothing here recomputes an emission, applies a factor, or
-carries a number of its own - which is what lets tests/paper_numbers/ compare a
-figure byte-for-byte against its source and lets a reviewer trace any pixel back to a run.
+carries a number of its own - which is what lets a test compare a figure
+byte-for-byte against its source and lets a reviewer trace any pixel back to a run.
 
-Output goes to outputs/figures/, and scripts/sync_figures.py copies into each manuscript's
-figures/ directory. That indirection exists so a manuscript never reads outputs/ directly:
-the paper ships the figure it was written against, and the sync step is what makes staleness
-visible instead of silent.
+Output goes to outputs/figures/, which the release ships and the deposit carries.
 
 Usage:  python3 -m pkinv.report.figures
 """
@@ -85,8 +82,8 @@ ACTIVITY_FILES = {
 # How much assurance each air-pollutant layer carries. The layers are NOT comparable: two of
 # the seven are bounds or screening estimates and two large sources have none at all, so a bar
 # chart that draws them all the same way invites a ranking the evidence does not support.
-# tests/paper_numbers/ asserts these classes are the ones the manuscript's beta table
-# prints, so the figure and the table cannot drift apart.
+# They are the classes the published assurance table prints, so the figure and the table
+# cannot drift apart.
 AIR_ASSURANCE = {
     "residential": "estimated", "agriculture": "estimated", "waste": "estimated",
     "railways": "estimated", "transport": "Tier 1", "power": "uncontrolled bound",

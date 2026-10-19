@@ -88,9 +88,7 @@ class Phase:
                    prints_only phase's writes as READS for the same reason.
       idempotent   brings a destination into line with a source and correctly
                    writes NOTHING when already in line; only existence is
-                   checked here - the real check (every manuscript figure at
-                   least as new as its source) is tests/paper_numbers/test_release_integrity.py's
-                   test_no_shipped_figure_predates_its_source.
+                   checked here.
     """
     label: str
     target: str
@@ -108,7 +106,7 @@ class Phase:
     # True only after complete inputs AND exclusive output ownership were audited.
     # Observing one run is useful evidence, but is not such an audit.
     audited: bool = False
-    # science | validation | manuscript | release, from CATEGORIES below (rc69); the build
+    # science | validation | figures | release, from CATEGORIES below (rc69); the build
     # groups select on it. None only before _with_categories() has run.
     category: str = None
 
@@ -2052,14 +2050,6 @@ PHASES = [
                  "outputs/ippu_chemicals_screening_2024.csv",
                  "outputs/national_benchmark_comparison.csv",
                  "outputs/unsd_industry_combustion_control.csv",)),
-    # v1.0.0 Wave 4: the national manuscript's tables and figures are STORED QUERIES against
-    # the semantic release (paper_national/queries/paper_artefacts.csv) - nothing numerical
-    # is computed outside pakemis_query, and every printed number is an envelope's display
-    # string with a receipt. The registry is a held input (it is edited by hand, like data/).
-    # The PNGs it draws go to outputs/paper_figures/ (outputs/figures/ belongs to the
-    # figures phase); scripts/sync_figures.py copies them into paper_national/figures/ as it
-    # does every other figure, and the script also copies its own PNGs there so `make
-    # national` alone leaves the manuscript current.
     # AFTER the semantic release, not before it. product_catalog.main() refuses when a
     # catalogued product has no artifact on disk, and the semantic tables ARE catalogued
     # (semantic.release, semantic.facts, semantic.dimensions, added in Wave 4). Running it
@@ -2070,8 +2060,7 @@ PHASES = [
     # rc41: the validation catalog and the product catalog write products the inventory
     # and the deposit manifest list and the product facts read, so they precede all three.
     Phase("Product catalog", "pkinv.report.product_catalog", True,
-          writes=("outputs/pakemis_product_catalog.csv",
-                  "paper_national/versions/v1/sections/generated_products.tex",),
+          writes=("outputs/pakemis_product_catalog.csv",),
           reads=("outputs/pakemis_monthly_coverage_summary.csv",
                  "outputs/semantic/",)),
 
@@ -2158,120 +2147,8 @@ PHASES = [
           writes=("outputs/pakemis_comparison_crosswalk.csv",),
           reads=("outputs/pakemis_validation_catalog.csv",
                  "outputs/pakemis_btr_comparison.csv")),
-    Phase("Sector technical-note facts", "pkinv.report.air_sector_facts", True,
-          writes=("outputs/pakemis_sector_note_facts.csv",) + tuple(
-              "papers/%s/generated/%s.tex" % (sector, name)
-              for sector in ("agriculture", "power", "residential")
-              for name in ("integrated_air_facts", "integrated_air_table", "integrated_ghg_table")),
-          reads=("outputs/pakemis_atomic_annual.csv",
-                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",)),
-    Phase("Manuscript figures", "pkinv.report.figures", False,
+    Phase("Inventory figures", "pkinv.report.figures", False,
           writes=("outputs/figures/",)),
-    # THE GRIDDED FIGURES WERE IN NO PHASE. A version bump rebuilt the papers and left
-    # fig_ghg_grid.pdf, its evidence companion and their provenance behind: at rc61 the
-    # provenance JSON said rc59, the figure PDFs and the \input TeX said rc60, the cover
-    # said rc61. The script reads pkinv.__version__ correctly; nothing ran it. Declared here
-    # so the figures regenerate with the release, and tests/test_v3_documents.py holds the
-    # artefacts to the engine's version.
-    # THE OTHER FIVE FIGURES WERE IN NO PHASE EITHER (rc63). The plot tables, the two tables
-    # generated from them and figures 1, 2, 3, 7 and 8 were run by hand, so a re-base could move
-    # a number and leave the figure that prints it behind. One driver, in dependency order.
-    Phase("Manuscript figures, v3 (tables and charts)", "scripts/build_manuscript_figures.py", False,
-          writes=("paper_national/figures/f01_construction.pdf",
-                  "paper_national/figures/f02_inventory.pdf",
-                  "paper_national/figures/f03_evidence_uncertainty.pdf",
-                  "paper_national/figures/f07_btr_ratios.pdf",
-                  "paper_national/figures/f08_managed_soils.pdf",
-                  "paper_national/figures/rewrite_inputs/data/",
-                  "paper_national/figures/rewrite_inputs/previews/",
-                  "paper_national/versions/v3/generated/tab_closure.tex",
-                  "paper_national/versions/v3/generated/tab_btr_qualified.tex"),
-          reads=("outputs/national_all_sectors.csv",
-                 "outputs/pakemis_national_series.csv",
-                 "outputs/national_uncertainty_montecarlo.csv",
-                 "outputs/pakemis_trend_uncertainty.csv",
-                 "outputs/temporal_profile.csv",
-                 "outputs/pakemis_btr_comparison.csv",
-                 "outputs/pakemis_faostat_nitrogen_flows.csv",
-                 # held: pkinv.eval.sensitivity_table is a hand-run evaluation, as it is for the
-                 # nitrogen-flow phase above
-                 "held:outputs/eval/sensitivity.csv",
-                 # held (rc69): the plotting modules the script imports are tracked source
-                 # beside the figures, not products. Sync paper figures declares the whole
-                 # folder as its output, so without this the full group's order check read
-                 # an import as a read of a later phase's product and refused to start.
-                 "held:paper_national/figures/rewrite_inputs/plot_construction.py",
-                 "held:paper_national/figures/rewrite_inputs/plot_figures.py",
-                 "outputs/pakemis_air_provincial_external_comparison.csv",
-                 "outputs/pakemis_stream_support_ledger.csv",
-                 "outputs/pakemis_spatial_unallocated.csv")),
-    Phase("Gridded figures", "scripts/make_fig_ghg_grid.py", False,
-          writes=("paper_national/figures/f04_gas_maps.pdf",
-                  "paper_national/figures/f05_spatial_evidence.pdf",
-                  "paper_national/figures/f06_proxy_concentration.pdf",
-                  "paper_national/figures/fig_ghg_grid_provenance.json",
-                  "paper_national/figures/fig_ghg_grid_provenance.tex",
-                  "paper_national/figures/fig_ghg_grid_cells_fy2023_24.csv",
-                  "paper_national/figures/fig_ghg_grid_evidence.csv",
-                  "paper_national/figures/fig_ghg_grid_proxy.csv",
-                  "paper_national/figures/fig_ghg_grid_proxy_surfaces.csv",
-                  "paper_national/figures/fig_ghg_grid_concentration.csv"),
-          reads=("outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
-                 "outputs/pakemis_stream_support_ledger.csv",
-                 "outputs/pakemis_spatial_weights_by_year.csv",
-                 "outputs/pakemis_spatial_unallocated_by_year.csv",
-                 "data/shared/gis/PAK_ADM1.geojson",
-                 "data/shared/gis/BOUNDARY_SOURCES.json",
-                 "data/shared/gis/adm2_canonical.csv")),
-    Phase("Sync paper figures", "scripts/sync_figures.py", True,
-          writes=("paper_national/figures/",), idempotent=True),
-    Phase("Integrated GHG and air manuscript figures", "scripts/build_integrated_figures.py", False,
-          writes=tuple("paper_national/figures/" + name + ".pdf" for name in (
-                     "f09_integrated_composition", "f10_integrated_trends", "f11_integrated_maps",
-                     "f12_air_sensitivity", "f13_air_evaluation")) +
-                 tuple("paper_national/figures/integrated_inputs/" + name + ".csv" for name in (
-                     "f09_integrated_composition", "f10_integrated_trends", "f11_integrated_maps",
-                     "f11_integrated_map_scales", "f12_air_sensitivity", "f13_air_evaluation", "integrated_facts")) +
-                 tuple("paper_national/figures/integrated_inputs/previews/" + name + ".png" for name in (
-                     "f09_integrated_composition", "f10_integrated_trends", "f11_integrated_maps",
-                     "f12_air_sensitivity", "f13_air_evaluation")) +
-                 ("paper_national/versions/v3/generated/integrated_facts.tex",
-                  # rc69: written since the Table 2 split and never declared, so the sync's
-                  # skip list missed it and the fixpoint's order check stopped
-                  "paper_national/versions/v3/generated/tab_integrated_coverage.tex"),
-          reads=("outputs/pakemis_atomic_annual.csv", "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
-                 "outputs/pakemis_ghg_conditional_uncertainty.csv", "outputs/pakemis_air_conditional_uncertainty.csv",
-                 "outputs/pakemis_nitrogen_partition_sensitivity.csv",
-                 "outputs/pakemis_coal_change_decomposition.csv",
-                 "outputs/pakemis_air_source_coverage.csv", "outputs/pakemis_air_coverage_matrix.csv",
-                 "outputs/pakemis_air_power_omission.csv",
-                 "outputs/pakemis_road_technology_case.csv",
-                 "outputs/pakemis_air_structural_sensitivities.csv", "outputs/pakemis_industry_air_edgar_comparison.csv",
-                 "outputs/pakemis_air_htap_comparison.csv", "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
-                 "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc",
-                 "held:src/pkinv/report/manuscript_style.py"), requires=("matplotlib", "numpy", "netCDF4")),
-    Phase("Integrated manuscript figure verification", "scripts/verify_manuscript_figures.py", True,
-          writes=("paper_national/figures/integrated_inputs/figure_value_checks.csv",),
-          reads=("paper_national/figures/integrated_inputs/integrated_facts.csv",
-                 "outputs/pakemis_atomic_annual.csv", "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
-                 "outputs/pakemis_ghg_conditional_uncertainty.csv", "outputs/pakemis_air_conditional_uncertainty.csv",
-                 "outputs/pakemis_nitrogen_partition_sensitivity.csv",
-                 "outputs/pakemis_air_structural_sensitivities.csv", "outputs/pakemis_air_htap_comparison.csv",
-                 "outputs/pakemis_industry_air_edgar_comparison.csv",
-                 "outputs/pakemis_grid_0p05_annual_ref_fy2015_16_fy2024_25.nc",
-                 "outputs/pakemis_air_grid_0p05_annual_s_tan_fy2015_16_fy2024_25.nc")),
-    Phase("Validation table", "scripts/make_validation_table.py", False,
-          writes=("paper_national/versions/v3/generated/tab_validation_measured.tex",),
-          reads=("outputs/pakemis_validation_measured.csv",)),
-    Phase("Paper artefacts (stored queries)", "scripts/make_paper_artefacts.py", True,
-          writes=("outputs/pakemis_paper_artefact_hashes.csv",
-                  # rc69: outputs/paper_figure_data/ and outputs/paper_figures/ are no longer
-                  # declared: rc68 retired the four stored-query figures, the registry names no
-                  # figure, and git keeps no empty folder, so a fresh clone has neither
-                  "paper_national/versions/v1/sections/gen_tab_categorygas.tex",
-                  "paper_national/versions/v1/sections/gen_tab_completeness.tex"),
-          # + the registry paper_national/queries/paper_artefacts.csv (prose-side, not a product)
-          reads=("outputs/semantic/",)),
     # THE DERIVATION CHAINS ARE A BUILD PHASE, not a hand-run product, because they are pure
     # derivations of files this build already wrote: the chain re-keys shipped tables onto one
     # schema and the ledger joins dim_stream's parameter ids to their values. They shipped
@@ -2299,26 +2176,8 @@ PHASES = [
                  "data/baselines/rc67_integrated_campaign/outputs/pakemis_air_atomic_annual.csv")),
     Phase("Artifact inventory", "pkinv.report.artifact_inventory", True,
           writes=("outputs/pakemis_artifact_inventory.csv",)),
-    # THE SUPPLEMENT'S PRODUCT LIST WAS IN NO PHASE (rc69): `make figures-v3` ran it by hand,
-    # after the four figure stages the registry already held. It reads the artifact
-    # inventory's roles and every product's leading comment, so it follows that phase.
-    Phase("Supplement product list", "scripts/make_v3_product_list.py", False,
-          writes=("paper_national/versions/v3/products_appendix.tex",),
-          # rc69: the list is drawn from the artifact inventory, which reads the release
-          # registers below and scans the manuscripts, this list included. The circle closes
-          # at the release fixpoint; until then the registers are the previous cut's, by
-          # design, and are declared so the strict build's order check accepts them.
-          reads=("outputs/pakemis_product_catalog.csv",
-                 "data/catalog/artifact_roles.csv",
-                 "prior:outputs/pakemis_claim_matrix.csv",
-                 "prior:outputs/pakemis_deposit_manifest.csv",
-                 "prior:outputs/pakemis_product_coverage.csv",
-                 "prior:outputs/pakemis_product_facts.csv",
-                 "prior:outputs/pakemis_source_register.csv",
-                 "prior:paper_national/versions/v1/sections/generated_coverage.tex")),
     Phase("Product coverage", "scripts/make_product_coverage.py", True,
-          writes=("outputs/pakemis_product_coverage.csv",
-                  "paper_national/versions/v1/sections/generated_coverage.tex"),
+          writes=("outputs/pakemis_product_coverage.csv",),
           reads=("glob:outputs/*provincial*.csv",)),
     Phase("Deposit manifest", "pkinv.report.deposit_manifest", True,
           writes=("outputs/pakemis_deposit_manifest.csv",
@@ -2337,35 +2196,6 @@ PHASES = [
     # inventory and the deposit manifest, and it used to run BEFORE both - so `artifact_count`
     # published the PREVIOUS run's number: 409 against an inventory holding 411. The clean-room
     # rebuild found it, which is what a clean-room rebuild is for.
-    # Which files the manuscripts cite that a reader could not open. It runs AFTER the
-    # deposit manifest, so both reads are ordinary. The manifest does hash this file back -
-    # it is a pakemis_* product - but that resolves in one pass and moves nothing: the only
-    # path this audit adds to the manifest is its own, and no manuscript cites it, so its
-    # rows are identical on the next run.
-    Phase("Citation deposit audit", "scripts/build_citation_deposit_audit.py", False,
-          writes=("outputs/pakemis_citation_deposit_audit.csv",),
-          # prior: ON THE THREE GENERATED FRAGMENTS, because the dependency is a CYCLE and
-          # no ordering satisfies it:
-          #   this audit            reads the v1 generated fragments (it scans the
-          #                         manuscript for citations, and they are part of it)
-          #   Availability fragments  are GENERATED FROM outputs/release_manifest.json
-          #                         (make_availability.py's own header says so), so they
-          #                         must follow the manifest
-          #   Release manifest      HASHES outputs/pakemis_citation_deposit_audit.csv, so it
-          #                         must follow this audit
-          # audit -> fragments -> manifest -> audit. Exactly the shape release_fixpoint.py
-          # documents for the paper hashes, and it is broken at the same place: the edge
-          # whose content does not move. The fragments carry the deposit identifiers, and a
-          # release candidate has none - the DOI and the review link are the two items the
-          # availability statement declares outstanding - so what this audit reads from them
-          # is stable across the mint. If a DOI is ever minted, the fragments change and this
-          # audit is one build behind until the next run; that is the cost, and it is stated
-          # rather than hidden behind an undeclared read of last run's bytes.
-          reads=("outputs/pakemis_deposit_manifest.csv",
-                 "outputs/pakemis_artifact_inventory.csv",
-                 "prior:paper_national/versions/v1/generated/abstract_doi.tex",
-                 "prior:paper_national/versions/v1/generated/availability.tex",
-                 "prior:paper_national/versions/v1/generated/claim_matrix.tex",)),
     Phase("Product facts registry", "pkinv.report.product_facts", True,
           writes=("outputs/pakemis_product_facts.csv",),
           reads=("outputs/pakemis_annual_fy2015_16_fy2024_25.csv",
@@ -2384,28 +2214,6 @@ PHASES = [
                  "outputs/national_configurations.csv",
                  "outputs/fugitives_structural_factorial_2024.csv",
                  "outputs/fugitives_conditional_intervals_2024.csv",)),
-    # v1.0.0 Wave 4: the claim matrix resolves every headline claim of the national paper
-    # against the semantic release, the product facts and the shipped cells it cites, so it
-    # runs after the facts registry (which the deposit manifest and the inventory precede) and
-    # before the release manifest, which hashes its CSV as a pakemis_*.csv product. The section
-    # files it reads are hand-written prose (held:). The paper-artefacts phase, when present,
-    # sits after "Semantic release" and therefore before this one.
-    Phase("Claim matrix", "scripts/make_claim_matrix.py", True,
-          writes=("outputs/pakemis_claim_matrix.csv",
-                  "outputs/pakemis_claim_matrix.md",
-                  "paper_national/versions/v1/generated/claim_matrix.tex"),
-          reads=("outputs/semantic/",
-                 "data/claim_matrix.csv",
-                 "data/claims_registry.csv",
-                 "outputs/pakemis_product_facts.csv",
-                 "paper_national/versions/v3/generated/integrated_facts.tex",
-                 "outputs/pakemis_ghg_configuration_atoms.csv",
-                 "outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
-                 "outputs/pakemis_ghg_conditional_uncertainty.csv",
-                 "outputs/pakemis_air_conditional_uncertainty.csv",
-                 "outputs/pakemis_air_structural_sensitivities.csv",
-                 "outputs/pakemis_nitrogen_partition_sensitivity.csv",
-                 "held:paper_national/versions/v3/paper.tex")),
     # The catalog audits every validation product for freshness, so it must be
     # nearly LAST - after the benchmarks, the grid cube and the ensemble have
     # written the products it gates (it ran mid-list once and correctly failed
@@ -2418,13 +2226,6 @@ PHASES = [
     # after the last producer.
     Phase("Release manifest", "pkinv.report.release_manifest", True,
           writes=("outputs/release_manifest.json",)),
-    # The ESSD availability statements print the manifest's version, identifiers and
-    # licences, so they are rendered from it, after it (v1.0.0 program, Wave 4).
-    Phase("Availability fragments", "scripts/make_availability.py", True,
-          writes=("paper_national/versions/v1/generated/availability.tex",
-                  "paper_national/versions/v1/generated/abstract_doi.tex",
-                  "paper_common/generated_availability_tn.tex"),
-          reads=("outputs/release_manifest.json",)),
 
 ]
 
@@ -2545,11 +2346,10 @@ def _with_asset_paths(phases):
 
 # EVERY PHASE DECLARES WHAT KIND OF WORK IT IS (rc69), and the build groups are chosen by
 # kind. Until rc68 the development group excluded eleven labels by name, so each figure
-# stage added later (the v3 tables and charts, the gridded and integrated figures, their
-# verification) entered every `make dev` without anyone deciding it should. Now:
+# stage added later entered every `make dev` without anyone deciding it should. Now:
 #   science     the inventory itself: sources, engines, national, uncertainty, spatial
 #   validation  comparisons, benchmarks and audits that read the science and write evidence
-#   manuscript  figures, tables and TeX for the papers, and the dashboard
+#   figures     the inventory's own figures (outputs/figures/) and the dashboard
 #   release     the release's bookkeeping: inventories, manifests, deposit, provenance
 # `make dev` builds science and validation. Every label is listed under exactly one kind,
 # and there is no default: a new phase that is not listed stops the import, so it cannot
@@ -2754,19 +2554,9 @@ CATEGORIES = {
         "Measured validation",
         "Comparison crosswalk",
     ),
-    "manuscript": (
-        "Sector technical-note facts",
-        "Manuscript figures",
-        "Manuscript figures, v3 (tables and charts)",
-        "Gridded figures",
-        "Sync paper figures",
-        "Integrated GHG and air manuscript figures",
-        "Integrated manuscript figure verification",
-        "Validation table",
-        "Paper artefacts (stored queries)",
+    "figures": (
+        "Inventory figures",
         "Dashboard",
-        "Supplement product list",
-        "Availability fragments",
     ),
     "release": (
         "Published release vintages",
@@ -2776,9 +2566,7 @@ CATEGORIES = {
         "Artifact inventory",
         "Product coverage",
         "Deposit manifest",
-        "Citation deposit audit",
         "Product facts registry",
-        "Claim matrix",
         "Release manifest",
     ),
 }
@@ -2795,7 +2583,7 @@ def _with_categories(phases):
     unlisted = [p.label for p in phases if p.label not in kind]
     if unlisted:
         raise ValueError("phases with no category in run_all.CATEGORIES (add each under "
-                         "science, validation, manuscript or release): %s" % unlisted)
+                         "science, validation, figures or release): %s" % unlisted)
     stale = sorted(set(kind) - {p.label for p in phases})
     if stale:
         raise ValueError("run_all.CATEGORIES names phases that do not exist: %s" % stale)
@@ -2913,8 +2701,7 @@ def _wrote(out, started_at):
 # products and called 82 identical while 59 of 107 phases had never executed: the
 # products were the copied ones. A ledger makes that shape impossible to miss.
 LEDGER_SCHEMA = "pkinv.run_ledger/v1"
-SNAPSHOT_ROOTS = ("outputs", "data", "paper_national/versions/v1/sections", "paper_national/figures",
-                  "papers", "docs")
+SNAPSHOT_ROOTS = ("outputs", "data", "docs")
 
 
 def _snapshot():

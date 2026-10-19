@@ -3,13 +3,12 @@
 #
 #   ./reproduce.sh            rebuild every canonical output in a SEPARATE temporary copy of
 #                             the tree and compare the result with the packaged outputs
-#   ./reproduce.sh --papers   additionally rebuild the manuscripts (needs latexmk or tectonic)
 #   ./reproduce.sh --keep     keep the temporary tree for inspection (path is printed)
 #
 # NEVER OVERWRITES THE PACKAGED OUTPUTS. The runnable tree is copied to a temporary directory,
 # the build runs there with PKINV_ROOT pointing at the copy, and the comparison reads the copy
-# against this package. The only writes here are logs/reproduction.log,
-# logs/reproduction_report.csv and logs/paper_build.log.
+# against this package. The only writes here are logs/reproduction.log and
+# logs/reproduction_report.csv.
 #
 # The build is `run_all.py --quick`: every phase except the one that fetches FIRMS fire
 # detections over the network (its cached product ships in data/gis/manual and is compared
@@ -24,13 +23,12 @@ set -u
 
 ROOT=$(cd "$(dirname "$0")" && pwd)
 PYTHON="${PYTHON:-python3}"
-PAPERS=0; KEEP=0; SOURCES=""
+KEEP=0; SOURCES=""
 while [ $# -gt 0 ]; do
   case "$1" in
-    --papers) PAPERS=1 ;;
     --keep) KEEP=1 ;;
     --sources) shift; SOURCES="${1:-}" ;;
-    *) echo "usage: $0 [--papers] [--keep] [--sources DIR]" >&2; exit 2 ;;
+    *) echo "usage: $0 [--keep] [--sources DIR]" >&2; exit 2 ;;
   esac
   shift
 done
@@ -63,7 +61,7 @@ export PYTHONDONTWRITEBYTECODE=1
 #    products (rc41: without it the audit called them unregistered and the strict
 #    rebuild stopped there).
 mkdir -p "$TREE"
-for item in src scripts data sources docs paper_national papers paper_common tests capsule .github \
+for item in src scripts data sources docs tests capsule .github \
             Makefile pyproject.toml run_all.py CHANGELOG.md CITATION.cff README.md \
             requirements.txt requirements.lock LICENSE LICENSE-data .zenodo.json .gitignore \
             FILE_INVENTORY.csv; do
@@ -104,24 +102,10 @@ echo "reproduce build exit=$BUILD" >> "$ROOT/logs/exit_codes.txt"
 cp "$TREE/logs/pakemis_run_ledger.json" "$ROOT/logs/reproduction_ledger.json" 2>/dev/null && \
   echo "   ledger -> logs/reproduction_ledger.json" | tee -a "$LOG"
 
-# 3. Manuscripts, on request.
-PAPER=skipped
-if [ "$PAPERS" -eq 1 ]; then
-  if command -v latexmk >/dev/null 2>&1 || command -v tectonic >/dev/null 2>&1; then
-    echo "== make papers (in the copy)" | tee -a "$LOG"
-    ( cd "$TREE" && PKINV_ROOT="$TREE" PYTHONPATH="$TREE/src" make papers ) > "$ROOT/logs/paper_build.log" 2>&1
-    PAPER=$?
-    echo "   papers exit $PAPER" | tee -a "$LOG"
-    echo "reproduce papers exit=$PAPER" >> "$ROOT/logs/exit_codes.txt"
-  else
-    echo "== papers requested but neither latexmk nor tectonic is on PATH; skipped" | tee -a "$LOG"
-  fi
-fi
-
 # 4. Compare the copy's outputs with the packaged ones.
 echo "== comparing $TREE/outputs with $ROOT/outputs" | tee -a "$LOG"
 PKINV_ROOT="$ROOT" PYTHONPATH="$ROOT/src" $PYTHON "$ROOT/tests/validation/compare_outputs.py" \
-  "$ROOT" "$TREE" "$REPORT" "$PAPER" >> "$LOG" 2>&1
+  "$ROOT" "$TREE" "$REPORT" >> "$LOG" 2>&1
 COMPARE=$?
 echo "reproduce compare exit=$COMPARE" >> "$ROOT/logs/exit_codes.txt"
 tail -12 "$LOG"

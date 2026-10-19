@@ -49,10 +49,6 @@ KNOWN_TREES = {
     "outputs/gis": "research tier per docs/spatial_products_contract.md - the sector gis runners IN THIS REPO (agriculture/residential/railways run_gis), hand-run; needs the gis extra and "
                    "the WorldPop and land-cover caches",
     "outputs/districts": "research tier per docs/spatial_products_contract.md; the CANONICAL district panels live at outputs/district_totals_2024.csv etc.",
-    "outputs/paper_figure_data": "the national manuscript's stored-query figure data (v1.0.0): "
-                                 "scripts/make_paper_artefacts.py writes one canonical CSV per figure "
-                                 "row of paper_national/queries/paper_artefacts.csv",
-    "outputs/paper_figures": "the drawn PNG+PDF of the same stored-query figures, from the same script",
     "outputs/semantic": "the semantic release (v1.0.0): pkinv.semantic.build writes one canonical "
                         "CSV + one Parquet twin per table in FACTS/DIMENSIONS plus semantic_release.json; "
                         "the 'Semantic release' phase is in all three build definitions",

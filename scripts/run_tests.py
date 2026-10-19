@@ -54,7 +54,7 @@ LAYERS_ABSENT = "restricted layers absent:"
 # direction and cost about 150 seconds of the wall time it was written to save:
 #
 #   the git readers (test_holdings_discipline, test_raw_data, test_dev_snapshot,
-#   test_grid_cube's three `git show HEAD:` calls, paper_numbers.test_release_integrity) do
+#   test_grid_cube's three `git show HEAD:` calls, test_release_integrity) do
 #   not need exclusivity. git readers do not take index.lock, and comparing the working tree
 #   against HEAD is not a claim about what other processes are doing. They were quarantined
 #   for "serialises on the object store", which is a performance guess, not a correctness
@@ -298,12 +298,10 @@ def _summary(results, wall, gated=None):
                      if why.startswith(LAYERS_ABSENT))
     release_time = sum(1 for r in results for _n, why in r["skipped"]
                        if why.startswith("release-time check:"))
-    counted = {prefix: sum(1 for r in results for _n, why in r["skipped"] if why.startswith(prefix))
-               for prefix in ("large product not built:", "manuscripts not compiled:")}
-    print("restricted-layer skips: %d; release-time skips: %d; large products not built: %d; "
-          "manuscripts not compiled: %d" % (restricted, release_time,
-                                             counted["large product not built:"],
-                                             counted["manuscripts not compiled:"]))
+    large = sum(1 for r in results for _n, why in r["skipped"]
+                if why.startswith("large product not built:"))
+    print("restricted-layer skips: %d; release-time skips: %d; large products not built: %d"
+          % (restricted, release_time, large))
     for name, why in gated or ():
         print("\n%s restricted layers :: %s %s" % (FAIL_MARKER, name, why))
     return 1 if failures or errors or unexpected or gated else 0

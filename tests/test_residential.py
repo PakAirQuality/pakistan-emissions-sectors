@@ -1004,79 +1004,6 @@ class TestConfigurations(unittest.TestCase):
         self.assertEqual(combustion.dung_vs_kg(self.data), before)
 
 
-class TestFactorAppendix(unittest.TestCase):
-    """The S2 factor table is GENERATED from the factor file; the committed .tex must
-    match a fresh regeneration, so a factor edit that skips the script fails loudly."""
-
-    def test_the_committed_table_matches_the_factor_file(self):
-        import importlib.util
-        spec = importlib.util.spec_from_file_location(
-            "mkfactors", os.path.join(ROOT, "scripts",
-                                      "make_residential_factor_table.py"))
-        mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
-        committed = open(mod.OUT, encoding="utf-8").read()
-        self.assertEqual(committed, mod.render())
-
-    def test_every_engine_factor_appears(self):
-        rows = [r for r in _load("emission_factors.csv")
-                if r["category"].startswith("residential_air")
-                or r["category"] == "residential_biofuel"]
-        tex = open(os.path.join(ROOT, "papers", "residential", "sections",
-                                "S2_factors.tex"), encoding="utf-8").read()
-        for r in rows:
-            self.assertIn(" %s &" % r["value"], tex, r["ef_id"])
-
-
-class TestMassBasisTable(unittest.TestCase):
-    """The mass-basis table in the paper is hand-written prose but its numbers must
-    equal the params and the engine - the table exists to prevent conflation, so a
-    drifted cell would be worse than no table."""
-
-    @classmethod
-    def setUpClass(cls):
-        cls.data = ResidentialData()
-        path = os.path.join(ROOT, "papers", "residential", "sections",
-                            "04c_mass_bases.tex")
-        cls.tex = open(path, encoding="utf-8").read()
-
-    def test_the_fractions_match_the_params(self):
-        self.assertIn("0.12", self.tex)
-        self.assertIn("0.25", self.tex)
-        self.assertIn("0.15", self.tex)
-        self.assertAlmostEqual(self.data.p("dung_cake_moisture_ar"), 0.12)
-        self.assertAlmostEqual(self.data.p("dung_ash_frac_dry"), 0.25)
-        self.assertAlmostEqual(self.data.p("firewood_moisture_ar"), 0.15)
-        self.assertAlmostEqual(self.data.p("residue_moisture_ar"), 0.12)
-
-    def test_the_masses_match_the_engine(self):
-        checks = [
-            # rc39 A1: the L dung stream carries the herd, so the census re-base moved
-            # these two cells (58.69 -> 58.74, 51.64 -> 51.69). The survey-basis cells
-            # below did NOT move - they are anchored to the household survey, not to the
-            # herd - which is the check that the re-base reached what it should and
-            # nothing else.
-            ("58.74 Mt", combustion.dung_air_dry_kg(self.data, basis="ledger") / 1e9),
-            ("10.93 Mt", combustion.dung_air_dry_kg(self.data, basis="survey") / 1e9),
-            ("51.69 Mt", combustion.dung_ts_kg(self.data, basis="ledger") / 1e9),
-            ("9.62 Mt", combustion.dung_ts_kg(self.data, basis="survey") / 1e9),
-            ("23.13 Mt", combustion.firewood_air_dry_kg(self.data) / 1e9),
-            ("19.66 Mt", combustion.firewood_oven_dry_kg(self.data) / 1e9),
-            ("10.54 Mt", combustion.residue_air_dry_kg(self.data) / 1e9),
-            ("9.28 Mt", combustion.residue_dry_kg(self.data) / 1e9),
-        ]
-        for text, engine_val in checks:
-            self.assertIn(text, self.tex, text)
-            self.assertAlmostEqual(float(text.split()[0]), engine_val, places=2,
-                                   msg=text)
-
-    def test_the_ncv_pairings_match_the_factor_file(self):
-        for val, item in (("11.6", "Other Primary Solid Biomass"),
-                          ("15.6", "Wood/Wood Waste"), ("29.5", "Charcoal"),
-                          ("25.8", "Other Bituminous Coal")):
-            self.assertIn("%s TJ/Gg" % val, self.tex)
-            self.assertAlmostEqual(float(val),
-                                   self.data.efv("residential_ncv", item), places=1)
 
 
 class TestSurveyDiagnostics(unittest.TestCase):
@@ -1096,17 +1023,6 @@ class TestSurveyDiagnostics(unittest.TestCase):
                     "cluster_basis"):
             self.assertIn(col, self.fw25)
 
-    def test_the_paper_table_matches_the_csv(self):
-        tex = open(os.path.join(ROOT, "papers", "residential", "sections",
-                                "03_study_area_and_data.tex"), encoding="utf-8").read()
-        self.assertIn("11\\,524", tex)
-        self.assertEqual(self.fw25["n_reporting_households"], "11524")
-        self.assertIn("7.1", tex)
-        self.assertAlmostEqual(float(self.fw25["design_se_pct_of_total"]), 7.14,
-                               delta=0.05)
-        self.assertIn("4.52", tex)
-        self.assertAlmostEqual(float(self.fw25["per_user_hh_day"]), 4.52, delta=0.01)
-
     def test_the_per_user_quantity_is_physically_plausible(self):
         """4-5 kg of wood per using household per day, stable across two independent
         rounds - the sanity check that survives any weighting error."""
@@ -1125,21 +1041,6 @@ class TestSurveyDiagnostics(unittest.TestCase):
         self.assertLess(int(coal["n_reporting_households"]), 50)
         self.assertGreater(float(coal["design_se_pct_of_total"]), 20.0)
 
-
-class TestCompletenessAppendix(unittest.TestCase):
-    """S3 is generated from the engine's completeness table; the committed .tex must
-    match a fresh regeneration - same discipline as the factor appendix."""
-
-    def test_the_committed_table_matches_the_engine(self):
-        import importlib.util
-        spec = importlib.util.spec_from_file_location(
-            "mkcomp", os.path.join(ROOT, "scripts",
-                                   "make_residential_completeness_table.py"))
-        mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
-        committed = open(mod.OUT, encoding="utf-8").read()
-        self.assertEqual(committed, mod.render())
-        self.assertGreaterEqual(len(mod.rows()), 10)
 
 
 class TestNoxBasis(unittest.TestCase):
@@ -1169,42 +1070,18 @@ class TestNoxBasis(unittest.TestCase):
                                    places=2, msg=ef_id)
 
 
-class TestAirMatrix(unittest.TestCase):
-    """S4 derives its E cells from the engine and demands a registered reason for
-    every NE - the committed file must match a regeneration, and a stream-pollutant
-    pair in neither the engine nor the registry kills the generation."""
-
-    def test_the_committed_matrix_matches_the_engine(self):
-        import importlib.util
-        spec = importlib.util.spec_from_file_location(
-            "mkair", os.path.join(ROOT, "scripts",
-                                  "make_residential_air_matrix.py"))
-        mod = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(mod)
-        committed = open(mod.OUT, encoding="utf-8").read()
-        self.assertEqual(committed, mod.render())
-
-    def test_generators_and_biogas_are_ne_rows(self):
-        tex = open(os.path.join(ROOT, "papers", "residential", "sections",
-                                "S4_air_matrix.tex"), encoding="utf-8").read()
-        for line in tex.split("\n"):
-            if line.startswith("Generators &") or line.startswith("Biogas &"):
-                self.assertNotIn(" E ", line, line)
-                self.assertIn("NE", line)
-
 
 class TestAirFigureIsCurrent(unittest.TestCase):
     """The blocker this guard retires: the air chart once shipped a NOx bar from a
     superseded factor basis because BOTH figure copies were stale together and the
-    figure-to-figure sync test passed. This test regenerates the chart from the
+    figure-to-figure comparison passed. This test regenerates the chart from the
     CURRENT air CSV and byte-compares it to the shipped copy, so a data change that
     skips figure regeneration fails loudly."""
 
     def test_the_shipped_air_figure_matches_a_fresh_regeneration(self):
         import tempfile
         from pkinv.report import figures
-        shipped = os.path.join(ROOT, "papers", "residential", "figures",
-                               "residential_air.png")
+        shipped = os.path.join(ROOT, "outputs", "figures", "residential_air.png")
         with tempfile.TemporaryDirectory() as tmp:
             original = figures.FIGDIR
             try:
@@ -1214,8 +1091,8 @@ class TestAirFigureIsCurrent(unittest.TestCase):
                 figures.FIGDIR = original
             fresh = open(os.path.join(tmp, "residential_air.png"), "rb").read()
         self.assertEqual(open(shipped, "rb").read(), fresh,
-                         "papers/residential/figures/residential_air.png is stale: "
-                         "regenerate figures and rerun scripts/sync_figures.py")
+                         "outputs/figures/residential_air.png is stale: "
+                         "regenerate it with `make figures`")
 
     def test_the_figure_pollutant_set_matches_the_air_table(self):
         """tab:air shows eight pollutants and promises PM10/TSP stay out; the chart

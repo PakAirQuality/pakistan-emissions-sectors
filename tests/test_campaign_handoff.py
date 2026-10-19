@@ -231,7 +231,7 @@ class TestTheHandoffIsPopulated(unittest.TestCase):
                          encoding="utf-8").read()
         known = set(re.findall(r"\bD0\d\d\b", decisions))
         self.assertGreater(len(known), 50, "the decision log has lost its entries")
-        pattern = re.compile(r"(?:outputs|data|scripts|tests|src|papers|paper_national|"
+        pattern = re.compile(r"(?:outputs|data|scripts|tests|src|"
                              r"research_campaign)/[\w./*()-]+")
         problems = []
         for name in sorted(self.FLOORS):

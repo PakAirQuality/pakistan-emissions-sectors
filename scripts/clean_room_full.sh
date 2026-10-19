@@ -20,11 +20,6 @@
 #   full build      run_all --quick, which is EVERY phase except the one declared
 #                   NETWORK phase ("Agriculture air pollutants") - the offline
 #                   build IS the full product set
-#   PDFs            make papers (latexmk, local TeX Live), BEFORE the tests -
-#                   the PDF-freshness test is mtime-based and must see the PDFs
-#                   rebuilt after the build refreshed their figure sources; PDFs
-#                   are declared non-byte-stable (embedded CreationDate), so the
-#                   record is build-success + hashes, never byte equality
 #   full tests      python3 -m unittest discover tests, inside the clone
 #   comparison      git status over tracked files with the SAME two declared
 #                   exceptions the quick gate checks (NetCDF byte churn;
@@ -81,7 +76,6 @@ out = {
         "python": platform.python_version(),
         "git": run(["git", "--version"]),
         "git_lfs": run(["git", "lfs", "version"]),
-        "latexmk": (run(["latexmk", "--version"]).splitlines() or ["unavailable"])[-1],
         "offline_proxy": "http(s)_proxy=http://127.0.0.1:9 exported for build and tests",
     },
     "clone": {
@@ -160,19 +154,6 @@ else
     fail_out "run_all failed inside the clone"
 fi
 
-# --- 6. PDFs (before the tests: test_every_distributed_pdf_is_newer_than_its_sources is mtime-based, and a rebuild that regenerates figure sources then tests before rebuilding PDFs fails on ordering, not content) ----------------------------------------------------------------------
-if command -v latexmk >/dev/null 2>&1; then
-    if make papers > "$WORK/papers.log" 2>&1; then
-        PDFHASHES="$(shasum -a 256 papers/pdf/*.pdf | shasum -a 256 | cut -d' ' -f1)"
-        step "pdfs" "OK" "make papers succeeded; $(ls papers/pdf/*.pdf | wc -l | tr -d ' ') PDFs built; combined sha256 $PDFHASHES (declared non-byte-stable: embedded CreationDate)"
-    else
-        step "pdfs" "FAIL" "make papers failed; see $WORK/papers.log"
-        fail_out "the PDF build failed inside the clone"
-    fi
-else
-    step "pdfs" "SKIP" "latexmk not on PATH in this environment"
-fi
-
 # --- 7. full test suite -----------------------------------------------------------
 if python3 -m unittest discover tests > "$WORK/tests.log" 2>&1; then
     TESTLINE="$(grep -E '^Ran [0-9]+ tests' "$WORK/tests.log" | tail -1)"
@@ -187,13 +168,7 @@ fi
 CHANGED="$(git status --porcelain --untracked-files=no | awk '{$1=""; sub(/^ /,""); print}')"
 CUBE="outputs/pakemis_grid_0p05_monthly.nc"
 MANIFEST="outputs/release_manifest.json"
-# the PDF build rewrites papers/pdf and its .bbl companions; those are declared
-# non-byte-stable and recorded by hash above, so they are excluded from the
-# byte-equality verdict the way the quick gate excludes nothing it did not build
-# the exclusion classes mirror scripts/release_fixpoint.py's ARTIFACT_PATTERNS
-# exactly: everything the PDF build rewrites in place, including the national
-# paper OUTSIDE papers/pdf/ - run 3 failed on precisely that omission
-DATA_CHANGED="$(echo "$CHANGED" | grep -vE '^papers/pdf/|\.bbl$|^outputs/pakemis_paper_hashes\.csv$|^paper_common/release_cover\.tex$|^paper_national/[^/]+\.pdf$|^papers/[^/]+/(paper|supplement)\.pdf$' || true)"
+DATA_CHANGED="$CHANGED"
 
 MANIFEST_ONLY_COMMIT=0
 if [ "$DATA_CHANGED" = "$MANIFEST" ]; then
@@ -206,7 +181,7 @@ fi
 if [ -z "$DATA_CHANGED" ]; then
     step "comparison" "OK" "every committed data output reproduced byte-for-byte"
     write_result "PASS" "the rebuild reproduced every committed output byte-for-byte in an empty environment, offline"
-    echo "CLEAN-ROOM PASS (full): products, tests, PDFs all green; outputs byte-identical"
+    echo "CLEAN-ROOM PASS (full): products and tests all green; outputs byte-identical"
 elif [ "$DATA_CHANGED" = "$CUBE" ]; then
     step "comparison" "OK" "only the NetCDF cube's bytes differ (content-deterministic; docs/spatial_products_contract.md)"
     write_result "PASS_WITH_NOTE" "byte-identical except the NetCDF cube's documented byte churn"

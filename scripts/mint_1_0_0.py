@@ -3,8 +3,8 @@
 
     python3 scripts/mint_1_0_0.py --doi-data 10.5281/zenodo.A --doi-software 10.5281/zenodo.B --doi-docs 10.5281/zenodo.C [--dry-run]
 
-Rewrites every site that carries the version or a DOI; regenerated sites (release cover,
-manifest, README banner, .bbl) are left to the build. No push, no tag, no upload."""
+Rewrites every site that carries the version or a DOI; regenerated sites (manifest, README
+banner) are left to the build. No push, no tag, no upload."""
 import datetime
 import os
 import re
@@ -76,14 +76,6 @@ patch(".zenodo.json", [('"version": "%s"' % OLD,
                         '    {"identifier": "%s", "relation": "isSupplementTo", "scheme": "doi"},\n'
                         '    {"identifier": "%s", "relation": "isDocumentedBy", "scheme": "doi"}\n  ]'
                         % (NEW, DATA, DOCS))], 1)
-patch("paper_common/references.bib",
-      [("release %s; DOI to be assigned" % OLD, "release %s; \\url{https://doi.org/%s}" % (NEW, DOCS))])
-patch("paper_national/versions/v1/paper_national.tex", [("release \\texttt{%s}" % OLD, "release \\texttt{%s}" % NEW)], 1)
-patch("paper_national/versions/v1/sections/00_abstract.tex",
-      [("under release \\texttt{%s}." % OLD,
-        "under release \\texttt{%s} (data: \\url{https://doi.org/%s}; software: \\url{https://doi.org/%s})."
-        % (NEW, DATA, SOFTWARE))], 1)
-patch("data/claims_registry.csv", [(",%s," % OLD, ",%s," % NEW)])
 month = datetime.date.today().strftime("%B %Y")
 patch("CHANGELOG.md", [("\n\n## [%s] — August 2026" % OLD, '''
 
@@ -108,12 +100,10 @@ numerical truth layer the programme now rests on:
   software %s, documentation %s.
 - `scripts/build_dev_snapshot.py` (deterministic development snapshot) and
   `scripts/build_deposit_zip.py` (the three deposits, from the deposit manifest).
-- The national manuscript is re-targeted as an ESSD data-description article
-  (`docs/essd_outline.md`); the sector papers are Sector Technical Notes TN01–TN10.
 
 Deferred, named in README "Not in 1.0.0": exact ADM2 CO2e for the two mixed-origin modules,
 configuration S beyond the residential substitution, a calendar basis outside agriculture,
-TN08's text and the ESSD prose rewrite.
+and the industrial-combustion documentation.
 
 ## [%s] — August 2026''' % (month, DATA, SOFTWARE, DOCS, OLD))], 1)
 print("done; regenerate (strict build), then the gate WITHOUT the manifest checkout")

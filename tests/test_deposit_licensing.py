@@ -136,18 +136,13 @@ class TestNothingShipsWithoutTheRightToShipIt(unittest.TestCase):
             self.assertGreater(len(row["not_digested_because"]), 25, row["path"])
 
     def test_the_undigested_class_stays_small_and_declared(self):
-        """It is the one exemption in this file, so it is bounded. Twenty rows today: the
-        manifest, the register, the release manifest, two sidecars and sixteen PDFs."""
+        """It is the one exemption in this file, so it is bounded: the deposit manifest, the
+        source register, the release manifest, the test record and the product facts."""
         undigested = [r for r in self.deposit if len(r["sha256"]) != 64]
-        # 25 -> 26 (rc68): paper_common/release_cover.tex. The release fixpoint writes it
-        # after this manifest and it prints the commit it describes, so the digest here was
-        # always one fixpoint stale; the first clean rebuild of rc68 refused it as a stale
-        # deposited input. It cannot be hashed here, which is the class's definition.
-        # 26 -> 27 (rc68): outputs/pakemis_citation_deposit_audit.csv. It reads this
-        # manifest, so its phase follows this one; on a warm tree the previous build's copy
-        # was hashed (one generation stale) and from an empty outputs/ the declaration guard
-        # refused it. Its digest lives in the release manifest.
-        self.assertLessEqual(len(undigested), 27,
+        # 27 -> 5 (rc70): the typeset documents, their hash sidecar, the release cover and two
+        # registers that described them left this repository; what remains is written after
+        # this manifest.
+        self.assertLessEqual(len(undigested), 5,
                              "the undigested class grew to %d; something that COULD be "
                              "hashed has been declared context-stamped instead"
                              % len(undigested))
