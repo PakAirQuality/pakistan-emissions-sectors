@@ -8,6 +8,6 @@ stamp a stale version into the release manifest - which is precisely the class o
 drift this release exists to eliminate.
 """
 
-__version__ = "1.0.0rc69"
+__version__ = "1.0.0rc70"
 
 __all__ = ["__version__"]

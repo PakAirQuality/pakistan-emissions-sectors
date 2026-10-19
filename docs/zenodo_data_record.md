@@ -20,7 +20,7 @@ distributed only with their own ODbL notices and attribution.
 | field | value |
 |---|---|
 | upload_type | dataset |
-| title | PakEmis 1.0.0rc69: greenhouse gas and air pollutant emissions in Pakistan, July 2015–June 2025 — data products |
+| title | PakEmis 1.0.0rc70: greenhouse gas and air pollutant emissions in Pakistan, July 2015–June 2025 — data products |
 | creators | as in `CITATION.cff` |
 | version | the release being deposited (the manifest's `version`) |
 | licence | CC BY 4.0 for the project-owned primary data, with per-file upstream terms recorded in the manifest; ODbL material is excluded |
