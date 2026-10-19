@@ -23,13 +23,13 @@
     "software": ""
   },
   "git": {
-    "describes_commit": "477549cdef9482d920c1e1f4a03b87e8f74cca95",
+    "describes_commit": "911f78f7453e69244443e43a557b4774f81394ff",
     "restricted_layers": {
       "commit": "ecd371d44751228003c8fcaf24b3a35c17051d89",
       "dirty": false,
       "mode": "overlay"
     },
-    "tree_dirty": false
+    "tree_dirty": true
   },
   "gwp_basis": {
     "note": "fossil and biogenic CH4 carry distinct AR5 values; see pkinv.core.gwp",
@@ -724,7 +724,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_artifact_inventory.csv",
-      "sha256": "1b29527a986e8de3c1b8b560c16e21163503d0e9c88dab147b508bcb72b8251c"
+      "sha256": "1935bb3a80adf96de5d6057b430a92ad35234dd1cfe848b3a06d087b2203ac75"
     },
     {
       "byte_stable": true,
@@ -849,12 +849,12 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_data_provenance.csv",
-      "sha256": "155d574607a287db3a1a95eba792ff9360b949d1e5956fc0bad66cfe710766e5"
+      "sha256": "bdd98f1e1645b13ad7a2696e140f2bb1d48ace96feda50b141905ad8be901587"
     },
     {
       "byte_stable": true,
       "path": "outputs/pakemis_deposit_manifest.csv",
-      "sha256": "9b290f817afe35ed4909f6201915d2cf693b6d54655de13f7a44d7f1efc97e98"
+      "sha256": "b0dd7c97e309820500ea79d4799a9688cfa1ff2daed45f20959656d0f256d864"
     },
     {
       "byte_stable": true,
@@ -1309,7 +1309,7 @@
     {
       "byte_stable": true,
       "path": "outputs/pakemis_product_facts.csv",
-      "sha256": "120bc4b23afb5aa16d6088f7ac277125012c90e5ae0d2cf6bcfcd03d1c399824"
+      "sha256": "1333d747d15725fcb9d034f9cf9dc778278ce4fff8dfbcaebf91c3d80423ec8d"
     },
     {
       "byte_stable": true,
@@ -1934,7 +1934,7 @@
     {
       "byte_stable": true,
       "path": "outputs/semantic/semantic_release.json",
-      "sha256": "1609c74527df7016d4b4de1ed779d42e040dd455a967831f1f7d1f61e969fb8b"
+      "sha256": "fd318c996c2c5fdee937b68c76277eb71fc613e327557c4283667fe88e594dcb"
     },
     {
       "byte_stable": true,
@@ -4406,7 +4406,7 @@
     },
     {
       "path": "data/artifact_roles.csv",
-      "sha256": "1dbbc80112404c27c0523d3ccf11d95003b9a43fac0027497acd1f07432a1665"
+      "sha256": "49a44a463b1369e9fdffe04287c4fec1442147e2bd68c3d7c6a434c2c065dd3b"
     },
     {
       "path": "data/availability_matrix.csv",

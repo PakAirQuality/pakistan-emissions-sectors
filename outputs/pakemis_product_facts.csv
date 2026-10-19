@@ -32,8 +32,8 @@ monthly_flat_rows,12444,pakemis_monthly_fy2015_16_fy2024_25.csv,component-months
 artifact_count,967,pakemis_artifact_inventory.csv,physical files this release ships
 canonical_count,232,pakemis_artifact_inventory.csv,artefacts declared canonical - a product the release is for
 canonical_uncited,156,pakemis_artifact_inventory.csv,canonical artefacts README.md and docs/ do not name; ratcheted in tests/test_artifact_inventory.py with the list in the failure message
-artifacts_tier_audit,147,pakemis_artifact_inventory.csv,artefacts in the audit release tier
-artifacts_tier_build,291,pakemis_artifact_inventory.csv,artefacts in the build release tier
+artifacts_tier_audit,269,pakemis_artifact_inventory.csv,artefacts in the audit release tier
+artifacts_tier_build,169,pakemis_artifact_inventory.csv,artefacts in the build release tier
 artifacts_tier_core,297,pakemis_artifact_inventory.csv,artefacts in the core release tier
 artifacts_tier_research,56,pakemis_artifact_inventory.csv,artefacts in the research release tier
 artifacts_tier_supporting,176,pakemis_artifact_inventory.csv,artefacts in the supporting release tier
