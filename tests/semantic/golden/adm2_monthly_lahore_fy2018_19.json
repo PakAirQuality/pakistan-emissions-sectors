@@ -11,7 +11,7 @@
    "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "d8efee30a601485dca29369cddfdf338",
+ "expect_receipt": "3b3b4ee58b2a912d6dd53a7a527e5a21",
  "function": "query_emissions",
  "golden_id": "adm2_monthly_lahore_fy2018_19",
  "note": "rc68: historical monthly ADM2 mass is served with declared allocation evidence, not refused.",

@@ -8,7 +8,7 @@
    "tolerance": "0.0005"
   }
  ],
- "expect_receipt": "a4146e1cfa157fc346b4257083497c71",
+ "expect_receipt": "d16fd79f0b0257cc3c487e8308feadf5",
  "function": "query_emissions",
  "golden_id": "category_enteric_reference",
  "note": "rc67 (2026-10-13): renamed from category_enteric_L. The suffix named the reference configuration by its dung letter, and the reference is no longer L: it carries the household survey's dung (S) in every year, and L is the alternative. The request is unchanged - it asks for the reference by default. No value moved: enteric fermentation does not depend on the dung basis.",

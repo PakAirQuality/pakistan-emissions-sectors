@@ -411,7 +411,6 @@ def layout(pkg):
     copy("registries/cross_sector_ledger_map.csv", "data/cross_sector_ledger_map.csv")
     copy("registries/validation_catalog.csv", "data/validation_catalog.csv")
     copy("registries/benchmark_tasks.csv", "data/benchmark_tasks.csv")
-    copy("registries/claims_registry.csv", "data/claims_registry.csv")
 
     # outputs/annual
     for name in ("pakemis_atomic_annual.csv", "pakemis_atomic_annual.parquet", "pakemis_atomic_annual_aggregates.csv",

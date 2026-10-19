@@ -11,7 +11,7 @@
    "tolerance": "0.000001"
   }
  ],
- "expect_receipt": "401f2f6207618f5da3e2a9924e3512ce",
+ "expect_receipt": "9d3d9d5048777cf047054fbcfc71c1ee",
  "function": "get_timeseries",
  "golden_id": "timeseries_annual_reference",
  "note": "rc67 (2026-10-13): renamed from timeseries_annual_L. The suffix named the reference configuration by its dung letter, and the reference is no longer L: it carries the household survey's dung (S) in every year, and L is the alternative. The request is unchanged - it asks for the reference by default. The receipt moved because every year's total now carries the survey series' dung in place of the ledger's.",

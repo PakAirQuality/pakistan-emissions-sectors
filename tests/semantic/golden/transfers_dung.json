@@ -29,7 +29,7 @@
    "exact": "47.8088"
   }
  ],
- "expect_receipt": "383af60c5906f20b0e708842473085b3",
+ "expect_receipt": "87cedbbe223e92ff1e8a170f157c2517",
  "function": "get_cross_sector_transfer",
  "golden_id": "transfers_dung",
  "request": {

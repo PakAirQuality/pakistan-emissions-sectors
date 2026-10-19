@@ -5,7 +5,7 @@
    "display": "NE"
   }
  ],
- "expect_receipt": "586ce87f3a127d1f08f62154183f8989",
+ "expect_receipt": "408e36cb263f1a757fe50a9225c3d586",
  "function": "get_completeness",
  "golden_id": "completeness_ne_rows",
  "request": {

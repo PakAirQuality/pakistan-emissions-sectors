@@ -126,8 +126,10 @@ COMPANION_MARKERS = ("companion", "nowcast", "different question", "depends on t
 # force history out of the changelog or fail on every legitimate entry. Its
 # current-release section is the [unreleased]/topmost one, checked by eye at the
 # version bump, and historical totals there are labelled as history.
+# docs/history_rewrite.md is history in the same sense: it quotes every rewritten commit's
+# subject, release names included, as it was written.
 SKIP = (".git", "outputs/figures", "Code_files_", ".venv", "node_modules",
-        "CHANGELOG.md", "CLAUDE.md")
+        "CHANGELOG.md", "CLAUDE.md", "docs/history_rewrite.md")
 
 
 def _text(relative):
