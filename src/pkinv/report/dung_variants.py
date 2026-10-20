@@ -131,8 +131,25 @@ def price(year=None):
         return _co2e(comps_m) + _co2e(comps_s) - ref_ag, delta_ch4, delta_n2o
 
     def soils_with_extra_fon(extra_n_kg):
+        """Soils with `extra_n_kg` more organic N applied, its field volatilisation included.
+
+        The reference pools carry the organic field releases (field_volat_NH3_N / _NOx_N) that
+        manure.compute derived for the reference N state, and soils.volatilised_n uses them
+        whenever they are present. Adding N to FON alone therefore raised direct and leaching
+        N2O but left volatilisation, and its indirect N2O, at the reference value (found by the
+        external audit of 21 October 2026). The added N now volatilises at the reference's own
+        organic field rate - released N over applied FON - under whichever method produced the
+        pools; that treats the residual cake N like average applied manure N (no TAN lost while
+        the cake dried), which the registry note states."""
         npools = dict(npools_ref)
-        npools["FON_N"] = npools["FON_N"] + extra_n_kg
+        fon_ref = npools_ref["FON_N"]
+        npools["FON_N"] = fon_ref + extra_n_kg
+        for key in ("field_volat_NH3_N", "field_volat_NOx_N"):
+            if key in npools_ref:
+                pools = dict(npools_ref[key])
+                rate = pools.get("organic", 0.0) / fon_ref if fon_ref else 0.0
+                pools["organic"] = pools.get("organic", 0.0) + extra_n_kg * rate
+                npools[key] = pools
         comps_s = soils.compute(agri, npools)
         return (_co2e(comps_s) - _co2e(soils_ref),
                 _gas_gg(comps_s, "N2O") - _gas_gg(soils_ref, "N2O"))

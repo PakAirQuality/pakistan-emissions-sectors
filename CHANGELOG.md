@@ -7,6 +7,34 @@ current national figures are the manifest's.
 
 ## [Unreleased]
 
+### Three inventory defects the gas audit exposed, fixed (no reference total moves)
+
+**The field-application dung variant now volatilises the nitrogen it adds.**
+- `S_residual_field_application` adds the unresolved residual's N to applied organic N. The
+  reference pools carry the organic field releases computed for the reference N state, so the added
+  N raised direct and leaching N2O while its volatilisation, and the indirect N2O on it, stayed at
+  the reference value.
+- The added N now volatilises at the reference's own organic field rate, which treats the cake's N
+  like average applied manure N.
+- Effect: the variant goes from +3.038 to +3.622 Mt CO2e (N2O 11.46 to 13.67 Gg), in FY2023-24 and in
+  every year of `pakemis_dung_fate_by_year.csv`.
+- NH3 is priced for no dung variant, as before.
+- `tests/test_dung_variant_volatilisation.py` fails if the freezing returns.
+
+**The manure CH4 description is corrected** (`method_registry.csv`). The method is Tier 1, head count
+× the IPCC per-head factor. Management-system shares do not enter CH4, so no dung-fate variant moves
+manure CH4. It had been described as Tier 2.
+
+**The post-meter feedstock rationale is corrected.**
+- The rc67 exclusion of fertilizer feedstock from the post-meter leak base was described as
+  IPCC-directed: the factor was said to be "defined on gas consumed in combustion equipment" (note c).
+- IPCC 2019 Eq 4.2.18 and Table 4.2.4k define the activity as gas consumed at industrial plants and
+  power stations. Note c only derives the factor. The exclusion is therefore a modelling judgement.
+- `fugitives_including_feedstock` is an admissible alternative, no longer "not defended". Which
+  membership the reference carries is a re-base decision for the next mint.
+- Corrected in `docs/gas_boundary.md`, the configuration notes and the fugitives ledger notes. No
+  number moves.
+
 ### The gas-reallocation application, corrected after an external audit (21 October 2026)
 
 An external audit of `2335b4d` found defects in the application's mechanics and claims. Each was

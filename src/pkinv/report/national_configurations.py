@@ -128,9 +128,12 @@ FUGITIVES_SELECTION_RULE = (
     "SELECTION RULE for the fugitives_structural_envelope family: the reference "
     "takes the conservative default-practice reading - higher published factors "
     "wherever Pakistan-specific evidence is absent, full segment coverage - with one "
-    "membership rule that is not a matter of practice: the post-meter factor is "
-    "defined on gas consumed in combustion equipment, so fertiliser feedstock, which "
-    "is reformed and not burned, is outside its base (rc67). That places the "
+    "membership JUDGEMENT: fertiliser feedstock, which is reformed and not burned in "
+    "the equipment whose leaks the post-meter factor describes, is outside its base "
+    "(rc67). IPCC 2019 (Eq 4.2.18, Table 4.2.4k) defines the activity as gas consumed "
+    "at industrial plants and power stations and does not itself exclude feedstock, so "
+    "the feedstock-inside membership is an admissible alternative and the choice is a "
+    "re-base question for the next mint. That places the "
     "reference at 23.499 in a 9.601-24.694 structural envelope whose top is the "
     "feedstock-inside membership used through rc66. No probability attaches to any "
     "point in the envelope, and a national quote of 23.499 without the envelope "
@@ -183,11 +186,12 @@ CONFIGURATIONS = (
      "LDAR or pipe-material evidence decides between the readings"),
     ("fugitives_including_feedstock", "post-meter feedstock scope",
      "fertiliser feedstock INSIDE the post-meter leak base, the membership of every "
-     "release through rc66. Retained so a reader holding one of those totals can find "
-     "the account it came from, and not defended: feedstock gas is reformed, not "
-     "burned, and the factor's registered activity definition is gas consumed in "
-     "combustion. About +1.19 Mt. The process fuel the same plants burn is inside "
-     "the base in both readings"),
+     "release through rc66, and the literal reading of IPCC 2019 Eq 4.2.18 (gas "
+     "consumed at industrial plants and power stations). An ADMISSIBLE alternative to "
+     "the rc67 reference, whose exclusion is a judgement that reformed feedstock does "
+     "not pass the leaking equipment; corrected 21 October 2026, the rationale having "
+     "been misattributed to IPCC note c. About +1.19 Mt. The process fuel the same "
+     "plants burn is inside the base in both readings"),
     ("power_plant_physical_coal", "power coal energy basis",
      "the same station mass at the calorific values the plants' own generation implies - the "
      "HEAT-RATE route, which is circular (its energy contains the generation it is later "

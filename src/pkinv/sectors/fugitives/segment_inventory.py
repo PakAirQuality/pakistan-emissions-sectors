@@ -10,13 +10,14 @@ from pkinv.sectors.fugitives.leakage import CATEGORY
 # What the non-residential post-meter leak base contains, and at what factor.
 #
 #   feed_excluded        THE REFERENCE since rc67. Chemical feedstock is out; the process
-#                        fuel fertiliser plants burn stays in. The factor (IPCC 2019
-#                        Table 4.2.4k) is defined on gas CONSUMED in non-residential
-#                        combustion equipment. Feed gas is reformed to hydrogen and
-#                        carbon dioxide, not burned, so the factor has no basis on it.
+#                        fuel fertiliser plants burn stays in. A modelling JUDGEMENT: feed
+#                        gas is reformed, not burned, in the equipment whose leaks the
+#                        factor describes. IPCC 2019 Eq 4.2.18 / Table 4.2.4k define the
+#                        activity as gas consumed at industrial plants and power stations
+#                        and do not themselves exclude feedstock (corrected 2026-10-21).
 #   full                 the membership every release through rc66 used: the whole
-#                        fertiliser class inside the base. Kept as a qualified
-#                        alternative, not as a reading anyone defends.
+#                        fertiliser class inside the base. An admissible alternative; the
+#                        choice between the two is a re-base question for the next mint.
 #   fertilizer_excluded  the whole class out, process fuel with it. A lower member: it
 #                        leaves burned gas with no post-meter term.
 #   half, excluded       the factor's transferability, on the reference base.
@@ -335,10 +336,11 @@ def inventory_rows(data, scenario="reference", year=None):
                     "class times a feed fraction of %.4f, %s from FY%s)"
                     % (100.0 * share, feed["value"], feed["basis"], feed["observed_year"]))
                 activity["note"] = (
-                    "Feedstock gas is reformed, not burned, and the post-meter factor is "
-                    "defined on gas consumed in combustion equipment, so it is withheld "
-                    "from the feed. The process fuel the same plants burn stays in the "
-                    "base. %s" % feed["source"])
+                    "Feedstock gas is withheld from the base by a modelling judgement "
+                    "that reformed gas does not pass the equipment whose leaks the "
+                    "factor describes; IPCC 2019 Eq 4.2.18 defines the activity as gas "
+                    "consumed at industrial plants and does not itself exclude feedstock. "
+                    "The process fuel the same plants burn stays in the base. %s" % feed["source"])
             else:
                 activity["source_reference"] += ("; minus the whole fertiliser class, "
                                                  "%.1f%% of the base" % (100.0 * share))

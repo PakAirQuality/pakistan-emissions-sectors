@@ -33,13 +33,25 @@ as the other — "neither residual is methane emissions" is its own wording.
 
 ## The fertilizer feedstock inconsistency, stated rather than smoothed
 
-756 MMCFD of fertilizer gas sits **inside** the post-meter leak base and **outside** every
-combustion module, because it is chemically consumed in the reformers and is booked as IPPU
-feedstock at 2.B.1. The leak factor's own lineage row defines its activity as gas consumed for
-*combustion end uses* (IPCC 2019 Table 4.2.4k, note c), so applying it to feedstock has no
-behavioural basis — and no Pakistani measurement supports either treatment. The inconsistency is
-therefore priced as a named configuration (`fugitives_excluding_feedstock`, **−1.43 Mt**) rather
-than resolved by fiat. It is the largest single unpriced number the gas ledger had surfaced.
+**History:** through rc66 the 756 MMCFD of fertilizer gas sat inside the post-meter leak base.
+That gas is chemically consumed in the reformers and booked as IPPU feedstock at 2.B.1.
+
+**rc67 moved the feedstock share out of the base,** to a reference of 23.499 Mt fugitives. The rule
+was justified as IPCC-directed: the factor's activity was said to be gas consumed for *combustion
+end uses*, citing IPCC 2019 Table 4.2.4k, note c.
+
+**That attribution was wrong** (external audit, corrected 21 October 2026). The IPCC 2019 activity
+is "volume of gas consumption at industrial plants and power stations" (Eq 4.2.18; Table 4.2.4k,
+"non-residential and commercial gas consumed"). Note c gives only the factor's derivation from the
+Revised 1996 Table 1-58. The IPCC text excludes the emissions of combustion itself, not
+non-combusted gas.
+
+**Where that leaves the rule:**
+- The exclusion is a modelling judgement: reformed feedstock is taken not to pass the equipment
+  whose leaks the factor describes. No Pakistani measurement supports either treatment.
+- The feedstock-inside membership (`fugitives_including_feedstock`, about +1.19 Mt) is therefore an
+  admissible alternative, not a superseded one.
+- Which membership the reference should carry is a re-base decision for the next mint.
 
 ## The one genuine soft spot: power grid gas
 

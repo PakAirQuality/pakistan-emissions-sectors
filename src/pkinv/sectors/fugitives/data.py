@@ -292,8 +292,10 @@ class FugitivesData:
         """Share of the non-residential post-meter leak base that a state withholds.
 
         scope="feed"   chemical feedstock: the fertiliser class times the feed fraction.
-                       Feedstock is reformed, not burned, so a factor whose activity is
-                       "gas consumed" in combustion equipment has no basis on it.
+                       Withheld by a modelling JUDGEMENT that reformed feedstock does not
+                       pass the equipment whose leaks the factor describes. IPCC 2019 Eq
+                       4.2.18 defines the activity as gas consumed at industrial plants and
+                       power stations and does not itself exclude feedstock.
         scope="class"  the whole fertiliser class, the process fuel with it.
 
         The class is each year's own print and the base is each year's own
