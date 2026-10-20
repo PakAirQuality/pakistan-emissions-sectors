@@ -1,0 +1,95 @@
+# PAKEMIS GAS-REALLOCATION APPLICATION - THRESHOLDS.
+# A counterfactual calculation on the FY2023-24 records: NOT evidence that a reallocation happened or caused any trend, and not a statement of operational feasibility on any day.
+# Every change is transition minus baseline on paired draws; negative = reduction. Gg; CO2e on AR5 GWP100 (AR6 beside). NOx as NO2. NE = not estimated, never zero.
+# 10000 draws, seed 20261014 (reported). Method: docs/gas_reallocation_application.md. Code: src/pkinv/applications/gas_reallocation/.
+threshold,baseline_fertilizer,baseline_power,receiving,displaced,unit,threshold_p50,threshold_p2_5,threshold_p97_5,comparison,p_comparison_above_threshold
+T1 displaced-generation intensity for zero territorial CO2e change,FA1,PA1,R1,,t CO2e (AR5) per MWh,0.306505,0.284971,0.327634,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R1,D1,t CO2e (AR5) per MWh,0.606514,0.574984,0.639182,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R1,D1,t CO2e (AR5) per t urea,1.90477,1.66442,2.15831,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.1660
+T1 displaced-generation intensity for zero territorial CO2e change,FA1,PA1,R2,,t CO2e (AR5) per MWh,0.370456,0.340371,0.402239,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R2,D1,t CO2e (AR5) per MWh,0.606514,0.574984,0.639182,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R2,D1,t CO2e (AR5) per t urea,1.3455,1.10885,1.59064,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.9032
+T1 displaced-generation intensity for zero territorial CO2e change,FA1,PA1,R3,,t CO2e (AR5) per MWh,0.663754,0.590017,0.766383,D5 average fossil CPPA-G 0.688,0.6983
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R3,D1,t CO2e (AR5) per MWh,0.606514,0.574984,0.639182,the case's own T1 threshold,0.0889
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R3,D1,t CO2e (AR5) per t urea,0.15811,-0.0613451,0.354284,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.9985; F2 1.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R1,D2,t CO2e (AR5) per MWh,0.850222,0.755449,1.016,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R1,D2,t CO2e (AR5) per t urea,3.22143,2.6416,4.14143,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R2,D2,t CO2e (AR5) per MWh,0.850222,0.755449,1.016,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R2,D2,t CO2e (AR5) per t urea,2.43681,1.918,3.21814,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0104
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R3,D2,t CO2e (AR5) per MWh,0.850222,0.755449,1.016,the case's own T1 threshold,0.9947
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R3,D2,t CO2e (AR5) per t urea,0.764622,0.398097,1.24241,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.1207; F2 0.9988
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R1,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R1,D3,t CO2e (AR5) per t urea,3.41525,3.08188,3.74814,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R2,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R2,D3,t CO2e (AR5) per t urea,2.59134,2.26862,2.93481,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA1,R3,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,R3,D3,t CO2e (AR5) per t urea,0.857267,0.560519,1.10758,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0225; F2 1.0000
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA1,none,D4,t CO2e (AR5) per t urea,0.86788,0.716279,1.01473,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 1.0000
+T1 displaced-generation intensity for zero territorial CO2e change,FA1,PA2,R1,,t CO2e (AR5) per MWh,0.290844,0.270407,0.310997,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R1,D1,t CO2e (AR5) per MWh,0.629951,0.60671,0.656946,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R1,D1,t CO2e (AR5) per t urea,2.21428,1.9831,2.46349,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0099
+T1 displaced-generation intensity for zero territorial CO2e change,FA1,PA2,R2,,t CO2e (AR5) per MWh,0.365829,0.33637,0.397973,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R2,D1,t CO2e (AR5) per MWh,0.629951,0.60671,0.656946,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R2,D1,t CO2e (AR5) per t urea,1.48773,1.25609,1.72282,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.7577
+T1 displaced-generation intensity for zero territorial CO2e change,FA1,PA2,R3,,t CO2e (AR5) per MWh,0.494237,0.459289,0.528225,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R3,D1,t CO2e (AR5) per MWh,0.629951,0.60671,0.656946,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R3,D1,t CO2e (AR5) per t urea,0.752989,0.602566,0.907472,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0118; F2 1.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R1,D2,t CO2e (AR5) per MWh,0.838069,0.767671,0.921929,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R1,D2,t CO2e (AR5) per t urea,3.38935,2.91908,3.93119,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R2,D2,t CO2e (AR5) per MWh,0.838069,0.767671,0.921929,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R2,D2,t CO2e (AR5) per t urea,2.41802,2.00233,2.88931,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0043
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R3,D2,t CO2e (AR5) per MWh,0.838069,0.767671,0.921929,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R3,D2,t CO2e (AR5) per t urea,1.44305,1.16377,1.76099,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.7931
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R1,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R1,D3,t CO2e (AR5) per t urea,3.67206,3.31862,4.02195,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R2,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R2,D3,t CO2e (AR5) per t urea,2.6412,2.30769,2.98652,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA1,PA2,R3,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,R3,D3,t CO2e (AR5) per t urea,1.61079,1.40289,1.81906,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.5943
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA1,PA2,none,D4,t CO2e (AR5) per t urea,0.86788,0.716279,1.01473,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 1.0000
+T1 displaced-generation intensity for zero territorial CO2e change,FA2,PA1,R1,,t CO2e (AR5) per MWh,0.194897,0.186302,0.202561,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R1,D1,t CO2e (AR5) per MWh,0.606514,0.574984,0.639182,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R1,D1,t CO2e (AR5) per t urea,2.39471,2.14472,2.65701,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0005
+T1 displaced-generation intensity for zero territorial CO2e change,FA2,PA1,R2,,t CO2e (AR5) per MWh,0.235368,0.220963,0.250664,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R2,D1,t CO2e (AR5) per MWh,0.606514,0.574984,0.639182,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R2,D1,t CO2e (AR5) per t urea,1.83284,1.59693,2.08937,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.2500
+T1 displaced-generation intensity for zero territorial CO2e change,FA2,PA1,R3,,t CO2e (AR5) per MWh,0.419288,0.394529,0.473824,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R3,D1,t CO2e (AR5) per MWh,0.606514,0.574984,0.639182,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R3,D1,t CO2e (AR5) per t urea,0.650108,0.461303,0.802589,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.1524; F2 1.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R1,D2,t CO2e (AR5) per MWh,0.850222,0.755449,1.016,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R1,D2,t CO2e (AR5) per t urea,3.70737,3.11666,4.62633,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R2,D2,t CO2e (AR5) per MWh,0.850222,0.755449,1.016,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R2,D2,t CO2e (AR5) per t urea,2.92451,2.39568,3.71125,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R3,D2,t CO2e (AR5) per MWh,0.850222,0.755449,1.016,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R3,D2,t CO2e (AR5) per t urea,1.2527,0.905965,1.7205,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.9028
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R1,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R1,D3,t CO2e (AR5) per t urea,3.90345,3.55342,4.26718,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R2,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R2,D3,t CO2e (AR5) per t urea,3.08152,2.74779,3.4359,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA1,R3,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,R3,D3,t CO2e (AR5) per t urea,1.34847,1.07446,1.56789,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.9121
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA1,none,D4,t CO2e (AR5) per t urea,1.35633,1.1912,1.52483,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.9132
+T1 displaced-generation intensity for zero territorial CO2e change,FA2,PA2,R1,,t CO2e (AR5) per MWh,0.184936,0.176683,0.192308,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R1,D1,t CO2e (AR5) per MWh,0.629951,0.60671,0.656946,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R1,D1,t CO2e (AR5) per t urea,2.70113,2.46157,2.9696,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 displaced-generation intensity for zero territorial CO2e change,FA2,PA2,R2,,t CO2e (AR5) per MWh,0.232339,0.21843,0.248237,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R2,D1,t CO2e (AR5) per MWh,0.629951,0.60671,0.656946,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R2,D1,t CO2e (AR5) per t urea,1.97324,1.73974,2.22176,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.1064
+T1 displaced-generation intensity for zero territorial CO2e change,FA2,PA2,R3,,t CO2e (AR5) per MWh,0.314188,0.300432,0.326698,D5 average fossil CPPA-G 0.688,1
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R3,D1,t CO2e (AR5) per MWh,0.629951,0.60671,0.656946,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R3,D1,t CO2e (AR5) per t urea,1.2399,1.09956,1.39701,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.9754
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R1,D2,t CO2e (AR5) per MWh,0.838069,0.767671,0.921929,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R1,D2,t CO2e (AR5) per t urea,3.87791,3.38883,4.43258,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R2,D2,t CO2e (AR5) per MWh,0.838069,0.767671,0.921929,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R2,D2,t CO2e (AR5) per t urea,2.90528,2.48097,3.3854,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R3,D2,t CO2e (AR5) per MWh,0.838069,0.767671,0.921929,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R3,D2,t CO2e (AR5) per t urea,1.93267,1.64548,2.25709,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.1544
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R1,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R1,D3,t CO2e (AR5) per t urea,4.15953,3.78963,4.54441,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R2,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R2,D3,t CO2e (AR5) per t urea,3.13092,2.7877,3.48976,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0000
+T1 intensity of the displaced pathway (combustion only),FA2,PA2,R3,D3,t CO2e (AR5) per MWh,0.927244,0.874225,0.983948,the case's own T1 threshold,1
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,R3,D3,t CO2e (AR5) per t urea,2.09829,1.8799,2.32613,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.0274
+T2 imported-urea intensity for zero territorial-plus-external CO2e change,FA2,PA2,none,D4,t CO2e (AR5) per t urea,1.35633,1.1912,1.52483,F1 gas route p50 0.521; F2 coal route (lower bound) p50 1.664,F1 0.0000; F2 0.9132
+"T2 imported-urea intensity of route F1, gas-reforming route",,,,,t CO2e (AR5) per t urea,0.520545,0.394391,0.649373,exporter 2.B.1 net of urea-bound CO2 plus feedstock upstream,
+"T2 imported-urea intensity of route F2, coal-gasification route (feedstock only: a lower bound)",,,,,t CO2e (AR5) per t urea,1.66383,1.26901,2.06698,exporter 2.B.1 net of urea-bound CO2 plus feedstock upstream,

@@ -397,6 +397,30 @@ class TestTheCountsReconcile(unittest.TestCase):
     # precedent. The count is deliberately not stated: it was "three" while the dict held
     # more, which is the same staleness this round spent its time removing.
     DECLARED_OVERLAPS = {
+        "pakemis_transition_gas_baselines.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
+        "pakemis_transition_gas_checks.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
+        "pakemis_transition_gas_conclusions.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
+        "pakemis_transition_gas_flows.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
+        "pakemis_transition_gas_matrix.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
+        "pakemis_transition_gas_sectors.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
+        "pakemis_transition_gas_sources.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
+        "pakemis_transition_gas_thresholds.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
+            "gas-reallocation application, a counterfactual beside the inventory and never a total",
         # rc68: ten explicit rows placed ahead of pakemis_*.csv so that none of them is read as
         # a canonical emissions product. Each is a diagnostic, an evaluation lane or a record
         # of the release itself; the first-match order is the decision, stated here.

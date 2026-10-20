@@ -629,6 +629,9 @@ PHASES = [
                   "outputs/ippu_provincial_2024.csv",
                   "outputs/ippu_fertilizer_gas_monthly_2024.csv",
                   "outputs/ippu_monthly_2024.csv",
+                  # run_ippu writes it (the NFDC-OGRA agreement); declared when the gas-reallocation
+                  # application began to read it, so the order check can see the writer
+                  "outputs/ippu_fertilizer_gas_cross_source_2024.csv",
                   "build/ippu/numerical_context.json", "build/ippu/numerical_qa_2024.csv"),
           reads=()),
     Phase("IPPU metadata", "pkinv.sectors.ippu.metadata", False,
@@ -894,6 +897,40 @@ PHASES = [
           # was closing this run's detail against the PREVIOUS run's totals - invisible
           # while nothing moved, and a hard failure the moment the herd re-base did.
           reads=("outputs/pakemis_national_series.csv",)),
+    # An APPLICATION, not part of any total: it reads the inventory's records, factors and annual
+    # product and writes only outputs/pakemis_transition_gas_* (docs/gas_reallocation_application.md).
+    Phase("Gas reallocation application", "pkinv.applications.gas_reallocation", True,
+          writes=("outputs/pakemis_transition_gas_matrix.csv",
+                  "outputs/pakemis_transition_gas_sources.csv",
+                  "outputs/pakemis_transition_gas_flows.csv",
+                  "outputs/pakemis_transition_gas_baselines.csv",
+                  "outputs/pakemis_transition_gas_sectors.csv",
+                  "outputs/pakemis_transition_gas_thresholds.csv",
+                  "outputs/pakemis_transition_gas_conclusions.csv",
+                  "outputs/pakemis_transition_gas_checks.csv",
+                  "outputs/figures/pakemis_transition_gas_t1_displaced_intensity.png",
+                  "outputs/figures/pakemis_transition_gas_t2_import_route.png"),
+          reads=("data/shared/parameters/gas_reallocation/scope_plants.csv",
+                 "data/shared/parameters/gas_reallocation/baselines.csv",
+                 "data/shared/parameters/gas_reallocation/pathways.csv",
+                 "data/shared/parameters/gas_reallocation/coherence.csv",
+                 "data/shared/parameters/gas_reallocation/parameter_ranges.csv",
+                 "data/shared/parameters/gas_reallocation/air_factors.csv",
+                 "outputs/pakemis_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/ippu_fertilizer_gas_cross_source_2024.csv",
+                 "data/shared/activity/nfdc/afr2025_fertilizer_gas_monthly.csv",
+                 "data/shared/activity/nfdc/afr2025_fertilizer_gas_by_plant.csv",
+                 "data/shared/activity/nfdc/afr2025_production_by_manufacturer.csv",
+                 "data/sectors/power/activity/plant_fuel_ledger.csv",
+                 "data/sectors/power/activity/plant_heat_rates.csv",
+                 "data/sectors/power/activity/gem_gas_oil_pak.csv",
+                 "data/sectors/power/activity/generation_by_fuel.csv",
+                 "data/shared/parameters/emission_factors.csv",
+                 "data/shared/parameters/air_emission_factors.csv",
+                 "data/sectors/ippu/parameters/ippu_params.csv",
+                 "data/sectors/industry/parameters/industry_params.csv",
+                 "data/sectors/fugitives/parameters/fugitives_params.csv",
+                 "data/sectors/fugitives/parameters/fugitives_ipcc2019_factors.csv")),
     # After the annual product and the configurations, because it reads both and turns
     # them into a denominator: every cell the completeness register takes a position on,
     # in every year, with a state rather than an absence.
@@ -2430,6 +2467,7 @@ CATEGORIES = {
         "National series",
         "Dung fate by year",
         "Annual product (supported fiscal panel)",
+        "Gas reallocation application",
         "Atomic annual table",
         "Forest flux adjudication",
         "Minerals panel screening",

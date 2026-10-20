@@ -346,7 +346,7 @@ data/sectors/power/activity/fuel_consumed.csv,data/sectors/power/activity,produc
 data/sectors/power/activity/gas_plant_coordinates.csv,data/sectors/power/activity,producer,scripts/ingest_gas_plant_coordinates.py,derived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/power/activity/gem_bioenergy_pak.csv,data/sectors/power/activity,producer,scripts/fetch_gem_trackers.py,not-archived,gem-tracker-extract,3,no,"GEM Global Bioenergy Power Tracker V3: read in memory, not kept, and no longer served. The held workbook is v4, a later "
 data/sectors/power/activity/gem_coal_pak.csv,data/sectors/power/activity,producer,scripts/fetch_gem_trackers.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/sectors/power/activity/gem_gas_oil_pak.csv,data/sectors/power/activity,producer,scripts/fetch_gem_trackers.py,archived,,3,no,"served byte-identical to the pinned digest. The row had said archived at sources/GEM, which holds only the digest sideca"
+data/sectors/power/activity/gem_gas_oil_pak.csv,data/sectors/power/activity,producer,scripts/fetch_gem_trackers.py,archived,,5,no,"served byte-identical to the pinned digest. The row had said archived at sources/GEM, which holds only the digest sideca"
 data/sectors/power/activity/generation_by_fuel.csv,data/sectors/power/activity,producer,scripts/ingest_power.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/power/activity/generation_monthly.csv,data/sectors/power/activity,producer,"scripts/ingest_pbs_generation.py + scripts/ingest_sir_generation.py (two lanes, each preserving the other's rows; run in that order)",archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/power/activity/generation_monthly_coverage.csv,data/sectors/power/activity,producer,scripts/ingest_pbs_generation.py + scripts/ingest_sir_generation.py,derived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -604,7 +604,7 @@ data/shared/lookups/physical_sources.csv,data/shared/lookups,hand:parameter,,,,6
 data/shared/lookups/province_shares.csv,data/shared/lookups,producer,src/pkinv/sectors/agriculture/gis/derive_manure_proxy.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/lookups/stream_reporting_sector.csv,data/shared/lookups,hand:parameter,,,,18,no,
 data/shared/metadata/air_coverage_absences.csv,data/shared/metadata,hand:parameter,,,,4,no,
-data/shared/metadata/air_source_classes.csv,data/shared/metadata,hand:parameter,,,,13,no,
+data/shared/metadata/air_source_classes.csv,data/shared/metadata,hand:parameter,,,,14,no,
 data/shared/metadata/availability_matrix.csv,data/shared/metadata,hand:parameter,,,,1,no,
 data/shared/metadata/bridge_configurations.csv,data/shared/metadata,hand:parameter,,,,5,no,
 data/shared/metadata/cross_sector_ledger_map.csv,data/shared/metadata,hand:parameter,,,,7,no,
@@ -612,9 +612,15 @@ data/shared/metadata/dependency_group_rules.csv,data/shared/metadata,hand:parame
 data/shared/metadata/edgar_domain_map.csv,data/shared/metadata,hand:parameter,,,,3,no,
 data/shared/metadata/member_bindings.csv,data/shared/metadata,hand:parameter,,,,4,no,
 data/shared/metadata/residual_classes.csv,data/shared/metadata,hand:parameter,,,,1,no,
-data/shared/parameters/air_emission_factors.csv,data/shared/parameters,hand:parameter,,,,6,no,
+data/shared/parameters/air_emission_factors.csv,data/shared/parameters,hand:parameter,,,,7,no,
 data/shared/parameters/coal_booking_policy.csv,data/shared/parameters,producer,scripts/build_coal_vintage_ledger.py;scripts/ingest_coal_vintages.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/emission_factors.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
+data/shared/parameters/gas_reallocation/air_factors.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,1,no,
+data/shared/parameters/gas_reallocation/baselines.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,5,no,
+data/shared/parameters/gas_reallocation/coherence.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,1,no,
+data/shared/parameters/gas_reallocation/parameter_ranges.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
+data/shared/parameters/gas_reallocation/pathways.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,5,no,
+data/shared/parameters/gas_reallocation/scope_plants.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,1,no,
 data/shared/parameters/method_registry.csv,data/shared/parameters,hand:parameter,,,,10,no,
 data/shared/parameters/parameter_scope.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,11,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/parameter_scope_exclusions.csv,data/shared/parameters,hand:parameter,,,,3,no,

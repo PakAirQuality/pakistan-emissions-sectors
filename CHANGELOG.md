@@ -7,6 +7,32 @@ current national figures are the manifest's.
 
 ## [Unreleased]
 
+### An application beside the inventory: gas moved from two urea plants to grid power
+
+A new, separable application (`src/pkinv/applications/gas_reallocation/`, `make gas-pilot`,
+`docs/gas_reallocation_application.md`) asks what happens to emissions if the FY2023-24 network
+and RLNG gas of Agritech and Fatimafert (27.0 PJ HHV, 899 kt urea) goes to grid gas stations, with
+the urea imported and the electricity held fixed. It crosses two admissible fertilizer readings
+(the inventory's calibrated 2.B.1 factor and the plants' metered gas carbon, 266 against 706 Gg)
+and two power readings (the station ledger and the printed heat rate) with explicit receiving,
+displaced and import pathways, on paired draws. The inventory reference is unchanged: no file the
+inventory builds is written, and every inventory factor is read from its own row.
+
+- **Results.**
+  - Territorial CO2e falls in 39 of 40 admissible cases, by −11 to −114 Gg per PJ.
+  - The combined territorial-plus-external sign is decided by the imported urea's production route
+    in the case with no new generation (D4) and in the Guddu receiving cases.
+  - NOx, SO2 and PM2.5 fall in every tested case. These are screening factors.
+  - CH4 rises wherever gas reaches a power station, through the post-meter leak base.
+  - BC and NH3 stay unresolved because EMEP prints no gas-turbine factor.
+- **Operating limit.** FY2023-24 oil-fired output could absorb only 16–40% of the gas.
+- **Evidence acquired** (`scripts/fetch_gas_reallocation_evidence.py`, kept through
+  `pkinv.core.retention`): UK DESNZ 2024 conversion factors, the IPCC 2019 Refinement Vol 3 Ch 3,
+  the EMEP/EEA 2023 1.A.1 chapter and AP-42 Section 8.2.
+- **Evidence already held and read for the first time:** NFDC Fertilizer Statistics Table 6.2
+  prints Sui gas at 925 and Mari gas at 723 Btu/cft. Mari's value is below the 900–1,000 range the
+  inventory's fertilizer gas-carbon memo applies to the whole class.
+
 ### A province names its districts in the activity query
 
 The vehicle registers are held by district only, each row carrying its province, so

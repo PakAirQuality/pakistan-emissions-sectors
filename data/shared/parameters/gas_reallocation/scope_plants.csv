@@ -1,0 +1,17 @@
+# GAS-REALLOCATION APPLICATION: WHICH FERTILIZER PLANTS' GAS CAN BE MOVED TO GRID POWER STATIONS.
+# One row per NFDC Annex-28 plant (FY2023-24). A plant is in scope only if its gas reaches it through the
+# SNGPL/SSGCL network or as RLNG, the same network that supplies grid gas stations, and it makes urea only
+# (so its gas maps to one product). Dedicated-line field gas (Mari) cannot be sent to a grid station through
+# the network, so those plants are excluded and the reason is kept here rather than dropped.
+# nfdc_plant = the plant label in data/shared/activity/nfdc/afr2025_fertilizer_gas_monthly.csv and _by_plant.csv;
+# manufacturer = the label in data/shared/activity/nfdc/afr2025_production_by_manufacturer.csv (Table 1).
+nfdc_plant,manufacturer,suppliers_fy2023_24,products_fy2023_24,in_scope,reason
+Agritech,Agri Tech (Pvt.) Ltd.,LNG;SNGPL,Urea (SSP from the same company uses no gas),yes,network and RLNG supply; urea is its only gas product
+Fatimafert,Fatima Fert (DHCL),LNG;SNGPL,Urea,yes,network and RLNG supply; urea is its only product
+EFERT,EFERT,Mari;SNGPL;OGDCL,Urea;NP;NPK,no,most gas arrives on Mari and OGDCL dedicated lines; several products share it
+FFC I & II,FFC,Mari,Urea,no,Mari dedicated-line gas
+FFC III,FFC,Mari,Urea,no,Mari dedicated-line gas
+FFC,FFC,SSGCL,Urea;DAP,no,the SSGCL-supplied FFC Bin Qasim site makes DAP and urea from one gas supply; no product split of gas is printed
+Fatima Fertilizer,Fatima Fertilizer Co.,Mari,Urea;CAN;NP,no,Mari dedicated-line gas; several products share it
+Pak-Arab,PAK ARAB,Mari;SNGPL,Urea;CAN;NP,no,Mari dedicated-line gas; several products share it
+Hazara Phosphate,,SNGPL,,no,fuel gas only (45 MMCF); no urea

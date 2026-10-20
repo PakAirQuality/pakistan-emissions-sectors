@@ -1,0 +1,46 @@
+# GAS-REALLOCATION APPLICATION: AIR-POLLUTANT FACTORS PER FUEL ENERGY (g per GJ NCV) FOR THE PATHWAY STATIONS
+# AND THE FERTILIZER PROCESS FUEL.
+# The inventory estimates power-station SO2 from oil only and types NOx, PM2.5 and CO screening-only
+# (outputs/pakemis_air_coverage_matrix.csv), and it estimates no air pollutant from fertilizer process-fuel
+# combustion. These factors are therefore the APPLICATION's screening factors, not inventory estimates. Each row
+# is the printed EMEP/EEA 2023 value with its printed 95% interval, drawn as triangular(low, value, high).
+# A printed '<x' is entered at x and flagged. BC is a percentage of PM2.5. An empty value means the source
+# prints no factor; the pollutant is then NOT ESTIMATED (NE) for that set, never zero.
+# SO2 for oil sets is a sulfur balance (parameters: rfo_sulfur_pct), so their SO2 rows here are empty by design
+# and named in `so2_method`; coal SO2 is the printed unabated factor times (1 - coal_fgd_removal).
+factor_set,pollutant,value,low,high,unit,so2_method,source,note
+gas_turbine,NOx,48,28,68,g/GJ,,"EMEP/EEA 2023 1.A.1 Table 3-19 (gas turbines, gaseous fuels; Nielsen et al. 2010)",
+gas_turbine,CO,4.8,1,70,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-19,
+gas_turbine,NMVOC,1.6,0.5,7.6,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-19,
+gas_turbine,SO2,0.244,0.030,0.458,g/GJ,factor,EMEP/EEA 2023 1.A.1 Table 3-19 (SOx),printed '<0.030' at the lower bound
+gas_turbine,PM2.5,0.2,0.05,0.8,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-19,printed '<0.2' and '<0.05'
+gas_turbine,BC,,,,% of PM2.5,,EMEP/EEA 2023 1.A.1 Table 3-4,the natural-gas tables mark BC 'Not estimated'
+gas_turbine,NH3,,,,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-4,the natural-gas tables mark NH3 'Not estimated'
+oil_engine,NOx,942,500,1380,g/GJ,,"EMEP/EEA 2023 1.A.1 Table 3-21 (reciprocating engines, GAS OIL)","PROXY: the Guidebook prints no heavy-fuel-oil engine table; the gas-oil engine row stands in"
+oil_engine,CO,130,30,230,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-21,proxy as above
+oil_engine,NMVOC,37.1,18.5,55.6,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-21,proxy as above
+oil_engine,SO2,,,,g/GJ,sulfur_balance,inventory sulfur regime (power_so2_admission.csv),
+oil_engine,PM2.5,19.3,0.9,90,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-6 (heavy fuel oil Tier 1),"fuel-ash driven, so the heavy-fuel-oil row is used rather than the gas-oil engine row"
+oil_engine,BC,5.6,0.22,8.69,% of PM2.5,,EMEP/EEA 2023 1.A.1 Table 3-6,
+oil_engine,NH3,,,,g/GJ,,EMEP/EEA 2023 1.A.1 Tables 3-6 and 3-21,not printed
+oil_boiler,NOx,142,70,300,g/GJ,,"EMEP/EEA 2023 1.A.1 Table 3-13 (boilers, residual oil)",
+oil_boiler,CO,15.1,9.06,21.1,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-13,
+oil_boiler,NMVOC,2.3,1.4,3.2,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-13,
+oil_boiler,SO2,,,,g/GJ,sulfur_balance,inventory sulfur regime (power_so2_admission.csv),
+oil_boiler,PM2.5,19.3,0.9,90,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-13,
+oil_boiler,BC,5.6,0.22,8.69,% of PM2.5,,EMEP/EEA 2023 1.A.1 Table 3-13,
+oil_boiler,NH3,,,,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-13,not printed
+coal_boiler,NOx,209,200,350,g/GJ,,"EMEP/EEA 2023 1.A.1 Table 3-11 (dry bottom boilers, steam and sub-bituminous coal; abatement assumed except SO2)",
+coal_boiler,CO,8.7,6.15,15,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,
+coal_boiler,NMVOC,1.0,0.6,2.4,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,
+coal_boiler,SO2,820,330,5000,g/GJ,factor_times_fgd,"EMEP/EEA 2023 1.A.1 Table 3-11 (SOx, no abatement, 1% sulfur)",
+coal_boiler,PM2.5,3.4,0.9,90,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,particulate abatement assumed by the Guidebook
+coal_boiler,BC,2.2,0.27,8.08,% of PM2.5,,EMEP/EEA 2023 1.A.1 Table 3-11,
+coal_boiler,NH3,,,,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,not printed
+process_gas,NOx,74,46,103,g/GJ,,EMEP/EEA 2023 1.A.2 Table 3-3 (combustion in industry using natural gas),fertilizer process fuel (reformer furnace and boilers)
+process_gas,CO,29,21,48,g/GJ,,EMEP/EEA 2023 1.A.2 Table 3-3,
+process_gas,NMVOC,23,14,33,g/GJ,,EMEP/EEA 2023 1.A.2 Table 3-3,
+process_gas,SO2,0.67,0.40,0.94,g/GJ,factor,EMEP/EEA 2023 1.A.2 Table 3-3 (SOx),
+process_gas,PM2.5,0.78,0.47,1.09,g/GJ,,EMEP/EEA 2023 1.A.2 Table 3-3,
+process_gas,BC,4.0,2.1,7,% of PM2.5,,EMEP/EEA 2023 1.A.2 Table 3-3,
+process_gas,NH3,,,,g/GJ,,EMEP/EEA 2023 1.A.2 Table 3-3,the table marks NH3 'Not estimated'

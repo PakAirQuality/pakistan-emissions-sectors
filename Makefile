@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := build
-.PHONY: dev release-check layers public-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national figures clean
+.PHONY: gas-pilot dev release-check layers public-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national figures clean
 
 # Full national pipeline: nine sectors, then the cross-sector layer.
 all: full
@@ -124,6 +124,12 @@ power-fuel-reconciliation:
 # term by term, and the falsifiable implication of the larger one.
 dung-balance:
 	python3 -m pkinv.report.dung_balance
+
+# The gas-reallocation application (docs/gas_reallocation_application.md): moves the two network-supplied
+# urea plants' gas to grid power with urea and electricity held fixed. Reads the inventory, writes only
+# outputs/pakemis_transition_gas_* and two figures. GAS_ARGS="--draws 1000" is a labelled development sample.
+gas-pilot:
+	PYTHONPATH=$(CURDIR)/src python3 -m pkinv.applications.gas_reallocation $(GAS_ARGS)
 
 power-coal-configurations:
 	python3 -m pkinv.sectors.power.coal_configurations

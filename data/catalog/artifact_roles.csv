@@ -21,6 +21,7 @@
 #                    intermediate to silence the guard shows up in a diff.
 #   deprecated       superseded; must name its replacement, and the replacement must exist.
 pattern,role,owner,description
+pakemis_transition_gas_*.csv,diagnostic,pkinv.applications.gas_reallocation,"the gas-reallocation application (docs/gas_reallocation_application.md): a counterfactual beside the inventory, never inside a total"
 pakemis_pass2_scorecard.csv,diagnostic,pkinv.report.pass2_scorecard,Historical internal targets beside current metrics; not a release-completion verdict
 pakemis_primary_geography_licence_audit.csv,diagnostic,pkinv.report.deposit_manifest,Primary geography dependency decisions and separate ODbL companion scope
 pakemis_release_change_summary.csv,diagnostic,scripts/build_release_change_summary.py,Preserved rc67 versus rc68 at matched periods and native units with changed coverage flagged
