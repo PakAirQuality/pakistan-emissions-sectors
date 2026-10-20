@@ -5,6 +5,20 @@ this file records how it got there. Each release candidate below
 answers an external review round. Historical totals appear here labelled as history — the only
 current national figures are the manifest's.
 
+## [Unreleased]
+
+### A province names its districts in the activity query
+
+The vehicle registers are held by district only, each row carrying its province, so
+`query_activity` found no row for "Punjab" and its refusal gave no way in: on 19 October the
+Explorer's assistant spent its whole turn on four refused calls for "how many cars are there in
+Punjab?". A requested location that is not a `Location` of the selection but is one of its
+`Province` values now selects that province's districts, read at the province register's own
+latest date, and `total` adds them (Punjab's registered motor cars at 30 June 2023: 2,068,471,
+the sum of 36 district rows, marked as computed and citing every record). A total over two
+provinces is refused, since their registers are dated differently. A refusal now names the level
+a measure is held at and how to ask for a province.
+
 ## [1.0.0rc70] — 19 October 2026
 
 The inventory-only release. No number moves: every emissions product, the four configuration

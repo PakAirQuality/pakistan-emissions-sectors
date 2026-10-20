@@ -76,15 +76,16 @@ class QueryActivity:
     the measure, the class, the place and its level, the period and its type, the unit, the
     evidence class, the source series and the use note. Never an emission and never converted:
     a vehicle register is a registered stock, not traffic, and the use note says so. The one
-    arithmetic offered is `total`, a sum over the classes of ONE place at ONE date, marked as
+    arithmetic offered is `total`, a sum over the classes of ONE place at ONE date - or over the
+    districts of ONE province named on its own, at that province's register date - marked as
     computed here and refused wherever the release says the rows may not be combined."""
     table: str = ""                     # fact_activity_vehicles | fact_activity_livestock | ... (empty -> refused, with the list)
     measure: str = ""                   # the table's Measure as printed ("Registered vehicles"); empty -> every measure
-    locations: tuple = ()               # Location names as printed ("Lahore", "Punjab", "Pakistan"); empty -> every location
+    locations: tuple = ()               # Location names as printed ("Lahore", "Pakistan"), or a Province of a district table ("Punjab": its districts); empty -> every location
     location_level: str = ""            # national | province | district | sales area | airport | plant; empty -> any level
     categories: tuple = ()              # the table's first class column ("Small cars (4W1)", "buffalo"); empty -> every class
     periods: tuple = ()                 # Period strings as printed ("2023-06-30", "FY2023-24") or a date's year ("2023"); empty -> the latest period of each place and class
-    total: bool = False                 # true -> one more value after the rows: their sum, for one measure, place and period only
+    total: bool = False                 # true -> one more value after the rows: their sum, for one measure, place (or one province's districts) and period only
     order_by: str = ""                  # "value desc" | "value asc" | ""
     limit: int = 0                      # 0 -> the contract's row cap
     defaults_applied: tuple = field(default=(), compare=False)

@@ -489,17 +489,39 @@ def query_activity(engine, req):
     base, base_params = [], []
     if req.measure:
         base.append('t."Measure" = ?'); base_params.append(req.measure)
+    # the measure and classes without the level, for a refusal that names the levels a measure IS held at
+    unlevelled, unlevelled_params = list(base), list(base_params)
     if req.location_level:
         base.append('lower(t."Location level") = ?'); base_params.append(req.location_level.lower())
     if req.categories:
         if not classes:
             raise E.UnknownDimensionValue("%s has no class column to filter on" % req.table)
-        base.append('lower(t."%s") IN (%s)' % (classes[0], ",".join("?" * len(req.categories))))
-        base_params += [c.lower() for c in req.categories]
+        clause = 'lower(t."%s") IN (%s)' % (classes[0], ",".join("?" * len(req.categories)))
+        base.append(clause); base_params += [c.lower() for c in req.categories]
+        unlevelled.append(clause); unlevelled_params += [c.lower() for c in req.categories]
+    # A PROVINCE NAMES ITS DISTRICTS (rc71). A district register - the vehicle registers are held by
+    # district only, each row carrying its province - has no row whose Location is "Punjab", so a
+    # province asked for by name matched nothing and the refusal gave no way in (the Explorer turn of
+    # 19 October 2026 spent its deadline on four such refusals). A requested name that is no Location
+    # of the selection but is one of its Province values selects that province's rows.
+    provinces = ()
     place, place_params = [], []
     if req.locations:
-        place.append('lower(t."Location") IN (%s)' % ",".join("?" * len(req.locations)))
-        place_params += [l.lower() for l in req.locations]
+        named_places = list(req.locations)
+        if "Province" in cols:
+            held_places = {p.lower() for p in _activity_held(engine, req.table, base, base_params, "Location")}
+            held_provinces = {p.lower(): p for p in _activity_held(engine, req.table, base, base_params, "Province")}
+            provinces = tuple(held_provinces[l.lower()] for l in req.locations
+                              if l.lower() not in held_places and l.lower() in held_provinces)
+            named_places = [l for l in req.locations if l.lower() not in {p.lower() for p in provinces}]
+        either = []
+        if named_places:
+            either.append('lower(t."Location") IN (%s)' % ",".join("?" * len(named_places)))
+            place_params += [l.lower() for l in named_places]
+        if provinces:
+            either.append('lower(t."Province") IN (%s)' % ",".join("?" * len(provinces)))
+            place_params += [p.lower() for p in provinces]
+        place.append("(" + " OR ".join(either) + ")")
     when, when_params = [], []
     if req.periods:
         # a period as printed, or the year of a printed date: "2023" finds the register of 2023-06-30
@@ -518,8 +540,16 @@ def query_activity(engine, req):
     applied = []
     if not req.periods:
         # the latest period of each (place, measure, classes): a register's newest stock, a
-        # series' last year - never a sum across periods
-        keys = ", ".join('t."%s"' % c for c in ["Location", "Measure"] + classes)
+        # series' last year - never a sum across periods. For a province asked for by name the
+        # place is the PROVINCE, so its districts are all read at the province register's latest
+        # date rather than each at its own (Balochistan's newest year holds two more districts).
+        place_key = 't."Location"'
+        if provinces:
+            # the names come from the table itself (held_provinces above), so they are safe to quote here
+            quoted = ",".join("'%s'" % p.lower().replace("'", "''") for p in provinces)
+            place_key = ('CASE WHEN lower(t."Province") IN (%s) THEN \'province:\' || t."Province" '
+                         'ELSE t."Location" END' % quoted)
+        keys = ", ".join([place_key] + ['t."%s"' % c for c in ["Measure"] + classes])
         sql += ' QUALIFY t."Period" = MAX(t."Period") OVER (PARTITION BY %s)' % keys
         applied.append("periods")
     if req.order_by:
@@ -545,13 +575,36 @@ def query_activity(engine, req):
                     "no record of %s is held for %s; the records held run %s, and nothing later is held"
                     % (target, ", ".join(req.periods), span),
                     dimension="periods", first_period=held[0], last_period=held[-1])
+        # WHERE THE MEASURE IS HELD, so the refusal says the way in: "122 places" told the 19 October
+        # turn nothing it could act on, and it guessed four times before its deadline
+        levels = _activity_held(engine, req.table, unlevelled, unlevelled_params, "Location level")
+        held_at = ""
+        if levels:
+            places = _activity_held(engine, req.table, unlevelled, unlevelled_params, "Location")
+            held_at = "; %s is held at %s level%s only (%d places" % (
+                req.measure or "this table", " and ".join(levels), "s" if len(levels) > 1 else "", len(places))
+            if "Province" in cols:
+                in_provinces = _activity_held(engine, req.table, unlevelled, unlevelled_params, "Province")
+                if in_provinces:
+                    held_at += " in %s" % ", ".join(in_provinces)
+                    held_at += "); a province's districts are selected by naming the province in locations, " \
+                               "and total adds them for one period"
+                else:
+                    held_at += ")"
+            else:
+                held_at += ")"
         if req.locations:
             known = _activity_held(engine, req.table, base, base_params, "Location")
             near = [k for k in known if any(k.lower().startswith(l.lower()[:3]) for l in req.locations)][:12]
             raise E.UnknownDimensionValue(
-                "no record of %s is held; these records name %d places%s"
-                % (target, len(known), (", among them " + ", ".join(near)) if near else ""),
-                dimension="locations")
+                "no record of %s is held%s%s"
+                % (target, held_at or "; these records name %d places" % len(known),
+                   (" - among the names held: " + ", ".join(near)) if near else ""),
+                dimension="locations", levels_held=levels)
+        if req.location_level and levels:
+            raise E.UnknownDimensionValue("no record of %s at %s level is held%s"
+                                          % (target, req.location_level, held_at),
+                                          dimension="location_level", levels_held=levels)
         raise E.UnknownDimensionValue("no record of %s is held" % target)
     truncated = len(rows) > cap
     rows = rows[:cap]
@@ -566,7 +619,7 @@ def query_activity(engine, req):
         values.append(value(exact, r["Unit"], decimals, row_ids=[r["Record ID"]],
                             formula="as printed by the source; no arithmetic", **extra))
     if req.total:
-        values.append(_activity_total(req, rows, classes, truncated, detailed))
+        values.append(_activity_total(req, rows, classes, truncated, detailed, provinces))
     cur = engine.con.execute('SELECT "column", meaning FROM dim_activity_columns WHERE file = ?',
                              [req.table.replace("fact_", "") + ".csv"])
     definitions = {column: meaning for column, meaning in cur.fetchall()}
@@ -579,9 +632,14 @@ def query_activity(engine, req):
                     {"kind": "records", "table": req.table, "class_columns": classes,
                      "definitions": definitions, "rows": len(rows), "truncated": truncated,
                      "total": bool(req.total),
+                     # a province asked for by name, and the districts its rows came from
+                     "provinces": list(provinces),
+                     "districts": sorted({r["Location"] for r in rows
+                                          if provinces and r.get("Province") in provinces}),
                      "note": "each row's value is the source's own figure in the source's unit, never converted "
                              "or inferred, and its use note states what the figure is not; a `total` value is "
-                             "the one sum this function computes, over one place, one period and one measure"},
+                             "the one sum this function computes, over one place (or one province's districts), "
+                             "one period and one measure"},
                     engine._provenance([req.table]),
                     limitations_hit=[limitation] if limitation in release.limitations else [],
                     defaults_applied=applied)
@@ -607,17 +665,28 @@ def _activity_extra(r, classes):
     return extra
 
 
-def _activity_total(req, rows, classes, truncated, detailed):
+def _activity_total(req, rows, classes, truncated, detailed, provinces=()):
     """The sum of the rows returned, as ONE more value, under the release's own additivity rules:
     one measure, one unit, one place and one period, every row marked combinable. A register
     summed across years would count each vehicle once per year, and a projection summed with a
-    count is neither, so anything wider is refused rather than added."""
+    count is neither, so anything wider is refused rather than added.
+
+    rc71: the one place may be a PROVINCE asked for by name, whose rows are its districts at one
+    register date - the only way a district register answers "how many cars in Punjab". Exactly one
+    province, and nothing else, may be named; the value says it is a sum of N district rows."""
     from decimal import Decimal, InvalidOperation
     if truncated:
         raise E.GrainUnavailable("a total needs every row and this result was cut at its row cap; narrow the request")
     if not detailed:
         raise E.GrainUnavailable("this release ships no combinable column, so no activity total is computed")
-    for column, word in (("Measure", "measure"), ("Unit", "unit"), ("Location", "place"), ("Period", "period")):
+    one_province = (len(provinces) == 1 and len(req.locations) == 1
+                    and all(r.get("Province") == provinces[0] for r in rows))
+    if provinces and not one_province:
+        raise E.GrainUnavailable(
+            "a total over districts is for one province named on its own; this request named %s"
+            % ", ".join(req.locations), dimension="place")
+    place_column = "Province" if one_province else "Location"
+    for column, word in (("Measure", "measure"), ("Unit", "unit"), (place_column, "place"), ("Period", "period")):
         found = sorted({r[column] for r in rows})
         if len(found) != 1:
             raise E.GrainUnavailable(
@@ -646,6 +715,18 @@ def _activity_total(req, rows, classes, truncated, detailed):
                                     "total rows, so a class the source lists and this release does not hold is not in it."
                                     % (classes[0].lower() if classes else "class"),
                   "record_id": "", "display": _display_grouped(exact), "display_words": _display_words(exact)})
+    if one_province:
+        districts = sorted({r["Location"] for r in rows})
+        classes_held = sorted({r[classes[0]] for r in rows}) if classes else []
+        extra.update({"location": provinces[0], "location_level": "Province (sum of its districts)",
+                      "category": "; ".join(classes_held) if len(classes_held) == 1 else "Every class held, summed",
+                      "classes_summed": "; ".join(classes_held), "districts_summed": "; ".join(districts),
+                      "interpretation": "Computed here as the sum of the %d district rows of %s's register at %s "
+                                        "(%d districts%s). It is not a figure the source printed: this release holds "
+                                        "the register by district and prints no provincial row, so a district the "
+                                        "register lists and this release does not hold is not in it."
+                                        % (len(rows), provinces[0], _period_label(first["Period"], ""), len(districts),
+                                           "" if len(classes_held) <= 1 else ", %d classes" % len(classes_held))})
     extra.pop("source_row", None)
     return value(exact, first["Unit"], 0 if "." not in exact else 3, row_ids=[r["Record ID"] for r in rows],
                  formula="sum of the %d rows above, as printed" % len(rows), **extra)

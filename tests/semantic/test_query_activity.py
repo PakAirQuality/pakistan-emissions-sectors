@@ -128,6 +128,65 @@ class TestQueryActivity(unittest.TestCase):
             with self.assertRaises(E.GrainUnavailable, msg=kw):
                 self._ask(table="fact_activity_vehicles", total=True, **kw)
 
+    # A PROVINCE NAMES ITS DISTRICTS (rc71). The registers are held by district only, so "how many
+    # cars are there in Punjab?" had no row to find; the 19 October Explorer turn spent its deadline
+    # on four refusals that gave no way in.
+    def test_a_province_selects_its_districts_and_totals_them_at_one_register_date(self):
+        from decimal import Decimal
+        kw = dict(table="fact_activity_vehicles", measure="Registered vehicles",
+                  locations=("Punjab",), categories=("Small cars (4W1)",))
+        rows = self._ask(**kw)
+        env = self._ask(total=True, **kw)
+        districts = {v["location"] for v in rows["values"]}
+        self.assertEqual({v["province"] for v in rows["values"]}, {"Punjab"})
+        self.assertEqual(len({v["period"] for v in rows["values"]}), 1, "one register date for the province")
+        self.assertGreater(len(districts), 30)
+        self.assertEqual(sorted(districts), env["calculation"]["districts"])
+        self.assertEqual(env["calculation"]["provinces"], ["Punjab"])
+        total = env["values"][-1]
+        self.assertEqual(Decimal(total["exact"]), sum(Decimal(v["exact"]) for v in rows["values"]))
+        self.assertEqual(total["result_row_ids"], [v["record_id"] for v in rows["values"]])
+        self.assertEqual((total["location"], total["derived"]), ("Punjab", "sum"))
+        self.assertIn("district rows of Punjab's register", total["interpretation"])
+        self.assertIn("not a figure the source printed", total["interpretation"])
+
+    def test_a_province_defaults_to_its_own_latest_register(self):
+        """Each province's register has its own newest year; the default is the province's, not one
+        national date and not each district's own."""
+        latest = {}
+        for province in ("Punjab", "Khyber Pakhtunkhwa"):
+            env = self._ask(table="fact_activity_vehicles", measure="Registered vehicles",
+                            locations=(province,), categories=("Small cars (4W1)",))
+            latest[province] = {v["period"] for v in env["values"]}
+            self.assertEqual(len(latest[province]), 1, province)
+        held = self._ask(table="fact_activity_vehicles", measure="Registered vehicles",
+                         locations=("Khyber Pakhtunkhwa",), categories=("Small cars (4W1)",),
+                         periods=tuple(sorted(latest["Khyber Pakhtunkhwa"])))
+        self.assertTrue(held["values"])
+
+    def test_a_district_named_beside_its_province_is_still_a_place(self):
+        env = self._ask(table="fact_activity_vehicles", measure="Registered vehicles", locations=("Lahore",))
+        self.assertEqual({v["location"] for v in env["values"]}, {"Lahore"})
+        self.assertEqual(env["calculation"]["provinces"], [])
+
+    def test_a_total_over_two_provinces_is_refused(self):
+        """Their registers are dated differently, so the sum would mix years."""
+        from pakemis_query import errors as E
+        with self.assertRaises(E.GrainUnavailable):
+            self._ask(table="fact_activity_vehicles", measure="Registered vehicles", total=True,
+                      locations=("Punjab", "Sindh"), categories=("Small cars (4W1)",))
+
+    def test_a_refusal_names_the_level_the_measure_is_held_at_and_the_way_in(self):
+        from pakemis_query import errors as E
+        for kw in (dict(locations=("Pakistan",), location_level="National"),
+                   dict(location_level="National")):
+            with self.assertRaises(E.UnknownDimensionValue, msg=kw) as cm:
+                self._ask(table="fact_activity_vehicles", measure="Registered vehicles", **kw)
+            message = cm.exception.message
+            self.assertIn("held at District level only", message, kw)
+            self.assertIn("Punjab", message, kw)
+            self.assertIn("naming the province in locations", message, kw)
+
     def test_rows_the_release_bars_from_combining_are_never_summed(self):
         """Livestock mixes census counts with forward estimates; the combinable column says so."""
         from pakemis_query import errors as E
