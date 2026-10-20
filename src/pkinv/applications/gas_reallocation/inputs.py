@@ -142,61 +142,75 @@ def plant_urea(year):
     return out
 
 
-def _matches(label, stations):
-    return any(label.startswith(s[:-1]) if s.endswith("*") else label == s for s in stations)
-
-
 def pathways():
     return {r["pathway_id"]: r for r in table("pathways.csv")}
 
 
-def station_records(pathway, year=REFERENCE_YEAR):
-    """Each station of a receiving or displaced pathway with its printed fuel, generation and heat rate.
+def crosswalk(pathway=None):
+    """The station crosswalk rows, optionally those of one pathway."""
+    rows = table("station_crosswalk.csv")
+    return [r for r in rows if pathway is None or r["pathway"] == pathway]
 
-    Returns a list of dicts: station, fuel quantity and unit, generation GWh (all from the ledger rows
-    of the pathway's fuel), and the SoIR net efficiency (fraction, LHV) where printed. A station with
-    a ledger row and no printed heat rate, or the reverse, is kept with the missing field None.
+
+BTU_PER_KWH = 3412.14163          # 1 kWh in Btu (3.6 MJ / 1055.05585262 J)
+
+
+def station_records(pathway, year=REFERENCE_YEAR):
+    """Each station of a receiving or displaced pathway, joined through station_crosswalk.csv.
+
+    Returns one dict per crosswalk row: station, the ledger legs of the declared fuel (quantity, unit,
+    GWh), the net efficiency (fraction, LHV) of the declared heat-rate row, and `eff_basis` saying
+    whether it is printed or derived from the printed net heat rate (BTU_PER_KWH / hr_net). Only the
+    heat-rate row of the declared fuel is used, so an HSD row never prices a gas pathway. A station
+    whose declared record is missing keeps an empty field; crosswalk_report() lists it.
     """
-    entry = pathways()[pathway]
-    stations = [s for s in entry["stations"].split(";") if s]
-    fuels = [f.strip() for f in entry["ledger_fuel"].split(";") if f.strip()]
     key = YEARS[year]["power"]
-    found = {}
-    for r in read_rows(os.path.join(POWER, "plant_fuel_ledger.csv")):
-        if r["fiscal_year"] != key or not _matches(r["plant"], stations):
-            continue
-        fuel = (r["fuel"].strip() + " " + r["fuel_origin"].strip()).strip()
-        if fuel not in fuels and r["fuel"].strip() not in fuels:
-            continue
-        rec = found.setdefault(r["plant"], {"station": r["plant"], "legs": [], "eff_net": []})
-        rec["legs"].append({"fuel": fuel, "quantity": float(r["quantity"]),
-                            "unit": r["quantity_unit"].strip(),
-                            "gwh": float(r["net_generation_GWh"] or 0)})
-    for r in read_rows(os.path.join(POWER, "plant_heat_rates.csv")):
-        if r["fiscal_year"] != key or not _matches(r["plant"], stations):
-            continue
-        eff = float(r["eff_net_pct"] or 0)
-        if eff > 0:
-            rec = found.setdefault(r["plant"], {"station": r["plant"], "legs": [], "eff_net": []})
-            rec["eff_net"].append(eff / 100.0)
-    return [found[k] for k in sorted(found)]
+    ledger = [r for r in read_rows(os.path.join(POWER, "plant_fuel_ledger.csv")) if r["fiscal_year"] == key]
+    rates = [r for r in read_rows(os.path.join(POWER, "plant_heat_rates.csv")) if r["fiscal_year"] == key]
+    out = []
+    for row in crosswalk(pathway):
+        rec = {"station": row["station"], "legs": [], "eff_net": [], "eff_basis": ""}
+        for r in ledger:
+            fuel = (r["fuel"].strip() + " " + r["fuel_origin"].strip()).strip()
+            if r["plant"] == row["ledger_label"] and row["ledger_fuel"] in (fuel, r["fuel"].strip()):
+                rec["legs"].append({"fuel": fuel, "quantity": float(r["quantity"]),
+                                    "unit": r["quantity_unit"].strip(),
+                                    "gwh": float(r["net_generation_GWh"] or 0)})
+        for r in rates:
+            if r["plant"] != row["heat_rate_label"] or r["fuel_column"].strip() != row["heat_rate_fuel"]:
+                continue
+            eff = float(r["eff_net_pct"] or 0)
+            hr = float(r["hr_net_btu_kwh"] or 0)
+            if eff > 0:
+                rec["eff_net"].append(eff / 100.0)
+                rec["eff_basis"] = "printed"
+            elif hr > 0:
+                rec["eff_net"].append(BTU_PER_KWH / hr)
+                rec["eff_basis"] = "derived from the printed net heat rate"
+        out.append(rec)
+    return out
+
+
+def crosswalk_report(year=REFERENCE_YEAR):
+    """One row per crosswalk station: did its declared ledger leg and heat-rate row join?"""
+    rows = []
+    for pathway in sorted({r["pathway"] for r in crosswalk()} - {"excluded"}):
+        for rec in station_records(pathway, year):
+            rows.append({"pathway": pathway, "station": rec["station"],
+                         "ledger_joined": "yes" if rec["legs"] else "no",
+                         "heat_rate_joined": "yes" if rec["eff_net"] else "no",
+                         "eff_basis": rec["eff_basis"]})
+    return rows
 
 
 def station_capacity_mw(pathway):
-    """Operating capacity (MW) of a pathway's stations from the GEM gas/oil tracker, by name match.
-
-    Used only to state an annual energy ceiling; availability and dispatch are not modelled.
-    """
-    words = {"R1": ("Balloki", "Bhikki", "Haveli Bahadur Shah", "Trimmu"),
-             "R2": ("Uch power", "Foundation", "Orient", "Saif", "Sapphire", "Halmore"),
-             "R3": ("Guddu",)}.get(pathway)
-    if not words:
+    """Operating capacity (MW) of a receiving pathway's stations: the GEM units of the plants the crosswalk
+    names. An annual energy ceiling only; availability, dispatch and gas deliverability are not modelled."""
+    plants = {p for row in crosswalk(pathway) for p in row["gem_plants"].split(";") if p}
+    if not plants:
         return None
-    total = 0.0
-    for r in read_rows(os.path.join(POWER, "gem_gas_oil_pak.csv")):
-        if r["Status"] == "operating" and any(w in r["Plant name"] for w in words):
-            total += float(r["Capacity (MW)"] or 0)
-    return total
+    return sum(float(r["Capacity (MW)"] or 0) for r in read_rows(os.path.join(POWER, "gem_gas_oil_pak.csv"))
+               if r["Status"] == "operating" and r["Plant name"] in plants)
 
 
 def fossil_grid_average(year=REFERENCE_YEAR):

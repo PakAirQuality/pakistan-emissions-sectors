@@ -47,6 +47,8 @@ SECTORS = (
      "inventory; unchanged by construction"),
     ("X_urea", "External: imported urea production (exporter 2.B.1 net of urea-bound CO2, "
                "plus feedstock upstream)", "external", "application (literature factors)"),
+    ("X_ammonia", "External: imported ammonia replacing Fatimafert's merchant ammonia sales", "external",
+     "application (literature factors)"),
     ("X_fuel", "External: upstream of the displaced furnace oil, coal or LNG", "external",
      "application (literature proxy factors)"),
 )
@@ -54,7 +56,7 @@ SECTORS = (
 # the direction of a NOT-ESTIMATED component so a classification can say whether the missing part
 # could only enlarge the estimated change or could reverse it.
 DIRECTION = {"2B1": -1, "2B1_fuel": -1, "2B_finish": -1, "1A1a_recv": +1, "1A1a_disp": -1,
-             "X_urea": +1, "X_fuel": -1}
+             "X_urea": +1, "X_ammonia": +1, "X_fuel": -1}
 
 
 class Draws:
@@ -109,8 +111,8 @@ class Draws:
             return None
         key = ("air", factor_set, pollutant)
         if key not in self._cache:
-            draw = self._rng("air|%s|%s" % (factor_set, pollutant)).triangular(
-                entry["low"], entry["value"], entry["high"], self.n)
+            draw = two_piece_lognormal(self._rng("air|%s|%s" % (factor_set, pollutant)),
+                                       entry["value"], entry["low"], entry["high"], self.n)
             self._cache[key] = draw / 100.0 if entry["unit"].startswith("%") else draw
         return self._cache[key]
 
@@ -146,21 +148,40 @@ def hhv_mode(params, year=inputs.REFERENCE_YEAR):
 
 
 def _triangular_at(u, values, weights=None):
-    """Inverse-CDF triangular on (min, weighted mean, max) of station values, at uniform positions u."""
-    values = [float(v) for v in values]
-    lo, hi = min(values), max(values)
-    if weights is None:
-        weights = [1.0] * len(values)
-    mode = sum(v * w for v, w in zip(values, weights)) / sum(weights)
-    if hi - lo < 1e-12:
-        return np.full(len(u), lo)
-    c = (mode - lo) / (hi - lo)
-    return np.where(u < c, lo + np.sqrt(u * (hi - lo) * (mode - lo)),
-                    hi - np.sqrt((1 - u) * (hi - lo) * (hi - mode)))
+    """Inverse-CDF triangular on (min, weighted mean, max) of station values, at uniform positions u.
+
+    A station value may be a scalar or a per-draw array (a station whose fuel is printed by volume
+    converts through the heating-value draw), so the bounds and the mode are taken draw by draw."""
+    n = len(u)
+    vals = np.vstack([np.broadcast_to(np.asarray(v, dtype=float), (n,)) for v in values])
+    w = np.asarray(weights if weights is not None else [1.0] * len(values), dtype=float)[:, None]
+    lo, hi = vals.min(axis=0), vals.max(axis=0)
+    mode = (vals * w).sum(axis=0) / w.sum()
+    span = hi - lo
+    flat = span < 1e-12
+    span = np.where(flat, 1.0, span)
+    c = (mode - lo) / span
+    out = np.where(u < c, lo + np.sqrt(u * span * (mode - lo)), hi - np.sqrt((1 - u) * span * (hi - mode)))
+    return np.where(flat, lo, out)
+
+
+def two_piece_lognormal(rng, median, low, high, n):
+    """Draws whose median is `median` and whose 2.5th and 97.5th percentiles are `low` and `high`.
+
+    The EMEP/EEA Guidebook prints a factor and its 95% interval. A triangular draw on those three
+    numbers treats the interval ends as hard limits and moves the mean far from the printed value when
+    the interval is skewed (coal PM2.5: 0.9 / 3.4 / 90 g/GJ gave a mean of 31). Two half-lognormals
+    joined at the median keep all three printed numbers as the quantiles they are."""
+    z = rng.standard_normal(n)
+    lower = math.log(median / low) / 1.959963984540054
+    upper = math.log(high / median) / 1.959963984540054
+    return median * np.exp(np.where(z < 0, lower * z, upper * z))
 
 
 class Records:
     """Everything the model reads, loaded once."""
+
+    PATHWAY_STATIONS = ("R1", "R2", "D1", "D2", "D3")
 
     def __init__(self, year=inputs.REFERENCE_YEAR):
         self.year = year
@@ -168,8 +189,7 @@ class Records:
         self.factors = inputs.air_factors()
         self.gas = inputs.plant_gas(year)
         self.urea = inputs.plant_urea(year)
-        self.stations = {p: inputs.station_records(p, year)
-                         for p in ("R1", "R2", "R3", "D1", "D2", "D3")}
+        self.stations = {p: inputs.station_records(p, year) for p in self.PATHWAY_STATIONS}
         self.leak_share = post_meter.whole_gas_leak_share()
         self.gas_density = post_meter.param_value("gas_density_kg_per_m3")
         self.ch4_fraction = post_meter.param_value("gas_ch4_fraction")
@@ -187,50 +207,56 @@ class Records:
     def urea_kt(self):
         return sum(self.urea.values())
 
+    def printed_gwh(self, pathway):
+        return sum(leg["gwh"] for s in self.stations[pathway] for leg in s["legs"])
+
     def gwh_capacity(self, pathway):
-        """Annual GWh the pathway's stations generated in the year: the most a displaced pathway can
-        give up. Receiving pathways: nameplate hours minus that year's generation (an upper bound)."""
-        printed = sum(leg["gwh"] for s in self.stations[pathway] for leg in s["legs"])
+        """Displaced pathways: the GWh their stations generated in the year, the most they can give up.
+        Receiving pathways: nameplate hours minus that year's generation, a THEORETICAL ceiling - outages,
+        contracts, dispatch and gas deliverability are not modelled."""
         if pathway.startswith("D"):
-            return printed
-        mw = inputs.station_capacity_mw(pathway)
-        return mw * 8760.0 / 1e3 - printed
+            return self.printed_gwh(pathway)
+        return inputs.station_capacity_mw(pathway) * 8760.0 / 1e3 - self.printed_gwh(pathway)
 
 
-def receiving_gwh(d, rec, pathway, reading, mmbtu, mmcf, hhv, g2n):
+def _station_weights(stations):
+    weights = [sum(leg["gwh"] for leg in s["legs"]) for s in stations]
+    known = [w for w in weights if w > 0]
+    fill = sum(known) / len(known) if known else 1.0
+    return [w if w > 0 else fill for w in weights]
+
+
+def receiving_gwh(d, rec, pathway, reading, mmbtu, hhv, g2n):
     """GWh the receiving pathway generates from `mmbtu` (gross) of the plants' gas.
 
-    PA1 (ledger): the stations' printed GWh per printed MMBTU, the MMBTU read as gross; a station whose
-    fuel is printed in MMCFT converts by volume (GWh per MMCF), so no heating value enters it.
-    PA2 (printed heat rate): gas energy on NCV times the SoIR net efficiency.
-    The same position draw picks the station in both readings, so PA1 and PA2 are paired.
+    PA1 (ledger): each station's printed GWh per printed MMBTU, the MMBTU read as gross; a station whose
+    fuel is printed in MMCFT converts its volume at the heating-value draw. PA2 (printed heat rate): gas
+    energy on NCV times the station's SoIR net efficiency. Stations are weighted by their FY generation,
+    and the same position draw picks the station in both readings, so PA1 and PA2 are paired.
     """
     u = d.position(pathway)
     stations = rec.stations[pathway]
     if reading == "PA1":
-        per_mmbtu, weights = [], []
-        for s in stations:
-            for leg in s["legs"]:
-                if leg["unit"] == "MMBTU":
-                    per_mmbtu.append(("mmbtu", leg["gwh"] / leg["quantity"]))
-                elif leg["unit"] == "MMCFT":
-                    per_mmbtu.append(("mmcf", leg["gwh"] / leg["quantity"]))
-                else:
-                    continue
-                weights.append(leg["gwh"])
-        if not per_mmbtu:
+        values, weights = [], []
+        for st in stations:
+            gwh = sum(leg["gwh"] for leg in st["legs"])
+            energy = sum(leg["quantity"] if leg["unit"] == "MMBTU" else leg["quantity"] * hhv
+                         for leg in st["legs"] if leg["unit"] in ("MMBTU", "MMCFT"))
+            if gwh > 0 and np.all(np.asarray(energy) > 0):
+                values.append(gwh / energy)
+                weights.append(gwh)
+        if not values:
             raise ValueError("%s: no ledger fuel to convert with" % pathway)
-        if all(kind == "mmcf" for kind, _v in per_mmbtu):
-            return mmcf * _triangular_at(u, [v for _k, v in per_mmbtu], weights)
-        if any(kind == "mmcf" for kind, _v in per_mmbtu):
-            raise ValueError("%s mixes MMBTU and MMCFT stations" % pathway)
-        return mmbtu * _triangular_at(u, [v for _k, v in per_mmbtu], weights)
+        return mmbtu * _triangular_at(u, values, weights)
     if reading == "PA2":
-        effs = [e for s in stations for e in s["eff_net"]]
+        effs, weights = [], []
+        for st, w in zip(stations, _station_weights(stations)):
+            for e in st["eff_net"]:
+                effs.append(e)
+                weights.append(w)
         if not effs:
             raise ValueError("%s: no printed heat rate" % pathway)
-        eta = _triangular_at(u, effs)
-        return mmbtu * g2n * TJ_PER_MMBTU * eta / 3.6
+        return mmbtu * g2n * TJ_PER_MMBTU * _triangular_at(u, effs, weights) / 3.6
     raise ValueError("unknown power reading %r" % reading)
 
 
@@ -244,19 +270,22 @@ def displaced_fuel(d, rec, pathway, reading, gwh):
     """
     u = d.position(pathway)
     stations = rec.stations[pathway]
+    weights = _station_weights(stations)
     if pathway in ("D1", "D2"):
         ncv = d.get("ncv_rfo")
         if reading == "PA1":
             spec = [leg["quantity"] / leg["gwh"] for s in stations for leg in s["legs"] if leg["gwh"] > 0]
-            weights = [leg["gwh"] for s in stations for leg in s["legs"] if leg["gwh"] > 0]
-            mass = gwh * _triangular_at(u, spec, weights)
+            wts = [leg["gwh"] for s in stations for leg in s["legs"] if leg["gwh"] > 0]
+            mass = gwh * _triangular_at(u, spec, wts)
             return mass * ncv, mass
         effs = [e for s in stations for e in s["eff_net"]]
-        tj = gwh * 3.6 / _triangular_at(u, effs)
+        wts = [w for s, w in zip(stations, weights) for _e in s["eff_net"]]
+        tj = gwh * 3.6 / _triangular_at(u, effs, wts)
         return tj, tj / ncv
     if pathway == "D3":
         effs = [e for s in stations for e in s["eff_net"]]
-        return gwh * 3.6 / _triangular_at(u, effs), None
+        wts = [w for s, w in zip(stations, weights) for _e in s["eff_net"]]
+        return gwh * 3.6 / _triangular_at(u, effs, wts), None
     raise ValueError(pathway)
 
 
@@ -286,41 +315,72 @@ def _combustion(d, tj, fuel, factor_set, combusted=1.0, mass=None):
     return out
 
 
+def ammonia_factor(d, route):
+    """t CO2e per t of ammonia made at the exporter (process CO2 plus feedstock upstream)."""
+    if route == "F1":
+        return (d.get("ammonia_ef_ipcc_gas", use="exporter")
+                + d.get("ammonia_fuel_req_gas", use="exporter") * d.get("wtt_natural_gas") / 1e3)
+    if route == "F2":
+        coal_gj = d.get("h2_per_nh3") * d.get("h2_frf_coal")
+        return coal_gj * d.get("h2_ccf_coal") * 44.0 / 12.0 + coal_gj * d.get("wtt_coal") / 1e3
+    raise ValueError(route)
+
+
 def import_factor(d, route):
     """t CO2e per t of imported urea at the exporter (2.B.1 net of urea-bound CO2, plus upstream)."""
-    nh3 = d.get("nh3_per_urea")
-    if route == "F1":
-        process = nh3 * d.get("ammonia_ef_ipcc_gas", use="exporter")
-        upstream = nh3 * d.get("ammonia_fuel_req_gas", use="exporter") * d.get("wtt_natural_gas") / 1e3
-    elif route == "F2":
-        coal_gj = d.get("h2_per_nh3") * d.get("h2_frf_coal")
-        process = nh3 * coal_gj * d.get("h2_ccf_coal") * 44.0 / 12.0
-        upstream = nh3 * coal_gj * d.get("wtt_coal") / 1e3
-    else:
-        raise ValueError(route)
-    return process - UREA_CO2 + upstream
+    return d.get("nh3_per_urea") * ammonia_factor(d, route) - UREA_CO2
+
+
+def unpack(case):
+    """(fa, pa, receiving, displaced, route, leak_base, prill_control); the last two default to the
+    inventory reference (LB1) and uncontrolled prilling (PC1)."""
+    fa, pa, receiving, displaced, route, *rest = case
+    lb, pc = (list(rest) + ["LB1", "PC1"][len(rest):])[:2]
+    return fa, pa, receiving, displaced, route, lb, pc
+
+
+def generation_share(d, rec, case, s_case):
+    """The share of the moved gas that becomes new generation, per draw.
+
+    1 for D1-D3 and D5 (the per-PJ reading, valid only while the displaced stations can give up the GWh),
+    0 for D4, and for the mixed pathways M1-M3 the most the displaced stations' own FY generation allows:
+    min(1, their GWh / the GWh all the case's gas would make). The rest of the gas offsets RLNG imports.
+    """
+    _fa, pa, receiving, displaced, *_ = unpack(case)
+    if displaced == "D4":
+        return 0.0
+    if not displaced.startswith("M"):
+        return 1.0
+    h, g2n = d.get("hhv_network_btu_scf"), d.get("gross_to_net")
+    full = receiving_gwh(d, rec, receiving, pa, (rec.feed + rec.fuel) * s_case * h, h, g2n)
+    full = np.where(np.asarray(full) > 0, full, np.inf)            # nothing moved: no generation share
+    return np.minimum(1.0, rec.gwh_capacity("D" + displaced[1:]) / full)
 
 
 def state(d, rec, case, s_case, s):
     """The subsystem's emissions at reallocated fraction `s` of a case whose services are fixed at
     `s_case`. Returns {sector: {pollutant: Gg array or None}} plus a `flows` entry."""
-    fa, pa, receiving, displaced, route = case
+    fa, pa, receiving, displaced, route, lb, pc = unpack(case)
     if not 0.0 <= s <= s_case <= 1.0:
         raise ValueError("reallocated fraction %r of %r is outside the plants' gas (0 <= s <= s_case <= 1)"
                          % (s, s_case))
+    if lb not in ("LB1", "LB2") or pc not in ("PC1", "PC2"):
+        raise ValueError("unknown leak base %r or prill control %r" % (lb, pc))
     h, g2n, ls = d.get("hhv_network_btu_scf"), d.get("gross_to_net"), rec.leak_share
     out = {k: {} for k, *_ in SECTORS}
     total_mmcf = rec.feed + rec.fuel
 
-    # The plants at (1 - s): urea, its ammonia and the gas behind it.
+    # The plants at (1 - s): urea, the ammonia behind it and Fatimafert's merchant ammonia, and their gas.
     urea_dom = rec.urea_kt * (1 - s)
-    nh3 = urea_dom * d.get("nh3_per_urea")
+    merchant = d.get("fatimafert_merchant_nh3_t") / 1e3            # kt NH3 sold, FY2023-24 bound
+    nh3 = urea_dom * d.get("nh3_per_urea") + merchant * (1 - s)
     feed_tj = rec.feed * (1 - s) * h * TJ_PER_MMBTU * g2n
     fuel_tj = rec.fuel * (1 - s) * h * TJ_PER_MMBTU * g2n
+    feed_burnt = feed_tj * (1 - ls) if lb == "LB2" else feed_tj    # LB2: the feed's leaked share is not CO2
     if fa == "FA1":
         co2 = nh3 * d.get("ammonia_ef_calibrated") - urea_dom * UREA_CO2
     elif fa == "FA2":
-        co2 = (feed_tj + fuel_tj * (1 - ls)) * d.get("ef_co2_gas") / 1e6 - urea_dom * UREA_CO2
+        co2 = (feed_burnt + fuel_tj * (1 - ls)) * d.get("ef_co2_gas") / 1e6 - urea_dom * UREA_CO2
     elif fa == "FA3":
         co2 = nh3 * d.get("ammonia_ef_ipcc_gas", use="baseline") - urea_dom * UREA_CO2
     elif fa == "FD1":
@@ -334,54 +394,56 @@ def state(d, rec, case, s_case, s):
     fuel = _combustion(d, fuel_tj, "gas_industry", "process_gas", combusted=1 - ls)
     fuel.pop("CO2")          # the process fuel's CO2 is inside 2.B.1 under every reading
     out["2B1_fuel"] = fuel
+    prill_pm25 = (urea_dom * d.get("urea_prill_pm_uncontrolled_kg_t") * d.get("urea_prill_pm25_fraction") / 1e3
+                  if pc == "PC1" else None)                      # PC2: no controlled size distribution printed
     out["2B_finish"] = {
-        "PM2.5": urea_dom * d.get("urea_prill_pm_kg_t") * d.get("urea_prill_pm25_fraction") / 1e3,
-        "BC": None,
+        "PM2.5": prill_pm25, "BC": None,
         "NH3": urea_dom * (d.get("urea_solution_nh3_kg_t") + d.get("urea_prill_nh3_kg_t")) / 1e3}
 
-    # Gas to power and the GWh it makes (none under D4: the gas replaces RLNG, it adds no generation).
+    # Gas to power, the GWh it makes, and the gas that instead offsets RLNG.
+    share = generation_share(d, rec, case, s_case)
     moved = total_mmcf * s
-    if receiving == "none":
+    moved_gen = moved * share
+    if receiving == "none" or np.all(np.asarray(share) == 0):
         gwh_recv = 0.0 * h
-        recv_mmbtu_full = 0.0 * h
+        gwh_service = 0.0 * h
         out["1A1a_recv"] = {p: 0.0 * h for p in GHGS}
     else:
-        gwh_recv = receiving_gwh(d, rec, receiving, pa, moved * h, moved, h, g2n)
-        recv_tj = moved * h * TJ_PER_MMBTU * g2n
-        out["1A1a_recv"] = _combustion(d, recv_tj, "gas_power", "gas_turbine", combusted=1 - ls)
-        recv_mmbtu_full = total_mmcf * s_case * h
-    gwh_service = (0.0 * h if receiving == "none" else
-                   receiving_gwh(d, rec, receiving, pa, recv_mmbtu_full, total_mmcf * s_case, h, g2n))
+        gwh_recv = receiving_gwh(d, rec, receiving, pa, moved_gen * h, h, g2n)
+        gwh_service = receiving_gwh(d, rec, receiving, pa, total_mmcf * s_case * share * h, h, g2n)
+        out["1A1a_recv"] = _combustion(d, moved_gen * h * TJ_PER_MMBTU * g2n, "gas_power", "gas_turbine",
+                                       combusted=1 - ls)
 
     # The displaced generation still running in this state: the case's GWh minus what gas now makes.
     gwh_disp = gwh_service - gwh_recv
-    if displaced in ("D1", "D2", "D3"):
-        tj, mass = displaced_fuel(d, rec, displaced, pa, gwh_disp)
-        kind, fset = ("coal", "coal_boiler") if displaced == "D3" else (
-            "rfo", "oil_engine" if displaced == "D1" else "oil_boiler")
-        out["1A1a_disp"] = _combustion(d, tj, kind, fset, mass=mass)
-        wtt = d.get("wtt_coal") if displaced == "D3" else d.get("wtt_fuel_oil")
-        out["X_fuel"] = {"CO2e": tj * wtt / 1e3}
-    elif displaced == "D5":
+    lng_tj = total_mmcf * (s_case - s) * (1 - np.asarray(share)) * h * TJ_PER_MMBTU * g2n
+    kind_of = {"D1": ("rfo", "oil_engine"), "D2": ("rfo", "oil_boiler"), "D3": ("coal", "coal_boiler")}
+    dk = "D" + displaced[1:] if displaced.startswith("M") else displaced
+    if dk in kind_of:
+        tj, mass = displaced_fuel(d, rec, dk, pa, gwh_disp)
+        out["1A1a_disp"] = _combustion(d, tj, *kind_of[dk], mass=mass)
+        wtt = d.get("wtt_coal") if dk == "D3" else d.get("wtt_fuel_oil")
+        out["X_fuel"] = {"CO2e": tj * wtt / 1e3 + lng_tj * d.get("wtt_lng") / 1e3}
+    elif dk == "D5":
         out["1A1a_disp"] = {"CO2e": gwh_disp * rec.grid_average}
         out["X_fuel"] = {"CO2e": None}
-    elif displaced == "D4":
+    elif dk == "D4":
         out["1A1a_disp"] = {p: 0.0 * h for p in GHGS}
-        lng_tj = total_mmcf * (s_case - s) * h * TJ_PER_MMBTU * g2n
         out["X_fuel"] = {"CO2e": lng_tj * d.get("wtt_lng") / 1e3}
     else:
         raise ValueError(displaced)
 
-    # The post-meter leak base (inventory convention: feedstock outside it, process fuel and power inside).
-    base_mmcf = rec.fuel * (1 - s) + (moved if receiving != "none" else 0.0)
-    out["1B2b"] = {"CH4": base_mmcf * inputs.MMCF_TO_M3 * rec.gas_density / 1e6 * ls
-                   * rec.ch4_fraction}
+    # The post-meter leak base: process fuel and power gas inside; feedstock inside only under LB2.
+    base_mmcf = rec.fuel * (1 - s) + moved_gen + (rec.feed * (1 - s) if lb == "LB2" else 0.0)
+    out["1B2b"] = {"CH4": base_mmcf * inputs.MMCF_TO_M3 * rec.gas_density / 1e6 * ls * rec.ch4_fraction}
     out["3C_urea"] = {"CO2": 0.0 * h, "N2O": 0.0 * h, "NH3": 0.0 * h}
     out["X_urea"] = {"CO2e": rec.urea_kt * s * import_factor(d, route)}
-    out["flows"] = {"urea_domestic_kt": urea_dom, "urea_imported_kt": rec.urea_kt * s + 0 * h,
+    out["X_ammonia"] = {"CO2e": merchant * s * ammonia_factor(d, route)}
+    out["flows"] = {"urea_domestic_kt": urea_dom + 0 * h, "urea_imported_kt": rec.urea_kt * s + 0 * h,
+                    "merchant_nh3_domestic_kt": merchant * (1 - s), "merchant_nh3_imported_kt": merchant * s,
                     "gas_moved_mmcf": moved + 0 * h, "gas_moved_pj_hhv": moved * h * TJ_PER_MMBTU / 1e3,
-                    "gwh_receiving": gwh_recv, "gwh_displaced_running": gwh_disp,
-                    "gwh_service": gwh_service}
+                    "generation_share": share + 0 * h,
+                    "gwh_receiving": gwh_recv, "gwh_displaced_running": gwh_disp, "gwh_service": gwh_service}
     return out
 
 

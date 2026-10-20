@@ -3,7 +3,9 @@
 # The inventory estimates power-station SO2 from oil only and types NOx, PM2.5 and CO screening-only
 # (outputs/pakemis_air_coverage_matrix.csv), and it estimates no air pollutant from fertilizer process-fuel
 # combustion. These factors are therefore the APPLICATION's screening factors, not inventory estimates. Each row
-# is the printed EMEP/EEA 2023 value with its printed 95% interval, drawn as triangular(low, value, high).
+# is the printed EMEP/EEA 2023 value with its printed 95% interval, drawn as a two-piece lognormal whose median is
+# the printed value and whose 2.5th and 97.5th percentiles are the printed bounds (model.two_piece_lognormal). A
+# triangular draw on those bounds put the mean of coal PM2.5 at 31 g/GJ against a printed 3.4 (external audit).
 # A printed '<x' is entered at x and flagged. BC is a percentage of PM2.5. An empty value means the source
 # prints no factor; the pollutant is then NOT ESTIMATED (NE) for that set, never zero.
 # SO2 for oil sets is a sulfur balance (parameters: rfo_sulfur_pct), so their SO2 rows here are empty by design
@@ -34,7 +36,7 @@ coal_boiler,NOx,209,200,350,g/GJ,,"EMEP/EEA 2023 1.A.1 Table 3-11 (dry bottom bo
 coal_boiler,CO,8.7,6.15,15,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,
 coal_boiler,NMVOC,1.0,0.6,2.4,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,
 coal_boiler,SO2,820,330,5000,g/GJ,factor_times_fgd,"EMEP/EEA 2023 1.A.1 Table 3-11 (SOx, no abatement, 1% sulfur)",
-coal_boiler,PM2.5,3.4,0.9,90,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,particulate abatement assumed by the Guidebook
+coal_boiler,PM2.5,3.4,0.9,90,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,"particulate abatement assumed by the Guidebook; FILTERABLE PM only, at 8.2% ash"
 coal_boiler,BC,2.2,0.27,8.08,% of PM2.5,,EMEP/EEA 2023 1.A.1 Table 3-11,
 coal_boiler,NH3,,,,g/GJ,,EMEP/EEA 2023 1.A.1 Table 3-11,not printed
 process_gas,NOx,74,46,103,g/GJ,,EMEP/EEA 2023 1.A.2 Table 3-3 (combustion in industry using natural gas),fertilizer process fuel (reformer furnace and boilers)

@@ -4,17 +4,20 @@
 # imports; fertilizer = where the urea no longer made by the two plants comes from, holding urea fixed.
 # Every pathway is an explicit ASSUMPTION about what would happen. None is observed: the repository holds no
 # dispatch, merit-order or curtailment record (scripts/holdings.py merit / NPCC / curtail, 2026-10-20).
-# stations = labels in data/sectors/power/activity/plant_fuel_ledger.csv and plant_heat_rates.csv (fiscal_year 2023 =
-# FY2023-24); a label ending in * matches by prefix. ledger_fuel = the ledger fuel rows that carry the station's
-# fuel and generation. role: evidence = enters classification; comparator = reported beside it, never classified.
-pathway_id,family,label,stations,ledger_fuel,air_factor_set,role,note
-R1,receiving,RLNG combined-cycle stations,NPPMCL (Balloki);QATPL (Bhikki);Punjab Thermal;NPPMCL (Haveli Bahadur Shah),RLNG,gas_turbine,evidence,"The four 1.2 GW Punjab stations on the SNGPL network, the most efficient gas generation printed (SoIR net 60.5-61.8%)"
-R2,receiving,Older gas combined-cycle stations,Uch;Uch-II;Foundation;Orient;Saif;Sapphire Electric;Halmore,Gas;RLNG,gas_turbine,evidence,"Network-gas IPP combined-cycle stations commissioned before 2010 (SoIR net 45-51%)"
-R3,receiving,GENCO Guddu gas station,TPS Guddu (Units 14-16) (GENCO-II);TPS Guddu (Units 5-10) (GENCO-II),Gas,gas_turbine,evidence,"The least efficient receiving case printed for gas (SoIR net 36%); its ledger fuel is in MMCFT, so the conversion uses the heating value"
-D1,displaced,Furnace-oil engine stations,Atlas;Attock Gen.;Kohinoor Energy;Narowal Energy;Nishat;Nishat Chunian,RFO,oil_engine,evidence,"Reciprocating-engine IPPs on high-sulfur furnace oil (SoIR net 42.7-45%)"
-D2,displaced,Furnace-oil steam stations,Lal Pir;Pak Gen.;Saba;TPS Muzaffargarh (GENCO-III),RFO,oil_boiler,evidence,"Oil-fired steam boilers (SoIR net 29.6-37%)"
-D3,displaced,Imported-coal stations,Huaneng Shandong Ruyi (Sahiwal*;Port Qasim Electric Power;China Power Hub,Coal imported,coal_boiler,evidence,"Imported-coal stations; the station coal heating value is unresolved in the inventory (docs/power_coal_energy_basis.md), so only the printed heat rate converts generation to fuel"
-D4,system,Reallocated gas lowers RLNG imports,,,,evidence,"No new generation: the gas the plants no longer use substitutes for imported RLNG at stations already running, so station combustion is unchanged and the LNG supply chain abroad shrinks"
-D5,displaced,Average fossil CPPA-G generation,,,,comparator,"Inventory FY2023-24 grid combustion CO2e over CPPA-G fossil generation (NEPRA SoIR Table 17). An AVERAGE is not the generation a new gas-fired GWh displaces; shown so the difference is visible"
-F1,fertilizer,Imported urea from gas-based ammonia,,,,evidence,"Exporter route: natural-gas reforming at IPCC 2006 Table 3.1 factors; exporter gas upstream from the UK DESNZ WTT factor (a proxy)"
-F2,fertilizer,Imported urea from coal-gasification ammonia,,,,evidence,"Exporter route: coal gasification at IPCC 2019 Refinement Table 3.30 hydrogen factors (feedstock only, so a LOWER bound for the route); coal upstream from the DESNZ WTT factor"
+# The stations of each receiving and displaced pathway are the rows of station_crosswalk.csv with that pathway.
+# family mixed = the generation pathway Dk up to the displaced stations' own FY2023-24 generation, the rest of
+# the gas offsetting RLNG imports (D4); the share is computed per draw. role: evidence = enters classification;
+# comparator = reported beside it, never classified.
+pathway_id,family,label,displaces,air_factor_set,role,note
+R1,receiving,RLNG combined-cycle stations,,gas_turbine,evidence,"The four 1.2 GW Punjab stations on the SNGPL network, the most efficient gas generation printed (SoIR net 60.5-61.8%)"
+R2,receiving,Older network RLNG combined-cycle stations,,gas_turbine,evidence,"Network RLNG stations commissioned before 2016, GENCO Nandipur included (SoIR net 42.4-51.2%). Uch, Uch-II, Foundation, Guddu, Engro Qadirpur and Liberty Daharki burn dedicated field gas and are excluded (station_crosswalk.csv)"
+D1,displaced,Furnace-oil engine stations,,oil_engine,evidence,"Reciprocating-engine IPPs on high-sulfur furnace oil (SoIR net 42.7-45.7%)"
+D2,displaced,Furnace-oil steam stations,,oil_boiler,evidence,"Oil-fired steam boilers (SoIR net 29.6-37%)"
+D3,displaced,Imported-coal stations,,coal_boiler,evidence,"Imported-coal stations; the station coal heating value is unresolved in the inventory (docs/power_coal_energy_basis.md), so only the printed heat rate converts generation to fuel"
+D4,system,Reallocated gas lowers RLNG imports,,,evidence,"No new generation: the gas the plants no longer use substitutes for imported RLNG at stations already running, so station combustion is unchanged and the LNG supply chain abroad shrinks"
+M1,mixed,Oil engines up to their FY output; the rest lowers RLNG imports,D1,oil_engine,evidence,"The gas a receiving pathway can turn into GWh displaces D1 only up to the D1 stations' own FY2023-24 generation; the remainder is D4"
+M2,mixed,Oil steam up to its FY output; the rest lowers RLNG imports,D2,oil_boiler,evidence,"As M1 with D2"
+M3,mixed,Imported coal up to its FY output; the rest lowers RLNG imports,D3,coal_boiler,evidence,"As M1 with D3"
+D5,displaced,Average fossil CPPA-G generation,,,comparator,"Inventory FY2023-24 grid combustion CO2e over CPPA-G fossil generation (NEPRA SoIR Table 17). An AVERAGE is not the generation a new gas-fired GWh displaces; shown so the difference is visible"
+F1,fertilizer,Imported urea from gas-based ammonia,,,evidence,"Exporter route: natural-gas reforming at IPCC 2006 Table 3.1 factors; exporter gas upstream from the UK DESNZ WTT natural-gas factor, a UK blended-supply proxy"
+F2,fertilizer,Imported urea from coal-gasification ammonia,,,evidence,"Exporter route: the IPCC 2019 Refinement Table 3.30 coal-gasification hydrogen factors (the feedstock requirement covers raw material and fuel) applied to the hydrogen in ammonia; the ammonia synthesis loop and the urea stage are not included; coal upstream from the DESNZ WTT factor"

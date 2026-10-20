@@ -615,12 +615,13 @@ data/shared/metadata/residual_classes.csv,data/shared/metadata,hand:parameter,,,
 data/shared/parameters/air_emission_factors.csv,data/shared/parameters,hand:parameter,,,,7,no,
 data/shared/parameters/coal_booking_policy.csv,data/shared/parameters,producer,scripts/build_coal_vintage_ledger.py;scripts/ingest_coal_vintages.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/emission_factors.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/shared/parameters/gas_reallocation/air_factors.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,1,no,
+data/shared/parameters/gas_reallocation/air_factors.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
 data/shared/parameters/gas_reallocation/baselines.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,5,no,
-data/shared/parameters/gas_reallocation/coherence.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,1,no,
-data/shared/parameters/gas_reallocation/parameter_ranges.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
+data/shared/parameters/gas_reallocation/coherence.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
+data/shared/parameters/gas_reallocation/parameter_ranges.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,3,no,
 data/shared/parameters/gas_reallocation/pathways.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,5,no,
-data/shared/parameters/gas_reallocation/scope_plants.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,1,no,
+data/shared/parameters/gas_reallocation/scope_plants.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
+data/shared/parameters/gas_reallocation/station_crosswalk.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,3,no,
 data/shared/parameters/method_registry.csv,data/shared/parameters,hand:parameter,,,,10,no,
 data/shared/parameters/parameter_scope.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,11,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/parameter_scope_exclusions.csv,data/shared/parameters,hand:parameter,,,,3,no,

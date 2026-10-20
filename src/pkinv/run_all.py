@@ -911,6 +911,7 @@ PHASES = [
                   "outputs/figures/pakemis_transition_gas_t1_displaced_intensity.png",
                   "outputs/figures/pakemis_transition_gas_t2_import_route.png"),
           reads=("data/shared/parameters/gas_reallocation/scope_plants.csv",
+                 "data/shared/parameters/gas_reallocation/station_crosswalk.csv",
                  "data/shared/parameters/gas_reallocation/baselines.csv",
                  "data/shared/parameters/gas_reallocation/pathways.csv",
                  "data/shared/parameters/gas_reallocation/coherence.csv",

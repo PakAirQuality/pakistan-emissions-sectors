@@ -62,12 +62,23 @@ class InventoryIsReadNotCopied(Base):
         self.assertIs(model.UREA_CO2, ammonia_reconciliation.UREA_CO2_RECOVERY)
 
     def test_reference_fertilizer_reading_is_the_inventory_method(self):
-        """FA1 per tonne of urea is the 2.B.1 engine's identity: 0.567 x 1.815 - 44/60."""
+        """FA1 per tonne is the 2.B.1 engine's identity: NH3 (urea x 0.567 plus merchant ammonia) x 1.815
+        less 44/60 per tonne of urea."""
         d = model.Draws(self.rec.params, self.rec.factors, 10)
         st = model.state(d, self.rec, ("FA1", "PA1", "R1", "D1", "F1"), 1.0, 0.0)
-        expect = self.rec.urea_kt * (self.rec.params["nh3_per_urea"]["value"] * d.get("ammonia_ef_calibrated")
-                                     - 44.0 / 60.0)
+        nh3 = self.rec.urea_kt * self.rec.params["nh3_per_urea"]["value"] + d.get("fatimafert_merchant_nh3_t") / 1e3
+        expect = nh3 * d.get("ammonia_ef_calibrated") - self.rec.urea_kt * 44.0 / 60.0
         np.testing.assert_allclose(st["2B1"]["CO2"], expect)
+
+    def test_fa1_is_a_diagnostic_and_its_carbon_residual_is_published(self):
+        """The audit's point: the power side moves METERED gas, whose carbon FA1 does not account for."""
+        self.assertEqual(build.FA_ADMISSIBLE, ("FA2",))
+        rows = {r["baseline_id"]: r for r in _rows("baselines") if r["axis"] == "fertilizer_2B1"}
+        self.assertEqual(rows["FA1"]["classification"], "diagnostic")
+        self.assertGreater(float(rows["FA1"]["carbon_residual_vs_metered_gas_p50"]), 300)
+        self.assertAlmostEqual(float(rows["FA2"]["carbon_residual_vs_metered_gas_p50"]), 0.0, places=6)
+        for row in _rows("conclusions"):
+            self.assertNotIn("FA1", row["condition"])
 
     def test_application_writes_only_its_own_products(self):
         written = []
@@ -109,10 +120,12 @@ class Units(Base):
 class Services(Base):
     def test_services_held_and_flows_non_negative_in_every_case(self):
         for case, _role in build.cases():
-            base, tran, _d = model.run(self.rec, case, 1.0, N)
+            base, tran, _d = model.run(self.rec, case, 1.0, 100)
             fb, ft = base["flows"], tran["flows"]
             np.testing.assert_allclose(fb["urea_domestic_kt"] + fb["urea_imported_kt"],
                                        ft["urea_domestic_kt"] + ft["urea_imported_kt"], atol=1e-9)
+            np.testing.assert_allclose(fb["merchant_nh3_domestic_kt"] + fb["merchant_nh3_imported_kt"],
+                                       ft["merchant_nh3_domestic_kt"] + ft["merchant_nh3_imported_kt"], atol=1e-12)
             np.testing.assert_allclose(fb["gwh_receiving"] + fb["gwh_displaced_running"],
                                        ft["gwh_receiving"] + ft["gwh_displaced_running"], atol=1e-6)
             for flows in (fb, ft):
@@ -120,14 +133,25 @@ class Services(Base):
                     self.assertTrue(np.all(np.asarray(value) >= -1e-9), "%s %s negative" % (case, name))
 
     def test_oil_stations_cannot_absorb_all_the_gas(self):
-        """An operating limit the records impose: FY2023-24 oil generation is smaller than the GWh
-        the plants' gas would make, so D1 and D2 are feasible only for part of the gas."""
+        """An operating limit the records impose: FY2023-24 oil generation is smaller than the GWh the
+        plants' gas would make, so pure D1 and D2 are per-PJ readings only and the full-scope case is mixed."""
         flows = [r for r in _rows("flows") if r["item"] == "case"]
         for r in flows:
             displaced = r["name"].split()[2]
             if displaced in ("D1", "D2"):
-                self.assertLess(float(r["max_feasible_fraction"]), 1.0, r["name"])
-                self.assertEqual(r["feasible_at_full_scope"], "no")
+                self.assertLess(float(r["max_feasible_fraction_p50"]), 1.0, r["name"])
+                self.assertTrue(r["feasible_at_full_scope"].startswith("no"))
+
+    def test_the_mixed_regime_holds_both_services_and_never_exceeds_the_displaced_output(self):
+        for receiving in ("R1", "R2"):
+            for mixed in ("M1", "M2", "M3"):
+                case = ("FA2", "PA1", receiving, mixed, "F1")
+                base, tran, d = model.run(self.rec, case, 1.0, 500)
+                share = tran["flows"]["generation_share"]
+                self.assertTrue(np.all(share <= 1.0) and np.all(share > 0))
+                cap = self.rec.gwh_capacity("D" + mixed[1:])
+                self.assertTrue(np.all(base["flows"]["gwh_service"] <= cap + 1e-6))
+                np.testing.assert_allclose(tran["flows"]["gwh_service"], tran["flows"]["gwh_receiving"])
 
     def test_urea_application_is_unchanged(self):
         base, tran, _d = model.run(self.rec, ("FA2", "PA2", "R2", "D3", "F2"), 1.0, N)
@@ -191,6 +215,47 @@ class Accounting(Base):
             model.run(self.rec, ("FA1", "PA1", "R1", "D1", "F1"), 1.5, 10)
 
 
+class StationJoins(unittest.TestCase):
+    """The audit's station findings, held: every declared record joins, one fuel per heat rate, and only
+    network-connected stations receive gas."""
+
+    def test_the_crosswalk_joins_hbs_and_punjab_thermal(self):
+        recs = {r["station"]: r for r in inputs.station_records("R1")}
+        self.assertGreater(sum(l["gwh"] for l in recs["Haveli Bahadur Shah"]["legs"]), 7000)
+        self.assertTrue(recs["Punjab Thermal (Trimmu)"]["eff_net"])
+
+    def test_every_declared_record_joins_except_the_documented_one(self):
+        missing = [(r["pathway"], r["station"], r["ledger_joined"], r["heat_rate_joined"])
+                   for r in inputs.crosswalk_report() if "no" in (r["ledger_joined"], r["heat_rate_joined"])]
+        self.assertEqual(missing, [("D3", "Sahiwal", "yes", "no")])
+
+    def test_no_diesel_heat_rate_prices_a_gas_pathway(self):
+        for pathway in ("R1", "R2"):
+            for rec in inputs.station_records(pathway):
+                self.assertNotIn(0.485, [round(e, 3) for e in rec["eff_net"]], rec["station"])
+
+    def test_dedicated_field_gas_stations_do_not_receive(self):
+        receivers = {r["ledger_label"] for p in ("R1", "R2") for r in inputs.crosswalk(p)}
+        for station in ("Uch", "Uch-II", "Foundation", "TPS Guddu (Units 14-16) (GENCO-II)"):
+            self.assertNotIn(station, receivers)
+        for row in inputs.crosswalk("excluded"):
+            self.assertIn("OGRA", row["eligibility_evidence"])
+
+
+class Distributions(unittest.TestCase):
+    def test_two_piece_lognormal_keeps_the_printed_quantiles(self):
+        from pkinv.core.shared_parameter_draws import rng_for
+        x = model.two_piece_lognormal(rng_for("test|two_piece"), 3.4, 0.9, 90.0, 400000)
+        q = np.percentile(x, [2.5, 50, 97.5])
+        np.testing.assert_allclose(q, [0.9, 3.4, 90.0], rtol=0.03)
+
+    def test_controlled_prilling_has_no_pm25_estimate(self):
+        rec = model.Records()
+        d = model.Draws(rec.params, rec.factors, 10)
+        st = model.state(d, rec, ("FA2", "PA1", "R1", "D1", "F1", "LB1", "PC2"), 1.0, 0.0)
+        self.assertIsNone(st["2B_finish"]["PM2.5"])
+
+
 class Absences(Base):
     def test_not_estimated_stays_not_estimated(self):
         base, tran, _d = model.run(self.rec, ("FA1", "PA1", "R1", "D1", "F1"), 1.0, 50)
@@ -203,9 +268,20 @@ class Absences(Base):
             if row["delta_mean"] == "":
                 self.assertEqual(row["coverage"], "NE")
 
+    def test_an_incomplete_external_footprint_cannot_be_called_a_reduction(self):
+        """The omitted exporter stages can only add emissions, so a negative combined change is reversible."""
+        for row in _rows("matrix"):
+            if row["boundary"] in ("combined_partial", "external") and row["sign"] == "-":
+                self.assertEqual(row["coverage"], "reversible", row)
+            if row["boundary"] in ("combined_partial", "external") and row["sign"] == "+":
+                self.assertIn(row["coverage"], ("bound", "reversible"), row)
+        for row in _rows("conclusions"):
+            if row["boundary"] in ("combined_partial", "external"):
+                self.assertNotIn("reduction", row["classification"])
+
     def test_a_not_estimated_part_that_could_reverse_the_sign_makes_it_unresolved(self):
         rows = {(r["boundary"], r["pollutant"], r["scope"]): r for r in _rows("conclusions")}
-        bc = rows[("territorial", "BC", "all evidence pathways")]
+        bc = rows[("territorial", "BC", "full scope: mixed pathways and D4")]
         self.assertEqual(bc["classification"], "unresolved")
         self.assertIn("not-estimated", bc["condition"])
 

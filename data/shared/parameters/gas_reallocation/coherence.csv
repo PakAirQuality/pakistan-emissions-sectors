@@ -1,5 +1,5 @@
 # GAS-REALLOCATION APPLICATION: WHICH PATHWAY COMBINATIONS ARE PHYSICALLY COHERENT.
-# A case is (receiving, displaced, fertilizer). R* matches every receiving pathway. A combination listed as
+# A case is (receiving, displaced, fertilizer). R* and F* match every pathway of that family. A combination listed as
 # no is never computed; its reason is the record of why. Any combination not listed is not computed either.
 receiving,displaced,fertilizer,coherent,reason
 R*,D1,F1,yes,new gas-fired GWh replace furnace-oil engine GWh; urea imported from gas-based ammonia
@@ -8,6 +8,9 @@ R*,D2,F1,yes,new gas-fired GWh replace furnace-oil steam GWh
 R*,D2,F2,yes,as above with coal-based ammonia
 R*,D3,F1,yes,new gas-fired GWh replace imported-coal GWh
 R*,D3,F2,yes,as above with coal-based ammonia
+R*,M1,F*,yes,"generation displaces D1 up to the D1 stations' FY output and the rest of the gas offsets RLNG: the full-scope case"
+R*,M2,F*,yes,as M1 with D2
+R*,M3,F*,yes,as M1 with D3
 none,D4,F1,yes,"no new generation: the gas substitutes for RLNG at running stations, so no receiving station efficiency enters"
 none,D4,F2,yes,as above with coal-based ammonia
 R*,D4,F*,no,"a receiving station adds generation only if something is displaced; under D4 nothing is, so pairing D4 with a receiving station would count the same gas twice"

@@ -7,6 +7,47 @@ current national figures are the manifest's.
 
 ## [Unreleased]
 
+### The gas-reallocation application, corrected after an external audit (21 October 2026)
+
+An external audit of `2335b4d` found defects in the application's mechanics and claims. Each was
+verified against the records before it was changed (`docs/gas_reallocation_application.md` §11).
+
+**Station joins.**
+- `station_crosswalk.csv` now joins every station's ledger row, heat-rate row and GEM units. Before
+  it:
+  - Haveli Bahadur Shah had lost its 7,904 GWh ledger record;
+  - Punjab Thermal had lost its heat rate;
+  - Liberty Power Tech was missing;
+  - HSD heat rates priced three gas stations.
+- **Network eligibility.** Receivers are now only the stations that burned RLNG in FY2023-24. Uch,
+  Uch-II, Foundation, Guddu, Engro Qadirpur and Liberty Daharki burn dedicated field gas (OGRA SoRPI
+  2023-24 Table 3.21), so the Guddu receiving case is retired.
+
+**Baselines.**
+- **FA1 is now a diagnostic.** The inventory's calibrated 2.B.1 factor leaves 428 Gg of the metered
+  gas's carbon unaccounted for, and the power side of every case moves that gas. FA2 is the
+  admissible fertilizer reading.
+- **The post-meter leak base is now an axis.** Feedstock outside (LB1, the reference) and feedstock
+  inside (LB2) are both admissible: IPCC 2019 does not direct the exclusion.
+- **Prill-tower control** (uncontrolled or controlled) is an explicit state.
+
+**Services and boundaries.**
+- Fatimafert's merchant ammonia (bounded at 4,313–7,277 t) is held fixed through imports.
+- A negative external or combined change is now `reversible`, never a reduction, because the
+  omitted exporter stages can only add. Threshold T3 sizes those omitted stages.
+- Mixed pathways M1–M3 carry the full-scope cases: generation displaces oil or coal up to those
+  stations' own FY output, and the rest of the gas offsets RLNG.
+
+**Distributions and labels.**
+- EMEP 95% ranges are drawn as a two-piece lognormal that keeps the printed quantiles.
+- The F2, NFDC heating-value and DESNZ labels are corrected.
+
+**Results.**
+- Territorial CO2e falls in all 56 admissible cases (−27 to −101 Gg per PJ at full scope).
+- NOx, SO2 and PM2.5 fall in every tested case.
+- CH4 is unresolved and decided by the leak base.
+- BC, NH3 and every combined footprint are unresolved.
+
 ### An application beside the inventory: gas moved from two urea plants to grid power
 
 A new, separable application (`src/pkinv/applications/gas_reallocation/`, `make gas-pilot`,

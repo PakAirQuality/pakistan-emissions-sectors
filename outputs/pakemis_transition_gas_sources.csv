@@ -11,36 +11,62 @@ Fatimafert feed gas FY2023-24,13438,MMCF,measured,NFDC AFR 2024-25 Annex-28 (afr
 Fatimafert fuel gas FY2023-24,2664,MMCF,measured,NFDC AFR 2024-25 Annex-28 (afr2025_fertilizer_gas_monthly.csv),all cases
 Fatimafert urea production FY2023-24,525,kt,measured,"NFDC AFR 2024-25 Table 1 (production by manufacturer; production, not offtake)",all cases
 Fatimafert ammonia FY2023-24,297.675,kt,reconstructed,urea x 0.567 (stoichiometry); Fatimafert checked against its annual report,"FA1, FA3, 2.B.1 process air"
-heating value of the delivered gas,939.5 (900-1000),Btu/scf gross,documentary_bound,Fatima AR 2023/2024 energy index with NFDC gas per tonne; inventory 900/1000 axis,"FA2, every gas-to-energy conversion"
-R1 stations: printed fuel and net generation,"4 stations, 13440 GWh",GWh,measured,NEPRA SoIR 2024 Tables 18/21 (plant_fuel_ledger.csv),PA1
-R1 stations: printed net heat rate,3 values,,measured (several are contract values),NEPRA SoIR 2024 Tables 20/23 (plant_heat_rates.csv),PA2
-R2 stations: printed fuel and net generation,"7 stations, 8528 GWh",GWh,measured,NEPRA SoIR 2024 Tables 18/21 (plant_fuel_ledger.csv),PA1
-R2 stations: printed net heat rate,9 values,,measured (several are contract values),NEPRA SoIR 2024 Tables 20/23 (plant_heat_rates.csv),PA2
-R3 stations: printed fuel and net generation,"2 stations, 2551 GWh",GWh,measured,NEPRA SoIR 2024 Tables 18/21 (plant_fuel_ledger.csv),PA1
-R3 stations: printed net heat rate,2 values,,measured (several are contract values),NEPRA SoIR 2024 Tables 20/23 (plant_heat_rates.csv),PA2
-D1 stations: printed fuel and net generation,"6 stations, 1562 GWh",GWh,measured,NEPRA SoIR 2024 Tables 18/21 (plant_fuel_ledger.csv),PA1
-D1 stations: printed net heat rate,6 values,,measured (several are contract values),NEPRA SoIR 2024 Tables 20/23 (plant_heat_rates.csv),PA2
-D2 stations: printed fuel and net generation,"4 stations, 639 GWh",GWh,measured,NEPRA SoIR 2024 Tables 18/21 (plant_fuel_ledger.csv),PA1
-D2 stations: printed net heat rate,4 values,,measured (several are contract values),NEPRA SoIR 2024 Tables 20/23 (plant_heat_rates.csv),PA2
-D3 stations: printed fuel and net generation,"3 stations, 3334 GWh",GWh,measured,NEPRA SoIR 2024 Tables 18/21 (plant_fuel_ledger.csv),PA1
-D3 stations: printed net heat rate,2 values,,measured (several are contract values),NEPRA SoIR 2024 Tables 20/23 (plant_heat_rates.csv),PA2
+Fatimafert merchant ammonia FY2023-24,"4,313-7,277",t,documentary_bound,Fatima AR 2023 and 2024 calendar-year sales,the ammonia service; X_ammonia
+Agritech merchant ammonia,not reported,,NE,Agritech AR 2023 (held as psx_document_228733.pdf) prints urea only,an unpriced service if any was sold
+CO2 sold by the plants,not attributed to a plant,,NE (unpriced coproduct),"Fatima AR 2024 prints company-wide CO2 captured and sold (188,341 t)",not priced: the buyers' replacement CO2 is outside the boundary
+grid electricity bought by the plants,not held per plant,,NE,Fatima AR 2024 prints a company-wide WAPDA purchase,not priced: the shut plants' grid demand
+heating value of the delivered gas,939.5 (900-1000),Btu/scf gross,documentary_bound,"Fatima AR 2023/2024 energy index with NFDC gas per tonne; inventory 900/1000 axis; NFDC Table 6.2 Sui 925 (undated, basis unstated) as a compatibility check","FA2, every gas-to-energy conversion"
+D1 station Atlas,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D1 station Attock Gen.,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D1 station Kohinoor Energy,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D1 station Liberty Power Tech,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D1 station Narowal Energy,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D1 station Nishat,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D1 station Nishat Chunian,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D2 station Lal Pir,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D2 station Pak Gen.,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D2 station Saba,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D2 station Muzaffargarh,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D3 station China Power Hub,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D3 station Sahiwal,ledger yes; heat rate no,,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+D3 station Port Qasim,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R1 station Balloki,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R1 station Haveli Bahadur Shah,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R1 station Bhikki,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R1 station Punjab Thermal (Trimmu),ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R2 station Orient,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R2 station Saif,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R2 station Sapphire Electric,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R2 station Halmore,ledger yes; heat rate yes (derived from the printed net heat rate),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R2 station Rousch,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R2 station Fauji Kabirwala,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+R2 station Nandipur,ledger yes; heat rate yes (printed),,measured,NEPRA SoIR 2024 via station_crosswalk.csv,PA1/PA2
+excluded receiver Uch,not network-eligible,,documentary,OGRA SoRPI 2023-24 Table 3.21: OGDCL Uch field to Uch Power Plant (dedicated); Table 3.3 OGDCL sales to Uch Power and Uch-II,kept out of R1/R2
+excluded receiver Uch-II,not network-eligible,,documentary,OGRA SoRPI 2023-24 Table 3.21 and Table 3.3 (dedicated Uch field gas),kept out of R1/R2
+excluded receiver Foundation,not network-eligible,,documentary,"OGRA SoRPI 2023-24 Table 3.21: Mari to Foundation Power (Dhariki); s3.2.8 'low BTU gas, supplied from Mari'",kept out of R1/R2
+excluded receiver Guddu (Units 14-16),not network-eligible,,documentary,OGRA SoRPI 2023-24 Table 3.21: Mari and Kandhkot to Guddu; Table 3.7: about 97% dedicated field gas,kept out of R1/R2
+excluded receiver Guddu (Units 5-10),not network-eligible,,documentary,OGRA SoRPI 2023-24 Table 3.21: Mari and Kandhkot to Guddu (the station Guddu 14-16 shares),kept out of R1/R2
+excluded receiver Engro Qadirpur,not network-eligible,,documentary,"OGRA SoRPI 2023-24 Table 3.8: Qadirpur field gas allocated to the station; indigenous field allocation, not network RLNG",kept out of R1/R2
+excluded receiver Liberty Daharki,not network-eligible,,documentary,"OGRA SoRPI 2023-24 independent-system supply table (OGDCL Qadirpur, LPL); indigenous field allocation",kept out of R1/R2
 pathway R1: RLNG combined-cycle stations,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
-pathway R2: Older gas combined-cycle stations,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
-pathway R3: GENCO Guddu gas station,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
+pathway R2: Older network RLNG combined-cycle stations,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
 pathway D1: Furnace-oil engine stations,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
 pathway D2: Furnace-oil steam stations,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
 pathway D3: Imported-coal stations,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
 pathway D4: Reallocated gas lowers RLNG imports,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
+pathway M1: Oil engines up to their FY output; the rest lowers RLNG imports,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
+pathway M2: Oil steam up to its FY output; the rest lowers RLNG imports,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
+pathway M3: Imported coal up to its FY output; the rest lowers RLNG imports,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
 pathway D5: Average fossil CPPA-G generation,comparator,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
 pathway F1: Imported urea from gas-based ammonia,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
 pathway F2: Imported urea from coal-gasification ammonia,evidence,,assumption,data/shared/parameters/gas_reallocation/pathways.csv,dimension B
-which generation a new gas-fired GWh displaces,not held,,NE (unidentified),"no dispatch, merit-order or curtailment record is held",replaced by explicit pathways D1-D4 and threshold T1
+which generation a new gas-fired GWh displaces,not held,,NE (unidentified),"no dispatch, merit-order or curtailment record is held",replaced by explicit pathways and threshold T1
 parameter ammonia_ef_calibrated,1.815,t CO2 per t NH3,inventory_factor,data/sectors/ippu/parameters/ippu_params.csv:ammonia_ef_calibrated,Baseline FA1
-parameter ammonia_ef_ipcc_gas,derived,t CO2 per t NH3,literature,IPCC 2006 Vol 3 Ch 3 Table 3.1: modern conventional reforming 1.694 to the European average 2.104 (data/raw/ipcc/ipcc2006_V3_3_Ch3_Chemical_Industry.pdf),FA3 and import route F1. The bounds must equal ammonia_ef_modern and ammonia_ef_total_energy (a test holds them together
+parameter ammonia_ef_ipcc_gas,derived or ranged,t CO2 per t NH3,literature,IPCC 2006 Vol 3 Ch 3 Table 3.1: modern conventional reforming 1.694 to the European average 2.104 (data/raw/ipcc/ipcc2006_V3_3_Ch3_Chemical_Industry.pdf),FA3 and import route F1. The bounds must equal ammonia_ef_modern and ammonia_ef_total_energy (a test holds them together
 parameter ammonia_ef_modern,1.694,t CO2 per t NH3,inventory_factor,data/sectors/ippu/parameters/ippu_params.csv:ammonia_ef_modern,Lower end of FA3 and of the gas-based import route
 parameter ammonia_ef_total_energy,2.104,t CO2 per t NH3,inventory_factor,data/sectors/ippu/parameters/ippu_params.csv:ammonia_ef_total_energy,Upper end of FA3 and of the gas-based import route
-parameter ammonia_fuel_req_gas,derived,GJ(NCV) per t NH3,literature,IPCC 2006 Vol 3 Ch 3 Table 3.1 total fuel requirement (modern 30.2 to average 37.5),Prices the exporter's gas upstream under F1
-parameter coal_fgd_removal,derived,fraction,documentary_bound,"outputs/pakemis_air_power_control_evidence.csv: FGD design removal 0.92 (Port Qasim) and 0.93 (China Power Hub), licence-application figures, operation not demonstrated",From no removal to the design figure
+parameter ammonia_fuel_req_gas,derived or ranged,GJ(NCV) per t NH3,literature,IPCC 2006 Vol 3 Ch 3 Table 3.1 total fuel requirement (modern 30.2 to average 37.5),Prices the exporter's gas upstream under F1
+parameter coal_fgd_removal,derived or ranged,fraction,documentary_bound,"outputs/pakemis_air_power_control_evidence.csv: FGD design removal 0.92 (Port Qasim) and 0.93 (China Power Hub), licence-application figures, operation not demonstrated",From no removal to the design figure
 parameter ef_ch4_coal,1,kg CH4 per TJ,inventory_factor,data/shared/parameters/emission_factors.csv:pow_ch4_coal,
 parameter ef_ch4_gas_industry,1,kg CH4 per TJ,inventory_factor,data/shared/parameters/emission_factors.csv:ind_ch4_gas,Fertilizer process-fuel combustion
 parameter ef_ch4_gas_power,1,kg CH4 per TJ,inventory_factor,data/shared/parameters/emission_factors.csv:pow_ch4_gas,
@@ -55,26 +81,28 @@ parameter ef_n2o_oil,0.6,kg N2O per TJ,inventory_factor,data/shared/parameters/e
 parameter fatimafert_ammonia_cy2024,311242,t NH3,company_reported,"Fatima Fertilizer Company Annual Report 2024 p.72: 'Ammonia Plant achieved annual production of 311,242 MeT'",An independent check on the stoichiometric ammonia of Fatimafert; not an input to any emission
 parameter fatimafert_energy_index_cy2023,28.93,MMBTU per t urea,company_reported,"Fatima Fertilizer Company Annual Report 2023 (data/raw/company_reports/fertilizer/fatima_annual_report_2023.pdf), Sheikhupura Plant: 'Energy Index of 28.93 MMBTU/MT in 2023'","Calendar 2023; the basis (gross or net) is not printed. Pakistani gas is billed in MMBTU on the gross heating value, whi"
 parameter fatimafert_energy_index_cy2024,28.7,MMBTU per t urea,company_reported,"Fatima Fertilizer Company Annual Report 2024 (data/raw/company_reports/fertilizer/fatima_annual_report_2024.pdf) p.72, Fatimafert Limited (Sheikhupura Plant): 'average energy index of 28.70 MMBTU/T Urea'","Calendar 2024; FY2023-24 spans the second half of 2023 and the first half of 2024, so the two calendar indices are avera"
+parameter fatimafert_merchant_nh3_t,derived or ranged,t NH3 sold,documentary_bound,"Fatima Fertilizer Annual Reports: Fatimafert ammonia sales 7,277 t in calendar 2023 (AR 2023) and 4,313 t in calendar 2024 (AR 2024 p.72)","FY2023-24 spans the second half of 2023 and the first half of 2024; its sales are BOUNDED by the two calendar years, not"
 parameter fatimafert_urea_cy2024,528567,t urea,company_reported,"Fatima Fertilizer Company Annual Report 2024 p.72: 'Urea production of 528,567 MeT in 2024'",Calendar-year urea for the ammonia check
 parameter gross_to_net,0.9,fraction,inventory_factor,data/sectors/industry/parameters/industry_params.csv:industry_gross_to_net,The inventory's NCV/GCV ratio for natural gas; held fixed because the heating value range already spans the basis questi
 parameter h2_ccf_coal,0.0258,t C per GJ coal,literature,IPCC 2019 Refinement Vol 3 Ch 3 Table 3.30 carbon content factor for coal gasification (default 0.0258; lower 0.0238; upper 0.0276),
 parameter h2_frf_coal,215,GJ coal per t H2,literature,"IPCC 2019 Refinement Vol 3 Ch 3 Table 3.30 (NEW), coal gasification (coking coal): 215 GJ/t H2 +/- 20% (data/raw/ipcc/19R_V3_Ch03_Chemical_Industry.pdf)",The 2019 Refinement makes no refinement to the ammonia section and prints no coal route for ammonia; the hydrogen table 
-parameter h2_per_nh3,0.17756,t H2 per t NH3,literature_derived,Stoichiometry: 3 x 1.008 / 17.031,"Feedstock hydrogen only, so F2 omits the gasifier's fuel and power: a lower bound for the coal route"
-parameter hhv_network_btu_scf,derived,Btu per scf (gross),documentary_bound,"Mode derived in code: the mean Fatimafert energy index divided by NFDC FY2023-24 Fatimafert gas per tonne of urea (Annex-28 and Table 1). Bounds: the inventory's 900 Btu/scf axis (data/shared/parameters/scenarios.csv) and its nominal 1,000 (industry_hhv_btu_per_scf)",One plant's energy index pins the heating value of the gas it receives; the same network supplies Agritech and the recei
+parameter h2_per_nh3,0.17756,t H2 per t NH3,literature_derived,Stoichiometry: 3 x 1.008 / 17.031,The hydrogen in ammonia; the FRF it multiplies covers raw material and fuel (IPCC 2019 s3.11.2.2). The ammonia synthesis
+parameter hhv_network_btu_scf,derived or ranged,Btu per scf (gross),documentary_bound,"Mode derived in code: the mean Fatimafert energy index divided by NFDC FY2023-24 Fatimafert gas per tonne of urea (Annex-28 and Table 1). Bounds: the inventory's 900 Btu/scf axis (data/shared/parameters/scenarios.csv) and its nominal 1,000 (industry_hhv_btu_per_scf)",One plant's energy index pins the heating value of the gas it receives; the same network supplies Agritech and the recei
 parameter ncv_rfo,40.4,TJ per Gg,inventory_factor,data/shared/parameters/emission_factors.csv:ind_ncv_rfo,Converts ledger furnace-oil mass to energy and displaced energy back to mass for the sulfur balance
 parameter nfdc_gcv_mari_btu_cft,723,Btu per cft,published_statistic,NFDC Fertilizer Statistics Table 6.2 p.193: Mari 723 BTU/CFT,Dedicated-line lean gas of the out-of-scope plants; explains why a 900-1000 Btu/scf conversion overstates their gas carb
-parameter nfdc_gcv_sui_btu_cft,925,Btu per cft,published_statistic,"NFDC Fertilizer Statistics 2012-13 to 2022-23 (data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf) Table 6.2 'Calorific Value of Gas and Quantity Needed for Urea Manufacturing', p.193: Sui 925 BTU/CFT","Network (Sui) gas; printed once, undated. An independent check on hhv_network_btu_scf, never its source"
+parameter nfdc_gcv_sui_btu_cft,925,Btu per cft,published_statistic,"NFDC Fertilizer Statistics 2012-13 to 2022-23 (data/raw/nfdc/nfdc_fertilizer_statistics_2012_13_to_2022_23.pdf) Table 6.2 'Calorific Value of Gas and Quantity Needed for Urea Manufacturing', p.193: Sui 925 BTU/CFT","Network (Sui) gas; printed once, with no year and no gross/net basis. A cross-period compatibility check on hhv_network_"
 parameter nfdc_urea_gas_norm_mmbtu_t,30,MMBTU per t urea,published_statistic,NFDC Fertilizer Statistics Table 6.2 p.193: gas required per tonne of urea 24 feedstock + 6 fuel = 30 MMBTU,"A norm, not a measurement; compared with the plants' metered gas in the checks table"
 parameter nh3_per_urea,0.567,t NH3 per t urea,inventory_factor,data/sectors/ippu/parameters/ippu_params.csv:nh3_per_urea,Stoichiometry
 parameter rfo_sulfur_pct,3,percent by mass,inventory_factor,"The inventory's furnace-oil regime for power stations (data/sectors/power/activity/power_so2_admission.csv: s_pct_central 3.0, s_pct_lo 1.0, s_pct_hi 3.5)","Sulfur balance with complete conversion to SO2 and no control, as the inventory books it"
 parameter urea_prill_nh3_kg_t,0.43,kg NH3 per t urea,screening,"AP-42 Table 8.2-1, non-fluidized bed prilling, agricultural grade, uncontrolled 0.43 kg/Mg",
-parameter urea_prill_pm25_fraction,0.79,fraction of PM,screening,"AP-42 Table 8.2-2, non-fluidized bed prilling, agricultural grade: 79% of mass at or below 2.5 um",
-parameter urea_prill_pm_kg_t,derived,kg PM per t urea,screening,"AP-42 Section 8.2 Table 8.2-1, non-fluidized bed prilling, agricultural grade: controlled 0.032, uncontrolled 1.9 kg/Mg (data/raw/epa_ap42/ap42_c08s02_urea.pdf)",Whether the two plants' prill towers are scrubbed is not documented in the holdings; the range spans both states. That t
+parameter urea_prill_pm25_fraction,0.79,fraction of PM,screening,"AP-42 Table 8.2-2 (UNCONTROLLED particle size data), non-fluidized bed prilling, agricultural grade: 79% of mass at or below 2.5 um",Applied to the uncontrolled state (PC1) only
+parameter urea_prill_pm_controlled_kg_t,0.032,kg PM per t urea,screening,"AP-42 Section 8.2 Table 8.2-1, non-fluidized bed prilling, agricultural grade, controlled 0.032 kg/Mg","Baseline PC2: total PM only; AP-42 prints no controlled size distribution, so PM2.5 is NE in this state"
+parameter urea_prill_pm_uncontrolled_kg_t,1.9,kg PM per t urea,screening,"AP-42 Section 8.2 Table 8.2-1, non-fluidized bed prilling, agricultural grade, uncontrolled 1.9 kg/Mg (data/raw/epa_ap42/ap42_c08s02_urea.pdf)",Baseline PC1. That the two plants PRILL rather than granulate is an assumption
 parameter urea_solution_nh3_kg_t,9.23,kg NH3 per t urea,screening,"AP-42 Table 8.2-1, solution formation and concentration, uncontrolled 9.23 kg/Mg; EPA test range 4.01-14.45",
 parameter wtt_coal,16.46,kg CO2e per GJ(NCV),literature_proxy,UK DESNZ 2024 WTT- fuels: Coal (electricity generation) 0.05925 kg CO2e/kWh (Net CV) = 16.46 kg/GJ,Mining and shipping of displaced imported coal and of the exporter's gasifier coal. +/-30% assumed
 parameter wtt_fuel_oil,17.48,kg CO2e per GJ(NCV),literature_proxy,UK DESNZ 2024 WTT- fuels: Fuel oil 0.06291 kg CO2e/kWh (Net CV) = 17.48 kg/GJ,"Refining and supply of the displaced furnace oil, treated as imported. +/-30% assumed"
 parameter wtt_lng,20.04,kg CO2e per GJ(NCV),literature_proxy,"UK DESNZ GHG conversion factors 2024, full set, sheet WTT- fuels: LNG 0.07214 kg CO2e/kWh (Net CV) = 20.04 kg/GJ (data/raw/desnz/ghg-conversion-factors-2024-full_set_v1_1.xlsx); AR5 GWP100","Liquefaction, shipping and upstream of LNG delivered to the UK, a proxy for Pakistan's Qatari LNG. +/-30% is an ASSUMPTI"
-parameter wtt_natural_gas,9.3,kg CO2e per GJ(NCV),literature_proxy,UK DESNZ 2024 WTT- fuels: Natural gas 0.03347 kg CO2e/kWh (Net CV) = 9.30 kg/GJ,Upstream of the exporter's pipeline gas under F1. +/-30% assumed
+parameter wtt_natural_gas,9.3,kg CO2e per GJ(NCV),literature_proxy,UK DESNZ 2024 WTT- fuels: Natural gas 0.03347 kg CO2e/kWh (Net CV) = 9.30 kg/GJ,"Upstream of the exporter's pipeline gas under F1: a UK blended-supply proxy (DESNZ methodology), not an exporter-specifi"
 air factor coal_boiler BC,2.2,% of PM2.5,screening,EMEP/EEA 2023 1.A.1 Table 3-11,air pollutants
 air factor coal_boiler CO,8.7,g/GJ,screening,EMEP/EEA 2023 1.A.1 Table 3-11,air pollutants
 air factor coal_boiler NH3,,,NE,no factor printed,air pollutants

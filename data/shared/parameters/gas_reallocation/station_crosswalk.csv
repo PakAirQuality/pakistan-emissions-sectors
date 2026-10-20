@@ -1,0 +1,46 @@
+# GAS-REALLOCATION APPLICATION: ONE ROW PER POWER STATION, JOINING ITS LABELS ACROSS THE THREE RECORDS IT IS IN.
+# WHY. The SoIR station ledger (plant_fuel_ledger.csv) and the SoIR heat-rate tables (plant_heat_rates.csv) label
+# several stations differently (NPPMCL (HBS) / NPPMCL (Haveli Bahadur Shah); Punjab Thermal / Punjab Thermal Power;
+# Liberty Power Tech. / Liberty Tech.), and the GEM tracker names them again differently (Trimmu = Punjab Thermal).
+# Until 2026-10-21 the application matched labels exactly, so HBS lost its fuel record and Punjab Thermal its
+# heat rate (found by an external audit). Every join now goes through this table, and a station whose declared
+# label joins nothing fails tests/test_gas_reallocation.py.
+# pathway: R1/R2 receiving, D1-D3 displaced, excluded = not a receiver (reason in eligibility_evidence).
+# network_eligible (receiving rows only): yes if the station burned RLNG in FY2023-24 (SoIR ledger) and so takes gas
+# from the SNGPL network; no if its gas comes on a dedicated field line (OGRA SoRPI 2023-24 Table 3.21) or the
+# station is outside the inventory's power boundary (K-Electric, excluded from the reference grid).
+# heat_rate_fuel: the fuel_column value of the heat-rate row to use; blank = the row with an empty fuel_column.
+# gem_plants: GEM gas/oil tracker plant names whose operating units give the station capacity (receiving rows).
+station,pathway,ledger_label,ledger_fuel,heat_rate_label,heat_rate_fuel,gem_plants,network_eligible,eligibility_evidence
+Balloki,R1,NPPMCL (Balloki),RLNG,NPPMCL (Balloki),,Balloki power station,yes,FY2023-24 fuel RLNG (SoIR ledger)
+Haveli Bahadur Shah,R1,NPPMCL (HBS),RLNG,NPPMCL (Haveli Bahadur Shah),,Haveli Bahadur Shah (HBS) power station,yes,FY2023-24 fuel RLNG (SoIR ledger)
+Bhikki,R1,QATPL (Bhikki),RLNG,QATPL (Bhikki),,Bhikki power station,yes,FY2023-24 fuel RLNG (SoIR ledger)
+Punjab Thermal (Trimmu),R1,Punjab Thermal,RLNG,Punjab Thermal Power,,Trimmu power station,yes,FY2023-24 fuel RLNG (SoIR ledger); GEM names it Trimmu
+Orient,R2,Orient,RLNG,Orient,Gas,Orient power station,yes,FY2023-24 fuel RLNG (SoIR ledger); the HSD heat-rate row is not used
+Saif,R2,Saif,RLNG,Saif,Gas,Saif power station,yes,FY2023-24 fuel RLNG (SoIR ledger); the HSD heat-rate row is not used
+Sapphire Electric,R2,Sapphire Electric,RLNG,Sapphire Electric,Gas,Sapphire Electric power station,yes,FY2023-24 fuel RLNG (SoIR ledger); the HSD heat-rate row is not used
+Halmore,R2,Halmore,RLNG,Halmore,Gas,Halmore power station,yes,FY2023-24 fuel RLNG (SoIR ledger); net efficiency derived from the printed net heat rate (blank percentage)
+Rousch,R2,Rousch,RLNG,Rousch,,Rousch power station,yes,FY2023-24 fuel RLNG (SoIR ledger)
+Fauji Kabirwala,R2,Fauji Kabirwala,RLNG,Fauji Kabirwala,,Fauji Kabirwala power station,yes,"FY2023-24 fuel RLNG (SoIR ledger), although OGRA Table 3.21 also lists a dedicated Nandpur-Panjpir line to FKPCL"
+Nandipur,R2,TPS Nandipur (GENCO-III),RLNG,(GENCO-III) TPS Nandipur (GENCO-III),,Nandipur power station,yes,FY2023-24 fuel RLNG (SoIR ledger); fuel printed in MMCFT
+Uch,excluded,Uch,Gas,Uch,,,no,OGRA SoRPI 2023-24 Table 3.21: OGDCL Uch field to Uch Power Plant (dedicated); Table 3.3 OGDCL sales to Uch Power and Uch-II
+Uch-II,excluded,Uch-II,Gas,Uch-II,,,no,OGRA SoRPI 2023-24 Table 3.21 and Table 3.3 (dedicated Uch field gas)
+Foundation,excluded,Foundation,Gas,Foundation,,,no,"OGRA SoRPI 2023-24 Table 3.21: Mari to Foundation Power (Dhariki); s3.2.8 'low BTU gas, supplied from Mari'"
+Guddu (Units 14-16),excluded,TPS Guddu (Units 14-16) (GENCO-II),Gas,TPS Guddu (Units 14-16) (GENCO-II),,,no,"OGRA SoRPI 2023-24 Table 3.21: Mari and Kandhkot to Guddu; Table 3.7: about 97% dedicated field gas"
+Guddu (Units 5-10),excluded,TPS Guddu (Units 5-10) (GENCO-II),Gas,TPS Guddu (Units 5-10) (GENCO-II),,,no,"OGRA SoRPI 2023-24 Table 3.21: Mari and Kandhkot to Guddu (the station Guddu 14-16 shares)"
+Engro Qadirpur,excluded,Engro Powergen. Qadirpur,Gas,Engro Gen. Qadirpur,,,no,"OGRA SoRPI 2023-24 Table 3.8: Qadirpur field gas allocated to the station; indigenous field allocation, not network RLNG"
+Liberty Daharki,excluded,Liberty Daharki,Gas,Liberty Daharki,,,no,"OGRA SoRPI 2023-24 independent-system supply table (OGDCL Qadirpur, LPL); indigenous field allocation"
+Atlas,D1,Atlas,RFO,Atlas,,,,
+Attock Gen.,D1,Attock Gen.,RFO,Attock Gen.,,,,
+Kohinoor Energy,D1,Kohinoor Energy,RFO,Kohinoor Energy,,,,
+Liberty Power Tech,D1,Liberty Power Tech.,RFO,Liberty Tech.,,,,labels differ between the ledger and the heat-rate table
+Narowal Energy,D1,Narowal Energy,RFO,Narowal Energy,,,,
+Nishat,D1,Nishat,RFO,Nishat,,,,
+Nishat Chunian,D1,Nishat Chunian,RFO,Nishat Chunian,,,,
+Lal Pir,D2,Lal Pir,RFO,Lal Pir,,,,
+Pak Gen.,D2,Pak Gen.,RFO,Pak Gen.,,,,
+Saba,D2,Saba,RFO,Saba,,,,
+Muzaffargarh,D2,TPS Muzaffargarh (GENCO-III),RFO,TPS Muzaffargarh (GENCO-III),,,,
+China Power Hub,D3,China Power Hub,Coal imported,China Power Hub,,,,
+Sahiwal,D3,Huaneng Shandong Ruyi (Sahiwal Imported Coal),Coal imported,Huaneng Shandong Ruyi (Sahiwal Imported Coal),,,,the SoIR prints only a gross heat rate for Sahiwal; it enters the ledger reading and its generation weight only
+Port Qasim,D3,Port Qasim Electric Power,Coal imported,Port Qasim Electric Power,,,,
