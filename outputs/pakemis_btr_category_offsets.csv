@@ -1,0 +1,25 @@
+# Signed category differences, PakEmis minus BTR1, FY2020-21; Mt CO2e, AR5 family.
+# Arithmetic uses the comparison table's displayed values (0.001 Mt); BTR inputs are rounded.
+# Only nonoverlapping exact and aggregate crosswalk rows; scope-gap, one-sided,
+# out-of-scope and restated rows are excluded. Aggregate allocation caveats still apply.
+# The total row sums positive, negative, net and absolute category differences separately.
+# Absolute differences describe disagreement, not estimation error, accuracy or uncertainty.
+# BTR is not independent ground truth; uniform-28 is a PakEmis-only CH4 sensitivity.
+period_id,configuration_id,gwp_basis,row_type,subject,tier,btr_codes,pakemis_codes,btr_Mt_co2e,pakemis_Mt_co2e,difference_Mt_co2e,positive_difference_Mt_co2e,negative_difference_Mt_co2e,absolute_difference_Mt_co2e,difference_Mt_co2e_ch4_uniform_28,note
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Public electricity and heat,exact,1.A.1,1.A.1.a,48.87,55.293,6.423,6.423,0.0,6.423,6.421,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Manufacturing and construction,exact,1.A.2,1.A.2,72.23,61.968,-10.262,0.0,-10.262,10.262,-10.273,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Transport,aggregate,1.A.3,1.A.3.a+1.A.3.b+1.A.3.c+1.A.4.c+1.A.2/1.A.4.c,51.01,52.297,1.287,1.287,0.0,1.287,1.253,"the BTR publishes 1.A.3 as one line; this inventory aggregates its transport allocation, including off-road 1.A.4.c and the unresolved 1.A.2/1.A.4.c share. This is a subject-level comparison conditional on that allocation, not an exact code-boundary match"
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Oil and natural gas fugitives,exact,1.B.2,1.B.2,3.64,25.144,21.504,21.504,0.0,21.504,19.895,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Cement production,exact,2.A.1,2.A.1,25.76,26.731,0.971,0.971,0.0,0.971,0.971,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Ammonia production,exact,2.B.1,2.B.1,3.02,3.107,0.087,0.087,0.0,0.087,0.087,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Lubricant use,exact,2.D.1,2.D.1,0.22,0.095,-0.125,0.0,-0.125,0.125,-0.125,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Enteric fermentation,exact,3.A.1,3.A.1,112.83,138.209,25.379,25.379,0.0,25.379,25.379,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Manure management (CH4 and direct N2O),exact,3.A.2,3.A.2,17.31,17.334,0.024,0.024,0.0,0.024,0.024,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Indirect N2O from manure management,exact,3.C.5,3.C.6,4.32,1.267,-3.053,0.0,-3.053,3.053,-3.053,"the BTR codes this 3.C.5; IPCC 2006 books indirect MANURE N2O at 3.C.6 and reserves 3.C.5 for indirect SOILS N2O, so a code join here compares manure against soil"
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Urea application,exact,3.C.2,3.C.3,4.43,4.733,0.303,0.303,0.0,0.303,0.303,"the BTR codes urea 3.C.2; IPCC 2006 Table 8.2 uses 3.C.2 for Liming and 3.C.3 for Urea Application, so this pair is one code apart on the same quantity"
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Managed soils,aggregate,3.C.3+3.C.4,3.C.4+3.C.5,58.05,26.526,-31.524,0.0,-31.524,31.524,-31.524,"direct plus indirect managed-soil N2O; this is an aggregate comparison and does not attribute differences to activity data, nitrogen routing, or emission factors"
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Rice cultivation,exact,3.D,3.C.7,12.0,15.174,3.174,3.174,0.0,3.174,3.174,the BTR books rice at 3.D; PakEmis follows IPCC 2006 with 3.C.7. A code-only join does not identify the same process
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Solid waste disposal,exact,4.A,4.A,17.52,8.528,-8.992,0.0,-8.992,8.992,-8.992,"read with the solid-waste-fate row below: disposal and burning are related fates, and this category comparison alone does not identify the cause of a difference"
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Open burning of waste,exact,4.C.2,4.C.2,0.2,3.548,3.348,3.348,0.0,3.348,3.348,read with the solid-waste-fate row below before quoting this
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,category,Domestic wastewater,exact,4.D.1,4.D.1,12.4,22.195,9.795,9.795,0.0,9.795,9.795,
+FY2020-21,S_TAN,AR5 family; CH4 convention unresolved,total,TOTAL on exact and aggregate crosswalk categories,total,,,443.81,462.149,18.339,72.295,-53.956,126.251,16.683,"positive plus negative differences equal the net difference; their absolute magnitudes sum to absolute category disagreement. This is an arithmetic decomposition, not a validation score or causal attribution"

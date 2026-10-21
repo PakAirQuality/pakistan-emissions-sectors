@@ -7,6 +7,23 @@ current national figures are the manifest's.
 
 ## [Unreleased]
 
+### National contribution evidence and benchmark repairs
+
+- Added ten source-linked national/application conclusions, with exact input hashes,
+  bounded robustness statements and the next empirical evidence needed for each.
+- Corrected the BTR comparable subtotal to exclude scope-gap and overlapping rows;
+  published positive/negative category offsets and a figure instead of treating
+  close national totals as independent validation.
+- Recomputed managed-soils factor substitutions from the current engine. Added an
+  explicitly rounded public FAOSTAT comparator snapshot; removed unsupported
+  nitrogen-flow agreement and causal residual explanations.
+- Repaired the household PM2.5 comparison: LEAP/EMEP 2019, rounded implied endpoint,
+  unadjusted discrepancy first, and crop-residue subtraction only as an unverified
+  boundary scenario. Refreshed dependent metadata without re-ingesting the CRT.
+- Added a primary-source precedent review and a concrete cooking–manure data gate.
+- Added optional `contribution-evidence`, `contribution-figures` and
+  `contribution-check` targets. National inventory totals and default build are unchanged.
+
 ### Three inventory defects the gas audit exposed, fixed (no reference total moves)
 
 **The field-application dung variant now volatilises the nitrogen it adds.**

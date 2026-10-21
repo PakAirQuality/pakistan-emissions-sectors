@@ -1,36 +1,41 @@
-# FAOSTAT'S MANAGED SOILS IS HALF THIS INVENTORY'S, AND THE NITROGEN AGREES
-#
-# row_kind=activity    a nitrogen flow both compilations publish, compared directly. These
-#                      are the rows that matter: if they agree, no difference in the totals
-#                      can be attributed to the nitrogen.
-# row_kind=pool        this inventory's managed-soils emissions by nitrogen pool, against
-#                      FAOSTAT's four item codes, which map onto them one-to-one.
-# row_kind=attribution what the gap between the two totals is made of.
-#
-# The manuscript used to attribute the difference to FAOSTAT's synthetic-fertiliser
-# treatment. The synthetic fertiliser agrees to 0.9 per cent; see the module docstring.
+# PAKEMIS MANAGED SOILS IS ABOUT HALF THE RETAINED FAOSTAT COMPARATOR
+# Method comparison; not independent validation or a complete FAOSTAT reconstruction.
+# PakEmis FY2023-24 flows include a 2024 census/projection herd; FAOSTAT emissions
+# and fertiliser are CY2023, while the stock diagnostic is CY2024. No year alignment
+# or harmonisation of animal coverage, excretion, routing or residue inputs is implied.
+# row_kind=activity: synthetic-N comparison; stock_diagnostic: species heads, not N.
+# row_kind=nitrogen_pool: modelled PakEmis N inputs; no FAOSTAT pool-N values held here.
+# row_kind=pool/pool_leg: current engine emissions by broad source and direct/indirect leg.
+# row_kind=attribution: conditional direct-factor substitutions at fixed N pools.
+# FAOSTAT values: rounded public snapshot transcribed from the table at 41b5636;
+# four 4-dp Mt values sum to 58.4997 Mt. Original raw-archive precision is unavailable.
 row_kind,flow,basis,pakemis,faostat,unit,pakemis_over_faostat,verdict
-activity,synthetic fertiliser nitrogen,"PakEmis: NFDC offtake, the ledger's own activity for FY2023-24. FAOSTAT: fertilizer_n historical panel, calendar 2023",3775000,3808775,t N,0.991,AGREES to 0.9 per cent - the flow the manuscript attributed the difference to
-activity,livestock head: cattle,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",55862560,57541000,head,0.971,FAOSTAT higher by 3 per cent
-activity,livestock head: buffalo,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",47738368,46310000,head,1.031,PakEmis higher by 3 per cent
-activity,livestock head: sheep,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",44584926,32731000,head,1.362,PakEmis higher by 36 per cent
-activity,livestock head: goats,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",95827177,87035000,head,1.101,PakEmis higher by 10 per cent
-activity,livestock head: camels,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",1511340,1163000,head,1.300,PakEmis higher by 30 per cent
-activity,livestock head: poultry,"PakEmis: the census re-base. FAOSTAT: stocks panel, calendar 2024",2065000000,2064210000,head,1.000,PakEmis higher by 0 per cent
-activity,livestock head: all six species,summed over the species both carry,2310524371,2288990000,head,1.009,"AGREES to 0.9 per cent, and the residual runs the WRONG WAY for the headline: more animals means more excreted nitrogen, not less"
-pool,manure on pasture,"PakEmis pool against FAOSTAT item 5063, CO2eq AR5, calendar 2023",6.7137,27.2912,Mt CO2e AR5,0.246,"+20.577 Mt, 68.6 per cent of the gap"
-pool,synthetic fertiliser,"PakEmis pool against FAOSTAT item 5061, CO2eq AR5, calendar 2023",12.2477,21.0156,Mt CO2e AR5,0.583,"+8.768 Mt, 29.2 per cent of the gap"
-pool,crop residues,"PakEmis pool against FAOSTAT item 5064, CO2eq AR5, calendar 2023",0.6339,3.3284,Mt CO2e AR5,0.190,"+2.694 Mt, 9.0 per cent of the gap"
-pool,manure applied to soils,"PakEmis pool against FAOSTAT item 5062, CO2eq AR5, calendar 2023",8.8984,6.8645,Mt CO2e AR5,1.296,"-2.034 Mt, -6.8 per cent of the gap - PakEmis is HIGHER here, which the factor vintage cannot explain and the nitrogen partition can"
-pool_leg,synthetic fertiliser (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,7.6086,,Mt CO2e AR5,,
-pool_leg,manure applied to soils (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,5.2470,,Mt CO2e AR5,,
-pool_leg,synthetic fertiliser (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,4.6392,,Mt CO2e AR5,,
-pool_leg,manure applied to soils (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,3.6513,,Mt CO2e AR5,,
-pool_leg,manure on pasture (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,3.5205,,Mt CO2e AR5,,
-pool_leg,manure on pasture (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,3.1931,,Mt CO2e AR5,,
-pool_leg,crop residues (direct),PakEmis only; FAOSTAT does not split its items into direct and indirect,0.4457,,Mt CO2e AR5,,
-pool_leg,crop residues (indirect),PakEmis only; FAOSTAT does not split its items into direct and indirect,0.1883,,Mt CO2e AR5,,
-attribution,"managed soils, as reported",PakEmis main case against FAOSTAT,28.5300,58.5000,Mt CO2e AR5,0.488,the headline ratio; the gap to account for is 29.97 Mt
-attribution,"managed soils, at FAOSTAT's EF1 vintage",the repository's own named scenario: 2006 aggregate EF1 0.010 in place of the 2019 Refinement's 0.005 for dry climates,40.4300,58.5000,Mt CO2e AR5,0.691,"closes 11.90 Mt, 40 per cent of the gap - the single largest identified term"
-attribution,"managed soils, at BOTH of FAOSTAT's 2006 direct factors","the EF1 scenario above plus the pasture factor at its 2006 aggregate; the two are DISJOINT - EF1 scales synthetic fertiliser, organic manure and crop residues, EF3PRP scales the two pasture rows, and no subitem is in both sets",54.7200,58.5000,Mt CO2e AR5,0.935,"closes 26.19 Mt, 87 per cent of the gap. The comparator's direct-factor vintage is therefore almost the whole story; what is left is 3.78 Mt in the indirect factors (EF4 and EF5 also changed between vintages) and the nitrogen partition"
-attribution,unexplained after activity and EF1 vintage,neither nitrogen nor the EF1 vintage; localised by pool since the four FAOSTAT items were acquired (2026-09-30),18.0700,,Mt CO2e AR5,,"LOCALISED: manure on pasture carries +20.577 Mt, 68.6 per cent of the whole gap, and its factor is the same climate disaggregation - EF3PRP for cattle 0.002 dry here against the 2006 default 0.02. The EF1 scenario above moves only the EF1 pools, which is why it left a remainder this size"
+activity,synthetic fertiliser nitrogen,PakEmis NFDC offtake FY2023-24; FAOSTAT fertiliser panel CY2023; shared national statistics may underlie both compilations,3775000.000000,3808775.000000,t N,0.991132,"Difference -0.887 per cent; this supports a limited synthetic-N consistency check, not agreement of manure/residue N pools or independent accuracy validation"
+stock_diagnostic,livestock head: cattle,"PakEmis census_enumeration (FY2023-24; pbs_agricultural_census_2024_table6_national); FAOSTAT stock CY2024, not the CY2023 emissions input",55862560.000000,57541000.000000,head,0.970831,Difference -2.917 per cent; head counts do not establish excreted N or its routing
+stock_diagnostic,livestock head: buffalo,"PakEmis census_enumeration (FY2023-24; pbs_agricultural_census_2024_table6_national); FAOSTAT stock CY2024, not the CY2023 emissions input",47738368.000000,46310000.000000,head,1.030844,Difference 3.084 per cent; head counts do not establish excreted N or its routing
+stock_diagnostic,livestock head: sheep,"PakEmis census_enumeration (FY2023-24; pbs_agricultural_census_2024_table6_national); FAOSTAT stock CY2024, not the CY2023 emissions input",44584926.000000,32731000.000000,head,1.362162,Difference 36.216 per cent; head counts do not establish excreted N or its routing
+stock_diagnostic,livestock head: goats,"PakEmis census_enumeration (FY2023-24; pbs_agricultural_census_2024_table6_national); FAOSTAT stock CY2024, not the CY2023 emissions input",95827177.000000,87035000.000000,head,1.101019,Difference 10.102 per cent; head counts do not establish excreted N or its routing
+stock_diagnostic,livestock head: camels,"PakEmis census_enumeration (FY2023-24; pbs_agricultural_census_2024_table6_national); FAOSTAT stock CY2024, not the CY2023 emissions input",1511340.000000,1163000.000000,head,1.299518,Difference 29.952 per cent; head counts do not establish excreted N or its routing
+stock_diagnostic,livestock head: poultry,"PakEmis economic_survey_projection (FY2023-24; pes_2023_24_table_2_8_poultry); FAOSTAT stock CY2024, not the CY2023 emissions input",2065000000.000000,2064210000.000000,head,1.000383,Difference 0.038 per cent; head counts do not establish excreted N or its routing
+nitrogen_pool,FSN synthetic N,"Current engine input to managed soils, at its mixed FY2023-24/census reference basis",3775000.000000,,t N,,PakEmis modelled pool; corresponding FAOSTAT pool-N activity not held in this comparison
+nitrogen_pool,FON applied manure N,"Current engine input to managed soils, at its mixed FY2023-24/census reference basis",2520007.867050,,t N,,PakEmis modelled pool; corresponding FAOSTAT pool-N activity not held in this comparison
+nitrogen_pool,FCR returned crop-residue N,"Current engine input to managed soils, at its mixed FY2023-24/census reference basis",214050.111360,,t N,,PakEmis modelled pool; corresponding FAOSTAT pool-N activity not held in this comparison
+nitrogen_pool,FPRP cattle-type pasture N,"Current engine input to managed soils, at its mixed FY2023-24/census reference basis",1092912.432943,,t N,,PakEmis modelled pool; corresponding FAOSTAT pool-N activity not held in this comparison
+nitrogen_pool,FPRP sheep/goat/other pasture N,"Current engine input to managed soils, at its mixed FY2023-24/census reference basis",2089430.830308,,t N,,PakEmis modelled pool; corresponding FAOSTAT pool-N activity not held in this comparison
+pool,synthetic fertiliser,PakEmis current reference basis; FAOSTAT item 5061 CY2023. Broad category mapping only; detailed activity/coverage not harmonised,12.247742,21.015600,Mt CO2e AR5,0.582793,"FAOSTAT minus PakEmis = +8.767858 Mt; emissions alone cannot identify whether N quantity, routing, factors, year or coverage caused this difference"
+pool,manure applied to soils,PakEmis current reference basis; FAOSTAT item 5062 CY2023. Broad category mapping only; detailed activity/coverage not harmonised,8.898363,6.864500,Mt CO2e AR5,1.296287,"FAOSTAT minus PakEmis = -2.033863 Mt; emissions alone cannot identify whether N quantity, routing, factors, year or coverage caused this difference"
+pool,manure on pasture,PakEmis current reference basis; FAOSTAT item 5063 CY2023. Broad category mapping only; detailed activity/coverage not harmonised,6.713682,27.291200,Mt CO2e AR5,0.246002,"FAOSTAT minus PakEmis = +20.577518 Mt; emissions alone cannot identify whether N quantity, routing, factors, year or coverage caused this difference"
+pool,crop residues,PakEmis current reference basis; FAOSTAT item 5064 CY2023. Broad category mapping only; detailed activity/coverage not harmonised,0.633939,3.328400,Mt CO2e AR5,0.190464,"FAOSTAT minus PakEmis = +2.694461 Mt; emissions alone cannot identify whether N quantity, routing, factors, year or coverage caused this difference"
+pool_leg,crop residues (direct),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,0.445683,,Mt CO2e AR5,,
+pool_leg,crop residues (indirect),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,0.188256,,Mt CO2e AR5,,
+pool_leg,manure applied to soils (direct),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,5.247016,,Mt CO2e AR5,,
+pool_leg,manure applied to soils (indirect),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,3.651347,,Mt CO2e AR5,,
+pool_leg,manure on pasture (direct),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,3.520536,,Mt CO2e AR5,,
+pool_leg,manure on pasture (indirect),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,3.193146,,Mt CO2e AR5,,
+pool_leg,synthetic fertiliser (direct),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,7.608566,,Mt CO2e AR5,,
+pool_leg,synthetic fertiliser (indirect),Current engine; no direct/indirect split held for the retained FAOSTAT comparator,4.639176,,Mt CO2e AR5,,
+attribution,"managed soils, current engine",Selected case: current. EF1 0.005000 -> 0.010000; EF3PRP cattle-type 0.002000 -> 0.020000; other 0.003000 -> 0.010000. Targets read from registered aggregate factors. Rice EF1FR remains 0.004000; N pools and all indirect terms remain current. FY2023-24 reference against CY2023 comparator,28.493727,58.499700,Mt CO2e AR5,0.487075,Fresh engine total equals the sum of the four PakEmis pool rows; difference 30.005973 Mt
+attribution,"managed soils, EF1-only substitution",Selected case: ef1. EF1 0.005000 -> 0.010000; EF3PRP cattle-type 0.002000 -> 0.020000; other 0.003000 -> 0.010000. Targets read from registered aggregate factors. Rice EF1FR remains 0.004000; N pools and all indirect terms remain current. FY2023-24 reference against CY2023 comparator,40.788901,58.499700,Mt CO2e AR5,0.697250,Conditional substitution changes PakEmis by +12.295174 Mt (40.976 per cent of the baseline difference); this is not causal attribution or independent validation
+attribution,"managed soils, EF3PRP-only substitution",Selected case: ef3prp. EF1 0.005000 -> 0.010000; EF3PRP cattle-type 0.002000 -> 0.020000; other 0.003000 -> 0.010000. Targets read from registered aggregate factors. Rice EF1FR remains 0.004000; N pools and all indirect terms remain current. FY2023-24 reference against CY2023 comparator,42.776577,58.499700,Mt CO2e AR5,0.731227,Conditional substitution changes PakEmis by +14.282850 Mt (47.600 per cent of the baseline difference); this is not causal attribution or independent validation
+attribution,"managed soils, EF1 + EF3PRP substitution",Selected case: both. EF1 0.005000 -> 0.010000; EF3PRP cattle-type 0.002000 -> 0.020000; other 0.003000 -> 0.010000. Targets read from registered aggregate factors. Rice EF1FR remains 0.004000; N pools and all indirect terms remain current. FY2023-24 reference against CY2023 comparator,55.071751,58.499700,Mt CO2e AR5,0.941402,Conditional substitution changes PakEmis by +26.578024 Mt (88.576 per cent of the baseline difference); this is not causal attribution or independent validation
+attribution,unresolved residual after direct-factor substitutions,Retained FAOSTAT total minus the combined conditional case,3.427949,,Mt CO2e AR5,,"Unresolved combination of activity, N routing, other factors, detailed coverage and period differences; their individual contributions have not been identified"

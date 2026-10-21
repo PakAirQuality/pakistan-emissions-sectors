@@ -970,7 +970,8 @@ PHASES = [
           writes=("outputs/pakemis_fgas_leak_rate_adjudication.csv",),
           reads=("outputs/ippu_hfc_species_bank.csv",)),
     Phase("BTR comparison (year-matched)", "scripts/build_btr_comparison.py", True,
-          writes=("outputs/pakemis_btr_comparison.csv",),
+          writes=("outputs/pakemis_btr_comparison.csv",
+                  "outputs/pakemis_btr_category_offsets.csv"),
           reads=("outputs/pakemis_atomic_annual.csv",
                  "data/shared/evidence/btr1_national_inventory.csv")),
     Phase("Cement activity sources and their overlap", "pkinv.report.cement_activity_sources", True,
@@ -2136,17 +2137,17 @@ PHASES = [
                  # each written by its own sector phase above; data/verification_chain.csv is
                  # the list, and tests/test_derivation_chain.py fails if one goes missing.
                  "data/verification_chain.csv",)),
-    # FAOSTAT's managed soils against this inventory's, at the nitrogen FLOWS rather than
-    # the total - because the flows agree and the manuscript had attributed the difference
-    # to one of them. Placed here because it reads the activity-factor ledger the phase
-    # above writes; the EF1 scenario is `held:` because pkinv.eval.sensitivity_table is a
-    # Makefile target and no phase writes it.
+    # Managed-soils comparison reruns the small current engine and conditional
+    # factor substitutions. The four rounded comparator values are retained public
+    # evidence; no private raw archive or stale sensitivity output is required.
     Phase("FAOSTAT nitrogen flows",
           "pkinv.sectors.agriculture.faostat_nitrogen_flows", False,
           writes=("outputs/pakemis_faostat_nitrogen_flows.csv",),
-          reads=("outputs/agriculture_activity_factor_ledger.csv",
-                 "held:outputs/eval/sensitivity.csv",
-                 "data/benchmarks.csv",
+          reads=("data/emission_factors.csv", "data/parameters.csv",
+                 "data/mms_shares.csv", "data/residue_params.csv", "data/burning_params.csv",
+                 "data/activity/livestock_2024.csv", "data/activity/crops_2024.csv",
+                 "data/activity/fertilizer_2024.csv",
+                 "data/sectors/agriculture/evidence/faostat_soils_comparator_snapshot.csv",
                  "data/activity/historical/fertilizer_n.csv",
                  "data/activity/historical/livestock_stocks.csv",)),
     # rc53: and it runs AFTER every phase it grades. Its freshness gate compares each cited

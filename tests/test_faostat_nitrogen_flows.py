@@ -1,202 +1,158 @@
-"""The flows agree, so the manuscript may not attribute the gap to the flows.
+"""Current-engine closure and scope guards for a conditional method comparison.
 
-WHY THIS TEST EXISTS. Section 10 explained managed soils at 0.49 of FAOSTAT by saying
-FAOSTAT "applies a synthetic-fertiliser default to a national nitrogen supply that this
-inventory tracks through an explicit ledger". The sentence pointed at the fertiliser, and the
-fertiliser is the one thing the two compilations agree on - to 0.9 per cent. So did the
-livestock, to 0.9 per cent, with this inventory counting MORE sheep, goats and camels, which
-is the wrong direction for the headline.
-
-This holds the facts the corrected sentence rests on: the two activity flows agree, the pools
-map one-to-one so none of the gap is scope, the EF1 vintage accounts for a stated fraction,
-and - since FAOSTAT's four items were acquired on 2026-09-30 - the remainder is localised to
-pasture deposition rather than left as a residual. One pool runs the other way, which is the
-only place the two compilations disagree about where the nitrogen goes rather than what
-happens to it, and the paragraph says so.
-
-A guard on an agreement is unusual and deliberate. The risk here is not that the numbers
-drift - it is that a later round reads the 0.49 ratio, reaches for the nearest explanation
-and writes the wrong one again. If the flows ever stop agreeing that is a real finding and
-this test should fail loudly, because the whole paragraph then needs rewriting.
+These tests establish arithmetic and provenance contracts, not an expected
+percentage of agreement. A changed scientific result must not fail because it
+contradicts the previous manuscript's preferred interpretation.
 """
+import copy
 import os
-import subprocess
 import sys
 import unittest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
-from pkinv.core.io import read_rows                                      # noqa: E402
-from _support import require_layers  # noqa: E402
-
-OUT = os.path.join(ROOT, "outputs", "pakemis_faostat_nitrogen_flows.csv")
-
-# How close "agree" is. Two compilations built independently from the same national
-# statistics should land inside this; outside it, the activity is a live difference and the
-# attribution in Section 10 no longer holds.
-AGREE_PCT = 3.0
+from pkinv.core import gwp  # noqa: E402
+from pkinv.core.io import read_rows, table_text  # noqa: E402
+from pkinv.sectors.agriculture import faostat_nitrogen_flows as nf  # noqa: E402
+from pkinv.sectors.agriculture import run_inventory, soils  # noqa: E402
+from pkinv.sectors.agriculture.ef_library import InventoryData  # noqa: E402
 
 
-class TestTheNitrogenAgreesAndTheFactorsDoNot(unittest.TestCase):
+class TestConditionalDirectFactors(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        if not os.path.exists(OUT):
-            raise unittest.SkipTest("the nitrogen-flow comparison has not been built here")
-        cls.rows = read_rows(OUT, comments=True)
+        cls.data, cls.npools, cls.cases = nf.engine_cases()
+
+    def test_current_case_equals_full_inventory_engine(self):
+        expected = run_inventory.soils_total(run_inventory.build_components(self.data))
+        self.assertAlmostEqual(sum(self.cases["current"].values()), expected, places=12)
+
+    def test_substitutions_match_nitrogen_inputs_without_double_counting(self):
+        d, n = self.data, self.npools
+        conversion = soils.N2O_N_TO_N2O * gwp.GWP["AR5"]["N2O"] / 1e9
+        ef1_n = (d.fertilizer["nitrogen_N_offtake"]["value_t"] * 1000
+                 * (1 - d.p("rice_N_fraction")) + n["FON_N"] + soils.residue_N(d))
+        expected_ef1 = ef1_n * (d.efv("soils", "EF1_agg")
+                                - d.efv("soils", "EF1_dry")) * conversion
+        expected_prp = sum(n[pool] * (d.efv("soils", factor + "_agg")
+                                     - d.efv("soils", factor))
+                           for pool, factor in (("FPRP_cattle_N", "EF3PRP_cattle"),
+                                                ("FPRP_other_N", "EF3PRP_sheepgoat"))) * conversion
+        totals = {k: sum(v.values()) for k, v in self.cases.items()}
+        self.assertAlmostEqual(totals["ef1"] - totals["current"], expected_ef1, places=11)
+        self.assertAlmostEqual(totals["ef3prp"] - totals["current"], expected_prp, places=11)
+        self.assertAlmostEqual(totals["both"] - totals["current"],
+                               expected_ef1 + expected_prp, places=11)
+
+    def test_rice_and_all_indirect_terms_are_unchanged(self):
+        unaffected = [k for k in self.cases["current"] if "Indirect" in k or "rice EF1FR" in k]
+        self.assertEqual(len(unaffected), 10)
+        for case in ("ef1", "ef3prp", "both"):
+            for name in unaffected:
+                self.assertEqual(self.cases[case][name], self.cases["current"][name])
+        changed_ef1 = {k for k, v in self.cases["ef1"].items() if v != self.cases["current"][k]}
+        changed_prp = {k for k, v in self.cases["ef3prp"].items() if v != self.cases["current"][k]}
+        self.assertFalse(changed_ef1 & changed_prp)
+        self.assertEqual(len(changed_ef1), 3)
+        self.assertEqual(len(changed_prp), 2)
+
+    def test_current_and_target_factors_are_read_live_without_mutating_input(self):
+        d = copy.deepcopy(self.data)
+        d.ef[("soils", "EF1_dry")]["value"] = 0.007
+        d.ef[("soils", "EF1_agg")]["value"] = 0.012
+        d.ef[("soils", "EF3PRP_cattle")]["value"] = 0.004
+        d.ef[("soils", "EF3PRP_cattle_agg")]["value"] = 0.017
+        before = copy.deepcopy(d.__dict__)
+        _, _, cases = nf.engine_cases(d)
+        upland = "Direct N2O - synthetic fertiliser (upland)"
+        pasture = "Direct N2O - pasture deposition (cattle-type)"
+        self.assertAlmostEqual(cases["ef1"][upland] / cases["current"][upland], 0.012 / 0.007)
+        self.assertAlmostEqual(cases["ef3prp"][pasture] / cases["current"][pasture], 0.017 / 0.004)
+        self.assertEqual(d.__dict__, before)
+
+    def test_current_activity_is_read_live(self):
+        d = copy.deepcopy(self.data)
+        d.fertilizer["nitrogen_N_offtake"]["value_t"] *= 1.1
+        _, _, cases = nf.engine_cases(d)
+        for case in cases:
+            for label, value in cases[case].items():
+                expected = self.cases[case][label] * (1.1 if "synthetic" in label else 1)
+                self.assertAlmostEqual(value, expected, places=11)
+
+
+class TestComparatorInputs(unittest.TestCase):
+    def setUp(self):
+        self.rows = read_rows(nf.SNAPSHOT)
+
+    def test_snapshot_sum_and_declared_rounding(self):
+        self.assertAlmostEqual(sum(nf.comparator_pools(self.rows).values()), 58.4997, places=8)
+        self.assertEqual({r["source_kind"] for r in self.rows}, {"published_comparison_transcription"})
+        self.assertEqual({r["source_commit"] for r in self.rows},
+                         {"41b56365df9195d6a028a66630d0395b0d7c5de1"})
+
+    def test_duplicate_and_missing_items_are_rejected(self):
+        for rows in (self.rows + [self.rows[0]], self.rows[:-1]):
+            with self.assertRaises(ValueError):
+                nf.comparator_pools(rows)
+
+    def test_mismatched_metric_scope_and_nonfinite_values_are_rejected(self):
+        for field, value in (("area", "India"), ("year", "2024"), ("unit", "kt CO2e AR5"),
+                             ("element_code", "723114"), ("value_decimal_places", "6"),
+                             ("value", "nan"), ("value", "-1")):
+            rows = copy.deepcopy(self.rows)
+            rows[0][field] = value
+            with self.subTest(field=field, value=value), self.assertRaises(ValueError):
+                nf.comparator_pools(rows)
+
+    def test_ambiguous_or_absent_activity_year_is_rejected(self):
+        for rows in ([], [{"year": "2023"}, {"year": "2023"}]):
+            with self.assertRaises(ValueError):
+                nf._year_row(rows, "2023", "fertiliser")
+
+    def test_unknown_soil_component_cannot_disappear_from_comparison(self):
+        with self.assertRaises(ValueError):
+            nf._pool("Direct N2O - newly introduced source")
+
+
+class TestPublishedComparison(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.rows = nf.build()
         cls.by = {r["flow"]: r for r in cls.rows}
 
-    def _ratio(self, flow):
-        return float(self.by[flow]["pakemis_over_faostat"])
-
-    def test_synthetic_fertiliser_nitrogen_agrees(self):
-        r = self._ratio("synthetic fertiliser nitrogen")
-        self.assertLess(
-            abs(100 * (r - 1)), AGREE_PCT,
-            "synthetic fertiliser nitrogen no longer agrees (ratio %.3f). Section 10 says it "
-            "agrees to under a per cent and uses that to rule the fertiliser out as the "
-            "source of the managed-soils gap; if this has moved, that paragraph is wrong."
-            % r)
-
-    def test_the_shared_livestock_species_agree_in_total(self):
-        r = self._ratio("livestock head: all six species")
-        self.assertLess(
-            abs(100 * (r - 1)), AGREE_PCT,
-            "the six shared livestock species no longer agree in total (ratio %.3f)" % r)
-
-    def test_this_inventory_still_counts_more_small_ruminants(self):
-        """The direction matters: more animals is more excreted nitrogen, not less.
-
-        If this reversed, 'the residual runs the wrong way for the headline' would stop being
-        true and the argument would need a different leg.
-        """
-        for sp in ("sheep", "goats", "camels"):
-            r = self._ratio("livestock head: %s" % sp)
-            self.assertGreater(
-                r, 1.0,
-                "PakEmis no longer counts more %s than FAOSTAT (ratio %.3f); Section 10's "
-                "'wrong way for the headline' clause depends on it" % (sp, r))
-
-    def test_every_pool_maps_onto_a_faostat_item(self):
+    def test_pool_and_scenario_totals_close_at_published_precision(self):
         pools = [r for r in self.rows if r["row_kind"] == "pool"]
-        self.assertTrue(pools, "no pool rows: the scope check is the first thing to do")
-        unmapped = sorted(r["flow"] for r in pools if "(unmapped)" in r["basis"])
-        self.assertFalse(
-            unmapped,
-            "these managed-soils pools map onto no FAOSTAT item, so part of the gap IS "
-            "scope and Section 10's claim that none of it is would be false: %s" % unmapped)
+        current = self.by[nf.CASE_FLOWS["current"]]
+        self.assertAlmostEqual(sum(float(r["pakemis"]) for r in pools),
+                               float(current["pakemis"]), delta=2e-6)
+        self.assertAlmostEqual(sum(float(r["faostat"]) for r in pools),
+                               float(current["faostat"]), delta=2e-6)
+        both = float(self.by[nf.CASE_FLOWS["both"]]["pakemis"])
+        residual = float(self.by["unresolved residual after direct-factor substitutions"]["pakemis"])
+        self.assertAlmostEqual(both + residual, float(current["faostat"]), delta=1e-6)
+        for row in self.rows:
+            if row["row_kind"] == "pool":
+                legs = [float(r["pakemis"]) for r in self.rows if r["row_kind"] == "pool_leg"
+                        and r["flow"].startswith(row["flow"] + " (")]
+                self.assertAlmostEqual(sum(legs), float(row["pakemis"]), delta=1.1e-6)
 
-    def test_the_ef_vintage_accounts_for_a_stated_share_and_no_more(self):
-        main = float(self.by["managed soils, as reported"]["pakemis"])
-        fao = float(self.by["managed soils, as reported"]["faostat"])
-        ef = float(self.by["managed soils, at FAOSTAT's EF1 vintage"]["pakemis"])
-        rest = float(self.by["unexplained after activity and EF1 vintage"]["pakemis"])
-        self.assertGreater(ef, main, "FAOSTAT's EF1 vintage should raise this inventory")
-        self.assertLess(ef, fao,
-                        "the EF vintage alone should NOT reach FAOSTAT; if it does, the "
-                        "unexplained remainder has gone and the paragraph needs rewriting")
-        self.assertAlmostEqual(
-            rest, fao - ef, places=2,
-            msg="the declared remainder (%.2f) is not the gap left after the EF vintage "
-                "(%.2f); the attribution no longer adds up" % (rest, fao - ef))
+    def test_stock_comparison_is_not_labelled_nitrogen_agreement(self):
+        stocks = [r for r in self.rows if r["unit"] == "head"]
+        self.assertEqual(len(stocks), 6)
+        self.assertEqual({r["row_kind"] for r in stocks}, {"stock_diagnostic"})
+        self.assertNotIn("livestock head: all six species", self.by)
+        self.assertIn("economic_survey_projection", self.by["livestock head: poultry"]["basis"])
+        for row in stocks:
+            self.assertIn("not the CY2023 emissions input", row["basis"])
+        for row in self.rows:
+            if row["row_kind"] == "nitrogen_pool":
+                self.assertEqual(row["faostat"], "")
 
-    def test_the_remainder_is_localised_and_names_its_pool(self):
-        """This assertion was the opposite one until the items were acquired.
-
-        It used to require the verdict to read NOT LOCALISABLE, which was true while only
-        the SUM of FAOSTAT's four items was held. The acquisition made it false, and a
-        product still claiming a residual cannot be located after it has been is exactly
-        the stale-absence defect this repository keeps finding in itself.
-        """
-        v = self.by["unexplained after activity and EF1 vintage"]["verdict"]
-        self.assertIn("LOCALISED", v,
-                      "the remainder is no longer reported as localised: %r" % v[:120])
-        self.assertIn("pasture", v,
-                      "the verdict must name the pool that carries it: %r" % v[:120])
-
-    def test_the_acquired_extract_validates_against_what_was_already_held(self):
-        """The four items must sum to the benchmark the register already carried.
-
-        This is the only check that the acquired extract is the right file at all: the
-        benchmark row's 58.5 Mt came from this source before the items were acquired, so
-        the items summing to it is independent confirmation rather than a tautology.
-        """
-        pools = [r for r in self.rows if r["row_kind"] == "pool"]
-        self.assertEqual(len(pools), 4, "expected FAOSTAT's four managed-soils items")
-        total = sum(float(r["faostat"]) for r in pools)
-        reported = float(self.by["managed soils, as reported"]["faostat"])
-        self.assertAlmostEqual(
-            total, reported, places=2,
-            msg="the acquired items sum to %.3f Mt but the benchmark register carries "
-                "%.3f; either the extract is the wrong file or the register moved"
-                % (total, reported))
-
-    def test_the_residual_is_localised_to_pasture_deposition(self):
-        """The finding the acquisition bought, and the one Section 10 now states."""
-        pools = {r["flow"]: r for r in self.rows if r["row_kind"] == "pool"}
-        gaps = {k: float(v["faostat"]) - float(v["pakemis"]) for k, v in pools.items()}
-        biggest = max(gaps, key=gaps.get)
-        self.assertEqual(
-            biggest, "manure on pasture",
-            "the largest pool gap is no longer pasture deposition but %r; Section 10 says "
-            "two-thirds of the gap is pasture and that sentence would be wrong" % biggest)
-        share = 100 * gaps[biggest] / sum(gaps.values())
-        self.assertGreater(
-            share, 50.0,
-            "pasture deposition is now only %.1f per cent of the gap; 'two-thirds' in "
-            "Section 10 needs restating" % share)
-
-    def test_manure_applied_still_runs_the_other_way(self):
-        """The one pool the factor vintage cannot explain, and the paragraph says so."""
-        r = next(x for x in self.rows
-                 if x["row_kind"] == "pool" and x["flow"] == "manure applied to soils")
-        ratio = float(r["pakemis_over_faostat"])
-        self.assertGreater(
-            ratio, 1.0,
-            "PakEmis is no longer HIGHER than FAOSTAT on manure applied to soils (%.3f). "
-            "Section 10 uses that to separate a partition disagreement from a factor one."
-            % ratio)
-
-    def test_both_direct_factor_vintages_account_for_most_of_the_gap(self):
-        """The result the pasture scenario bought, and Section 10's strongest claim."""
-        main = float(self.by["managed soils, as reported"]["pakemis"])
-        fao = float(self.by["managed soils, as reported"]["faostat"])
-        both = float(self.by["managed soils, at BOTH of FAOSTAT's 2006 direct "
-                             "factors"]["pakemis"])
-        share = 100 * (both - main) / (fao - main)
-        self.assertGreater(
-            share, 80.0,
-            "the two 2006 direct factors now account for only %.0f per cent of the gap; "
-            "Section 10 says 87 and that sentence needs restating" % share)
-        self.assertLess(
-            both, fao,
-            "the two direct vintages now reach or exceed FAOSTAT (%.2f against %.2f), so "
-            "there is no remainder left for the indirect factors and the partition - which "
-            "Section 10 claims there is" % (both, fao))
-
-    def test_the_two_factor_scenarios_are_disjoint(self):
-        """Section 10 says no subitem belongs to both sets, and adds their effects.
-
-        If they ever overlapped, the combined figure would double-count and the 87 per cent
-        would be an overstatement rather than an addition.
-        """
-        from pkinv.eval import sensitivity_table as st
-        overlap = sorted(set(st.EF1_SUBITEMS) & set(st.EF3PRP_DEFAULT))
-        self.assertFalse(
-            overlap,
-            "these subitems are scaled by BOTH the EF1 and EF3PRP scenarios, so the "
-            "combined case double-counts them: %s" % overlap)
-
-    def test_the_shipped_file_matches_a_fresh_build(self):
-        require_layers("the FAOSTAT bulk archives")
-        r = subprocess.run(
-            [sys.executable, "-m", "pkinv.sectors.agriculture.faostat_nitrogen_flows",
-             "--check"],
-            capture_output=True, text=True, cwd=ROOT,
-            env=dict(os.environ, PYTHONPATH=os.path.join(ROOT, "src")))
-        self.assertEqual(r.returncode, 0,
-                         "the nitrogen-flow comparison is stale; rebuild it.\n%s%s"
-                         % (r.stdout, r.stderr))
+    def test_public_build_matches_shipped_bytes_without_private_archive(self):
+        expected = table_text(nf.FIELDS, self.rows, banner=nf.BANNER.splitlines())
+        with open(nf.OUT, encoding="utf-8", newline="") as handle:
+            self.assertEqual(handle.read(), expected)
 
 
 if __name__ == "__main__":

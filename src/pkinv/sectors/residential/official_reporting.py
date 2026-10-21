@@ -29,27 +29,33 @@ Everything is re-derived from the workbook bytes on each run, rows located by la
 search rather than pinned row numbers, and the archive hash is pinned by a test - the
 railways/power/fugitives discipline, unchanged.
 
-THE CCAC BRIDGE is a closing decomposition with a signed unexplained residual: from
-this inventory's FY2023-24 PM2.5 through the year wedge and the residue fuel-set wedge
-to the assessment's implied 224 kt, leaving a residual that is UNEXPLAINED - PM
-definition, factor family, remaining activity shares. The residual is never
-redistributed into the named wedges, and a test asserts both the exact closure and the
-residual's presence. Through rc66 the bridge needed a third wedge, 314 kt, to step from
-the all-diverted-dung reference (configuration L) to the survey reading; since rc67 the
-reference IS the survey reading, the wedge is gone, and configuration L rides the bridge
-as a memo row so a reader can still see how far from the assessment it sits.
+THE CCAC BRIDGE first reports the unexplained gap with NO fuel-set subtraction.
+PakEmis is moved from FY2023-24 to a CY2021 straddle-mean approximation; treating the
+assessment's published "2021" as calendar year is an alignment assumption, because
+the retrieved source does not establish the year convention. The comparator is
+641 kt national PM2.5 times an approximate 35% household share, not a separately
+reported exact household mass. Slater et al. (2024), doi:10.1021/acsestair.4c00003,
+describe a LEAP assessment with EMEP/EEA factors. Table 3 explicitly includes
+"Other Biomass" cooking. It therefore does not establish that household crop
+residues are absent: removing this inventory's crop residues is a SEPARATE
+conditional diagnostic, not a demonstrated boundary correction. Both the original
+gap and the signed residual under that assumption remain visible. Configuration L
+is a memo, not a preferred alternative selected by agreement with another inventory.
 
 Usage:  python3 -m pkinv.sectors.residential.official_reporting
+        python3 -m pkinv.sectors.residential.official_reporting --ccac-only
 Writes: outputs/residential_unfccc_crt_cell_audit_2024.csv,
         outputs/residential_official_comparison_2024.csv,
         outputs/residential_ccac_bridge_2024.csv
 """
 
 from pkinv.assets import asset_path
+import argparse
 import csv
 import hashlib
 import io
 import os
+import sys
 import zipfile
 
 from pkinv.paths import DATA, OUTPUTS, ROOT
@@ -75,8 +81,10 @@ COLS = {"activity_TJ": 2, "basis": 3, "ief_co2_t_per_TJ": 4, "ief_ch4_kg_per_TJ"
 
 FUEL_ROWS = ("Liquid fuels", "Solid fuels", "Gaseous fuels", "Biomass")
 
-# The CCAC/SEI integrated assessment (sources/Papers/), section 3.1: national PM2.5 641
-# kt in 2021, residential "around 35%" - hand-transcribed, page-cited on the register.
+# Slater et al. (2024), doi:10.1021/acsestair.4c00003, section 3.1, Figure 2 and
+# Table 11: national PM2.5 641 kt in 2021, households approximately 35%.
+# Their product is a rounded implied mass; the published "2021" does not itself
+# establish a calendar-year convention. See the benchmark register for source scope.
 CCAC_NATIONAL_PM25_KT_2021 = 641.0
 CCAC_RESIDENTIAL_SHARE = 0.35
 
@@ -275,14 +283,13 @@ def comparison(data, rows=None):
 
 
 def ccac_bridge(data):
-    """The bridge between this inventory's PM2.5 and the CCAC/SEI implied residential
-    figure - a CLOSING decomposition with an explicit unexplained residual.
+    """Keep the unadjusted gap separate from an unverified fuel-boundary scenario.
 
-    Endpoint A steps to endpoint B through named wedges, each quantified on this
-    inventory's own arithmetic, and whatever remains is a SIGNED residual labelled
-    unexplained (PM definition, factor family, remaining activity differences). The
-    residual is never redistributed into the named wedges: a bridge that closed without
-    one would mean a leftover had been silently booked as an explanation.
+    The ``unadjusted`` case closes A - year approximation - unexplained gap = B.
+    The ``hypothetical_crop_residue_removal`` rows then state a separate conditional
+    gap = unadjusted gap - removed residue. They do not establish that the source
+    omitted household residues or that agreement selects a correct dung quantity.
+    ``pm25_kt`` is signed PakEmis minus comparator for both gap rows.
     """
     from pkinv.sectors.residential import timeseries
 
@@ -303,7 +310,8 @@ def ccac_bridge(data):
 
     w_year = own - matched
     w_fuelset = residue_pm * residue_2021
-    residual = matched - w_fuelset - implied         # signed; closes by construction
+    unadjusted_gap = matched - implied
+    residual = unadjusted_gap - w_fuelset
 
     # Configuration L at the matched year, as a MEMO: the matched total with the dung
     # stream on the ledger (all diverted dung) instead of the survey.
@@ -317,40 +325,83 @@ def ccac_bridge(data):
 
     return [
         {"item": "ENDPOINT A: this inventory, FY2023-24 (reference)",
-         "pm25_kt": round(own, 1),
+         "case": "unadjusted", "row_kind": "endpoint",
+         "pm25_kt": round(own, 3),
          "note": "Andreae mass-basis factors; household dung on the HIES survey "
                  "series (the reference since rc67); gross emitted mass at the "
                  "appliance"},
-        {"item": "WEDGE: inventory year", "pm25_kt": round(w_year, 1),
-         "note": "to the matched-CY2021 straddle-mean (%.1f kt) on the time series"
-                 % matched},
-        {"item": "WEDGE: fuel set (crop residues)", "pm25_kt": round(w_fuelset, 1),
-         "note": "this inventory books household residue burning to 1A4b; a CANDIDATE "
-                 "alignment for an assessment that books residues to agriculture "
-                 "alone"},
-        {"item": "UNEXPLAINED RESIDUAL", "pm25_kt": round(residual, 1),
-         "note": "SIGNED, never redistributed: PM definition "
-                 "(filterable/condensable scope unresolved on both sides), GAINS "
-                 "factor family versus Andreae field measurements, and remaining "
-                 "activity-share differences. %.0f%% of endpoint B"
-                 % (100.0 * residual / implied)},
+        {"item": "WEDGE: inventory year (CY approximation)",
+         "case": "unadjusted", "row_kind": "year_approximation",
+         "pm25_kt": round(w_year, 3),
+         "note": "PakEmis CY2021 approximation (%.3f kt): equal mean of FY2020-21 "
+                 "and FY2021-22. The assessment labels its endpoint 2021; its "
+                 "calendar/fiscal convention is unverified. This is an alignment "
+                 "assumption, not an observed year correction." % matched},
+        {"item": "UNEXPLAINED RESIDUAL: before fuel-set assumptions",
+         "case": "unadjusted", "row_kind": "unexplained_gap",
+         "pm25_kt": round(unadjusted_gap, 3),
+         "note": "SIGNED PakEmis CY2021 approximation minus the rounded implied "
+                 "household comparator, never redistributed: %.2f%% of endpoint B. "
+                 "No crop-residue subtraction. Differences may include activity, "
+                 "technology, EMEP/EEA versus Andreae factors, PM definition "
+                 "(filterable/condensable scope unresolved), and unmatched periods. "
+                 "Another inventory is not an observation of emissions."
+                 % (100.0 * unadjusted_gap / implied)},
         {"item": "ENDPOINT B: CCAC/SEI implied residential, 2021",
-         "pm25_kt": round(implied, 1),
-         "note": "35 percent of a 641 kt national total, section 3.1; GAINS-family "
-                 "factors on modelled household fuel shares"},
+         "case": "unadjusted", "row_kind": "endpoint",
+         "pm25_kt": round(implied, 3),
+         "note": "641 kt national primary PM2.5 times approximate 35% household "
+                 "share: an implied mass from rounded inputs, not a separately "
+                 "tabulated household measurement. Slater et al. (2024), "
+                 "doi:10.1021/acsestair.4c00003, section 3.1, Figure 2 and Table 11. "
+                 "LEAP model with EMEP/EEA 2019 air factors; calendar/fiscal "
+                 "convention of published 2021 unverified."},
+        {"item": "CANDIDATE: remove household crop residues",
+         "case": "hypothetical_crop_residue_removal", "row_kind": "conditional_subtraction",
+         "pm25_kt": round(w_fuelset, 3),
+         "note": "NOT A STEP OF THE UNADJUSTED BRIDGE. Hypothetically remove "
+                 "PakEmis household crop-residue PM2.5. This is not verified scope "
+                 "alignment: Slater Table 3 includes Other Biomass cooking "
+                 "(1.7 t per household per year), whose fuel composition is not "
+                 "resolved by that label. Residue exclusion is therefore unconfirmed."},
+        {"item": "CANDIDATE RESIDUAL: after hypothetical crop-residue removal",
+         "case": "hypothetical_crop_residue_removal", "row_kind": "conditional_gap",
+         "pm25_kt": round(residual, 3),
+         "note": "SIGNED conditional residual = unadjusted gap minus the "
+                 "hypothetical residue subtraction; %.2f%% of endpoint B. This "
+                 "scenario can reverse the gap sign without supplying evidence "
+                 "for the subtraction. It is not the remaining error after "
+                 "established harmonization." % (100.0 * residual / implied)},
         {"item": "MEMO: configuration L at the matched year",
-         "pm25_kt": round(matched_ledger, 1),
-         "note": "NOT A STEP OF THE BRIDGE. The matched-2021 total with all the dung "
+         "case": "ledger_dung_memo", "row_kind": "memo",
+         "pm25_kt": round(matched_ledger, 3),
+         "note": "NOT A STEP OF THE BRIDGE. The CY2021 approximation with all the dung "
                  "agriculture diverts burned in households: %.1f times endpoint B. "
-                 "Through rc66 this was the bridge's starting basis and a 314 kt "
-                 "configuration wedge was needed to leave it"
+                 "Closeness to a partly shared-input inventory does not validate "
+                 "either dung quantity."
                  % (matched_ledger / implied)},
     ]
 
 
-def main():
+def write_ccac_bridge(data=None):
+    """Regenerate only the public-source particulate comparison."""
+    bridge = ccac_bridge(data or ResidentialData())
+    write_table(asset_path(OUTPUTS, "residential_ccac_bridge_2024.csv"), list(bridge[0]), bridge)
+    return bridge
+
+
+def main(argv=()):
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--ccac-only", action="store_true",
+                        help="Regenerate only the particulate comparison; no CRT extraction")
+    args = parser.parse_args(argv)
     os.makedirs(OUTPUTS, exist_ok=True)
     data = ResidentialData()
+    if args.ccac_only:
+        bridge = write_ccac_bridge(data)
+        for row in bridge:
+            print("%s: %.3f kt" % (row["item"], row["pm25_kt"]))
+        return
     rows = extract()
     failures = arithmetic_check(rows)
     if failures:
@@ -368,8 +419,7 @@ def main():
     comp = comparison(data, rows)
     write_table(asset_path(OUTPUTS, "residential_official_comparison_2024.csv"), list(comp[0]), comp)
 
-    bridge = ccac_bridge(data)
-    write_table(asset_path(OUTPUTS, "residential_ccac_bridge_2024.csv"), list(bridge[0]), bridge)
+    bridge = write_ccac_bridge(data)
 
     print("CRT %s 1.A.4.b (%s):" % (CRT_INVENTORY_YEAR, SHEET))
     print("  arithmetic check: every fuel row reproduces the filing's own emissions")
@@ -390,12 +440,12 @@ def main():
         print("  benchmark %-8s official %s vs own %s - %s"
               % (b["benchmark_id"], b["official_Mt_co2e"] or "-",
                  b["own_Mt_co2e"] or "-", b["match_basis"][:60]))
-    print("  CCAC bridge: %.1f kt (reference, FY2023-24) -> %.1f kt (implied 2021) "
-          "through named wedges; unexplained residual %.1f kt"
+    print("  CCAC comparison: %.1f kt (reference, FY2023-24) -> %.1f kt (implied 2021); "
+          "year alignment is assumed; unadjusted unexplained gap %.1f kt"
           % (next(r["pm25_kt"] for r in bridge if r["item"].startswith("ENDPOINT A")),
              next(r["pm25_kt"] for r in bridge if r["item"].startswith("ENDPOINT B")),
              next(r["pm25_kt"] for r in bridge if "RESIDUAL" in r["item"])))
 
 
 if __name__ == "__main__":
-    main()
+    main(sys.argv[1:])

@@ -22,6 +22,11 @@ activity, factor, control, coverage and allocation assumptions. The methods are 
 in [docs/](docs/), starting with [the methods note](docs/methods_note.md). This is a research
 inventory, not an official national submission.
 
+For the contribution evidence, see [the implementation review](docs/contribution_evidence_review.md),
+[ten reproducible conclusions](docs/contribution_evidence_methods.md), and
+[Pakistan inventory precedents](docs/pakistan_inventory_comparison.md).
+Run `PYTHONPATH=src make contribution-figures contribution-check` for the focused comparisons.
+
 ## Products and configurations
 
 <!-- BEGIN GENERATED: products -->

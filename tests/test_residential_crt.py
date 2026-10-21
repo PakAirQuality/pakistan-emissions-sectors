@@ -12,6 +12,7 @@ Run:  python3 -m unittest discover tests -p "test_residential_crt.py"
 import csv
 import os
 import unittest
+from unittest import mock
 
 from pkinv.paths import OUTPUTS
 from pkinv.sectors.residential import combustion, engine
@@ -151,12 +152,12 @@ class TestRegisterAndOutputs(unittest.TestCase):
 
 
 class TestCcacBridge(unittest.TestCase):
-    """rc67 (2026-10-13). Through rc66 the bridge started from configuration L (631.9 kt)
-    and its largest step was "WEDGE: dung configuration L to S", 314.6 kt, a candidate
-    alignment. The reference is now the survey series, so endpoint A is 282.7 kt, the
-    configuration wedge is gone, and configuration L follows endpoint B as a memo row
-    that is not a step. The tests below find rows by label because the last row is no
-    longer endpoint B."""
+    """The primary comparison must not silently turn a scope assumption into fact.
+
+    Slater's household table includes Other Biomass. Crop-residue removal is therefore
+    a separate hypothetical scenario, not an established bridge step. Source year
+    convention and rounded implied household mass also remain explicit.
+    """
 
     @classmethod
     def setUpClass(cls):
@@ -176,33 +177,27 @@ class TestCcacBridge(unittest.TestCase):
         return self.bridge[a + 1:b]
 
     def test_the_endpoints_bracket_the_bridge(self):
-        """Endpoint A opens the table and endpoint B closes the BRIDGE; the only row
-        after it is the configuration-L memo."""
+        """The unadjusted bridge closes before any conditional scenario or memo."""
         self.assertIn("ENDPOINT A", self.bridge[0]["item"])
         self.assertIn("(reference)", self.bridge[0]["item"])
-        self.assertIn("ENDPOINT B", self.bridge[-2]["item"])
+        primary = [r for r in self.bridge if r["case"] == "unadjusted"]
+        self.assertTrue(primary[-1]["item"].startswith("ENDPOINT B"))
+        self.assertEqual(self.bridge[:len(primary)], primary)
         self.assertTrue(self.bridge[-1]["item"].startswith("MEMO"))
-        self.assertGreater(self.bridge[0]["pm25_kt"], self.bridge[-2]["pm25_kt"])
+        self.assertGreater(primary[0]["pm25_kt"], primary[-1]["pm25_kt"])
 
     def test_the_bridge_closes_exactly_through_a_signed_residual(self):
-        """Endpoint A minus every wedge minus the residual must equal endpoint B by
-        construction - and the residual must EXIST, be signed, and be labelled
-        unexplained. A bridge without one would mean a leftover had been silently
-        booked as an explanation; a bridge that doesn't close is arithmetic error.
-
-        The memo row sits outside the identity: with it in the sum the bridge would be
-        590.7 kt from closing, which is how the pre-rc67 form of this test failed."""
+        """Only the assumed year adjustment precedes the unexplained primary gap."""
         a = self._row("ENDPOINT A")["pm25_kt"]
         b = self._row("ENDPOINT B")["pm25_kt"]
         middle = sum(r["pm25_kt"] for r in self._steps())
-        self.assertAlmostEqual(a - middle, b, delta=0.3)
+        self.assertAlmostEqual(a - middle, b, delta=0.002)
         year = self._row("WEDGE: inventory year")["pm25_kt"]
-        fuel_set = self._row("WEDGE: fuel set")["pm25_kt"]
-        residual = next(r for r in self.bridge if "RESIDUAL" in r["item"])
-        self.assertAlmostEqual(a - year - fuel_set - residual["pm25_kt"], b, delta=0.3)
+        residual = self._row("UNEXPLAINED RESIDUAL")
+        self.assertAlmostEqual(a - year - residual["pm25_kt"], b, delta=0.002)
         self.assertNotEqual(residual["pm25_kt"], 0.0)
         self.assertIn("never redistributed", residual["note"])
-        self.assertLess(abs(residual["pm25_kt"]) / b, 0.25)
+        self.assertIn("No crop-residue subtraction", residual["note"])
 
     def test_the_bridge_is_the_shipped_one(self):
         """Compare the published final bridge with current source/method reconstruction."""
@@ -210,7 +205,9 @@ class TestCcacBridge(unittest.TestCase):
         shipped = read_rows(os.path.join(OUTPUTS, "residential_ccac_bridge_2024.csv"))
         self.assertEqual([r["item"] for r in self.bridge], [r["item"] for r in shipped])
         for expected, actual in zip(self.bridge, shipped):
-            self.assertAlmostEqual(expected["pm25_kt"], float(actual["pm25_kt"]), places=1)
+            self.assertEqual(expected["case"], actual["case"])
+            self.assertEqual(expected["row_kind"], actual["row_kind"])
+            self.assertAlmostEqual(expected["pm25_kt"], float(actual["pm25_kt"]), places=3)
 
     def test_the_year_wedge_is_quantified_by_the_time_series(self):
         from pkinv.sectors.residential import timeseries
@@ -218,21 +215,30 @@ class TestCcacBridge(unittest.TestCase):
                           if r["item"].startswith("WEDGE") and "year" in r["item"])
         matched = timeseries.matched_cy(2021, self.data)["pm25_kt"]
         self.assertAlmostEqual(year_wedge["pm25_kt"],
-                               self.bridge[0]["pm25_kt"] - matched, delta=0.2)
+                               self.bridge[0]["pm25_kt"] - matched, delta=0.002)
+        self.assertIn("convention is unverified", year_wedge["note"])
+        self.assertIn("alignment assumption", year_wedge["note"])
 
-    def test_there_is_no_configuration_wedge(self):
-        """Through rc66 the bridge's largest wedge had to be the L-to-S configuration
-        move. The reference is the survey reading now, so no wedge may name a
-        configuration: the two that remain are the year and the fuel set, the larger is
-        the fuel set, and its candidate-alignment status must be stated, not implied."""
+    def test_unverified_residue_removal_cannot_become_a_primary_wedge(self):
+        """The assumed exclusion reverses the current gap's sign. Keep that change
+        visible without presenting it as evidence of the source's fuel boundary."""
         wedges = [r for r in self.bridge if r["item"].startswith("WEDGE")]
         self.assertEqual([r["item"] for r in wedges],
-                         ["WEDGE: inventory year", "WEDGE: fuel set (crop residues)"])
-        for r in self._steps():
-            self.assertNotIn("configuration", r["item"])
-        largest = max(wedges, key=lambda r: r["pm25_kt"])
-        self.assertIn("fuel set", largest["item"])
-        self.assertIn("CANDIDATE", largest["note"])
+                         ["WEDGE: inventory year (CY approximation)"])
+        self.assertEqual([r["row_kind"] for r in self._steps()],
+                         ["year_approximation", "unexplained_gap"])
+        candidate = self._row("CANDIDATE:")
+        conditional = self._row("CANDIDATE RESIDUAL:")
+        unadjusted = self._row("UNEXPLAINED RESIDUAL")
+        for row in (candidate, conditional):
+            self.assertEqual(row["case"], "hypothetical_crop_residue_removal")
+            self.assertNotIn(row, self._steps())
+        self.assertIn("Other Biomass", candidate["note"])
+        self.assertIn("not verified scope alignment", candidate["note"])
+        self.assertAlmostEqual(unadjusted["pm25_kt"] - candidate["pm25_kt"],
+                               conditional["pm25_kt"], delta=0.002)
+        self.assertGreater(unadjusted["pm25_kt"], 0)
+        self.assertLess(conditional["pm25_kt"], 0)
 
     def test_configuration_l_is_a_memo_and_not_a_step(self):
         """The memo row is the matched-2021 total on the ledger dung series, taken here
@@ -242,16 +248,22 @@ class TestCcacBridge(unittest.TestCase):
         memo = self._row("MEMO")
         self.assertIn("configuration L", memo["item"])
         self.assertIn("NOT A STEP OF THE BRIDGE", memo["note"])
+        self.assertIn("does not validate either dung quantity", memo["note"])
         ledger = timeseries.matched_cy(
             2021, self.data,
             series=timeseries.fuel_TJ_series(self.data, dung_basis="ledger"))["pm25_kt"]
         self.assertAlmostEqual(memo["pm25_kt"], ledger, delta=0.06)
         self.assertGreater(memo["pm25_kt"], 2 * self._row("ENDPOINT A")["pm25_kt"])
 
-    def test_the_implied_ccac_figure_is_the_stated_arithmetic(self):
-        self.assertAlmostEqual(self._row("ENDPOINT B")["pm25_kt"],
+    def test_the_implied_ccac_figure_retains_the_primary_source_qualifications(self):
+        endpoint = self._row("ENDPOINT B")
+        self.assertAlmostEqual(endpoint["pm25_kt"],
                                round(official.CCAC_NATIONAL_PM25_KT_2021
-                                     * official.CCAC_RESIDENTIAL_SHARE, 1))
+                                     * official.CCAC_RESIDENTIAL_SHARE, 3))
+        self.assertIn("rounded inputs", endpoint["note"])
+        self.assertIn("LEAP model with EMEP/EEA 2019", endpoint["note"])
+        self.assertNotIn("GAINS", endpoint["note"])
+        self.assertIn("convention of published 2021 unverified", endpoint["note"])
 
     def test_the_shipped_file_is_this_bridge(self):
         """outputs/residential_ccac_bridge_2024.csv row for row, so a stale file with
@@ -259,8 +271,17 @@ class TestCcacBridge(unittest.TestCase):
         path = os.path.join(OUTPUTS, "residential_ccac_bridge_2024.csv")
         with open(path, newline="", encoding="utf-8") as f:
             shipped = list(csv.DictReader(f))
-        self.assertEqual([(r["item"], float(r["pm25_kt"]), r["note"]) for r in shipped],
-                         [(r["item"], r["pm25_kt"], r["note"]) for r in self.bridge])
+        for row in shipped:
+            row["pm25_kt"] = float(row["pm25_kt"])
+        self.assertEqual(shipped, self.bridge)
+
+    def test_ccac_only_does_not_require_crt_extraction(self):
+        """The public-source comparison can rebuild without unrelated CRT inputs."""
+        with mock.patch.object(official, "extract") as extract, \
+                mock.patch.object(official, "write_ccac_bridge", return_value=[]) as write:
+            official.main(["--ccac-only"])
+        extract.assert_not_called()
+        write.assert_called_once()
 
 
 class TestOutputsExist(unittest.TestCase):

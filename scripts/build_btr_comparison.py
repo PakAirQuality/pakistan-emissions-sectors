@@ -1,63 +1,46 @@
 #!/usr/bin/env python3
-"""The year-matched comparison against Pakistan's own national submission.
+"""Year-matched comparison with Pakistan's First Biennial Transparency Report.
 
-WHY THIS PRODUCT EXISTS. outputs/national_benchmark_comparison.csv compares this inventory
-against EDGAR, Climate TRACE, FAOSTAT and one published study, and every one of those rows
-needs an approximation: a calendar year read against a fiscal one, or an AR6 comparator read
-against an AR5 account, or both. The one comparator that needs NEITHER APPROXIMATION was missing. Pakistan's
-First Biennial Transparency Report publishes a full IPCC-category inventory on AR5 GWPs for
-2020-21, and it states its own convention plainly - "the fiscal year 1993-94 (referred to as
-1994)", "Pakistan's 2020-21 inventory (referred to as 2021)" - so its year IS a Pakistani
-fiscal year and matches FY2020-21 exactly. Same period, same reporting basis, and it is
-the account the country itself files.
+The BTR states that its inventory year 2020-21 is a Pakistani fiscal year, so
+PakEmis FY2020-21 can be compared without a calendar/fiscal blend. Both report
+AR5 CO2e, but their CH4 conventions cannot be assumed identical: PakEmis uses
+30 for fossil CH4 and 28 for biogenic CH4, whereas the BTR table gives neither
+native gas masses nor a fossil/biogenic split. A PakEmis-only uniform-28
+sensitivity shows this convention's effect; it does not harmonise the BTR.
 
-ONE THING IS STILL NOT MATCHED, and the first version of this file said it was. "Same
-metric" was too strong: this inventory weights FOSSIL CH4 at AR5's 30 and biogenic CH4
-at 28 (core/gwp.py, chosen per component by core/components.py), while the BTR prints
-AR5 CO2e per gas with no fossil/biogenic split and no native gas mass, so its own CH4
-weighting cannot be recovered from the published table. It matters in exactly one place:
-1.B.2 oil and gas fugitives is 96.2 per cent fossil CH4 by CO2e, and the ratio moves
-from 7.27 to 6.80 on a uniform 28. Transport moves 1.03 to 1.02; the national ratio
-1.008 to 1.004. Every row therefore carries BOTH readings - the as-published pair and a
-`_ch4_uniform_28` pair - because the first is what the two documents say and the second
-is what they would say on one convention. Neither is a correction of the other, and the
-comparison does not assert which weighting the BTR used.
+The explicit subject crosswalk is essential. For example, the BTR books rice
+at 3.D, urea application at 3.C.2, and indirect manure N2O at 3.C.5; PakEmis
+uses 3.C.7, 3.C.3, and 3.C.6 respectively. A code join would compare different
+processes. Tiers distinguish the support for each comparison:
 
-It could not simply be added to that register: benchmark_comparison() resolves the engine side
-from registry.build_all(), which is the reference year and only the reference year, and the
-register's own engine_period column is not read (tests/test_national_rollup.py refuses a row
-that would exploit this). The rollup also runs before the nine-year annual product is built, so
-teaching it to resolve a historical period would invert the build order. This is therefore a
-product downstream of the annual table, where the history it needs already exists.
+  exact               corresponding category scopes as documented here
+  aggregate           corresponding subject after explicit aggregation;
+                      see row notes for allocation qualifications
+  scope-gap           BTR scope is wider; no category ratio is emitted
+  btr-only            BTR estimate for a category PakEmis declares NE;
+                      an external comparator, not an uncertainty bound
+  btr-zero            BTR prints zero; a discrepancy to investigate
+  pakemis-only        PakEmis estimates a category with no BTR counterpart
+  btr-elsewhere       counterpart is inside the excluded BTR land block
+  aggregate-restated  a useful re-sum, excluded from totals to avoid overlap
+  out-of-scope        LULUCF, excluded from totals
 
-WHAT IT REFUSES TO DO. A code join between these two accounts is WRONG, and silently so: the
-BTR books rice cultivation at 3.D and managed soils at 3.C, while this inventory books rice at
-3.C and soils at 3.D. The codes are SWAPPED, so joining on the code compares rice against soil
-N2O and produces two plausible-looking ratios. Every comparison here is therefore an explicit
-crosswalk entry with a declared tier, and a ratio is emitted only for the tiers where the
-boundaries support one:
-
-  exact         one category each side, same scope
-  aggregate     a sum on one or both sides - the BTR books indirect manure N2O separately at
-                3.C.5 where this inventory keeps it inside manure management, so only the sum
-                is comparable
-  scope-gap     the BTR's category is wider than this inventory's and the difference is a
-                declared absence, not a disagreement; no ratio
-  btr-only      the BTR books it and this inventory declares it NE; the magnitude is an
-                official bound on a declared absence, never an estimate to adopt
-  btr-zero      the BTR prints 0 where a zero is not credible; recorded as a question about
-                the official account, not about this one
-  pakemis-only  this inventory estimates it and the BTR has no line for it at all
-  out-of-scope  LULUCF, excluded here by declared scope and from every total
+The headline total preserves each inventory's stated non-LULUCF scope and
+therefore retains scope asymmetries. The exact+aggregate subtotal excludes
+scope-gap and restated rows. Neither total is independent validation: the
+inventories share national statistics, and a small net difference can hide
+large opposing category differences. The category-offset product reports
+those signed differences without treating BTR as ground truth or attributing
+them to particular causes.
 
 Usage:  python3 scripts/build_btr_comparison.py [--check]
 Writes: outputs/pakemis_btr_comparison.csv
+        outputs/pakemis_btr_category_offsets.csv
 """
 from __future__ import annotations
 
 import argparse
 import collections
-import csv
 import io
 import os
 import sys
@@ -66,10 +49,12 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, "src"))
 
 from pkinv.assets import asset_path                                    # noqa: E402
-from pkinv.core.io import read_rows, write_table                       # noqa: E402
+from pkinv.core.io import read_rows, write_table, table_text                       # noqa: E402
 from pkinv.paths import DATA, OUTPUTS                                  # noqa: E402
 
 OUT = asset_path(OUTPUTS, "pakemis_btr_comparison.csv")
+OFFSETS_OUT = asset_path(OUTPUTS, "pakemis_btr_category_offsets.csv")
+COMPARABLE_TOTAL = "TOTAL on exact and aggregate crosswalk categories"
 # Reached by the legacy identity its siblings use, which is what data/catalog/assets.csv
 # resolves. That registration is not cosmetic: pkinv.report.data_provenance classifies a data
 # file by the directory of its LEGACY path, so an unregistered table under
@@ -85,10 +70,7 @@ SOURCE = "Pakistan BTR1 (2024), national inventory 2020-21"
 
 FIELDS = ("btr_codes", "pakemis_codes", "subject", "tier", "btr_Mt_co2e",
           "pakemis_Mt_co2e", "ratio_pakemis_over_btr", "within_0.5_2.0x",
-          # THE HARMONISED VIEW (2026-10-08, the 23rd review's item 3). Published
-          # BESIDE the as-published pair, never instead of it: the as-published ratio
-          # is what the two documents actually say, and the harmonised one is what
-          # they would say on one CH4 convention.
+          # PakEmis-only CH4 sensitivity: BTR weighting remains unknown.
           "pakemis_Mt_co2e_ch4_uniform_28", "ratio_ch4_uniform_28",
           "fossil_ch4_share_of_pakemis_pct", "ch4_convention_note", "note")
 
@@ -98,12 +80,14 @@ CROSSWALK = [
     (["1.A.2"], ["1.A.2"], "Manufacturing and construction", "exact", ""),
     (["1.A.3"], ["1.A.3.a", "1.A.3.b", "1.A.3.c", "1.A.4.c", "1.A.2/1.A.4.c"],
      "Transport", "aggregate",
-     "the BTR publishes 1.A.3 as one line; this inventory splits transport across four codes "
-     "plus the unresolved 1A2/1A4c share, so the sum is what faces it"),
+     "the BTR publishes 1.A.3 as one line; this inventory aggregates its transport allocation, "
+     "including off-road 1.A.4.c and the unresolved 1.A.2/1.A.4.c share. This is a subject-level "
+     "comparison conditional on that allocation, not an exact code-boundary match"),
     (["1.A.4"], ["1.A.4.b"], "Other sectors", "scope-gap",
      "the BTR's 1.A.4 includes commercial and institutional buildings, which this inventory "
-     "declares NE; its off-road share is counted under transport above. The difference is a "
-     "declared absence, so no ratio is emitted"),
+     "declares NE; PakEmis counts its off-road share under transport above. Coverage and "
+     "allocation differences prevent attributing the numerical gap solely to an absence; "
+     "no ratio is emitted and this row is excluded from the exact+aggregate subtotal"),
     (["1.B.1"], [], "Solid-fuel fugitives", "btr-only", "1.B.1 is NE here"),
     (["1.B.2"], ["1.B.2"], "Oil and natural gas fugitives", "exact", ""),
     (["2.A.1"], ["2.A.1"], "Cement production", "exact", ""),
@@ -134,13 +118,11 @@ CROSSWALK = [
      "the BTR codes urea 3.C.2; IPCC 2006 Table 8.2 uses 3.C.2 for Liming and 3.C.3 for Urea "
      "Application, so this pair is one code apart on the same quantity"),
     (["3.C.3", "3.C.4"], ["3.C.4", "3.C.5"], "Managed soils", "aggregate",
-     "direct and indirect managed-soil N2O. FAOSTAT independently gives about twice this "
-     "inventory's figure for the same quantity, and the published cause is the dry-climate "
-     "EF1 against the 2006 aggregate value"),
+     "direct plus indirect managed-soil N2O; this is an aggregate comparison and does not "
+     "attribute differences to activity data, nitrogen routing, or emission factors"),
     (["3.D"], ["3.C.7"], "Rice cultivation", "exact",
-     "CODE SWAP, and it survives the migration in a new form: the BTR books rice at 3.D, while "
-     "IPCC 2006 puts rice at 3.C.7 and uses 3.D for the Other block (3.D.1 is harvested wood "
-     "products). A join on the code compares rice against harvested wood"),
+     "the BTR books rice at 3.D; PakEmis follows IPCC 2006 with 3.C.7. A code-only join "
+     "does not identify the same process"),
     (["3.B"], [], "Land (LULUCF)", "out-of-scope",
      "outside this inventory by declared scope; excluded from every total comparison. NOT "
      "purely land-use CO2, which matters for anyone reading the exclusion as clean: 3.47 of "
@@ -158,36 +140,31 @@ CROSSWALK = [
      "by scope"),
     (["3.B.2"], ["3.C.1.b"], "Residue burning, against the submission's cropland non-CO2",
      "aggregate-restated",
-     "THE SAME QUANTITY FILED IN TWO PLACES BY ONE SUBMISSION. The agriculture CRT books crop "
-     "residue burning at 3253.17 kt CO2e while the BTR carries it inside cropland, whose "
-     "non-CO2 is 3.16 Mt - the same number to within 3 percent. Compared against that, this "
-     "inventory's field burning is 0.18 of the submission, not the surplus the earlier "
-     "reading implied. Restated and excluded from both totals: 3.B is excluded wholesale by "
-     "scope, so counting part of it here would partially re-admit the land block. It is also "
-     "the double-count hazard the land lane identified - a PakEmis land layer that adopted "
-     "the BTR cropland figure beside this inventory's existing residue burning would count "
-     "the burning twice"),
+     "compares PakEmis field burning with the CH4 plus N2O part of the BTR cropland row "
+     "under the declared residue-burning mapping; land-use CO2 is excluded. This is a "
+     "restatement, not an additional category in either subtotal. The full BTR land block "
+     "is excluded by scope; including this part in a total beside existing residue burning "
+     "would require explicit boundary reconciliation to avoid double counting. Calendar-year "
+     "CRT crop-residue values are not used in this fiscal-year comparison"),
     (["4.A"], ["4.A"], "Solid waste disposal", "exact",
-     "read with the solid-waste-fate row below before quoting this: the two accounts route "
-     "the same municipal stream differently between disposal and burning"),
+     "read with the solid-waste-fate row below: disposal and burning are related fates, "
+     "and this category comparison alone does not identify the cause of a difference"),
     (["4.C.1"], [], "Waste incineration", "btr-only", "4.C.1 is NE here"),
     (["4.C.2"], ["4.C.2"], "Open burning of waste", "exact",
      "read with the solid-waste-fate row below before quoting this"),
     (["4.A", "4.C.1", "4.C.2"], ["4.A", "4.C.2"], "Solid-waste fate (disposal + burning)",
      "aggregate-restated",
-     "THE TWO ROWS ABOVE ARE ONE DISAGREEMENT, not two. Taken alone this inventory is 0.49 "
-     "of the submission on landfill methane and 17.74 times it on open burning - an apparent "
-     "order-of-magnitude error in opposite directions on adjacent categories. Summed over "
-     "the solid stream the ratio is 0.68, so what the two accounts mainly disagree about is "
-     "the FATE SPLIT of the same waste: how much is collected to a disposal site against how "
-     "much is burned where it falls. That is a question about collection statistics, not "
-     "about an emission factor, and it is why neither individual ratio should be quoted as a "
-     "level error. 4.C.1 is on the BTR side only and is carried here so the sum is complete"),
+     "disposal, incineration and open burning are related waste-management fates, so their "
+     "sum is informative alongside individual ratios. Opposing differences can reflect "
+     "allocation, activity, methods or emission factors; this comparison alone does not "
+     "identify the cause. Incineration is estimated only by BTR, so even this re-sum has a "
+     "coverage difference. Excluded from all totals because its parts are counted above"),
     (["4.D.1"], ["4.D.1"], "Domestic wastewater", "exact", ""),
     (["4.D.2"], [], "Industrial wastewater", "btr-only", "4.D.2 is NE here"),
 ]
 
-RATIO_TIERS = ("exact", "aggregate", "aggregate-restated")
+COMPARABLE_TIERS = ("exact", "aggregate")
+RATIO_TIERS = COMPARABLE_TIERS + ("aggregate-restated",)
 
 # A RESTATED row re-sums categories that are already counted individually above, so it carries
 # a ratio and must be EXCLUDED from the subtotal - adding it would count the same waste twice.
@@ -228,8 +205,7 @@ def _pakemis():
     The atomic table rather than the semantic layer, deliberately: it is built at the annual
     stage and the semantic release is assembled after it, so reading the semantic copy would
     make this product depend on a later phase to say something about an earlier one. The two
-    agree exactly where both exist - 479.51051 Mt over 22 codes for FY2020-21 - which is the
-    check that this is a cheaper route to the same numbers and not a different number.
+    share the same underlying inventory; no emissions are recalibrated to the BTR here.
     """
     agg = collections.defaultdict(float)
     fossil_ch4_Gg = collections.defaultdict(float)
@@ -252,7 +228,20 @@ def _pakemis():
     return agg, fossil_ch4_Gg
 
 
+def validate_crosswalk():
+    """Fail before summing a repeated code or a parent beside its child."""
+    counted = [r for r in CROSSWALK if r[3] not in ("out-of-scope",) + RESTATED_TIERS]
+    for index, side in ((0, "BTR"), (1, "PakEmis")):
+        codes = [c for r in counted for c in r[index]]
+        duplicates = sorted(c for c, count in collections.Counter(codes).items() if count > 1)
+        nested = sorted((a, b) for a in codes for b in codes if b.startswith(a + "."))
+        if duplicates or nested:
+            raise ValueError("overlapping %s crosswalk entries: repeated=%s, parent/child=%s"
+                             % (side, duplicates, nested))
+
+
 def build():
+    validate_crosswalk()
     btr, (pk, fossil_ch4) = _btr(), _pakemis()
     missing = sorted({c for entry in CROSSWALK for c in entry[0]} - set(btr))
     if missing:
@@ -285,7 +274,7 @@ def build():
             convention = ""
         elif not fossil:
             convention = ("no fossil CH4 in this subject, so the two CH4 conventions give "
-                          "the same number and the harmonised columns repeat the published one")
+                          "the same number and the sensitivity columns repeat the published one")
         else:
             convention = ("fossil CH4 present: this inventory weights it at AR5's 30, the BTR "
                           "prints AR5 CO2e with no fossil/biogenic split and no native mass, "
@@ -309,28 +298,13 @@ def build():
     tb = sum(float(r["btr_Mt_co2e"]) for r in in_scope if r["btr_Mt_co2e"] != "")
     tp = sum(float(r["pakemis_Mt_co2e"]) for r in in_scope if r["pakemis_Mt_co2e"] != "")
 
-    # THE DECOMPOSITION THAT MATTERS, and the reason this product is not just a ratio table.
-    # The headline national ratio mixes two different things: categories the two accounts both
-    # estimate and disagree about, and categories one account books and the other declares
-    # absent. Separating them answers a question a single ratio cannot - is the national
-    # difference an estimation difference or a completeness difference? - and it joins this
-    # comparison to the completeness-mass ledger, where those same absences sit without a
-    # bound. On this release the answer is that most of the gap is completeness.
-    both = [r for r in in_scope
-            if r["tier"] in ("exact", "aggregate", "scope-gap")]
-    lb = sum(float(r["btr_Mt_co2e"]) for r in both if r["btr_Mt_co2e"] != "")
-    lp = sum(float(r["pakemis_Mt_co2e"]) for r in both if r["pakemis_Mt_co2e"] != "")
-    only_btr = sum(float(r["btr_Mt_co2e"]) for r in in_scope
-                   if r["tier"] == "btr-only" and r["btr_Mt_co2e"] != "")
-    # btr-elsewhere is deliberately NOT here. The submission books that mass; it books it
-    # inside a block this comparison excludes by scope, which is a boundary asymmetry and not
-    # a category the submission omits. Counting it as "estimated here and absent there" would
-    # restate the error the reclassification corrected.
-    only_pk = sum(float(r["pakemis_Mt_co2e"]) for r in in_scope
-                  if r["tier"] in ("pakemis-only", "btr-zero")
-                  and r["pakemis_Mt_co2e"] != "")
+    # The scope-gap row has two numbers but NOT a common boundary. Excluding it,
+    # one-sided rows and restatements makes the subtotal's rule explicit.
+    both = [r for r in in_scope if r["tier"] in COMPARABLE_TIERS]
+    lb = sum(float(r["btr_Mt_co2e"]) for r in both)
+    lp = sum(float(r["pakemis_Mt_co2e"]) for r in both)
 
-    # The same two totals on a uniform CH4 = 28, summed from the per-row harmonised column so
+    # The same two totals on a PakEmis-only uniform CH4 = 28 sensitivity, summed so
     # the totals cannot disagree with the rows beneath them.
     def _sum28(subset):
         return sum(float(r["pakemis_Mt_co2e_ch4_uniform_28"]) for r in subset
@@ -348,13 +322,14 @@ def build():
         "ratio_ch4_uniform_28": round(tp28 / tb, 3),
         "fossil_ch4_share_of_pakemis_pct": round(100.0 * (tp - tp28) / 2.0 * 30.0 / tp, 1),
         "ch4_convention_note": CONVENTION,
-        "note": "excludes LULUCF (outside this inventory's scope) and the restated "
-                "solid-waste-fate row (its parts are already counted). The national "
-                "agreement this conceals is the point: the category ratios above span more "
-                "than an order of magnitude"})
+        "note": "excludes the full BTR LULUCF block and all aggregate-restated rows; "
+                "retains scope-gap and one-sided rows. PakEmis residue burning is counted "
+                "while its BTR counterpart remains inside excluded LULUCF, so this is not "
+                "a common-boundary national total. Close totals do not establish category "
+                "agreement or independent validation"})
     rows.append({
         "btr_codes": "", "pakemis_codes": "", "tier": "total",
-        "subject": "TOTAL on categories both accounts estimate",
+        "subject": COMPARABLE_TOTAL,
         "btr_Mt_co2e": round(lb, 3), "pakemis_Mt_co2e": round(lp, 3),
         "ratio_pakemis_over_btr": round(lp / lb, 4),
         "within_0.5_2.0x": "YES" if 0.5 <= lp / lb <= 2.0 else "REVIEW",
@@ -362,35 +337,95 @@ def build():
         "ratio_ch4_uniform_28": round(lp28 / lb, 4),
         "fossil_ch4_share_of_pakemis_pct": round(100.0 * (lp - lp28) / 2.0 * 30.0 / lp, 1),
         "ch4_convention_note": CONVENTION,
-        "note": "excludes the %.2f Mt the BTR books and this inventory declares NE, and the "
-                "%.2f Mt this inventory estimates where the BTR books nothing or zero. On the "
-                "categories both accounts actually estimate they agree far more closely than "
-                "the headline row above, so most of the national difference is COMPLETENESS "
-                "rather than estimation - and those absences are the same rows that sit in "
-                "pakemis_completeness_mass.csv without a bound"
-                % (only_btr, only_pk)})
+        "note": comparison_note(tb, tp, lb, lp)})
     return rows
 
 
-# write_table takes the banner as a SEQUENCE OF LINES and prefixes each with "# ". Handing it
-# one string makes it iterate characters and emit one "# c" line per character, which is how
-# the first build of this product came out 300 lines of single letters.
-BANNER = (
-    "PakEmis against Pakistan's own national submission: year-matched, and reported on",
-    "one GWP family (AR5) - but NOT CH4-convention-matched. This inventory weights fossil",
-    "CH4 at 30 and biogenic at 28; the BTR prints AR5 CO2e per gas with no fossil split",
-    "and no native mass, so its weighting is not recoverable. Each row carries both the",
-    "as-published ratio and the ratio at a uniform CH4 = 28. 1.B.2 is where it bites:",
-    "96.2 per cent fossil CH4 by CO2e, ratio 7.27 as published and 6.80 harmonised.",
-    "The BTR's inventory year 2020-21 is a Pakistani FISCAL year by its own statement, and it",
-    "reports on AR5 GWPs, so this comparison needs no calendar blend and no GWP conversion -",
-    "the only comparator in this release of which that is true.",
-    "A ratio is emitted only for the exact, aggregate and aggregate-restated tiers; see the",
-    "builder's docstring for why a join on the IPCC code would be wrong (the two accounts swap",
-    "rice cultivation and managed soils).",
-    "The restated solid-waste-fate row re-sums categories already counted above and is excluded",
-    "from both totals, as a contained claimant is in the completeness-mass ledger.",
+def comparison_note(headline_btr, headline_pk, subtotal_btr, subtotal_pk):
+    """Describe the two actual gaps, without hardcoding which is closer."""
+    headline_gap = 100.0 * abs(headline_pk - headline_btr) / headline_btr
+    subtotal_gap = 100.0 * abs(subtotal_pk - subtotal_btr) / subtotal_btr
+    direction = ("larger" if subtotal_gap > headline_gap else
+                 "smaller" if subtotal_gap < headline_gap else "equal")
+    return (
+        "only nonoverlapping exact and aggregate crosswalk rows; excludes 1.A.4 scope-gap, "
+        "one-sided categories, the residue-burning boundary asymmetry, and restated rows. "
+        "Absolute relative differences from BTR are %.2f%% for the headline total and %.2f%% "
+        "for this subtotal: the subtotal difference is %s. This does not identify a "
+        "completeness or estimation cause. Aggregates retain the allocation qualifications "
+        "in their row notes; shared national statistics and unknown BTR CH4 weighting "
+        "prevent treating agreement as independent validation"
+        % (headline_gap, subtotal_gap, direction))
+
+
+def banner(rows):
+    fugitives = next(r for r in rows if r["subject"] == "Oil and natural gas fugitives")
+    return (
+        "PakEmis against Pakistan BTR1, FY2020-21: matched fiscal year and AR5 family;",
+        "CH4 conventions are not known to match. PakEmis uses fossil CH4 = 30 and biogenic",
+        "CH4 = 28; BTR gives no native masses or fossil split. Uniform-28 columns change",
+        "PakEmis only and are a sensitivity, not a harmonisation or correction of BTR.",
+        "Oil/gas fugitives: %.1f%% fossil CH4 by PakEmis CO2e; ratio %.2f as published,"
+        % (float(fugitives["fossil_ch4_share_of_pakemis_pct"]),
+           float(fugitives["ratio_pakemis_over_btr"])),
+        "%.2f with PakEmis CH4 uniformly 28. Ratios only for exact/aggregate/restated tiers;"
+        % float(fugitives["ratio_ch4_uniform_28"]),
+        "allocation qualifications remain in row notes. Both restated rows are excluded",
+        "from totals. The exact+aggregate subtotal also excludes scope-gap and one-sided",
+        "categories; the headline retains scope asymmetries. Category offsets are in",
+        "pakemis_btr_category_offsets.csv. Close totals can conceal opposing differences;",
+        "shared statistics mean this is not independent validation.",
+    )
+
+
+OFFSET_FIELDS = (
+    "period_id", "configuration_id", "gwp_basis", "row_type", "subject", "tier",
+    "btr_codes", "pakemis_codes", "btr_Mt_co2e", "pakemis_Mt_co2e",
+    "difference_Mt_co2e", "positive_difference_Mt_co2e", "negative_difference_Mt_co2e",
+    "absolute_difference_Mt_co2e", "difference_Mt_co2e_ch4_uniform_28", "note")
+OFFSET_BANNER = (
+    "Signed category differences, PakEmis minus BTR1, FY2020-21; Mt CO2e, AR5 family.",
+    "Arithmetic uses the comparison table's displayed values (0.001 Mt); BTR inputs are rounded.",
+    "Only nonoverlapping exact and aggregate crosswalk rows; scope-gap, one-sided,",
+    "out-of-scope and restated rows are excluded. Aggregate allocation caveats still apply.",
+    "The total row sums positive, negative, net and absolute category differences separately.",
+    "Absolute differences describe disagreement, not estimation error, accuracy or uncertainty.",
+    "BTR is not independent ground truth; uniform-28 is a PakEmis-only CH4 sensitivity.",
 )
+
+
+def category_offsets(rows):
+    """Decompose the subtotal into opposing differences, without causal attribution."""
+    out = []
+    for r in rows:
+        if r["tier"] not in COMPARABLE_TIERS:
+            continue
+        b, p = float(r["btr_Mt_co2e"]), float(r["pakemis_Mt_co2e"])
+        d = round(p - b, 3)
+        out.append({
+            "period_id": MATCHED_PERIOD, "configuration_id": CONFIGURATION,
+            "gwp_basis": "AR5 family; CH4 convention unresolved", "row_type": "category",
+            "subject": r["subject"], "tier": r["tier"],
+            "btr_codes": r["btr_codes"], "pakemis_codes": r["pakemis_codes"],
+            "btr_Mt_co2e": b, "pakemis_Mt_co2e": p, "difference_Mt_co2e": d,
+            "positive_difference_Mt_co2e": max(d, 0.0),
+            "negative_difference_Mt_co2e": min(d, 0.0),
+            "absolute_difference_Mt_co2e": abs(d),
+            "difference_Mt_co2e_ch4_uniform_28":
+                round(float(r["pakemis_Mt_co2e_ch4_uniform_28"]) - b, 3),
+            "note": r["note"]})
+    total = dict.fromkeys(OFFSET_FIELDS, "")
+    total.update(period_id=MATCHED_PERIOD, configuration_id=CONFIGURATION,
+                 gwp_basis="AR5 family; CH4 convention unresolved", row_type="total",
+                 subject=COMPARABLE_TOTAL, tier="total",
+                 note="positive plus negative differences equal the net difference; their "
+                      "absolute magnitudes sum to absolute category disagreement. This is "
+                      "an arithmetic decomposition, not a validation score or causal attribution")
+    for key in ("btr_Mt_co2e", "pakemis_Mt_co2e", "difference_Mt_co2e",
+                "positive_difference_Mt_co2e", "negative_difference_Mt_co2e",
+                "absolute_difference_Mt_co2e", "difference_Mt_co2e_ch4_uniform_28"):
+        total[key] = round(sum(r[key] for r in out), 3)
+    return out + [total]
 
 
 def main():
@@ -398,16 +433,20 @@ def main():
     ap.add_argument("--check", action="store_true")
     args = ap.parse_args()
     rows = build()
+    products = (
+        (OUT, FIELDS, rows, banner(rows)),
+        (OFFSETS_OUT, OFFSET_FIELDS, category_offsets(rows), OFFSET_BANNER),
+    )
+    for path, fields, data, heading in products:
+        if args.check:
+            current = io.open(path, encoding="utf-8", newline="").read() if os.path.exists(path) else ""
+            if current != table_text(fields, data, banner=heading):
+                raise SystemExit("%s is stale" % os.path.relpath(path, ROOT))
+            print("checked: %s (%d rows)" % (os.path.relpath(path, ROOT), len(data)))
+        else:
+            write_table(path, fields, data, banner=heading)
     if args.check:
-        current = io.open(OUT, encoding="utf-8").read() if os.path.exists(OUT) else ""
-        write_table(OUT + ".tmp", FIELDS, rows, banner=BANNER)
-        fresh = io.open(OUT + ".tmp", encoding="utf-8").read()
-        os.remove(OUT + ".tmp")
-        if current != fresh:
-            raise SystemExit("outputs/pakemis_btr_comparison.csv is stale")
-        print("checked: %d rows" % len(rows))
         return
-    write_table(OUT, FIELDS, rows, banner=BANNER)
     totals = [r for r in rows if r["tier"] == "total"]
     print("BTR comparison -> %s" % OUT)
     for t in totals:

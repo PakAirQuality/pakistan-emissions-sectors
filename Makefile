@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := build
-.PHONY: gas-pilot dev release-check layers public-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national figures clean
+.PHONY: contribution-evidence contribution-figures contribution-check gas-pilot dev release-check layers public-check build full ingest build-plan data-index data-check test-fast changed eval release-fixpoint edgar-ghg-categories clinker-trade btr-comparison forest-flux release-sequence all quick test dashboard sectors agriculture waste aviation aviation-controls aviation-fallback aviation-study aviation-opensky aviation-adsblol-pilot aviation-era5 aviation-ledger aviation-anchor power transport railways fugitives ippu industry residential air national figures clean
 
 # Full national pipeline: nine sectors, then the cross-sector layer.
 all: full
@@ -211,6 +211,21 @@ fgas-leak-rates:
 
 btr-comparison:
 	python3 scripts/build_btr_comparison.py
+
+# Focused optional evaluation: uses the shipped panels and reruns only the small
+# nitrogen kernel, so a contribution review does not trigger the full inventory.
+contribution-evidence: btr-comparison
+	python3 -m pkinv.sectors.residential.official_reporting --ccac-only
+	python3 -m pkinv.sectors.agriculture.faostat_nitrogen_flows
+	python3 -m pkinv.report.contribution_evidence
+
+contribution-figures: contribution-evidence
+	python3 -m pkinv.report.contribution_figures
+
+contribution-check:
+	python3 scripts/build_btr_comparison.py --check
+	python3 -m pkinv.sectors.agriculture.faostat_nitrogen_flows --check
+	python3 -m pkinv.report.contribution_evidence --check
 
 # Optional, network. Asks UN Comtrade for the monthly HS 252310 clinker trade before
 # FY2023-24, and for the annual totals that let a silent month be PROVED zero rather than
