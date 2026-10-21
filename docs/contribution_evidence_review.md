@@ -146,6 +146,9 @@ for the following specific material, not as a substitute for doing the analysis:
 Return extract tables and provenance rather than copying restricted documents
 into the public repository. No outside authors were contacted in this pass.
 
+The material was returned on 21 October 2026; `docs/contribution_evidence_returned.md` lists
+what each row received, and what was not found, and why.
+
 ## Figures
 
 - `outputs/figures/pakemis_contribution_btr_offsets.png` and `pakemis_contribution_btr_offsets.svg`:

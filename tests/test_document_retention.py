@@ -63,6 +63,7 @@ FETCHERS = (
     "scripts/fetch_cited_documents.py",
     "scripts/fetch_comtrade_clinker.py",
     "scripts/fetch_comtrade_hfc.py",
+    "scripts/fetch_cooking_manure_evidence.py",
     "scripts/fetch_firms_country_archive.py",
     "scripts/fetch_gas_reallocation_evidence.py",
     "scripts/fetch_gem_trackers.py",

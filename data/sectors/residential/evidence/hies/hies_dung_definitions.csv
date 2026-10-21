@@ -1,0 +1,28 @@
+# HIES 2024-25: HOW THE SURVEY DEFINES AND RECORDS DUNG CAKE, AS ITS OWN DOCUMENTS PRINT IT.
+# Transcribed 2026-10-21 from two held PBS documents: the household questionnaire
+# sources/HIES/Male-Questionnaire-HIES-2024-25-English.pdf (31 pp.; sha256 1db16b5bb99fb1a72b95e415235e0fcf023702ede7c575a5a89fce5db07063dd)
+# and the enumerators' manual sources/HIES/Manual-of-Instruction-HIES-2024-25.pdf (182 pp.; sha256
+# 188081a3fccf744e5f496b525b6a094916a61bb1ef7ebabc230ecc2f5cada91c). Page numbers are the printed page footers (the manual's
+# printed page is its PDF page less one). 'quote' is a phrase copied from the document; tests/test_returned_contribution_evidence.py
+# finds every one in the held text when the restricted layers are mounted.
+# What the documents do NOT say: neither defines a dung cake's mass, moisture or composition, nor separates cooking from
+# heating in the quantity item. The quantity is consumption by the household from all four routes in the last 30 days.
+document,page,element,code,quote,reading
+questionnaire,17,Section 6-M Part C item,045404,Dung cake (dry),"monthly non-durable consumption item, unit Kg, under OTHER FUELS beside firewood 045401, charcoal 045402, coal 045403, agricultural wastes 045405 and cotton sticks 045406"
+questionnaire,17,Section 6-M Part C unit,045404,Kg,the quantity is recorded in kilograms of dry dung cake
+questionnaire,17,Section 6-M Part C recall,,during the last 1 month,the question put to the household for every Part C item
+questionnaire,17,Section 6-M Part C route 1,Qty 1 / Value 2,PAID AND CONSUMED,"purchased (cash, credit or barter) and consumed; scripts/ingest_hies.py reads it as q1"
+questionnaire,17,Section 6-M Part C route 2,Qty 3 / Value 4,Wages and Salaries,received as wages in kind and consumed; read as q2
+questionnaire,17,Section 6-M Part C route 3,Qty 5 / Value 6,Own Produced,produced by the household and consumed; read as q3 (the ingest's own-produced share)
+questionnaire,17,Section 6-M Part C route 4,Qty 7 / Value 8,"gift, dowry, inheritance","received as assistance, gift, dowry, inheritance or other sources and consumed; read as q4"
+questionnaire,17,Section 6-M Part C exclusion,,Business related consumption of the household should be excluded,the quantity is household final consumption; fuel a household uses in its business is outside it
+questionnaire,11,Section 5 Q8 main cooking fuel,6,Dung cake,"one main fuel per household (codes 1-9); Dung cake = 6, Crop residue = 7"
+questionnaire,11,Section 5 Q9 main heating fuel,9,Dung cake,"one main fuel per household (codes 1-11); Dung cake = 9"
+questionnaire,27,Agriculture sheet Part B produced item,172,Dung cakes,"value of dung cakes produced for home use or sale; time period Month = 1 or Year = 2; a value in rupees, not a quantity"
+manual,70,Q-8 main cooking fuel,6,6. Dung Cake,"the manual's code list: 1 Firewood, 2 Gas, 3 LPG/Cylinder, 4 Kerosene oil, 5 Electricity, 6 Dung Cake, 7 Crop residue, 8 Charcoal/Coal, 9 Others"
+manual,91,reference period,,Last month means the preceding 30 days from the date of enumeration,"applies to Parts B and C; Part A is the last 14 days, Parts D and E the last year"
+manual,91,unpaid and consumed,,Own produced and consumed,"one of the three unpaid sub-categories (wages in kind; own produced; assistance, gifts and other sources), valued at local market prices"
+manual,92,non-durable goods,,"fuel and lighting","fuel is a non-durable good, life expectancy under one year"
+manual,102,04.5.4 Solid fuels,045401-045406,"Coal, coke, briquettes, firewood, charcoal, peat and the like",the COICOP heading the dung-cake item sits under; dung is not named in the heading text
+manual,133,Agriculture sheet code 172,172,Code = 172: Dung cakes,listed among items produced for home use or sale (eggs 166 to all other 175)
+manual,143,annualisation,,will be multiplied by 12 to convert it to annual basis,"Parts B and C totals are monthly and are multiplied by 12; scripts/ingest_hies.py applies the same factor to the summed q1-q4 quantity"

@@ -7,6 +7,40 @@ current national figures are the manifest's.
 
 ## [Unreleased]
 
+### The evidence the contribution handoff asked for, returned
+
+`docs/contribution_evidence_returned.md` answers the handoff table in
+`docs/contribution_evidence_review.md`, row by row. Three new evidence tables, none read by an engine, so no
+total moves:
+- **HIES 2024-25 dung cake** (`data/sectors/residential/evidence/hies/hies_dung_definitions.csv`, 18 rows):
+  item 045404 "Dung cake (dry)" in kg, 30-day recall, four acquisition routes, ×12 annualisation, business
+  use excluded, from the held questionnaire and manual with printed pages. The documents give no moisture,
+  mass or heating value and do not split cooking from heating.
+- **Stove efficiency and stacking** (`data/sectors/residential/evidence/cookstove_efficiency_evidence.csv`,
+  16 rows):
+  - the World Bank 2024 survey's main-stove shares (55.7% three-stone or traditional) and stacking
+    (6.2%; LPG the usual backup, rarely used for cost). It collected no efficiency.
+  - two US EPA laboratory studies, kept for this: Jetter et al. 2012 (three-stone fire 14-15%) and Shen
+    et al. 2017 (LPG ~57%, kerosene ~42%, wood 25-31%).
+  - No source measures a Pakistani stove or dung cake; the table records that gap.
+- **FAOSTAT manure nitrogen** (`data/sectors/agriculture/evidence/faostat_manure_nitrogen.csv`, 1,701 rows,
+  CC BY 4.0), written by `scripts/ingest_faostat_manure_nitrogen.py` from the Livestock Manure bulk:
+  - FAOSTAT assigns 14.2-14.5% of excreted N to neither treated nor pasture N;
+  - for cattle (0.26) and buffalo (0.27) that share sits near the unsourced burned-fuel shares in
+    `mms_shares.csv` (0.28 / 0.30). A resemblance, possibly a common IPCC default; not a citation.
+
+**Not found, and logged** (`data/raw/ACQUISITION_LOG_cooking_manure_20261021.csv`, by
+`scripts/fetch_cooking_manure_evidence.py`): the CCAC/SEI LEAP export; the ACS Slater 2024 and MDPI Mir
+2026 PDFs (403); the "MDPI Sustainability 2021" dung-cake study behind `mms_shares.csv`; any Pakistani
+storage-duration or system-share source.
+
+**Checks:** `tests/test_returned_contribution_evidence.py` finds every transcribed quote on its cited page
+of the held document, and holds the FAOSTAT extract to FAOSTAT's own identities and to a re-derivation
+from the held bulk. The new skips are pinned in `data/catalog/restricted_gated_tests.txt`.
+
+**Also fixed:** `ba529ca` repaired the gated pins that `8b2050d` left stale, the cause of that commit's
+CI failure.
+
 ### National contribution evidence and benchmark repairs
 
 This entry covers commit `59b0eda`, an external contribution-evidence pass, and the follow-up

@@ -1,0 +1,34 @@
+# COOKSTOVE THERMAL EFFICIENCY AND STOVE STACKING: WHAT THE HELD PUBLIC SOURCES PRINT.
+# Assembled 2026-10-21 for the cooking-manure application's data gate (docs/contribution_evidence_returned.md). Three documents:
+# - wb2024: World Bank ESMAP (2024) Pakistan Energy Survey, sources/Papers/worldbank_2024_pakistan_energy_survey.pdf (104 pp.;
+#   sha256 a61c7bd8c847b6ee2d4bc0052f90fc9c96e3559ee3eb90135fe8b42f222e5aaa), survey fieldwork 2022; printed page footers.
+# - jetter2012: Jetter et al. (2012) Environ. Sci. Technol., doi 10.1021/es301693f; the ACS Just Accepted
+#   manuscript, data/raw/literature/jetter_2012_est_cookstove_emissions_efficiency.pdf (sha256
+#   cf89add613a9b14d33c594c9db2a61f07ff99766e3bad7cc4a10e4e168572b44); 'Page n of 18' manuscript numbering.
+# - shen2017: Shen et al. (2017) Energy & Fuels 31(3) 3081-3090, doi 10.1021/acs.energyfuels.6b02641; the PMC author manuscript
+#   PMC6145494, data/raw/literature/shen_2017_energy_fuels_pmc6145494.html (sha256
+#   58e53e1155aa6d358e3d67b78b7d0b3d8fa27c99e0dee946a3879a8bd3993bd2); the web page has no page numbers (page = 'html').
+# 'quote' is copied from the document and is found in the held text by tests/test_returned_contribution_evidence.py.
+# THE GAP THIS RECORDS: no held source measures a Pakistani stove, and no source here tests dung cake. Both laboratory studies
+# are US EPA Water Boiling Test results on wood, charcoal, pellets, crop residues, kerosene and LPG; the Pakistan survey states
+# that it collected no efficiency data. An efficiency for dung cake on a Pakistani chulha is therefore NOT returned.
+# (The acquisition notes written by scripts/fetch_cooking_manure_evidence.py on 2026-10-21 described Jetter as '22 stove-fuel
+# combinations' under 'WBT 4.1.2'; the paper tests twenty-two cookstoves on six fuels, forty-four combinations, under WBT
+# Version 4. The rows below follow the paper.)
+source,page,record_kind,stove_or_fuel,quantity,value,unit,setting,quote,note
+wb2024,10,statement,all stoves,efficiency attribute,not collected,,Pakistan 2022 household survey,did not collect data to analyze the efficiency attribute,"the MTF cooking assessment uses five attributes (exposure, convenience, availability, affordability, safety); efficiency is absent"
+wb2024,55,share,3-stones/open fire stove or traditional/locally built stove,households by main stove,55.7,% households,Pakistan nationwide 2022 (Figure 70),3-stones/Open Fire Stove or Traditional/Locally Built Stove,"rural 71.8, urban 17.1; the survey does not separate three-stone fires from built chulhas in this figure"
+wb2024,55,share,LPG stove,households by main stove,5.7,% households,Pakistan nationwide 2022 (Figure 70),5.7 percent with liquefied petroleum gas (LPG) stoves,rural 6.8; urban 3.0
+wb2024,55,share,piped natural gas stove,households by main stove,38.6,% households,Pakistan nationwide 2022 (Figure 70),38.6 percent,rural 21.3; urban 80.0
+wb2024,55,statement,manufactured biomass stove,households by main stove,0,,Pakistan nationwide 2022,"kerosene stoves, solar cookers or hybrid cooking stoves","the survey states that no Pakistani household uses a manufactured biomass stove, a kerosene stove, a solar cooker or a hybrid stove (the phrase is the end of that sentence; the PDF interleaves figure labels with its start); the 0.1% 'Other' in Figure 70 is the remainder"
+wb2024,57,share,one stove only,households,93.8,% households,Pakistan nationwide 2022,93.8 percent of Pakistani households depend on just one stove,
+wb2024,57,share,stove stacking,households stacking stoves,6.2,% households,Pakistan nationwide 2022,6.2 percent of households stacking stoves,stove stacking = the concurrent use of multiple stoves and fuels
+wb2024,57,share,LPG stove as the stacked stove,share of stacking households,58.9,% stacking households,Pakistan nationwide 2022 (Figure 73),nearly 60 percent keep LPG stoves as a backup,"Figure 73 prints 58.9; three-stone 17.3, traditional/locally built 12.5, piped gas 10.9, other 0.4"
+wb2024,57,share,LPG stacked but rarely used,share of LPG-stacking households,81.5,% LPG-stacking households,Pakistan nationwide 2022 (Figure 75),81.5 percent reported not using the stoves most of the time,because the fuel is too expensive
+jetter2012,1,efficiency,3-stone fire (wood),overall thermal efficiency,14-15,%,"US EPA laboratory, WBT Version 4",compared with 1415% for the 3-stone cookfire,"the PDF text drops the dash in '14-15%'; p.6 prints 'approximately 14-15% OTE' for minimally and carefully tended fires"
+jetter2012,1,efficiency,best tested stove,overall thermal efficiency,53,%,"US EPA laboratory, WBT Version 4",The highest thermal efficiency was 53%,"twenty-two cookstoves burning six fuel types (wood, charcoal, pellets, corn cobs, rice hulls, plant oil); no dung, no kerosene, no LPG"
+jetter2012,6,efficiency,3-stone fire (wood),overall thermal efficiency,14-15,%,"US EPA laboratory, WBT Version 4",approximately 14-15%,"several built biomass stoves with the same MCE show at least two-fold greater OTE"
+shen2017,html,efficiency,LPG stove,thermal efficiency,57,%,"US EPA laboratory, WBT 4.2.3",the LPG cookstove exhibits the highest TE (∼57%),thermal efficiency = useful energy to the water over fuel energy
+shen2017,html,efficiency,kerosene stove,thermal efficiency,42,%,"US EPA laboratory, WBT 4.2.3",followed by the kerosene stove (∼42%),
+shen2017,html,efficiency,forced-draft wood stove,thermal efficiency,31,%,"US EPA laboratory, WBT 4.2.3",the forced-draft woodstove (31%),
+shen2017,html,efficiency,natural-draft wood stove,thermal efficiency,25,%,"US EPA laboratory, WBT 4.2.3",the natural-draft woodstove (25%),"a three-stone fire was also burned for PAH factors, without a printed TE in this sentence"
