@@ -73,6 +73,9 @@ ARTEFACTS = [
     "docs/data_request_letters.md",
     # The semantic contract's prose names the product and the frozen release's identity rule.
     "docs/semantic_contract.md",
+    "docs/contribution_evidence_review.md",
+    "docs/nitrogen_comparison_evaluation.md",
+    "docs/pakistan_inventory_comparison.md",
 ]
 
 

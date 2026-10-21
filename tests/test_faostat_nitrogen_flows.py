@@ -17,6 +17,8 @@ from pkinv.core.io import read_rows, table_text  # noqa: E402
 from pkinv.sectors.agriculture import faostat_nitrogen_flows as nf  # noqa: E402
 from pkinv.sectors.agriculture import run_inventory, soils  # noqa: E402
 from pkinv.sectors.agriculture.ef_library import InventoryData  # noqa: E402
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from _support import load_script  # noqa: E402
 
 
 class TestConditionalDirectFactors(unittest.TestCase):
@@ -82,28 +84,53 @@ class TestConditionalDirectFactors(unittest.TestCase):
 
 
 class TestComparatorInputs(unittest.TestCase):
-    def setUp(self):
-        self.rows = read_rows(nf.SNAPSHOT)
+    """The comparator is FAOSTAT's own Pakistan rows (data/sectors/agriculture/evidence/
+    faostat_soils_pools.csv, written from the held extract by scripts/ingest_faostat_soils_pools.py)."""
 
-    def test_snapshot_sum_and_declared_rounding(self):
-        self.assertAlmostEqual(sum(nf.comparator_pools(self.rows).values()), 58.4997, places=8)
-        self.assertEqual({r["source_kind"] for r in self.rows}, {"published_comparison_transcription"})
-        self.assertEqual({r["source_commit"] for r in self.rows},
-                         {"41b56365df9195d6a028a66630d0395b0d7c5de1"})
+    def setUp(self):
+        self.rows = read_rows(nf.EXTRACT)
+        self.co2e = [r for r in self.rows if r["year"] == nf.FAO_ITEM_YEAR
+                     and r["element_code"] == nf.FAO_CO2E_AR5]
+
+    def test_extract_sum_is_the_benchmark_and_unrounded(self):
+        """The four items' CO2e AR5 sum to the 58.4996 Mt the benchmark register carries, and the
+        values are FAOSTAT's six-decimal kt, not a rounded transcription."""
+        self.assertAlmostEqual(sum(nf.comparator_pools(self.rows).values()), 58.4996245, places=7)
+        self.assertEqual(len(self.co2e), 4)
+        for r in self.co2e:
+            self.assertEqual(r["unit"], "kt")
+            self.assertEqual(len(r["value"].split(".")[1]), 6, r)
+
+    def test_legs_reconcile_with_the_item_totals(self):
+        legs = nf.comparator_legs(self.rows)
+        pools = nf.comparator_pools(self.rows)
+        for name, total in pools.items():
+            # FAOSTAT prints N2O and CO2e separately, each rounded: they agree to 1e-4 Mt, not exactly
+            self.assertAlmostEqual(legs[(name, "direct")][0] + legs[(name, "indirect")][0], total, delta=1e-4)
+        self.assertEqual(legs[("synthetic fertiliser", "indirect")][1], "total less direct")
+
+    def test_the_extract_reproduces_from_the_held_raw_file(self):
+        from _support import require_layers
+        require_layers("the FAOSTAT Emissions Totals extract")
+        ingest = load_script("ingest_faostat_soils_pools")
+        self.assertEqual(ingest.main(["--check"]), 0)
 
     def test_duplicate_and_missing_items_are_rejected(self):
-        for rows in (self.rows + [self.rows[0]], self.rows[:-1]):
+        for rows in (self.rows + [self.co2e[0]], [r for r in self.rows if r is not self.co2e[0]]):
             with self.assertRaises(ValueError):
                 nf.comparator_pools(rows)
 
-    def test_mismatched_metric_scope_and_nonfinite_values_are_rejected(self):
-        for field, value in (("area", "India"), ("year", "2024"), ("unit", "kt CO2e AR5"),
-                             ("element_code", "723114"), ("value_decimal_places", "6"),
-                             ("value", "nan"), ("value", "-1")):
+    def test_mismatched_unit_and_nonfinite_values_are_rejected(self):
+        for field, value in (("unit", "Mt"), ("value", "nan"), ("value", "-1")):
             rows = copy.deepcopy(self.rows)
-            rows[0][field] = value
+            target = next(r for r in rows if r["year"] == nf.FAO_ITEM_YEAR and r["element_code"] == nf.FAO_CO2E_AR5)
+            target[field] = value
             with self.subTest(field=field, value=value), self.assertRaises(ValueError):
                 nf.comparator_pools(rows)
+
+    def test_an_absent_year_is_rejected(self):
+        with self.assertRaises(ValueError):
+            nf.comparator_pools([r for r in self.rows if r["year"] != nf.FAO_ITEM_YEAR])
 
     def test_ambiguous_or_absent_activity_year_is_rejected(self):
         for rows in ([], [{"year": "2023"}, {"year": "2023"}]):
@@ -130,7 +157,7 @@ class TestPublishedComparison(unittest.TestCase):
                                float(current["faostat"]), delta=2e-6)
         both = float(self.by[nf.CASE_FLOWS["both"]]["pakemis"])
         residual = float(self.by["unresolved residual after direct-factor substitutions"]["pakemis"])
-        self.assertAlmostEqual(both + residual, float(current["faostat"]), delta=1e-6)
+        self.assertAlmostEqual(both + residual, float(current["faostat"]), delta=2e-6)   # two 6-dp prints
         for row in self.rows:
             if row["row_kind"] == "pool":
                 legs = [float(r["pakemis"]) for r in self.rows if r["row_kind"] == "pool_leg"

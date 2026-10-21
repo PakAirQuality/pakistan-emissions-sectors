@@ -55,6 +55,7 @@ import csv
 import hashlib
 import io
 import os
+import re
 import sys
 import zipfile
 
@@ -81,12 +82,28 @@ COLS = {"activity_TJ": 2, "basis": 3, "ief_co2_t_per_TJ": 4, "ief_ch4_kg_per_TJ"
 
 FUEL_ROWS = ("Liquid fuels", "Solid fuels", "Gaseous fuels", "Biomass")
 
-# Slater et al. (2024), doi:10.1021/acsestair.4c00003, section 3.1, Figure 2 and
-# Table 11: national PM2.5 641 kt in 2021, households approximately 35%.
-# Their product is a rounded implied mass; the published "2021" does not itself
-# establish a calendar-year convention. See the benchmark register for source scope.
-CCAC_NATIONAL_PM25_KT_2021 = 641.0
-CCAC_RESIDENTIAL_SHARE = 0.35
+# The CCAC/SEI integrated assessment (Slater, Malley et al. 2022, held as
+# sources/Papers/ccac_sei_pakistan_assessment.pdf; peer-reviewed as Slater et al. 2024,
+# doi:10.1021/acsestair.4c00003): national PM2.5 641 kt in 2021 (Table 12, p.60) and households
+# "around 35 %" (p.59), read from the transcription of that report rather than typed here. Their
+# product is a rounded implied mass; the published "2021" does not itself establish a
+# calendar-year convention. See the benchmark register for source scope.
+CCAC_EXTRACT = asset_path(DATA, "sectors", "residential", "evidence", "ccac_sei_2022_household.csv")
+
+
+def _ccac_printed(path=CCAC_EXTRACT):
+    rows = read_rows(path)
+    national = [r for r in rows if r["record_kind"] == "national_total" and r["quantity"] == "PM2.5"
+                and r["year"] == "2021"]
+    share = [r for r in rows if r["record_kind"] == "statement"
+             and r["quantity"] == "residential share of national PM2.5"]
+    if len(national) != 1 or len(share) != 1:
+        raise ValueError("%s must print one 2021 PM2.5 total and one residential share" % path)
+    return (float(national[0]["value"].replace(",", "")),
+            float(re.search(r"[0-9.]+", share[0]["value"]).group()) / 100.0)
+
+
+CCAC_NATIONAL_PM25_KT_2021, CCAC_RESIDENTIAL_SHARE = _ccac_printed()
 
 
 def payload_sha256(path=CRT_SOURCE):

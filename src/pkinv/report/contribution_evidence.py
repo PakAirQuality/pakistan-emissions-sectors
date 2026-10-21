@@ -3,7 +3,7 @@
 This is a synthesis layer, not another emissions engine or validation framework.
 It reuses the shared configuration/window vocabulary, claim-pointer resolver and
 validation-class definitions. Every result carries scope, admission limits, shared
-assumptions and exact input hashes. No source is promoted to independent evidence
+assumptions and exact input hashes. A source is never promoted to independent evidence
 because the resulting estimates agree.
 
 Run: python -m pkinv.report.contribution_evidence [--check] [--root PATH]

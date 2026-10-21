@@ -165,10 +165,24 @@ The smallest useful external acquisition is **one complete household comparator
 export**, rather than a new country-wide modelling exercise. Request the
 Slater/CCAC 2021 residential fuel-by-technology activity and factor table,
 unrounded PM2.5 total, time convention, biomass moisture/mass basis,
-other-biomass split, and particulate/release definitions. Obtain the original
-CCAC report already listed in the restricted source manifest as
-`sources/Papers/ccac_sei_pakistan_assessment.pdf` to verify the existing source
-lineage. No contact has been made as part of this source check.
+other-biomass split, and particulate/release definitions.
+
+The original CCAC report is held (`sources/Papers/ccac_sei_pakistan_assessment.pdf`) and was read
+on 21 October 2026. Its household tables are transcribed as printed in
+`data/sectors/residential/evidence/ccac_sei_2022_household.csv`:
+- Table 5 (pp.42–43): 2021 household fuel shares and intensities by province and urban/rural;
+- Table 12 (p.60): the 2010–2021 national totals;
+- the data-source table (p.37): Census 2017, PSLM 2018-19 and the Compendium on Environment
+  Statistics 2020;
+- the factor sources (p.40): IPCC 2006 and EMEP/EEA 2019.
+
+What it does not settle:
+- "Other Biomass" is never defined beyond "wood, charcoal and other biomass".
+- The intensities print "kg" per household per year where the magnitudes are tonnes.
+- The year is "2021" with no calendar or fiscal convention.
+- The LEAP model export is not held.
+
+No contact has been made as part of this source check.
 
 With those fields, the current bridge can distinguish activity, factor and
 boundary contributions rather than offer only a sensitivity. If they cannot be
@@ -284,8 +298,8 @@ percentage.
   Change Mitigation in Pakistan*](https://www.ccacoalition.org/policy-database/integrated-assessment-air-pollution-and-climate-change-mitigation-pakistan).
   Official CCAC record identifies year 2022 and addition date 21 February 2023.
   Landing-page indexed metadata retrieved; direct access returned HTTP 403.
-  The existing repository manifest identifies a held report, but this audit did
-  not inspect that original file. It must not be counted as independent of [S1].
+  The held copy was read on 21 October 2026 (see the transcription above). It is
+  the same team's work as [S1] and must not be counted as independent of it.
 
 [essd-review]: https://www.earth-system-science-data.net/peer_review/review_criteria.html
 [essd-scope]: https://www.earth-system-science-data.net/about/aims_and_scope.html

@@ -16,7 +16,7 @@ their explanations exceeded what their inputs could establish.
 |---|---|---|
 | BTR category offsets | Wider-scope headline totals differ by only 1.155 Mt CO2e. Sixteen disjoint exact/aggregate crosswalk rows have +72.295 Mt and −53.956 Mt offsets, net +18.339 Mt. | Near-equal totals conceal large differences. Shared activity, aggregate boundaries and unresolved BTR methane weighting prevent an accuracy claim. |
 | Managed-soils comparison | Current engine 28.493727 Mt; EF1 substitution 40.788901; EF3PRP substitution 42.776577; both 55.071751; retained FAOSTAT comparator 58.499700. | Direct-factor substitutions bridge 88.576% of this numerical gap conditionally. FY/CY, N routing, coverage and remaining methods are not harmonised. |
-| Household PM2.5 bridge | Approximate CY2021 PakEmis 259.037 kt versus rounded-implied Slater endpoint 224.350 kt: unadjusted gap +34.687 kt. | Removing 67.578 kt of crop-residue emissions reverses the gap but is an unverified boundary scenario. Slater explicitly includes Other Biomass. |
+| Household PM2.5 bridge | Approximate CY2021 PakEmis estimate of 259.037 kt versus rounded-implied Slater endpoint 224.350 kt: unadjusted gap +34.687 kt. | Removing 67.578 kt of crop-residue emissions reverses the gap but is an unverified boundary scenario. Slater explicitly includes Other Biomass. |
 | National conclusion table | GHG decade change remains positive across the eight represented parameter intervals. PM2.5 rises about 24%; SO2 falls about 42–45% across the four configurations. Residential leads covered PM2.5; the NOx leader changes. | Four configurations are a bounded sensitivity set, including a diagnostic dung allocation. Their agreement is not exhaustive structural robustness. |
 | Gas application summary | Territorial CO2e falls across 56 admitted full-scope cases. Methane and all 112 combined footprint cases remain unresolved under the existing admission rules. | Repeated cells are not independent observations. Negative partial footprints cannot establish reductions when missing stages could reverse them. |
 
@@ -25,9 +25,10 @@ restatements. Its matched-category difference is 4.13%, versus 0.24% for the
 wider headline totals. A uniform-28 methane sensitivity changes PakEmis only;
 it is not demonstrated harmonisation of both accounts.
 
-The nitrogen comparator is now publicly reproducible using an explicitly
-rounded four-row snapshot transcribed from the prior published product. That
-solves a reproduction gap; it does not supply new primary evidence. Current
+The nitrogen comparator is now publicly reproducible. (Follow-up, 21 October 2026: the rounded
+four-row snapshot this pass introduced was replaced by FAOSTAT's own unrounded Pakistan rows,
+`data/sectors/agriculture/evidence/faostat_soils_pools.csv`, written from the held extract;
+that does supply the primary values and their direct/indirect split.) Current
 emissions and substitutions are recomputed from the engine. The old sensitivity
 table has also been regenerated. Summed livestock heads, dominated by poultry,
 are no longer used to establish agreement in excreted nitrogen.
@@ -144,3 +145,11 @@ for the following specific material, not as a substitute for doing the analysis:
 
 Return extract tables and provenance rather than copying restricted documents
 into the public repository. No outside authors were contacted in this pass.
+
+## Figures
+
+- `outputs/figures/pakemis_contribution_btr_offsets.png` and `pakemis_contribution_btr_offsets.svg`:
+  the BTR category offsets behind the near-equal national totals.
+- `outputs/figures/pakemis_contribution_nitrogen_attribution.png` and
+  `pakemis_contribution_nitrogen_attribution.svg`: the conditional EF1 and EF3PRP substitutions
+  against the FAOSTAT comparator.

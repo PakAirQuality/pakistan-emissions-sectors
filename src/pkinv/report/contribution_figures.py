@@ -66,7 +66,10 @@ def _save(fig, output_dir, name):
         path = output_dir / f"{name}.{extension}"
         fig.savefig(path, dpi=220,
                     bbox_inches="tight", facecolor="white",
-                    metadata={"Date": None} if extension == "svg" else None)
+                    # no Date and no Creator/Software stamp: the files answer to the pinned
+                    # matplotlib in requirements.lock, not to whichever version drew them
+                    metadata={"Date": None, "Creator": None} if extension == "svg"
+                    else {"Software": None})
         if extension == "svg":
             # Matplotlib leaves spaces before newlines in path attributes.
             # Newlines preserve token separation; trim spaces for clean patches.

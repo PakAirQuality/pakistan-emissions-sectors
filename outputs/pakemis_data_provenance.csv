@@ -80,6 +80,7 @@ data/sectors/agriculture/canonical/parameters/rice_calendar.csv,data/sectors/agr
 data/sectors/agriculture/evidence/district_records/district_rice_area_MNFSR_2022-23.csv,data/sectors/agriculture/evidence/district_records,hand:held-source,,archived,,5,no,"MNFSR Crops Area & Production district-wise 2022-23 booklet, held beside its pdftotext dump"
 data/sectors/agriculture/evidence/district_records/district_rice_area_PunjabCRS_2022-25.csv,data/sectors/agriculture/evidence/district_records,hand:held-source,,archived,,3,no,Punjab Crop Reporting Service district-wise rice 2022-25 (two PDFs + dumps held)
 data/sectors/agriculture/evidence/district_records/district_wheat_area_MNFSR_2022-23.csv,data/sectors/agriculture/evidence/district_records,hand:held-source,,archived,,4,no,MNFSR Crops Area & Production district-wise 2022-23 booklet
+data/sectors/agriculture/evidence/faostat_soils_pools.csv,data/sectors/agriculture/evidence,producer,scripts/ingest_faostat_soils_pools.py,,,3,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/evidence/gleam/gleam_mms_south_asia.csv,data/sectors/agriculture/evidence/gleam,hand:held-source,,archived,,1,no,"FAO GLEAM 3.0 reference documentation Tables 3.2-3.5 (South Asia MMS shares), PDFs held; data/gleam_mms.csv is the Nex-b"
 data/sectors/agriculture/gis/manual/FIRMS_SOURCES.json,data/sectors/agriculture/gis/manual,sidecar,,,,4,no,
 data/sectors/agriculture/gis/manual/RICE_SOURCES.json,data/sectors/agriculture/gis/manual,sidecar,,,,4,no,
@@ -153,7 +154,7 @@ data/sectors/aviation/canonical/lookups/operator_groups.csv,data/sectors/aviatio
 data/sectors/aviation/canonical/parameters/aviation_engine_map.csv,data/sectors/aviation/canonical/parameters,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/aviation_engine_map.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/aviation/canonical/parameters/aviation_fleet_mix.csv,data/sectors/aviation/canonical/parameters,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/aviation_fleet_mix.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/aviation/canonical/parameters/aviation_params.csv,data/sectors/aviation/canonical/parameters,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/aviation_params.csv; declared field mapping in data/canonical_columns.csv
-data/sectors/aviation/evidence/benchmarks.csv,data/sectors/aviation/evidence,hand:held-source,,archived,,25,no,"OECD air-transport SDMX extracts, held as sources/Aviation/OECD_air_transport_PAK_{2019_2025,FY2022_FY2023}.csv; benchma"
+data/sectors/aviation/evidence/benchmarks.csv,data/sectors/aviation/evidence,hand:held-source,,archived,,24,no,"OECD air-transport SDMX extracts, held as sources/Aviation/OECD_air_transport_PAK_{2019_2025,FY2022_FY2023}.csv; benchma"
 data/sectors/aviation/evidence/control_reconciliation_2023_24.csv,data/sectors/aviation/evidence,hand:derived,,derived,,3,no,reconciles this repo's own controls
 data/sectors/aviation/evidence/route_evidence_2023_24.csv,data/sectors/aviation/evidence,hand:no-source,,not-archived,aviation-operator-fleet-pages,6,no,"fifteen cited sources: ten held with their content; one gone, one address now serving another article, three reddit thre"
 data/sectors/aviation/evidence/unfccc/aviation_extract_crt.csv,data/sectors/aviation/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt aviation_extract_crt.json
@@ -462,6 +463,7 @@ data/sectors/residential/canonical/evidence/hies/hies_diagnostics.csv,data/secto
 data/sectors/residential/canonical/evidence/official_benchmarks.csv,data/sectors/residential/canonical/evidence,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/activity/residential/official_benchmarks.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/residential/canonical/evidence/unfccc/residential_extract.csv,data/sectors/residential/canonical/evidence/unfccc,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/extracted/unfccc/residential_extract.csv; declared field mapping in data/canonical_columns.csv
 data/sectors/residential/canonical/parameters/residential_params.csv,data/sectors/residential/canonical/parameters,producer,src/pkinv/activity/build.py,,,2,no,Lossless canonical input from data/residential_params.csv; declared field mapping in data/canonical_columns.csv
+data/sectors/residential/evidence/ccac_sei_2022_household.csv,data/sectors/residential/evidence,hand:held-source,,archived,,1,no,"Table 5 (pp.42-43), Table 12 (p.60) and three statements (pp.37, 40, 59) transcribed as printed, 2026-10-21; the LEAP mo"
 data/sectors/residential/evidence/hies/hies_diagnostics.csv,data/sectors/residential/evidence/hies,producer,scripts/ingest_hies.py,archived,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/residential/evidence/official_benchmarks.csv,data/sectors/residential/evidence,hand:held-source,,archived,,3,no,
 data/sectors/residential/evidence/unfccc/residential_extract.csv,data/sectors/residential/evidence/unfccc,producer,scripts/ingest_official_reporting.py,,,2,no,Verified extract of sources/Aviation/PAK_CRT_2024.zip; source SHA256 afba70d10be0694aea6b2ba2cec311e149473346daa206319138185c190e8f38; typed receipt residential_extract.json
@@ -565,13 +567,13 @@ data/shared/evidence/benchmark_splits/spatial_road_transport.csv,data/shared/evi
 data/shared/evidence/benchmark_splits/spatial_wheat_mnfsr.csv,data/shared/evidence/benchmark_splits,producer,scripts/build_benchmark_splits.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/evidence/benchmark_splits/temporal_origins.csv,data/shared/evidence/benchmark_splits,producer,scripts/build_benchmark_splits.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/evidence/benchmark_tasks.csv,data/shared/evidence,producer,scripts/build_benchmark_splits.py,,,5,no,Producer and storage binding declared in data/catalog/assets.csv.
-data/shared/evidence/benchmarks.csv,data/shared/evidence,hand:parameter,,,,25,no,
+data/shared/evidence/benchmarks.csv,data/shared/evidence,hand:parameter,,,,24,no,
 data/shared/evidence/benchmarks_air.csv,data/shared/evidence,hand:parameter,,,,2,no,
 data/shared/evidence/btr1_national_inventory.csv,data/shared/evidence,hand:parameter,,,,4,no,
 data/shared/evidence/ml/brick_kilns_pk.csv,data/shared/evidence/ml,hand:held-source,,archived,,7,no,"the published file of Zenodo record 14718244, held; its md5 equals the digest the record prints"
 data/shared/evidence/transcription_checks.csv,data/shared/evidence,hand:parameter,,,,6,no,
 data/shared/evidence/validation/livestock_validation.csv,data/shared/evidence/validation,producer,src/pkinv/eval/validation/livestock_val.py,,,0,yes,Producer and storage binding declared in data/catalog/assets.csv.
-data/shared/evidence/validation_catalog.csv,data/shared/evidence,producer,src/pkinv/report/validation_catalog.py,,,17,no,Producer and storage binding declared in data/catalog/assets.csv.
+data/shared/evidence/validation_catalog.csv,data/shared/evidence,producer,src/pkinv/report/validation_catalog.py,,,18,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/gis/BOUNDARY_SOURCES.json,data/shared/gis,sidecar,,,,4,no,
 data/shared/gis/PAK_ADM1.geojson,data/shared/gis,producer,src/pkinv/sectors/agriculture/gis/district_downscale.py;src/pkinv/sectors/agriculture/gis/run_districts.py,,,25,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/gis/PAK_ADM2.geojson,data/shared/gis,producer,src/pkinv/sectors/agriculture/gis/district_downscale.py;src/pkinv/sectors/agriculture/gis/run_districts.py,,,25,no,Producer and storage binding declared in data/catalog/assets.csv.
@@ -616,10 +618,10 @@ data/shared/parameters/air_emission_factors.csv,data/shared/parameters,hand:para
 data/shared/parameters/coal_booking_policy.csv,data/shared/parameters,producer,scripts/build_coal_vintage_ledger.py;scripts/ingest_coal_vintages.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/emission_factors.csv,data/shared/parameters,producer,src/pkinv/sectors/agriculture/uncertainty_inputs.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/shared/parameters/gas_reallocation/air_factors.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
-data/shared/parameters/gas_reallocation/baselines.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,5,no,
-data/shared/parameters/gas_reallocation/coherence.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
+data/shared/parameters/gas_reallocation/baselines.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,6,no,
+data/shared/parameters/gas_reallocation/coherence.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,3,no,
 data/shared/parameters/gas_reallocation/parameter_ranges.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,3,no,
-data/shared/parameters/gas_reallocation/pathways.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,5,no,
+data/shared/parameters/gas_reallocation/pathways.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,6,no,
 data/shared/parameters/gas_reallocation/scope_plants.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,2,no,
 data/shared/parameters/gas_reallocation/station_crosswalk.csv,data/shared/parameters/gas_reallocation,hand:parameter,,,,3,no,
 data/shared/parameters/method_registry.csv,data/shared/parameters,hand:parameter,,,,10,no,

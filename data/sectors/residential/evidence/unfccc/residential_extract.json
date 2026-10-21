@@ -1,7 +1,7 @@
 {
   "name": "residential_extract",
   "producer": "pkinv.sectors.residential.official_reporting.extract",
-  "producer_sha256": "3a730c02e03b00b035036d3df8f958fbd9468a3a5fddc6408c9dc77f9c185428",
+  "producer_sha256": "46ce26bc517133cbf2ae1818b7d9655adc19873cf477df9c2c81579e67c99507",
   "result": {
     "columns": [
       "source_key",

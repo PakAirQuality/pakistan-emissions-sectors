@@ -215,7 +215,6 @@ btr-comparison:
 # Focused optional evaluation: uses the shipped panels and reruns only the small
 # nitrogen kernel, so a contribution review does not trigger the full inventory.
 contribution-evidence: btr-comparison
-	python3 -m pkinv.sectors.residential.official_reporting --ccac-only
 	python3 -m pkinv.sectors.agriculture.faostat_nitrogen_flows
 	python3 -m pkinv.report.contribution_evidence
 

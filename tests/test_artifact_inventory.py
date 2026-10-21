@@ -187,7 +187,9 @@ from _support import require_built  # noqa: E402
 # declared diagnostic by name in data/catalog/artifact_roles.csv), none stopped shipping and no
 # number moved. Naming them in docs/ is the way down, file
 # by file, where a document makes a claim that rests on one. Lowering it is free.
-UNCITED_CEILING = {"canonical": 156, "sector_headline": 54, "diagnostic": 222}
+# 2026-10-21: canonical lowered 156 -> 153, because the contribution-evidence documents name
+# pakemis_industry_edgar_divergence, pakemis_road_technology_case and pakemis_validation_five_classes_summary.
+UNCITED_CEILING = {"canonical": 153, "sector_headline": 54, "diagnostic": 222}
 # THE OTHER DIRECTION OF THE SAME RULE, which nothing checked until rc64.
 #
 # The register enforces that a `canonical` artifact must be named in a manuscript - that is
@@ -397,6 +399,15 @@ class TestTheCountsReconcile(unittest.TestCase):
     # precedent. The count is deliberately not stated: it was "three" while the dict held
     # more, which is the same staleness this round spent its time removing.
     DECLARED_OVERLAPS = {
+        "pakemis_btr_category_offsets.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is the BTR category offsets, a synthesis of shipped "
+            "results beside the inventory and never a total",
+        "pakemis_contribution_claims.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is the contribution-evidence claims, a synthesis of shipped "
+            "results beside the inventory and never a total",
+        "pakemis_contribution_evidence_summary.csv":
+            "matches pakemis_*.csv too; diagnostic wins because it is the contribution-evidence summary, a synthesis of shipped "
+            "results beside the inventory and never a total",
         "pakemis_transition_gas_baselines.csv":
             "matches pakemis_*.csv too; diagnostic wins because it is a product of the "
             "gas-reallocation application, a counterfactual beside the inventory and never a total",

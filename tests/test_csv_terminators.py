@@ -94,6 +94,10 @@ LF_TERMINATED = (
     "pakemis_power_provincial_basis_by_year.csv",
     "pakemis_gas_flow_crosswalk.csv",
     "pakemis_dung_fate_by_year.csv",
+    # the contribution evidence (write_table banners)
+    "pakemis_btr_category_offsets.csv",
+    "pakemis_contribution_claims.csv",
+    "pakemis_contribution_evidence_summary.csv",
     # the gas-reallocation application (write_table banners)
     "pakemis_transition_gas_checks.csv",
     "pakemis_transition_gas_baselines.csv",

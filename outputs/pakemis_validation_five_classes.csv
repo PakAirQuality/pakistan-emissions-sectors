@@ -100,7 +100,7 @@ mag-industry-coal-decision,validation,internal-consistency,internal consistency 
 mag-air-provincial-edgar,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
 geo-power-province-raster,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
 mag-soils-faostat-flows,corroboration,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
-mag-national-btr,validation,shared-upstream,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
+mag-national-btr,corroboration,shared-upstream,shares activity or factors with the estimate,"consistency of shared inputs, not independent confirmation"
 mag-power-coal-reference-audit,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
 mag-power-coal-plant-reconciliation,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs
 mag-air-htap-nh3,validation,partial,partially independent benchmark,agreement or disagreement with a comparator that shares some inputs

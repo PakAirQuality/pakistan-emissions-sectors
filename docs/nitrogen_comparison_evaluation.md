@@ -1,6 +1,6 @@
 # Managed-soils comparison: what is established and what remains unresolved
 
-The current PakEmis engine gives **28.493727 Mt CO2e AR5**, compared with **58.499700 Mt** in the retained FAOSTAT four-item snapshot. Replacing selected direct factors, while keeping the current PakEmis nitrogen inputs and all other terms fixed, gives **55.071751 Mt**. This bridges **88.576%** of the initial numerical difference on this particular substitution path. It demonstrates substantial method sensitivity. It does not establish that these factors caused 88.576% of the difference between the complete inventories, or that either inventory is more accurate.
+The current PakEmis engine gives **28.493727 Mt CO2e AR5**, compared with **58.499625 Mt** in FAOSTAT's own Pakistan rows for the four items (CY2023, unrounded). Replacing selected direct factors, while keeping the current PakEmis nitrogen inputs and all other terms fixed, gives **55.071751 Mt**. This bridges **88.576%** of the initial numerical difference on this particular substitution path. It demonstrates substantial method sensitivity. It does not establish that these factors caused 88.576% of the difference between the complete inventories, or that either inventory is more accurate.
 
 ## Reproducible calculation
 
@@ -61,9 +61,13 @@ All values are Mt CO2e AR5. Broad source labels permit this diagnostic grouping 
 
 ## Comparator provenance and arithmetic repair
 
-`data/sectors/agriculture/evidence/faostat_soils_comparator_snapshot.csv` transcribes the four **FAOSTAT** pool values already published in `outputs/pakemis_faostat_nitrogen_flows.csv` at commit `41b56365df9195d6a028a66630d0395b0d7c5de1`. Each input row records that chain and its four-decimal-place Mt precision. It is a retained comparator, not a new primary extraction or independent check of the earlier transcription. The original raw archive is absent from the public repository. The public build always uses this fixed snapshot and does not change its answer according to private-file availability.
+`data/sectors/agriculture/evidence/faostat_soils_pools.csv` holds FAOSTAT's own Pakistan rows for items 5061–5064: every element (direct N2O, indirect N2O, total N2O and CO2e AR5), every year, value, unit and flag, unrounded. `scripts/ingest_faostat_soils_pools.py` writes it from the held extract of the FAOSTAT Emissions Totals bulk (retrieved 2026-06-30), and a test checks that it re-derives from that file whenever the restricted layer is mounted. FAOSTAT data are CC BY 4.0, so the rows are published as received.
 
-The four printed values sum to **58.4997**, rather than the **58.4996** described in older prose. Four independently rounded four-decimal-place values permit at most ±0.0002 Mt rounding error in their sum. The 0.0001 difference is compatible with rounding, but exact original precision cannot be recovered or asserted from this snapshot.
+The four 2023 CO2e AR5 values sum to **58.4996245 Mt**. This replaces an earlier four-row snapshot, rounded to 4 dp and transcribed from this repository's own output, that had been used while the extract was not visible.
+
+The extract also carries FAOSTAT's direct and indirect legs, so `pool_leg` rows now compare like with like:
+- Synthetic fertilizers print no indirect element. Their indirect leg is total less direct, and is labelled so.
+- FAOSTAT prints N2O and CO2e separately, each rounded, so the legs reconcile with the item totals to 1e-4 Mt, not exactly.
 
 At the audited commit, the old comparison mixed a current ledger sum of **28.49372651** (rounded subitems: **28.4937**) with the **28.53** baseline in the stale sensitivity table. The current national category output was **28.494**. Its EF1-only scenario also retained **40.43**, although the current EF1-linked direct components sum to **12.295174** and therefore yield **40.788901** after substitution. Reading all cases directly from the engine resolves these inconsistent baselines. The independently owned legacy sensitivity product was regenerated from current tracked category outputs and agrees with the fresh engine within its two-decimal-place publication precision; it is no longer an input here.
 

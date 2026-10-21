@@ -1,0 +1,1240 @@
+# FAOSTAT MANAGED-SOILS POOLS FOR PAKISTAN, AS FAOSTAT PRINTS THEM (CC BY 4.0).
+# Items 5061 synthetic fertilizers, 5062 manure applied to soils, 5063 manure left on pasture, 5064 crop residues; every element, year, unit and flag of the held extract, values unrounded.
+# Source: FAOSTAT Emissions Totals bulk https://bulks-faostat.fao.org/production/Emissions_Totals_E_All_Data_(Normalized).zip (retrieved 2026-06-30, sha256 d2c47e116553711f7c2fd6b62437db511038fd9bd9ec77815fa69ff7a18a89a9); Pakistan rows held as data/raw/faostat/faostat_emissions_totals_pakistan.csv (sha256 30d224332bff13bc36f23fb2313ed3fdf468ae2fc4ba76dff0c830fb0d8eb604).
+# Written by scripts/ingest_faostat_soils_pools.py. A comparator, not independent validation: FAOSTAT applies Tier 1 defaults to its own activity data.
+area,area_code_m49,item_code,item,element_code,element,year,unit,value,flag,source
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1961,kt,0.867400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1962,kt,0.857000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1963,kt,1.407900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1964,kt,1.752100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1965,kt,1.441700,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1966,kt,2.244100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1967,kt,3.694600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1968,kt,4.237600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1969,kt,5.675200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1970,kt,5.237000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1971,kt,7.162000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1972,kt,8.041900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1973,kt,7.119800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1974,kt,7.556100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1975,kt,9.233300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1976,kt,10.639700,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1977,kt,11.537200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1978,kt,14.248100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1979,kt,16.153300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1980,kt,17.564400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1981,kt,17.335300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1982,kt,19.865400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1983,kt,19.037400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1984,kt,19.457600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1985,kt,23.489400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1986,kt,27.746000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1987,kt,26.686800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1988,kt,27.577000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1989,kt,30.557300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1990,kt,30.641700,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1991,kt,30.458900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1992,kt,34.070600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1993,kt,34.550000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1994,kt,36.190100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1995,kt,41.455600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1996,kt,41.332200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1997,kt,43.467000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1998,kt,43.555300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),1999,kt,46.184000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2000,kt,47.152200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2001,kt,47.714600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2002,kt,49.658700,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2003,kt,51.137600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2004,kt,53.515900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2005,kt,58.691000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2006,kt,59.736300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2007,kt,56.510500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2008,kt,60.966300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2009,kt,71.873500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2010,kt,68.097100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2011,kt,66.365000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2012,kt,59.357100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2013,kt,67.452200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2014,kt,65.363900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2015,kt,65.806300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2016,kt,67.501100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2017,kt,71.769800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2018,kt,71.769800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2019,kt,72.986500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2020,kt,73.578400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2021,kt,77.351500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2022,kt,76.348100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2023,kt,79.304100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2030,kt,104.541900,F,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7230,Emissions (N2O),2050,kt,131.541900,F,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1961,kt,229.861000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1962,kt,227.105000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1963,kt,373.093500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1964,kt,464.306500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1965,kt,382.050500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1966,kt,594.686500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1967,kt,979.069000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1968,kt,1122.964000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1969,kt,1503.928000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1970,kt,1387.805000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1971,kt,1897.930000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1972,kt,2131.103500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1973,kt,1886.747000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1974,kt,2002.366500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1975,kt,2446.824500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1976,kt,2819.520500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1977,kt,3057.358000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1978,kt,3775.746500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1979,kt,4280.624500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1980,kt,4654.566000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1981,kt,4593.854500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1982,kt,5264.331000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1983,kt,5044.911000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1984,kt,5156.264000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1985,kt,6224.691000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1986,kt,7352.690000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1987,kt,7072.002000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1988,kt,7307.905000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1989,kt,8097.684500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1990,kt,8120.050500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1991,kt,8071.608500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1992,kt,9028.709000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1993,kt,9155.750000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1994,kt,9590.376500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1995,kt,10985.734000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1996,kt,10953.033000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1997,kt,11518.755000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1998,kt,11542.154500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),1999,kt,12238.760000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2000,kt,12495.333000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2001,kt,12644.369000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2002,kt,13159.555500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2003,kt,13551.464000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2004,kt,14181.713500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2005,kt,15553.115000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2006,kt,15830.119500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2007,kt,14975.282500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2008,kt,16156.069500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2009,kt,19046.477500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2010,kt,18045.731500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2011,kt,17586.725000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2012,kt,15729.631500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2013,kt,17874.833000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2014,kt,17321.433500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2015,kt,17438.669500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2016,kt,17887.791500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2017,kt,19018.997000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2018,kt,19018.997000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2019,kt,19341.422500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2020,kt,19498.276000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2021,kt,20498.147500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2022,kt,20232.246500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2023,kt,21015.586500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2030,kt,27703.603500,F,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,723113,Emissions (CO2eq) (AR5),2050,kt,34858.603500,F,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1961,kt,0.654600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1962,kt,0.646800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1963,kt,1.062600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1964,kt,1.322300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1965,kt,1.088100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1966,kt,1.693700,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1967,kt,2.788400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1968,kt,3.198200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1969,kt,4.283200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1970,kt,3.952400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1971,kt,5.405300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1972,kt,6.069300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1973,kt,5.373400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1974,kt,5.702700,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1975,kt,6.968500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1976,kt,8.030000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1977,kt,8.707300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1978,kt,10.753300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1979,kt,12.191200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1980,kt,13.256200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1981,kt,13.083300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1982,kt,14.992700,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1983,kt,14.367800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1984,kt,14.685000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1985,kt,17.727900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1986,kt,20.940400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1987,kt,20.141000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1988,kt,20.812800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1989,kt,23.062100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1990,kt,23.125800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1991,kt,22.987800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1992,kt,25.713600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1993,kt,26.075500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1994,kt,27.313300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1995,kt,31.287200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1996,kt,31.194100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1997,kt,32.805300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1998,kt,32.872000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),1999,kt,34.855900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2000,kt,35.586600,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2001,kt,36.011000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2002,kt,37.478300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2003,kt,38.594400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2004,kt,40.389300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2005,kt,44.295100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2006,kt,45.084000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2007,kt,42.649400,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2008,kt,46.012300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2009,kt,54.244100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2010,kt,51.394100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2011,kt,50.086800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2012,kt,44.797800,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2013,kt,50.907300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2014,kt,49.331300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2015,kt,49.665100,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2016,kt,50.944300,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2017,kt,54.165900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2018,kt,54.165900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2019,kt,55.084200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2020,kt,55.530900,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2021,kt,58.378500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2022,kt,57.621200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2023,kt,59.852200,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2030,kt,78.899500,F,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,7234,Direct emissions (N2O),2050,kt,99.276900,F,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1961,kt,229.861000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1962,kt,227.105000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1963,kt,373.093500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1964,kt,464.306500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1965,kt,382.050500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1966,kt,594.686500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1967,kt,979.069000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1968,kt,1122.964000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1969,kt,1503.928000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1970,kt,1387.805000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1971,kt,1897.930000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1972,kt,2131.103500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1973,kt,1886.747000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1974,kt,2002.366500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1975,kt,2446.824500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1976,kt,2819.520500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1977,kt,3057.358000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1978,kt,3775.746500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1979,kt,4280.624500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1980,kt,4654.566000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1981,kt,4593.854500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1982,kt,5264.331000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1983,kt,5044.911000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1984,kt,5156.264000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1985,kt,6224.691000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1986,kt,7352.690000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1987,kt,7072.002000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1988,kt,7307.905000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1989,kt,8097.684500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1990,kt,8120.050500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1991,kt,8071.608500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1992,kt,9028.709000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1993,kt,9155.750000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1994,kt,9590.376500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1995,kt,10985.734000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1996,kt,10953.033000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1997,kt,11518.755000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1998,kt,11542.154500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),1999,kt,12238.760000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2000,kt,12495.333000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2001,kt,12644.369000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2002,kt,13159.555500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2003,kt,13551.464000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2004,kt,14181.713500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2005,kt,15553.115000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2006,kt,15830.119500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2007,kt,14975.282500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2008,kt,16156.069500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2009,kt,19046.477500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2010,kt,18045.731500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2011,kt,17586.725000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2012,kt,15729.631500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2013,kt,17874.833000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2014,kt,17321.433500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2015,kt,17438.669500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2016,kt,17887.791500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2017,kt,19018.997000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2018,kt,19018.997000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2019,kt,19341.422500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2020,kt,19498.276000,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2021,kt,20498.147500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2022,kt,20232.246500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2023,kt,21015.586500,E,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2030,kt,27703.603500,F,FAO TIER 1
+Pakistan,586,5061,Synthetic Fertilizers,724313,Emissions (CO2eq) from N2O (AR5),2050,kt,34858.603500,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1961,kt,3.244200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1962,kt,3.320200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1963,kt,3.402900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1964,kt,3.485100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1965,kt,3.573400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1966,kt,3.814600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1967,kt,3.873300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1968,kt,3.935000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1969,kt,4.000500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1970,kt,4.071700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1971,kt,4.146900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1972,kt,4.243400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1973,kt,4.382500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1974,kt,4.528600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1975,kt,4.687600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1976,kt,4.856000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1977,kt,5.030200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1978,kt,5.210800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1979,kt,5.403300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1980,kt,5.328800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1981,kt,5.516000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1982,kt,5.655400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1983,kt,5.809800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1984,kt,5.956700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1985,kt,6.115400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1986,kt,6.735600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1987,kt,6.889700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1988,kt,7.076100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1989,kt,7.222800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1990,kt,7.375100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1991,kt,7.831200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1992,kt,8.033600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1993,kt,8.312500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1994,kt,8.786200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1995,kt,9.261900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1996,kt,9.576400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1997,kt,9.902000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1998,kt,9.607000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),1999,kt,9.848900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2000,kt,10.048500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2001,kt,10.306200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2002,kt,10.706900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2003,kt,11.018000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2004,kt,11.273100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2005,kt,11.551000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2006,kt,12.682300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2007,kt,13.161400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2008,kt,13.674900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2009,kt,14.216100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2010,kt,14.529200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2011,kt,15.399400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2012,kt,16.031600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2013,kt,16.454100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2014,kt,17.153300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2015,kt,17.891000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2016,kt,18.645200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2017,kt,19.574600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2018,kt,20.474000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2019,kt,21.421500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2020,kt,22.432700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2021,kt,23.516300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2022,kt,24.668200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2023,kt,25.903700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2030,kt,18.467000,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7230,Emissions (N2O),2050,kt,24.314100,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1961,kt,859.713000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1962,kt,879.853000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1963,kt,901.768500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1964,kt,923.551500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1965,kt,946.951000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1966,kt,1010.869000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1967,kt,1026.424500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1968,kt,1042.775000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1969,kt,1060.132500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1970,kt,1079.000500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1971,kt,1098.928500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1972,kt,1124.501000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1973,kt,1161.362500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1974,kt,1200.079000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1975,kt,1242.214000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1976,kt,1286.840000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1977,kt,1333.003000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1978,kt,1380.862000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1979,kt,1431.874500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1980,kt,1412.132000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1981,kt,1461.740000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1982,kt,1498.681000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1983,kt,1539.597000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1984,kt,1578.525500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1985,kt,1620.581000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1986,kt,1784.934000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1987,kt,1825.770500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1988,kt,1875.166500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1989,kt,1914.042000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1990,kt,1954.401500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1991,kt,2075.268000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1992,kt,2128.904000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1993,kt,2202.812500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1994,kt,2328.343000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1995,kt,2454.403500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1996,kt,2537.746000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1997,kt,2624.030000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1998,kt,2545.855000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),1999,kt,2609.958500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2000,kt,2662.852500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2001,kt,2731.143000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2002,kt,2837.328500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2003,kt,2919.770000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2004,kt,2987.371500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2005,kt,3061.015000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2006,kt,3360.809500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2007,kt,3487.771000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2008,kt,3623.848500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2009,kt,3767.266500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2010,kt,3850.238000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2011,kt,4080.841000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2012,kt,4248.374000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2013,kt,4360.336500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2014,kt,4545.624500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2015,kt,4741.115000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2016,kt,4940.978000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2017,kt,5187.269000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2018,kt,5425.610000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2019,kt,5676.697500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2020,kt,5944.665500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2021,kt,6231.819500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2022,kt,6537.073000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2023,kt,6864.480500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2030,kt,4893.755000,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,723113,Emissions (CO2eq) (AR5),2050,kt,6443.236500,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1961,kt,2.276600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1962,kt,2.329900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1963,kt,2.388000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1964,kt,2.445700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1965,kt,2.507700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1966,kt,2.676900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1967,kt,2.718100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1968,kt,2.761400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1969,kt,2.807300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1970,kt,2.857300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1971,kt,2.910100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1972,kt,2.977800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1973,kt,3.075400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1974,kt,3.178000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1975,kt,3.289600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1976,kt,3.407700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1977,kt,3.530000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1978,kt,3.656700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1979,kt,3.791800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1980,kt,3.739500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1981,kt,3.870900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1982,kt,3.968700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1983,kt,4.077100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1984,kt,4.180100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1985,kt,4.291500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1986,kt,4.726700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1987,kt,4.834900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1988,kt,4.965700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1989,kt,5.068600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1990,kt,5.175500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1991,kt,5.495600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1992,kt,5.637600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1993,kt,5.833300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1994,kt,6.165700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1995,kt,6.499500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1996,kt,6.720200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1997,kt,6.948800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1998,kt,6.741700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),1999,kt,6.911500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2000,kt,7.051600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2001,kt,7.232400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2002,kt,7.513600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2003,kt,7.731900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2004,kt,7.911000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2005,kt,8.106000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2006,kt,8.899900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2007,kt,9.236100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2008,kt,9.596400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2009,kt,9.976200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2010,kt,10.195900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2011,kt,10.806600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2012,kt,11.250300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2013,kt,11.546700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2014,kt,12.037400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2015,kt,12.555100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2016,kt,13.084300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2017,kt,13.736600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2018,kt,14.367700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2019,kt,15.032600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2020,kt,15.742300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2021,kt,16.502600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2022,kt,17.311000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2023,kt,18.178000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2030,kt,12.959300,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7234,Direct emissions (N2O),2050,kt,17.062500,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1961,kt,0.967600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1962,kt,0.990200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1963,kt,1.014900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1964,kt,1.039400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1965,kt,1.065800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1966,kt,1.137700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1967,kt,1.155200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1968,kt,1.173600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1969,kt,1.193100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1970,kt,1.214400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1971,kt,1.236800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1972,kt,1.265600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1973,kt,1.307100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1974,kt,1.350600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1975,kt,1.398100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1976,kt,1.448300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1977,kt,1.500200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1978,kt,1.554100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1979,kt,1.611500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1980,kt,1.589300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1981,kt,1.645100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1982,kt,1.686700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1983,kt,1.732700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1984,kt,1.776600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1985,kt,1.823900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1986,kt,2.008900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1987,kt,2.054800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1988,kt,2.110400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1989,kt,2.154200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1990,kt,2.199600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1991,kt,2.335600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1992,kt,2.396000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1993,kt,2.479200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1994,kt,2.620400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1995,kt,2.762300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1996,kt,2.856100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1997,kt,2.953200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1998,kt,2.865200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),1999,kt,2.937400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2000,kt,2.996900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2001,kt,3.073800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2002,kt,3.193300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2003,kt,3.286100,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2004,kt,3.362200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2005,kt,3.445000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2006,kt,3.782400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2007,kt,3.925300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2008,kt,4.078500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2009,kt,4.239900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2010,kt,4.333300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2011,kt,4.592800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2012,kt,4.781400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2013,kt,4.907400,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2014,kt,5.115900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2015,kt,5.335900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2016,kt,5.560800,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2017,kt,5.838000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2018,kt,6.106300,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2019,kt,6.388900,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2020,kt,6.690500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2021,kt,7.013600,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2022,kt,7.357200,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2023,kt,7.725700,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2030,kt,5.507700,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,7236,Indirect emissions (N2O),2050,kt,7.251600,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1961,kt,859.713000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1962,kt,879.853000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1963,kt,901.768500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1964,kt,923.551500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1965,kt,946.951000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1966,kt,1010.869000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1967,kt,1026.424500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1968,kt,1042.775000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1969,kt,1060.132500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1970,kt,1079.000500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1971,kt,1098.928500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1972,kt,1124.501000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1973,kt,1161.362500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1974,kt,1200.079000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1975,kt,1242.214000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1976,kt,1286.840000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1977,kt,1333.003000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1978,kt,1380.862000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1979,kt,1431.874500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1980,kt,1412.132000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1981,kt,1461.740000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1982,kt,1498.681000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1983,kt,1539.597000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1984,kt,1578.525500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1985,kt,1620.581000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1986,kt,1784.934000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1987,kt,1825.770500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1988,kt,1875.166500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1989,kt,1914.042000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1990,kt,1954.401500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1991,kt,2075.268000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1992,kt,2128.904000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1993,kt,2202.812500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1994,kt,2328.343000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1995,kt,2454.403500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1996,kt,2537.746000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1997,kt,2624.030000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1998,kt,2545.855000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),1999,kt,2609.958500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2000,kt,2662.852500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2001,kt,2731.143000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2002,kt,2837.328500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2003,kt,2919.770000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2004,kt,2987.371500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2005,kt,3061.015000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2006,kt,3360.809500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2007,kt,3487.771000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2008,kt,3623.848500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2009,kt,3767.266500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2010,kt,3850.238000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2011,kt,4080.841000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2012,kt,4248.374000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2013,kt,4360.336500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2014,kt,4545.624500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2015,kt,4741.115000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2016,kt,4940.978000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2017,kt,5187.269000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2018,kt,5425.610000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2019,kt,5676.697500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2020,kt,5944.665500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2021,kt,6231.819500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2022,kt,6537.073000,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2023,kt,6864.480500,E,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2030,kt,4893.755000,F,FAO TIER 1
+Pakistan,586,5062,Manure applied to Soils,724313,Emissions (CO2eq) from N2O (AR5),2050,kt,6443.236500,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1961,kt,15.363800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1962,kt,15.793300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1963,kt,16.253400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1964,kt,16.720900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1965,kt,17.241200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1966,kt,18.199200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1967,kt,18.573500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1968,kt,18.968500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1969,kt,19.363100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1970,kt,19.929600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1971,kt,20.509000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1972,kt,21.270600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1973,kt,22.176300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1974,kt,23.144000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1975,kt,24.186400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1976,kt,25.304400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1977,kt,26.497900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1978,kt,27.772100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1979,kt,29.141500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1980,kt,27.952900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1981,kt,28.824400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1982,kt,29.586000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1983,kt,30.385900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1984,kt,31.192900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1985,kt,32.034500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1986,kt,34.546800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1987,kt,35.442700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1988,kt,36.454100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1989,kt,37.393800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1990,kt,38.367600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1991,kt,39.794200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1992,kt,40.892600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1993,kt,42.128100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1994,kt,43.666200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1995,kt,45.238600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1996,kt,45.288700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1997,kt,46.539200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1998,kt,46.952700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),1999,kt,48.259000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2000,kt,49.319200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2001,kt,50.605500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2002,kt,52.124500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2003,kt,53.573700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2004,kt,54.947500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2005,kt,56.413000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2006,kt,59.361200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2007,kt,61.183800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2008,kt,63.097100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2009,kt,65.085500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2010,kt,66.317700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2011,kt,69.314900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2012,kt,71.543300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2013,kt,73.478700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2014,kt,75.876500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2015,kt,78.370400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2016,kt,80.918800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2017,kt,83.773200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2018,kt,86.640500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2019,kt,89.612800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2020,kt,92.724200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2021,kt,95.988700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2022,kt,99.400900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2023,kt,102.985500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2030,kt,79.087400,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7230,Emissions (N2O),2050,kt,96.876400,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1961,kt,4071.407000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1962,kt,4185.224500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1963,kt,4307.151000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1964,kt,4431.038500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1965,kt,4568.918000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1966,kt,4822.788000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1967,kt,4921.977500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1968,kt,5026.652500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1969,kt,5131.221500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1970,kt,5281.344000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1971,kt,5434.885000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1972,kt,5636.709000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1973,kt,5876.719500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1974,kt,6133.160000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1975,kt,6409.396000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1976,kt,6705.666000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1977,kt,7021.943500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1978,kt,7359.606500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1979,kt,7722.497500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1980,kt,7407.518500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1981,kt,7638.466000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1982,kt,7840.290000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1983,kt,8052.263500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1984,kt,8266.118500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1985,kt,8489.142500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1986,kt,9154.902000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1987,kt,9392.315500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1988,kt,9660.336500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1989,kt,9909.357000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1990,kt,10167.414000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1991,kt,10545.463000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1992,kt,10836.539000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1993,kt,11163.946500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1994,kt,11571.543000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1995,kt,11988.229000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1996,kt,12001.505500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1997,kt,12332.888000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1998,kt,12442.465500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),1999,kt,12788.635000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2000,kt,13069.588000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2001,kt,13410.457500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2002,kt,13812.992500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2003,kt,14197.030500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2004,kt,14561.087500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2005,kt,14949.445000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2006,kt,15730.718000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2007,kt,16213.707000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2008,kt,16720.731500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2009,kt,17247.657500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2010,kt,17574.190500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2011,kt,18368.448500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2012,kt,18958.974500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2013,kt,19471.855500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2014,kt,20107.272500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2015,kt,20768.156000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2016,kt,21443.482000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2017,kt,22199.898000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2018,kt,22959.732500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2019,kt,23747.392000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2020,kt,24571.913000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2021,kt,25437.005500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2022,kt,26341.238500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2023,kt,27291.157500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2030,kt,20958.161000,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,723113,Emissions (CO2eq) (AR5),2050,kt,25672.246000,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1961,kt,11.896600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1962,kt,12.217400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1963,kt,12.559900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1964,kt,12.909000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1965,kt,13.293900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1966,kt,14.050500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1967,kt,14.331900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1968,kt,14.632600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1969,kt,14.934600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1970,kt,15.354000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1971,kt,15.780100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1972,kt,16.335400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1973,kt,16.991800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1974,kt,17.691800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1975,kt,18.445600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1976,kt,19.252800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1977,kt,20.112900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1978,kt,21.029200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1979,kt,22.013000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1980,kt,21.213100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1981,kt,21.880500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1982,kt,22.447900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1983,kt,23.044900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1984,kt,23.645600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1985,kt,24.272800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1986,kt,26.378000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1987,kt,27.044100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1988,kt,27.796500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1989,kt,28.492300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1990,kt,29.213200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1991,kt,30.304300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1992,kt,31.121500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1993,kt,32.048300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1994,kt,33.221100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1995,kt,34.418400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1996,kt,34.769200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1997,kt,35.736200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1998,kt,36.010400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),1999,kt,37.018200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2000,kt,37.820000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2001,kt,38.805500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2002,kt,39.980400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2003,kt,41.094200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2004,kt,42.142800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2005,kt,43.263900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2006,kt,45.746100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2007,kt,47.177800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2008,kt,48.682200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2009,kt,50.246700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2010,kt,51.185500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2011,kt,53.578700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2012,kt,55.335600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2013,kt,56.848700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2014,kt,58.741200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2015,kt,60.710900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2016,kt,62.723300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2017,kt,64.985900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2018,kt,67.256900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2019,kt,69.612200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2020,kt,72.079800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2021,kt,74.671300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2022,kt,77.382100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2023,kt,80.232500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2030,kt,61.080500,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7234,Direct emissions (N2O),2050,kt,74.931600,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1961,kt,3.467200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1962,kt,3.575900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1963,kt,3.693500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1964,kt,3.811800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1965,kt,3.947200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1966,kt,4.148800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1967,kt,4.241500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1968,kt,4.335900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1969,kt,4.428500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1970,kt,4.575600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1971,kt,4.728900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1972,kt,4.935200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1973,kt,5.184500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1974,kt,5.452200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1975,kt,5.740800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1976,kt,6.051600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1977,kt,6.385000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1978,kt,6.742900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1979,kt,7.128600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1980,kt,6.739800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1981,kt,6.943900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1982,kt,7.138100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1983,kt,7.341000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1984,kt,7.547300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1985,kt,7.761700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1986,kt,8.168800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1987,kt,8.398600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1988,kt,8.657600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1989,kt,8.901500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1990,kt,9.154400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1991,kt,9.489900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1992,kt,9.771100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1993,kt,10.079800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1994,kt,10.445200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1995,kt,10.820200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1996,kt,10.519500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1997,kt,10.802900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1998,kt,10.942300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),1999,kt,11.240900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2000,kt,11.499200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2001,kt,11.800000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2002,kt,12.144100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2003,kt,12.479500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2004,kt,12.804800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2005,kt,13.149100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2006,kt,13.615100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2007,kt,14.006100,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2008,kt,14.414900,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2009,kt,14.838800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2010,kt,15.132200,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2011,kt,15.736300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2012,kt,16.207700,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2013,kt,16.630000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2014,kt,17.135300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2015,kt,17.659500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2016,kt,18.195400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2017,kt,18.787300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2018,kt,19.383600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2019,kt,20.000600,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2020,kt,20.644300,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2021,kt,21.317400,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2022,kt,22.018800,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2023,kt,22.753000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2030,kt,18.006800,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,7236,Indirect emissions (N2O),2050,kt,21.944800,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1961,kt,4071.407000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1962,kt,4185.224500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1963,kt,4307.151000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1964,kt,4431.038500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1965,kt,4568.918000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1966,kt,4822.788000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1967,kt,4921.977500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1968,kt,5026.652500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1969,kt,5131.221500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1970,kt,5281.344000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1971,kt,5434.885000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1972,kt,5636.709000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1973,kt,5876.719500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1974,kt,6133.160000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1975,kt,6409.396000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1976,kt,6705.666000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1977,kt,7021.943500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1978,kt,7359.606500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1979,kt,7722.497500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1980,kt,7407.518500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1981,kt,7638.466000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1982,kt,7840.290000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1983,kt,8052.263500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1984,kt,8266.118500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1985,kt,8489.142500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1986,kt,9154.902000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1987,kt,9392.315500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1988,kt,9660.336500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1989,kt,9909.357000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1990,kt,10167.414000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1991,kt,10545.463000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1992,kt,10836.539000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1993,kt,11163.946500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1994,kt,11571.543000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1995,kt,11988.229000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1996,kt,12001.505500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1997,kt,12332.888000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1998,kt,12442.465500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),1999,kt,12788.635000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2000,kt,13069.588000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2001,kt,13410.457500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2002,kt,13812.992500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2003,kt,14197.030500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2004,kt,14561.087500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2005,kt,14949.445000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2006,kt,15730.718000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2007,kt,16213.707000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2008,kt,16720.731500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2009,kt,17247.657500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2010,kt,17574.190500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2011,kt,18368.448500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2012,kt,18958.974500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2013,kt,19471.855500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2014,kt,20107.272500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2015,kt,20768.156000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2016,kt,21443.482000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2017,kt,22199.898000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2018,kt,22959.732500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2019,kt,23747.392000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2020,kt,24571.913000,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2021,kt,25437.005500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2022,kt,26341.238500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2023,kt,27291.157500,E,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2030,kt,20958.161000,F,FAO TIER 1
+Pakistan,586,5063,Manure left on Pasture,724313,Emissions (CO2eq) from N2O (AR5),2050,kt,25672.246000,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1961,kt,2.314900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1962,kt,2.368600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1963,kt,2.458600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1964,kt,2.566100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1965,kt,2.683200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1966,kt,2.525000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1967,kt,2.726300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1968,kt,3.344900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1969,kt,3.512000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1970,kt,3.623400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1971,kt,3.402500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1972,kt,3.492300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1973,kt,3.722700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1974,kt,3.718200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1975,kt,3.843000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1976,kt,4.120100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1977,kt,4.372800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1978,kt,4.295400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1979,kt,4.675000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1980,kt,4.832600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1981,kt,5.086000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1982,kt,5.071000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1983,kt,5.346000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1984,kt,4.988600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1985,kt,5.016800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1986,kt,5.751900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1987,kt,5.196700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1988,kt,5.391600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1989,kt,5.863300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1990,kt,5.858600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1991,kt,5.883500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1992,kt,6.084100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1993,kt,6.484900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1994,kt,6.169800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1995,kt,6.730800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1996,kt,6.814700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1997,kt,6.787400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1998,kt,7.425800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),1999,kt,7.345700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2000,kt,7.968800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2001,kt,7.181300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2002,kt,7.170900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2003,kt,7.621300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2004,kt,7.843300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2005,kt,8.523600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2006,kt,8.422000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2007,kt,9.014600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2008,kt,8.950600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2009,kt,9.567400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2010,kt,8.822200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2011,kt,9.711400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2012,kt,9.046800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2013,kt,9.826900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2014,kt,10.279100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2015,kt,10.079500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2016,kt,10.350500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2017,kt,10.727000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2018,kt,10.423500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2019,kt,10.539100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2020,kt,11.196900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2021,kt,12.137800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2022,kt,11.449000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2023,kt,12.560000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2030,kt,10.746000,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7230,Emissions (N2O),2050,kt,10.788000,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1961,kt,613.448500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1962,kt,627.679000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1963,kt,651.529000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1964,kt,680.016500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1965,kt,711.048000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1966,kt,669.125000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1967,kt,722.469500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1968,kt,886.398500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1969,kt,930.680000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1970,kt,960.201000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1971,kt,901.662500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1972,kt,925.459500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1973,kt,986.515500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1974,kt,985.323000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1975,kt,1018.395000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1976,kt,1091.826500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1977,kt,1158.792000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1978,kt,1138.281000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1979,kt,1238.875000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1980,kt,1280.639000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1981,kt,1347.790000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1982,kt,1343.815000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1983,kt,1416.690000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1984,kt,1321.979000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1985,kt,1329.452000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1986,kt,1524.253500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1987,kt,1377.125500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1988,kt,1428.774000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1989,kt,1553.774500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1990,kt,1552.529000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1991,kt,1559.127500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1992,kt,1612.286500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1993,kt,1718.498500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1994,kt,1634.997000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1995,kt,1783.662000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1996,kt,1805.895500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1997,kt,1798.661000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1998,kt,1967.837000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),1999,kt,1946.610500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2000,kt,2111.732000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2001,kt,1903.044500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2002,kt,1900.288500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2003,kt,2019.644500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2004,kt,2078.474500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2005,kt,2258.754000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2006,kt,2231.830000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2007,kt,2388.869000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2008,kt,2371.909000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2009,kt,2535.361000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2010,kt,2337.883000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2011,kt,2573.521000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2012,kt,2397.402000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2013,kt,2604.128500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2014,kt,2723.961500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2015,kt,2671.067500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2016,kt,2742.882500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2017,kt,2842.655000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2018,kt,2762.227500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2019,kt,2792.861500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2020,kt,2967.178500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2021,kt,3216.517000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2022,kt,3033.985000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2023,kt,3328.400000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2030,kt,2847.690000,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,723113,Emissions (CO2eq) (AR5),2050,kt,2858.820000,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1961,kt,1.889700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1962,kt,1.933500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1963,kt,2.007000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1964,kt,2.094800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1965,kt,2.190400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1966,kt,2.061200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1967,kt,2.225600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1968,kt,2.730600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1969,kt,2.866900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1970,kt,2.957900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1971,kt,2.777600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1972,kt,2.850800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1973,kt,3.038900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1974,kt,3.035200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1975,kt,3.137200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1976,kt,3.363400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1977,kt,3.569600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1978,kt,3.506400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1979,kt,3.816300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1980,kt,3.945000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1981,kt,4.151800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1982,kt,4.139600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1983,kt,4.364100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1984,kt,4.072300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1985,kt,4.095400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1986,kt,4.695400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1987,kt,4.242200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1988,kt,4.401300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1989,kt,4.786400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1990,kt,4.782500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1991,kt,4.802900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1992,kt,4.966600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1993,kt,5.293800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1994,kt,5.036500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1995,kt,5.494600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1996,kt,5.563000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1997,kt,5.540700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1998,kt,6.061900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),1999,kt,5.996500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2000,kt,6.505100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2001,kt,5.862300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2002,kt,5.853800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2003,kt,6.221500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2004,kt,6.402700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2005,kt,6.958000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2006,kt,6.875100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2007,kt,7.358900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2008,kt,7.306600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2009,kt,7.810100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2010,kt,7.201800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2011,kt,7.927700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2012,kt,7.385200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2013,kt,8.021900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2014,kt,8.391100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2015,kt,8.228100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2016,kt,8.449400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2017,kt,8.756700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2018,kt,8.509000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2019,kt,8.603400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2020,kt,9.140300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2021,kt,9.908400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2022,kt,9.346100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2023,kt,10.253000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2030,kt,8.772300,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7234,Direct emissions (N2O),2050,kt,8.806600,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1961,kt,0.425200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1962,kt,0.435000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1963,kt,0.451600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1964,kt,0.471300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1965,kt,0.492800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1966,kt,0.463800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1967,kt,0.500800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1968,kt,0.614400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1969,kt,0.645100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1970,kt,0.665500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1971,kt,0.625000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1972,kt,0.641400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1973,kt,0.683800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1974,kt,0.682900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1975,kt,0.705900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1976,kt,0.756800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1977,kt,0.803200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1978,kt,0.788900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1979,kt,0.858700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1980,kt,0.887600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1981,kt,0.934200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1982,kt,0.931400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1983,kt,0.981900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1984,kt,0.916300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1985,kt,0.921500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1986,kt,1.056500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1987,kt,0.954500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1988,kt,0.990300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1989,kt,1.076900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1990,kt,1.076100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1991,kt,1.080600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1992,kt,1.117500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1993,kt,1.191100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1994,kt,1.133200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1995,kt,1.236300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1996,kt,1.251700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1997,kt,1.246700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1998,kt,1.363900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),1999,kt,1.349200,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2000,kt,1.463700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2001,kt,1.319000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2002,kt,1.317100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2003,kt,1.399800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2004,kt,1.440600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2005,kt,1.565600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2006,kt,1.546900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2007,kt,1.655700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2008,kt,1.644000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2009,kt,1.757300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2010,kt,1.620400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2011,kt,1.783700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2012,kt,1.661700,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2013,kt,1.804900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2014,kt,1.888000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2015,kt,1.851300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2016,kt,1.901100,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2017,kt,1.970300,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2018,kt,1.914500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2019,kt,1.935800,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2020,kt,2.056600,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2021,kt,2.229400,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2022,kt,2.102900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2023,kt,2.306900,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2030,kt,1.973800,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,7236,Indirect emissions (N2O),2050,kt,1.981500,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1961,kt,613.448500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1962,kt,627.679000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1963,kt,651.529000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1964,kt,680.016500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1965,kt,711.048000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1966,kt,669.125000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1967,kt,722.469500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1968,kt,886.398500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1969,kt,930.680000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1970,kt,960.201000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1971,kt,901.662500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1972,kt,925.459500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1973,kt,986.515500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1974,kt,985.323000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1975,kt,1018.395000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1976,kt,1091.826500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1977,kt,1158.792000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1978,kt,1138.281000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1979,kt,1238.875000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1980,kt,1280.639000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1981,kt,1347.790000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1982,kt,1343.815000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1983,kt,1416.690000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1984,kt,1321.979000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1985,kt,1329.452000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1986,kt,1524.253500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1987,kt,1377.125500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1988,kt,1428.774000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1989,kt,1553.774500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1990,kt,1552.529000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1991,kt,1559.127500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1992,kt,1612.286500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1993,kt,1718.498500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1994,kt,1634.997000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1995,kt,1783.662000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1996,kt,1805.895500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1997,kt,1798.661000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1998,kt,1967.837000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),1999,kt,1946.610500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2000,kt,2111.732000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2001,kt,1903.044500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2002,kt,1900.288500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2003,kt,2019.644500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2004,kt,2078.474500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2005,kt,2258.754000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2006,kt,2231.830000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2007,kt,2388.869000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2008,kt,2371.909000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2009,kt,2535.361000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2010,kt,2337.883000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2011,kt,2573.521000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2012,kt,2397.402000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2013,kt,2604.128500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2014,kt,2723.961500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2015,kt,2671.067500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2016,kt,2742.882500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2017,kt,2842.655000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2018,kt,2762.227500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2019,kt,2792.861500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2020,kt,2967.178500,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2021,kt,3216.517000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2022,kt,3033.985000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2023,kt,3328.400000,E,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2030,kt,2847.690000,F,FAO TIER 1
+Pakistan,586,5064,Crop Residues,724313,Emissions (CO2eq) from N2O (AR5),2050,kt,2858.820000,F,FAO TIER 1

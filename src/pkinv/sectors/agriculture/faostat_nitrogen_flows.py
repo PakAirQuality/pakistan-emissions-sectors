@@ -9,9 +9,11 @@ The substitutions hold N pools, rice EF1FR and all indirect terms fixed. They
 are not a complete vintage swap or reconstruction of FAOSTAT. The fraction of
 the difference bridged is conditional on this path; the residual is unattributed.
 
-The four FAOSTAT emissions values are an explicitly rounded public snapshot
-of the comparison shipped at 41b5636. Its raw archive is not public here. See
-docs/nitrogen_comparison_evaluation.md for provenance and limits.
+The FAOSTAT values are read from data/sectors/agriculture/evidence/faostat_soils_pools.csv:
+FAOSTAT's own Pakistan rows for the four items, unrounded, with every element (direct and
+indirect N2O, CO2e AR5), written by scripts/ingest_faostat_soils_pools.py from the held
+Emissions Totals extract. (The 21 October 2026 pass had used a four-row snapshot rounded to
+4 dp; the held extract replaces it.) See docs/nitrogen_comparison_evaluation.md for limits.
 
 Usage: python3 -m pkinv.sectors.agriculture.faostat_nitrogen_flows [--check]
 """
@@ -30,8 +32,8 @@ from pkinv.sectors.agriculture.ef_library import InventoryData
 OUT = asset_path(OUTPUTS, "pakemis_faostat_nitrogen_flows.csv")
 FAO_FERT = "data/activity/historical/fertilizer_n.csv"
 FAO_STOCK = "data/activity/historical/livestock_stocks.csv"
-SNAPSHOT = os.path.join(DATA, "sectors", "agriculture", "evidence",
-                        "faostat_soils_comparator_snapshot.csv")
+EXTRACT = os.path.join(DATA, "sectors", "agriculture", "evidence", "faostat_soils_pools.csv")
+FAO_N2O_DIRECT, FAO_N2O_INDIRECT, FAO_N2O_TOTAL = "7234", "7236", "7230"
 FAO_ITEM_CODES = {"5061": "synthetic fertiliser", "5062": "manure applied to soils",
                   "5063": "manure on pasture", "5064": "crop residues"}
 FAO_FERT_YEAR, FAO_STOCK_YEAR, FAO_ITEM_YEAR = "2023", "2024", "2023"
@@ -55,8 +57,8 @@ BANNER = """\
 # row_kind=nitrogen_pool: modelled PakEmis N inputs; no FAOSTAT pool-N values held here.
 # row_kind=pool/pool_leg: current engine emissions by broad source and direct/indirect leg.
 # row_kind=attribution: conditional direct-factor substitutions at fixed N pools.
-# FAOSTAT values: rounded public snapshot transcribed from the table at 41b5636;
-# four 4-dp Mt values sum to 58.4997 Mt. Original raw-archive precision is unavailable.
+# FAOSTAT values: FAOSTAT's own Pakistan rows, unrounded (data/sectors/agriculture/evidence/
+# faostat_soils_pools.csv); pool_leg rows carry FAOSTAT's direct and indirect N2O legs at AR5.
 """
 
 
@@ -78,22 +80,51 @@ def _year_row(rows, year, label):
     return selected[0]
 
 
+def _extract_rows(rows=None):
+    rows = read_rows(EXTRACT) if rows is None else rows
+    out = [r for r in rows if r["area"] == "Pakistan" and r["year"] == FAO_ITEM_YEAR]
+    if not out:
+        raise ValueError("the FAOSTAT extract holds no Pakistan rows for %s" % FAO_ITEM_YEAR)
+    return out
+
+
 def comparator_pools(rows=None):
-    """One fixed public comparator; reject duplicate or mismatched records."""
-    rows = read_rows(SNAPSHOT) if rows is None else rows
+    """The four FAOSTAT items' CO2e AR5 (Mt) for the comparison year; reject duplicates and gaps."""
     pools = {}
-    for r in rows:
+    for r in _extract_rows(rows):
+        if r["element_code"] != FAO_CO2E_AR5:
+            continue
         code = r["item_code"]
         if code not in FAO_ITEM_CODES or code in pools:
             raise ValueError("unexpected or duplicate FAOSTAT item %s" % code)
-        if (r["area"] != "Pakistan" or r["year"] != FAO_ITEM_YEAR
-                or r["element_code"] != FAO_CO2E_AR5 or r["unit"] != "Mt CO2e AR5"
-                or r["value_decimal_places"] != "4"):
-            raise ValueError("FAOSTAT item %s has incompatible scope, metric or precision" % code)
-        pools[code] = _finite_number(r["value"], "FAOSTAT item " + code)
+        if r["unit"] != "kt":
+            raise ValueError("FAOSTAT item %s is in %r, not kt" % (code, r["unit"]))
+        pools[code] = _finite_number(r["value"], "FAOSTAT item " + code) / 1000.0
     if set(pools) != set(FAO_ITEM_CODES):
-        raise ValueError("FAOSTAT snapshot must contain exactly the four managed-soils items")
+        raise ValueError("the FAOSTAT extract must carry exactly the four managed-soils items")
     return {FAO_ITEM_CODES[code]: value for code, value in pools.items()}
+
+
+def comparator_legs(rows=None):
+    """{(pool, 'direct'|'indirect'): Mt CO2e AR5} from FAOSTAT's N2O elements (kt N2O x AR5 GWP).
+
+    Where FAOSTAT prints no indirect element for an item (synthetic fertilizers), the indirect leg
+    is its total N2O less its direct N2O, and the second element of the value says so."""
+    by = {}
+    for r in _extract_rows(rows):
+        if r["item_code"] in FAO_ITEM_CODES and r["element_code"] in (FAO_N2O_DIRECT, FAO_N2O_INDIRECT,
+                                                                        FAO_N2O_TOTAL):
+            by[(r["item_code"], r["element_code"])] = _finite_number(r["value"], "FAOSTAT N2O")
+    legs = {}
+    for code, name in FAO_ITEM_CODES.items():
+        direct = by.get((code, FAO_N2O_DIRECT))
+        indirect, basis = by.get((code, FAO_N2O_INDIRECT)), "printed"
+        if indirect is None and direct is not None and (code, FAO_N2O_TOTAL) in by:
+            indirect, basis = by[(code, FAO_N2O_TOTAL)] - direct, "total less direct"
+        for leg, value, leg_basis in (("direct", direct, "printed"), ("indirect", indirect, basis)):
+            if value is not None:
+                legs[(name, leg)] = (gwp.to_co2e("N2O", value, "AR5") / 1000.0, leg_basis)
+    return legs
 
 
 def _pool(subitem):
@@ -137,6 +168,7 @@ def engine_cases(data=None):
 def build(data=None):
     data, npools, cases = engine_cases(data)
     fao_pool = comparator_pools()
+    fao_legs = comparator_legs()
     fert = _year_row(read_rows(resolve(FAO_FERT)), FAO_FERT_YEAR, "FAOSTAT fertiliser")
     stock = _year_row(read_rows(resolve(FAO_STOCK)), FAO_STOCK_YEAR, "FAOSTAT stock")
     rows = []
@@ -195,8 +227,9 @@ def build(data=None):
             "FAOSTAT minus PakEmis = %+.6f Mt; emissions alone cannot identify whether "
             "N quantity, routing, factors, year or coverage caused this difference" % (b - a))
     for (name, leg), value in sorted(pools.items()):
-        add("pool_leg", "%s (%s)" % (name, leg), "Current engine; no direct/indirect split "
-            "held for the retained FAOSTAT comparator", value, None, "Mt CO2e AR5", "")
+        fao, basis = fao_legs.get((name, leg), (None, ""))
+        add("pool_leg", "%s (%s)" % (name, leg), "Current engine; FAOSTAT %s N2O leg (%s) at AR5"
+            % (leg, basis or "not printed"), value, fao, "Mt CO2e AR5", "")
 
     factor_note = ("EF1 %.6f -> %.6f; EF3PRP cattle-type %.6f -> %.6f; other %.6f -> %.6f. "
                    "Targets read from registered aggregate factors. Rice EF1FR remains %.6f; "
@@ -209,7 +242,7 @@ def build(data=None):
     for case, flow in CASE_FLOWS.items():
         delta = totals[case] - totals["current"]
         if case == "current":
-            verdict = "Fresh engine total equals the sum of the four PakEmis pool rows; difference %.6f Mt" % gap
+            verdict = "Current engine total; FAOSTAT minus PakEmis %.6f Mt" % gap
         else:
             fraction = "undefined (zero baseline difference)" if gap == 0 else "%.3f per cent" % (100 * delta / gap)
             verdict = ("Conditional substitution changes PakEmis by %+.6f Mt (%s of the "

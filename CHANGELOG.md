@@ -9,20 +9,58 @@ current national figures are the manifest's.
 
 ### National contribution evidence and benchmark repairs
 
-- Added ten source-linked national/application conclusions, with exact input hashes,
-  bounded robustness statements and the next empirical evidence needed for each.
-- Corrected the BTR comparable subtotal to exclude scope-gap and overlapping rows;
-  published positive/negative category offsets and a figure instead of treating
-  close national totals as independent validation.
-- Recomputed managed-soils factor substitutions from the current engine. Added an
-  explicitly rounded public FAOSTAT comparator snapshot; removed unsupported
-  nitrogen-flow agreement and causal residual explanations.
-- Repaired the household PM2.5 comparison: LEAP/EMEP 2019, rounded implied endpoint,
-  unadjusted discrepancy first, and crop-residue subtraction only as an unverified
-  boundary scenario. Refreshed dependent metadata without re-ingesting the CRT.
-- Added a primary-source precedent review and a concrete cooking–manure data gate.
-- Added optional `contribution-evidence`, `contribution-figures` and
-  `contribution-check` targets. National inventory totals and default build are unchanged.
+This entry covers commit `59b0eda`, an external contribution-evidence pass, and the follow-up
+that verified it against the restricted layers.
+
+**What the pass added:**
+- **Ten source-linked conclusions.** National and application conclusions
+  (`outputs/pakemis_contribution_claims.csv`), each with the sha256 of every input it reads and
+  the next evidence each needs. They are now a build phase, "Contribution evidence", so they
+  rebuild when an input moves.
+- **The BTR comparison:**
+  - The comparable subtotal now leaves out the scope-gap 1.A.4 row. Restated rows were already
+    excluded. That moves it from 1.3% to 4.13%, against 0.24% for the wider headline totals.
+  - The positive and negative category offsets are published (+72.3 / −54.0 Mt;
+    `outputs/pakemis_btr_category_offsets.csv`, with a figure).
+  - The earlier text claimed the subtotal "agrees far more closely". It did not, and the claim is
+    removed.
+- **Managed soils:**
+  - Factor substitutions are recomputed from the current engine. The two direct-factor
+    substitutions bridge 88.6% of the FAOSTAT gap, conditionally.
+  - The unsupported claims that the nitrogen "agrees", and the causal residual story, are removed.
+  - `outputs/eval/sensitivity.csv` is regenerated; it had been stale.
+- **The household PM2.5 bridge:**
+  - The source is corrected to LEAP with EMEP/EEA 2019 factors, not GAINS, and the 224.35 kt
+    endpoint is labelled rounded-implied.
+  - The unadjusted gap (+34.7 kt) is reported first. Subtracting crop residues is shown only as an
+    unverified boundary scenario.
+- **Validation roles:** `mag-residential-ccac-bridge`, `mag-soils-faostat-flows` and
+  `mag-national-btr` move from `validation` to `corroboration`. Their own texts say agreement is
+  not independent validation. This is a change to a published verdict; the five-class counts are
+  unchanged.
+- **Also added:** a primary-source precedent review, a cooking–manure data gate, and the optional
+  `contribution-evidence`, `contribution-figures` and `contribution-check` targets.
+
+National inventory totals do not move.
+
+**The follow-up:**
+- **FAOSTAT comparator.** The rounded four-row FAOSTAT snapshot is replaced by FAOSTAT's own
+  unrounded Pakistan rows (`data/sectors/agriculture/evidence/faostat_soils_pools.csv`, CC BY 4.0,
+  written by `scripts/ingest_faostat_soils_pools.py` from the held extract). The pool legs now
+  carry FAOSTAT's direct and indirect split.
+- **Household source.** The benchmark cites the held 2022 CCAC/SEI report first, and the 2024
+  article as its peer-reviewed counterpart, not held. Its household tables are transcribed in
+  `data/sectors/residential/evidence/ccac_sei_2022_household.csv`, and the bridge reads its
+  641 kt and 35% from there.
+- **The residential CRT extract** was re-ingested with `scripts/ingest_official_reporting.py`. The
+  receipt's producer fingerprint had been edited by hand; the result is identical.
+- **Registration:**
+  - the contribution products are registered in the LF terminator list;
+  - the contribution figures are now a figures-group phase, with no matplotlib version stamp.
+- **Catalog numbers:** the stale `mag-agriculture-cui-ef1` values (28.51 / 40.4) are corrected to
+  28.49 / 40.79.
+
+The release manifest and SHA256SUMS describe rc70 until the next mint.
 
 ### Three inventory defects the gas audit exposed, fixed (no reference total moves)
 

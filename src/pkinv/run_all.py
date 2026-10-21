@@ -2147,7 +2147,7 @@ PHASES = [
                  "data/mms_shares.csv", "data/residue_params.csv", "data/burning_params.csv",
                  "data/activity/livestock_2024.csv", "data/activity/crops_2024.csv",
                  "data/activity/fertilizer_2024.csv",
-                 "data/sectors/agriculture/evidence/faostat_soils_comparator_snapshot.csv",
+                 "data/sectors/agriculture/evidence/faostat_soils_pools.csv",
                  "data/activity/historical/fertilizer_n.csv",
                  "data/activity/historical/livestock_stocks.csv",)),
     # rc53: and it runs AFTER every phase it grades. Its freshness gate compares each cited
@@ -2186,8 +2186,31 @@ PHASES = [
           writes=("outputs/pakemis_comparison_crosswalk.csv",),
           reads=("outputs/pakemis_validation_catalog.csv",
                  "outputs/pakemis_btr_comparison.csv")),
+    # The contribution-evidence claims (21 October 2026): ten conclusions, each with the sha256 of
+    # every input it reads, so they are rebuilt whenever an input moves rather than going stale.
+    Phase("Contribution evidence", "pkinv.report.contribution_evidence", True,
+          writes=("outputs/pakemis_contribution_claims.csv",
+                  "outputs/pakemis_contribution_evidence_summary.csv"),
+          reads=("outputs/pakemis_air_annual_fy2015_16_fy2024_25.csv",
+                 "outputs/pakemis_ghg_trend_uncertainty.csv",
+                 "outputs/pakemis_structural_trajectories.csv",
+                 "outputs/pakemis_coal_sector_reallocation.csv",
+                 "outputs/pakemis_transition_gas_conclusions.csv",
+                 "outputs/pakemis_transition_gas_matrix.csv",
+                 "outputs/pakemis_validation_five_classes.csv",
+                 "data/shared/evidence/validation_catalog.csv",
+                 "data/shared/parameters/gas_reallocation/baselines.csv",
+                 "data/shared/parameters/gas_reallocation/pathways.csv",
+                 "data/shared/parameters/gas_reallocation/coherence.csv")),
     Phase("Inventory figures", "pkinv.report.figures", False,
           writes=("outputs/figures/",)),
+    Phase("Contribution figures", "pkinv.report.contribution_figures", False,
+          writes=("outputs/figures/pakemis_contribution_btr_offsets.png",
+                  "outputs/figures/pakemis_contribution_btr_offsets.svg",
+                  "outputs/figures/pakemis_contribution_nitrogen_attribution.png",
+                  "outputs/figures/pakemis_contribution_nitrogen_attribution.svg"),
+          reads=("outputs/pakemis_btr_comparison.csv",
+                 "outputs/pakemis_faostat_nitrogen_flows.csv")),
     # THE DERIVATION CHAINS ARE A BUILD PHASE, not a hand-run product, because they are pure
     # derivations of files this build already wrote: the chain re-keys shipped tables onto one
     # schema and the ledger joins dim_stream's parameter ids to their values. They shipped
@@ -2593,9 +2616,11 @@ CATEGORIES = {
         "Validation five classes",
         "Measured validation",
         "Comparison crosswalk",
+        "Contribution evidence",
     ),
     "figures": (
         "Inventory figures",
+        "Contribution figures",
         "Dashboard",
     ),
     "release": (
