@@ -11,9 +11,11 @@ species, with the head counts it starts from. The bulk is held (scripts/fetch_co
 published here exactly as received: every item, element, unit and flag, values unrounded.
 
 What the table says and does not. FAOSTAT's pools do not close on excretion: excreted N less treated
-N less pasture N is the N FAOSTAT assigns to neither (its other uses, burning for fuel among them),
-about 14-15% of excretion in every year here. That remainder is FAOSTAT's Tier 1 assumption, not an
-observation of dung burned in Pakistan.
+N less pasture N is about 14-15% of excretion in every year here. FAOSTAT's EMN methodological note
+(kept 2026-10-22) says why: the N in manure burned for fuel is counted half as pasture (the urine) and
+half in neither pool, with the IPCC 2006 Indian-subcontinent defaults (burned for fuel 51-55% of cattle
+and buffalo N; data/sectors/agriculture/evidence holds the transcribed rows). The remainder is a Tier 1
+default, not an observation of dung burned in Pakistan.
 
 Reads:  data/raw/faostat/faostat_Environment_LivestockManure_E_All_Data_(Normalized).zip
         (held in the restricted layer; data/raw/faostat/RETRIEVALS.csv)

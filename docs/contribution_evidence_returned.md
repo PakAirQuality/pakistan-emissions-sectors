@@ -65,10 +65,17 @@ What the rows show:
   14.2-14.5% of national excretion in every year. That share is N that FAOSTAT assigns to neither pool.
 - **The unassigned share sits in two species.** In 2023 it is 0.261 for cattle and 0.275 for buffalo;
   for sheep, goats, camels and equines it is zero.
-- **A resemblance, not evidence.** Those two shares lie close to the burned-fuel shares that
-  `data/sectors/agriculture/parameters/mms_shares.csv` carries without a resolved source (cattle 0.28,
-  buffalo 0.30). Both may come from the same IPCC default management-system table for the region. That
-  is a hypothesis, not tested here, and the resemblance does not supply the missing citation.
+- **Corrected 22 October: the remainder is not the inventory's burned-fuel share.** This note first said
+  the two shares "lie close to" the burned-fuel shares in `mms_shares.csv` (cattle 0.28, buffalo 0.30), and
+  that both might come from one IPCC default. FAOSTAT's methodological note, kept the next day, says what
+  the remainder is (see "Second brief" below):
+  - FAOSTAT books half the N in manure burned for fuel as pasture N, the urine, and the other half in
+    neither pool;
+  - its burned-for-fuel shares are the IPCC 2006 Indian-subcontinent defaults: 51, 53 and 55% of
+    excreted N for dairy cows, other cattle and buffalo.
+
+  The inventory books 28 and 30%, so the default share is nearly twice the inventory's. The closeness
+  compared half of one quantity with the whole of another, and it does not supply the missing citation.
 
 ## HIES 2024-25: how dung cake is recorded
 
@@ -178,3 +185,97 @@ Both are logged as failed:
 - **The FAOSTAT extract re-derives.** The FAOSTAT manure extract must re-derive from the held bulk.
 - **Without the layers**, both tables are checked for shape. The FAOSTAT extract is also held to
   FAOSTAT's own identities.
+
+## Second brief, 22 October 2026
+
+A follow-up brief said most of the missing evidence is public, and named where to find it. The new
+attempts are logged in `data/raw/ACQUISITION_LOG_contribution_followup_20261022.csv`, written by
+`scripts/fetch_contribution_followup_evidence.py`. That fetcher takes an address only from bytes it kept
+first, or from a web search named in the note. The five FAOSTAT addresses it tried by pattern (the EMN
+note and the four CSVs beside it) are marked as such.
+
+**FAOSTAT's manure assumptions: the burned-for-fuel question is answered.**
+- **The source.** FAOSTAT's Livestock Manure methodological note (`EMN_e.pdf`, 5 pp., created 2025-10-08)
+  and its Emissions from Livestock note (`GLE_e.pdf`) say that cattle and buffalo shares come from IPCC
+  2006 Vol.4 Annex 10A.2, Tables 10A-4 to 10A-9. The note counts half of the burned-for-fuel N as pasture.
+- **The transcription.** The Indian-subcontinent rows of Tables 10A-4/5/6 (pp.10.77-10.79 of the held
+  chapter) are in `data/sectors/agriculture/evidence/ipcc2006_indian_subcontinent_mms.csv`.
+- **The test.** `tests/test_returned_contribution_evidence.py` rebuilds FAOSTAT's Pakistan pasture and
+  treated shares from those rows, for every year 2015-2023, within the table's printed rounding:
+  - dairy: pasture 52.5%, treated 21%;
+  - other cattle: 48.5% and 26%;
+  - buffalo: 46.5% and 26%.
+- **What it shows.** FAOSTAT's implied burned-for-fuel share for Pakistan is 51-55% of cattle and buffalo
+  N. The inventory's unsourced `mms_shares.csv` books 28-30%. Both are assumptions; neither is an
+  observation.
+- **Not obtained:** the four "Related Documents" CSVs the note names (`TAM_Country`, `N_ExcrRate_Country`,
+  `Share_MMS_Lvstck_Country`, `FracLoss_MMS_Lvstck_Country`).
+  - FAOSTAT's documents API returned 401 on one host and 521 on the other.
+  - The four addresses beside the note returned 403.
+  - The cattle and buffalo shares are settled without them. For other species, and to confirm that
+    FAOSTAT assigns Pakistan to the Indian subcontinent, they would still help.
+
+**FAOSTAT versions and activities.**
+- **The catalogue.** FAOSTAT's bulk-download catalogue (`datasets_E.json`) is kept. Every held bulk is
+  joined to its catalogue entry in `data/sectors/agriculture/evidence/faostat_versions.csv`
+  (`scripts/ingest_faostat_versions.py`).
+- **Two differences:**
+  - **RFN predates the current release.** The held Fertilizers by Nutrient bulk was retrieved
+    2026-06-30, but the catalogue's RFN update is dated 2026-07-30 and its printed size differs. The
+    synthetic-N rows behind the soils comparison may since have been revised.
+  - **GCE does not match the catalogue.** The Emissions from Crops bulk fetched on 2026-10-22 does not
+    match the catalogue's printed size (6,690 against 7,436 KB). The catalogue entry may be stale; that
+    is not established.
+- **New bulks.**
+  - GCE and GLE are now held.
+  - GCE's Pakistan rows for 2015-2023 are published unrounded in
+    `data/sectors/agriculture/evidence/faostat_crops_nitrogen.csv` (598 rows): synthetic-N applied,
+    crop-residue N, harvested area, and their N2O and CH4. FAOSTAT's 2030 and 2050 projections are
+    left out.
+  - GCE's 2023 synthetic-N (3,808,775 t) equals the held RFN figure.
+- **No fertilizer-year note.** The held RFN bulk carries no note on fertilizer years for Pakistan
+  (2012-2023 notes: "Official data from questionnaire"; 2018 imputed). FAOSTAT's country-notes document
+  sits behind the same documents API.
+
+**The HIES correction is already in the held microdata.** PBS's HIES page (kept) says Section 6 was
+re-uploaded "due to a technical glitch that caused some duplicate and missing values", corrected
+16-01-2026, with no impact on the tables or results.
+- The held `sources/HIES/SPSS-data-2.zip` was retrieved on 2026-08-09.
+- Its `Sec 6a-consum-Exp.sav` is dated 2026-03-18.
+- The live file at the same address reports the same size, 46,095,824 bytes, last modified 2026-03-18.
+
+The held archive therefore postdates the correction, and the dung-cake ingest already reads the
+corrected file. It was not downloaded again, because a byte-identical second copy would be a new
+cross-tree duplicate.
+
+**Stoves.**
+- **Aneeq & Mahmood (2022)** is now held as its open-access PDF (CC BY 4.0). It is the first Pakistani
+  efficiency measurement: one improved two-burner mud stove with chimney, built in Khipro, Sindh, tested
+  on wood (about 10% moisture). The test ran the cold-start high-power phase only and measured about 30%
+  (printed pages 1, 5 and 6, now in `cookstove_efficiency_evidence.csv`). It is one stove on wood: not a
+  national figure, and not dung.
+- **Usman et al. (2023)** is paywalled; only its landing page is held. The abstract reports the relative
+  gains after loading-height optimisation for two common Pakistani LPG stoves (+20% and +13% in the
+  high-power phase), not their absolute efficiencies.
+- **Clean Cooking Catalog:** not searched in this pass. Product test results do not establish what
+  Pakistani households use.
+
+**Manure handling.**
+- **Ali et al. (2019)**, a buffalo-manure storage experiment in Pakistan: its ICRISAT record returned 403
+  to the fetcher, and the article is paywalled. The N-loss figures a web search reported for it are not
+  transcribed, because no held bytes print them.
+- **Zuhra et al. (2025):** an OpenAlex search and a web search found no title or DOI.
+
+Both are logged.
+
+**Slater et al. (2024)** is open access (CC BY, per OpenAlex), but every automated route returned 403 or
+found nothing:
+- the ACS PDF and full-text HTML;
+- Europe PMC (no record);
+- OpenAlex lists no repository copy.
+
+A browser download by the user, or with their permission, is the remaining route to Table 3.
+
+**The author request.** Asking the corresponding author for the CCAC/SEI residential export is for the
+user to do. This repository contacts no one.
+

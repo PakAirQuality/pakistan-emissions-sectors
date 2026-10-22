@@ -7,6 +7,35 @@ current national figures are the manifest's.
 
 ## [Unreleased]
 
+### The second evidence brief: FAOSTAT's manure defaults, versions, the HIES correction, a Pakistani stove
+
+- **Burned-for-fuel provenance.** FAOSTAT's EMN methodological note (now held) applies the IPCC 2006
+  Indian-subcontinent manure-system shares. FAOSTAT's Pakistan pasture and treated shares for dairy,
+  other cattle and buffalo are rebuilt from Tables 10A-4/5/6 in every year, within printed rounding
+  (`data/sectors/agriculture/evidence/ipcc2006_indian_subcontinent_mms.csv`, tested).
+  - The default burned-for-fuel share is 51-55% of excreted N; `mms_shares.csv` books 28-30%.
+  - Yesterday's "resemblance" compared FAOSTAT's half-share with the inventory's whole share, and is
+    corrected.
+  - The four EMN Related Documents CSVs were not obtained (401/521/403, logged).
+- **FAOSTAT versions** (`faostat_versions.csv`, `scripts/ingest_faostat_versions.py`): each held bulk
+  against the kept bulk catalogue. The held RFN predates FAOSTAT's 2026-07-30 update. The GCE bulk does
+  not match the catalogue's printed size.
+- **FAOSTAT crops** (`faostat_crops_nitrogen.csv`, 598 rows, `scripts/ingest_faostat_crops_nitrogen.py`):
+  GCE Pakistan synthetic-N and crop-residue N, 2015-2023. GLE is held.
+- **HIES.** The held 2024-25 microdata already carries PBS's 16 January 2026 Section 6 correction: its
+  Section 6 file is dated 2026-03-18, the same size and date as the live file. Nothing to rerun.
+- **Stoves.** Aneeq & Mahmood 2022, one improved mud stove in Sindh on wood, about 30% (cold-start
+  high-power phase only), is the first Pakistani measurement held. Usman et al. 2023 (LPG) is
+  abstract-only.
+- **Not obtained:**
+  - Slater 2024 (ACS 403 on every automated route);
+  - Ali 2019 (ICRISAT 403, paywalled);
+  - Zuhra 2025 (not found).
+
+  All are logged by `scripts/fetch_contribution_followup_evidence.py`.
+
+No engine reads the new tables; no total moves.
+
 ### The evidence the contribution handoff asked for, returned
 
 `docs/contribution_evidence_returned.md` answers the handoff table in
@@ -26,8 +55,8 @@ total moves:
 - **FAOSTAT manure nitrogen** (`data/sectors/agriculture/evidence/faostat_manure_nitrogen.csv`, 1,701 rows,
   CC BY 4.0), written by `scripts/ingest_faostat_manure_nitrogen.py` from the Livestock Manure bulk:
   - FAOSTAT assigns 14.2-14.5% of excreted N to neither treated nor pasture N;
-  - for cattle (0.26) and buffalo (0.27) that share sits near the unsourced burned-fuel shares in
-    `mms_shares.csv` (0.28 / 0.30). A resemblance, possibly a common IPCC default; not a citation.
+  - for cattle (0.26) and buffalo (0.27) that share is half the IPCC 2006 default burned-for-fuel share
+    (51-55%), not the inventory's 0.28 / 0.30 (corrected 22 October; see the entry above).
 
 **Not found, and logged** (`data/raw/ACQUISITION_LOG_cooking_manure_20261021.csv`, by
 `scripts/fetch_cooking_manure_evidence.py`): the CCAC/SEI LEAP export; the ACS Slater 2024 and MDPI Mir

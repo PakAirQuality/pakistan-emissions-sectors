@@ -8,10 +8,18 @@
 # - shen2017: Shen et al. (2017) Energy & Fuels 31(3) 3081-3090, doi 10.1021/acs.energyfuels.6b02641; the PMC author manuscript
 #   PMC6145494, data/raw/literature/shen_2017_energy_fuels_pmc6145494.html (sha256
 #   58e53e1155aa6d358e3d67b78b7d0b3d8fa27c99e0dee946a3879a8bd3993bd2); the web page has no page numbers (page = 'html').
+# Added 2026-10-22 from the second brief:
+# - aneeq2022: Aneeq & Mahmood (2022) Heritage and Sustainable Development 4(1) 1-8, doi 10.37868/hsd.v4i1.73 (CC BY), the article
+#   PDF data/raw/literature/aneeq_mahmood_2022_hsd_v4i1_73.pdf (sha256 recorded in data/raw/literature/RETRIEVALS.csv); printed pages.
+#   ONE improved mud stove built and tested in Khipro, Sindh, on wood: a Pakistani measurement, not a national efficiency.
+# - usman2023: Usman et al. (2023) Environment, Development and Sustainability 25(6) 5427-5442, doi 10.1007/s10668-022-02273-y; only
+#   the publisher's landing page (abstract) is held, data/raw/literature/usman_2023_eds_s10668_022_02273_y_landing.html. The
+#   article is not open access, so its absolute efficiencies are not returned; the abstract prints relative changes only.
 # 'quote' is copied from the document and is found in the held text by tests/test_returned_contribution_evidence.py.
-# THE GAP THIS RECORDS: no held source measures a Pakistani stove, and no source here tests dung cake. Both laboratory studies
-# are US EPA Water Boiling Test results on wood, charcoal, pellets, crop residues, kerosene and LPG; the Pakistan survey states
-# that it collected no efficiency data. An efficiency for dung cake on a Pakistani chulha is therefore NOT returned.
+# THE GAP THIS RECORDS: no source here tests dung cake, and no source measures the stoves Pakistani households use at a national
+# scale. The two US EPA Water Boiling Test studies cover wood, charcoal, pellets, crop residues, kerosene and LPG; the Pakistan
+# survey states that it collected no efficiency data; the one Pakistani measurement held (aneeq2022, added 2026-10-22) is a single
+# improved mud stove on wood. An efficiency for dung cake on a Pakistani chulha is therefore NOT returned.
 # (The acquisition notes written by scripts/fetch_cooking_manure_evidence.py on 2026-10-21 described Jetter as '22 stove-fuel
 # combinations' under 'WBT 4.1.2'; the paper tests twenty-two cookstoves on six fuels, forty-four combinations, under WBT
 # Version 4. The rows below follow the paper.)
@@ -32,3 +40,8 @@ shen2017,html,efficiency,LPG stove,thermal efficiency,57,%,"US EPA laboratory, W
 shen2017,html,efficiency,kerosene stove,thermal efficiency,42,%,"US EPA laboratory, WBT 4.2.3",followed by the kerosene stove (∼42%),
 shen2017,html,efficiency,forced-draft wood stove,thermal efficiency,31,%,"US EPA laboratory, WBT 4.2.3",the forced-draft woodstove (31%),
 shen2017,html,efficiency,natural-draft wood stove,thermal efficiency,25,%,"US EPA laboratory, WBT 4.2.3",the natural-draft woodstove (25%),"a three-stone fire was also burned for PAH factors, without a printed TE in this sentence"
+aneeq2022,1,efficiency,improved two-burner mud stove with chimney (wood),thermal efficiency,30,%,"Khipro, Sindh; WBT cold-start high-power phase only",consumption of 293 g with 30% efficiency,"one stove built for the study; wood at about 10% moisture; a single test phase, not a full WBT"
+aneeq2022,5,statement,improved two-burner mud stove with chimney (wood),test protocol,cold-start high-power phase only,,"Khipro, Sindh",only a cold-start high power test is carried out,the simmer and hot-start phases were not run
+aneeq2022,5,statement,improved two-burner mud stove with chimney (wood),fuel moisture,about 10,%,"Khipro, Sindh",had a moisture level of around 10%,
+aneeq2022,6,efficiency,improved two-burner mud stove with chimney (wood),overall efficiency,approximately 30,%,"Khipro, Sindh",the overall efficiency of the ICS was approximately 30%,"the computed value printed beside it is 30.17%"
+usman2023,html,statement,two widely used Pakistani LPG stoves (Sa and Sb),relative change in thermal efficiency after loading-height optimisation,+20 (Sa) / +13 (Sb),% relative,"laboratory, WBT 4.2.3, high-power phase, two pots",the thermal efficiency of stove S a was increased by around 20%,"abstract only; the stoves' absolute efficiencies are in the paywalled article and are not returned"

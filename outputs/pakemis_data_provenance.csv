@@ -80,9 +80,12 @@ data/sectors/agriculture/canonical/parameters/rice_calendar.csv,data/sectors/agr
 data/sectors/agriculture/evidence/district_records/district_rice_area_MNFSR_2022-23.csv,data/sectors/agriculture/evidence/district_records,hand:held-source,,archived,,5,no,"MNFSR Crops Area & Production district-wise 2022-23 booklet, held beside its pdftotext dump"
 data/sectors/agriculture/evidence/district_records/district_rice_area_PunjabCRS_2022-25.csv,data/sectors/agriculture/evidence/district_records,hand:held-source,,archived,,3,no,Punjab Crop Reporting Service district-wise rice 2022-25 (two PDFs + dumps held)
 data/sectors/agriculture/evidence/district_records/district_wheat_area_MNFSR_2022-23.csv,data/sectors/agriculture/evidence/district_records,hand:held-source,,archived,,4,no,MNFSR Crops Area & Production district-wise 2022-23 booklet
+data/sectors/agriculture/evidence/faostat_crops_nitrogen.csv,data/sectors/agriculture/evidence,producer,scripts/ingest_faostat_crops_nitrogen.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/evidence/faostat_manure_nitrogen.csv,data/sectors/agriculture/evidence,producer,scripts/ingest_faostat_manure_nitrogen.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/evidence/faostat_soils_pools.csv,data/sectors/agriculture/evidence,producer,scripts/ingest_faostat_soils_pools.py,,,3,no,Producer and storage binding declared in data/catalog/assets.csv.
+data/sectors/agriculture/evidence/faostat_versions.csv,data/sectors/agriculture/evidence,producer,scripts/ingest_faostat_versions.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.
 data/sectors/agriculture/evidence/gleam/gleam_mms_south_asia.csv,data/sectors/agriculture/evidence/gleam,hand:held-source,,archived,,1,no,"FAO GLEAM 3.0 reference documentation Tables 3.2-3.5 (South Asia MMS shares), PDFs held; data/gleam_mms.csv is the Nex-b"
+data/sectors/agriculture/evidence/ipcc2006_indian_subcontinent_mms.csv,data/sectors/agriculture/evidence,hand:held-source,,archived,,1,no,"Indian-subcontinent rows on pp.10.77-10.79 transcribed as printed, 2026-10-22"
 data/sectors/agriculture/gis/manual/FIRMS_SOURCES.json,data/sectors/agriculture/gis/manual,sidecar,,,,4,no,
 data/sectors/agriculture/gis/manual/RICE_SOURCES.json,data/sectors/agriculture/gis/manual,sidecar,,,,4,no,
 data/sectors/agriculture/gis/manual/firms_fire.csv,data/sectors/agriculture/gis/manual,hand:no-source,,not-archived,firms-source,10,no,the API responses were not kept; NASA's keyless country-year files are held and contain every in-window Pakistan detecti
@@ -101,7 +104,7 @@ data/sectors/agriculture/parameters/burning_params.csv,data/sectors/agriculture/
 data/sectors/agriculture/parameters/cui2021_pak_ef.csv,data/sectors/agriculture/parameters,hand:parameter,,,,2,no,
 data/sectors/agriculture/parameters/fertilizer_calendar.csv,data/sectors/agriculture/parameters,hand:parameter,,,,1,no,
 data/sectors/agriculture/parameters/gleam_mms.csv,data/sectors/agriculture/parameters,hand:parameter,,,,6,no,
-data/sectors/agriculture/parameters/mms_shares.csv,data/sectors/agriculture/parameters,hand:parameter,,,,10,no,
+data/sectors/agriculture/parameters/mms_shares.csv,data/sectors/agriculture/parameters,hand:parameter,,,,11,no,
 data/sectors/agriculture/parameters/nfdc_offtake.csv,data/sectors/agriculture/parameters,hand:held-source,,archived,,2,no,NFDC Annual Fertilizer Review 2024-25; the row had pointed at sources/Agriculture
 data/sectors/agriculture/parameters/nowcast_params.csv,data/sectors/agriculture/parameters,hand:parameter,,,,1,no,
 data/sectors/agriculture/parameters/parameters.csv,data/sectors/agriculture/parameters,producer,src/pkinv/core/parameters.py,,,1,no,Producer and storage binding declared in data/catalog/assets.csv.

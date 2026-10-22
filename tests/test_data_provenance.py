@@ -25,6 +25,7 @@ from _support import require_documents  # noqa: E402  (rc42: the documents gate)
 from pkinv.report import completeness
 from _support import ROOT
 from pkinv.assets import asset_path, catalog
+from pkinv.core import layers
 from _support import readable  # noqa: E402
 
 
@@ -59,11 +60,18 @@ INFORMAL = {
     "Webb": "secondary attribution inside an IPCC source string (RN2_N2O is cited to IPCC 2019 "
             "Refinement V4 Ch10 Table 10.23, which itself credits Webb & Misselbrook 2004); the "
             "primary source is the IPCC table, which is what the engine cites",
+    "Zuhra": "a study searched for and NOT found, named in the 2026-10-22 acquisition log and the "
+             "OpenAlex search kept beside it (Central Punjab dairy-farm manure practices, per the "
+             "second contribution-evidence brief); no title or DOI exists to cite, and nothing in "
+             "data/ is taken from it",
     # The LULUCF mangrove-area attribution ("Hussain") moved with data/lulucf_params.csv to
     # the agriculture research repository, where the land sector is reported as an exploratory
     # supplementary note. Its INFORMAL declaration moved with it: an entry here naming a source
     # that no longer appears in data/ is exactly what this file's companion check flags.
 }
+# INFORMAL names that appear only under data/raw (the restricted layer): a clone without the layers
+# cannot see them, so their use is checked only where the layers are mounted.
+RESTRICTED_ONLY = {"Zuhra"}
 
 
 def _bib_surnames():
@@ -121,7 +129,8 @@ class TestDataProvenance(unittest.TestCase):
         """Stop INFORMAL becoming a graveyard: every entry must still appear in the data files, so
         a name whose source string was fixed does not stay whitelisted forever."""
         names = {n for n, _ in _data_citations()}
-        stale = sorted(set(INFORMAL) - names)
+        unseen = set() if layers.present(ROOT) else RESTRICTED_ONLY
+        stale = sorted(set(INFORMAL) - names - unseen)
         self.assertFalse(stale, "INFORMAL lists names no longer present in data/: %s" % stale)
 
 
